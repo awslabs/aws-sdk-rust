@@ -3,17 +3,16 @@
 /// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionAliasPermission {
+pub struct ConnectionAliasPermission  {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     pub shared_account_id: ::std::string::String,
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub allow_association: bool,
 }
-impl ConnectionAliasPermission {
+impl  ConnectionAliasPermission  {
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
-    pub fn shared_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.shared_account_id.deref()
+    pub fn shared_account_id(&self) -> & str {
+        use std::ops::Deref; self.shared_account_id.deref()
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn allow_association(&self) -> bool {
@@ -43,8 +42,7 @@ impl ConnectionAliasPermissionBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     pub fn set_shared_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_account_id = input;
-        self
+        self.shared_account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
     pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ConnectionAliasPermissionBuilder {
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn set_allow_association(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_association = input;
-        self
+        self.allow_association = input; self
     }
     /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
     pub fn get_allow_association(&self) -> &::std::option::Option<bool> {
@@ -70,19 +67,20 @@ impl ConnectionAliasPermissionBuilder {
     /// - [`shared_account_id`](crate::types::builders::ConnectionAliasPermissionBuilder::shared_account_id)
     /// - [`allow_association`](crate::types::builders::ConnectionAliasPermissionBuilder::allow_association)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectionAliasPermission, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectionAliasPermission {
-            shared_account_id: self.shared_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "shared_account_id",
-                    "shared_account_id was not specified but it is required when building ConnectionAliasPermission",
-                )
-            })?,
-            allow_association: self.allow_association.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allow_association",
-                    "allow_association was not specified but it is required when building ConnectionAliasPermission",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectionAliasPermission {
+                shared_account_id: self.shared_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shared_account_id", "shared_account_id was not specified but it is required when building ConnectionAliasPermission")
+                    )?
+                ,
+                allow_association: self.allow_association
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allow_association", "allow_association was not specified but it is required when building ConnectionAliasPermission")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that displays the definition of one extended metric that RUM sends to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDefinition {
+pub struct MetricDefinition  {
     /// <p>The ID of this metric definition.</p>
     pub metric_definition_id: ::std::string::String,
     /// <p>The name of the metric that is defined in this structure.</p>
@@ -13,43 +13,41 @@ pub struct MetricDefinition {
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub unit_label: ::std::option::Option<::std::string::String>,
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
-    pub dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dimension_keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl MetricDefinition {
+impl  MetricDefinition  {
     /// <p>The ID of this metric definition.</p>
-    pub fn metric_definition_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_definition_id.deref()
+    pub fn metric_definition_id(&self) -> & str {
+        use std::ops::Deref; self.metric_definition_id.deref()
     }
     /// <p>The name of the metric that is defined in this structure.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
-    pub fn value_key(&self) -> ::std::option::Option<&str> {
+    pub fn value_key(&self) -> ::std::option::Option<& str> {
         self.value_key.as_deref()
     }
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
-    pub fn unit_label(&self) -> ::std::option::Option<&str> {
+    pub fn unit_label(&self) -> ::std::option::Option<& str> {
         self.unit_label.as_deref()
     }
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
-    pub fn dimension_keys(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dimension_keys(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dimension_keys.as_ref()
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -68,7 +66,7 @@ pub struct MetricDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) value_key: ::std::option::Option<::std::string::String>,
     pub(crate) unit_label: ::std::option::Option<::std::string::String>,
-    pub(crate) dimension_keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimension_keys: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
@@ -81,8 +79,7 @@ impl MetricDefinitionBuilder {
     }
     /// <p>The ID of this metric definition.</p>
     pub fn set_metric_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_definition_id = input;
-        self
+        self.metric_definition_id = input; self
     }
     /// <p>The ID of this metric definition.</p>
     pub fn get_metric_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl MetricDefinitionBuilder {
     }
     /// <p>The name of the metric that is defined in this structure.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the metric that is defined in this structure.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +106,7 @@ impl MetricDefinitionBuilder {
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub fn set_value_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_key = input;
-        self
+        self.value_key = input; self
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     pub fn get_value_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +119,7 @@ impl MetricDefinitionBuilder {
     }
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit_label = input;
-        self
+        self.unit_label = input; self
     }
     /// <p>Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this metric is measured in.</p>
     pub fn get_unit_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,26 +130,18 @@ impl MetricDefinitionBuilder {
     /// To override the contents of this collection use [`set_dimension_keys`](Self::set_dimension_keys).
     ///
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
-    pub fn dimension_keys(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dimension_keys(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimension_keys.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dimension_keys = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dimension_keys = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
-    pub fn set_dimension_keys(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.dimension_keys = input;
-        self
+    pub fn set_dimension_keys(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dimension_keys = input; self
     }
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch The value of this field is used only if the metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>, the value of <code>DimensionKeys</code> is ignored.</p>
-    pub fn get_dimension_keys(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dimension_keys(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dimension_keys
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
@@ -167,8 +153,7 @@ impl MetricDefinitionBuilder {
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The pattern that defines the metric. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>If the metrics destination is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions.</p>
@@ -182,8 +167,7 @@ impl MetricDefinitionBuilder {
     }
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>If this metric definition is for a custom metric instead of an extended metric, this field displays the metric namespace that the custom metric is published to.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,24 +178,30 @@ impl MetricDefinitionBuilder {
     /// - [`metric_definition_id`](crate::types::builders::MetricDefinitionBuilder::metric_definition_id)
     /// - [`name`](crate::types::builders::MetricDefinitionBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricDefinition {
-            metric_definition_id: self.metric_definition_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_definition_id",
-                    "metric_definition_id was not specified but it is required when building MetricDefinition",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building MetricDefinition",
-                )
-            })?,
-            value_key: self.value_key,
-            unit_label: self.unit_label,
-            dimension_keys: self.dimension_keys,
-            event_pattern: self.event_pattern,
-            namespace: self.namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricDefinition {
+                metric_definition_id: self.metric_definition_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric_definition_id", "metric_definition_id was not specified but it is required when building MetricDefinition")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building MetricDefinition")
+                    )?
+                ,
+                value_key: self.value_key
+                ,
+                unit_label: self.unit_label
+                ,
+                dimension_keys: self.dimension_keys
+                ,
+                event_pattern: self.event_pattern
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

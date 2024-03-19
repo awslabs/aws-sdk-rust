@@ -3,19 +3,19 @@
 /// <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesInput {
+pub struct ModifyLoadBalancerAttributesInput  {
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The attributes for the load balancer.</p>
     pub load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
 }
-impl ModifyLoadBalancerAttributesInput {
+impl  ModifyLoadBalancerAttributesInput  {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The attributes for the load balancer.</p>
-    pub fn load_balancer_attributes(&self) -> ::std::option::Option<&crate::types::LoadBalancerAttributes> {
+    pub fn load_balancer_attributes(&self) -> ::std::option::Option<& crate::types::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     }
     /// <p>The attributes for the load balancer.</p>
     pub fn set_load_balancer_attributes(mut self, input: ::std::option::Option<crate::types::LoadBalancerAttributes>) -> Self {
-        self.load_balancer_attributes = input;
-        self
+        self.load_balancer_attributes = input; self
     }
     /// <p>The attributes for the load balancer.</p>
     pub fn get_load_balancer_attributes(&self) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
         &self.load_balancer_attributes
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
-            load_balancer_name: self.load_balancer_name,
-            load_balancer_attributes: self.load_balancer_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
+                load_balancer_name: self.load_balancer_name
+                ,
+                load_balancer_attributes: self.load_balancer_attributes
+                ,
+            }
+        )
     }
 }
+

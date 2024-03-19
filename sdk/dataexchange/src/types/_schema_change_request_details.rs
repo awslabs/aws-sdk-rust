@@ -3,21 +3,22 @@
 /// <p>Extra details specific to this schema change type notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaChangeRequestDetails {
+pub struct SchemaChangeRequestDetails  {
     /// <p>List of schema changes happening in the scope of this notification. This can have up to 100 entries.</p>
-    pub changes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaChangeDetails>>,
+    pub changes: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaChangeDetails>>,
     /// <p>A date in the future when the schema change is taking effect.</p>
     pub schema_change_at: ::aws_smithy_types::DateTime,
 }
-impl SchemaChangeRequestDetails {
+impl  SchemaChangeRequestDetails  {
     /// <p>List of schema changes happening in the scope of this notification. This can have up to 100 entries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.changes.is_none()`.
-    pub fn changes(&self) -> &[crate::types::SchemaChangeDetails] {
-        self.changes.as_deref().unwrap_or_default()
+    pub fn changes(&self) -> & [crate::types::SchemaChangeDetails] {
+        self.changes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A date in the future when the schema change is taking effect.</p>
-    pub fn schema_change_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn schema_change_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.schema_change_at
     }
 }
@@ -32,7 +33,7 @@ impl SchemaChangeRequestDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaChangeRequestDetailsBuilder {
-    pub(crate) changes: ::std::option::Option<::std::vec::Vec<crate::types::SchemaChangeDetails>>,
+    pub(crate) changes: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaChangeDetails>>,
     pub(crate) schema_change_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SchemaChangeRequestDetailsBuilder {
@@ -43,17 +44,16 @@ impl SchemaChangeRequestDetailsBuilder {
     /// <p>List of schema changes happening in the scope of this notification. This can have up to 100 entries.</p>
     pub fn changes(mut self, input: crate::types::SchemaChangeDetails) -> Self {
         let mut v = self.changes.unwrap_or_default();
-        v.push(input);
-        self.changes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.changes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of schema changes happening in the scope of this notification. This can have up to 100 entries.</p>
-    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaChangeDetails>>) -> Self {
-        self.changes = input;
-        self
+    pub fn set_changes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaChangeDetails>>) -> Self {
+        self.changes = input; self
     }
     /// <p>List of schema changes happening in the scope of this notification. This can have up to 100 entries.</p>
-    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaChangeDetails>> {
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaChangeDetails>> {
         &self.changes
     }
     /// <p>A date in the future when the schema change is taking effect.</p>
@@ -64,8 +64,7 @@ impl SchemaChangeRequestDetailsBuilder {
     }
     /// <p>A date in the future when the schema change is taking effect.</p>
     pub fn set_schema_change_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.schema_change_at = input;
-        self
+        self.schema_change_at = input; self
     }
     /// <p>A date in the future when the schema change is taking effect.</p>
     pub fn get_schema_change_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -75,14 +74,17 @@ impl SchemaChangeRequestDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_change_at`](crate::types::builders::SchemaChangeRequestDetailsBuilder::schema_change_at)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaChangeRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaChangeRequestDetails {
-            changes: self.changes,
-            schema_change_at: self.schema_change_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_change_at",
-                    "schema_change_at was not specified but it is required when building SchemaChangeRequestDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaChangeRequestDetails {
+                changes: self.changes
+                ,
+                schema_change_at: self.schema_change_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema_change_at", "schema_change_at was not specified but it is required when building SchemaChangeRequestDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

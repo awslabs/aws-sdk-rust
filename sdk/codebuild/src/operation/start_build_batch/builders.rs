@@ -5,54 +5,50 @@ pub use crate::operation::start_build_batch::_start_build_batch_input::StartBuil
 
 impl StartBuildBatchInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_build_batch::StartBuildBatchOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_build_batch::StartBuildBatchError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_build_batch();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_build_batch::StartBuildBatchOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_build_batch::StartBuildBatchError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_build_batch();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartBuildBatch`.
-///
+/// 
 /// <p>Starts a batch build for a project.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartBuildBatchFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_build_batch::builders::StartBuildBatchInputBuilder,
+                    inner: crate::operation::start_build_batch::builders::StartBuildBatchInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_build_batch::StartBuildBatchOutput,
-        crate::operation::start_build_batch::StartBuildBatchError,
-    > for StartBuildBatchFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_build_batch::StartBuildBatchOutput,
-            crate::operation::start_build_batch::StartBuildBatchError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_build_batch::StartBuildBatchOutput,
+                    crate::operation::start_build_batch::StartBuildBatchError,
+                > for StartBuildBatchFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_build_batch::StartBuildBatchOutput,
+                        crate::operation::start_build_batch::StartBuildBatchError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartBuildBatchFluentBuilder {
     /// Creates a new `StartBuildBatch`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl StartBuildBatchFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_build_batch::StartBuildBatchOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_build_batch::StartBuildBatchError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_build_batch::StartBuildBatch::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_build_batch::StartBuildBatch::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_build_batch::StartBuildBatchOutput,
-        crate::operation::start_build_batch::StartBuildBatchError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_build_batch::StartBuildBatchOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_build_batch::StartBuildBatchError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_build_batch::StartBuildBatch::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_build_batch::StartBuildBatch::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_build_batch::StartBuildBatchOutput, crate::operation::start_build_batch::StartBuildBatchError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -132,12 +119,12 @@ impl StartBuildBatchFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-    pub fn set_secondary_sources_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>) -> Self {
+    pub fn set_secondary_sources_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>>) -> Self {
         self.inner = self.inner.set_secondary_sources_override(input);
         self
     }
     /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
-    pub fn get_secondary_sources_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+    pub fn get_secondary_sources_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSource>> {
         self.inner.get_secondary_sources_override()
     }
     /// Appends an item to `secondarySourcesVersionOverride`.
@@ -150,15 +137,12 @@ impl StartBuildBatchFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-    pub fn set_secondary_sources_version_override(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
-    ) -> Self {
+    pub fn set_secondary_sources_version_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>>) -> Self {
         self.inner = self.inner.set_secondary_sources_version_override(input);
         self
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
-    pub fn get_secondary_sources_version_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+    pub fn get_secondary_sources_version_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectSourceVersion>> {
         self.inner.get_secondary_sources_version_override()
     }
     /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
@@ -283,12 +267,12 @@ impl StartBuildBatchFluentBuilder {
         self
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-    pub fn set_secondary_artifacts_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
+    pub fn set_secondary_artifacts_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>>) -> Self {
         self.inner = self.inner.set_secondary_artifacts_override(input);
         self
     }
     /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
-    pub fn get_secondary_artifacts_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+    pub fn get_secondary_artifacts_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectArtifacts>> {
         self.inner.get_secondary_artifacts_override()
     }
     /// Appends an item to `environmentVariablesOverride`.
@@ -301,12 +285,12 @@ impl StartBuildBatchFluentBuilder {
         self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-    pub fn set_environment_variables_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+    pub fn set_environment_variables_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>>) -> Self {
         self.inner = self.inner.set_environment_variables_override(input);
         self
     }
     /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
-    pub fn get_environment_variables_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+    pub fn get_environment_variables_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentVariable>> {
         self.inner.get_environment_variables_override()
     }
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
@@ -709,3 +693,4 @@ impl StartBuildBatchFluentBuilder {
         self.inner.get_debug_session_enabled()
     }
 }
+

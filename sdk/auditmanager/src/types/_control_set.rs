@@ -3,28 +3,29 @@
 /// <p>A set of controls in Audit Manager.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlSet {
+pub struct ControlSet  {
     /// <p>The identifier of the control set in the assessment. This is the control set name in a plain string format.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control set.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of controls within the control set.</p>
-    pub controls: ::std::option::Option<::std::vec::Vec<crate::types::Control>>,
+    pub controls: ::std::option::Option<::std::vec::Vec::<crate::types::Control>>,
 }
-impl ControlSet {
+impl  ControlSet  {
     /// <p>The identifier of the control set in the assessment. This is the control set name in a plain string format.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the control set.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of controls within the control set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.controls.is_none()`.
-    pub fn controls(&self) -> &[crate::types::Control] {
-        self.controls.as_deref().unwrap_or_default()
+    pub fn controls(&self) -> & [crate::types::Control] {
+        self.controls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ControlSet {
@@ -40,7 +41,7 @@ impl ControlSet {
 pub struct ControlSetBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) controls: ::std::option::Option<::std::vec::Vec<crate::types::Control>>,
+    pub(crate) controls: ::std::option::Option<::std::vec::Vec::<crate::types::Control>>,
 }
 impl ControlSetBuilder {
     /// <p>The identifier of the control set in the assessment. This is the control set name in a plain string format.</p>
@@ -50,8 +51,7 @@ impl ControlSetBuilder {
     }
     /// <p>The identifier of the control set in the assessment. This is the control set name in a plain string format.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the control set in the assessment. This is the control set name in a plain string format.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl ControlSetBuilder {
     }
     /// <p>The name of the control set.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the control set.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl ControlSetBuilder {
     /// <p>The list of controls within the control set.</p>
     pub fn controls(mut self, input: crate::types::Control) -> Self {
         let mut v = self.controls.unwrap_or_default();
-        v.push(input);
-        self.controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of controls within the control set.</p>
-    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Control>>) -> Self {
-        self.controls = input;
-        self
+    pub fn set_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Control>>) -> Self {
+        self.controls = input; self
     }
     /// <p>The list of controls within the control set.</p>
-    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Control>> {
+    pub fn get_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Control>> {
         &self.controls
     }
     /// Consumes the builder and constructs a [`ControlSet`](crate::types::ControlSet).
     pub fn build(self) -> crate::types::ControlSet {
         crate::types::ControlSet {
-            id: self.id,
-            name: self.name,
-            controls: self.controls,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            controls: self.controls
+            ,
         }
     }
 }
+

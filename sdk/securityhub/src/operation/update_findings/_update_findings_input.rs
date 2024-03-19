@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFindingsInput {
+pub struct UpdateFindingsInput  {
     /// <p>A collection of attributes that specify which findings you want to update.</p>
     pub filters: ::std::option::Option<crate::types::AwsSecurityFindingFilters>,
     /// <p>The updated note for the finding.</p>
@@ -10,17 +10,17 @@ pub struct UpdateFindingsInput {
     /// <p>The updated record state for the finding.</p>
     pub record_state: ::std::option::Option<crate::types::RecordState>,
 }
-impl UpdateFindingsInput {
+impl  UpdateFindingsInput  {
     /// <p>A collection of attributes that specify which findings you want to update.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
     /// <p>The updated note for the finding.</p>
-    pub fn note(&self) -> ::std::option::Option<&crate::types::NoteUpdate> {
+    pub fn note(&self) -> ::std::option::Option<& crate::types::NoteUpdate> {
         self.note.as_ref()
     }
     /// <p>The updated record state for the finding.</p>
-    pub fn record_state(&self) -> ::std::option::Option<&crate::types::RecordState> {
+    pub fn record_state(&self) -> ::std::option::Option<& crate::types::RecordState> {
         self.record_state.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>A collection of attributes that specify which findings you want to update.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
@@ -62,8 +61,7 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>The updated note for the finding.</p>
     pub fn set_note(mut self, input: ::std::option::Option<crate::types::NoteUpdate>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
     }
     /// <p>The updated note for the finding.</p>
     pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
@@ -76,21 +74,24 @@ impl UpdateFindingsInputBuilder {
     }
     /// <p>The updated record state for the finding.</p>
     pub fn set_record_state(mut self, input: ::std::option::Option<crate::types::RecordState>) -> Self {
-        self.record_state = input;
-        self
+        self.record_state = input; self
     }
     /// <p>The updated record state for the finding.</p>
     pub fn get_record_state(&self) -> &::std::option::Option<crate::types::RecordState> {
         &self.record_state
     }
     /// Consumes the builder and constructs a [`UpdateFindingsInput`](crate::operation::update_findings::UpdateFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_findings::UpdateFindingsInput {
-            filters: self.filters,
-            note: self.note,
-            record_state: self.record_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_findings::UpdateFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_findings::UpdateFindingsInput {
+                filters: self.filters
+                ,
+                note: self.note
+                ,
+                record_state: self.record_state
+                ,
+            }
+        )
     }
 }
+

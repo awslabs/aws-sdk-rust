@@ -3,13 +3,13 @@
 /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventBatchingCondition {
+pub struct EventBatchingCondition  {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub batch_size: i32,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub batch_window: ::std::option::Option<i32>,
 }
-impl EventBatchingCondition {
+impl  EventBatchingCondition  {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub fn batch_size(&self) -> i32 {
         self.batch_size
@@ -42,8 +42,7 @@ impl EventBatchingConditionBuilder {
     }
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl EventBatchingConditionBuilder {
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn set_batch_window(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.batch_window = input;
-        self
+        self.batch_window = input; self
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn get_batch_window(&self) -> &::std::option::Option<i32> {
@@ -67,14 +65,17 @@ impl EventBatchingConditionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`batch_size`](crate::types::builders::EventBatchingConditionBuilder::batch_size)
     pub fn build(self) -> ::std::result::Result<crate::types::EventBatchingCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EventBatchingCondition {
-            batch_size: self.batch_size.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "batch_size",
-                    "batch_size was not specified but it is required when building EventBatchingCondition",
-                )
-            })?,
-            batch_window: self.batch_window,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EventBatchingCondition {
+                batch_size: self.batch_size
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("batch_size", "batch_size was not specified but it is required when building EventBatchingCondition")
+                    )?
+                ,
+                batch_window: self.batch_window
+                ,
+            }
+        )
     }
 }
+

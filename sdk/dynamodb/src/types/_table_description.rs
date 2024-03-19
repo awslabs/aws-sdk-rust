@@ -3,7 +3,7 @@
 /// <p>Represents the properties of a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableDescription {
+pub struct TableDescription  {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct TableDescription {
     /// <li>
     /// <p><code>AttributeType</code> - The data type for the attribute.</p></li>
     /// </ul>
-    pub attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub attribute_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeDefinition>>,
     /// <p>The name of the table.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
@@ -32,7 +32,7 @@ pub struct TableDescription {
     /// </note></li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>,
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li>
@@ -93,7 +93,7 @@ pub struct TableDescription {
     /// <p><code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexDescription>>,
+    pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndexDescription>>,
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
     /// <li>
@@ -139,7 +139,7 @@ pub struct TableDescription {
     /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexDescription>>,
+    pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndexDescription>>,
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -158,7 +158,7 @@ pub struct TableDescription {
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>Represents replicas of the table.</p>
-    pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
+    pub replicas: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaDescription>>,
     /// <p>Contains details for the restore.</p>
     pub restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     /// <p>The description of the server-side encryption status on the specified table.</p>
@@ -170,7 +170,7 @@ pub struct TableDescription {
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
-impl TableDescription {
+impl  TableDescription  {
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
     /// <ul>
@@ -179,13 +179,14 @@ impl TableDescription {
     /// <li>
     /// <p><code>AttributeType</code> - The data type for the attribute.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_definitions.is_none()`.
-    pub fn attribute_definitions(&self) -> &[crate::types::AttributeDefinition] {
-        self.attribute_definitions.as_deref().unwrap_or_default()
+    pub fn attribute_definitions(&self) -> & [crate::types::AttributeDefinition] {
+        self.attribute_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
@@ -205,10 +206,11 @@ impl TableDescription {
     /// </note></li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.key_schema.is_none()`.
-    pub fn key_schema(&self) -> &[crate::types::KeySchemaElement] {
-        self.key_schema.as_deref().unwrap_or_default()
+    pub fn key_schema(&self) -> & [crate::types::KeySchemaElement] {
+        self.key_schema.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -227,15 +229,15 @@ impl TableDescription {
     /// <li>
     /// <p><code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.</p></li>
     /// </ul>
-    pub fn table_status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
+    pub fn table_status(&self) -> ::std::option::Option<& crate::types::TableStatus> {
         self.table_status.as_ref()
     }
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
-    pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughputDescription> {
+    pub fn provisioned_throughput(&self) -> ::std::option::Option<& crate::types::ProvisionedThroughputDescription> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
@@ -247,15 +249,15 @@ impl TableDescription {
         self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
-    pub fn table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn table_arn(&self) -> ::std::option::Option<& str> {
         self.table_arn.as_deref()
     }
     /// <p>Unique identifier for the table for which the backup was created.</p>
-    pub fn table_id(&self) -> ::std::option::Option<&str> {
+    pub fn table_id(&self) -> ::std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>Contains the details for the read/write capacity mode.</p>
-    pub fn billing_mode_summary(&self) -> ::std::option::Option<&crate::types::BillingModeSummary> {
+    pub fn billing_mode_summary(&self) -> ::std::option::Option<& crate::types::BillingModeSummary> {
         self.billing_mode_summary.as_ref()
     }
     /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
@@ -286,10 +288,11 @@ impl TableDescription {
     /// <p><code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.local_secondary_indexes.is_none()`.
-    pub fn local_secondary_indexes(&self) -> &[crate::types::LocalSecondaryIndexDescription] {
-        self.local_secondary_indexes.as_deref().unwrap_or_default()
+    pub fn local_secondary_indexes(&self) -> & [crate::types::LocalSecondaryIndexDescription] {
+        self.local_secondary_indexes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
@@ -336,13 +339,14 @@ impl TableDescription {
     /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
-    pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndexDescription] {
-        self.global_secondary_indexes.as_deref().unwrap_or_default()
+    pub fn global_secondary_indexes(&self) -> & [crate::types::GlobalSecondaryIndexDescription] {
+        self.global_secondary_indexes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
-    pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {
+    pub fn stream_specification(&self) -> ::std::option::Option<& crate::types::StreamSpecification> {
         self.stream_specification.as_ref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -355,37 +359,38 @@ impl TableDescription {
     /// <li>
     /// <p><code>StreamLabel</code></p></li>
     /// </ul>
-    pub fn latest_stream_label(&self) -> ::std::option::Option<&str> {
+    pub fn latest_stream_label(&self) -> ::std::option::Option<& str> {
         self.latest_stream_label.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
-    pub fn latest_stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn latest_stream_arn(&self) -> ::std::option::Option<& str> {
         self.latest_stream_arn.as_deref()
     }
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
-    pub fn global_table_version(&self) -> ::std::option::Option<&str> {
+    pub fn global_table_version(&self) -> ::std::option::Option<& str> {
         self.global_table_version.as_deref()
     }
     /// <p>Represents replicas of the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicas.is_none()`.
-    pub fn replicas(&self) -> &[crate::types::ReplicaDescription] {
-        self.replicas.as_deref().unwrap_or_default()
+    pub fn replicas(&self) -> & [crate::types::ReplicaDescription] {
+        self.replicas.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains details for the restore.</p>
-    pub fn restore_summary(&self) -> ::std::option::Option<&crate::types::RestoreSummary> {
+    pub fn restore_summary(&self) -> ::std::option::Option<& crate::types::RestoreSummary> {
         self.restore_summary.as_ref()
     }
     /// <p>The description of the server-side encryption status on the specified table.</p>
-    pub fn sse_description(&self) -> ::std::option::Option<&crate::types::SseDescription> {
+    pub fn sse_description(&self) -> ::std::option::Option<& crate::types::SseDescription> {
         self.sse_description.as_ref()
     }
     /// <p>Contains information about the table archive.</p>
-    pub fn archival_summary(&self) -> ::std::option::Option<&crate::types::ArchivalSummary> {
+    pub fn archival_summary(&self) -> ::std::option::Option<& crate::types::ArchivalSummary> {
         self.archival_summary.as_ref()
     }
     /// <p>Contains details of the table class.</p>
-    pub fn table_class_summary(&self) -> ::std::option::Option<&crate::types::TableClassSummary> {
+    pub fn table_class_summary(&self) -> ::std::option::Option<& crate::types::TableClassSummary> {
         self.table_class_summary.as_ref()
     }
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
@@ -404,9 +409,9 @@ impl TableDescription {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TableDescriptionBuilder {
-    pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub(crate) attribute_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeDefinition>>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>,
     pub(crate) table_status: ::std::option::Option<crate::types::TableStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughputDescription>,
@@ -415,13 +420,13 @@ pub struct TableDescriptionBuilder {
     pub(crate) table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) table_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_mode_summary: ::std::option::Option<crate::types::BillingModeSummary>,
-    pub(crate) local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexDescription>>,
-    pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexDescription>>,
+    pub(crate) local_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndexDescription>>,
+    pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndexDescription>>,
     pub(crate) stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     pub(crate) latest_stream_label: ::std::option::Option<::std::string::String>,
     pub(crate) latest_stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_table_version: ::std::option::Option<::std::string::String>,
-    pub(crate) replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
+    pub(crate) replicas: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaDescription>>,
     pub(crate) restore_summary: ::std::option::Option<crate::types::RestoreSummary>,
     pub(crate) sse_description: ::std::option::Option<crate::types::SseDescription>,
     pub(crate) archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
@@ -443,9 +448,9 @@ impl TableDescriptionBuilder {
     /// </ul>
     pub fn attribute_definitions(mut self, input: crate::types::AttributeDefinition) -> Self {
         let mut v = self.attribute_definitions.unwrap_or_default();
-        v.push(input);
-        self.attribute_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
@@ -455,9 +460,8 @@ impl TableDescriptionBuilder {
     /// <li>
     /// <p><code>AttributeType</code> - The data type for the attribute.</p></li>
     /// </ul>
-    pub fn set_attribute_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>) -> Self {
-        self.attribute_definitions = input;
-        self
+    pub fn set_attribute_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeDefinition>>) -> Self {
+        self.attribute_definitions = input; self
     }
     /// <p>An array of <code>AttributeDefinition</code> objects. Each of these objects describes one attribute in the table and index key schema.</p>
     /// <p>Each <code>AttributeDefinition</code> object in this array is composed of:</p>
@@ -467,7 +471,7 @@ impl TableDescriptionBuilder {
     /// <li>
     /// <p><code>AttributeType</code> - The data type for the attribute.</p></li>
     /// </ul>
-    pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>> {
+    pub fn get_attribute_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeDefinition>> {
         &self.attribute_definitions
     }
     /// <p>The name of the table.</p>
@@ -477,8 +481,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -507,9 +510,9 @@ impl TableDescriptionBuilder {
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
-        v.push(input);
-        self.key_schema = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.key_schema = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
     /// <ul>
@@ -528,9 +531,8 @@ impl TableDescriptionBuilder {
     /// </note></li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>) -> Self {
-        self.key_schema = input;
-        self
+    pub fn set_key_schema(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>>) -> Self {
+        self.key_schema = input; self
     }
     /// <p>The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
     /// <ul>
@@ -549,7 +551,7 @@ impl TableDescriptionBuilder {
     /// </note></li>
     /// </ul>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>> {
+    pub fn get_key_schema(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeySchemaElement>> {
         &self.key_schema
     }
     /// <p>The current state of the table:</p>
@@ -591,8 +593,7 @@ impl TableDescriptionBuilder {
     /// <p><code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for more information.</p></li>
     /// </ul>
     pub fn set_table_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
-        self.table_status = input;
-        self
+        self.table_status = input; self
     }
     /// <p>The current state of the table:</p>
     /// <ul>
@@ -621,8 +622,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time when the table was created, in <a href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -635,8 +635,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
     pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughputDescription>) -> Self {
-        self.provisioned_throughput = input;
-        self
+        self.provisioned_throughput = input; self
     }
     /// <p>The provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughputDescription> {
@@ -649,8 +648,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn set_table_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.table_size_bytes = input;
-        self
+        self.table_size_bytes = input; self
     }
     /// <p>The total size of the specified table, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn get_table_size_bytes(&self) -> &::std::option::Option<i64> {
@@ -663,8 +661,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn set_item_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// <p>The number of items in the specified table. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn get_item_count(&self) -> &::std::option::Option<i64> {
@@ -677,8 +674,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the table.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -691,8 +687,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Unique identifier for the table for which the backup was created.</p>
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_id = input;
-        self
+        self.table_id = input; self
     }
     /// <p>Unique identifier for the table for which the backup was created.</p>
     pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -705,8 +700,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Contains the details for the read/write capacity mode.</p>
     pub fn set_billing_mode_summary(mut self, input: ::std::option::Option<crate::types::BillingModeSummary>) -> Self {
-        self.billing_mode_summary = input;
-        self
+        self.billing_mode_summary = input; self
     }
     /// <p>Contains the details for the read/write capacity mode.</p>
     pub fn get_billing_mode_summary(&self) -> &::std::option::Option<crate::types::BillingModeSummary> {
@@ -746,9 +740,9 @@ impl TableDescriptionBuilder {
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
     pub fn local_secondary_indexes(mut self, input: crate::types::LocalSecondaryIndexDescription) -> Self {
         let mut v = self.local_secondary_indexes.unwrap_or_default();
-        v.push(input);
-        self.local_secondary_indexes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.local_secondary_indexes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
@@ -778,12 +772,8 @@ impl TableDescriptionBuilder {
     /// <p><code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn set_local_secondary_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexDescription>>,
-    ) -> Self {
-        self.local_secondary_indexes = input;
-        self
+    pub fn set_local_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndexDescription>>) -> Self {
+        self.local_secondary_indexes = input; self
     }
     /// <p>Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value. Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of data within a given item collection cannot exceed 10 GB. Each element is composed of:</p>
     /// <ul>
@@ -813,7 +803,7 @@ impl TableDescriptionBuilder {
     /// <p><code>ItemCount</code> - Represents the number of items in the index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn get_local_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndexDescription>> {
+    pub fn get_local_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndexDescription>> {
         &self.local_secondary_indexes
     }
     /// Appends an item to `global_secondary_indexes`.
@@ -867,9 +857,9 @@ impl TableDescriptionBuilder {
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
     pub fn global_secondary_indexes(mut self, input: crate::types::GlobalSecondaryIndexDescription) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
-        v.push(input);
-        self.global_secondary_indexes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.global_secondary_indexes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
@@ -916,12 +906,8 @@ impl TableDescriptionBuilder {
     /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn set_global_secondary_indexes(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexDescription>>,
-    ) -> Self {
-        self.global_secondary_indexes = input;
-        self
+    pub fn set_global_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndexDescription>>) -> Self {
+        self.global_secondary_indexes = input; self
     }
     /// <p>The global secondary indexes, if any, on the table. Each index is scoped to a given partition key value. Each element is composed of:</p>
     /// <ul>
@@ -968,7 +954,7 @@ impl TableDescriptionBuilder {
     /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units, along with data about increases and decreases.</p></li>
     /// </ul>
     /// <p>If the table is in the <code>DELETING</code> state, no information about indexes will be returned.</p>
-    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexDescription>> {
+    pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndexDescription>> {
         &self.global_secondary_indexes
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
@@ -978,8 +964,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
-        self.stream_specification = input;
-        self
+        self.stream_specification = input; self
     }
     /// <p>The current DynamoDB Streams configuration for the table.</p>
     pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {
@@ -1010,8 +995,7 @@ impl TableDescriptionBuilder {
     /// <p><code>StreamLabel</code></p></li>
     /// </ul>
     pub fn set_latest_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_stream_label = input;
-        self
+        self.latest_stream_label = input; self
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
@@ -1033,8 +1017,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
     pub fn set_latest_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_stream_arn = input;
-        self
+        self.latest_stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the latest stream for this table.</p>
     pub fn get_latest_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1047,8 +1030,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub fn set_global_table_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_table_version = input;
-        self
+        self.global_table_version = input; self
     }
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub fn get_global_table_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -1061,17 +1043,16 @@ impl TableDescriptionBuilder {
     /// <p>Represents replicas of the table.</p>
     pub fn replicas(mut self, input: crate::types::ReplicaDescription) -> Self {
         let mut v = self.replicas.unwrap_or_default();
-        v.push(input);
-        self.replicas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replicas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents replicas of the table.</p>
-    pub fn set_replicas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>) -> Self {
-        self.replicas = input;
-        self
+    pub fn set_replicas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicaDescription>>) -> Self {
+        self.replicas = input; self
     }
     /// <p>Represents replicas of the table.</p>
-    pub fn get_replicas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>> {
+    pub fn get_replicas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicaDescription>> {
         &self.replicas
     }
     /// <p>Contains details for the restore.</p>
@@ -1081,8 +1062,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Contains details for the restore.</p>
     pub fn set_restore_summary(mut self, input: ::std::option::Option<crate::types::RestoreSummary>) -> Self {
-        self.restore_summary = input;
-        self
+        self.restore_summary = input; self
     }
     /// <p>Contains details for the restore.</p>
     pub fn get_restore_summary(&self) -> &::std::option::Option<crate::types::RestoreSummary> {
@@ -1095,8 +1075,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>The description of the server-side encryption status on the specified table.</p>
     pub fn set_sse_description(mut self, input: ::std::option::Option<crate::types::SseDescription>) -> Self {
-        self.sse_description = input;
-        self
+        self.sse_description = input; self
     }
     /// <p>The description of the server-side encryption status on the specified table.</p>
     pub fn get_sse_description(&self) -> &::std::option::Option<crate::types::SseDescription> {
@@ -1109,8 +1088,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Contains information about the table archive.</p>
     pub fn set_archival_summary(mut self, input: ::std::option::Option<crate::types::ArchivalSummary>) -> Self {
-        self.archival_summary = input;
-        self
+        self.archival_summary = input; self
     }
     /// <p>Contains information about the table archive.</p>
     pub fn get_archival_summary(&self) -> &::std::option::Option<crate::types::ArchivalSummary> {
@@ -1123,8 +1101,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Contains details of the table class.</p>
     pub fn set_table_class_summary(mut self, input: ::std::option::Option<crate::types::TableClassSummary>) -> Self {
-        self.table_class_summary = input;
-        self
+        self.table_class_summary = input; self
     }
     /// <p>Contains details of the table class.</p>
     pub fn get_table_class_summary(&self) -> &::std::option::Option<crate::types::TableClassSummary> {
@@ -1137,8 +1114,7 @@ impl TableDescriptionBuilder {
     }
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
     }
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
@@ -1147,29 +1123,53 @@ impl TableDescriptionBuilder {
     /// Consumes the builder and constructs a [`TableDescription`](crate::types::TableDescription).
     pub fn build(self) -> crate::types::TableDescription {
         crate::types::TableDescription {
-            attribute_definitions: self.attribute_definitions,
-            table_name: self.table_name,
-            key_schema: self.key_schema,
-            table_status: self.table_status,
-            creation_date_time: self.creation_date_time,
-            provisioned_throughput: self.provisioned_throughput,
-            table_size_bytes: self.table_size_bytes,
-            item_count: self.item_count,
-            table_arn: self.table_arn,
-            table_id: self.table_id,
-            billing_mode_summary: self.billing_mode_summary,
-            local_secondary_indexes: self.local_secondary_indexes,
-            global_secondary_indexes: self.global_secondary_indexes,
-            stream_specification: self.stream_specification,
-            latest_stream_label: self.latest_stream_label,
-            latest_stream_arn: self.latest_stream_arn,
-            global_table_version: self.global_table_version,
-            replicas: self.replicas,
-            restore_summary: self.restore_summary,
-            sse_description: self.sse_description,
-            archival_summary: self.archival_summary,
-            table_class_summary: self.table_class_summary,
-            deletion_protection_enabled: self.deletion_protection_enabled,
+            attribute_definitions: self.attribute_definitions
+            ,
+            table_name: self.table_name
+            ,
+            key_schema: self.key_schema
+            ,
+            table_status: self.table_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            provisioned_throughput: self.provisioned_throughput
+            ,
+            table_size_bytes: self.table_size_bytes
+            ,
+            item_count: self.item_count
+            ,
+            table_arn: self.table_arn
+            ,
+            table_id: self.table_id
+            ,
+            billing_mode_summary: self.billing_mode_summary
+            ,
+            local_secondary_indexes: self.local_secondary_indexes
+            ,
+            global_secondary_indexes: self.global_secondary_indexes
+            ,
+            stream_specification: self.stream_specification
+            ,
+            latest_stream_label: self.latest_stream_label
+            ,
+            latest_stream_arn: self.latest_stream_arn
+            ,
+            global_table_version: self.global_table_version
+            ,
+            replicas: self.replicas
+            ,
+            restore_summary: self.restore_summary
+            ,
+            sse_description: self.sse_description
+            ,
+            archival_summary: self.archival_summary
+            ,
+            table_class_summary: self.table_class_summary
+            ,
+            deletion_protection_enabled: self.deletion_protection_enabled
+            ,
         }
     }
 }
+

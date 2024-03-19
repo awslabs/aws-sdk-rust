@@ -3,7 +3,7 @@
 /// <p>An IPAM discovered resource CIDR. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses. The discovered resource CIDR is the IP address range in CIDR notation that is associated with the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamDiscoveredResourceCidr {
+pub struct IpamDiscoveredResourceCidr  {
     /// <p>The resource discovery ID.</p>
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource Region.</p>
@@ -17,7 +17,7 @@ pub struct IpamDiscoveredResourceCidr {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::IpamResourceType>,
     /// <p>The resource tags.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>,
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
     /// <li>
@@ -33,36 +33,37 @@ pub struct IpamDiscoveredResourceCidr {
     /// <p>The last successful resource discovery time.</p>
     pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IpamDiscoveredResourceCidr {
+impl  IpamDiscoveredResourceCidr  {
     /// <p>The resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>The resource Region.</p>
-    pub fn resource_region(&self) -> ::std::option::Option<&str> {
+    pub fn resource_region(&self) -> ::std::option::Option<& str> {
         self.resource_region.as_deref()
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource owner ID.</p>
-    pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> ::std::option::Option<& str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The resource CIDR.</p>
-    pub fn resource_cidr(&self) -> ::std::option::Option<&str> {
+    pub fn resource_cidr(&self) -> ::std::option::Option<& str> {
         self.resource_cidr.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::IpamResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The resource tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::IpamResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::IpamResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -77,11 +78,11 @@ impl IpamDiscoveredResourceCidr {
         self.ip_usage
     }
     /// <p>The VPC ID.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
 }
@@ -102,7 +103,7 @@ pub struct IpamDiscoveredResourceCidrBuilder {
     pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_cidr: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::IpamResourceType>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>,
     pub(crate) ip_usage: ::std::option::Option<f64>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -115,8 +116,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource discovery ID.</p>
     pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input;
-        self
+        self.ipam_resource_discovery_id = input; self
     }
     /// <p>The resource discovery ID.</p>
     pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource Region.</p>
     pub fn set_resource_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_region = input;
-        self
+        self.resource_region = input; self
     }
     /// <p>The resource Region.</p>
     pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource owner ID.</p>
     pub fn set_resource_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner_id = input;
-        self
+        self.resource_owner_id = input; self
     }
     /// <p>The resource owner ID.</p>
     pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource CIDR.</p>
     pub fn set_resource_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_cidr = input;
-        self
+        self.resource_cidr = input; self
     }
     /// <p>The resource CIDR.</p>
     pub fn get_resource_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamResourceType> {
@@ -199,17 +194,16 @@ impl IpamDiscoveredResourceCidrBuilder {
     /// <p>The resource tags.</p>
     pub fn resource_tags(mut self, input: crate::types::IpamResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource tags.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>The resource tags.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamResourceTag>> {
         &self.resource_tags
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
@@ -235,8 +229,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     /// <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs).</p></li>
     /// </ul>
     pub fn set_ip_usage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.ip_usage = input;
-        self
+        self.ip_usage = input; self
     }
     /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
     /// <ul>
@@ -257,8 +250,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC ID.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +263,7 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn set_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.sample_time = input;
-        self
+        self.sample_time = input; self
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn get_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -281,16 +272,27 @@ impl IpamDiscoveredResourceCidrBuilder {
     /// Consumes the builder and constructs a [`IpamDiscoveredResourceCidr`](crate::types::IpamDiscoveredResourceCidr).
     pub fn build(self) -> crate::types::IpamDiscoveredResourceCidr {
         crate::types::IpamDiscoveredResourceCidr {
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-            resource_region: self.resource_region,
-            resource_id: self.resource_id,
-            resource_owner_id: self.resource_owner_id,
-            resource_cidr: self.resource_cidr,
-            resource_type: self.resource_type,
-            resource_tags: self.resource_tags,
-            ip_usage: self.ip_usage,
-            vpc_id: self.vpc_id,
-            sample_time: self.sample_time,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id
+            ,
+            resource_region: self.resource_region
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_owner_id: self.resource_owner_id
+            ,
+            resource_cidr: self.resource_cidr
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_tags: self.resource_tags
+            ,
+            ip_usage: self.ip_usage
+            ,
+            vpc_id: self.vpc_id
+            ,
+            sample_time: self.sample_time
+            ,
         }
     }
 }
+

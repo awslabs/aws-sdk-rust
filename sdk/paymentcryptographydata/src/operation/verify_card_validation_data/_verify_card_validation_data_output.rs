@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyCardValidationDataOutput {
+pub struct VerifyCardValidationDataOutput  {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify CVV or CSC.</p>
     pub key_arn: ::std::string::String,
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
@@ -10,24 +10,22 @@ pub struct VerifyCardValidationDataOutput {
     pub key_check_value: ::std::string::String,
     _request_id: Option<String>,
 }
-impl VerifyCardValidationDataOutput {
+impl  VerifyCardValidationDataOutput  {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify CVV or CSC.</p>
-    pub fn key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.key_arn.deref()
+    pub fn key_arn(&self) -> & str {
+        use std::ops::Deref; self.key_arn.deref()
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
-    pub fn key_check_value(&self) -> &str {
-        use std::ops::Deref;
-        self.key_check_value.deref()
+    pub fn key_check_value(&self) -> & str {
+        use std::ops::Deref; self.key_check_value.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for VerifyCardValidationDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl VerifyCardValidationDataOutput {
     /// Creates a new builder-style object to manufacture [`VerifyCardValidationDataOutput`](crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput).
     pub fn builder() -> crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataOutputBuilder {
@@ -52,8 +50,7 @@ impl VerifyCardValidationDataOutputBuilder {
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify CVV or CSC.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify CVV or CSC.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +66,7 @@ impl VerifyCardValidationDataOutputBuilder {
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_check_value = input;
-        self
+        self.key_check_value = input; self
     }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
@@ -78,38 +74,34 @@ impl VerifyCardValidationDataOutputBuilder {
         &self.key_check_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`VerifyCardValidationDataOutput`](crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataOutputBuilder::key_arn)
     /// - [`key_check_value`](crate::operation::verify_card_validation_data::builders::VerifyCardValidationDataOutputBuilder::key_check_value)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput {
-            key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_arn",
-                    "key_arn was not specified but it is required when building VerifyCardValidationDataOutput",
-                )
-            })?,
-            key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_check_value",
-                    "key_check_value was not specified but it is required when building VerifyCardValidationDataOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput {
+                key_arn: self.key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_arn", "key_arn was not specified but it is required when building VerifyCardValidationDataOutput")
+                    )?
+                ,
+                key_check_value: self.key_check_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_check_value", "key_check_value was not specified but it is required when building VerifyCardValidationDataOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

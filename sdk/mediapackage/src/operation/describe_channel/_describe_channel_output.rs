@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeChannelOutput {
+pub struct DescribeChannelOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub arn: ::std::option::Option<::std::string::String>,
     /// The date and time the Channel was created.
@@ -18,48 +18,48 @@ pub struct DescribeChannelOutput {
     /// Configure ingress access logging.
     pub ingress_access_logs: ::std::option::Option<crate::types::IngressAccessLogs>,
     /// A collection of tags associated with a resource
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeChannelOutput {
+impl  DescribeChannelOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The date and time the Channel was created.
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> ::std::option::Option<&crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> ::std::option::Option<& crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> ::std::option::Option<&crate::types::HlsIngest> {
+    pub fn hls_ingest(&self) -> ::std::option::Option<& crate::types::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> ::std::option::Option<&crate::types::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> ::std::option::Option<& crate::types::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn builder() -> crate::operation::describe_channel::builders::DescribeChannelOutputBuilder {
@@ -78,7 +78,7 @@ pub struct DescribeChannelOutputBuilder {
     pub(crate) hls_ingest: ::std::option::Option<crate::types::HlsIngest>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_access_logs: ::std::option::Option<crate::types::IngressAccessLogs>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeChannelOutputBuilder {
@@ -89,8 +89,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// The date and time the Channel was created.
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// The date and time the Channel was created.
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// A short text description of the Channel.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// A short text description of the Channel.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// Configure egress access logging.
     pub fn set_egress_access_logs(mut self, input: ::std::option::Option<crate::types::EgressAccessLogs>) -> Self {
-        self.egress_access_logs = input;
-        self
+        self.egress_access_logs = input; self
     }
     /// Configure egress access logging.
     pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
@@ -145,8 +141,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
     pub fn set_hls_ingest(mut self, input: ::std::option::Option<crate::types::HlsIngest>) -> Self {
-        self.hls_ingest = input;
-        self
+        self.hls_ingest = input; self
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
     pub fn get_hls_ingest(&self) -> &::std::option::Option<crate::types::HlsIngest> {
@@ -159,8 +154,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// The ID of the Channel.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID of the Channel.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// Configure ingress access logging.
     pub fn set_ingress_access_logs(mut self, input: ::std::option::Option<crate::types::IngressAccessLogs>) -> Self {
-        self.ingress_access_logs = input;
-        self
+        self.ingress_access_logs = input; self
     }
     /// Configure ingress access logging.
     pub fn get_ingress_access_logs(&self) -> &::std::option::Option<crate::types::IngressAccessLogs> {
@@ -187,40 +180,48 @@ impl DescribeChannelOutputBuilder {
     /// A collection of tags associated with a resource
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of tags associated with a resource
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn build(self) -> crate::operation::describe_channel::DescribeChannelOutput {
         crate::operation::describe_channel::DescribeChannelOutput {
-            arn: self.arn,
-            created_at: self.created_at,
-            description: self.description,
-            egress_access_logs: self.egress_access_logs,
-            hls_ingest: self.hls_ingest,
-            id: self.id,
-            ingress_access_logs: self.ingress_access_logs,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            description: self.description
+            ,
+            egress_access_logs: self.egress_access_logs
+            ,
+            hls_ingest: self.hls_ingest
+            ,
+            id: self.id
+            ,
+            ingress_access_logs: self.ingress_access_logs
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

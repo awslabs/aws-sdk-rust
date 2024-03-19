@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGroupInput {
+pub struct GetGroupInput  {
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetGroupInput {
+impl  GetGroupInput  {
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetGroupInputBuilder {
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_identifier = input;
-        self
+        self.group_identifier = input; self
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_group::GetGroupInput {
-            group_identifier: self.group_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_group::GetGroupInput {
+                group_identifier: self.group_identifier
+                ,
+            }
+        )
     }
 }
+

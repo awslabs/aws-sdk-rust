@@ -30,11 +30,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`AudioResponseEvent`](crate::types::StartConversationResponseEventStream::AudioResponseEvent), extracting the inner [`AudioResponseEvent`](crate::types::AudioResponseEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_audio_response_event(&self) -> ::std::result::Result<&crate::types::AudioResponseEvent, &Self> {
-        if let StartConversationResponseEventStream::AudioResponseEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::AudioResponseEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AudioResponseEvent`](crate::types::StartConversationResponseEventStream::AudioResponseEvent).
     pub fn is_audio_response_event(&self) -> bool {
@@ -43,11 +39,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`HeartbeatEvent`](crate::types::StartConversationResponseEventStream::HeartbeatEvent), extracting the inner [`HeartbeatEvent`](crate::types::HeartbeatEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_heartbeat_event(&self) -> ::std::result::Result<&crate::types::HeartbeatEvent, &Self> {
-        if let StartConversationResponseEventStream::HeartbeatEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::HeartbeatEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`HeartbeatEvent`](crate::types::StartConversationResponseEventStream::HeartbeatEvent).
     pub fn is_heartbeat_event(&self) -> bool {
@@ -56,11 +48,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`IntentResultEvent`](crate::types::StartConversationResponseEventStream::IntentResultEvent), extracting the inner [`IntentResultEvent`](crate::types::IntentResultEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_intent_result_event(&self) -> ::std::result::Result<&crate::types::IntentResultEvent, &Self> {
-        if let StartConversationResponseEventStream::IntentResultEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::IntentResultEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`IntentResultEvent`](crate::types::StartConversationResponseEventStream::IntentResultEvent).
     pub fn is_intent_result_event(&self) -> bool {
@@ -69,11 +57,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`PlaybackInterruptionEvent`](crate::types::StartConversationResponseEventStream::PlaybackInterruptionEvent), extracting the inner [`PlaybackInterruptionEvent`](crate::types::PlaybackInterruptionEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_playback_interruption_event(&self) -> ::std::result::Result<&crate::types::PlaybackInterruptionEvent, &Self> {
-        if let StartConversationResponseEventStream::PlaybackInterruptionEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::PlaybackInterruptionEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PlaybackInterruptionEvent`](crate::types::StartConversationResponseEventStream::PlaybackInterruptionEvent).
     pub fn is_playback_interruption_event(&self) -> bool {
@@ -82,11 +66,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`TextResponseEvent`](crate::types::StartConversationResponseEventStream::TextResponseEvent), extracting the inner [`TextResponseEvent`](crate::types::TextResponseEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text_response_event(&self) -> ::std::result::Result<&crate::types::TextResponseEvent, &Self> {
-        if let StartConversationResponseEventStream::TextResponseEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::TextResponseEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TextResponseEvent`](crate::types::StartConversationResponseEventStream::TextResponseEvent).
     pub fn is_text_response_event(&self) -> bool {
@@ -95,11 +75,7 @@ impl StartConversationResponseEventStream {
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::StartConversationResponseEventStream::TranscriptEvent), extracting the inner [`TranscriptEvent`](crate::types::TranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(&self) -> ::std::result::Result<&crate::types::TranscriptEvent, &Self> {
-        if let StartConversationResponseEventStream::TranscriptEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StartConversationResponseEventStream::TranscriptEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::StartConversationResponseEventStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -110,3 +86,4 @@ impl StartConversationResponseEventStream {
         matches!(self, Self::Unknown)
     }
 }
+

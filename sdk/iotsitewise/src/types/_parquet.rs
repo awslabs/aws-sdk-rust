@@ -3,7 +3,8 @@
 /// <p>A parquet file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Parquet {}
+pub struct Parquet  {
+}
 impl Parquet {
     /// Creates a new builder-style object to manufacture [`Parquet`](crate::types::Parquet).
     pub fn builder() -> crate::types::builders::ParquetBuilder {
@@ -14,10 +15,13 @@ impl Parquet {
 /// A builder for [`Parquet`](crate::types::Parquet).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ParquetBuilder {}
+pub struct ParquetBuilder {
+}
 impl ParquetBuilder {
     /// Consumes the builder and constructs a [`Parquet`](crate::types::Parquet).
     pub fn build(self) -> crate::types::Parquet {
-        crate::types::Parquet {}
+        crate::types::Parquet {
+        }
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetVpcEndpointInput {
+pub struct BatchGetVpcEndpointInput  {
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetVpcEndpointInput {
+impl  BatchGetVpcEndpointInput  {
     /// <p>A list of VPC endpoint identifiers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetVpcEndpointInput {
@@ -25,7 +26,7 @@ impl BatchGetVpcEndpointInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointInputBuilder {
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetVpcEndpointInputBuilder {
     /// Appends an item to `ids`.
@@ -35,24 +36,26 @@ impl BatchGetVpcEndpointInputBuilder {
     /// <p>A list of VPC endpoint identifiers.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput {
+                ids: self.ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,32 +3,34 @@
 /// PutDialRequestBatchResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDialRequestBatchOutput {
+pub struct PutDialRequestBatchOutput  {
     /// A list of successful requests identified by the unique client token.
-    pub successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>,
+    pub successful_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulRequest>>,
     /// A list of failed requests.
-    pub failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>,
+    pub failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedRequest>>,
     _request_id: Option<String>,
 }
-impl PutDialRequestBatchOutput {
+impl  PutDialRequestBatchOutput  {
     /// A list of successful requests identified by the unique client token.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful_requests.is_none()`.
-    pub fn successful_requests(&self) -> &[crate::types::SuccessfulRequest] {
-        self.successful_requests.as_deref().unwrap_or_default()
+    pub fn successful_requests(&self) -> & [crate::types::SuccessfulRequest] {
+        self.successful_requests.as_deref()
+        .unwrap_or_default()
     }
     /// A list of failed requests.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_requests.is_none()`.
-    pub fn failed_requests(&self) -> &[crate::types::FailedRequest] {
-        self.failed_requests.as_deref().unwrap_or_default()
+    pub fn failed_requests(&self) -> & [crate::types::FailedRequest] {
+        self.failed_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutDialRequestBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDialRequestBatchOutput {
     /// Creates a new builder-style object to manufacture [`PutDialRequestBatchOutput`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput).
     pub fn builder() -> crate::operation::put_dial_request_batch::builders::PutDialRequestBatchOutputBuilder {
@@ -40,8 +42,8 @@ impl PutDialRequestBatchOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchOutputBuilder {
-    pub(crate) successful_requests: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>,
-    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>,
+    pub(crate) successful_requests: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulRequest>>,
+    pub(crate) failed_requests: ::std::option::Option<::std::vec::Vec::<crate::types::FailedRequest>>,
     _request_id: Option<String>,
 }
 impl PutDialRequestBatchOutputBuilder {
@@ -52,17 +54,16 @@ impl PutDialRequestBatchOutputBuilder {
     /// A list of successful requests identified by the unique client token.
     pub fn successful_requests(mut self, input: crate::types::SuccessfulRequest) -> Self {
         let mut v = self.successful_requests.unwrap_or_default();
-        v.push(input);
-        self.successful_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of successful requests identified by the unique client token.
-    pub fn set_successful_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>>) -> Self {
-        self.successful_requests = input;
-        self
+    pub fn set_successful_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulRequest>>) -> Self {
+        self.successful_requests = input; self
     }
     /// A list of successful requests identified by the unique client token.
-    pub fn get_successful_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulRequest>> {
+    pub fn get_successful_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuccessfulRequest>> {
         &self.successful_requests
     }
     /// Appends an item to `failed_requests`.
@@ -72,34 +73,36 @@ impl PutDialRequestBatchOutputBuilder {
     /// A list of failed requests.
     pub fn failed_requests(mut self, input: crate::types::FailedRequest) -> Self {
         let mut v = self.failed_requests.unwrap_or_default();
-        v.push(input);
-        self.failed_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of failed requests.
-    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>>) -> Self {
-        self.failed_requests = input;
-        self
+    pub fn set_failed_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedRequest>>) -> Self {
+        self.failed_requests = input; self
     }
     /// A list of failed requests.
-    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedRequest>> {
+    pub fn get_failed_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedRequest>> {
         &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDialRequestBatchOutput`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput).
     pub fn build(self) -> crate::operation::put_dial_request_batch::PutDialRequestBatchOutput {
         crate::operation::put_dial_request_batch::PutDialRequestBatchOutput {
-            successful_requests: self.successful_requests,
-            failed_requests: self.failed_requests,
+            successful_requests: self.successful_requests
+            ,
+            failed_requests: self.failed_requests
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

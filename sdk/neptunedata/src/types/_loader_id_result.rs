@@ -3,16 +3,17 @@
 /// <p>Contains a list of load IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoaderIdResult {
+pub struct LoaderIdResult  {
     /// <p>A list of load IDs.</p>
-    pub load_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub load_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LoaderIdResult {
+impl  LoaderIdResult  {
     /// <p>A list of load IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_ids.is_none()`.
-    pub fn load_ids(&self) -> &[::std::string::String] {
-        self.load_ids.as_deref().unwrap_or_default()
+    pub fn load_ids(&self) -> & [::std::string::String] {
+        self.load_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoaderIdResult {
@@ -26,7 +27,7 @@ impl LoaderIdResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoaderIdResultBuilder {
-    pub(crate) load_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) load_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LoaderIdResultBuilder {
     /// Appends an item to `load_ids`.
@@ -36,21 +37,24 @@ impl LoaderIdResultBuilder {
     /// <p>A list of load IDs.</p>
     pub fn load_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_ids.unwrap_or_default();
-        v.push(input.into());
-        self.load_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.load_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of load IDs.</p>
-    pub fn set_load_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.load_ids = input;
-        self
+    pub fn set_load_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.load_ids = input; self
     }
     /// <p>A list of load IDs.</p>
-    pub fn get_load_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.load_ids
     }
     /// Consumes the builder and constructs a [`LoaderIdResult`](crate::types::LoaderIdResult).
     pub fn build(self) -> crate::types::LoaderIdResult {
-        crate::types::LoaderIdResult { load_ids: self.load_ids }
+        crate::types::LoaderIdResult {
+            load_ids: self.load_ids
+            ,
+        }
     }
 }
+

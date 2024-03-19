@@ -3,39 +3,40 @@
 /// <p>Describes the estimated cost or usage that a budget tracks.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceBudgetEstimate {
+pub struct ResourceBudgetEstimate  {
     /// <p>The resource name.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource the budget will track.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The cost estimate for the specified budget.</p>
-    pub cost_estimates: ::std::option::Option<::std::vec::Vec<crate::types::CostEstimate>>,
+    pub cost_estimates: ::std::option::Option<::std::vec::Vec::<crate::types::CostEstimate>>,
     /// <p>The estimate start time.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The estimate end time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ResourceBudgetEstimate {
+impl  ResourceBudgetEstimate  {
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The type of resource the budget will track.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The cost estimate for the specified budget.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cost_estimates.is_none()`.
-    pub fn cost_estimates(&self) -> &[crate::types::CostEstimate] {
-        self.cost_estimates.as_deref().unwrap_or_default()
+    pub fn cost_estimates(&self) -> & [crate::types::CostEstimate] {
+        self.cost_estimates.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The estimate start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The estimate end time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -52,7 +53,7 @@ impl ResourceBudgetEstimate {
 pub struct ResourceBudgetEstimateBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) cost_estimates: ::std::option::Option<::std::vec::Vec<crate::types::CostEstimate>>,
+    pub(crate) cost_estimates: ::std::option::Option<::std::vec::Vec::<crate::types::CostEstimate>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -64,8 +65,7 @@ impl ResourceBudgetEstimateBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ResourceBudgetEstimateBuilder {
     }
     /// <p>The type of resource the budget will track.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource the budget will track.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -92,17 +91,16 @@ impl ResourceBudgetEstimateBuilder {
     /// <p>The cost estimate for the specified budget.</p>
     pub fn cost_estimates(mut self, input: crate::types::CostEstimate) -> Self {
         let mut v = self.cost_estimates.unwrap_or_default();
-        v.push(input);
-        self.cost_estimates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cost_estimates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The cost estimate for the specified budget.</p>
-    pub fn set_cost_estimates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostEstimate>>) -> Self {
-        self.cost_estimates = input;
-        self
+    pub fn set_cost_estimates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostEstimate>>) -> Self {
+        self.cost_estimates = input; self
     }
     /// <p>The cost estimate for the specified budget.</p>
-    pub fn get_cost_estimates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostEstimate>> {
+    pub fn get_cost_estimates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostEstimate>> {
         &self.cost_estimates
     }
     /// <p>The estimate start time.</p>
@@ -112,8 +110,7 @@ impl ResourceBudgetEstimateBuilder {
     }
     /// <p>The estimate start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The estimate start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,8 +123,7 @@ impl ResourceBudgetEstimateBuilder {
     }
     /// <p>The estimate end time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The estimate end time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -136,11 +132,17 @@ impl ResourceBudgetEstimateBuilder {
     /// Consumes the builder and constructs a [`ResourceBudgetEstimate`](crate::types::ResourceBudgetEstimate).
     pub fn build(self) -> crate::types::ResourceBudgetEstimate {
         crate::types::ResourceBudgetEstimate {
-            resource_name: self.resource_name,
-            resource_type: self.resource_type,
-            cost_estimates: self.cost_estimates,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            resource_name: self.resource_name
+            ,
+            resource_type: self.resource_type
+            ,
+            cost_estimates: self.cost_estimates
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

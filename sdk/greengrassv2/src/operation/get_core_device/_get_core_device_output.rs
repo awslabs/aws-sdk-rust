@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreDeviceOutput {
+pub struct GetCoreDeviceOutput  {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
@@ -22,24 +22,24 @@ pub struct GetCoreDeviceOutput {
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetCoreDeviceOutput {
+impl  GetCoreDeviceOutput  {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn core_device_thing_name(&self) -> ::std::option::Option<& str> {
         self.core_device_thing_name.as_deref()
     }
     /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn core_version(&self) -> ::std::option::Option<&str> {
+    pub fn core_version(&self) -> ::std::option::Option<& str> {
         self.core_version.as_deref()
     }
     /// <p>The operating system platform that the core device runs.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The computer architecture of the core device.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The status of the core device. The core device status can be:</p>
@@ -49,23 +49,23 @@ impl GetCoreDeviceOutput {
     /// <li>
     /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CoreDeviceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CoreDeviceStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
-    pub fn last_status_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_status_update_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_status_update_timestamp.as_ref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCoreDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCoreDeviceOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreDeviceOutput`](crate::operation::get_core_device::GetCoreDeviceOutput).
     pub fn builder() -> crate::operation::get_core_device::builders::GetCoreDeviceOutputBuilder {
@@ -83,7 +83,7 @@ pub struct GetCoreDeviceOutputBuilder {
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CoreDeviceStatus>,
     pub(crate) last_status_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCoreDeviceOutputBuilder {
@@ -94,8 +94,7 @@ impl GetCoreDeviceOutputBuilder {
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_device_thing_name = input;
-        self
+        self.core_device_thing_name = input; self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl GetCoreDeviceOutputBuilder {
     }
     /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn set_core_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_version = input;
-        self
+        self.core_version = input; self
     }
     /// <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn get_core_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl GetCoreDeviceOutputBuilder {
     }
     /// <p>The operating system platform that the core device runs.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The operating system platform that the core device runs.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl GetCoreDeviceOutputBuilder {
     }
     /// <p>The computer architecture of the core device.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The computer architecture of the core device.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +158,7 @@ impl GetCoreDeviceOutputBuilder {
     /// <p><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CoreDeviceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the core device. The core device status can be:</p>
     /// <ul>
@@ -182,8 +177,7 @@ impl GetCoreDeviceOutputBuilder {
     }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub fn set_last_status_update_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_status_update_timestamp = input;
-        self
+        self.last_status_update_timestamp = input; self
     }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub fn get_last_status_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,39 +190,46 @@ impl GetCoreDeviceOutputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCoreDeviceOutput`](crate::operation::get_core_device::GetCoreDeviceOutput).
     pub fn build(self) -> crate::operation::get_core_device::GetCoreDeviceOutput {
         crate::operation::get_core_device::GetCoreDeviceOutput {
-            core_device_thing_name: self.core_device_thing_name,
-            core_version: self.core_version,
-            platform: self.platform,
-            architecture: self.architecture,
-            status: self.status,
-            last_status_update_timestamp: self.last_status_update_timestamp,
-            tags: self.tags,
+            core_device_thing_name: self.core_device_thing_name
+            ,
+            core_version: self.core_version
+            ,
+            platform: self.platform
+            ,
+            architecture: self.architecture
+            ,
+            status: self.status
+            ,
+            last_status_update_timestamp: self.last_status_update_timestamp
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

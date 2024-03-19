@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TelemetryRecord {
+pub struct TelemetryRecord  {
     /// <p></p>
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p></p>
@@ -17,9 +17,9 @@ pub struct TelemetryRecord {
     /// <p></p>
     pub backend_connection_errors: ::std::option::Option<crate::types::BackendConnectionErrors>,
 }
-impl TelemetryRecord {
+impl  TelemetryRecord  {
     /// <p></p>
-    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.timestamp
     }
     /// <p></p>
@@ -39,7 +39,7 @@ impl TelemetryRecord {
         self.segments_rejected_count
     }
     /// <p></p>
-    pub fn backend_connection_errors(&self) -> ::std::option::Option<&crate::types::BackendConnectionErrors> {
+    pub fn backend_connection_errors(&self) -> ::std::option::Option<& crate::types::BackendConnectionErrors> {
         self.backend_connection_errors.as_ref()
     }
 }
@@ -70,8 +70,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p></p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -84,8 +83,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_segments_received_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segments_received_count = input;
-        self
+        self.segments_received_count = input; self
     }
     /// <p></p>
     pub fn get_segments_received_count(&self) -> &::std::option::Option<i32> {
@@ -98,8 +96,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_segments_sent_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segments_sent_count = input;
-        self
+        self.segments_sent_count = input; self
     }
     /// <p></p>
     pub fn get_segments_sent_count(&self) -> &::std::option::Option<i32> {
@@ -112,8 +109,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_segments_spillover_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segments_spillover_count = input;
-        self
+        self.segments_spillover_count = input; self
     }
     /// <p></p>
     pub fn get_segments_spillover_count(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_segments_rejected_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segments_rejected_count = input;
-        self
+        self.segments_rejected_count = input; self
     }
     /// <p></p>
     pub fn get_segments_rejected_count(&self) -> &::std::option::Option<i32> {
@@ -140,8 +135,7 @@ impl TelemetryRecordBuilder {
     }
     /// <p></p>
     pub fn set_backend_connection_errors(mut self, input: ::std::option::Option<crate::types::BackendConnectionErrors>) -> Self {
-        self.backend_connection_errors = input;
-        self
+        self.backend_connection_errors = input; self
     }
     /// <p></p>
     pub fn get_backend_connection_errors(&self) -> &::std::option::Option<crate::types::BackendConnectionErrors> {
@@ -151,18 +145,25 @@ impl TelemetryRecordBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::TelemetryRecordBuilder::timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::TelemetryRecord, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TelemetryRecord {
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building TelemetryRecord",
-                )
-            })?,
-            segments_received_count: self.segments_received_count,
-            segments_sent_count: self.segments_sent_count,
-            segments_spillover_count: self.segments_spillover_count,
-            segments_rejected_count: self.segments_rejected_count,
-            backend_connection_errors: self.backend_connection_errors,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TelemetryRecord {
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building TelemetryRecord")
+                    )?
+                ,
+                segments_received_count: self.segments_received_count
+                ,
+                segments_sent_count: self.segments_sent_count
+                ,
+                segments_spillover_count: self.segments_spillover_count
+                ,
+                segments_rejected_count: self.segments_rejected_count
+                ,
+                backend_connection_errors: self.backend_connection_errors
+                ,
+            }
+        )
     }
 }
+

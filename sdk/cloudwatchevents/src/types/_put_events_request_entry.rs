@@ -3,13 +3,13 @@
 /// <p>Represents an event to be submitted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEventsRequestEntry {
+pub struct PutEventsRequestEntry  {
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The source of the event.</p>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
     pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
@@ -20,36 +20,37 @@ pub struct PutEventsRequestEntry {
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
-impl PutEventsRequestEntry {
+impl  PutEventsRequestEntry  {
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
-    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[::std::string::String] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [::std::string::String] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> ::std::option::Option<&str> {
+    pub fn detail_type(&self) -> ::std::option::Option<& str> {
         self.detail_type.as_deref()
     }
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
-    pub fn detail(&self) -> ::std::option::Option<&str> {
+    pub fn detail(&self) -> ::std::option::Option<& str> {
         self.detail.as_deref()
     }
     /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
-    pub fn trace_header(&self) -> ::std::option::Option<&str> {
+    pub fn trace_header(&self) -> ::std::option::Option<& str> {
         self.trace_header.as_deref()
     }
 }
@@ -66,7 +67,7 @@ impl PutEventsRequestEntry {
 pub struct PutEventsRequestEntryBuilder {
     pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) detail_type: ::std::option::Option<::std::string::String>,
     pub(crate) detail: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
@@ -80,8 +81,7 @@ impl PutEventsRequestEntryBuilder {
     }
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -94,8 +94,7 @@ impl PutEventsRequestEntryBuilder {
     }
     /// <p>The source of the event.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the event.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +107,16 @@ impl PutEventsRequestEntryBuilder {
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resources
     }
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
@@ -128,8 +126,7 @@ impl PutEventsRequestEntryBuilder {
     }
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
     pub fn set_detail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail_type = input;
-        self
+        self.detail_type = input; self
     }
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
     pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl PutEventsRequestEntryBuilder {
     }
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
     }
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +152,7 @@ impl PutEventsRequestEntryBuilder {
     }
     /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +167,7 @@ impl PutEventsRequestEntryBuilder {
     /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
@@ -183,13 +177,21 @@ impl PutEventsRequestEntryBuilder {
     /// Consumes the builder and constructs a [`PutEventsRequestEntry`](crate::types::PutEventsRequestEntry).
     pub fn build(self) -> crate::types::PutEventsRequestEntry {
         crate::types::PutEventsRequestEntry {
-            time: self.time,
-            source: self.source,
-            resources: self.resources,
-            detail_type: self.detail_type,
-            detail: self.detail,
-            event_bus_name: self.event_bus_name,
-            trace_header: self.trace_header,
+            time: self.time
+            ,
+            source: self.source
+            ,
+            resources: self.resources
+            ,
+            detail_type: self.detail_type
+            ,
+            detail: self.detail
+            ,
+            event_bus_name: self.event_bus_name
+            ,
+            trace_header: self.trace_header
+            ,
         }
     }
 }
+

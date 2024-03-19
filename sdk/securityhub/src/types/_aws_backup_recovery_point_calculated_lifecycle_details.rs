@@ -3,19 +3,19 @@
 /// <p>Specifies how long in days before a recovery point transitions to cold storage or is deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsBackupRecoveryPointCalculatedLifecycleDetails {
+pub struct AwsBackupRecoveryPointCalculatedLifecycleDetails  {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub delete_at: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub move_to_cold_storage_at: ::std::option::Option<::std::string::String>,
 }
-impl AwsBackupRecoveryPointCalculatedLifecycleDetails {
+impl  AwsBackupRecoveryPointCalculatedLifecycleDetails  {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
-    pub fn delete_at(&self) -> ::std::option::Option<&str> {
+    pub fn delete_at(&self) -> ::std::option::Option<& str> {
         self.delete_at.as_deref()
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
-    pub fn move_to_cold_storage_at(&self) -> ::std::option::Option<&str> {
+    pub fn move_to_cold_storage_at(&self) -> ::std::option::Option<& str> {
         self.move_to_cold_storage_at.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     }
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn set_delete_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delete_at = input;
-        self
+        self.delete_at = input; self
     }
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn get_delete_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub fn set_move_to_cold_storage_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.move_to_cold_storage_at = input;
-        self
+        self.move_to_cold_storage_at = input; self
     }
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
     pub fn get_move_to_cold_storage_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsBackupRecoveryPointCalculatedLifecycleDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsBackupRecoveryPointCalculatedLifecycleDetails`](crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails).
     pub fn build(self) -> crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails {
         crate::types::AwsBackupRecoveryPointCalculatedLifecycleDetails {
-            delete_at: self.delete_at,
-            move_to_cold_storage_at: self.move_to_cold_storage_at,
+            delete_at: self.delete_at
+            ,
+            move_to_cold_storage_at: self.move_to_cold_storage_at
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFacetInput {
+pub struct CreateFacetInput  {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttribute>>,
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
     /// <li>
@@ -30,20 +30,21 @@ pub struct CreateFacetInput {
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub facet_style: ::std::option::Option<crate::types::FacetStyle>,
 }
-impl CreateFacetInput {
+impl  CreateFacetInput  {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::FacetAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::FacetAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -62,11 +63,11 @@ impl CreateFacetInput {
     /// <li>
     /// <p>Index: Can be created with the Index API.</p></li>
     /// </ul>
-    pub fn object_type(&self) -> ::std::option::Option<&crate::types::ObjectType> {
+    pub fn object_type(&self) -> ::std::option::Option<& crate::types::ObjectType> {
         self.object_type.as_ref()
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn facet_style(&self) -> ::std::option::Option<&crate::types::FacetStyle> {
+    pub fn facet_style(&self) -> ::std::option::Option<& crate::types::FacetStyle> {
         self.facet_style.as_ref()
     }
 }
@@ -83,7 +84,7 @@ impl CreateFacetInput {
 pub struct CreateFacetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttribute>>,
     pub(crate) object_type: ::std::option::Option<crate::types::ObjectType>,
     pub(crate) facet_style: ::std::option::Option<crate::types::FacetStyle>,
 }
@@ -96,8 +97,7 @@ impl CreateFacetInputBuilder {
     }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +111,7 @@ impl CreateFacetInputBuilder {
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,17 +124,16 @@ impl CreateFacetInputBuilder {
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     pub fn attributes(mut self, input: crate::types::FacetAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FacetAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FacetAttribute>> {
         &self.attributes
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
@@ -177,8 +175,7 @@ impl CreateFacetInputBuilder {
     /// <p>Index: Can be created with the Index API.</p></li>
     /// </ul>
     pub fn set_object_type(mut self, input: ::std::option::Option<crate::types::ObjectType>) -> Self {
-        self.object_type = input;
-        self
+        self.object_type = input; self
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -207,8 +204,7 @@ impl CreateFacetInputBuilder {
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn set_facet_style(mut self, input: ::std::option::Option<crate::types::FacetStyle>) -> Self {
-        self.facet_style = input;
-        self
+        self.facet_style = input; self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
@@ -216,12 +212,20 @@ impl CreateFacetInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_facet::CreateFacetInput {
-            schema_arn: self.schema_arn,
-            name: self.name,
-            attributes: self.attributes,
-            object_type: self.object_type,
-            facet_style: self.facet_style,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_facet::CreateFacetInput {
+                schema_arn: self.schema_arn
+                ,
+                name: self.name
+                ,
+                attributes: self.attributes
+                ,
+                object_type: self.object_type
+                ,
+                facet_style: self.facet_style
+                ,
+            }
+        )
     }
 }
+

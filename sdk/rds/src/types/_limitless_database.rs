@@ -3,15 +3,15 @@
 /// <p>Contains details for Aurora Limitless Database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LimitlessDatabase {
+pub struct LimitlessDatabase  {
     /// <p>The status of Aurora Limitless Database.</p>
     pub status: ::std::option::Option<crate::types::LimitlessDatabaseStatus>,
     /// <p>The minimum required capacity for Aurora Limitless Database in Aurora capacity units (ACUs).</p>
     pub min_required_acu: ::std::option::Option<f64>,
 }
-impl LimitlessDatabase {
+impl  LimitlessDatabase  {
     /// <p>The status of Aurora Limitless Database.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LimitlessDatabaseStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LimitlessDatabaseStatus> {
         self.status.as_ref()
     }
     /// <p>The minimum required capacity for Aurora Limitless Database in Aurora capacity units (ACUs).</p>
@@ -41,8 +41,7 @@ impl LimitlessDatabaseBuilder {
     }
     /// <p>The status of Aurora Limitless Database.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LimitlessDatabaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of Aurora Limitless Database.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LimitlessDatabaseStatus> {
@@ -55,8 +54,7 @@ impl LimitlessDatabaseBuilder {
     }
     /// <p>The minimum required capacity for Aurora Limitless Database in Aurora capacity units (ACUs).</p>
     pub fn set_min_required_acu(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.min_required_acu = input;
-        self
+        self.min_required_acu = input; self
     }
     /// <p>The minimum required capacity for Aurora Limitless Database in Aurora capacity units (ACUs).</p>
     pub fn get_min_required_acu(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl LimitlessDatabaseBuilder {
     /// Consumes the builder and constructs a [`LimitlessDatabase`](crate::types::LimitlessDatabase).
     pub fn build(self) -> crate::types::LimitlessDatabase {
         crate::types::LimitlessDatabase {
-            status: self.status,
-            min_required_acu: self.min_required_acu,
+            status: self.status
+            ,
+            min_required_acu: self.min_required_acu
+            ,
         }
     }
 }
+

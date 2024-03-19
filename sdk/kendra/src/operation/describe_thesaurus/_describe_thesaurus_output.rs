@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThesaurusOutput {
+pub struct DescribeThesaurusOutput  {
     /// <p>The identifier of the thesaurus.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for the thesaurus.</p>
@@ -32,46 +32,46 @@ pub struct DescribeThesaurusOutput {
     pub synonym_rule_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DescribeThesaurusOutput {
+impl  DescribeThesaurusOutput  {
     /// <p>The identifier of the thesaurus.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for the thesaurus.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The thesaurus name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The thesaurus description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ThesaurusStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ThesaurusStatus> {
         self.status.as_ref()
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn source_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn source_s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.source_s3_path.as_ref()
     }
     /// <p>The size of the thesaurus file in bytes.</p>
@@ -88,10 +88,10 @@ impl DescribeThesaurusOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeThesaurusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeThesaurusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThesaurusOutput`](crate::operation::describe_thesaurus::DescribeThesaurusOutput).
     pub fn builder() -> crate::operation::describe_thesaurus::builders::DescribeThesaurusOutputBuilder {
@@ -126,8 +126,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The identifier of the thesaurus.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the thesaurus.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +152,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The thesaurus name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The thesaurus name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +165,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The thesaurus description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The thesaurus description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +180,7 @@ impl DescribeThesaurusOutputBuilder {
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ThesaurusStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
     /// <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active.</p>
@@ -199,8 +194,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +207,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,8 +220,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -241,8 +233,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -255,8 +246,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.source_s3_path = input;
-        self
+        self.source_s3_path = input; self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
@@ -269,8 +259,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The size of the thesaurus file in bytes.</p>
     pub fn set_file_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.file_size_bytes = input;
-        self
+        self.file_size_bytes = input; self
     }
     /// <p>The size of the thesaurus file in bytes.</p>
     pub fn get_file_size_bytes(&self) -> &::std::option::Option<i64> {
@@ -283,8 +272,7 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4.</p>
     pub fn set_term_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.term_count = input;
-        self
+        self.term_count = input; self
     }
     /// <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4.</p>
     pub fn get_term_count(&self) -> &::std::option::Option<i64> {
@@ -297,39 +285,52 @@ impl DescribeThesaurusOutputBuilder {
     }
     /// <p>The number of synonym rules in the thesaurus file.</p>
     pub fn set_synonym_rule_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.synonym_rule_count = input;
-        self
+        self.synonym_rule_count = input; self
     }
     /// <p>The number of synonym rules in the thesaurus file.</p>
     pub fn get_synonym_rule_count(&self) -> &::std::option::Option<i64> {
         &self.synonym_rule_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeThesaurusOutput`](crate::operation::describe_thesaurus::DescribeThesaurusOutput).
     pub fn build(self) -> crate::operation::describe_thesaurus::DescribeThesaurusOutput {
         crate::operation::describe_thesaurus::DescribeThesaurusOutput {
-            id: self.id,
-            index_id: self.index_id,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            error_message: self.error_message,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            role_arn: self.role_arn,
-            source_s3_path: self.source_s3_path,
-            file_size_bytes: self.file_size_bytes,
-            term_count: self.term_count,
-            synonym_rule_count: self.synonym_rule_count,
+            id: self.id
+            ,
+            index_id: self.index_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            error_message: self.error_message
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            role_arn: self.role_arn
+            ,
+            source_s3_path: self.source_s3_path
+            ,
+            file_size_bytes: self.file_size_bytes
+            ,
+            term_count: self.term_count
+            ,
+            synonym_rule_count: self.synonym_rule_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

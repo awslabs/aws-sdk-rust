@@ -3,22 +3,23 @@
 /// <p>Contains information about the impersonated user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImpersonatedUser {
+pub struct ImpersonatedUser  {
     /// <p>Information about the <code>username</code> that was being impersonated.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The <code>group</code> to which the user name belongs.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ImpersonatedUser {
+impl  ImpersonatedUser  {
     /// <p>Information about the <code>username</code> that was being impersonated.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The <code>group</code> to which the user name belongs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImpersonatedUser {
@@ -33,7 +34,7 @@ impl ImpersonatedUser {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImpersonatedUserBuilder {
     pub(crate) username: ::std::option::Option<::std::string::String>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ImpersonatedUserBuilder {
     /// <p>Information about the <code>username</code> that was being impersonated.</p>
@@ -43,8 +44,7 @@ impl ImpersonatedUserBuilder {
     }
     /// <p>Information about the <code>username</code> that was being impersonated.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Information about the <code>username</code> that was being impersonated.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ImpersonatedUserBuilder {
     /// <p>The <code>group</code> to which the user name belongs.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>group</code> to which the user name belongs.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The <code>group</code> to which the user name belongs.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// Consumes the builder and constructs a [`ImpersonatedUser`](crate::types::ImpersonatedUser).
     pub fn build(self) -> crate::types::ImpersonatedUser {
         crate::types::ImpersonatedUser {
-            username: self.username,
-            groups: self.groups,
+            username: self.username
+            ,
+            groups: self.groups
+            ,
         }
     }
 }
+

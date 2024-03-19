@@ -3,38 +3,37 @@
 /// <p>The structure representing the items in the response for SearchRasterDataCollection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ItemSource {
+pub struct ItemSource  {
     /// <p>A unique Id for the source item.</p>
     pub id: ::std::string::String,
     /// <p>The item Geometry in GeoJson format.</p>
     pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
-    pub assets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>>,
+    pub assets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AssetValue>>,
     /// <p>The searchable date and time of the item, in UTC.</p>
     pub date_time: ::aws_smithy_types::DateTime,
     /// <p>This field contains additional properties of the item.</p>
     pub properties: ::std::option::Option<crate::types::Properties>,
 }
-impl ItemSource {
+impl  ItemSource  {
     /// <p>A unique Id for the source item.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The item Geometry in GeoJson format.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
-    pub fn assets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AssetValue>> {
+    pub fn assets(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::AssetValue>> {
         self.assets.as_ref()
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub fn date_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn date_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.date_time
     }
     /// <p>This field contains additional properties of the item.</p>
-    pub fn properties(&self) -> ::std::option::Option<&crate::types::Properties> {
+    pub fn properties(&self) -> ::std::option::Option<& crate::types::Properties> {
         self.properties.as_ref()
     }
 }
@@ -51,7 +50,7 @@ impl ItemSource {
 pub struct ItemSourceBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
-    pub(crate) assets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>>,
+    pub(crate) assets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AssetValue>>,
     pub(crate) date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) properties: ::std::option::Option<crate::types::Properties>,
 }
@@ -64,8 +63,7 @@ impl ItemSourceBuilder {
     }
     /// <p>A unique Id for the source item.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique Id for the source item.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ItemSourceBuilder {
     }
     /// <p>The item Geometry in GeoJson format.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>The item Geometry in GeoJson format.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
@@ -93,17 +90,16 @@ impl ItemSourceBuilder {
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     pub fn assets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetValue) -> Self {
         let mut hash_map = self.assets.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.assets = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.assets = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
-    pub fn set_assets(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>>) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AssetValue>>) -> Self {
+        self.assets = input; self
     }
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
-    pub fn get_assets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetValue>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::AssetValue>> {
         &self.assets
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
@@ -114,8 +110,7 @@ impl ItemSourceBuilder {
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
     pub fn set_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_time = input;
-        self
+        self.date_time = input; self
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
     pub fn get_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,8 +123,7 @@ impl ItemSourceBuilder {
     }
     /// <p>This field contains additional properties of the item.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<crate::types::Properties>) -> Self {
-        self.properties = input;
-        self
+        self.properties = input; self
     }
     /// <p>This field contains additional properties of the item.</p>
     pub fn get_properties(&self) -> &::std::option::Option<crate::types::Properties> {
@@ -140,22 +134,26 @@ impl ItemSourceBuilder {
     /// - [`id`](crate::types::builders::ItemSourceBuilder::id)
     /// - [`date_time`](crate::types::builders::ItemSourceBuilder::date_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ItemSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ItemSource {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ItemSource",
-                )
-            })?,
-            geometry: self.geometry,
-            assets: self.assets,
-            date_time: self.date_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "date_time",
-                    "date_time was not specified but it is required when building ItemSource",
-                )
-            })?,
-            properties: self.properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ItemSource {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ItemSource")
+                    )?
+                ,
+                geometry: self.geometry
+                ,
+                assets: self.assets
+                ,
+                date_time: self.date_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("date_time", "date_time was not specified but it is required when building ItemSource")
+                    )?
+                ,
+                properties: self.properties
+                ,
+            }
+        )
     }
 }
+

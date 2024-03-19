@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSlackWorkspacesOutput {
+pub struct DescribeSlackWorkspacesOutput  {
     /// A list of Slack Workspaces registered with AWS Chatbot.
-    pub slack_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>,
+    pub slack_workspaces: ::std::option::Option<::std::vec::Vec::<crate::types::SlackWorkspace>>,
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSlackWorkspacesOutput {
+impl  DescribeSlackWorkspacesOutput  {
     /// A list of Slack Workspaces registered with AWS Chatbot.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slack_workspaces.is_none()`.
-    pub fn slack_workspaces(&self) -> &[crate::types::SlackWorkspace] {
-        self.slack_workspaces.as_deref().unwrap_or_default()
+    pub fn slack_workspaces(&self) -> & [crate::types::SlackWorkspace] {
+        self.slack_workspaces.as_deref()
+        .unwrap_or_default()
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSlackWorkspacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSlackWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlackWorkspacesOutput`](crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput).
     pub fn builder() -> crate::operation::describe_slack_workspaces::builders::DescribeSlackWorkspacesOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeSlackWorkspacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSlackWorkspacesOutputBuilder {
-    pub(crate) slack_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>,
+    pub(crate) slack_workspaces: ::std::option::Option<::std::vec::Vec::<crate::types::SlackWorkspace>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeSlackWorkspacesOutputBuilder {
     /// A list of Slack Workspaces registered with AWS Chatbot.
     pub fn slack_workspaces(mut self, input: crate::types::SlackWorkspace) -> Self {
         let mut v = self.slack_workspaces.unwrap_or_default();
-        v.push(input);
-        self.slack_workspaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slack_workspaces = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Slack Workspaces registered with AWS Chatbot.
-    pub fn set_slack_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>>) -> Self {
-        self.slack_workspaces = input;
-        self
+    pub fn set_slack_workspaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlackWorkspace>>) -> Self {
+        self.slack_workspaces = input; self
     }
     /// A list of Slack Workspaces registered with AWS Chatbot.
-    pub fn get_slack_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackWorkspace>> {
+    pub fn get_slack_workspaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlackWorkspace>> {
         &self.slack_workspaces
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
@@ -69,28 +69,30 @@ impl DescribeSlackWorkspacesOutputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSlackWorkspacesOutput`](crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput).
     pub fn build(self) -> crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput {
         crate::operation::describe_slack_workspaces::DescribeSlackWorkspacesOutput {
-            slack_workspaces: self.slack_workspaces,
-            next_token: self.next_token,
+            slack_workspaces: self.slack_workspaces
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

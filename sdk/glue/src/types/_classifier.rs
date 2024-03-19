@@ -4,7 +4,7 @@
 /// <p>You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Classifier {
+pub struct Classifier  {
     /// <p>A classifier that uses <code>grok</code>.</p>
     pub grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
     /// <p>A classifier for XML content.</p>
@@ -14,21 +14,21 @@ pub struct Classifier {
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub csv_classifier: ::std::option::Option<crate::types::CsvClassifier>,
 }
-impl Classifier {
+impl  Classifier  {
     /// <p>A classifier that uses <code>grok</code>.</p>
-    pub fn grok_classifier(&self) -> ::std::option::Option<&crate::types::GrokClassifier> {
+    pub fn grok_classifier(&self) -> ::std::option::Option<& crate::types::GrokClassifier> {
         self.grok_classifier.as_ref()
     }
     /// <p>A classifier for XML content.</p>
-    pub fn xml_classifier(&self) -> ::std::option::Option<&crate::types::XmlClassifier> {
+    pub fn xml_classifier(&self) -> ::std::option::Option<& crate::types::XmlClassifier> {
         self.xml_classifier.as_ref()
     }
     /// <p>A classifier for JSON content.</p>
-    pub fn json_classifier(&self) -> ::std::option::Option<&crate::types::JsonClassifier> {
+    pub fn json_classifier(&self) -> ::std::option::Option<& crate::types::JsonClassifier> {
         self.json_classifier.as_ref()
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
-    pub fn csv_classifier(&self) -> ::std::option::Option<&crate::types::CsvClassifier> {
+    pub fn csv_classifier(&self) -> ::std::option::Option<& crate::types::CsvClassifier> {
         self.csv_classifier.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ClassifierBuilder {
     }
     /// <p>A classifier that uses <code>grok</code>.</p>
     pub fn set_grok_classifier(mut self, input: ::std::option::Option<crate::types::GrokClassifier>) -> Self {
-        self.grok_classifier = input;
-        self
+        self.grok_classifier = input; self
     }
     /// <p>A classifier that uses <code>grok</code>.</p>
     pub fn get_grok_classifier(&self) -> &::std::option::Option<crate::types::GrokClassifier> {
@@ -70,8 +69,7 @@ impl ClassifierBuilder {
     }
     /// <p>A classifier for XML content.</p>
     pub fn set_xml_classifier(mut self, input: ::std::option::Option<crate::types::XmlClassifier>) -> Self {
-        self.xml_classifier = input;
-        self
+        self.xml_classifier = input; self
     }
     /// <p>A classifier for XML content.</p>
     pub fn get_xml_classifier(&self) -> &::std::option::Option<crate::types::XmlClassifier> {
@@ -84,8 +82,7 @@ impl ClassifierBuilder {
     }
     /// <p>A classifier for JSON content.</p>
     pub fn set_json_classifier(mut self, input: ::std::option::Option<crate::types::JsonClassifier>) -> Self {
-        self.json_classifier = input;
-        self
+        self.json_classifier = input; self
     }
     /// <p>A classifier for JSON content.</p>
     pub fn get_json_classifier(&self) -> &::std::option::Option<crate::types::JsonClassifier> {
@@ -98,8 +95,7 @@ impl ClassifierBuilder {
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn set_csv_classifier(mut self, input: ::std::option::Option<crate::types::CsvClassifier>) -> Self {
-        self.csv_classifier = input;
-        self
+        self.csv_classifier = input; self
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn get_csv_classifier(&self) -> &::std::option::Option<crate::types::CsvClassifier> {
@@ -108,10 +104,15 @@ impl ClassifierBuilder {
     /// Consumes the builder and constructs a [`Classifier`](crate::types::Classifier).
     pub fn build(self) -> crate::types::Classifier {
         crate::types::Classifier {
-            grok_classifier: self.grok_classifier,
-            xml_classifier: self.xml_classifier,
-            json_classifier: self.json_classifier,
-            csv_classifier: self.csv_classifier,
+            grok_classifier: self.grok_classifier
+            ,
+            xml_classifier: self.xml_classifier
+            ,
+            json_classifier: self.json_classifier
+            ,
+            csv_classifier: self.csv_classifier
+            ,
         }
     }
 }
+

@@ -3,24 +3,25 @@
 /// <p>The output for the <code>DescribeJobFlows</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobFlowsOutput {
+pub struct DescribeJobFlowsOutput  {
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
+    pub job_flows: ::std::option::Option<::std::vec::Vec::<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
 }
-impl DescribeJobFlowsOutput {
+impl  DescribeJobFlowsOutput  {
     /// <p>A list of job flows matching the parameters supplied.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flows.is_none()`.
-    pub fn job_flows(&self) -> &[crate::types::JobFlowDetail] {
-        self.job_flows.as_deref().unwrap_or_default()
+    pub fn job_flows(&self) -> & [crate::types::JobFlowDetail] {
+        self.job_flows.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeJobFlowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeJobFlowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
     pub fn builder() -> crate::operation::describe_job_flows::builders::DescribeJobFlowsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeJobFlowsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsOutputBuilder {
-    pub(crate) job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
+    pub(crate) job_flows: ::std::option::Option<::std::vec::Vec::<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeJobFlowsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeJobFlowsOutputBuilder {
     /// <p>A list of job flows matching the parameters supplied.</p>
     pub fn job_flows(mut self, input: crate::types::JobFlowDetail) -> Self {
         let mut v = self.job_flows.unwrap_or_default();
-        v.push(input);
-        self.job_flows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_flows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn set_job_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>) -> Self {
-        self.job_flows = input;
-        self
+    pub fn set_job_flows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobFlowDetail>>) -> Self {
+        self.job_flows = input; self
     }
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn get_job_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>> {
+    pub fn get_job_flows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobFlowDetail>> {
         &self.job_flows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
     pub fn build(self) -> crate::operation::describe_job_flows::DescribeJobFlowsOutput {
         crate::operation::describe_job_flows::DescribeJobFlowsOutput {
-            job_flows: self.job_flows,
+            job_flows: self.job_flows
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

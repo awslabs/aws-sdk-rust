@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedRuleSetsOutput {
+pub struct ListManagedRuleSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
+    pub managed_rule_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleSetSummary>>,
     _request_id: Option<String>,
 }
-impl ListManagedRuleSetsOutput {
+impl  ListManagedRuleSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rule_sets.is_none()`.
-    pub fn managed_rule_sets(&self) -> &[crate::types::ManagedRuleSetSummary] {
-        self.managed_rule_sets.as_deref().unwrap_or_default()
+    pub fn managed_rule_sets(&self) -> & [crate::types::ManagedRuleSetSummary] {
+        self.managed_rule_sets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListManagedRuleSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListManagedRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsOutput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput).
     pub fn builder() -> crate::operation::list_managed_rule_sets::builders::ListManagedRuleSetsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListManagedRuleSetsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedRuleSetsOutputBuilder {
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
-    pub(crate) managed_rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
+    pub(crate) managed_rule_sets: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListManagedRuleSetsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListManagedRuleSetsOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListManagedRuleSetsOutputBuilder {
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
     pub fn managed_rule_sets(mut self, input: crate::types::ManagedRuleSetSummary) -> Self {
         let mut v = self.managed_rule_sets.unwrap_or_default();
-        v.push(input);
-        self.managed_rule_sets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_rule_sets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn set_managed_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>>) -> Self {
-        self.managed_rule_sets = input;
-        self
+    pub fn set_managed_rule_sets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleSetSummary>>) -> Self {
+        self.managed_rule_sets = input; self
     }
     /// <p>Your managed rule sets. If you specified a <code>Limit</code> in your request, this might not be the full list.</p>
-    pub fn get_managed_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleSetSummary>> {
+    pub fn get_managed_rule_sets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedRuleSetSummary>> {
         &self.managed_rule_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListManagedRuleSetsOutput`](crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput).
     pub fn build(self) -> crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput {
         crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput {
-            next_marker: self.next_marker,
-            managed_rule_sets: self.managed_rule_sets,
+            next_marker: self.next_marker
+            ,
+            managed_rule_sets: self.managed_rule_sets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

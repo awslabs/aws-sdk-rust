@@ -3,7 +3,7 @@
 /// <p>An object that describes a managed permission associated with a resource share.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedPermission {
+pub struct AssociatedPermission  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the permission currently associated with the resource share.</p>
@@ -39,13 +39,13 @@ pub struct AssociatedPermission {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociatedPermission {
+impl  AssociatedPermission  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission currently associated with the resource share.</p>
-    pub fn permission_version(&self) -> ::std::option::Option<&str> {
+    pub fn permission_version(&self) -> ::std::option::Option<& str> {
         self.permission_version.as_deref()
     }
     /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
@@ -53,7 +53,7 @@ impl AssociatedPermission {
         self.default_version
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
@@ -67,7 +67,7 @@ impl AssociatedPermission {
     /// <li>
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
@@ -79,15 +79,15 @@ impl AssociatedPermission {
     /// <li>
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
-    pub fn feature_set(&self) -> ::std::option::Option<&crate::types::PermissionFeatureSet> {
+    pub fn feature_set(&self) -> ::std::option::Option<& crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
     }
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
 }
@@ -119,8 +119,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the associated managed permission.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +132,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The version of the permission currently associated with the resource share.</p>
     pub fn set_permission_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_version = input;
-        self
+        self.permission_version = input; self
     }
     /// <p>The version of the permission currently associated with the resource share.</p>
     pub fn get_permission_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +145,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
     pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_version = input;
-        self
+        self.default_version = input; self
     }
     /// <p>Indicates whether the associated resource share is using the default version of the permission.</p>
     pub fn get_default_version(&self) -> &::std::option::Option<bool> {
@@ -161,8 +158,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +191,7 @@ impl AssociatedPermissionBuilder {
     /// <p><code>DELETED</code> – This permission or version is deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
     /// <ul>
@@ -235,8 +230,7 @@ impl AssociatedPermissionBuilder {
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub fn set_feature_set(mut self, input: ::std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
-        self.feature_set = input;
-        self
+        self.feature_set = input; self
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
@@ -257,8 +251,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time when the association between the permission and the resource share was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -271,8 +264,7 @@ impl AssociatedPermissionBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_arn = input;
-        self
+        self.resource_share_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share associated with this permission.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,14 +273,23 @@ impl AssociatedPermissionBuilder {
     /// Consumes the builder and constructs a [`AssociatedPermission`](crate::types::AssociatedPermission).
     pub fn build(self) -> crate::types::AssociatedPermission {
         crate::types::AssociatedPermission {
-            arn: self.arn,
-            permission_version: self.permission_version,
-            default_version: self.default_version,
-            resource_type: self.resource_type,
-            status: self.status,
-            feature_set: self.feature_set,
-            last_updated_time: self.last_updated_time,
-            resource_share_arn: self.resource_share_arn,
+            arn: self.arn
+            ,
+            permission_version: self.permission_version
+            ,
+            default_version: self.default_version
+            ,
+            resource_type: self.resource_type
+            ,
+            status: self.status
+            ,
+            feature_set: self.feature_set
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            resource_share_arn: self.resource_share_arn
+            ,
         }
     }
 }
+

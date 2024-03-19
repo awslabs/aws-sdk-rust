@@ -3,7 +3,7 @@
 /// <p>Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningHook {
+pub struct ProvisioningHook  {
     /// <p>The payload that was sent to the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
     pub payload_version: ::std::option::Option<::std::string::String>,
@@ -11,17 +11,16 @@ pub struct ProvisioningHook {
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
     pub target_arn: ::std::string::String,
 }
-impl ProvisioningHook {
+impl  ProvisioningHook  {
     /// <p>The payload that was sent to the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn payload_version(&self) -> ::std::option::Option<&str> {
+    pub fn payload_version(&self) -> ::std::option::Option<& str> {
         self.payload_version.as_deref()
     }
     /// <p>The ARN of the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn target_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.target_arn.deref()
+    pub fn target_arn(&self) -> & str {
+        use std::ops::Deref; self.target_arn.deref()
     }
 }
 impl ProvisioningHook {
@@ -48,8 +47,7 @@ impl ProvisioningHookBuilder {
     /// <p>The payload that was sent to the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_payload_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_version = input;
-        self
+        self.payload_version = input; self
     }
     /// <p>The payload that was sent to the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
@@ -66,8 +64,7 @@ impl ProvisioningHookBuilder {
     /// <p>The ARN of the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of the target function.</p>
     /// <p><i>Note:</i> Only Lambda functions are currently supported.</p>
@@ -78,14 +75,17 @@ impl ProvisioningHookBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_arn`](crate::types::builders::ProvisioningHookBuilder::target_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ProvisioningHook, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProvisioningHook {
-            payload_version: self.payload_version,
-            target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_arn",
-                    "target_arn was not specified but it is required when building ProvisioningHook",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProvisioningHook {
+                payload_version: self.payload_version
+                ,
+                target_arn: self.target_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_arn", "target_arn was not specified but it is required when building ProvisioningHook")
+                    )?
+                ,
+            }
+        )
     }
 }
+

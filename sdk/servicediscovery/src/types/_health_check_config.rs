@@ -51,7 +51,7 @@
 /// </dl>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckConfig {
+pub struct HealthCheckConfig  {
     /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p><important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
     /// </important>
@@ -75,7 +75,7 @@ pub struct HealthCheckConfig {
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub failure_threshold: ::std::option::Option<i32>,
 }
-impl HealthCheckConfig {
+impl  HealthCheckConfig  {
     /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p><important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
     /// </important>
@@ -92,12 +92,12 @@ impl HealthCheckConfig {
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::HealthCheckType {
+    pub fn r#type(&self) -> & crate::types::HealthCheckType {
         &self.r#type
     }
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
-    pub fn resource_path(&self) -> ::std::option::Option<&str> {
+    pub fn resource_path(&self) -> ::std::option::Option<& str> {
         self.resource_path.as_deref()
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
@@ -159,8 +159,7 @@ impl HealthCheckConfigBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HealthCheckType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of health check that you want to create, which indicates how Route&nbsp;53 determines whether an endpoint is healthy.</p><important>
     /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
@@ -190,8 +189,7 @@ impl HealthCheckConfigBuilder {
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
     pub fn set_resource_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_path = input;
-        self
+        self.resource_path = input; self
     }
     /// <p>The path that you want Route&nbsp;53 to request when performing health checks. The path can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>. Route&nbsp;53 automatically adds the DNS name for the service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.</p>
     /// <p>If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for <code>ResourcePath</code>.</p>
@@ -205,8 +203,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failure_threshold = input;
-        self
+        self.failure_threshold = input; self
     }
     /// <p>The number of consecutive health checks that an endpoint must pass or fail for Route&nbsp;53 to change the current status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route&nbsp;53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     pub fn get_failure_threshold(&self) -> &::std::option::Option<i32> {
@@ -216,15 +213,19 @@ impl HealthCheckConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::HealthCheckConfig {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building HealthCheckConfig",
-                )
-            })?,
-            resource_path: self.resource_path,
-            failure_threshold: self.failure_threshold,
-        })
+        ::std::result::Result::Ok(
+            crate::types::HealthCheckConfig {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building HealthCheckConfig")
+                    )?
+                ,
+                resource_path: self.resource_path
+                ,
+                failure_threshold: self.failure_threshold
+                ,
+            }
+        )
     }
 }
+

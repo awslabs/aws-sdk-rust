@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceNetworks`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
-    /// - On success, responds with [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput) with field(s):
+                            /// - On success, responds with [`ListServiceNetworksOutput`](crate::operation::list_service_networks::ListServiceNetworksOutput) with field(s):
     ///   - [`items(Vec::<ServiceNetworkSummary>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::items): <p>Information about the service networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_networks::ListServiceNetworksOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListServiceNetworksError>`](crate::operation::list_service_networks::ListServiceNetworksError)
+                            /// - On failure, responds with [`SdkError<ListServiceNetworksError>`](crate::operation::list_service_networks::ListServiceNetworksError)
     pub fn list_service_networks(&self) -> crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder {
-        crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_service_networks::builders::ListServiceNetworksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

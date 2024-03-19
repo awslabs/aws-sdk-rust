@@ -3,13 +3,13 @@
 /// <p>The Amazon Web Services Region that events are routed to when failover is triggered or event replication is enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails {
+pub struct AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails  {
     /// <p>Defines the secondary Region.</p>
     pub route: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails {
+impl  AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails  {
     /// <p>Defines the secondary Region.</p>
-    pub fn route(&self) -> ::std::option::Option<&str> {
+    pub fn route(&self) -> ::std::option::Option<& str> {
         self.route.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetailsBuilder {
     }
     /// <p>Defines the secondary Region.</p>
     pub fn set_route(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route = input;
-        self
+        self.route = input; self
     }
     /// <p>Defines the secondary Region.</p>
     pub fn get_route(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails`](crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails {
-        crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails { route: self.route }
+        crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails {
+            route: self.route
+            ,
+        }
     }
 }
+

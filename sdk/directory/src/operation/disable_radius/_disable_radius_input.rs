@@ -3,13 +3,13 @@
 /// <p>Contains the inputs for the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableRadiusInput {
+pub struct DisableRadiusInput  {
     /// <p>The identifier of the directory for which to disable MFA.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
 }
-impl DisableRadiusInput {
+impl  DisableRadiusInput  {
     /// <p>The identifier of the directory for which to disable MFA.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DisableRadiusInputBuilder {
     }
     /// <p>The identifier of the directory for which to disable MFA.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which to disable MFA.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_radius::DisableRadiusInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_radius::DisableRadiusInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

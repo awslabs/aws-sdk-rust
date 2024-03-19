@@ -3,7 +3,7 @@
 /// <p>An object containing the <code>providerServiceARN</code>, <code>intermediateSourceConfiguration</code>, and <code>providerConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderProperties {
+pub struct ProviderProperties  {
     /// <p>The ARN of the provider service.</p>
     pub provider_service_arn: ::std::string::String,
     /// <p>The required configuration fields to use with the provider service.</p>
@@ -11,18 +11,17 @@ pub struct ProviderProperties {
     /// <p>The Amazon S3 location that temporarily stores your data while it processes. Your information won't be saved permanently.</p>
     pub intermediate_source_configuration: ::std::option::Option<crate::types::IntermediateSourceConfiguration>,
 }
-impl ProviderProperties {
+impl  ProviderProperties  {
     /// <p>The ARN of the provider service.</p>
-    pub fn provider_service_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.provider_service_arn.deref()
+    pub fn provider_service_arn(&self) -> & str {
+        use std::ops::Deref; self.provider_service_arn.deref()
     }
     /// <p>The required configuration fields to use with the provider service.</p>
-    pub fn provider_configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn provider_configuration(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.provider_configuration.as_ref()
     }
     /// <p>The Amazon S3 location that temporarily stores your data while it processes. Your information won't be saved permanently.</p>
-    pub fn intermediate_source_configuration(&self) -> ::std::option::Option<&crate::types::IntermediateSourceConfiguration> {
+    pub fn intermediate_source_configuration(&self) -> ::std::option::Option<& crate::types::IntermediateSourceConfiguration> {
         self.intermediate_source_configuration.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl ProviderPropertiesBuilder {
     }
     /// <p>The ARN of the provider service.</p>
     pub fn set_provider_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_service_arn = input;
-        self
+        self.provider_service_arn = input; self
     }
     /// <p>The ARN of the provider service.</p>
     pub fn get_provider_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ProviderPropertiesBuilder {
     }
     /// <p>The required configuration fields to use with the provider service.</p>
     pub fn set_provider_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.provider_configuration = input;
-        self
+        self.provider_configuration = input; self
     }
     /// <p>The required configuration fields to use with the provider service.</p>
     pub fn get_provider_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -78,8 +75,7 @@ impl ProviderPropertiesBuilder {
     }
     /// <p>The Amazon S3 location that temporarily stores your data while it processes. Your information won't be saved permanently.</p>
     pub fn set_intermediate_source_configuration(mut self, input: ::std::option::Option<crate::types::IntermediateSourceConfiguration>) -> Self {
-        self.intermediate_source_configuration = input;
-        self
+        self.intermediate_source_configuration = input; self
     }
     /// <p>The Amazon S3 location that temporarily stores your data while it processes. Your information won't be saved permanently.</p>
     pub fn get_intermediate_source_configuration(&self) -> &::std::option::Option<crate::types::IntermediateSourceConfiguration> {
@@ -89,15 +85,19 @@ impl ProviderPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`provider_service_arn`](crate::types::builders::ProviderPropertiesBuilder::provider_service_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ProviderProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProviderProperties {
-            provider_service_arn: self.provider_service_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_service_arn",
-                    "provider_service_arn was not specified but it is required when building ProviderProperties",
-                )
-            })?,
-            provider_configuration: self.provider_configuration,
-            intermediate_source_configuration: self.intermediate_source_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProviderProperties {
+                provider_service_arn: self.provider_service_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_service_arn", "provider_service_arn was not specified but it is required when building ProviderProperties")
+                    )?
+                ,
+                provider_configuration: self.provider_configuration
+                ,
+                intermediate_source_configuration: self.intermediate_source_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFirewallPolicyInput {
+pub struct DescribeFirewallPolicyInput  {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_policy_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DescribeFirewallPolicyInput {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFirewallPolicyInput {
+impl  DescribeFirewallPolicyInput  {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_name(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_arn.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl DescribeFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_name = input;
-        self
+        self.firewall_policy_name = input; self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -63,8 +62,7 @@ impl DescribeFirewallPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_arn = input;
-        self
+        self.firewall_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -72,15 +70,15 @@ impl DescribeFirewallPolicyInputBuilder {
         &self.firewall_policy_arn
     }
     /// Consumes the builder and constructs a [`DescribeFirewallPolicyInput`](crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput {
-            firewall_policy_name: self.firewall_policy_name,
-            firewall_policy_arn: self.firewall_policy_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_firewall_policy::DescribeFirewallPolicyInput {
+                firewall_policy_name: self.firewall_policy_name
+                ,
+                firewall_policy_arn: self.firewall_policy_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,28 +3,26 @@
 /// <p>A structure containing an LF-tag key-value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LfTagPair {
+pub struct LfTagPair  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-name for the LF-tag.</p>
     pub tag_key: ::std::string::String,
     /// <p>A list of possible values an attribute can take.</p>
-    pub tag_values: ::std::vec::Vec<::std::string::String>,
+    pub tag_values: ::std::vec::Vec::<::std::string::String>,
 }
-impl LfTagPair {
+impl  LfTagPair  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The key-name for the LF-tag.</p>
-    pub fn tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.tag_key.deref()
+    pub fn tag_key(&self) -> & str {
+        use std::ops::Deref; self.tag_key.deref()
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn tag_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.tag_values.deref()
+    pub fn tag_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.tag_values.deref()
     }
 }
 impl LfTagPair {
@@ -40,7 +38,7 @@ impl LfTagPair {
 pub struct LfTagPairBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LfTagPairBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -50,8 +48,7 @@ impl LfTagPairBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl LfTagPairBuilder {
     }
     /// <p>The key-name for the LF-tag.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>The key-name for the LF-tag.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,17 +75,16 @@ impl LfTagPairBuilder {
     /// <p>A list of possible values an attribute can take.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_values = input; self
     }
     /// <p>A list of possible values an attribute can take.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`LfTagPair`](crate::types::LfTagPair).
@@ -97,20 +92,22 @@ impl LfTagPairBuilder {
     /// - [`tag_key`](crate::types::builders::LfTagPairBuilder::tag_key)
     /// - [`tag_values`](crate::types::builders::LfTagPairBuilder::tag_values)
     pub fn build(self) -> ::std::result::Result<crate::types::LfTagPair, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LfTagPair {
-            catalog_id: self.catalog_id,
-            tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_key",
-                    "tag_key was not specified but it is required when building LfTagPair",
-                )
-            })?,
-            tag_values: self.tag_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_values",
-                    "tag_values was not specified but it is required when building LfTagPair",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LfTagPair {
+                catalog_id: self.catalog_id
+                ,
+                tag_key: self.tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_key", "tag_key was not specified but it is required when building LfTagPair")
+                    )?
+                ,
+                tag_values: self.tag_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_values", "tag_values was not specified but it is required when building LfTagPair")
+                    )?
+                ,
+            }
+        )
     }
 }
+

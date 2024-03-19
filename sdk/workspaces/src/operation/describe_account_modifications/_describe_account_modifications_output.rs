@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountModificationsOutput {
+pub struct DescribeAccountModificationsOutput  {
     /// <p>The list of modifications to the configuration of BYOL.</p>
-    pub account_modifications: ::std::option::Option<::std::vec::Vec<crate::types::AccountModification>>,
+    pub account_modifications: ::std::option::Option<::std::vec::Vec::<crate::types::AccountModification>>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAccountModificationsOutput {
+impl  DescribeAccountModificationsOutput  {
     /// <p>The list of modifications to the configuration of BYOL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_modifications.is_none()`.
-    pub fn account_modifications(&self) -> &[crate::types::AccountModification] {
-        self.account_modifications.as_deref().unwrap_or_default()
+    pub fn account_modifications(&self) -> & [crate::types::AccountModification] {
+        self.account_modifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountModificationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountModificationsOutput`](crate::operation::describe_account_modifications::DescribeAccountModificationsOutput).
     pub fn builder() -> crate::operation::describe_account_modifications::builders::DescribeAccountModificationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAccountModificationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountModificationsOutputBuilder {
-    pub(crate) account_modifications: ::std::option::Option<::std::vec::Vec<crate::types::AccountModification>>,
+    pub(crate) account_modifications: ::std::option::Option<::std::vec::Vec::<crate::types::AccountModification>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAccountModificationsOutputBuilder {
     /// <p>The list of modifications to the configuration of BYOL.</p>
     pub fn account_modifications(mut self, input: crate::types::AccountModification) -> Self {
         let mut v = self.account_modifications.unwrap_or_default();
-        v.push(input);
-        self.account_modifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_modifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of modifications to the configuration of BYOL.</p>
-    pub fn set_account_modifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountModification>>) -> Self {
-        self.account_modifications = input;
-        self
+    pub fn set_account_modifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountModification>>) -> Self {
+        self.account_modifications = input; self
     }
     /// <p>The list of modifications to the configuration of BYOL.</p>
-    pub fn get_account_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountModification>> {
+    pub fn get_account_modifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountModification>> {
         &self.account_modifications
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl DescribeAccountModificationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountModificationsOutput`](crate::operation::describe_account_modifications::DescribeAccountModificationsOutput).
     pub fn build(self) -> crate::operation::describe_account_modifications::DescribeAccountModificationsOutput {
         crate::operation::describe_account_modifications::DescribeAccountModificationsOutput {
-            account_modifications: self.account_modifications,
-            next_token: self.next_token,
+            account_modifications: self.account_modifications
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

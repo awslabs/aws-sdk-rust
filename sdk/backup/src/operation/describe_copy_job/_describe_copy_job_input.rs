@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCopyJobInput {
+pub struct DescribeCopyJobInput  {
     /// <p>Uniquely identifies a copy job.</p>
     pub copy_job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCopyJobInput {
+impl  DescribeCopyJobInput  {
     /// <p>Uniquely identifies a copy job.</p>
-    pub fn copy_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn copy_job_id(&self) -> ::std::option::Option<& str> {
         self.copy_job_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeCopyJobInputBuilder {
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn set_copy_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_job_id = input;
-        self
+        self.copy_job_id = input; self
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.copy_job_id
     }
     /// Consumes the builder and constructs a [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_copy_job::DescribeCopyJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_copy_job::DescribeCopyJobInput {
-            copy_job_id: self.copy_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_copy_job::DescribeCopyJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_copy_job::DescribeCopyJobInput {
+                copy_job_id: self.copy_job_id
+                ,
+            }
+        )
     }
 }
+

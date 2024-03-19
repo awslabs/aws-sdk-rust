@@ -4,7 +4,7 @@
 /// <p>The <code>ResolutionContact</code> structure describes the information for each node or step in that process. It contains information about different contact types, such as the escalation, rotation, and personal contacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolutionContact {
+pub struct ResolutionContact  {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub contact_arn: ::std::string::String,
     /// <p>The type of contact for a resolution step.</p>
@@ -12,14 +12,13 @@ pub struct ResolutionContact {
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub stage_index: ::std::option::Option<i32>,
 }
-impl ResolutionContact {
+impl  ResolutionContact  {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> & str {
+        use std::ops::Deref; self.contact_arn.deref()
     }
     /// <p>The type of contact for a resolution step.</p>
-    pub fn r#type(&self) -> &crate::types::ContactType {
+    pub fn r#type(&self) -> & crate::types::ContactType {
         &self.r#type
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
@@ -51,8 +50,7 @@ impl ResolutionContactBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl ResolutionContactBuilder {
     }
     /// <p>The type of contact for a resolution step.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of contact for a resolution step.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
@@ -80,8 +77,7 @@ impl ResolutionContactBuilder {
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub fn set_stage_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.stage_index = input;
-        self
+        self.stage_index = input; self
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub fn get_stage_index(&self) -> &::std::option::Option<i32> {
@@ -92,20 +88,22 @@ impl ResolutionContactBuilder {
     /// - [`contact_arn`](crate::types::builders::ResolutionContactBuilder::contact_arn)
     /// - [`r#type`](crate::types::builders::ResolutionContactBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ResolutionContact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResolutionContact {
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building ResolutionContact",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ResolutionContact",
-                )
-            })?,
-            stage_index: self.stage_index,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResolutionContact {
+                contact_arn: self.contact_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_arn", "contact_arn was not specified but it is required when building ResolutionContact")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ResolutionContact")
+                    )?
+                ,
+                stage_index: self.stage_index
+                ,
+            }
+        )
     }
 }
+

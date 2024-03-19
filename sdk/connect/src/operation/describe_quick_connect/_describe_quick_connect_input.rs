@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQuickConnectInput {
+pub struct DescribeQuickConnectInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the quick connect.</p>
     pub quick_connect_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeQuickConnectInput {
+impl  DescribeQuickConnectInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the quick connect.</p>
-    pub fn quick_connect_id(&self) -> ::std::option::Option<&str> {
+    pub fn quick_connect_id(&self) -> ::std::option::Option<& str> {
         self.quick_connect_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeQuickConnectInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeQuickConnectInputBuilder {
     }
     /// <p>The identifier for the quick connect.</p>
     pub fn set_quick_connect_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quick_connect_id = input;
-        self
+        self.quick_connect_id = input; self
     }
     /// <p>The identifier for the quick connect.</p>
     pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.quick_connect_id
     }
     /// Consumes the builder and constructs a [`DescribeQuickConnectInput`](crate::operation::describe_quick_connect::DescribeQuickConnectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_quick_connect::DescribeQuickConnectInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_quick_connect::DescribeQuickConnectInput {
-            instance_id: self.instance_id,
-            quick_connect_id: self.quick_connect_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_quick_connect::DescribeQuickConnectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_quick_connect::DescribeQuickConnectInput {
+                instance_id: self.instance_id
+                ,
+                quick_connect_id: self.quick_connect_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Represents a <code>StructureMessageName</code> to <code>DataType</code> map element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StructuredMessageFieldNameAndDataTypePair {
+pub struct StructuredMessageFieldNameAndDataTypePair  {
     /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
     pub field_name: ::std::string::String,
     /// <p>The data type.</p>
     pub data_type: ::std::option::Option<crate::types::StructuredMessage>,
 }
-impl StructuredMessageFieldNameAndDataTypePair {
+impl  StructuredMessageFieldNameAndDataTypePair  {
     /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
-    pub fn field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.field_name.deref()
+    pub fn field_name(&self) -> & str {
+        use std::ops::Deref; self.field_name.deref()
     }
     /// <p>The data type.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::StructuredMessage> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::StructuredMessage> {
         self.data_type.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl StructuredMessageFieldNameAndDataTypePairBuilder {
     }
     /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>The field name of the structured message. It determines how a data value is referenced in the target language.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl StructuredMessageFieldNameAndDataTypePairBuilder {
     }
     /// <p>The data type.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::StructuredMessage>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::StructuredMessage> {
@@ -68,17 +65,18 @@ impl StructuredMessageFieldNameAndDataTypePairBuilder {
     /// Consumes the builder and constructs a [`StructuredMessageFieldNameAndDataTypePair`](crate::types::StructuredMessageFieldNameAndDataTypePair).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_name`](crate::types::builders::StructuredMessageFieldNameAndDataTypePairBuilder::field_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StructuredMessageFieldNameAndDataTypePair, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StructuredMessageFieldNameAndDataTypePair {
-            field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_name",
-                    "field_name was not specified but it is required when building StructuredMessageFieldNameAndDataTypePair",
-                )
-            })?,
-            data_type: self.data_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::StructuredMessageFieldNameAndDataTypePair, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::StructuredMessageFieldNameAndDataTypePair {
+                field_name: self.field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_name", "field_name was not specified but it is required when building StructuredMessageFieldNameAndDataTypePair")
+                    )?
+                ,
+                data_type: self.data_type
+                ,
+            }
+        )
     }
 }
+

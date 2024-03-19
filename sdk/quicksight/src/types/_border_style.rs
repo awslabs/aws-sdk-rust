@@ -3,11 +3,11 @@
 /// <p>The display options for tile borders for visuals.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BorderStyle {
+pub struct BorderStyle  {
     /// <p>The option to enable display of borders for visuals.</p>
     pub show: ::std::option::Option<bool>,
 }
-impl BorderStyle {
+impl  BorderStyle  {
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn show(&self) -> ::std::option::Option<bool> {
         self.show
@@ -34,8 +34,7 @@ impl BorderStyleBuilder {
     }
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn set_show(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show = input;
-        self
+        self.show = input; self
     }
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn get_show(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl BorderStyleBuilder {
     }
     /// Consumes the builder and constructs a [`BorderStyle`](crate::types::BorderStyle).
     pub fn build(self) -> crate::types::BorderStyle {
-        crate::types::BorderStyle { show: self.show }
+        crate::types::BorderStyle {
+            show: self.show
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateEnvironmentInput {
+pub struct CreateEnvironmentInput  {
     /// <p>The name for the environment.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
@@ -24,53 +24,53 @@ pub struct CreateEnvironmentInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateEnvironmentInput {
+impl  CreateEnvironmentInput  {
     /// <p>The name for the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
-    pub fn desktop_arn(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_arn(&self) -> ::std::option::Option<& str> {
         self.desktop_arn.as_deref()
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
-    pub fn desktop_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn desktop_endpoint(&self) -> ::std::option::Option<& str> {
         self.desktop_endpoint.as_deref()
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
-    pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
+    pub fn software_set_update_schedule(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
     /// <p>A specification for a time window to apply software updates.</p>
-    pub fn maintenance_window(&self) -> ::std::option::Option<&crate::types::MaintenanceWindow> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<& crate::types::MaintenanceWindow> {
         self.maintenance_window.as_ref()
     }
     /// <p>An option to define which software updates to apply.</p>
-    pub fn software_set_update_mode(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateMode> {
+    pub fn software_set_update_mode(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateMode> {
         self.software_set_update_mode.as_ref()
     }
     /// <p>The ID of the software set to apply.</p>
-    pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_software_set_id(&self) -> ::std::option::Option<& str> {
         self.desired_software_set_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use to encrypt the environment.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateEnvironmentInput {
+impl  ::std::fmt::Debug for CreateEnvironmentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -106,7 +106,7 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) desired_software_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name for the environment.</p>
@@ -116,8 +116,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The name for the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn set_desktop_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_arn = input;
-        self
+        self.desktop_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the desktop to stream from Amazon WorkSpaces, WorkSpaces Web, or AppStream 2.0.</p>
     pub fn get_desktop_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn set_desktop_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desktop_endpoint = input;
-        self
+        self.desktop_endpoint = input; self
     }
     /// <p>The URL for the identity provider login (only for environments that use AppStream 2.0).</p>
     pub fn get_desktop_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn set_software_set_update_schedule(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>) -> Self {
-        self.software_set_update_schedule = input;
-        self
+        self.software_set_update_schedule = input; self
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
@@ -173,8 +169,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<crate::types::MaintenanceWindow>) -> Self {
-        self.maintenance_window = input;
-        self
+        self.maintenance_window = input; self
     }
     /// <p>A specification for a time window to apply software updates.</p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<crate::types::MaintenanceWindow> {
@@ -187,8 +182,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn set_software_set_update_mode(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateMode>) -> Self {
-        self.software_set_update_mode = input;
-        self
+        self.software_set_update_mode = input; self
     }
     /// <p>An option to define which software updates to apply.</p>
     pub fn get_software_set_update_mode(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateMode> {
@@ -201,8 +195,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn set_desired_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_software_set_id = input;
-        self
+        self.desired_software_set_id = input; self
     }
     /// <p>The ID of the software set to apply.</p>
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +208,7 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use to encrypt the environment.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use to encrypt the environment.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +225,7 @@ impl CreateEnvironmentInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -249,35 +240,44 @@ impl CreateEnvironmentInputBuilder {
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name,
-            desktop_arn: self.desktop_arn,
-            desktop_endpoint: self.desktop_endpoint,
-            software_set_update_schedule: self.software_set_update_schedule,
-            maintenance_window: self.maintenance_window,
-            software_set_update_mode: self.software_set_update_mode,
-            desired_software_set_id: self.desired_software_set_id,
-            kms_key_arn: self.kms_key_arn,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment::CreateEnvironmentInput {
+                name: self.name
+                ,
+                desktop_arn: self.desktop_arn
+                ,
+                desktop_endpoint: self.desktop_endpoint
+                ,
+                software_set_update_schedule: self.software_set_update_schedule
+                ,
+                maintenance_window: self.maintenance_window
+                ,
+                software_set_update_mode: self.software_set_update_mode
+                ,
+                desired_software_set_id: self.desired_software_set_id
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {
@@ -296,3 +296,4 @@ impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {
         formatter.finish()
     }
 }
+

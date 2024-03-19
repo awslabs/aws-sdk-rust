@@ -3,15 +3,15 @@
 /// <p>Provides a template for the configuration information to connect to your data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateConfiguration {
+pub struct TemplateConfiguration  {
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub template: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl TemplateConfiguration {
+impl  TemplateConfiguration  {
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
-    pub fn template(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn template(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.template.as_ref()
     }
 }
@@ -38,8 +38,7 @@ impl TemplateConfigurationBuilder {
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
@@ -48,6 +47,10 @@ impl TemplateConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
-        crate::types::TemplateConfiguration { template: self.template }
+        crate::types::TemplateConfiguration {
+            template: self.template
+            ,
+        }
     }
 }
+

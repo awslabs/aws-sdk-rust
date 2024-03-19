@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPluginOutput {
+pub struct GetPluginOutput  {
     /// <p>The identifier of the application which contains the plugin.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the plugin.</p>
@@ -25,53 +25,53 @@ pub struct GetPluginOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetPluginOutput {
+impl  GetPluginOutput  {
     /// <p>The identifier of the application which contains the plugin.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the plugin.</p>
-    pub fn plugin_id(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_id(&self) -> ::std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The name of the plugin.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of the plugin.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PluginType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PluginType> {
         self.r#type.as_ref()
     }
     /// <p>The source URL used for plugin configuration.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
+    pub fn server_url(&self) -> ::std::option::Option<& str> {
         self.server_url.as_deref()
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
-    pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
+    pub fn auth_configuration(&self) -> ::std::option::Option<& crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
-    pub fn plugin_arn(&self) -> ::std::option::Option<&str> {
+    pub fn plugin_arn(&self) -> ::std::option::Option<& str> {
         self.plugin_arn.as_deref()
     }
     /// <p>The current state of the plugin.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PluginState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PluginState> {
         self.state.as_ref()
     }
     /// <p>The timestamp for when the plugin was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPluginOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPluginOutput {
     /// Creates a new builder-style object to manufacture [`GetPluginOutput`](crate::operation::get_plugin::GetPluginOutput).
     pub fn builder() -> crate::operation::get_plugin::builders::GetPluginOutputBuilder {
@@ -103,8 +103,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The identifier of the application which contains the plugin.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application which contains the plugin.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The identifier of the plugin.</p>
     pub fn set_plugin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_id = input;
-        self
+        self.plugin_id = input; self
     }
     /// <p>The identifier of the plugin.</p>
     pub fn get_plugin_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The name of the plugin.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the plugin.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The type of the plugin.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PluginType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the plugin.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PluginType> {
@@ -159,8 +155,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
+        self.server_url = input; self
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +168,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
     pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
-        self.auth_configuration = input;
-        self
+        self.auth_configuration = input; self
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
@@ -187,8 +181,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub fn set_plugin_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plugin_arn = input;
-        self
+        self.plugin_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.</p>
     pub fn get_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +194,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The current state of the plugin.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PluginState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the plugin.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PluginState> {
@@ -215,8 +207,7 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp for when the plugin was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -229,36 +220,46 @@ impl GetPluginOutputBuilder {
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp for when the plugin was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPluginOutput`](crate::operation::get_plugin::GetPluginOutput).
     pub fn build(self) -> crate::operation::get_plugin::GetPluginOutput {
         crate::operation::get_plugin::GetPluginOutput {
-            application_id: self.application_id,
-            plugin_id: self.plugin_id,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            server_url: self.server_url,
-            auth_configuration: self.auth_configuration,
-            plugin_arn: self.plugin_arn,
-            state: self.state,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            application_id: self.application_id
+            ,
+            plugin_id: self.plugin_id
+            ,
+            display_name: self.display_name
+            ,
+            r#type: self.r#type
+            ,
+            server_url: self.server_url
+            ,
+            auth_configuration: self.auth_configuration
+            ,
+            plugin_arn: self.plugin_arn
+            ,
+            state: self.state
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

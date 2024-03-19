@@ -3,19 +3,19 @@
 /// <p>Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVpcEndpointAccessInput {
+pub struct ListVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListVpcEndpointAccessInput {
+impl  ListVpcEndpointAccessInput  {
     /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ListVpcEndpointAccessInputBuilder {
     }
     /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the OpenSearch Service domain to retrieve access information for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl ListVpcEndpointAccessInputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointAccessInput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput {
-            domain_name: self.domain_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput {
+                domain_name: self.domain_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

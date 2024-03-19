@@ -4,22 +4,20 @@
 /// <p>To create more traffic policy versions, you can use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a> to get the traffic policy document for a specified traffic policy version, and then use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a> to create a new traffic policy using the traffic policy document.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TooManyTrafficPolicyVersionsForCurrentPolicy {
+pub struct TooManyTrafficPolicyVersionsForCurrentPolicy  {
     /// <p></p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for TooManyTrafficPolicyVersionsForCurrentPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "TooManyTrafficPolicyVersionsForCurrentPolicy")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,9 +32,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::TooManyTrafficP
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyTrafficPolicyVersionsForCurrentPolicy {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TooManyTrafficPolicyVersionsForCurrentPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy).
@@ -60,29 +56,30 @@ impl TooManyTrafficPolicyVersionsForCurrentPolicyBuilder {
     }
     /// <p></p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p></p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`TooManyTrafficPolicyVersionsForCurrentPolicy`](crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy).
     pub fn build(self) -> crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy {
         crate::types::error::TooManyTrafficPolicyVersionsForCurrentPolicy {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

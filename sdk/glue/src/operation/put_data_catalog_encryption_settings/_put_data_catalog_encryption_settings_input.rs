@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDataCatalogEncryptionSettingsInput {
+pub struct PutDataCatalogEncryptionSettingsInput  {
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The security configuration to set.</p>
     pub data_catalog_encryption_settings: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>,
 }
-impl PutDataCatalogEncryptionSettingsInput {
+impl  PutDataCatalogEncryptionSettingsInput  {
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The security configuration to set.</p>
-    pub fn data_catalog_encryption_settings(&self) -> ::std::option::Option<&crate::types::DataCatalogEncryptionSettings> {
+    pub fn data_catalog_encryption_settings(&self) -> ::std::option::Option<& crate::types::DataCatalogEncryptionSettings> {
         self.data_catalog_encryption_settings.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
     }
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl PutDataCatalogEncryptionSettingsInputBuilder {
     }
     /// <p>The security configuration to set.</p>
     pub fn set_data_catalog_encryption_settings(mut self, input: ::std::option::Option<crate::types::DataCatalogEncryptionSettings>) -> Self {
-        self.data_catalog_encryption_settings = input;
-        self
+        self.data_catalog_encryption_settings = input; self
     }
     /// <p>The security configuration to set.</p>
     pub fn get_data_catalog_encryption_settings(&self) -> &::std::option::Option<crate::types::DataCatalogEncryptionSettings> {
         &self.data_catalog_encryption_settings
     }
     /// Consumes the builder and constructs a [`PutDataCatalogEncryptionSettingsInput`](crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsInput {
-                catalog_id: self.catalog_id,
-                data_catalog_encryption_settings: self.data_catalog_encryption_settings,
-            },
+                catalog_id: self.catalog_id
+                ,
+                data_catalog_encryption_settings: self.data_catalog_encryption_settings
+                ,
+            }
         )
     }
 }
+

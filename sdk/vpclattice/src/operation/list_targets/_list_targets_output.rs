@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTargetsOutput {
+pub struct ListTargetsOutput  {
     /// <p>Information about the targets.</p>
-    pub items: ::std::vec::Vec<crate::types::TargetSummary>,
+    pub items: ::std::vec::Vec::<crate::types::TargetSummary>,
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTargetsOutput {
+impl  ListTargetsOutput  {
     /// <p>Information about the targets.</p>
-    pub fn items(&self) -> &[crate::types::TargetSummary] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::TargetSummary] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput).
     pub fn builder() -> crate::operation::list_targets::builders::ListTargetsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListTargetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTargetsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListTargetsOutputBuilder {
     /// <p>Information about the targets.</p>
     pub fn items(mut self, input: crate::types::TargetSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the targets.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>Information about the targets.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetSummary>> {
         &self.items
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
@@ -68,35 +66,37 @@ impl ListTargetsOutputBuilder {
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, a pagination token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_targets::builders::ListTargetsOutputBuilder::items)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListTargetsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_targets::ListTargetsOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListTargetsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

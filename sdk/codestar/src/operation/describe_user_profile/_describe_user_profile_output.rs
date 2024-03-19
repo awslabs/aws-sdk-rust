@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeUserProfileOutput {
+pub struct DescribeUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: ::std::string::String,
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
@@ -17,34 +17,33 @@ pub struct DescribeUserProfileOutput {
     pub last_modified_timestamp: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl DescribeUserProfileOutput {
+impl  DescribeUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
-    pub fn user_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_arn.deref()
+    pub fn user_arn(&self) -> & str {
+        use std::ops::Deref; self.user_arn.deref()
     }
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The email address for the user. Optional.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
-    pub fn ssh_public_key(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_timestamp
     }
 }
-impl ::std::fmt::Debug for DescribeUserProfileOutput {
+impl  ::std::fmt::Debug for DescribeUserProfileOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserProfileOutput");
         formatter.field("user_arn", &self.user_arn);
@@ -58,10 +57,10 @@ impl ::std::fmt::Debug for DescribeUserProfileOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUserProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
     pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
@@ -90,8 +89,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The email address for the user. Optional.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address for the user. Optional.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,55 +156,53 @@ impl DescribeUserProfileOutputBuilder {
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::operation::describe_user_profile::DescribeUserProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_arn`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::user_arn)
     /// - [`created_timestamp`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::created_timestamp)
     /// - [`last_modified_timestamp`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::last_modified_timestamp)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileOutput {
-            user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_arn",
-                    "user_arn was not specified but it is required when building DescribeUserProfileOutput",
-                )
-            })?,
-            display_name: self.display_name,
-            email_address: self.email_address,
-            ssh_public_key: self.ssh_public_key,
-            created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_timestamp",
-                    "created_timestamp was not specified but it is required when building DescribeUserProfileOutput",
-                )
-            })?,
-            last_modified_timestamp: self.last_modified_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_timestamp",
-                    "last_modified_timestamp was not specified but it is required when building DescribeUserProfileOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_user_profile::DescribeUserProfileOutput {
+                user_arn: self.user_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_arn", "user_arn was not specified but it is required when building DescribeUserProfileOutput")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                email_address: self.email_address
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                created_timestamp: self.created_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_timestamp", "created_timestamp was not specified but it is required when building DescribeUserProfileOutput")
+                    )?
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_timestamp", "last_modified_timestamp was not specified but it is required when building DescribeUserProfileOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeUserProfileOutputBuilder {
@@ -226,3 +218,4 @@ impl ::std::fmt::Debug for DescribeUserProfileOutputBuilder {
         formatter.finish()
     }
 }
+

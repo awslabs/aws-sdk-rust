@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCredentialsInput {
+pub struct GetCredentialsInput  {
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -25,7 +25,7 @@ pub struct GetCredentialsInput {
     /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
-impl GetCredentialsInput {
+impl  GetCredentialsInput  {
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -40,7 +40,7 @@ impl GetCredentialsInput {
     /// <li>
     /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p></li>
     /// </ul>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
@@ -48,11 +48,11 @@ impl GetCredentialsInput {
         self.duration_seconds
     }
     /// <p>The name of the workgroup associated with the database.</p>
-    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> ::std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
 }
@@ -106,8 +106,7 @@ impl GetCredentialsInputBuilder {
     /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words </a> in the Amazon Redshift Database Developer Guide</p></li>
     /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The name of the database to get temporary authorization to log on to.</p>
     /// <p>Constraints:</p>
@@ -133,8 +132,7 @@ impl GetCredentialsInputBuilder {
     }
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -147,8 +145,7 @@ impl GetCredentialsInputBuilder {
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The name of the workgroup associated with the database.</p>
     pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,22 +158,26 @@ impl GetCredentialsInputBuilder {
     }
     /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_name
     }
     /// Consumes the builder and constructs a [`GetCredentialsInput`](crate::operation::get_credentials::GetCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_credentials::GetCredentialsInput {
-            db_name: self.db_name,
-            duration_seconds: self.duration_seconds,
-            workgroup_name: self.workgroup_name,
-            custom_domain_name: self.custom_domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_credentials::GetCredentialsInput {
+                db_name: self.db_name
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                custom_domain_name: self.custom_domain_name
+                ,
+            }
+        )
     }
 }
+

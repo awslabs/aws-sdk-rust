@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMetadataModelImports`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`migration_project_identifier(impl Into<String>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::migration_project_identifier) / [`set_migration_project_identifier(Option<String>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::set_migration_project_identifier):<br>required: **true**<br><p>The migration project name or Amazon Resource Name (ARN).</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters applied to the metadata model imports described in the form of key-value pairs.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::set_marker):<br>required: **false**<br><p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::set_max_records):<br>required: **false**<br><p>A paginated list of metadata model imports.</p><br>
-    /// - On success, responds with [`DescribeMetadataModelImportsOutput`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput) with field(s):
+                            /// - On success, responds with [`DescribeMetadataModelImportsOutput`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput::marker): <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p> <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     ///   - [`requests(Option<Vec::<SchemaConversionRequest>>)`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsOutput::requests): <p>A paginated list of metadata model imports.</p>
-    /// - On failure, responds with [`SdkError<DescribeMetadataModelImportsError>`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsError)
-    pub fn describe_metadata_model_imports(
-        &self,
-    ) -> crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder {
-        crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeMetadataModelImportsError>`](crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsError)
+    pub fn describe_metadata_model_imports(&self) -> crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder {
+                                crate::operation::describe_metadata_model_imports::builders::DescribeMetadataModelImportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

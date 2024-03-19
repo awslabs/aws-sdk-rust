@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateServiceActionWithProvisioningArtifactInput {
+pub struct AssociateServiceActionWithProvisioningArtifactInput  {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
@@ -20,17 +20,17 @@ pub struct AssociateServiceActionWithProvisioningArtifactInput {
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateServiceActionWithProvisioningArtifactInput {
+impl  AssociateServiceActionWithProvisioningArtifactInput  {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_action_id(&self) -> ::std::option::Option<& str> {
         self.service_action_id.as_deref()
     }
     /// <p>The language code.</p>
@@ -40,19 +40,17 @@ impl AssociateServiceActionWithProvisioningArtifactInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
 }
 impl AssociateServiceActionWithProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
-    pub fn builder(
-    ) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder {
         crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder::default()
     }
 }
@@ -76,8 +74,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn set_provisioning_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +102,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_action_id = input;
-        self
+        self.service_action_id = input; self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn get_service_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +127,7 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -152,28 +146,28 @@ impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idempotency_token = input;
-        self
+        self.idempotency_token = input; self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
     pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`AssociateServiceActionWithProvisioningArtifactInput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput {
-                product_id: self.product_id,
-                provisioning_artifact_id: self.provisioning_artifact_id,
-                service_action_id: self.service_action_id,
-                accept_language: self.accept_language,
-                idempotency_token: self.idempotency_token,
-            },
+                product_id: self.product_id
+                ,
+                provisioning_artifact_id: self.provisioning_artifact_id
+                ,
+                service_action_id: self.service_action_id
+                ,
+                accept_language: self.accept_language
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+            }
         )
     }
 }
+

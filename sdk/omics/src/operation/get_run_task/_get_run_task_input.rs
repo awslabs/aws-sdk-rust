@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRunTaskInput {
+pub struct GetRunTaskInput  {
     /// <p>The workflow run ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The task's ID.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRunTaskInput {
+impl  GetRunTaskInput  {
     /// <p>The workflow run ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The task's ID.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetRunTaskInputBuilder {
     }
     /// <p>The workflow run ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The workflow run ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetRunTaskInputBuilder {
     }
     /// <p>The task's ID.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The task's ID.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetRunTaskInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRunTaskInput`](crate::operation::get_run_task::GetRunTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_run_task::GetRunTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_run_task::GetRunTaskInput {
-            id: self.id,
-            task_id: self.task_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_run_task::GetRunTaskInput {
+                id: self.id
+                ,
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

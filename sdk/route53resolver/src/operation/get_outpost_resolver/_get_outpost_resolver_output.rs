@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOutpostResolverOutput {
+pub struct GetOutpostResolverOutput  {
     /// <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
     pub outpost_resolver: ::std::option::Option<crate::types::OutpostResolver>,
     _request_id: Option<String>,
 }
-impl GetOutpostResolverOutput {
+impl  GetOutpostResolverOutput  {
     /// <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
-    pub fn outpost_resolver(&self) -> ::std::option::Option<&crate::types::OutpostResolver> {
+    pub fn outpost_resolver(&self) -> ::std::option::Option<& crate::types::OutpostResolver> {
         self.outpost_resolver.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOutpostResolverOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOutpostResolverOutput {
     /// Creates a new builder-style object to manufacture [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput).
     pub fn builder() -> crate::operation::get_outpost_resolver::builders::GetOutpostResolverOutputBuilder {
@@ -40,27 +40,28 @@ impl GetOutpostResolverOutputBuilder {
     }
     /// <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
     pub fn set_outpost_resolver(mut self, input: ::std::option::Option<crate::types::OutpostResolver>) -> Self {
-        self.outpost_resolver = input;
-        self
+        self.outpost_resolver = input; self
     }
     /// <p>Information about the <code>GetOutpostResolver</code> request, including the status of the request.</p>
     pub fn get_outpost_resolver(&self) -> &::std::option::Option<crate::types::OutpostResolver> {
         &self.outpost_resolver
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOutpostResolverOutput`](crate::operation::get_outpost_resolver::GetOutpostResolverOutput).
     pub fn build(self) -> crate::operation::get_outpost_resolver::GetOutpostResolverOutput {
         crate::operation::get_outpost_resolver::GetOutpostResolverOutput {
-            outpost_resolver: self.outpost_resolver,
+            outpost_resolver: self.outpost_resolver
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

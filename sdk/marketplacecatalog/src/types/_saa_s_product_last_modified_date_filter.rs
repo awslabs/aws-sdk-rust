@@ -3,13 +3,13 @@
 /// <p>Object that allows filtering based on the last modified date of SaaS products</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SaaSProductLastModifiedDateFilter {
+pub struct SaaSProductLastModifiedDateFilter  {
     /// <p>Dates between which the SaaS product was last modified.</p>
     pub date_range: ::std::option::Option<crate::types::SaaSProductLastModifiedDateFilterDateRange>,
 }
-impl SaaSProductLastModifiedDateFilter {
+impl  SaaSProductLastModifiedDateFilter  {
     /// <p>Dates between which the SaaS product was last modified.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::SaaSProductLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::SaaSProductLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SaaSProductLastModifiedDateFilterBuilder {
     }
     /// <p>Dates between which the SaaS product was last modified.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::SaaSProductLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Dates between which the SaaS product was last modified.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::SaaSProductLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl SaaSProductLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`SaaSProductLastModifiedDateFilter`](crate::types::SaaSProductLastModifiedDateFilter).
     pub fn build(self) -> crate::types::SaaSProductLastModifiedDateFilter {
-        crate::types::SaaSProductLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::SaaSProductLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a provisioning artifact (also known as a version) for a product.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisioningArtifactDetail {
+pub struct ProvisioningArtifactDetail  {
     /// <p>The identifier of the provisioning artifact.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
@@ -32,17 +32,17 @@ pub struct ProvisioningArtifactDetail {
     /// <p>This field only exists for Repo-Synced products.</p>
     pub source_revision: ::std::option::Option<::std::string::String>,
 }
-impl ProvisioningArtifactDetail {
+impl  ProvisioningArtifactDetail  {
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of provisioning artifact.</p>
@@ -56,11 +56,11 @@ impl ProvisioningArtifactDetail {
     /// <li>
     /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Indicates whether the product version is active.</p>
@@ -68,12 +68,12 @@ impl ProvisioningArtifactDetail {
         self.active
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn guidance(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
+    pub fn guidance(&self) -> ::std::option::Option<& crate::types::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
     /// <p>This field only exists for Repo-Synced products.</p>
-    pub fn source_revision(&self) -> ::std::option::Option<&str> {
+    pub fn source_revision(&self) -> ::std::option::Option<& str> {
         self.source_revision.as_deref()
     }
 }
@@ -105,8 +105,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +164,7 @@ impl ProvisioningArtifactDetailBuilder {
     /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
@@ -191,8 +187,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -205,8 +200,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>Indicates whether the product version is active.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Indicates whether the product version is active.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -219,8 +213,7 @@ impl ProvisioningArtifactDetailBuilder {
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn set_guidance(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>) -> Self {
-        self.guidance = input;
-        self
+        self.guidance = input; self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn get_guidance(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactGuidance> {
@@ -235,8 +228,7 @@ impl ProvisioningArtifactDetailBuilder {
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
     /// <p>This field only exists for Repo-Synced products.</p>
     pub fn set_source_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_revision = input;
-        self
+        self.source_revision = input; self
     }
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs.</p>
     /// <p>This field only exists for Repo-Synced products.</p>
@@ -246,14 +238,23 @@ impl ProvisioningArtifactDetailBuilder {
     /// Consumes the builder and constructs a [`ProvisioningArtifactDetail`](crate::types::ProvisioningArtifactDetail).
     pub fn build(self) -> crate::types::ProvisioningArtifactDetail {
         crate::types::ProvisioningArtifactDetail {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            created_time: self.created_time,
-            active: self.active,
-            guidance: self.guidance,
-            source_revision: self.source_revision,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            created_time: self.created_time
+            ,
+            active: self.active
+            ,
+            guidance: self.guidance
+            ,
+            source_revision: self.source_revision
+            ,
         }
     }
 }
+

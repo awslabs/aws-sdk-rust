@@ -3,7 +3,7 @@
 /// <p>The details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AppInstanceUser {
+pub struct AppInstanceUser  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
@@ -17,33 +17,33 @@ pub struct AppInstanceUser {
     /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub expiration_settings: ::std::option::Option<crate::types::ExpirationSettings>,
 }
-impl AppInstanceUser {
+impl  AppInstanceUser  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn expiration_settings(&self) -> ::std::option::Option<&crate::types::ExpirationSettings> {
+    pub fn expiration_settings(&self) -> ::std::option::Option<& crate::types::ExpirationSettings> {
         self.expiration_settings.as_ref()
     }
 }
-impl ::std::fmt::Debug for AppInstanceUser {
+impl  ::std::fmt::Debug for AppInstanceUser  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUser");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -81,8 +81,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -137,8 +133,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -151,8 +146,7 @@ impl AppInstanceUserBuilder {
     }
     /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn set_expiration_settings(mut self, input: ::std::option::Option<crate::types::ExpirationSettings>) -> Self {
-        self.expiration_settings = input;
-        self
+        self.expiration_settings = input; self
     }
     /// <p>The interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn get_expiration_settings(&self) -> &::std::option::Option<crate::types::ExpirationSettings> {
@@ -161,12 +155,18 @@ impl AppInstanceUserBuilder {
     /// Consumes the builder and constructs a [`AppInstanceUser`](crate::types::AppInstanceUser).
     pub fn build(self) -> crate::types::AppInstanceUser {
         crate::types::AppInstanceUser {
-            app_instance_user_arn: self.app_instance_user_arn,
-            name: self.name,
-            metadata: self.metadata,
-            created_timestamp: self.created_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
-            expiration_settings: self.expiration_settings,
+            app_instance_user_arn: self.app_instance_user_arn
+            ,
+            name: self.name
+            ,
+            metadata: self.metadata
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            expiration_settings: self.expiration_settings
+            ,
         }
     }
 }
@@ -182,3 +182,4 @@ impl ::std::fmt::Debug for AppInstanceUserBuilder {
         formatter.finish()
     }
 }
+

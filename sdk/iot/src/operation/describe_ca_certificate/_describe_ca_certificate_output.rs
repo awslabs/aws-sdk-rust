@@ -3,28 +3,28 @@
 /// <p>The output from the DescribeCACertificate operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCaCertificateOutput {
+pub struct DescribeCaCertificateOutput  {
     /// <p>The CA certificate description.</p>
     pub certificate_description: ::std::option::Option<crate::types::CaCertificateDescription>,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     _request_id: Option<String>,
 }
-impl DescribeCaCertificateOutput {
+impl  DescribeCaCertificateOutput  {
     /// <p>The CA certificate description.</p>
-    pub fn certificate_description(&self) -> ::std::option::Option<&crate::types::CaCertificateDescription> {
+    pub fn certificate_description(&self) -> ::std::option::Option<& crate::types::CaCertificateDescription> {
         self.certificate_description.as_ref()
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
+    pub fn registration_config(&self) -> ::std::option::Option<& crate::types::RegistrationConfig> {
         self.registration_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCaCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCaCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCaCertificateOutput`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput).
     pub fn builder() -> crate::operation::describe_ca_certificate::builders::DescribeCaCertificateOutputBuilder {
@@ -48,8 +48,7 @@ impl DescribeCaCertificateOutputBuilder {
     }
     /// <p>The CA certificate description.</p>
     pub fn set_certificate_description(mut self, input: ::std::option::Option<crate::types::CaCertificateDescription>) -> Self {
-        self.certificate_description = input;
-        self
+        self.certificate_description = input; self
     }
     /// <p>The CA certificate description.</p>
     pub fn get_certificate_description(&self) -> &::std::option::Option<crate::types::CaCertificateDescription> {
@@ -62,28 +61,30 @@ impl DescribeCaCertificateOutputBuilder {
     }
     /// <p>Information about the registration configuration.</p>
     pub fn set_registration_config(mut self, input: ::std::option::Option<crate::types::RegistrationConfig>) -> Self {
-        self.registration_config = input;
-        self
+        self.registration_config = input; self
     }
     /// <p>Information about the registration configuration.</p>
     pub fn get_registration_config(&self) -> &::std::option::Option<crate::types::RegistrationConfig> {
         &self.registration_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCaCertificateOutput`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput).
     pub fn build(self) -> crate::operation::describe_ca_certificate::DescribeCaCertificateOutput {
         crate::operation::describe_ca_certificate::DescribeCaCertificateOutput {
-            certificate_description: self.certificate_description,
-            registration_config: self.registration_config,
+            certificate_description: self.certificate_description
+            ,
+            registration_config: self.registration_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpointAuthorization`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::set_cluster_identifier):<br>required: **false**<br><p>The cluster identifier of the cluster to access.</p><br>
     ///   - [`account(impl Into<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::set_account):<br>required: **false**<br><p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p><br>
     ///   - [`grantee(bool)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::grantee) / [`set_grantee(Option<bool>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::set_grantee):<br>required: **false**<br><p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p><br>
-    /// - On success, responds with [`DescribeEndpointAuthorizationOutput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput) with field(s):
+                            /// - On success, responds with [`DescribeEndpointAuthorizationOutput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput) with field(s):
     ///   - [`endpoint_authorization_list(Option<Vec::<EndpointAuthorization>>)`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput::endpoint_authorization_list): <p>The authorizations to an endpoint.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointAuthorizationError>`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError)
-    pub fn describe_endpoint_authorization(
-        &self,
-    ) -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder {
-        crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeEndpointAuthorizationError>`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError)
+    pub fn describe_endpoint_authorization(&self) -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder {
+                                crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

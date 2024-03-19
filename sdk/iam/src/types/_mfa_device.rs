@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>ListMFADevices</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MfaDevice {
+pub struct MfaDevice  {
     /// <p>The user with whom the MFA device is associated.</p>
     pub user_name: ::std::string::String,
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
@@ -12,19 +12,17 @@ pub struct MfaDevice {
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub enable_date: ::aws_smithy_types::DateTime,
 }
-impl MfaDevice {
+impl  MfaDevice  {
     /// <p>The user with whom the MFA device is associated.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
-    pub fn serial_number(&self) -> &str {
-        use std::ops::Deref;
-        self.serial_number.deref()
+    pub fn serial_number(&self) -> & str {
+        use std::ops::Deref; self.serial_number.deref()
     }
     /// <p>The date when the MFA device was enabled for the user.</p>
-    pub fn enable_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn enable_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.enable_date
     }
 }
@@ -52,8 +50,7 @@ impl MfaDeviceBuilder {
     }
     /// <p>The user with whom the MFA device is associated.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The user with whom the MFA device is associated.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl MfaDeviceBuilder {
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +78,7 @@ impl MfaDeviceBuilder {
     }
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub fn set_enable_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enable_date = input;
-        self
+        self.enable_date = input; self
     }
     /// <p>The date when the MFA device was enabled for the user.</p>
     pub fn get_enable_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -95,25 +90,25 @@ impl MfaDeviceBuilder {
     /// - [`serial_number`](crate::types::builders::MfaDeviceBuilder::serial_number)
     /// - [`enable_date`](crate::types::builders::MfaDeviceBuilder::enable_date)
     pub fn build(self) -> ::std::result::Result<crate::types::MfaDevice, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MfaDevice {
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building MfaDevice",
-                )
-            })?,
-            serial_number: self.serial_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "serial_number",
-                    "serial_number was not specified but it is required when building MfaDevice",
-                )
-            })?,
-            enable_date: self.enable_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_date",
-                    "enable_date was not specified but it is required when building MfaDevice",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MfaDevice {
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building MfaDevice")
+                    )?
+                ,
+                serial_number: self.serial_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("serial_number", "serial_number was not specified but it is required when building MfaDevice")
+                    )?
+                ,
+                enable_date: self.enable_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_date", "enable_date was not specified but it is required when building MfaDevice")
+                    )?
+                ,
+            }
+        )
     }
 }
+

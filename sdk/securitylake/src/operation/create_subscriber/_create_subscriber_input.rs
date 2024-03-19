@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSubscriberInput {
+pub struct CreateSubscriberInput  {
     /// <p>The AWS identity used to access your data.</p>
     pub subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     /// <p>The name of your Security Lake subscriber account.</p>
@@ -10,42 +10,45 @@ pub struct CreateSubscriberInput {
     /// <p>The description for your subscriber account in Security Lake.</p>
     pub subscriber_description: ::std::option::Option<::std::string::String>,
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
+    pub access_types: ::std::option::Option<::std::vec::Vec::<crate::types::AccessType>>,
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateSubscriberInput {
+impl  CreateSubscriberInput  {
     /// <p>The AWS identity used to access your data.</p>
-    pub fn subscriber_identity(&self) -> ::std::option::Option<&crate::types::AwsIdentity> {
+    pub fn subscriber_identity(&self) -> ::std::option::Option<& crate::types::AwsIdentity> {
         self.subscriber_identity.as_ref()
     }
     /// <p>The name of your Security Lake subscriber account.</p>
-    pub fn subscriber_name(&self) -> ::std::option::Option<&str> {
+    pub fn subscriber_name(&self) -> ::std::option::Option<& str> {
         self.subscriber_name.as_deref()
     }
     /// <p>The description for your subscriber account in Security Lake.</p>
-    pub fn subscriber_description(&self) -> ::std::option::Option<&str> {
+    pub fn subscriber_description(&self) -> ::std::option::Option<& str> {
         self.subscriber_description.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::LogSourceResource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::LogSourceResource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_types.is_none()`.
-    pub fn access_types(&self) -> &[crate::types::AccessType] {
-        self.access_types.as_deref().unwrap_or_default()
+    pub fn access_types(&self) -> & [crate::types::AccessType] {
+        self.access_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateSubscriberInput {
@@ -62,9 +65,9 @@ pub struct CreateSubscriberInputBuilder {
     pub(crate) subscriber_identity: ::std::option::Option<crate::types::AwsIdentity>,
     pub(crate) subscriber_name: ::std::option::Option<::std::string::String>,
     pub(crate) subscriber_description: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>,
-    pub(crate) access_types: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>,
+    pub(crate) access_types: ::std::option::Option<::std::vec::Vec::<crate::types::AccessType>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateSubscriberInputBuilder {
     /// <p>The AWS identity used to access your data.</p>
@@ -75,8 +78,7 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The AWS identity used to access your data.</p>
     pub fn set_subscriber_identity(mut self, input: ::std::option::Option<crate::types::AwsIdentity>) -> Self {
-        self.subscriber_identity = input;
-        self
+        self.subscriber_identity = input; self
     }
     /// <p>The AWS identity used to access your data.</p>
     pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
@@ -90,8 +92,7 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn set_subscriber_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriber_name = input;
-        self
+        self.subscriber_name = input; self
     }
     /// <p>The name of your Security Lake subscriber account.</p>
     pub fn get_subscriber_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +105,7 @@ impl CreateSubscriberInputBuilder {
     }
     /// <p>The description for your subscriber account in Security Lake.</p>
     pub fn set_subscriber_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriber_description = input;
-        self
+        self.subscriber_description = input; self
     }
     /// <p>The description for your subscriber account in Security Lake.</p>
     pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +118,16 @@ impl CreateSubscriberInputBuilder {
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     pub fn sources(mut self, input: crate::types::LogSourceResource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogSourceResource>> {
         &self.sources
     }
     /// Appends an item to `access_types`.
@@ -138,17 +137,16 @@ impl CreateSubscriberInputBuilder {
     /// <p>The Amazon S3 or Lake Formation access type.</p>
     pub fn access_types(mut self, input: crate::types::AccessType) -> Self {
         let mut v = self.access_types.unwrap_or_default();
-        v.push(input);
-        self.access_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessType>>) -> Self {
-        self.access_types = input;
-        self
+    pub fn set_access_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessType>>) -> Self {
+        self.access_types = input; self
     }
     /// <p>The Amazon S3 or Lake Formation access type.</p>
-    pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
+    pub fn get_access_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessType>> {
         &self.access_types
     }
     /// Appends an item to `tags`.
@@ -158,30 +156,36 @@ impl CreateSubscriberInputBuilder {
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
-            subscriber_identity: self.subscriber_identity,
-            subscriber_name: self.subscriber_name,
-            subscriber_description: self.subscriber_description,
-            sources: self.sources,
-            access_types: self.access_types,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_subscriber::CreateSubscriberInput {
+                subscriber_identity: self.subscriber_identity
+                ,
+                subscriber_name: self.subscriber_name
+                ,
+                subscriber_description: self.subscriber_description
+                ,
+                sources: self.sources
+                ,
+                access_types: self.access_types
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

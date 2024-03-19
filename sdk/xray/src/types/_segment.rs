@@ -4,19 +4,19 @@
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The segment's ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The segment document.</p>
     pub document: ::std::option::Option<::std::string::String>,
 }
-impl Segment {
+impl  Segment  {
     /// <p>The segment's ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The segment document.</p>
-    pub fn document(&self) -> ::std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<& str> {
         self.document.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SegmentBuilder {
     }
     /// <p>The segment's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The segment's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SegmentBuilder {
     }
     /// <p>The segment document.</p>
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The segment document.</p>
     pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl SegmentBuilder {
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {
         crate::types::Segment {
-            id: self.id,
-            document: self.document,
+            id: self.id
+            ,
+            document: self.document
+            ,
         }
     }
 }
+

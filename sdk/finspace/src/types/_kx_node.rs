@@ -3,7 +3,7 @@
 /// <p>A structure that stores metadata for a kdb node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxNode {
+pub struct KxNode  {
     /// <p>A unique identifier for the node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
@@ -11,17 +11,17 @@ pub struct KxNode {
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KxNode {
+impl  KxNode  {
     /// <p>A unique identifier for the node.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl KxNodeBuilder {
     }
     /// <p>A unique identifier for the node.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>A unique identifier for the node.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl KxNodeBuilder {
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl KxNodeBuilder {
     }
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.launch_time = input;
-        self
+        self.launch_time = input; self
     }
     /// <p>The time when a particular node is started. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl KxNodeBuilder {
     /// Consumes the builder and constructs a [`KxNode`](crate::types::KxNode).
     pub fn build(self) -> crate::types::KxNode {
         crate::types::KxNode {
-            node_id: self.node_id,
-            availability_zone_id: self.availability_zone_id,
-            launch_time: self.launch_time,
+            node_id: self.node_id
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            launch_time: self.launch_time
+            ,
         }
     }
 }
+

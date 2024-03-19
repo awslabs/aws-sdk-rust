@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the deployment.</p>
@@ -18,7 +18,7 @@ pub struct GetDeploymentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub iot_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
+    pub components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
@@ -30,54 +30,52 @@ pub struct GetDeploymentOutput {
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub parent_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetDeploymentOutput {
+impl  GetDeploymentOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The revision number of the deployment.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_name(&self) -> ::std::option::Option<& str> {
         self.deployment_name.as_deref()
     }
     /// <p>The status of the deployment.</p>
-    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<& crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
-    pub fn iot_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn iot_job_id(&self) -> ::std::option::Option<& str> {
         self.iot_job_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
-    pub fn iot_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iot_job_arn(&self) -> ::std::option::Option<& str> {
         self.iot_job_arn.as_deref()
     }
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn components(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
+    pub fn components(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         self.components.as_ref()
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
-    pub fn deployment_policies(&self) -> ::std::option::Option<&crate::types::DeploymentPolicies> {
+    pub fn deployment_policies(&self) -> ::std::option::Option<& crate::types::DeploymentPolicies> {
         self.deployment_policies.as_ref()
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
-    pub fn iot_job_configuration(&self) -> ::std::option::Option<&crate::types::DeploymentIoTJobConfiguration> {
+    pub fn iot_job_configuration(&self) -> ::std::option::Option<& crate::types::DeploymentIoTJobConfiguration> {
         self.iot_job_configuration.as_ref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
@@ -85,19 +83,19 @@ impl GetDeploymentOutput {
         self.is_latest_for_target
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn parent_target_arn(&self) -> ::std::option::Option<& str> {
         self.parent_target_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
@@ -116,13 +114,13 @@ pub struct GetDeploymentOutputBuilder {
     pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     pub(crate) iot_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) iot_job_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
+    pub(crate) components: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
     pub(crate) deployment_policies: ::std::option::Option<crate::types::DeploymentPolicies>,
     pub(crate) iot_job_configuration: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) is_latest_for_target: ::std::option::Option<bool>,
     pub(crate) parent_target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetDeploymentOutputBuilder {
@@ -133,8 +131,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The revision number of the deployment.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The revision number of the deployment.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The ID of the deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The ID of the deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The name of the deployment.</p>
     pub fn set_deployment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_name = input;
-        self
+        self.deployment_name = input; self
     }
     /// <p>The name of the deployment.</p>
     pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The status of the deployment.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The status of the deployment.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -203,8 +196,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn set_iot_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iot_job_id = input;
-        self
+        self.iot_job_id = input; self
     }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn get_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +209,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub fn set_iot_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iot_job_arn = input;
-        self
+        self.iot_job_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub fn get_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,22 +222,16 @@ impl GetDeploymentOutputBuilder {
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
     pub fn components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDeploymentSpecification) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.components = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.components = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn set_components(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>>,
-    ) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDeploymentSpecification>>) -> Self {
+        self.components = input; self
     }
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
-    pub fn get_components(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
+    pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDeploymentSpecification>> {
         &self.components
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
@@ -256,8 +241,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn set_deployment_policies(mut self, input: ::std::option::Option<crate::types::DeploymentPolicies>) -> Self {
-        self.deployment_policies = input;
-        self
+        self.deployment_policies = input; self
     }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn get_deployment_policies(&self) -> &::std::option::Option<crate::types::DeploymentPolicies> {
@@ -270,8 +254,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub fn set_iot_job_configuration(mut self, input: ::std::option::Option<crate::types::DeploymentIoTJobConfiguration>) -> Self {
-        self.iot_job_configuration = input;
-        self
+        self.iot_job_configuration = input; self
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub fn get_iot_job_configuration(&self) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
@@ -284,8 +267,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -298,8 +280,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub fn set_is_latest_for_target(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_latest_for_target = input;
-        self
+        self.is_latest_for_target = input; self
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub fn get_is_latest_for_target(&self) -> &::std::option::Option<bool> {
@@ -312,8 +293,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn set_parent_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_target_arn = input;
-        self
+        self.parent_target_arn = input; self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn get_parent_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,46 +306,61 @@ impl GetDeploymentOutputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn build(self) -> crate::operation::get_deployment::GetDeploymentOutput {
         crate::operation::get_deployment::GetDeploymentOutput {
-            target_arn: self.target_arn,
-            revision_id: self.revision_id,
-            deployment_id: self.deployment_id,
-            deployment_name: self.deployment_name,
-            deployment_status: self.deployment_status,
-            iot_job_id: self.iot_job_id,
-            iot_job_arn: self.iot_job_arn,
-            components: self.components,
-            deployment_policies: self.deployment_policies,
-            iot_job_configuration: self.iot_job_configuration,
-            creation_timestamp: self.creation_timestamp,
-            is_latest_for_target: self.is_latest_for_target.unwrap_or_default(),
-            parent_target_arn: self.parent_target_arn,
-            tags: self.tags,
+            target_arn: self.target_arn
+            ,
+            revision_id: self.revision_id
+            ,
+            deployment_id: self.deployment_id
+            ,
+            deployment_name: self.deployment_name
+            ,
+            deployment_status: self.deployment_status
+            ,
+            iot_job_id: self.iot_job_id
+            ,
+            iot_job_arn: self.iot_job_arn
+            ,
+            components: self.components
+            ,
+            deployment_policies: self.deployment_policies
+            ,
+            iot_job_configuration: self.iot_job_configuration
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            is_latest_for_target: self.is_latest_for_target
+                .unwrap_or_default()
+            ,
+            parent_target_arn: self.parent_target_arn
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

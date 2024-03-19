@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportStacksToStackSetOutput {
+pub struct ImportStacksToStackSetOutput  {
     /// <p>The unique identifier for the stack set operation.</p>
     pub operation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ImportStacksToStackSetOutput {
+impl  ImportStacksToStackSetOutput  {
     /// <p>The unique identifier for the stack set operation.</p>
-    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportStacksToStackSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportStacksToStackSetOutput {
     /// Creates a new builder-style object to manufacture [`ImportStacksToStackSetOutput`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput).
     pub fn builder() -> crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetOutputBuilder {
@@ -40,27 +40,28 @@ impl ImportStacksToStackSetOutputBuilder {
     }
     /// <p>The unique identifier for the stack set operation.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The unique identifier for the stack set operation.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportStacksToStackSetOutput`](crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput).
     pub fn build(self) -> crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput {
         crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput {
-            operation_id: self.operation_id,
+            operation_id: self.operation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

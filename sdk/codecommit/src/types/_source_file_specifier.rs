@@ -3,17 +3,16 @@
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceFileSpecifier {
+pub struct SourceFileSpecifier  {
     /// <p>The full path to the file, including the name of the file.</p>
     pub file_path: ::std::string::String,
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub is_move: bool,
 }
-impl SourceFileSpecifier {
+impl  SourceFileSpecifier  {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn is_move(&self) -> bool {
@@ -43,8 +42,7 @@ impl SourceFileSpecifierBuilder {
     }
     /// <p>The full path to the file, including the name of the file.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The full path to the file, including the name of the file.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl SourceFileSpecifierBuilder {
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn set_is_move(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_move = input;
-        self
+        self.is_move = input; self
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn get_is_move(&self) -> &::std::option::Option<bool> {
@@ -68,14 +65,18 @@ impl SourceFileSpecifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::SourceFileSpecifierBuilder::file_path)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceFileSpecifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceFileSpecifier {
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building SourceFileSpecifier",
-                )
-            })?,
-            is_move: self.is_move.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceFileSpecifier {
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building SourceFileSpecifier")
+                    )?
+                ,
+                is_move: self.is_move
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

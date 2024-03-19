@@ -3,7 +3,7 @@
 /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MskSourceConfiguration {
+pub struct MskSourceConfiguration  {
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub msk_cluster_arn: ::std::string::String,
     /// <p>The topic name within the Amazon MSK cluster.</p>
@@ -11,19 +11,17 @@ pub struct MskSourceConfiguration {
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub authentication_configuration: ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
-impl MskSourceConfiguration {
+impl  MskSourceConfiguration  {
     /// <p>The ARN of the Amazon MSK cluster.</p>
-    pub fn msk_cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.msk_cluster_arn.deref()
+    pub fn msk_cluster_arn(&self) -> & str {
+        use std::ops::Deref; self.msk_cluster_arn.deref()
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
-    pub fn topic_name(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_name.deref()
+    pub fn topic_name(&self) -> & str {
+        use std::ops::Deref; self.topic_name.deref()
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
-    pub fn authentication_configuration(&self) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
+    pub fn authentication_configuration(&self) -> ::std::option::Option<& crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl MskSourceConfigurationBuilder {
     }
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub fn set_msk_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.msk_cluster_arn = input;
-        self
+        self.msk_cluster_arn = input; self
     }
     /// <p>The ARN of the Amazon MSK cluster.</p>
     pub fn get_msk_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl MskSourceConfigurationBuilder {
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// <p>The topic name within the Amazon MSK cluster.</p>
     pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl MskSourceConfigurationBuilder {
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub fn set_authentication_configuration(mut self, input: ::std::option::Option<crate::types::AuthenticationConfiguration>) -> Self {
-        self.authentication_configuration = input;
-        self
+        self.authentication_configuration = input; self
     }
     /// <p>The authentication configuration of the Amazon MSK cluster.</p>
     pub fn get_authentication_configuration(&self) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
@@ -93,20 +88,22 @@ impl MskSourceConfigurationBuilder {
     /// - [`msk_cluster_arn`](crate::types::builders::MskSourceConfigurationBuilder::msk_cluster_arn)
     /// - [`topic_name`](crate::types::builders::MskSourceConfigurationBuilder::topic_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MskSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MskSourceConfiguration {
-            msk_cluster_arn: self.msk_cluster_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "msk_cluster_arn",
-                    "msk_cluster_arn was not specified but it is required when building MskSourceConfiguration",
-                )
-            })?,
-            topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_name",
-                    "topic_name was not specified but it is required when building MskSourceConfiguration",
-                )
-            })?,
-            authentication_configuration: self.authentication_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MskSourceConfiguration {
+                msk_cluster_arn: self.msk_cluster_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("msk_cluster_arn", "msk_cluster_arn was not specified but it is required when building MskSourceConfiguration")
+                    )?
+                ,
+                topic_name: self.topic_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_name", "topic_name was not specified but it is required when building MskSourceConfiguration")
+                    )?
+                ,
+                authentication_configuration: self.authentication_configuration
+                ,
+            }
+        )
     }
 }
+

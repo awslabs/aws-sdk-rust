@@ -3,7 +3,7 @@
 /// <p>A document in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Document {
+pub struct Document  {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     pub id: ::std::string::String,
@@ -16,63 +16,65 @@ pub struct Document {
     pub s3_path: ::std::option::Option<crate::types::S3Path>,
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
+    pub access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub access_control_configuration_id: ::std::option::Option<::std::string::String>,
 }
-impl Document {
+impl  Document  {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The title of the document.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
-    pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    pub fn s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.s3_path.as_ref()
     }
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::DocumentAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::DocumentAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_control_list.is_none()`.
-    pub fn access_control_list(&self) -> &[crate::types::Principal] {
-        self.access_control_list.as_deref().unwrap_or_default()
+    pub fn access_control_list(&self) -> & [crate::types::Principal] {
+        self.access_control_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchical_access_control_list.is_none()`.
-    pub fn hierarchical_access_control_list(&self) -> &[crate::types::HierarchicalPrincipal] {
-        self.hierarchical_access_control_list.as_deref().unwrap_or_default()
+    pub fn hierarchical_access_control_list(&self) -> & [crate::types::HierarchicalPrincipal] {
+        self.hierarchical_access_control_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<& crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
-    pub fn access_control_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_control_configuration_id(&self) -> ::std::option::Option<& str> {
         self.access_control_configuration_id.as_deref()
     }
 }
@@ -91,9 +93,9 @@ pub struct DocumentBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) s3_path: ::std::option::Option<crate::types::S3Path>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
-    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>,
-    pub(crate) hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
+    pub(crate) access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>,
+    pub(crate) hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>,
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) access_control_configuration_id: ::std::option::Option<::std::string::String>,
 }
@@ -108,8 +110,7 @@ impl DocumentBuilder {
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
@@ -123,8 +124,7 @@ impl DocumentBuilder {
     }
     /// <p>The title of the document.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the document.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +139,7 @@ impl DocumentBuilder {
     /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
     pub fn set_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.blob = input;
-        self
+        self.blob = input; self
     }
     /// <p>The contents of the document.</p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode the document file bytes if you're using an Amazon Web Services SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.</p>
@@ -154,8 +153,7 @@ impl DocumentBuilder {
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn set_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.s3_path = input;
-        self
+        self.s3_path = input; self
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn get_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
@@ -169,19 +167,18 @@ impl DocumentBuilder {
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
     pub fn attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Custom attributes to apply to the document. Use the custom attributes to provide additional information for searching, to provide facets for refining searches, and to provide additional information in the query response.</p>
     /// <p>For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom attributes that provide information on the synchronization of documents running on a data source. Note, 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>> {
         &self.attributes
     }
     /// Appends an item to `access_control_list`.
@@ -191,17 +188,16 @@ impl DocumentBuilder {
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn access_control_list(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.access_control_list.unwrap_or_default();
-        v.push(input);
-        self.access_control_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_control_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.access_control_list = input;
-        self
+    pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Principal>>) -> Self {
+        self.access_control_list = input; self
     }
     /// <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+    pub fn get_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Principal>> {
         &self.access_control_list
     }
     /// Appends an item to `hierarchical_access_control_list`.
@@ -211,20 +207,16 @@ impl DocumentBuilder {
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     pub fn hierarchical_access_control_list(mut self, input: crate::types::HierarchicalPrincipal) -> Self {
         let mut v = self.hierarchical_access_control_list.unwrap_or_default();
-        v.push(input);
-        self.hierarchical_access_control_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.hierarchical_access_control_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn set_hierarchical_access_control_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
-    ) -> Self {
-        self.hierarchical_access_control_list = input;
-        self
+    pub fn set_hierarchical_access_control_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>>) -> Self {
+        self.hierarchical_access_control_list = input; self
     }
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+    pub fn get_hierarchical_access_control_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HierarchicalPrincipal>> {
         &self.hierarchical_access_control_list
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
@@ -236,8 +228,7 @@ impl DocumentBuilder {
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
     /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
@@ -251,8 +242,7 @@ impl DocumentBuilder {
     }
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub fn set_access_control_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_control_configuration_id = input;
-        self
+        self.access_control_configuration_id = input; self
     }
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub fn get_access_control_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,21 +252,31 @@ impl DocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DocumentBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Document {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Document",
-                )
-            })?,
-            title: self.title,
-            blob: self.blob,
-            s3_path: self.s3_path,
-            attributes: self.attributes,
-            access_control_list: self.access_control_list,
-            hierarchical_access_control_list: self.hierarchical_access_control_list,
-            content_type: self.content_type,
-            access_control_configuration_id: self.access_control_configuration_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Document {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Document")
+                    )?
+                ,
+                title: self.title
+                ,
+                blob: self.blob
+                ,
+                s3_path: self.s3_path
+                ,
+                attributes: self.attributes
+                ,
+                access_control_list: self.access_control_list
+                ,
+                hierarchical_access_control_list: self.hierarchical_access_control_list
+                ,
+                content_type: self.content_type
+                ,
+                access_control_configuration_id: self.access_control_configuration_id
+                ,
+            }
+        )
     }
 }
+

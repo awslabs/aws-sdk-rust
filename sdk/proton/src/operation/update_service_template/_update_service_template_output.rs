@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceTemplateOutput {
+pub struct UpdateServiceTemplateOutput  {
     /// <p>The service template detail data that's returned by Proton.</p>
     pub service_template: ::std::option::Option<crate::types::ServiceTemplate>,
     _request_id: Option<String>,
 }
-impl UpdateServiceTemplateOutput {
+impl  UpdateServiceTemplateOutput  {
     /// <p>The service template detail data that's returned by Proton.</p>
-    pub fn service_template(&self) -> ::std::option::Option<&crate::types::ServiceTemplate> {
+    pub fn service_template(&self) -> ::std::option::Option<& crate::types::ServiceTemplate> {
         self.service_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateServiceTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateServiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceTemplateOutput`](crate::operation::update_service_template::UpdateServiceTemplateOutput).
     pub fn builder() -> crate::operation::update_service_template::builders::UpdateServiceTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateServiceTemplateOutputBuilder {
     }
     /// <p>The service template detail data that's returned by Proton.</p>
     pub fn set_service_template(mut self, input: ::std::option::Option<crate::types::ServiceTemplate>) -> Self {
-        self.service_template = input;
-        self
+        self.service_template = input; self
     }
     /// <p>The service template detail data that's returned by Proton.</p>
     pub fn get_service_template(&self) -> &::std::option::Option<crate::types::ServiceTemplate> {
         &self.service_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateServiceTemplateOutput`](crate::operation::update_service_template::UpdateServiceTemplateOutput).
     pub fn build(self) -> crate::operation::update_service_template::UpdateServiceTemplateOutput {
         crate::operation::update_service_template::UpdateServiceTemplateOutput {
-            service_template: self.service_template,
+            service_template: self.service_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

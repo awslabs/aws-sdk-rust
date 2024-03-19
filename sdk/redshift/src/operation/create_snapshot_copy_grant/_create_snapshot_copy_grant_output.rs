@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotCopyGrantOutput {
+pub struct CreateSnapshotCopyGrantOutput  {
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub snapshot_copy_grant: ::std::option::Option<crate::types::SnapshotCopyGrant>,
     _request_id: Option<String>,
 }
-impl CreateSnapshotCopyGrantOutput {
+impl  CreateSnapshotCopyGrantOutput  {
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-    pub fn snapshot_copy_grant(&self) -> ::std::option::Option<&crate::types::SnapshotCopyGrant> {
+    pub fn snapshot_copy_grant(&self) -> ::std::option::Option<& crate::types::SnapshotCopyGrant> {
         self.snapshot_copy_grant.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSnapshotCopyGrantOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSnapshotCopyGrantOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
     pub fn builder() -> crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantOutputBuilder {
@@ -44,8 +44,7 @@ impl CreateSnapshotCopyGrantOutputBuilder {
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
     pub fn set_snapshot_copy_grant(mut self, input: ::std::option::Option<crate::types::SnapshotCopyGrant>) -> Self {
-        self.snapshot_copy_grant = input;
-        self
+        self.snapshot_copy_grant = input; self
     }
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region.</p>
     /// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
@@ -53,19 +52,21 @@ impl CreateSnapshotCopyGrantOutputBuilder {
         &self.snapshot_copy_grant
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSnapshotCopyGrantOutput`](crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput).
     pub fn build(self) -> crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput {
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput {
-            snapshot_copy_grant: self.snapshot_copy_grant,
+            snapshot_copy_grant: self.snapshot_copy_grant
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

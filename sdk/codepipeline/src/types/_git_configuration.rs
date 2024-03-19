@@ -5,35 +5,36 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitConfiguration {
+pub struct GitConfiguration  {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
     pub source_action_name: ::std::string::String,
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
-    pub push: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>,
+    pub push: ::std::option::Option<::std::vec::Vec::<crate::types::GitPushFilter>>,
     /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
-    pub pull_request: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>,
+    pub pull_request: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestFilter>>,
 }
-impl GitConfiguration {
+impl  GitConfiguration  {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
-    pub fn source_action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_action_name.deref()
+    pub fn source_action_name(&self) -> & str {
+        use std::ops::Deref; self.source_action_name.deref()
     }
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.push.is_none()`.
-    pub fn push(&self) -> &[crate::types::GitPushFilter] {
-        self.push.as_deref().unwrap_or_default()
+    pub fn push(&self) -> & [crate::types::GitPushFilter] {
+        self.push.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pull_request.is_none()`.
-    pub fn pull_request(&self) -> &[crate::types::GitPullRequestFilter] {
-        self.pull_request.as_deref().unwrap_or_default()
+    pub fn pull_request(&self) -> & [crate::types::GitPullRequestFilter] {
+        self.pull_request.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GitConfiguration {
@@ -48,8 +49,8 @@ impl GitConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitConfigurationBuilder {
     pub(crate) source_action_name: ::std::option::Option<::std::string::String>,
-    pub(crate) push: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>,
-    pub(crate) pull_request: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>,
+    pub(crate) push: ::std::option::Option<::std::vec::Vec::<crate::types::GitPushFilter>>,
+    pub(crate) pull_request: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestFilter>>,
 }
 impl GitConfigurationBuilder {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
@@ -64,8 +65,7 @@ impl GitConfigurationBuilder {
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
     pub fn set_source_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_action_name = input;
-        self
+        self.source_action_name = input; self
     }
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
     /// <p>You can only specify one trigger configuration per source action.</p>
@@ -80,17 +80,16 @@ impl GitConfigurationBuilder {
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     pub fn push(mut self, input: crate::types::GitPushFilter) -> Self {
         let mut v = self.push.unwrap_or_default();
-        v.push(input);
-        self.push = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.push = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
-    pub fn set_push(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>) -> Self {
-        self.push = input;
-        self
+    pub fn set_push(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GitPushFilter>>) -> Self {
+        self.push = input; self
     }
     /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
-    pub fn get_push(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>> {
+    pub fn get_push(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GitPushFilter>> {
         &self.push
     }
     /// Appends an item to `pull_request`.
@@ -100,32 +99,35 @@ impl GitConfigurationBuilder {
     /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
     pub fn pull_request(mut self, input: crate::types::GitPullRequestFilter) -> Self {
         let mut v = self.pull_request.unwrap_or_default();
-        v.push(input);
-        self.pull_request = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pull_request = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
-    pub fn set_pull_request(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>) -> Self {
-        self.pull_request = input;
-        self
+    pub fn set_pull_request(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestFilter>>) -> Self {
+        self.pull_request = input; self
     }
     /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
-    pub fn get_pull_request(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>> {
+    pub fn get_pull_request(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestFilter>> {
         &self.pull_request
     }
     /// Consumes the builder and constructs a [`GitConfiguration`](crate::types::GitConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_action_name`](crate::types::builders::GitConfigurationBuilder::source_action_name)
     pub fn build(self) -> ::std::result::Result<crate::types::GitConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GitConfiguration {
-            source_action_name: self.source_action_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_action_name",
-                    "source_action_name was not specified but it is required when building GitConfiguration",
-                )
-            })?,
-            push: self.push,
-            pull_request: self.pull_request,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GitConfiguration {
+                source_action_name: self.source_action_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_action_name", "source_action_name was not specified but it is required when building GitConfiguration")
+                    )?
+                ,
+                push: self.push
+                ,
+                pull_request: self.pull_request
+                ,
+            }
+        )
     }
 }
+

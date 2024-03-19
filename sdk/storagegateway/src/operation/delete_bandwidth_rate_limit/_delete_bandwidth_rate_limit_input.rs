@@ -7,21 +7,21 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBandwidthRateLimitInput {
+pub struct DeleteBandwidthRateLimitInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
     pub bandwidth_type: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBandwidthRateLimitInput {
+impl  DeleteBandwidthRateLimitInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
-    pub fn bandwidth_type(&self) -> ::std::option::Option<&str> {
+    pub fn bandwidth_type(&self) -> ::std::option::Option<& str> {
         self.bandwidth_type.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteBandwidthRateLimitInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl DeleteBandwidthRateLimitInputBuilder {
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
     pub fn set_bandwidth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bandwidth_type = input;
-        self
+        self.bandwidth_type = input; self
     }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code></p>
@@ -74,15 +72,15 @@ impl DeleteBandwidthRateLimitInputBuilder {
         &self.bandwidth_type
     }
     /// Consumes the builder and constructs a [`DeleteBandwidthRateLimitInput`](crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput {
-            gateway_arn: self.gateway_arn,
-            bandwidth_type: self.bandwidth_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitInput {
+                gateway_arn: self.gateway_arn
+                ,
+                bandwidth_type: self.bandwidth_type
+                ,
+            }
+        )
     }
 }
+

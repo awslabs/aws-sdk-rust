@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyOtpMessageInput {
+pub struct VerifyOtpMessageInput  {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Verify OTP message request.</p>
     pub verify_otp_message_request_parameters: ::std::option::Option<crate::types::VerifyOtpMessageRequestParameters>,
 }
-impl VerifyOtpMessageInput {
+impl  VerifyOtpMessageInput  {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Verify OTP message request.</p>
-    pub fn verify_otp_message_request_parameters(&self) -> ::std::option::Option<&crate::types::VerifyOtpMessageRequestParameters> {
+    pub fn verify_otp_message_request_parameters(&self) -> ::std::option::Option<& crate::types::VerifyOtpMessageRequestParameters> {
         self.verify_otp_message_request_parameters.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl VerifyOtpMessageInputBuilder {
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,24 +54,23 @@ impl VerifyOtpMessageInputBuilder {
         self
     }
     /// <p>Verify OTP message request.</p>
-    pub fn set_verify_otp_message_request_parameters(
-        mut self,
-        input: ::std::option::Option<crate::types::VerifyOtpMessageRequestParameters>,
-    ) -> Self {
-        self.verify_otp_message_request_parameters = input;
-        self
+    pub fn set_verify_otp_message_request_parameters(mut self, input: ::std::option::Option<crate::types::VerifyOtpMessageRequestParameters>) -> Self {
+        self.verify_otp_message_request_parameters = input; self
     }
     /// <p>Verify OTP message request.</p>
     pub fn get_verify_otp_message_request_parameters(&self) -> &::std::option::Option<crate::types::VerifyOtpMessageRequestParameters> {
         &self.verify_otp_message_request_parameters
     }
     /// Consumes the builder and constructs a [`VerifyOtpMessageInput`](crate::operation::verify_otp_message::VerifyOtpMessageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::verify_otp_message::VerifyOtpMessageInput {
-            application_id: self.application_id,
-            verify_otp_message_request_parameters: self.verify_otp_message_request_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::verify_otp_message::VerifyOtpMessageInput {
+                application_id: self.application_id
+                ,
+                verify_otp_message_request_parameters: self.verify_otp_message_request_parameters
+                ,
+            }
+        )
     }
 }
+

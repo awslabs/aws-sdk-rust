@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dynatraceconnectoroperator = unimplemented!();
 /// match dynatraceconnectoroperator {
@@ -43,16 +43,14 @@
 /// Specifically, when `dynatraceconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DynatraceConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DynatraceConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -86,116 +84,101 @@ pub enum DynatraceConnectorOperator {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DynatraceConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => DynatraceConnectorOperator::Addition,
-            "BETWEEN" => DynatraceConnectorOperator::Between,
-            "DIVISION" => DynatraceConnectorOperator::Division,
-            "EQUAL_TO" => DynatraceConnectorOperator::EqualTo,
-            "MASK_ALL" => DynatraceConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => DynatraceConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => DynatraceConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => DynatraceConnectorOperator::Multiplication,
-            "NO_OP" => DynatraceConnectorOperator::NoOp,
-            "PROJECTION" => DynatraceConnectorOperator::Projection,
-            "SUBTRACTION" => DynatraceConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => DynatraceConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => DynatraceConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => DynatraceConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => DynatraceConnectorOperator::ValidateNumeric,
-            other => DynatraceConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => DynatraceConnectorOperator::Addition,
+"BETWEEN" => DynatraceConnectorOperator::Between,
+"DIVISION" => DynatraceConnectorOperator::Division,
+"EQUAL_TO" => DynatraceConnectorOperator::EqualTo,
+"MASK_ALL" => DynatraceConnectorOperator::MaskAll,
+"MASK_FIRST_N" => DynatraceConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => DynatraceConnectorOperator::MaskLastN,
+"MULTIPLICATION" => DynatraceConnectorOperator::Multiplication,
+"NO_OP" => DynatraceConnectorOperator::NoOp,
+"PROJECTION" => DynatraceConnectorOperator::Projection,
+"SUBTRACTION" => DynatraceConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => DynatraceConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => DynatraceConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => DynatraceConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => DynatraceConnectorOperator::ValidateNumeric,
+other => DynatraceConnectorOperator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DynatraceConnectorOperator {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DynatraceConnectorOperator::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DynatraceConnectorOperator::from(s))
+                    }
+                }
 impl DynatraceConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DynatraceConnectorOperator::Addition => "ADDITION",
-            DynatraceConnectorOperator::Between => "BETWEEN",
-            DynatraceConnectorOperator::Division => "DIVISION",
-            DynatraceConnectorOperator::EqualTo => "EQUAL_TO",
-            DynatraceConnectorOperator::MaskAll => "MASK_ALL",
-            DynatraceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            DynatraceConnectorOperator::MaskLastN => "MASK_LAST_N",
-            DynatraceConnectorOperator::Multiplication => "MULTIPLICATION",
-            DynatraceConnectorOperator::NoOp => "NO_OP",
-            DynatraceConnectorOperator::Projection => "PROJECTION",
-            DynatraceConnectorOperator::Subtraction => "SUBTRACTION",
-            DynatraceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            DynatraceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            DynatraceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            DynatraceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            DynatraceConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "DIVISION",
-            "EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DynatraceConnectorOperator::Addition => "ADDITION",
+    DynatraceConnectorOperator::Between => "BETWEEN",
+    DynatraceConnectorOperator::Division => "DIVISION",
+    DynatraceConnectorOperator::EqualTo => "EQUAL_TO",
+    DynatraceConnectorOperator::MaskAll => "MASK_ALL",
+    DynatraceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    DynatraceConnectorOperator::MaskLastN => "MASK_LAST_N",
+    DynatraceConnectorOperator::Multiplication => "MULTIPLICATION",
+    DynatraceConnectorOperator::NoOp => "NO_OP",
+    DynatraceConnectorOperator::Projection => "PROJECTION",
+    DynatraceConnectorOperator::Subtraction => "SUBTRACTION",
+    DynatraceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    DynatraceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    DynatraceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    DynatraceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    DynatraceConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DynatraceConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DynatraceConnectorOperator {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DynatraceConnectorOperator {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DynatraceConnectorOperator::Addition => write!(f, "ADDITION"),
-            DynatraceConnectorOperator::Between => write!(f, "BETWEEN"),
-            DynatraceConnectorOperator::Division => write!(f, "DIVISION"),
-            DynatraceConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
-            DynatraceConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
-            DynatraceConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            DynatraceConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
-            DynatraceConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
-            DynatraceConnectorOperator::NoOp => write!(f, "NO_OP"),
-            DynatraceConnectorOperator::Projection => write!(f, "PROJECTION"),
-            DynatraceConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
-            DynatraceConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            DynatraceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            DynatraceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            DynatraceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            DynatraceConnectorOperator::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DynatraceConnectorOperator::Addition => write!(f, "ADDITION"),
+DynatraceConnectorOperator::Between => write!(f, "BETWEEN"),
+DynatraceConnectorOperator::Division => write!(f, "DIVISION"),
+DynatraceConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+DynatraceConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+DynatraceConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+DynatraceConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+DynatraceConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+DynatraceConnectorOperator::NoOp => write!(f, "NO_OP"),
+DynatraceConnectorOperator::Projection => write!(f, "PROJECTION"),
+DynatraceConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+DynatraceConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+DynatraceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+DynatraceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+DynatraceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+DynatraceConnectorOperator::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

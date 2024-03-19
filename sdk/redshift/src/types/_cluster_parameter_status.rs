@@ -3,7 +3,7 @@
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterParameterStatus {
+pub struct ClusterParameterStatus  {
     /// <p>The name of the parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
@@ -28,9 +28,9 @@ pub struct ClusterParameterStatus {
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub parameter_apply_error_description: ::std::option::Option<::std::string::String>,
 }
-impl ClusterParameterStatus {
+impl  ClusterParameterStatus  {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
@@ -51,11 +51,11 @@ impl ClusterParameterStatus {
     /// <li>
     /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
     /// </ul>
-    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<& str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn parameter_apply_error_description(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_apply_error_description(&self) -> ::std::option::Option<& str> {
         self.parameter_apply_error_description.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl ClusterParameterStatusBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>The name of the parameter.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl ClusterParameterStatusBuilder {
     /// <p><code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p></li>
     /// </ul>
     pub fn set_parameter_apply_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_apply_status = input;
-        self
+        self.parameter_apply_status = input; self
     }
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
@@ -161,8 +159,7 @@ impl ClusterParameterStatusBuilder {
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn set_parameter_apply_error_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_apply_error_description = input;
-        self
+        self.parameter_apply_error_description = input; self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn get_parameter_apply_error_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,9 +168,13 @@ impl ClusterParameterStatusBuilder {
     /// Consumes the builder and constructs a [`ClusterParameterStatus`](crate::types::ClusterParameterStatus).
     pub fn build(self) -> crate::types::ClusterParameterStatus {
         crate::types::ClusterParameterStatus {
-            parameter_name: self.parameter_name,
-            parameter_apply_status: self.parameter_apply_status,
-            parameter_apply_error_description: self.parameter_apply_error_description,
+            parameter_name: self.parameter_name
+            ,
+            parameter_apply_status: self.parameter_apply_status
+            ,
+            parameter_apply_error_description: self.parameter_apply_error_description
+            ,
         }
     }
 }
+

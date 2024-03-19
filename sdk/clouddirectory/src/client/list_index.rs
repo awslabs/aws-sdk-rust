@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIndex`](crate::operation::list_index::builders::ListIndexFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_index::builders::ListIndexFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory that the index exists in.</p><br>
     ///   - [`ranges_on_indexed_values(ObjectAttributeRange)`](crate::operation::list_index::builders::ListIndexFluentBuilder::ranges_on_indexed_values) / [`set_ranges_on_indexed_values(Option<Vec::<ObjectAttributeRange>>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_ranges_on_indexed_values):<br>required: **false**<br><p>Specifies the ranges of indexed values that you want to query.</p><br>
     ///   - [`index_reference(ObjectReference)`](crate::operation::list_index::builders::ListIndexFluentBuilder::index_reference) / [`set_index_reference(Option<ObjectReference>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_index_reference):<br>required: **true**<br><p>The reference to the index to list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_index::builders::ListIndexFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_index::builders::ListIndexFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_index::builders::ListIndexFluentBuilder::set_consistency_level):<br>required: **false**<br><p>The consistency level to execute the request at.</p><br>
-    /// - On success, responds with [`ListIndexOutput`](crate::operation::list_index::ListIndexOutput) with field(s):
+                            /// - On success, responds with [`ListIndexOutput`](crate::operation::list_index::ListIndexOutput) with field(s):
     ///   - [`index_attachments(Option<Vec::<IndexAttachment>>)`](crate::operation::list_index::ListIndexOutput::index_attachments): <p>The objects and indexed values attached to the index.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_index::ListIndexOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListIndexError>`](crate::operation::list_index::ListIndexError)
+                            /// - On failure, responds with [`SdkError<ListIndexError>`](crate::operation::list_index::ListIndexError)
     pub fn list_index(&self) -> crate::operation::list_index::builders::ListIndexFluentBuilder {
-        crate::operation::list_index::builders::ListIndexFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_index::builders::ListIndexFluentBuilder::new(self.handle.clone())
+                            }
 }
+

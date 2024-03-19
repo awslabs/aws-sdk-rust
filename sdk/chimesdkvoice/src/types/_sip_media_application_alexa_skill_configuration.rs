@@ -3,21 +3,20 @@
 /// <p>The Alexa Skill configuration of a SIP media application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SipMediaApplicationAlexaSkillConfiguration {
+pub struct SipMediaApplicationAlexaSkillConfiguration  {
     /// <p>The status of the Alexa Skill configuration.</p>
     pub alexa_skill_status: crate::types::AlexaSkillStatus,
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub alexa_skill_ids: ::std::vec::Vec<::std::string::String>,
+    pub alexa_skill_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl SipMediaApplicationAlexaSkillConfiguration {
+impl  SipMediaApplicationAlexaSkillConfiguration  {
     /// <p>The status of the Alexa Skill configuration.</p>
-    pub fn alexa_skill_status(&self) -> &crate::types::AlexaSkillStatus {
+    pub fn alexa_skill_status(&self) -> & crate::types::AlexaSkillStatus {
         &self.alexa_skill_status
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn alexa_skill_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.alexa_skill_ids.deref()
+    pub fn alexa_skill_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.alexa_skill_ids.deref()
     }
 }
 impl SipMediaApplicationAlexaSkillConfiguration {
@@ -32,7 +31,7 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SipMediaApplicationAlexaSkillConfigurationBuilder {
     pub(crate) alexa_skill_status: ::std::option::Option<crate::types::AlexaSkillStatus>,
-    pub(crate) alexa_skill_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alexa_skill_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     /// <p>The status of the Alexa Skill configuration.</p>
@@ -43,8 +42,7 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     }
     /// <p>The status of the Alexa Skill configuration.</p>
     pub fn set_alexa_skill_status(mut self, input: ::std::option::Option<crate::types::AlexaSkillStatus>) -> Self {
-        self.alexa_skill_status = input;
-        self
+        self.alexa_skill_status = input; self
     }
     /// <p>The status of the Alexa Skill configuration.</p>
     pub fn get_alexa_skill_status(&self) -> &::std::option::Option<crate::types::AlexaSkillStatus> {
@@ -57,39 +55,37 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     /// <p>The ID of the Alexa Skill configuration.</p>
     pub fn alexa_skill_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alexa_skill_ids.unwrap_or_default();
-        v.push(input.into());
-        self.alexa_skill_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alexa_skill_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn set_alexa_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alexa_skill_ids = input;
-        self
+    pub fn set_alexa_skill_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alexa_skill_ids = input; self
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn get_alexa_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alexa_skill_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alexa_skill_ids
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`alexa_skill_status`](crate::types::builders::SipMediaApplicationAlexaSkillConfigurationBuilder::alexa_skill_status)
     /// - [`alexa_skill_ids`](crate::types::builders::SipMediaApplicationAlexaSkillConfigurationBuilder::alexa_skill_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::SipMediaApplicationAlexaSkillConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SipMediaApplicationAlexaSkillConfiguration {
-            alexa_skill_status: self.alexa_skill_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alexa_skill_status",
-                    "alexa_skill_status was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration",
-                )
-            })?,
-            alexa_skill_ids: self.alexa_skill_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alexa_skill_ids",
-                    "alexa_skill_ids was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::SipMediaApplicationAlexaSkillConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::SipMediaApplicationAlexaSkillConfiguration {
+                alexa_skill_status: self.alexa_skill_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alexa_skill_status", "alexa_skill_status was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration")
+                    )?
+                ,
+                alexa_skill_ids: self.alexa_skill_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alexa_skill_ids", "alexa_skill_ids was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

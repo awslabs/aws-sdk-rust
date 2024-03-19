@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServiceNetworkServiceAssociationOutput {
+pub struct CreateServiceNetworkServiceAssociationOutput  {
     /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The operation's status.</p>
@@ -17,37 +17,37 @@ pub struct CreateServiceNetworkServiceAssociationOutput {
     pub dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     _request_id: Option<String>,
 }
-impl CreateServiceNetworkServiceAssociationOutput {
+impl  CreateServiceNetworkServiceAssociationOutput  {
     /// <p>The ID of the association.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The operation's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceNetworkServiceAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The account that created the association.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The DNS name of the service.</p>
-    pub fn dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
+    pub fn dns_entry(&self) -> ::std::option::Option<& crate::types::DnsEntry> {
         self.dns_entry.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateServiceNetworkServiceAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateServiceNetworkServiceAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
     pub fn builder() -> crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationOutputBuilder {
@@ -75,8 +75,7 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The operation's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The operation's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
@@ -103,8 +101,7 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The account that created the association.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The account that created the association.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The custom domain name of the service.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name of the service.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,38 @@ impl CreateServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The DNS name of the service.</p>
     pub fn set_dns_entry(mut self, input: ::std::option::Option<crate::types::DnsEntry>) -> Self {
-        self.dns_entry = input;
-        self
+        self.dns_entry = input; self
     }
     /// <p>The DNS name of the service.</p>
     pub fn get_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.dns_entry
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateServiceNetworkServiceAssociationOutput`](crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput).
     pub fn build(self) -> crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput {
         crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput {
-            id: self.id,
-            status: self.status,
-            arn: self.arn,
-            created_by: self.created_by,
-            custom_domain_name: self.custom_domain_name,
-            dns_entry: self.dns_entry,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            arn: self.arn
+            ,
+            created_by: self.created_by
+            ,
+            custom_domain_name: self.custom_domain_name
+            ,
+            dns_entry: self.dns_entry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The template version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateVersionSummary {
+pub struct TemplateVersionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the template version.</p>
@@ -15,9 +15,9 @@ pub struct TemplateVersionSummary {
     /// <p>The description of the template version.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl TemplateVersionSummary {
+impl  TemplateVersionSummary  {
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version number of the template version.</p>
@@ -25,15 +25,15 @@ impl TemplateVersionSummary {
         self.version_number
     }
     /// <p>The time that this template version was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The status of the template version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the template version.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl TemplateVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the template version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl TemplateVersionSummaryBuilder {
     }
     /// <p>The version number of the template version.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the template version.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl TemplateVersionSummaryBuilder {
     }
     /// <p>The time that this template version was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that this template version was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl TemplateVersionSummaryBuilder {
     }
     /// <p>The status of the template version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the template version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -118,8 +114,7 @@ impl TemplateVersionSummaryBuilder {
     }
     /// <p>The description of the template version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the template version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl TemplateVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`TemplateVersionSummary`](crate::types::TemplateVersionSummary).
     pub fn build(self) -> crate::types::TemplateVersionSummary {
         crate::types::TemplateVersionSummary {
-            arn: self.arn,
-            version_number: self.version_number,
-            created_time: self.created_time,
-            status: self.status,
-            description: self.description,
+            arn: self.arn
+            ,
+            version_number: self.version_number
+            ,
+            created_time: self.created_time
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

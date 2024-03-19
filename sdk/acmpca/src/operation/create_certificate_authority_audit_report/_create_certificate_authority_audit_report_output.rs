@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCertificateAuthorityAuditReportOutput {
+pub struct CreateCertificateAuthorityAuditReportOutput  {
     /// <p>An alphanumeric string that contains a report identifier.</p>
     pub audit_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateCertificateAuthorityAuditReportOutput {
+impl  CreateCertificateAuthorityAuditReportOutput  {
     /// <p>An alphanumeric string that contains a report identifier.</p>
-    pub fn audit_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn audit_report_id(&self) -> ::std::option::Option<& str> {
         self.audit_report_id.as_deref()
     }
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCertificateAuthorityAuditReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCertificateAuthorityAuditReportOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
     pub fn builder() -> crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateCertificateAuthorityAuditReportOutputBuilder {
     }
     /// <p>An alphanumeric string that contains a report identifier.</p>
     pub fn set_audit_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audit_report_id = input;
-        self
+        self.audit_report_id = input; self
     }
     /// <p>An alphanumeric string that contains a report identifier.</p>
     pub fn get_audit_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateCertificateAuthorityAuditReportOutputBuilder {
     }
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportOutput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput).
     pub fn build(self) -> crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput {
         crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput {
-            audit_report_id: self.audit_report_id,
-            s3_key: self.s3_key,
+            audit_report_id: self.audit_report_id
+            ,
+            s3_key: self.s3_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

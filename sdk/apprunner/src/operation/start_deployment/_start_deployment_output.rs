@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDeploymentOutput {
+pub struct StartDeploymentOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartDeploymentOutput {
+impl  StartDeploymentOutput  {
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
-    pub fn operation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_id.deref()
+    pub fn operation_id(&self) -> & str {
+        use std::ops::Deref; self.operation_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
     pub fn builder() -> crate::operation::start_deployment::builders::StartDeploymentOutputBuilder {
@@ -42,36 +41,35 @@ impl StartDeploymentOutputBuilder {
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`operation_id`](crate::operation::start_deployment::builders::StartDeploymentOutputBuilder::operation_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_deployment::StartDeploymentOutput {
-            operation_id: self.operation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operation_id",
-                    "operation_id was not specified but it is required when building StartDeploymentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_deployment::StartDeploymentOutput {
+                operation_id: self.operation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operation_id", "operation_id was not specified but it is required when building StartDeploymentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

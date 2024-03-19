@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchListingsOutput {
+pub struct SearchListingsOutput  {
     /// <p>The results of the <code>SearchListings</code> action.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResultItem>>,
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Total number of search results.</p>
     pub total_match_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl SearchListingsOutput {
+impl  SearchListingsOutput  {
     /// <p>The results of the <code>SearchListings</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::SearchResultItem] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::SearchResultItem] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Total number of search results.</p>
@@ -28,10 +29,10 @@ impl SearchListingsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchListingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchListingsOutput {
     /// Creates a new builder-style object to manufacture [`SearchListingsOutput`](crate::operation::search_listings::SearchListingsOutput).
     pub fn builder() -> crate::operation::search_listings::builders::SearchListingsOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchListingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchListingsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResultItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_match_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchListingsOutputBuilder {
     /// <p>The results of the <code>SearchListings</code> action.</p>
     pub fn items(mut self, input: crate::types::SearchResultItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the <code>SearchListings</code> action.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchResultItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The results of the <code>SearchListings</code> action.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchResultItem>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchResultItem>> {
         &self.items
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
@@ -76,8 +76,7 @@ impl SearchListingsOutputBuilder {
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchListingsOutputBuilder {
     }
     /// <p>Total number of search results.</p>
     pub fn set_total_match_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_match_count = input;
-        self
+        self.total_match_count = input; self
     }
     /// <p>Total number of search results.</p>
     pub fn get_total_match_count(&self) -> &::std::option::Option<i32> {
         &self.total_match_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchListingsOutput`](crate::operation::search_listings::SearchListingsOutput).
     pub fn build(self) -> crate::operation::search_listings::SearchListingsOutput {
         crate::operation::search_listings::SearchListingsOutput {
-            items: self.items,
-            next_token: self.next_token,
-            total_match_count: self.total_match_count,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
+            total_match_count: self.total_match_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

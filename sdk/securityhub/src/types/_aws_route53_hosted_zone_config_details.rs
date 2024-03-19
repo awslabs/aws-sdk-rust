@@ -3,13 +3,13 @@
 /// <p>An object that contains an optional comment about your Amazon Route&nbsp;53 hosted zone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRoute53HostedZoneConfigDetails {
+pub struct AwsRoute53HostedZoneConfigDetails  {
     /// <p>Any comments that you include about the hosted zone.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl AwsRoute53HostedZoneConfigDetails {
+impl  AwsRoute53HostedZoneConfigDetails  {
     /// <p>Any comments that you include about the hosted zone.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsRoute53HostedZoneConfigDetailsBuilder {
     }
     /// <p>Any comments that you include about the hosted zone.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>Any comments that you include about the hosted zone.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsRoute53HostedZoneConfigDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsRoute53HostedZoneConfigDetails`](crate::types::AwsRoute53HostedZoneConfigDetails).
     pub fn build(self) -> crate::types::AwsRoute53HostedZoneConfigDetails {
-        crate::types::AwsRoute53HostedZoneConfigDetails { comment: self.comment }
+        crate::types::AwsRoute53HostedZoneConfigDetails {
+            comment: self.comment
+            ,
+        }
     }
 }
+

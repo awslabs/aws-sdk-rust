@@ -3,7 +3,7 @@
 /// <p>Structure to capture query statistics such as how many queries are running, accepted or waiting and their details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryEvalStats {
+pub struct QueryEvalStats  {
     /// <p>Indicates how long the query waited, in milliseconds.</p>
     pub waited: ::std::option::Option<i32>,
     /// <p>The number of milliseconds the query has been running so far.</p>
@@ -13,7 +13,7 @@ pub struct QueryEvalStats {
     /// <p>The number of subqueries in this query.</p>
     pub subqueries: ::std::option::Option<::aws_smithy_types::Document>,
 }
-impl QueryEvalStats {
+impl  QueryEvalStats  {
     /// <p>Indicates how long the query waited, in milliseconds.</p>
     pub fn waited(&self) -> ::std::option::Option<i32> {
         self.waited
@@ -27,7 +27,7 @@ impl QueryEvalStats {
         self.cancelled
     }
     /// <p>The number of subqueries in this query.</p>
-    pub fn subqueries(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn subqueries(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.subqueries.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl QueryEvalStatsBuilder {
     }
     /// <p>Indicates how long the query waited, in milliseconds.</p>
     pub fn set_waited(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.waited = input;
-        self
+        self.waited = input; self
     }
     /// <p>Indicates how long the query waited, in milliseconds.</p>
     pub fn get_waited(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl QueryEvalStatsBuilder {
     }
     /// <p>The number of milliseconds the query has been running so far.</p>
     pub fn set_elapsed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.elapsed = input;
-        self
+        self.elapsed = input; self
     }
     /// <p>The number of milliseconds the query has been running so far.</p>
     pub fn get_elapsed(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl QueryEvalStatsBuilder {
     }
     /// <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
     pub fn set_cancelled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cancelled = input;
-        self
+        self.cancelled = input; self
     }
     /// <p>Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.</p>
     pub fn get_cancelled(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl QueryEvalStatsBuilder {
     }
     /// <p>The number of subqueries in this query.</p>
     pub fn set_subqueries(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.subqueries = input;
-        self
+        self.subqueries = input; self
     }
     /// <p>The number of subqueries in this query.</p>
     pub fn get_subqueries(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -107,10 +103,15 @@ impl QueryEvalStatsBuilder {
     /// Consumes the builder and constructs a [`QueryEvalStats`](crate::types::QueryEvalStats).
     pub fn build(self) -> crate::types::QueryEvalStats {
         crate::types::QueryEvalStats {
-            waited: self.waited,
-            elapsed: self.elapsed,
-            cancelled: self.cancelled,
-            subqueries: self.subqueries,
+            waited: self.waited
+            ,
+            elapsed: self.elapsed
+            ,
+            cancelled: self.cancelled
+            ,
+            subqueries: self.subqueries
+            ,
         }
     }
 }
+

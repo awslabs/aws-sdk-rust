@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateWorkspaceInput {
+pub struct CreateWorkspaceInput  {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     pub account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
@@ -19,22 +19,22 @@ pub struct CreateWorkspaceInput {
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub workspace_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
+    pub workspace_data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceType>>,
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
     pub workspace_description: ::std::option::Option<::std::string::String>,
     /// <p>The name for the workspace. It does not have to be unique.</p>
     pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub workspace_notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub workspace_notification_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub workspace_organizational_units: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub workspace_organizational_units: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
+    pub authentication_providers: ::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>>,
     /// <p>The list of tags associated with the workspace.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
@@ -49,17 +49,17 @@ pub struct CreateWorkspaceInput {
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
-impl CreateWorkspaceInput {
+impl  CreateWorkspaceInput  {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    pub fn account_access_type(&self) -> ::std::option::Option<&crate::types::AccountAccessType> {
+    pub fn account_access_type(&self) -> ::std::option::Option<& crate::types::AccountAccessType> {
         self.account_access_type.as_ref()
     }
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-    pub fn organization_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn organization_role_name(&self) -> ::std::option::Option<& str> {
         self.organization_role_name.as_deref()
     }
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
@@ -68,77 +68,81 @@ impl CreateWorkspaceInput {
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<& crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_set_name(&self) -> ::std::option::Option<& str> {
         self.stack_set_name.as_deref()
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_data_sources.is_none()`.
-    pub fn workspace_data_sources(&self) -> &[crate::types::DataSourceType] {
-        self.workspace_data_sources.as_deref().unwrap_or_default()
+    pub fn workspace_data_sources(&self) -> & [crate::types::DataSourceType] {
+        self.workspace_data_sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
-    pub fn workspace_description(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_description(&self) -> ::std::option::Option<& str> {
         self.workspace_description.as_deref()
     }
     /// <p>The name for the workspace. It does not have to be unique.</p>
-    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_name(&self) -> ::std::option::Option<& str> {
         self.workspace_name.as_deref()
     }
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_notification_destinations.is_none()`.
-    pub fn workspace_notification_destinations(&self) -> &[crate::types::NotificationDestinationType] {
-        self.workspace_notification_destinations.as_deref().unwrap_or_default()
+    pub fn workspace_notification_destinations(&self) -> & [crate::types::NotificationDestinationType] {
+        self.workspace_notification_destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_organizational_units.is_none()`.
-    pub fn workspace_organizational_units(&self) -> &[::std::string::String] {
-        self.workspace_organizational_units.as_deref().unwrap_or_default()
+    pub fn workspace_organizational_units(&self) -> & [::std::string::String] {
+        self.workspace_organizational_units.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
-    pub fn workspace_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_role_arn(&self) -> ::std::option::Option<& str> {
         self.workspace_role_arn.as_deref()
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_providers.is_none()`.
-    pub fn authentication_providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
-        self.authentication_providers.as_deref().unwrap_or_default()
+    pub fn authentication_providers(&self) -> & [crate::types::AuthenticationProviderTypes] {
+        self.authentication_providers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
+    pub fn configuration(&self) -> ::std::option::Option<& str> {
         self.configuration.as_deref()
     }
     /// <p>Configuration for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
-    pub fn network_access_control(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
+    pub fn network_access_control(&self) -> ::std::option::Option<& crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
     }
     /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
-    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
+    pub fn grafana_version(&self) -> ::std::option::Option<& str> {
         self.grafana_version.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateWorkspaceInput {
+impl  ::std::fmt::Debug for CreateWorkspaceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceInput");
         formatter.field("account_access_type", &self.account_access_type);
@@ -177,14 +181,14 @@ pub struct CreateWorkspaceInputBuilder {
     pub(crate) organization_role_name: ::std::option::Option<::std::string::String>,
     pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
     pub(crate) stack_set_name: ::std::option::Option<::std::string::String>,
-    pub(crate) workspace_data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>,
+    pub(crate) workspace_data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceType>>,
     pub(crate) workspace_description: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
-    pub(crate) workspace_notification_destinations: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
-    pub(crate) workspace_organizational_units: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) workspace_notification_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>,
+    pub(crate) workspace_organizational_units: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) workspace_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) authentication_providers: ::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
@@ -199,8 +203,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     pub fn set_account_access_type(mut self, input: ::std::option::Option<crate::types::AccountAccessType>) -> Self {
-        self.account_access_type = input;
-        self
+        self.account_access_type = input; self
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     pub fn get_account_access_type(&self) -> &::std::option::Option<crate::types::AccountAccessType> {
@@ -213,8 +216,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +229,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
     pub fn set_organization_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_role_name = input;
-        self
+        self.organization_role_name = input; self
     }
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
     pub fn get_organization_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +253,7 @@ impl CreateWorkspaceInputBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input;
-        self
+        self.permission_type = input; self
     }
     /// <p>When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use when accessing those datasources and notification channels.</p>
@@ -271,8 +271,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub fn set_stack_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_set_name = input;
-        self
+        self.stack_set_name = input; self
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,17 +284,16 @@ impl CreateWorkspaceInputBuilder {
     /// <p>This parameter is for internal use only, and should not be used.</p>
     pub fn workspace_data_sources(mut self, input: crate::types::DataSourceType) -> Self {
         let mut v = self.workspace_data_sources.unwrap_or_default();
-        v.push(input);
-        self.workspace_data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workspace_data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub fn set_workspace_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>>) -> Self {
-        self.workspace_data_sources = input;
-        self
+    pub fn set_workspace_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceType>>) -> Self {
+        self.workspace_data_sources = input; self
     }
     /// <p>This parameter is for internal use only, and should not be used.</p>
-    pub fn get_workspace_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>> {
+    pub fn get_workspace_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceType>> {
         &self.workspace_data_sources
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
@@ -307,8 +305,7 @@ impl CreateWorkspaceInputBuilder {
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
     pub fn set_workspace_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_description = input;
-        self
+        self.workspace_description = input; self
     }
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     /// <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></p>
@@ -322,8 +319,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>The name for the workspace. It does not have to be unique.</p>
     pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_name = input;
-        self
+        self.workspace_name = input; self
     }
     /// <p>The name for the workspace. It does not have to be unique.</p>
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -336,20 +332,16 @@ impl CreateWorkspaceInputBuilder {
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
     pub fn workspace_notification_destinations(mut self, input: crate::types::NotificationDestinationType) -> Self {
         let mut v = self.workspace_notification_destinations.unwrap_or_default();
-        v.push(input);
-        self.workspace_notification_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.workspace_notification_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub fn set_workspace_notification_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
-    ) -> Self {
-        self.workspace_notification_destinations = input;
-        self
+    pub fn set_workspace_notification_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>>) -> Self {
+        self.workspace_notification_destinations = input; self
     }
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    pub fn get_workspace_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+    pub fn get_workspace_notification_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationDestinationType>> {
         &self.workspace_notification_destinations
     }
     /// Appends an item to `workspace_organizational_units`.
@@ -359,17 +351,16 @@ impl CreateWorkspaceInputBuilder {
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     pub fn workspace_organizational_units(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.workspace_organizational_units.unwrap_or_default();
-        v.push(input.into());
-        self.workspace_organizational_units = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.workspace_organizational_units = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn set_workspace_organizational_units(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.workspace_organizational_units = input;
-        self
+    pub fn set_workspace_organizational_units(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.workspace_organizational_units = input; self
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn get_workspace_organizational_units(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_organizational_units(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.workspace_organizational_units
     }
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
@@ -379,8 +370,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
     pub fn set_workspace_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_role_arn = input;
-        self
+        self.workspace_role_arn = input; self
     }
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.</p>
     pub fn get_workspace_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -393,17 +383,16 @@ impl CreateWorkspaceInputBuilder {
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
     pub fn authentication_providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         let mut v = self.authentication_providers.unwrap_or_default();
-        v.push(input);
-        self.authentication_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.authentication_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn set_authentication_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
-        self.authentication_providers = input;
-        self
+    pub fn set_authentication_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>>) -> Self {
+        self.authentication_providers = input; self
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+    pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthenticationProviderTypes>> {
         &self.authentication_providers
     }
     /// Adds a key-value pair to `tags`.
@@ -413,17 +402,16 @@ impl CreateWorkspaceInputBuilder {
     /// <p>The list of tags associated with the workspace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
@@ -437,8 +425,7 @@ impl CreateWorkspaceInputBuilder {
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
     /// </note>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p><note>
     /// <p>Connecting to a private VPC is not yet available in the Asia Pacific (Seoul) Region (ap-northeast-2).</p>
@@ -453,8 +440,7 @@ impl CreateWorkspaceInputBuilder {
     }
     /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -471,8 +457,7 @@ impl CreateWorkspaceInputBuilder {
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
     pub fn set_network_access_control(mut self, input: ::std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
-        self.network_access_control = input;
-        self
+        self.network_access_control = input; self
     }
     /// <p>Configuration for network access to your workspace.</p>
     /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
@@ -489,8 +474,7 @@ impl CreateWorkspaceInputBuilder {
     /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_version = input;
-        self
+        self.grafana_version = input; self
     }
     /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 9.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
@@ -498,28 +482,45 @@ impl CreateWorkspaceInputBuilder {
         &self.grafana_version
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_workspace::CreateWorkspaceInput {
-            account_access_type: self.account_access_type,
-            client_token: self.client_token,
-            organization_role_name: self.organization_role_name,
-            permission_type: self.permission_type,
-            stack_set_name: self.stack_set_name,
-            workspace_data_sources: self.workspace_data_sources,
-            workspace_description: self.workspace_description,
-            workspace_name: self.workspace_name,
-            workspace_notification_destinations: self.workspace_notification_destinations,
-            workspace_organizational_units: self.workspace_organizational_units,
-            workspace_role_arn: self.workspace_role_arn,
-            authentication_providers: self.authentication_providers,
-            tags: self.tags,
-            vpc_configuration: self.vpc_configuration,
-            configuration: self.configuration,
-            network_access_control: self.network_access_control,
-            grafana_version: self.grafana_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workspace::CreateWorkspaceInput {
+                account_access_type: self.account_access_type
+                ,
+                client_token: self.client_token
+                ,
+                organization_role_name: self.organization_role_name
+                ,
+                permission_type: self.permission_type
+                ,
+                stack_set_name: self.stack_set_name
+                ,
+                workspace_data_sources: self.workspace_data_sources
+                ,
+                workspace_description: self.workspace_description
+                ,
+                workspace_name: self.workspace_name
+                ,
+                workspace_notification_destinations: self.workspace_notification_destinations
+                ,
+                workspace_organizational_units: self.workspace_organizational_units
+                ,
+                workspace_role_arn: self.workspace_role_arn
+                ,
+                authentication_providers: self.authentication_providers
+                ,
+                tags: self.tags
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                configuration: self.configuration
+                ,
+                network_access_control: self.network_access_control
+                ,
+                grafana_version: self.grafana_version
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateWorkspaceInputBuilder {
@@ -545,3 +546,4 @@ impl ::std::fmt::Debug for CreateWorkspaceInputBuilder {
         formatter.finish()
     }
 }
+

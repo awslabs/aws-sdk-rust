@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMetricFilters`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`log_group_name(impl Into<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_log_group_name):<br>required: **false**<br><p>The name of the log group.</p><br>
     ///   - [`filter_name_prefix(impl Into<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::filter_name_prefix) / [`set_filter_name_prefix(Option<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_filter_name_prefix):<br>required: **false**<br><p>The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the <code>logGroupName</code> parameter in your request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p><br>
     ///   - [`metric_name(impl Into<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_metric_name):<br>required: **false**<br><p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p><br>
     ///   - [`metric_namespace(impl Into<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::metric_namespace) / [`set_metric_namespace(Option<String>)`](crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::set_metric_namespace):<br>required: **false**<br><p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p><br>
-    /// - On success, responds with [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput) with field(s):
+                            /// - On success, responds with [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput) with field(s):
     ///   - [`metric_filters(Option<Vec::<MetricFilter>>)`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput::metric_filters): <p>The metric filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput::next_token): <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<DescribeMetricFiltersError>`](crate::operation::describe_metric_filters::DescribeMetricFiltersError)
+                            /// - On failure, responds with [`SdkError<DescribeMetricFiltersError>`](crate::operation::describe_metric_filters::DescribeMetricFiltersError)
     pub fn describe_metric_filters(&self) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder {
-        crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_metric_filters::builders::DescribeMetricFiltersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

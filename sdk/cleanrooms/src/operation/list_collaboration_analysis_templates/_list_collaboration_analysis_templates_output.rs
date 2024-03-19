@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCollaborationAnalysisTemplatesOutput {
+pub struct ListCollaborationAnalysisTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub collaboration_analysis_template_summaries: ::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>,
+    pub collaboration_analysis_template_summaries: ::std::vec::Vec::<crate::types::CollaborationAnalysisTemplateSummary>,
     _request_id: Option<String>,
 }
-impl ListCollaborationAnalysisTemplatesOutput {
+impl  ListCollaborationAnalysisTemplatesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub fn collaboration_analysis_template_summaries(&self) -> &[crate::types::CollaborationAnalysisTemplateSummary] {
-        use std::ops::Deref;
-        self.collaboration_analysis_template_summaries.deref()
+    pub fn collaboration_analysis_template_summaries(&self) -> & [crate::types::CollaborationAnalysisTemplateSummary] {
+        use std::ops::Deref; self.collaboration_analysis_template_summaries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCollaborationAnalysisTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCollaborationAnalysisTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationAnalysisTemplatesOutput`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput).
     pub fn builder() -> crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListCollaborationAnalysisTemplatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCollaborationAnalysisTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) collaboration_analysis_template_summaries: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>>,
+    pub(crate) collaboration_analysis_template_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListCollaborationAnalysisTemplatesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,42 +60,31 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
     /// <p>The metadata of the analysis template within a collaboration.</p>
     pub fn collaboration_analysis_template_summaries(mut self, input: crate::types::CollaborationAnalysisTemplateSummary) -> Self {
         let mut v = self.collaboration_analysis_template_summaries.unwrap_or_default();
-        v.push(input);
-        self.collaboration_analysis_template_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.collaboration_analysis_template_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub fn set_collaboration_analysis_template_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>>,
-    ) -> Self {
-        self.collaboration_analysis_template_summaries = input;
-        self
+    pub fn set_collaboration_analysis_template_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplateSummary>>) -> Self {
+        self.collaboration_analysis_template_summaries = input; self
     }
     /// <p>The metadata of the analysis template within a collaboration.</p>
-    pub fn get_collaboration_analysis_template_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationAnalysisTemplateSummary>> {
+    pub fn get_collaboration_analysis_template_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CollaborationAnalysisTemplateSummary>> {
         &self.collaboration_analysis_template_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCollaborationAnalysisTemplatesOutput`](crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_analysis_template_summaries`](crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder::collaboration_analysis_template_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput {
                 next_token: self.next_token
@@ -112,3 +99,4 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
         )
     }
 }
+

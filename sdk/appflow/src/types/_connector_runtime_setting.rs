@@ -3,7 +3,7 @@
 /// <p>Contains information about the connector runtime settings that are required for flow execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectorRuntimeSetting {
+pub struct ConnectorRuntimeSetting  {
     /// <p>Contains value information about the connector runtime setting.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Data type of the connector runtime setting.</p>
@@ -17,15 +17,15 @@ pub struct ConnectorRuntimeSetting {
     /// <p>Indicates the scope of the connector runtime setting.</p>
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub connector_supplied_value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connector_supplied_value_options: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ConnectorRuntimeSetting {
+impl  ConnectorRuntimeSetting  {
     /// <p>Contains value information about the connector runtime setting.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Data type of the connector runtime setting.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<& str> {
         self.data_type.as_deref()
     }
     /// <p>Indicates whether this connector runtime setting is required.</p>
@@ -33,22 +33,23 @@ impl ConnectorRuntimeSetting {
         self.is_required
     }
     /// <p>A label used for connector runtime setting.</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>A description about the connector runtime setting.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates the scope of the connector runtime setting.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_supplied_value_options.is_none()`.
-    pub fn connector_supplied_value_options(&self) -> &[::std::string::String] {
-        self.connector_supplied_value_options.as_deref().unwrap_or_default()
+    pub fn connector_supplied_value_options(&self) -> & [::std::string::String] {
+        self.connector_supplied_value_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConnectorRuntimeSetting {
@@ -68,7 +69,7 @@ pub struct ConnectorRuntimeSettingBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
-    pub(crate) connector_supplied_value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_supplied_value_options: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ConnectorRuntimeSettingBuilder {
     /// <p>Contains value information about the connector runtime setting.</p>
@@ -78,8 +79,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>Contains value information about the connector runtime setting.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Contains value information about the connector runtime setting.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>Data type of the connector runtime setting.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>Data type of the connector runtime setting.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>Indicates whether this connector runtime setting is required.</p>
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_required = input;
-        self
+        self.is_required = input; self
     }
     /// <p>Indicates whether this connector runtime setting is required.</p>
     pub fn get_is_required(&self) -> &::std::option::Option<bool> {
@@ -120,8 +118,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>A label used for connector runtime setting.</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>A label used for connector runtime setting.</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>A description about the connector runtime setting.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description about the connector runtime setting.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +144,7 @@ impl ConnectorRuntimeSettingBuilder {
     }
     /// <p>Indicates the scope of the connector runtime setting.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Indicates the scope of the connector runtime setting.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,29 +157,37 @@ impl ConnectorRuntimeSettingBuilder {
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
     pub fn connector_supplied_value_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connector_supplied_value_options.unwrap_or_default();
-        v.push(input.into());
-        self.connector_supplied_value_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connector_supplied_value_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn set_connector_supplied_value_options(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connector_supplied_value_options = input;
-        self
+    pub fn set_connector_supplied_value_options(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.connector_supplied_value_options = input; self
     }
     /// <p>Contains default values for the connector runtime setting that are supplied by the connector.</p>
-    pub fn get_connector_supplied_value_options(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connector_supplied_value_options(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.connector_supplied_value_options
     }
     /// Consumes the builder and constructs a [`ConnectorRuntimeSetting`](crate::types::ConnectorRuntimeSetting).
     pub fn build(self) -> crate::types::ConnectorRuntimeSetting {
         crate::types::ConnectorRuntimeSetting {
-            key: self.key,
-            data_type: self.data_type,
-            is_required: self.is_required.unwrap_or_default(),
-            label: self.label,
-            description: self.description,
-            scope: self.scope,
-            connector_supplied_value_options: self.connector_supplied_value_options,
+            key: self.key
+            ,
+            data_type: self.data_type
+            ,
+            is_required: self.is_required
+                .unwrap_or_default()
+            ,
+            label: self.label
+            ,
+            description: self.description
+            ,
+            scope: self.scope
+            ,
+            connector_supplied_value_options: self.connector_supplied_value_options
+            ,
         }
     }
 }
+

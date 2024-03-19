@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDataProtectionPolicyInput {
+pub struct PutDataProtectionPolicyInput  {
     /// <p>Specify either the log group name or log group ARN.</p>
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specify the data protection policy, in JSON.</p>
@@ -22,9 +22,9 @@ pub struct PutDataProtectionPolicyInput {
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
 }
-impl PutDataProtectionPolicyInput {
+impl  PutDataProtectionPolicyInput  {
     /// <p>Specify either the log group name or log group ARN.</p>
-    pub fn log_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_identifier(&self) -> ::std::option::Option<& str> {
         self.log_group_identifier.as_deref()
     }
     /// <p>Specify the data protection policy, in JSON.</p>
@@ -42,7 +42,7 @@ impl PutDataProtectionPolicyInput {
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PutDataProtectionPolicyInputBuilder {
     }
     /// <p>Specify either the log group name or log group ARN.</p>
     pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_identifier = input;
-        self
+        self.log_group_identifier = input; self
     }
     /// <p>Specify either the log group name or log group ARN.</p>
     pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl PutDataProtectionPolicyInputBuilder {
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
     /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>Specify the data protection policy, in JSON.</p>
     /// <p>This policy must include two JSON blocks:</p>
@@ -134,15 +132,15 @@ impl PutDataProtectionPolicyInputBuilder {
         &self.policy_document
     }
     /// Consumes the builder and constructs a [`PutDataProtectionPolicyInput`](crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput {
-            log_group_identifier: self.log_group_identifier,
-            policy_document: self.policy_document,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput {
+                log_group_identifier: self.log_group_identifier
+                ,
+                policy_document: self.policy_document
+                ,
+            }
+        )
     }
 }
+

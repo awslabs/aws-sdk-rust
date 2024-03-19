@@ -36,36 +36,28 @@ pub enum StartConversationResponseEventStreamError {
     /// <p></p>
     BadGatewayException(crate::types::error::BadGatewayException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartConversationResponseEventStreamError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl StartConversationResponseEventStreamError {
     /// Creates the `StartConversationResponseEventStreamError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `StartConversationResponseEventStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `StartConversationResponseEventStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -115,35 +107,69 @@ impl StartConversationResponseEventStreamError {
 impl ::std::error::Error for StartConversationResponseEventStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
-            Self::DependencyFailedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::BadGatewayException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::AccessDeniedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InternalServerException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ConflictException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::DependencyFailedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::BadGatewayException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for StartConversationResponseEventStreamError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::ConflictException(_inner) => _inner.fmt(f),
-            Self::DependencyFailedException(_inner) => _inner.fmt(f),
-            Self::BadGatewayException(_inner) => _inner.fmt(f),
+            Self::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::DependencyFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::BadGatewayException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -159,70 +185,77 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartConversationResponseEv
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartConversationResponseEventStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DependencyFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::BadGatewayException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::AccessDeniedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InternalServerException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ConflictException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::DependencyFailedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::BadGatewayException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartConversationResponseEventStreamError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::types::error::StartConversationResponseEventStreamError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 /// Error type for the `StartConversationRequestEventStreamError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartConversationRequestEventStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartConversationRequestEventStreamError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl StartConversationRequestEventStreamError {
     /// Creates the `StartConversationRequestEventStreamError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `StartConversationRequestEventStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `StartConversationRequestEventStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::Unhandled(e) => &e.meta,
@@ -232,7 +265,9 @@ impl StartConversationRequestEventStreamError {
 impl ::std::error::Error for StartConversationRequestEventStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
@@ -241,10 +276,10 @@ impl ::std::fmt::Display for StartConversationRequestEventStreamError {
         match self {
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -260,26 +295,25 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartConversationRequestEve
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartConversationRequestEventStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartConversationRequestEventStreamError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::types::error::StartConversationRequestEventStreamError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 mod _access_denied_exception;
 
@@ -299,3 +333,4 @@ mod _validation_exception;
 
 /// Builders
 pub mod builders;
+

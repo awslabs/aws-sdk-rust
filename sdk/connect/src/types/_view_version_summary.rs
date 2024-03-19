@@ -3,7 +3,7 @@
 /// <p>A summary of a view version's metadata.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ViewVersionSummary {
+pub struct ViewVersionSummary  {
     /// <p>The identifier of the view version.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the view version.</p>
@@ -19,25 +19,25 @@ pub struct ViewVersionSummary {
     /// <p>The description of the view version.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
 }
-impl ViewVersionSummary {
+impl  ViewVersionSummary  {
     /// <p>The identifier of the view version.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the view version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the view version.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the view version.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the view version.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ViewType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ViewType> {
         self.r#type.as_ref()
     }
     /// <p>The sequentially incremented version of the view version.</p>
@@ -45,11 +45,11 @@ impl ViewVersionSummary {
         self.version
     }
     /// <p>The description of the view version.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
 }
-impl ::std::fmt::Debug for ViewVersionSummary {
+impl  ::std::fmt::Debug for ViewVersionSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ViewVersionSummary");
         formatter.field("id", &self.id);
@@ -89,8 +89,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The identifier of the view version.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the view version.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the view version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the view version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The description of the view version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the view version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The name of the view version.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view version.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The type of the view version.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ViewType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the view version.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ViewType> {
@@ -159,8 +154,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The sequentially incremented version of the view version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The sequentially incremented version of the view version.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -173,8 +167,7 @@ impl ViewVersionSummaryBuilder {
     }
     /// <p>The description of the view version.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>The description of the view version.</p>
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,13 +176,21 @@ impl ViewVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`ViewVersionSummary`](crate::types::ViewVersionSummary).
     pub fn build(self) -> crate::types::ViewVersionSummary {
         crate::types::ViewVersionSummary {
-            id: self.id,
-            arn: self.arn,
-            description: self.description,
-            name: self.name,
-            r#type: self.r#type,
-            version: self.version.unwrap_or_default(),
-            version_description: self.version_description,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            version_description: self.version_description
+            ,
         }
     }
 }
@@ -206,3 +207,4 @@ impl ::std::fmt::Debug for ViewVersionSummaryBuilder {
         formatter.finish()
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchAvailablePhoneNumbers`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`target_arn(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::target_arn) / [`set_target_arn(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_target_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone number inbound traffic is routed through. You must enter <code>InstanceId</code> or <code>TargetArn</code>.</p><br>
     ///   - [`instance_id(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_instance_id):<br>required: **false**<br><p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter <code>InstanceId</code> or <code>TargetArn</code>.</p><br>
     ///   - [`phone_number_country_code(PhoneNumberCountryCode)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::phone_number_country_code) / [`set_phone_number_country_code(Option<PhoneNumberCountryCode>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_phone_number_country_code):<br>required: **true**<br><p>The ISO country code.</p><br>
@@ -11,13 +11,12 @@ impl super::Client {
     ///   - [`phone_number_prefix(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::phone_number_prefix) / [`set_phone_number_prefix(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_phone_number_prefix):<br>required: **false**<br><p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput) with field(s):
+                            /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`available_numbers_list(Option<Vec::<AvailableNumberSummary>>)`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput::available_numbers_list): <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
-    /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
-    pub fn search_available_phone_numbers(
-        &self,
-    ) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder {
-        crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError)
+    pub fn search_available_phone_numbers(&self) -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder {
+                                crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

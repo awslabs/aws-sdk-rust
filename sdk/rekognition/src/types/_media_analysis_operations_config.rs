@@ -3,13 +3,13 @@
 /// <p>Configuration options for a media analysis job. Configuration is operation-specific.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisOperationsConfig {
+pub struct MediaAnalysisOperationsConfig  {
     /// <p>Contains configuration options for a DetectModerationLabels job.</p>
     pub detect_moderation_labels: ::std::option::Option<crate::types::MediaAnalysisDetectModerationLabelsConfig>,
 }
-impl MediaAnalysisOperationsConfig {
+impl  MediaAnalysisOperationsConfig  {
     /// <p>Contains configuration options for a DetectModerationLabels job.</p>
-    pub fn detect_moderation_labels(&self) -> ::std::option::Option<&crate::types::MediaAnalysisDetectModerationLabelsConfig> {
+    pub fn detect_moderation_labels(&self) -> ::std::option::Option<& crate::types::MediaAnalysisDetectModerationLabelsConfig> {
         self.detect_moderation_labels.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MediaAnalysisOperationsConfigBuilder {
     }
     /// <p>Contains configuration options for a DetectModerationLabels job.</p>
     pub fn set_detect_moderation_labels(mut self, input: ::std::option::Option<crate::types::MediaAnalysisDetectModerationLabelsConfig>) -> Self {
-        self.detect_moderation_labels = input;
-        self
+        self.detect_moderation_labels = input; self
     }
     /// <p>Contains configuration options for a DetectModerationLabels job.</p>
     pub fn get_detect_moderation_labels(&self) -> &::std::option::Option<crate::types::MediaAnalysisDetectModerationLabelsConfig> {
@@ -44,7 +43,9 @@ impl MediaAnalysisOperationsConfigBuilder {
     /// Consumes the builder and constructs a [`MediaAnalysisOperationsConfig`](crate::types::MediaAnalysisOperationsConfig).
     pub fn build(self) -> crate::types::MediaAnalysisOperationsConfig {
         crate::types::MediaAnalysisOperationsConfig {
-            detect_moderation_labels: self.detect_moderation_labels,
+            detect_moderation_labels: self.detect_moderation_labels
+            ,
         }
     }
 }
+

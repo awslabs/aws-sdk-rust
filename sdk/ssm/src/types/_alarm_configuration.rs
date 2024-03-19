@@ -3,21 +3,20 @@
 /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlarmConfiguration {
+pub struct AlarmConfiguration  {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub ignore_poll_alarm_failure: bool,
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub alarms: ::std::vec::Vec<crate::types::Alarm>,
+    pub alarms: ::std::vec::Vec::<crate::types::Alarm>,
 }
-impl AlarmConfiguration {
+impl  AlarmConfiguration  {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn ignore_poll_alarm_failure(&self) -> bool {
         self.ignore_poll_alarm_failure
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn alarms(&self) -> &[crate::types::Alarm] {
-        use std::ops::Deref;
-        self.alarms.deref()
+    pub fn alarms(&self) -> & [crate::types::Alarm] {
+        use std::ops::Deref; self.alarms.deref()
     }
 }
 impl AlarmConfiguration {
@@ -32,7 +31,7 @@ impl AlarmConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AlarmConfigurationBuilder {
     pub(crate) ignore_poll_alarm_failure: ::std::option::Option<bool>,
-    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>,
 }
 impl AlarmConfigurationBuilder {
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
@@ -42,8 +41,7 @@ impl AlarmConfigurationBuilder {
     }
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn set_ignore_poll_alarm_failure(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ignore_poll_alarm_failure = input;
-        self
+        self.ignore_poll_alarm_failure = input; self
     }
     /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
     pub fn get_ignore_poll_alarm_failure(&self) -> &::std::option::Option<bool> {
@@ -56,31 +54,34 @@ impl AlarmConfigurationBuilder {
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
     }
     /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
-    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Alarm>> {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarms`](crate::types::builders::AlarmConfigurationBuilder::alarms)
     pub fn build(self) -> ::std::result::Result<crate::types::AlarmConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AlarmConfiguration {
-            ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
-            alarms: self.alarms.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarms",
-                    "alarms was not specified but it is required when building AlarmConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AlarmConfiguration {
+                ignore_poll_alarm_failure: self.ignore_poll_alarm_failure
+                    .unwrap_or_default()
+                ,
+                alarms: self.alarms
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarms", "alarms was not specified but it is required when building AlarmConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

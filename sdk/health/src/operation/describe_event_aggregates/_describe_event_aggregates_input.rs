@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventAggregatesInput {
+pub struct DescribeEventAggregatesInput  {
     /// <p>Values to narrow the results returned.</p>
     pub filter: ::std::option::Option<crate::types::EventFilter>,
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
@@ -12,13 +12,13 @@ pub struct DescribeEventAggregatesInput {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventAggregatesInput {
+impl  DescribeEventAggregatesInput  {
     /// <p>Values to narrow the results returned.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::EventFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::EventFilter> {
         self.filter.as_ref()
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
-    pub fn aggregate_field(&self) -> ::std::option::Option<&crate::types::EventAggregateField> {
+    pub fn aggregate_field(&self) -> ::std::option::Option<& crate::types::EventAggregateField> {
         self.aggregate_field.as_ref()
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
@@ -26,7 +26,7 @@ impl DescribeEventAggregatesInput {
         self.max_results
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DescribeEventAggregatesInputBuilder {
     }
     /// <p>Values to narrow the results returned.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EventFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Values to narrow the results returned.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EventFilter> {
@@ -69,8 +68,7 @@ impl DescribeEventAggregatesInputBuilder {
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
     pub fn set_aggregate_field(mut self, input: ::std::option::Option<crate::types::EventAggregateField>) -> Self {
-        self.aggregate_field = input;
-        self
+        self.aggregate_field = input; self
     }
     /// <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
     pub fn get_aggregate_field(&self) -> &::std::option::Option<crate::types::EventAggregateField> {
@@ -83,8 +81,7 @@ impl DescribeEventAggregatesInputBuilder {
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl DescribeEventAggregatesInputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEventAggregatesInput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_event_aggregates::DescribeEventAggregatesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_event_aggregates::DescribeEventAggregatesInput {
-            filter: self.filter,
-            aggregate_field: self.aggregate_field,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_aggregates::DescribeEventAggregatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_event_aggregates::DescribeEventAggregatesInput {
+                filter: self.filter
+                ,
+                aggregate_field: self.aggregate_field
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

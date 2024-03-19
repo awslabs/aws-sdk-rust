@@ -3,7 +3,7 @@
 /// <p>Represents the DynamoDB Streams configuration for a table in DynamoDB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamSpecification {
+pub struct StreamSpecification  {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     pub stream_enabled: bool,
     /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
@@ -19,7 +19,7 @@ pub struct StreamSpecification {
     /// </ul>
     pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
 }
-impl StreamSpecification {
+impl  StreamSpecification  {
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     pub fn stream_enabled(&self) -> bool {
         self.stream_enabled
@@ -35,7 +35,7 @@ impl StreamSpecification {
     /// <li>
     /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
-    pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
+    pub fn stream_view_type(&self) -> ::std::option::Option<& crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl StreamSpecificationBuilder {
     }
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     pub fn set_stream_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.stream_enabled = input;
-        self
+        self.stream_enabled = input; self
     }
     /// <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</p>
     pub fn get_stream_enabled(&self) -> &::std::option::Option<bool> {
@@ -96,8 +95,7 @@ impl StreamSpecificationBuilder {
     /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul>
     pub fn set_stream_view_type(mut self, input: ::std::option::Option<crate::types::StreamViewType>) -> Self {
-        self.stream_view_type = input;
-        self
+        self.stream_view_type = input; self
     }
     /// <p>When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the stream for this table. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
@@ -117,14 +115,17 @@ impl StreamSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_enabled`](crate::types::builders::StreamSpecificationBuilder::stream_enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::StreamSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamSpecification {
-            stream_enabled: self.stream_enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_enabled",
-                    "stream_enabled was not specified but it is required when building StreamSpecification",
-                )
-            })?,
-            stream_view_type: self.stream_view_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StreamSpecification {
+                stream_enabled: self.stream_enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_enabled", "stream_enabled was not specified but it is required when building StreamSpecification")
+                    )?
+                ,
+                stream_view_type: self.stream_view_type
+                ,
+            }
+        )
     }
 }
+

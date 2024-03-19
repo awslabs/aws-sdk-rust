@@ -4,7 +4,7 @@
 /// <p>By default, an index is <i>local</i>, meaning that it contains information about resources in only the same Region as the index. However, you can promote the index of one Region in the account by calling <code>UpdateIndexType</code> to convert it into an aggregator index. The aggregator index receives a replicated copy of the index information from all other Regions where Resource Explorer is turned on. This allows search operations in that Region to return results from all Regions in the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Index {
+pub struct Index  {
     /// <p>The Amazon Web Services Region in which the index exists.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
@@ -18,13 +18,13 @@ pub struct Index {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::IndexType>,
 }
-impl Index {
+impl  Index  {
     /// <p>The Amazon Web Services Region in which the index exists.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of index. It can be one of the following values:</p>
@@ -34,7 +34,7 @@ impl Index {
     /// <li>
     /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::IndexType> {
         self.r#type.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl IndexBuilder {
     }
     /// <p>The Amazon Web Services Region in which the index exists.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region in which the index exists.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl IndexBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl IndexBuilder {
     /// <p><code>AGGREGATOR</code> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
@@ -117,9 +114,13 @@ impl IndexBuilder {
     /// Consumes the builder and constructs a [`Index`](crate::types::Index).
     pub fn build(self) -> crate::types::Index {
         crate::types::Index {
-            region: self.region,
-            arn: self.arn,
-            r#type: self.r#type,
+            region: self.region
+            ,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

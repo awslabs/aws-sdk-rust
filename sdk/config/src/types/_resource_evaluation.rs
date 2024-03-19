@@ -3,7 +3,7 @@
 /// <p>Returns details of a resource evaluation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceEvaluation {
+pub struct ResourceEvaluation  {
     /// <p>The ResourceEvaluationId of a evaluation.</p>
     pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
@@ -11,17 +11,17 @@ pub struct ResourceEvaluation {
     /// <p>The starting time of an execution.</p>
     pub evaluation_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ResourceEvaluation {
+impl  ResourceEvaluation  {
     /// <p>The ResourceEvaluationId of a evaluation.</p>
-    pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_evaluation_id(&self) -> ::std::option::Option<& str> {
         self.resource_evaluation_id.as_deref()
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<& crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
     /// <p>The starting time of an execution.</p>
-    pub fn evaluation_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_start_timestamp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ResourceEvaluationBuilder {
     }
     /// <p>The ResourceEvaluationId of a evaluation.</p>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_evaluation_id = input;
-        self
+        self.resource_evaluation_id = input; self
     }
     /// <p>The ResourceEvaluationId of a evaluation.</p>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ResourceEvaluationBuilder {
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn set_evaluation_mode(mut self, input: ::std::option::Option<crate::types::EvaluationMode>) -> Self {
-        self.evaluation_mode = input;
-        self
+        self.evaluation_mode = input; self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
@@ -76,8 +74,7 @@ impl ResourceEvaluationBuilder {
     }
     /// <p>The starting time of an execution.</p>
     pub fn set_evaluation_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.evaluation_start_timestamp = input;
-        self
+        self.evaluation_start_timestamp = input; self
     }
     /// <p>The starting time of an execution.</p>
     pub fn get_evaluation_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl ResourceEvaluationBuilder {
     /// Consumes the builder and constructs a [`ResourceEvaluation`](crate::types::ResourceEvaluation).
     pub fn build(self) -> crate::types::ResourceEvaluation {
         crate::types::ResourceEvaluation {
-            resource_evaluation_id: self.resource_evaluation_id,
-            evaluation_mode: self.evaluation_mode,
-            evaluation_start_timestamp: self.evaluation_start_timestamp,
+            resource_evaluation_id: self.resource_evaluation_id
+            ,
+            evaluation_mode: self.evaluation_mode
+            ,
+            evaluation_start_timestamp: self.evaluation_start_timestamp
+            ,
         }
     }
 }
+

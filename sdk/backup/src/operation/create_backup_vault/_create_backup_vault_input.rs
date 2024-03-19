@@ -2,37 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBackupVaultInput {
+pub struct CreateBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
-    pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateBackupVaultInput {
+impl  CreateBackupVaultInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
-    pub fn backup_vault_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn backup_vault_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.backup_vault_tags.as_ref()
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateBackupVaultInput {
+impl  ::std::fmt::Debug for CreateBackupVaultInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackupVaultInput");
         formatter.field("backup_vault_name", &self.backup_vault_name);
@@ -54,7 +54,7 @@ impl CreateBackupVaultInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateBackupVaultInputBuilder {
     pub(crate) backup_vault_name: ::std::option::Option<::std::string::String>,
-    pub(crate) backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) backup_vault_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
 }
@@ -67,8 +67,7 @@ impl CreateBackupVaultInputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,26 +78,18 @@ impl CreateBackupVaultInputBuilder {
     /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
     ///
     /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
-    pub fn backup_vault_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_vault_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.backup_vault_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.backup_vault_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.backup_vault_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
-    pub fn set_backup_vault_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.backup_vault_tags = input;
-        self
+    pub fn set_backup_vault_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.backup_vault_tags = input; self
     }
     /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
-    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_backup_vault_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.backup_vault_tags
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -108,8 +99,7 @@ impl CreateBackupVaultInputBuilder {
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +114,7 @@ impl CreateBackupVaultInputBuilder {
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
@@ -133,15 +122,19 @@ impl CreateBackupVaultInputBuilder {
         &self.creator_request_id
     }
     /// Consumes the builder and constructs a [`CreateBackupVaultInput`](crate::operation::create_backup_vault::CreateBackupVaultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_backup_vault::CreateBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_backup_vault::CreateBackupVaultInput {
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_tags: self.backup_vault_tags,
-            encryption_key_arn: self.encryption_key_arn,
-            creator_request_id: self.creator_request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backup_vault::CreateBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_backup_vault::CreateBackupVaultInput {
+                backup_vault_name: self.backup_vault_name
+                ,
+                backup_vault_tags: self.backup_vault_tags
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateBackupVaultInputBuilder {
@@ -154,3 +147,4 @@ impl ::std::fmt::Debug for CreateBackupVaultInputBuilder {
         formatter.finish()
     }
 }
+

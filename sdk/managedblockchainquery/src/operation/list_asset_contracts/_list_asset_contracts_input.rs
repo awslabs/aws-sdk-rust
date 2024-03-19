@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssetContractsInput {
+pub struct ListAssetContractsInput  {
     /// <p>Contains the filter parameter for the request.</p>
     pub contract_filter: ::std::option::Option<crate::types::ContractFilter>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -14,13 +14,13 @@ pub struct ListAssetContractsInput {
     /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListAssetContractsInput {
+impl  ListAssetContractsInput  {
     /// <p>Contains the filter parameter for the request.</p>
-    pub fn contract_filter(&self) -> ::std::option::Option<&crate::types::ContractFilter> {
+    pub fn contract_filter(&self) -> ::std::option::Option<& crate::types::ContractFilter> {
         self.contract_filter.as_ref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of contracts to list.</p>
@@ -56,8 +56,7 @@ impl ListAssetContractsInputBuilder {
     }
     /// <p>Contains the filter parameter for the request.</p>
     pub fn set_contract_filter(mut self, input: ::std::option::Option<crate::types::ContractFilter>) -> Self {
-        self.contract_filter = input;
-        self
+        self.contract_filter = input; self
     }
     /// <p>Contains the filter parameter for the request.</p>
     pub fn get_contract_filter(&self) -> &::std::option::Option<crate::types::ContractFilter> {
@@ -70,8 +69,7 @@ impl ListAssetContractsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl ListAssetContractsInputBuilder {
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of contracts to list.</p>
     /// <p>Default: <code>100</code></p><note>
@@ -104,14 +101,17 @@ impl ListAssetContractsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssetContractsInput`](crate::operation::list_asset_contracts::ListAssetContractsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_asset_contracts::ListAssetContractsInput {
-            contract_filter: self.contract_filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_asset_contracts::ListAssetContractsInput {
+                contract_filter: self.contract_filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

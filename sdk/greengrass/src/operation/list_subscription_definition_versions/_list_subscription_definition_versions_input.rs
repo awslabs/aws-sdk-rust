@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSubscriptionDefinitionVersionsInput {
+pub struct ListSubscriptionDefinitionVersionsInput  {
     /// The maximum number of results to be returned per request.
     pub max_results: ::std::option::Option<::std::string::String>,
     /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -10,17 +10,17 @@ pub struct ListSubscriptionDefinitionVersionsInput {
     /// The ID of the subscription definition.
     pub subscription_definition_id: ::std::option::Option<::std::string::String>,
 }
-impl ListSubscriptionDefinitionVersionsInput {
+impl  ListSubscriptionDefinitionVersionsInput  {
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> ::std::option::Option<&str> {
+    pub fn max_results(&self) -> ::std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// The ID of the subscription definition.
-    pub fn subscription_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_definition_id(&self) -> ::std::option::Option<& str> {
         self.subscription_definition_id.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of results to be returned per request.
     pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListSubscriptionDefinitionVersionsInputBuilder {
     }
     /// The ID of the subscription definition.
     pub fn set_subscription_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_definition_id = input;
-        self
+        self.subscription_definition_id = input; self
     }
     /// The ID of the subscription definition.
     pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_definition_id
     }
     /// Consumes the builder and constructs a [`ListSubscriptionDefinitionVersionsInput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                subscription_definition_id: self.subscription_definition_id,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                subscription_definition_id: self.subscription_definition_id
+                ,
+            }
         )
     }
 }
+

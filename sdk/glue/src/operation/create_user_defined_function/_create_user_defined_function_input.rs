@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateUserDefinedFunctionInput {
+pub struct CreateUserDefinedFunctionInput  {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which to create the function.</p>
@@ -10,17 +10,17 @@ pub struct CreateUserDefinedFunctionInput {
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub function_input: ::std::option::Option<crate::types::UserDefinedFunctionInput>,
 }
-impl CreateUserDefinedFunctionInput {
+impl  CreateUserDefinedFunctionInput  {
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which to create the function.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
-    pub fn function_input(&self) -> ::std::option::Option<&crate::types::UserDefinedFunctionInput> {
+    pub fn function_input(&self) -> ::std::option::Option<& crate::types::UserDefinedFunctionInput> {
         self.function_input.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl CreateUserDefinedFunctionInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateUserDefinedFunctionInputBuilder {
     }
     /// <p>The name of the catalog database in which to create the function.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which to create the function.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl CreateUserDefinedFunctionInputBuilder {
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub fn set_function_input(mut self, input: ::std::option::Option<crate::types::UserDefinedFunctionInput>) -> Self {
-        self.function_input = input;
-        self
+        self.function_input = input; self
     }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub fn get_function_input(&self) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
         &self.function_input
     }
     /// Consumes the builder and constructs a [`CreateUserDefinedFunctionInput`](crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            function_input: self.function_input,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_user_defined_function::CreateUserDefinedFunctionInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                function_input: self.function_input
+                ,
+            }
+        )
     }
 }
+

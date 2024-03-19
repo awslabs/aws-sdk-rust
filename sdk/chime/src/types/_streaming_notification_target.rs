@@ -3,13 +3,13 @@
 /// <p>The targeted recipient for a streaming configuration notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamingNotificationTarget {
+pub struct StreamingNotificationTarget  {
     /// <p>The streaming notification target.</p>
     pub notification_target: crate::types::NotificationTarget,
 }
-impl StreamingNotificationTarget {
+impl  StreamingNotificationTarget  {
     /// <p>The streaming notification target.</p>
-    pub fn notification_target(&self) -> &crate::types::NotificationTarget {
+    pub fn notification_target(&self) -> & crate::types::NotificationTarget {
         &self.notification_target
     }
 }
@@ -35,8 +35,7 @@ impl StreamingNotificationTargetBuilder {
     }
     /// <p>The streaming notification target.</p>
     pub fn set_notification_target(mut self, input: ::std::option::Option<crate::types::NotificationTarget>) -> Self {
-        self.notification_target = input;
-        self
+        self.notification_target = input; self
     }
     /// <p>The streaming notification target.</p>
     pub fn get_notification_target(&self) -> &::std::option::Option<crate::types::NotificationTarget> {
@@ -46,13 +45,15 @@ impl StreamingNotificationTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`notification_target`](crate::types::builders::StreamingNotificationTargetBuilder::notification_target)
     pub fn build(self) -> ::std::result::Result<crate::types::StreamingNotificationTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamingNotificationTarget {
-            notification_target: self.notification_target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "notification_target",
-                    "notification_target was not specified but it is required when building StreamingNotificationTarget",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StreamingNotificationTarget {
+                notification_target: self.notification_target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("notification_target", "notification_target was not specified but it is required when building StreamingNotificationTarget")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCostCategoryDefinitionsInput {
+pub struct ListCostCategoryDefinitionsInput  {
     /// <p>The date when the Cost Category was effective.</p>
     pub effective_on: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -10,13 +10,13 @@ pub struct ListCostCategoryDefinitionsInput {
     /// <p>The number of entries a paginated response contains.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCostCategoryDefinitionsInput {
+impl  ListCostCategoryDefinitionsInput  {
     /// <p>The date when the Cost Category was effective.</p>
-    pub fn effective_on(&self) -> ::std::option::Option<&str> {
+    pub fn effective_on(&self) -> ::std::option::Option<& str> {
         self.effective_on.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of entries a paginated response contains.</p>
@@ -47,8 +47,7 @@ impl ListCostCategoryDefinitionsInputBuilder {
     }
     /// <p>The date when the Cost Category was effective.</p>
     pub fn set_effective_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.effective_on = input;
-        self
+        self.effective_on = input; self
     }
     /// <p>The date when the Cost Category was effective.</p>
     pub fn get_effective_on(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListCostCategoryDefinitionsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListCostCategoryDefinitionsInputBuilder {
     }
     /// <p>The number of entries a paginated response contains.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of entries a paginated response contains.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsInput`](crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput {
-            effective_on: self.effective_on,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput {
+                effective_on: self.effective_on
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

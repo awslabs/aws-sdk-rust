@@ -3,7 +3,7 @@
 /// <p>An Active Directory compatible certificate template. Connectors issue certificates against these templates based on the requestor's Active Directory group membership.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
@@ -25,25 +25,25 @@ pub struct Template {
     /// <p>The date and time that the template was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Template {
+impl  Template  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::TemplateDefinition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::TemplateDefinition> {
         self.definition.as_ref()
     }
     /// <p>Name of the templates. Template names must be unique.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Object identifier of a template.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
     /// <p>The template schema version. Template schema versions can be v2, v3, or v4. The template configuration options change based on the template schema version.</p>
@@ -51,19 +51,19 @@ impl Template {
         self.policy_schema
     }
     /// <p>Status of the template. Status can be creating, active, deleting, or failed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TemplateStatus> {
         self.status.as_ref()
     }
     /// <p>The version of the template. Template updates will increment the minor revision. Re-enrolling all certificate holders will increment the major revision.</p>
-    pub fn revision(&self) -> ::std::option::Option<&crate::types::TemplateRevision> {
+    pub fn revision(&self) -> ::std::option::Option<& crate::types::TemplateRevision> {
         self.revision.as_ref()
     }
     /// <p>The date and time that the template was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the template was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl TemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl TemplateBuilder {
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::TemplateDefinition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::TemplateDefinition> {
@@ -139,8 +136,7 @@ impl TemplateBuilder {
     }
     /// <p>Name of the templates. Template names must be unique.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the templates. Template names must be unique.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl TemplateBuilder {
     }
     /// <p>Object identifier of a template.</p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_identifier = input;
-        self
+        self.object_identifier = input; self
     }
     /// <p>Object identifier of a template.</p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl TemplateBuilder {
     }
     /// <p>The template schema version. Template schema versions can be v2, v3, or v4. The template configuration options change based on the template schema version.</p>
     pub fn set_policy_schema(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.policy_schema = input;
-        self
+        self.policy_schema = input; self
     }
     /// <p>The template schema version. Template schema versions can be v2, v3, or v4. The template configuration options change based on the template schema version.</p>
     pub fn get_policy_schema(&self) -> &::std::option::Option<i32> {
@@ -181,8 +175,7 @@ impl TemplateBuilder {
     }
     /// <p>Status of the template. Status can be creating, active, deleting, or failed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the template. Status can be creating, active, deleting, or failed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
@@ -195,8 +188,7 @@ impl TemplateBuilder {
     }
     /// <p>The version of the template. Template updates will increment the minor revision. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<crate::types::TemplateRevision>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The version of the template. Template updates will increment the minor revision. Re-enrolling all certificate holders will increment the major revision.</p>
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::TemplateRevision> {
@@ -209,8 +201,7 @@ impl TemplateBuilder {
     }
     /// <p>The date and time that the template was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the template was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +214,7 @@ impl TemplateBuilder {
     }
     /// <p>The date and time that the template was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time that the template was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,16 +223,27 @@ impl TemplateBuilder {
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
-            arn: self.arn,
-            connector_arn: self.connector_arn,
-            definition: self.definition,
-            name: self.name,
-            object_identifier: self.object_identifier,
-            policy_schema: self.policy_schema,
-            status: self.status,
-            revision: self.revision,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            connector_arn: self.connector_arn
+            ,
+            definition: self.definition
+            ,
+            name: self.name
+            ,
+            object_identifier: self.object_identifier
+            ,
+            policy_schema: self.policy_schema
+            ,
+            status: self.status
+            ,
+            revision: self.revision
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

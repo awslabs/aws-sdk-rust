@@ -2,19 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchTransitGatewayRoutesOutput {
+pub struct SearchTransitGatewayRoutesOutput  {
     /// <p>Information about the routes.</p>
-    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
+    pub routes: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRoute>>,
     /// <p>Indicates whether there are additional routes available.</p>
     pub additional_routes_available: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl SearchTransitGatewayRoutesOutput {
+impl  SearchTransitGatewayRoutesOutput  {
     /// <p>Information about the routes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routes.is_none()`.
-    pub fn routes(&self) -> &[crate::types::TransitGatewayRoute] {
-        self.routes.as_deref().unwrap_or_default()
+    pub fn routes(&self) -> & [crate::types::TransitGatewayRoute] {
+        self.routes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn additional_routes_available(&self) -> ::std::option::Option<bool> {
@@ -22,10 +23,10 @@ impl SearchTransitGatewayRoutesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchTransitGatewayRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchTransitGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
     pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder {
@@ -37,7 +38,7 @@ impl SearchTransitGatewayRoutesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchTransitGatewayRoutesOutputBuilder {
-    pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>,
+    pub(crate) routes: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRoute>>,
     pub(crate) additional_routes_available: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     /// <p>Information about the routes.</p>
     pub fn routes(mut self, input: crate::types::TransitGatewayRoute) -> Self {
         let mut v = self.routes.unwrap_or_default();
-        v.push(input);
-        self.routes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.routes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the routes.</p>
-    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>>) -> Self {
-        self.routes = input;
-        self
+    pub fn set_routes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRoute>>) -> Self {
+        self.routes = input; self
     }
     /// <p>Information about the routes.</p>
-    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>> {
+    pub fn get_routes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransitGatewayRoute>> {
         &self.routes
     }
     /// <p>Indicates whether there are additional routes available.</p>
@@ -69,28 +69,30 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn set_additional_routes_available(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.additional_routes_available = input;
-        self
+        self.additional_routes_available = input; self
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn get_additional_routes_available(&self) -> &::std::option::Option<bool> {
         &self.additional_routes_available
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
     pub fn build(self) -> crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
-            routes: self.routes,
-            additional_routes_available: self.additional_routes_available,
+            routes: self.routes
+            ,
+            additional_routes_available: self.additional_routes_available
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

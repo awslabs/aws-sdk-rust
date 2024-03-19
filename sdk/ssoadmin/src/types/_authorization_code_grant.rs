@@ -3,16 +3,17 @@
 /// <p>A structure that defines configuration settings for an application that supports the OAuth 2.0 Authorization Code Grant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizationCodeGrant {
+pub struct AuthorizationCodeGrant  {
     /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
-    pub redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub redirect_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AuthorizationCodeGrant {
+impl  AuthorizationCodeGrant  {
     /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redirect_uris.is_none()`.
-    pub fn redirect_uris(&self) -> &[::std::string::String] {
-        self.redirect_uris.as_deref().unwrap_or_default()
+    pub fn redirect_uris(&self) -> & [::std::string::String] {
+        self.redirect_uris.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AuthorizationCodeGrant {
@@ -26,7 +27,7 @@ impl AuthorizationCodeGrant {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizationCodeGrantBuilder {
-    pub(crate) redirect_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redirect_uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AuthorizationCodeGrantBuilder {
     /// Appends an item to `redirect_uris`.
@@ -36,23 +37,24 @@ impl AuthorizationCodeGrantBuilder {
     /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
     pub fn redirect_uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.redirect_uris.unwrap_or_default();
-        v.push(input.into());
-        self.redirect_uris = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.redirect_uris = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
-    pub fn set_redirect_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.redirect_uris = input;
-        self
+    pub fn set_redirect_uris(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.redirect_uris = input; self
     }
     /// <p>A list of URIs that are valid locations to redirect a user's browser after the user is authorized.</p>
-    pub fn get_redirect_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_redirect_uris(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.redirect_uris
     }
     /// Consumes the builder and constructs a [`AuthorizationCodeGrant`](crate::types::AuthorizationCodeGrant).
     pub fn build(self) -> crate::types::AuthorizationCodeGrant {
         crate::types::AuthorizationCodeGrant {
-            redirect_uris: self.redirect_uris,
+            redirect_uris: self.redirect_uris
+            ,
         }
     }
 }
+

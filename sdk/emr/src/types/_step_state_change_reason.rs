@@ -3,19 +3,19 @@
 /// <p>The details of the step state change reason.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StepStateChangeReason {
+pub struct StepStateChangeReason  {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
     pub code: ::std::option::Option<crate::types::StepStateChangeReasonCode>,
     /// <p>The descriptive message for the state change reason.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl StepStateChangeReason {
+impl  StepStateChangeReason  {
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::StepStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::StepStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The descriptive message for the state change reason.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StepStateChangeReasonBuilder {
     }
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::StepStateChangeReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The programmable code for the state change reason. Note: Currently, the service provides no code for the state change.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::StepStateChangeReasonCode> {
@@ -55,8 +54,7 @@ impl StepStateChangeReasonBuilder {
     }
     /// <p>The descriptive message for the state change reason.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The descriptive message for the state change reason.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StepStateChangeReasonBuilder {
     /// Consumes the builder and constructs a [`StepStateChangeReason`](crate::types::StepStateChangeReason).
     pub fn build(self) -> crate::types::StepStateChangeReason {
         crate::types::StepStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

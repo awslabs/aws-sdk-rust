@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterRdsDbInstanceInput {
+pub struct DeregisterRdsDbInstanceInput  {
     /// <p>The Amazon RDS instance's ARN.</p>
     pub rds_db_instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterRdsDbInstanceInput {
+impl  DeregisterRdsDbInstanceInput  {
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rds_db_instance_arn(&self) -> ::std::option::Option<& str> {
         self.rds_db_instance_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeregisterRdsDbInstanceInputBuilder {
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn set_rds_db_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rds_db_instance_arn = input;
-        self
+        self.rds_db_instance_arn = input; self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn get_rds_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rds_db_instance_arn
     }
     /// Consumes the builder and constructs a [`DeregisterRdsDbInstanceInput`](crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
-            rds_db_instance_arn: self.rds_db_instance_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
+                rds_db_instance_arn: self.rds_db_instance_arn
+                ,
+            }
+        )
     }
 }
+

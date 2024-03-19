@@ -5,56 +5,52 @@ pub use crate::operation::update_provisioned_product::_update_provisioned_produc
 
 impl UpdateProvisionedProductInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_product::UpdateProvisionedProductError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_provisioned_product();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_provisioned_product::UpdateProvisionedProductError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_provisioned_product();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateProvisionedProduct`.
-///
+/// 
 /// <p>Requests updates to the configuration of the specified provisioned product.</p>
 /// <p>If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates requested, this operation can update with no interruption, with some interruption, or replace the provisioned product entirely.</p>
 /// <p>You can check the status of this request using <code>DescribeRecord</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_provisioned_product::builders::UpdateProvisionedProductInputBuilder,
+                    inner: crate::operation::update_provisioned_product::builders::UpdateProvisionedProductInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
-        crate::operation::update_provisioned_product::UpdateProvisionedProductError,
-    > for UpdateProvisionedProductFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
-            crate::operation::update_provisioned_product::UpdateProvisionedProductError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
+                    crate::operation::update_provisioned_product::UpdateProvisionedProductError,
+                > for UpdateProvisionedProductFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
+                        crate::operation::update_provisioned_product::UpdateProvisionedProductError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateProvisionedProductFluentBuilder {
     /// Creates a new `UpdateProvisionedProduct`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateProvisionedProductFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_provisioned_product::UpdateProvisionedProductError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_provisioned_product::UpdateProvisionedProduct::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_provisioned_product::UpdateProvisionedProduct::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_provisioned_product::UpdateProvisionedProductOutput,
-        crate::operation::update_provisioned_product::UpdateProvisionedProductError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_provisioned_product::UpdateProvisionedProductOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_provisioned_product::UpdateProvisionedProductError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_provisioned_product::UpdateProvisionedProduct::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_provisioned_product::UpdateProvisionedProduct::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_provisioned_product::UpdateProvisionedProductOutput, crate::operation::update_provisioned_product::UpdateProvisionedProductError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -264,12 +251,12 @@ impl UpdateProvisionedProductFluentBuilder {
         self
     }
     /// <p>The new parameters.</p>
-    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>) -> Self {
+    pub fn set_provisioning_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>>) -> Self {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
     }
     /// <p>The new parameters.</p>
-    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
+    pub fn get_provisioning_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateProvisioningParameter>> {
         self.inner.get_provisioning_parameters()
     }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
@@ -296,12 +283,12 @@ impl UpdateProvisionedProductFluentBuilder {
         self
     }
     /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
@@ -319,3 +306,4 @@ impl UpdateProvisionedProductFluentBuilder {
         self.inner.get_update_token()
     }
 }
+

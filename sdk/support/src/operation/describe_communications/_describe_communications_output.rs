@@ -3,30 +3,31 @@
 /// <p>The communications returned by the <code>DescribeCommunications</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCommunicationsOutput {
+pub struct DescribeCommunicationsOutput  {
     /// <p>The communications for the case.</p>
-    pub communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
+    pub communications: ::std::option::Option<::std::vec::Vec::<crate::types::Communication>>,
     /// <p>A resumption point for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeCommunicationsOutput {
+impl  DescribeCommunicationsOutput  {
     /// <p>The communications for the case.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communications.is_none()`.
-    pub fn communications(&self) -> &[crate::types::Communication] {
-        self.communications.as_deref().unwrap_or_default()
+    pub fn communications(&self) -> & [crate::types::Communication] {
+        self.communications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCommunicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCommunicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
     pub fn builder() -> crate::operation::describe_communications::builders::DescribeCommunicationsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeCommunicationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommunicationsOutputBuilder {
-    pub(crate) communications: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>,
+    pub(crate) communications: ::std::option::Option<::std::vec::Vec::<crate::types::Communication>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl DescribeCommunicationsOutputBuilder {
     /// <p>The communications for the case.</p>
     pub fn communications(mut self, input: crate::types::Communication) -> Self {
         let mut v = self.communications.unwrap_or_default();
-        v.push(input);
-        self.communications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.communications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The communications for the case.</p>
-    pub fn set_communications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Communication>>) -> Self {
-        self.communications = input;
-        self
+    pub fn set_communications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Communication>>) -> Self {
+        self.communications = input; self
     }
     /// <p>The communications for the case.</p>
-    pub fn get_communications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Communication>> {
+    pub fn get_communications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Communication>> {
         &self.communications
     }
     /// <p>A resumption point for pagination.</p>
@@ -70,28 +70,30 @@ impl DescribeCommunicationsOutputBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A resumption point for pagination.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCommunicationsOutput`](crate::operation::describe_communications::DescribeCommunicationsOutput).
     pub fn build(self) -> crate::operation::describe_communications::DescribeCommunicationsOutput {
         crate::operation::describe_communications::DescribeCommunicationsOutput {
-            communications: self.communications,
-            next_token: self.next_token,
+            communications: self.communications
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

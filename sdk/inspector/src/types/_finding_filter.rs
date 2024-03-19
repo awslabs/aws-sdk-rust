@@ -3,69 +3,76 @@
 /// <p>This data type is used as a request parameter in the <code>ListFindings</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingFilter {
+pub struct FindingFilter  {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    pub agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    pub rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    pub severities: ::std::option::Option<::std::vec::Vec<crate::types::Severity>>,
+    pub severities: ::std::option::Option<::std::vec::Vec::<crate::types::Severity>>,
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rules_package_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     /// <p>The time range during which the finding is generated.</p>
     pub creation_time_range: ::std::option::Option<crate::types::TimestampRange>,
 }
-impl FindingFilter {
+impl  FindingFilter  {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_ids.is_none()`.
-    pub fn agent_ids(&self) -> &[::std::string::String] {
-        self.agent_ids.as_deref().unwrap_or_default()
+    pub fn agent_ids(&self) -> & [::std::string::String] {
+        self.agent_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_groups.is_none()`.
-    pub fn auto_scaling_groups(&self) -> &[::std::string::String] {
-        self.auto_scaling_groups.as_deref().unwrap_or_default()
+    pub fn auto_scaling_groups(&self) -> & [::std::string::String] {
+        self.auto_scaling_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_names.is_none()`.
-    pub fn rule_names(&self) -> &[::std::string::String] {
-        self.rule_names.as_deref().unwrap_or_default()
+    pub fn rule_names(&self) -> & [::std::string::String] {
+        self.rule_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.severities.is_none()`.
-    pub fn severities(&self) -> &[crate::types::Severity] {
-        self.severities.as_deref().unwrap_or_default()
+    pub fn severities(&self) -> & [crate::types::Severity] {
+        self.severities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules_package_arns.is_none()`.
-    pub fn rules_package_arns(&self) -> &[::std::string::String] {
-        self.rules_package_arns.as_deref().unwrap_or_default()
+    pub fn rules_package_arns(&self) -> & [::std::string::String] {
+        self.rules_package_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_attributes.is_none()`.
-    pub fn user_attributes(&self) -> &[crate::types::Attribute] {
-        self.user_attributes.as_deref().unwrap_or_default()
+    pub fn user_attributes(&self) -> & [crate::types::Attribute] {
+        self.user_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time range during which the finding is generated.</p>
-    pub fn creation_time_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
+    pub fn creation_time_range(&self) -> ::std::option::Option<& crate::types::TimestampRange> {
         self.creation_time_range.as_ref()
     }
 }
@@ -80,13 +87,13 @@ impl FindingFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FindingFilterBuilder {
-    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) severities: ::std::option::Option<::std::vec::Vec<crate::types::Severity>>,
-    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) agent_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) rule_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) severities: ::std::option::Option<::std::vec::Vec::<crate::types::Severity>>,
+    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
     pub(crate) creation_time_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FindingFilterBuilder {
@@ -97,17 +104,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
     pub fn agent_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_ids.unwrap_or_default();
-        v.push(input.into());
-        self.agent_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_ids = input;
-        self
+    pub fn set_agent_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_ids = input; self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_ids
     }
     /// Appends an item to `auto_scaling_groups`.
@@ -117,17 +123,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
     pub fn auto_scaling_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_groups.unwrap_or_default();
-        v.push(input.into());
-        self.auto_scaling_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_scaling_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.auto_scaling_groups = input;
-        self
+    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.auto_scaling_groups = input; self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.auto_scaling_groups
     }
     /// Appends an item to `rule_names`.
@@ -137,17 +142,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
     pub fn rule_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_names.unwrap_or_default();
-        v.push(input.into());
-        self.rule_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rule_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rule_names = input;
-        self
+    pub fn set_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rule_names = input; self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rule_names
     }
     /// Appends an item to `severities`.
@@ -157,17 +161,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
     pub fn severities(mut self, input: crate::types::Severity) -> Self {
         let mut v = self.severities.unwrap_or_default();
-        v.push(input);
-        self.severities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.severities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_severities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Severity>>) -> Self {
-        self.severities = input;
-        self
+    pub fn set_severities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Severity>>) -> Self {
+        self.severities = input; self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_severities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Severity>> {
+    pub fn get_severities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Severity>> {
         &self.severities
     }
     /// Appends an item to `rules_package_arns`.
@@ -177,17 +180,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
     pub fn rules_package_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
-        v.push(input.into());
-        self.rules_package_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rules_package_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rules_package_arns = input;
-        self
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rules_package_arns = input; self
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rules_package_arns
     }
     /// Appends an item to `attributes`.
@@ -197,17 +199,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Appends an item to `user_attributes`.
@@ -217,17 +218,16 @@ impl FindingFilterBuilder {
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
     pub fn user_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
-        v.push(input);
-        self.user_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.user_attributes = input;
-        self
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.user_attributes = input; self
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.user_attributes
     }
     /// <p>The time range during which the finding is generated.</p>
@@ -237,8 +237,7 @@ impl FindingFilterBuilder {
     }
     /// <p>The time range during which the finding is generated.</p>
     pub fn set_creation_time_range(mut self, input: ::std::option::Option<crate::types::TimestampRange>) -> Self {
-        self.creation_time_range = input;
-        self
+        self.creation_time_range = input; self
     }
     /// <p>The time range during which the finding is generated.</p>
     pub fn get_creation_time_range(&self) -> &::std::option::Option<crate::types::TimestampRange> {
@@ -247,14 +246,23 @@ impl FindingFilterBuilder {
     /// Consumes the builder and constructs a [`FindingFilter`](crate::types::FindingFilter).
     pub fn build(self) -> crate::types::FindingFilter {
         crate::types::FindingFilter {
-            agent_ids: self.agent_ids,
-            auto_scaling_groups: self.auto_scaling_groups,
-            rule_names: self.rule_names,
-            severities: self.severities,
-            rules_package_arns: self.rules_package_arns,
-            attributes: self.attributes,
-            user_attributes: self.user_attributes,
-            creation_time_range: self.creation_time_range,
+            agent_ids: self.agent_ids
+            ,
+            auto_scaling_groups: self.auto_scaling_groups
+            ,
+            rule_names: self.rule_names
+            ,
+            severities: self.severities
+            ,
+            rules_package_arns: self.rules_package_arns
+            ,
+            attributes: self.attributes
+            ,
+            user_attributes: self.user_attributes
+            ,
+            creation_time_range: self.creation_time_range
+            ,
         }
     }
 }
+

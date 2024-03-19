@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateOpsItemRelatedItemInput {
+pub struct AssociateOpsItemRelatedItemInput  {
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
     pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
@@ -14,23 +14,23 @@ pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub resource_uri: ::std::option::Option<::std::string::String>,
 }
-impl AssociateOpsItemRelatedItemInput {
+impl  AssociateOpsItemRelatedItemInput  {
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
-    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
-    pub fn association_type(&self) -> ::std::option::Option<&str> {
+    pub fn association_type(&self) -> ::std::option::Option<& str> {
         self.association_type.as_deref()
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
     /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
-    pub fn resource_uri(&self) -> ::std::option::Option<&str> {
+    pub fn resource_uri(&self) -> ::std::option::Option<& str> {
         self.resource_uri.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     }
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
     pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
     pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
     pub fn set_association_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_type = input;
-        self
+        self.association_type = input; self
     }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
     pub fn get_association_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
     /// <p><code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p><code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident.</p>
@@ -110,25 +107,26 @@ impl AssociateOpsItemRelatedItemInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub fn set_resource_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_uri = input;
-        self
+        self.resource_uri = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub fn get_resource_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_uri
     }
     /// Consumes the builder and constructs a [`AssociateOpsItemRelatedItemInput`](crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput {
-            ops_item_id: self.ops_item_id,
-            association_type: self.association_type,
-            resource_type: self.resource_type,
-            resource_uri: self.resource_uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput {
+                ops_item_id: self.ops_item_id
+                ,
+                association_type: self.association_type
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_uri: self.resource_uri
+                ,
+            }
+        )
     }
 }
+

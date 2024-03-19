@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeModelVersions`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`model_id(impl Into<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_model_id):<br>required: **false**<br><p>The model ID.</p><br>
     ///   - [`model_version_number(impl Into<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::model_version_number) / [`set_model_version_number(Option<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_model_version_number):<br>required: **false**<br><p>The model version number.</p><br>
     ///   - [`model_type(ModelTypeEnum)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_model_type):<br>required: **false**<br><p>The model type.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The next token from the previous results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
-    /// - On success, responds with [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeModelVersionsOutput`](crate::operation::describe_model_versions::DescribeModelVersionsOutput) with field(s):
     ///   - [`model_version_details(Option<Vec::<ModelVersionDetail>>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::model_version_details): <p>The model version details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_model_versions::DescribeModelVersionsOutput::next_token): <p>The next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeModelVersionsError>`](crate::operation::describe_model_versions::DescribeModelVersionsError)
+                            /// - On failure, responds with [`SdkError<DescribeModelVersionsError>`](crate::operation::describe_model_versions::DescribeModelVersionsError)
     pub fn describe_model_versions(&self) -> crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder {
-        crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_model_versions::builders::DescribeModelVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

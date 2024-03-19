@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeySigningKeyOutput {
+pub struct CreateKeySigningKeyOutput  {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     /// <p>The key-signing key (KSK) that the request creates.</p>
@@ -11,26 +11,25 @@ pub struct CreateKeySigningKeyOutput {
     pub location: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateKeySigningKeyOutput {
+impl  CreateKeySigningKeyOutput  {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<& crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
     /// <p>The key-signing key (KSK) that the request creates.</p>
-    pub fn key_signing_key(&self) -> ::std::option::Option<&crate::types::KeySigningKey> {
+    pub fn key_signing_key(&self) -> ::std::option::Option<& crate::types::KeySigningKey> {
         self.key_signing_key.as_ref()
     }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKeySigningKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
     pub fn builder() -> crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder {
@@ -56,8 +55,7 @@ impl CreateKeySigningKeyOutputBuilder {
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     pub fn set_change_info(mut self, input: ::std::option::Option<crate::types::ChangeInfo>) -> Self {
-        self.change_info = input;
-        self
+        self.change_info = input; self
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
@@ -71,8 +69,7 @@ impl CreateKeySigningKeyOutputBuilder {
     }
     /// <p>The key-signing key (KSK) that the request creates.</p>
     pub fn set_key_signing_key(mut self, input: ::std::option::Option<crate::types::KeySigningKey>) -> Self {
-        self.key_signing_key = input;
-        self
+        self.key_signing_key = input; self
     }
     /// <p>The key-signing key (KSK) that the request creates.</p>
     pub fn get_key_signing_key(&self) -> &::std::option::Option<crate::types::KeySigningKey> {
@@ -86,39 +83,39 @@ impl CreateKeySigningKeyOutputBuilder {
     }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKeySigningKeyOutput`](crate::operation::create_key_signing_key::CreateKeySigningKeyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::operation::create_key_signing_key::builders::CreateKeySigningKeyOutputBuilder::location)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_key_signing_key::CreateKeySigningKeyOutput {
-            change_info: self.change_info,
-            key_signing_key: self.key_signing_key,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building CreateKeySigningKeyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_key_signing_key::CreateKeySigningKeyOutput {
+                change_info: self.change_info
+                ,
+                key_signing_key: self.key_signing_key
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building CreateKeySigningKeyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

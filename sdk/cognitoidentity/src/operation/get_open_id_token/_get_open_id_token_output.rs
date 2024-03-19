@@ -3,28 +3,28 @@
 /// <p>Returned in response to a successful GetOpenIdToken request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpenIdTokenOutput {
+pub struct GetOpenIdTokenOutput  {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>An OpenID token, valid for 10 minutes.</p>
     pub token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetOpenIdTokenOutput {
+impl  GetOpenIdTokenOutput  {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>An OpenID token, valid for 10 minutes.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOpenIdTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOpenIdTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdTokenOutput`](crate::operation::get_open_id_token::GetOpenIdTokenOutput).
     pub fn builder() -> crate::operation::get_open_id_token::builders::GetOpenIdTokenOutputBuilder {
@@ -48,8 +48,7 @@ impl GetOpenIdTokenOutputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl GetOpenIdTokenOutputBuilder {
     }
     /// <p>An OpenID token, valid for 10 minutes.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>An OpenID token, valid for 10 minutes.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOpenIdTokenOutput`](crate::operation::get_open_id_token::GetOpenIdTokenOutput).
     pub fn build(self) -> crate::operation::get_open_id_token::GetOpenIdTokenOutput {
         crate::operation::get_open_id_token::GetOpenIdTokenOutput {
-            identity_id: self.identity_id,
-            token: self.token,
+            identity_id: self.identity_id
+            ,
+            token: self.token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

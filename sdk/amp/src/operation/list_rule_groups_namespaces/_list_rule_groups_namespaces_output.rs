@@ -3,29 +3,28 @@
 /// <p>Represents the output of a <code>ListRuleGroupsNamespaces</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRuleGroupsNamespacesOutput {
+pub struct ListRuleGroupsNamespacesOutput  {
     /// <p>The returned list of rule groups namespaces.</p>
-    pub rule_groups_namespaces: ::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>,
+    pub rule_groups_namespaces: ::std::vec::Vec::<crate::types::RuleGroupsNamespaceSummary>,
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRuleGroupsNamespacesOutput {
+impl  ListRuleGroupsNamespacesOutput  {
     /// <p>The returned list of rule groups namespaces.</p>
-    pub fn rule_groups_namespaces(&self) -> &[crate::types::RuleGroupsNamespaceSummary] {
-        use std::ops::Deref;
-        self.rule_groups_namespaces.deref()
+    pub fn rule_groups_namespaces(&self) -> & [crate::types::RuleGroupsNamespaceSummary] {
+        use std::ops::Deref; self.rule_groups_namespaces.deref()
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRuleGroupsNamespacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRuleGroupsNamespacesOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput).
     pub fn builder() -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListRuleGroupsNamespacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesOutputBuilder {
-    pub(crate) rule_groups_namespaces: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
+    pub(crate) rule_groups_namespaces: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupsNamespaceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListRuleGroupsNamespacesOutputBuilder {
     /// <p>The returned list of rule groups namespaces.</p>
     pub fn rule_groups_namespaces(mut self, input: crate::types::RuleGroupsNamespaceSummary) -> Self {
         let mut v = self.rule_groups_namespaces.unwrap_or_default();
-        v.push(input);
-        self.rule_groups_namespaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rule_groups_namespaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The returned list of rule groups namespaces.</p>
-    pub fn set_rule_groups_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>) -> Self {
-        self.rule_groups_namespaces = input;
-        self
+    pub fn set_rule_groups_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupsNamespaceSummary>>) -> Self {
+        self.rule_groups_namespaces = input; self
     }
     /// <p>The returned list of rule groups namespaces.</p>
-    pub fn get_rule_groups_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>> {
+    pub fn get_rule_groups_namespaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupsNamespaceSummary>> {
         &self.rule_groups_namespaces
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
@@ -69,40 +67,37 @@ impl ListRuleGroupsNamespacesOutputBuilder {
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListRuleGroupsNamespaces</code> request to retrieve those results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_groups_namespaces`](crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder::rule_groups_namespaces)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
-            rule_groups_namespaces: self.rule_groups_namespaces.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_groups_namespaces",
-                    "rule_groups_namespaces was not specified but it is required when building ListRuleGroupsNamespacesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
+                rule_groups_namespaces: self.rule_groups_namespaces
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_groups_namespaces", "rule_groups_namespaces was not specified but it is required when building ListRuleGroupsNamespacesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

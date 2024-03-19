@@ -3,7 +3,7 @@
 /// <p>Contains details for a table optimizer run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableOptimizerRun {
+pub struct TableOptimizerRun  {
     /// <p>An event type representing the status of the table optimizer run.</p>
     pub event_type: ::std::option::Option<crate::types::TableOptimizerEventType>,
     /// <p>Represents the epoch timestamp at which the compaction job was started within Lake Formation.</p>
@@ -15,25 +15,25 @@ pub struct TableOptimizerRun {
     /// <p>An error that occured during the optimizer run.</p>
     pub error: ::std::option::Option<::std::string::String>,
 }
-impl TableOptimizerRun {
+impl  TableOptimizerRun  {
     /// <p>An event type representing the status of the table optimizer run.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&crate::types::TableOptimizerEventType> {
+    pub fn event_type(&self) -> ::std::option::Option<& crate::types::TableOptimizerEventType> {
         self.event_type.as_ref()
     }
     /// <p>Represents the epoch timestamp at which the compaction job was started within Lake Formation.</p>
-    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>Represents the epoch timestamp at which the compaction job ended.</p>
-    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&crate::types::RunMetrics> {
+    pub fn metrics(&self) -> ::std::option::Option<& crate::types::RunMetrics> {
         self.metrics.as_ref()
     }
     /// <p>An error that occured during the optimizer run.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl TableOptimizerRunBuilder {
     }
     /// <p>An event type representing the status of the table optimizer run.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::TableOptimizerEventType>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>An event type representing the status of the table optimizer run.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::TableOptimizerEventType> {
@@ -76,8 +75,7 @@ impl TableOptimizerRunBuilder {
     }
     /// <p>Represents the epoch timestamp at which the compaction job was started within Lake Formation.</p>
     pub fn set_start_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_timestamp = input;
-        self
+        self.start_timestamp = input; self
     }
     /// <p>Represents the epoch timestamp at which the compaction job was started within Lake Formation.</p>
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl TableOptimizerRunBuilder {
     }
     /// <p>Represents the epoch timestamp at which the compaction job ended.</p>
     pub fn set_end_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_timestamp = input;
-        self
+        self.end_timestamp = input; self
     }
     /// <p>Represents the epoch timestamp at which the compaction job ended.</p>
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl TableOptimizerRunBuilder {
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::RunMetrics>) -> Self {
-        self.metrics = input;
-        self
+        self.metrics = input; self
     }
     /// <p>A <code>RunMetrics</code> object containing metrics for the optimizer run.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::RunMetrics> {
@@ -118,8 +114,7 @@ impl TableOptimizerRunBuilder {
     }
     /// <p>An error that occured during the optimizer run.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error that occured during the optimizer run.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl TableOptimizerRunBuilder {
     /// Consumes the builder and constructs a [`TableOptimizerRun`](crate::types::TableOptimizerRun).
     pub fn build(self) -> crate::types::TableOptimizerRun {
         crate::types::TableOptimizerRun {
-            event_type: self.event_type,
-            start_timestamp: self.start_timestamp,
-            end_timestamp: self.end_timestamp,
-            metrics: self.metrics,
-            error: self.error,
+            event_type: self.event_type
+            ,
+            start_timestamp: self.start_timestamp
+            ,
+            end_timestamp: self.end_timestamp
+            ,
+            metrics: self.metrics
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

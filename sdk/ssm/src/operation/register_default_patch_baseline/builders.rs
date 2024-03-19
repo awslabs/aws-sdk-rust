@@ -5,55 +5,51 @@ pub use crate::operation::register_default_patch_baseline::_register_default_pat
 
 impl RegisterDefaultPatchBaselineInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.register_default_patch_baseline();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.register_default_patch_baseline();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RegisterDefaultPatchBaseline`.
-///
+/// 
 /// <p>Defines the default patch baseline for the relevant operating system.</p>
 /// <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of <code>pb-0574b43a65ea646ed</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder,
+                    inner: crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
-    > for RegisterDefaultPatchBaselineFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
-            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
+                    crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
+                > for RegisterDefaultPatchBaselineFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
+                        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RegisterDefaultPatchBaselineFluentBuilder {
     /// Creates a new `RegisterDefaultPatchBaseline`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl RegisterDefaultPatchBaselineFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaseline::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaseline::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaseline::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaseline::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput, crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub fn baseline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.baseline_id(input.into());
@@ -124,3 +111,4 @@ impl RegisterDefaultPatchBaselineFluentBuilder {
         self.inner.get_baseline_id()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fixedafd = unimplemented!();
 /// match fixedafd {
@@ -39,16 +39,14 @@
 /// Specifically, when `fixedafd` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FixedAfd::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Fixed Afd
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum FixedAfd {
     #[allow(missing_docs)] // documentation missing in model
     Afd0000,
@@ -74,90 +72,89 @@ pub enum FixedAfd {
     Afd1111,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for FixedAfd {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFD_0000" => FixedAfd::Afd0000,
-            "AFD_0010" => FixedAfd::Afd0010,
-            "AFD_0011" => FixedAfd::Afd0011,
-            "AFD_0100" => FixedAfd::Afd0100,
-            "AFD_1000" => FixedAfd::Afd1000,
-            "AFD_1001" => FixedAfd::Afd1001,
-            "AFD_1010" => FixedAfd::Afd1010,
-            "AFD_1011" => FixedAfd::Afd1011,
-            "AFD_1101" => FixedAfd::Afd1101,
-            "AFD_1110" => FixedAfd::Afd1110,
-            "AFD_1111" => FixedAfd::Afd1111,
-            other => FixedAfd::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AFD_0000" => FixedAfd::Afd0000,
+"AFD_0010" => FixedAfd::Afd0010,
+"AFD_0011" => FixedAfd::Afd0011,
+"AFD_0100" => FixedAfd::Afd0100,
+"AFD_1000" => FixedAfd::Afd1000,
+"AFD_1001" => FixedAfd::Afd1001,
+"AFD_1010" => FixedAfd::Afd1010,
+"AFD_1011" => FixedAfd::Afd1011,
+"AFD_1101" => FixedAfd::Afd1101,
+"AFD_1110" => FixedAfd::Afd1110,
+"AFD_1111" => FixedAfd::Afd1111,
+other => FixedAfd::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for FixedAfd {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(FixedAfd::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(FixedAfd::from(s))
+                    }
+                }
 impl FixedAfd {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FixedAfd::Afd0000 => "AFD_0000",
-            FixedAfd::Afd0010 => "AFD_0010",
-            FixedAfd::Afd0011 => "AFD_0011",
-            FixedAfd::Afd0100 => "AFD_0100",
-            FixedAfd::Afd1000 => "AFD_1000",
-            FixedAfd::Afd1001 => "AFD_1001",
-            FixedAfd::Afd1010 => "AFD_1010",
-            FixedAfd::Afd1011 => "AFD_1011",
-            FixedAfd::Afd1101 => "AFD_1101",
-            FixedAfd::Afd1110 => "AFD_1110",
-            FixedAfd::Afd1111 => "AFD_1111",
-            FixedAfd::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFD_0000", "AFD_0010", "AFD_0011", "AFD_0100", "AFD_1000", "AFD_1001", "AFD_1010", "AFD_1011", "AFD_1101", "AFD_1110", "AFD_1111",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FixedAfd::Afd0000 => "AFD_0000",
+    FixedAfd::Afd0010 => "AFD_0010",
+    FixedAfd::Afd0011 => "AFD_0011",
+    FixedAfd::Afd0100 => "AFD_0100",
+    FixedAfd::Afd1000 => "AFD_1000",
+    FixedAfd::Afd1001 => "AFD_1001",
+    FixedAfd::Afd1010 => "AFD_1010",
+    FixedAfd::Afd1011 => "AFD_1011",
+    FixedAfd::Afd1101 => "AFD_1101",
+    FixedAfd::Afd1110 => "AFD_1110",
+    FixedAfd::Afd1111 => "AFD_1111",
+    FixedAfd::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AFD_0000", "AFD_0010", "AFD_0011", "AFD_0100", "AFD_1000", "AFD_1001", "AFD_1010", "AFD_1011", "AFD_1101", "AFD_1110", "AFD_1111"]
+                }
+            }
 impl ::std::convert::AsRef<str> for FixedAfd {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl FixedAfd {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for FixedAfd {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            FixedAfd::Afd0000 => write!(f, "AFD_0000"),
-            FixedAfd::Afd0010 => write!(f, "AFD_0010"),
-            FixedAfd::Afd0011 => write!(f, "AFD_0011"),
-            FixedAfd::Afd0100 => write!(f, "AFD_0100"),
-            FixedAfd::Afd1000 => write!(f, "AFD_1000"),
-            FixedAfd::Afd1001 => write!(f, "AFD_1001"),
-            FixedAfd::Afd1010 => write!(f, "AFD_1010"),
-            FixedAfd::Afd1011 => write!(f, "AFD_1011"),
-            FixedAfd::Afd1101 => write!(f, "AFD_1101"),
-            FixedAfd::Afd1110 => write!(f, "AFD_1110"),
-            FixedAfd::Afd1111 => write!(f, "AFD_1111"),
-            FixedAfd::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                FixedAfd::Afd0000 => write!(f, "AFD_0000"),
+FixedAfd::Afd0010 => write!(f, "AFD_0010"),
+FixedAfd::Afd0011 => write!(f, "AFD_0011"),
+FixedAfd::Afd0100 => write!(f, "AFD_0100"),
+FixedAfd::Afd1000 => write!(f, "AFD_1000"),
+FixedAfd::Afd1001 => write!(f, "AFD_1001"),
+FixedAfd::Afd1010 => write!(f, "AFD_1010"),
+FixedAfd::Afd1011 => write!(f, "AFD_1011"),
+FixedAfd::Afd1101 => write!(f, "AFD_1101"),
+FixedAfd::Afd1110 => write!(f, "AFD_1110"),
+FixedAfd::Afd1111 => write!(f, "AFD_1111"),
+FixedAfd::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTopicPermissionsInput {
+pub struct UpdateTopicPermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub topic_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub grant_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub revoke_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
 }
-impl UpdateTopicPermissionsInput {
+impl  UpdateTopicPermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
-    pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.grant_permissions.as_deref().unwrap_or_default()
+    pub fn grant_permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.grant_permissions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
-    pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
-        self.revoke_permissions.as_deref().unwrap_or_default()
+    pub fn revoke_permissions(&self) -> & [crate::types::ResourcePermission] {
+        self.revoke_permissions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateTopicPermissionsInput {
@@ -47,8 +49,8 @@ impl UpdateTopicPermissionsInput {
 pub struct UpdateTopicPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) topic_id: ::std::option::Option<::std::string::String>,
-    pub(crate) grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>,
 }
 impl UpdateTopicPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
@@ -59,8 +61,7 @@ impl UpdateTopicPermissionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +75,7 @@ impl UpdateTopicPermissionsInputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +88,16 @@ impl UpdateTopicPermissionsInputBuilder {
     /// <p>The resource permissions that you want to grant to the topic.</p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_permissions.unwrap_or_default();
-        v.push(input);
-        self.grant_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grant_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.grant_permissions = input;
-        self
+    pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.grant_permissions = input; self
     }
     /// <p>The resource permissions that you want to grant to the topic.</p>
-    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.grant_permissions
     }
     /// Appends an item to `revoke_permissions`.
@@ -108,31 +107,32 @@ impl UpdateTopicPermissionsInputBuilder {
     /// <p>The resource permissions that you want to revoke from the topic.</p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_permissions.unwrap_or_default();
-        v.push(input);
-        self.revoke_permissions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.revoke_permissions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.revoke_permissions = input;
-        self
+    pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>>) -> Self {
+        self.revoke_permissions = input; self
     }
     /// <p>The resource permissions that you want to revoke from the topic.</p>
-    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+    pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourcePermission>> {
         &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateTopicPermissionsInput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_topic_permissions::UpdateTopicPermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_topic_permissions::UpdateTopicPermissionsInput {
-            aws_account_id: self.aws_account_id,
-            topic_id: self.topic_id,
-            grant_permissions: self.grant_permissions,
-            revoke_permissions: self.revoke_permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_topic_permissions::UpdateTopicPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsInput {
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                grant_permissions: self.grant_permissions
+                ,
+                revoke_permissions: self.revoke_permissions
+                ,
+            }
+        )
     }
 }
+

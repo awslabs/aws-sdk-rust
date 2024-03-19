@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRoleMembershipInput {
+pub struct CreateRoleMembershipInput  {
     /// <p>The name of the group that you want to add to the role.</p>
     pub member_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -12,21 +12,21 @@ pub struct CreateRoleMembershipInput {
     /// <p>The role that you want to add a group to.</p>
     pub role: ::std::option::Option<crate::types::Role>,
 }
-impl CreateRoleMembershipInput {
+impl  CreateRoleMembershipInput  {
     /// <p>The name of the group that you want to add to the role.</p>
-    pub fn member_name(&self) -> ::std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<& str> {
         self.member_name.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace that the role belongs to.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The role that you want to add a group to.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::Role> {
         self.role.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateRoleMembershipInputBuilder {
     }
     /// <p>The name of the group that you want to add to the role.</p>
     pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_name = input;
-        self
+        self.member_name = input; self
     }
     /// <p>The name of the group that you want to add to the role.</p>
     pub fn get_member_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateRoleMembershipInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateRoleMembershipInputBuilder {
     }
     /// <p>The namespace that the role belongs to.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace that the role belongs to.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl CreateRoleMembershipInputBuilder {
     }
     /// <p>The role that you want to add a group to.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role that you want to add a group to.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
         &self.role
     }
     /// Consumes the builder and constructs a [`CreateRoleMembershipInput`](crate::operation::create_role_membership::CreateRoleMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_role_membership::CreateRoleMembershipInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_role_membership::CreateRoleMembershipInput {
-            member_name: self.member_name,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-            role: self.role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_role_membership::CreateRoleMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_role_membership::CreateRoleMembershipInput {
+                member_name: self.member_name
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                role: self.role
+                ,
+            }
+        )
     }
 }
+

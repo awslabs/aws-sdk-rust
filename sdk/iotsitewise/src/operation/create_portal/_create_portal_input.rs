@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePortalInput {
+pub struct CreatePortalInput  {
     /// <p>A friendly name for the portal.</p>
     pub portal_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the portal.</p>
@@ -16,7 +16,7 @@ pub struct CreatePortalInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
     /// <li>
@@ -34,33 +34,33 @@ pub struct CreatePortalInput {
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub alarms: ::std::option::Option<crate::types::Alarms>,
 }
-impl CreatePortalInput {
+impl  CreatePortalInput  {
     /// <p>A friendly name for the portal.</p>
-    pub fn portal_name(&self) -> ::std::option::Option<&str> {
+    pub fn portal_name(&self) -> ::std::option::Option<& str> {
         self.portal_name.as_deref()
     }
     /// <p>A description for the portal.</p>
-    pub fn portal_description(&self) -> ::std::option::Option<&str> {
+    pub fn portal_description(&self) -> ::std::option::Option<& str> {
         self.portal_description.as_deref()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(&self) -> ::std::option::Option<&str> {
+    pub fn portal_contact_email(&self) -> ::std::option::Option<& str> {
         self.portal_contact_email.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
-    pub fn portal_logo_image_file(&self) -> ::std::option::Option<&crate::types::ImageFile> {
+    pub fn portal_logo_image_file(&self) -> ::std::option::Option<& crate::types::ImageFile> {
         self.portal_logo_image_file.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
@@ -72,17 +72,17 @@ impl CreatePortalInput {
     /// </ul>
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code></p>
-    pub fn portal_auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
+    pub fn portal_auth_mode(&self) -> ::std::option::Option<& crate::types::AuthMode> {
         self.portal_auth_mode.as_ref()
     }
     /// <p>The email address that sends alarm notifications.</p><important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
-    pub fn notification_sender_email(&self) -> ::std::option::Option<&str> {
+    pub fn notification_sender_email(&self) -> ::std::option::Option<& str> {
         self.notification_sender_email.as_deref()
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-    pub fn alarms(&self) -> ::std::option::Option<&crate::types::Alarms> {
+    pub fn alarms(&self) -> ::std::option::Option<& crate::types::Alarms> {
         self.alarms.as_ref()
     }
 }
@@ -103,7 +103,7 @@ pub struct CreatePortalInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) portal_logo_image_file: ::std::option::Option<crate::types::ImageFile>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) portal_auth_mode: ::std::option::Option<crate::types::AuthMode>,
     pub(crate) notification_sender_email: ::std::option::Option<::std::string::String>,
     pub(crate) alarms: ::std::option::Option<crate::types::Alarms>,
@@ -117,8 +117,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>A friendly name for the portal.</p>
     pub fn set_portal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_name = input;
-        self
+        self.portal_name = input; self
     }
     /// <p>A friendly name for the portal.</p>
     pub fn get_portal_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>A description for the portal.</p>
     pub fn set_portal_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_description = input;
-        self
+        self.portal_description = input; self
     }
     /// <p>A description for the portal.</p>
     pub fn get_portal_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub fn set_portal_contact_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_contact_email = input;
-        self
+        self.portal_contact_email = input; self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub fn get_portal_contact_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
     pub fn set_portal_logo_image_file(mut self, input: ::std::option::Option<crate::types::ImageFile>) -> Self {
-        self.portal_logo_image_file = input;
-        self
+        self.portal_logo_image_file = input; self
     }
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
     pub fn get_portal_logo_image_file(&self) -> &::std::option::Option<crate::types::ImageFile> {
@@ -189,8 +184,7 @@ impl CreatePortalInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,17 +197,16 @@ impl CreatePortalInputBuilder {
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
@@ -239,8 +232,7 @@ impl CreatePortalInputBuilder {
     /// <p>You can't change this value after you create a portal.</p>
     /// <p>Default: <code>SSO</code></p>
     pub fn set_portal_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
-        self.portal_auth_mode = input;
-        self
+        self.portal_auth_mode = input; self
     }
     /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
     /// <ul>
@@ -265,8 +257,7 @@ impl CreatePortalInputBuilder {
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
     /// </important>
     pub fn set_notification_sender_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_sender_email = input;
-        self
+        self.notification_sender_email = input; self
     }
     /// <p>The email address that sends alarm notifications.</p><important>
     /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
@@ -281,28 +272,38 @@ impl CreatePortalInputBuilder {
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub fn set_alarms(mut self, input: ::std::option::Option<crate::types::Alarms>) -> Self {
-        self.alarms = input;
-        self
+        self.alarms = input; self
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub fn get_alarms(&self) -> &::std::option::Option<crate::types::Alarms> {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`CreatePortalInput`](crate::operation::create_portal::CreatePortalInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalInput {
-            portal_name: self.portal_name,
-            portal_description: self.portal_description,
-            portal_contact_email: self.portal_contact_email,
-            client_token: self.client_token,
-            portal_logo_image_file: self.portal_logo_image_file,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            portal_auth_mode: self.portal_auth_mode,
-            notification_sender_email: self.notification_sender_email,
-            alarms: self.alarms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_portal::CreatePortalInput {
+                portal_name: self.portal_name
+                ,
+                portal_description: self.portal_description
+                ,
+                portal_contact_email: self.portal_contact_email
+                ,
+                client_token: self.client_token
+                ,
+                portal_logo_image_file: self.portal_logo_image_file
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                portal_auth_mode: self.portal_auth_mode
+                ,
+                notification_sender_email: self.notification_sender_email
+                ,
+                alarms: self.alarms
+                ,
+            }
+        )
     }
 }
+

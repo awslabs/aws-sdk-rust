@@ -3,19 +3,19 @@
 /// <p>Information that identifies an on-premises storage system that you're using with DataSync Discovery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageSystemListEntry {
+pub struct StorageSystemListEntry  {
     /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StorageSystemListEntry {
+impl  StorageSystemListEntry  {
     /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
+    pub fn storage_system_arn(&self) -> ::std::option::Option<& str> {
         self.storage_system_arn.as_deref()
     }
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StorageSystemListEntryBuilder {
     }
     /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
     pub fn set_storage_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_system_arn = input;
-        self
+        self.storage_system_arn = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StorageSystemListEntryBuilder {
     }
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StorageSystemListEntryBuilder {
     /// Consumes the builder and constructs a [`StorageSystemListEntry`](crate::types::StorageSystemListEntry).
     pub fn build(self) -> crate::types::StorageSystemListEntry {
         crate::types::StorageSystemListEntry {
-            storage_system_arn: self.storage_system_arn,
-            name: self.name,
+            storage_system_arn: self.storage_system_arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

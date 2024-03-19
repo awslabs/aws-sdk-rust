@@ -3,30 +3,28 @@
 /// <p>The rate exceeds the limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     /// <p>The message associated with the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The payload associated with the exception.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ThrottlingException {
+impl  ThrottlingException  {
     /// <p>The payload associated with the exception.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ThrottlingException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ThrottlingExcep
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::types::error::ThrottlingException).
@@ -68,8 +64,7 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>The message associated with the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message associated with the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,30 +77,32 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>The payload associated with the exception.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The payload associated with the exception.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.payload
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
-            message: self.message,
-            payload: self.payload,
+            message: self.message
+            ,
+            payload: self.payload
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

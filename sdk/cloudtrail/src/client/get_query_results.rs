@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryResults`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`event_data_store(impl Into<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::event_data_store) / [`set_event_data_store(Option<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_event_data_store):<br>required: **false**<br><p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p><br>
     ///   - [`query_id(impl Into<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::query_id) / [`set_query_id(Option<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_query_id):<br>required: **true**<br><p>The ID of the query for which you want to get results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token you can use to get the next page of query results.</p><br>
     ///   - [`max_query_results(i32)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::max_query_results) / [`set_max_query_results(Option<i32>)`](crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::set_max_query_results):<br>required: **false**<br><p>The maximum number of query results to display on a single page.</p><br>
-    /// - On success, responds with [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput) with field(s):
+                            /// - On success, responds with [`GetQueryResultsOutput`](crate::operation::get_query_results::GetQueryResultsOutput) with field(s):
     ///   - [`query_status(Option<QueryStatus>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_status): <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
     ///   - [`query_statistics(Option<QueryStatistics>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_statistics): <p>Shows the count of query results.</p>
     ///   - [`query_result_rows(Option<Vec::<Vec::<HashMap::<String, String>>>>)`](crate::operation::get_query_results::GetQueryResultsOutput::query_result_rows): <p>Contains the individual event results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::next_token): <p>A token you can use to get the next page of query results.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::get_query_results::GetQueryResultsOutput::error_message): <p>The error message returned if a query failed.</p>
-    /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::operation::get_query_results::GetQueryResultsError)
+                            /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::operation::get_query_results::GetQueryResultsError)
     pub fn get_query_results(&self) -> crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder {
-        crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_query_results::builders::GetQueryResultsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

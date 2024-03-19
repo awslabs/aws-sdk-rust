@@ -3,17 +3,16 @@
 /// <p>The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated billing family.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountGrouping {
+pub struct AccountGrouping  {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub linked_account_ids: ::std::vec::Vec<::std::string::String>,
+    pub linked_account_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
 }
-impl AccountGrouping {
+impl  AccountGrouping  {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub fn linked_account_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.linked_account_ids.deref()
+    pub fn linked_account_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.linked_account_ids.deref()
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
@@ -31,7 +30,7 @@ impl AccountGrouping {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AccountGroupingBuilder {
-    pub(crate) linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) linked_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) auto_associate: ::std::option::Option<bool>,
 }
 impl AccountGroupingBuilder {
@@ -42,17 +41,16 @@ impl AccountGroupingBuilder {
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
     pub fn linked_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.linked_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.linked_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.linked_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub fn set_linked_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.linked_account_ids = input;
-        self
+    pub fn set_linked_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.linked_account_ids = input; self
     }
     /// <p>The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group.</p>
-    pub fn get_linked_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_linked_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.linked_account_ids
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
@@ -62,8 +60,7 @@ impl AccountGroupingBuilder {
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn set_auto_associate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_associate = input;
-        self
+        self.auto_associate = input; self
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
@@ -73,14 +70,17 @@ impl AccountGroupingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`linked_account_ids`](crate::types::builders::AccountGroupingBuilder::linked_account_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::AccountGrouping, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccountGrouping {
-            linked_account_ids: self.linked_account_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "linked_account_ids",
-                    "linked_account_ids was not specified but it is required when building AccountGrouping",
-                )
-            })?,
-            auto_associate: self.auto_associate,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccountGrouping {
+                linked_account_ids: self.linked_account_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("linked_account_ids", "linked_account_ids was not specified but it is required when building AccountGrouping")
+                    )?
+                ,
+                auto_associate: self.auto_associate
+                ,
+            }
+        )
     }
 }
+

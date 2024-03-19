@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLogEventsOutput {
+pub struct GetLogEventsOutput  {
     /// <p>The events.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::OutputLogEvent>>,
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub next_forward_token: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub next_backward_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetLogEventsOutput {
+impl  GetLogEventsOutput  {
     /// <p>The events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::OutputLogEvent] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::OutputLogEvent] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
-    pub fn next_forward_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_forward_token(&self) -> ::std::option::Option<& str> {
         self.next_forward_token.as_deref()
     }
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
-    pub fn next_backward_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_backward_token(&self) -> ::std::option::Option<& str> {
         self.next_backward_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLogEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLogEventsOutput {
     /// Creates a new builder-style object to manufacture [`GetLogEventsOutput`](crate::operation::get_log_events::GetLogEventsOutput).
     pub fn builder() -> crate::operation::get_log_events::builders::GetLogEventsOutputBuilder {
@@ -43,7 +44,7 @@ impl GetLogEventsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetLogEventsOutputBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::OutputLogEvent>>,
     pub(crate) next_forward_token: ::std::option::Option<::std::string::String>,
     pub(crate) next_backward_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl GetLogEventsOutputBuilder {
     /// <p>The events.</p>
     pub fn events(mut self, input: crate::types::OutputLogEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The events.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputLogEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>The events.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputLogEvent>> {
         &self.events
     }
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
@@ -76,8 +76,7 @@ impl GetLogEventsOutputBuilder {
     }
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn set_next_forward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_forward_token = input;
-        self
+        self.next_forward_token = input; self
     }
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn get_next_forward_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl GetLogEventsOutputBuilder {
     }
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn set_next_backward_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_backward_token = input;
-        self
+        self.next_backward_token = input; self
     }
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn get_next_backward_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_backward_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLogEventsOutput`](crate::operation::get_log_events::GetLogEventsOutput).
     pub fn build(self) -> crate::operation::get_log_events::GetLogEventsOutput {
         crate::operation::get_log_events::GetLogEventsOutput {
-            events: self.events,
-            next_forward_token: self.next_forward_token,
-            next_backward_token: self.next_backward_token,
+            events: self.events
+            ,
+            next_forward_token: self.next_forward_token
+            ,
+            next_backward_token: self.next_backward_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

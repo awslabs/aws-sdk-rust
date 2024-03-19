@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelTransactionInput {
+pub struct CancelTransactionInput  {
     /// <p>The transaction to cancel.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelTransactionInput {
+impl  CancelTransactionInput  {
     /// <p>The transaction to cancel.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl CancelTransactionInputBuilder {
     }
     /// <p>The transaction to cancel.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction to cancel.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_transaction::CancelTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_transaction::CancelTransactionInput {
-            transaction_id: self.transaction_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_transaction::CancelTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_transaction::CancelTransactionInput {
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,29 +3,29 @@
 /// <p>Specifies a Snowflake data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeSource {
+pub struct SnowflakeSource  {
     /// <p>The name of the Snowflake data source.</p>
     pub name: ::std::string::String,
     /// <p>Configuration for the Snowflake data source.</p>
     pub data: ::std::option::Option<crate::types::SnowflakeNodeData>,
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl SnowflakeSource {
+impl  SnowflakeSource  {
     /// <p>The name of the Snowflake data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Configuration for the Snowflake data source.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::SnowflakeNodeData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::SnowflakeNodeData> {
         self.data.as_ref()
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnowflakeSource {
@@ -41,7 +41,7 @@ impl SnowflakeSource {
 pub struct SnowflakeSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) data: ::std::option::Option<crate::types::SnowflakeNodeData>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl SnowflakeSourceBuilder {
     /// <p>The name of the Snowflake data source.</p>
@@ -52,8 +52,7 @@ impl SnowflakeSourceBuilder {
     }
     /// <p>The name of the Snowflake data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Snowflake data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl SnowflakeSourceBuilder {
     }
     /// <p>Configuration for the Snowflake data source.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::SnowflakeNodeData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>Configuration for the Snowflake data source.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::SnowflakeNodeData> {
@@ -81,32 +79,35 @@ impl SnowflakeSourceBuilder {
     /// <p>Specifies user-defined schemas for your output data.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies user-defined schemas for your output data.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SnowflakeSource`](crate::types::SnowflakeSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SnowflakeSourceBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SnowflakeSource",
-                )
-            })?,
-            data: self.data,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SnowflakeSource")
+                    )?
+                ,
+                data: self.data
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

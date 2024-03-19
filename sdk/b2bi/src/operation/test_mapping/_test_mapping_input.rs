@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestMappingInput {
+pub struct TestMappingInput  {
     /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub input_file_content: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
@@ -10,17 +10,17 @@ pub struct TestMappingInput {
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
 }
-impl TestMappingInput {
+impl  TestMappingInput  {
     /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
-    pub fn input_file_content(&self) -> ::std::option::Option<&str> {
+    pub fn input_file_content(&self) -> ::std::option::Option<& str> {
         self.input_file_content.as_deref()
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
-    pub fn mapping_template(&self) -> ::std::option::Option<&str> {
+    pub fn mapping_template(&self) -> ::std::option::Option<& str> {
         self.mapping_template.as_deref()
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<& crate::types::FileFormat> {
         self.file_format.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl TestMappingInputBuilder {
     }
     /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn set_input_file_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_file_content = input;
-        self
+        self.input_file_content = input; self
     }
     /// <p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>
     pub fn get_input_file_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl TestMappingInputBuilder {
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping_template = input;
-        self
+        self.mapping_template = input; self
     }
     /// <p>Specifies the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl TestMappingInputBuilder {
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>Specifies that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
@@ -87,10 +84,16 @@ impl TestMappingInputBuilder {
     }
     /// Consumes the builder and constructs a [`TestMappingInput`](crate::operation::test_mapping::TestMappingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::test_mapping::TestMappingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_mapping::TestMappingInput {
-            input_file_content: self.input_file_content,
-            mapping_template: self.mapping_template,
-            file_format: self.file_format,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::test_mapping::TestMappingInput {
+                input_file_content: self.input_file_content
+                ,
+                mapping_template: self.mapping_template
+                ,
+                file_format: self.file_format
+                ,
+            }
+        )
     }
 }
+

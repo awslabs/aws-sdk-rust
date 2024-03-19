@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateThemeInput {
+pub struct CreateThemeInput  {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
@@ -12,21 +12,21 @@ pub struct CreateThemeInput {
     /// <p>Represents the configuration of the theme to create.</p>
     pub theme_to_create: ::std::option::Option<crate::types::CreateThemeData>,
 }
-impl CreateThemeInput {
+impl  CreateThemeInput  {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Represents the configuration of the theme to create.</p>
-    pub fn theme_to_create(&self) -> ::std::option::Option<&crate::types::CreateThemeData> {
+    pub fn theme_to_create(&self) -> ::std::option::Option<& crate::types::CreateThemeData> {
         self.theme_to_create.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateThemeInputBuilder {
     }
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateThemeInputBuilder {
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateThemeInputBuilder {
     }
     /// <p>The unique client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The unique client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl CreateThemeInputBuilder {
     }
     /// <p>Represents the configuration of the theme to create.</p>
     pub fn set_theme_to_create(mut self, input: ::std::option::Option<crate::types::CreateThemeData>) -> Self {
-        self.theme_to_create = input;
-        self
+        self.theme_to_create = input; self
     }
     /// <p>Represents the configuration of the theme to create.</p>
     pub fn get_theme_to_create(&self) -> &::std::option::Option<crate::types::CreateThemeData> {
@@ -108,11 +104,18 @@ impl CreateThemeInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_theme::CreateThemeInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            client_token: self.client_token,
-            theme_to_create: self.theme_to_create,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_theme::CreateThemeInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                client_token: self.client_token
+                ,
+                theme_to_create: self.theme_to_create
+                ,
+            }
+        )
     }
 }
+

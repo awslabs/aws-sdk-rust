@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConfigurationSets`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::set_page_size):<br>required: **false**<br><p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p><br>
-    /// - On success, responds with [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput) with field(s):
+                            /// - On success, responds with [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput) with field(s):
     ///   - [`configuration_sets(Option<Vec::<String>>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::configuration_sets): <p>An array that contains all of the configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::operation::list_configuration_sets::ListConfigurationSetsError)
+                            /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::operation::list_configuration_sets::ListConfigurationSetsError)
     pub fn list_configuration_sets(&self) -> crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder {
-        crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_configuration_sets::builders::ListConfigurationSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

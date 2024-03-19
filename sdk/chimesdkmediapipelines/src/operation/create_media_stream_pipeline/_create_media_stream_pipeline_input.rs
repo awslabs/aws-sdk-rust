@@ -2,41 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateMediaStreamPipelineInput {
+pub struct CreateMediaStreamPipelineInput  {
     /// <p>The data sources for the media pipeline.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>>,
     /// <p>The data sink for the media pipeline.</p>
-    pub sinks: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>>,
+    pub sinks: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>>,
     /// <p>The token assigned to the client making the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the media pipeline.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateMediaStreamPipelineInput {
+impl  CreateMediaStreamPipelineInput  {
     /// <p>The data sources for the media pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::MediaStreamSource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::MediaStreamSource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The data sink for the media pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sinks.is_none()`.
-    pub fn sinks(&self) -> &[crate::types::MediaStreamSink] {
-        self.sinks.as_deref().unwrap_or_default()
+    pub fn sinks(&self) -> & [crate::types::MediaStreamSink] {
+        self.sinks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token assigned to the client making the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateMediaStreamPipelineInput {
+impl  ::std::fmt::Debug for CreateMediaStreamPipelineInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaStreamPipelineInput");
         formatter.field("sources", &self.sources);
@@ -57,10 +60,10 @@ impl CreateMediaStreamPipelineInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateMediaStreamPipelineInputBuilder {
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>>,
-    pub(crate) sinks: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>>,
+    pub(crate) sinks: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateMediaStreamPipelineInputBuilder {
     /// Appends an item to `sources`.
@@ -70,17 +73,16 @@ impl CreateMediaStreamPipelineInputBuilder {
     /// <p>The data sources for the media pipeline.</p>
     pub fn sources(mut self, input: crate::types::MediaStreamSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sources for the media pipeline.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The data sources for the media pipeline.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSource>> {
         &self.sources
     }
     /// Appends an item to `sinks`.
@@ -90,17 +92,16 @@ impl CreateMediaStreamPipelineInputBuilder {
     /// <p>The data sink for the media pipeline.</p>
     pub fn sinks(mut self, input: crate::types::MediaStreamSink) -> Self {
         let mut v = self.sinks.unwrap_or_default();
-        v.push(input);
-        self.sinks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sinks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data sink for the media pipeline.</p>
-    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>>) -> Self {
-        self.sinks = input;
-        self
+    pub fn set_sinks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>>) -> Self {
+        self.sinks = input; self
     }
     /// <p>The data sink for the media pipeline.</p>
-    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSink>> {
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaStreamSink>> {
         &self.sinks
     }
     /// <p>The token assigned to the client making the request.</p>
@@ -110,8 +111,7 @@ impl CreateMediaStreamPipelineInputBuilder {
     }
     /// <p>The token assigned to the client making the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The token assigned to the client making the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,32 +124,32 @@ impl CreateMediaStreamPipelineInputBuilder {
     /// <p>The tags assigned to the media pipeline.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the media pipeline.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMediaStreamPipelineInput`](crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput {
-            sources: self.sources,
-            sinks: self.sinks,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput {
+                sources: self.sources
+                ,
+                sinks: self.sinks
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateMediaStreamPipelineInputBuilder {
@@ -162,3 +162,4 @@ impl ::std::fmt::Debug for CreateMediaStreamPipelineInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeValidDbInstanceModificationsInput {
+pub struct DescribeValidDbInstanceModificationsInput  {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DescribeValidDbInstanceModificationsInput {
+impl  DescribeValidDbInstanceModificationsInput  {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl DescribeValidDbInstanceModificationsInputBuilder {
     }
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
     /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsInput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput {
-                db_instance_identifier: self.db_instance_identifier,
-            },
+                db_instance_identifier: self.db_instance_identifier
+                ,
+            }
         )
     }
 }
+

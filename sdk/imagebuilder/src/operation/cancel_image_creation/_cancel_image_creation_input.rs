@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelImageCreationInput {
+pub struct CancelImageCreationInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CancelImageCreationInput {
+impl  CancelImageCreationInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
-    pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelImageCreationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_build_version_arn = input;
-        self
+        self.image_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that you want to cancel creation for.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl CancelImageCreationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_image_creation::CancelImageCreationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_image_creation::CancelImageCreationInput {
-            image_build_version_arn: self.image_build_version_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_image_creation::CancelImageCreationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_image_creation::CancelImageCreationInput {
+                image_build_version_arn: self.image_build_version_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

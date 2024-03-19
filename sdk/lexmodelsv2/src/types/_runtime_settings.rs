@@ -3,13 +3,13 @@
 /// <p>Contains specifications about the Amazon Lex runtime generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuntimeSettings {
+pub struct RuntimeSettings  {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub slot_resolution_improvement: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>,
 }
-impl RuntimeSettings {
+impl  RuntimeSettings  {
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
-    pub fn slot_resolution_improvement(&self) -> ::std::option::Option<&crate::types::SlotResolutionImprovementSpecification> {
+    pub fn slot_resolution_improvement(&self) -> ::std::option::Option<& crate::types::SlotResolutionImprovementSpecification> {
         self.slot_resolution_improvement.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl RuntimeSettingsBuilder {
     }
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub fn set_slot_resolution_improvement(mut self, input: ::std::option::Option<crate::types::SlotResolutionImprovementSpecification>) -> Self {
-        self.slot_resolution_improvement = input;
-        self
+        self.slot_resolution_improvement = input; self
     }
     /// <p>An object containing specifications for the assisted slot resolution feature.</p>
     pub fn get_slot_resolution_improvement(&self) -> &::std::option::Option<crate::types::SlotResolutionImprovementSpecification> {
@@ -44,7 +43,9 @@ impl RuntimeSettingsBuilder {
     /// Consumes the builder and constructs a [`RuntimeSettings`](crate::types::RuntimeSettings).
     pub fn build(self) -> crate::types::RuntimeSettings {
         crate::types::RuntimeSettings {
-            slot_resolution_improvement: self.slot_resolution_improvement,
+            slot_resolution_improvement: self.slot_resolution_improvement
+            ,
         }
     }
 }
+

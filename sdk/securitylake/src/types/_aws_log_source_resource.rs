@@ -3,19 +3,19 @@
 /// <p>Amazon Security Lake can collect logs and events from natively-supported Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsLogSourceResource {
+pub struct AwsLogSourceResource  {
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub source_name: ::std::option::Option<crate::types::AwsLogSourceName>,
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub source_version: ::std::option::Option<::std::string::String>,
 }
-impl AwsLogSourceResource {
+impl  AwsLogSourceResource  {
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&crate::types::AwsLogSourceName> {
+    pub fn source_name(&self) -> ::std::option::Option<& crate::types::AwsLogSourceName> {
         self.source_name.as_ref()
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsLogSourceResourceBuilder {
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<crate::types::AwsLogSourceName>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The name for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<crate::types::AwsLogSourceName> {
@@ -55,8 +54,7 @@ impl AwsLogSourceResourceBuilder {
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>The version for a Amazon Web Services source. This must be a Regionally unique value.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsLogSourceResourceBuilder {
     /// Consumes the builder and constructs a [`AwsLogSourceResource`](crate::types::AwsLogSourceResource).
     pub fn build(self) -> crate::types::AwsLogSourceResource {
         crate::types::AwsLogSourceResource {
-            source_name: self.source_name,
-            source_version: self.source_version,
+            source_name: self.source_name
+            ,
+            source_version: self.source_version
+            ,
         }
     }
 }
+

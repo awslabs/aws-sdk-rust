@@ -3,20 +3,19 @@
 /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VehicleMiddleware {
+pub struct VehicleMiddleware  {
     /// <p>The name of the vehicle middleware.</p>
     pub name: ::std::string::String,
     /// <p>The protocol name of the vehicle middleware.</p>
     pub protocol_name: crate::types::VehicleMiddlewareProtocol,
 }
-impl VehicleMiddleware {
+impl  VehicleMiddleware  {
     /// <p>The name of the vehicle middleware.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The protocol name of the vehicle middleware.</p>
-    pub fn protocol_name(&self) -> &crate::types::VehicleMiddlewareProtocol {
+    pub fn protocol_name(&self) -> & crate::types::VehicleMiddlewareProtocol {
         &self.protocol_name
     }
 }
@@ -43,8 +42,7 @@ impl VehicleMiddlewareBuilder {
     }
     /// <p>The name of the vehicle middleware.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the vehicle middleware.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl VehicleMiddlewareBuilder {
     }
     /// <p>The protocol name of the vehicle middleware.</p>
     pub fn set_protocol_name(mut self, input: ::std::option::Option<crate::types::VehicleMiddlewareProtocol>) -> Self {
-        self.protocol_name = input;
-        self
+        self.protocol_name = input; self
     }
     /// <p>The protocol name of the vehicle middleware.</p>
     pub fn get_protocol_name(&self) -> &::std::option::Option<crate::types::VehicleMiddlewareProtocol> {
@@ -70,19 +67,20 @@ impl VehicleMiddlewareBuilder {
     /// - [`name`](crate::types::builders::VehicleMiddlewareBuilder::name)
     /// - [`protocol_name`](crate::types::builders::VehicleMiddlewareBuilder::protocol_name)
     pub fn build(self) -> ::std::result::Result<crate::types::VehicleMiddleware, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VehicleMiddleware {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building VehicleMiddleware",
-                )
-            })?,
-            protocol_name: self.protocol_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol_name",
-                    "protocol_name was not specified but it is required when building VehicleMiddleware",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VehicleMiddleware {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building VehicleMiddleware")
+                    )?
+                ,
+                protocol_name: self.protocol_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol_name", "protocol_name was not specified but it is required when building VehicleMiddleware")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionCodeSigningConfigOutput {
+pub struct GetFunctionCodeSigningConfigOutput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: ::std::string::String,
     /// <p>The name or ARN of the Lambda function.</p>
@@ -19,11 +19,10 @@ pub struct GetFunctionCodeSigningConfigOutput {
     pub function_name: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetFunctionCodeSigningConfigOutput {
+impl  GetFunctionCodeSigningConfigOutput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.code_signing_config_arn.deref()
+    pub fn code_signing_config_arn(&self) -> & str {
+        use std::ops::Deref; self.code_signing_config_arn.deref()
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -36,16 +35,15 @@ impl GetFunctionCodeSigningConfigOutput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> &str {
-        use std::ops::Deref;
-        self.function_name.deref()
+    pub fn function_name(&self) -> & str {
+        use std::ops::Deref; self.function_name.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFunctionCodeSigningConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionCodeSigningConfigOutput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput).
     pub fn builder() -> crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder {
@@ -70,8 +68,7 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_signing_config_arn = input;
-        self
+        self.code_signing_config_arn = input; self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -123,38 +119,34 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         &self.function_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFunctionCodeSigningConfigOutput`](crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`code_signing_config_arn`](crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder::code_signing_config_arn)
     /// - [`function_name`](crate::operation::get_function_code_signing_config::builders::GetFunctionCodeSigningConfigOutputBuilder::function_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput {
-            code_signing_config_arn: self.code_signing_config_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code_signing_config_arn",
-                    "code_signing_config_arn was not specified but it is required when building GetFunctionCodeSigningConfigOutput",
-                )
-            })?,
-            function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_name",
-                    "function_name was not specified but it is required when building GetFunctionCodeSigningConfigOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput {
+                code_signing_config_arn: self.code_signing_config_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code_signing_config_arn", "code_signing_config_arn was not specified but it is required when building GetFunctionCodeSigningConfigOutput")
+                    )?
+                ,
+                function_name: self.function_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_name", "function_name was not specified but it is required when building GetFunctionCodeSigningConfigOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

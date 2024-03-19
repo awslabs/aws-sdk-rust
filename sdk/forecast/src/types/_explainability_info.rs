@@ -3,7 +3,7 @@
 /// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExplainabilityInfo {
+pub struct ExplainabilityInfo  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub explainability_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Explainability. States include:</p>
@@ -19,9 +19,9 @@ pub struct ExplainabilityInfo {
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl ExplainabilityInfo {
+impl  ExplainabilityInfo  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> ::std::option::Option<& str> {
         self.explainability_arn.as_deref()
     }
     /// <p>The status of the Explainability. States include:</p>
@@ -35,7 +35,7 @@ impl ExplainabilityInfo {
     /// <li>
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ExplainabilityInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub fn set_explainability_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.explainability_arn = input;
-        self
+        self.explainability_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ExplainabilityInfoBuilder {
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Explainability. States include:</p>
     /// <ul>
@@ -115,8 +113,11 @@ impl ExplainabilityInfoBuilder {
     /// Consumes the builder and constructs a [`ExplainabilityInfo`](crate::types::ExplainabilityInfo).
     pub fn build(self) -> crate::types::ExplainabilityInfo {
         crate::types::ExplainabilityInfo {
-            explainability_arn: self.explainability_arn,
-            status: self.status,
+            explainability_arn: self.explainability_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

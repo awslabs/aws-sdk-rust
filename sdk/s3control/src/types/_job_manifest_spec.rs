@@ -3,22 +3,23 @@
 /// <p>Describes the format of a manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobManifestSpec {
+pub struct JobManifestSpec  {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
     pub format: crate::types::JobManifestFormat,
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
+    pub fields: ::std::option::Option<::std::vec::Vec::<crate::types::JobManifestFieldName>>,
 }
-impl JobManifestSpec {
+impl  JobManifestSpec  {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
-    pub fn format(&self) -> &crate::types::JobManifestFormat {
+    pub fn format(&self) -> & crate::types::JobManifestFormat {
         &self.format
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
-    pub fn fields(&self) -> &[crate::types::JobManifestFieldName] {
-        self.fields.as_deref().unwrap_or_default()
+    pub fn fields(&self) -> & [crate::types::JobManifestFieldName] {
+        self.fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JobManifestSpec {
@@ -33,7 +34,7 @@ impl JobManifestSpec {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JobManifestSpecBuilder {
     pub(crate) format: ::std::option::Option<crate::types::JobManifestFormat>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::JobManifestFieldName>>,
 }
 impl JobManifestSpecBuilder {
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
@@ -44,8 +45,7 @@ impl JobManifestSpecBuilder {
     }
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::JobManifestFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Indicates which of the available formats the specified manifest uses.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::JobManifestFormat> {
@@ -58,31 +58,33 @@ impl JobManifestSpecBuilder {
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
     pub fn fields(mut self, input: crate::types::JobManifestFieldName) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobManifestFieldName>>) -> Self {
+        self.fields = input; self
     }
     /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobManifestFieldName>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`JobManifestSpec`](crate::types::JobManifestSpec).
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::JobManifestSpecBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::JobManifestSpec, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JobManifestSpec {
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building JobManifestSpec",
-                )
-            })?,
-            fields: self.fields,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JobManifestSpec {
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building JobManifestSpec")
+                    )?
+                ,
+                fields: self.fields
+                ,
+            }
+        )
     }
 }
+

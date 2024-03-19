@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTestGridSessions`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`project_arn(impl Into<String>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_project_arn):<br>required: **true**<br><p>ARN of a <code>TestGridProject</code>.</p><br>
     ///   - [`status(TestGridSessionStatus)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::status) / [`set_status(Option<TestGridSessionStatus>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_status):<br>required: **false**<br><p>Return only sessions in this state.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Return only sessions created after this time.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`end_time_before(DateTime)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::end_time_before) / [`set_end_time_before(Option<DateTime>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_end_time_before):<br>required: **false**<br><p>Return only sessions that ended before this time.</p><br>
     ///   - [`max_result(i32)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::max_result) / [`set_max_result(Option<i32>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_max_result):<br>required: **false**<br><p>Return only this many results at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token.</p><br>
-    /// - On success, responds with [`ListTestGridSessionsOutput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput) with field(s):
+                            /// - On success, responds with [`ListTestGridSessionsOutput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput) with field(s):
     ///   - [`test_grid_sessions(Option<Vec::<TestGridSession>>)`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput::test_grid_sessions): <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_grid_sessions::ListTestGridSessionsOutput::next_token): <p>Pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListTestGridSessionsError>`](crate::operation::list_test_grid_sessions::ListTestGridSessionsError)
+                            /// - On failure, responds with [`SdkError<ListTestGridSessionsError>`](crate::operation::list_test_grid_sessions::ListTestGridSessionsError)
     pub fn list_test_grid_sessions(&self) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder {
-        crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

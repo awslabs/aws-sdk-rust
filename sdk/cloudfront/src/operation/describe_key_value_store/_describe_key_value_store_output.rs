@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeKeyValueStoreOutput {
+pub struct DescribeKeyValueStoreOutput  {
     /// <p>The resulting Key Value Store.</p>
     pub key_value_store: ::std::option::Option<crate::types::KeyValueStore>,
     /// <p>The ETag of the resulting Key Value Store.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeKeyValueStoreOutput {
+impl  DescribeKeyValueStoreOutput  {
     /// <p>The resulting Key Value Store.</p>
-    pub fn key_value_store(&self) -> ::std::option::Option<&crate::types::KeyValueStore> {
+    pub fn key_value_store(&self) -> ::std::option::Option<& crate::types::KeyValueStore> {
         self.key_value_store.as_ref()
     }
     /// <p>The ETag of the resulting Key Value Store.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeKeyValueStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeKeyValueStoreOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
     pub fn builder() -> crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder {
@@ -47,8 +47,7 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The resulting Key Value Store.</p>
     pub fn set_key_value_store(mut self, input: ::std::option::Option<crate::types::KeyValueStore>) -> Self {
-        self.key_value_store = input;
-        self
+        self.key_value_store = input; self
     }
     /// <p>The resulting Key Value Store.</p>
     pub fn get_key_value_store(&self) -> &::std::option::Option<crate::types::KeyValueStore> {
@@ -61,28 +60,30 @@ impl DescribeKeyValueStoreOutputBuilder {
     }
     /// <p>The ETag of the resulting Key Value Store.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The ETag of the resulting Key Value Store.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeKeyValueStoreOutput`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput).
     pub fn build(self) -> crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput {
         crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput {
-            key_value_store: self.key_value_store,
-            e_tag: self.e_tag,
+            key_value_store: self.key_value_store
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

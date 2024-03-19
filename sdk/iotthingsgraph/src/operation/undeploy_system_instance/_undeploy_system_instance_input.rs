@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UndeploySystemInstanceInput {
+pub struct UndeploySystemInstanceInput  {
     /// <p>The ID of the system instance to remove from its target.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl UndeploySystemInstanceInput {
+impl  UndeploySystemInstanceInput  {
     /// <p>The ID of the system instance to remove from its target.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl UndeploySystemInstanceInputBuilder {
     }
     /// <p>The ID of the system instance to remove from its target.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the system instance to remove from its target.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::undeploy_system_instance::UndeploySystemInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::undeploy_system_instance::UndeploySystemInstanceInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::undeploy_system_instance::UndeploySystemInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::undeploy_system_instance::UndeploySystemInstanceInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

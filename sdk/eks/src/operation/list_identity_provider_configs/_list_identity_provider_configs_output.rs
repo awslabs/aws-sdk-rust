@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentityProviderConfigsOutput {
+pub struct ListIdentityProviderConfigsOutput  {
     /// <p>The identity provider configurations for the cluster.</p>
-    pub identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
+    pub identity_provider_configs: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderConfig>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code> request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIdentityProviderConfigsOutput {
+impl  ListIdentityProviderConfigsOutput  {
     /// <p>The identity provider configurations for the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_provider_configs.is_none()`.
-    pub fn identity_provider_configs(&self) -> &[crate::types::IdentityProviderConfig] {
-        self.identity_provider_configs.as_deref().unwrap_or_default()
+    pub fn identity_provider_configs(&self) -> & [crate::types::IdentityProviderConfig] {
+        self.identity_provider_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code> request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIdentityProviderConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIdentityProviderConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
     pub fn builder() -> crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder {
@@ -41,7 +42,7 @@ impl ListIdentityProviderConfigsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsOutputBuilder {
-    pub(crate) identity_provider_configs: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>,
+    pub(crate) identity_provider_configs: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderConfig>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl ListIdentityProviderConfigsOutputBuilder {
     /// <p>The identity provider configurations for the cluster.</p>
     pub fn identity_provider_configs(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         let mut v = self.identity_provider_configs.unwrap_or_default();
-        v.push(input);
-        self.identity_provider_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identity_provider_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn set_identity_provider_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>>) -> Self {
-        self.identity_provider_configs = input;
-        self
+    pub fn set_identity_provider_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderConfig>>) -> Self {
+        self.identity_provider_configs = input; self
     }
     /// <p>The identity provider configurations for the cluster.</p>
-    pub fn get_identity_provider_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>> {
+    pub fn get_identity_provider_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentityProviderConfig>> {
         &self.identity_provider_configs
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code> request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
@@ -77,8 +77,7 @@ impl ListIdentityProviderConfigsOutputBuilder {
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code> request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -87,20 +86,23 @@ impl ListIdentityProviderConfigsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIdentityProviderConfigsOutput`](crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput).
     pub fn build(self) -> crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput {
         crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput {
-            identity_provider_configs: self.identity_provider_configs,
-            next_token: self.next_token,
+            identity_provider_configs: self.identity_provider_configs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

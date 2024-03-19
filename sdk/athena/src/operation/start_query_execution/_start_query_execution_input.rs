@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartQueryExecutionInput {
+pub struct StartQueryExecutionInput  {
     /// <p>The SQL query statements to be executed.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in <code>QueryString</code>.</p><important>
@@ -16,41 +16,42 @@ pub struct StartQueryExecutionInput {
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub execution_parameters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
 }
-impl StartQueryExecutionInput {
+impl  StartQueryExecutionInput  {
     /// <p>The SQL query statements to be executed.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in <code>QueryString</code>.</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The database within which the query executes.</p>
-    pub fn query_execution_context(&self) -> ::std::option::Option<&crate::types::QueryExecutionContext> {
+    pub fn query_execution_context(&self) -> ::std::option::Option<& crate::types::QueryExecutionContext> {
         self.query_execution_context.as_ref()
     }
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn result_configuration(&self) -> ::std::option::Option<&crate::types::ResultConfiguration> {
+    pub fn result_configuration(&self) -> ::std::option::Option<& crate::types::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
     /// <p>The name of the workgroup in which the query is being started.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_parameters.is_none()`.
-    pub fn execution_parameters(&self) -> &[::std::string::String] {
-        self.execution_parameters.as_deref().unwrap_or_default()
+    pub fn execution_parameters(&self) -> & [::std::string::String] {
+        self.execution_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
-    pub fn result_reuse_configuration(&self) -> ::std::option::Option<&crate::types::ResultReuseConfiguration> {
+    pub fn result_reuse_configuration(&self) -> ::std::option::Option<& crate::types::ResultReuseConfiguration> {
         self.result_reuse_configuration.as_ref()
     }
 }
@@ -70,7 +71,7 @@ pub struct StartQueryExecutionInputBuilder {
     pub(crate) query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
     pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
-    pub(crate) execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) execution_parameters: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
 }
 impl StartQueryExecutionInputBuilder {
@@ -82,8 +83,7 @@ impl StartQueryExecutionInputBuilder {
     }
     /// <p>The SQL query statements to be executed.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The SQL query statements to be executed.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl StartQueryExecutionInputBuilder {
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. An error is returned if a parameter, such as <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code> that uses a previous client request token returns the same <code>QueryExecutionId</code> even if the requester doesn't have permission on the tables specified in <code>QueryString</code>.</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -116,8 +115,7 @@ impl StartQueryExecutionInputBuilder {
     }
     /// <p>The database within which the query executes.</p>
     pub fn set_query_execution_context(mut self, input: ::std::option::Option<crate::types::QueryExecutionContext>) -> Self {
-        self.query_execution_context = input;
-        self
+        self.query_execution_context = input; self
     }
     /// <p>The database within which the query executes.</p>
     pub fn get_query_execution_context(&self) -> &::std::option::Option<crate::types::QueryExecutionContext> {
@@ -130,8 +128,7 @@ impl StartQueryExecutionInputBuilder {
     }
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn set_result_configuration(mut self, input: ::std::option::Option<crate::types::ResultConfiguration>) -> Self {
-        self.result_configuration = input;
-        self
+        self.result_configuration = input; self
     }
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn get_result_configuration(&self) -> &::std::option::Option<crate::types::ResultConfiguration> {
@@ -144,8 +141,7 @@ impl StartQueryExecutionInputBuilder {
     }
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The name of the workgroup in which the query is being started.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,17 +154,16 @@ impl StartQueryExecutionInputBuilder {
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     pub fn execution_parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.execution_parameters.unwrap_or_default();
-        v.push(input.into());
-        self.execution_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.execution_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn set_execution_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.execution_parameters = input;
-        self
+    pub fn set_execution_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.execution_parameters = input; self
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn get_execution_parameters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_execution_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.execution_parameters
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
@@ -178,26 +173,32 @@ impl StartQueryExecutionInputBuilder {
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub fn set_result_reuse_configuration(mut self, input: ::std::option::Option<crate::types::ResultReuseConfiguration>) -> Self {
-        self.result_reuse_configuration = input;
-        self
+        self.result_reuse_configuration = input; self
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
     pub fn get_result_reuse_configuration(&self) -> &::std::option::Option<crate::types::ResultReuseConfiguration> {
         &self.result_reuse_configuration
     }
     /// Consumes the builder and constructs a [`StartQueryExecutionInput`](crate::operation::start_query_execution::StartQueryExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_query_execution::StartQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_query_execution::StartQueryExecutionInput {
-            query_string: self.query_string,
-            client_request_token: self.client_request_token,
-            query_execution_context: self.query_execution_context,
-            result_configuration: self.result_configuration,
-            work_group: self.work_group,
-            execution_parameters: self.execution_parameters,
-            result_reuse_configuration: self.result_reuse_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query_execution::StartQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_query_execution::StartQueryExecutionInput {
+                query_string: self.query_string
+                ,
+                client_request_token: self.client_request_token
+                ,
+                query_execution_context: self.query_execution_context
+                ,
+                result_configuration: self.result_configuration
+                ,
+                work_group: self.work_group
+                ,
+                execution_parameters: self.execution_parameters
+                ,
+                result_reuse_configuration: self.result_reuse_configuration
+                ,
+            }
+        )
     }
 }
+

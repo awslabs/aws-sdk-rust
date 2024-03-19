@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDatasetContents`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_name(impl Into<String>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::set_dataset_name):<br>required: **true**<br><p>The name of the dataset whose contents information you want to list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
     ///   - [`scheduled_on_or_after(DateTime)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::scheduled_on_or_after) / [`set_scheduled_on_or_after(Option<DateTime>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::set_scheduled_on_or_after):<br>required: **false**<br><p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p><br>
     ///   - [`scheduled_before(DateTime)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::scheduled_before) / [`set_scheduled_before(Option<DateTime>)`](crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::set_scheduled_before):<br>required: **false**<br><p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p><br>
-    /// - On success, responds with [`ListDatasetContentsOutput`](crate::operation::list_dataset_contents::ListDatasetContentsOutput) with field(s):
+                            /// - On success, responds with [`ListDatasetContentsOutput`](crate::operation::list_dataset_contents::ListDatasetContentsOutput) with field(s):
     ///   - [`dataset_content_summaries(Option<Vec::<DatasetContentSummary>>)`](crate::operation::list_dataset_contents::ListDatasetContentsOutput::dataset_content_summaries): <p>Summary information about dataset contents that have been created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dataset_contents::ListDatasetContentsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListDatasetContentsError>`](crate::operation::list_dataset_contents::ListDatasetContentsError)
+                            /// - On failure, responds with [`SdkError<ListDatasetContentsError>`](crate::operation::list_dataset_contents::ListDatasetContentsError)
     pub fn list_dataset_contents(&self) -> crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder {
-        crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dataset_contents::builders::ListDatasetContentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

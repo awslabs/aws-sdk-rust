@@ -3,7 +3,7 @@
 /// <p>The connection specifications for the database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseConnection {
+pub struct DatabaseConnection  {
     /// <p>The method of connection.</p>
     pub database_connection_method: ::std::option::Option<crate::types::DatabaseConnectionMethod>,
     /// <p>The Amazon Resource Name of the connected SAP HANA database.</p>
@@ -11,17 +11,17 @@ pub struct DatabaseConnection {
     /// <p>The IP address for connection.</p>
     pub connection_ip: ::std::option::Option<::std::string::String>,
 }
-impl DatabaseConnection {
+impl  DatabaseConnection  {
     /// <p>The method of connection.</p>
-    pub fn database_connection_method(&self) -> ::std::option::Option<&crate::types::DatabaseConnectionMethod> {
+    pub fn database_connection_method(&self) -> ::std::option::Option<& crate::types::DatabaseConnectionMethod> {
         self.database_connection_method.as_ref()
     }
     /// <p>The Amazon Resource Name of the connected SAP HANA database.</p>
-    pub fn database_arn(&self) -> ::std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<& str> {
         self.database_arn.as_deref()
     }
     /// <p>The IP address for connection.</p>
-    pub fn connection_ip(&self) -> ::std::option::Option<&str> {
+    pub fn connection_ip(&self) -> ::std::option::Option<& str> {
         self.connection_ip.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DatabaseConnectionBuilder {
     }
     /// <p>The method of connection.</p>
     pub fn set_database_connection_method(mut self, input: ::std::option::Option<crate::types::DatabaseConnectionMethod>) -> Self {
-        self.database_connection_method = input;
-        self
+        self.database_connection_method = input; self
     }
     /// <p>The method of connection.</p>
     pub fn get_database_connection_method(&self) -> &::std::option::Option<crate::types::DatabaseConnectionMethod> {
@@ -62,8 +61,7 @@ impl DatabaseConnectionBuilder {
     }
     /// <p>The Amazon Resource Name of the connected SAP HANA database.</p>
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// <p>The Amazon Resource Name of the connected SAP HANA database.</p>
     pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl DatabaseConnectionBuilder {
     }
     /// <p>The IP address for connection.</p>
     pub fn set_connection_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_ip = input;
-        self
+        self.connection_ip = input; self
     }
     /// <p>The IP address for connection.</p>
     pub fn get_connection_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl DatabaseConnectionBuilder {
     /// Consumes the builder and constructs a [`DatabaseConnection`](crate::types::DatabaseConnection).
     pub fn build(self) -> crate::types::DatabaseConnection {
         crate::types::DatabaseConnection {
-            database_connection_method: self.database_connection_method,
-            database_arn: self.database_arn,
-            connection_ip: self.connection_ip,
+            database_connection_method: self.database_connection_method
+            ,
+            database_arn: self.database_arn
+            ,
+            connection_ip: self.connection_ip
+            ,
         }
     }
 }
+

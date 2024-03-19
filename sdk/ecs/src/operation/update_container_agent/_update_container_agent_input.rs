@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContainerAgentInput {
+pub struct UpdateContainerAgentInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub container_instance: ::std::option::Option<::std::string::String>,
 }
-impl UpdateContainerAgentInput {
+impl  UpdateContainerAgentInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
-    pub fn container_instance(&self) -> ::std::option::Option<&str> {
+    pub fn container_instance(&self) -> ::std::option::Option<& str> {
         self.container_instance.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateContainerAgentInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that your container instance is running on. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl UpdateContainerAgentInputBuilder {
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub fn set_container_instance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_instance = input;
-        self
+        self.container_instance = input; self
     }
     /// <p>The container instance ID or full ARN entries for the container instance where you would like to update the Amazon ECS container agent.</p>
     pub fn get_container_instance(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_instance
     }
     /// Consumes the builder and constructs a [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_container_agent::UpdateContainerAgentInput {
-            cluster: self.cluster,
-            container_instance: self.container_instance,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_container_agent::UpdateContainerAgentInput {
+                cluster: self.cluster
+                ,
+                container_instance: self.container_instance
+                ,
+            }
+        )
     }
 }
+

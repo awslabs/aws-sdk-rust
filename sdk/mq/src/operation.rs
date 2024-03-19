@@ -69,3 +69,4 @@ pub mod update_configuration;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
+

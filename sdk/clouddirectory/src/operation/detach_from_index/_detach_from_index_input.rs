@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachFromIndexInput {
+pub struct DetachFromIndexInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>A reference to the index object.</p>
@@ -10,17 +10,17 @@ pub struct DetachFromIndexInput {
     /// <p>A reference to the object being detached from the index.</p>
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
-impl DetachFromIndexInput {
+impl  DetachFromIndexInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A reference to the index object.</p>
-    pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn index_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>A reference to the object being detached from the index.</p>
-    pub fn target_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DetachFromIndexInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DetachFromIndexInputBuilder {
     }
     /// <p>A reference to the index object.</p>
     pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.index_reference = input;
-        self
+        self.index_reference = input; self
     }
     /// <p>A reference to the index object.</p>
     pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -78,21 +76,24 @@ impl DetachFromIndexInputBuilder {
     }
     /// <p>A reference to the object being detached from the index.</p>
     pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.target_reference = input;
-        self
+        self.target_reference = input; self
     }
     /// <p>A reference to the object being detached from the index.</p>
     pub fn get_target_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
         &self.target_reference
     }
     /// Consumes the builder and constructs a [`DetachFromIndexInput`](crate::operation::detach_from_index::DetachFromIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_from_index::DetachFromIndexInput {
-            directory_arn: self.directory_arn,
-            index_reference: self.index_reference,
-            target_reference: self.target_reference,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_from_index::DetachFromIndexInput {
+                directory_arn: self.directory_arn
+                ,
+                index_reference: self.index_reference
+                ,
+                target_reference: self.target_reference
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendEmailInput {
+pub struct SendEmailInput  {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
@@ -14,7 +14,7 @@ pub struct SendEmailInput {
     /// <p>An object that contains the recipients of the email message.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reply_to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub feedback_forwarding_email_address: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
@@ -24,60 +24,62 @@ pub struct SendEmailInput {
     /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub email_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
 }
-impl SendEmailInput {
+impl  SendEmailInput  {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
-    pub fn from_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_email_address(&self) -> ::std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
-    pub fn from_email_address_identity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn from_email_address_identity_arn(&self) -> ::std::option::Option<& str> {
         self.from_email_address_identity_arn.as_deref()
     }
     /// <p>An object that contains the recipients of the email message.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reply_to_addresses.is_none()`.
-    pub fn reply_to_addresses(&self) -> &[::std::string::String] {
-        self.reply_to_addresses.as_deref().unwrap_or_default()
+    pub fn reply_to_addresses(&self) -> & [::std::string::String] {
+        self.reply_to_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    pub fn feedback_forwarding_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_forwarding_email_address(&self) -> ::std::option::Option<& str> {
         self.feedback_forwarding_email_address.as_deref()
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn feedback_forwarding_email_address_identity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn feedback_forwarding_email_address_identity_arn(&self) -> ::std::option::Option<& str> {
         self.feedback_forwarding_email_address_identity_arn.as_deref()
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::EmailContent> {
         self.content.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_tags.is_none()`.
-    pub fn email_tags(&self) -> &[crate::types::MessageTag] {
-        self.email_tags.as_deref().unwrap_or_default()
+    pub fn email_tags(&self) -> & [crate::types::MessageTag] {
+        self.email_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
-    pub fn list_management_options(&self) -> ::std::option::Option<&crate::types::ListManagementOptions> {
+    pub fn list_management_options(&self) -> ::std::option::Option<& crate::types::ListManagementOptions> {
         self.list_management_options.as_ref()
     }
 }
@@ -95,11 +97,11 @@ pub struct SendEmailInputBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) from_email_address_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
-    pub(crate) reply_to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reply_to_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) feedback_forwarding_email_address: ::std::option::Option<::std::string::String>,
     pub(crate) feedback_forwarding_email_address_identity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<crate::types::EmailContent>,
-    pub(crate) email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub(crate) email_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
 }
@@ -111,8 +113,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_email_address = input;
-        self
+        self.from_email_address = input; self
     }
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +132,7 @@ impl SendEmailInputBuilder {
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
     pub fn set_from_email_address_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_email_address_identity_arn = input;
-        self
+        self.from_email_address_identity_arn = input; self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
@@ -148,8 +148,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>An object that contains the recipients of the email message.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>An object that contains the recipients of the email message.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
@@ -162,17 +161,16 @@ impl SendEmailInputBuilder {
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub fn reply_to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reply_to_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.reply_to_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reply_to_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reply_to_addresses = input;
-        self
+    pub fn set_reply_to_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reply_to_addresses = input; self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reply_to_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reply_to_addresses
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
@@ -182,8 +180,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub fn set_feedback_forwarding_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_forwarding_email_address = input;
-        self
+        self.feedback_forwarding_email_address = input; self
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub fn get_feedback_forwarding_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +197,7 @@ impl SendEmailInputBuilder {
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_feedback_forwarding_email_address_identity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feedback_forwarding_email_address_identity_arn = input;
-        self
+        self.feedback_forwarding_email_address_identity_arn = input; self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
@@ -217,8 +213,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
@@ -231,17 +226,16 @@ impl SendEmailInputBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.email_tags.unwrap_or_default();
-        v.push(input);
-        self.email_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.email_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
-        self.email_tags = input;
-        self
+    pub fn set_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>) -> Self {
+        self.email_tags = input; self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_email_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>> {
         &self.email_tags
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
@@ -251,8 +245,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +258,7 @@ impl SendEmailInputBuilder {
     }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn set_list_management_options(mut self, input: ::std::option::Option<crate::types::ListManagementOptions>) -> Self {
-        self.list_management_options = input;
-        self
+        self.list_management_options = input; self
     }
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn get_list_management_options(&self) -> &::std::option::Option<crate::types::ListManagementOptions> {
@@ -274,17 +266,30 @@ impl SendEmailInputBuilder {
     }
     /// Consumes the builder and constructs a [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_email::SendEmailInput {
-            from_email_address: self.from_email_address,
-            from_email_address_identity_arn: self.from_email_address_identity_arn,
-            destination: self.destination,
-            reply_to_addresses: self.reply_to_addresses,
-            feedback_forwarding_email_address: self.feedback_forwarding_email_address,
-            feedback_forwarding_email_address_identity_arn: self.feedback_forwarding_email_address_identity_arn,
-            content: self.content,
-            email_tags: self.email_tags,
-            configuration_set_name: self.configuration_set_name,
-            list_management_options: self.list_management_options,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::send_email::SendEmailInput {
+                from_email_address: self.from_email_address
+                ,
+                from_email_address_identity_arn: self.from_email_address_identity_arn
+                ,
+                destination: self.destination
+                ,
+                reply_to_addresses: self.reply_to_addresses
+                ,
+                feedback_forwarding_email_address: self.feedback_forwarding_email_address
+                ,
+                feedback_forwarding_email_address_identity_arn: self.feedback_forwarding_email_address_identity_arn
+                ,
+                content: self.content
+                ,
+                email_tags: self.email_tags
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                list_management_options: self.list_management_options
+                ,
+            }
+        )
     }
 }
+

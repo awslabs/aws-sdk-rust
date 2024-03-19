@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContactChannelInput {
+pub struct UpdateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
     pub contact_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact channel.</p>
@@ -10,17 +10,17 @@ pub struct UpdateContactChannelInput {
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub delivery_address: ::std::option::Option<crate::types::ContactChannelAddress>,
 }
-impl UpdateContactChannelInput {
+impl  UpdateContactChannelInput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
-    pub fn contact_channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_channel_id(&self) -> ::std::option::Option<& str> {
         self.contact_channel_id.as_deref()
     }
     /// <p>The name of the contact channel.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
-    pub fn delivery_address(&self) -> ::std::option::Option<&crate::types::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> ::std::option::Option<& crate::types::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateContactChannelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
     pub fn set_contact_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_channel_id = input;
-        self
+        self.contact_channel_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
     pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateContactChannelInputBuilder {
     }
     /// <p>The name of the contact channel.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the contact channel.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateContactChannelInputBuilder {
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn set_delivery_address(mut self, input: ::std::option::Option<crate::types::ContactChannelAddress>) -> Self {
-        self.delivery_address = input;
-        self
+        self.delivery_address = input; self
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
     pub fn get_delivery_address(&self) -> &::std::option::Option<crate::types::ContactChannelAddress> {
         &self.delivery_address
     }
     /// Consumes the builder and constructs a [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_contact_channel::UpdateContactChannelInput {
-            contact_channel_id: self.contact_channel_id,
-            name: self.name,
-            delivery_address: self.delivery_address,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_contact_channel::UpdateContactChannelInput {
+                contact_channel_id: self.contact_channel_id
+                ,
+                name: self.name
+                ,
+                delivery_address: self.delivery_address
+                ,
+            }
+        )
     }
 }
+

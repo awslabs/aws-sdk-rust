@@ -3,13 +3,13 @@
 /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksHostPath {
+pub struct EksHostPath  {
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl EksHostPath {
+impl  EksHostPath  {
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl EksHostPathBuilder {
     }
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl EksHostPathBuilder {
     }
     /// Consumes the builder and constructs a [`EksHostPath`](crate::types::EksHostPath).
     pub fn build(self) -> crate::types::EksHostPath {
-        crate::types::EksHostPath { path: self.path }
+        crate::types::EksHostPath {
+            path: self.path
+            ,
+        }
     }
 }
+

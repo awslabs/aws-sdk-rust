@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnabledBaselinesInput {
+pub struct ListEnabledBaselinesInput  {
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
     pub filter: ::std::option::Option<crate::types::EnabledBaselineFilter>,
     /// <p>A pagination token.</p>
@@ -10,13 +10,13 @@ pub struct ListEnabledBaselinesInput {
     /// <p>The maximum number of results to be shown.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEnabledBaselinesInput {
+impl  ListEnabledBaselinesInput  {
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::EnabledBaselineFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::EnabledBaselineFilter> {
         self.filter.as_ref()
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be shown.</p>
@@ -47,8 +47,7 @@ impl ListEnabledBaselinesInputBuilder {
     }
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EnabledBaselineFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter applied on the <code>ListEnabledBaseline</code> operation. Allowed filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>. The filter can be applied for either, or both.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledBaselineFilter> {
@@ -61,8 +60,7 @@ impl ListEnabledBaselinesInputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListEnabledBaselinesInputBuilder {
     }
     /// <p>The maximum number of results to be shown.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to be shown.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnabledBaselinesInput`](crate::operation::list_enabled_baselines::ListEnabledBaselinesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_enabled_baselines::ListEnabledBaselinesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_enabled_baselines::ListEnabledBaselinesInput {
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_enabled_baselines::ListEnabledBaselinesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_enabled_baselines::ListEnabledBaselinesInput {
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

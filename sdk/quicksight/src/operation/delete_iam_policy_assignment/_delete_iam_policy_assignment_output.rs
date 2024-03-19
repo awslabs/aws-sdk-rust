@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIamPolicyAssignmentOutput {
+pub struct DeleteIamPolicyAssignmentOutput  {
     /// <p>The name of the assignment.</p>
     pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct DeleteIamPolicyAssignmentOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DeleteIamPolicyAssignmentOutput {
+impl  DeleteIamPolicyAssignmentOutput  {
     /// <p>The name of the assignment.</p>
-    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<& str> {
         self.assignment_name.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl DeleteIamPolicyAssignmentOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteIamPolicyAssignmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteIamPolicyAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIamPolicyAssignmentOutput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput).
     pub fn builder() -> crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The name of the assignment.</p>
     pub fn set_assignment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assignment_name = input;
-        self
+        self.assignment_name = input; self
     }
     /// <p>The name of the assignment.</p>
     pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl DeleteIamPolicyAssignmentOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteIamPolicyAssignmentOutput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput).
     pub fn build(self) -> crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput {
         crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentOutput {
-            assignment_name: self.assignment_name,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            assignment_name: self.assignment_name
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

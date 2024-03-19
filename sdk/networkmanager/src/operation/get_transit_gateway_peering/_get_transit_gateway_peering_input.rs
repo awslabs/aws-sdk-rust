@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransitGatewayPeeringInput {
+pub struct GetTransitGatewayPeeringInput  {
     /// <p>The ID of the peering request.</p>
     pub peering_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTransitGatewayPeeringInput {
+impl  GetTransitGatewayPeeringInput  {
     /// <p>The ID of the peering request.</p>
-    pub fn peering_id(&self) -> ::std::option::Option<&str> {
+    pub fn peering_id(&self) -> ::std::option::Option<& str> {
         self.peering_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetTransitGatewayPeeringInputBuilder {
     }
     /// <p>The ID of the peering request.</p>
     pub fn set_peering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.peering_id = input;
-        self
+        self.peering_id = input; self
     }
     /// <p>The ID of the peering request.</p>
     pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.peering_id
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayPeeringInput`](crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput { peering_id: self.peering_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringInput {
+                peering_id: self.peering_id
+                ,
+            }
+        )
     }
 }
+

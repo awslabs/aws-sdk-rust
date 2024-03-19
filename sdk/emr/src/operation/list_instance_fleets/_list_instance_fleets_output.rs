@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInstanceFleetsOutput {
+pub struct ListInstanceFleetsOutput  {
     /// <p>The list of instance fleets for the cluster and given filters.</p>
-    pub instance_fleets: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>>,
+    pub instance_fleets: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceFleet>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInstanceFleetsOutput {
+impl  ListInstanceFleetsOutput  {
     /// <p>The list of instance fleets for the cluster and given filters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_fleets.is_none()`.
-    pub fn instance_fleets(&self) -> &[crate::types::InstanceFleet] {
-        self.instance_fleets.as_deref().unwrap_or_default()
+    pub fn instance_fleets(&self) -> & [crate::types::InstanceFleet] {
+        self.instance_fleets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInstanceFleetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInstanceFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListInstanceFleetsOutput`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput).
     pub fn builder() -> crate::operation::list_instance_fleets::builders::ListInstanceFleetsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListInstanceFleetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInstanceFleetsOutputBuilder {
-    pub(crate) instance_fleets: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>>,
+    pub(crate) instance_fleets: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceFleet>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListInstanceFleetsOutputBuilder {
     /// <p>The list of instance fleets for the cluster and given filters.</p>
     pub fn instance_fleets(mut self, input: crate::types::InstanceFleet) -> Self {
         let mut v = self.instance_fleets.unwrap_or_default();
-        v.push(input);
-        self.instance_fleets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_fleets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of instance fleets for the cluster and given filters.</p>
-    pub fn set_instance_fleets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>>) -> Self {
-        self.instance_fleets = input;
-        self
+    pub fn set_instance_fleets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceFleet>>) -> Self {
+        self.instance_fleets = input; self
     }
     /// <p>The list of instance fleets for the cluster and given filters.</p>
-    pub fn get_instance_fleets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceFleet>> {
+    pub fn get_instance_fleets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceFleet>> {
         &self.instance_fleets
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -69,28 +69,30 @@ impl ListInstanceFleetsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInstanceFleetsOutput`](crate::operation::list_instance_fleets::ListInstanceFleetsOutput).
     pub fn build(self) -> crate::operation::list_instance_fleets::ListInstanceFleetsOutput {
         crate::operation::list_instance_fleets::ListInstanceFleetsOutput {
-            instance_fleets: self.instance_fleets,
-            marker: self.marker,
+            instance_fleets: self.instance_fleets
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

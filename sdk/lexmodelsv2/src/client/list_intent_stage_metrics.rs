@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIntentStageMetrics`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier for the bot for which you want to retrieve intent stage metrics.</p><br>
     ///   - [`start_date_time(DateTime)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::start_date_time) / [`set_start_date_time(Option<DateTime>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_start_date_time):<br>required: **true**<br><p>The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.</p><br>
     ///   - [`end_date_time(DateTime)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::end_date_time) / [`set_end_date_time(Option<DateTime>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_end_date_time):<br>required: **true**<br><p>The date and time that marks the end of the range of time for which you want to see intent stage metrics.</p><br>
@@ -13,12 +13,13 @@ impl super::Client {
     ///   - [`filters(AnalyticsIntentStageFilter)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::filters) / [`set_filters(Option<Vec::<AnalyticsIntentStageFilter>>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_filters):<br>required: **false**<br><p>A list of objects, each of which describes a condition by which you want to filter the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p><br>
-    /// - On success, responds with [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput) with field(s):
+                            /// - On success, responds with [`ListIntentStageMetricsOutput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput::bot_id): <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
     ///   - [`results(Option<Vec::<AnalyticsIntentStageResult>>)`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput::results): <p>The results for the intent stage metrics.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsOutput::next_token): <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p> <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
-    /// - On failure, responds with [`SdkError<ListIntentStageMetricsError>`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError)
+                            /// - On failure, responds with [`SdkError<ListIntentStageMetricsError>`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsError)
     pub fn list_intent_stage_metrics(&self) -> crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder {
-        crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_intent_stage_metrics::builders::ListIntentStageMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

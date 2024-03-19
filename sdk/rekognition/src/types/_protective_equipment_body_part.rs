@@ -3,17 +3,17 @@
 /// <p>Information about a body part detected by <code>DetectProtectiveEquipment</code> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectiveEquipmentBodyPart {
+pub struct ProtectiveEquipmentBodyPart  {
     /// <p>The detected body part.</p>
     pub name: ::std::option::Option<crate::types::BodyPart>,
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part.</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub equipment_detections: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
+    pub equipment_detections: ::std::option::Option<::std::vec::Vec::<crate::types::EquipmentDetection>>,
 }
-impl ProtectiveEquipmentBodyPart {
+impl  ProtectiveEquipmentBodyPart  {
     /// <p>The detected body part.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::BodyPart> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::BodyPart> {
         self.name.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part.</p>
@@ -21,10 +21,11 @@ impl ProtectiveEquipmentBodyPart {
         self.confidence
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.equipment_detections.is_none()`.
-    pub fn equipment_detections(&self) -> &[crate::types::EquipmentDetection] {
-        self.equipment_detections.as_deref().unwrap_or_default()
+    pub fn equipment_detections(&self) -> & [crate::types::EquipmentDetection] {
+        self.equipment_detections.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProtectiveEquipmentBodyPart {
@@ -40,7 +41,7 @@ impl ProtectiveEquipmentBodyPart {
 pub struct ProtectiveEquipmentBodyPartBuilder {
     pub(crate) name: ::std::option::Option<crate::types::BodyPart>,
     pub(crate) confidence: ::std::option::Option<f32>,
-    pub(crate) equipment_detections: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>,
+    pub(crate) equipment_detections: ::std::option::Option<::std::vec::Vec::<crate::types::EquipmentDetection>>,
 }
 impl ProtectiveEquipmentBodyPartBuilder {
     /// <p>The detected body part.</p>
@@ -50,8 +51,7 @@ impl ProtectiveEquipmentBodyPartBuilder {
     }
     /// <p>The detected body part.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::BodyPart>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The detected body part.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::BodyPart> {
@@ -64,8 +64,7 @@ impl ProtectiveEquipmentBodyPartBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence that Amazon Rekognition has in the detection accuracy of the detected body part.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -78,25 +77,28 @@ impl ProtectiveEquipmentBodyPartBuilder {
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
     pub fn equipment_detections(mut self, input: crate::types::EquipmentDetection) -> Self {
         let mut v = self.equipment_detections.unwrap_or_default();
-        v.push(input);
-        self.equipment_detections = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.equipment_detections = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn set_equipment_detections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>>) -> Self {
-        self.equipment_detections = input;
-        self
+    pub fn set_equipment_detections(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EquipmentDetection>>) -> Self {
+        self.equipment_detections = input; self
     }
     /// <p>An array of Personal Protective Equipment items detected around a body part.</p>
-    pub fn get_equipment_detections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EquipmentDetection>> {
+    pub fn get_equipment_detections(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EquipmentDetection>> {
         &self.equipment_detections
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentBodyPart`](crate::types::ProtectiveEquipmentBodyPart).
     pub fn build(self) -> crate::types::ProtectiveEquipmentBodyPart {
         crate::types::ProtectiveEquipmentBodyPart {
-            name: self.name,
-            confidence: self.confidence,
-            equipment_detections: self.equipment_detections,
+            name: self.name
+            ,
+            confidence: self.confidence
+            ,
+            equipment_detections: self.equipment_detections
+            ,
         }
     }
 }
+

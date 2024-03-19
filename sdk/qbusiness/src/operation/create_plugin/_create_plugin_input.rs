@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePluginInput {
+pub struct CreatePluginInput  {
     /// <p>The identifier of the application that will contain the plugin.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A the name for your plugin.</p>
@@ -14,39 +14,40 @@ pub struct CreatePluginInput {
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
     pub auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreatePluginInput {
+impl  CreatePluginInput  {
     /// <p>The identifier of the application that will contain the plugin.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A the name for your plugin.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of plugin you want to create.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PluginType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::PluginType> {
         self.r#type.as_ref()
     }
     /// <p>The source URL used for plugin configuration.</p>
-    pub fn server_url(&self) -> ::std::option::Option<&str> {
+    pub fn server_url(&self) -> ::std::option::Option<& str> {
         self.server_url.as_deref()
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
-    pub fn auth_configuration(&self) -> ::std::option::Option<&crate::types::PluginAuthConfiguration> {
+    pub fn auth_configuration(&self) -> ::std::option::Option<& crate::types::PluginAuthConfiguration> {
         self.auth_configuration.as_ref()
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -66,7 +67,7 @@ pub struct CreatePluginInputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PluginType>,
     pub(crate) server_url: ::std::option::Option<::std::string::String>,
     pub(crate) auth_configuration: ::std::option::Option<crate::types::PluginAuthConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePluginInputBuilder {
@@ -78,8 +79,7 @@ impl CreatePluginInputBuilder {
     }
     /// <p>The identifier of the application that will contain the plugin.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application that will contain the plugin.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl CreatePluginInputBuilder {
     }
     /// <p>A the name for your plugin.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A the name for your plugin.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl CreatePluginInputBuilder {
     }
     /// <p>The type of plugin you want to create.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PluginType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of plugin you want to create.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PluginType> {
@@ -123,8 +121,7 @@ impl CreatePluginInputBuilder {
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_url = input;
-        self
+        self.server_url = input; self
     }
     /// <p>The source URL used for plugin configuration.</p>
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl CreatePluginInputBuilder {
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
     pub fn set_auth_configuration(mut self, input: ::std::option::Option<crate::types::PluginAuthConfiguration>) -> Self {
-        self.auth_configuration = input;
-        self
+        self.auth_configuration = input; self
     }
     /// <p>Authentication configuration information for an Amazon Q plugin.</p>
     pub fn get_auth_configuration(&self) -> &::std::option::Option<crate::types::PluginAuthConfiguration> {
@@ -152,17 +148,16 @@ impl CreatePluginInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
@@ -172,25 +167,32 @@ impl CreatePluginInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to create your Amazon Q plugin.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePluginInput`](crate::operation::create_plugin::CreatePluginInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_plugin::CreatePluginInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_plugin::CreatePluginInput {
-            application_id: self.application_id,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            server_url: self.server_url,
-            auth_configuration: self.auth_configuration,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_plugin::CreatePluginInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_plugin::CreatePluginInput {
+                application_id: self.application_id
+                ,
+                display_name: self.display_name
+                ,
+                r#type: self.r#type
+                ,
+                server_url: self.server_url
+                ,
+                auth_configuration: self.auth_configuration
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

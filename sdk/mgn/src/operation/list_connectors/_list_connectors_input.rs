@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConnectorsInput {
+pub struct ListConnectorsInput  {
     /// <p>List Connectors Request filters.</p>
     pub filters: ::std::option::Option<crate::types::ListConnectorsRequestFilters>,
     /// <p>List Connectors Request max results.</p>
@@ -10,9 +10,9 @@ pub struct ListConnectorsInput {
     /// <p>List Connectors Request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListConnectorsInput {
+impl  ListConnectorsInput  {
     /// <p>List Connectors Request filters.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListConnectorsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ListConnectorsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>List Connectors Request max results.</p>
@@ -20,7 +20,7 @@ impl ListConnectorsInput {
         self.max_results
     }
     /// <p>List Connectors Request next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListConnectorsInputBuilder {
     }
     /// <p>List Connectors Request filters.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ListConnectorsRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>List Connectors Request filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListConnectorsRequestFilters> {
@@ -61,8 +60,7 @@ impl ListConnectorsInputBuilder {
     }
     /// <p>List Connectors Request max results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>List Connectors Request max results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListConnectorsInputBuilder {
     }
     /// <p>List Connectors Request next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>List Connectors Request next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::operation::list_connectors::ListConnectorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_connectors::ListConnectorsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

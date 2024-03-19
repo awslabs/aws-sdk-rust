@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConstraintInput {
+pub struct UpdateConstraintInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -66,7 +66,7 @@ pub struct UpdateConstraintInput {
     /// </dl>
     pub parameters: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConstraintInput {
+impl  UpdateConstraintInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -74,15 +74,15 @@ impl UpdateConstraintInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The identifier of the constraint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The updated description of the constraint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
@@ -134,7 +134,7 @@ impl UpdateConstraintInput {
     /// <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>
     /// </dd>
     /// </dl>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
 }
@@ -174,8 +174,7 @@ impl UpdateConstraintInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -195,8 +194,7 @@ impl UpdateConstraintInputBuilder {
     }
     /// <p>The identifier of the constraint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the constraint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +207,7 @@ impl UpdateConstraintInputBuilder {
     }
     /// <p>The updated description of the constraint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the constraint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,8 +316,7 @@ impl UpdateConstraintInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
     /// <dl>
@@ -375,14 +371,19 @@ impl UpdateConstraintInputBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateConstraintInput`](crate::operation::update_constraint::UpdateConstraintInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_constraint::UpdateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_constraint::UpdateConstraintInput {
-            accept_language: self.accept_language,
-            id: self.id,
-            description: self.description,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_constraint::UpdateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_constraint::UpdateConstraintInput {
+                accept_language: self.accept_language
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

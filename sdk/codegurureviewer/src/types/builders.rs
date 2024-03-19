@@ -50,3 +50,4 @@ pub use crate::types::_s3_repository::S3RepositoryBuilder;
 pub use crate::types::_third_party_source_repository::ThirdPartySourceRepositoryBuilder;
 
 pub use crate::types::_code_commit_repository::CodeCommitRepositoryBuilder;
+

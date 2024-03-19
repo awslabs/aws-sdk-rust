@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStorageVirtualMachineOutput {
+pub struct CreateStorageVirtualMachineOutput  {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     pub storage_virtual_machine: ::std::option::Option<crate::types::StorageVirtualMachine>,
     _request_id: Option<String>,
 }
-impl CreateStorageVirtualMachineOutput {
+impl  CreateStorageVirtualMachineOutput  {
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
-    pub fn storage_virtual_machine(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachine> {
+    pub fn storage_virtual_machine(&self) -> ::std::option::Option<& crate::types::StorageVirtualMachine> {
         self.storage_virtual_machine.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateStorageVirtualMachineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`CreateStorageVirtualMachineOutput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput).
     pub fn builder() -> crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateStorageVirtualMachineOutputBuilder {
     }
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     pub fn set_storage_virtual_machine(mut self, input: ::std::option::Option<crate::types::StorageVirtualMachine>) -> Self {
-        self.storage_virtual_machine = input;
-        self
+        self.storage_virtual_machine = input; self
     }
     /// <p>Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes the SVM just created.</p>
     pub fn get_storage_virtual_machine(&self) -> &::std::option::Option<crate::types::StorageVirtualMachine> {
         &self.storage_virtual_machine
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateStorageVirtualMachineOutput`](crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput).
     pub fn build(self) -> crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput {
         crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput {
-            storage_virtual_machine: self.storage_virtual_machine,
+            storage_virtual_machine: self.storage_virtual_machine
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

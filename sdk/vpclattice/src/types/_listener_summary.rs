@@ -3,7 +3,7 @@
 /// <p>Summary information about a listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListenerSummary {
+pub struct ListenerSummary  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
@@ -19,21 +19,21 @@ pub struct ListenerSummary {
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListenerSummary {
+impl  ListenerSummary  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the listener.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The listener protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ListenerProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::ListenerProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The listener port.</p>
@@ -41,11 +41,11 @@ impl ListenerSummary {
         self.port
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The ID of the listener.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the listener.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The name of the listener.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the listener.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The listener protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ListenerProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The listener protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
@@ -132,8 +128,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The listener port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The listener port.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl ListenerSummaryBuilder {
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl ListenerSummaryBuilder {
     /// Consumes the builder and constructs a [`ListenerSummary`](crate::types::ListenerSummary).
     pub fn build(self) -> crate::types::ListenerSummary {
         crate::types::ListenerSummary {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            protocol: self.protocol,
-            port: self.port,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
+

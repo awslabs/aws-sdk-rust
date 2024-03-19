@@ -3,19 +3,19 @@
 /// <p>The location of the Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The name of the Amazon S3 bucket.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the Amazon S3 bucket.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The name of the Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the Amazon S3 bucket.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3LocationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3LocationBuilder {
     }
     /// <p>The prefix for the Amazon S3 bucket.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix for the Amazon S3 bucket.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket: self.bucket,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

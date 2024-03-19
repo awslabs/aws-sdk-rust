@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightsInput {}
+pub struct GetInsightsInput  {
+}
 impl GetInsightsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightsInput`](crate::operation::get_insights::GetInsightsInput).
     pub fn builder() -> crate::operation::get_insights::builders::GetInsightsInputBuilder {
@@ -13,10 +14,15 @@ impl GetInsightsInput {
 /// A builder for [`GetInsightsInput`](crate::operation::get_insights::GetInsightsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetInsightsInputBuilder {}
+pub struct GetInsightsInputBuilder {
+}
 impl GetInsightsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightsInput`](crate::operation::get_insights::GetInsightsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_insights::GetInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_insights::GetInsightsInput {})
+        ::std::result::Result::Ok(
+            crate::operation::get_insights::GetInsightsInput {
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrustInput {
+pub struct UpdateTrustInput  {
     /// <p>Identifier of the trust relationship.</p>
     pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>Updates selective authentication for the trust.</p>
     pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
-impl UpdateTrustInput {
+impl  UpdateTrustInput  {
     /// <p>Identifier of the trust relationship.</p>
-    pub fn trust_id(&self) -> ::std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<& str> {
         self.trust_id.as_deref()
     }
     /// <p>Updates selective authentication for the trust.</p>
-    pub fn selective_auth(&self) -> ::std::option::Option<&crate::types::SelectiveAuth> {
+    pub fn selective_auth(&self) -> ::std::option::Option<& crate::types::SelectiveAuth> {
         self.selective_auth.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateTrustInputBuilder {
     }
     /// <p>Identifier of the trust relationship.</p>
     pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_id = input;
-        self
+        self.trust_id = input; self
     }
     /// <p>Identifier of the trust relationship.</p>
     pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateTrustInputBuilder {
     }
     /// <p>Updates selective authentication for the trust.</p>
     pub fn set_selective_auth(mut self, input: ::std::option::Option<crate::types::SelectiveAuth>) -> Self {
-        self.selective_auth = input;
-        self
+        self.selective_auth = input; self
     }
     /// <p>Updates selective authentication for the trust.</p>
     pub fn get_selective_auth(&self) -> &::std::option::Option<crate::types::SelectiveAuth> {
@@ -64,9 +62,14 @@ impl UpdateTrustInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateTrustInput`](crate::operation::update_trust::UpdateTrustInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_trust::UpdateTrustInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_trust::UpdateTrustInput {
-            trust_id: self.trust_id,
-            selective_auth: self.selective_auth,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_trust::UpdateTrustInput {
+                trust_id: self.trust_id
+                ,
+                selective_auth: self.selective_auth
+                ,
+            }
+        )
     }
 }
+

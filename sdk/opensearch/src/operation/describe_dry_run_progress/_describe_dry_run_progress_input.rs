@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDryRunProgressInput {
+pub struct DescribeDryRunProgressInput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the dry run.</p>
@@ -10,13 +10,13 @@ pub struct DescribeDryRunProgressInput {
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub load_dry_run_config: ::std::option::Option<bool>,
 }
-impl DescribeDryRunProgressInput {
+impl  DescribeDryRunProgressInput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the dry run.</p>
-    pub fn dry_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn dry_run_id(&self) -> ::std::option::Option<& str> {
         self.dry_run_id.as_deref()
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
@@ -48,8 +48,7 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>The unique identifier of the dry run.</p>
     pub fn set_dry_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dry_run_id = input;
-        self
+        self.dry_run_id = input; self
     }
     /// <p>The unique identifier of the dry run.</p>
     pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl DescribeDryRunProgressInputBuilder {
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn set_load_dry_run_config(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.load_dry_run_config = input;
-        self
+        self.load_dry_run_config = input; self
     }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn get_load_dry_run_config(&self) -> &::std::option::Option<bool> {
         &self.load_dry_run_config
     }
     /// Consumes the builder and constructs a [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput {
-            domain_name: self.domain_name,
-            dry_run_id: self.dry_run_id,
-            load_dry_run_config: self.load_dry_run_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput {
+                domain_name: self.domain_name
+                ,
+                dry_run_id: self.dry_run_id
+                ,
+                load_dry_run_config: self.load_dry_run_config
+                ,
+            }
+        )
     }
 }
+

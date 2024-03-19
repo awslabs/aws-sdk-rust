@@ -3,22 +3,20 @@
 /// <p>Describes an OpenSearch data source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpenSearchServiceDataSourceConfig {
+pub struct OpenSearchServiceDataSourceConfig  {
     /// <p>The endpoint.</p>
     pub endpoint: ::std::string::String,
     /// <p>The Amazon Web Services Region.</p>
     pub aws_region: ::std::string::String,
 }
-impl OpenSearchServiceDataSourceConfig {
+impl  OpenSearchServiceDataSourceConfig  {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> &str {
-        use std::ops::Deref;
-        self.endpoint.deref()
+    pub fn endpoint(&self) -> & str {
+        use std::ops::Deref; self.endpoint.deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> &str {
-        use std::ops::Deref;
-        self.aws_region.deref()
+    pub fn aws_region(&self) -> & str {
+        use std::ops::Deref; self.aws_region.deref()
     }
 }
 impl OpenSearchServiceDataSourceConfig {
@@ -44,8 +42,7 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     }
     /// <p>The endpoint.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     /// - [`endpoint`](crate::types::builders::OpenSearchServiceDataSourceConfigBuilder::endpoint)
     /// - [`aws_region`](crate::types::builders::OpenSearchServiceDataSourceConfigBuilder::aws_region)
     pub fn build(self) -> ::std::result::Result<crate::types::OpenSearchServiceDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OpenSearchServiceDataSourceConfig {
-            endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "endpoint",
-                    "endpoint was not specified but it is required when building OpenSearchServiceDataSourceConfig",
-                )
-            })?,
-            aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aws_region",
-                    "aws_region was not specified but it is required when building OpenSearchServiceDataSourceConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OpenSearchServiceDataSourceConfig {
+                endpoint: self.endpoint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("endpoint", "endpoint was not specified but it is required when building OpenSearchServiceDataSourceConfig")
+                    )?
+                ,
+                aws_region: self.aws_region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aws_region", "aws_region was not specified but it is required when building OpenSearchServiceDataSourceConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

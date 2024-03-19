@@ -3,19 +3,19 @@
 /// <p>Describes the monitoring of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceMonitoring {
+pub struct InstanceMonitoring  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The monitoring for the instance.</p>
     pub monitoring: ::std::option::Option<crate::types::Monitoring>,
 }
-impl InstanceMonitoring {
+impl  InstanceMonitoring  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The monitoring for the instance.</p>
-    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::Monitoring> {
+    pub fn monitoring(&self) -> ::std::option::Option<& crate::types::Monitoring> {
         self.monitoring.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InstanceMonitoringBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl InstanceMonitoringBuilder {
     }
     /// <p>The monitoring for the instance.</p>
     pub fn set_monitoring(mut self, input: ::std::option::Option<crate::types::Monitoring>) -> Self {
-        self.monitoring = input;
-        self
+        self.monitoring = input; self
     }
     /// <p>The monitoring for the instance.</p>
     pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::Monitoring> {
@@ -65,8 +63,11 @@ impl InstanceMonitoringBuilder {
     /// Consumes the builder and constructs a [`InstanceMonitoring`](crate::types::InstanceMonitoring).
     pub fn build(self) -> crate::types::InstanceMonitoring {
         crate::types::InstanceMonitoring {
-            instance_id: self.instance_id,
-            monitoring: self.monitoring,
+            instance_id: self.instance_id
+            ,
+            monitoring: self.monitoring
+            ,
         }
     }
 }
+

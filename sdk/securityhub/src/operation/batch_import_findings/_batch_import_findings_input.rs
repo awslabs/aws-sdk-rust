@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchImportFindingsInput {
+pub struct BatchImportFindingsInput  {
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>,
+    pub findings: ::std::option::Option<::std::vec::Vec::<crate::types::AwsSecurityFinding>>,
 }
-impl BatchImportFindingsInput {
+impl  BatchImportFindingsInput  {
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.findings.is_none()`.
-    pub fn findings(&self) -> &[crate::types::AwsSecurityFinding] {
-        self.findings.as_deref().unwrap_or_default()
+    pub fn findings(&self) -> & [crate::types::AwsSecurityFinding] {
+        self.findings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchImportFindingsInput {
@@ -25,7 +26,7 @@ impl BatchImportFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchImportFindingsInputBuilder {
-    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec::<crate::types::AwsSecurityFinding>>,
 }
 impl BatchImportFindingsInputBuilder {
     /// Appends an item to `findings`.
@@ -35,24 +36,26 @@ impl BatchImportFindingsInputBuilder {
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub fn findings(mut self, input: crate::types::AwsSecurityFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>>) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsSecurityFinding>>) -> Self {
+        self.findings = input; self
     }
     /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsSecurityFinding>> {
         &self.findings
     }
     /// Consumes the builder and constructs a [`BatchImportFindingsInput`](crate::operation::batch_import_findings::BatchImportFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_import_findings::BatchImportFindingsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_import_findings::BatchImportFindingsInput { findings: self.findings })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_import_findings::BatchImportFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_import_findings::BatchImportFindingsInput {
+                findings: self.findings
+                ,
+            }
+        )
     }
 }
+

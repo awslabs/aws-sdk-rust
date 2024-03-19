@@ -3,3 +3,4 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `JoinStorageSession` operation.
 pub mod join_storage_session;
+

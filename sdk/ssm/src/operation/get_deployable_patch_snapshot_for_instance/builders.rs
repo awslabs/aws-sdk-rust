@@ -5,115 +5,98 @@ pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deplo
 
 impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_deployable_patch_snapshot_for_instance();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_deployable_patch_snapshot_for_instance();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetDeployablePatchSnapshotForInstance`.
-///
+/// 
 /// <p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p><note>
 /// <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command. For example, run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code> document.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder,
+                    inner: crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
-    > for GetDeployablePatchSnapshotForInstanceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
-            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
+                    crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
+                > for GetDeployablePatchSnapshotForInstanceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
+                        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
     /// Creates a new `GetDeployablePatchSnapshotForInstance`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the GetDeployablePatchSnapshotForInstance as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstance::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstance::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput,
-        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstance::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstance::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -157,3 +140,4 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
         self.inner.get_baseline_override()
     }
 }
+

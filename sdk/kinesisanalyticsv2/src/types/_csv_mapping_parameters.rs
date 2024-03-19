@@ -5,22 +5,20 @@
 /// <p><code>"name2", "address2"</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CsvMappingParameters {
+pub struct CsvMappingParameters  {
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
     pub record_row_delimiter: ::std::string::String,
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub record_column_delimiter: ::std::string::String,
 }
-impl CsvMappingParameters {
+impl  CsvMappingParameters  {
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
-    pub fn record_row_delimiter(&self) -> &str {
-        use std::ops::Deref;
-        self.record_row_delimiter.deref()
+    pub fn record_row_delimiter(&self) -> & str {
+        use std::ops::Deref; self.record_row_delimiter.deref()
     }
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
-    pub fn record_column_delimiter(&self) -> &str {
-        use std::ops::Deref;
-        self.record_column_delimiter.deref()
+    pub fn record_column_delimiter(&self) -> & str {
+        use std::ops::Deref; self.record_column_delimiter.deref()
     }
 }
 impl CsvMappingParameters {
@@ -46,8 +44,7 @@ impl CsvMappingParametersBuilder {
     }
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
     pub fn set_record_row_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_row_delimiter = input;
-        self
+        self.record_row_delimiter = input; self
     }
     /// <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
     pub fn get_record_row_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +58,7 @@ impl CsvMappingParametersBuilder {
     }
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub fn set_record_column_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_column_delimiter = input;
-        self
+        self.record_column_delimiter = input; self
     }
     /// <p>The column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub fn get_record_column_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,19 +69,20 @@ impl CsvMappingParametersBuilder {
     /// - [`record_row_delimiter`](crate::types::builders::CsvMappingParametersBuilder::record_row_delimiter)
     /// - [`record_column_delimiter`](crate::types::builders::CsvMappingParametersBuilder::record_column_delimiter)
     pub fn build(self) -> ::std::result::Result<crate::types::CsvMappingParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CsvMappingParameters {
-            record_row_delimiter: self.record_row_delimiter.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_row_delimiter",
-                    "record_row_delimiter was not specified but it is required when building CsvMappingParameters",
-                )
-            })?,
-            record_column_delimiter: self.record_column_delimiter.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_column_delimiter",
-                    "record_column_delimiter was not specified but it is required when building CsvMappingParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CsvMappingParameters {
+                record_row_delimiter: self.record_row_delimiter
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_row_delimiter", "record_row_delimiter was not specified but it is required when building CsvMappingParameters")
+                    )?
+                ,
+                record_column_delimiter: self.record_column_delimiter
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_column_delimiter", "record_column_delimiter was not specified but it is required when building CsvMappingParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

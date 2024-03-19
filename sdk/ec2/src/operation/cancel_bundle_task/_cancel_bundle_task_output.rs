@@ -3,22 +3,22 @@
 /// <p>Contains the output of CancelBundleTask.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelBundleTaskOutput {
+pub struct CancelBundleTaskOutput  {
     /// <p>Information about the bundle task.</p>
     pub bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
 }
-impl CancelBundleTaskOutput {
+impl  CancelBundleTaskOutput  {
     /// <p>Information about the bundle task.</p>
-    pub fn bundle_task(&self) -> ::std::option::Option<&crate::types::BundleTask> {
+    pub fn bundle_task(&self) -> ::std::option::Option<& crate::types::BundleTask> {
         self.bundle_task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelBundleTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelBundleTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
     pub fn builder() -> crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder {
@@ -41,27 +41,28 @@ impl CancelBundleTaskOutputBuilder {
     }
     /// <p>Information about the bundle task.</p>
     pub fn set_bundle_task(mut self, input: ::std::option::Option<crate::types::BundleTask>) -> Self {
-        self.bundle_task = input;
-        self
+        self.bundle_task = input; self
     }
     /// <p>Information about the bundle task.</p>
     pub fn get_bundle_task(&self) -> &::std::option::Option<crate::types::BundleTask> {
         &self.bundle_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
     pub fn build(self) -> crate::operation::cancel_bundle_task::CancelBundleTaskOutput {
         crate::operation::cancel_bundle_task::CancelBundleTaskOutput {
-            bundle_task: self.bundle_task,
+            bundle_task: self.bundle_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

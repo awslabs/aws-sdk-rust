@@ -3,16 +3,17 @@
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrainingData {
+pub struct TrainingData  {
     /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
-    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
 }
-impl TrainingData {
+impl  TrainingData  {
     /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
-    pub fn assets(&self) -> &[crate::types::Asset] {
-        self.assets.as_deref().unwrap_or_default()
+    pub fn assets(&self) -> & [crate::types::Asset] {
+        self.assets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TrainingData {
@@ -26,7 +27,7 @@ impl TrainingData {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrainingDataBuilder {
-    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
 }
 impl TrainingDataBuilder {
     /// Appends an item to `assets`.
@@ -36,21 +37,24 @@ impl TrainingDataBuilder {
     /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
-        v.push(input);
-        self.assets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
-    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>) -> Self {
+        self.assets = input; self
     }
     /// <p>A manifest file that contains references to the training images and ground-truth annotations.</p>
-    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Asset>> {
         &self.assets
     }
     /// Consumes the builder and constructs a [`TrainingData`](crate::types::TrainingData).
     pub fn build(self) -> crate::types::TrainingData {
-        crate::types::TrainingData { assets: self.assets }
+        crate::types::TrainingData {
+            assets: self.assets
+            ,
+        }
     }
 }
+

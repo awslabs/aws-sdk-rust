@@ -2,24 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddAttributesToFindingsInput {
+pub struct AddAttributesToFindingsInput  {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
-impl AddAttributesToFindingsInput {
+impl  AddAttributesToFindingsInput  {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
-    pub fn finding_arns(&self) -> &[::std::string::String] {
-        self.finding_arns.as_deref().unwrap_or_default()
+    pub fn finding_arns(&self) -> & [::std::string::String] {
+        self.finding_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddAttributesToFindingsInput {
@@ -33,8 +35,8 @@ impl AddAttributesToFindingsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddAttributesToFindingsInputBuilder {
-    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl AddAttributesToFindingsInputBuilder {
     /// Appends an item to `finding_arns`.
@@ -44,17 +46,16 @@ impl AddAttributesToFindingsInputBuilder {
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
     pub fn finding_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_arns.unwrap_or_default();
-        v.push(input.into());
-        self.finding_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_arns = input;
-        self
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_arns = input; self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_arns
     }
     /// Appends an item to `attributes`.
@@ -64,29 +65,28 @@ impl AddAttributesToFindingsInputBuilder {
     /// <p>The array of attributes that you want to assign to specified findings.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput {
-            finding_arns: self.finding_arns,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput {
+                finding_arns: self.finding_arns
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

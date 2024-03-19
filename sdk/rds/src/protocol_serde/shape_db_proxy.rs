@@ -205,3 +205,4 @@ pub fn de_db_proxy(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

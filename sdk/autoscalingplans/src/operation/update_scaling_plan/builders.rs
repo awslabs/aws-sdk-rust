@@ -5,55 +5,51 @@ pub use crate::operation::update_scaling_plan::_update_scaling_plan_input::Updat
 
 impl UpdateScalingPlanInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_scaling_plan();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_scaling_plan::UpdateScalingPlanError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_scaling_plan();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateScalingPlan`.
-///
+/// 
 /// <p>Updates the specified scaling plan.</p>
 /// <p>You cannot update a scaling plan if it is in the process of being created, updated, or deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateScalingPlanFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_scaling_plan::builders::UpdateScalingPlanInputBuilder,
+                    inner: crate::operation::update_scaling_plan::builders::UpdateScalingPlanInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        crate::operation::update_scaling_plan::UpdateScalingPlanError,
-    > for UpdateScalingPlanFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
+                    crate::operation::update_scaling_plan::UpdateScalingPlanError,
+                > for UpdateScalingPlanFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
+                        crate::operation::update_scaling_plan::UpdateScalingPlanError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateScalingPlanFluentBuilder {
     /// Creates a new `UpdateScalingPlan`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl UpdateScalingPlanFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_scaling_plan::UpdateScalingPlanError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_scaling_plan::UpdateScalingPlan::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_scaling_plan::UpdateScalingPlan::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_scaling_plan::UpdateScalingPlanOutput,
-        crate::operation::update_scaling_plan::UpdateScalingPlanError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_scaling_plan::UpdateScalingPlanOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scaling_plan::UpdateScalingPlanError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_scaling_plan::UpdateScalingPlan::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_scaling_plan::UpdateScalingPlan::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_scaling_plan::UpdateScalingPlanOutput, crate::operation::update_scaling_plan::UpdateScalingPlanError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the scaling plan.</p>
     pub fn scaling_plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scaling_plan_name(input.into());
@@ -166,13 +153,14 @@ impl UpdateScalingPlanFluentBuilder {
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>) -> Self {
+    pub fn set_scaling_instructions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScalingInstruction>>) -> Self {
         self.inner = self.inner.set_scaling_instructions(input);
         self
     }
     /// <p>The scaling instructions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
-    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+    pub fn get_scaling_instructions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScalingInstruction>> {
         self.inner.get_scaling_instructions()
     }
 }
+

@@ -26,11 +26,7 @@ impl DeploymentState {
     /// Tries to convert the enum instance into [`Component`](crate::types::DeploymentState::Component), extracting the inner [`ComponentState`](crate::types::ComponentState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_component(&self) -> ::std::result::Result<&crate::types::ComponentState, &Self> {
-        if let DeploymentState::Component(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DeploymentState::Component(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Component`](crate::types::DeploymentState::Component).
     pub fn is_component(&self) -> bool {
@@ -39,11 +35,7 @@ impl DeploymentState {
     /// Tries to convert the enum instance into [`Environment`](crate::types::DeploymentState::Environment), extracting the inner [`EnvironmentState`](crate::types::EnvironmentState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_environment(&self) -> ::std::result::Result<&crate::types::EnvironmentState, &Self> {
-        if let DeploymentState::Environment(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DeploymentState::Environment(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Environment`](crate::types::DeploymentState::Environment).
     pub fn is_environment(&self) -> bool {
@@ -52,11 +44,7 @@ impl DeploymentState {
     /// Tries to convert the enum instance into [`ServiceInstance`](crate::types::DeploymentState::ServiceInstance), extracting the inner [`ServiceInstanceState`](crate::types::ServiceInstanceState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_instance(&self) -> ::std::result::Result<&crate::types::ServiceInstanceState, &Self> {
-        if let DeploymentState::ServiceInstance(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DeploymentState::ServiceInstance(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ServiceInstance`](crate::types::DeploymentState::ServiceInstance).
     pub fn is_service_instance(&self) -> bool {
@@ -65,11 +53,7 @@ impl DeploymentState {
     /// Tries to convert the enum instance into [`ServicePipeline`](crate::types::DeploymentState::ServicePipeline), extracting the inner [`ServicePipelineState`](crate::types::ServicePipelineState).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_pipeline(&self) -> ::std::result::Result<&crate::types::ServicePipelineState, &Self> {
-        if let DeploymentState::ServicePipeline(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DeploymentState::ServicePipeline(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ServicePipeline`](crate::types::DeploymentState::ServicePipeline).
     pub fn is_service_pipeline(&self) -> bool {
@@ -80,3 +64,4 @@ impl DeploymentState {
         matches!(self, Self::Unknown)
     }
 }
+

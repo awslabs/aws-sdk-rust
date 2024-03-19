@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitVirtualInterfaceInput {
+pub struct CreateTransitVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the transit virtual interface.</p>
     pub new_transit_virtual_interface: ::std::option::Option<crate::types::NewTransitVirtualInterface>,
 }
-impl CreateTransitVirtualInterfaceInput {
+impl  CreateTransitVirtualInterfaceInput  {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>Information about the transit virtual interface.</p>
-    pub fn new_transit_virtual_interface(&self) -> ::std::option::Option<&crate::types::NewTransitVirtualInterface> {
+    pub fn new_transit_virtual_interface(&self) -> ::std::option::Option<& crate::types::NewTransitVirtualInterface> {
         self.new_transit_virtual_interface.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateTransitVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreateTransitVirtualInterfaceInputBuilder {
     }
     /// <p>Information about the transit virtual interface.</p>
     pub fn set_new_transit_virtual_interface(mut self, input: ::std::option::Option<crate::types::NewTransitVirtualInterface>) -> Self {
-        self.new_transit_virtual_interface = input;
-        self
+        self.new_transit_virtual_interface = input; self
     }
     /// <p>Information about the transit virtual interface.</p>
     pub fn get_new_transit_virtual_interface(&self) -> &::std::option::Option<crate::types::NewTransitVirtualInterface> {
         &self.new_transit_virtual_interface
     }
     /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceInput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput {
-            connection_id: self.connection_id,
-            new_transit_virtual_interface: self.new_transit_virtual_interface,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput {
+                connection_id: self.connection_id
+                ,
+                new_transit_virtual_interface: self.new_transit_virtual_interface
+                ,
+            }
+        )
     }
 }
+

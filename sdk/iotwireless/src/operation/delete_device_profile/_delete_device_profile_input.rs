@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeviceProfileInput {
+pub struct DeleteDeviceProfileInput  {
     /// <p>The ID of the resource to delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeviceProfileInput {
+impl  DeleteDeviceProfileInput  {
     /// <p>The ID of the resource to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DeleteDeviceProfileInputBuilder {
     }
     /// <p>The ID of the resource to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteDeviceProfileInput`](crate::operation::delete_device_profile::DeleteDeviceProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_device_profile::DeleteDeviceProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_device_profile::DeleteDeviceProfileInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device_profile::DeleteDeviceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_device_profile::DeleteDeviceProfileInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

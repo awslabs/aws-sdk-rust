@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keystate = unimplemented!();
 /// match keystate {
@@ -36,16 +36,14 @@
 /// Specifically, when `keystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum KeyState {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -65,88 +63,80 @@ pub enum KeyState {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for KeyState {
-    fn from(s: &str) -> Self {
-        match s {
-            "Creating" => KeyState::Creating,
-            "Disabled" => KeyState::Disabled,
-            "Enabled" => KeyState::Enabled,
-            "PendingDeletion" => KeyState::PendingDeletion,
-            "PendingImport" => KeyState::PendingImport,
-            "PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
-            "Unavailable" => KeyState::Unavailable,
-            "Updating" => KeyState::Updating,
-            other => KeyState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Creating" => KeyState::Creating,
+"Disabled" => KeyState::Disabled,
+"Enabled" => KeyState::Enabled,
+"PendingDeletion" => KeyState::PendingDeletion,
+"PendingImport" => KeyState::PendingImport,
+"PendingReplicaDeletion" => KeyState::PendingReplicaDeletion,
+"Unavailable" => KeyState::Unavailable,
+"Updating" => KeyState::Updating,
+other => KeyState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for KeyState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(KeyState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(KeyState::from(s))
+                    }
+                }
 impl KeyState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyState::Creating => "Creating",
-            KeyState::Disabled => "Disabled",
-            KeyState::Enabled => "Enabled",
-            KeyState::PendingDeletion => "PendingDeletion",
-            KeyState::PendingImport => "PendingImport",
-            KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
-            KeyState::Unavailable => "Unavailable",
-            KeyState::Updating => "Updating",
-            KeyState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Creating",
-            "Disabled",
-            "Enabled",
-            "PendingDeletion",
-            "PendingImport",
-            "PendingReplicaDeletion",
-            "Unavailable",
-            "Updating",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyState::Creating => "Creating",
+    KeyState::Disabled => "Disabled",
+    KeyState::Enabled => "Enabled",
+    KeyState::PendingDeletion => "PendingDeletion",
+    KeyState::PendingImport => "PendingImport",
+    KeyState::PendingReplicaDeletion => "PendingReplicaDeletion",
+    KeyState::Unavailable => "Unavailable",
+    KeyState::Updating => "Updating",
+    KeyState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Creating", "Disabled", "Enabled", "PendingDeletion", "PendingImport", "PendingReplicaDeletion", "Unavailable", "Updating"]
+                }
+            }
 impl ::std::convert::AsRef<str> for KeyState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl KeyState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for KeyState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            KeyState::Creating => write!(f, "Creating"),
-            KeyState::Disabled => write!(f, "Disabled"),
-            KeyState::Enabled => write!(f, "Enabled"),
-            KeyState::PendingDeletion => write!(f, "PendingDeletion"),
-            KeyState::PendingImport => write!(f, "PendingImport"),
-            KeyState::PendingReplicaDeletion => write!(f, "PendingReplicaDeletion"),
-            KeyState::Unavailable => write!(f, "Unavailable"),
-            KeyState::Updating => write!(f, "Updating"),
-            KeyState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                KeyState::Creating => write!(f, "Creating"),
+KeyState::Disabled => write!(f, "Disabled"),
+KeyState::Enabled => write!(f, "Enabled"),
+KeyState::PendingDeletion => write!(f, "PendingDeletion"),
+KeyState::PendingImport => write!(f, "PendingImport"),
+KeyState::PendingReplicaDeletion => write!(f, "PendingReplicaDeletion"),
+KeyState::Unavailable => write!(f, "Unavailable"),
+KeyState::Updating => write!(f, "Updating"),
+KeyState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

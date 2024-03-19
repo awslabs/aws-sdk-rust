@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveAliasOutput {
+pub struct ResolveAliasOutput  {
     /// <p>The fleet identifier that the alias is pointing to.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ResolveAliasOutput {
+impl  ResolveAliasOutput  {
     /// <p>The fleet identifier that the alias is pointing to.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.</p>
-    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ResolveAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResolveAliasOutput {
     /// Creates a new builder-style object to manufacture [`ResolveAliasOutput`](crate::operation::resolve_alias::ResolveAliasOutput).
     pub fn builder() -> crate::operation::resolve_alias::builders::ResolveAliasOutputBuilder {
@@ -47,8 +47,7 @@ impl ResolveAliasOutputBuilder {
     }
     /// <p>The fleet identifier that the alias is pointing to.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>The fleet identifier that the alias is pointing to.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ResolveAliasOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResolveAliasOutput`](crate::operation::resolve_alias::ResolveAliasOutput).
     pub fn build(self) -> crate::operation::resolve_alias::ResolveAliasOutput {
         crate::operation::resolve_alias::ResolveAliasOutput {
-            fleet_id: self.fleet_id,
-            fleet_arn: self.fleet_arn,
+            fleet_id: self.fleet_id
+            ,
+            fleet_arn: self.fleet_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

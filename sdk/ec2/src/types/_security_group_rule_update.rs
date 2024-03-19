@@ -3,19 +3,19 @@
 /// <p>Describes an update to a security group rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityGroupRuleUpdate {
+pub struct SecurityGroupRuleUpdate  {
     /// <p>The ID of the security group rule.</p>
     pub security_group_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the security group rule.</p>
     pub security_group_rule: ::std::option::Option<crate::types::SecurityGroupRuleRequest>,
 }
-impl SecurityGroupRuleUpdate {
+impl  SecurityGroupRuleUpdate  {
     /// <p>The ID of the security group rule.</p>
-    pub fn security_group_rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn security_group_rule_id(&self) -> ::std::option::Option<& str> {
         self.security_group_rule_id.as_deref()
     }
     /// <p>Information about the security group rule.</p>
-    pub fn security_group_rule(&self) -> ::std::option::Option<&crate::types::SecurityGroupRuleRequest> {
+    pub fn security_group_rule(&self) -> ::std::option::Option<& crate::types::SecurityGroupRuleRequest> {
         self.security_group_rule.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl SecurityGroupRuleUpdateBuilder {
     }
     /// <p>The ID of the security group rule.</p>
     pub fn set_security_group_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_rule_id = input;
-        self
+        self.security_group_rule_id = input; self
     }
     /// <p>The ID of the security group rule.</p>
     pub fn get_security_group_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SecurityGroupRuleUpdateBuilder {
     }
     /// <p>Information about the security group rule.</p>
     pub fn set_security_group_rule(mut self, input: ::std::option::Option<crate::types::SecurityGroupRuleRequest>) -> Self {
-        self.security_group_rule = input;
-        self
+        self.security_group_rule = input; self
     }
     /// <p>Information about the security group rule.</p>
     pub fn get_security_group_rule(&self) -> &::std::option::Option<crate::types::SecurityGroupRuleRequest> {
@@ -66,8 +64,11 @@ impl SecurityGroupRuleUpdateBuilder {
     /// Consumes the builder and constructs a [`SecurityGroupRuleUpdate`](crate::types::SecurityGroupRuleUpdate).
     pub fn build(self) -> crate::types::SecurityGroupRuleUpdate {
         crate::types::SecurityGroupRuleUpdate {
-            security_group_rule_id: self.security_group_rule_id,
-            security_group_rule: self.security_group_rule,
+            security_group_rule_id: self.security_group_rule_id
+            ,
+            security_group_rule: self.security_group_rule
+            ,
         }
     }
 }
+

@@ -3,22 +3,21 @@
 /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssessmentRunInProgressException {
+pub struct AssessmentRunInProgressException  {
     /// <p>Details of the exception error.</p>
     pub message: ::std::string::String,
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub assessment_run_arns: ::std::vec::Vec<::std::string::String>,
+    pub assessment_run_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub assessment_run_arns_truncated: bool,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: bool,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl AssessmentRunInProgressException {
+impl  AssessmentRunInProgressException  {
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn assessment_run_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.assessment_run_arns.deref()
+    pub fn assessment_run_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.assessment_run_arns.deref()
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn assessment_run_arns_truncated(&self) -> bool {
@@ -31,14 +30,12 @@ impl AssessmentRunInProgressException {
 }
 impl AssessmentRunInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> &str {
-        &self.message
-    }
+                        pub fn message(&self) -> &str { &self.message }
 }
 impl ::std::fmt::Display for AssessmentRunInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "AssessmentRunInProgressException")?;
-        {
+         {
             ::std::write!(f, ": {}", &self.message)?;
         }
         Ok(())
@@ -52,9 +49,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::AssessmentRunIn
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssessmentRunInProgressException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl AssessmentRunInProgressException {
     /// Creates a new builder-style object to manufacture [`AssessmentRunInProgressException`](crate::types::error::AssessmentRunInProgressException).
@@ -68,7 +63,7 @@ impl AssessmentRunInProgressException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssessmentRunInProgressExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) assessment_run_arns_truncated: ::std::option::Option<bool>,
     pub(crate) can_retry: ::std::option::Option<bool>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -82,8 +77,7 @@ impl AssessmentRunInProgressExceptionBuilder {
     }
     /// <p>Details of the exception error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Details of the exception error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +90,16 @@ impl AssessmentRunInProgressExceptionBuilder {
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
     pub fn assessment_run_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_run_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_run_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assessment_run_arns = input;
-        self
+    pub fn set_assessment_run_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assessment_run_arns = input; self
     }
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_run_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assessment_run_arns
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
@@ -117,8 +110,7 @@ impl AssessmentRunInProgressExceptionBuilder {
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn set_assessment_run_arns_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.assessment_run_arns_truncated = input;
-        self
+        self.assessment_run_arns_truncated = input; self
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn get_assessment_run_arns_truncated(&self) -> &::std::option::Option<bool> {
@@ -132,59 +124,55 @@ impl AssessmentRunInProgressExceptionBuilder {
     }
     /// <p>You can immediately retry your request.</p>
     pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.can_retry = input;
-        self
+        self.can_retry = input; self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn get_can_retry(&self) -> &::std::option::Option<bool> {
         &self.can_retry
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`AssessmentRunInProgressException`](crate::types::error::AssessmentRunInProgressException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::AssessmentRunInProgressExceptionBuilder::message)
     /// - [`assessment_run_arns`](crate::types::error::builders::AssessmentRunInProgressExceptionBuilder::assessment_run_arns)
     /// - [`assessment_run_arns_truncated`](crate::types::error::builders::AssessmentRunInProgressExceptionBuilder::assessment_run_arns_truncated)
     /// - [`can_retry`](crate::types::error::builders::AssessmentRunInProgressExceptionBuilder::can_retry)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::error::AssessmentRunInProgressException, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::error::AssessmentRunInProgressException {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building AssessmentRunInProgressException",
-                )
-            })?,
-            assessment_run_arns: self.assessment_run_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_run_arns",
-                    "assessment_run_arns was not specified but it is required when building AssessmentRunInProgressException",
-                )
-            })?,
-            assessment_run_arns_truncated: self.assessment_run_arns_truncated.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_run_arns_truncated",
-                    "assessment_run_arns_truncated was not specified but it is required when building AssessmentRunInProgressException",
-                )
-            })?,
-            can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "can_retry",
-                    "can_retry was not specified but it is required when building AssessmentRunInProgressException",
-                )
-            })?,
-            meta: self.meta.unwrap_or_default(),
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AssessmentRunInProgressException, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::error::AssessmentRunInProgressException {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building AssessmentRunInProgressException")
+                    )?
+                ,
+                assessment_run_arns: self.assessment_run_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_run_arns", "assessment_run_arns was not specified but it is required when building AssessmentRunInProgressException")
+                    )?
+                ,
+                assessment_run_arns_truncated: self.assessment_run_arns_truncated
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_run_arns_truncated", "assessment_run_arns_truncated was not specified but it is required when building AssessmentRunInProgressException")
+                    )?
+                ,
+                can_retry: self.can_retry
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("can_retry", "can_retry was not specified but it is required when building AssessmentRunInProgressException")
+                    )?
+                ,
+                meta: self.meta.unwrap_or_default(),
+            }
+        )
     }
 }
+

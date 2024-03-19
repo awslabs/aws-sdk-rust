@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOrganizationInsightsInput {
+pub struct ListOrganizationInsightsInput  {
     /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
-    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListOrganizationInsightsInput {
+impl  ListOrganizationInsightsInput  {
     /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
-    pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ListInsightsStatusFilter> {
+    pub fn status_filter(&self) -> ::std::option::Option<& crate::types::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -24,19 +24,21 @@ impl ListOrganizationInsightsInput {
         self.max_results
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
-    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
-        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    pub fn organizational_unit_ids(&self) -> & [::std::string::String] {
+        self.organizational_unit_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -53,8 +55,8 @@ impl ListOrganizationInsightsInput {
 pub struct ListOrganizationInsightsInputBuilder {
     pub(crate) status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOrganizationInsightsInputBuilder {
@@ -66,8 +68,7 @@ impl ListOrganizationInsightsInputBuilder {
     }
     /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
-        self.status_filter = input;
-        self
+        self.status_filter = input; self
     }
     /// <p>A filter used by <code>ListInsights</code> to specify which insights to return.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
@@ -80,8 +81,7 @@ impl ListOrganizationInsightsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -94,17 +94,16 @@ impl ListOrganizationInsightsInputBuilder {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
@@ -114,17 +113,16 @@ impl ListOrganizationInsightsInputBuilder {
     /// <p>The ID of the organizational unit.</p>
     pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
-        v.push(input.into());
-        self.organizational_unit_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organizational_unit_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organizational_unit_ids = input;
-        self
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input; self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organizational_unit_ids
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -134,26 +132,28 @@ impl ListOrganizationInsightsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListOrganizationInsightsInput`](crate::operation::list_organization_insights::ListOrganizationInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_organization_insights::ListOrganizationInsightsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_organization_insights::ListOrganizationInsightsInput {
-            status_filter: self.status_filter,
-            max_results: self.max_results,
-            account_ids: self.account_ids,
-            organizational_unit_ids: self.organizational_unit_ids,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_organization_insights::ListOrganizationInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_organization_insights::ListOrganizationInsightsInput {
+                status_filter: self.status_filter
+                ,
+                max_results: self.max_results
+                ,
+                account_ids: self.account_ids
+                ,
+                organizational_unit_ids: self.organizational_unit_ids
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

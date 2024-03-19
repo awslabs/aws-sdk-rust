@@ -3,21 +3,20 @@
 /// <p>The failure reasons for the environment deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentError {
+pub struct EnvironmentError  {
     /// <p>The error code for the failure reason for the environment deployment.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The error message for the failure reason for the environment deployment.</p>
     pub message: ::std::string::String,
 }
-impl EnvironmentError {
+impl  EnvironmentError  {
     /// <p>The error code for the failure reason for the environment deployment.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The error message for the failure reason for the environment deployment.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl EnvironmentError {
@@ -42,8 +41,7 @@ impl EnvironmentErrorBuilder {
     }
     /// <p>The error code for the failure reason for the environment deployment.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code for the failure reason for the environment deployment.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl EnvironmentErrorBuilder {
     }
     /// <p>The error message for the failure reason for the environment deployment.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message for the failure reason for the environment deployment.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl EnvironmentErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::builders::EnvironmentErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentError {
-            code: self.code,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building EnvironmentError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentError {
+                code: self.code
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building EnvironmentError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The instance metadata options that apply to the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceMetadataOptions {
+pub struct InstanceMetadataOptions  {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct InstanceMetadataOptions {
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
 }
-impl InstanceMetadataOptions {
+impl  InstanceMetadataOptions  {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl InstanceMetadataOptions {
     /// <p><b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p></li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
-    pub fn http_tokens(&self) -> ::std::option::Option<&str> {
+    pub fn http_tokens(&self) -> ::std::option::Option<& str> {
         self.http_tokens.as_deref()
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
@@ -69,8 +69,7 @@ impl InstanceMetadataOptionsBuilder {
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.http_tokens = input;
-        self
+        self.http_tokens = input; self
     }
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
@@ -90,8 +89,7 @@ impl InstanceMetadataOptionsBuilder {
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.http_put_response_hop_limit = input;
-        self
+        self.http_put_response_hop_limit = input; self
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
@@ -100,8 +98,11 @@ impl InstanceMetadataOptionsBuilder {
     /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
     pub fn build(self) -> crate::types::InstanceMetadataOptions {
         crate::types::InstanceMetadataOptions {
-            http_tokens: self.http_tokens,
-            http_put_response_hop_limit: self.http_put_response_hop_limit,
+            http_tokens: self.http_tokens
+            ,
+            http_put_response_hop_limit: self.http_put_response_hop_limit
+            ,
         }
     }
 }
+

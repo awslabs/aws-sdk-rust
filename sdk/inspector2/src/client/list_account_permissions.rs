@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccountPermissions`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service(Service)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::service) / [`set_service(Option<Service>)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::set_service):<br>required: **false**<br><p>The service scan type to check permissions for.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.</p><br>
-    /// - On success, responds with [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput) with field(s):
+                            /// - On success, responds with [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput) with field(s):
     ///   - [`permissions(Vec::<Permission>)`](crate::operation::list_account_permissions::ListAccountPermissionsOutput::permissions): <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_account_permissions::ListAccountPermissionsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    /// - On failure, responds with [`SdkError<ListAccountPermissionsError>`](crate::operation::list_account_permissions::ListAccountPermissionsError)
+                            /// - On failure, responds with [`SdkError<ListAccountPermissionsError>`](crate::operation::list_account_permissions::ListAccountPermissionsError)
     pub fn list_account_permissions(&self) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder {
-        crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_account_permissions::builders::ListAccountPermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

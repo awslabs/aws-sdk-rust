@@ -3,7 +3,7 @@
 /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallConfig {
+pub struct FirewallConfig  {
     /// <p>The ID of the firewall configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
@@ -20,17 +20,17 @@ pub struct FirewallConfig {
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
     pub firewall_fail_open: ::std::option::Option<crate::types::FirewallFailOpenStatus>,
 }
-impl FirewallConfig {
+impl  FirewallConfig  {
     /// <p>The ID of the firewall configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.</p>
@@ -41,7 +41,7 @@ impl FirewallConfig {
     /// <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them.</p></li>
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
-    pub fn firewall_fail_open(&self) -> ::std::option::Option<&crate::types::FirewallFailOpenStatus> {
+    pub fn firewall_fail_open(&self) -> ::std::option::Option<& crate::types::FirewallFailOpenStatus> {
         self.firewall_fail_open.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl FirewallConfigBuilder {
     }
     /// <p>The ID of the firewall configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the firewall configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl FirewallConfigBuilder {
     }
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl FirewallConfigBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl FirewallConfigBuilder {
     /// </ul>
     /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association.</p>
     pub fn set_firewall_fail_open(mut self, input: ::std::option::Option<crate::types::FirewallFailOpenStatus>) -> Self {
-        self.firewall_fail_open = input;
-        self
+        self.firewall_fail_open = input; self
     }
     /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply.</p>
     /// <ul>
@@ -142,10 +138,15 @@ impl FirewallConfigBuilder {
     /// Consumes the builder and constructs a [`FirewallConfig`](crate::types::FirewallConfig).
     pub fn build(self) -> crate::types::FirewallConfig {
         crate::types::FirewallConfig {
-            id: self.id,
-            resource_id: self.resource_id,
-            owner_id: self.owner_id,
-            firewall_fail_open: self.firewall_fail_open,
+            id: self.id
+            ,
+            resource_id: self.resource_id
+            ,
+            owner_id: self.owner_id
+            ,
+            firewall_fail_open: self.firewall_fail_open
+            ,
         }
     }
 }
+

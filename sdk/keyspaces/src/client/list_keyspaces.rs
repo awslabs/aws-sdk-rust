@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKeyspaces`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p><br>
-    /// - On success, responds with [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput) with field(s):
+                            /// - On success, responds with [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_keyspaces::ListKeyspacesOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     ///   - [`keyspaces(Vec::<KeyspaceSummary>)`](crate::operation::list_keyspaces::ListKeyspacesOutput::keyspaces): <p>A list of keyspaces.</p>
-    /// - On failure, responds with [`SdkError<ListKeyspacesError>`](crate::operation::list_keyspaces::ListKeyspacesError)
+                            /// - On failure, responds with [`SdkError<ListKeyspacesError>`](crate::operation::list_keyspaces::ListKeyspacesError)
     pub fn list_keyspaces(&self) -> crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder {
-        crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_keyspaces::builders::ListKeyspacesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

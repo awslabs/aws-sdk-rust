@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportKeyInput {
+pub struct ExportKeyInput  {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
     pub key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
@@ -10,17 +10,17 @@ pub struct ExportKeyInput {
     /// <p>The attributes for IPEK generation during export.</p>
     pub export_attributes: ::std::option::Option<crate::types::ExportAttributes>,
 }
-impl ExportKeyInput {
+impl  ExportKeyInput  {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
-    pub fn key_material(&self) -> ::std::option::Option<&crate::types::ExportKeyMaterial> {
+    pub fn key_material(&self) -> ::std::option::Option<& crate::types::ExportKeyMaterial> {
         self.key_material.as_ref()
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
-    pub fn export_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn export_key_identifier(&self) -> ::std::option::Option<& str> {
         self.export_key_identifier.as_deref()
     }
     /// <p>The attributes for IPEK generation during export.</p>
-    pub fn export_attributes(&self) -> ::std::option::Option<&crate::types::ExportAttributes> {
+    pub fn export_attributes(&self) -> ::std::option::Option<& crate::types::ExportAttributes> {
         self.export_attributes.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ExportKeyInputBuilder {
     }
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
     pub fn set_key_material(mut self, input: ::std::option::Option<crate::types::ExportKeyMaterial>) -> Self {
-        self.key_material = input;
-        self
+        self.key_material = input; self
     }
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
     pub fn get_key_material(&self) -> &::std::option::Option<crate::types::ExportKeyMaterial> {
@@ -63,8 +62,7 @@ impl ExportKeyInputBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub fn set_export_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_key_identifier = input;
-        self
+        self.export_key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub fn get_export_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl ExportKeyInputBuilder {
     }
     /// <p>The attributes for IPEK generation during export.</p>
     pub fn set_export_attributes(mut self, input: ::std::option::Option<crate::types::ExportAttributes>) -> Self {
-        self.export_attributes = input;
-        self
+        self.export_attributes = input; self
     }
     /// <p>The attributes for IPEK generation during export.</p>
     pub fn get_export_attributes(&self) -> &::std::option::Option<crate::types::ExportAttributes> {
@@ -86,10 +83,16 @@ impl ExportKeyInputBuilder {
     }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::export_key::ExportKeyInput {
-            key_material: self.key_material,
-            export_key_identifier: self.export_key_identifier,
-            export_attributes: self.export_attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::export_key::ExportKeyInput {
+                key_material: self.key_material
+                ,
+                export_key_identifier: self.export_key_identifier
+                ,
+                export_attributes: self.export_attributes
+                ,
+            }
+        )
     }
 }
+

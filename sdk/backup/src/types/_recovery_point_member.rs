@@ -3,7 +3,7 @@
 /// <p>This is a recovery point which is a child (nested) recovery point of a parent (composite) recovery point. These recovery points can be disassociated from their parent (composite) recovery point, in which case they will no longer be a member.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryPointMember {
+pub struct RecoveryPointMember  {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
@@ -13,21 +13,21 @@ pub struct RecoveryPointMember {
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
-impl RecoveryPointMember {
+impl  RecoveryPointMember  {
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RecoveryPointMemberBuilder {
     }
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl RecoveryPointMemberBuilder {
     }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RecoveryPointMemberBuilder {
     }
     /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RecoveryPointMemberBuilder {
     }
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl RecoveryPointMemberBuilder {
     /// Consumes the builder and constructs a [`RecoveryPointMember`](crate::types::RecoveryPointMember).
     pub fn build(self) -> crate::types::RecoveryPointMember {
         crate::types::RecoveryPointMember {
-            recovery_point_arn: self.recovery_point_arn,
-            resource_arn: self.resource_arn,
-            resource_type: self.resource_type,
-            backup_vault_name: self.backup_vault_name,
+            recovery_point_arn: self.recovery_point_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            resource_type: self.resource_type
+            ,
+            backup_vault_name: self.backup_vault_name
+            ,
         }
     }
 }
+

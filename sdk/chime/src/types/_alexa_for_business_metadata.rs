@@ -3,23 +3,23 @@
 /// <p>The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AlexaForBusinessMetadata {
+pub struct AlexaForBusinessMetadata  {
     /// <p>Starts or stops Alexa for Business.</p>
     pub is_alexa_for_business_enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the room resource.</p>
     pub alexa_for_business_room_arn: ::std::option::Option<::std::string::String>,
 }
-impl AlexaForBusinessMetadata {
+impl  AlexaForBusinessMetadata  {
     /// <p>Starts or stops Alexa for Business.</p>
     pub fn is_alexa_for_business_enabled(&self) -> ::std::option::Option<bool> {
         self.is_alexa_for_business_enabled
     }
     /// <p>The ARN of the room resource.</p>
-    pub fn alexa_for_business_room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alexa_for_business_room_arn(&self) -> ::std::option::Option<& str> {
         self.alexa_for_business_room_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for AlexaForBusinessMetadata {
+impl  ::std::fmt::Debug for AlexaForBusinessMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AlexaForBusinessMetadata");
         formatter.field("is_alexa_for_business_enabled", &self.is_alexa_for_business_enabled);
@@ -49,8 +49,7 @@ impl AlexaForBusinessMetadataBuilder {
     }
     /// <p>Starts or stops Alexa for Business.</p>
     pub fn set_is_alexa_for_business_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_alexa_for_business_enabled = input;
-        self
+        self.is_alexa_for_business_enabled = input; self
     }
     /// <p>Starts or stops Alexa for Business.</p>
     pub fn get_is_alexa_for_business_enabled(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl AlexaForBusinessMetadataBuilder {
     }
     /// <p>The ARN of the room resource.</p>
     pub fn set_alexa_for_business_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alexa_for_business_room_arn = input;
-        self
+        self.alexa_for_business_room_arn = input; self
     }
     /// <p>The ARN of the room resource.</p>
     pub fn get_alexa_for_business_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl AlexaForBusinessMetadataBuilder {
     /// Consumes the builder and constructs a [`AlexaForBusinessMetadata`](crate::types::AlexaForBusinessMetadata).
     pub fn build(self) -> crate::types::AlexaForBusinessMetadata {
         crate::types::AlexaForBusinessMetadata {
-            is_alexa_for_business_enabled: self.is_alexa_for_business_enabled,
-            alexa_for_business_room_arn: self.alexa_for_business_room_arn,
+            is_alexa_for_business_enabled: self.is_alexa_for_business_enabled
+            ,
+            alexa_for_business_room_arn: self.alexa_for_business_room_arn
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for AlexaForBusinessMetadataBuilder {
         formatter.finish()
     }
 }
+

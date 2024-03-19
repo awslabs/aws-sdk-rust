@@ -3,7 +3,7 @@
 /// <p>A group of anomalous metrics</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyGroup {
+pub struct AnomalyGroup  {
     /// <p>The start time for the group.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The end time for the group.</p>
@@ -15,19 +15,19 @@ pub struct AnomalyGroup {
     /// <p>The name of the primary affected measure for the group.</p>
     pub primary_metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of measures affected by the anomaly.</p>
-    pub metric_level_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricLevelImpact>>,
+    pub metric_level_impact_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricLevelImpact>>,
 }
-impl AnomalyGroup {
+impl  AnomalyGroup  {
     /// <p>The start time for the group.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The end time for the group.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The severity score of the group.</p>
@@ -35,14 +35,15 @@ impl AnomalyGroup {
         self.anomaly_group_score
     }
     /// <p>The name of the primary affected measure for the group.</p>
-    pub fn primary_metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn primary_metric_name(&self) -> ::std::option::Option<& str> {
         self.primary_metric_name.as_deref()
     }
     /// <p>A list of measures affected by the anomaly.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_level_impact_list.is_none()`.
-    pub fn metric_level_impact_list(&self) -> &[crate::types::MetricLevelImpact] {
-        self.metric_level_impact_list.as_deref().unwrap_or_default()
+    pub fn metric_level_impact_list(&self) -> & [crate::types::MetricLevelImpact] {
+        self.metric_level_impact_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnomalyGroup {
@@ -61,7 +62,7 @@ pub struct AnomalyGroupBuilder {
     pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) anomaly_group_score: ::std::option::Option<f64>,
     pub(crate) primary_metric_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_level_impact_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricLevelImpact>>,
+    pub(crate) metric_level_impact_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricLevelImpact>>,
 }
 impl AnomalyGroupBuilder {
     /// <p>The start time for the group.</p>
@@ -71,8 +72,7 @@ impl AnomalyGroupBuilder {
     }
     /// <p>The start time for the group.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time for the group.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl AnomalyGroupBuilder {
     }
     /// <p>The end time for the group.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time for the group.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl AnomalyGroupBuilder {
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn set_anomaly_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.anomaly_group_id = input;
-        self
+        self.anomaly_group_id = input; self
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl AnomalyGroupBuilder {
     }
     /// <p>The severity score of the group.</p>
     pub fn set_anomaly_group_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.anomaly_group_score = input;
-        self
+        self.anomaly_group_score = input; self
     }
     /// <p>The severity score of the group.</p>
     pub fn get_anomaly_group_score(&self) -> &::std::option::Option<f64> {
@@ -127,8 +124,7 @@ impl AnomalyGroupBuilder {
     }
     /// <p>The name of the primary affected measure for the group.</p>
     pub fn set_primary_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_metric_name = input;
-        self
+        self.primary_metric_name = input; self
     }
     /// <p>The name of the primary affected measure for the group.</p>
     pub fn get_primary_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +137,34 @@ impl AnomalyGroupBuilder {
     /// <p>A list of measures affected by the anomaly.</p>
     pub fn metric_level_impact_list(mut self, input: crate::types::MetricLevelImpact) -> Self {
         let mut v = self.metric_level_impact_list.unwrap_or_default();
-        v.push(input);
-        self.metric_level_impact_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_level_impact_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of measures affected by the anomaly.</p>
-    pub fn set_metric_level_impact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricLevelImpact>>) -> Self {
-        self.metric_level_impact_list = input;
-        self
+    pub fn set_metric_level_impact_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricLevelImpact>>) -> Self {
+        self.metric_level_impact_list = input; self
     }
     /// <p>A list of measures affected by the anomaly.</p>
-    pub fn get_metric_level_impact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricLevelImpact>> {
+    pub fn get_metric_level_impact_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricLevelImpact>> {
         &self.metric_level_impact_list
     }
     /// Consumes the builder and constructs a [`AnomalyGroup`](crate::types::AnomalyGroup).
     pub fn build(self) -> crate::types::AnomalyGroup {
         crate::types::AnomalyGroup {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            anomaly_group_id: self.anomaly_group_id,
-            anomaly_group_score: self.anomaly_group_score,
-            primary_metric_name: self.primary_metric_name,
-            metric_level_impact_list: self.metric_level_impact_list,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            anomaly_group_id: self.anomaly_group_id
+            ,
+            anomaly_group_score: self.anomaly_group_score
+            ,
+            primary_metric_name: self.primary_metric_name
+            ,
+            metric_level_impact_list: self.metric_level_impact_list
+            ,
         }
     }
 }
+

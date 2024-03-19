@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImagesInput {
+pub struct ListImagesInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository with image IDs to be listed.</p>
@@ -16,19 +16,19 @@ pub struct ListImagesInput {
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
     pub filter: ::std::option::Option<crate::types::ListImagesFilter>,
 }
-impl ListImagesInput {
+impl  ListImagesInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository with image IDs to be listed.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
@@ -36,7 +36,7 @@ impl ListImagesInput {
         self.max_results
     }
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ListImagesFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ListImagesFilter> {
         self.filter.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl ListImagesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl ListImagesInputBuilder {
     }
     /// <p>The repository with image IDs to be listed.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository with image IDs to be listed.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl ListImagesInputBuilder {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -114,8 +111,7 @@ impl ListImagesInputBuilder {
     }
     /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -128,8 +124,7 @@ impl ListImagesInputBuilder {
     }
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListImagesFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListImagesFilter> {
@@ -137,12 +132,20 @@ impl ListImagesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_images::ListImagesInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_images::ListImagesInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

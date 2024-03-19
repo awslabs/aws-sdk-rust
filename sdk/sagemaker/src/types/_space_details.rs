@@ -3,7 +3,7 @@
 /// <p>The space's details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceDetails {
+pub struct SpaceDetails  {
     /// <p>The ID of the associated domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
@@ -23,41 +23,41 @@ pub struct SpaceDetails {
     /// <p>The name of the space that appears in the Studio UI.</p>
     pub space_display_name: ::std::option::Option<::std::string::String>,
 }
-impl SpaceDetails {
+impl  SpaceDetails  {
     /// <p>The ID of the associated domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SpaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SpaceStatus> {
         self.status.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last modified time.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Specifies summary information about the space settings.</p>
-    pub fn space_settings_summary(&self) -> ::std::option::Option<&crate::types::SpaceSettingsSummary> {
+    pub fn space_settings_summary(&self) -> ::std::option::Option<& crate::types::SpaceSettingsSummary> {
         self.space_settings_summary.as_ref()
     }
     /// <p>Specifies summary information about the space sharing settings.</p>
-    pub fn space_sharing_settings_summary(&self) -> ::std::option::Option<&crate::types::SpaceSharingSettingsSummary> {
+    pub fn space_sharing_settings_summary(&self) -> ::std::option::Option<& crate::types::SpaceSharingSettingsSummary> {
         self.space_sharing_settings_summary.as_ref()
     }
     /// <p>Specifies summary information about the ownership settings.</p>
-    pub fn ownership_settings_summary(&self) -> ::std::option::Option<&crate::types::OwnershipSettingsSummary> {
+    pub fn ownership_settings_summary(&self) -> ::std::option::Option<& crate::types::OwnershipSettingsSummary> {
         self.ownership_settings_summary.as_ref()
     }
     /// <p>The name of the space that appears in the Studio UI.</p>
-    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_display_name(&self) -> ::std::option::Option<& str> {
         self.space_display_name.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SpaceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SpaceStatus> {
@@ -132,8 +129,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +142,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The last modified time.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The last modified time.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +155,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>Specifies summary information about the space settings.</p>
     pub fn set_space_settings_summary(mut self, input: ::std::option::Option<crate::types::SpaceSettingsSummary>) -> Self {
-        self.space_settings_summary = input;
-        self
+        self.space_settings_summary = input; self
     }
     /// <p>Specifies summary information about the space settings.</p>
     pub fn get_space_settings_summary(&self) -> &::std::option::Option<crate::types::SpaceSettingsSummary> {
@@ -174,8 +168,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>Specifies summary information about the space sharing settings.</p>
     pub fn set_space_sharing_settings_summary(mut self, input: ::std::option::Option<crate::types::SpaceSharingSettingsSummary>) -> Self {
-        self.space_sharing_settings_summary = input;
-        self
+        self.space_sharing_settings_summary = input; self
     }
     /// <p>Specifies summary information about the space sharing settings.</p>
     pub fn get_space_sharing_settings_summary(&self) -> &::std::option::Option<crate::types::SpaceSharingSettingsSummary> {
@@ -188,8 +181,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>Specifies summary information about the ownership settings.</p>
     pub fn set_ownership_settings_summary(mut self, input: ::std::option::Option<crate::types::OwnershipSettingsSummary>) -> Self {
-        self.ownership_settings_summary = input;
-        self
+        self.ownership_settings_summary = input; self
     }
     /// <p>Specifies summary information about the ownership settings.</p>
     pub fn get_ownership_settings_summary(&self) -> &::std::option::Option<crate::types::OwnershipSettingsSummary> {
@@ -202,8 +194,7 @@ impl SpaceDetailsBuilder {
     }
     /// <p>The name of the space that appears in the Studio UI.</p>
     pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_display_name = input;
-        self
+        self.space_display_name = input; self
     }
     /// <p>The name of the space that appears in the Studio UI.</p>
     pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl SpaceDetailsBuilder {
     /// Consumes the builder and constructs a [`SpaceDetails`](crate::types::SpaceDetails).
     pub fn build(self) -> crate::types::SpaceDetails {
         crate::types::SpaceDetails {
-            domain_id: self.domain_id,
-            space_name: self.space_name,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            space_settings_summary: self.space_settings_summary,
-            space_sharing_settings_summary: self.space_sharing_settings_summary,
-            ownership_settings_summary: self.ownership_settings_summary,
-            space_display_name: self.space_display_name,
+            domain_id: self.domain_id
+            ,
+            space_name: self.space_name
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            space_settings_summary: self.space_settings_summary
+            ,
+            space_sharing_settings_summary: self.space_sharing_settings_summary
+            ,
+            ownership_settings_summary: self.ownership_settings_summary
+            ,
+            space_display_name: self.space_display_name
+            ,
         }
     }
 }
+

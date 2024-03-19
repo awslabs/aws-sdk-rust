@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAudienceGenerationJobInput {
+pub struct StartAudienceGenerationJobInput  {
     /// <p>The name of the audience generation job.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that is used for this audience generation job.</p>
@@ -33,19 +33,19 @@ pub struct StartAudienceGenerationJobInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartAudienceGenerationJobInput {
+impl  StartAudienceGenerationJobInput  {
     /// <p>The name of the audience generation job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that is used for this audience generation job.</p>
-    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_arn(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_arn.as_deref()
     }
     /// <p>The seed audience that is used to generate the audience.</p>
-    pub fn seed_audience(&self) -> ::std::option::Option<&crate::types::AudienceGenerationJobDataSource> {
+    pub fn seed_audience(&self) -> ::std::option::Option<& crate::types::AudienceGenerationJobDataSource> {
         self.seed_audience.as_ref()
     }
     /// <p>Whether the seed audience is included in the audience generation output.</p>
@@ -53,11 +53,11 @@ impl StartAudienceGenerationJobInput {
         self.include_seed_in_output
     }
     /// <p>The identifier of the collaboration that contains the audience generation job.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> ::std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The description of the audience generation job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
@@ -78,7 +78,7 @@ impl StartAudienceGenerationJobInput {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -99,7 +99,7 @@ pub struct StartAudienceGenerationJobInputBuilder {
     pub(crate) include_seed_in_output: ::std::option::Option<bool>,
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartAudienceGenerationJobInputBuilder {
     /// <p>The name of the audience generation job.</p>
@@ -110,8 +110,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>The name of the audience generation job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience generation job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that is used for this audience generation job.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that is used for this audience generation job.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>The seed audience that is used to generate the audience.</p>
     pub fn set_seed_audience(mut self, input: ::std::option::Option<crate::types::AudienceGenerationJobDataSource>) -> Self {
-        self.seed_audience = input;
-        self
+        self.seed_audience = input; self
     }
     /// <p>The seed audience that is used to generate the audience.</p>
     pub fn get_seed_audience(&self) -> &::std::option::Option<crate::types::AudienceGenerationJobDataSource> {
@@ -154,8 +151,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>Whether the seed audience is included in the audience generation output.</p>
     pub fn set_include_seed_in_output(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_seed_in_output = input;
-        self
+        self.include_seed_in_output = input; self
     }
     /// <p>Whether the seed audience is included in the audience generation output.</p>
     pub fn get_include_seed_in_output(&self) -> &::std::option::Option<bool> {
@@ -168,8 +164,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>The identifier of the collaboration that contains the audience generation job.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The identifier of the collaboration that contains the audience generation job.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +177,7 @@ impl StartAudienceGenerationJobInputBuilder {
     }
     /// <p>The description of the audience generation job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience generation job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,9 +207,9 @@ impl StartAudienceGenerationJobInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -235,9 +229,8 @@ impl StartAudienceGenerationJobInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -257,24 +250,29 @@ impl StartAudienceGenerationJobInputBuilder {
     /// <li>
     /// <p>Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartAudienceGenerationJobInput`](crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput {
-            name: self.name,
-            configured_audience_model_arn: self.configured_audience_model_arn,
-            seed_audience: self.seed_audience,
-            include_seed_in_output: self.include_seed_in_output,
-            collaboration_id: self.collaboration_id,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput {
+                name: self.name
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                ,
+                seed_audience: self.seed_audience
+                ,
+                include_seed_in_output: self.include_seed_in_output
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

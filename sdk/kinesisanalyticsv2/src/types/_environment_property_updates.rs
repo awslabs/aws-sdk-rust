@@ -3,15 +3,14 @@
 /// <p>Describes updates to the execution property groups for a Managed Service for Apache Flink application or a Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentPropertyUpdates {
+pub struct EnvironmentPropertyUpdates  {
     /// <p>Describes updates to the execution property groups.</p>
-    pub property_groups: ::std::vec::Vec<crate::types::PropertyGroup>,
+    pub property_groups: ::std::vec::Vec::<crate::types::PropertyGroup>,
 }
-impl EnvironmentPropertyUpdates {
+impl  EnvironmentPropertyUpdates  {
     /// <p>Describes updates to the execution property groups.</p>
-    pub fn property_groups(&self) -> &[crate::types::PropertyGroup] {
-        use std::ops::Deref;
-        self.property_groups.deref()
+    pub fn property_groups(&self) -> & [crate::types::PropertyGroup] {
+        use std::ops::Deref; self.property_groups.deref()
     }
 }
 impl EnvironmentPropertyUpdates {
@@ -25,7 +24,7 @@ impl EnvironmentPropertyUpdates {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnvironmentPropertyUpdatesBuilder {
-    pub(crate) property_groups: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>,
+    pub(crate) property_groups: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>>,
 }
 impl EnvironmentPropertyUpdatesBuilder {
     /// Appends an item to `property_groups`.
@@ -35,30 +34,31 @@ impl EnvironmentPropertyUpdatesBuilder {
     /// <p>Describes updates to the execution property groups.</p>
     pub fn property_groups(mut self, input: crate::types::PropertyGroup) -> Self {
         let mut v = self.property_groups.unwrap_or_default();
-        v.push(input);
-        self.property_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.property_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes updates to the execution property groups.</p>
-    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>>) -> Self {
-        self.property_groups = input;
-        self
+    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>>) -> Self {
+        self.property_groups = input; self
     }
     /// <p>Describes updates to the execution property groups.</p>
-    pub fn get_property_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
+    pub fn get_property_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PropertyGroup>> {
         &self.property_groups
     }
     /// Consumes the builder and constructs a [`EnvironmentPropertyUpdates`](crate::types::EnvironmentPropertyUpdates).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_groups`](crate::types::builders::EnvironmentPropertyUpdatesBuilder::property_groups)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentPropertyUpdates, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentPropertyUpdates {
-            property_groups: self.property_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_groups",
-                    "property_groups was not specified but it is required when building EnvironmentPropertyUpdates",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentPropertyUpdates {
+                property_groups: self.property_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_groups", "property_groups was not specified but it is required when building EnvironmentPropertyUpdates")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Information about the location of a manifest file that Amazon Lookout for Vision uses to to create a dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetSource {
+pub struct DatasetSource  {
     /// <p>Location information for the manifest file.</p>
     pub ground_truth_manifest: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }
-impl DatasetSource {
+impl  DatasetSource  {
     /// <p>Location information for the manifest file.</p>
-    pub fn ground_truth_manifest(&self) -> ::std::option::Option<&crate::types::DatasetGroundTruthManifest> {
+    pub fn ground_truth_manifest(&self) -> ::std::option::Option<& crate::types::DatasetGroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DatasetSourceBuilder {
     }
     /// <p>Location information for the manifest file.</p>
     pub fn set_ground_truth_manifest(mut self, input: ::std::option::Option<crate::types::DatasetGroundTruthManifest>) -> Self {
-        self.ground_truth_manifest = input;
-        self
+        self.ground_truth_manifest = input; self
     }
     /// <p>Location information for the manifest file.</p>
     pub fn get_ground_truth_manifest(&self) -> &::std::option::Option<crate::types::DatasetGroundTruthManifest> {
@@ -44,7 +43,9 @@ impl DatasetSourceBuilder {
     /// Consumes the builder and constructs a [`DatasetSource`](crate::types::DatasetSource).
     pub fn build(self) -> crate::types::DatasetSource {
         crate::types::DatasetSource {
-            ground_truth_manifest: self.ground_truth_manifest,
+            ground_truth_manifest: self.ground_truth_manifest
+            ,
         }
     }
 }
+

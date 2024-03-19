@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlaybackRestrictionPolicyOutput {
+pub struct GetPlaybackRestrictionPolicyOutput  {
     /// <p></p>
     pub playback_restriction_policy: ::std::option::Option<crate::types::PlaybackRestrictionPolicy>,
     _request_id: Option<String>,
 }
-impl GetPlaybackRestrictionPolicyOutput {
+impl  GetPlaybackRestrictionPolicyOutput  {
     /// <p></p>
-    pub fn playback_restriction_policy(&self) -> ::std::option::Option<&crate::types::PlaybackRestrictionPolicy> {
+    pub fn playback_restriction_policy(&self) -> ::std::option::Option<& crate::types::PlaybackRestrictionPolicy> {
         self.playback_restriction_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPlaybackRestrictionPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPlaybackRestrictionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackRestrictionPolicyOutput`](crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyOutput).
     pub fn builder() -> crate::operation::get_playback_restriction_policy::builders::GetPlaybackRestrictionPolicyOutputBuilder {
@@ -40,27 +40,28 @@ impl GetPlaybackRestrictionPolicyOutputBuilder {
     }
     /// <p></p>
     pub fn set_playback_restriction_policy(mut self, input: ::std::option::Option<crate::types::PlaybackRestrictionPolicy>) -> Self {
-        self.playback_restriction_policy = input;
-        self
+        self.playback_restriction_policy = input; self
     }
     /// <p></p>
     pub fn get_playback_restriction_policy(&self) -> &::std::option::Option<crate::types::PlaybackRestrictionPolicy> {
         &self.playback_restriction_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPlaybackRestrictionPolicyOutput`](crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyOutput).
     pub fn build(self) -> crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyOutput {
         crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyOutput {
-            playback_restriction_policy: self.playback_restriction_policy,
+            playback_restriction_policy: self.playback_restriction_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailConfigurationType {
+pub struct EmailConfigurationType  {
     /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li>
@@ -56,7 +56,7 @@ pub struct EmailConfigurationType {
     /// </dl>
     pub configuration_set: ::std::option::Option<::std::string::String>,
 }
-impl EmailConfigurationType {
+impl  EmailConfigurationType  {
     /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
     /// <li>
@@ -65,11 +65,11 @@ impl EmailConfigurationType {
     /// <p>If you specify <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by calling Amazon SES on your behalf.</p></li>
     /// </ul>
     /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The destination to which the receiver of the email should reply.</p>
-    pub fn reply_to_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn reply_to_email_address(&self) -> ::std::option::Option<& str> {
         self.reply_to_email_address.as_deref()
     }
     /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
@@ -91,11 +91,11 @@ impl EmailConfigurationType {
     /// <p>Before Amazon Cognito can email your users, it requires additional permissions to call Amazon SES on your behalf. When you update your user pool with this option, Amazon Cognito creates a <i>service-linked role</i>, which is a type of role in your Amazon Web Services account. This role contains the permissions that allow you to access Amazon SES and send email messages from your email address. For more information about the service-linked role that Amazon Cognito creates, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon Cognito</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn email_sending_account(&self) -> ::std::option::Option<&crate::types::EmailSendingAccountType> {
+    pub fn email_sending_account(&self) -> ::std::option::Option<& crate::types::EmailSendingAccountType> {
         self.email_sending_account.as_ref()
     }
     /// <p>Either the sender’s email address or the sender’s name with their email address. For example, <code>testuser@example.com</code> or <code>Test User <testuser@example.com></testuser@example.com></code>. This address appears before the body of the email.</p>
-    pub fn from(&self) -> ::std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<& str> {
         self.from.as_deref()
     }
     /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails:</p>
@@ -113,7 +113,7 @@ impl EmailConfigurationType {
     /// <p>When leasing dedicated IP addresses with Amazon Simple Email Service, you can create groups of IP addresses, called dedicated IP pools. You can then associate the dedicated IP pools with configuration sets.</p>
     /// </dd>
     /// </dl>
-    pub fn configuration_set(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set(&self) -> ::std::option::Option<& str> {
         self.configuration_set.as_deref()
     }
 }
@@ -156,8 +156,7 @@ impl EmailConfigurationTypeBuilder {
     /// </ul>
     /// <p>The Region value of the <code>SourceArn</code> parameter must indicate a supported Amazon Web Services Region of your user pool. Typically, the Region in the <code>SourceArn</code> and the user pool Region are the same. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon SES email configuration regions</a> in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito Developer Guide</a>.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of a verified email address or an address from a verified domain in Amazon SES. You can set a <code>SourceArn</code> email from a verified domain only with an API request. You can set a verified email address, but not an address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses the email address that you provide in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
@@ -177,8 +176,7 @@ impl EmailConfigurationTypeBuilder {
     }
     /// <p>The destination to which the receiver of the email should reply.</p>
     pub fn set_reply_to_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reply_to_email_address = input;
-        self
+        self.reply_to_email_address = input; self
     }
     /// <p>The destination to which the receiver of the email should reply.</p>
     pub fn get_reply_to_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +225,7 @@ impl EmailConfigurationTypeBuilder {
     /// </dd>
     /// </dl>
     pub fn set_email_sending_account(mut self, input: ::std::option::Option<crate::types::EmailSendingAccountType>) -> Self {
-        self.email_sending_account = input;
-        self
+        self.email_sending_account = input; self
     }
     /// <p>Specifies whether Amazon Cognito uses its built-in functionality to send your users email messages, or uses your Amazon Simple Email Service email configuration. Specify one of the following values:</p>
     /// <dl>
@@ -259,8 +256,7 @@ impl EmailConfigurationTypeBuilder {
     }
     /// <p>Either the sender’s email address or the sender’s name with their email address. For example, <code>testuser@example.com</code> or <code>Test User <testuser@example.com></testuser@example.com></code>. This address appears before the body of the email.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>Either the sender’s email address or the sender’s name with their email address. For example, <code>testuser@example.com</code> or <code>Test User <testuser@example.com></testuser@example.com></code>. This address appears before the body of the email.</p>
     pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +297,7 @@ impl EmailConfigurationTypeBuilder {
     /// </dd>
     /// </dl>
     pub fn set_configuration_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set = input;
-        self
+        self.configuration_set = input; self
     }
     /// <p>The set of configuration rules that can be applied to emails sent using Amazon Simple Email Service. A configuration set is applied to an email by including a reference to the configuration set in the headers of the email. Once applied, all of the rules in that configuration set are applied to the email. Configuration sets can be used to apply the following types of rules to emails:</p>
     /// <dl>
@@ -325,11 +320,17 @@ impl EmailConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`EmailConfigurationType`](crate::types::EmailConfigurationType).
     pub fn build(self) -> crate::types::EmailConfigurationType {
         crate::types::EmailConfigurationType {
-            source_arn: self.source_arn,
-            reply_to_email_address: self.reply_to_email_address,
-            email_sending_account: self.email_sending_account,
-            from: self.from,
-            configuration_set: self.configuration_set,
+            source_arn: self.source_arn
+            ,
+            reply_to_email_address: self.reply_to_email_address
+            ,
+            email_sending_account: self.email_sending_account
+            ,
+            from: self.from
+            ,
+            configuration_set: self.configuration_set
+            ,
         }
     }
 }
+

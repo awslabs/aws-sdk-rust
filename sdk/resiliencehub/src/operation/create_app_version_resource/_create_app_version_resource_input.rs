@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAppVersionResourceInput {
+pub struct CreateAppVersionResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the resource.</p>
@@ -18,55 +18,54 @@ pub struct CreateAppVersionResourceInput {
     /// <p>Type of resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub app_components: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateAppVersionResourceInput {
+impl  CreateAppVersionResourceInput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Name of the resource.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>Logical identifier of the resource.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>Physical identifier of the resource.</p>
-    pub fn physical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<& str> {
         self.physical_resource_id.as_deref()
     }
     /// <p>Amazon Web Services region that owns the physical resource.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_components.is_none()`.
-    pub fn app_components(&self) -> &[::std::string::String] {
-        self.app_components.as_deref().unwrap_or_default()
+    pub fn app_components(&self) -> & [::std::string::String] {
+        self.app_components.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn additional_info(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn additional_info(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.additional_info.as_ref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -88,8 +87,8 @@ pub struct CreateAppVersionResourceInputBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) app_components: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) additional_info: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppVersionResourceInputBuilder {
@@ -101,8 +100,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Name of the resource.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>Name of the resource.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Logical identifier of the resource.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<crate::types::LogicalResourceId>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>Logical identifier of the resource.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<crate::types::LogicalResourceId> {
@@ -145,8 +141,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Physical identifier of the resource.</p>
     pub fn set_physical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.physical_resource_id = input;
-        self
+        self.physical_resource_id = input; self
     }
     /// <p>Physical identifier of the resource.</p>
     pub fn get_physical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Type of resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Type of resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,17 +194,16 @@ impl CreateAppVersionResourceInputBuilder {
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
     pub fn app_components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.app_components.unwrap_or_default();
-        v.push(input.into());
-        self.app_components = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.app_components = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.app_components = input;
-        self
+    pub fn set_app_components(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.app_components = input; self
     }
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_app_components(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.app_components
     }
     /// Adds a key-value pair to `additional_info`.
@@ -220,24 +211,18 @@ impl CreateAppVersionResourceInputBuilder {
     /// To override the contents of this collection use [`set_additional_info`](Self::set_additional_info).
     ///
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn additional_info(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.additional_info = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.additional_info = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn set_additional_info(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.additional_info = input;
-        self
+    pub fn set_additional_info(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.additional_info = input; self
     }
     /// <p>Currently, there is no supported additional information for resources.</p>
-    pub fn get_additional_info(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.additional_info
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -247,31 +232,38 @@ impl CreateAppVersionResourceInputBuilder {
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAppVersionResourceInput`](crate::operation::create_app_version_resource::CreateAppVersionResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_app_version_resource::CreateAppVersionResourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_app_version_resource::CreateAppVersionResourceInput {
-            app_arn: self.app_arn,
-            resource_name: self.resource_name,
-            logical_resource_id: self.logical_resource_id,
-            physical_resource_id: self.physical_resource_id,
-            aws_region: self.aws_region,
-            aws_account_id: self.aws_account_id,
-            resource_type: self.resource_type,
-            app_components: self.app_components,
-            additional_info: self.additional_info,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_version_resource::CreateAppVersionResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_version_resource::CreateAppVersionResourceInput {
+                app_arn: self.app_arn
+                ,
+                resource_name: self.resource_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+                physical_resource_id: self.physical_resource_id
+                ,
+                aws_region: self.aws_region
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                resource_type: self.resource_type
+                ,
+                app_components: self.app_components
+                ,
+                additional_info: self.additional_info
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

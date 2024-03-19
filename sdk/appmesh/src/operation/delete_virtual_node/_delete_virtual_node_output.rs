@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVirtualNodeOutput {
+pub struct DeleteVirtualNodeOutput  {
     /// <p>The virtual node that was deleted.</p>
     pub virtual_node: ::std::option::Option<crate::types::VirtualNodeData>,
     _request_id: Option<String>,
 }
-impl DeleteVirtualNodeOutput {
+impl  DeleteVirtualNodeOutput  {
     /// <p>The virtual node that was deleted.</p>
-    pub fn virtual_node(&self) -> ::std::option::Option<&crate::types::VirtualNodeData> {
+    pub fn virtual_node(&self) -> ::std::option::Option<& crate::types::VirtualNodeData> {
         self.virtual_node.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVirtualNodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVirtualNodeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput).
     pub fn builder() -> crate::operation::delete_virtual_node::builders::DeleteVirtualNodeOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteVirtualNodeOutputBuilder {
     }
     /// <p>The virtual node that was deleted.</p>
     pub fn set_virtual_node(mut self, input: ::std::option::Option<crate::types::VirtualNodeData>) -> Self {
-        self.virtual_node = input;
-        self
+        self.virtual_node = input; self
     }
     /// <p>The virtual node that was deleted.</p>
     pub fn get_virtual_node(&self) -> &::std::option::Option<crate::types::VirtualNodeData> {
         &self.virtual_node
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVirtualNodeOutput`](crate::operation::delete_virtual_node::DeleteVirtualNodeOutput).
     pub fn build(self) -> crate::operation::delete_virtual_node::DeleteVirtualNodeOutput {
         crate::operation::delete_virtual_node::DeleteVirtualNodeOutput {
-            virtual_node: self.virtual_node,
+            virtual_node: self.virtual_node
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

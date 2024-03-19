@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartIdMappingJobInput {
+pub struct StartIdMappingJobInput  {
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub workflow_name: ::std::option::Option<::std::string::String>,
 }
-impl StartIdMappingJobInput {
+impl  StartIdMappingJobInput  {
     /// <p>The name of the ID mapping job to be retrieved.</p>
-    pub fn workflow_name(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_name(&self) -> ::std::option::Option<& str> {
         self.workflow_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StartIdMappingJobInputBuilder {
     }
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the ID mapping job to be retrieved.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_name
     }
     /// Consumes the builder and constructs a [`StartIdMappingJobInput`](crate::operation::start_id_mapping_job::StartIdMappingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_id_mapping_job::StartIdMappingJobInput {
-            workflow_name: self.workflow_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_id_mapping_job::StartIdMappingJobInput {
+                workflow_name: self.workflow_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGeofencesInput {
+pub struct ListGeofencesInput  {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
@@ -12,14 +12,14 @@ pub struct ListGeofencesInput {
     /// <p>Default value: <code>100</code></p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListGeofencesInput {
+impl  ListGeofencesInput  {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional limit for the number of geofences returned in a single call.</p>
@@ -52,8 +52,7 @@ impl ListGeofencesInputBuilder {
     }
     /// <p>The name of the geofence collection storing the list of geofences.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The name of the geofence collection storing the list of geofences.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListGeofencesInputBuilder {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
@@ -85,8 +83,7 @@ impl ListGeofencesInputBuilder {
     /// <p>An optional limit for the number of geofences returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional limit for the number of geofences returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
@@ -94,13 +91,17 @@ impl ListGeofencesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesInput {
-            collection_name: self.collection_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_geofences::ListGeofencesInput {
+                collection_name: self.collection_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

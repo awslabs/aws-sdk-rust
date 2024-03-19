@@ -3,13 +3,13 @@
 /// <p>The options that determine the default settings for a section-based layout configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultSectionBasedLayoutConfiguration {
+pub struct DefaultSectionBasedLayoutConfiguration  {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
     pub canvas_size_options: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>,
 }
-impl DefaultSectionBasedLayoutConfiguration {
+impl  DefaultSectionBasedLayoutConfiguration  {
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
-    pub fn canvas_size_options(&self) -> ::std::option::Option<&crate::types::SectionBasedLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(&self) -> ::std::option::Option<& crate::types::SectionBasedLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DefaultSectionBasedLayoutConfigurationBuilder {
     }
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
     pub fn set_canvas_size_options(mut self, input: ::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions>) -> Self {
-        self.canvas_size_options = input;
-        self
+        self.canvas_size_options = input; self
     }
     /// <p>Determines the screen canvas size options for a section-based layout.</p>
     pub fn get_canvas_size_options(&self) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
@@ -45,7 +44,9 @@ impl DefaultSectionBasedLayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`DefaultSectionBasedLayoutConfiguration`](crate::types::DefaultSectionBasedLayoutConfiguration).
     pub fn build(self) -> crate::types::DefaultSectionBasedLayoutConfiguration {
         crate::types::DefaultSectionBasedLayoutConfiguration {
-            canvas_size_options: self.canvas_size_options,
+            canvas_size_options: self.canvas_size_options
+            ,
         }
     }
 }
+

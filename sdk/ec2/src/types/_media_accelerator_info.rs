@@ -3,18 +3,19 @@
 /// <p>Describes the media accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAcceleratorInfo {
+pub struct MediaAcceleratorInfo  {
     /// <p>Describes the media accelerators for the instance type.</p>
-    pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::MediaDeviceInfo>>,
+    pub accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::MediaDeviceInfo>>,
     /// <p>The total size of the memory for the media accelerators for the instance type, in MiB.</p>
     pub total_media_memory_in_mib: ::std::option::Option<i32>,
 }
-impl MediaAcceleratorInfo {
+impl  MediaAcceleratorInfo  {
     /// <p>Describes the media accelerators for the instance type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accelerators.is_none()`.
-    pub fn accelerators(&self) -> &[crate::types::MediaDeviceInfo] {
-        self.accelerators.as_deref().unwrap_or_default()
+    pub fn accelerators(&self) -> & [crate::types::MediaDeviceInfo] {
+        self.accelerators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total size of the memory for the media accelerators for the instance type, in MiB.</p>
     pub fn total_media_memory_in_mib(&self) -> ::std::option::Option<i32> {
@@ -32,7 +33,7 @@ impl MediaAcceleratorInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MediaAcceleratorInfoBuilder {
-    pub(crate) accelerators: ::std::option::Option<::std::vec::Vec<crate::types::MediaDeviceInfo>>,
+    pub(crate) accelerators: ::std::option::Option<::std::vec::Vec::<crate::types::MediaDeviceInfo>>,
     pub(crate) total_media_memory_in_mib: ::std::option::Option<i32>,
 }
 impl MediaAcceleratorInfoBuilder {
@@ -43,17 +44,16 @@ impl MediaAcceleratorInfoBuilder {
     /// <p>Describes the media accelerators for the instance type.</p>
     pub fn accelerators(mut self, input: crate::types::MediaDeviceInfo) -> Self {
         let mut v = self.accelerators.unwrap_or_default();
-        v.push(input);
-        self.accelerators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accelerators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the media accelerators for the instance type.</p>
-    pub fn set_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaDeviceInfo>>) -> Self {
-        self.accelerators = input;
-        self
+    pub fn set_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaDeviceInfo>>) -> Self {
+        self.accelerators = input; self
     }
     /// <p>Describes the media accelerators for the instance type.</p>
-    pub fn get_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaDeviceInfo>> {
+    pub fn get_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaDeviceInfo>> {
         &self.accelerators
     }
     /// <p>The total size of the memory for the media accelerators for the instance type, in MiB.</p>
@@ -63,8 +63,7 @@ impl MediaAcceleratorInfoBuilder {
     }
     /// <p>The total size of the memory for the media accelerators for the instance type, in MiB.</p>
     pub fn set_total_media_memory_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_media_memory_in_mib = input;
-        self
+        self.total_media_memory_in_mib = input; self
     }
     /// <p>The total size of the memory for the media accelerators for the instance type, in MiB.</p>
     pub fn get_total_media_memory_in_mib(&self) -> &::std::option::Option<i32> {
@@ -73,8 +72,11 @@ impl MediaAcceleratorInfoBuilder {
     /// Consumes the builder and constructs a [`MediaAcceleratorInfo`](crate::types::MediaAcceleratorInfo).
     pub fn build(self) -> crate::types::MediaAcceleratorInfo {
         crate::types::MediaAcceleratorInfo {
-            accelerators: self.accelerators,
-            total_media_memory_in_mib: self.total_media_memory_in_mib,
+            accelerators: self.accelerators
+            ,
+            total_media_memory_in_mib: self.total_media_memory_in_mib
+            ,
         }
     }
 }
+

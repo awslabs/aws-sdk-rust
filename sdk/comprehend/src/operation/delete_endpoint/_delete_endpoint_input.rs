@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEndpointInput {
+pub struct DeleteEndpointInput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEndpointInput {
+impl  DeleteEndpointInput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_arn
     }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_endpoint::DeleteEndpointInput {
-            endpoint_arn: self.endpoint_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_endpoint::DeleteEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_endpoint::DeleteEndpointInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+            }
+        )
     }
 }
+

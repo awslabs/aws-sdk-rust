@@ -3,22 +3,23 @@
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RollbackConfiguration {
+pub struct RollbackConfiguration  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub monitoring_time_in_minutes: ::std::option::Option<i32>,
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub rollback_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::RollbackTrigger>>,
 }
-impl RollbackConfiguration {
+impl  RollbackConfiguration  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn monitoring_time_in_minutes(&self) -> ::std::option::Option<i32> {
         self.monitoring_time_in_minutes
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rollback_triggers.is_none()`.
-    pub fn rollback_triggers(&self) -> &[crate::types::RollbackTrigger] {
-        self.rollback_triggers.as_deref().unwrap_or_default()
+    pub fn rollback_triggers(&self) -> & [crate::types::RollbackTrigger] {
+        self.rollback_triggers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RollbackConfiguration {
@@ -33,7 +34,7 @@ impl RollbackConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RollbackConfigurationBuilder {
     pub(crate) monitoring_time_in_minutes: ::std::option::Option<i32>,
-    pub(crate) rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub(crate) rollback_triggers: ::std::option::Option<::std::vec::Vec::<crate::types::RollbackTrigger>>,
 }
 impl RollbackConfigurationBuilder {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
@@ -43,8 +44,7 @@ impl RollbackConfigurationBuilder {
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn set_monitoring_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.monitoring_time_in_minutes = input;
-        self
+        self.monitoring_time_in_minutes = input; self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn get_monitoring_time_in_minutes(&self) -> &::std::option::Option<i32> {
@@ -57,24 +57,26 @@ impl RollbackConfigurationBuilder {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn rollback_triggers(mut self, input: crate::types::RollbackTrigger) -> Self {
         let mut v = self.rollback_triggers.unwrap_or_default();
-        v.push(input);
-        self.rollback_triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rollback_triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn set_rollback_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>) -> Self {
-        self.rollback_triggers = input;
-        self
+    pub fn set_rollback_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RollbackTrigger>>) -> Self {
+        self.rollback_triggers = input; self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn get_rollback_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>> {
+    pub fn get_rollback_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RollbackTrigger>> {
         &self.rollback_triggers
     }
     /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::types::RollbackConfiguration).
     pub fn build(self) -> crate::types::RollbackConfiguration {
         crate::types::RollbackConfiguration {
-            monitoring_time_in_minutes: self.monitoring_time_in_minutes,
-            rollback_triggers: self.rollback_triggers,
+            monitoring_time_in_minutes: self.monitoring_time_in_minutes
+            ,
+            rollback_triggers: self.rollback_triggers
+            ,
         }
     }
 }
+

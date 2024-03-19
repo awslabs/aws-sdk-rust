@@ -3,7 +3,7 @@
 /// <p>Contains route settings for a stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsApiGatewayV2RouteSettings {
+pub struct AwsApiGatewayV2RouteSettings  {
     /// <p>Indicates whether detailed metrics are enabled.</p>
     pub detailed_metrics_enabled: ::std::option::Option<bool>,
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
@@ -18,7 +18,7 @@ pub struct AwsApiGatewayV2RouteSettings {
     /// <p>The throttling rate limit.</p>
     pub throttling_rate_limit: ::std::option::Option<f64>,
 }
-impl AwsApiGatewayV2RouteSettings {
+impl  AwsApiGatewayV2RouteSettings  {
     /// <p>Indicates whether detailed metrics are enabled.</p>
     pub fn detailed_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.detailed_metrics_enabled
@@ -27,7 +27,7 @@ impl AwsApiGatewayV2RouteSettings {
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
-    pub fn logging_level(&self) -> ::std::option::Option<&str> {
+    pub fn logging_level(&self) -> ::std::option::Option<& str> {
         self.logging_level.as_deref()
     }
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
@@ -68,8 +68,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     }
     /// <p>Indicates whether detailed metrics are enabled.</p>
     pub fn set_detailed_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detailed_metrics_enabled = input;
-        self
+        self.detailed_metrics_enabled = input; self
     }
     /// <p>Indicates whether detailed metrics are enabled.</p>
     pub fn get_detailed_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -88,8 +87,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// <p>If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code> events and extra informational events.</p>
     /// <p>Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code></p>
     pub fn set_logging_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logging_level = input;
-        self
+        self.logging_level = input; self
     }
     /// <p>The logging level. The logging level affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     /// <p>If the logging level is <code>ERROR</code>, then the logs only include error-level entries.</p>
@@ -105,8 +103,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     }
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     pub fn set_data_trace_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_trace_enabled = input;
-        self
+        self.data_trace_enabled = input; self
     }
     /// <p>Indicates whether data trace logging is enabled. Data trace logging affects the log entries that are pushed to CloudWatch Logs. Supported only for WebSocket APIs.</p>
     pub fn get_data_trace_enabled(&self) -> &::std::option::Option<bool> {
@@ -119,8 +116,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     }
     /// <p>The throttling burst limit.</p>
     pub fn set_throttling_burst_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throttling_burst_limit = input;
-        self
+        self.throttling_burst_limit = input; self
     }
     /// <p>The throttling burst limit.</p>
     pub fn get_throttling_burst_limit(&self) -> &::std::option::Option<i32> {
@@ -133,8 +129,7 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     }
     /// <p>The throttling rate limit.</p>
     pub fn set_throttling_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.throttling_rate_limit = input;
-        self
+        self.throttling_rate_limit = input; self
     }
     /// <p>The throttling rate limit.</p>
     pub fn get_throttling_rate_limit(&self) -> &::std::option::Option<f64> {
@@ -143,11 +138,17 @@ impl AwsApiGatewayV2RouteSettingsBuilder {
     /// Consumes the builder and constructs a [`AwsApiGatewayV2RouteSettings`](crate::types::AwsApiGatewayV2RouteSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayV2RouteSettings {
         crate::types::AwsApiGatewayV2RouteSettings {
-            detailed_metrics_enabled: self.detailed_metrics_enabled,
-            logging_level: self.logging_level,
-            data_trace_enabled: self.data_trace_enabled,
-            throttling_burst_limit: self.throttling_burst_limit,
-            throttling_rate_limit: self.throttling_rate_limit,
+            detailed_metrics_enabled: self.detailed_metrics_enabled
+            ,
+            logging_level: self.logging_level
+            ,
+            data_trace_enabled: self.data_trace_enabled
+            ,
+            throttling_burst_limit: self.throttling_burst_limit
+            ,
+            throttling_rate_limit: self.throttling_rate_limit
+            ,
         }
     }
 }
+

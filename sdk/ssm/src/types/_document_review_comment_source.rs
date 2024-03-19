@@ -3,19 +3,19 @@
 /// <p>Information about comments added to a document review request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentReviewCommentSource {
+pub struct DocumentReviewCommentSource  {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     pub r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
     pub content: ::std::option::Option<::std::string::String>,
 }
-impl DocumentReviewCommentSource {
+impl  DocumentReviewCommentSource  {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentReviewCommentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DocumentReviewCommentType> {
         self.r#type.as_ref()
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DocumentReviewCommentSourceBuilder {
     }
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentReviewCommentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentReviewCommentType> {
@@ -55,8 +54,7 @@ impl DocumentReviewCommentSourceBuilder {
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DocumentReviewCommentSourceBuilder {
     /// Consumes the builder and constructs a [`DocumentReviewCommentSource`](crate::types::DocumentReviewCommentSource).
     pub fn build(self) -> crate::types::DocumentReviewCommentSource {
         crate::types::DocumentReviewCommentSource {
-            r#type: self.r#type,
-            content: self.content,
+            r#type: self.r#type
+            ,
+            content: self.content
+            ,
         }
     }
 }
+

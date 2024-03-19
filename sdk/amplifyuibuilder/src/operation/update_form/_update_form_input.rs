@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFormInput {
+pub struct UpdateFormInput  {
     /// <p>The unique ID for the Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
@@ -14,25 +14,25 @@ pub struct UpdateFormInput {
     /// <p>The request accepts the following data in JSON format.</p>
     pub updated_form: ::std::option::Option<crate::types::UpdateFormData>,
 }
-impl UpdateFormInput {
+impl  UpdateFormInput  {
     /// <p>The unique ID for the Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID for the form.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The request accepts the following data in JSON format.</p>
-    pub fn updated_form(&self) -> ::std::option::Option<&crate::types::UpdateFormData> {
+    pub fn updated_form(&self) -> ::std::option::Option<& crate::types::UpdateFormData> {
         self.updated_form.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateFormInputBuilder {
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateFormInputBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl UpdateFormInputBuilder {
     }
     /// <p>The unique ID for the form.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for the form.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl UpdateFormInputBuilder {
     }
     /// <p>The unique client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The unique client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +117,7 @@ impl UpdateFormInputBuilder {
     }
     /// <p>The request accepts the following data in JSON format.</p>
     pub fn set_updated_form(mut self, input: ::std::option::Option<crate::types::UpdateFormData>) -> Self {
-        self.updated_form = input;
-        self
+        self.updated_form = input; self
     }
     /// <p>The request accepts the following data in JSON format.</p>
     pub fn get_updated_form(&self) -> &::std::option::Option<crate::types::UpdateFormData> {
@@ -130,12 +125,20 @@ impl UpdateFormInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateFormInput`](crate::operation::update_form::UpdateFormInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_form::UpdateFormInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_form::UpdateFormInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            client_token: self.client_token,
-            updated_form: self.updated_form,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_form::UpdateFormInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                client_token: self.client_token
+                ,
+                updated_form: self.updated_form
+                ,
+            }
+        )
     }
 }
+

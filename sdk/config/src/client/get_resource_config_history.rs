@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetResourceConfigHistory`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_resource_type):<br>required: **true**<br><p>The resource type.</p><br>
     ///   - [`resource_id(impl Into<String>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_resource_id):<br>required: **true**<br><p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p><br>
     ///   - [`later_time(DateTime)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::later_time) / [`set_later_time(Option<DateTime>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_later_time):<br>required: **false**<br><p>The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`chronological_order(ChronologicalOrder)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::chronological_order) / [`set_chronological_order(Option<ChronologicalOrder>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_chronological_order):<br>required: **false**<br><p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput) with field(s):
+                            /// - On success, responds with [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput) with field(s):
     ///   - [`configuration_items(Option<Vec::<ConfigurationItem>>)`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput::configuration_items): <p>A list that contains the configuration history of one or more resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput::next_token): <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<GetResourceConfigHistoryError>`](crate::operation::get_resource_config_history::GetResourceConfigHistoryError)
+                            /// - On failure, responds with [`SdkError<GetResourceConfigHistoryError>`](crate::operation::get_resource_config_history::GetResourceConfigHistoryError)
     pub fn get_resource_config_history(&self) -> crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder {
-        crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_resource_config_history::builders::GetResourceConfigHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

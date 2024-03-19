@@ -4,19 +4,19 @@
 /// <p>List of errors for dataset association failures.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorResult {
+pub struct ErrorResult  {
     /// <p>The error code.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The corresponding error message for the error code.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorResult {
+impl  ErrorResult  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The corresponding error message for the error code.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ErrorResultBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ErrorResultBuilder {
     }
     /// <p>The corresponding error message for the error code.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The corresponding error message for the error code.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ErrorResultBuilder {
     /// Consumes the builder and constructs a [`ErrorResult`](crate::types::ErrorResult).
     pub fn build(self) -> crate::types::ErrorResult {
         crate::types::ErrorResult {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

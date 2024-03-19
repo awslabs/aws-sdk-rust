@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartWirelessDeviceImportTaskOutput {
+pub struct StartWirelessDeviceImportTaskOutput  {
     /// <p>The import task ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartWirelessDeviceImportTaskOutput {
+impl  StartWirelessDeviceImportTaskOutput  {
     /// <p>The import task ID.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartWirelessDeviceImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartWirelessDeviceImportTaskOutput`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput).
     pub fn builder() -> crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskOutputBuilder {
@@ -47,8 +47,7 @@ impl StartWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The import task ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The import task ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl StartWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartWirelessDeviceImportTaskOutput`](crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput).
     pub fn build(self) -> crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput {
         crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

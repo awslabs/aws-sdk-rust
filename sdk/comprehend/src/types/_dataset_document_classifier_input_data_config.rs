@@ -4,7 +4,7 @@
 /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetDocumentClassifierInputDataConfig {
+pub struct DatasetDocumentClassifierInputDataConfig  {
     /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
@@ -12,16 +12,15 @@ pub struct DatasetDocumentClassifierInputDataConfig {
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub label_delimiter: ::std::option::Option<::std::string::String>,
 }
-impl DatasetDocumentClassifierInputDataConfig {
+impl  DatasetDocumentClassifierInputDataConfig  {
     /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
-    pub fn label_delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn label_delimiter(&self) -> ::std::option::Option<& str> {
         self.label_delimiter.as_deref()
     }
 }
@@ -52,8 +51,7 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
     /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
@@ -68,8 +66,7 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub fn set_label_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_delimiter = input;
-        self
+        self.label_delimiter = input; self
     }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub fn get_label_delimiter(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +75,18 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
     /// Consumes the builder and constructs a [`DatasetDocumentClassifierInputDataConfig`](crate::types::DatasetDocumentClassifierInputDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::DatasetDocumentClassifierInputDataConfigBuilder::s3_uri)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DatasetDocumentClassifierInputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetDocumentClassifierInputDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building DatasetDocumentClassifierInputDataConfig",
-                )
-            })?,
-            label_delimiter: self.label_delimiter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetDocumentClassifierInputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DatasetDocumentClassifierInputDataConfig {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building DatasetDocumentClassifierInputDataConfig")
+                    )?
+                ,
+                label_delimiter: self.label_delimiter
+                ,
+            }
+        )
     }
 }
+

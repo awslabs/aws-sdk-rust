@@ -3,11 +3,11 @@
 /// <p>Provides the values of the specified field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationFieldValueInformation {
+pub struct RegistrationFieldValueInformation  {
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub field_path: ::std::string::String,
     /// <p>An array of values for the form field.</p>
-    pub select_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub select_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The text data for a free form field.</p>
     pub text_value: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the registration attachment.</p>
@@ -15,28 +15,28 @@ pub struct RegistrationFieldValueInformation {
     /// <p>A description of why the registration was denied.</p>
     pub denied_reason: ::std::option::Option<::std::string::String>,
 }
-impl RegistrationFieldValueInformation {
+impl  RegistrationFieldValueInformation  {
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
-    pub fn field_path(&self) -> &str {
-        use std::ops::Deref;
-        self.field_path.deref()
+    pub fn field_path(&self) -> & str {
+        use std::ops::Deref; self.field_path.deref()
     }
     /// <p>An array of values for the form field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.select_choices.is_none()`.
-    pub fn select_choices(&self) -> &[::std::string::String] {
-        self.select_choices.as_deref().unwrap_or_default()
+    pub fn select_choices(&self) -> & [::std::string::String] {
+        self.select_choices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The text data for a free form field.</p>
-    pub fn text_value(&self) -> ::std::option::Option<&str> {
+    pub fn text_value(&self) -> ::std::option::Option<& str> {
         self.text_value.as_deref()
     }
     /// <p>The unique identifier for the registration attachment.</p>
-    pub fn registration_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_attachment_id(&self) -> ::std::option::Option<& str> {
         self.registration_attachment_id.as_deref()
     }
     /// <p>A description of why the registration was denied.</p>
-    pub fn denied_reason(&self) -> ::std::option::Option<&str> {
+    pub fn denied_reason(&self) -> ::std::option::Option<& str> {
         self.denied_reason.as_deref()
     }
 }
@@ -52,7 +52,7 @@ impl RegistrationFieldValueInformation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationFieldValueInformationBuilder {
     pub(crate) field_path: ::std::option::Option<::std::string::String>,
-    pub(crate) select_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) select_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) text_value: ::std::option::Option<::std::string::String>,
     pub(crate) registration_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) denied_reason: ::std::option::Option<::std::string::String>,
@@ -66,8 +66,7 @@ impl RegistrationFieldValueInformationBuilder {
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn set_field_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_path = input;
-        self
+        self.field_path = input; self
     }
     /// <p>The path to the registration form field. You can use <code>DescribeRegistrationFieldDefinitions</code> for a list of <b>FieldPaths</b>.</p>
     pub fn get_field_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +79,16 @@ impl RegistrationFieldValueInformationBuilder {
     /// <p>An array of values for the form field.</p>
     pub fn select_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.select_choices.unwrap_or_default();
-        v.push(input.into());
-        self.select_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.select_choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of values for the form field.</p>
-    pub fn set_select_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.select_choices = input;
-        self
+    pub fn set_select_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.select_choices = input; self
     }
     /// <p>An array of values for the form field.</p>
-    pub fn get_select_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_select_choices(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.select_choices
     }
     /// <p>The text data for a free form field.</p>
@@ -100,8 +98,7 @@ impl RegistrationFieldValueInformationBuilder {
     }
     /// <p>The text data for a free form field.</p>
     pub fn set_text_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text_value = input;
-        self
+        self.text_value = input; self
     }
     /// <p>The text data for a free form field.</p>
     pub fn get_text_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl RegistrationFieldValueInformationBuilder {
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn set_registration_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_attachment_id = input;
-        self
+        self.registration_attachment_id = input; self
     }
     /// <p>The unique identifier for the registration attachment.</p>
     pub fn get_registration_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl RegistrationFieldValueInformationBuilder {
     }
     /// <p>A description of why the registration was denied.</p>
     pub fn set_denied_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.denied_reason = input;
-        self
+        self.denied_reason = input; self
     }
     /// <p>A description of why the registration was denied.</p>
     pub fn get_denied_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,17 +134,23 @@ impl RegistrationFieldValueInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_path`](crate::types::builders::RegistrationFieldValueInformationBuilder::field_path)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationFieldValueInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationFieldValueInformation {
-            field_path: self.field_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_path",
-                    "field_path was not specified but it is required when building RegistrationFieldValueInformation",
-                )
-            })?,
-            select_choices: self.select_choices,
-            text_value: self.text_value,
-            registration_attachment_id: self.registration_attachment_id,
-            denied_reason: self.denied_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationFieldValueInformation {
+                field_path: self.field_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_path", "field_path was not specified but it is required when building RegistrationFieldValueInformation")
+                    )?
+                ,
+                select_choices: self.select_choices
+                ,
+                text_value: self.text_value
+                ,
+                registration_attachment_id: self.registration_attachment_id
+                ,
+                denied_reason: self.denied_reason
+                ,
+            }
+        )
     }
 }
+

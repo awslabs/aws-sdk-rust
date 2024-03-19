@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFileSystemsInput {
+pub struct DescribeFileSystemsInput  {
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.</p>
@@ -13,21 +13,21 @@ pub struct DescribeFileSystemsInput {
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFileSystemsInput {
+impl  DescribeFileSystemsInput  {
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
-    pub fn creation_token(&self) -> ::std::option::Option<&str> {
+    pub fn creation_token(&self) -> ::std::option::Option<& str> {
         self.creation_token.as_deref()
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This number is automatically set to 100. The response is paginated at 100 per page if you have more than 100 file systems.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub fn set_creation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_token = input;
-        self
+        self.creation_token = input; self
     }
     /// <p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>
     pub fn get_creation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl DescribeFileSystemsInputBuilder {
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>(Optional) ID of the file system whose description you want to retrieve (String).</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DescribeFileSystemsInput`](crate::operation::describe_file_systems::DescribeFileSystemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_file_systems::DescribeFileSystemsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_file_systems::DescribeFileSystemsInput {
-            max_items: self.max_items,
-            marker: self.marker,
-            creation_token: self.creation_token,
-            file_system_id: self.file_system_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_file_systems::DescribeFileSystemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_file_systems::DescribeFileSystemsInput {
+                max_items: self.max_items
+                ,
+                marker: self.marker
+                ,
+                creation_token: self.creation_token
+                ,
+                file_system_id: self.file_system_id
+                ,
+            }
+        )
     }
 }
+

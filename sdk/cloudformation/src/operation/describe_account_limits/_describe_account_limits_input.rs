@@ -3,13 +3,13 @@
 /// <p>The input for the <code>DescribeAccountLimits</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountLimitsInput {
+pub struct DescribeAccountLimitsInput  {
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAccountLimitsInput {
+impl  DescribeAccountLimitsInput  {
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl DescribeAccountLimitsInputBuilder {
     }
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAccountLimitsInput`](crate::operation::describe_account_limits::DescribeAccountLimitsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_account_limits::DescribeAccountLimitsInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_limits::DescribeAccountLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_account_limits::DescribeAccountLimitsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

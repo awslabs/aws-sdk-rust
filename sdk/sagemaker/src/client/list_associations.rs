@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssociations`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_arn(impl Into<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_source_arn):<br>required: **false**<br><p>A filter that returns only associations with the specified source ARN.</p><br>
     ///   - [`destination_arn(impl Into<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::destination_arn) / [`set_destination_arn(Option<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_destination_arn):<br>required: **false**<br><p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p><br>
     ///   - [`source_type(impl Into<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::source_type) / [`set_source_type(Option<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_source_type):<br>required: **false**<br><p>A filter that returns only associations with the specified source type.</p><br>
@@ -15,11 +15,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_associations::builders::ListAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of associations to return in the response. The default value is 10.</p><br>
-    /// - On success, responds with [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListAssociationsOutput`](crate::operation::list_associations::ListAssociationsOutput) with field(s):
     ///   - [`association_summaries(Option<Vec::<AssociationSummary>>)`](crate::operation::list_associations::ListAssociationsOutput::association_summaries): <p>A list of associations and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_associations::ListAssociationsOutput::next_token): <p>A token for getting the next set of associations, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListAssociationsError>`](crate::operation::list_associations::ListAssociationsError)
+                            /// - On failure, responds with [`SdkError<ListAssociationsError>`](crate::operation::list_associations::ListAssociationsError)
     pub fn list_associations(&self) -> crate::operation::list_associations::builders::ListAssociationsFluentBuilder {
-        crate::operation::list_associations::builders::ListAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_associations::builders::ListAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

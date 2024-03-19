@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBrowserSettingsOutput {
+pub struct ListBrowserSettingsOutput  {
     /// <p>The browser settings.</p>
-    pub browser_settings: ::std::option::Option<::std::vec::Vec<crate::types::BrowserSettingsSummary>>,
+    pub browser_settings: ::std::option::Option<::std::vec::Vec::<crate::types::BrowserSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBrowserSettingsOutput {
+impl  ListBrowserSettingsOutput  {
     /// <p>The browser settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.browser_settings.is_none()`.
-    pub fn browser_settings(&self) -> &[crate::types::BrowserSettingsSummary] {
-        self.browser_settings.as_deref().unwrap_or_default()
+    pub fn browser_settings(&self) -> & [crate::types::BrowserSettingsSummary] {
+        self.browser_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBrowserSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBrowserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListBrowserSettingsOutput`](crate::operation::list_browser_settings::ListBrowserSettingsOutput).
     pub fn builder() -> crate::operation::list_browser_settings::builders::ListBrowserSettingsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListBrowserSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBrowserSettingsOutputBuilder {
-    pub(crate) browser_settings: ::std::option::Option<::std::vec::Vec<crate::types::BrowserSettingsSummary>>,
+    pub(crate) browser_settings: ::std::option::Option<::std::vec::Vec::<crate::types::BrowserSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListBrowserSettingsOutputBuilder {
     /// <p>The browser settings.</p>
     pub fn browser_settings(mut self, input: crate::types::BrowserSettingsSummary) -> Self {
         let mut v = self.browser_settings.unwrap_or_default();
-        v.push(input);
-        self.browser_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.browser_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The browser settings.</p>
-    pub fn set_browser_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserSettingsSummary>>) -> Self {
-        self.browser_settings = input;
-        self
+    pub fn set_browser_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BrowserSettingsSummary>>) -> Self {
+        self.browser_settings = input; self
     }
     /// <p>The browser settings.</p>
-    pub fn get_browser_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserSettingsSummary>> {
+    pub fn get_browser_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BrowserSettingsSummary>> {
         &self.browser_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -69,28 +69,30 @@ impl ListBrowserSettingsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBrowserSettingsOutput`](crate::operation::list_browser_settings::ListBrowserSettingsOutput).
     pub fn build(self) -> crate::operation::list_browser_settings::ListBrowserSettingsOutput {
         crate::operation::list_browser_settings::ListBrowserSettingsOutput {
-            browser_settings: self.browser_settings,
-            next_token: self.next_token,
+            browser_settings: self.browser_settings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

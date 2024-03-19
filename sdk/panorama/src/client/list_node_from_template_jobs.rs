@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNodeFromTemplateJobs`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of node from template jobs to return in one page of results.</p><br>
-    /// - On success, responds with [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput) with field(s):
+                            /// - On success, responds with [`ListNodeFromTemplateJobsOutput`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput) with field(s):
     ///   - [`node_from_template_jobs(Vec::<NodeFromTemplateJob>)`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput::node_from_template_jobs): <p>A list of jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListNodeFromTemplateJobsError>`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError)
+                            /// - On failure, responds with [`SdkError<ListNodeFromTemplateJobsError>`](crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError)
     pub fn list_node_from_template_jobs(&self) -> crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder {
-        crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

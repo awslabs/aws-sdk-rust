@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSlackChannelConfigurations`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.<br>
     ///   - [`chat_configuration_arn(impl Into<String>)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::chat_configuration_arn) / [`set_chat_configuration_arn(Option<String>)`](crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::set_chat_configuration_arn):<br>required: **false**<br>An optional ARN of a SlackChannelConfiguration to describe.<br>
-    /// - On success, responds with [`DescribeSlackChannelConfigurationsOutput`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSlackChannelConfigurationsOutput`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput::next_token): An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     ///   - [`slack_channel_configurations(Option<Vec::<SlackChannelConfiguration>>)`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput::slack_channel_configurations): A list of Slack channel configurations.
-    /// - On failure, responds with [`SdkError<DescribeSlackChannelConfigurationsError>`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError)
-    pub fn describe_slack_channel_configurations(
-        &self,
-    ) -> crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder {
-        crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeSlackChannelConfigurationsError>`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsError)
+    pub fn describe_slack_channel_configurations(&self) -> crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder {
+                                crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

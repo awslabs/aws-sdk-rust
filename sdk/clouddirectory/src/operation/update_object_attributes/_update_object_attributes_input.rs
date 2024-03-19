@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateObjectAttributesInput {
+pub struct UpdateObjectAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference that identifies the object.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The attributes update structure.</p>
-    pub attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub attribute_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>>,
 }
-impl UpdateObjectAttributesInput {
+impl  UpdateObjectAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The reference that identifies the object.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_updates.is_none()`.
-    pub fn attribute_updates(&self) -> &[crate::types::ObjectAttributeUpdate] {
-        self.attribute_updates.as_deref().unwrap_or_default()
+    pub fn attribute_updates(&self) -> & [crate::types::ObjectAttributeUpdate] {
+        self.attribute_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateObjectAttributesInput {
@@ -39,7 +40,7 @@ impl UpdateObjectAttributesInput {
 pub struct UpdateObjectAttributesInputBuilder {
     pub(crate) directory_arn: ::std::option::Option<::std::string::String>,
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
-    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>>,
 }
 impl UpdateObjectAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
@@ -50,8 +51,7 @@ impl UpdateObjectAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl UpdateObjectAttributesInputBuilder {
     }
     /// <p>The reference that identifies the object.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>The reference that identifies the object.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -79,30 +78,30 @@ impl UpdateObjectAttributesInputBuilder {
     /// <p>The attributes update structure.</p>
     pub fn attribute_updates(mut self, input: crate::types::ObjectAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
-        v.push(input);
-        self.attribute_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>) -> Self {
-        self.attribute_updates = input;
-        self
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>>) -> Self {
+        self.attribute_updates = input; self
     }
     /// <p>The attributes update structure.</p>
-    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>> {
         &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`UpdateObjectAttributesInput`](crate::operation::update_object_attributes::UpdateObjectAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_object_attributes::UpdateObjectAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_object_attributes::UpdateObjectAttributesInput {
-            directory_arn: self.directory_arn,
-            object_reference: self.object_reference,
-            attribute_updates: self.attribute_updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_object_attributes::UpdateObjectAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_object_attributes::UpdateObjectAttributesInput {
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                attribute_updates: self.attribute_updates
+                ,
+            }
+        )
     }
 }
+

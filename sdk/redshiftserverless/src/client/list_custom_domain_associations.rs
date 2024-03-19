@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomDomainAssociations`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p><br>
     ///   - [`custom_domain_name(impl Into<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::custom_domain_name) / [`set_custom_domain_name(Option<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::set_custom_domain_name):<br>required: **false**<br><p>The custom domain name associated with the workgroup.</p><br>
     ///   - [`custom_domain_certificate_arn(impl Into<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::custom_domain_certificate_arn) / [`set_custom_domain_certificate_arn(Option<String>)`](crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::set_custom_domain_certificate_arn):<br>required: **false**<br><p>The custom domain name’s certificate Amazon resource name (ARN).</p><br>
-    /// - On success, responds with [`ListCustomDomainAssociationsOutput`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomDomainAssociationsOutput`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsOutput::associations): <p>A list of Association objects.</p>
-    /// - On failure, responds with [`SdkError<ListCustomDomainAssociationsError>`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError)
-    pub fn list_custom_domain_associations(
-        &self,
-    ) -> crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder {
-        crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomDomainAssociationsError>`](crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsError)
+    pub fn list_custom_domain_associations(&self) -> crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder {
+                                crate::operation::list_custom_domain_associations::builders::ListCustomDomainAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

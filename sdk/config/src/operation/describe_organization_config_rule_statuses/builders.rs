@@ -5,23 +5,20 @@ pub use crate::operation::describe_organization_config_rule_statuses::_describe_
 
 impl DescribeOrganizationConfigRuleStatusesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_organization_config_rule_statuses();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_organization_config_rule_statuses();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeOrganizationConfigRuleStatuses`.
-///
+/// 
 /// <p>Provides organization Config rule deployment status for an organization.</p><note>
 /// <p>The status is not considered successful until organization Config rule is successfully deployed in all the member accounts with an exception of excluded accounts.</p>
 /// <p>When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
@@ -29,103 +26,84 @@ impl DescribeOrganizationConfigRuleStatusesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatusesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesInputBuilder,
+                    inner: crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
-    > for DescribeOrganizationConfigRuleStatusesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
-            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
+                    crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
+                > for DescribeOrganizationConfigRuleStatusesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
+                        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeOrganizationConfigRuleStatusesFluentBuilder {
     /// Creates a new `DescribeOrganizationConfigRuleStatuses`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the DescribeOrganizationConfigRuleStatuses as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesInputBuilder {
+    pub fn as_input(&self) -> &crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesInputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatuses::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatuses::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput,
-        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatuses::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatuses::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput, crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator {
-        crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator {
+                                crate::operation::describe_organization_config_rule_statuses::paginator::DescribeOrganizationConfigRuleStatusesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `OrganizationConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_organization_config_rule_names`](Self::set_organization_config_rule_names).
@@ -136,12 +114,12 @@ impl DescribeOrganizationConfigRuleStatusesFluentBuilder {
         self
     }
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn set_organization_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_organization_config_rule_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_organization_config_rule_names(input);
         self
     }
     /// <p>The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.</p>
-    pub fn get_organization_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_config_rule_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_organization_config_rule_names()
     }
     /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -173,3 +151,4 @@ impl DescribeOrganizationConfigRuleStatusesFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

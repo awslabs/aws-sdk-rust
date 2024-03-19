@@ -3,19 +3,19 @@
 /// <p>The request structure for the get backend environment request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackendEnvironmentInput {
+pub struct GetBackendEnvironmentInput  {
     /// <p>The unique id for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the backend environment.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
-impl GetBackendEnvironmentInput {
+impl  GetBackendEnvironmentInput  {
     /// <p>The unique id for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name for the backend environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetBackendEnvironmentInputBuilder {
     }
     /// <p>The unique id for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique id for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl GetBackendEnvironmentInputBuilder {
     }
     /// <p>The name for the backend environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name for the backend environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`GetBackendEnvironmentInput`](crate::operation::get_backend_environment::GetBackendEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_backend_environment::GetBackendEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_backend_environment::GetBackendEnvironmentInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_backend_environment::GetBackendEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_backend_environment::GetBackendEnvironmentInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMlTransformInput {
+pub struct DeleteMlTransformInput  {
     /// <p>The unique identifier of the transform to delete.</p>
     pub transform_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMlTransformInput {
+impl  DeleteMlTransformInput  {
     /// <p>The unique identifier of the transform to delete.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteMlTransformInputBuilder {
     }
     /// <p>The unique identifier of the transform to delete.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique identifier of the transform to delete.</p>
     pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transform_id
     }
     /// Consumes the builder and constructs a [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ml_transform::DeleteMlTransformInput {
-            transform_id: self.transform_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ml_transform::DeleteMlTransformInput {
+                transform_id: self.transform_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGuiSessionAccessDetailsOutput {
+pub struct CreateGuiSessionAccessDetailsOutput  {
     /// <p>The resource name.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation.</p>
@@ -12,16 +12,16 @@ pub struct CreateGuiSessionAccessDetailsOutput {
     /// <p>The reason the operation failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
+    pub sessions: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>,
     _request_id: Option<String>,
 }
-impl CreateGuiSessionAccessDetailsOutput {
+impl  CreateGuiSessionAccessDetailsOutput  {
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The percentage of completion for the operation.</p>
@@ -29,21 +29,22 @@ impl CreateGuiSessionAccessDetailsOutput {
         self.percentage_complete
     }
     /// <p>The reason the operation failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
-    pub fn sessions(&self) -> &[crate::types::Session] {
-        self.sessions.as_deref().unwrap_or_default()
+    pub fn sessions(&self) -> & [crate::types::Session] {
+        self.sessions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateGuiSessionAccessDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateGuiSessionAccessDetailsOutput {
     /// Creates a new builder-style object to manufacture [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
     pub fn builder() -> crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsOutputBuilder {
@@ -59,7 +60,7 @@ pub struct CreateGuiSessionAccessDetailsOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) percentage_complete: ::std::option::Option<i32>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
+    pub(crate) sessions: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>,
     _request_id: Option<String>,
 }
 impl CreateGuiSessionAccessDetailsOutputBuilder {
@@ -70,8 +71,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     }
     /// <p>The status of the operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -98,8 +97,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     }
     /// <p>The percentage of completion for the operation.</p>
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.percentage_complete = input;
-        self
+        self.percentage_complete = input; self
     }
     /// <p>The percentage of completion for the operation.</p>
     pub fn get_percentage_complete(&self) -> &::std::option::Option<i32> {
@@ -112,8 +110,7 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     }
     /// <p>The reason the operation failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason the operation failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
     pub fn sessions(mut self, input: crate::types::Session) -> Self {
         let mut v = self.sessions.unwrap_or_default();
-        v.push(input);
-        self.sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
-        self.sessions = input;
-        self
+    pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Session>>) -> Self {
+        self.sessions = input; self
     }
     /// <p>Returns information about the specified NICE DCV GUI session.</p>
-    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Session>> {
         &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateGuiSessionAccessDetailsOutput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput).
     pub fn build(self) -> crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput {
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput {
-            resource_name: self.resource_name,
-            status: self.status,
-            percentage_complete: self.percentage_complete,
-            failure_reason: self.failure_reason,
-            sessions: self.sessions,
+            resource_name: self.resource_name
+            ,
+            status: self.status
+            ,
+            percentage_complete: self.percentage_complete
+            ,
+            failure_reason: self.failure_reason
+            ,
+            sessions: self.sessions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

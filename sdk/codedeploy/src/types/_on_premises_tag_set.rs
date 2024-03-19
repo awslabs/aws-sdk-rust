@@ -3,16 +3,17 @@
 /// <p>Information about groups of on-premises instance tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnPremisesTagSet {
+pub struct OnPremisesTagSet  {
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>>,
+    pub on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::TagFilter>>>,
 }
-impl OnPremisesTagSet {
+impl  OnPremisesTagSet  {
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.on_premises_tag_set_list.is_none()`.
-    pub fn on_premises_tag_set_list(&self) -> &[::std::vec::Vec<crate::types::TagFilter>] {
-        self.on_premises_tag_set_list.as_deref().unwrap_or_default()
+    pub fn on_premises_tag_set_list(&self) -> & [::std::vec::Vec::<crate::types::TagFilter>] {
+        self.on_premises_tag_set_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OnPremisesTagSet {
@@ -26,7 +27,7 @@ impl OnPremisesTagSet {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnPremisesTagSetBuilder {
-    pub(crate) on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>>,
+    pub(crate) on_premises_tag_set_list: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::TagFilter>>>,
 }
 impl OnPremisesTagSetBuilder {
     /// Appends an item to `on_premises_tag_set_list`.
@@ -34,25 +35,26 @@ impl OnPremisesTagSetBuilder {
     /// To override the contents of this collection use [`set_on_premises_tag_set_list`](Self::set_on_premises_tag_set_list).
     ///
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn on_premises_tag_set_list(mut self, input: ::std::vec::Vec<crate::types::TagFilter>) -> Self {
+    pub fn on_premises_tag_set_list(mut self, input: ::std::vec::Vec::<crate::types::TagFilter>) -> Self {
         let mut v = self.on_premises_tag_set_list.unwrap_or_default();
-        v.push(input);
-        self.on_premises_tag_set_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.on_premises_tag_set_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn set_on_premises_tag_set_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>>) -> Self {
-        self.on_premises_tag_set_list = input;
-        self
+    pub fn set_on_premises_tag_set_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::TagFilter>>>) -> Self {
+        self.on_premises_tag_set_list = input; self
     }
     /// <p>A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.</p>
-    pub fn get_on_premises_tag_set_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagFilter>>> {
+    pub fn get_on_premises_tag_set_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::TagFilter>>> {
         &self.on_premises_tag_set_list
     }
     /// Consumes the builder and constructs a [`OnPremisesTagSet`](crate::types::OnPremisesTagSet).
     pub fn build(self) -> crate::types::OnPremisesTagSet {
         crate::types::OnPremisesTagSet {
-            on_premises_tag_set_list: self.on_premises_tag_set_list,
+            on_premises_tag_set_list: self.on_premises_tag_set_list
+            ,
         }
     }
 }
+

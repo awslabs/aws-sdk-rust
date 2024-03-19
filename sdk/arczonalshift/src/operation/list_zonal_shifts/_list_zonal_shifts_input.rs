@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListZonalShiftsInput {
+pub struct ListZonalShiftsInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A status for a zonal shift.</p>
@@ -21,9 +21,9 @@ pub struct ListZonalShiftsInput {
     /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
-impl ListZonalShiftsInput {
+impl  ListZonalShiftsInput  {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A status for a zonal shift.</p>
@@ -36,7 +36,7 @@ impl ListZonalShiftsInput {
     /// <li>
     /// <p><b>CANCELED</b>: The zonal shift was canceled.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ZonalShiftStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ZonalShiftStatus> {
         self.status.as_ref()
     }
     /// <p>The number of objects that you want to return with this call.</p>
@@ -44,7 +44,7 @@ impl ListZonalShiftsInput {
         self.max_results
     }
     /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -72,8 +72,7 @@ impl ListZonalShiftsInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p><b>CANCELED</b>: The zonal shift was canceled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ZonalShiftStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
@@ -127,8 +125,7 @@ impl ListZonalShiftsInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -141,22 +138,26 @@ impl ListZonalShiftsInputBuilder {
     }
     /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_zonal_shifts::ListZonalShiftsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_zonal_shifts::ListZonalShiftsInput {
-            next_token: self.next_token,
-            status: self.status,
-            max_results: self.max_results,
-            resource_identifier: self.resource_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_zonal_shifts::ListZonalShiftsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_zonal_shifts::ListZonalShiftsInput {
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+            }
+        )
     }
 }
+

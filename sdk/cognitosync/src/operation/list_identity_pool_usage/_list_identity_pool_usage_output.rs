@@ -3,9 +3,9 @@
 /// Returned for a successful ListIdentityPoolUsage request.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentityPoolUsageOutput {
+pub struct ListIdentityPoolUsageOutput  {
     /// Usage information for the identity pools.
-    pub identity_pool_usages: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
+    pub identity_pool_usages: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityPoolUsage>>,
     /// The maximum number of results to be returned.
     pub max_results: i32,
     /// Total number of identities for the identity pool.
@@ -14,12 +14,13 @@ pub struct ListIdentityPoolUsageOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIdentityPoolUsageOutput {
+impl  ListIdentityPoolUsageOutput  {
     /// Usage information for the identity pools.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_pool_usages.is_none()`.
-    pub fn identity_pool_usages(&self) -> &[crate::types::IdentityPoolUsage] {
-        self.identity_pool_usages.as_deref().unwrap_or_default()
+    pub fn identity_pool_usages(&self) -> & [crate::types::IdentityPoolUsage] {
+        self.identity_pool_usages.as_deref()
+        .unwrap_or_default()
     }
     /// The maximum number of results to be returned.
     pub fn max_results(&self) -> i32 {
@@ -30,15 +31,15 @@ impl ListIdentityPoolUsageOutput {
         self.count
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIdentityPoolUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIdentityPoolUsageOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoolUsageOutput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput).
     pub fn builder() -> crate::operation::list_identity_pool_usage::builders::ListIdentityPoolUsageOutputBuilder {
@@ -50,7 +51,7 @@ impl ListIdentityPoolUsageOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoolUsageOutputBuilder {
-    pub(crate) identity_pool_usages: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>,
+    pub(crate) identity_pool_usages: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityPoolUsage>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) count: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -64,17 +65,16 @@ impl ListIdentityPoolUsageOutputBuilder {
     /// Usage information for the identity pools.
     pub fn identity_pool_usages(mut self, input: crate::types::IdentityPoolUsage) -> Self {
         let mut v = self.identity_pool_usages.unwrap_or_default();
-        v.push(input);
-        self.identity_pool_usages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.identity_pool_usages = ::std::option::Option::Some(v);
+                        self
     }
     /// Usage information for the identity pools.
-    pub fn set_identity_pool_usages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>>) -> Self {
-        self.identity_pool_usages = input;
-        self
+    pub fn set_identity_pool_usages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdentityPoolUsage>>) -> Self {
+        self.identity_pool_usages = input; self
     }
     /// Usage information for the identity pools.
-    pub fn get_identity_pool_usages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolUsage>> {
+    pub fn get_identity_pool_usages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdentityPoolUsage>> {
         &self.identity_pool_usages
     }
     /// The maximum number of results to be returned.
@@ -84,8 +84,7 @@ impl ListIdentityPoolUsageOutputBuilder {
     }
     /// The maximum number of results to be returned.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// The maximum number of results to be returned.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,8 +97,7 @@ impl ListIdentityPoolUsageOutputBuilder {
     }
     /// Total number of identities for the identity pool.
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Total number of identities for the identity pool.
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -112,30 +110,36 @@ impl ListIdentityPoolUsageOutputBuilder {
     }
     /// A pagination token for obtaining the next page of results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// A pagination token for obtaining the next page of results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIdentityPoolUsageOutput`](crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput).
     pub fn build(self) -> crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput {
         crate::operation::list_identity_pool_usage::ListIdentityPoolUsageOutput {
-            identity_pool_usages: self.identity_pool_usages,
-            max_results: self.max_results.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
-            next_token: self.next_token,
+            identity_pool_usages: self.identity_pool_usages
+            ,
+            max_results: self.max_results
+                .unwrap_or_default()
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

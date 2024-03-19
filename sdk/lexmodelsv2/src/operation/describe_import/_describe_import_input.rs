@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImportInput {
+pub struct DescribeImportInput  {
     /// <p>The unique identifier of the import to describe.</p>
     pub import_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeImportInput {
+impl  DescribeImportInput  {
     /// <p>The unique identifier of the import to describe.</p>
-    pub fn import_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeImportInputBuilder {
     }
     /// <p>The unique identifier of the import to describe.</p>
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>The unique identifier of the import to describe.</p>
     pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`DescribeImportInput`](crate::operation::describe_import::DescribeImportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_import::DescribeImportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_import::DescribeImportInput { import_id: self.import_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_import::DescribeImportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_import::DescribeImportInput {
+                import_id: self.import_id
+                ,
+            }
+        )
     }
 }
+

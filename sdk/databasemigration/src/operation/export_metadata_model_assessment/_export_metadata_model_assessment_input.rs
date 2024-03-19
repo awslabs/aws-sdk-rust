@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportMetadataModelAssessmentInput {
+pub struct ExportMetadataModelAssessmentInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the database objects to assess.</p>
@@ -10,26 +10,27 @@ pub struct ExportMetadataModelAssessmentInput {
     /// <p>The name of the assessment file to create in your Amazon S3 bucket.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The file format of the assessment file.</p>
-    pub assessment_report_types: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>>,
+    pub assessment_report_types: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>>,
 }
-impl ExportMetadataModelAssessmentInput {
+impl  ExportMetadataModelAssessmentInput  {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
     /// <p>A value that specifies the database objects to assess.</p>
-    pub fn selection_rules(&self) -> ::std::option::Option<&str> {
+    pub fn selection_rules(&self) -> ::std::option::Option<& str> {
         self.selection_rules.as_deref()
     }
     /// <p>The name of the assessment file to create in your Amazon S3 bucket.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
     /// <p>The file format of the assessment file.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_report_types.is_none()`.
-    pub fn assessment_report_types(&self) -> &[crate::types::AssessmentReportType] {
-        self.assessment_report_types.as_deref().unwrap_or_default()
+    pub fn assessment_report_types(&self) -> & [crate::types::AssessmentReportType] {
+        self.assessment_report_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExportMetadataModelAssessmentInput {
@@ -46,7 +47,7 @@ pub struct ExportMetadataModelAssessmentInputBuilder {
     pub(crate) migration_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
-    pub(crate) assessment_report_types: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>>,
+    pub(crate) assessment_report_types: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>>,
 }
 impl ExportMetadataModelAssessmentInputBuilder {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
@@ -57,8 +58,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
     }
     /// <p>A value that specifies the database objects to assess.</p>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_rules = input;
-        self
+        self.selection_rules = input; self
     }
     /// <p>A value that specifies the database objects to assess.</p>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
     }
     /// <p>The name of the assessment file to create in your Amazon S3 bucket.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the assessment file to create in your Amazon S3 bucket.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,31 +98,32 @@ impl ExportMetadataModelAssessmentInputBuilder {
     /// <p>The file format of the assessment file.</p>
     pub fn assessment_report_types(mut self, input: crate::types::AssessmentReportType) -> Self {
         let mut v = self.assessment_report_types.unwrap_or_default();
-        v.push(input);
-        self.assessment_report_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assessment_report_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The file format of the assessment file.</p>
-    pub fn set_assessment_report_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>>) -> Self {
-        self.assessment_report_types = input;
-        self
+    pub fn set_assessment_report_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>>) -> Self {
+        self.assessment_report_types = input; self
     }
     /// <p>The file format of the assessment file.</p>
-    pub fn get_assessment_report_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentReportType>> {
+    pub fn get_assessment_report_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentReportType>> {
         &self.assessment_report_types
     }
     /// Consumes the builder and constructs a [`ExportMetadataModelAssessmentInput`](crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput {
-            migration_project_identifier: self.migration_project_identifier,
-            selection_rules: self.selection_rules,
-            file_name: self.file_name,
-            assessment_report_types: self.assessment_report_types,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput {
+                migration_project_identifier: self.migration_project_identifier
+                ,
+                selection_rules: self.selection_rules
+                ,
+                file_name: self.file_name
+                ,
+                assessment_report_types: self.assessment_report_types
+                ,
+            }
+        )
     }
 }
+

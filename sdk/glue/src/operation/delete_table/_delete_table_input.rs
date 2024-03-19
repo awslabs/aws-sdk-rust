@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTableInput {
+pub struct DeleteTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
@@ -12,21 +12,21 @@ pub struct DeleteTableInput {
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTableInput {
+impl  DeleteTableInput  {
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +103,18 @@ impl DeleteTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_table::DeleteTableInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            name: self.name,
-            transaction_id: self.transaction_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_table::DeleteTableInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                name: self.name
+                ,
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

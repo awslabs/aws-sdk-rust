@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecipeInput {
+pub struct DescribeRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRecipeInput {
+impl  DescribeRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
-    pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> ::std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeRecipeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_arn = input;
-        self
+        self.recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe to describe.</p>
     pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_arn
     }
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput { recipe_arn: self.recipe_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_recipe::DescribeRecipeInput {
+                recipe_arn: self.recipe_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteParallelDataOutput {
+pub struct DeleteParallelDataOutput  {
     /// <p>The name of the parallel data resource that is being deleted.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parallel data deletion.</p>
     pub status: ::std::option::Option<crate::types::ParallelDataStatus>,
     _request_id: Option<String>,
 }
-impl DeleteParallelDataOutput {
+impl  DeleteParallelDataOutput  {
     /// <p>The name of the parallel data resource that is being deleted.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the parallel data deletion.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ParallelDataStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ParallelDataStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteParallelDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteParallelDataOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::operation::delete_parallel_data::DeleteParallelDataOutput).
     pub fn builder() -> crate::operation::delete_parallel_data::builders::DeleteParallelDataOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteParallelDataOutputBuilder {
     }
     /// <p>The name of the parallel data resource that is being deleted.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parallel data resource that is being deleted.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteParallelDataOutputBuilder {
     }
     /// <p>The status of the parallel data deletion.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ParallelDataStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the parallel data deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ParallelDataStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteParallelDataOutput`](crate::operation::delete_parallel_data::DeleteParallelDataOutput).
     pub fn build(self) -> crate::operation::delete_parallel_data::DeleteParallelDataOutput {
         crate::operation::delete_parallel_data::DeleteParallelDataOutput {
-            name: self.name,
-            status: self.status,
+            name: self.name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

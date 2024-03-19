@@ -3,13 +3,13 @@
 /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSetUsageConfiguration {
+pub struct DataSetUsageConfiguration  {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     pub disable_use_as_direct_query_source: bool,
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub disable_use_as_imported_source: bool,
 }
-impl DataSetUsageConfiguration {
+impl  DataSetUsageConfiguration  {
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     pub fn disable_use_as_direct_query_source(&self) -> bool {
         self.disable_use_as_direct_query_source
@@ -41,8 +41,7 @@ impl DataSetUsageConfigurationBuilder {
     }
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     pub fn set_disable_use_as_direct_query_source(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_use_as_direct_query_source = input;
-        self
+        self.disable_use_as_direct_query_source = input; self
     }
     /// <p>An option that controls whether a child dataset of a direct query can use this dataset as a source.</p>
     pub fn get_disable_use_as_direct_query_source(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl DataSetUsageConfigurationBuilder {
     }
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub fn set_disable_use_as_imported_source(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_use_as_imported_source = input;
-        self
+        self.disable_use_as_imported_source = input; self
     }
     /// <p>An option that controls whether a child dataset that's stored in QuickSight can use this dataset as a source.</p>
     pub fn get_disable_use_as_imported_source(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,13 @@ impl DataSetUsageConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataSetUsageConfiguration`](crate::types::DataSetUsageConfiguration).
     pub fn build(self) -> crate::types::DataSetUsageConfiguration {
         crate::types::DataSetUsageConfiguration {
-            disable_use_as_direct_query_source: self.disable_use_as_direct_query_source.unwrap_or_default(),
-            disable_use_as_imported_source: self.disable_use_as_imported_source.unwrap_or_default(),
+            disable_use_as_direct_query_source: self.disable_use_as_direct_query_source
+                .unwrap_or_default()
+            ,
+            disable_use_as_imported_source: self.disable_use_as_imported_source
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

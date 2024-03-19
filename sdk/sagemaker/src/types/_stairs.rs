@@ -4,7 +4,7 @@
 /// <p>Specify either the stairs or phases traffic pattern.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Stairs {
+pub struct Stairs  {
     /// <p>Defines how long each traffic step should be.</p>
     pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>Specifies how many steps to perform during traffic.</p>
@@ -12,7 +12,7 @@ pub struct Stairs {
     /// <p>Specifies how many new users to spawn in each step.</p>
     pub users_per_step: ::std::option::Option<i32>,
 }
-impl Stairs {
+impl  Stairs  {
     /// <p>Defines how long each traffic step should be.</p>
     pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
@@ -49,8 +49,7 @@ impl StairsBuilder {
     }
     /// <p>Defines how long each traffic step should be.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>Defines how long each traffic step should be.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -63,8 +62,7 @@ impl StairsBuilder {
     }
     /// <p>Specifies how many steps to perform during traffic.</p>
     pub fn set_number_of_steps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_steps = input;
-        self
+        self.number_of_steps = input; self
     }
     /// <p>Specifies how many steps to perform during traffic.</p>
     pub fn get_number_of_steps(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl StairsBuilder {
     }
     /// <p>Specifies how many new users to spawn in each step.</p>
     pub fn set_users_per_step(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.users_per_step = input;
-        self
+        self.users_per_step = input; self
     }
     /// <p>Specifies how many new users to spawn in each step.</p>
     pub fn get_users_per_step(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,13 @@ impl StairsBuilder {
     /// Consumes the builder and constructs a [`Stairs`](crate::types::Stairs).
     pub fn build(self) -> crate::types::Stairs {
         crate::types::Stairs {
-            duration_in_seconds: self.duration_in_seconds,
-            number_of_steps: self.number_of_steps,
-            users_per_step: self.users_per_step,
+            duration_in_seconds: self.duration_in_seconds
+            ,
+            number_of_steps: self.number_of_steps
+            ,
+            users_per_step: self.users_per_step
+            ,
         }
     }
 }
+

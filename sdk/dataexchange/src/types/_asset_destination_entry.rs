@@ -3,7 +3,7 @@
 /// <p>The destination for the asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetDestinationEntry {
+pub struct AssetDestinationEntry  {
     /// <p>The unique identifier for the asset.</p>
     pub asset_id: ::std::string::String,
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
@@ -11,19 +11,17 @@ pub struct AssetDestinationEntry {
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl AssetDestinationEntry {
+impl  AssetDestinationEntry  {
     /// <p>The unique identifier for the asset.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl AssetDestinationEntryBuilder {
     }
     /// <p>The unique identifier for the asset.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The unique identifier for the asset.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl AssetDestinationEntryBuilder {
     }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon S3 bucket that is the destination for the asset.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl AssetDestinationEntryBuilder {
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the object in Amazon S3 for the asset.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl AssetDestinationEntryBuilder {
     /// - [`asset_id`](crate::types::builders::AssetDestinationEntryBuilder::asset_id)
     /// - [`bucket`](crate::types::builders::AssetDestinationEntryBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetDestinationEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetDestinationEntry {
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building AssetDestinationEntry",
-                )
-            })?,
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building AssetDestinationEntry",
-                )
-            })?,
-            key: self.key,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetDestinationEntry {
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building AssetDestinationEntry")
+                    )?
+                ,
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building AssetDestinationEntry")
+                    )?
+                ,
+                key: self.key
+                ,
+            }
+        )
     }
 }
+

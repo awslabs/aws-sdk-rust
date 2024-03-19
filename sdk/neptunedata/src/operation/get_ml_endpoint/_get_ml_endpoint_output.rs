@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlEndpointOutput {
+pub struct GetMlEndpointOutput  {
     /// <p>The status of the inference endpoint.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the inference endpoint.</p>
@@ -13,29 +13,29 @@ pub struct GetMlEndpointOutput {
     pub endpoint_config: ::std::option::Option<crate::types::MlConfigDefinition>,
     _request_id: Option<String>,
 }
-impl GetMlEndpointOutput {
+impl  GetMlEndpointOutput  {
     /// <p>The status of the inference endpoint.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The unique identifier of the inference endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The endpoint definition.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn endpoint(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.endpoint.as_ref()
     }
     /// <p>The endpoint configuration</p>
-    pub fn endpoint_config(&self) -> ::std::option::Option<&crate::types::MlConfigDefinition> {
+    pub fn endpoint_config(&self) -> ::std::option::Option<& crate::types::MlConfigDefinition> {
         self.endpoint_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMlEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMlEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetMlEndpointOutput`](crate::operation::get_ml_endpoint::GetMlEndpointOutput).
     pub fn builder() -> crate::operation::get_ml_endpoint::builders::GetMlEndpointOutputBuilder {
@@ -61,8 +61,7 @@ impl GetMlEndpointOutputBuilder {
     }
     /// <p>The status of the inference endpoint.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the inference endpoint.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl GetMlEndpointOutputBuilder {
     }
     /// <p>The unique identifier of the inference endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the inference endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl GetMlEndpointOutputBuilder {
     }
     /// <p>The endpoint definition.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint definition.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -103,30 +100,34 @@ impl GetMlEndpointOutputBuilder {
     }
     /// <p>The endpoint configuration</p>
     pub fn set_endpoint_config(mut self, input: ::std::option::Option<crate::types::MlConfigDefinition>) -> Self {
-        self.endpoint_config = input;
-        self
+        self.endpoint_config = input; self
     }
     /// <p>The endpoint configuration</p>
     pub fn get_endpoint_config(&self) -> &::std::option::Option<crate::types::MlConfigDefinition> {
         &self.endpoint_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMlEndpointOutput`](crate::operation::get_ml_endpoint::GetMlEndpointOutput).
     pub fn build(self) -> crate::operation::get_ml_endpoint::GetMlEndpointOutput {
         crate::operation::get_ml_endpoint::GetMlEndpointOutput {
-            status: self.status,
-            id: self.id,
-            endpoint: self.endpoint,
-            endpoint_config: self.endpoint_config,
+            status: self.status
+            ,
+            id: self.id
+            ,
+            endpoint: self.endpoint
+            ,
+            endpoint_config: self.endpoint_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

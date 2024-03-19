@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateExtendedSourceServerInput {
+pub struct CreateExtendedSourceServerInput  {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
     pub source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the extended source server.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateExtendedSourceServerInput {
+impl  CreateExtendedSourceServerInput  {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-    pub fn source_server_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_arn(&self) -> ::std::option::Option<& str> {
         self.source_server_arn.as_deref()
     }
     /// <p>A list of tags associated with the extended source server.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateExtendedSourceServerInput {
+impl  ::std::fmt::Debug for CreateExtendedSourceServerInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateExtendedSourceServerInput");
         formatter.field("source_server_arn", &self.source_server_arn);
@@ -38,7 +38,7 @@ impl CreateExtendedSourceServerInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateExtendedSourceServerInputBuilder {
     pub(crate) source_server_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateExtendedSourceServerInputBuilder {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
@@ -49,8 +49,7 @@ impl CreateExtendedSourceServerInputBuilder {
     }
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
     pub fn set_source_server_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_arn = input;
-        self
+        self.source_server_arn = input; self
     }
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
     pub fn get_source_server_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,30 +62,28 @@ impl CreateExtendedSourceServerInputBuilder {
     /// <p>A list of tags associated with the extended source server.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags associated with the extended source server.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with the extended source server.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExtendedSourceServerInput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_extended_source_server::CreateExtendedSourceServerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_extended_source_server::CreateExtendedSourceServerInput {
-            source_server_arn: self.source_server_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_extended_source_server::CreateExtendedSourceServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_extended_source_server::CreateExtendedSourceServerInput {
+                source_server_arn: self.source_server_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateExtendedSourceServerInputBuilder {
@@ -97,3 +94,4 @@ impl ::std::fmt::Debug for CreateExtendedSourceServerInputBuilder {
         formatter.finish()
     }
 }
+

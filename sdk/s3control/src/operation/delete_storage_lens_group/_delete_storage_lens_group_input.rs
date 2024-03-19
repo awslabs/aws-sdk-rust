@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteStorageLensGroupInput {
+pub struct DeleteStorageLensGroupInput  {
     /// <p>The name of the Storage Lens group that you're trying to delete.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID used to create the Storage Lens group that you're trying to delete.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteStorageLensGroupInput {
+impl  DeleteStorageLensGroupInput  {
     /// <p>The name of the Storage Lens group that you're trying to delete.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID used to create the Storage Lens group that you're trying to delete.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteStorageLensGroupInputBuilder {
     }
     /// <p>The name of the Storage Lens group that you're trying to delete.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Storage Lens group that you're trying to delete.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteStorageLensGroupInputBuilder {
     }
     /// <p>The Amazon Web Services account ID used to create the Storage Lens group that you're trying to delete.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID used to create the Storage Lens group that you're trying to delete.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteStorageLensGroupInput`](crate::operation::delete_storage_lens_group::DeleteStorageLensGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_storage_lens_group::DeleteStorageLensGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_storage_lens_group::DeleteStorageLensGroupInput {
-            name: self.name,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_storage_lens_group::DeleteStorageLensGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_storage_lens_group::DeleteStorageLensGroupInput {
+                name: self.name
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSignalingChannelInput {
+pub struct DescribeSignalingChannelInput  {
     /// <p>The name of the signaling channel that you want to describe.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the signaling channel that you want to describe.</p>
     pub channel_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSignalingChannelInput {
+impl  DescribeSignalingChannelInput  {
     /// <p>The name of the signaling channel that you want to describe.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
-    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribeSignalingChannelInputBuilder {
     }
     /// <p>The name of the signaling channel that you want to describe.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the signaling channel that you want to describe.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl DescribeSignalingChannelInputBuilder {
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`DescribeSignalingChannelInput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_signaling_channel::DescribeSignalingChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
-            channel_name: self.channel_name,
-            channel_arn: self.channel_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_signaling_channel::DescribeSignalingChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
+                channel_name: self.channel_name
+                ,
+                channel_arn: self.channel_arn
+                ,
+            }
+        )
     }
 }
+

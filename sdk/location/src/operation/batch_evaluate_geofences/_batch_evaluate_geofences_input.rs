@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchEvaluateGeofencesInput {
+pub struct BatchEvaluateGeofencesInput  {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    pub device_position_updates: ::std::option::Option<::std::vec::Vec::<crate::types::DevicePositionUpdate>>,
 }
-impl BatchEvaluateGeofencesInput {
+impl  BatchEvaluateGeofencesInput  {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<& str> {
         self.collection_name.as_deref()
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_position_updates.is_none()`.
-    pub fn device_position_updates(&self) -> &[crate::types::DevicePositionUpdate] {
-        self.device_position_updates.as_deref().unwrap_or_default()
+    pub fn device_position_updates(&self) -> & [crate::types::DevicePositionUpdate] {
+        self.device_position_updates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchEvaluateGeofencesInput {
@@ -32,7 +33,7 @@ impl BatchEvaluateGeofencesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesInputBuilder {
     pub(crate) collection_name: ::std::option::Option<::std::string::String>,
-    pub(crate) device_position_updates: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    pub(crate) device_position_updates: ::std::option::Option<::std::vec::Vec::<crate::types::DevicePositionUpdate>>,
 }
 impl BatchEvaluateGeofencesInputBuilder {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
@@ -43,8 +44,7 @@ impl BatchEvaluateGeofencesInputBuilder {
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     pub fn set_collection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_name = input;
-        self
+        self.collection_name = input; self
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchEvaluateGeofencesInputBuilder {
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
     pub fn device_position_updates(mut self, input: crate::types::DevicePositionUpdate) -> Self {
         let mut v = self.device_position_updates.unwrap_or_default();
-        v.push(input);
-        self.device_position_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.device_position_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn set_device_position_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
-        self.device_position_updates = input;
-        self
+    pub fn set_device_position_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DevicePositionUpdate>>) -> Self {
+        self.device_position_updates = input; self
     }
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    pub fn get_device_position_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+    pub fn get_device_position_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DevicePositionUpdate>> {
         &self.device_position_updates
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
-            collection_name: self.collection_name,
-            device_position_updates: self.device_position_updates,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
+                collection_name: self.collection_name
+                ,
+                device_position_updates: self.device_position_updates
+                ,
+            }
+        )
     }
 }
+

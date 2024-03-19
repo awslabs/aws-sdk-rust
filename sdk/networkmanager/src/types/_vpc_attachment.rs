@@ -3,27 +3,28 @@
 /// <p>Describes a VPC attachment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcAttachment {
+pub struct VpcAttachment  {
     /// <p>Provides details about the VPC attachment.</p>
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The subnet ARNs.</p>
-    pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Provides details about the VPC attachment.</p>
     pub options: ::std::option::Option<crate::types::VpcOptions>,
 }
-impl VpcAttachment {
+impl  VpcAttachment  {
     /// <p>Provides details about the VPC attachment.</p>
-    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
     /// <p>The subnet ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
-    pub fn subnet_arns(&self) -> &[::std::string::String] {
-        self.subnet_arns.as_deref().unwrap_or_default()
+    pub fn subnet_arns(&self) -> & [::std::string::String] {
+        self.subnet_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides details about the VPC attachment.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.options.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl VpcAttachment {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VpcAttachmentBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
-    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl VpcAttachmentBuilder {
@@ -50,8 +51,7 @@ impl VpcAttachmentBuilder {
     }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn set_attachment(mut self, input: ::std::option::Option<crate::types::Attachment>) -> Self {
-        self.attachment = input;
-        self
+        self.attachment = input; self
     }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
@@ -64,17 +64,16 @@ impl VpcAttachmentBuilder {
     /// <p>The subnet ARNs.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The subnet ARNs.</p>
-    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_arns = input;
-        self
+    pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_arns = input; self
     }
     /// <p>The subnet ARNs.</p>
-    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_arns
     }
     /// <p>Provides details about the VPC attachment.</p>
@@ -84,8 +83,7 @@ impl VpcAttachmentBuilder {
     }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Provides details about the VPC attachment.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
@@ -94,9 +92,13 @@ impl VpcAttachmentBuilder {
     /// Consumes the builder and constructs a [`VpcAttachment`](crate::types::VpcAttachment).
     pub fn build(self) -> crate::types::VpcAttachment {
         crate::types::VpcAttachment {
-            attachment: self.attachment,
-            subnet_arns: self.subnet_arns,
-            options: self.options,
+            attachment: self.attachment
+            ,
+            subnet_arns: self.subnet_arns
+            ,
+            options: self.options
+            ,
         }
     }
 }
+

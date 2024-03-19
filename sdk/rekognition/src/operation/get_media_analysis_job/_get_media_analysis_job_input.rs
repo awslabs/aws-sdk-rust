@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMediaAnalysisJobInput {
+pub struct GetMediaAnalysisJobInput  {
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMediaAnalysisJobInput {
+impl  GetMediaAnalysisJobInput  {
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetMediaAnalysisJobInputBuilder {
     }
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Unique identifier for the media analysis job for which you want to retrieve results.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`GetMediaAnalysisJobInput`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

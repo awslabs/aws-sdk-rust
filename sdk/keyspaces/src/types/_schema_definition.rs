@@ -3,38 +3,38 @@
 /// <p>Describes the schema of the table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaDefinition {
+pub struct SchemaDefinition  {
     /// <p>The regular columns of the table.</p>
-    pub all_columns: ::std::vec::Vec<crate::types::ColumnDefinition>,
+    pub all_columns: ::std::vec::Vec::<crate::types::ColumnDefinition>,
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub partition_keys: ::std::vec::Vec<crate::types::PartitionKey>,
+    pub partition_keys: ::std::vec::Vec::<crate::types::PartitionKey>,
     /// <p>The columns that are part of the clustering key of the table.</p>
-    pub clustering_keys: ::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>>,
+    pub clustering_keys: ::std::option::Option<::std::vec::Vec::<crate::types::ClusteringKey>>,
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    pub static_columns: ::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>>,
+    pub static_columns: ::std::option::Option<::std::vec::Vec::<crate::types::StaticColumn>>,
 }
-impl SchemaDefinition {
+impl  SchemaDefinition  {
     /// <p>The regular columns of the table.</p>
-    pub fn all_columns(&self) -> &[crate::types::ColumnDefinition] {
-        use std::ops::Deref;
-        self.all_columns.deref()
+    pub fn all_columns(&self) -> & [crate::types::ColumnDefinition] {
+        use std::ops::Deref; self.all_columns.deref()
     }
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub fn partition_keys(&self) -> &[crate::types::PartitionKey] {
-        use std::ops::Deref;
-        self.partition_keys.deref()
+    pub fn partition_keys(&self) -> & [crate::types::PartitionKey] {
+        use std::ops::Deref; self.partition_keys.deref()
     }
     /// <p>The columns that are part of the clustering key of the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clustering_keys.is_none()`.
-    pub fn clustering_keys(&self) -> &[crate::types::ClusteringKey] {
-        self.clustering_keys.as_deref().unwrap_or_default()
+    pub fn clustering_keys(&self) -> & [crate::types::ClusteringKey] {
+        self.clustering_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.static_columns.is_none()`.
-    pub fn static_columns(&self) -> &[crate::types::StaticColumn] {
-        self.static_columns.as_deref().unwrap_or_default()
+    pub fn static_columns(&self) -> & [crate::types::StaticColumn] {
+        self.static_columns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SchemaDefinition {
@@ -48,10 +48,10 @@ impl SchemaDefinition {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SchemaDefinitionBuilder {
-    pub(crate) all_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>,
-    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>,
-    pub(crate) clustering_keys: ::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>>,
-    pub(crate) static_columns: ::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>>,
+    pub(crate) all_columns: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDefinition>>,
+    pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec::<crate::types::PartitionKey>>,
+    pub(crate) clustering_keys: ::std::option::Option<::std::vec::Vec::<crate::types::ClusteringKey>>,
+    pub(crate) static_columns: ::std::option::Option<::std::vec::Vec::<crate::types::StaticColumn>>,
 }
 impl SchemaDefinitionBuilder {
     /// Appends an item to `all_columns`.
@@ -61,17 +61,16 @@ impl SchemaDefinitionBuilder {
     /// <p>The regular columns of the table.</p>
     pub fn all_columns(mut self, input: crate::types::ColumnDefinition) -> Self {
         let mut v = self.all_columns.unwrap_or_default();
-        v.push(input);
-        self.all_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.all_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The regular columns of the table.</p>
-    pub fn set_all_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>>) -> Self {
-        self.all_columns = input;
-        self
+    pub fn set_all_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDefinition>>) -> Self {
+        self.all_columns = input; self
     }
     /// <p>The regular columns of the table.</p>
-    pub fn get_all_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDefinition>> {
+    pub fn get_all_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnDefinition>> {
         &self.all_columns
     }
     /// Appends an item to `partition_keys`.
@@ -81,17 +80,16 @@ impl SchemaDefinitionBuilder {
     /// <p>The columns that are part of the partition key of the table .</p>
     pub fn partition_keys(mut self, input: crate::types::PartitionKey) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-        v.push(input);
-        self.partition_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partition_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>>) -> Self {
-        self.partition_keys = input;
-        self
+    pub fn set_partition_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PartitionKey>>) -> Self {
+        self.partition_keys = input; self
     }
     /// <p>The columns that are part of the partition key of the table .</p>
-    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionKey>> {
+    pub fn get_partition_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PartitionKey>> {
         &self.partition_keys
     }
     /// Appends an item to `clustering_keys`.
@@ -101,17 +99,16 @@ impl SchemaDefinitionBuilder {
     /// <p>The columns that are part of the clustering key of the table.</p>
     pub fn clustering_keys(mut self, input: crate::types::ClusteringKey) -> Self {
         let mut v = self.clustering_keys.unwrap_or_default();
-        v.push(input);
-        self.clustering_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.clustering_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The columns that are part of the clustering key of the table.</p>
-    pub fn set_clustering_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>>) -> Self {
-        self.clustering_keys = input;
-        self
+    pub fn set_clustering_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusteringKey>>) -> Self {
+        self.clustering_keys = input; self
     }
     /// <p>The columns that are part of the clustering key of the table.</p>
-    pub fn get_clustering_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusteringKey>> {
+    pub fn get_clustering_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusteringKey>> {
         &self.clustering_keys
     }
     /// Appends an item to `static_columns`.
@@ -121,17 +118,16 @@ impl SchemaDefinitionBuilder {
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
     pub fn static_columns(mut self, input: crate::types::StaticColumn) -> Self {
         let mut v = self.static_columns.unwrap_or_default();
-        v.push(input);
-        self.static_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.static_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    pub fn set_static_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>>) -> Self {
-        self.static_columns = input;
-        self
+    pub fn set_static_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StaticColumn>>) -> Self {
+        self.static_columns = input; self
     }
     /// <p>The columns that have been defined as <code>STATIC</code>. Static columns store values that are shared by all rows in the same partition.</p>
-    pub fn get_static_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StaticColumn>> {
+    pub fn get_static_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StaticColumn>> {
         &self.static_columns
     }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
@@ -139,21 +135,24 @@ impl SchemaDefinitionBuilder {
     /// - [`all_columns`](crate::types::builders::SchemaDefinitionBuilder::all_columns)
     /// - [`partition_keys`](crate::types::builders::SchemaDefinitionBuilder::partition_keys)
     pub fn build(self) -> ::std::result::Result<crate::types::SchemaDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SchemaDefinition {
-            all_columns: self.all_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "all_columns",
-                    "all_columns was not specified but it is required when building SchemaDefinition",
-                )
-            })?,
-            partition_keys: self.partition_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partition_keys",
-                    "partition_keys was not specified but it is required when building SchemaDefinition",
-                )
-            })?,
-            clustering_keys: self.clustering_keys,
-            static_columns: self.static_columns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SchemaDefinition {
+                all_columns: self.all_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("all_columns", "all_columns was not specified but it is required when building SchemaDefinition")
+                    )?
+                ,
+                partition_keys: self.partition_keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partition_keys", "partition_keys was not specified but it is required when building SchemaDefinition")
+                    )?
+                ,
+                clustering_keys: self.clustering_keys
+                ,
+                static_columns: self.static_columns
+                ,
+            }
+        )
     }
 }
+

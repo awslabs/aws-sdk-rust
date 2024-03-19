@@ -3,30 +3,31 @@
 /// <p>Contains the output from the <code>DescribeClusterSubnetGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterSubnetGroupsOutput {
+pub struct DescribeClusterSubnetGroupsOutput  {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterSubnetGroup</code> instances.</p>
-    pub cluster_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+    pub cluster_subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
-impl DescribeClusterSubnetGroupsOutput {
+impl  DescribeClusterSubnetGroupsOutput  {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_subnet_groups.is_none()`.
-    pub fn cluster_subnet_groups(&self) -> &[crate::types::ClusterSubnetGroup] {
-        self.cluster_subnet_groups.as_deref().unwrap_or_default()
+    pub fn cluster_subnet_groups(&self) -> & [crate::types::ClusterSubnetGroup] {
+        self.cluster_subnet_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeClusterSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
     pub fn builder() -> crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeClusterSubnetGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cluster_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+    pub(crate) cluster_subnet_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSubnetGroupsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeClusterSubnetGroupsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeClusterSubnetGroupsOutputBuilder {
     /// <p>A list of <code>ClusterSubnetGroup</code> instances.</p>
     pub fn cluster_subnet_groups(mut self, input: crate::types::ClusterSubnetGroup) -> Self {
         let mut v = self.cluster_subnet_groups.unwrap_or_default();
-        v.push(input);
-        self.cluster_subnet_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cluster_subnet_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances.</p>
-    pub fn set_cluster_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>) -> Self {
-        self.cluster_subnet_groups = input;
-        self
+    pub fn set_cluster_subnet_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSubnetGroup>>) -> Self {
+        self.cluster_subnet_groups = input; self
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances.</p>
-    pub fn get_cluster_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>> {
+    pub fn get_cluster_subnet_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterSubnetGroup>> {
         &self.cluster_subnet_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
     pub fn build(self) -> crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput {
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput {
-            marker: self.marker,
-            cluster_subnet_groups: self.cluster_subnet_groups,
+            marker: self.marker
+            ,
+            cluster_subnet_groups: self.cluster_subnet_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCapacityReservationInput {
+pub struct UpdateCapacityReservationInput  {
     /// <p>The new number of requested data processing units.</p>
     pub target_dpus: ::std::option::Option<i32>,
     /// <p>The name of the capacity reservation.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateCapacityReservationInput {
+impl  UpdateCapacityReservationInput  {
     /// <p>The new number of requested data processing units.</p>
     pub fn target_dpus(&self) -> ::std::option::Option<i32> {
         self.target_dpus
     }
     /// <p>The name of the capacity reservation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateCapacityReservationInputBuilder {
     }
     /// <p>The new number of requested data processing units.</p>
     pub fn set_target_dpus(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_dpus = input;
-        self
+        self.target_dpus = input; self
     }
     /// <p>The new number of requested data processing units.</p>
     pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
@@ -56,23 +55,22 @@ impl UpdateCapacityReservationInputBuilder {
     }
     /// <p>The name of the capacity reservation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the capacity reservation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateCapacityReservationInput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_capacity_reservation::UpdateCapacityReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_capacity_reservation::UpdateCapacityReservationInput {
-            target_dpus: self.target_dpus,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_capacity_reservation::UpdateCapacityReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationInput {
+                target_dpus: self.target_dpus
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

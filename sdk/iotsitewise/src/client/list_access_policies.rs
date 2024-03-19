@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessPolicies`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`identity_type(IdentityType)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_identity_type):<br>required: **false**<br><p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p><br>
     ///   - [`identity_id(impl Into<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::identity_id) / [`set_identity_id(Option<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_identity_id):<br>required: **false**<br><p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p><br>
     ///   - [`resource_type(ResourceType)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_resource_type):<br>required: **false**<br><p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`iam_arn(impl Into<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::iam_arn) / [`set_iam_arn(Option<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_iam_arn):<br>required: **false**<br><p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p><br>
-    /// - On success, responds with [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput) with field(s):
     ///   - [`access_policy_summaries(Vec::<AccessPolicySummary>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::access_policy_summaries): <p>A list that summarizes each access policy.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_policies::ListAccessPoliciesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::operation::list_access_policies::ListAccessPoliciesError)
     pub fn list_access_policies(&self) -> crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder {
-        crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_policies::builders::ListAccessPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,54 +5,50 @@ pub use crate::operation::create_db_proxy::_create_db_proxy_input::CreateDbProxy
 
 impl CreateDbProxyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_proxy::CreateDbProxyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_db_proxy::CreateDBProxyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_db_proxy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_db_proxy::CreateDbProxyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_db_proxy::CreateDBProxyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_db_proxy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDBProxy`.
-///
+/// 
 /// <p>Creates a new DB proxy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBProxyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_db_proxy::builders::CreateDbProxyInputBuilder,
+                    inner: crate::operation::create_db_proxy::builders::CreateDbProxyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_db_proxy::CreateDbProxyOutput,
-        crate::operation::create_db_proxy::CreateDBProxyError,
-    > for CreateDBProxyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_db_proxy::CreateDbProxyOutput,
-            crate::operation::create_db_proxy::CreateDBProxyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_db_proxy::CreateDbProxyOutput,
+                    crate::operation::create_db_proxy::CreateDBProxyError,
+                > for CreateDBProxyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_db_proxy::CreateDbProxyOutput,
+                        crate::operation::create_db_proxy::CreateDBProxyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDBProxyFluentBuilder {
     /// Creates a new `CreateDBProxy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateDBProxyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_proxy::CreateDbProxyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_db_proxy::CreateDBProxyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_db_proxy::CreateDBProxy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_db_proxy::CreateDBProxy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_db_proxy::CreateDbProxyOutput,
-        crate::operation::create_db_proxy::CreateDBProxyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_db_proxy::CreateDbProxyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_proxy::CreateDBProxyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_db_proxy::CreateDBProxy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_db_proxy::CreateDBProxy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_db_proxy::CreateDbProxyOutput, crate::operation::create_db_proxy::CreateDBProxyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn db_proxy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
@@ -146,12 +133,12 @@ impl CreateDBProxyFluentBuilder {
         self
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>) -> Self {
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>) -> Self {
         self.inner = self.inner.set_auth(input);
         self
     }
     /// <p>The authorization mechanism that the proxy uses.</p>
-    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>> {
         self.inner.get_auth()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
@@ -178,12 +165,12 @@ impl CreateDBProxyFluentBuilder {
         self
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_subnet_ids(input);
         self
     }
     /// <p>One or more VPC subnet IDs to associate with the new proxy.</p>
-    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_subnet_ids()
     }
     /// Appends an item to `VpcSecurityGroupIds`.
@@ -196,12 +183,12 @@ impl CreateDBProxyFluentBuilder {
         self
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>One or more VPC security group IDs to associate with the new proxy.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
@@ -256,12 +243,13 @@ impl CreateDBProxyFluentBuilder {
         self
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

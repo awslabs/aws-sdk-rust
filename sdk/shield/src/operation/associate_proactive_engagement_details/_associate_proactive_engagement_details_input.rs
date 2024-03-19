@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateProactiveEngagementDetailsInput {
+pub struct AssociateProactiveEngagementDetailsInput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
-    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
 }
-impl AssociateProactiveEngagementDetailsInput {
+impl  AssociateProactiveEngagementDetailsInput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.emergency_contact_list.is_none()`.
-    pub fn emergency_contact_list(&self) -> &[crate::types::EmergencyContact] {
-        self.emergency_contact_list.as_deref().unwrap_or_default()
+    pub fn emergency_contact_list(&self) -> & [crate::types::EmergencyContact] {
+        self.emergency_contact_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssociateProactiveEngagementDetailsInput {
@@ -31,7 +32,7 @@ impl AssociateProactiveEngagementDetailsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateProactiveEngagementDetailsInputBuilder {
-    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
+    pub(crate) emergency_contact_list: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>,
 }
 impl AssociateProactiveEngagementDetailsInputBuilder {
     /// Appends an item to `emergency_contact_list`.
@@ -44,36 +45,32 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
     /// </note>
     pub fn emergency_contact_list(mut self, input: crate::types::EmergencyContact) -> Self {
         let mut v = self.emergency_contact_list.unwrap_or_default();
-        v.push(input);
-        self.emergency_contact_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.emergency_contact_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
-    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>) -> Self {
-        self.emergency_contact_list = input;
-        self
+    pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>>) -> Self {
+        self.emergency_contact_list = input; self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
     /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
-    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {
+    pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EmergencyContact>> {
         &self.emergency_contact_list
     }
     /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsInput`](crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsInput {
-                emergency_contact_list: self.emergency_contact_list,
-            },
+                emergency_contact_list: self.emergency_contact_list
+                ,
+            }
         )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResaleAuthorizationLastModifiedDateFilter {
+pub struct ResaleAuthorizationLastModifiedDateFilter  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization with date range as input.</p>
     pub date_range: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange>,
 }
-impl ResaleAuthorizationLastModifiedDateFilter {
+impl  ResaleAuthorizationLastModifiedDateFilter  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization with date range as input.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ResaleAuthorizationLastModifiedDateFilterBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization with date range as input.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization with date range as input.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl ResaleAuthorizationLastModifiedDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ResaleAuthorizationLastModifiedDateFilter`](crate::types::ResaleAuthorizationLastModifiedDateFilter).
     pub fn build(self) -> crate::types::ResaleAuthorizationLastModifiedDateFilter {
-        crate::types::ResaleAuthorizationLastModifiedDateFilter { date_range: self.date_range }
+        crate::types::ResaleAuthorizationLastModifiedDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

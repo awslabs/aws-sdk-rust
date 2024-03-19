@@ -41,11 +41,17 @@ impl HeaderSerializationSettings {
 
     /// Returns true if the given default header name should be serialized
     fn include_header(&self, header: &HeaderName) -> bool {
-        (!self.omit_default_content_length || header != CONTENT_LENGTH) && (!self.omit_default_content_type || header != CONTENT_TYPE)
+        (!self.omit_default_content_length || header != CONTENT_LENGTH)
+            && (!self.omit_default_content_type || header != CONTENT_TYPE)
     }
 
     /// Sets a default header on the given request builder if it should be serialized
-    pub(crate) fn set_default_header(&self, mut request: http::request::Builder, header_name: HeaderName, value: &str) -> http::request::Builder {
+    pub(crate) fn set_default_header(
+        &self,
+        mut request: http::request::Builder,
+        header_name: HeaderName,
+        value: &str,
+    ) -> http::request::Builder {
         if self.include_header(&header_name) {
             request = set_request_header_if_absent(request, header_name, value);
         }
@@ -82,3 +88,4 @@ mod tests {
         assert!(!settings.include_header(&CONTENT_TYPE));
     }
 }
+

@@ -4,23 +4,23 @@
 /// <p>When players connect to the match's game session, they must include both player ID and player session ID in order to claim their assigned player slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MatchedPlayerSession {
+pub struct MatchedPlayerSession  {
     /// <p>A unique identifier for a player</p>
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player session</p>
     pub player_session_id: ::std::option::Option<::std::string::String>,
 }
-impl MatchedPlayerSession {
+impl  MatchedPlayerSession  {
     /// <p>A unique identifier for a player</p>
-    pub fn player_id(&self) -> ::std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>A unique identifier for a player session</p>
-    pub fn player_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn player_session_id(&self) -> ::std::option::Option<& str> {
         self.player_session_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for MatchedPlayerSession {
+impl  ::std::fmt::Debug for MatchedPlayerSession  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MatchedPlayerSession");
         formatter.field("player_id", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,7 @@ impl MatchedPlayerSessionBuilder {
     }
     /// <p>A unique identifier for a player</p>
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_id = input;
-        self
+        self.player_id = input; self
     }
     /// <p>A unique identifier for a player</p>
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl MatchedPlayerSessionBuilder {
     }
     /// <p>A unique identifier for a player session</p>
     pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_session_id = input;
-        self
+        self.player_session_id = input; self
     }
     /// <p>A unique identifier for a player session</p>
     pub fn get_player_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +72,10 @@ impl MatchedPlayerSessionBuilder {
     /// Consumes the builder and constructs a [`MatchedPlayerSession`](crate::types::MatchedPlayerSession).
     pub fn build(self) -> crate::types::MatchedPlayerSession {
         crate::types::MatchedPlayerSession {
-            player_id: self.player_id,
-            player_session_id: self.player_session_id,
+            player_id: self.player_id
+            ,
+            player_session_id: self.player_session_id
+            ,
         }
     }
 }
@@ -87,3 +87,4 @@ impl ::std::fmt::Debug for MatchedPlayerSessionBuilder {
         formatter.finish()
     }
 }
+

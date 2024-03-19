@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeEndpointWithResponseStreamInput {
+pub struct InvokeEndpointWithResponseStreamInput  {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.</p>
@@ -26,49 +26,49 @@ pub struct InvokeEndpointWithResponseStreamInput {
     /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.</p>
     pub inference_component_name: ::std::option::Option<::std::string::String>,
 }
-impl InvokeEndpointWithResponseStreamInput {
+impl  InvokeEndpointWithResponseStreamInput  {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.</p>
     /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
     /// <p>The MIME type of the input data in the request body.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The desired MIME type of the inference response from the model container.</p>
-    pub fn accept(&self) -> ::std::option::Option<&str> {
+    pub fn accept(&self) -> ::std::option::Option<& str> {
         self.accept.as_deref()
     }
     /// <p>Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).</p>
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
-    pub fn custom_attributes(&self) -> ::std::option::Option<&str> {
+    pub fn custom_attributes(&self) -> ::std::option::Option<& str> {
         self.custom_attributes.as_deref()
     }
     /// <p>Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.</p>
     /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a></p>
-    pub fn target_variant(&self) -> ::std::option::Option<&str> {
+    pub fn target_variant(&self) -> ::std::option::Option<& str> {
         self.target_variant.as_deref()
     }
     /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.</p>
-    pub fn target_container_hostname(&self) -> ::std::option::Option<&str> {
+    pub fn target_container_hostname(&self) -> ::std::option::Option<& str> {
         self.target_container_hostname.as_deref()
     }
     /// <p>An identifier that you assign to your request.</p>
-    pub fn inference_id(&self) -> ::std::option::Option<&str> {
+    pub fn inference_id(&self) -> ::std::option::Option<& str> {
         self.inference_id.as_deref()
     }
     /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.</p>
-    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_component_name(&self) -> ::std::option::Option<& str> {
         self.inference_component_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput {
+impl  ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeEndpointWithResponseStreamInput");
         formatter.field("endpoint_name", &self.endpoint_name);
@@ -113,8 +113,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     /// <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.</p>
     /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model.</p>
     /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
@@ -145,8 +143,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>The MIME type of the input data in the request body.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The MIME type of the input data in the request body.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +156,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>The desired MIME type of the inference response from the model container.</p>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept = input;
-        self
+        self.accept = input; self
     }
     /// <p>The desired MIME type of the inference response from the model container.</p>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +173,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
     /// <p>This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker Python SDK.</p>
     pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_attributes = input;
-        self
+        self.custom_attributes = input; self
     }
     /// <p>Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).</p>
     /// <p>The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your post-processing function.</p>
@@ -195,8 +190,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     /// <p>Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.</p>
     /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a></p>
     pub fn set_target_variant(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_variant = input;
-        self
+        self.target_variant = input; self
     }
     /// <p>Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.</p>
     /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in production</a></p>
@@ -210,8 +204,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.</p>
     pub fn set_target_container_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_container_hostname = input;
-        self
+        self.target_container_hostname = input; self
     }
     /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.</p>
     pub fn get_target_container_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +217,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>An identifier that you assign to your request.</p>
     pub fn set_inference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_id = input;
-        self
+        self.inference_id = input; self
     }
     /// <p>An identifier that you assign to your request.</p>
     pub fn get_inference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,32 +230,35 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     }
     /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.</p>
     pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_component_name = input;
-        self
+        self.inference_component_name = input; self
     }
     /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.</p>
     pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_component_name
     }
     /// Consumes the builder and constructs a [`InvokeEndpointWithResponseStreamInput`](crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput {
-                endpoint_name: self.endpoint_name,
-                body: self.body,
-                content_type: self.content_type,
-                accept: self.accept,
-                custom_attributes: self.custom_attributes,
-                target_variant: self.target_variant,
-                target_container_hostname: self.target_container_hostname,
-                inference_id: self.inference_id,
-                inference_component_name: self.inference_component_name,
-            },
+                endpoint_name: self.endpoint_name
+                ,
+                body: self.body
+                ,
+                content_type: self.content_type
+                ,
+                accept: self.accept
+                ,
+                custom_attributes: self.custom_attributes
+                ,
+                target_variant: self.target_variant
+                ,
+                target_container_hostname: self.target_container_hostname
+                ,
+                inference_id: self.inference_id
+                ,
+                inference_component_name: self.inference_component_name
+                ,
+            }
         )
     }
 }
@@ -282,3 +277,4 @@ impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInputBuilder {
         formatter.finish()
     }
 }
+

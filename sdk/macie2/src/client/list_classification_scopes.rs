@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClassificationScopes`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the classification scope to retrieve the unique identifier for.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListClassificationScopesOutput`](crate::operation::list_classification_scopes::ListClassificationScopesOutput) with field(s):
+                            /// - On success, responds with [`ListClassificationScopesOutput`](crate::operation::list_classification_scopes::ListClassificationScopesOutput) with field(s):
     ///   - [`classification_scopes(Option<Vec::<ClassificationScopeSummary>>)`](crate::operation::list_classification_scopes::ListClassificationScopesOutput::classification_scopes): <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_classification_scopes::ListClassificationScopesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListClassificationScopesError>`](crate::operation::list_classification_scopes::ListClassificationScopesError)
+                            /// - On failure, responds with [`SdkError<ListClassificationScopesError>`](crate::operation::list_classification_scopes::ListClassificationScopesError)
     pub fn list_classification_scopes(&self) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder {
-        crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_classification_scopes::builders::ListClassificationScopesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

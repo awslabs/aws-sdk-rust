@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSnapshotsInRecycleBinInput {
+pub struct ListSnapshotsInRecycleBinInput  {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ListSnapshotsInRecycleBinInput {
+impl  ListSnapshotsInRecycleBinInput  {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
-    pub fn snapshot_ids(&self) -> &[::std::string::String] {
-        self.snapshot_ids.as_deref().unwrap_or_default()
+    pub fn snapshot_ids(&self) -> & [::std::string::String] {
+        self.snapshot_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -45,7 +46,7 @@ impl ListSnapshotsInRecycleBinInput {
 pub struct ListSnapshotsInRecycleBinInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ListSnapshotsInRecycleBinInputBuilder {
@@ -56,8 +57,7 @@ impl ListSnapshotsInRecycleBinInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -70,8 +70,7 @@ impl ListSnapshotsInRecycleBinInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,17 +83,16 @@ impl ListSnapshotsInRecycleBinInputBuilder {
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_ids = input;
-        self
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_ids = input; self
     }
     /// <p>The IDs of the snapshots to list. Omit this parameter to list all of the snapshots that are in the Recycle Bin.</p>
-    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_ids
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -104,25 +102,26 @@ impl ListSnapshotsInRecycleBinInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ListSnapshotsInRecycleBinInput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            snapshot_ids: self.snapshot_ids,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                snapshot_ids: self.snapshot_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

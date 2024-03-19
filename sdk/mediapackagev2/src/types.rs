@@ -120,3 +120,4 @@ pub mod builders;
 
 /// Error types that AWS Elemental MediaPackage v2 can respond with.
 pub mod error;
+

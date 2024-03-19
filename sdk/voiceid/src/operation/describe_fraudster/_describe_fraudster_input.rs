@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeFraudsterInput {
+pub struct DescribeFraudsterInput  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fraudster_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFraudsterInput {
+impl  DescribeFraudsterInput  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the fraudster you are describing.</p>
-    pub fn fraudster_id(&self) -> ::std::option::Option<&str> {
+    pub fn fraudster_id(&self) -> ::std::option::Option<& str> {
         self.fraudster_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for DescribeFraudsterInput {
+impl  ::std::fmt::Debug for DescribeFraudsterInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFraudsterInput");
         formatter.field("domain_id", &self.domain_id);
@@ -49,8 +49,7 @@ impl DescribeFraudsterInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,21 +63,22 @@ impl DescribeFraudsterInputBuilder {
     }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn set_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fraudster_id = input;
-        self
+        self.fraudster_id = input; self
     }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn get_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fraudster_id
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_fraudster::DescribeFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_fraudster::DescribeFraudsterInput {
-            domain_id: self.domain_id,
-            fraudster_id: self.fraudster_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fraudster::DescribeFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fraudster::DescribeFraudsterInput {
+                domain_id: self.domain_id
+                ,
+                fraudster_id: self.fraudster_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribeFraudsterInputBuilder {
@@ -89,3 +89,4 @@ impl ::std::fmt::Debug for DescribeFraudsterInputBuilder {
         formatter.finish()
     }
 }
+

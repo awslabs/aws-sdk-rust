@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateVehicleFleetInput {
+pub struct DisassociateVehicleFleetInput  {
     /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
     pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of a fleet.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateVehicleFleetInput {
+impl  DisassociateVehicleFleetInput  {
     /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The unique ID of a fleet.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateVehicleFleetInputBuilder {
     }
     /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// <p>The unique ID of the vehicle to disassociate from the fleet.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DisassociateVehicleFleetInputBuilder {
     }
     /// <p>The unique ID of a fleet.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>The unique ID of a fleet.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
-            vehicle_name: self.vehicle_name,
-            fleet_id: self.fleet_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
+                vehicle_name: self.vehicle_name
+                ,
+                fleet_id: self.fleet_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonOpenSearchServerlessDestinationUpdate {
+pub struct AmazonOpenSearchServerlessDestinationUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
@@ -21,37 +21,37 @@ pub struct AmazonOpenSearchServerlessDestinationUpdate {
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
-impl AmazonOpenSearchServerlessDestinationUpdate {
+impl  AmazonOpenSearchServerlessDestinationUpdate  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn collection_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn collection_endpoint(&self) -> ::std::option::Option<& str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
-    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<& crate::types::AmazonOpenSearchServerlessBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
-    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<& crate::types::AmazonOpenSearchServerlessRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
-    pub fn s3_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
+    pub fn s3_update(&self) -> ::std::option::Option<& crate::types::S3DestinationUpdate> {
         self.s3_update.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn set_collection_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_endpoint = input;
-        self
+        self.collection_endpoint = input; self
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn get_collection_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>) -> Self {
-        self.buffering_hints = input;
-        self
+        self.buffering_hints = input; self
     }
     /// <p>The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.</p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints> {
@@ -139,8 +135,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>) -> Self {
-        self.retry_options = input;
-        self
+        self.retry_options = input; self
     }
     /// <p>The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions> {
@@ -153,8 +148,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn set_s3_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
-        self.s3_update = input;
-        self
+        self.s3_update = input; self
     }
     /// <p>Describes an update for a destination in Amazon S3.</p>
     pub fn get_s3_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
@@ -167,8 +161,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -181,8 +174,7 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -191,14 +183,23 @@ impl AmazonOpenSearchServerlessDestinationUpdateBuilder {
     /// Consumes the builder and constructs a [`AmazonOpenSearchServerlessDestinationUpdate`](crate::types::AmazonOpenSearchServerlessDestinationUpdate).
     pub fn build(self) -> crate::types::AmazonOpenSearchServerlessDestinationUpdate {
         crate::types::AmazonOpenSearchServerlessDestinationUpdate {
-            role_arn: self.role_arn,
-            collection_endpoint: self.collection_endpoint,
-            index_name: self.index_name,
-            buffering_hints: self.buffering_hints,
-            retry_options: self.retry_options,
-            s3_update: self.s3_update,
-            processing_configuration: self.processing_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
+            role_arn: self.role_arn
+            ,
+            collection_endpoint: self.collection_endpoint
+            ,
+            index_name: self.index_name
+            ,
+            buffering_hints: self.buffering_hints
+            ,
+            retry_options: self.retry_options
+            ,
+            s3_update: self.s3_update
+            ,
+            processing_configuration: self.processing_configuration
+            ,
+            cloud_watch_logging_options: self.cloud_watch_logging_options
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopAssessmentRunInput {
+pub struct StopAssessmentRunInput  {
     /// <p>The ARN of the assessment run that you want to stop.</p>
     pub assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub stop_action: ::std::option::Option<crate::types::StopAction>,
 }
-impl StopAssessmentRunInput {
+impl  StopAssessmentRunInput  {
     /// <p>The ARN of the assessment run that you want to stop.</p>
-    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> ::std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
-    pub fn stop_action(&self) -> ::std::option::Option<&crate::types::StopAction> {
+    pub fn stop_action(&self) -> ::std::option::Option<& crate::types::StopAction> {
         self.stop_action.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StopAssessmentRunInputBuilder {
     }
     /// <p>The ARN of the assessment run that you want to stop.</p>
     pub fn set_assessment_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_run_arn = input;
-        self
+        self.assessment_run_arn = input; self
     }
     /// <p>The ARN of the assessment run that you want to stop.</p>
     pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl StopAssessmentRunInputBuilder {
     }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub fn set_stop_action(mut self, input: ::std::option::Option<crate::types::StopAction>) -> Self {
-        self.stop_action = input;
-        self
+        self.stop_action = input; self
     }
     /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub fn get_stop_action(&self) -> &::std::option::Option<crate::types::StopAction> {
         &self.stop_action
     }
     /// Consumes the builder and constructs a [`StopAssessmentRunInput`](crate::operation::stop_assessment_run::StopAssessmentRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_assessment_run::StopAssessmentRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_assessment_run::StopAssessmentRunInput {
-            assessment_run_arn: self.assessment_run_arn,
-            stop_action: self.stop_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_assessment_run::StopAssessmentRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_assessment_run::StopAssessmentRunInput {
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                stop_action: self.stop_action
+                ,
+            }
+        )
     }
 }
+

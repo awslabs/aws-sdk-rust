@@ -3,7 +3,7 @@
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetAddress {
+pub struct TargetAddress  {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
@@ -39,9 +39,9 @@ pub struct TargetAddress {
     /// </ul>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
-impl TargetAddress {
+impl  TargetAddress  {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
-    pub fn ip(&self) -> ::std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<& str> {
         self.ip.as_deref()
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
@@ -49,7 +49,7 @@ impl TargetAddress {
         self.port
     }
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
-    pub fn ipv6(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<& str> {
         self.ipv6.as_deref()
     }
     /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
@@ -79,7 +79,7 @@ impl TargetAddress {
     /// <li>
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl TargetAddressBuilder {
     }
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip = input;
-        self
+        self.ip = input; self
     }
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +120,7 @@ impl TargetAddressBuilder {
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -135,8 +133,7 @@ impl TargetAddressBuilder {
     }
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6 = input;
-        self
+        self.ipv6 = input; self
     }
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +198,7 @@ impl TargetAddressBuilder {
     /// <p>None, which is treated as Do53.</p></li>
     /// </ul>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
     /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
@@ -237,10 +233,15 @@ impl TargetAddressBuilder {
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {
         crate::types::TargetAddress {
-            ip: self.ip,
-            port: self.port,
-            ipv6: self.ipv6,
-            protocol: self.protocol,
+            ip: self.ip
+            ,
+            port: self.port
+            ,
+            ipv6: self.ipv6
+            ,
+            protocol: self.protocol
+            ,
         }
     }
 }
+

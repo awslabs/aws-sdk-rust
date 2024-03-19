@@ -3,20 +3,19 @@
 /// <p>The total aggregation settings map of a field id.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TotalAggregationOption {
+pub struct TotalAggregationOption  {
     /// <p>The field id that's associated with the total aggregation option.</p>
     pub field_id: ::std::string::String,
     /// <p>The total aggregation function that you want to set for a specified field id.</p>
     pub total_aggregation_function: ::std::option::Option<crate::types::TotalAggregationFunction>,
 }
-impl TotalAggregationOption {
+impl  TotalAggregationOption  {
     /// <p>The field id that's associated with the total aggregation option.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The total aggregation function that you want to set for a specified field id.</p>
-    pub fn total_aggregation_function(&self) -> ::std::option::Option<&crate::types::TotalAggregationFunction> {
+    pub fn total_aggregation_function(&self) -> ::std::option::Option<& crate::types::TotalAggregationFunction> {
         self.total_aggregation_function.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl TotalAggregationOptionBuilder {
     }
     /// <p>The field id that's associated with the total aggregation option.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The field id that's associated with the total aggregation option.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl TotalAggregationOptionBuilder {
     }
     /// <p>The total aggregation function that you want to set for a specified field id.</p>
     pub fn set_total_aggregation_function(mut self, input: ::std::option::Option<crate::types::TotalAggregationFunction>) -> Self {
-        self.total_aggregation_function = input;
-        self
+        self.total_aggregation_function = input; self
     }
     /// <p>The total aggregation function that you want to set for a specified field id.</p>
     pub fn get_total_aggregation_function(&self) -> &::std::option::Option<crate::types::TotalAggregationFunction> {
@@ -69,14 +66,17 @@ impl TotalAggregationOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::TotalAggregationOptionBuilder::field_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TotalAggregationOption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TotalAggregationOption {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building TotalAggregationOption",
-                )
-            })?,
-            total_aggregation_function: self.total_aggregation_function,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TotalAggregationOption {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building TotalAggregationOption")
+                    )?
+                ,
+                total_aggregation_function: self.total_aggregation_function
+                ,
+            }
+        )
     }
 }
+

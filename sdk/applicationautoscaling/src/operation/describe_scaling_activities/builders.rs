@@ -5,56 +5,52 @@ pub use crate::operation::describe_scaling_activities::_describe_scaling_activit
 
 impl DescribeScalingActivitiesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_scaling_activities();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_scaling_activities();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeScalingActivities`.
-///
+/// 
 /// <p>Provides descriptive information about the scaling activities in the specified namespace from the previous six weeks.</p>
 /// <p>You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.</p>
 /// <p>For information about viewing scaling activities using the Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScalingActivitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
+                    inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-    > for DescribeScalingActivitiesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
+                    crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+                > for DescribeScalingActivitiesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
+                        crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeScalingActivitiesFluentBuilder {
     /// Creates a new `DescribeScalingActivities`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl DescribeScalingActivitiesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_scaling_activities::DescribeScalingActivities::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_scaling_activities::DescribeScalingActivities::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
-        crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_scaling_activities::DescribeScalingActivities::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_scaling_activities::DescribeScalingActivities::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput, crate::operation::describe_scaling_activities::DescribeScalingActivitiesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
-        crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
+                                crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.inner = self.inner.service_namespace(input);
@@ -456,3 +443,4 @@ impl DescribeScalingActivitiesFluentBuilder {
         self.inner.get_include_not_scaled_activities()
     }
 }
+

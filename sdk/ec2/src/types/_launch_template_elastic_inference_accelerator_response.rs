@@ -3,16 +3,16 @@
 /// <p>Describes an elastic inference accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateElasticInferenceAcceleratorResponse {
+pub struct LaunchTemplateElasticInferenceAcceleratorResponse  {
     /// <p>The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
     /// <p>Default: 1</p>
     pub count: ::std::option::Option<i32>,
 }
-impl LaunchTemplateElasticInferenceAcceleratorResponse {
+impl  LaunchTemplateElasticInferenceAcceleratorResponse  {
     /// <p>The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
@@ -43,8 +43,7 @@ impl LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
     }
     /// <p>The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
     /// <p>Default: 1</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of elastic inference accelerators to attach to the instance.</p>
     /// <p>Default: 1</p>
@@ -70,8 +68,11 @@ impl LaunchTemplateElasticInferenceAcceleratorResponseBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateElasticInferenceAcceleratorResponse`](crate::types::LaunchTemplateElasticInferenceAcceleratorResponse).
     pub fn build(self) -> crate::types::LaunchTemplateElasticInferenceAcceleratorResponse {
         crate::types::LaunchTemplateElasticInferenceAcceleratorResponse {
-            r#type: self.r#type,
-            count: self.count,
+            r#type: self.r#type
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

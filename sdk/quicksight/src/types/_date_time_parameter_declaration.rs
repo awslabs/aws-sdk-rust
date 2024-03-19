@@ -3,7 +3,7 @@
 /// <p>A parameter declaration for the <code>DateTime</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimeParameterDeclaration {
+pub struct DateTimeParameterDeclaration  {
     /// <p>The name of the parameter that is being declared.</p>
     pub name: ::std::string::String,
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
@@ -13,31 +13,31 @@ pub struct DateTimeParameterDeclaration {
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
     pub value_when_unset: ::std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::MappedDataSetParameter>>,
 }
-impl DateTimeParameterDeclaration {
+impl  DateTimeParameterDeclaration  {
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn default_values(&self) -> ::std::option::Option<&crate::types::DateTimeDefaultValues> {
+    pub fn default_values(&self) -> ::std::option::Option<& crate::types::DateTimeDefaultValues> {
         self.default_values.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> ::std::option::Option<& crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(&self) -> ::std::option::Option<&crate::types::DateTimeValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(&self) -> ::std::option::Option<& crate::types::DateTimeValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mapped_data_set_parameters.is_none()`.
-    pub fn mapped_data_set_parameters(&self) -> &[crate::types::MappedDataSetParameter] {
-        self.mapped_data_set_parameters.as_deref().unwrap_or_default()
+    pub fn mapped_data_set_parameters(&self) -> & [crate::types::MappedDataSetParameter] {
+        self.mapped_data_set_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DateTimeParameterDeclaration {
@@ -55,7 +55,7 @@ pub struct DateTimeParameterDeclarationBuilder {
     pub(crate) default_values: ::std::option::Option<crate::types::DateTimeDefaultValues>,
     pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) value_when_unset: ::std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
-    pub(crate) mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    pub(crate) mapped_data_set_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::MappedDataSetParameter>>,
 }
 impl DateTimeParameterDeclarationBuilder {
     /// <p>The name of the parameter that is being declared.</p>
@@ -66,8 +66,7 @@ impl DateTimeParameterDeclarationBuilder {
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl DateTimeParameterDeclarationBuilder {
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn set_default_values(mut self, input: ::std::option::Option<crate::types::DateTimeDefaultValues>) -> Self {
-        self.default_values = input;
-        self
+        self.default_values = input; self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn get_default_values(&self) -> &::std::option::Option<crate::types::DateTimeDefaultValues> {
@@ -94,8 +92,7 @@ impl DateTimeParameterDeclarationBuilder {
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn set_time_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
-        self.time_granularity = input;
-        self
+        self.time_granularity = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
@@ -108,8 +105,7 @@ impl DateTimeParameterDeclarationBuilder {
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
     pub fn set_value_when_unset(mut self, input: ::std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>) -> Self {
-        self.value_when_unset = input;
-        self
+        self.value_when_unset = input; self
     }
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
     pub fn get_value_when_unset(&self) -> &::std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration> {
@@ -122,34 +118,39 @@ impl DateTimeParameterDeclarationBuilder {
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
     pub fn mapped_data_set_parameters(mut self, input: crate::types::MappedDataSetParameter) -> Self {
         let mut v = self.mapped_data_set_parameters.unwrap_or_default();
-        v.push(input);
-        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mapped_data_set_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn set_mapped_data_set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>>) -> Self {
-        self.mapped_data_set_parameters = input;
-        self
+    pub fn set_mapped_data_set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MappedDataSetParameter>>) -> Self {
+        self.mapped_data_set_parameters = input; self
     }
     /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
-    pub fn get_mapped_data_set_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MappedDataSetParameter>> {
+    pub fn get_mapped_data_set_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MappedDataSetParameter>> {
         &self.mapped_data_set_parameters
     }
     /// Consumes the builder and constructs a [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DateTimeParameterDeclarationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameterDeclaration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateTimeParameterDeclaration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DateTimeParameterDeclaration",
-                )
-            })?,
-            default_values: self.default_values,
-            time_granularity: self.time_granularity,
-            value_when_unset: self.value_when_unset,
-            mapped_data_set_parameters: self.mapped_data_set_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateTimeParameterDeclaration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DateTimeParameterDeclaration")
+                    )?
+                ,
+                default_values: self.default_values
+                ,
+                time_granularity: self.time_granularity
+                ,
+                value_when_unset: self.value_when_unset
+                ,
+                mapped_data_set_parameters: self.mapped_data_set_parameters
+                ,
+            }
+        )
     }
 }
+

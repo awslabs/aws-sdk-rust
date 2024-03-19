@@ -3,13 +3,13 @@
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponsePartitionKey {
+pub struct ResponsePartitionKey  {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub dimensions: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub dimensions: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
 }
-impl ResponsePartitionKey {
+impl  ResponsePartitionKey  {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn dimensions(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn dimensions(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.dimensions
     }
 }
@@ -24,7 +24,7 @@ impl ResponsePartitionKey {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponsePartitionKeyBuilder {
-    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ResponsePartitionKeyBuilder {
     /// Adds a key-value pair to `dimensions`.
@@ -34,30 +34,31 @@ impl ResponsePartitionKeyBuilder {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn dimensions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dimensions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dimensions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
     /// Consumes the builder and constructs a [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimensions`](crate::types::builders::ResponsePartitionKeyBuilder::dimensions)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponsePartitionKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponsePartitionKey {
-            dimensions: self.dimensions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dimensions",
-                    "dimensions was not specified but it is required when building ResponsePartitionKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponsePartitionKey {
+                dimensions: self.dimensions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dimensions", "dimensions was not specified but it is required when building ResponsePartitionKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

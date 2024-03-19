@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrustedTokenIssuerInput {
+pub struct DeleteTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
     pub trusted_token_issuer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTrustedTokenIssuerInput {
+impl  DeleteTrustedTokenIssuerInput  {
     /// <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
-    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trusted_token_issuer_arn(&self) -> ::std::option::Option<& str> {
         self.trusted_token_issuer_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteTrustedTokenIssuerInputBuilder {
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
     pub fn set_trusted_token_issuer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trusted_token_issuer_arn = input;
-        self
+        self.trusted_token_issuer_arn = input; self
     }
     /// <p>Specifies the ARN of the trusted token issuer configuration to delete.</p>
     pub fn get_trusted_token_issuer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trusted_token_issuer_arn
     }
     /// Consumes the builder and constructs a [`DeleteTrustedTokenIssuerInput`](crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput {
-            trusted_token_issuer_arn: self.trusted_token_issuer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_trusted_token_issuer::DeleteTrustedTokenIssuerInput {
+                trusted_token_issuer_arn: self.trusted_token_issuer_arn
+                ,
+            }
+        )
     }
 }
+

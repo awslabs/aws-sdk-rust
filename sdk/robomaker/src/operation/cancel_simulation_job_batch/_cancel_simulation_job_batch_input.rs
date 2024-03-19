@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSimulationJobBatchInput {
+pub struct CancelSimulationJobBatchInput  {
     /// <p>The id of the batch to cancel.</p>
     pub batch: ::std::option::Option<::std::string::String>,
 }
-impl CancelSimulationJobBatchInput {
+impl  CancelSimulationJobBatchInput  {
     /// <p>The id of the batch to cancel.</p>
-    pub fn batch(&self) -> ::std::option::Option<&str> {
+    pub fn batch(&self) -> ::std::option::Option<& str> {
         self.batch.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl CancelSimulationJobBatchInputBuilder {
     }
     /// <p>The id of the batch to cancel.</p>
     pub fn set_batch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch = input;
-        self
+        self.batch = input; self
     }
     /// <p>The id of the batch to cancel.</p>
     pub fn get_batch(&self) -> &::std::option::Option<::std::string::String> {
         &self.batch
     }
     /// Consumes the builder and constructs a [`CancelSimulationJobBatchInput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput { batch: self.batch })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput {
+                batch: self.batch
+                ,
+            }
+        )
     }
 }
+

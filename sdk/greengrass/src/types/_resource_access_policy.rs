@@ -3,19 +3,19 @@
 /// A policy used by the function to access a resource.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceAccessPolicy {
+pub struct ResourceAccessPolicy  {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
     pub permission: ::std::option::Option<crate::types::Permission>,
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl ResourceAccessPolicy {
+impl  ResourceAccessPolicy  {
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResourceAccessPolicyBuilder {
     }
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
@@ -56,8 +55,7 @@ impl ResourceAccessPolicyBuilder {
     }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ResourceAccessPolicyBuilder {
     /// Consumes the builder and constructs a [`ResourceAccessPolicy`](crate::types::ResourceAccessPolicy).
     pub fn build(self) -> crate::types::ResourceAccessPolicy {
         crate::types::ResourceAccessPolicy {
-            permission: self.permission,
-            resource_id: self.resource_id,
+            permission: self.permission
+            ,
+            resource_id: self.resource_id
+            ,
         }
     }
 }
+

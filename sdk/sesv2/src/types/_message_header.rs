@@ -3,7 +3,7 @@
 /// <p>Contains the name and value of a message header that you add to an email.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageHeader {
+pub struct MessageHeader  {
     /// <p>The name of the message header. The message header name has to meet the following criteria:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct MessageHeader {
     /// </ul>
     pub value: ::std::string::String,
 }
-impl MessageHeader {
+impl  MessageHeader  {
     /// <p>The name of the message header. The message header name has to meet the following criteria:</p>
     /// <ul>
     /// <li>
@@ -29,9 +29,8 @@ impl MessageHeader {
     /// <li>
     /// <p>Can contain no more than 126 characters.</p></li>
     /// </ul>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the message header. The message header value has to meet the following criteria:</p>
     /// <ul>
@@ -40,9 +39,8 @@ impl MessageHeader {
     /// <li>
     /// <p>Can contain no more than 870 characters.</p></li>
     /// </ul>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl MessageHeader {
@@ -80,8 +78,7 @@ impl MessageHeaderBuilder {
     /// <p>Can contain no more than 126 characters.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the message header. The message header name has to meet the following criteria:</p>
     /// <ul>
@@ -113,8 +110,7 @@ impl MessageHeaderBuilder {
     /// <p>Can contain no more than 870 characters.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the message header. The message header value has to meet the following criteria:</p>
     /// <ul>
@@ -131,19 +127,20 @@ impl MessageHeaderBuilder {
     /// - [`name`](crate::types::builders::MessageHeaderBuilder::name)
     /// - [`value`](crate::types::builders::MessageHeaderBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageHeader, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageHeader {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building MessageHeader",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building MessageHeader",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageHeader {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building MessageHeader")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building MessageHeader")
+                    )?
+                ,
+            }
+        )
     }
 }
+

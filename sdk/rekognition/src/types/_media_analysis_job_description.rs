@@ -3,7 +3,7 @@
 /// <p>Description for a media analysis job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisJobDescription {
+pub struct MediaAnalysisJobDescription  {
     /// <p>The identifier for a media analysis job.</p>
     pub job_id: ::std::string::String,
     /// <p>The name of a media analysis job.</p>
@@ -29,54 +29,53 @@ pub struct MediaAnalysisJobDescription {
     /// <p>Provides statistics on input manifest and errors identified in the input manifest.</p>
     pub manifest_summary: ::std::option::Option<crate::types::MediaAnalysisManifestSummary>,
 }
-impl MediaAnalysisJobDescription {
+impl  MediaAnalysisJobDescription  {
     /// <p>The identifier for a media analysis job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The name of a media analysis job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Operation configurations that were provided during job creation.</p>
-    pub fn operations_config(&self) -> ::std::option::Option<&crate::types::MediaAnalysisOperationsConfig> {
+    pub fn operations_config(&self) -> ::std::option::Option<& crate::types::MediaAnalysisOperationsConfig> {
         self.operations_config.as_ref()
     }
     /// <p>The status of the media analysis job being retrieved.</p>
-    pub fn status(&self) -> &crate::types::MediaAnalysisJobStatus {
+    pub fn status(&self) -> & crate::types::MediaAnalysisJobStatus {
         &self.status
     }
     /// <p>Details about the error that resulted in failure of the job.</p>
-    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::MediaAnalysisJobFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<& crate::types::MediaAnalysisJobFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The Unix date and time when the job was started.</p>
-    pub fn creation_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_timestamp
     }
     /// <p>The Unix date and time when the job finished.</p>
-    pub fn completion_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_timestamp.as_ref()
     }
     /// <p>Reference to the input manifest that was provided in the job creation request.</p>
-    pub fn input(&self) -> ::std::option::Option<&crate::types::MediaAnalysisInput> {
+    pub fn input(&self) -> ::std::option::Option<& crate::types::MediaAnalysisInput> {
         self.input.as_ref()
     }
     /// <p>Output configuration that was provided in the creation request.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::MediaAnalysisOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::MediaAnalysisOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>KMS Key that was provided in the creation request.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Output manifest that contains prediction results.</p>
-    pub fn results(&self) -> ::std::option::Option<&crate::types::MediaAnalysisResults> {
+    pub fn results(&self) -> ::std::option::Option<& crate::types::MediaAnalysisResults> {
         self.results.as_ref()
     }
     /// <p>Provides statistics on input manifest and errors identified in the input manifest.</p>
-    pub fn manifest_summary(&self) -> ::std::option::Option<&crate::types::MediaAnalysisManifestSummary> {
+    pub fn manifest_summary(&self) -> ::std::option::Option<& crate::types::MediaAnalysisManifestSummary> {
         self.manifest_summary.as_ref()
     }
 }
@@ -113,8 +112,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>The identifier for a media analysis job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier for a media analysis job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>The name of a media analysis job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of a media analysis job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Operation configurations that were provided during job creation.</p>
     pub fn set_operations_config(mut self, input: ::std::option::Option<crate::types::MediaAnalysisOperationsConfig>) -> Self {
-        self.operations_config = input;
-        self
+        self.operations_config = input; self
     }
     /// <p>Operation configurations that were provided during job creation.</p>
     pub fn get_operations_config(&self) -> &::std::option::Option<crate::types::MediaAnalysisOperationsConfig> {
@@ -157,8 +153,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>The status of the media analysis job being retrieved.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MediaAnalysisJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the media analysis job being retrieved.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaAnalysisJobStatus> {
@@ -171,8 +166,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Details about the error that resulted in failure of the job.</p>
     pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::MediaAnalysisJobFailureDetails>) -> Self {
-        self.failure_details = input;
-        self
+        self.failure_details = input; self
     }
     /// <p>Details about the error that resulted in failure of the job.</p>
     pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::MediaAnalysisJobFailureDetails> {
@@ -186,8 +180,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>The Unix date and time when the job was started.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The Unix date and time when the job was started.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -200,8 +193,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>The Unix date and time when the job finished.</p>
     pub fn set_completion_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_timestamp = input;
-        self
+        self.completion_timestamp = input; self
     }
     /// <p>The Unix date and time when the job finished.</p>
     pub fn get_completion_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -215,8 +207,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Reference to the input manifest that was provided in the job creation request.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::MediaAnalysisInput>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Reference to the input manifest that was provided in the job creation request.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::MediaAnalysisInput> {
@@ -230,8 +221,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Output configuration that was provided in the creation request.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::MediaAnalysisOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Output configuration that was provided in the creation request.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::MediaAnalysisOutputConfig> {
@@ -244,8 +234,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>KMS Key that was provided in the creation request.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>KMS Key that was provided in the creation request.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +247,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Output manifest that contains prediction results.</p>
     pub fn set_results(mut self, input: ::std::option::Option<crate::types::MediaAnalysisResults>) -> Self {
-        self.results = input;
-        self
+        self.results = input; self
     }
     /// <p>Output manifest that contains prediction results.</p>
     pub fn get_results(&self) -> &::std::option::Option<crate::types::MediaAnalysisResults> {
@@ -272,8 +260,7 @@ impl MediaAnalysisJobDescriptionBuilder {
     }
     /// <p>Provides statistics on input manifest and errors identified in the input manifest.</p>
     pub fn set_manifest_summary(mut self, input: ::std::option::Option<crate::types::MediaAnalysisManifestSummary>) -> Self {
-        self.manifest_summary = input;
-        self
+        self.manifest_summary = input; self
     }
     /// <p>Provides statistics on input manifest and errors identified in the input manifest.</p>
     pub fn get_manifest_summary(&self) -> &::std::option::Option<crate::types::MediaAnalysisManifestSummary> {
@@ -285,34 +272,43 @@ impl MediaAnalysisJobDescriptionBuilder {
     /// - [`status`](crate::types::builders::MediaAnalysisJobDescriptionBuilder::status)
     /// - [`creation_timestamp`](crate::types::builders::MediaAnalysisJobDescriptionBuilder::creation_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisJobDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaAnalysisJobDescription {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building MediaAnalysisJobDescription",
-                )
-            })?,
-            job_name: self.job_name,
-            operations_config: self.operations_config,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building MediaAnalysisJobDescription",
-                )
-            })?,
-            failure_details: self.failure_details,
-            creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_timestamp",
-                    "creation_timestamp was not specified but it is required when building MediaAnalysisJobDescription",
-                )
-            })?,
-            completion_timestamp: self.completion_timestamp,
-            input: self.input,
-            output_config: self.output_config,
-            kms_key_id: self.kms_key_id,
-            results: self.results,
-            manifest_summary: self.manifest_summary,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaAnalysisJobDescription {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building MediaAnalysisJobDescription")
+                    )?
+                ,
+                job_name: self.job_name
+                ,
+                operations_config: self.operations_config
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building MediaAnalysisJobDescription")
+                    )?
+                ,
+                failure_details: self.failure_details
+                ,
+                creation_timestamp: self.creation_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_timestamp", "creation_timestamp was not specified but it is required when building MediaAnalysisJobDescription")
+                    )?
+                ,
+                completion_timestamp: self.completion_timestamp
+                ,
+                input: self.input
+                ,
+                output_config: self.output_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                results: self.results
+                ,
+                manifest_summary: self.manifest_summary
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration details of the Amazon Web Services Glue data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlueRunConfigurationOutput {
+pub struct GlueRunConfigurationOutput  {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -11,25 +11,24 @@ pub struct GlueRunConfigurationOutput {
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
+    pub relational_filter_configurations: ::std::vec::Vec::<crate::types::RelationalFilterConfiguration>,
 }
-impl GlueRunConfigurationOutput {
+impl  GlueRunConfigurationOutput  {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn data_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role(&self) -> ::std::option::Option<& str> {
         self.data_access_role.as_deref()
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn relational_filter_configurations(&self) -> &[crate::types::RelationalFilterConfiguration] {
-        use std::ops::Deref;
-        self.relational_filter_configurations.deref()
+    pub fn relational_filter_configurations(&self) -> & [crate::types::RelationalFilterConfiguration] {
+        use std::ops::Deref; self.relational_filter_configurations.deref()
     }
 }
 impl GlueRunConfigurationOutput {
@@ -46,7 +45,7 @@ pub struct GlueRunConfigurationOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role: ::std::option::Option<::std::string::String>,
-    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>,
 }
 impl GlueRunConfigurationOutputBuilder {
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
@@ -56,8 +55,7 @@ impl GlueRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl GlueRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +81,7 @@ impl GlueRunConfigurationOutputBuilder {
     }
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn set_data_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role = input;
-        self
+        self.data_access_role = input; self
     }
     /// <p>The data access role included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn get_data_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,36 +94,37 @@ impl GlueRunConfigurationOutputBuilder {
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
     pub fn relational_filter_configurations(mut self, input: crate::types::RelationalFilterConfiguration) -> Self {
         let mut v = self.relational_filter_configurations.unwrap_or_default();
-        v.push(input);
-        self.relational_filter_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relational_filter_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn set_relational_filter_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
-    ) -> Self {
-        self.relational_filter_configurations = input;
-        self
+    pub fn set_relational_filter_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>) -> Self {
+        self.relational_filter_configurations = input; self
     }
     /// <p>The relational filter configurations included in the configuration details of the Amazon Web Services Glue data source.</p>
-    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>> {
+    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>> {
         &self.relational_filter_configurations
     }
     /// Consumes the builder and constructs a [`GlueRunConfigurationOutput`](crate::types::GlueRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::GlueRunConfigurationOutputBuilder::relational_filter_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::GlueRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlueRunConfigurationOutput {
-            account_id: self.account_id,
-            region: self.region,
-            data_access_role: self.data_access_role,
-            relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relational_filter_configurations",
-                    "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlueRunConfigurationOutput {
+                account_id: self.account_id
+                ,
+                region: self.region
+                ,
+                data_access_role: self.data_access_role
+                ,
+                relational_filter_configurations: self.relational_filter_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relational_filter_configurations", "relational_filter_configurations was not specified but it is required when building GlueRunConfigurationOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

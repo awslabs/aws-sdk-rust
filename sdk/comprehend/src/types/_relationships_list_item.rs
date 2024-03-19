@@ -3,21 +3,22 @@
 /// <p>List of child blocks for the current block.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationshipsListItem {
+pub struct RelationshipsListItem  {
     /// <p>Identifers of the child blocks.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Only supported relationship is a child relationship.</p>
     pub r#type: ::std::option::Option<crate::types::RelationshipType>,
 }
-impl RelationshipsListItem {
+impl  RelationshipsListItem  {
     /// <p>Identifers of the child blocks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Only supported relationship is a child relationship.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RelationshipType> {
         self.r#type.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl RelationshipsListItem {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RelationshipsListItemBuilder {
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<crate::types::RelationshipType>,
 }
 impl RelationshipsListItemBuilder {
@@ -43,17 +44,16 @@ impl RelationshipsListItemBuilder {
     /// <p>Identifers of the child blocks.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifers of the child blocks.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>Identifers of the child blocks.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// <p>Only supported relationship is a child relationship.</p>
@@ -63,8 +63,7 @@ impl RelationshipsListItemBuilder {
     }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
@@ -73,8 +72,11 @@ impl RelationshipsListItemBuilder {
     /// Consumes the builder and constructs a [`RelationshipsListItem`](crate::types::RelationshipsListItem).
     pub fn build(self) -> crate::types::RelationshipsListItem {
         crate::types::RelationshipsListItem {
-            ids: self.ids,
-            r#type: self.r#type,
+            ids: self.ids
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

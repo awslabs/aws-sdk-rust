@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMountTargetsInput {
+pub struct DescribeMountTargetsInput  {
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub max_items: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
@@ -15,25 +15,25 @@ pub struct DescribeMountTargetsInput {
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub access_point_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMountTargetsInput {
+impl  DescribeMountTargetsInput  {
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
-    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> ::std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
-    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_id(&self) -> ::std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DescribeMountTargetsInputBuilder {
     }
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl DescribeMountTargetsInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DescribeMountTargetsInputBuilder {
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file system ID or ARN as input.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DescribeMountTargetsInputBuilder {
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
     pub fn set_mount_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mount_target_id = input;
-        self
+        self.mount_target_id = input; self
     }
     /// <p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.</p>
     pub fn get_mount_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,24 +114,28 @@ impl DescribeMountTargetsInputBuilder {
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_point_id = input;
-        self
+        self.access_point_id = input; self
     }
     /// <p>(Optional) The ID of the access point whose mount targets that you want to list. It must be included in your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts either an access point ID or ARN as input.</p>
     pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_point_id
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetsInput`](crate::operation::describe_mount_targets::DescribeMountTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_mount_targets::DescribeMountTargetsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_mount_targets::DescribeMountTargetsInput {
-            max_items: self.max_items,
-            marker: self.marker,
-            file_system_id: self.file_system_id,
-            mount_target_id: self.mount_target_id,
-            access_point_id: self.access_point_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mount_targets::DescribeMountTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_mount_targets::DescribeMountTargetsInput {
+                max_items: self.max_items
+                ,
+                marker: self.marker
+                ,
+                file_system_id: self.file_system_id
+                ,
+                mount_target_id: self.mount_target_id
+                ,
+                access_point_id: self.access_point_id
+                ,
+            }
+        )
     }
 }
+

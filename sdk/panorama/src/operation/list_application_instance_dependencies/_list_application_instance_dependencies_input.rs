@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationInstanceDependenciesInput {
+pub struct ListApplicationInstanceDependenciesInput  {
     /// <p>The application instance's ID.</p>
     pub application_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
@@ -10,9 +10,9 @@ pub struct ListApplicationInstanceDependenciesInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListApplicationInstanceDependenciesInput {
+impl  ListApplicationInstanceDependenciesInput  {
     /// <p>The application instance's ID.</p>
-    pub fn application_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> ::std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
@@ -20,7 +20,7 @@ impl ListApplicationInstanceDependenciesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListApplicationInstanceDependenciesInputBuilder {
     }
     /// <p>The application instance's ID.</p>
     pub fn set_application_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_instance_id = input;
-        self
+        self.application_instance_id = input; self
     }
     /// <p>The application instance's ID.</p>
     pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListApplicationInstanceDependenciesInputBuilder {
     }
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of application instance dependencies to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl ListApplicationInstanceDependenciesInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationInstanceDependenciesInput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesInput {
-                application_instance_id: self.application_instance_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                application_instance_id: self.application_instance_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

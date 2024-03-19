@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBgpPeerInput {
+pub struct DeleteBgpPeerInput  {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -12,9 +12,9 @@ pub struct DeleteBgpPeerInput {
     /// <p>The ID of the BGP peer.</p>
     pub bgp_peer_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBgpPeerInput {
+impl  DeleteBgpPeerInput  {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -22,11 +22,11 @@ impl DeleteBgpPeerInput {
         self.asn
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> ::std::option::Option<&str> {
+    pub fn customer_address(&self) -> ::std::option::Option<& str> {
         self.customer_address.as_deref()
     }
     /// <p>The ID of the BGP peer.</p>
-    pub fn bgp_peer_id(&self) -> ::std::option::Option<&str> {
+    pub fn bgp_peer_id(&self) -> ::std::option::Option<& str> {
         self.bgp_peer_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DeleteBgpPeerInputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteBgpPeerInputBuilder {
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     pub fn get_asn(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl DeleteBgpPeerInputBuilder {
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn set_customer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_address = input;
-        self
+        self.customer_address = input; self
     }
     /// <p>The IP address assigned to the customer interface.</p>
     pub fn get_customer_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl DeleteBgpPeerInputBuilder {
     }
     /// <p>The ID of the BGP peer.</p>
     pub fn set_bgp_peer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bgp_peer_id = input;
-        self
+        self.bgp_peer_id = input; self
     }
     /// <p>The ID of the BGP peer.</p>
     pub fn get_bgp_peer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bgp_peer_id
     }
     /// Consumes the builder and constructs a [`DeleteBgpPeerInput`](crate::operation::delete_bgp_peer::DeleteBgpPeerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_bgp_peer::DeleteBgpPeerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
-            virtual_interface_id: self.virtual_interface_id,
-            asn: self.asn,
-            customer_address: self.customer_address,
-            bgp_peer_id: self.bgp_peer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bgp_peer::DeleteBgpPeerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_bgp_peer::DeleteBgpPeerInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+                asn: self.asn
+                ,
+                customer_address: self.customer_address
+                ,
+                bgp_peer_id: self.bgp_peer_id
+                ,
+            }
+        )
     }
 }
+

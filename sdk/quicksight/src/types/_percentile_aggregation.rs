@@ -3,11 +3,11 @@
 /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PercentileAggregation {
+pub struct PercentileAggregation  {
     /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
     pub percentile_value: ::std::option::Option<f64>,
 }
-impl PercentileAggregation {
+impl  PercentileAggregation  {
     /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
     pub fn percentile_value(&self) -> ::std::option::Option<f64> {
         self.percentile_value
@@ -34,8 +34,7 @@ impl PercentileAggregationBuilder {
     }
     /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
     pub fn set_percentile_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.percentile_value = input;
-        self
+        self.percentile_value = input; self
     }
     /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
     pub fn get_percentile_value(&self) -> &::std::option::Option<f64> {
@@ -44,7 +43,9 @@ impl PercentileAggregationBuilder {
     /// Consumes the builder and constructs a [`PercentileAggregation`](crate::types::PercentileAggregation).
     pub fn build(self) -> crate::types::PercentileAggregation {
         crate::types::PercentileAggregation {
-            percentile_value: self.percentile_value,
+            percentile_value: self.percentile_value
+            ,
         }
     }
 }
+

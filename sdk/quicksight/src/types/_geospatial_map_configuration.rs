@@ -3,7 +3,7 @@
 /// <p>The configuration of a <code>GeospatialMapVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeospatialMapConfiguration {
+pub struct GeospatialMapConfiguration  {
     /// <p>The field wells of the visual.</p>
     pub field_wells: ::std::option::Option<crate::types::GeospatialMapFieldWells>,
     /// <p>The legend display setup of the visual.</p>
@@ -21,37 +21,37 @@ pub struct GeospatialMapConfiguration {
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl GeospatialMapConfiguration {
+impl  GeospatialMapConfiguration  {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::GeospatialMapFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::GeospatialMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The window options of the geospatial map.</p>
-    pub fn window_options(&self) -> ::std::option::Option<&crate::types::GeospatialWindowOptions> {
+    pub fn window_options(&self) -> ::std::option::Option<& crate::types::GeospatialWindowOptions> {
         self.window_options.as_ref()
     }
     /// <p>The map style options of the geospatial map.</p>
-    pub fn map_style_options(&self) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
+    pub fn map_style_options(&self) -> ::std::option::Option<& crate::types::GeospatialMapStyleOptions> {
         self.map_style_options.as_ref()
     }
     /// <p>The point style options of the geospatial map.</p>
-    pub fn point_style_options(&self) -> ::std::option::Option<&crate::types::GeospatialPointStyleOptions> {
+    pub fn point_style_options(&self) -> ::std::option::Option<& crate::types::GeospatialPointStyleOptions> {
         self.point_style_options.as_ref()
     }
     /// <p>The visual display options for the visual palette.</p>
-    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::GeospatialMapFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field wells of the visual.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::GeospatialMapFieldWells> {
@@ -97,8 +96,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn get_legend(&self) -> &::std::option::Option<crate::types::LegendOptions> {
@@ -111,8 +109,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
@@ -125,8 +122,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The window options of the geospatial map.</p>
     pub fn set_window_options(mut self, input: ::std::option::Option<crate::types::GeospatialWindowOptions>) -> Self {
-        self.window_options = input;
-        self
+        self.window_options = input; self
     }
     /// <p>The window options of the geospatial map.</p>
     pub fn get_window_options(&self) -> &::std::option::Option<crate::types::GeospatialWindowOptions> {
@@ -139,8 +135,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The map style options of the geospatial map.</p>
     pub fn set_map_style_options(mut self, input: ::std::option::Option<crate::types::GeospatialMapStyleOptions>) -> Self {
-        self.map_style_options = input;
-        self
+        self.map_style_options = input; self
     }
     /// <p>The map style options of the geospatial map.</p>
     pub fn get_map_style_options(&self) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
@@ -153,8 +148,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The point style options of the geospatial map.</p>
     pub fn set_point_style_options(mut self, input: ::std::option::Option<crate::types::GeospatialPointStyleOptions>) -> Self {
-        self.point_style_options = input;
-        self
+        self.point_style_options = input; self
     }
     /// <p>The point style options of the geospatial map.</p>
     pub fn get_point_style_options(&self) -> &::std::option::Option<crate::types::GeospatialPointStyleOptions> {
@@ -167,8 +161,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The visual display options for the visual palette.</p>
     pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
-        self.visual_palette = input;
-        self
+        self.visual_palette = input; self
     }
     /// <p>The visual display options for the visual palette.</p>
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
@@ -181,8 +174,7 @@ impl GeospatialMapConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -191,14 +183,23 @@ impl GeospatialMapConfigurationBuilder {
     /// Consumes the builder and constructs a [`GeospatialMapConfiguration`](crate::types::GeospatialMapConfiguration).
     pub fn build(self) -> crate::types::GeospatialMapConfiguration {
         crate::types::GeospatialMapConfiguration {
-            field_wells: self.field_wells,
-            legend: self.legend,
-            tooltip: self.tooltip,
-            window_options: self.window_options,
-            map_style_options: self.map_style_options,
-            point_style_options: self.point_style_options,
-            visual_palette: self.visual_palette,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            legend: self.legend
+            ,
+            tooltip: self.tooltip
+            ,
+            window_options: self.window_options
+            ,
+            map_style_options: self.map_style_options
+            ,
+            point_style_options: self.point_style_options
+            ,
+            visual_palette: self.visual_palette
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

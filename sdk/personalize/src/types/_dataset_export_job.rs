@@ -8,7 +8,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetExportJob {
+pub struct DatasetExportJob  {
     /// <p>The name of the export job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
@@ -36,25 +36,25 @@ pub struct DatasetExportJob {
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl DatasetExportJob {
+impl  DatasetExportJob  {
     /// <p>The name of the export job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
-    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_export_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_export_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
-    pub fn ingestion_mode(&self) -> ::std::option::Option<&crate::types::IngestionMode> {
+    pub fn ingestion_mode(&self) -> ::std::option::Option<& crate::types::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the dataset export job.</p>
@@ -63,24 +63,24 @@ impl DatasetExportJob {
     /// <li>
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p><code>s3://bucket-name/folder-name/</code></p>
-    pub fn job_output(&self) -> ::std::option::Option<&crate::types::DatasetExportJobOutput> {
+    pub fn job_output(&self) -> ::std::option::Option<& crate::types::DatasetExportJobOutput> {
         self.job_output.as_ref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -114,8 +114,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The name of the export job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the export job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +127,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub fn set_dataset_export_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_export_job_arn = input;
-        self
+        self.dataset_export_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +153,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn set_ingestion_mode(mut self, input: ::std::option::Option<crate::types::IngestionMode>) -> Self {
-        self.ingestion_mode = input;
-        self
+        self.ingestion_mode = input; self
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.</p>
     pub fn get_ingestion_mode(&self) -> &::std::option::Option<crate::types::IngestionMode> {
@@ -170,8 +166,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +189,7 @@ impl DatasetExportJobBuilder {
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
@@ -215,8 +209,7 @@ impl DatasetExportJobBuilder {
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p><code>s3://bucket-name/folder-name/</code></p>
     pub fn set_job_output(mut self, input: ::std::option::Option<crate::types::DatasetExportJobOutput>) -> Self {
-        self.job_output = input;
-        self
+        self.job_output = input; self
     }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p><code>s3://bucket-name/folder-name/</code></p>
@@ -230,8 +223,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -244,8 +236,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +249,7 @@ impl DatasetExportJobBuilder {
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,16 +258,27 @@ impl DatasetExportJobBuilder {
     /// Consumes the builder and constructs a [`DatasetExportJob`](crate::types::DatasetExportJob).
     pub fn build(self) -> crate::types::DatasetExportJob {
         crate::types::DatasetExportJob {
-            job_name: self.job_name,
-            dataset_export_job_arn: self.dataset_export_job_arn,
-            dataset_arn: self.dataset_arn,
-            ingestion_mode: self.ingestion_mode,
-            role_arn: self.role_arn,
-            status: self.status,
-            job_output: self.job_output,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reason: self.failure_reason,
+            job_name: self.job_name
+            ,
+            dataset_export_job_arn: self.dataset_export_job_arn
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            ingestion_mode: self.ingestion_mode
+            ,
+            role_arn: self.role_arn
+            ,
+            status: self.status
+            ,
+            job_output: self.job_output
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

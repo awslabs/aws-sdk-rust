@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceNetworkServiceAssociationOutput {
+pub struct DeleteServiceNetworkServiceAssociationOutput  {
     /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
@@ -11,25 +11,25 @@ pub struct DeleteServiceNetworkServiceAssociationOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteServiceNetworkServiceAssociationOutput {
+impl  DeleteServiceNetworkServiceAssociationOutput  {
     /// <p>The ID of the association.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkServiceAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceNetworkServiceAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteServiceNetworkServiceAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteServiceNetworkServiceAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkServiceAssociationOutput`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput).
     pub fn builder() -> crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationOutputBuilder {
@@ -54,8 +54,7 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
@@ -82,29 +80,32 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkServiceAssociationOutput`](crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput).
     pub fn build(self) -> crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput {
         crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociationOutput {
-            id: self.id,
-            status: self.status,
-            arn: self.arn,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

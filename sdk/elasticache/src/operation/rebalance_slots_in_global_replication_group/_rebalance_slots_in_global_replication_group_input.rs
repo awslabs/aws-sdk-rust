@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebalanceSlotsInGlobalReplicationGroupInput {
+pub struct RebalanceSlotsInGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub apply_immediately: ::std::option::Option<bool>,
 }
-impl RebalanceSlotsInGlobalReplicationGroupInput {
+impl  RebalanceSlotsInGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> ::std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
@@ -41,8 +41,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>The name of the Global datastore</p>
     pub fn set_global_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_replication_group_id = input;
-        self
+        self.global_replication_group_id = input; self
     }
     /// <p>The name of the Global datastore</p>
     pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>If <code>True</code>, redistribution is applied immediately.</p>
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id,
-                apply_immediately: self.apply_immediately,
-            },
+                global_replication_group_id: self.global_replication_group_id
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+            }
         )
     }
 }
+

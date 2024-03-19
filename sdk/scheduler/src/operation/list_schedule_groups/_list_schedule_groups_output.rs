@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScheduleGroupsOutput {
+pub struct ListScheduleGroupsOutput  {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub schedule_groups: ::std::vec::Vec<crate::types::ScheduleGroupSummary>,
+    pub schedule_groups: ::std::vec::Vec::<crate::types::ScheduleGroupSummary>,
     _request_id: Option<String>,
 }
-impl ListScheduleGroupsOutput {
+impl  ListScheduleGroupsOutput  {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn schedule_groups(&self) -> &[crate::types::ScheduleGroupSummary] {
-        use std::ops::Deref;
-        self.schedule_groups.deref()
+    pub fn schedule_groups(&self) -> & [crate::types::ScheduleGroupSummary] {
+        use std::ops::Deref; self.schedule_groups.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListScheduleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListScheduleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
     pub fn builder() -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListScheduleGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScheduleGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_groups: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>,
+    pub(crate) schedule_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListScheduleGroupsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListScheduleGroupsOutputBuilder {
     }
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListScheduleGroupsOutputBuilder {
     /// <p>The schedule groups that match the specified criteria.</p>
     pub fn schedule_groups(mut self, input: crate::types::ScheduleGroupSummary) -> Self {
         let mut v = self.schedule_groups.unwrap_or_default();
-        v.push(input);
-        self.schedule_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schedule_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn set_schedule_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>>) -> Self {
-        self.schedule_groups = input;
-        self
+    pub fn set_schedule_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleGroupSummary>>) -> Self {
+        self.schedule_groups = input; self
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn get_schedule_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>> {
+    pub fn get_schedule_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduleGroupSummary>> {
         &self.schedule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_groups`](crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder::schedule_groups)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
-            next_token: self.next_token,
-            schedule_groups: self.schedule_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schedule_groups",
-                    "schedule_groups was not specified but it is required when building ListScheduleGroupsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
+                next_token: self.next_token
+                ,
+                schedule_groups: self.schedule_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schedule_groups", "schedule_groups was not specified but it is required when building ListScheduleGroupsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

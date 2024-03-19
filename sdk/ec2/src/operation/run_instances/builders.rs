@@ -5,23 +5,20 @@ pub use crate::operation::run_instances::_run_instances_input::RunInstancesInput
 
 impl RunInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::run_instances::RunInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_instances::RunInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.run_instances();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::run_instances::RunInstancesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::run_instances::RunInstancesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.run_instances();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RunInstances`.
-///
+/// 
 /// <p>Launches the specified number of instances using an AMI for which you have permissions.</p>
 /// <p>You can specify a number of options, or leave the default options. The following rules apply:</p>
 /// <ul>
@@ -44,33 +41,32 @@ impl RunInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::run_instances::builders::RunInstancesInputBuilder,
+                    inner: crate::operation::run_instances::builders::RunInstancesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::run_instances::RunInstancesOutput,
-        crate::operation::run_instances::RunInstancesError,
-    > for RunInstancesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::run_instances::RunInstancesOutput,
-            crate::operation::run_instances::RunInstancesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::run_instances::RunInstancesOutput,
+                    crate::operation::run_instances::RunInstancesError,
+                > for RunInstancesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::run_instances::RunInstancesOutput,
+                        crate::operation::run_instances::RunInstancesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RunInstancesFluentBuilder {
     /// Creates a new `RunInstances`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -79,53 +75,44 @@ impl RunInstancesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::run_instances::RunInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_instances::RunInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::run_instances::RunInstances::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::run_instances::RunInstances::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::run_instances::RunInstancesOutput,
-        crate::operation::run_instances::RunInstancesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::run_instances::RunInstancesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::run_instances::RunInstancesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::run_instances::RunInstances::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::run_instances::RunInstances::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::run_instances::RunInstancesOutput, crate::operation::run_instances::RunInstancesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `BlockDeviceMappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -136,12 +123,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
     }
     /// <p>The ID of the AMI. An AMI ID is required to launch an instance and must be specified here or in a launch template.</p>
@@ -201,13 +188,13 @@ impl RunInstancesFluentBuilder {
     }
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>) -> Self {
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>>) -> Self {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
     /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>> {
         self.inner.get_ipv6_addresses()
     }
     /// <p>The ID of the kernel.</p><important>
@@ -344,13 +331,13 @@ impl RunInstancesFluentBuilder {
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>The IDs of the security groups. You can create a security group using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html">CreateSecurityGroup</a>.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `SecurityGroups`.
@@ -367,14 +354,14 @@ impl RunInstancesFluentBuilder {
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
     }
     /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_groups()
     }
     /// <p>The ID of the subnet to launch the instance into.</p>
@@ -531,15 +518,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
-    ) -> Self {
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceNetworkInterfaceSpecification>>) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
     /// <p>The network interfaces to associate with the instance. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.</p>
-    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceNetworkInterfaceSpecification>> {
         self.inner.get_network_interfaces()
     }
     /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
@@ -576,14 +560,14 @@ impl RunInstancesFluentBuilder {
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
+    pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_specification(input);
         self
     }
     /// <p>Deprecated.</p><note>
     /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
     /// </note>
-    pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
+    pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
     /// Appends an item to `ElasticInferenceAccelerators`.
@@ -602,10 +586,7 @@ impl RunInstancesFluentBuilder {
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn set_elastic_inference_accelerators(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
-    ) -> Self {
+    pub fn set_elastic_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticInferenceAccelerator>>) -> Self {
         self.inner = self.inner.set_elastic_inference_accelerators(input);
         self
     }
@@ -613,7 +594,7 @@ impl RunInstancesFluentBuilder {
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
     /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
     /// </note>
-    pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAccelerator>> {
+    pub fn get_elastic_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElasticInferenceAccelerator>> {
         self.inner.get_elastic_inference_accelerators()
     }
     /// Appends an item to `TagSpecifications`.
@@ -650,7 +631,7 @@ impl RunInstancesFluentBuilder {
     /// <p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -667,7 +648,7 @@ impl RunInstancesFluentBuilder {
     /// <p>Network interfaces</p></li>
     /// </ul>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
     /// <p>The launch template to use to launch the instances. Any parameters that you specify in <code>RunInstances</code> override the same parameters in the launch template. You can specify either the name or ID of a launch template, but not both.</p>
@@ -776,12 +757,12 @@ impl RunInstancesFluentBuilder {
         self
     }
     /// <p>The license configurations.</p>
-    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>>) -> Self {
+    pub fn set_license_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_license_specifications(input);
         self
     }
     /// <p>The license configurations.</p>
-    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationRequest>> {
+    pub fn get_license_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LicenseConfigurationRequest>> {
         self.inner.get_license_specifications()
     }
     /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a>.</p>
@@ -872,3 +853,4 @@ impl RunInstancesFluentBuilder {
         self.inner.get_enable_primary_ipv6()
     }
 }
+

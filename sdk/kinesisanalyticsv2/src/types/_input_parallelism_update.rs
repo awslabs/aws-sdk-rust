@@ -3,11 +3,11 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism count.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputParallelismUpdate {
+pub struct InputParallelismUpdate  {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub count_update: i32,
 }
-impl InputParallelismUpdate {
+impl  InputParallelismUpdate  {
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub fn count_update(&self) -> i32 {
         self.count_update
@@ -35,8 +35,7 @@ impl InputParallelismUpdateBuilder {
     }
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub fn set_count_update(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count_update = input;
-        self
+        self.count_update = input; self
     }
     /// <p>The number of in-application streams to create for the specified streaming source.</p>
     pub fn get_count_update(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl InputParallelismUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`count_update`](crate::types::builders::InputParallelismUpdateBuilder::count_update)
     pub fn build(self) -> ::std::result::Result<crate::types::InputParallelismUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputParallelismUpdate {
-            count_update: self.count_update.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "count_update",
-                    "count_update was not specified but it is required when building InputParallelismUpdate",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputParallelismUpdate {
+                count_update: self.count_update
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("count_update", "count_update was not specified but it is required when building InputParallelismUpdate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

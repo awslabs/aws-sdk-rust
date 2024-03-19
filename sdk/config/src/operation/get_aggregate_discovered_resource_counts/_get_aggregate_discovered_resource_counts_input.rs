@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAggregateDiscoveredResourceCountsInput {
+pub struct GetAggregateDiscoveredResourceCountsInput  {
     /// <p>The name of the configuration aggregator.</p>
     pub configuration_aggregator_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
@@ -14,17 +14,17 @@ pub struct GetAggregateDiscoveredResourceCountsInput {
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetAggregateDiscoveredResourceCountsInput {
+impl  GetAggregateDiscoveredResourceCountsInput  {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> ::std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::ResourceCountFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::ResourceCountFilters> {
         self.filters.as_ref()
     }
     /// <p>The key to group the resource counts.</p>
-    pub fn group_by_key(&self) -> ::std::option::Option<&crate::types::ResourceCountGroupKey> {
+    pub fn group_by_key(&self) -> ::std::option::Option<& crate::types::ResourceCountGroupKey> {
         self.group_by_key.as_ref()
     }
     /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
@@ -32,7 +32,7 @@ impl GetAggregateDiscoveredResourceCountsInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn set_configuration_aggregator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+        self.configuration_aggregator_name = input; self
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn get_configuration_aggregator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     }
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::ResourceCountFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceCountFilters> {
@@ -90,8 +88,7 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The key to group the resource counts.</p>
     pub fn set_group_by_key(mut self, input: ::std::option::Option<crate::types::ResourceCountGroupKey>) -> Self {
-        self.group_by_key = input;
-        self
+        self.group_by_key = input; self
     }
     /// <p>The key to group the resource counts.</p>
     pub fn get_group_by_key(&self) -> &::std::option::Option<crate::types::ResourceCountGroupKey> {
@@ -104,8 +101,7 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -118,28 +114,28 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAggregateDiscoveredResourceCountsInput`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput {
-                configuration_aggregator_name: self.configuration_aggregator_name,
-                filters: self.filters,
-                group_by_key: self.group_by_key,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                configuration_aggregator_name: self.configuration_aggregator_name
+                ,
+                filters: self.filters
+                ,
+                group_by_key: self.group_by_key
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

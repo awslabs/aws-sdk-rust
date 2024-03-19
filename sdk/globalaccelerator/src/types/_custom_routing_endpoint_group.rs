@@ -3,36 +3,38 @@
 /// <p>A complex type for the endpoint group for a custom routing accelerator. An Amazon Web Services Region can have only one endpoint group for a specific listener.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomRoutingEndpointGroup {
+pub struct CustomRoutingEndpointGroup  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub destination_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>,
+    pub destination_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationDescription>>,
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>,
+    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointDescription>>,
 }
-impl CustomRoutingEndpointGroup {
+impl  CustomRoutingEndpointGroup  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
-    pub fn endpoint_group_region(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_region(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_region.as_deref()
     }
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_descriptions.is_none()`.
-    pub fn destination_descriptions(&self) -> &[crate::types::CustomRoutingDestinationDescription] {
-        self.destination_descriptions.as_deref().unwrap_or_default()
+    pub fn destination_descriptions(&self) -> & [crate::types::CustomRoutingDestinationDescription] {
+        self.destination_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
-    pub fn endpoint_descriptions(&self) -> &[crate::types::CustomRoutingEndpointDescription] {
-        self.endpoint_descriptions.as_deref().unwrap_or_default()
+    pub fn endpoint_descriptions(&self) -> & [crate::types::CustomRoutingEndpointDescription] {
+        self.endpoint_descriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomRoutingEndpointGroup {
@@ -48,8 +50,8 @@ impl CustomRoutingEndpointGroup {
 pub struct CustomRoutingEndpointGroupBuilder {
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,
-    pub(crate) destination_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>,
-    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>,
+    pub(crate) destination_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationDescription>>,
+    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointDescription>>,
 }
 impl CustomRoutingEndpointGroupBuilder {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -59,8 +61,7 @@ impl CustomRoutingEndpointGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +74,7 @@ impl CustomRoutingEndpointGroupBuilder {
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub fn set_endpoint_group_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_region = input;
-        self
+        self.endpoint_group_region = input; self
     }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,20 +87,16 @@ impl CustomRoutingEndpointGroupBuilder {
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
     pub fn destination_descriptions(mut self, input: crate::types::CustomRoutingDestinationDescription) -> Self {
         let mut v = self.destination_descriptions.unwrap_or_default();
-        v.push(input);
-        self.destination_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destination_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn set_destination_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>,
-    ) -> Self {
-        self.destination_descriptions = input;
-        self
+    pub fn set_destination_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationDescription>>) -> Self {
+        self.destination_descriptions = input; self
     }
     /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn get_destination_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>> {
+    pub fn get_destination_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingDestinationDescription>> {
         &self.destination_descriptions
     }
     /// Appends an item to `endpoint_descriptions`.
@@ -110,29 +106,30 @@ impl CustomRoutingEndpointGroupBuilder {
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
     pub fn endpoint_descriptions(mut self, input: crate::types::CustomRoutingEndpointDescription) -> Self {
         let mut v = self.endpoint_descriptions.unwrap_or_default();
-        v.push(input);
-        self.endpoint_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn set_endpoint_descriptions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>,
-    ) -> Self {
-        self.endpoint_descriptions = input;
-        self
+    pub fn set_endpoint_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointDescription>>) -> Self {
+        self.endpoint_descriptions = input; self
     }
     /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
-    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>> {
+    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomRoutingEndpointDescription>> {
         &self.endpoint_descriptions
     }
     /// Consumes the builder and constructs a [`CustomRoutingEndpointGroup`](crate::types::CustomRoutingEndpointGroup).
     pub fn build(self) -> crate::types::CustomRoutingEndpointGroup {
         crate::types::CustomRoutingEndpointGroup {
-            endpoint_group_arn: self.endpoint_group_arn,
-            endpoint_group_region: self.endpoint_group_region,
-            destination_descriptions: self.destination_descriptions,
-            endpoint_descriptions: self.endpoint_descriptions,
+            endpoint_group_arn: self.endpoint_group_arn
+            ,
+            endpoint_group_region: self.endpoint_group_region
+            ,
+            destination_descriptions: self.destination_descriptions
+            ,
+            endpoint_descriptions: self.endpoint_descriptions
+            ,
         }
     }
 }
+

@@ -3,28 +3,29 @@
 /// <p>A metric for a particular question in the pillar.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuestionMetric {
+pub struct QuestionMetric  {
     /// <p>The ID of the question.</p>
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub best_practices: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>,
+    pub best_practices: ::std::option::Option<::std::vec::Vec::<crate::types::BestPractice>>,
 }
-impl QuestionMetric {
+impl  QuestionMetric  {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    pub fn risk(&self) -> ::std::option::Option<&crate::types::Risk> {
+    pub fn risk(&self) -> ::std::option::Option<& crate::types::Risk> {
         self.risk.as_ref()
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.best_practices.is_none()`.
-    pub fn best_practices(&self) -> &[crate::types::BestPractice] {
-        self.best_practices.as_deref().unwrap_or_default()
+    pub fn best_practices(&self) -> & [crate::types::BestPractice] {
+        self.best_practices.as_deref()
+        .unwrap_or_default()
     }
 }
 impl QuestionMetric {
@@ -40,7 +41,7 @@ impl QuestionMetric {
 pub struct QuestionMetricBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) risk: ::std::option::Option<crate::types::Risk>,
-    pub(crate) best_practices: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>,
+    pub(crate) best_practices: ::std::option::Option<::std::vec::Vec::<crate::types::BestPractice>>,
 }
 impl QuestionMetricBuilder {
     /// <p>The ID of the question.</p>
@@ -50,8 +51,7 @@ impl QuestionMetricBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl QuestionMetricBuilder {
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
-        self.risk = input;
-        self
+        self.risk = input; self
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
@@ -78,25 +77,28 @@ impl QuestionMetricBuilder {
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
     pub fn best_practices(mut self, input: crate::types::BestPractice) -> Self {
         let mut v = self.best_practices.unwrap_or_default();
-        v.push(input);
-        self.best_practices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.best_practices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub fn set_best_practices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BestPractice>>) -> Self {
-        self.best_practices = input;
-        self
+    pub fn set_best_practices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BestPractice>>) -> Self {
+        self.best_practices = input; self
     }
     /// <p>The best practices, or choices, that have been identified as contributing to risk in a question.</p>
-    pub fn get_best_practices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BestPractice>> {
+    pub fn get_best_practices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BestPractice>> {
         &self.best_practices
     }
     /// Consumes the builder and constructs a [`QuestionMetric`](crate::types::QuestionMetric).
     pub fn build(self) -> crate::types::QuestionMetric {
         crate::types::QuestionMetric {
-            question_id: self.question_id,
-            risk: self.risk,
-            best_practices: self.best_practices,
+            question_id: self.question_id
+            ,
+            risk: self.risk
+            ,
+            best_practices: self.best_practices
+            ,
         }
     }
 }
+

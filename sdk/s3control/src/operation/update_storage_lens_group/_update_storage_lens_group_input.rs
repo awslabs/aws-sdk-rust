@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStorageLensGroupInput {
+pub struct UpdateStorageLensGroupInput  {
     /// <p>The name of the Storage Lens group that you want to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Storage Lens group owner.</p>
@@ -10,17 +10,17 @@ pub struct UpdateStorageLensGroupInput {
     /// <p>The JSON file that contains the Storage Lens group configuration.</p>
     pub storage_lens_group: ::std::option::Option<crate::types::StorageLensGroup>,
 }
-impl UpdateStorageLensGroupInput {
+impl  UpdateStorageLensGroupInput  {
     /// <p>The name of the Storage Lens group that you want to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Storage Lens group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The JSON file that contains the Storage Lens group configuration.</p>
-    pub fn storage_lens_group(&self) -> ::std::option::Option<&crate::types::StorageLensGroup> {
+    pub fn storage_lens_group(&self) -> ::std::option::Option<& crate::types::StorageLensGroup> {
         self.storage_lens_group.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateStorageLensGroupInputBuilder {
     }
     /// <p>The name of the Storage Lens group that you want to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Storage Lens group that you want to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateStorageLensGroupInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Storage Lens group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Storage Lens group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateStorageLensGroupInputBuilder {
     }
     /// <p>The JSON file that contains the Storage Lens group configuration.</p>
     pub fn set_storage_lens_group(mut self, input: ::std::option::Option<crate::types::StorageLensGroup>) -> Self {
-        self.storage_lens_group = input;
-        self
+        self.storage_lens_group = input; self
     }
     /// <p>The JSON file that contains the Storage Lens group configuration.</p>
     pub fn get_storage_lens_group(&self) -> &::std::option::Option<crate::types::StorageLensGroup> {
         &self.storage_lens_group
     }
     /// Consumes the builder and constructs a [`UpdateStorageLensGroupInput`](crate::operation::update_storage_lens_group::UpdateStorageLensGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_storage_lens_group::UpdateStorageLensGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_storage_lens_group::UpdateStorageLensGroupInput {
-            name: self.name,
-            account_id: self.account_id,
-            storage_lens_group: self.storage_lens_group,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_storage_lens_group::UpdateStorageLensGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_storage_lens_group::UpdateStorageLensGroupInput {
+                name: self.name
+                ,
+                account_id: self.account_id
+                ,
+                storage_lens_group: self.storage_lens_group
+                ,
+            }
+        )
     }
 }
+

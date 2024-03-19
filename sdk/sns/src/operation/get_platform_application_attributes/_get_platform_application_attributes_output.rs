@@ -3,7 +3,7 @@
 /// <p>Response for <code>GetPlatformApplicationAttributes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlatformApplicationAttributesOutput {
+pub struct GetPlatformApplicationAttributesOutput  {
     /// <p>Attributes include the following:</p>
     /// <ul>
     /// <li>
@@ -29,10 +29,10 @@ pub struct GetPlatformApplicationAttributesOutput {
     /// <li>
     /// <p><code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p></li>
     /// </ul>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetPlatformApplicationAttributesOutput {
+impl  GetPlatformApplicationAttributesOutput  {
     /// <p>Attributes include the following:</p>
     /// <ul>
     /// <li>
@@ -58,15 +58,15 @@ impl GetPlatformApplicationAttributesOutput {
     /// <li>
     /// <p><code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p></li>
     /// </ul>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPlatformApplicationAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPlatformApplicationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetPlatformApplicationAttributesOutput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput).
     pub fn builder() -> crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesOutputBuilder {
@@ -78,7 +78,7 @@ impl GetPlatformApplicationAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPlatformApplicationAttributesOutputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetPlatformApplicationAttributesOutputBuilder {
@@ -113,9 +113,9 @@ impl GetPlatformApplicationAttributesOutputBuilder {
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Attributes include the following:</p>
     /// <ul>
@@ -142,9 +142,8 @@ impl GetPlatformApplicationAttributesOutputBuilder {
     /// <li>
     /// <p><code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p></li>
     /// </ul>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Attributes include the following:</p>
     /// <ul>
@@ -171,23 +170,25 @@ impl GetPlatformApplicationAttributesOutputBuilder {
     /// <li>
     /// <p><code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p></li>
     /// </ul>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesOutput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput).
     pub fn build(self) -> crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput {
         crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

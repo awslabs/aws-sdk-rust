@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModelMetadata`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`search_expression(ModelMetadataSearchExpression)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::search_expression) / [`set_search_expression(Option<ModelMetadataSearchExpression>)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::set_search_expression):<br>required: **false**<br><p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of models to return in the response.</p><br>
-    /// - On success, responds with [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput) with field(s):
+                            /// - On success, responds with [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput) with field(s):
     ///   - [`model_metadata_summaries(Option<Vec::<ModelMetadataSummary>>)`](crate::operation::list_model_metadata::ListModelMetadataOutput::model_metadata_summaries): <p>A structure that holds model metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_model_metadata::ListModelMetadataOutput::next_token): <p>A token for getting the next set of recommendations, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListModelMetadataError>`](crate::operation::list_model_metadata::ListModelMetadataError)
+                            /// - On failure, responds with [`SdkError<ListModelMetadataError>`](crate::operation::list_model_metadata::ListModelMetadataError)
     pub fn list_model_metadata(&self) -> crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder {
-        crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_model_metadata::builders::ListModelMetadataFluentBuilder::new(self.handle.clone())
+                            }
 }
+

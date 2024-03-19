@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContentModerationInput {
+pub struct GetContentModerationInput  {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
@@ -14,9 +14,9 @@ pub struct GetContentModerationInput {
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
     pub aggregate_by: ::std::option::Option<crate::types::ContentModerationAggregateBy>,
 }
-impl GetContentModerationInput {
+impl  GetContentModerationInput  {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
@@ -24,15 +24,15 @@ impl GetContentModerationInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ContentModerationSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ContentModerationSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
-    pub fn aggregate_by(&self) -> ::std::option::Option<&crate::types::ContentModerationAggregateBy> {
+    pub fn aggregate_by(&self) -> ::std::option::Option<& crate::types::ContentModerationAggregateBy> {
         self.aggregate_by.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl GetContentModerationInputBuilder {
     }
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl GetContentModerationInputBuilder {
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl GetContentModerationInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl GetContentModerationInputBuilder {
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ContentModerationSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ContentModerationSortBy> {
@@ -118,24 +114,28 @@ impl GetContentModerationInputBuilder {
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
     pub fn set_aggregate_by(mut self, input: ::std::option::Option<crate::types::ContentModerationAggregateBy>) -> Self {
-        self.aggregate_by = input;
-        self
+        self.aggregate_by = input; self
     }
     /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
     pub fn get_aggregate_by(&self) -> &::std::option::Option<crate::types::ContentModerationAggregateBy> {
         &self.aggregate_by
     }
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_content_moderation::GetContentModerationInput {
-            job_id: self.job_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_by: self.sort_by,
-            aggregate_by: self.aggregate_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_content_moderation::GetContentModerationInput {
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                aggregate_by: self.aggregate_by
+                ,
+            }
+        )
     }
 }
+

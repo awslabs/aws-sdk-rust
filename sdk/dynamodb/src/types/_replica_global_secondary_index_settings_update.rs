@@ -3,7 +3,7 @@
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
+pub struct ReplicaGlobalSecondaryIndexSettingsUpdate  {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     pub index_name: ::std::string::String,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
@@ -11,18 +11,17 @@ pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
     pub provisioned_read_capacity_auto_scaling_settings_update: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
-impl ReplicaGlobalSecondaryIndexSettingsUpdate {
+impl  ReplicaGlobalSecondaryIndexSettingsUpdate  {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
-    pub fn provisioned_read_capacity_auto_scaling_settings_update(&self) -> ::std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
+    pub fn provisioned_read_capacity_auto_scaling_settings_update(&self) -> ::std::option::Option<& crate::types::AutoScalingSettingsUpdate> {
         self.provisioned_read_capacity_auto_scaling_settings_update.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     }
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn set_provisioned_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.provisioned_read_capacity_units = input;
-        self
+        self.provisioned_read_capacity_units = input; self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn get_provisioned_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -77,12 +74,8 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
         self
     }
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
-    pub fn set_provisioned_read_capacity_auto_scaling_settings_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
-    ) -> Self {
-        self.provisioned_read_capacity_auto_scaling_settings_update = input;
-        self
+    pub fn set_provisioned_read_capacity_auto_scaling_settings_update(mut self, input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>) -> Self {
+        self.provisioned_read_capacity_auto_scaling_settings_update = input; self
     }
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
     pub fn get_provisioned_read_capacity_auto_scaling_settings_update(&self) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
@@ -91,18 +84,20 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     /// Consumes the builder and constructs a [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexSettingsUpdateBuilder::index_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndexSettingsUpdate",
-                )
-            })?,
-            provisioned_read_capacity_units: self.provisioned_read_capacity_units,
-            provisioned_read_capacity_auto_scaling_settings_update: self.provisioned_read_capacity_auto_scaling_settings_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndexSettingsUpdate")
+                    )?
+                ,
+                provisioned_read_capacity_units: self.provisioned_read_capacity_units
+                ,
+                provisioned_read_capacity_auto_scaling_settings_update: self.provisioned_read_capacity_auto_scaling_settings_update
+                ,
+            }
+        )
     }
 }
+

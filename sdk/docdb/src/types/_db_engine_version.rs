@@ -3,7 +3,7 @@
 /// <p>Detailed information about an engine version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DbEngineVersion {
+pub struct DbEngineVersion  {
     /// <p>The name of the database engine.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine.</p>
@@ -15,49 +15,51 @@ pub struct DbEngineVersion {
     /// <p>The description of the database engine version.</p>
     pub db_engine_version_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
+    pub valid_upgrade_target: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>,
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    pub exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exportable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
-    pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
 }
-impl DbEngineVersion {
+impl  DbEngineVersion  {
     /// <p>The name of the database engine.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the parameter group family for the database engine.</p>
-    pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>The description of the database engine.</p>
-    pub fn db_engine_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_description(&self) -> ::std::option::Option<& str> {
         self.db_engine_description.as_deref()
     }
     /// <p>The description of the database engine version.</p>
-    pub fn db_engine_version_description(&self) -> ::std::option::Option<&str> {
+    pub fn db_engine_version_description(&self) -> ::std::option::Option<& str> {
         self.db_engine_version_description.as_deref()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_upgrade_target.is_none()`.
-    pub fn valid_upgrade_target(&self) -> &[crate::types::UpgradeTarget] {
-        self.valid_upgrade_target.as_deref().unwrap_or_default()
+    pub fn valid_upgrade_target(&self) -> & [crate::types::UpgradeTarget] {
+        self.valid_upgrade_target.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exportable_log_types.is_none()`.
-    pub fn exportable_log_types(&self) -> &[::std::string::String] {
-        self.exportable_log_types.as_deref().unwrap_or_default()
+    pub fn exportable_log_types(&self) -> & [::std::string::String] {
+        self.exportable_log_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(&self) -> ::std::option::Option<bool> {
@@ -65,10 +67,11 @@ impl DbEngineVersion {
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ca_certificate_identifiers.is_none()`.
-    pub fn supported_ca_certificate_identifiers(&self) -> &[::std::string::String] {
-        self.supported_ca_certificate_identifiers.as_deref().unwrap_or_default()
+    pub fn supported_ca_certificate_identifiers(&self) -> & [::std::string::String] {
+        self.supported_ca_certificate_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> ::std::option::Option<bool> {
@@ -91,10 +94,10 @@ pub struct DbEngineVersionBuilder {
     pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_description: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_version_description: ::std::option::Option<::std::string::String>,
-    pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>,
-    pub(crate) exportable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) valid_upgrade_target: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>,
+    pub(crate) exportable_log_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
-    pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
 }
 impl DbEngineVersionBuilder {
@@ -105,8 +108,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The name of the database engine.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The name of the database engine.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +121,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The version number of the database engine.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the database engine.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +134,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The name of the parameter group family for the database engine.</p>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_family = input;
-        self
+        self.db_parameter_group_family = input; self
     }
     /// <p>The name of the parameter group family for the database engine.</p>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +147,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The description of the database engine.</p>
     pub fn set_db_engine_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_description = input;
-        self
+        self.db_engine_description = input; self
     }
     /// <p>The description of the database engine.</p>
     pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +160,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>The description of the database engine version.</p>
     pub fn set_db_engine_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_engine_version_description = input;
-        self
+        self.db_engine_version_description = input; self
     }
     /// <p>The description of the database engine version.</p>
     pub fn get_db_engine_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,17 +173,16 @@ impl DbEngineVersionBuilder {
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     pub fn valid_upgrade_target(mut self, input: crate::types::UpgradeTarget) -> Self {
         let mut v = self.valid_upgrade_target.unwrap_or_default();
-        v.push(input);
-        self.valid_upgrade_target = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.valid_upgrade_target = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn set_valid_upgrade_target(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>>) -> Self {
-        self.valid_upgrade_target = input;
-        self
+    pub fn set_valid_upgrade_target(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>>) -> Self {
+        self.valid_upgrade_target = input; self
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn get_valid_upgrade_target(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>> {
+    pub fn get_valid_upgrade_target(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpgradeTarget>> {
         &self.valid_upgrade_target
     }
     /// Appends an item to `exportable_log_types`.
@@ -195,17 +192,16 @@ impl DbEngineVersionBuilder {
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
     pub fn exportable_log_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exportable_log_types.unwrap_or_default();
-        v.push(input.into());
-        self.exportable_log_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exportable_log_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    pub fn set_exportable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exportable_log_types = input;
-        self
+    pub fn set_exportable_log_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exportable_log_types = input; self
     }
     /// <p>The types of logs that the database engine has available for export to Amazon CloudWatch Logs.</p>
-    pub fn get_exportable_log_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exportable_log_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exportable_log_types
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
@@ -215,8 +211,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_log_exports_to_cloudwatch_logs = input;
-        self
+        self.supports_log_exports_to_cloudwatch_logs = input; self
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
@@ -230,19 +225,18 @@ impl DbEngineVersionBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub fn supported_ca_certificate_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.supported_ca_certificate_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_ca_certificate_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
-    pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_ca_certificate_identifiers = input;
-        self
+    pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_ca_certificate_identifiers = input; self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
-    pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_ca_certificate_identifiers
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
@@ -252,8 +246,7 @@ impl DbEngineVersionBuilder {
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn set_supports_certificate_rotation_without_restart(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_certificate_rotation_without_restart = input;
-        self
+        self.supports_certificate_rotation_without_restart = input; self
     }
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn get_supports_certificate_rotation_without_restart(&self) -> &::std::option::Option<bool> {
@@ -262,16 +255,27 @@ impl DbEngineVersionBuilder {
     /// Consumes the builder and constructs a [`DbEngineVersion`](crate::types::DbEngineVersion).
     pub fn build(self) -> crate::types::DbEngineVersion {
         crate::types::DbEngineVersion {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            db_parameter_group_family: self.db_parameter_group_family,
-            db_engine_description: self.db_engine_description,
-            db_engine_version_description: self.db_engine_version_description,
-            valid_upgrade_target: self.valid_upgrade_target,
-            exportable_log_types: self.exportable_log_types,
-            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs,
-            supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
-            supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            db_parameter_group_family: self.db_parameter_group_family
+            ,
+            db_engine_description: self.db_engine_description
+            ,
+            db_engine_version_description: self.db_engine_version_description
+            ,
+            valid_upgrade_target: self.valid_upgrade_target
+            ,
+            exportable_log_types: self.exportable_log_types
+            ,
+            supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs
+            ,
+            supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers
+            ,
+            supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart
+            ,
         }
     }
 }
+

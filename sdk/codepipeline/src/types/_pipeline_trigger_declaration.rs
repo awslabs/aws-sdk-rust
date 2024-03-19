@@ -7,19 +7,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineTriggerDeclaration {
+pub struct PipelineTriggerDeclaration  {
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
     pub provider_type: crate::types::PipelineTriggerProviderType,
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
     pub git_configuration: ::std::option::Option<crate::types::GitConfiguration>,
 }
-impl PipelineTriggerDeclaration {
+impl  PipelineTriggerDeclaration  {
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
-    pub fn provider_type(&self) -> &crate::types::PipelineTriggerProviderType {
+    pub fn provider_type(&self) -> & crate::types::PipelineTriggerProviderType {
         &self.provider_type
     }
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
-    pub fn git_configuration(&self) -> ::std::option::Option<&crate::types::GitConfiguration> {
+    pub fn git_configuration(&self) -> ::std::option::Option<& crate::types::GitConfiguration> {
         self.git_configuration.as_ref()
     }
 }
@@ -46,8 +46,7 @@ impl PipelineTriggerDeclarationBuilder {
     }
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::PipelineTriggerProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::PipelineTriggerProviderType> {
@@ -61,8 +60,7 @@ impl PipelineTriggerDeclarationBuilder {
     }
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
     pub fn set_git_configuration(mut self, input: ::std::option::Option<crate::types::GitConfiguration>) -> Self {
-        self.git_configuration = input;
-        self
+        self.git_configuration = input; self
     }
     /// <p>Provides the filter criteria and the source stage for the repository event that starts the pipeline, such as Git tags.</p>
     pub fn get_git_configuration(&self) -> &::std::option::Option<crate::types::GitConfiguration> {
@@ -72,14 +70,17 @@ impl PipelineTriggerDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`provider_type`](crate::types::builders::PipelineTriggerDeclarationBuilder::provider_type)
     pub fn build(self) -> ::std::result::Result<crate::types::PipelineTriggerDeclaration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipelineTriggerDeclaration {
-            provider_type: self.provider_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_type",
-                    "provider_type was not specified but it is required when building PipelineTriggerDeclaration",
-                )
-            })?,
-            git_configuration: self.git_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipelineTriggerDeclaration {
+                provider_type: self.provider_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_type", "provider_type was not specified but it is required when building PipelineTriggerDeclaration")
+                    )?
+                ,
+                git_configuration: self.git_configuration
+                ,
+            }
+        )
     }
 }
+

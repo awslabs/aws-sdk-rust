@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDestinationOutput {
+pub struct PutDestinationOutput  {
     /// <p>The destination.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
     _request_id: Option<String>,
 }
-impl PutDestinationOutput {
+impl  PutDestinationOutput  {
     /// <p>The destination.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutDestinationOutput {
     /// Creates a new builder-style object to manufacture [`PutDestinationOutput`](crate::operation::put_destination::PutDestinationOutput).
     pub fn builder() -> crate::operation::put_destination::builders::PutDestinationOutputBuilder {
@@ -40,27 +40,28 @@ impl PutDestinationOutputBuilder {
     }
     /// <p>The destination.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The destination.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutDestinationOutput`](crate::operation::put_destination::PutDestinationOutput).
     pub fn build(self) -> crate::operation::put_destination::PutDestinationOutput {
         crate::operation::put_destination::PutDestinationOutput {
-            destination: self.destination,
+            destination: self.destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

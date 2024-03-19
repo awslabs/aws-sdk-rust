@@ -3,26 +3,25 @@
 /// <p>The properties that are applied when the custom connector is being used as a source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomConnectorSourceProperties {
+pub struct CustomConnectorSourceProperties  {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     pub entity_name: ::std::string::String,
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
     pub data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
-impl CustomConnectorSourceProperties {
+impl  CustomConnectorSourceProperties  {
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
-    pub fn entity_name(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_name.deref()
+    pub fn entity_name(&self) -> & str {
+        use std::ops::Deref; self.entity_name.deref()
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn custom_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_properties.as_ref()
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
-    pub fn data_transfer_api(&self) -> ::std::option::Option<&crate::types::DataTransferApi> {
+    pub fn data_transfer_api(&self) -> ::std::option::Option<& crate::types::DataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -38,7 +37,7 @@ impl CustomConnectorSourceProperties {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomConnectorSourcePropertiesBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) custom_properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) data_transfer_api: ::std::option::Option<crate::types::DataTransferApi>,
 }
 impl CustomConnectorSourcePropertiesBuilder {
@@ -50,8 +49,7 @@ impl CustomConnectorSourcePropertiesBuilder {
     }
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The entity specified in the custom connector as a source in the flow.</p>
     pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,26 +60,18 @@ impl CustomConnectorSourcePropertiesBuilder {
     /// To override the contents of this collection use [`set_custom_properties`](Self::set_custom_properties).
     ///
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn custom_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn custom_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn set_custom_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_properties = input;
-        self
+    pub fn set_custom_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_properties = input; self
     }
     /// <p>Custom properties that are required to use the custom connector as a source.</p>
-    pub fn get_custom_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_properties
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
@@ -91,8 +81,7 @@ impl CustomConnectorSourcePropertiesBuilder {
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
     pub fn set_data_transfer_api(mut self, input: ::std::option::Option<crate::types::DataTransferApi>) -> Self {
-        self.data_transfer_api = input;
-        self
+        self.data_transfer_api = input; self
     }
     /// <p>The API of the connector application that Amazon AppFlow uses to transfer your data.</p>
     pub fn get_data_transfer_api(&self) -> &::std::option::Option<crate::types::DataTransferApi> {
@@ -102,15 +91,19 @@ impl CustomConnectorSourcePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_name`](crate::types::builders::CustomConnectorSourcePropertiesBuilder::entity_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomConnectorSourceProperties {
-            entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_name",
-                    "entity_name was not specified but it is required when building CustomConnectorSourceProperties",
-                )
-            })?,
-            custom_properties: self.custom_properties,
-            data_transfer_api: self.data_transfer_api,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomConnectorSourceProperties {
+                entity_name: self.entity_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_name", "entity_name was not specified but it is required when building CustomConnectorSourceProperties")
+                    )?
+                ,
+                custom_properties: self.custom_properties
+                ,
+                data_transfer_api: self.data_transfer_api
+                ,
+            }
+        )
     }
 }
+

@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetTracesInput {
+pub struct BatchGetTracesInput  {
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    pub trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub trace_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetTracesInput {
+impl  BatchGetTracesInput  {
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trace_ids.is_none()`.
-    pub fn trace_ids(&self) -> &[::std::string::String] {
-        self.trace_ids.as_deref().unwrap_or_default()
+    pub fn trace_ids(&self) -> & [::std::string::String] {
+        self.trace_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl BatchGetTracesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetTracesInputBuilder {
-    pub(crate) trace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trace_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetTracesInputBuilder {
@@ -42,17 +43,16 @@ impl BatchGetTracesInputBuilder {
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
     pub fn trace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.trace_ids.unwrap_or_default();
-        v.push(input.into());
-        self.trace_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.trace_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    pub fn set_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.trace_ids = input;
-        self
+    pub fn set_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.trace_ids = input; self
     }
     /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-    pub fn get_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.trace_ids
     }
     /// <p>Pagination token.</p>
@@ -62,20 +62,22 @@ impl BatchGetTracesInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetTracesInput`](crate::operation::batch_get_traces::BatchGetTracesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_traces::BatchGetTracesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_traces::BatchGetTracesInput {
-            trace_ids: self.trace_ids,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_traces::BatchGetTracesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_traces::BatchGetTracesInput {
+                trace_ids: self.trace_ids
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

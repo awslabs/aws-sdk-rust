@@ -3,22 +3,23 @@
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessingConfiguration {
+pub struct ProcessingConfiguration  {
     /// <p>Enables or disables data processing.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The data processors.</p>
-    pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
+    pub processors: ::std::option::Option<::std::vec::Vec::<crate::types::Processor>>,
 }
-impl ProcessingConfiguration {
+impl  ProcessingConfiguration  {
     /// <p>Enables or disables data processing.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The data processors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processors.is_none()`.
-    pub fn processors(&self) -> &[crate::types::Processor] {
-        self.processors.as_deref().unwrap_or_default()
+    pub fn processors(&self) -> & [crate::types::Processor] {
+        self.processors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProcessingConfiguration {
@@ -33,7 +34,7 @@ impl ProcessingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProcessingConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
+    pub(crate) processors: ::std::option::Option<::std::vec::Vec::<crate::types::Processor>>,
 }
 impl ProcessingConfigurationBuilder {
     /// <p>Enables or disables data processing.</p>
@@ -43,8 +44,7 @@ impl ProcessingConfigurationBuilder {
     }
     /// <p>Enables or disables data processing.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables or disables data processing.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -57,24 +57,26 @@ impl ProcessingConfigurationBuilder {
     /// <p>The data processors.</p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
-        v.push(input);
-        self.processors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data processors.</p>
-    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>) -> Self {
-        self.processors = input;
-        self
+    pub fn set_processors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Processor>>) -> Self {
+        self.processors = input; self
     }
     /// <p>The data processors.</p>
-    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Processor>> {
+    pub fn get_processors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Processor>> {
         &self.processors
     }
     /// Consumes the builder and constructs a [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
     pub fn build(self) -> crate::types::ProcessingConfiguration {
         crate::types::ProcessingConfiguration {
-            enabled: self.enabled,
-            processors: self.processors,
+            enabled: self.enabled
+            ,
+            processors: self.processors
+            ,
         }
     }
 }
+

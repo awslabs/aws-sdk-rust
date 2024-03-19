@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment that is to be updated.</p>
@@ -12,30 +12,31 @@ pub struct UpdateEnvironmentInput {
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateEnvironmentInput {
+impl  UpdateEnvironmentInput  {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the environment that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateEnvironmentInput {
@@ -53,7 +54,7 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
@@ -64,8 +65,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The identifier of the environment that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the environment that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-            glossary_terms: self.glossary_terms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+            }
+        )
     }
 }
+

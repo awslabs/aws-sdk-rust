@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateUserProficienciesInput {
+pub struct AssociateUserProficienciesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance).</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user account.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The proficiencies to associate with the user.</p>
-    pub user_proficiencies: ::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>>,
+    pub user_proficiencies: ::std::option::Option<::std::vec::Vec::<crate::types::UserProficiency>>,
 }
-impl AssociateUserProficienciesInput {
+impl  AssociateUserProficienciesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance).</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The proficiencies to associate with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_proficiencies.is_none()`.
-    pub fn user_proficiencies(&self) -> &[crate::types::UserProficiency] {
-        self.user_proficiencies.as_deref().unwrap_or_default()
+    pub fn user_proficiencies(&self) -> & [crate::types::UserProficiency] {
+        self.user_proficiencies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AssociateUserProficienciesInput {
@@ -39,7 +40,7 @@ impl AssociateUserProficienciesInput {
 pub struct AssociateUserProficienciesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_proficiencies: ::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>>,
+    pub(crate) user_proficiencies: ::std::option::Option<::std::vec::Vec::<crate::types::UserProficiency>>,
 }
 impl AssociateUserProficienciesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance).</p>
@@ -50,8 +51,7 @@ impl AssociateUserProficienciesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance).</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN of the instance).</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl AssociateUserProficienciesInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl AssociateUserProficienciesInputBuilder {
     /// <p>The proficiencies to associate with the user.</p>
     pub fn user_proficiencies(mut self, input: crate::types::UserProficiency) -> Self {
         let mut v = self.user_proficiencies.unwrap_or_default();
-        v.push(input);
-        self.user_proficiencies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_proficiencies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The proficiencies to associate with the user.</p>
-    pub fn set_user_proficiencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>>) -> Self {
-        self.user_proficiencies = input;
-        self
+    pub fn set_user_proficiencies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserProficiency>>) -> Self {
+        self.user_proficiencies = input; self
     }
     /// <p>The proficiencies to associate with the user.</p>
-    pub fn get_user_proficiencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>> {
+    pub fn get_user_proficiencies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserProficiency>> {
         &self.user_proficiencies
     }
     /// Consumes the builder and constructs a [`AssociateUserProficienciesInput`](crate::operation::associate_user_proficiencies::AssociateUserProficienciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_user_proficiencies::AssociateUserProficienciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_user_proficiencies::AssociateUserProficienciesInput {
-            instance_id: self.instance_id,
-            user_id: self.user_id,
-            user_proficiencies: self.user_proficiencies,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_user_proficiencies::AssociateUserProficienciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesInput {
+                instance_id: self.instance_id
+                ,
+                user_id: self.user_id
+                ,
+                user_proficiencies: self.user_proficiencies
+                ,
+            }
+        )
     }
 }
+

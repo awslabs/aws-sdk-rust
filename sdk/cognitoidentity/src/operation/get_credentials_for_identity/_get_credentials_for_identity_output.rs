@@ -3,28 +3,28 @@
 /// <p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCredentialsForIdentityOutput {
+pub struct GetCredentialsForIdentityOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>Credentials for the provided identity ID.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,
 }
-impl GetCredentialsForIdentityOutput {
+impl  GetCredentialsForIdentityOutput  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>Credentials for the provided identity ID.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::Credentials> {
         self.credentials.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCredentialsForIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCredentialsForIdentityOutput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
     pub fn builder() -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityOutputBuilder {
@@ -48,8 +48,7 @@ impl GetCredentialsForIdentityOutputBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl GetCredentialsForIdentityOutputBuilder {
     }
     /// <p>Credentials for the provided identity ID.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>Credentials for the provided identity ID.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
     pub fn build(self) -> crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput {
         crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput {
-            identity_id: self.identity_id,
-            credentials: self.credentials,
+            identity_id: self.identity_id
+            ,
+            credentials: self.credentials
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

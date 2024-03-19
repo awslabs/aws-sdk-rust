@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainControllersInput {
+pub struct DescribeDomainControllersInput  {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domain_controller_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeDomainControllersInput {
+impl  DescribeDomainControllersInput  {
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_controller_ids.is_none()`.
-    pub fn domain_controller_ids(&self) -> &[::std::string::String] {
-        self.domain_controller_ids.as_deref().unwrap_or_default()
+    pub fn domain_controller_ids(&self) -> & [::std::string::String] {
+        self.domain_controller_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -44,7 +45,7 @@ impl DescribeDomainControllersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDomainControllersInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_controller_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_controller_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl DescribeDomainControllersInputBuilder {
     }
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeDomainControllersInputBuilder {
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
     pub fn domain_controller_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_controller_ids.unwrap_or_default();
-        v.push(input.into());
-        self.domain_controller_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domain_controller_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn set_domain_controller_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domain_controller_ids = input;
-        self
+    pub fn set_domain_controller_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domain_controller_ids = input; self
     }
     /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
-    pub fn get_domain_controller_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_controller_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domain_controller_ids
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
@@ -91,8 +90,7 @@ impl DescribeDomainControllersInputBuilder {
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl DescribeDomainControllersInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDomainControllersInput`](crate::operation::describe_domain_controllers::DescribeDomainControllersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_domain_controllers::DescribeDomainControllersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
-            directory_id: self.directory_id,
-            domain_controller_ids: self.domain_controller_ids,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_domain_controllers::DescribeDomainControllersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
+                directory_id: self.directory_id
+                ,
+                domain_controller_ids: self.domain_controller_ids
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

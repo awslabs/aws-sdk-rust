@@ -3,7 +3,7 @@
 /// <p>Information about the state of a vehicle and how it relates to the status of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VehicleStatus {
+pub struct VehicleStatus  {
     /// <p>The name of a campaign.</p>
     pub campaign_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the vehicle.</p>
@@ -23,13 +23,13 @@ pub struct VehicleStatus {
     /// </ul>
     pub status: ::std::option::Option<crate::types::VehicleState>,
 }
-impl VehicleStatus {
+impl  VehicleStatus  {
     /// <p>The name of a campaign.</p>
-    pub fn campaign_name(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_name(&self) -> ::std::option::Option<& str> {
         self.campaign_name.as_deref()
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<& str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
@@ -45,7 +45,7 @@ impl VehicleStatus {
     /// <li>
     /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VehicleState> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VehicleState> {
         self.status.as_ref()
     }
 }
@@ -72,8 +72,7 @@ impl VehicleStatusBuilder {
     }
     /// <p>The name of a campaign.</p>
     pub fn set_campaign_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_name = input;
-        self
+        self.campaign_name = input; self
     }
     /// <p>The name of a campaign.</p>
     pub fn get_campaign_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl VehicleStatusBuilder {
     }
     /// <p>The unique ID of the vehicle.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// <p>The unique ID of the vehicle.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl VehicleStatusBuilder {
     /// <p><code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VehicleState>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
@@ -146,9 +143,13 @@ impl VehicleStatusBuilder {
     /// Consumes the builder and constructs a [`VehicleStatus`](crate::types::VehicleStatus).
     pub fn build(self) -> crate::types::VehicleStatus {
         crate::types::VehicleStatus {
-            campaign_name: self.campaign_name,
-            vehicle_name: self.vehicle_name,
-            status: self.status,
+            campaign_name: self.campaign_name
+            ,
+            vehicle_name: self.vehicle_name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

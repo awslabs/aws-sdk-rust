@@ -4,7 +4,7 @@
 /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Options {
+pub struct Options  {
     /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
     /// <ul>
     /// <li>
@@ -151,7 +151,7 @@ pub struct Options {
     /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object tags (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     pub object_tags: ::std::option::Option<crate::types::ObjectTags>,
 }
-impl Options {
+impl  Options  {
     /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
     /// <ul>
     /// <li>
@@ -163,7 +163,7 @@ impl Options {
     /// <li>
     /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
     /// </ul>
-    pub fn verify_mode(&self) -> ::std::option::Option<&crate::types::VerifyMode> {
+    pub fn verify_mode(&self) -> ::std::option::Option<& crate::types::VerifyMode> {
         self.verify_mode.as_ref()
     }
     /// <p>Specifies whether DataSync should modify or preserve data at the destination location.</p>
@@ -174,7 +174,7 @@ impl Options {
     /// <li>
     /// <p><code>NEVER</code> - DataSync doesn't overwrite data in the destination location even if the source data has changed. You can use this option to protect against overwriting changes made to files or objects in the destination.</p></li>
     /// </ul>
-    pub fn overwrite_mode(&self) -> ::std::option::Option<&crate::types::OverwriteMode> {
+    pub fn overwrite_mode(&self) -> ::std::option::Option<& crate::types::OverwriteMode> {
         self.overwrite_mode.as_ref()
     }
     /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to.</p><note>
@@ -189,7 +189,7 @@ impl Options {
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
-    pub fn atime(&self) -> ::std::option::Option<&crate::types::Atime> {
+    pub fn atime(&self) -> ::std::option::Option<& crate::types::Atime> {
         self.atime.as_ref()
     }
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
@@ -202,7 +202,7 @@ impl Options {
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
-    pub fn mtime(&self) -> ::std::option::Option<&crate::types::Mtime> {
+    pub fn mtime(&self) -> ::std::option::Option<& crate::types::Mtime> {
         self.mtime.as_ref()
     }
     /// <p>Specifies the POSIX user ID (UID) of the file's owner.</p>
@@ -213,7 +213,7 @@ impl Options {
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
-    pub fn uid(&self) -> ::std::option::Option<&crate::types::Uid> {
+    pub fn uid(&self) -> ::std::option::Option<& crate::types::Uid> {
         self.uid.as_ref()
     }
     /// <p>Specifies the POSIX group ID (GID) of the file's owners.</p>
@@ -224,7 +224,7 @@ impl Options {
     /// <p><code>NONE</code> - Ignores UID and GID.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
-    pub fn gid(&self) -> ::std::option::Option<&crate::types::Gid> {
+    pub fn gid(&self) -> ::std::option::Option<& crate::types::Gid> {
         self.gid.as_ref()
     }
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
@@ -236,7 +236,7 @@ impl Options {
     /// </ul><note>
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
-    pub fn preserve_deleted_files(&self) -> ::std::option::Option<&crate::types::PreserveDeletedFiles> {
+    pub fn preserve_deleted_files(&self) -> ::std::option::Option<& crate::types::PreserveDeletedFiles> {
         self.preserve_deleted_files.as_ref()
     }
     /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
@@ -248,7 +248,7 @@ impl Options {
     /// <li>
     /// <p><code>PRESERVE</code> - Preserves character and block device metadata. This option currently isn't supported for Amazon EFS.</p></li>
     /// </ul>
-    pub fn preserve_devices(&self) -> ::std::option::Option<&crate::types::PreserveDevices> {
+    pub fn preserve_devices(&self) -> ::std::option::Option<& crate::types::PreserveDevices> {
         self.preserve_devices.as_ref()
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
@@ -261,7 +261,7 @@ impl Options {
     /// </ul><note>
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
-    pub fn posix_permissions(&self) -> ::std::option::Option<&crate::types::PosixPermissions> {
+    pub fn posix_permissions(&self) -> ::std::option::Option<& crate::types::PosixPermissions> {
         self.posix_permissions.as_ref()
     }
     /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
@@ -269,7 +269,7 @@ impl Options {
         self.bytes_per_second
     }
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
-    pub fn task_queueing(&self) -> ::std::option::Option<&crate::types::TaskQueueing> {
+    pub fn task_queueing(&self) -> ::std::option::Option<& crate::types::TaskQueueing> {
         self.task_queueing.as_ref()
     }
     /// <p>Specifies the type of logs that DataSync publishes to a Amazon CloudWatch Logs log group. To specify the log group, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.</p>
@@ -281,7 +281,7 @@ impl Options {
     /// <li>
     /// <p><code>OFF</code> - No logs are published.</p></li>
     /// </ul>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
     /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
@@ -291,7 +291,7 @@ impl Options {
     /// <li>
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
-    pub fn transfer_mode(&self) -> ::std::option::Option<&crate::types::TransferMode> {
+    pub fn transfer_mode(&self) -> ::std::option::Option<& crate::types::TransferMode> {
         self.transfer_mode.as_ref()
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
@@ -320,11 +320,11 @@ impl Options {
     /// <li>
     /// <p><code>NONE</code> - None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p></li>
     /// </ul>
-    pub fn security_descriptor_copy_flags(&self) -> ::std::option::Option<&crate::types::SmbSecurityDescriptorCopyFlags> {
+    pub fn security_descriptor_copy_flags(&self) -> ::std::option::Option<& crate::types::SmbSecurityDescriptorCopyFlags> {
         self.security_descriptor_copy_flags.as_ref()
     }
     /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object tags (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
-    pub fn object_tags(&self) -> ::std::option::Option<&crate::types::ObjectTags> {
+    pub fn object_tags(&self) -> ::std::option::Option<& crate::types::ObjectTags> {
         self.object_tags.as_ref()
     }
 }
@@ -383,8 +383,7 @@ impl OptionsBuilder {
     /// <p><code>NONE</code> - DataSync doesn't run additional verification at the end of the transfer. All data transmissions are still integrity-checked with checksum verification during the transfer.</p></li>
     /// </ul>
     pub fn set_verify_mode(mut self, input: ::std::option::Option<crate::types::VerifyMode>) -> Self {
-        self.verify_mode = input;
-        self
+        self.verify_mode = input; self
     }
     /// <p>Specifies how and when DataSync checks the integrity of your data during a transfer.</p>
     /// <ul>
@@ -421,8 +420,7 @@ impl OptionsBuilder {
     /// <p><code>NEVER</code> - DataSync doesn't overwrite data in the destination location even if the source data has changed. You can use this option to protect against overwriting changes made to files or objects in the destination.</p></li>
     /// </ul>
     pub fn set_overwrite_mode(mut self, input: ::std::option::Option<crate::types::OverwriteMode>) -> Self {
-        self.overwrite_mode = input;
-        self
+        self.overwrite_mode = input; self
     }
     /// <p>Specifies whether DataSync should modify or preserve data at the destination location.</p>
     /// <ul>
@@ -464,8 +462,7 @@ impl OptionsBuilder {
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
     /// </note>
     pub fn set_atime(mut self, input: ::std::option::Option<crate::types::Atime>) -> Self {
-        self.atime = input;
-        self
+        self.atime = input; self
     }
     /// <p>Specifies whether to preserve metadata indicating the last time a file was read or written to.</p><note>
     /// <p>The behavior of <code>Atime</code> isn't fully standard across platforms, so DataSync can only do this on a best-effort basis.</p>
@@ -507,8 +504,7 @@ impl OptionsBuilder {
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
     /// </note>
     pub fn set_mtime(mut self, input: ::std::option::Option<crate::types::Mtime>) -> Self {
-        self.mtime = input;
-        self
+        self.mtime = input; self
     }
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> phase of your task execution. This option is required when you need to run the a task more than once.</p>
     /// <ul>
@@ -544,8 +540,7 @@ impl OptionsBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<crate::types::Uid>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>Specifies the POSIX user ID (UID) of the file's owner.</p>
     /// <ul>
@@ -579,8 +574,7 @@ impl OptionsBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
     pub fn set_gid(mut self, input: ::std::option::Option<crate::types::Gid>) -> Self {
-        self.gid = input;
-        self
+        self.gid = input; self
     }
     /// <p>Specifies the POSIX group ID (GID) of the file's owners.</p>
     /// <ul>
@@ -616,8 +610,7 @@ impl OptionsBuilder {
     /// <p>If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code> to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination location and doesn't know what to delete.</p>
     /// </note>
     pub fn set_preserve_deleted_files(mut self, input: ::std::option::Option<crate::types::PreserveDeletedFiles>) -> Self {
-        self.preserve_deleted_files = input;
-        self
+        self.preserve_deleted_files = input; self
     }
     /// <p>Specifies whether files in the destination location that don't exist in the source should be preserved. This option can affect your Amazon S3 storage cost. If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync</a>.</p>
     /// <ul>
@@ -654,8 +647,7 @@ impl OptionsBuilder {
     /// <p><code>PRESERVE</code> - Preserves character and block device metadata. This option currently isn't supported for Amazon EFS.</p></li>
     /// </ul>
     pub fn set_preserve_devices(mut self, input: ::std::option::Option<crate::types::PreserveDevices>) -> Self {
-        self.preserve_devices = input;
-        self
+        self.preserve_devices = input; self
     }
     /// <p>Specifies whether DataSync should preserve the metadata of block and character devices in the source location and recreate the files with that device name and metadata on the destination. DataSync copies only the name and metadata of such devices.</p><note>
     /// <p>DataSync can't copy the actual contents of these devices because they're nonterminal and don't return an end-of-file (EOF) marker.</p>
@@ -694,8 +686,7 @@ impl OptionsBuilder {
     /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub fn set_posix_permissions(mut self, input: ::std::option::Option<crate::types::PosixPermissions>) -> Self {
-        self.posix_permissions = input;
-        self
+        self.posix_permissions = input; self
     }
     /// <p>Specifies which users or groups can access a file for a specific purpose such as reading, writing, or execution of the file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata copied by DataSync</a>.</p>
@@ -717,8 +708,7 @@ impl OptionsBuilder {
     }
     /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn set_bytes_per_second(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_per_second = input;
-        self
+        self.bytes_per_second = input; self
     }
     /// <p>Limits the bandwidth used by a DataSync task. For example, if you want DataSync to use a maximum of 1 MB, set this value to <code>1048576</code> (<code>=1024*1024</code>).</p>
     pub fn get_bytes_per_second(&self) -> &::std::option::Option<i64> {
@@ -731,8 +721,7 @@ impl OptionsBuilder {
     }
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub fn set_task_queueing(mut self, input: ::std::option::Option<crate::types::TaskQueueing>) -> Self {
-        self.task_queueing = input;
-        self
+        self.task_queueing = input; self
     }
     /// <p>Specifies whether your transfer tasks should be put into a queue during certain scenarios when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
     pub fn get_task_queueing(&self) -> &::std::option::Option<crate::types::TaskQueueing> {
@@ -761,8 +750,7 @@ impl OptionsBuilder {
     /// <p><code>OFF</code> - No logs are published.</p></li>
     /// </ul>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Specifies the type of logs that DataSync publishes to a Amazon CloudWatch Logs log group. To specify the log group, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>.</p>
     /// <ul>
@@ -795,8 +783,7 @@ impl OptionsBuilder {
     /// <p><code>ALL</code> - DataSync copies everything in the source to the destination without comparing differences between the locations.</p></li>
     /// </ul>
     pub fn set_transfer_mode(mut self, input: ::std::option::Option<crate::types::TransferMode>) -> Self {
-        self.transfer_mode = input;
-        self
+        self.transfer_mode = input; self
     }
     /// <p>Determines whether DataSync transfers only the data and metadata that differ between the source and the destination location or transfers all the content from the source (without comparing what's in the destination).</p>
     /// <ul>
@@ -865,8 +852,7 @@ impl OptionsBuilder {
     /// <p><code>NONE</code> - None of the SMB security descriptor components are copied. Destination objects are owned by the user that was provided for accessing the destination location. DACLs and SACLs are set based on the destination server’s configuration.</p></li>
     /// </ul>
     pub fn set_security_descriptor_copy_flags(mut self, input: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>) -> Self {
-        self.security_descriptor_copy_flags = input;
-        self
+        self.security_descriptor_copy_flags = input; self
     }
     /// <p>Specifies which components of the SMB security descriptor are copied from source to destination objects.</p>
     /// <p>This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations or between two FSx for Windows File Server locations. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how DataSync handles metadata</a>.</p>
@@ -904,8 +890,7 @@ impl OptionsBuilder {
     }
     /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object tags (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     pub fn set_object_tags(mut self, input: ::std::option::Option<crate::types::ObjectTags>) -> Self {
-        self.object_tags = input;
-        self
+        self.object_tags = input; self
     }
     /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object tags (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     pub fn get_object_tags(&self) -> &::std::option::Option<crate::types::ObjectTags> {
@@ -914,21 +899,37 @@ impl OptionsBuilder {
     /// Consumes the builder and constructs a [`Options`](crate::types::Options).
     pub fn build(self) -> crate::types::Options {
         crate::types::Options {
-            verify_mode: self.verify_mode,
-            overwrite_mode: self.overwrite_mode,
-            atime: self.atime,
-            mtime: self.mtime,
-            uid: self.uid,
-            gid: self.gid,
-            preserve_deleted_files: self.preserve_deleted_files,
-            preserve_devices: self.preserve_devices,
-            posix_permissions: self.posix_permissions,
-            bytes_per_second: self.bytes_per_second,
-            task_queueing: self.task_queueing,
-            log_level: self.log_level,
-            transfer_mode: self.transfer_mode,
-            security_descriptor_copy_flags: self.security_descriptor_copy_flags,
-            object_tags: self.object_tags,
+            verify_mode: self.verify_mode
+            ,
+            overwrite_mode: self.overwrite_mode
+            ,
+            atime: self.atime
+            ,
+            mtime: self.mtime
+            ,
+            uid: self.uid
+            ,
+            gid: self.gid
+            ,
+            preserve_deleted_files: self.preserve_deleted_files
+            ,
+            preserve_devices: self.preserve_devices
+            ,
+            posix_permissions: self.posix_permissions
+            ,
+            bytes_per_second: self.bytes_per_second
+            ,
+            task_queueing: self.task_queueing
+            ,
+            log_level: self.log_level
+            ,
+            transfer_mode: self.transfer_mode
+            ,
+            security_descriptor_copy_flags: self.security_descriptor_copy_flags
+            ,
+            object_tags: self.object_tags
+            ,
         }
     }
 }
+

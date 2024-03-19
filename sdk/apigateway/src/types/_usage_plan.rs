@@ -3,7 +3,7 @@
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsagePlan {
+pub struct UsagePlan  {
     /// <p>The identifier of a UsagePlan resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a usage plan.</p>
@@ -11,7 +11,7 @@ pub struct UsagePlan {
     /// <p>The description of a usage plan.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The associated API stages of a usage plan.</p>
-    pub api_stages: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
+    pub api_stages: ::std::option::Option<::std::vec::Vec::<crate::types::ApiStage>>,
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
@@ -19,41 +19,42 @@ pub struct UsagePlan {
     /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl UsagePlan {
+impl  UsagePlan  {
     /// <p>The identifier of a UsagePlan resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a usage plan.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of a usage plan.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The associated API stages of a usage plan.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_stages.is_none()`.
-    pub fn api_stages(&self) -> &[crate::types::ApiStage] {
-        self.api_stages.as_deref().unwrap_or_default()
+    pub fn api_stages(&self) -> & [crate::types::ApiStage] {
+        self.api_stages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn throttle(&self) -> ::std::option::Option<&crate::types::ThrottleSettings> {
+    pub fn throttle(&self) -> ::std::option::Option<& crate::types::ThrottleSettings> {
         self.throttle.as_ref()
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
-    pub fn quota(&self) -> ::std::option::Option<&crate::types::QuotaSettings> {
+    pub fn quota(&self) -> ::std::option::Option<& crate::types::QuotaSettings> {
         self.quota.as_ref()
     }
     /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,11 +72,11 @@ pub struct UsagePlanBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) api_stages: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>,
+    pub(crate) api_stages: ::std::option::Option<::std::vec::Vec::<crate::types::ApiStage>>,
     pub(crate) throttle: ::std::option::Option<crate::types::ThrottleSettings>,
     pub(crate) quota: ::std::option::Option<crate::types::QuotaSettings>,
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl UsagePlanBuilder {
     /// <p>The identifier of a UsagePlan resource.</p>
@@ -85,8 +86,7 @@ impl UsagePlanBuilder {
     }
     /// <p>The identifier of a UsagePlan resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of a UsagePlan resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl UsagePlanBuilder {
     }
     /// <p>The name of a usage plan.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a usage plan.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl UsagePlanBuilder {
     }
     /// <p>The description of a usage plan.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a usage plan.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +125,16 @@ impl UsagePlanBuilder {
     /// <p>The associated API stages of a usage plan.</p>
     pub fn api_stages(mut self, input: crate::types::ApiStage) -> Self {
         let mut v = self.api_stages.unwrap_or_default();
-        v.push(input);
-        self.api_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.api_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The associated API stages of a usage plan.</p>
-    pub fn set_api_stages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiStage>>) -> Self {
-        self.api_stages = input;
-        self
+    pub fn set_api_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApiStage>>) -> Self {
+        self.api_stages = input; self
     }
     /// <p>The associated API stages of a usage plan.</p>
-    pub fn get_api_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiStage>> {
+    pub fn get_api_stages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApiStage>> {
         &self.api_stages
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
@@ -147,8 +144,7 @@ impl UsagePlanBuilder {
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub fn set_throttle(mut self, input: ::std::option::Option<crate::types::ThrottleSettings>) -> Self {
-        self.throttle = input;
-        self
+        self.throttle = input; self
     }
     /// <p>A map containing method level throttling information for API stage in a usage plan.</p>
     pub fn get_throttle(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
@@ -161,8 +157,7 @@ impl UsagePlanBuilder {
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub fn set_quota(mut self, input: ::std::option::Option<crate::types::QuotaSettings>) -> Self {
-        self.quota = input;
-        self
+        self.quota = input; self
     }
     /// <p>The target maximum number of permitted requests per a given unit time interval.</p>
     pub fn get_quota(&self) -> &::std::option::Option<crate::types::QuotaSettings> {
@@ -175,8 +170,7 @@ impl UsagePlanBuilder {
     }
     /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,30 +183,38 @@ impl UsagePlanBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UsagePlan`](crate::types::UsagePlan).
     pub fn build(self) -> crate::types::UsagePlan {
         crate::types::UsagePlan {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            api_stages: self.api_stages,
-            throttle: self.throttle,
-            quota: self.quota,
-            product_code: self.product_code,
-            tags: self.tags,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            api_stages: self.api_stages
+            ,
+            throttle: self.throttle
+            ,
+            quota: self.quota
+            ,
+            product_code: self.product_code
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

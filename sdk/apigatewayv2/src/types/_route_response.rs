@@ -3,39 +3,37 @@
 /// <p>Represents a route response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteResponse {
+pub struct RouteResponse  {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     pub model_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Represents the response models of a route response.</p>
-    pub response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub response_models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Represents the response parameters of a route response.</p>
-    pub response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
+    pub response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>>,
     /// <p>Represents the identifier of a route response.</p>
     pub route_response_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents the route response key of a route response.</p>
     pub route_response_key: ::std::option::Option<::std::string::String>,
 }
-impl RouteResponse {
+impl  RouteResponse  {
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
-    pub fn model_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn model_selection_expression(&self) -> ::std::option::Option<& str> {
         self.model_selection_expression.as_deref()
     }
     /// <p>Represents the response models of a route response.</p>
-    pub fn response_models(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn response_models(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.response_models.as_ref()
     }
     /// <p>Represents the response parameters of a route response.</p>
-    pub fn response_parameters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>> {
+    pub fn response_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>> {
         self.response_parameters.as_ref()
     }
     /// <p>Represents the identifier of a route response.</p>
-    pub fn route_response_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_response_id(&self) -> ::std::option::Option<& str> {
         self.route_response_id.as_deref()
     }
     /// <p>Represents the route response key of a route response.</p>
-    pub fn route_response_key(&self) -> ::std::option::Option<&str> {
+    pub fn route_response_key(&self) -> ::std::option::Option<& str> {
         self.route_response_key.as_deref()
     }
 }
@@ -51,8 +49,8 @@ impl RouteResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RouteResponseBuilder {
     pub(crate) model_selection_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) response_models: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
+    pub(crate) response_models: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) response_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>>,
     pub(crate) route_response_id: ::std::option::Option<::std::string::String>,
     pub(crate) route_response_key: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +62,7 @@ impl RouteResponseBuilder {
     }
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     pub fn set_model_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_selection_expression = input;
-        self
+        self.model_selection_expression = input; self
     }
     /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
     pub fn get_model_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +73,18 @@ impl RouteResponseBuilder {
     /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
     ///
     /// <p>Represents the response models of a route response.</p>
-    pub fn response_models(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn response_models(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.response_models.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.response_models = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.response_models = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Represents the response models of a route response.</p>
-    pub fn set_response_models(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.response_models = input;
-        self
+    pub fn set_response_models(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.response_models = input; self
     }
     /// <p>Represents the response models of a route response.</p>
-    pub fn get_response_models(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_response_models(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.response_models
     }
     /// Adds a key-value pair to `response_parameters`.
@@ -105,22 +94,16 @@ impl RouteResponseBuilder {
     /// <p>Represents the response parameters of a route response.</p>
     pub fn response_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConstraints) -> Self {
         let mut hash_map = self.response_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.response_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.response_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Represents the response parameters of a route response.</p>
-    pub fn set_response_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>>,
-    ) -> Self {
-        self.response_parameters = input;
-        self
+    pub fn set_response_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>>) -> Self {
+        self.response_parameters = input; self
     }
     /// <p>Represents the response parameters of a route response.</p>
-    pub fn get_response_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>> {
+    pub fn get_response_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ParameterConstraints>> {
         &self.response_parameters
     }
     /// <p>Represents the identifier of a route response.</p>
@@ -130,8 +113,7 @@ impl RouteResponseBuilder {
     }
     /// <p>Represents the identifier of a route response.</p>
     pub fn set_route_response_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_response_id = input;
-        self
+        self.route_response_id = input; self
     }
     /// <p>Represents the identifier of a route response.</p>
     pub fn get_route_response_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +127,7 @@ impl RouteResponseBuilder {
     }
     /// <p>Represents the route response key of a route response.</p>
     pub fn set_route_response_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_response_key = input;
-        self
+        self.route_response_key = input; self
     }
     /// <p>Represents the route response key of a route response.</p>
     pub fn get_route_response_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,11 +136,17 @@ impl RouteResponseBuilder {
     /// Consumes the builder and constructs a [`RouteResponse`](crate::types::RouteResponse).
     pub fn build(self) -> crate::types::RouteResponse {
         crate::types::RouteResponse {
-            model_selection_expression: self.model_selection_expression,
-            response_models: self.response_models,
-            response_parameters: self.response_parameters,
-            route_response_id: self.route_response_id,
-            route_response_key: self.route_response_key,
+            model_selection_expression: self.model_selection_expression
+            ,
+            response_models: self.response_models
+            ,
+            response_parameters: self.response_parameters
+            ,
+            route_response_id: self.route_response_id
+            ,
+            route_response_key: self.route_response_key
+            ,
         }
     }
 }
+

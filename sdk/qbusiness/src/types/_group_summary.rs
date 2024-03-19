@@ -3,13 +3,13 @@
 /// <p>Summary information for groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupSummary {
+pub struct GroupSummary  {
     /// <p>The name of the group the summary information is for.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
-impl GroupSummary {
+impl  GroupSummary  {
     /// <p>The name of the group the summary information is for.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GroupSummaryBuilder {
     }
     /// <p>The name of the group the summary information is for.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group the summary information is for.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl GroupSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`GroupSummary`](crate::types::GroupSummary).
     pub fn build(self) -> crate::types::GroupSummary {
-        crate::types::GroupSummary { group_name: self.group_name }
+        crate::types::GroupSummary {
+            group_name: self.group_name
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The throughput peaks for an on-premises storage system volume. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Throughput {
+pub struct Throughput  {
     /// <p>Peak throughput related to read operations.</p>
     pub read: ::std::option::Option<f64>,
     /// <p>Peak throughput related to write operations.</p>
@@ -13,7 +13,7 @@ pub struct Throughput {
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub total: ::std::option::Option<f64>,
 }
-impl Throughput {
+impl  Throughput  {
     /// <p>Peak throughput related to read operations.</p>
     pub fn read(&self) -> ::std::option::Option<f64> {
         self.read
@@ -55,8 +55,7 @@ impl ThroughputBuilder {
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn set_read(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.read = input;
-        self
+        self.read = input; self
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn get_read(&self) -> &::std::option::Option<f64> {
@@ -69,8 +68,7 @@ impl ThroughputBuilder {
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn set_write(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.write = input;
-        self
+        self.write = input; self
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn get_write(&self) -> &::std::option::Option<f64> {
@@ -83,8 +81,7 @@ impl ThroughputBuilder {
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn set_other(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.other = input;
-        self
+        self.other = input; self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn get_other(&self) -> &::std::option::Option<f64> {
@@ -97,8 +94,7 @@ impl ThroughputBuilder {
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn get_total(&self) -> &::std::option::Option<f64> {
@@ -107,10 +103,15 @@ impl ThroughputBuilder {
     /// Consumes the builder and constructs a [`Throughput`](crate::types::Throughput).
     pub fn build(self) -> crate::types::Throughput {
         crate::types::Throughput {
-            read: self.read,
-            write: self.write,
-            other: self.other,
-            total: self.total,
+            read: self.read
+            ,
+            write: self.write
+            ,
+            other: self.other
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

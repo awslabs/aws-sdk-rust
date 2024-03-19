@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePersistentContactAssociationOutput {
+pub struct CreatePersistentContactAssociationOutput  {
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chat.</p>
     pub continued_from_contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePersistentContactAssociationOutput {
+impl  CreatePersistentContactAssociationOutput  {
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chat.</p>
-    pub fn continued_from_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn continued_from_contact_id(&self) -> ::std::option::Option<& str> {
         self.continued_from_contact_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePersistentContactAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePersistentContactAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreatePersistentContactAssociationOutput`](crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationOutput).
     pub fn builder() -> crate::operation::create_persistent_contact_association::builders::CreatePersistentContactAssociationOutputBuilder {
@@ -40,27 +40,28 @@ impl CreatePersistentContactAssociationOutputBuilder {
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chat.</p>
     pub fn set_continued_from_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continued_from_contact_id = input;
-        self
+        self.continued_from_contact_id = input; self
     }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chat.</p>
     pub fn get_continued_from_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.continued_from_contact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePersistentContactAssociationOutput`](crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationOutput).
     pub fn build(self) -> crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationOutput {
         crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationOutput {
-            continued_from_contact_id: self.continued_from_contact_id,
+            continued_from_contact_id: self.continued_from_contact_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

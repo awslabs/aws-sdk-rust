@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetShardIteratorInput {
+pub struct GetShardIteratorInput  {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
@@ -23,13 +23,13 @@ pub struct GetShardIteratorInput {
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub sequence_number: ::std::option::Option<::std::string::String>,
 }
-impl GetShardIteratorInput {
+impl  GetShardIteratorInput  {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
+    pub fn shard_id(&self) -> ::std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
@@ -43,11 +43,11 @@ impl GetShardIteratorInput {
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
     /// </ul>
-    pub fn shard_iterator_type(&self) -> ::std::option::Option<&crate::types::ShardIteratorType> {
+    pub fn shard_iterator_type(&self) -> ::std::option::Option<& crate::types::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl GetShardIteratorInputBuilder {
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
     /// </ul>
     pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
-        self.shard_iterator_type = input;
-        self
+        self.shard_iterator_type = input; self
     }
     /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
     /// <ul>
@@ -150,22 +147,26 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_number
     }
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_shard_iterator::GetShardIteratorInput {
-            stream_arn: self.stream_arn,
-            shard_id: self.shard_id,
-            shard_iterator_type: self.shard_iterator_type,
-            sequence_number: self.sequence_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_shard_iterator::GetShardIteratorInput {
+                stream_arn: self.stream_arn
+                ,
+                shard_id: self.shard_id
+                ,
+                shard_iterator_type: self.shard_iterator_type
+                ,
+                sequence_number: self.sequence_number
+                ,
+            }
+        )
     }
 }
+

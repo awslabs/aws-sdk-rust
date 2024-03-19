@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFaceSearchOutput {
+pub struct GetFaceSearchOutput  {
     /// <p>The current status of the face search job.</p>
     pub job_status: ::std::option::Option<crate::types::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
@@ -12,7 +12,7 @@ pub struct GetFaceSearchOutput {
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person.</p>
-    pub persons: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>,
+    pub persons: ::std::option::Option<::std::vec::Vec::<crate::types::PersonMatch>>,
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
@@ -21,47 +21,48 @@ pub struct GetFaceSearchOutput {
     pub job_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetFaceSearchOutput {
+impl  GetFaceSearchOutput  {
     /// <p>The current status of the face search job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::VideoJobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::VideoJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
-    pub fn video_metadata(&self) -> ::std::option::Option<&crate::types::VideoMetadata> {
+    pub fn video_metadata(&self) -> ::std::option::Option<& crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.persons.is_none()`.
-    pub fn persons(&self) -> &[crate::types::PersonMatch] {
-        self.persons.as_deref().unwrap_or_default()
+    pub fn persons(&self) -> & [crate::types::PersonMatch] {
+        self.persons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::Video> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::Video> {
         self.video.as_ref()
     }
     /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFaceSearchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetFaceSearchOutput {
     /// Creates a new builder-style object to manufacture [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput).
     pub fn builder() -> crate::operation::get_face_search::builders::GetFaceSearchOutputBuilder {
@@ -77,7 +78,7 @@ pub struct GetFaceSearchOutputBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) video_metadata: ::std::option::Option<crate::types::VideoMetadata>,
-    pub(crate) persons: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>,
+    pub(crate) persons: ::std::option::Option<::std::vec::Vec::<crate::types::PersonMatch>>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) video: ::std::option::Option<crate::types::Video>,
     pub(crate) job_tag: ::std::option::Option<::std::string::String>,
@@ -91,8 +92,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>The current status of the face search job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::VideoJobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The current status of the face search job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::VideoJobStatus> {
@@ -105,8 +105,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub fn set_video_metadata(mut self, input: ::std::option::Option<crate::types::VideoMetadata>) -> Self {
-        self.video_metadata = input;
-        self
+        self.video_metadata = input; self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
     pub fn get_video_metadata(&self) -> &::std::option::Option<crate::types::VideoMetadata> {
@@ -147,17 +144,16 @@ impl GetFaceSearchOutputBuilder {
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person.</p>
     pub fn persons(mut self, input: crate::types::PersonMatch) -> Self {
         let mut v = self.persons.unwrap_or_default();
-        v.push(input);
-        self.persons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.persons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person.</p>
-    pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>>) -> Self {
-        self.persons = input;
-        self
+    pub fn set_persons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PersonMatch>>) -> Self {
+        self.persons = input; self
     }
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person.</p>
-    pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PersonMatch>> {
+    pub fn get_persons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PersonMatch>> {
         &self.persons
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
@@ -167,8 +163,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +176,7 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
@@ -195,34 +189,42 @@ impl GetFaceSearchOutputBuilder {
     }
     /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetFaceSearchOutput`](crate::operation::get_face_search::GetFaceSearchOutput).
     pub fn build(self) -> crate::operation::get_face_search::GetFaceSearchOutput {
         crate::operation::get_face_search::GetFaceSearchOutput {
-            job_status: self.job_status,
-            status_message: self.status_message,
-            next_token: self.next_token,
-            video_metadata: self.video_metadata,
-            persons: self.persons,
-            job_id: self.job_id,
-            video: self.video,
-            job_tag: self.job_tag,
+            job_status: self.job_status
+            ,
+            status_message: self.status_message
+            ,
+            next_token: self.next_token
+            ,
+            video_metadata: self.video_metadata
+            ,
+            persons: self.persons
+            ,
+            job_id: self.job_id
+            ,
+            video: self.video
+            ,
+            job_tag: self.job_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

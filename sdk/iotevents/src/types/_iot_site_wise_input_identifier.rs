@@ -3,13 +3,13 @@
 /// <p>The identifer of the input routed from AWS IoT SiteWise.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotSiteWiseInputIdentifier {
+pub struct IotSiteWiseInputIdentifier  {
     /// <p>The identifier of the AWS IoT SiteWise asset model property.</p>
     pub iot_site_wise_asset_model_property_identifier: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
 }
-impl IotSiteWiseInputIdentifier {
+impl  IotSiteWiseInputIdentifier  {
     /// <p>The identifier of the AWS IoT SiteWise asset model property.</p>
-    pub fn iot_site_wise_asset_model_property_identifier(&self) -> ::std::option::Option<&crate::types::IotSiteWiseAssetModelPropertyIdentifier> {
+    pub fn iot_site_wise_asset_model_property_identifier(&self) -> ::std::option::Option<& crate::types::IotSiteWiseAssetModelPropertyIdentifier> {
         self.iot_site_wise_asset_model_property_identifier.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl IotSiteWiseInputIdentifierBuilder {
         self
     }
     /// <p>The identifier of the AWS IoT SiteWise asset model property.</p>
-    pub fn set_iot_site_wise_asset_model_property_identifier(
-        mut self,
-        input: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
-    ) -> Self {
-        self.iot_site_wise_asset_model_property_identifier = input;
-        self
+    pub fn set_iot_site_wise_asset_model_property_identifier(mut self, input: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>) -> Self {
+        self.iot_site_wise_asset_model_property_identifier = input; self
     }
     /// <p>The identifier of the AWS IoT SiteWise asset model property.</p>
     pub fn get_iot_site_wise_asset_model_property_identifier(&self) -> &::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier> {
@@ -47,7 +43,9 @@ impl IotSiteWiseInputIdentifierBuilder {
     /// Consumes the builder and constructs a [`IotSiteWiseInputIdentifier`](crate::types::IotSiteWiseInputIdentifier).
     pub fn build(self) -> crate::types::IotSiteWiseInputIdentifier {
         crate::types::IotSiteWiseInputIdentifier {
-            iot_site_wise_asset_model_property_identifier: self.iot_site_wise_asset_model_property_identifier,
+            iot_site_wise_asset_model_property_identifier: self.iot_site_wise_asset_model_property_identifier
+            ,
         }
     }
 }
+

@@ -3,30 +3,31 @@
 /// Placeholder documentation for ListInputDevicesResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInputDevicesOutput {
+pub struct ListInputDevicesOutput  {
     /// The list of input devices.
-    pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>,
+    pub input_devices: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceSummary>>,
     /// A token to get additional list results.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListInputDevicesOutput {
+impl  ListInputDevicesOutput  {
     /// The list of input devices.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_devices.is_none()`.
-    pub fn input_devices(&self) -> &[crate::types::InputDeviceSummary] {
-        self.input_devices.as_deref().unwrap_or_default()
+    pub fn input_devices(&self) -> & [crate::types::InputDeviceSummary] {
+        self.input_devices.as_deref()
+        .unwrap_or_default()
     }
     /// A token to get additional list results.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInputDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInputDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
     pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListInputDevicesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInputDevicesOutputBuilder {
-    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>,
+    pub(crate) input_devices: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListInputDevicesOutputBuilder {
     /// The list of input devices.
     pub fn input_devices(mut self, input: crate::types::InputDeviceSummary) -> Self {
         let mut v = self.input_devices.unwrap_or_default();
-        v.push(input);
-        self.input_devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_devices = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of input devices.
-    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>>) -> Self {
-        self.input_devices = input;
-        self
+    pub fn set_input_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceSummary>>) -> Self {
+        self.input_devices = input; self
     }
     /// The list of input devices.
-    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>> {
+    pub fn get_input_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputDeviceSummary>> {
         &self.input_devices
     }
     /// A token to get additional list results.
@@ -70,28 +70,30 @@ impl ListInputDevicesOutputBuilder {
     }
     /// A token to get additional list results.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// A token to get additional list results.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
     pub fn build(self) -> crate::operation::list_input_devices::ListInputDevicesOutput {
         crate::operation::list_input_devices::ListInputDevicesOutput {
-            input_devices: self.input_devices,
-            next_token: self.next_token,
+            input_devices: self.input_devices
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

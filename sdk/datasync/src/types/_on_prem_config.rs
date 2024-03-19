@@ -3,15 +3,14 @@
 /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OnPremConfig {
+pub struct OnPremConfig  {
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub agent_arns: ::std::vec::Vec<::std::string::String>,
+    pub agent_arns: ::std::vec::Vec::<::std::string::String>,
 }
-impl OnPremConfig {
+impl  OnPremConfig  {
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.agent_arns.deref()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.agent_arns.deref()
     }
 }
 impl OnPremConfig {
@@ -25,7 +24,7 @@ impl OnPremConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OnPremConfigBuilder {
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl OnPremConfigBuilder {
     /// Appends an item to `agent_arns`.
@@ -35,30 +34,31 @@ impl OnPremConfigBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// Consumes the builder and constructs a [`OnPremConfig`](crate::types::OnPremConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_arns`](crate::types::builders::OnPremConfigBuilder::agent_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::OnPremConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OnPremConfig {
-            agent_arns: self.agent_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_arns",
-                    "agent_arns was not specified but it is required when building OnPremConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OnPremConfig {
+                agent_arns: self.agent_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_arns", "agent_arns was not specified but it is required when building OnPremConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,9 +3,9 @@
 /// <p>Describes the configuration that App Runner uses to run an App Runner service using an image pulled from a source image repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImageConfiguration {
+pub struct ImageConfiguration  {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub runtime_environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
     pub start_command: ::std::option::Option<::std::string::String>,
     /// <p>The port that your application listens to in the container.</p>
@@ -19,20 +19,20 @@ pub struct ImageConfiguration {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ImageConfiguration {
+impl  ImageConfiguration  {
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn runtime_environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.runtime_environment_variables.as_ref()
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
-    pub fn start_command(&self) -> ::std::option::Option<&str> {
+    pub fn start_command(&self) -> ::std::option::Option<& str> {
         self.start_command.as_deref()
     }
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
-    pub fn port(&self) -> ::std::option::Option<&str> {
+    pub fn port(&self) -> ::std::option::Option<& str> {
         self.port.as_deref()
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
@@ -43,11 +43,11 @@ impl ImageConfiguration {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn runtime_environment_secrets(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.runtime_environment_secrets.as_ref()
     }
 }
-impl ::std::fmt::Debug for ImageConfiguration {
+impl  ::std::fmt::Debug for ImageConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImageConfiguration");
         formatter.field("runtime_environment_variables", &self.runtime_environment_variables);
@@ -68,10 +68,10 @@ impl ImageConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ImageConfigurationBuilder {
-    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) start_command: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<::std::string::String>,
-    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) runtime_environment_secrets: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ImageConfigurationBuilder {
     /// Adds a key-value pair to `runtime_environment_variables`.
@@ -79,28 +79,18 @@ impl ImageConfigurationBuilder {
     /// To override the contents of this collection use [`set_runtime_environment_variables`](Self::set_runtime_environment_variables).
     ///
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn runtime_environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.runtime_environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.runtime_environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.runtime_environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn set_runtime_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.runtime_environment_variables = input;
-        self
+    pub fn set_runtime_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.runtime_environment_variables = input; self
     }
     /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs.</p>
-    pub fn get_runtime_environment_variables(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_runtime_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_variables
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
@@ -110,8 +100,7 @@ impl ImageConfigurationBuilder {
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
     pub fn set_start_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_command = input;
-        self
+        self.start_command = input; self
     }
     /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start command.</p>
     pub fn get_start_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +115,7 @@ impl ImageConfigurationBuilder {
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
     pub fn set_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that your application listens to in the container.</p>
     /// <p>Default: <code>8080</code></p>
@@ -146,15 +134,11 @@ impl ImageConfigurationBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn runtime_environment_secrets(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn runtime_environment_secrets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.runtime_environment_secrets.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.runtime_environment_secrets = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.runtime_environment_secrets = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
@@ -164,12 +148,8 @@ impl ImageConfigurationBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_runtime_environment_secrets(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.runtime_environment_secrets = input;
-        self
+    pub fn set_runtime_environment_secrets(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.runtime_environment_secrets = input; self
     }
     /// <p>An array of key-value pairs representing the secrets and parameters that get referenced to your service as an environment variable. The supported values are either the full Amazon Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services Systems Manager Parameter Store.</p><note>
     /// <ul>
@@ -179,18 +159,20 @@ impl ImageConfigurationBuilder {
     /// <p>Currently, cross account referencing of Amazon Web Services Systems Manager Parameter Store parameter is not supported.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_runtime_environment_secrets(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_runtime_environment_secrets(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.runtime_environment_secrets
     }
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
     pub fn build(self) -> crate::types::ImageConfiguration {
         crate::types::ImageConfiguration {
-            runtime_environment_variables: self.runtime_environment_variables,
-            start_command: self.start_command,
-            port: self.port,
-            runtime_environment_secrets: self.runtime_environment_secrets,
+            runtime_environment_variables: self.runtime_environment_variables
+            ,
+            start_command: self.start_command
+            ,
+            port: self.port
+            ,
+            runtime_environment_secrets: self.runtime_environment_secrets
+            ,
         }
     }
 }
@@ -204,3 +186,4 @@ impl ::std::fmt::Debug for ImageConfigurationBuilder {
         formatter.finish()
     }
 }
+

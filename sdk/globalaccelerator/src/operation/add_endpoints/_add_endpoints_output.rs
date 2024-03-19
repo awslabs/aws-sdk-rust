@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddEndpointsOutput {
+pub struct AddEndpointsOutput  {
     /// <p>The list of endpoint objects.</p>
-    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
+    pub endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AddEndpointsOutput {
+impl  AddEndpointsOutput  {
     /// <p>The list of endpoint objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.endpoint_descriptions.is_none()`.
-    pub fn endpoint_descriptions(&self) -> &[crate::types::EndpointDescription] {
-        self.endpoint_descriptions.as_deref().unwrap_or_default()
+    pub fn endpoint_descriptions(&self) -> & [crate::types::EndpointDescription] {
+        self.endpoint_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`AddEndpointsOutput`](crate::operation::add_endpoints::AddEndpointsOutput).
     pub fn builder() -> crate::operation::add_endpoints::builders::AddEndpointsOutputBuilder {
@@ -37,7 +38,7 @@ impl AddEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddEndpointsOutputBuilder {
-    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>,
+    pub(crate) endpoint_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>,
     pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl AddEndpointsOutputBuilder {
     /// <p>The list of endpoint objects.</p>
     pub fn endpoint_descriptions(mut self, input: crate::types::EndpointDescription) -> Self {
         let mut v = self.endpoint_descriptions.unwrap_or_default();
-        v.push(input);
-        self.endpoint_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.endpoint_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn set_endpoint_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>>) -> Self {
-        self.endpoint_descriptions = input;
-        self
+    pub fn set_endpoint_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>>) -> Self {
+        self.endpoint_descriptions = input; self
     }
     /// <p>The list of endpoint objects.</p>
-    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDescription>> {
+    pub fn get_endpoint_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EndpointDescription>> {
         &self.endpoint_descriptions
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
@@ -69,28 +69,30 @@ impl AddEndpointsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_group_arn = input;
-        self
+        self.endpoint_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddEndpointsOutput`](crate::operation::add_endpoints::AddEndpointsOutput).
     pub fn build(self) -> crate::operation::add_endpoints::AddEndpointsOutput {
         crate::operation::add_endpoints::AddEndpointsOutput {
-            endpoint_descriptions: self.endpoint_descriptions,
-            endpoint_group_arn: self.endpoint_group_arn,
+            endpoint_descriptions: self.endpoint_descriptions
+            ,
+            endpoint_group_arn: self.endpoint_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,24 +3,25 @@
 /// <p>Contains the response to a <code>DescribeCommands</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCommandsOutput {
+pub struct DescribeCommandsOutput  {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
+    pub commands: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>,
     _request_id: Option<String>,
 }
-impl DescribeCommandsOutput {
+impl  DescribeCommandsOutput  {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.commands.is_none()`.
-    pub fn commands(&self) -> &[crate::types::Command] {
-        self.commands.as_deref().unwrap_or_default()
+    pub fn commands(&self) -> & [crate::types::Command] {
+        self.commands.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCommandsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCommandsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
     pub fn builder() -> crate::operation::describe_commands::builders::DescribeCommandsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeCommandsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCommandsOutputBuilder {
-    pub(crate) commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
+    pub(crate) commands: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>,
     _request_id: Option<String>,
 }
 impl DescribeCommandsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeCommandsOutputBuilder {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     pub fn commands(mut self, input: crate::types::Command) -> Self {
         let mut v = self.commands.unwrap_or_default();
-        v.push(input);
-        self.commands = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.commands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
-        self.commands = input;
-        self
+    pub fn set_commands(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>) -> Self {
+        self.commands = input; self
     }
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub fn get_commands(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
+    pub fn get_commands(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Command>> {
         &self.commands
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
     pub fn build(self) -> crate::operation::describe_commands::DescribeCommandsOutput {
         crate::operation::describe_commands::DescribeCommandsOutput {
-            commands: self.commands,
+            commands: self.commands
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

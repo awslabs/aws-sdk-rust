@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSlotTypeInput {
+pub struct GetSlotTypeInput  {
     /// <p>The name of the slot type. The name is case sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the slot type.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetSlotTypeInput {
+impl  GetSlotTypeInput  {
     /// <p>The name of the slot type. The name is case sensitive.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the slot type.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetSlotTypeInputBuilder {
     }
     /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the slot type. The name is case sensitive.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetSlotTypeInputBuilder {
     }
     /// <p>The version of the slot type.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the slot type.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetSlotTypeInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetSlotTypeInput`](crate::operation::get_slot_type::GetSlotTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_slot_type::GetSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_slot_type::GetSlotTypeInput {
-            name: self.name,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_slot_type::GetSlotTypeInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

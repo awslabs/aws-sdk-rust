@@ -3,19 +3,19 @@
 /// <p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupDefinition {
+pub struct GroupDefinition  {
     /// <p>The string that represents the type of group.</p>
     pub r#type: ::std::option::Option<crate::types::GroupDefinitionType>,
     /// <p>The string that represents a key for a specified group.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
-impl GroupDefinition {
+impl  GroupDefinition  {
     /// <p>The string that represents the type of group.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GroupDefinitionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::GroupDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The string that represents a key for a specified group.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GroupDefinitionBuilder {
     }
     /// <p>The string that represents the type of group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GroupDefinitionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The string that represents the type of group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::GroupDefinitionType> {
@@ -55,8 +54,7 @@ impl GroupDefinitionBuilder {
     }
     /// <p>The string that represents a key for a specified group.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The string that represents a key for a specified group.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GroupDefinitionBuilder {
     /// Consumes the builder and constructs a [`GroupDefinition`](crate::types::GroupDefinition).
     pub fn build(self) -> crate::types::GroupDefinition {
         crate::types::GroupDefinition {
-            r#type: self.r#type,
-            key: self.key,
+            r#type: self.r#type
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

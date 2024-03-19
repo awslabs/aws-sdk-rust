@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryLinkInput {
+pub struct DeleteRepositoryLinkInput  {
     /// <p>The ID of the repository link to be deleted.</p>
     pub repository_link_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRepositoryLinkInput {
+impl  DeleteRepositoryLinkInput  {
     /// <p>The ID of the repository link to be deleted.</p>
-    pub fn repository_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_link_id(&self) -> ::std::option::Option<& str> {
         self.repository_link_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteRepositoryLinkInputBuilder {
     }
     /// <p>The ID of the repository link to be deleted.</p>
     pub fn set_repository_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_link_id = input;
-        self
+        self.repository_link_id = input; self
     }
     /// <p>The ID of the repository link to be deleted.</p>
     pub fn get_repository_link_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_link_id
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryLinkInput`](crate::operation::delete_repository_link::DeleteRepositoryLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_repository_link::DeleteRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_repository_link::DeleteRepositoryLinkInput {
-            repository_link_id: self.repository_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository_link::DeleteRepositoryLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_repository_link::DeleteRepositoryLinkInput {
+                repository_link_id: self.repository_link_id
+                ,
+            }
+        )
     }
 }
+

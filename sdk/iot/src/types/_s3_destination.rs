@@ -3,19 +3,19 @@
 /// <p>Describes the location of updated firmware in S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Destination {
+pub struct S3Destination  {
     /// <p>The S3 bucket that contains the updated firmware.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl S3Destination {
+impl  S3Destination  {
     /// <p>The S3 bucket that contains the updated firmware.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The S3 prefix.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3DestinationBuilder {
     }
     /// <p>The S3 bucket that contains the updated firmware.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The S3 bucket that contains the updated firmware.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3DestinationBuilder {
     }
     /// <p>The S3 prefix.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The S3 prefix.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3DestinationBuilder {
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {
         crate::types::S3Destination {
-            bucket: self.bucket,
-            prefix: self.prefix,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

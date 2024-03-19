@@ -3,24 +3,25 @@
 /// <p>The output from the ListPolicyVersions operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPolicyVersionsOutput {
+pub struct ListPolicyVersionsOutput  {
     /// <p>The policy versions.</p>
-    pub policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
+    pub policy_versions: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
 }
-impl ListPolicyVersionsOutput {
+impl  ListPolicyVersionsOutput  {
     /// <p>The policy versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_versions.is_none()`.
-    pub fn policy_versions(&self) -> &[crate::types::PolicyVersion] {
-        self.policy_versions.as_deref().unwrap_or_default()
+    pub fn policy_versions(&self) -> & [crate::types::PolicyVersion] {
+        self.policy_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPolicyVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPolicyVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
     pub fn builder() -> crate::operation::list_policy_versions::builders::ListPolicyVersionsOutputBuilder {
@@ -32,7 +33,7 @@ impl ListPolicyVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsOutputBuilder {
-    pub(crate) policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
+    pub(crate) policy_versions: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
 }
 impl ListPolicyVersionsOutputBuilder {
@@ -43,33 +44,34 @@ impl ListPolicyVersionsOutputBuilder {
     /// <p>The policy versions.</p>
     pub fn policy_versions(mut self, input: crate::types::PolicyVersion) -> Self {
         let mut v = self.policy_versions.unwrap_or_default();
-        v.push(input);
-        self.policy_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The policy versions.</p>
-    pub fn set_policy_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>) -> Self {
-        self.policy_versions = input;
-        self
+    pub fn set_policy_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>) -> Self {
+        self.policy_versions = input; self
     }
     /// <p>The policy versions.</p>
-    pub fn get_policy_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
+    pub fn get_policy_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>> {
         &self.policy_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
     pub fn build(self) -> crate::operation::list_policy_versions::ListPolicyVersionsOutput {
         crate::operation::list_policy_versions::ListPolicyVersionsOutput {
-            policy_versions: self.policy_versions,
+            policy_versions: self.policy_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

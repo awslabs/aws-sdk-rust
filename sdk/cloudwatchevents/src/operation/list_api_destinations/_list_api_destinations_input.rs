@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApiDestinationsInput {
+pub struct ListApiDestinationsInput  {
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the connection specified for the API destination.</p>
@@ -12,17 +12,17 @@ pub struct ListApiDestinationsInput {
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl ListApiDestinationsInput {
+impl  ListApiDestinationsInput  {
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
-    pub fn name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix(&self) -> ::std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of API destinations to include in the response.</p>
@@ -54,8 +54,7 @@ impl ListApiDestinationsInputBuilder {
     }
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListApiDestinationsInputBuilder {
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListApiDestinationsInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,23 +93,26 @@ impl ListApiDestinationsInputBuilder {
     }
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_api_destinations::ListApiDestinationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_api_destinations::ListApiDestinationsInput {
-            name_prefix: self.name_prefix,
-            connection_arn: self.connection_arn,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_api_destinations::ListApiDestinationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_api_destinations::ListApiDestinationsInput {
+                name_prefix: self.name_prefix
+                ,
+                connection_arn: self.connection_arn
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCoreDefinitionVersionInput {
+pub struct GetCoreDefinitionVersionInput  {
     /// The ID of the core definition.
     pub core_definition_id: ::std::option::Option<::std::string::String>,
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub core_definition_version_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCoreDefinitionVersionInput {
+impl  GetCoreDefinitionVersionInput  {
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_definition_id(&self) -> ::std::option::Option<& str> {
         self.core_definition_id.as_deref()
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-    pub fn core_definition_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_definition_version_id(&self) -> ::std::option::Option<& str> {
         self.core_definition_version_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetCoreDefinitionVersionInputBuilder {
     }
     /// The ID of the core definition.
     pub fn set_core_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_definition_id = input;
-        self
+        self.core_definition_id = input; self
     }
     /// The ID of the core definition.
     pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetCoreDefinitionVersionInputBuilder {
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn set_core_definition_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_definition_version_id = input;
-        self
+        self.core_definition_version_id = input; self
     }
     /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn get_core_definition_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_definition_version_id
     }
     /// Consumes the builder and constructs a [`GetCoreDefinitionVersionInput`](crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
-            core_definition_id: self.core_definition_id,
-            core_definition_version_id: self.core_definition_version_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
+                core_definition_id: self.core_definition_id
+                ,
+                core_definition_version_id: self.core_definition_version_id
+                ,
+            }
+        )
     }
 }
+

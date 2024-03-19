@@ -3,16 +3,17 @@
 /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterHealth {
+pub struct ClusterHealth  {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
+    pub issues: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterIssue>>,
 }
-impl ClusterHealth {
+impl  ClusterHealth  {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.issues.is_none()`.
-    pub fn issues(&self) -> &[crate::types::ClusterIssue] {
-        self.issues.as_deref().unwrap_or_default()
+    pub fn issues(&self) -> & [crate::types::ClusterIssue] {
+        self.issues.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ClusterHealth {
@@ -26,7 +27,7 @@ impl ClusterHealth {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterHealthBuilder {
-    pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterIssue>>,
 }
 impl ClusterHealthBuilder {
     /// Appends an item to `issues`.
@@ -36,21 +37,24 @@ impl ClusterHealthBuilder {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
     pub fn issues(mut self, input: crate::types::ClusterIssue) -> Self {
         let mut v = self.issues.unwrap_or_default();
-        v.push(input);
-        self.issues = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.issues = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>) -> Self {
-        self.issues = input;
-        self
+    pub fn set_issues(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterIssue>>) -> Self {
+        self.issues = input; self
     }
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>> {
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterIssue>> {
         &self.issues
     }
     /// Consumes the builder and constructs a [`ClusterHealth`](crate::types::ClusterHealth).
     pub fn build(self) -> crate::types::ClusterHealth {
-        crate::types::ClusterHealth { issues: self.issues }
+        crate::types::ClusterHealth {
+            issues: self.issues
+            ,
+        }
     }
 }
+

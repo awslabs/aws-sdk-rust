@@ -3,7 +3,7 @@
 /// <p>Represents the input for a <code>ModifyReplicationGroupShardConfiguration</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationGroupShardConfigurationInput {
+pub struct ModifyReplicationGroupShardConfigurationInput  {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
@@ -13,17 +13,17 @@ pub struct ModifyReplicationGroupShardConfigurationInput {
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    pub resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
+    pub resharding_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>,
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    pub node_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_groups_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    pub node_groups_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_groups_to_retain: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyReplicationGroupShardConfigurationInput {
+impl  ModifyReplicationGroupShardConfigurationInput  {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
-    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
@@ -37,30 +37,32 @@ impl ModifyReplicationGroupShardConfigurationInput {
     }
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resharding_configuration.is_none()`.
-    pub fn resharding_configuration(&self) -> &[crate::types::ReshardingConfiguration] {
-        self.resharding_configuration.as_deref().unwrap_or_default()
+    pub fn resharding_configuration(&self) -> & [crate::types::ReshardingConfiguration] {
+        self.resharding_configuration.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_groups_to_remove.is_none()`.
-    pub fn node_groups_to_remove(&self) -> &[::std::string::String] {
-        self.node_groups_to_remove.as_deref().unwrap_or_default()
+    pub fn node_groups_to_remove(&self) -> & [::std::string::String] {
+        self.node_groups_to_remove.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_groups_to_retain.is_none()`.
-    pub fn node_groups_to_retain(&self) -> &[::std::string::String] {
-        self.node_groups_to_retain.as_deref().unwrap_or_default()
+    pub fn node_groups_to_retain(&self) -> & [::std::string::String] {
+        self.node_groups_to_retain.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyReplicationGroupShardConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationInput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput).
-    pub fn builder() -> crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder {
         crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder::default()
     }
 }
@@ -72,9 +74,9 @@ pub struct ModifyReplicationGroupShardConfigurationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) node_group_count: ::std::option::Option<i32>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
-    pub(crate) resharding_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
-    pub(crate) node_groups_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) node_groups_to_retain: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resharding_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>,
+    pub(crate) node_groups_to_remove: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) node_groups_to_retain: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
@@ -85,8 +87,7 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     }
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub fn set_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_group_id = input;
-        self
+        self.replication_group_id = input; self
     }
     /// <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +101,7 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
     pub fn set_node_group_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.node_group_count = input;
-        self
+        self.node_group_count = input; self
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
     pub fn get_node_group_count(&self) -> &::std::option::Option<i32> {
@@ -117,8 +117,7 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>
     /// <p>Value: true</p>
@@ -133,19 +132,18 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
     pub fn resharding_configuration(mut self, input: crate::types::ReshardingConfiguration) -> Self {
         let mut v = self.resharding_configuration.unwrap_or_default();
-        v.push(input);
-        self.resharding_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resharding_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    pub fn set_resharding_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>) -> Self {
-        self.resharding_configuration = input;
-        self
+    pub fn set_resharding_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>>) -> Self {
+        self.resharding_configuration = input; self
     }
     /// <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>
     /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
-    pub fn get_resharding_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>> {
+    pub fn get_resharding_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReshardingConfiguration>> {
         &self.resharding_configuration
     }
     /// Appends an item to `node_groups_to_remove`.
@@ -156,19 +154,18 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
     pub fn node_groups_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_groups_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.node_groups_to_remove = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_groups_to_remove = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    pub fn set_node_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_groups_to_remove = input;
-        self
+    pub fn set_node_groups_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_groups_to_remove = input; self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
-    pub fn get_node_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_groups_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_groups_to_remove
     }
     /// Appends an item to `node_groups_to_retain`.
@@ -179,37 +176,38 @@ impl ModifyReplicationGroupShardConfigurationInputBuilder {
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
     pub fn node_groups_to_retain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_groups_to_retain.unwrap_or_default();
-        v.push(input.into());
-        self.node_groups_to_retain = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_groups_to_retain = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    pub fn set_node_groups_to_retain(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_groups_to_retain = input;
-        self
+    pub fn set_node_groups_to_retain(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_groups_to_retain = input; self
     }
     /// <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>
     /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
-    pub fn get_node_groups_to_retain(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_groups_to_retain(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_groups_to_retain
     }
     /// Consumes the builder and constructs a [`ModifyReplicationGroupShardConfigurationInput`](crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationInput {
-                replication_group_id: self.replication_group_id,
-                node_group_count: self.node_group_count,
-                apply_immediately: self.apply_immediately,
-                resharding_configuration: self.resharding_configuration,
-                node_groups_to_remove: self.node_groups_to_remove,
-                node_groups_to_retain: self.node_groups_to_retain,
-            },
+                replication_group_id: self.replication_group_id
+                ,
+                node_group_count: self.node_group_count
+                ,
+                apply_immediately: self.apply_immediately
+                ,
+                resharding_configuration: self.resharding_configuration
+                ,
+                node_groups_to_remove: self.node_groups_to_remove
+                ,
+                node_groups_to_retain: self.node_groups_to_retain
+                ,
+            }
         )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceRefreshProgressDetails {
+pub struct InstanceRefreshProgressDetails  {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     pub live_pool_progress: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub warm_pool_progress: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
 }
-impl InstanceRefreshProgressDetails {
+impl  InstanceRefreshProgressDetails  {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
-    pub fn live_pool_progress(&self) -> ::std::option::Option<&crate::types::InstanceRefreshLivePoolProgress> {
+    pub fn live_pool_progress(&self) -> ::std::option::Option<& crate::types::InstanceRefreshLivePoolProgress> {
         self.live_pool_progress.as_ref()
     }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
-    pub fn warm_pool_progress(&self) -> ::std::option::Option<&crate::types::InstanceRefreshWarmPoolProgress> {
+    pub fn warm_pool_progress(&self) -> ::std::option::Option<& crate::types::InstanceRefreshWarmPoolProgress> {
         self.warm_pool_progress.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InstanceRefreshProgressDetailsBuilder {
     }
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     pub fn set_live_pool_progress(mut self, input: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>) -> Self {
-        self.live_pool_progress = input;
-        self
+        self.live_pool_progress = input; self
     }
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     pub fn get_live_pool_progress(&self) -> &::std::option::Option<crate::types::InstanceRefreshLivePoolProgress> {
@@ -55,8 +54,7 @@ impl InstanceRefreshProgressDetailsBuilder {
     }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub fn set_warm_pool_progress(mut self, input: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>) -> Self {
-        self.warm_pool_progress = input;
-        self
+        self.warm_pool_progress = input; self
     }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub fn get_warm_pool_progress(&self) -> &::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress> {
@@ -65,8 +63,11 @@ impl InstanceRefreshProgressDetailsBuilder {
     /// Consumes the builder and constructs a [`InstanceRefreshProgressDetails`](crate::types::InstanceRefreshProgressDetails).
     pub fn build(self) -> crate::types::InstanceRefreshProgressDetails {
         crate::types::InstanceRefreshProgressDetails {
-            live_pool_progress: self.live_pool_progress,
-            warm_pool_progress: self.warm_pool_progress,
+            live_pool_progress: self.live_pool_progress
+            ,
+            warm_pool_progress: self.warm_pool_progress
+            ,
         }
     }
 }
+

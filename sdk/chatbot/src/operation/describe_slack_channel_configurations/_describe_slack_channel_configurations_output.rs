@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSlackChannelConfigurationsOutput {
+pub struct DescribeSlackChannelConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of Slack channel configurations.
-    pub slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub slack_channel_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
-impl DescribeSlackChannelConfigurationsOutput {
+impl  DescribeSlackChannelConfigurationsOutput  {
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of Slack channel configurations.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slack_channel_configurations.is_none()`.
-    pub fn slack_channel_configurations(&self) -> &[crate::types::SlackChannelConfiguration] {
-        self.slack_channel_configurations.as_deref().unwrap_or_default()
+    pub fn slack_channel_configurations(&self) -> & [crate::types::SlackChannelConfiguration] {
+        self.slack_channel_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSlackChannelConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSlackChannelConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlackChannelConfigurationsOutput`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput).
     pub fn builder() -> crate::operation::describe_slack_channel_configurations::builders::DescribeSlackChannelConfigurationsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeSlackChannelConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSlackChannelConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) slack_channel_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub(crate) slack_channel_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeSlackChannelConfigurationsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeSlackChannelConfigurationsOutputBuilder {
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl DescribeSlackChannelConfigurationsOutputBuilder {
     /// A list of Slack channel configurations.
     pub fn slack_channel_configurations(mut self, input: crate::types::SlackChannelConfiguration) -> Self {
         let mut v = self.slack_channel_configurations.unwrap_or_default();
-        v.push(input);
-        self.slack_channel_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slack_channel_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of Slack channel configurations.
-    pub fn set_slack_channel_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>>,
-    ) -> Self {
-        self.slack_channel_configurations = input;
-        self
+    pub fn set_slack_channel_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlackChannelConfiguration>>) -> Self {
+        self.slack_channel_configurations = input; self
     }
     /// A list of Slack channel configurations.
-    pub fn get_slack_channel_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlackChannelConfiguration>> {
+    pub fn get_slack_channel_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlackChannelConfiguration>> {
         &self.slack_channel_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSlackChannelConfigurationsOutput`](crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput).
     pub fn build(self) -> crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput {
         crate::operation::describe_slack_channel_configurations::DescribeSlackChannelConfigurationsOutput {
-            next_token: self.next_token,
-            slack_channel_configurations: self.slack_channel_configurations,
+            next_token: self.next_token
+            ,
+            slack_channel_configurations: self.slack_channel_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

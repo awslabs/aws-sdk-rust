@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchEntitiesInput {
+pub struct SearchEntitiesInput  {
     /// <p>The entity types for which to search.</p>
-    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
+    pub entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>,
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
@@ -15,22 +15,24 @@ pub struct SearchEntitiesInput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: ::std::option::Option<i64>,
 }
-impl SearchEntitiesInput {
+impl  SearchEntitiesInput  {
     /// <p>The entity types for which to search.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_types.is_none()`.
-    pub fn entity_types(&self) -> &[crate::types::EntityType] {
-        self.entity_types.as_deref().unwrap_or_default()
+    pub fn entity_types(&self) -> & [crate::types::EntityType] {
+        self.entity_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::EntityFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::EntityFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -53,8 +55,8 @@ impl SearchEntitiesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchEntitiesInputBuilder {
-    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) namespace_version: ::std::option::Option<i64>,
@@ -67,17 +69,16 @@ impl SearchEntitiesInputBuilder {
     /// <p>The entity types for which to search.</p>
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-        v.push(input);
-        self.entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>) -> Self {
-        self.entity_types = input;
-        self
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityType>>) -> Self {
+        self.entity_types = input; self
     }
     /// <p>The entity types for which to search.</p>
-    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityType>> {
         &self.entity_types
     }
     /// Appends an item to `filters`.
@@ -88,19 +89,18 @@ impl SearchEntitiesInputBuilder {
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn filters(mut self, input: crate::types::EntityFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityFilter>> {
         &self.filters
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -110,8 +110,7 @@ impl SearchEntitiesInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl SearchEntitiesInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -138,23 +136,28 @@ impl SearchEntitiesInputBuilder {
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.namespace_version = input;
-        self
+        self.namespace_version = input; self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`SearchEntitiesInput`](crate::operation::search_entities::SearchEntitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_entities::SearchEntitiesInput {
-            entity_types: self.entity_types,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            namespace_version: self.namespace_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_entities::SearchEntitiesInput {
+                entity_types: self.entity_types
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                namespace_version: self.namespace_version
+                ,
+            }
+        )
     }
 }
+

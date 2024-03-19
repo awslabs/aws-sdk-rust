@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSimilarProfilesOutput {
+pub struct GetSimilarProfilesOutput  {
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub profile_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
     pub match_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the type of matching to get similar profiles for.</p>
@@ -17,19 +17,20 @@ pub struct GetSimilarProfilesOutput {
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSimilarProfilesOutput {
+impl  GetSimilarProfilesOutput  {
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_ids.is_none()`.
-    pub fn profile_ids(&self) -> &[::std::string::String] {
-        self.profile_ids.as_deref().unwrap_or_default()
+    pub fn profile_ids(&self) -> & [::std::string::String] {
+        self.profile_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
-    pub fn match_id(&self) -> ::std::option::Option<&str> {
+    pub fn match_id(&self) -> ::std::option::Option<& str> {
         self.match_id.as_deref()
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
-    pub fn match_type(&self) -> ::std::option::Option<&crate::types::MatchType> {
+    pub fn match_type(&self) -> ::std::option::Option<& crate::types::MatchType> {
         self.match_type.as_ref()
     }
     /// <p>The integer rule level that the profiles matched on.</p>
@@ -41,15 +42,15 @@ impl GetSimilarProfilesOutput {
         self.confidence_score
     }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSimilarProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSimilarProfilesOutput {
     /// Creates a new builder-style object to manufacture [`GetSimilarProfilesOutput`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput).
     pub fn builder() -> crate::operation::get_similar_profiles::builders::GetSimilarProfilesOutputBuilder {
@@ -61,7 +62,7 @@ impl GetSimilarProfilesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSimilarProfilesOutputBuilder {
-    pub(crate) profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) profile_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) match_id: ::std::option::Option<::std::string::String>,
     pub(crate) match_type: ::std::option::Option<crate::types::MatchType>,
     pub(crate) rule_level: ::std::option::Option<i32>,
@@ -77,17 +78,16 @@ impl GetSimilarProfilesOutputBuilder {
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
     pub fn profile_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.profile_ids.unwrap_or_default();
-        v.push(input.into());
-        self.profile_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.profile_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub fn set_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.profile_ids = input;
-        self
+    pub fn set_profile_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.profile_ids = input; self
     }
     /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
-    pub fn get_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_profile_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.profile_ids
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
@@ -97,8 +97,7 @@ impl GetSimilarProfilesOutputBuilder {
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
     pub fn set_match_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.match_id = input;
-        self
+        self.match_id = input; self
     }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
     pub fn get_match_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl GetSimilarProfilesOutputBuilder {
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::MatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MatchType> {
@@ -125,8 +123,7 @@ impl GetSimilarProfilesOutputBuilder {
     }
     /// <p>The integer rule level that the profiles matched on.</p>
     pub fn set_rule_level(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rule_level = input;
-        self
+        self.rule_level = input; self
     }
     /// <p>The integer rule level that the profiles matched on.</p>
     pub fn get_rule_level(&self) -> &::std::option::Option<i32> {
@@ -139,8 +136,7 @@ impl GetSimilarProfilesOutputBuilder {
     }
     /// <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
     pub fn set_confidence_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.confidence_score = input;
-        self
+        self.confidence_score = input; self
     }
     /// <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
     pub fn get_confidence_score(&self) -> &::std::option::Option<f64> {
@@ -153,32 +149,38 @@ impl GetSimilarProfilesOutputBuilder {
     }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSimilarProfilesOutput`](crate::operation::get_similar_profiles::GetSimilarProfilesOutput).
     pub fn build(self) -> crate::operation::get_similar_profiles::GetSimilarProfilesOutput {
         crate::operation::get_similar_profiles::GetSimilarProfilesOutput {
-            profile_ids: self.profile_ids,
-            match_id: self.match_id,
-            match_type: self.match_type,
-            rule_level: self.rule_level,
-            confidence_score: self.confidence_score,
-            next_token: self.next_token,
+            profile_ids: self.profile_ids
+            ,
+            match_id: self.match_id
+            ,
+            match_type: self.match_type
+            ,
+            rule_level: self.rule_level
+            ,
+            confidence_score: self.confidence_score
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

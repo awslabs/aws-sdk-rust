@@ -3,13 +3,13 @@
 /// <p>List of data objects which provide details about source metrics. This field can be used to determine the PI metric to render for the insight. This data type also includes static values for the metrics for the Insight that were calculated and included in text and annotations on the DB load chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Data {
+pub struct Data  {
     /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
     pub performance_insights_metric: ::std::option::Option<crate::types::PerformanceInsightsMetric>,
 }
-impl Data {
+impl  Data  {
     /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
-    pub fn performance_insights_metric(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetric> {
+    pub fn performance_insights_metric(&self) -> ::std::option::Option<& crate::types::PerformanceInsightsMetric> {
         self.performance_insights_metric.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DataBuilder {
     }
     /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
     pub fn set_performance_insights_metric(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetric>) -> Self {
-        self.performance_insights_metric = input;
-        self
+        self.performance_insights_metric = input; self
     }
     /// <p>This field determines the Performance Insights metric to render for the insight. The <code>name</code> field refers to a Performance Insights metric.</p>
     pub fn get_performance_insights_metric(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetric> {
@@ -44,7 +43,9 @@ impl DataBuilder {
     /// Consumes the builder and constructs a [`Data`](crate::types::Data).
     pub fn build(self) -> crate::types::Data {
         crate::types::Data {
-            performance_insights_metric: self.performance_insights_metric,
+            performance_insights_metric: self.performance_insights_metric
+            ,
         }
     }
 }
+

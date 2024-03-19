@@ -5,55 +5,51 @@ pub use crate::operation::terminate_job_flows::_terminate_job_flows_input::Termi
 
 impl TerminateJobFlowsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.terminate_job_flows();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::terminate_job_flows::TerminateJobFlowsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.terminate_job_flows();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TerminateJobFlows`.
-///
+/// 
 /// <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet completed is canceled and the Amazon EC2 instances on which the cluster is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.</p>
 /// <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely terminate and release allocated resources, such as Amazon EC2 instances.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateJobFlowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder,
+                    inner: crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        crate::operation::terminate_job_flows::TerminateJobFlowsError,
-    > for TerminateJobFlowsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
+                    crate::operation::terminate_job_flows::TerminateJobFlowsError,
+                > for TerminateJobFlowsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
+                        crate::operation::terminate_job_flows::TerminateJobFlowsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TerminateJobFlowsFluentBuilder {
     /// Creates a new `TerminateJobFlows`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl TerminateJobFlowsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::terminate_job_flows::TerminateJobFlowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::terminate_job_flows::TerminateJobFlows::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::terminate_job_flows::TerminateJobFlows::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
-        crate::operation::terminate_job_flows::TerminateJobFlowsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::terminate_job_flows::TerminateJobFlowsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::terminate_job_flows::TerminateJobFlows::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::terminate_job_flows::TerminateJobFlows::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::terminate_job_flows::TerminateJobFlowsOutput, crate::operation::terminate_job_flows::TerminateJobFlowsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `JobFlowIds`.
     ///
     /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
@@ -119,12 +106,13 @@ impl TerminateJobFlowsFluentBuilder {
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_job_flow_ids()
     }
 }
+

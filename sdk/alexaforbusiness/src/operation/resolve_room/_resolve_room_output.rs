@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResolveRoomOutput {
+pub struct ResolveRoomOutput  {
     /// <p>The ARN of the room from which the skill request was invoked.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the room from which the skill request was invoked.</p>
     pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>Response to get the room profile request. Required.</p>
-    pub room_skill_parameters: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
+    pub room_skill_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RoomSkillParameter>>,
     _request_id: Option<String>,
 }
-impl ResolveRoomOutput {
+impl  ResolveRoomOutput  {
     /// <p>The ARN of the room from which the skill request was invoked.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of the room from which the skill request was invoked.</p>
-    pub fn room_name(&self) -> ::std::option::Option<&str> {
+    pub fn room_name(&self) -> ::std::option::Option<& str> {
         self.room_name.as_deref()
     }
     /// <p>Response to get the room profile request. Required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.room_skill_parameters.is_none()`.
-    pub fn room_skill_parameters(&self) -> &[crate::types::RoomSkillParameter] {
-        self.room_skill_parameters.as_deref().unwrap_or_default()
+    pub fn room_skill_parameters(&self) -> & [crate::types::RoomSkillParameter] {
+        self.room_skill_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ResolveRoomOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResolveRoomOutput {
     /// Creates a new builder-style object to manufacture [`ResolveRoomOutput`](crate::operation::resolve_room::ResolveRoomOutput).
     pub fn builder() -> crate::operation::resolve_room::builders::ResolveRoomOutputBuilder {
@@ -45,7 +46,7 @@ impl ResolveRoomOutput {
 pub struct ResolveRoomOutputBuilder {
     pub(crate) room_arn: ::std::option::Option<::std::string::String>,
     pub(crate) room_name: ::std::option::Option<::std::string::String>,
-    pub(crate) room_skill_parameters: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>,
+    pub(crate) room_skill_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::RoomSkillParameter>>,
     _request_id: Option<String>,
 }
 impl ResolveRoomOutputBuilder {
@@ -56,8 +57,7 @@ impl ResolveRoomOutputBuilder {
     }
     /// <p>The ARN of the room from which the skill request was invoked.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the room from which the skill request was invoked.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl ResolveRoomOutputBuilder {
     }
     /// <p>The name of the room from which the skill request was invoked.</p>
     pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_name = input;
-        self
+        self.room_name = input; self
     }
     /// <p>The name of the room from which the skill request was invoked.</p>
     pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,35 +83,38 @@ impl ResolveRoomOutputBuilder {
     /// <p>Response to get the room profile request. Required.</p>
     pub fn room_skill_parameters(mut self, input: crate::types::RoomSkillParameter) -> Self {
         let mut v = self.room_skill_parameters.unwrap_or_default();
-        v.push(input);
-        self.room_skill_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.room_skill_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Response to get the room profile request. Required.</p>
-    pub fn set_room_skill_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>>) -> Self {
-        self.room_skill_parameters = input;
-        self
+    pub fn set_room_skill_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoomSkillParameter>>) -> Self {
+        self.room_skill_parameters = input; self
     }
     /// <p>Response to get the room profile request. Required.</p>
-    pub fn get_room_skill_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>> {
+    pub fn get_room_skill_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoomSkillParameter>> {
         &self.room_skill_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResolveRoomOutput`](crate::operation::resolve_room::ResolveRoomOutput).
     pub fn build(self) -> crate::operation::resolve_room::ResolveRoomOutput {
         crate::operation::resolve_room::ResolveRoomOutput {
-            room_arn: self.room_arn,
-            room_name: self.room_name,
-            room_skill_parameters: self.room_skill_parameters,
+            room_arn: self.room_arn
+            ,
+            room_name: self.room_name
+            ,
+            room_skill_parameters: self.room_skill_parameters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

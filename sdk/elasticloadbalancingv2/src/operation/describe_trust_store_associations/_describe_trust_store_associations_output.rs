@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustStoreAssociationsOutput {
+pub struct DescribeTrustStoreAssociationsOutput  {
     /// <p>Information about the resources the trust store is associated to.</p>
-    pub trust_store_associations: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreAssociation>>,
+    pub trust_store_associations: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreAssociation>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTrustStoreAssociationsOutput {
+impl  DescribeTrustStoreAssociationsOutput  {
     /// <p>Information about the resources the trust store is associated to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_store_associations.is_none()`.
-    pub fn trust_store_associations(&self) -> &[crate::types::TrustStoreAssociation] {
-        self.trust_store_associations.as_deref().unwrap_or_default()
+    pub fn trust_store_associations(&self) -> & [crate::types::TrustStoreAssociation] {
+        self.trust_store_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrustStoreAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrustStoreAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustStoreAssociationsOutput`](crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsOutput).
     pub fn builder() -> crate::operation::describe_trust_store_associations::builders::DescribeTrustStoreAssociationsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeTrustStoreAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustStoreAssociationsOutputBuilder {
-    pub(crate) trust_store_associations: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreAssociation>>,
+    pub(crate) trust_store_associations: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreAssociation>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeTrustStoreAssociationsOutputBuilder {
     /// <p>Information about the resources the trust store is associated to.</p>
     pub fn trust_store_associations(mut self, input: crate::types::TrustStoreAssociation) -> Self {
         let mut v = self.trust_store_associations.unwrap_or_default();
-        v.push(input);
-        self.trust_store_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trust_store_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resources the trust store is associated to.</p>
-    pub fn set_trust_store_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStoreAssociation>>) -> Self {
-        self.trust_store_associations = input;
-        self
+    pub fn set_trust_store_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreAssociation>>) -> Self {
+        self.trust_store_associations = input; self
     }
     /// <p>Information about the resources the trust store is associated to.</p>
-    pub fn get_trust_store_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStoreAssociation>> {
+    pub fn get_trust_store_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustStoreAssociation>> {
         &self.trust_store_associations
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeTrustStoreAssociationsOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrustStoreAssociationsOutput`](crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsOutput).
     pub fn build(self) -> crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsOutput {
         crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsOutput {
-            trust_store_associations: self.trust_store_associations,
-            next_marker: self.next_marker,
+            trust_store_associations: self.trust_store_associations
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

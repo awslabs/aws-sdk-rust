@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleaseIpamPoolAllocationInput {
+pub struct ReleaseIpamPoolAllocationInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
@@ -12,21 +12,21 @@ pub struct ReleaseIpamPoolAllocationInput {
     /// <p>The ID of the allocation.</p>
     pub ipam_pool_allocation_id: ::std::option::Option<::std::string::String>,
 }
-impl ReleaseIpamPoolAllocationInput {
+impl  ReleaseIpamPoolAllocationInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
-    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The CIDR of the allocation you want to release.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The ID of the allocation.</p>
-    pub fn ipam_pool_allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_allocation_id(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_allocation_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
     }
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
     }
     /// <p>The CIDR of the allocation you want to release.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The CIDR of the allocation you want to release.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl ReleaseIpamPoolAllocationInputBuilder {
     }
     /// <p>The ID of the allocation.</p>
     pub fn set_ipam_pool_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_allocation_id = input;
-        self
+        self.ipam_pool_allocation_id = input; self
     }
     /// <p>The ID of the allocation.</p>
     pub fn get_ipam_pool_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_pool_allocation_id
     }
     /// Consumes the builder and constructs a [`ReleaseIpamPoolAllocationInput`](crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
-            dry_run: self.dry_run,
-            ipam_pool_id: self.ipam_pool_id,
-            cidr: self.cidr,
-            ipam_pool_allocation_id: self.ipam_pool_allocation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
+                dry_run: self.dry_run
+                ,
+                ipam_pool_id: self.ipam_pool_id
+                ,
+                cidr: self.cidr
+                ,
+                ipam_pool_allocation_id: self.ipam_pool_allocation_id
+                ,
+            }
+        )
     }
 }
+

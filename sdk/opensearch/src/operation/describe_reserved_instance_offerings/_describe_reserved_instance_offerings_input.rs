@@ -3,7 +3,7 @@
 /// <p>Container for the request parameters to a <code>DescribeReservedInstanceOfferings</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedInstanceOfferingsInput {
+pub struct DescribeReservedInstanceOfferingsInput  {
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
     pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -11,9 +11,9 @@ pub struct DescribeReservedInstanceOfferingsInput {
     /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReservedInstanceOfferingsInput {
+impl  DescribeReservedInstanceOfferingsInput  {
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
-    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_instance_offering_id.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -21,7 +21,7 @@ impl DescribeReservedInstanceOfferingsInput {
         self.max_results
     }
     /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
     }
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
     pub fn set_reserved_instance_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instance_offering_id = input;
-        self
+        self.reserved_instance_offering_id = input; self
     }
     /// <p>The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.</p>
     pub fn get_reserved_instance_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,26 +74,24 @@ impl DescribeReservedInstanceOfferingsInputBuilder {
     }
     /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstanceOfferingsInput`](crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsInput {
-                reserved_instance_offering_id: self.reserved_instance_offering_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                reserved_instance_offering_id: self.reserved_instance_offering_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

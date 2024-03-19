@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceEventWindowOutput {
+pub struct DeleteInstanceEventWindowOutput  {
     /// <p>The state of the event window.</p>
     pub instance_event_window_state: ::std::option::Option<crate::types::InstanceEventWindowStateChange>,
     _request_id: Option<String>,
 }
-impl DeleteInstanceEventWindowOutput {
+impl  DeleteInstanceEventWindowOutput  {
     /// <p>The state of the event window.</p>
-    pub fn instance_event_window_state(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowStateChange> {
+    pub fn instance_event_window_state(&self) -> ::std::option::Option<& crate::types::InstanceEventWindowStateChange> {
         self.instance_event_window_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteInstanceEventWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteInstanceEventWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceEventWindowOutput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput).
     pub fn builder() -> crate::operation::delete_instance_event_window::builders::DeleteInstanceEventWindowOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteInstanceEventWindowOutputBuilder {
     }
     /// <p>The state of the event window.</p>
     pub fn set_instance_event_window_state(mut self, input: ::std::option::Option<crate::types::InstanceEventWindowStateChange>) -> Self {
-        self.instance_event_window_state = input;
-        self
+        self.instance_event_window_state = input; self
     }
     /// <p>The state of the event window.</p>
     pub fn get_instance_event_window_state(&self) -> &::std::option::Option<crate::types::InstanceEventWindowStateChange> {
         &self.instance_event_window_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteInstanceEventWindowOutput`](crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput).
     pub fn build(self) -> crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput {
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput {
-            instance_event_window_state: self.instance_event_window_state,
+            instance_event_window_state: self.instance_event_window_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

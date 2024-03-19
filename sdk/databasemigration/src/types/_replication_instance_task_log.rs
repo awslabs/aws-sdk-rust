@@ -3,7 +3,7 @@
 /// <p>Contains metadata for a replication instance task log.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationInstanceTaskLog {
+pub struct ReplicationInstanceTaskLog  {
     /// <p>The name of the replication task.</p>
     pub replication_task_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -11,13 +11,13 @@ pub struct ReplicationInstanceTaskLog {
     /// <p>The size, in bytes, of the replication task log.</p>
     pub replication_instance_task_log_size: i64,
 }
-impl ReplicationInstanceTaskLog {
+impl  ReplicationInstanceTaskLog  {
     /// <p>The name of the replication task.</p>
-    pub fn replication_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_name(&self) -> ::std::option::Option<& str> {
         self.replication_task_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The size, in bytes, of the replication task log.</p>
@@ -48,8 +48,7 @@ impl ReplicationInstanceTaskLogBuilder {
     }
     /// <p>The name of the replication task.</p>
     pub fn set_replication_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_name = input;
-        self
+        self.replication_task_name = input; self
     }
     /// <p>The name of the replication task.</p>
     pub fn get_replication_task_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ReplicationInstanceTaskLogBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ReplicationInstanceTaskLogBuilder {
     }
     /// <p>The size, in bytes, of the replication task log.</p>
     pub fn set_replication_instance_task_log_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.replication_instance_task_log_size = input;
-        self
+        self.replication_instance_task_log_size = input; self
     }
     /// <p>The size, in bytes, of the replication task log.</p>
     pub fn get_replication_instance_task_log_size(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,14 @@ impl ReplicationInstanceTaskLogBuilder {
     /// Consumes the builder and constructs a [`ReplicationInstanceTaskLog`](crate::types::ReplicationInstanceTaskLog).
     pub fn build(self) -> crate::types::ReplicationInstanceTaskLog {
         crate::types::ReplicationInstanceTaskLog {
-            replication_task_name: self.replication_task_name,
-            replication_task_arn: self.replication_task_arn,
-            replication_instance_task_log_size: self.replication_instance_task_log_size.unwrap_or_default(),
+            replication_task_name: self.replication_task_name
+            ,
+            replication_task_arn: self.replication_task_arn
+            ,
+            replication_instance_task_log_size: self.replication_instance_task_log_size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDistributionsByCachePolicyIdOutput {
+pub struct ListDistributionsByCachePolicyIdOutput  {
     /// <p>A list of distribution IDs.</p>
     pub distribution_id_list: ::std::option::Option<crate::types::DistributionIdList>,
     _request_id: Option<String>,
 }
-impl ListDistributionsByCachePolicyIdOutput {
+impl  ListDistributionsByCachePolicyIdOutput  {
     /// <p>A list of distribution IDs.</p>
-    pub fn distribution_id_list(&self) -> ::std::option::Option<&crate::types::DistributionIdList> {
+    pub fn distribution_id_list(&self) -> ::std::option::Option<& crate::types::DistributionIdList> {
         self.distribution_id_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDistributionsByCachePolicyIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDistributionsByCachePolicyIdOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
     pub fn builder() -> crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdOutputBuilder {
@@ -40,27 +40,28 @@ impl ListDistributionsByCachePolicyIdOutputBuilder {
     }
     /// <p>A list of distribution IDs.</p>
     pub fn set_distribution_id_list(mut self, input: ::std::option::Option<crate::types::DistributionIdList>) -> Self {
-        self.distribution_id_list = input;
-        self
+        self.distribution_id_list = input; self
     }
     /// <p>A list of distribution IDs.</p>
     pub fn get_distribution_id_list(&self) -> &::std::option::Option<crate::types::DistributionIdList> {
         &self.distribution_id_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDistributionsByCachePolicyIdOutput`](crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput).
     pub fn build(self) -> crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput {
         crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput {
-            distribution_id_list: self.distribution_id_list,
+            distribution_id_list: self.distribution_id_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

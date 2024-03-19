@@ -3,7 +3,7 @@
 /// <p>Contains information about the specific inference event, including start and end time, diagnostics information, event duration and so on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceEventSummary {
+pub struct InferenceEventSummary  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the inference scheduler being used for the inference events.</p>
@@ -17,25 +17,25 @@ pub struct InferenceEventSummary {
     /// <p>Indicates the size of an inference event in seconds.</p>
     pub event_duration_in_seconds: ::std::option::Option<i64>,
 }
-impl InferenceEventSummary {
+impl  InferenceEventSummary  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
-    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>The name of the inference scheduler being used for the inference events.</p>
-    pub fn inference_scheduler_name(&self) -> ::std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> ::std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>Indicates the starting time of an inference event.</p>
-    pub fn event_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>Indicates the ending time of an inference event.</p>
-    pub fn event_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
-    pub fn diagnostics(&self) -> ::std::option::Option<&str> {
+    pub fn diagnostics(&self) -> ::std::option::Option<& str> {
         self.diagnostics.as_deref()
     }
     /// <p>Indicates the size of an inference event in seconds.</p>
@@ -69,8 +69,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn set_inference_scheduler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_arn = input;
-        self
+        self.inference_scheduler_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being used for the inference event.</p>
     pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn set_inference_scheduler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_scheduler_name = input;
-        self
+        self.inference_scheduler_name = input; self
     }
     /// <p>The name of the inference scheduler being used for the inference events.</p>
     pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>Indicates the starting time of an inference event.</p>
     pub fn set_event_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_start_time = input;
-        self
+        self.event_start_time = input; self
     }
     /// <p>Indicates the starting time of an inference event.</p>
     pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,8 +108,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>Indicates the ending time of an inference event.</p>
     pub fn set_event_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_end_time = input;
-        self
+        self.event_end_time = input; self
     }
     /// <p>Indicates the ending time of an inference event.</p>
     pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn set_diagnostics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.diagnostics = input;
-        self
+        self.diagnostics = input; self
     }
     /// <p>An array which specifies the names and values of all sensors contributing to an inference event.</p>
     pub fn get_diagnostics(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl InferenceEventSummaryBuilder {
     }
     /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn set_event_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.event_duration_in_seconds = input;
-        self
+        self.event_duration_in_seconds = input; self
     }
     /// <p>Indicates the size of an inference event in seconds.</p>
     pub fn get_event_duration_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -149,12 +143,19 @@ impl InferenceEventSummaryBuilder {
     /// Consumes the builder and constructs a [`InferenceEventSummary`](crate::types::InferenceEventSummary).
     pub fn build(self) -> crate::types::InferenceEventSummary {
         crate::types::InferenceEventSummary {
-            inference_scheduler_arn: self.inference_scheduler_arn,
-            inference_scheduler_name: self.inference_scheduler_name,
-            event_start_time: self.event_start_time,
-            event_end_time: self.event_end_time,
-            diagnostics: self.diagnostics,
-            event_duration_in_seconds: self.event_duration_in_seconds,
+            inference_scheduler_arn: self.inference_scheduler_arn
+            ,
+            inference_scheduler_name: self.inference_scheduler_name
+            ,
+            event_start_time: self.event_start_time
+            ,
+            event_end_time: self.event_end_time
+            ,
+            diagnostics: self.diagnostics
+            ,
+            event_duration_in_seconds: self.event_duration_in_seconds
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>GetOnPremisesInstance</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOnPremisesInstanceInput {
+pub struct GetOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance about which to get information.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
 }
-impl GetOnPremisesInstanceInput {
+impl  GetOnPremisesInstanceInput  {
     /// <p>The name of the on-premises instance about which to get information.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl GetOnPremisesInstanceInputBuilder {
     }
     /// <p>The name of the on-premises instance about which to get information.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the on-premises instance about which to get information.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
     /// Consumes the builder and constructs a [`GetOnPremisesInstanceInput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput {
-            instance_name: self.instance_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_on_premises_instance::GetOnPremisesInstanceInput {
+                instance_name: self.instance_name
+                ,
+            }
+        )
     }
 }
+

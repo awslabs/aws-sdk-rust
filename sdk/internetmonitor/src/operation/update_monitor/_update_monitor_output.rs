@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMonitorOutput {
+pub struct UpdateMonitorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub monitor_arn: ::std::string::String,
     /// <p>The status of a monitor.</p>
     pub status: crate::types::MonitorConfigState,
     _request_id: Option<String>,
 }
-impl UpdateMonitorOutput {
+impl  UpdateMonitorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
     /// <p>The status of a monitor.</p>
-    pub fn status(&self) -> &crate::types::MonitorConfigState {
+    pub fn status(&self) -> & crate::types::MonitorConfigState {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput).
     pub fn builder() -> crate::operation::update_monitor::builders::UpdateMonitorOutputBuilder {
@@ -49,8 +48,7 @@ impl UpdateMonitorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,43 +62,41 @@ impl UpdateMonitorOutputBuilder {
     }
     /// <p>The status of a monitor.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MonitorConfigState>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a monitor.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MonitorConfigState> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_arn`](crate::operation::update_monitor::builders::UpdateMonitorOutputBuilder::monitor_arn)
     /// - [`status`](crate::operation::update_monitor::builders::UpdateMonitorOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorOutput {
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building UpdateMonitorOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building UpdateMonitorOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_monitor::UpdateMonitorOutput {
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building UpdateMonitorOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building UpdateMonitorOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

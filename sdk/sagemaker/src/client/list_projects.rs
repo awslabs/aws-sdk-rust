@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProjects`](crate::operation::list_projects::builders::ListProjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns the projects that were created after a specified time.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns the projects that were created before a specified time.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of projects to return in the response.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p><br>
     ///   - [`sort_by(ProjectSortBy)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::sort_by) / [`set_sort_by(Option<ProjectSortBy>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field by which to sort results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(ProjectSortOrder)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::sort_order) / [`set_sort_order(Option<ProjectSortOrder>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
-    /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
+                            /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
     ///   - [`project_summary_list(Option<Vec::<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::project_summary_list): <p>A list of summaries of projects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
+                            /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

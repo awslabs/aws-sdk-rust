@@ -3,32 +3,33 @@
 /// <p>Auto-Tune settings when updating a domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoTuneOptions {
+pub struct AutoTuneOptions  {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
     pub desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise, OpenSearch Service is unable to perform the rollback.</p>
     pub rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,
     /// <p>DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> instead.</p>
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
-    pub maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+    pub maintenance_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTuneMaintenanceSchedule>>,
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
     pub use_off_peak_window: ::std::option::Option<bool>,
 }
-impl AutoTuneOptions {
+impl  AutoTuneOptions  {
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
-    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::AutoTuneDesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<& crate::types::AutoTuneDesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise, OpenSearch Service is unable to perform the rollback.</p>
-    pub fn rollback_on_disable(&self) -> ::std::option::Option<&crate::types::RollbackOnDisable> {
+    pub fn rollback_on_disable(&self) -> ::std::option::Option<& crate::types::RollbackOnDisable> {
         self.rollback_on_disable.as_ref()
     }
     /// <p>DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> instead.</p>
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.maintenance_schedules.is_none()`.
-    pub fn maintenance_schedules(&self) -> &[crate::types::AutoTuneMaintenanceSchedule] {
-        self.maintenance_schedules.as_deref().unwrap_or_default()
+    pub fn maintenance_schedules(&self) -> & [crate::types::AutoTuneMaintenanceSchedule] {
+        self.maintenance_schedules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
     pub fn use_off_peak_window(&self) -> ::std::option::Option<bool> {
@@ -48,7 +49,7 @@ impl AutoTuneOptions {
 pub struct AutoTuneOptionsBuilder {
     pub(crate) desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     pub(crate) rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,
-    pub(crate) maintenance_schedules: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+    pub(crate) maintenance_schedules: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTuneMaintenanceSchedule>>,
     pub(crate) use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptionsBuilder {
@@ -59,8 +60,7 @@ impl AutoTuneOptionsBuilder {
     }
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::AutoTuneDesiredState>) -> Self {
-        self.desired_state = input;
-        self
+        self.desired_state = input; self
     }
     /// <p>Whether Auto-Tune is enabled or disabled.</p>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::AutoTuneDesiredState> {
@@ -73,8 +73,7 @@ impl AutoTuneOptionsBuilder {
     }
     /// <p>When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise, OpenSearch Service is unable to perform the rollback.</p>
     pub fn set_rollback_on_disable(mut self, input: ::std::option::Option<crate::types::RollbackOnDisable>) -> Self {
-        self.rollback_on_disable = input;
-        self
+        self.rollback_on_disable = input; self
     }
     /// <p>When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise, OpenSearch Service is unable to perform the rollback.</p>
     pub fn get_rollback_on_disable(&self) -> &::std::option::Option<crate::types::RollbackOnDisable> {
@@ -88,19 +87,18 @@ impl AutoTuneOptionsBuilder {
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
     pub fn maintenance_schedules(mut self, input: crate::types::AutoTuneMaintenanceSchedule) -> Self {
         let mut v = self.maintenance_schedules.unwrap_or_default();
-        v.push(input);
-        self.maintenance_schedules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.maintenance_schedules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> instead.</p>
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
-    pub fn set_maintenance_schedules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>) -> Self {
-        self.maintenance_schedules = input;
-        self
+    pub fn set_maintenance_schedules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoTuneMaintenanceSchedule>>) -> Self {
+        self.maintenance_schedules = input; self
     }
     /// <p>DEPRECATED. Use <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> instead.</p>
     /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes.</p>
-    pub fn get_maintenance_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>> {
+    pub fn get_maintenance_schedules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoTuneMaintenanceSchedule>> {
         &self.maintenance_schedules
     }
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
@@ -110,8 +108,7 @@ impl AutoTuneOptionsBuilder {
     }
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
     pub fn set_use_off_peak_window(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_off_peak_window = input;
-        self
+        self.use_off_peak_window = input; self
     }
     /// <p>Whether to use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak window</a> to deploy configuration changes on the domain rather than a maintenance schedule.</p>
     pub fn get_use_off_peak_window(&self) -> &::std::option::Option<bool> {
@@ -120,10 +117,15 @@ impl AutoTuneOptionsBuilder {
     /// Consumes the builder and constructs a [`AutoTuneOptions`](crate::types::AutoTuneOptions).
     pub fn build(self) -> crate::types::AutoTuneOptions {
         crate::types::AutoTuneOptions {
-            desired_state: self.desired_state,
-            rollback_on_disable: self.rollback_on_disable,
-            maintenance_schedules: self.maintenance_schedules,
-            use_off_peak_window: self.use_off_peak_window,
+            desired_state: self.desired_state
+            ,
+            rollback_on_disable: self.rollback_on_disable
+            ,
+            maintenance_schedules: self.maintenance_schedules
+            ,
+            use_off_peak_window: self.use_off_peak_window
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The data source that uses conversation logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversationLogsDataSource {
+pub struct ConversationLogsDataSource  {
     /// <p>The bot Id from the conversation logs.</p>
     pub bot_id: ::std::string::String,
     /// <p>The bot alias Id from the conversation logs.</p>
@@ -13,24 +13,21 @@ pub struct ConversationLogsDataSource {
     /// <p>The filter for the data source of the conversation log.</p>
     pub filter: ::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy>,
 }
-impl ConversationLogsDataSource {
+impl  ConversationLogsDataSource  {
     /// <p>The bot Id from the conversation logs.</p>
-    pub fn bot_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_id.deref()
+    pub fn bot_id(&self) -> & str {
+        use std::ops::Deref; self.bot_id.deref()
     }
     /// <p>The bot alias Id from the conversation logs.</p>
-    pub fn bot_alias_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_alias_id.deref()
+    pub fn bot_alias_id(&self) -> & str {
+        use std::ops::Deref; self.bot_alias_id.deref()
     }
     /// <p>The locale Id of the conversation log.</p>
-    pub fn locale_id(&self) -> &str {
-        use std::ops::Deref;
-        self.locale_id.deref()
+    pub fn locale_id(&self) -> & str {
+        use std::ops::Deref; self.locale_id.deref()
     }
     /// <p>The filter for the data source of the conversation log.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ConversationLogsDataSourceFilterBy> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ConversationLogsDataSourceFilterBy> {
         self.filter.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl ConversationLogsDataSourceBuilder {
     }
     /// <p>The bot Id from the conversation logs.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot Id from the conversation logs.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl ConversationLogsDataSourceBuilder {
     }
     /// <p>The bot alias Id from the conversation logs.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The bot alias Id from the conversation logs.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ConversationLogsDataSourceBuilder {
     }
     /// <p>The locale Id of the conversation log.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale Id of the conversation log.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl ConversationLogsDataSourceBuilder {
     }
     /// <p>The filter for the data source of the conversation log.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The filter for the data source of the conversation log.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ConversationLogsDataSourceFilterBy> {
@@ -117,26 +110,27 @@ impl ConversationLogsDataSourceBuilder {
     /// - [`bot_alias_id`](crate::types::builders::ConversationLogsDataSourceBuilder::bot_alias_id)
     /// - [`locale_id`](crate::types::builders::ConversationLogsDataSourceBuilder::locale_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConversationLogsDataSource {
-            bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_id",
-                    "bot_id was not specified but it is required when building ConversationLogsDataSource",
-                )
-            })?,
-            bot_alias_id: self.bot_alias_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_alias_id",
-                    "bot_alias_id was not specified but it is required when building ConversationLogsDataSource",
-                )
-            })?,
-            locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "locale_id",
-                    "locale_id was not specified but it is required when building ConversationLogsDataSource",
-                )
-            })?,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConversationLogsDataSource {
+                bot_id: self.bot_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_id", "bot_id was not specified but it is required when building ConversationLogsDataSource")
+                    )?
+                ,
+                bot_alias_id: self.bot_alias_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_alias_id", "bot_alias_id was not specified but it is required when building ConversationLogsDataSource")
+                    )?
+                ,
+                locale_id: self.locale_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("locale_id", "locale_id was not specified but it is required when building ConversationLogsDataSource")
+                    )?
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

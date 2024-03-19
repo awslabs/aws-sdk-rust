@@ -3,27 +3,26 @@
 /// Filters the response returned by ListIngestionJobs operation.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionJobFilter {
+pub struct IngestionJobFilter  {
     /// The name of the field to filter ingestion jobs.
     pub attribute: crate::types::IngestionJobFilterAttribute,
     /// The operator used to filter ingestion jobs.
     pub operator: crate::types::IngestionJobFilterOperator,
     /// The list of values used to filter ingestion jobs.
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl IngestionJobFilter {
+impl  IngestionJobFilter  {
     /// The name of the field to filter ingestion jobs.
-    pub fn attribute(&self) -> &crate::types::IngestionJobFilterAttribute {
+    pub fn attribute(&self) -> & crate::types::IngestionJobFilterAttribute {
         &self.attribute
     }
     /// The operator used to filter ingestion jobs.
-    pub fn operator(&self) -> &crate::types::IngestionJobFilterOperator {
+    pub fn operator(&self) -> & crate::types::IngestionJobFilterOperator {
         &self.operator
     }
     /// The list of values used to filter ingestion jobs.
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl IngestionJobFilter {
@@ -39,7 +38,7 @@ impl IngestionJobFilter {
 pub struct IngestionJobFilterBuilder {
     pub(crate) attribute: ::std::option::Option<crate::types::IngestionJobFilterAttribute>,
     pub(crate) operator: ::std::option::Option<crate::types::IngestionJobFilterOperator>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl IngestionJobFilterBuilder {
     /// The name of the field to filter ingestion jobs.
@@ -50,8 +49,7 @@ impl IngestionJobFilterBuilder {
     }
     /// The name of the field to filter ingestion jobs.
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::IngestionJobFilterAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// The name of the field to filter ingestion jobs.
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::IngestionJobFilterAttribute> {
@@ -65,8 +63,7 @@ impl IngestionJobFilterBuilder {
     }
     /// The operator used to filter ingestion jobs.
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::IngestionJobFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// The operator used to filter ingestion jobs.
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::IngestionJobFilterOperator> {
@@ -79,17 +76,16 @@ impl IngestionJobFilterBuilder {
     /// The list of values used to filter ingestion jobs.
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// The list of values used to filter ingestion jobs.
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// The list of values used to filter ingestion jobs.
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`IngestionJobFilter`](crate::types::IngestionJobFilter).
@@ -98,25 +94,25 @@ impl IngestionJobFilterBuilder {
     /// - [`operator`](crate::types::builders::IngestionJobFilterBuilder::operator)
     /// - [`values`](crate::types::builders::IngestionJobFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::IngestionJobFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IngestionJobFilter {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building IngestionJobFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building IngestionJobFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building IngestionJobFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IngestionJobFilter {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building IngestionJobFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building IngestionJobFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building IngestionJobFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAvailabilityConfigurationInput {
+pub struct DeleteAvailabilityConfigurationInput  {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAvailabilityConfigurationInput {
+impl  DeleteAvailabilityConfigurationInput  {
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAvailabilityConfigurationInputBuilder {
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteAvailabilityConfigurationInputBuilder {
     }
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteAvailabilityConfigurationInput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput {
-                organization_id: self.organization_id,
-                domain_name: self.domain_name,
-            },
+                organization_id: self.organization_id
+                ,
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

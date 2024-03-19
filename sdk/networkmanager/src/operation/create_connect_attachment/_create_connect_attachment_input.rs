@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectAttachmentInput {
+pub struct CreateConnectAttachmentInput  {
     /// <p>The ID of a core network where you want to create the attachment.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region where the edge is located.</p>
@@ -12,35 +12,36 @@ pub struct CreateConnectAttachmentInput {
     /// <p>Options for creating an attachment.</p>
     pub options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
     /// <p>The list of key-value tags associated with the request.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The client token associated with the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateConnectAttachmentInput {
+impl  CreateConnectAttachmentInput  {
     /// <p>The ID of a core network where you want to create the attachment.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The Region where the edge is located.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The ID of the attachment between the two connections.</p>
-    pub fn transport_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transport_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transport_attachment_id.as_deref()
     }
     /// <p>Options for creating an attachment.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::ConnectAttachmentOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::ConnectAttachmentOptions> {
         self.options.as_ref()
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -59,7 +60,7 @@ pub struct CreateConnectAttachmentInputBuilder {
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) transport_attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectAttachmentInputBuilder {
@@ -71,8 +72,7 @@ impl CreateConnectAttachmentInputBuilder {
     }
     /// <p>The ID of a core network where you want to create the attachment.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network where you want to create the attachment.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateConnectAttachmentInputBuilder {
     }
     /// <p>The Region where the edge is located.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_location = input;
-        self
+        self.edge_location = input; self
     }
     /// <p>The Region where the edge is located.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +100,7 @@ impl CreateConnectAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn set_transport_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transport_attachment_id = input;
-        self
+        self.transport_attachment_id = input; self
     }
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn get_transport_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl CreateConnectAttachmentInputBuilder {
     }
     /// <p>Options for creating an attachment.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::ConnectAttachmentOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Options for creating an attachment.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::ConnectAttachmentOptions> {
@@ -130,17 +127,16 @@ impl CreateConnectAttachmentInputBuilder {
     /// <p>The list of key-value tags associated with the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value tags associated with the request.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The client token associated with the request.</p>
@@ -150,27 +146,30 @@ impl CreateConnectAttachmentInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token associated with the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateConnectAttachmentInput`](crate::operation::create_connect_attachment::CreateConnectAttachmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_connect_attachment::CreateConnectAttachmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_connect_attachment::CreateConnectAttachmentInput {
-            core_network_id: self.core_network_id,
-            edge_location: self.edge_location,
-            transport_attachment_id: self.transport_attachment_id,
-            options: self.options,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connect_attachment::CreateConnectAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connect_attachment::CreateConnectAttachmentInput {
+                core_network_id: self.core_network_id
+                ,
+                edge_location: self.edge_location
+                ,
+                transport_attachment_id: self.transport_attachment_id
+                ,
+                options: self.options
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

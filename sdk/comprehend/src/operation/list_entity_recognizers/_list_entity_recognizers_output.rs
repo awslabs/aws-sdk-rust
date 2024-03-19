@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEntityRecognizersOutput {
+pub struct ListEntityRecognizersOutput  {
     /// <p>The list of properties of an entity recognizer.</p>
-    pub entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
+    pub entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRecognizerProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListEntityRecognizersOutput {
+impl  ListEntityRecognizersOutput  {
     /// <p>The list of properties of an entity recognizer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_recognizer_properties_list.is_none()`.
-    pub fn entity_recognizer_properties_list(&self) -> &[crate::types::EntityRecognizerProperties] {
-        self.entity_recognizer_properties_list.as_deref().unwrap_or_default()
+    pub fn entity_recognizer_properties_list(&self) -> & [crate::types::EntityRecognizerProperties] {
+        self.entity_recognizer_properties_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListEntityRecognizersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListEntityRecognizersOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput).
     pub fn builder() -> crate::operation::list_entity_recognizers::builders::ListEntityRecognizersOutputBuilder {
@@ -37,7 +38,7 @@ impl ListEntityRecognizersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEntityRecognizersOutputBuilder {
-    pub(crate) entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
+    pub(crate) entity_recognizer_properties_list: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRecognizerProperties>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListEntityRecognizersOutputBuilder {
     /// <p>The list of properties of an entity recognizer.</p>
     pub fn entity_recognizer_properties_list(mut self, input: crate::types::EntityRecognizerProperties) -> Self {
         let mut v = self.entity_recognizer_properties_list.unwrap_or_default();
-        v.push(input);
-        self.entity_recognizer_properties_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_recognizer_properties_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn set_entity_recognizer_properties_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>>,
-    ) -> Self {
-        self.entity_recognizer_properties_list = input;
-        self
+    pub fn set_entity_recognizer_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityRecognizerProperties>>) -> Self {
+        self.entity_recognizer_properties_list = input; self
     }
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn get_entity_recognizer_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerProperties>> {
+    pub fn get_entity_recognizer_properties_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityRecognizerProperties>> {
         &self.entity_recognizer_properties_list
     }
     /// <p>Identifies the next page of results to return.</p>
@@ -72,28 +69,30 @@ impl ListEntityRecognizersOutputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListEntityRecognizersOutput`](crate::operation::list_entity_recognizers::ListEntityRecognizersOutput).
     pub fn build(self) -> crate::operation::list_entity_recognizers::ListEntityRecognizersOutput {
         crate::operation::list_entity_recognizers::ListEntityRecognizersOutput {
-            entity_recognizer_properties_list: self.entity_recognizer_properties_list,
-            next_token: self.next_token,
+            entity_recognizer_properties_list: self.entity_recognizer_properties_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

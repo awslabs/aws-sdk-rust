@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAttachedPolicies`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`target(impl Into<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::target) / [`set_target(Option<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_target):<br>required: **true**<br><p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p><br>
     ///   - [`recursive(bool)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::recursive) / [`set_recursive(Option<bool>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_recursive):<br>required: **false**<br><p>When true, recursively list attached policies.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_marker):<br>required: **false**<br><p>The token to retrieve the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::set_page_size):<br>required: **false**<br><p>The maximum number of results to be returned per request.</p><br>
-    /// - On success, responds with [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListAttachedPoliciesOutput`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec::<Policy>>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_attached_policies::ListAttachedPoliciesOutput::next_marker): <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAttachedPoliciesError>`](crate::operation::list_attached_policies::ListAttachedPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListAttachedPoliciesError>`](crate::operation::list_attached_policies::ListAttachedPoliciesError)
     pub fn list_attached_policies(&self) -> crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder {
-        crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_attached_policies::builders::ListAttachedPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

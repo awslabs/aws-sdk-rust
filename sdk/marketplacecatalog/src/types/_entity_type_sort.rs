@@ -30,11 +30,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`AmiProductSort`](crate::types::EntityTypeSort::AmiProductSort), extracting the inner [`AmiProductSort`](crate::types::AmiProductSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ami_product_sort(&self) -> ::std::result::Result<&crate::types::AmiProductSort, &Self> {
-        if let EntityTypeSort::AmiProductSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::AmiProductSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AmiProductSort`](crate::types::EntityTypeSort::AmiProductSort).
     pub fn is_ami_product_sort(&self) -> bool {
@@ -43,11 +39,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`ContainerProductSort`](crate::types::EntityTypeSort::ContainerProductSort), extracting the inner [`ContainerProductSort`](crate::types::ContainerProductSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_container_product_sort(&self) -> ::std::result::Result<&crate::types::ContainerProductSort, &Self> {
-        if let EntityTypeSort::ContainerProductSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::ContainerProductSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ContainerProductSort`](crate::types::EntityTypeSort::ContainerProductSort).
     pub fn is_container_product_sort(&self) -> bool {
@@ -56,11 +48,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`DataProductSort`](crate::types::EntityTypeSort::DataProductSort), extracting the inner [`DataProductSort`](crate::types::DataProductSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_data_product_sort(&self) -> ::std::result::Result<&crate::types::DataProductSort, &Self> {
-        if let EntityTypeSort::DataProductSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::DataProductSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DataProductSort`](crate::types::EntityTypeSort::DataProductSort).
     pub fn is_data_product_sort(&self) -> bool {
@@ -69,11 +57,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`OfferSort`](crate::types::EntityTypeSort::OfferSort), extracting the inner [`OfferSort`](crate::types::OfferSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_offer_sort(&self) -> ::std::result::Result<&crate::types::OfferSort, &Self> {
-        if let EntityTypeSort::OfferSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::OfferSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OfferSort`](crate::types::EntityTypeSort::OfferSort).
     pub fn is_offer_sort(&self) -> bool {
@@ -82,11 +66,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`ResaleAuthorizationSort`](crate::types::EntityTypeSort::ResaleAuthorizationSort), extracting the inner [`ResaleAuthorizationSort`](crate::types::ResaleAuthorizationSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resale_authorization_sort(&self) -> ::std::result::Result<&crate::types::ResaleAuthorizationSort, &Self> {
-        if let EntityTypeSort::ResaleAuthorizationSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::ResaleAuthorizationSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ResaleAuthorizationSort`](crate::types::EntityTypeSort::ResaleAuthorizationSort).
     pub fn is_resale_authorization_sort(&self) -> bool {
@@ -95,11 +75,7 @@ impl EntityTypeSort {
     /// Tries to convert the enum instance into [`SaaSProductSort`](crate::types::EntityTypeSort::SaaSProductSort), extracting the inner [`SaaSProductSort`](crate::types::SaaSProductSort).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_saa_s_product_sort(&self) -> ::std::result::Result<&crate::types::SaaSProductSort, &Self> {
-        if let EntityTypeSort::SaaSProductSort(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EntityTypeSort::SaaSProductSort(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SaaSProductSort`](crate::types::EntityTypeSort::SaaSProductSort).
     pub fn is_saa_s_product_sort(&self) -> bool {
@@ -110,3 +86,4 @@ impl EntityTypeSort {
         matches!(self, Self::Unknown)
     }
 }
+

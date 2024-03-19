@@ -3,19 +3,19 @@
 /// <p>The URI for the run log.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RunLogLocation {
+pub struct RunLogLocation  {
     /// <p>The log stream ARN for the engine log.</p>
     pub engine_log_stream: ::std::option::Option<::std::string::String>,
     /// <p>The log stream ARN for the run log.</p>
     pub run_log_stream: ::std::option::Option<::std::string::String>,
 }
-impl RunLogLocation {
+impl  RunLogLocation  {
     /// <p>The log stream ARN for the engine log.</p>
-    pub fn engine_log_stream(&self) -> ::std::option::Option<&str> {
+    pub fn engine_log_stream(&self) -> ::std::option::Option<& str> {
         self.engine_log_stream.as_deref()
     }
     /// <p>The log stream ARN for the run log.</p>
-    pub fn run_log_stream(&self) -> ::std::option::Option<&str> {
+    pub fn run_log_stream(&self) -> ::std::option::Option<& str> {
         self.run_log_stream.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RunLogLocationBuilder {
     }
     /// <p>The log stream ARN for the engine log.</p>
     pub fn set_engine_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_log_stream = input;
-        self
+        self.engine_log_stream = input; self
     }
     /// <p>The log stream ARN for the engine log.</p>
     pub fn get_engine_log_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RunLogLocationBuilder {
     }
     /// <p>The log stream ARN for the run log.</p>
     pub fn set_run_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_log_stream = input;
-        self
+        self.run_log_stream = input; self
     }
     /// <p>The log stream ARN for the run log.</p>
     pub fn get_run_log_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RunLogLocationBuilder {
     /// Consumes the builder and constructs a [`RunLogLocation`](crate::types::RunLogLocation).
     pub fn build(self) -> crate::types::RunLogLocation {
         crate::types::RunLogLocation {
-            engine_log_stream: self.engine_log_stream,
-            run_log_stream: self.run_log_stream,
+            engine_log_stream: self.engine_log_stream
+            ,
+            run_log_stream: self.run_log_stream
+            ,
         }
     }
 }
+

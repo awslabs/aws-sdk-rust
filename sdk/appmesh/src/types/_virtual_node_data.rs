@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual node returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeData {
+pub struct VirtualNodeData  {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual node.</p>
@@ -15,27 +15,25 @@ pub struct VirtualNodeData {
     /// <p>The current status for the virtual node.</p>
     pub status: ::std::option::Option<crate::types::VirtualNodeStatus>,
 }
-impl VirtualNodeData {
+impl  VirtualNodeData  {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> & str {
+        use std::ops::Deref; self.mesh_name.deref()
     }
     /// <p>The name of the virtual node.</p>
-    pub fn virtual_node_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_node_name.deref()
+    pub fn virtual_node_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_node_name.deref()
     }
     /// <p>The specifications of the virtual node.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::VirtualNodeSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::VirtualNodeSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the virtual node.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status for the virtual node.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualNodeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VirtualNodeStatus> {
         self.status.as_ref()
     }
 }
@@ -65,8 +63,7 @@ impl VirtualNodeDataBuilder {
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl VirtualNodeDataBuilder {
     }
     /// <p>The name of the virtual node.</p>
     pub fn set_virtual_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_node_name = input;
-        self
+        self.virtual_node_name = input; self
     }
     /// <p>The name of the virtual node.</p>
     pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl VirtualNodeDataBuilder {
     }
     /// <p>The specifications of the virtual node.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualNodeSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The specifications of the virtual node.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualNodeSpec> {
@@ -110,8 +105,7 @@ impl VirtualNodeDataBuilder {
     }
     /// <p>The associated metadata for the virtual node.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The associated metadata for the virtual node.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
@@ -125,8 +119,7 @@ impl VirtualNodeDataBuilder {
     }
     /// <p>The current status for the virtual node.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualNodeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status for the virtual node.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualNodeStatus> {
@@ -137,22 +130,26 @@ impl VirtualNodeDataBuilder {
     /// - [`mesh_name`](crate::types::builders::VirtualNodeDataBuilder::mesh_name)
     /// - [`virtual_node_name`](crate::types::builders::VirtualNodeDataBuilder::virtual_node_name)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualNodeData {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building VirtualNodeData",
-                )
-            })?,
-            virtual_node_name: self.virtual_node_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_node_name",
-                    "virtual_node_name was not specified but it is required when building VirtualNodeData",
-                )
-            })?,
-            spec: self.spec,
-            metadata: self.metadata,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualNodeData {
+                mesh_name: self.mesh_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_name", "mesh_name was not specified but it is required when building VirtualNodeData")
+                    )?
+                ,
+                virtual_node_name: self.virtual_node_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_node_name", "virtual_node_name was not specified but it is required when building VirtualNodeData")
+                    )?
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

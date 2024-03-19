@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActionsOutput {
+pub struct ListActionsOutput  {
     /// <p>A list that summarizes the actions associated with the specified asset.</p>
-    pub action_summaries: ::std::vec::Vec<crate::types::ActionSummary>,
+    pub action_summaries: ::std::vec::Vec::<crate::types::ActionSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::string::String,
     _request_id: Option<String>,
 }
-impl ListActionsOutput {
+impl  ListActionsOutput  {
     /// <p>A list that summarizes the actions associated with the specified asset.</p>
-    pub fn action_summaries(&self) -> &[crate::types::ActionSummary] {
-        use std::ops::Deref;
-        self.action_summaries.deref()
+    pub fn action_summaries(&self) -> & [crate::types::ActionSummary] {
+        use std::ops::Deref; self.action_summaries.deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> &str {
-        use std::ops::Deref;
-        self.next_token.deref()
+    pub fn next_token(&self) -> & str {
+        use std::ops::Deref; self.next_token.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListActionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput).
     pub fn builder() -> crate::operation::list_actions::builders::ListActionsOutputBuilder {
@@ -37,7 +35,7 @@ impl ListActionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListActionsOutputBuilder {
-    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>,
+    pub(crate) action_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +47,16 @@ impl ListActionsOutputBuilder {
     /// <p>A list that summarizes the actions associated with the specified asset.</p>
     pub fn action_summaries(mut self, input: crate::types::ActionSummary) -> Self {
         let mut v = self.action_summaries.unwrap_or_default();
-        v.push(input);
-        self.action_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that summarizes the actions associated with the specified asset.</p>
-    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>>) -> Self {
-        self.action_summaries = input;
-        self
+    pub fn set_action_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>>) -> Self {
+        self.action_summaries = input; self
     }
     /// <p>A list that summarizes the actions associated with the specified asset.</p>
-    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
+    pub fn get_action_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionSummary>> {
         &self.action_summaries
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
@@ -70,41 +67,41 @@ impl ListActionsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_summaries`](crate::operation::list_actions::builders::ListActionsOutputBuilder::action_summaries)
     /// - [`next_token`](crate::operation::list_actions::builders::ListActionsOutputBuilder::next_token)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_actions::ListActionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_actions::ListActionsOutput {
-            action_summaries: self.action_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_summaries",
-                    "action_summaries was not specified but it is required when building ListActionsOutput",
-                )
-            })?,
-            next_token: self.next_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "next_token",
-                    "next_token was not specified but it is required when building ListActionsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_actions::ListActionsOutput {
+                action_summaries: self.action_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_summaries", "action_summaries was not specified but it is required when building ListActionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("next_token", "next_token was not specified but it is required when building ListActionsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

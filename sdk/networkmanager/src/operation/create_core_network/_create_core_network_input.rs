@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCoreNetworkInput {
+pub struct CreateCoreNetworkInput  {
     /// <p>The ID of the global network that a core network will be a part of.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of a core network.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value tags associated with a core network request.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The policy document for creating a core network.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The client token associated with a core network request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateCoreNetworkInput {
+impl  CreateCoreNetworkInput  {
     /// <p>The ID of the global network that a core network will be a part of.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The description of a core network.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The policy document for creating a core network.</p>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The client token associated with a core network request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -51,7 +52,7 @@ impl CreateCoreNetworkInput {
 pub struct CreateCoreNetworkInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -64,8 +65,7 @@ impl CreateCoreNetworkInputBuilder {
     }
     /// <p>The ID of the global network that a core network will be a part of.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network that a core network will be a part of.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateCoreNetworkInputBuilder {
     }
     /// <p>The description of a core network.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a core network.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +91,16 @@ impl CreateCoreNetworkInputBuilder {
     /// <p>Key-value tags associated with a core network request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The policy document for creating a core network.</p>
@@ -112,8 +110,7 @@ impl CreateCoreNetworkInputBuilder {
     }
     /// <p>The policy document for creating a core network.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy document for creating a core network.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,23 +123,28 @@ impl CreateCoreNetworkInputBuilder {
     }
     /// <p>The client token associated with a core network request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token associated with a core network request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_core_network::CreateCoreNetworkInput {
-            global_network_id: self.global_network_id,
-            description: self.description,
-            tags: self.tags,
-            policy_document: self.policy_document,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_core_network::CreateCoreNetworkInput {
+                global_network_id: self.global_network_id
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                policy_document: self.policy_document
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

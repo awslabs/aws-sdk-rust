@@ -3,7 +3,7 @@
 /// <p>A lens review summary of a workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LensReviewSummary {
+pub struct LensReviewSummary  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
@@ -20,52 +20,53 @@ pub struct LensReviewSummary {
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
     /// <p>The profiles associated with the workload.</p>
-    pub profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
+    pub profiles: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
 }
-impl LensReviewSummary {
+impl  LensReviewSummary  {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
-    pub fn lens_version(&self) -> ::std::option::Option<&str> {
+    pub fn lens_version(&self) -> ::std::option::Option<& str> {
         self.lens_version.as_deref()
     }
     /// <p>The full name of the lens.</p>
-    pub fn lens_name(&self) -> ::std::option::Option<&str> {
+    pub fn lens_name(&self) -> ::std::option::Option<& str> {
         self.lens_name.as_deref()
     }
     /// <p>The status of the lens.</p>
-    pub fn lens_status(&self) -> ::std::option::Option<&crate::types::LensStatus> {
+    pub fn lens_status(&self) -> ::std::option::Option<& crate::types::LensStatus> {
         self.lens_status.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The profiles associated with the workload.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profiles.is_none()`.
-    pub fn profiles(&self) -> &[crate::types::WorkloadProfile] {
-        self.profiles.as_deref().unwrap_or_default()
+    pub fn profiles(&self) -> & [crate::types::WorkloadProfile] {
+        self.profiles.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn prioritized_risk_counts(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::Risk, i32>> {
         self.prioritized_risk_counts.as_ref()
     }
 }
@@ -86,9 +87,9 @@ pub struct LensReviewSummaryBuilder {
     pub(crate) lens_name: ::std::option::Option<::std::string::String>,
     pub(crate) lens_status: ::std::option::Option<crate::types::LensStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
-    pub(crate) profiles: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>,
-    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
+    pub(crate) profiles: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>,
+    pub(crate) prioritized_risk_counts: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>,
 }
 impl LensReviewSummaryBuilder {
     /// <p>The alias of the lens.</p>
@@ -104,8 +105,7 @@ impl LensReviewSummaryBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -121,8 +121,7 @@ impl LensReviewSummaryBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl LensReviewSummaryBuilder {
     }
     /// <p>The version of the lens.</p>
     pub fn set_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_version = input;
-        self
+        self.lens_version = input; self
     }
     /// <p>The version of the lens.</p>
     pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl LensReviewSummaryBuilder {
     }
     /// <p>The full name of the lens.</p>
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_name = input;
-        self
+        self.lens_name = input; self
     }
     /// <p>The full name of the lens.</p>
     pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +160,7 @@ impl LensReviewSummaryBuilder {
     }
     /// <p>The status of the lens.</p>
     pub fn set_lens_status(mut self, input: ::std::option::Option<crate::types::LensStatus>) -> Self {
-        self.lens_status = input;
-        self
+        self.lens_status = input; self
     }
     /// <p>The status of the lens.</p>
     pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatus> {
@@ -177,8 +173,7 @@ impl LensReviewSummaryBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,17 +186,16 @@ impl LensReviewSummaryBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.risk_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.risk_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.risk_counts = input;
-        self
+    pub fn set_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>) -> Self {
+        self.risk_counts = input; self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>> {
         &self.risk_counts
     }
     /// Appends an item to `profiles`.
@@ -211,17 +205,16 @@ impl LensReviewSummaryBuilder {
     /// <p>The profiles associated with the workload.</p>
     pub fn profiles(mut self, input: crate::types::WorkloadProfile) -> Self {
         let mut v = self.profiles.unwrap_or_default();
-        v.push(input);
-        self.profiles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profiles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The profiles associated with the workload.</p>
-    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>>) -> Self {
-        self.profiles = input;
-        self
+    pub fn set_profiles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>>) -> Self {
+        self.profiles = input; self
     }
     /// <p>The profiles associated with the workload.</p>
-    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+    pub fn get_profiles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkloadProfile>> {
         &self.profiles
     }
     /// Adds a key-value pair to `prioritized_risk_counts`.
@@ -231,31 +224,40 @@ impl LensReviewSummaryBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn prioritized_risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.prioritized_risk_counts.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.prioritized_risk_counts = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.prioritized_risk_counts = input;
-        self
+    pub fn set_prioritized_risk_counts(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>>) -> Self {
+        self.prioritized_risk_counts = input; self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn get_prioritized_risk_counts(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::Risk, i32>> {
         &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`LensReviewSummary`](crate::types::LensReviewSummary).
     pub fn build(self) -> crate::types::LensReviewSummary {
         crate::types::LensReviewSummary {
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            lens_version: self.lens_version,
-            lens_name: self.lens_name,
-            lens_status: self.lens_status,
-            updated_at: self.updated_at,
-            risk_counts: self.risk_counts,
-            profiles: self.profiles,
-            prioritized_risk_counts: self.prioritized_risk_counts,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            lens_version: self.lens_version
+            ,
+            lens_name: self.lens_name
+            ,
+            lens_status: self.lens_status
+            ,
+            updated_at: self.updated_at
+            ,
+            risk_counts: self.risk_counts
+            ,
+            profiles: self.profiles
+            ,
+            prioritized_risk_counts: self.prioritized_risk_counts
+            ,
         }
     }
 }
+

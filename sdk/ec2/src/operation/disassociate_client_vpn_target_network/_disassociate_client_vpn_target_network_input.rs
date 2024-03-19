@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateClientVpnTargetNetworkInput {
+pub struct DisassociateClientVpnTargetNetworkInput  {
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
     pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the target network association.</p>
@@ -10,13 +10,13 @@ pub struct DisassociateClientVpnTargetNetworkInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DisassociateClientVpnTargetNetworkInput {
+impl  DisassociateClientVpnTargetNetworkInput  {
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
-    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The ID of the target network association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
     }
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
     pub fn set_client_vpn_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input;
-        self
+        self.client_vpn_endpoint_id = input; self
     }
     /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
     pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
     }
     /// <p>The ID of the target network association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the target network association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateClientVpnTargetNetworkInput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput {
-                client_vpn_endpoint_id: self.client_vpn_endpoint_id,
-                association_id: self.association_id,
-                dry_run: self.dry_run,
-            },
+                client_vpn_endpoint_id: self.client_vpn_endpoint_id
+                ,
+                association_id: self.association_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDevicesInput {
+pub struct ListDevicesInput  {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of devices to return in one page of results.</p>
@@ -16,9 +16,9 @@ pub struct ListDevicesInput {
     /// <p>Filter based on a device's status.</p>
     pub device_aggregated_status_filter: ::std::option::Option<crate::types::DeviceAggregatedStatus>,
 }
-impl ListDevicesInput {
+impl  ListDevicesInput  {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of devices to return in one page of results.</p>
@@ -26,19 +26,19 @@ impl ListDevicesInput {
         self.max_results
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ListDevicesSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::ListDevicesSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>Filter based on device's name. Prefixes supported.</p>
-    pub fn name_filter(&self) -> ::std::option::Option<&str> {
+    pub fn name_filter(&self) -> ::std::option::Option<& str> {
         self.name_filter.as_deref()
     }
     /// <p>Filter based on a device's status.</p>
-    pub fn device_aggregated_status_filter(&self) -> ::std::option::Option<&crate::types::DeviceAggregatedStatus> {
+    pub fn device_aggregated_status_filter(&self) -> ::std::option::Option<& crate::types::DeviceAggregatedStatus> {
         self.device_aggregated_status_filter.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>The maximum number of devices to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of devices to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,8 +94,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ListDevicesSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListDevicesSortBy> {
@@ -110,8 +107,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -124,8 +120,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>Filter based on device's name. Prefixes supported.</p>
     pub fn set_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_filter = input;
-        self
+        self.name_filter = input; self
     }
     /// <p>Filter based on device's name. Prefixes supported.</p>
     pub fn get_name_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +133,7 @@ impl ListDevicesInputBuilder {
     }
     /// <p>Filter based on a device's status.</p>
     pub fn set_device_aggregated_status_filter(mut self, input: ::std::option::Option<crate::types::DeviceAggregatedStatus>) -> Self {
-        self.device_aggregated_status_filter = input;
-        self
+        self.device_aggregated_status_filter = input; self
     }
     /// <p>Filter based on a device's status.</p>
     pub fn get_device_aggregated_status_filter(&self) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
@@ -147,13 +141,22 @@ impl ListDevicesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            name_filter: self.name_filter,
-            device_aggregated_status_filter: self.device_aggregated_status_filter,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_devices::ListDevicesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                name_filter: self.name_filter
+                ,
+                device_aggregated_status_filter: self.device_aggregated_status_filter
+                ,
+            }
+        )
     }
 }
+

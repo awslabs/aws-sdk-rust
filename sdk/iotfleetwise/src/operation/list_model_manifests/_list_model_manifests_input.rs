@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelManifestsInput {
+pub struct ListModelManifestsInput  {
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
     pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for the next set of results.</p>
@@ -11,14 +11,14 @@ pub struct ListModelManifestsInput {
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListModelManifestsInput {
+impl  ListModelManifestsInput  {
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
-    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<& str> {
         self.signal_catalog_arn.as_deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
@@ -49,8 +49,7 @@ impl ListModelManifestsInputBuilder {
     }
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
     pub fn set_signal_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signal_catalog_arn = input;
-        self
+        self.signal_catalog_arn = input; self
     }
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
     pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl ListModelManifestsInputBuilder {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -80,22 +78,24 @@ impl ListModelManifestsInputBuilder {
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_model_manifests::ListModelManifestsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_model_manifests::ListModelManifestsInput {
-            signal_catalog_arn: self.signal_catalog_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_model_manifests::ListModelManifestsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_model_manifests::ListModelManifestsInput {
+                signal_catalog_arn: self.signal_catalog_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

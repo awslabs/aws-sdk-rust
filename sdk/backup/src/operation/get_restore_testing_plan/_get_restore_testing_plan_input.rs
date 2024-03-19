@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRestoreTestingPlanInput {
+pub struct GetRestoreTestingPlanInput  {
     /// <p>Required unique name of the restore testing plan.</p>
     pub restore_testing_plan_name: ::std::option::Option<::std::string::String>,
 }
-impl GetRestoreTestingPlanInput {
+impl  GetRestoreTestingPlanInput  {
     /// <p>Required unique name of the restore testing plan.</p>
-    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn restore_testing_plan_name(&self) -> ::std::option::Option<& str> {
         self.restore_testing_plan_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetRestoreTestingPlanInputBuilder {
     }
     /// <p>Required unique name of the restore testing plan.</p>
     pub fn set_restore_testing_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_testing_plan_name = input;
-        self
+        self.restore_testing_plan_name = input; self
     }
     /// <p>Required unique name of the restore testing plan.</p>
     pub fn get_restore_testing_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_testing_plan_name
     }
     /// Consumes the builder and constructs a [`GetRestoreTestingPlanInput`](crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput {
-            restore_testing_plan_name: self.restore_testing_plan_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_restore_testing_plan::GetRestoreTestingPlanInput {
+                restore_testing_plan_name: self.restore_testing_plan_name
+                ,
+            }
+        )
     }
 }
+

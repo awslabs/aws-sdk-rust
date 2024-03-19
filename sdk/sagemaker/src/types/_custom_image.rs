@@ -3,7 +3,7 @@
 /// <p>A custom SageMaker image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomImage {
+pub struct CustomImage  {
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the CustomImage.</p>
@@ -11,9 +11,9 @@ pub struct CustomImage {
     /// <p>The name of the AppImageConfig.</p>
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
 }
-impl CustomImage {
+impl  CustomImage  {
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The version number of the CustomImage.</p>
@@ -21,7 +21,7 @@ impl CustomImage {
         self.image_version_number
     }
     /// <p>The name of the AppImageConfig.</p>
-    pub fn app_image_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_image_config_name(&self) -> ::std::option::Option<& str> {
         self.app_image_config_name.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CustomImageBuilder {
     }
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the CustomImage. Must be unique to your account.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CustomImageBuilder {
     }
     /// <p>The version number of the CustomImage.</p>
     pub fn set_image_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.image_version_number = input;
-        self
+        self.image_version_number = input; self
     }
     /// <p>The version number of the CustomImage.</p>
     pub fn get_image_version_number(&self) -> &::std::option::Option<i32> {
@@ -78,8 +76,7 @@ impl CustomImageBuilder {
     }
     /// <p>The name of the AppImageConfig.</p>
     pub fn set_app_image_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_image_config_name = input;
-        self
+        self.app_image_config_name = input; self
     }
     /// <p>The name of the AppImageConfig.</p>
     pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,9 +85,13 @@ impl CustomImageBuilder {
     /// Consumes the builder and constructs a [`CustomImage`](crate::types::CustomImage).
     pub fn build(self) -> crate::types::CustomImage {
         crate::types::CustomImage {
-            image_name: self.image_name,
-            image_version_number: self.image_version_number,
-            app_image_config_name: self.app_image_config_name,
+            image_name: self.image_name
+            ,
+            image_version_number: self.image_version_number
+            ,
+            app_image_config_name: self.app_image_config_name
+            ,
         }
     }
 }
+

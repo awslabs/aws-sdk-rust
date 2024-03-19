@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPermissionGroupsByUserInput {
+pub struct ListPermissionGroupsByUserInput  {
     /// <p>The unique identifier for the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates where a results page should begin.</p>
@@ -10,13 +10,13 @@ pub struct ListPermissionGroupsByUserInput {
     /// <p>The maximum number of results per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListPermissionGroupsByUserInput {
+impl  ListPermissionGroupsByUserInput  {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results per page.</p>
@@ -48,8 +48,7 @@ impl ListPermissionGroupsByUserInputBuilder {
     }
     /// <p>The unique identifier for the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListPermissionGroupsByUserInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl ListPermissionGroupsByUserInputBuilder {
     }
     /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPermissionGroupsByUserInput`](crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput {
-            user_id: self.user_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserInput {
+                user_id: self.user_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

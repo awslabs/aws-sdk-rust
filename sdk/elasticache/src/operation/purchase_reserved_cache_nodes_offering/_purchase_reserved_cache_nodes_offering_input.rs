@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseReservedCacheNodesOfferingInput {
+pub struct PurchaseReservedCacheNodesOfferingInput  {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
@@ -16,19 +16,19 @@ pub struct PurchaseReservedCacheNodesOfferingInput {
     /// <p>Default: <code>1</code></p>
     pub cache_node_count: ::std::option::Option<i32>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl PurchaseReservedCacheNodesOfferingInput {
+impl  PurchaseReservedCacheNodesOfferingInput  {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
-    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_cache_nodes_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_cache_nodes_offering_id.as_deref()
     }
     /// <p>A customer-specified identifier to track this reservation.</p><note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
-    pub fn reserved_cache_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_cache_node_id(&self) -> ::std::option::Option<& str> {
         self.reserved_cache_node_id.as_deref()
     }
     /// <p>The number of cache node instances to reserve.</p>
@@ -37,10 +37,11 @@ impl PurchaseReservedCacheNodesOfferingInput {
         self.cache_node_count
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PurchaseReservedCacheNodesOfferingInput {
@@ -57,7 +58,7 @@ pub struct PurchaseReservedCacheNodesOfferingInputBuilder {
     pub(crate) reserved_cache_nodes_offering_id: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_cache_node_id: ::std::option::Option<::std::string::String>,
     pub(crate) cache_node_count: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
@@ -70,8 +71,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
     pub fn set_reserved_cache_nodes_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_cache_nodes_offering_id = input;
-        self
+        self.reserved_cache_nodes_offering_id = input; self
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code></p>
@@ -91,8 +91,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// </note>
     /// <p>Example: myreservationID</p>
     pub fn set_reserved_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_cache_node_id = input;
-        self
+        self.reserved_cache_node_id = input; self
     }
     /// <p>A customer-specified identifier to track this reservation.</p><note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
@@ -110,8 +109,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>The number of cache node instances to reserve.</p>
     /// <p>Default: <code>1</code></p>
     pub fn set_cache_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cache_node_count = input;
-        self
+        self.cache_node_count = input; self
     }
     /// <p>The number of cache node instances to reserve.</p>
     /// <p>Default: <code>1</code></p>
@@ -125,33 +123,32 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PurchaseReservedCacheNodesOfferingInput`](crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput {
-                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
-                reserved_cache_node_id: self.reserved_cache_node_id,
-                cache_node_count: self.cache_node_count,
-                tags: self.tags,
-            },
+                reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id
+                ,
+                reserved_cache_node_id: self.reserved_cache_node_id
+                ,
+                cache_node_count: self.cache_node_count
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

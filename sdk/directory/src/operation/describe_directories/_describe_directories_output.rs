@@ -3,32 +3,33 @@
 /// <p>Contains the results of the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectoriesOutput {
+pub struct DescribeDirectoriesOutput  {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub directory_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
+    pub directory_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDirectoriesOutput {
+impl  DescribeDirectoriesOutput  {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_descriptions.is_none()`.
-    pub fn directory_descriptions(&self) -> &[crate::types::DirectoryDescription] {
-        self.directory_descriptions.as_deref().unwrap_or_default()
+    pub fn directory_descriptions(&self) -> & [crate::types::DirectoryDescription] {
+        self.directory_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDirectoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDirectoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectoriesOutput`](crate::operation::describe_directories::DescribeDirectoriesOutput).
     pub fn builder() -> crate::operation::describe_directories::builders::DescribeDirectoriesOutputBuilder {
@@ -40,7 +41,7 @@ impl DescribeDirectoriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectoriesOutputBuilder {
-    pub(crate) directory_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
+    pub(crate) directory_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryDescription>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,19 +54,18 @@ impl DescribeDirectoriesOutputBuilder {
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn directory_descriptions(mut self, input: crate::types::DirectoryDescription) -> Self {
         let mut v = self.directory_descriptions.unwrap_or_default();
-        v.push(input);
-        self.directory_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.directory_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn set_directory_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>) -> Self {
-        self.directory_descriptions = input;
-        self
+    pub fn set_directory_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryDescription>>) -> Self {
+        self.directory_descriptions = input; self
     }
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn get_directory_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>> {
+    pub fn get_directory_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DirectoryDescription>> {
         &self.directory_descriptions
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
@@ -75,28 +75,30 @@ impl DescribeDirectoriesOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDirectoriesOutput`](crate::operation::describe_directories::DescribeDirectoriesOutput).
     pub fn build(self) -> crate::operation::describe_directories::DescribeDirectoriesOutput {
         crate::operation::describe_directories::DescribeDirectoriesOutput {
-            directory_descriptions: self.directory_descriptions,
-            next_token: self.next_token,
+            directory_descriptions: self.directory_descriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

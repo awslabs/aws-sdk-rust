@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStageDevices`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The response from the last list when returning a list large enough to neeed tokening.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of requests to select.</p><br>
     ///   - [`edge_deployment_plan_name(impl Into<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::edge_deployment_plan_name) / [`set_edge_deployment_plan_name(Option<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::set_edge_deployment_plan_name):<br>required: **true**<br><p>The name of the edge deployment plan.</p><br>
     ///   - [`exclude_devices_deployed_in_other_stage(bool)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::exclude_devices_deployed_in_other_stage) / [`set_exclude_devices_deployed_in_other_stage(Option<bool>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::set_exclude_devices_deployed_in_other_stage):<br>required: **false**<br><p>Toggle for excluding devices deployed in other stages.</p><br>
     ///   - [`stage_name(impl Into<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::set_stage_name):<br>required: **true**<br><p>The name of the stage in the deployment.</p><br>
-    /// - On success, responds with [`ListStageDevicesOutput`](crate::operation::list_stage_devices::ListStageDevicesOutput) with field(s):
+                            /// - On success, responds with [`ListStageDevicesOutput`](crate::operation::list_stage_devices::ListStageDevicesOutput) with field(s):
     ///   - [`device_deployment_summaries(Option<Vec::<DeviceDeploymentSummary>>)`](crate::operation::list_stage_devices::ListStageDevicesOutput::device_deployment_summaries): <p>List of summaries of devices allocated to the stage.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stage_devices::ListStageDevicesOutput::next_token): <p>The token to use when calling the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListStageDevicesError>`](crate::operation::list_stage_devices::ListStageDevicesError)
+                            /// - On failure, responds with [`SdkError<ListStageDevicesError>`](crate::operation::list_stage_devices::ListStageDevicesError)
     pub fn list_stage_devices(&self) -> crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder {
-        crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stage_devices::builders::ListStageDevicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

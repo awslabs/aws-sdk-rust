@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePolicyInput {}
+pub struct DeletePolicyInput  {
+}
 impl DeletePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
     pub fn builder() -> crate::operation::delete_policy::builders::DeletePolicyInputBuilder {
@@ -13,12 +14,15 @@ impl DeletePolicyInput {
 /// A builder for [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeletePolicyInputBuilder {}
+pub struct DeletePolicyInputBuilder {
+}
 impl DeletePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_policy::DeletePolicyInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_policy::DeletePolicyInput {
+            }
+        )
     }
 }
+

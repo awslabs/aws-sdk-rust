@@ -3,7 +3,7 @@
 /// <p>Information about an item of Personal Protective Equipment (PPE) detected by <code>DetectProtectiveEquipment</code>. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EquipmentDetection {
+pub struct EquipmentDetection  {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
@@ -13,9 +13,9 @@ pub struct EquipmentDetection {
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub covers_body_part: ::std::option::Option<crate::types::CoversBodyPart>,
 }
-impl EquipmentDetection {
+impl  EquipmentDetection  {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
-    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
@@ -23,11 +23,11 @@ impl EquipmentDetection {
         self.confidence
     }
     /// <p>The type of detected PPE.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProtectiveEquipmentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ProtectiveEquipmentType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
-    pub fn covers_body_part(&self) -> ::std::option::Option<&crate::types::CoversBodyPart> {
+    pub fn covers_body_part(&self) -> ::std::option::Option<& crate::types::CoversBodyPart> {
         self.covers_body_part.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl EquipmentDetectionBuilder {
     }
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     pub fn set_bounding_box(mut self, input: ::std::option::Option<crate::types::BoundingBox>) -> Self {
-        self.bounding_box = input;
-        self
+        self.bounding_box = input; self
     }
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
@@ -69,8 +68,7 @@ impl EquipmentDetectionBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -83,8 +81,7 @@ impl EquipmentDetectionBuilder {
     }
     /// <p>The type of detected PPE.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProtectiveEquipmentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of detected PPE.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentType> {
@@ -97,8 +94,7 @@ impl EquipmentDetectionBuilder {
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn set_covers_body_part(mut self, input: ::std::option::Option<crate::types::CoversBodyPart>) -> Self {
-        self.covers_body_part = input;
-        self
+        self.covers_body_part = input; self
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn get_covers_body_part(&self) -> &::std::option::Option<crate::types::CoversBodyPart> {
@@ -107,10 +103,15 @@ impl EquipmentDetectionBuilder {
     /// Consumes the builder and constructs a [`EquipmentDetection`](crate::types::EquipmentDetection).
     pub fn build(self) -> crate::types::EquipmentDetection {
         crate::types::EquipmentDetection {
-            bounding_box: self.bounding_box,
-            confidence: self.confidence,
-            r#type: self.r#type,
-            covers_body_part: self.covers_body_part,
+            bounding_box: self.bounding_box
+            ,
+            confidence: self.confidence
+            ,
+            r#type: self.r#type
+            ,
+            covers_body_part: self.covers_body_part
+            ,
         }
     }
 }
+

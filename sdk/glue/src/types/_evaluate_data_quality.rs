@@ -3,11 +3,11 @@
 /// <p>Specifies your data quality evaluation criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluateDataQuality {
+pub struct EvaluateDataQuality  {
     /// <p>The name of the data quality evaluation.</p>
     pub name: ::std::string::String,
     /// <p>The inputs of your data quality evaluation.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The ruleset for your data quality evaluation.</p>
     pub ruleset: ::std::string::String,
     /// <p>The output of your data quality evaluation.</p>
@@ -17,32 +17,29 @@ pub struct EvaluateDataQuality {
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
     pub stop_job_on_failure_options: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>,
 }
-impl EvaluateDataQuality {
+impl  EvaluateDataQuality  {
     /// <p>The name of the data quality evaluation.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The inputs of your data quality evaluation.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The ruleset for your data quality evaluation.</p>
-    pub fn ruleset(&self) -> &str {
-        use std::ops::Deref;
-        self.ruleset.deref()
+    pub fn ruleset(&self) -> & str {
+        use std::ops::Deref; self.ruleset.deref()
     }
     /// <p>The output of your data quality evaluation.</p>
-    pub fn output(&self) -> ::std::option::Option<&crate::types::DqTransformOutput> {
+    pub fn output(&self) -> ::std::option::Option<& crate::types::DqTransformOutput> {
         self.output.as_ref()
     }
     /// <p>Options to configure how your results are published.</p>
-    pub fn publishing_options(&self) -> ::std::option::Option<&crate::types::DqResultsPublishingOptions> {
+    pub fn publishing_options(&self) -> ::std::option::Option<& crate::types::DqResultsPublishingOptions> {
         self.publishing_options.as_ref()
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
-    pub fn stop_job_on_failure_options(&self) -> ::std::option::Option<&crate::types::DqStopJobOnFailureOptions> {
+    pub fn stop_job_on_failure_options(&self) -> ::std::option::Option<& crate::types::DqStopJobOnFailureOptions> {
         self.stop_job_on_failure_options.as_ref()
     }
 }
@@ -58,7 +55,7 @@ impl EvaluateDataQuality {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateDataQualityBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) ruleset: ::std::option::Option<::std::string::String>,
     pub(crate) output: ::std::option::Option<crate::types::DqTransformOutput>,
     pub(crate) publishing_options: ::std::option::Option<crate::types::DqResultsPublishingOptions>,
@@ -73,8 +70,7 @@ impl EvaluateDataQualityBuilder {
     }
     /// <p>The name of the data quality evaluation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data quality evaluation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +83,16 @@ impl EvaluateDataQualityBuilder {
     /// <p>The inputs of your data quality evaluation.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inputs of your data quality evaluation.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The inputs of your data quality evaluation.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The ruleset for your data quality evaluation.</p>
@@ -108,8 +103,7 @@ impl EvaluateDataQualityBuilder {
     }
     /// <p>The ruleset for your data quality evaluation.</p>
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ruleset = input;
-        self
+        self.ruleset = input; self
     }
     /// <p>The ruleset for your data quality evaluation.</p>
     pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +116,7 @@ impl EvaluateDataQualityBuilder {
     }
     /// <p>The output of your data quality evaluation.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::DqTransformOutput>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The output of your data quality evaluation.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::DqTransformOutput> {
@@ -136,8 +129,7 @@ impl EvaluateDataQualityBuilder {
     }
     /// <p>Options to configure how your results are published.</p>
     pub fn set_publishing_options(mut self, input: ::std::option::Option<crate::types::DqResultsPublishingOptions>) -> Self {
-        self.publishing_options = input;
-        self
+        self.publishing_options = input; self
     }
     /// <p>Options to configure how your results are published.</p>
     pub fn get_publishing_options(&self) -> &::std::option::Option<crate::types::DqResultsPublishingOptions> {
@@ -150,8 +142,7 @@ impl EvaluateDataQualityBuilder {
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
     pub fn set_stop_job_on_failure_options(mut self, input: ::std::option::Option<crate::types::DqStopJobOnFailureOptions>) -> Self {
-        self.stop_job_on_failure_options = input;
-        self
+        self.stop_job_on_failure_options = input; self
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
     pub fn get_stop_job_on_failure_options(&self) -> &::std::option::Option<crate::types::DqStopJobOnFailureOptions> {
@@ -163,28 +154,31 @@ impl EvaluateDataQualityBuilder {
     /// - [`inputs`](crate::types::builders::EvaluateDataQualityBuilder::inputs)
     /// - [`ruleset`](crate::types::builders::EvaluateDataQualityBuilder::ruleset)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQuality, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluateDataQuality {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EvaluateDataQuality",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building EvaluateDataQuality",
-                )
-            })?,
-            ruleset: self.ruleset.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ruleset",
-                    "ruleset was not specified but it is required when building EvaluateDataQuality",
-                )
-            })?,
-            output: self.output,
-            publishing_options: self.publishing_options,
-            stop_job_on_failure_options: self.stop_job_on_failure_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluateDataQuality {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EvaluateDataQuality")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building EvaluateDataQuality")
+                    )?
+                ,
+                ruleset: self.ruleset
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ruleset", "ruleset was not specified but it is required when building EvaluateDataQuality")
+                    )?
+                ,
+                output: self.output
+                ,
+                publishing_options: self.publishing_options
+                ,
+                stop_job_on_failure_options: self.stop_job_on_failure_options
+                ,
+            }
+        )
     }
 }
+

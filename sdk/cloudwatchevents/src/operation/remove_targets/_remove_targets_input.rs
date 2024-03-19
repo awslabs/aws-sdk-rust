@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTargetsInput {
+pub struct RemoveTargetsInput  {
     /// <p>The name of the rule.</p>
     pub rule: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the targets to remove from the rule.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl RemoveTargetsInput {
+impl  RemoveTargetsInput  {
     /// <p>The name of the rule.</p>
-    pub fn rule(&self) -> ::std::option::Option<&str> {
+    pub fn rule(&self) -> ::std::option::Option<& str> {
         self.rule.as_deref()
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> ::std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The IDs of the targets to remove from the rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
@@ -45,7 +46,7 @@ impl RemoveTargetsInput {
 pub struct RemoveTargetsInputBuilder {
     pub(crate) rule: ::std::option::Option<::std::string::String>,
     pub(crate) event_bus_name: ::std::option::Option<::std::string::String>,
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl RemoveTargetsInputBuilder {
@@ -57,8 +58,7 @@ impl RemoveTargetsInputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The name of the rule.</p>
     pub fn get_rule(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl RemoveTargetsInputBuilder {
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl RemoveTargetsInputBuilder {
     /// <p>The IDs of the targets to remove from the rule.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the targets to remove from the rule.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The IDs of the targets to remove from the rule.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
@@ -105,22 +103,26 @@ impl RemoveTargetsInputBuilder {
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`RemoveTargetsInput`](crate::operation::remove_targets::RemoveTargetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::remove_targets::RemoveTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::remove_targets::RemoveTargetsInput {
-            rule: self.rule,
-            event_bus_name: self.event_bus_name,
-            ids: self.ids,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_targets::RemoveTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_targets::RemoveTargetsInput {
+                rule: self.rule
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                ids: self.ids
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRouteInput {
+pub struct GetRouteInput  {
     /// <p>The ID of the environment.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application.</p>
@@ -10,17 +10,17 @@ pub struct GetRouteInput {
     /// <p>The ID of the route.</p>
     pub route_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetRouteInput {
+impl  GetRouteInput  {
     /// <p>The ID of the environment.</p>
-    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn application_identifier(&self) -> ::std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The ID of the route.</p>
-    pub fn route_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn route_identifier(&self) -> ::std::option::Option<& str> {
         self.route_identifier.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetRouteInputBuilder {
     }
     /// <p>The ID of the environment.</p>
     pub fn set_environment_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_identifier = input;
-        self
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the environment.</p>
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetRouteInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_identifier = input;
-        self
+        self.application_identifier = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl GetRouteInputBuilder {
     }
     /// <p>The ID of the route.</p>
     pub fn set_route_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_identifier = input;
-        self
+        self.route_identifier = input; self
     }
     /// <p>The ID of the route.</p>
     pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl GetRouteInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_route::GetRouteInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            route_identifier: self.route_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_route::GetRouteInput {
+                environment_identifier: self.environment_identifier
+                ,
+                application_identifier: self.application_identifier
+                ,
+                route_identifier: self.route_identifier
+                ,
+            }
+        )
     }
 }
+

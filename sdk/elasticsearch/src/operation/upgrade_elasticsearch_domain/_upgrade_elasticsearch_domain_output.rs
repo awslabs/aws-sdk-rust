@@ -3,7 +3,7 @@
 /// <p>Container for response returned by <code> <code>UpgradeElasticsearchDomain</code> </code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradeElasticsearchDomainOutput {
+pub struct UpgradeElasticsearchDomainOutput  {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
@@ -14,13 +14,13 @@ pub struct UpgradeElasticsearchDomainOutput {
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
-impl UpgradeElasticsearchDomainOutput {
+impl  UpgradeElasticsearchDomainOutput  {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(&self) -> ::std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<& str> {
         self.target_version.as_deref()
     }
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
@@ -28,15 +28,15 @@ impl UpgradeElasticsearchDomainOutput {
         self.perform_check_only
     }
     /// <p>Specifies change details of the domain configuration change.</p>
-    pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
+    pub fn change_progress_details(&self) -> ::std::option::Option<& crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpgradeElasticsearchDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpgradeElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
     pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainOutputBuilder {
@@ -62,8 +62,7 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn set_target_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_version = input;
-        self
+        self.target_version = input; self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     }
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.perform_check_only = input;
-        self
+        self.perform_check_only = input; self
     }
     /// <p>This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade.</p>
     pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
@@ -104,30 +101,34 @@ impl UpgradeElasticsearchDomainOutputBuilder {
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn set_change_progress_details(mut self, input: ::std::option::Option<crate::types::ChangeProgressDetails>) -> Self {
-        self.change_progress_details = input;
-        self
+        self.change_progress_details = input; self
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
     pub fn build(self) -> crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput {
         crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput {
-            domain_name: self.domain_name,
-            target_version: self.target_version,
-            perform_check_only: self.perform_check_only,
-            change_progress_details: self.change_progress_details,
+            domain_name: self.domain_name
+            ,
+            target_version: self.target_version
+            ,
+            perform_check_only: self.perform_check_only
+            ,
+            change_progress_details: self.change_progress_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

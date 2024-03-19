@@ -3,13 +3,13 @@
 /// <p>An object representing the collaboration member's payment responsibilities set by the collaboration creator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PaymentConfiguration {
+pub struct PaymentConfiguration  {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
     pub query_compute: ::std::option::Option<crate::types::QueryComputePaymentConfig>,
 }
-impl PaymentConfiguration {
+impl  PaymentConfiguration  {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
-    pub fn query_compute(&self) -> ::std::option::Option<&crate::types::QueryComputePaymentConfig> {
+    pub fn query_compute(&self) -> ::std::option::Option<& crate::types::QueryComputePaymentConfig> {
         self.query_compute.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PaymentConfigurationBuilder {
     }
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
     pub fn set_query_compute(mut self, input: ::std::option::Option<crate::types::QueryComputePaymentConfig>) -> Self {
-        self.query_compute = input;
-        self
+        self.query_compute = input; self
     }
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
     pub fn get_query_compute(&self) -> &::std::option::Option<crate::types::QueryComputePaymentConfig> {
@@ -45,7 +44,9 @@ impl PaymentConfigurationBuilder {
     /// Consumes the builder and constructs a [`PaymentConfiguration`](crate::types::PaymentConfiguration).
     pub fn build(self) -> crate::types::PaymentConfiguration {
         crate::types::PaymentConfiguration {
-            query_compute: self.query_compute,
+            query_compute: self.query_compute
+            ,
         }
     }
 }
+

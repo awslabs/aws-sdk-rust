@@ -5,54 +5,50 @@ pub use crate::operation::update_kx_cluster_code_configuration::_update_kx_clust
 
 impl UpdateKxClusterCodeConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_kx_cluster_code_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_kx_cluster_code_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateKxClusterCodeConfiguration`.
-///
+/// 
 /// <p>Allows you to update code configuration on a running cluster. By using this API you can update the code, the initialization script path, and the command line arguments for a specific cluster. The configuration that you want to update will override any existing configurations on the cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKxClusterCodeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_kx_cluster_code_configuration::builders::UpdateKxClusterCodeConfigurationInputBuilder,
+                    inner: crate::operation::update_kx_cluster_code_configuration::builders::UpdateKxClusterCodeConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
-    > for UpdateKxClusterCodeConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
-            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
+                    crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
+                > for UpdateKxClusterCodeConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
+                        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateKxClusterCodeConfigurationFluentBuilder {
     /// Creates a new `UpdateKxClusterCodeConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput,
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationOutput, crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier of the kdb environment.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
@@ -193,13 +180,13 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>) -> Self {
+    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>) -> Self {
         self.inner = self.inner.set_command_line_arguments(input);
         self
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
+    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>> {
         self.inner.get_command_line_arguments()
     }
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
@@ -217,3 +204,4 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
         self.inner.get_deployment_configuration()
     }
 }
+

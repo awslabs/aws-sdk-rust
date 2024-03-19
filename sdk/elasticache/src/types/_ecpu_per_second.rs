@@ -3,11 +3,11 @@
 /// <p>The configuration for the number of ElastiCache Processing Units (ECPU) the cache can consume per second.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EcpuPerSecond {
+pub struct EcpuPerSecond  {
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub maximum: ::std::option::Option<i32>,
 }
-impl EcpuPerSecond {
+impl  EcpuPerSecond  {
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
@@ -35,8 +35,7 @@ impl EcpuPerSecondBuilder {
     }
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// <p>The configuration for the maximum number of ECPUs the cache can consume per second.</p>
     pub fn get_maximum(&self) -> &::std::option::Option<i32> {
@@ -44,6 +43,10 @@ impl EcpuPerSecondBuilder {
     }
     /// Consumes the builder and constructs a [`EcpuPerSecond`](crate::types::EcpuPerSecond).
     pub fn build(self) -> crate::types::EcpuPerSecond {
-        crate::types::EcpuPerSecond { maximum: self.maximum }
+        crate::types::EcpuPerSecond {
+            maximum: self.maximum
+            ,
+        }
     }
 }
+

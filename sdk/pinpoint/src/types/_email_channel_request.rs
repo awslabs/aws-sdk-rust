@@ -3,7 +3,7 @@
 /// <p>Specifies the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailChannelRequest {
+pub struct EmailChannelRequest  {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     pub configuration_set: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the email channel for the application.</p>
@@ -15,9 +15,9 @@ pub struct EmailChannelRequest {
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl EmailChannelRequest {
+impl  EmailChannelRequest  {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    pub fn configuration_set(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set(&self) -> ::std::option::Option<& str> {
         self.configuration_set.as_deref()
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
@@ -25,15 +25,15 @@ impl EmailChannelRequest {
         self.enabled
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
-    pub fn from_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<& str> {
         self.from_address.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl EmailChannelRequestBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     pub fn set_configuration_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set = input;
-        self
+        self.configuration_set = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     pub fn get_configuration_set(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl EmailChannelRequestBuilder {
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -91,8 +89,7 @@ impl EmailChannelRequestBuilder {
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
     pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_address = input;
-        self
+        self.from_address = input; self
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
     pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl EmailChannelRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl EmailChannelRequestBuilder {
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,11 +125,17 @@ impl EmailChannelRequestBuilder {
     /// Consumes the builder and constructs a [`EmailChannelRequest`](crate::types::EmailChannelRequest).
     pub fn build(self) -> crate::types::EmailChannelRequest {
         crate::types::EmailChannelRequest {
-            configuration_set: self.configuration_set,
-            enabled: self.enabled,
-            from_address: self.from_address,
-            identity: self.identity,
-            role_arn: self.role_arn,
+            configuration_set: self.configuration_set
+            ,
+            enabled: self.enabled
+            ,
+            from_address: self.from_address
+            ,
+            identity: self.identity
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

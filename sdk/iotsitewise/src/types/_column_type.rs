@@ -3,13 +3,13 @@
 /// <p>The data type of the column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnType {
+pub struct ColumnType  {
     /// <p>The allowed data types that the column has as it's value.</p>
     pub scalar_type: ::std::option::Option<crate::types::ScalarType>,
 }
-impl ColumnType {
+impl  ColumnType  {
     /// <p>The allowed data types that the column has as it's value.</p>
-    pub fn scalar_type(&self) -> ::std::option::Option<&crate::types::ScalarType> {
+    pub fn scalar_type(&self) -> ::std::option::Option<& crate::types::ScalarType> {
         self.scalar_type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ColumnTypeBuilder {
     }
     /// <p>The allowed data types that the column has as it's value.</p>
     pub fn set_scalar_type(mut self, input: ::std::option::Option<crate::types::ScalarType>) -> Self {
-        self.scalar_type = input;
-        self
+        self.scalar_type = input; self
     }
     /// <p>The allowed data types that the column has as it's value.</p>
     pub fn get_scalar_type(&self) -> &::std::option::Option<crate::types::ScalarType> {
@@ -44,7 +43,9 @@ impl ColumnTypeBuilder {
     /// Consumes the builder and constructs a [`ColumnType`](crate::types::ColumnType).
     pub fn build(self) -> crate::types::ColumnType {
         crate::types::ColumnType {
-            scalar_type: self.scalar_type,
+            scalar_type: self.scalar_type
+            ,
         }
     }
 }
+

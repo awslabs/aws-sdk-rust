@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RemoveAllResourcePermissionsInput {
+pub struct RemoveAllResourcePermissionsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveAllResourcePermissionsInput {
+impl  RemoveAllResourcePermissionsInput  {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for RemoveAllResourcePermissionsInput {
+impl  ::std::fmt::Debug for RemoveAllResourcePermissionsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RemoveAllResourcePermissionsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -48,8 +48,7 @@ impl RemoveAllResourcePermissionsInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,24 +62,22 @@ impl RemoveAllResourcePermissionsInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`RemoveAllResourcePermissionsInput`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput {
-            authentication_token: self.authentication_token,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsInput {
+                authentication_token: self.authentication_token
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RemoveAllResourcePermissionsInputBuilder {
@@ -91,3 +88,4 @@ impl ::std::fmt::Debug for RemoveAllResourcePermissionsInputBuilder {
         formatter.finish()
     }
 }
+

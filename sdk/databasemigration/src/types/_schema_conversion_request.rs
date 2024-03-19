@@ -3,7 +3,7 @@
 /// <p>Provides information about a schema conversion action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaConversionRequest {
+pub struct SchemaConversionRequest  {
     /// <p>The schema conversion action status.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the schema conversion action.</p>
@@ -15,25 +15,25 @@ pub struct SchemaConversionRequest {
     /// <p>Provides information about a metadata model assessment exported to SQL.</p>
     pub export_sql_details: ::std::option::Option<crate::types::ExportSqlDetails>,
 }
-impl SchemaConversionRequest {
+impl  SchemaConversionRequest  {
     /// <p>The schema conversion action status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The identifier for the schema conversion action.</p>
-    pub fn request_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn request_identifier(&self) -> ::std::option::Option<& str> {
         self.request_identifier.as_deref()
     }
     /// <p>The migration project ARN.</p>
-    pub fn migration_project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_arn(&self) -> ::std::option::Option<& str> {
         self.migration_project_arn.as_deref()
     }
     /// <p>Provides error information about a project.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
     /// <p>Provides information about a metadata model assessment exported to SQL.</p>
-    pub fn export_sql_details(&self) -> ::std::option::Option<&crate::types::ExportSqlDetails> {
+    pub fn export_sql_details(&self) -> ::std::option::Option<& crate::types::ExportSqlDetails> {
         self.export_sql_details.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl SchemaConversionRequestBuilder {
     }
     /// <p>The schema conversion action status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The schema conversion action status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl SchemaConversionRequestBuilder {
     }
     /// <p>The identifier for the schema conversion action.</p>
     pub fn set_request_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_identifier = input;
-        self
+        self.request_identifier = input; self
     }
     /// <p>The identifier for the schema conversion action.</p>
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl SchemaConversionRequestBuilder {
     }
     /// <p>The migration project ARN.</p>
     pub fn set_migration_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_arn = input;
-        self
+        self.migration_project_arn = input; self
     }
     /// <p>The migration project ARN.</p>
     pub fn get_migration_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl SchemaConversionRequestBuilder {
     }
     /// <p>Provides error information about a project.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Provides error information about a project.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -118,8 +114,7 @@ impl SchemaConversionRequestBuilder {
     }
     /// <p>Provides information about a metadata model assessment exported to SQL.</p>
     pub fn set_export_sql_details(mut self, input: ::std::option::Option<crate::types::ExportSqlDetails>) -> Self {
-        self.export_sql_details = input;
-        self
+        self.export_sql_details = input; self
     }
     /// <p>Provides information about a metadata model assessment exported to SQL.</p>
     pub fn get_export_sql_details(&self) -> &::std::option::Option<crate::types::ExportSqlDetails> {
@@ -128,11 +123,17 @@ impl SchemaConversionRequestBuilder {
     /// Consumes the builder and constructs a [`SchemaConversionRequest`](crate::types::SchemaConversionRequest).
     pub fn build(self) -> crate::types::SchemaConversionRequest {
         crate::types::SchemaConversionRequest {
-            status: self.status,
-            request_identifier: self.request_identifier,
-            migration_project_arn: self.migration_project_arn,
-            error: self.error,
-            export_sql_details: self.export_sql_details,
+            status: self.status
+            ,
+            request_identifier: self.request_identifier
+            ,
+            migration_project_arn: self.migration_project_arn
+            ,
+            error: self.error
+            ,
+            export_sql_details: self.export_sql_details
+            ,
         }
     }
 }
+

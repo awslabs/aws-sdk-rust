@@ -3,22 +3,20 @@
 /// <p>The asset model property identifer of the input routed from AWS IoT SiteWise.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotSiteWiseAssetModelPropertyIdentifier {
+pub struct IotSiteWiseAssetModelPropertyIdentifier  {
     /// <p>The ID of the AWS IoT SiteWise asset model.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The ID of the AWS IoT SiteWise asset property.</p>
     pub property_id: ::std::string::String,
 }
-impl IotSiteWiseAssetModelPropertyIdentifier {
+impl  IotSiteWiseAssetModelPropertyIdentifier  {
     /// <p>The ID of the AWS IoT SiteWise asset model.</p>
-    pub fn asset_model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_model_id.deref()
+    pub fn asset_model_id(&self) -> & str {
+        use std::ops::Deref; self.asset_model_id.deref()
     }
     /// <p>The ID of the AWS IoT SiteWise asset property.</p>
-    pub fn property_id(&self) -> &str {
-        use std::ops::Deref;
-        self.property_id.deref()
+    pub fn property_id(&self) -> & str {
+        use std::ops::Deref; self.property_id.deref()
     }
 }
 impl IotSiteWiseAssetModelPropertyIdentifier {
@@ -44,8 +42,7 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     }
     /// <p>The ID of the AWS IoT SiteWise asset model.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The ID of the AWS IoT SiteWise asset model.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     }
     /// <p>The ID of the AWS IoT SiteWise asset property.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the AWS IoT SiteWise asset property.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +66,21 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_model_id`](crate::types::builders::IotSiteWiseAssetModelPropertyIdentifierBuilder::asset_model_id)
     /// - [`property_id`](crate::types::builders::IotSiteWiseAssetModelPropertyIdentifierBuilder::property_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::IotSiteWiseAssetModelPropertyIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotSiteWiseAssetModelPropertyIdentifier {
-            asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_model_id",
-                    "asset_model_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier",
-                )
-            })?,
-            property_id: self.property_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_id",
-                    "property_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::IotSiteWiseAssetModelPropertyIdentifier, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::IotSiteWiseAssetModelPropertyIdentifier {
+                asset_model_id: self.asset_model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_model_id", "asset_model_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier")
+                    )?
+                ,
+                property_id: self.property_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_id", "property_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

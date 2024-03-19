@@ -3,19 +3,19 @@
 /// <p>Provides details about the broker usernames for the specified broker. Doesn't apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAmazonMqBrokerUsersDetails {
+pub struct AwsAmazonMqBrokerUsersDetails  {
     /// <p>The type of change pending for the broker user.</p>
     pub pending_change: ::std::option::Option<::std::string::String>,
     /// <p>The username of the broker user.</p>
     pub username: ::std::option::Option<::std::string::String>,
 }
-impl AwsAmazonMqBrokerUsersDetails {
+impl  AwsAmazonMqBrokerUsersDetails  {
     /// <p>The type of change pending for the broker user.</p>
-    pub fn pending_change(&self) -> ::std::option::Option<&str> {
+    pub fn pending_change(&self) -> ::std::option::Option<& str> {
         self.pending_change.as_deref()
     }
     /// <p>The username of the broker user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsAmazonMqBrokerUsersDetailsBuilder {
     }
     /// <p>The type of change pending for the broker user.</p>
     pub fn set_pending_change(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pending_change = input;
-        self
+        self.pending_change = input; self
     }
     /// <p>The type of change pending for the broker user.</p>
     pub fn get_pending_change(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsAmazonMqBrokerUsersDetailsBuilder {
     }
     /// <p>The username of the broker user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the broker user.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsAmazonMqBrokerUsersDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerUsersDetails`](crate::types::AwsAmazonMqBrokerUsersDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerUsersDetails {
         crate::types::AwsAmazonMqBrokerUsersDetails {
-            pending_change: self.pending_change,
-            username: self.username,
+            pending_change: self.pending_change
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

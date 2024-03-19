@@ -3,19 +3,19 @@
 /// <p>The replication details of the data replication-enabled broker. Only returned if dataReplicationMode or pendingDataReplicationMode is set to CRDR.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataReplicationMetadataOutput {
+pub struct DataReplicationMetadataOutput  {
     /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
     pub data_replication_counterpart: ::std::option::Option<crate::types::DataReplicationCounterpart>,
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
     pub data_replication_role: ::std::option::Option<::std::string::String>,
 }
-impl DataReplicationMetadataOutput {
+impl  DataReplicationMetadataOutput  {
     /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
-    pub fn data_replication_counterpart(&self) -> ::std::option::Option<&crate::types::DataReplicationCounterpart> {
+    pub fn data_replication_counterpart(&self) -> ::std::option::Option<& crate::types::DataReplicationCounterpart> {
         self.data_replication_counterpart.as_ref()
     }
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
-    pub fn data_replication_role(&self) -> ::std::option::Option<&str> {
+    pub fn data_replication_role(&self) -> ::std::option::Option<& str> {
         self.data_replication_role.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataReplicationMetadataOutputBuilder {
     }
     /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
     pub fn set_data_replication_counterpart(mut self, input: ::std::option::Option<crate::types::DataReplicationCounterpart>) -> Self {
-        self.data_replication_counterpart = input;
-        self
+        self.data_replication_counterpart = input; self
     }
     /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
     pub fn get_data_replication_counterpart(&self) -> &::std::option::Option<crate::types::DataReplicationCounterpart> {
@@ -56,8 +55,7 @@ impl DataReplicationMetadataOutputBuilder {
     }
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
     pub fn set_data_replication_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_replication_role = input;
-        self
+        self.data_replication_role = input; self
     }
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
     pub fn get_data_replication_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl DataReplicationMetadataOutputBuilder {
     /// Consumes the builder and constructs a [`DataReplicationMetadataOutput`](crate::types::DataReplicationMetadataOutput).
     pub fn build(self) -> crate::types::DataReplicationMetadataOutput {
         crate::types::DataReplicationMetadataOutput {
-            data_replication_counterpart: self.data_replication_counterpart,
-            data_replication_role: self.data_replication_role,
+            data_replication_counterpart: self.data_replication_counterpart
+            ,
+            data_replication_role: self.data_replication_role
+            ,
         }
     }
 }
+

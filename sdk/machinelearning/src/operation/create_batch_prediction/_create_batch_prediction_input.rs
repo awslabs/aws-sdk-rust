@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBatchPredictionInput {
+pub struct CreateBatchPredictionInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
@@ -15,26 +15,26 @@ pub struct CreateBatchPredictionInput {
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub output_uri: ::std::option::Option<::std::string::String>,
 }
-impl CreateBatchPredictionInput {
+impl  CreateBatchPredictionInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-    pub fn batch_prediction_id(&self) -> ::std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> ::std::option::Option<& str> {
         self.batch_prediction_id.as_deref()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-    pub fn batch_prediction_name(&self) -> ::std::option::Option<&str> {
+    pub fn batch_prediction_name(&self) -> ::std::option::Option<& str> {
         self.batch_prediction_name.as_deref()
     }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
-    pub fn batch_prediction_data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn batch_prediction_data_source_id(&self) -> ::std::option::Option<& str> {
         self.batch_prediction_data_source_id.as_deref()
     }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-    pub fn output_uri(&self) -> ::std::option::Option<&str> {
+    pub fn output_uri(&self) -> ::std::option::Option<& str> {
         self.output_uri.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl CreateBatchPredictionInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub fn set_batch_prediction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_prediction_id = input;
-        self
+        self.batch_prediction_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl CreateBatchPredictionInputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
     pub fn set_batch_prediction_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_prediction_name = input;
-        self
+        self.batch_prediction_name = input; self
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
     pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl CreateBatchPredictionInputBuilder {
     }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl CreateBatchPredictionInputBuilder {
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
     pub fn set_batch_prediction_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_prediction_data_source_id = input;
-        self
+        self.batch_prediction_data_source_id = input; self
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
     pub fn get_batch_prediction_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl CreateBatchPredictionInputBuilder {
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_uri = input;
-        self
+        self.output_uri = input; self
     }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
@@ -134,16 +129,21 @@ impl CreateBatchPredictionInputBuilder {
         &self.output_uri
     }
     /// Consumes the builder and constructs a [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_batch_prediction::CreateBatchPredictionInput {
-            batch_prediction_id: self.batch_prediction_id,
-            batch_prediction_name: self.batch_prediction_name,
-            ml_model_id: self.ml_model_id,
-            batch_prediction_data_source_id: self.batch_prediction_data_source_id,
-            output_uri: self.output_uri,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_batch_prediction::CreateBatchPredictionInput {
+                batch_prediction_id: self.batch_prediction_id
+                ,
+                batch_prediction_name: self.batch_prediction_name
+                ,
+                ml_model_id: self.ml_model_id
+                ,
+                batch_prediction_data_source_id: self.batch_prediction_data_source_id
+                ,
+                output_uri: self.output_uri
+                ,
+            }
+        )
     }
 }
+

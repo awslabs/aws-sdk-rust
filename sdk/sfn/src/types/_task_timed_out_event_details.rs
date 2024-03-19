@@ -3,7 +3,7 @@
 /// <p>Contains details about a resource timeout that occurred during an execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TaskTimedOutEventDetails {
+pub struct TaskTimedOutEventDetails  {
     /// <p>The service name of the resource in a task state.</p>
     pub resource_type: ::std::string::String,
     /// <p>The action of the resource called by a task state.</p>
@@ -13,27 +13,25 @@ pub struct TaskTimedOutEventDetails {
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub cause: ::std::option::Option<::std::string::String>,
 }
-impl TaskTimedOutEventDetails {
+impl  TaskTimedOutEventDetails  {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> & str {
+        use std::ops::Deref; self.resource_type.deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> &str {
-        use std::ops::Deref;
-        self.resource.deref()
+    pub fn resource(&self) -> & str {
+        use std::ops::Deref; self.resource.deref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> ::std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl ::std::fmt::Debug for TaskTimedOutEventDetails {
+impl  ::std::fmt::Debug for TaskTimedOutEventDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskTimedOutEventDetails");
         formatter.field("resource_type", &self.resource_type);
@@ -68,8 +66,7 @@ impl TaskTimedOutEventDetailsBuilder {
     }
     /// <p>The service name of the resource in a task state.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The service name of the resource in a task state.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +80,7 @@ impl TaskTimedOutEventDetailsBuilder {
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +93,7 @@ impl TaskTimedOutEventDetailsBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The error code of the failure.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +106,7 @@ impl TaskTimedOutEventDetailsBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,22 +117,24 @@ impl TaskTimedOutEventDetailsBuilder {
     /// - [`resource_type`](crate::types::builders::TaskTimedOutEventDetailsBuilder::resource_type)
     /// - [`resource`](crate::types::builders::TaskTimedOutEventDetailsBuilder::resource)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskTimedOutEventDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskTimedOutEventDetails {
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building TaskTimedOutEventDetails",
-                )
-            })?,
-            resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource",
-                    "resource was not specified but it is required when building TaskTimedOutEventDetails",
-                )
-            })?,
-            error: self.error,
-            cause: self.cause,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskTimedOutEventDetails {
+                resource_type: self.resource_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "resource_type was not specified but it is required when building TaskTimedOutEventDetails")
+                    )?
+                ,
+                resource: self.resource
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource", "resource was not specified but it is required when building TaskTimedOutEventDetails")
+                    )?
+                ,
+                error: self.error
+                ,
+                cause: self.cause
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TaskTimedOutEventDetailsBuilder {
@@ -151,3 +147,4 @@ impl ::std::fmt::Debug for TaskTimedOutEventDetailsBuilder {
         formatter.finish()
     }
 }
+

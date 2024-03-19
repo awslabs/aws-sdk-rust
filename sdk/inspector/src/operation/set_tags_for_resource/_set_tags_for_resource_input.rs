@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetTagsForResourceInput {
+pub struct SetTagsForResourceInput  {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl SetTagsForResourceInput {
+impl  SetTagsForResourceInput  {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SetTagsForResourceInput {
@@ -32,7 +33,7 @@ impl SetTagsForResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetTagsForResourceInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl SetTagsForResourceInputBuilder {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
@@ -43,8 +44,7 @@ impl SetTagsForResourceInputBuilder {
     }
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl SetTagsForResourceInputBuilder {
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_tags_for_resource::SetTagsForResourceInput {
-            resource_arn: self.resource_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_tags_for_resource::SetTagsForResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

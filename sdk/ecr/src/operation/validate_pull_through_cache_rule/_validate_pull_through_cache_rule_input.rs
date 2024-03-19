@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidatePullThroughCacheRuleInput {
+pub struct ValidatePullThroughCacheRuleInput  {
     /// <p>The repository name prefix associated with the pull through cache rule.</p>
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
 }
-impl ValidatePullThroughCacheRuleInput {
+impl  ValidatePullThroughCacheRuleInput  {
     /// <p>The repository name prefix associated with the pull through cache rule.</p>
-    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<& str> {
         self.ecr_repository_prefix.as_deref()
     }
     /// <p>The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ValidatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The repository name prefix associated with the pull through cache rule.</p>
     pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecr_repository_prefix = input;
-        self
+        self.ecr_repository_prefix = input; self
     }
     /// <p>The repository name prefix associated with the pull through cache rule.</p>
     pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ValidatePullThroughCacheRuleInputBuilder {
     }
     /// <p>The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }
     /// Consumes the builder and constructs a [`ValidatePullThroughCacheRuleInput`](crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput {
-            ecr_repository_prefix: self.ecr_repository_prefix,
-            registry_id: self.registry_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleInput {
+                ecr_repository_prefix: self.ecr_repository_prefix
+                ,
+                registry_id: self.registry_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNodegroupConfigInput {
+pub struct UpdateNodegroupConfigInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed node group to update.</p>
@@ -18,33 +18,33 @@ pub struct UpdateNodegroupConfigInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateNodegroupConfigInput {
+impl  UpdateNodegroupConfigInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<& str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
-    pub fn labels(&self) -> ::std::option::Option<&crate::types::UpdateLabelsPayload> {
+    pub fn labels(&self) -> ::std::option::Option<& crate::types::UpdateLabelsPayload> {
         self.labels.as_ref()
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    pub fn taints(&self) -> ::std::option::Option<&crate::types::UpdateTaintsPayload> {
+    pub fn taints(&self) -> ::std::option::Option<& crate::types::UpdateTaintsPayload> {
         self.taints.as_ref()
     }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
-    pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::NodegroupScalingConfig> {
+    pub fn scaling_config(&self) -> ::std::option::Option<& crate::types::NodegroupScalingConfig> {
         self.scaling_config.as_ref()
     }
     /// <p>The node group update configuration.</p>
-    pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
+    pub fn update_config(&self) -> ::std::option::Option<& crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The name of the managed node group to update.</p>
     pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nodegroup_name = input;
-        self
+        self.nodegroup_name = input; self
     }
     /// <p>The name of the managed node group to update.</p>
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<crate::types::UpdateLabelsPayload>) -> Self {
-        self.labels = input;
-        self
+        self.labels = input; self
     }
     /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn get_labels(&self) -> &::std::option::Option<crate::types::UpdateLabelsPayload> {
@@ -119,8 +116,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub fn set_taints(mut self, input: ::std::option::Option<crate::types::UpdateTaintsPayload>) -> Self {
-        self.taints = input;
-        self
+        self.taints = input; self
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub fn get_taints(&self) -> &::std::option::Option<crate::types::UpdateTaintsPayload> {
@@ -133,8 +129,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
     pub fn set_scaling_config(mut self, input: ::std::option::Option<crate::types::NodegroupScalingConfig>) -> Self {
-        self.scaling_config = input;
-        self
+        self.scaling_config = input; self
     }
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
     pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::NodegroupScalingConfig> {
@@ -147,8 +142,7 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>The node group update configuration.</p>
     pub fn set_update_config(mut self, input: ::std::option::Option<crate::types::NodegroupUpdateConfig>) -> Self {
-        self.update_config = input;
-        self
+        self.update_config = input; self
     }
     /// <p>The node group update configuration.</p>
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
@@ -161,26 +155,32 @@ impl UpdateNodegroupConfigInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateNodegroupConfigInput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput {
-            cluster_name: self.cluster_name,
-            nodegroup_name: self.nodegroup_name,
-            labels: self.labels,
-            taints: self.taints,
-            scaling_config: self.scaling_config,
-            update_config: self.update_config,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput {
+                cluster_name: self.cluster_name
+                ,
+                nodegroup_name: self.nodegroup_name
+                ,
+                labels: self.labels
+                ,
+                taints: self.taints
+                ,
+                scaling_config: self.scaling_config
+                ,
+                update_config: self.update_config
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

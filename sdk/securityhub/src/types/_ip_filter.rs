@@ -3,13 +3,13 @@
 /// <p>The IP filter for querying findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpFilter {
+pub struct IpFilter  {
     /// <p>A finding's CIDR value.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
-impl IpFilter {
+impl  IpFilter  {
     /// <p>A finding's CIDR value.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl IpFilterBuilder {
     }
     /// <p>A finding's CIDR value.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>A finding's CIDR value.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl IpFilterBuilder {
     }
     /// Consumes the builder and constructs a [`IpFilter`](crate::types::IpFilter).
     pub fn build(self) -> crate::types::IpFilter {
-        crate::types::IpFilter { cidr: self.cidr }
+        crate::types::IpFilter {
+            cidr: self.cidr
+            ,
+        }
     }
 }
+

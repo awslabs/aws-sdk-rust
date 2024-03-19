@@ -3,13 +3,13 @@
 /// Placeholder documentation for CancelInputDeviceTransferRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelInputDeviceTransferInput {
+pub struct CancelInputDeviceTransferInput  {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelInputDeviceTransferInput {
+impl  CancelInputDeviceTransferInput  {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl CancelInputDeviceTransferInputBuilder {
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_device_id
     }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput {
-            input_device_id: self.input_device_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput {
+                input_device_id: self.input_device_id
+                ,
+            }
+        )
     }
 }
+

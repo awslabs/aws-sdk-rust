@@ -3,23 +3,23 @@
 /// <p>A <code>ReplayDestination</code> object that contains details about a replay.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplayDestination {
+pub struct ReplayDestination  {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub arn: ::std::string::String,
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub filter_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ReplayDestination {
+impl  ReplayDestination  {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_arns.is_none()`.
-    pub fn filter_arns(&self) -> &[::std::string::String] {
-        self.filter_arns.as_deref().unwrap_or_default()
+    pub fn filter_arns(&self) -> & [::std::string::String] {
+        self.filter_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReplayDestination {
@@ -34,7 +34,7 @@ impl ReplayDestination {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplayDestinationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ReplayDestinationBuilder {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
@@ -45,8 +45,7 @@ impl ReplayDestinationBuilder {
     }
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ReplayDestinationBuilder {
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub fn filter_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_arns.unwrap_or_default();
-        v.push(input.into());
-        self.filter_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.filter_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn set_filter_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.filter_arns = input;
-        self
+    pub fn set_filter_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.filter_arns = input; self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn get_filter_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_filter_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.filter_arns
     }
     /// Consumes the builder and constructs a [`ReplayDestination`](crate::types::ReplayDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ReplayDestinationBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplayDestination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplayDestination {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ReplayDestination",
-                )
-            })?,
-            filter_arns: self.filter_arns,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplayDestination {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ReplayDestination")
+                    )?
+                ,
+                filter_arns: self.filter_arns
+                ,
+            }
+        )
     }
 }
+

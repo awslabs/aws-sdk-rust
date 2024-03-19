@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSessionsInput {
+pub struct DescribeSessionsInput  {
     /// <p>The name of the stack. This value is case-sensitive.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the fleet. This value is case-sensitive.</p>
@@ -18,21 +18,21 @@ pub struct DescribeSessionsInput {
     /// <p>The identifier for the instance hosting the session.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSessionsInput {
+impl  DescribeSessionsInput  {
     /// <p>The name of the stack. This value is case-sensitive.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the fleet. This value is case-sensitive.</p>
-    pub fn fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_name(&self) -> ::std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
@@ -40,11 +40,11 @@ impl DescribeSessionsInput {
         self.limit
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The identifier for the instance hosting the session.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The name of the stack. This value is case-sensitive.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name of the stack. This value is case-sensitive.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The name of the fleet. This value is case-sensitive.</p>
     pub fn set_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the fleet. This value is case-sensitive.</p>
     pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -147,8 +142,7 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
@@ -161,25 +155,32 @@ impl DescribeSessionsInputBuilder {
     }
     /// <p>The identifier for the instance hosting the session.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier for the instance hosting the session.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
-            stack_name: self.stack_name,
-            fleet_name: self.fleet_name,
-            user_id: self.user_id,
-            next_token: self.next_token,
-            limit: self.limit,
-            authentication_type: self.authentication_type,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_sessions::DescribeSessionsInput {
+                stack_name: self.stack_name
+                ,
+                fleet_name: self.fleet_name
+                ,
+                user_id: self.user_id
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+                authentication_type: self.authentication_type
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

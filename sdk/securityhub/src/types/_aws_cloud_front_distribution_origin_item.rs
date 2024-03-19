@@ -3,7 +3,7 @@
 /// <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Elemental MediaStore, or other server from which CloudFront gets your files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginItem {
+pub struct AwsCloudFrontDistributionOriginItem  {
     /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the origin or origin group.</p>
@@ -15,25 +15,25 @@ pub struct AwsCloudFrontDistributionOriginItem {
     /// <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub custom_origin_config: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>,
 }
-impl AwsCloudFrontDistributionOriginItem {
+impl  AwsCloudFrontDistributionOriginItem  {
     /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A unique identifier for the origin or origin group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin.</p>
-    pub fn origin_path(&self) -> ::std::option::Option<&str> {
+    pub fn origin_path(&self) -> ::std::option::Option<& str> {
         self.origin_path.as_deref()
     }
     /// <p>An origin that is an S3 bucket that is not configured with static website hosting.</p>
-    pub fn s3_origin_config(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginS3OriginConfig> {
+    pub fn s3_origin_config(&self) -> ::std::option::Option<& crate::types::AwsCloudFrontDistributionOriginS3OriginConfig> {
         self.s3_origin_config.as_ref()
     }
     /// <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
-    pub fn custom_origin_config(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig> {
+    pub fn custom_origin_config(&self) -> ::std::option::Option<& crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig> {
         self.custom_origin_config.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     }
     /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     }
     /// <p>A unique identifier for the origin or origin group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the origin or origin group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     }
     /// <p>An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin.</p>
     pub fn set_origin_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_path = input;
-        self
+        self.origin_path = input; self
     }
     /// <p>An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin.</p>
     pub fn get_origin_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     }
     /// <p>An origin that is an S3 bucket that is not configured with static website hosting.</p>
     pub fn set_s3_origin_config(mut self, input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginS3OriginConfig>) -> Self {
-        self.s3_origin_config = input;
-        self
+        self.s3_origin_config = input; self
     }
     /// <p>An origin that is an S3 bucket that is not configured with static website hosting.</p>
     pub fn get_s3_origin_config(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginS3OriginConfig> {
@@ -118,8 +114,7 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     }
     /// <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub fn set_custom_origin_config(mut self, input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>) -> Self {
-        self.custom_origin_config = input;
-        self
+        self.custom_origin_config = input; self
     }
     /// <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this attribute. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub fn get_custom_origin_config(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig> {
@@ -128,11 +123,17 @@ impl AwsCloudFrontDistributionOriginItemBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginItem`](crate::types::AwsCloudFrontDistributionOriginItem).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginItem {
         crate::types::AwsCloudFrontDistributionOriginItem {
-            domain_name: self.domain_name,
-            id: self.id,
-            origin_path: self.origin_path,
-            s3_origin_config: self.s3_origin_config,
-            custom_origin_config: self.custom_origin_config,
+            domain_name: self.domain_name
+            ,
+            id: self.id
+            ,
+            origin_path: self.origin_path
+            ,
+            s3_origin_config: self.s3_origin_config
+            ,
+            custom_origin_config: self.custom_origin_config
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactTargetInfo {
+pub struct ContactTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub is_essential: bool,
 }
-impl ContactTargetInfo {
+impl  ContactTargetInfo  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
@@ -41,8 +41,7 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ContactTargetInfoBuilder {
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn set_is_essential(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_essential = input;
-        self
+        self.is_essential = input; self
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn get_is_essential(&self) -> &::std::option::Option<bool> {
@@ -67,14 +65,17 @@ impl ContactTargetInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`is_essential`](crate::types::builders::ContactTargetInfoBuilder::is_essential)
     pub fn build(self) -> ::std::result::Result<crate::types::ContactTargetInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContactTargetInfo {
-            contact_id: self.contact_id,
-            is_essential: self.is_essential.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_essential",
-                    "is_essential was not specified but it is required when building ContactTargetInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContactTargetInfo {
+                contact_id: self.contact_id
+                ,
+                is_essential: self.is_essential
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_essential", "is_essential was not specified but it is required when building ContactTargetInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

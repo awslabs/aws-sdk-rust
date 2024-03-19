@@ -4,7 +4,7 @@
 /// <p>Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by updating the connection in the console.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Connection {
+pub struct Connection  {
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between Amazon Web Services.</p><note>
@@ -20,31 +20,31 @@ pub struct Connection {
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub host_arn: ::std::option::Option<::std::string::String>,
 }
-impl Connection {
+impl  Connection  {
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
-    pub fn connection_name(&self) -> ::std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between Amazon Web Services.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The current status of the connection.</p>
-    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
+    pub fn connection_status(&self) -> ::std::option::Option<& crate::types::ConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl ConnectionBuilder {
     }
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
     pub fn set_connection_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
     pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ConnectionBuilder {
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between Amazon Web Services.</p><note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
@@ -108,8 +106,7 @@ impl ConnectionBuilder {
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -122,8 +119,7 @@ impl ConnectionBuilder {
     }
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl ConnectionBuilder {
     }
     /// <p>The current status of the connection.</p>
     pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
-        self.connection_status = input;
-        self
+        self.connection_status = input; self
     }
     /// <p>The current status of the connection.</p>
     pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
@@ -150,8 +145,7 @@ impl ConnectionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,12 +154,19 @@ impl ConnectionBuilder {
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
-            connection_name: self.connection_name,
-            connection_arn: self.connection_arn,
-            provider_type: self.provider_type,
-            owner_account_id: self.owner_account_id,
-            connection_status: self.connection_status,
-            host_arn: self.host_arn,
+            connection_name: self.connection_name
+            ,
+            connection_arn: self.connection_arn
+            ,
+            provider_type: self.provider_type
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            connection_status: self.connection_status
+            ,
+            host_arn: self.host_arn
+            ,
         }
     }
 }
+

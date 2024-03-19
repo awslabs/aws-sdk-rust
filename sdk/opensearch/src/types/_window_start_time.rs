@@ -3,13 +3,13 @@
 /// <p>The desired start time for an <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak maintenance window</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WindowStartTime {
+pub struct WindowStartTime  {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     pub hours: i64,
     /// <p>The start minute of the window, in UTC.</p>
     pub minutes: i64,
 }
-impl WindowStartTime {
+impl  WindowStartTime  {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     pub fn hours(&self) -> i64 {
         self.hours
@@ -42,8 +42,7 @@ impl WindowStartTimeBuilder {
     }
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     pub fn set_hours(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.hours = input;
-        self
+        self.hours = input; self
     }
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     pub fn get_hours(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl WindowStartTimeBuilder {
     }
     /// <p>The start minute of the window, in UTC.</p>
     pub fn set_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.minutes = input;
-        self
+        self.minutes = input; self
     }
     /// <p>The start minute of the window, in UTC.</p>
     pub fn get_minutes(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,13 @@ impl WindowStartTimeBuilder {
     /// Consumes the builder and constructs a [`WindowStartTime`](crate::types::WindowStartTime).
     pub fn build(self) -> crate::types::WindowStartTime {
         crate::types::WindowStartTime {
-            hours: self.hours.unwrap_or_default(),
-            minutes: self.minutes.unwrap_or_default(),
+            hours: self.hours
+                .unwrap_or_default()
+            ,
+            minutes: self.minutes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

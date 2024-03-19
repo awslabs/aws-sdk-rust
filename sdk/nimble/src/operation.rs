@@ -147,3 +147,4 @@ pub mod update_studio;
 
 /// Types for the `UpdateStudioComponent` operation.
 pub mod update_studio_component;
+

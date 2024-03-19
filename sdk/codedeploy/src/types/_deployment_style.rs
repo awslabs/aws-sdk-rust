@@ -3,19 +3,19 @@
 /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentStyle {
+pub struct DeploymentStyle  {
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub deployment_option: ::std::option::Option<crate::types::DeploymentOption>,
 }
-impl DeploymentStyle {
+impl  DeploymentStyle  {
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
-    pub fn deployment_option(&self) -> ::std::option::Option<&crate::types::DeploymentOption> {
+    pub fn deployment_option(&self) -> ::std::option::Option<& crate::types::DeploymentOption> {
         self.deployment_option.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeploymentStyleBuilder {
     }
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -55,8 +54,7 @@ impl DeploymentStyleBuilder {
     }
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub fn set_deployment_option(mut self, input: ::std::option::Option<crate::types::DeploymentOption>) -> Self {
-        self.deployment_option = input;
-        self
+        self.deployment_option = input; self
     }
     /// <p>Indicates whether to route deployment traffic behind a load balancer.</p>
     pub fn get_deployment_option(&self) -> &::std::option::Option<crate::types::DeploymentOption> {
@@ -65,8 +63,11 @@ impl DeploymentStyleBuilder {
     /// Consumes the builder and constructs a [`DeploymentStyle`](crate::types::DeploymentStyle).
     pub fn build(self) -> crate::types::DeploymentStyle {
         crate::types::DeploymentStyle {
-            deployment_type: self.deployment_type,
-            deployment_option: self.deployment_option,
+            deployment_type: self.deployment_type
+            ,
+            deployment_option: self.deployment_option
+            ,
         }
     }
 }
+

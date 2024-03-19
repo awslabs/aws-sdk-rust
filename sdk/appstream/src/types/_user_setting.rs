@@ -3,7 +3,7 @@
 /// <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSetting {
+pub struct UserSetting  {
     /// <p>The action that is enabled or disabled.</p>
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>Indicates whether the action is enabled or disabled.</p>
@@ -15,13 +15,13 @@ pub struct UserSetting {
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub maximum_length: ::std::option::Option<i32>,
 }
-impl UserSetting {
+impl  UserSetting  {
     /// <p>The action that is enabled or disabled.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
@@ -57,8 +57,7 @@ impl UserSettingBuilder {
     }
     /// <p>The action that is enabled or disabled.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action that is enabled or disabled.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
@@ -72,8 +71,7 @@ impl UserSettingBuilder {
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
@@ -94,8 +92,7 @@ impl UserSettingBuilder {
     /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
     /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
     pub fn set_maximum_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.maximum_length = input;
-        self
+        self.maximum_length = input; self
     }
     /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
     /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
@@ -108,9 +105,13 @@ impl UserSettingBuilder {
     /// Consumes the builder and constructs a [`UserSetting`](crate::types::UserSetting).
     pub fn build(self) -> crate::types::UserSetting {
         crate::types::UserSetting {
-            action: self.action,
-            permission: self.permission,
-            maximum_length: self.maximum_length,
+            action: self.action
+            ,
+            permission: self.permission
+            ,
+            maximum_length: self.maximum_length
+            ,
         }
     }
 }
+

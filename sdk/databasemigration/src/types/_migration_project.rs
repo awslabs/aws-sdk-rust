@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a migration project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MigrationProject {
+pub struct MigrationProject  {
     /// <p>The name of the migration project.</p>
     pub migration_project_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN string that uniquely identifies the migration project.</p>
@@ -11,9 +11,9 @@ pub struct MigrationProject {
     /// <p>The time when the migration project was created.</p>
     pub migration_project_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub source_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
+    pub source_data_provider_descriptors: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>,
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub target_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
+    pub target_data_provider_descriptors: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>,
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated instance profile.</p>
@@ -25,49 +25,51 @@ pub struct MigrationProject {
     /// <p>The schema conversion application attributes, including the Amazon S3 bucket name and Amazon S3 role ARN.</p>
     pub schema_conversion_application_attributes: ::std::option::Option<crate::types::ScApplicationAttributes>,
 }
-impl MigrationProject {
+impl  MigrationProject  {
     /// <p>The name of the migration project.</p>
-    pub fn migration_project_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_name(&self) -> ::std::option::Option<& str> {
         self.migration_project_name.as_deref()
     }
     /// <p>The ARN string that uniquely identifies the migration project.</p>
-    pub fn migration_project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_arn(&self) -> ::std::option::Option<& str> {
         self.migration_project_arn.as_deref()
     }
     /// <p>The time when the migration project was created.</p>
-    pub fn migration_project_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn migration_project_creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.migration_project_creation_time.as_ref()
     }
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_data_provider_descriptors.is_none()`.
-    pub fn source_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptor] {
-        self.source_data_provider_descriptors.as_deref().unwrap_or_default()
+    pub fn source_data_provider_descriptors(&self) -> & [crate::types::DataProviderDescriptor] {
+        self.source_data_provider_descriptors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_provider_descriptors.is_none()`.
-    pub fn target_data_provider_descriptors(&self) -> &[crate::types::DataProviderDescriptor] {
-        self.target_data_provider_descriptors.as_deref().unwrap_or_default()
+    pub fn target_data_provider_descriptors(&self) -> & [crate::types::DataProviderDescriptor] {
+        self.target_data_provider_descriptors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
-    pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The name of the associated instance profile.</p>
-    pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> ::std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
-    pub fn transformation_rules(&self) -> ::std::option::Option<&str> {
+    pub fn transformation_rules(&self) -> ::std::option::Option<& str> {
         self.transformation_rules.as_deref()
     }
     /// <p>A user-friendly description of the migration project.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The schema conversion application attributes, including the Amazon S3 bucket name and Amazon S3 role ARN.</p>
-    pub fn schema_conversion_application_attributes(&self) -> ::std::option::Option<&crate::types::ScApplicationAttributes> {
+    pub fn schema_conversion_application_attributes(&self) -> ::std::option::Option<& crate::types::ScApplicationAttributes> {
         self.schema_conversion_application_attributes.as_ref()
     }
 }
@@ -85,8 +87,8 @@ pub struct MigrationProjectBuilder {
     pub(crate) migration_project_name: ::std::option::Option<::std::string::String>,
     pub(crate) migration_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) migration_project_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) source_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
-    pub(crate) target_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
+    pub(crate) source_data_provider_descriptors: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>,
+    pub(crate) target_data_provider_descriptors: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>,
     pub(crate) instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) transformation_rules: ::std::option::Option<::std::string::String>,
@@ -101,8 +103,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The name of the migration project.</p>
     pub fn set_migration_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_name = input;
-        self
+        self.migration_project_name = input; self
     }
     /// <p>The name of the migration project.</p>
     pub fn get_migration_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +116,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The ARN string that uniquely identifies the migration project.</p>
     pub fn set_migration_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_arn = input;
-        self
+        self.migration_project_arn = input; self
     }
     /// <p>The ARN string that uniquely identifies the migration project.</p>
     pub fn get_migration_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The time when the migration project was created.</p>
     pub fn set_migration_project_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.migration_project_creation_time = input;
-        self
+        self.migration_project_creation_time = input; self
     }
     /// <p>The time when the migration project was created.</p>
     pub fn get_migration_project_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -143,20 +142,16 @@ impl MigrationProjectBuilder {
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
     pub fn source_data_provider_descriptors(mut self, input: crate::types::DataProviderDescriptor) -> Self {
         let mut v = self.source_data_provider_descriptors.unwrap_or_default();
-        v.push(input);
-        self.source_data_provider_descriptors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_data_provider_descriptors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn set_source_data_provider_descriptors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
-    ) -> Self {
-        self.source_data_provider_descriptors = input;
-        self
+    pub fn set_source_data_provider_descriptors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>) -> Self {
+        self.source_data_provider_descriptors = input; self
     }
     /// <p>Information about the source data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn get_source_data_provider_descriptors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>> {
+    pub fn get_source_data_provider_descriptors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>> {
         &self.source_data_provider_descriptors
     }
     /// Appends an item to `target_data_provider_descriptors`.
@@ -166,20 +161,16 @@ impl MigrationProjectBuilder {
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
     pub fn target_data_provider_descriptors(mut self, input: crate::types::DataProviderDescriptor) -> Self {
         let mut v = self.target_data_provider_descriptors.unwrap_or_default();
-        v.push(input);
-        self.target_data_provider_descriptors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_data_provider_descriptors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn set_target_data_provider_descriptors(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>>,
-    ) -> Self {
-        self.target_data_provider_descriptors = input;
-        self
+    pub fn set_target_data_provider_descriptors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>>) -> Self {
+        self.target_data_provider_descriptors = input; self
     }
     /// <p>Information about the target data provider, including the name or ARN, and Secrets Manager parameters.</p>
-    pub fn get_target_data_provider_descriptors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptor>> {
+    pub fn get_target_data_provider_descriptors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataProviderDescriptor>> {
         &self.target_data_provider_descriptors
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
@@ -189,8 +180,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_arn = input;
-        self
+        self.instance_profile_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile for your migration project.</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +193,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The name of the associated instance profile.</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_name = input;
-        self
+        self.instance_profile_name = input; self
     }
     /// <p>The name of the associated instance profile.</p>
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +206,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
     pub fn set_transformation_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformation_rules = input;
-        self
+        self.transformation_rules = input; self
     }
     /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
     pub fn get_transformation_rules(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +219,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>A user-friendly description of the migration project.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-friendly description of the migration project.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -245,8 +232,7 @@ impl MigrationProjectBuilder {
     }
     /// <p>The schema conversion application attributes, including the Amazon S3 bucket name and Amazon S3 role ARN.</p>
     pub fn set_schema_conversion_application_attributes(mut self, input: ::std::option::Option<crate::types::ScApplicationAttributes>) -> Self {
-        self.schema_conversion_application_attributes = input;
-        self
+        self.schema_conversion_application_attributes = input; self
     }
     /// <p>The schema conversion application attributes, including the Amazon S3 bucket name and Amazon S3 role ARN.</p>
     pub fn get_schema_conversion_application_attributes(&self) -> &::std::option::Option<crate::types::ScApplicationAttributes> {
@@ -255,16 +241,27 @@ impl MigrationProjectBuilder {
     /// Consumes the builder and constructs a [`MigrationProject`](crate::types::MigrationProject).
     pub fn build(self) -> crate::types::MigrationProject {
         crate::types::MigrationProject {
-            migration_project_name: self.migration_project_name,
-            migration_project_arn: self.migration_project_arn,
-            migration_project_creation_time: self.migration_project_creation_time,
-            source_data_provider_descriptors: self.source_data_provider_descriptors,
-            target_data_provider_descriptors: self.target_data_provider_descriptors,
-            instance_profile_arn: self.instance_profile_arn,
-            instance_profile_name: self.instance_profile_name,
-            transformation_rules: self.transformation_rules,
-            description: self.description,
-            schema_conversion_application_attributes: self.schema_conversion_application_attributes,
+            migration_project_name: self.migration_project_name
+            ,
+            migration_project_arn: self.migration_project_arn
+            ,
+            migration_project_creation_time: self.migration_project_creation_time
+            ,
+            source_data_provider_descriptors: self.source_data_provider_descriptors
+            ,
+            target_data_provider_descriptors: self.target_data_provider_descriptors
+            ,
+            instance_profile_arn: self.instance_profile_arn
+            ,
+            instance_profile_name: self.instance_profile_name
+            ,
+            transformation_rules: self.transformation_rules
+            ,
+            description: self.description
+            ,
+            schema_conversion_application_attributes: self.schema_conversion_application_attributes
+            ,
         }
     }
 }
+

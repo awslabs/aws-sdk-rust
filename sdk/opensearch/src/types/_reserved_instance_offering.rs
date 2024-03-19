@@ -3,7 +3,7 @@
 /// <p>Details of an OpenSearch Reserved Instance offering.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedInstanceOffering {
+pub struct ReservedInstanceOffering  {
     /// <p>The unique identifier of the Reserved Instance offering.</p>
     pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
@@ -19,15 +19,15 @@ pub struct ReservedInstanceOffering {
     /// <p>Payment option for the Reserved Instance offering</p>
     pub payment_option: ::std::option::Option<crate::types::ReservedInstancePaymentOption>,
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
-    pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
 }
-impl ReservedInstanceOffering {
+impl  ReservedInstanceOffering  {
     /// <p>The unique identifier of the Reserved Instance offering.</p>
-    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_instance_offering_id.as_deref()
     }
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
@@ -43,18 +43,19 @@ impl ReservedInstanceOffering {
         self.usage_price
     }
     /// <p>The currency code for the Reserved Instance offering.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>Payment option for the Reserved Instance offering</p>
-    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::ReservedInstancePaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<& crate::types::ReservedInstancePaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
-    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
-        self.recurring_charges.as_deref().unwrap_or_default()
+    pub fn recurring_charges(&self) -> & [crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReservedInstanceOffering {
@@ -75,7 +76,7 @@ pub struct ReservedInstanceOfferingBuilder {
     pub(crate) usage_price: ::std::option::Option<f64>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) payment_option: ::std::option::Option<crate::types::ReservedInstancePaymentOption>,
-    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
 }
 impl ReservedInstanceOfferingBuilder {
     /// <p>The unique identifier of the Reserved Instance offering.</p>
@@ -85,8 +86,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The unique identifier of the Reserved Instance offering.</p>
     pub fn set_reserved_instance_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_instance_offering_id = input;
-        self
+        self.reserved_instance_offering_id = input; self
     }
     /// <p>The unique identifier of the Reserved Instance offering.</p>
     pub fn get_reserved_instance_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The OpenSearch instance type offered by the Reserved Instance offering.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
@@ -113,8 +112,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration, in seconds, for which the offering will reserve the OpenSearch instance.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -127,8 +125,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.</p>
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
     }
     /// <p>The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.</p>
     pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
@@ -141,8 +138,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.usage_price = input;
-        self
+        self.usage_price = input; self
     }
     /// <p>The hourly rate at which you're charged for the domain using this Reserved Instance.</p>
     pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
@@ -155,8 +151,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>The currency code for the Reserved Instance offering.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code for the Reserved Instance offering.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl ReservedInstanceOfferingBuilder {
     }
     /// <p>Payment option for the Reserved Instance offering</p>
     pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::ReservedInstancePaymentOption>) -> Self {
-        self.payment_option = input;
-        self
+        self.payment_option = input; self
     }
     /// <p>Payment option for the Reserved Instance offering</p>
     pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::ReservedInstancePaymentOption> {
@@ -183,30 +177,39 @@ impl ReservedInstanceOfferingBuilder {
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-        v.push(input);
-        self.recurring_charges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recurring_charges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
-    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
-        self.recurring_charges = input;
-        self
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>) -> Self {
+        self.recurring_charges = input; self
     }
     /// <p>The recurring charge to your account, regardless of whether you creates any domains using the offering.</p>
-    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedInstanceOffering`](crate::types::ReservedInstanceOffering).
     pub fn build(self) -> crate::types::ReservedInstanceOffering {
         crate::types::ReservedInstanceOffering {
-            reserved_instance_offering_id: self.reserved_instance_offering_id,
-            instance_type: self.instance_type,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price,
-            usage_price: self.usage_price,
-            currency_code: self.currency_code,
-            payment_option: self.payment_option,
-            recurring_charges: self.recurring_charges,
+            reserved_instance_offering_id: self.reserved_instance_offering_id
+            ,
+            instance_type: self.instance_type
+            ,
+            duration: self.duration
+                .unwrap_or_default()
+            ,
+            fixed_price: self.fixed_price
+            ,
+            usage_price: self.usage_price
+            ,
+            currency_code: self.currency_code
+            ,
+            payment_option: self.payment_option
+            ,
+            recurring_charges: self.recurring_charges
+            ,
         }
     }
 }
+

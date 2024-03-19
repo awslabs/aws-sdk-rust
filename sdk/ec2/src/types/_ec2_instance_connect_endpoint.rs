@@ -3,7 +3,7 @@
 /// <p>The EC2 Instance Connect Endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2InstanceConnectEndpoint {
+pub struct Ec2InstanceConnectEndpoint  {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
@@ -19,7 +19,7 @@ pub struct Ec2InstanceConnectEndpoint {
     /// <p></p>
     pub fips_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
@@ -38,59 +38,60 @@ pub struct Ec2InstanceConnectEndpoint {
     /// <p>Default: <code>true</code></p>
     pub preserve_client_ip: ::std::option::Option<bool>,
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Ec2InstanceConnectEndpoint {
+impl  Ec2InstanceConnectEndpoint  {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_connect_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.instance_connect_endpoint_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
-    pub fn instance_connect_endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_connect_endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.instance_connect_endpoint_arn.as_deref()
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::Ec2InstanceConnectEndpointState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::Ec2InstanceConnectEndpointState> {
         self.state.as_ref()
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
-    pub fn state_message(&self) -> ::std::option::Option<&str> {
+    pub fn state_message(&self) -> ::std::option::Option<& str> {
         self.state_message.as_deref()
     }
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
-    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<& str> {
         self.dns_name.as_deref()
     }
     /// <p></p>
-    pub fn fips_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn fips_dns_name(&self) -> ::std::option::Option<& str> {
         self.fips_dns_name.as_deref()
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
-    pub fn network_interface_ids(&self) -> &[::std::string::String] {
-        self.network_interface_ids.as_deref().unwrap_or_default()
+    pub fn network_interface_ids(&self) -> & [::std::string::String] {
+        self.network_interface_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
@@ -105,16 +106,18 @@ impl Ec2InstanceConnectEndpoint {
         self.preserve_client_ip
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Ec2InstanceConnectEndpoint {
@@ -135,14 +138,14 @@ pub struct Ec2InstanceConnectEndpointBuilder {
     pub(crate) state_message: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) fips_dns_name: ::std::option::Option<::std::string::String>,
-    pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) preserve_client_ip: ::std::option::Option<bool>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
@@ -152,8 +155,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +168,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
     pub fn set_instance_connect_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_connect_endpoint_id = input;
-        self
+        self.instance_connect_endpoint_id = input; self
     }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
     pub fn get_instance_connect_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +181,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
     pub fn set_instance_connect_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_connect_endpoint_arn = input;
-        self
+        self.instance_connect_endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
     pub fn get_instance_connect_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +194,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::Ec2InstanceConnectEndpointState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpointState> {
@@ -208,8 +207,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
     pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_message = input;
-        self
+        self.state_message = input; self
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
     pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +220,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_name = input;
-        self
+        self.dns_name = input; self
     }
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +233,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p></p>
     pub fn set_fips_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fips_dns_name = input;
-        self
+        self.fips_dns_name = input; self
     }
     /// <p></p>
     pub fn get_fips_dns_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,17 +246,16 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
     pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_interface_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.network_interface_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.network_interface_ids = input;
-        self
+    pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.network_interface_ids = input; self
     }
     /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
-    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.network_interface_ids
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
@@ -270,8 +265,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +278,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -298,8 +291,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -312,8 +304,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     }
     /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +331,7 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// </ul>
     /// <p>Default: <code>true</code></p>
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserve_client_ip = input;
-        self
+        self.preserve_client_ip = input; self
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
@@ -361,17 +351,16 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// Appends an item to `tags`.
@@ -381,37 +370,52 @@ impl Ec2InstanceConnectEndpointBuilder {
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
     pub fn build(self) -> crate::types::Ec2InstanceConnectEndpoint {
         crate::types::Ec2InstanceConnectEndpoint {
-            owner_id: self.owner_id,
-            instance_connect_endpoint_id: self.instance_connect_endpoint_id,
-            instance_connect_endpoint_arn: self.instance_connect_endpoint_arn,
-            state: self.state,
-            state_message: self.state_message,
-            dns_name: self.dns_name,
-            fips_dns_name: self.fips_dns_name,
-            network_interface_ids: self.network_interface_ids,
-            vpc_id: self.vpc_id,
-            availability_zone: self.availability_zone,
-            created_at: self.created_at,
-            subnet_id: self.subnet_id,
-            preserve_client_ip: self.preserve_client_ip,
-            security_group_ids: self.security_group_ids,
-            tags: self.tags,
+            owner_id: self.owner_id
+            ,
+            instance_connect_endpoint_id: self.instance_connect_endpoint_id
+            ,
+            instance_connect_endpoint_arn: self.instance_connect_endpoint_arn
+            ,
+            state: self.state
+            ,
+            state_message: self.state_message
+            ,
+            dns_name: self.dns_name
+            ,
+            fips_dns_name: self.fips_dns_name
+            ,
+            network_interface_ids: self.network_interface_ids
+            ,
+            vpc_id: self.vpc_id
+            ,
+            availability_zone: self.availability_zone
+            ,
+            created_at: self.created_at
+            ,
+            subnet_id: self.subnet_id
+            ,
+            preserve_client_ip: self.preserve_client_ip
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

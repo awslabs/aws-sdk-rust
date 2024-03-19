@@ -3,19 +3,19 @@
 /// <p>Contains details about the type of identity that made the request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Identity {
+pub struct Identity  {
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl Identity {
+impl  Identity  {
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IdentityBuilder {
     }
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>A unique identifier for the entity that made the call. For Time To Live, the principalId is "dynamodb.amazonaws.com".</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IdentityBuilder {
     }
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the identity. For Time To Live, the type is "Service".</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IdentityBuilder {
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {
         crate::types::Identity {
-            principal_id: self.principal_id,
-            r#type: self.r#type,
+            principal_id: self.principal_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

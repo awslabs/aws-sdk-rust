@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArtifactStore {
+pub struct ArtifactStore  {
     /// <p>The type of the artifact store, such as S3.</p>
     pub r#type: crate::types::ArtifactStoreType,
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
@@ -13,18 +13,17 @@ pub struct ArtifactStore {
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub encryption_key: ::std::option::Option<crate::types::EncryptionKey>,
 }
-impl ArtifactStore {
+impl  ArtifactStore  {
     /// <p>The type of the artifact store, such as S3.</p>
-    pub fn r#type(&self) -> &crate::types::ArtifactStoreType {
+    pub fn r#type(&self) -> & crate::types::ArtifactStoreType {
         &self.r#type
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
-    pub fn location(&self) -> &str {
-        use std::ops::Deref;
-        self.location.deref()
+    pub fn location(&self) -> & str {
+        use std::ops::Deref; self.location.deref()
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&crate::types::EncryptionKey> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
@@ -52,8 +51,7 @@ impl ArtifactStoreBuilder {
     }
     /// <p>The type of the artifact store, such as S3.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactStoreType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the artifact store, such as S3.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ArtifactStoreType> {
@@ -67,8 +65,7 @@ impl ArtifactStoreBuilder {
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline artifacts.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +78,7 @@ impl ArtifactStoreBuilder {
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<crate::types::EncryptionKey>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management Service key. If this is undefined, the default key for Amazon S3 is used.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<crate::types::EncryptionKey> {
@@ -93,20 +89,22 @@ impl ArtifactStoreBuilder {
     /// - [`r#type`](crate::types::builders::ArtifactStoreBuilder::r#type)
     /// - [`location`](crate::types::builders::ArtifactStoreBuilder::location)
     pub fn build(self) -> ::std::result::Result<crate::types::ArtifactStore, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ArtifactStore {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ArtifactStore",
-                )
-            })?,
-            location: self.location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "location",
-                    "location was not specified but it is required when building ArtifactStore",
-                )
-            })?,
-            encryption_key: self.encryption_key,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ArtifactStore {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ArtifactStore")
+                    )?
+                ,
+                location: self.location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("location", "location was not specified but it is required when building ArtifactStore")
+                    )?
+                ,
+                encryption_key: self.encryption_key
+                ,
+            }
+        )
     }
 }
+

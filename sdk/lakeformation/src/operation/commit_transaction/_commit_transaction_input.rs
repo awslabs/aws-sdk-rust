@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CommitTransactionInput {
+pub struct CommitTransactionInput  {
     /// <p>The transaction to commit.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl CommitTransactionInput {
+impl  CommitTransactionInput  {
     /// <p>The transaction to commit.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl CommitTransactionInputBuilder {
     }
     /// <p>The transaction to commit.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The transaction to commit.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::commit_transaction::CommitTransactionInput {
-            transaction_id: self.transaction_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::commit_transaction::CommitTransactionInput {
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

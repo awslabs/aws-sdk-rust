@@ -3,7 +3,7 @@
 /// <p>Information about a ledger, including its name, state, and when it was created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LedgerSummary {
+pub struct LedgerSummary  {
     /// <p>The name of the ledger.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the ledger.</p>
@@ -11,17 +11,17 @@ pub struct LedgerSummary {
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LedgerSummary {
+impl  LedgerSummary  {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the ledger.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::LedgerState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::LedgerState> {
         self.state.as_ref()
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl LedgerSummaryBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the ledger.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl LedgerSummaryBuilder {
     }
     /// <p>The current status of the ledger.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LedgerState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current status of the ledger.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LedgerState> {
@@ -76,8 +74,7 @@ impl LedgerSummaryBuilder {
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl LedgerSummaryBuilder {
     /// Consumes the builder and constructs a [`LedgerSummary`](crate::types::LedgerSummary).
     pub fn build(self) -> crate::types::LedgerSummary {
         crate::types::LedgerSummary {
-            name: self.name,
-            state: self.state,
-            creation_date_time: self.creation_date_time,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            creation_date_time: self.creation_date_time
+            ,
         }
     }
 }
+

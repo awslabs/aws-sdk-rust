@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
@@ -52,16 +52,14 @@
 /// Specifically, when `scanstatusreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScanStatusReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -113,152 +111,128 @@ pub enum ScanStatusReason {
     UnsupportedRuntime,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ScanStatusReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
-            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded,
-            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded,
-            "DEEP_INSPECTION_NO_INVENTORY" => ScanStatusReason::DeepInspectionNoInventory,
-            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded,
-            "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
-            "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
-            "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
-            "INTERNAL_ERROR" => ScanStatusReason::InternalError,
-            "NO_INVENTORY" => ScanStatusReason::NoInventory,
-            "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
-            "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
-            "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
-            "RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
-            "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
-            "SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
-            "SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
-            "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
-            "SUCCESSFUL" => ScanStatusReason::Successful,
-            "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
-            "UNSUPPORTED_CONFIG_FILE" => ScanStatusReason::UnsupportedConfigFile,
-            "UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
-            "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
-            "UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
-            other => ScanStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+"DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded,
+"DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded,
+"DEEP_INSPECTION_NO_INVENTORY" => ScanStatusReason::DeepInspectionNoInventory,
+"DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded,
+"EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
+"EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
+"IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
+"INTERNAL_ERROR" => ScanStatusReason::InternalError,
+"NO_INVENTORY" => ScanStatusReason::NoInventory,
+"NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
+"PENDING_DISABLE" => ScanStatusReason::PendingDisable,
+"PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
+"RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
+"SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
+"SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
+"SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
+"STALE_INVENTORY" => ScanStatusReason::StaleInventory,
+"SUCCESSFUL" => ScanStatusReason::Successful,
+"UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
+"UNSUPPORTED_CONFIG_FILE" => ScanStatusReason::UnsupportedConfigFile,
+"UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
+"UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
+"UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
+other => ScanStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ScanStatusReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ScanStatusReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ScanStatusReason::from(s))
+                    }
+                }
 impl ScanStatusReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScanStatusReason::AccessDenied => "ACCESS_DENIED",
-            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
-            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
-            ScanStatusReason::DeepInspectionNoInventory => "DEEP_INSPECTION_NO_INVENTORY",
-            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
-            ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
-            ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
-            ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
-            ScanStatusReason::InternalError => "INTERNAL_ERROR",
-            ScanStatusReason::NoInventory => "NO_INVENTORY",
-            ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
-            ScanStatusReason::PendingDisable => "PENDING_DISABLE",
-            ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
-            ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
-            ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
-            ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
-            ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
-            ScanStatusReason::StaleInventory => "STALE_INVENTORY",
-            ScanStatusReason::Successful => "SUCCESSFUL",
-            ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
-            ScanStatusReason::UnsupportedConfigFile => "UNSUPPORTED_CONFIG_FILE",
-            ScanStatusReason::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
-            ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
-            ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
-            ScanStatusReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
-            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
-            "DEEP_INSPECTION_NO_INVENTORY",
-            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
-            "EC2_INSTANCE_STOPPED",
-            "EXCLUDED_BY_TAG",
-            "IMAGE_SIZE_EXCEEDED",
-            "INTERNAL_ERROR",
-            "NO_INVENTORY",
-            "NO_RESOURCES_FOUND",
-            "PENDING_DISABLE",
-            "PENDING_INITIAL_SCAN",
-            "RESOURCE_TERMINATED",
-            "SCAN_ELIGIBILITY_EXPIRED",
-            "SCAN_FREQUENCY_MANUAL",
-            "SCAN_FREQUENCY_SCAN_ON_PUSH",
-            "STALE_INVENTORY",
-            "SUCCESSFUL",
-            "UNMANAGED_EC2_INSTANCE",
-            "UNSUPPORTED_CONFIG_FILE",
-            "UNSUPPORTED_MEDIA_TYPE",
-            "UNSUPPORTED_OS",
-            "UNSUPPORTED_RUNTIME",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+    ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
+    ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
+    ScanStatusReason::DeepInspectionNoInventory => "DEEP_INSPECTION_NO_INVENTORY",
+    ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
+    ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
+    ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
+    ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
+    ScanStatusReason::InternalError => "INTERNAL_ERROR",
+    ScanStatusReason::NoInventory => "NO_INVENTORY",
+    ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
+    ScanStatusReason::PendingDisable => "PENDING_DISABLE",
+    ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
+    ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
+    ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
+    ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
+    ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
+    ScanStatusReason::StaleInventory => "STALE_INVENTORY",
+    ScanStatusReason::Successful => "SUCCESSFUL",
+    ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
+    ScanStatusReason::UnsupportedConfigFile => "UNSUPPORTED_CONFIG_FILE",
+    ScanStatusReason::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
+    ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
+    ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
+    ScanStatusReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED", "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED", "DEEP_INSPECTION_NO_INVENTORY", "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED", "EC2_INSTANCE_STOPPED", "EXCLUDED_BY_TAG", "IMAGE_SIZE_EXCEEDED", "INTERNAL_ERROR", "NO_INVENTORY", "NO_RESOURCES_FOUND", "PENDING_DISABLE", "PENDING_INITIAL_SCAN", "RESOURCE_TERMINATED", "SCAN_ELIGIBILITY_EXPIRED", "SCAN_FREQUENCY_MANUAL", "SCAN_FREQUENCY_SCAN_ON_PUSH", "STALE_INVENTORY", "SUCCESSFUL", "UNMANAGED_EC2_INSTANCE", "UNSUPPORTED_CONFIG_FILE", "UNSUPPORTED_MEDIA_TYPE", "UNSUPPORTED_OS", "UNSUPPORTED_RUNTIME"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ScanStatusReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ScanStatusReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ScanStatusReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
-            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => write!(f, "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"),
-            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => write!(f, "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"),
-            ScanStatusReason::DeepInspectionNoInventory => write!(f, "DEEP_INSPECTION_NO_INVENTORY"),
-            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => write!(f, "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"),
-            ScanStatusReason::Ec2InstanceStopped => write!(f, "EC2_INSTANCE_STOPPED"),
-            ScanStatusReason::ExcludedByTag => write!(f, "EXCLUDED_BY_TAG"),
-            ScanStatusReason::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
-            ScanStatusReason::InternalError => write!(f, "INTERNAL_ERROR"),
-            ScanStatusReason::NoInventory => write!(f, "NO_INVENTORY"),
-            ScanStatusReason::NoResourcesFound => write!(f, "NO_RESOURCES_FOUND"),
-            ScanStatusReason::PendingDisable => write!(f, "PENDING_DISABLE"),
-            ScanStatusReason::PendingInitialScan => write!(f, "PENDING_INITIAL_SCAN"),
-            ScanStatusReason::ResourceTerminated => write!(f, "RESOURCE_TERMINATED"),
-            ScanStatusReason::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
-            ScanStatusReason::ScanFrequencyManual => write!(f, "SCAN_FREQUENCY_MANUAL"),
-            ScanStatusReason::ScanFrequencyScanOnPush => write!(f, "SCAN_FREQUENCY_SCAN_ON_PUSH"),
-            ScanStatusReason::StaleInventory => write!(f, "STALE_INVENTORY"),
-            ScanStatusReason::Successful => write!(f, "SUCCESSFUL"),
-            ScanStatusReason::UnmanagedEc2Instance => write!(f, "UNMANAGED_EC2_INSTANCE"),
-            ScanStatusReason::UnsupportedConfigFile => write!(f, "UNSUPPORTED_CONFIG_FILE"),
-            ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
-            ScanStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
-            ScanStatusReason::UnsupportedRuntime => write!(f, "UNSUPPORTED_RUNTIME"),
-            ScanStatusReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => write!(f, "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"),
+ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => write!(f, "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"),
+ScanStatusReason::DeepInspectionNoInventory => write!(f, "DEEP_INSPECTION_NO_INVENTORY"),
+ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => write!(f, "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"),
+ScanStatusReason::Ec2InstanceStopped => write!(f, "EC2_INSTANCE_STOPPED"),
+ScanStatusReason::ExcludedByTag => write!(f, "EXCLUDED_BY_TAG"),
+ScanStatusReason::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
+ScanStatusReason::InternalError => write!(f, "INTERNAL_ERROR"),
+ScanStatusReason::NoInventory => write!(f, "NO_INVENTORY"),
+ScanStatusReason::NoResourcesFound => write!(f, "NO_RESOURCES_FOUND"),
+ScanStatusReason::PendingDisable => write!(f, "PENDING_DISABLE"),
+ScanStatusReason::PendingInitialScan => write!(f, "PENDING_INITIAL_SCAN"),
+ScanStatusReason::ResourceTerminated => write!(f, "RESOURCE_TERMINATED"),
+ScanStatusReason::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
+ScanStatusReason::ScanFrequencyManual => write!(f, "SCAN_FREQUENCY_MANUAL"),
+ScanStatusReason::ScanFrequencyScanOnPush => write!(f, "SCAN_FREQUENCY_SCAN_ON_PUSH"),
+ScanStatusReason::StaleInventory => write!(f, "STALE_INVENTORY"),
+ScanStatusReason::Successful => write!(f, "SUCCESSFUL"),
+ScanStatusReason::UnmanagedEc2Instance => write!(f, "UNMANAGED_EC2_INSTANCE"),
+ScanStatusReason::UnsupportedConfigFile => write!(f, "UNSUPPORTED_CONFIG_FILE"),
+ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
+ScanStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
+ScanStatusReason::UnsupportedRuntime => write!(f, "UNSUPPORTED_RUNTIME"),
+ScanStatusReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

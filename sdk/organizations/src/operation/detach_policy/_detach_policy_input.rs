@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachPolicyInput {
+pub struct DetachPolicyInput  {
     /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
@@ -18,10 +18,10 @@ pub struct DetachPolicyInput {
     /// </ul>
     pub target_id: ::std::option::Option<::std::string::String>,
 }
-impl DetachPolicyInput {
+impl  DetachPolicyInput  {
     /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
@@ -34,7 +34,7 @@ impl DetachPolicyInput {
     /// <li>
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl DetachPolicyInputBuilder {
     /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
@@ -97,8 +96,7 @@ impl DetachPolicyInputBuilder {
     /// <p><b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p></li>
     /// </ul>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
@@ -114,12 +112,15 @@ impl DetachPolicyInputBuilder {
         &self.target_id
     }
     /// Consumes the builder and constructs a [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::detach_policy::DetachPolicyInput {
-            policy_id: self.policy_id,
-            target_id: self.target_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_policy::DetachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_policy::DetachPolicyInput {
+                policy_id: self.policy_id
+                ,
+                target_id: self.target_id
+                ,
+            }
+        )
     }
 }
+

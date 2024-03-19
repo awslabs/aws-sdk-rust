@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMigrationTasksInput {
+pub struct ListMigrationTasksInput  {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Value to specify how many results are returned per page.</p>
@@ -10,9 +10,9 @@ pub struct ListMigrationTasksInput {
     /// <p>Filter migration tasks by discovered resource name.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
 }
-impl ListMigrationTasksInput {
+impl  ListMigrationTasksInput  {
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Value to specify how many results are returned per page.</p>
@@ -20,7 +20,7 @@ impl ListMigrationTasksInput {
         self.max_results
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListMigrationTasksInputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListMigrationTasksInputBuilder {
     }
     /// <p>Value to specify how many results are returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Value to specify how many results are returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,22 +73,24 @@ impl ListMigrationTasksInputBuilder {
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>Filter migration tasks by discovered resource name.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
     /// Consumes the builder and constructs a [`ListMigrationTasksInput`](crate::operation::list_migration_tasks::ListMigrationTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_migration_tasks::ListMigrationTasksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_migration_tasks::ListMigrationTasksInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            resource_name: self.resource_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_migration_tasks::ListMigrationTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_migration_tasks::ListMigrationTasksInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resource_name: self.resource_name
+                ,
+            }
+        )
     }
 }
+

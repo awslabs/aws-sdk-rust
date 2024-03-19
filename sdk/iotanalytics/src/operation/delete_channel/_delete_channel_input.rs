@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteChannelInput {
+pub struct DeleteChannelInput  {
     /// <p>The name of the channel to delete.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteChannelInput {
+impl  DeleteChannelInput  {
     /// <p>The name of the channel to delete.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteChannelInputBuilder {
     }
     /// <p>The name of the channel to delete.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel to delete.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_channel::DeleteChannelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_channel::DeleteChannelInput {
-            channel_name: self.channel_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_channel::DeleteChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_channel::DeleteChannelInput {
+                channel_name: self.channel_name
+                ,
+            }
+        )
     }
 }
+

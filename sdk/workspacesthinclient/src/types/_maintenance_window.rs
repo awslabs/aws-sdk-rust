@@ -3,7 +3,7 @@
 /// <p>Describes the maintenance window for a thin client device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaintenanceWindow {
+pub struct MaintenanceWindow  {
     /// <p>An option to select the default or custom maintenance window.</p>
     pub r#type: ::std::option::Option<crate::types::MaintenanceWindowType>,
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
@@ -15,13 +15,13 @@ pub struct MaintenanceWindow {
     /// <p>The minutes for the maintenance window end (<code>00</code>-<code>59</code>).</p>
     pub end_time_minute: ::std::option::Option<i32>,
     /// <p>The days of the week during which the maintenance window is open.</p>
-    pub days_of_the_week: ::std::option::Option<::std::vec::Vec<crate::types::DayOfWeek>>,
+    pub days_of_the_week: ::std::option::Option<::std::vec::Vec::<crate::types::DayOfWeek>>,
     /// <p>The option to set the maintenance window during the device local time or Universal Coordinated Time (UTC).</p>
     pub apply_time_of: ::std::option::Option<crate::types::ApplyTimeOf>,
 }
-impl MaintenanceWindow {
+impl  MaintenanceWindow  {
     /// <p>An option to select the default or custom maintenance window.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::MaintenanceWindowType> {
         self.r#type.as_ref()
     }
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
@@ -41,13 +41,14 @@ impl MaintenanceWindow {
         self.end_time_minute
     }
     /// <p>The days of the week during which the maintenance window is open.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.days_of_the_week.is_none()`.
-    pub fn days_of_the_week(&self) -> &[crate::types::DayOfWeek] {
-        self.days_of_the_week.as_deref().unwrap_or_default()
+    pub fn days_of_the_week(&self) -> & [crate::types::DayOfWeek] {
+        self.days_of_the_week.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The option to set the maintenance window during the device local time or Universal Coordinated Time (UTC).</p>
-    pub fn apply_time_of(&self) -> ::std::option::Option<&crate::types::ApplyTimeOf> {
+    pub fn apply_time_of(&self) -> ::std::option::Option<& crate::types::ApplyTimeOf> {
         self.apply_time_of.as_ref()
     }
 }
@@ -67,7 +68,7 @@ pub struct MaintenanceWindowBuilder {
     pub(crate) start_time_minute: ::std::option::Option<i32>,
     pub(crate) end_time_hour: ::std::option::Option<i32>,
     pub(crate) end_time_minute: ::std::option::Option<i32>,
-    pub(crate) days_of_the_week: ::std::option::Option<::std::vec::Vec<crate::types::DayOfWeek>>,
+    pub(crate) days_of_the_week: ::std::option::Option<::std::vec::Vec::<crate::types::DayOfWeek>>,
     pub(crate) apply_time_of: ::std::option::Option<crate::types::ApplyTimeOf>,
 }
 impl MaintenanceWindowBuilder {
@@ -78,8 +79,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>An option to select the default or custom maintenance window.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MaintenanceWindowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>An option to select the default or custom maintenance window.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowType> {
@@ -92,8 +92,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
     pub fn set_start_time_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_time_hour = input;
-        self
+        self.start_time_hour = input; self
     }
     /// <p>The hour for the maintenance window start (<code>00</code>-<code>23</code>).</p>
     pub fn get_start_time_hour(&self) -> &::std::option::Option<i32> {
@@ -106,8 +105,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>The minutes past the hour for the maintenance window start (<code>00</code>-<code>59</code>).</p>
     pub fn set_start_time_minute(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_time_minute = input;
-        self
+        self.start_time_minute = input; self
     }
     /// <p>The minutes past the hour for the maintenance window start (<code>00</code>-<code>59</code>).</p>
     pub fn get_start_time_minute(&self) -> &::std::option::Option<i32> {
@@ -120,8 +118,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>The hour for the maintenance window end (<code>00</code>-<code>23</code>).</p>
     pub fn set_end_time_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_time_hour = input;
-        self
+        self.end_time_hour = input; self
     }
     /// <p>The hour for the maintenance window end (<code>00</code>-<code>23</code>).</p>
     pub fn get_end_time_hour(&self) -> &::std::option::Option<i32> {
@@ -134,8 +131,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>The minutes for the maintenance window end (<code>00</code>-<code>59</code>).</p>
     pub fn set_end_time_minute(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_time_minute = input;
-        self
+        self.end_time_minute = input; self
     }
     /// <p>The minutes for the maintenance window end (<code>00</code>-<code>59</code>).</p>
     pub fn get_end_time_minute(&self) -> &::std::option::Option<i32> {
@@ -148,17 +144,16 @@ impl MaintenanceWindowBuilder {
     /// <p>The days of the week during which the maintenance window is open.</p>
     pub fn days_of_the_week(mut self, input: crate::types::DayOfWeek) -> Self {
         let mut v = self.days_of_the_week.unwrap_or_default();
-        v.push(input);
-        self.days_of_the_week = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.days_of_the_week = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The days of the week during which the maintenance window is open.</p>
-    pub fn set_days_of_the_week(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DayOfWeek>>) -> Self {
-        self.days_of_the_week = input;
-        self
+    pub fn set_days_of_the_week(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DayOfWeek>>) -> Self {
+        self.days_of_the_week = input; self
     }
     /// <p>The days of the week during which the maintenance window is open.</p>
-    pub fn get_days_of_the_week(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DayOfWeek>> {
+    pub fn get_days_of_the_week(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DayOfWeek>> {
         &self.days_of_the_week
     }
     /// <p>The option to set the maintenance window during the device local time or Universal Coordinated Time (UTC).</p>
@@ -168,8 +163,7 @@ impl MaintenanceWindowBuilder {
     }
     /// <p>The option to set the maintenance window during the device local time or Universal Coordinated Time (UTC).</p>
     pub fn set_apply_time_of(mut self, input: ::std::option::Option<crate::types::ApplyTimeOf>) -> Self {
-        self.apply_time_of = input;
-        self
+        self.apply_time_of = input; self
     }
     /// <p>The option to set the maintenance window during the device local time or Universal Coordinated Time (UTC).</p>
     pub fn get_apply_time_of(&self) -> &::std::option::Option<crate::types::ApplyTimeOf> {
@@ -178,13 +172,21 @@ impl MaintenanceWindowBuilder {
     /// Consumes the builder and constructs a [`MaintenanceWindow`](crate::types::MaintenanceWindow).
     pub fn build(self) -> crate::types::MaintenanceWindow {
         crate::types::MaintenanceWindow {
-            r#type: self.r#type,
-            start_time_hour: self.start_time_hour,
-            start_time_minute: self.start_time_minute,
-            end_time_hour: self.end_time_hour,
-            end_time_minute: self.end_time_minute,
-            days_of_the_week: self.days_of_the_week,
-            apply_time_of: self.apply_time_of,
+            r#type: self.r#type
+            ,
+            start_time_hour: self.start_time_hour
+            ,
+            start_time_minute: self.start_time_minute
+            ,
+            end_time_hour: self.end_time_hour
+            ,
+            end_time_minute: self.end_time_minute
+            ,
+            days_of_the_week: self.days_of_the_week
+            ,
+            apply_time_of: self.apply_time_of
+            ,
         }
     }
 }
+

@@ -5,7 +5,7 @@
 /// <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the policy.</p>
@@ -35,30 +35,30 @@ pub struct Policy {
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Policy {
+impl  Policy  {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The identifier for the version of the policy that is set as the default version.</p>
-    pub fn default_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_id(&self) -> ::std::option::Option<& str> {
         self.default_version_id.as_deref()
     }
     /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
@@ -76,23 +76,24 @@ impl Policy {
     }
     /// <p>A friendly description of the policy.</p>
     /// <p>This element is included in the response to the <code>GetPolicy</code> operation. It is not included in the response to the <code>ListPolicies</code> operation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Policy {
@@ -117,7 +118,7 @@ pub struct PolicyBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl PolicyBuilder {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
@@ -127,8 +128,7 @@ impl PolicyBuilder {
     }
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl PolicyBuilder {
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -160,8 +159,7 @@ impl PolicyBuilder {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -177,8 +175,7 @@ impl PolicyBuilder {
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -192,8 +189,7 @@ impl PolicyBuilder {
     }
     /// <p>The identifier for the version of the policy that is set as the default version.</p>
     pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_id = input;
-        self
+        self.default_version_id = input; self
     }
     /// <p>The identifier for the version of the policy that is set as the default version.</p>
     pub fn get_default_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +202,7 @@ impl PolicyBuilder {
     }
     /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
     pub fn set_attachment_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attachment_count = input;
-        self
+        self.attachment_count = input; self
     }
     /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
     pub fn get_attachment_count(&self) -> &::std::option::Option<i32> {
@@ -222,8 +217,7 @@ impl PolicyBuilder {
     /// <p>The number of entities (users and roles) for which the policy is used to set the permissions boundary.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary_usage_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.permissions_boundary_usage_count = input;
-        self
+        self.permissions_boundary_usage_count = input; self
     }
     /// <p>The number of entities (users and roles) for which the policy is used to set the permissions boundary.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
@@ -237,8 +231,7 @@ impl PolicyBuilder {
     }
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
     pub fn set_is_attachable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_attachable = input;
-        self
+        self.is_attachable = input; self
     }
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
     pub fn get_is_attachable(&self) -> &::std::option::Option<bool> {
@@ -253,8 +246,7 @@ impl PolicyBuilder {
     /// <p>A friendly description of the policy.</p>
     /// <p>This element is included in the response to the <code>GetPolicy</code> operation. It is not included in the response to the <code>ListPolicies</code> operation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A friendly description of the policy.</p>
     /// <p>This element is included in the response to the <code>GetPolicy</code> operation. It is not included in the response to the <code>ListPolicies</code> operation.</p>
@@ -268,8 +260,7 @@ impl PolicyBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -284,8 +275,7 @@ impl PolicyBuilder {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
@@ -299,34 +289,47 @@ impl PolicyBuilder {
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {
         crate::types::Policy {
-            policy_name: self.policy_name,
-            policy_id: self.policy_id,
-            arn: self.arn,
-            path: self.path,
-            default_version_id: self.default_version_id,
-            attachment_count: self.attachment_count,
-            permissions_boundary_usage_count: self.permissions_boundary_usage_count,
-            is_attachable: self.is_attachable.unwrap_or_default(),
-            description: self.description,
-            create_date: self.create_date,
-            update_date: self.update_date,
-            tags: self.tags,
+            policy_name: self.policy_name
+            ,
+            policy_id: self.policy_id
+            ,
+            arn: self.arn
+            ,
+            path: self.path
+            ,
+            default_version_id: self.default_version_id
+            ,
+            attachment_count: self.attachment_count
+            ,
+            permissions_boundary_usage_count: self.permissions_boundary_usage_count
+            ,
+            is_attachable: self.is_attachable
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
+            create_date: self.create_date
+            ,
+            update_date: self.update_date
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

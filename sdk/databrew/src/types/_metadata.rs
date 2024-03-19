@@ -3,13 +3,13 @@
 /// <p>Contains additional resource information needed for specific datasets.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Metadata {
+pub struct Metadata  {
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
 }
-impl Metadata {
+impl  Metadata  {
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl MetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl MetadataBuilder {
     }
     /// Consumes the builder and constructs a [`Metadata`](crate::types::Metadata).
     pub fn build(self) -> crate::types::Metadata {
-        crate::types::Metadata { source_arn: self.source_arn }
+        crate::types::Metadata {
+            source_arn: self.source_arn
+            ,
+        }
     }
 }
+

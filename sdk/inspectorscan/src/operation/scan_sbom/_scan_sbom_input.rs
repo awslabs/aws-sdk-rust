@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanSbomInput {
+pub struct ScanSbomInput  {
     /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
     pub sbom: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The output format for the vulnerability report.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
-impl ScanSbomInput {
+impl  ScanSbomInput  {
     /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
-    pub fn sbom(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn sbom(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.sbom.as_ref()
     }
     /// <p>The output format for the vulnerability report.</p>
-    pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<& crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ScanSbomInputBuilder {
     }
     /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
     pub fn set_sbom(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.sbom = input;
-        self
+        self.sbom = input; self
     }
     /// <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX 1.5 format.</p>
     pub fn get_sbom(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -55,8 +54,7 @@ impl ScanSbomInputBuilder {
     }
     /// <p>The output format for the vulnerability report.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>The output format for the vulnerability report.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
@@ -64,9 +62,14 @@ impl ScanSbomInputBuilder {
     }
     /// Consumes the builder and constructs a [`ScanSbomInput`](crate::operation::scan_sbom::ScanSbomInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::scan_sbom::ScanSbomInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::scan_sbom::ScanSbomInput {
-            sbom: self.sbom,
-            output_format: self.output_format,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::scan_sbom::ScanSbomInput {
+                sbom: self.sbom
+                ,
+                output_format: self.output_format
+                ,
+            }
+        )
     }
 }
+

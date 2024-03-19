@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationAccessScopeInput {
+pub struct GetApplicationAccessScopeInput  {
     /// <p>Specifies the ARN of the application with the access scope that you want to retrieve.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the access scope for which you want the authorized targets.</p>
     pub scope: ::std::option::Option<::std::string::String>,
 }
-impl GetApplicationAccessScopeInput {
+impl  GetApplicationAccessScopeInput  {
     /// <p>Specifies the ARN of the application with the access scope that you want to retrieve.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Specifies the name of the access scope for which you want the authorized targets.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetApplicationAccessScopeInputBuilder {
     }
     /// <p>Specifies the ARN of the application with the access scope that you want to retrieve.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>Specifies the ARN of the application with the access scope that you want to retrieve.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetApplicationAccessScopeInputBuilder {
     }
     /// <p>Specifies the name of the access scope for which you want the authorized targets.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies the name of the access scope for which you want the authorized targets.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope
     }
     /// Consumes the builder and constructs a [`GetApplicationAccessScopeInput`](crate::operation::get_application_access_scope::GetApplicationAccessScopeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application_access_scope::GetApplicationAccessScopeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_application_access_scope::GetApplicationAccessScopeInput {
-            application_arn: self.application_arn,
-            scope: self.scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_access_scope::GetApplicationAccessScopeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_application_access_scope::GetApplicationAccessScopeInput {
+                application_arn: self.application_arn
+                ,
+                scope: self.scope
+                ,
+            }
+        )
     }
 }
+

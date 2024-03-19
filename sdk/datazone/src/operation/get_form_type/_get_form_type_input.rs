@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFormTypeInput {
+pub struct GetFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the metadata form type.</p>
@@ -10,17 +10,17 @@ pub struct GetFormTypeInput {
     /// <p>The revision of this metadata form type.</p>
     pub revision: ::std::option::Option<::std::string::String>,
 }
-impl GetFormTypeInput {
+impl  GetFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the metadata form type.</p>
-    pub fn form_type_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn form_type_identifier(&self) -> ::std::option::Option<& str> {
         self.form_type_identifier.as_deref()
     }
     /// <p>The revision of this metadata form type.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetFormTypeInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetFormTypeInputBuilder {
     }
     /// <p>The ID of the metadata form type.</p>
     pub fn set_form_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.form_type_identifier = input;
-        self
+        self.form_type_identifier = input; self
     }
     /// <p>The ID of the metadata form type.</p>
     pub fn get_form_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetFormTypeInputBuilder {
     }
     /// <p>The revision of this metadata form type.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision of this metadata form type.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl GetFormTypeInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFormTypeInput`](crate::operation::get_form_type::GetFormTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_form_type::GetFormTypeInput {
-            domain_identifier: self.domain_identifier,
-            form_type_identifier: self.form_type_identifier,
-            revision: self.revision,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_form_type::GetFormTypeInput {
+                domain_identifier: self.domain_identifier
+                ,
+                form_type_identifier: self.form_type_identifier
+                ,
+                revision: self.revision
+                ,
+            }
+        )
     }
 }
+

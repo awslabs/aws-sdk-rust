@@ -5,30 +5,32 @@
 /// <p>If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, it filters on resources without the given Cost Categories key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostCategoryValues {
+pub struct CostCategoryValues  {
     /// <p>The unique name of the Cost Category.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The specific value of the Cost Category.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
-impl CostCategoryValues {
+impl  CostCategoryValues  {
     /// <p>The unique name of the Cost Category.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The specific value of the Cost Category.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_options.is_none()`.
-    pub fn match_options(&self) -> &[crate::types::MatchOption] {
-        self.match_options.as_deref().unwrap_or_default()
+    pub fn match_options(&self) -> & [crate::types::MatchOption] {
+        self.match_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CostCategoryValues {
@@ -43,8 +45,8 @@ impl CostCategoryValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CostCategoryValuesBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) match_options: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) match_options: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>,
 }
 impl CostCategoryValuesBuilder {
     /// <p>The unique name of the Cost Category.</p>
@@ -54,8 +56,7 @@ impl CostCategoryValuesBuilder {
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +69,16 @@ impl CostCategoryValuesBuilder {
     /// <p>The specific value of the Cost Category.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specific value of the Cost Category.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The specific value of the Cost Category.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Appends an item to `match_options`.
@@ -88,25 +88,28 @@ impl CostCategoryValuesBuilder {
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
     pub fn match_options(mut self, input: crate::types::MatchOption) -> Self {
         let mut v = self.match_options.unwrap_or_default();
-        v.push(input);
-        self.match_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.match_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchOption>>) -> Self {
-        self.match_options = input;
-        self
+    pub fn set_match_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>>) -> Self {
+        self.match_options = input; self
     }
     /// <p>The match options that you can use to filter your results. MatchOptions is only applicable for actions related to cost category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+    pub fn get_match_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MatchOption>> {
         &self.match_options
     }
     /// Consumes the builder and constructs a [`CostCategoryValues`](crate::types::CostCategoryValues).
     pub fn build(self) -> crate::types::CostCategoryValues {
         crate::types::CostCategoryValues {
-            key: self.key,
-            values: self.values,
-            match_options: self.match_options,
+            key: self.key
+            ,
+            values: self.values
+            ,
+            match_options: self.match_options
+            ,
         }
     }
 }
+

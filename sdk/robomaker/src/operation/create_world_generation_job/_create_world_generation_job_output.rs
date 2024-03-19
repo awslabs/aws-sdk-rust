@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorldGenerationJobOutput {
+pub struct CreateWorldGenerationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the world generator job.</p>
@@ -94,14 +94,14 @@ pub struct CreateWorldGenerationJobOutput {
     /// <p>Information about the world count.</p>
     pub world_count: ::std::option::Option<crate::types::WorldCount>,
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub world_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateWorldGenerationJobOutput {
+impl  CreateWorldGenerationJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the world generator job.</p>
@@ -149,11 +149,11 @@ impl CreateWorldGenerationJobOutput {
     /// <p>The world generator job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorldGenerationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The failure code of the world generator job if it failed:</p>
@@ -189,35 +189,35 @@ impl CreateWorldGenerationJobOutput {
     /// <p>An input parameter in the request is not valid.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<& crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> ::std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>Information about the world count.</p>
-    pub fn world_count(&self) -> ::std::option::Option<&crate::types::WorldCount> {
+    pub fn world_count(&self) -> ::std::option::Option<& crate::types::WorldCount> {
         self.world_count.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn world_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn world_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.world_tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorldGenerationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWorldGenerationJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorldGenerationJobOutput`](crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput).
     pub fn builder() -> crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobOutputBuilder {
@@ -236,8 +236,8 @@ pub struct CreateWorldGenerationJobOutputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) template: ::std::option::Option<::std::string::String>,
     pub(crate) world_count: ::std::option::Option<crate::types::WorldCount>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) world_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) world_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateWorldGenerationJobOutputBuilder {
@@ -248,8 +248,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +349,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the world generator job.</p>
     /// <dl>
@@ -408,8 +406,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -486,8 +483,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_failure_code(mut self, input: ::std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code of the world generator job if it failed:</p>
     /// <dl>
@@ -532,8 +528,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -546,8 +541,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -560,8 +554,7 @@ impl CreateWorldGenerationJobOutputBuilder {
     }
     /// <p>Information about the world count.</p>
     pub fn set_world_count(mut self, input: ::std::option::Option<crate::types::WorldCount>) -> Self {
-        self.world_count = input;
-        self
+        self.world_count = input; self
     }
     /// <p>Information about the world count.</p>
     pub fn get_world_count(&self) -> &::std::option::Option<crate::types::WorldCount> {
@@ -574,17 +567,16 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Adds a key-value pair to `world_tags`.
@@ -594,41 +586,50 @@ impl CreateWorldGenerationJobOutputBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn world_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.world_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.world_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.world_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn set_world_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.world_tags = input;
-        self
+    pub fn set_world_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.world_tags = input; self
     }
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
-    pub fn get_world_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_world_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.world_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWorldGenerationJobOutput`](crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput).
     pub fn build(self) -> crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput {
         crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput {
-            arn: self.arn,
-            status: self.status,
-            created_at: self.created_at,
-            failure_code: self.failure_code,
-            client_request_token: self.client_request_token,
-            template: self.template,
-            world_count: self.world_count,
-            tags: self.tags,
-            world_tags: self.world_tags,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            failure_code: self.failure_code
+            ,
+            client_request_token: self.client_request_token
+            ,
+            template: self.template
+            ,
+            world_count: self.world_count
+            ,
+            tags: self.tags
+            ,
+            world_tags: self.world_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

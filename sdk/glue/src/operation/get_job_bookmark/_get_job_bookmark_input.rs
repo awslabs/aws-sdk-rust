@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobBookmarkInput {
+pub struct GetJobBookmarkInput  {
     /// <p>The name of the job in question.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique run identifier associated with this job run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetJobBookmarkInput {
+impl  GetJobBookmarkInput  {
     /// <p>The name of the job in question.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The unique run identifier associated with this job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetJobBookmarkInputBuilder {
     }
     /// <p>The name of the job in question.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job in question.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetJobBookmarkInputBuilder {
     }
     /// <p>The unique run identifier associated with this job run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique run identifier associated with this job run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetJobBookmarkInput`](crate::operation::get_job_bookmark::GetJobBookmarkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_job_bookmark::GetJobBookmarkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_job_bookmark::GetJobBookmarkInput {
-            job_name: self.job_name,
-            run_id: self.run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_bookmark::GetJobBookmarkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_job_bookmark::GetJobBookmarkInput {
+                job_name: self.job_name
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

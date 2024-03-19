@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServicesByNamespaceOutput {
+pub struct ListServicesByNamespaceOutput  {
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
-    pub service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub service_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListServicesByNamespaceOutput {
+impl  ListServicesByNamespaceOutput  {
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_arns.is_none()`.
-    pub fn service_arns(&self) -> &[::std::string::String] {
-        self.service_arns.as_deref().unwrap_or_default()
+    pub fn service_arns(&self) -> & [::std::string::String] {
+        self.service_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServicesByNamespaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServicesByNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`ListServicesByNamespaceOutput`](crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput).
     pub fn builder() -> crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceOutputBuilder {
@@ -37,7 +38,7 @@ impl ListServicesByNamespaceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesByNamespaceOutputBuilder {
-    pub(crate) service_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListServicesByNamespaceOutputBuilder {
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
     pub fn service_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_arns.unwrap_or_default();
-        v.push(input.into());
-        self.service_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
-    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_arns = input;
-        self
+    pub fn set_service_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_arns = input; self
     }
     /// <p>The list of full ARN entries for each service that's associated with the specified namespace.</p>
-    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_arns
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
@@ -69,28 +69,30 @@ impl ListServicesByNamespaceOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListServicesByNamespace</code> request. When the results of a <code>ListServicesByNamespace</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. When there are no more results to return, this value is <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServicesByNamespaceOutput`](crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput).
     pub fn build(self) -> crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput {
         crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput {
-            service_arns: self.service_arns,
-            next_token: self.next_token,
+            service_arns: self.service_arns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

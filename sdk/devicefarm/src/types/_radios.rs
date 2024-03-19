@@ -3,7 +3,7 @@
 /// <p>Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Radios {
+pub struct Radios  {
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
     pub wifi: ::std::option::Option<bool>,
     /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
@@ -13,7 +13,7 @@ pub struct Radios {
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
     pub gps: ::std::option::Option<bool>,
 }
-impl Radios {
+impl  Radios  {
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn wifi(&self) -> ::std::option::Option<bool> {
         self.wifi
@@ -55,8 +55,7 @@ impl RadiosBuilder {
     }
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn set_wifi(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.wifi = input;
-        self
+        self.wifi = input; self
     }
     /// <p>True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn get_wifi(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl RadiosBuilder {
     }
     /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn set_bluetooth(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.bluetooth = input;
-        self
+        self.bluetooth = input; self
     }
     /// <p>True if Bluetooth is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn get_bluetooth(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl RadiosBuilder {
     }
     /// <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn set_nfc(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.nfc = input;
-        self
+        self.nfc = input; self
     }
     /// <p>True if NFC is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn get_nfc(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl RadiosBuilder {
     }
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn set_gps(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.gps = input;
-        self
+        self.gps = input; self
     }
     /// <p>True if GPS is enabled at the beginning of the test. Otherwise, false.</p>
     pub fn get_gps(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl RadiosBuilder {
     /// Consumes the builder and constructs a [`Radios`](crate::types::Radios).
     pub fn build(self) -> crate::types::Radios {
         crate::types::Radios {
-            wifi: self.wifi,
-            bluetooth: self.bluetooth,
-            nfc: self.nfc,
-            gps: self.gps,
+            wifi: self.wifi
+            ,
+            bluetooth: self.bluetooth
+            ,
+            nfc: self.nfc
+            ,
+            gps: self.gps
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDomainInput {
+pub struct UpdateDomainInput  {
     /// <p>The ID of the Amazon Web Services domain that is to be updated.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
@@ -16,29 +16,29 @@ pub struct UpdateDomainInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDomainInput {
+impl  UpdateDomainInput  {
     /// <p>The ID of the Amazon Web Services domain that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The single sign-on option to be updated as part of the <code>UpdateDomain</code> action.</p>
-    pub fn single_sign_on(&self) -> ::std::option::Option<&crate::types::SingleSignOn> {
+    pub fn single_sign_on(&self) -> ::std::option::Option<& crate::types::SingleSignOn> {
         self.single_sign_on.as_ref()
     }
     /// <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>
-    pub fn domain_execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn domain_execution_role(&self) -> ::std::option::Option<& str> {
         self.domain_execution_role.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services domain that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the Amazon Web Services domain that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The single sign-on option to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn set_single_sign_on(mut self, input: ::std::option::Option<crate::types::SingleSignOn>) -> Self {
-        self.single_sign_on = input;
-        self
+        self.single_sign_on = input; self
     }
     /// <p>The single sign-on option to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn get_single_sign_on(&self) -> &::std::option::Option<crate::types::SingleSignOn> {
@@ -111,8 +108,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn set_domain_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_execution_role = input;
-        self
+        self.domain_execution_role = input; self
     }
     /// <p>The domain execution role to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateDomain</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,24 +134,30 @@ impl UpdateDomainInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainInput {
-            identifier: self.identifier,
-            description: self.description,
-            single_sign_on: self.single_sign_on,
-            domain_execution_role: self.domain_execution_role,
-            name: self.name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_domain::UpdateDomainInput {
+                identifier: self.identifier
+                ,
+                description: self.description
+                ,
+                single_sign_on: self.single_sign_on
+                ,
+                domain_execution_role: self.domain_execution_role
+                ,
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

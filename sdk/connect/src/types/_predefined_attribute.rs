@@ -3,7 +3,7 @@
 /// <p>Information about a predefined attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredefinedAttribute {
+pub struct PredefinedAttribute  {
     /// <p>The name of the predefined attribute.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values of the predefined attribute.</p>
@@ -13,21 +13,21 @@ pub struct PredefinedAttribute {
     /// <p>Last modified region.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
-impl PredefinedAttribute {
+impl  PredefinedAttribute  {
     /// <p>The name of the predefined attribute.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The values of the predefined attribute.</p>
-    pub fn values(&self) -> ::std::option::Option<&crate::types::PredefinedAttributeValues> {
+    pub fn values(&self) -> ::std::option::Option<& crate::types::PredefinedAttributeValues> {
         self.values.as_ref()
     }
     /// <p>Last modified time.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Last modified region.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PredefinedAttributeBuilder {
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the predefined attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PredefinedAttributeBuilder {
     }
     /// <p>The values of the predefined attribute.</p>
     pub fn set_values(mut self, input: ::std::option::Option<crate::types::PredefinedAttributeValues>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
     }
     /// <p>The values of the predefined attribute.</p>
     pub fn get_values(&self) -> &::std::option::Option<crate::types::PredefinedAttributeValues> {
@@ -83,8 +81,7 @@ impl PredefinedAttributeBuilder {
     }
     /// <p>Last modified time.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Last modified time.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl PredefinedAttributeBuilder {
     }
     /// <p>Last modified region.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>Last modified region.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PredefinedAttributeBuilder {
     /// Consumes the builder and constructs a [`PredefinedAttribute`](crate::types::PredefinedAttribute).
     pub fn build(self) -> crate::types::PredefinedAttribute {
         crate::types::PredefinedAttribute {
-            name: self.name,
-            values: self.values,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            name: self.name
+            ,
+            values: self.values
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
         }
     }
 }
+

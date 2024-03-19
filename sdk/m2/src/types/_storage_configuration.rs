@@ -22,11 +22,7 @@ impl StorageConfiguration {
     /// Tries to convert the enum instance into [`Efs`](crate::types::StorageConfiguration::Efs), extracting the inner [`EfsStorageConfiguration`](crate::types::EfsStorageConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_efs(&self) -> ::std::result::Result<&crate::types::EfsStorageConfiguration, &Self> {
-        if let StorageConfiguration::Efs(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StorageConfiguration::Efs(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Efs`](crate::types::StorageConfiguration::Efs).
     pub fn is_efs(&self) -> bool {
@@ -35,11 +31,7 @@ impl StorageConfiguration {
     /// Tries to convert the enum instance into [`Fsx`](crate::types::StorageConfiguration::Fsx), extracting the inner [`FsxStorageConfiguration`](crate::types::FsxStorageConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_fsx(&self) -> ::std::result::Result<&crate::types::FsxStorageConfiguration, &Self> {
-        if let StorageConfiguration::Fsx(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StorageConfiguration::Fsx(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Fsx`](crate::types::StorageConfiguration::Fsx).
     pub fn is_fsx(&self) -> bool {
@@ -50,3 +42,4 @@ impl StorageConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The user ID and user fields to update, used with the <code>BatchUpdateUser</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserRequestItem {
+pub struct UpdateUserRequestItem  {
     /// <p>The user ID.</p>
     pub user_id: ::std::string::String,
     /// <p>The user license type.</p>
@@ -13,22 +13,21 @@ pub struct UpdateUserRequestItem {
     /// <p>The Alexa for Business metadata.</p>
     pub alexa_for_business_metadata: ::std::option::Option<crate::types::AlexaForBusinessMetadata>,
 }
-impl UpdateUserRequestItem {
+impl  UpdateUserRequestItem  {
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> & str {
+        use std::ops::Deref; self.user_id.deref()
     }
     /// <p>The user license type.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::License> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::License> {
         self.license_type.as_ref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> ::std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(&self) -> ::std::option::Option<&crate::types::AlexaForBusinessMetadata> {
+    pub fn alexa_for_business_metadata(&self) -> ::std::option::Option<& crate::types::AlexaForBusinessMetadata> {
         self.alexa_for_business_metadata.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl UpdateUserRequestItemBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user ID.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl UpdateUserRequestItemBuilder {
     }
     /// <p>The user license type.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::License>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The user license type.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::License> {
@@ -85,8 +82,7 @@ impl UpdateUserRequestItemBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p>The user type.</p>
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -99,8 +95,7 @@ impl UpdateUserRequestItemBuilder {
     }
     /// <p>The Alexa for Business metadata.</p>
     pub fn set_alexa_for_business_metadata(mut self, input: ::std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
-        self.alexa_for_business_metadata = input;
-        self
+        self.alexa_for_business_metadata = input; self
     }
     /// <p>The Alexa for Business metadata.</p>
     pub fn get_alexa_for_business_metadata(&self) -> &::std::option::Option<crate::types::AlexaForBusinessMetadata> {
@@ -110,16 +105,21 @@ impl UpdateUserRequestItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::UpdateUserRequestItemBuilder::user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateUserRequestItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateUserRequestItem {
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building UpdateUserRequestItem",
-                )
-            })?,
-            license_type: self.license_type,
-            user_type: self.user_type,
-            alexa_for_business_metadata: self.alexa_for_business_metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateUserRequestItem {
+                user_id: self.user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id", "user_id was not specified but it is required when building UpdateUserRequestItem")
+                    )?
+                ,
+                license_type: self.license_type
+                ,
+                user_type: self.user_type
+                ,
+                alexa_for_business_metadata: self.alexa_for_business_metadata
+                ,
+            }
+        )
     }
 }
+

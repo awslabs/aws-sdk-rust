@@ -3,7 +3,7 @@
 /// <p>A match predicate. A predicate might look for characteristics such as specific IP addresses, geographic locations, or sizes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsWafRateBasedRuleMatchPredicate {
+pub struct AwsWafRateBasedRuleMatchPredicate  {
     /// <p>The unique identifier for the predicate.</p>
     pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
@@ -28,9 +28,9 @@ pub struct AwsWafRateBasedRuleMatchPredicate {
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsWafRateBasedRuleMatchPredicate {
+impl  AwsWafRateBasedRuleMatchPredicate  {
     /// <p>The unique identifier for the predicate.</p>
-    pub fn data_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_id(&self) -> ::std::option::Option<& str> {
         self.data_id.as_deref()
     }
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
@@ -55,7 +55,7 @@ impl AwsWafRateBasedRuleMatchPredicate {
     /// <li>
     /// <p><code>XssMatch</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     }
     /// <p>The unique identifier for the predicate.</p>
     pub fn set_data_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_id = input;
-        self
+        self.data_id = input; self
     }
     /// <p>The unique identifier for the predicate.</p>
     pub fn get_data_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings.</p>
     pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.negated = input;
-        self
+        self.negated = input; self
     }
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings.</p>
@@ -145,8 +143,7 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     /// <p><code>XssMatch</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
@@ -171,9 +168,13 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     /// Consumes the builder and constructs a [`AwsWafRateBasedRuleMatchPredicate`](crate::types::AwsWafRateBasedRuleMatchPredicate).
     pub fn build(self) -> crate::types::AwsWafRateBasedRuleMatchPredicate {
         crate::types::AwsWafRateBasedRuleMatchPredicate {
-            data_id: self.data_id,
-            negated: self.negated,
-            r#type: self.r#type,
+            data_id: self.data_id
+            ,
+            negated: self.negated
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

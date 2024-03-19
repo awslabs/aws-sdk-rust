@@ -3,11 +3,11 @@
 /// <p>Contains details about a redriven execution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionRedrivenEventDetails {
+pub struct ExecutionRedrivenEventDetails  {
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
     pub redrive_count: ::std::option::Option<i32>,
 }
-impl ExecutionRedrivenEventDetails {
+impl  ExecutionRedrivenEventDetails  {
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
     pub fn redrive_count(&self) -> ::std::option::Option<i32> {
         self.redrive_count
@@ -34,8 +34,7 @@ impl ExecutionRedrivenEventDetailsBuilder {
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redrive_count = input;
-        self
+        self.redrive_count = input; self
     }
     /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl ExecutionRedrivenEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ExecutionRedrivenEventDetails`](crate::types::ExecutionRedrivenEventDetails).
     pub fn build(self) -> crate::types::ExecutionRedrivenEventDetails {
         crate::types::ExecutionRedrivenEventDetails {
-            redrive_count: self.redrive_count,
+            redrive_count: self.redrive_count
+            ,
         }
     }
 }
+

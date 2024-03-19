@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStreamInput {
+pub struct UpdateStreamInput  {
     /// <p>The name of the stream whose metadata you want to update.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
@@ -18,29 +18,29 @@ pub struct UpdateStreamInput {
     /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     pub media_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateStreamInput {
+impl  UpdateStreamInput  {
     /// <p>The name of the stream whose metadata you want to update.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The ARN of the stream whose metadata you want to update.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
     /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
-    pub fn media_type(&self) -> ::std::option::Option<&str> {
+    pub fn media_type(&self) -> ::std::option::Option<& str> {
         self.media_type.as_deref()
     }
 }
@@ -71,8 +71,7 @@ impl UpdateStreamInputBuilder {
     /// <p>The name of the stream whose metadata you want to update.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream whose metadata you want to update.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
@@ -86,8 +85,7 @@ impl UpdateStreamInputBuilder {
     }
     /// <p>The ARN of the stream whose metadata you want to update.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream whose metadata you want to update.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl UpdateStreamInputBuilder {
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The version of the stream whose metadata you want to update.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl UpdateStreamInputBuilder {
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
@@ -137,8 +133,7 @@ impl UpdateStreamInputBuilder {
     /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
     /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.media_type = input;
-        self
+        self.media_type = input; self
     }
     /// <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>
     /// <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
@@ -146,15 +141,21 @@ impl UpdateStreamInputBuilder {
         &self.media_type
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_stream::UpdateStreamInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            current_version: self.current_version,
-            device_name: self.device_name,
-            media_type: self.media_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_stream::UpdateStreamInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                current_version: self.current_version
+                ,
+                device_name: self.device_name
+                ,
+                media_type: self.media_type
+                ,
+            }
+        )
     }
 }
+

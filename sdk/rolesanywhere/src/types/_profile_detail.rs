@@ -3,7 +3,7 @@
 /// <p>The state of the profile after a read or write operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileDetail {
+pub struct ProfileDetail  {
     /// <p>The unique identifier of the profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the profile.</p>
@@ -19,9 +19,9 @@ pub struct ProfileDetail {
     /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
-    pub managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub managed_policy_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ISO-8601 timestamp when the profile was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the profile was last updated.</p>
@@ -29,17 +29,17 @@ pub struct ProfileDetail {
     /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub duration_seconds: ::std::option::Option<i32>,
 }
-impl ProfileDetail {
+impl  ProfileDetail  {
     /// <p>The unique identifier of the profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>The ARN of the profile.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The name of the profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
@@ -51,31 +51,33 @@ impl ProfileDetail {
         self.enabled
     }
     /// <p>The Amazon Web Services account that created the profile.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
-    pub fn session_policy(&self) -> ::std::option::Option<&str> {
+    pub fn session_policy(&self) -> ::std::option::Option<& str> {
         self.session_policy.as_deref()
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_arns.is_none()`.
-    pub fn role_arns(&self) -> &[::std::string::String] {
-        self.role_arns.as_deref().unwrap_or_default()
+    pub fn role_arns(&self) -> & [::std::string::String] {
+        self.role_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_policy_arns.is_none()`.
-    pub fn managed_policy_arns(&self) -> &[::std::string::String] {
-        self.managed_policy_arns.as_deref().unwrap_or_default()
+    pub fn managed_policy_arns(&self) -> & [::std::string::String] {
+        self.managed_policy_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ISO-8601 timestamp when the profile was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the profile was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The number of seconds the vended session credentials are valid for.</p>
@@ -101,8 +103,8 @@ pub struct ProfileDetailBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
-    pub(crate) role_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) role_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) managed_policy_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
@@ -115,8 +117,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The unique identifier of the profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of the profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +130,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The ARN of the profile.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The ARN of the profile.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The name of the profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +156,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_instance_properties = input;
-        self
+        self.require_instance_properties = input; self
     }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile.</p>
     pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
@@ -171,8 +169,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>Indicates whether the profile is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the profile is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -185,8 +182,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The Amazon Web Services account that created the profile.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon Web Services account that created the profile.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +195,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_policy = input;
-        self
+        self.session_policy = input; self
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials.</p>
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,17 +208,16 @@ impl ProfileDetailBuilder {
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn role_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.role_arns.unwrap_or_default();
-        v.push(input.into());
-        self.role_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.role_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.role_arns = input;
-        self
+    pub fn set_role_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.role_arns = input; self
     }
     /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
-    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.role_arns
     }
     /// Appends an item to `managed_policy_arns`.
@@ -233,17 +227,16 @@ impl ProfileDetailBuilder {
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
     pub fn managed_policy_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_policy_arns.unwrap_or_default();
-        v.push(input.into());
-        self.managed_policy_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.managed_policy_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
-    pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.managed_policy_arns = input;
-        self
+    pub fn set_managed_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.managed_policy_arns = input; self
     }
     /// <p>A list of managed policy ARNs that apply to the vended session credentials.</p>
-    pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.managed_policy_arns
     }
     /// <p>The ISO-8601 timestamp when the profile was created.</p>
@@ -253,8 +246,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The ISO-8601 timestamp when the profile was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The ISO-8601 timestamp when the profile was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,8 +259,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The ISO-8601 timestamp when the profile was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The ISO-8601 timestamp when the profile was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -281,8 +272,7 @@ impl ProfileDetailBuilder {
     }
     /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The number of seconds the vended session credentials are valid for.</p>
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
@@ -291,18 +281,31 @@ impl ProfileDetailBuilder {
     /// Consumes the builder and constructs a [`ProfileDetail`](crate::types::ProfileDetail).
     pub fn build(self) -> crate::types::ProfileDetail {
         crate::types::ProfileDetail {
-            profile_id: self.profile_id,
-            profile_arn: self.profile_arn,
-            name: self.name,
-            require_instance_properties: self.require_instance_properties,
-            enabled: self.enabled,
-            created_by: self.created_by,
-            session_policy: self.session_policy,
-            role_arns: self.role_arns,
-            managed_policy_arns: self.managed_policy_arns,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            duration_seconds: self.duration_seconds,
+            profile_id: self.profile_id
+            ,
+            profile_arn: self.profile_arn
+            ,
+            name: self.name
+            ,
+            require_instance_properties: self.require_instance_properties
+            ,
+            enabled: self.enabled
+            ,
+            created_by: self.created_by
+            ,
+            session_policy: self.session_policy
+            ,
+            role_arns: self.role_arns
+            ,
+            managed_policy_arns: self.managed_policy_arns
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            duration_seconds: self.duration_seconds
+            ,
         }
     }
 }
+

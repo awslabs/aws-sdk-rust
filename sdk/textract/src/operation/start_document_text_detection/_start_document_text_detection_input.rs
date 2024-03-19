@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDocumentTextDetectionInput {
+pub struct StartDocumentTextDetectionInput  {
     /// <p>The location of the document to be processed.</p>
     pub document_location: ::std::option::Option<crate::types::DocumentLocation>,
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
@@ -16,29 +16,29 @@ pub struct StartDocumentTextDetectionInput {
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl StartDocumentTextDetectionInput {
+impl  StartDocumentTextDetectionInput  {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> ::std::option::Option<&crate::types::DocumentLocation> {
+    pub fn document_location(&self) -> ::std::option::Option<& crate::types::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
-    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>The location of the document to be processed.</p>
     pub fn set_document_location(mut self, input: ::std::option::Option<crate::types::DocumentLocation>) -> Self {
-        self.document_location = input;
-        self
+        self.document_location = input; self
     }
     /// <p>The location of the document to be processed.</p>
     pub fn get_document_location(&self) -> &::std::option::Option<crate::types::DocumentLocation> {
@@ -83,8 +82,7 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.notification_channel = input;
-        self
+        self.notification_channel = input; self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.</p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
@@ -125,8 +121,7 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
@@ -139,27 +134,30 @@ impl StartDocumentTextDetectionInputBuilder {
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`StartDocumentTextDetectionInput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_document_text_detection::StartDocumentTextDetectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
-            document_location: self.document_location,
-            client_request_token: self.client_request_token,
-            job_tag: self.job_tag,
-            notification_channel: self.notification_channel,
-            output_config: self.output_config,
-            kms_key_id: self.kms_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_document_text_detection::StartDocumentTextDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
+                document_location: self.document_location
+                ,
+                client_request_token: self.client_request_token
+                ,
+                job_tag: self.job_tag
+                ,
+                notification_channel: self.notification_channel
+                ,
+                output_config: self.output_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes the external metrics preferences for EC2 rightsizing recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalMetricsPreference {
+pub struct ExternalMetricsPreference  {
     /// <p>Contains the source options for external metrics preferences.</p>
     pub source: ::std::option::Option<crate::types::ExternalMetricsSource>,
 }
-impl ExternalMetricsPreference {
+impl  ExternalMetricsPreference  {
     /// <p>Contains the source options for external metrics preferences.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ExternalMetricsSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ExternalMetricsSource> {
         self.source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ExternalMetricsPreferenceBuilder {
     }
     /// <p>Contains the source options for external metrics preferences.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ExternalMetricsSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Contains the source options for external metrics preferences.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ExternalMetricsSource> {
@@ -43,6 +42,10 @@ impl ExternalMetricsPreferenceBuilder {
     }
     /// Consumes the builder and constructs a [`ExternalMetricsPreference`](crate::types::ExternalMetricsPreference).
     pub fn build(self) -> crate::types::ExternalMetricsPreference {
-        crate::types::ExternalMetricsPreference { source: self.source }
+        crate::types::ExternalMetricsPreference {
+            source: self.source
+            ,
+        }
     }
 }
+

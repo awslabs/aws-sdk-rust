@@ -3,7 +3,7 @@
 /// <p>Describes a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledInstance {
+pub struct ScheduledInstance  {
     /// <p>The Availability Zone.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The date when the Scheduled Instance was purchased.</p>
@@ -35,17 +35,17 @@ pub struct ScheduledInstance {
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub total_scheduled_instance_hours: ::std::option::Option<i32>,
 }
-impl ScheduledInstance {
+impl  ScheduledInstance  {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The date when the Scheduled Instance was purchased.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The hourly price for a single instance.</p>
-    pub fn hourly_price(&self) -> ::std::option::Option<&str> {
+    pub fn hourly_price(&self) -> ::std::option::Option<& str> {
         self.hourly_price.as_deref()
     }
     /// <p>The number of instances.</p>
@@ -53,31 +53,31 @@ impl ScheduledInstance {
         self.instance_count
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The network platform.</p>
-    pub fn network_platform(&self) -> ::std::option::Option<&str> {
+    pub fn network_platform(&self) -> ::std::option::Option<& str> {
         self.network_platform.as_deref()
     }
     /// <p>The time for the next schedule to start.</p>
-    pub fn next_slot_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn next_slot_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.next_slot_start_time.as_ref()
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The time that the previous schedule ended or will end.</p>
-    pub fn previous_slot_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn previous_slot_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.previous_slot_end_time.as_ref()
     }
     /// <p>The schedule recurrence.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::ScheduledInstanceRecurrence> {
+    pub fn recurrence(&self) -> ::std::option::Option<& crate::types::ScheduledInstanceRecurrence> {
         self.recurrence.as_ref()
     }
     /// <p>The Scheduled Instance ID.</p>
-    pub fn scheduled_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_instance_id(&self) -> ::std::option::Option<& str> {
         self.scheduled_instance_id.as_deref()
     }
     /// <p>The number of hours in the schedule.</p>
@@ -85,11 +85,11 @@ impl ScheduledInstance {
         self.slot_duration_in_hours
     }
     /// <p>The end date for the Scheduled Instance.</p>
-    pub fn term_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn term_end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.term_end_date.as_ref()
     }
     /// <p>The start date for the Scheduled Instance.</p>
-    pub fn term_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn term_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.term_start_date.as_ref()
     }
     /// <p>The total number of hours for a single instance for the entire term.</p>
@@ -132,8 +132,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The Availability Zone.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The date when the Scheduled Instance was purchased.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date when the Scheduled Instance was purchased.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +158,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The hourly price for a single instance.</p>
     pub fn set_hourly_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hourly_price = input;
-        self
+        self.hourly_price = input; self
     }
     /// <p>The hourly price for a single instance.</p>
     pub fn get_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +171,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The number of instances.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of instances.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -188,8 +184,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +197,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The network platform.</p>
     pub fn set_network_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_platform = input;
-        self
+        self.network_platform = input; self
     }
     /// <p>The network platform.</p>
     pub fn get_network_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +210,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The time for the next schedule to start.</p>
     pub fn set_next_slot_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.next_slot_start_time = input;
-        self
+        self.next_slot_start_time = input; self
     }
     /// <p>The time for the next schedule to start.</p>
     pub fn get_next_slot_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -230,8 +223,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +236,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The time that the previous schedule ended or will end.</p>
     pub fn set_previous_slot_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.previous_slot_end_time = input;
-        self
+        self.previous_slot_end_time = input; self
     }
     /// <p>The time that the previous schedule ended or will end.</p>
     pub fn get_previous_slot_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +249,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The schedule recurrence.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::ScheduledInstanceRecurrence>) -> Self {
-        self.recurrence = input;
-        self
+        self.recurrence = input; self
     }
     /// <p>The schedule recurrence.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::ScheduledInstanceRecurrence> {
@@ -272,8 +262,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The Scheduled Instance ID.</p>
     pub fn set_scheduled_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_instance_id = input;
-        self
+        self.scheduled_instance_id = input; self
     }
     /// <p>The Scheduled Instance ID.</p>
     pub fn get_scheduled_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +275,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The number of hours in the schedule.</p>
     pub fn set_slot_duration_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.slot_duration_in_hours = input;
-        self
+        self.slot_duration_in_hours = input; self
     }
     /// <p>The number of hours in the schedule.</p>
     pub fn get_slot_duration_in_hours(&self) -> &::std::option::Option<i32> {
@@ -300,8 +288,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The end date for the Scheduled Instance.</p>
     pub fn set_term_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.term_end_date = input;
-        self
+        self.term_end_date = input; self
     }
     /// <p>The end date for the Scheduled Instance.</p>
     pub fn get_term_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -314,8 +301,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The start date for the Scheduled Instance.</p>
     pub fn set_term_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.term_start_date = input;
-        self
+        self.term_start_date = input; self
     }
     /// <p>The start date for the Scheduled Instance.</p>
     pub fn get_term_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -328,8 +314,7 @@ impl ScheduledInstanceBuilder {
     }
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub fn set_total_scheduled_instance_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_scheduled_instance_hours = input;
-        self
+        self.total_scheduled_instance_hours = input; self
     }
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub fn get_total_scheduled_instance_hours(&self) -> &::std::option::Option<i32> {
@@ -338,21 +323,37 @@ impl ScheduledInstanceBuilder {
     /// Consumes the builder and constructs a [`ScheduledInstance`](crate::types::ScheduledInstance).
     pub fn build(self) -> crate::types::ScheduledInstance {
         crate::types::ScheduledInstance {
-            availability_zone: self.availability_zone,
-            create_date: self.create_date,
-            hourly_price: self.hourly_price,
-            instance_count: self.instance_count,
-            instance_type: self.instance_type,
-            network_platform: self.network_platform,
-            next_slot_start_time: self.next_slot_start_time,
-            platform: self.platform,
-            previous_slot_end_time: self.previous_slot_end_time,
-            recurrence: self.recurrence,
-            scheduled_instance_id: self.scheduled_instance_id,
-            slot_duration_in_hours: self.slot_duration_in_hours,
-            term_end_date: self.term_end_date,
-            term_start_date: self.term_start_date,
-            total_scheduled_instance_hours: self.total_scheduled_instance_hours,
+            availability_zone: self.availability_zone
+            ,
+            create_date: self.create_date
+            ,
+            hourly_price: self.hourly_price
+            ,
+            instance_count: self.instance_count
+            ,
+            instance_type: self.instance_type
+            ,
+            network_platform: self.network_platform
+            ,
+            next_slot_start_time: self.next_slot_start_time
+            ,
+            platform: self.platform
+            ,
+            previous_slot_end_time: self.previous_slot_end_time
+            ,
+            recurrence: self.recurrence
+            ,
+            scheduled_instance_id: self.scheduled_instance_id
+            ,
+            slot_duration_in_hours: self.slot_duration_in_hours
+            ,
+            term_end_date: self.term_end_date
+            ,
+            term_start_date: self.term_start_date
+            ,
+            total_scheduled_instance_hours: self.total_scheduled_instance_hours
+            ,
         }
     }
 }
+

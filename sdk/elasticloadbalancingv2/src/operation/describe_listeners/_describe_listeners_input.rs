@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenersInput {
+pub struct DescribeListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub listener_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl DescribeListenersInput {
+impl  DescribeListenersInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.listener_arns.is_none()`.
-    pub fn listener_arns(&self) -> &[::std::string::String] {
-        self.listener_arns.as_deref().unwrap_or_default()
+    pub fn listener_arns(&self) -> & [::std::string::String] {
+        self.listener_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -44,7 +45,7 @@ impl DescribeListenersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeListenersInputBuilder {
     pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) listener_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
 }
@@ -56,8 +57,7 @@ impl DescribeListenersInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_arn = input;
-        self
+        self.load_balancer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,17 +70,16 @@ impl DescribeListenersInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
     pub fn listener_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.listener_arns.unwrap_or_default();
-        v.push(input.into());
-        self.listener_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.listener_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.listener_arns = input;
-        self
+    pub fn set_listener_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.listener_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_listener_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.listener_arns
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -90,8 +89,7 @@ impl DescribeListenersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,22 +102,26 @@ impl DescribeListenersInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_listeners::DescribeListenersInput {
-            load_balancer_arn: self.load_balancer_arn,
-            listener_arns: self.listener_arns,
-            marker: self.marker,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_listeners::DescribeListenersInput {
+                load_balancer_arn: self.load_balancer_arn
+                ,
+                listener_arns: self.listener_arns
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

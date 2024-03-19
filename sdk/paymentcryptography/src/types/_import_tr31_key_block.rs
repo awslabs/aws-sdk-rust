@@ -3,22 +3,20 @@
 /// <p>Parameter information for key material import using symmetric TR-31 key exchange method.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTr31KeyBlock {
+pub struct ImportTr31KeyBlock  {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
     pub wrapping_key_identifier: ::std::string::String,
     /// <p>The TR-31 wrapped key block to import.</p>
     pub wrapped_key_block: ::std::string::String,
 }
-impl ImportTr31KeyBlock {
+impl  ImportTr31KeyBlock  {
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
-    pub fn wrapping_key_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapping_key_identifier.deref()
+    pub fn wrapping_key_identifier(&self) -> & str {
+        use std::ops::Deref; self.wrapping_key_identifier.deref()
     }
     /// <p>The TR-31 wrapped key block to import.</p>
-    pub fn wrapped_key_block(&self) -> &str {
-        use std::ops::Deref;
-        self.wrapped_key_block.deref()
+    pub fn wrapped_key_block(&self) -> & str {
+        use std::ops::Deref; self.wrapped_key_block.deref()
     }
 }
 impl ImportTr31KeyBlock {
@@ -44,8 +42,7 @@ impl ImportTr31KeyBlockBuilder {
     }
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
     pub fn set_wrapping_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapping_key_identifier = input;
-        self
+        self.wrapping_key_identifier = input; self
     }
     /// <p>The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during import.</p>
     pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ImportTr31KeyBlockBuilder {
     }
     /// <p>The TR-31 wrapped key block to import.</p>
     pub fn set_wrapped_key_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wrapped_key_block = input;
-        self
+        self.wrapped_key_block = input; self
     }
     /// <p>The TR-31 wrapped key block to import.</p>
     pub fn get_wrapped_key_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ImportTr31KeyBlockBuilder {
     /// - [`wrapping_key_identifier`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapping_key_identifier)
     /// - [`wrapped_key_block`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapped_key_block)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportTr31KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportTr31KeyBlock {
-            wrapping_key_identifier: self.wrapping_key_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapping_key_identifier",
-                    "wrapping_key_identifier was not specified but it is required when building ImportTr31KeyBlock",
-                )
-            })?,
-            wrapped_key_block: self.wrapped_key_block.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "wrapped_key_block",
-                    "wrapped_key_block was not specified but it is required when building ImportTr31KeyBlock",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportTr31KeyBlock {
+                wrapping_key_identifier: self.wrapping_key_identifier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapping_key_identifier", "wrapping_key_identifier was not specified but it is required when building ImportTr31KeyBlock")
+                    )?
+                ,
+                wrapped_key_block: self.wrapped_key_block
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("wrapped_key_block", "wrapped_key_block was not specified but it is required when building ImportTr31KeyBlock")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Describes the properties of a Listener for the LoadBalancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The protocol that is used by the Listener.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The port that is used by the Listener.</p>
     pub port: i32,
 }
-impl Listener {
+impl  Listener  {
     /// <p>The protocol that is used by the Listener.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The port that is used by the Listener.</p>
@@ -41,8 +41,7 @@ impl ListenerBuilder {
     }
     /// <p>The protocol that is used by the Listener.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol that is used by the Listener.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ListenerBuilder {
     }
     /// <p>The port that is used by the Listener.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port that is used by the Listener.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl ListenerBuilder {
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).
     pub fn build(self) -> crate::types::Listener {
         crate::types::Listener {
-            protocol: self.protocol,
-            port: self.port.unwrap_or_default(),
+            protocol: self.protocol
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDeviceInput {
+pub struct CreateDeviceInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
@@ -26,57 +26,58 @@ pub struct CreateDeviceInput {
     /// <p>The ID of the site.</p>
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resource during creation.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDeviceInput {
+impl  CreateDeviceInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-    pub fn aws_location(&self) -> ::std::option::Option<&crate::types::AwsLocation> {
+    pub fn aws_location(&self) -> ::std::option::Option<& crate::types::AwsLocation> {
         self.aws_location.as_ref()
     }
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the device.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    pub fn vendor(&self) -> ::std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<& str> {
         self.vendor.as_deref()
     }
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The location of the device.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateDeviceInput {
+impl  ::std::fmt::Debug for CreateDeviceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDeviceInput");
         formatter.field("global_network_id", &self.global_network_id);
@@ -112,7 +113,7 @@ pub struct CreateDeviceInputBuilder {
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::Location>,
     pub(crate) site_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDeviceInputBuilder {
     /// <p>The ID of the global network.</p>
@@ -123,8 +124,7 @@ impl CreateDeviceInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +137,7 @@ impl CreateDeviceInputBuilder {
     }
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub fn set_aws_location(mut self, input: ::std::option::Option<crate::types::AwsLocation>) -> Self {
-        self.aws_location = input;
-        self
+        self.aws_location = input; self
     }
     /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     pub fn get_aws_location(&self) -> &::std::option::Option<crate::types::AwsLocation> {
@@ -153,8 +152,7 @@ impl CreateDeviceInputBuilder {
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the device.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -168,8 +166,7 @@ impl CreateDeviceInputBuilder {
     }
     /// <p>The type of the device.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the device.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +181,7 @@ impl CreateDeviceInputBuilder {
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor = input;
-        self
+        self.vendor = input; self
     }
     /// <p>The vendor of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -201,8 +197,7 @@ impl CreateDeviceInputBuilder {
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The model of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -218,8 +213,7 @@ impl CreateDeviceInputBuilder {
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The serial number of the device.</p>
     /// <p>Constraints: Maximum length of 128 characters.</p>
@@ -233,8 +227,7 @@ impl CreateDeviceInputBuilder {
     }
     /// <p>The location of the device.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The location of the device.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
@@ -247,8 +240,7 @@ impl CreateDeviceInputBuilder {
     }
     /// <p>The ID of the site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// <p>The ID of the site.</p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,35 +253,44 @@ impl CreateDeviceInputBuilder {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeviceInput`](crate::operation::create_device::CreateDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_device::CreateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_device::CreateDeviceInput {
-            global_network_id: self.global_network_id,
-            aws_location: self.aws_location,
-            description: self.description,
-            r#type: self.r#type,
-            vendor: self.vendor,
-            model: self.model,
-            serial_number: self.serial_number,
-            location: self.location,
-            site_id: self.site_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_device::CreateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_device::CreateDeviceInput {
+                global_network_id: self.global_network_id
+                ,
+                aws_location: self.aws_location
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                vendor: self.vendor
+                ,
+                model: self.model
+                ,
+                serial_number: self.serial_number
+                ,
+                location: self.location
+                ,
+                site_id: self.site_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateDeviceInputBuilder {
@@ -308,3 +309,4 @@ impl ::std::fmt::Debug for CreateDeviceInputBuilder {
         formatter.finish()
     }
 }
+

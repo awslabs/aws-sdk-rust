@@ -3,19 +3,19 @@
 /// <p>Association information about the knowledge base.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KnowledgeBaseAssociationData {
+pub struct KnowledgeBaseAssociationData  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
 }
-impl KnowledgeBaseAssociationData {
+impl  KnowledgeBaseAssociationData  {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl KnowledgeBaseAssociationDataBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl KnowledgeBaseAssociationDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_arn = input;
-        self
+        self.knowledge_base_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl KnowledgeBaseAssociationDataBuilder {
     /// Consumes the builder and constructs a [`KnowledgeBaseAssociationData`](crate::types::KnowledgeBaseAssociationData).
     pub fn build(self) -> crate::types::KnowledgeBaseAssociationData {
         crate::types::KnowledgeBaseAssociationData {
-            knowledge_base_id: self.knowledge_base_id,
-            knowledge_base_arn: self.knowledge_base_arn,
+            knowledge_base_id: self.knowledge_base_id
+            ,
+            knowledge_base_arn: self.knowledge_base_arn
+            ,
         }
     }
 }
+

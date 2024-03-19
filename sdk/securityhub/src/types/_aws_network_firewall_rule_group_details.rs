@@ -4,7 +4,7 @@
 /// <p>Rule groups are referenced in firewall policies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsNetworkFirewallRuleGroupDetails {
+pub struct AwsNetworkFirewallRuleGroupDetails  {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     pub capacity: ::std::option::Option<i32>,
     /// <p>A description of the rule group.</p>
@@ -20,33 +20,33 @@ pub struct AwsNetworkFirewallRuleGroupDetails {
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsNetworkFirewallRuleGroupDetails {
+impl  AwsNetworkFirewallRuleGroupDetails  {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     pub fn capacity(&self) -> ::std::option::Option<i32> {
         self.capacity
     }
     /// <p>A description of the rule group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Details about the rule group.</p>
-    pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroupDetails> {
+    pub fn rule_group(&self) -> ::std::option::Option<& crate::types::RuleGroupDetails> {
         self.rule_group.as_ref()
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<& str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_name(&self) -> ::std::option::Option<& str> {
         self.rule_group_name.as_deref()
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {
@@ -91,8 +90,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>A description of the rule group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>Details about the rule group.</p>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroupDetails>) -> Self {
-        self.rule_group = input;
-        self
+        self.rule_group = input; self
     }
     /// <p>Details about the rule group.</p>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroupDetails> {
@@ -119,8 +116,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>The ARN of the rule group.</p>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_arn = input;
-        self
+        self.rule_group_arn = input; self
     }
     /// <p>The ARN of the rule group.</p>
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>The identifier of the rule group.</p>
     pub fn set_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_id = input;
-        self
+        self.rule_group_id = input; self
     }
     /// <p>The identifier of the rule group.</p>
     pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>The descriptive name of the rule group.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_name = input;
-        self
+        self.rule_group_name = input; self
     }
     /// <p>The descriptive name of the rule group.</p>
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +155,7 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,13 +164,21 @@ impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsNetworkFirewallRuleGroupDetails {
         crate::types::AwsNetworkFirewallRuleGroupDetails {
-            capacity: self.capacity,
-            description: self.description,
-            rule_group: self.rule_group,
-            rule_group_arn: self.rule_group_arn,
-            rule_group_id: self.rule_group_id,
-            rule_group_name: self.rule_group_name,
-            r#type: self.r#type,
+            capacity: self.capacity
+            ,
+            description: self.description
+            ,
+            rule_group: self.rule_group
+            ,
+            rule_group_arn: self.rule_group_arn
+            ,
+            rule_group_id: self.rule_group_id
+            ,
+            rule_group_name: self.rule_group_name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

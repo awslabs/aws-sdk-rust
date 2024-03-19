@@ -4,7 +4,7 @@
 /// <p>To return this information about vehicles in your account, you can use the API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VehicleSummary {
+pub struct VehicleSummary  {
     /// <p>The unique ID of the vehicle.</p>
     pub vehicle_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
@@ -19,40 +19,36 @@ pub struct VehicleSummary {
     pub last_modification_time: ::aws_smithy_types::DateTime,
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl VehicleSummary {
+impl  VehicleSummary  {
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vehicle_name.deref()
+    pub fn vehicle_name(&self) -> & str {
+        use std::ops::Deref; self.vehicle_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.model_manifest_arn.deref()
+    pub fn model_manifest_arn(&self) -> & str {
+        use std::ops::Deref; self.model_manifest_arn.deref()
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn decoder_manifest_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.decoder_manifest_arn.deref()
+    pub fn decoder_manifest_arn(&self) -> & str {
+        use std::ops::Deref; self.decoder_manifest_arn.deref()
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -73,7 +69,7 @@ pub struct VehicleSummaryBuilder {
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl VehicleSummaryBuilder {
     /// <p>The unique ID of the vehicle.</p>
@@ -84,8 +80,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The unique ID of the vehicle.</p>
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vehicle_name = input;
-        self
+        self.vehicle_name = input; self
     }
     /// <p>The unique ID of the vehicle.</p>
     pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn set_model_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_manifest_arn = input;
-        self
+        self.model_manifest_arn = input; self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +122,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
     pub fn set_decoder_manifest_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decoder_manifest_arn = input;
-        self
+        self.decoder_manifest_arn = input; self
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
     pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +136,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +150,7 @@ impl VehicleSummaryBuilder {
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,19 +164,18 @@ impl VehicleSummaryBuilder {
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example:</p>
     /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`VehicleSummary`](crate::types::VehicleSummary).
@@ -198,44 +187,42 @@ impl VehicleSummaryBuilder {
     /// - [`creation_time`](crate::types::builders::VehicleSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::VehicleSummaryBuilder::last_modification_time)
     pub fn build(self) -> ::std::result::Result<crate::types::VehicleSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VehicleSummary {
-            vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vehicle_name",
-                    "vehicle_name was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            model_manifest_arn: self.model_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_manifest_arn",
-                    "model_manifest_arn was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            decoder_manifest_arn: self.decoder_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "decoder_manifest_arn",
-                    "decoder_manifest_arn was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building VehicleSummary",
-                )
-            })?,
-            attributes: self.attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VehicleSummary {
+                vehicle_name: self.vehicle_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vehicle_name", "vehicle_name was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                model_manifest_arn: self.model_manifest_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_manifest_arn", "model_manifest_arn was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                decoder_manifest_arn: self.decoder_manifest_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("decoder_manifest_arn", "decoder_manifest_arn was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building VehicleSummary")
+                    )?
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

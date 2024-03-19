@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationAssignmentConfigurationOutput {
+pub struct GetApplicationAssignmentConfigurationOutput  {
     /// <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value), users don’t have access to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application.</p>
     pub assignment_required: bool,
     _request_id: Option<String>,
 }
-impl GetApplicationAssignmentConfigurationOutput {
+impl  GetApplicationAssignmentConfigurationOutput  {
     /// <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value), users don’t have access to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application.</p>
     pub fn assignment_required(&self) -> bool {
         self.assignment_required
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationAssignmentConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationAssignmentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationAssignmentConfigurationOutput`](crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput).
     pub fn builder() -> crate::operation::get_application_assignment_configuration::builders::GetApplicationAssignmentConfigurationOutputBuilder {
@@ -41,27 +41,29 @@ impl GetApplicationAssignmentConfigurationOutputBuilder {
     }
     /// <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value), users don’t have access to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application.</p>
     pub fn set_assignment_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.assignment_required = input;
-        self
+        self.assignment_required = input; self
     }
     /// <p>If <code>AssignmentsRequired</code> is <code>true</code> (default value), users don’t have access to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application.</p>
     pub fn get_assignment_required(&self) -> &::std::option::Option<bool> {
         &self.assignment_required
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationAssignmentConfigurationOutput`](crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput).
     pub fn build(self) -> crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput {
         crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput {
-            assignment_required: self.assignment_required.unwrap_or(true),
+            assignment_required: self.assignment_required
+                .unwrap_or(true)
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

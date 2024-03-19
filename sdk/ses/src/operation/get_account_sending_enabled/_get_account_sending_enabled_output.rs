@@ -3,22 +3,22 @@
 /// <p>Represents a request to return the email sending status for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccountSendingEnabledOutput {
+pub struct GetAccountSendingEnabledOutput  {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub enabled: bool,
     _request_id: Option<String>,
 }
-impl GetAccountSendingEnabledOutput {
+impl  GetAccountSendingEnabledOutput  {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccountSendingEnabledOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccountSendingEnabledOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
     pub fn builder() -> crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder {
@@ -41,27 +41,29 @@ impl GetAccountSendingEnabledOutputBuilder {
     }
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccountSendingEnabledOutput`](crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput).
     pub fn build(self) -> crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput {
         crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

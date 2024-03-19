@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTemporaryGlueTableCredentialsOutput {
+pub struct GetTemporaryGlueTableCredentialsOutput  {
     /// <p>The access key ID for the temporary credentials.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret key for the temporary credentials.</p>
@@ -12,38 +12,39 @@ pub struct GetTemporaryGlueTableCredentialsOutput {
     /// <p>The date and time when the temporary credentials expire.</p>
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon S3 path for the temporary credentials.</p>
-    pub vended_s3_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vended_s3_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetTemporaryGlueTableCredentialsOutput {
+impl  GetTemporaryGlueTableCredentialsOutput  {
     /// <p>The access key ID for the temporary credentials.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret key for the temporary credentials.</p>
-    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> ::std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The session token for the temporary credentials.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The date and time when the temporary credentials expire.</p>
-    pub fn expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
     /// <p>The Amazon S3 path for the temporary credentials.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vended_s3_path.is_none()`.
-    pub fn vended_s3_path(&self) -> &[::std::string::String] {
-        self.vended_s3_path.as_deref().unwrap_or_default()
+    pub fn vended_s3_path(&self) -> & [::std::string::String] {
+        self.vended_s3_path.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemporaryGlueTableCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTemporaryGlueTableCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsOutput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput).
     pub fn builder() -> crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsOutputBuilder {
@@ -59,7 +60,7 @@ pub struct GetTemporaryGlueTableCredentialsOutputBuilder {
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) vended_s3_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vended_s3_path: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTemporaryGlueTableCredentialsOutputBuilder {
@@ -70,8 +71,7 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     }
     /// <p>The access key ID for the temporary credentials.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The access key ID for the temporary credentials.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     }
     /// <p>The secret key for the temporary credentials.</p>
     pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_access_key = input;
-        self
+        self.secret_access_key = input; self
     }
     /// <p>The secret key for the temporary credentials.</p>
     pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     }
     /// <p>The session token for the temporary credentials.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The session token for the temporary credentials.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     }
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,37 +123,42 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     /// <p>The Amazon S3 path for the temporary credentials.</p>
     pub fn vended_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vended_s3_path.unwrap_or_default();
-        v.push(input.into());
-        self.vended_s3_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vended_s3_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon S3 path for the temporary credentials.</p>
-    pub fn set_vended_s3_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vended_s3_path = input;
-        self
+    pub fn set_vended_s3_path(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vended_s3_path = input; self
     }
     /// <p>The Amazon S3 path for the temporary credentials.</p>
-    pub fn get_vended_s3_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vended_s3_path(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vended_s3_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTemporaryGlueTableCredentialsOutput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput).
     pub fn build(self) -> crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput {
         crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput {
-            access_key_id: self.access_key_id,
-            secret_access_key: self.secret_access_key,
-            session_token: self.session_token,
-            expiration: self.expiration,
-            vended_s3_path: self.vended_s3_path,
+            access_key_id: self.access_key_id
+            ,
+            secret_access_key: self.secret_access_key
+            ,
+            session_token: self.session_token
+            ,
+            expiration: self.expiration
+            ,
+            vended_s3_path: self.vended_s3_path
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

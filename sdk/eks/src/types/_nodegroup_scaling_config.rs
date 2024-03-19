@@ -3,7 +3,7 @@
 /// <p>An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. When creating a node group, you must specify all or none of the properties. When updating a node group, you can specify any or none of the properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodegroupScalingConfig {
+pub struct NodegroupScalingConfig  {
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -15,7 +15,7 @@ pub struct NodegroupScalingConfig {
     /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub desired_size: ::std::option::Option<i32>,
 }
-impl NodegroupScalingConfig {
+impl  NodegroupScalingConfig  {
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     pub fn min_size(&self) -> ::std::option::Option<i32> {
         self.min_size
@@ -56,8 +56,7 @@ impl NodegroupScalingConfigBuilder {
     }
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_size = input;
-        self
+        self.min_size = input; self
     }
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     pub fn get_min_size(&self) -> &::std::option::Option<i32> {
@@ -70,8 +69,7 @@ impl NodegroupScalingConfigBuilder {
     }
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
@@ -92,8 +90,7 @@ impl NodegroupScalingConfigBuilder {
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
     /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub fn set_desired_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_size = input;
-        self
+        self.desired_size = input; self
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
@@ -106,9 +103,13 @@ impl NodegroupScalingConfigBuilder {
     /// Consumes the builder and constructs a [`NodegroupScalingConfig`](crate::types::NodegroupScalingConfig).
     pub fn build(self) -> crate::types::NodegroupScalingConfig {
         crate::types::NodegroupScalingConfig {
-            min_size: self.min_size,
-            max_size: self.max_size,
-            desired_size: self.desired_size,
+            min_size: self.min_size
+            ,
+            max_size: self.max_size
+            ,
+            desired_size: self.desired_size
+            ,
         }
     }
 }
+

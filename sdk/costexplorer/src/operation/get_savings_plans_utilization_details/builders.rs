@@ -5,56 +5,52 @@ pub use crate::operation::get_savings_plans_utilization_details::_get_savings_pl
 
 impl GetSavingsPlansUtilizationDetailsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_savings_plans_utilization_details();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_savings_plans_utilization_details();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetSavingsPlansUtilizationDetails`.
-///
+/// 
 /// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p><note>
 /// <p><code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
+                    inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-    > for GetSavingsPlansUtilizationDetailsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+                    crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
+                > for GetSavingsPlansUtilizationDetailsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
+                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetSavingsPlansUtilizationDetailsFluentBuilder {
     /// Creates a new `GetSavingsPlansUtilizationDetails`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput,
-        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
-        crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
+                                crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.inner = self.inner.time_period(input);
@@ -193,12 +180,12 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self
     }
     /// <p>The data type.</p>
-    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>>) -> Self {
         self.inner = self.inner.set_data_type(input);
         self
     }
     /// <p>The data type.</p>
-    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansDataType>> {
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SavingsPlansDataType>> {
         self.inner.get_data_type()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -298,3 +285,4 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder {
         self.inner.get_sort_by()
     }
 }
+

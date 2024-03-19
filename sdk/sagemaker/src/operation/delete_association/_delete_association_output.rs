@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssociationOutput {
+pub struct DeleteAssociationOutput  {
     /// <p>The ARN of the source.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteAssociationOutput {
+impl  DeleteAssociationOutput  {
     /// <p>The ARN of the source.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
     pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteAssociationOutputBuilder {
     }
     /// <p>The ARN of the source.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the source.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAssociationOutput`](crate::operation::delete_association::DeleteAssociationOutput).
     pub fn build(self) -> crate::operation::delete_association::DeleteAssociationOutput {
         crate::operation::delete_association::DeleteAssociationOutput {
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
+            source_arn: self.source_arn
+            ,
+            destination_arn: self.destination_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

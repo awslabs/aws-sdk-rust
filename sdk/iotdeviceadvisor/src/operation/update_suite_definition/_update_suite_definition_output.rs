@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSuiteDefinitionOutput {
+pub struct UpdateSuiteDefinitionOutput  {
     /// <p>Suite definition ID of the updated test suite.</p>
     pub suite_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
@@ -17,37 +17,37 @@ pub struct UpdateSuiteDefinitionOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateSuiteDefinitionOutput {
+impl  UpdateSuiteDefinitionOutput  {
     /// <p>Suite definition ID of the updated test suite.</p>
-    pub fn suite_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> ::std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
-    pub fn suite_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_arn(&self) -> ::std::option::Option<& str> {
         self.suite_definition_arn.as_deref()
     }
     /// <p>Updates the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> ::std::option::Option<& str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Suite definition version of the updated test suite.</p>
-    pub fn suite_definition_version(&self) -> ::std::option::Option<&str> {
+    pub fn suite_definition_version(&self) -> ::std::option::Option<& str> {
         self.suite_definition_version.as_deref()
     }
     /// <p>Timestamp of when the test suite was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Timestamp of when the test suite was updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSuiteDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSuiteDefinitionOutput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput).
     pub fn builder() -> crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionOutputBuilder {
@@ -75,8 +75,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Suite definition ID of the updated test suite.</p>
     pub fn set_suite_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_id = input;
-        self
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition ID of the updated test suite.</p>
     pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
     pub fn set_suite_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_arn = input;
-        self
+        self.suite_definition_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the updated test suite.</p>
     pub fn get_suite_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Updates the suite definition name. This is a required parameter.</p>
     pub fn set_suite_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_name = input;
-        self
+        self.suite_definition_name = input; self
     }
     /// <p>Updates the suite definition name. This is a required parameter.</p>
     pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Suite definition version of the updated test suite.</p>
     pub fn set_suite_definition_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suite_definition_version = input;
-        self
+        self.suite_definition_version = input; self
     }
     /// <p>Suite definition version of the updated test suite.</p>
     pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Timestamp of when the test suite was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Timestamp of when the test suite was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,32 +140,38 @@ impl UpdateSuiteDefinitionOutputBuilder {
     }
     /// <p>Timestamp of when the test suite was updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>Timestamp of when the test suite was updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSuiteDefinitionOutput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput).
     pub fn build(self) -> crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput {
         crate::operation::update_suite_definition::UpdateSuiteDefinitionOutput {
-            suite_definition_id: self.suite_definition_id,
-            suite_definition_arn: self.suite_definition_arn,
-            suite_definition_name: self.suite_definition_name,
-            suite_definition_version: self.suite_definition_version,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
+            suite_definition_id: self.suite_definition_id
+            ,
+            suite_definition_arn: self.suite_definition_arn
+            ,
+            suite_definition_name: self.suite_definition_name
+            ,
+            suite_definition_version: self.suite_definition_version
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

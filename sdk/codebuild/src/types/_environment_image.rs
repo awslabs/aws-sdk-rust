@@ -3,28 +3,29 @@
 /// <p>Information about a Docker image that is managed by CodeBuild.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentImage {
+pub struct EnvironmentImage  {
     /// <p>The name of the Docker image.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Docker image.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of environment image versions.</p>
-    pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EnvironmentImage {
+impl  EnvironmentImage  {
     /// <p>The name of the Docker image.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Docker image.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of environment image versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
-    pub fn versions(&self) -> &[::std::string::String] {
-        self.versions.as_deref().unwrap_or_default()
+    pub fn versions(&self) -> & [::std::string::String] {
+        self.versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnvironmentImage {
@@ -40,7 +41,7 @@ impl EnvironmentImage {
 pub struct EnvironmentImageBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EnvironmentImageBuilder {
     /// <p>The name of the Docker image.</p>
@@ -50,8 +51,7 @@ impl EnvironmentImageBuilder {
     }
     /// <p>The name of the Docker image.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Docker image.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl EnvironmentImageBuilder {
     }
     /// <p>The description of the Docker image.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Docker image.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl EnvironmentImageBuilder {
     /// <p>A list of environment image versions.</p>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of environment image versions.</p>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// <p>A list of environment image versions.</p>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.versions
     }
     /// Consumes the builder and constructs a [`EnvironmentImage`](crate::types::EnvironmentImage).
     pub fn build(self) -> crate::types::EnvironmentImage {
         crate::types::EnvironmentImage {
-            name: self.name,
-            description: self.description,
-            versions: self.versions,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            versions: self.versions
+            ,
         }
     }
 }
+

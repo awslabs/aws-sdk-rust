@@ -3,19 +3,19 @@
 /// <p>Date and time (UTC) format in RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateInterval {
+pub struct DateInterval  {
     /// <p>A JSON object containing start and date time (UTC). Date and time format is RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub end_date_time: ::std::option::Option<::std::string::String>,
 }
-impl DateInterval {
+impl  DateInterval  {
     /// <p>A JSON object containing start and date time (UTC). Date and time format is RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
-    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<& str> {
         self.start_date_time.as_deref()
     }
     /// <p>End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
-    pub fn end_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_date_time(&self) -> ::std::option::Option<& str> {
         self.end_date_time.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DateIntervalBuilder {
     }
     /// <p>A JSON object containing start and date time (UTC). Date and time format is RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub fn set_start_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>A JSON object containing start and date time (UTC). Date and time format is RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DateIntervalBuilder {
     }
     /// <p>End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub fn set_end_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_date_time = input;
-        self
+        self.end_date_time = input; self
     }
     /// <p>End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'.</p>
     pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DateIntervalBuilder {
     /// Consumes the builder and constructs a [`DateInterval`](crate::types::DateInterval).
     pub fn build(self) -> crate::types::DateInterval {
         crate::types::DateInterval {
-            start_date_time: self.start_date_time,
-            end_date_time: self.end_date_time,
+            start_date_time: self.start_date_time
+            ,
+            end_date_time: self.end_date_time
+            ,
         }
     }
 }
+

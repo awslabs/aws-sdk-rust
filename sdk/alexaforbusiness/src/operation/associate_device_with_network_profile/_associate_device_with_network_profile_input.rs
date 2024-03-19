@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateDeviceWithNetworkProfileInput {
+pub struct AssociateDeviceWithNetworkProfileInput  {
     /// <p>The device ARN.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network profile to associate with a device.</p>
     pub network_profile_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateDeviceWithNetworkProfileInput {
+impl  AssociateDeviceWithNetworkProfileInput  {
     /// <p>The device ARN.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The ARN of the network profile to associate with a device.</p>
-    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateDeviceWithNetworkProfileInputBuilder {
     }
     /// <p>The device ARN.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The device ARN.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl AssociateDeviceWithNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the network profile to associate with a device.</p>
     pub fn set_network_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_profile_arn = input;
-        self
+        self.network_profile_arn = input; self
     }
     /// <p>The ARN of the network profile to associate with a device.</p>
     pub fn get_network_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_profile_arn
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithNetworkProfileInput`](crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileInput {
-                device_arn: self.device_arn,
-                network_profile_arn: self.network_profile_arn,
-            },
+                device_arn: self.device_arn
+                ,
+                network_profile_arn: self.network_profile_arn
+                ,
+            }
         )
     }
 }
+

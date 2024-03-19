@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLogGroupInput {
+pub struct DeleteLogGroupInput  {
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLogGroupInput {
+impl  DeleteLogGroupInput  {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteLogGroupInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
     /// Consumes the builder and constructs a [`DeleteLogGroupInput`](crate::operation::delete_log_group::DeleteLogGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_log_group::DeleteLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_log_group::DeleteLogGroupInput {
-            log_group_name: self.log_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_log_group::DeleteLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_log_group::DeleteLogGroupInput {
+                log_group_name: self.log_group_name
+                ,
+            }
+        )
     }
 }
+

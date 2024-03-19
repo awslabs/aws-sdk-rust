@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopRxNormInferenceJobInput {
+pub struct StopRxNormInferenceJobInput  {
     /// <p>The identifier of the job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl StopRxNormInferenceJobInput {
+impl  StopRxNormInferenceJobInput  {
     /// <p>The identifier of the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopRxNormInferenceJobInputBuilder {
     }
     /// <p>The identifier of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identifier of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

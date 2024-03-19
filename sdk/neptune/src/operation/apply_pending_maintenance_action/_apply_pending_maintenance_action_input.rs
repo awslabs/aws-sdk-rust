@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionInput {
+pub struct ApplyPendingMaintenanceActionInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
@@ -20,14 +20,14 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// </ul>
     pub opt_in_type: ::std::option::Option<::std::string::String>,
 }
-impl ApplyPendingMaintenanceActionInput {
+impl  ApplyPendingMaintenanceActionInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
-    pub fn apply_action(&self) -> ::std::option::Option<&str> {
+    pub fn apply_action(&self) -> ::std::option::Option<& str> {
         self.apply_action.as_deref()
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
@@ -40,7 +40,7 @@ impl ApplyPendingMaintenanceActionInput {
     /// <li>
     /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
-    pub fn opt_in_type(&self) -> ::std::option::Option<&str> {
+    pub fn opt_in_type(&self) -> ::std::option::Option<& str> {
         self.opt_in_type.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.apply_action = input;
-        self
+        self.apply_action = input; self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
     /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
@@ -119,8 +117,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     pub fn set_opt_in_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_in_type = input;
-        self
+        self.opt_in_type = input; self
     }
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
@@ -136,16 +133,17 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         &self.opt_in_type
     }
     /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionInput`](crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
-            resource_identifier: self.resource_identifier,
-            apply_action: self.apply_action,
-            opt_in_type: self.opt_in_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
+                resource_identifier: self.resource_identifier
+                ,
+                apply_action: self.apply_action
+                ,
+                opt_in_type: self.opt_in_type
+                ,
+            }
+        )
     }
 }
+

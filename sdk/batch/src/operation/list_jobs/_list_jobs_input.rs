@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for <code>ListJobs</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsInput {
+pub struct ListJobsInput  {
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
     pub job_queue: ::std::option::Option<::std::string::String>,
     /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
@@ -45,23 +45,23 @@ pub struct ListJobsInput {
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuesPair>>,
 }
-impl ListJobsInput {
+impl  ListJobsInput  {
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
-    pub fn job_queue(&self) -> ::std::option::Option<&str> {
+    pub fn job_queue(&self) -> ::std::option::Option<& str> {
         self.job_queue.as_deref()
     }
     /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
-    pub fn array_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn array_job_id(&self) -> ::std::option::Option<& str> {
         self.array_job_id.as_deref()
     }
     /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
-    pub fn multi_node_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn multi_node_job_id(&self) -> ::std::option::Option<& str> {
         self.multi_node_job_id.as_deref()
     }
     /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -71,7 +71,7 @@ impl ListJobsInput {
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
@@ -101,10 +101,11 @@ impl ListJobsInput {
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::KeyValuesPair] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::KeyValuesPair] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListJobsInput {
@@ -124,7 +125,7 @@ pub struct ListJobsInputBuilder {
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuesPair>>,
 }
 impl ListJobsInputBuilder {
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
@@ -134,8 +135,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
     pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_queue = input;
-        self
+        self.job_queue = input; self
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +148,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
     pub fn set_array_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.array_job_id = input;
-        self
+        self.array_job_id = input; self
     }
     /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
     pub fn get_array_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +161,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
     pub fn set_multi_node_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.multi_node_job_id = input;
-        self
+        self.multi_node_job_id = input; self
     }
     /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
     pub fn get_multi_node_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +174,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -190,8 +187,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -208,8 +204,7 @@ impl ListJobsInputBuilder {
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p><note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -250,9 +245,9 @@ impl ListJobsInputBuilder {
     /// </dl>
     pub fn filters(mut self, input: crate::types::KeyValuesPair) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
     /// <dl>
@@ -281,9 +276,8 @@ impl ListJobsInputBuilder {
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KeyValuesPair>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
     /// <dl>
@@ -312,19 +306,29 @@ impl ListJobsInputBuilder {
     /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KeyValuesPair>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
-            job_queue: self.job_queue,
-            array_job_id: self.array_job_id,
-            multi_node_job_id: self.multi_node_job_id,
-            job_status: self.job_status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filters: self.filters,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_jobs::ListJobsInput {
+                job_queue: self.job_queue
+                ,
+                array_job_id: self.array_job_id
+                ,
+                multi_node_job_id: self.multi_node_job_id
+                ,
+                job_status: self.job_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

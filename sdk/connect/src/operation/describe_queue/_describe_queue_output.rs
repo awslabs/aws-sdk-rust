@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQueueOutput {
+pub struct DescribeQueueOutput  {
     /// <p>The name of the queue.</p>
     pub queue: ::std::option::Option<crate::types::Queue>,
     _request_id: Option<String>,
 }
-impl DescribeQueueOutput {
+impl  DescribeQueueOutput  {
     /// <p>The name of the queue.</p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::Queue> {
+    pub fn queue(&self) -> ::std::option::Option<& crate::types::Queue> {
         self.queue.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeQueueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeQueueOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQueueOutput`](crate::operation::describe_queue::DescribeQueueOutput).
     pub fn builder() -> crate::operation::describe_queue::builders::DescribeQueueOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeQueueOutputBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::Queue>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
     }
     /// <p>The name of the queue.</p>
     pub fn get_queue(&self) -> &::std::option::Option<crate::types::Queue> {
         &self.queue
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeQueueOutput`](crate::operation::describe_queue::DescribeQueueOutput).
     pub fn build(self) -> crate::operation::describe_queue::DescribeQueueOutput {
         crate::operation::describe_queue::DescribeQueueOutput {
-            queue: self.queue,
+            queue: self.queue
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -22,11 +22,7 @@ impl JobIdentifier {
     /// Tries to convert the enum instance into [`FileName`](crate::types::JobIdentifier::FileName), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file_name(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let JobIdentifier::FileName(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let JobIdentifier::FileName(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FileName`](crate::types::JobIdentifier::FileName).
     pub fn is_file_name(&self) -> bool {
@@ -35,11 +31,7 @@ impl JobIdentifier {
     /// Tries to convert the enum instance into [`ScriptName`](crate::types::JobIdentifier::ScriptName), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_script_name(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let JobIdentifier::ScriptName(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let JobIdentifier::ScriptName(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ScriptName`](crate::types::JobIdentifier::ScriptName).
     pub fn is_script_name(&self) -> bool {
@@ -50,3 +42,4 @@ impl JobIdentifier {
         matches!(self, Self::Unknown)
     }
 }
+

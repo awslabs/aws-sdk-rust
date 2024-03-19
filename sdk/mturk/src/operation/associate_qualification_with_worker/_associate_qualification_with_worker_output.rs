@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateQualificationWithWorkerOutput {
+pub struct AssociateQualificationWithWorkerOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AssociateQualificationWithWorkerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateQualificationWithWorkerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
     pub fn builder() -> crate::operation::associate_qualification_with_worker::builders::AssociateQualificationWithWorkerOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AssociateQualificationWithWorkerOutputBuilder {
 }
 impl AssociateQualificationWithWorkerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerOutput`](crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput).
     pub fn build(self) -> crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput {
         crate::operation::associate_qualification_with_worker::AssociateQualificationWithWorkerOutput {
@@ -40,3 +40,4 @@ impl AssociateQualificationWithWorkerOutputBuilder {
         }
     }
 }
+

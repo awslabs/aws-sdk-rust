@@ -3,30 +3,31 @@
 /// <p>Identifies a property value used in an expression.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VariableValue {
+pub struct VariableValue  {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of the property.</p>
-    pub property_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>,
+    pub property_path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>,
 }
-impl VariableValue {
+impl  VariableValue  {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The path of the property.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.property_path.is_none()`.
-    pub fn property_path(&self) -> &[crate::types::AssetModelPropertyPathSegment] {
-        self.property_path.as_deref().unwrap_or_default()
+    pub fn property_path(&self) -> & [crate::types::AssetModelPropertyPathSegment] {
+        self.property_path.as_deref()
+        .unwrap_or_default()
     }
 }
 impl VariableValue {
@@ -42,7 +43,7 @@ impl VariableValue {
 pub struct VariableValueBuilder {
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
-    pub(crate) property_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>,
+    pub(crate) property_path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>,
 }
 impl VariableValueBuilder {
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -52,8 +53,7 @@ impl VariableValueBuilder {
     }
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model. If the property has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +68,7 @@ impl VariableValueBuilder {
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID. If the hierarchy has an external ID, you can specify <code>externalId:</code> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -83,25 +82,28 @@ impl VariableValueBuilder {
     /// <p>The path of the property.</p>
     pub fn property_path(mut self, input: crate::types::AssetModelPropertyPathSegment) -> Self {
         let mut v = self.property_path.unwrap_or_default();
-        v.push(input);
-        self.property_path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.property_path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The path of the property.</p>
-    pub fn set_property_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>>) -> Self {
-        self.property_path = input;
-        self
+    pub fn set_property_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>>) -> Self {
+        self.property_path = input; self
     }
     /// <p>The path of the property.</p>
-    pub fn get_property_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyPathSegment>> {
+    pub fn get_property_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetModelPropertyPathSegment>> {
         &self.property_path
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     pub fn build(self) -> crate::types::VariableValue {
         crate::types::VariableValue {
-            property_id: self.property_id,
-            hierarchy_id: self.hierarchy_id,
-            property_path: self.property_path,
+            property_id: self.property_id
+            ,
+            hierarchy_id: self.hierarchy_id
+            ,
+            property_path: self.property_path
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the message template to use for the message, for each type of channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateConfiguration {
+pub struct TemplateConfiguration  {
     /// <p>The email template to use for the message.</p>
     pub email_template: ::std::option::Option<crate::types::Template>,
     /// <p>The push notification template to use for the message.</p>
@@ -15,25 +15,25 @@ pub struct TemplateConfiguration {
     /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
     pub in_app_template: ::std::option::Option<crate::types::Template>,
 }
-impl TemplateConfiguration {
+impl  TemplateConfiguration  {
     /// <p>The email template to use for the message.</p>
-    pub fn email_template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn email_template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.email_template.as_ref()
     }
     /// <p>The push notification template to use for the message.</p>
-    pub fn push_template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn push_template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.push_template.as_ref()
     }
     /// <p>The SMS template to use for the message.</p>
-    pub fn sms_template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn sms_template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.sms_template.as_ref()
     }
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
-    pub fn voice_template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn voice_template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.voice_template.as_ref()
     }
     /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
-    pub fn in_app_template(&self) -> ::std::option::Option<&crate::types::Template> {
+    pub fn in_app_template(&self) -> ::std::option::Option<& crate::types::Template> {
         self.in_app_template.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The email template to use for the message.</p>
     pub fn set_email_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.email_template = input;
-        self
+        self.email_template = input; self
     }
     /// <p>The email template to use for the message.</p>
     pub fn get_email_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -76,8 +75,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The push notification template to use for the message.</p>
     pub fn set_push_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.push_template = input;
-        self
+        self.push_template = input; self
     }
     /// <p>The push notification template to use for the message.</p>
     pub fn get_push_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -90,8 +88,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The SMS template to use for the message.</p>
     pub fn set_sms_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.sms_template = input;
-        self
+        self.sms_template = input; self
     }
     /// <p>The SMS template to use for the message.</p>
     pub fn get_sms_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -104,8 +101,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub fn set_voice_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.voice_template = input;
-        self
+        self.voice_template = input; self
     }
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub fn get_voice_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -118,8 +114,7 @@ impl TemplateConfigurationBuilder {
     }
     /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
     pub fn set_in_app_template(mut self, input: ::std::option::Option<crate::types::Template>) -> Self {
-        self.in_app_template = input;
-        self
+        self.in_app_template = input; self
     }
     /// <p>The InApp template to use for the message. The InApp template object is not supported for SendMessages.</p>
     pub fn get_in_app_template(&self) -> &::std::option::Option<crate::types::Template> {
@@ -128,11 +123,17 @@ impl TemplateConfigurationBuilder {
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
         crate::types::TemplateConfiguration {
-            email_template: self.email_template,
-            push_template: self.push_template,
-            sms_template: self.sms_template,
-            voice_template: self.voice_template,
-            in_app_template: self.in_app_template,
+            email_template: self.email_template
+            ,
+            push_template: self.push_template
+            ,
+            sms_template: self.sms_template
+            ,
+            voice_template: self.voice_template
+            ,
+            in_app_template: self.in_app_template
+            ,
         }
     }
 }
+

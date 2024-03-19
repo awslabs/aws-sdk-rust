@@ -3,15 +3,14 @@
 /// <p>The distribution of agents between the instance and its replica(s).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AgentConfig {
+pub struct AgentConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub distributions: ::std::vec::Vec<crate::types::Distribution>,
+    pub distributions: ::std::vec::Vec::<crate::types::Distribution>,
 }
-impl AgentConfig {
+impl  AgentConfig  {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> &[crate::types::Distribution] {
-        use std::ops::Deref;
-        self.distributions.deref()
+    pub fn distributions(&self) -> & [crate::types::Distribution] {
+        use std::ops::Deref; self.distributions.deref()
     }
 }
 impl AgentConfig {
@@ -25,7 +24,7 @@ impl AgentConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AgentConfigBuilder {
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
 }
 impl AgentConfigBuilder {
     /// Appends an item to `distributions`.
@@ -35,30 +34,31 @@ impl AgentConfigBuilder {
     /// <p>Information about traffic distributions.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>Information about traffic distributions.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Distribution>> {
         &self.distributions
     }
     /// Consumes the builder and constructs a [`AgentConfig`](crate::types::AgentConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`distributions`](crate::types::builders::AgentConfigBuilder::distributions)
     pub fn build(self) -> ::std::result::Result<crate::types::AgentConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AgentConfig {
-            distributions: self.distributions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "distributions",
-                    "distributions was not specified but it is required when building AgentConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AgentConfig {
+                distributions: self.distributions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("distributions", "distributions was not specified but it is required when building AgentConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

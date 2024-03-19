@@ -3,34 +3,36 @@
 /// <p>The JupyterServer app settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JupyterServerAppSettings {
+pub struct JupyterServerAppSettings  {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    pub code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
-impl JupyterServerAppSettings {
+impl  JupyterServerAppSettings  {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lifecycle_config_arns.is_none()`.
-    pub fn lifecycle_config_arns(&self) -> &[::std::string::String] {
-        self.lifecycle_config_arns.as_deref().unwrap_or_default()
+    pub fn lifecycle_config_arns(&self) -> & [::std::string::String] {
+        self.lifecycle_config_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repositories.is_none()`.
-    pub fn code_repositories(&self) -> &[crate::types::CodeRepository] {
-        self.code_repositories.as_deref().unwrap_or_default()
+    pub fn code_repositories(&self) -> & [crate::types::CodeRepository] {
+        self.code_repositories.as_deref()
+        .unwrap_or_default()
     }
 }
 impl JupyterServerAppSettings {
@@ -45,8 +47,8 @@ impl JupyterServerAppSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JupyterServerAppSettingsBuilder {
     pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>,
+    pub(crate) lifecycle_config_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) code_repositories: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>,
 }
 impl JupyterServerAppSettingsBuilder {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
@@ -56,8 +58,7 @@ impl JupyterServerAppSettingsBuilder {
     }
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterServer app. If you use the <code>LifecycleConfigArns</code> parameter, then this parameter is also required.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -72,21 +73,20 @@ impl JupyterServerAppSettingsBuilder {
     /// </note>
     pub fn lifecycle_config_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lifecycle_config_arns.unwrap_or_default();
-        v.push(input.into());
-        self.lifecycle_config_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.lifecycle_config_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.lifecycle_config_arns = input;
-        self
+    pub fn set_lifecycle_config_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.lifecycle_config_arns = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the JupyterServerApp. If you use this parameter, the <code>DefaultResourceSpec</code> parameter is also required.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
     /// </note>
-    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_lifecycle_config_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.lifecycle_config_arns
     }
     /// Appends an item to `code_repositories`.
@@ -96,25 +96,28 @@ impl JupyterServerAppSettingsBuilder {
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
     pub fn code_repositories(mut self, input: crate::types::CodeRepository) -> Self {
         let mut v = self.code_repositories.unwrap_or_default();
-        v.push(input);
-        self.code_repositories = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_repositories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>>) -> Self {
-        self.code_repositories = input;
-        self
+    pub fn set_code_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>>) -> Self {
+        self.code_repositories = input; self
     }
     /// <p>A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer application.</p>
-    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepository>> {
+    pub fn get_code_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeRepository>> {
         &self.code_repositories
     }
     /// Consumes the builder and constructs a [`JupyterServerAppSettings`](crate::types::JupyterServerAppSettings).
     pub fn build(self) -> crate::types::JupyterServerAppSettings {
         crate::types::JupyterServerAppSettings {
-            default_resource_spec: self.default_resource_spec,
-            lifecycle_config_arns: self.lifecycle_config_arns,
-            code_repositories: self.code_repositories,
+            default_resource_spec: self.default_resource_spec
+            ,
+            lifecycle_config_arns: self.lifecycle_config_arns
+            ,
+            code_repositories: self.code_repositories
+            ,
         }
     }
 }
+

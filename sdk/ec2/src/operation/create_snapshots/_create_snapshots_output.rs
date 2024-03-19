@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSnapshotsOutput {
+pub struct CreateSnapshotsOutput  {
     /// <p>List of snapshots.</p>
-    pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>,
+    pub snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotInfo>>,
     _request_id: Option<String>,
 }
-impl CreateSnapshotsOutput {
+impl  CreateSnapshotsOutput  {
     /// <p>List of snapshots.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
-    pub fn snapshots(&self) -> &[crate::types::SnapshotInfo] {
-        self.snapshots.as_deref().unwrap_or_default()
+    pub fn snapshots(&self) -> & [crate::types::SnapshotInfo] {
+        self.snapshots.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput).
     pub fn builder() -> crate::operation::create_snapshots::builders::CreateSnapshotsOutputBuilder {
@@ -31,7 +32,7 @@ impl CreateSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateSnapshotsOutputBuilder {
-    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotInfo>>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotsOutputBuilder {
@@ -42,33 +43,34 @@ impl CreateSnapshotsOutputBuilder {
     /// <p>List of snapshots.</p>
     pub fn snapshots(mut self, input: crate::types::SnapshotInfo) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
-        v.push(input);
-        self.snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of snapshots.</p>
-    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>>) -> Self {
-        self.snapshots = input;
-        self
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotInfo>>) -> Self {
+        self.snapshots = input; self
     }
     /// <p>List of snapshots.</p>
-    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotInfo>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotInfo>> {
         &self.snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput).
     pub fn build(self) -> crate::operation::create_snapshots::CreateSnapshotsOutput {
         crate::operation::create_snapshots::CreateSnapshotsOutput {
-            snapshots: self.snapshots,
+            snapshots: self.snapshots
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides a summary about an AutoML job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlJobSummary {
+pub struct AutoMlJobSummary  {
     /// <p>The name of the AutoML job you are requesting.</p>
     pub auto_ml_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AutoML job.</p>
@@ -21,46 +21,47 @@ pub struct AutoMlJobSummary {
     /// <p>The failure reason of an AutoML job.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
+    pub partial_failure_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::AutoMlPartialFailureReason>>,
 }
-impl AutoMlJobSummary {
+impl  AutoMlJobSummary  {
     /// <p>The name of the AutoML job you are requesting.</p>
-    pub fn auto_ml_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_ml_job_name(&self) -> ::std::option::Option<& str> {
         self.auto_ml_job_name.as_deref()
     }
     /// <p>The ARN of the AutoML job.</p>
-    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<& str> {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>The status of the AutoML job.</p>
-    pub fn auto_ml_job_status(&self) -> ::std::option::Option<&crate::types::AutoMlJobStatus> {
+    pub fn auto_ml_job_status(&self) -> ::std::option::Option<& crate::types::AutoMlJobStatus> {
         self.auto_ml_job_status.as_ref()
     }
     /// <p>The secondary status of the AutoML job.</p>
-    pub fn auto_ml_job_secondary_status(&self) -> ::std::option::Option<&crate::types::AutoMlJobSecondaryStatus> {
+    pub fn auto_ml_job_secondary_status(&self) -> ::std::option::Option<& crate::types::AutoMlJobSecondaryStatus> {
         self.auto_ml_job_secondary_status.as_ref()
     }
     /// <p>When the AutoML job was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The end time of an AutoML job.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>When the AutoML job was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The failure reason of an AutoML job.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partial_failure_reasons.is_none()`.
-    pub fn partial_failure_reasons(&self) -> &[crate::types::AutoMlPartialFailureReason] {
-        self.partial_failure_reasons.as_deref().unwrap_or_default()
+    pub fn partial_failure_reasons(&self) -> & [crate::types::AutoMlPartialFailureReason] {
+        self.partial_failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoMlJobSummary {
@@ -82,7 +83,7 @@ pub struct AutoMlJobSummaryBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) partial_failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
+    pub(crate) partial_failure_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::AutoMlPartialFailureReason>>,
 }
 impl AutoMlJobSummaryBuilder {
     /// <p>The name of the AutoML job you are requesting.</p>
@@ -93,8 +94,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The name of the AutoML job you are requesting.</p>
     pub fn set_auto_ml_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_ml_job_name = input;
-        self
+        self.auto_ml_job_name = input; self
     }
     /// <p>The name of the AutoML job you are requesting.</p>
     pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +108,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The ARN of the AutoML job.</p>
     pub fn set_auto_ml_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_ml_job_arn = input;
-        self
+        self.auto_ml_job_arn = input; self
     }
     /// <p>The ARN of the AutoML job.</p>
     pub fn get_auto_ml_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The status of the AutoML job.</p>
     pub fn set_auto_ml_job_status(mut self, input: ::std::option::Option<crate::types::AutoMlJobStatus>) -> Self {
-        self.auto_ml_job_status = input;
-        self
+        self.auto_ml_job_status = input; self
     }
     /// <p>The status of the AutoML job.</p>
     pub fn get_auto_ml_job_status(&self) -> &::std::option::Option<crate::types::AutoMlJobStatus> {
@@ -138,8 +136,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The secondary status of the AutoML job.</p>
     pub fn set_auto_ml_job_secondary_status(mut self, input: ::std::option::Option<crate::types::AutoMlJobSecondaryStatus>) -> Self {
-        self.auto_ml_job_secondary_status = input;
-        self
+        self.auto_ml_job_secondary_status = input; self
     }
     /// <p>The secondary status of the AutoML job.</p>
     pub fn get_auto_ml_job_secondary_status(&self) -> &::std::option::Option<crate::types::AutoMlJobSecondaryStatus> {
@@ -153,8 +150,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>When the AutoML job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the AutoML job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -167,8 +163,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The end time of an AutoML job.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time of an AutoML job.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +177,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>When the AutoML job was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the AutoML job was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +190,7 @@ impl AutoMlJobSummaryBuilder {
     }
     /// <p>The failure reason of an AutoML job.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The failure reason of an AutoML job.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,31 +203,40 @@ impl AutoMlJobSummaryBuilder {
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
     pub fn partial_failure_reasons(mut self, input: crate::types::AutoMlPartialFailureReason) -> Self {
         let mut v = self.partial_failure_reasons.unwrap_or_default();
-        v.push(input);
-        self.partial_failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partial_failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    pub fn set_partial_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>>) -> Self {
-        self.partial_failure_reasons = input;
-        self
+    pub fn set_partial_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoMlPartialFailureReason>>) -> Self {
+        self.partial_failure_reasons = input; self
     }
     /// <p>The list of reasons for partial failures within an AutoML job.</p>
-    pub fn get_partial_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlPartialFailureReason>> {
+    pub fn get_partial_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoMlPartialFailureReason>> {
         &self.partial_failure_reasons
     }
     /// Consumes the builder and constructs a [`AutoMlJobSummary`](crate::types::AutoMlJobSummary).
     pub fn build(self) -> crate::types::AutoMlJobSummary {
         crate::types::AutoMlJobSummary {
-            auto_ml_job_name: self.auto_ml_job_name,
-            auto_ml_job_arn: self.auto_ml_job_arn,
-            auto_ml_job_status: self.auto_ml_job_status,
-            auto_ml_job_secondary_status: self.auto_ml_job_secondary_status,
-            creation_time: self.creation_time,
-            end_time: self.end_time,
-            last_modified_time: self.last_modified_time,
-            failure_reason: self.failure_reason,
-            partial_failure_reasons: self.partial_failure_reasons,
+            auto_ml_job_name: self.auto_ml_job_name
+            ,
+            auto_ml_job_arn: self.auto_ml_job_arn
+            ,
+            auto_ml_job_status: self.auto_ml_job_status
+            ,
+            auto_ml_job_secondary_status: self.auto_ml_job_secondary_status
+            ,
+            creation_time: self.creation_time
+            ,
+            end_time: self.end_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            partial_failure_reasons: self.partial_failure_reasons
+            ,
         }
     }
 }
+

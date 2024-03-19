@@ -3,7 +3,7 @@
 /// <p>Represents an individual cache node in a snapshot of a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeSnapshot {
+pub struct NodeSnapshot  {
     /// <p>A unique identifier for the source cluster.</p>
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the source node group (shard).</p>
@@ -19,33 +19,33 @@ pub struct NodeSnapshot {
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl NodeSnapshot {
+impl  NodeSnapshot  {
     /// <p>A unique identifier for the source cluster.</p>
-    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<& str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A unique identifier for the source node group (shard).</p>
-    pub fn node_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_group_id(&self) -> ::std::option::Option<& str> {
         self.node_group_id.as_deref()
     }
     /// <p>The cache node identifier for the node in the source cluster.</p>
-    pub fn cache_node_id(&self) -> ::std::option::Option<&str> {
+    pub fn cache_node_id(&self) -> ::std::option::Option<& str> {
         self.cache_node_id.as_deref()
     }
     /// <p>The configuration for the source node group (shard).</p>
-    pub fn node_group_configuration(&self) -> ::std::option::Option<&crate::types::NodeGroupConfiguration> {
+    pub fn node_group_configuration(&self) -> ::std::option::Option<& crate::types::NodeGroupConfiguration> {
         self.node_group_configuration.as_ref()
     }
     /// <p>The size of the cache on the source cache node.</p>
-    pub fn cache_size(&self) -> ::std::option::Option<&str> {
+    pub fn cache_size(&self) -> ::std::option::Option<& str> {
         self.cache_size.as_deref()
     }
     /// <p>The date and time when the cache node was created in the source cluster.</p>
-    pub fn cache_node_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn cache_node_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.cache_node_create_time.as_ref()
     }
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
-    pub fn snapshot_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>A unique identifier for the source cluster.</p>
     pub fn set_cache_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_cluster_id = input;
-        self
+        self.cache_cluster_id = input; self
     }
     /// <p>A unique identifier for the source cluster.</p>
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>A unique identifier for the source node group (shard).</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_group_id = input;
-        self
+        self.node_group_id = input; self
     }
     /// <p>A unique identifier for the source node group (shard).</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>The cache node identifier for the node in the source cluster.</p>
     pub fn set_cache_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_node_id = input;
-        self
+        self.cache_node_id = input; self
     }
     /// <p>The cache node identifier for the node in the source cluster.</p>
     pub fn get_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>The configuration for the source node group (shard).</p>
     pub fn set_node_group_configuration(mut self, input: ::std::option::Option<crate::types::NodeGroupConfiguration>) -> Self {
-        self.node_group_configuration = input;
-        self
+        self.node_group_configuration = input; self
     }
     /// <p>The configuration for the source node group (shard).</p>
     pub fn get_node_group_configuration(&self) -> &::std::option::Option<crate::types::NodeGroupConfiguration> {
@@ -132,8 +128,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>The size of the cache on the source cache node.</p>
     pub fn set_cache_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_size = input;
-        self
+        self.cache_size = input; self
     }
     /// <p>The size of the cache on the source cache node.</p>
     pub fn get_cache_size(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>The date and time when the cache node was created in the source cluster.</p>
     pub fn set_cache_node_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.cache_node_create_time = input;
-        self
+        self.cache_node_create_time = input; self
     }
     /// <p>The date and time when the cache node was created in the source cluster.</p>
     pub fn get_cache_node_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl NodeSnapshotBuilder {
     }
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     pub fn set_snapshot_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_create_time = input;
-        self
+        self.snapshot_create_time = input; self
     }
     /// <p>The date and time when the source node's metadata and cache data set was obtained for the snapshot.</p>
     pub fn get_snapshot_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl NodeSnapshotBuilder {
     /// Consumes the builder and constructs a [`NodeSnapshot`](crate::types::NodeSnapshot).
     pub fn build(self) -> crate::types::NodeSnapshot {
         crate::types::NodeSnapshot {
-            cache_cluster_id: self.cache_cluster_id,
-            node_group_id: self.node_group_id,
-            cache_node_id: self.cache_node_id,
-            node_group_configuration: self.node_group_configuration,
-            cache_size: self.cache_size,
-            cache_node_create_time: self.cache_node_create_time,
-            snapshot_create_time: self.snapshot_create_time,
+            cache_cluster_id: self.cache_cluster_id
+            ,
+            node_group_id: self.node_group_id
+            ,
+            cache_node_id: self.cache_node_id
+            ,
+            node_group_configuration: self.node_group_configuration
+            ,
+            cache_size: self.cache_size
+            ,
+            cache_node_create_time: self.cache_node_create_time
+            ,
+            snapshot_create_time: self.snapshot_create_time
+            ,
         }
     }
 }
+

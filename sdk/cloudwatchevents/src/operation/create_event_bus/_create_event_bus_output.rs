@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventBusOutput {
+pub struct CreateEventBusOutput  {
     /// <p>The ARN of the new event bus.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateEventBusOutput {
+impl  CreateEventBusOutput  {
     /// <p>The ARN of the new event bus.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_arn(&self) -> ::std::option::Option<& str> {
         self.event_bus_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEventBusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEventBusOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
     pub fn builder() -> crate::operation::create_event_bus::builders::CreateEventBusOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateEventBusOutputBuilder {
     }
     /// <p>The ARN of the new event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_arn = input;
-        self
+        self.event_bus_arn = input; self
     }
     /// <p>The ARN of the new event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEventBusOutput`](crate::operation::create_event_bus::CreateEventBusOutput).
     pub fn build(self) -> crate::operation::create_event_bus::CreateEventBusOutput {
         crate::operation::create_event_bus::CreateEventBusOutput {
-            event_bus_arn: self.event_bus_arn,
+            event_bus_arn: self.event_bus_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

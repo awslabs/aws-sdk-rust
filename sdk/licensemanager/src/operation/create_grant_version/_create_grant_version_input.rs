@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGrantVersionInput {
+pub struct CreateGrantVersionInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
@@ -10,7 +10,7 @@ pub struct CreateGrantVersionInput {
     /// <p>Grant name.</p>
     pub grant_name: ::std::option::Option<::std::string::String>,
     /// <p>Allowed operations for the grant.</p>
-    pub allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub allowed_operations: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>,
     /// <p>Grant status.</p>
     pub status: ::std::option::Option<crate::types::GrantStatus>,
     /// <p>Grant status reason.</p>
@@ -20,39 +20,40 @@ pub struct CreateGrantVersionInput {
     /// <p>The options specified for the grant.</p>
     pub options: ::std::option::Option<crate::types::Options>,
 }
-impl CreateGrantVersionInput {
+impl  CreateGrantVersionInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn grant_name(&self) -> ::std::option::Option<& str> {
         self.grant_name.as_deref()
     }
     /// <p>Allowed operations for the grant.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_operations.is_none()`.
-    pub fn allowed_operations(&self) -> &[crate::types::AllowedOperation] {
-        self.allowed_operations.as_deref().unwrap_or_default()
+    pub fn allowed_operations(&self) -> & [crate::types::AllowedOperation] {
+        self.allowed_operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Grant status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GrantStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GrantStatus> {
         self.status.as_ref()
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>Current version of the grant.</p>
-    pub fn source_version(&self) -> ::std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<& str> {
         self.source_version.as_deref()
     }
     /// <p>The options specified for the grant.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.options.as_ref()
     }
 }
@@ -70,7 +71,7 @@ pub struct CreateGrantVersionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) grant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) grant_name: ::std::option::Option<::std::string::String>,
-    pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
+    pub(crate) allowed_operations: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>,
     pub(crate) status: ::std::option::Option<crate::types::GrantStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) source_version: ::std::option::Option<::std::string::String>,
@@ -85,8 +86,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +100,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Grant name.</p>
     pub fn set_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_name = input;
-        self
+        self.grant_name = input; self
     }
     /// <p>Grant name.</p>
     pub fn get_grant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,17 +126,16 @@ impl CreateGrantVersionInputBuilder {
     /// <p>Allowed operations for the grant.</p>
     pub fn allowed_operations(mut self, input: crate::types::AllowedOperation) -> Self {
         let mut v = self.allowed_operations.unwrap_or_default();
-        v.push(input);
-        self.allowed_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>) -> Self {
-        self.allowed_operations = input;
-        self
+    pub fn set_allowed_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>>) -> Self {
+        self.allowed_operations = input; self
     }
     /// <p>Allowed operations for the grant.</p>
-    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+    pub fn get_allowed_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AllowedOperation>> {
         &self.allowed_operations
     }
     /// <p>Grant status.</p>
@@ -148,8 +145,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Grant status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Grant status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GrantStatus> {
@@ -162,8 +158,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Grant status reason.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Grant status reason.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +171,7 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>Current version of the grant.</p>
     pub fn set_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_version = input;
-        self
+        self.source_version = input; self
     }
     /// <p>Current version of the grant.</p>
     pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,27 +184,34 @@ impl CreateGrantVersionInputBuilder {
     }
     /// <p>The options specified for the grant.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The options specified for the grant.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
         &self.options
     }
     /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_grant_version::CreateGrantVersionInput {
-            client_token: self.client_token,
-            grant_arn: self.grant_arn,
-            grant_name: self.grant_name,
-            allowed_operations: self.allowed_operations,
-            status: self.status,
-            status_reason: self.status_reason,
-            source_version: self.source_version,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_grant_version::CreateGrantVersionInput {
+                client_token: self.client_token
+                ,
+                grant_arn: self.grant_arn
+                ,
+                grant_name: self.grant_name
+                ,
+                allowed_operations: self.allowed_operations
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                source_version: self.source_version
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

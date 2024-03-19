@@ -3,13 +3,13 @@
 /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledJobRollout {
+pub struct ScheduledJobRollout  {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
 }
-impl ScheduledJobRollout {
+impl  ScheduledJobRollout  {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ScheduledJobRolloutBuilder {
     }
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ScheduledJobRolloutBuilder {
     }
     /// Consumes the builder and constructs a [`ScheduledJobRollout`](crate::types::ScheduledJobRollout).
     pub fn build(self) -> crate::types::ScheduledJobRollout {
-        crate::types::ScheduledJobRollout { start_time: self.start_time }
+        crate::types::ScheduledJobRollout {
+            start_time: self.start_time
+            ,
+        }
     }
 }
+

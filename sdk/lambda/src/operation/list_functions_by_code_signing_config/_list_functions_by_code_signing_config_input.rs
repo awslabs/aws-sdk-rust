@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionsByCodeSigningConfigInput {
+pub struct ListFunctionsByCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>Maximum number of items to return.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListFunctionsByCodeSigningConfigInput {
+impl  ListFunctionsByCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> ::std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Maximum number of items to return.</p>
@@ -48,8 +48,7 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn set_code_signing_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_signing_config_arn = input;
-        self
+        self.code_signing_config_arn = input; self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,26 +74,24 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     }
     /// <p>Maximum number of items to return.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>Maximum number of items to return.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigInput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
         )
     }
 }
+

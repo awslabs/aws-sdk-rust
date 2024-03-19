@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessKeyInput {
+pub struct DeleteAccessKeyInput  {
     /// <p>The name of the user whose access key pair you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteAccessKeyInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub access_key_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAccessKeyInput {
+impl  DeleteAccessKeyInput  {
     /// <p>The name of the user whose access key pair you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl DeleteAccessKeyInputBuilder {
     /// <p>The name of the user whose access key pair you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user whose access key pair you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -64,8 +63,7 @@ impl DeleteAccessKeyInputBuilder {
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The access key ID for the access key ID and secret access key you want to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -73,12 +71,15 @@ impl DeleteAccessKeyInputBuilder {
         &self.access_key_id
     }
     /// Consumes the builder and constructs a [`DeleteAccessKeyInput`](crate::operation::delete_access_key::DeleteAccessKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_access_key::DeleteAccessKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_access_key::DeleteAccessKeyInput {
-            user_name: self.user_name,
-            access_key_id: self.access_key_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access_key::DeleteAccessKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_access_key::DeleteAccessKeyInput {
+                user_name: self.user_name
+                ,
+                access_key_id: self.access_key_id
+                ,
+            }
+        )
     }
 }
+

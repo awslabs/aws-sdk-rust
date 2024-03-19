@@ -3,20 +3,19 @@
 /// <p>An asset property timestamp entry containing the following information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetPropertyTimestamp {
+pub struct AssetPropertyTimestamp  {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     pub time_in_seconds: ::std::string::String,
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub offset_in_nanos: ::std::option::Option<::std::string::String>,
 }
-impl AssetPropertyTimestamp {
+impl  AssetPropertyTimestamp  {
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
-    pub fn time_in_seconds(&self) -> &str {
-        use std::ops::Deref;
-        self.time_in_seconds.deref()
+    pub fn time_in_seconds(&self) -> & str {
+        use std::ops::Deref; self.time_in_seconds.deref()
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
-    pub fn offset_in_nanos(&self) -> ::std::option::Option<&str> {
+    pub fn offset_in_nanos(&self) -> ::std::option::Option<& str> {
         self.offset_in_nanos.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl AssetPropertyTimestampBuilder {
     }
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     pub fn set_time_in_seconds(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_in_seconds = input;
-        self
+        self.time_in_seconds = input; self
     }
     /// <p>A string that contains the time in seconds since epoch. Accepts substitution templates.</p>
     pub fn get_time_in_seconds(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl AssetPropertyTimestampBuilder {
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub fn set_offset_in_nanos(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offset_in_nanos = input;
-        self
+        self.offset_in_nanos = input; self
     }
     /// <p>Optional. A string that contains the nanosecond time offset. Accepts substitution templates.</p>
     pub fn get_offset_in_nanos(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AssetPropertyTimestampBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time_in_seconds`](crate::types::builders::AssetPropertyTimestampBuilder::time_in_seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetPropertyTimestamp, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetPropertyTimestamp {
-            time_in_seconds: self.time_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_in_seconds",
-                    "time_in_seconds was not specified but it is required when building AssetPropertyTimestamp",
-                )
-            })?,
-            offset_in_nanos: self.offset_in_nanos,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetPropertyTimestamp {
+                time_in_seconds: self.time_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_in_seconds", "time_in_seconds was not specified but it is required when building AssetPropertyTimestamp")
+                    )?
+                ,
+                offset_in_nanos: self.offset_in_nanos
+                ,
+            }
+        )
     }
 }
+

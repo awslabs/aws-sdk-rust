@@ -3,13 +3,13 @@
 /// <p>Represents the input of a <code>DeleteTable</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTableInput {
+pub struct DeleteTableInput  {
     /// <p>The name of the table to delete.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTableInput {
+impl  DeleteTableInput  {
     /// <p>The name of the table to delete.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl DeleteTableInputBuilder {
     }
     /// <p>The name of the table to delete.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table to delete.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl DeleteTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_table::DeleteTableInput { table_name: self.table_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_table::DeleteTableInput {
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

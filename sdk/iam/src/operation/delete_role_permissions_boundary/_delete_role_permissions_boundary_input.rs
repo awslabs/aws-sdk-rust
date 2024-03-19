@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRolePermissionsBoundaryInput {
+pub struct DeleteRolePermissionsBoundaryInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRolePermissionsBoundaryInput {
+impl  DeleteRolePermissionsBoundaryInput  {
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteRolePermissionsBoundaryInputBuilder {
     }
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the permissions boundary.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_name
     }
     /// Consumes the builder and constructs a [`DeleteRolePermissionsBoundaryInput`](crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput {
-            role_name: self.role_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_role_permissions_boundary::DeleteRolePermissionsBoundaryInput {
+                role_name: self.role_name
+                ,
+            }
+        )
     }
 }
+

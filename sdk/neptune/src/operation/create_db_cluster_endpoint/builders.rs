@@ -5,54 +5,50 @@ pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoin
 
 impl CreateDbClusterEndpointInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_db_cluster_endpoint();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_db_cluster_endpoint();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDBClusterEndpoint`.
-///
+/// 
 /// <p>Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder,
+                    inner: crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-    > for CreateDBClusterEndpointFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+                    crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+                > for CreateDBClusterEndpointFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+                        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDBClusterEndpointFluentBuilder {
     /// Creates a new `CreateDBClusterEndpoint`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateDBClusterEndpointFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
-        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpoint::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput, crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -160,12 +147,12 @@ impl CreateDBClusterEndpointFluentBuilder {
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_static_members(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_static_members(input);
         self
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_static_members(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_static_members()
     }
     /// Appends an item to `ExcludedMembers`.
@@ -178,12 +165,12 @@ impl CreateDBClusterEndpointFluentBuilder {
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_excluded_members(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_excluded_members(input);
         self
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_excluded_members(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_excluded_members()
     }
     /// Appends an item to `Tags`.
@@ -196,12 +183,13 @@ impl CreateDBClusterEndpointFluentBuilder {
         self
     }
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags to be assigned to the Amazon Neptune resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

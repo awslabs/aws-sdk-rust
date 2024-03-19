@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueuedSavingsPlanInput {
+pub struct DeleteQueuedSavingsPlanInput  {
     /// <p>The ID of the Savings Plan.</p>
     pub savings_plan_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQueuedSavingsPlanInput {
+impl  DeleteQueuedSavingsPlanInput  {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn savings_plan_id(&self) -> ::std::option::Option<& str> {
         self.savings_plan_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteQueuedSavingsPlanInputBuilder {
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn set_savings_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.savings_plan_id = input;
-        self
+        self.savings_plan_id = input; self
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn get_savings_plan_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.savings_plan_id
     }
     /// Consumes the builder and constructs a [`DeleteQueuedSavingsPlanInput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput {
-            savings_plan_id: self.savings_plan_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput {
+                savings_plan_id: self.savings_plan_id
+                ,
+            }
+        )
     }
 }
+

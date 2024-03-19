@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReviewTemplateAnswersInput {
+pub struct ListReviewTemplateAnswersInput  {
     /// <p>The ARN of the review template.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -18,25 +18,25 @@ pub struct ListReviewTemplateAnswersInput {
     /// <p>The maximum number of results to return for this request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListReviewTemplateAnswersInput {
+impl  ListReviewTemplateAnswersInput  {
     /// <p>The ARN of the review template.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -70,8 +70,7 @@ impl ListReviewTemplateAnswersInputBuilder {
     }
     /// <p>The ARN of the review template.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The ARN of the review template.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl ListReviewTemplateAnswersInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -110,8 +108,7 @@ impl ListReviewTemplateAnswersInputBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -125,8 +122,7 @@ impl ListReviewTemplateAnswersInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,26 +135,28 @@ impl ListReviewTemplateAnswersInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReviewTemplateAnswersInput`](crate::operation::list_review_template_answers::ListReviewTemplateAnswersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_review_template_answers::ListReviewTemplateAnswersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_review_template_answers::ListReviewTemplateAnswersInput {
-            template_arn: self.template_arn,
-            lens_alias: self.lens_alias,
-            pillar_id: self.pillar_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_review_template_answers::ListReviewTemplateAnswersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_review_template_answers::ListReviewTemplateAnswersInput {
+                template_arn: self.template_arn
+                ,
+                lens_alias: self.lens_alias
+                ,
+                pillar_id: self.pillar_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateRoleFromGroupOutput {
+pub struct DisassociateRoleFromGroupOutput  {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
     pub disassociated_at: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DisassociateRoleFromGroupOutput {
+impl  DisassociateRoleFromGroupOutput  {
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
-    pub fn disassociated_at(&self) -> ::std::option::Option<&str> {
+    pub fn disassociated_at(&self) -> ::std::option::Option<& str> {
         self.disassociated_at.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateRoleFromGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateRoleFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRoleFromGroupOutput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput).
     pub fn builder() -> crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl DisassociateRoleFromGroupOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
     pub fn set_disassociated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disassociated_at = input;
-        self
+        self.disassociated_at = input; self
     }
     /// The time, in milliseconds since the epoch, when the role was disassociated from the group.
     pub fn get_disassociated_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.disassociated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateRoleFromGroupOutput`](crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput).
     pub fn build(self) -> crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput {
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput {
-            disassociated_at: self.disassociated_at,
+            disassociated_at: self.disassociated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

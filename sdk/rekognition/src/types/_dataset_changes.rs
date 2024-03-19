@@ -3,15 +3,15 @@
 /// <p>Describes updates or additions to a dataset. A Single update or addition is an entry (JSON Line) that provides information about a single image. To update an existing entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code> filed of the entry that you want to update. If the <code>source-ref</code> field doesn't match an existing entry, the entry is added to dataset as a new entry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetChanges {
+pub struct DatasetChanges  {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you.</p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
     pub ground_truth: ::aws_smithy_types::Blob,
 }
-impl DatasetChanges {
+impl  DatasetChanges  {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you.</p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
-    pub fn ground_truth(&self) -> &::aws_smithy_types::Blob {
+    pub fn ground_truth(&self) -> & ::aws_smithy_types::Blob {
         &self.ground_truth
     }
 }
@@ -39,8 +39,7 @@ impl DatasetChangesBuilder {
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you.</p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
     pub fn set_ground_truth(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.ground_truth = input;
-        self
+        self.ground_truth = input; self
     }
     /// <p>A Base64-encoded binary data object containing one or JSON lines that either update the dataset or are additions to the dataset. You change a dataset by calling <code>UpdateDatasetEntries</code>. If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need to encode <code>Changes</code> as the SDK encodes the data for you.</p>
     /// <p>For example JSON lines, see Image-Level labels in manifest files and and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.</p>
@@ -51,13 +50,15 @@ impl DatasetChangesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ground_truth`](crate::types::builders::DatasetChangesBuilder::ground_truth)
     pub fn build(self) -> ::std::result::Result<crate::types::DatasetChanges, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DatasetChanges {
-            ground_truth: self.ground_truth.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ground_truth",
-                    "ground_truth was not specified but it is required when building DatasetChanges",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DatasetChanges {
+                ground_truth: self.ground_truth
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ground_truth", "ground_truth was not specified but it is required when building DatasetChanges")
+                    )?
+                ,
+            }
+        )
     }
 }
+

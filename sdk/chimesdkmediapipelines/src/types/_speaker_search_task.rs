@@ -3,7 +3,7 @@
 /// <p>A representation of an asynchronous request to perform speaker search analysis on a media insights pipeline.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpeakerSearchTask {
+pub struct SpeakerSearchTask  {
     /// <p>The speaker search task ID.</p>
     pub speaker_search_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the speaker search task.</p>
@@ -13,21 +13,21 @@ pub struct SpeakerSearchTask {
     /// <p>The time at which a speaker search task was updated.</p>
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SpeakerSearchTask {
+impl  SpeakerSearchTask  {
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> ::std::option::Option<& str> {
         self.speaker_search_task_id.as_deref()
     }
     /// <p>The status of the speaker search task.</p>
-    pub fn speaker_search_task_status(&self) -> ::std::option::Option<&crate::types::MediaPipelineTaskStatus> {
+    pub fn speaker_search_task_status(&self) -> ::std::option::Option<& crate::types::MediaPipelineTaskStatus> {
         self.speaker_search_task_status.as_ref()
     }
     /// <p>The time at which a speaker search task was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a speaker search task was updated.</p>
-    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SpeakerSearchTaskBuilder {
     }
     /// <p>The speaker search task ID.</p>
     pub fn set_speaker_search_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.speaker_search_task_id = input;
-        self
+        self.speaker_search_task_id = input; self
     }
     /// <p>The speaker search task ID.</p>
     pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SpeakerSearchTaskBuilder {
     }
     /// <p>The status of the speaker search task.</p>
     pub fn set_speaker_search_task_status(mut self, input: ::std::option::Option<crate::types::MediaPipelineTaskStatus>) -> Self {
-        self.speaker_search_task_status = input;
-        self
+        self.speaker_search_task_status = input; self
     }
     /// <p>The status of the speaker search task.</p>
     pub fn get_speaker_search_task_status(&self) -> &::std::option::Option<crate::types::MediaPipelineTaskStatus> {
@@ -83,8 +81,7 @@ impl SpeakerSearchTaskBuilder {
     }
     /// <p>The time at which a speaker search task was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time at which a speaker search task was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl SpeakerSearchTaskBuilder {
     }
     /// <p>The time at which a speaker search task was updated.</p>
     pub fn set_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input;
-        self
+        self.updated_timestamp = input; self
     }
     /// <p>The time at which a speaker search task was updated.</p>
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl SpeakerSearchTaskBuilder {
     /// Consumes the builder and constructs a [`SpeakerSearchTask`](crate::types::SpeakerSearchTask).
     pub fn build(self) -> crate::types::SpeakerSearchTask {
         crate::types::SpeakerSearchTask {
-            speaker_search_task_id: self.speaker_search_task_id,
-            speaker_search_task_status: self.speaker_search_task_status,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            speaker_search_task_id: self.speaker_search_task_id
+            ,
+            speaker_search_task_status: self.speaker_search_task_status
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
+

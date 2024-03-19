@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeJobRunInput {
+pub struct DescribeJobRunInput  {
     /// <p>The name of the job being processed during this run.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the job run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeJobRunInput {
+impl  DescribeJobRunInput  {
     /// <p>The name of the job being processed during this run.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier of the job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeJobRunInputBuilder {
     }
     /// <p>The name of the job being processed during this run.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the job being processed during this run.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeJobRunInputBuilder {
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique identifier of the job run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunInput {
-            name: self.name,
-            run_id: self.run_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_job_run::DescribeJobRunInput {
+                name: self.name
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWaveInput {
+pub struct UpdateWaveInput  {
     /// <p>Wave ID.</p>
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Wave name.</p>
@@ -12,21 +12,21 @@ pub struct UpdateWaveInput {
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWaveInput {
+impl  UpdateWaveInput  {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Wave ID.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Wave name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Wave description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,11 +102,18 @@ impl UpdateWaveInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_wave::UpdateWaveInput {
-            wave_id: self.wave_id,
-            name: self.name,
-            description: self.description,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_wave::UpdateWaveInput {
+                wave_id: self.wave_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

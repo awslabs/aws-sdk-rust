@@ -3,7 +3,7 @@
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeRecoveryPointInfo {
+pub struct VolumeRecoveryPointInfo  {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
@@ -15,9 +15,9 @@ pub struct VolumeRecoveryPointInfo {
     /// <p>The time the recovery point was taken.</p>
     pub volume_recovery_point_time: ::std::option::Option<::std::string::String>,
 }
-impl VolumeRecoveryPointInfo {
+impl  VolumeRecoveryPointInfo  {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -31,7 +31,7 @@ impl VolumeRecoveryPointInfo {
         self.volume_usage_in_bytes
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn volume_recovery_point_time(&self) -> ::std::option::Option<&str> {
+    pub fn volume_recovery_point_time(&self) -> ::std::option::Option<& str> {
         self.volume_recovery_point_time.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl VolumeRecoveryPointInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl VolumeRecoveryPointInfoBuilder {
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_size_in_bytes = input;
-        self
+        self.volume_size_in_bytes = input; self
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -91,8 +89,7 @@ impl VolumeRecoveryPointInfoBuilder {
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn set_volume_usage_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.volume_usage_in_bytes = input;
-        self
+        self.volume_usage_in_bytes = input; self
     }
     /// <p>The size of the data stored on the volume in bytes.</p><note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
@@ -107,8 +104,7 @@ impl VolumeRecoveryPointInfoBuilder {
     }
     /// <p>The time the recovery point was taken.</p>
     pub fn set_volume_recovery_point_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_recovery_point_time = input;
-        self
+        self.volume_recovery_point_time = input; self
     }
     /// <p>The time the recovery point was taken.</p>
     pub fn get_volume_recovery_point_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,17 @@ impl VolumeRecoveryPointInfoBuilder {
     /// Consumes the builder and constructs a [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
     pub fn build(self) -> crate::types::VolumeRecoveryPointInfo {
         crate::types::VolumeRecoveryPointInfo {
-            volume_arn: self.volume_arn,
-            volume_size_in_bytes: self.volume_size_in_bytes.unwrap_or_default(),
-            volume_usage_in_bytes: self.volume_usage_in_bytes.unwrap_or_default(),
-            volume_recovery_point_time: self.volume_recovery_point_time,
+            volume_arn: self.volume_arn
+            ,
+            volume_size_in_bytes: self.volume_size_in_bytes
+                .unwrap_or_default()
+            ,
+            volume_usage_in_bytes: self.volume_usage_in_bytes
+                .unwrap_or_default()
+            ,
+            volume_recovery_point_time: self.volume_recovery_point_time
+            ,
         }
     }
 }
+

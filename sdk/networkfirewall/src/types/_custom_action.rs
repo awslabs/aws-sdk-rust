@@ -11,20 +11,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomAction {
+pub struct CustomAction  {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     pub action_name: ::std::string::String,
     /// <p>The custom action associated with the action name.</p>
     pub action_definition: ::std::option::Option<crate::types::ActionDefinition>,
 }
-impl CustomAction {
+impl  CustomAction  {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub fn action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.action_name.deref()
+    pub fn action_name(&self) -> & str {
+        use std::ops::Deref; self.action_name.deref()
     }
     /// <p>The custom action associated with the action name.</p>
-    pub fn action_definition(&self) -> ::std::option::Option<&crate::types::ActionDefinition> {
+    pub fn action_definition(&self) -> ::std::option::Option<& crate::types::ActionDefinition> {
         self.action_definition.as_ref()
     }
 }
@@ -51,8 +50,7 @@ impl CustomActionBuilder {
     }
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl CustomActionBuilder {
     }
     /// <p>The custom action associated with the action name.</p>
     pub fn set_action_definition(mut self, input: ::std::option::Option<crate::types::ActionDefinition>) -> Self {
-        self.action_definition = input;
-        self
+        self.action_definition = input; self
     }
     /// <p>The custom action associated with the action name.</p>
     pub fn get_action_definition(&self) -> &::std::option::Option<crate::types::ActionDefinition> {
@@ -77,14 +74,17 @@ impl CustomActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action_name`](crate::types::builders::CustomActionBuilder::action_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomAction {
-            action_name: self.action_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_name",
-                    "action_name was not specified but it is required when building CustomAction",
-                )
-            })?,
-            action_definition: self.action_definition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomAction {
+                action_name: self.action_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_name", "action_name was not specified but it is required when building CustomAction")
+                    )?
+                ,
+                action_definition: self.action_definition
+                ,
+            }
+        )
     }
 }
+

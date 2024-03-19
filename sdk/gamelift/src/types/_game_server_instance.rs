@@ -5,7 +5,7 @@
 /// <p>Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GameServerInstance {
+pub struct GameServerInstance  {
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A generated unique identifier for the game server group that includes the game server instance.</p>
@@ -15,21 +15,21 @@ pub struct GameServerInstance {
     /// <p>Current status of the game server instance</p>
     pub instance_status: ::std::option::Option<crate::types::GameServerInstanceStatus>,
 }
-impl GameServerInstance {
+impl  GameServerInstance  {
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>A generated unique identifier for the game server group that includes the game server instance.</p>
-    pub fn game_server_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_arn(&self) -> ::std::option::Option<& str> {
         self.game_server_group_arn.as_deref()
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Current status of the game server instance</p>
-    pub fn instance_status(&self) -> ::std::option::Option<&crate::types::GameServerInstanceStatus> {
+    pub fn instance_status(&self) -> ::std::option::Option<& crate::types::GameServerInstanceStatus> {
         self.instance_status.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl GameServerInstanceBuilder {
     }
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>A developer-defined identifier for the game server group that includes the game server instance. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl GameServerInstanceBuilder {
     }
     /// <p>A generated unique identifier for the game server group that includes the game server instance.</p>
     pub fn set_game_server_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_arn = input;
-        self
+        self.game_server_group_arn = input; self
     }
     /// <p>A generated unique identifier for the game server group that includes the game server instance.</p>
     pub fn get_game_server_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl GameServerInstanceBuilder {
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl GameServerInstanceBuilder {
     }
     /// <p>Current status of the game server instance</p>
     pub fn set_instance_status(mut self, input: ::std::option::Option<crate::types::GameServerInstanceStatus>) -> Self {
-        self.instance_status = input;
-        self
+        self.instance_status = input; self
     }
     /// <p>Current status of the game server instance</p>
     pub fn get_instance_status(&self) -> &::std::option::Option<crate::types::GameServerInstanceStatus> {
@@ -109,10 +105,15 @@ impl GameServerInstanceBuilder {
     /// Consumes the builder and constructs a [`GameServerInstance`](crate::types::GameServerInstance).
     pub fn build(self) -> crate::types::GameServerInstance {
         crate::types::GameServerInstance {
-            game_server_group_name: self.game_server_group_name,
-            game_server_group_arn: self.game_server_group_arn,
-            instance_id: self.instance_id,
-            instance_status: self.instance_status,
+            game_server_group_name: self.game_server_group_name
+            ,
+            game_server_group_arn: self.game_server_group_arn
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_status: self.instance_status
+            ,
         }
     }
 }
+

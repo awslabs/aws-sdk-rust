@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMedicalTranscriptionJobInput {
+pub struct DeleteMedicalTranscriptionJobInput  {
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
     pub medical_transcription_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMedicalTranscriptionJobInput {
+impl  DeleteMedicalTranscriptionJobInput  {
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn medical_transcription_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn medical_transcription_job_name(&self) -> ::std::option::Option<& str> {
         self.medical_transcription_job_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteMedicalTranscriptionJobInputBuilder {
     }
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
     pub fn set_medical_transcription_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.medical_transcription_job_name = input;
-        self
+        self.medical_transcription_job_name = input; self
     }
     /// <p>The name of the medical transcription job you want to delete. Job names are case sensitive.</p>
     pub fn get_medical_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.medical_transcription_job_name
     }
     /// Consumes the builder and constructs a [`DeleteMedicalTranscriptionJobInput`](crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput {
-            medical_transcription_job_name: self.medical_transcription_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput {
+                medical_transcription_job_name: self.medical_transcription_job_name
+                ,
+            }
+        )
     }
 }
+

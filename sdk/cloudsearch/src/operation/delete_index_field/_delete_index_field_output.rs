@@ -3,22 +3,22 @@
 /// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIndexFieldOutput {
+pub struct DeleteIndexFieldOutput  {
     /// <p>The status of the index field being deleted.</p>
     pub index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }
-impl DeleteIndexFieldOutput {
+impl  DeleteIndexFieldOutput  {
     /// <p>The status of the index field being deleted.</p>
-    pub fn index_field(&self) -> ::std::option::Option<&crate::types::IndexFieldStatus> {
+    pub fn index_field(&self) -> ::std::option::Option<& crate::types::IndexFieldStatus> {
         self.index_field.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteIndexFieldOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
     pub fn builder() -> crate::operation::delete_index_field::builders::DeleteIndexFieldOutputBuilder {
@@ -42,27 +42,28 @@ impl DeleteIndexFieldOutputBuilder {
     }
     /// <p>The status of the index field being deleted.</p>
     pub fn set_index_field(mut self, input: ::std::option::Option<crate::types::IndexFieldStatus>) -> Self {
-        self.index_field = input;
-        self
+        self.index_field = input; self
     }
     /// <p>The status of the index field being deleted.</p>
     pub fn get_index_field(&self) -> &::std::option::Option<crate::types::IndexFieldStatus> {
         &self.index_field
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
     pub fn build(self) -> crate::operation::delete_index_field::DeleteIndexFieldOutput {
         crate::operation::delete_index_field::DeleteIndexFieldOutput {
-            index_field: self.index_field,
+            index_field: self.index_field
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

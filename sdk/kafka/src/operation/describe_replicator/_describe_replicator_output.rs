@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicatorOutput {
+pub struct DescribeReplicatorOutput  {
     /// <p>The time when the replicator was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current version number of the replicator.</p>
@@ -10,9 +10,9 @@ pub struct DescribeReplicatorOutput {
     /// <p>Whether this resource is a replicator reference.</p>
     pub is_replicator_reference: ::std::option::Option<bool>,
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub kafka_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterDescription>>,
+    pub kafka_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterDescription>>,
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub replication_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoDescription>>,
+    pub replication_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub replicator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replicator.</p>
@@ -28,16 +28,16 @@ pub struct DescribeReplicatorOutput {
     /// <p>Details about the state of the replicator.</p>
     pub state_info: ::std::option::Option<crate::types::ReplicationStateInfo>,
     /// <p>List of tags attached to the Replicator.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicatorOutput {
+impl  DescribeReplicatorOutput  {
     /// <p>The time when the replicator was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version number of the replicator.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>Whether this resource is a replicator reference.</p>
@@ -45,55 +45,57 @@ impl DescribeReplicatorOutput {
         self.is_replicator_reference
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kafka_clusters.is_none()`.
-    pub fn kafka_clusters(&self) -> &[crate::types::KafkaClusterDescription] {
-        self.kafka_clusters.as_deref().unwrap_or_default()
+    pub fn kafka_clusters(&self) -> & [crate::types::KafkaClusterDescription] {
+        self.kafka_clusters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_info_list.is_none()`.
-    pub fn replication_info_list(&self) -> &[crate::types::ReplicationInfoDescription] {
-        self.replication_info_list.as_deref().unwrap_or_default()
+    pub fn replication_info_list(&self) -> & [crate::types::ReplicationInfoDescription] {
+        self.replication_info_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
     /// <p>The description of the replicator.</p>
-    pub fn replicator_description(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_description(&self) -> ::std::option::Option<& str> {
         self.replicator_description.as_deref()
     }
     /// <p>The name of the replicator.</p>
-    pub fn replicator_name(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_name(&self) -> ::std::option::Option<& str> {
         self.replicator_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
-    pub fn replicator_resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_resource_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_resource_arn.as_deref()
     }
     /// <p>State of the replicator.</p>
-    pub fn replicator_state(&self) -> ::std::option::Option<&crate::types::ReplicatorState> {
+    pub fn replicator_state(&self) -> ::std::option::Option<& crate::types::ReplicatorState> {
         self.replicator_state.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
-    pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_execution_role_arn.as_deref()
     }
     /// <p>Details about the state of the replicator.</p>
-    pub fn state_info(&self) -> ::std::option::Option<&crate::types::ReplicationStateInfo> {
+    pub fn state_info(&self) -> ::std::option::Option<& crate::types::ReplicationStateInfo> {
         self.state_info.as_ref()
     }
     /// <p>List of tags attached to the Replicator.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicatorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicatorOutput`](crate::operation::describe_replicator::DescribeReplicatorOutput).
     pub fn builder() -> crate::operation::describe_replicator::builders::DescribeReplicatorOutputBuilder {
@@ -108,8 +110,8 @@ pub struct DescribeReplicatorOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) is_replicator_reference: ::std::option::Option<bool>,
-    pub(crate) kafka_clusters: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterDescription>>,
-    pub(crate) replication_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoDescription>>,
+    pub(crate) kafka_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterDescription>>,
+    pub(crate) replication_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoDescription>>,
     pub(crate) replicator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_description: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_name: ::std::option::Option<::std::string::String>,
@@ -117,7 +119,7 @@ pub struct DescribeReplicatorOutputBuilder {
     pub(crate) replicator_state: ::std::option::Option<crate::types::ReplicatorState>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state_info: ::std::option::Option<crate::types::ReplicationStateInfo>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicatorOutputBuilder {
@@ -128,8 +130,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The time when the replicator was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the replicator was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -142,8 +143,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The current version number of the replicator.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The current version number of the replicator.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +156,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>Whether this resource is a replicator reference.</p>
     pub fn set_is_replicator_reference(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_replicator_reference = input;
-        self
+        self.is_replicator_reference = input; self
     }
     /// <p>Whether this resource is a replicator reference.</p>
     pub fn get_is_replicator_reference(&self) -> &::std::option::Option<bool> {
@@ -170,17 +169,16 @@ impl DescribeReplicatorOutputBuilder {
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
     pub fn kafka_clusters(mut self, input: crate::types::KafkaClusterDescription) -> Self {
         let mut v = self.kafka_clusters.unwrap_or_default();
-        v.push(input);
-        self.kafka_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kafka_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub fn set_kafka_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterDescription>>) -> Self {
-        self.kafka_clusters = input;
-        self
+    pub fn set_kafka_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterDescription>>) -> Self {
+        self.kafka_clusters = input; self
     }
     /// <p>Kafka Clusters used in setting up sources / targets for replication.</p>
-    pub fn get_kafka_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KafkaClusterDescription>> {
+    pub fn get_kafka_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KafkaClusterDescription>> {
         &self.kafka_clusters
     }
     /// Appends an item to `replication_info_list`.
@@ -190,17 +188,16 @@ impl DescribeReplicatorOutputBuilder {
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
     pub fn replication_info_list(mut self, input: crate::types::ReplicationInfoDescription) -> Self {
         let mut v = self.replication_info_list.unwrap_or_default();
-        v.push(input);
-        self.replication_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub fn set_replication_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoDescription>>) -> Self {
-        self.replication_info_list = input;
-        self
+    pub fn set_replication_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoDescription>>) -> Self {
+        self.replication_info_list = input; self
     }
     /// <p>A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.</p>
-    pub fn get_replication_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInfoDescription>> {
+    pub fn get_replication_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationInfoDescription>> {
         &self.replication_info_list
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
@@ -210,8 +207,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +220,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The description of the replicator.</p>
     pub fn set_replicator_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_description = input;
-        self
+        self.replicator_description = input; self
     }
     /// <p>The description of the replicator.</p>
     pub fn get_replicator_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +233,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The name of the replicator.</p>
     pub fn set_replicator_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_name = input;
-        self
+        self.replicator_name = input; self
     }
     /// <p>The name of the replicator.</p>
     pub fn get_replicator_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +246,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
     pub fn set_replicator_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_resource_arn = input;
-        self
+        self.replicator_resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator resource in the region where the replicator was created.</p>
     pub fn get_replicator_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +259,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>State of the replicator.</p>
     pub fn set_replicator_state(mut self, input: ::std::option::Option<crate::types::ReplicatorState>) -> Self {
-        self.replicator_state = input;
-        self
+        self.replicator_state = input; self
     }
     /// <p>State of the replicator.</p>
     pub fn get_replicator_state(&self) -> &::std::option::Option<crate::types::ReplicatorState> {
@@ -280,8 +272,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     pub fn set_service_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_execution_role_arn = input;
-        self
+        self.service_execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)</p>
     pub fn get_service_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +285,7 @@ impl DescribeReplicatorOutputBuilder {
     }
     /// <p>Details about the state of the replicator.</p>
     pub fn set_state_info(mut self, input: ::std::option::Option<crate::types::ReplicationStateInfo>) -> Self {
-        self.state_info = input;
-        self
+        self.state_info = input; self
     }
     /// <p>Details about the state of the replicator.</p>
     pub fn get_state_info(&self) -> &::std::option::Option<crate::types::ReplicationStateInfo> {
@@ -308,45 +298,58 @@ impl DescribeReplicatorOutputBuilder {
     /// <p>List of tags attached to the Replicator.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>List of tags attached to the Replicator.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>List of tags attached to the Replicator.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicatorOutput`](crate::operation::describe_replicator::DescribeReplicatorOutput).
     pub fn build(self) -> crate::operation::describe_replicator::DescribeReplicatorOutput {
         crate::operation::describe_replicator::DescribeReplicatorOutput {
-            creation_time: self.creation_time,
-            current_version: self.current_version,
-            is_replicator_reference: self.is_replicator_reference,
-            kafka_clusters: self.kafka_clusters,
-            replication_info_list: self.replication_info_list,
-            replicator_arn: self.replicator_arn,
-            replicator_description: self.replicator_description,
-            replicator_name: self.replicator_name,
-            replicator_resource_arn: self.replicator_resource_arn,
-            replicator_state: self.replicator_state,
-            service_execution_role_arn: self.service_execution_role_arn,
-            state_info: self.state_info,
-            tags: self.tags,
+            creation_time: self.creation_time
+            ,
+            current_version: self.current_version
+            ,
+            is_replicator_reference: self.is_replicator_reference
+            ,
+            kafka_clusters: self.kafka_clusters
+            ,
+            replication_info_list: self.replication_info_list
+            ,
+            replicator_arn: self.replicator_arn
+            ,
+            replicator_description: self.replicator_description
+            ,
+            replicator_name: self.replicator_name
+            ,
+            replicator_resource_arn: self.replicator_resource_arn
+            ,
+            replicator_state: self.replicator_state
+            ,
+            service_execution_role_arn: self.service_execution_role_arn
+            ,
+            state_info: self.state_info
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

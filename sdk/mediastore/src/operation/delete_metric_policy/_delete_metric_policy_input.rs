@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMetricPolicyInput {
+pub struct DeleteMetricPolicyInput  {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMetricPolicyInput {
+impl  DeleteMetricPolicyInput  {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteMetricPolicyInputBuilder {
     }
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
     /// Consumes the builder and constructs a [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_metric_policy::DeleteMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_metric_policy::DeleteMetricPolicyInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_metric_policy::DeleteMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_metric_policy::DeleteMetricPolicyInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

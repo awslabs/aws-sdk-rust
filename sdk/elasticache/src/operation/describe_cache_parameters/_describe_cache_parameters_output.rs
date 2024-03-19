@@ -3,38 +3,40 @@
 /// <p>Represents the output of a <code>DescribeCacheParameters</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCacheParametersOutput {
+pub struct DescribeCacheParametersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
-impl DescribeCacheParametersOutput {
+impl  DescribeCacheParametersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_node_type_specific_parameters.is_none()`.
-    pub fn cache_node_type_specific_parameters(&self) -> &[crate::types::CacheNodeTypeSpecificParameter] {
-        self.cache_node_type_specific_parameters.as_deref().unwrap_or_default()
+    pub fn cache_node_type_specific_parameters(&self) -> & [crate::types::CacheNodeTypeSpecificParameter] {
+        self.cache_node_type_specific_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCacheParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCacheParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
     pub fn builder() -> crate::operation::describe_cache_parameters::builders::DescribeCacheParametersOutputBuilder {
@@ -47,8 +49,8 @@ impl DescribeCacheParametersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheParametersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
+    pub(crate) cache_node_type_specific_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CacheNodeTypeSpecificParameter>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParametersOutputBuilder {
@@ -59,8 +61,7 @@ impl DescribeCacheParametersOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +74,16 @@ impl DescribeCacheParametersOutputBuilder {
     /// <p>A list of <code>Parameter</code> instances.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>Parameter</code> instances.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Appends an item to `cache_node_type_specific_parameters`.
@@ -93,38 +93,38 @@ impl DescribeCacheParametersOutputBuilder {
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     pub fn cache_node_type_specific_parameters(mut self, input: crate::types::CacheNodeTypeSpecificParameter) -> Self {
         let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
-        v.push(input);
-        self.cache_node_type_specific_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_node_type_specific_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn set_cache_node_type_specific_parameters(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>>,
-    ) -> Self {
-        self.cache_node_type_specific_parameters = input;
-        self
+    pub fn set_cache_node_type_specific_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheNodeTypeSpecificParameter>>) -> Self {
+        self.cache_node_type_specific_parameters = input; self
     }
     /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
-    pub fn get_cache_node_type_specific_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheNodeTypeSpecificParameter>> {
+    pub fn get_cache_node_type_specific_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheNodeTypeSpecificParameter>> {
         &self.cache_node_type_specific_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCacheParametersOutput`](crate::operation::describe_cache_parameters::DescribeCacheParametersOutput).
     pub fn build(self) -> crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
         crate::operation::describe_cache_parameters::DescribeCacheParametersOutput {
-            marker: self.marker,
-            parameters: self.parameters,
-            cache_node_type_specific_parameters: self.cache_node_type_specific_parameters,
+            marker: self.marker
+            ,
+            parameters: self.parameters
+            ,
+            cache_node_type_specific_parameters: self.cache_node_type_specific_parameters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

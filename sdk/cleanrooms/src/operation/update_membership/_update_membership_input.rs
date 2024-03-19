@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMembershipInput {
+pub struct UpdateMembershipInput  {
     /// <p>The unique identifier of the membership.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
@@ -10,17 +10,17 @@ pub struct UpdateMembershipInput {
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
 }
-impl UpdateMembershipInput {
+impl  UpdateMembershipInput  {
     /// <p>The unique identifier of the membership.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
-    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> ::std::option::Option<& crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
-    pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
+    pub fn default_result_configuration(&self) -> ::std::option::Option<& crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateMembershipInputBuilder {
     }
     /// <p>The unique identifier of the membership.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The unique identifier of the membership.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateMembershipInputBuilder {
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
-        self.query_log_status = input;
-        self
+        self.query_log_status = input; self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
@@ -75,25 +73,25 @@ impl UpdateMembershipInputBuilder {
         self
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
-    pub fn set_default_result_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
-    ) -> Self {
-        self.default_result_configuration = input;
-        self
+    pub fn set_default_result_configuration(mut self, input: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>) -> Self {
+        self.default_result_configuration = input; self
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         &self.default_result_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_membership::UpdateMembershipInput {
-            membership_identifier: self.membership_identifier,
-            query_log_status: self.query_log_status,
-            default_result_configuration: self.default_result_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_membership::UpdateMembershipInput {
+                membership_identifier: self.membership_identifier
+                ,
+                query_log_status: self.query_log_status
+                ,
+                default_result_configuration: self.default_result_configuration
+                ,
+            }
+        )
     }
 }
+

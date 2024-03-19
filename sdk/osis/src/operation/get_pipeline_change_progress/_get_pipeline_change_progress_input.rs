@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPipelineChangeProgressInput {
+pub struct GetPipelineChangeProgressInput  {
     /// <p>The name of the pipeline.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPipelineChangeProgressInput {
+impl  GetPipelineChangeProgressInput  {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetPipelineChangeProgressInputBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_name
     }
     /// Consumes the builder and constructs a [`GetPipelineChangeProgressInput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput {
-            pipeline_name: self.pipeline_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput {
+                pipeline_name: self.pipeline_name
+                ,
+            }
+        )
     }
 }
+

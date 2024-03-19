@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVpnConnectionInput {
+pub struct ModifyVpnConnectionInput  {
     /// <p>The ID of the VPN connection.</p>
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
@@ -14,21 +14,21 @@ pub struct ModifyVpnConnectionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ModifyVpnConnectionInput {
+impl  ModifyVpnConnectionInput  {
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
-    pub fn customer_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_gateway_id(&self) -> ::std::option::Option<& str> {
         self.customer_gateway_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
-    pub fn vpn_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_gateway_id(&self) -> ::std::option::Option<& str> {
         self.vpn_gateway_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -62,8 +62,7 @@ impl ModifyVpnConnectionInputBuilder {
     }
     /// <p>The ID of the VPN connection.</p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_connection_id = input;
-        self
+        self.vpn_connection_id = input; self
     }
     /// <p>The ID of the VPN connection.</p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ModifyVpnConnectionInputBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl ModifyVpnConnectionInputBuilder {
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
     pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_gateway_id = input;
-        self
+        self.customer_gateway_id = input; self
     }
     /// <p>The ID of the customer gateway at your end of the VPN connection.</p>
     pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl ModifyVpnConnectionInputBuilder {
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
     pub fn set_vpn_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_gateway_id = input;
-        self
+        self.vpn_gateway_id = input; self
     }
     /// <p>The ID of the virtual private gateway at the Amazon Web Services side of the VPN connection.</p>
     pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,24 +114,28 @@ impl ModifyVpnConnectionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_vpn_connection::ModifyVpnConnectionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_vpn_connection::ModifyVpnConnectionInput {
-            vpn_connection_id: self.vpn_connection_id,
-            transit_gateway_id: self.transit_gateway_id,
-            customer_gateway_id: self.customer_gateway_id,
-            vpn_gateway_id: self.vpn_gateway_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_vpn_connection::ModifyVpnConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_vpn_connection::ModifyVpnConnectionInput {
+                vpn_connection_id: self.vpn_connection_id
+                ,
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                customer_gateway_id: self.customer_gateway_id
+                ,
+                vpn_gateway_id: self.vpn_gateway_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartExecutionInput {
+pub struct StartExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
     /// <ul>
@@ -75,7 +75,7 @@ pub struct StartExecutionInput {
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub trace_header: ::std::option::Option<::std::string::String>,
 }
-impl StartExecutionInput {
+impl  StartExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
     /// <ul>
@@ -121,7 +121,7 @@ impl StartExecutionInput {
     /// </partition></code></p>
     /// <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p></li>
     /// </ul>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
@@ -140,7 +140,7 @@ impl StartExecutionInput {
     /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p></li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
@@ -148,15 +148,15 @@ impl StartExecutionInput {
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code></p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    pub fn trace_header(&self) -> ::std::option::Option<&str> {
+    pub fn trace_header(&self) -> ::std::option::Option<& str> {
         self.trace_header.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartExecutionInput {
+impl  ::std::fmt::Debug for StartExecutionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartExecutionInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -279,8 +279,7 @@ impl StartExecutionInputBuilder {
     /// <p>Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.</p></li>
     /// </ul>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     /// <p>The <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
@@ -367,8 +366,7 @@ impl StartExecutionInputBuilder {
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.</p>
@@ -404,8 +402,7 @@ impl StartExecutionInputBuilder {
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p><code>"input": "{\"first_name\" : \"test\"}"</code></p><note>
@@ -422,23 +419,26 @@ impl StartExecutionInputBuilder {
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.trace_header
     }
     /// Consumes the builder and constructs a [`StartExecutionInput`](crate::operation::start_execution::StartExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_execution::StartExecutionInput {
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            input: self.input,
-            trace_header: self.trace_header,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_execution::StartExecutionInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                input: self.input
+                ,
+                trace_header: self.trace_header
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartExecutionInputBuilder {
@@ -451,3 +451,4 @@ impl ::std::fmt::Debug for StartExecutionInputBuilder {
         formatter.finish()
     }
 }
+

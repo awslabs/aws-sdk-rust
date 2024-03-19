@@ -2,18 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetKeepJobFlowAliveWhenNoStepsInput {
+pub struct SetKeepJobFlowAliveWhenNoStepsInput  {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html">RunJobFlow</a> and can also be obtained from <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
-    pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>
     pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
 }
-impl SetKeepJobFlowAliveWhenNoStepsInput {
+impl  SetKeepJobFlowAliveWhenNoStepsInput  {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html">RunJobFlow</a> and can also be obtained from <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
-    pub fn job_flow_ids(&self) -> &[::std::string::String] {
-        self.job_flow_ids.as_deref().unwrap_or_default()
+    pub fn job_flow_ids(&self) -> & [::std::string::String] {
+        self.job_flow_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>
     pub fn keep_job_flow_alive_when_no_steps(&self) -> ::std::option::Option<bool> {
@@ -31,7 +32,7 @@ impl SetKeepJobFlowAliveWhenNoStepsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetKeepJobFlowAliveWhenNoStepsInputBuilder {
-    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
 }
 impl SetKeepJobFlowAliveWhenNoStepsInputBuilder {
@@ -42,17 +43,16 @@ impl SetKeepJobFlowAliveWhenNoStepsInputBuilder {
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html">RunJobFlow</a> and can also be obtained from <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
     pub fn job_flow_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html">RunJobFlow</a> and can also be obtained from <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// <p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html">RunJobFlow</a> and can also be obtained from <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html">DescribeJobFlows</a>.</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_flow_ids
     }
     /// <p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>
@@ -63,25 +63,22 @@ impl SetKeepJobFlowAliveWhenNoStepsInputBuilder {
     }
     /// <p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>
     pub fn set_keep_job_flow_alive_when_no_steps(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.keep_job_flow_alive_when_no_steps = input;
-        self
+        self.keep_job_flow_alive_when_no_steps = input; self
     }
     /// <p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>
     pub fn get_keep_job_flow_alive_when_no_steps(&self) -> &::std::option::Option<bool> {
         &self.keep_job_flow_alive_when_no_steps
     }
     /// Consumes the builder and constructs a [`SetKeepJobFlowAliveWhenNoStepsInput`](crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput {
-                job_flow_ids: self.job_flow_ids,
-                keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps,
-            },
+                job_flow_ids: self.job_flow_ids
+                ,
+                keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps
+                ,
+            }
         )
     }
 }
+

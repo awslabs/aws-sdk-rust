@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListReplicatorsOutput {
+pub struct ListReplicatorsOutput  {
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List containing information of each of the replicators in the account.</p>
-    pub replicators: ::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>>,
+    pub replicators: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicatorSummary>>,
     _request_id: Option<String>,
 }
-impl ListReplicatorsOutput {
+impl  ListReplicatorsOutput  {
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List containing information of each of the replicators in the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicators.is_none()`.
-    pub fn replicators(&self) -> &[crate::types::ReplicatorSummary] {
-        self.replicators.as_deref().unwrap_or_default()
+    pub fn replicators(&self) -> & [crate::types::ReplicatorSummary] {
+        self.replicators.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListReplicatorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListReplicatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListReplicatorsOutput`](crate::operation::list_replicators::ListReplicatorsOutput).
     pub fn builder() -> crate::operation::list_replicators::builders::ListReplicatorsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListReplicatorsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListReplicatorsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) replicators: ::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>>,
+    pub(crate) replicators: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicatorSummary>>,
     _request_id: Option<String>,
 }
 impl ListReplicatorsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListReplicatorsOutputBuilder {
     }
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListReplicatorsOutputBuilder {
     /// <p>List containing information of each of the replicators in the account.</p>
     pub fn replicators(mut self, input: crate::types::ReplicatorSummary) -> Self {
         let mut v = self.replicators.unwrap_or_default();
-        v.push(input);
-        self.replicators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replicators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List containing information of each of the replicators in the account.</p>
-    pub fn set_replicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>>) -> Self {
-        self.replicators = input;
-        self
+    pub fn set_replicators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicatorSummary>>) -> Self {
+        self.replicators = input; self
     }
     /// <p>List containing information of each of the replicators in the account.</p>
-    pub fn get_replicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicatorSummary>> {
+    pub fn get_replicators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicatorSummary>> {
         &self.replicators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListReplicatorsOutput`](crate::operation::list_replicators::ListReplicatorsOutput).
     pub fn build(self) -> crate::operation::list_replicators::ListReplicatorsOutput {
         crate::operation::list_replicators::ListReplicatorsOutput {
-            next_token: self.next_token,
-            replicators: self.replicators,
+            next_token: self.next_token
+            ,
+            replicators: self.replicators
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

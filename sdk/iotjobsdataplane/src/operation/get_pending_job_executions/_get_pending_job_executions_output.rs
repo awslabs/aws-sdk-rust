@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPendingJobExecutionsOutput {
+pub struct GetPendingJobExecutionsOutput  {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub in_progress_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
+    pub in_progress_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>,
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub queued_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
+    pub queued_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>,
     _request_id: Option<String>,
 }
-impl GetPendingJobExecutionsOutput {
+impl  GetPendingJobExecutionsOutput  {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.in_progress_jobs.is_none()`.
-    pub fn in_progress_jobs(&self) -> &[crate::types::JobExecutionSummary] {
-        self.in_progress_jobs.as_deref().unwrap_or_default()
+    pub fn in_progress_jobs(&self) -> & [crate::types::JobExecutionSummary] {
+        self.in_progress_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queued_jobs.is_none()`.
-    pub fn queued_jobs(&self) -> &[crate::types::JobExecutionSummary] {
-        self.queued_jobs.as_deref().unwrap_or_default()
+    pub fn queued_jobs(&self) -> & [crate::types::JobExecutionSummary] {
+        self.queued_jobs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPendingJobExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPendingJobExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
     pub fn builder() -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder {
@@ -39,8 +41,8 @@ impl GetPendingJobExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPendingJobExecutionsOutputBuilder {
-    pub(crate) in_progress_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
-    pub(crate) queued_jobs: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>,
+    pub(crate) in_progress_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>,
+    pub(crate) queued_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>,
     _request_id: Option<String>,
 }
 impl GetPendingJobExecutionsOutputBuilder {
@@ -51,17 +53,16 @@ impl GetPendingJobExecutionsOutputBuilder {
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
     pub fn in_progress_jobs(mut self, input: crate::types::JobExecutionSummary) -> Self {
         let mut v = self.in_progress_jobs.unwrap_or_default();
-        v.push(input);
-        self.in_progress_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.in_progress_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub fn set_in_progress_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>) -> Self {
-        self.in_progress_jobs = input;
-        self
+    pub fn set_in_progress_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>) -> Self {
+        self.in_progress_jobs = input; self
     }
     /// <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
-    pub fn get_in_progress_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+    pub fn get_in_progress_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>> {
         &self.in_progress_jobs
     }
     /// Appends an item to `queued_jobs`.
@@ -71,34 +72,36 @@ impl GetPendingJobExecutionsOutputBuilder {
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
     pub fn queued_jobs(mut self, input: crate::types::JobExecutionSummary) -> Self {
         let mut v = self.queued_jobs.unwrap_or_default();
-        v.push(input);
-        self.queued_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queued_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub fn set_queued_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>>) -> Self {
-        self.queued_jobs = input;
-        self
+    pub fn set_queued_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>>) -> Self {
+        self.queued_jobs = input; self
     }
     /// <p>A list of JobExecutionSummary objects with status QUEUED.</p>
-    pub fn get_queued_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobExecutionSummary>> {
+    pub fn get_queued_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobExecutionSummary>> {
         &self.queued_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPendingJobExecutionsOutput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput).
     pub fn build(self) -> crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput {
         crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput {
-            in_progress_jobs: self.in_progress_jobs,
-            queued_jobs: self.queued_jobs,
+            in_progress_jobs: self.in_progress_jobs
+            ,
+            queued_jobs: self.queued_jobs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

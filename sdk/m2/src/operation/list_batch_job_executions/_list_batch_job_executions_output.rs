@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBatchJobExecutionsOutput {
+pub struct ListBatchJobExecutionsOutput  {
     /// <p>Returns a list of batch job executions for an application.</p>
-    pub batch_job_executions: ::std::vec::Vec<crate::types::BatchJobExecutionSummary>,
+    pub batch_job_executions: ::std::vec::Vec::<crate::types::BatchJobExecutionSummary>,
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBatchJobExecutionsOutput {
+impl  ListBatchJobExecutionsOutput  {
     /// <p>Returns a list of batch job executions for an application.</p>
-    pub fn batch_job_executions(&self) -> &[crate::types::BatchJobExecutionSummary] {
-        use std::ops::Deref;
-        self.batch_job_executions.deref()
+    pub fn batch_job_executions(&self) -> & [crate::types::BatchJobExecutionSummary] {
+        use std::ops::Deref; self.batch_job_executions.deref()
     }
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBatchJobExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBatchJobExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBatchJobExecutionsOutput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput).
     pub fn builder() -> crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListBatchJobExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsOutputBuilder {
-    pub(crate) batch_job_executions: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>>,
+    pub(crate) batch_job_executions: ::std::option::Option<::std::vec::Vec::<crate::types::BatchJobExecutionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListBatchJobExecutionsOutputBuilder {
     /// <p>Returns a list of batch job executions for an application.</p>
     pub fn batch_job_executions(mut self, input: crate::types::BatchJobExecutionSummary) -> Self {
         let mut v = self.batch_job_executions.unwrap_or_default();
-        v.push(input);
-        self.batch_job_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.batch_job_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of batch job executions for an application.</p>
-    pub fn set_batch_job_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>>) -> Self {
-        self.batch_job_executions = input;
-        self
+    pub fn set_batch_job_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchJobExecutionSummary>>) -> Self {
+        self.batch_job_executions = input; self
     }
     /// <p>Returns a list of batch job executions for an application.</p>
-    pub fn get_batch_job_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>> {
+    pub fn get_batch_job_executions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchJobExecutionSummary>> {
         &self.batch_job_executions
     }
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
@@ -68,40 +66,37 @@ impl ListBatchJobExecutionsOutputBuilder {
     }
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBatchJobExecutionsOutput`](crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`batch_job_executions`](crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsOutputBuilder::batch_job_executions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput {
-            batch_job_executions: self.batch_job_executions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "batch_job_executions",
-                    "batch_job_executions was not specified but it is required when building ListBatchJobExecutionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput {
+                batch_job_executions: self.batch_job_executions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("batch_job_executions", "batch_job_executions was not specified but it is required when building ListBatchJobExecutionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

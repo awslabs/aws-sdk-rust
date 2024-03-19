@@ -3,7 +3,7 @@
 /// <p>Results of a dry run performed in an update domain request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DryRunResults {
+pub struct DryRunResults  {
     /// <p>Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct DryRunResults {
     /// <p>A message corresponding to the deployment type.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DryRunResults {
+impl  DryRunResults  {
     /// <p>Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl DryRunResults {
     /// <li>
     /// <p><b>None</b> - The request doesn't include any configuration changes.</p></li>
     /// </ul>
-    pub fn deployment_type(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& str> {
         self.deployment_type.as_deref()
     }
     /// <p>A message corresponding to the deployment type.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl DryRunResultsBuilder {
     /// <p><b>None</b> - The request doesn't include any configuration changes.</p></li>
     /// </ul>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl DryRunResultsBuilder {
     }
     /// <p>A message corresponding to the deployment type.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message corresponding to the deployment type.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,11 @@ impl DryRunResultsBuilder {
     /// Consumes the builder and constructs a [`DryRunResults`](crate::types::DryRunResults).
     pub fn build(self) -> crate::types::DryRunResults {
         crate::types::DryRunResults {
-            deployment_type: self.deployment_type,
-            message: self.message,
+            deployment_type: self.deployment_type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

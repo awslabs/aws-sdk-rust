@@ -3,39 +3,40 @@
 /// <p>Represents a domain name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainName {
+pub struct DomainName  {
     /// <p>The API mapping selection expression.</p>
     pub api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DomainName resource.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name configurations.</p>
-    pub domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
+    pub domain_name_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNameConfiguration>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
     /// <p>The collection of tags associated with a domain name.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DomainName {
+impl  DomainName  {
     /// <p>The API mapping selection expression.</p>
-    pub fn api_mapping_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn api_mapping_selection_expression(&self) -> ::std::option::Option<& str> {
         self.api_mapping_selection_expression.as_deref()
     }
     /// <p>The name of the DomainName resource.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The domain name configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_name_configurations.is_none()`.
-    pub fn domain_name_configurations(&self) -> &[crate::types::DomainNameConfiguration] {
-        self.domain_name_configurations.as_deref().unwrap_or_default()
+    pub fn domain_name_configurations(&self) -> & [crate::types::DomainNameConfiguration] {
+        self.domain_name_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
-    pub fn mutual_tls_authentication(&self) -> ::std::option::Option<&crate::types::MutualTlsAuthentication> {
+    pub fn mutual_tls_authentication(&self) -> ::std::option::Option<& crate::types::MutualTlsAuthentication> {
         self.mutual_tls_authentication.as_ref()
     }
     /// <p>The collection of tags associated with a domain name.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,9 +53,9 @@ impl DomainName {
 pub struct DomainNameBuilder {
     pub(crate) api_mapping_selection_expression: ::std::option::Option<::std::string::String>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_name_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
+    pub(crate) domain_name_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNameConfiguration>>,
     pub(crate) mutual_tls_authentication: ::std::option::Option<crate::types::MutualTlsAuthentication>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DomainNameBuilder {
     /// <p>The API mapping selection expression.</p>
@@ -64,8 +65,7 @@ impl DomainNameBuilder {
     }
     /// <p>The API mapping selection expression.</p>
     pub fn set_api_mapping_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_mapping_selection_expression = input;
-        self
+        self.api_mapping_selection_expression = input; self
     }
     /// <p>The API mapping selection expression.</p>
     pub fn get_api_mapping_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl DomainNameBuilder {
     }
     /// <p>The name of the DomainName resource.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the DomainName resource.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,17 +92,16 @@ impl DomainNameBuilder {
     /// <p>The domain name configurations.</p>
     pub fn domain_name_configurations(mut self, input: crate::types::DomainNameConfiguration) -> Self {
         let mut v = self.domain_name_configurations.unwrap_or_default();
-        v.push(input);
-        self.domain_name_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_name_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The domain name configurations.</p>
-    pub fn set_domain_name_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>) -> Self {
-        self.domain_name_configurations = input;
-        self
+    pub fn set_domain_name_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainNameConfiguration>>) -> Self {
+        self.domain_name_configurations = input; self
     }
     /// <p>The domain name configurations.</p>
-    pub fn get_domain_name_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
+    pub fn get_domain_name_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainNameConfiguration>> {
         &self.domain_name_configurations
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
@@ -113,8 +111,7 @@ impl DomainNameBuilder {
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn set_mutual_tls_authentication(mut self, input: ::std::option::Option<crate::types::MutualTlsAuthentication>) -> Self {
-        self.mutual_tls_authentication = input;
-        self
+        self.mutual_tls_authentication = input; self
     }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn get_mutual_tls_authentication(&self) -> &::std::option::Option<crate::types::MutualTlsAuthentication> {
@@ -127,27 +124,32 @@ impl DomainNameBuilder {
     /// <p>The collection of tags associated with a domain name.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags associated with a domain name.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags associated with a domain name.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DomainName`](crate::types::DomainName).
     pub fn build(self) -> crate::types::DomainName {
         crate::types::DomainName {
-            api_mapping_selection_expression: self.api_mapping_selection_expression,
-            domain_name: self.domain_name,
-            domain_name_configurations: self.domain_name_configurations,
-            mutual_tls_authentication: self.mutual_tls_authentication,
-            tags: self.tags,
+            api_mapping_selection_expression: self.api_mapping_selection_expression
+            ,
+            domain_name: self.domain_name
+            ,
+            domain_name_configurations: self.domain_name_configurations
+            ,
+            mutual_tls_authentication: self.mutual_tls_authentication
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

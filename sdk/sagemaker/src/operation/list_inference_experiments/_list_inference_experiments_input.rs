@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceExperimentsInput {
+pub struct ListInferenceExperimentsInput  {
     /// <p>Selects inference experiments whose names contain this name.</p>
     pub name_contains: ::std::option::Option<::std::string::String>,
     /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
@@ -26,45 +26,45 @@ pub struct ListInferenceExperimentsInput {
     /// <p>The maximum number of results to select.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListInferenceExperimentsInput {
+impl  ListInferenceExperimentsInput  {
     /// <p>Selects inference experiments whose names contain this name.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InferenceExperimentType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::InferenceExperimentType> {
         self.r#type.as_ref()
     }
     /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::InferenceExperimentStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::InferenceExperimentStatus> {
         self.status_equals.as_ref()
     }
     /// <p>Selects inference experiments which were created after this timestamp.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Selects inference experiments which were created before this timestamp.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
-    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>The column by which to sort the listed inference experiments.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortInferenceExperimentsBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortInferenceExperimentsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The direction of sorting (ascending or descending).</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to select.</p>
@@ -103,8 +103,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments whose names contain this name.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Selects inference experiments whose names contain this name.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InferenceExperimentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Selects inference experiments of this type. For the possible types of inference experiments, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceExperimentType> {
@@ -131,8 +129,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>Selects inference experiments which are in this status. For the possible statuses, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
@@ -145,8 +142,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments which were created after this timestamp.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Selects inference experiments which were created after this timestamp.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +155,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments which were created before this timestamp.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Selects inference experiments which were created before this timestamp.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +168,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input;
-        self
+        self.last_modified_time_after = input; self
     }
     /// <p>Selects inference experiments which were last modified after this timestamp.</p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +181,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input;
-        self
+        self.last_modified_time_before = input; self
     }
     /// <p>Selects inference experiments which were last modified before this timestamp.</p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +194,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>The column by which to sort the listed inference experiments.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortInferenceExperimentsBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The column by which to sort the listed inference experiments.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortInferenceExperimentsBy> {
@@ -215,8 +207,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>The direction of sorting (ascending or descending).</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The direction of sorting (ascending or descending).</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -229,8 +220,7 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,32 +233,40 @@ impl ListInferenceExperimentsInputBuilder {
     }
     /// <p>The maximum number of results to select.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to select.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListInferenceExperimentsInput`](crate::operation::list_inference_experiments::ListInferenceExperimentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_inference_experiments::ListInferenceExperimentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_inference_experiments::ListInferenceExperimentsInput {
-            name_contains: self.name_contains,
-            r#type: self.r#type,
-            status_equals: self.status_equals,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_inference_experiments::ListInferenceExperimentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_inference_experiments::ListInferenceExperimentsInput {
+                name_contains: self.name_contains
+                ,
+                r#type: self.r#type
+                ,
+                status_equals: self.status_equals
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

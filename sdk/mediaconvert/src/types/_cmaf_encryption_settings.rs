@@ -3,7 +3,7 @@
 /// Settings for CMAF encryption
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CmafEncryptionSettings {
+pub struct CmafEncryptionSettings  {
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR.
@@ -17,29 +17,29 @@ pub struct CmafEncryptionSettings {
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub r#type: ::std::option::Option<crate::types::CmafKeyProviderType>,
 }
-impl CmafEncryptionSettings {
+impl  CmafEncryptionSettings  {
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
-    pub fn constant_initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> ::std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR.
-    pub fn encryption_method(&self) -> ::std::option::Option<&crate::types::CmafEncryptionType> {
+    pub fn encryption_method(&self) -> ::std::option::Option<& crate::types::CmafEncryptionType> {
         self.encryption_method.as_ref()
     }
     /// When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
-    pub fn initialization_vector_in_manifest(&self) -> ::std::option::Option<&crate::types::CmafInitializationVectorInManifest> {
+    pub fn initialization_vector_in_manifest(&self) -> ::std::option::Option<& crate::types::CmafInitializationVectorInManifest> {
         self.initialization_vector_in_manifest.as_ref()
     }
     /// If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
-    pub fn speke_key_provider(&self) -> ::std::option::Option<&crate::types::SpekeKeyProviderCmaf> {
+    pub fn speke_key_provider(&self) -> ::std::option::Option<& crate::types::SpekeKeyProviderCmaf> {
         self.speke_key_provider.as_ref()
     }
     /// Use these settings to set up encryption with a static key provider.
-    pub fn static_key_provider(&self) -> ::std::option::Option<&crate::types::StaticKeyProvider> {
+    pub fn static_key_provider(&self) -> ::std::option::Option<& crate::types::StaticKeyProvider> {
         self.static_key_provider.as_ref()
     }
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CmafKeyProviderType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::CmafKeyProviderType> {
         self.r#type.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub fn set_constant_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constant_initialization_vector = input;
-        self
+        self.constant_initialization_vector = input; self
     }
     /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
     pub fn get_constant_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR.
     pub fn set_encryption_method(mut self, input: ::std::option::Option<crate::types::CmafEncryptionType>) -> Self {
-        self.encryption_method = input;
-        self
+        self.encryption_method = input; self
     }
     /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample or AES_CTR.
     pub fn get_encryption_method(&self) -> &::std::option::Option<crate::types::CmafEncryptionType> {
@@ -97,8 +95,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
     pub fn set_initialization_vector_in_manifest(mut self, input: ::std::option::Option<crate::types::CmafInitializationVectorInManifest>) -> Self {
-        self.initialization_vector_in_manifest = input;
-        self
+        self.initialization_vector_in_manifest = input; self
     }
     /// When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
     pub fn get_initialization_vector_in_manifest(&self) -> &::std::option::Option<crate::types::CmafInitializationVectorInManifest> {
@@ -111,8 +108,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
     pub fn set_speke_key_provider(mut self, input: ::std::option::Option<crate::types::SpekeKeyProviderCmaf>) -> Self {
-        self.speke_key_provider = input;
-        self
+        self.speke_key_provider = input; self
     }
     /// If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
     pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProviderCmaf> {
@@ -125,8 +121,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// Use these settings to set up encryption with a static key provider.
     pub fn set_static_key_provider(mut self, input: ::std::option::Option<crate::types::StaticKeyProvider>) -> Self {
-        self.static_key_provider = input;
-        self
+        self.static_key_provider = input; self
     }
     /// Use these settings to set up encryption with a static key provider.
     pub fn get_static_key_provider(&self) -> &::std::option::Option<crate::types::StaticKeyProvider> {
@@ -139,8 +134,7 @@ impl CmafEncryptionSettingsBuilder {
     }
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CmafKeyProviderType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CmafKeyProviderType> {
@@ -149,12 +143,19 @@ impl CmafEncryptionSettingsBuilder {
     /// Consumes the builder and constructs a [`CmafEncryptionSettings`](crate::types::CmafEncryptionSettings).
     pub fn build(self) -> crate::types::CmafEncryptionSettings {
         crate::types::CmafEncryptionSettings {
-            constant_initialization_vector: self.constant_initialization_vector,
-            encryption_method: self.encryption_method,
-            initialization_vector_in_manifest: self.initialization_vector_in_manifest,
-            speke_key_provider: self.speke_key_provider,
-            static_key_provider: self.static_key_provider,
-            r#type: self.r#type,
+            constant_initialization_vector: self.constant_initialization_vector
+            ,
+            encryption_method: self.encryption_method
+            ,
+            initialization_vector_in_manifest: self.initialization_vector_in_manifest
+            ,
+            speke_key_provider: self.speke_key_provider
+            ,
+            static_key_provider: self.static_key_provider
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

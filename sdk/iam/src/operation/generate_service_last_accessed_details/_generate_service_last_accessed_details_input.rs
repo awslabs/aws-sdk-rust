@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerateServiceLastAccessedDetailsInput {
+pub struct GenerateServiceLastAccessedDetailsInput  {
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
     pub granularity: ::std::option::Option<crate::types::AccessAdvisorUsageGranularityType>,
 }
-impl GenerateServiceLastAccessedDetailsInput {
+impl  GenerateServiceLastAccessedDetailsInput  {
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::AccessAdvisorUsageGranularityType> {
+    pub fn granularity(&self) -> ::std::option::Option<& crate::types::AccessAdvisorUsageGranularityType> {
         self.granularity.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GenerateServiceLastAccessedDetailsInputBuilder {
     }
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl GenerateServiceLastAccessedDetailsInputBuilder {
     }
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::AccessAdvisorUsageGranularityType>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
     pub fn get_granularity(&self) -> &::std::option::Option<crate::types::AccessAdvisorUsageGranularityType> {
         &self.granularity
     }
     /// Consumes the builder and constructs a [`GenerateServiceLastAccessedDetailsInput`](crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsInput {
-                arn: self.arn,
-                granularity: self.granularity,
-            },
+                arn: self.arn
+                ,
+                granularity: self.granularity
+                ,
+            }
         )
     }
 }
+

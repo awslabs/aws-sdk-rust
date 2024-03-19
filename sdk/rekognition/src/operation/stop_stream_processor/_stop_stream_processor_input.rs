@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopStreamProcessorInput {
+pub struct StopStreamProcessorInput  {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl StopStreamProcessorInput {
+impl  StopStreamProcessorInput  {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl StopStreamProcessorInputBuilder {
     }
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_stream_processor::StopStreamProcessorInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

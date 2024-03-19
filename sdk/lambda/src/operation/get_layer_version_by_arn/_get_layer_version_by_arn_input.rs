@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLayerVersionByArnInput {
+pub struct GetLayerVersionByArnInput  {
     /// <p>The ARN of the layer version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetLayerVersionByArnInput {
+impl  GetLayerVersionByArnInput  {
     /// <p>The ARN of the layer version.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetLayerVersionByArnInputBuilder {
     }
     /// <p>The ARN of the layer version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the layer version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetLayerVersionByArnInput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

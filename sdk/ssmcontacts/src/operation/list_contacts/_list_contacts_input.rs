@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactsInput {
+pub struct ListContactsInput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
@@ -12,9 +12,9 @@ pub struct ListContactsInput {
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ContactType>,
 }
-impl ListContactsInput {
+impl  ListContactsInput  {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
@@ -22,11 +22,11 @@ impl ListContactsInput {
         self.max_results
     }
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
-    pub fn alias_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn alias_prefix(&self) -> ::std::option::Option<& str> {
         self.alias_prefix.as_deref()
     }
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ContactType> {
         self.r#type.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListContactsInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListContactsInputBuilder {
     }
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListContactsInputBuilder {
     }
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub fn set_alias_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_prefix = input;
-        self
+        self.alias_prefix = input; self
     }
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub fn get_alias_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,22 +93,26 @@ impl ListContactsInputBuilder {
     }
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            alias_prefix: self.alias_prefix,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_contacts::ListContactsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                alias_prefix: self.alias_prefix
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

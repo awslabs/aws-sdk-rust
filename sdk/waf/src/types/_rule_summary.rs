@@ -7,24 +7,22 @@
 /// <p>Contains the identifier and the friendly name or description of the <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleSummary {
+pub struct RuleSummary  {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub name: ::std::string::String,
 }
-impl RuleSummary {
+impl  RuleSummary  {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl RuleSummary {
@@ -52,8 +50,7 @@ impl RuleSummaryBuilder {
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
@@ -68,8 +65,7 @@ impl RuleSummaryBuilder {
     }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl RuleSummaryBuilder {
     /// - [`rule_id`](crate::types::builders::RuleSummaryBuilder::rule_id)
     /// - [`name`](crate::types::builders::RuleSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleSummary {
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building RuleSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RuleSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleSummary {
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RuleSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

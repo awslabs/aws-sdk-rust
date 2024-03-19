@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDashboardsInput {
+pub struct DeleteDashboardsInput  {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub dashboard_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dashboard_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteDashboardsInput {
+impl  DeleteDashboardsInput  {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dashboard_names.is_none()`.
-    pub fn dashboard_names(&self) -> &[::std::string::String] {
-        self.dashboard_names.as_deref().unwrap_or_default()
+    pub fn dashboard_names(&self) -> & [::std::string::String] {
+        self.dashboard_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteDashboardsInput {
@@ -25,7 +26,7 @@ impl DeleteDashboardsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDashboardsInputBuilder {
-    pub(crate) dashboard_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dashboard_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteDashboardsInputBuilder {
     /// Appends an item to `dashboard_names`.
@@ -35,25 +36,26 @@ impl DeleteDashboardsInputBuilder {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
     pub fn dashboard_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dashboard_names.unwrap_or_default();
-        v.push(input.into());
-        self.dashboard_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dashboard_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn set_dashboard_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dashboard_names = input;
-        self
+    pub fn set_dashboard_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dashboard_names = input; self
     }
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn get_dashboard_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dashboard_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dashboard_names
     }
     /// Consumes the builder and constructs a [`DeleteDashboardsInput`](crate::operation::delete_dashboards::DeleteDashboardsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_dashboards::DeleteDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_dashboards::DeleteDashboardsInput {
-            dashboard_names: self.dashboard_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_dashboards::DeleteDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_dashboards::DeleteDashboardsInput {
+                dashboard_names: self.dashboard_names
+                ,
+            }
+        )
     }
 }
+

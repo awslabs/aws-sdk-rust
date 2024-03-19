@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let commandstatus = unimplemented!();
 /// match commandstatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `commandstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CommandStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CommandStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -62,76 +60,77 @@ pub enum CommandStatus {
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CommandStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cancelled" => CommandStatus::Cancelled,
-            "Cancelling" => CommandStatus::Cancelling,
-            "Failed" => CommandStatus::Failed,
-            "InProgress" => CommandStatus::InProgress,
-            "Pending" => CommandStatus::Pending,
-            "Success" => CommandStatus::Success,
-            "TimedOut" => CommandStatus::TimedOut,
-            other => CommandStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Cancelled" => CommandStatus::Cancelled,
+"Cancelling" => CommandStatus::Cancelling,
+"Failed" => CommandStatus::Failed,
+"InProgress" => CommandStatus::InProgress,
+"Pending" => CommandStatus::Pending,
+"Success" => CommandStatus::Success,
+"TimedOut" => CommandStatus::TimedOut,
+other => CommandStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CommandStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CommandStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CommandStatus::from(s))
+                    }
+                }
 impl CommandStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CommandStatus::Cancelled => "Cancelled",
-            CommandStatus::Cancelling => "Cancelling",
-            CommandStatus::Failed => "Failed",
-            CommandStatus::InProgress => "InProgress",
-            CommandStatus::Pending => "Pending",
-            CommandStatus::Success => "Success",
-            CommandStatus::TimedOut => "TimedOut",
-            CommandStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Cancelled", "Cancelling", "Failed", "InProgress", "Pending", "Success", "TimedOut"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CommandStatus::Cancelled => "Cancelled",
+    CommandStatus::Cancelling => "Cancelling",
+    CommandStatus::Failed => "Failed",
+    CommandStatus::InProgress => "InProgress",
+    CommandStatus::Pending => "Pending",
+    CommandStatus::Success => "Success",
+    CommandStatus::TimedOut => "TimedOut",
+    CommandStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cancelled", "Cancelling", "Failed", "InProgress", "Pending", "Success", "TimedOut"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CommandStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CommandStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CommandStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CommandStatus::Cancelled => write!(f, "Cancelled"),
-            CommandStatus::Cancelling => write!(f, "Cancelling"),
-            CommandStatus::Failed => write!(f, "Failed"),
-            CommandStatus::InProgress => write!(f, "InProgress"),
-            CommandStatus::Pending => write!(f, "Pending"),
-            CommandStatus::Success => write!(f, "Success"),
-            CommandStatus::TimedOut => write!(f, "TimedOut"),
-            CommandStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CommandStatus::Cancelled => write!(f, "Cancelled"),
+CommandStatus::Cancelling => write!(f, "Cancelling"),
+CommandStatus::Failed => write!(f, "Failed"),
+CommandStatus::InProgress => write!(f, "InProgress"),
+CommandStatus::Pending => write!(f, "Pending"),
+CommandStatus::Success => write!(f, "Success"),
+CommandStatus::TimedOut => write!(f, "TimedOut"),
+CommandStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

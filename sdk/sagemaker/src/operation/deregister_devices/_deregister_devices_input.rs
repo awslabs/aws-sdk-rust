@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterDevicesInput {
+pub struct DeregisterDevicesInput  {
     /// <p>The name of the fleet the devices belong to.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique IDs of the devices.</p>
-    pub device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub device_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeregisterDevicesInput {
+impl  DeregisterDevicesInput  {
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The unique IDs of the devices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_names.is_none()`.
-    pub fn device_names(&self) -> &[::std::string::String] {
-        self.device_names.as_deref().unwrap_or_default()
+    pub fn device_names(&self) -> & [::std::string::String] {
+        self.device_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeregisterDevicesInput {
@@ -32,7 +33,7 @@ impl DeregisterDevicesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeregisterDevicesInputBuilder {
     pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
-    pub(crate) device_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeregisterDevicesInputBuilder {
     /// <p>The name of the fleet the devices belong to.</p>
@@ -43,8 +44,7 @@ impl DeregisterDevicesInputBuilder {
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl DeregisterDevicesInputBuilder {
     /// <p>The unique IDs of the devices.</p>
     pub fn device_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_names.unwrap_or_default();
-        v.push(input.into());
-        self.device_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.device_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique IDs of the devices.</p>
-    pub fn set_device_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.device_names = input;
-        self
+    pub fn set_device_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.device_names = input; self
     }
     /// <p>The unique IDs of the devices.</p>
-    pub fn get_device_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_device_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.device_names
     }
     /// Consumes the builder and constructs a [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::deregister_devices::DeregisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::deregister_devices::DeregisterDevicesInput {
-            device_fleet_name: self.device_fleet_name,
-            device_names: self.device_names,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_devices::DeregisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deregister_devices::DeregisterDevicesInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                device_names: self.device_names
+                ,
+            }
+        )
     }
 }
+

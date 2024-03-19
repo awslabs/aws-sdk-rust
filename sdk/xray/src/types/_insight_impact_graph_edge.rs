@@ -3,11 +3,11 @@
 /// <p>The connection between two service in an insight impact graph.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightImpactGraphEdge {
+pub struct InsightImpactGraphEdge  {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub reference_id: ::std::option::Option<i32>,
 }
-impl InsightImpactGraphEdge {
+impl  InsightImpactGraphEdge  {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub fn reference_id(&self) -> ::std::option::Option<i32> {
         self.reference_id
@@ -34,8 +34,7 @@ impl InsightImpactGraphEdgeBuilder {
     }
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>Identifier of the edge. Unique within a service map.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl InsightImpactGraphEdgeBuilder {
     /// Consumes the builder and constructs a [`InsightImpactGraphEdge`](crate::types::InsightImpactGraphEdge).
     pub fn build(self) -> crate::types::InsightImpactGraphEdge {
         crate::types::InsightImpactGraphEdge {
-            reference_id: self.reference_id,
+            reference_id: self.reference_id
+            ,
         }
     }
 }
+

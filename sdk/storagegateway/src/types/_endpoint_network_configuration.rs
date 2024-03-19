@@ -3,20 +3,21 @@
 /// <p>Specifies network configuration information for the gateway associated with the Amazon FSx file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointNetworkConfiguration {
+pub struct EndpointNetworkConfiguration  {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EndpointNetworkConfiguration {
+impl  EndpointNetworkConfiguration  {
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_addresses.is_none()`.
-    pub fn ip_addresses(&self) -> &[::std::string::String] {
-        self.ip_addresses.as_deref().unwrap_or_default()
+    pub fn ip_addresses(&self) -> & [::std::string::String] {
+        self.ip_addresses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EndpointNetworkConfiguration {
@@ -30,7 +31,7 @@ impl EndpointNetworkConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EndpointNetworkConfigurationBuilder {
-    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EndpointNetworkConfigurationBuilder {
     /// Appends an item to `ip_addresses`.
@@ -42,27 +43,28 @@ impl EndpointNetworkConfigurationBuilder {
     /// </note>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
-    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ip_addresses
     }
     /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).
     pub fn build(self) -> crate::types::EndpointNetworkConfiguration {
         crate::types::EndpointNetworkConfiguration {
-            ip_addresses: self.ip_addresses,
+            ip_addresses: self.ip_addresses
+            ,
         }
     }
 }
+

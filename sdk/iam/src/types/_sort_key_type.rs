@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortkeytype = unimplemented!();
 /// match sortkeytype {
@@ -32,16 +32,14 @@
 /// Specifically, when `sortkeytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortKeyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SortKeyType {
     #[allow(missing_docs)] // documentation missing in model
     LastAuthenticatedTimeAscending,
@@ -53,72 +51,68 @@ pub enum SortKeyType {
     ServiceNamespaceDescending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SortKeyType {
-    fn from(s: &str) -> Self {
-        match s {
-            "LAST_AUTHENTICATED_TIME_ASCENDING" => SortKeyType::LastAuthenticatedTimeAscending,
-            "LAST_AUTHENTICATED_TIME_DESCENDING" => SortKeyType::LastAuthenticatedTimeDescending,
-            "SERVICE_NAMESPACE_ASCENDING" => SortKeyType::ServiceNamespaceAscending,
-            "SERVICE_NAMESPACE_DESCENDING" => SortKeyType::ServiceNamespaceDescending,
-            other => SortKeyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "LAST_AUTHENTICATED_TIME_ASCENDING" => SortKeyType::LastAuthenticatedTimeAscending,
+"LAST_AUTHENTICATED_TIME_DESCENDING" => SortKeyType::LastAuthenticatedTimeDescending,
+"SERVICE_NAMESPACE_ASCENDING" => SortKeyType::ServiceNamespaceAscending,
+"SERVICE_NAMESPACE_DESCENDING" => SortKeyType::ServiceNamespaceDescending,
+other => SortKeyType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SortKeyType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SortKeyType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SortKeyType::from(s))
+                    }
+                }
 impl SortKeyType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SortKeyType::LastAuthenticatedTimeAscending => "LAST_AUTHENTICATED_TIME_ASCENDING",
-            SortKeyType::LastAuthenticatedTimeDescending => "LAST_AUTHENTICATED_TIME_DESCENDING",
-            SortKeyType::ServiceNamespaceAscending => "SERVICE_NAMESPACE_ASCENDING",
-            SortKeyType::ServiceNamespaceDescending => "SERVICE_NAMESPACE_DESCENDING",
-            SortKeyType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LAST_AUTHENTICATED_TIME_ASCENDING",
-            "LAST_AUTHENTICATED_TIME_DESCENDING",
-            "SERVICE_NAMESPACE_ASCENDING",
-            "SERVICE_NAMESPACE_DESCENDING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SortKeyType::LastAuthenticatedTimeAscending => "LAST_AUTHENTICATED_TIME_ASCENDING",
+    SortKeyType::LastAuthenticatedTimeDescending => "LAST_AUTHENTICATED_TIME_DESCENDING",
+    SortKeyType::ServiceNamespaceAscending => "SERVICE_NAMESPACE_ASCENDING",
+    SortKeyType::ServiceNamespaceDescending => "SERVICE_NAMESPACE_DESCENDING",
+    SortKeyType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LAST_AUTHENTICATED_TIME_ASCENDING", "LAST_AUTHENTICATED_TIME_DESCENDING", "SERVICE_NAMESPACE_ASCENDING", "SERVICE_NAMESPACE_DESCENDING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SortKeyType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SortKeyType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SortKeyType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SortKeyType::LastAuthenticatedTimeAscending => write!(f, "LAST_AUTHENTICATED_TIME_ASCENDING"),
-            SortKeyType::LastAuthenticatedTimeDescending => write!(f, "LAST_AUTHENTICATED_TIME_DESCENDING"),
-            SortKeyType::ServiceNamespaceAscending => write!(f, "SERVICE_NAMESPACE_ASCENDING"),
-            SortKeyType::ServiceNamespaceDescending => write!(f, "SERVICE_NAMESPACE_DESCENDING"),
-            SortKeyType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SortKeyType::LastAuthenticatedTimeAscending => write!(f, "LAST_AUTHENTICATED_TIME_ASCENDING"),
+SortKeyType::LastAuthenticatedTimeDescending => write!(f, "LAST_AUTHENTICATED_TIME_DESCENDING"),
+SortKeyType::ServiceNamespaceAscending => write!(f, "SERVICE_NAMESPACE_ASCENDING"),
+SortKeyType::ServiceNamespaceDescending => write!(f, "SERVICE_NAMESPACE_DESCENDING"),
+SortKeyType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

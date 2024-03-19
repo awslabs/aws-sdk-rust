@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGlobalNetworkInput {
+pub struct UpdateGlobalNetworkInput  {
     /// <p>The ID of your global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGlobalNetworkInput {
+impl  UpdateGlobalNetworkInput  {
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateGlobalNetworkInputBuilder {
     }
     /// <p>The ID of your global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of your global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl UpdateGlobalNetworkInputBuilder {
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -68,13 +66,15 @@ impl UpdateGlobalNetworkInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGlobalNetworkInput`](crate::operation::update_global_network::UpdateGlobalNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_global_network::UpdateGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_global_network::UpdateGlobalNetworkInput {
-            global_network_id: self.global_network_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_global_network::UpdateGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_global_network::UpdateGlobalNetworkInput {
+                global_network_id: self.global_network_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

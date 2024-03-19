@@ -3,7 +3,7 @@
 /// <p>The Amazon CloudWatch configuration for monitoring logs. You can configure your jobs to send log information to CloudWatch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLoggingConfiguration {
+pub struct CloudWatchLoggingConfiguration  {
     /// <p>Enables CloudWatch logging.</p>
     pub enabled: bool,
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
@@ -19,23 +19,23 @@ pub struct CloudWatchLoggingConfiguration {
     /// <li>
     /// <p><b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code></p></li>
     /// </ul>
-    pub log_types: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub log_types: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
-impl CloudWatchLoggingConfiguration {
+impl  CloudWatchLoggingConfiguration  {
     /// <p>Enables CloudWatch logging.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>Prefix for the CloudWatch log stream name.</p>
-    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<& str> {
         self.log_stream_name_prefix.as_deref()
     }
     /// <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The types of logs that you want to publish to CloudWatch. If you don't specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. For more information including the supported worker types for Hive and Spark, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging.html#jobs-log-storage-cw">Logging for EMR Serverless with CloudWatch</a>.</p>
@@ -45,7 +45,7 @@ impl CloudWatchLoggingConfiguration {
     /// <li>
     /// <p><b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code></p></li>
     /// </ul>
-    pub fn log_types(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn log_types(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         self.log_types.as_ref()
     }
 }
@@ -64,7 +64,7 @@ pub struct CloudWatchLoggingConfigurationBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) log_types: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) log_types: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>,
 }
 impl CloudWatchLoggingConfigurationBuilder {
     /// <p>Enables CloudWatch logging.</p>
@@ -75,8 +75,7 @@ impl CloudWatchLoggingConfigurationBuilder {
     }
     /// <p>Enables CloudWatch logging.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables CloudWatch logging.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -89,8 +88,7 @@ impl CloudWatchLoggingConfigurationBuilder {
     }
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl CloudWatchLoggingConfigurationBuilder {
     }
     /// <p>Prefix for the CloudWatch log stream name.</p>
     pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name_prefix = input;
-        self
+        self.log_stream_name_prefix = input; self
     }
     /// <p>Prefix for the CloudWatch log stream name.</p>
     pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +114,7 @@ impl CloudWatchLoggingConfigurationBuilder {
     }
     /// <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,11 +131,11 @@ impl CloudWatchLoggingConfigurationBuilder {
     /// <li>
     /// <p><b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code></p></li>
     /// </ul>
-    pub fn log_types(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn log_types(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut hash_map = self.log_types.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.log_types = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.log_types = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The types of logs that you want to publish to CloudWatch. If you don't specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. For more information including the supported worker types for Hive and Spark, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging.html#jobs-log-storage-cw">Logging for EMR Serverless with CloudWatch</a>.</p>
     /// <ul>
@@ -148,12 +144,8 @@ impl CloudWatchLoggingConfigurationBuilder {
     /// <li>
     /// <p><b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code></p></li>
     /// </ul>
-    pub fn set_log_types(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    ) -> Self {
-        self.log_types = input;
-        self
+    pub fn set_log_types(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.log_types = input; self
     }
     /// <p>The types of logs that you want to publish to CloudWatch. If you don't specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. For more information including the supported worker types for Hive and Spark, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging.html#jobs-log-storage-cw">Logging for EMR Serverless with CloudWatch</a>.</p>
     /// <ul>
@@ -162,26 +154,30 @@ impl CloudWatchLoggingConfigurationBuilder {
     /// <li>
     /// <p><b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code></p></li>
     /// </ul>
-    pub fn get_log_types(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<::std::string::String>>> {
         &self.log_types
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingConfiguration`](crate::types::CloudWatchLoggingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::CloudWatchLoggingConfigurationBuilder::enabled)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchLoggingConfiguration {
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building CloudWatchLoggingConfiguration",
-                )
-            })?,
-            log_group_name: self.log_group_name,
-            log_stream_name_prefix: self.log_stream_name_prefix,
-            encryption_key_arn: self.encryption_key_arn,
-            log_types: self.log_types,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudWatchLoggingConfiguration {
+                enabled: self.enabled
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enabled", "enabled was not specified but it is required when building CloudWatchLoggingConfiguration")
+                    )?
+                ,
+                log_group_name: self.log_group_name
+                ,
+                log_stream_name_prefix: self.log_stream_name_prefix
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                log_types: self.log_types
+                ,
+            }
+        )
     }
 }
+

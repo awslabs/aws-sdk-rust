@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbProxyInput {
+pub struct ModifyDbProxyInput  {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
     pub db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub new_db_proxy_name: ::std::option::Option<::std::string::String>,
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
+    pub auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>,
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub require_tls: ::std::option::Option<bool>,
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
@@ -18,22 +18,23 @@ pub struct ModifyDbProxyInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyDbProxyInput {
+impl  ModifyDbProxyInput  {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-    pub fn db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn new_db_proxy_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_db_proxy_name(&self) -> ::std::option::Option<& str> {
         self.new_db_proxy_name.as_deref()
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auth.is_none()`.
-    pub fn auth(&self) -> &[crate::types::UserAuthConfig] {
-        self.auth.as_deref().unwrap_or_default()
+    pub fn auth(&self) -> & [crate::types::UserAuthConfig] {
+        self.auth.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub fn require_tls(&self) -> ::std::option::Option<bool> {
@@ -48,14 +49,15 @@ impl ModifyDbProxyInput {
         self.debug_logging
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyDbProxyInput {
@@ -71,12 +73,12 @@ impl ModifyDbProxyInput {
 pub struct ModifyDbProxyInputBuilder {
     pub(crate) db_proxy_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_db_proxy_name: ::std::option::Option<::std::string::String>,
-    pub(crate) auth: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>,
+    pub(crate) auth: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>,
     pub(crate) require_tls: ::std::option::Option<bool>,
     pub(crate) idle_client_timeout: ::std::option::Option<i32>,
     pub(crate) debug_logging: ::std::option::Option<bool>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyDbProxyInputBuilder {
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
@@ -87,8 +89,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
     pub fn set_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
     pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +102,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_new_db_proxy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_db_proxy_name = input;
-        self
+        self.new_db_proxy_name = input; self
     }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_new_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,17 +115,16 @@ impl ModifyDbProxyInputBuilder {
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
     pub fn auth(mut self, input: crate::types::UserAuthConfig) -> Self {
         let mut v = self.auth.unwrap_or_default();
-        v.push(input);
-        self.auth = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auth = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>>) -> Self {
-        self.auth = input;
-        self
+    pub fn set_auth(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>>) -> Self {
+        self.auth = input; self
     }
     /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
-    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
+    pub fn get_auth(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAuthConfig>> {
         &self.auth
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
@@ -135,8 +134,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub fn set_require_tls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_tls = input;
-        self
+        self.require_tls = input; self
     }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub fn get_require_tls(&self) -> &::std::option::Option<bool> {
@@ -149,8 +147,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub fn set_idle_client_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.idle_client_timeout = input;
-        self
+        self.idle_client_timeout = input; self
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub fn get_idle_client_timeout(&self) -> &::std::option::Option<i32> {
@@ -163,8 +160,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn set_debug_logging(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.debug_logging = input;
-        self
+        self.debug_logging = input; self
     }
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
@@ -177,8 +173,7 @@ impl ModifyDbProxyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,32 +186,40 @@ impl ModifyDbProxyInputBuilder {
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyInput`](crate::operation::modify_db_proxy::ModifyDbProxyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_db_proxy::ModifyDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_db_proxy::ModifyDbProxyInput {
-            db_proxy_name: self.db_proxy_name,
-            new_db_proxy_name: self.new_db_proxy_name,
-            auth: self.auth,
-            require_tls: self.require_tls,
-            idle_client_timeout: self.idle_client_timeout,
-            debug_logging: self.debug_logging,
-            role_arn: self.role_arn,
-            security_groups: self.security_groups,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_proxy::ModifyDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_proxy::ModifyDbProxyInput {
+                db_proxy_name: self.db_proxy_name
+                ,
+                new_db_proxy_name: self.new_db_proxy_name
+                ,
+                auth: self.auth
+                ,
+                require_tls: self.require_tls
+                ,
+                idle_client_timeout: self.idle_client_timeout
+                ,
+                debug_logging: self.debug_logging
+                ,
+                role_arn: self.role_arn
+                ,
+                security_groups: self.security_groups
+                ,
+            }
+        )
     }
 }
+

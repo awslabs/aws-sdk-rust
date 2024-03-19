@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchTypes`](crate::operation::search_types::builders::SearchTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_types::builders::SearchTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which to invoke the <code>SearchTypes</code> action.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call to <code>SearchTypes</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchTypes</code> to list the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchTypes</code> to list the next set of results.</p><br>
@@ -13,12 +13,13 @@ impl super::Client {
     ///   - [`filters(FilterClause)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::filters) / [`set_filters(Option<FilterClause>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_filters):<br>required: **false**<br><p>The filters for the <code>SearchTypes</code> action.</p><br>
     ///   - [`sort(SearchSort)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::sort) / [`set_sort(Option<SearchSort>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_sort):<br>required: **false**<br><p>The specifies the way to sort the <code>SearchTypes</code> results.</p><br>
     ///   - [`managed(bool)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::managed) / [`set_managed(Option<bool>)`](crate::operation::search_types::builders::SearchTypesFluentBuilder::set_managed):<br>required: **true**<br><p></p><br>
-    /// - On success, responds with [`SearchTypesOutput`](crate::operation::search_types::SearchTypesOutput) with field(s):
+                            /// - On success, responds with [`SearchTypesOutput`](crate::operation::search_types::SearchTypesOutput) with field(s):
     ///   - [`items(Option<Vec::<SearchTypesResultItem>>)`](crate::operation::search_types::SearchTypesOutput::items): <p>The results of the <code>SearchTypes</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_types::SearchTypesOutput::next_token): <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchTypes</code> to list the next set of results.</p>
     ///   - [`total_match_count(Option<i32>)`](crate::operation::search_types::SearchTypesOutput::total_match_count): <p>Total number of search results.</p>
-    /// - On failure, responds with [`SdkError<SearchTypesError>`](crate::operation::search_types::SearchTypesError)
+                            /// - On failure, responds with [`SdkError<SearchTypesError>`](crate::operation::search_types::SearchTypesError)
     pub fn search_types(&self) -> crate::operation::search_types::builders::SearchTypesFluentBuilder {
-        crate::operation::search_types::builders::SearchTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_types::builders::SearchTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

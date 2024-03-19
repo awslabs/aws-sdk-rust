@@ -3,22 +3,20 @@
 /// <p>Contains information about an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Object {
+pub struct S3Object  {
     /// <p>The name of the specific S3 bucket.</p>
     pub bucket: ::std::string::String,
     /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible.</p>
     pub key: ::std::string::String,
 }
-impl S3Object {
+impl  S3Object  {
     /// <p>The name of the specific S3 bucket.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
 }
 impl S3Object {
@@ -44,8 +42,7 @@ impl S3ObjectBuilder {
     }
     /// <p>The name of the specific S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the specific S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3ObjectBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (KMS key) key being used to encrypt the S3 object. Without this key, data in the bucket is not accessible.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl S3ObjectBuilder {
     /// - [`bucket`](crate::types::builders::S3ObjectBuilder::bucket)
     /// - [`key`](crate::types::builders::S3ObjectBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Object, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Object {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3Object",
-                )
-            })?,
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building S3Object",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Object {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3Object")
+                    )?
+                ,
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building S3Object")
+                    )?
+                ,
+            }
+        )
     }
 }
+

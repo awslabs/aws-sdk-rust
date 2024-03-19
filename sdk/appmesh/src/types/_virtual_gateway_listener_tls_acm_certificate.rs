@@ -3,15 +3,14 @@
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsAcmCertificate {
+pub struct VirtualGatewayListenerTlsAcmCertificate  {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub certificate_arn: ::std::string::String,
 }
-impl VirtualGatewayListenerTlsAcmCertificate {
+impl  VirtualGatewayListenerTlsAcmCertificate  {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-    pub fn certificate_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate_arn.deref()
+    pub fn certificate_arn(&self) -> & str {
+        use std::ops::Deref; self.certificate_arn.deref()
     }
 }
 impl VirtualGatewayListenerTlsAcmCertificate {
@@ -36,8 +35,7 @@ impl VirtualGatewayListenerTlsAcmCertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl VirtualGatewayListenerTlsAcmCertificateBuilder {
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsAcmCertificate`](crate::types::VirtualGatewayListenerTlsAcmCertificate).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_arn`](crate::types::builders::VirtualGatewayListenerTlsAcmCertificateBuilder::certificate_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsAcmCertificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualGatewayListenerTlsAcmCertificate {
-            certificate_arn: self.certificate_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate_arn",
-                    "certificate_arn was not specified but it is required when building VirtualGatewayListenerTlsAcmCertificate",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsAcmCertificate, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::VirtualGatewayListenerTlsAcmCertificate {
+                certificate_arn: self.certificate_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_arn", "certificate_arn was not specified but it is required when building VirtualGatewayListenerTlsAcmCertificate")
+                    )?
+                ,
+            }
+        )
     }
 }
+

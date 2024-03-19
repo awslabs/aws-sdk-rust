@@ -3,7 +3,7 @@
 /// A request to update an input device.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInputDeviceInput {
+pub struct UpdateInputDeviceInput  {
     /// The settings that you want to apply to the HD input device.
     pub hd_device_settings: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>,
     /// The unique ID of the input device. For example, hd-123456789abcdef.
@@ -15,25 +15,25 @@ pub struct UpdateInputDeviceInput {
     /// The Availability Zone you want associated with this input device.
     pub availability_zone: ::std::option::Option<::std::string::String>,
 }
-impl UpdateInputDeviceInput {
+impl  UpdateInputDeviceInput  {
     /// The settings that you want to apply to the HD input device.
-    pub fn hd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
+    pub fn hd_device_settings(&self) -> ::std::option::Option<& crate::types::InputDeviceConfigurableSettings> {
         self.hd_device_settings.as_ref()
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
     /// The name that you assigned to this input device (not the unique ID).
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn uhd_device_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableSettings> {
+    pub fn uhd_device_settings(&self) -> ::std::option::Option<& crate::types::InputDeviceConfigurableSettings> {
         self.uhd_device_settings.as_ref()
     }
     /// The Availability Zone you want associated with this input device.
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateInputDeviceInputBuilder {
     }
     /// The settings that you want to apply to the HD input device.
     pub fn set_hd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
-        self.hd_device_settings = input;
-        self
+        self.hd_device_settings = input; self
     }
     /// The settings that you want to apply to the HD input device.
     pub fn get_hd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
@@ -77,8 +76,7 @@ impl UpdateInputDeviceInputBuilder {
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// The unique ID of the input device. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateInputDeviceInputBuilder {
     }
     /// The name that you assigned to this input device (not the unique ID).
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name that you assigned to this input device (not the unique ID).
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl UpdateInputDeviceInputBuilder {
     }
     /// The settings that you want to apply to the UHD input device.
     pub fn set_uhd_device_settings(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
-        self.uhd_device_settings = input;
-        self
+        self.uhd_device_settings = input; self
     }
     /// The settings that you want to apply to the UHD input device.
     pub fn get_uhd_device_settings(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableSettings> {
@@ -119,23 +115,28 @@ impl UpdateInputDeviceInputBuilder {
     }
     /// The Availability Zone you want associated with this input device.
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// The Availability Zone you want associated with this input device.
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
     /// Consumes the builder and constructs a [`UpdateInputDeviceInput`](crate::operation::update_input_device::UpdateInputDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_input_device::UpdateInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_input_device::UpdateInputDeviceInput {
-            hd_device_settings: self.hd_device_settings,
-            input_device_id: self.input_device_id,
-            name: self.name,
-            uhd_device_settings: self.uhd_device_settings,
-            availability_zone: self.availability_zone,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_input_device::UpdateInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_input_device::UpdateInputDeviceInput {
+                hd_device_settings: self.hd_device_settings
+                ,
+                input_device_id: self.input_device_id
+                ,
+                name: self.name
+                ,
+                uhd_device_settings: self.uhd_device_settings
+                ,
+                availability_zone: self.availability_zone
+                ,
+            }
+        )
     }
 }
+

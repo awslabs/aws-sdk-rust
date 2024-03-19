@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImagePermissions`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::set_name):<br>required: **true**<br><p>The name of the private image for which to describe permissions. The image must be one that you own.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of each page of results.</p><br>
     ///   - [`shared_aws_account_ids(impl Into<String>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::shared_aws_account_ids) / [`set_shared_aws_account_ids(Option<Vec::<String>>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::set_shared_aws_account_ids):<br>required: **false**<br><p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
-    /// - On success, responds with [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeImagePermissionsOutput`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput::name): <p>The name of the private image.</p>
     ///   - [`shared_image_permissions_list(Option<Vec::<SharedImagePermissions>>)`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput::shared_image_permissions_list): <p>The permissions for a private image that you own.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_image_permissions::DescribeImagePermissionsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<DescribeImagePermissionsError>`](crate::operation::describe_image_permissions::DescribeImagePermissionsError)
+                            /// - On failure, responds with [`SdkError<DescribeImagePermissionsError>`](crate::operation::describe_image_permissions::DescribeImagePermissionsError)
     pub fn describe_image_permissions(&self) -> crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder {
-        crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_image_permissions::builders::DescribeImagePermissionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

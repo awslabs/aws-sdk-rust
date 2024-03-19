@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCapacityAssignmentConfigurationOutput {
+pub struct GetCapacityAssignmentConfigurationOutput  {
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
     pub capacity_assignment_configuration: ::std::option::Option<crate::types::CapacityAssignmentConfiguration>,
     _request_id: Option<String>,
 }
-impl GetCapacityAssignmentConfigurationOutput {
+impl  GetCapacityAssignmentConfigurationOutput  {
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
-    pub fn capacity_assignment_configuration(&self) -> ::std::option::Option<&crate::types::CapacityAssignmentConfiguration> {
+    pub fn capacity_assignment_configuration(&self) -> ::std::option::Option<& crate::types::CapacityAssignmentConfiguration> {
         self.capacity_assignment_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCapacityAssignmentConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCapacityAssignmentConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetCapacityAssignmentConfigurationOutput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput).
     pub fn builder() -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl GetCapacityAssignmentConfigurationOutputBuilder {
     }
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
     pub fn set_capacity_assignment_configuration(mut self, input: ::std::option::Option<crate::types::CapacityAssignmentConfiguration>) -> Self {
-        self.capacity_assignment_configuration = input;
-        self
+        self.capacity_assignment_configuration = input; self
     }
     /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
     pub fn get_capacity_assignment_configuration(&self) -> &::std::option::Option<crate::types::CapacityAssignmentConfiguration> {
         &self.capacity_assignment_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCapacityAssignmentConfigurationOutput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput).
     pub fn build(self) -> crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput {
         crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput {
-            capacity_assignment_configuration: self.capacity_assignment_configuration,
+            capacity_assignment_configuration: self.capacity_assignment_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

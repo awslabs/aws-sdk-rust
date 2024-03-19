@@ -3,7 +3,7 @@
 /// <p>Contains the hourly metrics for the given recommendation over the lookback period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationDetailHourlyMetrics {
+pub struct RecommendationDetailHourlyMetrics  {
     /// <p>The period of time that you want the usage and costs for.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
@@ -15,25 +15,25 @@ pub struct RecommendationDetailHourlyMetrics {
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
     pub estimated_new_commitment_utilization: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationDetailHourlyMetrics {
+impl  RecommendationDetailHourlyMetrics  {
     /// <p>The period of time that you want the usage and costs for.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
-    pub fn estimated_on_demand_cost(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_on_demand_cost(&self) -> ::std::option::Option<& str> {
         self.estimated_on_demand_cost.as_deref()
     }
     /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
-    pub fn current_coverage(&self) -> ::std::option::Option<&str> {
+    pub fn current_coverage(&self) -> ::std::option::Option<& str> {
         self.current_coverage.as_deref()
     }
     /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
-    pub fn estimated_coverage(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_coverage(&self) -> ::std::option::Option<& str> {
         self.estimated_coverage.as_deref()
     }
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
-    pub fn estimated_new_commitment_utilization(&self) -> ::std::option::Option<&str> {
+    pub fn estimated_new_commitment_utilization(&self) -> ::std::option::Option<& str> {
         self.estimated_new_commitment_utilization.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl RecommendationDetailHourlyMetricsBuilder {
     }
     /// <p>The period of time that you want the usage and costs for.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The period of time that you want the usage and costs for.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl RecommendationDetailHourlyMetricsBuilder {
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
     pub fn set_estimated_on_demand_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_on_demand_cost = input;
-        self
+        self.estimated_on_demand_cost = input; self
     }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
     pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl RecommendationDetailHourlyMetricsBuilder {
     }
     /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
     pub fn set_current_coverage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_coverage = input;
-        self
+        self.current_coverage = input; self
     }
     /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
     pub fn get_current_coverage(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl RecommendationDetailHourlyMetricsBuilder {
     }
     /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
     pub fn set_estimated_coverage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_coverage = input;
-        self
+        self.estimated_coverage = input; self
     }
     /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
     pub fn get_estimated_coverage(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl RecommendationDetailHourlyMetricsBuilder {
     }
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
     pub fn set_estimated_new_commitment_utilization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.estimated_new_commitment_utilization = input;
-        self
+        self.estimated_new_commitment_utilization = input; self
     }
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
     pub fn get_estimated_new_commitment_utilization(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl RecommendationDetailHourlyMetricsBuilder {
     /// Consumes the builder and constructs a [`RecommendationDetailHourlyMetrics`](crate::types::RecommendationDetailHourlyMetrics).
     pub fn build(self) -> crate::types::RecommendationDetailHourlyMetrics {
         crate::types::RecommendationDetailHourlyMetrics {
-            start_time: self.start_time,
-            estimated_on_demand_cost: self.estimated_on_demand_cost,
-            current_coverage: self.current_coverage,
-            estimated_coverage: self.estimated_coverage,
-            estimated_new_commitment_utilization: self.estimated_new_commitment_utilization,
+            start_time: self.start_time
+            ,
+            estimated_on_demand_cost: self.estimated_on_demand_cost
+            ,
+            current_coverage: self.current_coverage
+            ,
+            estimated_coverage: self.estimated_coverage
+            ,
+            estimated_new_commitment_utilization: self.estimated_new_commitment_utilization
+            ,
         }
     }
 }
+

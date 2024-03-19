@@ -3,20 +3,19 @@
 /// <p>An object representing the Source Server to recover.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRecoveryRequestSourceServer {
+pub struct StartRecoveryRequestSourceServer  {
     /// <p>The ID of the Source Server you want to recover.</p>
     pub source_server_id: ::std::string::String,
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub recovery_snapshot_id: ::std::option::Option<::std::string::String>,
 }
-impl StartRecoveryRequestSourceServer {
+impl  StartRecoveryRequestSourceServer  {
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> & str {
+        use std::ops::Deref; self.source_server_id.deref()
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    pub fn recovery_snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_snapshot_id(&self) -> ::std::option::Option<& str> {
         self.recovery_snapshot_id.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl StartRecoveryRequestSourceServerBuilder {
     }
     /// <p>The ID of the Source Server you want to recover.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server you want to recover.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl StartRecoveryRequestSourceServerBuilder {
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn set_recovery_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_snapshot_id = input;
-        self
+        self.recovery_snapshot_id = input; self
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn get_recovery_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl StartRecoveryRequestSourceServerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_server_id`](crate::types::builders::StartRecoveryRequestSourceServerBuilder::source_server_id)
     pub fn build(self) -> ::std::result::Result<crate::types::StartRecoveryRequestSourceServer, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartRecoveryRequestSourceServer {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building StartRecoveryRequestSourceServer",
-                )
-            })?,
-            recovery_snapshot_id: self.recovery_snapshot_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StartRecoveryRequestSourceServer {
+                source_server_id: self.source_server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_server_id", "source_server_id was not specified but it is required when building StartRecoveryRequestSourceServer")
+                    )?
+                ,
+                recovery_snapshot_id: self.recovery_snapshot_id
+                ,
+            }
+        )
     }
 }
+

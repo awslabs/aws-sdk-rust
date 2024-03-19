@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMaintenanceWindows`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(MaintenanceWindowFilter)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::filters) / [`set_filters(Option<Vec::<MaintenanceWindowFilter>>)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::set_filters):<br>required: **false**<br><p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeMaintenanceWindowsOutput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput) with field(s):
+                            /// - On success, responds with [`DescribeMaintenanceWindowsOutput`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput) with field(s):
     ///   - [`window_identities(Option<Vec::<MaintenanceWindowIdentity>>)`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput::window_identities): <p>Information about the maintenance windows.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsError>`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError)
+                            /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsError>`](crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError)
     pub fn describe_maintenance_windows(&self) -> crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder {
-        crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_maintenance_windows::builders::DescribeMaintenanceWindowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

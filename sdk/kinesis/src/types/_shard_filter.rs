@@ -3,7 +3,7 @@
 /// <p>The request parameter used to filter out the response of the <code>ListShards</code> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShardFilter {
+pub struct ShardFilter  {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct ShardFilter {
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ShardFilter {
+impl  ShardFilter  {
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
     /// <ul>
@@ -43,15 +43,15 @@ impl ShardFilter {
     /// <li>
     /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::ShardFilterType {
+    pub fn r#type(&self) -> & crate::types::ShardFilterType {
         &self.r#type
     }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
+    pub fn shard_id(&self) -> ::std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -109,8 +109,7 @@ impl ShardFilterBuilder {
     /// <p><code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp is greater than or equal to the given timestamp and also all open shards. Corrected to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is less than the <code>TRIM_HORIZON</code> value.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ShardFilterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The shard type specified in the <code>ShardFilter</code> parameter. This is a required property of the <code>ShardFilter</code> parameter.</p>
     /// <p>You can specify the following valid values:</p>
@@ -138,8 +137,7 @@ impl ShardFilterBuilder {
     }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
     /// <p>The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code> parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard type is specified.</p>
     pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +150,7 @@ impl ShardFilterBuilder {
     }
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00 or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are specified.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -163,15 +160,19 @@ impl ShardFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ShardFilterBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ShardFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ShardFilter {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ShardFilter",
-                )
-            })?,
-            shard_id: self.shard_id,
-            timestamp: self.timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ShardFilter {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ShardFilter")
+                    )?
+                ,
+                shard_id: self.shard_id
+                ,
+                timestamp: self.timestamp
+                ,
+            }
+        )
     }
 }
+

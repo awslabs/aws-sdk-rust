@@ -3,22 +3,21 @@
 /// <p>The configuration of adding parameters in action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetParameterValueConfiguration {
+pub struct SetParameterValueConfiguration  {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
     pub destination_parameter_name: ::std::string::String,
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub value: ::std::option::Option<crate::types::DestinationParameterValueConfiguration>,
 }
-impl SetParameterValueConfiguration {
+impl  SetParameterValueConfiguration  {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    pub fn destination_parameter_name(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_parameter_name.deref()
+    pub fn destination_parameter_name(&self) -> & str {
+        use std::ops::Deref; self.destination_parameter_name.deref()
     }
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::DestinationParameterValueConfiguration> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::DestinationParameterValueConfiguration> {
         self.value.as_ref()
     }
 }
@@ -45,8 +44,7 @@ impl SetParameterValueConfigurationBuilder {
     }
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
     pub fn set_destination_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_parameter_name = input;
-        self
+        self.destination_parameter_name = input; self
     }
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
     pub fn get_destination_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +60,7 @@ impl SetParameterValueConfigurationBuilder {
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DestinationParameterValueConfiguration>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
@@ -74,14 +71,17 @@ impl SetParameterValueConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_parameter_name`](crate::types::builders::SetParameterValueConfigurationBuilder::destination_parameter_name)
     pub fn build(self) -> ::std::result::Result<crate::types::SetParameterValueConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SetParameterValueConfiguration {
-            destination_parameter_name: self.destination_parameter_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destination_parameter_name",
-                    "destination_parameter_name was not specified but it is required when building SetParameterValueConfiguration",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SetParameterValueConfiguration {
+                destination_parameter_name: self.destination_parameter_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destination_parameter_name", "destination_parameter_name was not specified but it is required when building SetParameterValueConfiguration")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

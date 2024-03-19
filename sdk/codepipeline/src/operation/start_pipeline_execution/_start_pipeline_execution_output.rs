@@ -3,22 +3,22 @@
 /// <p>Represents the output of a <code>StartPipelineExecution</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartPipelineExecutionOutput {
+pub struct StartPipelineExecutionOutput  {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartPipelineExecutionOutput {
+impl  StartPipelineExecutionOutput  {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartPipelineExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartPipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput).
     pub fn builder() -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionOutputBuilder {
@@ -41,27 +41,28 @@ impl StartPipelineExecutionOutputBuilder {
     }
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartPipelineExecutionOutput`](crate::operation::start_pipeline_execution::StartPipelineExecutionOutput).
     pub fn build(self) -> crate::operation::start_pipeline_execution::StartPipelineExecutionOutput {
         crate::operation::start_pipeline_execution::StartPipelineExecutionOutput {
-            pipeline_execution_id: self.pipeline_execution_id,
+            pipeline_execution_id: self.pipeline_execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

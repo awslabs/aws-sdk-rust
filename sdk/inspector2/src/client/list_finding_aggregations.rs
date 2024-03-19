@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFindingAggregations`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`aggregation_type(AggregationType)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::aggregation_type) / [`set_aggregation_type(Option<AggregationType>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::set_aggregation_type):<br>required: **true**<br><p>The type of the aggregation request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
     ///   - [`account_ids(StringFilter)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<StringFilter>>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::set_account_ids):<br>required: **false**<br><p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p><br>
     ///   - [`aggregation_request(AggregationRequest)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::aggregation_request) / [`set_aggregation_request(Option<AggregationRequest>)`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::set_aggregation_request):<br>required: **false**<br><p>Details of the aggregation request that is used to filter your aggregation results.</p><br>
-    /// - On success, responds with [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput) with field(s):
+                            /// - On success, responds with [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput) with field(s):
     ///   - [`aggregation_type(AggregationType)`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput::aggregation_type): <p>The type of aggregation to perform.</p>
     ///   - [`responses(Option<Vec::<AggregationResponse>>)`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput::responses): <p>Objects that contain the results of an aggregation operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    /// - On failure, responds with [`SdkError<ListFindingAggregationsError>`](crate::operation::list_finding_aggregations::ListFindingAggregationsError)
+                            /// - On failure, responds with [`SdkError<ListFindingAggregationsError>`](crate::operation::list_finding_aggregations::ListFindingAggregationsError)
     pub fn list_finding_aggregations(&self) -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder {
-        crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_finding_aggregations::builders::ListFindingAggregationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

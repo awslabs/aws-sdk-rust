@@ -3,13 +3,13 @@
 /// <p>Managed account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedAccount {
+pub struct ManagedAccount  {
     /// <p>Managed account, account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ManagedAccount {
+impl  ManagedAccount  {
     /// <p>Managed account, account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ManagedAccountBuilder {
     }
     /// <p>Managed account, account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Managed account, account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ManagedAccountBuilder {
     }
     /// Consumes the builder and constructs a [`ManagedAccount`](crate::types::ManagedAccount).
     pub fn build(self) -> crate::types::ManagedAccount {
-        crate::types::ManagedAccount { account_id: self.account_id }
+        crate::types::ManagedAccount {
+            account_id: self.account_id
+            ,
+        }
     }
 }
+

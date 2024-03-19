@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVolumeStatusOutput {
+pub struct DescribeVolumeStatusOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the volumes.</p>
-    pub volume_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
+    pub volume_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusItem>>,
     _request_id: Option<String>,
 }
-impl DescribeVolumeStatusOutput {
+impl  DescribeVolumeStatusOutput  {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the status of the volumes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_statuses.is_none()`.
-    pub fn volume_statuses(&self) -> &[crate::types::VolumeStatusItem] {
-        self.volume_statuses.as_deref().unwrap_or_default()
+    pub fn volume_statuses(&self) -> & [crate::types::VolumeStatusItem] {
+        self.volume_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeVolumeStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeVolumeStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeStatusOutput`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput).
     pub fn builder() -> crate::operation::describe_volume_status::builders::DescribeVolumeStatusOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeVolumeStatusOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeVolumeStatusOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_statuses: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>,
+    pub(crate) volume_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusItem>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumeStatusOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeVolumeStatusOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeVolumeStatusOutputBuilder {
     /// <p>Information about the status of the volumes.</p>
     pub fn volume_statuses(mut self, input: crate::types::VolumeStatusItem) -> Self {
         let mut v = self.volume_statuses.unwrap_or_default();
-        v.push(input);
-        self.volume_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volume_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the status of the volumes.</p>
-    pub fn set_volume_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>>) -> Self {
-        self.volume_statuses = input;
-        self
+    pub fn set_volume_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusItem>>) -> Self {
+        self.volume_statuses = input; self
     }
     /// <p>Information about the status of the volumes.</p>
-    pub fn get_volume_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>> {
+    pub fn get_volume_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusItem>> {
         &self.volume_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeVolumeStatusOutput`](crate::operation::describe_volume_status::DescribeVolumeStatusOutput).
     pub fn build(self) -> crate::operation::describe_volume_status::DescribeVolumeStatusOutput {
         crate::operation::describe_volume_status::DescribeVolumeStatusOutput {
-            next_token: self.next_token,
-            volume_statuses: self.volume_statuses,
+            next_token: self.next_token
+            ,
+            volume_statuses: self.volume_statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTaskDefinitionOutput {
+pub struct DeregisterTaskDefinitionOutput  {
     /// <p>The full description of the deregistered task.</p>
     pub task_definition: ::std::option::Option<crate::types::TaskDefinition>,
     _request_id: Option<String>,
 }
-impl DeregisterTaskDefinitionOutput {
+impl  DeregisterTaskDefinitionOutput  {
     /// <p>The full description of the deregistered task.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&crate::types::TaskDefinition> {
+    pub fn task_definition(&self) -> ::std::option::Option<& crate::types::TaskDefinition> {
         self.task_definition.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeregisterTaskDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeregisterTaskDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
     pub fn builder() -> crate::operation::deregister_task_definition::builders::DeregisterTaskDefinitionOutputBuilder {
@@ -40,27 +40,28 @@ impl DeregisterTaskDefinitionOutputBuilder {
     }
     /// <p>The full description of the deregistered task.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<crate::types::TaskDefinition>) -> Self {
-        self.task_definition = input;
-        self
+        self.task_definition = input; self
     }
     /// <p>The full description of the deregistered task.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<crate::types::TaskDefinition> {
         &self.task_definition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeregisterTaskDefinitionOutput`](crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput).
     pub fn build(self) -> crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput {
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput {
-            task_definition: self.task_definition,
+            task_definition: self.task_definition
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

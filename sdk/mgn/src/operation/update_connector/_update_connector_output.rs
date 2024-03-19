@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateConnectorOutput {
+pub struct UpdateConnectorOutput  {
     /// <p>Connector ID.</p>
     pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>Connector name.</p>
@@ -12,38 +12,38 @@ pub struct UpdateConnectorOutput {
     /// <p>Connector arn.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Connector tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Connector SSM command config.</p>
     pub ssm_command_config: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>,
     _request_id: Option<String>,
 }
-impl UpdateConnectorOutput {
+impl  UpdateConnectorOutput  {
     /// <p>Connector ID.</p>
-    pub fn connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>Connector name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Connector SSM instance ID.</p>
-    pub fn ssm_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssm_instance_id(&self) -> ::std::option::Option<& str> {
         self.ssm_instance_id.as_deref()
     }
     /// <p>Connector arn.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Connector tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Connector SSM command config.</p>
-    pub fn ssm_command_config(&self) -> ::std::option::Option<&crate::types::ConnectorSsmCommandConfig> {
+    pub fn ssm_command_config(&self) -> ::std::option::Option<& crate::types::ConnectorSsmCommandConfig> {
         self.ssm_command_config.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateConnectorOutput {
+impl  ::std::fmt::Debug for UpdateConnectorOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectorOutput");
         formatter.field("connector_id", &self.connector_id);
@@ -57,10 +57,10 @@ impl ::std::fmt::Debug for UpdateConnectorOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput).
     pub fn builder() -> crate::operation::update_connector::builders::UpdateConnectorOutputBuilder {
@@ -76,7 +76,7 @@ pub struct UpdateConnectorOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ssm_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) ssm_command_config: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>,
     _request_id: Option<String>,
 }
@@ -88,8 +88,7 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>Connector ID.</p>
     pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>Connector ID.</p>
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>Connector name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Connector name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +114,7 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>Connector SSM instance ID.</p>
     pub fn set_ssm_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssm_instance_id = input;
-        self
+        self.ssm_instance_id = input; self
     }
     /// <p>Connector SSM instance ID.</p>
     pub fn get_ssm_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>Connector arn.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Connector arn.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,17 +140,16 @@ impl UpdateConnectorOutputBuilder {
     /// <p>Connector tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Connector tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Connector tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Connector SSM command config.</p>
@@ -164,31 +159,36 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>Connector SSM command config.</p>
     pub fn set_ssm_command_config(mut self, input: ::std::option::Option<crate::types::ConnectorSsmCommandConfig>) -> Self {
-        self.ssm_command_config = input;
-        self
+        self.ssm_command_config = input; self
     }
     /// <p>Connector SSM command config.</p>
     pub fn get_ssm_command_config(&self) -> &::std::option::Option<crate::types::ConnectorSsmCommandConfig> {
         &self.ssm_command_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput).
     pub fn build(self) -> crate::operation::update_connector::UpdateConnectorOutput {
         crate::operation::update_connector::UpdateConnectorOutput {
-            connector_id: self.connector_id,
-            name: self.name,
-            ssm_instance_id: self.ssm_instance_id,
-            arn: self.arn,
-            tags: self.tags,
-            ssm_command_config: self.ssm_command_config,
+            connector_id: self.connector_id
+            ,
+            name: self.name
+            ,
+            ssm_instance_id: self.ssm_instance_id
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            ssm_command_config: self.ssm_command_config
+            ,
             _request_id: self._request_id,
         }
     }
@@ -206,3 +206,4 @@ impl ::std::fmt::Debug for UpdateConnectorOutputBuilder {
         formatter.finish()
     }
 }
+

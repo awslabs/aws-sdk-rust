@@ -3,19 +3,19 @@
 /// <p>Contains information relating to dates in a document, including the type of value, and the value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NormalizedValue {
+pub struct NormalizedValue  {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     pub value_type: ::std::option::Option<crate::types::ValueType>,
 }
-impl NormalizedValue {
+impl  NormalizedValue  {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
-    pub fn value_type(&self) -> ::std::option::Option<&crate::types::ValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<& crate::types::ValueType> {
         self.value_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl NormalizedValueBuilder {
     }
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NormalizedValueBuilder {
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ValueType>) -> Self {
-        self.value_type = input;
-        self
+        self.value_type = input; self
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     pub fn get_value_type(&self) -> &::std::option::Option<crate::types::ValueType> {
@@ -65,8 +63,11 @@ impl NormalizedValueBuilder {
     /// Consumes the builder and constructs a [`NormalizedValue`](crate::types::NormalizedValue).
     pub fn build(self) -> crate::types::NormalizedValue {
         crate::types::NormalizedValue {
-            value: self.value,
-            value_type: self.value_type,
+            value: self.value
+            ,
+            value_type: self.value_type
+            ,
         }
     }
 }
+

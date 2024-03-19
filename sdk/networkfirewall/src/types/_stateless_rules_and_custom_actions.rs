@@ -3,23 +3,23 @@
 /// <p>Stateless inspection criteria. Each stateless rule group uses exactly one of these data types to define its stateless rules.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatelessRulesAndCustomActions {
+pub struct StatelessRulesAndCustomActions  {
     /// <p>Defines the set of stateless rules for use in a stateless rule group.</p>
-    pub stateless_rules: ::std::vec::Vec<crate::types::StatelessRule>,
+    pub stateless_rules: ::std::vec::Vec::<crate::types::StatelessRule>,
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
+    pub custom_actions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAction>>,
 }
-impl StatelessRulesAndCustomActions {
+impl  StatelessRulesAndCustomActions  {
     /// <p>Defines the set of stateless rules for use in a stateless rule group.</p>
-    pub fn stateless_rules(&self) -> &[crate::types::StatelessRule] {
-        use std::ops::Deref;
-        self.stateless_rules.deref()
+    pub fn stateless_rules(&self) -> & [crate::types::StatelessRule] {
+        use std::ops::Deref; self.stateless_rules.deref()
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_actions.is_none()`.
-    pub fn custom_actions(&self) -> &[crate::types::CustomAction] {
-        self.custom_actions.as_deref().unwrap_or_default()
+    pub fn custom_actions(&self) -> & [crate::types::CustomAction] {
+        self.custom_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StatelessRulesAndCustomActions {
@@ -33,8 +33,8 @@ impl StatelessRulesAndCustomActions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StatelessRulesAndCustomActionsBuilder {
-    pub(crate) stateless_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>,
-    pub(crate) custom_actions: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>,
+    pub(crate) stateless_rules: ::std::option::Option<::std::vec::Vec::<crate::types::StatelessRule>>,
+    pub(crate) custom_actions: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAction>>,
 }
 impl StatelessRulesAndCustomActionsBuilder {
     /// Appends an item to `stateless_rules`.
@@ -44,17 +44,16 @@ impl StatelessRulesAndCustomActionsBuilder {
     /// <p>Defines the set of stateless rules for use in a stateless rule group.</p>
     pub fn stateless_rules(mut self, input: crate::types::StatelessRule) -> Self {
         let mut v = self.stateless_rules.unwrap_or_default();
-        v.push(input);
-        self.stateless_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stateless_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the set of stateless rules for use in a stateless rule group.</p>
-    pub fn set_stateless_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>>) -> Self {
-        self.stateless_rules = input;
-        self
+    pub fn set_stateless_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StatelessRule>>) -> Self {
+        self.stateless_rules = input; self
     }
     /// <p>Defines the set of stateless rules for use in a stateless rule group.</p>
-    pub fn get_stateless_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StatelessRule>> {
+    pub fn get_stateless_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StatelessRule>> {
         &self.stateless_rules
     }
     /// Appends an item to `custom_actions`.
@@ -64,31 +63,33 @@ impl StatelessRulesAndCustomActionsBuilder {
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
     pub fn custom_actions(mut self, input: crate::types::CustomAction) -> Self {
         let mut v = self.custom_actions.unwrap_or_default();
-        v.push(input);
-        self.custom_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub fn set_custom_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAction>>) -> Self {
-        self.custom_actions = input;
-        self
+    pub fn set_custom_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomAction>>) -> Self {
+        self.custom_actions = input; self
     }
     /// <p>Defines an array of individual custom action definitions that are available for use by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You name each custom action that you define, and then you can use it by name in your <code>StatelessRule</code> <code>RuleDefinition</code> <code>Actions</code> specification.</p>
-    pub fn get_custom_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAction>> {
+    pub fn get_custom_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomAction>> {
         &self.custom_actions
     }
     /// Consumes the builder and constructs a [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
     /// This method will fail if any of the following fields are not set:
     /// - [`stateless_rules`](crate::types::builders::StatelessRulesAndCustomActionsBuilder::stateless_rules)
     pub fn build(self) -> ::std::result::Result<crate::types::StatelessRulesAndCustomActions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatelessRulesAndCustomActions {
-            stateless_rules: self.stateless_rules.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stateless_rules",
-                    "stateless_rules was not specified but it is required when building StatelessRulesAndCustomActions",
-                )
-            })?,
-            custom_actions: self.custom_actions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatelessRulesAndCustomActions {
+                stateless_rules: self.stateless_rules
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stateless_rules", "stateless_rules was not specified but it is required when building StatelessRulesAndCustomActions")
+                    )?
+                ,
+                custom_actions: self.custom_actions
+                ,
+            }
+        )
     }
 }
+

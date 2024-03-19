@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSuggestedResiliencyPolicies`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListSuggestedResiliencyPoliciesOutput`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput) with field(s):
     ///   - [`resiliency_policies(Vec::<ResiliencyPolicy>)`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput::resiliency_policies): <p>The suggested resiliency policies for the Resilience Hub applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListSuggestedResiliencyPoliciesError>`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesError)
-    pub fn list_suggested_resiliency_policies(
-        &self,
-    ) -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder {
-        crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSuggestedResiliencyPoliciesError>`](crate::operation::list_suggested_resiliency_policies::ListSuggestedResiliencyPoliciesError)
+    pub fn list_suggested_resiliency_policies(&self) -> crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder {
+                                crate::operation::list_suggested_resiliency_policies::builders::ListSuggestedResiliencyPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

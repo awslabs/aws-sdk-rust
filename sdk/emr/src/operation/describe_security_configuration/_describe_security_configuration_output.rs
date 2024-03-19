@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSecurityConfigurationOutput {
+pub struct DescribeSecurityConfigurationOutput  {
     /// <p>The name of the security configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The security configuration details in JSON format.</p>
@@ -11,25 +11,25 @@ pub struct DescribeSecurityConfigurationOutput {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeSecurityConfigurationOutput {
+impl  DescribeSecurityConfigurationOutput  {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The security configuration details in JSON format.</p>
-    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<& str> {
         self.security_configuration.as_deref()
     }
     /// <p>The date and time the security configuration was created</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSecurityConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
     pub fn builder() -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeSecurityConfigurationOutputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the security configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeSecurityConfigurationOutputBuilder {
     }
     /// <p>The security configuration details in JSON format.</p>
     pub fn set_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_configuration = input;
-        self
+        self.security_configuration = input; self
     }
     /// <p>The security configuration details in JSON format.</p>
     pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DescribeSecurityConfigurationOutputBuilder {
     }
     /// <p>The date and time the security configuration was created</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time the security configuration was created</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSecurityConfigurationOutput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput {
         crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput {
-            name: self.name,
-            security_configuration: self.security_configuration,
-            creation_date_time: self.creation_date_time,
+            name: self.name
+            ,
+            security_configuration: self.security_configuration
+            ,
+            creation_date_time: self.creation_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

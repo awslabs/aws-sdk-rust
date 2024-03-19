@@ -3,7 +3,7 @@
 /// <p>Information about hub content.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HubContentInfo {
+pub struct HubContentInfo  {
     /// <p>The name of the hub content.</p>
     pub hub_content_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
@@ -19,53 +19,54 @@ pub struct HubContentInfo {
     /// <p>A description of the hub content.</p>
     pub hub_content_description: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub content.</p>
-    pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the hub content.</p>
     pub hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     /// <p>The date and time that the hub content was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl HubContentInfo {
+impl  HubContentInfo  {
     /// <p>The name of the hub content.</p>
-    pub fn hub_content_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_name(&self) -> ::std::option::Option<& str> {
         self.hub_content_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
-    pub fn hub_content_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_arn(&self) -> ::std::option::Option<& str> {
         self.hub_content_arn.as_deref()
     }
     /// <p>The version of the hub content.</p>
-    pub fn hub_content_version(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_version(&self) -> ::std::option::Option<& str> {
         self.hub_content_version.as_deref()
     }
     /// <p>The type of hub content.</p>
-    pub fn hub_content_type(&self) -> ::std::option::Option<&crate::types::HubContentType> {
+    pub fn hub_content_type(&self) -> ::std::option::Option<& crate::types::HubContentType> {
         self.hub_content_type.as_ref()
     }
     /// <p>The version of the hub content document schema.</p>
-    pub fn document_schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn document_schema_version(&self) -> ::std::option::Option<& str> {
         self.document_schema_version.as_deref()
     }
     /// <p>The display name of the hub content.</p>
-    pub fn hub_content_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_display_name(&self) -> ::std::option::Option<& str> {
         self.hub_content_display_name.as_deref()
     }
     /// <p>A description of the hub content.</p>
-    pub fn hub_content_description(&self) -> ::std::option::Option<&str> {
+    pub fn hub_content_description(&self) -> ::std::option::Option<& str> {
         self.hub_content_description.as_deref()
     }
     /// <p>The searchable keywords for the hub content.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_content_search_keywords.is_none()`.
-    pub fn hub_content_search_keywords(&self) -> &[::std::string::String] {
-        self.hub_content_search_keywords.as_deref().unwrap_or_default()
+    pub fn hub_content_search_keywords(&self) -> & [::std::string::String] {
+        self.hub_content_search_keywords.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the hub content.</p>
-    pub fn hub_content_status(&self) -> ::std::option::Option<&crate::types::HubContentStatus> {
+    pub fn hub_content_status(&self) -> ::std::option::Option<& crate::types::HubContentStatus> {
         self.hub_content_status.as_ref()
     }
     /// <p>The date and time that the hub content was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -87,7 +88,7 @@ pub struct HubContentInfoBuilder {
     pub(crate) document_schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
-    pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -100,8 +101,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The name of the hub content.</p>
     pub fn set_hub_content_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_name = input;
-        self
+        self.hub_content_name = input; self
     }
     /// <p>The name of the hub content.</p>
     pub fn get_hub_content_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +115,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub fn set_hub_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_arn = input;
-        self
+        self.hub_content_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hub content.</p>
     pub fn get_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The version of the hub content.</p>
     pub fn set_hub_content_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_version = input;
-        self
+        self.hub_content_version = input; self
     }
     /// <p>The version of the hub content.</p>
     pub fn get_hub_content_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The type of hub content.</p>
     pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
-        self.hub_content_type = input;
-        self
+        self.hub_content_type = input; self
     }
     /// <p>The type of hub content.</p>
     pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
@@ -160,8 +157,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The version of the hub content document schema.</p>
     pub fn set_document_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_schema_version = input;
-        self
+        self.document_schema_version = input; self
     }
     /// <p>The version of the hub content document schema.</p>
     pub fn get_document_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The display name of the hub content.</p>
     pub fn set_hub_content_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_display_name = input;
-        self
+        self.hub_content_display_name = input; self
     }
     /// <p>The display name of the hub content.</p>
     pub fn get_hub_content_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>A description of the hub content.</p>
     pub fn set_hub_content_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_content_description = input;
-        self
+        self.hub_content_description = input; self
     }
     /// <p>A description of the hub content.</p>
     pub fn get_hub_content_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,17 +196,16 @@ impl HubContentInfoBuilder {
     /// <p>The searchable keywords for the hub content.</p>
     pub fn hub_content_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_content_search_keywords.unwrap_or_default();
-        v.push(input.into());
-        self.hub_content_search_keywords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hub_content_search_keywords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn set_hub_content_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hub_content_search_keywords = input;
-        self
+    pub fn set_hub_content_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hub_content_search_keywords = input; self
     }
     /// <p>The searchable keywords for the hub content.</p>
-    pub fn get_hub_content_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_content_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hub_content_search_keywords
     }
     /// <p>The status of the hub content.</p>
@@ -223,8 +216,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The status of the hub content.</p>
     pub fn set_hub_content_status(mut self, input: ::std::option::Option<crate::types::HubContentStatus>) -> Self {
-        self.hub_content_status = input;
-        self
+        self.hub_content_status = input; self
     }
     /// <p>The status of the hub content.</p>
     pub fn get_hub_content_status(&self) -> &::std::option::Option<crate::types::HubContentStatus> {
@@ -238,8 +230,7 @@ impl HubContentInfoBuilder {
     }
     /// <p>The date and time that the hub content was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that the hub content was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -248,16 +239,27 @@ impl HubContentInfoBuilder {
     /// Consumes the builder and constructs a [`HubContentInfo`](crate::types::HubContentInfo).
     pub fn build(self) -> crate::types::HubContentInfo {
         crate::types::HubContentInfo {
-            hub_content_name: self.hub_content_name,
-            hub_content_arn: self.hub_content_arn,
-            hub_content_version: self.hub_content_version,
-            hub_content_type: self.hub_content_type,
-            document_schema_version: self.document_schema_version,
-            hub_content_display_name: self.hub_content_display_name,
-            hub_content_description: self.hub_content_description,
-            hub_content_search_keywords: self.hub_content_search_keywords,
-            hub_content_status: self.hub_content_status,
-            creation_time: self.creation_time,
+            hub_content_name: self.hub_content_name
+            ,
+            hub_content_arn: self.hub_content_arn
+            ,
+            hub_content_version: self.hub_content_version
+            ,
+            hub_content_type: self.hub_content_type
+            ,
+            document_schema_version: self.document_schema_version
+            ,
+            hub_content_display_name: self.hub_content_display_name
+            ,
+            hub_content_description: self.hub_content_description
+            ,
+            hub_content_search_keywords: self.hub_content_search_keywords
+            ,
+            hub_content_status: self.hub_content_status
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

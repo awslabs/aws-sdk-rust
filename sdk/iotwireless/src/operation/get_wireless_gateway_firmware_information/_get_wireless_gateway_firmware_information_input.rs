@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWirelessGatewayFirmwareInformationInput {
+pub struct GetWirelessGatewayFirmwareInformationInput  {
     /// <p>The ID of the resource to get.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl GetWirelessGatewayFirmwareInformationInput {
+impl  GetWirelessGatewayFirmwareInformationInput  {
     /// <p>The ID of the resource to get.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetWirelessGatewayFirmwareInformationInputBuilder {
     }
     /// <p>The ID of the resource to get.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the resource to get.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationInput`](crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput { id: self.id },
+            crate::operation::get_wireless_gateway_firmware_information::GetWirelessGatewayFirmwareInformationInput {
+                id: self.id
+                ,
+            }
         )
     }
 }
+

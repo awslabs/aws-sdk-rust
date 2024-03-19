@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransformerOutput {
+pub struct GetTransformerOutput  {
     /// <p>Returns the system-assigned unique identifier for the transformer.</p>
     pub transformer_id: ::std::string::String,
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
@@ -25,57 +25,53 @@ pub struct GetTransformerOutput {
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetTransformerOutput {
+impl  GetTransformerOutput  {
     /// <p>Returns the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> &str {
-        use std::ops::Deref;
-        self.transformer_id.deref()
+    pub fn transformer_id(&self) -> & str {
+        use std::ops::Deref; self.transformer_id.deref()
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
-    pub fn transformer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.transformer_arn.deref()
+    pub fn transformer_arn(&self) -> & str {
+        use std::ops::Deref; self.transformer_arn.deref()
     }
     /// <p>Returns the name of the transformer, used to identify it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Returns that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
-    pub fn file_format(&self) -> &crate::types::FileFormat {
+    pub fn file_format(&self) -> & crate::types::FileFormat {
         &self.file_format
     }
     /// <p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
-    pub fn mapping_template(&self) -> &str {
-        use std::ops::Deref;
-        self.mapping_template.deref()
+    pub fn mapping_template(&self) -> & str {
+        use std::ops::Deref; self.mapping_template.deref()
     }
     /// <p>Returns the state of the newly created transformer. The transformer can be either <code>active</code> or <code>inactive</code>. For the transformer to be used in a capability, its status must <code>active</code>.</p>
-    pub fn status(&self) -> &crate::types::TransformerStatus {
+    pub fn status(&self) -> & crate::types::TransformerStatus {
         &self.status
     }
     /// <p>Returns the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
-    pub fn edi_type(&self) -> ::std::option::Option<&crate::types::EdiType> {
+    pub fn edi_type(&self) -> ::std::option::Option<& crate::types::EdiType> {
         self.edi_type.as_ref()
     }
     /// <p>Returns a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
-    pub fn sample_document(&self) -> ::std::option::Option<&str> {
+    pub fn sample_document(&self) -> ::std::option::Option<& str> {
         self.sample_document.as_deref()
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Returns a timestamp for last time the transformer was modified.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTransformerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTransformerOutput {
     /// Creates a new builder-style object to manufacture [`GetTransformerOutput`](crate::operation::get_transformer::GetTransformerOutput).
     pub fn builder() -> crate::operation::get_transformer::builders::GetTransformerOutputBuilder {
@@ -108,8 +104,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Returns the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +118,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn set_transformer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_arn = input;
-        self
+        self.transformer_arn = input; self
     }
     /// <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a capability, partnership, profile, or transformer.</p>
     pub fn get_transformer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +132,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns the name of the transformer, used to identify it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Returns the name of the transformer, used to identify it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +146,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
-        self.file_format = input;
-        self
+        self.file_format = input; self
     }
     /// <p>Returns that the currently supported file formats for EDI transformations are <code>JSON</code> and <code>XML</code>.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
@@ -168,8 +160,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn set_mapping_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mapping_template = input;
-        self
+        self.mapping_template = input; self
     }
     /// <p>Returns the name of the mapping template for the transformer. This template is used to convert the input document into the correct set of objects.</p>
     pub fn get_mapping_template(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +174,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns the state of the newly created transformer. The transformer can be either <code>active</code> or <code>inactive</code>. For the transformer to be used in a capability, its status must <code>active</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TransformerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Returns the state of the newly created transformer. The transformer can be either <code>active</code> or <code>inactive</code>. For the transformer to be used in a capability, its status must <code>active</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TransformerStatus> {
@@ -198,8 +188,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn set_edi_type(mut self, input: ::std::option::Option<crate::types::EdiType>) -> Self {
-        self.edi_type = input;
-        self
+        self.edi_type = input; self
     }
     /// <p>Returns the details for the EDI standard that is being used for the transformer. Currently, only X12 is supported. X12 is a set of standards and corresponding messages that define specific business documents.</p>
     pub fn get_edi_type(&self) -> &::std::option::Option<crate::types::EdiType> {
@@ -212,8 +201,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn set_sample_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_document = input;
-        self
+        self.sample_document = input; self
     }
     /// <p>Returns a sample EDI document that is used by a transformer as a guide for processing the EDI data.</p>
     pub fn get_sample_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +215,7 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Returns a timestamp for creation date and time of the transformer.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -241,22 +228,21 @@ impl GetTransformerOutputBuilder {
     }
     /// <p>Returns a timestamp for last time the transformer was modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>Returns a timestamp for last time the transformer was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTransformerOutput`](crate::operation::get_transformer::GetTransformerOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`transformer_id`](crate::operation::get_transformer::builders::GetTransformerOutputBuilder::transformer_id)
@@ -266,56 +252,53 @@ impl GetTransformerOutputBuilder {
     /// - [`mapping_template`](crate::operation::get_transformer::builders::GetTransformerOutputBuilder::mapping_template)
     /// - [`status`](crate::operation::get_transformer::builders::GetTransformerOutputBuilder::status)
     /// - [`created_at`](crate::operation::get_transformer::builders::GetTransformerOutputBuilder::created_at)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_transformer::GetTransformerOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_transformer::GetTransformerOutput {
-            transformer_id: self.transformer_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transformer_id",
-                    "transformer_id was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            transformer_arn: self.transformer_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transformer_arn",
-                    "transformer_arn was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            file_format: self.file_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_format",
-                    "file_format was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            mapping_template: self.mapping_template.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mapping_template",
-                    "mapping_template was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            edi_type: self.edi_type,
-            sample_document: self.sample_document,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetTransformerOutput",
-                )
-            })?,
-            modified_at: self.modified_at,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transformer::GetTransformerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transformer::GetTransformerOutput {
+                transformer_id: self.transformer_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transformer_id", "transformer_id was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                transformer_arn: self.transformer_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transformer_arn", "transformer_arn was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                file_format: self.file_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_format", "file_format was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                mapping_template: self.mapping_template
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mapping_template", "mapping_template was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                edi_type: self.edi_type
+                ,
+                sample_document: self.sample_document
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetTransformerOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a subscriber of a device that can use a network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeviceIdentifier {
+pub struct DeviceIdentifier  {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub device_identifier_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
@@ -23,45 +23,45 @@ pub struct DeviceIdentifier {
     /// <p>The creation time of this device identifier.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeviceIdentifier {
+impl  DeviceIdentifier  {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_identifier_arn(&self) -> ::std::option::Option<& str> {
         self.device_identifier_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-    pub fn traffic_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_group_arn(&self) -> ::std::option::Option<& str> {
         self.traffic_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
-    pub fn network_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_arn(&self) -> ::std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
-    pub fn imsi(&self) -> ::std::option::Option<&str> {
+    pub fn imsi(&self) -> ::std::option::Option<& str> {
         self.imsi.as_deref()
     }
     /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
-    pub fn iccid(&self) -> ::std::option::Option<&str> {
+    pub fn iccid(&self) -> ::std::option::Option<& str> {
         self.iccid.as_deref()
     }
     /// <p>The vendor of the device identifier.</p>
-    pub fn vendor(&self) -> ::std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<& str> {
         self.vendor.as_deref()
     }
     /// <p>The status of the device identifier.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeviceIdentifierStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeviceIdentifierStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
-    pub fn order_arn(&self) -> ::std::option::Option<&str> {
+    pub fn order_arn(&self) -> ::std::option::Option<& str> {
         self.order_arn.as_deref()
     }
     /// <p>The creation time of this device identifier.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for DeviceIdentifier {
+impl  ::std::fmt::Debug for DeviceIdentifier  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceIdentifier");
         formatter.field("device_identifier_arn", &self.device_identifier_arn);
@@ -105,8 +105,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_identifier_arn = input;
-        self
+        self.device_identifier_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub fn get_device_identifier_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +118,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
     pub fn set_traffic_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_group_arn = input;
-        self
+        self.traffic_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
     pub fn get_traffic_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +131,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_arn = input;
-        self
+        self.network_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
     pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
     pub fn set_imsi(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.imsi = input;
-        self
+        self.imsi = input; self
     }
     /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
     pub fn get_imsi(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +157,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
     pub fn set_iccid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iccid = input;
-        self
+        self.iccid = input; self
     }
     /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
     pub fn get_iccid(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The vendor of the device identifier.</p>
     pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor = input;
-        self
+        self.vendor = input; self
     }
     /// <p>The vendor of the device identifier.</p>
     pub fn get_vendor(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The status of the device identifier.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeviceIdentifierStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the device identifier.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeviceIdentifierStatus> {
@@ -203,8 +196,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
     pub fn set_order_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.order_arn = input;
-        self
+        self.order_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
     pub fn get_order_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +209,7 @@ impl DeviceIdentifierBuilder {
     }
     /// <p>The creation time of this device identifier.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The creation time of this device identifier.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,15 +218,24 @@ impl DeviceIdentifierBuilder {
     /// Consumes the builder and constructs a [`DeviceIdentifier`](crate::types::DeviceIdentifier).
     pub fn build(self) -> crate::types::DeviceIdentifier {
         crate::types::DeviceIdentifier {
-            device_identifier_arn: self.device_identifier_arn,
-            traffic_group_arn: self.traffic_group_arn,
-            network_arn: self.network_arn,
-            imsi: self.imsi,
-            iccid: self.iccid,
-            vendor: self.vendor,
-            status: self.status,
-            order_arn: self.order_arn,
-            created_at: self.created_at,
+            device_identifier_arn: self.device_identifier_arn
+            ,
+            traffic_group_arn: self.traffic_group_arn
+            ,
+            network_arn: self.network_arn
+            ,
+            imsi: self.imsi
+            ,
+            iccid: self.iccid
+            ,
+            vendor: self.vendor
+            ,
+            status: self.status
+            ,
+            order_arn: self.order_arn
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
@@ -254,3 +254,4 @@ impl ::std::fmt::Debug for DeviceIdentifierBuilder {
         formatter.finish()
     }
 }
+

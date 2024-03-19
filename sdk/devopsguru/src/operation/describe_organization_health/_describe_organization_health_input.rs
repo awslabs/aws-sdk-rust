@@ -2,24 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationHealthInput {
+pub struct DescribeOrganizationHealthInput  {
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the organizational unit.</p>
-    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeOrganizationHealthInput {
+impl  DescribeOrganizationHealthInput  {
     /// <p>The ID of the Amazon Web Services account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the organizational unit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
-    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
-        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    pub fn organizational_unit_ids(&self) -> & [::std::string::String] {
+        self.organizational_unit_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeOrganizationHealthInput {
@@ -33,8 +35,8 @@ impl DescribeOrganizationHealthInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationHealthInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeOrganizationHealthInputBuilder {
     /// Appends an item to `account_ids`.
@@ -44,17 +46,16 @@ impl DescribeOrganizationHealthInputBuilder {
     /// <p>The ID of the Amazon Web Services account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Appends an item to `organizational_unit_ids`.
@@ -64,29 +65,28 @@ impl DescribeOrganizationHealthInputBuilder {
     /// <p>The ID of the organizational unit.</p>
     pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
-        v.push(input.into());
-        self.organizational_unit_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organizational_unit_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organizational_unit_ids = input;
-        self
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input; self
     }
     /// <p>The ID of the organizational unit.</p>
-    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organizational_unit_ids
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationHealthInput`](crate::operation::describe_organization_health::DescribeOrganizationHealthInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_health::DescribeOrganizationHealthInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_organization_health::DescribeOrganizationHealthInput {
-            account_ids: self.account_ids,
-            organizational_unit_ids: self.organizational_unit_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_health::DescribeOrganizationHealthInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_organization_health::DescribeOrganizationHealthInput {
+                account_ids: self.account_ids
+                ,
+                organizational_unit_ids: self.organizational_unit_ids
+                ,
+            }
+        )
     }
 }
+

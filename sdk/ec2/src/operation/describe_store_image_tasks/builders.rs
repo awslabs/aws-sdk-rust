@@ -5,23 +5,20 @@ pub use crate::operation::describe_store_image_tasks::_describe_store_image_task
 
 impl DescribeStoreImageTasksInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_store_image_tasks();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_store_image_tasks();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeStoreImageTasks`.
-///
+/// 
 /// <p>Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't specify the AMIs, you get a paginated list of store tasks from the last 31 days.</p>
 /// <p>For each AMI task, the response indicates if the task is <code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>. For tasks <code>InProgress</code>, the response shows the estimated progress as a percentage.</p>
 /// <p>Tasks are listed in reverse chronological order. Currently, only tasks from the past 31 days can be viewed.</p>
@@ -30,33 +27,32 @@ impl DescribeStoreImageTasksInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStoreImageTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder,
+                    inner: crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-    > for DescribeStoreImageTasksFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
+                    crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
+                > for DescribeStoreImageTasksFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
+                        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeStoreImageTasksFluentBuilder {
     /// Creates a new `DescribeStoreImageTasks`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,59 +61,50 @@ impl DescribeStoreImageTasksFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_store_image_tasks::DescribeStoreImageTasks::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasks::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
-        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_store_image_tasks::DescribeStoreImageTasks::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_store_image_tasks::DescribeStoreImageTasks::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput, crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
-        crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
+                                crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
@@ -128,12 +115,12 @@ impl DescribeStoreImageTasksFluentBuilder {
         self
     }
     /// <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a request.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
     /// <p>The AMI IDs for which to show progress. Up to 20 AMI IDs can be included in a request.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_image_ids()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -176,7 +163,7 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// </ul><note>
     /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
     /// </note>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -189,7 +176,7 @@ impl DescribeStoreImageTasksFluentBuilder {
     /// </ul><note>
     /// <p>When you specify the <code>ImageIds</code> parameter, any filters that you specify are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.</p>
     /// </note>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
@@ -224,3 +211,4 @@ impl DescribeStoreImageTasksFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

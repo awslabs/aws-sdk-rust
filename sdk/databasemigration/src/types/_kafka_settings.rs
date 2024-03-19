@@ -3,7 +3,7 @@
 /// <p>Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct KafkaSettings {
+pub struct KafkaSettings  {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
     pub broker: ::std::option::Option<::std::string::String>,
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
@@ -45,17 +45,17 @@ pub struct KafkaSettings {
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
     pub ssl_endpoint_identification_algorithm: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
 }
-impl KafkaSettings {
+impl  KafkaSettings  {
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
-    pub fn broker(&self) -> ::std::option::Option<&str> {
+    pub fn broker(&self) -> ::std::option::Option<& str> {
         self.broker.as_deref()
     }
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
-    pub fn topic(&self) -> ::std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
-    pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormatValue> {
+    pub fn message_format(&self) -> ::std::option::Option<& crate::types::MessageFormatValue> {
         self.message_format.as_ref()
     }
     /// <p>Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.</p>
@@ -87,31 +87,31 @@ impl KafkaSettings {
         self.include_null_and_empty
     }
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
-    pub fn security_protocol(&self) -> ::std::option::Option<&crate::types::KafkaSecurityProtocol> {
+    pub fn security_protocol(&self) -> ::std::option::Option<& crate::types::KafkaSecurityProtocol> {
         self.security_protocol.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_client_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.ssl_client_certificate_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_client_key_arn(&self) -> ::std::option::Option<& str> {
         self.ssl_client_key_arn.as_deref()
     }
     /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
-    pub fn ssl_client_key_password(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_client_key_password(&self) -> ::std::option::Option<& str> {
         self.ssl_client_key_password.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
-    pub fn ssl_ca_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ssl_ca_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.ssl_ca_certificate_arn.as_deref()
     }
     /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn sasl_username(&self) -> ::std::option::Option<&str> {
+    pub fn sasl_username(&self) -> ::std::option::Option<& str> {
         self.sasl_username.as_deref()
     }
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
-    pub fn sasl_password(&self) -> ::std::option::Option<&str> {
+    pub fn sasl_password(&self) -> ::std::option::Option<& str> {
         self.sasl_password.as_deref()
     }
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
@@ -119,15 +119,15 @@ impl KafkaSettings {
         self.no_hex_prefix
     }
     /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
-    pub fn sasl_mechanism(&self) -> ::std::option::Option<&crate::types::KafkaSaslMechanism> {
+    pub fn sasl_mechanism(&self) -> ::std::option::Option<& crate::types::KafkaSaslMechanism> {
         self.sasl_mechanism.as_ref()
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
-    pub fn ssl_endpoint_identification_algorithm(&self) -> ::std::option::Option<&crate::types::KafkaSslEndpointIdentificationAlgorithm> {
+    pub fn ssl_endpoint_identification_algorithm(&self) -> ::std::option::Option<& crate::types::KafkaSslEndpointIdentificationAlgorithm> {
         self.ssl_endpoint_identification_algorithm.as_ref()
     }
 }
-impl ::std::fmt::Debug for KafkaSettings {
+impl  ::std::fmt::Debug for KafkaSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KafkaSettings");
         formatter.field("broker", &self.broker);
@@ -193,8 +193,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
     pub fn set_broker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker = input;
-        self
+        self.broker = input; self
     }
     /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a list of broker locations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a> in the <i>Database Migration Service User Guide</i>.</p>
     pub fn get_broker(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +206,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
     pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +219,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
     pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatValue>) -> Self {
-        self.message_format = input;
-        self
+        self.message_format = input; self
     }
     /// <p>The output format for the records created on the endpoint. The message format is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
     pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatValue> {
@@ -235,8 +232,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.</p>
     pub fn set_include_transaction_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_transaction_details = input;
-        self
+        self.include_transaction_details = input; self
     }
     /// <p>Provides detailed transaction information from the source database. This information includes a commit timestamp, a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.</p>
     pub fn get_include_transaction_details(&self) -> &::std::option::Option<bool> {
@@ -249,8 +245,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Shows the partition value within the Kafka message output unless the partition type is <code>schema-table-type</code>. The default is <code>false</code>.</p>
     pub fn set_include_partition_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_partition_value = input;
-        self
+        self.include_partition_value = input; self
     }
     /// <p>Shows the partition value within the Kafka message output unless the partition type is <code>schema-table-type</code>. The default is <code>false</code>.</p>
     pub fn get_include_partition_value(&self) -> &::std::option::Option<bool> {
@@ -263,8 +258,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same partition, which causes throttling. The default is <code>false</code>.</p>
     pub fn set_partition_include_schema_table(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.partition_include_schema_table = input;
-        self
+        self.partition_include_schema_table = input; self
     }
     /// <p>Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary key. In this case, the same primary key is sent from thousands of tables to the same partition, which causes throttling. The default is <code>false</code>.</p>
     pub fn get_partition_include_schema_table(&self) -> &::std::option::Option<bool> {
@@ -277,8 +271,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
     pub fn set_include_table_alter_operations(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_table_alter_operations = input;
-        self
+        self.include_table_alter_operations = input; self
     }
     /// <p>Includes any data definition language (DDL) operations that change the table in the control data, such as <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The default is <code>false</code>.</p>
     pub fn get_include_table_alter_operations(&self) -> &::std::option::Option<bool> {
@@ -291,8 +284,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Shows detailed control information for table definition, column definition, and table and column changes in the Kafka message output. The default is <code>false</code>.</p>
     pub fn set_include_control_details(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_control_details = input;
-        self
+        self.include_control_details = input; self
     }
     /// <p>Shows detailed control information for table definition, column definition, and table and column changes in the Kafka message output. The default is <code>false</code>.</p>
     pub fn get_include_control_details(&self) -> &::std::option::Option<bool> {
@@ -305,8 +297,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The maximum size in bytes for records created on the endpoint The default is 1,000,000.</p>
     pub fn set_message_max_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.message_max_bytes = input;
-        self
+        self.message_max_bytes = input; self
     }
     /// <p>The maximum size in bytes for records created on the endpoint The default is 1,000,000.</p>
     pub fn get_message_max_bytes(&self) -> &::std::option::Option<i32> {
@@ -319,8 +310,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
     pub fn set_include_null_and_empty(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_null_and_empty = input;
-        self
+        self.include_null_and_empty = input; self
     }
     /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
     pub fn get_include_null_and_empty(&self) -> &::std::option::Option<bool> {
@@ -333,8 +323,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
     pub fn set_security_protocol(mut self, input: ::std::option::Option<crate::types::KafkaSecurityProtocol>) -> Self {
-        self.security_protocol = input;
-        self
+        self.security_protocol = input; self
     }
     /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
     pub fn get_security_protocol(&self) -> &::std::option::Option<crate::types::KafkaSecurityProtocol> {
@@ -347,8 +336,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
     pub fn set_ssl_client_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_client_certificate_arn = input;
-        self
+        self.ssl_client_certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
     pub fn get_ssl_client_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -361,8 +349,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn set_ssl_client_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_client_key_arn = input;
-        self
+        self.ssl_client_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn get_ssl_client_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -375,8 +362,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn set_ssl_client_key_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_client_key_password = input;
-        self
+        self.ssl_client_key_password = input; self
     }
     /// <p>The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub fn get_ssl_client_key_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -389,8 +375,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn set_ssl_ca_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssl_ca_certificate_arn = input;
-        self
+        self.ssl_ca_certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses to securely connect to your Kafka target endpoint.</p>
     pub fn get_ssl_ca_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -403,8 +388,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn set_sasl_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sasl_username = input;
-        self
+        self.sasl_username = input; self
     }
     /// <p>The secure user name you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn get_sasl_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -417,8 +401,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn set_sasl_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sasl_password = input;
-        self
+        self.sasl_password = input; self
     }
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub fn get_sasl_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -431,8 +414,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     pub fn set_no_hex_prefix(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_hex_prefix = input;
-        self
+        self.no_hex_prefix = input; self
     }
     /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix to raw data in hexadecimal format. For example, by default, DMS adds a '0x' prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data type columns without adding the '0x' prefix.</p>
     pub fn get_no_hex_prefix(&self) -> &::std::option::Option<bool> {
@@ -445,8 +427,7 @@ impl KafkaSettingsBuilder {
     }
     /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
     pub fn set_sasl_mechanism(mut self, input: ::std::option::Option<crate::types::KafkaSaslMechanism>) -> Self {
-        self.sasl_mechanism = input;
-        self
+        self.sasl_mechanism = input; self
     }
     /// <p>For SASL/SSL authentication, DMS supports the <code>SCRAM-SHA-512</code> mechanism by default. DMS versions 3.5.0 and later also support the <code>PLAIN</code> mechanism. To use the <code>PLAIN</code> mechanism, set this parameter to <code>PLAIN.</code></p>
     pub fn get_sasl_mechanism(&self) -> &::std::option::Option<crate::types::KafkaSaslMechanism> {
@@ -458,12 +439,8 @@ impl KafkaSettingsBuilder {
         self
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
-    pub fn set_ssl_endpoint_identification_algorithm(
-        mut self,
-        input: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>,
-    ) -> Self {
-        self.ssl_endpoint_identification_algorithm = input;
-        self
+    pub fn set_ssl_endpoint_identification_algorithm(mut self, input: ::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm>) -> Self {
+        self.ssl_endpoint_identification_algorithm = input; self
     }
     /// <p>Sets hostname verification for the certificate. This setting is supported in DMS version 3.5.1 and later.</p>
     pub fn get_ssl_endpoint_identification_algorithm(&self) -> &::std::option::Option<crate::types::KafkaSslEndpointIdentificationAlgorithm> {
@@ -472,26 +449,46 @@ impl KafkaSettingsBuilder {
     /// Consumes the builder and constructs a [`KafkaSettings`](crate::types::KafkaSettings).
     pub fn build(self) -> crate::types::KafkaSettings {
         crate::types::KafkaSettings {
-            broker: self.broker,
-            topic: self.topic,
-            message_format: self.message_format,
-            include_transaction_details: self.include_transaction_details,
-            include_partition_value: self.include_partition_value,
-            partition_include_schema_table: self.partition_include_schema_table,
-            include_table_alter_operations: self.include_table_alter_operations,
-            include_control_details: self.include_control_details,
-            message_max_bytes: self.message_max_bytes,
-            include_null_and_empty: self.include_null_and_empty,
-            security_protocol: self.security_protocol,
-            ssl_client_certificate_arn: self.ssl_client_certificate_arn,
-            ssl_client_key_arn: self.ssl_client_key_arn,
-            ssl_client_key_password: self.ssl_client_key_password,
-            ssl_ca_certificate_arn: self.ssl_ca_certificate_arn,
-            sasl_username: self.sasl_username,
-            sasl_password: self.sasl_password,
-            no_hex_prefix: self.no_hex_prefix,
-            sasl_mechanism: self.sasl_mechanism,
-            ssl_endpoint_identification_algorithm: self.ssl_endpoint_identification_algorithm,
+            broker: self.broker
+            ,
+            topic: self.topic
+            ,
+            message_format: self.message_format
+            ,
+            include_transaction_details: self.include_transaction_details
+            ,
+            include_partition_value: self.include_partition_value
+            ,
+            partition_include_schema_table: self.partition_include_schema_table
+            ,
+            include_table_alter_operations: self.include_table_alter_operations
+            ,
+            include_control_details: self.include_control_details
+            ,
+            message_max_bytes: self.message_max_bytes
+            ,
+            include_null_and_empty: self.include_null_and_empty
+            ,
+            security_protocol: self.security_protocol
+            ,
+            ssl_client_certificate_arn: self.ssl_client_certificate_arn
+            ,
+            ssl_client_key_arn: self.ssl_client_key_arn
+            ,
+            ssl_client_key_password: self.ssl_client_key_password
+            ,
+            ssl_ca_certificate_arn: self.ssl_ca_certificate_arn
+            ,
+            sasl_username: self.sasl_username
+            ,
+            sasl_password: self.sasl_password
+            ,
+            no_hex_prefix: self.no_hex_prefix
+            ,
+            sasl_mechanism: self.sasl_mechanism
+            ,
+            ssl_endpoint_identification_algorithm: self.ssl_endpoint_identification_algorithm
+            ,
         }
     }
 }
@@ -521,3 +518,4 @@ impl ::std::fmt::Debug for KafkaSettingsBuilder {
         formatter.finish()
     }
 }
+

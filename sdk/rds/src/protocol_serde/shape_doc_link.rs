@@ -36,3 +36,4 @@ pub fn de_doc_link(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

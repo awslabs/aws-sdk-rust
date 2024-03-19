@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMapInput {
+pub struct UpdateMapInput  {
     /// <p>The name of the map resource to update.</p>
     pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
@@ -13,22 +13,22 @@ pub struct UpdateMapInput {
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
     pub configuration_update: ::std::option::Option<crate::types::MapConfigurationUpdate>,
 }
-impl UpdateMapInput {
+impl  UpdateMapInput  {
     /// <p>The name of the map resource to update.</p>
-    pub fn map_name(&self) -> ::std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Updates the description for the map resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
-    pub fn configuration_update(&self) -> ::std::option::Option<&crate::types::MapConfigurationUpdate> {
+    pub fn configuration_update(&self) -> ::std::option::Option<& crate::types::MapConfigurationUpdate> {
         self.configuration_update.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateMapInputBuilder {
     }
     /// <p>The name of the map resource to update.</p>
     pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>The name of the map resource to update.</p>
     pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl UpdateMapInputBuilder {
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -88,8 +86,7 @@ impl UpdateMapInputBuilder {
     }
     /// <p>Updates the description for the map resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Updates the description for the map resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +99,7 @@ impl UpdateMapInputBuilder {
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
     pub fn set_configuration_update(mut self, input: ::std::option::Option<crate::types::MapConfigurationUpdate>) -> Self {
-        self.configuration_update = input;
-        self
+        self.configuration_update = input; self
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
     pub fn get_configuration_update(&self) -> &::std::option::Option<crate::types::MapConfigurationUpdate> {
@@ -111,11 +107,18 @@ impl UpdateMapInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_map::UpdateMapInput {
-            map_name: self.map_name,
-            pricing_plan: self.pricing_plan,
-            description: self.description,
-            configuration_update: self.configuration_update,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_map::UpdateMapInput {
+                map_name: self.map_name
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+                configuration_update: self.configuration_update
+                ,
+            }
+        )
     }
 }
+

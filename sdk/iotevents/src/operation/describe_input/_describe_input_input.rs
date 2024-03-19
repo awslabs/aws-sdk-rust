@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInputInput {
+pub struct DescribeInputInput  {
     /// <p>The name of the input.</p>
     pub input_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInputInput {
+impl  DescribeInputInput  {
     /// <p>The name of the input.</p>
-    pub fn input_name(&self) -> ::std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<& str> {
         self.input_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeInputInputBuilder {
     }
     /// <p>The name of the input.</p>
     pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The name of the input.</p>
     pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_name
     }
     /// Consumes the builder and constructs a [`DescribeInputInput`](crate::operation::describe_input::DescribeInputInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_input::DescribeInputInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_input::DescribeInputInput { input_name: self.input_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_input::DescribeInputInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_input::DescribeInputInput {
+                input_name: self.input_name
+                ,
+            }
+        )
     }
 }
+

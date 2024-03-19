@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes updates to a specific input configuration (identified by the <code>InputId</code> of an application).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputUpdate {
+pub struct InputUpdate  {
     /// <p>The input ID of the application input to be updated.</p>
     pub input_id: ::std::string::String,
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
@@ -19,34 +19,33 @@ pub struct InputUpdate {
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
     pub input_parallelism_update: ::std::option::Option<crate::types::InputParallelismUpdate>,
 }
-impl InputUpdate {
+impl  InputUpdate  {
     /// <p>The input ID of the application input to be updated.</p>
-    pub fn input_id(&self) -> &str {
-        use std::ops::Deref;
-        self.input_id.deref()
+    pub fn input_id(&self) -> & str {
+        use std::ops::Deref; self.input_id.deref()
     }
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
-    pub fn name_prefix_update(&self) -> ::std::option::Option<&str> {
+    pub fn name_prefix_update(&self) -> ::std::option::Option<& str> {
         self.name_prefix_update.as_deref()
     }
     /// <p>Describes updates to an <code>InputProcessingConfiguration</code>.</p>
-    pub fn input_processing_configuration_update(&self) -> ::std::option::Option<&crate::types::InputProcessingConfigurationUpdate> {
+    pub fn input_processing_configuration_update(&self) -> ::std::option::Option<& crate::types::InputProcessingConfigurationUpdate> {
         self.input_processing_configuration_update.as_ref()
     }
     /// <p>If a Kinesis data stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN).</p>
-    pub fn kinesis_streams_input_update(&self) -> ::std::option::Option<&crate::types::KinesisStreamsInputUpdate> {
+    pub fn kinesis_streams_input_update(&self) -> ::std::option::Option<& crate::types::KinesisStreamsInputUpdate> {
         self.kinesis_streams_input_update.as_ref()
     }
     /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN.</p>
-    pub fn kinesis_firehose_input_update(&self) -> ::std::option::Option<&crate::types::KinesisFirehoseInputUpdate> {
+    pub fn kinesis_firehose_input_update(&self) -> ::std::option::Option<& crate::types::KinesisFirehoseInputUpdate> {
         self.kinesis_firehose_input_update.as_ref()
     }
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
-    pub fn input_schema_update(&self) -> ::std::option::Option<&crate::types::InputSchemaUpdate> {
+    pub fn input_schema_update(&self) -> ::std::option::Option<& crate::types::InputSchemaUpdate> {
         self.input_schema_update.as_ref()
     }
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
-    pub fn input_parallelism_update(&self) -> ::std::option::Option<&crate::types::InputParallelismUpdate> {
+    pub fn input_parallelism_update(&self) -> ::std::option::Option<& crate::types::InputParallelismUpdate> {
         self.input_parallelism_update.as_ref()
     }
 }
@@ -78,8 +77,7 @@ impl InputUpdateBuilder {
     }
     /// <p>The input ID of the application input to be updated.</p>
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// <p>The input ID of the application input to be updated.</p>
     pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl InputUpdateBuilder {
     }
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
     pub fn set_name_prefix_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_prefix_update = input;
-        self
+        self.name_prefix_update = input; self
     }
     /// <p>The name prefix for in-application streams that Kinesis Data Analytics creates for the specific streaming source.</p>
     pub fn get_name_prefix_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,12 +102,8 @@ impl InputUpdateBuilder {
         self
     }
     /// <p>Describes updates to an <code>InputProcessingConfiguration</code>.</p>
-    pub fn set_input_processing_configuration_update(
-        mut self,
-        input: ::std::option::Option<crate::types::InputProcessingConfigurationUpdate>,
-    ) -> Self {
-        self.input_processing_configuration_update = input;
-        self
+    pub fn set_input_processing_configuration_update(mut self, input: ::std::option::Option<crate::types::InputProcessingConfigurationUpdate>) -> Self {
+        self.input_processing_configuration_update = input; self
     }
     /// <p>Describes updates to an <code>InputProcessingConfiguration</code>.</p>
     pub fn get_input_processing_configuration_update(&self) -> &::std::option::Option<crate::types::InputProcessingConfigurationUpdate> {
@@ -123,8 +116,7 @@ impl InputUpdateBuilder {
     }
     /// <p>If a Kinesis data stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN).</p>
     pub fn set_kinesis_streams_input_update(mut self, input: ::std::option::Option<crate::types::KinesisStreamsInputUpdate>) -> Self {
-        self.kinesis_streams_input_update = input;
-        self
+        self.kinesis_streams_input_update = input; self
     }
     /// <p>If a Kinesis data stream is the streaming source to be updated, provides an updated stream Amazon Resource Name (ARN).</p>
     pub fn get_kinesis_streams_input_update(&self) -> &::std::option::Option<crate::types::KinesisStreamsInputUpdate> {
@@ -137,8 +129,7 @@ impl InputUpdateBuilder {
     }
     /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN.</p>
     pub fn set_kinesis_firehose_input_update(mut self, input: ::std::option::Option<crate::types::KinesisFirehoseInputUpdate>) -> Self {
-        self.kinesis_firehose_input_update = input;
-        self
+        self.kinesis_firehose_input_update = input; self
     }
     /// <p>If a Kinesis Data Firehose delivery stream is the streaming source to be updated, provides an updated stream ARN.</p>
     pub fn get_kinesis_firehose_input_update(&self) -> &::std::option::Option<crate::types::KinesisFirehoseInputUpdate> {
@@ -151,8 +142,7 @@ impl InputUpdateBuilder {
     }
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
     pub fn set_input_schema_update(mut self, input: ::std::option::Option<crate::types::InputSchemaUpdate>) -> Self {
-        self.input_schema_update = input;
-        self
+        self.input_schema_update = input; self
     }
     /// <p>Describes the data format on the streaming source, and how record elements on the streaming source map to columns of the in-application stream that is created.</p>
     pub fn get_input_schema_update(&self) -> &::std::option::Option<crate::types::InputSchemaUpdate> {
@@ -165,8 +155,7 @@ impl InputUpdateBuilder {
     }
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
     pub fn set_input_parallelism_update(mut self, input: ::std::option::Option<crate::types::InputParallelismUpdate>) -> Self {
-        self.input_parallelism_update = input;
-        self
+        self.input_parallelism_update = input; self
     }
     /// <p>Describes the parallelism updates (the number of in-application streams Kinesis Data Analytics creates for the specific streaming source).</p>
     pub fn get_input_parallelism_update(&self) -> &::std::option::Option<crate::types::InputParallelismUpdate> {
@@ -176,19 +165,27 @@ impl InputUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_id`](crate::types::builders::InputUpdateBuilder::input_id)
     pub fn build(self) -> ::std::result::Result<crate::types::InputUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputUpdate {
-            input_id: self.input_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_id",
-                    "input_id was not specified but it is required when building InputUpdate",
-                )
-            })?,
-            name_prefix_update: self.name_prefix_update,
-            input_processing_configuration_update: self.input_processing_configuration_update,
-            kinesis_streams_input_update: self.kinesis_streams_input_update,
-            kinesis_firehose_input_update: self.kinesis_firehose_input_update,
-            input_schema_update: self.input_schema_update,
-            input_parallelism_update: self.input_parallelism_update,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputUpdate {
+                input_id: self.input_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_id", "input_id was not specified but it is required when building InputUpdate")
+                    )?
+                ,
+                name_prefix_update: self.name_prefix_update
+                ,
+                input_processing_configuration_update: self.input_processing_configuration_update
+                ,
+                kinesis_streams_input_update: self.kinesis_streams_input_update
+                ,
+                kinesis_firehose_input_update: self.kinesis_firehose_input_update
+                ,
+                input_schema_update: self.input_schema_update
+                ,
+                input_parallelism_update: self.input_parallelism_update
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Describes the feature flags that you can specify for a code generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodegenFeatureFlags {
+pub struct CodegenFeatureFlags  {
     /// <p>Specifes whether a code generation job supports data relationships.</p>
     pub is_relationship_supported: ::std::option::Option<bool>,
     /// <p>Specifies whether a code generation job supports non models.</p>
     pub is_non_model_supported: ::std::option::Option<bool>,
 }
-impl CodegenFeatureFlags {
+impl  CodegenFeatureFlags  {
     /// <p>Specifes whether a code generation job supports data relationships.</p>
     pub fn is_relationship_supported(&self) -> ::std::option::Option<bool> {
         self.is_relationship_supported
@@ -41,8 +41,7 @@ impl CodegenFeatureFlagsBuilder {
     }
     /// <p>Specifes whether a code generation job supports data relationships.</p>
     pub fn set_is_relationship_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_relationship_supported = input;
-        self
+        self.is_relationship_supported = input; self
     }
     /// <p>Specifes whether a code generation job supports data relationships.</p>
     pub fn get_is_relationship_supported(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl CodegenFeatureFlagsBuilder {
     }
     /// <p>Specifies whether a code generation job supports non models.</p>
     pub fn set_is_non_model_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_non_model_supported = input;
-        self
+        self.is_non_model_supported = input; self
     }
     /// <p>Specifies whether a code generation job supports non models.</p>
     pub fn get_is_non_model_supported(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl CodegenFeatureFlagsBuilder {
     /// Consumes the builder and constructs a [`CodegenFeatureFlags`](crate::types::CodegenFeatureFlags).
     pub fn build(self) -> crate::types::CodegenFeatureFlags {
         crate::types::CodegenFeatureFlags {
-            is_relationship_supported: self.is_relationship_supported,
-            is_non_model_supported: self.is_non_model_supported,
+            is_relationship_supported: self.is_relationship_supported
+            ,
+            is_non_model_supported: self.is_non_model_supported
+            ,
         }
     }
 }
+

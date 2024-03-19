@@ -3,7 +3,7 @@
 /// <p>An object that contains metadata related to a predictive inbox placement test.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeliverabilityTestReport {
+pub struct DeliverabilityTestReport  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
@@ -17,29 +17,29 @@ pub struct DeliverabilityTestReport {
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub deliverability_test_status: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
 }
-impl DeliverabilityTestReport {
+impl  DeliverabilityTestReport  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
-    pub fn report_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-    pub fn from_email_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_email_address(&self) -> ::std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The date and time when the predictive inbox placement test was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    pub fn deliverability_test_status(&self) -> ::std::option::Option<&crate::types::DeliverabilityTestStatus> {
+    pub fn deliverability_test_status(&self) -> ::std::option::Option<& crate::types::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
     pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_name = input;
-        self
+        self.report_name = input; self
     }
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
     pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub fn set_from_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_email_address = input;
-        self
+        self.from_email_address = input; self
     }
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
     pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>The date and time when the predictive inbox placement test was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time when the predictive inbox placement test was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DeliverabilityTestReportBuilder {
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub fn set_deliverability_test_status(mut self, input: ::std::option::Option<crate::types::DeliverabilityTestStatus>) -> Self {
-        self.deliverability_test_status = input;
-        self
+        self.deliverability_test_status = input; self
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub fn get_deliverability_test_status(&self) -> &::std::option::Option<crate::types::DeliverabilityTestStatus> {
@@ -149,12 +143,19 @@ impl DeliverabilityTestReportBuilder {
     /// Consumes the builder and constructs a [`DeliverabilityTestReport`](crate::types::DeliverabilityTestReport).
     pub fn build(self) -> crate::types::DeliverabilityTestReport {
         crate::types::DeliverabilityTestReport {
-            report_id: self.report_id,
-            report_name: self.report_name,
-            subject: self.subject,
-            from_email_address: self.from_email_address,
-            create_date: self.create_date,
-            deliverability_test_status: self.deliverability_test_status,
+            report_id: self.report_id
+            ,
+            report_name: self.report_name
+            ,
+            subject: self.subject
+            ,
+            from_email_address: self.from_email_address
+            ,
+            create_date: self.create_date
+            ,
+            deliverability_test_status: self.deliverability_test_status
+            ,
         }
     }
 }
+

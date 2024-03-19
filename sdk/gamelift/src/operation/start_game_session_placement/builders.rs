@@ -5,23 +5,20 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 
 impl StartGameSessionPlacementInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_game_session_placement();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_game_session_placement();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartGameSessionPlacement`.
-///
+/// 
 /// <p>Places a request for a new game session in a queue. When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
 /// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p>
 /// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
@@ -42,33 +39,32 @@ impl StartGameSessionPlacementInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder,
+                    inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        crate::operation::start_game_session_placement::StartGameSessionPlacementError,
-    > for StartGameSessionPlacementFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
+                    crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+                > for StartGameSessionPlacementFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
+                        crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartGameSessionPlacementFluentBuilder {
     /// Creates a new `StartGameSessionPlacement`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -77,53 +73,44 @@ impl StartGameSessionPlacementFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_game_session_placement::StartGameSessionPlacement::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_game_session_placement::StartGameSessionPlacement::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        crate::operation::start_game_session_placement::StartGameSessionPlacementError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_game_session_placement::StartGameSessionPlacementOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_game_session_placement::StartGameSessionPlacementError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_game_session_placement::StartGameSessionPlacement::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_game_session_placement::StartGameSessionPlacement::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_game_session_placement::StartGameSessionPlacementOutput, crate::operation::start_game_session_placement::StartGameSessionPlacementError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
     pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_id(input.into());
@@ -162,12 +149,12 @@ impl StartGameSessionPlacementFluentBuilder {
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
-    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
+    pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>>) -> Self {
         self.inner = self.inner.set_game_properties(input);
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
-    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+    pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameProperty>> {
         self.inner.get_game_properties()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -208,12 +195,12 @@ impl StartGameSessionPlacementFluentBuilder {
         self
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
-    pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
+    pub fn set_player_latencies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatency>>) -> Self {
         self.inner = self.inner.set_player_latencies(input);
         self
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</p>
-    pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
+    pub fn get_player_latencies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatency>> {
         self.inner.get_player_latencies()
     }
     /// Appends an item to `DesiredPlayerSessions`.
@@ -226,12 +213,12 @@ impl StartGameSessionPlacementFluentBuilder {
         self
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn set_desired_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>>) -> Self {
+    pub fn set_desired_player_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DesiredPlayerSession>>) -> Self {
         self.inner = self.inner.set_desired_player_sessions(input);
         self
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn get_desired_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>> {
+    pub fn get_desired_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DesiredPlayerSession>> {
         self.inner.get_desired_player_sessions()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
@@ -249,3 +236,4 @@ impl StartGameSessionPlacementFluentBuilder {
         self.inner.get_game_session_data()
     }
 }
+

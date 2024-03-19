@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityOutput {
+pub struct DescribeEntityOutput  {
     /// <p>The entity ID under which the entity exists.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Username, GroupName, or ResourceName based on entity type.</p>
@@ -11,25 +11,25 @@ pub struct DescribeEntityOutput {
     pub r#type: ::std::option::Option<crate::types::EntityType>,
     _request_id: Option<String>,
 }
-impl DescribeEntityOutput {
+impl  DescribeEntityOutput  {
     /// <p>The entity ID under which the entity exists.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>Username, GroupName, or ResourceName based on entity type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Entity type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.r#type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
     pub fn builder() -> crate::operation::describe_entity::builders::DescribeEntityOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>The entity ID under which the entity exists.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The entity ID under which the entity exists.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>Username, GroupName, or ResourceName based on entity type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Username, GroupName, or ResourceName based on entity type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl DescribeEntityOutputBuilder {
     }
     /// <p>Entity type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Entity type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EntityType> {
         &self.r#type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::operation::describe_entity::DescribeEntityOutput).
     pub fn build(self) -> crate::operation::describe_entity::DescribeEntityOutput {
         crate::operation::describe_entity::DescribeEntityOutput {
-            entity_id: self.entity_id,
-            name: self.name,
-            r#type: self.r#type,
+            entity_id: self.entity_id
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

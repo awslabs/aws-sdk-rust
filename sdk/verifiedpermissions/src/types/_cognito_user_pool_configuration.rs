@@ -5,27 +5,27 @@
 /// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CognitoUserPoolConfiguration {
+pub struct CognitoUserPoolConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
     pub user_pool_arn: ::std::string::String,
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
-    pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CognitoUserPoolConfiguration {
+impl  CognitoUserPoolConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
-    pub fn user_pool_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_pool_arn.deref()
+    pub fn user_pool_arn(&self) -> & str {
+        use std::ops::Deref; self.user_pool_arn.deref()
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids.is_none()`.
-    pub fn client_ids(&self) -> &[::std::string::String] {
-        self.client_ids.as_deref().unwrap_or_default()
+    pub fn client_ids(&self) -> & [::std::string::String] {
+        self.client_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CognitoUserPoolConfiguration {
@@ -40,7 +40,7 @@ impl CognitoUserPoolConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
@@ -53,8 +53,7 @@ impl CognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
     pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_arn = input;
-        self
+        self.user_pool_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
@@ -69,33 +68,35 @@ impl CognitoUserPoolConfigurationBuilder {
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
     pub fn client_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_ids.unwrap_or_default();
-        v.push(input.into());
-        self.client_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
-    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_ids = input;
-        self
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_ids = input; self
     }
     /// <p>The unique application client IDs that are associated with the specified Amazon Cognito user pool.</p>
     /// <p>Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code></p>
-    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_ids
     }
     /// Consumes the builder and constructs a [`CognitoUserPoolConfiguration`](crate::types::CognitoUserPoolConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_pool_arn`](crate::types::builders::CognitoUserPoolConfigurationBuilder::user_pool_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CognitoUserPoolConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CognitoUserPoolConfiguration {
-            user_pool_arn: self.user_pool_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_pool_arn",
-                    "user_pool_arn was not specified but it is required when building CognitoUserPoolConfiguration",
-                )
-            })?,
-            client_ids: self.client_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CognitoUserPoolConfiguration {
+                user_pool_arn: self.user_pool_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_pool_arn", "user_pool_arn was not specified but it is required when building CognitoUserPoolConfiguration")
+                    )?
+                ,
+                client_ids: self.client_ids
+                ,
+            }
+        )
     }
 }
+

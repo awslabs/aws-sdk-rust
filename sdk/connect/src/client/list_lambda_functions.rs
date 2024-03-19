@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLambdaFunctions`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListLambdaFunctionsOutput`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput) with field(s):
+                            /// - On success, responds with [`ListLambdaFunctionsOutput`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput) with field(s):
     ///   - [`lambda_functions(Option<Vec::<String>>)`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput::lambda_functions): <p>The Lambdafunction ARNs associated with the specified instance.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_lambda_functions::ListLambdaFunctionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLambdaFunctionsError>`](crate::operation::list_lambda_functions::ListLambdaFunctionsError)
+                            /// - On failure, responds with [`SdkError<ListLambdaFunctionsError>`](crate::operation::list_lambda_functions::ListLambdaFunctionsError)
     pub fn list_lambda_functions(&self) -> crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder {
-        crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_lambda_functions::builders::ListLambdaFunctionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

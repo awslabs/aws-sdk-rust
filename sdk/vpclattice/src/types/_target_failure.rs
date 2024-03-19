@@ -3,7 +3,7 @@
 /// <p>Describes a target failure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetFailure {
+pub struct TargetFailure  {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
@@ -13,9 +13,9 @@ pub struct TargetFailure {
     /// <p>The failure message.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
 }
-impl TargetFailure {
+impl  TargetFailure  {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
@@ -23,11 +23,11 @@ impl TargetFailure {
         self.port
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TargetFailureBuilder {
     }
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TargetFailureBuilder {
     }
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port on which the target is listening. This parameter doesn't apply if the target is a Lambda function.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl TargetFailureBuilder {
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TargetFailureBuilder {
     }
     /// <p>The failure message.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl TargetFailureBuilder {
     /// Consumes the builder and constructs a [`TargetFailure`](crate::types::TargetFailure).
     pub fn build(self) -> crate::types::TargetFailure {
         crate::types::TargetFailure {
-            id: self.id,
-            port: self.port,
-            failure_code: self.failure_code,
-            failure_message: self.failure_message,
+            id: self.id
+            ,
+            port: self.port
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_message: self.failure_message
+            ,
         }
     }
 }
+

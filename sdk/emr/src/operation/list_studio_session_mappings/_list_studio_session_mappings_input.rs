@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStudioSessionMappingsInput {
+pub struct ListStudioSessionMappingsInput  {
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
@@ -10,17 +10,17 @@ pub struct ListStudioSessionMappingsInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListStudioSessionMappingsInput {
+impl  ListStudioSessionMappingsInput  {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListStudioSessionMappingsInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListStudioSessionMappingsInputBuilder {
     }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
@@ -75,24 +73,24 @@ impl ListStudioSessionMappingsInputBuilder {
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListStudioSessionMappingsInput`](crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput {
-            studio_id: self.studio_id,
-            identity_type: self.identity_type,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsInput {
+                studio_id: self.studio_id
+                ,
+                identity_type: self.identity_type
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

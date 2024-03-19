@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteCalculatedAttributeDefinitionInput {
+pub struct DeleteCalculatedAttributeDefinitionInput  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the calculated attribute.</p>
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteCalculatedAttributeDefinitionInput {
+impl  DeleteCalculatedAttributeDefinitionInput  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_attribute_name(&self) -> ::std::option::Option<& str> {
         self.calculated_attribute_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_attribute_name = input;
-        self
+        self.calculated_attribute_name = input; self
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculated_attribute_name
     }
     /// Consumes the builder and constructs a [`DeleteCalculatedAttributeDefinitionInput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput {
-                domain_name: self.domain_name,
-                calculated_attribute_name: self.calculated_attribute_name,
-            },
+                domain_name: self.domain_name
+                ,
+                calculated_attribute_name: self.calculated_attribute_name
+                ,
+            }
         )
     }
 }
+

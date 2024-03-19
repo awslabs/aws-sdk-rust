@@ -3,19 +3,19 @@
 /// <p>The settings for encrypting data in transit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails {
+pub struct AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails  {
     /// <p>When set to <code>true</code>, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to <code>false</code>, the communication happens in plain text. The default value is <code>true</code>.</p>
     pub in_cluster: ::std::option::Option<bool>,
     /// <p>Indicates the encryption setting for data in transit between clients and brokers.</p>
     pub client_broker: ::std::option::Option<::std::string::String>,
 }
-impl AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails {
+impl  AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails  {
     /// <p>When set to <code>true</code>, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to <code>false</code>, the communication happens in plain text. The default value is <code>true</code>.</p>
     pub fn in_cluster(&self) -> ::std::option::Option<bool> {
         self.in_cluster
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers.</p>
-    pub fn client_broker(&self) -> ::std::option::Option<&str> {
+    pub fn client_broker(&self) -> ::std::option::Option<& str> {
         self.client_broker.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetailsBuilder {
     }
     /// <p>When set to <code>true</code>, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to <code>false</code>, the communication happens in plain text. The default value is <code>true</code>.</p>
     pub fn set_in_cluster(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.in_cluster = input;
-        self
+        self.in_cluster = input; self
     }
     /// <p>When set to <code>true</code>, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to <code>false</code>, the communication happens in plain text. The default value is <code>true</code>.</p>
     pub fn get_in_cluster(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetailsBuilder {
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers.</p>
     pub fn set_client_broker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_broker = input;
-        self
+        self.client_broker = input; self
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers.</p>
     pub fn get_client_broker(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails`](crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails).
     pub fn build(self) -> crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails {
         crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails {
-            in_cluster: self.in_cluster,
-            client_broker: self.client_broker,
+            in_cluster: self.in_cluster
+            ,
+            client_broker: self.client_broker
+            ,
         }
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePipelineOutput {
+pub struct CreatePipelineOutput  {
     /// <p>The name of the pipeline.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the pipeline.</p>
     pub pipeline_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreatePipelineOutput {
+impl  CreatePipelineOutput  {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The ARN of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
     pub fn builder() -> crate::operation::create_pipeline::builders::CreatePipelineOutputBuilder {
@@ -47,8 +47,7 @@ impl CreatePipelineOutputBuilder {
     }
     /// <p>The name of the pipeline.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreatePipelineOutputBuilder {
     }
     /// <p>The ARN of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_arn = input;
-        self
+        self.pipeline_arn = input; self
     }
     /// <p>The ARN of the pipeline.</p>
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
     pub fn build(self) -> crate::operation::create_pipeline::CreatePipelineOutput {
         crate::operation::create_pipeline::CreatePipelineOutput {
-            pipeline_name: self.pipeline_name,
-            pipeline_arn: self.pipeline_arn,
+            pipeline_name: self.pipeline_name
+            ,
+            pipeline_arn: self.pipeline_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

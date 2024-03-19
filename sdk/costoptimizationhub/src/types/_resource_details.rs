@@ -44,11 +44,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`ComputeSavingsPlans`](crate::types::ResourceDetails::ComputeSavingsPlans), extracting the inner [`ComputeSavingsPlans`](crate::types::ComputeSavingsPlans).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_compute_savings_plans(&self) -> ::std::result::Result<&crate::types::ComputeSavingsPlans, &Self> {
-        if let ResourceDetails::ComputeSavingsPlans(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::ComputeSavingsPlans(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ComputeSavingsPlans`](crate::types::ResourceDetails::ComputeSavingsPlans).
     pub fn is_compute_savings_plans(&self) -> bool {
@@ -57,11 +53,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`EbsVolume`](crate::types::ResourceDetails::EbsVolume), extracting the inner [`EbsVolume`](crate::types::EbsVolume).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ebs_volume(&self) -> ::std::result::Result<&crate::types::EbsVolume, &Self> {
-        if let ResourceDetails::EbsVolume(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::EbsVolume(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EbsVolume`](crate::types::ResourceDetails::EbsVolume).
     pub fn is_ebs_volume(&self) -> bool {
@@ -70,11 +62,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`Ec2AutoScalingGroup`](crate::types::ResourceDetails::Ec2AutoScalingGroup), extracting the inner [`Ec2AutoScalingGroup`](crate::types::Ec2AutoScalingGroup).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ec2_auto_scaling_group(&self) -> ::std::result::Result<&crate::types::Ec2AutoScalingGroup, &Self> {
-        if let ResourceDetails::Ec2AutoScalingGroup(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::Ec2AutoScalingGroup(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ec2AutoScalingGroup`](crate::types::ResourceDetails::Ec2AutoScalingGroup).
     pub fn is_ec2_auto_scaling_group(&self) -> bool {
@@ -83,11 +71,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`Ec2Instance`](crate::types::ResourceDetails::Ec2Instance), extracting the inner [`Ec2Instance`](crate::types::Ec2Instance).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ec2_instance(&self) -> ::std::result::Result<&crate::types::Ec2Instance, &Self> {
-        if let ResourceDetails::Ec2Instance(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::Ec2Instance(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ec2Instance`](crate::types::ResourceDetails::Ec2Instance).
     pub fn is_ec2_instance(&self) -> bool {
@@ -96,11 +80,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`Ec2InstanceSavingsPlans`](crate::types::ResourceDetails::Ec2InstanceSavingsPlans), extracting the inner [`Ec2InstanceSavingsPlans`](crate::types::Ec2InstanceSavingsPlans).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ec2_instance_savings_plans(&self) -> ::std::result::Result<&crate::types::Ec2InstanceSavingsPlans, &Self> {
-        if let ResourceDetails::Ec2InstanceSavingsPlans(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::Ec2InstanceSavingsPlans(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ec2InstanceSavingsPlans`](crate::types::ResourceDetails::Ec2InstanceSavingsPlans).
     pub fn is_ec2_instance_savings_plans(&self) -> bool {
@@ -109,11 +89,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`Ec2ReservedInstances`](crate::types::ResourceDetails::Ec2ReservedInstances), extracting the inner [`Ec2ReservedInstances`](crate::types::Ec2ReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ec2_reserved_instances(&self) -> ::std::result::Result<&crate::types::Ec2ReservedInstances, &Self> {
-        if let ResourceDetails::Ec2ReservedInstances(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::Ec2ReservedInstances(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ec2ReservedInstances`](crate::types::ResourceDetails::Ec2ReservedInstances).
     pub fn is_ec2_reserved_instances(&self) -> bool {
@@ -122,11 +98,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`EcsService`](crate::types::ResourceDetails::EcsService), extracting the inner [`EcsService`](crate::types::EcsService).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ecs_service(&self) -> ::std::result::Result<&crate::types::EcsService, &Self> {
-        if let ResourceDetails::EcsService(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::EcsService(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EcsService`](crate::types::ResourceDetails::EcsService).
     pub fn is_ecs_service(&self) -> bool {
@@ -135,11 +107,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`ElastiCacheReservedInstances`](crate::types::ResourceDetails::ElastiCacheReservedInstances), extracting the inner [`ElastiCacheReservedInstances`](crate::types::ElastiCacheReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_elasti_cache_reserved_instances(&self) -> ::std::result::Result<&crate::types::ElastiCacheReservedInstances, &Self> {
-        if let ResourceDetails::ElastiCacheReservedInstances(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::ElastiCacheReservedInstances(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ElastiCacheReservedInstances`](crate::types::ResourceDetails::ElastiCacheReservedInstances).
     pub fn is_elasti_cache_reserved_instances(&self) -> bool {
@@ -148,11 +116,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`LambdaFunction`](crate::types::ResourceDetails::LambdaFunction), extracting the inner [`LambdaFunction`](crate::types::LambdaFunction).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lambda_function(&self) -> ::std::result::Result<&crate::types::LambdaFunction, &Self> {
-        if let ResourceDetails::LambdaFunction(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::LambdaFunction(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LambdaFunction`](crate::types::ResourceDetails::LambdaFunction).
     pub fn is_lambda_function(&self) -> bool {
@@ -161,11 +125,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`OpenSearchReservedInstances`](crate::types::ResourceDetails::OpenSearchReservedInstances), extracting the inner [`OpenSearchReservedInstances`](crate::types::OpenSearchReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_open_search_reserved_instances(&self) -> ::std::result::Result<&crate::types::OpenSearchReservedInstances, &Self> {
-        if let ResourceDetails::OpenSearchReservedInstances(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::OpenSearchReservedInstances(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OpenSearchReservedInstances`](crate::types::ResourceDetails::OpenSearchReservedInstances).
     pub fn is_open_search_reserved_instances(&self) -> bool {
@@ -174,11 +134,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`RdsReservedInstances`](crate::types::ResourceDetails::RdsReservedInstances), extracting the inner [`RdsReservedInstances`](crate::types::RdsReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rds_reserved_instances(&self) -> ::std::result::Result<&crate::types::RdsReservedInstances, &Self> {
-        if let ResourceDetails::RdsReservedInstances(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::RdsReservedInstances(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RdsReservedInstances`](crate::types::ResourceDetails::RdsReservedInstances).
     pub fn is_rds_reserved_instances(&self) -> bool {
@@ -187,11 +143,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`RedshiftReservedInstances`](crate::types::ResourceDetails::RedshiftReservedInstances), extracting the inner [`RedshiftReservedInstances`](crate::types::RedshiftReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_reserved_instances(&self) -> ::std::result::Result<&crate::types::RedshiftReservedInstances, &Self> {
-        if let ResourceDetails::RedshiftReservedInstances(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::RedshiftReservedInstances(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftReservedInstances`](crate::types::ResourceDetails::RedshiftReservedInstances).
     pub fn is_redshift_reserved_instances(&self) -> bool {
@@ -200,11 +152,7 @@ impl ResourceDetails {
     /// Tries to convert the enum instance into [`SageMakerSavingsPlans`](crate::types::ResourceDetails::SageMakerSavingsPlans), extracting the inner [`SageMakerSavingsPlans`](crate::types::SageMakerSavingsPlans).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sage_maker_savings_plans(&self) -> ::std::result::Result<&crate::types::SageMakerSavingsPlans, &Self> {
-        if let ResourceDetails::SageMakerSavingsPlans(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ResourceDetails::SageMakerSavingsPlans(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SageMakerSavingsPlans`](crate::types::ResourceDetails::SageMakerSavingsPlans).
     pub fn is_sage_maker_savings_plans(&self) -> bool {
@@ -215,3 +163,4 @@ impl ResourceDetails {
         matches!(self, Self::Unknown)
     }
 }
+

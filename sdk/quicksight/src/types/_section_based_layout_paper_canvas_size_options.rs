@@ -3,7 +3,7 @@
 /// <p>The options for a paper canvas of a section-based layout.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SectionBasedLayoutPaperCanvasSizeOptions {
+pub struct SectionBasedLayoutPaperCanvasSizeOptions  {
     /// <p>The paper size that is used to define canvas dimensions.</p>
     pub paper_size: ::std::option::Option<crate::types::PaperSize>,
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
@@ -17,9 +17,9 @@ pub struct SectionBasedLayoutPaperCanvasSizeOptions {
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
     pub paper_margin: ::std::option::Option<crate::types::Spacing>,
 }
-impl SectionBasedLayoutPaperCanvasSizeOptions {
+impl  SectionBasedLayoutPaperCanvasSizeOptions  {
     /// <p>The paper size that is used to define canvas dimensions.</p>
-    pub fn paper_size(&self) -> ::std::option::Option<&crate::types::PaperSize> {
+    pub fn paper_size(&self) -> ::std::option::Option<& crate::types::PaperSize> {
         self.paper_size.as_ref()
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
@@ -29,11 +29,11 @@ impl SectionBasedLayoutPaperCanvasSizeOptions {
     /// <li>
     /// <p>LANDSCAPE</p></li>
     /// </ul>
-    pub fn paper_orientation(&self) -> ::std::option::Option<&crate::types::PaperOrientation> {
+    pub fn paper_orientation(&self) -> ::std::option::Option<& crate::types::PaperOrientation> {
         self.paper_orientation.as_ref()
     }
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
-    pub fn paper_margin(&self) -> ::std::option::Option<&crate::types::Spacing> {
+    pub fn paper_margin(&self) -> ::std::option::Option<& crate::types::Spacing> {
         self.paper_margin.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     }
     /// <p>The paper size that is used to define canvas dimensions.</p>
     pub fn set_paper_size(mut self, input: ::std::option::Option<crate::types::PaperSize>) -> Self {
-        self.paper_size = input;
-        self
+        self.paper_size = input; self
     }
     /// <p>The paper size that is used to define canvas dimensions.</p>
     pub fn get_paper_size(&self) -> &::std::option::Option<crate::types::PaperSize> {
@@ -86,8 +85,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     /// <p>LANDSCAPE</p></li>
     /// </ul>
     pub fn set_paper_orientation(mut self, input: ::std::option::Option<crate::types::PaperOrientation>) -> Self {
-        self.paper_orientation = input;
-        self
+        self.paper_orientation = input; self
     }
     /// <p>The paper orientation that is used to define canvas dimensions. Choose one of the following options:</p>
     /// <ul>
@@ -106,8 +104,7 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     }
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
     pub fn set_paper_margin(mut self, input: ::std::option::Option<crate::types::Spacing>) -> Self {
-        self.paper_margin = input;
-        self
+        self.paper_margin = input; self
     }
     /// <p>Defines the spacing between the canvas content and the top, bottom, left, and right edges.</p>
     pub fn get_paper_margin(&self) -> &::std::option::Option<crate::types::Spacing> {
@@ -116,9 +113,13 @@ impl SectionBasedLayoutPaperCanvasSizeOptionsBuilder {
     /// Consumes the builder and constructs a [`SectionBasedLayoutPaperCanvasSizeOptions`](crate::types::SectionBasedLayoutPaperCanvasSizeOptions).
     pub fn build(self) -> crate::types::SectionBasedLayoutPaperCanvasSizeOptions {
         crate::types::SectionBasedLayoutPaperCanvasSizeOptions {
-            paper_size: self.paper_size,
-            paper_orientation: self.paper_orientation,
-            paper_margin: self.paper_margin,
+            paper_size: self.paper_size
+            ,
+            paper_orientation: self.paper_orientation
+            ,
+            paper_margin: self.paper_margin
+            ,
         }
     }
 }
+

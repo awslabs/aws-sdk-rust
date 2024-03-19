@@ -5,7 +5,7 @@
 /// <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedPolicyDetail {
+pub struct ManagedPolicyDetail  {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the policy.</p>
@@ -35,31 +35,31 @@ pub struct ManagedPolicyDetail {
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
     pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list containing information about the versions of the policy.</p>
-    pub policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
+    pub policy_version_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>,
 }
-impl ManagedPolicyDetail {
+impl  ManagedPolicyDetail  {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn default_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_id(&self) -> ::std::option::Option<& str> {
         self.default_version_id.as_deref()
     }
     /// <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
@@ -76,23 +76,24 @@ impl ManagedPolicyDetail {
         self.is_attachable
     }
     /// <p>A friendly description of the policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
-    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_version_list.is_none()`.
-    pub fn policy_version_list(&self) -> &[crate::types::PolicyVersion] {
-        self.policy_version_list.as_deref().unwrap_or_default()
+    pub fn policy_version_list(&self) -> & [crate::types::PolicyVersion] {
+        self.policy_version_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ManagedPolicyDetail {
@@ -117,7 +118,7 @@ pub struct ManagedPolicyDetailBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
+    pub(crate) policy_version_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>,
 }
 impl ManagedPolicyDetailBuilder {
     /// <p>The friendly name (not ARN) identifying the policy.</p>
@@ -127,8 +128,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The friendly name (not ARN) identifying the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The stable and unique string identifying the policy.</p>
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -160,8 +159,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -177,8 +175,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -194,8 +191,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_id = input;
-        self
+        self.default_version_id = input; self
     }
     /// <p>The identifier for the version of the policy that is set as the default (operative) version.</p>
     /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed policies</a> in the <i>IAM User Guide</i>.</p>
@@ -209,8 +205,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
     pub fn set_attachment_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attachment_count = input;
-        self
+        self.attachment_count = input; self
     }
     /// <p>The number of principal entities (users, groups, and roles) that the policy is attached to.</p>
     pub fn get_attachment_count(&self) -> &::std::option::Option<i32> {
@@ -225,8 +220,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The number of entities (users and roles) for which the policy is used as the permissions boundary.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub fn set_permissions_boundary_usage_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.permissions_boundary_usage_count = input;
-        self
+        self.permissions_boundary_usage_count = input; self
     }
     /// <p>The number of entities (users and roles) for which the policy is used as the permissions boundary.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
@@ -240,8 +234,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
     pub fn set_is_attachable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_attachable = input;
-        self
+        self.is_attachable = input; self
     }
     /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
     pub fn get_is_attachable(&self) -> &::std::option::Option<bool> {
@@ -254,8 +247,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>A friendly description of the policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A friendly description of the policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +260,7 @@ impl ManagedPolicyDetailBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -284,8 +275,7 @@ impl ManagedPolicyDetailBuilder {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date = input;
-        self
+        self.update_date = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
@@ -299,34 +289,47 @@ impl ManagedPolicyDetailBuilder {
     /// <p>A list containing information about the versions of the policy.</p>
     pub fn policy_version_list(mut self, input: crate::types::PolicyVersion) -> Self {
         let mut v = self.policy_version_list.unwrap_or_default();
-        v.push(input);
-        self.policy_version_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_version_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    pub fn set_policy_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>) -> Self {
-        self.policy_version_list = input;
-        self
+    pub fn set_policy_version_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>>) -> Self {
+        self.policy_version_list = input; self
     }
     /// <p>A list containing information about the versions of the policy.</p>
-    pub fn get_policy_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
+    pub fn get_policy_version_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyVersion>> {
         &self.policy_version_list
     }
     /// Consumes the builder and constructs a [`ManagedPolicyDetail`](crate::types::ManagedPolicyDetail).
     pub fn build(self) -> crate::types::ManagedPolicyDetail {
         crate::types::ManagedPolicyDetail {
-            policy_name: self.policy_name,
-            policy_id: self.policy_id,
-            arn: self.arn,
-            path: self.path,
-            default_version_id: self.default_version_id,
-            attachment_count: self.attachment_count,
-            permissions_boundary_usage_count: self.permissions_boundary_usage_count,
-            is_attachable: self.is_attachable.unwrap_or_default(),
-            description: self.description,
-            create_date: self.create_date,
-            update_date: self.update_date,
-            policy_version_list: self.policy_version_list,
+            policy_name: self.policy_name
+            ,
+            policy_id: self.policy_id
+            ,
+            arn: self.arn
+            ,
+            path: self.path
+            ,
+            default_version_id: self.default_version_id
+            ,
+            attachment_count: self.attachment_count
+            ,
+            permissions_boundary_usage_count: self.permissions_boundary_usage_count
+            ,
+            is_attachable: self.is_attachable
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
+            create_date: self.create_date
+            ,
+            update_date: self.update_date
+            ,
+            policy_version_list: self.policy_version_list
+            ,
         }
     }
 }
+

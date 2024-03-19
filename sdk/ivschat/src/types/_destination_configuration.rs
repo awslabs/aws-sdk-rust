@@ -24,11 +24,7 @@ impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`CloudWatchLogs`](crate::types::DestinationConfiguration::CloudWatchLogs), extracting the inner [`CloudWatchLogsDestinationConfiguration`](crate::types::CloudWatchLogsDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cloud_watch_logs(&self) -> ::std::result::Result<&crate::types::CloudWatchLogsDestinationConfiguration, &Self> {
-        if let DestinationConfiguration::CloudWatchLogs(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DestinationConfiguration::CloudWatchLogs(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CloudWatchLogs`](crate::types::DestinationConfiguration::CloudWatchLogs).
     pub fn is_cloud_watch_logs(&self) -> bool {
@@ -37,11 +33,7 @@ impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`Firehose`](crate::types::DestinationConfiguration::Firehose), extracting the inner [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_firehose(&self) -> ::std::result::Result<&crate::types::FirehoseDestinationConfiguration, &Self> {
-        if let DestinationConfiguration::Firehose(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DestinationConfiguration::Firehose(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Firehose`](crate::types::DestinationConfiguration::Firehose).
     pub fn is_firehose(&self) -> bool {
@@ -50,11 +42,7 @@ impl DestinationConfiguration {
     /// Tries to convert the enum instance into [`S3`](crate::types::DestinationConfiguration::S3), extracting the inner [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&crate::types::S3DestinationConfiguration, &Self> {
-        if let DestinationConfiguration::S3(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DestinationConfiguration::S3(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::DestinationConfiguration::S3).
     pub fn is_s3(&self) -> bool {
@@ -65,3 +53,4 @@ impl DestinationConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

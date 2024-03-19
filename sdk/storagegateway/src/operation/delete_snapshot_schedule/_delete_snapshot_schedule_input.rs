@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotScheduleInput {
+pub struct DeleteSnapshotScheduleInput  {
     /// <p>The volume which snapshot schedule to delete.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSnapshotScheduleInput {
+impl  DeleteSnapshotScheduleInput  {
     /// <p>The volume which snapshot schedule to delete.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteSnapshotScheduleInputBuilder {
     }
     /// <p>The volume which snapshot schedule to delete.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The volume which snapshot schedule to delete.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput { volume_arn: self.volume_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput {
+                volume_arn: self.volume_arn
+                ,
+            }
+        )
     }
 }
+

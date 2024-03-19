@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDeviceFleetInput {
+pub struct DescribeDeviceFleetInput  {
     /// <p>The name of the fleet.</p>
     pub device_fleet_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDeviceFleetInput {
+impl  DescribeDeviceFleetInput  {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeDeviceFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_device_fleet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_fleet_name = input;
-        self
+        self.device_fleet_name = input; self
     }
     /// <p>The name of the fleet.</p>
     pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_device_fleet::DescribeDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_device_fleet::DescribeDeviceFleetInput {
-            device_fleet_name: self.device_fleet_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_device_fleet::DescribeDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_device_fleet::DescribeDeviceFleetInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+            }
+        )
     }
 }
+

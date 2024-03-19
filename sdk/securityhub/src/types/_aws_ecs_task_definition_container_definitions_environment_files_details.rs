@@ -3,19 +3,19 @@
 /// <p>A file that contain environment variables to pass to a container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails  {
     /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails  {
     /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
     }
     /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of environment file. The valid value is <code>s3</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
     }
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The ARN of the S3 object that contains the environment variable file.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

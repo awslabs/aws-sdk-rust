@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnabledControlsInput {
+pub struct ListEnabledControlsInput  {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
@@ -10,13 +10,13 @@ pub struct ListEnabledControlsInput {
     /// <p>How many results to return per API call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEnabledControlsInput {
+impl  ListEnabledControlsInput  {
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>How many results to return per API call.</p>
@@ -48,8 +48,7 @@ impl ListEnabledControlsInputBuilder {
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListEnabledControlsInputBuilder {
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl ListEnabledControlsInputBuilder {
     }
     /// <p>How many results to return per API call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>How many results to return per API call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnabledControlsInput`](crate::operation::list_enabled_controls::ListEnabledControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsInput {
-            target_identifier: self.target_identifier,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_enabled_controls::ListEnabledControlsInput {
+                target_identifier: self.target_identifier
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

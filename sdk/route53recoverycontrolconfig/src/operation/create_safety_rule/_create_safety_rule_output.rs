@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSafetyRuleOutput {
+pub struct CreateSafetyRuleOutput  {
     /// <p>The assertion rule created.</p>
     pub assertion_rule: ::std::option::Option<crate::types::AssertionRule>,
     /// <p>The gating rule created.</p>
     pub gating_rule: ::std::option::Option<crate::types::GatingRule>,
     _request_id: Option<String>,
 }
-impl CreateSafetyRuleOutput {
+impl  CreateSafetyRuleOutput  {
     /// <p>The assertion rule created.</p>
-    pub fn assertion_rule(&self) -> ::std::option::Option<&crate::types::AssertionRule> {
+    pub fn assertion_rule(&self) -> ::std::option::Option<& crate::types::AssertionRule> {
         self.assertion_rule.as_ref()
     }
     /// <p>The gating rule created.</p>
-    pub fn gating_rule(&self) -> ::std::option::Option<&crate::types::GatingRule> {
+    pub fn gating_rule(&self) -> ::std::option::Option<& crate::types::GatingRule> {
         self.gating_rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateSafetyRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateSafetyRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateSafetyRuleOutput`](crate::operation::create_safety_rule::CreateSafetyRuleOutput).
     pub fn builder() -> crate::operation::create_safety_rule::builders::CreateSafetyRuleOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateSafetyRuleOutputBuilder {
     }
     /// <p>The assertion rule created.</p>
     pub fn set_assertion_rule(mut self, input: ::std::option::Option<crate::types::AssertionRule>) -> Self {
-        self.assertion_rule = input;
-        self
+        self.assertion_rule = input; self
     }
     /// <p>The assertion rule created.</p>
     pub fn get_assertion_rule(&self) -> &::std::option::Option<crate::types::AssertionRule> {
@@ -61,28 +60,30 @@ impl CreateSafetyRuleOutputBuilder {
     }
     /// <p>The gating rule created.</p>
     pub fn set_gating_rule(mut self, input: ::std::option::Option<crate::types::GatingRule>) -> Self {
-        self.gating_rule = input;
-        self
+        self.gating_rule = input; self
     }
     /// <p>The gating rule created.</p>
     pub fn get_gating_rule(&self) -> &::std::option::Option<crate::types::GatingRule> {
         &self.gating_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateSafetyRuleOutput`](crate::operation::create_safety_rule::CreateSafetyRuleOutput).
     pub fn build(self) -> crate::operation::create_safety_rule::CreateSafetyRuleOutput {
         crate::operation::create_safety_rule::CreateSafetyRuleOutput {
-            assertion_rule: self.assertion_rule,
-            gating_rule: self.gating_rule,
+            assertion_rule: self.assertion_rule
+            ,
+            gating_rule: self.gating_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

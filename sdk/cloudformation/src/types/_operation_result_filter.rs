@@ -3,19 +3,19 @@
 /// <p>The status that operation results are filtered by.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperationResultFilter {
+pub struct OperationResultFilter  {
     /// <p>The type of filter to apply.</p>
     pub name: ::std::option::Option<crate::types::OperationResultFilterName>,
     /// <p>The value to filter by.</p>
     pub values: ::std::option::Option<::std::string::String>,
 }
-impl OperationResultFilter {
+impl  OperationResultFilter  {
     /// <p>The type of filter to apply.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OperationResultFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OperationResultFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to filter by.</p>
-    pub fn values(&self) -> ::std::option::Option<&str> {
+    pub fn values(&self) -> ::std::option::Option<& str> {
         self.values.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OperationResultFilterBuilder {
     }
     /// <p>The type of filter to apply.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OperationResultFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of filter to apply.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OperationResultFilterName> {
@@ -55,8 +54,7 @@ impl OperationResultFilterBuilder {
     }
     /// <p>The value to filter by.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
     }
     /// <p>The value to filter by.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OperationResultFilterBuilder {
     /// Consumes the builder and constructs a [`OperationResultFilter`](crate::types::OperationResultFilter).
     pub fn build(self) -> crate::types::OperationResultFilter {
         crate::types::OperationResultFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

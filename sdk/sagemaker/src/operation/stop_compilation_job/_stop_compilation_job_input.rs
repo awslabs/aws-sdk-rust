@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCompilationJobInput {
+pub struct StopCompilationJobInput  {
     /// <p>The name of the model compilation job to stop.</p>
     pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
-impl StopCompilationJobInput {
+impl  StopCompilationJobInput  {
     /// <p>The name of the model compilation job to stop.</p>
-    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<& str> {
         self.compilation_job_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl StopCompilationJobInputBuilder {
     }
     /// <p>The name of the model compilation job to stop.</p>
     pub fn set_compilation_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compilation_job_name = input;
-        self
+        self.compilation_job_name = input; self
     }
     /// <p>The name of the model compilation job to stop.</p>
     pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.compilation_job_name
     }
     /// Consumes the builder and constructs a [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_compilation_job::StopCompilationJobInput {
-            compilation_job_name: self.compilation_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_compilation_job::StopCompilationJobInput {
+                compilation_job_name: self.compilation_job_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbShardGroupInput {
+pub struct DeleteDbShardGroupInput  {
     /// <p>Teh name of the DB shard group to delete.</p>
     pub db_shard_group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbShardGroupInput {
+impl  DeleteDbShardGroupInput  {
     /// <p>Teh name of the DB shard group to delete.</p>
-    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_shard_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_shard_group_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDbShardGroupInputBuilder {
     }
     /// <p>Teh name of the DB shard group to delete.</p>
     pub fn set_db_shard_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_shard_group_identifier = input;
-        self
+        self.db_shard_group_identifier = input; self
     }
     /// <p>Teh name of the DB shard group to delete.</p>
     pub fn get_db_shard_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_shard_group_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbShardGroupInput`](crate::operation::delete_db_shard_group::DeleteDbShardGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_shard_group::DeleteDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_db_shard_group::DeleteDbShardGroupInput {
-            db_shard_group_identifier: self.db_shard_group_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_shard_group::DeleteDbShardGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_shard_group::DeleteDbShardGroupInput {
+                db_shard_group_identifier: self.db_shard_group_identifier
+                ,
+            }
+        )
     }
 }
+

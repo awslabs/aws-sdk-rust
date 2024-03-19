@@ -3,22 +3,22 @@
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrafficPolicyInstanceCountOutput {
+pub struct GetTrafficPolicyInstanceCountOutput  {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub traffic_policy_instance_count: i32,
     _request_id: Option<String>,
 }
-impl GetTrafficPolicyInstanceCountOutput {
+impl  GetTrafficPolicyInstanceCountOutput  {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub fn traffic_policy_instance_count(&self) -> i32 {
         self.traffic_policy_instance_count
     }
 }
 impl ::aws_types::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTrafficPolicyInstanceCountOutput {
     /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
     pub fn builder() -> crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder {
@@ -42,39 +42,35 @@ impl GetTrafficPolicyInstanceCountOutputBuilder {
     }
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub fn set_traffic_policy_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.traffic_policy_instance_count = input;
-        self
+        self.traffic_policy_instance_count = input; self
     }
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub fn get_traffic_policy_instance_count(&self) -> &::std::option::Option<i32> {
         &self.traffic_policy_instance_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`traffic_policy_instance_count`](crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder::traffic_policy_instance_count)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
-            traffic_policy_instance_count: self.traffic_policy_instance_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "traffic_policy_instance_count",
-                    "traffic_policy_instance_count was not specified but it is required when building GetTrafficPolicyInstanceCountOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
+                traffic_policy_instance_count: self.traffic_policy_instance_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("traffic_policy_instance_count", "traffic_policy_instance_count was not specified but it is required when building GetTrafficPolicyInstanceCountOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

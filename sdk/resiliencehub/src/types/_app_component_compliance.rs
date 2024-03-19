@@ -3,13 +3,13 @@
 /// <p>Defines the compliance of an Application Component against the resiliency policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppComponentCompliance {
+pub struct AppComponentCompliance  {
     /// <p>The cost for the application.</p>
     pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>Name of the Application Component.</p>
     pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    pub compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub compliance: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>The compliance message.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Status of the action.</p>
@@ -17,31 +17,29 @@ pub struct AppComponentCompliance {
     /// <p>The current resiliency score for the application.</p>
     pub resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
 }
-impl AppComponentCompliance {
+impl  AppComponentCompliance  {
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> ::std::option::Option<&crate::types::Cost> {
+    pub fn cost(&self) -> ::std::option::Option<& crate::types::Cost> {
         self.cost.as_ref()
     }
     /// <p>Name of the Application Component.</p>
-    pub fn app_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn app_component_name(&self) -> ::std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    pub fn compliance(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn compliance(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         self.compliance.as_ref()
     }
     /// <p>The compliance message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
-    pub fn resiliency_score(&self) -> ::std::option::Option<&crate::types::ResiliencyScore> {
+    pub fn resiliency_score(&self) -> ::std::option::Option<& crate::types::ResiliencyScore> {
         self.resiliency_score.as_ref()
     }
 }
@@ -58,7 +56,7 @@ impl AppComponentCompliance {
 pub struct AppComponentComplianceBuilder {
     pub(crate) cost: ::std::option::Option<crate::types::Cost>,
     pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
-    pub(crate) compliance: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub(crate) compliance: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
     pub(crate) resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
@@ -71,8 +69,7 @@ impl AppComponentComplianceBuilder {
     }
     /// <p>The cost for the application.</p>
     pub fn set_cost(mut self, input: ::std::option::Option<crate::types::Cost>) -> Self {
-        self.cost = input;
-        self
+        self.cost = input; self
     }
     /// <p>The cost for the application.</p>
     pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
@@ -85,8 +82,7 @@ impl AppComponentComplianceBuilder {
     }
     /// <p>Name of the Application Component.</p>
     pub fn set_app_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_component_name = input;
-        self
+        self.app_component_name = input; self
     }
     /// <p>Name of the Application Component.</p>
     pub fn get_app_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,22 +95,16 @@ impl AppComponentComplianceBuilder {
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
     pub fn compliance(mut self, k: crate::types::DisruptionType, v: crate::types::DisruptionCompliance) -> Self {
         let mut hash_map = self.compliance.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.compliance = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.compliance = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    pub fn set_compliance(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
-    ) -> Self {
-        self.compliance = input;
-        self
+    pub fn set_compliance(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>) -> Self {
+        self.compliance = input; self
     }
     /// <p>The compliance of the Application Component against the resiliency policy.</p>
-    pub fn get_compliance(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn get_compliance(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         &self.compliance
     }
     /// <p>The compliance message.</p>
@@ -124,8 +114,7 @@ impl AppComponentComplianceBuilder {
     }
     /// <p>The compliance message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The compliance message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +127,7 @@ impl AppComponentComplianceBuilder {
     }
     /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -152,8 +140,7 @@ impl AppComponentComplianceBuilder {
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn set_resiliency_score(mut self, input: ::std::option::Option<crate::types::ResiliencyScore>) -> Self {
-        self.resiliency_score = input;
-        self
+        self.resiliency_score = input; self
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn get_resiliency_score(&self) -> &::std::option::Option<crate::types::ResiliencyScore> {
@@ -162,12 +149,19 @@ impl AppComponentComplianceBuilder {
     /// Consumes the builder and constructs a [`AppComponentCompliance`](crate::types::AppComponentCompliance).
     pub fn build(self) -> crate::types::AppComponentCompliance {
         crate::types::AppComponentCompliance {
-            cost: self.cost,
-            app_component_name: self.app_component_name,
-            compliance: self.compliance,
-            message: self.message,
-            status: self.status,
-            resiliency_score: self.resiliency_score,
+            cost: self.cost
+            ,
+            app_component_name: self.app_component_name
+            ,
+            compliance: self.compliance
+            ,
+            message: self.message
+            ,
+            status: self.status
+            ,
+            resiliency_score: self.resiliency_score
+            ,
         }
     }
 }
+

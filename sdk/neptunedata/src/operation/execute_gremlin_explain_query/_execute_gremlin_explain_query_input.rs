@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteGremlinExplainQueryInput {
+pub struct ExecuteGremlinExplainQueryInput  {
     /// <p>The Gremlin explain query string.</p>
     pub gremlin_query: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteGremlinExplainQueryInput {
+impl  ExecuteGremlinExplainQueryInput  {
     /// <p>The Gremlin explain query string.</p>
-    pub fn gremlin_query(&self) -> ::std::option::Option<&str> {
+    pub fn gremlin_query(&self) -> ::std::option::Option<& str> {
         self.gremlin_query.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl ExecuteGremlinExplainQueryInputBuilder {
     }
     /// <p>The Gremlin explain query string.</p>
     pub fn set_gremlin_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gremlin_query = input;
-        self
+        self.gremlin_query = input; self
     }
     /// <p>The Gremlin explain query string.</p>
     pub fn get_gremlin_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.gremlin_query
     }
     /// Consumes the builder and constructs a [`ExecuteGremlinExplainQueryInput`](crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput {
-            gremlin_query: self.gremlin_query,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_gremlin_explain_query::ExecuteGremlinExplainQueryInput {
+                gremlin_query: self.gremlin_query
+                ,
+            }
+        )
     }
 }
+

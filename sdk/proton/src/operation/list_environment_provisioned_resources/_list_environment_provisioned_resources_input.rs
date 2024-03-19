@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentProvisionedResourcesInput {
+pub struct ListEnvironmentProvisionedResourcesInput  {
     /// <p>The environment name.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListEnvironmentProvisionedResourcesInput {
+impl  ListEnvironmentProvisionedResourcesInput  {
     /// <p>The environment name.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListEnvironmentProvisionedResourcesInputBuilder {
     }
     /// <p>The environment name.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The environment name.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl ListEnvironmentProvisionedResourcesInputBuilder {
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEnvironmentProvisionedResourcesInput`](crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_environment_provisioned_resources::ListEnvironmentProvisionedResourcesInput {
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-            },
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

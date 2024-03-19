@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>A structure containing information about the templates in the list.</p>
-    pub template_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub template_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
@@ -13,15 +13,16 @@ pub struct ListTemplatesOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTemplatesOutput {
+impl  ListTemplatesOutput  {
     /// <p>A structure containing information about the templates in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_summary_list.is_none()`.
-    pub fn template_summary_list(&self) -> &[crate::types::TemplateSummary] {
-        self.template_summary_list.as_deref().unwrap_or_default()
+    pub fn template_summary_list(&self) -> & [crate::types::TemplateSummary] {
+        self.template_summary_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -29,15 +30,15 @@ impl ListTemplatesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn builder() -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
@@ -49,7 +50,7 @@ impl ListTemplatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
-    pub(crate) template_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
@@ -63,17 +64,16 @@ impl ListTemplatesOutputBuilder {
     /// <p>A structure containing information about the templates in the list.</p>
     pub fn template_summary_list(mut self, input: crate::types::TemplateSummary) -> Self {
         let mut v = self.template_summary_list.unwrap_or_default();
-        v.push(input);
-        self.template_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure containing information about the templates in the list.</p>
-    pub fn set_template_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
-        self.template_summary_list = input;
-        self
+    pub fn set_template_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>) -> Self {
+        self.template_summary_list = input; self
     }
     /// <p>A structure containing information about the templates in the list.</p>
-    pub fn get_template_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>> {
         &self.template_summary_list
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -83,8 +83,7 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
@@ -111,30 +109,35 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn build(self) -> crate::operation::list_templates::ListTemplatesOutput {
         crate::operation::list_templates::ListTemplatesOutput {
-            template_summary_list: self.template_summary_list,
-            next_token: self.next_token,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
+            template_summary_list: self.template_summary_list
+            ,
+            next_token: self.next_token
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,27 +3,28 @@
 /// <p>Contains information about an external access finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalAccessDetails {
+pub struct ExternalAccessDetails  {
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub action: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The condition in the analyzed policy statement that resulted in an external access finding.</p>
-    pub condition: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub condition: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>Specifies whether the external access finding is public.</p>
     pub is_public: ::std::option::Option<bool>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub principal: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::FindingSource>>,
 }
-impl ExternalAccessDetails {
+impl  ExternalAccessDetails  {
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action.is_none()`.
-    pub fn action(&self) -> &[::std::string::String] {
-        self.action.as_deref().unwrap_or_default()
+    pub fn action(&self) -> & [::std::string::String] {
+        self.action.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The condition in the analyzed policy statement that resulted in an external access finding.</p>
-    pub fn condition(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn condition(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.condition
     }
     /// <p>Specifies whether the external access finding is public.</p>
@@ -31,14 +32,15 @@ impl ExternalAccessDetails {
         self.is_public
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn principal(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn principal(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::FindingSource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::FindingSource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExternalAccessDetails {
@@ -52,11 +54,11 @@ impl ExternalAccessDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalAccessDetailsBuilder {
-    pub(crate) action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) condition: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) action: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) condition: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) is_public: ::std::option::Option<bool>,
-    pub(crate) principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>,
+    pub(crate) principal: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::FindingSource>>,
 }
 impl ExternalAccessDetailsBuilder {
     /// Appends an item to `action`.
@@ -66,17 +68,16 @@ impl ExternalAccessDetailsBuilder {
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action.unwrap_or_default();
-        v.push(input.into());
-        self.action = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.action = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn set_action(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.action = input; self
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.action
     }
     /// Adds a key-value pair to `condition`.
@@ -86,17 +87,16 @@ impl ExternalAccessDetailsBuilder {
     /// <p>The condition in the analyzed policy statement that resulted in an external access finding.</p>
     pub fn condition(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.condition.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.condition = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.condition = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The condition in the analyzed policy statement that resulted in an external access finding.</p>
-    pub fn set_condition(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.condition = input;
-        self
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.condition = input; self
     }
     /// <p>The condition in the analyzed policy statement that resulted in an external access finding.</p>
-    pub fn get_condition(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_condition(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.condition
     }
     /// <p>Specifies whether the external access finding is public.</p>
@@ -106,8 +106,7 @@ impl ExternalAccessDetailsBuilder {
     }
     /// <p>Specifies whether the external access finding is public.</p>
     pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_public = input;
-        self
+        self.is_public = input; self
     }
     /// <p>Specifies whether the external access finding is public.</p>
     pub fn get_is_public(&self) -> &::std::option::Option<bool> {
@@ -120,17 +119,16 @@ impl ExternalAccessDetailsBuilder {
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub fn principal(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.principal.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.principal = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.principal = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn set_principal(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.principal = input;
-        self
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.principal = input; self
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn get_principal(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_principal(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.principal
     }
     /// Appends an item to `sources`.
@@ -140,34 +138,39 @@ impl ExternalAccessDetailsBuilder {
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(mut self, input: crate::types::FindingSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingSource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The sources of the external access finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingSource>> {
         &self.sources
     }
     /// Consumes the builder and constructs a [`ExternalAccessDetails`](crate::types::ExternalAccessDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`condition`](crate::types::builders::ExternalAccessDetailsBuilder::condition)
     pub fn build(self) -> ::std::result::Result<crate::types::ExternalAccessDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExternalAccessDetails {
-            action: self.action,
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building ExternalAccessDetails",
-                )
-            })?,
-            is_public: self.is_public,
-            principal: self.principal,
-            sources: self.sources,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExternalAccessDetails {
+                action: self.action
+                ,
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building ExternalAccessDetails")
+                    )?
+                ,
+                is_public: self.is_public
+                ,
+                principal: self.principal
+                ,
+                sources: self.sources
+                ,
+            }
+        )
     }
 }
+

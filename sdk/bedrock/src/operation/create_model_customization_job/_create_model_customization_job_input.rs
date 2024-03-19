@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateModelCustomizationJobInput {
+pub struct CreateModelCustomizationJobInput  {
     /// <p>Enter a unique name for the fine-tuning job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Enter a name for the custom model.</p>
@@ -18,9 +18,9 @@ pub struct CreateModelCustomizationJobInput {
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub custom_model_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Assign tags to the job.</p>
-    pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub job_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Assign tags to the custom model.</p>
-    pub custom_model_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub custom_model_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Information about the training dataset.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     /// <p>Information about the validation dataset.</p>
@@ -28,69 +28,71 @@ pub struct CreateModelCustomizationJobInput {
     /// <p>S3 location for the output data.</p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Parameters related to tuning the model.</p>
-    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub hyper_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>VPC configuration (optional). Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl CreateModelCustomizationJobInput {
+impl  CreateModelCustomizationJobInput  {
     /// <p>Enter a unique name for the fine-tuning job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>Enter a name for the custom model.</p>
-    pub fn custom_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_model_name(&self) -> ::std::option::Option<& str> {
         self.custom_model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Name of the base model.</p>
-    pub fn base_model_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn base_model_identifier(&self) -> ::std::option::Option<& str> {
         self.base_model_identifier.as_deref()
     }
     /// <p>The customization type.</p>
-    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+    pub fn customization_type(&self) -> ::std::option::Option<& crate::types::CustomizationType> {
         self.customization_type.as_ref()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
-    pub fn custom_model_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn custom_model_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.custom_model_kms_key_id.as_deref()
     }
     /// <p>Assign tags to the job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_tags.is_none()`.
-    pub fn job_tags(&self) -> &[crate::types::Tag] {
-        self.job_tags.as_deref().unwrap_or_default()
+    pub fn job_tags(&self) -> & [crate::types::Tag] {
+        self.job_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Assign tags to the custom model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_model_tags.is_none()`.
-    pub fn custom_model_tags(&self) -> &[crate::types::Tag] {
-        self.custom_model_tags.as_deref().unwrap_or_default()
+    pub fn custom_model_tags(&self) -> & [crate::types::Tag] {
+        self.custom_model_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the training dataset.</p>
-    pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
+    pub fn training_data_config(&self) -> ::std::option::Option<& crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
     /// <p>Information about the validation dataset.</p>
-    pub fn validation_data_config(&self) -> ::std::option::Option<&crate::types::ValidationDataConfig> {
+    pub fn validation_data_config(&self) -> ::std::option::Option<& crate::types::ValidationDataConfig> {
         self.validation_data_config.as_ref()
     }
     /// <p>S3 location for the output data.</p>
-    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>Parameters related to tuning the model.</p>
-    pub fn hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn hyper_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.hyper_parameters.as_ref()
     }
     /// <p>VPC configuration (optional). Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -112,12 +114,12 @@ pub struct CreateModelCustomizationJobInputBuilder {
     pub(crate) base_model_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
     pub(crate) custom_model_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) custom_model_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) job_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) custom_model_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     pub(crate) validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
-    pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl CreateModelCustomizationJobInputBuilder {
@@ -129,8 +131,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Enter a unique name for the fine-tuning job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>Enter a unique name for the fine-tuning job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +145,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Enter a name for the custom model.</p>
     pub fn set_custom_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_model_name = input;
-        self
+        self.custom_model_name = input; self
     }
     /// <p>Enter a name for the custom model.</p>
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +159,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +172,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +186,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Name of the base model.</p>
     pub fn set_base_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_model_identifier = input;
-        self
+        self.base_model_identifier = input; self
     }
     /// <p>Name of the base model.</p>
     pub fn get_base_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +199,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>The customization type.</p>
     pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
-        self.customization_type = input;
-        self
+        self.customization_type = input; self
     }
     /// <p>The customization type.</p>
     pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
@@ -216,8 +212,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn set_custom_model_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_model_kms_key_id = input;
-        self
+        self.custom_model_kms_key_id = input; self
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn get_custom_model_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,17 +225,16 @@ impl CreateModelCustomizationJobInputBuilder {
     /// <p>Assign tags to the job.</p>
     pub fn job_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.job_tags.unwrap_or_default();
-        v.push(input);
-        self.job_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Assign tags to the job.</p>
-    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.job_tags = input;
-        self
+    pub fn set_job_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.job_tags = input; self
     }
     /// <p>Assign tags to the job.</p>
-    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_job_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.job_tags
     }
     /// Appends an item to `custom_model_tags`.
@@ -250,17 +244,16 @@ impl CreateModelCustomizationJobInputBuilder {
     /// <p>Assign tags to the custom model.</p>
     pub fn custom_model_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.custom_model_tags.unwrap_or_default();
-        v.push(input);
-        self.custom_model_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_model_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Assign tags to the custom model.</p>
-    pub fn set_custom_model_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.custom_model_tags = input;
-        self
+    pub fn set_custom_model_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.custom_model_tags = input; self
     }
     /// <p>Assign tags to the custom model.</p>
-    pub fn get_custom_model_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_custom_model_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.custom_model_tags
     }
     /// <p>Information about the training dataset.</p>
@@ -271,8 +264,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Information about the training dataset.</p>
     pub fn set_training_data_config(mut self, input: ::std::option::Option<crate::types::TrainingDataConfig>) -> Self {
-        self.training_data_config = input;
-        self
+        self.training_data_config = input; self
     }
     /// <p>Information about the training dataset.</p>
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
@@ -285,8 +277,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>Information about the validation dataset.</p>
     pub fn set_validation_data_config(mut self, input: ::std::option::Option<crate::types::ValidationDataConfig>) -> Self {
-        self.validation_data_config = input;
-        self
+        self.validation_data_config = input; self
     }
     /// <p>Information about the validation dataset.</p>
     pub fn get_validation_data_config(&self) -> &::std::option::Option<crate::types::ValidationDataConfig> {
@@ -300,8 +291,7 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>S3 location for the output data.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input;
-        self
+        self.output_data_config = input; self
     }
     /// <p>S3 location for the output data.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
@@ -312,26 +302,18 @@ impl CreateModelCustomizationJobInputBuilder {
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
     /// <p>Parameters related to tuning the model.</p>
-    pub fn hyper_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn hyper_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.hyper_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.hyper_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.hyper_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Parameters related to tuning the model.</p>
-    pub fn set_hyper_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.hyper_parameters = input;
-        self
+    pub fn set_hyper_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.hyper_parameters = input; self
     }
     /// <p>Parameters related to tuning the model.</p>
-    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
     /// <p>VPC configuration (optional). Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.</p>
@@ -341,35 +323,46 @@ impl CreateModelCustomizationJobInputBuilder {
     }
     /// <p>VPC configuration (optional). Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>VPC configuration (optional). Configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for this job.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
     /// Consumes the builder and constructs a [`CreateModelCustomizationJobInput`](crate::operation::create_model_customization_job::CreateModelCustomizationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_model_customization_job::CreateModelCustomizationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_model_customization_job::CreateModelCustomizationJobInput {
-            job_name: self.job_name,
-            custom_model_name: self.custom_model_name,
-            role_arn: self.role_arn,
-            client_request_token: self.client_request_token,
-            base_model_identifier: self.base_model_identifier,
-            customization_type: self.customization_type,
-            custom_model_kms_key_id: self.custom_model_kms_key_id,
-            job_tags: self.job_tags,
-            custom_model_tags: self.custom_model_tags,
-            training_data_config: self.training_data_config,
-            validation_data_config: self.validation_data_config,
-            output_data_config: self.output_data_config,
-            hyper_parameters: self.hyper_parameters,
-            vpc_config: self.vpc_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_model_customization_job::CreateModelCustomizationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_model_customization_job::CreateModelCustomizationJobInput {
+                job_name: self.job_name
+                ,
+                custom_model_name: self.custom_model_name
+                ,
+                role_arn: self.role_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+                base_model_identifier: self.base_model_identifier
+                ,
+                customization_type: self.customization_type
+                ,
+                custom_model_kms_key_id: self.custom_model_kms_key_id
+                ,
+                job_tags: self.job_tags
+                ,
+                custom_model_tags: self.custom_model_tags
+                ,
+                training_data_config: self.training_data_config
+                ,
+                validation_data_config: self.validation_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                hyper_parameters: self.hyper_parameters
+                ,
+                vpc_config: self.vpc_config
+                ,
+            }
+        )
     }
 }
+

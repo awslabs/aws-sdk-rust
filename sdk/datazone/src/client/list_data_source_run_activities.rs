@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSourceRunActivities`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the Amazon DataZone domain in which to list data source run activities.</p><br>
     ///   - [`identifier(impl Into<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::set_identifier):<br>required: **true**<br><p>The identifier of the data source run.</p><br>
     ///   - [`status(DataAssetActivityStatus)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::status) / [`set_status(Option<DataAssetActivityStatus>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::set_status):<br>required: **false**<br><p>The status of the data source run.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>When the number of activities is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of activities, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSourceRunActivities</code> to list the next set of activities.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of activities to return in a single call to <code>ListDataSourceRunActivities</code>. When the number of activities to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListDataSourceRunActivities</code> to list the next set of activities.</p><br>
-    /// - On success, responds with [`ListDataSourceRunActivitiesOutput`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourceRunActivitiesOutput`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput) with field(s):
     ///   - [`items(Vec::<DataSourceRunActivity>)`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput::items): <p>The results of the <code>ListDataSourceRunActivities</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesOutput::next_token): <p>When the number of activities is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of activities, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSourceRunActivities</code> to list the next set of activities.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourceRunActivitiesError>`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesError)
-    pub fn list_data_source_run_activities(
-        &self,
-    ) -> crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder {
-        crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListDataSourceRunActivitiesError>`](crate::operation::list_data_source_run_activities::ListDataSourceRunActivitiesError)
+    pub fn list_data_source_run_activities(&self) -> crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder {
+                                crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

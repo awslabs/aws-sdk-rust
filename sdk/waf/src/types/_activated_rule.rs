@@ -8,7 +8,7 @@
 /// <p>To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <code>WebACLUpdate</code> data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivatedRule {
+pub struct ActivatedRule  {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
     pub priority: i32,
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
@@ -47,18 +47,17 @@ pub struct ActivatedRule {
     /// <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p></li>
     /// </ul></li>
     /// </ol>
-    pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
+    pub excluded_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>,
 }
-impl ActivatedRule {
+impl  ActivatedRule  {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
     /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
     /// <ul>
@@ -70,17 +69,17 @@ impl ActivatedRule {
     /// <p><code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL.</p></li>
     /// </ul>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::WafAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::WafAction> {
         self.action.as_ref()
     }
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn override_action(&self) -> ::std::option::Option<&crate::types::WafOverrideAction> {
+    pub fn override_action(&self) -> ::std::option::Option<& crate::types::WafOverrideAction> {
         self.override_action.as_ref()
     }
     /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WafRuleType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WafRuleType> {
         self.r#type.as_ref()
     }
     /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
@@ -99,10 +98,11 @@ impl ActivatedRule {
     /// <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p></li>
     /// </ul></li>
     /// </ol>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_rules.is_none()`.
-    pub fn excluded_rules(&self) -> &[crate::types::ExcludedRule] {
-        self.excluded_rules.as_deref().unwrap_or_default()
+    pub fn excluded_rules(&self) -> & [crate::types::ExcludedRule] {
+        self.excluded_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ActivatedRule {
@@ -121,7 +121,7 @@ pub struct ActivatedRuleBuilder {
     pub(crate) action: ::std::option::Option<crate::types::WafAction>,
     pub(crate) override_action: ::std::option::Option<crate::types::WafOverrideAction>,
     pub(crate) r#type: ::std::option::Option<crate::types::WafRuleType>,
-    pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
+    pub(crate) excluded_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>,
 }
 impl ActivatedRuleBuilder {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
@@ -132,8 +132,7 @@ impl ActivatedRuleBuilder {
     }
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -149,8 +148,7 @@ impl ActivatedRuleBuilder {
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
     /// <p><code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
@@ -182,8 +180,7 @@ impl ActivatedRuleBuilder {
     /// </ul>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WafAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
     /// <ul>
@@ -209,8 +206,7 @@ impl ActivatedRuleBuilder {
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>.</p>
     /// <p><code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn set_override_action(mut self, input: ::std::option::Option<crate::types::WafOverrideAction>) -> Self {
-        self.override_action = input;
-        self
+        self.override_action = input; self
     }
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>.</p>
@@ -225,8 +221,7 @@ impl ActivatedRuleBuilder {
     }
     /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WafRuleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WafRuleType> {
@@ -254,9 +249,9 @@ impl ActivatedRuleBuilder {
     /// </ol>
     pub fn excluded_rules(mut self, input: crate::types::ExcludedRule) -> Self {
         let mut v = self.excluded_rules.unwrap_or_default();
-        v.push(input);
-        self.excluded_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excluded_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
     /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
@@ -274,9 +269,8 @@ impl ActivatedRuleBuilder {
     /// <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p></li>
     /// </ul></li>
     /// </ol>
-    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
-        self.excluded_rules = input;
-        self
+    pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>>) -> Self {
+        self.excluded_rules = input; self
     }
     /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
     /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
@@ -294,7 +288,7 @@ impl ActivatedRuleBuilder {
     /// <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p></li>
     /// </ul></li>
     /// </ol>
-    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {
+    pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExcludedRule>> {
         &self.excluded_rules
     }
     /// Consumes the builder and constructs a [`ActivatedRule`](crate::types::ActivatedRule).
@@ -302,23 +296,28 @@ impl ActivatedRuleBuilder {
     /// - [`priority`](crate::types::builders::ActivatedRuleBuilder::priority)
     /// - [`rule_id`](crate::types::builders::ActivatedRuleBuilder::rule_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ActivatedRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActivatedRule {
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building ActivatedRule",
-                )
-            })?,
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building ActivatedRule",
-                )
-            })?,
-            action: self.action,
-            override_action: self.override_action,
-            r#type: self.r#type,
-            excluded_rules: self.excluded_rules,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActivatedRule {
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building ActivatedRule")
+                    )?
+                ,
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building ActivatedRule")
+                    )?
+                ,
+                action: self.action
+                ,
+                override_action: self.override_action
+                ,
+                r#type: self.r#type
+                ,
+                excluded_rules: self.excluded_rules
+                ,
+            }
+        )
     }
 }
+

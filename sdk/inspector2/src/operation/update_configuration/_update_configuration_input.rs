@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationInput {
+pub struct UpdateConfigurationInput  {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
-impl UpdateConfigurationInput {
+impl  UpdateConfigurationInput  {
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
-    pub fn ecr_configuration(&self) -> ::std::option::Option<&crate::types::EcrConfiguration> {
+    pub fn ecr_configuration(&self) -> ::std::option::Option<& crate::types::EcrConfiguration> {
         self.ecr_configuration.as_ref()
     }
 }
@@ -34,20 +34,20 @@ impl UpdateConfigurationInputBuilder {
     }
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub fn set_ecr_configuration(mut self, input: ::std::option::Option<crate::types::EcrConfiguration>) -> Self {
-        self.ecr_configuration = input;
-        self
+        self.ecr_configuration = input; self
     }
     /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
     pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
         &self.ecr_configuration
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_configuration::UpdateConfigurationInput {
-            ecr_configuration: self.ecr_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration::UpdateConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configuration::UpdateConfigurationInput {
+                ecr_configuration: self.ecr_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An object representing a device for a placement template (see <code>PlacementTemplate</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceTemplate {
+pub struct DeviceTemplate  {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
     pub device_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    pub callback_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub callback_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DeviceTemplate {
+impl  DeviceTemplate  {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<& str> {
         self.device_type.as_deref()
     }
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    pub fn callback_overrides(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn callback_overrides(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.callback_overrides.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl DeviceTemplate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceTemplateBuilder {
     pub(crate) device_type: ::std::option::Option<::std::string::String>,
-    pub(crate) callback_overrides: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) callback_overrides: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DeviceTemplateBuilder {
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
@@ -41,8 +41,7 @@ impl DeviceTemplateBuilder {
     }
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
     }
     /// <p>The device type, which currently must be <code>"button"</code>.</p>
     pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -53,33 +52,28 @@ impl DeviceTemplateBuilder {
     /// To override the contents of this collection use [`set_callback_overrides`](Self::set_callback_overrides).
     ///
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    pub fn callback_overrides(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn callback_overrides(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.callback_overrides.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.callback_overrides = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.callback_overrides = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    pub fn set_callback_overrides(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.callback_overrides = input;
-        self
+    pub fn set_callback_overrides(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.callback_overrides = input; self
     }
     /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
-    pub fn get_callback_overrides(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_callback_overrides(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.callback_overrides
     }
     /// Consumes the builder and constructs a [`DeviceTemplate`](crate::types::DeviceTemplate).
     pub fn build(self) -> crate::types::DeviceTemplate {
         crate::types::DeviceTemplate {
-            device_type: self.device_type,
-            callback_overrides: self.callback_overrides,
+            device_type: self.device_type
+            ,
+            callback_overrides: self.callback_overrides
+            ,
         }
     }
 }
+

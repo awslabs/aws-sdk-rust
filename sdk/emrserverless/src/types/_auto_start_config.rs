@@ -3,11 +3,11 @@
 /// <p>The configuration for an application to automatically start on job submission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoStartConfig {
+pub struct AutoStartConfig  {
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AutoStartConfig {
+impl  AutoStartConfig  {
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl AutoStartConfigBuilder {
     }
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables the application to automatically start on job submission. Defaults to true.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl AutoStartConfigBuilder {
     }
     /// Consumes the builder and constructs a [`AutoStartConfig`](crate::types::AutoStartConfig).
     pub fn build(self) -> crate::types::AutoStartConfig {
-        crate::types::AutoStartConfig { enabled: self.enabled }
+        crate::types::AutoStartConfig {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

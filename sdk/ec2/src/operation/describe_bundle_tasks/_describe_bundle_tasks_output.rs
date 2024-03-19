@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBundleTasksOutput {
+pub struct DescribeBundleTasksOutput  {
     /// <p>Information about the bundle tasks.</p>
-    pub bundle_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
+    pub bundle_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BundleTask>>,
     _request_id: Option<String>,
 }
-impl DescribeBundleTasksOutput {
+impl  DescribeBundleTasksOutput  {
     /// <p>Information about the bundle tasks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_tasks.is_none()`.
-    pub fn bundle_tasks(&self) -> &[crate::types::BundleTask] {
-        self.bundle_tasks.as_deref().unwrap_or_default()
+    pub fn bundle_tasks(&self) -> & [crate::types::BundleTask] {
+        self.bundle_tasks.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBundleTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBundleTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput).
     pub fn builder() -> crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeBundleTasksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeBundleTasksOutputBuilder {
-    pub(crate) bundle_tasks: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>,
+    pub(crate) bundle_tasks: ::std::option::Option<::std::vec::Vec::<crate::types::BundleTask>>,
     _request_id: Option<String>,
 }
 impl DescribeBundleTasksOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeBundleTasksOutputBuilder {
     /// <p>Information about the bundle tasks.</p>
     pub fn bundle_tasks(mut self, input: crate::types::BundleTask) -> Self {
         let mut v = self.bundle_tasks.unwrap_or_default();
-        v.push(input);
-        self.bundle_tasks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bundle_tasks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the bundle tasks.</p>
-    pub fn set_bundle_tasks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BundleTask>>) -> Self {
-        self.bundle_tasks = input;
-        self
+    pub fn set_bundle_tasks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BundleTask>>) -> Self {
+        self.bundle_tasks = input; self
     }
     /// <p>Information about the bundle tasks.</p>
-    pub fn get_bundle_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleTask>> {
+    pub fn get_bundle_tasks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BundleTask>> {
         &self.bundle_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBundleTasksOutput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput).
     pub fn build(self) -> crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput {
         crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput {
-            bundle_tasks: self.bundle_tasks,
+            bundle_tasks: self.bundle_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

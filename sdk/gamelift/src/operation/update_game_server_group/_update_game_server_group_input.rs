@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGameServerGroupInput {
+pub struct UpdateGameServerGroupInput  {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -22,23 +22,24 @@ pub struct UpdateGameServerGroupInput {
     /// </ul>
     pub balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
 }
-impl UpdateGameServerGroupInput {
+impl  UpdateGameServerGroupInput  {
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_definitions.is_none()`.
-    pub fn instance_definitions(&self) -> &[crate::types::InstanceDefinition] {
-        self.instance_definitions.as_deref().unwrap_or_default()
+    pub fn instance_definitions(&self) -> & [crate::types::InstanceDefinition] {
+        self.instance_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
-    pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
+    pub fn game_server_protection_policy(&self) -> ::std::option::Option<& crate::types::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -50,7 +51,7 @@ impl UpdateGameServerGroupInput {
     /// <li>
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
-    pub fn balancing_strategy(&self) -> ::std::option::Option<&crate::types::BalancingStrategy> {
+    pub fn balancing_strategy(&self) -> ::std::option::Option<& crate::types::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
 }
@@ -67,7 +68,7 @@ impl UpdateGameServerGroupInput {
 pub struct UpdateGameServerGroupInputBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     pub(crate) game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     pub(crate) balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
 }
@@ -80,8 +81,7 @@ impl UpdateGameServerGroupInputBuilder {
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +94,7 @@ impl UpdateGameServerGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,17 +107,16 @@ impl UpdateGameServerGroupInputBuilder {
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
     pub fn instance_definitions(mut self, input: crate::types::InstanceDefinition) -> Self {
         let mut v = self.instance_definitions.unwrap_or_default();
-        v.push(input);
-        self.instance_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>) -> Self {
-        self.instance_definitions = input;
-        self
+    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>) -> Self {
+        self.instance_definitions = input; self
     }
     /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
-    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
+    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>> {
         &self.instance_definitions
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
@@ -128,8 +126,7 @@ impl UpdateGameServerGroupInputBuilder {
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn set_game_server_protection_policy(mut self, input: ::std::option::Option<crate::types::GameServerProtectionPolicy>) -> Self {
-        self.game_server_protection_policy = input;
-        self
+        self.game_server_protection_policy = input; self
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
@@ -158,8 +155,7 @@ impl UpdateGameServerGroupInputBuilder {
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn set_balancing_strategy(mut self, input: ::std::option::Option<crate::types::BalancingStrategy>) -> Self {
-        self.balancing_strategy = input;
-        self
+        self.balancing_strategy = input; self
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -174,16 +170,21 @@ impl UpdateGameServerGroupInputBuilder {
         &self.balancing_strategy
     }
     /// Consumes the builder and constructs a [`UpdateGameServerGroupInput`](crate::operation::update_game_server_group::UpdateGameServerGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_game_server_group::UpdateGameServerGroupInput {
-            game_server_group_name: self.game_server_group_name,
-            role_arn: self.role_arn,
-            instance_definitions: self.instance_definitions,
-            game_server_protection_policy: self.game_server_protection_policy,
-            balancing_strategy: self.balancing_strategy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_game_server_group::UpdateGameServerGroupInput {
+                game_server_group_name: self.game_server_group_name
+                ,
+                role_arn: self.role_arn
+                ,
+                instance_definitions: self.instance_definitions
+                ,
+                game_server_protection_policy: self.game_server_protection_policy
+                ,
+                balancing_strategy: self.balancing_strategy
+                ,
+            }
+        )
     }
 }
+

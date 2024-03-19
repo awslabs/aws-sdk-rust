@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReservedNodes`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`reservation_id(impl Into<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_reservation_id):<br>required: **false**<br><p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p><br>
     ///   - [`reserved_nodes_offering_id(impl Into<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::reserved_nodes_offering_id) / [`set_reserved_nodes_offering_id(Option<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_reserved_nodes_offering_id):<br>required: **false**<br><p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p><br>
     ///   - [`node_type(impl Into<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::node_type) / [`set_node_type(Option<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_node_type):<br>required: **false**<br><p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`offering_type(impl Into<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::offering_type) / [`set_offering_type(Option<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_offering_type):<br>required: **false**<br><p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p><br>
-    /// - On success, responds with [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput) with field(s):
+                            /// - On success, responds with [`DescribeReservedNodesOutput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput::next_token): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     ///   - [`reserved_nodes(Option<Vec::<ReservedNode>>)`](crate::operation::describe_reserved_nodes::DescribeReservedNodesOutput::reserved_nodes): <p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>
-    /// - On failure, responds with [`SdkError<DescribeReservedNodesError>`](crate::operation::describe_reserved_nodes::DescribeReservedNodesError)
+                            /// - On failure, responds with [`SdkError<DescribeReservedNodesError>`](crate::operation::describe_reserved_nodes::DescribeReservedNodesError)
     pub fn describe_reserved_nodes(&self) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder {
-        crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

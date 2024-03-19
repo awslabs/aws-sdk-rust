@@ -33,3 +33,4 @@ pub mod verify_mac;
 
 /// Types for the `VerifyPinData` operation.
 pub mod verify_pin_data;
+

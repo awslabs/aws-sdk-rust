@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationProfileInput {
+pub struct CreateConfigurationProfileInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the configuration profile.</p>
@@ -38,9 +38,9 @@ pub struct CreateConfigurationProfileInput {
     /// </important>
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
-    pub validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
+    pub validators: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>,
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
@@ -48,17 +48,17 @@ pub struct CreateConfigurationProfileInput {
     /// <p>The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CreateConfigurationProfileInput {
+impl  CreateConfigurationProfileInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A name for the configuration profile.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the configuration profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
@@ -84,33 +84,34 @@ impl CreateConfigurationProfileInput {
     /// <li>
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
-    pub fn location_uri(&self) -> ::std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
-    pub fn retrieval_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn retrieval_role_arn(&self) -> ::std::option::Option<& str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validators.is_none()`.
-    pub fn validators(&self) -> &[crate::types::Validator] {
-        self.validators.as_deref().unwrap_or_default()
+    pub fn validators(&self) -> & [crate::types::Validator] {
+        self.validators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
 }
@@ -130,8 +131,8 @@ pub struct CreateConfigurationProfileInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) retrieval_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) validators: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) validators: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -144,8 +145,7 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +159,7 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>A name for the configuration profile.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the configuration profile.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +172,7 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>A description of the configuration profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the configuration profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +230,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
@@ -272,8 +269,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retrieval_role_arn = input;
-        self
+        self.retrieval_role_arn = input; self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
@@ -288,17 +284,16 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p>A list of methods for validating the configuration.</p>
     pub fn validators(mut self, input: crate::types::Validator) -> Self {
         let mut v = self.validators.unwrap_or_default();
-        v.push(input);
-        self.validators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Validator>>) -> Self {
-        self.validators = input;
-        self
+    pub fn set_validators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Validator>>) -> Self {
+        self.validators = input; self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+    pub fn get_validators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Validator>> {
         &self.validators
     }
     /// Adds a key-value pair to `tags`.
@@ -308,17 +303,16 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
@@ -332,8 +326,7 @@ impl CreateConfigurationProfileInputBuilder {
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
     /// <p><code>AWS.Freeform</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
     /// <p><code>AWS.AppConfig.FeatureFlags</code></p>
@@ -348,30 +341,36 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The identifier for an Key Management Service key to encrypt new configuration data versions in the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. The identifier can be an KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that particular service.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
     /// Consumes the builder and constructs a [`CreateConfigurationProfileInput`](crate::operation::create_configuration_profile::CreateConfigurationProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_configuration_profile::CreateConfigurationProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_configuration_profile::CreateConfigurationProfileInput {
-            application_id: self.application_id,
-            name: self.name,
-            description: self.description,
-            location_uri: self.location_uri,
-            retrieval_role_arn: self.retrieval_role_arn,
-            validators: self.validators,
-            tags: self.tags,
-            r#type: self.r#type,
-            kms_key_identifier: self.kms_key_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_configuration_profile::CreateConfigurationProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_configuration_profile::CreateConfigurationProfileInput {
+                application_id: self.application_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                location_uri: self.location_uri
+                ,
+                retrieval_role_arn: self.retrieval_role_arn
+                ,
+                validators: self.validators
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+            }
+        )
     }
 }
+

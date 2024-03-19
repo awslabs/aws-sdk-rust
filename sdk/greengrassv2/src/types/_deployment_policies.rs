@@ -3,7 +3,7 @@
 /// <p>Contains information about policies that define how a deployment updates components and handles failure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentPolicies {
+pub struct DeploymentPolicies  {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub failure_handling_policy: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>,
@@ -12,18 +12,18 @@ pub struct DeploymentPolicies {
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
     pub configuration_validation_policy: ::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy>,
 }
-impl DeploymentPolicies {
+impl  DeploymentPolicies  {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
-    pub fn failure_handling_policy(&self) -> ::std::option::Option<&crate::types::DeploymentFailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> ::std::option::Option<& crate::types::DeploymentFailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
-    pub fn component_update_policy(&self) -> ::std::option::Option<&crate::types::DeploymentComponentUpdatePolicy> {
+    pub fn component_update_policy(&self) -> ::std::option::Option<& crate::types::DeploymentComponentUpdatePolicy> {
         self.component_update_policy.as_ref()
     }
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
-    pub fn configuration_validation_policy(&self) -> ::std::option::Option<&crate::types::DeploymentConfigurationValidationPolicy> {
+    pub fn configuration_validation_policy(&self) -> ::std::option::Option<& crate::types::DeploymentConfigurationValidationPolicy> {
         self.configuration_validation_policy.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl DeploymentPoliciesBuilder {
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
     pub fn set_failure_handling_policy(mut self, input: ::std::option::Option<crate::types::DeploymentFailureHandlingPolicy>) -> Self {
-        self.failure_handling_policy = input;
-        self
+        self.failure_handling_policy = input; self
     }
     /// <p>The failure handling policy for the configuration deployment. This policy defines what to do if the deployment fails.</p>
     /// <p>Default: <code>ROLLBACK</code></p>
@@ -67,8 +66,7 @@ impl DeploymentPoliciesBuilder {
     }
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub fn set_component_update_policy(mut self, input: ::std::option::Option<crate::types::DeploymentComponentUpdatePolicy>) -> Self {
-        self.component_update_policy = input;
-        self
+        self.component_update_policy = input; self
     }
     /// <p>The component update policy for the configuration deployment. This policy defines when it's safe to deploy the configuration to devices.</p>
     pub fn get_component_update_policy(&self) -> &::std::option::Option<crate::types::DeploymentComponentUpdatePolicy> {
@@ -80,12 +78,8 @@ impl DeploymentPoliciesBuilder {
         self
     }
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
-    pub fn set_configuration_validation_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy>,
-    ) -> Self {
-        self.configuration_validation_policy = input;
-        self
+    pub fn set_configuration_validation_policy(mut self, input: ::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy>) -> Self {
+        self.configuration_validation_policy = input; self
     }
     /// <p>The configuration validation policy for the configuration deployment. This policy defines how long each component has to validate its configure updates.</p>
     pub fn get_configuration_validation_policy(&self) -> &::std::option::Option<crate::types::DeploymentConfigurationValidationPolicy> {
@@ -94,9 +88,13 @@ impl DeploymentPoliciesBuilder {
     /// Consumes the builder and constructs a [`DeploymentPolicies`](crate::types::DeploymentPolicies).
     pub fn build(self) -> crate::types::DeploymentPolicies {
         crate::types::DeploymentPolicies {
-            failure_handling_policy: self.failure_handling_policy,
-            component_update_policy: self.component_update_policy,
-            configuration_validation_policy: self.configuration_validation_policy,
+            failure_handling_policy: self.failure_handling_policy
+            ,
+            component_update_policy: self.component_update_policy
+            ,
+            configuration_validation_policy: self.configuration_validation_policy
+            ,
         }
     }
 }
+

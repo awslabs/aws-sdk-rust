@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMembers`](crate::operation::list_members::builders::ListMembersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_members::builders::ListMembersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`only_associated(bool)`](crate::operation::list_members::builders::ListMembersFluentBuilder::only_associated) / [`set_only_associated(Option<bool>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_only_associated):<br>required: **false**<br><p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p> <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p> <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_members::builders::ListMembersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_members::builders::ListMembersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p><br>
-    /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
+                            /// - On success, responds with [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput) with field(s):
     ///   - [`members(Option<Vec::<Member>>)`](crate::operation::list_members::ListMembersOutput::members): <p>Member details returned by the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_members::ListMembersOutput::next_token): <p>The pagination token to use to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
+                            /// - On failure, responds with [`SdkError<ListMembersError>`](crate::operation::list_members::ListMembersError)
     pub fn list_members(&self) -> crate::operation::list_members::builders::ListMembersFluentBuilder {
-        crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_members::builders::ListMembersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

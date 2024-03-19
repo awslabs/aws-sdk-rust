@@ -3,7 +3,7 @@
 /// <p>The source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceConfiguration {
+pub struct SourceConfiguration  {
     /// <p>The source configuration type.</p>
     pub r#type: crate::types::SourceType,
     /// <p>The source configuration S3 configuration.</p>
@@ -13,21 +13,21 @@ pub struct SourceConfiguration {
     /// <p>The source configuration IoT TwinMaker configuration.</p>
     pub iot_twin_maker_configuration: ::std::option::Option<crate::types::IotTwinMakerSourceConfiguration>,
 }
-impl SourceConfiguration {
+impl  SourceConfiguration  {
     /// <p>The source configuration type.</p>
-    pub fn r#type(&self) -> &crate::types::SourceType {
+    pub fn r#type(&self) -> & crate::types::SourceType {
         &self.r#type
     }
     /// <p>The source configuration S3 configuration.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3SourceConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3SourceConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The source configuration IoT SiteWise configuration.</p>
-    pub fn iot_site_wise_configuration(&self) -> ::std::option::Option<&crate::types::IotSiteWiseSourceConfiguration> {
+    pub fn iot_site_wise_configuration(&self) -> ::std::option::Option<& crate::types::IotSiteWiseSourceConfiguration> {
         self.iot_site_wise_configuration.as_ref()
     }
     /// <p>The source configuration IoT TwinMaker configuration.</p>
-    pub fn iot_twin_maker_configuration(&self) -> ::std::option::Option<&crate::types::IotTwinMakerSourceConfiguration> {
+    pub fn iot_twin_maker_configuration(&self) -> ::std::option::Option<& crate::types::IotTwinMakerSourceConfiguration> {
         self.iot_twin_maker_configuration.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The source configuration type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The source configuration type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -70,8 +69,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The source configuration S3 configuration.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3SourceConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>The source configuration S3 configuration.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3SourceConfiguration> {
@@ -84,8 +82,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The source configuration IoT SiteWise configuration.</p>
     pub fn set_iot_site_wise_configuration(mut self, input: ::std::option::Option<crate::types::IotSiteWiseSourceConfiguration>) -> Self {
-        self.iot_site_wise_configuration = input;
-        self
+        self.iot_site_wise_configuration = input; self
     }
     /// <p>The source configuration IoT SiteWise configuration.</p>
     pub fn get_iot_site_wise_configuration(&self) -> &::std::option::Option<crate::types::IotSiteWiseSourceConfiguration> {
@@ -98,8 +95,7 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The source configuration IoT TwinMaker configuration.</p>
     pub fn set_iot_twin_maker_configuration(mut self, input: ::std::option::Option<crate::types::IotTwinMakerSourceConfiguration>) -> Self {
-        self.iot_twin_maker_configuration = input;
-        self
+        self.iot_twin_maker_configuration = input; self
     }
     /// <p>The source configuration IoT TwinMaker configuration.</p>
     pub fn get_iot_twin_maker_configuration(&self) -> &::std::option::Option<crate::types::IotTwinMakerSourceConfiguration> {
@@ -109,16 +105,21 @@ impl SourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::SourceConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SourceConfiguration",
-                )
-            })?,
-            s3_configuration: self.s3_configuration,
-            iot_site_wise_configuration: self.iot_site_wise_configuration,
-            iot_twin_maker_configuration: self.iot_twin_maker_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SourceConfiguration")
+                    )?
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                iot_site_wise_configuration: self.iot_site_wise_configuration
+                ,
+                iot_twin_maker_configuration: self.iot_twin_maker_configuration
+                ,
+            }
+        )
     }
 }
+

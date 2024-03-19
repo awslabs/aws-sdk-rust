@@ -3,13 +3,13 @@
 /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdvancedRecognitionSetting {
+pub struct AdvancedRecognitionSetting  {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     pub audio_recognition_strategy: ::std::option::Option<crate::types::AudioRecognitionStrategy>,
 }
-impl AdvancedRecognitionSetting {
+impl  AdvancedRecognitionSetting  {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
-    pub fn audio_recognition_strategy(&self) -> ::std::option::Option<&crate::types::AudioRecognitionStrategy> {
+    pub fn audio_recognition_strategy(&self) -> ::std::option::Option<& crate::types::AudioRecognitionStrategy> {
         self.audio_recognition_strategy.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AdvancedRecognitionSettingBuilder {
     }
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn set_audio_recognition_strategy(mut self, input: ::std::option::Option<crate::types::AudioRecognitionStrategy>) -> Self {
-        self.audio_recognition_strategy = input;
-        self
+        self.audio_recognition_strategy = input; self
     }
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn get_audio_recognition_strategy(&self) -> &::std::option::Option<crate::types::AudioRecognitionStrategy> {
@@ -44,7 +43,9 @@ impl AdvancedRecognitionSettingBuilder {
     /// Consumes the builder and constructs a [`AdvancedRecognitionSetting`](crate::types::AdvancedRecognitionSetting).
     pub fn build(self) -> crate::types::AdvancedRecognitionSetting {
         crate::types::AdvancedRecognitionSetting {
-            audio_recognition_strategy: self.audio_recognition_strategy,
+            audio_recognition_strategy: self.audio_recognition_strategy
+            ,
         }
     }
 }
+

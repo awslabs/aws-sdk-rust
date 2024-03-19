@@ -3,7 +3,7 @@
 /// <p>A single retrieved relevant passage result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrieveResultItem {
+pub struct RetrieveResultItem  {
     /// <p>The identifier of the relevant passage result.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the document.</p>
@@ -15,39 +15,40 @@ pub struct RetrieveResultItem {
     /// <p>The URI of the original location of the document.</p>
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub document_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
     pub score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
 }
-impl RetrieveResultItem {
+impl  RetrieveResultItem  {
     /// <p>The identifier of the relevant passage result.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The title of the document.</p>
-    pub fn document_title(&self) -> ::std::option::Option<&str> {
+    pub fn document_title(&self) -> ::std::option::Option<& str> {
         self.document_title.as_deref()
     }
     /// <p>The contents of the relevant passage.</p>
-    pub fn content(&self) -> ::std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The URI of the original location of the document.</p>
-    pub fn document_uri(&self) -> ::std::option::Option<&str> {
+    pub fn document_uri(&self) -> ::std::option::Option<& str> {
         self.document_uri.as_deref()
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attributes.is_none()`.
-    pub fn document_attributes(&self) -> &[crate::types::DocumentAttribute] {
-        self.document_attributes.as_deref().unwrap_or_default()
+    pub fn document_attributes(&self) -> & [crate::types::DocumentAttribute] {
+        self.document_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
-    pub fn score_attributes(&self) -> ::std::option::Option<&crate::types::ScoreAttributes> {
+    pub fn score_attributes(&self) -> ::std::option::Option<& crate::types::ScoreAttributes> {
         self.score_attributes.as_ref()
     }
 }
@@ -67,7 +68,7 @@ pub struct RetrieveResultItemBuilder {
     pub(crate) document_title: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
     pub(crate) score_attributes: ::std::option::Option<crate::types::ScoreAttributes>,
 }
 impl RetrieveResultItemBuilder {
@@ -78,8 +79,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The identifier of the relevant passage result.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the relevant passage result.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The identifier of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The identifier of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The title of the document.</p>
     pub fn set_document_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_title = input;
-        self
+        self.document_title = input; self
     }
     /// <p>The title of the document.</p>
     pub fn get_document_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The contents of the relevant passage.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The contents of the relevant passage.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +131,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The URI of the original location of the document.</p>
     pub fn set_document_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_uri = input;
-        self
+        self.document_uri = input; self
     }
     /// <p>The URI of the original location of the document.</p>
     pub fn get_document_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,17 +144,16 @@ impl RetrieveResultItemBuilder {
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
     pub fn document_attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.document_attributes.unwrap_or_default();
-        v.push(input);
-        self.document_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
-        self.document_attributes = input;
-        self
+    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>) -> Self {
+        self.document_attributes = input; self
     }
     /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
-    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
@@ -168,8 +163,7 @@ impl RetrieveResultItemBuilder {
     }
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
     pub fn set_score_attributes(mut self, input: ::std::option::Option<crate::types::ScoreAttributes>) -> Self {
-        self.score_attributes = input;
-        self
+        self.score_attributes = input; self
     }
     /// <p>The confidence score bucket for a retrieved passage result. The confidence bucket provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.</p>
     pub fn get_score_attributes(&self) -> &::std::option::Option<crate::types::ScoreAttributes> {
@@ -178,13 +172,21 @@ impl RetrieveResultItemBuilder {
     /// Consumes the builder and constructs a [`RetrieveResultItem`](crate::types::RetrieveResultItem).
     pub fn build(self) -> crate::types::RetrieveResultItem {
         crate::types::RetrieveResultItem {
-            id: self.id,
-            document_id: self.document_id,
-            document_title: self.document_title,
-            content: self.content,
-            document_uri: self.document_uri,
-            document_attributes: self.document_attributes,
-            score_attributes: self.score_attributes,
+            id: self.id
+            ,
+            document_id: self.document_id
+            ,
+            document_title: self.document_title
+            ,
+            content: self.content
+            ,
+            document_uri: self.document_uri
+            ,
+            document_attributes: self.document_attributes
+            ,
+            score_attributes: self.score_attributes
+            ,
         }
     }
 }
+

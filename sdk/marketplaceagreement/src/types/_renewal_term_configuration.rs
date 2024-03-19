@@ -3,11 +3,11 @@
 /// <p>Additional parameters specified by the acceptor while accepting the term.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewalTermConfiguration {
+pub struct RenewalTermConfiguration  {
     /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
     pub enable_auto_renew: bool,
 }
-impl RenewalTermConfiguration {
+impl  RenewalTermConfiguration  {
     /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
     pub fn enable_auto_renew(&self) -> bool {
         self.enable_auto_renew
@@ -35,8 +35,7 @@ impl RenewalTermConfigurationBuilder {
     }
     /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
     pub fn set_enable_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_auto_renew = input;
-        self
+        self.enable_auto_renew = input; self
     }
     /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
     pub fn get_enable_auto_renew(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl RenewalTermConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_auto_renew`](crate::types::builders::RenewalTermConfigurationBuilder::enable_auto_renew)
     pub fn build(self) -> ::std::result::Result<crate::types::RenewalTermConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RenewalTermConfiguration {
-            enable_auto_renew: self.enable_auto_renew.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_auto_renew",
-                    "enable_auto_renew was not specified but it is required when building RenewalTermConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RenewalTermConfiguration {
+                enable_auto_renew: self.enable_auto_renew
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_auto_renew", "enable_auto_renew was not specified but it is required when building RenewalTermConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

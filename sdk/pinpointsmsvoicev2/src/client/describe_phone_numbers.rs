@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribePhoneNumbers`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`phone_number_ids(impl Into<String>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::phone_number_ids) / [`set_phone_number_ids(Option<Vec::<String>>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::set_phone_number_ids):<br>required: **false**<br><p>The unique identifier of phone numbers to find information about. This is an array of strings that can be either the PhoneNumberId or PhoneNumberArn.</p><br>
     ///   - [`filters(PhoneNumberFilter)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::filters) / [`set_filters(Option<Vec::<PhoneNumberFilter>>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::set_filters):<br>required: **false**<br><p>An array of PhoneNumberFilter objects to filter the results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribePhoneNumbersOutput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput) with field(s):
+                            /// - On success, responds with [`DescribePhoneNumbersOutput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput) with field(s):
     ///   - [`phone_numbers(Option<Vec::<PhoneNumberInformation>>)`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput::phone_numbers): <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_phone_numbers::DescribePhoneNumbersOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribePhoneNumbersError>`](crate::operation::describe_phone_numbers::DescribePhoneNumbersError)
+                            /// - On failure, responds with [`SdkError<DescribePhoneNumbersError>`](crate::operation::describe_phone_numbers::DescribePhoneNumbersError)
     pub fn describe_phone_numbers(&self) -> crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder {
-        crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

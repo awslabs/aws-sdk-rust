@@ -5,56 +5,52 @@ pub use crate::operation::create_dev_environment::_create_dev_environment_input:
 
 impl CreateDevEnvironmentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_dev_environment();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_dev_environment::CreateDevEnvironmentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_dev_environment();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateDevEnvironment`.
-///
+/// 
 /// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project.</p><note>
 /// <p>When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder,
+                    inner: crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        crate::operation::create_dev_environment::CreateDevEnvironmentError,
-    > for CreateDevEnvironmentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
+                    crate::operation::create_dev_environment::CreateDevEnvironmentError,
+                > for CreateDevEnvironmentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
+                        crate::operation::create_dev_environment::CreateDevEnvironmentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateDevEnvironmentFluentBuilder {
     /// Creates a new `CreateDevEnvironment`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CreateDevEnvironmentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_dev_environment::CreateDevEnvironmentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_dev_environment::CreateDevEnvironment::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_dev_environment::CreateDevEnvironment::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        crate::operation::create_dev_environment::CreateDevEnvironmentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dev_environment::CreateDevEnvironmentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_dev_environment::CreateDevEnvironment::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_dev_environment::CreateDevEnvironment::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_dev_environment::CreateDevEnvironmentOutput, crate::operation::create_dev_environment::CreateDevEnvironmentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
@@ -148,12 +135,12 @@ impl CreateDevEnvironmentFluentBuilder {
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>) -> Self {
+    pub fn set_repositories(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>>) -> Self {
         self.inner = self.inner.set_repositories(input);
         self
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment.</p>
-    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>> {
+    pub fn get_repositories(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryInput>> {
         self.inner.get_repositories()
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -198,14 +185,14 @@ impl CreateDevEnvironmentFluentBuilder {
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>) -> Self {
+    pub fn set_ides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>>) -> Self {
         self.inner = self.inner.set_ides(input);
         self
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p><note>
     /// <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>
     /// </note>
-    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>> {
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdeConfiguration>> {
         self.inner.get_ides()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment.</p>
@@ -271,3 +258,4 @@ impl CreateDevEnvironmentFluentBuilder {
         self.inner.get_vpc_connection_name()
     }
 }
+

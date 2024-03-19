@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchUsersOutput {
+pub struct SearchUsersOutput  {
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
-    pub user_matches: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>,
+    pub user_matches: ::std::option::Option<::std::vec::Vec::<crate::types::UserMatch>>,
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
     pub face_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
@@ -13,31 +13,32 @@ pub struct SearchUsersOutput {
     pub searched_user: ::std::option::Option<crate::types::SearchedUser>,
     _request_id: Option<String>,
 }
-impl SearchUsersOutput {
+impl  SearchUsersOutput  {
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_matches.is_none()`.
-    pub fn user_matches(&self) -> &[crate::types::UserMatch] {
-        self.user_matches.as_deref().unwrap_or_default()
+    pub fn user_matches(&self) -> & [crate::types::UserMatch] {
+        self.user_matches.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
-    pub fn face_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn face_model_version(&self) -> ::std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
-    pub fn searched_face(&self) -> ::std::option::Option<&crate::types::SearchedFace> {
+    pub fn searched_face(&self) -> ::std::option::Option<& crate::types::SearchedFace> {
         self.searched_face.as_ref()
     }
     /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
-    pub fn searched_user(&self) -> ::std::option::Option<&crate::types::SearchedUser> {
+    pub fn searched_user(&self) -> ::std::option::Option<& crate::types::SearchedUser> {
         self.searched_user.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchUsersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchUsersOutput {
     /// Creates a new builder-style object to manufacture [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
     pub fn builder() -> crate::operation::search_users::builders::SearchUsersOutputBuilder {
@@ -49,7 +50,7 @@ impl SearchUsersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchUsersOutputBuilder {
-    pub(crate) user_matches: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>,
+    pub(crate) user_matches: ::std::option::Option<::std::vec::Vec::<crate::types::UserMatch>>,
     pub(crate) face_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) searched_face: ::std::option::Option<crate::types::SearchedFace>,
     pub(crate) searched_user: ::std::option::Option<crate::types::SearchedUser>,
@@ -63,17 +64,16 @@ impl SearchUsersOutputBuilder {
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
     pub fn user_matches(mut self, input: crate::types::UserMatch) -> Self {
         let mut v = self.user_matches.unwrap_or_default();
-        v.push(input);
-        self.user_matches = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_matches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
-    pub fn set_user_matches(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserMatch>>) -> Self {
-        self.user_matches = input;
-        self
+    pub fn set_user_matches(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserMatch>>) -> Self {
+        self.user_matches = input; self
     }
     /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
-    pub fn get_user_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserMatch>> {
+    pub fn get_user_matches(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserMatch>> {
         &self.user_matches
     }
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
@@ -83,8 +83,7 @@ impl SearchUsersOutputBuilder {
     }
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
     pub fn set_face_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.face_model_version = input;
-        self
+        self.face_model_version = input; self
     }
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
     pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl SearchUsersOutputBuilder {
     }
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
     pub fn set_searched_face(mut self, input: ::std::option::Option<crate::types::SearchedFace>) -> Self {
-        self.searched_face = input;
-        self
+        self.searched_face = input; self
     }
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
     pub fn get_searched_face(&self) -> &::std::option::Option<crate::types::SearchedFace> {
@@ -111,30 +109,34 @@ impl SearchUsersOutputBuilder {
     }
     /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
     pub fn set_searched_user(mut self, input: ::std::option::Option<crate::types::SearchedUser>) -> Self {
-        self.searched_user = input;
-        self
+        self.searched_user = input; self
     }
     /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
     pub fn get_searched_user(&self) -> &::std::option::Option<crate::types::SearchedUser> {
         &self.searched_user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchUsersOutput`](crate::operation::search_users::SearchUsersOutput).
     pub fn build(self) -> crate::operation::search_users::SearchUsersOutput {
         crate::operation::search_users::SearchUsersOutput {
-            user_matches: self.user_matches,
-            face_model_version: self.face_model_version,
-            searched_face: self.searched_face,
-            searched_user: self.searched_user,
+            user_matches: self.user_matches
+            ,
+            face_model_version: self.face_model_version
+            ,
+            searched_face: self.searched_face
+            ,
+            searched_user: self.searched_user
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

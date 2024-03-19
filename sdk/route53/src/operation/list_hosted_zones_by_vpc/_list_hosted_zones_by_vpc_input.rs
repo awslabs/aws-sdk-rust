@@ -3,7 +3,7 @@
 /// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account created the hosted zones.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHostedZonesByVpcInput {
+pub struct ListHostedZonesByVpcInput  {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
@@ -15,13 +15,13 @@ pub struct ListHostedZonesByVpcInput {
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListHostedZonesByVpcInput {
+impl  ListHostedZonesByVpcInput  {
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
-    pub fn vpc_region(&self) -> ::std::option::Option<&crate::types::VpcRegion> {
+    pub fn vpc_region(&self) -> ::std::option::Option<& crate::types::VpcRegion> {
         self.vpc_region.as_ref()
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
@@ -31,7 +31,7 @@ impl ListHostedZonesByVpcInput {
     /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request.</p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -60,8 +60,7 @@ impl ListHostedZonesByVpcInputBuilder {
     }
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListHostedZonesByVpcInputBuilder {
     }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
     pub fn set_vpc_region(mut self, input: ::std::option::Option<crate::types::VpcRegion>) -> Self {
-        self.vpc_region = input;
-        self
+        self.vpc_region = input; self
     }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in.</p>
     pub fn get_vpc_region(&self) -> &::std::option::Option<crate::types::VpcRegion> {
@@ -89,8 +87,7 @@ impl ListHostedZonesByVpcInputBuilder {
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -107,8 +104,7 @@ impl ListHostedZonesByVpcInputBuilder {
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request.</p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
@@ -117,15 +113,19 @@ impl ListHostedZonesByVpcInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHostedZonesByVpcInput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput {
-            vpc_id: self.vpc_id,
-            vpc_region: self.vpc_region,
-            max_items: self.max_items,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput {
+                vpc_id: self.vpc_id
+                ,
+                vpc_region: self.vpc_region
+                ,
+                max_items: self.max_items
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

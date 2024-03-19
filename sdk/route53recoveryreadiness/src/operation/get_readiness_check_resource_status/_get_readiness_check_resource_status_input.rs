@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadinessCheckResourceStatusInput {
+pub struct GetReadinessCheckResourceStatusInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -12,21 +12,21 @@ pub struct GetReadinessCheckResourceStatusInput {
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetReadinessCheckResourceStatusInput {
+impl  GetReadinessCheckResourceStatusInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> ::std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> ::std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -68,8 +67,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>Name of a readiness check.</p>
     pub fn set_readiness_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.readiness_check_name = input;
-        self
+        self.readiness_check_name = input; self
     }
     /// <p>Name of a readiness check.</p>
     pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,27 +95,26 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                readiness_check_name: self.readiness_check_name,
-                resource_identifier: self.resource_identifier,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                readiness_check_name: self.readiness_check_name
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+            }
         )
     }
 }
+

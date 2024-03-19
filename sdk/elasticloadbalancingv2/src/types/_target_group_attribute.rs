@@ -3,7 +3,7 @@
 /// <p>Information about a target group attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetGroupAttribute {
+pub struct TargetGroupAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
@@ -80,7 +80,7 @@ pub struct TargetGroupAttribute {
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl TargetGroupAttribute {
+impl  TargetGroupAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
@@ -153,11 +153,11 @@ impl TargetGroupAttribute {
     /// <li>
     /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -325,8 +325,7 @@ impl TargetGroupAttributeBuilder {
     /// <p><code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes must be the same.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
@@ -410,8 +409,7 @@ impl TargetGroupAttributeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -420,8 +418,11 @@ impl TargetGroupAttributeBuilder {
     /// Consumes the builder and constructs a [`TargetGroupAttribute`](crate::types::TargetGroupAttribute).
     pub fn build(self) -> crate::types::TargetGroupAttribute {
         crate::types::TargetGroupAttribute {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

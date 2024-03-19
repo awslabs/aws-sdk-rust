@@ -3,7 +3,7 @@
 /// <p>The container for the properties of a transaction event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransactionEvent {
+pub struct TransactionEvent  {
     /// <p>The blockchain network where the transaction occurred.</p>
     pub network: crate::types::QueryNetwork,
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
@@ -45,42 +45,41 @@ pub struct TransactionEvent {
     /// <p>This container specifies whether the transaction has reached Finality.</p>
     pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
 }
-impl TransactionEvent {
+impl  TransactionEvent  {
     /// <p>The blockchain network where the transaction occurred.</p>
-    pub fn network(&self) -> &crate::types::QueryNetwork {
+    pub fn network(&self) -> & crate::types::QueryNetwork {
         &self.network
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
-    pub fn transaction_hash(&self) -> &str {
-        use std::ops::Deref;
-        self.transaction_hash.deref()
+    pub fn transaction_hash(&self) -> & str {
+        use std::ops::Deref; self.transaction_hash.deref()
     }
     /// <p>The type of transaction event.</p>
-    pub fn event_type(&self) -> &crate::types::QueryTransactionEventType {
+    pub fn event_type(&self) -> & crate::types::QueryTransactionEventType {
         &self.event_type
     }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
-    pub fn from(&self) -> ::std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<& str> {
         self.from.as_deref()
     }
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
-    pub fn to(&self) -> ::std::option::Option<&str> {
+    pub fn to(&self) -> ::std::option::Option<& str> {
         self.to.as_deref()
     }
     /// <p>The value that was transacted.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The blockchain address for the contract</p>
-    pub fn contract_address(&self) -> ::std::option::Option<&str> {
+    pub fn contract_address(&self) -> ::std::option::Option<& str> {
         self.contract_address.as_deref()
     }
     /// <p>The unique identifier for the token involved in the transaction.</p>
-    pub fn token_id(&self) -> ::std::option::Option<&str> {
+    pub fn token_id(&self) -> ::std::option::Option<& str> {
         self.token_id.as_deref()
     }
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The position of the transaction output in the transaction output list.</p>
@@ -96,13 +95,13 @@ impl TransactionEvent {
     /// <p>The transactionId that <i>created</i> the spent transaction output.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
     /// </note>
-    pub fn spent_vout_transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn spent_vout_transaction_id(&self) -> ::std::option::Option<& str> {
         self.spent_vout_transaction_id.as_deref()
     }
     /// <p>The transactionHash that <i>created</i> the spent transaction output.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
     /// </note>
-    pub fn spent_vout_transaction_hash(&self) -> ::std::option::Option<&str> {
+    pub fn spent_vout_transaction_hash(&self) -> ::std::option::Option<& str> {
         self.spent_vout_transaction_hash.as_deref()
     }
     /// <p>The position of the spent transaction output in the output list of the <i>creating transaction</i>.</p><note>
@@ -112,11 +111,11 @@ impl TransactionEvent {
         self.spent_vout_index
     }
     /// <p>The container for time.</p>
-    pub fn blockchain_instant(&self) -> ::std::option::Option<&crate::types::BlockchainInstant> {
+    pub fn blockchain_instant(&self) -> ::std::option::Option<& crate::types::BlockchainInstant> {
         self.blockchain_instant.as_ref()
     }
     /// <p>This container specifies whether the transaction has reached Finality.</p>
-    pub fn confirmation_status(&self) -> ::std::option::Option<&crate::types::ConfirmationStatus> {
+    pub fn confirmation_status(&self) -> ::std::option::Option<& crate::types::ConfirmationStatus> {
         self.confirmation_status.as_ref()
     }
 }
@@ -157,8 +156,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network where the transaction occurred.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
@@ -172,8 +170,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_hash = input;
-        self
+        self.transaction_hash = input; self
     }
     /// <p>The hash of a transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +184,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The type of transaction event.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::QueryTransactionEventType>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The type of transaction event.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::QueryTransactionEventType> {
@@ -201,8 +197,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The wallet address initiating the transaction. It can either be a public key or a contract.</p>
     pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +210,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
     pub fn set_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// <p>The wallet address receiving the transaction. It can either be a public key or a contract.</p>
     pub fn get_to(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +223,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The value that was transacted.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value that was transacted.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +236,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The blockchain address for the contract</p>
     pub fn set_contract_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contract_address = input;
-        self
+        self.contract_address = input; self
     }
     /// <p>The blockchain address for the contract</p>
     pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +249,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The unique identifier for the token involved in the transaction.</p>
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_id = input;
-        self
+        self.token_id = input; self
     }
     /// <p>The unique identifier for the token involved in the transaction.</p>
     pub fn get_token_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +262,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The identifier of a Bitcoin transaction. It is generated when a transaction is created.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -285,8 +275,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The position of the transaction output in the transaction output list.</p>
     pub fn set_vout_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vout_index = input;
-        self
+        self.vout_index = input; self
     }
     /// <p>The position of the transaction output in the transaction output list.</p>
     pub fn get_vout_index(&self) -> &::std::option::Option<i32> {
@@ -303,8 +292,7 @@ impl TransactionEventBuilder {
     /// <p>This is only returned for <code>BITCOIN_VOUT</code> event types.</p>
     /// </note>
     pub fn set_vout_spent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.vout_spent = input;
-        self
+        self.vout_spent = input; self
     }
     /// <p>Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VOUT</code> event types.</p>
@@ -323,8 +311,7 @@ impl TransactionEventBuilder {
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
     /// </note>
     pub fn set_spent_vout_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spent_vout_transaction_id = input;
-        self
+        self.spent_vout_transaction_id = input; self
     }
     /// <p>The transactionId that <i>created</i> the spent transaction output.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
@@ -343,8 +330,7 @@ impl TransactionEventBuilder {
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
     /// </note>
     pub fn set_spent_vout_transaction_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spent_vout_transaction_hash = input;
-        self
+        self.spent_vout_transaction_hash = input; self
     }
     /// <p>The transactionHash that <i>created</i> the spent transaction output.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
@@ -363,8 +349,7 @@ impl TransactionEventBuilder {
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
     /// </note>
     pub fn set_spent_vout_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.spent_vout_index = input;
-        self
+        self.spent_vout_index = input; self
     }
     /// <p>The position of the spent transaction output in the output list of the <i>creating transaction</i>.</p><note>
     /// <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
@@ -379,8 +364,7 @@ impl TransactionEventBuilder {
     }
     /// <p>The container for time.</p>
     pub fn set_blockchain_instant(mut self, input: ::std::option::Option<crate::types::BlockchainInstant>) -> Self {
-        self.blockchain_instant = input;
-        self
+        self.blockchain_instant = input; self
     }
     /// <p>The container for time.</p>
     pub fn get_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
@@ -393,8 +377,7 @@ impl TransactionEventBuilder {
     }
     /// <p>This container specifies whether the transaction has reached Finality.</p>
     pub fn set_confirmation_status(mut self, input: ::std::option::Option<crate::types::ConfirmationStatus>) -> Self {
-        self.confirmation_status = input;
-        self
+        self.confirmation_status = input; self
     }
     /// <p>This container specifies whether the transaction has reached Finality.</p>
     pub fn get_confirmation_status(&self) -> &::std::option::Option<crate::types::ConfirmationStatus> {
@@ -406,38 +389,51 @@ impl TransactionEventBuilder {
     /// - [`transaction_hash`](crate::types::builders::TransactionEventBuilder::transaction_hash)
     /// - [`event_type`](crate::types::builders::TransactionEventBuilder::event_type)
     pub fn build(self) -> ::std::result::Result<crate::types::TransactionEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TransactionEvent {
-            network: self.network.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network",
-                    "network was not specified but it is required when building TransactionEvent",
-                )
-            })?,
-            transaction_hash: self.transaction_hash.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transaction_hash",
-                    "transaction_hash was not specified but it is required when building TransactionEvent",
-                )
-            })?,
-            event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_type",
-                    "event_type was not specified but it is required when building TransactionEvent",
-                )
-            })?,
-            from: self.from,
-            to: self.to,
-            value: self.value,
-            contract_address: self.contract_address,
-            token_id: self.token_id,
-            transaction_id: self.transaction_id,
-            vout_index: self.vout_index,
-            vout_spent: self.vout_spent,
-            spent_vout_transaction_id: self.spent_vout_transaction_id,
-            spent_vout_transaction_hash: self.spent_vout_transaction_hash,
-            spent_vout_index: self.spent_vout_index,
-            blockchain_instant: self.blockchain_instant,
-            confirmation_status: self.confirmation_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TransactionEvent {
+                network: self.network
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network", "network was not specified but it is required when building TransactionEvent")
+                    )?
+                ,
+                transaction_hash: self.transaction_hash
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transaction_hash", "transaction_hash was not specified but it is required when building TransactionEvent")
+                    )?
+                ,
+                event_type: self.event_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_type", "event_type was not specified but it is required when building TransactionEvent")
+                    )?
+                ,
+                from: self.from
+                ,
+                to: self.to
+                ,
+                value: self.value
+                ,
+                contract_address: self.contract_address
+                ,
+                token_id: self.token_id
+                ,
+                transaction_id: self.transaction_id
+                ,
+                vout_index: self.vout_index
+                ,
+                vout_spent: self.vout_spent
+                ,
+                spent_vout_transaction_id: self.spent_vout_transaction_id
+                ,
+                spent_vout_transaction_hash: self.spent_vout_transaction_hash
+                ,
+                spent_vout_index: self.spent_vout_index
+                ,
+                blockchain_instant: self.blockchain_instant
+                ,
+                confirmation_status: self.confirmation_status
+                ,
+            }
+        )
     }
 }
+

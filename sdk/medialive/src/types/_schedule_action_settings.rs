@@ -3,7 +3,7 @@
 /// Holds the settings for a single schedule action.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleActionSettings {
+pub struct ScheduleActionSettings  {
     /// Action to insert HLS ID3 segment tagging
     pub hls_id3_segment_tagging_settings: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
     /// Action to insert HLS metadata
@@ -35,65 +35,65 @@ pub struct ScheduleActionSettings {
     /// Action to deactivate a static image overlay in one or more specified outputs
     pub static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
 }
-impl ScheduleActionSettings {
+impl  ScheduleActionSettings  {
     /// Action to insert HLS ID3 segment tagging
-    pub fn hls_id3_segment_tagging_settings(&self) -> ::std::option::Option<&crate::types::HlsId3SegmentTaggingScheduleActionSettings> {
+    pub fn hls_id3_segment_tagging_settings(&self) -> ::std::option::Option<& crate::types::HlsId3SegmentTaggingScheduleActionSettings> {
         self.hls_id3_segment_tagging_settings.as_ref()
     }
     /// Action to insert HLS metadata
-    pub fn hls_timed_metadata_settings(&self) -> ::std::option::Option<&crate::types::HlsTimedMetadataScheduleActionSettings> {
+    pub fn hls_timed_metadata_settings(&self) -> ::std::option::Option<& crate::types::HlsTimedMetadataScheduleActionSettings> {
         self.hls_timed_metadata_settings.as_ref()
     }
     /// Action to prepare an input for a future immediate input switch
-    pub fn input_prepare_settings(&self) -> ::std::option::Option<&crate::types::InputPrepareScheduleActionSettings> {
+    pub fn input_prepare_settings(&self) -> ::std::option::Option<& crate::types::InputPrepareScheduleActionSettings> {
         self.input_prepare_settings.as_ref()
     }
     /// Action to switch the input
-    pub fn input_switch_settings(&self) -> ::std::option::Option<&crate::types::InputSwitchScheduleActionSettings> {
+    pub fn input_switch_settings(&self) -> ::std::option::Option<& crate::types::InputSwitchScheduleActionSettings> {
         self.input_switch_settings.as_ref()
     }
     /// Action to activate a motion graphics image overlay
-    pub fn motion_graphics_image_activate_settings(&self) -> ::std::option::Option<&crate::types::MotionGraphicsActivateScheduleActionSettings> {
+    pub fn motion_graphics_image_activate_settings(&self) -> ::std::option::Option<& crate::types::MotionGraphicsActivateScheduleActionSettings> {
         self.motion_graphics_image_activate_settings.as_ref()
     }
     /// Action to deactivate a motion graphics image overlay
-    pub fn motion_graphics_image_deactivate_settings(&self) -> ::std::option::Option<&crate::types::MotionGraphicsDeactivateScheduleActionSettings> {
+    pub fn motion_graphics_image_deactivate_settings(&self) -> ::std::option::Option<& crate::types::MotionGraphicsDeactivateScheduleActionSettings> {
         self.motion_graphics_image_deactivate_settings.as_ref()
     }
     /// Action to pause or unpause one or both channel pipelines
-    pub fn pause_state_settings(&self) -> ::std::option::Option<&crate::types::PauseStateScheduleActionSettings> {
+    pub fn pause_state_settings(&self) -> ::std::option::Option<& crate::types::PauseStateScheduleActionSettings> {
         self.pause_state_settings.as_ref()
     }
     /// Action to specify scte35 input
-    pub fn scte35_input_settings(&self) -> ::std::option::Option<&crate::types::Scte35InputScheduleActionSettings> {
+    pub fn scte35_input_settings(&self) -> ::std::option::Option<& crate::types::Scte35InputScheduleActionSettings> {
         self.scte35_input_settings.as_ref()
     }
     /// Action to insert SCTE-35 return_to_network message
-    pub fn scte35_return_to_network_settings(&self) -> ::std::option::Option<&crate::types::Scte35ReturnToNetworkScheduleActionSettings> {
+    pub fn scte35_return_to_network_settings(&self) -> ::std::option::Option<& crate::types::Scte35ReturnToNetworkScheduleActionSettings> {
         self.scte35_return_to_network_settings.as_ref()
     }
     /// Action to insert SCTE-35 splice_insert message
-    pub fn scte35_splice_insert_settings(&self) -> ::std::option::Option<&crate::types::Scte35SpliceInsertScheduleActionSettings> {
+    pub fn scte35_splice_insert_settings(&self) -> ::std::option::Option<& crate::types::Scte35SpliceInsertScheduleActionSettings> {
         self.scte35_splice_insert_settings.as_ref()
     }
     /// Action to insert SCTE-35 time_signal message
-    pub fn scte35_time_signal_settings(&self) -> ::std::option::Option<&crate::types::Scte35TimeSignalScheduleActionSettings> {
+    pub fn scte35_time_signal_settings(&self) -> ::std::option::Option<& crate::types::Scte35TimeSignalScheduleActionSettings> {
         self.scte35_time_signal_settings.as_ref()
     }
     /// Action to activate a static image overlay
-    pub fn static_image_activate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageActivateScheduleActionSettings> {
+    pub fn static_image_activate_settings(&self) -> ::std::option::Option<& crate::types::StaticImageActivateScheduleActionSettings> {
         self.static_image_activate_settings.as_ref()
     }
     /// Action to deactivate a static image overlay
-    pub fn static_image_deactivate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageDeactivateScheduleActionSettings> {
+    pub fn static_image_deactivate_settings(&self) -> ::std::option::Option<& crate::types::StaticImageDeactivateScheduleActionSettings> {
         self.static_image_deactivate_settings.as_ref()
     }
     /// Action to activate a static image overlay in one or more specified outputs
-    pub fn static_image_output_activate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageOutputActivateScheduleActionSettings> {
+    pub fn static_image_output_activate_settings(&self) -> ::std::option::Option<& crate::types::StaticImageOutputActivateScheduleActionSettings> {
         self.static_image_output_activate_settings.as_ref()
     }
     /// Action to deactivate a static image overlay in one or more specified outputs
-    pub fn static_image_output_deactivate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
+    pub fn static_image_output_deactivate_settings(&self) -> ::std::option::Option<& crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
         self.static_image_output_deactivate_settings.as_ref()
     }
 }
@@ -131,12 +131,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to insert HLS ID3 segment tagging
-    pub fn set_hls_id3_segment_tagging_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
-    ) -> Self {
-        self.hls_id3_segment_tagging_settings = input;
-        self
+    pub fn set_hls_id3_segment_tagging_settings(mut self, input: ::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>) -> Self {
+        self.hls_id3_segment_tagging_settings = input; self
     }
     /// Action to insert HLS ID3 segment tagging
     pub fn get_hls_id3_segment_tagging_settings(&self) -> &::std::option::Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings> {
@@ -149,8 +145,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to insert HLS metadata
     pub fn set_hls_timed_metadata_settings(mut self, input: ::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings>) -> Self {
-        self.hls_timed_metadata_settings = input;
-        self
+        self.hls_timed_metadata_settings = input; self
     }
     /// Action to insert HLS metadata
     pub fn get_hls_timed_metadata_settings(&self) -> &::std::option::Option<crate::types::HlsTimedMetadataScheduleActionSettings> {
@@ -163,8 +158,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to prepare an input for a future immediate input switch
     pub fn set_input_prepare_settings(mut self, input: ::std::option::Option<crate::types::InputPrepareScheduleActionSettings>) -> Self {
-        self.input_prepare_settings = input;
-        self
+        self.input_prepare_settings = input; self
     }
     /// Action to prepare an input for a future immediate input switch
     pub fn get_input_prepare_settings(&self) -> &::std::option::Option<crate::types::InputPrepareScheduleActionSettings> {
@@ -177,8 +171,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to switch the input
     pub fn set_input_switch_settings(mut self, input: ::std::option::Option<crate::types::InputSwitchScheduleActionSettings>) -> Self {
-        self.input_switch_settings = input;
-        self
+        self.input_switch_settings = input; self
     }
     /// Action to switch the input
     pub fn get_input_switch_settings(&self) -> &::std::option::Option<crate::types::InputSwitchScheduleActionSettings> {
@@ -190,12 +183,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to activate a motion graphics image overlay
-    pub fn set_motion_graphics_image_activate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionGraphicsActivateScheduleActionSettings>,
-    ) -> Self {
-        self.motion_graphics_image_activate_settings = input;
-        self
+    pub fn set_motion_graphics_image_activate_settings(mut self, input: ::std::option::Option<crate::types::MotionGraphicsActivateScheduleActionSettings>) -> Self {
+        self.motion_graphics_image_activate_settings = input; self
     }
     /// Action to activate a motion graphics image overlay
     pub fn get_motion_graphics_image_activate_settings(&self) -> &::std::option::Option<crate::types::MotionGraphicsActivateScheduleActionSettings> {
@@ -207,17 +196,11 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to deactivate a motion graphics image overlay
-    pub fn set_motion_graphics_image_deactivate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::MotionGraphicsDeactivateScheduleActionSettings>,
-    ) -> Self {
-        self.motion_graphics_image_deactivate_settings = input;
-        self
+    pub fn set_motion_graphics_image_deactivate_settings(mut self, input: ::std::option::Option<crate::types::MotionGraphicsDeactivateScheduleActionSettings>) -> Self {
+        self.motion_graphics_image_deactivate_settings = input; self
     }
     /// Action to deactivate a motion graphics image overlay
-    pub fn get_motion_graphics_image_deactivate_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::MotionGraphicsDeactivateScheduleActionSettings> {
+    pub fn get_motion_graphics_image_deactivate_settings(&self) -> &::std::option::Option<crate::types::MotionGraphicsDeactivateScheduleActionSettings> {
         &self.motion_graphics_image_deactivate_settings
     }
     /// Action to pause or unpause one or both channel pipelines
@@ -227,8 +210,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to pause or unpause one or both channel pipelines
     pub fn set_pause_state_settings(mut self, input: ::std::option::Option<crate::types::PauseStateScheduleActionSettings>) -> Self {
-        self.pause_state_settings = input;
-        self
+        self.pause_state_settings = input; self
     }
     /// Action to pause or unpause one or both channel pipelines
     pub fn get_pause_state_settings(&self) -> &::std::option::Option<crate::types::PauseStateScheduleActionSettings> {
@@ -241,8 +223,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to specify scte35 input
     pub fn set_scte35_input_settings(mut self, input: ::std::option::Option<crate::types::Scte35InputScheduleActionSettings>) -> Self {
-        self.scte35_input_settings = input;
-        self
+        self.scte35_input_settings = input; self
     }
     /// Action to specify scte35 input
     pub fn get_scte35_input_settings(&self) -> &::std::option::Option<crate::types::Scte35InputScheduleActionSettings> {
@@ -254,12 +235,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to insert SCTE-35 return_to_network message
-    pub fn set_scte35_return_to_network_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::Scte35ReturnToNetworkScheduleActionSettings>,
-    ) -> Self {
-        self.scte35_return_to_network_settings = input;
-        self
+    pub fn set_scte35_return_to_network_settings(mut self, input: ::std::option::Option<crate::types::Scte35ReturnToNetworkScheduleActionSettings>) -> Self {
+        self.scte35_return_to_network_settings = input; self
     }
     /// Action to insert SCTE-35 return_to_network message
     pub fn get_scte35_return_to_network_settings(&self) -> &::std::option::Option<crate::types::Scte35ReturnToNetworkScheduleActionSettings> {
@@ -272,8 +249,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to insert SCTE-35 splice_insert message
     pub fn set_scte35_splice_insert_settings(mut self, input: ::std::option::Option<crate::types::Scte35SpliceInsertScheduleActionSettings>) -> Self {
-        self.scte35_splice_insert_settings = input;
-        self
+        self.scte35_splice_insert_settings = input; self
     }
     /// Action to insert SCTE-35 splice_insert message
     pub fn get_scte35_splice_insert_settings(&self) -> &::std::option::Option<crate::types::Scte35SpliceInsertScheduleActionSettings> {
@@ -286,8 +262,7 @@ impl ScheduleActionSettingsBuilder {
     }
     /// Action to insert SCTE-35 time_signal message
     pub fn set_scte35_time_signal_settings(mut self, input: ::std::option::Option<crate::types::Scte35TimeSignalScheduleActionSettings>) -> Self {
-        self.scte35_time_signal_settings = input;
-        self
+        self.scte35_time_signal_settings = input; self
     }
     /// Action to insert SCTE-35 time_signal message
     pub fn get_scte35_time_signal_settings(&self) -> &::std::option::Option<crate::types::Scte35TimeSignalScheduleActionSettings> {
@@ -299,12 +274,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to activate a static image overlay
-    pub fn set_static_image_activate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings>,
-    ) -> Self {
-        self.static_image_activate_settings = input;
-        self
+    pub fn set_static_image_activate_settings(mut self, input: ::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings>) -> Self {
+        self.static_image_activate_settings = input; self
     }
     /// Action to activate a static image overlay
     pub fn get_static_image_activate_settings(&self) -> &::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings> {
@@ -316,12 +287,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to deactivate a static image overlay
-    pub fn set_static_image_deactivate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
-    ) -> Self {
-        self.static_image_deactivate_settings = input;
-        self
+    pub fn set_static_image_deactivate_settings(mut self, input: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>) -> Self {
+        self.static_image_deactivate_settings = input; self
     }
     /// Action to deactivate a static image overlay
     pub fn get_static_image_deactivate_settings(&self) -> &::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings> {
@@ -333,12 +300,8 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to activate a static image overlay in one or more specified outputs
-    pub fn set_static_image_output_activate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
-    ) -> Self {
-        self.static_image_output_activate_settings = input;
-        self
+    pub fn set_static_image_output_activate_settings(mut self, input: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>) -> Self {
+        self.static_image_output_activate_settings = input; self
     }
     /// Action to activate a static image overlay in one or more specified outputs
     pub fn get_static_image_output_activate_settings(&self) -> &::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings> {
@@ -350,37 +313,47 @@ impl ScheduleActionSettingsBuilder {
         self
     }
     /// Action to deactivate a static image overlay in one or more specified outputs
-    pub fn set_static_image_output_deactivate_settings(
-        mut self,
-        input: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
-    ) -> Self {
-        self.static_image_output_deactivate_settings = input;
-        self
+    pub fn set_static_image_output_deactivate_settings(mut self, input: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>) -> Self {
+        self.static_image_output_deactivate_settings = input; self
     }
     /// Action to deactivate a static image overlay in one or more specified outputs
-    pub fn get_static_image_output_deactivate_settings(
-        &self,
-    ) -> &::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
+    pub fn get_static_image_output_deactivate_settings(&self) -> &::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
         &self.static_image_output_deactivate_settings
     }
     /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
     pub fn build(self) -> crate::types::ScheduleActionSettings {
         crate::types::ScheduleActionSettings {
-            hls_id3_segment_tagging_settings: self.hls_id3_segment_tagging_settings,
-            hls_timed_metadata_settings: self.hls_timed_metadata_settings,
-            input_prepare_settings: self.input_prepare_settings,
-            input_switch_settings: self.input_switch_settings,
-            motion_graphics_image_activate_settings: self.motion_graphics_image_activate_settings,
-            motion_graphics_image_deactivate_settings: self.motion_graphics_image_deactivate_settings,
-            pause_state_settings: self.pause_state_settings,
-            scte35_input_settings: self.scte35_input_settings,
-            scte35_return_to_network_settings: self.scte35_return_to_network_settings,
-            scte35_splice_insert_settings: self.scte35_splice_insert_settings,
-            scte35_time_signal_settings: self.scte35_time_signal_settings,
-            static_image_activate_settings: self.static_image_activate_settings,
-            static_image_deactivate_settings: self.static_image_deactivate_settings,
-            static_image_output_activate_settings: self.static_image_output_activate_settings,
-            static_image_output_deactivate_settings: self.static_image_output_deactivate_settings,
+            hls_id3_segment_tagging_settings: self.hls_id3_segment_tagging_settings
+            ,
+            hls_timed_metadata_settings: self.hls_timed_metadata_settings
+            ,
+            input_prepare_settings: self.input_prepare_settings
+            ,
+            input_switch_settings: self.input_switch_settings
+            ,
+            motion_graphics_image_activate_settings: self.motion_graphics_image_activate_settings
+            ,
+            motion_graphics_image_deactivate_settings: self.motion_graphics_image_deactivate_settings
+            ,
+            pause_state_settings: self.pause_state_settings
+            ,
+            scte35_input_settings: self.scte35_input_settings
+            ,
+            scte35_return_to_network_settings: self.scte35_return_to_network_settings
+            ,
+            scte35_splice_insert_settings: self.scte35_splice_insert_settings
+            ,
+            scte35_time_signal_settings: self.scte35_time_signal_settings
+            ,
+            static_image_activate_settings: self.static_image_activate_settings
+            ,
+            static_image_deactivate_settings: self.static_image_deactivate_settings
+            ,
+            static_image_output_activate_settings: self.static_image_output_activate_settings
+            ,
+            static_image_output_deactivate_settings: self.static_image_output_deactivate_settings
+            ,
         }
     }
 }
+

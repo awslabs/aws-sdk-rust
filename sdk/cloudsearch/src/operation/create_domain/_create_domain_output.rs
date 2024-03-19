@@ -3,22 +3,22 @@
 /// <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The current status of the search domain.</p>
     pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
-impl CreateDomainOutput {
+impl  CreateDomainOutput  {
     /// <p>The current status of the search domain.</p>
-    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
+    pub fn domain_status(&self) -> ::std::option::Option<& crate::types::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
     pub fn builder() -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateDomainOutputBuilder {
     }
     /// <p>The current status of the search domain.</p>
     pub fn set_domain_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.domain_status = input;
-        self
+        self.domain_status = input; self
     }
     /// <p>The current status of the search domain.</p>
     pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
         &self.domain_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
     pub fn build(self) -> crate::operation::create_domain::CreateDomainOutput {
         crate::operation::create_domain::CreateDomainOutput {
-            domain_status: self.domain_status,
+            domain_status: self.domain_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -21,11 +21,7 @@ impl QueryCondition {
     /// Tries to convert the enum instance into [`Single`](crate::types::QueryCondition::Single), extracting the inner [`QueryConditionItem`](crate::types::QueryConditionItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_single(&self) -> ::std::result::Result<&crate::types::QueryConditionItem, &Self> {
-        if let QueryCondition::Single(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let QueryCondition::Single(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Single`](crate::types::QueryCondition::Single).
     pub fn is_single(&self) -> bool {
@@ -36,3 +32,4 @@ impl QueryCondition {
         matches!(self, Self::Unknown)
     }
 }
+

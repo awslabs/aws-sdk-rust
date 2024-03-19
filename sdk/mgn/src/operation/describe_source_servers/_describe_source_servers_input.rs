@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSourceServersInput {
+pub struct DescribeSourceServersInput  {
     /// <p>Request to filter Source Servers list.</p>
     pub filters: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
     /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -12,9 +12,9 @@ pub struct DescribeSourceServersInput {
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeSourceServersInput {
+impl  DescribeSourceServersInput  {
     /// <p>Request to filter Source Servers list.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeSourceServersRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::DescribeSourceServersRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -22,11 +22,11 @@ impl DescribeSourceServersInput {
         self.max_results
     }
     /// <p>Request to filter Source Servers list by next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>Request to filter Source Servers list.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Request to filter Source Servers list.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeSourceServersRequestFilters> {
@@ -68,8 +67,7 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>Request to filter Source Servers list by next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Request to filter Source Servers list by next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,23 +93,26 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_source_servers::DescribeSourceServersInput {
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_source_servers::DescribeSourceServersInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

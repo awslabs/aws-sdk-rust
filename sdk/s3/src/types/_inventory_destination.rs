@@ -3,13 +3,13 @@
 /// <p>Specifies the inventory configuration for an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryDestination {
+pub struct InventoryDestination  {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     pub s3_bucket_destination: ::std::option::Option<crate::types::InventoryS3BucketDestination>,
 }
-impl InventoryDestination {
+impl  InventoryDestination  {
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
-    pub fn s3_bucket_destination(&self) -> ::std::option::Option<&crate::types::InventoryS3BucketDestination> {
+    pub fn s3_bucket_destination(&self) -> ::std::option::Option<& crate::types::InventoryS3BucketDestination> {
         self.s3_bucket_destination.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl InventoryDestinationBuilder {
     }
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     pub fn set_s3_bucket_destination(mut self, input: ::std::option::Option<crate::types::InventoryS3BucketDestination>) -> Self {
-        self.s3_bucket_destination = input;
-        self
+        self.s3_bucket_destination = input; self
     }
     /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     pub fn get_s3_bucket_destination(&self) -> &::std::option::Option<crate::types::InventoryS3BucketDestination> {
@@ -45,7 +44,9 @@ impl InventoryDestinationBuilder {
     /// Consumes the builder and constructs a [`InventoryDestination`](crate::types::InventoryDestination).
     pub fn build(self) -> crate::types::InventoryDestination {
         crate::types::InventoryDestination {
-            s3_bucket_destination: self.s3_bucket_destination,
+            s3_bucket_destination: self.s3_bucket_destination
+            ,
         }
     }
 }
+

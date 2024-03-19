@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowsOutput {
+pub struct ListWorkflowsOutput  {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the migration workflow.</p>
-    pub migration_workflow_summary: ::std::vec::Vec<crate::types::MigrationWorkflowSummary>,
+    pub migration_workflow_summary: ::std::vec::Vec::<crate::types::MigrationWorkflowSummary>,
     _request_id: Option<String>,
 }
-impl ListWorkflowsOutput {
+impl  ListWorkflowsOutput  {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn migration_workflow_summary(&self) -> &[crate::types::MigrationWorkflowSummary] {
-        use std::ops::Deref;
-        self.migration_workflow_summary.deref()
+    pub fn migration_workflow_summary(&self) -> & [crate::types::MigrationWorkflowSummary] {
+        use std::ops::Deref; self.migration_workflow_summary.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWorkflowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     pub fn builder() -> crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListWorkflowsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) migration_workflow_summary: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
+    pub(crate) migration_workflow_summary: ::std::option::Option<::std::vec::Vec::<crate::types::MigrationWorkflowSummary>>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListWorkflowsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListWorkflowsOutputBuilder {
     /// <p>The summary of the migration workflow.</p>
     pub fn migration_workflow_summary(mut self, input: crate::types::MigrationWorkflowSummary) -> Self {
         let mut v = self.migration_workflow_summary.unwrap_or_default();
-        v.push(input);
-        self.migration_workflow_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.migration_workflow_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn set_migration_workflow_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>>) -> Self {
-        self.migration_workflow_summary = input;
-        self
+    pub fn set_migration_workflow_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MigrationWorkflowSummary>>) -> Self {
+        self.migration_workflow_summary = input; self
     }
     /// <p>The summary of the migration workflow.</p>
-    pub fn get_migration_workflow_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationWorkflowSummary>> {
+    pub fn get_migration_workflow_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MigrationWorkflowSummary>> {
         &self.migration_workflow_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::operation::list_workflows::ListWorkflowsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`migration_workflow_summary`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::migration_workflow_summary)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
-            next_token: self.next_token,
-            migration_workflow_summary: self.migration_workflow_summary.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "migration_workflow_summary",
-                    "migration_workflow_summary was not specified but it is required when building ListWorkflowsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workflows::ListWorkflowsOutput {
+                next_token: self.next_token
+                ,
+                migration_workflow_summary: self.migration_workflow_summary
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("migration_workflow_summary", "migration_workflow_summary was not specified but it is required when building ListWorkflowsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

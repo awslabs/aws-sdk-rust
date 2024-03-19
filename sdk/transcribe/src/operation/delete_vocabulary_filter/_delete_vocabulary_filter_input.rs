@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVocabularyFilterInput {
+pub struct DeleteVocabularyFilterInput  {
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
     pub vocabulary_filter_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVocabularyFilterInput {
+impl  DeleteVocabularyFilterInput  {
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
-    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_filter_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_filter_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteVocabularyFilterInputBuilder {
     }
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
     pub fn set_vocabulary_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_filter_name = input;
-        self
+        self.vocabulary_filter_name = input; self
     }
     /// <p>The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.</p>
     pub fn get_vocabulary_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_name
     }
     /// Consumes the builder and constructs a [`DeleteVocabularyFilterInput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput {
-            vocabulary_filter_name: self.vocabulary_filter_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterInput {
+                vocabulary_filter_name: self.vocabulary_filter_name
+                ,
+            }
+        )
     }
 }
+

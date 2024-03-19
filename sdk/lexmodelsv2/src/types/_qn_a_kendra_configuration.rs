@@ -3,7 +3,7 @@
 /// <p>Contains details about the configuration of the Amazon Kendra index used for the <code>AMAZON.QnAIntent</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QnAKendraConfiguration {
+pub struct QnAKendraConfiguration  {
     /// <p>The ARN of the Amazon Kendra index to use.</p>
     pub kendra_index: ::std::string::String,
     /// <p>Specifies whether to enable an Amazon Kendra filter string or not.</p>
@@ -13,18 +13,17 @@ pub struct QnAKendraConfiguration {
     /// <p>Specifies whether to return an exact response from the Amazon Kendra index or to let the Amazon Bedrock model you select generate a response based on the results. To use this feature, you must first add FAQ questions to your index by following the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding frequently asked questions (FAQs) to an index</a>.</p>
     pub exact_response: bool,
 }
-impl QnAKendraConfiguration {
+impl  QnAKendraConfiguration  {
     /// <p>The ARN of the Amazon Kendra index to use.</p>
-    pub fn kendra_index(&self) -> &str {
-        use std::ops::Deref;
-        self.kendra_index.deref()
+    pub fn kendra_index(&self) -> & str {
+        use std::ops::Deref; self.kendra_index.deref()
     }
     /// <p>Specifies whether to enable an Amazon Kendra filter string or not.</p>
     pub fn query_filter_string_enabled(&self) -> bool {
         self.query_filter_string_enabled
     }
     /// <p>Contains the Amazon Kendra filter string to use if enabled. For more information on the Amazon Kendra search filter JSON format, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using document attributes to filter search results</a>.</p>
-    pub fn query_filter_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_filter_string(&self) -> ::std::option::Option<& str> {
         self.query_filter_string.as_deref()
     }
     /// <p>Specifies whether to return an exact response from the Amazon Kendra index or to let the Amazon Bedrock model you select generate a response based on the results. To use this feature, you must first add FAQ questions to your index by following the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding frequently asked questions (FAQs) to an index</a>.</p>
@@ -57,8 +56,7 @@ impl QnAKendraConfigurationBuilder {
     }
     /// <p>The ARN of the Amazon Kendra index to use.</p>
     pub fn set_kendra_index(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kendra_index = input;
-        self
+        self.kendra_index = input; self
     }
     /// <p>The ARN of the Amazon Kendra index to use.</p>
     pub fn get_kendra_index(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl QnAKendraConfigurationBuilder {
     }
     /// <p>Specifies whether to enable an Amazon Kendra filter string or not.</p>
     pub fn set_query_filter_string_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.query_filter_string_enabled = input;
-        self
+        self.query_filter_string_enabled = input; self
     }
     /// <p>Specifies whether to enable an Amazon Kendra filter string or not.</p>
     pub fn get_query_filter_string_enabled(&self) -> &::std::option::Option<bool> {
@@ -85,8 +82,7 @@ impl QnAKendraConfigurationBuilder {
     }
     /// <p>Contains the Amazon Kendra filter string to use if enabled. For more information on the Amazon Kendra search filter JSON format, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using document attributes to filter search results</a>.</p>
     pub fn set_query_filter_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_filter_string = input;
-        self
+        self.query_filter_string = input; self
     }
     /// <p>Contains the Amazon Kendra filter string to use if enabled. For more information on the Amazon Kendra search filter JSON format, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using document attributes to filter search results</a>.</p>
     pub fn get_query_filter_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +95,7 @@ impl QnAKendraConfigurationBuilder {
     }
     /// <p>Specifies whether to return an exact response from the Amazon Kendra index or to let the Amazon Bedrock model you select generate a response based on the results. To use this feature, you must first add FAQ questions to your index by following the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding frequently asked questions (FAQs) to an index</a>.</p>
     pub fn set_exact_response(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.exact_response = input;
-        self
+        self.exact_response = input; self
     }
     /// <p>Specifies whether to return an exact response from the Amazon Kendra index or to let the Amazon Bedrock model you select generate a response based on the results. To use this feature, you must first add FAQ questions to your index by following the steps at <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding frequently asked questions (FAQs) to an index</a>.</p>
     pub fn get_exact_response(&self) -> &::std::option::Option<bool> {
@@ -110,16 +105,23 @@ impl QnAKendraConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kendra_index`](crate::types::builders::QnAKendraConfigurationBuilder::kendra_index)
     pub fn build(self) -> ::std::result::Result<crate::types::QnAKendraConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QnAKendraConfiguration {
-            kendra_index: self.kendra_index.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kendra_index",
-                    "kendra_index was not specified but it is required when building QnAKendraConfiguration",
-                )
-            })?,
-            query_filter_string_enabled: self.query_filter_string_enabled.unwrap_or_default(),
-            query_filter_string: self.query_filter_string,
-            exact_response: self.exact_response.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::QnAKendraConfiguration {
+                kendra_index: self.kendra_index
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kendra_index", "kendra_index was not specified but it is required when building QnAKendraConfiguration")
+                    )?
+                ,
+                query_filter_string_enabled: self.query_filter_string_enabled
+                    .unwrap_or_default()
+                ,
+                query_filter_string: self.query_filter_string
+                ,
+                exact_response: self.exact_response
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

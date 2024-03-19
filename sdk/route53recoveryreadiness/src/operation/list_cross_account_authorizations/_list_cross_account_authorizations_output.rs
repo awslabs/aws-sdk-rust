@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrossAccountAuthorizationsOutput {
+pub struct ListCrossAccountAuthorizationsOutput  {
     /// <p>A list of cross-account authorizations.</p>
-    pub cross_account_authorizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cross_account_authorizations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCrossAccountAuthorizationsOutput {
+impl  ListCrossAccountAuthorizationsOutput  {
     /// <p>A list of cross-account authorizations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_authorizations.is_none()`.
-    pub fn cross_account_authorizations(&self) -> &[::std::string::String] {
-        self.cross_account_authorizations.as_deref().unwrap_or_default()
+    pub fn cross_account_authorizations(&self) -> & [::std::string::String] {
+        self.cross_account_authorizations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCrossAccountAuthorizationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCrossAccountAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
     pub fn builder() -> crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListCrossAccountAuthorizationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCrossAccountAuthorizationsOutputBuilder {
-    pub(crate) cross_account_authorizations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cross_account_authorizations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListCrossAccountAuthorizationsOutputBuilder {
     /// <p>A list of cross-account authorizations.</p>
     pub fn cross_account_authorizations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cross_account_authorizations.unwrap_or_default();
-        v.push(input.into());
-        self.cross_account_authorizations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cross_account_authorizations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of cross-account authorizations.</p>
-    pub fn set_cross_account_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cross_account_authorizations = input;
-        self
+    pub fn set_cross_account_authorizations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cross_account_authorizations = input; self
     }
     /// <p>A list of cross-account authorizations.</p>
-    pub fn get_cross_account_authorizations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cross_account_authorizations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cross_account_authorizations
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -69,28 +69,30 @@ impl ListCrossAccountAuthorizationsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCrossAccountAuthorizationsOutput`](crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput).
     pub fn build(self) -> crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput {
         crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput {
-            cross_account_authorizations: self.cross_account_authorizations,
-            next_token: self.next_token,
+            cross_account_authorizations: self.cross_account_authorizations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

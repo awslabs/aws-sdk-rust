@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProcessType {
+pub struct ProcessType  {
     /// <p>One of the following processes:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct ProcessType {
     /// </ul>
     pub process_name: ::std::option::Option<::std::string::String>,
 }
-impl ProcessType {
+impl  ProcessType  {
     /// <p>One of the following processes:</p>
     /// <ul>
     /// <li>
@@ -50,7 +50,7 @@ impl ProcessType {
     /// <li>
     /// <p><code>ScheduledActions</code></p></li>
     /// </ul>
-    pub fn process_name(&self) -> ::std::option::Option<&str> {
+    pub fn process_name(&self) -> ::std::option::Option<& str> {
         self.process_name.as_deref()
     }
 }
@@ -116,8 +116,7 @@ impl ProcessTypeBuilder {
     /// <p><code>ScheduledActions</code></p></li>
     /// </ul>
     pub fn set_process_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.process_name = input;
-        self
+        self.process_name = input; self
     }
     /// <p>One of the following processes:</p>
     /// <ul>
@@ -146,7 +145,9 @@ impl ProcessTypeBuilder {
     /// Consumes the builder and constructs a [`ProcessType`](crate::types::ProcessType).
     pub fn build(self) -> crate::types::ProcessType {
         crate::types::ProcessType {
-            process_name: self.process_name,
+            process_name: self.process_name
+            ,
         }
     }
 }
+

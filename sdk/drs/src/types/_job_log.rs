@@ -3,7 +3,7 @@
 /// <p>A log outputted by a Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JobLog {
+pub struct JobLog  {
     /// <p>The date and time the log was taken.</p>
     pub log_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The event represents the type of a log.</p>
@@ -11,17 +11,17 @@ pub struct JobLog {
     /// <p>Metadata associated with a Job log.</p>
     pub event_data: ::std::option::Option<crate::types::JobLogEventData>,
 }
-impl JobLog {
+impl  JobLog  {
     /// <p>The date and time the log was taken.</p>
-    pub fn log_date_time(&self) -> ::std::option::Option<&str> {
+    pub fn log_date_time(&self) -> ::std::option::Option<& str> {
         self.log_date_time.as_deref()
     }
     /// <p>The event represents the type of a log.</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::JobLogEvent> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::JobLogEvent> {
         self.event.as_ref()
     }
     /// <p>Metadata associated with a Job log.</p>
-    pub fn event_data(&self) -> ::std::option::Option<&crate::types::JobLogEventData> {
+    pub fn event_data(&self) -> ::std::option::Option<& crate::types::JobLogEventData> {
         self.event_data.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl JobLogBuilder {
     }
     /// <p>The date and time the log was taken.</p>
     pub fn set_log_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_date_time = input;
-        self
+        self.log_date_time = input; self
     }
     /// <p>The date and time the log was taken.</p>
     pub fn get_log_date_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl JobLogBuilder {
     }
     /// <p>The event represents the type of a log.</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::JobLogEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The event represents the type of a log.</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::JobLogEvent> {
@@ -76,8 +74,7 @@ impl JobLogBuilder {
     }
     /// <p>Metadata associated with a Job log.</p>
     pub fn set_event_data(mut self, input: ::std::option::Option<crate::types::JobLogEventData>) -> Self {
-        self.event_data = input;
-        self
+        self.event_data = input; self
     }
     /// <p>Metadata associated with a Job log.</p>
     pub fn get_event_data(&self) -> &::std::option::Option<crate::types::JobLogEventData> {
@@ -86,9 +83,13 @@ impl JobLogBuilder {
     /// Consumes the builder and constructs a [`JobLog`](crate::types::JobLog).
     pub fn build(self) -> crate::types::JobLog {
         crate::types::JobLog {
-            log_date_time: self.log_date_time,
-            event: self.event,
-            event_data: self.event_data,
+            log_date_time: self.log_date_time
+            ,
+            event: self.event
+            ,
+            event_data: self.event_data
+            ,
         }
     }
 }
+

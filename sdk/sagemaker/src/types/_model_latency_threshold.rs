@@ -3,15 +3,15 @@
 /// <p>The model latency threshold.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelLatencyThreshold {
+pub struct ModelLatencyThreshold  {
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub percentile: ::std::option::Option<::std::string::String>,
     /// <p>The model latency percentile value in milliseconds.</p>
     pub value_in_milliseconds: ::std::option::Option<i32>,
 }
-impl ModelLatencyThreshold {
+impl  ModelLatencyThreshold  {
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
-    pub fn percentile(&self) -> ::std::option::Option<&str> {
+    pub fn percentile(&self) -> ::std::option::Option<& str> {
         self.percentile.as_deref()
     }
     /// <p>The model latency percentile value in milliseconds.</p>
@@ -41,8 +41,7 @@ impl ModelLatencyThresholdBuilder {
     }
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn set_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.percentile = input;
-        self
+        self.percentile = input; self
     }
     /// <p>The model latency percentile threshold. Acceptable values are <code>P95</code> and <code>P99</code>. For custom load tests, specify the value as <code>P95</code>.</p>
     pub fn get_percentile(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ModelLatencyThresholdBuilder {
     }
     /// <p>The model latency percentile value in milliseconds.</p>
     pub fn set_value_in_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value_in_milliseconds = input;
-        self
+        self.value_in_milliseconds = input; self
     }
     /// <p>The model latency percentile value in milliseconds.</p>
     pub fn get_value_in_milliseconds(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ModelLatencyThresholdBuilder {
     /// Consumes the builder and constructs a [`ModelLatencyThreshold`](crate::types::ModelLatencyThreshold).
     pub fn build(self) -> crate::types::ModelLatencyThreshold {
         crate::types::ModelLatencyThreshold {
-            percentile: self.percentile,
-            value_in_milliseconds: self.value_in_milliseconds,
+            percentile: self.percentile
+            ,
+            value_in_milliseconds: self.value_in_milliseconds
+            ,
         }
     }
 }
+

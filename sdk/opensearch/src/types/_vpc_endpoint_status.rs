@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpcendpointstatus = unimplemented!();
 /// match vpcendpointstatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `vpcendpointstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcEndpointStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VpcEndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -62,84 +60,77 @@ pub enum VpcEndpointStatus {
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VpcEndpointStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => VpcEndpointStatus::Active,
-            "CREATE_FAILED" => VpcEndpointStatus::CreateFailed,
-            "CREATING" => VpcEndpointStatus::Creating,
-            "DELETE_FAILED" => VpcEndpointStatus::DeleteFailed,
-            "DELETING" => VpcEndpointStatus::Deleting,
-            "UPDATE_FAILED" => VpcEndpointStatus::UpdateFailed,
-            "UPDATING" => VpcEndpointStatus::Updating,
-            other => VpcEndpointStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACTIVE" => VpcEndpointStatus::Active,
+"CREATE_FAILED" => VpcEndpointStatus::CreateFailed,
+"CREATING" => VpcEndpointStatus::Creating,
+"DELETE_FAILED" => VpcEndpointStatus::DeleteFailed,
+"DELETING" => VpcEndpointStatus::Deleting,
+"UPDATE_FAILED" => VpcEndpointStatus::UpdateFailed,
+"UPDATING" => VpcEndpointStatus::Updating,
+other => VpcEndpointStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VpcEndpointStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VpcEndpointStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VpcEndpointStatus::from(s))
+                    }
+                }
 impl VpcEndpointStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcEndpointStatus::Active => "ACTIVE",
-            VpcEndpointStatus::CreateFailed => "CREATE_FAILED",
-            VpcEndpointStatus::Creating => "CREATING",
-            VpcEndpointStatus::DeleteFailed => "DELETE_FAILED",
-            VpcEndpointStatus::Deleting => "DELETING",
-            VpcEndpointStatus::UpdateFailed => "UPDATE_FAILED",
-            VpcEndpointStatus::Updating => "UPDATING",
-            VpcEndpointStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETE_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcEndpointStatus::Active => "ACTIVE",
+    VpcEndpointStatus::CreateFailed => "CREATE_FAILED",
+    VpcEndpointStatus::Creating => "CREATING",
+    VpcEndpointStatus::DeleteFailed => "DELETE_FAILED",
+    VpcEndpointStatus::Deleting => "DELETING",
+    VpcEndpointStatus::UpdateFailed => "UPDATE_FAILED",
+    VpcEndpointStatus::Updating => "UPDATING",
+    VpcEndpointStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VpcEndpointStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VpcEndpointStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VpcEndpointStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VpcEndpointStatus::Active => write!(f, "ACTIVE"),
-            VpcEndpointStatus::CreateFailed => write!(f, "CREATE_FAILED"),
-            VpcEndpointStatus::Creating => write!(f, "CREATING"),
-            VpcEndpointStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
-            VpcEndpointStatus::Deleting => write!(f, "DELETING"),
-            VpcEndpointStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            VpcEndpointStatus::Updating => write!(f, "UPDATING"),
-            VpcEndpointStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VpcEndpointStatus::Active => write!(f, "ACTIVE"),
+VpcEndpointStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+VpcEndpointStatus::Creating => write!(f, "CREATING"),
+VpcEndpointStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+VpcEndpointStatus::Deleting => write!(f, "DELETING"),
+VpcEndpointStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+VpcEndpointStatus::Updating => write!(f, "UPDATING"),
+VpcEndpointStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The name of the web application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the web application.</p>
@@ -14,29 +14,29 @@ pub struct CreateApplicationInput {
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(&self) -> ::std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -55,7 +55,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) application_description: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the web application.</p>
@@ -66,8 +66,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of the web application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the web application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>An optional description of the web application.</p>
     pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_description = input;
-        self
+        self.application_description = input; self
     }
     /// <p>An optional description of the web application.</p>
     pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl CreateApplicationInputBuilder {
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
@@ -129,29 +125,34 @@ impl CreateApplicationInputBuilder {
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            application_name: self.application_name,
-            application_description: self.application_description,
-            client_token: self.client_token,
-            role_arn: self.role_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                application_name: self.application_name
+                ,
+                application_description: self.application_description
+                ,
+                client_token: self.client_token
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

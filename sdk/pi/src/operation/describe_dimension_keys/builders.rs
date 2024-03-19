@@ -5,56 +5,52 @@ pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_inpu
 
 impl DescribeDimensionKeysInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_dimension_keys();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_dimension_keys();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeDimensionKeys`.
-///
+/// 
 /// <p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.</p><note>
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDimensionKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder,
+                    inner: crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-    > for DescribeDimensionKeysFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
+                    crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
+                > for DescribeDimensionKeysFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
+                        crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeDimensionKeysFluentBuilder {
     /// Creates a new `DescribeDimensionKeys`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,59 +59,50 @@ impl DescribeDimensionKeysFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_dimension_keys::DescribeDimensionKeys::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_dimension_keys::DescribeDimensionKeys::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
-        crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_dimension_keys::DescribeDimensionKeysError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_dimension_keys::DescribeDimensionKeys::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_dimension_keys::DescribeDimensionKeys::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput, crate::operation::describe_dimension_keys::DescribeDimensionKeysError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
-        crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
+                                crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -314,12 +301,12 @@ impl DescribeDimensionKeysFluentBuilder {
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
-    pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_metrics(input);
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
-    pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_additional_metrics()
     }
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
@@ -358,7 +345,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -369,7 +356,7 @@ impl DescribeDimensionKeysFluentBuilder {
     /// <li>
     /// <p>A single filter for any other dimension in this dimension group.</p></li>
     /// </ul>
-    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_filter()
     }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
@@ -401,3 +388,4 @@ impl DescribeDimensionKeysFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

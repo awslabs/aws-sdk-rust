@@ -5,23 +5,20 @@ pub use crate::operation::put_log_events::_put_log_events_input::PutLogEventsInp
 
 impl PutLogEventsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_log_events::PutLogEventsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_log_events::PutLogEventsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_log_events();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_log_events::PutLogEventsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_log_events::PutLogEventsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_log_events();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutLogEvents`.
-///
+/// 
 /// <p>Uploads a batch of log events to the specified log stream.</p><important>
 /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions on the same log stream.</p>
 /// </important>
@@ -49,33 +46,32 @@ impl PutLogEventsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutLogEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_log_events::builders::PutLogEventsInputBuilder,
+                    inner: crate::operation::put_log_events::builders::PutLogEventsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_log_events::PutLogEventsOutput,
-        crate::operation::put_log_events::PutLogEventsError,
-    > for PutLogEventsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_log_events::PutLogEventsOutput,
-            crate::operation::put_log_events::PutLogEventsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_log_events::PutLogEventsOutput,
+                    crate::operation::put_log_events::PutLogEventsError,
+                > for PutLogEventsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_log_events::PutLogEventsOutput,
+                        crate::operation::put_log_events::PutLogEventsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutLogEventsFluentBuilder {
     /// Creates a new `PutLogEvents`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -84,53 +80,44 @@ impl PutLogEventsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_log_events::PutLogEventsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_log_events::PutLogEventsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_log_events::PutLogEvents::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_log_events::PutLogEvents::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_log_events::PutLogEventsOutput,
-        crate::operation::put_log_events::PutLogEventsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_log_events::PutLogEventsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_log_events::PutLogEvents::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_log_events::PutLogEvents::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_log_events::PutLogEventsOutput, crate::operation::put_log_events::PutLogEventsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
@@ -169,12 +156,12 @@ impl PutLogEventsFluentBuilder {
         self
     }
     /// <p>The log events.</p>
-    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>) -> Self {
+    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>>) -> Self {
         self.inner = self.inner.set_log_events(input);
         self
     }
     /// <p>The log events.</p>
-    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
+    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>> {
         self.inner.get_log_events()
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
@@ -198,3 +185,4 @@ impl PutLogEventsFluentBuilder {
         self.inner.get_sequence_token()
     }
 }
+

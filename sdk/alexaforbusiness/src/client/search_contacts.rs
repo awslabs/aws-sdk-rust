@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchContacts`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(Filter)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::set_filters):<br>required: **false**<br><p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p><br>
     ///   - [`sort_criteria(Sort)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<Vec::<Sort>>)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_contacts::builders::SearchContactsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`SearchContactsOutput`](crate::operation::search_contacts::SearchContactsOutput) with field(s):
+                            /// - On success, responds with [`SearchContactsOutput`](crate::operation::search_contacts::SearchContactsOutput) with field(s):
     ///   - [`contacts(Option<Vec::<ContactData>>)`](crate::operation::search_contacts::SearchContactsOutput::contacts): <p>The contacts that meet the specified set of filter criteria, in sort order.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_contacts::SearchContactsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
     ///   - [`total_count(Option<i32>)`](crate::operation::search_contacts::SearchContactsOutput::total_count): <p>The total number of contacts returned.</p>
-    /// - On failure, responds with [`SdkError<SearchContactsError>`](crate::operation::search_contacts::SearchContactsError)
+                            /// - On failure, responds with [`SdkError<SearchContactsError>`](crate::operation::search_contacts::SearchContactsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn search_contacts(&self) -> crate::operation::search_contacts::builders::SearchContactsFluentBuilder {
-        crate::operation::search_contacts::builders::SearchContactsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_contacts::builders::SearchContactsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

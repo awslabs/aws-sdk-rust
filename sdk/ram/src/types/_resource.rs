@@ -3,7 +3,7 @@
 /// <p>Describes a resource associated with a resource share in RAM.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
@@ -29,37 +29,37 @@ pub struct Resource {
     /// </ul>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScope>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
-    pub fn resource_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> ::std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The current status of the resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the resource.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date and time when the resource was associated with the resource share.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
@@ -69,7 +69,7 @@ impl Resource {
     /// <li>
     /// <p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
-    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScope> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<& crate::types::ResourceRegionScope> {
         self.resource_region_scope.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl ResourceBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl ResourceBuilder {
     }
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +128,7 @@ impl ResourceBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_arn = input;
-        self
+        self.resource_share_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share this resource is associated with.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +141,7 @@ impl ResourceBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
     pub fn set_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_arn = input;
-        self
+        self.resource_group_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource group. This value is available only if the resource is part of a resource group.</p>
     pub fn get_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +154,7 @@ impl ResourceBuilder {
     }
     /// <p>The current status of the resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
@@ -172,8 +167,7 @@ impl ResourceBuilder {
     }
     /// <p>A message about the status of the resource.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message about the status of the resource.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +180,7 @@ impl ResourceBuilder {
     }
     /// <p>The date and time when the resource was associated with the resource share.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time when the resource was associated with the resource share.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -200,8 +193,7 @@ impl ResourceBuilder {
     }
     /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date an time when the association between the resource and the resource share was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -226,8 +218,7 @@ impl ResourceBuilder {
     /// <p><b>GLOBAL</b> – The resource can be accessed from any Amazon Web Services Region.</p></li>
     /// </ul>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScope>) -> Self {
-        self.resource_region_scope = input;
-        self
+        self.resource_region_scope = input; self
     }
     /// <p>Specifies the scope of visibility of this resource:</p>
     /// <ul>
@@ -242,15 +233,25 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            arn: self.arn,
-            r#type: self.r#type,
-            resource_share_arn: self.resource_share_arn,
-            resource_group_arn: self.resource_group_arn,
-            status: self.status,
-            status_message: self.status_message,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            resource_region_scope: self.resource_region_scope,
+            arn: self.arn
+            ,
+            r#type: self.r#type
+            ,
+            resource_share_arn: self.resource_share_arn
+            ,
+            resource_group_arn: self.resource_group_arn
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            resource_region_scope: self.resource_region_scope
+            ,
         }
     }
 }
+

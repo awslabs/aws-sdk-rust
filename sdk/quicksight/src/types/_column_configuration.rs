@@ -3,7 +3,7 @@
 /// <p>The general configuration of a column.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnConfiguration {
+pub struct ColumnConfiguration  {
     /// <p>The column.</p>
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The format configuration of a column.</p>
@@ -13,21 +13,21 @@ pub struct ColumnConfiguration {
     /// <p>The color configurations of the column.</p>
     pub colors_configuration: ::std::option::Option<crate::types::ColorsConfiguration>,
 }
-impl ColumnConfiguration {
+impl  ColumnConfiguration  {
     /// <p>The column.</p>
-    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The format configuration of a column.</p>
-    pub fn format_configuration(&self) -> ::std::option::Option<&crate::types::FormatConfiguration> {
+    pub fn format_configuration(&self) -> ::std::option::Option<& crate::types::FormatConfiguration> {
         self.format_configuration.as_ref()
     }
     /// <p>The role of the column.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::ColumnRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::ColumnRole> {
         self.role.as_ref()
     }
     /// <p>The color configurations of the column.</p>
-    pub fn colors_configuration(&self) -> ::std::option::Option<&crate::types::ColorsConfiguration> {
+    pub fn colors_configuration(&self) -> ::std::option::Option<& crate::types::ColorsConfiguration> {
         self.colors_configuration.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ColumnConfigurationBuilder {
     }
     /// <p>The column.</p>
     pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column.</p>
     pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
@@ -70,8 +69,7 @@ impl ColumnConfigurationBuilder {
     }
     /// <p>The format configuration of a column.</p>
     pub fn set_format_configuration(mut self, input: ::std::option::Option<crate::types::FormatConfiguration>) -> Self {
-        self.format_configuration = input;
-        self
+        self.format_configuration = input; self
     }
     /// <p>The format configuration of a column.</p>
     pub fn get_format_configuration(&self) -> &::std::option::Option<crate::types::FormatConfiguration> {
@@ -84,8 +82,7 @@ impl ColumnConfigurationBuilder {
     }
     /// <p>The role of the column.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::ColumnRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the column.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::ColumnRole> {
@@ -98,8 +95,7 @@ impl ColumnConfigurationBuilder {
     }
     /// <p>The color configurations of the column.</p>
     pub fn set_colors_configuration(mut self, input: ::std::option::Option<crate::types::ColorsConfiguration>) -> Self {
-        self.colors_configuration = input;
-        self
+        self.colors_configuration = input; self
     }
     /// <p>The color configurations of the column.</p>
     pub fn get_colors_configuration(&self) -> &::std::option::Option<crate::types::ColorsConfiguration> {
@@ -108,10 +104,15 @@ impl ColumnConfigurationBuilder {
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {
         crate::types::ColumnConfiguration {
-            column: self.column,
-            format_configuration: self.format_configuration,
-            role: self.role,
-            colors_configuration: self.colors_configuration,
+            column: self.column
+            ,
+            format_configuration: self.format_configuration
+            ,
+            role: self.role
+            ,
+            colors_configuration: self.colors_configuration
+            ,
         }
     }
 }
+

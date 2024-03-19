@@ -3,15 +3,14 @@
 /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups.</p>
-    pub log_destination_configs: ::std::vec::Vec<crate::types::LogDestinationConfig>,
+    pub log_destination_configs: ::std::vec::Vec::<crate::types::LogDestinationConfig>,
 }
-impl LoggingConfiguration {
+impl  LoggingConfiguration  {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups.</p>
-    pub fn log_destination_configs(&self) -> &[crate::types::LogDestinationConfig] {
-        use std::ops::Deref;
-        self.log_destination_configs.deref()
+    pub fn log_destination_configs(&self) -> & [crate::types::LogDestinationConfig] {
+        use std::ops::Deref; self.log_destination_configs.deref()
     }
 }
 impl LoggingConfiguration {
@@ -25,7 +24,7 @@ impl LoggingConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LoggingConfigurationBuilder {
-    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>,
+    pub(crate) log_destination_configs: ::std::option::Option<::std::vec::Vec::<crate::types::LogDestinationConfig>>,
 }
 impl LoggingConfigurationBuilder {
     /// Appends an item to `log_destination_configs`.
@@ -35,30 +34,31 @@ impl LoggingConfigurationBuilder {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups.</p>
     pub fn log_destination_configs(mut self, input: crate::types::LogDestinationConfig) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
-        v.push(input);
-        self.log_destination_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_destination_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups.</p>
-    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>) -> Self {
-        self.log_destination_configs = input;
-        self
+    pub fn set_log_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogDestinationConfig>>) -> Self {
+        self.log_destination_configs = input; self
     }
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups.</p>
-    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>> {
+    pub fn get_log_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogDestinationConfig>> {
         &self.log_destination_configs
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`log_destination_configs`](crate::types::builders::LoggingConfigurationBuilder::log_destination_configs)
     pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LoggingConfiguration {
-            log_destination_configs: self.log_destination_configs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_destination_configs",
-                    "log_destination_configs was not specified but it is required when building LoggingConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LoggingConfiguration {
+                log_destination_configs: self.log_destination_configs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_destination_configs", "log_destination_configs was not specified but it is required when building LoggingConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

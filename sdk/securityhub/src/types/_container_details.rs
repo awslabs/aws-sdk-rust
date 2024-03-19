@@ -3,7 +3,7 @@
 /// <p>Container details related to a finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerDetails {
+pub struct ContainerDetails  {
     /// <p>The runtime of the container.</p>
     pub container_runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container related to a finding.</p>
@@ -16,37 +16,38 @@ pub struct ContainerDetails {
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the mounting of a volume in a container.</p>
-    pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
+    pub volume_mounts: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeMount>>,
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub privileged: ::std::option::Option<bool>,
 }
-impl ContainerDetails {
+impl  ContainerDetails  {
     /// <p>The runtime of the container.</p>
-    pub fn container_runtime(&self) -> ::std::option::Option<&str> {
+    pub fn container_runtime(&self) -> ::std::option::Option<& str> {
         self.container_runtime.as_deref()
     }
     /// <p>The name of the container related to a finding.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the container image related to a finding.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The name of the container image related to a finding.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn launched_at(&self) -> ::std::option::Option<&str> {
+    pub fn launched_at(&self) -> ::std::option::Option<& str> {
         self.launched_at.as_deref()
     }
     /// <p>Provides information about the mounting of a volume in a container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_mounts.is_none()`.
-    pub fn volume_mounts(&self) -> &[crate::types::VolumeMount] {
-        self.volume_mounts.as_deref().unwrap_or_default()
+    pub fn volume_mounts(&self) -> & [crate::types::VolumeMount] {
+        self.volume_mounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn privileged(&self) -> ::std::option::Option<bool> {
@@ -69,7 +70,7 @@ pub struct ContainerDetailsBuilder {
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) launched_at: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
+    pub(crate) volume_mounts: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeMount>>,
     pub(crate) privileged: ::std::option::Option<bool>,
 }
 impl ContainerDetailsBuilder {
@@ -80,8 +81,7 @@ impl ContainerDetailsBuilder {
     }
     /// <p>The runtime of the container.</p>
     pub fn set_container_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_runtime = input;
-        self
+        self.container_runtime = input; self
     }
     /// <p>The runtime of the container.</p>
     pub fn get_container_runtime(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +94,7 @@ impl ContainerDetailsBuilder {
     }
     /// <p>The name of the container related to a finding.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the container related to a finding.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl ContainerDetailsBuilder {
     }
     /// <p>The identifier of the container image related to a finding.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The identifier of the container image related to a finding.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl ContainerDetailsBuilder {
     }
     /// <p>The name of the container image related to a finding.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the container image related to a finding.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl ContainerDetailsBuilder {
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_launched_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launched_at = input;
-        self
+        self.launched_at = input; self
     }
     /// <p>Indicates when the container started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -153,17 +149,16 @@ impl ContainerDetailsBuilder {
     /// <p>Provides information about the mounting of a volume in a container.</p>
     pub fn volume_mounts(mut self, input: crate::types::VolumeMount) -> Self {
         let mut v = self.volume_mounts.unwrap_or_default();
-        v.push(input);
-        self.volume_mounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volume_mounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the mounting of a volume in a container.</p>
-    pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>) -> Self {
-        self.volume_mounts = input;
-        self
+    pub fn set_volume_mounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeMount>>) -> Self {
+        self.volume_mounts = input; self
     }
     /// <p>Provides information about the mounting of a volume in a container.</p>
-    pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>> {
+    pub fn get_volume_mounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeMount>> {
         &self.volume_mounts
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
@@ -173,8 +168,7 @@ impl ContainerDetailsBuilder {
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.privileged = input;
-        self
+        self.privileged = input; self
     }
     /// <p>When this parameter is <code>true</code>, the container is given elevated privileges on the host container instance (similar to the root user).</p>
     pub fn get_privileged(&self) -> &::std::option::Option<bool> {
@@ -183,13 +177,21 @@ impl ContainerDetailsBuilder {
     /// Consumes the builder and constructs a [`ContainerDetails`](crate::types::ContainerDetails).
     pub fn build(self) -> crate::types::ContainerDetails {
         crate::types::ContainerDetails {
-            container_runtime: self.container_runtime,
-            name: self.name,
-            image_id: self.image_id,
-            image_name: self.image_name,
-            launched_at: self.launched_at,
-            volume_mounts: self.volume_mounts,
-            privileged: self.privileged,
+            container_runtime: self.container_runtime
+            ,
+            name: self.name
+            ,
+            image_id: self.image_id
+            ,
+            image_name: self.image_name
+            ,
+            launched_at: self.launched_at
+            ,
+            volume_mounts: self.volume_mounts
+            ,
+            privileged: self.privileged
+            ,
         }
     }
 }
+

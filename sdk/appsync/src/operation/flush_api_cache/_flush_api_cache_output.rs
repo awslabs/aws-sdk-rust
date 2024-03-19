@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>FlushApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FlushApiCacheOutput {
+pub struct FlushApiCacheOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for FlushApiCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl FlushApiCacheOutput {
     /// Creates a new builder-style object to manufacture [`FlushApiCacheOutput`](crate::operation::flush_api_cache::FlushApiCacheOutput).
     pub fn builder() -> crate::operation::flush_api_cache::builders::FlushApiCacheOutputBuilder {
@@ -26,14 +26,14 @@ pub struct FlushApiCacheOutputBuilder {
 }
 impl FlushApiCacheOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`FlushApiCacheOutput`](crate::operation::flush_api_cache::FlushApiCacheOutput).
     pub fn build(self) -> crate::operation::flush_api_cache::FlushApiCacheOutput {
         crate::operation::flush_api_cache::FlushApiCacheOutput {
@@ -41,3 +41,4 @@ impl FlushApiCacheOutputBuilder {
         }
     }
 }
+

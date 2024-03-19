@@ -3,7 +3,7 @@
 /// <p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The name of the snapshot</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
@@ -19,33 +19,33 @@ pub struct Snapshot {
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
-impl Snapshot {
+impl  Snapshot  {
     /// <p>The name of the snapshot</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
-    pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
+    pub fn cluster_configuration(&self) -> ::std::option::Option<& crate::types::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
+    pub fn data_tiering(&self) -> ::std::option::Option<& crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the snapshot</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the snapshot</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl SnapshotBuilder {
     }
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl SnapshotBuilder {
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl SnapshotBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl SnapshotBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl SnapshotBuilder {
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
     pub fn set_cluster_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
-        self.cluster_configuration = input;
-        self
+        self.cluster_configuration = input; self
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
     pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
@@ -160,8 +154,7 @@ impl SnapshotBuilder {
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn set_data_tiering(mut self, input: ::std::option::Option<crate::types::DataTieringStatus>) -> Self {
-        self.data_tiering = input;
-        self
+        self.data_tiering = input; self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
@@ -170,13 +163,21 @@ impl SnapshotBuilder {
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            name: self.name,
-            status: self.status,
-            source: self.source,
-            kms_key_id: self.kms_key_id,
-            arn: self.arn,
-            cluster_configuration: self.cluster_configuration,
-            data_tiering: self.data_tiering,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            source: self.source
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            arn: self.arn
+            ,
+            cluster_configuration: self.cluster_configuration
+            ,
+            data_tiering: self.data_tiering
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The unique identifier of the application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
@@ -12,7 +12,7 @@ pub struct CreateApplicationInput {
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub definition: ::std::option::Option<crate::types::Definition>,
     /// <p>A list of tags to apply to the application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of a customer managed key.</p>
@@ -20,37 +20,37 @@ pub struct CreateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The unique identifier of the application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::Definition> {
+    pub fn definition(&self) -> ::std::option::Option<& crate::types::Definition> {
         self.definition.as_ref()
     }
     /// <p>A list of tags to apply to the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier of a customer managed key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -69,7 +69,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) definition: ::std::option::Option<crate::types::Definition>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -83,8 +83,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique identifier of the application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -127,8 +124,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::Definition>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
@@ -141,17 +137,16 @@ impl CreateApplicationInputBuilder {
     /// <p>A list of tags to apply to the application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags to apply to the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to apply to the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
@@ -161,8 +156,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +169,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,26 +182,34 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            name: self.name,
-            description: self.description,
-            engine_type: self.engine_type,
-            definition: self.definition,
-            tags: self.tags,
-            client_token: self.client_token,
-            kms_key_id: self.kms_key_id,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                engine_type: self.engine_type
+                ,
+                definition: self.definition
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

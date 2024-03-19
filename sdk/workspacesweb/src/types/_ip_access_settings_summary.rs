@@ -3,7 +3,7 @@
 /// <p>The summary of IP access settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IpAccessSettingsSummary {
+pub struct IpAccessSettingsSummary  {
     /// <p>The ARN of IP access settings.</p>
     pub ip_access_settings_arn: ::std::string::String,
     /// <p>The display name of the IP access settings.</p>
@@ -13,26 +13,25 @@ pub struct IpAccessSettingsSummary {
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IpAccessSettingsSummary {
+impl  IpAccessSettingsSummary  {
     /// <p>The ARN of IP access settings.</p>
-    pub fn ip_access_settings_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_access_settings_arn.deref()
+    pub fn ip_access_settings_arn(&self) -> & str {
+        use std::ops::Deref; self.ip_access_settings_arn.deref()
     }
     /// <p>The display name of the IP access settings.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the IP access settings.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
-impl ::std::fmt::Debug for IpAccessSettingsSummary {
+impl  ::std::fmt::Debug for IpAccessSettingsSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IpAccessSettingsSummary");
         formatter.field("ip_access_settings_arn", &self.ip_access_settings_arn);
@@ -67,8 +66,7 @@ impl IpAccessSettingsSummaryBuilder {
     }
     /// <p>The ARN of IP access settings.</p>
     pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_access_settings_arn = input;
-        self
+        self.ip_access_settings_arn = input; self
     }
     /// <p>The ARN of IP access settings.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl IpAccessSettingsSummaryBuilder {
     }
     /// <p>The display name of the IP access settings.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the IP access settings.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +92,7 @@ impl IpAccessSettingsSummaryBuilder {
     }
     /// <p>The description of the IP access settings.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the IP access settings.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +105,7 @@ impl IpAccessSettingsSummaryBuilder {
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,17 +115,21 @@ impl IpAccessSettingsSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_access_settings_arn`](crate::types::builders::IpAccessSettingsSummaryBuilder::ip_access_settings_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::IpAccessSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IpAccessSettingsSummary {
-            ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_access_settings_arn",
-                    "ip_access_settings_arn was not specified but it is required when building IpAccessSettingsSummary",
-                )
-            })?,
-            display_name: self.display_name,
-            description: self.description,
-            creation_date: self.creation_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IpAccessSettingsSummary {
+                ip_access_settings_arn: self.ip_access_settings_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_access_settings_arn", "ip_access_settings_arn was not specified but it is required when building IpAccessSettingsSummary")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                creation_date: self.creation_date
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for IpAccessSettingsSummaryBuilder {
@@ -143,3 +142,4 @@ impl ::std::fmt::Debug for IpAccessSettingsSummaryBuilder {
         formatter.finish()
     }
 }
+

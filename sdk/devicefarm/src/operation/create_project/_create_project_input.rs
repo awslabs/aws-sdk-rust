@@ -3,7 +3,7 @@
 /// <p>Represents a request to the create project operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The project's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
@@ -11,9 +11,9 @@ pub struct CreateProjectInput {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The project's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
@@ -21,7 +21,7 @@ impl CreateProjectInput {
         self.default_job_timeout_minutes
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The project's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The project's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     pub fn set_default_job_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_job_timeout_minutes = input;
-        self
+        self.default_job_timeout_minutes = input; self
     }
     /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -77,21 +75,24 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            name: self.name,
-            default_job_timeout_minutes: self.default_job_timeout_minutes,
-            vpc_config: self.vpc_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                name: self.name
+                ,
+                default_job_timeout_minutes: self.default_job_timeout_minutes
+                ,
+                vpc_config: self.vpc_config
+                ,
+            }
+        )
     }
 }
+

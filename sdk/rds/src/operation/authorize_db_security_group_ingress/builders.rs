@@ -5,23 +5,20 @@ pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_sec
 
 impl AuthorizeDbSecurityGroupIngressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.authorize_db_security_group_ingress();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.authorize_db_security_group_ingress();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AuthorizeDBSecurityGroupIngress`.
-///
+/// 
 /// <p>Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p>
 /// <p>You can't authorize ingress from an EC2 security group in one Amazon Web Services Region to an Amazon RDS DB instance in another. You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.</p>
 /// <p>For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia Tutorial</a>.</p><note>
@@ -30,33 +27,32 @@ impl AuthorizeDbSecurityGroupIngressInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeDBSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder,
+                    inner: crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
-    > for AuthorizeDBSecurityGroupIngressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
-            crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
+                    crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
+                > for AuthorizeDBSecurityGroupIngressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
+                        crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AuthorizeDBSecurityGroupIngressFluentBuilder {
     /// Creates a new `AuthorizeDBSecurityGroupIngress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
-        crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput, crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the DB security group to add authorization to.</p>
     pub fn db_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());
@@ -183,3 +170,4 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
         self.inner.get_ec2_security_group_owner_id()
     }
 }
+

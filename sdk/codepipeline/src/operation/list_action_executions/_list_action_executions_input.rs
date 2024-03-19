@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActionExecutionsInput {
+pub struct ListActionExecutionsInput  {
     /// <p>The name of the pipeline for which you want to list action execution history.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>Input information used to filter action execution history.</p>
@@ -14,13 +14,13 @@ pub struct ListActionExecutionsInput {
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListActionExecutionsInput {
+impl  ListActionExecutionsInput  {
     /// <p>The name of the pipeline for which you want to list action execution history.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>Input information used to filter action execution history.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ActionExecutionFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ActionExecutionFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100.</p><note>
@@ -30,7 +30,7 @@ impl ListActionExecutionsInput {
         self.max_results
     }
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ListActionExecutionsInputBuilder {
     }
     /// <p>The name of the pipeline for which you want to list action execution history.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline for which you want to list action execution history.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl ListActionExecutionsInputBuilder {
     }
     /// <p>Input information used to filter action execution history.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ActionExecutionFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Input information used to filter action execution history.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ActionExecutionFilter> {
@@ -91,8 +89,7 @@ impl ListActionExecutionsInputBuilder {
     /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100.</p><note>
     /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
@@ -107,23 +104,26 @@ impl ListActionExecutionsInputBuilder {
     }
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call, which can be used to return the next set of action executions in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_action_executions::ListActionExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_action_executions::ListActionExecutionsInput {
-            pipeline_name: self.pipeline_name,
-            filter: self.filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_action_executions::ListActionExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_action_executions::ListActionExecutionsInput {
+                pipeline_name: self.pipeline_name
+                ,
+                filter: self.filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

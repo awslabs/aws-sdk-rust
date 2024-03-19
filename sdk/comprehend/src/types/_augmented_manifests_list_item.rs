@@ -3,7 +3,7 @@
 /// <p>An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AugmentedManifestsListItem {
+pub struct AugmentedManifestsListItem  {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub s3_uri: ::std::string::String,
     /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
@@ -13,7 +13,7 @@ pub struct AugmentedManifestsListItem {
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub attribute_names: ::std::vec::Vec<::std::string::String>,
+    pub attribute_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
@@ -27,31 +27,29 @@ pub struct AugmentedManifestsListItem {
     /// </ul>
     pub document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
-impl AugmentedManifestsListItem {
+impl  AugmentedManifestsListItem  {
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
     /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
     /// <p>TEST - all of the documents in the manifest will be used for testing.</p>
-    pub fn split(&self) -> ::std::option::Option<&crate::types::Split> {
+    pub fn split(&self) -> ::std::option::Option<& crate::types::Split> {
         self.split.as_ref()
     }
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.attribute_names.deref()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.attribute_names.deref()
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
-    pub fn annotation_data_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn annotation_data_s3_uri(&self) -> ::std::option::Option<& str> {
         self.annotation_data_s3_uri.as_deref()
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
-    pub fn source_documents_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn source_documents_s3_uri(&self) -> ::std::option::Option<& str> {
         self.source_documents_s3_uri.as_deref()
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
@@ -61,7 +59,7 @@ impl AugmentedManifestsListItem {
     /// <li>
     /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
-    pub fn document_type(&self) -> ::std::option::Option<&crate::types::AugmentedManifestsDocumentTypeFormat> {
+    pub fn document_type(&self) -> ::std::option::Option<& crate::types::AugmentedManifestsDocumentTypeFormat> {
         self.document_type.as_ref()
     }
 }
@@ -78,7 +76,7 @@ impl AugmentedManifestsListItem {
 pub struct AugmentedManifestsListItemBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) split: ::std::option::Option<crate::types::Split>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) annotation_data_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) source_documents_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
@@ -92,8 +90,7 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +107,7 @@ impl AugmentedManifestsListItemBuilder {
     /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
     /// <p>TEST - all of the documents in the manifest will be used for testing.</p>
     pub fn set_split(mut self, input: ::std::option::Option<crate::types::Split>) -> Self {
-        self.split = input;
-        self
+        self.split = input; self
     }
     /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
     /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
@@ -128,21 +124,20 @@ impl AugmentedManifestsListItemBuilder {
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
     /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
@@ -152,8 +147,7 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub fn set_annotation_data_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation_data_s3_uri = input;
-        self
+        self.annotation_data_s3_uri = input; self
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub fn get_annotation_data_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +160,7 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     pub fn set_source_documents_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_documents_s3_uri = input;
-        self
+        self.source_documents_s3_uri = input; self
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     pub fn get_source_documents_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +185,7 @@ impl AugmentedManifestsListItemBuilder {
     /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>) -> Self {
-        self.document_type = input;
-        self
+        self.document_type = input; self
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
@@ -210,23 +202,28 @@ impl AugmentedManifestsListItemBuilder {
     /// - [`s3_uri`](crate::types::builders::AugmentedManifestsListItemBuilder::s3_uri)
     /// - [`attribute_names`](crate::types::builders::AugmentedManifestsListItemBuilder::attribute_names)
     pub fn build(self) -> ::std::result::Result<crate::types::AugmentedManifestsListItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AugmentedManifestsListItem {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building AugmentedManifestsListItem",
-                )
-            })?,
-            split: self.split,
-            attribute_names: self.attribute_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_names",
-                    "attribute_names was not specified but it is required when building AugmentedManifestsListItem",
-                )
-            })?,
-            annotation_data_s3_uri: self.annotation_data_s3_uri,
-            source_documents_s3_uri: self.source_documents_s3_uri,
-            document_type: self.document_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AugmentedManifestsListItem {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building AugmentedManifestsListItem")
+                    )?
+                ,
+                split: self.split
+                ,
+                attribute_names: self.attribute_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_names", "attribute_names was not specified but it is required when building AugmentedManifestsListItem")
+                    )?
+                ,
+                annotation_data_s3_uri: self.annotation_data_s3_uri
+                ,
+                source_documents_s3_uri: self.source_documents_s3_uri
+                ,
+                document_type: self.document_type
+                ,
+            }
+        )
     }
 }
+

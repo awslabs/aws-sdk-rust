@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSigningPlatformsOutput {
+pub struct ListSigningPlatformsOutput  {
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
+    pub platforms: ::std::option::Option<::std::vec::Vec::<crate::types::SigningPlatform>>,
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSigningPlatformsOutput {
+impl  ListSigningPlatformsOutput  {
     /// <p>A list of all platforms that match the request parameters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platforms.is_none()`.
-    pub fn platforms(&self) -> &[crate::types::SigningPlatform] {
-        self.platforms.as_deref().unwrap_or_default()
+    pub fn platforms(&self) -> & [crate::types::SigningPlatform] {
+        self.platforms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSigningPlatformsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSigningPlatformsOutput {
     /// Creates a new builder-style object to manufacture [`ListSigningPlatformsOutput`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput).
     pub fn builder() -> crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSigningPlatformsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSigningPlatformsOutputBuilder {
-    pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>,
+    pub(crate) platforms: ::std::option::Option<::std::vec::Vec::<crate::types::SigningPlatform>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSigningPlatformsOutputBuilder {
     /// <p>A list of all platforms that match the request parameters.</p>
     pub fn platforms(mut self, input: crate::types::SigningPlatform) -> Self {
         let mut v = self.platforms.unwrap_or_default();
-        v.push(input);
-        self.platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>>) -> Self {
-        self.platforms = input;
-        self
+    pub fn set_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SigningPlatform>>) -> Self {
+        self.platforms = input; self
     }
     /// <p>A list of all platforms that match the request parameters.</p>
-    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SigningPlatform>> {
+    pub fn get_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SigningPlatform>> {
         &self.platforms
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
@@ -69,28 +69,30 @@ impl ListSigningPlatformsOutputBuilder {
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Value for specifying the next set of paginated results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSigningPlatformsOutput`](crate::operation::list_signing_platforms::ListSigningPlatformsOutput).
     pub fn build(self) -> crate::operation::list_signing_platforms::ListSigningPlatformsOutput {
         crate::operation::list_signing_platforms::ListSigningPlatformsOutput {
-            platforms: self.platforms,
-            next_token: self.next_token,
+            platforms: self.platforms
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that describes an assignment of a principal to an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationAssignment {
+pub struct ApplicationAssignment  {
     /// <p>The ARN of the application that has principals assigned.</p>
     pub application_arn: ::std::string::String,
     /// <p>The unique identifier of the principal assigned to the application.</p>
@@ -11,19 +11,17 @@ pub struct ApplicationAssignment {
     /// <p>The type of the principal assigned to the application.</p>
     pub principal_type: crate::types::PrincipalType,
 }
-impl ApplicationAssignment {
+impl  ApplicationAssignment  {
     /// <p>The ARN of the application that has principals assigned.</p>
-    pub fn application_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_arn.deref()
+    pub fn application_arn(&self) -> & str {
+        use std::ops::Deref; self.application_arn.deref()
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
-    pub fn principal_id(&self) -> &str {
-        use std::ops::Deref;
-        self.principal_id.deref()
+    pub fn principal_id(&self) -> & str {
+        use std::ops::Deref; self.principal_id.deref()
     }
     /// <p>The type of the principal assigned to the application.</p>
-    pub fn principal_type(&self) -> &crate::types::PrincipalType {
+    pub fn principal_type(&self) -> & crate::types::PrincipalType {
         &self.principal_type
     }
 }
@@ -51,8 +49,7 @@ impl ApplicationAssignmentBuilder {
     }
     /// <p>The ARN of the application that has principals assigned.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application that has principals assigned.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ApplicationAssignmentBuilder {
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The unique identifier of the principal assigned to the application.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl ApplicationAssignmentBuilder {
     }
     /// <p>The type of the principal assigned to the application.</p>
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input;
-        self
+        self.principal_type = input; self
     }
     /// <p>The type of the principal assigned to the application.</p>
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
@@ -94,25 +89,25 @@ impl ApplicationAssignmentBuilder {
     /// - [`principal_id`](crate::types::builders::ApplicationAssignmentBuilder::principal_id)
     /// - [`principal_type`](crate::types::builders::ApplicationAssignmentBuilder::principal_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationAssignment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationAssignment {
-            application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_arn",
-                    "application_arn was not specified but it is required when building ApplicationAssignment",
-                )
-            })?,
-            principal_id: self.principal_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_id",
-                    "principal_id was not specified but it is required when building ApplicationAssignment",
-                )
-            })?,
-            principal_type: self.principal_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal_type",
-                    "principal_type was not specified but it is required when building ApplicationAssignment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationAssignment {
+                application_arn: self.application_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_arn", "application_arn was not specified but it is required when building ApplicationAssignment")
+                    )?
+                ,
+                principal_id: self.principal_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_id", "principal_id was not specified but it is required when building ApplicationAssignment")
+                    )?
+                ,
+                principal_type: self.principal_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal_type", "principal_type was not specified but it is required when building ApplicationAssignment")
+                    )?
+                ,
+            }
+        )
     }
 }
+

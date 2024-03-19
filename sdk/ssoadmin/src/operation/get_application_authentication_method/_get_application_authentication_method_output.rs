@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationAuthenticationMethodOutput {
+pub struct GetApplicationAuthenticationMethodOutput  {
     /// <p>A structure that contains details about the requested authentication method.</p>
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
     _request_id: Option<String>,
 }
-impl GetApplicationAuthenticationMethodOutput {
+impl  GetApplicationAuthenticationMethodOutput  {
     /// <p>A structure that contains details about the requested authentication method.</p>
-    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
+    pub fn authentication_method(&self) -> ::std::option::Option<& crate::types::AuthenticationMethod> {
         self.authentication_method.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationAuthenticationMethodOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationAuthenticationMethodOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationAuthenticationMethodOutput`](crate::operation::get_application_authentication_method::GetApplicationAuthenticationMethodOutput).
     pub fn builder() -> crate::operation::get_application_authentication_method::builders::GetApplicationAuthenticationMethodOutputBuilder {
@@ -40,27 +40,28 @@ impl GetApplicationAuthenticationMethodOutputBuilder {
     }
     /// <p>A structure that contains details about the requested authentication method.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
-        self.authentication_method = input;
-        self
+        self.authentication_method = input; self
     }
     /// <p>A structure that contains details about the requested authentication method.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
         &self.authentication_method
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationAuthenticationMethodOutput`](crate::operation::get_application_authentication_method::GetApplicationAuthenticationMethodOutput).
     pub fn build(self) -> crate::operation::get_application_authentication_method::GetApplicationAuthenticationMethodOutput {
         crate::operation::get_application_authentication_method::GetApplicationAuthenticationMethodOutput {
-            authentication_method: self.authentication_method,
+            authentication_method: self.authentication_method
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMaintenanceWindowExecutionTaskInput {
+pub struct GetMaintenanceWindowExecutionTaskInput  {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub window_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMaintenanceWindowExecutionTaskInput {
+impl  GetMaintenanceWindowExecutionTaskInput  {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> ::std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetMaintenanceWindowExecutionTaskInputBuilder {
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub fn set_window_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_execution_id = input;
-        self
+        self.window_execution_id = input; self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl GetMaintenanceWindowExecutionTaskInputBuilder {
     }
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput {
-                window_execution_id: self.window_execution_id,
-                task_id: self.task_id,
-            },
+                window_execution_id: self.window_execution_id
+                ,
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

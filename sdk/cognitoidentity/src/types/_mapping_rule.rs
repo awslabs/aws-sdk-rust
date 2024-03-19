@@ -3,7 +3,7 @@
 /// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MappingRule {
+pub struct MappingRule  {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub claim: ::std::string::String,
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
@@ -13,25 +13,22 @@ pub struct MappingRule {
     /// <p>The role ARN.</p>
     pub role_arn: ::std::string::String,
 }
-impl MappingRule {
+impl  MappingRule  {
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
-    pub fn claim(&self) -> &str {
-        use std::ops::Deref;
-        self.claim.deref()
+    pub fn claim(&self) -> & str {
+        use std::ops::Deref; self.claim.deref()
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
-    pub fn match_type(&self) -> &crate::types::MappingRuleMatchType {
+    pub fn match_type(&self) -> & crate::types::MappingRuleMatchType {
         &self.match_type
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The role ARN.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
 }
 impl MappingRule {
@@ -59,8 +56,7 @@ impl MappingRuleBuilder {
     }
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub fn set_claim(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim = input;
-        self
+        self.claim = input; self
     }
     /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub fn get_claim(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl MappingRuleBuilder {
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::MappingRuleMatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MappingRuleMatchType> {
@@ -89,8 +84,7 @@ impl MappingRuleBuilder {
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl MappingRuleBuilder {
     }
     /// <p>The role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The role ARN.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,31 +111,30 @@ impl MappingRuleBuilder {
     /// - [`value`](crate::types::builders::MappingRuleBuilder::value)
     /// - [`role_arn`](crate::types::builders::MappingRuleBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::MappingRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MappingRule {
-            claim: self.claim.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "claim",
-                    "claim was not specified but it is required when building MappingRule",
-                )
-            })?,
-            match_type: self.match_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_type",
-                    "match_type was not specified but it is required when building MappingRule",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building MappingRule",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building MappingRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MappingRule {
+                claim: self.claim
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("claim", "claim was not specified but it is required when building MappingRule")
+                    )?
+                ,
+                match_type: self.match_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_type", "match_type was not specified but it is required when building MappingRule")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building MappingRule")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building MappingRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

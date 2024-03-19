@@ -3,13 +3,13 @@
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaConnectFlowRequest {
+pub struct MediaConnectFlowRequest  {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
-impl MediaConnectFlowRequest {
+impl  MediaConnectFlowRequest  {
     /// The ARN of the MediaConnect Flow that you want to use as a source.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl MediaConnectFlowRequestBuilder {
     }
     /// The ARN of the MediaConnect Flow that you want to use as a source.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the MediaConnect Flow that you want to use as a source.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl MediaConnectFlowRequestBuilder {
     }
     /// Consumes the builder and constructs a [`MediaConnectFlowRequest`](crate::types::MediaConnectFlowRequest).
     pub fn build(self) -> crate::types::MediaConnectFlowRequest {
-        crate::types::MediaConnectFlowRequest { flow_arn: self.flow_arn }
+        crate::types::MediaConnectFlowRequest {
+            flow_arn: self.flow_arn
+            ,
+        }
     }
 }
+

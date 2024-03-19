@@ -3,7 +3,7 @@
 /// <p>Contains properties for the Redshift IDC application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftIdcApplication {
+pub struct RedshiftIdcApplication  {
     /// <p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>
     pub idc_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Redshift application in IAM Identity Center.</p>
@@ -21,54 +21,56 @@ pub struct RedshiftIdcApplication {
     /// <p>The onboarding status for the Amazon Redshift IAM Identity Center application.</p>
     pub idc_onboard_status: ::std::option::Option<::std::string::String>,
     /// <p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>
-    pub authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
+    pub authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>,
     /// <p>A list of service integrations for the Redshift IAM Identity Center application.</p>
-    pub service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    pub service_integrations: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceIntegrationsUnion>>,
 }
-impl RedshiftIdcApplication {
+impl  RedshiftIdcApplication  {
     /// <p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>
-    pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn idc_instance_arn(&self) -> ::std::option::Option<& str> {
         self.idc_instance_arn.as_deref()
     }
     /// <p>The name of the Redshift application in IAM Identity Center.</p>
-    pub fn redshift_idc_application_name(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_idc_application_name(&self) -> ::std::option::Option<& str> {
         self.redshift_idc_application_name.as_deref()
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
-    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<& str> {
         self.redshift_idc_application_arn.as_deref()
     }
     /// <p>The identity namespace for the Amazon Redshift IAM Identity Center application. It determines which managed application verifies the connection token.</p>
-    pub fn identity_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn identity_namespace(&self) -> ::std::option::Option<& str> {
         self.identity_namespace.as_deref()
     }
     /// <p>The display name for the Amazon Redshift IAM Identity Center application. It appears on the console.</p>
-    pub fn idc_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn idc_display_name(&self) -> ::std::option::Option<& str> {
         self.idc_display_name.as_deref()
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application.</p>
-    pub fn idc_managed_application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn idc_managed_application_arn(&self) -> ::std::option::Option<& str> {
         self.idc_managed_application_arn.as_deref()
     }
     /// <p>The onboarding status for the Amazon Redshift IAM Identity Center application.</p>
-    pub fn idc_onboard_status(&self) -> ::std::option::Option<&str> {
+    pub fn idc_onboard_status(&self) -> ::std::option::Option<& str> {
         self.idc_onboard_status.as_deref()
     }
     /// <p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_token_issuer_list.is_none()`.
-    pub fn authorized_token_issuer_list(&self) -> &[crate::types::AuthorizedTokenIssuer] {
-        self.authorized_token_issuer_list.as_deref().unwrap_or_default()
+    pub fn authorized_token_issuer_list(&self) -> & [crate::types::AuthorizedTokenIssuer] {
+        self.authorized_token_issuer_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of service integrations for the Redshift IAM Identity Center application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_integrations.is_none()`.
-    pub fn service_integrations(&self) -> &[crate::types::ServiceIntegrationsUnion] {
-        self.service_integrations.as_deref().unwrap_or_default()
+    pub fn service_integrations(&self) -> & [crate::types::ServiceIntegrationsUnion] {
+        self.service_integrations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RedshiftIdcApplication {
@@ -90,8 +92,8 @@ pub struct RedshiftIdcApplicationBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idc_managed_application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idc_onboard_status: ::std::option::Option<::std::string::String>,
-    pub(crate) authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>,
-    pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>,
+    pub(crate) authorized_token_issuer_list: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>,
+    pub(crate) service_integrations: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceIntegrationsUnion>>,
 }
 impl RedshiftIdcApplicationBuilder {
     /// <p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>
@@ -101,8 +103,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>
     pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idc_instance_arn = input;
-        self
+        self.idc_instance_arn = input; self
     }
     /// <p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>
     pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +116,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The name of the Redshift application in IAM Identity Center.</p>
     pub fn set_redshift_idc_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_idc_application_name = input;
-        self
+        self.redshift_idc_application_name = input; self
     }
     /// <p>The name of the Redshift application in IAM Identity Center.</p>
     pub fn get_redshift_idc_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +129,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
     pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.redshift_idc_application_arn = input;
-        self
+        self.redshift_idc_application_arn = input; self
     }
     /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
     pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +142,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The identity namespace for the Amazon Redshift IAM Identity Center application. It determines which managed application verifies the connection token.</p>
     pub fn set_identity_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_namespace = input;
-        self
+        self.identity_namespace = input; self
     }
     /// <p>The identity namespace for the Amazon Redshift IAM Identity Center application. It determines which managed application verifies the connection token.</p>
     pub fn get_identity_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +155,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The display name for the Amazon Redshift IAM Identity Center application. It appears on the console.</p>
     pub fn set_idc_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idc_display_name = input;
-        self
+        self.idc_display_name = input; self
     }
     /// <p>The display name for the Amazon Redshift IAM Identity Center application. It appears on the console.</p>
     pub fn get_idc_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +181,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application.</p>
     pub fn set_idc_managed_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idc_managed_application_arn = input;
-        self
+        self.idc_managed_application_arn = input; self
     }
     /// <p>The ARN for the Amazon Redshift IAM Identity Center application.</p>
     pub fn get_idc_managed_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +194,7 @@ impl RedshiftIdcApplicationBuilder {
     }
     /// <p>The onboarding status for the Amazon Redshift IAM Identity Center application.</p>
     pub fn set_idc_onboard_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.idc_onboard_status = input;
-        self
+        self.idc_onboard_status = input; self
     }
     /// <p>The onboarding status for the Amazon Redshift IAM Identity Center application.</p>
     pub fn get_idc_onboard_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,17 +207,16 @@ impl RedshiftIdcApplicationBuilder {
     /// <p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>
     pub fn authorized_token_issuer_list(mut self, input: crate::types::AuthorizedTokenIssuer) -> Self {
         let mut v = self.authorized_token_issuer_list.unwrap_or_default();
-        v.push(input);
-        self.authorized_token_issuer_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.authorized_token_issuer_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>
-    pub fn set_authorized_token_issuer_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>>) -> Self {
-        self.authorized_token_issuer_list = input;
-        self
+    pub fn set_authorized_token_issuer_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>>) -> Self {
+        self.authorized_token_issuer_list = input; self
     }
     /// <p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>
-    pub fn get_authorized_token_issuer_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizedTokenIssuer>> {
+    pub fn get_authorized_token_issuer_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AuthorizedTokenIssuer>> {
         &self.authorized_token_issuer_list
     }
     /// Appends an item to `service_integrations`.
@@ -233,32 +226,42 @@ impl RedshiftIdcApplicationBuilder {
     /// <p>A list of service integrations for the Redshift IAM Identity Center application.</p>
     pub fn service_integrations(mut self, input: crate::types::ServiceIntegrationsUnion) -> Self {
         let mut v = self.service_integrations.unwrap_or_default();
-        v.push(input);
-        self.service_integrations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_integrations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of service integrations for the Redshift IAM Identity Center application.</p>
-    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>>) -> Self {
-        self.service_integrations = input;
-        self
+    pub fn set_service_integrations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceIntegrationsUnion>>) -> Self {
+        self.service_integrations = input; self
     }
     /// <p>A list of service integrations for the Redshift IAM Identity Center application.</p>
-    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceIntegrationsUnion>> {
+    pub fn get_service_integrations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceIntegrationsUnion>> {
         &self.service_integrations
     }
     /// Consumes the builder and constructs a [`RedshiftIdcApplication`](crate::types::RedshiftIdcApplication).
     pub fn build(self) -> crate::types::RedshiftIdcApplication {
         crate::types::RedshiftIdcApplication {
-            idc_instance_arn: self.idc_instance_arn,
-            redshift_idc_application_name: self.redshift_idc_application_name,
-            redshift_idc_application_arn: self.redshift_idc_application_arn,
-            identity_namespace: self.identity_namespace,
-            idc_display_name: self.idc_display_name,
-            iam_role_arn: self.iam_role_arn,
-            idc_managed_application_arn: self.idc_managed_application_arn,
-            idc_onboard_status: self.idc_onboard_status,
-            authorized_token_issuer_list: self.authorized_token_issuer_list,
-            service_integrations: self.service_integrations,
+            idc_instance_arn: self.idc_instance_arn
+            ,
+            redshift_idc_application_name: self.redshift_idc_application_name
+            ,
+            redshift_idc_application_arn: self.redshift_idc_application_arn
+            ,
+            identity_namespace: self.identity_namespace
+            ,
+            idc_display_name: self.idc_display_name
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            idc_managed_application_arn: self.idc_managed_application_arn
+            ,
+            idc_onboard_status: self.idc_onboard_status
+            ,
+            authorized_token_issuer_list: self.authorized_token_issuer_list
+            ,
+            service_integrations: self.service_integrations
+            ,
         }
     }
 }
+

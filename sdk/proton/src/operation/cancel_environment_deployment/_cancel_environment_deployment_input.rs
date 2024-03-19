@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelEnvironmentDeploymentInput {
+pub struct CancelEnvironmentDeploymentInput  {
     /// <p>The name of the environment with the deployment to cancel.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelEnvironmentDeploymentInput {
+impl  CancelEnvironmentDeploymentInput  {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CancelEnvironmentDeploymentInputBuilder {
     }
     /// <p>The name of the environment with the deployment to cancel.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment with the deployment to cancel.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput {
-            environment_name: self.environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput {
+                environment_name: self.environment_name
+                ,
+            }
+        )
     }
 }
+

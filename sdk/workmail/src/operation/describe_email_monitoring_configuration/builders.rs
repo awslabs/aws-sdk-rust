@@ -5,54 +5,50 @@ pub use crate::operation::describe_email_monitoring_configuration::_describe_ema
 
 impl DescribeEmailMonitoringConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_email_monitoring_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_email_monitoring_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeEmailMonitoringConfiguration`.
-///
+/// 
 /// <p>Describes the current email monitoring configuration for a specified organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder,
+                    inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-    > for DescribeEmailMonitoringConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+                    crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
+                > for DescribeEmailMonitoringConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
+                        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeEmailMonitoringConfigurationFluentBuilder {
     /// Creates a new `DescribeEmailMonitoringConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,54 +57,44 @@ impl DescribeEmailMonitoringConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput,
-        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationOutput, crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -124,3 +110,4 @@ impl DescribeEmailMonitoringConfigurationFluentBuilder {
         self.inner.get_organization_id()
     }
 }
+

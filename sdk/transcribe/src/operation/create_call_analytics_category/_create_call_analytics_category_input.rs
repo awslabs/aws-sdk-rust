@@ -2,35 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCallAnalyticsCategoryInput {
+pub struct CreateCallAnalyticsCategoryInput  {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
     pub category_name: ::std::option::Option<::std::string::String>,
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
     /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
     /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub input_type: ::std::option::Option<crate::types::InputType>,
 }
-impl CreateCallAnalyticsCategoryInput {
+impl  CreateCallAnalyticsCategoryInput  {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
-    pub fn category_name(&self) -> ::std::option::Option<&str> {
+    pub fn category_name(&self) -> ::std::option::Option<& str> {
         self.category_name.as_deref()
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::Rule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::Rule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
     /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
     /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
-    pub fn input_type(&self) -> ::std::option::Option<&crate::types::InputType> {
+    pub fn input_type(&self) -> ::std::option::Option<& crate::types::InputType> {
         self.input_type.as_ref()
     }
 }
@@ -46,7 +47,7 @@ impl CreateCallAnalyticsCategoryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryInputBuilder {
     pub(crate) category_name: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
 }
 impl CreateCallAnalyticsCategoryInputBuilder {
@@ -60,8 +61,7 @@ impl CreateCallAnalyticsCategoryInputBuilder {
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
     pub fn set_category_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category_name = input;
-        self
+        self.category_name = input; self
     }
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
@@ -75,17 +75,16 @@ impl CreateCallAnalyticsCategoryInputBuilder {
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         &self.rules
     }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
@@ -101,8 +100,7 @@ impl CreateCallAnalyticsCategoryInputBuilder {
     /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
     /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
-        self.input_type = input;
-        self
+        self.input_type = input; self
     }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
@@ -112,16 +110,17 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         &self.input_type
     }
     /// Consumes the builder and constructs a [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput {
-            category_name: self.category_name,
-            rules: self.rules,
-            input_type: self.input_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput {
+                category_name: self.category_name
+                ,
+                rules: self.rules
+                ,
+                input_type: self.input_type
+                ,
+            }
+        )
     }
 }
+

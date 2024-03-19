@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeIntegrationsOutput {
+pub struct DescribeIntegrationsOutput  {
     /// <p>A pagination token that can be used in a later <code>DescribeIntegrations</code> request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of integrations.</p>
-    pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
+    pub integrations: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>,
     _request_id: Option<String>,
 }
-impl DescribeIntegrationsOutput {
+impl  DescribeIntegrationsOutput  {
     /// <p>A pagination token that can be used in a later <code>DescribeIntegrations</code> request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of integrations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
-    pub fn integrations(&self) -> &[crate::types::Integration] {
-        self.integrations.as_deref().unwrap_or_default()
+    pub fn integrations(&self) -> & [crate::types::Integration] {
+        self.integrations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeIntegrationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIntegrationsOutput`](crate::operation::describe_integrations::DescribeIntegrationsOutput).
     pub fn builder() -> crate::operation::describe_integrations::builders::DescribeIntegrationsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeIntegrationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeIntegrationsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
+    pub(crate) integrations: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>,
     _request_id: Option<String>,
 }
 impl DescribeIntegrationsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeIntegrationsOutputBuilder {
     }
     /// <p>A pagination token that can be used in a later <code>DescribeIntegrations</code> request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token that can be used in a later <code>DescribeIntegrations</code> request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeIntegrationsOutputBuilder {
     /// <p>A list of integrations.</p>
     pub fn integrations(mut self, input: crate::types::Integration) -> Self {
         let mut v = self.integrations.unwrap_or_default();
-        v.push(input);
-        self.integrations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integrations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of integrations.</p>
-    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
-        self.integrations = input;
-        self
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Integration>>) -> Self {
+        self.integrations = input; self
     }
     /// <p>A list of integrations.</p>
-    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Integration>> {
         &self.integrations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeIntegrationsOutput`](crate::operation::describe_integrations::DescribeIntegrationsOutput).
     pub fn build(self) -> crate::operation::describe_integrations::DescribeIntegrationsOutput {
         crate::operation::describe_integrations::DescribeIntegrationsOutput {
-            marker: self.marker,
-            integrations: self.integrations,
+            marker: self.marker
+            ,
+            integrations: self.integrations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -22,11 +22,7 @@ impl CallAnalyticsTranscriptResultStream {
     /// Tries to convert the enum instance into [`CategoryEvent`](crate::types::CallAnalyticsTranscriptResultStream::CategoryEvent), extracting the inner [`CategoryEvent`](crate::types::CategoryEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_category_event(&self) -> ::std::result::Result<&crate::types::CategoryEvent, &Self> {
-        if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CategoryEvent`](crate::types::CallAnalyticsTranscriptResultStream::CategoryEvent).
     pub fn is_category_event(&self) -> bool {
@@ -35,11 +31,7 @@ impl CallAnalyticsTranscriptResultStream {
     /// Tries to convert the enum instance into [`UtteranceEvent`](crate::types::CallAnalyticsTranscriptResultStream::UtteranceEvent), extracting the inner [`UtteranceEvent`](crate::types::UtteranceEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_utterance_event(&self) -> ::std::result::Result<&crate::types::UtteranceEvent, &Self> {
-        if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UtteranceEvent`](crate::types::CallAnalyticsTranscriptResultStream::UtteranceEvent).
     pub fn is_utterance_event(&self) -> bool {
@@ -50,3 +42,4 @@ impl CallAnalyticsTranscriptResultStream {
         matches!(self, Self::Unknown)
     }
 }
+

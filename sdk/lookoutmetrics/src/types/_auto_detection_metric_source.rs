@@ -3,13 +3,13 @@
 /// <p>An auto detection metric source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoDetectionMetricSource {
+pub struct AutoDetectionMetricSource  {
     /// <p>The source's source config.</p>
     pub s3_source_config: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
 }
-impl AutoDetectionMetricSource {
+impl  AutoDetectionMetricSource  {
     /// <p>The source's source config.</p>
-    pub fn s3_source_config(&self) -> ::std::option::Option<&crate::types::AutoDetectionS3SourceConfig> {
+    pub fn s3_source_config(&self) -> ::std::option::Option<& crate::types::AutoDetectionS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AutoDetectionMetricSourceBuilder {
     }
     /// <p>The source's source config.</p>
     pub fn set_s3_source_config(mut self, input: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>) -> Self {
-        self.s3_source_config = input;
-        self
+        self.s3_source_config = input; self
     }
     /// <p>The source's source config.</p>
     pub fn get_s3_source_config(&self) -> &::std::option::Option<crate::types::AutoDetectionS3SourceConfig> {
@@ -44,7 +43,9 @@ impl AutoDetectionMetricSourceBuilder {
     /// Consumes the builder and constructs a [`AutoDetectionMetricSource`](crate::types::AutoDetectionMetricSource).
     pub fn build(self) -> crate::types::AutoDetectionMetricSource {
         crate::types::AutoDetectionMetricSource {
-            s3_source_config: self.s3_source_config,
+            s3_source_config: self.s3_source_config
+            ,
         }
     }
 }
+

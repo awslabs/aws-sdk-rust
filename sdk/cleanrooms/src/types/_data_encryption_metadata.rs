@@ -3,7 +3,7 @@
 /// <p>The settings for client-side encryption for cryptographic computing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataEncryptionMetadata {
+pub struct DataEncryptionMetadata  {
     /// <p>Indicates whether encrypted tables can contain cleartext data (<code>TRUE</code>) or are to cryptographically process every column (<code>FALSE</code>).</p>
     pub allow_cleartext: bool,
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (<code>TRUE</code>) or are to contain only non-repeated values (<code>FALSE</code>).</p>
@@ -13,7 +13,7 @@ pub struct DataEncryptionMetadata {
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (<code>TRUE</code>) or cryptographically processed (<code>FALSE</code>).</p>
     pub preserve_nulls: bool,
 }
-impl DataEncryptionMetadata {
+impl  DataEncryptionMetadata  {
     /// <p>Indicates whether encrypted tables can contain cleartext data (<code>TRUE</code>) or are to cryptographically process every column (<code>FALSE</code>).</p>
     pub fn allow_cleartext(&self) -> bool {
         self.allow_cleartext
@@ -56,8 +56,7 @@ impl DataEncryptionMetadataBuilder {
     }
     /// <p>Indicates whether encrypted tables can contain cleartext data (<code>TRUE</code>) or are to cryptographically process every column (<code>FALSE</code>).</p>
     pub fn set_allow_cleartext(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_cleartext = input;
-        self
+        self.allow_cleartext = input; self
     }
     /// <p>Indicates whether encrypted tables can contain cleartext data (<code>TRUE</code>) or are to cryptographically process every column (<code>FALSE</code>).</p>
     pub fn get_allow_cleartext(&self) -> &::std::option::Option<bool> {
@@ -71,8 +70,7 @@ impl DataEncryptionMetadataBuilder {
     }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (<code>TRUE</code>) or are to contain only non-repeated values (<code>FALSE</code>).</p>
     pub fn set_allow_duplicates(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_duplicates = input;
-        self
+        self.allow_duplicates = input; self
     }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (<code>TRUE</code>) or are to contain only non-repeated values (<code>FALSE</code>).</p>
     pub fn get_allow_duplicates(&self) -> &::std::option::Option<bool> {
@@ -86,8 +84,7 @@ impl DataEncryptionMetadataBuilder {
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (<code>TRUE</code>) or can only be joined on Fingerprint columns of the same name (<code>FALSE</code>).</p>
     pub fn set_allow_joins_on_columns_with_different_names(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_joins_on_columns_with_different_names = input;
-        self
+        self.allow_joins_on_columns_with_different_names = input; self
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (<code>TRUE</code>) or can only be joined on Fingerprint columns of the same name (<code>FALSE</code>).</p>
     pub fn get_allow_joins_on_columns_with_different_names(&self) -> &::std::option::Option<bool> {
@@ -101,8 +98,7 @@ impl DataEncryptionMetadataBuilder {
     }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (<code>TRUE</code>) or cryptographically processed (<code>FALSE</code>).</p>
     pub fn set_preserve_nulls(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preserve_nulls = input;
-        self
+        self.preserve_nulls = input; self
     }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (<code>TRUE</code>) or cryptographically processed (<code>FALSE</code>).</p>
     pub fn get_preserve_nulls(&self) -> &::std::option::Option<bool> {
@@ -115,31 +111,30 @@ impl DataEncryptionMetadataBuilder {
     /// - [`allow_joins_on_columns_with_different_names`](crate::types::builders::DataEncryptionMetadataBuilder::allow_joins_on_columns_with_different_names)
     /// - [`preserve_nulls`](crate::types::builders::DataEncryptionMetadataBuilder::preserve_nulls)
     pub fn build(self) -> ::std::result::Result<crate::types::DataEncryptionMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataEncryptionMetadata {
-            allow_cleartext: self.allow_cleartext.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allow_cleartext",
-                    "allow_cleartext was not specified but it is required when building DataEncryptionMetadata",
-                )
-            })?,
-            allow_duplicates: self.allow_duplicates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allow_duplicates",
-                    "allow_duplicates was not specified but it is required when building DataEncryptionMetadata",
-                )
-            })?,
-            allow_joins_on_columns_with_different_names: self.allow_joins_on_columns_with_different_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allow_joins_on_columns_with_different_names",
-                    "allow_joins_on_columns_with_different_names was not specified but it is required when building DataEncryptionMetadata",
-                )
-            })?,
-            preserve_nulls: self.preserve_nulls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "preserve_nulls",
-                    "preserve_nulls was not specified but it is required when building DataEncryptionMetadata",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataEncryptionMetadata {
+                allow_cleartext: self.allow_cleartext
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allow_cleartext", "allow_cleartext was not specified but it is required when building DataEncryptionMetadata")
+                    )?
+                ,
+                allow_duplicates: self.allow_duplicates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allow_duplicates", "allow_duplicates was not specified but it is required when building DataEncryptionMetadata")
+                    )?
+                ,
+                allow_joins_on_columns_with_different_names: self.allow_joins_on_columns_with_different_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("allow_joins_on_columns_with_different_names", "allow_joins_on_columns_with_different_names was not specified but it is required when building DataEncryptionMetadata")
+                    )?
+                ,
+                preserve_nulls: self.preserve_nulls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("preserve_nulls", "preserve_nulls was not specified but it is required when building DataEncryptionMetadata")
+                    )?
+                ,
+            }
+        )
     }
 }
+

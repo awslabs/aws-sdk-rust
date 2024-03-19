@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationPreferencesOutput {
+pub struct GetRecommendationPreferencesOutput  {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
+    pub recommendation_preferences_details: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferencesDetail>>,
     _request_id: Option<String>,
 }
-impl GetRecommendationPreferencesOutput {
+impl  GetRecommendationPreferencesOutput  {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_preferences_details.is_none()`.
-    pub fn recommendation_preferences_details(&self) -> &[crate::types::RecommendationPreferencesDetail] {
-        self.recommendation_preferences_details.as_deref().unwrap_or_default()
+    pub fn recommendation_preferences_details(&self) -> & [crate::types::RecommendationPreferencesDetail] {
+        self.recommendation_preferences_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecommendationPreferencesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecommendationPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
     pub fn builder() -> crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesOutputBuilder {
@@ -40,7 +41,7 @@ impl GetRecommendationPreferencesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationPreferencesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recommendation_preferences_details: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
+    pub(crate) recommendation_preferences_details: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferencesDetail>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationPreferencesOutputBuilder {
@@ -53,8 +54,7 @@ impl GetRecommendationPreferencesOutputBuilder {
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to advance to the next page of recommendation preferences.</p>
     /// <p>This value is null when there are no more pages of recommendation preferences to return.</p>
@@ -68,37 +68,36 @@ impl GetRecommendationPreferencesOutputBuilder {
     /// <p>An array of objects that describe recommendation preferences.</p>
     pub fn recommendation_preferences_details(mut self, input: crate::types::RecommendationPreferencesDetail) -> Self {
         let mut v = self.recommendation_preferences_details.unwrap_or_default();
-        v.push(input);
-        self.recommendation_preferences_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recommendation_preferences_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn set_recommendation_preferences_details(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>>,
-    ) -> Self {
-        self.recommendation_preferences_details = input;
-        self
+    pub fn set_recommendation_preferences_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferencesDetail>>) -> Self {
+        self.recommendation_preferences_details = input; self
     }
     /// <p>An array of objects that describe recommendation preferences.</p>
-    pub fn get_recommendation_preferences_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationPreferencesDetail>> {
+    pub fn get_recommendation_preferences_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationPreferencesDetail>> {
         &self.recommendation_preferences_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput).
     pub fn build(self) -> crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput {
         crate::operation::get_recommendation_preferences::GetRecommendationPreferencesOutput {
-            next_token: self.next_token,
-            recommendation_preferences_details: self.recommendation_preferences_details,
+            next_token: self.next_token
+            ,
+            recommendation_preferences_details: self.recommendation_preferences_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

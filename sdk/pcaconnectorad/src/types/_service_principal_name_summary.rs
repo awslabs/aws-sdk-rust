@@ -3,7 +3,7 @@
 /// <p>The service principal name that the connector uses to authenticate with Active Directory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServicePrincipalNameSummary {
+pub struct ServicePrincipalNameSummary  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub directory_registration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
@@ -17,29 +17,29 @@ pub struct ServicePrincipalNameSummary {
     /// <p>Time when the service principal name was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ServicePrincipalNameSummary {
+impl  ServicePrincipalNameSummary  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
-    pub fn directory_registration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_registration_arn(&self) -> ::std::option::Option<& str> {
         self.directory_registration_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
-    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>The status of a service principal name.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServicePrincipalNameStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServicePrincipalNameStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information for the status of a service principal name if the status is failed.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::ServicePrincipalNameStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<& crate::types::ServicePrincipalNameStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The date and time that the service principal name was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Time when the service principal name was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn set_directory_registration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_registration_arn = input;
-        self
+        self.directory_registration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html">CreateDirectoryRegistration</a>.</p>
     pub fn get_directory_registration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn set_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
     pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>The status of a service principal name.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServicePrincipalNameStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a service principal name.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServicePrincipalNameStatus> {
@@ -111,8 +108,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>Additional information for the status of a service principal name if the status is failed.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::ServicePrincipalNameStatusReason>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Additional information for the status of a service principal name if the status is failed.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::ServicePrincipalNameStatusReason> {
@@ -125,8 +121,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>The date and time that the service principal name was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the service principal name was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl ServicePrincipalNameSummaryBuilder {
     }
     /// <p>Time when the service principal name was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>Time when the service principal name was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl ServicePrincipalNameSummaryBuilder {
     /// Consumes the builder and constructs a [`ServicePrincipalNameSummary`](crate::types::ServicePrincipalNameSummary).
     pub fn build(self) -> crate::types::ServicePrincipalNameSummary {
         crate::types::ServicePrincipalNameSummary {
-            directory_registration_arn: self.directory_registration_arn,
-            connector_arn: self.connector_arn,
-            status: self.status,
-            status_reason: self.status_reason,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            directory_registration_arn: self.directory_registration_arn
+            ,
+            connector_arn: self.connector_arn
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

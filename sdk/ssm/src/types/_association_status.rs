@@ -3,7 +3,7 @@
 /// <p>Describes an association status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationStatus {
+pub struct AssociationStatus  {
     /// <p>The date when the status changed.</p>
     pub date: ::aws_smithy_types::DateTime,
     /// <p>The status.</p>
@@ -13,22 +13,21 @@ pub struct AssociationStatus {
     /// <p>A user-defined string.</p>
     pub additional_info: ::std::option::Option<::std::string::String>,
 }
-impl AssociationStatus {
+impl  AssociationStatus  {
     /// <p>The date when the status changed.</p>
-    pub fn date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn date(&self) -> & ::aws_smithy_types::DateTime {
         &self.date
     }
     /// <p>The status.</p>
-    pub fn name(&self) -> &crate::types::AssociationStatusName {
+    pub fn name(&self) -> & crate::types::AssociationStatusName {
         &self.name
     }
     /// <p>The reason for the status.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>A user-defined string.</p>
-    pub fn additional_info(&self) -> ::std::option::Option<&str> {
+    pub fn additional_info(&self) -> ::std::option::Option<& str> {
         self.additional_info.as_deref()
     }
 }
@@ -57,8 +56,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The date when the status changed.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The date when the status changed.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -72,8 +70,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The status.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AssociationStatusName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The status.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AssociationStatusName> {
@@ -87,8 +84,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>The reason for the status.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The reason for the status.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +97,7 @@ impl AssociationStatusBuilder {
     }
     /// <p>A user-defined string.</p>
     pub fn set_additional_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_info = input;
-        self
+        self.additional_info = input; self
     }
     /// <p>A user-defined string.</p>
     pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,26 +109,27 @@ impl AssociationStatusBuilder {
     /// - [`name`](crate::types::builders::AssociationStatusBuilder::name)
     /// - [`message`](crate::types::builders::AssociationStatusBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::AssociationStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssociationStatus {
-            date: self.date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "date",
-                    "date was not specified but it is required when building AssociationStatus",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssociationStatus",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building AssociationStatus",
-                )
-            })?,
-            additional_info: self.additional_info,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssociationStatus {
+                date: self.date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("date", "date was not specified but it is required when building AssociationStatus")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssociationStatus")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building AssociationStatus")
+                    )?
+                ,
+                additional_info: self.additional_info
+                ,
+            }
+        )
     }
 }
+

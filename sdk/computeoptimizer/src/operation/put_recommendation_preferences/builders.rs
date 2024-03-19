@@ -5,55 +5,51 @@ pub use crate::operation::put_recommendation_preferences::_put_recommendation_pr
 
 impl PutRecommendationPreferencesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_recommendation_preferences();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_recommendation_preferences();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutRecommendationPreferences`.
-///
+/// 
 /// <p>Creates a new recommendation preference or updates an existing recommendation preference, such as enhanced infrastructure metrics.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder,
+                    inner: crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-    > for PutRecommendationPreferencesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
+                    crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+                > for PutRecommendationPreferencesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
+                        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutRecommendationPreferencesFluentBuilder {
     /// Creates a new `PutRecommendationPreferences`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl PutRecommendationPreferencesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_recommendation_preferences::PutRecommendationPreferences::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferences::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_recommendation_preferences::PutRecommendationPreferences::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_recommendation_preferences::PutRecommendationPreferences::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput, crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p><note>
     /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
@@ -270,7 +257,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </ul><note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
-    pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
+    pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationPreference>>) -> Self {
         self.inner = self.inner.set_utilization_preferences(input);
         self
     }
@@ -283,7 +270,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </ul><note>
     /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
     /// </note>
-    pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
+    pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtilizationPreference>> {
         self.inner.get_utilization_preferences()
     }
     /// Appends an item to `preferredResources`.
@@ -300,14 +287,14 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
-    pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
+    pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PreferredResource>>) -> Self {
         self.inner = self.inner.set_preferred_resources(input);
         self
     }
     /// <p>The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs.</p><note>
     /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
     /// </note>
-    pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
+    pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PreferredResource>> {
         self.inner.get_preferred_resources()
     }
     /// <p>The status of the savings estimation mode preference to create or update.</p>
@@ -334,3 +321,4 @@ impl PutRecommendationPreferencesFluentBuilder {
         self.inner.get_savings_estimation_mode()
     }
 }
+

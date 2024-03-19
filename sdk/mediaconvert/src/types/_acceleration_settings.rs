@@ -3,13 +3,13 @@
 /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccelerationSettings {
+pub struct AccelerationSettings  {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     pub mode: ::std::option::Option<crate::types::AccelerationMode>,
 }
-impl AccelerationSettings {
+impl  AccelerationSettings  {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::AccelerationMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::AccelerationMode> {
         self.mode.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AccelerationSettingsBuilder {
     }
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::AccelerationMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AccelerationMode> {
@@ -44,6 +43,10 @@ impl AccelerationSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`AccelerationSettings`](crate::types::AccelerationSettings).
     pub fn build(self) -> crate::types::AccelerationSettings {
-        crate::types::AccelerationSettings { mode: self.mode }
+        crate::types::AccelerationSettings {
+            mode: self.mode
+            ,
+        }
     }
 }
+

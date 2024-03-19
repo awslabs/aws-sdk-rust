@@ -3,7 +3,7 @@
 /// <p>Summary information about the human loop.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HumanLoopSummary {
+pub struct HumanLoopSummary  {
     /// <p>The name of the human loop.</p>
     pub human_loop_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the human loop.</p>
@@ -15,25 +15,25 @@ pub struct HumanLoopSummary {
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub flow_definition_arn: ::std::option::Option<::std::string::String>,
 }
-impl HumanLoopSummary {
+impl  HumanLoopSummary  {
     /// <p>The name of the human loop.</p>
-    pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> ::std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The status of the human loop.</p>
-    pub fn human_loop_status(&self) -> ::std::option::Option<&crate::types::HumanLoopStatus> {
+    pub fn human_loop_status(&self) -> ::std::option::Option<& crate::types::HumanLoopStatus> {
         self.human_loop_status.as_ref()
     }
     /// <p>When Amazon Augmented AI created the human loop.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
-    pub fn flow_definition_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_definition_arn(&self) -> ::std::option::Option<& str> {
         self.flow_definition_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl HumanLoopSummaryBuilder {
     }
     /// <p>The name of the human loop.</p>
     pub fn set_human_loop_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.human_loop_name = input;
-        self
+        self.human_loop_name = input; self
     }
     /// <p>The name of the human loop.</p>
     pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl HumanLoopSummaryBuilder {
     }
     /// <p>The status of the human loop.</p>
     pub fn set_human_loop_status(mut self, input: ::std::option::Option<crate::types::HumanLoopStatus>) -> Self {
-        self.human_loop_status = input;
-        self
+        self.human_loop_status = input; self
     }
     /// <p>The status of the human loop.</p>
     pub fn get_human_loop_status(&self) -> &::std::option::Option<crate::types::HumanLoopStatus> {
@@ -90,8 +88,7 @@ impl HumanLoopSummaryBuilder {
     }
     /// <p>When Amazon Augmented AI created the human loop.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When Amazon Augmented AI created the human loop.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl HumanLoopSummaryBuilder {
     }
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl HumanLoopSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub fn set_flow_definition_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_definition_arn = input;
-        self
+        self.flow_definition_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>
     pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl HumanLoopSummaryBuilder {
     /// Consumes the builder and constructs a [`HumanLoopSummary`](crate::types::HumanLoopSummary).
     pub fn build(self) -> crate::types::HumanLoopSummary {
         crate::types::HumanLoopSummary {
-            human_loop_name: self.human_loop_name,
-            human_loop_status: self.human_loop_status,
-            creation_time: self.creation_time,
-            failure_reason: self.failure_reason,
-            flow_definition_arn: self.flow_definition_arn,
+            human_loop_name: self.human_loop_name
+            ,
+            human_loop_status: self.human_loop_status
+            ,
+            creation_time: self.creation_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            flow_definition_arn: self.flow_definition_arn
+            ,
         }
     }
 }
+

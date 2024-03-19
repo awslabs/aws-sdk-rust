@@ -2,66 +2,71 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p>The name of the dataset.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of actions that create the dataset contents.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetAction>>,
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
+    pub triggers: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetTrigger>>,
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub content_delivery_rules: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
+    pub content_delivery_rules: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetContentDeliveryRule>>,
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
     /// <p>Metadata which can be used to manage the dataset.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub late_data_rules: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>,
+    pub late_data_rules: ::std::option::Option<::std::vec::Vec::<crate::types::LateDataRule>>,
 }
-impl CreateDatasetInput {
+impl  CreateDatasetInput  {
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>A list of actions that create the dataset contents.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::DatasetAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::DatasetAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
-    pub fn triggers(&self) -> &[crate::types::DatasetTrigger] {
-        self.triggers.as_deref().unwrap_or_default()
+    pub fn triggers(&self) -> & [crate::types::DatasetTrigger] {
+        self.triggers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_delivery_rules.is_none()`.
-    pub fn content_delivery_rules(&self) -> &[crate::types::DatasetContentDeliveryRule] {
-        self.content_delivery_rules.as_deref().unwrap_or_default()
+    pub fn content_delivery_rules(&self) -> & [crate::types::DatasetContentDeliveryRule] {
+        self.content_delivery_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
-    pub fn versioning_configuration(&self) -> ::std::option::Option<&crate::types::VersioningConfiguration> {
+    pub fn versioning_configuration(&self) -> ::std::option::Option<& crate::types::VersioningConfiguration> {
         self.versioning_configuration.as_ref()
     }
     /// <p>Metadata which can be used to manage the dataset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.late_data_rules.is_none()`.
-    pub fn late_data_rules(&self) -> &[crate::types::LateDataRule] {
-        self.late_data_rules.as_deref().unwrap_or_default()
+    pub fn late_data_rules(&self) -> & [crate::types::LateDataRule] {
+        self.late_data_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDatasetInput {
@@ -76,13 +81,13 @@ impl CreateDatasetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDatasetInputBuilder {
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>,
-    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
-    pub(crate) content_delivery_rules: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetAction>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetTrigger>>,
+    pub(crate) content_delivery_rules: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetContentDeliveryRule>>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     pub(crate) versioning_configuration: ::std::option::Option<crate::types::VersioningConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) late_data_rules: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) late_data_rules: ::std::option::Option<::std::vec::Vec::<crate::types::LateDataRule>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name of the dataset.</p>
@@ -93,8 +98,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +111,16 @@ impl CreateDatasetInputBuilder {
     /// <p>A list of actions that create the dataset contents.</p>
     pub fn actions(mut self, input: crate::types::DatasetAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of actions that create the dataset contents.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>A list of actions that create the dataset contents.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetAction>> {
         &self.actions
     }
     /// Appends an item to `triggers`.
@@ -127,17 +130,16 @@ impl CreateDatasetInputBuilder {
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
     pub fn triggers(mut self, input: crate::types::DatasetTrigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.triggers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetTrigger>>) -> Self {
+        self.triggers = input; self
     }
     /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
-    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>> {
+    pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetTrigger>> {
         &self.triggers
     }
     /// Appends an item to `content_delivery_rules`.
@@ -147,17 +149,16 @@ impl CreateDatasetInputBuilder {
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
     pub fn content_delivery_rules(mut self, input: crate::types::DatasetContentDeliveryRule) -> Self {
         let mut v = self.content_delivery_rules.unwrap_or_default();
-        v.push(input);
-        self.content_delivery_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content_delivery_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn set_content_delivery_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>>) -> Self {
-        self.content_delivery_rules = input;
-        self
+    pub fn set_content_delivery_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetContentDeliveryRule>>) -> Self {
+        self.content_delivery_rules = input; self
     }
     /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
-    pub fn get_content_delivery_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetContentDeliveryRule>> {
+    pub fn get_content_delivery_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetContentDeliveryRule>> {
         &self.content_delivery_rules
     }
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
@@ -167,8 +168,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -181,8 +181,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn set_versioning_configuration(mut self, input: ::std::option::Option<crate::types::VersioningConfiguration>) -> Self {
-        self.versioning_configuration = input;
-        self
+        self.versioning_configuration = input; self
     }
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn get_versioning_configuration(&self) -> &::std::option::Option<crate::types::VersioningConfiguration> {
@@ -195,17 +194,16 @@ impl CreateDatasetInputBuilder {
     /// <p>Metadata which can be used to manage the dataset.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the dataset.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata which can be used to manage the dataset.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `late_data_rules`.
@@ -215,32 +213,40 @@ impl CreateDatasetInputBuilder {
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub fn late_data_rules(mut self, input: crate::types::LateDataRule) -> Self {
         let mut v = self.late_data_rules.unwrap_or_default();
-        v.push(input);
-        self.late_data_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.late_data_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn set_late_data_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>>) -> Self {
-        self.late_data_rules = input;
-        self
+    pub fn set_late_data_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LateDataRule>>) -> Self {
+        self.late_data_rules = input; self
     }
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-    pub fn get_late_data_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LateDataRule>> {
+    pub fn get_late_data_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LateDataRule>> {
         &self.late_data_rules
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
-            dataset_name: self.dataset_name,
-            actions: self.actions,
-            triggers: self.triggers,
-            content_delivery_rules: self.content_delivery_rules,
-            retention_period: self.retention_period,
-            versioning_configuration: self.versioning_configuration,
-            tags: self.tags,
-            late_data_rules: self.late_data_rules,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                dataset_name: self.dataset_name
+                ,
+                actions: self.actions
+                ,
+                triggers: self.triggers
+                ,
+                content_delivery_rules: self.content_delivery_rules
+                ,
+                retention_period: self.retention_period
+                ,
+                versioning_configuration: self.versioning_configuration
+                ,
+                tags: self.tags
+                ,
+                late_data_rules: self.late_data_rules
+                ,
+            }
+        )
     }
 }
+

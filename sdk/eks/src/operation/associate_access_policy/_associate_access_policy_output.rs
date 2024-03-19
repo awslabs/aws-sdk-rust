@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAccessPolicyOutput {
+pub struct AssociateAccessPolicyOutput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
@@ -11,25 +11,25 @@ pub struct AssociateAccessPolicyOutput {
     pub associated_access_policy: ::std::option::Option<crate::types::AssociatedAccessPolicy>,
     _request_id: Option<String>,
 }
-impl AssociateAccessPolicyOutput {
+impl  AssociateAccessPolicyOutput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The <code>AccessPolicy</code> and scope associated to the <code>AccessEntry</code>.</p>
-    pub fn associated_access_policy(&self) -> ::std::option::Option<&crate::types::AssociatedAccessPolicy> {
+    pub fn associated_access_policy(&self) -> ::std::option::Option<& crate::types::AssociatedAccessPolicy> {
         self.associated_access_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssociateAccessPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAccessPolicyOutput`](crate::operation::associate_access_policy::AssociateAccessPolicyOutput).
     pub fn builder() -> crate::operation::associate_access_policy::builders::AssociateAccessPolicyOutputBuilder {
@@ -54,8 +54,7 @@ impl AssociateAccessPolicyOutputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl AssociateAccessPolicyOutputBuilder {
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl AssociateAccessPolicyOutputBuilder {
     }
     /// <p>The <code>AccessPolicy</code> and scope associated to the <code>AccessEntry</code>.</p>
     pub fn set_associated_access_policy(mut self, input: ::std::option::Option<crate::types::AssociatedAccessPolicy>) -> Self {
-        self.associated_access_policy = input;
-        self
+        self.associated_access_policy = input; self
     }
     /// <p>The <code>AccessPolicy</code> and scope associated to the <code>AccessEntry</code>.</p>
     pub fn get_associated_access_policy(&self) -> &::std::option::Option<crate::types::AssociatedAccessPolicy> {
         &self.associated_access_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateAccessPolicyOutput`](crate::operation::associate_access_policy::AssociateAccessPolicyOutput).
     pub fn build(self) -> crate::operation::associate_access_policy::AssociateAccessPolicyOutput {
         crate::operation::associate_access_policy::AssociateAccessPolicyOutput {
-            cluster_name: self.cluster_name,
-            principal_arn: self.principal_arn,
-            associated_access_policy: self.associated_access_policy,
+            cluster_name: self.cluster_name
+            ,
+            principal_arn: self.principal_arn
+            ,
+            associated_access_policy: self.associated_access_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

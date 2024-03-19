@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateAppInstanceUserInput {
+pub struct CreateAppInstanceUserInput  {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the <code>AppInstance</code>.</p>
@@ -14,37 +14,38 @@ pub struct CreateAppInstanceUserInput {
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateAppInstanceUserInput {
+impl  CreateAppInstanceUserInput  {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
-    pub fn app_instance_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_id(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_id.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateAppInstanceUserInput {
+impl  ::std::fmt::Debug for CreateAppInstanceUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInstanceUserInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -72,7 +73,7 @@ pub struct CreateAppInstanceUserInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateAppInstanceUserInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -83,8 +84,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_id = input;
-        self
+        self.app_instance_user_id = input; self
     }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
     pub fn get_app_instance_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The user's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The user's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +139,7 @@ impl CreateAppInstanceUserInputBuilder {
     }
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,32 +152,36 @@ impl CreateAppInstanceUserInputBuilder {
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_app_instance_user::CreateAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_app_instance_user::CreateAppInstanceUserInput {
-            app_instance_arn: self.app_instance_arn,
-            app_instance_user_id: self.app_instance_user_id,
-            name: self.name,
-            metadata: self.metadata,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_app_instance_user::CreateAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_app_instance_user::CreateAppInstanceUserInput {
+                app_instance_arn: self.app_instance_arn
+                ,
+                app_instance_user_id: self.app_instance_user_id
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateAppInstanceUserInputBuilder {
@@ -196,3 +196,4 @@ impl ::std::fmt::Debug for CreateAppInstanceUserInputBuilder {
         formatter.finish()
     }
 }
+

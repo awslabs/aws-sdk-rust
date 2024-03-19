@@ -3,7 +3,7 @@
 /// <p>The container for the metadata for the ClarifyCheck step. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-clarify-check">ClarifyCheck step</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClarifyCheckStepMetadata {
+pub struct ClarifyCheckStepMetadata  {
     /// <p>The type of the Clarify Check step</p>
     pub check_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
@@ -21,29 +21,29 @@ pub struct ClarifyCheckStepMetadata {
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property.</p>
     pub register_new_baseline: ::std::option::Option<bool>,
 }
-impl ClarifyCheckStepMetadata {
+impl  ClarifyCheckStepMetadata  {
     /// <p>The type of the Clarify Check step</p>
-    pub fn check_type(&self) -> ::std::option::Option<&str> {
+    pub fn check_type(&self) -> ::std::option::Option<& str> {
         self.check_type.as_deref()
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    pub fn baseline_used_for_drift_check_constraints(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_used_for_drift_check_constraints(&self) -> ::std::option::Option<& str> {
         self.baseline_used_for_drift_check_constraints.as_deref()
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    pub fn calculated_baseline_constraints(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_baseline_constraints(&self) -> ::std::option::Option<& str> {
         self.calculated_baseline_constraints.as_deref()
     }
     /// <p>The model package group name.</p>
-    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn violation_report(&self) -> ::std::option::Option<&str> {
+    pub fn violation_report(&self) -> ::std::option::Option<& str> {
         self.violation_report.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn check_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn check_job_arn(&self) -> ::std::option::Option<& str> {
         self.check_job_arn.as_deref()
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
@@ -83,8 +83,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The type of the Clarify Check step</p>
     pub fn set_check_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_type = input;
-        self
+        self.check_type = input; self
     }
     /// <p>The type of the Clarify Check step</p>
     pub fn get_check_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
     pub fn set_baseline_used_for_drift_check_constraints(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_used_for_drift_check_constraints = input;
-        self
+        self.baseline_used_for_drift_check_constraints = input; self
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
     pub fn get_baseline_used_for_drift_check_constraints(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     pub fn set_calculated_baseline_constraints(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_baseline_constraints = input;
-        self
+        self.calculated_baseline_constraints = input; self
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     pub fn get_calculated_baseline_constraints(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The model package group name.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_package_group_name = input;
-        self
+        self.model_package_group_name = input; self
     }
     /// <p>The model package group name.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
     pub fn set_violation_report(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.violation_report = input;
-        self
+        self.violation_report = input; self
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
     pub fn get_violation_report(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
     pub fn set_check_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_job_arn = input;
-        self
+        self.check_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
     pub fn get_check_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
     pub fn set_skip_check(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_check = input;
-        self
+        self.skip_check = input; self
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
     pub fn get_skip_check(&self) -> &::std::option::Option<bool> {
@@ -181,8 +174,7 @@ impl ClarifyCheckStepMetadataBuilder {
     }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property.</p>
     pub fn set_register_new_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.register_new_baseline = input;
-        self
+        self.register_new_baseline = input; self
     }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property.</p>
     pub fn get_register_new_baseline(&self) -> &::std::option::Option<bool> {
@@ -191,14 +183,23 @@ impl ClarifyCheckStepMetadataBuilder {
     /// Consumes the builder and constructs a [`ClarifyCheckStepMetadata`](crate::types::ClarifyCheckStepMetadata).
     pub fn build(self) -> crate::types::ClarifyCheckStepMetadata {
         crate::types::ClarifyCheckStepMetadata {
-            check_type: self.check_type,
-            baseline_used_for_drift_check_constraints: self.baseline_used_for_drift_check_constraints,
-            calculated_baseline_constraints: self.calculated_baseline_constraints,
-            model_package_group_name: self.model_package_group_name,
-            violation_report: self.violation_report,
-            check_job_arn: self.check_job_arn,
-            skip_check: self.skip_check,
-            register_new_baseline: self.register_new_baseline,
+            check_type: self.check_type
+            ,
+            baseline_used_for_drift_check_constraints: self.baseline_used_for_drift_check_constraints
+            ,
+            calculated_baseline_constraints: self.calculated_baseline_constraints
+            ,
+            model_package_group_name: self.model_package_group_name
+            ,
+            violation_report: self.violation_report
+            ,
+            check_job_arn: self.check_job_arn
+            ,
+            skip_check: self.skip_check
+            ,
+            register_new_baseline: self.register_new_baseline
+            ,
         }
     }
 }
+

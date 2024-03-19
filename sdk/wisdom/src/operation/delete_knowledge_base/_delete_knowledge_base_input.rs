@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteKnowledgeBaseInput {
+pub struct DeleteKnowledgeBaseInput  {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteKnowledgeBaseInput {
+impl  DeleteKnowledgeBaseInput  {
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteKnowledgeBaseInputBuilder {
     }
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`DeleteKnowledgeBaseInput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput {
-            knowledge_base_id: self.knowledge_base_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput {
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

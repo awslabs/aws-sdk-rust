@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analyticsintentstagefiltername = unimplemented!();
 /// match analyticsintentstagefiltername {
@@ -37,16 +37,14 @@
 /// Specifically, when `analyticsintentstagefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalyticsIntentStageFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AnalyticsIntentStageFilterName {
     #[allow(missing_docs)] // documentation missing in model
     BotAliasId,
@@ -68,92 +66,83 @@ pub enum AnalyticsIntentStageFilterName {
     SessionId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AnalyticsIntentStageFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "BotAliasId" => AnalyticsIntentStageFilterName::BotAliasId,
-            "BotVersion" => AnalyticsIntentStageFilterName::BotVersion,
-            "Channel" => AnalyticsIntentStageFilterName::Channel,
-            "IntentName" => AnalyticsIntentStageFilterName::IntentName,
-            "IntentStageName" => AnalyticsIntentStageFilterName::IntentStageName,
-            "LocaleId" => AnalyticsIntentStageFilterName::LocaleId,
-            "Modality" => AnalyticsIntentStageFilterName::Modality,
-            "OriginatingRequestId" => AnalyticsIntentStageFilterName::OriginatingRequestId,
-            "SessionId" => AnalyticsIntentStageFilterName::SessionId,
-            other => AnalyticsIntentStageFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BotAliasId" => AnalyticsIntentStageFilterName::BotAliasId,
+"BotVersion" => AnalyticsIntentStageFilterName::BotVersion,
+"Channel" => AnalyticsIntentStageFilterName::Channel,
+"IntentName" => AnalyticsIntentStageFilterName::IntentName,
+"IntentStageName" => AnalyticsIntentStageFilterName::IntentStageName,
+"LocaleId" => AnalyticsIntentStageFilterName::LocaleId,
+"Modality" => AnalyticsIntentStageFilterName::Modality,
+"OriginatingRequestId" => AnalyticsIntentStageFilterName::OriginatingRequestId,
+"SessionId" => AnalyticsIntentStageFilterName::SessionId,
+other => AnalyticsIntentStageFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AnalyticsIntentStageFilterName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AnalyticsIntentStageFilterName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AnalyticsIntentStageFilterName::from(s))
+                    }
+                }
 impl AnalyticsIntentStageFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AnalyticsIntentStageFilterName::BotAliasId => "BotAliasId",
-            AnalyticsIntentStageFilterName::BotVersion => "BotVersion",
-            AnalyticsIntentStageFilterName::Channel => "Channel",
-            AnalyticsIntentStageFilterName::IntentName => "IntentName",
-            AnalyticsIntentStageFilterName::IntentStageName => "IntentStageName",
-            AnalyticsIntentStageFilterName::LocaleId => "LocaleId",
-            AnalyticsIntentStageFilterName::Modality => "Modality",
-            AnalyticsIntentStageFilterName::OriginatingRequestId => "OriginatingRequestId",
-            AnalyticsIntentStageFilterName::SessionId => "SessionId",
-            AnalyticsIntentStageFilterName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BotAliasId",
-            "BotVersion",
-            "Channel",
-            "IntentName",
-            "IntentStageName",
-            "LocaleId",
-            "Modality",
-            "OriginatingRequestId",
-            "SessionId",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AnalyticsIntentStageFilterName::BotAliasId => "BotAliasId",
+    AnalyticsIntentStageFilterName::BotVersion => "BotVersion",
+    AnalyticsIntentStageFilterName::Channel => "Channel",
+    AnalyticsIntentStageFilterName::IntentName => "IntentName",
+    AnalyticsIntentStageFilterName::IntentStageName => "IntentStageName",
+    AnalyticsIntentStageFilterName::LocaleId => "LocaleId",
+    AnalyticsIntentStageFilterName::Modality => "Modality",
+    AnalyticsIntentStageFilterName::OriginatingRequestId => "OriginatingRequestId",
+    AnalyticsIntentStageFilterName::SessionId => "SessionId",
+    AnalyticsIntentStageFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BotAliasId", "BotVersion", "Channel", "IntentName", "IntentStageName", "LocaleId", "Modality", "OriginatingRequestId", "SessionId"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AnalyticsIntentStageFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AnalyticsIntentStageFilterName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AnalyticsIntentStageFilterName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AnalyticsIntentStageFilterName::BotAliasId => write!(f, "BotAliasId"),
-            AnalyticsIntentStageFilterName::BotVersion => write!(f, "BotVersion"),
-            AnalyticsIntentStageFilterName::Channel => write!(f, "Channel"),
-            AnalyticsIntentStageFilterName::IntentName => write!(f, "IntentName"),
-            AnalyticsIntentStageFilterName::IntentStageName => write!(f, "IntentStageName"),
-            AnalyticsIntentStageFilterName::LocaleId => write!(f, "LocaleId"),
-            AnalyticsIntentStageFilterName::Modality => write!(f, "Modality"),
-            AnalyticsIntentStageFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
-            AnalyticsIntentStageFilterName::SessionId => write!(f, "SessionId"),
-            AnalyticsIntentStageFilterName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AnalyticsIntentStageFilterName::BotAliasId => write!(f, "BotAliasId"),
+AnalyticsIntentStageFilterName::BotVersion => write!(f, "BotVersion"),
+AnalyticsIntentStageFilterName::Channel => write!(f, "Channel"),
+AnalyticsIntentStageFilterName::IntentName => write!(f, "IntentName"),
+AnalyticsIntentStageFilterName::IntentStageName => write!(f, "IntentStageName"),
+AnalyticsIntentStageFilterName::LocaleId => write!(f, "LocaleId"),
+AnalyticsIntentStageFilterName::Modality => write!(f, "Modality"),
+AnalyticsIntentStageFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
+AnalyticsIntentStageFilterName::SessionId => write!(f, "SessionId"),
+AnalyticsIntentStageFilterName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

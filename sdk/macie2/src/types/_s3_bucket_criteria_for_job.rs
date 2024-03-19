@@ -3,19 +3,19 @@
 /// <p>Specifies property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BucketCriteriaForJob {
+pub struct S3BucketCriteriaForJob  {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
     pub excludes: ::std::option::Option<crate::types::CriteriaBlockForJob>,
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
     pub includes: ::std::option::Option<crate::types::CriteriaBlockForJob>,
 }
-impl S3BucketCriteriaForJob {
+impl  S3BucketCriteriaForJob  {
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&crate::types::CriteriaBlockForJob> {
+    pub fn excludes(&self) -> ::std::option::Option<& crate::types::CriteriaBlockForJob> {
         self.excludes.as_ref()
     }
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
-    pub fn includes(&self) -> ::std::option::Option<&crate::types::CriteriaBlockForJob> {
+    pub fn includes(&self) -> ::std::option::Option<& crate::types::CriteriaBlockForJob> {
         self.includes.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl S3BucketCriteriaForJobBuilder {
     }
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::CriteriaBlockForJob>) -> Self {
-        self.excludes = input;
-        self
+        self.excludes = input; self
     }
     /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<crate::types::CriteriaBlockForJob> {
@@ -55,8 +54,7 @@ impl S3BucketCriteriaForJobBuilder {
     }
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
     pub fn set_includes(mut self, input: ::std::option::Option<crate::types::CriteriaBlockForJob>) -> Self {
-        self.includes = input;
-        self
+        self.includes = input; self
     }
     /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
     pub fn get_includes(&self) -> &::std::option::Option<crate::types::CriteriaBlockForJob> {
@@ -65,8 +63,11 @@ impl S3BucketCriteriaForJobBuilder {
     /// Consumes the builder and constructs a [`S3BucketCriteriaForJob`](crate::types::S3BucketCriteriaForJob).
     pub fn build(self) -> crate::types::S3BucketCriteriaForJob {
         crate::types::S3BucketCriteriaForJob {
-            excludes: self.excludes,
-            includes: self.includes,
+            excludes: self.excludes
+            ,
+            includes: self.includes
+            ,
         }
     }
 }
+

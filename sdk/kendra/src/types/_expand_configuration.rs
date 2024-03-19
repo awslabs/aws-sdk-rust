@@ -3,13 +3,13 @@
 /// <p>Specifies the configuration information needed to customize how collapsed search result groups expand.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpandConfiguration {
+pub struct ExpandConfiguration  {
     /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
     pub max_result_items_to_expand: ::std::option::Option<i32>,
     /// <p>The number of expanded results to show per collapsed primary document. For instance, if you set this value to 3, then at most 3 results per collapsed group will be displayed.</p>
     pub max_expanded_results_per_item: ::std::option::Option<i32>,
 }
-impl ExpandConfiguration {
+impl  ExpandConfiguration  {
     /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
     pub fn max_result_items_to_expand(&self) -> ::std::option::Option<i32> {
         self.max_result_items_to_expand
@@ -41,8 +41,7 @@ impl ExpandConfigurationBuilder {
     }
     /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
     pub fn set_max_result_items_to_expand(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_result_items_to_expand = input;
-        self
+        self.max_result_items_to_expand = input; self
     }
     /// <p>The number of collapsed search result groups to expand. If you set this value to 10, for example, only the first 10 out of 100 result groups will have expand functionality.</p>
     pub fn get_max_result_items_to_expand(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ExpandConfigurationBuilder {
     }
     /// <p>The number of expanded results to show per collapsed primary document. For instance, if you set this value to 3, then at most 3 results per collapsed group will be displayed.</p>
     pub fn set_max_expanded_results_per_item(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_expanded_results_per_item = input;
-        self
+        self.max_expanded_results_per_item = input; self
     }
     /// <p>The number of expanded results to show per collapsed primary document. For instance, if you set this value to 3, then at most 3 results per collapsed group will be displayed.</p>
     pub fn get_max_expanded_results_per_item(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ExpandConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExpandConfiguration`](crate::types::ExpandConfiguration).
     pub fn build(self) -> crate::types::ExpandConfiguration {
         crate::types::ExpandConfiguration {
-            max_result_items_to_expand: self.max_result_items_to_expand,
-            max_expanded_results_per_item: self.max_expanded_results_per_item,
+            max_result_items_to_expand: self.max_result_items_to_expand
+            ,
+            max_expanded_results_per_item: self.max_expanded_results_per_item
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitoringAlertHistoryInput {
+pub struct ListMonitoringAlertHistoryInput  {
     /// <p>The name of a monitoring schedule.</p>
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring alert.</p>
@@ -22,25 +22,25 @@ pub struct ListMonitoringAlertHistoryInput {
     /// <p>A filter that retrieves only alerts with a specific status.</p>
     pub status_equals: ::std::option::Option<crate::types::MonitoringAlertStatus>,
 }
-impl ListMonitoringAlertHistoryInput {
+impl  ListMonitoringAlertHistoryInput  {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_alert_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_alert_name.as_deref()
     }
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MonitoringAlertHistorySortKey> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::MonitoringAlertHistorySortKey> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
@@ -48,15 +48,15 @@ impl ListMonitoringAlertHistoryInput {
         self.max_results
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that retrieves only alerts with a specific status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::MonitoringAlertStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::MonitoringAlertStatus> {
         self.status_equals.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+        self.monitoring_schedule_name = input; self
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_alert_name = input;
-        self
+        self.monitoring_alert_name = input; self
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::MonitoringAlertHistorySortKey>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MonitoringAlertHistorySortKey> {
@@ -131,8 +128,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -145,8 +141,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -173,8 +167,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +180,7 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,30 +193,36 @@ impl ListMonitoringAlertHistoryInputBuilder {
     }
     /// <p>A filter that retrieves only alerts with a specific status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::MonitoringAlertStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>A filter that retrieves only alerts with a specific status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::MonitoringAlertStatus> {
         &self.status_equals
     }
     /// Consumes the builder and constructs a [`ListMonitoringAlertHistoryInput`](crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput {
-            monitoring_schedule_name: self.monitoring_schedule_name,
-            monitoring_alert_name: self.monitoring_alert_name,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-            status_equals: self.status_equals,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput {
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+                monitoring_alert_name: self.monitoring_alert_name
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                status_equals: self.status_equals
+                ,
+            }
+        )
     }
 }
+

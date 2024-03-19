@@ -3,24 +3,25 @@
 /// <p>The result of a DescribeEventTopic request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventTopicsOutput {
+pub struct DescribeEventTopicsOutput  {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
+    pub event_topics: ::std::option::Option<::std::vec::Vec::<crate::types::EventTopic>>,
     _request_id: Option<String>,
 }
-impl DescribeEventTopicsOutput {
+impl  DescribeEventTopicsOutput  {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_topics.is_none()`.
-    pub fn event_topics(&self) -> &[crate::types::EventTopic] {
-        self.event_topics.as_deref().unwrap_or_default()
+    pub fn event_topics(&self) -> & [crate::types::EventTopic] {
+        self.event_topics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventTopicsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEventTopicsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
     pub fn builder() -> crate::operation::describe_event_topics::builders::DescribeEventTopicsOutputBuilder {
@@ -32,7 +33,7 @@ impl DescribeEventTopicsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsOutputBuilder {
-    pub(crate) event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
+    pub(crate) event_topics: ::std::option::Option<::std::vec::Vec::<crate::types::EventTopic>>,
     _request_id: Option<String>,
 }
 impl DescribeEventTopicsOutputBuilder {
@@ -43,33 +44,34 @@ impl DescribeEventTopicsOutputBuilder {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     pub fn event_topics(mut self, input: crate::types::EventTopic) -> Self {
         let mut v = self.event_topics.unwrap_or_default();
-        v.push(input);
-        self.event_topics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_topics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn set_event_topics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>) -> Self {
-        self.event_topics = input;
-        self
+    pub fn set_event_topics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventTopic>>) -> Self {
+        self.event_topics = input; self
     }
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn get_event_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTopic>> {
+    pub fn get_event_topics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventTopic>> {
         &self.event_topics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
     pub fn build(self) -> crate::operation::describe_event_topics::DescribeEventTopicsOutput {
         crate::operation::describe_event_topics::DescribeEventTopicsOutput {
-            event_topics: self.event_topics,
+            event_topics: self.event_topics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

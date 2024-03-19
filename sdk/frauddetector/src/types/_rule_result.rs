@@ -3,22 +3,23 @@
 /// <p>The rule results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleResult {
+pub struct RuleResult  {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RuleResult {
+impl  RuleResult  {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    pub fn rule_id(&self) -> ::std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outcomes.is_none()`.
-    pub fn outcomes(&self) -> &[::std::string::String] {
-        self.outcomes.as_deref().unwrap_or_default()
+    pub fn outcomes(&self) -> & [::std::string::String] {
+        self.outcomes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleResult {
@@ -33,7 +34,7 @@ impl RuleResult {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleResultBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
-    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RuleResultBuilder {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
@@ -43,8 +44,7 @@ impl RuleResultBuilder {
     }
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl RuleResultBuilder {
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-        v.push(input.into());
-        self.outcomes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.outcomes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.outcomes = input;
-        self
+    pub fn set_outcomes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.outcomes = input; self
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.outcomes
     }
     /// Consumes the builder and constructs a [`RuleResult`](crate::types::RuleResult).
     pub fn build(self) -> crate::types::RuleResult {
         crate::types::RuleResult {
-            rule_id: self.rule_id,
-            outcomes: self.outcomes,
+            rule_id: self.rule_id
+            ,
+            outcomes: self.outcomes
+            ,
         }
     }
 }
+

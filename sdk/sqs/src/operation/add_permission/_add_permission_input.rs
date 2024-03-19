@@ -3,42 +3,44 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddPermissionInput {
+pub struct AddPermissionInput  {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AddPermissionInput {
+impl  AddPermissionInput  {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-    pub fn label(&self) -> ::std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
-    pub fn aws_account_ids(&self) -> &[::std::string::String] {
-        self.aws_account_ids.as_deref().unwrap_or_default()
+    pub fn aws_account_ids(&self) -> & [::std::string::String] {
+        self.aws_account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[::std::string::String] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [::std::string::String] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddPermissionInput {
@@ -54,8 +56,8 @@ impl AddPermissionInput {
 pub struct AddPermissionInputBuilder {
     pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
-    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AddPermissionInputBuilder {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
@@ -68,8 +70,7 @@ impl AddPermissionInputBuilder {
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -84,8 +85,7 @@ impl AddPermissionInputBuilder {
     }
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,17 +98,16 @@ impl AddPermissionInputBuilder {
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.aws_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_account_ids = input;
-        self
+    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_account_ids = input; self
     }
     /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_account_ids
     }
     /// Appends an item to `actions`.
@@ -120,32 +119,36 @@ impl AddPermissionInputBuilder {
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input.into());
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_permission::AddPermissionInput {
-            queue_url: self.queue_url,
-            label: self.label,
-            aws_account_ids: self.aws_account_ids,
-            actions: self.actions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_permission::AddPermissionInput {
+                queue_url: self.queue_url
+                ,
+                label: self.label
+                ,
+                aws_account_ids: self.aws_account_ids
+                ,
+                actions: self.actions
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicyStores`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::set_next_token):<br>required: **false**<br><p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p> <p>If you do not specify this parameter, the operation defaults to 10 policy stores per response. You can specify a maximum of 50 policy stores per response.</p><br>
-    /// - On success, responds with [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput) with field(s):
+                            /// - On success, responds with [`ListPolicyStoresOutput`](crate::operation::list_policy_stores::ListPolicyStoresOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_stores::ListPolicyStoresOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     ///   - [`policy_stores(Vec::<PolicyStoreItem>)`](crate::operation::list_policy_stores::ListPolicyStoresOutput::policy_stores): <p>The list of policy stores in the account.</p>
-    /// - On failure, responds with [`SdkError<ListPolicyStoresError>`](crate::operation::list_policy_stores::ListPolicyStoresError)
+                            /// - On failure, responds with [`SdkError<ListPolicyStoresError>`](crate::operation::list_policy_stores::ListPolicyStoresError)
     pub fn list_policy_stores(&self) -> crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder {
-        crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_policy_stores::builders::ListPolicyStoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

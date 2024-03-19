@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSigningProfileInput {
+pub struct CancelSigningProfileInput  {
     /// <p>The name of the signing profile to be canceled.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
 }
-impl CancelSigningProfileInput {
+impl  CancelSigningProfileInput  {
     /// <p>The name of the signing profile to be canceled.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl CancelSigningProfileInputBuilder {
     }
     /// <p>The name of the signing profile to be canceled.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>The name of the signing profile to be canceled.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_name
     }
     /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_signing_profile::CancelSigningProfileInput {
-            profile_name: self.profile_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_signing_profile::CancelSigningProfileInput {
+                profile_name: self.profile_name
+                ,
+            }
+        )
     }
 }
+

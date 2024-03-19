@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFleetLocationUtilizationOutput {
+pub struct DescribeFleetLocationUtilizationOutput  {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     pub fleet_utilization: ::std::option::Option<crate::types::FleetUtilization>,
     _request_id: Option<String>,
 }
-impl DescribeFleetLocationUtilizationOutput {
+impl  DescribeFleetLocationUtilizationOutput  {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
-    pub fn fleet_utilization(&self) -> ::std::option::Option<&crate::types::FleetUtilization> {
+    pub fn fleet_utilization(&self) -> ::std::option::Option<& crate::types::FleetUtilization> {
         self.fleet_utilization.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFleetLocationUtilizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFleetLocationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
     pub fn builder() -> crate::operation::describe_fleet_location_utilization::builders::DescribeFleetLocationUtilizationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeFleetLocationUtilizationOutputBuilder {
     }
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     pub fn set_fleet_utilization(mut self, input: ::std::option::Option<crate::types::FleetUtilization>) -> Self {
-        self.fleet_utilization = input;
-        self
+        self.fleet_utilization = input; self
     }
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     pub fn get_fleet_utilization(&self) -> &::std::option::Option<crate::types::FleetUtilization> {
         &self.fleet_utilization
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFleetLocationUtilizationOutput`](crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput).
     pub fn build(self) -> crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput {
         crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput {
-            fleet_utilization: self.fleet_utilization,
+            fleet_utilization: self.fleet_utilization
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

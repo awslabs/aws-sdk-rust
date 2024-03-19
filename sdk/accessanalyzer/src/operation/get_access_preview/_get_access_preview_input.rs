@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessPreviewInput {
+pub struct GetAccessPreviewInput  {
     /// <p>The unique ID for the access preview.</p>
     pub access_preview_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub analyzer_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetAccessPreviewInput {
+impl  GetAccessPreviewInput  {
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_preview_id(&self) -> ::std::option::Option<& str> {
         self.access_preview_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> ::std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAccessPreviewInputBuilder {
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn set_access_preview_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_preview_id = input;
-        self
+        self.access_preview_id = input; self
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn get_access_preview_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetAccessPreviewInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyzer_arn
     }
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_access_preview::GetAccessPreviewInput {
-            access_preview_id: self.access_preview_id,
-            analyzer_arn: self.analyzer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_access_preview::GetAccessPreviewInput {
+                access_preview_id: self.access_preview_id
+                ,
+                analyzer_arn: self.analyzer_arn
+                ,
+            }
+        )
     }
 }
+

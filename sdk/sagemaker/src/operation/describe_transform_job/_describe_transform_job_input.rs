@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTransformJobInput {
+pub struct DescribeTransformJobInput  {
     /// <p>The name of the transform job that you want to view details of.</p>
     pub transform_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTransformJobInput {
+impl  DescribeTransformJobInput  {
     /// <p>The name of the transform job that you want to view details of.</p>
-    pub fn transform_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn transform_job_name(&self) -> ::std::option::Option<& str> {
         self.transform_job_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeTransformJobInputBuilder {
     }
     /// <p>The name of the transform job that you want to view details of.</p>
     pub fn set_transform_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_job_name = input;
-        self
+        self.transform_job_name = input; self
     }
     /// <p>The name of the transform job that you want to view details of.</p>
     pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.transform_job_name
     }
     /// Consumes the builder and constructs a [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_transform_job::DescribeTransformJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_transform_job::DescribeTransformJobInput {
-            transform_job_name: self.transform_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_transform_job::DescribeTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_transform_job::DescribeTransformJobInput {
+                transform_job_name: self.transform_job_name
+                ,
+            }
+        )
     }
 }
+

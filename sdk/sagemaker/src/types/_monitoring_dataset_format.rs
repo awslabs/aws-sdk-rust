@@ -3,7 +3,7 @@
 /// <p>Represents the dataset format used when running a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringDatasetFormat {
+pub struct MonitoringDatasetFormat  {
     /// <p>The CSV dataset used in the monitoring job.</p>
     pub csv: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>,
     /// <p>The JSON dataset used in the monitoring job</p>
@@ -11,17 +11,17 @@ pub struct MonitoringDatasetFormat {
     /// <p>The Parquet dataset used in the monitoring job</p>
     pub parquet: ::std::option::Option<crate::types::MonitoringParquetDatasetFormat>,
 }
-impl MonitoringDatasetFormat {
+impl  MonitoringDatasetFormat  {
     /// <p>The CSV dataset used in the monitoring job.</p>
-    pub fn csv(&self) -> ::std::option::Option<&crate::types::MonitoringCsvDatasetFormat> {
+    pub fn csv(&self) -> ::std::option::Option<& crate::types::MonitoringCsvDatasetFormat> {
         self.csv.as_ref()
     }
     /// <p>The JSON dataset used in the monitoring job</p>
-    pub fn json(&self) -> ::std::option::Option<&crate::types::MonitoringJsonDatasetFormat> {
+    pub fn json(&self) -> ::std::option::Option<& crate::types::MonitoringJsonDatasetFormat> {
         self.json.as_ref()
     }
     /// <p>The Parquet dataset used in the monitoring job</p>
-    pub fn parquet(&self) -> ::std::option::Option<&crate::types::MonitoringParquetDatasetFormat> {
+    pub fn parquet(&self) -> ::std::option::Option<& crate::types::MonitoringParquetDatasetFormat> {
         self.parquet.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl MonitoringDatasetFormatBuilder {
     }
     /// <p>The CSV dataset used in the monitoring job.</p>
     pub fn set_csv(mut self, input: ::std::option::Option<crate::types::MonitoringCsvDatasetFormat>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// <p>The CSV dataset used in the monitoring job.</p>
     pub fn get_csv(&self) -> &::std::option::Option<crate::types::MonitoringCsvDatasetFormat> {
@@ -62,8 +61,7 @@ impl MonitoringDatasetFormatBuilder {
     }
     /// <p>The JSON dataset used in the monitoring job</p>
     pub fn set_json(mut self, input: ::std::option::Option<crate::types::MonitoringJsonDatasetFormat>) -> Self {
-        self.json = input;
-        self
+        self.json = input; self
     }
     /// <p>The JSON dataset used in the monitoring job</p>
     pub fn get_json(&self) -> &::std::option::Option<crate::types::MonitoringJsonDatasetFormat> {
@@ -76,8 +74,7 @@ impl MonitoringDatasetFormatBuilder {
     }
     /// <p>The Parquet dataset used in the monitoring job</p>
     pub fn set_parquet(mut self, input: ::std::option::Option<crate::types::MonitoringParquetDatasetFormat>) -> Self {
-        self.parquet = input;
-        self
+        self.parquet = input; self
     }
     /// <p>The Parquet dataset used in the monitoring job</p>
     pub fn get_parquet(&self) -> &::std::option::Option<crate::types::MonitoringParquetDatasetFormat> {
@@ -86,9 +83,13 @@ impl MonitoringDatasetFormatBuilder {
     /// Consumes the builder and constructs a [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).
     pub fn build(self) -> crate::types::MonitoringDatasetFormat {
         crate::types::MonitoringDatasetFormat {
-            csv: self.csv,
-            json: self.json,
-            parquet: self.parquet,
+            csv: self.csv
+            ,
+            json: self.json
+            ,
+            parquet: self.parquet
+            ,
         }
     }
 }
+

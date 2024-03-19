@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutCommentReactionInput {
+pub struct PutCommentReactionInput  {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     pub comment_id: ::std::option::Option<::std::string::String>,
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
     pub reaction_value: ::std::option::Option<::std::string::String>,
 }
-impl PutCommentReactionInput {
+impl  PutCommentReactionInput  {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
-    pub fn comment_id(&self) -> ::std::option::Option<&str> {
+    pub fn comment_id(&self) -> ::std::option::Option<& str> {
         self.comment_id.as_deref()
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
-    pub fn reaction_value(&self) -> ::std::option::Option<&str> {
+    pub fn reaction_value(&self) -> ::std::option::Option<& str> {
         self.reaction_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutCommentReactionInputBuilder {
     }
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     pub fn set_comment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment_id = input;
-        self
+        self.comment_id = input; self
     }
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl PutCommentReactionInputBuilder {
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
     pub fn set_reaction_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reaction_value = input;
-        self
+        self.reaction_value = input; self
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit User Guide</a>.</p>
     pub fn get_reaction_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.reaction_value
     }
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_comment_reaction::PutCommentReactionInput {
-            comment_id: self.comment_id,
-            reaction_value: self.reaction_value,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_comment_reaction::PutCommentReactionInput {
+                comment_id: self.comment_id
+                ,
+                reaction_value: self.reaction_value
+                ,
+            }
+        )
     }
 }
+

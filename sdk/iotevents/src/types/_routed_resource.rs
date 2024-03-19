@@ -3,19 +3,19 @@
 /// <p>Contains information about the routed resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutedResource {
+pub struct RoutedResource  {
     /// <p>The name of the routed resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl RoutedResource {
+impl  RoutedResource  {
     /// <p>The name of the routed resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RoutedResourceBuilder {
     }
     /// <p>The name of the routed resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the routed resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RoutedResourceBuilder {
     }
     /// <p>The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RoutedResourceBuilder {
     /// Consumes the builder and constructs a [`RoutedResource`](crate::types::RoutedResource).
     pub fn build(self) -> crate::types::RoutedResource {
         crate::types::RoutedResource {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

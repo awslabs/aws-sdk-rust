@@ -3,7 +3,7 @@
 /// <p>The details of a document within an Amazon Q index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentDetails {
+pub struct DocumentDetails  {
     /// <p>The identifier of the document.</p>
     pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the document.</p>
@@ -15,25 +15,25 @@ pub struct DocumentDetails {
     /// <p>The timestamp for when the document was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DocumentDetails {
+impl  DocumentDetails  {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>The current status of the document.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DocumentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DocumentStatus> {
         self.status.as_ref()
     }
     /// <p>An error message associated with the document.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
     /// <p>The timestamp for when the document was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp for when the document was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl DocumentDetailsBuilder {
     }
     /// <p>The identifier of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The identifier of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DocumentDetailsBuilder {
     }
     /// <p>The current status of the document.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DocumentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the document.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DocumentStatus> {
@@ -90,8 +88,7 @@ impl DocumentDetailsBuilder {
     }
     /// <p>An error message associated with the document.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>An error message associated with the document.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -104,8 +101,7 @@ impl DocumentDetailsBuilder {
     }
     /// <p>The timestamp for when the document was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp for when the document was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl DocumentDetailsBuilder {
     }
     /// <p>The timestamp for when the document was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp for when the document was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl DocumentDetailsBuilder {
     /// Consumes the builder and constructs a [`DocumentDetails`](crate::types::DocumentDetails).
     pub fn build(self) -> crate::types::DocumentDetails {
         crate::types::DocumentDetails {
-            document_id: self.document_id,
-            status: self.status,
-            error: self.error,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            document_id: self.document_id
+            ,
+            status: self.status
+            ,
+            error: self.error
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

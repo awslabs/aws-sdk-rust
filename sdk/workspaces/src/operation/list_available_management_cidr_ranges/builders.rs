@@ -5,56 +5,52 @@ pub use crate::operation::list_available_management_cidr_ranges::_list_available
 
 impl ListAvailableManagementCidrRangesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_available_management_cidr_ranges();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_available_management_cidr_ranges();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListAvailableManagementCidrRanges`.
-///
+/// 
 /// <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL).</p>
 /// <p>This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code> error.</p>
 /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAvailableManagementCidrRangesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesInputBuilder,
+                    inner: crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
-    > for ListAvailableManagementCidrRangesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
-            crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
+                    crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
+                > for ListAvailableManagementCidrRangesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
+                        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListAvailableManagementCidrRangesFluentBuilder {
     /// Creates a new `ListAvailableManagementCidrRanges`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRanges::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRanges::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput,
-        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRanges::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRanges::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput, crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
     pub fn management_cidr_range_constraint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.management_cidr_range_constraint(input.into());
@@ -153,3 +140,4 @@ impl ListAvailableManagementCidrRangesFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

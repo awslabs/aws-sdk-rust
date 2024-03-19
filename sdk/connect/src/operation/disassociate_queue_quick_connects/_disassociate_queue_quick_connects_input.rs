@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateQueueQuickConnectsInput {
+pub struct DisassociateQueueQuickConnectsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub quick_connect_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateQueueQuickConnectsInput {
+impl  DisassociateQueueQuickConnectsInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<& str> {
         self.queue_id.as_deref()
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connect_ids.is_none()`.
-    pub fn quick_connect_ids(&self) -> &[::std::string::String] {
-        self.quick_connect_ids.as_deref().unwrap_or_default()
+    pub fn quick_connect_ids(&self) -> & [::std::string::String] {
+        self.quick_connect_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateQueueQuickConnectsInput {
@@ -39,7 +40,7 @@ impl DisassociateQueueQuickConnectsInput {
 pub struct DisassociateQueueQuickConnectsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) quick_connect_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateQueueQuickConnectsInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -50,8 +51,7 @@ impl DisassociateQueueQuickConnectsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl DisassociateQueueQuickConnectsInputBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl DisassociateQueueQuickConnectsInputBuilder {
     /// <p>The quick connects to disassociate from the queue.</p>
     pub fn quick_connect_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.quick_connect_ids.unwrap_or_default();
-        v.push(input.into());
-        self.quick_connect_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.quick_connect_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn set_quick_connect_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.quick_connect_ids = input;
-        self
+    pub fn set_quick_connect_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.quick_connect_ids = input; self
     }
     /// <p>The quick connects to disassociate from the queue.</p>
-    pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.quick_connect_ids
     }
     /// Consumes the builder and constructs a [`DisassociateQueueQuickConnectsInput`](crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput {
-            instance_id: self.instance_id,
-            queue_id: self.queue_id,
-            quick_connect_ids: self.quick_connect_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsInput {
+                instance_id: self.instance_id
+                ,
+                queue_id: self.queue_id
+                ,
+                quick_connect_ids: self.quick_connect_ids
+                ,
+            }
+        )
     }
 }
+

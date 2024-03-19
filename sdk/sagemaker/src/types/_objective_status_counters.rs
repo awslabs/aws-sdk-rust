@@ -3,7 +3,7 @@
 /// <p>Specifies the number of training jobs that this hyperparameter tuning job launched, categorized by the status of their objective metric. The objective metric status shows whether the final objective metric for the training job has been evaluated by the tuning job and used in the hyperparameter tuning process.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectiveStatusCounters {
+pub struct ObjectiveStatusCounters  {
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
     pub succeeded: ::std::option::Option<i32>,
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
@@ -11,7 +11,7 @@ pub struct ObjectiveStatusCounters {
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
     pub failed: ::std::option::Option<i32>,
 }
-impl ObjectiveStatusCounters {
+impl  ObjectiveStatusCounters  {
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
     pub fn succeeded(&self) -> ::std::option::Option<i32> {
         self.succeeded
@@ -48,8 +48,7 @@ impl ObjectiveStatusCountersBuilder {
     }
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
     pub fn set_succeeded(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.succeeded = input;
-        self
+        self.succeeded = input; self
     }
     /// <p>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
     pub fn get_succeeded(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ObjectiveStatusCountersBuilder {
     }
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
     pub fn set_pending(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// <p>The number of training jobs that are in progress and pending evaluation of their final objective metric.</p>
     pub fn get_pending(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ObjectiveStatusCountersBuilder {
     }
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p>
     pub fn get_failed(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ObjectiveStatusCountersBuilder {
     /// Consumes the builder and constructs a [`ObjectiveStatusCounters`](crate::types::ObjectiveStatusCounters).
     pub fn build(self) -> crate::types::ObjectiveStatusCounters {
         crate::types::ObjectiveStatusCounters {
-            succeeded: self.succeeded,
-            pending: self.pending,
-            failed: self.failed,
+            succeeded: self.succeeded
+            ,
+            pending: self.pending
+            ,
+            failed: self.failed
+            ,
         }
     }
 }
+

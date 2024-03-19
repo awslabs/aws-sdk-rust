@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContinuousDeploymentPolicyInput {
+pub struct DeleteContinuousDeploymentPolicyInput  {
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContinuousDeploymentPolicyInput {
+impl  DeleteContinuousDeploymentPolicyInput  {
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput {
-                id: self.id,
-                if_match: self.if_match,
-            },
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>DecisionTaskCompleted</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DecisionTaskCompletedEventAttributes {
+pub struct DecisionTaskCompletedEventAttributes  {
     /// <p>User defined context for the workflow execution.</p>
     pub execution_context: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -15,9 +15,9 @@ pub struct DecisionTaskCompletedEventAttributes {
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub task_list_schedule_to_start_timeout: ::std::option::Option<::std::string::String>,
 }
-impl DecisionTaskCompletedEventAttributes {
+impl  DecisionTaskCompletedEventAttributes  {
     /// <p>User defined context for the workflow execution.</p>
-    pub fn execution_context(&self) -> ::std::option::Option<&str> {
+    pub fn execution_context(&self) -> ::std::option::Option<& str> {
         self.execution_context.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -29,11 +29,11 @@ impl DecisionTaskCompletedEventAttributes {
         self.started_event_id
     }
     /// <p>Represents a task list.</p>
-    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<& crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
-    pub fn task_list_schedule_to_start_timeout(&self) -> ::std::option::Option<&str> {
+    pub fn task_list_schedule_to_start_timeout(&self) -> ::std::option::Option<& str> {
         self.task_list_schedule_to_start_timeout.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     }
     /// <p>User defined context for the workflow execution.</p>
     pub fn set_execution_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_context = input;
-        self
+        self.execution_context = input; self
     }
     /// <p>User defined context for the workflow execution.</p>
     pub fn get_execution_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
@@ -92,8 +90,7 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -106,8 +103,7 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     }
     /// <p>Represents a task list.</p>
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
-        self.task_list = input;
-        self
+        self.task_list = input; self
     }
     /// <p>Represents a task list.</p>
     pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
@@ -120,8 +116,7 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub fn set_task_list_schedule_to_start_timeout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_list_schedule_to_start_timeout = input;
-        self
+        self.task_list_schedule_to_start_timeout = input; self
     }
     /// <p>The maximum amount of time the decision task can wait to be assigned to a worker.</p>
     pub fn get_task_list_schedule_to_start_timeout(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,11 +125,19 @@ impl DecisionTaskCompletedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
     pub fn build(self) -> crate::types::DecisionTaskCompletedEventAttributes {
         crate::types::DecisionTaskCompletedEventAttributes {
-            execution_context: self.execution_context,
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            task_list: self.task_list,
-            task_list_schedule_to_start_timeout: self.task_list_schedule_to_start_timeout,
+            execution_context: self.execution_context
+            ,
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
+            task_list: self.task_list
+            ,
+            task_list_schedule_to_start_timeout: self.task_list_schedule_to_start_timeout
+            ,
         }
     }
 }
+

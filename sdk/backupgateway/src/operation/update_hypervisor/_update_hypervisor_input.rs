@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateHypervisorInput {
+pub struct UpdateHypervisorInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
@@ -16,33 +16,33 @@ pub struct UpdateHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub log_group_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateHypervisorInput {
+impl  UpdateHypervisorInput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
-    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> ::std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The updated username for the hypervisor.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The updated password for the hypervisor.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The updated name for the hypervisor</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> ::std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateHypervisorInput {
+impl  ::std::fmt::Debug for UpdateHypervisorInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateHypervisorInput");
         formatter.field("hypervisor_arn", &self.hypervisor_arn);
@@ -81,8 +81,7 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
     pub fn set_hypervisor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
     pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The updated username for the hypervisor.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The updated username for the hypervisor.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The updated password for the hypervisor.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The updated password for the hypervisor.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The updated name for the hypervisor</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated name for the hypervisor</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,25 +146,30 @@ impl UpdateHypervisorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_arn = input;
-        self
+        self.log_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_arn
     }
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_hypervisor::UpdateHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn,
-            host: self.host,
-            username: self.username,
-            password: self.password,
-            name: self.name,
-            log_group_arn: self.log_group_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_hypervisor::UpdateHypervisorInput {
+                hypervisor_arn: self.hypervisor_arn
+                ,
+                host: self.host
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                name: self.name
+                ,
+                log_group_arn: self.log_group_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateHypervisorInputBuilder {
@@ -184,3 +184,4 @@ impl ::std::fmt::Debug for UpdateHypervisorInputBuilder {
         formatter.finish()
     }
 }
+

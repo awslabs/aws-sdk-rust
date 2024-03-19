@@ -3,19 +3,19 @@
 /// <p>Provides additional information about an error that was returned by the service. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageGatewayError {
+pub struct StorageGatewayError  {
     /// <p>Additional information about the error.</p>
     pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
-    pub error_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub error_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StorageGatewayError {
+impl  StorageGatewayError  {
     /// <p>Additional information about the error.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn error_details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.error_details.as_ref()
     }
 }
@@ -31,7 +31,7 @@ impl StorageGatewayError {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageGatewayErrorBuilder {
     pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) error_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StorageGatewayErrorBuilder {
     /// <p>Additional information about the error.</p>
@@ -41,8 +41,7 @@ impl StorageGatewayErrorBuilder {
     }
     /// <p>Additional information about the error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>Additional information about the error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
@@ -55,27 +54,26 @@ impl StorageGatewayErrorBuilder {
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     pub fn error_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.error_details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.error_details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.error_details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
-    pub fn set_error_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.error_details = input; self
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
-    pub fn get_error_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.error_details
     }
     /// Consumes the builder and constructs a [`StorageGatewayError`](crate::types::StorageGatewayError).
     pub fn build(self) -> crate::types::StorageGatewayError {
         crate::types::StorageGatewayError {
-            error_code: self.error_code,
-            error_details: self.error_details,
+            error_code: self.error_code
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

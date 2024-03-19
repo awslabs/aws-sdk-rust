@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUserAssociations`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The ID of the EC2 instance, which provides user-based subscriptions.</p><br>
     ///   - [`identity_provider(IdentityProvider)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::set_identity_provider):<br>required: **true**<br><p>An object that specifies details for the identity provider.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return in a single call.</p><br>
     ///   - [`filters(Filter)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::set_filters):<br>required: **false**<br><p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Token for the next set of results.</p><br>
-    /// - On success, responds with [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput) with field(s):
+                            /// - On success, responds with [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput) with field(s):
     ///   - [`instance_user_summaries(Option<Vec::<InstanceUserSummary>>)`](crate::operation::list_user_associations::ListUserAssociationsOutput::instance_user_summaries): <p>Metadata that describes the list user association operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_user_associations::ListUserAssociationsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListUserAssociationsError>`](crate::operation::list_user_associations::ListUserAssociationsError)
+                            /// - On failure, responds with [`SdkError<ListUserAssociationsError>`](crate::operation::list_user_associations::ListUserAssociationsError)
     pub fn list_user_associations(&self) -> crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder {
-        crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_user_associations::builders::ListUserAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

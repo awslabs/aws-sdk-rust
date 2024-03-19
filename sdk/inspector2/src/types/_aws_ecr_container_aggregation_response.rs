@@ -3,7 +3,7 @@
 /// <p>An aggregation of information about Amazon ECR containers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcrContainerAggregationResponse {
+pub struct AwsEcrContainerAggregationResponse  {
     /// <p>The resource ID of the container.</p>
     pub resource_id: ::std::string::String,
     /// <p>The SHA value of the container image.</p>
@@ -13,42 +13,42 @@ pub struct AwsEcrContainerAggregationResponse {
     /// <p>The architecture of the container.</p>
     pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The container image stags.</p>
-    pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub image_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of finding by severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl AwsEcrContainerAggregationResponse {
+impl  AwsEcrContainerAggregationResponse  {
     /// <p>The resource ID of the container.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The SHA value of the container image.</p>
-    pub fn image_sha(&self) -> ::std::option::Option<&str> {
+    pub fn image_sha(&self) -> ::std::option::Option<& str> {
         self.image_sha.as_deref()
     }
     /// <p>The container repository.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The architecture of the container.</p>
-    pub fn architecture(&self) -> ::std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<& str> {
         self.architecture.as_deref()
     }
     /// <p>The container image stags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_tags.is_none()`.
-    pub fn image_tags(&self) -> &[::std::string::String] {
-        self.image_tags.as_deref().unwrap_or_default()
+    pub fn image_tags(&self) -> & [::std::string::String] {
+        self.image_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The number of finding by severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -67,7 +67,7 @@ pub struct AwsEcrContainerAggregationResponseBuilder {
     pub(crate) image_sha: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) architecture: ::std::option::Option<::std::string::String>,
-    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
@@ -80,8 +80,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The resource ID of the container.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID of the container.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +93,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The SHA value of the container image.</p>
     pub fn set_image_sha(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_sha = input;
-        self
+        self.image_sha = input; self
     }
     /// <p>The SHA value of the container image.</p>
     pub fn get_image_sha(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The container repository.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The container repository.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +119,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The architecture of the container.</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The architecture of the container.</p>
     pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,17 +132,16 @@ impl AwsEcrContainerAggregationResponseBuilder {
     /// <p>The container image stags.</p>
     pub fn image_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-        v.push(input.into());
-        self.image_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The container image stags.</p>
-    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_tags = input;
-        self
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_tags = input; self
     }
     /// <p>The container image stags.</p>
-    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_tags
     }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
@@ -156,8 +151,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl AwsEcrContainerAggregationResponseBuilder {
     }
     /// <p>The number of finding by severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>The number of finding by severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -181,19 +174,27 @@ impl AwsEcrContainerAggregationResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::AwsEcrContainerAggregationResponseBuilder::resource_id)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsEcrContainerAggregationResponse {
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building AwsEcrContainerAggregationResponse",
-                )
-            })?,
-            image_sha: self.image_sha,
-            repository: self.repository,
-            architecture: self.architecture,
-            image_tags: self.image_tags,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsEcrContainerAggregationResponse {
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building AwsEcrContainerAggregationResponse")
+                    )?
+                ,
+                image_sha: self.image_sha
+                ,
+                repository: self.repository
+                ,
+                architecture: self.architecture
+                ,
+                image_tags: self.image_tags
+                ,
+                account_id: self.account_id
+                ,
+                severity_counts: self.severity_counts
+                ,
+            }
+        )
     }
 }
+

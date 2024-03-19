@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTopicOutput {
+pub struct DescribeTopicOutput  {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -15,21 +15,21 @@ pub struct DescribeTopicOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeTopicOutput {
+impl  DescribeTopicOutput  {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The definition of a topic.</p>
-    pub fn topic(&self) -> ::std::option::Option<&crate::types::TopicDetails> {
+    pub fn topic(&self) -> ::std::option::Option<& crate::types::TopicDetails> {
         self.topic.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -38,10 +38,10 @@ impl DescribeTopicOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTopicOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTopicOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicOutput`](crate::operation::describe_topic::DescribeTopicOutput).
     pub fn builder() -> crate::operation::describe_topic::builders::DescribeTopicOutputBuilder {
@@ -68,8 +68,7 @@ impl DescribeTopicOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl DescribeTopicOutputBuilder {
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl DescribeTopicOutputBuilder {
     }
     /// <p>The definition of a topic.</p>
     pub fn set_topic(mut self, input: ::std::option::Option<crate::types::TopicDetails>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The definition of a topic.</p>
     pub fn get_topic(&self) -> &::std::option::Option<crate::types::TopicDetails> {
@@ -110,8 +107,7 @@ impl DescribeTopicOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,37 @@ impl DescribeTopicOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTopicOutput`](crate::operation::describe_topic::DescribeTopicOutput).
     pub fn build(self) -> crate::operation::describe_topic::DescribeTopicOutput {
         crate::operation::describe_topic::DescribeTopicOutput {
-            arn: self.arn,
-            topic_id: self.topic_id,
-            topic: self.topic,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            topic_id: self.topic_id
+            ,
+            topic: self.topic
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the operational recommendation item that needs a status update.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRecommendationStatusItem {
+pub struct UpdateRecommendationStatusItem  {
     /// <p>Resource identifier of the operational recommendation item.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the target Amazon Web Services account.</p>
@@ -11,17 +11,17 @@ pub struct UpdateRecommendationStatusItem {
     /// <p>Identifier of the target Amazon Web Services Region.</p>
     pub target_region: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRecommendationStatusItem {
+impl  UpdateRecommendationStatusItem  {
     /// <p>Resource identifier of the operational recommendation item.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Identifier of the target Amazon Web Services account.</p>
-    pub fn target_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_account_id(&self) -> ::std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
     /// <p>Identifier of the target Amazon Web Services Region.</p>
-    pub fn target_region(&self) -> ::std::option::Option<&str> {
+    pub fn target_region(&self) -> ::std::option::Option<& str> {
         self.target_region.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateRecommendationStatusItemBuilder {
     }
     /// <p>Resource identifier of the operational recommendation item.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Resource identifier of the operational recommendation item.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateRecommendationStatusItemBuilder {
     }
     /// <p>Identifier of the target Amazon Web Services account.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_account_id = input;
-        self
+        self.target_account_id = input; self
     }
     /// <p>Identifier of the target Amazon Web Services account.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl UpdateRecommendationStatusItemBuilder {
     }
     /// <p>Identifier of the target Amazon Web Services Region.</p>
     pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_region = input;
-        self
+        self.target_region = input; self
     }
     /// <p>Identifier of the target Amazon Web Services Region.</p>
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl UpdateRecommendationStatusItemBuilder {
     /// Consumes the builder and constructs a [`UpdateRecommendationStatusItem`](crate::types::UpdateRecommendationStatusItem).
     pub fn build(self) -> crate::types::UpdateRecommendationStatusItem {
         crate::types::UpdateRecommendationStatusItem {
-            resource_id: self.resource_id,
-            target_account_id: self.target_account_id,
-            target_region: self.target_region,
+            resource_id: self.resource_id
+            ,
+            target_account_id: self.target_account_id
+            ,
+            target_region: self.target_region
+            ,
         }
     }
 }
+

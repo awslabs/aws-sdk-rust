@@ -3,13 +3,13 @@
 /// <p>Deletes an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcLinkInput {
+pub struct DeleteVpcLinkInput  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub vpc_link_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVpcLinkInput {
+impl  DeleteVpcLinkInput  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
-    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteVpcLinkInputBuilder {
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_link_id
     }
     /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::operation::delete_vpc_link::DeleteVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_vpc_link::DeleteVpcLinkInput {
-            vpc_link_id: self.vpc_link_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_vpc_link::DeleteVpcLinkInput {
+                vpc_link_id: self.vpc_link_id
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>The size of the collection exceeds the allowed limit. For more information, see Guidelines and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
@@ -13,27 +13,25 @@ pub struct ServiceQuotaExceededException {
     pub logref: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ServiceQuotaExceededException {
+impl  ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
-    pub fn logref(&self) -> ::std::option::Option<&str> {
+    pub fn logref(&self) -> ::std::option::Option<& str> {
         self.logref.as_deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ServiceQuotaExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,9 +46,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ServiceQuotaExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceQuotaExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
@@ -76,8 +72,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +85,7 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,31 +98,34 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn set_logref(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logref = input;
-        self
+        self.logref = input; self
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn get_logref(&self) -> &::std::option::Option<::std::string::String> {
         &self.logref
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
     pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
         crate::types::error::ServiceQuotaExceededException {
-            message: self.message,
-            code: self.code,
-            logref: self.logref,
+            message: self.message
+            ,
+            code: self.code
+            ,
+            logref: self.logref
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

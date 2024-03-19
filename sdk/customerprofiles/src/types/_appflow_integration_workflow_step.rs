@@ -3,7 +3,7 @@
 /// <p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppflowIntegrationWorkflowStep {
+pub struct AppflowIntegrationWorkflowStep  {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
     pub flow_name: ::std::string::String,
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
@@ -21,41 +21,37 @@ pub struct AppflowIntegrationWorkflowStep {
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
-impl AppflowIntegrationWorkflowStep {
+impl  AppflowIntegrationWorkflowStep  {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
-    pub fn flow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.flow_name.deref()
+    pub fn flow_name(&self) -> & str {
+        use std::ops::Deref; self.flow_name.deref()
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn execution_message(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_message.deref()
+    pub fn execution_message(&self) -> & str {
+        use std::ops::Deref; self.execution_message.deref()
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn records_processed(&self) -> i64 {
         self.records_processed
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_start_time(&self) -> &str {
-        use std::ops::Deref;
-        self.batch_records_start_time.deref()
+    pub fn batch_records_start_time(&self) -> & str {
+        use std::ops::Deref; self.batch_records_start_time.deref()
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_end_time(&self) -> &str {
-        use std::ops::Deref;
-        self.batch_records_end_time.deref()
+    pub fn batch_records_end_time(&self) -> & str {
+        use std::ops::Deref; self.batch_records_end_time.deref()
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
 }
@@ -88,8 +84,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
     }
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -118,8 +112,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_execution_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_message = input;
-        self
+        self.execution_message = input; self
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_execution_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +126,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
@@ -148,8 +140,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_batch_records_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_records_start_time = input;
-        self
+        self.batch_records_start_time = input; self
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_batch_records_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +154,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_batch_records_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.batch_records_end_time = input;
-        self
+        self.batch_records_end_time = input; self
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_batch_records_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +168,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -193,8 +182,7 @@ impl AppflowIntegrationWorkflowStepBuilder {
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -210,50 +198,48 @@ impl AppflowIntegrationWorkflowStepBuilder {
     /// - [`created_at`](crate::types::builders::AppflowIntegrationWorkflowStepBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::AppflowIntegrationWorkflowStepBuilder::last_updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowStep, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppflowIntegrationWorkflowStep {
-            flow_name: self.flow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "flow_name",
-                    "flow_name was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            execution_message: self.execution_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_message",
-                    "execution_message was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            records_processed: self.records_processed.unwrap_or_default(),
-            batch_records_start_time: self.batch_records_start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "batch_records_start_time",
-                    "batch_records_start_time was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            batch_records_end_time: self.batch_records_end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "batch_records_end_time",
-                    "batch_records_end_time was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-            last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_at",
-                    "last_updated_at was not specified but it is required when building AppflowIntegrationWorkflowStep",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppflowIntegrationWorkflowStep {
+                flow_name: self.flow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("flow_name", "flow_name was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                execution_message: self.execution_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("execution_message", "execution_message was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                records_processed: self.records_processed
+                    .unwrap_or_default()
+                ,
+                batch_records_start_time: self.batch_records_start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("batch_records_start_time", "batch_records_start_time was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                batch_records_end_time: self.batch_records_end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("batch_records_end_time", "batch_records_end_time was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+                last_updated_at: self.last_updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_at", "last_updated_at was not specified but it is required when building AppflowIntegrationWorkflowStep")
+                    )?
+                ,
+            }
+        )
     }
 }
+

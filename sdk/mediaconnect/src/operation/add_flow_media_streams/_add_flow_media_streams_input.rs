@@ -3,22 +3,23 @@
 /// A request to add media streams to the flow.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddFlowMediaStreamsInput {
+pub struct AddFlowMediaStreamsInput  {
     /// The Amazon Resource Name (ARN) of the flow.
     pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that you want to add to the flow.
-    pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+    pub media_streams: ::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>>,
 }
-impl AddFlowMediaStreamsInput {
+impl  AddFlowMediaStreamsInput  {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you want to add to the flow.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
-    pub fn media_streams(&self) -> &[crate::types::AddMediaStreamRequest] {
-        self.media_streams.as_deref().unwrap_or_default()
+    pub fn media_streams(&self) -> & [crate::types::AddMediaStreamRequest] {
+        self.media_streams.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddFlowMediaStreamsInput {
@@ -33,7 +34,7 @@ impl AddFlowMediaStreamsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInputBuilder {
     pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+    pub(crate) media_streams: ::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
@@ -44,8 +45,7 @@ impl AddFlowMediaStreamsInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,27 +58,28 @@ impl AddFlowMediaStreamsInputBuilder {
     /// The media streams that you want to add to the flow.
     pub fn media_streams(mut self, input: crate::types::AddMediaStreamRequest) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
-        v.push(input);
-        self.media_streams = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_streams = ::std::option::Option::Some(v);
+                        self
     }
     /// The media streams that you want to add to the flow.
-    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
-        self.media_streams = input;
-        self
+    pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>>) -> Self {
+        self.media_streams = input; self
     }
     /// The media streams that you want to add to the flow.
-    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
+    pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AddMediaStreamRequest>> {
         &self.media_streams
     }
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
-            flow_arn: self.flow_arn,
-            media_streams: self.media_streams,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
+                flow_arn: self.flow_arn
+                ,
+                media_streams: self.media_streams
+                ,
+            }
+        )
     }
 }
+

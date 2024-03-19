@@ -3,35 +3,34 @@
 /// <p>The result structure for the create a new deployment request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDeploymentOutput {
+pub struct CreateDeploymentOutput  {
     /// <p>The job ID for this deployment. will supply to start deployment api.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs.</p>
-    pub file_upload_urls: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub file_upload_urls: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     /// <p>When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned.</p>
     pub zip_upload_url: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateDeploymentOutput {
+impl  CreateDeploymentOutput  {
     /// <p>The job ID for this deployment. will supply to start deployment api.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs.</p>
-    pub fn file_upload_urls(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn file_upload_urls(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.file_upload_urls
     }
     /// <p>When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned.</p>
-    pub fn zip_upload_url(&self) -> &str {
-        use std::ops::Deref;
-        self.zip_upload_url.deref()
+    pub fn zip_upload_url(&self) -> & str {
+        use std::ops::Deref; self.zip_upload_url.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
     pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder {
@@ -44,7 +43,7 @@ impl CreateDeploymentOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateDeploymentOutputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) file_upload_urls: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) file_upload_urls: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) zip_upload_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,8 +55,7 @@ impl CreateDeploymentOutputBuilder {
     }
     /// <p>The job ID for this deployment. will supply to start deployment api.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The job ID for this deployment. will supply to start deployment api.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,26 +66,18 @@ impl CreateDeploymentOutputBuilder {
     /// To override the contents of this collection use [`set_file_upload_urls`](Self::set_file_upload_urls).
     ///
     /// <p>When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs.</p>
-    pub fn file_upload_urls(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn file_upload_urls(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.file_upload_urls.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.file_upload_urls = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.file_upload_urls = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs.</p>
-    pub fn set_file_upload_urls(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.file_upload_urls = input;
-        self
+    pub fn set_file_upload_urls(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.file_upload_urls = input; self
     }
     /// <p>When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs.</p>
-    pub fn get_file_upload_urls(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_file_upload_urls(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.file_upload_urls
     }
     /// <p>When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned.</p>
@@ -98,44 +88,43 @@ impl CreateDeploymentOutputBuilder {
     }
     /// <p>When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned.</p>
     pub fn set_zip_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.zip_upload_url = input;
-        self
+        self.zip_upload_url = input; self
     }
     /// <p>When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned.</p>
     pub fn get_zip_upload_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.zip_upload_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_upload_urls`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::file_upload_urls)
     /// - [`zip_upload_url`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::zip_upload_url)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentOutput {
-            job_id: self.job_id,
-            file_upload_urls: self.file_upload_urls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_upload_urls",
-                    "file_upload_urls was not specified but it is required when building CreateDeploymentOutput",
-                )
-            })?,
-            zip_upload_url: self.zip_upload_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "zip_upload_url",
-                    "zip_upload_url was not specified but it is required when building CreateDeploymentOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_deployment::CreateDeploymentOutput {
+                job_id: self.job_id
+                ,
+                file_upload_urls: self.file_upload_urls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_upload_urls", "file_upload_urls was not specified but it is required when building CreateDeploymentOutput")
+                    )?
+                ,
+                zip_upload_url: self.zip_upload_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zip_upload_url", "zip_upload_url was not specified but it is required when building CreateDeploymentOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

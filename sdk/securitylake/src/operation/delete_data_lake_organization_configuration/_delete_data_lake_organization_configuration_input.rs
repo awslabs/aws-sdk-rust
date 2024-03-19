@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataLakeOrganizationConfigurationInput {
+pub struct DeleteDataLakeOrganizationConfigurationInput  {
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
-    pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
+    pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
-impl DeleteDataLakeOrganizationConfigurationInput {
+impl  DeleteDataLakeOrganizationConfigurationInput  {
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_enable_new_account.is_none()`.
-    pub fn auto_enable_new_account(&self) -> &[crate::types::DataLakeAutoEnableNewAccountConfiguration] {
-        self.auto_enable_new_account.as_deref().unwrap_or_default()
+    pub fn auto_enable_new_account(&self) -> & [crate::types::DataLakeAutoEnableNewAccountConfiguration] {
+        self.auto_enable_new_account.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteDataLakeOrganizationConfigurationInput {
@@ -25,7 +26,7 @@ impl DeleteDataLakeOrganizationConfigurationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteDataLakeOrganizationConfigurationInputBuilder {
-    pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
+    pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
 }
 impl DeleteDataLakeOrganizationConfigurationInputBuilder {
     /// Appends an item to `auto_enable_new_account`.
@@ -35,33 +36,26 @@ impl DeleteDataLakeOrganizationConfigurationInputBuilder {
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
     pub fn auto_enable_new_account(mut self, input: crate::types::DataLakeAutoEnableNewAccountConfiguration) -> Self {
         let mut v = self.auto_enable_new_account.unwrap_or_default();
-        v.push(input);
-        self.auto_enable_new_account = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auto_enable_new_account = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
-    pub fn set_auto_enable_new_account(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
-    ) -> Self {
-        self.auto_enable_new_account = input;
-        self
+    pub fn set_auto_enable_new_account(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>) -> Self {
+        self.auto_enable_new_account = input; self
     }
     /// <p>Turns off automatic enablement of Security Lake for member accounts that are added to an organization.</p>
-    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
+    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
         &self.auto_enable_new_account
     }
     /// Consumes the builder and constructs a [`DeleteDataLakeOrganizationConfigurationInput`](crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_data_lake_organization_configuration::DeleteDataLakeOrganizationConfigurationInput {
-                auto_enable_new_account: self.auto_enable_new_account,
-            },
+                auto_enable_new_account: self.auto_enable_new_account
+                ,
+            }
         )
     }
 }
+

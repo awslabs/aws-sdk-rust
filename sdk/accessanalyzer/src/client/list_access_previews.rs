@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAccessPreviews`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`analyzer_arn(impl Into<String>)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::analyzer_arn) / [`set_analyzer_arn(Option<String>)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::set_analyzer_arn):<br>required: **true**<br><p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
-    /// - On success, responds with [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput) with field(s):
+                            /// - On success, responds with [`ListAccessPreviewsOutput`](crate::operation::list_access_previews::ListAccessPreviewsOutput) with field(s):
     ///   - [`access_previews(Vec::<AccessPreviewSummary>)`](crate::operation::list_access_previews::ListAccessPreviewsOutput::access_previews): <p>A list of access previews retrieved for the analyzer.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_previews::ListAccessPreviewsOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPreviewsError>`](crate::operation::list_access_previews::ListAccessPreviewsError)
+                            /// - On failure, responds with [`SdkError<ListAccessPreviewsError>`](crate::operation::list_access_previews::ListAccessPreviewsError)
     pub fn list_access_previews(&self) -> crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder {
-        crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_access_previews::builders::ListAccessPreviewsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

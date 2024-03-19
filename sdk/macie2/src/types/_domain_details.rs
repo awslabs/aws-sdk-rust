@@ -3,13 +3,13 @@
 /// <p>Provides information about the domain name of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainDetails {
+pub struct DomainDetails  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl DomainDetails {
+impl  DomainDetails  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DomainDetailsBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DomainDetailsBuilder {
     /// Consumes the builder and constructs a [`DomainDetails`](crate::types::DomainDetails).
     pub fn build(self) -> crate::types::DomainDetails {
         crate::types::DomainDetails {
-            domain_name: self.domain_name,
+            domain_name: self.domain_name
+            ,
         }
     }
 }
+

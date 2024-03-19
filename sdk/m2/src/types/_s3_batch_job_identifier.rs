@@ -3,7 +3,7 @@
 /// <p>A batch job identifier in which the batch jobs to run are identified by an Amazon S3 location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3BatchJobIdentifier {
+pub struct S3BatchJobIdentifier  {
     /// <p>The Amazon S3 bucket that contains the batch job definitions.</p>
     pub bucket: ::std::string::String,
     /// <p>The key prefix that specifies the path to the folder in the S3 bucket that has the batch job definitions.</p>
@@ -11,18 +11,17 @@ pub struct S3BatchJobIdentifier {
     /// <p>Identifies the batch job definition. This identifier can also point to any batch job definition that already exists in the application or to one of the batch job definitions within the directory that is specified in <code>keyPrefix</code>.</p>
     pub identifier: ::std::option::Option<crate::types::JobIdentifier>,
 }
-impl S3BatchJobIdentifier {
+impl  S3BatchJobIdentifier  {
     /// <p>The Amazon S3 bucket that contains the batch job definitions.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The key prefix that specifies the path to the folder in the S3 bucket that has the batch job definitions.</p>
-    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
     /// <p>Identifies the batch job definition. This identifier can also point to any batch job definition that already exists in the application or to one of the batch job definitions within the directory that is specified in <code>keyPrefix</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&crate::types::JobIdentifier> {
+    pub fn identifier(&self) -> ::std::option::Option<& crate::types::JobIdentifier> {
         self.identifier.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl S3BatchJobIdentifierBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the batch job definitions.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The Amazon S3 bucket that contains the batch job definitions.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl S3BatchJobIdentifierBuilder {
     }
     /// <p>The key prefix that specifies the path to the folder in the S3 bucket that has the batch job definitions.</p>
     pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
     }
     /// <p>The key prefix that specifies the path to the folder in the S3 bucket that has the batch job definitions.</p>
     pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl S3BatchJobIdentifierBuilder {
     }
     /// <p>Identifies the batch job definition. This identifier can also point to any batch job definition that already exists in the application or to one of the batch job definitions within the directory that is specified in <code>keyPrefix</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<crate::types::JobIdentifier>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Identifies the batch job definition. This identifier can also point to any batch job definition that already exists in the application or to one of the batch job definitions within the directory that is specified in <code>keyPrefix</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<crate::types::JobIdentifier> {
@@ -90,15 +86,19 @@ impl S3BatchJobIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3BatchJobIdentifierBuilder::bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::S3BatchJobIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3BatchJobIdentifier {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building S3BatchJobIdentifier",
-                )
-            })?,
-            key_prefix: self.key_prefix,
-            identifier: self.identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3BatchJobIdentifier {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building S3BatchJobIdentifier")
+                    )?
+                ,
+                key_prefix: self.key_prefix
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

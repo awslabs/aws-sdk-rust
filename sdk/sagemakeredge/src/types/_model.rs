@@ -3,7 +3,7 @@
 /// <p>Information about a model deployed on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Model {
+pub struct Model  {
     /// <p>The name of the model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
@@ -13,30 +13,31 @@ pub struct Model {
     /// <p>The timestamp of the last inference that was made.</p>
     pub latest_inference: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information required for model metrics.</p>
-    pub model_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
+    pub model_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeMetric>>,
 }
-impl Model {
+impl  Model  {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn latest_sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_sample_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_sample_time.as_ref()
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn latest_inference(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn latest_inference(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.latest_inference.as_ref()
     }
     /// <p>Information required for model metrics.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_metrics.is_none()`.
-    pub fn model_metrics(&self) -> &[crate::types::EdgeMetric] {
-        self.model_metrics.as_deref().unwrap_or_default()
+    pub fn model_metrics(&self) -> & [crate::types::EdgeMetric] {
+        self.model_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Model {
@@ -54,7 +55,7 @@ pub struct ModelBuilder {
     pub(crate) model_version: ::std::option::Option<::std::string::String>,
     pub(crate) latest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_inference: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) model_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>,
+    pub(crate) model_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeMetric>>,
 }
 impl ModelBuilder {
     /// <p>The name of the model.</p>
@@ -64,8 +65,7 @@ impl ModelBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ModelBuilder {
     }
     /// <p>The version of the model.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the model.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ModelBuilder {
     }
     /// <p>The timestamp of the last data sample taken.</p>
     pub fn set_latest_sample_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_sample_time = input;
-        self
+        self.latest_sample_time = input; self
     }
     /// <p>The timestamp of the last data sample taken.</p>
     pub fn get_latest_sample_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -106,8 +104,7 @@ impl ModelBuilder {
     }
     /// <p>The timestamp of the last inference that was made.</p>
     pub fn set_latest_inference(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.latest_inference = input;
-        self
+        self.latest_inference = input; self
     }
     /// <p>The timestamp of the last inference that was made.</p>
     pub fn get_latest_inference(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,27 +117,32 @@ impl ModelBuilder {
     /// <p>Information required for model metrics.</p>
     pub fn model_metrics(mut self, input: crate::types::EdgeMetric) -> Self {
         let mut v = self.model_metrics.unwrap_or_default();
-        v.push(input);
-        self.model_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.model_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information required for model metrics.</p>
-    pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>>) -> Self {
-        self.model_metrics = input;
-        self
+    pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeMetric>>) -> Self {
+        self.model_metrics = input; self
     }
     /// <p>Information required for model metrics.</p>
-    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeMetric>> {
+    pub fn get_model_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EdgeMetric>> {
         &self.model_metrics
     }
     /// Consumes the builder and constructs a [`Model`](crate::types::Model).
     pub fn build(self) -> crate::types::Model {
         crate::types::Model {
-            model_name: self.model_name,
-            model_version: self.model_version,
-            latest_sample_time: self.latest_sample_time,
-            latest_inference: self.latest_inference,
-            model_metrics: self.model_metrics,
+            model_name: self.model_name
+            ,
+            model_version: self.model_version
+            ,
+            latest_sample_time: self.latest_sample_time
+            ,
+            latest_inference: self.latest_inference
+            ,
+            model_metrics: self.model_metrics
+            ,
         }
     }
 }
+

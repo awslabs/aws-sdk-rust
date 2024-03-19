@@ -3,13 +3,13 @@
 /// <p>DisableGatewayInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableGatewayInput {
+pub struct DisableGatewayInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisableGatewayInput {
+impl  DisableGatewayInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DisableGatewayInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DisableGatewayInput`](crate::operation::disable_gateway::DisableGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_gateway::DisableGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_gateway::DisableGatewayInput {
-            gateway_arn: self.gateway_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_gateway::DisableGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_gateway::DisableGatewayInput {
+                gateway_arn: self.gateway_arn
+                ,
+            }
+        )
     }
 }
+

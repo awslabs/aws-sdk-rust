@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVcenterClients`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum results to be returned in DescribeVcenterClients.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next pagination token to be provided for DescribeVcenterClients.</p><br>
-    /// - On success, responds with [`DescribeVcenterClientsOutput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput) with field(s):
+                            /// - On success, responds with [`DescribeVcenterClientsOutput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput) with field(s):
     ///   - [`items(Option<Vec::<VcenterClient>>)`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput::items): <p>List of items returned by DescribeVcenterClients.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput::next_token): <p>Next pagination token returned from DescribeVcenterClients.</p>
-    /// - On failure, responds with [`SdkError<DescribeVcenterClientsError>`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsError)
+                            /// - On failure, responds with [`SdkError<DescribeVcenterClientsError>`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsError)
     pub fn describe_vcenter_clients(&self) -> crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder {
-        crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

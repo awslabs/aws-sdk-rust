@@ -5,55 +5,51 @@ pub use crate::operation::modify_rule::_modify_rule_input::ModifyRuleInputBuilde
 
 impl ModifyRuleInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_rule::ModifyRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_rule::ModifyRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_rule();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_rule::ModifyRuleOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_rule::ModifyRuleError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_rule();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyRule`.
-///
+/// 
 /// <p>Replaces the specified properties of the specified rule. Any properties that you do not specify are unchanged.</p>
 /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire list. For example, to add an action, specify a list with the current actions plus the new action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_rule::builders::ModifyRuleInputBuilder,
+                    inner: crate::operation::modify_rule::builders::ModifyRuleInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_rule::ModifyRuleOutput,
-        crate::operation::modify_rule::ModifyRuleError,
-    > for ModifyRuleFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_rule::ModifyRuleOutput,
-            crate::operation::modify_rule::ModifyRuleError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_rule::ModifyRuleOutput,
+                    crate::operation::modify_rule::ModifyRuleError,
+                > for ModifyRuleFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_rule::ModifyRuleOutput,
+                        crate::operation::modify_rule::ModifyRuleError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyRuleFluentBuilder {
     /// Creates a new `ModifyRule`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ModifyRuleFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_rule::ModifyRuleOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_rule::ModifyRuleError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_rule::ModifyRule::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_rule::ModifyRule::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_rule::ModifyRuleOutput,
-        crate::operation::modify_rule::ModifyRuleError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_rule::ModifyRuleError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_rule::ModifyRule::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_rule::ModifyRule::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_rule::ModifyRuleOutput, crate::operation::modify_rule::ModifyRuleError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_arn(input.into());
@@ -133,12 +120,12 @@ impl ModifyRuleFluentBuilder {
         self
     }
     /// <p>The conditions.</p>
-    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>) -> Self {
+    pub fn set_conditions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>>) -> Self {
         self.inner = self.inner.set_conditions(input);
         self
     }
     /// <p>The conditions.</p>
-    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+    pub fn get_conditions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleCondition>> {
         self.inner.get_conditions()
     }
     /// Appends an item to `Actions`.
@@ -151,12 +138,13 @@ impl ModifyRuleFluentBuilder {
         self
     }
     /// <p>The actions.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>The actions.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         self.inner.get_actions()
     }
 }
+

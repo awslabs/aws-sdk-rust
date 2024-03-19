@@ -15,23 +15,24 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsMetricDimensionGroup {
+pub struct PerformanceInsightsMetricDimensionGroup  {
     /// <p>A list of specific dimensions from a dimension group. If this list isn't included, then all of the dimensions in the group were requested, or are present in the response.</p>
-    pub dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The available dimension groups for Performance Insights metric type.</p>
     pub group: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl PerformanceInsightsMetricDimensionGroup {
+impl  PerformanceInsightsMetricDimensionGroup  {
     /// <p>A list of specific dimensions from a dimension group. If this list isn't included, then all of the dimensions in the group were requested, or are present in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimensions.is_none()`.
-    pub fn dimensions(&self) -> &[::std::string::String] {
-        self.dimensions.as_deref().unwrap_or_default()
+    pub fn dimensions(&self) -> & [::std::string::String] {
+        self.dimensions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The available dimension groups for Performance Insights metric type.</p>
-    pub fn group(&self) -> ::std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
@@ -50,7 +51,7 @@ impl PerformanceInsightsMetricDimensionGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricDimensionGroupBuilder {
-    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) group: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -62,17 +63,16 @@ impl PerformanceInsightsMetricDimensionGroupBuilder {
     /// <p>A list of specific dimensions from a dimension group. If this list isn't included, then all of the dimensions in the group were requested, or are present in the response.</p>
     pub fn dimensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input.into());
-        self.dimensions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dimensions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of specific dimensions from a dimension group. If this list isn't included, then all of the dimensions in the group were requested, or are present in the response.</p>
-    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>A list of specific dimensions from a dimension group. If this list isn't included, then all of the dimensions in the group were requested, or are present in the response.</p>
-    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dimensions
     }
     /// <p>The available dimension groups for Performance Insights metric type.</p>
@@ -82,8 +82,7 @@ impl PerformanceInsightsMetricDimensionGroupBuilder {
     }
     /// <p>The available dimension groups for Performance Insights metric type.</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// <p>The available dimension groups for Performance Insights metric type.</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl PerformanceInsightsMetricDimensionGroupBuilder {
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -106,9 +104,13 @@ impl PerformanceInsightsMetricDimensionGroupBuilder {
     /// Consumes the builder and constructs a [`PerformanceInsightsMetricDimensionGroup`](crate::types::PerformanceInsightsMetricDimensionGroup).
     pub fn build(self) -> crate::types::PerformanceInsightsMetricDimensionGroup {
         crate::types::PerformanceInsightsMetricDimensionGroup {
-            dimensions: self.dimensions,
-            group: self.group,
-            limit: self.limit,
+            dimensions: self.dimensions
+            ,
+            group: self.group
+            ,
+            limit: self.limit
+            ,
         }
     }
 }
+

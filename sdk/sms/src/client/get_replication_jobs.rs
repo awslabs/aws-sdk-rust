@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetReplicationJobs`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`replication_job_id(impl Into<String>)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::replication_job_id) / [`set_replication_job_id(Option<String>)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::set_replication_job_id):<br>required: **false**<br><p>The ID of the replication job.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
-    /// - On success, responds with [`GetReplicationJobsOutput`](crate::operation::get_replication_jobs::GetReplicationJobsOutput) with field(s):
+                            /// - On success, responds with [`GetReplicationJobsOutput`](crate::operation::get_replication_jobs::GetReplicationJobsOutput) with field(s):
     ///   - [`replication_job_list(Option<Vec::<ReplicationJob>>)`](crate::operation::get_replication_jobs::GetReplicationJobsOutput::replication_job_list): <p>Information about the replication jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_replication_jobs::GetReplicationJobsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetReplicationJobsError>`](crate::operation::get_replication_jobs::GetReplicationJobsError)
+                            /// - On failure, responds with [`SdkError<GetReplicationJobsError>`](crate::operation::get_replication_jobs::GetReplicationJobsError)
     pub fn get_replication_jobs(&self) -> crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder {
-        crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_replication_jobs::builders::GetReplicationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

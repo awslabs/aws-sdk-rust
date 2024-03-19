@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMedicalVocabularies`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::set_next_token):<br>required: **false**<br><p>If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p><br>
     ///   - [`state_equals(VocabularyState)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::state_equals) / [`set_state_equals(Option<VocabularyState>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::set_state_equals):<br>required: **false**<br><p>Returns only custom medical vocabularies with the specified state. Custom vocabularies are ordered by creation date, with the newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are returned.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::set_name_contains):<br>required: **false**<br><p>Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.</p><br>
-    /// - On success, responds with [`ListMedicalVocabulariesOutput`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput) with field(s):
+                            /// - On success, responds with [`ListMedicalVocabulariesOutput`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput) with field(s):
     ///   - [`status(Option<VocabularyState>)`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput::status): <p>Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are ordered by creation date, with the newest vocabulary first.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput::next_token): <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     ///   - [`vocabularies(Option<Vec::<VocabularyInfo>>)`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput::vocabularies): <p>Provides information about the custom medical vocabularies that match the criteria specified in your request.</p>
-    /// - On failure, responds with [`SdkError<ListMedicalVocabulariesError>`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError)
+                            /// - On failure, responds with [`SdkError<ListMedicalVocabulariesError>`](crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError)
     pub fn list_medical_vocabularies(&self) -> crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder {
-        crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

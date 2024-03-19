@@ -5,124 +5,102 @@ pub use crate::operation::list_realtime_contact_analysis_segments_v2::_list_real
 
 impl ListRealtimeContactAnalysisSegmentsV2InputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_realtime_contact_analysis_segments_v2();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_realtime_contact_analysis_segments_v2();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListRealtimeContactAnalysisSegmentsV2`.
-///
+/// 
 /// <p>Provides a list of analysis segments for a real-time analysis session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2InputBuilder,
+                    inner: crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2InputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
-    > for ListRealtimeContactAnalysisSegmentsV2FluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
+                    crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
+                > for ListRealtimeContactAnalysisSegmentsV2FluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
+                        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
     /// Creates a new `ListRealtimeContactAnalysisSegmentsV2`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
     /// Access the ListRealtimeContactAnalysisSegmentsV2 as a reference.
-    pub fn as_input(
-        &self,
-    ) -> &crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2InputBuilder {
+    pub fn as_input(&self) -> &crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2InputBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins =
-            crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2::operation_runtime_plugins(
-                self.handle.runtime_plugins.clone(),
-                &self.handle.conf,
-                self.config_override,
-            );
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2::orchestrate(&runtime_plugins, input)
-            .await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output,
-        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Output, crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Error, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator {
-        crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator {
+                                crate::operation::list_realtime_contact_analysis_segments_v2::paginator::ListRealtimeContactAnalysisSegmentsV2Paginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -203,12 +181,13 @@ impl ListRealtimeContactAnalysisSegmentsV2FluentBuilder {
         self
     }
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    pub fn set_segment_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>>) -> Self {
+    pub fn set_segment_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>>) -> Self {
         self.inner = self.inner.set_segment_types(input);
         self
     }
     /// <p>Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.</p>
-    pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeContactAnalysisSegmentType>> {
+    pub fn get_segment_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RealTimeContactAnalysisSegmentType>> {
         self.inner.get_segment_types()
     }
 }
+

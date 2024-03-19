@@ -3,7 +3,7 @@
 /// <p>Provides information about the public Secure Shell (SSH) key that is associated with a Transfer Family user for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SshPublicKey {
+pub struct SshPublicKey  {
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
     pub date_imported: ::aws_smithy_types::DateTime,
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
@@ -12,21 +12,19 @@ pub struct SshPublicKey {
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
     pub ssh_public_key_id: ::std::string::String,
 }
-impl SshPublicKey {
+impl  SshPublicKey  {
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
-    pub fn date_imported(&self) -> &::aws_smithy_types::DateTime {
+    pub fn date_imported(&self) -> & ::aws_smithy_types::DateTime {
         &self.date_imported
     }
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(&self) -> &str {
-        use std::ops::Deref;
-        self.ssh_public_key_body.deref()
+    pub fn ssh_public_key_body(&self) -> & str {
+        use std::ops::Deref; self.ssh_public_key_body.deref()
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    pub fn ssh_public_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ssh_public_key_id.deref()
+    pub fn ssh_public_key_id(&self) -> & str {
+        use std::ops::Deref; self.ssh_public_key_id.deref()
     }
 }
 impl SshPublicKey {
@@ -53,8 +51,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
     pub fn set_date_imported(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_imported = input;
-        self
+        self.date_imported = input; self
     }
     /// <p>Specifies the date that the public key was added to the Transfer Family user.</p>
     pub fn get_date_imported(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -70,8 +67,7 @@ impl SshPublicKeyBuilder {
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_body = input;
-        self
+        self.ssh_public_key_body = input; self
     }
     /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
@@ -86,8 +82,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
     pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_id = input;
-        self
+        self.ssh_public_key_id = input; self
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
     pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +94,25 @@ impl SshPublicKeyBuilder {
     /// - [`ssh_public_key_body`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_body)
     /// - [`ssh_public_key_id`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SshPublicKey {
-            date_imported: self.date_imported.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "date_imported",
-                    "date_imported was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            ssh_public_key_body: self.ssh_public_key_body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ssh_public_key_body",
-                    "ssh_public_key_body was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ssh_public_key_id",
-                    "ssh_public_key_id was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SshPublicKey {
+                date_imported: self.date_imported
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("date_imported", "date_imported was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                ssh_public_key_body: self.ssh_public_key_body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ssh_public_key_body", "ssh_public_key_body was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ssh_public_key_id", "ssh_public_key_id was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+            }
+        )
     }
 }
+

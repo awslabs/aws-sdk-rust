@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateImageBuilderInput {
+pub struct CreateImageBuilderInput  {
     /// <p>A unique name for the image builder.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the image used to create the image builder.</p>
@@ -99,21 +99,21 @@ pub struct CreateImageBuilderInput {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
-impl CreateImageBuilderInput {
+impl  CreateImageBuilderInput  {
     /// <p>A unique name for the image builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the image used to create the image builder.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
@@ -185,24 +185,24 @@ impl CreateImageBuilderInput {
     /// <li>
     /// <p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The image builder name to display.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
@@ -210,11 +210,11 @@ impl CreateImageBuilderInput {
         self.enable_default_internet_access
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
-    pub fn domain_join_info(&self) -> ::std::option::Option<&crate::types::DomainJoinInfo> {
+    pub fn domain_join_info(&self) -> ::std::option::Option<& crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
-    pub fn appstream_agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> ::std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
@@ -222,14 +222,15 @@ impl CreateImageBuilderInput {
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
-    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
-        self.access_endpoints.as_deref().unwrap_or_default()
+    pub fn access_endpoints(&self) -> & [crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateImageBuilderInput {
@@ -254,8 +255,8 @@ pub struct CreateImageBuilderInputBuilder {
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) domain_join_info: ::std::option::Option<crate::types::DomainJoinInfo>,
     pub(crate) appstream_agent_version: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
 impl CreateImageBuilderInputBuilder {
     /// <p>A unique name for the image builder.</p>
@@ -266,8 +267,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>A unique name for the image builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name for the image builder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +280,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The name of the image used to create the image builder.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the image used to create the image builder.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +293,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -445,8 +443,7 @@ impl CreateImageBuilderInputBuilder {
     /// <p>stream.graphics-pro.16xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
@@ -527,8 +524,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The description to display.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to display.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -541,8 +537,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The image builder name to display.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The image builder name to display.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -555,8 +550,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -571,8 +565,7 @@ impl CreateImageBuilderInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -586,8 +579,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_default_internet_access = input;
-        self
+        self.enable_default_internet_access = input; self
     }
     /// <p>Enables or disables default internet access for the image builder.</p>
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
@@ -600,8 +592,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
     pub fn set_domain_join_info(mut self, input: ::std::option::Option<crate::types::DomainJoinInfo>) -> Self {
-        self.domain_join_info = input;
-        self
+        self.domain_join_info = input; self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.</p>
     pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
@@ -614,8 +605,7 @@ impl CreateImageBuilderInputBuilder {
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
     pub fn set_appstream_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.appstream_agent_version = input;
-        self
+        self.appstream_agent_version = input; self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</p>
     pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -632,25 +622,24 @@ impl CreateImageBuilderInputBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.</p>
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:</p>
     /// <p>_ . : / = + \ - @</p>
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `access_endpoints`.
@@ -660,38 +649,50 @@ impl CreateImageBuilderInputBuilder {
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
-        v.push(input);
-        self.access_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
-        self.access_endpoints = input;
-        self
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
+        self.access_endpoints = input; self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_image_builder::CreateImageBuilderInput {
-            name: self.name,
-            image_name: self.image_name,
-            image_arn: self.image_arn,
-            instance_type: self.instance_type,
-            description: self.description,
-            display_name: self.display_name,
-            vpc_config: self.vpc_config,
-            iam_role_arn: self.iam_role_arn,
-            enable_default_internet_access: self.enable_default_internet_access,
-            domain_join_info: self.domain_join_info,
-            appstream_agent_version: self.appstream_agent_version,
-            tags: self.tags,
-            access_endpoints: self.access_endpoints,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_image_builder::CreateImageBuilderInput {
+                name: self.name
+                ,
+                image_name: self.image_name
+                ,
+                image_arn: self.image_arn
+                ,
+                instance_type: self.instance_type
+                ,
+                description: self.description
+                ,
+                display_name: self.display_name
+                ,
+                vpc_config: self.vpc_config
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                enable_default_internet_access: self.enable_default_internet_access
+                ,
+                domain_join_info: self.domain_join_info
+                ,
+                appstream_agent_version: self.appstream_agent_version
+                ,
+                tags: self.tags
+                ,
+                access_endpoints: self.access_endpoints
+                ,
+            }
+        )
     }
 }
+

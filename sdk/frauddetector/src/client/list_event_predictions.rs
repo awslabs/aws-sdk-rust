@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventPredictions`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`event_id(FilterCondition)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::event_id) / [`set_event_id(Option<FilterCondition>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_event_id):<br>required: **false**<br><p>The event ID.</p><br>
     ///   - [`event_type(FilterCondition)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::event_type) / [`set_event_type(Option<FilterCondition>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_event_type):<br>required: **false**<br><p>The event type associated with the detector.</p><br>
     ///   - [`detector_id(FilterCondition)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::detector_id) / [`set_detector_id(Option<FilterCondition>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_detector_id):<br>required: **false**<br><p>The detector ID.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`prediction_time_range(PredictionTimeRange)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::prediction_time_range) / [`set_prediction_time_range(Option<PredictionTimeRange>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_prediction_time_range):<br>required: **false**<br><p>The time period for when the predictions were generated.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of predictions to return for the request.</p><br>
-    /// - On success, responds with [`ListEventPredictionsOutput`](crate::operation::list_event_predictions::ListEventPredictionsOutput) with field(s):
+                            /// - On success, responds with [`ListEventPredictionsOutput`](crate::operation::list_event_predictions::ListEventPredictionsOutput) with field(s):
     ///   - [`event_prediction_summaries(Option<Vec::<EventPredictionSummary>>)`](crate::operation::list_event_predictions::ListEventPredictionsOutput::event_prediction_summaries): <p>The summary of the past predictions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_predictions::ListEventPredictionsOutput::next_token): <p>Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.</p>
-    /// - On failure, responds with [`SdkError<ListEventPredictionsError>`](crate::operation::list_event_predictions::ListEventPredictionsError)
+                            /// - On failure, responds with [`SdkError<ListEventPredictionsError>`](crate::operation::list_event_predictions::ListEventPredictionsError)
     pub fn list_event_predictions(&self) -> crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder {
-        crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_event_predictions::builders::ListEventPredictionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

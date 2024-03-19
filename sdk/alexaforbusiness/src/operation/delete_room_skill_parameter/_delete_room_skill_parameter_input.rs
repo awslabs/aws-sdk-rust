@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRoomSkillParameterInput {
+pub struct DeleteRoomSkillParameterInput  {
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
@@ -10,17 +10,17 @@ pub struct DeleteRoomSkillParameterInput {
     /// <p>The room skill parameter key for which to remove details.</p>
     pub parameter_key: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRoomSkillParameterInput {
+impl  DeleteRoomSkillParameterInput  {
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The room skill parameter key for which to remove details.</p>
-    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeleteRoomSkillParameterInputBuilder {
     }
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DeleteRoomSkillParameterInputBuilder {
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl DeleteRoomSkillParameterInputBuilder {
     }
     /// <p>The room skill parameter key for which to remove details.</p>
     pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_key = input;
-        self
+        self.parameter_key = input; self
     }
     /// <p>The room skill parameter key for which to remove details.</p>
     pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_key
     }
     /// Consumes the builder and constructs a [`DeleteRoomSkillParameterInput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput {
-            room_arn: self.room_arn,
-            skill_id: self.skill_id,
-            parameter_key: self.parameter_key,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput {
+                room_arn: self.room_arn
+                ,
+                skill_id: self.skill_id
+                ,
+                parameter_key: self.parameter_key
+                ,
+            }
+        )
     }
 }
+

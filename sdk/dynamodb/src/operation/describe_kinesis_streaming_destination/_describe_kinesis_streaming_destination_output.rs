@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeKinesisStreamingDestinationOutput {
+pub struct DescribeKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being described.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of replica structures for the table being described.</p>
-    pub kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
+    pub kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisDataStreamDestination>>,
     _request_id: Option<String>,
 }
-impl DescribeKinesisStreamingDestinationOutput {
+impl  DescribeKinesisStreamingDestinationOutput  {
     /// <p>The name of the table being described.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The list of replica structures for the table being described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kinesis_data_stream_destinations.is_none()`.
-    pub fn kinesis_data_stream_destinations(&self) -> &[crate::types::KinesisDataStreamDestination] {
-        self.kinesis_data_stream_destinations.as_deref().unwrap_or_default()
+    pub fn kinesis_data_stream_destinations(&self) -> & [crate::types::KinesisDataStreamDestination] {
+        self.kinesis_data_stream_destinations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeKinesisStreamingDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeKinesisStreamingDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
     pub fn builder() -> crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeKinesisStreamingDestinationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
+    pub(crate) kinesis_data_stream_destinations: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisDataStreamDestination>>,
     _request_id: Option<String>,
 }
 impl DescribeKinesisStreamingDestinationOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
     }
     /// <p>The name of the table being described.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table being described.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
     /// <p>The list of replica structures for the table being described.</p>
     pub fn kinesis_data_stream_destinations(mut self, input: crate::types::KinesisDataStreamDestination) -> Self {
         let mut v = self.kinesis_data_stream_destinations.unwrap_or_default();
-        v.push(input);
-        self.kinesis_data_stream_destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kinesis_data_stream_destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn set_kinesis_data_stream_destinations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
-    ) -> Self {
-        self.kinesis_data_stream_destinations = input;
-        self
+    pub fn set_kinesis_data_stream_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KinesisDataStreamDestination>>) -> Self {
+        self.kinesis_data_stream_destinations = input; self
     }
     /// <p>The list of replica structures for the table being described.</p>
-    pub fn get_kinesis_data_stream_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>> {
+    pub fn get_kinesis_data_stream_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KinesisDataStreamDestination>> {
         &self.kinesis_data_stream_destinations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationOutput`](crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput).
     pub fn build(self) -> crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput {
         crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput {
-            table_name: self.table_name,
-            kinesis_data_stream_destinations: self.kinesis_data_stream_destinations,
+            table_name: self.table_name
+            ,
+            kinesis_data_stream_destinations: self.kinesis_data_stream_destinations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

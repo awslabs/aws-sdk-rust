@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRasterDataCollectionOutput {
+pub struct GetRasterDataCollectionOutput  {
     /// <p>The name of the raster data collection.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
@@ -14,58 +14,52 @@ pub struct GetRasterDataCollectionOutput {
     /// <p>The URL of the description page.</p>
     pub description_page_url: ::std::string::String,
     /// <p>The filters supported by the raster data collection.</p>
-    pub supported_filters: ::std::vec::Vec<crate::types::Filter>,
+    pub supported_filters: ::std::vec::Vec::<crate::types::Filter>,
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub image_source_bands: ::std::vec::Vec<::std::string::String>,
+    pub image_source_bands: ::std::vec::Vec::<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetRasterDataCollectionOutput {
+impl  GetRasterDataCollectionOutput  {
     /// <p>The name of the raster data collection.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The raster data collection type.</p>
-    pub fn r#type(&self) -> &crate::types::DataCollectionType {
+    pub fn r#type(&self) -> & crate::types::DataCollectionType {
         &self.r#type
     }
     /// <p>A description of the raster data collection.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The URL of the description page.</p>
-    pub fn description_page_url(&self) -> &str {
-        use std::ops::Deref;
-        self.description_page_url.deref()
+    pub fn description_page_url(&self) -> & str {
+        use std::ops::Deref; self.description_page_url.deref()
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn supported_filters(&self) -> &[crate::types::Filter] {
-        use std::ops::Deref;
-        self.supported_filters.deref()
+    pub fn supported_filters(&self) -> & [crate::types::Filter] {
+        use std::ops::Deref; self.supported_filters.deref()
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn image_source_bands(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.image_source_bands.deref()
+    pub fn image_source_bands(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.image_source_bands.deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRasterDataCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRasterDataCollectionOutput {
     /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
     pub fn builder() -> crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder {
@@ -82,9 +76,9 @@ pub struct GetRasterDataCollectionOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::DataCollectionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) description_page_url: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    pub(crate) image_source_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) supported_filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
+    pub(crate) image_source_bands: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRasterDataCollectionOutputBuilder {
@@ -96,8 +90,7 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The name of the raster data collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the raster data collection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +104,7 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The raster data collection type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCollectionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The raster data collection type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCollectionType> {
@@ -141,8 +132,7 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>A description of the raster data collection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the raster data collection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +146,7 @@ impl GetRasterDataCollectionOutputBuilder {
     }
     /// <p>The URL of the description page.</p>
     pub fn set_description_page_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description_page_url = input;
-        self
+        self.description_page_url = input; self
     }
     /// <p>The URL of the description page.</p>
     pub fn get_description_page_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,17 +159,16 @@ impl GetRasterDataCollectionOutputBuilder {
     /// <p>The filters supported by the raster data collection.</p>
     pub fn supported_filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.supported_filters.unwrap_or_default();
-        v.push(input);
-        self.supported_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.supported_filters = input;
-        self
+    pub fn set_supported_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.supported_filters = input; self
     }
     /// <p>The filters supported by the raster data collection.</p>
-    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_supported_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.supported_filters
     }
     /// Appends an item to `image_source_bands`.
@@ -190,17 +178,16 @@ impl GetRasterDataCollectionOutputBuilder {
     /// <p>The list of image source bands in the raster data collection.</p>
     pub fn image_source_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_source_bands.unwrap_or_default();
-        v.push(input.into());
-        self.image_source_bands = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.image_source_bands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn set_image_source_bands(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.image_source_bands = input;
-        self
+    pub fn set_image_source_bands(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.image_source_bands = input; self
     }
     /// <p>The list of image source bands in the raster data collection.</p>
-    pub fn get_image_source_bands(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_image_source_bands(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.image_source_bands
     }
     /// Adds a key-value pair to `tags`.
@@ -210,28 +197,27 @@ impl GetRasterDataCollectionOutputBuilder {
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::name)
@@ -241,57 +227,49 @@ impl GetRasterDataCollectionOutputBuilder {
     /// - [`description_page_url`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::description_page_url)
     /// - [`supported_filters`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::supported_filters)
     /// - [`image_source_bands`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder::image_source_bands)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            description_page_url: self.description_page_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description_page_url",
-                    "description_page_url was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            supported_filters: self.supported_filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "supported_filters",
-                    "supported_filters was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            image_source_bands: self.image_source_bands.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "image_source_bands",
-                    "image_source_bands was not specified but it is required when building GetRasterDataCollectionOutput",
-                )
-            })?,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                description_page_url: self.description_page_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description_page_url", "description_page_url was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                supported_filters: self.supported_filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("supported_filters", "supported_filters was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                image_source_bands: self.image_source_bands
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("image_source_bands", "image_source_bands was not specified but it is required when building GetRasterDataCollectionOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

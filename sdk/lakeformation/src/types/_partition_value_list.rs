@@ -3,15 +3,14 @@
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionValueList {
+pub struct PartitionValueList  {
     /// <p>The list of partition values.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl PartitionValueList {
+impl  PartitionValueList  {
     /// <p>The list of partition values.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl PartitionValueList {
@@ -25,7 +24,7 @@ impl PartitionValueList {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PartitionValueListBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PartitionValueListBuilder {
     /// Appends an item to `values`.
@@ -35,30 +34,31 @@ impl PartitionValueListBuilder {
     /// <p>The list of partition values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of partition values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The list of partition values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`PartitionValueList`](crate::types::PartitionValueList).
     /// This method will fail if any of the following fields are not set:
     /// - [`values`](crate::types::builders::PartitionValueListBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::PartitionValueList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PartitionValueList {
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building PartitionValueList",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PartitionValueList {
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building PartitionValueList")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The status of an outbound cross-cluster connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutboundConnectionStatus {
+pub struct OutboundConnectionStatus  {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct OutboundConnectionStatus {
     /// <p>Verbose information for the outbound connection.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl OutboundConnectionStatus {
+impl  OutboundConnectionStatus  {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -55,11 +55,11 @@ impl OutboundConnectionStatus {
     /// <li>
     /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
     /// </ul>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::OutboundConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::OutboundConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Verbose information for the outbound connection.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -129,8 +129,7 @@ impl OutboundConnectionStatusBuilder {
     /// <p><b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p></li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::OutboundConnectionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
@@ -165,8 +164,7 @@ impl OutboundConnectionStatusBuilder {
     }
     /// <p>Verbose information for the outbound connection.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Verbose information for the outbound connection.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +173,11 @@ impl OutboundConnectionStatusBuilder {
     /// Consumes the builder and constructs a [`OutboundConnectionStatus`](crate::types::OutboundConnectionStatus).
     pub fn build(self) -> crate::types::OutboundConnectionStatus {
         crate::types::OutboundConnectionStatus {
-            status_code: self.status_code,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

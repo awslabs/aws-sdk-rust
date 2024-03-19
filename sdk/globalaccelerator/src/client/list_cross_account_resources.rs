@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCrossAccountResources`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::set_accelerator_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of an accelerator in a cross-account attachment.</p><br>
     ///   - [`resource_owner_aws_account_id(impl Into<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::resource_owner_aws_account_id) / [`set_resource_owner_aws_account_id(Option<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::set_resource_owner_aws_account_id):<br>required: **true**<br><p>The account ID of a resource owner in a cross-account attachment.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of cross-account endpoints objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCrossAccountResourcesOutput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListCrossAccountResourcesOutput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput) with field(s):
     ///   - [`cross_account_resources(Option<Vec::<CrossAccountResource>>)`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput::cross_account_resources): <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCrossAccountResourcesError>`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesError)
+                            /// - On failure, responds with [`SdkError<ListCrossAccountResourcesError>`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesError)
     pub fn list_cross_account_resources(&self) -> crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder {
-        crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

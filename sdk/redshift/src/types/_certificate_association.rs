@@ -3,19 +3,19 @@
 /// <p>A cluster ID and custom domain name tied to a specific certificate. These are typically returned in a list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateAssociation {
+pub struct CertificateAssociation  {
     /// <p>The custom domain name for the certificate association.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier for the certificate association.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl CertificateAssociation {
+impl  CertificateAssociation  {
     /// <p>The custom domain name for the certificate association.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The cluster identifier for the certificate association.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CertificateAssociationBuilder {
     }
     /// <p>The custom domain name for the certificate association.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name for the certificate association.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CertificateAssociationBuilder {
     }
     /// <p>The cluster identifier for the certificate association.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier for the certificate association.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CertificateAssociationBuilder {
     /// Consumes the builder and constructs a [`CertificateAssociation`](crate::types::CertificateAssociation).
     pub fn build(self) -> crate::types::CertificateAssociation {
         crate::types::CertificateAssociation {
-            custom_domain_name: self.custom_domain_name,
-            cluster_identifier: self.cluster_identifier,
+            custom_domain_name: self.custom_domain_name
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
         }
     }
 }
+

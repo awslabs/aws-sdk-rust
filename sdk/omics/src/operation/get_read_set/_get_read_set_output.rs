@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetReadSetOutput {
+pub struct GetReadSetOutput  {
     /// <p>The read set file payload.</p>
     pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
-impl GetReadSetOutput {
+impl  GetReadSetOutput  {
     /// <p>The read set file payload.</p>
-    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn payload(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
 impl ::aws_types::request_id::RequestId for GetReadSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReadSetOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetOutput`](crate::operation::get_read_set::GetReadSetOutput).
     pub fn builder() -> crate::operation::get_read_set::builders::GetReadSetOutputBuilder {
@@ -40,27 +40,29 @@ impl GetReadSetOutputBuilder {
     }
     /// <p>The read set file payload.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The read set file payload.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReadSetOutput`](crate::operation::get_read_set::GetReadSetOutput).
     pub fn build(self) -> crate::operation::get_read_set::GetReadSetOutput {
         crate::operation::get_read_set::GetReadSetOutput {
-            payload: self.payload.unwrap_or_default(),
+            payload: self.payload
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

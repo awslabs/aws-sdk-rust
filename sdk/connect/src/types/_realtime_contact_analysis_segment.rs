@@ -28,11 +28,7 @@ impl RealtimeContactAnalysisSegment {
     /// Tries to convert the enum instance into [`Attachments`](crate::types::RealtimeContactAnalysisSegment::Attachments), extracting the inner [`RealTimeContactAnalysisSegmentAttachments`](crate::types::RealTimeContactAnalysisSegmentAttachments).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attachments(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentAttachments, &Self> {
-        if let RealtimeContactAnalysisSegment::Attachments(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealtimeContactAnalysisSegment::Attachments(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Attachments`](crate::types::RealtimeContactAnalysisSegment::Attachments).
     pub fn is_attachments(&self) -> bool {
@@ -41,11 +37,7 @@ impl RealtimeContactAnalysisSegment {
     /// Tries to convert the enum instance into [`Categories`](crate::types::RealtimeContactAnalysisSegment::Categories), extracting the inner [`RealTimeContactAnalysisSegmentCategories`](crate::types::RealTimeContactAnalysisSegmentCategories).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_categories(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentCategories, &Self> {
-        if let RealtimeContactAnalysisSegment::Categories(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealtimeContactAnalysisSegment::Categories(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Categories`](crate::types::RealtimeContactAnalysisSegment::Categories).
     pub fn is_categories(&self) -> bool {
@@ -54,11 +46,7 @@ impl RealtimeContactAnalysisSegment {
     /// Tries to convert the enum instance into [`Event`](crate::types::RealtimeContactAnalysisSegment::Event), extracting the inner [`RealTimeContactAnalysisSegmentEvent`](crate::types::RealTimeContactAnalysisSegmentEvent).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_event(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentEvent, &Self> {
-        if let RealtimeContactAnalysisSegment::Event(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealtimeContactAnalysisSegment::Event(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Event`](crate::types::RealtimeContactAnalysisSegment::Event).
     pub fn is_event(&self) -> bool {
@@ -67,11 +55,7 @@ impl RealtimeContactAnalysisSegment {
     /// Tries to convert the enum instance into [`Issues`](crate::types::RealtimeContactAnalysisSegment::Issues), extracting the inner [`RealTimeContactAnalysisSegmentIssues`](crate::types::RealTimeContactAnalysisSegmentIssues).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_issues(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentIssues, &Self> {
-        if let RealtimeContactAnalysisSegment::Issues(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealtimeContactAnalysisSegment::Issues(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Issues`](crate::types::RealtimeContactAnalysisSegment::Issues).
     pub fn is_issues(&self) -> bool {
@@ -80,11 +64,7 @@ impl RealtimeContactAnalysisSegment {
     /// Tries to convert the enum instance into [`Transcript`](crate::types::RealtimeContactAnalysisSegment::Transcript), extracting the inner [`RealTimeContactAnalysisSegmentTranscript`](crate::types::RealTimeContactAnalysisSegmentTranscript).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentTranscript, &Self> {
-        if let RealtimeContactAnalysisSegment::Transcript(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RealtimeContactAnalysisSegment::Transcript(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Transcript`](crate::types::RealtimeContactAnalysisSegment::Transcript).
     pub fn is_transcript(&self) -> bool {
@@ -95,3 +75,4 @@ impl RealtimeContactAnalysisSegment {
         matches!(self, Self::Unknown)
     }
 }
+

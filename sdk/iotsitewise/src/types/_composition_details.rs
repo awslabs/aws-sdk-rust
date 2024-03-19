@@ -3,16 +3,17 @@
 /// <p>Metadata for the composition relationship established by using <code>composedAssetModelId</code> in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"> <code>CreateAssetModelCompositeModel</code> </a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositionDetails {
+pub struct CompositionDetails  {
     /// <p>An array detailing the composition relationship for this composite model.</p>
-    pub composition_relationship: ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipItem>>,
+    pub composition_relationship: ::std::option::Option<::std::vec::Vec::<crate::types::CompositionRelationshipItem>>,
 }
-impl CompositionDetails {
+impl  CompositionDetails  {
     /// <p>An array detailing the composition relationship for this composite model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composition_relationship.is_none()`.
-    pub fn composition_relationship(&self) -> &[crate::types::CompositionRelationshipItem] {
-        self.composition_relationship.as_deref().unwrap_or_default()
+    pub fn composition_relationship(&self) -> & [crate::types::CompositionRelationshipItem] {
+        self.composition_relationship.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CompositionDetails {
@@ -26,7 +27,7 @@ impl CompositionDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositionDetailsBuilder {
-    pub(crate) composition_relationship: ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipItem>>,
+    pub(crate) composition_relationship: ::std::option::Option<::std::vec::Vec::<crate::types::CompositionRelationshipItem>>,
 }
 impl CompositionDetailsBuilder {
     /// Appends an item to `composition_relationship`.
@@ -36,23 +37,24 @@ impl CompositionDetailsBuilder {
     /// <p>An array detailing the composition relationship for this composite model.</p>
     pub fn composition_relationship(mut self, input: crate::types::CompositionRelationshipItem) -> Self {
         let mut v = self.composition_relationship.unwrap_or_default();
-        v.push(input);
-        self.composition_relationship = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.composition_relationship = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array detailing the composition relationship for this composite model.</p>
-    pub fn set_composition_relationship(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipItem>>) -> Self {
-        self.composition_relationship = input;
-        self
+    pub fn set_composition_relationship(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CompositionRelationshipItem>>) -> Self {
+        self.composition_relationship = input; self
     }
     /// <p>An array detailing the composition relationship for this composite model.</p>
-    pub fn get_composition_relationship(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipItem>> {
+    pub fn get_composition_relationship(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CompositionRelationshipItem>> {
         &self.composition_relationship
     }
     /// Consumes the builder and constructs a [`CompositionDetails`](crate::types::CompositionDetails).
     pub fn build(self) -> crate::types::CompositionDetails {
         crate::types::CompositionDetails {
-            composition_relationship: self.composition_relationship,
+            composition_relationship: self.composition_relationship
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpgradePublishedSchemaOutput {
+pub struct UpgradePublishedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub upgraded_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpgradePublishedSchemaOutput {
+impl  UpgradePublishedSchemaOutput  {
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
-    pub fn upgraded_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn upgraded_schema_arn(&self) -> ::std::option::Option<& str> {
         self.upgraded_schema_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpgradePublishedSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpgradePublishedSchemaOutput {
     /// Creates a new builder-style object to manufacture [`UpgradePublishedSchemaOutput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput).
     pub fn builder() -> crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaOutputBuilder {
@@ -40,27 +40,28 @@ impl UpgradePublishedSchemaOutputBuilder {
     }
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub fn set_upgraded_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upgraded_schema_arn = input;
-        self
+        self.upgraded_schema_arn = input; self
     }
     /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
     pub fn get_upgraded_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.upgraded_schema_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpgradePublishedSchemaOutput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput).
     pub fn build(self) -> crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput {
         crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput {
-            upgraded_schema_arn: self.upgraded_schema_arn,
+            upgraded_schema_arn: self.upgraded_schema_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

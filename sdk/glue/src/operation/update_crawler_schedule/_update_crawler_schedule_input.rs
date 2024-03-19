@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCrawlerScheduleInput {
+pub struct UpdateCrawlerScheduleInput  {
     /// <p>The name of the crawler whose schedule to update.</p>
     pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
 }
-impl UpdateCrawlerScheduleInput {
+impl  UpdateCrawlerScheduleInput  {
     /// <p>The name of the crawler whose schedule to update.</p>
-    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<& str> {
         self.crawler_name.as_deref()
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateCrawlerScheduleInputBuilder {
     }
     /// <p>The name of the crawler whose schedule to update.</p>
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_name = input;
-        self
+        self.crawler_name = input; self
     }
     /// <p>The name of the crawler whose schedule to update.</p>
     pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl UpdateCrawlerScheduleInputBuilder {
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule
     }
     /// Consumes the builder and constructs a [`UpdateCrawlerScheduleInput`](crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput {
-            crawler_name: self.crawler_name,
-            schedule: self.schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_crawler_schedule::UpdateCrawlerScheduleInput {
+                crawler_name: self.crawler_name
+                ,
+                schedule: self.schedule
+                ,
+            }
+        )
     }
 }
+

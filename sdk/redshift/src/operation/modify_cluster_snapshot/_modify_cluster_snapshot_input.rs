@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyClusterSnapshotInput {
+pub struct ModifyClusterSnapshotInput  {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
@@ -12,9 +12,9 @@ pub struct ModifyClusterSnapshotInput {
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub force: ::std::option::Option<bool>,
 }
-impl ModifyClusterSnapshotInput {
+impl  ModifyClusterSnapshotInput  {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
@@ -52,8 +52,7 @@ impl ModifyClusterSnapshotInputBuilder {
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ModifyClusterSnapshotInputBuilder {
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
@@ -86,22 +84,24 @@ impl ModifyClusterSnapshotInputBuilder {
     }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
-            snapshot_identifier: self.snapshot_identifier,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

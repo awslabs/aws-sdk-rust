@@ -3,30 +3,28 @@
 /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentTooLargeException {
+pub struct DocumentTooLargeException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub code: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl DocumentTooLargeException {
+impl  DocumentTooLargeException  {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl DocumentTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for DocumentTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "DocumentTooLargeException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,9 +39,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::DocumentTooLarg
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DocumentTooLargeException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DocumentTooLargeException {
     /// Creates a new builder-style object to manufacture [`DocumentTooLargeException`](crate::types::error::DocumentTooLargeException).
@@ -68,8 +64,7 @@ impl DocumentTooLargeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,30 +77,32 @@ impl DocumentTooLargeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`DocumentTooLargeException`](crate::types::error::DocumentTooLargeException).
     pub fn build(self) -> crate::types::error::DocumentTooLargeException {
         crate::types::error::DocumentTooLargeException {
-            message: self.message,
-            code: self.code,
+            message: self.message
+            ,
+            code: self.code
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

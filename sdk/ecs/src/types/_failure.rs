@@ -3,7 +3,7 @@
 /// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Failure {
+pub struct Failure  {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the failure.</p>
@@ -11,17 +11,17 @@ pub struct Failure {
     /// <p>The details of the failure.</p>
     pub detail: ::std::option::Option<::std::string::String>,
 }
-impl Failure {
+impl  Failure  {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The details of the failure.</p>
-    pub fn detail(&self) -> ::std::option::Option<&str> {
+    pub fn detail(&self) -> ::std::option::Option<& str> {
         self.detail.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl FailureBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl FailureBuilder {
     }
     /// <p>The reason for the failure.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the failure.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl FailureBuilder {
     }
     /// <p>The details of the failure.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
     }
     /// <p>The details of the failure.</p>
     pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl FailureBuilder {
     /// Consumes the builder and constructs a [`Failure`](crate::types::Failure).
     pub fn build(self) -> crate::types::Failure {
         crate::types::Failure {
-            arn: self.arn,
-            reason: self.reason,
-            detail: self.detail,
+            arn: self.arn
+            ,
+            reason: self.reason
+            ,
+            detail: self.detail
+            ,
         }
     }
 }
+

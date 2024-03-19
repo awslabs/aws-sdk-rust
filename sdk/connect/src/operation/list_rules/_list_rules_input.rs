@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRulesInput {
+pub struct ListRulesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The publish status of the rule.</p>
@@ -14,17 +14,17 @@ pub struct ListRulesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRulesInput {
+impl  ListRulesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
+    pub fn publish_status(&self) -> ::std::option::Option<& crate::types::RulePublishStatus> {
         self.publish_status.as_ref()
     }
     /// <p>The name of the event source.</p>
-    pub fn event_source_name(&self) -> ::std::option::Option<&crate::types::EventSourceName> {
+    pub fn event_source_name(&self) -> ::std::option::Option<& crate::types::EventSourceName> {
         self.event_source_name.as_ref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -32,7 +32,7 @@ impl ListRulesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The publish status of the rule.</p>
     pub fn set_publish_status(mut self, input: ::std::option::Option<crate::types::RulePublishStatus>) -> Self {
-        self.publish_status = input;
-        self
+        self.publish_status = input; self
     }
     /// <p>The publish status of the rule.</p>
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
@@ -90,8 +88,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The name of the event source.</p>
     pub fn set_event_source_name(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
-        self.event_source_name = input;
-        self
+        self.event_source_name = input; self
     }
     /// <p>The name of the event source.</p>
     pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
@@ -104,8 +101,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,12 +122,20 @@ impl ListRulesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
-            instance_id: self.instance_id,
-            publish_status: self.publish_status,
-            event_source_name: self.event_source_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_rules::ListRulesInput {
+                instance_id: self.instance_id
+                ,
+                publish_status: self.publish_status
+                ,
+                event_source_name: self.event_source_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

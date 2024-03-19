@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVoiceConnectorTerminationCredentialsInput {
+pub struct DeleteVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub usernames: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteVoiceConnectorTerminationCredentialsInput {
+impl  DeleteVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usernames.is_none()`.
-    pub fn usernames(&self) -> &[::std::string::String] {
-        self.usernames.as_deref().unwrap_or_default()
+    pub fn usernames(&self) -> & [::std::string::String] {
+        self.usernames.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder {
+    pub fn builder() -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder {
         crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder::default()
     }
 }
@@ -33,7 +33,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) usernames: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) usernames: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -44,8 +44,7 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,31 +57,28 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn usernames(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.usernames.unwrap_or_default();
-        v.push(input.into());
-        self.usernames = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.usernames = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn set_usernames(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.usernames = input;
-        self
+    pub fn set_usernames(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.usernames = input; self
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn get_usernames(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_usernames(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.usernames
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput {
-                voice_connector_id: self.voice_connector_id,
-                usernames: self.usernames,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                usernames: self.usernames
+                ,
+            }
         )
     }
 }
+

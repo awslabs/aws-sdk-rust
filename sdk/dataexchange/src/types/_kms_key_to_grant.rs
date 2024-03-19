@@ -3,15 +3,14 @@
 /// <p>The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the shared S3 objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KmsKeyToGrant {
+pub struct KmsKeyToGrant  {
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
     pub kms_key_arn: ::std::string::String,
 }
-impl KmsKeyToGrant {
+impl  KmsKeyToGrant  {
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
-    pub fn kms_key_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key_arn.deref()
+    pub fn kms_key_arn(&self) -> & str {
+        use std::ops::Deref; self.kms_key_arn.deref()
     }
 }
 impl KmsKeyToGrant {
@@ -36,8 +35,7 @@ impl KmsKeyToGrantBuilder {
     }
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KmsKeyToGrantBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_arn`](crate::types::builders::KmsKeyToGrantBuilder::kms_key_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KmsKeyToGrant, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KmsKeyToGrant {
-            kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key_arn",
-                    "kms_key_arn was not specified but it is required when building KmsKeyToGrant",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KmsKeyToGrant {
+                kms_key_arn: self.kms_key_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key_arn", "kms_key_arn was not specified but it is required when building KmsKeyToGrant")
+                    )?
+                ,
+            }
+        )
     }
 }
+

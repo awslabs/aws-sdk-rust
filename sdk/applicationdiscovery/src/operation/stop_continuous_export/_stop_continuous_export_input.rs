@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopContinuousExportInput {
+pub struct StopContinuousExportInput  {
     /// <p>The unique ID assigned to this export.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
 }
-impl StopContinuousExportInput {
+impl  StopContinuousExportInput  {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<& str> {
         self.export_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl StopContinuousExportInputBuilder {
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_id
     }
     /// Consumes the builder and constructs a [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_continuous_export::StopContinuousExportInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_continuous_export::StopContinuousExportInput { export_id: self.export_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_continuous_export::StopContinuousExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_continuous_export::StopContinuousExportInput {
+                export_id: self.export_id
+                ,
+            }
+        )
     }
 }
+

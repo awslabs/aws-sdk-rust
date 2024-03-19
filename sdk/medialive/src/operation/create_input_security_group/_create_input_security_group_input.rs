@@ -3,22 +3,23 @@
 /// The IPv4 CIDRs to whitelist for this Input Security Group
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInputSecurityGroupInput {
+pub struct CreateInputSecurityGroupInput  {
     /// A collection of key-value pairs.
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
-    pub whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
+    pub whitelist_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InputWhitelistRuleCidr>>,
 }
-impl CreateInputSecurityGroupInput {
+impl  CreateInputSecurityGroupInput  {
     /// A collection of key-value pairs.
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// List of IPv4 CIDR addresses to whitelist
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.whitelist_rules.is_none()`.
-    pub fn whitelist_rules(&self) -> &[crate::types::InputWhitelistRuleCidr] {
-        self.whitelist_rules.as_deref().unwrap_or_default()
+    pub fn whitelist_rules(&self) -> & [crate::types::InputWhitelistRuleCidr] {
+        self.whitelist_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateInputSecurityGroupInput {
@@ -32,8 +33,8 @@ impl CreateInputSecurityGroupInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInputSecurityGroupInputBuilder {
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) whitelist_rules: ::std::option::Option<::std::vec::Vec::<crate::types::InputWhitelistRuleCidr>>,
 }
 impl CreateInputSecurityGroupInputBuilder {
     /// Adds a key-value pair to `tags`.
@@ -43,17 +44,16 @@ impl CreateInputSecurityGroupInputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// A collection of key-value pairs.
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `whitelist_rules`.
@@ -63,29 +63,28 @@ impl CreateInputSecurityGroupInputBuilder {
     /// List of IPv4 CIDR addresses to whitelist
     pub fn whitelist_rules(mut self, input: crate::types::InputWhitelistRuleCidr) -> Self {
         let mut v = self.whitelist_rules.unwrap_or_default();
-        v.push(input);
-        self.whitelist_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.whitelist_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn set_whitelist_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>>) -> Self {
-        self.whitelist_rules = input;
-        self
+    pub fn set_whitelist_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputWhitelistRuleCidr>>) -> Self {
+        self.whitelist_rules = input; self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
+    pub fn get_whitelist_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputWhitelistRuleCidr>> {
         &self.whitelist_rules
     }
     /// Consumes the builder and constructs a [`CreateInputSecurityGroupInput`](crate::operation::create_input_security_group::CreateInputSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_input_security_group::CreateInputSecurityGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_input_security_group::CreateInputSecurityGroupInput {
-            tags: self.tags,
-            whitelist_rules: self.whitelist_rules,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_input_security_group::CreateInputSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_input_security_group::CreateInputSecurityGroupInput {
+                tags: self.tags
+                ,
+                whitelist_rules: self.whitelist_rules
+                ,
+            }
+        )
     }
 }
+

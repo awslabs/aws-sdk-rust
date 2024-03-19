@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableLoggingInput {
+pub struct EnableLoggingInput  {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -40,12 +40,12 @@ pub struct EnableLoggingInput {
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub log_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl EnableLoggingInput {
+impl  EnableLoggingInput  {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code></p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
@@ -56,7 +56,7 @@ impl EnableLoggingInput {
     /// <li>
     /// <p>The cluster must have read bucket and put object permissions</p></li>
     /// </ul>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix applied to the log file names.</p>
@@ -79,18 +79,19 @@ impl EnableLoggingInput {
     /// <p>x7f or larger</p></li>
     /// </ul></li>
     /// </ul>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
+    pub fn log_destination_type(&self) -> ::std::option::Option<& crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
-    pub fn log_exports(&self) -> &[::std::string::String] {
-        self.log_exports.as_deref().unwrap_or_default()
+    pub fn log_exports(&self) -> & [::std::string::String] {
+        self.log_exports.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EnableLoggingInput {
@@ -108,7 +109,7 @@ pub struct EnableLoggingInputBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
-    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl EnableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -121,8 +122,7 @@ impl EnableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code></p>
@@ -150,8 +150,7 @@ impl EnableLoggingInputBuilder {
     /// <p>The cluster must have read bucket and put object permissions</p></li>
     /// </ul>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
     /// <p>Constraints:</p>
@@ -209,8 +208,7 @@ impl EnableLoggingInputBuilder {
     /// </ul></li>
     /// </ul>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Constraints:</p>
@@ -242,8 +240,7 @@ impl EnableLoggingInputBuilder {
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
-        self.log_destination_type = input;
-        self
+        self.log_destination_type = input; self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
@@ -256,29 +253,34 @@ impl EnableLoggingInputBuilder {
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
-        v.push(input.into());
-        self.log_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.log_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.log_exports = input;
-        self
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.log_exports = input; self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.log_exports
     }
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_logging::EnableLoggingInput {
-            cluster_identifier: self.cluster_identifier,
-            bucket_name: self.bucket_name,
-            s3_key_prefix: self.s3_key_prefix,
-            log_destination_type: self.log_destination_type,
-            log_exports: self.log_exports,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_logging::EnableLoggingInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                bucket_name: self.bucket_name
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
+                log_destination_type: self.log_destination_type
+                ,
+                log_exports: self.log_exports
+                ,
+            }
+        )
     }
 }
+

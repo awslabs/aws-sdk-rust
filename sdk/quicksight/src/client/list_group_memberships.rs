@@ -2,20 +2,21 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGroupMemberships`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`group_name(impl Into<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::set_group_name):<br>required: **true**<br><p>The name of the group that you want to see a membership list of.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that can be used in a subsequent request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return from this request.</p><br>
     ///   - [`aws_account_id(impl Into<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::set_aws_account_id):<br>required: **true**<br><p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace of the group that you want a list of users from.</p><br>
-    /// - On success, responds with [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput) with field(s):
+                            /// - On success, responds with [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput) with field(s):
     ///   - [`group_member_list(Option<Vec::<GroupMember>>)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::group_member_list): <p>The list of the members of the group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
     ///   - [`request_id(Option<String>)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::operation::list_group_memberships::ListGroupMembershipsOutput::status): <p>The HTTP status of the request.</p>
-    /// - On failure, responds with [`SdkError<ListGroupMembershipsError>`](crate::operation::list_group_memberships::ListGroupMembershipsError)
+                            /// - On failure, responds with [`SdkError<ListGroupMembershipsError>`](crate::operation::list_group_memberships::ListGroupMembershipsError)
     pub fn list_group_memberships(&self) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder {
-        crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_group_memberships::builders::ListGroupMembershipsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

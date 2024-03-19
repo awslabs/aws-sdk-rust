@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKxDatabasesOutput {
+pub struct ListKxDatabasesOutput  {
     /// <p>A list of databases in the kdb environment.</p>
-    pub kx_databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
+    pub kx_databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseListEntry>>,
     /// <p>A token that indicates where a results page should begin.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListKxDatabasesOutput {
+impl  ListKxDatabasesOutput  {
     /// <p>A list of databases in the kdb environment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.kx_databases.is_none()`.
-    pub fn kx_databases(&self) -> &[crate::types::KxDatabaseListEntry] {
-        self.kx_databases.as_deref().unwrap_or_default()
+    pub fn kx_databases(&self) -> & [crate::types::KxDatabaseListEntry] {
+        self.kx_databases.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListKxDatabasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListKxDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput).
     pub fn builder() -> crate::operation::list_kx_databases::builders::ListKxDatabasesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListKxDatabasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListKxDatabasesOutputBuilder {
-    pub(crate) kx_databases: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>,
+    pub(crate) kx_databases: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListKxDatabasesOutputBuilder {
     /// <p>A list of databases in the kdb environment.</p>
     pub fn kx_databases(mut self, input: crate::types::KxDatabaseListEntry) -> Self {
         let mut v = self.kx_databases.unwrap_or_default();
-        v.push(input);
-        self.kx_databases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.kx_databases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of databases in the kdb environment.</p>
-    pub fn set_kx_databases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>>) -> Self {
-        self.kx_databases = input;
-        self
+    pub fn set_kx_databases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseListEntry>>) -> Self {
+        self.kx_databases = input; self
     }
     /// <p>A list of databases in the kdb environment.</p>
-    pub fn get_kx_databases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseListEntry>> {
+    pub fn get_kx_databases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseListEntry>> {
         &self.kx_databases
     }
     /// <p>A token that indicates where a results page should begin.</p>
@@ -69,28 +69,30 @@ impl ListKxDatabasesOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListKxDatabasesOutput`](crate::operation::list_kx_databases::ListKxDatabasesOutput).
     pub fn build(self) -> crate::operation::list_kx_databases::ListKxDatabasesOutput {
         crate::operation::list_kx_databases::ListKxDatabasesOutput {
-            kx_databases: self.kx_databases,
-            next_token: self.next_token,
+            kx_databases: self.kx_databases
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

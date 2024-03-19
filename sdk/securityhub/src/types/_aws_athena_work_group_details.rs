@@ -3,7 +3,7 @@
 /// <p>Provides information about an Amazon Athena workgroup.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAthenaWorkGroupDetails {
+pub struct AwsAthenaWorkGroupDetails  {
     /// <p>The workgroup name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup description.</p>
@@ -13,21 +13,21 @@ pub struct AwsAthenaWorkGroupDetails {
     /// <p>The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified.</p>
     pub configuration: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationDetails>,
 }
-impl AwsAthenaWorkGroupDetails {
+impl  AwsAthenaWorkGroupDetails  {
     /// <p>The workgroup name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The workgroup description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the workgroup is enabled or disabled.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AwsAthenaWorkGroupConfigurationDetails> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::AwsAthenaWorkGroupConfigurationDetails> {
         self.configuration.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     }
     /// <p>The workgroup name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The workgroup name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     }
     /// <p>The workgroup description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The workgroup description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     }
     /// <p>Whether the workgroup is enabled or disabled.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Whether the workgroup is enabled or disabled.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationDetails>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon Simple Storage Service (Amazon S3) where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch metrics are enabled for the workgroup, and the limit for the amount of bytes scanned (cutoff) per query, if it is specified.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupConfigurationDetails> {
@@ -107,10 +103,15 @@ impl AwsAthenaWorkGroupDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAthenaWorkGroupDetails`](crate::types::AwsAthenaWorkGroupDetails).
     pub fn build(self) -> crate::types::AwsAthenaWorkGroupDetails {
         crate::types::AwsAthenaWorkGroupDetails {
-            name: self.name,
-            description: self.description,
-            state: self.state,
-            configuration: self.configuration,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            state: self.state
+            ,
+            configuration: self.configuration
+            ,
         }
     }
 }
+

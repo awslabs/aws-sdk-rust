@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotificationConfigurations`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`auto_scaling_group_names(impl Into<String>)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::auto_scaling_group_names) / [`set_auto_scaling_group_names(Option<Vec::<String>>)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::set_auto_scaling_group_names):<br>required: **false**<br><p>The name of the Auto Scaling group.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p><br>
-    /// - On success, responds with [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeNotificationConfigurationsOutput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput) with field(s):
     ///   - [`notification_configurations(Option<Vec::<NotificationConfiguration>>)`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput::notification_configurations): <p>The notification configurations.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationsError>`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError)
-    pub fn describe_notification_configurations(
-        &self,
-    ) -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder {
-        crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationsError>`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError)
+    pub fn describe_notification_configurations(&self) -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder {
+                                crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,13 +3,13 @@
 /// <p>A container for the prefix-level configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrefixLevel {
+pub struct PrefixLevel  {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
     pub storage_metrics: ::std::option::Option<crate::types::PrefixLevelStorageMetrics>,
 }
-impl PrefixLevel {
+impl  PrefixLevel  {
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
-    pub fn storage_metrics(&self) -> ::std::option::Option<&crate::types::PrefixLevelStorageMetrics> {
+    pub fn storage_metrics(&self) -> ::std::option::Option<& crate::types::PrefixLevelStorageMetrics> {
         self.storage_metrics.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl PrefixLevelBuilder {
     }
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
     pub fn set_storage_metrics(mut self, input: ::std::option::Option<crate::types::PrefixLevelStorageMetrics>) -> Self {
-        self.storage_metrics = input;
-        self
+        self.storage_metrics = input; self
     }
     /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
     pub fn get_storage_metrics(&self) -> &::std::option::Option<crate::types::PrefixLevelStorageMetrics> {
@@ -45,7 +44,9 @@ impl PrefixLevelBuilder {
     /// Consumes the builder and constructs a [`PrefixLevel`](crate::types::PrefixLevel).
     pub fn build(self) -> crate::types::PrefixLevel {
         crate::types::PrefixLevel {
-            storage_metrics: self.storage_metrics,
+            storage_metrics: self.storage_metrics
+            ,
         }
     }
 }
+

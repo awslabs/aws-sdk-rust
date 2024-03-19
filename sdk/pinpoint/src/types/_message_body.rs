@@ -3,19 +3,19 @@
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageBody {
+pub struct MessageBody  {
     /// <p>The message that's returned from the API.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the request or response.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
 }
-impl MessageBody {
+impl  MessageBody  {
     /// <p>The message that's returned from the API.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The unique identifier for the request or response.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl MessageBodyBuilder {
     }
     /// <p>The message that's returned from the API.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that's returned from the API.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MessageBodyBuilder {
     }
     /// <p>The unique identifier for the request or response.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The unique identifier for the request or response.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl MessageBodyBuilder {
     /// Consumes the builder and constructs a [`MessageBody`](crate::types::MessageBody).
     pub fn build(self) -> crate::types::MessageBody {
         crate::types::MessageBody {
-            message: self.message,
-            request_id: self.request_id,
+            message: self.message
+            ,
+            request_id: self.request_id
+            ,
         }
     }
 }
+

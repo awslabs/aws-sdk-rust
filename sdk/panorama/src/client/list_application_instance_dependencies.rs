@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplicationInstanceDependencies`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_instance_id(impl Into<String>)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::application_instance_id) / [`set_application_instance_id(Option<String>)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::set_application_instance_id):<br>required: **true**<br><p>The application instance's ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of application instance dependencies to return in one page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationInstanceDependenciesOutput`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput) with field(s):
     ///   - [`package_objects(Option<Vec::<PackageObject>>)`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput::package_objects): <p>A list of package objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationInstanceDependenciesError>`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError)
-    pub fn list_application_instance_dependencies(
-        &self,
-    ) -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder {
-        crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListApplicationInstanceDependenciesError>`](crate::operation::list_application_instance_dependencies::ListApplicationInstanceDependenciesError)
+    pub fn list_application_instance_dependencies(&self) -> crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder {
+                                crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

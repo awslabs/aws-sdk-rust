@@ -3,7 +3,7 @@
 /// <p>The input structure for Map Matching operation type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MapMatchingConfig {
+pub struct MapMatchingConfig  {
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
     pub id_attribute_name: ::std::string::String,
     /// <p>The name of the Y-attribute</p>
@@ -13,26 +13,22 @@ pub struct MapMatchingConfig {
     /// <p>The name of the timestamp attribute.</p>
     pub timestamp_attribute_name: ::std::string::String,
 }
-impl MapMatchingConfig {
+impl  MapMatchingConfig  {
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
-    pub fn id_attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.id_attribute_name.deref()
+    pub fn id_attribute_name(&self) -> & str {
+        use std::ops::Deref; self.id_attribute_name.deref()
     }
     /// <p>The name of the Y-attribute</p>
-    pub fn y_attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.y_attribute_name.deref()
+    pub fn y_attribute_name(&self) -> & str {
+        use std::ops::Deref; self.y_attribute_name.deref()
     }
     /// <p>The name of the X-attribute</p>
-    pub fn x_attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.x_attribute_name.deref()
+    pub fn x_attribute_name(&self) -> & str {
+        use std::ops::Deref; self.x_attribute_name.deref()
     }
     /// <p>The name of the timestamp attribute.</p>
-    pub fn timestamp_attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.timestamp_attribute_name.deref()
+    pub fn timestamp_attribute_name(&self) -> & str {
+        use std::ops::Deref; self.timestamp_attribute_name.deref()
     }
 }
 impl MapMatchingConfig {
@@ -60,8 +56,7 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
     pub fn set_id_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id_attribute_name = input;
-        self
+        self.id_attribute_name = input; self
     }
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
     pub fn get_id_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The name of the Y-attribute</p>
     pub fn set_y_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.y_attribute_name = input;
-        self
+        self.y_attribute_name = input; self
     }
     /// <p>The name of the Y-attribute</p>
     pub fn get_y_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The name of the X-attribute</p>
     pub fn set_x_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x_attribute_name = input;
-        self
+        self.x_attribute_name = input; self
     }
     /// <p>The name of the X-attribute</p>
     pub fn get_x_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The name of the timestamp attribute.</p>
     pub fn set_timestamp_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp_attribute_name = input;
-        self
+        self.timestamp_attribute_name = input; self
     }
     /// <p>The name of the timestamp attribute.</p>
     pub fn get_timestamp_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl MapMatchingConfigBuilder {
     /// - [`x_attribute_name`](crate::types::builders::MapMatchingConfigBuilder::x_attribute_name)
     /// - [`timestamp_attribute_name`](crate::types::builders::MapMatchingConfigBuilder::timestamp_attribute_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MapMatchingConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MapMatchingConfig {
-            id_attribute_name: self.id_attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id_attribute_name",
-                    "id_attribute_name was not specified but it is required when building MapMatchingConfig",
-                )
-            })?,
-            y_attribute_name: self.y_attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "y_attribute_name",
-                    "y_attribute_name was not specified but it is required when building MapMatchingConfig",
-                )
-            })?,
-            x_attribute_name: self.x_attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "x_attribute_name",
-                    "x_attribute_name was not specified but it is required when building MapMatchingConfig",
-                )
-            })?,
-            timestamp_attribute_name: self.timestamp_attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp_attribute_name",
-                    "timestamp_attribute_name was not specified but it is required when building MapMatchingConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MapMatchingConfig {
+                id_attribute_name: self.id_attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id_attribute_name", "id_attribute_name was not specified but it is required when building MapMatchingConfig")
+                    )?
+                ,
+                y_attribute_name: self.y_attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("y_attribute_name", "y_attribute_name was not specified but it is required when building MapMatchingConfig")
+                    )?
+                ,
+                x_attribute_name: self.x_attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("x_attribute_name", "x_attribute_name was not specified but it is required when building MapMatchingConfig")
+                    )?
+                ,
+                timestamp_attribute_name: self.timestamp_attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp_attribute_name", "timestamp_attribute_name was not specified but it is required when building MapMatchingConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

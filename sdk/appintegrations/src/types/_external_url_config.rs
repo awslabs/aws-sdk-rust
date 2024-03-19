@@ -3,23 +3,23 @@
 /// <p>The external URL source for the application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExternalUrlConfig {
+pub struct ExternalUrlConfig  {
     /// <p>The URL to access the application.</p>
     pub access_url: ::std::string::String,
     /// <p>Additional URLs to allow list if different than the access URL.</p>
-    pub approved_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub approved_origins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ExternalUrlConfig {
+impl  ExternalUrlConfig  {
     /// <p>The URL to access the application.</p>
-    pub fn access_url(&self) -> &str {
-        use std::ops::Deref;
-        self.access_url.deref()
+    pub fn access_url(&self) -> & str {
+        use std::ops::Deref; self.access_url.deref()
     }
     /// <p>Additional URLs to allow list if different than the access URL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_origins.is_none()`.
-    pub fn approved_origins(&self) -> &[::std::string::String] {
-        self.approved_origins.as_deref().unwrap_or_default()
+    pub fn approved_origins(&self) -> & [::std::string::String] {
+        self.approved_origins.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExternalUrlConfig {
@@ -34,7 +34,7 @@ impl ExternalUrlConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExternalUrlConfigBuilder {
     pub(crate) access_url: ::std::option::Option<::std::string::String>,
-    pub(crate) approved_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approved_origins: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ExternalUrlConfigBuilder {
     /// <p>The URL to access the application.</p>
@@ -45,8 +45,7 @@ impl ExternalUrlConfigBuilder {
     }
     /// <p>The URL to access the application.</p>
     pub fn set_access_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_url = input;
-        self
+        self.access_url = input; self
     }
     /// <p>The URL to access the application.</p>
     pub fn get_access_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl ExternalUrlConfigBuilder {
     /// <p>Additional URLs to allow list if different than the access URL.</p>
     pub fn approved_origins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approved_origins.unwrap_or_default();
-        v.push(input.into());
-        self.approved_origins = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.approved_origins = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional URLs to allow list if different than the access URL.</p>
-    pub fn set_approved_origins(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.approved_origins = input;
-        self
+    pub fn set_approved_origins(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.approved_origins = input; self
     }
     /// <p>Additional URLs to allow list if different than the access URL.</p>
-    pub fn get_approved_origins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approved_origins(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.approved_origins
     }
     /// Consumes the builder and constructs a [`ExternalUrlConfig`](crate::types::ExternalUrlConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_url`](crate::types::builders::ExternalUrlConfigBuilder::access_url)
     pub fn build(self) -> ::std::result::Result<crate::types::ExternalUrlConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExternalUrlConfig {
-            access_url: self.access_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_url",
-                    "access_url was not specified but it is required when building ExternalUrlConfig",
-                )
-            })?,
-            approved_origins: self.approved_origins,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExternalUrlConfig {
+                access_url: self.access_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_url", "access_url was not specified but it is required when building ExternalUrlConfig")
+                    )?
+                ,
+                approved_origins: self.approved_origins
+                ,
+            }
+        )
     }
 }
+

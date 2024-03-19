@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoadBalancerTargetGroups`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::set_auto_scaling_group_name):<br>required: **true**<br><p>The name of the Auto Scaling group.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p><br>
-    /// - On success, responds with [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput) with field(s):
+                            /// - On success, responds with [`DescribeLoadBalancerTargetGroupsOutput`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput) with field(s):
     ///   - [`load_balancer_target_groups(Option<Vec::<LoadBalancerTargetGroupState>>)`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput::load_balancer_target_groups): <p>Information about the target groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeLoadBalancerTargetGroupsError>`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsError)
-    pub fn describe_load_balancer_target_groups(
-        &self,
-    ) -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder {
-        crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeLoadBalancerTargetGroupsError>`](crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsError)
+    pub fn describe_load_balancer_target_groups(&self) -> crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder {
+                                crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

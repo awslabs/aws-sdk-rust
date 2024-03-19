@@ -3,7 +3,7 @@
 /// <p>Information about the targets to which audit notifications are sent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditNotificationTarget {
+pub struct AuditNotificationTarget  {
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
@@ -11,13 +11,13 @@ pub struct AuditNotificationTarget {
     /// <p>True if notifications to the target are enabled.</p>
     pub enabled: bool,
 }
-impl AuditNotificationTarget {
+impl  AuditNotificationTarget  {
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
-    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>True if notifications to the target are enabled.</p>
@@ -48,8 +48,7 @@ impl AuditNotificationTargetBuilder {
     }
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AuditNotificationTargetBuilder {
     }
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role that grants permission to send notifications to the target.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AuditNotificationTargetBuilder {
     }
     /// <p>True if notifications to the target are enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>True if notifications to the target are enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,14 @@ impl AuditNotificationTargetBuilder {
     /// Consumes the builder and constructs a [`AuditNotificationTarget`](crate::types::AuditNotificationTarget).
     pub fn build(self) -> crate::types::AuditNotificationTarget {
         crate::types::AuditNotificationTarget {
-            target_arn: self.target_arn,
-            role_arn: self.role_arn,
-            enabled: self.enabled.unwrap_or_default(),
+            target_arn: self.target_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

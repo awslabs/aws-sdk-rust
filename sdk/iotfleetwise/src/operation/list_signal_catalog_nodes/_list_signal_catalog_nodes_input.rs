@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSignalCatalogNodesInput {
+pub struct ListSignalCatalogNodesInput  {
     /// <p>The name of the signal catalog to list information about.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for the next set of results.</p>
@@ -13,14 +13,14 @@ pub struct ListSignalCatalogNodesInput {
     /// <p>The type of node in the signal catalog.</p>
     pub signal_node_type: ::std::option::Option<crate::types::SignalNodeType>,
 }
-impl ListSignalCatalogNodesInput {
+impl  ListSignalCatalogNodesInput  {
     /// <p>The name of the signal catalog to list information about.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
@@ -28,7 +28,7 @@ impl ListSignalCatalogNodesInput {
         self.max_results
     }
     /// <p>The type of node in the signal catalog.</p>
-    pub fn signal_node_type(&self) -> ::std::option::Option<&crate::types::SignalNodeType> {
+    pub fn signal_node_type(&self) -> ::std::option::Option<& crate::types::SignalNodeType> {
         self.signal_node_type.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl ListSignalCatalogNodesInputBuilder {
     }
     /// <p>The name of the signal catalog to list information about.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the signal catalog to list information about.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl ListSignalCatalogNodesInputBuilder {
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
@@ -88,8 +86,7 @@ impl ListSignalCatalogNodesInputBuilder {
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -102,25 +99,26 @@ impl ListSignalCatalogNodesInputBuilder {
     }
     /// <p>The type of node in the signal catalog.</p>
     pub fn set_signal_node_type(mut self, input: ::std::option::Option<crate::types::SignalNodeType>) -> Self {
-        self.signal_node_type = input;
-        self
+        self.signal_node_type = input; self
     }
     /// <p>The type of node in the signal catalog.</p>
     pub fn get_signal_node_type(&self) -> &::std::option::Option<crate::types::SignalNodeType> {
         &self.signal_node_type
     }
     /// Consumes the builder and constructs a [`ListSignalCatalogNodesInput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            signal_node_type: self.signal_node_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                signal_node_type: self.signal_node_type
+                ,
+            }
+        )
     }
 }
+

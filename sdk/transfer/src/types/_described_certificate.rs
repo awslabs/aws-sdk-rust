@@ -3,7 +3,7 @@
 /// <p>Describes the properties of a certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribedCertificate {
+pub struct DescribedCertificate  {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
     pub arn: ::std::string::String,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
@@ -31,70 +31,70 @@ pub struct DescribedCertificate {
     /// <p>The name or description that's used to identity the certificate.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DescribedCertificate {
+impl  DescribedCertificate  {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
+    pub fn usage(&self) -> ::std::option::Option<& crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateStatusType> {
         self.status.as_ref()
     }
     /// <p>The file name for the certificate.</p>
-    pub fn certificate(&self) -> ::std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<& str> {
         self.certificate.as_deref()
     }
     /// <p>The list of certificates that make up the chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn active_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn active_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.active_date.as_ref()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn inactive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn inactive_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.inactive_date.as_ref()
     }
     /// <p>The serial number for the certificate.</p>
-    pub fn serial(&self) -> ::std::option::Option<&str> {
+    pub fn serial(&self) -> ::std::option::Option<& str> {
         self.serial.as_deref()
     }
     /// <p>The earliest date that the certificate is valid.</p>
-    pub fn not_before_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before_date.as_ref()
     }
     /// <p>The final date that the certificate is valid.</p>
-    pub fn not_after_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_after_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_after_date.as_ref()
     }
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CertificateType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::CertificateType> {
         self.r#type.as_ref()
     }
     /// <p>The name or description that's used to identity the certificate.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for DescribedCertificate {
+impl  ::std::fmt::Debug for DescribedCertificate  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribedCertificate");
         formatter.field("arn", &self.arn);
@@ -138,7 +138,7 @@ pub struct DescribedCertificateBuilder {
     pub(crate) not_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) r#type: ::std::option::Option<crate::types::CertificateType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DescribedCertificateBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
@@ -149,8 +149,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +162,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn set_certificate_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +175,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsageType>) -> Self {
-        self.usage = input;
-        self
+        self.usage = input; self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
@@ -191,8 +188,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatusType> {
@@ -205,8 +201,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The file name for the certificate.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The file name for the certificate.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +214,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The list of certificates that make up the chain for the certificate.</p>
     pub fn set_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_chain = input;
-        self
+        self.certificate_chain = input; self
     }
     /// <p>The list of certificates that make up the chain for the certificate.</p>
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +227,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.active_date = input;
-        self
+        self.active_date = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -247,8 +240,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inactive_date = input;
-        self
+        self.inactive_date = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -261,8 +253,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The serial number for the certificate.</p>
     pub fn set_serial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial = input;
-        self
+        self.serial = input; self
     }
     /// <p>The serial number for the certificate.</p>
     pub fn get_serial(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,8 +266,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The earliest date that the certificate is valid.</p>
     pub fn set_not_before_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before_date = input;
-        self
+        self.not_before_date = input; self
     }
     /// <p>The earliest date that the certificate is valid.</p>
     pub fn get_not_before_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -289,8 +279,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The final date that the certificate is valid.</p>
     pub fn set_not_after_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_after_date = input;
-        self
+        self.not_after_date = input; self
     }
     /// <p>The final date that the certificate is valid.</p>
     pub fn get_not_after_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -303,8 +292,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
@@ -317,8 +305,7 @@ impl DescribedCertificateBuilder {
     }
     /// <p>The name or description that's used to identity the certificate.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name or description that's used to identity the certificate.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -331,44 +318,57 @@ impl DescribedCertificateBuilder {
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedCertificate`](crate::types::DescribedCertificate).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedCertificateBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedCertificate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedCertificate {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedCertificate",
-                )
-            })?,
-            certificate_id: self.certificate_id,
-            usage: self.usage,
-            status: self.status,
-            certificate: self.certificate,
-            certificate_chain: self.certificate_chain,
-            active_date: self.active_date,
-            inactive_date: self.inactive_date,
-            serial: self.serial,
-            not_before_date: self.not_before_date,
-            not_after_date: self.not_after_date,
-            r#type: self.r#type,
-            description: self.description,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedCertificate {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedCertificate")
+                    )?
+                ,
+                certificate_id: self.certificate_id
+                ,
+                usage: self.usage
+                ,
+                status: self.status
+                ,
+                certificate: self.certificate
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                active_date: self.active_date
+                ,
+                inactive_date: self.inactive_date
+                ,
+                serial: self.serial
+                ,
+                not_before_date: self.not_before_date
+                ,
+                not_after_date: self.not_after_date
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DescribedCertificateBuilder {
@@ -391,3 +391,4 @@ impl ::std::fmt::Debug for DescribedCertificateBuilder {
         formatter.finish()
     }
 }
+

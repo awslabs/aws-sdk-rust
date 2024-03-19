@@ -3,22 +3,20 @@
 /// <p>An object that contains information about a finding and the scan that generated it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingIdentifier {
+pub struct FindingIdentifier  {
     /// <p>The name of the scan that generated the finding.</p>
     pub scan_name: ::std::string::String,
     /// <p>The identifier for a finding.</p>
     pub finding_id: ::std::string::String,
 }
-impl FindingIdentifier {
+impl  FindingIdentifier  {
     /// <p>The name of the scan that generated the finding.</p>
-    pub fn scan_name(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_name.deref()
+    pub fn scan_name(&self) -> & str {
+        use std::ops::Deref; self.scan_name.deref()
     }
     /// <p>The identifier for a finding.</p>
-    pub fn finding_id(&self) -> &str {
-        use std::ops::Deref;
-        self.finding_id.deref()
+    pub fn finding_id(&self) -> & str {
+        use std::ops::Deref; self.finding_id.deref()
     }
 }
 impl FindingIdentifier {
@@ -44,8 +42,7 @@ impl FindingIdentifierBuilder {
     }
     /// <p>The name of the scan that generated the finding.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan that generated the finding.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FindingIdentifierBuilder {
     }
     /// <p>The identifier for a finding.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The identifier for a finding.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FindingIdentifierBuilder {
     /// - [`scan_name`](crate::types::builders::FindingIdentifierBuilder::scan_name)
     /// - [`finding_id`](crate::types::builders::FindingIdentifierBuilder::finding_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FindingIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FindingIdentifier {
-            scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_name",
-                    "scan_name was not specified but it is required when building FindingIdentifier",
-                )
-            })?,
-            finding_id: self.finding_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "finding_id",
-                    "finding_id was not specified but it is required when building FindingIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FindingIdentifier {
+                scan_name: self.scan_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_name", "scan_name was not specified but it is required when building FindingIdentifier")
+                    )?
+                ,
+                finding_id: self.finding_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("finding_id", "finding_id was not specified but it is required when building FindingIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

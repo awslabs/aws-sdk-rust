@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartProjectSessionOutput {
+pub struct StartProjectSessionOutput  {
     /// <p>The name of the project to be acted upon.</p>
     pub name: ::std::string::String,
     /// <p>A system-generated identifier for the session.</p>
     pub client_session_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartProjectSessionOutput {
+impl  StartProjectSessionOutput  {
     /// <p>The name of the project to be acted upon.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A system-generated identifier for the session.</p>
-    pub fn client_session_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_session_id(&self) -> ::std::option::Option<& str> {
         self.client_session_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartProjectSessionOutput {
+impl  ::std::fmt::Debug for StartProjectSessionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartProjectSessionOutput");
         formatter.field("name", &self.name);
@@ -30,10 +29,10 @@ impl ::std::fmt::Debug for StartProjectSessionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartProjectSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartProjectSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
     pub fn builder() -> crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder {
@@ -58,8 +57,7 @@ impl StartProjectSessionOutputBuilder {
     }
     /// <p>The name of the project to be acted upon.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project to be acted upon.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,39 +70,37 @@ impl StartProjectSessionOutputBuilder {
     }
     /// <p>A system-generated identifier for the session.</p>
     pub fn set_client_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_session_id = input;
-        self
+        self.client_session_id = input; self
     }
     /// <p>A system-generated identifier for the session.</p>
     pub fn get_client_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_session_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::start_project_session::builders::StartProjectSessionOutputBuilder::name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionOutput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StartProjectSessionOutput",
-                )
-            })?,
-            client_session_id: self.client_session_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_project_session::StartProjectSessionOutput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building StartProjectSessionOutput")
+                    )?
+                ,
+                client_session_id: self.client_session_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartProjectSessionOutputBuilder {
@@ -116,3 +112,4 @@ impl ::std::fmt::Debug for StartProjectSessionOutputBuilder {
         formatter.finish()
     }
 }
+

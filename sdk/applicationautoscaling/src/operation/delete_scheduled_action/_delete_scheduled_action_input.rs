@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScheduledActionInput {
+pub struct DeleteScheduledActionInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The name of the scheduled action.</p>
@@ -96,13 +96,13 @@ pub struct DeleteScheduledActionInput {
     /// </ul>
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
 }
-impl DeleteScheduledActionInput {
+impl  DeleteScheduledActionInput  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
-    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<& crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
@@ -144,7 +144,7 @@ impl DeleteScheduledActionInput {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -194,7 +194,7 @@ impl DeleteScheduledActionInput {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<& crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
 }
@@ -223,8 +223,7 @@ impl DeleteScheduledActionInputBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -238,8 +237,7 @@ impl DeleteScheduledActionInputBuilder {
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +327,7 @@ impl DeleteScheduledActionInputBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scheduled action. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -474,8 +471,7 @@ impl DeleteScheduledActionInputBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -528,15 +524,19 @@ impl DeleteScheduledActionInputBuilder {
         &self.scalable_dimension
     }
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
-            service_namespace: self.service_namespace,
-            scheduled_action_name: self.scheduled_action_name,
-            resource_id: self.resource_id,
-            scalable_dimension: self.scalable_dimension,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
+                service_namespace: self.service_namespace
+                ,
+                scheduled_action_name: self.scheduled_action_name
+                ,
+                resource_id: self.resource_id
+                ,
+                scalable_dimension: self.scalable_dimension
+                ,
+            }
+        )
     }
 }
+

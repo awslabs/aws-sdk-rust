@@ -3,7 +3,7 @@
 /// <p>Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryAssociation {
+pub struct RepositoryAssociation  {
     /// <p>The ID of the repository association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
@@ -56,29 +56,29 @@ pub struct RepositoryAssociation {
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub s3_repository_details: ::std::option::Option<crate::types::S3RepositoryDetails>,
 }
-impl RepositoryAssociation {
+impl  RepositoryAssociation  {
     /// <p>The ID of the repository association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
-    pub fn association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn association_arn(&self) -> ::std::option::Option<& str> {
         self.association_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
-    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The state of the repository association.</p>
@@ -103,19 +103,19 @@ impl RepositoryAssociation {
     /// <li>
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::RepositoryAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::RepositoryAssociationState> {
         self.state.as_ref()
     }
     /// <p>A description of why the repository association is in the current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
-    pub fn created_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
@@ -125,11 +125,11 @@ impl RepositoryAssociation {
     /// <li>
     /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
     /// </ul>
-    pub fn kms_key_details(&self) -> ::std::option::Option<&crate::types::KmsKeyDetails> {
+    pub fn kms_key_details(&self) -> ::std::option::Option<& crate::types::KmsKeyDetails> {
         self.kms_key_details.as_ref()
     }
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
-    pub fn s3_repository_details(&self) -> ::std::option::Option<&crate::types::S3RepositoryDetails> {
+    pub fn s3_repository_details(&self) -> ::std::option::Option<& crate::types::S3RepositoryDetails> {
         self.s3_repository_details.as_ref()
     }
 }
@@ -165,8 +165,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The ID of the repository association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the repository association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +178,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
     pub fn set_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_arn = input;
-        self
+        self.association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) identifying the repository association.</p>
     pub fn get_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +191,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
     pub fn set_connection_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.</p>
     pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +204,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The name of the repository.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the repository.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +217,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +230,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The provider type of the repository association.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The provider type of the repository association.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -291,8 +285,7 @@ impl RepositoryAssociationBuilder {
     /// <p><b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::RepositoryAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the repository association.</p>
     /// <p>The valid repository association states are:</p>
@@ -326,8 +319,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>A description of why the repository association is in the current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>A description of why the repository association is in the current state.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +332,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
     pub fn set_last_updated_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time_stamp = input;
-        self
+        self.last_updated_time_stamp = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was last updated.</p>
     pub fn get_last_updated_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -354,8 +345,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
     pub fn set_created_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time_stamp = input;
-        self
+        self.created_time_stamp = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the repository association was created.</p>
     pub fn get_created_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -380,8 +370,7 @@ impl RepositoryAssociationBuilder {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with this repository association.</p></li>
     /// </ul>
     pub fn set_kms_key_details(mut self, input: ::std::option::Option<crate::types::KmsKeyDetails>) -> Self {
-        self.kms_key_details = input;
-        self
+        self.kms_key_details = input; self
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
@@ -400,8 +389,7 @@ impl RepositoryAssociationBuilder {
     }
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn set_s3_repository_details(mut self, input: ::std::option::Option<crate::types::S3RepositoryDetails>) -> Self {
-        self.s3_repository_details = input;
-        self
+        self.s3_repository_details = input; self
     }
     /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
     pub fn get_s3_repository_details(&self) -> &::std::option::Option<crate::types::S3RepositoryDetails> {
@@ -410,18 +398,31 @@ impl RepositoryAssociationBuilder {
     /// Consumes the builder and constructs a [`RepositoryAssociation`](crate::types::RepositoryAssociation).
     pub fn build(self) -> crate::types::RepositoryAssociation {
         crate::types::RepositoryAssociation {
-            association_id: self.association_id,
-            association_arn: self.association_arn,
-            connection_arn: self.connection_arn,
-            name: self.name,
-            owner: self.owner,
-            provider_type: self.provider_type,
-            state: self.state,
-            state_reason: self.state_reason,
-            last_updated_time_stamp: self.last_updated_time_stamp,
-            created_time_stamp: self.created_time_stamp,
-            kms_key_details: self.kms_key_details,
-            s3_repository_details: self.s3_repository_details,
+            association_id: self.association_id
+            ,
+            association_arn: self.association_arn
+            ,
+            connection_arn: self.connection_arn
+            ,
+            name: self.name
+            ,
+            owner: self.owner
+            ,
+            provider_type: self.provider_type
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            last_updated_time_stamp: self.last_updated_time_stamp
+            ,
+            created_time_stamp: self.created_time_stamp
+            ,
+            kms_key_details: self.kms_key_details
+            ,
+            s3_repository_details: self.s3_repository_details
+            ,
         }
     }
 }
+

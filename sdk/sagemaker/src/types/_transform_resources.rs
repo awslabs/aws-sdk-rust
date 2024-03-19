@@ -3,7 +3,7 @@
 /// <p>Describes the resources, including ML instance types and ML instance count, to use for transform job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformResources {
+pub struct TransformResources  {
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
     pub instance_type: ::std::option::Option<crate::types::TransformInstanceType>,
     /// <p>The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.</p>
@@ -26,9 +26,9 @@ pub struct TransformResources {
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl TransformResources {
+impl  TransformResources  {
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TransformInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::TransformInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.</p>
@@ -51,7 +51,7 @@ impl TransformResources {
     /// <li>
     /// <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
 }
@@ -79,8 +79,7 @@ impl TransformResourcesBuilder {
     }
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TransformInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::TransformInstanceType> {
@@ -94,8 +93,7 @@ impl TransformResourcesBuilder {
     }
     /// <p>The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of ML compute instances to use in the transform job. The default value is <code>1</code>, and the maximum is <code>100</code>. For distributed transform jobs, specify a value greater than <code>1</code>.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -138,8 +136,7 @@ impl TransformResourcesBuilder {
     /// <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt model data on the storage volume attached to the ML compute instance(s) that run the batch transform job.</p><note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
@@ -163,9 +160,13 @@ impl TransformResourcesBuilder {
     /// Consumes the builder and constructs a [`TransformResources`](crate::types::TransformResources).
     pub fn build(self) -> crate::types::TransformResources {
         crate::types::TransformResources {
-            instance_type: self.instance_type,
-            instance_count: self.instance_count,
-            volume_kms_key_id: self.volume_kms_key_id,
+            instance_type: self.instance_type
+            ,
+            instance_count: self.instance_count
+            ,
+            volume_kms_key_id: self.volume_kms_key_id
+            ,
         }
     }
 }
+

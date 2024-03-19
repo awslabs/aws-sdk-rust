@@ -4,15 +4,14 @@
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InviteAction {
+pub struct InviteAction  {
     /// <p>The Amazon Web Services account ID to invite.</p>
     pub principal: ::std::string::String,
 }
-impl InviteAction {
+impl  InviteAction  {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn principal(&self) -> &str {
-        use std::ops::Deref;
-        self.principal.deref()
+    pub fn principal(&self) -> & str {
+        use std::ops::Deref; self.principal.deref()
     }
 }
 impl InviteAction {
@@ -37,8 +36,7 @@ impl InviteActionBuilder {
     }
     /// <p>The Amazon Web Services account ID to invite.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Amazon Web Services account ID to invite.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,13 +46,15 @@ impl InviteActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principal`](crate::types::builders::InviteActionBuilder::principal)
     pub fn build(self) -> ::std::result::Result<crate::types::InviteAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InviteAction {
-            principal: self.principal.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal",
-                    "principal was not specified but it is required when building InviteAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InviteAction {
+                principal: self.principal
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal", "principal was not specified but it is required when building InviteAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

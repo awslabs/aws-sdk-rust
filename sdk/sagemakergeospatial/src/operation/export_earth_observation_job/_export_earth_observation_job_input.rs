@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportEarthObservationJobInput {
+pub struct ExportEarthObservationJobInput  {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -14,21 +14,21 @@ pub struct ExportEarthObservationJobInput {
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub export_source_images: ::std::option::Option<bool>,
 }
-impl ExportEarthObservationJobInput {
+impl  ExportEarthObservationJobInput  {
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>An object containing information about the output file.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfigInput> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::OutputConfigInput> {
         self.output_config.as_ref()
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
@@ -62,8 +62,7 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>An object containing information about the output file.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfigInput>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>An object containing information about the output file.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfigInput> {
@@ -120,26 +116,28 @@ impl ExportEarthObservationJobInputBuilder {
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn set_export_source_images(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.export_source_images = input;
-        self
+        self.export_source_images = input; self
     }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn get_export_source_images(&self) -> &::std::option::Option<bool> {
         &self.export_source_images
     }
     /// Consumes the builder and constructs a [`ExportEarthObservationJobInput`](crate::operation::export_earth_observation_job::ExportEarthObservationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
-            arn: self.arn,
-            client_token: self.client_token,
-            execution_role_arn: self.execution_role_arn,
-            output_config: self.output_config,
-            export_source_images: self.export_source_images,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_earth_observation_job::ExportEarthObservationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
+                arn: self.arn
+                ,
+                client_token: self.client_token
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                output_config: self.output_config
+                ,
+                export_source_images: self.export_source_images
+                ,
+            }
+        )
     }
 }
+

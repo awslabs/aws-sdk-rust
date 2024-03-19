@@ -5,23 +5,20 @@ pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_i
 
 impl AssumeRoleWithWebIdentityInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.assume_role_with_web_identity();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.assume_role_with_web_identity();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AssumeRoleWithWebIdentity`.
-///
+/// 
 /// <p>Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider. Example providers include the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon Cognito federated identities</a>.</p><note>
 /// <p>For mobile applications, we recommend that you use Amazon Cognito. You can use Amazon Cognito with the <a href="http://aws.amazon.com/sdkforios/">Amazon Web Services SDK for iOS Developer Guide</a> and the <a href="http://aws.amazon.com/sdkforandroid/">Amazon Web Services SDK for Android Developer Guide</a> to uniquely identify a user. You can also supply the user with a consistent identity throughout the lifetime of an application.</p>
 /// <p>To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon Cognito identity pools</a> in <i>Amazon Cognito Developer Guide</i>.</p>
@@ -59,33 +56,32 @@ impl AssumeRoleWithWebIdentityInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityInputBuilder,
+                    inner: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-    > for AssumeRoleWithWebIdentityFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
-            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
+                    crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
+                > for AssumeRoleWithWebIdentityFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
+                        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AssumeRoleWithWebIdentityFluentBuilder {
     /// Creates a new `AssumeRoleWithWebIdentity`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -94,53 +90,44 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentity::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentity::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
-        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentity::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentity::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput, crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -224,7 +211,7 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>) -> Self {
+    pub fn set_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>>) -> Self {
         self.inner = self.inner.set_policy_arns(input);
         self
     }
@@ -233,7 +220,7 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
     /// <p>An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your request are to the upper size limit.</p>
     /// </note>
     /// <p>Passing policies to this operation returns new temporary credentials. The resulting session's permissions are the intersection of the role's identity-based policy and the session policies. You can use the role's temporary credentials in subsequent Amazon Web Services API calls to access resources in the account that owns the role. You cannot use session policies to grant more permissions than those allowed by the identity-based policy of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session Policies</a> in the <i>IAM User Guide</i>.</p>
-    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>> {
+    pub fn get_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicyDescriptorType>> {
         self.inner.get_policy_arns()
     }
     /// <p>An IAM policy in JSON format that you want to use as an inline session policy.</p>
@@ -286,3 +273,4 @@ impl AssumeRoleWithWebIdentityFluentBuilder {
         self.inner.get_duration_seconds()
     }
 }
+

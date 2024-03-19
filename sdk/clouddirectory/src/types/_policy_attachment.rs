@@ -3,7 +3,7 @@
 /// <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PolicyAttachment {
+pub struct PolicyAttachment  {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
@@ -11,17 +11,17 @@ pub struct PolicyAttachment {
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub policy_type: ::std::option::Option<::std::string::String>,
 }
-impl PolicyAttachment {
+impl  PolicyAttachment  {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&str> {
+    pub fn policy_type(&self) -> ::std::option::Option<& str> {
         self.policy_type.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PolicyAttachmentBuilder {
     }
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PolicyAttachmentBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
     pub fn set_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_identifier = input;
-        self
+        self.object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
     pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PolicyAttachmentBuilder {
     }
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PolicyAttachmentBuilder {
     /// Consumes the builder and constructs a [`PolicyAttachment`](crate::types::PolicyAttachment).
     pub fn build(self) -> crate::types::PolicyAttachment {
         crate::types::PolicyAttachment {
-            policy_id: self.policy_id,
-            object_identifier: self.object_identifier,
-            policy_type: self.policy_type,
+            policy_id: self.policy_id
+            ,
+            object_identifier: self.object_identifier
+            ,
+            policy_type: self.policy_type
+            ,
         }
     }
 }
+

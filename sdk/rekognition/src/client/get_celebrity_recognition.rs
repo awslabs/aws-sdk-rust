@@ -2,13 +2,13 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCelebrityRecognition`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::set_job_id):<br>required: **true**<br><p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities.</p><br>
     ///   - [`sort_by(CelebrityRecognitionSortBy)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::sort_by) / [`set_sort_by(Option<CelebrityRecognitionSortBy>)`](crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p><br>
-    /// - On success, responds with [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput) with field(s):
+                            /// - On success, responds with [`GetCelebrityRecognitionOutput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::job_status): <p>The current status of the celebrity recognition job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`video_metadata(Option<VideoMetadata>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
@@ -17,8 +17,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::job_id): <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
     ///   - [`video(Option<Video>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput::job_tag): <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    /// - On failure, responds with [`SdkError<GetCelebrityRecognitionError>`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError)
+                            /// - On failure, responds with [`SdkError<GetCelebrityRecognitionError>`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError)
     pub fn get_celebrity_recognition(&self) -> crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder {
-        crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionFluentBuilder::new(self.handle.clone())
+                            }
 }
+

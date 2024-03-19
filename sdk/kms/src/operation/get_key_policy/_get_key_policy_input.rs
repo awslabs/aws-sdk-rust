@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKeyPolicyInput {
+pub struct GetKeyPolicyInput  {
     /// <p>Gets the key policy for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -17,7 +17,7 @@ pub struct GetKeyPolicyInput {
     /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKeyPolicyInput {
+impl  GetKeyPolicyInput  {
     /// <p>Gets the key policy for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
@@ -28,11 +28,11 @@ impl GetKeyPolicyInput {
     /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl GetKeyPolicyInputBuilder {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Gets the key policy for the specified KMS key.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
@@ -100,20 +99,22 @@ impl GetKeyPolicyInputBuilder {
     }
     /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::operation::get_key_policy::GetKeyPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_key_policy::GetKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_key_policy::GetKeyPolicyInput {
-            key_id: self.key_id,
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_policy::GetKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_key_policy::GetKeyPolicyInput {
+                key_id: self.key_id
+                ,
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

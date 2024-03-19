@@ -3,11 +3,11 @@
 /// <p>Specifies whether X-Ray tracing is enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsStepFunctionStateMachineTracingConfigurationDetails {
+pub struct AwsStepFunctionStateMachineTracingConfigurationDetails  {
     /// <p>When set to true, X-Ray tracing is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl AwsStepFunctionStateMachineTracingConfigurationDetails {
+impl  AwsStepFunctionStateMachineTracingConfigurationDetails  {
     /// <p>When set to true, X-Ray tracing is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
     }
     /// <p>When set to true, X-Ray tracing is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>When set to true, X-Ray tracing is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineTracingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails).
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {
-        crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails { enabled: self.enabled }
+        crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

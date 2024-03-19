@@ -9,335 +9,231 @@ impl GetPackageVersionAsset {
         Self
     }
     pub(crate) async fn orchestrate(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-    ) -> ::std::result::Result<
-        crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >| {
-            err.map_service_error(|err| {
-                err.downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetError>()
-                    .expect("correct error type")
-            })
-        };
-        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
-            .await
-            .map_err(map_err)?;
-        let output = context.finalize().map_err(map_err)?;
-        ::std::result::Result::Ok(
-            output
-                .downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetOutput>()
-                .expect("correct output type"),
-        )
-    }
-
-    pub(crate) async fn orchestrate_with_stop_point(
-        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        input: crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
-    ) -> ::std::result::Result<
-        ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
-        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
-            "codeartifact",
-            "GetPackageVersionAsset",
-            input,
-            runtime_plugins,
-            stop_point,
-        )
-        .await
-    }
-
-    pub(crate) fn operation_runtime_plugins(
-        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
-        client_config: &crate::config::Config,
-        config_override: ::std::option::Option<crate::config::Builder>,
-    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
-        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
-        if let ::std::option::Option::Some(config_override) = config_override {
-            for plugin in config_override.runtime_plugins.iter().cloned() {
-                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
-            }
-            runtime_plugins = runtime_plugins.with_operation_plugin(crate::config::ConfigOverrideRuntimePlugin::new(
-                config_override,
-                client_config.config.clone(),
-                &client_config.runtime_components,
-            ));
-        }
-        runtime_plugins
-    }
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
+                    ) -> ::std::result::Result<crate::operation::get_package_version_asset::GetPackageVersionAssetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_package_version_asset::GetPackageVersionAssetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>| {
+                            err.map_service_error(|err| {
+                                err.downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetError>().expect("correct error type")
+                            })
+                        };
+                        let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+                            .await
+                            .map_err(map_err)?;
+                        let output = context.finalize().map_err(map_err)?;
+                        ::std::result::Result::Ok(output.downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetOutput>().expect("correct output type"))
+                    }
+    
+                    pub(crate) async fn orchestrate_with_stop_point(
+                        runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        input: crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
+                        stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
+                    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext, ::aws_smithy_runtime_api::client::result::SdkError<::aws_smithy_runtime_api::client::interceptors::context::Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
+                        ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
+                            "codeartifact",
+                            "GetPackageVersionAsset",
+                            input,
+                            runtime_plugins,
+                            stop_point
+                        ).await
+                    }
+    
+                    pub(crate) fn operation_runtime_plugins(
+                        client_runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
+                        client_config: &crate::config::Config,
+                        config_override: ::std::option::Option<crate::config::Builder>,
+                    ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
+                        let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
+                        runtime_plugins = runtime_plugins
+                                        .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![::aws_runtime::auth::sigv4::SCHEME_ID]));
+                        if let ::std::option::Option::Some(config_override) = config_override {
+                            for plugin in config_override.runtime_plugins.iter().cloned() {
+                                runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
+                            }
+                            runtime_plugins = runtime_plugins.with_operation_plugin(
+                                crate::config::ConfigOverrideRuntimePlugin::new(config_override, client_config.config.clone(), &client_config.runtime_components)
+                            );
+                        }
+                        runtime_plugins
+                    }
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPackageVersionAsset {
-    fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
-        let mut cfg = ::aws_smithy_types::config_bag::Layer::new("GetPackageVersionAsset");
+                fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
+                    let mut cfg = ::aws_smithy_types::config_bag::Layer::new("GetPackageVersionAsset");
 
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(
-            GetPackageVersionAssetRequestSerializer,
-        ));
-        cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(
-            GetPackageVersionAssetResponseDeserializer,
-        ));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedRequestSerializer::new(GetPackageVersionAssetRequestSerializer));
+                    cfg.store_put(::aws_smithy_runtime_api::client::ser_de::SharedResponseDeserializer::new(GetPackageVersionAssetResponseDeserializer));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(
-            ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
-        ));
+                    
+                    cfg.store_put(::aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams::new(::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new()));
 
-        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
-            "GetPackageVersionAsset",
-            "codeartifact",
-        ));
-        let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
-        signing_options.double_uri_encode = true;
-        signing_options.content_sha256_header = false;
-        signing_options.normalize_uri_path = true;
-        signing_options.payload_override = None;
+                    cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+                            "GetPackageVersionAsset",
+                            "codeartifact",
+                        ));
+let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
+                            signing_options.double_uri_encode = true;
+                            signing_options.content_sha256_header = false;
+                            signing_options.normalize_uri_path = true;
+                            signing_options.payload_override = None;
 
-        cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
-            signing_options,
-            ..::std::default::Default::default()
-        });
+                            cfg.store_put(::aws_runtime::auth::SigV4OperationSigningConfig {
+                                signing_options,
+                                ..::std::default::Default::default()
+                            });
 
-        ::std::option::Option::Some(cfg.freeze())
-    }
+                    ::std::option::Option::Some(cfg.freeze())
+                }
 
-    fn runtime_components(
-        &self,
-        _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
-    ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        #[allow(unused_mut)]
-        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetPackageVersionAsset")
-            .with_interceptor(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
-                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
-                ),
-            )
-            .with_interceptor(GetPackageVersionAssetEndpointParamsInterceptor)
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-            >::new())
-            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-            >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError,
-            >::new());
+                fn runtime_components(&self, _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
+                    #[allow(unused_mut)]
+                    let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetPackageVersionAsset")
+                            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::RequestAndResponseBody))
+.with_interceptor(GetPackageVersionAssetEndpointParamsInterceptor)
+                            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::get_package_version_asset::GetPackageVersionAssetError>::new())
+.with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::get_package_version_asset::GetPackageVersionAssetError>::new())
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::get_package_version_asset::GetPackageVersionAssetError>::new());
 
-        ::std::borrow::Cow::Owned(rcb)
-    }
-}
+                    ::std::borrow::Cow::Owned(rcb)
+                }
+            }
 
+            
 #[derive(Debug)]
-struct GetPackageVersionAssetResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPackageVersionAssetResponseDeserializer {
-    fn deserialize_streaming(
-        &self,
-        response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+            struct GetPackageVersionAssetResponseDeserializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPackageVersionAssetResponseDeserializer {
+                fn deserialize_streaming(&self, response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
+                #[allow(unused_mut)]
+                let mut force_error = false;
+                ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
 
-        // If this is an error, defer to the non-streaming parser
-        if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
-            return ::std::option::Option::None;
+                // If this is an error, defer to the non-streaming parser
+                if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
+                    return ::std::option::Option::None;
+                }
+                ::std::option::Option::Some(crate::protocol_serde::type_erase_result(crate::protocol_serde::shape_get_package_version_asset::de_get_package_version_asset_http_response(response)))
+            }
+
+                fn deserialize_nonstreaming(&self, response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
+                    // For streaming operations, we only hit this case if its an error
+            let body = response.body().bytes().expect("body loaded");
+            crate::protocol_serde::type_erase_result(crate::protocol_serde::shape_get_package_version_asset::de_get_package_version_asset_http_error(response.status().as_u16(), response.headers(), body))
+                }
+            }
+#[derive(Debug)]
+            struct GetPackageVersionAssetRequestSerializer;
+            impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPackageVersionAssetRequestSerializer {
+                #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
+                fn serialize_input(&self, input: ::aws_smithy_runtime_api::client::interceptors::context::Input, _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let input = input.downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetInput>().expect("correct type");
+                    let _header_serialization_settings = _cfg.load::<crate::serialization_settings::HeaderSerializationSettings>().cloned().unwrap_or_default();
+                    let mut request_builder = {
+                        fn uri_base(_input: &crate::operation::get_package_version_asset::GetPackageVersionAssetInput, output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    use ::std::fmt::Write as _;
+    ::std::write!(output, "/v1/package/version/asset").expect("formatting should succeed");
+    ::std::result::Result::Ok(())
+}
+fn uri_query(_input: &crate::operation::get_package_version_asset::GetPackageVersionAssetInput, mut output: &mut ::std::string::String) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+    let mut query = ::aws_smithy_http::query::Writer::new(output);
+    let inner_1 = &_input.domain;
+    let inner_1 = inner_1.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "cannot be empty or unset"))?;
+    if inner_1.is_empty() {
+        return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("domain", "cannot be empty or unset"));
+    }
+    query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
+    if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
+         {
+            query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
         }
-        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_get_package_version_asset::de_get_package_version_asset_http_response(response),
-        ))
     }
-
-    fn deserialize_nonstreaming(
-        &self,
-        response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-    ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        // For streaming operations, we only hit this case if its an error
-        let body = response.body().bytes().expect("body loaded");
-        crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_get_package_version_asset::de_get_package_version_asset_http_error(
-                response.status().as_u16(),
-                response.headers(),
-                body,
-            ),
-        )
+    let inner_3 = &_input.repository;
+    let inner_3 = inner_3.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "cannot be empty or unset"))?;
+    if inner_3.is_empty() {
+        return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("repository", "cannot be empty or unset"));
     }
+    query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
+    let inner_4 = &_input.format;
+    let inner_4 = inner_4.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
+    query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
+    if let ::std::option::Option::Some(inner_5) = &_input.namespace {
+         {
+            query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_5));
+        }
+    }
+    let inner_6 = &_input.package;
+    let inner_6 = inner_6.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("package", "cannot be empty or unset"))?;
+    if inner_6.is_empty() {
+        return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("package", "cannot be empty or unset"));
+    }
+    query.push_kv("package", &::aws_smithy_http::query::fmt_string(inner_6));
+    let inner_7 = &_input.package_version;
+    let inner_7 = inner_7.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "cannot be empty or unset"))?;
+    if inner_7.is_empty() {
+        return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "cannot be empty or unset"));
+    }
+    query.push_kv("version", &::aws_smithy_http::query::fmt_string(inner_7));
+    let inner_8 = &_input.asset;
+    let inner_8 = inner_8.as_ref().ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("asset", "cannot be empty or unset"))?;
+    if inner_8.is_empty() {
+        return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field("asset", "cannot be empty or unset"));
+    }
+    query.push_kv("asset", &::aws_smithy_http::query::fmt_string(inner_8));
+    if let ::std::option::Option::Some(inner_9) = &_input.package_version_revision {
+         {
+            query.push_kv("revision", &::aws_smithy_http::query::fmt_string(inner_9));
+        }
+    }
+    ::std::result::Result::Ok(())
 }
-#[derive(Debug)]
-struct GetPackageVersionAssetRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPackageVersionAssetRequestSerializer {
-    #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
-    fn serialize_input(
-        &self,
-        input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
-        _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = input
-            .downcast::<crate::operation::get_package_version_asset::GetPackageVersionAssetInput>()
-            .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            fn uri_base(
-                _input: &crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/v1/package/version/asset").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_1 = &_input.domain;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "cannot be empty or unset"))?;
-                if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "domain",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
-                if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
-                    {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
-                    }
-                }
-                let inner_3 = &_input.repository;
-                let inner_3 = inner_3
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "cannot be empty or unset"))?;
-                if inner_3.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "repository",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
-                let inner_4 = &_input.format;
-                let inner_4 = inner_4
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
-                if let ::std::option::Option::Some(inner_5) = &_input.namespace {
-                    {
-                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_5));
-                    }
-                }
-                let inner_6 = &_input.package;
-                let inner_6 = inner_6
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("package", "cannot be empty or unset"))?;
-                if inner_6.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "package",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("package", &::aws_smithy_http::query::fmt_string(inner_6));
-                let inner_7 = &_input.package_version;
-                let inner_7 = inner_7
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("package_version", "cannot be empty or unset"))?;
-                if inner_7.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "package_version",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("version", &::aws_smithy_http::query::fmt_string(inner_7));
-                let inner_8 = &_input.asset;
-                let inner_8 = inner_8
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("asset", "cannot be empty or unset"))?;
-                if inner_8.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "asset",
-                        "cannot be empty or unset",
-                    ));
-                }
-                query.push_kv("asset", &::aws_smithy_http::query::fmt_string(inner_8));
-                if let ::std::option::Option::Some(inner_9) = &_input.package_version_revision {
-                    {
-                        query.push_kv("revision", &::aws_smithy_http::query::fmt_string(inner_9));
-                    }
-                }
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
+#[allow(clippy::unnecessary_wraps)]
+fn update_http_builder(
                 input: &crate::operation::get_package_version_asset::GetPackageVersionAssetInput,
-                builder: ::http::request::Builder,
+                builder: ::http::request::Builder
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("GET").uri(uri))
+    let mut uri = ::std::string::String::new();
+    uri_base(input, &mut uri)?;
+    uri_query(input, &mut uri)?;
+    ::std::result::Result::Ok(builder.method("GET").uri(uri))
+}
+let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
+builder
+                    };
+                    let body = ::aws_smithy_types::body::SdkBody::from("");
+                    
+                    ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+                }
             }
-            let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from("");
-
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
-    }
-}
 #[derive(Debug)]
-struct GetPackageVersionAssetEndpointParamsInterceptor;
+            struct GetPackageVersionAssetEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPackageVersionAssetEndpointParamsInterceptor {
-    fn name(&self) -> &'static str {
-        "GetPackageVersionAssetEndpointParamsInterceptor"
-    }
+            impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPackageVersionAssetEndpointParamsInterceptor {
+                fn name(&self) -> &'static str {
+                    "GetPackageVersionAssetEndpointParamsInterceptor"
+                }
 
-    fn read_before_execution(
-        &self,
-        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
-            '_,
-            ::aws_smithy_runtime_api::client::interceptors::context::Input,
-            ::aws_smithy_runtime_api::client::interceptors::context::Output,
-            ::aws_smithy_runtime_api::client::interceptors::context::Error,
-        >,
-        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
-    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
-        let _input = context
-            .input()
-            .downcast_ref::<GetPackageVersionAssetInput>()
-            .ok_or("failed to downcast to GetPackageVersionAssetInput")?;
+                fn read_before_execution(
+                    &self,
+                    context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<'_, ::aws_smithy_runtime_api::client::interceptors::context::Input, ::aws_smithy_runtime_api::client::interceptors::context::Output, ::aws_smithy_runtime_api::client::interceptors::context::Error>,
+                    cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+                ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+                    let _input = context.input()
+                        .downcast_ref::<GetPackageVersionAssetInput>()
+                        .ok_or("failed to downcast to GetPackageVersionAssetInput")?;
 
-        let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
-            .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
-            .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .build()
-            .map_err(|err| {
-                ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
-            })?;
-        cfg.interceptor_state()
-            .store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
-        ::std::result::Result::Ok(())
-    }
-}
+                    
+
+                    let params = crate::config::endpoint::Params::builder()
+                        .set_region(cfg.load::<::aws_types::region::Region>().map(|r|r.as_ref().to_owned()))
+.set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
+.set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
+.set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+                        .build()
+                        .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err))?;
+                    cfg.interceptor_state().store_put(::aws_smithy_runtime_api::client::endpoint::EndpointResolverParams::new(params));
+                    ::std::result::Result::Ok(())
+                }
+            }
 
 /// Error type for the `GetPackageVersionAssetError` operation.
 #[non_exhaustive]
@@ -356,36 +252,28 @@ pub enum GetPackageVersionAssetError {
     /// <p>The operation did not succeed because a parameter in the request was sent with an invalid value.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+                    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
      \
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-GetPackageVersionAssetError) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+                    Unhandled(crate::error::sealed_unhandled::Unhandled),
 }
 impl GetPackageVersionAssetError {
     /// Creates the `GetPackageVersionAssetError::Unhandled` variant from any error type.
-    pub fn unhandled(
-        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-
-    /// Creates the `GetPackageVersionAssetError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
-    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: err.clone().into(),
-            meta: err,
-        })
-    }
-    ///
+                    pub fn unhandled(err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.into(), meta: ::std::default::Default::default() })
+                    }
+    
+                    /// Creates the `GetPackageVersionAssetError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+                    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source: err.clone().into(), meta: err })
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -425,31 +313,57 @@ impl GetPackageVersionAssetError {
 impl ::std::error::Error for GetPackageVersionAssetError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+            Self::AccessDeniedException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ConflictException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::InternalServerException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::std::option::Option::Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                ::std::option::Option::Some(&*_inner.source)
+            }
         }
     }
 }
 impl ::std::fmt::Display for GetPackageVersionAssetError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::ConflictException(_inner) => _inner.fmt(f),
-            Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
+                                                        write!(f, "unhandled error ({code})")
+                                                    } else {
+                                                        f.write_str("unhandled error")
+                                                    }
             }
         }
     }
@@ -465,32 +379,43 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetPackageVersionAssetError
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetPackageVersionAssetError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => &_inner.meta,
+            Self::AccessDeniedException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ConflictException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InternalServerException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ValidationException(_inner) =>
+            ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                &_inner.meta
+            }
         }
     }
 }
 impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for GetPackageVersionAssetError {
     fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source,
-            meta: meta.unwrap_or_default(),
-        })
+                        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+                        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled { source, meta: meta.unwrap_or_default() })
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::get_package_version_asset::GetPackageVersionAssetError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
+                            }
 
 pub use crate::operation::get_package_version_asset::_get_package_version_asset_output::GetPackageVersionAssetOutput;
 
@@ -502,3 +427,4 @@ mod _get_package_version_asset_output;
 
 /// Builders
 pub mod builders;
+

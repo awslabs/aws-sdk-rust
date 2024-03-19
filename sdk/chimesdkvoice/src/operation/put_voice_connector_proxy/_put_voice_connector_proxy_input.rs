@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutVoiceConnectorProxyInput {
+pub struct PutVoiceConnectorProxyInput  {
     /// <p>The Voice Connector ID.</p>
     pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The default number of minutes allowed for proxy session.</p>
     pub default_session_expiry_minutes: ::std::option::Option<i32>,
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub phone_number_pool_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub phone_number_pool_countries: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fall_back_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub disabled: ::std::option::Option<bool>,
 }
-impl PutVoiceConnectorProxyInput {
+impl  PutVoiceConnectorProxyInput  {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The default number of minutes allowed for proxy session.</p>
@@ -24,13 +24,14 @@ impl PutVoiceConnectorProxyInput {
         self.default_session_expiry_minutes
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phone_number_pool_countries.is_none()`.
-    pub fn phone_number_pool_countries(&self) -> &[::std::string::String] {
-        self.phone_number_pool_countries.as_deref().unwrap_or_default()
+    pub fn phone_number_pool_countries(&self) -> & [::std::string::String] {
+        self.phone_number_pool_countries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn fall_back_phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn fall_back_phone_number(&self) -> ::std::option::Option<& str> {
         self.fall_back_phone_number.as_deref()
     }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
@@ -38,7 +39,7 @@ impl PutVoiceConnectorProxyInput {
         self.disabled
     }
 }
-impl ::std::fmt::Debug for PutVoiceConnectorProxyInput {
+impl  ::std::fmt::Debug for PutVoiceConnectorProxyInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutVoiceConnectorProxyInput");
         formatter.field("voice_connector_id", &self.voice_connector_id);
@@ -62,7 +63,7 @@ impl PutVoiceConnectorProxyInput {
 pub struct PutVoiceConnectorProxyInputBuilder {
     pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_session_expiry_minutes: ::std::option::Option<i32>,
-    pub(crate) phone_number_pool_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) phone_number_pool_countries: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) fall_back_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) disabled: ::std::option::Option<bool>,
 }
@@ -75,8 +76,7 @@ impl PutVoiceConnectorProxyInputBuilder {
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.voice_connector_id = input;
-        self
+        self.voice_connector_id = input; self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +90,7 @@ impl PutVoiceConnectorProxyInputBuilder {
     }
     /// <p>The default number of minutes allowed for proxy session.</p>
     pub fn set_default_session_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.default_session_expiry_minutes = input;
-        self
+        self.default_session_expiry_minutes = input; self
     }
     /// <p>The default number of minutes allowed for proxy session.</p>
     pub fn get_default_session_expiry_minutes(&self) -> &::std::option::Option<i32> {
@@ -104,17 +103,16 @@ impl PutVoiceConnectorProxyInputBuilder {
     /// <p>The countries for proxy phone numbers to be selected from.</p>
     pub fn phone_number_pool_countries(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.phone_number_pool_countries.unwrap_or_default();
-        v.push(input.into());
-        self.phone_number_pool_countries = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.phone_number_pool_countries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn set_phone_number_pool_countries(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.phone_number_pool_countries = input;
-        self
+    pub fn set_phone_number_pool_countries(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.phone_number_pool_countries = input; self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn get_phone_number_pool_countries(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_phone_number_pool_countries(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.phone_number_pool_countries
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
@@ -124,8 +122,7 @@ impl PutVoiceConnectorProxyInputBuilder {
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn set_fall_back_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fall_back_phone_number = input;
-        self
+        self.fall_back_phone_number = input; self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn get_fall_back_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,27 +135,28 @@ impl PutVoiceConnectorProxyInputBuilder {
     }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn get_disabled(&self) -> &::std::option::Option<bool> {
         &self.disabled
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorProxyInput`](crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput {
-            voice_connector_id: self.voice_connector_id,
-            default_session_expiry_minutes: self.default_session_expiry_minutes,
-            phone_number_pool_countries: self.phone_number_pool_countries,
-            fall_back_phone_number: self.fall_back_phone_number,
-            disabled: self.disabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput {
+                voice_connector_id: self.voice_connector_id
+                ,
+                default_session_expiry_minutes: self.default_session_expiry_minutes
+                ,
+                phone_number_pool_countries: self.phone_number_pool_countries
+                ,
+                fall_back_phone_number: self.fall_back_phone_number
+                ,
+                disabled: self.disabled
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutVoiceConnectorProxyInputBuilder {
@@ -172,3 +170,4 @@ impl ::std::fmt::Debug for PutVoiceConnectorProxyInputBuilder {
         formatter.finish()
     }
 }
+

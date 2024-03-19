@@ -3,19 +3,19 @@
 /// To transcode only portions of your video overlay, include one input clip for each part of your video overlay that you want in your output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoOverlayInputClipping {
+pub struct VideoOverlayInputClipping  {
     /// Specify the timecode of the last frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub end_timecode: ::std::option::Option<::std::string::String>,
     /// Specify the timecode of the first frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub start_timecode: ::std::option::Option<::std::string::String>,
 }
-impl VideoOverlayInputClipping {
+impl  VideoOverlayInputClipping  {
     /// Specify the timecode of the last frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
-    pub fn end_timecode(&self) -> ::std::option::Option<&str> {
+    pub fn end_timecode(&self) -> ::std::option::Option<& str> {
         self.end_timecode.as_deref()
     }
     /// Specify the timecode of the first frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
-    pub fn start_timecode(&self) -> ::std::option::Option<&str> {
+    pub fn start_timecode(&self) -> ::std::option::Option<& str> {
         self.start_timecode.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VideoOverlayInputClippingBuilder {
     }
     /// Specify the timecode of the last frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub fn set_end_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_timecode = input;
-        self
+        self.end_timecode = input; self
     }
     /// Specify the timecode of the last frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub fn get_end_timecode(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VideoOverlayInputClippingBuilder {
     }
     /// Specify the timecode of the first frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub fn set_start_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_timecode = input;
-        self
+        self.start_timecode = input; self
     }
     /// Specify the timecode of the first frame to include in your video overlay's clip. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is the second, and FF is the frame number. When entering this value, take into account your choice for Timecode source.
     pub fn get_start_timecode(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl VideoOverlayInputClippingBuilder {
     /// Consumes the builder and constructs a [`VideoOverlayInputClipping`](crate::types::VideoOverlayInputClipping).
     pub fn build(self) -> crate::types::VideoOverlayInputClipping {
         crate::types::VideoOverlayInputClipping {
-            end_timecode: self.end_timecode,
-            start_timecode: self.start_timecode,
+            end_timecode: self.end_timecode
+            ,
+            start_timecode: self.start_timecode
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRoleDescriptionInput {
+pub struct UpdateRoleDescriptionInput  {
     /// <p>The name of the role that you want to modify.</p>
     pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The new description that you want to apply to the specified role.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateRoleDescriptionInput {
+impl  UpdateRoleDescriptionInput  {
     /// <p>The name of the role that you want to modify.</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The new description that you want to apply to the specified role.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateRoleDescriptionInputBuilder {
     }
     /// <p>The name of the role that you want to modify.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The name of the role that you want to modify.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateRoleDescriptionInputBuilder {
     }
     /// <p>The new description that you want to apply to the specified role.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The new description that you want to apply to the specified role.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateRoleDescriptionInput`](crate::operation::update_role_description::UpdateRoleDescriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_role_description::UpdateRoleDescriptionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_role_description::UpdateRoleDescriptionInput {
-            role_name: self.role_name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_role_description::UpdateRoleDescriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_role_description::UpdateRoleDescriptionInput {
+                role_name: self.role_name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

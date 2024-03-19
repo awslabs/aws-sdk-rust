@@ -3,13 +3,13 @@
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
+pub struct LoRaWanConnectionStatusEventNotificationConfigurations  {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub gateway_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl LoRaWanConnectionStatusEventNotificationConfigurations {
+impl  LoRaWanConnectionStatusEventNotificationConfigurations  {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
-    pub fn gateway_eui_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn gateway_eui_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.gateway_eui_event_topic.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
     }
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn set_gateway_eui_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.gateway_eui_event_topic = input;
-        self
+        self.gateway_eui_event_topic = input; self
     }
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn get_gateway_eui_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -44,7 +43,9 @@ impl LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
     /// Consumes the builder and constructs a [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::types::LoRaWanConnectionStatusEventNotificationConfigurations).
     pub fn build(self) -> crate::types::LoRaWanConnectionStatusEventNotificationConfigurations {
         crate::types::LoRaWanConnectionStatusEventNotificationConfigurations {
-            gateway_eui_event_topic: self.gateway_eui_event_topic,
+            gateway_eui_event_topic: self.gateway_eui_event_topic
+            ,
         }
     }
 }
+

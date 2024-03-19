@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDomainInput {
+pub struct CreateDomainInput  {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
@@ -37,15 +37,15 @@ pub struct CreateDomainInput {
     /// <p><code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub advanced_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub log_publishing_options: ::std::option::Option<::std::collections::HashMap::<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     /// <p>List of tags to add to the domain upon creation.</p>
-    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Options for Auto-Tune.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
@@ -53,49 +53,49 @@ pub struct CreateDomainInput {
     /// <p>Software update options for the domain.</p>
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
-impl CreateDomainInput {
+impl  CreateDomainInput  {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Container for the cluster configuration of a domain.</p>
-    pub fn cluster_config(&self) -> ::std::option::Option<&crate::types::ClusterConfig> {
+    pub fn cluster_config(&self) -> ::std::option::Option<& crate::types::ClusterConfig> {
         self.cluster_config.as_ref()
     }
     /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
-    pub fn ebs_options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
+    pub fn ebs_options(&self) -> ::std::option::Option<& crate::types::EbsOptions> {
         self.ebs_options.as_ref()
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
-    pub fn access_policies(&self) -> ::std::option::Option<&str> {
+    pub fn access_policies(&self) -> ::std::option::Option<& str> {
         self.access_policies.as_deref()
     }
     /// <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
-    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
-    pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
+    pub fn snapshot_options(&self) -> ::std::option::Option<& crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
     /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-    pub fn cognito_options(&self) -> ::std::option::Option<&crate::types::CognitoOptions> {
+    pub fn cognito_options(&self) -> ::std::option::Option<& crate::types::CognitoOptions> {
         self.cognito_options.as_ref()
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<& crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Enables node-to-node encryption.</p>
-    pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
+    pub fn node_to_node_encryption_options(&self) -> ::std::option::Option<& crate::types::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
@@ -110,39 +110,38 @@ impl CreateDomainInput {
     /// <p><code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn advanced_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn advanced_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.advanced_options.as_ref()
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn log_publishing_options(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.log_publishing_options.as_ref()
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn domain_endpoint_options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
+    pub fn domain_endpoint_options(&self) -> ::std::option::Option<& crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Options for fine-grained access control.</p>
-    pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
+    pub fn advanced_security_options(&self) -> ::std::option::Option<& crate::types::AdvancedSecurityOptionsInput> {
         self.advanced_security_options.as_ref()
     }
     /// <p>List of tags to add to the domain upon creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
-    pub fn tag_list(&self) -> &[crate::types::Tag] {
-        self.tag_list.as_deref().unwrap_or_default()
+    pub fn tag_list(&self) -> & [crate::types::Tag] {
+        self.tag_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Options for Auto-Tune.</p>
-    pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptionsInput> {
+    pub fn auto_tune_options(&self) -> ::std::option::Option<& crate::types::AutoTuneOptionsInput> {
         self.auto_tune_options.as_ref()
     }
     /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
-    pub fn off_peak_window_options(&self) -> ::std::option::Option<&crate::types::OffPeakWindowOptions> {
+    pub fn off_peak_window_options(&self) -> ::std::option::Option<& crate::types::OffPeakWindowOptions> {
         self.off_peak_window_options.as_ref()
     }
     /// <p>Software update options for the domain.</p>
-    pub fn software_update_options(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateOptions> {
+    pub fn software_update_options(&self) -> ::std::option::Option<& crate::types::SoftwareUpdateOptions> {
         self.software_update_options.as_ref()
     }
 }
@@ -168,11 +167,11 @@ pub struct CreateDomainInputBuilder {
     pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
-    pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
+    pub(crate) advanced_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) log_publishing_options: ::std::option::Option<::std::collections::HashMap::<crate::types::LogType, crate::types::LogPublishingOption>>,
     pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
-    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
@@ -186,8 +185,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +198,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +211,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Container for the cluster configuration of a domain.</p>
     pub fn set_cluster_config(mut self, input: ::std::option::Option<crate::types::ClusterConfig>) -> Self {
-        self.cluster_config = input;
-        self
+        self.cluster_config = input; self
     }
     /// <p>Container for the cluster configuration of a domain.</p>
     pub fn get_cluster_config(&self) -> &::std::option::Option<crate::types::ClusterConfig> {
@@ -228,8 +224,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
     pub fn set_ebs_options(mut self, input: ::std::option::Option<crate::types::EbsOptions>) -> Self {
-        self.ebs_options = input;
-        self
+        self.ebs_options = input; self
     }
     /// <p>Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.</p>
     pub fn get_ebs_options(&self) -> &::std::option::Option<crate::types::EbsOptions> {
@@ -242,8 +237,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
     pub fn set_access_policies(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_policies = input;
-        self
+        self.access_policies = input; self
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the new domain.</p>
     pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +250,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input;
-        self
+        self.ip_address_type = input; self
     }
     /// <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
@@ -270,8 +263,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub fn set_snapshot_options(mut self, input: ::std::option::Option<crate::types::SnapshotOptions>) -> Self {
-        self.snapshot_options = input;
-        self
+        self.snapshot_options = input; self
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
     pub fn get_snapshot_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
@@ -284,8 +276,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
@@ -298,8 +289,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
     pub fn set_cognito_options(mut self, input: ::std::option::Option<crate::types::CognitoOptions>) -> Self {
-        self.cognito_options = input;
-        self
+        self.cognito_options = input; self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
     pub fn get_cognito_options(&self) -> &::std::option::Option<crate::types::CognitoOptions> {
@@ -312,8 +302,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
     pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
-        self.encryption_at_rest_options = input;
-        self
+        self.encryption_at_rest_options = input; self
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
     pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
@@ -326,8 +315,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Enables node-to-node encryption.</p>
     pub fn set_node_to_node_encryption_options(mut self, input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>) -> Self {
-        self.node_to_node_encryption_options = input;
-        self
+        self.node_to_node_encryption_options = input; self
     }
     /// <p>Enables node-to-node encryption.</p>
     pub fn get_node_to_node_encryption_options(&self) -> &::std::option::Option<crate::types::NodeToNodeEncryptionOptions> {
@@ -349,15 +337,11 @@ impl CreateDomainInputBuilder {
     /// <p><code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn advanced_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn advanced_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.advanced_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.advanced_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.advanced_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
@@ -371,12 +355,8 @@ impl CreateDomainInputBuilder {
     /// <p><code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn set_advanced_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.advanced_options = input;
-        self
+    pub fn set_advanced_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.advanced_options = input; self
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
@@ -390,7 +370,7 @@ impl CreateDomainInputBuilder {
     /// <p><code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_advanced_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.advanced_options
     }
     /// Adds a key-value pair to `log_publishing_options`.
@@ -400,22 +380,16 @@ impl CreateDomainInputBuilder {
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(mut self, k: crate::types::LogType, v: crate::types::LogPublishingOption) -> Self {
         let mut hash_map = self.log_publishing_options.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.log_publishing_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.log_publishing_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn set_log_publishing_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
-    ) -> Self {
-        self.log_publishing_options = input;
-        self
+    pub fn set_log_publishing_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::LogType, crate::types::LogPublishingOption>>) -> Self {
+        self.log_publishing_options = input; self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn get_log_publishing_options(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
+    pub fn get_log_publishing_options(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::LogType, crate::types::LogPublishingOption>> {
         &self.log_publishing_options
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
@@ -425,8 +399,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn set_domain_endpoint_options(mut self, input: ::std::option::Option<crate::types::DomainEndpointOptions>) -> Self {
-        self.domain_endpoint_options = input;
-        self
+        self.domain_endpoint_options = input; self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn get_domain_endpoint_options(&self) -> &::std::option::Option<crate::types::DomainEndpointOptions> {
@@ -439,8 +412,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Options for fine-grained access control.</p>
     pub fn set_advanced_security_options(mut self, input: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>) -> Self {
-        self.advanced_security_options = input;
-        self
+        self.advanced_security_options = input; self
     }
     /// <p>Options for fine-grained access control.</p>
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
@@ -453,17 +425,16 @@ impl CreateDomainInputBuilder {
     /// <p>List of tags to add to the domain upon creation.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of tags to add to the domain upon creation.</p>
-    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// <p>List of tags to add to the domain upon creation.</p>
-    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tag_list
     }
     /// <p>Options for Auto-Tune.</p>
@@ -473,8 +444,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Options for Auto-Tune.</p>
     pub fn set_auto_tune_options(mut self, input: ::std::option::Option<crate::types::AutoTuneOptionsInput>) -> Self {
-        self.auto_tune_options = input;
-        self
+        self.auto_tune_options = input; self
     }
     /// <p>Options for Auto-Tune.</p>
     pub fn get_auto_tune_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptionsInput> {
@@ -487,8 +457,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
     pub fn set_off_peak_window_options(mut self, input: ::std::option::Option<crate::types::OffPeakWindowOptions>) -> Self {
-        self.off_peak_window_options = input;
-        self
+        self.off_peak_window_options = input; self
     }
     /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
     pub fn get_off_peak_window_options(&self) -> &::std::option::Option<crate::types::OffPeakWindowOptions> {
@@ -501,37 +470,56 @@ impl CreateDomainInputBuilder {
     }
     /// <p>Software update options for the domain.</p>
     pub fn set_software_update_options(mut self, input: ::std::option::Option<crate::types::SoftwareUpdateOptions>) -> Self {
-        self.software_update_options = input;
-        self
+        self.software_update_options = input; self
     }
     /// <p>Software update options for the domain.</p>
     pub fn get_software_update_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
         &self.software_update_options
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
-            domain_name: self.domain_name,
-            engine_version: self.engine_version,
-            cluster_config: self.cluster_config,
-            ebs_options: self.ebs_options,
-            access_policies: self.access_policies,
-            ip_address_type: self.ip_address_type,
-            snapshot_options: self.snapshot_options,
-            vpc_options: self.vpc_options,
-            cognito_options: self.cognito_options,
-            encryption_at_rest_options: self.encryption_at_rest_options,
-            node_to_node_encryption_options: self.node_to_node_encryption_options,
-            advanced_options: self.advanced_options,
-            log_publishing_options: self.log_publishing_options,
-            domain_endpoint_options: self.domain_endpoint_options,
-            advanced_security_options: self.advanced_security_options,
-            tag_list: self.tag_list,
-            auto_tune_options: self.auto_tune_options,
-            off_peak_window_options: self.off_peak_window_options,
-            software_update_options: self.software_update_options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_domain::CreateDomainInput {
+                domain_name: self.domain_name
+                ,
+                engine_version: self.engine_version
+                ,
+                cluster_config: self.cluster_config
+                ,
+                ebs_options: self.ebs_options
+                ,
+                access_policies: self.access_policies
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                snapshot_options: self.snapshot_options
+                ,
+                vpc_options: self.vpc_options
+                ,
+                cognito_options: self.cognito_options
+                ,
+                encryption_at_rest_options: self.encryption_at_rest_options
+                ,
+                node_to_node_encryption_options: self.node_to_node_encryption_options
+                ,
+                advanced_options: self.advanced_options
+                ,
+                log_publishing_options: self.log_publishing_options
+                ,
+                domain_endpoint_options: self.domain_endpoint_options
+                ,
+                advanced_security_options: self.advanced_security_options
+                ,
+                tag_list: self.tag_list
+                ,
+                auto_tune_options: self.auto_tune_options
+                ,
+                off_peak_window_options: self.off_peak_window_options
+                ,
+                software_update_options: self.software_update_options
+                ,
+            }
+        )
     }
 }
+

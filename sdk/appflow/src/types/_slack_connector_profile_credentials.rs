@@ -3,7 +3,7 @@
 /// <p>The connector-specific profile credentials required when using Slack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SlackConnectorProfileCredentials {
+pub struct SlackConnectorProfileCredentials  {
     /// <p>The identifier for the client.</p>
     pub client_id: ::std::string::String,
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
@@ -13,27 +13,25 @@ pub struct SlackConnectorProfileCredentials {
     /// <p>The OAuth requirement needed to request security tokens from the connector endpoint.</p>
     pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
-impl SlackConnectorProfileCredentials {
+impl  SlackConnectorProfileCredentials  {
     /// <p>The identifier for the client.</p>
-    pub fn client_id(&self) -> &str {
-        use std::ops::Deref;
-        self.client_id.deref()
+    pub fn client_id(&self) -> & str {
+        use std::ops::Deref; self.client_id.deref()
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
-    pub fn client_secret(&self) -> &str {
-        use std::ops::Deref;
-        self.client_secret.deref()
+    pub fn client_secret(&self) -> & str {
+        use std::ops::Deref; self.client_secret.deref()
     }
     /// <p>The credentials used to access protected Slack resources.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The OAuth requirement needed to request security tokens from the connector endpoint.</p>
-    pub fn o_auth_request(&self) -> ::std::option::Option<&crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> ::std::option::Option<& crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
 }
-impl ::std::fmt::Debug for SlackConnectorProfileCredentials {
+impl  ::std::fmt::Debug for SlackConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SlackConnectorProfileCredentials");
         formatter.field("client_id", &self.client_id);
@@ -68,8 +66,7 @@ impl SlackConnectorProfileCredentialsBuilder {
     }
     /// <p>The identifier for the client.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The identifier for the client.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +80,7 @@ impl SlackConnectorProfileCredentialsBuilder {
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +93,7 @@ impl SlackConnectorProfileCredentialsBuilder {
     }
     /// <p>The credentials used to access protected Slack resources.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>The credentials used to access protected Slack resources.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +106,7 @@ impl SlackConnectorProfileCredentialsBuilder {
     }
     /// <p>The OAuth requirement needed to request security tokens from the connector endpoint.</p>
     pub fn set_o_auth_request(mut self, input: ::std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
-        self.o_auth_request = input;
-        self
+        self.o_auth_request = input; self
     }
     /// <p>The OAuth requirement needed to request security tokens from the connector endpoint.</p>
     pub fn get_o_auth_request(&self) -> &::std::option::Option<crate::types::ConnectorOAuthRequest> {
@@ -123,22 +117,24 @@ impl SlackConnectorProfileCredentialsBuilder {
     /// - [`client_id`](crate::types::builders::SlackConnectorProfileCredentialsBuilder::client_id)
     /// - [`client_secret`](crate::types::builders::SlackConnectorProfileCredentialsBuilder::client_secret)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackConnectorProfileCredentials {
-            client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_id",
-                    "client_id was not specified but it is required when building SlackConnectorProfileCredentials",
-                )
-            })?,
-            client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "client_secret",
-                    "client_secret was not specified but it is required when building SlackConnectorProfileCredentials",
-                )
-            })?,
-            access_token: self.access_token,
-            o_auth_request: self.o_auth_request,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackConnectorProfileCredentials {
+                client_id: self.client_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_id", "client_id was not specified but it is required when building SlackConnectorProfileCredentials")
+                    )?
+                ,
+                client_secret: self.client_secret
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("client_secret", "client_secret was not specified but it is required when building SlackConnectorProfileCredentials")
+                    )?
+                ,
+                access_token: self.access_token
+                ,
+                o_auth_request: self.o_auth_request
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SlackConnectorProfileCredentialsBuilder {
@@ -151,3 +147,4 @@ impl ::std::fmt::Debug for SlackConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

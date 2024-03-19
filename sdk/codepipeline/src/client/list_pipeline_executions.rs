@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipelineExecutions`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pipeline_name(impl Into<String>)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::set_pipeline_name):<br>required: **true**<br><p>The name of the pipeline for which you want to get execution summary information.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p><br>
-    /// - On success, responds with [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput) with field(s):
+                            /// - On success, responds with [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput) with field(s):
     ///   - [`pipeline_execution_summaries(Option<Vec::<PipelineExecutionSummary>>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::pipeline_execution_summaries): <p>A list of executions in the history of a pipeline.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput::next_token): <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
-    /// - On failure, responds with [`SdkError<ListPipelineExecutionsError>`](crate::operation::list_pipeline_executions::ListPipelineExecutionsError)
+                            /// - On failure, responds with [`SdkError<ListPipelineExecutionsError>`](crate::operation::list_pipeline_executions::ListPipelineExecutionsError)
     pub fn list_pipeline_executions(&self) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder {
-        crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

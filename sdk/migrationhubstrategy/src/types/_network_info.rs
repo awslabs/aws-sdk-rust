@@ -3,7 +3,7 @@
 /// <p>Information about the server's network for which the assessment was run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkInfo {
+pub struct NetworkInfo  {
     /// <p>Information about the name of the interface of the server for which the assessment was run.</p>
     pub interface_name: ::std::string::String,
     /// <p>Information about the IP address of the server for which the assessment was run.</p>
@@ -13,26 +13,22 @@ pub struct NetworkInfo {
     /// <p>Information about the subnet mask of the server for which the assessment was run.</p>
     pub net_mask: ::std::string::String,
 }
-impl NetworkInfo {
+impl  NetworkInfo  {
     /// <p>Information about the name of the interface of the server for which the assessment was run.</p>
-    pub fn interface_name(&self) -> &str {
-        use std::ops::Deref;
-        self.interface_name.deref()
+    pub fn interface_name(&self) -> & str {
+        use std::ops::Deref; self.interface_name.deref()
     }
     /// <p>Information about the IP address of the server for which the assessment was run.</p>
-    pub fn ip_address(&self) -> &str {
-        use std::ops::Deref;
-        self.ip_address.deref()
+    pub fn ip_address(&self) -> & str {
+        use std::ops::Deref; self.ip_address.deref()
     }
     /// <p>Information about the MAC address of the server for which the assessment was run.</p>
-    pub fn mac_address(&self) -> &str {
-        use std::ops::Deref;
-        self.mac_address.deref()
+    pub fn mac_address(&self) -> & str {
+        use std::ops::Deref; self.mac_address.deref()
     }
     /// <p>Information about the subnet mask of the server for which the assessment was run.</p>
-    pub fn net_mask(&self) -> &str {
-        use std::ops::Deref;
-        self.net_mask.deref()
+    pub fn net_mask(&self) -> & str {
+        use std::ops::Deref; self.net_mask.deref()
     }
 }
 impl NetworkInfo {
@@ -60,8 +56,7 @@ impl NetworkInfoBuilder {
     }
     /// <p>Information about the name of the interface of the server for which the assessment was run.</p>
     pub fn set_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interface_name = input;
-        self
+        self.interface_name = input; self
     }
     /// <p>Information about the name of the interface of the server for which the assessment was run.</p>
     pub fn get_interface_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl NetworkInfoBuilder {
     }
     /// <p>Information about the IP address of the server for which the assessment was run.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>Information about the IP address of the server for which the assessment was run.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl NetworkInfoBuilder {
     }
     /// <p>Information about the MAC address of the server for which the assessment was run.</p>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>Information about the MAC address of the server for which the assessment was run.</p>
     pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl NetworkInfoBuilder {
     }
     /// <p>Information about the subnet mask of the server for which the assessment was run.</p>
     pub fn set_net_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.net_mask = input;
-        self
+        self.net_mask = input; self
     }
     /// <p>Information about the subnet mask of the server for which the assessment was run.</p>
     pub fn get_net_mask(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl NetworkInfoBuilder {
     /// - [`mac_address`](crate::types::builders::NetworkInfoBuilder::mac_address)
     /// - [`net_mask`](crate::types::builders::NetworkInfoBuilder::net_mask)
     pub fn build(self) -> ::std::result::Result<crate::types::NetworkInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NetworkInfo {
-            interface_name: self.interface_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "interface_name",
-                    "interface_name was not specified but it is required when building NetworkInfo",
-                )
-            })?,
-            ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address",
-                    "ip_address was not specified but it is required when building NetworkInfo",
-                )
-            })?,
-            mac_address: self.mac_address.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mac_address",
-                    "mac_address was not specified but it is required when building NetworkInfo",
-                )
-            })?,
-            net_mask: self.net_mask.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "net_mask",
-                    "net_mask was not specified but it is required when building NetworkInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NetworkInfo {
+                interface_name: self.interface_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interface_name", "interface_name was not specified but it is required when building NetworkInfo")
+                    )?
+                ,
+                ip_address: self.ip_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ip_address", "ip_address was not specified but it is required when building NetworkInfo")
+                    )?
+                ,
+                mac_address: self.mac_address
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mac_address", "mac_address was not specified but it is required when building NetworkInfo")
+                    )?
+                ,
+                net_mask: self.net_mask
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("net_mask", "net_mask was not specified but it is required when building NetworkInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

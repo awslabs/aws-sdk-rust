@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRegistryInput {
+pub struct DeleteRegistryInput  {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub registry_id: ::std::option::Option<crate::types::RegistryId>,
 }
-impl DeleteRegistryInput {
+impl  DeleteRegistryInput  {
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&crate::types::RegistryId> {
+    pub fn registry_id(&self) -> ::std::option::Option<& crate::types::RegistryId> {
         self.registry_id.as_ref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteRegistryInputBuilder {
     }
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
         &self.registry_id
     }
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_registry::DeleteRegistryInput {
-            registry_id: self.registry_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_registry::DeleteRegistryInput {
+                registry_id: self.registry_id
+                ,
+            }
+        )
     }
 }
+

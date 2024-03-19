@@ -3,15 +3,15 @@
 /// <p>Specifies the rule and the threshold under which a prediction can be accepted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptRule {
+pub struct AcceptRule  {
     /// <p>Specifies whether you want to accept the top prediction for all targets or none.</p>
     pub rule: ::std::option::Option<crate::types::AcceptRuleBehavior>,
     /// <p>The confidence score that specifies the condition at which a prediction can be accepted.</p>
     pub threshold: ::std::option::Option<f32>,
 }
-impl AcceptRule {
+impl  AcceptRule  {
     /// <p>Specifies whether you want to accept the top prediction for all targets or none.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::AcceptRuleBehavior> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::AcceptRuleBehavior> {
         self.rule.as_ref()
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be accepted.</p>
@@ -41,8 +41,7 @@ impl AcceptRuleBuilder {
     }
     /// <p>Specifies whether you want to accept the top prediction for all targets or none.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::AcceptRuleBehavior>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>Specifies whether you want to accept the top prediction for all targets or none.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::AcceptRuleBehavior> {
@@ -55,8 +54,7 @@ impl AcceptRuleBuilder {
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be accepted.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The confidence score that specifies the condition at which a prediction can be accepted.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl AcceptRuleBuilder {
     /// Consumes the builder and constructs a [`AcceptRule`](crate::types::AcceptRule).
     pub fn build(self) -> crate::types::AcceptRule {
         crate::types::AcceptRule {
-            rule: self.rule,
-            threshold: self.threshold,
+            rule: self.rule
+            ,
+            threshold: self.threshold
+            ,
         }
     }
 }
+

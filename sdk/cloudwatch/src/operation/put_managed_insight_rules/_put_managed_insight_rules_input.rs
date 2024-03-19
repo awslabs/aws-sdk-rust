@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutManagedInsightRulesInput {
+pub struct PutManagedInsightRulesInput  {
     /// <p>A list of <code>ManagedRules</code> to enable.</p>
-    pub managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
+    pub managed_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRule>>,
 }
-impl PutManagedInsightRulesInput {
+impl  PutManagedInsightRulesInput  {
     /// <p>A list of <code>ManagedRules</code> to enable.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_rules.is_none()`.
-    pub fn managed_rules(&self) -> &[crate::types::ManagedRule] {
-        self.managed_rules.as_deref().unwrap_or_default()
+    pub fn managed_rules(&self) -> & [crate::types::ManagedRule] {
+        self.managed_rules.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutManagedInsightRulesInput {
@@ -25,7 +26,7 @@ impl PutManagedInsightRulesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutManagedInsightRulesInputBuilder {
-    pub(crate) managed_rules: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>,
+    pub(crate) managed_rules: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRule>>,
 }
 impl PutManagedInsightRulesInputBuilder {
     /// Appends an item to `managed_rules`.
@@ -35,28 +36,26 @@ impl PutManagedInsightRulesInputBuilder {
     /// <p>A list of <code>ManagedRules</code> to enable.</p>
     pub fn managed_rules(mut self, input: crate::types::ManagedRule) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
-        v.push(input);
-        self.managed_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ManagedRules</code> to enable.</p>
-    pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>>) -> Self {
-        self.managed_rules = input;
-        self
+    pub fn set_managed_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedRule>>) -> Self {
+        self.managed_rules = input; self
     }
     /// <p>A list of <code>ManagedRules</code> to enable.</p>
-    pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedRule>> {
+    pub fn get_managed_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedRule>> {
         &self.managed_rules
     }
     /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
-            managed_rules: self.managed_rules,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
+                managed_rules: self.managed_rules
+                ,
+            }
+        )
     }
 }
+

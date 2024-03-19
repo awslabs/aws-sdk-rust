@@ -3,7 +3,7 @@
 /// <p>Information about a <code>Bounce</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Bounce {
+pub struct Bounce  {
     /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub bounce_type: ::std::option::Option<crate::types::BounceType>,
     /// <p>The subtype of the bounce, as determined by SES.</p>
@@ -11,17 +11,17 @@ pub struct Bounce {
     /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub diagnostic_code: ::std::option::Option<::std::string::String>,
 }
-impl Bounce {
+impl  Bounce  {
     /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
-    pub fn bounce_type(&self) -> ::std::option::Option<&crate::types::BounceType> {
+    pub fn bounce_type(&self) -> ::std::option::Option<& crate::types::BounceType> {
         self.bounce_type.as_ref()
     }
     /// <p>The subtype of the bounce, as determined by SES.</p>
-    pub fn bounce_sub_type(&self) -> ::std::option::Option<&str> {
+    pub fn bounce_sub_type(&self) -> ::std::option::Option<& str> {
         self.bounce_sub_type.as_deref()
     }
     /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
-    pub fn diagnostic_code(&self) -> ::std::option::Option<&str> {
+    pub fn diagnostic_code(&self) -> ::std::option::Option<& str> {
         self.diagnostic_code.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl BounceBuilder {
     }
     /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn set_bounce_type(mut self, input: ::std::option::Option<crate::types::BounceType>) -> Self {
-        self.bounce_type = input;
-        self
+        self.bounce_type = input; self
     }
     /// <p>The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>, <code>TRANSIENT</code>, or <code>PERMANENT</code></p>
     pub fn get_bounce_type(&self) -> &::std::option::Option<crate::types::BounceType> {
@@ -62,8 +61,7 @@ impl BounceBuilder {
     }
     /// <p>The subtype of the bounce, as determined by SES.</p>
     pub fn set_bounce_sub_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bounce_sub_type = input;
-        self
+        self.bounce_sub_type = input; self
     }
     /// <p>The subtype of the bounce, as determined by SES.</p>
     pub fn get_bounce_sub_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl BounceBuilder {
     }
     /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn set_diagnostic_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.diagnostic_code = input;
-        self
+        self.diagnostic_code = input; self
     }
     /// <p>The status code issued by the reporting Message Transfer Authority (MTA). This field only appears if a delivery status notification (DSN) was attached to the bounce and the <code>Diagnostic-Code</code> was provided in the DSN.</p>
     pub fn get_diagnostic_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl BounceBuilder {
     /// Consumes the builder and constructs a [`Bounce`](crate::types::Bounce).
     pub fn build(self) -> crate::types::Bounce {
         crate::types::Bounce {
-            bounce_type: self.bounce_type,
-            bounce_sub_type: self.bounce_sub_type,
-            diagnostic_code: self.diagnostic_code,
+            bounce_type: self.bounce_type
+            ,
+            bounce_sub_type: self.bounce_sub_type
+            ,
+            diagnostic_code: self.diagnostic_code
+            ,
         }
     }
 }
+

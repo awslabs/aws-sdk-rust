@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdatePartitionInput {
+pub struct BatchUpdatePartitionInput  {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
@@ -10,26 +10,27 @@ pub struct BatchUpdatePartitionInput {
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdatePartitionRequestEntry>>,
 }
-impl BatchUpdatePartitionInput {
+impl  BatchUpdatePartitionInput  {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::BatchUpdatePartitionRequestEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::BatchUpdatePartitionRequestEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchUpdatePartitionInput {
@@ -46,7 +47,7 @@ pub struct BatchUpdatePartitionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdatePartitionRequestEntry>>,
 }
 impl BatchUpdatePartitionInputBuilder {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
@@ -56,8 +57,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,29 +98,32 @@ impl BatchUpdatePartitionInputBuilder {
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
     pub fn entries(mut self, input: crate::types::BatchUpdatePartitionRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdatePartitionRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchUpdatePartitionRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchUpdatePartitionInput`](crate::operation::batch_update_partition::BatchUpdatePartitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_update_partition::BatchUpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_update_partition::BatchUpdatePartitionInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            entries: self.entries,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_partition::BatchUpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_update_partition::BatchUpdatePartitionInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

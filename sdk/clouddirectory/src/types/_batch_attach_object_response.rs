@@ -3,13 +3,13 @@
 /// <p>Represents the output batch <code>AttachObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAttachObjectResponse {
+pub struct BatchAttachObjectResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     pub attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
-impl BatchAttachObjectResponse {
+impl  BatchAttachObjectResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-    pub fn attached_object_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> ::std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl BatchAttachObjectResponseBuilder {
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     pub fn set_attached_object_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attached_object_identifier = input;
-        self
+        self.attached_object_identifier = input; self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     pub fn get_attached_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl BatchAttachObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchAttachObjectResponse`](crate::types::BatchAttachObjectResponse).
     pub fn build(self) -> crate::types::BatchAttachObjectResponse {
         crate::types::BatchAttachObjectResponse {
-            attached_object_identifier: self.attached_object_identifier,
+            attached_object_identifier: self.attached_object_identifier
+            ,
         }
     }
 }
+

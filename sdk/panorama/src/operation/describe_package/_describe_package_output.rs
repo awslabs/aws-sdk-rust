@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePackageOutput {
+pub struct DescribePackageOutput  {
     /// <p>The package's ID.</p>
     pub package_id: ::std::string::String,
     /// <p>The package's name.</p>
@@ -12,61 +12,60 @@ pub struct DescribePackageOutput {
     /// <p>The package's storage location.</p>
     pub storage_location: ::std::option::Option<crate::types::StorageLocation>,
     /// <p>ARNs of accounts that have read access to the package.</p>
-    pub read_access_principal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub read_access_principal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>ARNs of accounts that have write access to the package.</p>
-    pub write_access_principal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub write_access_principal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>When the package was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The package's tags.</p>
-    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub tags: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribePackageOutput {
+impl  DescribePackageOutput  {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> & str {
+        use std::ops::Deref; self.package_id.deref()
     }
     /// <p>The package's name.</p>
-    pub fn package_name(&self) -> &str {
-        use std::ops::Deref;
-        self.package_name.deref()
+    pub fn package_name(&self) -> & str {
+        use std::ops::Deref; self.package_name.deref()
     }
     /// <p>The package's ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The package's storage location.</p>
-    pub fn storage_location(&self) -> ::std::option::Option<&crate::types::StorageLocation> {
+    pub fn storage_location(&self) -> ::std::option::Option<& crate::types::StorageLocation> {
         self.storage_location.as_ref()
     }
     /// <p>ARNs of accounts that have read access to the package.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_access_principal_arns.is_none()`.
-    pub fn read_access_principal_arns(&self) -> &[::std::string::String] {
-        self.read_access_principal_arns.as_deref().unwrap_or_default()
+    pub fn read_access_principal_arns(&self) -> & [::std::string::String] {
+        self.read_access_principal_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>ARNs of accounts that have write access to the package.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.write_access_principal_arns.is_none()`.
-    pub fn write_access_principal_arns(&self) -> &[::std::string::String] {
-        self.write_access_principal_arns.as_deref().unwrap_or_default()
+    pub fn write_access_principal_arns(&self) -> & [::std::string::String] {
+        self.write_access_principal_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When the package was created.</p>
-    pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The package's tags.</p>
-    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn tags(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.tags
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePackageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePackageOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput).
     pub fn builder() -> crate::operation::describe_package::builders::DescribePackageOutputBuilder {
@@ -82,10 +81,10 @@ pub struct DescribePackageOutputBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) storage_location: ::std::option::Option<crate::types::StorageLocation>,
-    pub(crate) read_access_principal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) write_access_principal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) read_access_principal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) write_access_principal_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribePackageOutputBuilder {
@@ -97,8 +96,7 @@ impl DescribePackageOutputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The package's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl DescribePackageOutputBuilder {
     }
     /// <p>The package's name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The package's name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl DescribePackageOutputBuilder {
     }
     /// <p>The package's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The package's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +138,7 @@ impl DescribePackageOutputBuilder {
     }
     /// <p>The package's storage location.</p>
     pub fn set_storage_location(mut self, input: ::std::option::Option<crate::types::StorageLocation>) -> Self {
-        self.storage_location = input;
-        self
+        self.storage_location = input; self
     }
     /// <p>The package's storage location.</p>
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
@@ -156,17 +151,16 @@ impl DescribePackageOutputBuilder {
     /// <p>ARNs of accounts that have read access to the package.</p>
     pub fn read_access_principal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.read_access_principal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.read_access_principal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.read_access_principal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ARNs of accounts that have read access to the package.</p>
-    pub fn set_read_access_principal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.read_access_principal_arns = input;
-        self
+    pub fn set_read_access_principal_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.read_access_principal_arns = input; self
     }
     /// <p>ARNs of accounts that have read access to the package.</p>
-    pub fn get_read_access_principal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_read_access_principal_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.read_access_principal_arns
     }
     /// Appends an item to `write_access_principal_arns`.
@@ -176,17 +170,16 @@ impl DescribePackageOutputBuilder {
     /// <p>ARNs of accounts that have write access to the package.</p>
     pub fn write_access_principal_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.write_access_principal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.write_access_principal_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.write_access_principal_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ARNs of accounts that have write access to the package.</p>
-    pub fn set_write_access_principal_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.write_access_principal_arns = input;
-        self
+    pub fn set_write_access_principal_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.write_access_principal_arns = input; self
     }
     /// <p>ARNs of accounts that have write access to the package.</p>
-    pub fn get_write_access_principal_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_write_access_principal_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.write_access_principal_arns
     }
     /// <p>When the package was created.</p>
@@ -197,8 +190,7 @@ impl DescribePackageOutputBuilder {
     }
     /// <p>When the package was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>When the package was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -211,28 +203,27 @@ impl DescribePackageOutputBuilder {
     /// <p>The package's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The package's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The package's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`package_id`](crate::operation::describe_package::builders::DescribePackageOutputBuilder::package_id)
@@ -240,44 +231,43 @@ impl DescribePackageOutputBuilder {
     /// - [`arn`](crate::operation::describe_package::builders::DescribePackageOutputBuilder::arn)
     /// - [`created_time`](crate::operation::describe_package::builders::DescribePackageOutputBuilder::created_time)
     /// - [`tags`](crate::operation::describe_package::builders::DescribePackageOutputBuilder::tags)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageOutput {
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building DescribePackageOutput",
-                )
-            })?,
-            package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "package_name",
-                    "package_name was not specified but it is required when building DescribePackageOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribePackageOutput",
-                )
-            })?,
-            storage_location: self.storage_location,
-            read_access_principal_arns: self.read_access_principal_arns,
-            write_access_principal_arns: self.write_access_principal_arns,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building DescribePackageOutput",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building DescribePackageOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_package::DescribePackageOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_package::DescribePackageOutput {
+                package_id: self.package_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_id", "package_id was not specified but it is required when building DescribePackageOutput")
+                    )?
+                ,
+                package_name: self.package_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("package_name", "package_name was not specified but it is required when building DescribePackageOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribePackageOutput")
+                    )?
+                ,
+                storage_location: self.storage_location
+                ,
+                read_access_principal_arns: self.read_access_principal_arns
+                ,
+                write_access_principal_arns: self.write_access_principal_arns
+                ,
+                created_time: self.created_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_time", "created_time was not specified but it is required when building DescribePackageOutput")
+                    )?
+                ,
+                tags: self.tags
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tags", "tags was not specified but it is required when building DescribePackageOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

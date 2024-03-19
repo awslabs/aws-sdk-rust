@@ -3,13 +3,13 @@
 /// <p>Describes the cores available to the neuron accelerator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NeuronDeviceCoreInfo {
+pub struct NeuronDeviceCoreInfo  {
     /// <p>The number of cores available to the neuron accelerator.</p>
     pub count: ::std::option::Option<i32>,
     /// <p>The version of the neuron accelerator.</p>
     pub version: ::std::option::Option<i32>,
 }
-impl NeuronDeviceCoreInfo {
+impl  NeuronDeviceCoreInfo  {
     /// <p>The number of cores available to the neuron accelerator.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
@@ -41,8 +41,7 @@ impl NeuronDeviceCoreInfoBuilder {
     }
     /// <p>The number of cores available to the neuron accelerator.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of cores available to the neuron accelerator.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl NeuronDeviceCoreInfoBuilder {
     }
     /// <p>The version of the neuron accelerator.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the neuron accelerator.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl NeuronDeviceCoreInfoBuilder {
     /// Consumes the builder and constructs a [`NeuronDeviceCoreInfo`](crate::types::NeuronDeviceCoreInfo).
     pub fn build(self) -> crate::types::NeuronDeviceCoreInfo {
         crate::types::NeuronDeviceCoreInfo {
-            count: self.count,
-            version: self.version,
+            count: self.count
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

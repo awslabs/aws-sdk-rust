@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLaunches`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`project(impl Into<String>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::set_project):<br>required: **true**<br><p>The name or ARN of the project to return the launch list from.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</p><br>
     ///   - [`status(LaunchStatus)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::status) / [`set_status(Option<LaunchStatus>)`](crate::operation::list_launches::builders::ListLaunchesFluentBuilder::set_status):<br>required: **false**<br><p>Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</p><br>
-    /// - On success, responds with [`ListLaunchesOutput`](crate::operation::list_launches::ListLaunchesOutput) with field(s):
+                            /// - On success, responds with [`ListLaunchesOutput`](crate::operation::list_launches::ListLaunchesOutput) with field(s):
     ///   - [`launches(Option<Vec::<Launch>>)`](crate::operation::list_launches::ListLaunchesOutput::launches): <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launches::ListLaunchesOutput::next_token): <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLaunchesError>`](crate::operation::list_launches::ListLaunchesError)
+                            /// - On failure, responds with [`SdkError<ListLaunchesError>`](crate::operation::list_launches::ListLaunchesError)
     pub fn list_launches(&self) -> crate::operation::list_launches::builders::ListLaunchesFluentBuilder {
-        crate::operation::list_launches::builders::ListLaunchesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_launches::builders::ListLaunchesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

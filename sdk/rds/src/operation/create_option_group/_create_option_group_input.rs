@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOptionGroupInput {
+pub struct CreateOptionGroupInput  {
     /// <p>Specifies the name of the option group to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -52,9 +52,9 @@ pub struct CreateOptionGroupInput {
     /// <p>The description of the option group.</p>
     pub option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the option group.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateOptionGroupInput {
+impl  CreateOptionGroupInput  {
     /// <p>Specifies the name of the option group to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -66,7 +66,7 @@ impl CreateOptionGroupInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code></p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>The name of the engine to associate this option group with.</p>
@@ -99,22 +99,23 @@ impl CreateOptionGroupInput {
     /// <li>
     /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
-    pub fn engine_name(&self) -> ::std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<& str> {
         self.engine_name.as_deref()
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_description(&self) -> ::std::option::Option<& str> {
         self.option_group_description.as_deref()
     }
     /// <p>Tags to assign to the option group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateOptionGroupInput {
@@ -132,7 +133,7 @@ pub struct CreateOptionGroupInputBuilder {
     pub(crate) engine_name: ::std::option::Option<::std::string::String>,
     pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) option_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateOptionGroupInputBuilder {
     /// <p>Specifies the name of the option group to be created.</p>
@@ -163,8 +164,7 @@ impl CreateOptionGroupInputBuilder {
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code></p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>Specifies the name of the option group to be created.</p>
     /// <p>Constraints:</p>
@@ -246,8 +246,7 @@ impl CreateOptionGroupInputBuilder {
     /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_name = input;
-        self
+        self.engine_name = input; self
     }
     /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
@@ -290,8 +289,7 @@ impl CreateOptionGroupInputBuilder {
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
+        self.major_engine_version = input; self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +303,7 @@ impl CreateOptionGroupInputBuilder {
     }
     /// <p>The description of the option group.</p>
     pub fn set_option_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_description = input;
-        self
+        self.option_group_description = input; self
     }
     /// <p>The description of the option group.</p>
     pub fn get_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -319,29 +316,34 @@ impl CreateOptionGroupInputBuilder {
     /// <p>Tags to assign to the option group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_option_group::CreateOptionGroupInput {
-            option_group_name: self.option_group_name,
-            engine_name: self.engine_name,
-            major_engine_version: self.major_engine_version,
-            option_group_description: self.option_group_description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_option_group::CreateOptionGroupInput {
+                option_group_name: self.option_group_name
+                ,
+                engine_name: self.engine_name
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                option_group_description: self.option_group_description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

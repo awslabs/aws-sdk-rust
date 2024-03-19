@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoverageNormalizedUnits {
+pub struct CoverageNormalizedUnits  {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
     pub on_demand_normalized_units: ::std::option::Option<::std::string::String>,
     /// <p>The number of normalized units that a reservation covers.</p>
@@ -14,21 +14,21 @@ pub struct CoverageNormalizedUnits {
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
     pub coverage_normalized_units_percentage: ::std::option::Option<::std::string::String>,
 }
-impl CoverageNormalizedUnits {
+impl  CoverageNormalizedUnits  {
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
-    pub fn on_demand_normalized_units(&self) -> ::std::option::Option<&str> {
+    pub fn on_demand_normalized_units(&self) -> ::std::option::Option<& str> {
         self.on_demand_normalized_units.as_deref()
     }
     /// <p>The number of normalized units that a reservation covers.</p>
-    pub fn reserved_normalized_units(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_normalized_units(&self) -> ::std::option::Option<& str> {
         self.reserved_normalized_units.as_deref()
     }
     /// <p>The total number of normalized units that you used.</p>
-    pub fn total_running_normalized_units(&self) -> ::std::option::Option<&str> {
+    pub fn total_running_normalized_units(&self) -> ::std::option::Option<& str> {
         self.total_running_normalized_units.as_deref()
     }
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
-    pub fn coverage_normalized_units_percentage(&self) -> ::std::option::Option<&str> {
+    pub fn coverage_normalized_units_percentage(&self) -> ::std::option::Option<& str> {
         self.coverage_normalized_units_percentage.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl CoverageNormalizedUnitsBuilder {
     }
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
     pub fn set_on_demand_normalized_units(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.on_demand_normalized_units = input;
-        self
+        self.on_demand_normalized_units = input; self
     }
     /// <p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>
     pub fn get_on_demand_normalized_units(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CoverageNormalizedUnitsBuilder {
     }
     /// <p>The number of normalized units that a reservation covers.</p>
     pub fn set_reserved_normalized_units(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_normalized_units = input;
-        self
+        self.reserved_normalized_units = input; self
     }
     /// <p>The number of normalized units that a reservation covers.</p>
     pub fn get_reserved_normalized_units(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CoverageNormalizedUnitsBuilder {
     }
     /// <p>The total number of normalized units that you used.</p>
     pub fn set_total_running_normalized_units(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.total_running_normalized_units = input;
-        self
+        self.total_running_normalized_units = input; self
     }
     /// <p>The total number of normalized units that you used.</p>
     pub fn get_total_running_normalized_units(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl CoverageNormalizedUnitsBuilder {
     }
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
     pub fn set_coverage_normalized_units_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.coverage_normalized_units_percentage = input;
-        self
+        self.coverage_normalized_units_percentage = input; self
     }
     /// <p>The percentage of your used instance normalized units that a reservation covers.</p>
     pub fn get_coverage_normalized_units_percentage(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,10 +104,15 @@ impl CoverageNormalizedUnitsBuilder {
     /// Consumes the builder and constructs a [`CoverageNormalizedUnits`](crate::types::CoverageNormalizedUnits).
     pub fn build(self) -> crate::types::CoverageNormalizedUnits {
         crate::types::CoverageNormalizedUnits {
-            on_demand_normalized_units: self.on_demand_normalized_units,
-            reserved_normalized_units: self.reserved_normalized_units,
-            total_running_normalized_units: self.total_running_normalized_units,
-            coverage_normalized_units_percentage: self.coverage_normalized_units_percentage,
+            on_demand_normalized_units: self.on_demand_normalized_units
+            ,
+            reserved_normalized_units: self.reserved_normalized_units
+            ,
+            total_running_normalized_units: self.total_running_normalized_units
+            ,
+            coverage_normalized_units_percentage: self.coverage_normalized_units_percentage
+            ,
         }
     }
 }
+

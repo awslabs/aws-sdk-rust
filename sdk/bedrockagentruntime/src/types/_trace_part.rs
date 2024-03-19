@@ -3,7 +3,7 @@
 /// <p>Contains information about the agent and session, alongside the agent's reasoning process and results from calling API actions and querying knowledge bases and metadata about the trace. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TracePart {
+pub struct TracePart  {
     /// <p>The unique identifier of the agent.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the alias of the agent.</p>
@@ -13,25 +13,25 @@ pub struct TracePart {
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub trace: ::std::option::Option<crate::types::Trace>,
 }
-impl TracePart {
+impl  TracePart  {
     /// <p>The unique identifier of the agent.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The unique identifier of the alias of the agent.</p>
-    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_id(&self) -> ::std::option::Option<& str> {
         self.agent_alias_id.as_deref()
     }
     /// <p>The unique identifier of the session with the agent.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
-    pub fn trace(&self) -> ::std::option::Option<&crate::types::Trace> {
+    pub fn trace(&self) -> ::std::option::Option<& crate::types::Trace> {
         self.trace.as_ref()
     }
 }
-impl ::std::fmt::Debug for TracePart {
+impl  ::std::fmt::Debug for TracePart  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TracePart");
         formatter.field("agent_id", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl TracePartBuilder {
     }
     /// <p>The unique identifier of the agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>The unique identifier of the agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl TracePartBuilder {
     }
     /// <p>The unique identifier of the alias of the agent.</p>
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// <p>The unique identifier of the alias of the agent.</p>
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl TracePartBuilder {
     }
     /// <p>The unique identifier of the session with the agent.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The unique identifier of the session with the agent.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl TracePartBuilder {
     }
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn set_trace(mut self, input: ::std::option::Option<crate::types::Trace>) -> Self {
-        self.trace = input;
-        self
+        self.trace = input; self
     }
     /// <p>Contains one part of the agent's reasoning process and results from calling API actions and querying knowledge bases. You can use the trace to understand how the agent arrived at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace enablement</a>.</p>
     pub fn get_trace(&self) -> &::std::option::Option<crate::types::Trace> {
@@ -117,10 +113,14 @@ impl TracePartBuilder {
     /// Consumes the builder and constructs a [`TracePart`](crate::types::TracePart).
     pub fn build(self) -> crate::types::TracePart {
         crate::types::TracePart {
-            agent_id: self.agent_id,
-            agent_alias_id: self.agent_alias_id,
-            session_id: self.session_id,
-            trace: self.trace,
+            agent_id: self.agent_id
+            ,
+            agent_alias_id: self.agent_alias_id
+            ,
+            session_id: self.session_id
+            ,
+            trace: self.trace
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for TracePartBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The identifier of the organization for which the user is created.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
@@ -21,34 +21,34 @@ pub struct CreateUserInput {
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
     pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
-impl CreateUserInput {
+impl  CreateUserInput  {
     /// <p>The identifier of the organization for which the user is created.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name for the new user.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The password for the new user.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The role of the new user.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::UserRole> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::UserRole> {
         self.role.as_ref()
     }
     /// <p>The first name of the new user.</p>
-    pub fn first_name(&self) -> ::std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the new user.</p>
-    pub fn last_name(&self) -> ::std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
@@ -56,7 +56,7 @@ impl CreateUserInput {
         self.hidden_from_global_address_list
     }
 }
-impl ::std::fmt::Debug for CreateUserInput {
+impl  ::std::fmt::Debug for CreateUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
@@ -99,8 +99,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The identifier of the organization for which the user is created.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier of the organization for which the user is created.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +127,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The display name for the new user.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name for the new user.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The password for the new user.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for the new user.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +155,7 @@ impl CreateUserInputBuilder {
     /// <p>The role of the new user.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the new user.</p>
     /// <p>You cannot pass <i>SYSTEM_USER</i> or <i>RESOURCE</i> role in a single request. When a user role is not selected, the default role of <i>USER</i> is selected.</p>
@@ -174,8 +169,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The first name of the new user.</p>
     pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The first name of the new user.</p>
     pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The last name of the new user.</p>
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The last name of the new user.</p>
     pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If this parameter is enabled, the user will be hidden from the address book.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
@@ -211,16 +203,26 @@ impl CreateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_user::CreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_user::CreateUserInput {
-            organization_id: self.organization_id,
-            name: self.name,
-            display_name: self.display_name,
-            password: self.password,
-            role: self.role,
-            first_name: self.first_name,
-            last_name: self.last_name,
-            hidden_from_global_address_list: self.hidden_from_global_address_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_user::CreateUserInput {
+                organization_id: self.organization_id
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                password: self.password
+                ,
+                role: self.role
+                ,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                hidden_from_global_address_list: self.hidden_from_global_address_list
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateUserInputBuilder {
@@ -237,3 +239,4 @@ impl ::std::fmt::Debug for CreateUserInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Contains information on the sum of usage based on an Amazon Web Services resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageResourceResult {
+pub struct UsageResourceResult  {
     /// <p>The Amazon Web Services resource that generated usage.</p>
     pub resource: ::std::option::Option<::std::string::String>,
     /// <p>Represents the sum total of usage for the specified resource type.</p>
     pub total: ::std::option::Option<crate::types::Total>,
 }
-impl UsageResourceResult {
+impl  UsageResourceResult  {
     /// <p>The Amazon Web Services resource that generated usage.</p>
-    pub fn resource(&self) -> ::std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Represents the sum total of usage for the specified resource type.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::Total> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UsageResourceResultBuilder {
     }
     /// <p>The Amazon Web Services resource that generated usage.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The Amazon Web Services resource that generated usage.</p>
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UsageResourceResultBuilder {
     }
     /// <p>Represents the sum total of usage for the specified resource type.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>Represents the sum total of usage for the specified resource type.</p>
     pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
@@ -65,8 +63,11 @@ impl UsageResourceResultBuilder {
     /// Consumes the builder and constructs a [`UsageResourceResult`](crate::types::UsageResourceResult).
     pub fn build(self) -> crate::types::UsageResourceResult {
         crate::types::UsageResourceResult {
-            resource: self.resource,
-            total: self.total,
+            resource: self.resource
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

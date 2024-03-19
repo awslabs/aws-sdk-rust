@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifySessionOutput {
+pub struct VerifySessionOutput  {
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
     pub identity: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl VerifySessionOutput {
+impl  VerifySessionOutput  {
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for VerifySessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl VerifySessionOutput {
     /// Creates a new builder-style object to manufacture [`VerifySessionOutput`](crate::operation::verify_session::VerifySessionOutput).
     pub fn builder() -> crate::operation::verify_session::builders::VerifySessionOutputBuilder {
@@ -40,27 +40,28 @@ impl VerifySessionOutputBuilder {
     }
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`VerifySessionOutput`](crate::operation::verify_session::VerifySessionOutput).
     pub fn build(self) -> crate::operation::verify_session::VerifySessionOutput {
         crate::operation::verify_session::VerifySessionOutput {
-            identity: self.identity,
+            identity: self.identity
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

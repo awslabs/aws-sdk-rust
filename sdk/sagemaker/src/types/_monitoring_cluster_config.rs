@@ -3,7 +3,7 @@
 /// <p>Configuration for the cluster used to run model monitoring jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringClusterConfig {
+pub struct MonitoringClusterConfig  {
     /// <p>The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <p>The ML compute instance type for the processing job.</p>
@@ -13,13 +13,13 @@ pub struct MonitoringClusterConfig {
     /// <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
-impl MonitoringClusterConfig {
+impl  MonitoringClusterConfig  {
     /// <p>The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProcessingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::ProcessingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The size of the ML storage volume, in gigabytes, that you want to provision. You must specify sufficient ML storage for your scenario.</p>
@@ -27,7 +27,7 @@ impl MonitoringClusterConfig {
         self.volume_size_in_gb
     }
     /// <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
-    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl MonitoringClusterConfigBuilder {
     }
     /// <p>The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -71,8 +70,7 @@ impl MonitoringClusterConfigBuilder {
     }
     /// <p>The ML compute instance type for the processing job.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::ProcessingInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The ML compute instance type for the processing job.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ProcessingInstanceType> {
@@ -86,8 +84,7 @@ impl MonitoringClusterConfigBuilder {
     }
     /// <p>The size of the ML storage volume, in gigabytes, that you want to provision. You must specify sufficient ML storage for your scenario.</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>The size of the ML storage volume, in gigabytes, that you want to provision. You must specify sufficient ML storage for your scenario.</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -100,8 +97,7 @@ impl MonitoringClusterConfigBuilder {
     }
     /// <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
     pub fn set_volume_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_kms_key_id = input;
-        self
+        self.volume_kms_key_id = input; self
     }
     /// <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the model monitoring job.</p>
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,10 +106,15 @@ impl MonitoringClusterConfigBuilder {
     /// Consumes the builder and constructs a [`MonitoringClusterConfig`](crate::types::MonitoringClusterConfig).
     pub fn build(self) -> crate::types::MonitoringClusterConfig {
         crate::types::MonitoringClusterConfig {
-            instance_count: self.instance_count,
-            instance_type: self.instance_type,
-            volume_size_in_gb: self.volume_size_in_gb,
-            volume_kms_key_id: self.volume_kms_key_id,
+            instance_count: self.instance_count
+            ,
+            instance_type: self.instance_type
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
+            volume_kms_key_id: self.volume_kms_key_id
+            ,
         }
     }
 }
+

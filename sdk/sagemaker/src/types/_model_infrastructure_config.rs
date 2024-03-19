@@ -3,7 +3,7 @@
 /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelInfrastructureConfig {
+pub struct ModelInfrastructureConfig  {
     /// <p>The inference option to which to deploy your model. Possible values are the following:</p>
     /// <ul>
     /// <li>
@@ -13,17 +13,17 @@ pub struct ModelInfrastructureConfig {
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
     pub real_time_inference_config: ::std::option::Option<crate::types::RealTimeInferenceConfig>,
 }
-impl ModelInfrastructureConfig {
+impl  ModelInfrastructureConfig  {
     /// <p>The inference option to which to deploy your model. Possible values are the following:</p>
     /// <ul>
     /// <li>
     /// <p><code>RealTime</code>: Deploy to real-time inference.</p></li>
     /// </ul>
-    pub fn infrastructure_type(&self) -> ::std::option::Option<&crate::types::ModelInfrastructureType> {
+    pub fn infrastructure_type(&self) -> ::std::option::Option<& crate::types::ModelInfrastructureType> {
         self.infrastructure_type.as_ref()
     }
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
-    pub fn real_time_inference_config(&self) -> ::std::option::Option<&crate::types::RealTimeInferenceConfig> {
+    pub fn real_time_inference_config(&self) -> ::std::option::Option<& crate::types::RealTimeInferenceConfig> {
         self.real_time_inference_config.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl ModelInfrastructureConfigBuilder {
     /// <p><code>RealTime</code>: Deploy to real-time inference.</p></li>
     /// </ul>
     pub fn set_infrastructure_type(mut self, input: ::std::option::Option<crate::types::ModelInfrastructureType>) -> Self {
-        self.infrastructure_type = input;
-        self
+        self.infrastructure_type = input; self
     }
     /// <p>The inference option to which to deploy your model. Possible values are the following:</p>
     /// <ul>
@@ -77,8 +76,7 @@ impl ModelInfrastructureConfigBuilder {
     }
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
     pub fn set_real_time_inference_config(mut self, input: ::std::option::Option<crate::types::RealTimeInferenceConfig>) -> Self {
-        self.real_time_inference_config = input;
-        self
+        self.real_time_inference_config = input; self
     }
     /// <p>The infrastructure configuration for deploying the model to real-time inference.</p>
     pub fn get_real_time_inference_config(&self) -> &::std::option::Option<crate::types::RealTimeInferenceConfig> {
@@ -87,8 +85,11 @@ impl ModelInfrastructureConfigBuilder {
     /// Consumes the builder and constructs a [`ModelInfrastructureConfig`](crate::types::ModelInfrastructureConfig).
     pub fn build(self) -> crate::types::ModelInfrastructureConfig {
         crate::types::ModelInfrastructureConfig {
-            infrastructure_type: self.infrastructure_type,
-            real_time_inference_config: self.real_time_inference_config,
+            infrastructure_type: self.infrastructure_type
+            ,
+            real_time_inference_config: self.real_time_inference_config
+            ,
         }
     }
 }
+

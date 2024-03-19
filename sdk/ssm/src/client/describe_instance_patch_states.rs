@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstancePatchStates`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_ids(impl Into<String>)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec::<String>>)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::set_instance_ids):<br>required: **true**<br><p>The ID of the managed node for which patch state information should be retrieved.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of managed nodes to return (per page).</p><br>
-    /// - On success, responds with [`DescribeInstancePatchStatesOutput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput) with field(s):
+                            /// - On success, responds with [`DescribeInstancePatchStatesOutput`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput) with field(s):
     ///   - [`instance_patch_states(Option<Vec::<InstancePatchState>>)`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput::instance_patch_states): <p>The high-level patch state for the requested managed nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesError>`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError)
-    pub fn describe_instance_patch_states(
-        &self,
-    ) -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder {
-        crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesError>`](crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError)
+    pub fn describe_instance_patch_states(&self) -> crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder {
+                                crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

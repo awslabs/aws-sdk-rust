@@ -3,7 +3,7 @@
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MeshData {
+pub struct MeshData  {
     /// <p>The name of the service mesh.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The associated specification for the service mesh.</p>
@@ -13,22 +13,21 @@ pub struct MeshData {
     /// <p>The status of the service mesh.</p>
     pub status: ::std::option::Option<crate::types::MeshStatus>,
 }
-impl MeshData {
+impl  MeshData  {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> & str {
+        use std::ops::Deref; self.mesh_name.deref()
     }
     /// <p>The associated specification for the service mesh.</p>
-    pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
+    pub fn spec(&self) -> ::std::option::Option<& crate::types::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the service mesh.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the service mesh.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MeshStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MeshStatus> {
         self.status.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl MeshDataBuilder {
     }
     /// <p>The name of the service mesh.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl MeshDataBuilder {
     }
     /// <p>The associated specification for the service mesh.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::MeshSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The associated specification for the service mesh.</p>
     pub fn get_spec(&self) -> &::std::option::Option<crate::types::MeshSpec> {
@@ -87,8 +84,7 @@ impl MeshDataBuilder {
     }
     /// <p>The associated metadata for the service mesh.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ResourceMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The associated metadata for the service mesh.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
@@ -102,8 +98,7 @@ impl MeshDataBuilder {
     }
     /// <p>The status of the service mesh.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MeshStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the service mesh.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MeshStatus> {
@@ -113,16 +108,21 @@ impl MeshDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mesh_name`](crate::types::builders::MeshDataBuilder::mesh_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MeshData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MeshData {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building MeshData",
-                )
-            })?,
-            spec: self.spec,
-            metadata: self.metadata,
-            status: self.status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MeshData {
+                mesh_name: self.mesh_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_name", "mesh_name was not specified but it is required when building MeshData")
+                    )?
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

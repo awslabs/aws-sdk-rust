@@ -3,13 +3,13 @@
 /// <p>A filter for annotation stores.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnnotationStoresFilter {
+pub struct ListAnnotationStoresFilter  {
     /// <p>A status to filter on.</p>
     pub status: ::std::option::Option<crate::types::StoreStatus>,
 }
-impl ListAnnotationStoresFilter {
+impl  ListAnnotationStoresFilter  {
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StoreStatus> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ListAnnotationStoresFilterBuilder {
     }
     /// <p>A status to filter on.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A status to filter on.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
@@ -43,6 +42,10 @@ impl ListAnnotationStoresFilterBuilder {
     }
     /// Consumes the builder and constructs a [`ListAnnotationStoresFilter`](crate::types::ListAnnotationStoresFilter).
     pub fn build(self) -> crate::types::ListAnnotationStoresFilter {
-        crate::types::ListAnnotationStoresFilter { status: self.status }
+        crate::types::ListAnnotationStoresFilter {
+            status: self.status
+            ,
+        }
     }
 }
+

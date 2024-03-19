@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAddonOutput {
+pub struct DescribeAddonOutput  {
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub addon: ::std::option::Option<crate::types::Addon>,
     _request_id: Option<String>,
 }
-impl DescribeAddonOutput {
+impl  DescribeAddonOutput  {
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn addon(&self) -> ::std::option::Option<&crate::types::Addon> {
+    pub fn addon(&self) -> ::std::option::Option<& crate::types::Addon> {
         self.addon.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAddonOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAddonOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAddonOutput`](crate::operation::describe_addon::DescribeAddonOutput).
     pub fn builder() -> crate::operation::describe_addon::builders::DescribeAddonOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAddonOutputBuilder {
     }
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_addon(mut self, input: ::std::option::Option<crate::types::Addon>) -> Self {
-        self.addon = input;
-        self
+        self.addon = input; self
     }
     /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_addon(&self) -> &::std::option::Option<crate::types::Addon> {
         &self.addon
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAddonOutput`](crate::operation::describe_addon::DescribeAddonOutput).
     pub fn build(self) -> crate::operation::describe_addon::DescribeAddonOutput {
         crate::operation::describe_addon::DescribeAddonOutput {
-            addon: self.addon,
+            addon: self.addon
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

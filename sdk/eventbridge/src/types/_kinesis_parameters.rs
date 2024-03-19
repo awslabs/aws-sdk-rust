@@ -3,15 +3,14 @@
 /// <p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisParameters {
+pub struct KinesisParameters  {
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub partition_key_path: ::std::string::String,
 }
-impl KinesisParameters {
+impl  KinesisParameters  {
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn partition_key_path(&self) -> &str {
-        use std::ops::Deref;
-        self.partition_key_path.deref()
+    pub fn partition_key_path(&self) -> & str {
+        use std::ops::Deref; self.partition_key_path.deref()
     }
 }
 impl KinesisParameters {
@@ -36,8 +35,7 @@ impl KinesisParametersBuilder {
     }
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub fn set_partition_key_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition_key_path = input;
-        self
+        self.partition_key_path = input; self
     }
     /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub fn get_partition_key_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KinesisParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`partition_key_path`](crate::types::builders::KinesisParametersBuilder::partition_key_path)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisParameters {
-            partition_key_path: self.partition_key_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partition_key_path",
-                    "partition_key_path was not specified but it is required when building KinesisParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisParameters {
+                partition_key_path: self.partition_key_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("partition_key_path", "partition_key_path was not specified but it is required when building KinesisParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

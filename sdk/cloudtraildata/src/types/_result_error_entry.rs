@@ -3,7 +3,7 @@
 /// <p>Includes the error code and error message for events that could not be ingested by CloudTrail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultErrorEntry {
+pub struct ResultErrorEntry  {
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
     pub id: ::std::string::String,
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
@@ -11,21 +11,18 @@ pub struct ResultErrorEntry {
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub error_message: ::std::string::String,
 }
-impl ResultErrorEntry {
+impl  ResultErrorEntry  {
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl ResultErrorEntry {
@@ -52,8 +49,7 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ResultErrorEntryBuilder {
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ResultErrorEntryBuilder {
     /// - [`error_code`](crate::types::builders::ResultErrorEntryBuilder::error_code)
     /// - [`error_message`](crate::types::builders::ResultErrorEntryBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::ResultErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResultErrorEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ResultErrorEntry",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building ResultErrorEntry",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building ResultErrorEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResultErrorEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ResultErrorEntry")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building ResultErrorEntry")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building ResultErrorEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

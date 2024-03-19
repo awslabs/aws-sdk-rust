@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCreateCaseOptionsOutput {
+pub struct DescribeCreateCaseOptionsOutput  {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -14,10 +14,10 @@ pub struct DescribeCreateCaseOptionsOutput {
     /// </ul>
     pub language_availability: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
-    pub communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
+    pub communication_types: ::std::option::Option<::std::vec::Vec::<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }
-impl DescribeCreateCaseOptionsOutput {
+impl  DescribeCreateCaseOptionsOutput  {
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -27,21 +27,22 @@ impl DescribeCreateCaseOptionsOutput {
     /// <li>
     /// <p>unavailable</p></li>
     /// </ul>
-    pub fn language_availability(&self) -> ::std::option::Option<&str> {
+    pub fn language_availability(&self) -> ::std::option::Option<& str> {
         self.language_availability.as_deref()
     }
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.communication_types.is_none()`.
-    pub fn communication_types(&self) -> &[crate::types::CommunicationTypeOptions] {
-        self.communication_types.as_deref().unwrap_or_default()
+    pub fn communication_types(&self) -> & [crate::types::CommunicationTypeOptions] {
+        self.communication_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCreateCaseOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCreateCaseOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
     pub fn builder() -> crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsOutputBuilder {
@@ -54,7 +55,7 @@ impl DescribeCreateCaseOptionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCreateCaseOptionsOutputBuilder {
     pub(crate) language_availability: ::std::option::Option<::std::string::String>,
-    pub(crate) communication_types: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>,
+    pub(crate) communication_types: ::std::option::Option<::std::vec::Vec::<crate::types::CommunicationTypeOptions>>,
     _request_id: Option<String>,
 }
 impl DescribeCreateCaseOptionsOutputBuilder {
@@ -81,8 +82,7 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     /// <p>unavailable</p></li>
     /// </ul>
     pub fn set_language_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.language_availability = input;
-        self
+        self.language_availability = input; self
     }
     /// <p>Language availability can be any of the following:</p>
     /// <ul>
@@ -103,34 +103,36 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
     pub fn communication_types(mut self, input: crate::types::CommunicationTypeOptions) -> Self {
         let mut v = self.communication_types.unwrap_or_default();
-        v.push(input);
-        self.communication_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.communication_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
-    pub fn set_communication_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>>) -> Self {
-        self.communication_types = input;
-        self
+    pub fn set_communication_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CommunicationTypeOptions>>) -> Self {
+        self.communication_types = input; self
     }
     /// <p>A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs.</p>
-    pub fn get_communication_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>> {
+    pub fn get_communication_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CommunicationTypeOptions>> {
         &self.communication_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCreateCaseOptionsOutput`](crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput).
     pub fn build(self) -> crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput {
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput {
-            language_availability: self.language_availability,
-            communication_types: self.communication_types,
+            language_availability: self.language_availability
+            ,
+            communication_types: self.communication_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

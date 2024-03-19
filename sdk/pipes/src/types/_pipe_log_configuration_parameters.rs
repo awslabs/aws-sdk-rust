@@ -6,7 +6,7 @@
 /// <p>For more information on generating pipe log records, see <a href="eventbridge/latest/userguide/eb-pipes-logs.html">Log EventBridge Pipes</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipeLogConfigurationParameters {
+pub struct PipeLogConfigurationParameters  {
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
     pub s3_log_destination: ::std::option::Option<crate::types::S3LogDestinationParameters>,
     /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
@@ -20,34 +20,35 @@ pub struct PipeLogConfigurationParameters {
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>The default is <code>OFF</code>.</p>
-    pub include_execution_data: ::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>>,
+    pub include_execution_data: ::std::option::Option<::std::vec::Vec::<crate::types::IncludeExecutionDataOption>>,
 }
-impl PipeLogConfigurationParameters {
+impl  PipeLogConfigurationParameters  {
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
-    pub fn s3_log_destination(&self) -> ::std::option::Option<&crate::types::S3LogDestinationParameters> {
+    pub fn s3_log_destination(&self) -> ::std::option::Option<& crate::types::S3LogDestinationParameters> {
         self.s3_log_destination.as_ref()
     }
     /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
-    pub fn firehose_log_destination(&self) -> ::std::option::Option<&crate::types::FirehoseLogDestinationParameters> {
+    pub fn firehose_log_destination(&self) -> ::std::option::Option<& crate::types::FirehoseLogDestinationParameters> {
         self.firehose_log_destination.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-    pub fn cloudwatch_logs_log_destination(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsLogDestinationParameters> {
+    pub fn cloudwatch_logs_log_destination(&self) -> ::std::option::Option<& crate::types::CloudwatchLogsLogDestinationParameters> {
         self.cloudwatch_logs_log_destination.as_ref()
     }
     /// <p>The level of logging detail to include. This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn level(&self) -> &crate::types::LogLevel {
+    pub fn level(&self) -> & crate::types::LogLevel {
         &self.level
     }
     /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>The default is <code>OFF</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_execution_data.is_none()`.
-    pub fn include_execution_data(&self) -> &[crate::types::IncludeExecutionDataOption] {
-        self.include_execution_data.as_deref().unwrap_or_default()
+    pub fn include_execution_data(&self) -> & [crate::types::IncludeExecutionDataOption] {
+        self.include_execution_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PipeLogConfigurationParameters {
@@ -65,7 +66,7 @@ pub struct PipeLogConfigurationParametersBuilder {
     pub(crate) firehose_log_destination: ::std::option::Option<crate::types::FirehoseLogDestinationParameters>,
     pub(crate) cloudwatch_logs_log_destination: ::std::option::Option<crate::types::CloudwatchLogsLogDestinationParameters>,
     pub(crate) level: ::std::option::Option<crate::types::LogLevel>,
-    pub(crate) include_execution_data: ::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>>,
+    pub(crate) include_execution_data: ::std::option::Option<::std::vec::Vec::<crate::types::IncludeExecutionDataOption>>,
 }
 impl PipeLogConfigurationParametersBuilder {
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
@@ -75,8 +76,7 @@ impl PipeLogConfigurationParametersBuilder {
     }
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
     pub fn set_s3_log_destination(mut self, input: ::std::option::Option<crate::types::S3LogDestinationParameters>) -> Self {
-        self.s3_log_destination = input;
-        self
+        self.s3_log_destination = input; self
     }
     /// <p>The Amazon S3 logging configuration settings for the pipe.</p>
     pub fn get_s3_log_destination(&self) -> &::std::option::Option<crate::types::S3LogDestinationParameters> {
@@ -89,8 +89,7 @@ impl PipeLogConfigurationParametersBuilder {
     }
     /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
     pub fn set_firehose_log_destination(mut self, input: ::std::option::Option<crate::types::FirehoseLogDestinationParameters>) -> Self {
-        self.firehose_log_destination = input;
-        self
+        self.firehose_log_destination = input; self
     }
     /// <p>The Amazon Kinesis Data Firehose logging configuration settings for the pipe.</p>
     pub fn get_firehose_log_destination(&self) -> &::std::option::Option<crate::types::FirehoseLogDestinationParameters> {
@@ -103,8 +102,7 @@ impl PipeLogConfigurationParametersBuilder {
     }
     /// <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
     pub fn set_cloudwatch_logs_log_destination(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsLogDestinationParameters>) -> Self {
-        self.cloudwatch_logs_log_destination = input;
-        self
+        self.cloudwatch_logs_log_destination = input; self
     }
     /// <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
     pub fn get_cloudwatch_logs_log_destination(&self) -> &::std::option::Option<crate::types::CloudwatchLogsLogDestinationParameters> {
@@ -120,8 +118,7 @@ impl PipeLogConfigurationParametersBuilder {
     /// <p>The level of logging detail to include. This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The level of logging detail to include. This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -138,40 +135,45 @@ impl PipeLogConfigurationParametersBuilder {
     /// <p>The default is <code>OFF</code>.</p>
     pub fn include_execution_data(mut self, input: crate::types::IncludeExecutionDataOption) -> Self {
         let mut v = self.include_execution_data.unwrap_or_default();
-        v.push(input);
-        self.include_execution_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.include_execution_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>The default is <code>OFF</code>.</p>
-    pub fn set_include_execution_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>>) -> Self {
-        self.include_execution_data = input;
-        self
+    pub fn set_include_execution_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IncludeExecutionDataOption>>) -> Self {
+        self.include_execution_data = input; self
     }
     /// <p>Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code> and <code>awsRequest</code> fields) in the log messages for this pipe.</p>
     /// <p>This applies to all log destinations for the pipe.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     /// <p>The default is <code>OFF</code>.</p>
-    pub fn get_include_execution_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IncludeExecutionDataOption>> {
+    pub fn get_include_execution_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IncludeExecutionDataOption>> {
         &self.include_execution_data
     }
     /// Consumes the builder and constructs a [`PipeLogConfigurationParameters`](crate::types::PipeLogConfigurationParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`level`](crate::types::builders::PipeLogConfigurationParametersBuilder::level)
     pub fn build(self) -> ::std::result::Result<crate::types::PipeLogConfigurationParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PipeLogConfigurationParameters {
-            s3_log_destination: self.s3_log_destination,
-            firehose_log_destination: self.firehose_log_destination,
-            cloudwatch_logs_log_destination: self.cloudwatch_logs_log_destination,
-            level: self.level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "level",
-                    "level was not specified but it is required when building PipeLogConfigurationParameters",
-                )
-            })?,
-            include_execution_data: self.include_execution_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PipeLogConfigurationParameters {
+                s3_log_destination: self.s3_log_destination
+                ,
+                firehose_log_destination: self.firehose_log_destination
+                ,
+                cloudwatch_logs_log_destination: self.cloudwatch_logs_log_destination
+                ,
+                level: self.level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("level", "level was not specified but it is required when building PipeLogConfigurationParameters")
+                    )?
+                ,
+                include_execution_data: self.include_execution_data
+                ,
+            }
+        )
     }
 }
+

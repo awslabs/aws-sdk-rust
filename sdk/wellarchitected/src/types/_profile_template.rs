@@ -3,33 +3,34 @@
 /// <p>The profile template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileTemplate {
+pub struct ProfileTemplate  {
     /// <p>The name of the profile template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Profile template questions.</p>
-    pub template_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
+    pub template_questions: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileTemplateQuestion>>,
     /// <p>The date and time recorded.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time recorded.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ProfileTemplate {
+impl  ProfileTemplate  {
     /// <p>The name of the profile template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>Profile template questions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_questions.is_none()`.
-    pub fn template_questions(&self) -> &[crate::types::ProfileTemplateQuestion] {
-        self.template_questions.as_deref().unwrap_or_default()
+    pub fn template_questions(&self) -> & [crate::types::ProfileTemplateQuestion] {
+        self.template_questions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time recorded.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -45,7 +46,7 @@ impl ProfileTemplate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileTemplateBuilder {
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
-    pub(crate) template_questions: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>,
+    pub(crate) template_questions: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileTemplateQuestion>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -57,8 +58,7 @@ impl ProfileTemplateBuilder {
     }
     /// <p>The name of the profile template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the profile template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl ProfileTemplateBuilder {
     /// <p>Profile template questions.</p>
     pub fn template_questions(mut self, input: crate::types::ProfileTemplateQuestion) -> Self {
         let mut v = self.template_questions.unwrap_or_default();
-        v.push(input);
-        self.template_questions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_questions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Profile template questions.</p>
-    pub fn set_template_questions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>>) -> Self {
-        self.template_questions = input;
-        self
+    pub fn set_template_questions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProfileTemplateQuestion>>) -> Self {
+        self.template_questions = input; self
     }
     /// <p>Profile template questions.</p>
-    pub fn get_template_questions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileTemplateQuestion>> {
+    pub fn get_template_questions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProfileTemplateQuestion>> {
         &self.template_questions
     }
     /// <p>The date and time recorded.</p>
@@ -91,8 +90,7 @@ impl ProfileTemplateBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -105,8 +103,7 @@ impl ProfileTemplateBuilder {
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time recorded.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -115,10 +112,15 @@ impl ProfileTemplateBuilder {
     /// Consumes the builder and constructs a [`ProfileTemplate`](crate::types::ProfileTemplate).
     pub fn build(self) -> crate::types::ProfileTemplate {
         crate::types::ProfileTemplate {
-            template_name: self.template_name,
-            template_questions: self.template_questions,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            template_name: self.template_name
+            ,
+            template_questions: self.template_questions
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

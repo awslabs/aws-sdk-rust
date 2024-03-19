@@ -3,22 +3,23 @@
 /// <p>A complex type that contains the list of Custom Headers for each origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomHeaders {
+pub struct CustomHeaders  {
     /// <p>The number of custom headers, if any, for this distribution.</p>
     pub quantity: i32,
     /// <p><b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<crate::types::OriginCustomHeader>>,
 }
-impl CustomHeaders {
+impl  CustomHeaders  {
     /// <p>The number of custom headers, if any, for this distribution.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
     }
     /// <p><b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[crate::types::OriginCustomHeader] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [crate::types::OriginCustomHeader] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomHeaders {
@@ -33,7 +34,7 @@ impl CustomHeaders {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CustomHeadersBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::OriginCustomHeader>>,
 }
 impl CustomHeadersBuilder {
     /// <p>The number of custom headers, if any, for this distribution.</p>
@@ -44,8 +45,7 @@ impl CustomHeadersBuilder {
     }
     /// <p>The number of custom headers, if any, for this distribution.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of custom headers, if any, for this distribution.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -58,31 +58,33 @@ impl CustomHeadersBuilder {
     /// <p><b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
     pub fn items(mut self, input: crate::types::OriginCustomHeader) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p><b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OriginCustomHeader>>) -> Self {
+        self.items = input; self
     }
     /// <p><b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginCustomHeader>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OriginCustomHeader>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`CustomHeaders`](crate::types::CustomHeaders).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::CustomHeadersBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomHeaders, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomHeaders {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building CustomHeaders",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomHeaders {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building CustomHeaders")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

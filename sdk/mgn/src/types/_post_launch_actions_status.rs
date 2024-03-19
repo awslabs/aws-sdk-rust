@@ -3,22 +3,23 @@
 /// <p>Status of the Post Launch Actions running on the Test or Cutover instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PostLaunchActionsStatus {
+pub struct PostLaunchActionsStatus  {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
     pub ssm_agent_discovery_datetime: ::std::option::Option<::std::string::String>,
     /// <p>List of Post Launch Action status.</p>
-    pub post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>,
+    pub post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::JobPostLaunchActionsLaunchStatus>>,
 }
-impl PostLaunchActionsStatus {
+impl  PostLaunchActionsStatus  {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
-    pub fn ssm_agent_discovery_datetime(&self) -> ::std::option::Option<&str> {
+    pub fn ssm_agent_discovery_datetime(&self) -> ::std::option::Option<& str> {
         self.ssm_agent_discovery_datetime.as_deref()
     }
     /// <p>List of Post Launch Action status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.post_launch_actions_launch_status_list.is_none()`.
-    pub fn post_launch_actions_launch_status_list(&self) -> &[crate::types::JobPostLaunchActionsLaunchStatus] {
-        self.post_launch_actions_launch_status_list.as_deref().unwrap_or_default()
+    pub fn post_launch_actions_launch_status_list(&self) -> & [crate::types::JobPostLaunchActionsLaunchStatus] {
+        self.post_launch_actions_launch_status_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PostLaunchActionsStatus {
@@ -33,7 +34,7 @@ impl PostLaunchActionsStatus {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PostLaunchActionsStatusBuilder {
     pub(crate) ssm_agent_discovery_datetime: ::std::option::Option<::std::string::String>,
-    pub(crate) post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>,
+    pub(crate) post_launch_actions_launch_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::JobPostLaunchActionsLaunchStatus>>,
 }
 impl PostLaunchActionsStatusBuilder {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
@@ -43,8 +44,7 @@ impl PostLaunchActionsStatusBuilder {
     }
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
     pub fn set_ssm_agent_discovery_datetime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssm_agent_discovery_datetime = input;
-        self
+        self.ssm_agent_discovery_datetime = input; self
     }
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
     pub fn get_ssm_agent_discovery_datetime(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,26 @@ impl PostLaunchActionsStatusBuilder {
     /// <p>List of Post Launch Action status.</p>
     pub fn post_launch_actions_launch_status_list(mut self, input: crate::types::JobPostLaunchActionsLaunchStatus) -> Self {
         let mut v = self.post_launch_actions_launch_status_list.unwrap_or_default();
-        v.push(input);
-        self.post_launch_actions_launch_status_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.post_launch_actions_launch_status_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of Post Launch Action status.</p>
-    pub fn set_post_launch_actions_launch_status_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>>,
-    ) -> Self {
-        self.post_launch_actions_launch_status_list = input;
-        self
+    pub fn set_post_launch_actions_launch_status_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobPostLaunchActionsLaunchStatus>>) -> Self {
+        self.post_launch_actions_launch_status_list = input; self
     }
     /// <p>List of Post Launch Action status.</p>
-    pub fn get_post_launch_actions_launch_status_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobPostLaunchActionsLaunchStatus>> {
+    pub fn get_post_launch_actions_launch_status_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobPostLaunchActionsLaunchStatus>> {
         &self.post_launch_actions_launch_status_list
     }
     /// Consumes the builder and constructs a [`PostLaunchActionsStatus`](crate::types::PostLaunchActionsStatus).
     pub fn build(self) -> crate::types::PostLaunchActionsStatus {
         crate::types::PostLaunchActionsStatus {
-            ssm_agent_discovery_datetime: self.ssm_agent_discovery_datetime,
-            post_launch_actions_launch_status_list: self.post_launch_actions_launch_status_list,
+            ssm_agent_discovery_datetime: self.ssm_agent_discovery_datetime
+            ,
+            post_launch_actions_launch_status_list: self.post_launch_actions_launch_status_list
+            ,
         }
     }
 }
+

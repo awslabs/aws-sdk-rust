@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessPreviewFindingsOutput {
+pub struct ListAccessPreviewFindingsOutput  {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub findings: ::std::vec::Vec<crate::types::AccessPreviewFinding>,
+    pub findings: ::std::vec::Vec::<crate::types::AccessPreviewFinding>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccessPreviewFindingsOutput {
+impl  ListAccessPreviewFindingsOutput  {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn findings(&self) -> &[crate::types::AccessPreviewFinding] {
-        use std::ops::Deref;
-        self.findings.deref()
+    pub fn findings(&self) -> & [crate::types::AccessPreviewFinding] {
+        use std::ops::Deref; self.findings.deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessPreviewFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessPreviewFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
     pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAccessPreviewFindingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessPreviewFindingsOutputBuilder {
-    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPreviewFinding>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAccessPreviewFindingsOutputBuilder {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
     pub fn findings(mut self, input: crate::types::AccessPreviewFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>>) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessPreviewFinding>>) -> Self {
+        self.findings = input; self
     }
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPreviewFinding>> {
+    pub fn get_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessPreviewFinding>> {
         &self.findings
     }
     /// <p>A token used for pagination of results returned.</p>
@@ -68,40 +66,37 @@ impl ListAccessPreviewFindingsOutputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsOutput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`findings`](crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder::findings)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
-            findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "findings",
-                    "findings was not specified but it is required when building ListAccessPreviewFindingsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
+                findings: self.findings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("findings", "findings was not specified but it is required when building ListAccessPreviewFindingsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

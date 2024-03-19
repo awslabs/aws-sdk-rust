@@ -21,11 +21,7 @@ impl AnalyzerConfiguration {
     /// Tries to convert the enum instance into [`UnusedAccess`](crate::types::AnalyzerConfiguration::UnusedAccess), extracting the inner [`UnusedAccessConfiguration`](crate::types::UnusedAccessConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unused_access(&self) -> ::std::result::Result<&crate::types::UnusedAccessConfiguration, &Self> {
-        if let AnalyzerConfiguration::UnusedAccess(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let AnalyzerConfiguration::UnusedAccess(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`UnusedAccess`](crate::types::AnalyzerConfiguration::UnusedAccess).
     pub fn is_unused_access(&self) -> bool {
@@ -36,3 +32,4 @@ impl AnalyzerConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

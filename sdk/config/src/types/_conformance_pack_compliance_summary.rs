@@ -3,20 +3,19 @@
 /// <p>Summary includes the name and status of the conformance pack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackComplianceSummary {
+pub struct ConformancePackComplianceSummary  {
     /// <p>The name of the conformance pack name.</p>
     pub conformance_pack_name: ::std::string::String,
     /// <p>The status of the conformance pack.</p>
     pub conformance_pack_compliance_status: crate::types::ConformancePackComplianceType,
 }
-impl ConformancePackComplianceSummary {
+impl  ConformancePackComplianceSummary  {
     /// <p>The name of the conformance pack name.</p>
-    pub fn conformance_pack_name(&self) -> &str {
-        use std::ops::Deref;
-        self.conformance_pack_name.deref()
+    pub fn conformance_pack_name(&self) -> & str {
+        use std::ops::Deref; self.conformance_pack_name.deref()
     }
     /// <p>The status of the conformance pack.</p>
-    pub fn conformance_pack_compliance_status(&self) -> &crate::types::ConformancePackComplianceType {
+    pub fn conformance_pack_compliance_status(&self) -> & crate::types::ConformancePackComplianceType {
         &self.conformance_pack_compliance_status
     }
 }
@@ -43,8 +42,7 @@ impl ConformancePackComplianceSummaryBuilder {
     }
     /// <p>The name of the conformance pack name.</p>
     pub fn set_conformance_pack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conformance_pack_name = input;
-        self
+        self.conformance_pack_name = input; self
     }
     /// <p>The name of the conformance pack name.</p>
     pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ConformancePackComplianceSummaryBuilder {
     }
     /// <p>The status of the conformance pack.</p>
     pub fn set_conformance_pack_compliance_status(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.conformance_pack_compliance_status = input;
-        self
+        self.conformance_pack_compliance_status = input; self
     }
     /// <p>The status of the conformance pack.</p>
     pub fn get_conformance_pack_compliance_status(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
@@ -70,19 +67,20 @@ impl ConformancePackComplianceSummaryBuilder {
     /// - [`conformance_pack_name`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_name)
     /// - [`conformance_pack_compliance_status`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_compliance_status)
     pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackComplianceSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConformancePackComplianceSummary {
-            conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "conformance_pack_name",
-                    "conformance_pack_name was not specified but it is required when building ConformancePackComplianceSummary",
-                )
-            })?,
-            conformance_pack_compliance_status: self.conformance_pack_compliance_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "conformance_pack_compliance_status",
-                    "conformance_pack_compliance_status was not specified but it is required when building ConformancePackComplianceSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConformancePackComplianceSummary {
+                conformance_pack_name: self.conformance_pack_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_name", "conformance_pack_name was not specified but it is required when building ConformancePackComplianceSummary")
+                    )?
+                ,
+                conformance_pack_compliance_status: self.conformance_pack_compliance_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_compliance_status", "conformance_pack_compliance_status was not specified but it is required when building ConformancePackComplianceSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanJoinResourceTypeEventConfiguration {
+pub struct LoRaWanJoinResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub wireless_device_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
-impl LoRaWanJoinResourceTypeEventConfiguration {
+impl  LoRaWanJoinResourceTypeEventConfiguration  {
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(&self) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    pub fn wireless_device_event_topic(&self) -> ::std::option::Option<& crate::types::EventNotificationTopicStatus> {
         self.wireless_device_event_topic.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LoRaWanJoinResourceTypeEventConfigurationBuilder {
     }
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn set_wireless_device_event_topic(mut self, input: ::std::option::Option<crate::types::EventNotificationTopicStatus>) -> Self {
-        self.wireless_device_event_topic = input;
-        self
+        self.wireless_device_event_topic = input; self
     }
     /// <p>Denotes whether the wireless device join event topic is enabled or disabled.</p>
     pub fn get_wireless_device_event_topic(&self) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
@@ -44,7 +43,9 @@ impl LoRaWanJoinResourceTypeEventConfigurationBuilder {
     /// Consumes the builder and constructs a [`LoRaWanJoinResourceTypeEventConfiguration`](crate::types::LoRaWanJoinResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::LoRaWanJoinResourceTypeEventConfiguration {
         crate::types::LoRaWanJoinResourceTypeEventConfiguration {
-            wireless_device_event_topic: self.wireless_device_event_topic,
+            wireless_device_event_topic: self.wireless_device_event_topic
+            ,
         }
     }
 }
+

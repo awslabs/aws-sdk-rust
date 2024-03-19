@@ -9,7 +9,7 @@
 /// <p><code>"rangeKeyValue": "${timestamp()}"</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DynamoDbAction {
+pub struct DynamoDbAction  {
     /// <p>The name of the DynamoDB table.</p>
     pub table_name: ::std::string::String,
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
@@ -31,49 +31,45 @@ pub struct DynamoDbAction {
     /// <p>The action payload. This name can be customized.</p>
     pub payload_field: ::std::option::Option<::std::string::String>,
 }
-impl DynamoDbAction {
+impl  DynamoDbAction  {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The hash key name.</p>
-    pub fn hash_key_field(&self) -> &str {
-        use std::ops::Deref;
-        self.hash_key_field.deref()
+    pub fn hash_key_field(&self) -> & str {
+        use std::ops::Deref; self.hash_key_field.deref()
     }
     /// <p>The hash key value.</p>
-    pub fn hash_key_value(&self) -> &str {
-        use std::ops::Deref;
-        self.hash_key_value.deref()
+    pub fn hash_key_value(&self) -> & str {
+        use std::ops::Deref; self.hash_key_value.deref()
     }
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
-    pub fn hash_key_type(&self) -> ::std::option::Option<&crate::types::DynamoKeyType> {
+    pub fn hash_key_type(&self) -> ::std::option::Option<& crate::types::DynamoKeyType> {
         self.hash_key_type.as_ref()
     }
     /// <p>The range key name.</p>
-    pub fn range_key_field(&self) -> ::std::option::Option<&str> {
+    pub fn range_key_field(&self) -> ::std::option::Option<& str> {
         self.range_key_field.as_deref()
     }
     /// <p>The range key value.</p>
-    pub fn range_key_value(&self) -> ::std::option::Option<&str> {
+    pub fn range_key_value(&self) -> ::std::option::Option<& str> {
         self.range_key_value.as_deref()
     }
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
-    pub fn range_key_type(&self) -> ::std::option::Option<&crate::types::DynamoKeyType> {
+    pub fn range_key_type(&self) -> ::std::option::Option<& crate::types::DynamoKeyType> {
         self.range_key_type.as_ref()
     }
     /// <p>The action payload. This name can be customized.</p>
-    pub fn payload_field(&self) -> ::std::option::Option<&str> {
+    pub fn payload_field(&self) -> ::std::option::Option<& str> {
         self.payload_field.as_deref()
     }
 }
@@ -108,8 +104,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The name of the DynamoDB table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the DynamoDB table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +118,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +131,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The type of operation to be performed. This follows the substitution template, so it can be <code>${operation}</code>, but the substitution must result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,8 +145,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The hash key name.</p>
     pub fn set_hash_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_key_field = input;
-        self
+        self.hash_key_field = input; self
     }
     /// <p>The hash key name.</p>
     pub fn get_hash_key_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +159,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The hash key value.</p>
     pub fn set_hash_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hash_key_value = input;
-        self
+        self.hash_key_value = input; self
     }
     /// <p>The hash key value.</p>
     pub fn get_hash_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +172,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn set_hash_key_type(mut self, input: ::std::option::Option<crate::types::DynamoKeyType>) -> Self {
-        self.hash_key_type = input;
-        self
+        self.hash_key_type = input; self
     }
     /// <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn get_hash_key_type(&self) -> &::std::option::Option<crate::types::DynamoKeyType> {
@@ -195,8 +185,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The range key name.</p>
     pub fn set_range_key_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_key_field = input;
-        self
+        self.range_key_field = input; self
     }
     /// <p>The range key name.</p>
     pub fn get_range_key_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +198,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The range key value.</p>
     pub fn set_range_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.range_key_value = input;
-        self
+        self.range_key_value = input; self
     }
     /// <p>The range key value.</p>
     pub fn get_range_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +211,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn set_range_key_type(mut self, input: ::std::option::Option<crate::types::DynamoKeyType>) -> Self {
-        self.range_key_type = input;
-        self
+        self.range_key_type = input; self
     }
     /// <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
     pub fn get_range_key_type(&self) -> &::std::option::Option<crate::types::DynamoKeyType> {
@@ -237,8 +224,7 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The action payload. This name can be customized.</p>
     pub fn set_payload_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_field = input;
-        self
+        self.payload_field = input; self
     }
     /// <p>The action payload. This name can be customized.</p>
     pub fn get_payload_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,37 +237,42 @@ impl DynamoDbActionBuilder {
     /// - [`hash_key_field`](crate::types::builders::DynamoDbActionBuilder::hash_key_field)
     /// - [`hash_key_value`](crate::types::builders::DynamoDbActionBuilder::hash_key_value)
     pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DynamoDbAction {
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            operation: self.operation,
-            hash_key_field: self.hash_key_field.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hash_key_field",
-                    "hash_key_field was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            hash_key_value: self.hash_key_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "hash_key_value",
-                    "hash_key_value was not specified but it is required when building DynamoDbAction",
-                )
-            })?,
-            hash_key_type: self.hash_key_type,
-            range_key_field: self.range_key_field,
-            range_key_value: self.range_key_value,
-            range_key_type: self.range_key_type,
-            payload_field: self.payload_field,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DynamoDbAction {
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                operation: self.operation
+                ,
+                hash_key_field: self.hash_key_field
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hash_key_field", "hash_key_field was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                hash_key_value: self.hash_key_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("hash_key_value", "hash_key_value was not specified but it is required when building DynamoDbAction")
+                    )?
+                ,
+                hash_key_type: self.hash_key_type
+                ,
+                range_key_field: self.range_key_field
+                ,
+                range_key_value: self.range_key_value
+                ,
+                range_key_type: self.range_key_type
+                ,
+                payload_field: self.payload_field
+                ,
+            }
+        )
     }
 }
+

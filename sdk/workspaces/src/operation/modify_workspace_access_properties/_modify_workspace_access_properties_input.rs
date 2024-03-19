@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyWorkspaceAccessPropertiesInput {
+pub struct ModifyWorkspaceAccessPropertiesInput  {
     /// <p>The identifier of the directory.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The device types and operating systems to enable or disable for access.</p>
     pub workspace_access_properties: ::std::option::Option<crate::types::WorkspaceAccessProperties>,
 }
-impl ModifyWorkspaceAccessPropertiesInput {
+impl  ModifyWorkspaceAccessPropertiesInput  {
     /// <p>The identifier of the directory.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The device types and operating systems to enable or disable for access.</p>
-    pub fn workspace_access_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceAccessProperties> {
+    pub fn workspace_access_properties(&self) -> ::std::option::Option<& crate::types::WorkspaceAccessProperties> {
         self.workspace_access_properties.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the directory.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl ModifyWorkspaceAccessPropertiesInputBuilder {
     }
     /// <p>The device types and operating systems to enable or disable for access.</p>
     pub fn set_workspace_access_properties(mut self, input: ::std::option::Option<crate::types::WorkspaceAccessProperties>) -> Self {
-        self.workspace_access_properties = input;
-        self
+        self.workspace_access_properties = input; self
     }
     /// <p>The device types and operating systems to enable or disable for access.</p>
     pub fn get_workspace_access_properties(&self) -> &::std::option::Option<crate::types::WorkspaceAccessProperties> {
         &self.workspace_access_properties
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceAccessPropertiesInput`](crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessPropertiesInput {
-                resource_id: self.resource_id,
-                workspace_access_properties: self.workspace_access_properties,
-            },
+                resource_id: self.resource_id
+                ,
+                workspace_access_properties: self.workspace_access_properties
+                ,
+            }
         )
     }
 }
+

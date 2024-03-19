@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnomalyGroupRelatedMetrics`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the anomaly detector.</p><br>
     ///   - [`anomaly_group_id(impl Into<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::anomaly_group_id) / [`set_anomaly_group_id(Option<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::set_anomaly_group_id):<br>required: **true**<br><p>The ID of the anomaly group.</p><br>
     ///   - [`relationship_type_filter(RelationshipType)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::relationship_type_filter) / [`set_relationship_type_filter(Option<RelationshipType>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::set_relationship_type_filter):<br>required: **false**<br><p>Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput) with field(s):
+                            /// - On success, responds with [`ListAnomalyGroupRelatedMetricsOutput`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput) with field(s):
     ///   - [`inter_metric_impact_list(Option<Vec::<InterMetricImpactDetails>>)`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput::inter_metric_impact_list): <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListAnomalyGroupRelatedMetricsError>`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsError)
-    pub fn list_anomaly_group_related_metrics(
-        &self,
-    ) -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder {
-        crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAnomalyGroupRelatedMetricsError>`](crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsError)
+    pub fn list_anomaly_group_related_metrics(&self) -> crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder {
+                                crate::operation::list_anomaly_group_related_metrics::builders::ListAnomalyGroupRelatedMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

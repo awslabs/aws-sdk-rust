@@ -3,16 +3,17 @@
 /// <p>Contains information about the reason that the finding was generated.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Evidence {
+pub struct Evidence  {
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    pub threat_intelligence_details: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>>,
+    pub threat_intelligence_details: ::std::option::Option<::std::vec::Vec::<crate::types::ThreatIntelligenceDetail>>,
 }
-impl Evidence {
+impl  Evidence  {
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.threat_intelligence_details.is_none()`.
-    pub fn threat_intelligence_details(&self) -> &[crate::types::ThreatIntelligenceDetail] {
-        self.threat_intelligence_details.as_deref().unwrap_or_default()
+    pub fn threat_intelligence_details(&self) -> & [crate::types::ThreatIntelligenceDetail] {
+        self.threat_intelligence_details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Evidence {
@@ -26,7 +27,7 @@ impl Evidence {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvidenceBuilder {
-    pub(crate) threat_intelligence_details: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>>,
+    pub(crate) threat_intelligence_details: ::std::option::Option<::std::vec::Vec::<crate::types::ThreatIntelligenceDetail>>,
 }
 impl EvidenceBuilder {
     /// Appends an item to `threat_intelligence_details`.
@@ -36,23 +37,24 @@ impl EvidenceBuilder {
     /// <p>A list of threat intelligence details related to the evidence.</p>
     pub fn threat_intelligence_details(mut self, input: crate::types::ThreatIntelligenceDetail) -> Self {
         let mut v = self.threat_intelligence_details.unwrap_or_default();
-        v.push(input);
-        self.threat_intelligence_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.threat_intelligence_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    pub fn set_threat_intelligence_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>>) -> Self {
-        self.threat_intelligence_details = input;
-        self
+    pub fn set_threat_intelligence_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThreatIntelligenceDetail>>) -> Self {
+        self.threat_intelligence_details = input; self
     }
     /// <p>A list of threat intelligence details related to the evidence.</p>
-    pub fn get_threat_intelligence_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThreatIntelligenceDetail>> {
+    pub fn get_threat_intelligence_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThreatIntelligenceDetail>> {
         &self.threat_intelligence_details
     }
     /// Consumes the builder and constructs a [`Evidence`](crate::types::Evidence).
     pub fn build(self) -> crate::types::Evidence {
         crate::types::Evidence {
-            threat_intelligence_details: self.threat_intelligence_details,
+            threat_intelligence_details: self.threat_intelligence_details
+            ,
         }
     }
 }
+

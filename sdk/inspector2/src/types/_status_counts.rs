@@ -3,7 +3,7 @@
 /// <p>The status counts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatusCounts {
+pub struct StatusCounts  {
     /// <p>The number of checks that failed.</p>
     pub failed: ::std::option::Option<i32>,
     /// <p>The number of checks that were skipped.</p>
@@ -11,7 +11,7 @@ pub struct StatusCounts {
     /// <p>The number of checks that passed.</p>
     pub passed: ::std::option::Option<i32>,
 }
-impl StatusCounts {
+impl  StatusCounts  {
     /// <p>The number of checks that failed.</p>
     pub fn failed(&self) -> ::std::option::Option<i32> {
         self.failed
@@ -48,8 +48,7 @@ impl StatusCountsBuilder {
     }
     /// <p>The number of checks that failed.</p>
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The number of checks that failed.</p>
     pub fn get_failed(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl StatusCountsBuilder {
     }
     /// <p>The number of checks that were skipped.</p>
     pub fn set_skipped(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.skipped = input;
-        self
+        self.skipped = input; self
     }
     /// <p>The number of checks that were skipped.</p>
     pub fn get_skipped(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl StatusCountsBuilder {
     }
     /// <p>The number of checks that passed.</p>
     pub fn set_passed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.passed = input;
-        self
+        self.passed = input; self
     }
     /// <p>The number of checks that passed.</p>
     pub fn get_passed(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl StatusCountsBuilder {
     /// Consumes the builder and constructs a [`StatusCounts`](crate::types::StatusCounts).
     pub fn build(self) -> crate::types::StatusCounts {
         crate::types::StatusCounts {
-            failed: self.failed,
-            skipped: self.skipped,
-            passed: self.passed,
+            failed: self.failed
+            ,
+            skipped: self.skipped
+            ,
+            passed: self.passed
+            ,
         }
     }
 }
+

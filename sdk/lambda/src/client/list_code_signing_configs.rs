@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCodeSigningConfigs`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::set_marker):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::set_max_items):<br>required: **false**<br><p>Maximum number of items to return.</p><br>
-    /// - On success, responds with [`ListCodeSigningConfigsOutput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput) with field(s):
+                            /// - On success, responds with [`ListCodeSigningConfigsOutput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`code_signing_configs(Option<Vec::<CodeSigningConfig>>)`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput::code_signing_configs): <p>The code signing configurations</p>
-    /// - On failure, responds with [`SdkError<ListCodeSigningConfigsError>`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsError)
+                            /// - On failure, responds with [`SdkError<ListCodeSigningConfigsError>`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsError)
     pub fn list_code_signing_configs(&self) -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder {
-        crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

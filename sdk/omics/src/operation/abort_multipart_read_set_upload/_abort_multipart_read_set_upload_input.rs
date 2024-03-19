@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AbortMultipartReadSetUploadInput {
+pub struct AbortMultipartReadSetUploadInput  {
     /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the multipart upload.</p>
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
-impl AbortMultipartReadSetUploadInput {
+impl  AbortMultipartReadSetUploadInput  {
     /// <p>The sequence store ID for the store involved in the multipart upload.</p>
-    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The ID for the multipart upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
     }
     /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The sequence store ID for the store involved in the multipart upload.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl AbortMultipartReadSetUploadInputBuilder {
     }
     /// <p>The ID for the multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The ID for the multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.upload_id
     }
     /// Consumes the builder and constructs a [`AbortMultipartReadSetUploadInput`](crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
-            sequence_store_id: self.sequence_store_id,
-            upload_id: self.upload_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
+                sequence_store_id: self.sequence_store_id
+                ,
+                upload_id: self.upload_id
+                ,
+            }
+        )
     }
 }
+

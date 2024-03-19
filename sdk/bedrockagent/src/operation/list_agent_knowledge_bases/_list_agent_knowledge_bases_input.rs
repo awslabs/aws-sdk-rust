@@ -3,7 +3,7 @@
 /// List Agent Knowledge Bases Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAgentKnowledgeBasesInput {
+pub struct ListAgentKnowledgeBasesInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Version number generated when a version is created
@@ -13,13 +13,13 @@ pub struct ListAgentKnowledgeBasesInput {
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListAgentKnowledgeBasesInput {
+impl  ListAgentKnowledgeBasesInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Version number generated when a version is created
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Max Results.
@@ -27,7 +27,7 @@ impl ListAgentKnowledgeBasesInput {
         self.max_results
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl ListAgentKnowledgeBasesInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ListAgentKnowledgeBasesInputBuilder {
     }
     /// Version number generated when a version is created
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Version number generated when a version is created
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ListAgentKnowledgeBasesInputBuilder {
     }
     /// Max Results.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Max Results.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -99,25 +96,26 @@ impl ListAgentKnowledgeBasesInputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAgentKnowledgeBasesInput`](crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_agent_knowledge_bases::ListAgentKnowledgeBasesInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

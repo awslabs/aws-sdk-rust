@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLaunchConfigurationsInput {
+pub struct DescribeLaunchConfigurationsInput  {
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub launch_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub launch_configuration_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribeLaunchConfigurationsInput {
+impl  DescribeLaunchConfigurationsInput  {
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_configuration_names.is_none()`.
-    pub fn launch_configuration_names(&self) -> &[::std::string::String] {
-        self.launch_configuration_names.as_deref().unwrap_or_default()
+    pub fn launch_configuration_names(&self) -> & [::std::string::String] {
+        self.launch_configuration_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -39,7 +40,7 @@ impl DescribeLaunchConfigurationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsInputBuilder {
-    pub(crate) launch_configuration_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) launch_configuration_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -52,19 +53,18 @@ impl DescribeLaunchConfigurationsInputBuilder {
     /// <p>Array Members: Maximum number of 50 items.</p>
     pub fn launch_configuration_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.launch_configuration_names.unwrap_or_default();
-        v.push(input.into());
-        self.launch_configuration_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.launch_configuration_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_launch_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.launch_configuration_names = input;
-        self
+    pub fn set_launch_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.launch_configuration_names = input; self
     }
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_launch_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_launch_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.launch_configuration_names
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -74,8 +74,7 @@ impl DescribeLaunchConfigurationsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,24 +87,24 @@ impl DescribeLaunchConfigurationsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeLaunchConfigurationsInput`](crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput {
-            launch_configuration_names: self.launch_configuration_names,
-            next_token: self.next_token,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput {
+                launch_configuration_names: self.launch_configuration_names
+                ,
+                next_token: self.next_token
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

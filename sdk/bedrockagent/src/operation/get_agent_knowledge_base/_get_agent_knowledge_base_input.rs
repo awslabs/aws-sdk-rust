@@ -3,7 +3,7 @@
 /// Get Agent Knowledge Base Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentKnowledgeBaseInput {
+pub struct GetAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Version number generated when a version is created
@@ -11,17 +11,17 @@ pub struct GetAgentKnowledgeBaseInput {
     /// Id generated at the server side when a Knowledge Base is associated
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAgentKnowledgeBaseInput {
+impl  GetAgentKnowledgeBaseInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Version number generated when a version is created
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Id generated at the server side when a Knowledge Base is associated
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl GetAgentKnowledgeBaseInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl GetAgentKnowledgeBaseInputBuilder {
     }
     /// Version number generated when a version is created
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Version number generated when a version is created
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl GetAgentKnowledgeBaseInputBuilder {
     }
     /// Id generated at the server side when a Knowledge Base is associated
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// Id generated at the server side when a Knowledge Base is associated
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`GetAgentKnowledgeBaseInput`](crate::operation::get_agent_knowledge_base::GetAgentKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_agent_knowledge_base::GetAgentKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_agent_knowledge_base::GetAgentKnowledgeBaseInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            knowledge_base_id: self.knowledge_base_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_agent_knowledge_base::GetAgentKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_agent_knowledge_base::GetAgentKnowledgeBaseInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

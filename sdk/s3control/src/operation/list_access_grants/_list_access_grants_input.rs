@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessGrantsInput {
+pub struct ListAccessGrantsInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p>
@@ -36,13 +36,13 @@ pub struct ListAccessGrantsInput {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListAccessGrantsInput {
+impl  ListAccessGrantsInput  {
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
@@ -58,11 +58,11 @@ impl ListAccessGrantsInput {
     /// <li>
     /// <p><code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this option if you have added your corporate identity directory to IAM Identity Center and associated the IAM Identity Center instance with your S3 Access Grants instance.</p></li>
     /// </ul>
-    pub fn grantee_type(&self) -> ::std::option::Option<&crate::types::GranteeType> {
+    pub fn grantee_type(&self) -> ::std::option::Option<& crate::types::GranteeType> {
         self.grantee_type.as_ref()
     }
     /// <p>The unique identifer of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
-    pub fn grantee_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn grantee_identifier(&self) -> ::std::option::Option<& str> {
         self.grantee_identifier.as_deref()
     }
     /// <p>The type of permission granted to your S3 data, which can be set to one of the following values:</p>
@@ -74,15 +74,15 @@ impl ListAccessGrantsInput {
     /// <li>
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
-    pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
+    pub fn permission(&self) -> ::std::option::Option<& crate::types::Permission> {
         self.permission.as_ref()
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
-    pub fn grant_scope(&self) -> ::std::option::Option<&str> {
+    pub fn grant_scope(&self) -> ::std::option::Option<& str> {
         self.grant_scope.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
@@ -115,8 +115,7 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that is making this request.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants</code> request in order to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of access grants that you would like returned in the <code>List Access Grants</code> response. If the results include the pagination token <code>NextToken</code>, make another call using the <code>NextToken</code> to determine if there are more results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -173,8 +170,7 @@ impl ListAccessGrantsInputBuilder {
     /// <p><code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this option if you have added your corporate identity directory to IAM Identity Center and associated the IAM Identity Center instance with your S3 Access Grants instance.</p></li>
     /// </ul>
     pub fn set_grantee_type(mut self, input: ::std::option::Option<crate::types::GranteeType>) -> Self {
-        self.grantee_type = input;
-        self
+        self.grantee_type = input; self
     }
     /// <p>The type of the grantee to which access has been granted. It can be one of the following values:</p>
     /// <ul>
@@ -195,8 +191,7 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>The unique identifer of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
     pub fn set_grantee_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grantee_identifier = input;
-        self
+        self.grantee_identifier = input; self
     }
     /// <p>The unique identifer of the <code>Grantee</code>. If the grantee type is <code>IAM</code>, the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee type is a directory user or group, the identifier is 128-bit universally unique identifier (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain this UUID from your Amazon Web Services IAM Identity Center instance.</p>
     pub fn get_grantee_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +220,7 @@ impl ListAccessGrantsInputBuilder {
     /// <p><code>READWRITE</code> – Grant both read and write access to the S3 data.</p></li>
     /// </ul>
     pub fn set_permission(mut self, input: ::std::option::Option<crate::types::Permission>) -> Self {
-        self.permission = input;
-        self
+        self.permission = input; self
     }
     /// <p>The type of permission granted to your S3 data, which can be set to one of the following values:</p>
     /// <ul>
@@ -247,8 +241,7 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
     pub fn set_grant_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_scope = input;
-        self
+        self.grant_scope = input; self
     }
     /// <p>The S3 path of the data to which you are granting access. It is the result of appending the <code>Subprefix</code> to the location scope.</p>
     pub fn get_grant_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,26 +254,34 @@ impl ListAccessGrantsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services IAM Identity Center application associated with your Identity Center instance. If the grant includes an application ARN, the grantee can only access the S3 data through this application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
     /// Consumes the builder and constructs a [`ListAccessGrantsInput`](crate::operation::list_access_grants::ListAccessGrantsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_access_grants::ListAccessGrantsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_access_grants::ListAccessGrantsInput {
-            account_id: self.account_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            grantee_type: self.grantee_type,
-            grantee_identifier: self.grantee_identifier,
-            permission: self.permission,
-            grant_scope: self.grant_scope,
-            application_arn: self.application_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_access_grants::ListAccessGrantsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_access_grants::ListAccessGrantsInput {
+                account_id: self.account_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                grantee_type: self.grantee_type
+                ,
+                grantee_identifier: self.grantee_identifier
+                ,
+                permission: self.permission
+                ,
+                grant_scope: self.grant_scope
+                ,
+                application_arn: self.application_arn
+                ,
+            }
+        )
     }
 }
+

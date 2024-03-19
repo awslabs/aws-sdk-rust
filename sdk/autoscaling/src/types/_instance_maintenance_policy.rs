@@ -4,14 +4,14 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceMaintenancePolicy {
+pub struct InstanceMaintenancePolicy  {
     /// <p>Specifies the lower threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload when replacing instances. Value range is 0 to 100. To clear a previously set value, specify a value of <code>-1</code>.</p>
     pub min_healthy_percentage: ::std::option::Option<i32>,
     /// <p>Specifies the upper threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. Value range is 100 to 200. To clear a previously set value, specify a value of <code>-1</code>.</p>
     /// <p>Both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> must be specified, and the difference between them cannot be greater than 100. A large range increases the number of instances that can be replaced at the same time.</p>
     pub max_healthy_percentage: ::std::option::Option<i32>,
 }
-impl InstanceMaintenancePolicy {
+impl  InstanceMaintenancePolicy  {
     /// <p>Specifies the lower threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload when replacing instances. Value range is 0 to 100. To clear a previously set value, specify a value of <code>-1</code>.</p>
     pub fn min_healthy_percentage(&self) -> ::std::option::Option<i32> {
         self.min_healthy_percentage
@@ -44,8 +44,7 @@ impl InstanceMaintenancePolicyBuilder {
     }
     /// <p>Specifies the lower threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload when replacing instances. Value range is 0 to 100. To clear a previously set value, specify a value of <code>-1</code>.</p>
     pub fn set_min_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_healthy_percentage = input;
-        self
+        self.min_healthy_percentage = input; self
     }
     /// <p>Specifies the lower threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload when replacing instances. Value range is 0 to 100. To clear a previously set value, specify a value of <code>-1</code>.</p>
     pub fn get_min_healthy_percentage(&self) -> &::std::option::Option<i32> {
@@ -60,8 +59,7 @@ impl InstanceMaintenancePolicyBuilder {
     /// <p>Specifies the upper threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. Value range is 100 to 200. To clear a previously set value, specify a value of <code>-1</code>.</p>
     /// <p>Both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> must be specified, and the difference between them cannot be greater than 100. A large range increases the number of instances that can be replaced at the same time.</p>
     pub fn set_max_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_healthy_percentage = input;
-        self
+        self.max_healthy_percentage = input; self
     }
     /// <p>Specifies the upper threshold as a percentage of the desired capacity of the Auto Scaling group. It represents the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. Value range is 100 to 200. To clear a previously set value, specify a value of <code>-1</code>.</p>
     /// <p>Both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> must be specified, and the difference between them cannot be greater than 100. A large range increases the number of instances that can be replaced at the same time.</p>
@@ -71,8 +69,11 @@ impl InstanceMaintenancePolicyBuilder {
     /// Consumes the builder and constructs a [`InstanceMaintenancePolicy`](crate::types::InstanceMaintenancePolicy).
     pub fn build(self) -> crate::types::InstanceMaintenancePolicy {
         crate::types::InstanceMaintenancePolicy {
-            min_healthy_percentage: self.min_healthy_percentage,
-            max_healthy_percentage: self.max_healthy_percentage,
+            min_healthy_percentage: self.min_healthy_percentage
+            ,
+            max_healthy_percentage: self.max_healthy_percentage
+            ,
         }
     }
 }
+

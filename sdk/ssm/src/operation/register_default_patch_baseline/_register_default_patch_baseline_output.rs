@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterDefaultPatchBaselineOutput {
+pub struct RegisterDefaultPatchBaselineOutput  {
     /// <p>The ID of the default patch baseline.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterDefaultPatchBaselineOutput {
+impl  RegisterDefaultPatchBaselineOutput  {
     /// <p>The ID of the default patch baseline.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterDefaultPatchBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
     pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineOutputBuilder {
@@ -40,27 +40,28 @@ impl RegisterDefaultPatchBaselineOutputBuilder {
     }
     /// <p>The ID of the default patch baseline.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the default patch baseline.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput).
     pub fn build(self) -> crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput {
         crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput {
-            baseline_id: self.baseline_id,
+            baseline_id: self.baseline_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

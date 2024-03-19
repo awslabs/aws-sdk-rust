@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateApprovalRuleTemplateFromRepositoryInput {
+pub struct DisassociateApprovalRuleTemplateFromRepositoryInput  {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateApprovalRuleTemplateFromRepositoryInput {
+impl  DisassociateApprovalRuleTemplateFromRepositoryInput  {
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
-    pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> ::std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The name of the repository you want to disassociate from the template.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 impl DisassociateApprovalRuleTemplateFromRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
         crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder::default()
     }
 }
@@ -43,8 +41,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
     }
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
     pub fn set_approval_rule_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.approval_rule_template_name = input;
-        self
+        self.approval_rule_template_name = input; self
     }
     /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
     pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,25 +55,22 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
     }
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository you want to disassociate from the template.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
     /// Consumes the builder and constructs a [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-                repository_name: self.repository_name,
-            },
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+                repository_name: self.repository_name
+                ,
+            }
         )
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchListings`](crate::operation::search_listings::builders::SearchListingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_identifier(impl Into<String>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::domain_identifier) / [`set_domain_identifier(Option<String>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_domain_identifier):<br>required: **true**<br><p>The identifier of the domain in which to search listings.</p><br>
     ///   - [`search_text(impl Into<String>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::search_text) / [`set_search_text(Option<String>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_search_text):<br>required: **false**<br><p>Specifies the text for which to search.</p><br>
     ///   - [`search_in(SearchInItem)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::search_in) / [`set_search_in(Option<Vec::<SearchInItem>>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_search_in):<br>required: **false**<br><p></p><br>
@@ -12,12 +12,13 @@ impl super::Client {
     ///   - [`filters(FilterClause)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::filters) / [`set_filters(Option<FilterClause>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_filters):<br>required: **false**<br><p>Specifies the filters for the search of listings.</p><br>
     ///   - [`sort(SearchSort)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::sort) / [`set_sort(Option<SearchSort>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_sort):<br>required: **false**<br><p>Specifies the way for sorting the search results.</p><br>
     ///   - [`additional_attributes(SearchOutputAdditionalAttribute)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::additional_attributes) / [`set_additional_attributes(Option<Vec::<SearchOutputAdditionalAttribute>>)`](crate::operation::search_listings::builders::SearchListingsFluentBuilder::set_additional_attributes):<br>required: **false**<br><p>Specifies additional attributes for the search.</p><br>
-    /// - On success, responds with [`SearchListingsOutput`](crate::operation::search_listings::SearchListingsOutput) with field(s):
+                            /// - On success, responds with [`SearchListingsOutput`](crate::operation::search_listings::SearchListingsOutput) with field(s):
     ///   - [`items(Option<Vec::<SearchResultItem>>)`](crate::operation::search_listings::SearchListingsOutput::items): <p>The results of the <code>SearchListings</code> action.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_listings::SearchListingsOutput::next_token): <p>When the number of results is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of results, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
     ///   - [`total_match_count(Option<i32>)`](crate::operation::search_listings::SearchListingsOutput::total_match_count): <p>Total number of search results.</p>
-    /// - On failure, responds with [`SdkError<SearchListingsError>`](crate::operation::search_listings::SearchListingsError)
+                            /// - On failure, responds with [`SdkError<SearchListingsError>`](crate::operation::search_listings::SearchListingsError)
     pub fn search_listings(&self) -> crate::operation::search_listings::builders::SearchListingsFluentBuilder {
-        crate::operation::search_listings::builders::SearchListingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_listings::builders::SearchListingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

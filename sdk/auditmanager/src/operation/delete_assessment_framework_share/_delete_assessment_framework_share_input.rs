@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAssessmentFrameworkShareInput {
+pub struct DeleteAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the share request to be deleted.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub request_type: ::std::option::Option<crate::types::ShareRequestType>,
 }
-impl DeleteAssessmentFrameworkShareInput {
+impl  DeleteAssessmentFrameworkShareInput  {
     /// <p>The unique identifier for the share request to be deleted.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn request_type(&self) -> ::std::option::Option<&crate::types::ShareRequestType> {
+    pub fn request_type(&self) -> ::std::option::Option<& crate::types::ShareRequestType> {
         self.request_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
     }
     /// <p>The unique identifier for the share request to be deleted.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The unique identifier for the share request to be deleted.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn set_request_type(mut self, input: ::std::option::Option<crate::types::ShareRequestType>) -> Self {
-        self.request_type = input;
-        self
+        self.request_type = input; self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn get_request_type(&self) -> &::std::option::Option<crate::types::ShareRequestType> {
         &self.request_type
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkShareInput`](crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
-            request_id: self.request_id,
-            request_type: self.request_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
+                request_id: self.request_id
+                ,
+                request_type: self.request_type
+                ,
+            }
+        )
     }
 }
+

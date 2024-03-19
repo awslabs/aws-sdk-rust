@@ -3,7 +3,7 @@
 /// <p>Describes the location of the error in a code sample.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeErrorLocation {
+pub struct CodeErrorLocation  {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     pub line: i32,
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
@@ -11,7 +11,7 @@ pub struct CodeErrorLocation {
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
     pub span: i32,
 }
-impl CodeErrorLocation {
+impl  CodeErrorLocation  {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn line(&self) -> i32 {
         self.line
@@ -48,8 +48,7 @@ impl CodeErrorLocationBuilder {
     }
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn set_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.line = input;
-        self
+        self.line = input; self
     }
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn get_line(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl CodeErrorLocationBuilder {
     }
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn get_column(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl CodeErrorLocationBuilder {
     }
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
     pub fn set_span(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.span = input;
-        self
+        self.span = input; self
     }
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
     pub fn get_span(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,16 @@ impl CodeErrorLocationBuilder {
     /// Consumes the builder and constructs a [`CodeErrorLocation`](crate::types::CodeErrorLocation).
     pub fn build(self) -> crate::types::CodeErrorLocation {
         crate::types::CodeErrorLocation {
-            line: self.line.unwrap_or_default(),
-            column: self.column.unwrap_or_default(),
-            span: self.span.unwrap_or_default(),
+            line: self.line
+                .unwrap_or_default()
+            ,
+            column: self.column
+                .unwrap_or_default()
+            ,
+            span: self.span
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

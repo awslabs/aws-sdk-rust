@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDevEndpoints`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of a list to return.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::set_tags):<br>required: **false**<br><p>Specifies to return only these tagged resources.</p><br>
-    /// - On success, responds with [`ListDevEndpointsOutput`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput) with field(s):
+                            /// - On success, responds with [`ListDevEndpointsOutput`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput) with field(s):
     ///   - [`dev_endpoint_names(Option<Vec::<String>>)`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput::dev_endpoint_names): <p>The names of all the <code>DevEndpoint</code>s in the account, or the <code>DevEndpoint</code>s with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_dev_endpoints::ListDevEndpointsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    /// - On failure, responds with [`SdkError<ListDevEndpointsError>`](crate::operation::list_dev_endpoints::ListDevEndpointsError)
+                            /// - On failure, responds with [`SdkError<ListDevEndpointsError>`](crate::operation::list_dev_endpoints::ListDevEndpointsError)
     pub fn list_dev_endpoints(&self) -> crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder {
-        crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_dev_endpoints::builders::ListDevEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

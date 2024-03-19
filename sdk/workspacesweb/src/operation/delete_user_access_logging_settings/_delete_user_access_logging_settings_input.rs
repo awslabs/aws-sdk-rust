@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserAccessLoggingSettingsInput {
+pub struct DeleteUserAccessLoggingSettingsInput  {
     /// <p>The ARN of the user access logging settings.</p>
     pub user_access_logging_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserAccessLoggingSettingsInput {
+impl  DeleteUserAccessLoggingSettingsInput  {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<& str> {
         self.user_access_logging_settings_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteUserAccessLoggingSettingsInputBuilder {
     }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_access_logging_settings_arn = input;
-        self
+        self.user_access_logging_settings_arn = input; self
     }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_access_logging_settings_arn
     }
     /// Consumes the builder and constructs a [`DeleteUserAccessLoggingSettingsInput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput {
-                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
-            },
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn
+                ,
+            }
         )
     }
 }
+

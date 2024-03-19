@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInsightImpactGraphOutput {
+pub struct GetInsightImpactGraphOutput  {
     /// <p>The insight's unique identifier.</p>
     pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The provided start time.</p>
@@ -14,48 +14,49 @@ pub struct GetInsightImpactGraphOutput {
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
     pub service_graph_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphService>>,
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetInsightImpactGraphOutput {
+impl  GetInsightImpactGraphOutput  {
     /// <p>The insight's unique identifier.</p>
-    pub fn insight_id(&self) -> ::std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p>The provided start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The provided end time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
-    pub fn service_graph_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn service_graph_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.service_graph_start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
-    pub fn service_graph_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn service_graph_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.service_graph_end_time.as_ref()
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[crate::types::InsightImpactGraphService] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [crate::types::InsightImpactGraphService] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInsightImpactGraphOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInsightImpactGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightImpactGraphOutput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput).
     pub fn builder() -> crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphOutputBuilder {
@@ -72,7 +73,7 @@ pub struct GetInsightImpactGraphOutputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_graph_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) service_graph_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphService>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -84,8 +85,7 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>The insight's unique identifier.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p>The insight's unique identifier.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>The provided start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The provided start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -112,8 +111,7 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>The provided end time.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The provided end time.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -126,8 +124,7 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
     pub fn set_service_graph_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.service_graph_start_time = input;
-        self
+        self.service_graph_start_time = input; self
     }
     /// <p>The time, in Unix seconds, at which the service graph started.</p>
     pub fn get_service_graph_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +137,7 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
     pub fn set_service_graph_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.service_graph_end_time = input;
-        self
+        self.service_graph_end_time = input; self
     }
     /// <p>The time, in Unix seconds, at which the service graph ended.</p>
     pub fn get_service_graph_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -154,17 +150,16 @@ impl GetInsightImpactGraphOutputBuilder {
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
     pub fn services(mut self, input: crate::types::InsightImpactGraphService) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input);
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphService>>) -> Self {
+        self.services = input; self
     }
     /// <p>The Amazon Web Services instrumented services related to the insight.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightImpactGraphService>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightImpactGraphService>> {
         &self.services
     }
     /// <p>Pagination token.</p>
@@ -174,33 +169,40 @@ impl GetInsightImpactGraphOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInsightImpactGraphOutput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput).
     pub fn build(self) -> crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput {
         crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput {
-            insight_id: self.insight_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            service_graph_start_time: self.service_graph_start_time,
-            service_graph_end_time: self.service_graph_end_time,
-            services: self.services,
-            next_token: self.next_token,
+            insight_id: self.insight_id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            service_graph_start_time: self.service_graph_start_time
+            ,
+            service_graph_end_time: self.service_graph_end_time
+            ,
+            services: self.services
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

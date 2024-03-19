@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateGovCloudAccountInput {
+pub struct CreateGovCloudAccountInput  {
     /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
     /// <ul>
@@ -48,9 +48,9 @@ pub struct CreateGovCloudAccountInput {
     /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGovCloudAccountInput {
+impl  CreateGovCloudAccountInput  {
     /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
     /// <ul>
@@ -73,12 +73,12 @@ impl CreateGovCloudAccountInput {
     /// <p>The domain name must contain at least one dot</p></li>
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The friendly name of the member account.</p>
     /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>(Optional)</p>
@@ -92,25 +92,26 @@ impl CreateGovCloudAccountInput {
     /// <p>Steps 2 and 3 in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM Tutorial: Delegate access across Amazon Web Services accounts using IAM roles</a> in the <i>IAM User Guide</i></p></li>
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
-    pub fn role_name(&self) -> ::std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
-    pub fn iam_user_access_to_billing(&self) -> ::std::option::Option<&crate::types::IamUserAccessToBilling> {
+    pub fn iam_user_access_to_billing(&self) -> ::std::option::Option<& crate::types::IamUserAccessToBilling> {
         self.iam_user_access_to_billing.as_ref()
     }
     /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateGovCloudAccountInput {
+impl  ::std::fmt::Debug for CreateGovCloudAccountInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGovCloudAccountInput");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
@@ -136,7 +137,7 @@ pub struct CreateGovCloudAccountInputBuilder {
     pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_user_access_to_billing: ::std::option::Option<crate::types::IamUserAccessToBilling>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGovCloudAccountInputBuilder {
     /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
@@ -189,8 +190,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// </ul>
     /// <p>You can't access the root user of the account or remove an account that was created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email address for the Amazon Web Services GovCloud (US) account originates from the commercial Region, not from the Amazon Web Services GovCloud (US) Region.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>Specifies the email address of the owner to assign to the new member account in the commercial Region. This email address must not already be associated with another Amazon Web Services account. You must use a valid email address to complete account creation.</p>
     /// <p>The rules for a valid email address:</p>
@@ -227,8 +227,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>The friendly name of the member account.</p>
     /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The friendly name of the member account.</p>
     /// <p>The account name can consist of only the characters [a-z],[A-Z],[0-9], hyphen (-), or dot (.) You can't separate characters with a dash (–).</p>
@@ -262,8 +261,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// </ul>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>(Optional)</p>
     /// <p>The name of an IAM role that Organizations automatically preconfigures in the new member accounts in both the Amazon Web Services GovCloud (US) Region and in the commercial Region. This role trusts the management account, allowing users in the management account to assume the role, as permitted by the management account administrator. The role has administrator permissions in the new member account.</p>
@@ -288,8 +286,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
     pub fn set_iam_user_access_to_billing(mut self, input: ::std::option::Option<crate::types::IamUserAccessToBilling>) -> Self {
-        self.iam_user_access_to_billing = input;
-        self
+        self.iam_user_access_to_billing = input; self
     }
     /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, only the root user of the new account can access account billing information. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     /// <p>If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the required permissions can access billing information for the new account.</p>
@@ -306,37 +303,40 @@ impl CreateGovCloudAccountInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags that you want to attach to the newly created account. These tags are attached to the commercial account associated with the GovCloud account, and not to the GovCloud account itself. To add tags to the actual GovCloud account, call the <code>TagResource</code> operation in the GovCloud region after the new GovCloud account exists.</p>
     /// <p>For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>. For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations resources</a> in the Organizations User Guide.</p><note>
     /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for an account, then the entire request fails and the account is not created.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGovCloudAccountInput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput {
-            email: self.email,
-            account_name: self.account_name,
-            role_name: self.role_name,
-            iam_user_access_to_billing: self.iam_user_access_to_billing,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput {
+                email: self.email
+                ,
+                account_name: self.account_name
+                ,
+                role_name: self.role_name
+                ,
+                iam_user_access_to_billing: self.iam_user_access_to_billing
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateGovCloudAccountInputBuilder {
@@ -350,3 +350,4 @@ impl ::std::fmt::Debug for CreateGovCloudAccountInputBuilder {
         formatter.finish()
     }
 }
+

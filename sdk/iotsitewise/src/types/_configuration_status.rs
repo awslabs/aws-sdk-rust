@@ -3,19 +3,19 @@
 /// <p>Contains current status information for the configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfigurationStatus {
+pub struct ConfigurationStatus  {
     /// <p>The current state of the configuration.</p>
     pub state: crate::types::ConfigurationState,
     /// <p>Contains associated error information, if any.</p>
     pub error: ::std::option::Option<crate::types::ConfigurationErrorDetails>,
 }
-impl ConfigurationStatus {
+impl  ConfigurationStatus  {
     /// <p>The current state of the configuration.</p>
-    pub fn state(&self) -> &crate::types::ConfigurationState {
+    pub fn state(&self) -> & crate::types::ConfigurationState {
         &self.state
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::ConfigurationErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::ConfigurationErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ConfigurationStatusBuilder {
     }
     /// <p>The current state of the configuration.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ConfigurationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the configuration.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
@@ -56,8 +55,7 @@ impl ConfigurationStatusBuilder {
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ConfigurationErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ConfigurationErrorDetails> {
@@ -67,14 +65,17 @@ impl ConfigurationStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::ConfigurationStatusBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfigurationStatus {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ConfigurationStatus",
-                )
-            })?,
-            error: self.error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfigurationStatus {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ConfigurationStatus")
+                    )?
+                ,
+                error: self.error
+                ,
+            }
+        )
     }
 }
+

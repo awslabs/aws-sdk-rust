@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrialComponentOutput {
+pub struct DeleteTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     pub trial_component_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteTrialComponentOutput {
+impl  DeleteTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
-    pub fn trial_component_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> ::std::option::Option<& str> {
         self.trial_component_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteTrialComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrialComponentOutput`](crate::operation::delete_trial_component::DeleteTrialComponentOutput).
     pub fn builder() -> crate::operation::delete_trial_component::builders::DeleteTrialComponentOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteTrialComponentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     pub fn set_trial_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_component_arn = input;
-        self
+        self.trial_component_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component is being deleted.</p>
     pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.trial_component_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteTrialComponentOutput`](crate::operation::delete_trial_component::DeleteTrialComponentOutput).
     pub fn build(self) -> crate::operation::delete_trial_component::DeleteTrialComponentOutput {
         crate::operation::delete_trial_component::DeleteTrialComponentOutput {
-            trial_component_arn: self.trial_component_arn,
+            trial_component_arn: self.trial_component_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

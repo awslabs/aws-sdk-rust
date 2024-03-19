@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableHealthServiceAccessForOrganizationInput {}
+pub struct DisableHealthServiceAccessForOrganizationInput  {
+}
 impl DisableHealthServiceAccessForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationInput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput).
-    pub fn builder(
-    ) -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder {
+    pub fn builder() -> crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder {
         crate::operation::disable_health_service_access_for_organization::builders::DisableHealthServiceAccessForOrganizationInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DisableHealthServiceAccessForOrganizationInput {
 /// A builder for [`DisableHealthServiceAccessForOrganizationInput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisableHealthServiceAccessForOrganizationInputBuilder {}
+pub struct DisableHealthServiceAccessForOrganizationInputBuilder {
+}
 impl DisableHealthServiceAccessForOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationInput`](crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput {
+            }
+        )
     }
 }
+

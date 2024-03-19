@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySamlPropertiesInput {
+pub struct ModifySamlPropertiesInput  {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
@@ -15,15 +15,15 @@ pub struct ModifySamlPropertiesInput {
     /// <li>
     /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
     /// </ul>
-    pub properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
+    pub properties_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::DeletableSamlProperty>>,
 }
-impl ModifySamlPropertiesInput {
+impl  ModifySamlPropertiesInput  {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
-    pub fn saml_properties(&self) -> ::std::option::Option<&crate::types::SamlProperties> {
+    pub fn saml_properties(&self) -> ::std::option::Option<& crate::types::SamlProperties> {
         self.saml_properties.as_ref()
     }
     /// <p>The SAML properties to delete as part of your request.</p>
@@ -34,10 +34,11 @@ impl ModifySamlPropertiesInput {
     /// <li>
     /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.properties_to_delete.is_none()`.
-    pub fn properties_to_delete(&self) -> &[crate::types::DeletableSamlProperty] {
-        self.properties_to_delete.as_deref().unwrap_or_default()
+    pub fn properties_to_delete(&self) -> & [crate::types::DeletableSamlProperty] {
+        self.properties_to_delete.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifySamlPropertiesInput {
@@ -53,7 +54,7 @@ impl ModifySamlPropertiesInput {
 pub struct ModifySamlPropertiesInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
-    pub(crate) properties_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
+    pub(crate) properties_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::DeletableSamlProperty>>,
 }
 impl ModifySamlPropertiesInputBuilder {
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
@@ -64,8 +65,7 @@ impl ModifySamlPropertiesInputBuilder {
     }
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ModifySamlPropertiesInputBuilder {
     }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
     pub fn set_saml_properties(mut self, input: ::std::option::Option<crate::types::SamlProperties>) -> Self {
-        self.saml_properties = input;
-        self
+        self.saml_properties = input; self
     }
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
     pub fn get_saml_properties(&self) -> &::std::option::Option<crate::types::SamlProperties> {
@@ -99,9 +98,9 @@ impl ModifySamlPropertiesInputBuilder {
     /// </ul>
     pub fn properties_to_delete(mut self, input: crate::types::DeletableSamlProperty) -> Self {
         let mut v = self.properties_to_delete.unwrap_or_default();
-        v.push(input);
-        self.properties_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.properties_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
@@ -111,9 +110,8 @@ impl ModifySamlPropertiesInputBuilder {
     /// <li>
     /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
     /// </ul>
-    pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>) -> Self {
-        self.properties_to_delete = input;
-        self
+    pub fn set_properties_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeletableSamlProperty>>) -> Self {
+        self.properties_to_delete = input; self
     }
     /// <p>The SAML properties to delete as part of your request.</p>
     /// <p>Specify one of the following options:</p>
@@ -123,18 +121,21 @@ impl ModifySamlPropertiesInputBuilder {
     /// <li>
     /// <p><code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p></li>
     /// </ul>
-    pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>> {
+    pub fn get_properties_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeletableSamlProperty>> {
         &self.properties_to_delete
     }
     /// Consumes the builder and constructs a [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
-            resource_id: self.resource_id,
-            saml_properties: self.saml_properties,
-            properties_to_delete: self.properties_to_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
+                resource_id: self.resource_id
+                ,
+                saml_properties: self.saml_properties
+                ,
+                properties_to_delete: self.properties_to_delete
+                ,
+            }
+        )
     }
 }
+

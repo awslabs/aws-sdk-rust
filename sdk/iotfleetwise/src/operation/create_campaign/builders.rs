@@ -5,55 +5,51 @@ pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaig
 
 impl CreateCampaignInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_campaign::CreateCampaignOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_campaign::CreateCampaignError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_campaign();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_campaign::CreateCampaignOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_campaign::CreateCampaignError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_campaign();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCampaign`.
-///
+/// 
 /// <p>Creates an orchestration of data collection rules. The Amazon Web Services IoT FleetWise Edge Agent software running in vehicles uses campaigns to decide how to collect and transfer data to the cloud. You create campaigns in the cloud. After you or your team approve campaigns, Amazon Web Services IoT FleetWise automatically deploys them to vehicles.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/campaigns.html">Collect and transfer data with campaigns</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCampaignFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_campaign::builders::CreateCampaignInputBuilder,
+                    inner: crate::operation::create_campaign::builders::CreateCampaignInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_campaign::CreateCampaignOutput,
-        crate::operation::create_campaign::CreateCampaignError,
-    > for CreateCampaignFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_campaign::CreateCampaignOutput,
-            crate::operation::create_campaign::CreateCampaignError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_campaign::CreateCampaignOutput,
+                    crate::operation::create_campaign::CreateCampaignError,
+                > for CreateCampaignFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_campaign::CreateCampaignOutput,
+                        crate::operation::create_campaign::CreateCampaignError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCampaignFluentBuilder {
     /// Creates a new `CreateCampaign`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreateCampaignFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_campaign::CreateCampaignOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_campaign::CreateCampaignError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_campaign::CreateCampaign::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_campaign::CreateCampaign::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_campaign::CreateCampaignOutput,
-        crate::operation::create_campaign::CreateCampaignError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_campaign::CreateCampaignError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_campaign::CreateCampaign::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_campaign::CreateCampaign::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_campaign::CreateCampaignOutput, crate::operation::create_campaign::CreateCampaignError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the campaign to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -294,12 +281,12 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>(Optional) A list of information about signals to collect.</p>
-    pub fn set_signals_to_collect(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>) -> Self {
+    pub fn set_signals_to_collect(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SignalInformation>>) -> Self {
         self.inner = self.inner.set_signals_to_collect(input);
         self
     }
     /// <p>(Optional) A list of information about signals to collect.</p>
-    pub fn get_signals_to_collect(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>> {
+    pub fn get_signals_to_collect(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SignalInformation>> {
         self.inner.get_signals_to_collect()
     }
     /// <p>The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
@@ -330,14 +317,14 @@ impl CreateCampaignFluentBuilder {
     /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_data_extra_dimensions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
     }
     /// <p>(Optional) A list of vehicle attributes to associate with a campaign.</p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_extra_dimensions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_data_extra_dimensions()
     }
     /// Appends an item to `tags`.
@@ -350,12 +337,12 @@ impl CreateCampaignFluentBuilder {
         self
     }
     /// <p>Metadata that can be used to manage the campaign.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Metadata that can be used to manage the campaign.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// Appends an item to `dataDestinationConfigs`.
@@ -372,14 +359,15 @@ impl CreateCampaignFluentBuilder {
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>>) -> Self {
+    pub fn set_data_destination_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataDestinationConfig>>) -> Self {
         self.inner = self.inner.set_data_destination_configs(input);
         self
     }
     /// <p>The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon Timestream.</p>
     /// <p>Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise servers for redundancy and high availability.</p>
     /// <p>You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so that you can identify trends and patterns.</p>
-    pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataDestinationConfig>> {
+    pub fn get_data_destination_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataDestinationConfig>> {
         self.inner.get_data_destination_configs()
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDomainMaintenanceStatusInput {
+pub struct GetDomainMaintenanceStatusInput  {
     /// <p>The name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The request ID of the maintenance action.</p>
     pub maintenance_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDomainMaintenanceStatusInput {
+impl  GetDomainMaintenanceStatusInput  {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The request ID of the maintenance action.</p>
-    pub fn maintenance_id(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_id(&self) -> ::std::option::Option<& str> {
         self.maintenance_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetDomainMaintenanceStatusInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl GetDomainMaintenanceStatusInputBuilder {
     }
     /// <p>The request ID of the maintenance action.</p>
     pub fn set_maintenance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_id = input;
-        self
+        self.maintenance_id = input; self
     }
     /// <p>The request ID of the maintenance action.</p>
     pub fn get_maintenance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.maintenance_id
     }
     /// Consumes the builder and constructs a [`GetDomainMaintenanceStatusInput`](crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput {
-            domain_name: self.domain_name,
-            maintenance_id: self.maintenance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_domain_maintenance_status::GetDomainMaintenanceStatusInput {
+                domain_name: self.domain_name
+                ,
+                maintenance_id: self.maintenance_id
+                ,
+            }
+        )
     }
 }
+

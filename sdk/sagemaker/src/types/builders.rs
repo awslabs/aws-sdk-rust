@@ -1120,3 +1120,4 @@ pub use crate::types::_deployment_stage::DeploymentStageBuilder;
 pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPackageErrorBuilder;
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummaryBuilder;
+

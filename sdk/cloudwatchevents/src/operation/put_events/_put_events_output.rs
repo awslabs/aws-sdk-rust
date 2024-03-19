@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEventsOutput {
+pub struct PutEventsOutput  {
     /// <p>The number of failed entries.</p>
     pub failed_entry_count: i32,
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsResultEntry>>,
     _request_id: Option<String>,
 }
-impl PutEventsOutput {
+impl  PutEventsOutput  {
     /// <p>The number of failed entries.</p>
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::PutEventsResultEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::PutEventsResultEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn builder() -> crate::operation::put_events::builders::PutEventsOutputBuilder {
@@ -38,7 +39,7 @@ impl PutEventsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutEventsOutputBuilder {
     pub(crate) failed_entry_count: ::std::option::Option<i32>,
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutEventsOutputBuilder {
@@ -49,8 +50,7 @@ impl PutEventsOutputBuilder {
     }
     /// <p>The number of failed entries.</p>
     pub fn set_failed_entry_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_entry_count = input;
-        self
+        self.failed_entry_count = input; self
     }
     /// <p>The number of failed entries.</p>
     pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
@@ -63,34 +63,37 @@ impl PutEventsOutputBuilder {
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
     pub fn entries(mut self, input: crate::types::PutEventsResultEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutEventsResultEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutEventsResultEntry>> {
         &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn build(self) -> crate::operation::put_events::PutEventsOutput {
         crate::operation::put_events::PutEventsOutput {
-            failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-            entries: self.entries,
+            failed_entry_count: self.failed_entry_count
+                .unwrap_or_default()
+            ,
+            entries: self.entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

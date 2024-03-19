@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelClusterInput {
+pub struct CancelClusterInput  {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelClusterInput {
+impl  CancelClusterInput  {
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl CancelClusterInputBuilder {
     }
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
     /// Consumes the builder and constructs a [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_cluster::CancelClusterInput { cluster_id: self.cluster_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_cluster::CancelClusterInput {
+                cluster_id: self.cluster_id
+                ,
+            }
+        )
     }
 }
+

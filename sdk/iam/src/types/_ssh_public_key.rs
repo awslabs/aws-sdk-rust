@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>GetSSHPublicKey</code> and <code>UploadSSHPublicKey</code> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SshPublicKey {
+pub struct SshPublicKey  {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     pub user_name: ::std::string::String,
     /// <p>The unique identifier for the SSH public key.</p>
@@ -18,33 +18,29 @@ pub struct SshPublicKey {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     pub upload_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SshPublicKey {
+impl  SshPublicKey  {
     /// <p>The name of the IAM user associated with the SSH public key.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The unique identifier for the SSH public key.</p>
-    pub fn ssh_public_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ssh_public_key_id.deref()
+    pub fn ssh_public_key_id(&self) -> & str {
+        use std::ops::Deref; self.ssh_public_key_id.deref()
     }
     /// <p>The MD5 message digest of the SSH public key.</p>
-    pub fn fingerprint(&self) -> &str {
-        use std::ops::Deref;
-        self.fingerprint.deref()
+    pub fn fingerprint(&self) -> & str {
+        use std::ops::Deref; self.fingerprint.deref()
     }
     /// <p>The SSH public key.</p>
-    pub fn ssh_public_key_body(&self) -> &str {
-        use std::ops::Deref;
-        self.ssh_public_key_body.deref()
+    pub fn ssh_public_key_body(&self) -> & str {
+        use std::ops::Deref; self.ssh_public_key_body.deref()
     }
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
-    pub fn status(&self) -> &crate::types::StatusType {
+    pub fn status(&self) -> & crate::types::StatusType {
         &self.status
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
-    pub fn upload_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn upload_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.upload_date.as_ref()
     }
 }
@@ -75,8 +71,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +85,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The unique identifier for the SSH public key.</p>
     pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_id = input;
-        self
+        self.ssh_public_key_id = input; self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +99,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The MD5 message digest of the SSH public key.</p>
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fingerprint = input;
-        self
+        self.fingerprint = input; self
     }
     /// <p>The MD5 message digest of the SSH public key.</p>
     pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +113,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The SSH public key.</p>
     pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_body = input;
-        self
+        self.ssh_public_key_body = input; self
     }
     /// <p>The SSH public key.</p>
     pub fn get_ssh_public_key_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +127,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an CodeCommit repository. <code>Inactive</code> means that the key cannot be used.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
@@ -149,8 +140,7 @@ impl SshPublicKeyBuilder {
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     pub fn set_upload_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.upload_date = input;
-        self
+        self.upload_date = input; self
     }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the SSH public key was uploaded.</p>
     pub fn get_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -164,38 +154,37 @@ impl SshPublicKeyBuilder {
     /// - [`ssh_public_key_body`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_body)
     /// - [`status`](crate::types::builders::SshPublicKeyBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SshPublicKey {
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ssh_public_key_id",
-                    "ssh_public_key_id was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            fingerprint: self.fingerprint.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fingerprint",
-                    "fingerprint was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            ssh_public_key_body: self.ssh_public_key_body.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ssh_public_key_body",
-                    "ssh_public_key_body was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building SshPublicKey",
-                )
-            })?,
-            upload_date: self.upload_date,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SshPublicKey {
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ssh_public_key_id", "ssh_public_key_id was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                fingerprint: self.fingerprint
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fingerprint", "fingerprint was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                ssh_public_key_body: self.ssh_public_key_body
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ssh_public_key_body", "ssh_public_key_body was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building SshPublicKey")
+                    )?
+                ,
+                upload_date: self.upload_date
+                ,
+            }
+        )
     }
 }
+

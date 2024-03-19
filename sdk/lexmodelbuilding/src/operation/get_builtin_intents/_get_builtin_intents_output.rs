@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBuiltinIntentsOutput {
+pub struct GetBuiltinIntentsOutput  {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub intents: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>,
+    pub intents: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltinIntentMetadata>>,
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBuiltinIntentsOutput {
+impl  GetBuiltinIntentsOutput  {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intents.is_none()`.
-    pub fn intents(&self) -> &[crate::types::BuiltinIntentMetadata] {
-        self.intents.as_deref().unwrap_or_default()
+    pub fn intents(&self) -> & [crate::types::BuiltinIntentMetadata] {
+        self.intents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBuiltinIntentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBuiltinIntentsOutput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput).
     pub fn builder() -> crate::operation::get_builtin_intents::builders::GetBuiltinIntentsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetBuiltinIntentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBuiltinIntentsOutputBuilder {
-    pub(crate) intents: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>,
+    pub(crate) intents: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltinIntentMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetBuiltinIntentsOutputBuilder {
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
     pub fn intents(mut self, input: crate::types::BuiltinIntentMetadata) -> Self {
         let mut v = self.intents.unwrap_or_default();
-        v.push(input);
-        self.intents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.intents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>>) -> Self {
-        self.intents = input;
-        self
+    pub fn set_intents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BuiltinIntentMetadata>>) -> Self {
+        self.intents = input; self
     }
     /// <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
-    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BuiltinIntentMetadata>> {
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BuiltinIntentMetadata>> {
         &self.intents
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
@@ -69,28 +69,30 @@ impl GetBuiltinIntentsOutputBuilder {
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBuiltinIntentsOutput`](crate::operation::get_builtin_intents::GetBuiltinIntentsOutput).
     pub fn build(self) -> crate::operation::get_builtin_intents::GetBuiltinIntentsOutput {
         crate::operation::get_builtin_intents::GetBuiltinIntentsOutput {
-            intents: self.intents,
-            next_token: self.next_token,
+            intents: self.intents
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

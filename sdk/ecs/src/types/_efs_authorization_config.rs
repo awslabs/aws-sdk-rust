@@ -3,19 +3,19 @@
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EfsAuthorizationConfig {
+pub struct EfsAuthorizationConfig  {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be on in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file system. If it is turned on, transit encryption must be turned on in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub iam: ::std::option::Option<crate::types::EfsAuthorizationConfigIam>,
 }
-impl EfsAuthorizationConfig {
+impl  EfsAuthorizationConfig  {
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be on in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
+    pub fn access_point_id(&self) -> ::std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file system. If it is turned on, transit encryption must be turned on in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn iam(&self) -> ::std::option::Option<&crate::types::EfsAuthorizationConfigIam> {
+    pub fn iam(&self) -> ::std::option::Option<& crate::types::EfsAuthorizationConfigIam> {
         self.iam.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl EfsAuthorizationConfigBuilder {
     }
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be on in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn set_access_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_point_id = input;
-        self
+        self.access_point_id = input; self
     }
     /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point. If an access point is used, transit encryption must be on in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl EfsAuthorizationConfigBuilder {
     }
     /// <p>Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file system. If it is turned on, transit encryption must be turned on in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_iam(mut self, input: ::std::option::Option<crate::types::EfsAuthorizationConfigIam>) -> Self {
-        self.iam = input;
-        self
+        self.iam = input; self
     }
     /// <p>Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file system. If it is turned on, transit encryption must be turned on in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_iam(&self) -> &::std::option::Option<crate::types::EfsAuthorizationConfigIam> {
@@ -65,8 +63,11 @@ impl EfsAuthorizationConfigBuilder {
     /// Consumes the builder and constructs a [`EfsAuthorizationConfig`](crate::types::EfsAuthorizationConfig).
     pub fn build(self) -> crate::types::EfsAuthorizationConfig {
         crate::types::EfsAuthorizationConfig {
-            access_point_id: self.access_point_id,
-            iam: self.iam,
+            access_point_id: self.access_point_id
+            ,
+            iam: self.iam
+            ,
         }
     }
 }
+

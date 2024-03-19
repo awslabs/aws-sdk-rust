@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePackageInput {
+pub struct UpdatePackageInput  {
     /// <p>The name of the target software package.</p>
     pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The package description.</p>
@@ -16,18 +16,18 @@ pub struct UpdatePackageInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePackageInput {
+impl  UpdatePackageInput  {
     /// <p>The name of the target software package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The package description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the default package version.</p>
     /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-    pub fn default_version_name(&self) -> ::std::option::Option<&str> {
+    pub fn default_version_name(&self) -> ::std::option::Option<& str> {
         self.default_version_name.as_deref()
     }
     /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
@@ -36,11 +36,11 @@ impl UpdatePackageInput {
         self.unset_default_version
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdatePackageInput {
+impl  ::std::fmt::Debug for UpdatePackageInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePackageInput");
         formatter.field("package_name", &self.package_name);
@@ -77,8 +77,7 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>The name of the target software package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The name of the target software package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>The package description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The package description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdatePackageInputBuilder {
     /// <p>The name of the default package version.</p>
     /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn set_default_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_version_name = input;
-        self
+        self.default_version_name = input; self
     }
     /// <p>The name of the default package version.</p>
     /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
@@ -124,8 +121,7 @@ impl UpdatePackageInputBuilder {
     /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
     /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
     pub fn set_unset_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.unset_default_version = input;
-        self
+        self.unset_default_version = input; self
     }
     /// <p>Indicates whether you want to remove the named default package version from the software package. Set as <code>true</code> to remove the default package version.</p>
     /// <p><b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
@@ -139,24 +135,28 @@ impl UpdatePackageInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
-            package_name: self.package_name,
-            description: self.description,
-            default_version_name: self.default_version_name,
-            unset_default_version: self.unset_default_version,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_package::UpdatePackageInput {
+                package_name: self.package_name
+                ,
+                description: self.description
+                ,
+                default_version_name: self.default_version_name
+                ,
+                unset_default_version: self.unset_default_version
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePackageInputBuilder {
@@ -170,3 +170,4 @@ impl ::std::fmt::Debug for UpdatePackageInputBuilder {
         formatter.finish()
     }
 }
+

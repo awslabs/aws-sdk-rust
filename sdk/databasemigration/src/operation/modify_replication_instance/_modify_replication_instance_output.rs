@@ -3,22 +3,22 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationInstanceOutput {
+pub struct ModifyReplicationInstanceOutput  {
     /// <p>The modified replication instance.</p>
     pub replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }
-impl ModifyReplicationInstanceOutput {
+impl  ModifyReplicationInstanceOutput  {
     /// <p>The modified replication instance.</p>
-    pub fn replication_instance(&self) -> ::std::option::Option<&crate::types::ReplicationInstance> {
+    pub fn replication_instance(&self) -> ::std::option::Option<& crate::types::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyReplicationInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyReplicationInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyReplicationInstanceOutput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput).
     pub fn builder() -> crate::operation::modify_replication_instance::builders::ModifyReplicationInstanceOutputBuilder {
@@ -41,27 +41,28 @@ impl ModifyReplicationInstanceOutputBuilder {
     }
     /// <p>The modified replication instance.</p>
     pub fn set_replication_instance(mut self, input: ::std::option::Option<crate::types::ReplicationInstance>) -> Self {
-        self.replication_instance = input;
-        self
+        self.replication_instance = input; self
     }
     /// <p>The modified replication instance.</p>
     pub fn get_replication_instance(&self) -> &::std::option::Option<crate::types::ReplicationInstance> {
         &self.replication_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyReplicationInstanceOutput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput).
     pub fn build(self) -> crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput {
         crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput {
-            replication_instance: self.replication_instance,
+            replication_instance: self.replication_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

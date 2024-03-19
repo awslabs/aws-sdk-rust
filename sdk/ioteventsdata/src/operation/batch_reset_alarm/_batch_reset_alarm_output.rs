@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchResetAlarmOutput {
+pub struct BatchResetAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    pub error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>,
+    pub error_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchAlarmActionErrorEntry>>,
     _request_id: Option<String>,
 }
-impl BatchResetAlarmOutput {
+impl  BatchResetAlarmOutput  {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_entries.is_none()`.
-    pub fn error_entries(&self) -> &[crate::types::BatchAlarmActionErrorEntry] {
-        self.error_entries.as_deref().unwrap_or_default()
+    pub fn error_entries(&self) -> & [crate::types::BatchAlarmActionErrorEntry] {
+        self.error_entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchResetAlarmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchResetAlarmOutput {
     /// Creates a new builder-style object to manufacture [`BatchResetAlarmOutput`](crate::operation::batch_reset_alarm::BatchResetAlarmOutput).
     pub fn builder() -> crate::operation::batch_reset_alarm::builders::BatchResetAlarmOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchResetAlarmOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchResetAlarmOutputBuilder {
-    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>,
+    pub(crate) error_entries: ::std::option::Option<::std::vec::Vec::<crate::types::BatchAlarmActionErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchResetAlarmOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchResetAlarmOutputBuilder {
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
     pub fn error_entries(mut self, input: crate::types::BatchAlarmActionErrorEntry) -> Self {
         let mut v = self.error_entries.unwrap_or_default();
-        v.push(input);
-        self.error_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.error_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>>) -> Self {
-        self.error_entries = input;
-        self
+    pub fn set_error_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchAlarmActionErrorEntry>>) -> Self {
+        self.error_entries = input; self
     }
     /// <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchAlarmActionErrorEntry>> {
+    pub fn get_error_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchAlarmActionErrorEntry>> {
         &self.error_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchResetAlarmOutput`](crate::operation::batch_reset_alarm::BatchResetAlarmOutput).
     pub fn build(self) -> crate::operation::batch_reset_alarm::BatchResetAlarmOutput {
         crate::operation::batch_reset_alarm::BatchResetAlarmOutput {
-            error_entries: self.error_entries,
+            error_entries: self.error_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
     /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder() -> crate::operation::start_bulk_associate_wireless_device_with_multicast_group::builders::StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder{
+    pub fn builder() -> crate::operation::start_bulk_associate_wireless_device_with_multicast_group::builders::StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder {
         crate::operation::start_bulk_associate_wireless_device_with_multicast_group::builders::StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder {
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+    pub fn build(self) -> crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
         crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
             _request_id: self._request_id,
         }
     }
 }
+

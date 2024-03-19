@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoleMembershipsOutput {
+pub struct ListRoleMembershipsOutput  {
     /// <p>The list of groups associated with a role</p>
-    pub members_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub members_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -13,19 +13,20 @@ pub struct ListRoleMembershipsOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl ListRoleMembershipsOutput {
+impl  ListRoleMembershipsOutput  {
     /// <p>The list of groups associated with a role</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members_list.is_none()`.
-    pub fn members_list(&self) -> &[::std::string::String] {
-        self.members_list.as_deref().unwrap_or_default()
+    pub fn members_list(&self) -> & [::std::string::String] {
+        self.members_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -34,10 +35,10 @@ impl ListRoleMembershipsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListRoleMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRoleMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListRoleMembershipsOutput`](crate::operation::list_role_memberships::ListRoleMembershipsOutput).
     pub fn builder() -> crate::operation::list_role_memberships::builders::ListRoleMembershipsOutputBuilder {
@@ -49,7 +50,7 @@ impl ListRoleMembershipsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRoleMembershipsOutputBuilder {
-    pub(crate) members_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) members_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<i32>,
@@ -63,17 +64,16 @@ impl ListRoleMembershipsOutputBuilder {
     /// <p>The list of groups associated with a role</p>
     pub fn members_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.members_list.unwrap_or_default();
-        v.push(input.into());
-        self.members_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.members_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups associated with a role</p>
-    pub fn set_members_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.members_list = input;
-        self
+    pub fn set_members_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.members_list = input; self
     }
     /// <p>The list of groups associated with a role</p>
-    pub fn get_members_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_members_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.members_list
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -83,8 +83,7 @@ impl ListRoleMembershipsOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ListRoleMembershipsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,30 +109,35 @@ impl ListRoleMembershipsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRoleMembershipsOutput`](crate::operation::list_role_memberships::ListRoleMembershipsOutput).
     pub fn build(self) -> crate::operation::list_role_memberships::ListRoleMembershipsOutput {
         crate::operation::list_role_memberships::ListRoleMembershipsOutput {
-            members_list: self.members_list,
-            next_token: self.next_token,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            members_list: self.members_list
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

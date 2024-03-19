@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSyncConfigurationsOutput {
+pub struct ListSyncConfigurationsOutput  {
     /// <p>The list of repository sync definitions returned by the request.</p>
-    pub sync_configurations: ::std::vec::Vec<crate::types::SyncConfiguration>,
+    pub sync_configurations: ::std::vec::Vec::<crate::types::SyncConfiguration>,
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSyncConfigurationsOutput {
+impl  ListSyncConfigurationsOutput  {
     /// <p>The list of repository sync definitions returned by the request.</p>
-    pub fn sync_configurations(&self) -> &[crate::types::SyncConfiguration] {
-        use std::ops::Deref;
-        self.sync_configurations.deref()
+    pub fn sync_configurations(&self) -> & [crate::types::SyncConfiguration] {
+        use std::ops::Deref; self.sync_configurations.deref()
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSyncConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSyncConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSyncConfigurationsOutput`](crate::operation::list_sync_configurations::ListSyncConfigurationsOutput).
     pub fn builder() -> crate::operation::list_sync_configurations::builders::ListSyncConfigurationsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListSyncConfigurationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSyncConfigurationsOutputBuilder {
-    pub(crate) sync_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SyncConfiguration>>,
+    pub(crate) sync_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::SyncConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListSyncConfigurationsOutputBuilder {
     /// <p>The list of repository sync definitions returned by the request.</p>
     pub fn sync_configurations(mut self, input: crate::types::SyncConfiguration) -> Self {
         let mut v = self.sync_configurations.unwrap_or_default();
-        v.push(input);
-        self.sync_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sync_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of repository sync definitions returned by the request.</p>
-    pub fn set_sync_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SyncConfiguration>>) -> Self {
-        self.sync_configurations = input;
-        self
+    pub fn set_sync_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SyncConfiguration>>) -> Self {
+        self.sync_configurations = input; self
     }
     /// <p>The list of repository sync definitions returned by the request.</p>
-    pub fn get_sync_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncConfiguration>> {
+    pub fn get_sync_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SyncConfiguration>> {
         &self.sync_configurations
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
@@ -68,40 +66,37 @@ impl ListSyncConfigurationsOutputBuilder {
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSyncConfigurationsOutput`](crate::operation::list_sync_configurations::ListSyncConfigurationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`sync_configurations`](crate::operation::list_sync_configurations::builders::ListSyncConfigurationsOutputBuilder::sync_configurations)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_sync_configurations::ListSyncConfigurationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_sync_configurations::ListSyncConfigurationsOutput {
-            sync_configurations: self.sync_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sync_configurations",
-                    "sync_configurations was not specified but it is required when building ListSyncConfigurationsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sync_configurations::ListSyncConfigurationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_sync_configurations::ListSyncConfigurationsOutput {
+                sync_configurations: self.sync_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sync_configurations", "sync_configurations was not specified but it is required when building ListSyncConfigurationsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

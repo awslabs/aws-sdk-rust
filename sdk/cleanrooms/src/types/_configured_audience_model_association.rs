@@ -3,7 +3,7 @@
 /// <p>Details about the configured audience model association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredAudienceModelAssociation {
+pub struct ConfiguredAudienceModelAssociation  {
     /// <p>A unique identifier of the configured audience model association.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
@@ -29,61 +29,53 @@ pub struct ConfiguredAudienceModelAssociation {
     /// <p>The most recent time at which the configured audience model association was updated.</p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl ConfiguredAudienceModelAssociation {
+impl  ConfiguredAudienceModelAssociation  {
     /// <p>A unique identifier of the configured audience model association.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>A unique identifier for the membership that contains this configured audience model association.</p>
-    pub fn membership_id(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_id.deref()
+    pub fn membership_id(&self) -> & str {
+        use std::ops::Deref; self.membership_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains this configured audience model association.</p>
-    pub fn membership_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_arn.deref()
+    pub fn membership_arn(&self) -> & str {
+        use std::ops::Deref; self.membership_arn.deref()
     }
     /// <p>A unique identifier of the collaboration that contains this configured audience model association.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains this configured audience model association.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>The name of the configured audience model association.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
     pub fn manage_resource_policies(&self) -> bool {
         self.manage_resource_policies
     }
     /// <p>The description of the configured audience model association.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time at which the configured audience model association was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -120,8 +112,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>A unique identifier of the configured audience model association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier of the configured audience model association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +126,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +140,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this configured audience model association.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +154,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>A unique identifier for the membership that contains this configured audience model association.</p>
     pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>A unique identifier for the membership that contains this configured audience model association.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +168,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains this configured audience model association.</p>
     pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_arn = input;
-        self
+        self.membership_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the membership that contains this configured audience model association.</p>
     pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +182,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>A unique identifier of the collaboration that contains this configured audience model association.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>A unique identifier of the collaboration that contains this configured audience model association.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +196,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains this configured audience model association.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the collaboration that contains this configured audience model association.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +210,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configured audience model association.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +224,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
     pub fn set_manage_resource_policies(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.manage_resource_policies = input;
-        self
+        self.manage_resource_policies = input; self
     }
     /// <p>When <code>TRUE</code>, indicates that the resource policy for the configured audience model resource being associated is configured for Clean Rooms to manage permissions related to the given collaboration. When <code>FALSE</code>, indicates that the configured audience model resource owner will manage permissions related to the given collaboration.</p>
     pub fn get_manage_resource_policies(&self) -> &::std::option::Option<bool> {
@@ -254,8 +237,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The description of the configured audience model association.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configured audience model association.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,8 +251,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The time at which the configured audience model association was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the configured audience model association was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -284,8 +265,7 @@ impl ConfiguredAudienceModelAssociationBuilder {
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the configured audience model association was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -305,74 +285,67 @@ impl ConfiguredAudienceModelAssociationBuilder {
     /// - [`create_time`](crate::types::builders::ConfiguredAudienceModelAssociationBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ConfiguredAudienceModelAssociationBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredAudienceModelAssociation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredAudienceModelAssociation {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_id",
-                    "membership_id was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "membership_arn",
-                    "membership_arn was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            manage_resource_policies: self.manage_resource_policies.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manage_resource_policies",
-                    "manage_resource_policies was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            description: self.description,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building ConfiguredAudienceModelAssociation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredAudienceModelAssociation {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                membership_id: self.membership_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_id", "membership_id was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                membership_arn: self.membership_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("membership_arn", "membership_arn was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                manage_resource_policies: self.manage_resource_policies
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manage_resource_policies", "manage_resource_policies was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                description: self.description
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building ConfiguredAudienceModelAssociation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>An analyzed segment for a real-time analysis session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RealtimeContactAnalysisSegment {
+pub struct RealtimeContactAnalysisSegment  {
     /// <p>The analyzed transcript.</p>
     pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The matched category rules.</p>
     pub categories: ::std::option::Option<crate::types::Categories>,
 }
-impl RealtimeContactAnalysisSegment {
+impl  RealtimeContactAnalysisSegment  {
     /// <p>The analyzed transcript.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&crate::types::Transcript> {
+    pub fn transcript(&self) -> ::std::option::Option<& crate::types::Transcript> {
         self.transcript.as_ref()
     }
     /// <p>The matched category rules.</p>
-    pub fn categories(&self) -> ::std::option::Option<&crate::types::Categories> {
+    pub fn categories(&self) -> ::std::option::Option<& crate::types::Categories> {
         self.categories.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RealtimeContactAnalysisSegmentBuilder {
     }
     /// <p>The analyzed transcript.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::Transcript>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>The analyzed transcript.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
@@ -55,8 +54,7 @@ impl RealtimeContactAnalysisSegmentBuilder {
     }
     /// <p>The matched category rules.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<crate::types::Categories>) -> Self {
-        self.categories = input;
-        self
+        self.categories = input; self
     }
     /// <p>The matched category rules.</p>
     pub fn get_categories(&self) -> &::std::option::Option<crate::types::Categories> {
@@ -65,8 +63,11 @@ impl RealtimeContactAnalysisSegmentBuilder {
     /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
     pub fn build(self) -> crate::types::RealtimeContactAnalysisSegment {
         crate::types::RealtimeContactAnalysisSegment {
-            transcript: self.transcript,
-            categories: self.categories,
+            transcript: self.transcript
+            ,
+            categories: self.categories
+            ,
         }
     }
 }
+

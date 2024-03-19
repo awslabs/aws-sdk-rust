@@ -3,42 +3,43 @@
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountOutput {
+pub struct UpdateAccountOutput  {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the API request limits configured for the current Account.</p>
     pub throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    pub features: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub features: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The version of the API keys used for the account.</p>
     pub api_key_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateAccountOutput {
+impl  UpdateAccountOutput  {
     /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
-    pub fn cloudwatch_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloudwatch_role_arn(&self) -> ::std::option::Option<& str> {
         self.cloudwatch_role_arn.as_deref()
     }
     /// <p>Specifies the API request limits configured for the current Account.</p>
-    pub fn throttle_settings(&self) -> ::std::option::Option<&crate::types::ThrottleSettings> {
+    pub fn throttle_settings(&self) -> ::std::option::Option<& crate::types::ThrottleSettings> {
         self.throttle_settings.as_ref()
     }
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.features.is_none()`.
-    pub fn features(&self) -> &[::std::string::String] {
-        self.features.as_deref().unwrap_or_default()
+    pub fn features(&self) -> & [::std::string::String] {
+        self.features.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The version of the API keys used for the account.</p>
-    pub fn api_key_version(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_version(&self) -> ::std::option::Option<& str> {
         self.api_key_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAccountOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput).
     pub fn builder() -> crate::operation::update_account::builders::UpdateAccountOutputBuilder {
@@ -52,7 +53,7 @@ impl UpdateAccountOutput {
 pub struct UpdateAccountOutputBuilder {
     pub(crate) cloudwatch_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) throttle_settings: ::std::option::Option<crate::types::ThrottleSettings>,
-    pub(crate) features: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) features: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) api_key_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -64,8 +65,7 @@ impl UpdateAccountOutputBuilder {
     }
     /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn set_cloudwatch_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloudwatch_role_arn = input;
-        self
+        self.cloudwatch_role_arn = input; self
     }
     /// <p>The ARN of an Amazon CloudWatch role for the current Account.</p>
     pub fn get_cloudwatch_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl UpdateAccountOutputBuilder {
     }
     /// <p>Specifies the API request limits configured for the current Account.</p>
     pub fn set_throttle_settings(mut self, input: ::std::option::Option<crate::types::ThrottleSettings>) -> Self {
-        self.throttle_settings = input;
-        self
+        self.throttle_settings = input; self
     }
     /// <p>Specifies the API request limits configured for the current Account.</p>
     pub fn get_throttle_settings(&self) -> &::std::option::Option<crate::types::ThrottleSettings> {
@@ -92,17 +91,16 @@ impl UpdateAccountOutputBuilder {
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
     pub fn features(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input.into());
-        self.features = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.features = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.features = input; self
     }
     /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
-    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_features(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.features
     }
     /// <p>The version of the API keys used for the account.</p>
@@ -112,30 +110,34 @@ impl UpdateAccountOutputBuilder {
     }
     /// <p>The version of the API keys used for the account.</p>
     pub fn set_api_key_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_version = input;
-        self
+        self.api_key_version = input; self
     }
     /// <p>The version of the API keys used for the account.</p>
     pub fn get_api_key_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAccountOutput`](crate::operation::update_account::UpdateAccountOutput).
     pub fn build(self) -> crate::operation::update_account::UpdateAccountOutput {
         crate::operation::update_account::UpdateAccountOutput {
-            cloudwatch_role_arn: self.cloudwatch_role_arn,
-            throttle_settings: self.throttle_settings,
-            features: self.features,
-            api_key_version: self.api_key_version,
+            cloudwatch_role_arn: self.cloudwatch_role_arn
+            ,
+            throttle_settings: self.throttle_settings
+            ,
+            features: self.features
+            ,
+            api_key_version: self.api_key_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

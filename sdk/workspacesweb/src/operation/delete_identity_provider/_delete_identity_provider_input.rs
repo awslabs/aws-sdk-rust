@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdentityProviderInput {
+pub struct DeleteIdentityProviderInput  {
     /// <p>The ARN of the identity provider.</p>
     pub identity_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteIdentityProviderInput {
+impl  DeleteIdentityProviderInput  {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn identity_provider_arn(&self) -> ::std::option::Option<& str> {
         self.identity_provider_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteIdentityProviderInputBuilder {
     }
     /// <p>The ARN of the identity provider.</p>
     pub fn set_identity_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_provider_arn = input;
-        self
+        self.identity_provider_arn = input; self
     }
     /// <p>The ARN of the identity provider.</p>
     pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_arn
     }
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
-            identity_provider_arn: self.identity_provider_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
+                identity_provider_arn: self.identity_provider_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,9 +3,9 @@
 /// <p>The filter criteria to use in determining the requests returned.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceRequestStatusFilter {
+pub struct ResourceRequestStatusFilter  {
     /// <p>The operation types to include in the filter.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
     /// <li>
@@ -21,14 +21,15 @@ pub struct ResourceRequestStatusFilter {
     /// <li>
     /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
-    pub operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
+    pub operation_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>,
 }
-impl ResourceRequestStatusFilter {
+impl  ResourceRequestStatusFilter  {
     /// <p>The operation types to include in the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::Operation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::Operation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
@@ -45,10 +46,11 @@ impl ResourceRequestStatusFilter {
     /// <li>
     /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_statuses.is_none()`.
-    pub fn operation_statuses(&self) -> &[crate::types::OperationStatus] {
-        self.operation_statuses.as_deref().unwrap_or_default()
+    pub fn operation_statuses(&self) -> & [crate::types::OperationStatus] {
+        self.operation_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceRequestStatusFilter {
@@ -62,8 +64,8 @@ impl ResourceRequestStatusFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceRequestStatusFilterBuilder {
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    pub(crate) operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
+    pub(crate) operation_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilterBuilder {
     /// Appends an item to `operations`.
@@ -73,17 +75,16 @@ impl ResourceRequestStatusFilterBuilder {
     /// <p>The operation types to include in the filter.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operation types to include in the filter.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>The operation types to include in the filter.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operation>> {
         &self.operations
     }
     /// Appends an item to `operation_statuses`.
@@ -107,9 +108,9 @@ impl ResourceRequestStatusFilterBuilder {
     /// </ul>
     pub fn operation_statuses(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.operation_statuses.unwrap_or_default();
-        v.push(input);
-        self.operation_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operation_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
@@ -126,9 +127,8 @@ impl ResourceRequestStatusFilterBuilder {
     /// <li>
     /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
-    pub fn set_operation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>) -> Self {
-        self.operation_statuses = input;
-        self
+    pub fn set_operation_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>>) -> Self {
+        self.operation_statuses = input; self
     }
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
@@ -145,14 +145,17 @@ impl ResourceRequestStatusFilterBuilder {
     /// <li>
     /// <p><code>CANCEL_COMPLETE</code>: The operation has been canceled.</p></li>
     /// </ul>
-    pub fn get_operation_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>> {
+    pub fn get_operation_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperationStatus>> {
         &self.operation_statuses
     }
     /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
     pub fn build(self) -> crate::types::ResourceRequestStatusFilter {
         crate::types::ResourceRequestStatusFilter {
-            operations: self.operations,
-            operation_statuses: self.operation_statuses,
+            operations: self.operations
+            ,
+            operation_statuses: self.operation_statuses
+            ,
         }
     }
 }
+

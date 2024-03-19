@@ -3,22 +3,23 @@
 /// <p>Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoRollbackConfiguration {
+pub struct AutoRollbackConfiguration  {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     pub enabled: bool,
     /// <p>The event type or types that trigger a rollback.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::AutoRollbackEvent>>,
 }
-impl AutoRollbackConfiguration {
+impl  AutoRollbackConfiguration  {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::AutoRollbackEvent] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::AutoRollbackEvent] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutoRollbackConfiguration {
@@ -33,7 +34,7 @@ impl AutoRollbackConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AutoRollbackConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::AutoRollbackEvent>>,
 }
 impl AutoRollbackConfigurationBuilder {
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
@@ -43,8 +44,7 @@ impl AutoRollbackConfigurationBuilder {
     }
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -57,24 +57,27 @@ impl AutoRollbackConfigurationBuilder {
     /// <p>The event type or types that trigger a rollback.</p>
     pub fn events(mut self, input: crate::types::AutoRollbackEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoRollbackEvent>>) -> Self {
+        self.events = input; self
     }
     /// <p>The event type or types that trigger a rollback.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoRollbackEvent>> {
         &self.events
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).
     pub fn build(self) -> crate::types::AutoRollbackConfiguration {
         crate::types::AutoRollbackConfiguration {
-            enabled: self.enabled.unwrap_or_default(),
-            events: self.events,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

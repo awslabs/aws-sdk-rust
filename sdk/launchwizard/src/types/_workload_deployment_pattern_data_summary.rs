@@ -3,7 +3,7 @@
 /// <p>Describes a workload deployment pattern.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadDeploymentPatternDataSummary {
+pub struct WorkloadDeploymentPatternDataSummary  {
     /// <p>The name of the workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of a workload deployment pattern.</p>
@@ -19,33 +19,33 @@ pub struct WorkloadDeploymentPatternDataSummary {
     /// <p>A message about a workload deployment pattern's status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl WorkloadDeploymentPatternDataSummary {
+impl  WorkloadDeploymentPatternDataSummary  {
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The name of a workload deployment pattern.</p>
-    pub fn deployment_pattern_name(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_pattern_name(&self) -> ::std::option::Option<& str> {
         self.deployment_pattern_name.as_deref()
     }
     /// <p>The name of the workload deployment pattern version.</p>
-    pub fn workload_version_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_version_name(&self) -> ::std::option::Option<& str> {
         self.workload_version_name.as_deref()
     }
     /// <p>The display name of a workload deployment pattern.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of a workload deployment pattern.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of a workload deployment pattern.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadDeploymentPatternStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkloadDeploymentPatternStatus> {
         self.status.as_ref()
     }
     /// <p>A message about a workload deployment pattern's status.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The name of a workload deployment pattern.</p>
     pub fn set_deployment_pattern_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_pattern_name = input;
-        self
+        self.deployment_pattern_name = input; self
     }
     /// <p>The name of a workload deployment pattern.</p>
     pub fn get_deployment_pattern_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The name of the workload deployment pattern version.</p>
     pub fn set_workload_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_version_name = input;
-        self
+        self.workload_version_name = input; self
     }
     /// <p>The name of the workload deployment pattern version.</p>
     pub fn get_workload_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The display name of a workload deployment pattern.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of a workload deployment pattern.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The description of a workload deployment pattern.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of a workload deployment pattern.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>The status of a workload deployment pattern.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkloadDeploymentPatternStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a workload deployment pattern.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadDeploymentPatternStatus> {
@@ -160,8 +154,7 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     }
     /// <p>A message about a workload deployment pattern's status.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message about a workload deployment pattern's status.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl WorkloadDeploymentPatternDataSummaryBuilder {
     /// Consumes the builder and constructs a [`WorkloadDeploymentPatternDataSummary`](crate::types::WorkloadDeploymentPatternDataSummary).
     pub fn build(self) -> crate::types::WorkloadDeploymentPatternDataSummary {
         crate::types::WorkloadDeploymentPatternDataSummary {
-            workload_name: self.workload_name,
-            deployment_pattern_name: self.deployment_pattern_name,
-            workload_version_name: self.workload_version_name,
-            display_name: self.display_name,
-            description: self.description,
-            status: self.status,
-            status_message: self.status_message,
+            workload_name: self.workload_name
+            ,
+            deployment_pattern_name: self.deployment_pattern_name
+            ,
+            workload_version_name: self.workload_version_name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

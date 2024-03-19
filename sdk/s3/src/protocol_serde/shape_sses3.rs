@@ -6,3 +6,4 @@ pub fn de_sses3(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
     let _ = decoder;
     Ok(builder.build())
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDeleteTableVersionOutput {
+pub struct BatchDeleteTableVersionOutput  {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::TableVersionError>>,
     _request_id: Option<String>,
 }
-impl BatchDeleteTableVersionOutput {
+impl  BatchDeleteTableVersionOutput  {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::TableVersionError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::TableVersionError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchDeleteTableVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchDeleteTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
     pub fn builder() -> crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionOutputBuilder {
@@ -31,7 +32,7 @@ impl BatchDeleteTableVersionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchDeleteTableVersionOutputBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::TableVersionError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteTableVersionOutputBuilder {
@@ -42,33 +43,34 @@ impl BatchDeleteTableVersionOutputBuilder {
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
     pub fn errors(mut self, input: crate::types::TableVersionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableVersionError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of errors encountered while trying to delete the specified table versions.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableVersionError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableVersionError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchDeleteTableVersionOutput`](crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput).
     pub fn build(self) -> crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput {
         crate::operation::batch_delete_table_version::BatchDeleteTableVersionOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

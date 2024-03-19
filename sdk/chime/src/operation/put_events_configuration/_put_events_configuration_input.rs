@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutEventsConfigurationInput {
+pub struct PutEventsConfigurationInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot ID.</p>
@@ -12,25 +12,25 @@ pub struct PutEventsConfigurationInput {
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
 }
-impl PutEventsConfigurationInput {
+impl  PutEventsConfigurationInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    pub fn outbound_events_https_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn outbound_events_https_endpoint(&self) -> ::std::option::Option<& str> {
         self.outbound_events_https_endpoint.as_deref()
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for PutEventsConfigurationInput {
+impl  ::std::fmt::Debug for PutEventsConfigurationInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutEventsConfigurationInput");
         formatter.field("account_id", &self.account_id);
@@ -65,8 +65,7 @@ impl PutEventsConfigurationInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl PutEventsConfigurationInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot ID.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl PutEventsConfigurationInputBuilder {
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
     pub fn set_outbound_events_https_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outbound_events_https_endpoint = input;
-        self
+        self.outbound_events_https_endpoint = input; self
     }
     /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
     pub fn get_outbound_events_https_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,26 +105,26 @@ impl PutEventsConfigurationInputBuilder {
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lambda_function_arn
     }
     /// Consumes the builder and constructs a [`PutEventsConfigurationInput`](crate::operation::put_events_configuration::PutEventsConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_events_configuration::PutEventsConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_events_configuration::PutEventsConfigurationInput {
-            account_id: self.account_id,
-            bot_id: self.bot_id,
-            outbound_events_https_endpoint: self.outbound_events_https_endpoint,
-            lambda_function_arn: self.lambda_function_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_events_configuration::PutEventsConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_events_configuration::PutEventsConfigurationInput {
+                account_id: self.account_id
+                ,
+                bot_id: self.bot_id
+                ,
+                outbound_events_https_endpoint: self.outbound_events_https_endpoint
+                ,
+                lambda_function_arn: self.lambda_function_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutEventsConfigurationInputBuilder {
@@ -140,3 +137,4 @@ impl ::std::fmt::Debug for PutEventsConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

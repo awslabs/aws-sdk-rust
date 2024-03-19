@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutFieldOptionsInput {
+pub struct BatchPutFieldOptionsInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a field.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
+    pub options: ::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>>,
 }
-impl BatchPutFieldOptionsInput {
+impl  BatchPutFieldOptionsInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> ::std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
-    pub fn options(&self) -> &[crate::types::FieldOption] {
-        self.options.as_deref().unwrap_or_default()
+    pub fn options(&self) -> & [crate::types::FieldOption] {
+        self.options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutFieldOptionsInput {
@@ -39,7 +40,7 @@ impl BatchPutFieldOptionsInput {
 pub struct BatchPutFieldOptionsInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
-    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>>,
 }
 impl BatchPutFieldOptionsInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -50,8 +51,7 @@ impl BatchPutFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl BatchPutFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,28 +78,30 @@ impl BatchPutFieldOptionsInputBuilder {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     pub fn options(mut self, input: crate::types::FieldOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldOption>>) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldOption>> {
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldOption>> {
         &self.options
     }
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
-            domain_id: self.domain_id,
-            field_id: self.field_id,
-            options: self.options,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
+                domain_id: self.domain_id
+                ,
+                field_id: self.field_id
+                ,
+                options: self.options
+                ,
+            }
+        )
     }
 }
+

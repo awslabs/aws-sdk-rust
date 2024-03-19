@@ -3,7 +3,7 @@
 /// <p>Provides help information on the registration section.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationSectionDisplayHints {
+pub struct RegistrationSectionDisplayHints  {
     /// <p>The title of the display hint.</p>
     pub title: ::std::string::String,
     /// <p>A short description of the display hint.</p>
@@ -15,27 +15,25 @@ pub struct RegistrationSectionDisplayHints {
     /// <p>The link to the document the display hint is associated with.</p>
     pub documentation_link: ::std::option::Option<::std::string::String>,
 }
-impl RegistrationSectionDisplayHints {
+impl  RegistrationSectionDisplayHints  {
     /// <p>The title of the display hint.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>A short description of the display hint.</p>
-    pub fn short_description(&self) -> &str {
-        use std::ops::Deref;
-        self.short_description.deref()
+    pub fn short_description(&self) -> & str {
+        use std::ops::Deref; self.short_description.deref()
     }
     /// <p>A full description of the display hint.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The title of the document the display hint is associated with.</p>
-    pub fn documentation_title(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_title(&self) -> ::std::option::Option<& str> {
         self.documentation_title.as_deref()
     }
     /// <p>The link to the document the display hint is associated with.</p>
-    pub fn documentation_link(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_link(&self) -> ::std::option::Option<& str> {
         self.documentation_link.as_deref()
     }
 }
@@ -65,8 +63,7 @@ impl RegistrationSectionDisplayHintsBuilder {
     }
     /// <p>The title of the display hint.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the display hint.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +77,7 @@ impl RegistrationSectionDisplayHintsBuilder {
     }
     /// <p>A short description of the display hint.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>A short description of the display hint.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl RegistrationSectionDisplayHintsBuilder {
     }
     /// <p>A full description of the display hint.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>A full description of the display hint.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl RegistrationSectionDisplayHintsBuilder {
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn set_documentation_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_title = input;
-        self
+        self.documentation_title = input; self
     }
     /// <p>The title of the document the display hint is associated with.</p>
     pub fn get_documentation_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +116,7 @@ impl RegistrationSectionDisplayHintsBuilder {
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn set_documentation_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_link = input;
-        self
+        self.documentation_link = input; self
     }
     /// <p>The link to the document the display hint is associated with.</p>
     pub fn get_documentation_link(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,22 +127,26 @@ impl RegistrationSectionDisplayHintsBuilder {
     /// - [`title`](crate::types::builders::RegistrationSectionDisplayHintsBuilder::title)
     /// - [`short_description`](crate::types::builders::RegistrationSectionDisplayHintsBuilder::short_description)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationSectionDisplayHints, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationSectionDisplayHints {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building RegistrationSectionDisplayHints",
-                )
-            })?,
-            short_description: self.short_description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "short_description",
-                    "short_description was not specified but it is required when building RegistrationSectionDisplayHints",
-                )
-            })?,
-            long_description: self.long_description,
-            documentation_title: self.documentation_title,
-            documentation_link: self.documentation_link,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationSectionDisplayHints {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building RegistrationSectionDisplayHints")
+                    )?
+                ,
+                short_description: self.short_description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("short_description", "short_description was not specified but it is required when building RegistrationSectionDisplayHints")
+                    )?
+                ,
+                long_description: self.long_description
+                ,
+                documentation_title: self.documentation_title
+                ,
+                documentation_link: self.documentation_link
+                ,
+            }
+        )
     }
 }
+

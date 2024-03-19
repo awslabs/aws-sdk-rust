@@ -5,54 +5,50 @@ pub use crate::operation::create_sip_media_application::_create_sip_media_applic
 
 impl CreateSipMediaApplicationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_sip_media_application();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_sip_media_application();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateSipMediaApplication`.
-///
+/// 
 /// <p>Creates a SIP media application. For more information about SIP media applications, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipMediaApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
+                    inner: crate::operation::create_sip_media_application::builders::CreateSipMediaApplicationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-    > for CreateSipMediaApplicationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
+                    crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
+                > for CreateSipMediaApplicationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
+                        crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateSipMediaApplicationFluentBuilder {
     /// Creates a new `CreateSipMediaApplication`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateSipMediaApplicationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_sip_media_application::CreateSipMediaApplication::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_sip_media_application::CreateSipMediaApplication::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
-        crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sip_media_application::CreateSipMediaApplicationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_sip_media_application::CreateSipMediaApplication::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_sip_media_application::CreateSipMediaApplication::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput, crate::operation::create_sip_media_application::CreateSipMediaApplicationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The AWS Region assigned to the SIP media application.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_region(input.into());
@@ -146,12 +133,12 @@ impl CreateSipMediaApplicationFluentBuilder {
         self
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>) -> Self {
+    pub fn set_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>>) -> Self {
         self.inner = self.inner.set_endpoints(input);
         self
     }
     /// <p>List of endpoints (Lambda ARNs) specified for the SIP media application.</p>
-    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SipMediaApplicationEndpoint>> {
         self.inner.get_endpoints()
     }
     /// Appends an item to `Tags`.
@@ -164,12 +151,13 @@ impl CreateSipMediaApplicationFluentBuilder {
         self
     }
     /// <p>The tags assigned to the SIP media application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The tags assigned to the SIP media application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

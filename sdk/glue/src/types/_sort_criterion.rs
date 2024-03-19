@@ -3,19 +3,19 @@
 /// <p>Specifies a field to sort by and a sort order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SortCriterion {
+pub struct SortCriterion  {
     /// <p>The name of the field on which to sort.</p>
     pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>An ascending or descending sort.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
 }
-impl SortCriterion {
+impl  SortCriterion  {
     /// <p>The name of the field on which to sort.</p>
-    pub fn field_name(&self) -> ::std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<& str> {
         self.field_name.as_deref()
     }
     /// <p>An ascending or descending sort.</p>
-    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<& crate::types::Sort> {
         self.sort.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SortCriterionBuilder {
     }
     /// <p>The name of the field on which to sort.</p>
     pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// <p>The name of the field on which to sort.</p>
     pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SortCriterionBuilder {
     }
     /// <p>An ascending or descending sort.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
-        self.sort = input;
-        self
+        self.sort = input; self
     }
     /// <p>An ascending or descending sort.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
@@ -65,8 +63,11 @@ impl SortCriterionBuilder {
     /// Consumes the builder and constructs a [`SortCriterion`](crate::types::SortCriterion).
     pub fn build(self) -> crate::types::SortCriterion {
         crate::types::SortCriterion {
-            field_name: self.field_name,
-            sort: self.sort,
+            field_name: self.field_name
+            ,
+            sort: self.sort
+            ,
         }
     }
 }
+

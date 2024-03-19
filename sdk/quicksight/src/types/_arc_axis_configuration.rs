@@ -3,15 +3,15 @@
 /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArcAxisConfiguration {
+pub struct ArcAxisConfiguration  {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     pub range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     /// <p>The reserved range of the arc axis.</p>
     pub reserve_range: i32,
 }
-impl ArcAxisConfiguration {
+impl  ArcAxisConfiguration  {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-    pub fn range(&self) -> ::std::option::Option<&crate::types::ArcAxisDisplayRange> {
+    pub fn range(&self) -> ::std::option::Option<& crate::types::ArcAxisDisplayRange> {
         self.range.as_ref()
     }
     /// <p>The reserved range of the arc axis.</p>
@@ -41,8 +41,7 @@ impl ArcAxisConfigurationBuilder {
     }
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     pub fn set_range(mut self, input: ::std::option::Option<crate::types::ArcAxisDisplayRange>) -> Self {
-        self.range = input;
-        self
+        self.range = input; self
     }
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     pub fn get_range(&self) -> &::std::option::Option<crate::types::ArcAxisDisplayRange> {
@@ -55,8 +54,7 @@ impl ArcAxisConfigurationBuilder {
     }
     /// <p>The reserved range of the arc axis.</p>
     pub fn set_reserve_range(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reserve_range = input;
-        self
+        self.reserve_range = input; self
     }
     /// <p>The reserved range of the arc axis.</p>
     pub fn get_reserve_range(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,12 @@ impl ArcAxisConfigurationBuilder {
     /// Consumes the builder and constructs a [`ArcAxisConfiguration`](crate::types::ArcAxisConfiguration).
     pub fn build(self) -> crate::types::ArcAxisConfiguration {
         crate::types::ArcAxisConfiguration {
-            range: self.range,
-            reserve_range: self.reserve_range.unwrap_or_default(),
+            range: self.range
+            ,
+            reserve_range: self.reserve_range
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

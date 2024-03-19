@@ -3,7 +3,7 @@
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomStepDetails {
+pub struct CustomStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Lambda function that is being called.</p>
@@ -19,13 +19,13 @@ pub struct CustomStepDetails {
     /// </ul>
     pub source_file_location: ::std::option::Option<::std::string::String>,
 }
-impl CustomStepDetails {
+impl  CustomStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>Timeout, in seconds, for the step.</p>
@@ -39,7 +39,7 @@ impl CustomStepDetails {
     /// <li>
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
-    pub fn source_file_location(&self) -> ::std::option::Option<&str> {
+    pub fn source_file_location(&self) -> ::std::option::Option<& str> {
         self.source_file_location.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl CustomStepDetailsBuilder {
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl CustomStepDetailsBuilder {
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl CustomStepDetailsBuilder {
     }
     /// <p>Timeout, in seconds, for the step.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_seconds = input;
-        self
+        self.timeout_seconds = input; self
     }
     /// <p>Timeout, in seconds, for the step.</p>
     pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -121,8 +118,7 @@ impl CustomStepDetailsBuilder {
     /// <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p></li>
     /// </ul>
     pub fn set_source_file_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_file_location = input;
-        self
+        self.source_file_location = input; self
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
@@ -137,10 +133,15 @@ impl CustomStepDetailsBuilder {
     /// Consumes the builder and constructs a [`CustomStepDetails`](crate::types::CustomStepDetails).
     pub fn build(self) -> crate::types::CustomStepDetails {
         crate::types::CustomStepDetails {
-            name: self.name,
-            target: self.target,
-            timeout_seconds: self.timeout_seconds,
-            source_file_location: self.source_file_location,
+            name: self.name
+            ,
+            target: self.target
+            ,
+            timeout_seconds: self.timeout_seconds
+            ,
+            source_file_location: self.source_file_location
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>A summary of an OpenSearch Ingestion blueprint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineBlueprintSummary {
+pub struct PipelineBlueprintSummary  {
     /// <p>The name of the blueprint.</p>
     pub blueprint_name: ::std::option::Option<::std::string::String>,
 }
-impl PipelineBlueprintSummary {
+impl  PipelineBlueprintSummary  {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PipelineBlueprintSummaryBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_name = input;
-        self
+        self.blueprint_name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PipelineBlueprintSummaryBuilder {
     /// Consumes the builder and constructs a [`PipelineBlueprintSummary`](crate::types::PipelineBlueprintSummary).
     pub fn build(self) -> crate::types::PipelineBlueprintSummary {
         crate::types::PipelineBlueprintSummary {
-            blueprint_name: self.blueprint_name,
+            blueprint_name: self.blueprint_name
+            ,
         }
     }
 }
+

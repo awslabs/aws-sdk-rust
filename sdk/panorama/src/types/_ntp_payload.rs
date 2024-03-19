@@ -3,15 +3,14 @@
 /// <p>Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NtpPayload {
+pub struct NtpPayload  {
     /// <p>NTP servers to use, in order of preference.</p>
-    pub ntp_servers: ::std::vec::Vec<::std::string::String>,
+    pub ntp_servers: ::std::vec::Vec::<::std::string::String>,
 }
-impl NtpPayload {
+impl  NtpPayload  {
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn ntp_servers(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.ntp_servers.deref()
+    pub fn ntp_servers(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.ntp_servers.deref()
     }
 }
 impl NtpPayload {
@@ -25,7 +24,7 @@ impl NtpPayload {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NtpPayloadBuilder {
-    pub(crate) ntp_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ntp_servers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NtpPayloadBuilder {
     /// Appends an item to `ntp_servers`.
@@ -35,30 +34,31 @@ impl NtpPayloadBuilder {
     /// <p>NTP servers to use, in order of preference.</p>
     pub fn ntp_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ntp_servers.unwrap_or_default();
-        v.push(input.into());
-        self.ntp_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ntp_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn set_ntp_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ntp_servers = input;
-        self
+    pub fn set_ntp_servers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ntp_servers = input; self
     }
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn get_ntp_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ntp_servers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ntp_servers
     }
     /// Consumes the builder and constructs a [`NtpPayload`](crate::types::NtpPayload).
     /// This method will fail if any of the following fields are not set:
     /// - [`ntp_servers`](crate::types::builders::NtpPayloadBuilder::ntp_servers)
     pub fn build(self) -> ::std::result::Result<crate::types::NtpPayload, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NtpPayload {
-            ntp_servers: self.ntp_servers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ntp_servers",
-                    "ntp_servers was not specified but it is required when building NtpPayload",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NtpPayload {
+                ntp_servers: self.ntp_servers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ntp_servers", "ntp_servers was not specified but it is required when building NtpPayload")
+                    )?
+                ,
+            }
+        )
     }
 }
+

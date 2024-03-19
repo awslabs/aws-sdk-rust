@@ -5,54 +5,50 @@ pub use crate::operation::update_studio_component::_update_studio_component_inpu
 
 impl UpdateStudioComponentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_studio_component();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_studio_component::UpdateStudioComponentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_studio_component::UpdateStudioComponentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_studio_component();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateStudioComponent`.
-///
+/// 
 /// <p>Updates a studio component resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStudioComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder,
+                    inner: crate::operation::update_studio_component::builders::UpdateStudioComponentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        crate::operation::update_studio_component::UpdateStudioComponentError,
-    > for UpdateStudioComponentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_studio_component::UpdateStudioComponentOutput,
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_studio_component::UpdateStudioComponentOutput,
+                    crate::operation::update_studio_component::UpdateStudioComponentError,
+                > for UpdateStudioComponentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_studio_component::UpdateStudioComponentOutput,
+                        crate::operation::update_studio_component::UpdateStudioComponentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateStudioComponentFluentBuilder {
     /// Creates a new `UpdateStudioComponent`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateStudioComponentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_studio_component::UpdateStudioComponentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_studio_component::UpdateStudioComponent::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_studio_component::UpdateStudioComponent::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_studio_component::UpdateStudioComponentOutput,
-        crate::operation::update_studio_component::UpdateStudioComponentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_studio_component::UpdateStudioComponentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_studio_component::UpdateStudioComponentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_studio_component::UpdateStudioComponent::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_studio_component::UpdateStudioComponent::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_studio_component::UpdateStudioComponentOutput, crate::operation::update_studio_component::UpdateStudioComponentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -160,12 +147,12 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_ec2_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ec2_security_group_ids(input);
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ec2_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_ec2_security_group_ids()
     }
     /// Appends an item to `initializationScripts`.
@@ -178,15 +165,12 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn set_initialization_scripts(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
-    ) -> Self {
+    pub fn set_initialization_scripts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>>) -> Self {
         self.inner = self.inner.set_initialization_scripts(input);
         self
     }
     /// <p>Initialization scripts for studio components.</p>
-    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>> {
+    pub fn get_initialization_scripts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StudioComponentInitializationScript>> {
         self.inner.get_initialization_scripts()
     }
     /// <p>The name for the studio component.</p>
@@ -213,12 +197,12 @@ impl UpdateStudioComponentFluentBuilder {
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>) -> Self {
+    pub fn set_script_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>>) -> Self {
         self.inner = self.inner.set_script_parameters(input);
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
-    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>> {
+    pub fn get_script_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScriptParameterKeyValue>> {
         self.inner.get_script_parameters()
     }
     /// <p>The studio component ID.</p>
@@ -306,3 +290,4 @@ impl UpdateStudioComponentFluentBuilder {
         self.inner.get_runtime_role_arn()
     }
 }
+

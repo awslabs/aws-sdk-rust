@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotCopyConfigurationInput {
+pub struct DeleteSnapshotCopyConfigurationInput  {
     /// <p>The ID of the snapshot copy configuration to delete.</p>
     pub snapshot_copy_configuration_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSnapshotCopyConfigurationInput {
+impl  DeleteSnapshotCopyConfigurationInput  {
     /// <p>The ID of the snapshot copy configuration to delete.</p>
-    pub fn snapshot_copy_configuration_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_configuration_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_configuration_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteSnapshotCopyConfigurationInputBuilder {
     }
     /// <p>The ID of the snapshot copy configuration to delete.</p>
     pub fn set_snapshot_copy_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_copy_configuration_id = input;
-        self
+        self.snapshot_copy_configuration_id = input; self
     }
     /// <p>The ID of the snapshot copy configuration to delete.</p>
     pub fn get_snapshot_copy_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_copy_configuration_id
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotCopyConfigurationInput`](crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput {
-                snapshot_copy_configuration_id: self.snapshot_copy_configuration_id,
-            },
+                snapshot_copy_configuration_id: self.snapshot_copy_configuration_id
+                ,
+            }
         )
     }
 }
+

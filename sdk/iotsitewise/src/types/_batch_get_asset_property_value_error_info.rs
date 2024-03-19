@@ -3,19 +3,19 @@
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueErrorInfo {
+pub struct BatchGetAssetPropertyValueErrorInfo  {
     /// <p>The error code.</p>
     pub error_code: crate::types::BatchGetAssetPropertyValueErrorCode,
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub error_timestamp: ::aws_smithy_types::DateTime,
 }
-impl BatchGetAssetPropertyValueErrorInfo {
+impl  BatchGetAssetPropertyValueErrorInfo  {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> &crate::types::BatchGetAssetPropertyValueErrorCode {
+    pub fn error_code(&self) -> & crate::types::BatchGetAssetPropertyValueErrorCode {
         &self.error_code
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn error_timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.error_timestamp
     }
 }
@@ -42,8 +42,7 @@ impl BatchGetAssetPropertyValueErrorInfoBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode> {
@@ -57,8 +56,7 @@ impl BatchGetAssetPropertyValueErrorInfoBuilder {
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn set_error_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.error_timestamp = input;
-        self
+        self.error_timestamp = input; self
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn get_error_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,19 +67,20 @@ impl BatchGetAssetPropertyValueErrorInfoBuilder {
     /// - [`error_code`](crate::types::builders::BatchGetAssetPropertyValueErrorInfoBuilder::error_code)
     /// - [`error_timestamp`](crate::types::builders::BatchGetAssetPropertyValueErrorInfoBuilder::error_timestamp)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueErrorInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueErrorInfo {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building BatchGetAssetPropertyValueErrorInfo",
-                )
-            })?,
-            error_timestamp: self.error_timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_timestamp",
-                    "error_timestamp was not specified but it is required when building BatchGetAssetPropertyValueErrorInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetAssetPropertyValueErrorInfo {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building BatchGetAssetPropertyValueErrorInfo")
+                    )?
+                ,
+                error_timestamp: self.error_timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_timestamp", "error_timestamp was not specified but it is required when building BatchGetAssetPropertyValueErrorInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

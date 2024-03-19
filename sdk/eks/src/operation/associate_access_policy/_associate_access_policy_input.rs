@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateAccessPolicyInput {
+pub struct AssociateAccessPolicyInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM user or role for the <code>AccessEntry</code> that you're associating the access policy to.</p>
@@ -12,21 +12,21 @@ pub struct AssociateAccessPolicyInput {
     /// <p>The scope for the <code>AccessPolicy</code>. You can scope access policies to an entire cluster or to specific Kubernetes namespaces.</p>
     pub access_scope: ::std::option::Option<crate::types::AccessScope>,
 }
-impl AssociateAccessPolicyInput {
+impl  AssociateAccessPolicyInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or role for the <code>AccessEntry</code> that you're associating the access policy to.</p>
-    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The ARN of the <code>AccessPolicy</code> that you're associating. For a list of ARNs, use <code>ListAccessPolicies</code>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The scope for the <code>AccessPolicy</code>. You can scope access policies to an entire cluster or to specific Kubernetes namespaces.</p>
-    pub fn access_scope(&self) -> ::std::option::Option<&crate::types::AccessScope> {
+    pub fn access_scope(&self) -> ::std::option::Option<& crate::types::AccessScope> {
         self.access_scope.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociateAccessPolicyInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AssociateAccessPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or role for the <code>AccessEntry</code> that you're associating the access policy to.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or role for the <code>AccessEntry</code> that you're associating the access policy to.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl AssociateAccessPolicyInputBuilder {
     }
     /// <p>The ARN of the <code>AccessPolicy</code> that you're associating. For a list of ARNs, use <code>ListAccessPolicies</code>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The ARN of the <code>AccessPolicy</code> that you're associating. For a list of ARNs, use <code>ListAccessPolicies</code>.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl AssociateAccessPolicyInputBuilder {
     }
     /// <p>The scope for the <code>AccessPolicy</code>. You can scope access policies to an entire cluster or to specific Kubernetes namespaces.</p>
     pub fn set_access_scope(mut self, input: ::std::option::Option<crate::types::AccessScope>) -> Self {
-        self.access_scope = input;
-        self
+        self.access_scope = input; self
     }
     /// <p>The scope for the <code>AccessPolicy</code>. You can scope access policies to an entire cluster or to specific Kubernetes namespaces.</p>
     pub fn get_access_scope(&self) -> &::std::option::Option<crate::types::AccessScope> {
         &self.access_scope
     }
     /// Consumes the builder and constructs a [`AssociateAccessPolicyInput`](crate::operation::associate_access_policy::AssociateAccessPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_access_policy::AssociateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_access_policy::AssociateAccessPolicyInput {
-            cluster_name: self.cluster_name,
-            principal_arn: self.principal_arn,
-            policy_arn: self.policy_arn,
-            access_scope: self.access_scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_access_policy::AssociateAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_access_policy::AssociateAccessPolicyInput {
+                cluster_name: self.cluster_name
+                ,
+                principal_arn: self.principal_arn
+                ,
+                policy_arn: self.policy_arn
+                ,
+                access_scope: self.access_scope
+                ,
+            }
+        )
     }
 }
+

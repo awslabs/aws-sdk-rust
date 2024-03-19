@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImpersonationRoleEffectInput {
+pub struct GetImpersonationRoleEffectInput  {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role ID to test.</p>
@@ -18,13 +18,13 @@ pub struct GetImpersonationRoleEffectInput {
     /// </ul>
     pub target_user: ::std::option::Option<::std::string::String>,
 }
-impl GetImpersonationRoleEffectInput {
+impl  GetImpersonationRoleEffectInput  {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The impersonation role ID to test.</p>
-    pub fn impersonation_role_id(&self) -> ::std::option::Option<&str> {
+    pub fn impersonation_role_id(&self) -> ::std::option::Option<& str> {
         self.impersonation_role_id.as_deref()
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
@@ -36,7 +36,7 @@ impl GetImpersonationRoleEffectInput {
     /// <li>
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
-    pub fn target_user(&self) -> ::std::option::Option<&str> {
+    pub fn target_user(&self) -> ::std::option::Option<& str> {
         self.target_user.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl GetImpersonationRoleEffectInputBuilder {
     }
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl GetImpersonationRoleEffectInputBuilder {
     }
     /// <p>The impersonation role ID to test.</p>
     pub fn set_impersonation_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.impersonation_role_id = input;
-        self
+        self.impersonation_role_id = input; self
     }
     /// <p>The impersonation role ID to test.</p>
     pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl GetImpersonationRoleEffectInputBuilder {
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
     pub fn set_target_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_user = input;
-        self
+        self.target_user = input; self
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
@@ -126,16 +123,17 @@ impl GetImpersonationRoleEffectInputBuilder {
         &self.target_user
     }
     /// Consumes the builder and constructs a [`GetImpersonationRoleEffectInput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput {
-            organization_id: self.organization_id,
-            impersonation_role_id: self.impersonation_role_id,
-            target_user: self.target_user,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput {
+                organization_id: self.organization_id
+                ,
+                impersonation_role_id: self.impersonation_role_id
+                ,
+                target_user: self.target_user
+                ,
+            }
+        )
     }
 }
+

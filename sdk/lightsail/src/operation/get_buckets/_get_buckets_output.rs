@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketsOutput {
+pub struct GetBucketsOutput  {
     /// <p>An array of objects that describe buckets.</p>
-    pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
+    pub buckets: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -14,30 +14,31 @@ pub struct GetBucketsOutput {
     pub account_level_bpa_sync: ::std::option::Option<crate::types::AccountLevelBpaSync>,
     _request_id: Option<String>,
 }
-impl GetBucketsOutput {
+impl  GetBucketsOutput  {
     /// <p>An array of objects that describe buckets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
-    pub fn buckets(&self) -> &[crate::types::Bucket] {
-        self.buckets.as_deref().unwrap_or_default()
+    pub fn buckets(&self) -> & [crate::types::Bucket] {
+        self.buckets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
-    pub fn account_level_bpa_sync(&self) -> ::std::option::Option<&crate::types::AccountLevelBpaSync> {
+    pub fn account_level_bpa_sync(&self) -> ::std::option::Option<& crate::types::AccountLevelBpaSync> {
         self.account_level_bpa_sync.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBucketsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBucketsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketsOutput`](crate::operation::get_buckets::GetBucketsOutput).
     pub fn builder() -> crate::operation::get_buckets::builders::GetBucketsOutputBuilder {
@@ -49,7 +50,7 @@ impl GetBucketsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketsOutputBuilder {
-    pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
+    pub(crate) buckets: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     pub(crate) account_level_bpa_sync: ::std::option::Option<crate::types::AccountLevelBpaSync>,
     _request_id: Option<String>,
@@ -62,17 +63,16 @@ impl GetBucketsOutputBuilder {
     /// <p>An array of objects that describe buckets.</p>
     pub fn buckets(mut self, input: crate::types::Bucket) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input);
-        self.buckets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.buckets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe buckets.</p>
-    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>) -> Self {
+        self.buckets = input; self
     }
     /// <p>An array of objects that describe buckets.</p>
-    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Bucket>> {
         &self.buckets
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -86,8 +86,7 @@ impl GetBucketsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -104,8 +103,7 @@ impl GetBucketsOutputBuilder {
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub fn set_account_level_bpa_sync(mut self, input: ::std::option::Option<crate::types::AccountLevelBpaSync>) -> Self {
-        self.account_level_bpa_sync = input;
-        self
+        self.account_level_bpa_sync = input; self
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
     /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
@@ -113,21 +111,25 @@ impl GetBucketsOutputBuilder {
         &self.account_level_bpa_sync
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBucketsOutput`](crate::operation::get_buckets::GetBucketsOutput).
     pub fn build(self) -> crate::operation::get_buckets::GetBucketsOutput {
         crate::operation::get_buckets::GetBucketsOutput {
-            buckets: self.buckets,
-            next_page_token: self.next_page_token,
-            account_level_bpa_sync: self.account_level_bpa_sync,
+            buckets: self.buckets
+            ,
+            next_page_token: self.next_page_token
+            ,
+            account_level_bpa_sync: self.account_level_bpa_sync
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

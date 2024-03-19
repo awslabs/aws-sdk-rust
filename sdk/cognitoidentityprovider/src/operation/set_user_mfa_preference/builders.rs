@@ -5,23 +5,20 @@ pub use crate::operation::set_user_mfa_preference::_set_user_mfa_preference_inpu
 
 impl SetUserMfaPreferenceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.set_user_mfa_preference();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.set_user_mfa_preference();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SetUserMFAPreference`.
-///
+/// 
 /// <p>Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are activated and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
@@ -29,33 +26,32 @@ impl SetUserMfaPreferenceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUserMFAPreferenceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder,
+                    inner: crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-    > for SetUserMFAPreferenceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
+                    crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+                > for SetUserMFAPreferenceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
+                        crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SetUserMFAPreferenceFluentBuilder {
     /// Creates a new `SetUserMFAPreference`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl SetUserMFAPreferenceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::set_user_mfa_preference::SetUserMFAPreference::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::set_user_mfa_preference::SetUserMFAPreference::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
-        crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::set_user_mfa_preference::SetUserMFAPreference::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::set_user_mfa_preference::SetUserMFAPreference::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput, crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
     pub fn sms_mfa_settings(mut self, input: crate::types::SmsMfaSettingsType) -> Self {
         self.inner = self.inner.sms_mfa_settings(input);
@@ -154,3 +141,4 @@ impl SetUserMFAPreferenceFluentBuilder {
         self.inner.get_access_token()
     }
 }
+

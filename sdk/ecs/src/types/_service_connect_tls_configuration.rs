@@ -3,7 +3,7 @@
 /// <p>An object that represents the configuration for Service Connect TLS.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceConnectTlsConfiguration {
+pub struct ServiceConnectTlsConfiguration  {
     /// <p>The signer certificate authority.</p>
     pub issuer_certificate_authority: ::std::option::Option<crate::types::ServiceConnectTlsCertificateAuthority>,
     /// <p>The Amazon Web Services Key Management Service key.</p>
@@ -11,17 +11,17 @@ pub struct ServiceConnectTlsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's associated with the Service Connect TLS.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl ServiceConnectTlsConfiguration {
+impl  ServiceConnectTlsConfiguration  {
     /// <p>The signer certificate authority.</p>
-    pub fn issuer_certificate_authority(&self) -> ::std::option::Option<&crate::types::ServiceConnectTlsCertificateAuthority> {
+    pub fn issuer_certificate_authority(&self) -> ::std::option::Option<& crate::types::ServiceConnectTlsCertificateAuthority> {
         self.issuer_certificate_authority.as_ref()
     }
     /// <p>The Amazon Web Services Key Management Service key.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's associated with the Service Connect TLS.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ServiceConnectTlsConfigurationBuilder {
     }
     /// <p>The signer certificate authority.</p>
     pub fn set_issuer_certificate_authority(mut self, input: ::std::option::Option<crate::types::ServiceConnectTlsCertificateAuthority>) -> Self {
-        self.issuer_certificate_authority = input;
-        self
+        self.issuer_certificate_authority = input; self
     }
     /// <p>The signer certificate authority.</p>
     pub fn get_issuer_certificate_authority(&self) -> &::std::option::Option<crate::types::ServiceConnectTlsCertificateAuthority> {
@@ -63,8 +62,7 @@ impl ServiceConnectTlsConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service key.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The Amazon Web Services Key Management Service key.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl ServiceConnectTlsConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's associated with the Service Connect TLS.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that's associated with the Service Connect TLS.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl ServiceConnectTlsConfigurationBuilder {
     /// Consumes the builder and constructs a [`ServiceConnectTlsConfiguration`](crate::types::ServiceConnectTlsConfiguration).
     pub fn build(self) -> crate::types::ServiceConnectTlsConfiguration {
         crate::types::ServiceConnectTlsConfiguration {
-            issuer_certificate_authority: self.issuer_certificate_authority,
-            kms_key: self.kms_key,
-            role_arn: self.role_arn,
+            issuer_certificate_authority: self.issuer_certificate_authority
+            ,
+            kms_key: self.kms_key
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

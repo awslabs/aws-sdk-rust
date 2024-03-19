@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ListRuleGroupsNamespaces</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRuleGroupsNamespacesInput {
+pub struct ListRuleGroupsNamespacesInput  {
     /// <p>The ID of the workspace containing the rule groups namespaces.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.</p>
@@ -14,18 +14,18 @@ pub struct ListRuleGroupsNamespacesInput {
     /// <p>The maximum number of results to return. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRuleGroupsNamespacesInput {
+impl  ListRuleGroupsNamespacesInput  {
     /// <p>The ID of the workspace containing the rule groups namespaces.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.</p>
     /// <p>For example, if your initial request has <code>maxResults</code> of 10, and there are 12 rule groups namespaces to return, then your initial request will return 10 and a <code>nextToken</code>. Using the next token in a subsequent call will return the remaining 2 namespaces.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return. The default is 100.</p>
@@ -58,8 +58,7 @@ impl ListRuleGroupsNamespacesInputBuilder {
     }
     /// <p>The ID of the workspace containing the rule groups namespaces.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace containing the rule groups namespaces.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl ListRuleGroupsNamespacesInputBuilder {
     }
     /// <p>Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl ListRuleGroupsNamespacesInputBuilder {
     /// <p>The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.</p>
     /// <p>For example, if your initial request has <code>maxResults</code> of 10, and there are 12 rule groups namespaces to return, then your initial request will return 10 and a <code>nextToken</code>. Using the next token in a subsequent call will return the remaining 2 namespaces.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.</p>
     /// <p>For example, if your initial request has <code>maxResults</code> of 10, and there are 12 rule groups namespaces to return, then your initial request will return 10 and a <code>nextToken</code>. Using the next token in a subsequent call will return the remaining 2 namespaces.</p>
@@ -103,25 +100,26 @@ impl ListRuleGroupsNamespacesInputBuilder {
     }
     /// <p>The maximum number of results to return. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesInput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput {
-            workspace_id: self.workspace_id,
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesInput {
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

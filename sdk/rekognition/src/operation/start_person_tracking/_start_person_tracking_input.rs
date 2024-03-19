@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartPersonTrackingInput {
+pub struct StartPersonTrackingInput  {
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     pub video: ::std::option::Option<crate::types::Video>,
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
@@ -12,21 +12,21 @@ pub struct StartPersonTrackingInput {
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub job_tag: ::std::option::Option<::std::string::String>,
 }
-impl StartPersonTrackingInput {
+impl  StartPersonTrackingInput  {
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
-    pub fn video(&self) -> ::std::option::Option<&crate::types::Video> {
+    pub fn video(&self) -> ::std::option::Option<& crate::types::Video> {
         self.video.as_ref()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
-    pub fn notification_channel(&self) -> ::std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> ::std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-    pub fn job_tag(&self) -> ::std::option::Option<&str> {
+    pub fn job_tag(&self) -> ::std::option::Option<& str> {
         self.job_tag.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartPersonTrackingInputBuilder {
     }
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
@@ -69,8 +68,7 @@ impl StartPersonTrackingInputBuilder {
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl StartPersonTrackingInputBuilder {
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn set_notification_channel(mut self, input: ::std::option::Option<crate::types::NotificationChannel>) -> Self {
-        self.notification_channel = input;
-        self
+        self.notification_channel = input; self
     }
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn get_notification_channel(&self) -> &::std::option::Option<crate::types::NotificationChannel> {
@@ -97,23 +94,26 @@ impl StartPersonTrackingInputBuilder {
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_tag
     }
     /// Consumes the builder and constructs a [`StartPersonTrackingInput`](crate::operation::start_person_tracking::StartPersonTrackingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_person_tracking::StartPersonTrackingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_person_tracking::StartPersonTrackingInput {
-            video: self.video,
-            client_request_token: self.client_request_token,
-            notification_channel: self.notification_channel,
-            job_tag: self.job_tag,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_person_tracking::StartPersonTrackingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_person_tracking::StartPersonTrackingInput {
+                video: self.video
+                ,
+                client_request_token: self.client_request_token
+                ,
+                notification_channel: self.notification_channel
+                ,
+                job_tag: self.job_tag
+                ,
+            }
+        )
     }
 }
+

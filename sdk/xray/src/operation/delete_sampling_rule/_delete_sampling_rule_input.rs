@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSamplingRuleInput {
+pub struct DeleteSamplingRuleInput  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub rule_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSamplingRuleInput {
+impl  DeleteSamplingRuleInput  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl DeleteSamplingRuleInputBuilder {
     }
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl DeleteSamplingRuleInputBuilder {
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_arn
     }
     /// Consumes the builder and constructs a [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_sampling_rule::DeleteSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_sampling_rule::DeleteSamplingRuleInput {
-            rule_name: self.rule_name,
-            rule_arn: self.rule_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sampling_rule::DeleteSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sampling_rule::DeleteSamplingRuleInput {
+                rule_name: self.rule_name
+                ,
+                rule_arn: self.rule_arn
+                ,
+            }
+        )
     }
 }
+

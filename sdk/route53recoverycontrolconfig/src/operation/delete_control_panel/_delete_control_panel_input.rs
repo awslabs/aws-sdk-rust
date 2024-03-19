@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteControlPanelInput {
+pub struct DeleteControlPanelInput  {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteControlPanelInput {
+impl  DeleteControlPanelInput  {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteControlPanelInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_panel_arn = input;
-        self
+        self.control_panel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_panel_arn
     }
     /// Consumes the builder and constructs a [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_control_panel::DeleteControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_control_panel::DeleteControlPanelInput {
-            control_panel_arn: self.control_panel_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_control_panel::DeleteControlPanelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_control_panel::DeleteControlPanelInput {
+                control_panel_arn: self.control_panel_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableDirectoryInput {
+pub struct DisableDirectoryInput  {
     /// <p>The ARN of the directory to disable.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisableDirectoryInput {
+impl  DisableDirectoryInput  {
     /// <p>The ARN of the directory to disable.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DisableDirectoryInputBuilder {
     }
     /// <p>The ARN of the directory to disable.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The ARN of the directory to disable.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_directory::DisableDirectoryInput {
-            directory_arn: self.directory_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_directory::DisableDirectoryInput {
+                directory_arn: self.directory_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLifecyclePolicyInput {
+pub struct CreateLifecyclePolicyInput  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of the lifecycle policy.</p>
@@ -14,25 +14,25 @@ pub struct CreateLifecyclePolicyInput {
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateLifecyclePolicyInput {
+impl  CreateLifecyclePolicyInput  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the lifecycle policy.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -77,8 +76,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>A description of the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>The JSON policy document to use as the content for the lifecycle policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON policy document to use as the content for the lifecycle policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,24 +116,28 @@ impl CreateLifecyclePolicyInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
-            r#type: self.r#type,
-            name: self.name,
-            description: self.description,
-            policy: self.policy,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                policy: self.policy
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

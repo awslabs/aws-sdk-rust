@@ -2,36 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHostKeysOutput {
+pub struct ListHostKeysOutput  {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the server identifier that contains the listed host keys.</p>
     pub server_id: ::std::string::String,
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub host_keys: ::std::vec::Vec<crate::types::ListedHostKey>,
+    pub host_keys: ::std::vec::Vec::<crate::types::ListedHostKey>,
     _request_id: Option<String>,
 }
-impl ListHostKeysOutput {
+impl  ListHostKeysOutput  {
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> & str {
+        use std::ops::Deref; self.server_id.deref()
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn host_keys(&self) -> &[crate::types::ListedHostKey] {
-        use std::ops::Deref;
-        self.host_keys.deref()
+    pub fn host_keys(&self) -> & [crate::types::ListedHostKey] {
+        use std::ops::Deref; self.host_keys.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListHostKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListHostKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListHostKeysOutput`](crate::operation::list_host_keys::ListHostKeysOutput).
     pub fn builder() -> crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder {
@@ -45,7 +43,7 @@ impl ListHostKeysOutput {
 pub struct ListHostKeysOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) server_id: ::std::option::Option<::std::string::String>,
-    pub(crate) host_keys: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>,
+    pub(crate) host_keys: ::std::option::Option<::std::vec::Vec::<crate::types::ListedHostKey>>,
     _request_id: Option<String>,
 }
 impl ListHostKeysOutputBuilder {
@@ -56,8 +54,7 @@ impl ListHostKeysOutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns a token that you can use to call <code>ListHostKeys</code> again and receive additional results, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +68,7 @@ impl ListHostKeysOutputBuilder {
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>Returns the server identifier that contains the listed host keys.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,50 +81,49 @@ impl ListHostKeysOutputBuilder {
     /// <p>Returns an array, where each item contains the details of a host key.</p>
     pub fn host_keys(mut self, input: crate::types::ListedHostKey) -> Self {
         let mut v = self.host_keys.unwrap_or_default();
-        v.push(input);
-        self.host_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.host_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn set_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>>) -> Self {
-        self.host_keys = input;
-        self
+    pub fn set_host_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedHostKey>>) -> Self {
+        self.host_keys = input; self
     }
     /// <p>Returns an array, where each item contains the details of a host key.</p>
-    pub fn get_host_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedHostKey>> {
+    pub fn get_host_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedHostKey>> {
         &self.host_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListHostKeysOutput`](crate::operation::list_host_keys::ListHostKeysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder::server_id)
     /// - [`host_keys`](crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder::host_keys)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_host_keys::ListHostKeysOutput {
-            next_token: self.next_token,
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building ListHostKeysOutput",
-                )
-            })?,
-            host_keys: self.host_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host_keys",
-                    "host_keys was not specified but it is required when building ListHostKeysOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_host_keys::ListHostKeysOutput {
+                next_token: self.next_token
+                ,
+                server_id: self.server_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("server_id", "server_id was not specified but it is required when building ListHostKeysOutput")
+                    )?
+                ,
+                host_keys: self.host_keys
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host_keys", "host_keys was not specified but it is required when building ListHostKeysOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

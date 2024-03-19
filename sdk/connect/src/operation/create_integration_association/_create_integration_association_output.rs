@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateIntegrationAssociationOutput {
+pub struct CreateIntegrationAssociationOutput  {
     /// <p>The identifier for the integration association.</p>
     pub integration_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
     pub integration_association_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateIntegrationAssociationOutput {
+impl  CreateIntegrationAssociationOutput  {
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(&self) -> ::std::option::Option<&str> {
+    pub fn integration_association_id(&self) -> ::std::option::Option<& str> {
         self.integration_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
-    pub fn integration_association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn integration_association_arn(&self) -> ::std::option::Option<& str> {
         self.integration_association_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateIntegrationAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateIntegrationAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationAssociationOutput`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput).
     pub fn builder() -> crate::operation::create_integration_association::builders::CreateIntegrationAssociationOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateIntegrationAssociationOutputBuilder {
     }
     /// <p>The identifier for the integration association.</p>
     pub fn set_integration_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_association_id = input;
-        self
+        self.integration_association_id = input; self
     }
     /// <p>The identifier for the integration association.</p>
     pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl CreateIntegrationAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
     pub fn set_integration_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.integration_association_arn = input;
-        self
+        self.integration_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the association.</p>
     pub fn get_integration_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_association_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateIntegrationAssociationOutput`](crate::operation::create_integration_association::CreateIntegrationAssociationOutput).
     pub fn build(self) -> crate::operation::create_integration_association::CreateIntegrationAssociationOutput {
         crate::operation::create_integration_association::CreateIntegrationAssociationOutput {
-            integration_association_id: self.integration_association_id,
-            integration_association_arn: self.integration_association_arn,
+            integration_association_id: self.integration_association_id
+            ,
+            integration_association_arn: self.integration_association_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExperienceInput {
+pub struct DescribeExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeExperienceInput {
+impl  DescribeExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeExperienceInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeExperienceInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeExperienceInput`](crate::operation::describe_experience::DescribeExperienceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_experience::DescribeExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_experience::DescribeExperienceInput {
-            id: self.id,
-            index_id: self.index_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_experience::DescribeExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_experience::DescribeExperienceInput {
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

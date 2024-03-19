@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRobotApplicationsOutput {
+pub struct ListRobotApplicationsOutput  {
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
-    pub robot_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationSummary>>,
+    pub robot_application_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationSummary>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRobotApplicationsOutput {
+impl  ListRobotApplicationsOutput  {
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.robot_application_summaries.is_none()`.
-    pub fn robot_application_summaries(&self) -> &[crate::types::RobotApplicationSummary] {
-        self.robot_application_summaries.as_deref().unwrap_or_default()
+    pub fn robot_application_summaries(&self) -> & [crate::types::RobotApplicationSummary] {
+        self.robot_application_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRobotApplicationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRobotApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRobotApplicationsOutput`](crate::operation::list_robot_applications::ListRobotApplicationsOutput).
     pub fn builder() -> crate::operation::list_robot_applications::builders::ListRobotApplicationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRobotApplicationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRobotApplicationsOutputBuilder {
-    pub(crate) robot_application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationSummary>>,
+    pub(crate) robot_application_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRobotApplicationsOutputBuilder {
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
     pub fn robot_application_summaries(mut self, input: crate::types::RobotApplicationSummary) -> Self {
         let mut v = self.robot_application_summaries.unwrap_or_default();
-        v.push(input);
-        self.robot_application_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.robot_application_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
-    pub fn set_robot_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationSummary>>) -> Self {
-        self.robot_application_summaries = input;
-        self
+    pub fn set_robot_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationSummary>>) -> Self {
+        self.robot_application_summaries = input; self
     }
     /// <p>A list of robot application summaries that meet the criteria of the request.</p>
-    pub fn get_robot_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RobotApplicationSummary>> {
+    pub fn get_robot_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RobotApplicationSummary>> {
         &self.robot_application_summaries
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
@@ -69,28 +69,30 @@ impl ListRobotApplicationsOutputBuilder {
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRobotApplicationsOutput`](crate::operation::list_robot_applications::ListRobotApplicationsOutput).
     pub fn build(self) -> crate::operation::list_robot_applications::ListRobotApplicationsOutput {
         crate::operation::list_robot_applications::ListRobotApplicationsOutput {
-            robot_application_summaries: self.robot_application_summaries,
-            next_token: self.next_token,
+            robot_application_summaries: self.robot_application_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

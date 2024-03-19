@@ -3,15 +3,14 @@
 /// <p>Details about the member who received the query result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProtectedQuerySingleMemberOutput {
+pub struct ProtectedQuerySingleMemberOutput  {
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
     pub account_id: ::std::string::String,
 }
-impl ProtectedQuerySingleMemberOutput {
+impl  ProtectedQuerySingleMemberOutput  {
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
 }
 impl ProtectedQuerySingleMemberOutput {
@@ -36,8 +35,7 @@ impl ProtectedQuerySingleMemberOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the member in the collaboration who can receive results for the query.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ProtectedQuerySingleMemberOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::ProtectedQuerySingleMemberOutputBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuerySingleMemberOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProtectedQuerySingleMemberOutput {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building ProtectedQuerySingleMemberOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProtectedQuerySingleMemberOutput {
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building ProtectedQuerySingleMemberOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

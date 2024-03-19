@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConformancePackStatus`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`conformance_pack_names(impl Into<String>)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::conformance_pack_names) / [`set_conformance_pack_names(Option<Vec::<String>>)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::set_conformance_pack_names):<br>required: **false**<br><p>Comma-separated list of conformance pack names.</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of conformance packs status returned on each page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::set_next_token):<br>required: **false**<br><p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p><br>
-    /// - On success, responds with [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput) with field(s):
+                            /// - On success, responds with [`DescribeConformancePackStatusOutput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput) with field(s):
     ///   - [`conformance_pack_status_details(Option<Vec::<ConformancePackStatusDetail>>)`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput::conformance_pack_status_details): <p>A list of <code>ConformancePackStatusDetail</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput::next_token): <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    /// - On failure, responds with [`SdkError<DescribeConformancePackStatusError>`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError)
-    pub fn describe_conformance_pack_status(
-        &self,
-    ) -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder {
-        crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeConformancePackStatusError>`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError)
+    pub fn describe_conformance_pack_status(&self) -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder {
+                                crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusFluentBuilder::new(self.handle.clone())
+                            }
 }
+

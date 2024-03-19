@@ -5,13 +5,13 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DirectDeploySettings {
+pub struct DirectDeploySettings  {
     /// <p>Describes whether model deployment permissions are enabled or disabled in the Canvas application.</p>
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
-impl DirectDeploySettings {
+impl  DirectDeploySettings  {
     /// <p>Describes whether model deployment permissions are enabled or disabled in the Canvas application.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FeatureStatus> {
         self.status.as_ref()
     }
 }
@@ -36,8 +36,7 @@ impl DirectDeploySettingsBuilder {
     }
     /// <p>Describes whether model deployment permissions are enabled or disabled in the Canvas application.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes whether model deployment permissions are enabled or disabled in the Canvas application.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
@@ -45,6 +44,10 @@ impl DirectDeploySettingsBuilder {
     }
     /// Consumes the builder and constructs a [`DirectDeploySettings`](crate::types::DirectDeploySettings).
     pub fn build(self) -> crate::types::DirectDeploySettings {
-        crate::types::DirectDeploySettings { status: self.status }
+        crate::types::DirectDeploySettings {
+            status: self.status
+            ,
+        }
     }
 }
+

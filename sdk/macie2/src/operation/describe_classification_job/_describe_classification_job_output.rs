@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClassificationJobOutput {
+pub struct DescribeClassificationJobOutput  {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    pub allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub allow_list_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    pub custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The custom description of the job.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
@@ -49,7 +49,7 @@ pub struct DescribeClassificationJobOutput {
     pub last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -78,34 +78,36 @@ pub struct DescribeClassificationJobOutput {
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
     pub statistics: ::std::option::Option<crate::types::Statistics>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     pub user_paused_details: ::std::option::Option<crate::types::UserPausedDetails>,
     _request_id: Option<String>,
 }
-impl DescribeClassificationJobOutput {
+impl  DescribeClassificationJobOutput  {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allow_list_ids.is_none()`.
-    pub fn allow_list_ids(&self) -> &[::std::string::String] {
-        self.allow_list_ids.as_deref().unwrap_or_default()
+    pub fn allow_list_ids(&self) -> & [::std::string::String] {
+        self.allow_list_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_data_identifier_ids.is_none()`.
-    pub fn custom_data_identifier_ids(&self) -> &[::std::string::String] {
-        self.custom_data_identifier_ids.as_deref().unwrap_or_default()
+    pub fn custom_data_identifier_ids(&self) -> & [::std::string::String] {
+        self.custom_data_identifier_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The custom description of the job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
@@ -113,11 +115,11 @@ impl DescribeClassificationJobOutput {
         self.initial_run
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the job. Possible values are:</p>
@@ -135,7 +137,7 @@ impl DescribeClassificationJobOutput {
     /// <li>
     /// <p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The schedule for running the job. Possible values are:</p>
@@ -145,23 +147,24 @@ impl DescribeClassificationJobOutput {
     /// <li>
     /// <p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
-    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    pub fn last_run_error_status(&self) -> ::std::option::Option<&crate::types::LastRunErrorStatus> {
+    pub fn last_run_error_status(&self) -> ::std::option::Option<& crate::types::LastRunErrorStatus> {
         self.last_run_error_status.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
-    pub fn last_run_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_run_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_data_identifier_ids.is_none()`.
-    pub fn managed_data_identifier_ids(&self) -> &[::std::string::String] {
-        self.managed_data_identifier_ids.as_deref().unwrap_or_default()
+    pub fn managed_data_identifier_ids(&self) -> & [::std::string::String] {
+        self.managed_data_identifier_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
@@ -179,15 +182,15 @@ impl DescribeClassificationJobOutput {
     /// <p>If this value is null, the job uses the recommended set of managed data identifiers.</p>
     /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn managed_data_identifier_selector(&self) -> ::std::option::Option<&crate::types::ManagedDataIdentifierSelector> {
+    pub fn managed_data_identifier_selector(&self) -> ::std::option::Option<& crate::types::ManagedDataIdentifierSelector> {
         self.managed_data_identifier_selector.as_ref()
     }
     /// <p>The custom name of the job.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    pub fn s3_job_definition(&self) -> ::std::option::Option<&crate::types::S3JobDefinition> {
+    pub fn s3_job_definition(&self) -> ::std::option::Option<& crate::types::S3JobDefinition> {
         self.s3_job_definition.as_ref()
     }
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
@@ -195,27 +198,27 @@ impl DescribeClassificationJobOutput {
         self.sampling_percentage
     }
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
-    pub fn schedule_frequency(&self) -> ::std::option::Option<&crate::types::JobScheduleFrequency> {
+    pub fn schedule_frequency(&self) -> ::std::option::Option<& crate::types::JobScheduleFrequency> {
         self.schedule_frequency.as_ref()
     }
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
-    pub fn statistics(&self) -> ::std::option::Option<&crate::types::Statistics> {
+    pub fn statistics(&self) -> ::std::option::Option<& crate::types::Statistics> {
         self.statistics.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
-    pub fn user_paused_details(&self) -> ::std::option::Option<&crate::types::UserPausedDetails> {
+    pub fn user_paused_details(&self) -> ::std::option::Option<& crate::types::UserPausedDetails> {
         self.user_paused_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeClassificationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClassificationJobOutput`](crate::operation::describe_classification_job::DescribeClassificationJobOutput).
     pub fn builder() -> crate::operation::describe_classification_job::builders::DescribeClassificationJobOutputBuilder {
@@ -227,10 +230,10 @@ impl DescribeClassificationJobOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeClassificationJobOutputBuilder {
-    pub(crate) allow_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allow_list_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_data_identifier_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) initial_run: ::std::option::Option<bool>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
@@ -239,14 +242,14 @@ pub struct DescribeClassificationJobOutputBuilder {
     pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
     pub(crate) last_run_error_status: ::std::option::Option<crate::types::LastRunErrorStatus>,
     pub(crate) last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) managed_data_identifier_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) managed_data_identifier_selector: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_job_definition: ::std::option::Option<crate::types::S3JobDefinition>,
     pub(crate) sampling_percentage: ::std::option::Option<i32>,
     pub(crate) schedule_frequency: ::std::option::Option<crate::types::JobScheduleFrequency>,
     pub(crate) statistics: ::std::option::Option<crate::types::Statistics>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) user_paused_details: ::std::option::Option<crate::types::UserPausedDetails>,
     _request_id: Option<String>,
 }
@@ -258,17 +261,16 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
     pub fn allow_list_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allow_list_ids.unwrap_or_default();
-        v.push(input.into());
-        self.allow_list_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.allow_list_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    pub fn set_allow_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.allow_list_ids = input;
-        self
+    pub fn set_allow_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.allow_list_ids = input; self
     }
     /// <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
-    pub fn get_allow_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_allow_list_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.allow_list_ids
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
@@ -278,8 +280,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -292,8 +293,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -306,17 +306,16 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
     pub fn custom_data_identifier_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.custom_data_identifier_ids.unwrap_or_default();
-        v.push(input.into());
-        self.custom_data_identifier_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.custom_data_identifier_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    pub fn set_custom_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.custom_data_identifier_ids = input;
-        self
+    pub fn set_custom_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.custom_data_identifier_ids = input; self
     }
     /// <p>An array of unique identifiers, one for each custom data identifier that the job uses when it analyzes data. This value is null if the job uses only managed data identifiers to analyze data.</p>
-    pub fn get_custom_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_custom_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.custom_data_identifier_ids
     }
     /// <p>The custom description of the job.</p>
@@ -326,8 +325,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The custom description of the job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The custom description of the job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +338,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
     pub fn set_initial_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.initial_run = input;
-        self
+        self.initial_run = input; self
     }
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
     pub fn get_initial_run(&self) -> &::std::option::Option<bool> {
@@ -354,8 +351,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -368,8 +364,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The unique identifier for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique identifier for the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -410,8 +405,7 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The current status of the job. Possible values are:</p>
     /// <ul>
@@ -450,8 +444,7 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The schedule for running the job. Possible values are:</p>
     /// <ul>
@@ -470,8 +463,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub fn set_last_run_error_status(mut self, input: ::std::option::Option<crate::types::LastRunErrorStatus>) -> Self {
-        self.last_run_error_status = input;
-        self
+        self.last_run_error_status = input; self
     }
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub fn get_last_run_error_status(&self) -> &::std::option::Option<crate::types::LastRunErrorStatus> {
@@ -484,8 +476,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
     pub fn set_last_run_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_run_time = input;
-        self
+        self.last_run_time = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
     pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -499,19 +490,18 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
     pub fn managed_data_identifier_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.managed_data_identifier_ids.unwrap_or_default();
-        v.push(input.into());
-        self.managed_data_identifier_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.managed_data_identifier_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    pub fn set_managed_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.managed_data_identifier_ids = input;
-        self
+    pub fn set_managed_data_identifier_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.managed_data_identifier_ids = input; self
     }
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
     /// <p>This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.</p>
-    pub fn get_managed_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_managed_data_identifier_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.managed_data_identifier_ids
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
@@ -551,8 +541,7 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all the managed data identifiers that are in the recommended set when the run starts.</p>
     /// <p>For information about individual managed data identifiers or to determine which ones are in the recommended set, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> and <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn set_managed_data_identifier_selector(mut self, input: ::std::option::Option<crate::types::ManagedDataIdentifierSelector>) -> Self {
-        self.managed_data_identifier_selector = input;
-        self
+        self.managed_data_identifier_selector = input; self
     }
     /// <p>The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible values are:</p>
     /// <ul>
@@ -580,8 +569,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The custom name of the job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The custom name of the job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -594,8 +582,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
     pub fn set_s3_job_definition(mut self, input: ::std::option::Option<crate::types::S3JobDefinition>) -> Self {
-        self.s3_job_definition = input;
-        self
+        self.s3_job_definition = input; self
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
     pub fn get_s3_job_definition(&self) -> &::std::option::Option<crate::types::S3JobDefinition> {
@@ -608,8 +595,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
     pub fn set_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.sampling_percentage = input;
-        self
+        self.sampling_percentage = input; self
     }
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
     pub fn get_sampling_percentage(&self) -> &::std::option::Option<i32> {
@@ -622,8 +608,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
     pub fn set_schedule_frequency(mut self, input: ::std::option::Option<crate::types::JobScheduleFrequency>) -> Self {
-        self.schedule_frequency = input;
-        self
+        self.schedule_frequency = input; self
     }
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
     pub fn get_schedule_frequency(&self) -> &::std::option::Option<crate::types::JobScheduleFrequency> {
@@ -636,8 +621,7 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
     pub fn set_statistics(mut self, input: ::std::option::Option<crate::types::Statistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     /// <p>The number of times that the job has run and processing statistics for the job's current run.</p>
     pub fn get_statistics(&self) -> &::std::option::Option<crate::types::Statistics> {
@@ -650,17 +634,16 @@ impl DescribeClassificationJobOutputBuilder {
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
@@ -670,47 +653,68 @@ impl DescribeClassificationJobOutputBuilder {
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     pub fn set_user_paused_details(mut self, input: ::std::option::Option<crate::types::UserPausedDetails>) -> Self {
-        self.user_paused_details = input;
-        self
+        self.user_paused_details = input; self
     }
     /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
     pub fn get_user_paused_details(&self) -> &::std::option::Option<crate::types::UserPausedDetails> {
         &self.user_paused_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeClassificationJobOutput`](crate::operation::describe_classification_job::DescribeClassificationJobOutput).
     pub fn build(self) -> crate::operation::describe_classification_job::DescribeClassificationJobOutput {
         crate::operation::describe_classification_job::DescribeClassificationJobOutput {
-            allow_list_ids: self.allow_list_ids,
-            client_token: self.client_token,
-            created_at: self.created_at,
-            custom_data_identifier_ids: self.custom_data_identifier_ids,
-            description: self.description,
-            initial_run: self.initial_run,
-            job_arn: self.job_arn,
-            job_id: self.job_id,
-            job_status: self.job_status,
-            job_type: self.job_type,
-            last_run_error_status: self.last_run_error_status,
-            last_run_time: self.last_run_time,
-            managed_data_identifier_ids: self.managed_data_identifier_ids,
-            managed_data_identifier_selector: self.managed_data_identifier_selector,
-            name: self.name,
-            s3_job_definition: self.s3_job_definition,
-            sampling_percentage: self.sampling_percentage,
-            schedule_frequency: self.schedule_frequency,
-            statistics: self.statistics,
-            tags: self.tags,
-            user_paused_details: self.user_paused_details,
+            allow_list_ids: self.allow_list_ids
+            ,
+            client_token: self.client_token
+            ,
+            created_at: self.created_at
+            ,
+            custom_data_identifier_ids: self.custom_data_identifier_ids
+            ,
+            description: self.description
+            ,
+            initial_run: self.initial_run
+            ,
+            job_arn: self.job_arn
+            ,
+            job_id: self.job_id
+            ,
+            job_status: self.job_status
+            ,
+            job_type: self.job_type
+            ,
+            last_run_error_status: self.last_run_error_status
+            ,
+            last_run_time: self.last_run_time
+            ,
+            managed_data_identifier_ids: self.managed_data_identifier_ids
+            ,
+            managed_data_identifier_selector: self.managed_data_identifier_selector
+            ,
+            name: self.name
+            ,
+            s3_job_definition: self.s3_job_definition
+            ,
+            sampling_percentage: self.sampling_percentage
+            ,
+            schedule_frequency: self.schedule_frequency
+            ,
+            statistics: self.statistics
+            ,
+            tags: self.tags
+            ,
+            user_paused_details: self.user_paused_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

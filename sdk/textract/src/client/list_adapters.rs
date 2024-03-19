@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAdapters`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`after_creation_time(DateTime)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::after_creation_time) / [`set_after_creation_time(Option<DateTime>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_after_creation_time):<br>required: **false**<br><p>Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.</p><br>
     ///   - [`before_creation_time(DateTime)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::before_creation_time) / [`set_before_creation_time(Option<DateTime>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_before_creation_time):<br>required: **false**<br><p>Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return when listing adapters.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return when listing adapters.</p><br>
-    /// - On success, responds with [`ListAdaptersOutput`](crate::operation::list_adapters::ListAdaptersOutput) with field(s):
+                            /// - On success, responds with [`ListAdaptersOutput`](crate::operation::list_adapters::ListAdaptersOutput) with field(s):
     ///   - [`adapters(Option<Vec::<AdapterOverview>>)`](crate::operation::list_adapters::ListAdaptersOutput::adapters): <p>A list of adapters that matches the filtering criteria specified when calling ListAdapters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_adapters::ListAdaptersOutput::next_token): <p>Identifies the next page of results to return when listing adapters.</p>
-    /// - On failure, responds with [`SdkError<ListAdaptersError>`](crate::operation::list_adapters::ListAdaptersError)
+                            /// - On failure, responds with [`SdkError<ListAdaptersError>`](crate::operation::list_adapters::ListAdaptersError)
     pub fn list_adapters(&self) -> crate::operation::list_adapters::builders::ListAdaptersFluentBuilder {
-        crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_adapters::builders::ListAdaptersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

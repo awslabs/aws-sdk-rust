@@ -4,7 +4,7 @@
 /// <p><b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Handshake {
+pub struct Handshake  {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct Handshake {
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub parties: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>,
+    pub parties: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeParty>>,
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
     /// <li>
@@ -44,24 +44,25 @@ pub struct Handshake {
     /// </ul>
     pub action: ::std::option::Option<crate::types::ActionType>,
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeResource>>,
 }
-impl Handshake {
+impl  Handshake  {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parties.is_none()`.
-    pub fn parties(&self) -> &[crate::types::HandshakeParty] {
-        self.parties.as_deref().unwrap_or_default()
+    pub fn parties(&self) -> & [crate::types::HandshakeParty] {
+        self.parties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -78,15 +79,15 @@ impl Handshake {
     /// <li>
     /// <p><b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p></li>
     /// </ul>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::HandshakeState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::HandshakeState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the handshake request was made.</p>
-    pub fn requested_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn requested_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
-    pub fn expiration_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
@@ -98,14 +99,15 @@ impl Handshake {
     /// <li>
     /// <p><b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p></li>
     /// </ul>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ActionType> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ActionType> {
         self.action.as_ref()
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::HandshakeResource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::HandshakeResource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Handshake {
@@ -121,12 +123,12 @@ impl Handshake {
 pub struct HandshakeBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) parties: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>,
+    pub(crate) parties: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeParty>>,
     pub(crate) state: ::std::option::Option<crate::types::HandshakeState>,
     pub(crate) requested_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) action: ::std::option::Option<crate::types::ActionType>,
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeResource>>,
 }
 impl HandshakeBuilder {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
@@ -138,8 +140,7 @@ impl HandshakeBuilder {
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
@@ -155,8 +156,7 @@ impl HandshakeBuilder {
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
@@ -170,17 +170,16 @@ impl HandshakeBuilder {
     /// <p>Information about the two accounts that are participating in the handshake.</p>
     pub fn parties(mut self, input: crate::types::HandshakeParty) -> Self {
         let mut v = self.parties.unwrap_or_default();
-        v.push(input);
-        self.parties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn set_parties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>>) -> Self {
-        self.parties = input;
-        self
+    pub fn set_parties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeParty>>) -> Self {
+        self.parties = input; self
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn get_parties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeParty>> {
+    pub fn get_parties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HandshakeParty>> {
         &self.parties
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
@@ -218,8 +217,7 @@ impl HandshakeBuilder {
     /// <p><b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::HandshakeState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
     /// <ul>
@@ -246,8 +244,7 @@ impl HandshakeBuilder {
     }
     /// <p>The date and time that the handshake request was made.</p>
     pub fn set_requested_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.requested_timestamp = input;
-        self
+        self.requested_timestamp = input; self
     }
     /// <p>The date and time that the handshake request was made.</p>
     pub fn get_requested_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -260,8 +257,7 @@ impl HandshakeBuilder {
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
     pub fn set_expiration_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_timestamp = input;
-        self
+        self.expiration_timestamp = input; self
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
     pub fn get_expiration_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -290,8 +286,7 @@ impl HandshakeBuilder {
     /// <p><b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionType>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
     /// <ul>
@@ -312,30 +307,38 @@ impl HandshakeBuilder {
     /// <p>Additional information that is needed to process the handshake.</p>
     pub fn resources(mut self, input: crate::types::HandshakeResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HandshakeResource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HandshakeResource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`Handshake`](crate::types::Handshake).
     pub fn build(self) -> crate::types::Handshake {
         crate::types::Handshake {
-            id: self.id,
-            arn: self.arn,
-            parties: self.parties,
-            state: self.state,
-            requested_timestamp: self.requested_timestamp,
-            expiration_timestamp: self.expiration_timestamp,
-            action: self.action,
-            resources: self.resources,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            parties: self.parties
+            ,
+            state: self.state
+            ,
+            requested_timestamp: self.requested_timestamp
+            ,
+            expiration_timestamp: self.expiration_timestamp
+            ,
+            action: self.action
+            ,
+            resources: self.resources
+            ,
         }
     }
 }
+

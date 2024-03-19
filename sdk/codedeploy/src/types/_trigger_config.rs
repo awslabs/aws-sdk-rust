@@ -3,28 +3,29 @@
 /// <p>Information about notification triggers for the deployment group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TriggerConfig {
+pub struct TriggerConfig  {
     /// <p>The name of the notification trigger.</p>
     pub trigger_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
     pub trigger_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event type or types for which notifications are triggered.</p>
-    pub trigger_events: ::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>>,
+    pub trigger_events: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerEventType>>,
 }
-impl TriggerConfig {
+impl  TriggerConfig  {
     /// <p>The name of the notification trigger.</p>
-    pub fn trigger_name(&self) -> ::std::option::Option<&str> {
+    pub fn trigger_name(&self) -> ::std::option::Option<& str> {
         self.trigger_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
-    pub fn trigger_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trigger_target_arn(&self) -> ::std::option::Option<& str> {
         self.trigger_target_arn.as_deref()
     }
     /// <p>The event type or types for which notifications are triggered.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_events.is_none()`.
-    pub fn trigger_events(&self) -> &[crate::types::TriggerEventType] {
-        self.trigger_events.as_deref().unwrap_or_default()
+    pub fn trigger_events(&self) -> & [crate::types::TriggerEventType] {
+        self.trigger_events.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TriggerConfig {
@@ -40,7 +41,7 @@ impl TriggerConfig {
 pub struct TriggerConfigBuilder {
     pub(crate) trigger_name: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_target_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) trigger_events: ::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>>,
+    pub(crate) trigger_events: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerEventType>>,
 }
 impl TriggerConfigBuilder {
     /// <p>The name of the notification trigger.</p>
@@ -50,8 +51,7 @@ impl TriggerConfigBuilder {
     }
     /// <p>The name of the notification trigger.</p>
     pub fn set_trigger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trigger_name = input;
-        self
+        self.trigger_name = input; self
     }
     /// <p>The name of the notification trigger.</p>
     pub fn get_trigger_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl TriggerConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
     pub fn set_trigger_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trigger_target_arn = input;
-        self
+        self.trigger_target_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.</p>
     pub fn get_trigger_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl TriggerConfigBuilder {
     /// <p>The event type or types for which notifications are triggered.</p>
     pub fn trigger_events(mut self, input: crate::types::TriggerEventType) -> Self {
         let mut v = self.trigger_events.unwrap_or_default();
-        v.push(input);
-        self.trigger_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trigger_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event type or types for which notifications are triggered.</p>
-    pub fn set_trigger_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>>) -> Self {
-        self.trigger_events = input;
-        self
+    pub fn set_trigger_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerEventType>>) -> Self {
+        self.trigger_events = input; self
     }
     /// <p>The event type or types for which notifications are triggered.</p>
-    pub fn get_trigger_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerEventType>> {
+    pub fn get_trigger_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TriggerEventType>> {
         &self.trigger_events
     }
     /// Consumes the builder and constructs a [`TriggerConfig`](crate::types::TriggerConfig).
     pub fn build(self) -> crate::types::TriggerConfig {
         crate::types::TriggerConfig {
-            trigger_name: self.trigger_name,
-            trigger_target_arn: self.trigger_target_arn,
-            trigger_events: self.trigger_events,
+            trigger_name: self.trigger_name
+            ,
+            trigger_target_arn: self.trigger_target_arn
+            ,
+            trigger_events: self.trigger_events
+            ,
         }
     }
 }
+

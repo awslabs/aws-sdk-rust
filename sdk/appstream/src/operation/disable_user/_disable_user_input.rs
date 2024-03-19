@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DisableUserInput {
+pub struct DisableUserInput  {
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
@@ -10,19 +10,19 @@ pub struct DisableUserInput {
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
 }
-impl DisableUserInput {
+impl  DisableUserInput  {
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
 }
-impl ::std::fmt::Debug for DisableUserInput {
+impl  ::std::fmt::Debug for DisableUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DisableUserInput");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl DisableUserInputBuilder {
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
@@ -74,8 +73,7 @@ impl DisableUserInputBuilder {
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
@@ -83,10 +81,14 @@ impl DisableUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DisableUserInput`](crate::operation::disable_user::DisableUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_user::DisableUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_user::DisableUserInput {
-            user_name: self.user_name,
-            authentication_type: self.authentication_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::disable_user::DisableUserInput {
+                user_name: self.user_name
+                ,
+                authentication_type: self.authentication_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DisableUserInputBuilder {
@@ -97,3 +99,4 @@ impl ::std::fmt::Debug for DisableUserInputBuilder {
         formatter.finish()
     }
 }
+

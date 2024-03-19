@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgreementInput {
+pub struct UpdateAgreementInput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
@@ -26,34 +26,34 @@ pub struct UpdateAgreementInput {
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub access_role: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAgreementInput {
+impl  UpdateAgreementInput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>To replace the existing description, provide a short description for the agreement.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatusType> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatusType> {
         self.status.as_ref()
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
-    pub fn local_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_profile_id(&self) -> ::std::option::Option<& str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
-    pub fn partner_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_profile_id(&self) -> ::std::option::Option<& str> {
         self.partner_profile_id.as_deref()
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
-    pub fn base_directory(&self) -> ::std::option::Option<&str> {
+    pub fn base_directory(&self) -> ::std::option::Option<& str> {
         self.base_directory.as_deref()
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
@@ -62,7 +62,7 @@ impl UpdateAgreementInput {
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
-    pub fn access_role(&self) -> ::std::option::Option<&str> {
+    pub fn access_role(&self) -> ::std::option::Option<& str> {
         self.access_role.as_deref()
     }
 }
@@ -95,8 +95,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>To replace the existing description, provide a short description for the agreement.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>To replace the existing description, provide a short description for the agreement.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatusType> {
@@ -154,8 +150,7 @@ impl UpdateAgreementInputBuilder {
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
     pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_profile_id = input;
-        self
+        self.local_profile_id = input; self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     /// <p>To change the local profile identifier, provide a new value here.</p>
@@ -169,8 +164,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
     pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_profile_id = input;
-        self
+        self.partner_profile_id = input; self
     }
     /// <p>A unique identifier for the partner profile. To change the partner profile identifier, provide a new value here.</p>
     pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +177,7 @@ impl UpdateAgreementInputBuilder {
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
     pub fn set_base_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_directory = input;
-        self
+        self.base_directory = input; self
     }
     /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
     pub fn get_base_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +200,7 @@ impl UpdateAgreementInputBuilder {
     /// <p><b>For SFTP connectors</b></p>
     /// <p>Make sure that the access role provides read and write access to the parent directory of the file location that's used in the <code>StartFileTransfer</code> request. Additionally, make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission to Secrets Manager.</p>
     pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_role = input;
-        self
+        self.access_role = input; self
     }
     /// <p>Connectors are used to send files using either the AS2 or SFTP protocol. For the access role, provide the Amazon Resource Name (ARN) of the Identity and Access Management role to use.</p>
     /// <p><b>For AS2 connectors</b></p>
@@ -220,18 +212,27 @@ impl UpdateAgreementInputBuilder {
         &self.access_role
     }
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementInput {
-            agreement_id: self.agreement_id,
-            server_id: self.server_id,
-            description: self.description,
-            status: self.status,
-            local_profile_id: self.local_profile_id,
-            partner_profile_id: self.partner_profile_id,
-            base_directory: self.base_directory,
-            access_role: self.access_role,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_agreement::UpdateAgreementInput {
+                agreement_id: self.agreement_id
+                ,
+                server_id: self.server_id
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                local_profile_id: self.local_profile_id
+                ,
+                partner_profile_id: self.partner_profile_id
+                ,
+                base_directory: self.base_directory
+                ,
+                access_role: self.access_role
+                ,
+            }
+        )
     }
 }
+

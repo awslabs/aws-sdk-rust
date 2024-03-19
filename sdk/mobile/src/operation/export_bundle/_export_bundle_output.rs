@@ -3,22 +3,22 @@
 /// <p>Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportBundleOutput {
+pub struct ExportBundleOutput  {
     /// <p>URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.</p>
     pub download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExportBundleOutput {
+impl  ExportBundleOutput  {
     /// <p>URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.</p>
-    pub fn download_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<& str> {
         self.download_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExportBundleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExportBundleOutput {
     /// Creates a new builder-style object to manufacture [`ExportBundleOutput`](crate::operation::export_bundle::ExportBundleOutput).
     pub fn builder() -> crate::operation::export_bundle::builders::ExportBundleOutputBuilder {
@@ -41,27 +41,28 @@ impl ExportBundleOutputBuilder {
     }
     /// <p>URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.</p>
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_url = input;
-        self
+        self.download_url = input; self
     }
     /// <p>URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.</p>
     pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.download_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExportBundleOutput`](crate::operation::export_bundle::ExportBundleOutput).
     pub fn build(self) -> crate::operation::export_bundle::ExportBundleOutput {
         crate::operation::export_bundle::ExportBundleOutput {
-            download_url: self.download_url,
+            download_url: self.download_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

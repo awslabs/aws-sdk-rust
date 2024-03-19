@@ -3,22 +3,23 @@
 /// <p>The index that was retrieved from the introspected data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceIntrospectionModelIndex {
+pub struct DataSourceIntrospectionModelIndex  {
     /// <p>The name of the index.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The fields of the index.</p>
-    pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DataSourceIntrospectionModelIndex {
+impl  DataSourceIntrospectionModelIndex  {
     /// <p>The name of the index.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The fields of the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
-    pub fn fields(&self) -> &[::std::string::String] {
-        self.fields.as_deref().unwrap_or_default()
+    pub fn fields(&self) -> & [::std::string::String] {
+        self.fields.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataSourceIntrospectionModelIndex {
@@ -33,7 +34,7 @@ impl DataSourceIntrospectionModelIndex {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DataSourceIntrospectionModelIndexBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DataSourceIntrospectionModelIndexBuilder {
     /// <p>The name of the index.</p>
@@ -43,8 +44,7 @@ impl DataSourceIntrospectionModelIndexBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the index.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl DataSourceIntrospectionModelIndexBuilder {
     /// <p>The fields of the index.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input.into());
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The fields of the index.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.fields = input; self
     }
     /// <p>The fields of the index.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.fields
     }
     /// Consumes the builder and constructs a [`DataSourceIntrospectionModelIndex`](crate::types::DataSourceIntrospectionModelIndex).
     pub fn build(self) -> crate::types::DataSourceIntrospectionModelIndex {
         crate::types::DataSourceIntrospectionModelIndex {
-            name: self.name,
-            fields: self.fields,
+            name: self.name
+            ,
+            fields: self.fields
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Encloses data related to a successful message in a batch request for topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishBatchResultEntry {
+pub struct PublishBatchResultEntry  {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the message.</p>
@@ -13,19 +13,19 @@ pub struct PublishBatchResultEntry {
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub sequence_number: ::std::option::Option<::std::string::String>,
 }
-impl PublishBatchResultEntry {
+impl  PublishBatchResultEntry  {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An identifier for the message.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl PublishBatchResultEntryBuilder {
     }
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl PublishBatchResultEntryBuilder {
     }
     /// <p>An identifier for the message.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>An identifier for the message.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PublishBatchResultEntryBuilder {
     /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
@@ -96,9 +93,13 @@ impl PublishBatchResultEntryBuilder {
     /// Consumes the builder and constructs a [`PublishBatchResultEntry`](crate::types::PublishBatchResultEntry).
     pub fn build(self) -> crate::types::PublishBatchResultEntry {
         crate::types::PublishBatchResultEntry {
-            id: self.id,
-            message_id: self.message_id,
-            sequence_number: self.sequence_number,
+            id: self.id
+            ,
+            message_id: self.message_id
+            ,
+            sequence_number: self.sequence_number
+            ,
         }
     }
 }
+

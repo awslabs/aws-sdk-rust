@@ -3,7 +3,7 @@
 /// <p>The backup policy for the file system used to create automatic daily backups. If status has a value of <code>ENABLED</code>, the file system is being automatically backed up. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupPolicy {
+pub struct BackupPolicy  {
     /// <p>Describes the status of the file system's backup policy.</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct BackupPolicy {
     /// </ul>
     pub status: crate::types::Status,
 }
-impl BackupPolicy {
+impl  BackupPolicy  {
     /// <p>Describes the status of the file system's backup policy.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ impl BackupPolicy {
     /// <li>
     /// <p><b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
 }
@@ -75,8 +75,7 @@ impl BackupPolicyBuilder {
     /// <p><b> <code>DISABLING</code> </b> – EFS is turning off automatic backups for the file system.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes the status of the file system's backup policy.</p>
     /// <ul>
@@ -96,13 +95,15 @@ impl BackupPolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::BackupPolicyBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::BackupPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BackupPolicy {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building BackupPolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BackupPolicy {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building BackupPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// Placeholder documentation for DescribeReservationRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservationInput {
+pub struct DescribeReservationInput  {
     /// Unique reservation ID, e.g. '1234567'
     pub reservation_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeReservationInput {
+impl  DescribeReservationInput  {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeReservationInputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_id
     }
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
-            reservation_id: self.reservation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_reservation::DescribeReservationInput {
+                reservation_id: self.reservation_id
+                ,
+            }
+        )
     }
 }
+

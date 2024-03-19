@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSourceSyncJobs`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_source_id(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::data_source_id) / [`set_data_source_id(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_data_source_id):<br>required: **true**<br><p>The identifier of the data source connector.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the Amazon Q application connected to the data source.</p><br>
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index used with the Amazon Q data source connector.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`start_time(DateTime)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_start_time):<br>required: **false**<br><p>The start time of the data source connector sync.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_end_time):<br>required: **false**<br><p>The end time of the data source connector sync.</p><br>
     ///   - [`status_filter(DataSourceSyncJobStatus)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::status_filter) / [`set_status_filter(Option<DataSourceSyncJobStatus>)`](crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::set_status_filter):<br>required: **false**<br><p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p><br>
-    /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput) with field(s):
     ///   - [`history(Option<Vec::<DataSourceSyncJob>>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsOutput::next_token): <p>If the response is truncated, Amazon Q returns this token. You can use this token in any subsequent request to retrieve the next set of jobs.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError)
+                            /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsError)
     pub fn list_data_source_sync_jobs(&self) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder {
-        crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

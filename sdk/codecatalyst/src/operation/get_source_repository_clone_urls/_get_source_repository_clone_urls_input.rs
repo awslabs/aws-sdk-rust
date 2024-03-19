@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSourceRepositoryCloneUrlsInput {
+pub struct GetSourceRepositoryCloneUrlsInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
@@ -10,17 +10,17 @@ pub struct GetSourceRepositoryCloneUrlsInput {
     /// <p>The name of the source repository.</p>
     pub source_repository_name: ::std::option::Option<::std::string::String>,
 }
-impl GetSourceRepositoryCloneUrlsInput {
+impl  GetSourceRepositoryCloneUrlsInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_repository_name(&self) -> ::std::option::Option<& str> {
         self.source_repository_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     }
     /// <p>The name of the source repository.</p>
     pub fn set_source_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_repository_name = input;
-        self
+        self.source_repository_name = input; self
     }
     /// <p>The name of the source repository.</p>
     pub fn get_source_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_repository_name
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
-            space_name: self.space_name,
-            project_name: self.project_name,
-            source_repository_name: self.source_repository_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                source_repository_name: self.source_repository_name
+                ,
+            }
+        )
     }
 }
+

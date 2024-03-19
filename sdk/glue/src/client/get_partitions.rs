@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetPartitions`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`catalog_id(impl Into<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_catalog_id):<br>required: **false**<br><p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the catalog database where the partitions reside.</p><br>
     ///   - [`table_name(impl Into<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the partitions' table.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`exclude_column_schema(bool)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::exclude_column_schema) / [`set_exclude_column_schema(Option<bool>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_exclude_column_schema):<br>required: **false**<br><p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p><br>
     ///   - [`transaction_id(impl Into<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::transaction_id) / [`set_transaction_id(Option<String>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_transaction_id):<br>required: **false**<br><p>The transaction ID at which to read the partition contents.</p><br>
     ///   - [`query_as_of_time(DateTime)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::query_as_of_time) / [`set_query_as_of_time(Option<DateTime>)`](crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::set_query_as_of_time):<br>required: **false**<br><p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p><br>
-    /// - On success, responds with [`GetPartitionsOutput`](crate::operation::get_partitions::GetPartitionsOutput) with field(s):
+                            /// - On success, responds with [`GetPartitionsOutput`](crate::operation::get_partitions::GetPartitionsOutput) with field(s):
     ///   - [`partitions(Option<Vec::<Partition>>)`](crate::operation::get_partitions::GetPartitionsOutput::partitions): <p>A list of requested partitions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_partitions::GetPartitionsOutput::next_token): <p>A continuation token, if the returned list of partitions does not include the last one.</p>
-    /// - On failure, responds with [`SdkError<GetPartitionsError>`](crate::operation::get_partitions::GetPartitionsError)
+                            /// - On failure, responds with [`SdkError<GetPartitionsError>`](crate::operation::get_partitions::GetPartitionsError)
     pub fn get_partitions(&self) -> crate::operation::get_partitions::builders::GetPartitionsFluentBuilder {
-        crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_partitions::builders::GetPartitionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

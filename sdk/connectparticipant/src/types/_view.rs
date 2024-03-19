@@ -3,7 +3,7 @@
 /// <p>A view resource object. Contains metadata and content necessary to render the view.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct View {
+pub struct View  {
     /// <p>The identifier of the view.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
@@ -15,17 +15,17 @@ pub struct View {
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub content: ::std::option::Option<crate::types::ViewContent>,
 }
-impl View {
+impl  View  {
     /// <p>The identifier of the view.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the view.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current version of the view.</p>
@@ -33,11 +33,11 @@ impl View {
         self.version
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::ViewContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::ViewContent> {
         self.content.as_ref()
     }
 }
-impl ::std::fmt::Debug for View {
+impl  ::std::fmt::Debug for View  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("View");
         formatter.field("id", &self.id);
@@ -73,8 +73,7 @@ impl ViewBuilder {
     }
     /// <p>The identifier of the view.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the view.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl ViewBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the view.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl ViewBuilder {
     }
     /// <p>The name of the view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl ViewBuilder {
     }
     /// <p>The current version of the view.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The current version of the view.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -129,8 +125,7 @@ impl ViewBuilder {
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::ViewContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>View content containing all content necessary to render a view except for runtime input data.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::ViewContent> {
@@ -139,11 +134,16 @@ impl ViewBuilder {
     /// Consumes the builder and constructs a [`View`](crate::types::View).
     pub fn build(self) -> crate::types::View {
         crate::types::View {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            content: self.content,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            content: self.content
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for ViewBuilder {
         formatter.finish()
     }
 }
+

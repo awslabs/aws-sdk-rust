@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTagsInput {
+pub struct DescribeTagsInput  {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the ML object.</p>
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
 }
-impl DescribeTagsInput {
+impl  DescribeTagsInput  {
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the ML object.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the ML object. For example, <code>exampleModelId</code>.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The type of the ML object.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the ML object.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_tags::DescribeTagsInput {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_tags::DescribeTagsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_tags::DescribeTagsInput {
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

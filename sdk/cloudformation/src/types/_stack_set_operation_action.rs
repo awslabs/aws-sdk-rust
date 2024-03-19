@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stacksetoperationaction = unimplemented!();
 /// match stacksetoperationaction {
@@ -32,16 +32,14 @@
 /// Specifically, when `stacksetoperationaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackSetOperationAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum StackSetOperationAction {
     #[allow(missing_docs)] // documentation missing in model
     Create,
@@ -53,67 +51,68 @@ pub enum StackSetOperationAction {
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for StackSetOperationAction {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE" => StackSetOperationAction::Create,
-            "DELETE" => StackSetOperationAction::Delete,
-            "DETECT_DRIFT" => StackSetOperationAction::DetectDrift,
-            "UPDATE" => StackSetOperationAction::Update,
-            other => StackSetOperationAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CREATE" => StackSetOperationAction::Create,
+"DELETE" => StackSetOperationAction::Delete,
+"DETECT_DRIFT" => StackSetOperationAction::DetectDrift,
+"UPDATE" => StackSetOperationAction::Update,
+other => StackSetOperationAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for StackSetOperationAction {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(StackSetOperationAction::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(StackSetOperationAction::from(s))
+                    }
+                }
 impl StackSetOperationAction {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StackSetOperationAction::Create => "CREATE",
-            StackSetOperationAction::Delete => "DELETE",
-            StackSetOperationAction::DetectDrift => "DETECT_DRIFT",
-            StackSetOperationAction::Update => "UPDATE",
-            StackSetOperationAction::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CREATE", "DELETE", "DETECT_DRIFT", "UPDATE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StackSetOperationAction::Create => "CREATE",
+    StackSetOperationAction::Delete => "DELETE",
+    StackSetOperationAction::DetectDrift => "DETECT_DRIFT",
+    StackSetOperationAction::Update => "UPDATE",
+    StackSetOperationAction::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE", "DELETE", "DETECT_DRIFT", "UPDATE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for StackSetOperationAction {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl StackSetOperationAction {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for StackSetOperationAction {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            StackSetOperationAction::Create => write!(f, "CREATE"),
-            StackSetOperationAction::Delete => write!(f, "DELETE"),
-            StackSetOperationAction::DetectDrift => write!(f, "DETECT_DRIFT"),
-            StackSetOperationAction::Update => write!(f, "UPDATE"),
-            StackSetOperationAction::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                StackSetOperationAction::Create => write!(f, "CREATE"),
+StackSetOperationAction::Delete => write!(f, "DELETE"),
+StackSetOperationAction::DetectDrift => write!(f, "DETECT_DRIFT"),
+StackSetOperationAction::Update => write!(f, "UPDATE"),
+StackSetOperationAction::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

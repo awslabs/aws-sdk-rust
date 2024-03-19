@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDbClusterAutomatedBackupsOutput {
+pub struct DescribeDbClusterAutomatedBackupsOutput  {
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBClusterAutomatedBackup</code> backups.</p>
-    pub db_cluster_automated_backups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAutomatedBackup>>,
+    pub db_cluster_automated_backups: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterAutomatedBackup>>,
     _request_id: Option<String>,
 }
-impl DescribeDbClusterAutomatedBackupsOutput {
+impl  DescribeDbClusterAutomatedBackupsOutput  {
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBClusterAutomatedBackup</code> backups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_cluster_automated_backups.is_none()`.
-    pub fn db_cluster_automated_backups(&self) -> &[crate::types::DbClusterAutomatedBackup] {
-        self.db_cluster_automated_backups.as_deref().unwrap_or_default()
+    pub fn db_cluster_automated_backups(&self) -> & [crate::types::DbClusterAutomatedBackup] {
+        self.db_cluster_automated_backups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDbClusterAutomatedBackupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDbClusterAutomatedBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterAutomatedBackupsOutput`](crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput).
     pub fn builder() -> crate::operation::describe_db_cluster_automated_backups::builders::DescribeDbClusterAutomatedBackupsOutputBuilder {
@@ -38,7 +39,7 @@ impl DescribeDbClusterAutomatedBackupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDbClusterAutomatedBackupsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) db_cluster_automated_backups: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAutomatedBackup>>,
+    pub(crate) db_cluster_automated_backups: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterAutomatedBackup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterAutomatedBackupsOutputBuilder {
@@ -49,8 +50,7 @@ impl DescribeDbClusterAutomatedBackupsOutputBuilder {
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl DescribeDbClusterAutomatedBackupsOutputBuilder {
     /// <p>A list of <code>DBClusterAutomatedBackup</code> backups.</p>
     pub fn db_cluster_automated_backups(mut self, input: crate::types::DbClusterAutomatedBackup) -> Self {
         let mut v = self.db_cluster_automated_backups.unwrap_or_default();
-        v.push(input);
-        self.db_cluster_automated_backups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.db_cluster_automated_backups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DBClusterAutomatedBackup</code> backups.</p>
-    pub fn set_db_cluster_automated_backups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAutomatedBackup>>) -> Self {
-        self.db_cluster_automated_backups = input;
-        self
+    pub fn set_db_cluster_automated_backups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbClusterAutomatedBackup>>) -> Self {
+        self.db_cluster_automated_backups = input; self
     }
     /// <p>A list of <code>DBClusterAutomatedBackup</code> backups.</p>
-    pub fn get_db_cluster_automated_backups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterAutomatedBackup>> {
+    pub fn get_db_cluster_automated_backups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbClusterAutomatedBackup>> {
         &self.db_cluster_automated_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDbClusterAutomatedBackupsOutput`](crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput).
     pub fn build(self) -> crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput {
         crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput {
-            marker: self.marker,
-            db_cluster_automated_backups: self.db_cluster_automated_backups,
+            marker: self.marker
+            ,
+            db_cluster_automated_backups: self.db_cluster_automated_backups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

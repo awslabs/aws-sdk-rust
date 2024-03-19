@@ -3,7 +3,7 @@
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IsBinaryFile {
+pub struct IsBinaryFile  {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub source: ::std::option::Option<bool>,
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
@@ -11,7 +11,7 @@ pub struct IsBinaryFile {
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub base: ::std::option::Option<bool>,
 }
-impl IsBinaryFile {
+impl  IsBinaryFile  {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub fn source(&self) -> ::std::option::Option<bool> {
         self.source
@@ -48,8 +48,7 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub fn set_source(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub fn get_source(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn get_destination(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn set_base(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn get_base(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl IsBinaryFileBuilder {
     /// Consumes the builder and constructs a [`IsBinaryFile`](crate::types::IsBinaryFile).
     pub fn build(self) -> crate::types::IsBinaryFile {
         crate::types::IsBinaryFile {
-            source: self.source,
-            destination: self.destination,
-            base: self.base,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            base: self.base
+            ,
         }
     }
 }
+

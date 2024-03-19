@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePrivateGraphEndpointInput {
+pub struct CreatePrivateGraphEndpointInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The VPC in which the private graph endpoint needs to be created.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Security groups to be attached to the private graph endpoint..</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CreatePrivateGraphEndpointInput {
+impl  CreatePrivateGraphEndpointInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The VPC in which the private graph endpoint needs to be created.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Security groups to be attached to the private graph endpoint..</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreatePrivateGraphEndpointInput {
@@ -47,8 +49,8 @@ impl CreatePrivateGraphEndpointInput {
 pub struct CreatePrivateGraphEndpointInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CreatePrivateGraphEndpointInputBuilder {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
@@ -59,8 +61,7 @@ impl CreatePrivateGraphEndpointInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +74,7 @@ impl CreatePrivateGraphEndpointInputBuilder {
     }
     /// <p>The VPC in which the private graph endpoint needs to be created.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The VPC in which the private graph endpoint needs to be created.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +87,16 @@ impl CreatePrivateGraphEndpointInputBuilder {
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>Subnets in which private graph endpoint ENIs are created.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -107,31 +106,32 @@ impl CreatePrivateGraphEndpointInputBuilder {
     /// <p>Security groups to be attached to the private graph endpoint..</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Security groups to be attached to the private graph endpoint..</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>Security groups to be attached to the private graph endpoint..</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`CreatePrivateGraphEndpointInput`](crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput {
-            graph_identifier: self.graph_identifier,
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput {
+                graph_identifier: self.graph_identifier
+                ,
+                vpc_id: self.vpc_id
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>A request to return details about an email identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEmailIdentityInput {
+pub struct GetEmailIdentityInput  {
     /// <p>The email identity.</p>
     pub email_identity: ::std::option::Option<::std::string::String>,
 }
-impl GetEmailIdentityInput {
+impl  GetEmailIdentityInput  {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> ::std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<& str> {
         self.email_identity.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl GetEmailIdentityInputBuilder {
     }
     /// <p>The email identity.</p>
     pub fn set_email_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The email identity.</p>
     pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.email_identity
     }
     /// Consumes the builder and constructs a [`GetEmailIdentityInput`](crate::operation::get_email_identity::GetEmailIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_email_identity::GetEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_email_identity::GetEmailIdentityInput {
-            email_identity: self.email_identity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_email_identity::GetEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_email_identity::GetEmailIdentityInput {
+                email_identity: self.email_identity
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An access policy association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociatedAccessPolicy {
+pub struct AssociatedAccessPolicy  {
     /// <p>The ARN of the <code>AccessPolicy</code>.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The scope of the access policy.</p>
@@ -13,21 +13,21 @@ pub struct AssociatedAccessPolicy {
     /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl AssociatedAccessPolicy {
+impl  AssociatedAccessPolicy  {
     /// <p>The ARN of the <code>AccessPolicy</code>.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The scope of the access policy.</p>
-    pub fn access_scope(&self) -> ::std::option::Option<&crate::types::AccessScope> {
+    pub fn access_scope(&self) -> ::std::option::Option<& crate::types::AccessScope> {
         self.access_scope.as_ref()
     }
     /// <p>The date and time the <code>AccessPolicy</code> was associated with an <code>AccessEntry</code>.</p>
-    pub fn associated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn associated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.associated_at.as_ref()
     }
     /// <p>The Unix epoch timestamp for the last modification to the object.</p>
-    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociatedAccessPolicyBuilder {
     }
     /// <p>The ARN of the <code>AccessPolicy</code>.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The ARN of the <code>AccessPolicy</code>.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AssociatedAccessPolicyBuilder {
     }
     /// <p>The scope of the access policy.</p>
     pub fn set_access_scope(mut self, input: ::std::option::Option<crate::types::AccessScope>) -> Self {
-        self.access_scope = input;
-        self
+        self.access_scope = input; self
     }
     /// <p>The scope of the access policy.</p>
     pub fn get_access_scope(&self) -> &::std::option::Option<crate::types::AccessScope> {
@@ -83,8 +81,7 @@ impl AssociatedAccessPolicyBuilder {
     }
     /// <p>The date and time the <code>AccessPolicy</code> was associated with an <code>AccessEntry</code>.</p>
     pub fn set_associated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.associated_at = input;
-        self
+        self.associated_at = input; self
     }
     /// <p>The date and time the <code>AccessPolicy</code> was associated with an <code>AccessEntry</code>.</p>
     pub fn get_associated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl AssociatedAccessPolicyBuilder {
     }
     /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl AssociatedAccessPolicyBuilder {
     /// Consumes the builder and constructs a [`AssociatedAccessPolicy`](crate::types::AssociatedAccessPolicy).
     pub fn build(self) -> crate::types::AssociatedAccessPolicy {
         crate::types::AssociatedAccessPolicy {
-            policy_arn: self.policy_arn,
-            access_scope: self.access_scope,
-            associated_at: self.associated_at,
-            modified_at: self.modified_at,
+            policy_arn: self.policy_arn
+            ,
+            access_scope: self.access_scope
+            ,
+            associated_at: self.associated_at
+            ,
+            modified_at: self.modified_at
+            ,
         }
     }
 }
+

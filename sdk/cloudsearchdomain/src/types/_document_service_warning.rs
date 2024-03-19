@@ -3,13 +3,13 @@
 /// <p>A warning returned by the document service when an issue is discovered while processing an upload request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentServiceWarning {
+pub struct DocumentServiceWarning  {
     /// <p>The description for a warning returned by the document service.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DocumentServiceWarning {
+impl  DocumentServiceWarning  {
     /// <p>The description for a warning returned by the document service.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DocumentServiceWarningBuilder {
     }
     /// <p>The description for a warning returned by the document service.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The description for a warning returned by the document service.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl DocumentServiceWarningBuilder {
     }
     /// Consumes the builder and constructs a [`DocumentServiceWarning`](crate::types::DocumentServiceWarning).
     pub fn build(self) -> crate::types::DocumentServiceWarning {
-        crate::types::DocumentServiceWarning { message: self.message }
+        crate::types::DocumentServiceWarning {
+            message: self.message
+            ,
+        }
     }
 }
+

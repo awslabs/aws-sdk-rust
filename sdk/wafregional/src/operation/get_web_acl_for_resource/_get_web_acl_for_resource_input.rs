@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWebAclForResourceInput {
+pub struct GetWebAclForResourceInput  {
     /// <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct GetWebAclForResourceInput {
     /// </ul>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetWebAclForResourceInput {
+impl  GetWebAclForResourceInput  {
     /// <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
     /// <ul>
@@ -22,7 +22,7 @@ impl GetWebAclForResourceInput {
     /// <li>
     /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// </ul>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GetWebAclForResourceInputBuilder {
     /// <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code></p></li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource for which to get the web ACL, either an application load balancer or Amazon API Gateway stage.</p>
     /// <p>The ARN should be in one of the following formats:</p>
@@ -77,12 +76,13 @@ impl GetWebAclForResourceInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

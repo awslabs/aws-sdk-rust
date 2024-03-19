@@ -3,23 +3,23 @@
 /// <p>Contains configuration details of a Amazon Cognito user pool for use with an identity source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCognitoUserPoolConfiguration {
+pub struct UpdateCognitoUserPoolConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
     pub user_pool_arn: ::std::string::String,
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    pub client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateCognitoUserPoolConfiguration {
+impl  UpdateCognitoUserPoolConfiguration  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
-    pub fn user_pool_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_pool_arn.deref()
+    pub fn user_pool_arn(&self) -> & str {
+        use std::ops::Deref; self.user_pool_arn.deref()
     }
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_ids.is_none()`.
-    pub fn client_ids(&self) -> &[::std::string::String] {
-        self.client_ids.as_deref().unwrap_or_default()
+    pub fn client_ids(&self) -> & [::std::string::String] {
+        self.client_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateCognitoUserPoolConfiguration {
@@ -34,7 +34,7 @@ impl UpdateCognitoUserPoolConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateCognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateCognitoUserPoolConfigurationBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
@@ -45,8 +45,7 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
     pub fn set_user_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_arn = input;
-        self
+        self.user_pool_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
     pub fn get_user_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +58,33 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
     pub fn client_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_ids.unwrap_or_default();
-        v.push(input.into());
-        self.client_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_ids = input;
-        self
+    pub fn set_client_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_ids = input; self
     }
     /// <p>The client ID of an app client that is configured for the specified Amazon Cognito user pool.</p>
-    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_ids
     }
     /// Consumes the builder and constructs a [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_pool_arn`](crate::types::builders::UpdateCognitoUserPoolConfigurationBuilder::user_pool_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateCognitoUserPoolConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateCognitoUserPoolConfiguration {
-            user_pool_arn: self.user_pool_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_pool_arn",
-                    "user_pool_arn was not specified but it is required when building UpdateCognitoUserPoolConfiguration",
-                )
-            })?,
-            client_ids: self.client_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateCognitoUserPoolConfiguration {
+                user_pool_arn: self.user_pool_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_pool_arn", "user_pool_arn was not specified but it is required when building UpdateCognitoUserPoolConfiguration")
+                    )?
+                ,
+                client_ids: self.client_ids
+                ,
+            }
+        )
     }
 }
+

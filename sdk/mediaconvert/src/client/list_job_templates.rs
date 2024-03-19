@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobTemplates`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`category(impl Into<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::category) / [`set_category(Option<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_category):<br>required: **false**<br>Optionally, specify a job template category to limit responses to only job templates from that category.<br>
     ///   - [`list_by(JobTemplateListBy)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::list_by) / [`set_list_by(Option<JobTemplateListBy>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_list_by):<br>required: **false**<br>Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.<br>
     ///   - [`max_results(i32)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_max_results):<br>required: **false**<br>Optional. Number of job templates, up to twenty, that will be returned at one time.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_next_token):<br>required: **false**<br>Use this string, provided with the response to a previous request, to request the next batch of job templates.<br>
     ///   - [`order(Order)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::order) / [`set_order(Option<Order>)`](crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::set_order):<br>required: **false**<br>Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.<br>
-    /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListJobTemplatesOutput`](crate::operation::list_job_templates::ListJobTemplatesOutput) with field(s):
     ///   - [`job_templates(Option<Vec::<JobTemplate>>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::job_templates): List of Job templates.
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_templates::ListJobTemplatesOutput::next_token): Use this string to request the next batch of job templates.
-    /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::operation::list_job_templates::ListJobTemplatesError)
     pub fn list_job_templates(&self) -> crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder {
-        crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_job_templates::builders::ListJobTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

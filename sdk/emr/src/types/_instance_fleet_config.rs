@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFleetConfig {
+pub struct InstanceFleetConfig  {
     /// <p>The friendly name of the instance fleet.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
@@ -19,19 +19,19 @@ pub struct InstanceFleetConfig {
     /// </note>
     pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The instance type configurations that define the Amazon EC2 instances in the instance fleet.</p>
-    pub instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
+    pub instance_type_configs: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceTypeConfig>>,
     /// <p>The launch specification for the instance fleet.</p>
     pub launch_specifications: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
     /// <p>The resize specification for the instance fleet.</p>
     pub resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
-impl InstanceFleetConfig {
+impl  InstanceFleetConfig  {
     /// <p>The friendly name of the instance fleet.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
-    pub fn instance_fleet_type(&self) -> ::std::option::Option<&crate::types::InstanceFleetType> {
+    pub fn instance_fleet_type(&self) -> ::std::option::Option<& crate::types::InstanceFleetType> {
         self.instance_fleet_type.as_ref()
     }
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p><note>
@@ -47,17 +47,18 @@ impl InstanceFleetConfig {
         self.target_spot_capacity
     }
     /// <p>The instance type configurations that define the Amazon EC2 instances in the instance fleet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_configs.is_none()`.
-    pub fn instance_type_configs(&self) -> &[crate::types::InstanceTypeConfig] {
-        self.instance_type_configs.as_deref().unwrap_or_default()
+    pub fn instance_type_configs(&self) -> & [crate::types::InstanceTypeConfig] {
+        self.instance_type_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The launch specification for the instance fleet.</p>
-    pub fn launch_specifications(&self) -> ::std::option::Option<&crate::types::InstanceFleetProvisioningSpecifications> {
+    pub fn launch_specifications(&self) -> ::std::option::Option<& crate::types::InstanceFleetProvisioningSpecifications> {
         self.launch_specifications.as_ref()
     }
     /// <p>The resize specification for the instance fleet.</p>
-    pub fn resize_specifications(&self) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
+    pub fn resize_specifications(&self) -> ::std::option::Option<& crate::types::InstanceFleetResizingSpecifications> {
         self.resize_specifications.as_ref()
     }
 }
@@ -76,7 +77,7 @@ pub struct InstanceFleetConfigBuilder {
     pub(crate) instance_fleet_type: ::std::option::Option<crate::types::InstanceFleetType>,
     pub(crate) target_on_demand_capacity: ::std::option::Option<i32>,
     pub(crate) target_spot_capacity: ::std::option::Option<i32>,
-    pub(crate) instance_type_configs: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>,
+    pub(crate) instance_type_configs: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceTypeConfig>>,
     pub(crate) launch_specifications: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>,
     pub(crate) resize_specifications: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
@@ -88,8 +89,7 @@ impl InstanceFleetConfigBuilder {
     }
     /// <p>The friendly name of the instance fleet.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the instance fleet.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +103,7 @@ impl InstanceFleetConfigBuilder {
     }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
     pub fn set_instance_fleet_type(mut self, input: ::std::option::Option<crate::types::InstanceFleetType>) -> Self {
-        self.instance_fleet_type = input;
-        self
+        self.instance_fleet_type = input; self
     }
     /// <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</p>
     pub fn get_instance_fleet_type(&self) -> &::std::option::Option<crate::types::InstanceFleetType> {
@@ -121,8 +120,7 @@ impl InstanceFleetConfigBuilder {
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
     pub fn set_target_on_demand_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_on_demand_capacity = input;
-        self
+        self.target_on_demand_capacity = input; self
     }
     /// <p>The target capacity of On-Demand units for the instance fleet, which determines how many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR tries to provision On-Demand Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When an On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p><note>
     /// <p>If not specified or set to 0, only Spot Instances are provisioned for the instance fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
@@ -141,8 +139,7 @@ impl InstanceFleetConfigBuilder {
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
     /// </note>
     pub fn set_target_spot_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.target_spot_capacity = input;
-        self
+        self.target_spot_capacity = input; self
     }
     /// <p>The target capacity of Spot units for the instance fleet, which determines how many Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to provision Spot Instances as specified by <code>InstanceTypeConfig</code>. Each instance configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity. Amazon EMR provisions instances until the target capacity is totally fulfilled, even if this results in an overage. For example, if there are 2 units remaining to fulfill capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and the target capacity is exceeded by 3 units.</p><note>
     /// <p>If not specified or set to 0, only On-Demand Instances are provisioned for the instance fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</p>
@@ -157,17 +154,16 @@ impl InstanceFleetConfigBuilder {
     /// <p>The instance type configurations that define the Amazon EC2 instances in the instance fleet.</p>
     pub fn instance_type_configs(mut self, input: crate::types::InstanceTypeConfig) -> Self {
         let mut v = self.instance_type_configs.unwrap_or_default();
-        v.push(input);
-        self.instance_type_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_type_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance type configurations that define the Amazon EC2 instances in the instance fleet.</p>
-    pub fn set_instance_type_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>>) -> Self {
-        self.instance_type_configs = input;
-        self
+    pub fn set_instance_type_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceTypeConfig>>) -> Self {
+        self.instance_type_configs = input; self
     }
     /// <p>The instance type configurations that define the Amazon EC2 instances in the instance fleet.</p>
-    pub fn get_instance_type_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeConfig>> {
+    pub fn get_instance_type_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceTypeConfig>> {
         &self.instance_type_configs
     }
     /// <p>The launch specification for the instance fleet.</p>
@@ -177,8 +173,7 @@ impl InstanceFleetConfigBuilder {
     }
     /// <p>The launch specification for the instance fleet.</p>
     pub fn set_launch_specifications(mut self, input: ::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications>) -> Self {
-        self.launch_specifications = input;
-        self
+        self.launch_specifications = input; self
     }
     /// <p>The launch specification for the instance fleet.</p>
     pub fn get_launch_specifications(&self) -> &::std::option::Option<crate::types::InstanceFleetProvisioningSpecifications> {
@@ -191,8 +186,7 @@ impl InstanceFleetConfigBuilder {
     }
     /// <p>The resize specification for the instance fleet.</p>
     pub fn set_resize_specifications(mut self, input: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>) -> Self {
-        self.resize_specifications = input;
-        self
+        self.resize_specifications = input; self
     }
     /// <p>The resize specification for the instance fleet.</p>
     pub fn get_resize_specifications(&self) -> &::std::option::Option<crate::types::InstanceFleetResizingSpecifications> {
@@ -201,13 +195,21 @@ impl InstanceFleetConfigBuilder {
     /// Consumes the builder and constructs a [`InstanceFleetConfig`](crate::types::InstanceFleetConfig).
     pub fn build(self) -> crate::types::InstanceFleetConfig {
         crate::types::InstanceFleetConfig {
-            name: self.name,
-            instance_fleet_type: self.instance_fleet_type,
-            target_on_demand_capacity: self.target_on_demand_capacity,
-            target_spot_capacity: self.target_spot_capacity,
-            instance_type_configs: self.instance_type_configs,
-            launch_specifications: self.launch_specifications,
-            resize_specifications: self.resize_specifications,
+            name: self.name
+            ,
+            instance_fleet_type: self.instance_fleet_type
+            ,
+            target_on_demand_capacity: self.target_on_demand_capacity
+            ,
+            target_spot_capacity: self.target_spot_capacity
+            ,
+            instance_type_configs: self.instance_type_configs
+            ,
+            launch_specifications: self.launch_specifications
+            ,
+            resize_specifications: self.resize_specifications
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFoundationModelsInput {
+pub struct ListFoundationModelsInput  {
     /// <p>A Amazon Bedrock model provider.</p>
     pub by_provider: ::std::option::Option<::std::string::String>,
     /// <p>List by customization type.</p>
@@ -12,21 +12,21 @@ pub struct ListFoundationModelsInput {
     /// <p>List by inference type.</p>
     pub by_inference_type: ::std::option::Option<crate::types::InferenceType>,
 }
-impl ListFoundationModelsInput {
+impl  ListFoundationModelsInput  {
     /// <p>A Amazon Bedrock model provider.</p>
-    pub fn by_provider(&self) -> ::std::option::Option<&str> {
+    pub fn by_provider(&self) -> ::std::option::Option<& str> {
         self.by_provider.as_deref()
     }
     /// <p>List by customization type.</p>
-    pub fn by_customization_type(&self) -> ::std::option::Option<&crate::types::ModelCustomization> {
+    pub fn by_customization_type(&self) -> ::std::option::Option<& crate::types::ModelCustomization> {
         self.by_customization_type.as_ref()
     }
     /// <p>List by output modality type.</p>
-    pub fn by_output_modality(&self) -> ::std::option::Option<&crate::types::ModelModality> {
+    pub fn by_output_modality(&self) -> ::std::option::Option<& crate::types::ModelModality> {
         self.by_output_modality.as_ref()
     }
     /// <p>List by inference type.</p>
-    pub fn by_inference_type(&self) -> ::std::option::Option<&crate::types::InferenceType> {
+    pub fn by_inference_type(&self) -> ::std::option::Option<& crate::types::InferenceType> {
         self.by_inference_type.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListFoundationModelsInputBuilder {
     }
     /// <p>A Amazon Bedrock model provider.</p>
     pub fn set_by_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.by_provider = input;
-        self
+        self.by_provider = input; self
     }
     /// <p>A Amazon Bedrock model provider.</p>
     pub fn get_by_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListFoundationModelsInputBuilder {
     }
     /// <p>List by customization type.</p>
     pub fn set_by_customization_type(mut self, input: ::std::option::Option<crate::types::ModelCustomization>) -> Self {
-        self.by_customization_type = input;
-        self
+        self.by_customization_type = input; self
     }
     /// <p>List by customization type.</p>
     pub fn get_by_customization_type(&self) -> &::std::option::Option<crate::types::ModelCustomization> {
@@ -82,8 +80,7 @@ impl ListFoundationModelsInputBuilder {
     }
     /// <p>List by output modality type.</p>
     pub fn set_by_output_modality(mut self, input: ::std::option::Option<crate::types::ModelModality>) -> Self {
-        self.by_output_modality = input;
-        self
+        self.by_output_modality = input; self
     }
     /// <p>List by output modality type.</p>
     pub fn get_by_output_modality(&self) -> &::std::option::Option<crate::types::ModelModality> {
@@ -96,23 +93,26 @@ impl ListFoundationModelsInputBuilder {
     }
     /// <p>List by inference type.</p>
     pub fn set_by_inference_type(mut self, input: ::std::option::Option<crate::types::InferenceType>) -> Self {
-        self.by_inference_type = input;
-        self
+        self.by_inference_type = input; self
     }
     /// <p>List by inference type.</p>
     pub fn get_by_inference_type(&self) -> &::std::option::Option<crate::types::InferenceType> {
         &self.by_inference_type
     }
     /// Consumes the builder and constructs a [`ListFoundationModelsInput`](crate::operation::list_foundation_models::ListFoundationModelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_foundation_models::ListFoundationModelsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_foundation_models::ListFoundationModelsInput {
-            by_provider: self.by_provider,
-            by_customization_type: self.by_customization_type,
-            by_output_modality: self.by_output_modality,
-            by_inference_type: self.by_inference_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_foundation_models::ListFoundationModelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_foundation_models::ListFoundationModelsInput {
+                by_provider: self.by_provider
+                ,
+                by_customization_type: self.by_customization_type
+                ,
+                by_output_modality: self.by_output_modality
+                ,
+                by_inference_type: self.by_inference_type
+                ,
+            }
+        )
     }
 }
+

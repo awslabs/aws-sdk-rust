@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateIdentitySourceInput {
+pub struct UpdateIdentitySourceInput  {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the identity source that you want to update.</p>
@@ -15,28 +15,28 @@ pub struct UpdateIdentitySourceInput {
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateIdentitySourceInput {
+impl  UpdateIdentitySourceInput  {
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
-    pub fn identity_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn identity_source_id(&self) -> ::std::option::Option<& str> {
         self.identity_source_id.as_deref()
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn update_configuration(&self) -> ::std::option::Option<&crate::types::UpdateConfiguration> {
+    pub fn update_configuration(&self) -> ::std::option::Option<& crate::types::UpdateConfiguration> {
         self.update_configuration.as_ref()
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
-    pub fn principal_entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn principal_entity_type(&self) -> ::std::option::Option<& str> {
         self.principal_entity_type.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateIdentitySourceInput {
+impl  ::std::fmt::Debug for UpdateIdentitySourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateIdentitySourceInput");
         formatter.field("policy_store_id", &self.policy_store_id);
@@ -71,8 +71,7 @@ impl UpdateIdentitySourceInputBuilder {
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl UpdateIdentitySourceInputBuilder {
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
     pub fn set_identity_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_source_id = input;
-        self
+        self.identity_source_id = input; self
     }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
     pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdateIdentitySourceInputBuilder {
     /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
     pub fn set_update_configuration(mut self, input: ::std::option::Option<crate::types::UpdateConfiguration>) -> Self {
-        self.update_configuration = input;
-        self
+        self.update_configuration = input; self
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
@@ -124,24 +121,26 @@ impl UpdateIdentitySourceInputBuilder {
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
     pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_entity_type = input;
-        self
+        self.principal_entity_type = input; self
     }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
     pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_entity_type
     }
     /// Consumes the builder and constructs a [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_identity_source::UpdateIdentitySourceInput {
-            policy_store_id: self.policy_store_id,
-            identity_source_id: self.identity_source_id,
-            update_configuration: self.update_configuration,
-            principal_entity_type: self.principal_entity_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_identity_source::UpdateIdentitySourceInput {
+                policy_store_id: self.policy_store_id
+                ,
+                identity_source_id: self.identity_source_id
+                ,
+                update_configuration: self.update_configuration
+                ,
+                principal_entity_type: self.principal_entity_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateIdentitySourceInputBuilder {
@@ -154,3 +153,4 @@ impl ::std::fmt::Debug for UpdateIdentitySourceInputBuilder {
         formatter.finish()
     }
 }
+

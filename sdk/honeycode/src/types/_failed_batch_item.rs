@@ -3,22 +3,20 @@
 /// <p>A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailedBatchItem {
+pub struct FailedBatchItem  {
     /// <p>The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations.</p>
     pub id: ::std::string::String,
     /// <p>The error message that indicates why the batch item failed.</p>
     pub error_message: ::std::string::String,
 }
-impl FailedBatchItem {
+impl  FailedBatchItem  {
     /// <p>The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The error message that indicates why the batch item failed.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl FailedBatchItem {
@@ -44,8 +42,7 @@ impl FailedBatchItemBuilder {
     }
     /// <p>The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl FailedBatchItemBuilder {
     }
     /// <p>The error message that indicates why the batch item failed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that indicates why the batch item failed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl FailedBatchItemBuilder {
     /// - [`id`](crate::types::builders::FailedBatchItemBuilder::id)
     /// - [`error_message`](crate::types::builders::FailedBatchItemBuilder::error_message)
     pub fn build(self) -> ::std::result::Result<crate::types::FailedBatchItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FailedBatchItem {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FailedBatchItem",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building FailedBatchItem",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FailedBatchItem {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FailedBatchItem")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building FailedBatchItem")
+                    )?
+                ,
+            }
+        )
     }
 }
+

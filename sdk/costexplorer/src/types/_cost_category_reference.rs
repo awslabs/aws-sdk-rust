@@ -4,7 +4,7 @@
 /// <p>You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostCategoryReference {
+pub struct CostCategoryReference  {
     /// <p>The unique identifier for your Cost Category.</p>
     pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
@@ -16,27 +16,27 @@ pub struct CostCategoryReference {
     /// <p>The number of rules that are associated with a specific Cost Category.</p>
     pub number_of_rules: i32,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
-    pub processing_status: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
+    pub processing_status: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryProcessingStatus>>,
     /// <p>A list of unique cost category values in a specific cost category.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The default value for the cost category.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
 }
-impl CostCategoryReference {
+impl  CostCategoryReference  {
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> ::std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Cost Category's effective start date.</p>
-    pub fn effective_start(&self) -> ::std::option::Option<&str> {
+    pub fn effective_start(&self) -> ::std::option::Option<& str> {
         self.effective_start.as_deref()
     }
     /// <p>The Cost Category's effective end date.</p>
-    pub fn effective_end(&self) -> ::std::option::Option<&str> {
+    pub fn effective_end(&self) -> ::std::option::Option<& str> {
         self.effective_end.as_deref()
     }
     /// <p>The number of rules that are associated with a specific Cost Category.</p>
@@ -44,19 +44,21 @@ impl CostCategoryReference {
         self.number_of_rules
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processing_status.is_none()`.
-    pub fn processing_status(&self) -> &[crate::types::CostCategoryProcessingStatus] {
-        self.processing_status.as_deref().unwrap_or_default()
+    pub fn processing_status(&self) -> & [crate::types::CostCategoryProcessingStatus] {
+        self.processing_status.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of unique cost category values in a specific cost category.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
@@ -76,8 +78,8 @@ pub struct CostCategoryReferenceBuilder {
     pub(crate) effective_start: ::std::option::Option<::std::string::String>,
     pub(crate) effective_end: ::std::option::Option<::std::string::String>,
     pub(crate) number_of_rules: ::std::option::Option<i32>,
-    pub(crate) processing_status: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) processing_status: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryProcessingStatus>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryReferenceBuilder {
@@ -88,8 +90,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn set_cost_category_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cost_category_arn = input;
-        self
+        self.cost_category_arn = input; self
     }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +103,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique name of the Cost Category.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +116,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The Cost Category's effective start date.</p>
     pub fn set_effective_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.effective_start = input;
-        self
+        self.effective_start = input; self
     }
     /// <p>The Cost Category's effective start date.</p>
     pub fn get_effective_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The Cost Category's effective end date.</p>
     pub fn set_effective_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.effective_end = input;
-        self
+        self.effective_end = input; self
     }
     /// <p>The Cost Category's effective end date.</p>
     pub fn get_effective_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +142,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The number of rules that are associated with a specific Cost Category.</p>
     pub fn set_number_of_rules(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_rules = input;
-        self
+        self.number_of_rules = input; self
     }
     /// <p>The number of rules that are associated with a specific Cost Category.</p>
     pub fn get_number_of_rules(&self) -> &::std::option::Option<i32> {
@@ -158,17 +155,16 @@ impl CostCategoryReferenceBuilder {
     /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
     pub fn processing_status(mut self, input: crate::types::CostCategoryProcessingStatus) -> Self {
         let mut v = self.processing_status.unwrap_or_default();
-        v.push(input);
-        self.processing_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.processing_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
-    pub fn set_processing_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>) -> Self {
-        self.processing_status = input;
-        self
+    pub fn set_processing_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryProcessingStatus>>) -> Self {
+        self.processing_status = input; self
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category.</p>
-    pub fn get_processing_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>> {
+    pub fn get_processing_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CostCategoryProcessingStatus>> {
         &self.processing_status
     }
     /// Appends an item to `values`.
@@ -178,17 +174,16 @@ impl CostCategoryReferenceBuilder {
     /// <p>A list of unique cost category values in a specific cost category.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of unique cost category values in a specific cost category.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>A list of unique cost category values in a specific cost category.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The default value for the cost category.</p>
@@ -198,8 +193,7 @@ impl CostCategoryReferenceBuilder {
     }
     /// <p>The default value for the cost category.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value for the cost category.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,14 +202,24 @@ impl CostCategoryReferenceBuilder {
     /// Consumes the builder and constructs a [`CostCategoryReference`](crate::types::CostCategoryReference).
     pub fn build(self) -> crate::types::CostCategoryReference {
         crate::types::CostCategoryReference {
-            cost_category_arn: self.cost_category_arn,
-            name: self.name,
-            effective_start: self.effective_start,
-            effective_end: self.effective_end,
-            number_of_rules: self.number_of_rules.unwrap_or_default(),
-            processing_status: self.processing_status,
-            values: self.values,
-            default_value: self.default_value,
+            cost_category_arn: self.cost_category_arn
+            ,
+            name: self.name
+            ,
+            effective_start: self.effective_start
+            ,
+            effective_end: self.effective_end
+            ,
+            number_of_rules: self.number_of_rules
+                .unwrap_or_default()
+            ,
+            processing_status: self.processing_status
+            ,
+            values: self.values
+            ,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

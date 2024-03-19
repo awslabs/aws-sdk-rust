@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSequenceStoresOutput {
+pub struct ListSequenceStoresOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of sequence stores.</p>
-    pub sequence_stores: ::std::vec::Vec<crate::types::SequenceStoreDetail>,
+    pub sequence_stores: ::std::vec::Vec::<crate::types::SequenceStoreDetail>,
     _request_id: Option<String>,
 }
-impl ListSequenceStoresOutput {
+impl  ListSequenceStoresOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of sequence stores.</p>
-    pub fn sequence_stores(&self) -> &[crate::types::SequenceStoreDetail] {
-        use std::ops::Deref;
-        self.sequence_stores.deref()
+    pub fn sequence_stores(&self) -> & [crate::types::SequenceStoreDetail] {
+        use std::ops::Deref; self.sequence_stores.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSequenceStoresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSequenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput).
     pub fn builder() -> crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder {
@@ -37,7 +36,7 @@ impl ListSequenceStoresOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSequenceStoresOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) sequence_stores: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>,
+    pub(crate) sequence_stores: ::std::option::Option<::std::vec::Vec::<crate::types::SequenceStoreDetail>>,
     _request_id: Option<String>,
 }
 impl ListSequenceStoresOutputBuilder {
@@ -48,8 +47,7 @@ impl ListSequenceStoresOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,44 +60,43 @@ impl ListSequenceStoresOutputBuilder {
     /// <p>A list of sequence stores.</p>
     pub fn sequence_stores(mut self, input: crate::types::SequenceStoreDetail) -> Self {
         let mut v = self.sequence_stores.unwrap_or_default();
-        v.push(input);
-        self.sequence_stores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sequence_stores = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of sequence stores.</p>
-    pub fn set_sequence_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>>) -> Self {
-        self.sequence_stores = input;
-        self
+    pub fn set_sequence_stores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SequenceStoreDetail>>) -> Self {
+        self.sequence_stores = input; self
     }
     /// <p>A list of sequence stores.</p>
-    pub fn get_sequence_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SequenceStoreDetail>> {
+    pub fn get_sequence_stores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SequenceStoreDetail>> {
         &self.sequence_stores
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSequenceStoresOutput`](crate::operation::list_sequence_stores::ListSequenceStoresOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`sequence_stores`](crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder::sequence_stores)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_sequence_stores::ListSequenceStoresOutput {
-            next_token: self.next_token,
-            sequence_stores: self.sequence_stores.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sequence_stores",
-                    "sequence_stores was not specified but it is required when building ListSequenceStoresOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_sequence_stores::ListSequenceStoresOutput {
+                next_token: self.next_token
+                ,
+                sequence_stores: self.sequence_stores
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sequence_stores", "sequence_stores was not specified but it is required when building ListSequenceStoresOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

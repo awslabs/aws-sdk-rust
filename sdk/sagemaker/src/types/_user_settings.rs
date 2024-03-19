@@ -4,14 +4,14 @@
 /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserSettings {
+pub struct UserSettings  {
     /// <p>The execution role for the user.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
     pub sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
     /// <p>The Jupyter server's app settings.</p>
@@ -45,60 +45,61 @@ pub struct UserSettings {
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
     pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
+    pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystemConfig>>,
 }
-impl UserSettings {
+impl  UserSettings  {
     /// <p>The execution role for the user.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
-    pub fn sharing_settings(&self) -> ::std::option::Option<&crate::types::SharingSettings> {
+    pub fn sharing_settings(&self) -> ::std::option::Option<& crate::types::SharingSettings> {
         self.sharing_settings.as_ref()
     }
     /// <p>The Jupyter server's app settings.</p>
-    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<& crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The kernel gateway app settings.</p>
-    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<& crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
     /// <p>The TensorBoard app settings.</p>
-    pub fn tensor_board_app_settings(&self) -> ::std::option::Option<&crate::types::TensorBoardAppSettings> {
+    pub fn tensor_board_app_settings(&self) -> ::std::option::Option<& crate::types::TensorBoardAppSettings> {
         self.tensor_board_app_settings.as_ref()
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
-    pub fn r_studio_server_pro_app_settings(&self) -> ::std::option::Option<&crate::types::RStudioServerProAppSettings> {
+    pub fn r_studio_server_pro_app_settings(&self) -> ::std::option::Option<& crate::types::RStudioServerProAppSettings> {
         self.r_studio_server_pro_app_settings.as_ref()
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
-    pub fn r_session_app_settings(&self) -> ::std::option::Option<&crate::types::RSessionAppSettings> {
+    pub fn r_session_app_settings(&self) -> ::std::option::Option<& crate::types::RSessionAppSettings> {
         self.r_session_app_settings.as_ref()
     }
     /// <p>The Canvas app settings.</p>
-    pub fn canvas_app_settings(&self) -> ::std::option::Option<&crate::types::CanvasAppSettings> {
+    pub fn canvas_app_settings(&self) -> ::std::option::Option<& crate::types::CanvasAppSettings> {
         self.canvas_app_settings.as_ref()
     }
     /// <p>The Code Editor application settings.</p>
-    pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::CodeEditorAppSettings> {
+    pub fn code_editor_app_settings(&self) -> ::std::option::Option<& crate::types::CodeEditorAppSettings> {
         self.code_editor_app_settings.as_ref()
     }
     /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<& crate::types::JupyterLabAppSettings> {
         self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The storage settings for a private space.</p>
-    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceStorageSettings> {
+    pub fn space_storage_settings(&self) -> ::std::option::Option<& crate::types::DefaultSpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
@@ -108,22 +109,23 @@ impl UserSettings {
     /// <li>
     /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
-    pub fn default_landing_uri(&self) -> ::std::option::Option<&str> {
+    pub fn default_landing_uri(&self) -> ::std::option::Option<& str> {
         self.default_landing_uri.as_deref()
     }
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
-    pub fn studio_web_portal(&self) -> ::std::option::Option<&crate::types::StudioWebPortal> {
+    pub fn studio_web_portal(&self) -> ::std::option::Option<& crate::types::StudioWebPortal> {
         self.studio_web_portal.as_ref()
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
-    pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
+    pub fn custom_posix_user_config(&self) -> ::std::option::Option<& crate::types::CustomPosixUserConfig> {
         self.custom_posix_user_config.as_ref()
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
-    pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
-        self.custom_file_system_configs.as_deref().unwrap_or_default()
+    pub fn custom_file_system_configs(&self) -> & [crate::types::CustomFileSystemConfig] {
+        self.custom_file_system_configs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UserSettings {
@@ -138,7 +140,7 @@ impl UserSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserSettingsBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) sharing_settings: ::std::option::Option<crate::types::SharingSettings>,
     pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
@@ -152,7 +154,7 @@ pub struct UserSettingsBuilder {
     pub(crate) default_landing_uri: ::std::option::Option<::std::string::String>,
     pub(crate) studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
     pub(crate) custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
-    pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
+    pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystemConfig>>,
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
@@ -162,8 +164,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The execution role for the user.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The execution role for the user.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,23 +180,22 @@ impl UserSettingsBuilder {
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
     /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
     /// <p>Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
@@ -205,8 +205,7 @@ impl UserSettingsBuilder {
     }
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
     pub fn set_sharing_settings(mut self, input: ::std::option::Option<crate::types::SharingSettings>) -> Self {
-        self.sharing_settings = input;
-        self
+        self.sharing_settings = input; self
     }
     /// <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
     pub fn get_sharing_settings(&self) -> &::std::option::Option<crate::types::SharingSettings> {
@@ -219,8 +218,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The Jupyter server's app settings.</p>
     pub fn set_jupyter_server_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
-        self.jupyter_server_app_settings = input;
-        self
+        self.jupyter_server_app_settings = input; self
     }
     /// <p>The Jupyter server's app settings.</p>
     pub fn get_jupyter_server_app_settings(&self) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
@@ -233,8 +231,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The kernel gateway app settings.</p>
     pub fn set_kernel_gateway_app_settings(mut self, input: ::std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
-        self.kernel_gateway_app_settings = input;
-        self
+        self.kernel_gateway_app_settings = input; self
     }
     /// <p>The kernel gateway app settings.</p>
     pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
@@ -247,8 +244,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The TensorBoard app settings.</p>
     pub fn set_tensor_board_app_settings(mut self, input: ::std::option::Option<crate::types::TensorBoardAppSettings>) -> Self {
-        self.tensor_board_app_settings = input;
-        self
+        self.tensor_board_app_settings = input; self
     }
     /// <p>The TensorBoard app settings.</p>
     pub fn get_tensor_board_app_settings(&self) -> &::std::option::Option<crate::types::TensorBoardAppSettings> {
@@ -261,8 +257,7 @@ impl UserSettingsBuilder {
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
     pub fn set_r_studio_server_pro_app_settings(mut self, input: ::std::option::Option<crate::types::RStudioServerProAppSettings>) -> Self {
-        self.r_studio_server_pro_app_settings = input;
-        self
+        self.r_studio_server_pro_app_settings = input; self
     }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
     pub fn get_r_studio_server_pro_app_settings(&self) -> &::std::option::Option<crate::types::RStudioServerProAppSettings> {
@@ -275,8 +270,7 @@ impl UserSettingsBuilder {
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     pub fn set_r_session_app_settings(mut self, input: ::std::option::Option<crate::types::RSessionAppSettings>) -> Self {
-        self.r_session_app_settings = input;
-        self
+        self.r_session_app_settings = input; self
     }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     pub fn get_r_session_app_settings(&self) -> &::std::option::Option<crate::types::RSessionAppSettings> {
@@ -289,8 +283,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The Canvas app settings.</p>
     pub fn set_canvas_app_settings(mut self, input: ::std::option::Option<crate::types::CanvasAppSettings>) -> Self {
-        self.canvas_app_settings = input;
-        self
+        self.canvas_app_settings = input; self
     }
     /// <p>The Canvas app settings.</p>
     pub fn get_canvas_app_settings(&self) -> &::std::option::Option<crate::types::CanvasAppSettings> {
@@ -303,8 +296,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The Code Editor application settings.</p>
     pub fn set_code_editor_app_settings(mut self, input: ::std::option::Option<crate::types::CodeEditorAppSettings>) -> Self {
-        self.code_editor_app_settings = input;
-        self
+        self.code_editor_app_settings = input; self
     }
     /// <p>The Code Editor application settings.</p>
     pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::CodeEditorAppSettings> {
@@ -317,8 +309,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The settings for the JupyterLab application.</p>
     pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
-        self.jupyter_lab_app_settings = input;
-        self
+        self.jupyter_lab_app_settings = input; self
     }
     /// <p>The settings for the JupyterLab application.</p>
     pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
@@ -331,8 +322,7 @@ impl UserSettingsBuilder {
     }
     /// <p>The storage settings for a private space.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>) -> Self {
-        self.space_storage_settings = input;
-        self
+        self.space_storage_settings = input; self
     }
     /// <p>The storage settings for a private space.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceStorageSettings> {
@@ -357,8 +347,7 @@ impl UserSettingsBuilder {
     /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub fn set_default_landing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_landing_uri = input;
-        self
+        self.default_landing_uri = input; self
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
@@ -377,8 +366,7 @@ impl UserSettingsBuilder {
     }
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
     pub fn set_studio_web_portal(mut self, input: ::std::option::Option<crate::types::StudioWebPortal>) -> Self {
-        self.studio_web_portal = input;
-        self
+        self.studio_web_portal = input; self
     }
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
     pub fn get_studio_web_portal(&self) -> &::std::option::Option<crate::types::StudioWebPortal> {
@@ -391,8 +379,7 @@ impl UserSettingsBuilder {
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
     pub fn set_custom_posix_user_config(mut self, input: ::std::option::Option<crate::types::CustomPosixUserConfig>) -> Self {
-        self.custom_posix_user_config = input;
-        self
+        self.custom_posix_user_config = input; self
     }
     /// <p>Details about the POSIX identity that is used for file system operations.</p>
     pub fn get_custom_posix_user_config(&self) -> &::std::option::Option<crate::types::CustomPosixUserConfig> {
@@ -405,38 +392,54 @@ impl UserSettingsBuilder {
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
         let mut v = self.custom_file_system_configs.unwrap_or_default();
-        v.push(input);
-        self.custom_file_system_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_file_system_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
-        self.custom_file_system_configs = input;
-        self
+    pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystemConfig>>) -> Self {
+        self.custom_file_system_configs = input; self
     }
     /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
+    pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystemConfig>> {
         &self.custom_file_system_configs
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
-            execution_role: self.execution_role,
-            security_groups: self.security_groups,
-            sharing_settings: self.sharing_settings,
-            jupyter_server_app_settings: self.jupyter_server_app_settings,
-            kernel_gateway_app_settings: self.kernel_gateway_app_settings,
-            tensor_board_app_settings: self.tensor_board_app_settings,
-            r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings,
-            r_session_app_settings: self.r_session_app_settings,
-            canvas_app_settings: self.canvas_app_settings,
-            code_editor_app_settings: self.code_editor_app_settings,
-            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
-            space_storage_settings: self.space_storage_settings,
-            default_landing_uri: self.default_landing_uri,
-            studio_web_portal: self.studio_web_portal,
-            custom_posix_user_config: self.custom_posix_user_config,
-            custom_file_system_configs: self.custom_file_system_configs,
+            execution_role: self.execution_role
+            ,
+            security_groups: self.security_groups
+            ,
+            sharing_settings: self.sharing_settings
+            ,
+            jupyter_server_app_settings: self.jupyter_server_app_settings
+            ,
+            kernel_gateway_app_settings: self.kernel_gateway_app_settings
+            ,
+            tensor_board_app_settings: self.tensor_board_app_settings
+            ,
+            r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings
+            ,
+            r_session_app_settings: self.r_session_app_settings
+            ,
+            canvas_app_settings: self.canvas_app_settings
+            ,
+            code_editor_app_settings: self.code_editor_app_settings
+            ,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings
+            ,
+            space_storage_settings: self.space_storage_settings
+            ,
+            default_landing_uri: self.default_landing_uri
+            ,
+            studio_web_portal: self.studio_web_portal
+            ,
+            custom_posix_user_config: self.custom_posix_user_config
+            ,
+            custom_file_system_configs: self.custom_file_system_configs
+            ,
         }
     }
 }
+

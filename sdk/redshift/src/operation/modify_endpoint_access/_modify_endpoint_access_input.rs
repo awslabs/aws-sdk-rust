@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyEndpointAccessInput {
+pub struct ModifyEndpointAccessInput  {
     /// <p>The endpoint to be modified.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyEndpointAccessInput {
+impl  ModifyEndpointAccessInput  {
     /// <p>The endpoint to be modified.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyEndpointAccessInput {
@@ -32,7 +33,7 @@ impl ModifyEndpointAccessInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyEndpointAccessInputBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyEndpointAccessInputBuilder {
     /// <p>The endpoint to be modified.</p>
@@ -43,8 +44,7 @@ impl ModifyEndpointAccessInputBuilder {
     }
     /// <p>The endpoint to be modified.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The endpoint to be modified.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,28 @@ impl ModifyEndpointAccessInputBuilder {
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`ModifyEndpointAccessInput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_endpoint_access::ModifyEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_endpoint_access::ModifyEndpointAccessInput {
-            endpoint_name: self.endpoint_name,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_endpoint_access::ModifyEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessInput {
+                endpoint_name: self.endpoint_name
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+            }
+        )
     }
 }
+

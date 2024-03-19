@@ -3,20 +3,19 @@
 /// <p>A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchMonitoringConfiguration {
+pub struct CloudWatchMonitoringConfiguration  {
     /// <p>The name of the log group for log publishing.</p>
     pub log_group_name: ::std::string::String,
     /// <p>The specified name prefix for log streams.</p>
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchMonitoringConfiguration {
+impl  CloudWatchMonitoringConfiguration  {
     /// <p>The name of the log group for log publishing.</p>
-    pub fn log_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.log_group_name.deref()
+    pub fn log_group_name(&self) -> & str {
+        use std::ops::Deref; self.log_group_name.deref()
     }
     /// <p>The specified name prefix for log streams.</p>
-    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name_prefix(&self) -> ::std::option::Option<& str> {
         self.log_stream_name_prefix.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl CloudWatchMonitoringConfigurationBuilder {
     }
     /// <p>The name of the log group for log publishing.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group for log publishing.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl CloudWatchMonitoringConfigurationBuilder {
     }
     /// <p>The specified name prefix for log streams.</p>
     pub fn set_log_stream_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name_prefix = input;
-        self
+        self.log_stream_name_prefix = input; self
     }
     /// <p>The specified name prefix for log streams.</p>
     pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl CloudWatchMonitoringConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_group_name`](crate::types::builders::CloudWatchMonitoringConfigurationBuilder::log_group_name)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchMonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchMonitoringConfiguration {
-            log_group_name: self.log_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_group_name",
-                    "log_group_name was not specified but it is required when building CloudWatchMonitoringConfiguration",
-                )
-            })?,
-            log_stream_name_prefix: self.log_stream_name_prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudWatchMonitoringConfiguration {
+                log_group_name: self.log_group_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_group_name", "log_group_name was not specified but it is required when building CloudWatchMonitoringConfiguration")
+                    )?
+                ,
+                log_stream_name_prefix: self.log_stream_name_prefix
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Attributes {}
+pub struct Attributes  {
+}
 impl Attributes {
     /// Creates a new builder-style object to manufacture [`Attributes`](crate::types::Attributes).
     pub fn builder() -> crate::types::builders::AttributesBuilder {
@@ -13,10 +14,13 @@ impl Attributes {
 /// A builder for [`Attributes`](crate::types::Attributes).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct AttributesBuilder {}
+pub struct AttributesBuilder {
+}
 impl AttributesBuilder {
     /// Consumes the builder and constructs a [`Attributes`](crate::types::Attributes).
     pub fn build(self) -> crate::types::Attributes {
-        crate::types::Attributes {}
+        crate::types::Attributes {
+        }
     }
 }
+

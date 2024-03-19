@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UploadPartCopyInput {
+pub struct UploadPartCopyInput  {
     /// <p>The bucket name.</p>
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
@@ -113,14 +113,14 @@ pub struct UploadPartCopyInput {
     /// <p>The account ID of the expected source bucket owner. If the account ID that you provide does not match the actual owner of the source bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_source_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl UploadPartCopyInput {
+impl  UploadPartCopyInput  {
     /// <p>The bucket name.</p>
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
@@ -160,7 +160,7 @@ impl UploadPartCopyInput {
     /// <p>If the current version is a delete marker and you don't specify a versionId in the <code>x-amz-copy-source</code> request header, Amazon S3 returns a <code>404 Not Found</code> error, because the object does not exist. If you specify versionId in the <code>x-amz-copy-source</code> and the versionId is a delete marker, Amazon S3 returns an HTTP <code>400 Bad Request</code> error, because you are not allowed to specify a delete marker as a version for the <code>x-amz-copy-source</code>.</p><note>
     /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
-    pub fn copy_source(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source(&self) -> ::std::option::Option<& str> {
         self.copy_source.as_deref()
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
@@ -168,7 +168,7 @@ impl UploadPartCopyInput {
     /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
     /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
     /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
-    pub fn copy_source_if_match(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_if_match(&self) -> ::std::option::Option<& str> {
         self.copy_source_if_match.as_deref()
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
@@ -176,7 +176,7 @@ impl UploadPartCopyInput {
     /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
     /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
     /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
-    pub fn copy_source_if_modified_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn copy_source_if_modified_since(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.copy_source_if_modified_since.as_ref()
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
@@ -184,7 +184,7 @@ impl UploadPartCopyInput {
     /// <p><code>x-amz-copy-source-if-none-match</code> condition evaluates to <code>false</code>, and;</p>
     /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
     /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
-    pub fn copy_source_if_none_match(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_if_none_match(&self) -> ::std::option::Option<& str> {
         self.copy_source_if_none_match.as_deref()
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
@@ -192,15 +192,15 @@ impl UploadPartCopyInput {
     /// <p><code>x-amz-copy-source-if-match</code> condition evaluates to <code>true</code>, and;</p>
     /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
     /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
-    pub fn copy_source_if_unmodified_since(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn copy_source_if_unmodified_since(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.copy_source_if_unmodified_since.as_ref()
     }
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
-    pub fn copy_source_range(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_range(&self) -> ::std::option::Option<& str> {
         self.copy_source_range.as_deref()
     }
     /// <p>Object key for which the multipart upload was initiated.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
@@ -208,61 +208,61 @@ impl UploadPartCopyInput {
         self.part_number
     }
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
-    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<& str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
-    pub fn sse_customer_key(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_key(&self) -> ::std::option::Option<& str> {
         self.sse_customer_key.as_deref()
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
-    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<&str> {
+    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<& str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, <code>AES256</code>).</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
-    pub fn copy_source_sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_sse_customer_algorithm(&self) -> ::std::option::Option<& str> {
         self.copy_source_sse_customer_algorithm.as_deref()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
-    pub fn copy_source_sse_customer_key(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_sse_customer_key(&self) -> ::std::option::Option<& str> {
         self.copy_source_sse_customer_key.as_deref()
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
-    pub fn copy_source_sse_customer_key_md5(&self) -> ::std::option::Option<&str> {
+    pub fn copy_source_sse_customer_key_md5(&self) -> ::std::option::Option<& str> {
         self.copy_source_sse_customer_key_md5.as_deref()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_payer(&self) -> ::std::option::Option<&crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> ::std::option::Option<& crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>The account ID of the expected destination bucket owner. If the account ID that you provide does not match the actual owner of the destination bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>The account ID of the expected source bucket owner. If the account ID that you provide does not match the actual owner of the source bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_source_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_source_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_source_bucket_owner.as_deref()
     }
 }
-impl ::std::fmt::Debug for UploadPartCopyInput {
+impl  ::std::fmt::Debug for UploadPartCopyInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadPartCopyInput");
         formatter.field("bucket", &self.bucket);
@@ -337,8 +337,7 @@ impl UploadPartCopyInputBuilder {
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The bucket name.</p>
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -429,8 +428,7 @@ impl UploadPartCopyInputBuilder {
     /// <p><b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets.</p>
     /// </note>
     pub fn set_copy_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source = input;
-        self
+        self.copy_source = input; self
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
@@ -487,8 +485,7 @@ impl UploadPartCopyInputBuilder {
     /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
     /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn set_copy_source_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_if_match = input;
-        self
+        self.copy_source_if_match = input; self
     }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
@@ -513,8 +510,7 @@ impl UploadPartCopyInputBuilder {
     /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
     /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn set_copy_source_if_modified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.copy_source_if_modified_since = input;
-        self
+        self.copy_source_if_modified_since = input; self
     }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
@@ -539,8 +535,7 @@ impl UploadPartCopyInputBuilder {
     /// <p><code>x-amz-copy-source-if-modified-since</code> condition evaluates to <code>true</code>;</p>
     /// <p>Amazon S3 returns <code>412 Precondition Failed</code> response code.</p>
     pub fn set_copy_source_if_none_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_if_none_match = input;
-        self
+        self.copy_source_if_none_match = input; self
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-none-match</code> and <code>x-amz-copy-source-if-modified-since</code> headers are present in the request as follows:</p>
@@ -565,8 +560,7 @@ impl UploadPartCopyInputBuilder {
     /// <p><code>x-amz-copy-source-if-unmodified-since</code> condition evaluates to <code>false</code>;</p>
     /// <p>Amazon S3 returns <code>200 OK</code> and copies the data.</p>
     pub fn set_copy_source_if_unmodified_since(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.copy_source_if_unmodified_since = input;
-        self
+        self.copy_source_if_unmodified_since = input; self
     }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     /// <p>If both of the <code>x-amz-copy-source-if-match</code> and <code>x-amz-copy-source-if-unmodified-since</code> headers are present in the request as follows:</p>
@@ -583,8 +577,7 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub fn set_copy_source_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_range = input;
-        self
+        self.copy_source_range = input; self
     }
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub fn get_copy_source_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -598,8 +591,7 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -613,8 +605,7 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.part_number = input;
-        self
+        self.part_number = input; self
     }
     /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
     pub fn get_part_number(&self) -> &::std::option::Option<i32> {
@@ -628,8 +619,7 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -646,8 +636,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
     pub fn set_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_algorithm = input;
-        self
+        self.sse_customer_algorithm = input; self
     }
     /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
@@ -666,8 +655,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
     pub fn set_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_key = input;
-        self
+        self.sse_customer_key = input; self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
@@ -686,8 +674,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
     /// </note>
     pub fn set_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sse_customer_key_md5 = input;
-        self
+        self.sse_customer_key_md5 = input; self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported when the destination bucket is a directory bucket.</p>
@@ -706,8 +693,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
     pub fn set_copy_source_sse_customer_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_sse_customer_algorithm = input;
-        self
+        self.copy_source_sse_customer_algorithm = input; self
     }
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, <code>AES256</code>).</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
@@ -726,8 +712,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
     pub fn set_copy_source_sse_customer_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_sse_customer_key = input;
-        self
+        self.copy_source_sse_customer_key = input; self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
@@ -746,8 +731,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
     /// </note>
     pub fn set_copy_source_sse_customer_key_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_source_sse_customer_key_md5 = input;
-        self
+        self.copy_source_sse_customer_key_md5 = input; self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p><note>
     /// <p>This functionality is not supported when the source object is in a directory bucket.</p>
@@ -766,8 +750,7 @@ impl UploadPartCopyInputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input;
-        self
+        self.request_payer = input; self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -782,8 +765,7 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>The account ID of the expected destination bucket owner. If the account ID that you provide does not match the actual owner of the destination bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected destination bucket owner. If the account ID that you provide does not match the actual owner of the destination bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -796,38 +778,56 @@ impl UploadPartCopyInputBuilder {
     }
     /// <p>The account ID of the expected source bucket owner. If the account ID that you provide does not match the actual owner of the source bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_source_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_source_bucket_owner = input;
-        self
+        self.expected_source_bucket_owner = input; self
     }
     /// <p>The account ID of the expected source bucket owner. If the account ID that you provide does not match the actual owner of the source bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_source_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_source_bucket_owner
     }
     /// Consumes the builder and constructs a [`UploadPartCopyInput`](crate::operation::upload_part_copy::UploadPartCopyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_part_copy::UploadPartCopyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::upload_part_copy::UploadPartCopyInput {
-            bucket: self.bucket,
-            copy_source: self.copy_source,
-            copy_source_if_match: self.copy_source_if_match,
-            copy_source_if_modified_since: self.copy_source_if_modified_since,
-            copy_source_if_none_match: self.copy_source_if_none_match,
-            copy_source_if_unmodified_since: self.copy_source_if_unmodified_since,
-            copy_source_range: self.copy_source_range,
-            key: self.key,
-            part_number: self.part_number,
-            upload_id: self.upload_id,
-            sse_customer_algorithm: self.sse_customer_algorithm,
-            sse_customer_key: self.sse_customer_key,
-            sse_customer_key_md5: self.sse_customer_key_md5,
-            copy_source_sse_customer_algorithm: self.copy_source_sse_customer_algorithm,
-            copy_source_sse_customer_key: self.copy_source_sse_customer_key,
-            copy_source_sse_customer_key_md5: self.copy_source_sse_customer_key_md5,
-            request_payer: self.request_payer,
-            expected_bucket_owner: self.expected_bucket_owner,
-            expected_source_bucket_owner: self.expected_source_bucket_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_part_copy::UploadPartCopyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_part_copy::UploadPartCopyInput {
+                bucket: self.bucket
+                ,
+                copy_source: self.copy_source
+                ,
+                copy_source_if_match: self.copy_source_if_match
+                ,
+                copy_source_if_modified_since: self.copy_source_if_modified_since
+                ,
+                copy_source_if_none_match: self.copy_source_if_none_match
+                ,
+                copy_source_if_unmodified_since: self.copy_source_if_unmodified_since
+                ,
+                copy_source_range: self.copy_source_range
+                ,
+                key: self.key
+                ,
+                part_number: self.part_number
+                ,
+                upload_id: self.upload_id
+                ,
+                sse_customer_algorithm: self.sse_customer_algorithm
+                ,
+                sse_customer_key: self.sse_customer_key
+                ,
+                sse_customer_key_md5: self.sse_customer_key_md5
+                ,
+                copy_source_sse_customer_algorithm: self.copy_source_sse_customer_algorithm
+                ,
+                copy_source_sse_customer_key: self.copy_source_sse_customer_key
+                ,
+                copy_source_sse_customer_key_md5: self.copy_source_sse_customer_key_md5
+                ,
+                request_payer: self.request_payer
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                expected_source_bucket_owner: self.expected_source_bucket_owner
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UploadPartCopyInputBuilder {
@@ -855,3 +855,4 @@ impl ::std::fmt::Debug for UploadPartCopyInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides information about the specified retraining scheduler, including model name, status, start date, frequency, and lookback window.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RetrainingSchedulerSummary {
+pub struct RetrainingSchedulerSummary  {
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the model that the retraining scheduler is attached to.</p>
@@ -17,29 +17,29 @@ pub struct RetrainingSchedulerSummary {
     /// <p>The number of past days of data used for retraining.</p>
     pub lookback_window: ::std::option::Option<::std::string::String>,
 }
-impl RetrainingSchedulerSummary {
+impl  RetrainingSchedulerSummary  {
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The ARN of the model that the retraining scheduler is attached to.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The status of the retraining scheduler.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RetrainingSchedulerStatus> {
         self.status.as_ref()
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
-    pub fn retraining_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn retraining_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.retraining_start_date.as_ref()
     }
     /// <p>The frequency at which the model retraining is set. This follows the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> guidelines.</p>
-    pub fn retraining_frequency(&self) -> ::std::option::Option<&str> {
+    pub fn retraining_frequency(&self) -> ::std::option::Option<& str> {
         self.retraining_frequency.as_deref()
     }
     /// <p>The number of past days of data used for retraining.</p>
-    pub fn lookback_window(&self) -> ::std::option::Option<&str> {
+    pub fn lookback_window(&self) -> ::std::option::Option<& str> {
         self.lookback_window.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model that the retraining scheduler is attached to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The ARN of the model that the retraining scheduler is attached to.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the model that the retraining scheduler is attached to.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The status of the retraining scheduler.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RetrainingSchedulerStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the retraining scheduler.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
@@ -111,8 +108,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
     pub fn set_retraining_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.retraining_start_date = input;
-        self
+        self.retraining_start_date = input; self
     }
     /// <p>The start date for the retraining scheduler. Lookout for Equipment truncates the time you provide to the nearest UTC day.</p>
     pub fn get_retraining_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The frequency at which the model retraining is set. This follows the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> guidelines.</p>
     pub fn set_retraining_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.retraining_frequency = input;
-        self
+        self.retraining_frequency = input; self
     }
     /// <p>The frequency at which the model retraining is set. This follows the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> guidelines.</p>
     pub fn get_retraining_frequency(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl RetrainingSchedulerSummaryBuilder {
     }
     /// <p>The number of past days of data used for retraining.</p>
     pub fn set_lookback_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lookback_window = input;
-        self
+        self.lookback_window = input; self
     }
     /// <p>The number of past days of data used for retraining.</p>
     pub fn get_lookback_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl RetrainingSchedulerSummaryBuilder {
     /// Consumes the builder and constructs a [`RetrainingSchedulerSummary`](crate::types::RetrainingSchedulerSummary).
     pub fn build(self) -> crate::types::RetrainingSchedulerSummary {
         crate::types::RetrainingSchedulerSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            status: self.status,
-            retraining_start_date: self.retraining_start_date,
-            retraining_frequency: self.retraining_frequency,
-            lookback_window: self.lookback_window,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            status: self.status
+            ,
+            retraining_start_date: self.retraining_start_date
+            ,
+            retraining_frequency: self.retraining_frequency
+            ,
+            lookback_window: self.lookback_window
+            ,
         }
     }
 }
+

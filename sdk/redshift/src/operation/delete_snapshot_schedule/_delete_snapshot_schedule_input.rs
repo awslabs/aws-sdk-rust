@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotScheduleInput {
+pub struct DeleteSnapshotScheduleInput  {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
     pub schedule_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSnapshotScheduleInput {
+impl  DeleteSnapshotScheduleInput  {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
-    pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> ::std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteSnapshotScheduleInputBuilder {
     }
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
     pub fn set_schedule_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_identifier = input;
-        self
+        self.schedule_identifier = input; self
     }
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
     pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_identifier
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput {
-            schedule_identifier: self.schedule_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput {
+                schedule_identifier: self.schedule_identifier
+                ,
+            }
+        )
     }
 }
+

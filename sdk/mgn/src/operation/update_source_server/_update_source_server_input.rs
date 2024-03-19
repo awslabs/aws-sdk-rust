@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSourceServerInput {
+pub struct UpdateSourceServerInput  {
     /// <p>Update Source Server request account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Update Source Server request source server ID.</p>
@@ -10,17 +10,17 @@ pub struct UpdateSourceServerInput {
     /// <p>Update Source Server request connector action.</p>
     pub connector_action: ::std::option::Option<crate::types::SourceServerConnectorAction>,
 }
-impl UpdateSourceServerInput {
+impl  UpdateSourceServerInput  {
     /// <p>Update Source Server request account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Update Source Server request source server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Update Source Server request connector action.</p>
-    pub fn connector_action(&self) -> ::std::option::Option<&crate::types::SourceServerConnectorAction> {
+    pub fn connector_action(&self) -> ::std::option::Option<& crate::types::SourceServerConnectorAction> {
         self.connector_action.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl UpdateSourceServerInputBuilder {
     }
     /// <p>Update Source Server request account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Update Source Server request account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateSourceServerInputBuilder {
     }
     /// <p>Update Source Server request source server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Update Source Server request source server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateSourceServerInputBuilder {
     }
     /// <p>Update Source Server request connector action.</p>
     pub fn set_connector_action(mut self, input: ::std::option::Option<crate::types::SourceServerConnectorAction>) -> Self {
-        self.connector_action = input;
-        self
+        self.connector_action = input; self
     }
     /// <p>Update Source Server request connector action.</p>
     pub fn get_connector_action(&self) -> &::std::option::Option<crate::types::SourceServerConnectorAction> {
         &self.connector_action
     }
     /// Consumes the builder and constructs a [`UpdateSourceServerInput`](crate::operation::update_source_server::UpdateSourceServerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_source_server::UpdateSourceServerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_source_server::UpdateSourceServerInput {
-            account_id: self.account_id,
-            source_server_id: self.source_server_id,
-            connector_action: self.connector_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_source_server::UpdateSourceServerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_source_server::UpdateSourceServerInput {
+                account_id: self.account_id
+                ,
+                source_server_id: self.source_server_id
+                ,
+                connector_action: self.connector_action
+                ,
+            }
+        )
     }
 }
+

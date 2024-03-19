@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfigurationSetInput {
+pub struct DeleteConfigurationSetInput  {
     /// ConfigurationSetName
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfigurationSetInput {
+impl  DeleteConfigurationSetInput  {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteConfigurationSetInputBuilder {
     }
     /// ConfigurationSetName
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// ConfigurationSetName
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configuration_set::DeleteConfigurationSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set::DeleteConfigurationSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_configuration_set::DeleteConfigurationSetInput {
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

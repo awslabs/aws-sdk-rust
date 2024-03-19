@@ -2,36 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>The identifier of the application the user is attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The email id attached to the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The user aliases attached to the user id that are to be updated.</p>
-    pub user_aliases_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub user_aliases_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
     /// <p>The user aliases attached to the user id that are to be deleted.</p>
-    pub user_aliases_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub user_aliases_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
 }
-impl UpdateUserInput {
+impl  UpdateUserInput  {
     /// <p>The identifier of the application the user is attached to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The email id attached to the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The user aliases attached to the user id that are to be updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_aliases_to_update.is_none()`.
-    pub fn user_aliases_to_update(&self) -> &[crate::types::UserAlias] {
-        self.user_aliases_to_update.as_deref().unwrap_or_default()
+    pub fn user_aliases_to_update(&self) -> & [crate::types::UserAlias] {
+        self.user_aliases_to_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user aliases attached to the user id that are to be deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_aliases_to_delete.is_none()`.
-    pub fn user_aliases_to_delete(&self) -> &[crate::types::UserAlias] {
-        self.user_aliases_to_delete.as_deref().unwrap_or_default()
+    pub fn user_aliases_to_delete(&self) -> & [crate::types::UserAlias] {
+        self.user_aliases_to_delete.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateUserInput {
@@ -47,8 +49,8 @@ impl UpdateUserInput {
 pub struct UpdateUserInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) user_aliases_to_update: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
-    pub(crate) user_aliases_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub(crate) user_aliases_to_update: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
+    pub(crate) user_aliases_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
 }
 impl UpdateUserInputBuilder {
     /// <p>The identifier of the application the user is attached to.</p>
@@ -59,8 +61,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The identifier of the application the user is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application the user is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +75,7 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The email id attached to the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The email id attached to the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +88,16 @@ impl UpdateUserInputBuilder {
     /// <p>The user aliases attached to the user id that are to be updated.</p>
     pub fn user_aliases_to_update(mut self, input: crate::types::UserAlias) -> Self {
         let mut v = self.user_aliases_to_update.unwrap_or_default();
-        v.push(input);
-        self.user_aliases_to_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_aliases_to_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user aliases attached to the user id that are to be updated.</p>
-    pub fn set_user_aliases_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>) -> Self {
-        self.user_aliases_to_update = input;
-        self
+    pub fn set_user_aliases_to_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>) -> Self {
+        self.user_aliases_to_update = input; self
     }
     /// <p>The user aliases attached to the user id that are to be updated.</p>
-    pub fn get_user_aliases_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
+    pub fn get_user_aliases_to_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>> {
         &self.user_aliases_to_update
     }
     /// Appends an item to `user_aliases_to_delete`.
@@ -108,26 +107,32 @@ impl UpdateUserInputBuilder {
     /// <p>The user aliases attached to the user id that are to be deleted.</p>
     pub fn user_aliases_to_delete(mut self, input: crate::types::UserAlias) -> Self {
         let mut v = self.user_aliases_to_delete.unwrap_or_default();
-        v.push(input);
-        self.user_aliases_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_aliases_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user aliases attached to the user id that are to be deleted.</p>
-    pub fn set_user_aliases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>) -> Self {
-        self.user_aliases_to_delete = input;
-        self
+    pub fn set_user_aliases_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>) -> Self {
+        self.user_aliases_to_delete = input; self
     }
     /// <p>The user aliases attached to the user id that are to be deleted.</p>
-    pub fn get_user_aliases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
+    pub fn get_user_aliases_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>> {
         &self.user_aliases_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            application_id: self.application_id,
-            user_id: self.user_id,
-            user_aliases_to_update: self.user_aliases_to_update,
-            user_aliases_to_delete: self.user_aliases_to_delete,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+                user_aliases_to_update: self.user_aliases_to_update
+                ,
+                user_aliases_to_delete: self.user_aliases_to_delete
+                ,
+            }
+        )
     }
 }
+

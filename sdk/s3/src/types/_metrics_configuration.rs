@@ -3,20 +3,19 @@
 /// <p>Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricsConfiguration {
+pub struct MetricsConfiguration  {
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub id: ::std::string::String,
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub filter: ::std::option::Option<crate::types::MetricsFilter>,
 }
-impl MetricsConfiguration {
+impl  MetricsConfiguration  {
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::MetricsFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::MetricsFilter> {
         self.filter.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl MetricsConfigurationBuilder {
     }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MetricsConfigurationBuilder {
     }
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::MetricsFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::MetricsFilter> {
@@ -68,14 +65,17 @@ impl MetricsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::MetricsConfigurationBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::MetricsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetricsConfiguration {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building MetricsConfiguration",
-                )
-            })?,
-            filter: self.filter,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MetricsConfiguration {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building MetricsConfiguration")
+                    )?
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

@@ -3,54 +3,57 @@
 /// <p>The output for <code>ValidateTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateTemplateOutput {
+pub struct ValidateTemplateOutput  {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateParameter>>,
     /// <p>The description found within the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub capabilities_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub declared_transforms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ValidateTemplateOutput {
+impl  ValidateTemplateOutput  {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::TemplateParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::TemplateParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The description found within the template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
-    pub fn capabilities_reason(&self) -> ::std::option::Option<&str> {
+    pub fn capabilities_reason(&self) -> ::std::option::Option<& str> {
         self.capabilities_reason.as_deref()
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.declared_transforms.is_none()`.
-    pub fn declared_transforms(&self) -> &[::std::string::String] {
-        self.declared_transforms.as_deref().unwrap_or_default()
+    pub fn declared_transforms(&self) -> & [::std::string::String] {
+        self.declared_transforms.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ValidateTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ValidateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`ValidateTemplateOutput`](crate::operation::validate_template::ValidateTemplateOutput).
     pub fn builder() -> crate::operation::validate_template::builders::ValidateTemplateOutputBuilder {
@@ -62,11 +65,11 @@ impl ValidateTemplateOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidateTemplateOutputBuilder {
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateParameter>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     pub(crate) capabilities_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) declared_transforms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) declared_transforms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ValidateTemplateOutputBuilder {
@@ -77,17 +80,16 @@ impl ValidateTemplateOutputBuilder {
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
     pub fn parameters(mut self, input: crate::types::TemplateParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>TemplateParameter</code> structures.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateParameter>> {
         &self.parameters
     }
     /// <p>The description found within the template.</p>
@@ -97,8 +99,7 @@ impl ValidateTemplateOutputBuilder {
     }
     /// <p>The description found within the template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description found within the template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,19 +113,18 @@ impl ValidateTemplateOutputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an InsufficientCapabilities error.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
@@ -134,8 +134,7 @@ impl ValidateTemplateOutputBuilder {
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn set_capabilities_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capabilities_reason = input;
-        self
+        self.capabilities_reason = input; self
     }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn get_capabilities_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,37 +147,42 @@ impl ValidateTemplateOutputBuilder {
     /// <p>A list of the transforms that are declared in the template.</p>
     pub fn declared_transforms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.declared_transforms.unwrap_or_default();
-        v.push(input.into());
-        self.declared_transforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.declared_transforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn set_declared_transforms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.declared_transforms = input;
-        self
+    pub fn set_declared_transforms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.declared_transforms = input; self
     }
     /// <p>A list of the transforms that are declared in the template.</p>
-    pub fn get_declared_transforms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_declared_transforms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.declared_transforms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ValidateTemplateOutput`](crate::operation::validate_template::ValidateTemplateOutput).
     pub fn build(self) -> crate::operation::validate_template::ValidateTemplateOutput {
         crate::operation::validate_template::ValidateTemplateOutput {
-            parameters: self.parameters,
-            description: self.description,
-            capabilities: self.capabilities,
-            capabilities_reason: self.capabilities_reason,
-            declared_transforms: self.declared_transforms,
+            parameters: self.parameters
+            ,
+            description: self.description
+            ,
+            capabilities: self.capabilities
+            ,
+            capabilities_reason: self.capabilities_reason
+            ,
+            declared_transforms: self.declared_transforms
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

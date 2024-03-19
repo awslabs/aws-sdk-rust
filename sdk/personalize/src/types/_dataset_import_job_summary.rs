@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of a dataset import job. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetImportJobSummary {
+pub struct DatasetImportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset import job.</p>
@@ -24,13 +24,13 @@ pub struct DatasetImportJobSummary {
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>.</p>
     pub import_mode: ::std::option::Option<crate::types::ImportMode>,
 }
-impl DatasetImportJobSummary {
+impl  DatasetImportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_import_job_arn.as_deref()
     }
     /// <p>The name of the dataset import job.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The status of the dataset import job.</p>
@@ -39,23 +39,23 @@ impl DatasetImportJobSummary {
     /// <li>
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>.</p>
-    pub fn import_mode(&self) -> ::std::option::Option<&crate::types::ImportMode> {
+    pub fn import_mode(&self) -> ::std::option::Option<& crate::types::ImportMode> {
         self.import_mode.as_ref()
     }
 }
@@ -86,8 +86,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub fn set_dataset_import_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_import_job_arn = input;
-        self
+        self.dataset_import_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
     pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The name of the dataset import job.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the dataset import job.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl DatasetImportJobSummaryBuilder {
     /// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the dataset import job.</p>
     /// <p>A dataset import job can be in one of the following states:</p>
@@ -143,8 +140,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset import job was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,8 +153,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix time) that the dataset import job status was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +166,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +179,7 @@ impl DatasetImportJobSummaryBuilder {
     }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>.</p>
     pub fn set_import_mode(mut self, input: ::std::option::Option<crate::types::ImportMode>) -> Self {
-        self.import_mode = input;
-        self
+        self.import_mode = input; self
     }
     /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>.</p>
     pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::ImportMode> {
@@ -195,13 +188,21 @@ impl DatasetImportJobSummaryBuilder {
     /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
     pub fn build(self) -> crate::types::DatasetImportJobSummary {
         crate::types::DatasetImportJobSummary {
-            dataset_import_job_arn: self.dataset_import_job_arn,
-            job_name: self.job_name,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            failure_reason: self.failure_reason,
-            import_mode: self.import_mode,
+            dataset_import_job_arn: self.dataset_import_job_arn
+            ,
+            job_name: self.job_name
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            import_mode: self.import_mode
+            ,
         }
     }
 }
+

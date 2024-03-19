@@ -3,19 +3,18 @@
 /// <p>Represents information about the output of an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputArtifact {
+pub struct OutputArtifact  {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
     pub name: ::std::string::String,
 }
-impl OutputArtifact {
+impl  OutputArtifact  {
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl OutputArtifact {
@@ -44,8 +43,7 @@ impl OutputArtifactBuilder {
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     /// <p>Output artifact names must be unique within a pipeline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the output of an artifact, such as "My App".</p>
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
@@ -57,13 +55,15 @@ impl OutputArtifactBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OutputArtifactBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::OutputArtifact, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutputArtifact {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building OutputArtifact",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutputArtifact {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building OutputArtifact")
+                    )?
+                ,
+            }
+        )
     }
 }
+

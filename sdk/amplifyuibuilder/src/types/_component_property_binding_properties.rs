@@ -3,20 +3,19 @@
 /// <p>Associates a component property to a binding property. This enables exposed properties on the top level component to propagate data to the component's property values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComponentPropertyBindingProperties {
+pub struct ComponentPropertyBindingProperties  {
     /// <p>The component property to bind to the data field.</p>
     pub property: ::std::string::String,
     /// <p>The data field to bind the property to.</p>
     pub field: ::std::option::Option<::std::string::String>,
 }
-impl ComponentPropertyBindingProperties {
+impl  ComponentPropertyBindingProperties  {
     /// <p>The component property to bind to the data field.</p>
-    pub fn property(&self) -> &str {
-        use std::ops::Deref;
-        self.property.deref()
+    pub fn property(&self) -> & str {
+        use std::ops::Deref; self.property.deref()
     }
     /// <p>The data field to bind the property to.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl ComponentPropertyBindingPropertiesBuilder {
     }
     /// <p>The component property to bind to the data field.</p>
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
     }
     /// <p>The component property to bind to the data field.</p>
     pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ComponentPropertyBindingPropertiesBuilder {
     }
     /// <p>The data field to bind the property to.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The data field to bind the property to.</p>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl ComponentPropertyBindingPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`property`](crate::types::builders::ComponentPropertyBindingPropertiesBuilder::property)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentPropertyBindingProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentPropertyBindingProperties {
-            property: self.property.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property",
-                    "property was not specified but it is required when building ComponentPropertyBindingProperties",
-                )
-            })?,
-            field: self.field,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentPropertyBindingProperties {
+                property: self.property
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property", "property was not specified but it is required when building ComponentPropertyBindingProperties")
+                    )?
+                ,
+                field: self.field
+                ,
+            }
+        )
     }
 }
+

@@ -3,28 +3,28 @@
 /// <p>Provides information on the supported registration type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegistrationTypeDefinition {
+pub struct RegistrationTypeDefinition  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub registration_type: ::std::string::String,
     /// <p>The supported association behavior for the registration type.</p>
-    pub supported_associations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAssociation>>,
+    pub supported_associations: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAssociation>>,
     /// <p>Provides help information on the registration.</p>
     pub display_hints: ::std::option::Option<crate::types::RegistrationTypeDisplayHints>,
 }
-impl RegistrationTypeDefinition {
+impl  RegistrationTypeDefinition  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type(&self) -> &str {
-        use std::ops::Deref;
-        self.registration_type.deref()
+    pub fn registration_type(&self) -> & str {
+        use std::ops::Deref; self.registration_type.deref()
     }
     /// <p>The supported association behavior for the registration type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_associations.is_none()`.
-    pub fn supported_associations(&self) -> &[crate::types::SupportedAssociation] {
-        self.supported_associations.as_deref().unwrap_or_default()
+    pub fn supported_associations(&self) -> & [crate::types::SupportedAssociation] {
+        self.supported_associations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides help information on the registration.</p>
-    pub fn display_hints(&self) -> ::std::option::Option<&crate::types::RegistrationTypeDisplayHints> {
+    pub fn display_hints(&self) -> ::std::option::Option<& crate::types::RegistrationTypeDisplayHints> {
         self.display_hints.as_ref()
     }
 }
@@ -40,7 +40,7 @@ impl RegistrationTypeDefinition {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RegistrationTypeDefinitionBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_associations: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAssociation>>,
+    pub(crate) supported_associations: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAssociation>>,
     pub(crate) display_hints: ::std::option::Option<crate::types::RegistrationTypeDisplayHints>,
 }
 impl RegistrationTypeDefinitionBuilder {
@@ -52,8 +52,7 @@ impl RegistrationTypeDefinitionBuilder {
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_type = input;
-        self
+        self.registration_type = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +65,16 @@ impl RegistrationTypeDefinitionBuilder {
     /// <p>The supported association behavior for the registration type.</p>
     pub fn supported_associations(mut self, input: crate::types::SupportedAssociation) -> Self {
         let mut v = self.supported_associations.unwrap_or_default();
-        v.push(input);
-        self.supported_associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported association behavior for the registration type.</p>
-    pub fn set_supported_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAssociation>>) -> Self {
-        self.supported_associations = input;
-        self
+    pub fn set_supported_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedAssociation>>) -> Self {
+        self.supported_associations = input; self
     }
     /// <p>The supported association behavior for the registration type.</p>
-    pub fn get_supported_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedAssociation>> {
+    pub fn get_supported_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedAssociation>> {
         &self.supported_associations
     }
     /// <p>Provides help information on the registration.</p>
@@ -87,8 +85,7 @@ impl RegistrationTypeDefinitionBuilder {
     }
     /// <p>Provides help information on the registration.</p>
     pub fn set_display_hints(mut self, input: ::std::option::Option<crate::types::RegistrationTypeDisplayHints>) -> Self {
-        self.display_hints = input;
-        self
+        self.display_hints = input; self
     }
     /// <p>Provides help information on the registration.</p>
     pub fn get_display_hints(&self) -> &::std::option::Option<crate::types::RegistrationTypeDisplayHints> {
@@ -98,15 +95,19 @@ impl RegistrationTypeDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_type`](crate::types::builders::RegistrationTypeDefinitionBuilder::registration_type)
     pub fn build(self) -> ::std::result::Result<crate::types::RegistrationTypeDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RegistrationTypeDefinition {
-            registration_type: self.registration_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "registration_type",
-                    "registration_type was not specified but it is required when building RegistrationTypeDefinition",
-                )
-            })?,
-            supported_associations: self.supported_associations,
-            display_hints: self.display_hints,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RegistrationTypeDefinition {
+                registration_type: self.registration_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_type", "registration_type was not specified but it is required when building RegistrationTypeDefinition")
+                    )?
+                ,
+                supported_associations: self.supported_associations
+                ,
+                display_hints: self.display_hints
+                ,
+            }
+        )
     }
 }
+

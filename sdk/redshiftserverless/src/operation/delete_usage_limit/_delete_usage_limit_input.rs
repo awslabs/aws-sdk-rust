@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUsageLimitInput {
+pub struct DeleteUsageLimitInput  {
     /// <p>The unique identifier of the usage limit to delete.</p>
     pub usage_limit_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUsageLimitInput {
+impl  DeleteUsageLimitInput  {
     /// <p>The unique identifier of the usage limit to delete.</p>
-    pub fn usage_limit_id(&self) -> ::std::option::Option<&str> {
+    pub fn usage_limit_id(&self) -> ::std::option::Option<& str> {
         self.usage_limit_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteUsageLimitInputBuilder {
     }
     /// <p>The unique identifier of the usage limit to delete.</p>
     pub fn set_usage_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_limit_id = input;
-        self
+        self.usage_limit_id = input; self
     }
     /// <p>The unique identifier of the usage limit to delete.</p>
     pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_limit_id
     }
     /// Consumes the builder and constructs a [`DeleteUsageLimitInput`](crate::operation::delete_usage_limit::DeleteUsageLimitInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_usage_limit::DeleteUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_usage_limit::DeleteUsageLimitInput {
-            usage_limit_id: self.usage_limit_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_usage_limit::DeleteUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_usage_limit::DeleteUsageLimitInput {
+                usage_limit_id: self.usage_limit_id
+                ,
+            }
+        )
     }
 }
+

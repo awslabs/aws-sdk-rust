@@ -3,7 +3,7 @@
 /// <p>Information about a deployment error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInformation {
+pub struct ErrorInformation  {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
     /// <ul>
@@ -38,7 +38,7 @@ pub struct ErrorInformation {
     /// <p>An accompanying error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorInformation {
+impl  ErrorInformation  {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
     /// <ul>
@@ -69,11 +69,11 @@ impl ErrorInformation {
     /// <li>
     /// <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>An accompanying error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -157,8 +157,7 @@ impl ErrorInformationBuilder {
     /// <p>REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted after the deployment is created, but before it is started.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a>.</p>
     /// <p>The error code:</p>
@@ -200,8 +199,7 @@ impl ErrorInformationBuilder {
     }
     /// <p>An accompanying error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An accompanying error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +208,11 @@ impl ErrorInformationBuilder {
     /// Consumes the builder and constructs a [`ErrorInformation`](crate::types::ErrorInformation).
     pub fn build(self) -> crate::types::ErrorInformation {
         crate::types::ErrorInformation {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

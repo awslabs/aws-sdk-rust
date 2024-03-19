@@ -3,7 +3,7 @@
 /// <p>The configuration of a pie chart.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PieChartConfiguration {
+pub struct PieChartConfiguration  {
     /// <p>The field wells of the visual.</p>
     pub field_wells: ::std::option::Option<crate::types::PieChartFieldWells>,
     /// <p>The sort configuration of a pie chart.</p>
@@ -25,59 +25,60 @@ pub struct PieChartConfiguration {
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec::<crate::types::ContributionAnalysisDefault>>,
     /// <p>The general visual interactions setup for a visual.</p>
     pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
-impl PieChartConfiguration {
+impl  PieChartConfiguration  {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::PieChartFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<& crate::types::PieChartFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a pie chart.</p>
-    pub fn sort_configuration(&self) -> ::std::option::Option<&crate::types::PieChartSortConfiguration> {
+    pub fn sort_configuration(&self) -> ::std::option::Option<& crate::types::PieChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The options that determine the shape of the chart. This option determines whether the chart is a pie chart or a donut chart.</p>
-    pub fn donut_options(&self) -> ::std::option::Option<&crate::types::DonutOptions> {
+    pub fn donut_options(&self) -> ::std::option::Option<& crate::types::DonutOptions> {
         self.donut_options.as_ref()
     }
     /// <p>The small multiples setup for the visual.</p>
-    pub fn small_multiples_options(&self) -> ::std::option::Option<&crate::types::SmallMultiplesOptions> {
+    pub fn small_multiples_options(&self) -> ::std::option::Option<& crate::types::SmallMultiplesOptions> {
         self.small_multiples_options.as_ref()
     }
     /// <p>The label options of the group/color that is displayed in a pie chart.</p>
-    pub fn category_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(&self) -> ::std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The label options for the value that is displayed in a pie chart.</p>
-    pub fn value_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn value_label_options(&self) -> ::std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.value_label_options.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contribution_analysis_defaults.is_none()`.
-    pub fn contribution_analysis_defaults(&self) -> &[crate::types::ContributionAnalysisDefault] {
-        self.contribution_analysis_defaults.as_deref().unwrap_or_default()
+    pub fn contribution_analysis_defaults(&self) -> & [crate::types::ContributionAnalysisDefault] {
+        self.contribution_analysis_defaults.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The general visual interactions setup for a visual.</p>
-    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+    pub fn interactions(&self) -> ::std::option::Option<& crate::types::VisualInteractionOptions> {
         self.interactions.as_ref()
     }
 }
@@ -102,7 +103,7 @@ pub struct PieChartConfigurationBuilder {
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
-    pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec::<crate::types::ContributionAnalysisDefault>>,
     pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl PieChartConfigurationBuilder {
@@ -113,8 +114,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(mut self, input: ::std::option::Option<crate::types::PieChartFieldWells>) -> Self {
-        self.field_wells = input;
-        self
+        self.field_wells = input; self
     }
     /// <p>The field wells of the visual.</p>
     pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::PieChartFieldWells> {
@@ -127,8 +127,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The sort configuration of a pie chart.</p>
     pub fn set_sort_configuration(mut self, input: ::std::option::Option<crate::types::PieChartSortConfiguration>) -> Self {
-        self.sort_configuration = input;
-        self
+        self.sort_configuration = input; self
     }
     /// <p>The sort configuration of a pie chart.</p>
     pub fn get_sort_configuration(&self) -> &::std::option::Option<crate::types::PieChartSortConfiguration> {
@@ -141,8 +140,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The options that determine the shape of the chart. This option determines whether the chart is a pie chart or a donut chart.</p>
     pub fn set_donut_options(mut self, input: ::std::option::Option<crate::types::DonutOptions>) -> Self {
-        self.donut_options = input;
-        self
+        self.donut_options = input; self
     }
     /// <p>The options that determine the shape of the chart. This option determines whether the chart is a pie chart or a donut chart.</p>
     pub fn get_donut_options(&self) -> &::std::option::Option<crate::types::DonutOptions> {
@@ -155,8 +153,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The small multiples setup for the visual.</p>
     pub fn set_small_multiples_options(mut self, input: ::std::option::Option<crate::types::SmallMultiplesOptions>) -> Self {
-        self.small_multiples_options = input;
-        self
+        self.small_multiples_options = input; self
     }
     /// <p>The small multiples setup for the visual.</p>
     pub fn get_small_multiples_options(&self) -> &::std::option::Option<crate::types::SmallMultiplesOptions> {
@@ -169,8 +166,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The label options of the group/color that is displayed in a pie chart.</p>
     pub fn set_category_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.category_label_options = input;
-        self
+        self.category_label_options = input; self
     }
     /// <p>The label options of the group/color that is displayed in a pie chart.</p>
     pub fn get_category_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
@@ -183,8 +179,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The label options for the value that is displayed in a pie chart.</p>
     pub fn set_value_label_options(mut self, input: ::std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.value_label_options = input;
-        self
+        self.value_label_options = input; self
     }
     /// <p>The label options for the value that is displayed in a pie chart.</p>
     pub fn get_value_label_options(&self) -> &::std::option::Option<crate::types::ChartAxisLabelOptions> {
@@ -197,8 +192,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn get_legend(&self) -> &::std::option::Option<crate::types::LegendOptions> {
@@ -211,8 +205,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn set_data_labels(mut self, input: ::std::option::Option<crate::types::DataLabelOptions>) -> Self {
-        self.data_labels = input;
-        self
+        self.data_labels = input; self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
@@ -225,8 +218,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: ::std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
@@ -239,8 +231,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn set_visual_palette(mut self, input: ::std::option::Option<crate::types::VisualPalette>) -> Self {
-        self.visual_palette = input;
-        self
+        self.visual_palette = input; self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
@@ -253,20 +244,16 @@ impl PieChartConfigurationBuilder {
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
     pub fn contribution_analysis_defaults(mut self, input: crate::types::ContributionAnalysisDefault) -> Self {
         let mut v = self.contribution_analysis_defaults.unwrap_or_default();
-        v.push(input);
-        self.contribution_analysis_defaults = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contribution_analysis_defaults = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn set_contribution_analysis_defaults(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
-    ) -> Self {
-        self.contribution_analysis_defaults = input;
-        self
+    pub fn set_contribution_analysis_defaults(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContributionAnalysisDefault>>) -> Self {
+        self.contribution_analysis_defaults = input; self
     }
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
-    pub fn get_contribution_analysis_defaults(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>> {
+    pub fn get_contribution_analysis_defaults(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContributionAnalysisDefault>> {
         &self.contribution_analysis_defaults
     }
     /// <p>The general visual interactions setup for a visual.</p>
@@ -276,8 +263,7 @@ impl PieChartConfigurationBuilder {
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
-        self.interactions = input;
-        self
+        self.interactions = input; self
     }
     /// <p>The general visual interactions setup for a visual.</p>
     pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
@@ -286,18 +272,31 @@ impl PieChartConfigurationBuilder {
     /// Consumes the builder and constructs a [`PieChartConfiguration`](crate::types::PieChartConfiguration).
     pub fn build(self) -> crate::types::PieChartConfiguration {
         crate::types::PieChartConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            donut_options: self.donut_options,
-            small_multiples_options: self.small_multiples_options,
-            category_label_options: self.category_label_options,
-            value_label_options: self.value_label_options,
-            legend: self.legend,
-            data_labels: self.data_labels,
-            tooltip: self.tooltip,
-            visual_palette: self.visual_palette,
-            contribution_analysis_defaults: self.contribution_analysis_defaults,
-            interactions: self.interactions,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            donut_options: self.donut_options
+            ,
+            small_multiples_options: self.small_multiples_options
+            ,
+            category_label_options: self.category_label_options
+            ,
+            value_label_options: self.value_label_options
+            ,
+            legend: self.legend
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip: self.tooltip
+            ,
+            visual_palette: self.visual_palette
+            ,
+            contribution_analysis_defaults: self.contribution_analysis_defaults
+            ,
+            interactions: self.interactions
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Summarized information of replication between clusters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationInfoSummary {
+pub struct ReplicationInfoSummary  {
     /// <p>The alias of the source Kafka cluster.</p>
     pub source_kafka_cluster_alias: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the target Kafka cluster.</p>
     pub target_kafka_cluster_alias: ::std::option::Option<::std::string::String>,
 }
-impl ReplicationInfoSummary {
+impl  ReplicationInfoSummary  {
     /// <p>The alias of the source Kafka cluster.</p>
-    pub fn source_kafka_cluster_alias(&self) -> ::std::option::Option<&str> {
+    pub fn source_kafka_cluster_alias(&self) -> ::std::option::Option<& str> {
         self.source_kafka_cluster_alias.as_deref()
     }
     /// <p>The alias of the target Kafka cluster.</p>
-    pub fn target_kafka_cluster_alias(&self) -> ::std::option::Option<&str> {
+    pub fn target_kafka_cluster_alias(&self) -> ::std::option::Option<& str> {
         self.target_kafka_cluster_alias.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ReplicationInfoSummaryBuilder {
     }
     /// <p>The alias of the source Kafka cluster.</p>
     pub fn set_source_kafka_cluster_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_kafka_cluster_alias = input;
-        self
+        self.source_kafka_cluster_alias = input; self
     }
     /// <p>The alias of the source Kafka cluster.</p>
     pub fn get_source_kafka_cluster_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReplicationInfoSummaryBuilder {
     }
     /// <p>The alias of the target Kafka cluster.</p>
     pub fn set_target_kafka_cluster_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_kafka_cluster_alias = input;
-        self
+        self.target_kafka_cluster_alias = input; self
     }
     /// <p>The alias of the target Kafka cluster.</p>
     pub fn get_target_kafka_cluster_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ReplicationInfoSummaryBuilder {
     /// Consumes the builder and constructs a [`ReplicationInfoSummary`](crate::types::ReplicationInfoSummary).
     pub fn build(self) -> crate::types::ReplicationInfoSummary {
         crate::types::ReplicationInfoSummary {
-            source_kafka_cluster_alias: self.source_kafka_cluster_alias,
-            target_kafka_cluster_alias: self.target_kafka_cluster_alias,
+            source_kafka_cluster_alias: self.source_kafka_cluster_alias
+            ,
+            target_kafka_cluster_alias: self.target_kafka_cluster_alias
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let driftstatus = unimplemented!();
 /// match driftstatus {
@@ -32,16 +32,14 @@
 /// Specifically, when `driftstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DriftStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `DriftStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DriftStatus {
     #[allow(missing_docs)] // documentation missing in model
     Drifted,
@@ -53,67 +51,68 @@ pub enum DriftStatus {
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DriftStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DRIFTED" => DriftStatus::Drifted,
-            "IN_SYNC" => DriftStatus::InSync,
-            "NOT_CHECKING" => DriftStatus::NotChecking,
-            "UNKNOWN" => DriftStatus::UnknownValue,
-            other => DriftStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "DRIFTED" => DriftStatus::Drifted,
+"IN_SYNC" => DriftStatus::InSync,
+"NOT_CHECKING" => DriftStatus::NotChecking,
+"UNKNOWN" => DriftStatus::UnknownValue,
+other => DriftStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DriftStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DriftStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DriftStatus::from(s))
+                    }
+                }
 impl DriftStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DriftStatus::Drifted => "DRIFTED",
-            DriftStatus::InSync => "IN_SYNC",
-            DriftStatus::NotChecking => "NOT_CHECKING",
-            DriftStatus::UnknownValue => "UNKNOWN",
-            DriftStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DRIFTED", "IN_SYNC", "NOT_CHECKING", "UNKNOWN"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DriftStatus::Drifted => "DRIFTED",
+    DriftStatus::InSync => "IN_SYNC",
+    DriftStatus::NotChecking => "NOT_CHECKING",
+    DriftStatus::UnknownValue => "UNKNOWN",
+    DriftStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DRIFTED", "IN_SYNC", "NOT_CHECKING", "UNKNOWN"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DriftStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DriftStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DriftStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DriftStatus::Drifted => write!(f, "DRIFTED"),
-            DriftStatus::InSync => write!(f, "IN_SYNC"),
-            DriftStatus::NotChecking => write!(f, "NOT_CHECKING"),
-            DriftStatus::UnknownValue => write!(f, "UNKNOWN"),
-            DriftStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DriftStatus::Drifted => write!(f, "DRIFTED"),
+DriftStatus::InSync => write!(f, "IN_SYNC"),
+DriftStatus::NotChecking => write!(f, "NOT_CHECKING"),
+DriftStatus::UnknownValue => write!(f, "UNKNOWN"),
+DriftStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

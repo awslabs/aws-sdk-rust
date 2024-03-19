@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNetworkAnalyzerConfigurations`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p><br>
-    /// - On success, responds with [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListNetworkAnalyzerConfigurationsOutput`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     ///   - [`network_analyzer_configuration_list(Option<Vec::<NetworkAnalyzerConfigurations>>)`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput::network_analyzer_configuration_list): <p>The list of network analyzer configurations.</p>
-    /// - On failure, responds with [`SdkError<ListNetworkAnalyzerConfigurationsError>`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsError)
-    pub fn list_network_analyzer_configurations(
-        &self,
-    ) -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder {
-        crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListNetworkAnalyzerConfigurationsError>`](crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsError)
+    pub fn list_network_analyzer_configurations(&self) -> crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder {
+                                crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

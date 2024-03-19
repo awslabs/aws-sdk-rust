@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEnvironmentStatusOutput {
+pub struct DescribeEnvironmentStatusOutput  {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct DescribeEnvironmentStatusOutput {
     pub message: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DescribeEnvironmentStatusOutput {
+impl  DescribeEnvironmentStatusOutput  {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
     /// <li>
@@ -43,20 +43,19 @@ impl DescribeEnvironmentStatusOutput {
     /// <li>
     /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::EnvironmentStatus {
+    pub fn status(&self) -> & crate::types::EnvironmentStatus {
         &self.status
     }
     /// <p>Any informational message about the status of the environment.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEnvironmentStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEnvironmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
     pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder {
@@ -113,8 +112,7 @@ impl DescribeEnvironmentStatusOutputBuilder {
     /// <p><code>stopping</code>: The environment is stopping.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
@@ -144,46 +142,41 @@ impl DescribeEnvironmentStatusOutputBuilder {
     }
     /// <p>Any informational message about the status of the environment.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Any informational message about the status of the environment.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::status)
     /// - [`message`](crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building DescribeEnvironmentStatusOutput",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building DescribeEnvironmentStatusOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DescribeEnvironmentStatusOutput")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building DescribeEnvironmentStatusOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

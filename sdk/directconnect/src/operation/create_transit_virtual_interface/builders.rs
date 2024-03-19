@@ -5,23 +5,20 @@ pub use crate::operation::create_transit_virtual_interface::_create_transit_virt
 
 impl CreateTransitVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_transit_virtual_interface();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_transit_virtual_interface();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateTransitVirtualInterface`.
-///
+/// 
 /// <p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p><important>
 /// <p>If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.</p>
 /// </important>
@@ -29,33 +26,32 @@ impl CreateTransitVirtualInterfaceInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
+                    inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-    > for CreateTransitVirtualInterfaceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
+                    crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
+                > for CreateTransitVirtualInterfaceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
+                        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateTransitVirtualInterfaceFluentBuilder {
     /// Creates a new `CreateTransitVirtualInterface`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
-        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput, crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
@@ -140,3 +127,4 @@ impl CreateTransitVirtualInterfaceFluentBuilder {
         self.inner.get_new_transit_virtual_interface()
     }
 }
+

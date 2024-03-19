@@ -3,23 +3,22 @@
 /// <p>The result of a <code>DescribeSuggesters</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSuggestersOutput {
+pub struct DescribeSuggestersOutput  {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub suggesters: ::std::vec::Vec<crate::types::SuggesterStatus>,
+    pub suggesters: ::std::vec::Vec::<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
-impl DescribeSuggestersOutput {
+impl  DescribeSuggestersOutput  {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn suggesters(&self) -> &[crate::types::SuggesterStatus] {
-        use std::ops::Deref;
-        self.suggesters.deref()
+    pub fn suggesters(&self) -> & [crate::types::SuggesterStatus] {
+        use std::ops::Deref; self.suggesters.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSuggestersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSuggestersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
     pub fn builder() -> crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeSuggestersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSuggestersOutputBuilder {
-    pub(crate) suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
+    pub(crate) suggesters: ::std::option::Option<::std::vec::Vec::<crate::types::SuggesterStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeSuggestersOutputBuilder {
@@ -42,43 +41,41 @@ impl DescribeSuggestersOutputBuilder {
     /// <p>The suggesters configured for the domain specified in the request.</p>
     pub fn suggesters(mut self, input: crate::types::SuggesterStatus) -> Self {
         let mut v = self.suggesters.unwrap_or_default();
-        v.push(input);
-        self.suggesters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suggesters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn set_suggesters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>) -> Self {
-        self.suggesters = input;
-        self
+    pub fn set_suggesters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuggesterStatus>>) -> Self {
+        self.suggesters = input; self
     }
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn get_suggesters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>> {
+    pub fn get_suggesters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuggesterStatus>> {
         &self.suggesters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`suggesters`](crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder::suggesters)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_suggesters::DescribeSuggestersOutput {
-            suggesters: self.suggesters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "suggesters",
-                    "suggesters was not specified but it is required when building DescribeSuggestersOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_suggesters::DescribeSuggestersOutput {
+                suggesters: self.suggesters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("suggesters", "suggesters was not specified but it is required when building DescribeSuggestersOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

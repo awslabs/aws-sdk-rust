@@ -3,19 +3,19 @@
 /// Settings to identify the end of the clip.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopTimecode {
+pub struct StopTimecode  {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     pub last_frame_clipping_behavior: ::std::option::Option<crate::types::LastFrameClippingBehavior>,
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub timecode: ::std::option::Option<::std::string::String>,
 }
-impl StopTimecode {
+impl  StopTimecode  {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
-    pub fn last_frame_clipping_behavior(&self) -> ::std::option::Option<&crate::types::LastFrameClippingBehavior> {
+    pub fn last_frame_clipping_behavior(&self) -> ::std::option::Option<& crate::types::LastFrameClippingBehavior> {
         self.last_frame_clipping_behavior.as_ref()
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    pub fn timecode(&self) -> ::std::option::Option<&str> {
+    pub fn timecode(&self) -> ::std::option::Option<& str> {
         self.timecode.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StopTimecodeBuilder {
     }
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     pub fn set_last_frame_clipping_behavior(mut self, input: ::std::option::Option<crate::types::LastFrameClippingBehavior>) -> Self {
-        self.last_frame_clipping_behavior = input;
-        self
+        self.last_frame_clipping_behavior = input; self
     }
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     pub fn get_last_frame_clipping_behavior(&self) -> &::std::option::Option<crate::types::LastFrameClippingBehavior> {
@@ -55,8 +54,7 @@ impl StopTimecodeBuilder {
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn set_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timecode = input;
-        self
+        self.timecode = input; self
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn get_timecode(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl StopTimecodeBuilder {
     /// Consumes the builder and constructs a [`StopTimecode`](crate::types::StopTimecode).
     pub fn build(self) -> crate::types::StopTimecode {
         crate::types::StopTimecode {
-            last_frame_clipping_behavior: self.last_frame_clipping_behavior,
-            timecode: self.timecode,
+            last_frame_clipping_behavior: self.last_frame_clipping_behavior
+            ,
+            timecode: self.timecode
+            ,
         }
     }
 }
+

@@ -3,36 +3,38 @@
 /// <p>The set of DHCP options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DhcpOptions {
+pub struct DhcpOptions  {
     /// <p>The DHCP options in the set.</p>
-    pub dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub dhcp_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DhcpConfiguration>>,
     /// <p>The ID of the set of DHCP options.</p>
     pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DhcpOptions {
+impl  DhcpOptions  {
     /// <p>The DHCP options in the set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dhcp_configurations.is_none()`.
-    pub fn dhcp_configurations(&self) -> &[crate::types::DhcpConfiguration] {
-        self.dhcp_configurations.as_deref().unwrap_or_default()
+    pub fn dhcp_configurations(&self) -> & [crate::types::DhcpConfiguration] {
+        self.dhcp_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
+    pub fn dhcp_options_id(&self) -> ::std::option::Option<& str> {
         self.dhcp_options_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DhcpOptions {
@@ -46,10 +48,10 @@ impl DhcpOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DhcpOptionsBuilder {
-    pub(crate) dhcp_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub(crate) dhcp_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::DhcpConfiguration>>,
     pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
     pub(crate) owner_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DhcpOptionsBuilder {
     /// Appends an item to `dhcp_configurations`.
@@ -59,17 +61,16 @@ impl DhcpOptionsBuilder {
     /// <p>The DHCP options in the set.</p>
     pub fn dhcp_configurations(mut self, input: crate::types::DhcpConfiguration) -> Self {
         let mut v = self.dhcp_configurations.unwrap_or_default();
-        v.push(input);
-        self.dhcp_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dhcp_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The DHCP options in the set.</p>
-    pub fn set_dhcp_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>) -> Self {
-        self.dhcp_configurations = input;
-        self
+    pub fn set_dhcp_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DhcpConfiguration>>) -> Self {
+        self.dhcp_configurations = input; self
     }
     /// <p>The DHCP options in the set.</p>
-    pub fn get_dhcp_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>> {
+    pub fn get_dhcp_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DhcpConfiguration>> {
         &self.dhcp_configurations
     }
     /// <p>The ID of the set of DHCP options.</p>
@@ -79,8 +80,7 @@ impl DhcpOptionsBuilder {
     }
     /// <p>The ID of the set of DHCP options.</p>
     pub fn set_dhcp_options_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dhcp_options_id = input;
-        self
+        self.dhcp_options_id = input; self
     }
     /// <p>The ID of the set of DHCP options.</p>
     pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +93,7 @@ impl DhcpOptionsBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,26 +106,30 @@ impl DhcpOptionsBuilder {
     /// <p>Any tags assigned to the DHCP options set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DhcpOptions`](crate::types::DhcpOptions).
     pub fn build(self) -> crate::types::DhcpOptions {
         crate::types::DhcpOptions {
-            dhcp_configurations: self.dhcp_configurations,
-            dhcp_options_id: self.dhcp_options_id,
-            owner_id: self.owner_id,
-            tags: self.tags,
+            dhcp_configurations: self.dhcp_configurations
+            ,
+            dhcp_options_id: self.dhcp_options_id
+            ,
+            owner_id: self.owner_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Specifies how Amazon CloudWatch data should be encrypted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchEncryption {
+pub struct CloudWatchEncryption  {
     /// <p>The encryption mode to use for CloudWatch data.</p>
     pub cloud_watch_encryption_mode: ::std::option::Option<crate::types::CloudWatchEncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchEncryption {
+impl  CloudWatchEncryption  {
     /// <p>The encryption mode to use for CloudWatch data.</p>
-    pub fn cloud_watch_encryption_mode(&self) -> ::std::option::Option<&crate::types::CloudWatchEncryptionMode> {
+    pub fn cloud_watch_encryption_mode(&self) -> ::std::option::Option<& crate::types::CloudWatchEncryptionMode> {
         self.cloud_watch_encryption_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CloudWatchEncryptionBuilder {
     }
     /// <p>The encryption mode to use for CloudWatch data.</p>
     pub fn set_cloud_watch_encryption_mode(mut self, input: ::std::option::Option<crate::types::CloudWatchEncryptionMode>) -> Self {
-        self.cloud_watch_encryption_mode = input;
-        self
+        self.cloud_watch_encryption_mode = input; self
     }
     /// <p>The encryption mode to use for CloudWatch data.</p>
     pub fn get_cloud_watch_encryption_mode(&self) -> &::std::option::Option<crate::types::CloudWatchEncryptionMode> {
@@ -55,8 +54,7 @@ impl CloudWatchEncryptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CloudWatchEncryptionBuilder {
     /// Consumes the builder and constructs a [`CloudWatchEncryption`](crate::types::CloudWatchEncryption).
     pub fn build(self) -> crate::types::CloudWatchEncryption {
         crate::types::CloudWatchEncryption {
-            cloud_watch_encryption_mode: self.cloud_watch_encryption_mode,
-            kms_key_arn: self.kms_key_arn,
+            cloud_watch_encryption_mode: self.cloud_watch_encryption_mode
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

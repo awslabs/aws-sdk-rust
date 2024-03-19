@@ -3,33 +3,34 @@
 /// <p>The output of records that have been retrieved in a batch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetRecordResultDetail {
+pub struct BatchGetRecordResultDetail  {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the record identifier in string format.</p>
     pub record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Record</code> retrieved.</p>
-    pub record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    pub record: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>,
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub expires_at: ::std::option::Option<::std::string::String>,
 }
-impl BatchGetRecordResultDetail {
+impl  BatchGetRecordResultDetail  {
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value of the record identifier in string format.</p>
-    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<&str> {
+    pub fn record_identifier_value_as_string(&self) -> ::std::option::Option<& str> {
         self.record_identifier_value_as_string.as_deref()
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.record.is_none()`.
-    pub fn record(&self) -> &[crate::types::FeatureValue] {
-        self.record.as_deref().unwrap_or_default()
+    pub fn record(&self) -> & [crate::types::FeatureValue] {
+        self.record.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
-    pub fn expires_at(&self) -> ::std::option::Option<&str> {
+    pub fn expires_at(&self) -> ::std::option::Option<& str> {
         self.expires_at.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl BatchGetRecordResultDetail {
 pub struct BatchGetRecordResultDetailBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_value_as_string: ::std::option::Option<::std::string::String>,
-    pub(crate) record: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>,
+    pub(crate) record: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>,
     pub(crate) expires_at: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetRecordResultDetailBuilder {
@@ -58,8 +59,7 @@ impl BatchGetRecordResultDetailBuilder {
     }
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_name = input;
-        self
+        self.feature_group_name = input; self
     }
     /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl BatchGetRecordResultDetailBuilder {
     }
     /// <p>The value of the record identifier in string format.</p>
     pub fn set_record_identifier_value_as_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_identifier_value_as_string = input;
-        self
+        self.record_identifier_value_as_string = input; self
     }
     /// <p>The value of the record identifier in string format.</p>
     pub fn get_record_identifier_value_as_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +86,16 @@ impl BatchGetRecordResultDetailBuilder {
     /// <p>The <code>Record</code> retrieved.</p>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         let mut v = self.record.unwrap_or_default();
-        v.push(input);
-        self.record = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.record = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
-        self.record = input;
-        self
+    pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>>) -> Self {
+        self.record = input; self
     }
     /// <p>The <code>Record</code> retrieved.</p>
-    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+    pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureValue>> {
         &self.record
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
@@ -107,8 +105,7 @@ impl BatchGetRecordResultDetailBuilder {
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn set_expires_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expires_at = input;
-        self
+        self.expires_at = input; self
     }
     /// <p>The <code>ExpiresAt</code> ISO string of the requested record.</p>
     pub fn get_expires_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +114,15 @@ impl BatchGetRecordResultDetailBuilder {
     /// Consumes the builder and constructs a [`BatchGetRecordResultDetail`](crate::types::BatchGetRecordResultDetail).
     pub fn build(self) -> crate::types::BatchGetRecordResultDetail {
         crate::types::BatchGetRecordResultDetail {
-            feature_group_name: self.feature_group_name,
-            record_identifier_value_as_string: self.record_identifier_value_as_string,
-            record: self.record,
-            expires_at: self.expires_at,
+            feature_group_name: self.feature_group_name
+            ,
+            record_identifier_value_as_string: self.record_identifier_value_as_string
+            ,
+            record: self.record
+            ,
+            expires_at: self.expires_at
+            ,
         }
     }
 }
+

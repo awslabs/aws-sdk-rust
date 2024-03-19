@@ -135,3 +135,4 @@ pub fn de_vpc(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<c
     }
     Ok(builder.build())
 }
+

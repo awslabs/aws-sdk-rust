@@ -3,7 +3,7 @@
 /// <p>Provides details about an Database Migration Service (DMS) replication instance. DMS uses a replication instance to connect to your source data store, read the source data, and format the data for consumption by the target data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDmsReplicationInstanceDetails {
+pub struct AwsDmsReplicationInstanceDetails  {
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window.</p>
@@ -27,9 +27,9 @@ pub struct AwsDmsReplicationInstanceDetails {
     /// <p>The subnet group for the replication instance.</p>
     pub replication_subnet_group: ::std::option::Option<crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails>,
     /// <p>The virtual private cloud (VPC) security group for the replication instance.</p>
-    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>,
+    pub vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>,
 }
-impl AwsDmsReplicationInstanceDetails {
+impl  AwsDmsReplicationInstanceDetails  {
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
@@ -39,15 +39,15 @@ impl AwsDmsReplicationInstanceDetails {
         self.auto_minor_version_upgrade
     }
     /// <p>The Availability Zone that the replication instance is created in. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, such as <code>us-east-1d</code>.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The engine version number of the replication instance. If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether the replication instance is deployed across multiple Availability Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
@@ -55,7 +55,7 @@ impl AwsDmsReplicationInstanceDetails {
         self.multi_az
     }
     /// <p>The maintenance window times for the replication instance. Upgrades to the replication instance are performed during this time.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
@@ -63,22 +63,23 @@ impl AwsDmsReplicationInstanceDetails {
         self.publicly_accessible
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
-    pub fn replication_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_class(&self) -> ::std::option::Option<& str> {
         self.replication_instance_class.as_deref()
     }
     /// <p>The replication instance identifier.</p>
-    pub fn replication_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_instance_identifier.as_deref()
     }
     /// <p>The subnet group for the replication instance.</p>
-    pub fn replication_subnet_group(&self) -> ::std::option::Option<&crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails> {
+    pub fn replication_subnet_group(&self) -> ::std::option::Option<& crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails> {
         self.replication_subnet_group.as_ref()
     }
     /// <p>The virtual private cloud (VPC) security group for the replication instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_groups.is_none()`.
-    pub fn vpc_security_groups(&self) -> &[crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails] {
-        self.vpc_security_groups.as_deref().unwrap_or_default()
+    pub fn vpc_security_groups(&self) -> & [crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails] {
+        self.vpc_security_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsDmsReplicationInstanceDetails {
@@ -103,7 +104,7 @@ pub struct AwsDmsReplicationInstanceDetailsBuilder {
     pub(crate) replication_instance_class: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_group: ::std::option::Option<crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails>,
-    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>,
+    pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>,
 }
 impl AwsDmsReplicationInstanceDetailsBuilder {
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
@@ -113,8 +114,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -127,8 +127,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>Indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>Indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -141,8 +140,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The Availability Zone that the replication instance is created in. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, such as <code>us-east-1d</code>.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone that the replication instance is created in. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, such as <code>us-east-1d</code>.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The engine version number of the replication instance. If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The engine version number of the replication instance. If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>An KMS key identifier that is used to encrypt the data on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>Specifies whether the replication instance is deployed across multiple Availability Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Specifies whether the replication instance is deployed across multiple Availability Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code> parameter is set to <code>true</code>.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -197,8 +192,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The maintenance window times for the replication instance. Upgrades to the replication instance are performed during this time.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>The maintenance window times for the replication instance. Upgrades to the replication instance are performed during this time.</p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +205,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -225,8 +218,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
     pub fn set_replication_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_class = input;
-        self
+        self.replication_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class.</p>
     pub fn get_replication_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +231,7 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     }
     /// <p>The replication instance identifier.</p>
     pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_instance_identifier = input;
-        self
+        self.replication_instance_identifier = input; self
     }
     /// <p>The replication instance identifier.</p>
     pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,12 +243,8 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
         self
     }
     /// <p>The subnet group for the replication instance.</p>
-    pub fn set_replication_subnet_group(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails>,
-    ) -> Self {
-        self.replication_subnet_group = input;
-        self
+    pub fn set_replication_subnet_group(mut self, input: ::std::option::Option<crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails>) -> Self {
+        self.replication_subnet_group = input; self
     }
     /// <p>The subnet group for the replication instance.</p>
     pub fn get_replication_subnet_group(&self) -> &::std::option::Option<crate::types::AwsDmsReplicationInstanceReplicationSubnetGroupDetails> {
@@ -270,39 +257,46 @@ impl AwsDmsReplicationInstanceDetailsBuilder {
     /// <p>The virtual private cloud (VPC) security group for the replication instance.</p>
     pub fn vpc_security_groups(mut self, input: crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
-        v.push(input);
-        self.vpc_security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpc_security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The virtual private cloud (VPC) security group for the replication instance.</p>
-    pub fn set_vpc_security_groups(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>,
-    ) -> Self {
-        self.vpc_security_groups = input;
-        self
+    pub fn set_vpc_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>>) -> Self {
+        self.vpc_security_groups = input; self
     }
     /// <p>The virtual private cloud (VPC) security group for the replication instance.</p>
-    pub fn get_vpc_security_groups(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>> {
+    pub fn get_vpc_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>> {
         &self.vpc_security_groups
     }
     /// Consumes the builder and constructs a [`AwsDmsReplicationInstanceDetails`](crate::types::AwsDmsReplicationInstanceDetails).
     pub fn build(self) -> crate::types::AwsDmsReplicationInstanceDetails {
         crate::types::AwsDmsReplicationInstanceDetails {
-            allocated_storage: self.allocated_storage,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            availability_zone: self.availability_zone,
-            engine_version: self.engine_version,
-            kms_key_id: self.kms_key_id,
-            multi_az: self.multi_az,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            publicly_accessible: self.publicly_accessible,
-            replication_instance_class: self.replication_instance_class,
-            replication_instance_identifier: self.replication_instance_identifier,
-            replication_subnet_group: self.replication_subnet_group,
-            vpc_security_groups: self.vpc_security_groups,
+            allocated_storage: self.allocated_storage
+            ,
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade
+            ,
+            availability_zone: self.availability_zone
+            ,
+            engine_version: self.engine_version
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            multi_az: self.multi_az
+            ,
+            preferred_maintenance_window: self.preferred_maintenance_window
+            ,
+            publicly_accessible: self.publicly_accessible
+            ,
+            replication_instance_class: self.replication_instance_class
+            ,
+            replication_instance_identifier: self.replication_instance_identifier
+            ,
+            replication_subnet_group: self.replication_subnet_group
+            ,
+            vpc_security_groups: self.vpc_security_groups
+            ,
         }
     }
 }
+

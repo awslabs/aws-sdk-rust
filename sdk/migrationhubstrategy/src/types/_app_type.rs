@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let apptype = unimplemented!();
 /// match apptype {
@@ -50,16 +50,14 @@
 /// Specifically, when `apptype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `AppType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
     Cassandra,
@@ -107,144 +105,122 @@ pub enum AppType {
     Visualbasic,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AppType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Cassandra" => AppType::Cassandra,
-            "DB2" => AppType::Db2,
-            "DotNetFramework" => AppType::DotNetFramework,
-            "Dotnet" => AppType::Dotnet,
-            "DotnetCore" => AppType::Dotnetcore,
-            "IBM WebSphere" => AppType::Websphere,
-            "IIS" => AppType::Iis,
-            "JBoss" => AppType::Jboss,
-            "Java" => AppType::Java,
-            "Maria DB" => AppType::Mariadb,
-            "Mongo DB" => AppType::Mongodb,
-            "MySQL" => AppType::Mysql,
-            "Oracle" => AppType::Oracle,
-            "Oracle WebLogic" => AppType::Weblogic,
-            "Other" => AppType::Other,
-            "PostgreSQLServer" => AppType::Postgresqlserver,
-            "SQLServer" => AppType::SqlServer,
-            "Spring" => AppType::Spring,
-            "Sybase" => AppType::Sybase,
-            "Tomcat" => AppType::Tomcat,
-            "Unknown" => AppType::UnknownValue,
-            "Visual Basic" => AppType::Visualbasic,
-            other => AppType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Cassandra" => AppType::Cassandra,
+"DB2" => AppType::Db2,
+"DotNetFramework" => AppType::DotNetFramework,
+"Dotnet" => AppType::Dotnet,
+"DotnetCore" => AppType::Dotnetcore,
+"IBM WebSphere" => AppType::Websphere,
+"IIS" => AppType::Iis,
+"JBoss" => AppType::Jboss,
+"Java" => AppType::Java,
+"Maria DB" => AppType::Mariadb,
+"Mongo DB" => AppType::Mongodb,
+"MySQL" => AppType::Mysql,
+"Oracle" => AppType::Oracle,
+"Oracle WebLogic" => AppType::Weblogic,
+"Other" => AppType::Other,
+"PostgreSQLServer" => AppType::Postgresqlserver,
+"SQLServer" => AppType::SqlServer,
+"Spring" => AppType::Spring,
+"Sybase" => AppType::Sybase,
+"Tomcat" => AppType::Tomcat,
+"Unknown" => AppType::UnknownValue,
+"Visual Basic" => AppType::Visualbasic,
+other => AppType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AppType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AppType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AppType::from(s))
+                    }
+                }
 impl AppType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppType::Cassandra => "Cassandra",
-            AppType::Db2 => "DB2",
-            AppType::DotNetFramework => "DotNetFramework",
-            AppType::Dotnet => "Dotnet",
-            AppType::Dotnetcore => "DotnetCore",
-            AppType::Websphere => "IBM WebSphere",
-            AppType::Iis => "IIS",
-            AppType::Jboss => "JBoss",
-            AppType::Java => "Java",
-            AppType::Mariadb => "Maria DB",
-            AppType::Mongodb => "Mongo DB",
-            AppType::Mysql => "MySQL",
-            AppType::Oracle => "Oracle",
-            AppType::Weblogic => "Oracle WebLogic",
-            AppType::Other => "Other",
-            AppType::Postgresqlserver => "PostgreSQLServer",
-            AppType::SqlServer => "SQLServer",
-            AppType::Spring => "Spring",
-            AppType::Sybase => "Sybase",
-            AppType::Tomcat => "Tomcat",
-            AppType::UnknownValue => "Unknown",
-            AppType::Visualbasic => "Visual Basic",
-            AppType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Cassandra",
-            "DB2",
-            "DotNetFramework",
-            "Dotnet",
-            "DotnetCore",
-            "IBM WebSphere",
-            "IIS",
-            "JBoss",
-            "Java",
-            "Maria DB",
-            "Mongo DB",
-            "MySQL",
-            "Oracle",
-            "Oracle WebLogic",
-            "Other",
-            "PostgreSQLServer",
-            "SQLServer",
-            "Spring",
-            "Sybase",
-            "Tomcat",
-            "Unknown",
-            "Visual Basic",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppType::Cassandra => "Cassandra",
+    AppType::Db2 => "DB2",
+    AppType::DotNetFramework => "DotNetFramework",
+    AppType::Dotnet => "Dotnet",
+    AppType::Dotnetcore => "DotnetCore",
+    AppType::Websphere => "IBM WebSphere",
+    AppType::Iis => "IIS",
+    AppType::Jboss => "JBoss",
+    AppType::Java => "Java",
+    AppType::Mariadb => "Maria DB",
+    AppType::Mongodb => "Mongo DB",
+    AppType::Mysql => "MySQL",
+    AppType::Oracle => "Oracle",
+    AppType::Weblogic => "Oracle WebLogic",
+    AppType::Other => "Other",
+    AppType::Postgresqlserver => "PostgreSQLServer",
+    AppType::SqlServer => "SQLServer",
+    AppType::Spring => "Spring",
+    AppType::Sybase => "Sybase",
+    AppType::Tomcat => "Tomcat",
+    AppType::UnknownValue => "Unknown",
+    AppType::Visualbasic => "Visual Basic",
+    AppType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Cassandra", "DB2", "DotNetFramework", "Dotnet", "DotnetCore", "IBM WebSphere", "IIS", "JBoss", "Java", "Maria DB", "Mongo DB", "MySQL", "Oracle", "Oracle WebLogic", "Other", "PostgreSQLServer", "SQLServer", "Spring", "Sybase", "Tomcat", "Unknown", "Visual Basic"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AppType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AppType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AppType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AppType::Cassandra => write!(f, "Cassandra"),
-            AppType::Db2 => write!(f, "DB2"),
-            AppType::DotNetFramework => write!(f, "DotNetFramework"),
-            AppType::Dotnet => write!(f, "Dotnet"),
-            AppType::Dotnetcore => write!(f, "DotnetCore"),
-            AppType::Websphere => write!(f, "IBM WebSphere"),
-            AppType::Iis => write!(f, "IIS"),
-            AppType::Jboss => write!(f, "JBoss"),
-            AppType::Java => write!(f, "Java"),
-            AppType::Mariadb => write!(f, "Maria DB"),
-            AppType::Mongodb => write!(f, "Mongo DB"),
-            AppType::Mysql => write!(f, "MySQL"),
-            AppType::Oracle => write!(f, "Oracle"),
-            AppType::Weblogic => write!(f, "Oracle WebLogic"),
-            AppType::Other => write!(f, "Other"),
-            AppType::Postgresqlserver => write!(f, "PostgreSQLServer"),
-            AppType::SqlServer => write!(f, "SQLServer"),
-            AppType::Spring => write!(f, "Spring"),
-            AppType::Sybase => write!(f, "Sybase"),
-            AppType::Tomcat => write!(f, "Tomcat"),
-            AppType::UnknownValue => write!(f, "Unknown"),
-            AppType::Visualbasic => write!(f, "Visual Basic"),
-            AppType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AppType::Cassandra => write!(f, "Cassandra"),
+AppType::Db2 => write!(f, "DB2"),
+AppType::DotNetFramework => write!(f, "DotNetFramework"),
+AppType::Dotnet => write!(f, "Dotnet"),
+AppType::Dotnetcore => write!(f, "DotnetCore"),
+AppType::Websphere => write!(f, "IBM WebSphere"),
+AppType::Iis => write!(f, "IIS"),
+AppType::Jboss => write!(f, "JBoss"),
+AppType::Java => write!(f, "Java"),
+AppType::Mariadb => write!(f, "Maria DB"),
+AppType::Mongodb => write!(f, "Mongo DB"),
+AppType::Mysql => write!(f, "MySQL"),
+AppType::Oracle => write!(f, "Oracle"),
+AppType::Weblogic => write!(f, "Oracle WebLogic"),
+AppType::Other => write!(f, "Other"),
+AppType::Postgresqlserver => write!(f, "PostgreSQLServer"),
+AppType::SqlServer => write!(f, "SQLServer"),
+AppType::Spring => write!(f, "Spring"),
+AppType::Sybase => write!(f, "Sybase"),
+AppType::Tomcat => write!(f, "Tomcat"),
+AppType::UnknownValue => write!(f, "Unknown"),
+AppType::Visualbasic => write!(f, "Visual Basic"),
+AppType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

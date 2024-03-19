@@ -3,20 +3,19 @@
 /// <p>The properties that are applied when Amazon Connect Customer Profiles is used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerProfilesDestinationProperties {
+pub struct CustomerProfilesDestinationProperties  {
     /// <p>The unique name of the Amazon Connect Customer Profiles domain.</p>
     pub domain_name: ::std::string::String,
     /// <p>The object specified in the Amazon Connect Customer Profiles flow destination.</p>
     pub object_type_name: ::std::option::Option<::std::string::String>,
 }
-impl CustomerProfilesDestinationProperties {
+impl  CustomerProfilesDestinationProperties  {
     /// <p>The unique name of the Amazon Connect Customer Profiles domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The object specified in the Amazon Connect Customer Profiles flow destination.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl CustomerProfilesDestinationPropertiesBuilder {
     }
     /// <p>The unique name of the Amazon Connect Customer Profiles domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the Amazon Connect Customer Profiles domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl CustomerProfilesDestinationPropertiesBuilder {
     }
     /// <p>The object specified in the Amazon Connect Customer Profiles flow destination.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The object specified in the Amazon Connect Customer Profiles flow destination.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +64,18 @@ impl CustomerProfilesDestinationPropertiesBuilder {
     /// Consumes the builder and constructs a [`CustomerProfilesDestinationProperties`](crate::types::CustomerProfilesDestinationProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::CustomerProfilesDestinationPropertiesBuilder::domain_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::CustomerProfilesDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomerProfilesDestinationProperties {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building CustomerProfilesDestinationProperties",
-                )
-            })?,
-            object_type_name: self.object_type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomerProfilesDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::CustomerProfilesDestinationProperties {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building CustomerProfilesDestinationProperties")
+                    )?
+                ,
+                object_type_name: self.object_type_name
+                ,
+            }
+        )
     }
 }
+

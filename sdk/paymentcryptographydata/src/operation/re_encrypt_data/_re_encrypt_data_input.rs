@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ReEncryptDataInput {
+pub struct ReEncryptDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
     pub incoming_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
@@ -14,29 +14,29 @@ pub struct ReEncryptDataInput {
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub outgoing_encryption_attributes: ::std::option::Option<crate::types::ReEncryptionAttributes>,
 }
-impl ReEncryptDataInput {
+impl  ReEncryptDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
-    pub fn incoming_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn incoming_key_identifier(&self) -> ::std::option::Option<& str> {
         self.incoming_key_identifier.as_deref()
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn outgoing_key_identifier(&self) -> ::std::option::Option<& str> {
         self.outgoing_key_identifier.as_deref()
     }
     /// <p>Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.</p>
-    pub fn cipher_text(&self) -> ::std::option::Option<&str> {
+    pub fn cipher_text(&self) -> ::std::option::Option<& str> {
         self.cipher_text.as_deref()
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
-    pub fn incoming_encryption_attributes(&self) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
+    pub fn incoming_encryption_attributes(&self) -> ::std::option::Option<& crate::types::ReEncryptionAttributes> {
         self.incoming_encryption_attributes.as_ref()
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
-    pub fn outgoing_encryption_attributes(&self) -> ::std::option::Option<&crate::types::ReEncryptionAttributes> {
+    pub fn outgoing_encryption_attributes(&self) -> ::std::option::Option<& crate::types::ReEncryptionAttributes> {
         self.outgoing_encryption_attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for ReEncryptDataInput {
+impl  ::std::fmt::Debug for ReEncryptDataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReEncryptDataInput");
         formatter.field("incoming_key_identifier", &self.incoming_key_identifier);
@@ -73,8 +73,7 @@ impl ReEncryptDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
     pub fn set_incoming_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incoming_key_identifier = input;
-        self
+        self.incoming_key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key of incoming ciphertext data.</p>
     pub fn get_incoming_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl ReEncryptDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub fn set_outgoing_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outgoing_key_identifier = input;
-        self
+        self.outgoing_key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub fn get_outgoing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ReEncryptDataInputBuilder {
     }
     /// <p>Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.</p>
     pub fn set_cipher_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cipher_text = input;
-        self
+        self.cipher_text = input; self
     }
     /// <p>Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.</p>
     pub fn get_cipher_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ReEncryptDataInputBuilder {
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
     pub fn set_incoming_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
-        self.incoming_encryption_attributes = input;
-        self
+        self.incoming_encryption_attributes = input; self
     }
     /// <p>The attributes and values for incoming ciphertext.</p>
     pub fn get_incoming_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
@@ -133,24 +129,28 @@ impl ReEncryptDataInputBuilder {
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub fn set_outgoing_encryption_attributes(mut self, input: ::std::option::Option<crate::types::ReEncryptionAttributes>) -> Self {
-        self.outgoing_encryption_attributes = input;
-        self
+        self.outgoing_encryption_attributes = input; self
     }
     /// <p>The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.</p>
     pub fn get_outgoing_encryption_attributes(&self) -> &::std::option::Option<crate::types::ReEncryptionAttributes> {
         &self.outgoing_encryption_attributes
     }
     /// Consumes the builder and constructs a [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::re_encrypt_data::ReEncryptDataInput {
-            incoming_key_identifier: self.incoming_key_identifier,
-            outgoing_key_identifier: self.outgoing_key_identifier,
-            cipher_text: self.cipher_text,
-            incoming_encryption_attributes: self.incoming_encryption_attributes,
-            outgoing_encryption_attributes: self.outgoing_encryption_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::re_encrypt_data::ReEncryptDataInput {
+                incoming_key_identifier: self.incoming_key_identifier
+                ,
+                outgoing_key_identifier: self.outgoing_key_identifier
+                ,
+                cipher_text: self.cipher_text
+                ,
+                incoming_encryption_attributes: self.incoming_encryption_attributes
+                ,
+                outgoing_encryption_attributes: self.outgoing_encryption_attributes
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ReEncryptDataInputBuilder {
@@ -164,3 +164,4 @@ impl ::std::fmt::Debug for ReEncryptDataInputBuilder {
         formatter.finish()
     }
 }
+

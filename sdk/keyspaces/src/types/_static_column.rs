@@ -3,15 +3,14 @@
 /// <p>The static columns of the table. Static columns store values that are shared by all rows in the same partition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StaticColumn {
+pub struct StaticColumn  {
     /// <p>The name of the static column.</p>
     pub name: ::std::string::String,
 }
-impl StaticColumn {
+impl  StaticColumn  {
     /// <p>The name of the static column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl StaticColumn {
@@ -36,8 +35,7 @@ impl StaticColumnBuilder {
     }
     /// <p>The name of the static column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the static column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl StaticColumnBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::StaticColumnBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::StaticColumn, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StaticColumn {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StaticColumn",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StaticColumn {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building StaticColumn")
+                    )?
+                ,
+            }
+        )
     }
 }
+

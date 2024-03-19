@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLakeFormationIdentityCenterConfigurationOutput {
+pub struct DescribeLakeFormationIdentityCenterConfigurationOutput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
@@ -13,32 +13,32 @@ pub struct DescribeLakeFormationIdentityCenterConfigurationOutput {
     pub external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeLakeFormationIdentityCenterConfigurationOutput {
+impl  DescribeLakeFormationIdentityCenterConfigurationOutput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>Indicates if external filtering is enabled.</p>
-    pub fn external_filtering(&self) -> ::std::option::Option<&crate::types::ExternalFilteringConfiguration> {
+    pub fn external_filtering(&self) -> ::std::option::Option<& crate::types::ExternalFilteringConfiguration> {
         self.external_filtering.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLakeFormationIdentityCenterConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeLakeFormationIdentityCenterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLakeFormationIdentityCenterConfigurationOutput`](crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
         crate::operation::describe_lake_formation_identity_center_configuration::builders::DescribeLakeFormationIdentityCenterConfigurationOutputBuilder::default()
     }
 }
@@ -61,8 +61,7 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the connection.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the integrated application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,32 +100,34 @@ impl DescribeLakeFormationIdentityCenterConfigurationOutputBuilder {
     }
     /// <p>Indicates if external filtering is enabled.</p>
     pub fn set_external_filtering(mut self, input: ::std::option::Option<crate::types::ExternalFilteringConfiguration>) -> Self {
-        self.external_filtering = input;
-        self
+        self.external_filtering = input; self
     }
     /// <p>Indicates if external filtering is enabled.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         &self.external_filtering
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeLakeFormationIdentityCenterConfigurationOutput`](crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput {
         crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationOutput {
-            catalog_id: self.catalog_id,
-            instance_arn: self.instance_arn,
-            application_arn: self.application_arn,
-            external_filtering: self.external_filtering,
+            catalog_id: self.catalog_id
+            ,
+            instance_arn: self.instance_arn
+            ,
+            application_arn: self.application_arn
+            ,
+            external_filtering: self.external_filtering
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a migration task in a migration tool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MigrationTask {
+pub struct MigrationTask  {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
     pub progress_update_stream: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
@@ -13,30 +13,31 @@ pub struct MigrationTask {
     /// <p>The timestamp when the task was gathered.</p>
     pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    pub resource_attribute_list: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAttribute>>,
 }
-impl MigrationTask {
+impl  MigrationTask  {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
-    pub fn progress_update_stream(&self) -> ::std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> ::std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
-    pub fn migration_task_name(&self) -> ::std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> ::std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>Task object encapsulating task information.</p>
-    pub fn task(&self) -> ::std::option::Option<&crate::types::Task> {
+    pub fn task(&self) -> ::std::option::Option<& crate::types::Task> {
         self.task.as_ref()
     }
     /// <p>The timestamp when the task was gathered.</p>
-    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_attribute_list.is_none()`.
-    pub fn resource_attribute_list(&self) -> &[crate::types::ResourceAttribute] {
-        self.resource_attribute_list.as_deref().unwrap_or_default()
+    pub fn resource_attribute_list(&self) -> & [crate::types::ResourceAttribute] {
+        self.resource_attribute_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MigrationTask {
@@ -54,7 +55,7 @@ pub struct MigrationTaskBuilder {
     pub(crate) migration_task_name: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<crate::types::Task>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) resource_attribute_list: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>,
+    pub(crate) resource_attribute_list: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAttribute>>,
 }
 impl MigrationTaskBuilder {
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
@@ -64,8 +65,7 @@ impl MigrationTaskBuilder {
     }
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
     pub fn set_progress_update_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.progress_update_stream = input;
-        self
+        self.progress_update_stream = input; self
     }
     /// <p>A name that identifies the vendor of the migration tool being used.</p>
     pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl MigrationTaskBuilder {
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn set_migration_task_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_task_name = input;
-        self
+        self.migration_task_name = input; self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i></p>
     pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl MigrationTaskBuilder {
     }
     /// <p>Task object encapsulating task information.</p>
     pub fn set_task(mut self, input: ::std::option::Option<crate::types::Task>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>Task object encapsulating task information.</p>
     pub fn get_task(&self) -> &::std::option::Option<crate::types::Task> {
@@ -106,8 +104,7 @@ impl MigrationTaskBuilder {
     }
     /// <p>The timestamp when the task was gathered.</p>
     pub fn set_update_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_date_time = input;
-        self
+        self.update_date_time = input; self
     }
     /// <p>The timestamp when the task was gathered.</p>
     pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -120,27 +117,32 @@ impl MigrationTaskBuilder {
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
     pub fn resource_attribute_list(mut self, input: crate::types::ResourceAttribute) -> Self {
         let mut v = self.resource_attribute_list.unwrap_or_default();
-        v.push(input);
-        self.resource_attribute_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_attribute_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn set_resource_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>>) -> Self {
-        self.resource_attribute_list = input;
-        self
+    pub fn set_resource_attribute_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceAttribute>>) -> Self {
+        self.resource_attribute_list = input; self
     }
     /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p>
-    pub fn get_resource_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+    pub fn get_resource_attribute_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceAttribute>> {
         &self.resource_attribute_list
     }
     /// Consumes the builder and constructs a [`MigrationTask`](crate::types::MigrationTask).
     pub fn build(self) -> crate::types::MigrationTask {
         crate::types::MigrationTask {
-            progress_update_stream: self.progress_update_stream,
-            migration_task_name: self.migration_task_name,
-            task: self.task,
-            update_date_time: self.update_date_time,
-            resource_attribute_list: self.resource_attribute_list,
+            progress_update_stream: self.progress_update_stream
+            ,
+            migration_task_name: self.migration_task_name
+            ,
+            task: self.task
+            ,
+            update_date_time: self.update_date_time
+            ,
+            resource_attribute_list: self.resource_attribute_list
+            ,
         }
     }
 }
+

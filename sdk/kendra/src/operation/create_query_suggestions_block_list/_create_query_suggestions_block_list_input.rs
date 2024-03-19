@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateQuerySuggestionsBlockListInput {
+pub struct CreateQuerySuggestionsBlockListInput  {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the block list.</p>
@@ -20,42 +20,43 @@ pub struct CreateQuerySuggestionsBlockListInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateQuerySuggestionsBlockListInput {
+impl  CreateQuerySuggestionsBlockListInput  {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>A name for the block list.</p>
     /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    pub fn source_s3_path(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn source_s3_path(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.source_s3_path.as_ref()
     }
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateQuerySuggestionsBlockListInput {
@@ -75,7 +76,7 @@ pub struct CreateQuerySuggestionsBlockListInputBuilder {
     pub(crate) source_s3_path: ::std::option::Option<crate::types::S3Path>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
@@ -86,8 +87,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +103,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>A name for the block list.</p>
     /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the block list.</p>
     /// <p>For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
@@ -120,8 +119,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the block list.</p>
     /// <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
@@ -140,8 +138,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn set_source_s3_path(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.source_s3_path = input;
-        self
+        self.source_s3_path = input; self
     }
     /// <p>The S3 path to your block list text file in your S3 bucket.</p>
     /// <p>Each block word or phrase should be on a separate line in a text file.</p>
@@ -156,8 +153,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to create a query suggestions block list.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +167,7 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,36 +180,38 @@ impl CreateQuerySuggestionsBlockListInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQuerySuggestionsBlockListInput`](crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListInput {
-                index_id: self.index_id,
-                name: self.name,
-                description: self.description,
-                source_s3_path: self.source_s3_path,
-                client_token: self.client_token,
-                role_arn: self.role_arn,
-                tags: self.tags,
-            },
+                index_id: self.index_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                source_s3_path: self.source_s3_path
+                ,
+                client_token: self.client_token
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

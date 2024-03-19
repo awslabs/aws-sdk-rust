@@ -3,7 +3,7 @@
 /// <p>Contains statistics information. The DFE engine uses information about the data in your Neptune graph to make effective trade-offs when planning query execution. This information takes the form of statistics that include so-called characteristic sets and predicate statistics that can guide query planning. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html">Managing statistics for the Neptune DFE to use</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Statistics {
+pub struct Statistics  {
     /// <p>Indicates whether or not automatic statistics generation is enabled.</p>
     pub auto_compute: ::std::option::Option<bool>,
     /// <p>Indicates whether or not DFE statistics generation is enabled at all.</p>
@@ -25,7 +25,7 @@ pub struct Statistics {
     /// </ul>
     pub signature_info: ::std::option::Option<crate::types::StatisticsSummary>,
 }
-impl Statistics {
+impl  Statistics  {
     /// <p>Indicates whether or not automatic statistics generation is enabled.</p>
     pub fn auto_compute(&self) -> ::std::option::Option<bool> {
         self.auto_compute
@@ -35,15 +35,15 @@ impl Statistics {
         self.active
     }
     /// <p>Reports the ID of the current statistics generation run. A value of -1 indicates that no statistics have been generated.</p>
-    pub fn statistics_id(&self) -> ::std::option::Option<&str> {
+    pub fn statistics_id(&self) -> ::std::option::Option<& str> {
         self.statistics_id.as_deref()
     }
     /// <p>The UTC time at which DFE statistics have most recently been generated.</p>
-    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>A note about problems in the case where statistics are invalid.</p>
-    pub fn note(&self) -> ::std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<& str> {
         self.note.as_deref()
     }
     /// <p>A StatisticsSummary structure that contains:</p>
@@ -55,7 +55,7 @@ impl Statistics {
     /// <li>
     /// <p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
-    pub fn signature_info(&self) -> ::std::option::Option<&crate::types::StatisticsSummary> {
+    pub fn signature_info(&self) -> ::std::option::Option<& crate::types::StatisticsSummary> {
         self.signature_info.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl StatisticsBuilder {
     }
     /// <p>Indicates whether or not automatic statistics generation is enabled.</p>
     pub fn set_auto_compute(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_compute = input;
-        self
+        self.auto_compute = input; self
     }
     /// <p>Indicates whether or not automatic statistics generation is enabled.</p>
     pub fn get_auto_compute(&self) -> &::std::option::Option<bool> {
@@ -99,8 +98,7 @@ impl StatisticsBuilder {
     }
     /// <p>Indicates whether or not DFE statistics generation is enabled at all.</p>
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// <p>Indicates whether or not DFE statistics generation is enabled at all.</p>
     pub fn get_active(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl StatisticsBuilder {
     }
     /// <p>Reports the ID of the current statistics generation run. A value of -1 indicates that no statistics have been generated.</p>
     pub fn set_statistics_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statistics_id = input;
-        self
+        self.statistics_id = input; self
     }
     /// <p>Reports the ID of the current statistics generation run. A value of -1 indicates that no statistics have been generated.</p>
     pub fn get_statistics_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl StatisticsBuilder {
     }
     /// <p>The UTC time at which DFE statistics have most recently been generated.</p>
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>The UTC time at which DFE statistics have most recently been generated.</p>
     pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +137,7 @@ impl StatisticsBuilder {
     }
     /// <p>A note about problems in the case where statistics are invalid.</p>
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
     }
     /// <p>A note about problems in the case where statistics are invalid.</p>
     pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +166,7 @@ impl StatisticsBuilder {
     /// <p><code>predicateCount</code> - The total number of unique predicates.</p></li>
     /// </ul>
     pub fn set_signature_info(mut self, input: ::std::option::Option<crate::types::StatisticsSummary>) -> Self {
-        self.signature_info = input;
-        self
+        self.signature_info = input; self
     }
     /// <p>A StatisticsSummary structure that contains:</p>
     /// <ul>
@@ -189,12 +183,19 @@ impl StatisticsBuilder {
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {
         crate::types::Statistics {
-            auto_compute: self.auto_compute,
-            active: self.active,
-            statistics_id: self.statistics_id,
-            date: self.date,
-            note: self.note,
-            signature_info: self.signature_info,
+            auto_compute: self.auto_compute
+            ,
+            active: self.active
+            ,
+            statistics_id: self.statistics_id
+            ,
+            date: self.date
+            ,
+            note: self.note
+            ,
+            signature_info: self.signature_info
+            ,
         }
     }
 }
+

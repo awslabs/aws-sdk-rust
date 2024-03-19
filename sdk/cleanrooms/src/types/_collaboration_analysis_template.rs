@@ -3,7 +3,7 @@
 /// <p>The analysis template within a collaboration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CollaborationAnalysisTemplate {
+pub struct CollaborationAnalysisTemplate  {
     /// <p>The identifier of the analysis template.</p>
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
@@ -29,71 +29,66 @@ pub struct CollaborationAnalysisTemplate {
     /// <p>The source of the analysis template within a collaboration.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
-    pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub analysis_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>,
 }
-impl CollaborationAnalysisTemplate {
+impl  CollaborationAnalysisTemplate  {
     /// <p>The identifier of the analysis template.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_id(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_id.deref()
+    pub fn collaboration_id(&self) -> & str {
+        use std::ops::Deref; self.collaboration_id.deref()
     }
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
-    pub fn collaboration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_arn.deref()
+    pub fn collaboration_arn(&self) -> & str {
+        use std::ops::Deref; self.collaboration_arn.deref()
     }
     /// <p>The description of the analysis template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
-    pub fn creator_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.creator_account_id.deref()
+    pub fn creator_account_id(&self) -> & str {
+        use std::ops::Deref; self.creator_account_id.deref()
     }
     /// <p>The name of the analysis template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The time that the analysis template within a collaboration was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The time that the analysis template in the collaboration was last updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The entire schema object.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::AnalysisSchema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::AnalysisSchema> {
         self.schema.as_ref()
     }
     /// <p>The format of the analysis template in the collaboration.</p>
-    pub fn format(&self) -> &crate::types::AnalysisFormat {
+    pub fn format(&self) -> & crate::types::AnalysisFormat {
         &self.format
     }
     /// <p>The source of the analysis template within a collaboration.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::AnalysisSource> {
         self.source.as_ref()
     }
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
-    pub fn analysis_parameters(&self) -> &[crate::types::AnalysisParameter] {
-        self.analysis_parameters.as_deref().unwrap_or_default()
+    pub fn analysis_parameters(&self) -> & [crate::types::AnalysisParameter] {
+        self.analysis_parameters.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
+impl  ::std::fmt::Debug for CollaborationAnalysisTemplate  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CollaborationAnalysisTemplate");
         formatter.field("id", &self.id);
@@ -135,7 +130,7 @@ pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::AnalysisSchema>,
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
-    pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
+    pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>,
 }
 impl CollaborationAnalysisTemplateBuilder {
     /// <p>The identifier of the analysis template.</p>
@@ -146,8 +141,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The identifier of the analysis template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the analysis template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +155,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +169,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +183,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
     pub fn set_collaboration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_arn = input;
-        self
+        self.collaboration_arn = input; self
     }
     /// <p>The unique ARN for the analysis template’s associated collaboration.</p>
     pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +196,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The description of the analysis template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the analysis template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +210,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn set_creator_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_account_id = input;
-        self
+        self.creator_account_id = input; self
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +224,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The name of the analysis template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the analysis template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +238,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The time that the analysis template within a collaboration was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time that the analysis template within a collaboration was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -265,8 +252,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The time that the analysis template in the collaboration was last updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The time that the analysis template in the collaboration was last updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -280,8 +266,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The entire schema object.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::AnalysisSchema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The entire schema object.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::AnalysisSchema> {
@@ -295,8 +280,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The format of the analysis template in the collaboration.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::AnalysisFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the analysis template in the collaboration.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::AnalysisFormat> {
@@ -310,8 +294,7 @@ impl CollaborationAnalysisTemplateBuilder {
     }
     /// <p>The source of the analysis template within a collaboration.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::AnalysisSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the analysis template within a collaboration.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
@@ -324,17 +307,16 @@ impl CollaborationAnalysisTemplateBuilder {
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
     pub fn analysis_parameters(mut self, input: crate::types::AnalysisParameter) -> Self {
         let mut v = self.analysis_parameters.unwrap_or_default();
-        v.push(input);
-        self.analysis_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.analysis_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
-    pub fn set_analysis_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>) -> Self {
-        self.analysis_parameters = input;
-        self
+    pub fn set_analysis_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>>) -> Self {
+        self.analysis_parameters = input; self
     }
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
-    pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>> {
+    pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalysisParameter>> {
         &self.analysis_parameters
     }
     /// Consumes the builder and constructs a [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
@@ -349,66 +331,63 @@ impl CollaborationAnalysisTemplateBuilder {
     /// - [`update_time`](crate::types::builders::CollaborationAnalysisTemplateBuilder::update_time)
     /// - [`format`](crate::types::builders::CollaborationAnalysisTemplateBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::CollaborationAnalysisTemplate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CollaborationAnalysisTemplate {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_id",
-                    "collaboration_id was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "collaboration_arn",
-                    "collaboration_arn was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            description: self.description,
-            creator_account_id: self.creator_account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creator_account_id",
-                    "creator_account_id was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            schema: self.schema,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building CollaborationAnalysisTemplate",
-                )
-            })?,
-            source: self.source,
-            analysis_parameters: self.analysis_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CollaborationAnalysisTemplate {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_id", "collaboration_id was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                collaboration_arn: self.collaboration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_arn", "collaboration_arn was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                description: self.description
+                ,
+                creator_account_id: self.creator_account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creator_account_id", "creator_account_id was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                schema: self.schema
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building CollaborationAnalysisTemplate")
+                    )?
+                ,
+                source: self.source
+                ,
+                analysis_parameters: self.analysis_parameters
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
@@ -430,3 +409,4 @@ impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
         formatter.finish()
     }
 }
+

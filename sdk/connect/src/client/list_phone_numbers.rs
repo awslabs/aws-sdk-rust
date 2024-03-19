@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPhoneNumbers`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`phone_number_types(PhoneNumberType)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::phone_number_types) / [`set_phone_number_types(Option<Vec::<PhoneNumberType>>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_phone_number_types):<br>required: **false**<br><p>The type of phone number.</p><note>  <p>We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> to return phone number types. While ListPhoneNumbers returns number types <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>, it incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>.</p> </note><br>
     ///   - [`phone_number_country_codes(PhoneNumberCountryCode)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::phone_number_country_codes) / [`set_phone_number_country_codes(Option<Vec::<PhoneNumberCountryCode>>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_phone_number_country_codes):<br>required: **false**<br><p>The ISO country code.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page. The default MaxResult size is 100.</p><br>
-    /// - On success, responds with [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput) with field(s):
+                            /// - On success, responds with [`ListPhoneNumbersOutput`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput) with field(s):
     ///   - [`phone_number_summary_list(Option<Vec::<PhoneNumberSummary>>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::phone_number_summary_list): <p>Information about the phone numbers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_phone_numbers::ListPhoneNumbersOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::operation::list_phone_numbers::ListPhoneNumbersError)
+                            /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::operation::list_phone_numbers::ListPhoneNumbersError)
     pub fn list_phone_numbers(&self) -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder {
-        crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_phone_numbers::builders::ListPhoneNumbersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

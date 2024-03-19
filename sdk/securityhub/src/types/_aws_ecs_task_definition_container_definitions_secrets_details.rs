@@ -3,19 +3,19 @@
 /// <p>A secret to pass to the container.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails  {
     /// <p>The name of the secret.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub value_from: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails  {
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    pub fn value_from(&self) -> ::std::option::Option<&str> {
+    pub fn value_from(&self) -> ::std::option::Option<& str> {
         self.value_from.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     }
     /// <p>The name of the secret.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the secret.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     }
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub fn set_value_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value_from = input;
-        self
+        self.value_from = input; self
     }
     /// <p>The secret to expose to the container. The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     pub fn get_value_from(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
-            name: self.name,
-            value_from: self.value_from,
+            name: self.name
+            ,
+            value_from: self.value_from
+            ,
         }
     }
 }
+

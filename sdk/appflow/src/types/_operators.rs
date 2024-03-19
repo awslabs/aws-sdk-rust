@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operators = unimplemented!();
 /// match operators {
@@ -49,16 +49,14 @@
 /// Specifically, when `operators` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Operators::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Operators {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -104,140 +102,119 @@ pub enum Operators {
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Operators {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => Operators::Addition,
-            "BETWEEN" => Operators::Between,
-            "CONTAINS" => Operators::Contains,
-            "DIVISION" => Operators::Division,
-            "EQUAL_TO" => Operators::EqualTo,
-            "GREATER_THAN" => Operators::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => Operators::GreaterThanOrEqualTo,
-            "LESS_THAN" => Operators::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => Operators::LessThanOrEqualTo,
-            "MASK_ALL" => Operators::MaskAll,
-            "MASK_FIRST_N" => Operators::MaskFirstN,
-            "MASK_LAST_N" => Operators::MaskLastN,
-            "MULTIPLICATION" => Operators::Multiplication,
-            "NOT_EQUAL_TO" => Operators::NotEqualTo,
-            "NO_OP" => Operators::NoOp,
-            "PROJECTION" => Operators::Projection,
-            "SUBTRACTION" => Operators::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => Operators::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => Operators::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => Operators::ValidateNonZero,
-            "VALIDATE_NUMERIC" => Operators::ValidateNumeric,
-            other => Operators::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADDITION" => Operators::Addition,
+"BETWEEN" => Operators::Between,
+"CONTAINS" => Operators::Contains,
+"DIVISION" => Operators::Division,
+"EQUAL_TO" => Operators::EqualTo,
+"GREATER_THAN" => Operators::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => Operators::GreaterThanOrEqualTo,
+"LESS_THAN" => Operators::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => Operators::LessThanOrEqualTo,
+"MASK_ALL" => Operators::MaskAll,
+"MASK_FIRST_N" => Operators::MaskFirstN,
+"MASK_LAST_N" => Operators::MaskLastN,
+"MULTIPLICATION" => Operators::Multiplication,
+"NOT_EQUAL_TO" => Operators::NotEqualTo,
+"NO_OP" => Operators::NoOp,
+"PROJECTION" => Operators::Projection,
+"SUBTRACTION" => Operators::Subtraction,
+"VALIDATE_NON_NEGATIVE" => Operators::ValidateNonNegative,
+"VALIDATE_NON_NULL" => Operators::ValidateNonNull,
+"VALIDATE_NON_ZERO" => Operators::ValidateNonZero,
+"VALIDATE_NUMERIC" => Operators::ValidateNumeric,
+other => Operators::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Operators {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Operators::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Operators::from(s))
+                    }
+                }
 impl Operators {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Operators::Addition => "ADDITION",
-            Operators::Between => "BETWEEN",
-            Operators::Contains => "CONTAINS",
-            Operators::Division => "DIVISION",
-            Operators::EqualTo => "EQUAL_TO",
-            Operators::GreaterThan => "GREATER_THAN",
-            Operators::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            Operators::LessThan => "LESS_THAN",
-            Operators::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            Operators::MaskAll => "MASK_ALL",
-            Operators::MaskFirstN => "MASK_FIRST_N",
-            Operators::MaskLastN => "MASK_LAST_N",
-            Operators::Multiplication => "MULTIPLICATION",
-            Operators::NotEqualTo => "NOT_EQUAL_TO",
-            Operators::NoOp => "NO_OP",
-            Operators::Projection => "PROJECTION",
-            Operators::Subtraction => "SUBTRACTION",
-            Operators::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            Operators::ValidateNonNull => "VALIDATE_NON_NULL",
-            Operators::ValidateNonZero => "VALIDATE_NON_ZERO",
-            Operators::ValidateNumeric => "VALIDATE_NUMERIC",
-            Operators::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "CONTAINS",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NOT_EQUAL_TO",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Operators::Addition => "ADDITION",
+    Operators::Between => "BETWEEN",
+    Operators::Contains => "CONTAINS",
+    Operators::Division => "DIVISION",
+    Operators::EqualTo => "EQUAL_TO",
+    Operators::GreaterThan => "GREATER_THAN",
+    Operators::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    Operators::LessThan => "LESS_THAN",
+    Operators::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    Operators::MaskAll => "MASK_ALL",
+    Operators::MaskFirstN => "MASK_FIRST_N",
+    Operators::MaskLastN => "MASK_LAST_N",
+    Operators::Multiplication => "MULTIPLICATION",
+    Operators::NotEqualTo => "NOT_EQUAL_TO",
+    Operators::NoOp => "NO_OP",
+    Operators::Projection => "PROJECTION",
+    Operators::Subtraction => "SUBTRACTION",
+    Operators::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    Operators::ValidateNonNull => "VALIDATE_NON_NULL",
+    Operators::ValidateNonZero => "VALIDATE_NON_ZERO",
+    Operators::ValidateNumeric => "VALIDATE_NUMERIC",
+    Operators::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Operators {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Operators {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Operators {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Operators::Addition => write!(f, "ADDITION"),
-            Operators::Between => write!(f, "BETWEEN"),
-            Operators::Contains => write!(f, "CONTAINS"),
-            Operators::Division => write!(f, "DIVISION"),
-            Operators::EqualTo => write!(f, "EQUAL_TO"),
-            Operators::GreaterThan => write!(f, "GREATER_THAN"),
-            Operators::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
-            Operators::LessThan => write!(f, "LESS_THAN"),
-            Operators::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
-            Operators::MaskAll => write!(f, "MASK_ALL"),
-            Operators::MaskFirstN => write!(f, "MASK_FIRST_N"),
-            Operators::MaskLastN => write!(f, "MASK_LAST_N"),
-            Operators::Multiplication => write!(f, "MULTIPLICATION"),
-            Operators::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
-            Operators::NoOp => write!(f, "NO_OP"),
-            Operators::Projection => write!(f, "PROJECTION"),
-            Operators::Subtraction => write!(f, "SUBTRACTION"),
-            Operators::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
-            Operators::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
-            Operators::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
-            Operators::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
-            Operators::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Operators::Addition => write!(f, "ADDITION"),
+Operators::Between => write!(f, "BETWEEN"),
+Operators::Contains => write!(f, "CONTAINS"),
+Operators::Division => write!(f, "DIVISION"),
+Operators::EqualTo => write!(f, "EQUAL_TO"),
+Operators::GreaterThan => write!(f, "GREATER_THAN"),
+Operators::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+Operators::LessThan => write!(f, "LESS_THAN"),
+Operators::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+Operators::MaskAll => write!(f, "MASK_ALL"),
+Operators::MaskFirstN => write!(f, "MASK_FIRST_N"),
+Operators::MaskLastN => write!(f, "MASK_LAST_N"),
+Operators::Multiplication => write!(f, "MULTIPLICATION"),
+Operators::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+Operators::NoOp => write!(f, "NO_OP"),
+Operators::Projection => write!(f, "PROJECTION"),
+Operators::Subtraction => write!(f, "SUBTRACTION"),
+Operators::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+Operators::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+Operators::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+Operators::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+Operators::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

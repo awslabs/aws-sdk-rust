@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAuthenticationProfilesInput {
+pub struct DescribeAuthenticationProfilesInput  {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAuthenticationProfilesInput {
+impl  DescribeAuthenticationProfilesInput  {
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
-    pub fn authentication_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
 }
@@ -33,22 +33,20 @@ impl DescribeAuthenticationProfilesInputBuilder {
     }
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
     pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_name = input;
-        self
+        self.authentication_profile_name = input; self
     }
     /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
     pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesInput`](crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput {
-            authentication_profile_name: self.authentication_profile_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesInput {
+                authentication_profile_name: self.authentication_profile_name
+                ,
+            }
+        )
     }
 }
+

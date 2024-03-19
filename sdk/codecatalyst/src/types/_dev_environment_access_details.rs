@@ -3,25 +3,23 @@
 /// <p>Information about connection details for a Dev Environment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DevEnvironmentAccessDetails {
+pub struct DevEnvironmentAccessDetails  {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     pub stream_url: ::std::string::String,
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub token_value: ::std::string::String,
 }
-impl DevEnvironmentAccessDetails {
+impl  DevEnvironmentAccessDetails  {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_url.deref()
+    pub fn stream_url(&self) -> & str {
+        use std::ops::Deref; self.stream_url.deref()
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(&self) -> &str {
-        use std::ops::Deref;
-        self.token_value.deref()
+    pub fn token_value(&self) -> & str {
+        use std::ops::Deref; self.token_value.deref()
     }
 }
-impl ::std::fmt::Debug for DevEnvironmentAccessDetails {
+impl  ::std::fmt::Debug for DevEnvironmentAccessDetails  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevEnvironmentAccessDetails");
         formatter.field("stream_url", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl DevEnvironmentAccessDetailsBuilder {
     }
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     pub fn set_stream_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_url = input;
-        self
+        self.stream_url = input; self
     }
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     pub fn get_stream_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl DevEnvironmentAccessDetailsBuilder {
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_value = input;
-        self
+        self.token_value = input; self
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     pub fn get_token_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl DevEnvironmentAccessDetailsBuilder {
     /// - [`stream_url`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::stream_url)
     /// - [`token_value`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::token_value)
     pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentAccessDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DevEnvironmentAccessDetails {
-            stream_url: self.stream_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_url",
-                    "stream_url was not specified but it is required when building DevEnvironmentAccessDetails",
-                )
-            })?,
-            token_value: self.token_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token_value",
-                    "token_value was not specified but it is required when building DevEnvironmentAccessDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DevEnvironmentAccessDetails {
+                stream_url: self.stream_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_url", "stream_url was not specified but it is required when building DevEnvironmentAccessDetails")
+                    )?
+                ,
+                token_value: self.token_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token_value", "token_value was not specified but it is required when building DevEnvironmentAccessDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {
         formatter.finish()
     }
 }
+

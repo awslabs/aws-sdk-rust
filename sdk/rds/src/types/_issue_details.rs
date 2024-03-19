@@ -3,13 +3,13 @@
 /// <p>The details of an issue with your DB instances, DB clusters, and DB parameter groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IssueDetails {
+pub struct IssueDetails  {
     /// <p>A detailed description of the issue when the recommendation category is <code>performance</code>.</p>
     pub performance_issue_details: ::std::option::Option<crate::types::PerformanceIssueDetails>,
 }
-impl IssueDetails {
+impl  IssueDetails  {
     /// <p>A detailed description of the issue when the recommendation category is <code>performance</code>.</p>
-    pub fn performance_issue_details(&self) -> ::std::option::Option<&crate::types::PerformanceIssueDetails> {
+    pub fn performance_issue_details(&self) -> ::std::option::Option<& crate::types::PerformanceIssueDetails> {
         self.performance_issue_details.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IssueDetailsBuilder {
     }
     /// <p>A detailed description of the issue when the recommendation category is <code>performance</code>.</p>
     pub fn set_performance_issue_details(mut self, input: ::std::option::Option<crate::types::PerformanceIssueDetails>) -> Self {
-        self.performance_issue_details = input;
-        self
+        self.performance_issue_details = input; self
     }
     /// <p>A detailed description of the issue when the recommendation category is <code>performance</code>.</p>
     pub fn get_performance_issue_details(&self) -> &::std::option::Option<crate::types::PerformanceIssueDetails> {
@@ -44,7 +43,9 @@ impl IssueDetailsBuilder {
     /// Consumes the builder and constructs a [`IssueDetails`](crate::types::IssueDetails).
     pub fn build(self) -> crate::types::IssueDetails {
         crate::types::IssueDetails {
-            performance_issue_details: self.performance_issue_details,
+            performance_issue_details: self.performance_issue_details
+            ,
         }
     }
 }
+

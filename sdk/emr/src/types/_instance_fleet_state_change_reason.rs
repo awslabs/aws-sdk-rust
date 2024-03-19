@@ -5,19 +5,19 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceFleetStateChangeReason {
+pub struct InstanceFleetStateChangeReason  {
     /// <p>A code corresponding to the reason the state change occurred.</p>
     pub code: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>,
     /// <p>An explanatory message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl InstanceFleetStateChangeReason {
+impl  InstanceFleetStateChangeReason  {
     /// <p>A code corresponding to the reason the state change occurred.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::InstanceFleetStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::InstanceFleetStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>An explanatory message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl InstanceFleetStateChangeReasonBuilder {
     }
     /// <p>A code corresponding to the reason the state change occurred.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A code corresponding to the reason the state change occurred.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::InstanceFleetStateChangeReasonCode> {
@@ -57,8 +56,7 @@ impl InstanceFleetStateChangeReasonBuilder {
     }
     /// <p>An explanatory message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An explanatory message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl InstanceFleetStateChangeReasonBuilder {
     /// Consumes the builder and constructs a [`InstanceFleetStateChangeReason`](crate::types::InstanceFleetStateChangeReason).
     pub fn build(self) -> crate::types::InstanceFleetStateChangeReason {
         crate::types::InstanceFleetStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

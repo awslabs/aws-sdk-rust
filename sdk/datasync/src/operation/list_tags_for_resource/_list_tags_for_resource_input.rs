@@ -3,7 +3,7 @@
 /// <p>ListTagsForResourceRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how many results that you want in the response.</p>
@@ -11,9 +11,9 @@ pub struct ListTagsForResourceInput {
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTagsForResourceInput {
+impl  ListTagsForResourceInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies how many results that you want in the response.</p>
@@ -21,7 +21,7 @@ impl ListTagsForResourceInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Specifies how many results that you want in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies how many results that you want in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -77,22 +75,24 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-            resource_arn: self.resource_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tags_for_resource::ListTagsForResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserInput {
+pub struct UpdateUserInput  {
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -13,20 +13,20 @@ pub struct UpdateUserInput {
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
     pub new_user_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateUserInput {
+impl  UpdateUserInput  {
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>New path for the IAM user. Include this parameter only if you're changing the user's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
-    pub fn new_path(&self) -> ::std::option::Option<&str> {
+    pub fn new_path(&self) -> ::std::option::Option<& str> {
         self.new_path.as_deref()
     }
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
-    pub fn new_user_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_user_name(&self) -> ::std::option::Option<& str> {
         self.new_user_name.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateUserInputBuilder {
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>Name of the user to update. If you're changing the name of the user, this is the original user name.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -73,8 +72,7 @@ impl UpdateUserInputBuilder {
     /// <p>New path for the IAM user. Include this parameter only if you're changing the user's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn set_new_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_path = input;
-        self
+        self.new_path = input; self
     }
     /// <p>New path for the IAM user. Include this parameter only if you're changing the user's path.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
@@ -90,8 +88,7 @@ impl UpdateUserInputBuilder {
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
     pub fn set_new_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_user_name = input;
-        self
+        self.new_user_name = input; self
     }
     /// <p>New name for the user. Include this parameter only if you're changing the user's name.</p>
     /// <p>IAM user, group, role, and policy names must be unique within the account. Names are not distinguished by case. For example, you cannot create resources named both "MyResource" and "myresource".</p>
@@ -100,10 +97,16 @@ impl UpdateUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
-            user_name: self.user_name,
-            new_path: self.new_path,
-            new_user_name: self.new_user_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_user::UpdateUserInput {
+                user_name: self.user_name
+                ,
+                new_path: self.new_path
+                ,
+                new_user_name: self.new_user_name
+                ,
+            }
+        )
     }
 }
+

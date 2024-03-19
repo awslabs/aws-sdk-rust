@@ -3,16 +3,17 @@
 /// <p>Contains information about the partition dimensions in a data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastorePartitions {
+pub struct DatastorePartitions  {
     /// <p>A list of partition dimensions in a data store.</p>
-    pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>>,
+    pub partitions: ::std::option::Option<::std::vec::Vec::<crate::types::DatastorePartition>>,
 }
-impl DatastorePartitions {
+impl  DatastorePartitions  {
     /// <p>A list of partition dimensions in a data store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.partitions.is_none()`.
-    pub fn partitions(&self) -> &[crate::types::DatastorePartition] {
-        self.partitions.as_deref().unwrap_or_default()
+    pub fn partitions(&self) -> & [crate::types::DatastorePartition] {
+        self.partitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DatastorePartitions {
@@ -26,7 +27,7 @@ impl DatastorePartitions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DatastorePartitionsBuilder {
-    pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>>,
+    pub(crate) partitions: ::std::option::Option<::std::vec::Vec::<crate::types::DatastorePartition>>,
 }
 impl DatastorePartitionsBuilder {
     /// Appends an item to `partitions`.
@@ -36,21 +37,24 @@ impl DatastorePartitionsBuilder {
     /// <p>A list of partition dimensions in a data store.</p>
     pub fn partitions(mut self, input: crate::types::DatastorePartition) -> Self {
         let mut v = self.partitions.unwrap_or_default();
-        v.push(input);
-        self.partitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.partitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of partition dimensions in a data store.</p>
-    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>>) -> Self {
-        self.partitions = input;
-        self
+    pub fn set_partitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatastorePartition>>) -> Self {
+        self.partitions = input; self
     }
     /// <p>A list of partition dimensions in a data store.</p>
-    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>> {
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatastorePartition>> {
         &self.partitions
     }
     /// Consumes the builder and constructs a [`DatastorePartitions`](crate::types::DatastorePartitions).
     pub fn build(self) -> crate::types::DatastorePartitions {
-        crate::types::DatastorePartitions { partitions: self.partitions }
+        crate::types::DatastorePartitions {
+            partitions: self.partitions
+            ,
+        }
     }
 }
+

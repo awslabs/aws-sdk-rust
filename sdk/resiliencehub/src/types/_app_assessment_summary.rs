@@ -3,7 +3,7 @@
 /// <p>Defines an application assessment summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppAssessmentSummary {
+pub struct AppAssessmentSummary  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Version of an application.</p>
@@ -33,50 +33,49 @@ pub struct AppAssessmentSummary {
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub drift_status: ::std::option::Option<crate::types::DriftStatus>,
 }
-impl AppAssessmentSummary {
+impl  AppAssessmentSummary  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>Version of an application.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>Current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> &crate::types::AssessmentStatus {
+    pub fn assessment_status(&self) -> & crate::types::AssessmentStatus {
         &self.assessment_status
     }
     /// <p>Entity that invoked the assessment.</p>
-    pub fn invoker(&self) -> ::std::option::Option<&crate::types::AssessmentInvoker> {
+    pub fn invoker(&self) -> ::std::option::Option<& crate::types::AssessmentInvoker> {
         self.invoker.as_ref()
     }
     /// <p>Starting time for the action.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time for the action.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Message from the assessment run.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Name of the assessment.</p>
-    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_arn.deref()
+    pub fn assessment_arn(&self) -> & str {
+        use std::ops::Deref; self.assessment_arn.deref()
     }
     /// <p>TCurrent status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn compliance_status(&self) -> ::std::option::Option<& crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>Cost for an application.</p>
-    pub fn cost(&self) -> ::std::option::Option<&crate::types::Cost> {
+    pub fn cost(&self) -> ::std::option::Option<& crate::types::Cost> {
         self.cost.as_ref()
     }
     /// <p>Current resiliency score for the application.</p>
@@ -84,11 +83,11 @@ impl AppAssessmentSummary {
         self.resiliency_score
     }
     /// <p>Name of an application version.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
-    pub fn drift_status(&self) -> ::std::option::Option<&crate::types::DriftStatus> {
+    pub fn drift_status(&self) -> ::std::option::Option<& crate::types::DriftStatus> {
         self.drift_status.as_ref()
     }
 }
@@ -126,8 +125,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Version of an application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Version of an application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Current status of the assessment for the resiliency policy.</p>
     pub fn set_assessment_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
-        self.assessment_status = input;
-        self
+        self.assessment_status = input; self
     }
     /// <p>Current status of the assessment for the resiliency policy.</p>
     pub fn get_assessment_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
@@ -169,8 +165,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Entity that invoked the assessment.</p>
     pub fn set_invoker(mut self, input: ::std::option::Option<crate::types::AssessmentInvoker>) -> Self {
-        self.invoker = input;
-        self
+        self.invoker = input; self
     }
     /// <p>Entity that invoked the assessment.</p>
     pub fn get_invoker(&self) -> &::std::option::Option<crate::types::AssessmentInvoker> {
@@ -183,8 +178,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Starting time for the action.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Starting time for the action.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -197,8 +191,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>End time for the action.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>End time for the action.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -211,8 +204,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Message from the assessment run.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Message from the assessment run.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +217,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Name of the assessment.</p>
     pub fn set_assessment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>Name of the assessment.</p>
     pub fn get_assessment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -240,8 +231,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_assessment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_arn = input;
-        self
+        self.assessment_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_assessment_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +244,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>TCurrent status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.compliance_status = input;
-        self
+        self.compliance_status = input; self
     }
     /// <p>TCurrent status of compliance for the resiliency policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -268,8 +257,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Cost for an application.</p>
     pub fn set_cost(mut self, input: ::std::option::Option<crate::types::Cost>) -> Self {
-        self.cost = input;
-        self
+        self.cost = input; self
     }
     /// <p>Cost for an application.</p>
     pub fn get_cost(&self) -> &::std::option::Option<crate::types::Cost> {
@@ -282,8 +270,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Current resiliency score for the application.</p>
     pub fn set_resiliency_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.resiliency_score = input;
-        self
+        self.resiliency_score = input; self
     }
     /// <p>Current resiliency score for the application.</p>
     pub fn get_resiliency_score(&self) -> &::std::option::Option<f64> {
@@ -296,8 +283,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Name of an application version.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>Name of an application version.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,8 +296,7 @@ impl AppAssessmentSummaryBuilder {
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub fn set_drift_status(mut self, input: ::std::option::Option<crate::types::DriftStatus>) -> Self {
-        self.drift_status = input;
-        self
+        self.drift_status = input; self
     }
     /// <p>Indicates if compliance drifts (deviations) were detected while running an assessment for your application.</p>
     pub fn get_drift_status(&self) -> &::std::option::Option<crate::types::DriftStatus> {
@@ -322,31 +307,45 @@ impl AppAssessmentSummaryBuilder {
     /// - [`assessment_status`](crate::types::builders::AppAssessmentSummaryBuilder::assessment_status)
     /// - [`assessment_arn`](crate::types::builders::AppAssessmentSummaryBuilder::assessment_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AppAssessmentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppAssessmentSummary {
-            app_arn: self.app_arn,
-            app_version: self.app_version,
-            assessment_status: self.assessment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_status",
-                    "assessment_status was not specified but it is required when building AppAssessmentSummary",
-                )
-            })?,
-            invoker: self.invoker,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            message: self.message,
-            assessment_name: self.assessment_name,
-            assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_arn",
-                    "assessment_arn was not specified but it is required when building AppAssessmentSummary",
-                )
-            })?,
-            compliance_status: self.compliance_status,
-            cost: self.cost,
-            resiliency_score: self.resiliency_score.unwrap_or_default(),
-            version_name: self.version_name,
-            drift_status: self.drift_status,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppAssessmentSummary {
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                assessment_status: self.assessment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_status", "assessment_status was not specified but it is required when building AppAssessmentSummary")
+                    )?
+                ,
+                invoker: self.invoker
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                message: self.message
+                ,
+                assessment_name: self.assessment_name
+                ,
+                assessment_arn: self.assessment_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_arn", "assessment_arn was not specified but it is required when building AppAssessmentSummary")
+                    )?
+                ,
+                compliance_status: self.compliance_status
+                ,
+                cost: self.cost
+                ,
+                resiliency_score: self.resiliency_score
+                    .unwrap_or_default()
+                ,
+                version_name: self.version_name
+                ,
+                drift_status: self.drift_status
+                ,
+            }
+        )
     }
 }
+

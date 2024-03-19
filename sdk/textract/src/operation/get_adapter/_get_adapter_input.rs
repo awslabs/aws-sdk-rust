@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdapterInput {
+pub struct GetAdapterInput  {
     /// <p>A string containing a unique ID for the adapter.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAdapterInput {
+impl  GetAdapterInput  {
     /// <p>A string containing a unique ID for the adapter.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetAdapterInputBuilder {
     }
     /// <p>A string containing a unique ID for the adapter.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string containing a unique ID for the adapter.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetAdapterInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetAdapterInput`](crate::operation::get_adapter::GetAdapterInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_adapter::GetAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_adapter::GetAdapterInput { adapter_id: self.adapter_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_adapter::GetAdapterInput {
+                adapter_id: self.adapter_id
+                ,
+            }
+        )
     }
 }
+

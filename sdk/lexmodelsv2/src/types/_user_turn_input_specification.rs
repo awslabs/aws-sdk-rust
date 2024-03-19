@@ -3,25 +3,25 @@
 /// <p>Contains information about the user messages in the turn in the input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserTurnInputSpecification {
+pub struct UserTurnInputSpecification  {
     /// <p>The utterance input in the user turn.</p>
     pub utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
     /// <p>Request attributes of the user turn.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about the session state in the input.</p>
     pub session_state: ::std::option::Option<crate::types::InputSessionStateSpecification>,
 }
-impl UserTurnInputSpecification {
+impl  UserTurnInputSpecification  {
     /// <p>The utterance input in the user turn.</p>
-    pub fn utterance_input(&self) -> ::std::option::Option<&crate::types::UtteranceInputSpecification> {
+    pub fn utterance_input(&self) -> ::std::option::Option<& crate::types::UtteranceInputSpecification> {
         self.utterance_input.as_ref()
     }
     /// <p>Request attributes of the user turn.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>Contains information about the session state in the input.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::InputSessionStateSpecification> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::InputSessionStateSpecification> {
         self.session_state.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl UserTurnInputSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UserTurnInputSpecificationBuilder {
     pub(crate) utterance_input: ::std::option::Option<crate::types::UtteranceInputSpecification>,
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) session_state: ::std::option::Option<crate::types::InputSessionStateSpecification>,
 }
 impl UserTurnInputSpecificationBuilder {
@@ -49,8 +49,7 @@ impl UserTurnInputSpecificationBuilder {
     }
     /// <p>The utterance input in the user turn.</p>
     pub fn set_utterance_input(mut self, input: ::std::option::Option<crate::types::UtteranceInputSpecification>) -> Self {
-        self.utterance_input = input;
-        self
+        self.utterance_input = input; self
     }
     /// <p>The utterance input in the user turn.</p>
     pub fn get_utterance_input(&self) -> &::std::option::Option<crate::types::UtteranceInputSpecification> {
@@ -61,26 +60,18 @@ impl UserTurnInputSpecificationBuilder {
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
     ///
     /// <p>Request attributes of the user turn.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Request attributes of the user turn.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>Request attributes of the user turn.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>Contains information about the session state in the input.</p>
@@ -90,8 +81,7 @@ impl UserTurnInputSpecificationBuilder {
     }
     /// <p>Contains information about the session state in the input.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::InputSessionStateSpecification>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>Contains information about the session state in the input.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::InputSessionStateSpecification> {
@@ -100,9 +90,13 @@ impl UserTurnInputSpecificationBuilder {
     /// Consumes the builder and constructs a [`UserTurnInputSpecification`](crate::types::UserTurnInputSpecification).
     pub fn build(self) -> crate::types::UserTurnInputSpecification {
         crate::types::UserTurnInputSpecification {
-            utterance_input: self.utterance_input,
-            request_attributes: self.request_attributes,
-            session_state: self.session_state,
+            utterance_input: self.utterance_input
+            ,
+            request_attributes: self.request_attributes
+            ,
+            session_state: self.session_state
+            ,
         }
     }
 }
+

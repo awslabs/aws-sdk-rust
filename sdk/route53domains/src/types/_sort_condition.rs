@@ -3,19 +3,19 @@
 /// <p>Information for sorting a list of domains.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SortCondition {
+pub struct SortCondition  {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     pub name: crate::types::ListDomainsAttributeName,
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub sort_order: crate::types::SortOrder,
 }
-impl SortCondition {
+impl  SortCondition  {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub fn name(&self) -> &crate::types::ListDomainsAttributeName {
+    pub fn name(&self) -> & crate::types::ListDomainsAttributeName {
         &self.name
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-    pub fn sort_order(&self) -> &crate::types::SortOrder {
+    pub fn sort_order(&self) -> & crate::types::SortOrder {
         &self.sort_order
     }
 }
@@ -42,8 +42,7 @@ impl SortConditionBuilder {
     }
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ListDomainsAttributeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ListDomainsAttributeName> {
@@ -57,8 +56,7 @@ impl SortConditionBuilder {
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl SortConditionBuilder {
     /// - [`name`](crate::types::builders::SortConditionBuilder::name)
     /// - [`sort_order`](crate::types::builders::SortConditionBuilder::sort_order)
     pub fn build(self) -> ::std::result::Result<crate::types::SortCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SortCondition {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SortCondition",
-                )
-            })?,
-            sort_order: self.sort_order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sort_order",
-                    "sort_order was not specified but it is required when building SortCondition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SortCondition {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SortCondition")
+                    )?
+                ,
+                sort_order: self.sort_order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sort_order", "sort_order was not specified but it is required when building SortCondition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

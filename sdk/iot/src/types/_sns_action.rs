@@ -3,7 +3,7 @@
 /// <p>Describes an action to publish to an Amazon SNS topic.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsAction {
+pub struct SnsAction  {
     /// <p>The ARN of the SNS topic.</p>
     pub target_arn: ::std::string::String,
     /// <p>The ARN of the IAM role that grants access.</p>
@@ -11,19 +11,17 @@ pub struct SnsAction {
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub message_format: ::std::option::Option<crate::types::MessageFormat>,
 }
-impl SnsAction {
+impl  SnsAction  {
     /// <p>The ARN of the SNS topic.</p>
-    pub fn target_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.target_arn.deref()
+    pub fn target_arn(&self) -> & str {
+        use std::ops::Deref; self.target_arn.deref()
     }
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
-    pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormat> {
+    pub fn message_format(&self) -> ::std::option::Option<& crate::types::MessageFormat> {
         self.message_format.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl SnsActionBuilder {
     }
     /// <p>The ARN of the SNS topic.</p>
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The ARN of the SNS topic.</p>
     pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl SnsActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl SnsActionBuilder {
     }
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormat>) -> Self {
-        self.message_format = input;
-        self
+        self.message_format = input; self
     }
     /// <p>(Optional) The message format of the message to publish. Accepted values are "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</p>
     pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormat> {
@@ -92,20 +87,22 @@ impl SnsActionBuilder {
     /// - [`target_arn`](crate::types::builders::SnsActionBuilder::target_arn)
     /// - [`role_arn`](crate::types::builders::SnsActionBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SnsAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnsAction {
-            target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_arn",
-                    "target_arn was not specified but it is required when building SnsAction",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SnsAction",
-                )
-            })?,
-            message_format: self.message_format,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnsAction {
+                target_arn: self.target_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_arn", "target_arn was not specified but it is required when building SnsAction")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SnsAction")
+                    )?
+                ,
+                message_format: self.message_format
+                ,
+            }
+        )
     }
 }
+

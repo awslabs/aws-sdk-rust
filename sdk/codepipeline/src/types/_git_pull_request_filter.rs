@@ -3,27 +3,28 @@
 /// <p>The event criteria for the pull request trigger configuration, such as the lists of branches or file paths to include and exclude.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GitPullRequestFilter {
+pub struct GitPullRequestFilter  {
     /// <p>The field that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration.</p>
-    pub events: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestEventType>>,
+    pub events: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestEventType>>,
     /// <p>The field that specifies to filter on branches for the pull request trigger configuration.</p>
     pub branches: ::std::option::Option<crate::types::GitBranchFilterCriteria>,
     /// <p>The field that specifies to filter on file paths for the pull request trigger configuration.</p>
     pub file_paths: ::std::option::Option<crate::types::GitFilePathFilterCriteria>,
 }
-impl GitPullRequestFilter {
+impl  GitPullRequestFilter  {
     /// <p>The field that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.events.is_none()`.
-    pub fn events(&self) -> &[crate::types::GitPullRequestEventType] {
-        self.events.as_deref().unwrap_or_default()
+    pub fn events(&self) -> & [crate::types::GitPullRequestEventType] {
+        self.events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The field that specifies to filter on branches for the pull request trigger configuration.</p>
-    pub fn branches(&self) -> ::std::option::Option<&crate::types::GitBranchFilterCriteria> {
+    pub fn branches(&self) -> ::std::option::Option<& crate::types::GitBranchFilterCriteria> {
         self.branches.as_ref()
     }
     /// <p>The field that specifies to filter on file paths for the pull request trigger configuration.</p>
-    pub fn file_paths(&self) -> ::std::option::Option<&crate::types::GitFilePathFilterCriteria> {
+    pub fn file_paths(&self) -> ::std::option::Option<& crate::types::GitFilePathFilterCriteria> {
         self.file_paths.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl GitPullRequestFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GitPullRequestFilterBuilder {
-    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestEventType>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestEventType>>,
     pub(crate) branches: ::std::option::Option<crate::types::GitBranchFilterCriteria>,
     pub(crate) file_paths: ::std::option::Option<crate::types::GitFilePathFilterCriteria>,
 }
@@ -50,17 +51,16 @@ impl GitPullRequestFilterBuilder {
     /// <p>The field that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration.</p>
     pub fn events(mut self, input: crate::types::GitPullRequestEventType) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The field that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration.</p>
-    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestEventType>>) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestEventType>>) -> Self {
+        self.events = input; self
     }
     /// <p>The field that specifies which pull request events to filter on (opened, updated, closed) for the trigger configuration.</p>
-    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestEventType>> {
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GitPullRequestEventType>> {
         &self.events
     }
     /// <p>The field that specifies to filter on branches for the pull request trigger configuration.</p>
@@ -70,8 +70,7 @@ impl GitPullRequestFilterBuilder {
     }
     /// <p>The field that specifies to filter on branches for the pull request trigger configuration.</p>
     pub fn set_branches(mut self, input: ::std::option::Option<crate::types::GitBranchFilterCriteria>) -> Self {
-        self.branches = input;
-        self
+        self.branches = input; self
     }
     /// <p>The field that specifies to filter on branches for the pull request trigger configuration.</p>
     pub fn get_branches(&self) -> &::std::option::Option<crate::types::GitBranchFilterCriteria> {
@@ -84,8 +83,7 @@ impl GitPullRequestFilterBuilder {
     }
     /// <p>The field that specifies to filter on file paths for the pull request trigger configuration.</p>
     pub fn set_file_paths(mut self, input: ::std::option::Option<crate::types::GitFilePathFilterCriteria>) -> Self {
-        self.file_paths = input;
-        self
+        self.file_paths = input; self
     }
     /// <p>The field that specifies to filter on file paths for the pull request trigger configuration.</p>
     pub fn get_file_paths(&self) -> &::std::option::Option<crate::types::GitFilePathFilterCriteria> {
@@ -94,9 +92,13 @@ impl GitPullRequestFilterBuilder {
     /// Consumes the builder and constructs a [`GitPullRequestFilter`](crate::types::GitPullRequestFilter).
     pub fn build(self) -> crate::types::GitPullRequestFilter {
         crate::types::GitPullRequestFilter {
-            events: self.events,
-            branches: self.branches,
-            file_paths: self.file_paths,
+            events: self.events
+            ,
+            branches: self.branches
+            ,
+            file_paths: self.file_paths
+            ,
         }
     }
 }
+

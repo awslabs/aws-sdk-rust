@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about a backup job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BackupJob {
+pub struct BackupJob  {
     /// <p>The account ID that owns the backup job.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
@@ -42,7 +42,7 @@ pub struct BackupJob {
     pub bytes_transferred: ::std::option::Option<i64>,
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub backup_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Represents the type of backup for a backup job.</p>
     pub backup_type: ::std::option::Option<::std::string::String>,
     /// <p>This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job ID.</p>
@@ -59,49 +59,49 @@ pub struct BackupJob {
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
 }
-impl BackupJob {
+impl  BackupJob  {
     /// <p>The account ID that owns the backup job.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn backup_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_job_id(&self) -> ::std::option::Option<& str> {
         self.backup_job_id.as_deref()
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_date.as_ref()
     }
     /// <p>The current state of a backup job.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::BackupJobState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::BackupJobState> {
         self.state.as_ref()
     }
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
-    pub fn percent_done(&self) -> ::std::option::Option<&str> {
+    pub fn percent_done(&self) -> ::std::option::Option<& str> {
         self.percent_done.as_deref()
     }
     /// <p>The size, in bytes, of a backup.</p>
@@ -109,23 +109,23 @@ impl BackupJob {
         self.backup_size_in_bytes
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions to perform backup jobs.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::RecoveryPointCreator> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::RecoveryPointCreator> {
         self.created_by.as_ref()
     }
     /// <p>The date and time a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn expected_completion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expected_completion_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expected_completion_date.as_ref()
     }
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn start_by(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_by(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_by.as_ref()
     }
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
@@ -134,15 +134,15 @@ impl BackupJob {
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    pub fn backup_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn backup_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.backup_options.as_ref()
     }
     /// <p>Represents the type of backup for a backup job.</p>
-    pub fn backup_type(&self) -> ::std::option::Option<&str> {
+    pub fn backup_type(&self) -> ::std::option::Option<& str> {
         self.backup_type.as_deref()
     }
     /// <p>This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job ID.</p>
-    pub fn parent_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn parent_job_id(&self) -> ::std::option::Option<& str> {
         self.parent_job_id.as_deref()
     }
     /// <p>This is a boolean value indicating this is a parent (composite) backup job.</p>
@@ -150,18 +150,18 @@ impl BackupJob {
         self.is_parent
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>This is the date on which the backup job was initiated.</p>
-    pub fn initiation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn initiation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.initiation_date.as_ref()
     }
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
-    pub fn message_category(&self) -> ::std::option::Option<&str> {
+    pub fn message_category(&self) -> ::std::option::Option<& str> {
         self.message_category.as_deref()
     }
 }
@@ -194,7 +194,7 @@ pub struct BackupJobBuilder {
     pub(crate) start_by: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) bytes_transferred: ::std::option::Option<i64>,
-    pub(crate) backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) backup_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) backup_type: ::std::option::Option<::std::string::String>,
     pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_parent: ::std::option::Option<bool>,
@@ -210,8 +210,7 @@ impl BackupJobBuilder {
     }
     /// <p>The account ID that owns the backup job.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID that owns the backup job.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +223,7 @@ impl BackupJobBuilder {
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn set_backup_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_job_id = input;
-        self
+        self.backup_job_id = input; self
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -238,8 +236,7 @@ impl BackupJobBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +249,7 @@ impl BackupJobBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -266,8 +262,7 @@ impl BackupJobBuilder {
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +275,7 @@ impl BackupJobBuilder {
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +288,7 @@ impl BackupJobBuilder {
     }
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -308,8 +301,7 @@ impl BackupJobBuilder {
     }
     /// <p>The date and time a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_date = input;
-        self
+        self.completion_date = input; self
     }
     /// <p>The date and time a job to create a backup job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -322,8 +314,7 @@ impl BackupJobBuilder {
     }
     /// <p>The current state of a backup job.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of a backup job.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
@@ -336,8 +327,7 @@ impl BackupJobBuilder {
     }
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +340,7 @@ impl BackupJobBuilder {
     }
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
     pub fn set_percent_done(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.percent_done = input;
-        self
+        self.percent_done = input; self
     }
     /// <p>Contains an estimated percentage complete of a job at the time the job status was queried.</p>
     pub fn get_percent_done(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,8 +353,7 @@ impl BackupJobBuilder {
     }
     /// <p>The size, in bytes, of a backup.</p>
     pub fn set_backup_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.backup_size_in_bytes = input;
-        self
+        self.backup_size_in_bytes = input; self
     }
     /// <p>The size, in bytes, of a backup.</p>
     pub fn get_backup_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -378,8 +366,7 @@ impl BackupJobBuilder {
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions to perform backup jobs.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code> in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those strings lack permissions to perform backup jobs.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -392,8 +379,7 @@ impl BackupJobBuilder {
     }
     /// <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::RecoveryPointCreator>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Contains identifying information about the creation of a backup job, including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan used to create it.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::RecoveryPointCreator> {
@@ -406,8 +392,7 @@ impl BackupJobBuilder {
     }
     /// <p>The date and time a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_expected_completion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expected_completion_date = input;
-        self
+        self.expected_completion_date = input; self
     }
     /// <p>The date and time a job to back up resources is expected to be completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_expected_completion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -420,8 +405,7 @@ impl BackupJobBuilder {
     }
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_start_by(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_by = input;
-        self
+        self.start_by = input; self
     }
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job must be started before it is canceled. The value is calculated by adding the start window to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_start_by(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -434,8 +418,7 @@ impl BackupJobBuilder {
     }
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -448,8 +431,7 @@ impl BackupJobBuilder {
     }
     /// <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
     pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_transferred = input;
-        self
+        self.bytes_transferred = input; self
     }
     /// <p>The size in bytes transferred to a backup vault at the time that the job status was queried.</p>
     pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
@@ -461,28 +443,20 @@ impl BackupJobBuilder {
     ///
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    pub fn backup_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn backup_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.backup_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.backup_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.backup_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    pub fn set_backup_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.backup_options = input;
-        self
+    pub fn set_backup_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.backup_options = input; self
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
-    pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.backup_options
     }
     /// <p>Represents the type of backup for a backup job.</p>
@@ -492,8 +466,7 @@ impl BackupJobBuilder {
     }
     /// <p>Represents the type of backup for a backup job.</p>
     pub fn set_backup_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_type = input;
-        self
+        self.backup_type = input; self
     }
     /// <p>Represents the type of backup for a backup job.</p>
     pub fn get_backup_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -506,8 +479,7 @@ impl BackupJobBuilder {
     }
     /// <p>This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job ID.</p>
     pub fn set_parent_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_job_id = input;
-        self
+        self.parent_job_id = input; self
     }
     /// <p>This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job ID.</p>
     pub fn get_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -520,8 +492,7 @@ impl BackupJobBuilder {
     }
     /// <p>This is a boolean value indicating this is a parent (composite) backup job.</p>
     pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_parent = input;
-        self
+        self.is_parent = input; self
     }
     /// <p>This is a boolean value indicating this is a parent (composite) backup job.</p>
     pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
@@ -534,8 +505,7 @@ impl BackupJobBuilder {
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -548,8 +518,7 @@ impl BackupJobBuilder {
     }
     /// <p>This is the date on which the backup job was initiated.</p>
     pub fn set_initiation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.initiation_date = input;
-        self
+        self.initiation_date = input; self
     }
     /// <p>This is the date on which the backup job was initiated.</p>
     pub fn get_initiation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -568,8 +537,7 @@ impl BackupJobBuilder {
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_category = input;
-        self
+        self.message_category = input; self
     }
     /// <p>This parameter is the job count for the specified message category.</p>
     /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
@@ -581,31 +549,58 @@ impl BackupJobBuilder {
     /// Consumes the builder and constructs a [`BackupJob`](crate::types::BackupJob).
     pub fn build(self) -> crate::types::BackupJob {
         crate::types::BackupJob {
-            account_id: self.account_id,
-            backup_job_id: self.backup_job_id,
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_arn: self.backup_vault_arn,
-            recovery_point_arn: self.recovery_point_arn,
-            resource_arn: self.resource_arn,
-            creation_date: self.creation_date,
-            completion_date: self.completion_date,
-            state: self.state,
-            status_message: self.status_message,
-            percent_done: self.percent_done,
-            backup_size_in_bytes: self.backup_size_in_bytes,
-            iam_role_arn: self.iam_role_arn,
-            created_by: self.created_by,
-            expected_completion_date: self.expected_completion_date,
-            start_by: self.start_by,
-            resource_type: self.resource_type,
-            bytes_transferred: self.bytes_transferred,
-            backup_options: self.backup_options,
-            backup_type: self.backup_type,
-            parent_job_id: self.parent_job_id,
-            is_parent: self.is_parent.unwrap_or_default(),
-            resource_name: self.resource_name,
-            initiation_date: self.initiation_date,
-            message_category: self.message_category,
+            account_id: self.account_id
+            ,
+            backup_job_id: self.backup_job_id
+            ,
+            backup_vault_name: self.backup_vault_name
+            ,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            recovery_point_arn: self.recovery_point_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            creation_date: self.creation_date
+            ,
+            completion_date: self.completion_date
+            ,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
+            percent_done: self.percent_done
+            ,
+            backup_size_in_bytes: self.backup_size_in_bytes
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            created_by: self.created_by
+            ,
+            expected_completion_date: self.expected_completion_date
+            ,
+            start_by: self.start_by
+            ,
+            resource_type: self.resource_type
+            ,
+            bytes_transferred: self.bytes_transferred
+            ,
+            backup_options: self.backup_options
+            ,
+            backup_type: self.backup_type
+            ,
+            parent_job_id: self.parent_job_id
+            ,
+            is_parent: self.is_parent
+                .unwrap_or_default()
+            ,
+            resource_name: self.resource_name
+            ,
+            initiation_date: self.initiation_date
+            ,
+            message_category: self.message_category
+            ,
         }
     }
 }
+

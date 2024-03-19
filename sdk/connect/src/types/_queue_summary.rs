@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueueSummary {
+pub struct QueueSummary  {
     /// <p>The identifier of the queue.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
@@ -17,29 +17,29 @@ pub struct QueueSummary {
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
-impl QueueSummary {
+impl  QueueSummary  {
     /// <p>The identifier of the queue.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the queue.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of queue.</p>
-    pub fn queue_type(&self) -> ::std::option::Option<&crate::types::QueueType> {
+    pub fn queue_type(&self) -> ::std::option::Option<& crate::types::QueueType> {
         self.queue_type.as_ref()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The identifier of the queue.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the queue.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the queue.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The type of queue.</p>
     pub fn set_queue_type(mut self, input: ::std::option::Option<crate::types::QueueType>) -> Self {
-        self.queue_type = input;
-        self
+        self.queue_type = input; self
     }
     /// <p>The type of queue.</p>
     pub fn get_queue_type(&self) -> &::std::option::Option<crate::types::QueueType> {
@@ -125,8 +121,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl QueueSummaryBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl QueueSummaryBuilder {
     /// Consumes the builder and constructs a [`QueueSummary`](crate::types::QueueSummary).
     pub fn build(self) -> crate::types::QueueSummary {
         crate::types::QueueSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            queue_type: self.queue_type,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            queue_type: self.queue_type
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
         }
     }
 }
+

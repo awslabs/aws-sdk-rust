@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataIngestionJobsOutput {
+pub struct ListDataIngestionJobsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
-    pub data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
+    pub data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }
-impl ListDataIngestionJobsOutput {
+impl  ListDataIngestionJobsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_ingestion_job_summaries.is_none()`.
-    pub fn data_ingestion_job_summaries(&self) -> &[crate::types::DataIngestionJobSummary] {
-        self.data_ingestion_job_summaries.as_deref().unwrap_or_default()
+    pub fn data_ingestion_job_summaries(&self) -> & [crate::types::DataIngestionJobSummary] {
+        self.data_ingestion_job_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataIngestionJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataIngestionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsOutput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput).
     pub fn builder() -> crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListDataIngestionJobsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataIngestionJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>,
+    pub(crate) data_ingestion_job_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::DataIngestionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListDataIngestionJobsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListDataIngestionJobsOutputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListDataIngestionJobsOutputBuilder {
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
     pub fn data_ingestion_job_summaries(mut self, input: crate::types::DataIngestionJobSummary) -> Self {
         let mut v = self.data_ingestion_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.data_ingestion_job_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_ingestion_job_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
-    pub fn set_data_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>>) -> Self {
-        self.data_ingestion_job_summaries = input;
-        self
+    pub fn set_data_ingestion_job_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataIngestionJobSummary>>) -> Self {
+        self.data_ingestion_job_summaries = input; self
     }
     /// <p>Specifies information about the specific data ingestion job, including dataset name and status.</p>
-    pub fn get_data_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataIngestionJobSummary>> {
+    pub fn get_data_ingestion_job_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataIngestionJobSummary>> {
         &self.data_ingestion_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataIngestionJobsOutput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput).
     pub fn build(self) -> crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput {
         crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput {
-            next_token: self.next_token,
-            data_ingestion_job_summaries: self.data_ingestion_job_summaries,
+            next_token: self.next_token
+            ,
+            data_ingestion_job_summaries: self.data_ingestion_job_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

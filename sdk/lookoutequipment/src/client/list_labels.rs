@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLabels`](crate::operation::list_labels::builders::ListLabelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`label_group_name(impl Into<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::label_group_name) / [`set_label_group_name(Option<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_label_group_name):<br>required: **true**<br><p>Returns the name of the label group.</p><br>
     ///   - [`interval_start_time(DateTime)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::interval_start_time) / [`set_interval_start_time(Option<DateTime>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_interval_start_time):<br>required: **false**<br><p>Returns all the labels with a end time equal to or later than the start time given.</p><br>
     ///   - [`interval_end_time(DateTime)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::interval_end_time) / [`set_interval_end_time(Option<DateTime>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_interval_end_time):<br>required: **false**<br><p>Returns all labels with a start time earlier than the end time given.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`equipment(impl Into<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::equipment) / [`set_equipment(Option<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_equipment):<br>required: **false**<br><p>Lists the labels that pertain to a particular piece of equipment.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque pagination token indicating where to continue the listing of label groups.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_labels::builders::ListLabelsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of labels to list.</p><br>
-    /// - On success, responds with [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput) with field(s):
+                            /// - On success, responds with [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_labels::ListLabelsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     ///   - [`label_summaries(Option<Vec::<LabelSummary>>)`](crate::operation::list_labels::ListLabelsOutput::label_summaries): <p>A summary of the items in the label group.</p><note>  <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p> </note>
-    /// - On failure, responds with [`SdkError<ListLabelsError>`](crate::operation::list_labels::ListLabelsError)
+                            /// - On failure, responds with [`SdkError<ListLabelsError>`](crate::operation::list_labels::ListLabelsError)
     pub fn list_labels(&self) -> crate::operation::list_labels::builders::ListLabelsFluentBuilder {
-        crate::operation::list_labels::builders::ListLabelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_labels::builders::ListLabelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

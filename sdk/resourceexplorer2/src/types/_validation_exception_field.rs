@@ -3,22 +3,20 @@
 /// <p>A structure that describes a request field with a validation error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the request field that had a validation error.</p>
     pub name: ::std::string::String,
     /// <p>The validation error caused by the request field.</p>
     pub validation_issue: ::std::string::String,
 }
-impl ValidationExceptionField {
+impl  ValidationExceptionField  {
     /// <p>The name of the request field that had a validation error.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The validation error caused by the request field.</p>
-    pub fn validation_issue(&self) -> &str {
-        use std::ops::Deref;
-        self.validation_issue.deref()
+    pub fn validation_issue(&self) -> & str {
+        use std::ops::Deref; self.validation_issue.deref()
     }
 }
 impl ValidationExceptionField {
@@ -44,8 +42,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The name of the request field that had a validation error.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the request field that had a validation error.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The validation error caused by the request field.</p>
     pub fn set_validation_issue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_issue = input;
-        self
+        self.validation_issue = input; self
     }
     /// <p>The validation error caused by the request field.</p>
     pub fn get_validation_issue(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ValidationExceptionFieldBuilder {
     /// - [`name`](crate::types::builders::ValidationExceptionFieldBuilder::name)
     /// - [`validation_issue`](crate::types::builders::ValidationExceptionFieldBuilder::validation_issue)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationExceptionField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationExceptionField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ValidationExceptionField",
-                )
-            })?,
-            validation_issue: self.validation_issue.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "validation_issue",
-                    "validation_issue was not specified but it is required when building ValidationExceptionField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationExceptionField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ValidationExceptionField")
+                    )?
+                ,
+                validation_issue: self.validation_issue
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("validation_issue", "validation_issue was not specified but it is required when building ValidationExceptionField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

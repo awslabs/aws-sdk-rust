@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service instance pipeline resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ServicePipeline {
+pub struct ServicePipeline  {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     pub arn: ::std::string::String,
     /// <p>The time when the service pipeline was created.</p>
@@ -29,61 +29,57 @@ pub struct ServicePipeline {
     /// <p>The ID of the last successful deployment of this service pipeline.</p>
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl ServicePipeline {
+impl  ServicePipeline  {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The time when the service pipeline was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_deployment_attempted_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_deployment_attempted_at
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_deployment_succeeded_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_deployment_succeeded_at
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> & str {
+        use std::ops::Deref; self.template_name.deref()
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_major_version.deref()
+    pub fn template_major_version(&self) -> & str {
+        use std::ops::Deref; self.template_major_version.deref()
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_minor_version.deref()
+    pub fn template_minor_version(&self) -> & str {
+        use std::ops::Deref; self.template_minor_version.deref()
     }
     /// <p>The deployment status of the service pipeline.</p>
-    pub fn deployment_status(&self) -> &crate::types::DeploymentStatus {
+    pub fn deployment_status(&self) -> & crate::types::DeploymentStatus {
         &self.deployment_status
     }
     /// <p>A service pipeline deployment status message.</p>
-    pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> ::std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
-    pub fn spec(&self) -> ::std::option::Option<&str> {
+    pub fn spec(&self) -> ::std::option::Option<& str> {
         self.spec.as_deref()
     }
     /// <p>The ID of the last attempted deployment of this service pipeline.</p>
-    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_attempted_deployment_id.as_deref()
     }
     /// <p>The ID of the last successful deployment of this service pipeline.</p>
-    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_succeeded_deployment_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for ServicePipeline {
+impl  ::std::fmt::Debug for ServicePipeline  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServicePipeline");
         formatter.field("arn", &self.arn);
@@ -134,8 +130,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The time when the service pipeline was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the service pipeline was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -164,8 +158,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
     pub fn set_last_deployment_attempted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_attempted_at = input;
-        self
+        self.last_deployment_attempted_at = input; self
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
     pub fn get_last_deployment_attempted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -179,8 +172,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
     pub fn set_last_deployment_succeeded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_succeeded_at = input;
-        self
+        self.last_deployment_succeeded_at = input; self
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
     pub fn get_last_deployment_succeeded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +186,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -209,8 +200,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn set_template_major_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_major_version = input;
-        self
+        self.template_major_version = input; self
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +214,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn set_template_minor_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_minor_version = input;
-        self
+        self.template_minor_version = input; self
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +228,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The deployment status of the service pipeline.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The deployment status of the service pipeline.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -253,8 +241,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>A service pipeline deployment status message.</p>
     pub fn set_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_status_message = input;
-        self
+        self.deployment_status_message = input; self
     }
     /// <p>A service pipeline deployment status message.</p>
     pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,8 +254,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,8 +267,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The ID of the last attempted deployment of this service pipeline.</p>
     pub fn set_last_attempted_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_attempted_deployment_id = input;
-        self
+        self.last_attempted_deployment_id = input; self
     }
     /// <p>The ID of the last attempted deployment of this service pipeline.</p>
     pub fn get_last_attempted_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,8 +280,7 @@ impl ServicePipelineBuilder {
     }
     /// <p>The ID of the last successful deployment of this service pipeline.</p>
     pub fn set_last_succeeded_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_succeeded_deployment_id = input;
-        self
+        self.last_succeeded_deployment_id = input; self
     }
     /// <p>The ID of the last successful deployment of this service pipeline.</p>
     pub fn get_last_succeeded_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -313,60 +297,58 @@ impl ServicePipelineBuilder {
     /// - [`template_minor_version`](crate::types::builders::ServicePipelineBuilder::template_minor_version)
     /// - [`deployment_status`](crate::types::builders::ServicePipelineBuilder::deployment_status)
     pub fn build(self) -> ::std::result::Result<crate::types::ServicePipeline, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServicePipeline {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            last_deployment_attempted_at: self.last_deployment_attempted_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_deployment_attempted_at",
-                    "last_deployment_attempted_at was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_deployment_succeeded_at",
-                    "last_deployment_succeeded_at was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_major_version",
-                    "template_major_version was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_minor_version",
-                    "template_minor_version was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_status",
-                    "deployment_status was not specified but it is required when building ServicePipeline",
-                )
-            })?,
-            deployment_status_message: self.deployment_status_message,
-            spec: self.spec,
-            last_attempted_deployment_id: self.last_attempted_deployment_id,
-            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServicePipeline {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_deployment_attempted_at", "last_deployment_attempted_at was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_deployment_succeeded_at", "last_deployment_succeeded_at was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                template_name: self.template_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_name", "template_name was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                template_major_version: self.template_major_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_major_version", "template_major_version was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                template_minor_version: self.template_minor_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_minor_version", "template_minor_version was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                deployment_status: self.deployment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_status", "deployment_status was not specified but it is required when building ServicePipeline")
+                    )?
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                spec: self.spec
+                ,
+                last_attempted_deployment_id: self.last_attempted_deployment_id
+                ,
+                last_succeeded_deployment_id: self.last_succeeded_deployment_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ServicePipelineBuilder {
@@ -387,3 +369,4 @@ impl ::std::fmt::Debug for ServicePipelineBuilder {
         formatter.finish()
     }
 }
+

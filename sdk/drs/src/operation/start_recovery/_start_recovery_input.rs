@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartRecoveryInput {
+pub struct StartRecoveryInput  {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub source_servers: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>,
+    pub source_servers: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecoveryRequestSourceServer>>,
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub is_drill: ::std::option::Option<bool>,
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartRecoveryInput {
+impl  StartRecoveryInput  {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_servers.is_none()`.
-    pub fn source_servers(&self) -> &[crate::types::StartRecoveryRequestSourceServer] {
-        self.source_servers.as_deref().unwrap_or_default()
+    pub fn source_servers(&self) -> & [crate::types::StartRecoveryRequestSourceServer] {
+        self.source_servers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn is_drill(&self) -> ::std::option::Option<bool> {
         self.is_drill
     }
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for StartRecoveryInput {
+impl  ::std::fmt::Debug for StartRecoveryInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartRecoveryInput");
         formatter.field("source_servers", &self.source_servers);
@@ -46,9 +47,9 @@ impl StartRecoveryInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartRecoveryInputBuilder {
-    pub(crate) source_servers: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>,
+    pub(crate) source_servers: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecoveryRequestSourceServer>>,
     pub(crate) is_drill: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartRecoveryInputBuilder {
     /// Appends an item to `source_servers`.
@@ -58,17 +59,16 @@ impl StartRecoveryInputBuilder {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
     pub fn source_servers(mut self, input: crate::types::StartRecoveryRequestSourceServer) -> Self {
         let mut v = self.source_servers.unwrap_or_default();
-        v.push(input);
-        self.source_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub fn set_source_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>) -> Self {
-        self.source_servers = input;
-        self
+    pub fn set_source_servers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StartRecoveryRequestSourceServer>>) -> Self {
+        self.source_servers = input; self
     }
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub fn get_source_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>> {
+    pub fn get_source_servers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StartRecoveryRequestSourceServer>> {
         &self.source_servers
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
@@ -78,8 +78,7 @@ impl StartRecoveryInputBuilder {
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn set_is_drill(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_drill = input;
-        self
+        self.is_drill = input; self
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
@@ -92,28 +91,30 @@ impl StartRecoveryInputBuilder {
     /// <p>The tags to be associated with the Recovery Job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be associated with the Recovery Job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_recovery::StartRecoveryInput {
-            source_servers: self.source_servers,
-            is_drill: self.is_drill,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_recovery::StartRecoveryInput {
+                source_servers: self.source_servers
+                ,
+                is_drill: self.is_drill
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartRecoveryInputBuilder {
@@ -125,3 +126,4 @@ impl ::std::fmt::Debug for StartRecoveryInputBuilder {
         formatter.finish()
     }
 }
+

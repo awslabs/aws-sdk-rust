@@ -3,7 +3,7 @@
 /// <p>The physical capacity of the Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Capacity {
+pub struct Capacity  {
     /// <p>The name of the type of capacity, such as memory.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measure for the type of capacity.</p>
@@ -15,13 +15,13 @@ pub struct Capacity {
     /// <p>The amount of capacity available for use on the device.</p>
     pub available: ::std::option::Option<i64>,
 }
-impl Capacity {
+impl  Capacity  {
     /// <p>The name of the type of capacity, such as memory.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unit of measure for the type of capacity.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The total capacity on the device.</p>
@@ -62,8 +62,7 @@ impl CapacityBuilder {
     }
     /// <p>The name of the type of capacity, such as memory.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the type of capacity, such as memory.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CapacityBuilder {
     }
     /// <p>The unit of measure for the type of capacity.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measure for the type of capacity.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CapacityBuilder {
     }
     /// <p>The total capacity on the device.</p>
     pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total capacity on the device.</p>
     pub fn get_total(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl CapacityBuilder {
     }
     /// <p>The amount of capacity used on the device.</p>
     pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.used = input;
-        self
+        self.used = input; self
     }
     /// <p>The amount of capacity used on the device.</p>
     pub fn get_used(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl CapacityBuilder {
     }
     /// <p>The amount of capacity available for use on the device.</p>
     pub fn set_available(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.available = input;
-        self
+        self.available = input; self
     }
     /// <p>The amount of capacity available for use on the device.</p>
     pub fn get_available(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,17 @@ impl CapacityBuilder {
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {
         crate::types::Capacity {
-            name: self.name,
-            unit: self.unit,
-            total: self.total,
-            used: self.used,
-            available: self.available,
+            name: self.name
+            ,
+            unit: self.unit
+            ,
+            total: self.total
+            ,
+            used: self.used
+            ,
+            available: self.available
+            ,
         }
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_input:
 
 impl SimulateCustomPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.simulate_custom_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.simulate_custom_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SimulateCustomPolicy`.
-///
+/// 
 /// <p>Simulate how a set of IAM policies and optionally a resource-based policy works with a list of API operations and Amazon Web Services resources to determine the policies' effective permissions. The policies are provided as strings.</p>
 /// <p>The simulation does not perform the API operations; it only checks the authorization to determine if the simulated policies allow or deny the operations. You can simulate resources that don't exist in your account.</p>
 /// <p>If you want to simulate existing policies that are attached to an IAM user, group, or role, use <code>SimulatePrincipalPolicy</code> instead.</p>
@@ -32,33 +29,32 @@ impl SimulateCustomPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SimulateCustomPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyInputBuilder,
+                    inner: crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
-    > for SimulateCustomPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
-            crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
+                    crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
+                > for SimulateCustomPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
+                        crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SimulateCustomPolicyFluentBuilder {
     /// Creates a new `SimulateCustomPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,59 +63,50 @@ impl SimulateCustomPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::simulate_custom_policy::SimulateCustomPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::simulate_custom_policy::SimulateCustomPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
-        crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::simulate_custom_policy::SimulateCustomPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::simulate_custom_policy::SimulateCustomPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::simulate_custom_policy::SimulateCustomPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput, crate::operation::simulate_custom_policy::SimulateCustomPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator {
-        crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator {
+                                crate::operation::simulate_custom_policy::paginator::SimulateCustomPolicyPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PolicyInputList`.
     ///
     /// To override the contents of this collection use [`set_policy_input_list`](Self::set_policy_input_list).
@@ -150,7 +137,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn set_policy_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_policy_input_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_policy_input_list(input);
         self
     }
@@ -165,7 +152,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn get_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_policy_input_list()
     }
     /// Appends an item to `PermissionsBoundaryPolicyInputList`.
@@ -198,7 +185,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn set_permissions_boundary_policy_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_permissions_boundary_policy_input_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_permissions_boundary_policy_input_list(input);
         self
     }
@@ -213,7 +200,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn get_permissions_boundary_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_permissions_boundary_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_permissions_boundary_policy_input_list()
     }
     /// Appends an item to `ActionNames`.
@@ -226,12 +213,12 @@ impl SimulateCustomPolicyFluentBuilder {
         self
     }
     /// <p>A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation does not support using wildcards (*) in an action name.</p>
-    pub fn set_action_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_action_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_action_names(input);
         self
     }
     /// <p>A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation does not support using wildcards (*) in an action name.</p>
-    pub fn get_action_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_action_names()
     }
     /// Appends an item to `ResourceArns`.
@@ -254,7 +241,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p><note>
     /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
     /// </note>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
@@ -264,7 +251,7 @@ impl SimulateCustomPolicyFluentBuilder {
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p><note>
     /// <p>Simulation of resource-based policies isn't supported for IAM roles.</p>
     /// </note>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_resource_arns()
     }
     /// <p>A resource-based policy to include in the simulation provided as a string. Each resource in the simulation is treated as if it had this policy attached. You can include only one resource-based policy in a simulation.</p>
@@ -361,12 +348,12 @@ impl SimulateCustomPolicyFluentBuilder {
         self
     }
     /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.</p>
-    pub fn set_context_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContextEntry>>) -> Self {
+    pub fn set_context_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContextEntry>>) -> Self {
         self.inner = self.inner.set_context_entries(input);
         self
     }
     /// <p>A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.</p>
-    pub fn get_context_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextEntry>> {
+    pub fn get_context_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContextEntry>> {
         self.inner.get_context_entries()
     }
     /// <p>Specifies the type of simulation to run. Different API operations that support resource-based policies require different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not match one of the following scenarios, then you can omit this parameter. The following list shows each of the supported scenario values and the resources that you must define to run the simulation.</p>
@@ -460,3 +447,4 @@ impl SimulateCustomPolicyFluentBuilder {
         self.inner.get_marker()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventConfigurationByResourceTypesInput {
+pub struct UpdateEventConfigurationByResourceTypesInput  {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub device_registration_state: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
@@ -14,32 +14,31 @@ pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub message_delivery_status: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
-impl UpdateEventConfigurationByResourceTypesInput {
+impl  UpdateEventConfigurationByResourceTypesInput  {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn device_registration_state(&self) -> ::std::option::Option<&crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
+    pub fn device_registration_state(&self) -> ::std::option::Option<& crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
         self.device_registration_state.as_ref()
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn proximity(&self) -> ::std::option::Option<&crate::types::ProximityResourceTypeEventConfiguration> {
+    pub fn proximity(&self) -> ::std::option::Option<& crate::types::ProximityResourceTypeEventConfiguration> {
         self.proximity.as_ref()
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn join(&self) -> ::std::option::Option<&crate::types::JoinResourceTypeEventConfiguration> {
+    pub fn join(&self) -> ::std::option::Option<& crate::types::JoinResourceTypeEventConfiguration> {
         self.join.as_ref()
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn connection_status(&self) -> ::std::option::Option<&crate::types::ConnectionStatusResourceTypeEventConfiguration> {
+    pub fn connection_status(&self) -> ::std::option::Option<& crate::types::ConnectionStatusResourceTypeEventConfiguration> {
         self.connection_status.as_ref()
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn message_delivery_status(&self) -> ::std::option::Option<&crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
+    pub fn message_delivery_status(&self) -> ::std::option::Option<& crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
         self.message_delivery_status.as_ref()
     }
 }
 impl UpdateEventConfigurationByResourceTypesInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesInput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput).
-    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder {
         crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder::default()
     }
 }
@@ -61,12 +60,8 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
         self
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
-    pub fn set_device_registration_state(
-        mut self,
-        input: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
-    ) -> Self {
-        self.device_registration_state = input;
-        self
+    pub fn set_device_registration_state(mut self, input: ::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>) -> Self {
+        self.device_registration_state = input; self
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn get_device_registration_state(&self) -> &::std::option::Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration> {
@@ -79,8 +74,7 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_proximity(mut self, input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>) -> Self {
-        self.proximity = input;
-        self
+        self.proximity = input; self
     }
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn get_proximity(&self) -> &::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration> {
@@ -93,8 +87,7 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn set_join(mut self, input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>) -> Self {
-        self.join = input;
-        self
+        self.join = input; self
     }
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinResourceTypeEventConfiguration> {
@@ -107,8 +100,7 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_connection_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>) -> Self {
-        self.connection_status = input;
-        self
+        self.connection_status = input; self
     }
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration> {
@@ -120,32 +112,29 @@ impl UpdateEventConfigurationByResourceTypesInputBuilder {
         self
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
-    pub fn set_message_delivery_status(
-        mut self,
-        input: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>,
-    ) -> Self {
-        self.message_delivery_status = input;
-        self
+    pub fn set_message_delivery_status(mut self, input: ::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration>) -> Self {
+        self.message_delivery_status = input; self
     }
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn get_message_delivery_status(&self) -> &::std::option::Option<crate::types::MessageDeliveryStatusResourceTypeEventConfiguration> {
         &self.message_delivery_status
     }
     /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesInput`](crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput {
-                device_registration_state: self.device_registration_state,
-                proximity: self.proximity,
-                join: self.join,
-                connection_status: self.connection_status,
-                message_delivery_status: self.message_delivery_status,
-            },
+                device_registration_state: self.device_registration_state
+                ,
+                proximity: self.proximity
+                ,
+                join: self.join
+                ,
+                connection_status: self.connection_status
+                ,
+                message_delivery_status: self.message_delivery_status
+                ,
+            }
         )
     }
 }
+

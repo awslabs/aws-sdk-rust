@@ -3,7 +3,7 @@
 /// <p>The configuration of a body section.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BodySectionConfiguration {
+pub struct BodySectionConfiguration  {
     /// <p>The unique identifier of a body section.</p>
     pub section_id: ::std::string::String,
     /// <p>The configuration of content in a body section.</p>
@@ -13,22 +13,21 @@ pub struct BodySectionConfiguration {
     /// <p>The configuration of a page break for a section.</p>
     pub page_break_configuration: ::std::option::Option<crate::types::SectionPageBreakConfiguration>,
 }
-impl BodySectionConfiguration {
+impl  BodySectionConfiguration  {
     /// <p>The unique identifier of a body section.</p>
-    pub fn section_id(&self) -> &str {
-        use std::ops::Deref;
-        self.section_id.deref()
+    pub fn section_id(&self) -> & str {
+        use std::ops::Deref; self.section_id.deref()
     }
     /// <p>The configuration of content in a body section.</p>
-    pub fn content(&self) -> ::std::option::Option<&crate::types::BodySectionContent> {
+    pub fn content(&self) -> ::std::option::Option<& crate::types::BodySectionContent> {
         self.content.as_ref()
     }
     /// <p>The style options of a body section.</p>
-    pub fn style(&self) -> ::std::option::Option<&crate::types::SectionStyle> {
+    pub fn style(&self) -> ::std::option::Option<& crate::types::SectionStyle> {
         self.style.as_ref()
     }
     /// <p>The configuration of a page break for a section.</p>
-    pub fn page_break_configuration(&self) -> ::std::option::Option<&crate::types::SectionPageBreakConfiguration> {
+    pub fn page_break_configuration(&self) -> ::std::option::Option<& crate::types::SectionPageBreakConfiguration> {
         self.page_break_configuration.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl BodySectionConfigurationBuilder {
     }
     /// <p>The unique identifier of a body section.</p>
     pub fn set_section_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.section_id = input;
-        self
+        self.section_id = input; self
     }
     /// <p>The unique identifier of a body section.</p>
     pub fn get_section_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl BodySectionConfigurationBuilder {
     }
     /// <p>The configuration of content in a body section.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::BodySectionContent>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The configuration of content in a body section.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::BodySectionContent> {
@@ -86,8 +83,7 @@ impl BodySectionConfigurationBuilder {
     }
     /// <p>The style options of a body section.</p>
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::SectionStyle>) -> Self {
-        self.style = input;
-        self
+        self.style = input; self
     }
     /// <p>The style options of a body section.</p>
     pub fn get_style(&self) -> &::std::option::Option<crate::types::SectionStyle> {
@@ -100,8 +96,7 @@ impl BodySectionConfigurationBuilder {
     }
     /// <p>The configuration of a page break for a section.</p>
     pub fn set_page_break_configuration(mut self, input: ::std::option::Option<crate::types::SectionPageBreakConfiguration>) -> Self {
-        self.page_break_configuration = input;
-        self
+        self.page_break_configuration = input; self
     }
     /// <p>The configuration of a page break for a section.</p>
     pub fn get_page_break_configuration(&self) -> &::std::option::Option<crate::types::SectionPageBreakConfiguration> {
@@ -111,16 +106,21 @@ impl BodySectionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`section_id`](crate::types::builders::BodySectionConfigurationBuilder::section_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BodySectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BodySectionConfiguration {
-            section_id: self.section_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "section_id",
-                    "section_id was not specified but it is required when building BodySectionConfiguration",
-                )
-            })?,
-            content: self.content,
-            style: self.style,
-            page_break_configuration: self.page_break_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BodySectionConfiguration {
+                section_id: self.section_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("section_id", "section_id was not specified but it is required when building BodySectionConfiguration")
+                    )?
+                ,
+                content: self.content
+                ,
+                style: self.style
+                ,
+                page_break_configuration: self.page_break_configuration
+                ,
+            }
+        )
     }
 }
+

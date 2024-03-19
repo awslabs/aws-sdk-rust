@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserByPrincipalIdInput {
+pub struct DeleteUserByPrincipalIdInput  {
     /// <p>The principal ID of the user.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -11,17 +11,17 @@ pub struct DeleteUserByPrincipalIdInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserByPrincipalIdInput {
+impl  DeleteUserByPrincipalIdInput  {
     /// <p>The principal ID of the user.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DeleteUserByPrincipalIdInputBuilder {
     }
     /// <p>The principal ID of the user.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The principal ID of the user.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DeleteUserByPrincipalIdInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,24 +77,24 @@ impl DeleteUserByPrincipalIdInputBuilder {
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`DeleteUserByPrincipalIdInput`](crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput {
-            principal_id: self.principal_id,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput {
+                principal_id: self.principal_id
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

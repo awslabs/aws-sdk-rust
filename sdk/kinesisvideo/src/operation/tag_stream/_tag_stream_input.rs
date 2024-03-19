@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagStreamInput {
+pub struct TagStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl TagStreamInput {
+impl  TagStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl TagStreamInput {
 pub struct TagStreamInputBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl TagStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
@@ -47,8 +47,7 @@ impl TagStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl TagStreamInputBuilder {
     }
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the stream that you want to add the tag or tags to.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,25 +73,30 @@ impl TagStreamInputBuilder {
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagStreamInput`](crate::operation::tag_stream::TagStreamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::tag_stream::TagStreamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::tag_stream::TagStreamInput {
-            stream_arn: self.stream_arn,
-            stream_name: self.stream_name,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::tag_stream::TagStreamInput {
+                stream_arn: self.stream_arn
+                ,
+                stream_name: self.stream_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

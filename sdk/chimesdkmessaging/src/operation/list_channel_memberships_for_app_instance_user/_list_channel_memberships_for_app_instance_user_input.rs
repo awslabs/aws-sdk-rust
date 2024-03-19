@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListChannelMembershipsForAppInstanceUserInput {
+pub struct ListChannelMembershipsForAppInstanceUserInput  {
     /// <p>The ARN of the user or bot.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of users that you want returned.</p>
@@ -12,9 +12,9 @@ pub struct ListChannelMembershipsForAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub chime_bearer: ::std::option::Option<::std::string::String>,
 }
-impl ListChannelMembershipsForAppInstanceUserInput {
+impl  ListChannelMembershipsForAppInstanceUserInput  {
     /// <p>The ARN of the user or bot.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The maximum number of users that you want returned.</p>
@@ -22,15 +22,15 @@ impl ListChannelMembershipsForAppInstanceUserInput {
         self.max_results
     }
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> ::std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> ::std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
+impl  ::std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelMembershipsForAppInstanceUserInput");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -42,8 +42,7 @@ impl ::std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 }
 impl ListChannelMembershipsForAppInstanceUserInput {
     /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
-    pub fn builder(
-    ) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder {
+    pub fn builder() -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder {
         crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserInputBuilder::default()
     }
 }
@@ -65,8 +64,7 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the user or bot.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the user or bot.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     }
     /// <p>The maximum number of users that you want returned.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of users that you want returned.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -93,8 +90,7 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,27 +104,25 @@ impl ListChannelMembershipsForAppInstanceUserInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelMembershipsForAppInstanceUserInput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserInput {
-                app_instance_user_arn: self.app_instance_user_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                chime_bearer: self.chime_bearer,
-            },
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
         )
     }
 }
@@ -142,3 +136,4 @@ impl ::std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInputBuilder 
         formatter.finish()
     }
 }
+

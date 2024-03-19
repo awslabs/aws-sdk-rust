@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportLensOutput {
+pub struct ImportLensOutput  {
     /// <p>The ARN for the lens that was created or updated.</p>
     pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the imported lens.</p>
     pub status: ::std::option::Option<crate::types::ImportLensStatus>,
     _request_id: Option<String>,
 }
-impl ImportLensOutput {
+impl  ImportLensOutput  {
     /// <p>The ARN for the lens that was created or updated.</p>
-    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The status of the imported lens.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ImportLensStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ImportLensStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportLensOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportLensOutput {
     /// Creates a new builder-style object to manufacture [`ImportLensOutput`](crate::operation::import_lens::ImportLensOutput).
     pub fn builder() -> crate::operation::import_lens::builders::ImportLensOutputBuilder {
@@ -47,8 +47,7 @@ impl ImportLensOutputBuilder {
     }
     /// <p>The ARN for the lens that was created or updated.</p>
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The ARN for the lens that was created or updated.</p>
     pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ImportLensOutputBuilder {
     }
     /// <p>The status of the imported lens.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportLensStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the imported lens.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportLensStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportLensOutput`](crate::operation::import_lens::ImportLensOutput).
     pub fn build(self) -> crate::operation::import_lens::ImportLensOutput {
         crate::operation::import_lens::ImportLensOutput {
-            lens_arn: self.lens_arn,
-            status: self.status,
+            lens_arn: self.lens_arn
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

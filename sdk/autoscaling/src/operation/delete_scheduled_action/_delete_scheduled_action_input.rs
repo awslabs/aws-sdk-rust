@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScheduledActionInput {
+pub struct DeleteScheduledActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action to delete.</p>
     pub scheduled_action_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteScheduledActionInput {
+impl  DeleteScheduledActionInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name of the action to delete.</p>
-    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteScheduledActionInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteScheduledActionInputBuilder {
     }
     /// <p>The name of the action to delete.</p>
     pub fn set_scheduled_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_action_name = input;
-        self
+        self.scheduled_action_name = input; self
     }
     /// <p>The name of the action to delete.</p>
     pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_action_name
     }
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            scheduled_action_name: self.scheduled_action_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                scheduled_action_name: self.scheduled_action_name
+                ,
+            }
+        )
     }
 }
+

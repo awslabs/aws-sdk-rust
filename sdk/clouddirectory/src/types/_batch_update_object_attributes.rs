@@ -3,21 +3,20 @@
 /// <p>Represents the output of a <code>BatchUpdate</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateObjectAttributes {
+pub struct BatchUpdateObjectAttributes  {
     /// <p>Reference that identifies the object.</p>
     pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Attributes update structure.</p>
-    pub attribute_updates: ::std::vec::Vec<crate::types::ObjectAttributeUpdate>,
+    pub attribute_updates: ::std::vec::Vec::<crate::types::ObjectAttributeUpdate>,
 }
-impl BatchUpdateObjectAttributes {
+impl  BatchUpdateObjectAttributes  {
     /// <p>Reference that identifies the object.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Attributes update structure.</p>
-    pub fn attribute_updates(&self) -> &[crate::types::ObjectAttributeUpdate] {
-        use std::ops::Deref;
-        self.attribute_updates.deref()
+    pub fn attribute_updates(&self) -> & [crate::types::ObjectAttributeUpdate] {
+        use std::ops::Deref; self.attribute_updates.deref()
     }
 }
 impl BatchUpdateObjectAttributes {
@@ -32,7 +31,7 @@ impl BatchUpdateObjectAttributes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchUpdateObjectAttributesBuilder {
     pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
-    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    pub(crate) attribute_updates: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>>,
 }
 impl BatchUpdateObjectAttributesBuilder {
     /// <p>Reference that identifies the object.</p>
@@ -43,8 +42,7 @@ impl BatchUpdateObjectAttributesBuilder {
     }
     /// <p>Reference that identifies the object.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>Reference that identifies the object.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -57,31 +55,33 @@ impl BatchUpdateObjectAttributesBuilder {
     /// <p>Attributes update structure.</p>
     pub fn attribute_updates(mut self, input: crate::types::ObjectAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
-        v.push(input);
-        self.attribute_updates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_updates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>) -> Self {
-        self.attribute_updates = input;
-        self
+    pub fn set_attribute_updates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>>) -> Self {
+        self.attribute_updates = input; self
     }
     /// <p>Attributes update structure.</p>
-    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>> {
+    pub fn get_attribute_updates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ObjectAttributeUpdate>> {
         &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_updates`](crate::types::builders::BatchUpdateObjectAttributesBuilder::attribute_updates)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateObjectAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchUpdateObjectAttributes {
-            object_reference: self.object_reference,
-            attribute_updates: self.attribute_updates.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_updates",
-                    "attribute_updates was not specified but it is required when building BatchUpdateObjectAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchUpdateObjectAttributes {
+                object_reference: self.object_reference
+                ,
+                attribute_updates: self.attribute_updates
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_updates", "attribute_updates was not specified but it is required when building BatchUpdateObjectAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

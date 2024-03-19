@@ -3,7 +3,7 @@
 /// <p>The properties of a trial as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Trial {
+pub struct Trial  {
     /// <p>The name of the trial.</p>
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -25,62 +25,64 @@ pub struct Trial {
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
+    pub trial_component_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TrialComponentSimpleSummary>>,
 }
-impl Trial {
+impl  Trial  {
     /// <p>The name of the trial.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_arn(&self) -> ::std::option::Option<& str> {
         self.trial_arn.as_deref()
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The source of the trial.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::TrialSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::TrialSource> {
         self.source.as_ref()
     }
     /// <p>When the trial was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Who created the trial.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Who last modified the trial.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> ::std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> ::std::option::Option<& crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trial_component_summaries.is_none()`.
-    pub fn trial_component_summaries(&self) -> &[crate::types::TrialComponentSimpleSummary] {
-        self.trial_component_summaries.as_deref().unwrap_or_default()
+    pub fn trial_component_summaries(&self) -> & [crate::types::TrialComponentSimpleSummary] {
+        self.trial_component_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Trial {
@@ -104,8 +106,8 @@ pub struct TrialBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) trial_component_summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) trial_component_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::TrialComponentSimpleSummary>>,
 }
 impl TrialBuilder {
     /// <p>The name of the trial.</p>
@@ -115,8 +117,7 @@ impl TrialBuilder {
     }
     /// <p>The name of the trial.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
     }
     /// <p>The name of the trial.</p>
     pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +130,7 @@ impl TrialBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_arn = input;
-        self
+        self.trial_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn get_trial_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +143,7 @@ impl TrialBuilder {
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +156,7 @@ impl TrialBuilder {
     }
     /// <p>The name of the experiment the trial is part of.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment the trial is part of.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +169,7 @@ impl TrialBuilder {
     }
     /// <p>The source of the trial.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::TrialSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the trial.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::TrialSource> {
@@ -185,8 +182,7 @@ impl TrialBuilder {
     }
     /// <p>When the trial was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the trial was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -199,8 +195,7 @@ impl TrialBuilder {
     }
     /// <p>Who created the trial.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Who created the trial.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -213,8 +208,7 @@ impl TrialBuilder {
     }
     /// <p>Who last modified the trial.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>Who last modified the trial.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,8 +221,7 @@ impl TrialBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -241,8 +234,7 @@ impl TrialBuilder {
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
-        self.metadata_properties = input;
-        self
+        self.metadata_properties = input; self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
@@ -255,17 +247,16 @@ impl TrialBuilder {
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `trial_component_summaries`.
@@ -275,34 +266,46 @@ impl TrialBuilder {
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
     pub fn trial_component_summaries(mut self, input: crate::types::TrialComponentSimpleSummary) -> Self {
         let mut v = self.trial_component_summaries.unwrap_or_default();
-        v.push(input);
-        self.trial_component_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trial_component_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn set_trial_component_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>>) -> Self {
-        self.trial_component_summaries = input;
-        self
+    pub fn set_trial_component_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrialComponentSimpleSummary>>) -> Self {
+        self.trial_component_summaries = input; self
     }
     /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
-    pub fn get_trial_component_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>> {
+    pub fn get_trial_component_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrialComponentSimpleSummary>> {
         &self.trial_component_summaries
     }
     /// Consumes the builder and constructs a [`Trial`](crate::types::Trial).
     pub fn build(self) -> crate::types::Trial {
         crate::types::Trial {
-            trial_name: self.trial_name,
-            trial_arn: self.trial_arn,
-            display_name: self.display_name,
-            experiment_name: self.experiment_name,
-            source: self.source,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            metadata_properties: self.metadata_properties,
-            tags: self.tags,
-            trial_component_summaries: self.trial_component_summaries,
+            trial_name: self.trial_name
+            ,
+            trial_arn: self.trial_arn
+            ,
+            display_name: self.display_name
+            ,
+            experiment_name: self.experiment_name
+            ,
+            source: self.source
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            metadata_properties: self.metadata_properties
+            ,
+            tags: self.tags
+            ,
+            trial_component_summaries: self.trial_component_summaries
+            ,
         }
     }
 }
+

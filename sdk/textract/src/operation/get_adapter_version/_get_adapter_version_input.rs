@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAdapterVersionInput {
+pub struct GetAdapterVersionInput  {
     /// <p>A string specifying a unique ID for the adapter version you want to retrieve information for.</p>
     pub adapter_id: ::std::option::Option<::std::string::String>,
     /// <p>A string specifying the adapter version you want to retrieve information for.</p>
     pub adapter_version: ::std::option::Option<::std::string::String>,
 }
-impl GetAdapterVersionInput {
+impl  GetAdapterVersionInput  {
     /// <p>A string specifying a unique ID for the adapter version you want to retrieve information for.</p>
-    pub fn adapter_id(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_id(&self) -> ::std::option::Option<& str> {
         self.adapter_id.as_deref()
     }
     /// <p>A string specifying the adapter version you want to retrieve information for.</p>
-    pub fn adapter_version(&self) -> ::std::option::Option<&str> {
+    pub fn adapter_version(&self) -> ::std::option::Option<& str> {
         self.adapter_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAdapterVersionInputBuilder {
     }
     /// <p>A string specifying a unique ID for the adapter version you want to retrieve information for.</p>
     pub fn set_adapter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_id = input;
-        self
+        self.adapter_id = input; self
     }
     /// <p>A string specifying a unique ID for the adapter version you want to retrieve information for.</p>
     pub fn get_adapter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetAdapterVersionInputBuilder {
     }
     /// <p>A string specifying the adapter version you want to retrieve information for.</p>
     pub fn set_adapter_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.adapter_version = input;
-        self
+        self.adapter_version = input; self
     }
     /// <p>A string specifying the adapter version you want to retrieve information for.</p>
     pub fn get_adapter_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.adapter_version
     }
     /// Consumes the builder and constructs a [`GetAdapterVersionInput`](crate::operation::get_adapter_version::GetAdapterVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_adapter_version::GetAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_adapter_version::GetAdapterVersionInput {
-            adapter_id: self.adapter_id,
-            adapter_version: self.adapter_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_adapter_version::GetAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_adapter_version::GetAdapterVersionInput {
+                adapter_id: self.adapter_id
+                ,
+                adapter_version: self.adapter_version
+                ,
+            }
+        )
     }
 }
+

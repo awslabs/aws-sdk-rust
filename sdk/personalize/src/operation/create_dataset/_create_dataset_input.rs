@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p>The name for the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
@@ -25,19 +25,19 @@ pub struct CreateDatasetInput {
     /// </ul>
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateDatasetInput {
+impl  CreateDatasetInput  {
     /// <p>The name for the dataset.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The type of dataset.</p>
@@ -54,14 +54,15 @@ impl CreateDatasetInput {
     /// <li>
     /// <p>Action_Interactions</p></li>
     /// </ul>
-    pub fn dataset_type(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_type(&self) -> ::std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateDatasetInput {
@@ -79,7 +80,7 @@ pub struct CreateDatasetInputBuilder {
     pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name for the dataset.</p>
@@ -90,8 +91,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name for the dataset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the dataset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +105,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +159,7 @@ impl CreateDatasetInputBuilder {
     /// <p>Action_Interactions</p></li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
@@ -188,29 +185,34 @@ impl CreateDatasetInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
-            name: self.name,
-            schema_arn: self.schema_arn,
-            dataset_group_arn: self.dataset_group_arn,
-            dataset_type: self.dataset_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_dataset::CreateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                name: self.name
+                ,
+                schema_arn: self.schema_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                dataset_type: self.dataset_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

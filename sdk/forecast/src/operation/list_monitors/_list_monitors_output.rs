@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMonitorsOutput {
+pub struct ListMonitorsOutput  {
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>,
+    pub monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorSummary>>,
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMonitorsOutput {
+impl  ListMonitorsOutput  {
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
-    pub fn monitors(&self) -> &[crate::types::MonitorSummary] {
-        self.monitors.as_deref().unwrap_or_default()
+    pub fn monitors(&self) -> & [crate::types::MonitorSummary] {
+        self.monitors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMonitorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     pub fn builder() -> crate::operation::list_monitors::builders::ListMonitorsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListMonitorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMonitorsOutputBuilder {
-    pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>,
+    pub(crate) monitors: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListMonitorsOutputBuilder {
     /// <p>An array of objects that summarize each monitor's properties.</p>
     pub fn monitors(mut self, input: crate::types::MonitorSummary) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-        v.push(input);
-        self.monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>>) -> Self {
-        self.monitors = input;
-        self
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MonitorSummary>>) -> Self {
+        self.monitors = input; self
     }
     /// <p>An array of objects that summarize each monitor's properties.</p>
-    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorSummary>> {
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MonitorSummary>> {
         &self.monitors
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
@@ -69,28 +69,30 @@ impl ListMonitorsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     pub fn build(self) -> crate::operation::list_monitors::ListMonitorsOutput {
         crate::operation::list_monitors::ListMonitorsOutput {
-            monitors: self.monitors,
-            next_token: self.next_token,
+            monitors: self.monitors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

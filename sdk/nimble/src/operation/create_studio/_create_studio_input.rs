@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateStudioInput {
+pub struct CreateStudioInput  {
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     pub admin_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
@@ -14,41 +14,41 @@ pub struct CreateStudioInput {
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub studio_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateStudioInput {
+impl  CreateStudioInput  {
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn admin_role_arn(&self) -> ::std::option::Option<& str> {
         self.admin_role_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A friendly name for the studio.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The studio encryption configuration.</p>
-    pub fn studio_encryption_configuration(&self) -> ::std::option::Option<&crate::types::StudioEncryptionConfiguration> {
+    pub fn studio_encryption_configuration(&self) -> ::std::option::Option<& crate::types::StudioEncryptionConfiguration> {
         self.studio_encryption_configuration.as_ref()
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
-    pub fn studio_name(&self) -> ::std::option::Option<&str> {
+    pub fn studio_name(&self) -> ::std::option::Option<& str> {
         self.studio_name.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_role_arn(&self) -> ::std::option::Option<& str> {
         self.user_role_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateStudioInput {
+impl  ::std::fmt::Debug for CreateStudioInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStudioInput");
         formatter.field("admin_role_arn", &self.admin_role_arn);
@@ -77,7 +77,7 @@ pub struct CreateStudioInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) studio_encryption_configuration: ::std::option::Option<crate::types::StudioEncryptionConfiguration>,
     pub(crate) studio_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) user_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateStudioInputBuilder {
@@ -89,8 +89,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn set_admin_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_role_arn = input;
-        self
+        self.admin_role_arn = input; self
     }
     /// <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn get_admin_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>A friendly name for the studio.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A friendly name for the studio.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The studio encryption configuration.</p>
     pub fn set_studio_encryption_configuration(mut self, input: ::std::option::Option<crate::types::StudioEncryptionConfiguration>) -> Self {
-        self.studio_encryption_configuration = input;
-        self
+        self.studio_encryption_configuration = input; self
     }
     /// <p>The studio encryption configuration.</p>
     pub fn get_studio_encryption_configuration(&self) -> &::std::option::Option<crate::types::StudioEncryptionConfiguration> {
@@ -147,8 +143,7 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub fn set_studio_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_name = input;
-        self
+        self.studio_name = input; self
     }
     /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub fn get_studio_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,17 +156,16 @@ impl CreateStudioInputBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
@@ -182,26 +176,32 @@ impl CreateStudioInputBuilder {
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     pub fn set_user_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_role_arn = input;
-        self
+        self.user_role_arn = input; self
     }
     /// <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
     pub fn get_user_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_role_arn
     }
     /// Consumes the builder and constructs a [`CreateStudioInput`](crate::operation::create_studio::CreateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_studio::CreateStudioInput {
-            admin_role_arn: self.admin_role_arn,
-            client_token: self.client_token,
-            display_name: self.display_name,
-            studio_encryption_configuration: self.studio_encryption_configuration,
-            studio_name: self.studio_name,
-            tags: self.tags,
-            user_role_arn: self.user_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_studio::CreateStudioInput {
+                admin_role_arn: self.admin_role_arn
+                ,
+                client_token: self.client_token
+                ,
+                display_name: self.display_name
+                ,
+                studio_encryption_configuration: self.studio_encryption_configuration
+                ,
+                studio_name: self.studio_name
+                ,
+                tags: self.tags
+                ,
+                user_role_arn: self.user_role_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateStudioInputBuilder {
@@ -217,3 +217,4 @@ impl ::std::fmt::Debug for CreateStudioInputBuilder {
         formatter.finish()
     }
 }
+

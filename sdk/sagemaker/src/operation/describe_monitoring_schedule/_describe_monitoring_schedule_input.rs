@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMonitoringScheduleInput {
+pub struct DescribeMonitoringScheduleInput  {
     /// <p>Name of a previously created monitoring schedule.</p>
     pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMonitoringScheduleInput {
+impl  DescribeMonitoringScheduleInput  {
     /// <p>Name of a previously created monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeMonitoringScheduleInputBuilder {
     }
     /// <p>Name of a previously created monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+        self.monitoring_schedule_name = input; self
     }
     /// <p>Name of a previously created monitoring schedule.</p>
     pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_schedule_name
     }
     /// Consumes the builder and constructs a [`DescribeMonitoringScheduleInput`](crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput {
-            monitoring_schedule_name: self.monitoring_schedule_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput {
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+            }
+        )
     }
 }
+

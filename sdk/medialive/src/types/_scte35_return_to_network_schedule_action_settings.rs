@@ -3,11 +3,11 @@
 /// Settings for a SCTE-35 return_to_network message.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scte35ReturnToNetworkScheduleActionSettings {
+pub struct Scte35ReturnToNetworkScheduleActionSettings  {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub splice_event_id: ::std::option::Option<i64>,
 }
-impl Scte35ReturnToNetworkScheduleActionSettings {
+impl  Scte35ReturnToNetworkScheduleActionSettings  {
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn splice_event_id(&self) -> ::std::option::Option<i64> {
         self.splice_event_id
@@ -35,8 +35,7 @@ impl Scte35ReturnToNetworkScheduleActionSettingsBuilder {
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn set_splice_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.splice_event_id = input;
-        self
+        self.splice_event_id = input; self
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn get_splice_event_id(&self) -> &::std::option::Option<i64> {
@@ -45,7 +44,9 @@ impl Scte35ReturnToNetworkScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`Scte35ReturnToNetworkScheduleActionSettings`](crate::types::Scte35ReturnToNetworkScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35ReturnToNetworkScheduleActionSettings {
         crate::types::Scte35ReturnToNetworkScheduleActionSettings {
-            splice_event_id: self.splice_event_id,
+            splice_event_id: self.splice_event_id
+            ,
         }
     }
 }
+

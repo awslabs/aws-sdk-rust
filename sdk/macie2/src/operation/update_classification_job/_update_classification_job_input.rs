@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClassificationJobInput {
+pub struct UpdateClassificationJobInput  {
     /// <p>The unique identifier for the classification job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The new status for the job. Valid values are:</p>
@@ -19,9 +19,9 @@ pub struct UpdateClassificationJobInput {
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
 }
-impl UpdateClassificationJobInput {
+impl  UpdateClassificationJobInput  {
     /// <p>The unique identifier for the classification job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The new status for the job. Valid values are:</p>
@@ -36,7 +36,7 @@ impl UpdateClassificationJobInput {
     /// <p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p>
     /// <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
@@ -63,8 +63,7 @@ impl UpdateClassificationJobInputBuilder {
     }
     /// <p>The unique identifier for the classification job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique identifier for the classification job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl UpdateClassificationJobInputBuilder {
     /// <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The new status for the job. Valid values are:</p>
     /// <ul>
@@ -119,15 +117,15 @@ impl UpdateClassificationJobInputBuilder {
         &self.job_status
     }
     /// Consumes the builder and constructs a [`UpdateClassificationJobInput`](crate::operation::update_classification_job::UpdateClassificationJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_classification_job::UpdateClassificationJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_classification_job::UpdateClassificationJobInput {
-            job_id: self.job_id,
-            job_status: self.job_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_classification_job::UpdateClassificationJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_classification_job::UpdateClassificationJobInput {
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+            }
+        )
     }
 }
+

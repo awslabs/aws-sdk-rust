@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeModelInput {
+pub struct InvokeModelInput  {
     /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
@@ -12,25 +12,25 @@ pub struct InvokeModelInput {
     /// <p>Identifier of the model.</p>
     pub model_id: ::std::option::Option<::std::string::String>,
 }
-impl InvokeModelInput {
+impl  InvokeModelInput  {
     /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
-    pub fn accept(&self) -> ::std::option::Option<&str> {
+    pub fn accept(&self) -> ::std::option::Option<& str> {
         self.accept.as_deref()
     }
     /// <p>Identifier of the model.</p>
-    pub fn model_id(&self) -> ::std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<& str> {
         self.model_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeModelInput {
+impl  ::std::fmt::Debug for InvokeModelInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeModelInput");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -65,8 +65,7 @@ impl InvokeModelInputBuilder {
     }
     /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Input data in the format specified in the content-type request header. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -79,8 +78,7 @@ impl InvokeModelInputBuilder {
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The MIME type of the input data in the request. The default value is <code>application/json</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl InvokeModelInputBuilder {
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept = input;
-        self
+        self.accept = input; self
     }
     /// <p>The desired MIME type of the inference body in the response. The default value is <code>application/json</code>.</p>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +105,7 @@ impl InvokeModelInputBuilder {
     }
     /// <p>Identifier of the model.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>Identifier of the model.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,12 +113,18 @@ impl InvokeModelInputBuilder {
     }
     /// Consumes the builder and constructs a [`InvokeModelInput`](crate::operation::invoke_model::InvokeModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_model::InvokeModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::invoke_model::InvokeModelInput {
-            body: self.body,
-            content_type: self.content_type,
-            accept: self.accept,
-            model_id: self.model_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::invoke_model::InvokeModelInput {
+                body: self.body
+                ,
+                content_type: self.content_type
+                ,
+                accept: self.accept
+                ,
+                model_id: self.model_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeModelInputBuilder {
@@ -135,3 +137,4 @@ impl ::std::fmt::Debug for InvokeModelInputBuilder {
         formatter.finish()
     }
 }
+

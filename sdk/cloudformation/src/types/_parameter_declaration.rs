@@ -3,7 +3,7 @@
 /// <p>The ParameterDeclaration data type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterDeclaration {
+pub struct ParameterDeclaration  {
     /// <p>The name that's associated with the parameter.</p>
     pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the parameter.</p>
@@ -17,17 +17,17 @@ pub struct ParameterDeclaration {
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub parameter_constraints: ::std::option::Option<crate::types::ParameterConstraints>,
 }
-impl ParameterDeclaration {
+impl  ParameterDeclaration  {
     /// <p>The name that's associated with the parameter.</p>
-    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<& str> {
         self.parameter_key.as_deref()
     }
     /// <p>The default value of the parameter.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The type of parameter.</p>
-    pub fn parameter_type(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_type(&self) -> ::std::option::Option<& str> {
         self.parameter_type.as_deref()
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
@@ -35,11 +35,11 @@ impl ParameterDeclaration {
         self.no_echo
     }
     /// <p>The description that's associate with the parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
-    pub fn parameter_constraints(&self) -> ::std::option::Option<&crate::types::ParameterConstraints> {
+    pub fn parameter_constraints(&self) -> ::std::option::Option<& crate::types::ParameterConstraints> {
         self.parameter_constraints.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>The name that's associated with the parameter.</p>
     pub fn set_parameter_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_key = input;
-        self
+        self.parameter_key = input; self
     }
     /// <p>The name that's associated with the parameter.</p>
     pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>The default value of the parameter.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The default value of the parameter.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>The type of parameter.</p>
     pub fn set_parameter_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_type = input;
-        self
+        self.parameter_type = input; self
     }
     /// <p>The type of parameter.</p>
     pub fn get_parameter_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.no_echo = input;
-        self
+        self.no_echo = input; self
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>The description that's associate with the parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description that's associate with the parameter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl ParameterDeclarationBuilder {
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub fn set_parameter_constraints(mut self, input: ::std::option::Option<crate::types::ParameterConstraints>) -> Self {
-        self.parameter_constraints = input;
-        self
+        self.parameter_constraints = input; self
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub fn get_parameter_constraints(&self) -> &::std::option::Option<crate::types::ParameterConstraints> {
@@ -149,12 +143,19 @@ impl ParameterDeclarationBuilder {
     /// Consumes the builder and constructs a [`ParameterDeclaration`](crate::types::ParameterDeclaration).
     pub fn build(self) -> crate::types::ParameterDeclaration {
         crate::types::ParameterDeclaration {
-            parameter_key: self.parameter_key,
-            default_value: self.default_value,
-            parameter_type: self.parameter_type,
-            no_echo: self.no_echo,
-            description: self.description,
-            parameter_constraints: self.parameter_constraints,
+            parameter_key: self.parameter_key
+            ,
+            default_value: self.default_value
+            ,
+            parameter_type: self.parameter_type
+            ,
+            no_echo: self.no_echo
+            ,
+            description: self.description
+            ,
+            parameter_constraints: self.parameter_constraints
+            ,
         }
     }
 }
+

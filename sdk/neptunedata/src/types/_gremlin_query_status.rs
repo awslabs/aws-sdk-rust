@@ -3,7 +3,7 @@
 /// <p>Captures the status of a Gremlin query (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status.html">Gremlin query status API</a> page).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GremlinQueryStatus {
+pub struct GremlinQueryStatus  {
     /// <p>The ID of the Gremlin query.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The query string of the Gremlin query.</p>
@@ -11,17 +11,17 @@ pub struct GremlinQueryStatus {
     /// <p>The query statistics of the Gremlin query.</p>
     pub query_eval_stats: ::std::option::Option<crate::types::QueryEvalStats>,
 }
-impl GremlinQueryStatus {
+impl  GremlinQueryStatus  {
     /// <p>The ID of the Gremlin query.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The query string of the Gremlin query.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The query statistics of the Gremlin query.</p>
-    pub fn query_eval_stats(&self) -> ::std::option::Option<&crate::types::QueryEvalStats> {
+    pub fn query_eval_stats(&self) -> ::std::option::Option<& crate::types::QueryEvalStats> {
         self.query_eval_stats.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GremlinQueryStatusBuilder {
     }
     /// <p>The ID of the Gremlin query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the Gremlin query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GremlinQueryStatusBuilder {
     }
     /// <p>The query string of the Gremlin query.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string of the Gremlin query.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GremlinQueryStatusBuilder {
     }
     /// <p>The query statistics of the Gremlin query.</p>
     pub fn set_query_eval_stats(mut self, input: ::std::option::Option<crate::types::QueryEvalStats>) -> Self {
-        self.query_eval_stats = input;
-        self
+        self.query_eval_stats = input; self
     }
     /// <p>The query statistics of the Gremlin query.</p>
     pub fn get_query_eval_stats(&self) -> &::std::option::Option<crate::types::QueryEvalStats> {
@@ -86,9 +83,13 @@ impl GremlinQueryStatusBuilder {
     /// Consumes the builder and constructs a [`GremlinQueryStatus`](crate::types::GremlinQueryStatus).
     pub fn build(self) -> crate::types::GremlinQueryStatus {
         crate::types::GremlinQueryStatus {
-            query_id: self.query_id,
-            query_string: self.query_string,
-            query_eval_stats: self.query_eval_stats,
+            query_id: self.query_id
+            ,
+            query_string: self.query_string
+            ,
+            query_eval_stats: self.query_eval_stats
+            ,
         }
     }
 }
+

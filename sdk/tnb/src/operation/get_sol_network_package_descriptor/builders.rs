@@ -5,55 +5,51 @@ pub use crate::operation::get_sol_network_package_descriptor::_get_sol_network_p
 
 impl GetSolNetworkPackageDescriptorInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_sol_network_package_descriptor();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_sol_network_package_descriptor();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetSolNetworkPackageDescriptor`.
-///
+/// 
 /// <p>Gets the content of the network service descriptor.</p>
 /// <p>A network service descriptor is a .yaml file in a network package that uses the TOSCA standard to describe the network functions you want to deploy and the Amazon Web Services infrastructure you want to deploy the network functions on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSolNetworkPackageDescriptorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder,
+                    inner: crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-    > for GetSolNetworkPackageDescriptorFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
+                    crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
+                > for GetSolNetworkPackageDescriptorFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
+                        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetSolNetworkPackageDescriptorFluentBuilder {
     /// Creates a new `GetSolNetworkPackageDescriptor`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl GetSolNetworkPackageDescriptorFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptor::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptor::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput,
-        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptor::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptor::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput, crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nsd_info_id(input.into());
@@ -124,3 +111,4 @@ impl GetSolNetworkPackageDescriptorFluentBuilder {
         self.inner.get_nsd_info_id()
     }
 }
+

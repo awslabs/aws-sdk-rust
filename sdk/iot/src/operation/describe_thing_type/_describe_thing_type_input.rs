@@ -3,13 +3,13 @@
 /// <p>The input for the DescribeThingType operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThingTypeInput {
+pub struct DescribeThingTypeInput  {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeThingTypeInput {
+impl  DescribeThingTypeInput  {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DescribeThingTypeInputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The name of the thing type.</p>
     pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_type_name
     }
     /// Consumes the builder and constructs a [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_thing_type::DescribeThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_thing_type::DescribeThingTypeInput {
-            thing_type_name: self.thing_type_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_thing_type::DescribeThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_thing_type::DescribeThingTypeInput {
+                thing_type_name: self.thing_type_name
+                ,
+            }
+        )
     }
 }
+

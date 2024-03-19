@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSpendLimits`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per each request.</p><br>
-    /// - On success, responds with [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput) with field(s):
+                            /// - On success, responds with [`DescribeSpendLimitsOutput`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput) with field(s):
     ///   - [`spend_limits(Option<Vec::<SpendLimit>>)`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput::spend_limits): <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_spend_limits::DescribeSpendLimitsOutput::next_token): <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    /// - On failure, responds with [`SdkError<DescribeSpendLimitsError>`](crate::operation::describe_spend_limits::DescribeSpendLimitsError)
+                            /// - On failure, responds with [`SdkError<DescribeSpendLimitsError>`](crate::operation::describe_spend_limits::DescribeSpendLimitsError)
     pub fn describe_spend_limits(&self) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_spend_limits::builders::DescribeSpendLimitsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

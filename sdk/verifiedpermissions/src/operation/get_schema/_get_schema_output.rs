@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetSchemaOutput {
+pub struct GetSchemaOutput  {
     /// <p>The ID of the policy store that contains the schema.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The body of the schema, written in Cedar schema JSON.</p>
@@ -12,36 +12,35 @@ pub struct GetSchemaOutput {
     /// <p>The date and time that the schema was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
     /// <p>The namespaces of the entities referenced by this schema.</p>
-    pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub namespaces: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetSchemaOutput {
+impl  GetSchemaOutput  {
     /// <p>The ID of the policy store that contains the schema.</p>
-    pub fn policy_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_store_id.deref()
+    pub fn policy_store_id(&self) -> & str {
+        use std::ops::Deref; self.policy_store_id.deref()
     }
     /// <p>The body of the schema, written in Cedar schema JSON.</p>
-    pub fn schema(&self) -> &str {
-        use std::ops::Deref;
-        self.schema.deref()
+    pub fn schema(&self) -> & str {
+        use std::ops::Deref; self.schema.deref()
     }
     /// <p>The date and time that the schema was originally created.</p>
-    pub fn created_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_date
     }
     /// <p>The date and time that the schema was most recently updated.</p>
-    pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
     /// <p>The namespaces of the entities referenced by this schema.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
-    pub fn namespaces(&self) -> &[::std::string::String] {
-        self.namespaces.as_deref().unwrap_or_default()
+    pub fn namespaces(&self) -> & [::std::string::String] {
+        self.namespaces.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for GetSchemaOutput {
+impl  ::std::fmt::Debug for GetSchemaOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSchemaOutput");
         formatter.field("policy_store_id", &self.policy_store_id);
@@ -54,10 +53,10 @@ impl ::std::fmt::Debug for GetSchemaOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
     pub fn builder() -> crate::operation::get_schema::builders::GetSchemaOutputBuilder {
@@ -73,7 +72,7 @@ pub struct GetSchemaOutputBuilder {
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSchemaOutputBuilder {
@@ -85,8 +84,7 @@ impl GetSchemaOutputBuilder {
     }
     /// <p>The ID of the policy store that contains the schema.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>The ID of the policy store that contains the schema.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl GetSchemaOutputBuilder {
     }
     /// <p>The body of the schema, written in Cedar schema JSON.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The body of the schema, written in Cedar schema JSON.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl GetSchemaOutputBuilder {
     }
     /// <p>The date and time that the schema was originally created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date and time that the schema was originally created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,8 +126,7 @@ impl GetSchemaOutputBuilder {
     }
     /// <p>The date and time that the schema was most recently updated.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date and time that the schema was most recently updated.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -144,28 +139,27 @@ impl GetSchemaOutputBuilder {
     /// <p>The namespaces of the entities referenced by this schema.</p>
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
-        v.push(input.into());
-        self.namespaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.namespaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The namespaces of the entities referenced by this schema.</p>
-    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.namespaces = input;
-        self
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.namespaces = input; self
     }
     /// <p>The namespaces of the entities referenced by this schema.</p>
-    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.namespaces
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaOutput`](crate::operation::get_schema::GetSchemaOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::operation::get_schema::builders::GetSchemaOutputBuilder::policy_store_id)
@@ -173,34 +167,33 @@ impl GetSchemaOutputBuilder {
     /// - [`created_date`](crate::operation::get_schema::builders::GetSchemaOutputBuilder::created_date)
     /// - [`last_updated_date`](crate::operation::get_schema::builders::GetSchemaOutputBuilder::last_updated_date)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaOutput {
-            policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_store_id",
-                    "policy_store_id was not specified but it is required when building GetSchemaOutput",
-                )
-            })?,
-            schema: self.schema.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema",
-                    "schema was not specified but it is required when building GetSchemaOutput",
-                )
-            })?,
-            created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_date",
-                    "created_date was not specified but it is required when building GetSchemaOutput",
-                )
-            })?,
-            last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_date",
-                    "last_updated_date was not specified but it is required when building GetSchemaOutput",
-                )
-            })?,
-            namespaces: self.namespaces,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_schema::GetSchemaOutput {
+                policy_store_id: self.policy_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_store_id", "policy_store_id was not specified but it is required when building GetSchemaOutput")
+                    )?
+                ,
+                schema: self.schema
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schema", "schema was not specified but it is required when building GetSchemaOutput")
+                    )?
+                ,
+                created_date: self.created_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_date", "created_date was not specified but it is required when building GetSchemaOutput")
+                    )?
+                ,
+                last_updated_date: self.last_updated_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_date", "last_updated_date was not specified but it is required when building GetSchemaOutput")
+                    )?
+                ,
+                namespaces: self.namespaces
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetSchemaOutputBuilder {
@@ -215,3 +208,4 @@ impl ::std::fmt::Debug for GetSchemaOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::invoke_model_with_response_stream::_invoke_model_with_
 
 impl InvokeModelWithResponseStreamInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.invoke_model_with_response_stream();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.invoke_model_with_response_stream();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `InvokeModelWithResponseStream`.
-///
+/// 
 /// <p>Invoke the specified Bedrock model to run inference using the input provided. Return the response in a stream.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
 /// <p>For an example request and response, see Examples (after the Errors section).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeModelWithResponseStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::invoke_model_with_response_stream::builders::InvokeModelWithResponseStreamInputBuilder,
+                    inner: crate::operation::invoke_model_with_response_stream::builders::InvokeModelWithResponseStreamInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
-    > for InvokeModelWithResponseStreamFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
+                    crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
+                > for InvokeModelWithResponseStreamFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
+                        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl InvokeModelWithResponseStreamFluentBuilder {
     /// Creates a new `InvokeModelWithResponseStream`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl InvokeModelWithResponseStreamFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStream::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStream::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStream::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStream::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput, crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Inference input in the format specified by the content-type. To see the format and content of this field for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.body(input);
@@ -167,3 +154,4 @@ impl InvokeModelWithResponseStreamFluentBuilder {
         self.inner.get_model_id()
     }
 }
+

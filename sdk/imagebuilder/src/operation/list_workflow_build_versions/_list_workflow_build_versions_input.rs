@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWorkflowBuildVersionsInput {
+pub struct ListWorkflowBuildVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
     pub workflow_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum items to return in a request.</p>
@@ -10,9 +10,9 @@ pub struct ListWorkflowBuildVersionsInput {
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListWorkflowBuildVersionsInput {
+impl  ListWorkflowBuildVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
-    pub fn workflow_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workflow_version_arn(&self) -> ::std::option::Option<& str> {
         self.workflow_version_arn.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -20,7 +20,7 @@ impl ListWorkflowBuildVersionsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListWorkflowBuildVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
     pub fn set_workflow_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_version_arn = input;
-        self
+        self.workflow_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
     pub fn get_workflow_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListWorkflowBuildVersionsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,24 +74,24 @@ impl ListWorkflowBuildVersionsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListWorkflowBuildVersionsInput`](crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsInput {
-            workflow_version_arn: self.workflow_version_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsInput {
+                workflow_version_arn: self.workflow_version_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

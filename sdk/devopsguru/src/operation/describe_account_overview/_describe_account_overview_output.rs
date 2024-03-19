@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountOverviewOutput {
+pub struct DescribeAccountOverviewOutput  {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub reactive_insights: i32,
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
@@ -11,7 +11,7 @@ pub struct DescribeAccountOverviewOutput {
     pub mean_time_to_recover_in_milliseconds: i64,
     _request_id: Option<String>,
 }
-impl DescribeAccountOverviewOutput {
+impl  DescribeAccountOverviewOutput  {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn reactive_insights(&self) -> i32 {
         self.reactive_insights
@@ -26,10 +26,10 @@ impl DescribeAccountOverviewOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountOverviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountOverviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
     pub fn builder() -> crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder {
@@ -55,8 +55,7 @@ impl DescribeAccountOverviewOutputBuilder {
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn set_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reactive_insights = input;
-        self
+        self.reactive_insights = input; self
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn get_reactive_insights(&self) -> &::std::option::Option<i32> {
@@ -70,8 +69,7 @@ impl DescribeAccountOverviewOutputBuilder {
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn set_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.proactive_insights = input;
-        self
+        self.proactive_insights = input; self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account that were created during the time range passed in.</p>
     pub fn get_proactive_insights(&self) -> &::std::option::Option<i32> {
@@ -85,41 +83,41 @@ impl DescribeAccountOverviewOutputBuilder {
     }
     /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub fn set_mean_time_to_recover_in_milliseconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.mean_time_to_recover_in_milliseconds = input;
-        self
+        self.mean_time_to_recover_in_milliseconds = input; self
     }
     /// <p>The Mean Time to Recover (MTTR) for all closed insights that were created during the time range passed in.</p>
     pub fn get_mean_time_to_recover_in_milliseconds(&self) -> &::std::option::Option<i64> {
         &self.mean_time_to_recover_in_milliseconds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountOverviewOutput`](crate::operation::describe_account_overview::DescribeAccountOverviewOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`mean_time_to_recover_in_milliseconds`](crate::operation::describe_account_overview::builders::DescribeAccountOverviewOutputBuilder::mean_time_to_recover_in_milliseconds)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
-            reactive_insights: self.reactive_insights.unwrap_or_default(),
-            proactive_insights: self.proactive_insights.unwrap_or_default(),
-            mean_time_to_recover_in_milliseconds: self.mean_time_to_recover_in_milliseconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mean_time_to_recover_in_milliseconds",
-                    "mean_time_to_recover_in_milliseconds was not specified but it is required when building DescribeAccountOverviewOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account_overview::DescribeAccountOverviewOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
+                reactive_insights: self.reactive_insights
+                    .unwrap_or_default()
+                ,
+                proactive_insights: self.proactive_insights
+                    .unwrap_or_default()
+                ,
+                mean_time_to_recover_in_milliseconds: self.mean_time_to_recover_in_milliseconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mean_time_to_recover_in_milliseconds", "mean_time_to_recover_in_milliseconds was not specified but it is required when building DescribeAccountOverviewOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a routing profile queue.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RoutingProfileQueueConfigSummary {
+pub struct RoutingProfileQueueConfigSummary  {
     /// <p>The identifier for the queue.</p>
     pub queue_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
@@ -17,21 +17,18 @@ pub struct RoutingProfileQueueConfigSummary {
     /// <p>The channels this queue supports.</p>
     pub channel: crate::types::Channel,
 }
-impl RoutingProfileQueueConfigSummary {
+impl  RoutingProfileQueueConfigSummary  {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_id.deref()
+    pub fn queue_id(&self) -> & str {
+        use std::ops::Deref; self.queue_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    pub fn queue_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_arn.deref()
+    pub fn queue_arn(&self) -> & str {
+        use std::ops::Deref; self.queue_arn.deref()
     }
     /// <p>The name of the queue.</p>
-    pub fn queue_name(&self) -> &str {
-        use std::ops::Deref;
-        self.queue_name.deref()
+    pub fn queue_name(&self) -> & str {
+        use std::ops::Deref; self.queue_name.deref()
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(&self) -> i32 {
@@ -42,7 +39,7 @@ impl RoutingProfileQueueConfigSummary {
         self.delay
     }
     /// <p>The channels this queue supports.</p>
-    pub fn channel(&self) -> &crate::types::Channel {
+    pub fn channel(&self) -> & crate::types::Channel {
         &self.channel
     }
 }
@@ -73,8 +70,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn set_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_arn = input;
-        self
+        self.queue_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn get_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The name of the queue.</p>
     pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_name = input;
-        self
+        self.queue_name = input; self
     }
     /// <p>The name of the queue.</p>
     pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +112,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -133,8 +126,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_delay(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.delay = input;
-        self
+        self.delay = input; self
     }
     /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_delay(&self) -> &::std::option::Option<i32> {
@@ -148,8 +140,7 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     }
     /// <p>The channels this queue supports.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The channels this queue supports.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -163,38 +154,38 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     /// - [`priority`](crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::priority)
     /// - [`channel`](crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::channel)
     pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueConfigSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RoutingProfileQueueConfigSummary {
-            queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_id",
-                    "queue_id was not specified but it is required when building RoutingProfileQueueConfigSummary",
-                )
-            })?,
-            queue_arn: self.queue_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_arn",
-                    "queue_arn was not specified but it is required when building RoutingProfileQueueConfigSummary",
-                )
-            })?,
-            queue_name: self.queue_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queue_name",
-                    "queue_name was not specified but it is required when building RoutingProfileQueueConfigSummary",
-                )
-            })?,
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building RoutingProfileQueueConfigSummary",
-                )
-            })?,
-            delay: self.delay.unwrap_or_default(),
-            channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel",
-                    "channel was not specified but it is required when building RoutingProfileQueueConfigSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RoutingProfileQueueConfigSummary {
+                queue_id: self.queue_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_id", "queue_id was not specified but it is required when building RoutingProfileQueueConfigSummary")
+                    )?
+                ,
+                queue_arn: self.queue_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_arn", "queue_arn was not specified but it is required when building RoutingProfileQueueConfigSummary")
+                    )?
+                ,
+                queue_name: self.queue_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queue_name", "queue_name was not specified but it is required when building RoutingProfileQueueConfigSummary")
+                    )?
+                ,
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building RoutingProfileQueueConfigSummary")
+                    )?
+                ,
+                delay: self.delay
+                    .unwrap_or_default()
+                ,
+                channel: self.channel
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel", "channel was not specified but it is required when building RoutingProfileQueueConfigSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVirtualInterfaceInput {
+pub struct DeleteVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteVirtualInterfaceInput {
+impl  DeleteVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> ::std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_interface_id = input;
-        self
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_interface_id
     }
     /// Consumes the builder and constructs a [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput {
-            virtual_interface_id: self.virtual_interface_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput {
+                virtual_interface_id: self.virtual_interface_id
+                ,
+            }
+        )
     }
 }
+

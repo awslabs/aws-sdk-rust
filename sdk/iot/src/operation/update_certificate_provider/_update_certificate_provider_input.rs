@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCertificateProviderInput {
+pub struct UpdateCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
     pub certificate_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
 }
-impl UpdateCertificateProviderInput {
+impl  UpdateCertificateProviderInput  {
     /// <p>The name of the certificate provider.</p>
-    pub fn certificate_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_name(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_name.as_deref()
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_default_for_operations.is_none()`.
-    pub fn account_default_for_operations(&self) -> &[crate::types::CertificateProviderOperation] {
-        self.account_default_for_operations.as_deref().unwrap_or_default()
+    pub fn account_default_for_operations(&self) -> & [crate::types::CertificateProviderOperation] {
+        self.account_default_for_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateCertificateProviderInput {
@@ -39,7 +40,7 @@ impl UpdateCertificateProviderInput {
 pub struct UpdateCertificateProviderInputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
 }
 impl UpdateCertificateProviderInputBuilder {
     /// <p>The name of the certificate provider.</p>
@@ -50,8 +51,7 @@ impl UpdateCertificateProviderInputBuilder {
     }
     /// <p>The name of the certificate provider.</p>
     pub fn set_certificate_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_name = input;
-        self
+        self.certificate_provider_name = input; self
     }
     /// <p>The name of the certificate provider.</p>
     pub fn get_certificate_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl UpdateCertificateProviderInputBuilder {
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,33 +77,30 @@ impl UpdateCertificateProviderInputBuilder {
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
     pub fn account_default_for_operations(mut self, input: crate::types::CertificateProviderOperation) -> Self {
         let mut v = self.account_default_for_operations.unwrap_or_default();
-        v.push(input);
-        self.account_default_for_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_default_for_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn set_account_default_for_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
-    ) -> Self {
-        self.account_default_for_operations = input;
-        self
+    pub fn set_account_default_for_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>) -> Self {
+        self.account_default_for_operations = input; self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>> {
+    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>> {
         &self.account_default_for_operations
     }
     /// Consumes the builder and constructs a [`UpdateCertificateProviderInput`](crate::operation::update_certificate_provider::UpdateCertificateProviderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_certificate_provider::UpdateCertificateProviderInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_certificate_provider::UpdateCertificateProviderInput {
-            certificate_provider_name: self.certificate_provider_name,
-            lambda_function_arn: self.lambda_function_arn,
-            account_default_for_operations: self.account_default_for_operations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_certificate_provider::UpdateCertificateProviderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_certificate_provider::UpdateCertificateProviderInput {
+                certificate_provider_name: self.certificate_provider_name
+                ,
+                lambda_function_arn: self.lambda_function_arn
+                ,
+                account_default_for_operations: self.account_default_for_operations
+                ,
+            }
+        )
     }
 }
+

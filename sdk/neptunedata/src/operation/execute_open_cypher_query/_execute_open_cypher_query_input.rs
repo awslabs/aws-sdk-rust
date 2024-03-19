@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteOpenCypherQueryInput {
+pub struct ExecuteOpenCypherQueryInput  {
     /// <p>The openCypher query string to be executed.</p>
     pub open_cypher_query: ::std::option::Option<::std::string::String>,
     /// <p>The openCypher query parameters for query execution. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html">Examples of openCypher parameterized queries</a> for more information.</p>
     pub parameters: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteOpenCypherQueryInput {
+impl  ExecuteOpenCypherQueryInput  {
     /// <p>The openCypher query string to be executed.</p>
-    pub fn open_cypher_query(&self) -> ::std::option::Option<&str> {
+    pub fn open_cypher_query(&self) -> ::std::option::Option<& str> {
         self.open_cypher_query.as_deref()
     }
     /// <p>The openCypher query parameters for query execution. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html">Examples of openCypher parameterized queries</a> for more information.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<& str> {
         self.parameters.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExecuteOpenCypherQueryInputBuilder {
     }
     /// <p>The openCypher query string to be executed.</p>
     pub fn set_open_cypher_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.open_cypher_query = input;
-        self
+        self.open_cypher_query = input; self
     }
     /// <p>The openCypher query string to be executed.</p>
     pub fn get_open_cypher_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ExecuteOpenCypherQueryInputBuilder {
     }
     /// <p>The openCypher query parameters for query execution. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html">Examples of openCypher parameterized queries</a> for more information.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameters = input;
-        self
+        self.parameters = input; self
     }
     /// <p>The openCypher query parameters for query execution. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html">Examples of openCypher parameterized queries</a> for more information.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherQueryInput`](crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput {
-            open_cypher_query: self.open_cypher_query,
-            parameters: self.parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput {
+                open_cypher_query: self.open_cypher_query
+                ,
+                parameters: self.parameters
+                ,
+            }
+        )
     }
 }
+

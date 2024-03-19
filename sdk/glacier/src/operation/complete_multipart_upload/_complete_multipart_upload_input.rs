@@ -3,7 +3,7 @@
 /// <p>Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteMultipartUploadInput {
+pub struct CompleteMultipartUploadInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
@@ -15,33 +15,33 @@ pub struct CompleteMultipartUploadInput {
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
 }
-impl CompleteMultipartUploadInput {
+impl  CompleteMultipartUploadInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The upload ID of the multipart upload.</p>
-    pub fn upload_id(&self) -> ::std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<& str> {
         self.upload_id.as_deref()
     }
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
-    pub fn archive_size(&self) -> ::std::option::Option<&str> {
+    pub fn archive_size(&self) -> ::std::option::Option<& str> {
         self.archive_size.as_deref()
     }
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
 }
 impl crate::glacier_interceptors::GlacierAccountId for CompleteMultipartUploadInput {
-    fn account_id_mut(&mut self) -> &mut Option<String> {
-        &mut self.account_id
-    }
-}
+                        fn account_id_mut(&mut self) -> &mut Option<String> {
+                            &mut self.account_id
+                        }
+                    }
 impl CompleteMultipartUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadInput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadInput).
     pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadInputBuilder {
@@ -68,8 +68,7 @@ impl CompleteMultipartUploadInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl CompleteMultipartUploadInputBuilder {
     }
     /// <p>The name of the vault.</p>
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vault_name = input;
-        self
+        self.vault_name = input; self
     }
     /// <p>The name of the vault.</p>
     pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +96,7 @@ impl CompleteMultipartUploadInputBuilder {
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.upload_id = input;
-        self
+        self.upload_id = input; self
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl CompleteMultipartUploadInputBuilder {
     }
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
     pub fn set_archive_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_size = input;
-        self
+        self.archive_size = input; self
     }
     /// <p>The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</p>
     pub fn get_archive_size(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,26 +122,28 @@ impl CompleteMultipartUploadInputBuilder {
     }
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256 tree hash of the individual parts. If the value you specify in the request does not match the SHA256 tree hash of the final assembled archive as computed by Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum
     }
     /// Consumes the builder and constructs a [`CompleteMultipartUploadInput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::complete_multipart_upload::CompleteMultipartUploadInput {
-            account_id: self.account_id,
-            vault_name: self.vault_name,
-            upload_id: self.upload_id,
-            archive_size: self.archive_size,
-            checksum: self.checksum,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::complete_multipart_upload::CompleteMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadInput {
+                account_id: self.account_id
+                ,
+                vault_name: self.vault_name
+                ,
+                upload_id: self.upload_id
+                ,
+                archive_size: self.archive_size
+                ,
+                checksum: self.checksum
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>TimerCanceled</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimerCanceledEventAttributes {
+pub struct TimerCanceledEventAttributes  {
     /// <p>The unique ID of the timer that was canceled.</p>
     pub timer_id: ::std::string::String,
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -11,11 +11,10 @@ pub struct TimerCanceledEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub decision_task_completed_event_id: i64,
 }
-impl TimerCanceledEventAttributes {
+impl  TimerCanceledEventAttributes  {
     /// <p>The unique ID of the timer that was canceled.</p>
-    pub fn timer_id(&self) -> &str {
-        use std::ops::Deref;
-        self.timer_id.deref()
+    pub fn timer_id(&self) -> & str {
+        use std::ops::Deref; self.timer_id.deref()
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(&self) -> i64 {
@@ -50,8 +49,7 @@ impl TimerCanceledEventAttributesBuilder {
     }
     /// <p>The unique ID of the timer that was canceled.</p>
     pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timer_id = input;
-        self
+        self.timer_id = input; self
     }
     /// <p>The unique ID of the timer that was canceled.</p>
     pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl TimerCanceledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
@@ -80,8 +77,7 @@ impl TimerCanceledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -91,15 +87,21 @@ impl TimerCanceledEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_id`](crate::types::builders::TimerCanceledEventAttributesBuilder::timer_id)
     pub fn build(self) -> ::std::result::Result<crate::types::TimerCanceledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimerCanceledEventAttributes {
-            timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timer_id",
-                    "timer_id was not specified but it is required when building TimerCanceledEventAttributes",
-                )
-            })?,
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimerCanceledEventAttributes {
+                timer_id: self.timer_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timer_id", "timer_id was not specified but it is required when building TimerCanceledEventAttributes")
+                    )?
+                ,
+                started_event_id: self.started_event_id
+                    .unwrap_or_default()
+                ,
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

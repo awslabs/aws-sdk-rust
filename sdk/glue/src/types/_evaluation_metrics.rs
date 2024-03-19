@@ -3,19 +3,19 @@
 /// <p>Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationMetrics {
+pub struct EvaluationMetrics  {
     /// <p>The type of machine learning transform.</p>
     pub transform_type: crate::types::TransformType,
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub find_matches_metrics: ::std::option::Option<crate::types::FindMatchesMetrics>,
 }
-impl EvaluationMetrics {
+impl  EvaluationMetrics  {
     /// <p>The type of machine learning transform.</p>
-    pub fn transform_type(&self) -> &crate::types::TransformType {
+    pub fn transform_type(&self) -> & crate::types::TransformType {
         &self.transform_type
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
-    pub fn find_matches_metrics(&self) -> ::std::option::Option<&crate::types::FindMatchesMetrics> {
+    pub fn find_matches_metrics(&self) -> ::std::option::Option<& crate::types::FindMatchesMetrics> {
         self.find_matches_metrics.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl EvaluationMetricsBuilder {
     }
     /// <p>The type of machine learning transform.</p>
     pub fn set_transform_type(mut self, input: ::std::option::Option<crate::types::TransformType>) -> Self {
-        self.transform_type = input;
-        self
+        self.transform_type = input; self
     }
     /// <p>The type of machine learning transform.</p>
     pub fn get_transform_type(&self) -> &::std::option::Option<crate::types::TransformType> {
@@ -56,8 +55,7 @@ impl EvaluationMetricsBuilder {
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn set_find_matches_metrics(mut self, input: ::std::option::Option<crate::types::FindMatchesMetrics>) -> Self {
-        self.find_matches_metrics = input;
-        self
+        self.find_matches_metrics = input; self
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn get_find_matches_metrics(&self) -> &::std::option::Option<crate::types::FindMatchesMetrics> {
@@ -67,14 +65,17 @@ impl EvaluationMetricsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`transform_type`](crate::types::builders::EvaluationMetricsBuilder::transform_type)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationMetrics, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EvaluationMetrics {
-            transform_type: self.transform_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transform_type",
-                    "transform_type was not specified but it is required when building EvaluationMetrics",
-                )
-            })?,
-            find_matches_metrics: self.find_matches_metrics,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EvaluationMetrics {
+                transform_type: self.transform_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transform_type", "transform_type was not specified but it is required when building EvaluationMetrics")
+                    )?
+                ,
+                find_matches_metrics: self.find_matches_metrics
+                ,
+            }
+        )
     }
 }
+

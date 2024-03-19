@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataQualityResultInput {
+pub struct GetDataQualityResultInput  {
     /// <p>A unique result ID for the data quality result.</p>
     pub result_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDataQualityResultInput {
+impl  GetDataQualityResultInput  {
     /// <p>A unique result ID for the data quality result.</p>
-    pub fn result_id(&self) -> ::std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<& str> {
         self.result_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl GetDataQualityResultInputBuilder {
     }
     /// <p>A unique result ID for the data quality result.</p>
     pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.result_id = input;
-        self
+        self.result_id = input; self
     }
     /// <p>A unique result ID for the data quality result.</p>
     pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.result_id
     }
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_data_quality_result::GetDataQualityResultInput { result_id: self.result_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_quality_result::GetDataQualityResultInput {
+                result_id: self.result_id
+                ,
+            }
+        )
     }
 }
+

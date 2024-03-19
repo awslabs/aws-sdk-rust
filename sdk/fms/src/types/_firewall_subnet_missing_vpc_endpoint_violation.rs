@@ -3,7 +3,7 @@
 /// <p>The violation details for a firewall subnet's VPC endpoint that's deleted or missing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirewallSubnetMissingVpcEndpointViolation {
+pub struct FirewallSubnetMissingVpcEndpointViolation  {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
@@ -13,21 +13,21 @@ pub struct FirewallSubnetMissingVpcEndpointViolation {
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
     pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
 }
-impl FirewallSubnetMissingVpcEndpointViolation {
+impl  FirewallSubnetMissingVpcEndpointViolation  {
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
-    pub fn firewall_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_subnet_id(&self) -> ::std::option::Option<& str> {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
-    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<& str> {
         self.subnet_availability_zone.as_deref()
     }
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
-    pub fn subnet_availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.subnet_availability_zone_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     }
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
     pub fn set_firewall_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_subnet_id = input;
-        self
+        self.firewall_subnet_id = input; self
     }
     /// <p>The ID of the firewall that this VPC endpoint is associated with.</p>
     pub fn get_firewall_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     }
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The resource ID of the VPC associated with the deleted VPC subnet.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     }
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
     pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_availability_zone = input;
-        self
+        self.subnet_availability_zone = input; self
     }
     /// <p>The name of the Availability Zone of the deleted VPC subnet.</p>
     pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     }
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
     pub fn set_subnet_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_availability_zone_id = input;
-        self
+        self.subnet_availability_zone_id = input; self
     }
     /// <p>The ID of the Availability Zone of the deleted VPC subnet.</p>
     pub fn get_subnet_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl FirewallSubnetMissingVpcEndpointViolationBuilder {
     /// Consumes the builder and constructs a [`FirewallSubnetMissingVpcEndpointViolation`](crate::types::FirewallSubnetMissingVpcEndpointViolation).
     pub fn build(self) -> crate::types::FirewallSubnetMissingVpcEndpointViolation {
         crate::types::FirewallSubnetMissingVpcEndpointViolation {
-            firewall_subnet_id: self.firewall_subnet_id,
-            vpc_id: self.vpc_id,
-            subnet_availability_zone: self.subnet_availability_zone,
-            subnet_availability_zone_id: self.subnet_availability_zone_id,
+            firewall_subnet_id: self.firewall_subnet_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_availability_zone: self.subnet_availability_zone
+            ,
+            subnet_availability_zone_id: self.subnet_availability_zone_id
+            ,
         }
     }
 }
+

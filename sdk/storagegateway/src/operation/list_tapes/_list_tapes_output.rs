@@ -9,30 +9,31 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTapesOutput {
+pub struct ListTapesOutput  {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub tape_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
+    pub tape_infos: ::std::option::Option<::std::vec::Vec::<crate::types::TapeInfo>>,
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTapesOutput {
+impl  ListTapesOutput  {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tape_infos.is_none()`.
-    pub fn tape_infos(&self) -> &[crate::types::TapeInfo] {
-        self.tape_infos.as_deref().unwrap_or_default()
+    pub fn tape_infos(&self) -> & [crate::types::TapeInfo] {
+        self.tape_infos.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTapesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTapesOutput {
     /// Creates a new builder-style object to manufacture [`ListTapesOutput`](crate::operation::list_tapes::ListTapesOutput).
     pub fn builder() -> crate::operation::list_tapes::builders::ListTapesOutputBuilder {
@@ -44,7 +45,7 @@ impl ListTapesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTapesOutputBuilder {
-    pub(crate) tape_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
+    pub(crate) tape_infos: ::std::option::Option<::std::vec::Vec::<crate::types::TapeInfo>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,17 +57,16 @@ impl ListTapesOutputBuilder {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
     pub fn tape_infos(mut self, input: crate::types::TapeInfo) -> Self {
         let mut v = self.tape_infos.unwrap_or_default();
-        v.push(input);
-        self.tape_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tape_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn set_tape_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>) -> Self {
-        self.tape_infos = input;
-        self
+    pub fn set_tape_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TapeInfo>>) -> Self {
+        self.tape_infos = input; self
     }
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn get_tape_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>> {
+    pub fn get_tape_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TapeInfo>> {
         &self.tape_infos
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
@@ -76,28 +76,30 @@ impl ListTapesOutputBuilder {
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTapesOutput`](crate::operation::list_tapes::ListTapesOutput).
     pub fn build(self) -> crate::operation::list_tapes::ListTapesOutput {
         crate::operation::list_tapes::ListTapesOutput {
-            tape_infos: self.tape_infos,
-            marker: self.marker,
+            tape_infos: self.tape_infos
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

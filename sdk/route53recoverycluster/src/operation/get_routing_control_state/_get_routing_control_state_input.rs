@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRoutingControlStateInput {
+pub struct GetRoutingControlStateInput  {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetRoutingControlStateInput {
+impl  GetRoutingControlStateInput  {
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> ::std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetRoutingControlStateInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub fn set_routing_control_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_control_arn = input;
-        self
+        self.routing_control_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_control_arn
     }
     /// Consumes the builder and constructs a [`GetRoutingControlStateInput`](crate::operation::get_routing_control_state::GetRoutingControlStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_routing_control_state::GetRoutingControlStateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateInput {
-            routing_control_arn: self.routing_control_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_routing_control_state::GetRoutingControlStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_routing_control_state::GetRoutingControlStateInput {
+                routing_control_arn: self.routing_control_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNetworkInterfaceOutput {
+pub struct CreateNetworkInterfaceOutput  {
     /// <p>Information about the network interface.</p>
     pub network_interface: ::std::option::Option<crate::types::NetworkInterface>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateNetworkInterfaceOutput {
+impl  CreateNetworkInterfaceOutput  {
     /// <p>Information about the network interface.</p>
-    pub fn network_interface(&self) -> ::std::option::Option<&crate::types::NetworkInterface> {
+    pub fn network_interface(&self) -> ::std::option::Option<& crate::types::NetworkInterface> {
         self.network_interface.as_ref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNetworkInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNetworkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfaceOutput`](crate::operation::create_network_interface::CreateNetworkInterfaceOutput).
     pub fn builder() -> crate::operation::create_network_interface::builders::CreateNetworkInterfaceOutputBuilder {
@@ -47,8 +47,7 @@ impl CreateNetworkInterfaceOutputBuilder {
     }
     /// <p>Information about the network interface.</p>
     pub fn set_network_interface(mut self, input: ::std::option::Option<crate::types::NetworkInterface>) -> Self {
-        self.network_interface = input;
-        self
+        self.network_interface = input; self
     }
     /// <p>Information about the network interface.</p>
     pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::NetworkInterface> {
@@ -61,28 +60,30 @@ impl CreateNetworkInterfaceOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceOutput`](crate::operation::create_network_interface::CreateNetworkInterfaceOutput).
     pub fn build(self) -> crate::operation::create_network_interface::CreateNetworkInterfaceOutput {
         crate::operation::create_network_interface::CreateNetworkInterfaceOutput {
-            network_interface: self.network_interface,
-            client_token: self.client_token,
+            network_interface: self.network_interface
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketDetails {
+pub struct AwsS3BucketDetails  {
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the owner of the S3 bucket.</p>
@@ -34,62 +34,62 @@ pub struct AwsS3BucketDetails {
     /// <p>The name of the bucket.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketDetails {
+impl  AwsS3BucketDetails  {
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
-    pub fn owner_name(&self) -> ::std::option::Option<&str> {
+    pub fn owner_name(&self) -> ::std::option::Option<& str> {
         self.owner_name.as_deref()
     }
     /// <p>The Amazon Web Services account identifier of the account that owns the S3 bucket.</p>
-    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<& str> {
         self.owner_account_id.as_deref()
     }
     /// <p>Indicates when the S3 bucket was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The lifecycle configuration for objects in the specified bucket.</p>
-    pub fn bucket_lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketLifecycleConfigurationDetails> {
+    pub fn bucket_lifecycle_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketBucketLifecycleConfigurationDetails> {
         self.bucket_lifecycle_configuration.as_ref()
     }
     /// <p>Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.</p>
-    pub fn public_access_block_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3AccountPublicAccessBlockDetails> {
+    pub fn public_access_block_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3AccountPublicAccessBlockDetails> {
         self.public_access_block_configuration.as_ref()
     }
     /// <p>The access control list for the S3 bucket.</p>
-    pub fn access_control_list(&self) -> ::std::option::Option<&str> {
+    pub fn access_control_list(&self) -> ::std::option::Option<& str> {
         self.access_control_list.as_deref()
     }
     /// <p>The logging configuration for the S3 bucket.</p>
-    pub fn bucket_logging_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketLoggingConfiguration> {
+    pub fn bucket_logging_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketLoggingConfiguration> {
         self.bucket_logging_configuration.as_ref()
     }
     /// <p>The website configuration parameters for the S3 bucket.</p>
-    pub fn bucket_website_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketWebsiteConfiguration> {
+    pub fn bucket_website_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketWebsiteConfiguration> {
         self.bucket_website_configuration.as_ref()
     }
     /// <p>The notification configuration for the S3 bucket.</p>
-    pub fn bucket_notification_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketNotificationConfiguration> {
+    pub fn bucket_notification_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketNotificationConfiguration> {
         self.bucket_notification_configuration.as_ref()
     }
     /// <p>The versioning state of an S3 bucket.</p>
-    pub fn bucket_versioning_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketVersioningConfiguration> {
+    pub fn bucket_versioning_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketBucketVersioningConfiguration> {
         self.bucket_versioning_configuration.as_ref()
     }
     /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
-    pub fn object_lock_configuration(&self) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfiguration> {
+    pub fn object_lock_configuration(&self) -> ::std::option::Option<& crate::types::AwsS3BucketObjectLockConfiguration> {
         self.object_lock_configuration.as_ref()
     }
     /// <p>The name of the bucket.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -127,8 +127,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The canonical user ID of the owner of the S3 bucket.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +140,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
     pub fn set_owner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_name = input;
-        self
+        self.owner_name = input; self
     }
     /// <p>The display name of the owner of the S3 bucket.</p>
     pub fn get_owner_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The Amazon Web Services account identifier of the account that owns the S3 bucket.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account_id = input;
-        self
+        self.owner_account_id = input; self
     }
     /// <p>The Amazon Web Services account identifier of the account that owns the S3 bucket.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl AwsS3BucketDetailsBuilder {
     /// <p>Indicates when the S3 bucket was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Indicates when the S3 bucket was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -185,12 +181,8 @@ impl AwsS3BucketDetailsBuilder {
         self
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
-    pub fn set_server_side_encryption_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>,
-    ) -> Self {
-        self.server_side_encryption_configuration = input;
-        self
+    pub fn set_server_side_encryption_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>) -> Self {
+        self.server_side_encryption_configuration = input; self
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     pub fn get_server_side_encryption_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration> {
@@ -202,12 +194,8 @@ impl AwsS3BucketDetailsBuilder {
         self
     }
     /// <p>The lifecycle configuration for objects in the specified bucket.</p>
-    pub fn set_bucket_lifecycle_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationDetails>,
-    ) -> Self {
-        self.bucket_lifecycle_configuration = input;
-        self
+    pub fn set_bucket_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationDetails>) -> Self {
+        self.bucket_lifecycle_configuration = input; self
     }
     /// <p>The lifecycle configuration for objects in the specified bucket.</p>
     pub fn get_bucket_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationDetails> {
@@ -220,8 +208,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.</p>
     pub fn set_public_access_block_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>) -> Self {
-        self.public_access_block_configuration = input;
-        self
+        self.public_access_block_configuration = input; self
     }
     /// <p>Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.</p>
     pub fn get_public_access_block_configuration(&self) -> &::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails> {
@@ -234,8 +221,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The access control list for the S3 bucket.</p>
     pub fn set_access_control_list(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_control_list = input;
-        self
+        self.access_control_list = input; self
     }
     /// <p>The access control list for the S3 bucket.</p>
     pub fn get_access_control_list(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +234,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The logging configuration for the S3 bucket.</p>
     pub fn set_bucket_logging_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketLoggingConfiguration>) -> Self {
-        self.bucket_logging_configuration = input;
-        self
+        self.bucket_logging_configuration = input; self
     }
     /// <p>The logging configuration for the S3 bucket.</p>
     pub fn get_bucket_logging_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketLoggingConfiguration> {
@@ -262,8 +247,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The website configuration parameters for the S3 bucket.</p>
     pub fn set_bucket_website_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketWebsiteConfiguration>) -> Self {
-        self.bucket_website_configuration = input;
-        self
+        self.bucket_website_configuration = input; self
     }
     /// <p>The website configuration parameters for the S3 bucket.</p>
     pub fn get_bucket_website_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketWebsiteConfiguration> {
@@ -276,8 +260,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The notification configuration for the S3 bucket.</p>
     pub fn set_bucket_notification_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketNotificationConfiguration>) -> Self {
-        self.bucket_notification_configuration = input;
-        self
+        self.bucket_notification_configuration = input; self
     }
     /// <p>The notification configuration for the S3 bucket.</p>
     pub fn get_bucket_notification_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketNotificationConfiguration> {
@@ -289,12 +272,8 @@ impl AwsS3BucketDetailsBuilder {
         self
     }
     /// <p>The versioning state of an S3 bucket.</p>
-    pub fn set_bucket_versioning_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>,
-    ) -> Self {
-        self.bucket_versioning_configuration = input;
-        self
+    pub fn set_bucket_versioning_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration>) -> Self {
+        self.bucket_versioning_configuration = input; self
     }
     /// <p>The versioning state of an S3 bucket.</p>
     pub fn get_bucket_versioning_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketVersioningConfiguration> {
@@ -307,8 +286,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn set_object_lock_configuration(mut self, input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration>) -> Self {
-        self.object_lock_configuration = input;
-        self
+        self.object_lock_configuration = input; self
     }
     /// <p>Specifies which rule Amazon S3 applies by default to every new object placed in the bucket.</p>
     pub fn get_object_lock_configuration(&self) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfiguration> {
@@ -321,8 +299,7 @@ impl AwsS3BucketDetailsBuilder {
     }
     /// <p>The name of the bucket.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bucket.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -331,20 +308,35 @@ impl AwsS3BucketDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketDetails`](crate::types::AwsS3BucketDetails).
     pub fn build(self) -> crate::types::AwsS3BucketDetails {
         crate::types::AwsS3BucketDetails {
-            owner_id: self.owner_id,
-            owner_name: self.owner_name,
-            owner_account_id: self.owner_account_id,
-            created_at: self.created_at,
-            server_side_encryption_configuration: self.server_side_encryption_configuration,
-            bucket_lifecycle_configuration: self.bucket_lifecycle_configuration,
-            public_access_block_configuration: self.public_access_block_configuration,
-            access_control_list: self.access_control_list,
-            bucket_logging_configuration: self.bucket_logging_configuration,
-            bucket_website_configuration: self.bucket_website_configuration,
-            bucket_notification_configuration: self.bucket_notification_configuration,
-            bucket_versioning_configuration: self.bucket_versioning_configuration,
-            object_lock_configuration: self.object_lock_configuration,
-            name: self.name,
+            owner_id: self.owner_id
+            ,
+            owner_name: self.owner_name
+            ,
+            owner_account_id: self.owner_account_id
+            ,
+            created_at: self.created_at
+            ,
+            server_side_encryption_configuration: self.server_side_encryption_configuration
+            ,
+            bucket_lifecycle_configuration: self.bucket_lifecycle_configuration
+            ,
+            public_access_block_configuration: self.public_access_block_configuration
+            ,
+            access_control_list: self.access_control_list
+            ,
+            bucket_logging_configuration: self.bucket_logging_configuration
+            ,
+            bucket_website_configuration: self.bucket_website_configuration
+            ,
+            bucket_notification_configuration: self.bucket_notification_configuration
+            ,
+            bucket_versioning_configuration: self.bucket_versioning_configuration
+            ,
+            object_lock_configuration: self.object_lock_configuration
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

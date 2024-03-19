@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppVersionResources`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_arn(impl Into<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::app_arn) / [`set_app_arn(Option<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::set_app_arn):<br>required: **true**<br><p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p><br>
     ///   - [`app_version(impl Into<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::app_version) / [`set_app_version(Option<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::set_app_version):<br>required: **true**<br><p>The version of the application.</p><br>
     ///   - [`resolution_id(impl Into<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::resolution_id) / [`set_resolution_id(Option<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::set_resolution_id):<br>required: **false**<br><p>The identifier for a specific resolution.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>Null, or the token from a previous call to get the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListAppVersionResourcesOutput`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput) with field(s):
     ///   - [`physical_resources(Vec::<PhysicalResource>)`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput::physical_resources): <p>The physical resources in the application version.</p>
     ///   - [`resolution_id(String)`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput::resolution_id): <p>The ID for a specific resolution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_app_version_resources::ListAppVersionResourcesOutput::next_token): <p>Token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAppVersionResourcesError>`](crate::operation::list_app_version_resources::ListAppVersionResourcesError)
+                            /// - On failure, responds with [`SdkError<ListAppVersionResourcesError>`](crate::operation::list_app_version_resources::ListAppVersionResourcesError)
     pub fn list_app_version_resources(&self) -> crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder {
-        crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_app_version_resources::builders::ListAppVersionResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

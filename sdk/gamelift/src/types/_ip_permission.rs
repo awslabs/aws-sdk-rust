@@ -3,7 +3,7 @@
 /// <p>A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct IpPermission {
+pub struct IpPermission  {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
@@ -17,7 +17,7 @@ pub struct IpPermission {
     /// <p>The network communication protocol used by the fleet.</p>
     pub protocol: ::std::option::Option<crate::types::IpProtocol>,
 }
-impl IpPermission {
+impl  IpPermission  {
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
@@ -31,15 +31,15 @@ impl IpPermission {
         self.to_port
     }
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
-    pub fn ip_range(&self) -> ::std::option::Option<&str> {
+    pub fn ip_range(&self) -> ::std::option::Option<& str> {
         self.ip_range.as_deref()
     }
     /// <p>The network communication protocol used by the fleet.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::IpProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::IpProtocol> {
         self.protocol.as_ref()
     }
 }
-impl ::std::fmt::Debug for IpPermission {
+impl  ::std::fmt::Debug for IpPermission  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IpPermission");
         formatter.field("from_port", &"*** Sensitive Data Redacted ***");
@@ -78,8 +78,7 @@ impl IpPermissionBuilder {
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>A starting value for a range of allowed port numbers.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
@@ -99,8 +98,7 @@ impl IpPermissionBuilder {
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
     /// <p>For fleets using Windows builds, only ports <code>1026-60000</code> are valid.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than <code>FromPort</code>.</p>
     /// <p>For fleets using Linux builds, only ports <code>22</code> and <code>1026-60000</code> are valid.</p>
@@ -116,8 +114,7 @@ impl IpPermissionBuilder {
     }
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
     pub fn set_ip_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_range = input;
-        self
+        self.ip_range = input; self
     }
     /// <p>A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
     pub fn get_ip_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl IpPermissionBuilder {
     }
     /// <p>The network communication protocol used by the fleet.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::IpProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The network communication protocol used by the fleet.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::IpProtocol> {
@@ -141,10 +137,14 @@ impl IpPermissionBuilder {
     /// Consumes the builder and constructs a [`IpPermission`](crate::types::IpPermission).
     pub fn build(self) -> crate::types::IpPermission {
         crate::types::IpPermission {
-            from_port: self.from_port,
-            to_port: self.to_port,
-            ip_range: self.ip_range,
-            protocol: self.protocol,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
+            ip_range: self.ip_range
+            ,
+            protocol: self.protocol
+            ,
         }
     }
 }
@@ -158,3 +158,4 @@ impl ::std::fmt::Debug for IpPermissionBuilder {
         formatter.finish()
     }
 }
+

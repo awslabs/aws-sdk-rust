@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddLayerVersionPermissionInput {
+pub struct AddLayerVersionPermissionInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
@@ -18,9 +18,9 @@ pub struct AddLayerVersionPermissionInput {
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl AddLayerVersionPermissionInput {
+impl  AddLayerVersionPermissionInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(&self) -> ::std::option::Option<&str> {
+    pub fn layer_name(&self) -> ::std::option::Option<& str> {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
@@ -28,23 +28,23 @@ impl AddLayerVersionPermissionInput {
         self.version_number
     }
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_name = input;
-        self
+        self.layer_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -106,8 +104,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>An identifier that distinguishes the policy from others on the same layer version.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +118,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +132,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +145,7 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,28 +158,32 @@ impl AddLayerVersionPermissionInputBuilder {
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`AddLayerVersionPermissionInput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput {
-            layer_name: self.layer_name,
-            version_number: self.version_number,
-            statement_id: self.statement_id,
-            action: self.action,
-            principal: self.principal,
-            organization_id: self.organization_id,
-            revision_id: self.revision_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput {
+                layer_name: self.layer_name
+                ,
+                version_number: self.version_number
+                ,
+                statement_id: self.statement_id
+                ,
+                action: self.action
+                ,
+                principal: self.principal
+                ,
+                organization_id: self.organization_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

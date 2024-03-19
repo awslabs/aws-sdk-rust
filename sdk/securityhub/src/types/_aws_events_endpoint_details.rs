@@ -3,7 +3,7 @@
 /// <p>Provides details about an Amazon EventBridge global endpoint. The endpoint can improve your application’s availability by making it Regional-fault tolerant.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointDetails {
+pub struct AwsEventsEndpointDetails  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the endpoint.</p>
@@ -13,7 +13,7 @@ pub struct AwsEventsEndpointDetails {
     /// <p>The URL of the endpoint.</p>
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The event buses being used by the endpoint.</p>
-    pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEventsEndpointEventBusesDetails>>,
+    pub event_buses: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEventsEndpointEventBusesDetails>>,
     /// <p>The name of the endpoint.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code>, which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
@@ -27,51 +27,52 @@ pub struct AwsEventsEndpointDetails {
     /// <p>The reason the endpoint is in its current state.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEndpointDetails {
+impl  AwsEventsEndpointDetails  {
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A description of the endpoint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URL subdomain of the endpoint. For example, if <code>EndpointUrl</code> is <code>https://abcde.veo.endpoints.event.amazonaws.com</code>, then the <code>EndpointId</code> is <code>abcde.veo</code>.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The URL of the endpoint.</p>
-    pub fn endpoint_url(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_url(&self) -> ::std::option::Option<& str> {
         self.endpoint_url.as_deref()
     }
     /// <p>The event buses being used by the endpoint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_buses.is_none()`.
-    pub fn event_buses(&self) -> &[crate::types::AwsEventsEndpointEventBusesDetails] {
-        self.event_buses.as_deref().unwrap_or_default()
+    pub fn event_buses(&self) -> & [crate::types::AwsEventsEndpointEventBusesDetails] {
+        self.event_buses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code>, which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
-    pub fn replication_config(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointReplicationConfigDetails> {
+    pub fn replication_config(&self) -> ::std::option::Option<& crate::types::AwsEventsEndpointReplicationConfigDetails> {
         self.replication_config.as_ref()
     }
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The routing configuration of the endpoint.</p>
-    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::AwsEventsEndpointRoutingConfigDetails> {
+    pub fn routing_config(&self) -> ::std::option::Option<& crate::types::AwsEventsEndpointRoutingConfigDetails> {
         self.routing_config.as_ref()
     }
     /// <p>The current state of the endpoint.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The reason the endpoint is in its current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
 }
@@ -90,7 +91,7 @@ pub struct AwsEventsEndpointDetailsBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
-    pub(crate) event_buses: ::std::option::Option<::std::vec::Vec<crate::types::AwsEventsEndpointEventBusesDetails>>,
+    pub(crate) event_buses: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEventsEndpointEventBusesDetails>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_config: ::std::option::Option<crate::types::AwsEventsEndpointReplicationConfigDetails>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -106,8 +107,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +120,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>A description of the endpoint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the endpoint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The URL subdomain of the endpoint. For example, if <code>EndpointUrl</code> is <code>https://abcde.veo.endpoints.event.amazonaws.com</code>, then the <code>EndpointId</code> is <code>abcde.veo</code>.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The URL subdomain of the endpoint. For example, if <code>EndpointUrl</code> is <code>https://abcde.veo.endpoints.event.amazonaws.com</code>, then the <code>EndpointId</code> is <code>abcde.veo</code>.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +146,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The URL of the endpoint.</p>
     pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_url = input;
-        self
+        self.endpoint_url = input; self
     }
     /// <p>The URL of the endpoint.</p>
     pub fn get_endpoint_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,17 +159,16 @@ impl AwsEventsEndpointDetailsBuilder {
     /// <p>The event buses being used by the endpoint.</p>
     pub fn event_buses(mut self, input: crate::types::AwsEventsEndpointEventBusesDetails) -> Self {
         let mut v = self.event_buses.unwrap_or_default();
-        v.push(input);
-        self.event_buses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_buses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The event buses being used by the endpoint.</p>
-    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEventsEndpointEventBusesDetails>>) -> Self {
-        self.event_buses = input;
-        self
+    pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEventsEndpointEventBusesDetails>>) -> Self {
+        self.event_buses = input; self
     }
     /// <p>The event buses being used by the endpoint.</p>
-    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEventsEndpointEventBusesDetails>> {
+    pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEventsEndpointEventBusesDetails>> {
         &self.event_buses
     }
     /// <p>The name of the endpoint.</p>
@@ -182,8 +178,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +191,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code>, which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn set_replication_config(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointReplicationConfigDetails>) -> Self {
-        self.replication_config = input;
-        self
+        self.replication_config = input; self
     }
     /// <p>Whether event replication was enabled or disabled for this endpoint. The default state is <code>ENABLED</code>, which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn get_replication_config(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointReplicationConfigDetails> {
@@ -210,8 +204,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role used by event replication for the endpoint.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,8 +217,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The routing configuration of the endpoint.</p>
     pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigDetails>) -> Self {
-        self.routing_config = input;
-        self
+        self.routing_config = input; self
     }
     /// <p>The routing configuration of the endpoint.</p>
     pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::AwsEventsEndpointRoutingConfigDetails> {
@@ -238,8 +230,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The current state of the endpoint.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the endpoint.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,8 +243,7 @@ impl AwsEventsEndpointDetailsBuilder {
     }
     /// <p>The reason the endpoint is in its current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason the endpoint is in its current state.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,17 +252,29 @@ impl AwsEventsEndpointDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEndpointDetails`](crate::types::AwsEventsEndpointDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointDetails {
         crate::types::AwsEventsEndpointDetails {
-            arn: self.arn,
-            description: self.description,
-            endpoint_id: self.endpoint_id,
-            endpoint_url: self.endpoint_url,
-            event_buses: self.event_buses,
-            name: self.name,
-            replication_config: self.replication_config,
-            role_arn: self.role_arn,
-            routing_config: self.routing_config,
-            state: self.state,
-            state_reason: self.state_reason,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            endpoint_id: self.endpoint_id
+            ,
+            endpoint_url: self.endpoint_url
+            ,
+            event_buses: self.event_buses
+            ,
+            name: self.name
+            ,
+            replication_config: self.replication_config
+            ,
+            role_arn: self.role_arn
+            ,
+            routing_config: self.routing_config
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
         }
     }
 }
+

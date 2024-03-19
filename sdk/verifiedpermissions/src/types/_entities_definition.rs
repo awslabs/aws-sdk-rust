@@ -6,7 +6,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EntitiesDefinition {
     /// <p>An array of entities that are needed to successfully evaluate an authorization request. Each entity in this array must include an identifier for the entity, the attributes of the entity, and a list of any parent entities.</p>
-    EntityList(::std::vec::Vec<crate::types::EntityItem>),
+    EntityList(::std::vec::Vec::<crate::types::EntityItem>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,12 +21,8 @@ impl EntitiesDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EntityList`](crate::types::EntitiesDefinition::EntityList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_entity_list(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::EntityItem>, &Self> {
-        if let EntitiesDefinition::EntityList(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_entity_list(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::EntityItem>, &Self> {
+        if let EntitiesDefinition::EntityList(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`EntityList`](crate::types::EntitiesDefinition::EntityList).
     pub fn is_entity_list(&self) -> bool {
@@ -37,3 +33,4 @@ impl EntitiesDefinition {
         matches!(self, Self::Unknown)
     }
 }
+

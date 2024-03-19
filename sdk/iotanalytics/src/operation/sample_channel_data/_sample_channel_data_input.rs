@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SampleChannelDataInput {
+pub struct SampleChannelDataInput  {
     /// <p>The name of the channel whose message samples are retrieved.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
@@ -12,9 +12,9 @@ pub struct SampleChannelDataInput {
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SampleChannelDataInput {
+impl  SampleChannelDataInput  {
     /// <p>The name of the channel whose message samples are retrieved.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
@@ -22,11 +22,11 @@ impl SampleChannelDataInput {
         self.max_messages
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl SampleChannelDataInputBuilder {
     }
     /// <p>The name of the channel whose message samples are retrieved.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel whose message samples are retrieved.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl SampleChannelDataInputBuilder {
     }
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub fn set_max_messages(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_messages = input;
-        self
+        self.max_messages = input; self
     }
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub fn get_max_messages(&self) -> &::std::option::Option<i32> {
@@ -83,8 +81,7 @@ impl SampleChannelDataInputBuilder {
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,22 +94,26 @@ impl SampleChannelDataInputBuilder {
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
     /// Consumes the builder and constructs a [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::sample_channel_data::SampleChannelDataInput {
-            channel_name: self.channel_name,
-            max_messages: self.max_messages,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::sample_channel_data::SampleChannelDataInput {
+                channel_name: self.channel_name
+                ,
+                max_messages: self.max_messages
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

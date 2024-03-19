@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContextInput {
+pub struct DeleteContextInput  {
     /// <p>The name of the context to delete.</p>
     pub context_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContextInput {
+impl  DeleteContextInput  {
     /// <p>The name of the context to delete.</p>
-    pub fn context_name(&self) -> ::std::option::Option<&str> {
+    pub fn context_name(&self) -> ::std::option::Option<& str> {
         self.context_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteContextInputBuilder {
     }
     /// <p>The name of the context to delete.</p>
     pub fn set_context_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_name = input;
-        self
+        self.context_name = input; self
     }
     /// <p>The name of the context to delete.</p>
     pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_name
     }
     /// Consumes the builder and constructs a [`DeleteContextInput`](crate::operation::delete_context::DeleteContextInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_context::DeleteContextInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_context::DeleteContextInput {
-            context_name: self.context_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_context::DeleteContextInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_context::DeleteContextInput {
+                context_name: self.context_name
+                ,
+            }
+        )
     }
 }
+

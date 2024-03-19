@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceSchedulersOutput {
+pub struct ListInferenceSchedulersOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
-    pub inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
-impl ListInferenceSchedulersOutput {
+impl  ListInferenceSchedulersOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_scheduler_summaries.is_none()`.
-    pub fn inference_scheduler_summaries(&self) -> &[crate::types::InferenceSchedulerSummary] {
-        self.inference_scheduler_summaries.as_deref().unwrap_or_default()
+    pub fn inference_scheduler_summaries(&self) -> & [crate::types::InferenceSchedulerSummary] {
+        self.inference_scheduler_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInferenceSchedulersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInferenceSchedulersOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
     pub fn builder() -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder {
@@ -38,7 +39,7 @@ impl ListInferenceSchedulersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceSchedulersOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub(crate) inference_scheduler_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutputBuilder {
@@ -49,8 +50,7 @@ impl ListInferenceSchedulersOutputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of inference schedulers.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListInferenceSchedulersOutputBuilder {
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
     pub fn inference_scheduler_summaries(mut self, input: crate::types::InferenceSchedulerSummary) -> Self {
         let mut v = self.inference_scheduler_summaries.unwrap_or_default();
-        v.push(input);
-        self.inference_scheduler_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_scheduler_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
-    pub fn set_inference_scheduler_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
-    ) -> Self {
-        self.inference_scheduler_summaries = input;
-        self
+    pub fn set_inference_scheduler_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceSchedulerSummary>>) -> Self {
+        self.inference_scheduler_summaries = input; self
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status.</p>
-    pub fn get_inference_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceSchedulerSummary>> {
+    pub fn get_inference_scheduler_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceSchedulerSummary>> {
         &self.inference_scheduler_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
     pub fn build(self) -> crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
         crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
-            next_token: self.next_token,
-            inference_scheduler_summaries: self.inference_scheduler_summaries,
+            next_token: self.next_token
+            ,
+            inference_scheduler_summaries: self.inference_scheduler_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

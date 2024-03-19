@@ -3,7 +3,7 @@
 /// <p>Describes the destination file system in the replication configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct Destination {
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Destination {
+impl  Destination  {
     /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
@@ -27,21 +27,19 @@ impl Destination {
     /// <li>
     /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::ReplicationStatus {
+    pub fn status(&self) -> & crate::types::ReplicationStatus {
         &self.status
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> &str {
-        use std::ops::Deref;
-        self.file_system_id.deref()
+    pub fn file_system_id(&self) -> & str {
+        use std::ops::Deref; self.file_system_id.deref()
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-    pub fn last_replicated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_replicated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
     }
 }
@@ -82,8 +80,7 @@ impl DestinationBuilder {
     /// <p>The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a failed state and is unrecoverable. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication configuration, and then restore the most recent backup of the failed file system (either the source or the destination) to a new file system.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
@@ -103,8 +100,7 @@ impl DestinationBuilder {
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl DestinationBuilder {
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +127,7 @@ impl DestinationBuilder {
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn set_last_replicated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_replicated_timestamp = input;
-        self
+        self.last_replicated_timestamp = input; self
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn get_last_replicated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,26 +139,27 @@ impl DestinationBuilder {
     /// - [`file_system_id`](crate::types::builders::DestinationBuilder::file_system_id)
     /// - [`region`](crate::types::builders::DestinationBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Destination {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Destination",
-                )
-            })?,
-            file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_system_id",
-                    "file_system_id was not specified but it is required when building Destination",
-                )
-            })?,
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building Destination",
-                )
-            })?,
-            last_replicated_timestamp: self.last_replicated_timestamp,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Destination {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Destination")
+                    )?
+                ,
+                file_system_id: self.file_system_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_system_id", "file_system_id was not specified but it is required when building Destination")
+                    )?
+                ,
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building Destination")
+                    )?
+                ,
+                last_replicated_timestamp: self.last_replicated_timestamp
+                ,
+            }
+        )
     }
 }
+

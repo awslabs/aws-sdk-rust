@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeHandshakeOutput {
+pub struct DescribeHandshakeOutput  {
     /// <p>A structure that contains information about the specified handshake.</p>
     pub handshake: ::std::option::Option<crate::types::Handshake>,
     _request_id: Option<String>,
 }
-impl DescribeHandshakeOutput {
+impl  DescribeHandshakeOutput  {
     /// <p>A structure that contains information about the specified handshake.</p>
-    pub fn handshake(&self) -> ::std::option::Option<&crate::types::Handshake> {
+    pub fn handshake(&self) -> ::std::option::Option<& crate::types::Handshake> {
         self.handshake.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeHandshakeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHandshakeOutput`](crate::operation::describe_handshake::DescribeHandshakeOutput).
     pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeHandshakeOutputBuilder {
     }
     /// <p>A structure that contains information about the specified handshake.</p>
     pub fn set_handshake(mut self, input: ::std::option::Option<crate::types::Handshake>) -> Self {
-        self.handshake = input;
-        self
+        self.handshake = input; self
     }
     /// <p>A structure that contains information about the specified handshake.</p>
     pub fn get_handshake(&self) -> &::std::option::Option<crate::types::Handshake> {
         &self.handshake
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeHandshakeOutput`](crate::operation::describe_handshake::DescribeHandshakeOutput).
     pub fn build(self) -> crate::operation::describe_handshake::DescribeHandshakeOutput {
         crate::operation::describe_handshake::DescribeHandshakeOutput {
-            handshake: self.handshake,
+            handshake: self.handshake
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

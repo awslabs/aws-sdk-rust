@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRecommendationsInput {
+pub struct StartRecommendationsInput  {
     /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
     pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
     pub settings: ::std::option::Option<crate::types::RecommendationSettings>,
 }
-impl StartRecommendationsInput {
+impl  StartRecommendationsInput  {
     /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
-    pub fn database_id(&self) -> ::std::option::Option<&str> {
+    pub fn database_id(&self) -> ::std::option::Option<& str> {
         self.database_id.as_deref()
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
-    pub fn settings(&self) -> ::std::option::Option<&crate::types::RecommendationSettings> {
+    pub fn settings(&self) -> ::std::option::Option<& crate::types::RecommendationSettings> {
         self.settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartRecommendationsInputBuilder {
     }
     /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_id = input;
-        self
+        self.database_id = input; self
     }
     /// <p>The identifier of the source database to analyze and provide recommendations for.</p>
     pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl StartRecommendationsInputBuilder {
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::RecommendationSettings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// <p>The settings in JSON format that Fleet Advisor uses to determine target engine recommendations. These parameters include target instance sizing and availability and durability settings. For target instance sizing, Fleet Advisor supports the following two options: total capacity and resource utilization. For availability and durability, Fleet Advisor supports the following two options: production (Multi-AZ deployments) and Dev/Test (Single-AZ deployments).</p>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::RecommendationSettings> {
         &self.settings
     }
     /// Consumes the builder and constructs a [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_recommendations::StartRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_recommendations::StartRecommendationsInput {
-            database_id: self.database_id,
-            settings: self.settings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_recommendations::StartRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_recommendations::StartRecommendationsInput {
+                database_id: self.database_id
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

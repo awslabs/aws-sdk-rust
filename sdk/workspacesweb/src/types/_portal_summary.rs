@@ -3,7 +3,7 @@
 /// <p>The summary of the portal.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PortalSummary {
+pub struct PortalSummary  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::string::String,
     /// <p>The renderer that is used in streaming sessions.</p>
@@ -35,68 +35,67 @@ pub struct PortalSummary {
     /// <p>The ARN of the IP access settings.</p>
     pub ip_access_settings_arn: ::std::option::Option<::std::string::String>,
 }
-impl PortalSummary {
+impl  PortalSummary  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.portal_arn.deref()
+    pub fn portal_arn(&self) -> & str {
+        use std::ops::Deref; self.portal_arn.deref()
     }
     /// <p>The renderer that is used in streaming sessions.</p>
-    pub fn renderer_type(&self) -> ::std::option::Option<&crate::types::RendererType> {
+    pub fn renderer_type(&self) -> ::std::option::Option<& crate::types::RendererType> {
         self.renderer_type.as_ref()
     }
     /// <p>The browser type of the web portal.</p>
-    pub fn browser_type(&self) -> ::std::option::Option<&crate::types::BrowserType> {
+    pub fn browser_type(&self) -> ::std::option::Option<& crate::types::BrowserType> {
         self.browser_type.as_ref()
     }
     /// <p>The status of the web portal.</p>
-    pub fn portal_status(&self) -> ::std::option::Option<&crate::types::PortalStatus> {
+    pub fn portal_status(&self) -> ::std::option::Option<& crate::types::PortalStatus> {
         self.portal_status.as_ref()
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
-    pub fn portal_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn portal_endpoint(&self) -> ::std::option::Option<& str> {
         self.portal_endpoint.as_deref()
     }
     /// <p>The name of the web portal.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The creation date of the web portal.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
-    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> ::std::option::Option<& str> {
         self.browser_settings_arn.as_deref()
     }
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
-    pub fn user_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_settings_arn(&self) -> ::std::option::Option<& str> {
         self.user_settings_arn.as_deref()
     }
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
-    pub fn network_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn network_settings_arn(&self) -> ::std::option::Option<& str> {
         self.network_settings_arn.as_deref()
     }
     /// <p>The ARN of the trust that is associated with this web portal.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
-    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_access_logging_settings_arn(&self) -> ::std::option::Option<& str> {
         self.user_access_logging_settings_arn.as_deref()
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The ARN of the IP access settings.</p>
-    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ip_access_settings_arn(&self) -> ::std::option::Option<& str> {
         self.ip_access_settings_arn.as_deref()
     }
 }
-impl ::std::fmt::Debug for PortalSummary {
+impl  ::std::fmt::Debug for PortalSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PortalSummary");
         formatter.field("portal_arn", &self.portal_arn);
@@ -151,8 +150,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +163,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The renderer that is used in streaming sessions.</p>
     pub fn set_renderer_type(mut self, input: ::std::option::Option<crate::types::RendererType>) -> Self {
-        self.renderer_type = input;
-        self
+        self.renderer_type = input; self
     }
     /// <p>The renderer that is used in streaming sessions.</p>
     pub fn get_renderer_type(&self) -> &::std::option::Option<crate::types::RendererType> {
@@ -179,8 +176,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The browser type of the web portal.</p>
     pub fn set_browser_type(mut self, input: ::std::option::Option<crate::types::BrowserType>) -> Self {
-        self.browser_type = input;
-        self
+        self.browser_type = input; self
     }
     /// <p>The browser type of the web portal.</p>
     pub fn get_browser_type(&self) -> &::std::option::Option<crate::types::BrowserType> {
@@ -193,8 +189,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The status of the web portal.</p>
     pub fn set_portal_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
-        self.portal_status = input;
-        self
+        self.portal_status = input; self
     }
     /// <p>The status of the web portal.</p>
     pub fn get_portal_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
@@ -207,8 +202,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub fn set_portal_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_endpoint = input;
-        self
+        self.portal_endpoint = input; self
     }
     /// <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
     pub fn get_portal_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +215,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The name of the web portal.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the web portal.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +228,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The creation date of the web portal.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of the web portal.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -249,8 +241,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
     pub fn set_browser_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.browser_settings_arn = input;
-        self
+        self.browser_settings_arn = input; self
     }
     /// <p>The ARN of the browser settings that is associated with the web portal.</p>
     pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +254,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub fn set_user_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_settings_arn = input;
-        self
+        self.user_settings_arn = input; self
     }
     /// <p>The ARN of the user settings that is associated with the web portal.</p>
     pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,8 +267,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
     pub fn set_network_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_settings_arn = input;
-        self
+        self.network_settings_arn = input; self
     }
     /// <p>The ARN of the network settings that is associated with the web portal.</p>
     pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -291,8 +280,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust that is associated with this web portal.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +293,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
     pub fn set_user_access_logging_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_access_logging_settings_arn = input;
-        self
+        self.user_access_logging_settings_arn = input; self
     }
     /// <p>The ARN of the user access logging settings that is associated with the web portal.</p>
     pub fn get_user_access_logging_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -323,8 +310,7 @@ impl PortalSummaryBuilder {
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
     /// <p><code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources (including external identity provider integration), plus user and group access to your web portal, can be configured in the IAM Identity Center.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The type of authentication integration points used when signing into the web portal. Defaults to <code>Standard</code>.</p>
     /// <p><code>Standard</code> web portals are authenticated directly through your identity provider. You need to call <code>CreateIdentityProvider</code> to integrate your identity provider with your web portal. User and group access to your web portal is controlled through your identity provider.</p>
@@ -339,8 +325,7 @@ impl PortalSummaryBuilder {
     }
     /// <p>The ARN of the IP access settings.</p>
     pub fn set_ip_access_settings_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_access_settings_arn = input;
-        self
+        self.ip_access_settings_arn = input; self
     }
     /// <p>The ARN of the IP access settings.</p>
     pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,27 +335,41 @@ impl PortalSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`portal_arn`](crate::types::builders::PortalSummaryBuilder::portal_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::PortalSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PortalSummary {
-            portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "portal_arn",
-                    "portal_arn was not specified but it is required when building PortalSummary",
-                )
-            })?,
-            renderer_type: self.renderer_type,
-            browser_type: self.browser_type,
-            portal_status: self.portal_status,
-            portal_endpoint: self.portal_endpoint,
-            display_name: self.display_name,
-            creation_date: self.creation_date,
-            browser_settings_arn: self.browser_settings_arn,
-            user_settings_arn: self.user_settings_arn,
-            network_settings_arn: self.network_settings_arn,
-            trust_store_arn: self.trust_store_arn,
-            user_access_logging_settings_arn: self.user_access_logging_settings_arn,
-            authentication_type: self.authentication_type,
-            ip_access_settings_arn: self.ip_access_settings_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PortalSummary {
+                portal_arn: self.portal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building PortalSummary")
+                    )?
+                ,
+                renderer_type: self.renderer_type
+                ,
+                browser_type: self.browser_type
+                ,
+                portal_status: self.portal_status
+                ,
+                portal_endpoint: self.portal_endpoint
+                ,
+                display_name: self.display_name
+                ,
+                creation_date: self.creation_date
+                ,
+                browser_settings_arn: self.browser_settings_arn
+                ,
+                user_settings_arn: self.user_settings_arn
+                ,
+                network_settings_arn: self.network_settings_arn
+                ,
+                trust_store_arn: self.trust_store_arn
+                ,
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn
+                ,
+                authentication_type: self.authentication_type
+                ,
+                ip_access_settings_arn: self.ip_access_settings_arn
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PortalSummaryBuilder {
@@ -393,3 +392,4 @@ impl ::std::fmt::Debug for PortalSummaryBuilder {
         formatter.finish()
     }
 }
+

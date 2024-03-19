@@ -3,15 +3,14 @@
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>ChangeMessageVisibilityBatch</code>.</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChangeMessageVisibilityBatchResultEntry {
+pub struct ChangeMessageVisibilityBatchResultEntry  {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
     pub id: ::std::string::String,
 }
-impl ChangeMessageVisibilityBatchResultEntry {
+impl  ChangeMessageVisibilityBatchResultEntry  {
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl ChangeMessageVisibilityBatchResultEntry {
@@ -36,8 +35,7 @@ impl ChangeMessageVisibilityBatchResultEntryBuilder {
     }
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl ChangeMessageVisibilityBatchResultEntryBuilder {
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::types::ChangeMessageVisibilityBatchResultEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ChangeMessageVisibilityBatchResultEntryBuilder::id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ChangeMessageVisibilityBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ChangeMessageVisibilityBatchResultEntry {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ChangeMessageVisibilityBatchResultEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ChangeMessageVisibilityBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ChangeMessageVisibilityBatchResultEntry {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ChangeMessageVisibilityBatchResultEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

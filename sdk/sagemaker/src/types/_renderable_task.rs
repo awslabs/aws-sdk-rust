@@ -3,13 +3,13 @@
 /// <p>Contains input values for a task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenderableTask {
+pub struct RenderableTask  {
     /// <p>A JSON object that contains values for the variables defined in the template. It is made available to the template under the substitution variable <code>task.input</code>. For example, if you define a variable <code>task.input.text</code> in your template, you can supply the variable in the JSON object as <code>"text": "sample text"</code>.</p>
     pub input: ::std::option::Option<::std::string::String>,
 }
-impl RenderableTask {
+impl  RenderableTask  {
     /// <p>A JSON object that contains values for the variables defined in the template. It is made available to the template under the substitution variable <code>task.input</code>. For example, if you define a variable <code>task.input.text</code> in your template, you can supply the variable in the JSON object as <code>"text": "sample text"</code>.</p>
-    pub fn input(&self) -> ::std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<& str> {
         self.input.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl RenderableTaskBuilder {
     }
     /// <p>A JSON object that contains values for the variables defined in the template. It is made available to the template under the substitution variable <code>task.input</code>. For example, if you define a variable <code>task.input.text</code> in your template, you can supply the variable in the JSON object as <code>"text": "sample text"</code>.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>A JSON object that contains values for the variables defined in the template. It is made available to the template under the substitution variable <code>task.input</code>. For example, if you define a variable <code>task.input.text</code> in your template, you can supply the variable in the JSON object as <code>"text": "sample text"</code>.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,10 @@ impl RenderableTaskBuilder {
     }
     /// Consumes the builder and constructs a [`RenderableTask`](crate::types::RenderableTask).
     pub fn build(self) -> crate::types::RenderableTask {
-        crate::types::RenderableTask { input: self.input }
+        crate::types::RenderableTask {
+            input: self.input
+            ,
+        }
     }
 }
+

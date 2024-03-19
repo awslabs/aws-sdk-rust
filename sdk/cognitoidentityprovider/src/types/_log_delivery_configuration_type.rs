@@ -3,22 +3,20 @@
 /// <p>The logging parameters of a user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogDeliveryConfigurationType {
+pub struct LogDeliveryConfigurationType  {
     /// <p>The ID of the user pool where you configured detailed activity logging.</p>
     pub user_pool_id: ::std::string::String,
     /// <p>The detailed activity logging destination of a user pool.</p>
-    pub log_configurations: ::std::vec::Vec<crate::types::LogConfigurationType>,
+    pub log_configurations: ::std::vec::Vec::<crate::types::LogConfigurationType>,
 }
-impl LogDeliveryConfigurationType {
+impl  LogDeliveryConfigurationType  {
     /// <p>The ID of the user pool where you configured detailed activity logging.</p>
-    pub fn user_pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_pool_id.deref()
+    pub fn user_pool_id(&self) -> & str {
+        use std::ops::Deref; self.user_pool_id.deref()
     }
     /// <p>The detailed activity logging destination of a user pool.</p>
-    pub fn log_configurations(&self) -> &[crate::types::LogConfigurationType] {
-        use std::ops::Deref;
-        self.log_configurations.deref()
+    pub fn log_configurations(&self) -> & [crate::types::LogConfigurationType] {
+        use std::ops::Deref; self.log_configurations.deref()
     }
 }
 impl LogDeliveryConfigurationType {
@@ -33,7 +31,7 @@ impl LogDeliveryConfigurationType {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LogDeliveryConfigurationTypeBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
-    pub(crate) log_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LogConfigurationType>>,
+    pub(crate) log_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LogConfigurationType>>,
 }
 impl LogDeliveryConfigurationTypeBuilder {
     /// <p>The ID of the user pool where you configured detailed activity logging.</p>
@@ -44,8 +42,7 @@ impl LogDeliveryConfigurationTypeBuilder {
     }
     /// <p>The ID of the user pool where you configured detailed activity logging.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The ID of the user pool where you configured detailed activity logging.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl LogDeliveryConfigurationTypeBuilder {
     /// <p>The detailed activity logging destination of a user pool.</p>
     pub fn log_configurations(mut self, input: crate::types::LogConfigurationType) -> Self {
         let mut v = self.log_configurations.unwrap_or_default();
-        v.push(input);
-        self.log_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The detailed activity logging destination of a user pool.</p>
-    pub fn set_log_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogConfigurationType>>) -> Self {
-        self.log_configurations = input;
-        self
+    pub fn set_log_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogConfigurationType>>) -> Self {
+        self.log_configurations = input; self
     }
     /// <p>The detailed activity logging destination of a user pool.</p>
-    pub fn get_log_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogConfigurationType>> {
+    pub fn get_log_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogConfigurationType>> {
         &self.log_configurations
     }
     /// Consumes the builder and constructs a [`LogDeliveryConfigurationType`](crate::types::LogDeliveryConfigurationType).
@@ -76,19 +72,20 @@ impl LogDeliveryConfigurationTypeBuilder {
     /// - [`user_pool_id`](crate::types::builders::LogDeliveryConfigurationTypeBuilder::user_pool_id)
     /// - [`log_configurations`](crate::types::builders::LogDeliveryConfigurationTypeBuilder::log_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::LogDeliveryConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogDeliveryConfigurationType {
-            user_pool_id: self.user_pool_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_pool_id",
-                    "user_pool_id was not specified but it is required when building LogDeliveryConfigurationType",
-                )
-            })?,
-            log_configurations: self.log_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_configurations",
-                    "log_configurations was not specified but it is required when building LogDeliveryConfigurationType",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogDeliveryConfigurationType {
+                user_pool_id: self.user_pool_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_pool_id", "user_pool_id was not specified but it is required when building LogDeliveryConfigurationType")
+                    )?
+                ,
+                log_configurations: self.log_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_configurations", "log_configurations was not specified but it is required when building LogDeliveryConfigurationType")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePartnerAccountInput {
+pub struct UpdatePartnerAccountInput  {
     /// <p>The Sidewalk account credentials.</p>
     pub sidewalk: ::std::option::Option<crate::types::SidewalkUpdateAccount>,
     /// <p>The ID of the partner account to update.</p>
@@ -10,17 +10,17 @@ pub struct UpdatePartnerAccountInput {
     /// <p>The partner type.</p>
     pub partner_type: ::std::option::Option<crate::types::PartnerType>,
 }
-impl UpdatePartnerAccountInput {
+impl  UpdatePartnerAccountInput  {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkUpdateAccount> {
+    pub fn sidewalk(&self) -> ::std::option::Option<& crate::types::SidewalkUpdateAccount> {
         self.sidewalk.as_ref()
     }
     /// <p>The ID of the partner account to update.</p>
-    pub fn partner_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_account_id(&self) -> ::std::option::Option<& str> {
         self.partner_account_id.as_deref()
     }
     /// <p>The partner type.</p>
-    pub fn partner_type(&self) -> ::std::option::Option<&crate::types::PartnerType> {
+    pub fn partner_type(&self) -> ::std::option::Option<& crate::types::PartnerType> {
         self.partner_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdatePartnerAccountInputBuilder {
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn set_sidewalk(mut self, input: ::std::option::Option<crate::types::SidewalkUpdateAccount>) -> Self {
-        self.sidewalk = input;
-        self
+        self.sidewalk = input; self
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateAccount> {
@@ -63,8 +62,7 @@ impl UpdatePartnerAccountInputBuilder {
     }
     /// <p>The ID of the partner account to update.</p>
     pub fn set_partner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_account_id = input;
-        self
+        self.partner_account_id = input; self
     }
     /// <p>The ID of the partner account to update.</p>
     pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl UpdatePartnerAccountInputBuilder {
     }
     /// <p>The partner type.</p>
     pub fn set_partner_type(mut self, input: ::std::option::Option<crate::types::PartnerType>) -> Self {
-        self.partner_type = input;
-        self
+        self.partner_type = input; self
     }
     /// <p>The partner type.</p>
     pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
         &self.partner_type
     }
     /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_partner_account::UpdatePartnerAccountInput {
-            sidewalk: self.sidewalk,
-            partner_account_id: self.partner_account_id,
-            partner_type: self.partner_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_partner_account::UpdatePartnerAccountInput {
+                sidewalk: self.sidewalk
+                ,
+                partner_account_id: self.partner_account_id
+                ,
+                partner_type: self.partner_type
+                ,
+            }
+        )
     }
 }
+

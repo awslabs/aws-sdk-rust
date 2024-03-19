@@ -3,20 +3,19 @@
 /// <p>A file containing a batch job definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileBatchJobDefinition {
+pub struct FileBatchJobDefinition  {
     /// <p>The name of the file containing the batch job definition.</p>
     pub file_name: ::std::string::String,
     /// <p>The path to the file containing the batch job definition.</p>
     pub folder_path: ::std::option::Option<::std::string::String>,
 }
-impl FileBatchJobDefinition {
+impl  FileBatchJobDefinition  {
     /// <p>The name of the file containing the batch job definition.</p>
-    pub fn file_name(&self) -> &str {
-        use std::ops::Deref;
-        self.file_name.deref()
+    pub fn file_name(&self) -> & str {
+        use std::ops::Deref; self.file_name.deref()
     }
     /// <p>The path to the file containing the batch job definition.</p>
-    pub fn folder_path(&self) -> ::std::option::Option<&str> {
+    pub fn folder_path(&self) -> ::std::option::Option<& str> {
         self.folder_path.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl FileBatchJobDefinitionBuilder {
     }
     /// <p>The name of the file containing the batch job definition.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the file containing the batch job definition.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl FileBatchJobDefinitionBuilder {
     }
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.folder_path = input;
-        self
+        self.folder_path = input; self
     }
     /// <p>The path to the file containing the batch job definition.</p>
     pub fn get_folder_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl FileBatchJobDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_name`](crate::types::builders::FileBatchJobDefinitionBuilder::file_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FileBatchJobDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FileBatchJobDefinition {
-            file_name: self.file_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_name",
-                    "file_name was not specified but it is required when building FileBatchJobDefinition",
-                )
-            })?,
-            folder_path: self.folder_path,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FileBatchJobDefinition {
+                file_name: self.file_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_name", "file_name was not specified but it is required when building FileBatchJobDefinition")
+                    )?
+                ,
+                folder_path: self.folder_path
+                ,
+            }
+        )
     }
 }
+

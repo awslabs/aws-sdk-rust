@@ -3,17 +3,16 @@
 /// <p>The required parameters for connecting to an Exasol data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExasolParameters {
+pub struct ExasolParameters  {
     /// <p>The hostname or IP address of the Exasol data source.</p>
     pub host: ::std::string::String,
     /// <p>The port for the Exasol data source.</p>
     pub port: i32,
 }
-impl ExasolParameters {
+impl  ExasolParameters  {
     /// <p>The hostname or IP address of the Exasol data source.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>The port for the Exasol data source.</p>
     pub fn port(&self) -> i32 {
@@ -43,8 +42,7 @@ impl ExasolParametersBuilder {
     }
     /// <p>The hostname or IP address of the Exasol data source.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The hostname or IP address of the Exasol data source.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ExasolParametersBuilder {
     }
     /// <p>The port for the Exasol data source.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port for the Exasol data source.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl ExasolParametersBuilder {
     /// - [`host`](crate::types::builders::ExasolParametersBuilder::host)
     /// - [`port`](crate::types::builders::ExasolParametersBuilder::port)
     pub fn build(self) -> ::std::result::Result<crate::types::ExasolParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExasolParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building ExasolParameters",
-                )
-            })?,
-            port: self.port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "port",
-                    "port was not specified but it is required when building ExasolParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExasolParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building ExasolParameters")
+                    )?
+                ,
+                port: self.port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building ExasolParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

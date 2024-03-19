@@ -3,7 +3,7 @@
 /// <p>The configuration of the workload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkloadConfiguration {
+pub struct WorkloadConfiguration  {
     /// <p>The name of the workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the workload tier.</p>
@@ -11,17 +11,17 @@ pub struct WorkloadConfiguration {
     /// <p>The configuration settings of the workload.</p>
     pub configuration: ::std::option::Option<::std::string::String>,
 }
-impl WorkloadConfiguration {
+impl  WorkloadConfiguration  {
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The configuration of the workload tier.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>The configuration settings of the workload.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
+    pub fn configuration(&self) -> ::std::option::Option<& str> {
         self.configuration.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl WorkloadConfigurationBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl WorkloadConfigurationBuilder {
     }
     /// <p>The configuration of the workload tier.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The configuration of the workload tier.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
@@ -76,8 +74,7 @@ impl WorkloadConfigurationBuilder {
     }
     /// <p>The configuration settings of the workload.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration settings of the workload.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl WorkloadConfigurationBuilder {
     /// Consumes the builder and constructs a [`WorkloadConfiguration`](crate::types::WorkloadConfiguration).
     pub fn build(self) -> crate::types::WorkloadConfiguration {
         crate::types::WorkloadConfiguration {
-            workload_name: self.workload_name,
-            tier: self.tier,
-            configuration: self.configuration,
+            workload_name: self.workload_name
+            ,
+            tier: self.tier
+            ,
+            configuration: self.configuration
+            ,
         }
     }
 }
+

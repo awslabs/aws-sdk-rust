@@ -3,23 +3,22 @@
 /// <p>Contains the output of DescribePipelines.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePipelinesOutput {
+pub struct DescribePipelinesOutput  {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub pipeline_description_list: ::std::vec::Vec<crate::types::PipelineDescription>,
+    pub pipeline_description_list: ::std::vec::Vec::<crate::types::PipelineDescription>,
     _request_id: Option<String>,
 }
-impl DescribePipelinesOutput {
+impl  DescribePipelinesOutput  {
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn pipeline_description_list(&self) -> &[crate::types::PipelineDescription] {
-        use std::ops::Deref;
-        self.pipeline_description_list.deref()
+    pub fn pipeline_description_list(&self) -> & [crate::types::PipelineDescription] {
+        use std::ops::Deref; self.pipeline_description_list.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePipelinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
     pub fn builder() -> crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribePipelinesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePipelinesOutputBuilder {
-    pub(crate) pipeline_description_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
+    pub(crate) pipeline_description_list: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutputBuilder {
@@ -42,42 +41,41 @@ impl DescribePipelinesOutputBuilder {
     /// <p>An array of descriptions for the specified pipelines.</p>
     pub fn pipeline_description_list(mut self, input: crate::types::PipelineDescription) -> Self {
         let mut v = self.pipeline_description_list.unwrap_or_default();
-        v.push(input);
-        self.pipeline_description_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pipeline_description_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn set_pipeline_description_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>) -> Self {
-        self.pipeline_description_list = input;
-        self
+    pub fn set_pipeline_description_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineDescription>>) -> Self {
+        self.pipeline_description_list = input; self
     }
     /// <p>An array of descriptions for the specified pipelines.</p>
-    pub fn get_pipeline_description_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>> {
+    pub fn get_pipeline_description_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineDescription>> {
         &self.pipeline_description_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`pipeline_description_list`](crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder::pipeline_description_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_pipelines::DescribePipelinesOutput {
-            pipeline_description_list: self.pipeline_description_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pipeline_description_list",
-                    "pipeline_description_list was not specified but it is required when building DescribePipelinesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_pipelines::DescribePipelinesOutput {
+                pipeline_description_list: self.pipeline_description_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pipeline_description_list", "pipeline_description_list was not specified but it is required when building DescribePipelinesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,29 +3,30 @@
 /// <p>Contains the inputs for the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSnapshotsInput {
+pub struct DescribeSnapshotsInput  {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects to return.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeSnapshotsInput {
+impl  DescribeSnapshotsInput  {
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_ids.is_none()`.
-    pub fn snapshot_ids(&self) -> &[::std::string::String] {
-        self.snapshot_ids.as_deref().unwrap_or_default()
+    pub fn snapshot_ids(&self) -> & [::std::string::String] {
+        self.snapshot_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return.</p>
@@ -45,7 +46,7 @@ impl DescribeSnapshotsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshot_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl DescribeSnapshotsInputBuilder {
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
     pub fn snapshot_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_ids.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_ids = input;
-        self
+    pub fn set_snapshot_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_ids = input; self
     }
     /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
-    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_ids
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
@@ -91,8 +90,7 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,22 +103,26 @@ impl DescribeSnapshotsInputBuilder {
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_snapshots::DescribeSnapshotsInput {
-            directory_id: self.directory_id,
-            snapshot_ids: self.snapshot_ids,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_snapshots::DescribeSnapshotsInput {
+                directory_id: self.directory_id
+                ,
+                snapshot_ids: self.snapshot_ids
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

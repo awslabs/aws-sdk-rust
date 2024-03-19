@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIntentVersionsInput {
+pub struct GetIntentVersionsInput  {
     /// <p>The name of the intent for which versions should be returned.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
@@ -10,13 +10,13 @@ pub struct GetIntentVersionsInput {
     /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetIntentVersionsInput {
+impl  GetIntentVersionsInput  {
     /// <p>The name of the intent for which versions should be returned.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
@@ -48,8 +48,7 @@ impl GetIntentVersionsInputBuilder {
     }
     /// <p>The name of the intent for which versions should be returned.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent for which versions should be returned.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetIntentVersionsInputBuilder {
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl GetIntentVersionsInputBuilder {
     }
     /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetIntentVersionsInput`](crate::operation::get_intent_versions::GetIntentVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_intent_versions::GetIntentVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_intent_versions::GetIntentVersionsInput {
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_intent_versions::GetIntentVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_intent_versions::GetIntentVersionsInput {
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBillingGroupCostReports`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`billing_period(impl Into<String>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::billing_period) / [`set_billing_period(Option<String>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::set_billing_period):<br>required: **false**<br><p>The preferred billing period for your report.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of reports to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used on subsequent calls to get reports.</p><br>
     ///   - [`filters(ListBillingGroupCostReportsFilter)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::filters) / [`set_filters(Option<ListBillingGroupCostReportsFilter>)`](crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve reports from.</p><br>
-    /// - On success, responds with [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput) with field(s):
+                            /// - On success, responds with [`ListBillingGroupCostReportsOutput`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput) with field(s):
     ///   - [`billing_group_cost_reports(Option<Vec::<BillingGroupCostReportElement>>)`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput::billing_group_cost_reports): <p>A list of <code>BillingGroupCostReportElement</code> retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput::next_token): <p>The pagination token that's used on subsequent calls to get reports.</p>
-    /// - On failure, responds with [`SdkError<ListBillingGroupCostReportsError>`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError)
-    pub fn list_billing_group_cost_reports(
-        &self,
-    ) -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder {
-        crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListBillingGroupCostReportsError>`](crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError)
+    pub fn list_billing_group_cost_reports(&self) -> crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder {
+                                crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

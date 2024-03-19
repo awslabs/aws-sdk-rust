@@ -3,7 +3,7 @@
 /// <p>Defines the settings for a specific Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Distribution {
+pub struct Distribution  {
     /// <p>The target Region.</p>
     pub region: ::std::string::String,
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
@@ -11,49 +11,51 @@ pub struct Distribution {
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
     pub container_distribution_configuration: ::std::option::Option<crate::types::ContainerDistributionConfiguration>,
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub license_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    pub launch_template_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
+    pub launch_template_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfiguration>>,
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    pub fast_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>,
+    pub fast_launch_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::FastLaunchConfiguration>>,
 }
-impl Distribution {
+impl  Distribution  {
     /// <p>The target Region.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
-    pub fn ami_distribution_configuration(&self) -> ::std::option::Option<&crate::types::AmiDistributionConfiguration> {
+    pub fn ami_distribution_configuration(&self) -> ::std::option::Option<& crate::types::AmiDistributionConfiguration> {
         self.ami_distribution_configuration.as_ref()
     }
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-    pub fn container_distribution_configuration(&self) -> ::std::option::Option<&crate::types::ContainerDistributionConfiguration> {
+    pub fn container_distribution_configuration(&self) -> ::std::option::Option<& crate::types::ContainerDistributionConfiguration> {
         self.container_distribution_configuration.as_ref()
     }
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_configuration_arns.is_none()`.
-    pub fn license_configuration_arns(&self) -> &[::std::string::String] {
-        self.license_configuration_arns.as_deref().unwrap_or_default()
+    pub fn license_configuration_arns(&self) -> & [::std::string::String] {
+        self.license_configuration_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configurations.is_none()`.
-    pub fn launch_template_configurations(&self) -> &[crate::types::LaunchTemplateConfiguration] {
-        self.launch_template_configurations.as_deref().unwrap_or_default()
+    pub fn launch_template_configurations(&self) -> & [crate::types::LaunchTemplateConfiguration] {
+        self.launch_template_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
-    pub fn s3_export_configuration(&self) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
+    pub fn s3_export_configuration(&self) -> ::std::option::Option<& crate::types::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fast_launch_configurations.is_none()`.
-    pub fn fast_launch_configurations(&self) -> &[crate::types::FastLaunchConfiguration] {
-        self.fast_launch_configurations.as_deref().unwrap_or_default()
+    pub fn fast_launch_configurations(&self) -> & [crate::types::FastLaunchConfiguration] {
+        self.fast_launch_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Distribution {
@@ -70,10 +72,10 @@ pub struct DistributionBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) ami_distribution_configuration: ::std::option::Option<crate::types::AmiDistributionConfiguration>,
     pub(crate) container_distribution_configuration: ::std::option::Option<crate::types::ContainerDistributionConfiguration>,
-    pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) launch_template_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
+    pub(crate) license_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) launch_template_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfiguration>>,
     pub(crate) s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
-    pub(crate) fast_launch_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>,
+    pub(crate) fast_launch_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::FastLaunchConfiguration>>,
 }
 impl DistributionBuilder {
     /// <p>The target Region.</p>
@@ -84,8 +86,7 @@ impl DistributionBuilder {
     }
     /// <p>The target Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The target Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +99,7 @@ impl DistributionBuilder {
     }
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
     pub fn set_ami_distribution_configuration(mut self, input: ::std::option::Option<crate::types::AmiDistributionConfiguration>) -> Self {
-        self.ami_distribution_configuration = input;
-        self
+        self.ami_distribution_configuration = input; self
     }
     /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
     pub fn get_ami_distribution_configuration(&self) -> &::std::option::Option<crate::types::AmiDistributionConfiguration> {
@@ -111,12 +111,8 @@ impl DistributionBuilder {
         self
     }
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
-    pub fn set_container_distribution_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ContainerDistributionConfiguration>,
-    ) -> Self {
-        self.container_distribution_configuration = input;
-        self
+    pub fn set_container_distribution_configuration(mut self, input: ::std::option::Option<crate::types::ContainerDistributionConfiguration>) -> Self {
+        self.container_distribution_configuration = input; self
     }
     /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
     pub fn get_container_distribution_configuration(&self) -> &::std::option::Option<crate::types::ContainerDistributionConfiguration> {
@@ -129,17 +125,16 @@ impl DistributionBuilder {
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
     pub fn license_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_configuration_arns.unwrap_or_default();
-        v.push(input.into());
-        self.license_configuration_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.license_configuration_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.license_configuration_arns = input;
-        self
+    pub fn set_license_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.license_configuration_arns = input; self
     }
     /// <p>The License Manager Configuration to associate with the AMI in the specified Region.</p>
-    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.license_configuration_arns
     }
     /// Appends an item to `launch_template_configurations`.
@@ -149,20 +144,16 @@ impl DistributionBuilder {
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
     pub fn launch_template_configurations(mut self, input: crate::types::LaunchTemplateConfiguration) -> Self {
         let mut v = self.launch_template_configurations.unwrap_or_default();
-        v.push(input);
-        self.launch_template_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_template_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    pub fn set_launch_template_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
-    ) -> Self {
-        self.launch_template_configurations = input;
-        self
+    pub fn set_launch_template_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfiguration>>) -> Self {
+        self.launch_template_configurations = input; self
     }
     /// <p>A group of launchTemplateConfiguration settings that apply to image distribution for specified accounts.</p>
-    pub fn get_launch_template_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfiguration>> {
+    pub fn get_launch_template_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LaunchTemplateConfiguration>> {
         &self.launch_template_configurations
     }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
@@ -172,8 +163,7 @@ impl DistributionBuilder {
     }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     pub fn set_s3_export_configuration(mut self, input: ::std::option::Option<crate::types::S3ExportConfiguration>) -> Self {
-        self.s3_export_configuration = input;
-        self
+        self.s3_export_configuration = input; self
     }
     /// <p>Configure export settings to deliver disk images created from your image build, using a file format that is compatible with your VMs in that Region.</p>
     pub fn get_s3_export_configuration(&self) -> &::std::option::Option<crate::types::S3ExportConfiguration> {
@@ -186,36 +176,43 @@ impl DistributionBuilder {
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
     pub fn fast_launch_configurations(mut self, input: crate::types::FastLaunchConfiguration) -> Self {
         let mut v = self.fast_launch_configurations.unwrap_or_default();
-        v.push(input);
-        self.fast_launch_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fast_launch_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    pub fn set_fast_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>>) -> Self {
-        self.fast_launch_configurations = input;
-        self
+    pub fn set_fast_launch_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FastLaunchConfiguration>>) -> Self {
+        self.fast_launch_configurations = input; self
     }
     /// <p>The Windows faster-launching configurations to use for AMI distribution.</p>
-    pub fn get_fast_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FastLaunchConfiguration>> {
+    pub fn get_fast_launch_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FastLaunchConfiguration>> {
         &self.fast_launch_configurations
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::DistributionBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Distribution {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building Distribution",
-                )
-            })?,
-            ami_distribution_configuration: self.ami_distribution_configuration,
-            container_distribution_configuration: self.container_distribution_configuration,
-            license_configuration_arns: self.license_configuration_arns,
-            launch_template_configurations: self.launch_template_configurations,
-            s3_export_configuration: self.s3_export_configuration,
-            fast_launch_configurations: self.fast_launch_configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Distribution {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building Distribution")
+                    )?
+                ,
+                ami_distribution_configuration: self.ami_distribution_configuration
+                ,
+                container_distribution_configuration: self.container_distribution_configuration
+                ,
+                license_configuration_arns: self.license_configuration_arns
+                ,
+                launch_template_configurations: self.launch_template_configurations
+                ,
+                s3_export_configuration: self.s3_export_configuration
+                ,
+                fast_launch_configurations: self.fast_launch_configurations
+                ,
+            }
+        )
     }
 }
+

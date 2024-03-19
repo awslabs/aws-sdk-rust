@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAudienceModelOutput {
+pub struct GetAudienceModelOutput  {
     /// <p>The time at which the audience model was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the audience model was updated.</p>
@@ -22,79 +22,77 @@ pub struct GetAudienceModelOutput {
     /// <p>Details about the status of the audience model.</p>
     pub status_details: ::std::option::Option<crate::types::StatusDetails>,
     /// <p>Accuracy metrics for the model.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::AudienceModelMetric>>,
     /// <p>The KMS key ARN used for the audience model.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are assigned to the audience model.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The description of the audience model.</p>
     pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAudienceModelOutput {
+impl  GetAudienceModelOutput  {
     /// <p>The time at which the audience model was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the audience model was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The start date specified for the training window.</p>
-    pub fn training_data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>The end date specified for the training window.</p>
-    pub fn training_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
-    pub fn audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_model_arn.deref()
+    pub fn audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_model_arn.deref()
     }
     /// <p>The name of the audience model.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for this audience model.</p>
-    pub fn training_dataset_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.training_dataset_arn.deref()
+    pub fn training_dataset_arn(&self) -> & str {
+        use std::ops::Deref; self.training_dataset_arn.deref()
     }
     /// <p>The status of the audience model.</p>
-    pub fn status(&self) -> &crate::types::AudienceModelStatus {
+    pub fn status(&self) -> & crate::types::AudienceModelStatus {
         &self.status
     }
     /// <p>Details about the status of the audience model.</p>
-    pub fn status_details(&self) -> ::std::option::Option<&crate::types::StatusDetails> {
+    pub fn status_details(&self) -> ::std::option::Option<& crate::types::StatusDetails> {
         self.status_details.as_ref()
     }
     /// <p>Accuracy metrics for the model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::AudienceModelMetric] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::AudienceModelMetric] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The KMS key ARN used for the audience model.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The tags that are assigned to the audience model.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The description of the audience model.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAudienceModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAudienceModelOutput {
     /// Creates a new builder-style object to manufacture [`GetAudienceModelOutput`](crate::operation::get_audience_model::GetAudienceModelOutput).
     pub fn builder() -> crate::operation::get_audience_model::builders::GetAudienceModelOutputBuilder {
@@ -115,9 +113,9 @@ pub struct GetAudienceModelOutputBuilder {
     pub(crate) training_dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AudienceModelStatus>,
     pub(crate) status_details: ::std::option::Option<crate::types::StatusDetails>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::AudienceModelMetric>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -130,8 +128,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The time at which the audience model was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the audience model was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +142,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The most recent time at which the audience model was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the audience model was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +155,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The start date specified for the training window.</p>
     pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_start_time = input;
-        self
+        self.training_data_start_time = input; self
     }
     /// <p>The start date specified for the training window.</p>
     pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +168,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The end date specified for the training window.</p>
     pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_end_time = input;
-        self
+        self.training_data_end_time = input; self
     }
     /// <p>The end date specified for the training window.</p>
     pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +182,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
     pub fn set_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_model_arn = input;
-        self
+        self.audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience model.</p>
     pub fn get_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +196,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The name of the audience model.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience model.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +210,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for this audience model.</p>
     pub fn set_training_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_dataset_arn = input;
-        self
+        self.training_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the training dataset that was used for this audience model.</p>
     pub fn get_training_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +224,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The status of the audience model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AudienceModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the audience model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AudienceModelStatus> {
@@ -247,8 +237,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>Details about the status of the audience model.</p>
     pub fn set_status_details(mut self, input: ::std::option::Option<crate::types::StatusDetails>) -> Self {
-        self.status_details = input;
-        self
+        self.status_details = input; self
     }
     /// <p>Details about the status of the audience model.</p>
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StatusDetails> {
@@ -261,17 +250,16 @@ impl GetAudienceModelOutputBuilder {
     /// <p>Accuracy metrics for the model.</p>
     pub fn metrics(mut self, input: crate::types::AudienceModelMetric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Accuracy metrics for the model.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AudienceModelMetric>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>Accuracy metrics for the model.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceModelMetric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AudienceModelMetric>> {
         &self.metrics
     }
     /// <p>The KMS key ARN used for the audience model.</p>
@@ -281,8 +269,7 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The KMS key ARN used for the audience model.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The KMS key ARN used for the audience model.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,17 +282,16 @@ impl GetAudienceModelOutputBuilder {
     /// <p>The tags that are assigned to the audience model.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that are assigned to the audience model.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that are assigned to the audience model.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The description of the audience model.</p>
@@ -315,22 +301,21 @@ impl GetAudienceModelOutputBuilder {
     }
     /// <p>The description of the audience model.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience model.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAudienceModelOutput`](crate::operation::get_audience_model::GetAudienceModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`create_time`](crate::operation::get_audience_model::builders::GetAudienceModelOutputBuilder::create_time)
@@ -339,54 +324,56 @@ impl GetAudienceModelOutputBuilder {
     /// - [`name`](crate::operation::get_audience_model::builders::GetAudienceModelOutputBuilder::name)
     /// - [`training_dataset_arn`](crate::operation::get_audience_model::builders::GetAudienceModelOutputBuilder::training_dataset_arn)
     /// - [`status`](crate::operation::get_audience_model::builders::GetAudienceModelOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_audience_model::GetAudienceModelOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_audience_model::GetAudienceModelOutput {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            training_data_start_time: self.training_data_start_time,
-            training_data_end_time: self.training_data_end_time,
-            audience_model_arn: self.audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_model_arn",
-                    "audience_model_arn was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            training_dataset_arn: self.training_dataset_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "training_dataset_arn",
-                    "training_dataset_arn was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetAudienceModelOutput",
-                )
-            })?,
-            status_details: self.status_details,
-            metrics: self.metrics,
-            kms_key_arn: self.kms_key_arn,
-            tags: self.tags,
-            description: self.description,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_audience_model::GetAudienceModelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_audience_model::GetAudienceModelOutput {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                training_data_start_time: self.training_data_start_time
+                ,
+                training_data_end_time: self.training_data_end_time
+                ,
+                audience_model_arn: self.audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_model_arn", "audience_model_arn was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                training_dataset_arn: self.training_dataset_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("training_dataset_arn", "training_dataset_arn was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetAudienceModelOutput")
+                    )?
+                ,
+                status_details: self.status_details
+                ,
+                metrics: self.metrics
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tags: self.tags
+                ,
+                description: self.description
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

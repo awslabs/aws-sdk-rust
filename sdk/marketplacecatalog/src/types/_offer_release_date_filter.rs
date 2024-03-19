@@ -3,13 +3,13 @@
 /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferReleaseDateFilter {
+pub struct OfferReleaseDateFilter  {
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer with date range as input.</p>
     pub date_range: ::std::option::Option<crate::types::OfferReleaseDateFilterDateRange>,
 }
-impl OfferReleaseDateFilter {
+impl  OfferReleaseDateFilter  {
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer with date range as input.</p>
-    pub fn date_range(&self) -> ::std::option::Option<&crate::types::OfferReleaseDateFilterDateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<& crate::types::OfferReleaseDateFilterDateRange> {
         self.date_range.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OfferReleaseDateFilterBuilder {
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer with date range as input.</p>
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::OfferReleaseDateFilterDateRange>) -> Self {
-        self.date_range = input;
-        self
+        self.date_range = input; self
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer with date range as input.</p>
     pub fn get_date_range(&self) -> &::std::option::Option<crate::types::OfferReleaseDateFilterDateRange> {
@@ -43,6 +42,10 @@ impl OfferReleaseDateFilterBuilder {
     }
     /// Consumes the builder and constructs a [`OfferReleaseDateFilter`](crate::types::OfferReleaseDateFilter).
     pub fn build(self) -> crate::types::OfferReleaseDateFilter {
-        crate::types::OfferReleaseDateFilter { date_range: self.date_range }
+        crate::types::OfferReleaseDateFilter {
+            date_range: self.date_range
+            ,
+        }
     }
 }
+

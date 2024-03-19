@@ -3,22 +3,20 @@
 /// <p>Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OtherName {
+pub struct OtherName  {
     /// <p>Specifies an OID.</p>
     pub type_id: ::std::string::String,
     /// <p>Specifies an OID value.</p>
     pub value: ::std::string::String,
 }
-impl OtherName {
+impl  OtherName  {
     /// <p>Specifies an OID.</p>
-    pub fn type_id(&self) -> &str {
-        use std::ops::Deref;
-        self.type_id.deref()
+    pub fn type_id(&self) -> & str {
+        use std::ops::Deref; self.type_id.deref()
     }
     /// <p>Specifies an OID value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl OtherName {
@@ -44,8 +42,7 @@ impl OtherNameBuilder {
     }
     /// <p>Specifies an OID.</p>
     pub fn set_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_id = input;
-        self
+        self.type_id = input; self
     }
     /// <p>Specifies an OID.</p>
     pub fn get_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl OtherNameBuilder {
     }
     /// <p>Specifies an OID value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Specifies an OID value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl OtherNameBuilder {
     /// - [`type_id`](crate::types::builders::OtherNameBuilder::type_id)
     /// - [`value`](crate::types::builders::OtherNameBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::OtherName, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OtherName {
-            type_id: self.type_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "type_id",
-                    "type_id was not specified but it is required when building OtherName",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building OtherName",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OtherName {
+                type_id: self.type_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("type_id", "type_id was not specified but it is required when building OtherName")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building OtherName")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Describes the dimension of a metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingMetricDimension {
+pub struct TargetTrackingMetricDimension  {
     /// <p>The name of the dimension.</p>
     pub name: ::std::string::String,
     /// <p>The value of the dimension.</p>
     pub value: ::std::string::String,
 }
-impl TargetTrackingMetricDimension {
+impl  TargetTrackingMetricDimension  {
     /// <p>The name of the dimension.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl TargetTrackingMetricDimension {
@@ -44,8 +42,7 @@ impl TargetTrackingMetricDimensionBuilder {
     }
     /// <p>The name of the dimension.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the dimension.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl TargetTrackingMetricDimensionBuilder {
     }
     /// <p>The value of the dimension.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the dimension.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl TargetTrackingMetricDimensionBuilder {
     /// - [`name`](crate::types::builders::TargetTrackingMetricDimensionBuilder::name)
     /// - [`value`](crate::types::builders::TargetTrackingMetricDimensionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricDimension, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TargetTrackingMetricDimension {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TargetTrackingMetricDimension",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building TargetTrackingMetricDimension",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TargetTrackingMetricDimension {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TargetTrackingMetricDimension")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building TargetTrackingMetricDimension")
+                    )?
+                ,
+            }
+        )
     }
 }
+

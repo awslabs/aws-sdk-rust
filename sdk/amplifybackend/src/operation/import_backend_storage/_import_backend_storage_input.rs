@@ -3,7 +3,7 @@
 /// <p>The request body for ImportBackendStorage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportBackendStorageInput {
+pub struct ImportBackendStorageInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
@@ -13,21 +13,21 @@ pub struct ImportBackendStorageInput {
     /// <p>The name of the storage service.</p>
     pub service_name: ::std::option::Option<crate::types::ServiceName>,
 }
-impl ImportBackendStorageInput {
+impl  ImportBackendStorageInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&crate::types::ServiceName> {
+    pub fn service_name(&self) -> ::std::option::Option<& crate::types::ServiceName> {
         self.service_name.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ImportBackendStorageInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ImportBackendStorageInputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl ImportBackendStorageInputBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,23 +97,26 @@ impl ImportBackendStorageInputBuilder {
     }
     /// <p>The name of the storage service.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<crate::types::ServiceName>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the storage service.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_backend_storage::ImportBackendStorageInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            bucket_name: self.bucket_name,
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_backend_storage::ImportBackendStorageInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                bucket_name: self.bucket_name
+                ,
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

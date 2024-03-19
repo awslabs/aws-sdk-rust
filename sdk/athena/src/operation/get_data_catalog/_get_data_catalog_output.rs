@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataCatalogOutput {
+pub struct GetDataCatalogOutput  {
     /// <p>The data catalog returned.</p>
     pub data_catalog: ::std::option::Option<crate::types::DataCatalog>,
     _request_id: Option<String>,
 }
-impl GetDataCatalogOutput {
+impl  GetDataCatalogOutput  {
     /// <p>The data catalog returned.</p>
-    pub fn data_catalog(&self) -> ::std::option::Option<&crate::types::DataCatalog> {
+    pub fn data_catalog(&self) -> ::std::option::Option<& crate::types::DataCatalog> {
         self.data_catalog.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataCatalogOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataCatalogOutput {
     /// Creates a new builder-style object to manufacture [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput).
     pub fn builder() -> crate::operation::get_data_catalog::builders::GetDataCatalogOutputBuilder {
@@ -40,27 +40,28 @@ impl GetDataCatalogOutputBuilder {
     }
     /// <p>The data catalog returned.</p>
     pub fn set_data_catalog(mut self, input: ::std::option::Option<crate::types::DataCatalog>) -> Self {
-        self.data_catalog = input;
-        self
+        self.data_catalog = input; self
     }
     /// <p>The data catalog returned.</p>
     pub fn get_data_catalog(&self) -> &::std::option::Option<crate::types::DataCatalog> {
         &self.data_catalog
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput).
     pub fn build(self) -> crate::operation::get_data_catalog::GetDataCatalogOutput {
         crate::operation::get_data_catalog::GetDataCatalogOutput {
-            data_catalog: self.data_catalog,
+            data_catalog: self.data_catalog
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationRule {
+pub struct ReplicationRule  {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub destinations: ::std::vec::Vec<crate::types::ReplicationDestination>,
+    pub destinations: ::std::vec::Vec::<crate::types::ReplicationDestination>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
+    pub repository_filters: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryFilter>>,
 }
-impl ReplicationRule {
+impl  ReplicationRule  {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub fn destinations(&self) -> &[crate::types::ReplicationDestination] {
-        use std::ops::Deref;
-        self.destinations.deref()
+    pub fn destinations(&self) -> & [crate::types::ReplicationDestination] {
+        use std::ops::Deref; self.destinations.deref()
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_filters.is_none()`.
-    pub fn repository_filters(&self) -> &[crate::types::RepositoryFilter] {
-        self.repository_filters.as_deref().unwrap_or_default()
+    pub fn repository_filters(&self) -> & [crate::types::RepositoryFilter] {
+        self.repository_filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReplicationRule {
@@ -33,8 +33,8 @@ impl ReplicationRule {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReplicationRuleBuilder {
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
-    pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationDestination>>,
+    pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryFilter>>,
 }
 impl ReplicationRuleBuilder {
     /// Appends an item to `destinations`.
@@ -44,17 +44,16 @@ impl ReplicationRuleBuilder {
     /// <p>An array of objects representing the destination for a replication rule.</p>
     pub fn destinations(mut self, input: crate::types::ReplicationDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationDestination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationDestination>> {
         &self.destinations
     }
     /// Appends an item to `repository_filters`.
@@ -64,31 +63,33 @@ impl ReplicationRuleBuilder {
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
     pub fn repository_filters(mut self, input: crate::types::RepositoryFilter) -> Self {
         let mut v = self.repository_filters.unwrap_or_default();
-        v.push(input);
-        self.repository_filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.repository_filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    pub fn set_repository_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>) -> Self {
-        self.repository_filters = input;
-        self
+    pub fn set_repository_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RepositoryFilter>>) -> Self {
+        self.repository_filters = input; self
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    pub fn get_repository_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>> {
+    pub fn get_repository_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RepositoryFilter>> {
         &self.repository_filters
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`destinations`](crate::types::builders::ReplicationRuleBuilder::destinations)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicationRule {
-            destinations: self.destinations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "destinations",
-                    "destinations was not specified but it is required when building ReplicationRule",
-                )
-            })?,
-            repository_filters: self.repository_filters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicationRule {
+                destinations: self.destinations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("destinations", "destinations was not specified but it is required when building ReplicationRule")
+                    )?
+                ,
+                repository_filters: self.repository_filters
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReadSetMetadataOutput {
+pub struct GetReadSetMetadataOutput  {
     /// <p>The read set's ID.</p>
     pub id: ::std::string::String,
     /// <p>The read set's ARN.</p>
@@ -37,80 +37,77 @@ pub struct GetReadSetMetadataOutput {
     pub etag: ::std::option::Option<crate::types::ETag>,
     _request_id: Option<String>,
 }
-impl GetReadSetMetadataOutput {
+impl  GetReadSetMetadataOutput  {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The read set's ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sequence_store_id.deref()
+    pub fn sequence_store_id(&self) -> & str {
+        use std::ops::Deref; self.sequence_store_id.deref()
     }
     /// <p>The read set's subject ID.</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The read set's sample ID.</p>
-    pub fn sample_id(&self) -> ::std::option::Option<&str> {
+    pub fn sample_id(&self) -> ::std::option::Option<& str> {
         self.sample_id.as_deref()
     }
     /// <p>The read set's status.</p>
-    pub fn status(&self) -> &crate::types::ReadSetStatus {
+    pub fn status(&self) -> & crate::types::ReadSetStatus {
         &self.status
     }
     /// <p>The read set's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The read set's description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The read set's file type.</p>
-    pub fn file_type(&self) -> &crate::types::FileType {
+    pub fn file_type(&self) -> & crate::types::FileType {
         &self.file_type
     }
     /// <p>When the read set was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The read set's sequence information.</p>
-    pub fn sequence_information(&self) -> ::std::option::Option<&crate::types::SequenceInformation> {
+    pub fn sequence_information(&self) -> ::std::option::Option<& crate::types::SequenceInformation> {
         self.sequence_information.as_ref()
     }
     /// <p>The read set's genome reference ARN.</p>
-    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
+    pub fn reference_arn(&self) -> ::std::option::Option<& str> {
         self.reference_arn.as_deref()
     }
     /// <p>The read set's files.</p>
-    pub fn files(&self) -> ::std::option::Option<&crate::types::ReadSetFiles> {
+    pub fn files(&self) -> ::std::option::Option<& crate::types::ReadSetFiles> {
         self.files.as_ref()
     }
     /// <p>The status message for a read set. It provides more detail as to why the read set has a status.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The creation type of the read set.</p>
-    pub fn creation_type(&self) -> ::std::option::Option<&crate::types::CreationType> {
+    pub fn creation_type(&self) -> ::std::option::Option<& crate::types::CreationType> {
         self.creation_type.as_ref()
     }
     /// <p>The entity tag (ETag) is a hash of the object meant to represent its semantic content.</p>
-    pub fn etag(&self) -> ::std::option::Option<&crate::types::ETag> {
+    pub fn etag(&self) -> ::std::option::Option<& crate::types::ETag> {
         self.etag.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReadSetMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReadSetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput).
     pub fn builder() -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder {
@@ -149,8 +146,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The read set's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +160,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The read set's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +174,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn set_sequence_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_store_id = input;
-        self
+        self.sequence_store_id = input; self
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +187,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's subject ID.</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_id = input;
-        self
+        self.subject_id = input; self
     }
     /// <p>The read set's subject ID.</p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +200,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's sample ID.</p>
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_id = input;
-        self
+        self.sample_id = input; self
     }
     /// <p>The read set's sample ID.</p>
     pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +214,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The read set's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetStatus> {
@@ -236,8 +227,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The read set's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +240,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The read set's description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +254,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's file type.</p>
     pub fn set_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
-        self.file_type = input;
-        self
+        self.file_type = input; self
     }
     /// <p>The read set's file type.</p>
     pub fn get_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
@@ -280,8 +268,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>When the read set was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the read set was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -294,8 +281,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's sequence information.</p>
     pub fn set_sequence_information(mut self, input: ::std::option::Option<crate::types::SequenceInformation>) -> Self {
-        self.sequence_information = input;
-        self
+        self.sequence_information = input; self
     }
     /// <p>The read set's sequence information.</p>
     pub fn get_sequence_information(&self) -> &::std::option::Option<crate::types::SequenceInformation> {
@@ -308,8 +294,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's genome reference ARN.</p>
     pub fn set_reference_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_arn = input;
-        self
+        self.reference_arn = input; self
     }
     /// <p>The read set's genome reference ARN.</p>
     pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -322,8 +307,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The read set's files.</p>
     pub fn set_files(mut self, input: ::std::option::Option<crate::types::ReadSetFiles>) -> Self {
-        self.files = input;
-        self
+        self.files = input; self
     }
     /// <p>The read set's files.</p>
     pub fn get_files(&self) -> &::std::option::Option<crate::types::ReadSetFiles> {
@@ -336,8 +320,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The status message for a read set. It provides more detail as to why the read set has a status.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for a read set. It provides more detail as to why the read set has a status.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +333,7 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The creation type of the read set.</p>
     pub fn set_creation_type(mut self, input: ::std::option::Option<crate::types::CreationType>) -> Self {
-        self.creation_type = input;
-        self
+        self.creation_type = input; self
     }
     /// <p>The creation type of the read set.</p>
     pub fn get_creation_type(&self) -> &::std::option::Option<crate::types::CreationType> {
@@ -364,22 +346,21 @@ impl GetReadSetMetadataOutputBuilder {
     }
     /// <p>The entity tag (ETag) is a hash of the object meant to represent its semantic content.</p>
     pub fn set_etag(mut self, input: ::std::option::Option<crate::types::ETag>) -> Self {
-        self.etag = input;
-        self
+        self.etag = input; self
     }
     /// <p>The entity tag (ETag) is a hash of the object meant to represent its semantic content.</p>
     pub fn get_etag(&self) -> &::std::option::Option<crate::types::ETag> {
         &self.etag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReadSetMetadataOutput`](crate::operation::get_read_set_metadata::GetReadSetMetadataOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::id)
@@ -388,58 +369,62 @@ impl GetReadSetMetadataOutputBuilder {
     /// - [`status`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::status)
     /// - [`file_type`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::file_type)
     /// - [`creation_time`](crate::operation::get_read_set_metadata::builders::GetReadSetMetadataOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_metadata::GetReadSetMetadataOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_read_set_metadata::GetReadSetMetadataOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sequence_store_id",
-                    "sequence_store_id was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            subject_id: self.subject_id,
-            sample_id: self.sample_id,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            name: self.name,
-            description: self.description,
-            file_type: self.file_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_type",
-                    "file_type was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building GetReadSetMetadataOutput",
-                )
-            })?,
-            sequence_information: self.sequence_information,
-            reference_arn: self.reference_arn,
-            files: self.files,
-            status_message: self.status_message,
-            creation_type: self.creation_type,
-            etag: self.etag,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set_metadata::GetReadSetMetadataOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_read_set_metadata::GetReadSetMetadataOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                sequence_store_id: self.sequence_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sequence_store_id", "sequence_store_id was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                subject_id: self.subject_id
+                ,
+                sample_id: self.sample_id
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                file_type: self.file_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_type", "file_type was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building GetReadSetMetadataOutput")
+                    )?
+                ,
+                sequence_information: self.sequence_information
+                ,
+                reference_arn: self.reference_arn
+                ,
+                files: self.files
+                ,
+                status_message: self.status_message
+                ,
+                creation_type: self.creation_type
+                ,
+                etag: self.etag
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

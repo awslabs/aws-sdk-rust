@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQuerySuggestionsInput {
+pub struct GetQuerySuggestionsInput  {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of a user's query to generate query suggestions.</p>
@@ -14,19 +14,19 @@ pub struct GetQuerySuggestionsInput {
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub suggestion_types: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>,
+    pub suggestion_types: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>>,
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
 }
-impl GetQuerySuggestionsInput {
+impl  GetQuerySuggestionsInput  {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    pub fn query_text(&self) -> ::std::option::Option<&str> {
+    pub fn query_text(&self) -> ::std::option::Option<& str> {
         self.query_text.as_deref()
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
@@ -36,13 +36,14 @@ impl GetQuerySuggestionsInput {
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suggestion_types.is_none()`.
-    pub fn suggestion_types(&self) -> &[crate::types::SuggestionType] {
-        self.suggestion_types.as_deref().unwrap_or_default()
+    pub fn suggestion_types(&self) -> & [crate::types::SuggestionType] {
+        self.suggestion_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
-    pub fn attribute_suggestions_config(&self) -> ::std::option::Option<&crate::types::AttributeSuggestionsGetConfig> {
+    pub fn attribute_suggestions_config(&self) -> ::std::option::Option<& crate::types::AttributeSuggestionsGetConfig> {
         self.attribute_suggestions_config.as_ref()
     }
 }
@@ -60,7 +61,7 @@ pub struct GetQuerySuggestionsInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_text: ::std::option::Option<::std::string::String>,
     pub(crate) max_suggestions_count: ::std::option::Option<i32>,
-    pub(crate) suggestion_types: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>,
+    pub(crate) suggestion_types: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>>,
     pub(crate) attribute_suggestions_config: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
 }
 impl GetQuerySuggestionsInputBuilder {
@@ -72,8 +73,7 @@ impl GetQuerySuggestionsInputBuilder {
     }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl GetQuerySuggestionsInputBuilder {
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
@@ -107,8 +106,7 @@ impl GetQuerySuggestionsInputBuilder {
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn set_max_suggestions_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_suggestions_count = input;
-        self
+        self.max_suggestions_count = input; self
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn get_max_suggestions_count(&self) -> &::std::option::Option<i32> {
@@ -123,21 +121,20 @@ impl GetQuerySuggestionsInputBuilder {
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
     pub fn suggestion_types(mut self, input: crate::types::SuggestionType) -> Self {
         let mut v = self.suggestion_types.unwrap_or_default();
-        v.push(input);
-        self.suggestion_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suggestion_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn set_suggestion_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>) -> Self {
-        self.suggestion_types = input;
-        self
+    pub fn set_suggestion_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>>) -> Self {
+        self.suggestion_types = input; self
     }
     /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
     /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
-    pub fn get_suggestion_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>> {
+    pub fn get_suggestion_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SuggestionType>> {
         &self.suggestion_types
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
@@ -147,24 +144,28 @@ impl GetQuerySuggestionsInputBuilder {
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn set_attribute_suggestions_config(mut self, input: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>) -> Self {
-        self.attribute_suggestions_config = input;
-        self
+        self.attribute_suggestions_config = input; self
     }
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn get_attribute_suggestions_config(&self) -> &::std::option::Option<crate::types::AttributeSuggestionsGetConfig> {
         &self.attribute_suggestions_config
     }
     /// Consumes the builder and constructs a [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_query_suggestions::GetQuerySuggestionsInput {
-            index_id: self.index_id,
-            query_text: self.query_text,
-            max_suggestions_count: self.max_suggestions_count,
-            suggestion_types: self.suggestion_types,
-            attribute_suggestions_config: self.attribute_suggestions_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_query_suggestions::GetQuerySuggestionsInput {
+                index_id: self.index_id
+                ,
+                query_text: self.query_text
+                ,
+                max_suggestions_count: self.max_suggestions_count
+                ,
+                suggestion_types: self.suggestion_types
+                ,
+                attribute_suggestions_config: self.attribute_suggestions_config
+                ,
+            }
+        )
     }
 }
+

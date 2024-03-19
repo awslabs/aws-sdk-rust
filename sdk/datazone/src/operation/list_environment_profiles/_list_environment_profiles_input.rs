@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListEnvironmentProfilesInput {
+pub struct ListEnvironmentProfilesInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account where you want to list environment profiles.</p>
@@ -20,33 +20,33 @@ pub struct ListEnvironmentProfilesInput {
     /// <p>The maximum number of environment profiles to return in a single call to <code>ListEnvironmentProfiles</code>. When the number of environment profiles to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListEnvironmentProfilesInput {
+impl  ListEnvironmentProfilesInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account where you want to list environment profiles.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services region where you want to list environment profiles.</p>
-    pub fn aws_account_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_region(&self) -> ::std::option::Option<& str> {
         self.aws_account_region.as_deref()
     }
     /// <p>The identifier of the blueprint that was used to create the environment profiles that you want to list.</p>
-    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn environment_blueprint_identifier(&self) -> ::std::option::Option<& str> {
         self.environment_blueprint_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone project.</p>
-    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn project_identifier(&self) -> ::std::option::Option<& str> {
         self.project_identifier.as_deref()
     }
     /// <p></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When the number of environment profiles is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environment profiles, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of environment profiles to return in a single call to <code>ListEnvironmentProfiles</code>. When the number of environment profiles to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
@@ -54,7 +54,7 @@ impl ListEnvironmentProfilesInput {
         self.max_results
     }
 }
-impl ::std::fmt::Debug for ListEnvironmentProfilesInput {
+impl  ::std::fmt::Debug for ListEnvironmentProfilesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListEnvironmentProfilesInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -97,8 +97,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account where you want to list environment profiles.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The identifier of the Amazon Web Services account where you want to list environment profiles.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The Amazon Web Services region where you want to list environment profiles.</p>
     pub fn set_aws_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_region = input;
-        self
+        self.aws_account_region = input; self
     }
     /// <p>The Amazon Web Services region where you want to list environment profiles.</p>
     pub fn get_aws_account_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +136,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The identifier of the blueprint that was used to create the environment profiles that you want to list.</p>
     pub fn set_environment_blueprint_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_blueprint_identifier = input;
-        self
+        self.environment_blueprint_identifier = input; self
     }
     /// <p>The identifier of the blueprint that was used to create the environment profiles that you want to list.</p>
     pub fn get_environment_blueprint_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone project.</p>
     pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_identifier = input;
-        self
+        self.project_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone project.</p>
     pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +175,7 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>When the number of environment profiles is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environment profiles, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of environment profiles is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of environment profiles, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,30 +188,34 @@ impl ListEnvironmentProfilesInputBuilder {
     }
     /// <p>The maximum number of environment profiles to return in a single call to <code>ListEnvironmentProfiles</code>. When the number of environment profiles to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of environment profiles to return in a single call to <code>ListEnvironmentProfiles</code>. When the number of environment profiles to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListEnvironmentProfiles</code> to list the next set of environment profiles.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnvironmentProfilesInput`](crate::operation::list_environment_profiles::ListEnvironmentProfilesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_profiles::ListEnvironmentProfilesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_environment_profiles::ListEnvironmentProfilesInput {
-            domain_identifier: self.domain_identifier,
-            aws_account_id: self.aws_account_id,
-            aws_account_region: self.aws_account_region,
-            environment_blueprint_identifier: self.environment_blueprint_identifier,
-            project_identifier: self.project_identifier,
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_profiles::ListEnvironmentProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_environment_profiles::ListEnvironmentProfilesInput {
+                domain_identifier: self.domain_identifier
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                aws_account_region: self.aws_account_region
+                ,
+                environment_blueprint_identifier: self.environment_blueprint_identifier
+                ,
+                project_identifier: self.project_identifier
+                ,
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListEnvironmentProfilesInputBuilder {
@@ -235,3 +232,4 @@ impl ::std::fmt::Debug for ListEnvironmentProfilesInputBuilder {
         formatter.finish()
     }
 }
+

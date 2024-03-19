@@ -3,20 +3,19 @@
 /// <p>An entity attribute that's unique to a specific entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UniqueAttribute {
+pub struct UniqueAttribute  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub attribute_path: ::std::string::String,
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub attribute_value: ::aws_smithy_types::Document,
 }
-impl UniqueAttribute {
+impl  UniqueAttribute  {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_path.deref()
+    pub fn attribute_path(&self) -> & str {
+        use std::ops::Deref; self.attribute_path.deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
-    pub fn attribute_value(&self) -> &::aws_smithy_types::Document {
+    pub fn attribute_value(&self) -> & ::aws_smithy_types::Document {
         &self.attribute_value
     }
 }
@@ -43,8 +42,7 @@ impl UniqueAttributeBuilder {
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_path = input;
-        self
+        self.attribute_path = input; self
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl UniqueAttributeBuilder {
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the CLI.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -70,19 +67,20 @@ impl UniqueAttributeBuilder {
     /// - [`attribute_path`](crate::types::builders::UniqueAttributeBuilder::attribute_path)
     /// - [`attribute_value`](crate::types::builders::UniqueAttributeBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::UniqueAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UniqueAttribute {
-            attribute_path: self.attribute_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_path",
-                    "attribute_path was not specified but it is required when building UniqueAttribute",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building UniqueAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UniqueAttribute {
+                attribute_path: self.attribute_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_path", "attribute_path was not specified but it is required when building UniqueAttribute")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building UniqueAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

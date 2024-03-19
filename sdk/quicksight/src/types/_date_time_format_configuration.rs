@@ -3,7 +3,7 @@
 /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimeFormatConfiguration {
+pub struct DateTimeFormatConfiguration  {
     /// <p>Determines the <code>DateTime</code> format.</p>
     pub date_time_format: ::std::option::Option<::std::string::String>,
     /// <p>The options that determine the null value format configuration.</p>
@@ -11,17 +11,17 @@ pub struct DateTimeFormatConfiguration {
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     pub numeric_format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
-impl DateTimeFormatConfiguration {
+impl  DateTimeFormatConfiguration  {
     /// <p>Determines the <code>DateTime</code> format.</p>
-    pub fn date_time_format(&self) -> ::std::option::Option<&str> {
+    pub fn date_time_format(&self) -> ::std::option::Option<& str> {
         self.date_time_format.as_deref()
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(&self) -> ::std::option::Option<&crate::types::NullValueFormatConfiguration> {
+    pub fn null_value_format_configuration(&self) -> ::std::option::Option<& crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
-    pub fn numeric_format_configuration(&self) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
+    pub fn numeric_format_configuration(&self) -> ::std::option::Option<& crate::types::NumericFormatConfiguration> {
         self.numeric_format_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DateTimeFormatConfigurationBuilder {
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
     pub fn set_date_time_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_time_format = input;
-        self
+        self.date_time_format = input; self
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
     pub fn get_date_time_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DateTimeFormatConfigurationBuilder {
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn set_null_value_format_configuration(mut self, input: ::std::option::Option<crate::types::NullValueFormatConfiguration>) -> Self {
-        self.null_value_format_configuration = input;
-        self
+        self.null_value_format_configuration = input; self
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn get_null_value_format_configuration(&self) -> &::std::option::Option<crate::types::NullValueFormatConfiguration> {
@@ -76,8 +74,7 @@ impl DateTimeFormatConfigurationBuilder {
     }
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     pub fn set_numeric_format_configuration(mut self, input: ::std::option::Option<crate::types::NumericFormatConfiguration>) -> Self {
-        self.numeric_format_configuration = input;
-        self
+        self.numeric_format_configuration = input; self
     }
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     pub fn get_numeric_format_configuration(&self) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
@@ -86,9 +83,13 @@ impl DateTimeFormatConfigurationBuilder {
     /// Consumes the builder and constructs a [`DateTimeFormatConfiguration`](crate::types::DateTimeFormatConfiguration).
     pub fn build(self) -> crate::types::DateTimeFormatConfiguration {
         crate::types::DateTimeFormatConfiguration {
-            date_time_format: self.date_time_format,
-            null_value_format_configuration: self.null_value_format_configuration,
-            numeric_format_configuration: self.numeric_format_configuration,
+            date_time_format: self.date_time_format
+            ,
+            null_value_format_configuration: self.null_value_format_configuration
+            ,
+            numeric_format_configuration: self.numeric_format_configuration
+            ,
         }
     }
 }
+

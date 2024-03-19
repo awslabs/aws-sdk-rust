@@ -141,3 +141,4 @@ pub mod update_tags_for_resource;
 
 /// Types for the `ValidateConfigurationSettings` operation.
 pub mod validate_configuration_settings;
+

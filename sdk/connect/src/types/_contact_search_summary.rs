@@ -3,7 +3,7 @@
 /// <p>Information of returned contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactSearchSummary {
+pub struct ContactSearchSummary  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact summary.</p>
@@ -27,49 +27,49 @@ pub struct ContactSearchSummary {
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ContactSearchSummary {
+impl  ContactSearchSummary  {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the contact summary.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
-    pub fn initial_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn initial_contact_id(&self) -> ::std::option::Option<& str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
-    pub fn previous_contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn previous_contact_id(&self) -> ::std::option::Option<& str> {
         self.previous_contact_id.as_deref()
     }
     /// <p>Indicates how the contact was initiated.</p>
-    pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
+    pub fn initiation_method(&self) -> ::std::option::Option<& crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
     }
     /// <p>How the contact reached your contact center.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
-    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::ContactSearchSummaryQueueInfo> {
+    pub fn queue_info(&self) -> ::std::option::Option<& crate::types::ContactSearchSummaryQueueInfo> {
         self.queue_info.as_ref()
     }
     /// <p>Information about the agent who accepted the contact.</p>
-    pub fn agent_info(&self) -> ::std::option::Option<&crate::types::ContactSearchSummaryAgentInfo> {
+    pub fn agent_info(&self) -> ::std::option::Option<& crate::types::ContactSearchSummaryAgentInfo> {
         self.agent_info.as_ref()
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
-    pub fn initiation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn initiation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.initiation_timestamp.as_ref()
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
-    pub fn disconnect_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disconnect_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disconnect_timestamp.as_ref()
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
-    pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scheduled_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>The identifier of the contact summary.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the contact summary.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub fn set_initial_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initial_contact_id = input;
-        self
+        self.initial_contact_id = input; self
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.previous_contact_id = input;
-        self
+        self.previous_contact_id = input; self
     }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>Indicates how the contact was initiated.</p>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
-        self.initiation_method = input;
-        self
+        self.initiation_method = input; self
     }
     /// <p>Indicates how the contact was initiated.</p>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
@@ -174,8 +169,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>How the contact reached your contact center.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>How the contact reached your contact center.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -188,8 +182,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::ContactSearchSummaryQueueInfo>) -> Self {
-        self.queue_info = input;
-        self
+        self.queue_info = input; self
     }
     /// <p>If this contact was queued, this contains information about the queue.</p>
     pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::ContactSearchSummaryQueueInfo> {
@@ -202,8 +195,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>Information about the agent who accepted the contact.</p>
     pub fn set_agent_info(mut self, input: ::std::option::Option<crate::types::ContactSearchSummaryAgentInfo>) -> Self {
-        self.agent_info = input;
-        self
+        self.agent_info = input; self
     }
     /// <p>Information about the agent who accepted the contact.</p>
     pub fn get_agent_info(&self) -> &::std::option::Option<crate::types::ContactSearchSummaryAgentInfo> {
@@ -216,8 +208,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn set_initiation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.initiation_timestamp = input;
-        self
+        self.initiation_timestamp = input; self
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn get_initiation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -230,8 +221,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub fn set_disconnect_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disconnect_timestamp = input;
-        self
+        self.disconnect_timestamp = input; self
     }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub fn get_disconnect_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -244,8 +234,7 @@ impl ContactSearchSummaryBuilder {
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn set_scheduled_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scheduled_timestamp = input;
-        self
+        self.scheduled_timestamp = input; self
     }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn get_scheduled_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -254,17 +243,29 @@ impl ContactSearchSummaryBuilder {
     /// Consumes the builder and constructs a [`ContactSearchSummary`](crate::types::ContactSearchSummary).
     pub fn build(self) -> crate::types::ContactSearchSummary {
         crate::types::ContactSearchSummary {
-            arn: self.arn,
-            id: self.id,
-            initial_contact_id: self.initial_contact_id,
-            previous_contact_id: self.previous_contact_id,
-            initiation_method: self.initiation_method,
-            channel: self.channel,
-            queue_info: self.queue_info,
-            agent_info: self.agent_info,
-            initiation_timestamp: self.initiation_timestamp,
-            disconnect_timestamp: self.disconnect_timestamp,
-            scheduled_timestamp: self.scheduled_timestamp,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            initial_contact_id: self.initial_contact_id
+            ,
+            previous_contact_id: self.previous_contact_id
+            ,
+            initiation_method: self.initiation_method
+            ,
+            channel: self.channel
+            ,
+            queue_info: self.queue_info
+            ,
+            agent_info: self.agent_info
+            ,
+            initiation_timestamp: self.initiation_timestamp
+            ,
+            disconnect_timestamp: self.disconnect_timestamp
+            ,
+            scheduled_timestamp: self.scheduled_timestamp
+            ,
         }
     }
 }
+

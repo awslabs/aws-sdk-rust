@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMobileDeviceAccessOverrideInput {
+pub struct PutMobileDeviceAccessOverrideInput  {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
@@ -22,9 +22,9 @@ pub struct PutMobileDeviceAccessOverrideInput {
     /// <p>A description of the override.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PutMobileDeviceAccessOverrideInput {
+impl  PutMobileDeviceAccessOverrideInput  {
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
@@ -36,19 +36,19 @@ impl PutMobileDeviceAccessOverrideInput {
     /// <li>
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> ::std::option::Option<&crate::types::MobileDeviceAccessRuleEffect> {
+    pub fn effect(&self) -> ::std::option::Option<& crate::types::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
     /// <p>A description of the override.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +108,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     /// <p>User name: <code>user</code></p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
@@ -132,8 +130,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
-        self.effect = input;
-        self
+        self.effect = input; self
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
@@ -161,26 +157,28 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>A description of the override.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the override.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`PutMobileDeviceAccessOverrideInput`](crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-            device_id: self.device_id,
-            effect: self.effect,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+                device_id: self.device_id
+                ,
+                effect: self.effect
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

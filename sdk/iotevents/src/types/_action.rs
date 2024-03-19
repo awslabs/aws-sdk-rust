@@ -3,7 +3,7 @@
 /// <p>An action to be performed when the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>Sets a variable to a specified value.</p>
     pub set_variable: ::std::option::Option<crate::types::SetVariableAction>,
     /// <p>Sends an Amazon SNS message.</p>
@@ -31,57 +31,57 @@ pub struct Action {
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
-impl Action {
+impl  Action  {
     /// <p>Sets a variable to a specified value.</p>
-    pub fn set_variable(&self) -> ::std::option::Option<&crate::types::SetVariableAction> {
+    pub fn set_variable(&self) -> ::std::option::Option<& crate::types::SetVariableAction> {
         self.set_variable.as_ref()
     }
     /// <p>Sends an Amazon SNS message.</p>
-    pub fn sns(&self) -> ::std::option::Option<&crate::types::SnsTopicPublishAction> {
+    pub fn sns(&self) -> ::std::option::Option<& crate::types::SnsTopicPublishAction> {
         self.sns.as_ref()
     }
     /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
-    pub fn iot_topic_publish(&self) -> ::std::option::Option<&crate::types::IotTopicPublishAction> {
+    pub fn iot_topic_publish(&self) -> ::std::option::Option<& crate::types::IotTopicPublishAction> {
         self.iot_topic_publish.as_ref()
     }
     /// <p>Information needed to set the timer.</p>
-    pub fn set_timer(&self) -> ::std::option::Option<&crate::types::SetTimerAction> {
+    pub fn set_timer(&self) -> ::std::option::Option<& crate::types::SetTimerAction> {
         self.set_timer.as_ref()
     }
     /// <p>Information needed to clear the timer.</p>
-    pub fn clear_timer(&self) -> ::std::option::Option<&crate::types::ClearTimerAction> {
+    pub fn clear_timer(&self) -> ::std::option::Option<& crate::types::ClearTimerAction> {
         self.clear_timer.as_ref()
     }
     /// <p>Information needed to reset the timer.</p>
-    pub fn reset_timer(&self) -> ::std::option::Option<&crate::types::ResetTimerAction> {
+    pub fn reset_timer(&self) -> ::std::option::Option<& crate::types::ResetTimerAction> {
         self.reset_timer.as_ref()
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda(&self) -> ::std::option::Option<& crate::types::LambdaAction> {
         self.lambda.as_ref()
     }
     /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the event that triggered the action.</p>
-    pub fn iot_events(&self) -> ::std::option::Option<&crate::types::IotEventsAction> {
+    pub fn iot_events(&self) -> ::std::option::Option<& crate::types::IotEventsAction> {
         self.iot_events.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
-    pub fn sqs(&self) -> ::std::option::Option<&crate::types::SqsAction> {
+    pub fn sqs(&self) -> ::std::option::Option<& crate::types::SqsAction> {
         self.sqs.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn firehose(&self) -> ::std::option::Option<&crate::types::FirehoseAction> {
+    pub fn firehose(&self) -> ::std::option::Option<& crate::types::FirehoseAction> {
         self.firehose.as_ref()
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn dynamo_db(&self) -> ::std::option::Option<&crate::types::DynamoDbAction> {
+    pub fn dynamo_db(&self) -> ::std::option::Option<& crate::types::DynamoDbAction> {
         self.dynamo_db.as_ref()
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn dynamo_dbv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
+    pub fn dynamo_dbv2(&self) -> ::std::option::Option<& crate::types::DynamoDBv2Action> {
         self.dynamo_dbv2.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
-    pub fn iot_site_wise(&self) -> ::std::option::Option<&crate::types::IotSiteWiseAction> {
+    pub fn iot_site_wise(&self) -> ::std::option::Option<& crate::types::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl ActionBuilder {
     }
     /// <p>Sets a variable to a specified value.</p>
     pub fn set_set_variable(mut self, input: ::std::option::Option<crate::types::SetVariableAction>) -> Self {
-        self.set_variable = input;
-        self
+        self.set_variable = input; self
     }
     /// <p>Sets a variable to a specified value.</p>
     pub fn get_set_variable(&self) -> &::std::option::Option<crate::types::SetVariableAction> {
@@ -132,8 +131,7 @@ impl ActionBuilder {
     }
     /// <p>Sends an Amazon SNS message.</p>
     pub fn set_sns(mut self, input: ::std::option::Option<crate::types::SnsTopicPublishAction>) -> Self {
-        self.sns = input;
-        self
+        self.sns = input; self
     }
     /// <p>Sends an Amazon SNS message.</p>
     pub fn get_sns(&self) -> &::std::option::Option<crate::types::SnsTopicPublishAction> {
@@ -146,8 +144,7 @@ impl ActionBuilder {
     }
     /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
     pub fn set_iot_topic_publish(mut self, input: ::std::option::Option<crate::types::IotTopicPublishAction>) -> Self {
-        self.iot_topic_publish = input;
-        self
+        self.iot_topic_publish = input; self
     }
     /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
     pub fn get_iot_topic_publish(&self) -> &::std::option::Option<crate::types::IotTopicPublishAction> {
@@ -160,8 +157,7 @@ impl ActionBuilder {
     }
     /// <p>Information needed to set the timer.</p>
     pub fn set_set_timer(mut self, input: ::std::option::Option<crate::types::SetTimerAction>) -> Self {
-        self.set_timer = input;
-        self
+        self.set_timer = input; self
     }
     /// <p>Information needed to set the timer.</p>
     pub fn get_set_timer(&self) -> &::std::option::Option<crate::types::SetTimerAction> {
@@ -174,8 +170,7 @@ impl ActionBuilder {
     }
     /// <p>Information needed to clear the timer.</p>
     pub fn set_clear_timer(mut self, input: ::std::option::Option<crate::types::ClearTimerAction>) -> Self {
-        self.clear_timer = input;
-        self
+        self.clear_timer = input; self
     }
     /// <p>Information needed to clear the timer.</p>
     pub fn get_clear_timer(&self) -> &::std::option::Option<crate::types::ClearTimerAction> {
@@ -188,8 +183,7 @@ impl ActionBuilder {
     }
     /// <p>Information needed to reset the timer.</p>
     pub fn set_reset_timer(mut self, input: ::std::option::Option<crate::types::ResetTimerAction>) -> Self {
-        self.reset_timer = input;
-        self
+        self.reset_timer = input; self
     }
     /// <p>Information needed to reset the timer.</p>
     pub fn get_reset_timer(&self) -> &::std::option::Option<crate::types::ResetTimerAction> {
@@ -202,8 +196,7 @@ impl ActionBuilder {
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaAction> {
@@ -216,8 +209,7 @@ impl ActionBuilder {
     }
     /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the event that triggered the action.</p>
     pub fn set_iot_events(mut self, input: ::std::option::Option<crate::types::IotEventsAction>) -> Self {
-        self.iot_events = input;
-        self
+        self.iot_events = input; self
     }
     /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the event that triggered the action.</p>
     pub fn get_iot_events(&self) -> &::std::option::Option<crate::types::IotEventsAction> {
@@ -230,8 +222,7 @@ impl ActionBuilder {
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
     pub fn set_sqs(mut self, input: ::std::option::Option<crate::types::SqsAction>) -> Self {
-        self.sqs = input;
-        self
+        self.sqs = input; self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
     pub fn get_sqs(&self) -> &::std::option::Option<crate::types::SqsAction> {
@@ -244,8 +235,7 @@ impl ActionBuilder {
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn set_firehose(mut self, input: ::std::option::Option<crate::types::FirehoseAction>) -> Self {
-        self.firehose = input;
-        self
+        self.firehose = input; self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn get_firehose(&self) -> &::std::option::Option<crate::types::FirehoseAction> {
@@ -258,8 +248,7 @@ impl ActionBuilder {
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn set_dynamo_db(mut self, input: ::std::option::Option<crate::types::DynamoDbAction>) -> Self {
-        self.dynamo_db = input;
-        self
+        self.dynamo_db = input; self
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn get_dynamo_db(&self) -> &::std::option::Option<crate::types::DynamoDbAction> {
@@ -272,8 +261,7 @@ impl ActionBuilder {
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn set_dynamo_dbv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
-        self.dynamo_dbv2 = input;
-        self
+        self.dynamo_dbv2 = input; self
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn get_dynamo_dbv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
@@ -286,8 +274,7 @@ impl ActionBuilder {
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub fn set_iot_site_wise(mut self, input: ::std::option::Option<crate::types::IotSiteWiseAction>) -> Self {
-        self.iot_site_wise = input;
-        self
+        self.iot_site_wise = input; self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub fn get_iot_site_wise(&self) -> &::std::option::Option<crate::types::IotSiteWiseAction> {
@@ -296,19 +283,33 @@ impl ActionBuilder {
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            set_variable: self.set_variable,
-            sns: self.sns,
-            iot_topic_publish: self.iot_topic_publish,
-            set_timer: self.set_timer,
-            clear_timer: self.clear_timer,
-            reset_timer: self.reset_timer,
-            lambda: self.lambda,
-            iot_events: self.iot_events,
-            sqs: self.sqs,
-            firehose: self.firehose,
-            dynamo_db: self.dynamo_db,
-            dynamo_dbv2: self.dynamo_dbv2,
-            iot_site_wise: self.iot_site_wise,
+            set_variable: self.set_variable
+            ,
+            sns: self.sns
+            ,
+            iot_topic_publish: self.iot_topic_publish
+            ,
+            set_timer: self.set_timer
+            ,
+            clear_timer: self.clear_timer
+            ,
+            reset_timer: self.reset_timer
+            ,
+            lambda: self.lambda
+            ,
+            iot_events: self.iot_events
+            ,
+            sqs: self.sqs
+            ,
+            firehose: self.firehose
+            ,
+            dynamo_db: self.dynamo_db
+            ,
+            dynamo_dbv2: self.dynamo_dbv2
+            ,
+            iot_site_wise: self.iot_site_wise
+            ,
         }
     }
 }
+

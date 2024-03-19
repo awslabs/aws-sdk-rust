@@ -3,7 +3,8 @@
 /// Rtmp Caption Info Destination Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RtmpCaptionInfoDestinationSettings {}
+pub struct RtmpCaptionInfoDestinationSettings  {
+}
 impl RtmpCaptionInfoDestinationSettings {
     /// Creates a new builder-style object to manufacture [`RtmpCaptionInfoDestinationSettings`](crate::types::RtmpCaptionInfoDestinationSettings).
     pub fn builder() -> crate::types::builders::RtmpCaptionInfoDestinationSettingsBuilder {
@@ -14,10 +15,13 @@ impl RtmpCaptionInfoDestinationSettings {
 /// A builder for [`RtmpCaptionInfoDestinationSettings`](crate::types::RtmpCaptionInfoDestinationSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct RtmpCaptionInfoDestinationSettingsBuilder {}
+pub struct RtmpCaptionInfoDestinationSettingsBuilder {
+}
 impl RtmpCaptionInfoDestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`RtmpCaptionInfoDestinationSettings`](crate::types::RtmpCaptionInfoDestinationSettings).
     pub fn build(self) -> crate::types::RtmpCaptionInfoDestinationSettings {
-        crate::types::RtmpCaptionInfoDestinationSettings {}
+        crate::types::RtmpCaptionInfoDestinationSettings {
+        }
     }
 }
+

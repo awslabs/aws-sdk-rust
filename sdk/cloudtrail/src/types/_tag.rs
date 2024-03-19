@@ -3,20 +3,19 @@
 /// <p>A custom key-value pair associated with a resource such as a CloudTrail trail, event data store, or channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     pub key: ::std::string::String,
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl Tag {
+impl  Tag  {
     /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl TagBuilder {
     }
     /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl TagBuilder {
     }
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,11 +65,17 @@ impl TagBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::TagBuilder::key)
     pub fn build(self) -> ::std::result::Result<crate::types::Tag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tag {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Tag")
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tag {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Tag")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

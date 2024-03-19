@@ -3,19 +3,19 @@
 /// <p>Contains information regarding the confidence and name of a detected content type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentType {
+pub struct ContentType  {
     /// <p>The confidence level of the label given</p>
     pub confidence: ::std::option::Option<f32>,
     /// <p>The name of the label</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ContentType {
+impl  ContentType  {
     /// <p>The confidence level of the label given</p>
     pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>The name of the label</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ContentTypeBuilder {
     }
     /// <p>The confidence level of the label given</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence level of the label given</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -55,8 +54,7 @@ impl ContentTypeBuilder {
     }
     /// <p>The name of the label</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the label</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ContentTypeBuilder {
     /// Consumes the builder and constructs a [`ContentType`](crate::types::ContentType).
     pub fn build(self) -> crate::types::ContentType {
         crate::types::ContentType {
-            confidence: self.confidence,
-            name: self.name,
+            confidence: self.confidence
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

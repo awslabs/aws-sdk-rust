@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateRoutingProfileQueuesInput {
+pub struct DisassociateRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The queues to disassociate from this routing profile.</p>
-    pub queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    pub queue_references: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueReference>>,
 }
-impl DisassociateRoutingProfileQueuesInput {
+impl  DisassociateRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The queues to disassociate from this routing profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queue_references.is_none()`.
-    pub fn queue_references(&self) -> &[crate::types::RoutingProfileQueueReference] {
-        self.queue_references.as_deref().unwrap_or_default()
+    pub fn queue_references(&self) -> & [crate::types::RoutingProfileQueueReference] {
+        self.queue_references.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateRoutingProfileQueuesInput {
@@ -39,7 +40,7 @@ impl DisassociateRoutingProfileQueuesInput {
 pub struct DisassociateRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) queue_references: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>,
+    pub(crate) queue_references: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueReference>>,
 }
 impl DisassociateRoutingProfileQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -50,8 +51,7 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_profile_id = input;
-        self
+        self.routing_profile_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,32 +78,30 @@ impl DisassociateRoutingProfileQueuesInputBuilder {
     /// <p>The queues to disassociate from this routing profile.</p>
     pub fn queue_references(mut self, input: crate::types::RoutingProfileQueueReference) -> Self {
         let mut v = self.queue_references.unwrap_or_default();
-        v.push(input);
-        self.queue_references = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queue_references = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The queues to disassociate from this routing profile.</p>
-    pub fn set_queue_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>>) -> Self {
-        self.queue_references = input;
-        self
+    pub fn set_queue_references(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueReference>>) -> Self {
+        self.queue_references = input; self
     }
     /// <p>The queues to disassociate from this routing profile.</p>
-    pub fn get_queue_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueReference>> {
+    pub fn get_queue_references(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RoutingProfileQueueReference>> {
         &self.queue_references
     }
     /// Consumes the builder and constructs a [`DisassociateRoutingProfileQueuesInput`](crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput {
-                instance_id: self.instance_id,
-                routing_profile_id: self.routing_profile_id,
-                queue_references: self.queue_references,
-            },
+                instance_id: self.instance_id
+                ,
+                routing_profile_id: self.routing_profile_id
+                ,
+                queue_references: self.queue_references
+                ,
+            }
         )
     }
 }
+

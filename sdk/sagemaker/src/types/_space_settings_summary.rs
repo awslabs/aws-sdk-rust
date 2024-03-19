@@ -3,19 +3,19 @@
 /// <p>Specifies summary information about the space settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceSettingsSummary {
+pub struct SpaceSettingsSummary  {
     /// <p>The type of app created within the space.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The storage settings for a private space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
 }
-impl SpaceSettingsSummary {
+impl  SpaceSettingsSummary  {
     /// <p>The type of app created within the space.</p>
-    pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> ::std::option::Option<& crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The storage settings for a private space.</p>
-    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
+    pub fn space_storage_settings(&self) -> ::std::option::Option<& crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SpaceSettingsSummaryBuilder {
     }
     /// <p>The type of app created within the space.</p>
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input;
-        self
+        self.app_type = input; self
     }
     /// <p>The type of app created within the space.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
@@ -55,8 +54,7 @@ impl SpaceSettingsSummaryBuilder {
     }
     /// <p>The storage settings for a private space.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
-        self.space_storage_settings = input;
-        self
+        self.space_storage_settings = input; self
     }
     /// <p>The storage settings for a private space.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
@@ -65,8 +63,11 @@ impl SpaceSettingsSummaryBuilder {
     /// Consumes the builder and constructs a [`SpaceSettingsSummary`](crate::types::SpaceSettingsSummary).
     pub fn build(self) -> crate::types::SpaceSettingsSummary {
         crate::types::SpaceSettingsSummary {
-            app_type: self.app_type,
-            space_storage_settings: self.space_storage_settings,
+            app_type: self.app_type
+            ,
+            space_storage_settings: self.space_storage_settings
+            ,
         }
     }
 }
+

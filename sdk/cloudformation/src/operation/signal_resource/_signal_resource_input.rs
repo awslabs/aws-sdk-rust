@@ -3,7 +3,7 @@
 /// <p>The input for the <code>SignalResource</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SignalResourceInput {
+pub struct SignalResourceInput  {
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
@@ -13,21 +13,21 @@ pub struct SignalResourceInput {
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
     pub status: ::std::option::Option<crate::types::ResourceSignalStatus>,
 }
-impl SignalResourceInput {
+impl  SignalResourceInput  {
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
-    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
-    pub fn unique_id(&self) -> ::std::option::Option<&str> {
+    pub fn unique_id(&self) -> ::std::option::Option<& str> {
         self.unique_id.as_deref()
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceSignalStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ResourceSignalStatus> {
         self.status.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl SignalResourceInputBuilder {
     }
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The stack name or unique stack ID that includes the resource that you want to signal.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl SignalResourceInputBuilder {
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logical_resource_id = input;
-        self
+        self.logical_resource_id = input; self
     }
     /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of the resource that given in the template.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl SignalResourceInputBuilder {
     }
     /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub fn set_unique_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unique_id = input;
-        self
+        self.unique_id = input; self
     }
     /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling groups, specify the instance ID that you are signaling as the unique ID. If you send multiple signals to a single resource (such as signaling a wait condition), each signal requires a different unique ID.</p>
     pub fn get_unique_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,22 +98,26 @@ impl SignalResourceInputBuilder {
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceSignalStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the signal, which is either success or failure. A failure signal causes CloudFormation to immediately fail the stack creation or update.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceSignalStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`SignalResourceInput`](crate::operation::signal_resource::SignalResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::signal_resource::SignalResourceInput {
-            stack_name: self.stack_name,
-            logical_resource_id: self.logical_resource_id,
-            unique_id: self.unique_id,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::signal_resource::SignalResourceInput {
+                stack_name: self.stack_name
+                ,
+                logical_resource_id: self.logical_resource_id
+                ,
+                unique_id: self.unique_id
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

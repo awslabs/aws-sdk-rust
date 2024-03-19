@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsInput {
+pub struct ListJobsInput  {
     /// <p>The unique identifier for a data set.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
@@ -12,9 +12,9 @@ pub struct ListJobsInput {
     /// <p>The unique identifier for a revision.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
-impl ListJobsInput {
+impl  ListJobsInput  {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
@@ -22,11 +22,11 @@ impl ListJobsInput {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,11 +101,18 @@ impl ListJobsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_jobs::ListJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
-            data_set_id: self.data_set_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            revision_id: self.revision_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_jobs::ListJobsInput {
+                data_set_id: self.data_set_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

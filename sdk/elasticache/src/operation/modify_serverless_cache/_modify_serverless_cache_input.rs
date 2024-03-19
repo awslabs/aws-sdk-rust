@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyServerlessCacheInput {
+pub struct ModifyServerlessCacheInput  {
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>User provided description for the serverless cache. Default = NULL, i.e. the existing description is not removed/modified. The description has a maximum length of 255 characters.</p>
@@ -14,23 +14,23 @@ pub struct ModifyServerlessCacheInput {
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL - the existing UserGroup is not removed.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
-impl ModifyServerlessCacheInput {
+impl  ModifyServerlessCacheInput  {
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>User provided description for the serverless cache. Default = NULL, i.e. the existing description is not removed/modified. The description has a maximum length of 255 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Modify the cache usage limit for the serverless cache.</p>
-    pub fn cache_usage_limits(&self) -> ::std::option::Option<&crate::types::CacheUsageLimits> {
+    pub fn cache_usage_limits(&self) -> ::std::option::Option<& crate::types::CacheUsageLimits> {
         self.cache_usage_limits.as_ref()
     }
     /// <p>The identifier of the UserGroup to be removed from association with the Redis serverless cache. Available for Redis only. Default is NULL.</p>
@@ -38,21 +38,22 @@ impl ModifyServerlessCacheInput {
         self.remove_user_group
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL - the existing UserGroup is not removed.</p>
-    pub fn user_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_id(&self) -> ::std::option::Option<& str> {
         self.user_group_id.as_deref()
     }
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
-    pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
+    pub fn daily_snapshot_time(&self) -> ::std::option::Option<& str> {
         self.daily_snapshot_time.as_deref()
     }
 }
@@ -72,7 +73,7 @@ pub struct ModifyServerlessCacheInputBuilder {
     pub(crate) cache_usage_limits: ::std::option::Option<crate::types::CacheUsageLimits>,
     pub(crate) remove_user_group: ::std::option::Option<bool>,
     pub(crate) user_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
 }
@@ -85,8 +86,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>User-provided identifier for the serverless cache to be modified.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>User provided description for the serverless cache. Default = NULL, i.e. the existing description is not removed/modified. The description has a maximum length of 255 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>User provided description for the serverless cache. Default = NULL, i.e. the existing description is not removed/modified. The description has a maximum length of 255 characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>Modify the cache usage limit for the serverless cache.</p>
     pub fn set_cache_usage_limits(mut self, input: ::std::option::Option<crate::types::CacheUsageLimits>) -> Self {
-        self.cache_usage_limits = input;
-        self
+        self.cache_usage_limits = input; self
     }
     /// <p>Modify the cache usage limit for the serverless cache.</p>
     pub fn get_cache_usage_limits(&self) -> &::std::option::Option<crate::types::CacheUsageLimits> {
@@ -127,8 +125,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>The identifier of the UserGroup to be removed from association with the Redis serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn set_remove_user_group(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remove_user_group = input;
-        self
+        self.remove_user_group = input; self
     }
     /// <p>The identifier of the UserGroup to be removed from association with the Redis serverless cache. Available for Redis only. Default is NULL.</p>
     pub fn get_remove_user_group(&self) -> &::std::option::Option<bool> {
@@ -141,8 +138,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_id = input;
-        self
+        self.user_group_id = input; self
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL - the existing UserGroup is not removed.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,17 +151,16 @@ impl ModifyServerlessCacheInputBuilder {
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The new list of VPC security groups to be associated with the serverless cache. Populating this list means the current VPC security groups will be removed. This security group is used to authorize traffic access for the VPC end-point (private-link). Default = NULL - the existing list of VPC security groups is not removed.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
@@ -175,8 +170,7 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The number of days for which Elasticache retains automatic snapshots before deleting them. Available for Redis only. Default = NULL, i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum value allowed is 35 days.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -189,27 +183,34 @@ impl ModifyServerlessCacheInputBuilder {
     }
     /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn set_daily_snapshot_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.daily_snapshot_time = input;
-        self
+        self.daily_snapshot_time = input; self
     }
     /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Redis only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
     }
     /// Consumes the builder and constructs a [`ModifyServerlessCacheInput`](crate::operation::modify_serverless_cache::ModifyServerlessCacheInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_serverless_cache::ModifyServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_serverless_cache::ModifyServerlessCacheInput {
-            serverless_cache_name: self.serverless_cache_name,
-            description: self.description,
-            cache_usage_limits: self.cache_usage_limits,
-            remove_user_group: self.remove_user_group,
-            user_group_id: self.user_group_id,
-            security_group_ids: self.security_group_ids,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            daily_snapshot_time: self.daily_snapshot_time,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_serverless_cache::ModifyServerlessCacheInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheInput {
+                serverless_cache_name: self.serverless_cache_name
+                ,
+                description: self.description
+                ,
+                cache_usage_limits: self.cache_usage_limits
+                ,
+                remove_user_group: self.remove_user_group
+                ,
+                user_group_id: self.user_group_id
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                snapshot_retention_limit: self.snapshot_retention_limit
+                ,
+                daily_snapshot_time: self.daily_snapshot_time
+                ,
+            }
+        )
     }
 }
+

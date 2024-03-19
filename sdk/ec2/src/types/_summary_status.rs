@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let summarystatus = unimplemented!();
 /// match summarystatus {
@@ -33,16 +33,14 @@
 /// Specifically, when `summarystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SummaryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SummaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Impaired,
@@ -56,70 +54,71 @@ pub enum SummaryStatus {
     Ok,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SummaryStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "impaired" => SummaryStatus::Impaired,
-            "initializing" => SummaryStatus::Initializing,
-            "insufficient-data" => SummaryStatus::InsufficientData,
-            "not-applicable" => SummaryStatus::NotApplicable,
-            "ok" => SummaryStatus::Ok,
-            other => SummaryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "impaired" => SummaryStatus::Impaired,
+"initializing" => SummaryStatus::Initializing,
+"insufficient-data" => SummaryStatus::InsufficientData,
+"not-applicable" => SummaryStatus::NotApplicable,
+"ok" => SummaryStatus::Ok,
+other => SummaryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SummaryStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SummaryStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SummaryStatus::from(s))
+                    }
+                }
 impl SummaryStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SummaryStatus::Impaired => "impaired",
-            SummaryStatus::Initializing => "initializing",
-            SummaryStatus::InsufficientData => "insufficient-data",
-            SummaryStatus::NotApplicable => "not-applicable",
-            SummaryStatus::Ok => "ok",
-            SummaryStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["impaired", "initializing", "insufficient-data", "not-applicable", "ok"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SummaryStatus::Impaired => "impaired",
+    SummaryStatus::Initializing => "initializing",
+    SummaryStatus::InsufficientData => "insufficient-data",
+    SummaryStatus::NotApplicable => "not-applicable",
+    SummaryStatus::Ok => "ok",
+    SummaryStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["impaired", "initializing", "insufficient-data", "not-applicable", "ok"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SummaryStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SummaryStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SummaryStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SummaryStatus::Impaired => write!(f, "impaired"),
-            SummaryStatus::Initializing => write!(f, "initializing"),
-            SummaryStatus::InsufficientData => write!(f, "insufficient-data"),
-            SummaryStatus::NotApplicable => write!(f, "not-applicable"),
-            SummaryStatus::Ok => write!(f, "ok"),
-            SummaryStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SummaryStatus::Impaired => write!(f, "impaired"),
+SummaryStatus::Initializing => write!(f, "initializing"),
+SummaryStatus::InsufficientData => write!(f, "insufficient-data"),
+SummaryStatus::NotApplicable => write!(f, "not-applicable"),
+SummaryStatus::Ok => write!(f, "ok"),
+SummaryStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

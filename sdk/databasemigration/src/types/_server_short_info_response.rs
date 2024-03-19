@@ -3,7 +3,7 @@
 /// <p>Describes a server in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerShortInfoResponse {
+pub struct ServerShortInfoResponse  {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
@@ -11,17 +11,17 @@ pub struct ServerShortInfoResponse {
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
 }
-impl ServerShortInfoResponse {
+impl  ServerShortInfoResponse  {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ServerShortInfoResponseBuilder {
     }
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ServerShortInfoResponseBuilder {
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ServerShortInfoResponseBuilder {
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ServerShortInfoResponseBuilder {
     /// Consumes the builder and constructs a [`ServerShortInfoResponse`](crate::types::ServerShortInfoResponse).
     pub fn build(self) -> crate::types::ServerShortInfoResponse {
         crate::types::ServerShortInfoResponse {
-            server_id: self.server_id,
-            ip_address: self.ip_address,
-            server_name: self.server_name,
+            server_id: self.server_id
+            ,
+            ip_address: self.ip_address
+            ,
+            server_name: self.server_name
+            ,
         }
     }
 }
+

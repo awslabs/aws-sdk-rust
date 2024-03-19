@@ -5,23 +5,20 @@ pub use crate::operation::transact_write_items::_transact_write_items_input::Tra
 
 impl TransactWriteItemsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::transact_write_items::TransactWriteItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.transact_write_items();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::transact_write_items::TransactWriteItemsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::transact_write_items::TransactWriteItemsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.transact_write_items();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TransactWriteItems`.
-///
+/// 
 /// <p><code>TransactWriteItems</code> is a synchronous write operation that groups up to 100 action requests. These actions can target items in different tables, but not in different Amazon Web Services accounts or Regions, and no two actions can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>
 /// <p>The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by the following objects:</p>
 /// <ul>
@@ -52,33 +49,32 @@ impl TransactWriteItemsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TransactWriteItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder,
+                    inner: crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::transact_write_items::TransactWriteItemsOutput,
-        crate::operation::transact_write_items::TransactWriteItemsError,
-    > for TransactWriteItemsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::transact_write_items::TransactWriteItemsOutput,
-            crate::operation::transact_write_items::TransactWriteItemsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::transact_write_items::TransactWriteItemsOutput,
+                    crate::operation::transact_write_items::TransactWriteItemsError,
+                > for TransactWriteItemsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::transact_write_items::TransactWriteItemsOutput,
+                        crate::operation::transact_write_items::TransactWriteItemsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TransactWriteItemsFluentBuilder {
     /// Creates a new `TransactWriteItems`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -87,53 +83,44 @@ impl TransactWriteItemsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::transact_write_items::TransactWriteItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::transact_write_items::TransactWriteItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::transact_write_items::TransactWriteItems::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::transact_write_items::TransactWriteItems::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::transact_write_items::TransactWriteItemsOutput,
-        crate::operation::transact_write_items::TransactWriteItemsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::transact_write_items::TransactWriteItemsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transact_write_items::TransactWriteItemsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::transact_write_items::TransactWriteItems::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::transact_write_items::TransactWriteItems::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::transact_write_items::TransactWriteItemsOutput, crate::operation::transact_write_items::TransactWriteItemsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `TransactItems`.
     ///
     /// To override the contents of this collection use [`set_transact_items`](Self::set_transact_items).
@@ -144,12 +131,12 @@ impl TransactWriteItemsFluentBuilder {
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item.</p>
-    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>>) -> Self {
+    pub fn set_transact_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TransactWriteItem>>) -> Self {
         self.inner = self.inner.set_transact_items(input);
         self
     }
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item.</p>
-    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransactWriteItem>> {
+    pub fn get_transact_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TransactWriteItem>> {
         self.inner.get_transact_items()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -231,3 +218,4 @@ impl TransactWriteItemsFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

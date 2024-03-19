@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfirmPublicVirtualInterfaceOutput {
+pub struct ConfirmPublicVirtualInterfaceOutput  {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct ConfirmPublicVirtualInterfaceOutput {
     pub virtual_interface_state: ::std::option::Option<crate::types::VirtualInterfaceState>,
     _request_id: Option<String>,
 }
-impl ConfirmPublicVirtualInterfaceOutput {
+impl  ConfirmPublicVirtualInterfaceOutput  {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
     /// <li>
@@ -49,15 +49,15 @@ impl ConfirmPublicVirtualInterfaceOutput {
     /// <li>
     /// <p><code>unknown</code>: The state of the virtual interface is not available.</p></li>
     /// </ul>
-    pub fn virtual_interface_state(&self) -> ::std::option::Option<&crate::types::VirtualInterfaceState> {
+    pub fn virtual_interface_state(&self) -> ::std::option::Option<& crate::types::VirtualInterfaceState> {
         self.virtual_interface_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfirmPublicVirtualInterfaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ConfirmPublicVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput).
     pub fn builder() -> crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceOutputBuilder {
@@ -120,8 +120,7 @@ impl ConfirmPublicVirtualInterfaceOutputBuilder {
     /// <p><code>unknown</code>: The state of the virtual interface is not available.</p></li>
     /// </ul>
     pub fn set_virtual_interface_state(mut self, input: ::std::option::Option<crate::types::VirtualInterfaceState>) -> Self {
-        self.virtual_interface_state = input;
-        self
+        self.virtual_interface_state = input; self
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
@@ -148,19 +147,21 @@ impl ConfirmPublicVirtualInterfaceOutputBuilder {
         &self.virtual_interface_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceOutput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput).
     pub fn build(self) -> crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput {
         crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceOutput {
-            virtual_interface_state: self.virtual_interface_state,
+            virtual_interface_state: self.virtual_interface_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

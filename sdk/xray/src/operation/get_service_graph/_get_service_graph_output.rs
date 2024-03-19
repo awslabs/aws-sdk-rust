@@ -2,48 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceGraphOutput {
+pub struct GetServiceGraphOutput  {
     /// <p>The start of the time frame for which the graph was generated.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the time frame for which the graph was generated.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
+    pub services: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>,
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub contains_old_group_versions: bool,
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetServiceGraphOutput {
+impl  GetServiceGraphOutput  {
     /// <p>The start of the time frame for which the graph was generated.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.services.is_none()`.
-    pub fn services(&self) -> &[crate::types::Service] {
-        self.services.as_deref().unwrap_or_default()
+    pub fn services(&self) -> & [crate::types::Service] {
+        self.services.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn contains_old_group_versions(&self) -> bool {
         self.contains_old_group_versions
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceGraphOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceGraphOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceGraphOutput`](crate::operation::get_service_graph::GetServiceGraphOutput).
     pub fn builder() -> crate::operation::get_service_graph::builders::GetServiceGraphOutputBuilder {
@@ -57,7 +58,7 @@ impl GetServiceGraphOutput {
 pub struct GetServiceGraphOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>,
     pub(crate) contains_old_group_versions: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -70,8 +71,7 @@ impl GetServiceGraphOutputBuilder {
     }
     /// <p>The start of the time frame for which the graph was generated.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time frame for which the graph was generated.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -84,8 +84,7 @@ impl GetServiceGraphOutputBuilder {
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time frame for which the graph was generated.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -98,17 +97,16 @@ impl GetServiceGraphOutputBuilder {
     /// <p>The services that have processed a traced request during the specified time frame.</p>
     pub fn services(mut self, input: crate::types::Service) -> Self {
         let mut v = self.services.unwrap_or_default();
-        v.push(input);
-        self.services = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.services = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Service>>) -> Self {
+        self.services = input; self
     }
     /// <p>The services that have processed a traced request during the specified time frame.</p>
-    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Service>> {
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Service>> {
         &self.services
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
@@ -118,8 +116,7 @@ impl GetServiceGraphOutputBuilder {
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn set_contains_old_group_versions(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.contains_old_group_versions = input;
-        self
+        self.contains_old_group_versions = input; self
     }
     /// <p>A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may show traces from an older version of the group's filter expression.</p>
     pub fn get_contains_old_group_versions(&self) -> &::std::option::Option<bool> {
@@ -132,31 +129,37 @@ impl GetServiceGraphOutputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceGraphOutput`](crate::operation::get_service_graph::GetServiceGraphOutput).
     pub fn build(self) -> crate::operation::get_service_graph::GetServiceGraphOutput {
         crate::operation::get_service_graph::GetServiceGraphOutput {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            services: self.services,
-            contains_old_group_versions: self.contains_old_group_versions.unwrap_or_default(),
-            next_token: self.next_token,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            services: self.services
+            ,
+            contains_old_group_versions: self.contains_old_group_versions
+                .unwrap_or_default()
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

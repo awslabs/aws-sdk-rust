@@ -2,39 +2,41 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePoliciesInput {
+pub struct DescribePoliciesInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub policy_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub policy_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub max_records: ::std::option::Option<i32>,
 }
-impl DescribePoliciesInput {
+impl  DescribePoliciesInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
-    pub fn policy_names(&self) -> &[::std::string::String] {
-        self.policy_names.as_deref().unwrap_or_default()
+    pub fn policy_names(&self) -> & [::std::string::String] {
+        self.policy_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_types.is_none()`.
-    pub fn policy_types(&self) -> &[::std::string::String] {
-        self.policy_types.as_deref().unwrap_or_default()
+    pub fn policy_types(&self) -> & [::std::string::String] {
+        self.policy_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -54,8 +56,8 @@ impl DescribePoliciesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePoliciesInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) policy_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_records: ::std::option::Option<i32>,
 }
@@ -67,8 +69,7 @@ impl DescribePoliciesInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,19 +83,18 @@ impl DescribePoliciesInputBuilder {
     /// <p>Array Members: Maximum number of 50 items.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names = input; self
     }
     /// <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names
     }
     /// Appends an item to `policy_types`.
@@ -104,17 +104,16 @@ impl DescribePoliciesInputBuilder {
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
     pub fn policy_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_types.unwrap_or_default();
-        v.push(input.into());
-        self.policy_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_types = input;
-        self
+    pub fn set_policy_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_types = input; self
     }
     /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_types
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -124,8 +123,7 @@ impl DescribePoliciesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,23 +136,28 @@ impl DescribePoliciesInputBuilder {
     }
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_policies::DescribePoliciesInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            policy_names: self.policy_names,
-            policy_types: self.policy_types,
-            next_token: self.next_token,
-            max_records: self.max_records,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_policies::DescribePoliciesInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                policy_names: self.policy_names
+                ,
+                policy_types: self.policy_types
+                ,
+                next_token: self.next_token
+                ,
+                max_records: self.max_records
+                ,
+            }
+        )
     }
 }
+

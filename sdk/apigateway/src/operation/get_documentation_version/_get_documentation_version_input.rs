@@ -3,19 +3,19 @@
 /// <p>Gets a documentation snapshot of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDocumentationVersionInput {
+pub struct GetDocumentationVersionInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub documentation_version: ::std::option::Option<::std::string::String>,
 }
-impl GetDocumentationVersionInput {
+impl  GetDocumentationVersionInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn documentation_version(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_version(&self) -> ::std::option::Option<& str> {
         self.documentation_version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetDocumentationVersionInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl GetDocumentationVersionInputBuilder {
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub fn set_documentation_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_version = input;
-        self
+        self.documentation_version = input; self
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.documentation_version
     }
     /// Consumes the builder and constructs a [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_documentation_version::GetDocumentationVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_documentation_version::GetDocumentationVersionInput {
-            rest_api_id: self.rest_api_id,
-            documentation_version: self.documentation_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_documentation_version::GetDocumentationVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_documentation_version::GetDocumentationVersionInput {
+                rest_api_id: self.rest_api_id
+                ,
+                documentation_version: self.documentation_version
+                ,
+            }
+        )
     }
 }
+

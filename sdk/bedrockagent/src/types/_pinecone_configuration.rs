@@ -3,7 +3,7 @@
 /// Contains the configurations to use Pinecone to store knowledge base data.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PineconeConfiguration {
+pub struct PineconeConfiguration  {
     /// Pinecone connection string
     pub connection_string: ::std::string::String,
     /// Arn of a SecretsManager Secret.
@@ -13,23 +13,21 @@ pub struct PineconeConfiguration {
     /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
     pub field_mapping: ::std::option::Option<crate::types::PineconeFieldMapping>,
 }
-impl PineconeConfiguration {
+impl  PineconeConfiguration  {
     /// Pinecone connection string
-    pub fn connection_string(&self) -> &str {
-        use std::ops::Deref;
-        self.connection_string.deref()
+    pub fn connection_string(&self) -> & str {
+        use std::ops::Deref; self.connection_string.deref()
     }
     /// Arn of a SecretsManager Secret.
-    pub fn credentials_secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.credentials_secret_arn.deref()
+    pub fn credentials_secret_arn(&self) -> & str {
+        use std::ops::Deref; self.credentials_secret_arn.deref()
     }
     /// Pinecone namespace
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
-    pub fn field_mapping(&self) -> ::std::option::Option<&crate::types::PineconeFieldMapping> {
+    pub fn field_mapping(&self) -> ::std::option::Option<& crate::types::PineconeFieldMapping> {
         self.field_mapping.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl PineconeConfigurationBuilder {
     }
     /// Pinecone connection string
     pub fn set_connection_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_string = input;
-        self
+        self.connection_string = input; self
     }
     /// Pinecone connection string
     pub fn get_connection_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl PineconeConfigurationBuilder {
     }
     /// Arn of a SecretsManager Secret.
     pub fn set_credentials_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_secret_arn = input;
-        self
+        self.credentials_secret_arn = input; self
     }
     /// Arn of a SecretsManager Secret.
     pub fn get_credentials_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl PineconeConfigurationBuilder {
     }
     /// Pinecone namespace
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Pinecone namespace
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl PineconeConfigurationBuilder {
     }
     /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
     pub fn set_field_mapping(mut self, input: ::std::option::Option<crate::types::PineconeFieldMapping>) -> Self {
-        self.field_mapping = input;
-        self
+        self.field_mapping = input; self
     }
     /// A mapping of Bedrock Knowledge Base fields to Pinecone field names
     pub fn get_field_mapping(&self) -> &::std::option::Option<crate::types::PineconeFieldMapping> {
@@ -114,21 +108,24 @@ impl PineconeConfigurationBuilder {
     /// - [`connection_string`](crate::types::builders::PineconeConfigurationBuilder::connection_string)
     /// - [`credentials_secret_arn`](crate::types::builders::PineconeConfigurationBuilder::credentials_secret_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::PineconeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PineconeConfiguration {
-            connection_string: self.connection_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connection_string",
-                    "connection_string was not specified but it is required when building PineconeConfiguration",
-                )
-            })?,
-            credentials_secret_arn: self.credentials_secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credentials_secret_arn",
-                    "credentials_secret_arn was not specified but it is required when building PineconeConfiguration",
-                )
-            })?,
-            namespace: self.namespace,
-            field_mapping: self.field_mapping,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PineconeConfiguration {
+                connection_string: self.connection_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connection_string", "connection_string was not specified but it is required when building PineconeConfiguration")
+                    )?
+                ,
+                credentials_secret_arn: self.credentials_secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credentials_secret_arn", "credentials_secret_arn was not specified but it is required when building PineconeConfiguration")
+                    )?
+                ,
+                namespace: self.namespace
+                ,
+                field_mapping: self.field_mapping
+                ,
+            }
+        )
     }
 }
+

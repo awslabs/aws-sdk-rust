@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterVersionInput {
+pub struct UpdateClusterVersionInput  {
     /// <p>The name of the Amazon EKS cluster to update.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The desired Kubernetes version following a successful update.</p>
@@ -10,17 +10,17 @@ pub struct UpdateClusterVersionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateClusterVersionInput {
+impl  UpdateClusterVersionInput  {
     /// <p>The name of the Amazon EKS cluster to update.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateClusterVersionInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster to update.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon EKS cluster to update.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateClusterVersionInputBuilder {
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,22 +75,24 @@ impl UpdateClusterVersionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_cluster_version::UpdateClusterVersionInput {
-            name: self.name,
-            version: self.version,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster_version::UpdateClusterVersionInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScalingPoliciesInput {
+pub struct DescribeScalingPoliciesInput  {
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
@@ -30,9 +30,9 @@ pub struct DescribeScalingPoliciesInput {
     /// <p>The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl DescribeScalingPoliciesInput {
+impl  DescribeScalingPoliciesInput  {
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
@@ -52,7 +52,7 @@ impl DescribeScalingPoliciesInput {
     /// <li>
     /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
-    pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ScalingStatusType> {
+    pub fn status_filter(&self) -> ::std::option::Option<& crate::types::ScalingStatusType> {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -60,11 +60,11 @@ impl DescribeScalingPoliciesInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -94,8 +94,7 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet for which to retrieve scaling policies. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +139,7 @@ impl DescribeScalingPoliciesInputBuilder {
     /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ScalingStatusType>) -> Self {
-        self.status_filter = input;
-        self
+        self.status_filter = input; self
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
@@ -170,8 +168,7 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -184,8 +181,7 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -198,26 +194,28 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location. If you don't specify this value, the response contains the scaling policies of every location in the fleet.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`DescribeScalingPoliciesInput`](crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
-            fleet_id: self.fleet_id,
-            status_filter: self.status_filter,
-            limit: self.limit,
-            next_token: self.next_token,
-            location: self.location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesInput {
+                fleet_id: self.fleet_id
+                ,
+                status_filter: self.status_filter
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSchemaVersionsOutput {
+pub struct ListSchemaVersionsOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of schema version summaries.</p>
-    pub schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
+    pub schema_versions: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionSummary>>,
     _request_id: Option<String>,
 }
-impl ListSchemaVersionsOutput {
+impl  ListSchemaVersionsOutput  {
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of schema version summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schema_versions.is_none()`.
-    pub fn schema_versions(&self) -> &[crate::types::SchemaVersionSummary] {
-        self.schema_versions.as_deref().unwrap_or_default()
+    pub fn schema_versions(&self) -> & [crate::types::SchemaVersionSummary] {
+        self.schema_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSchemaVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSchemaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
     pub fn builder() -> crate::operation::list_schema_versions::builders::ListSchemaVersionsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListSchemaVersionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSchemaVersionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) schema_versions: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>,
+    pub(crate) schema_versions: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionSummary>>,
     _request_id: Option<String>,
 }
 impl ListSchemaVersionsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListSchemaVersionsOutputBuilder {
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListSchemaVersionsOutputBuilder {
     /// <p>An array of schema version summaries.</p>
     pub fn schema_versions(mut self, input: crate::types::SchemaVersionSummary) -> Self {
         let mut v = self.schema_versions.unwrap_or_default();
-        v.push(input);
-        self.schema_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schema_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn set_schema_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>>) -> Self {
-        self.schema_versions = input;
-        self
+    pub fn set_schema_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionSummary>>) -> Self {
+        self.schema_versions = input; self
     }
     /// <p>An array of schema version summaries.</p>
-    pub fn get_schema_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>> {
+    pub fn get_schema_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaVersionSummary>> {
         &self.schema_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSchemaVersionsOutput`](crate::operation::list_schema_versions::ListSchemaVersionsOutput).
     pub fn build(self) -> crate::operation::list_schema_versions::ListSchemaVersionsOutput {
         crate::operation::list_schema_versions::ListSchemaVersionsOutput {
-            next_token: self.next_token,
-            schema_versions: self.schema_versions,
+            next_token: self.next_token
+            ,
+            schema_versions: self.schema_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

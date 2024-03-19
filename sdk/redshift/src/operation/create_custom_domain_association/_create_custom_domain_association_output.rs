@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomDomainAssociationOutput {
+pub struct CreateCustomDomainAssociationOutput  {
     /// <p>The custom domain name for the association result.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>
@@ -13,29 +13,29 @@ pub struct CreateCustomDomainAssociationOutput {
     pub custom_domain_cert_expiry_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateCustomDomainAssociationOutput {
+impl  CreateCustomDomainAssociationOutput  {
     /// <p>The custom domain name for the association result.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>
-    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_domain_certificate_arn.as_deref()
     }
     /// <p>The identifier of the cluster that the custom domain is associated with.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The expiration time for the certificate for the custom domain.</p>
-    pub fn custom_domain_cert_expiry_time(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_cert_expiry_time(&self) -> ::std::option::Option<& str> {
         self.custom_domain_cert_expiry_time.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCustomDomainAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCustomDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDomainAssociationOutput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationOutput).
     pub fn builder() -> crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder {
@@ -61,8 +61,7 @@ impl CreateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The custom domain name for the association result.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name for the association result.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>
     pub fn set_custom_domain_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_certificate_arn = input;
-        self
+        self.custom_domain_certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>
     pub fn get_custom_domain_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl CreateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The identifier of the cluster that the custom domain is associated with.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The identifier of the cluster that the custom domain is associated with.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl CreateCustomDomainAssociationOutputBuilder {
     }
     /// <p>The expiration time for the certificate for the custom domain.</p>
     pub fn set_custom_domain_cert_expiry_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_cert_expiry_time = input;
-        self
+        self.custom_domain_cert_expiry_time = input; self
     }
     /// <p>The expiration time for the certificate for the custom domain.</p>
     pub fn get_custom_domain_cert_expiry_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_cert_expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCustomDomainAssociationOutput`](crate::operation::create_custom_domain_association::CreateCustomDomainAssociationOutput).
     pub fn build(self) -> crate::operation::create_custom_domain_association::CreateCustomDomainAssociationOutput {
         crate::operation::create_custom_domain_association::CreateCustomDomainAssociationOutput {
-            custom_domain_name: self.custom_domain_name,
-            custom_domain_certificate_arn: self.custom_domain_certificate_arn,
-            cluster_identifier: self.cluster_identifier,
-            custom_domain_cert_expiry_time: self.custom_domain_cert_expiry_time,
+            custom_domain_name: self.custom_domain_name
+            ,
+            custom_domain_certificate_arn: self.custom_domain_certificate_arn
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
+            custom_domain_cert_expiry_time: self.custom_domain_cert_expiry_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

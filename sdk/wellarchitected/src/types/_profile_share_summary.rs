@@ -3,7 +3,7 @@
 /// <p>Summary of a profile share.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileShareSummary {
+pub struct ProfileShareSummary  {
     /// <p>The ID associated with the share.</p>
     pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
@@ -13,21 +13,21 @@ pub struct ProfileShareSummary {
     /// <p>Profile share invitation status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ProfileShareSummary {
+impl  ProfileShareSummary  {
     /// <p>The ID associated with the share.</p>
-    pub fn share_id(&self) -> ::std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<& str> {
         self.share_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
-    pub fn shared_with(&self) -> ::std::option::Option<&str> {
+    pub fn shared_with(&self) -> ::std::option::Option<& str> {
         self.shared_with.as_deref()
     }
     /// <p>The status of the share request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ShareStatus> {
         self.status.as_ref()
     }
     /// <p>Profile share invitation status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ProfileShareSummaryBuilder {
     }
     /// <p>The ID associated with the share.</p>
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_id = input;
-        self
+        self.share_id = input; self
     }
     /// <p>The ID associated with the share.</p>
     pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ProfileShareSummaryBuilder {
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shared_with = input;
-        self
+        self.shared_with = input; self
     }
     /// <p>The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.</p>
     pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ProfileShareSummaryBuilder {
     }
     /// <p>The status of the share request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the share request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatus> {
@@ -97,8 +94,7 @@ impl ProfileShareSummaryBuilder {
     }
     /// <p>Profile share invitation status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Profile share invitation status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ProfileShareSummaryBuilder {
     /// Consumes the builder and constructs a [`ProfileShareSummary`](crate::types::ProfileShareSummary).
     pub fn build(self) -> crate::types::ProfileShareSummary {
         crate::types::ProfileShareSummary {
-            share_id: self.share_id,
-            shared_with: self.shared_with,
-            status: self.status,
-            status_message: self.status_message,
+            share_id: self.share_id
+            ,
+            shared_with: self.shared_with
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

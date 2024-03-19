@@ -3,7 +3,7 @@
 /// <p>The activity details of the data source run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataSourceRunActivity {
+pub struct DataSourceRunActivity  {
     /// <p>The database included in the data source run activity.</p>
     pub database: ::std::string::String,
     /// <p>The identifier of the data source for the data source run activity.</p>
@@ -25,53 +25,49 @@ pub struct DataSourceRunActivity {
     /// <p>The timestamp of when data source run activity was updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
-impl DataSourceRunActivity {
+impl  DataSourceRunActivity  {
     /// <p>The database included in the data source run activity.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The identifier of the data source for the data source run activity.</p>
-    pub fn data_source_run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_run_id.deref()
+    pub fn data_source_run_id(&self) -> & str {
+        use std::ops::Deref; self.data_source_run_id.deref()
     }
     /// <p>The technical name included in the data source run activity.</p>
-    pub fn technical_name(&self) -> &str {
-        use std::ops::Deref;
-        self.technical_name.deref()
+    pub fn technical_name(&self) -> & str {
+        use std::ops::Deref; self.technical_name.deref()
     }
     /// <p>The status of the asset included in the data source run activity.</p>
-    pub fn data_asset_status(&self) -> &crate::types::DataAssetActivityStatus {
+    pub fn data_asset_status(&self) -> & crate::types::DataAssetActivityStatus {
         &self.data_asset_status
     }
     /// <p>The project ID included in the data source run activity.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The identifier of the asset included in the data source run activity.</p>
-    pub fn data_asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_asset_id(&self) -> ::std::option::Option<& str> {
         self.data_asset_id.as_deref()
     }
     /// <p>The technical description included in the data source run activity.</p>
-    pub fn technical_description(&self) -> ::std::option::Option<&str> {
+    pub fn technical_description(&self) -> ::std::option::Option<& str> {
         self.technical_description.as_deref()
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
+    pub fn error_message(&self) -> ::std::option::Option<& crate::types::DataSourceErrorMessage> {
         self.error_message.as_ref()
     }
     /// <p>The timestamp of when data source run activity was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when data source run activity was updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
 }
-impl ::std::fmt::Debug for DataSourceRunActivity {
+impl  ::std::fmt::Debug for DataSourceRunActivity  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceRunActivity");
         formatter.field("database", &"*** Sensitive Data Redacted ***");
@@ -118,8 +114,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The database included in the data source run activity.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database included in the data source run activity.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +128,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The identifier of the data source for the data source run activity.</p>
     pub fn set_data_source_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_run_id = input;
-        self
+        self.data_source_run_id = input; self
     }
     /// <p>The identifier of the data source for the data source run activity.</p>
     pub fn get_data_source_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +142,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The technical name included in the data source run activity.</p>
     pub fn set_technical_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.technical_name = input;
-        self
+        self.technical_name = input; self
     }
     /// <p>The technical name included in the data source run activity.</p>
     pub fn get_technical_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +156,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The status of the asset included in the data source run activity.</p>
     pub fn set_data_asset_status(mut self, input: ::std::option::Option<crate::types::DataAssetActivityStatus>) -> Self {
-        self.data_asset_status = input;
-        self
+        self.data_asset_status = input; self
     }
     /// <p>The status of the asset included in the data source run activity.</p>
     pub fn get_data_asset_status(&self) -> &::std::option::Option<crate::types::DataAssetActivityStatus> {
@@ -178,8 +170,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The project ID included in the data source run activity.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The project ID included in the data source run activity.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +183,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The identifier of the asset included in the data source run activity.</p>
     pub fn set_data_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_asset_id = input;
-        self
+        self.data_asset_id = input; self
     }
     /// <p>The identifier of the asset included in the data source run activity.</p>
     pub fn get_data_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +196,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The technical description included in the data source run activity.</p>
     pub fn set_technical_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.technical_description = input;
-        self
+        self.technical_description = input; self
     }
     /// <p>The technical description included in the data source run activity.</p>
     pub fn get_technical_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,8 +209,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<crate::types::DataSourceErrorMessage>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
@@ -235,8 +223,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The timestamp of when data source run activity was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when data source run activity was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,8 +237,7 @@ impl DataSourceRunActivityBuilder {
     }
     /// <p>The timestamp of when data source run activity was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when data source run activity was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -267,53 +253,51 @@ impl DataSourceRunActivityBuilder {
     /// - [`created_at`](crate::types::builders::DataSourceRunActivityBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DataSourceRunActivityBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceRunActivity {
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            data_source_run_id: self.data_source_run_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_run_id",
-                    "data_source_run_id was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            technical_name: self.technical_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "technical_name",
-                    "technical_name was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            data_asset_status: self.data_asset_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_asset_status",
-                    "data_asset_status was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            data_asset_id: self.data_asset_id,
-            technical_description: self.technical_description,
-            error_message: self.error_message,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building DataSourceRunActivity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceRunActivity {
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                data_source_run_id: self.data_source_run_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_run_id", "data_source_run_id was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                technical_name: self.technical_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("technical_name", "technical_name was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                data_asset_status: self.data_asset_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_asset_status", "data_asset_status was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                data_asset_id: self.data_asset_id
+                ,
+                technical_description: self.technical_description
+                ,
+                error_message: self.error_message
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building DataSourceRunActivity")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DataSourceRunActivityBuilder {
@@ -332,3 +316,4 @@ impl ::std::fmt::Debug for DataSourceRunActivityBuilder {
         formatter.finish()
     }
 }
+

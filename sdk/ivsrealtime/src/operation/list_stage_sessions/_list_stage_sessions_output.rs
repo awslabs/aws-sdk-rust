@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStageSessionsOutput {
+pub struct ListStageSessionsOutput  {
     /// <p>List of matching stage sessions.</p>
-    pub stage_sessions: ::std::vec::Vec<crate::types::StageSessionSummary>,
+    pub stage_sessions: ::std::vec::Vec::<crate::types::StageSessionSummary>,
     /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStageSessionsOutput {
+impl  ListStageSessionsOutput  {
     /// <p>List of matching stage sessions.</p>
-    pub fn stage_sessions(&self) -> &[crate::types::StageSessionSummary] {
-        use std::ops::Deref;
-        self.stage_sessions.deref()
+    pub fn stage_sessions(&self) -> & [crate::types::StageSessionSummary] {
+        use std::ops::Deref; self.stage_sessions.deref()
     }
     /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStageSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStageSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStageSessionsOutput`](crate::operation::list_stage_sessions::ListStageSessionsOutput).
     pub fn builder() -> crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStageSessionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStageSessionsOutputBuilder {
-    pub(crate) stage_sessions: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>,
+    pub(crate) stage_sessions: ::std::option::Option<::std::vec::Vec::<crate::types::StageSessionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListStageSessionsOutputBuilder {
     /// <p>List of matching stage sessions.</p>
     pub fn stage_sessions(mut self, input: crate::types::StageSessionSummary) -> Self {
         let mut v = self.stage_sessions.unwrap_or_default();
-        v.push(input);
-        self.stage_sessions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stage_sessions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of matching stage sessions.</p>
-    pub fn set_stage_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>>) -> Self {
-        self.stage_sessions = input;
-        self
+    pub fn set_stage_sessions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StageSessionSummary>>) -> Self {
+        self.stage_sessions = input; self
     }
     /// <p>List of matching stage sessions.</p>
-    pub fn get_stage_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StageSessionSummary>> {
+    pub fn get_stage_sessions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StageSessionSummary>> {
         &self.stage_sessions
     }
     /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,37 +66,37 @@ impl ListStageSessionsOutputBuilder {
     }
     /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more stage sessions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStageSessionsOutput`](crate::operation::list_stage_sessions::ListStageSessionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`stage_sessions`](crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder::stage_sessions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_stage_sessions::ListStageSessionsOutput {
-            stage_sessions: self.stage_sessions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stage_sessions",
-                    "stage_sessions was not specified but it is required when building ListStageSessionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_stage_sessions::ListStageSessionsOutput {
+                stage_sessions: self.stage_sessions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stage_sessions", "stage_sessions was not specified but it is required when building ListStageSessionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

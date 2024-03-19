@@ -3,19 +3,19 @@
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservationCoverageGroup {
+pub struct ReservationCoverageGroup  {
     /// <p>The attributes for this group of reservations.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>How much instance usage this group of reservations covered.</p>
     pub coverage: ::std::option::Option<crate::types::Coverage>,
 }
-impl ReservationCoverageGroup {
+impl  ReservationCoverageGroup  {
     /// <p>The attributes for this group of reservations.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>How much instance usage this group of reservations covered.</p>
-    pub fn coverage(&self) -> ::std::option::Option<&crate::types::Coverage> {
+    pub fn coverage(&self) -> ::std::option::Option<& crate::types::Coverage> {
         self.coverage.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl ReservationCoverageGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ReservationCoverageGroupBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) coverage: ::std::option::Option<crate::types::Coverage>,
 }
 impl ReservationCoverageGroupBuilder {
@@ -41,17 +41,16 @@ impl ReservationCoverageGroupBuilder {
     /// <p>The attributes for this group of reservations.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attributes for this group of reservations.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes for this group of reservations.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>How much instance usage this group of reservations covered.</p>
@@ -61,8 +60,7 @@ impl ReservationCoverageGroupBuilder {
     }
     /// <p>How much instance usage this group of reservations covered.</p>
     pub fn set_coverage(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
-        self.coverage = input;
-        self
+        self.coverage = input; self
     }
     /// <p>How much instance usage this group of reservations covered.</p>
     pub fn get_coverage(&self) -> &::std::option::Option<crate::types::Coverage> {
@@ -71,8 +69,11 @@ impl ReservationCoverageGroupBuilder {
     /// Consumes the builder and constructs a [`ReservationCoverageGroup`](crate::types::ReservationCoverageGroup).
     pub fn build(self) -> crate::types::ReservationCoverageGroup {
         crate::types::ReservationCoverageGroup {
-            attributes: self.attributes,
-            coverage: self.coverage,
+            attributes: self.attributes
+            ,
+            coverage: self.coverage
+            ,
         }
     }
 }
+

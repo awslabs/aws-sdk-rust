@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetMemberEc2DeepInspectionStatusOutput {
+pub struct BatchGetMemberEc2DeepInspectionStatusOutput  {
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why.</p>
-    pub failed_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
+    pub failed_account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
     _request_id: Option<String>,
 }
-impl BatchGetMemberEc2DeepInspectionStatusOutput {
+impl  BatchGetMemberEc2DeepInspectionStatusOutput  {
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[crate::types::MemberAccountEc2DeepInspectionStatusState] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [crate::types::MemberAccountEc2DeepInspectionStatusState] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed_account_ids.is_none()`.
-    pub fn failed_account_ids(&self) -> &[crate::types::FailedMemberAccountEc2DeepInspectionStatusState] {
-        self.failed_account_ids.as_deref().unwrap_or_default()
+    pub fn failed_account_ids(&self) -> & [crate::types::FailedMemberAccountEc2DeepInspectionStatusState] {
+        self.failed_account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetMemberEc2DeepInspectionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetMemberEc2DeepInspectionStatusOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetMemberEc2DeepInspectionStatusOutput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput).
     pub fn builder() -> crate::operation::batch_get_member_ec2_deep_inspection_status::builders::BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetMemberEc2DeepInspectionStatusOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
-    pub(crate) failed_account_ids: ::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatusState>>,
+    pub(crate) failed_account_ids: ::std::option::Option<::std::vec::Vec::<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
     _request_id: Option<String>,
 }
 impl BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts.</p>
     pub fn account_ids(mut self, input: crate::types::MemberAccountEc2DeepInspectionStatusState) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input);
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatusState>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberAccountEc2DeepInspectionStatusState>> {
         &self.account_ids
     }
     /// Appends an item to `failed_account_ids`.
@@ -71,37 +72,36 @@ impl BatchGetMemberEc2DeepInspectionStatusOutputBuilder {
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why.</p>
     pub fn failed_account_ids(mut self, input: crate::types::FailedMemberAccountEc2DeepInspectionStatusState) -> Self {
         let mut v = self.failed_account_ids.unwrap_or_default();
-        v.push(input);
-        self.failed_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why.</p>
-    pub fn set_failed_account_ids(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>,
-    ) -> Self {
-        self.failed_account_ids = input;
-        self
+    pub fn set_failed_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>>) -> Self {
+        self.failed_account_ids = input; self
     }
     /// <p>An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why.</p>
-    pub fn get_failed_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>> {
+    pub fn get_failed_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>> {
         &self.failed_account_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetMemberEc2DeepInspectionStatusOutput`](crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput).
     pub fn build(self) -> crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput {
         crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput {
-            account_ids: self.account_ids,
-            failed_account_ids: self.failed_account_ids,
+            account_ids: self.account_ids
+            ,
+            failed_account_ids: self.failed_account_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

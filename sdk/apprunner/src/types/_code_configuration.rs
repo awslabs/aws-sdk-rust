@@ -3,7 +3,7 @@
 /// <p>Describes the configuration that App Runner uses to build and run an App Runner service from a source code repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeConfiguration {
+pub struct CodeConfiguration  {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct CodeConfiguration {
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
     pub code_configuration_values: ::std::option::Option<crate::types::CodeConfigurationValues>,
 }
-impl CodeConfiguration {
+impl  CodeConfiguration  {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl CodeConfiguration {
     /// <li>
     /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
     /// </ul>
-    pub fn configuration_source(&self) -> &crate::types::ConfigurationSource {
+    pub fn configuration_source(&self) -> & crate::types::ConfigurationSource {
         &self.configuration_source
     }
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
-    pub fn code_configuration_values(&self) -> ::std::option::Option<&crate::types::CodeConfigurationValues> {
+    pub fn code_configuration_values(&self) -> ::std::option::Option<& crate::types::CodeConfigurationValues> {
         self.code_configuration_values.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl CodeConfigurationBuilder {
     /// <p><code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the <code>apprunner.yaml</code> file in the source code repository.</p></li>
     /// </ul>
     pub fn set_configuration_source(mut self, input: ::std::option::Option<crate::types::ConfigurationSource>) -> Self {
-        self.configuration_source = input;
-        self
+        self.configuration_source = input; self
     }
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
@@ -86,8 +85,7 @@ impl CodeConfigurationBuilder {
     }
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
     pub fn set_code_configuration_values(mut self, input: ::std::option::Option<crate::types::CodeConfigurationValues>) -> Self {
-        self.code_configuration_values = input;
-        self
+        self.code_configuration_values = input; self
     }
     /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
     pub fn get_code_configuration_values(&self) -> &::std::option::Option<crate::types::CodeConfigurationValues> {
@@ -97,14 +95,17 @@ impl CodeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_source`](crate::types::builders::CodeConfigurationBuilder::configuration_source)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeConfiguration {
-            configuration_source: self.configuration_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration_source",
-                    "configuration_source was not specified but it is required when building CodeConfiguration",
-                )
-            })?,
-            code_configuration_values: self.code_configuration_values,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeConfiguration {
+                configuration_source: self.configuration_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_source", "configuration_source was not specified but it is required when building CodeConfiguration")
+                    )?
+                ,
+                code_configuration_values: self.code_configuration_values
+                ,
+            }
+        )
     }
 }
+

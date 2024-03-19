@@ -5,23 +5,20 @@ pub use crate::operation::list_traffic_policy_instances::_list_traffic_policy_in
 
 impl ListTrafficPolicyInstancesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_traffic_policy_instances();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_traffic_policy_instances();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListTrafficPolicyInstances`.
-///
+/// 
 /// <p>Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.</p><note>
 /// <p>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl ListTrafficPolicyInstancesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesInputBuilder,
+                    inner: crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
-    > for ListTrafficPolicyInstancesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
-            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
+                    crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
+                > for ListTrafficPolicyInstancesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
+                        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListTrafficPolicyInstancesFluentBuilder {
     /// Creates a new `ListTrafficPolicyInstances`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl ListTrafficPolicyInstancesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstances::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstances::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
-        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstances::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstances::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput, crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>HostedZoneId</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     pub fn hosted_zone_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -177,3 +164,4 @@ impl ListTrafficPolicyInstancesFluentBuilder {
         self.inner.get_max_items()
     }
 }
+

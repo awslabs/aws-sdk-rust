@@ -3,7 +3,7 @@
 /// <p>An array of configuration policy associations, one for each configuration policy association identifier, that was specified in a <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be processed due to an error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnprocessedConfigurationPolicyAssociation {
+pub struct UnprocessedConfigurationPolicyAssociation  {
     /// <p>Configuration policy association identifiers that were specified in a <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be processed due to an error.</p>
     pub configuration_policy_association_identifiers: ::std::option::Option<crate::types::ConfigurationPolicyAssociation>,
     /// <p>An HTTP status code that identifies why the configuration policy association failed.</p>
@@ -11,17 +11,17 @@ pub struct UnprocessedConfigurationPolicyAssociation {
     /// <p>A string that identifies why the configuration policy association failed.</p>
     pub error_reason: ::std::option::Option<::std::string::String>,
 }
-impl UnprocessedConfigurationPolicyAssociation {
+impl  UnprocessedConfigurationPolicyAssociation  {
     /// <p>Configuration policy association identifiers that were specified in a <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be processed due to an error.</p>
-    pub fn configuration_policy_association_identifiers(&self) -> ::std::option::Option<&crate::types::ConfigurationPolicyAssociation> {
+    pub fn configuration_policy_association_identifiers(&self) -> ::std::option::Option<& crate::types::ConfigurationPolicyAssociation> {
         self.configuration_policy_association_identifiers.as_ref()
     }
     /// <p>An HTTP status code that identifies why the configuration policy association failed.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A string that identifies why the configuration policy association failed.</p>
-    pub fn error_reason(&self) -> ::std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<& str> {
         self.error_reason.as_deref()
     }
 }
@@ -47,12 +47,8 @@ impl UnprocessedConfigurationPolicyAssociationBuilder {
         self
     }
     /// <p>Configuration policy association identifiers that were specified in a <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be processed due to an error.</p>
-    pub fn set_configuration_policy_association_identifiers(
-        mut self,
-        input: ::std::option::Option<crate::types::ConfigurationPolicyAssociation>,
-    ) -> Self {
-        self.configuration_policy_association_identifiers = input;
-        self
+    pub fn set_configuration_policy_association_identifiers(mut self, input: ::std::option::Option<crate::types::ConfigurationPolicyAssociation>) -> Self {
+        self.configuration_policy_association_identifiers = input; self
     }
     /// <p>Configuration policy association identifiers that were specified in a <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be processed due to an error.</p>
     pub fn get_configuration_policy_association_identifiers(&self) -> &::std::option::Option<crate::types::ConfigurationPolicyAssociation> {
@@ -65,8 +61,7 @@ impl UnprocessedConfigurationPolicyAssociationBuilder {
     }
     /// <p>An HTTP status code that identifies why the configuration policy association failed.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An HTTP status code that identifies why the configuration policy association failed.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +74,7 @@ impl UnprocessedConfigurationPolicyAssociationBuilder {
     }
     /// <p>A string that identifies why the configuration policy association failed.</p>
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_reason = input;
-        self
+        self.error_reason = input; self
     }
     /// <p>A string that identifies why the configuration policy association failed.</p>
     pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,9 +83,13 @@ impl UnprocessedConfigurationPolicyAssociationBuilder {
     /// Consumes the builder and constructs a [`UnprocessedConfigurationPolicyAssociation`](crate::types::UnprocessedConfigurationPolicyAssociation).
     pub fn build(self) -> crate::types::UnprocessedConfigurationPolicyAssociation {
         crate::types::UnprocessedConfigurationPolicyAssociation {
-            configuration_policy_association_identifiers: self.configuration_policy_association_identifiers,
-            error_code: self.error_code,
-            error_reason: self.error_reason,
+            configuration_policy_association_identifiers: self.configuration_policy_association_identifiers
+            ,
+            error_code: self.error_code
+            ,
+            error_reason: self.error_reason
+            ,
         }
     }
 }
+

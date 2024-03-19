@@ -22,11 +22,7 @@ impl ApplicationPolicy {
     /// Tries to convert the enum instance into [`PolicyObjectIdentifier`](crate::types::ApplicationPolicy::PolicyObjectIdentifier), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_policy_object_identifier(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let ApplicationPolicy::PolicyObjectIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApplicationPolicy::PolicyObjectIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PolicyObjectIdentifier`](crate::types::ApplicationPolicy::PolicyObjectIdentifier).
     pub fn is_policy_object_identifier(&self) -> bool {
@@ -35,11 +31,7 @@ impl ApplicationPolicy {
     /// Tries to convert the enum instance into [`PolicyType`](crate::types::ApplicationPolicy::PolicyType), extracting the inner [`ApplicationPolicyType`](crate::types::ApplicationPolicyType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_policy_type(&self) -> ::std::result::Result<&crate::types::ApplicationPolicyType, &Self> {
-        if let ApplicationPolicy::PolicyType(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ApplicationPolicy::PolicyType(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PolicyType`](crate::types::ApplicationPolicy::PolicyType).
     pub fn is_policy_type(&self) -> bool {
@@ -50,3 +42,4 @@ impl ApplicationPolicy {
         matches!(self, Self::Unknown)
     }
 }
+

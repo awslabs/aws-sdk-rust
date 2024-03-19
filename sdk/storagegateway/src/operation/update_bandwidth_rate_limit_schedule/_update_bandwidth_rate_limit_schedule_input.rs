@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBandwidthRateLimitScheduleInput {
+pub struct UpdateBandwidthRateLimitScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>,
 }
-impl UpdateBandwidthRateLimitScheduleInput {
+impl  UpdateBandwidthRateLimitScheduleInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bandwidth_rate_limit_intervals.is_none()`.
-    pub fn bandwidth_rate_limit_intervals(&self) -> &[crate::types::BandwidthRateLimitInterval] {
-        self.bandwidth_rate_limit_intervals.as_deref().unwrap_or_default()
+    pub fn bandwidth_rate_limit_intervals(&self) -> & [crate::types::BandwidthRateLimitInterval] {
+        self.bandwidth_rate_limit_intervals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateBandwidthRateLimitScheduleInput {
@@ -32,7 +33,7 @@ impl UpdateBandwidthRateLimitScheduleInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
+    pub(crate) bandwidth_rate_limit_intervals: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>,
 }
 impl UpdateBandwidthRateLimitScheduleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -43,8 +44,7 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,34 +57,28 @@ impl UpdateBandwidthRateLimitScheduleInputBuilder {
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
     pub fn bandwidth_rate_limit_intervals(mut self, input: crate::types::BandwidthRateLimitInterval) -> Self {
         let mut v = self.bandwidth_rate_limit_intervals.unwrap_or_default();
-        v.push(input);
-        self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bandwidth_rate_limit_intervals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn set_bandwidth_rate_limit_intervals(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>>,
-    ) -> Self {
-        self.bandwidth_rate_limit_intervals = input;
-        self
+    pub fn set_bandwidth_rate_limit_intervals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>>) -> Self {
+        self.bandwidth_rate_limit_intervals = input; self
     }
     /// <p>An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.</p>
-    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BandwidthRateLimitInterval>> {
+    pub fn get_bandwidth_rate_limit_intervals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BandwidthRateLimitInterval>> {
         &self.bandwidth_rate_limit_intervals
     }
     /// Consumes the builder and constructs a [`UpdateBandwidthRateLimitScheduleInput`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput {
-                gateway_arn: self.gateway_arn,
-                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+                bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals
+                ,
+            }
         )
     }
 }
+

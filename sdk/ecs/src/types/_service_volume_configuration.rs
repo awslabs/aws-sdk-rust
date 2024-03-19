@@ -3,20 +3,19 @@
 /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceVolumeConfiguration {
+pub struct ServiceVolumeConfiguration  {
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub name: ::std::string::String,
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task in the service. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub managed_ebs_volume: ::std::option::Option<crate::types::ServiceManagedEbsVolumeConfiguration>,
 }
-impl ServiceVolumeConfiguration {
+impl  ServiceVolumeConfiguration  {
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task in the service. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
-    pub fn managed_ebs_volume(&self) -> ::std::option::Option<&crate::types::ServiceManagedEbsVolumeConfiguration> {
+    pub fn managed_ebs_volume(&self) -> ::std::option::Option<& crate::types::ServiceManagedEbsVolumeConfiguration> {
         self.managed_ebs_volume.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl ServiceVolumeConfigurationBuilder {
     }
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ServiceVolumeConfigurationBuilder {
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task in the service. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub fn set_managed_ebs_volume(mut self, input: ::std::option::Option<crate::types::ServiceManagedEbsVolumeConfiguration>) -> Self {
-        self.managed_ebs_volume = input;
-        self
+        self.managed_ebs_volume = input; self
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task in the service. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub fn get_managed_ebs_volume(&self) -> &::std::option::Option<crate::types::ServiceManagedEbsVolumeConfiguration> {
@@ -68,14 +65,17 @@ impl ServiceVolumeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ServiceVolumeConfigurationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ServiceVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ServiceVolumeConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ServiceVolumeConfiguration",
-                )
-            })?,
-            managed_ebs_volume: self.managed_ebs_volume,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ServiceVolumeConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ServiceVolumeConfiguration")
+                    )?
+                ,
+                managed_ebs_volume: self.managed_ebs_volume
+                ,
+            }
+        )
     }
 }
+

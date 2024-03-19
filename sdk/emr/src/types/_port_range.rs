@@ -3,13 +3,13 @@
 /// <p>A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortRange {
+pub struct PortRange  {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub min_range: ::std::option::Option<i32>,
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub max_range: ::std::option::Option<i32>,
 }
-impl PortRange {
+impl  PortRange  {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn min_range(&self) -> ::std::option::Option<i32> {
         self.min_range
@@ -42,8 +42,7 @@ impl PortRangeBuilder {
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn set_min_range(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_range = input;
-        self
+        self.min_range = input; self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn get_min_range(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl PortRangeBuilder {
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn set_max_range(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_range = input;
-        self
+        self.max_range = input; self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn get_max_range(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl PortRangeBuilder {
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
     pub fn build(self) -> crate::types::PortRange {
         crate::types::PortRange {
-            min_range: self.min_range,
-            max_range: self.max_range,
+            min_range: self.min_range
+            ,
+            max_range: self.max_range
+            ,
         }
     }
 }
+

@@ -3,22 +3,18 @@
 /// <p>The logging configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfig {
+pub struct LoggingConfig  {
     /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub record_all_ros_topics: ::std::option::Option<bool>,
 }
-impl LoggingConfig {
+impl  LoggingConfig  {
     /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn record_all_ros_topics(&self) -> ::std::option::Option<bool> {
         self.record_all_ros_topics
     }
@@ -40,9 +36,7 @@ impl LoggingConfigBuilder {
     /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn record_all_ros_topics(mut self, input: bool) -> Self {
         self.record_all_ros_topics = ::std::option::Option::Some(input);
         self
@@ -50,26 +44,23 @@ impl LoggingConfigBuilder {
     /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn set_record_all_ros_topics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.record_all_ros_topics = input;
-        self
+        self.record_all_ros_topics = input; self
     }
     /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn get_record_all_ros_topics(&self) -> &::std::option::Option<bool> {
         &self.record_all_ros_topics
     }
     /// Consumes the builder and constructs a [`LoggingConfig`](crate::types::LoggingConfig).
     pub fn build(self) -> crate::types::LoggingConfig {
         crate::types::LoggingConfig {
-            record_all_ros_topics: self.record_all_ros_topics,
+            record_all_ros_topics: self.record_all_ros_topics
+            ,
         }
     }
 }
+

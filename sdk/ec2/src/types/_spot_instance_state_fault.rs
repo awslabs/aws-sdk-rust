@@ -3,19 +3,19 @@
 /// <p>Describes a Spot Instance state change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotInstanceStateFault {
+pub struct SpotInstanceStateFault  {
     /// <p>The reason code for the Spot Instance state change.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message for the Spot Instance state change.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl SpotInstanceStateFault {
+impl  SpotInstanceStateFault  {
     /// <p>The reason code for the Spot Instance state change.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The message for the Spot Instance state change.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SpotInstanceStateFaultBuilder {
     }
     /// <p>The reason code for the Spot Instance state change.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The reason code for the Spot Instance state change.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SpotInstanceStateFaultBuilder {
     }
     /// <p>The message for the Spot Instance state change.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message for the Spot Instance state change.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SpotInstanceStateFaultBuilder {
     /// Consumes the builder and constructs a [`SpotInstanceStateFault`](crate::types::SpotInstanceStateFault).
     pub fn build(self) -> crate::types::SpotInstanceStateFault {
         crate::types::SpotInstanceStateFault {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

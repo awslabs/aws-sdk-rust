@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDistributionLatestCacheResetInput {
+pub struct GetDistributionLatestCacheResetInput  {
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDistributionLatestCacheResetInput {
+impl  GetDistributionLatestCacheResetInput  {
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDistributionLatestCacheResetInputBuilder {
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     /// <p>When omitted, the response includes the latest cache reset timestamp of all your distributions.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name of the distribution for which to return the timestamp of the last cache reset.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
@@ -51,16 +50,13 @@ impl GetDistributionLatestCacheResetInputBuilder {
         &self.distribution_name
     }
     /// Consumes the builder and constructs a [`GetDistributionLatestCacheResetInput`](crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput {
-                distribution_name: self.distribution_name,
-            },
+                distribution_name: self.distribution_name
+                ,
+            }
         )
     }
 }
+

@@ -3,34 +3,31 @@
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchCasesResponseItem {
+pub struct SearchCasesResponseItem  {
     /// <p>A unique identifier of the case.</p>
     pub case_id: ::std::string::String,
     /// <p>A unique identifier of a template.</p>
     pub template_id: ::std::string::String,
     /// <p>List of case field values.</p>
-    pub fields: ::std::vec::Vec<crate::types::FieldValue>,
+    pub fields: ::std::vec::Vec::<crate::types::FieldValue>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
-impl SearchCasesResponseItem {
+impl  SearchCasesResponseItem  {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> &str {
-        use std::ops::Deref;
-        self.case_id.deref()
+    pub fn case_id(&self) -> & str {
+        use std::ops::Deref; self.case_id.deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.template_id.deref()
+    pub fn template_id(&self) -> & str {
+        use std::ops::Deref; self.template_id.deref()
     }
     /// <p>List of case field values.</p>
-    pub fn fields(&self) -> &[crate::types::FieldValue] {
-        use std::ops::Deref;
-        self.fields.deref()
+    pub fn fields(&self) -> & [crate::types::FieldValue] {
+        use std::ops::Deref; self.fields.deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -47,8 +44,8 @@ impl SearchCasesResponseItem {
 pub struct SearchCasesResponseItemBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
-    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>,
 }
 impl SearchCasesResponseItemBuilder {
     /// <p>A unique identifier of the case.</p>
@@ -59,8 +56,7 @@ impl SearchCasesResponseItemBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>A unique identifier of the case.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl SearchCasesResponseItemBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>A unique identifier of a template.</p>
     pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +83,16 @@ impl SearchCasesResponseItemBuilder {
     /// <p>List of case field values.</p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of case field values.</p>
-    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>>) -> Self {
+        self.fields = input; self
     }
     /// <p>List of case field values.</p>
-    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldValue>> {
         &self.fields
     }
     /// Adds a key-value pair to `tags`.
@@ -108,22 +102,16 @@ impl SearchCasesResponseItemBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::option::Option<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::option::Option<::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::option::Option<::std::string::String>>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SearchCasesResponseItem`](crate::types::SearchCasesResponseItem).
@@ -132,26 +120,27 @@ impl SearchCasesResponseItemBuilder {
     /// - [`template_id`](crate::types::builders::SearchCasesResponseItemBuilder::template_id)
     /// - [`fields`](crate::types::builders::SearchCasesResponseItemBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchCasesResponseItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SearchCasesResponseItem {
-            case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "case_id",
-                    "case_id was not specified but it is required when building SearchCasesResponseItem",
-                )
-            })?,
-            template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_id",
-                    "template_id was not specified but it is required when building SearchCasesResponseItem",
-                )
-            })?,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building SearchCasesResponseItem",
-                )
-            })?,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SearchCasesResponseItem {
+                case_id: self.case_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("case_id", "case_id was not specified but it is required when building SearchCasesResponseItem")
+                    )?
+                ,
+                template_id: self.template_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_id", "template_id was not specified but it is required when building SearchCasesResponseItem")
+                    )?
+                ,
+                fields: self.fields
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("fields", "fields was not specified but it is required when building SearchCasesResponseItem")
+                    )?
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

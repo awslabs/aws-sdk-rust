@@ -3,7 +3,7 @@
 /// <p>Contains detailed information about a report job. A report job compiles a report based on a report plan and publishes it to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportJob {
+pub struct ReportJob  {
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
     pub report_job_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
@@ -24,40 +24,40 @@ pub struct ReportJob {
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
     pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
-impl ReportJob {
+impl  ReportJob  {
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
-    pub fn report_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn report_job_id(&self) -> ::std::option::Option<& str> {
         self.report_job_id.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn report_plan_arn(&self) -> ::std::option::Option<&str> {
+    pub fn report_plan_arn(&self) -> ::std::option::Option<& str> {
         self.report_plan_arn.as_deref()
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
-    pub fn report_template(&self) -> ::std::option::Option<&str> {
+    pub fn report_template(&self) -> ::std::option::Option<& str> {
         self.report_template.as_deref()
     }
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The status of a report job. The statuses are:</p>
     /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
     /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A message explaining the status of the report job.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
-    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+    pub fn report_destination(&self) -> ::std::option::Option<& crate::types::ReportDestination> {
         self.report_destination.as_ref()
     }
 }
@@ -89,8 +89,7 @@ impl ReportJobBuilder {
     }
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
     pub fn set_report_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_job_id = input;
-        self
+        self.report_job_id = input; self
     }
     /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
     pub fn get_report_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ReportJobBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_report_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_plan_arn = input;
-        self
+        self.report_plan_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn get_report_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl ReportJobBuilder {
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
     pub fn set_report_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_template = input;
-        self
+        self.report_template = input; self
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p><code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code></p>
@@ -134,8 +131,7 @@ impl ReportJobBuilder {
     }
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,8 +144,7 @@ impl ReportJobBuilder {
     }
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input;
-        self
+        self.completion_time = input; self
     }
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,8 +161,7 @@ impl ReportJobBuilder {
     /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
     /// <p><code>COMPLETED</code> means that the report is available for your review at your designated destination. If the status is <code>FAILED</code>, review the <code>StatusMessage</code> for the reason.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a report job. The statuses are:</p>
     /// <p><code>CREATED | RUNNING | COMPLETED | FAILED</code></p>
@@ -182,8 +176,7 @@ impl ReportJobBuilder {
     }
     /// <p>A message explaining the status of the report job.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A message explaining the status of the report job.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -196,8 +189,7 @@ impl ReportJobBuilder {
     }
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
     pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
-        self.report_destination = input;
-        self
+        self.report_destination = input; self
     }
     /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the report.</p>
     pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
@@ -206,14 +198,23 @@ impl ReportJobBuilder {
     /// Consumes the builder and constructs a [`ReportJob`](crate::types::ReportJob).
     pub fn build(self) -> crate::types::ReportJob {
         crate::types::ReportJob {
-            report_job_id: self.report_job_id,
-            report_plan_arn: self.report_plan_arn,
-            report_template: self.report_template,
-            creation_time: self.creation_time,
-            completion_time: self.completion_time,
-            status: self.status,
-            status_message: self.status_message,
-            report_destination: self.report_destination,
+            report_job_id: self.report_job_id
+            ,
+            report_plan_arn: self.report_plan_arn
+            ,
+            report_template: self.report_template
+            ,
+            creation_time: self.creation_time
+            ,
+            completion_time: self.completion_time
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            report_destination: self.report_destination
+            ,
         }
     }
 }
+

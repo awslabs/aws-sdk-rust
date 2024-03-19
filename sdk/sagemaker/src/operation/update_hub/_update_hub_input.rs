@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateHubInput {
+pub struct UpdateHubInput  {
     /// <p>The name of the hub to update.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the updated hub.</p>
@@ -10,26 +10,27 @@ pub struct UpdateHubInput {
     /// <p>The display name of the hub.</p>
     pub hub_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The searchable keywords for the hub.</p>
-    pub hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub hub_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateHubInput {
+impl  UpdateHubInput  {
     /// <p>The name of the hub to update.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>A description of the updated hub.</p>
-    pub fn hub_description(&self) -> ::std::option::Option<&str> {
+    pub fn hub_description(&self) -> ::std::option::Option<& str> {
         self.hub_description.as_deref()
     }
     /// <p>The display name of the hub.</p>
-    pub fn hub_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_display_name(&self) -> ::std::option::Option<& str> {
         self.hub_display_name.as_deref()
     }
     /// <p>The searchable keywords for the hub.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_search_keywords.is_none()`.
-    pub fn hub_search_keywords(&self) -> &[::std::string::String] {
-        self.hub_search_keywords.as_deref().unwrap_or_default()
+    pub fn hub_search_keywords(&self) -> & [::std::string::String] {
+        self.hub_search_keywords.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateHubInput {
@@ -46,7 +47,7 @@ pub struct UpdateHubInputBuilder {
     pub(crate) hub_name: ::std::option::Option<::std::string::String>,
     pub(crate) hub_description: ::std::option::Option<::std::string::String>,
     pub(crate) hub_display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) hub_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hub_search_keywords: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateHubInputBuilder {
     /// <p>The name of the hub to update.</p>
@@ -57,8 +58,7 @@ impl UpdateHubInputBuilder {
     }
     /// <p>The name of the hub to update.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The name of the hub to update.</p>
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl UpdateHubInputBuilder {
     }
     /// <p>A description of the updated hub.</p>
     pub fn set_hub_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_description = input;
-        self
+        self.hub_description = input; self
     }
     /// <p>A description of the updated hub.</p>
     pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl UpdateHubInputBuilder {
     }
     /// <p>The display name of the hub.</p>
     pub fn set_hub_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_display_name = input;
-        self
+        self.hub_display_name = input; self
     }
     /// <p>The display name of the hub.</p>
     pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,26 +97,32 @@ impl UpdateHubInputBuilder {
     /// <p>The searchable keywords for the hub.</p>
     pub fn hub_search_keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hub_search_keywords.unwrap_or_default();
-        v.push(input.into());
-        self.hub_search_keywords = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.hub_search_keywords = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.hub_search_keywords = input;
-        self
+    pub fn set_hub_search_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.hub_search_keywords = input; self
     }
     /// <p>The searchable keywords for the hub.</p>
-    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_hub_search_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.hub_search_keywords
     }
     /// Consumes the builder and constructs a [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_hub::UpdateHubInput {
-            hub_name: self.hub_name,
-            hub_description: self.hub_description,
-            hub_display_name: self.hub_display_name,
-            hub_search_keywords: self.hub_search_keywords,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_hub::UpdateHubInput {
+                hub_name: self.hub_name
+                ,
+                hub_description: self.hub_description
+                ,
+                hub_display_name: self.hub_display_name
+                ,
+                hub_search_keywords: self.hub_search_keywords
+                ,
+            }
+        )
     }
 }
+

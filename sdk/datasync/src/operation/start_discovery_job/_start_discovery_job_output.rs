@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDiscoveryJobOutput {
+pub struct StartDiscoveryJobOutput  {
     /// <p>The ARN of the discovery job that you started.</p>
     pub discovery_job_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartDiscoveryJobOutput {
+impl  StartDiscoveryJobOutput  {
     /// <p>The ARN of the discovery job that you started.</p>
-    pub fn discovery_job_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discovery_job_arn(&self) -> ::std::option::Option<& str> {
         self.discovery_job_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartDiscoveryJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartDiscoveryJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDiscoveryJobOutput`](crate::operation::start_discovery_job::StartDiscoveryJobOutput).
     pub fn builder() -> crate::operation::start_discovery_job::builders::StartDiscoveryJobOutputBuilder {
@@ -40,27 +40,28 @@ impl StartDiscoveryJobOutputBuilder {
     }
     /// <p>The ARN of the discovery job that you started.</p>
     pub fn set_discovery_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discovery_job_arn = input;
-        self
+        self.discovery_job_arn = input; self
     }
     /// <p>The ARN of the discovery job that you started.</p>
     pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.discovery_job_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartDiscoveryJobOutput`](crate::operation::start_discovery_job::StartDiscoveryJobOutput).
     pub fn build(self) -> crate::operation::start_discovery_job::StartDiscoveryJobOutput {
         crate::operation::start_discovery_job::StartDiscoveryJobOutput {
-            discovery_job_arn: self.discovery_job_arn,
+            discovery_job_arn: self.discovery_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

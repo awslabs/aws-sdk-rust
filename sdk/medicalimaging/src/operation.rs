@@ -54,3 +54,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateImageSetMetadata` operation.
 pub mod update_image_set_metadata;
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotVersionInput {
+pub struct DescribeBotVersionInput  {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot to return metadata for.</p>
     pub bot_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBotVersionInput {
+impl  DescribeBotVersionInput  {
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to return metadata for.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeBotVersionInputBuilder {
     }
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot containing the version to return metadata for.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeBotVersionInputBuilder {
     }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot to return metadata for.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_version
     }
     /// Consumes the builder and constructs a [`DescribeBotVersionInput`](crate::operation::describe_bot_version::DescribeBotVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_bot_version::DescribeBotVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_bot_version::DescribeBotVersionInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_version::DescribeBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bot_version::DescribeBotVersionInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+            }
+        )
     }
 }
+

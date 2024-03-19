@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApplicationSettingsInput {
+pub struct UpdateApplicationSettingsInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the default settings for an application.</p>
     pub write_application_settings_request: ::std::option::Option<crate::types::WriteApplicationSettingsRequest>,
 }
-impl UpdateApplicationSettingsInput {
+impl  UpdateApplicationSettingsInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn write_application_settings_request(&self) -> ::std::option::Option<&crate::types::WriteApplicationSettingsRequest> {
+    pub fn write_application_settings_request(&self) -> ::std::option::Option<& crate::types::WriteApplicationSettingsRequest> {
         self.write_application_settings_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>Specifies the default settings for an application.</p>
     pub fn set_write_application_settings_request(mut self, input: ::std::option::Option<crate::types::WriteApplicationSettingsRequest>) -> Self {
-        self.write_application_settings_request = input;
-        self
+        self.write_application_settings_request = input; self
     }
     /// <p>Specifies the default settings for an application.</p>
     pub fn get_write_application_settings_request(&self) -> &::std::option::Option<crate::types::WriteApplicationSettingsRequest> {
         &self.write_application_settings_request
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_application_settings::UpdateApplicationSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-            application_id: self.application_id,
-            write_application_settings_request: self.write_application_settings_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_application_settings::UpdateApplicationSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_application_settings::UpdateApplicationSettingsInput {
+                application_id: self.application_id
+                ,
+                write_application_settings_request: self.write_application_settings_request
+                ,
+            }
+        )
     }
 }
+

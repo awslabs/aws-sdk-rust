@@ -3,19 +3,19 @@
 /// <p>Contains specifications for the assisted slot resolution feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotResolutionImprovementSpecification {
+pub struct SlotResolutionImprovementSpecification  {
     /// <p>Specifies whether assisted slot resolution is turned on or off.</p>
     pub enabled: bool,
     /// <p>An object containing information about the Amazon Bedrock model used to assist slot resolution.</p>
     pub bedrock_model_specification: ::std::option::Option<crate::types::BedrockModelSpecification>,
 }
-impl SlotResolutionImprovementSpecification {
+impl  SlotResolutionImprovementSpecification  {
     /// <p>Specifies whether assisted slot resolution is turned on or off.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>An object containing information about the Amazon Bedrock model used to assist slot resolution.</p>
-    pub fn bedrock_model_specification(&self) -> ::std::option::Option<&crate::types::BedrockModelSpecification> {
+    pub fn bedrock_model_specification(&self) -> ::std::option::Option<& crate::types::BedrockModelSpecification> {
         self.bedrock_model_specification.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl SlotResolutionImprovementSpecificationBuilder {
     }
     /// <p>Specifies whether assisted slot resolution is turned on or off.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether assisted slot resolution is turned on or off.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl SlotResolutionImprovementSpecificationBuilder {
     }
     /// <p>An object containing information about the Amazon Bedrock model used to assist slot resolution.</p>
     pub fn set_bedrock_model_specification(mut self, input: ::std::option::Option<crate::types::BedrockModelSpecification>) -> Self {
-        self.bedrock_model_specification = input;
-        self
+        self.bedrock_model_specification = input; self
     }
     /// <p>An object containing information about the Amazon Bedrock model used to assist slot resolution.</p>
     pub fn get_bedrock_model_specification(&self) -> &::std::option::Option<crate::types::BedrockModelSpecification> {
@@ -66,8 +64,12 @@ impl SlotResolutionImprovementSpecificationBuilder {
     /// Consumes the builder and constructs a [`SlotResolutionImprovementSpecification`](crate::types::SlotResolutionImprovementSpecification).
     pub fn build(self) -> crate::types::SlotResolutionImprovementSpecification {
         crate::types::SlotResolutionImprovementSpecification {
-            enabled: self.enabled.unwrap_or_default(),
-            bedrock_model_specification: self.bedrock_model_specification,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            bedrock_model_specification: self.bedrock_model_specification
+            ,
         }
     }
 }
+

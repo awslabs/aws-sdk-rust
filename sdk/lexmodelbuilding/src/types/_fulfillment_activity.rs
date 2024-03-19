@@ -10,19 +10,19 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FulfillmentActivity {
+pub struct FulfillmentActivity  {
     /// <p>How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application.</p>
     pub r#type: crate::types::FulfillmentActivityType,
     /// <p>A description of the Lambda function that is run to fulfill the intent.</p>
     pub code_hook: ::std::option::Option<crate::types::CodeHook>,
 }
-impl FulfillmentActivity {
+impl  FulfillmentActivity  {
     /// <p>How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application.</p>
-    pub fn r#type(&self) -> &crate::types::FulfillmentActivityType {
+    pub fn r#type(&self) -> & crate::types::FulfillmentActivityType {
         &self.r#type
     }
     /// <p>A description of the Lambda function that is run to fulfill the intent.</p>
-    pub fn code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
+    pub fn code_hook(&self) -> ::std::option::Option<& crate::types::CodeHook> {
         self.code_hook.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl FulfillmentActivityBuilder {
     }
     /// <p>How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FulfillmentActivityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::FulfillmentActivityType> {
@@ -63,8 +62,7 @@ impl FulfillmentActivityBuilder {
     }
     /// <p>A description of the Lambda function that is run to fulfill the intent.</p>
     pub fn set_code_hook(mut self, input: ::std::option::Option<crate::types::CodeHook>) -> Self {
-        self.code_hook = input;
-        self
+        self.code_hook = input; self
     }
     /// <p>A description of the Lambda function that is run to fulfill the intent.</p>
     pub fn get_code_hook(&self) -> &::std::option::Option<crate::types::CodeHook> {
@@ -74,14 +72,17 @@ impl FulfillmentActivityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FulfillmentActivityBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentActivity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FulfillmentActivity {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FulfillmentActivity",
-                )
-            })?,
-            code_hook: self.code_hook,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FulfillmentActivity {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FulfillmentActivity")
+                    )?
+                ,
+                code_hook: self.code_hook
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Details about the source content ranking data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RankingData {
+pub struct RankingData  {
     /// <p>The relevance level of the recommendation.</p>
     pub relevance_score: f64,
     /// <p>The relevance score of the content.</p>
     pub relevance_level: ::std::option::Option<crate::types::RelevanceLevel>,
 }
-impl RankingData {
+impl  RankingData  {
     /// <p>The relevance level of the recommendation.</p>
     pub fn relevance_score(&self) -> f64 {
         self.relevance_score
     }
     /// <p>The relevance score of the content.</p>
-    pub fn relevance_level(&self) -> ::std::option::Option<&crate::types::RelevanceLevel> {
+    pub fn relevance_level(&self) -> ::std::option::Option<& crate::types::RelevanceLevel> {
         self.relevance_level.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RankingDataBuilder {
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.relevance_score = input;
-        self
+        self.relevance_score = input; self
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl RankingDataBuilder {
     }
     /// <p>The relevance score of the content.</p>
     pub fn set_relevance_level(mut self, input: ::std::option::Option<crate::types::RelevanceLevel>) -> Self {
-        self.relevance_level = input;
-        self
+        self.relevance_level = input; self
     }
     /// <p>The relevance score of the content.</p>
     pub fn get_relevance_level(&self) -> &::std::option::Option<crate::types::RelevanceLevel> {
@@ -65,8 +63,12 @@ impl RankingDataBuilder {
     /// Consumes the builder and constructs a [`RankingData`](crate::types::RankingData).
     pub fn build(self) -> crate::types::RankingData {
         crate::types::RankingData {
-            relevance_score: self.relevance_score.unwrap_or_default(),
-            relevance_level: self.relevance_level,
+            relevance_score: self.relevance_score
+                .unwrap_or_default()
+            ,
+            relevance_level: self.relevance_level
+            ,
         }
     }
 }
+

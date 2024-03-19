@@ -4,7 +4,7 @@
 /// <p>The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <code>FirewallStatus</code>. You can retrieve both objects by calling <code>DescribeFirewall</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Firewall {
+pub struct Firewall  {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -15,7 +15,7 @@ pub struct Firewall {
     /// <p>The unique identifier of the VPC where the firewall is in use.</p>
     pub vpc_id: ::std::string::String,
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub subnet_mappings: ::std::vec::Vec<crate::types::SubnetMapping>,
+    pub subnet_mappings: ::std::vec::Vec::<crate::types::SubnetMapping>,
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub delete_protection: bool,
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
@@ -27,34 +27,31 @@ pub struct Firewall {
     /// <p>The unique identifier for the firewall.</p>
     pub firewall_id: ::std::string::String,
     /// <p></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
-impl Firewall {
+impl  Firewall  {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<& str> {
         self.firewall_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls.</p>
-    pub fn firewall_policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.firewall_policy_arn.deref()
+    pub fn firewall_policy_arn(&self) -> & str {
+        use std::ops::Deref; self.firewall_policy_arn.deref()
     }
     /// <p>The unique identifier of the VPC where the firewall is in use.</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> & str {
+        use std::ops::Deref; self.vpc_id.deref()
     }
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
-        use std::ops::Deref;
-        self.subnet_mappings.deref()
+    pub fn subnet_mappings(&self) -> & [crate::types::SubnetMapping] {
+        use std::ops::Deref; self.subnet_mappings.deref()
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn delete_protection(&self) -> bool {
@@ -69,22 +66,22 @@ impl Firewall {
         self.firewall_policy_change_protection
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the firewall.</p>
-    pub fn firewall_id(&self) -> &str {
-        use std::ops::Deref;
-        self.firewall_id.deref()
+    pub fn firewall_id(&self) -> & str {
+        use std::ops::Deref; self.firewall_id.deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -103,13 +100,13 @@ pub struct FirewallBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
+    pub(crate) subnet_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::SubnetMapping>>,
     pub(crate) delete_protection: ::std::option::Option<bool>,
     pub(crate) subnet_change_protection: ::std::option::Option<bool>,
     pub(crate) firewall_policy_change_protection: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl FirewallBuilder {
@@ -120,8 +117,7 @@ impl FirewallBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_name = input;
-        self
+        self.firewall_name = input; self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl FirewallBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_arn = input;
-        self
+        self.firewall_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +146,7 @@ impl FirewallBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls.</p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_arn = input;
-        self
+        self.firewall_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls.</p>
@@ -167,8 +161,7 @@ impl FirewallBuilder {
     }
     /// <p>The unique identifier of the VPC where the firewall is in use.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The unique identifier of the VPC where the firewall is in use.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,17 +174,16 @@ impl FirewallBuilder {
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone.</p>
     pub fn subnet_mappings(mut self, input: crate::types::SubnetMapping) -> Self {
         let mut v = self.subnet_mappings.unwrap_or_default();
-        v.push(input);
-        self.subnet_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subnet_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>) -> Self {
-        self.subnet_mappings = input;
-        self
+    pub fn set_subnet_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubnetMapping>>) -> Self {
+        self.subnet_mappings = input; self
     }
     /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong to a different Availability Zone.</p>
-    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+    pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubnetMapping>> {
         &self.subnet_mappings
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
@@ -201,8 +193,7 @@ impl FirewallBuilder {
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn set_delete_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_protection = input;
-        self
+        self.delete_protection = input; self
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
     pub fn get_delete_protection(&self) -> &::std::option::Option<bool> {
@@ -215,8 +206,7 @@ impl FirewallBuilder {
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn set_subnet_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.subnet_change_protection = input;
-        self
+        self.subnet_change_protection = input; self
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn get_subnet_change_protection(&self) -> &::std::option::Option<bool> {
@@ -229,8 +219,7 @@ impl FirewallBuilder {
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn set_firewall_policy_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.firewall_policy_change_protection = input;
-        self
+        self.firewall_policy_change_protection = input; self
     }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn get_firewall_policy_change_protection(&self) -> &::std::option::Option<bool> {
@@ -243,8 +232,7 @@ impl FirewallBuilder {
     }
     /// <p>A description of the firewall.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the firewall.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +246,7 @@ impl FirewallBuilder {
     }
     /// <p>The unique identifier for the firewall.</p>
     pub fn set_firewall_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_id = input;
-        self
+        self.firewall_id = input; self
     }
     /// <p>The unique identifier for the firewall.</p>
     pub fn get_firewall_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,17 +259,16 @@ impl FirewallBuilder {
     /// <p></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
@@ -292,8 +278,7 @@ impl FirewallBuilder {
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
@@ -306,39 +291,49 @@ impl FirewallBuilder {
     /// - [`subnet_mappings`](crate::types::builders::FirewallBuilder::subnet_mappings)
     /// - [`firewall_id`](crate::types::builders::FirewallBuilder::firewall_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Firewall, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Firewall {
-            firewall_name: self.firewall_name,
-            firewall_arn: self.firewall_arn,
-            firewall_policy_arn: self.firewall_policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "firewall_policy_arn",
-                    "firewall_policy_arn was not specified but it is required when building Firewall",
-                )
-            })?,
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building Firewall",
-                )
-            })?,
-            subnet_mappings: self.subnet_mappings.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "subnet_mappings",
-                    "subnet_mappings was not specified but it is required when building Firewall",
-                )
-            })?,
-            delete_protection: self.delete_protection.unwrap_or_default(),
-            subnet_change_protection: self.subnet_change_protection.unwrap_or_default(),
-            firewall_policy_change_protection: self.firewall_policy_change_protection.unwrap_or_default(),
-            description: self.description,
-            firewall_id: self.firewall_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "firewall_id",
-                    "firewall_id was not specified but it is required when building Firewall",
-                )
-            })?,
-            tags: self.tags,
-            encryption_configuration: self.encryption_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Firewall {
+                firewall_name: self.firewall_name
+                ,
+                firewall_arn: self.firewall_arn
+                ,
+                firewall_policy_arn: self.firewall_policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("firewall_policy_arn", "firewall_policy_arn was not specified but it is required when building Firewall")
+                    )?
+                ,
+                vpc_id: self.vpc_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_id", "vpc_id was not specified but it is required when building Firewall")
+                    )?
+                ,
+                subnet_mappings: self.subnet_mappings
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("subnet_mappings", "subnet_mappings was not specified but it is required when building Firewall")
+                    )?
+                ,
+                delete_protection: self.delete_protection
+                    .unwrap_or_default()
+                ,
+                subnet_change_protection: self.subnet_change_protection
+                    .unwrap_or_default()
+                ,
+                firewall_policy_change_protection: self.firewall_policy_change_protection
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                firewall_id: self.firewall_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("firewall_id", "firewall_id was not specified but it is required when building Firewall")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+            }
+        )
     }
 }
+

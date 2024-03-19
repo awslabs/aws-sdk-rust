@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFunctions`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`master_region(impl Into<String>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::master_region) / [`set_master_region(Option<String>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::set_master_region):<br>required: **false**<br><p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p><br>
     ///   - [`function_version(FunctionVersion)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::function_version) / [`set_function_version(Option<FunctionVersion>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::set_function_version):<br>required: **false**<br><p>Set to <code>ALL</code> to include entries for all published versions of each function.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::set_marker):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_functions::builders::ListFunctionsFluentBuilder::set_max_items):<br>required: **false**<br><p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p><br>
-    /// - On success, responds with [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput) with field(s):
+                            /// - On success, responds with [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput) with field(s):
     ///   - [`next_marker(Option<String>)`](crate::operation::list_functions::ListFunctionsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
     ///   - [`functions(Option<Vec::<FunctionConfiguration>>)`](crate::operation::list_functions::ListFunctionsOutput::functions): <p>A list of Lambda functions.</p>
-    /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::operation::list_functions::ListFunctionsError)
+                            /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::operation::list_functions::ListFunctionsError)
     pub fn list_functions(&self) -> crate::operation::list_functions::builders::ListFunctionsFluentBuilder {
-        crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_functions::builders::ListFunctionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutGraphqlApiEnvironmentVariablesInput {
+pub struct PutGraphqlApiEnvironmentVariablesInput  {
     /// <p>The ID of the API to which the environmental variable list will be written.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of environmental variables to add to the API.</p>
@@ -20,11 +20,11 @@ pub struct PutGraphqlApiEnvironmentVariablesInput {
     /// <p>You can configure up to 50 key-value pairs in a GraphQL API.</p></li>
     /// </ul>
     /// <p>You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing environmental variable list of that API. This means the existing environmental variables will be lost. To avoid this, you must include all existing and new environmental variables in the list each time you call this action.</p>
-    pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutGraphqlApiEnvironmentVariablesInput {
+impl  PutGraphqlApiEnvironmentVariablesInput  {
     /// <p>The ID of the API to which the environmental variable list will be written.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The list of environmental variables to add to the API.</p>
@@ -42,7 +42,7 @@ impl PutGraphqlApiEnvironmentVariablesInput {
     /// <p>You can configure up to 50 key-value pairs in a GraphQL API.</p></li>
     /// </ul>
     /// <p>You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing environmental variable list of that API. This means the existing environmental variables will be lost. To avoid this, you must include all existing and new environmental variables in the list each time you call this action.</p>
-    pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn environment_variables(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
 }
@@ -58,7 +58,7 @@ impl PutGraphqlApiEnvironmentVariablesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutGraphqlApiEnvironmentVariablesInputBuilder {
     pub(crate) api_id: ::std::option::Option<::std::string::String>,
-    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutGraphqlApiEnvironmentVariablesInputBuilder {
     /// <p>The ID of the API to which the environmental variable list will be written.</p>
@@ -69,8 +69,7 @@ impl PutGraphqlApiEnvironmentVariablesInputBuilder {
     }
     /// <p>The ID of the API to which the environmental variable list will be written.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The ID of the API to which the environmental variable list will be written.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,15 +94,11 @@ impl PutGraphqlApiEnvironmentVariablesInputBuilder {
     /// <p>You can configure up to 50 key-value pairs in a GraphQL API.</p></li>
     /// </ul>
     /// <p>You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing environmental variable list of that API. This means the existing environmental variables will be lost. To avoid this, you must include all existing and new environmental variables in the list each time you call this action.</p>
-    pub fn environment_variables(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of environmental variables to add to the API.</p>
     /// <p>When creating an environmental variable key-value pair, it must follow the additional constraints below:</p>
@@ -120,12 +115,8 @@ impl PutGraphqlApiEnvironmentVariablesInputBuilder {
     /// <p>You can configure up to 50 key-value pairs in a GraphQL API.</p></li>
     /// </ul>
     /// <p>You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing environmental variable list of that API. This means the existing environmental variables will be lost. To avoid this, you must include all existing and new environmental variables in the list each time you call this action.</p>
-    pub fn set_environment_variables(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p>The list of environmental variables to add to the API.</p>
     /// <p>When creating an environmental variable key-value pair, it must follow the additional constraints below:</p>
@@ -142,21 +133,19 @@ impl PutGraphqlApiEnvironmentVariablesInputBuilder {
     /// <p>You can configure up to 50 key-value pairs in a GraphQL API.</p></li>
     /// </ul>
     /// <p>You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing environmental variable list of that API. This means the existing environmental variables will be lost. To avoid this, you must include all existing and new environmental variables in the list each time you call this action.</p>
-    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
     /// Consumes the builder and constructs a [`PutGraphqlApiEnvironmentVariablesInput`](crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesInput {
-                api_id: self.api_id,
-                environment_variables: self.environment_variables,
-            },
+                api_id: self.api_id
+                ,
+                environment_variables: self.environment_variables
+                ,
+            }
         )
     }
 }
+

@@ -3,28 +3,29 @@
 /// <p>Defines a short-term free pricing model where the buyers aren’t charged anything within a specified limit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FreeTrialPricingTerm {
+pub struct FreeTrialPricingTerm  {
     /// <p>Category of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Duration of the free trial period (5–31 days).</p>
     pub duration: ::std::option::Option<::std::string::String>,
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
-    pub grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
+    pub grants: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>,
 }
-impl FreeTrialPricingTerm {
+impl  FreeTrialPricingTerm  {
     /// <p>Category of the term.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Duration of the free trial period (5–31 days).</p>
-    pub fn duration(&self) -> ::std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grants.is_none()`.
-    pub fn grants(&self) -> &[crate::types::GrantItem] {
-        self.grants.as_deref().unwrap_or_default()
+    pub fn grants(&self) -> & [crate::types::GrantItem] {
+        self.grants.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FreeTrialPricingTerm {
@@ -40,7 +41,7 @@ impl FreeTrialPricingTerm {
 pub struct FreeTrialPricingTermBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) duration: ::std::option::Option<::std::string::String>,
-    pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>,
+    pub(crate) grants: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>,
 }
 impl FreeTrialPricingTermBuilder {
     /// <p>Category of the term.</p>
@@ -50,8 +51,7 @@ impl FreeTrialPricingTermBuilder {
     }
     /// <p>Category of the term.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Category of the term.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl FreeTrialPricingTermBuilder {
     }
     /// <p>Duration of the free trial period (5–31 days).</p>
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Duration of the free trial period (5–31 days).</p>
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl FreeTrialPricingTermBuilder {
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
     pub fn grants(mut self, input: crate::types::GrantItem) -> Self {
         let mut v = self.grants.unwrap_or_default();
-        v.push(input);
-        self.grants = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.grants = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
-    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantItem>>) -> Self {
-        self.grants = input;
-        self
+    pub fn set_grants(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>>) -> Self {
+        self.grants = input; self
     }
     /// <p>Entitlements granted to the acceptor of a free trial as part of an agreement execution.</p>
-    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantItem>> {
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GrantItem>> {
         &self.grants
     }
     /// Consumes the builder and constructs a [`FreeTrialPricingTerm`](crate::types::FreeTrialPricingTerm).
     pub fn build(self) -> crate::types::FreeTrialPricingTerm {
         crate::types::FreeTrialPricingTerm {
-            r#type: self.r#type,
-            duration: self.duration,
-            grants: self.grants,
+            r#type: self.r#type
+            ,
+            duration: self.duration
+            ,
+            grants: self.grants
+            ,
         }
     }
 }
+

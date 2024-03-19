@@ -3,15 +3,14 @@
 /// <p>Configuration required for an entity recognition model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityRecognitionConfig {
+pub struct EntityRecognitionConfig  {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub entity_types: ::std::vec::Vec<crate::types::EntityTypesListItem>,
+    pub entity_types: ::std::vec::Vec::<crate::types::EntityTypesListItem>,
 }
-impl EntityRecognitionConfig {
+impl  EntityRecognitionConfig  {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub fn entity_types(&self) -> &[crate::types::EntityTypesListItem] {
-        use std::ops::Deref;
-        self.entity_types.deref()
+    pub fn entity_types(&self) -> & [crate::types::EntityTypesListItem] {
+        use std::ops::Deref; self.entity_types.deref()
     }
 }
 impl EntityRecognitionConfig {
@@ -25,7 +24,7 @@ impl EntityRecognitionConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityRecognitionConfigBuilder {
-    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec::<crate::types::EntityTypesListItem>>,
 }
 impl EntityRecognitionConfigBuilder {
     /// Appends an item to `entity_types`.
@@ -35,30 +34,31 @@ impl EntityRecognitionConfigBuilder {
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
     pub fn entity_types(mut self, input: crate::types::EntityTypesListItem) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-        v.push(input);
-        self.entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>>) -> Self {
-        self.entity_types = input;
-        self
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntityTypesListItem>>) -> Self {
+        self.entity_types = input; self
     }
     /// <p>Up to 25 entity types that the model is trained to recognize.</p>
-    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntityTypesListItem>> {
         &self.entity_types
     }
     /// Consumes the builder and constructs a [`EntityRecognitionConfig`](crate::types::EntityRecognitionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_types`](crate::types::builders::EntityRecognitionConfigBuilder::entity_types)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognitionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityRecognitionConfig {
-            entity_types: self.entity_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_types",
-                    "entity_types was not specified but it is required when building EntityRecognitionConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityRecognitionConfig {
+                entity_types: self.entity_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_types", "entity_types was not specified but it is required when building EntityRecognitionConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

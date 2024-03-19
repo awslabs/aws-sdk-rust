@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackages`](crate::operation::list_packages::builders::ListPackagesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain that contains the repository that contains the requested packages.</p><br>
     ///   - [`domain_owner(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::domain_owner) / [`set_domain_owner(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_domain_owner):<br>required: **false**<br><p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p><br>
     ///   - [`repository(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::repository) / [`set_repository(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_repository):<br>required: **true**<br><p>The name of the repository that contains the requested packages.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`publish(AllowPublish)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::publish) / [`set_publish(Option<AllowPublish>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_publish):<br>required: **false**<br><p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p><br>
     ///   - [`upstream(AllowUpstream)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::upstream) / [`set_upstream(Option<AllowUpstream>)`](crate::operation::list_packages::builders::ListPackagesFluentBuilder::set_upstream):<br>required: **false**<br><p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p><br>
-    /// - On success, responds with [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput) with field(s):
+                            /// - On success, responds with [`ListPackagesOutput`](crate::operation::list_packages::ListPackagesOutput) with field(s):
     ///   - [`packages(Option<Vec::<PackageSummary>>)`](crate::operation::list_packages::ListPackagesOutput::packages): <p>The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_packages::ListPackagesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
+                            /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::operation::list_packages::ListPackagesError)
     pub fn list_packages(&self) -> crate::operation::list_packages::builders::ListPackagesFluentBuilder {
-        crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_packages::builders::ListPackagesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

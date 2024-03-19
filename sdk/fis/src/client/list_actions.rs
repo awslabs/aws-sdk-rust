@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListActions`](crate::operation::list_actions::builders::ListActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_actions::builders::ListActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
+                            /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
     ///   - [`actions(Option<Vec::<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::actions): <p>The actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
+                            /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
     pub fn list_actions(&self) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
-        crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

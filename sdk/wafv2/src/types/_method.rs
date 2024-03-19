@@ -5,7 +5,8 @@
 /// <p>JSON specification: <code>"Method": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Method {}
+pub struct Method  {
+}
 impl Method {
     /// Creates a new builder-style object to manufacture [`Method`](crate::types::Method).
     pub fn builder() -> crate::types::builders::MethodBuilder {
@@ -16,10 +17,13 @@ impl Method {
 /// A builder for [`Method`](crate::types::Method).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct MethodBuilder {}
+pub struct MethodBuilder {
+}
 impl MethodBuilder {
     /// Consumes the builder and constructs a [`Method`](crate::types::Method).
     pub fn build(self) -> crate::types::Method {
-        crate::types::Method {}
+        crate::types::Method {
+        }
     }
 }
+

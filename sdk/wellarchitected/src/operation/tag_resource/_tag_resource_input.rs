@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The ARN for the workload.</p>
     pub workload_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags for the resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl TagResourceInput {
+impl  TagResourceInput  {
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workload_arn(&self) -> ::std::option::Option<& str> {
         self.workload_arn.as_deref()
     }
     /// <p>The tags for the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -30,7 +30,7 @@ impl TagResourceInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TagResourceInputBuilder {
     pub(crate) workload_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInputBuilder {
     /// <p>The ARN for the workload.</p>
@@ -41,8 +41,7 @@ impl TagResourceInputBuilder {
     }
     /// <p>The ARN for the workload.</p>
     pub fn set_workload_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_arn = input;
-        self
+        self.workload_arn = input; self
     }
     /// <p>The ARN for the workload.</p>
     pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,24 +54,28 @@ impl TagResourceInputBuilder {
     /// <p>The tags for the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags for the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
-            workload_arn: self.workload_arn,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::tag_resource::TagResourceInput {
+                workload_arn: self.workload_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

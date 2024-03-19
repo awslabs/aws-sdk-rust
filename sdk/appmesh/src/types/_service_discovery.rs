@@ -22,11 +22,7 @@ impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`AwsCloudMap`](crate::types::ServiceDiscovery::AwsCloudMap), extracting the inner [`AwsCloudMapServiceDiscovery`](crate::types::AwsCloudMapServiceDiscovery).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_cloud_map(&self) -> ::std::result::Result<&crate::types::AwsCloudMapServiceDiscovery, &Self> {
-        if let ServiceDiscovery::AwsCloudMap(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ServiceDiscovery::AwsCloudMap(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AwsCloudMap`](crate::types::ServiceDiscovery::AwsCloudMap).
     pub fn is_aws_cloud_map(&self) -> bool {
@@ -35,11 +31,7 @@ impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`Dns`](crate::types::ServiceDiscovery::Dns), extracting the inner [`DnsServiceDiscovery`](crate::types::DnsServiceDiscovery).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dns(&self) -> ::std::result::Result<&crate::types::DnsServiceDiscovery, &Self> {
-        if let ServiceDiscovery::Dns(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let ServiceDiscovery::Dns(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Dns`](crate::types::ServiceDiscovery::Dns).
     pub fn is_dns(&self) -> bool {
@@ -50,3 +42,4 @@ impl ServiceDiscovery {
         matches!(self, Self::Unknown)
     }
 }
+

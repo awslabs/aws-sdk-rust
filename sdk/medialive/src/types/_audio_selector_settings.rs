@@ -3,7 +3,7 @@
 /// Audio Selector Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioSelectorSettings {
+pub struct AudioSelectorSettings  {
     /// Audio Hls Rendition Selection
     pub audio_hls_rendition_selection: ::std::option::Option<crate::types::AudioHlsRenditionSelection>,
     /// Audio Language Selection
@@ -13,21 +13,21 @@ pub struct AudioSelectorSettings {
     /// Audio Track Selection
     pub audio_track_selection: ::std::option::Option<crate::types::AudioTrackSelection>,
 }
-impl AudioSelectorSettings {
+impl  AudioSelectorSettings  {
     /// Audio Hls Rendition Selection
-    pub fn audio_hls_rendition_selection(&self) -> ::std::option::Option<&crate::types::AudioHlsRenditionSelection> {
+    pub fn audio_hls_rendition_selection(&self) -> ::std::option::Option<& crate::types::AudioHlsRenditionSelection> {
         self.audio_hls_rendition_selection.as_ref()
     }
     /// Audio Language Selection
-    pub fn audio_language_selection(&self) -> ::std::option::Option<&crate::types::AudioLanguageSelection> {
+    pub fn audio_language_selection(&self) -> ::std::option::Option<& crate::types::AudioLanguageSelection> {
         self.audio_language_selection.as_ref()
     }
     /// Audio Pid Selection
-    pub fn audio_pid_selection(&self) -> ::std::option::Option<&crate::types::AudioPidSelection> {
+    pub fn audio_pid_selection(&self) -> ::std::option::Option<& crate::types::AudioPidSelection> {
         self.audio_pid_selection.as_ref()
     }
     /// Audio Track Selection
-    pub fn audio_track_selection(&self) -> ::std::option::Option<&crate::types::AudioTrackSelection> {
+    pub fn audio_track_selection(&self) -> ::std::option::Option<& crate::types::AudioTrackSelection> {
         self.audio_track_selection.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AudioSelectorSettingsBuilder {
     }
     /// Audio Hls Rendition Selection
     pub fn set_audio_hls_rendition_selection(mut self, input: ::std::option::Option<crate::types::AudioHlsRenditionSelection>) -> Self {
-        self.audio_hls_rendition_selection = input;
-        self
+        self.audio_hls_rendition_selection = input; self
     }
     /// Audio Hls Rendition Selection
     pub fn get_audio_hls_rendition_selection(&self) -> &::std::option::Option<crate::types::AudioHlsRenditionSelection> {
@@ -69,8 +68,7 @@ impl AudioSelectorSettingsBuilder {
     }
     /// Audio Language Selection
     pub fn set_audio_language_selection(mut self, input: ::std::option::Option<crate::types::AudioLanguageSelection>) -> Self {
-        self.audio_language_selection = input;
-        self
+        self.audio_language_selection = input; self
     }
     /// Audio Language Selection
     pub fn get_audio_language_selection(&self) -> &::std::option::Option<crate::types::AudioLanguageSelection> {
@@ -83,8 +81,7 @@ impl AudioSelectorSettingsBuilder {
     }
     /// Audio Pid Selection
     pub fn set_audio_pid_selection(mut self, input: ::std::option::Option<crate::types::AudioPidSelection>) -> Self {
-        self.audio_pid_selection = input;
-        self
+        self.audio_pid_selection = input; self
     }
     /// Audio Pid Selection
     pub fn get_audio_pid_selection(&self) -> &::std::option::Option<crate::types::AudioPidSelection> {
@@ -97,8 +94,7 @@ impl AudioSelectorSettingsBuilder {
     }
     /// Audio Track Selection
     pub fn set_audio_track_selection(mut self, input: ::std::option::Option<crate::types::AudioTrackSelection>) -> Self {
-        self.audio_track_selection = input;
-        self
+        self.audio_track_selection = input; self
     }
     /// Audio Track Selection
     pub fn get_audio_track_selection(&self) -> &::std::option::Option<crate::types::AudioTrackSelection> {
@@ -107,10 +103,15 @@ impl AudioSelectorSettingsBuilder {
     /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::types::AudioSelectorSettings).
     pub fn build(self) -> crate::types::AudioSelectorSettings {
         crate::types::AudioSelectorSettings {
-            audio_hls_rendition_selection: self.audio_hls_rendition_selection,
-            audio_language_selection: self.audio_language_selection,
-            audio_pid_selection: self.audio_pid_selection,
-            audio_track_selection: self.audio_track_selection,
+            audio_hls_rendition_selection: self.audio_hls_rendition_selection
+            ,
+            audio_language_selection: self.audio_language_selection
+            ,
+            audio_pid_selection: self.audio_pid_selection
+            ,
+            audio_track_selection: self.audio_track_selection
+            ,
         }
     }
 }
+

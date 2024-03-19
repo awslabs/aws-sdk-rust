@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppVersionResourcesResolutionStatusOutput {
+pub struct DescribeAppVersionResourcesResolutionStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>The version of the application.</p>
@@ -15,40 +15,36 @@ pub struct DescribeAppVersionResourcesResolutionStatusOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAppVersionResourcesResolutionStatusOutput {
+impl  DescribeAppVersionResourcesResolutionStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>The identifier for a specific resolution.</p>
-    pub fn resolution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resolution_id.deref()
+    pub fn resolution_id(&self) -> & str {
+        use std::ops::Deref; self.resolution_id.deref()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> &crate::types::ResourceResolutionStatusType {
+    pub fn status(&self) -> & crate::types::ResourceResolutionStatusType {
         &self.status
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppVersionResourcesResolutionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAppVersionResourcesResolutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder {
         crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::default()
     }
 }
@@ -73,8 +69,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +83,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn set_resolution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolution_id = input;
-        self
+        self.resolution_id = input; self
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn get_resolution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +111,7 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     }
     /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceResolutionStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceResolutionStatusType> {
@@ -132,63 +124,55 @@ impl DescribeAppVersionResourcesResolutionStatusOutputBuilder {
     }
     /// <p>The returned error message for the request.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The returned error message for the request.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAppVersionResourcesResolutionStatusOutput`](crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::app_arn)
     /// - [`app_version`](crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::app_version)
     /// - [`resolution_id`](crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::resolution_id)
     /// - [`status`](crate::operation::describe_app_version_resources_resolution_status::builders::DescribeAppVersionResourcesResolutionStatusOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput {
-                app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "app_arn",
-                        "app_arn was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput",
-                    )
-                })?,
-                app_version: self.app_version.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "app_version",
-                        "app_version was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput",
-                    )
-                })?,
-                resolution_id: self.resolution_id.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "resolution_id",
-                        "resolution_id was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput",
-                    )
-                })?,
-                status: self.status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "status",
-                        "status was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput",
-                    )
-                })?,
-                error_message: self.error_message,
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput")
+                    )?
+                ,
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput")
+                    )?
+                ,
+                resolution_id: self.resolution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resolution_id", "resolution_id was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DescribeAppVersionResourcesResolutionStatusOutput")
+                    )?
+                ,
+                error_message: self.error_message
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

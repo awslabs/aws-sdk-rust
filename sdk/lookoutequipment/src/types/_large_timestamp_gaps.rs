@@ -3,7 +3,7 @@
 /// <p>Entity that comprises information on large gaps between consecutive timestamps in data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LargeTimestampGaps {
+pub struct LargeTimestampGaps  {
     /// <p>Indicates whether there is a potential data issue related to large gaps in timestamps.</p>
     pub status: crate::types::StatisticalIssueStatus,
     /// <p>Indicates the number of large timestamp gaps, if there are any.</p>
@@ -11,9 +11,9 @@ pub struct LargeTimestampGaps {
     /// <p>Indicates the size of the largest timestamp gap, in days.</p>
     pub max_timestamp_gap_in_days: ::std::option::Option<i32>,
 }
-impl LargeTimestampGaps {
+impl  LargeTimestampGaps  {
     /// <p>Indicates whether there is a potential data issue related to large gaps in timestamps.</p>
-    pub fn status(&self) -> &crate::types::StatisticalIssueStatus {
+    pub fn status(&self) -> & crate::types::StatisticalIssueStatus {
         &self.status
     }
     /// <p>Indicates the number of large timestamp gaps, if there are any.</p>
@@ -49,8 +49,7 @@ impl LargeTimestampGapsBuilder {
     }
     /// <p>Indicates whether there is a potential data issue related to large gaps in timestamps.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatisticalIssueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether there is a potential data issue related to large gaps in timestamps.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatisticalIssueStatus> {
@@ -63,8 +62,7 @@ impl LargeTimestampGapsBuilder {
     }
     /// <p>Indicates the number of large timestamp gaps, if there are any.</p>
     pub fn set_number_of_large_timestamp_gaps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_large_timestamp_gaps = input;
-        self
+        self.number_of_large_timestamp_gaps = input; self
     }
     /// <p>Indicates the number of large timestamp gaps, if there are any.</p>
     pub fn get_number_of_large_timestamp_gaps(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl LargeTimestampGapsBuilder {
     }
     /// <p>Indicates the size of the largest timestamp gap, in days.</p>
     pub fn set_max_timestamp_gap_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_timestamp_gap_in_days = input;
-        self
+        self.max_timestamp_gap_in_days = input; self
     }
     /// <p>Indicates the size of the largest timestamp gap, in days.</p>
     pub fn get_max_timestamp_gap_in_days(&self) -> &::std::option::Option<i32> {
@@ -88,15 +85,19 @@ impl LargeTimestampGapsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::LargeTimestampGapsBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::LargeTimestampGaps, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LargeTimestampGaps {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building LargeTimestampGaps",
-                )
-            })?,
-            number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps,
-            max_timestamp_gap_in_days: self.max_timestamp_gap_in_days,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LargeTimestampGaps {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building LargeTimestampGaps")
+                    )?
+                ,
+                number_of_large_timestamp_gaps: self.number_of_large_timestamp_gaps
+                ,
+                max_timestamp_gap_in_days: self.max_timestamp_gap_in_days
+                ,
+            }
+        )
     }
 }
+

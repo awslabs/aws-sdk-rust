@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConversionConfigurationInput {
+pub struct DescribeConversionConfigurationInput  {
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project to describe.</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DescribeConversionConfigurationInput {
+impl  DescribeConversionConfigurationInput  {
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project to describe.</p>
-    pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn migration_project_identifier(&self) -> ::std::option::Option<& str> {
         self.migration_project_identifier.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribeConversionConfigurationInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project to describe.</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.migration_project_identifier = input;
-        self
+        self.migration_project_identifier = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project to describe.</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
     /// Consumes the builder and constructs a [`DescribeConversionConfigurationInput`](crate::operation::describe_conversion_configuration::DescribeConversionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_conversion_configuration::DescribeConversionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_conversion_configuration::DescribeConversionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_conversion_configuration::DescribeConversionConfigurationInput {
-                migration_project_identifier: self.migration_project_identifier,
-            },
+                migration_project_identifier: self.migration_project_identifier
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDomainInput {
+pub struct CreateDomainInput  {
     /// <p>The name of the Amazon DataZone domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon DataZone domain.</p>
@@ -14,37 +14,37 @@ pub struct CreateDomainInput {
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateDomainInput {
+impl  CreateDomainInput  {
     /// <p>The name of the Amazon DataZone domain.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the Amazon DataZone domain.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The single-sign on configuration of the Amazon DataZone domain.</p>
-    pub fn single_sign_on(&self) -> ::std::option::Option<&crate::types::SingleSignOn> {
+    pub fn single_sign_on(&self) -> ::std::option::Option<& crate::types::SingleSignOn> {
         self.single_sign_on.as_ref()
     }
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
-    pub fn domain_execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn domain_execution_role(&self) -> ::std::option::Option<& str> {
         self.domain_execution_role.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -64,7 +64,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) single_sign_on: ::std::option::Option<crate::types::SingleSignOn>,
     pub(crate) domain_execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainInputBuilder {
@@ -76,8 +76,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon DataZone domain.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The description of the Amazon DataZone domain.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the Amazon DataZone domain.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The single-sign on configuration of the Amazon DataZone domain.</p>
     pub fn set_single_sign_on(mut self, input: ::std::option::Option<crate::types::SingleSignOn>) -> Self {
-        self.single_sign_on = input;
-        self
+        self.single_sign_on = input; self
     }
     /// <p>The single-sign on configuration of the Amazon DataZone domain.</p>
     pub fn get_single_sign_on(&self) -> &::std::option::Option<crate::types::SingleSignOn> {
@@ -119,8 +116,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
     pub fn set_domain_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_execution_role = input;
-        self
+        self.domain_execution_role = input; self
     }
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
     pub fn get_domain_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl CreateDomainInputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,17 +142,16 @@ impl CreateDomainInputBuilder {
     /// <p>The tags specified for the Amazon DataZone domain.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags specified for the Amazon DataZone domain.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
@@ -167,25 +161,32 @@ impl CreateDomainInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
-            name: self.name,
-            description: self.description,
-            single_sign_on: self.single_sign_on,
-            domain_execution_role: self.domain_execution_role,
-            kms_key_identifier: self.kms_key_identifier,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_domain::CreateDomainInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                single_sign_on: self.single_sign_on
+                ,
+                domain_execution_role: self.domain_execution_role
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

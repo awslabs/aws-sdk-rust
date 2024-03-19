@@ -3,13 +3,13 @@
 /// <p>The options that determine the default settings for a paginated layout configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultPaginatedLayoutConfiguration {
+pub struct DefaultPaginatedLayoutConfiguration  {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     pub section_based: ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
 }
-impl DefaultPaginatedLayoutConfiguration {
+impl  DefaultPaginatedLayoutConfiguration  {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
-    pub fn section_based(&self) -> ::std::option::Option<&crate::types::DefaultSectionBasedLayoutConfiguration> {
+    pub fn section_based(&self) -> ::std::option::Option<& crate::types::DefaultSectionBasedLayoutConfiguration> {
         self.section_based.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DefaultPaginatedLayoutConfigurationBuilder {
     }
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     pub fn set_section_based(mut self, input: ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>) -> Self {
-        self.section_based = input;
-        self
+        self.section_based = input; self
     }
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     pub fn get_section_based(&self) -> &::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration> {
@@ -44,7 +43,9 @@ impl DefaultPaginatedLayoutConfigurationBuilder {
     /// Consumes the builder and constructs a [`DefaultPaginatedLayoutConfiguration`](crate::types::DefaultPaginatedLayoutConfiguration).
     pub fn build(self) -> crate::types::DefaultPaginatedLayoutConfiguration {
         crate::types::DefaultPaginatedLayoutConfiguration {
-            section_based: self.section_based,
+            section_based: self.section_based
+            ,
         }
     }
 }
+

@@ -3,33 +3,34 @@
 /// <p>A representation of the application, typically containing multiple cells.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecoveryGroupOutput {
+pub struct RecoveryGroupOutput  {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub cells: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
     pub recovery_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recovery group.</p>
     pub recovery_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the recovery group.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl RecoveryGroupOutput {
+impl  RecoveryGroupOutput  {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cells.is_none()`.
-    pub fn cells(&self) -> &[::std::string::String] {
-        self.cells.as_deref().unwrap_or_default()
+    pub fn cells(&self) -> & [::std::string::String] {
+        self.cells.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    pub fn recovery_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_group_arn.as_deref()
     }
     /// <p>The name of the recovery group.</p>
-    pub fn recovery_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> ::std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,10 +45,10 @@ impl RecoveryGroupOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecoveryGroupOutputBuilder {
-    pub(crate) cells: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) recovery_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl RecoveryGroupOutputBuilder {
     /// Appends an item to `cells`.
@@ -57,17 +58,16 @@ impl RecoveryGroupOutputBuilder {
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
     pub fn cells(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input.into());
-        self.cells = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.cells = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.cells = input; self
     }
     /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.cells
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
@@ -78,8 +78,7 @@ impl RecoveryGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
     pub fn set_recovery_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_group_arn = input;
-        self
+        self.recovery_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
     pub fn get_recovery_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl RecoveryGroupOutputBuilder {
     }
     /// <p>The name of the recovery group.</p>
     pub fn set_recovery_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_group_name = input;
-        self
+        self.recovery_group_name = input; self
     }
     /// <p>The name of the recovery group.</p>
     pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,26 +105,30 @@ impl RecoveryGroupOutputBuilder {
     /// <p>The tags associated with the recovery group.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the recovery group.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RecoveryGroupOutput`](crate::types::RecoveryGroupOutput).
     pub fn build(self) -> crate::types::RecoveryGroupOutput {
         crate::types::RecoveryGroupOutput {
-            cells: self.cells,
-            recovery_group_arn: self.recovery_group_arn,
-            recovery_group_name: self.recovery_group_name,
-            tags: self.tags,
+            cells: self.cells
+            ,
+            recovery_group_arn: self.recovery_group_arn
+            ,
+            recovery_group_name: self.recovery_group_name
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

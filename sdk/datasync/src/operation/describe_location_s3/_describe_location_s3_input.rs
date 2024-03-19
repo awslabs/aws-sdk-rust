@@ -3,13 +3,13 @@
 /// <p>DescribeLocationS3Request</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLocationS3Input {
+pub struct DescribeLocationS3Input  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLocationS3Input {
+impl  DescribeLocationS3Input  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DescribeLocationS3InputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
     /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_location_s3::DescribeLocationS3Input {
-            location_arn: self.location_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_location_s3::DescribeLocationS3Input {
+                location_arn: self.location_arn
+                ,
+            }
+        )
     }
 }
+

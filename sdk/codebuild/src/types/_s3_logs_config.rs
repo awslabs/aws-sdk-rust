@@ -3,7 +3,7 @@
 /// <p>Information about S3 logs for a build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3LogsConfig {
+pub struct S3LogsConfig  {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -49,7 +49,7 @@ pub struct S3LogsConfig {
     /// </dl>
     pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
-impl S3LogsConfig {
+impl  S3LogsConfig  {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -57,11 +57,11 @@ impl S3LogsConfig {
     /// <li>
     /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::LogsConfigStatusType {
+    pub fn status(&self) -> & crate::types::LogsConfigStatusType {
         &self.status
     }
     /// <p>The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted.</p>
@@ -99,7 +99,7 @@ impl S3LogsConfig {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn bucket_owner_access(&self) -> ::std::option::Option<&crate::types::BucketOwnerAccess> {
+    pub fn bucket_owner_access(&self) -> ::std::option::Option<& crate::types::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
     }
 }
@@ -140,8 +140,7 @@ impl S3LogsConfigBuilder {
     /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
@@ -160,8 +159,7 @@ impl S3LogsConfigBuilder {
     }
     /// <p>The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl S3LogsConfigBuilder {
     }
     /// <p>Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted.</p>
     pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encryption_disabled = input;
-        self
+        self.encryption_disabled = input; self
     }
     /// <p>Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted.</p>
     pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
@@ -248,8 +245,7 @@ impl S3LogsConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_bucket_owner_access(mut self, input: ::std::option::Option<crate::types::BucketOwnerAccess>) -> Self {
-        self.bucket_owner_access = input;
-        self
+        self.bucket_owner_access = input; self
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
@@ -289,16 +285,21 @@ impl S3LogsConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::S3LogsConfigBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::S3LogsConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3LogsConfig {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building S3LogsConfig",
-                )
-            })?,
-            location: self.location,
-            encryption_disabled: self.encryption_disabled,
-            bucket_owner_access: self.bucket_owner_access,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3LogsConfig {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building S3LogsConfig")
+                    )?
+                ,
+                location: self.location
+                ,
+                encryption_disabled: self.encryption_disabled
+                ,
+                bucket_owner_access: self.bucket_owner_access
+                ,
+            }
+        )
     }
 }
+

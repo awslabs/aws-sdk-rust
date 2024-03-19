@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDeviceEventsInput {
+pub struct ListDeviceEventsInput  {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
@@ -14,13 +14,13 @@ pub struct ListDeviceEventsInput {
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub to_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListDeviceEventsInput {
+impl  ListDeviceEventsInput  {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
-    pub fn from_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_time_stamp.as_ref()
     }
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
@@ -28,11 +28,11 @@ impl ListDeviceEventsInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
-    pub fn to_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn to_time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.to_time_stamp.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn set_from_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from_time_stamp = input;
-        self
+        self.from_time_stamp = input; self
     }
     /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn get_from_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,8 +89,7 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,8 +102,7 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,23 +116,28 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn set_to_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.to_time_stamp = input;
-        self
+        self.to_time_stamp = input; self
     }
     /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z</p>
     pub fn get_to_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.to_time_stamp
     }
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_device_events::ListDeviceEventsInput {
-            device_id: self.device_id,
-            from_time_stamp: self.from_time_stamp,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            to_time_stamp: self.to_time_stamp,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_device_events::ListDeviceEventsInput {
+                device_id: self.device_id
+                ,
+                from_time_stamp: self.from_time_stamp
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                to_time_stamp: self.to_time_stamp
+                ,
+            }
+        )
     }
 }
+

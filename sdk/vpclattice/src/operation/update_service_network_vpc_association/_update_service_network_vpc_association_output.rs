@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceNetworkVpcAssociationOutput {
+pub struct UpdateServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the association.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
@@ -12,38 +12,39 @@ pub struct UpdateServiceNetworkVpcAssociationOutput {
     /// <p>The account that created the association.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateServiceNetworkVpcAssociationOutput {
+impl  UpdateServiceNetworkVpcAssociationOutput  {
     /// <p>The ID of the association.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceNetworkVpcAssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ServiceNetworkVpcAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The account that created the association.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateServiceNetworkVpcAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateServiceNetworkVpcAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkVpcAssociationOutput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput).
     pub fn builder() -> crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationOutputBuilder {
@@ -59,7 +60,7 @@ pub struct UpdateServiceNetworkVpcAssociationOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateServiceNetworkVpcAssociationOutputBuilder {
@@ -70,8 +71,7 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +84,7 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceNetworkVpcAssociationStatus> {
@@ -112,8 +110,7 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     }
     /// <p>The account that created the association.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The account that created the association.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,37 +123,42 @@ impl UpdateServiceNetworkVpcAssociationOutputBuilder {
     /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationOutput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput).
     pub fn build(self) -> crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput {
         crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput {
-            id: self.id,
-            arn: self.arn,
-            status: self.status,
-            created_by: self.created_by,
-            security_group_ids: self.security_group_ids,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_by: self.created_by
+            ,
+            security_group_ids: self.security_group_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

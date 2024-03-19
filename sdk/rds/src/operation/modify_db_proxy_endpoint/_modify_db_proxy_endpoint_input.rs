@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbProxyEndpointInput {
+pub struct ModifyDbProxyEndpointInput  {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
     pub db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub new_db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyDbProxyEndpointInput {
+impl  ModifyDbProxyEndpointInput  {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
-    pub fn db_proxy_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_proxy_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.db_proxy_endpoint_name.as_deref()
     }
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn new_db_proxy_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn new_db_proxy_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.new_db_proxy_endpoint_name.as_deref()
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyDbProxyEndpointInput {
@@ -39,7 +40,7 @@ impl ModifyDbProxyEndpointInput {
 pub struct ModifyDbProxyEndpointInputBuilder {
     pub(crate) db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_db_proxy_endpoint_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyDbProxyEndpointInputBuilder {
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
@@ -50,8 +51,7 @@ impl ModifyDbProxyEndpointInputBuilder {
     }
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
     pub fn set_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_proxy_endpoint_name = input;
-        self
+        self.db_proxy_endpoint_name = input; self
     }
     /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
     pub fn get_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl ModifyDbProxyEndpointInputBuilder {
     }
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_new_db_proxy_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_db_proxy_endpoint_name = input;
-        self
+        self.new_db_proxy_endpoint_name = input; self
     }
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_new_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,28 +77,30 @@ impl ModifyDbProxyEndpointInputBuilder {
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyEndpointInput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput {
-            db_proxy_endpoint_name: self.db_proxy_endpoint_name,
-            new_db_proxy_endpoint_name: self.new_db_proxy_endpoint_name,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput {
+                db_proxy_endpoint_name: self.db_proxy_endpoint_name
+                ,
+                new_db_proxy_endpoint_name: self.new_db_proxy_endpoint_name
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+            }
+        )
     }
 }
+

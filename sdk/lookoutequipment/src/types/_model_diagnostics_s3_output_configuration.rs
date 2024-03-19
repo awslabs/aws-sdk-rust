@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 location for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDiagnosticsS3OutputConfiguration {
+pub struct ModelDiagnosticsS3OutputConfiguration  {
     /// <p>The name of the Amazon S3 bucket where the pointwise model diagnostics are located. You must be the owner of the Amazon S3 bucket.</p>
     pub bucket: ::std::string::String,
     /// <p>The Amazon S3 prefix for the location of the pointwise model diagnostics. The prefix specifies the folder and evaluation result file name. (<code>bucket</code>).</p>
@@ -11,16 +11,15 @@ pub struct ModelDiagnosticsS3OutputConfiguration {
     /// <p>When you call <code>DescribeModel</code> or <code>DescribeModelVersion</code>, <code>prefix</code> contains the file path and filename of the model evaluation file.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
 }
-impl ModelDiagnosticsS3OutputConfiguration {
+impl  ModelDiagnosticsS3OutputConfiguration  {
     /// <p>The name of the Amazon S3 bucket where the pointwise model diagnostics are located. You must be the owner of the Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket.deref()
+    pub fn bucket(&self) -> & str {
+        use std::ops::Deref; self.bucket.deref()
     }
     /// <p>The Amazon S3 prefix for the location of the pointwise model diagnostics. The prefix specifies the folder and evaluation result file name. (<code>bucket</code>).</p>
     /// <p>When you call <code>CreateModel</code> or <code>UpdateModel</code>, specify the path within the bucket that you want Lookout for Equipment to save the model to. During training, Lookout for Equipment creates the model evaluation model as a compressed JSON file with the name <code>model_diagnostics_results.json.gz</code>.</p>
     /// <p>When you call <code>DescribeModel</code> or <code>DescribeModelVersion</code>, <code>prefix</code> contains the file path and filename of the model evaluation file.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -47,8 +46,7 @@ impl ModelDiagnosticsS3OutputConfigurationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where the pointwise model diagnostics are located. You must be the owner of the Amazon S3 bucket.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket where the pointwise model diagnostics are located. You must be the owner of the Amazon S3 bucket.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ModelDiagnosticsS3OutputConfigurationBuilder {
     /// <p>When you call <code>CreateModel</code> or <code>UpdateModel</code>, specify the path within the bucket that you want Lookout for Equipment to save the model to. During training, Lookout for Equipment creates the model evaluation model as a compressed JSON file with the name <code>model_diagnostics_results.json.gz</code>.</p>
     /// <p>When you call <code>DescribeModel</code> or <code>DescribeModelVersion</code>, <code>prefix</code> contains the file path and filename of the model evaluation file.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The Amazon S3 prefix for the location of the pointwise model diagnostics. The prefix specifies the folder and evaluation result file name. (<code>bucket</code>).</p>
     /// <p>When you call <code>CreateModel</code> or <code>UpdateModel</code>, specify the path within the bucket that you want Lookout for Equipment to save the model to. During training, Lookout for Equipment creates the model evaluation model as a compressed JSON file with the name <code>model_diagnostics_results.json.gz</code>.</p>
@@ -77,17 +74,18 @@ impl ModelDiagnosticsS3OutputConfigurationBuilder {
     /// Consumes the builder and constructs a [`ModelDiagnosticsS3OutputConfiguration`](crate::types::ModelDiagnosticsS3OutputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::ModelDiagnosticsS3OutputConfigurationBuilder::bucket)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ModelDiagnosticsS3OutputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ModelDiagnosticsS3OutputConfiguration {
-            bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket",
-                    "bucket was not specified but it is required when building ModelDiagnosticsS3OutputConfiguration",
-                )
-            })?,
-            prefix: self.prefix,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelDiagnosticsS3OutputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ModelDiagnosticsS3OutputConfiguration {
+                bucket: self.bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "bucket was not specified but it is required when building ModelDiagnosticsS3OutputConfiguration")
+                    )?
+                ,
+                prefix: self.prefix
+                ,
+            }
+        )
     }
 }
+

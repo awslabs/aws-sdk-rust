@@ -3,7 +3,7 @@
 /// <p>Information about the ground station data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroundStationData {
+pub struct GroundStationData  {
     /// <p>UUID of a ground station.</p>
     pub ground_station_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a ground station.</p>
@@ -11,17 +11,17 @@ pub struct GroundStationData {
     /// <p>Ground station Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl GroundStationData {
+impl  GroundStationData  {
     /// <p>UUID of a ground station.</p>
-    pub fn ground_station_id(&self) -> ::std::option::Option<&str> {
+    pub fn ground_station_id(&self) -> ::std::option::Option<& str> {
         self.ground_station_id.as_deref()
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station_name(&self) -> ::std::option::Option<&str> {
+    pub fn ground_station_name(&self) -> ::std::option::Option<& str> {
         self.ground_station_name.as_deref()
     }
     /// <p>Ground station Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GroundStationDataBuilder {
     }
     /// <p>UUID of a ground station.</p>
     pub fn set_ground_station_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ground_station_id = input;
-        self
+        self.ground_station_id = input; self
     }
     /// <p>UUID of a ground station.</p>
     pub fn get_ground_station_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GroundStationDataBuilder {
     }
     /// <p>Name of a ground station.</p>
     pub fn set_ground_station_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ground_station_name = input;
-        self
+        self.ground_station_name = input; self
     }
     /// <p>Name of a ground station.</p>
     pub fn get_ground_station_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GroundStationDataBuilder {
     }
     /// <p>Ground station Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>Ground station Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl GroundStationDataBuilder {
     /// Consumes the builder and constructs a [`GroundStationData`](crate::types::GroundStationData).
     pub fn build(self) -> crate::types::GroundStationData {
         crate::types::GroundStationData {
-            ground_station_id: self.ground_station_id,
-            ground_station_name: self.ground_station_name,
-            region: self.region,
+            ground_station_id: self.ground_station_id
+            ,
+            ground_station_name: self.ground_station_name
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

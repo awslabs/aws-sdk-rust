@@ -2,26 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListAppInstanceUserEndpointsOutput {
+pub struct ListAppInstanceUserEndpointsOutput  {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
+    pub app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceUserEndpointSummary>>,
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAppInstanceUserEndpointsOutput {
+impl  ListAppInstanceUserEndpointsOutput  {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_instance_user_endpoints.is_none()`.
-    pub fn app_instance_user_endpoints(&self) -> &[crate::types::AppInstanceUserEndpointSummary] {
-        self.app_instance_user_endpoints.as_deref().unwrap_or_default()
+    pub fn app_instance_user_endpoints(&self) -> & [crate::types::AppInstanceUserEndpointSummary] {
+        self.app_instance_user_endpoints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
+impl  ::std::fmt::Debug for ListAppInstanceUserEndpointsOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsOutput");
         formatter.field("app_instance_user_endpoints", &self.app_instance_user_endpoints);
@@ -31,10 +32,10 @@ impl ::std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ListAppInstanceUserEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAppInstanceUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput).
     pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder {
@@ -46,7 +47,7 @@ impl ListAppInstanceUserEndpointsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListAppInstanceUserEndpointsOutputBuilder {
-    pub(crate) app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
+    pub(crate) app_instance_user_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceUserEndpointSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,20 +59,16 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
     pub fn app_instance_user_endpoints(mut self, input: crate::types::AppInstanceUserEndpointSummary) -> Self {
         let mut v = self.app_instance_user_endpoints.unwrap_or_default();
-        v.push(input);
-        self.app_instance_user_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_instance_user_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn set_app_instance_user_endpoints(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
-    ) -> Self {
-        self.app_instance_user_endpoints = input;
-        self
+    pub fn set_app_instance_user_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceUserEndpointSummary>>) -> Self {
+        self.app_instance_user_endpoints = input; self
     }
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn get_app_instance_user_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>> {
+    pub fn get_app_instance_user_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppInstanceUserEndpointSummary>> {
         &self.app_instance_user_endpoints
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
@@ -81,27 +78,28 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsOutput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput).
     pub fn build(self) -> crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput {
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput {
-            app_instance_user_endpoints: self.app_instance_user_endpoints,
-            next_token: self.next_token,
+            app_instance_user_endpoints: self.app_instance_user_endpoints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -115,3 +113,4 @@ impl ::std::fmt::Debug for ListAppInstanceUserEndpointsOutputBuilder {
         formatter.finish()
     }
 }
+

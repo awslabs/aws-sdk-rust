@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetDocumentStatusInput {
+pub struct BatchGetDocumentStatusInput  {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub document_info_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
+    pub document_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentInfo>>,
 }
-impl BatchGetDocumentStatusInput {
+impl  BatchGetDocumentStatusInput  {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_info_list.is_none()`.
-    pub fn document_info_list(&self) -> &[crate::types::DocumentInfo] {
-        self.document_info_list.as_deref().unwrap_or_default()
+    pub fn document_info_list(&self) -> & [crate::types::DocumentInfo] {
+        self.document_info_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetDocumentStatusInput {
@@ -32,7 +33,7 @@ impl BatchGetDocumentStatusInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetDocumentStatusInputBuilder {
     pub(crate) index_id: ::std::option::Option<::std::string::String>,
-    pub(crate) document_info_list: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
+    pub(crate) document_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentInfo>>,
 }
 impl BatchGetDocumentStatusInputBuilder {
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
@@ -43,8 +44,7 @@ impl BatchGetDocumentStatusInputBuilder {
     }
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchGetDocumentStatusInputBuilder {
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
     pub fn document_info_list(mut self, input: crate::types::DocumentInfo) -> Self {
         let mut v = self.document_info_list.unwrap_or_default();
-        v.push(input);
-        self.document_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn set_document_info_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>) -> Self {
-        self.document_info_list = input;
-        self
+    pub fn set_document_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentInfo>>) -> Self {
+        self.document_info_list = input; self
     }
     /// <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    pub fn get_document_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>> {
+    pub fn get_document_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentInfo>> {
         &self.document_info_list
     }
     /// Consumes the builder and constructs a [`BatchGetDocumentStatusInput`](crate::operation::batch_get_document_status::BatchGetDocumentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_document_status::BatchGetDocumentStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_document_status::BatchGetDocumentStatusInput {
-            index_id: self.index_id,
-            document_info_list: self.document_info_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_document_status::BatchGetDocumentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_document_status::BatchGetDocumentStatusInput {
+                index_id: self.index_id
+                ,
+                document_info_list: self.document_info_list
+                ,
+            }
+        )
     }
 }
+

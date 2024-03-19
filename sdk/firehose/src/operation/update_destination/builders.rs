@@ -5,23 +5,20 @@ pub use crate::operation::update_destination::_update_destination_input::UpdateD
 
 impl UpdateDestinationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_destination::UpdateDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_destination();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_destination::UpdateDestinationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_destination::UpdateDestinationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_destination();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDestination`.
-///
+/// 
 /// <p>Updates the specified destination of the specified delivery stream.</p>
 /// <p>Use this operation to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a destination (for example, to change the bucket name of the Amazon S3 destination). The update might not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are usually effective within a few minutes.</p>
 /// <p>Switching between Amazon OpenSearch Service and other services is not supported. For an Amazon OpenSearch Service destination, you can only update to another Amazon OpenSearch Service destination.</p>
@@ -31,33 +28,32 @@ impl UpdateDestinationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_destination::builders::UpdateDestinationInputBuilder,
+                    inner: crate::operation::update_destination::builders::UpdateDestinationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_destination::UpdateDestinationOutput,
-        crate::operation::update_destination::UpdateDestinationError,
-    > for UpdateDestinationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_destination::UpdateDestinationOutput,
-            crate::operation::update_destination::UpdateDestinationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_destination::UpdateDestinationOutput,
+                    crate::operation::update_destination::UpdateDestinationError,
+                > for UpdateDestinationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_destination::UpdateDestinationOutput,
+                        crate::operation::update_destination::UpdateDestinationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDestinationFluentBuilder {
     /// Creates a new `UpdateDestination`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl UpdateDestinationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_destination::UpdateDestinationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_destination::UpdateDestinationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_destination::UpdateDestination::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_destination::UpdateDestination::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_destination::UpdateDestinationOutput,
-        crate::operation::update_destination::UpdateDestinationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_destination::UpdateDestinationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_destination::UpdateDestination::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_destination::UpdateDestination::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_destination::UpdateDestinationOutput, crate::operation::update_destination::UpdateDestinationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the delivery stream.</p>
     pub fn delivery_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delivery_stream_name(input.into());
@@ -220,10 +207,7 @@ impl UpdateDestinationFluentBuilder {
         self
     }
     /// <p>Describes an update for a destination in Amazon OpenSearch Service.</p>
-    pub fn set_amazonopensearchservice_destination_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate>,
-    ) -> Self {
+    pub fn set_amazonopensearchservice_destination_update(mut self, input: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationUpdate>) -> Self {
         self.inner = self.inner.set_amazonopensearchservice_destination_update(input);
         self
     }
@@ -265,17 +249,12 @@ impl UpdateDestinationFluentBuilder {
         self
     }
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn set_amazon_open_search_serverless_destination_update(
-        mut self,
-        input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
-    ) -> Self {
+    pub fn set_amazon_open_search_serverless_destination_update(mut self, input: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>) -> Self {
         self.inner = self.inner.set_amazon_open_search_serverless_destination_update(input);
         self
     }
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn get_amazon_open_search_serverless_destination_update(
-        &self,
-    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
+    pub fn get_amazon_open_search_serverless_destination_update(&self) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         self.inner.get_amazon_open_search_serverless_destination_update()
     }
     /// <p>Update to the Snowflake destination condiguration settings</p>
@@ -293,3 +272,4 @@ impl UpdateDestinationFluentBuilder {
         self.inner.get_snowflake_destination_update()
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInstanceStorageConfigOutput {
+pub struct DescribeInstanceStorageConfigOutput  {
     /// <p>A valid storage type.</p>
     pub storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
     _request_id: Option<String>,
 }
-impl DescribeInstanceStorageConfigOutput {
+impl  DescribeInstanceStorageConfigOutput  {
     /// <p>A valid storage type.</p>
-    pub fn storage_config(&self) -> ::std::option::Option<&crate::types::InstanceStorageConfig> {
+    pub fn storage_config(&self) -> ::std::option::Option<& crate::types::InstanceStorageConfig> {
         self.storage_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceStorageConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeInstanceStorageConfigOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceStorageConfigOutput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput).
     pub fn builder() -> crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeInstanceStorageConfigOutputBuilder {
     }
     /// <p>A valid storage type.</p>
     pub fn set_storage_config(mut self, input: ::std::option::Option<crate::types::InstanceStorageConfig>) -> Self {
-        self.storage_config = input;
-        self
+        self.storage_config = input; self
     }
     /// <p>A valid storage type.</p>
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
         &self.storage_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeInstanceStorageConfigOutput`](crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput).
     pub fn build(self) -> crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput {
         crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigOutput {
-            storage_config: self.storage_config,
+            storage_config: self.storage_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

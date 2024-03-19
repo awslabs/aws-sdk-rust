@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CheckoutBorrowLicenseOutput {
+pub struct CheckoutBorrowLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub license_arn: ::std::option::Option<::std::string::String>,
     /// <p>License consumption token.</p>
     pub license_consumption_token: ::std::option::Option<::std::string::String>,
     /// <p>Allowed license entitlements.</p>
-    pub entitlements_allowed: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub entitlements_allowed: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>,
     /// <p>Node ID.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>Signed token.</p>
@@ -18,52 +18,54 @@ pub struct CheckoutBorrowLicenseOutput {
     /// <p>Date and time at which the license checkout expires.</p>
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>Information about constraints.</p>
-    pub checkout_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
+    pub checkout_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>,
     _request_id: Option<String>,
 }
-impl CheckoutBorrowLicenseOutput {
+impl  CheckoutBorrowLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+    pub fn license_arn(&self) -> ::std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> ::std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> ::std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>Allowed license entitlements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entitlements_allowed.is_none()`.
-    pub fn entitlements_allowed(&self) -> &[crate::types::EntitlementData] {
-        self.entitlements_allowed.as_deref().unwrap_or_default()
+    pub fn entitlements_allowed(&self) -> & [crate::types::EntitlementData] {
+        self.entitlements_allowed.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Node ID.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>Signed token.</p>
-    pub fn signed_token(&self) -> ::std::option::Option<&str> {
+    pub fn signed_token(&self) -> ::std::option::Option<& str> {
         self.signed_token.as_deref()
     }
     /// <p>Date and time at which the license checkout is issued.</p>
-    pub fn issued_at(&self) -> ::std::option::Option<&str> {
+    pub fn issued_at(&self) -> ::std::option::Option<& str> {
         self.issued_at.as_deref()
     }
     /// <p>Date and time at which the license checkout expires.</p>
-    pub fn expiration(&self) -> ::std::option::Option<&str> {
+    pub fn expiration(&self) -> ::std::option::Option<& str> {
         self.expiration.as_deref()
     }
     /// <p>Information about constraints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checkout_metadata.is_none()`.
-    pub fn checkout_metadata(&self) -> &[crate::types::Metadata] {
-        self.checkout_metadata.as_deref().unwrap_or_default()
+    pub fn checkout_metadata(&self) -> & [crate::types::Metadata] {
+        self.checkout_metadata.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CheckoutBorrowLicenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CheckoutBorrowLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseOutput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput).
     pub fn builder() -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseOutputBuilder {
@@ -77,12 +79,12 @@ impl CheckoutBorrowLicenseOutput {
 pub struct CheckoutBorrowLicenseOutputBuilder {
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
     pub(crate) license_consumption_token: ::std::option::Option<::std::string::String>,
-    pub(crate) entitlements_allowed: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
+    pub(crate) entitlements_allowed: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) signed_token: ::std::option::Option<::std::string::String>,
     pub(crate) issued_at: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::std::string::String>,
-    pub(crate) checkout_metadata: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
+    pub(crate) checkout_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>,
     _request_id: Option<String>,
 }
 impl CheckoutBorrowLicenseOutputBuilder {
@@ -93,8 +95,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +108,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>License consumption token.</p>
     pub fn set_license_consumption_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.license_consumption_token = input;
-        self
+        self.license_consumption_token = input; self
     }
     /// <p>License consumption token.</p>
     pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +121,16 @@ impl CheckoutBorrowLicenseOutputBuilder {
     /// <p>Allowed license entitlements.</p>
     pub fn entitlements_allowed(mut self, input: crate::types::EntitlementData) -> Self {
         let mut v = self.entitlements_allowed.unwrap_or_default();
-        v.push(input);
-        self.entitlements_allowed = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entitlements_allowed = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn set_entitlements_allowed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>) -> Self {
-        self.entitlements_allowed = input;
-        self
+    pub fn set_entitlements_allowed(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>>) -> Self {
+        self.entitlements_allowed = input; self
     }
     /// <p>Allowed license entitlements.</p>
-    pub fn get_entitlements_allowed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+    pub fn get_entitlements_allowed(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EntitlementData>> {
         &self.entitlements_allowed
     }
     /// <p>Node ID.</p>
@@ -141,8 +140,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>Node ID.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>Node ID.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>Signed token.</p>
     pub fn set_signed_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signed_token = input;
-        self
+        self.signed_token = input; self
     }
     /// <p>Signed token.</p>
     pub fn get_signed_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +166,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>Date and time at which the license checkout is issued.</p>
     pub fn set_issued_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issued_at = input;
-        self
+        self.issued_at = input; self
     }
     /// <p>Date and time at which the license checkout is issued.</p>
     pub fn get_issued_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl CheckoutBorrowLicenseOutputBuilder {
     }
     /// <p>Date and time at which the license checkout expires.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>Date and time at which the license checkout expires.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,40 +192,48 @@ impl CheckoutBorrowLicenseOutputBuilder {
     /// <p>Information about constraints.</p>
     pub fn checkout_metadata(mut self, input: crate::types::Metadata) -> Self {
         let mut v = self.checkout_metadata.unwrap_or_default();
-        v.push(input);
-        self.checkout_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.checkout_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about constraints.</p>
-    pub fn set_checkout_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>) -> Self {
-        self.checkout_metadata = input;
-        self
+    pub fn set_checkout_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Metadata>>) -> Self {
+        self.checkout_metadata = input; self
     }
     /// <p>Information about constraints.</p>
-    pub fn get_checkout_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+    pub fn get_checkout_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Metadata>> {
         &self.checkout_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CheckoutBorrowLicenseOutput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput).
     pub fn build(self) -> crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput {
         crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput {
-            license_arn: self.license_arn,
-            license_consumption_token: self.license_consumption_token,
-            entitlements_allowed: self.entitlements_allowed,
-            node_id: self.node_id,
-            signed_token: self.signed_token,
-            issued_at: self.issued_at,
-            expiration: self.expiration,
-            checkout_metadata: self.checkout_metadata,
+            license_arn: self.license_arn
+            ,
+            license_consumption_token: self.license_consumption_token
+            ,
+            entitlements_allowed: self.entitlements_allowed
+            ,
+            node_id: self.node_id
+            ,
+            signed_token: self.signed_token
+            ,
+            issued_at: self.issued_at
+            ,
+            expiration: self.expiration
+            ,
+            checkout_metadata: self.checkout_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

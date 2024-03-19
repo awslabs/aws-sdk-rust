@@ -3,19 +3,19 @@
 /// <p>Contains the category by which the intent analytics were grouped and a member of that category.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentGroupByKey {
+pub struct AnalyticsIntentGroupByKey  {
     /// <p>A category by which the intent analytics were grouped.</p>
     pub name: ::std::option::Option<crate::types::AnalyticsIntentField>,
     /// <p>A member of the category by which the intent analytics were grouped.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsIntentGroupByKey {
+impl  AnalyticsIntentGroupByKey  {
     /// <p>A category by which the intent analytics were grouped.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentField> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsIntentField> {
         self.name.as_ref()
     }
     /// <p>A member of the category by which the intent analytics were grouped.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AnalyticsIntentGroupByKeyBuilder {
     }
     /// <p>A category by which the intent analytics were grouped.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentField>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A category by which the intent analytics were grouped.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentField> {
@@ -55,8 +54,7 @@ impl AnalyticsIntentGroupByKeyBuilder {
     }
     /// <p>A member of the category by which the intent analytics were grouped.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A member of the category by which the intent analytics were grouped.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AnalyticsIntentGroupByKeyBuilder {
     /// Consumes the builder and constructs a [`AnalyticsIntentGroupByKey`](crate::types::AnalyticsIntentGroupByKey).
     pub fn build(self) -> crate::types::AnalyticsIntentGroupByKey {
         crate::types::AnalyticsIntentGroupByKey {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

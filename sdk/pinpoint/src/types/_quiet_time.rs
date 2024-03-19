@@ -3,19 +3,19 @@
 /// <p>Specifies the start and end times that define a time range when messages aren't sent to endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuietTime {
+pub struct QuietTime  {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub end: ::std::option::Option<::std::string::String>,
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub start: ::std::option::Option<::std::string::String>,
 }
-impl QuietTime {
+impl  QuietTime  {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn end(&self) -> ::std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<& str> {
         self.end.as_deref()
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn start(&self) -> ::std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<& str> {
         self.start.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl QuietTimeBuilder {
     }
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn get_end(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl QuietTimeBuilder {
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl QuietTimeBuilder {
     /// Consumes the builder and constructs a [`QuietTime`](crate::types::QuietTime).
     pub fn build(self) -> crate::types::QuietTime {
         crate::types::QuietTime {
-            end: self.end,
-            start: self.start,
+            end: self.end
+            ,
+            start: self.start
+            ,
         }
     }
 }
+

@@ -3,28 +3,29 @@
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePositionInput {
+pub struct UpdatePositionInput  {
     /// <p>Resource identifier of the resource for which position is updated.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for which position is updated.</p>
     pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
     /// <p>The position information of the resource.</p>
-    pub position: ::std::option::Option<::std::vec::Vec<f32>>,
+    pub position: ::std::option::Option<::std::vec::Vec::<f32>>,
 }
-impl UpdatePositionInput {
+impl  UpdatePositionInput  {
     /// <p>Resource identifier of the resource for which position is updated.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Resource type of the resource for which position is updated.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The position information of the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
-    pub fn position(&self) -> &[f32] {
-        self.position.as_deref().unwrap_or_default()
+    pub fn position(&self) -> & [f32] {
+        self.position.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdatePositionInput {
@@ -40,7 +41,7 @@ impl UpdatePositionInput {
 pub struct UpdatePositionInputBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
-    pub(crate) position: ::std::option::Option<::std::vec::Vec<f32>>,
+    pub(crate) position: ::std::option::Option<::std::vec::Vec::<f32>>,
 }
 impl UpdatePositionInputBuilder {
     /// <p>Resource identifier of the resource for which position is updated.</p>
@@ -51,8 +52,7 @@ impl UpdatePositionInputBuilder {
     }
     /// <p>Resource identifier of the resource for which position is updated.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>Resource identifier of the resource for which position is updated.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +66,7 @@ impl UpdatePositionInputBuilder {
     }
     /// <p>Resource type of the resource for which position is updated.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Resource type of the resource for which position is updated.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
@@ -80,27 +79,30 @@ impl UpdatePositionInputBuilder {
     /// <p>The position information of the resource.</p>
     pub fn position(mut self, input: f32) -> Self {
         let mut v = self.position.unwrap_or_default();
-        v.push(input);
-        self.position = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.position = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The position information of the resource.</p>
-    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f32>>) -> Self {
-        self.position = input;
-        self
+    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec::<f32>>) -> Self {
+        self.position = input; self
     }
     /// <p>The position information of the resource.</p>
-    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f32>> {
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec::<f32>> {
         &self.position
     }
     /// Consumes the builder and constructs a [`UpdatePositionInput`](crate::operation::update_position::UpdatePositionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_position::UpdatePositionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_position::UpdatePositionInput {
-            resource_identifier: self.resource_identifier,
-            resource_type: self.resource_type,
-            position: self.position,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_position::UpdatePositionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_position::UpdatePositionInput {
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+                position: self.position
+                ,
+            }
+        )
     }
 }
+

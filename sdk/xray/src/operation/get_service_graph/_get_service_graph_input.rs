@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceGraphInput {
+pub struct GetServiceGraphInput  {
     /// <p>The start of the time frame for which to generate a graph.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the timeframe for which to generate a graph.</p>
@@ -14,25 +14,25 @@ pub struct GetServiceGraphInput {
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceGraphInput {
+impl  GetServiceGraphInput  {
     /// <p>The start of the time frame for which to generate a graph.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the timeframe for which to generate a graph.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The name of a group based on which you want to generate a graph.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl GetServiceGraphInputBuilder {
     }
     /// <p>The start of the time frame for which to generate a graph.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start of the time frame for which to generate a graph.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -77,8 +76,7 @@ impl GetServiceGraphInputBuilder {
     }
     /// <p>The end of the timeframe for which to generate a graph.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the timeframe for which to generate a graph.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -91,8 +89,7 @@ impl GetServiceGraphInputBuilder {
     }
     /// <p>The name of a group based on which you want to generate a graph.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of a group based on which you want to generate a graph.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl GetServiceGraphInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl GetServiceGraphInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetServiceGraphInput`](crate::operation::get_service_graph::GetServiceGraphInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_graph::GetServiceGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_service_graph::GetServiceGraphInput {
-            start_time: self.start_time,
-            end_time: self.end_time,
-            group_name: self.group_name,
-            group_arn: self.group_arn,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_graph::GetServiceGraphInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_graph::GetServiceGraphInput {
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                group_name: self.group_name
+                ,
+                group_arn: self.group_arn
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

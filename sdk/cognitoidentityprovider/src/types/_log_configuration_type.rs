@@ -3,7 +3,7 @@
 /// <p>The logging parameters of a user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogConfigurationType {
+pub struct LogConfigurationType  {
     /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
     pub log_level: crate::types::LogLevel,
     /// <p>The source of events that your user pool sends for detailed activity logging.</p>
@@ -11,17 +11,17 @@ pub struct LogConfigurationType {
     /// <p>The CloudWatch logging destination of a user pool.</p>
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfigurationType>,
 }
-impl LogConfigurationType {
+impl  LogConfigurationType  {
     /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
-    pub fn log_level(&self) -> &crate::types::LogLevel {
+    pub fn log_level(&self) -> & crate::types::LogLevel {
         &self.log_level
     }
     /// <p>The source of events that your user pool sends for detailed activity logging.</p>
-    pub fn event_source(&self) -> &crate::types::EventSourceName {
+    pub fn event_source(&self) -> & crate::types::EventSourceName {
         &self.event_source
     }
     /// <p>The CloudWatch logging destination of a user pool.</p>
-    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfigurationType> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<& crate::types::CloudWatchLogsConfigurationType> {
         self.cloud_watch_logs_configuration.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl LogConfigurationTypeBuilder {
     }
     /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>The <code>errorlevel</code> selection of logs that a user pool sends for detailed activity logging.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -64,8 +63,7 @@ impl LogConfigurationTypeBuilder {
     }
     /// <p>The source of events that your user pool sends for detailed activity logging.</p>
     pub fn set_event_source(mut self, input: ::std::option::Option<crate::types::EventSourceName>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p>The source of events that your user pool sends for detailed activity logging.</p>
     pub fn get_event_source(&self) -> &::std::option::Option<crate::types::EventSourceName> {
@@ -78,8 +76,7 @@ impl LogConfigurationTypeBuilder {
     }
     /// <p>The CloudWatch logging destination of a user pool.</p>
     pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfigurationType>) -> Self {
-        self.cloud_watch_logs_configuration = input;
-        self
+        self.cloud_watch_logs_configuration = input; self
     }
     /// <p>The CloudWatch logging destination of a user pool.</p>
     pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfigurationType> {
@@ -90,20 +87,22 @@ impl LogConfigurationTypeBuilder {
     /// - [`log_level`](crate::types::builders::LogConfigurationTypeBuilder::log_level)
     /// - [`event_source`](crate::types::builders::LogConfigurationTypeBuilder::event_source)
     pub fn build(self) -> ::std::result::Result<crate::types::LogConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LogConfigurationType {
-            log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_level",
-                    "log_level was not specified but it is required when building LogConfigurationType",
-                )
-            })?,
-            event_source: self.event_source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_source",
-                    "event_source was not specified but it is required when building LogConfigurationType",
-                )
-            })?,
-            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LogConfigurationType {
+                log_level: self.log_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_level", "log_level was not specified but it is required when building LogConfigurationType")
+                    )?
+                ,
+                event_source: self.event_source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_source", "event_source was not specified but it is required when building LogConfigurationType")
+                    )?
+                ,
+                cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+                ,
+            }
+        )
     }
 }
+

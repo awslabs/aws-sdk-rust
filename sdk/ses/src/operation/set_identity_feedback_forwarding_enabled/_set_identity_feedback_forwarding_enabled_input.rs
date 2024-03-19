@@ -3,15 +3,15 @@
 /// <p>Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetIdentityFeedbackForwardingEnabledInput {
+pub struct SetIdentityFeedbackForwardingEnabledInput  {
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub identity: ::std::option::Option<::std::string::String>,
     /// <p>Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub forwarding_enabled: ::std::option::Option<bool>,
 }
-impl SetIdentityFeedbackForwardingEnabledInput {
+impl  SetIdentityFeedbackForwardingEnabledInput  {
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-    pub fn identity(&self) -> ::std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<& str> {
         self.identity.as_deref()
     }
     /// <p>Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
@@ -42,8 +42,7 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
     }
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity = input;
-        self
+        self.identity = input; self
     }
     /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +56,22 @@ impl SetIdentityFeedbackForwardingEnabledInputBuilder {
     }
     /// <p>Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub fn set_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.forwarding_enabled = input;
-        self
+        self.forwarding_enabled = input; self
     }
     /// <p>Sets whether Amazon SES forwards bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES forwards bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES publishes bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub fn get_forwarding_enabled(&self) -> &::std::option::Option<bool> {
         &self.forwarding_enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityFeedbackForwardingEnabledInput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledInput {
-                identity: self.identity,
-                forwarding_enabled: self.forwarding_enabled,
-            },
+                identity: self.identity
+                ,
+                forwarding_enabled: self.forwarding_enabled
+                ,
+            }
         )
     }
 }
+

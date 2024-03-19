@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteHitInput {
+pub struct DeleteHitInput  {
     /// <p>The ID of the HIT to be deleted.</p>
     pub hit_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteHitInput {
+impl  DeleteHitInput  {
     /// <p>The ID of the HIT to be deleted.</p>
-    pub fn hit_id(&self) -> ::std::option::Option<&str> {
+    pub fn hit_id(&self) -> ::std::option::Option<& str> {
         self.hit_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteHitInputBuilder {
     }
     /// <p>The ID of the HIT to be deleted.</p>
     pub fn set_hit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
     }
     /// <p>The ID of the HIT to be deleted.</p>
     pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteHitInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteHitInput`](crate::operation::delete_hit::DeleteHitInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_hit::DeleteHitInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_hit::DeleteHitInput { hit_id: self.hit_id })
+        ::std::result::Result::Ok(
+            crate::operation::delete_hit::DeleteHitInput {
+                hit_id: self.hit_id
+                ,
+            }
+        )
     }
 }
+

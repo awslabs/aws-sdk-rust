@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBusinessReportScheduleInput {
+pub struct DeleteBusinessReportScheduleInput  {
     /// <p>The ARN of the business report schedule.</p>
     pub schedule_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteBusinessReportScheduleInput {
+impl  DeleteBusinessReportScheduleInput  {
     /// <p>The ARN of the business report schedule.</p>
-    pub fn schedule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schedule_arn(&self) -> ::std::option::Option<& str> {
         self.schedule_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteBusinessReportScheduleInputBuilder {
     }
     /// <p>The ARN of the business report schedule.</p>
     pub fn set_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule_arn = input;
-        self
+        self.schedule_arn = input; self
     }
     /// <p>The ARN of the business report schedule.</p>
     pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_arn
     }
     /// Consumes the builder and constructs a [`DeleteBusinessReportScheduleInput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput {
-            schedule_arn: self.schedule_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput {
+                schedule_arn: self.schedule_arn
+                ,
+            }
+        )
     }
 }
+

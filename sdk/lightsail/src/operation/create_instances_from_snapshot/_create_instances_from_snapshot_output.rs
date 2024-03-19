@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInstancesFromSnapshotOutput {
+pub struct CreateInstancesFromSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
-impl CreateInstancesFromSnapshotOutput {
+impl  CreateInstancesFromSnapshotOutput  {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
-    pub fn operations(&self) -> &[crate::types::Operation] {
-        self.operations.as_deref().unwrap_or_default()
+    pub fn operations(&self) -> & [crate::types::Operation] {
+        self.operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateInstancesFromSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateInstancesFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateInstancesFromSnapshotOutput`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput).
     pub fn builder() -> crate::operation::create_instances_from_snapshot::builders::CreateInstancesFromSnapshotOutputBuilder {
@@ -31,7 +32,7 @@ impl CreateInstancesFromSnapshotOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateInstancesFromSnapshotOutputBuilder {
-    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>,
     _request_id: Option<String>,
 }
 impl CreateInstancesFromSnapshotOutputBuilder {
@@ -42,33 +43,34 @@ impl CreateInstancesFromSnapshotOutputBuilder {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-        v.push(input);
-        self.operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>) -> Self {
-        self.operations = input;
-        self
+    pub fn set_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Operation>>) -> Self {
+        self.operations = input; self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+    pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Operation>> {
         &self.operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateInstancesFromSnapshotOutput`](crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput).
     pub fn build(self) -> crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput {
         crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput {
-            operations: self.operations,
+            operations: self.operations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

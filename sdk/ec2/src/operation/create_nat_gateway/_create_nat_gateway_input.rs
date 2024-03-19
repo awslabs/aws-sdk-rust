@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNatGatewayInput {
+pub struct CreateNatGatewayInput  {
     /// <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -13,26 +13,26 @@ pub struct CreateNatGatewayInput {
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the NAT gateway.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
     pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub secondary_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub secondary_allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub secondary_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub secondary_private_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
 }
-impl CreateNatGatewayInput {
+impl  CreateNatGatewayInput  {
     /// <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
-    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<& str> {
         self.allocation_id.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 64 ASCII characters.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -40,34 +40,37 @@ impl CreateNatGatewayInput {
         self.dry_run
     }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The tags to assign to the NAT gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
-    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+    pub fn connectivity_type(&self) -> ::std::option::Option<& crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
     /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_allocation_ids.is_none()`.
-    pub fn secondary_allocation_ids(&self) -> &[::std::string::String] {
-        self.secondary_allocation_ids.as_deref().unwrap_or_default()
+    pub fn secondary_allocation_ids(&self) -> & [::std::string::String] {
+        self.secondary_allocation_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_private_ip_addresses.is_none()`.
-    pub fn secondary_private_ip_addresses(&self) -> &[::std::string::String] {
-        self.secondary_private_ip_addresses.as_deref().unwrap_or_default()
+    pub fn secondary_private_ip_addresses(&self) -> & [::std::string::String] {
+        self.secondary_private_ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
@@ -89,11 +92,11 @@ pub struct CreateNatGatewayInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) secondary_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) secondary_private_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) secondary_allocation_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) secondary_private_ip_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
 }
 impl CreateNatGatewayInputBuilder {
@@ -104,8 +107,7 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub fn set_allocation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.allocation_id = input;
-        self
+        self.allocation_id = input; self
     }
     /// <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
     pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +122,7 @@ impl CreateNatGatewayInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 64 ASCII characters.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 64 ASCII characters.</p>
@@ -135,8 +136,7 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -150,8 +150,7 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,17 +163,16 @@ impl CreateNatGatewayInputBuilder {
     /// <p>The tags to assign to the NAT gateway.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to assign to the NAT gateway.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to assign to the NAT gateway.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
@@ -184,8 +182,7 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
     pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
-        self.connectivity_type = input;
-        self
+        self.connectivity_type = input; self
     }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
     pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
@@ -198,8 +195,7 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,17 +208,16 @@ impl CreateNatGatewayInputBuilder {
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn secondary_allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secondary_allocation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.secondary_allocation_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.secondary_allocation_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn set_secondary_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.secondary_allocation_ids = input;
-        self
+    pub fn set_secondary_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.secondary_allocation_ids = input; self
     }
     /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn get_secondary_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secondary_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.secondary_allocation_ids
     }
     /// Appends an item to `secondary_private_ip_addresses`.
@@ -232,17 +227,16 @@ impl CreateNatGatewayInputBuilder {
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn secondary_private_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.secondary_private_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.secondary_private_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.secondary_private_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn set_secondary_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.secondary_private_ip_addresses = input;
-        self
+    pub fn set_secondary_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.secondary_private_ip_addresses = input; self
     }
     /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn get_secondary_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_secondary_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.secondary_private_ip_addresses
     }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
@@ -252,28 +246,38 @@ impl CreateNatGatewayInputBuilder {
     }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.secondary_private_ip_address_count = input;
-        self
+        self.secondary_private_ip_address_count = input; self
     }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
         &self.secondary_private_ip_address_count
     }
     /// Consumes the builder and constructs a [`CreateNatGatewayInput`](crate::operation::create_nat_gateway::CreateNatGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_nat_gateway::CreateNatGatewayInput {
-            allocation_id: self.allocation_id,
-            client_token: self.client_token,
-            dry_run: self.dry_run,
-            subnet_id: self.subnet_id,
-            tag_specifications: self.tag_specifications,
-            connectivity_type: self.connectivity_type,
-            private_ip_address: self.private_ip_address,
-            secondary_allocation_ids: self.secondary_allocation_ids,
-            secondary_private_ip_addresses: self.secondary_private_ip_addresses,
-            secondary_private_ip_address_count: self.secondary_private_ip_address_count,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_nat_gateway::CreateNatGatewayInput {
+                allocation_id: self.allocation_id
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+                subnet_id: self.subnet_id
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                connectivity_type: self.connectivity_type
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                secondary_allocation_ids: self.secondary_allocation_ids
+                ,
+                secondary_private_ip_addresses: self.secondary_private_ip_addresses
+                ,
+                secondary_private_ip_address_count: self.secondary_private_ip_address_count
+                ,
+            }
+        )
     }
 }
+

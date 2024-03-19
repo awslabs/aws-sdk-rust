@@ -3,30 +3,29 @@
 /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayConfiguration {
+pub struct TransitGatewayConfiguration  {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
     pub transit_gateway_id: ::std::string::String,
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub routable_cidr_space: ::std::string::String,
     /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
-    pub attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
+    pub attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkAclEntry>>,
 }
-impl TransitGatewayConfiguration {
+impl  TransitGatewayConfiguration  {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
-    pub fn transit_gateway_id(&self) -> &str {
-        use std::ops::Deref;
-        self.transit_gateway_id.deref()
+    pub fn transit_gateway_id(&self) -> & str {
+        use std::ops::Deref; self.transit_gateway_id.deref()
     }
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
-    pub fn routable_cidr_space(&self) -> &str {
-        use std::ops::Deref;
-        self.routable_cidr_space.deref()
+    pub fn routable_cidr_space(&self) -> & str {
+        use std::ops::Deref; self.routable_cidr_space.deref()
     }
     /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_network_acl_configuration.is_none()`.
-    pub fn attachment_network_acl_configuration(&self) -> &[crate::types::NetworkAclEntry] {
-        self.attachment_network_acl_configuration.as_deref().unwrap_or_default()
+    pub fn attachment_network_acl_configuration(&self) -> & [crate::types::NetworkAclEntry] {
+        self.attachment_network_acl_configuration.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TransitGatewayConfiguration {
@@ -42,7 +41,7 @@ impl TransitGatewayConfiguration {
 pub struct TransitGatewayConfigurationBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) routable_cidr_space: ::std::option::Option<::std::string::String>,
-    pub(crate) attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>,
+    pub(crate) attachment_network_acl_configuration: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkAclEntry>>,
 }
 impl TransitGatewayConfigurationBuilder {
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
@@ -53,8 +52,7 @@ impl TransitGatewayConfigurationBuilder {
     }
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The identifier of the transit gateway created by the customer to connect outbound traffics from kdb network to your internal network.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,7 @@ impl TransitGatewayConfigurationBuilder {
     }
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub fn set_routable_cidr_space(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routable_cidr_space = input;
-        self
+        self.routable_cidr_space = input; self
     }
     /// <p>The routing CIDR on behalf of kdb environment. It could be any "/26 range in the 100.64.0.0 CIDR space. After providing, it will be added to the customer's transit gateway routing table so that the traffics could be routed to kdb network.</p>
     pub fn get_routable_cidr_space(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,17 +79,16 @@ impl TransitGatewayConfigurationBuilder {
     /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
     pub fn attachment_network_acl_configuration(mut self, input: crate::types::NetworkAclEntry) -> Self {
         let mut v = self.attachment_network_acl_configuration.unwrap_or_default();
-        v.push(input);
-        self.attachment_network_acl_configuration = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attachment_network_acl_configuration = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
-    pub fn set_attachment_network_acl_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>>) -> Self {
-        self.attachment_network_acl_configuration = input;
-        self
+    pub fn set_attachment_network_acl_configuration(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkAclEntry>>) -> Self {
+        self.attachment_network_acl_configuration = input; self
     }
     /// <p>The rules that define how you manage the outbound traffic from kdb network to your internal network.</p>
-    pub fn get_attachment_network_acl_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkAclEntry>> {
+    pub fn get_attachment_network_acl_configuration(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkAclEntry>> {
         &self.attachment_network_acl_configuration
     }
     /// Consumes the builder and constructs a [`TransitGatewayConfiguration`](crate::types::TransitGatewayConfiguration).
@@ -100,20 +96,22 @@ impl TransitGatewayConfigurationBuilder {
     /// - [`transit_gateway_id`](crate::types::builders::TransitGatewayConfigurationBuilder::transit_gateway_id)
     /// - [`routable_cidr_space`](crate::types::builders::TransitGatewayConfigurationBuilder::routable_cidr_space)
     pub fn build(self) -> ::std::result::Result<crate::types::TransitGatewayConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TransitGatewayConfiguration {
-            transit_gateway_id: self.transit_gateway_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "transit_gateway_id",
-                    "transit_gateway_id was not specified but it is required when building TransitGatewayConfiguration",
-                )
-            })?,
-            routable_cidr_space: self.routable_cidr_space.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "routable_cidr_space",
-                    "routable_cidr_space was not specified but it is required when building TransitGatewayConfiguration",
-                )
-            })?,
-            attachment_network_acl_configuration: self.attachment_network_acl_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TransitGatewayConfiguration {
+                transit_gateway_id: self.transit_gateway_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("transit_gateway_id", "transit_gateway_id was not specified but it is required when building TransitGatewayConfiguration")
+                    )?
+                ,
+                routable_cidr_space: self.routable_cidr_space
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("routable_cidr_space", "routable_cidr_space was not specified but it is required when building TransitGatewayConfiguration")
+                    )?
+                ,
+                attachment_network_acl_configuration: self.attachment_network_acl_configuration
+                ,
+            }
+        )
     }
 }
+

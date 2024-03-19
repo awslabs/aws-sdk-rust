@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDeploymentsOutput {
+pub struct GetDeploymentsOutput  {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>,
+    pub deployments: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeDeployment>>,
     _request_id: Option<String>,
 }
-impl GetDeploymentsOutput {
+impl  GetDeploymentsOutput  {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployments.is_none()`.
-    pub fn deployments(&self) -> &[crate::types::EdgeDeployment] {
-        self.deployments.as_deref().unwrap_or_default()
+    pub fn deployments(&self) -> & [crate::types::EdgeDeployment] {
+        self.deployments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
     pub fn builder() -> crate::operation::get_deployments::builders::GetDeploymentsOutputBuilder {
@@ -31,7 +32,7 @@ impl GetDeploymentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDeploymentsOutputBuilder {
-    pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>,
+    pub(crate) deployments: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeDeployment>>,
     _request_id: Option<String>,
 }
 impl GetDeploymentsOutputBuilder {
@@ -42,33 +43,34 @@ impl GetDeploymentsOutputBuilder {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
     pub fn deployments(mut self, input: crate::types::EdgeDeployment) -> Self {
         let mut v = self.deployments.unwrap_or_default();
-        v.push(input);
-        self.deployments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.deployments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>>) -> Self {
-        self.deployments = input;
-        self
+    pub fn set_deployments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeDeployment>>) -> Self {
+        self.deployments = input; self
     }
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
-    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeployment>> {
+    pub fn get_deployments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EdgeDeployment>> {
         &self.deployments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
     pub fn build(self) -> crate::operation::get_deployments::GetDeploymentsOutput {
         crate::operation::get_deployments::GetDeploymentsOutput {
-            deployments: self.deployments,
+            deployments: self.deployments
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -318,3 +318,4 @@ pub mod test_connection;
 
 /// Types for the `UpdateSubscriptionsToEventBridge` operation.
 pub mod update_subscriptions_to_event_bridge;
+

@@ -4,10 +4,10 @@
 /// <p><i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SeedUrlConfiguration {
+pub struct SeedUrlConfiguration  {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub seed_urls: ::std::vec::Vec<::std::string::String>,
+    pub seed_urls: ::std::vec::Vec::<::std::string::String>,
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
     /// <li>
@@ -20,12 +20,11 @@ pub struct SeedUrlConfiguration {
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub web_crawler_mode: ::std::option::Option<crate::types::WebCrawlerMode>,
 }
-impl SeedUrlConfiguration {
+impl  SeedUrlConfiguration  {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub fn seed_urls(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.seed_urls.deref()
+    pub fn seed_urls(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.seed_urls.deref()
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
@@ -37,7 +36,7 @@ impl SeedUrlConfiguration {
     /// <p><code>EVERYTHING</code>—crawl the website host names with subdomains and other domains that the web pages link to.</p></li>
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
-    pub fn web_crawler_mode(&self) -> ::std::option::Option<&crate::types::WebCrawlerMode> {
+    pub fn web_crawler_mode(&self) -> ::std::option::Option<& crate::types::WebCrawlerMode> {
         self.web_crawler_mode.as_ref()
     }
 }
@@ -52,7 +51,7 @@ impl SeedUrlConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SeedUrlConfigurationBuilder {
-    pub(crate) seed_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) seed_urls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) web_crawler_mode: ::std::option::Option<crate::types::WebCrawlerMode>,
 }
 impl SeedUrlConfigurationBuilder {
@@ -64,19 +63,18 @@ impl SeedUrlConfigurationBuilder {
     /// <p>The list can include a maximum of 100 seed URLs.</p>
     pub fn seed_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.seed_urls.unwrap_or_default();
-        v.push(input.into());
-        self.seed_urls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.seed_urls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub fn set_seed_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.seed_urls = input;
-        self
+    pub fn set_seed_urls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.seed_urls = input; self
     }
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
-    pub fn get_seed_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_seed_urls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.seed_urls
     }
     /// <p>You can choose one of the following modes:</p>
@@ -104,8 +102,7 @@ impl SeedUrlConfigurationBuilder {
     /// </ul>
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub fn set_web_crawler_mode(mut self, input: ::std::option::Option<crate::types::WebCrawlerMode>) -> Self {
-        self.web_crawler_mode = input;
-        self
+        self.web_crawler_mode = input; self
     }
     /// <p>You can choose one of the following modes:</p>
     /// <ul>
@@ -124,14 +121,17 @@ impl SeedUrlConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`seed_urls`](crate::types::builders::SeedUrlConfigurationBuilder::seed_urls)
     pub fn build(self) -> ::std::result::Result<crate::types::SeedUrlConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SeedUrlConfiguration {
-            seed_urls: self.seed_urls.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "seed_urls",
-                    "seed_urls was not specified but it is required when building SeedUrlConfiguration",
-                )
-            })?,
-            web_crawler_mode: self.web_crawler_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SeedUrlConfiguration {
+                seed_urls: self.seed_urls
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("seed_urls", "seed_urls was not specified but it is required when building SeedUrlConfiguration")
+                    )?
+                ,
+                web_crawler_mode: self.web_crawler_mode
+                ,
+            }
+        )
     }
 }
+

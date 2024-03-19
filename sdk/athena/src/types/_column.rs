@@ -3,7 +3,7 @@
 /// <p>Contains metadata for a column in a table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The name of the column.</p>
     pub name: ::std::string::String,
     /// <p>The data type of the column.</p>
@@ -11,18 +11,17 @@ pub struct Column {
     /// <p>Optional information about the column.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl Column {
+impl  Column  {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Optional information about the column.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl ColumnBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl ColumnBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl ColumnBuilder {
     }
     /// <p>Optional information about the column.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>Optional information about the column.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl ColumnBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ColumnBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::Column, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Column {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Column",
-                )
-            })?,
-            r#type: self.r#type,
-            comment: self.comment,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Column {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Column")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

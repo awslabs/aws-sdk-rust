@@ -3,25 +3,23 @@
 /// <p>A username and password credential pair to use to import a data source resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssetBundleImportJobDataSourceCredentialPair {
+pub struct AssetBundleImportJobDataSourceCredentialPair  {
     /// <p>The username for the data source connection.</p>
     pub username: ::std::string::String,
     /// <p>The password for the data source connection.</p>
     pub password: ::std::string::String,
 }
-impl AssetBundleImportJobDataSourceCredentialPair {
+impl  AssetBundleImportJobDataSourceCredentialPair  {
     /// <p>The username for the data source connection.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>The password for the data source connection.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
 }
-impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialPair {
+impl  ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialPair  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssetBundleImportJobDataSourceCredentialPair");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl AssetBundleImportJobDataSourceCredentialPairBuilder {
     }
     /// <p>The username for the data source connection.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username for the data source connection.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl AssetBundleImportJobDataSourceCredentialPairBuilder {
     }
     /// <p>The password for the data source connection.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for the data source connection.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,23 +74,21 @@ impl AssetBundleImportJobDataSourceCredentialPairBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder::username)
     /// - [`password`](crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder::password)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceCredentialPair, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSourceCredentialPair {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building AssetBundleImportJobDataSourceCredentialPair",
-                )
-            })?,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building AssetBundleImportJobDataSourceCredentialPair",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceCredentialPair, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobDataSourceCredentialPair {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building AssetBundleImportJobDataSourceCredentialPair")
+                    )?
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building AssetBundleImportJobDataSourceCredentialPair")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialPairBuilder {
@@ -105,3 +99,4 @@ impl ::std::fmt::Debug for AssetBundleImportJobDataSourceCredentialPairBuilder {
         formatter.finish()
     }
 }
+

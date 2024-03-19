@@ -3,11 +3,11 @@
 /// <p>The options for customizing a security control parameter with a boolean. For a boolean parameter, the options are <code>true</code> and <code>false</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BooleanConfigurationOptions {
+pub struct BooleanConfigurationOptions  {
     /// <p>The Security Hub default value for a boolean parameter.</p>
     pub default_value: ::std::option::Option<bool>,
 }
-impl BooleanConfigurationOptions {
+impl  BooleanConfigurationOptions  {
     /// <p>The Security Hub default value for a boolean parameter.</p>
     pub fn default_value(&self) -> ::std::option::Option<bool> {
         self.default_value
@@ -34,8 +34,7 @@ impl BooleanConfigurationOptionsBuilder {
     }
     /// <p>The Security Hub default value for a boolean parameter.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a boolean parameter.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl BooleanConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`BooleanConfigurationOptions`](crate::types::BooleanConfigurationOptions).
     pub fn build(self) -> crate::types::BooleanConfigurationOptions {
         crate::types::BooleanConfigurationOptions {
-            default_value: self.default_value,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

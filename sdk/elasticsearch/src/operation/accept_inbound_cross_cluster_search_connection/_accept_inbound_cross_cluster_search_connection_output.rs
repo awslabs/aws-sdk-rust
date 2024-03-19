@@ -3,26 +3,25 @@
 /// <p>The result of a <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation. Contains details of accepted inbound connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptInboundCrossClusterSearchConnectionOutput {
+pub struct AcceptInboundCrossClusterSearchConnectionOutput  {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection.</p>
     pub cross_cluster_search_connection: ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     _request_id: Option<String>,
 }
-impl AcceptInboundCrossClusterSearchConnectionOutput {
+impl  AcceptInboundCrossClusterSearchConnectionOutput  {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection.</p>
-    pub fn cross_cluster_search_connection(&self) -> ::std::option::Option<&crate::types::InboundCrossClusterSearchConnection> {
+    pub fn cross_cluster_search_connection(&self) -> ::std::option::Option<& crate::types::InboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AcceptInboundCrossClusterSearchConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AcceptInboundCrossClusterSearchConnectionOutput {
     /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput).
-    pub fn builder(
-    ) -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionOutputBuilder {
         crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionOutputBuilder::default()
     }
 }
@@ -42,27 +41,28 @@ impl AcceptInboundCrossClusterSearchConnectionOutputBuilder {
     }
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection.</p>
     pub fn set_cross_cluster_search_connection(mut self, input: ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>) -> Self {
-        self.cross_cluster_search_connection = input;
-        self
+        self.cross_cluster_search_connection = input; self
     }
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection.</p>
     pub fn get_cross_cluster_search_connection(&self) -> &::std::option::Option<crate::types::InboundCrossClusterSearchConnection> {
         &self.cross_cluster_search_connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput).
     pub fn build(self) -> crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput {
         crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput {
-            cross_cluster_search_connection: self.cross_cluster_search_connection,
+            cross_cluster_search_connection: self.cross_cluster_search_connection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

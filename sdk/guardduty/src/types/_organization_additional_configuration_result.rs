@@ -3,7 +3,7 @@
 /// <p>A list of additional configuration which will be configured for the organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationAdditionalConfigurationResult {
+pub struct OrganizationAdditionalConfigurationResult  {
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
     pub name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
@@ -18,9 +18,9 @@ pub struct OrganizationAdditionalConfigurationResult {
     /// </ul>
     pub auto_enable: ::std::option::Option<crate::types::OrgFeatureStatus>,
 }
-impl OrganizationAdditionalConfigurationResult {
+impl  OrganizationAdditionalConfigurationResult  {
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
@@ -33,7 +33,7 @@ impl OrganizationAdditionalConfigurationResult {
     /// <li>
     /// <p><code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p></li>
     /// </ul>
-    pub fn auto_enable(&self) -> ::std::option::Option<&crate::types::OrgFeatureStatus> {
+    pub fn auto_enable(&self) -> ::std::option::Option<& crate::types::OrgFeatureStatus> {
         self.auto_enable.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     }
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
@@ -91,8 +90,7 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     /// <p><code>NONE</code>: Indicates that the additional configuration will not be automatically enabled for any account in the organization. The administrator must manage the additional configuration for each account individually.</p></li>
     /// </ul>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// <p>Describes the status of the additional configuration that is configured for the member accounts within the organization. One of the following values is the status for the entire organization:</p>
     /// <ul>
@@ -110,8 +108,11 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     /// Consumes the builder and constructs a [`OrganizationAdditionalConfigurationResult`](crate::types::OrganizationAdditionalConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationAdditionalConfigurationResult {
         crate::types::OrganizationAdditionalConfigurationResult {
-            name: self.name,
-            auto_enable: self.auto_enable,
+            name: self.name
+            ,
+            auto_enable: self.auto_enable
+            ,
         }
     }
 }
+

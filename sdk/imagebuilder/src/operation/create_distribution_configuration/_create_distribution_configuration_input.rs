@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDistributionConfigurationInput {
+pub struct CreateDistributionConfigurationInput  {
     /// <p>The name of the distribution configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the distribution configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distributions of the distribution configuration.</p>
-    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
     /// <p>The tags of the distribution configuration.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateDistributionConfigurationInput {
+impl  CreateDistributionConfigurationInput  {
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distributions of the distribution configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
-    pub fn distributions(&self) -> &[crate::types::Distribution] {
-        self.distributions.as_deref().unwrap_or_default()
+    pub fn distributions(&self) -> & [crate::types::Distribution] {
+        self.distributions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -51,8 +52,8 @@ impl CreateDistributionConfigurationInput {
 pub struct CreateDistributionConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateDistributionConfigurationInputBuilder {
@@ -64,8 +65,7 @@ impl CreateDistributionConfigurationInputBuilder {
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateDistributionConfigurationInputBuilder {
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +91,16 @@ impl CreateDistributionConfigurationInputBuilder {
     /// <p>The distributions of the distribution configuration.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Distribution>> {
         &self.distributions
     }
     /// Adds a key-value pair to `tags`.
@@ -112,17 +110,16 @@ impl CreateDistributionConfigurationInputBuilder {
     /// <p>The tags of the distribution configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -133,28 +130,28 @@ impl CreateDistributionConfigurationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDistributionConfigurationInput`](crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_distribution_configuration::CreateDistributionConfigurationInput {
-                name: self.name,
-                description: self.description,
-                distributions: self.distributions,
-                tags: self.tags,
-                client_token: self.client_token,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+                distributions: self.distributions
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

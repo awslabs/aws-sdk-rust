@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAgreementOutput {
+pub struct DescribeAgreementOutput  {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     pub agreement: ::std::option::Option<crate::types::DescribedAgreement>,
     _request_id: Option<String>,
 }
-impl DescribeAgreementOutput {
+impl  DescribeAgreementOutput  {
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
-    pub fn agreement(&self) -> ::std::option::Option<&crate::types::DescribedAgreement> {
+    pub fn agreement(&self) -> ::std::option::Option<& crate::types::DescribedAgreement> {
         self.agreement.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAgreementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAgreementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
     pub fn builder() -> crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     pub fn set_agreement(mut self, input: ::std::option::Option<crate::types::DescribedAgreement>) -> Self {
-        self.agreement = input;
-        self
+        self.agreement = input; self
     }
     /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
     pub fn get_agreement(&self) -> &::std::option::Option<crate::types::DescribedAgreement> {
         &self.agreement
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
     pub fn build(self) -> crate::operation::describe_agreement::DescribeAgreementOutput {
         crate::operation::describe_agreement::DescribeAgreementOutput {
-            agreement: self.agreement,
+            agreement: self.agreement
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

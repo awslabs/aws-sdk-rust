@@ -3,7 +3,7 @@
 /// <p>Represents the input of an <code>UpdateWorkspaceAlias</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateWorkspaceAliasInput {
+pub struct UpdateWorkspaceAliasInput  {
     /// <p>The ID of the workspace to update.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The new alias for the workspace. It does not need to be unique.</p>
@@ -12,18 +12,18 @@ pub struct UpdateWorkspaceAliasInput {
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateWorkspaceAliasInput {
+impl  UpdateWorkspaceAliasInput  {
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The new alias for the workspace. It does not need to be unique.</p>
     /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
-    pub fn alias(&self) -> ::std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl UpdateWorkspaceAliasInputBuilder {
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl UpdateWorkspaceAliasInputBuilder {
     /// <p>The new alias for the workspace. It does not need to be unique.</p>
     /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The new alias for the workspace. It does not need to be unique.</p>
     /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
@@ -82,22 +80,24 @@ impl UpdateWorkspaceAliasInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
-            workspace_id: self.workspace_id,
-            alias: self.alias,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
+                workspace_id: self.workspace_id
+                ,
+                alias: self.alias
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

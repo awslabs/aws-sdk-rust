@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNodegroupInput {
+pub struct DescribeNodegroupInput  {
     /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node group to describe.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNodegroupInput {
+impl  DescribeNodegroupInput  {
     /// <p>The name of your cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the node group to describe.</p>
-    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<& str> {
         self.nodegroup_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeNodegroupInputBuilder {
     }
     /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeNodegroupInputBuilder {
     }
     /// <p>The name of the node group to describe.</p>
     pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nodegroup_name = input;
-        self
+        self.nodegroup_name = input; self
     }
     /// <p>The name of the node group to describe.</p>
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nodegroup_name
     }
     /// Consumes the builder and constructs a [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_nodegroup::DescribeNodegroupInput {
-            cluster_name: self.cluster_name,
-            nodegroup_name: self.nodegroup_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_nodegroup::DescribeNodegroupInput {
+                cluster_name: self.cluster_name
+                ,
+                nodegroup_name: self.nodegroup_name
+                ,
+            }
+        )
     }
 }
+

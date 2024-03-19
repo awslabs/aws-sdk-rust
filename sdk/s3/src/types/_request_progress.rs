@@ -3,11 +3,11 @@
 /// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be sent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequestProgress {
+pub struct RequestProgress  {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl RequestProgress {
+impl  RequestProgress  {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl RequestProgressBuilder {
     }
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl RequestProgressBuilder {
     }
     /// Consumes the builder and constructs a [`RequestProgress`](crate::types::RequestProgress).
     pub fn build(self) -> crate::types::RequestProgress {
-        crate::types::RequestProgress { enabled: self.enabled }
+        crate::types::RequestProgress {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

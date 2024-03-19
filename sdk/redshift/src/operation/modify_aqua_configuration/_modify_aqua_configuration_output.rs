@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyAquaConfigurationOutput {
+pub struct ModifyAquaConfigurationOutput  {
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub aqua_configuration: ::std::option::Option<crate::types::AquaConfiguration>,
     _request_id: Option<String>,
 }
-impl ModifyAquaConfigurationOutput {
+impl  ModifyAquaConfigurationOutput  {
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
-    pub fn aqua_configuration(&self) -> ::std::option::Option<&crate::types::AquaConfiguration> {
+    pub fn aqua_configuration(&self) -> ::std::option::Option<& crate::types::AquaConfiguration> {
         self.aqua_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyAquaConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyAquaConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ModifyAquaConfigurationOutput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput).
     pub fn builder() -> crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyAquaConfigurationOutputBuilder {
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn set_aqua_configuration(mut self, input: ::std::option::Option<crate::types::AquaConfiguration>) -> Self {
-        self.aqua_configuration = input;
-        self
+        self.aqua_configuration = input; self
     }
     /// <p>This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn get_aqua_configuration(&self) -> &::std::option::Option<crate::types::AquaConfiguration> {
         &self.aqua_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyAquaConfigurationOutput`](crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput).
     pub fn build(self) -> crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput {
         crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput {
-            aqua_configuration: self.aqua_configuration,
+            aqua_configuration: self.aqua_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

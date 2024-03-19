@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnclaimDeviceInput {
+pub struct UnclaimDeviceInput  {
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
 }
-impl UnclaimDeviceInput {
+impl  UnclaimDeviceInput  {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl UnclaimDeviceInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`UnclaimDeviceInput`](crate::operation::unclaim_device::UnclaimDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::unclaim_device::UnclaimDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::unclaim_device::UnclaimDeviceInput { device_id: self.device_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::unclaim_device::UnclaimDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::unclaim_device::UnclaimDeviceInput {
+                device_id: self.device_id
+                ,
+            }
+        )
     }
 }
+

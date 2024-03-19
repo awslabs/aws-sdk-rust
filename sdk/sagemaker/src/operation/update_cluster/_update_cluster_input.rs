@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateClusterInput {
+pub struct UpdateClusterInput  {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the instance groups to update.</p>
-    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    pub instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupSpecification>>,
 }
-impl UpdateClusterInput {
+impl  UpdateClusterInput  {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Specify the instance groups to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
-    pub fn instance_groups(&self) -> &[crate::types::ClusterInstanceGroupSpecification] {
-        self.instance_groups.as_deref().unwrap_or_default()
+    pub fn instance_groups(&self) -> & [crate::types::ClusterInstanceGroupSpecification] {
+        self.instance_groups.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateClusterInput {
@@ -32,7 +33,7 @@ impl UpdateClusterInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupSpecification>>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -43,8 +44,7 @@ impl UpdateClusterInputBuilder {
     }
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl UpdateClusterInputBuilder {
     /// <p>Specify the instance groups to update.</p>
     pub fn instance_groups(mut self, input: crate::types::ClusterInstanceGroupSpecification) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
-        v.push(input);
-        self.instance_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify the instance groups to update.</p>
-    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>) -> Self {
-        self.instance_groups = input;
-        self
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupSpecification>>) -> Self {
+        self.instance_groups = input; self
     }
     /// <p>Specify the instance groups to update.</p>
-    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupSpecification>> {
         &self.instance_groups
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_name: self.cluster_name,
-            instance_groups: self.instance_groups,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_cluster::UpdateClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                instance_groups: self.instance_groups
+                ,
+            }
+        )
     }
 }
+

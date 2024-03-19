@@ -2,22 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListChannelMembershipsForAppInstanceUser`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`app_instance_user_arn(impl Into<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::set_app_instance_user_arn):<br>required: **false**<br><p>The ARN of the <code>AppInstanceUser</code>s</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of users that you want returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::set_next_token):<br>required: **false**<br><p>The token returned from previous API requests until the number of channel memberships is reached.</p><br>
     ///   - [`chime_bearer(impl Into<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::set_chime_bearer):<br>required: **false**<br><p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p><br>
-    /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
+                            /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
     ///   - [`channel_memberships(Option<Vec::<ChannelMembershipForAppInstanceUserSummary>>)`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError)
+                            /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserError)
     #[deprecated(note = "Replaced by ListChannelMembershipsForAppInstanceUser in the Amazon Chime SDK Messaging Namespace")]
-    pub fn list_channel_memberships_for_app_instance_user(
-        &self,
-    ) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder {
-        crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+    pub fn list_channel_memberships_for_app_instance_user(&self) -> crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder {
+                                crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserFluentBuilder::new(self.handle.clone())
+                            }
 }
+

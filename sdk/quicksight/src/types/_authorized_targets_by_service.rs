@@ -3,22 +3,23 @@
 /// <p>The authorized targets that are associated with a service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizedTargetsByService {
+pub struct AuthorizedTargetsByService  {
     /// <p>The name of the Amazon Web Services service.</p>
     pub service: ::std::option::Option<crate::types::ServiceType>,
     /// <p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>
-    pub authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AuthorizedTargetsByService {
+impl  AuthorizedTargetsByService  {
     /// <p>The name of the Amazon Web Services service.</p>
-    pub fn service(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service.as_ref()
     }
     /// <p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_targets.is_none()`.
-    pub fn authorized_targets(&self) -> &[::std::string::String] {
-        self.authorized_targets.as_deref().unwrap_or_default()
+    pub fn authorized_targets(&self) -> & [::std::string::String] {
+        self.authorized_targets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AuthorizedTargetsByService {
@@ -33,7 +34,7 @@ impl AuthorizedTargetsByService {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AuthorizedTargetsByServiceBuilder {
     pub(crate) service: ::std::option::Option<crate::types::ServiceType>,
-    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorized_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AuthorizedTargetsByServiceBuilder {
     /// <p>The name of the Amazon Web Services service.</p>
@@ -43,8 +44,7 @@ impl AuthorizedTargetsByServiceBuilder {
     }
     /// <p>The name of the Amazon Web Services service.</p>
     pub fn set_service(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The name of the Amazon Web Services service.</p>
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -57,24 +57,26 @@ impl AuthorizedTargetsByServiceBuilder {
     /// <p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>
     pub fn authorized_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_targets.unwrap_or_default();
-        v.push(input.into());
-        self.authorized_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.authorized_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>
-    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.authorized_targets = input;
-        self
+    pub fn set_authorized_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.authorized_targets = input; self
     }
     /// <p>Aist of authorized targets that are represented by IAM Identity Center application ARNs.</p>
-    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_authorized_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.authorized_targets
     }
     /// Consumes the builder and constructs a [`AuthorizedTargetsByService`](crate::types::AuthorizedTargetsByService).
     pub fn build(self) -> crate::types::AuthorizedTargetsByService {
         crate::types::AuthorizedTargetsByService {
-            service: self.service,
-            authorized_targets: self.authorized_targets,
+            service: self.service
+            ,
+            authorized_targets: self.authorized_targets
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The summary of the application version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationVersionSummary {
+pub struct ApplicationVersionSummary  {
     /// <p>The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub application_version_id: i64,
     /// <p>The status of the application.</p>
     pub application_status: crate::types::ApplicationStatus,
 }
-impl ApplicationVersionSummary {
+impl  ApplicationVersionSummary  {
     /// <p>The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+    pub fn application_status(&self) -> & crate::types::ApplicationStatus {
         &self.application_status
     }
 }
@@ -42,8 +42,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl ApplicationVersionSummaryBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_application_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.application_status = input;
-        self
+        self.application_status = input; self
     }
     /// <p>The status of the application.</p>
     pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -69,19 +67,20 @@ impl ApplicationVersionSummaryBuilder {
     /// - [`application_version_id`](crate::types::builders::ApplicationVersionSummaryBuilder::application_version_id)
     /// - [`application_status`](crate::types::builders::ApplicationVersionSummaryBuilder::application_status)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
-            application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version_id",
-                    "application_version_id was not specified but it is required when building ApplicationVersionSummary",
-                )
-            })?,
-            application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_status",
-                    "application_status was not specified but it is required when building ApplicationVersionSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationVersionSummary {
+                application_version_id: self.application_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version_id", "application_version_id was not specified but it is required when building ApplicationVersionSummary")
+                    )?
+                ,
+                application_status: self.application_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_status", "application_status was not specified but it is required when building ApplicationVersionSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

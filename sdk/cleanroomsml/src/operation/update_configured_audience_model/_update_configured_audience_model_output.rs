@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfiguredAudienceModelOutput {
+pub struct UpdateConfiguredAudienceModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was updated.</p>
     pub configured_audience_model_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl UpdateConfiguredAudienceModelOutput {
+impl  UpdateConfiguredAudienceModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was updated.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateConfiguredAudienceModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateConfiguredAudienceModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredAudienceModelOutput`](crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput).
     pub fn builder() -> crate::operation::update_configured_audience_model::builders::UpdateConfiguredAudienceModelOutputBuilder {
@@ -42,39 +41,35 @@ impl UpdateConfiguredAudienceModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was updated.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was updated.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_audience_model_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateConfiguredAudienceModelOutput`](crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_audience_model_arn`](crate::operation::update_configured_audience_model::builders::UpdateConfiguredAudienceModelOutputBuilder::configured_audience_model_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput {
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building UpdateConfiguredAudienceModelOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput {
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building UpdateConfiguredAudienceModelOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

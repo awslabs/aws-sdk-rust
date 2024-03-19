@@ -3,7 +3,7 @@
 /// Placeholder documentation for DescribeThumbnailsRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThumbnailsInput {
+pub struct DescribeThumbnailsInput  {
     /// Unique ID of the channel
     pub channel_id: ::std::option::Option<::std::string::String>,
     /// Pipeline ID ("0" or "1")
@@ -11,17 +11,17 @@ pub struct DescribeThumbnailsInput {
     /// thumbnail type
     pub thumbnail_type: ::std::option::Option<::std::string::String>,
 }
-impl DescribeThumbnailsInput {
+impl  DescribeThumbnailsInput  {
     /// Unique ID of the channel
-    pub fn channel_id(&self) -> ::std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// Pipeline ID ("0" or "1")
-    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// thumbnail type
-    pub fn thumbnail_type(&self) -> ::std::option::Option<&str> {
+    pub fn thumbnail_type(&self) -> ::std::option::Option<& str> {
         self.thumbnail_type.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl DescribeThumbnailsInputBuilder {
     }
     /// Unique ID of the channel
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// Unique ID of the channel
     pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl DescribeThumbnailsInputBuilder {
     }
     /// Pipeline ID ("0" or "1")
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// Pipeline ID ("0" or "1")
     pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,21 +77,24 @@ impl DescribeThumbnailsInputBuilder {
     }
     /// thumbnail type
     pub fn set_thumbnail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thumbnail_type = input;
-        self
+        self.thumbnail_type = input; self
     }
     /// thumbnail type
     pub fn get_thumbnail_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.thumbnail_type
     }
     /// Consumes the builder and constructs a [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_thumbnails::DescribeThumbnailsInput {
-            channel_id: self.channel_id,
-            pipeline_id: self.pipeline_id,
-            thumbnail_type: self.thumbnail_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_thumbnails::DescribeThumbnailsInput {
+                channel_id: self.channel_id
+                ,
+                pipeline_id: self.pipeline_id
+                ,
+                thumbnail_type: self.thumbnail_type
+                ,
+            }
+        )
     }
 }
+

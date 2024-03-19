@@ -3,7 +3,7 @@
 /// <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specify the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginGroup {
+pub struct OriginGroup  {
     /// <p>The origin group's ID.</p>
     pub id: ::std::string::String,
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
@@ -11,18 +11,17 @@ pub struct OriginGroup {
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub members: ::std::option::Option<crate::types::OriginGroupMembers>,
 }
-impl OriginGroup {
+impl  OriginGroup  {
     /// <p>The origin group's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
-    pub fn failover_criteria(&self) -> ::std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
+    pub fn failover_criteria(&self) -> ::std::option::Option<& crate::types::OriginGroupFailoverCriteria> {
         self.failover_criteria.as_ref()
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
-    pub fn members(&self) -> ::std::option::Option<&crate::types::OriginGroupMembers> {
+    pub fn members(&self) -> ::std::option::Option<& crate::types::OriginGroupMembers> {
         self.members.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl OriginGroupBuilder {
     }
     /// <p>The origin group's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The origin group's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl OriginGroupBuilder {
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn set_failover_criteria(mut self, input: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>) -> Self {
-        self.failover_criteria = input;
-        self
+        self.failover_criteria = input; self
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn get_failover_criteria(&self) -> &::std::option::Option<crate::types::OriginGroupFailoverCriteria> {
@@ -80,8 +77,7 @@ impl OriginGroupBuilder {
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn set_members(mut self, input: ::std::option::Option<crate::types::OriginGroupMembers>) -> Self {
-        self.members = input;
-        self
+        self.members = input; self
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn get_members(&self) -> &::std::option::Option<crate::types::OriginGroupMembers> {
@@ -91,15 +87,19 @@ impl OriginGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::OriginGroupBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginGroup {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building OriginGroup",
-                )
-            })?,
-            failover_criteria: self.failover_criteria,
-            members: self.members,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginGroup {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building OriginGroup")
+                    )?
+                ,
+                failover_criteria: self.failover_criteria
+                ,
+                members: self.members
+                ,
+            }
+        )
     }
 }
+

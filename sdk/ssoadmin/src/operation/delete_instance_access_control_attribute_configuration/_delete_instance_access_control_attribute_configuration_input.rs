@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInstanceAccessControlAttributeConfigurationInput {
+pub struct DeleteInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInstanceAccessControlAttributeConfigurationInput {
+impl  DeleteInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
 }
 impl DeleteInstanceAccessControlAttributeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder() -> crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
         crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder::default()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput {
-                instance_arn: self.instance_arn,
-            },
+                instance_arn: self.instance_arn
+                ,
+            }
         )
     }
 }
+

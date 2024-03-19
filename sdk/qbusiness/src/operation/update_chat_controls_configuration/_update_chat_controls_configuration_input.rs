@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateChatControlsConfigurationInput {
+pub struct UpdateChatControlsConfigurationInput  {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
@@ -12,38 +12,40 @@ pub struct UpdateChatControlsConfigurationInput {
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub blocked_phrases_configuration_update: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>,
     /// <p>The configured topic specific chat controls you want to update.</p>
-    pub topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    pub topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
 }
-impl UpdateChatControlsConfigurationInput {
+impl  UpdateChatControlsConfigurationInput  {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
-    pub fn response_scope(&self) -> ::std::option::Option<&crate::types::ResponseScope> {
+    pub fn response_scope(&self) -> ::std::option::Option<& crate::types::ResponseScope> {
         self.response_scope.as_ref()
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
-    pub fn blocked_phrases_configuration_update(&self) -> ::std::option::Option<&crate::types::BlockedPhrasesConfigurationUpdate> {
+    pub fn blocked_phrases_configuration_update(&self) -> ::std::option::Option<& crate::types::BlockedPhrasesConfigurationUpdate> {
         self.blocked_phrases_configuration_update.as_ref()
     }
     /// <p>The configured topic specific chat controls you want to update.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations_to_create_or_update.is_none()`.
-    pub fn topic_configurations_to_create_or_update(&self) -> &[crate::types::TopicConfiguration] {
-        self.topic_configurations_to_create_or_update.as_deref().unwrap_or_default()
+    pub fn topic_configurations_to_create_or_update(&self) -> & [crate::types::TopicConfiguration] {
+        self.topic_configurations_to_create_or_update.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations_to_delete.is_none()`.
-    pub fn topic_configurations_to_delete(&self) -> &[crate::types::TopicConfiguration] {
-        self.topic_configurations_to_delete.as_deref().unwrap_or_default()
+    pub fn topic_configurations_to_delete(&self) -> & [crate::types::TopicConfiguration] {
+        self.topic_configurations_to_delete.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateChatControlsConfigurationInput {
@@ -61,8 +63,8 @@ pub struct UpdateChatControlsConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
     pub(crate) blocked_phrases_configuration_update: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>,
-    pub(crate) topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    pub(crate) topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
+    pub(crate) topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
+    pub(crate) topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>,
 }
 impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
@@ -73,8 +75,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
     }
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application for which the chat controls are configured.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +88,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
     }
     /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that you provide to identify the request to update a Amazon Q application chat configuration.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +101,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
     }
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn set_response_scope(mut self, input: ::std::option::Option<crate::types::ResponseScope>) -> Self {
-        self.response_scope = input;
-        self
+        self.response_scope = input; self
     }
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
@@ -115,8 +114,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn set_blocked_phrases_configuration_update(mut self, input: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>) -> Self {
-        self.blocked_phrases_configuration_update = input;
-        self
+        self.blocked_phrases_configuration_update = input; self
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn get_blocked_phrases_configuration_update(&self) -> &::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate> {
@@ -129,20 +127,16 @@ impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The configured topic specific chat controls you want to update.</p>
     pub fn topic_configurations_to_create_or_update(mut self, input: crate::types::TopicConfiguration) -> Self {
         let mut v = self.topic_configurations_to_create_or_update.unwrap_or_default();
-        v.push(input);
-        self.topic_configurations_to_create_or_update = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topic_configurations_to_create_or_update = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configured topic specific chat controls you want to update.</p>
-    pub fn set_topic_configurations_to_create_or_update(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
-    ) -> Self {
-        self.topic_configurations_to_create_or_update = input;
-        self
+    pub fn set_topic_configurations_to_create_or_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>) -> Self {
+        self.topic_configurations_to_create_or_update = input; self
     }
     /// <p>The configured topic specific chat controls you want to update.</p>
-    pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations_to_create_or_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>> {
         &self.topic_configurations_to_create_or_update
     }
     /// Appends an item to `topic_configurations_to_delete`.
@@ -152,35 +146,36 @@ impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The configured topic specific chat controls you want to delete.</p>
     pub fn topic_configurations_to_delete(mut self, input: crate::types::TopicConfiguration) -> Self {
         let mut v = self.topic_configurations_to_delete.unwrap_or_default();
-        v.push(input);
-        self.topic_configurations_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.topic_configurations_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    pub fn set_topic_configurations_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
-        self.topic_configurations_to_delete = input;
-        self
+    pub fn set_topic_configurations_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>>) -> Self {
+        self.topic_configurations_to_delete = input; self
     }
     /// <p>The configured topic specific chat controls you want to delete.</p>
-    pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+    pub fn get_topic_configurations_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TopicConfiguration>> {
         &self.topic_configurations_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput {
-                application_id: self.application_id,
-                client_token: self.client_token,
-                response_scope: self.response_scope,
-                blocked_phrases_configuration_update: self.blocked_phrases_configuration_update,
-                topic_configurations_to_create_or_update: self.topic_configurations_to_create_or_update,
-                topic_configurations_to_delete: self.topic_configurations_to_delete,
-            },
+                application_id: self.application_id
+                ,
+                client_token: self.client_token
+                ,
+                response_scope: self.response_scope
+                ,
+                blocked_phrases_configuration_update: self.blocked_phrases_configuration_update
+                ,
+                topic_configurations_to_create_or_update: self.topic_configurations_to_create_or_update
+                ,
+                topic_configurations_to_delete: self.topic_configurations_to_delete
+                ,
+            }
         )
     }
 }
+

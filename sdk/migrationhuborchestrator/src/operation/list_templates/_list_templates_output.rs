@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplatesOutput {
+pub struct ListTemplatesOutput  {
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the template.</p>
-    pub template_summary: ::std::vec::Vec<crate::types::TemplateSummary>,
+    pub template_summary: ::std::vec::Vec::<crate::types::TemplateSummary>,
     _request_id: Option<String>,
 }
-impl ListTemplatesOutput {
+impl  ListTemplatesOutput  {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The summary of the template.</p>
-    pub fn template_summary(&self) -> &[crate::types::TemplateSummary] {
-        use std::ops::Deref;
-        self.template_summary.deref()
+    pub fn template_summary(&self) -> & [crate::types::TemplateSummary] {
+        use std::ops::Deref; self.template_summary.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     pub fn builder() -> crate::operation::list_templates::builders::ListTemplatesOutputBuilder {
@@ -37,7 +36,7 @@ impl ListTemplatesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTemplatesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) template_summary: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>,
+    pub(crate) template_summary: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListTemplatesOutputBuilder {
@@ -48,8 +47,7 @@ impl ListTemplatesOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListTemplatesOutputBuilder {
     /// <p>The summary of the template.</p>
     pub fn template_summary(mut self, input: crate::types::TemplateSummary) -> Self {
         let mut v = self.template_summary.unwrap_or_default();
-        v.push(input);
-        self.template_summary = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.template_summary = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The summary of the template.</p>
-    pub fn set_template_summary(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>>) -> Self {
-        self.template_summary = input;
-        self
+    pub fn set_template_summary(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>>) -> Self {
+        self.template_summary = input; self
     }
     /// <p>The summary of the template.</p>
-    pub fn get_template_summary(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    pub fn get_template_summary(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TemplateSummary>> {
         &self.template_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_summary`](crate::operation::list_templates::builders::ListTemplatesOutputBuilder::template_summary)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesOutput {
-            next_token: self.next_token,
-            template_summary: self.template_summary.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "template_summary",
-                    "template_summary was not specified but it is required when building ListTemplatesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_templates::ListTemplatesOutput {
+                next_token: self.next_token
+                ,
+                template_summary: self.template_summary
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("template_summary", "template_summary was not specified but it is required when building ListTemplatesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

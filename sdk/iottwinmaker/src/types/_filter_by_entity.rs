@@ -3,15 +3,14 @@
 /// <p>Vilter by entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterByEntity {
+pub struct FilterByEntity  {
     /// <p>The entity Id.</p>
     pub entity_id: ::std::string::String,
 }
-impl FilterByEntity {
+impl  FilterByEntity  {
     /// <p>The entity Id.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
 }
 impl FilterByEntity {
@@ -36,8 +35,7 @@ impl FilterByEntityBuilder {
     }
     /// <p>The entity Id.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The entity Id.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl FilterByEntityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_id`](crate::types::builders::FilterByEntityBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterByEntity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterByEntity {
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building FilterByEntity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterByEntity {
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building FilterByEntity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

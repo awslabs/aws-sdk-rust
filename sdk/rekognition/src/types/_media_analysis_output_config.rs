@@ -3,20 +3,19 @@
 /// <p>Output configuration provided in the job creation request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MediaAnalysisOutputConfig {
+pub struct MediaAnalysisOutputConfig  {
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
-impl MediaAnalysisOutputConfig {
+impl  MediaAnalysisOutputConfig  {
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
-    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_key_prefix.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl MediaAnalysisOutputConfigBuilder {
     }
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>Specifies the Amazon S3 bucket to contain the output of the media analysis job.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl MediaAnalysisOutputConfigBuilder {
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key_prefix = input;
-        self
+        self.s3_key_prefix = input; self
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for storage.</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl MediaAnalysisOutputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket`](crate::types::builders::MediaAnalysisOutputConfigBuilder::s3_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MediaAnalysisOutputConfig {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building MediaAnalysisOutputConfig",
-                )
-            })?,
-            s3_key_prefix: self.s3_key_prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MediaAnalysisOutputConfig {
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building MediaAnalysisOutputConfig")
+                    )?
+                ,
+                s3_key_prefix: self.s3_key_prefix
+                ,
+            }
+        )
     }
 }
+

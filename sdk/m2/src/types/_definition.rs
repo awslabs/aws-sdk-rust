@@ -22,11 +22,7 @@ impl Definition {
     /// Tries to convert the enum instance into [`Content`](crate::types::Definition::Content), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_content(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Definition::Content(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Definition::Content(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Content`](crate::types::Definition::Content).
     pub fn is_content(&self) -> bool {
@@ -35,11 +31,7 @@ impl Definition {
     /// Tries to convert the enum instance into [`S3Location`](crate::types::Definition::S3Location), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_location(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let Definition::S3Location(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Definition::S3Location(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3Location`](crate::types::Definition::S3Location).
     pub fn is_s3_location(&self) -> bool {
@@ -50,3 +42,4 @@ impl Definition {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutAssetPropertyValueInput {
+pub struct BatchPutAssetPropertyValueInput  {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>,
 }
-impl BatchPutAssetPropertyValueInput {
+impl  BatchPutAssetPropertyValueInput  {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::PutAssetPropertyValueEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::PutAssetPropertyValueEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutAssetPropertyValueInput {
@@ -25,7 +26,7 @@ impl BatchPutAssetPropertyValueInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>,
 }
 impl BatchPutAssetPropertyValueInputBuilder {
     /// Appends an item to `entries`.
@@ -35,26 +36,26 @@ impl BatchPutAssetPropertyValueInputBuilder {
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
     pub fn entries(mut self, input: crate::types::PutAssetPropertyValueEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutAssetPropertyValueEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput { entries: self.entries })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput {
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

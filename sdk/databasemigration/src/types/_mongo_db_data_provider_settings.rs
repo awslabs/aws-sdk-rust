@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a MongoDB data provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MongoDbDataProviderSettings {
+pub struct MongoDbDataProviderSettings  {
     /// <p>The name of the MongoDB server.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value for the MongoDB data provider.</p>
@@ -22,9 +22,9 @@ pub struct MongoDbDataProviderSettings {
     /// <p>The authentication method for connecting to the data provider. Valid values are DEFAULT, MONGODB_CR, or SCRAM_SHA_1.</p>
     pub auth_mechanism: ::std::option::Option<crate::types::AuthMechanismValue>,
 }
-impl MongoDbDataProviderSettings {
+impl  MongoDbDataProviderSettings  {
     /// <p>The name of the MongoDB server.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the MongoDB data provider.</p>
@@ -32,28 +32,28 @@ impl MongoDbDataProviderSettings {
         self.port
     }
     /// <p>The database name on the MongoDB data provider.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The SSL mode used to connect to the MongoDB data provider. The default value is <code>none</code>.</p>
-    pub fn ssl_mode(&self) -> ::std::option::Option<&crate::types::DmsSslModeValue> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<& crate::types::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The authentication type for the database connection. Valid values are PASSWORD or NO.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthTypeValue> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthTypeValue> {
         self.auth_type.as_ref()
     }
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
-    pub fn auth_source(&self) -> ::std::option::Option<&str> {
+    pub fn auth_source(&self) -> ::std::option::Option<& str> {
         self.auth_source.as_deref()
     }
     /// <p>The authentication method for connecting to the data provider. Valid values are DEFAULT, MONGODB_CR, or SCRAM_SHA_1.</p>
-    pub fn auth_mechanism(&self) -> ::std::option::Option<&crate::types::AuthMechanismValue> {
+    pub fn auth_mechanism(&self) -> ::std::option::Option<& crate::types::AuthMechanismValue> {
         self.auth_mechanism.as_ref()
     }
 }
@@ -85,8 +85,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The name of the MongoDB server.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the MongoDB server.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The port value for the MongoDB data provider.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the MongoDB data provider.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -113,8 +111,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The database name on the MongoDB data provider.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name on the MongoDB data provider.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The SSL mode used to connect to the MongoDB data provider. The default value is <code>none</code>.</p>
     pub fn set_ssl_mode(mut self, input: ::std::option::Option<crate::types::DmsSslModeValue>) -> Self {
-        self.ssl_mode = input;
-        self
+        self.ssl_mode = input; self
     }
     /// <p>The SSL mode used to connect to the MongoDB data provider. The default value is <code>none</code>.</p>
     pub fn get_ssl_mode(&self) -> &::std::option::Option<crate::types::DmsSslModeValue> {
@@ -141,8 +137,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +150,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The authentication type for the database connection. Valid values are PASSWORD or NO.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthTypeValue>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The authentication type for the database connection. Valid values are PASSWORD or NO.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthTypeValue> {
@@ -171,8 +165,7 @@ impl MongoDbDataProviderSettingsBuilder {
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn set_auth_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_source = input;
-        self
+        self.auth_source = input; self
     }
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
@@ -186,8 +179,7 @@ impl MongoDbDataProviderSettingsBuilder {
     }
     /// <p>The authentication method for connecting to the data provider. Valid values are DEFAULT, MONGODB_CR, or SCRAM_SHA_1.</p>
     pub fn set_auth_mechanism(mut self, input: ::std::option::Option<crate::types::AuthMechanismValue>) -> Self {
-        self.auth_mechanism = input;
-        self
+        self.auth_mechanism = input; self
     }
     /// <p>The authentication method for connecting to the data provider. Valid values are DEFAULT, MONGODB_CR, or SCRAM_SHA_1.</p>
     pub fn get_auth_mechanism(&self) -> &::std::option::Option<crate::types::AuthMechanismValue> {
@@ -196,14 +188,23 @@ impl MongoDbDataProviderSettingsBuilder {
     /// Consumes the builder and constructs a [`MongoDbDataProviderSettings`](crate::types::MongoDbDataProviderSettings).
     pub fn build(self) -> crate::types::MongoDbDataProviderSettings {
         crate::types::MongoDbDataProviderSettings {
-            server_name: self.server_name,
-            port: self.port,
-            database_name: self.database_name,
-            ssl_mode: self.ssl_mode,
-            certificate_arn: self.certificate_arn,
-            auth_type: self.auth_type,
-            auth_source: self.auth_source,
-            auth_mechanism: self.auth_mechanism,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            database_name: self.database_name
+            ,
+            ssl_mode: self.ssl_mode
+            ,
+            certificate_arn: self.certificate_arn
+            ,
+            auth_type: self.auth_type
+            ,
+            auth_source: self.auth_source
+            ,
+            auth_mechanism: self.auth_mechanism
+            ,
         }
     }
 }
+

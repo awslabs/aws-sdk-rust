@@ -3,7 +3,7 @@
 /// <p>Contains configuration information about a batch build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectBuildBatchConfig {
+pub struct ProjectBuildBatchConfig  {
     /// <p>Specifies the service role ARN for the batch build project.</p>
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
@@ -29,9 +29,9 @@ pub struct ProjectBuildBatchConfig {
     /// </dl>
     pub batch_report_mode: ::std::option::Option<crate::types::BatchReportModeType>,
 }
-impl ProjectBuildBatchConfig {
+impl  ProjectBuildBatchConfig  {
     /// <p>Specifies the service role ARN for the batch build project.</p>
-    pub fn service_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
@@ -39,7 +39,7 @@ impl ProjectBuildBatchConfig {
         self.combine_artifacts
     }
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
-    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::BatchRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<& crate::types::BatchRestrictions> {
         self.restrictions.as_ref()
     }
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
@@ -61,7 +61,7 @@ impl ProjectBuildBatchConfig {
     /// <p>Send a separate status report for each individual build.</p>
     /// </dd>
     /// </dl>
-    pub fn batch_report_mode(&self) -> ::std::option::Option<&crate::types::BatchReportModeType> {
+    pub fn batch_report_mode(&self) -> ::std::option::Option<& crate::types::BatchReportModeType> {
         self.batch_report_mode.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl ProjectBuildBatchConfigBuilder {
     }
     /// <p>Specifies the service role ARN for the batch build project.</p>
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>Specifies the service role ARN for the batch build project.</p>
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl ProjectBuildBatchConfigBuilder {
     }
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
     pub fn set_combine_artifacts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.combine_artifacts = input;
-        self
+        self.combine_artifacts = input; self
     }
     /// <p>Specifies if the build artifacts for the batch build should be combined into a single artifact location.</p>
     pub fn get_combine_artifacts(&self) -> &::std::option::Option<bool> {
@@ -118,8 +116,7 @@ impl ProjectBuildBatchConfigBuilder {
     }
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
     pub fn set_restrictions(mut self, input: ::std::option::Option<crate::types::BatchRestrictions>) -> Self {
-        self.restrictions = input;
-        self
+        self.restrictions = input; self
     }
     /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch build.</p>
     pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::BatchRestrictions> {
@@ -132,8 +129,7 @@ impl ProjectBuildBatchConfigBuilder {
     }
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
     pub fn set_timeout_in_mins(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_mins = input;
-        self
+        self.timeout_in_mins = input; self
     }
     /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
     pub fn get_timeout_in_mins(&self) -> &::std::option::Option<i32> {
@@ -174,8 +170,7 @@ impl ProjectBuildBatchConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_batch_report_mode(mut self, input: ::std::option::Option<crate::types::BatchReportModeType>) -> Self {
-        self.batch_report_mode = input;
-        self
+        self.batch_report_mode = input; self
     }
     /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise, and your project is configured to report build statuses to the source provider.</p>
     /// <dl>
@@ -198,11 +193,17 @@ impl ProjectBuildBatchConfigBuilder {
     /// Consumes the builder and constructs a [`ProjectBuildBatchConfig`](crate::types::ProjectBuildBatchConfig).
     pub fn build(self) -> crate::types::ProjectBuildBatchConfig {
         crate::types::ProjectBuildBatchConfig {
-            service_role: self.service_role,
-            combine_artifacts: self.combine_artifacts,
-            restrictions: self.restrictions,
-            timeout_in_mins: self.timeout_in_mins,
-            batch_report_mode: self.batch_report_mode,
+            service_role: self.service_role
+            ,
+            combine_artifacts: self.combine_artifacts
+            ,
+            restrictions: self.restrictions
+            ,
+            timeout_in_mins: self.timeout_in_mins
+            ,
+            batch_report_mode: self.batch_report_mode
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxClusterCodeConfigurationInput {
+pub struct UpdateKxClusterCodeConfigurationInput  {
     /// <p>A unique identifier of the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
@@ -16,41 +16,42 @@ pub struct UpdateKxClusterCodeConfigurationInput {
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
+    pub command_line_arguments: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>,
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub deployment_configuration: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>,
 }
-impl UpdateKxClusterCodeConfigurationInput {
+impl  UpdateKxClusterCodeConfigurationInput  {
     /// <p>A unique identifier of the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The structure of the customer code available within the running cluster.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::CodeConfiguration> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::CodeConfiguration> {
         self.code.as_ref()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub fn initialization_script(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_script(&self) -> ::std::option::Option<& str> {
         self.initialization_script.as_deref()
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command_line_arguments.is_none()`.
-    pub fn command_line_arguments(&self) -> &[crate::types::KxCommandLineArgument] {
-        self.command_line_arguments.as_deref().unwrap_or_default()
+    pub fn command_line_arguments(&self) -> & [crate::types::KxCommandLineArgument] {
+        self.command_line_arguments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
-    pub fn deployment_configuration(&self) -> ::std::option::Option<&crate::types::KxClusterCodeDeploymentConfiguration> {
+    pub fn deployment_configuration(&self) -> ::std::option::Option<& crate::types::KxClusterCodeDeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
 }
@@ -70,7 +71,7 @@ pub struct UpdateKxClusterCodeConfigurationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) code: ::std::option::Option<crate::types::CodeConfiguration>,
     pub(crate) initialization_script: ::std::option::Option<::std::string::String>,
-    pub(crate) command_line_arguments: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>,
+    pub(crate) command_line_arguments: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>,
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>,
 }
 impl UpdateKxClusterCodeConfigurationInputBuilder {
@@ -82,8 +83,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     }
     /// <p>A unique identifier of the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier of the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +97,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     }
     /// <p>The name of the cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     }
     /// <p>The structure of the customer code available within the running cluster.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::CodeConfiguration>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The structure of the customer code available within the running cluster.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
@@ -142,8 +139,7 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn set_initialization_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_script = input;
-        self
+        self.initialization_script = input; self
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
@@ -158,19 +154,18 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn command_line_arguments(mut self, input: crate::types::KxCommandLineArgument) -> Self {
         let mut v = self.command_line_arguments.unwrap_or_default();
-        v.push(input);
-        self.command_line_arguments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.command_line_arguments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>) -> Self {
-        self.command_line_arguments = input;
-        self
+    pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>>) -> Self {
+        self.command_line_arguments = input; self
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
     /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
-    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
+    pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxCommandLineArgument>> {
         &self.command_line_arguments
     }
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
@@ -180,30 +175,32 @@ impl UpdateKxClusterCodeConfigurationInputBuilder {
     }
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn set_deployment_configuration(mut self, input: ::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration>) -> Self {
-        self.deployment_configuration = input;
-        self
+        self.deployment_configuration = input; self
     }
     /// <p>The configuration that allows you to choose how you want to update the code on a cluster.</p>
     pub fn get_deployment_configuration(&self) -> &::std::option::Option<crate::types::KxClusterCodeDeploymentConfiguration> {
         &self.deployment_configuration
     }
     /// Consumes the builder and constructs a [`UpdateKxClusterCodeConfigurationInput`](crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_kx_cluster_code_configuration::UpdateKxClusterCodeConfigurationInput {
-                environment_id: self.environment_id,
-                cluster_name: self.cluster_name,
-                client_token: self.client_token,
-                code: self.code,
-                initialization_script: self.initialization_script,
-                command_line_arguments: self.command_line_arguments,
-                deployment_configuration: self.deployment_configuration,
-            },
+                environment_id: self.environment_id
+                ,
+                cluster_name: self.cluster_name
+                ,
+                client_token: self.client_token
+                ,
+                code: self.code
+                ,
+                initialization_script: self.initialization_script
+                ,
+                command_line_arguments: self.command_line_arguments
+                ,
+                deployment_configuration: self.deployment_configuration
+                ,
+            }
         )
     }
 }
+

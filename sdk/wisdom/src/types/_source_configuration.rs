@@ -21,11 +21,7 @@ impl SourceConfiguration {
     /// Tries to convert the enum instance into [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations), extracting the inner [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_app_integrations(&self) -> ::std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
-        if let SourceConfiguration::AppIntegrations(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SourceConfiguration::AppIntegrations(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations).
     pub fn is_app_integrations(&self) -> bool {
@@ -36,3 +32,4 @@ impl SourceConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

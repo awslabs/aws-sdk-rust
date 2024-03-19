@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateClientDeviceWithCoreDeviceInput {
+pub struct BatchAssociateClientDeviceWithCoreDeviceInput  {
     /// <p>The list of client devices to associate.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>,
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
-impl BatchAssociateClientDeviceWithCoreDeviceInput {
+impl  BatchAssociateClientDeviceWithCoreDeviceInput  {
     /// <p>The list of client devices to associate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::AssociateClientDeviceWithCoreDeviceEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::AssociateClientDeviceWithCoreDeviceEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn core_device_thing_name(&self) -> ::std::option::Option<& str> {
         self.core_device_thing_name.as_deref()
     }
 }
 impl BatchAssociateClientDeviceWithCoreDeviceInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput).
-    pub fn builder(
-    ) -> crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
+    pub fn builder() -> crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
         crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder::default()
     }
 }
@@ -32,7 +32,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>,
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
@@ -43,17 +43,16 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     /// <p>The list of client devices to associate.</p>
     pub fn entries(mut self, input: crate::types::AssociateClientDeviceWithCoreDeviceEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of client devices to associate.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The list of client devices to associate.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociateClientDeviceWithCoreDeviceEntry>> {
         &self.entries
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -64,25 +63,22 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn set_core_device_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_device_thing_name = input;
-        self
+        self.core_device_thing_name = input; self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_device_thing_name
     }
     /// Consumes the builder and constructs a [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput {
-                entries: self.entries,
-                core_device_thing_name: self.core_device_thing_name,
-            },
+                entries: self.entries
+                ,
+                core_device_thing_name: self.core_device_thing_name
+                ,
+            }
         )
     }
 }
+

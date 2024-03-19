@@ -3,7 +3,7 @@
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HlsEncryption {
+pub struct HlsEncryption  {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     pub constant_initialization_vector: ::std::option::Option<::std::string::String>,
     /// The encryption method to use.
@@ -15,13 +15,13 @@ pub struct HlsEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
-impl HlsEncryption {
+impl  HlsEncryption  {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn constant_initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> ::std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// The encryption method to use.
-    pub fn encryption_method(&self) -> ::std::option::Option<&crate::types::EncryptionMethod> {
+    pub fn encryption_method(&self) -> ::std::option::Option<& crate::types::EncryptionMethod> {
         self.encryption_method.as_ref()
     }
     /// Interval (in seconds) between each encryption key rotation.
@@ -33,7 +33,7 @@ impl HlsEncryption {
         self.repeat_ext_x_key
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> ::std::option::Option<&crate::types::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> ::std::option::Option<& crate::types::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl HlsEncryptionBuilder {
     }
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     pub fn set_constant_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.constant_initialization_vector = input;
-        self
+        self.constant_initialization_vector = input; self
     }
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     pub fn get_constant_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl HlsEncryptionBuilder {
     }
     /// The encryption method to use.
     pub fn set_encryption_method(mut self, input: ::std::option::Option<crate::types::EncryptionMethod>) -> Self {
-        self.encryption_method = input;
-        self
+        self.encryption_method = input; self
     }
     /// The encryption method to use.
     pub fn get_encryption_method(&self) -> &::std::option::Option<crate::types::EncryptionMethod> {
@@ -90,8 +88,7 @@ impl HlsEncryptionBuilder {
     }
     /// Interval (in seconds) between each encryption key rotation.
     pub fn set_key_rotation_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.key_rotation_interval_seconds = input;
-        self
+        self.key_rotation_interval_seconds = input; self
     }
     /// Interval (in seconds) between each encryption key rotation.
     pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl HlsEncryptionBuilder {
     }
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     pub fn set_repeat_ext_x_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.repeat_ext_x_key = input;
-        self
+        self.repeat_ext_x_key = input; self
     }
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     pub fn get_repeat_ext_x_key(&self) -> &::std::option::Option<bool> {
@@ -119,8 +115,7 @@ impl HlsEncryptionBuilder {
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn set_speke_key_provider(mut self, input: ::std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
-        self.speke_key_provider = input;
-        self
+        self.speke_key_provider = input; self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
@@ -129,11 +124,17 @@ impl HlsEncryptionBuilder {
     /// Consumes the builder and constructs a [`HlsEncryption`](crate::types::HlsEncryption).
     pub fn build(self) -> crate::types::HlsEncryption {
         crate::types::HlsEncryption {
-            constant_initialization_vector: self.constant_initialization_vector,
-            encryption_method: self.encryption_method,
-            key_rotation_interval_seconds: self.key_rotation_interval_seconds,
-            repeat_ext_x_key: self.repeat_ext_x_key,
-            speke_key_provider: self.speke_key_provider,
+            constant_initialization_vector: self.constant_initialization_vector
+            ,
+            encryption_method: self.encryption_method
+            ,
+            key_rotation_interval_seconds: self.key_rotation_interval_seconds
+            ,
+            repeat_ext_x_key: self.repeat_ext_x_key
+            ,
+            speke_key_provider: self.speke_key_provider
+            ,
         }
     }
 }
+

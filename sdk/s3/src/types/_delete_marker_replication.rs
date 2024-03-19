@@ -6,17 +6,17 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMarkerReplication {
+pub struct DeleteMarkerReplication  {
     /// <p>Indicates whether to replicate delete markers.</p><note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
 }
-impl DeleteMarkerReplication {
+impl  DeleteMarkerReplication  {
     /// <p>Indicates whether to replicate delete markers.</p><note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeleteMarkerReplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeleteMarkerReplicationStatus> {
         self.status.as_ref()
     }
 }
@@ -45,8 +45,7 @@ impl DeleteMarkerReplicationBuilder {
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether to replicate delete markers.</p><note>
     /// <p>Indicates whether to replicate delete markers.</p>
@@ -56,6 +55,10 @@ impl DeleteMarkerReplicationBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteMarkerReplication`](crate::types::DeleteMarkerReplication).
     pub fn build(self) -> crate::types::DeleteMarkerReplication {
-        crate::types::DeleteMarkerReplication { status: self.status }
+        crate::types::DeleteMarkerReplication {
+            status: self.status
+            ,
+        }
     }
 }
+

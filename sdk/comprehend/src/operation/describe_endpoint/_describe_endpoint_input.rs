@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointInput {
+pub struct DescribeEndpointInput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEndpointInput {
+impl  DescribeEndpointInput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_arn
     }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
-            endpoint_arn: self.endpoint_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_endpoint::DescribeEndpointInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+            }
+        )
     }
 }
+

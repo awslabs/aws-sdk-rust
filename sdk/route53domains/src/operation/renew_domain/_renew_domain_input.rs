@@ -3,7 +3,7 @@
 /// <p>A <code>RenewDomain</code> request includes the number of years that you want to renew for and the current expiration year.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RenewDomainInput {
+pub struct RenewDomainInput  {
     /// <p>The name of the domain that you want to renew.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -12,9 +12,9 @@ pub struct RenewDomainInput {
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub current_expiry_year: ::std::option::Option<i32>,
 }
-impl RenewDomainInput {
+impl  RenewDomainInput  {
     /// <p>The name of the domain that you want to renew.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -51,8 +51,7 @@ impl RenewDomainInputBuilder {
     }
     /// <p>The name of the domain that you want to renew.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to renew.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl RenewDomainInputBuilder {
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_in_years = input;
-        self
+        self.duration_in_years = input; self
     }
     /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
@@ -83,8 +81,7 @@ impl RenewDomainInputBuilder {
     }
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub fn set_current_expiry_year(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_expiry_year = input;
-        self
+        self.current_expiry_year = input; self
     }
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub fn get_current_expiry_year(&self) -> &::std::option::Option<i32> {
@@ -92,10 +89,16 @@ impl RenewDomainInputBuilder {
     }
     /// Consumes the builder and constructs a [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::renew_domain::RenewDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::renew_domain::RenewDomainInput {
-            domain_name: self.domain_name,
-            duration_in_years: self.duration_in_years,
-            current_expiry_year: self.current_expiry_year,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::renew_domain::RenewDomainInput {
+                domain_name: self.domain_name
+                ,
+                duration_in_years: self.duration_in_years
+                ,
+                current_expiry_year: self.current_expiry_year
+                ,
+            }
+        )
     }
 }
+

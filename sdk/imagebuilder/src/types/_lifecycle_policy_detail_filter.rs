@@ -3,7 +3,7 @@
 /// <p>Defines filters that the lifecycle policy uses to determine impacted resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetailFilter {
+pub struct LifecyclePolicyDetailFilter  {
     /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
     pub r#type: crate::types::LifecyclePolicyDetailFilterType,
     /// <p>The number of units for the time period or for the count. For example, a value of <code>6</code> might refer to six months or six AMIs.</p><note>
@@ -15,9 +15,9 @@ pub struct LifecyclePolicyDetailFilter {
     /// <p>For age-based filters, this is the number of resources to keep on hand after the lifecycle <code>DELETE</code> action is applied. Impacted resources are only deleted if you have more than this number of resources. If you have fewer resources than this number, the impacted resource is not deleted.</p>
     pub retain_at_least: ::std::option::Option<i32>,
 }
-impl LifecyclePolicyDetailFilter {
+impl  LifecyclePolicyDetailFilter  {
     /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
-    pub fn r#type(&self) -> &crate::types::LifecyclePolicyDetailFilterType {
+    pub fn r#type(&self) -> & crate::types::LifecyclePolicyDetailFilterType {
         &self.r#type
     }
     /// <p>The number of units for the time period or for the count. For example, a value of <code>6</code> might refer to six months or six AMIs.</p><note>
@@ -27,7 +27,7 @@ impl LifecyclePolicyDetailFilter {
         self.value
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to determine impacted resources. This is required for age-based rules.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyTimeUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyTimeUnit> {
         self.unit.as_ref()
     }
     /// <p>For age-based filters, this is the number of resources to keep on hand after the lifecycle <code>DELETE</code> action is applied. Impacted resources are only deleted if you have more than this number of resources. If you have fewer resources than this number, the impacted resource is not deleted.</p>
@@ -60,8 +60,7 @@ impl LifecyclePolicyDetailFilterBuilder {
     }
     /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailFilterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailFilterType> {
@@ -79,8 +78,7 @@ impl LifecyclePolicyDetailFilterBuilder {
     /// <p>For count-based filters, this value represents the minimum number of resources to keep on hand. If you have fewer resources than this number, the resource is excluded from lifecycle actions.</p>
     /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The number of units for the time period or for the count. For example, a value of <code>6</code> might refer to six months or six AMIs.</p><note>
     /// <p>For count-based filters, this value represents the minimum number of resources to keep on hand. If you have fewer resources than this number, the resource is excluded from lifecycle actions.</p>
@@ -95,8 +93,7 @@ impl LifecyclePolicyDetailFilterBuilder {
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to determine impacted resources. This is required for age-based rules.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyTimeUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Defines the unit of time that the lifecycle policy uses to determine impacted resources. This is required for age-based rules.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::LifecyclePolicyTimeUnit> {
@@ -109,8 +106,7 @@ impl LifecyclePolicyDetailFilterBuilder {
     }
     /// <p>For age-based filters, this is the number of resources to keep on hand after the lifecycle <code>DELETE</code> action is applied. Impacted resources are only deleted if you have more than this number of resources. If you have fewer resources than this number, the impacted resource is not deleted.</p>
     pub fn set_retain_at_least(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retain_at_least = input;
-        self
+        self.retain_at_least = input; self
     }
     /// <p>For age-based filters, this is the number of resources to keep on hand after the lifecycle <code>DELETE</code> action is applied. Impacted resources are only deleted if you have more than this number of resources. If you have fewer resources than this number, the impacted resource is not deleted.</p>
     pub fn get_retain_at_least(&self) -> &::std::option::Option<i32> {
@@ -121,21 +117,24 @@ impl LifecyclePolicyDetailFilterBuilder {
     /// - [`r#type`](crate::types::builders::LifecyclePolicyDetailFilterBuilder::r#type)
     /// - [`value`](crate::types::builders::LifecyclePolicyDetailFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyDetailFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LifecyclePolicyDetailFilter {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building LifecyclePolicyDetailFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building LifecyclePolicyDetailFilter",
-                )
-            })?,
-            unit: self.unit,
-            retain_at_least: self.retain_at_least,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LifecyclePolicyDetailFilter {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building LifecyclePolicyDetailFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building LifecyclePolicyDetailFilter")
+                    )?
+                ,
+                unit: self.unit
+                ,
+                retain_at_least: self.retain_at_least
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The identifier of the task template field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskTemplateFieldIdentifier {
+pub struct TaskTemplateFieldIdentifier  {
     /// <p>The name of the task template field.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl TaskTemplateFieldIdentifier {
+impl  TaskTemplateFieldIdentifier  {
     /// <p>The name of the task template field.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TaskTemplateFieldIdentifierBuilder {
     }
     /// <p>The name of the task template field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the task template field.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl TaskTemplateFieldIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`TaskTemplateFieldIdentifier`](crate::types::TaskTemplateFieldIdentifier).
     pub fn build(self) -> crate::types::TaskTemplateFieldIdentifier {
-        crate::types::TaskTemplateFieldIdentifier { name: self.name }
+        crate::types::TaskTemplateFieldIdentifier {
+            name: self.name
+            ,
+        }
     }
 }
+

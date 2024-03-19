@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileSystemInput {
+pub struct DeleteFileSystemInput  {
     /// <p>The ID of the file system you want to delete.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFileSystemInput {
+impl  DeleteFileSystemInput  {
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteFileSystemInputBuilder {
     }
     /// <p>The ID of the file system you want to delete.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The ID of the file system you want to delete.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_file_system::DeleteFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_file_system::DeleteFileSystemInput {
-            file_system_id: self.file_system_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file_system::DeleteFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_file_system::DeleteFileSystemInput {
+                file_system_id: self.file_system_id
+                ,
+            }
+        )
     }
 }
+

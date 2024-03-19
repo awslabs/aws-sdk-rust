@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SampleChannelDataOutput {
+pub struct SampleChannelDataOutput  {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
+    pub payloads: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>>,
     _request_id: Option<String>,
 }
-impl SampleChannelDataOutput {
+impl  SampleChannelDataOutput  {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payloads.is_none()`.
-    pub fn payloads(&self) -> &[::aws_smithy_types::Blob] {
-        self.payloads.as_deref().unwrap_or_default()
+    pub fn payloads(&self) -> & [::aws_smithy_types::Blob] {
+        self.payloads.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SampleChannelDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SampleChannelDataOutput {
     /// Creates a new builder-style object to manufacture [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput).
     pub fn builder() -> crate::operation::sample_channel_data::builders::SampleChannelDataOutputBuilder {
@@ -31,7 +32,7 @@ impl SampleChannelDataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SampleChannelDataOutputBuilder {
-    pub(crate) payloads: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
+    pub(crate) payloads: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>>,
     _request_id: Option<String>,
 }
 impl SampleChannelDataOutputBuilder {
@@ -42,33 +43,34 @@ impl SampleChannelDataOutputBuilder {
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
     pub fn payloads(mut self, input: ::aws_smithy_types::Blob) -> Self {
         let mut v = self.payloads.unwrap_or_default();
-        v.push(input);
-        self.payloads = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.payloads = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
-        self.payloads = input;
-        self
+    pub fn set_payloads(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>>) -> Self {
+        self.payloads = input; self
     }
     /// <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
-    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+    pub fn get_payloads(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::Blob>> {
         &self.payloads
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SampleChannelDataOutput`](crate::operation::sample_channel_data::SampleChannelDataOutput).
     pub fn build(self) -> crate::operation::sample_channel_data::SampleChannelDataOutput {
         crate::operation::sample_channel_data::SampleChannelDataOutput {
-            payloads: self.payloads,
+            payloads: self.payloads
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

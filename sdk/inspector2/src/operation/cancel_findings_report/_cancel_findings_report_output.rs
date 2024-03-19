@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelFindingsReportOutput {
+pub struct CancelFindingsReportOutput  {
     /// <p>The ID of the canceled report.</p>
     pub report_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CancelFindingsReportOutput {
+impl  CancelFindingsReportOutput  {
     /// <p>The ID of the canceled report.</p>
-    pub fn report_id(&self) -> &str {
-        use std::ops::Deref;
-        self.report_id.deref()
+    pub fn report_id(&self) -> & str {
+        use std::ops::Deref; self.report_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelFindingsReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelFindingsReportOutput {
     /// Creates a new builder-style object to manufacture [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput).
     pub fn builder() -> crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder {
@@ -42,37 +41,35 @@ impl CancelFindingsReportOutputBuilder {
     }
     /// <p>The ID of the canceled report.</p>
     pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_id = input;
-        self
+        self.report_id = input; self
     }
     /// <p>The ID of the canceled report.</p>
     pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`report_id`](crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder::report_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportOutput {
-            report_id: self.report_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "report_id",
-                    "report_id was not specified but it is required when building CancelFindingsReportOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_findings_report::CancelFindingsReportOutput {
+                report_id: self.report_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("report_id", "report_id was not specified but it is required when building CancelFindingsReportOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

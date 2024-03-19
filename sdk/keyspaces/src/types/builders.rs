@@ -46,3 +46,4 @@ pub use crate::types::_clustering_key::ClusteringKeyBuilder;
 pub use crate::types::_partition_key::PartitionKeyBuilder;
 
 pub use crate::types::_replication_specification::ReplicationSpecificationBuilder;
+

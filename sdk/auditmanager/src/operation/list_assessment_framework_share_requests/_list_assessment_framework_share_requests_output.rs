@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentFrameworkShareRequestsOutput {
+pub struct ListAssessmentFrameworkShareRequestsOutput  {
     /// <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
-    pub assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
+    pub assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentFrameworkShareRequest>>,
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAssessmentFrameworkShareRequestsOutput {
+impl  ListAssessmentFrameworkShareRequestsOutput  {
     /// <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assessment_framework_share_requests.is_none()`.
-    pub fn assessment_framework_share_requests(&self) -> &[crate::types::AssessmentFrameworkShareRequest] {
-        self.assessment_framework_share_requests.as_deref().unwrap_or_default()
+    pub fn assessment_framework_share_requests(&self) -> & [crate::types::AssessmentFrameworkShareRequest] {
+        self.assessment_framework_share_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAssessmentFrameworkShareRequestsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAssessmentFrameworkShareRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
     pub fn builder() -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAssessmentFrameworkShareRequestsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsOutputBuilder {
-    pub(crate) assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
+    pub(crate) assessment_framework_share_requests: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentFrameworkShareRequest>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
     /// <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
     pub fn assessment_framework_share_requests(mut self, input: crate::types::AssessmentFrameworkShareRequest) -> Self {
         let mut v = self.assessment_framework_share_requests.unwrap_or_default();
-        v.push(input);
-        self.assessment_framework_share_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assessment_framework_share_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
-    pub fn set_assessment_framework_share_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>,
-    ) -> Self {
-        self.assessment_framework_share_requests = input;
-        self
+    pub fn set_assessment_framework_share_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssessmentFrameworkShareRequest>>) -> Self {
+        self.assessment_framework_share_requests = input; self
     }
     /// <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
-    pub fn get_assessment_framework_share_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>> {
+    pub fn get_assessment_framework_share_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssessmentFrameworkShareRequest>> {
         &self.assessment_framework_share_requests
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
@@ -72,28 +69,30 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's used to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput).
     pub fn build(self) -> crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput {
         crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput {
-            assessment_framework_share_requests: self.assessment_framework_share_requests,
-            next_token: self.next_token,
+            assessment_framework_share_requests: self.assessment_framework_share_requests
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

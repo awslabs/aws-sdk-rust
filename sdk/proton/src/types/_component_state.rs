@@ -3,7 +3,7 @@
 /// <p>The detailed data about the current state of the component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ComponentState {
+pub struct ComponentState  {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
@@ -13,25 +13,25 @@ pub struct ComponentState {
     /// <p>The template file used.</p>
     pub template_file: ::std::option::Option<::std::string::String>,
 }
-impl ComponentState {
+impl  ComponentState  {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    pub fn service_spec(&self) -> ::std::option::Option<&str> {
+    pub fn service_spec(&self) -> ::std::option::Option<& str> {
         self.service_spec.as_deref()
     }
     /// <p>The template file used.</p>
-    pub fn template_file(&self) -> ::std::option::Option<&str> {
+    pub fn template_file(&self) -> ::std::option::Option<& str> {
         self.template_file.as_deref()
     }
 }
-impl ::std::fmt::Debug for ComponentState {
+impl  ::std::fmt::Debug for ComponentState  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentState");
         formatter.field("service_name", &self.service_name);
@@ -65,8 +65,7 @@ impl ComponentStateBuilder {
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl ComponentStateBuilder {
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl ComponentStateBuilder {
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
     pub fn set_service_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_spec = input;
-        self
+        self.service_spec = input; self
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
     pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl ComponentStateBuilder {
     }
     /// <p>The template file used.</p>
     pub fn set_template_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_file = input;
-        self
+        self.template_file = input; self
     }
     /// <p>The template file used.</p>
     pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl ComponentStateBuilder {
     /// Consumes the builder and constructs a [`ComponentState`](crate::types::ComponentState).
     pub fn build(self) -> crate::types::ComponentState {
         crate::types::ComponentState {
-            service_name: self.service_name,
-            service_instance_name: self.service_instance_name,
-            service_spec: self.service_spec,
-            template_file: self.template_file,
+            service_name: self.service_name
+            ,
+            service_instance_name: self.service_instance_name
+            ,
+            service_spec: self.service_spec
+            ,
+            template_file: self.template_file
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for ComponentStateBuilder {
         formatter.finish()
     }
 }
+

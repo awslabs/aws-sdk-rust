@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListNodes`](crate::operation::list_nodes::builders::ListNodesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`category(NodeCategory)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::category) / [`set_category(Option<NodeCategory>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_category):<br>required: **false**<br><p>Search for nodes by category.</p><br>
     ///   - [`owner_account(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::owner_account) / [`set_owner_account(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_owner_account):<br>required: **false**<br><p>Search for nodes by the account ID of the nodes' owner.</p><br>
     ///   - [`package_name(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_package_name):<br>required: **false**<br><p>Search for nodes by name.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`patch_version(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::patch_version) / [`set_patch_version(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_patch_version):<br>required: **false**<br><p>Search for nodes by patch version.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_nodes::builders::ListNodesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of nodes to return in one page of results.</p><br>
-    /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
+                            /// - On success, responds with [`ListNodesOutput`](crate::operation::list_nodes::ListNodesOutput) with field(s):
     ///   - [`nodes(Option<Vec::<Node>>)`](crate::operation::list_nodes::ListNodesOutput::nodes): <p>A list of nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_nodes::ListNodesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
+                            /// - On failure, responds with [`SdkError<ListNodesError>`](crate::operation::list_nodes::ListNodesError)
     pub fn list_nodes(&self) -> crate::operation::list_nodes::builders::ListNodesFluentBuilder {
-        crate::operation::list_nodes::builders::ListNodesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_nodes::builders::ListNodesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

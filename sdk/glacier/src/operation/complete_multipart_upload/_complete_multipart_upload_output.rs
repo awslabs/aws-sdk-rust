@@ -4,7 +4,7 @@
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompleteMultipartUploadOutput {
+pub struct CompleteMultipartUploadOutput  {
     /// <p>The relative URI path of the newly added archive resource.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
@@ -13,25 +13,25 @@ pub struct CompleteMultipartUploadOutput {
     pub archive_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CompleteMultipartUploadOutput {
+impl  CompleteMultipartUploadOutput  {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn archive_id(&self) -> ::std::option::Option<&str> {
+    pub fn archive_id(&self) -> ::std::option::Option<& str> {
         self.archive_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CompleteMultipartUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CompleteMultipartUploadOutput {
     /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
     pub fn builder() -> crate::operation::complete_multipart_upload::builders::CompleteMultipartUploadOutputBuilder {
@@ -56,8 +56,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The relative URI path of the newly added archive resource.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The relative URI path of the newly added archive resource.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,29 +82,32 @@ impl CompleteMultipartUploadOutputBuilder {
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
     pub fn set_archive_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_id = input;
-        self
+        self.archive_id = input; self
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
     pub fn get_archive_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.archive_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
     pub fn build(self) -> crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
         crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput {
-            location: self.location,
-            checksum: self.checksum,
-            archive_id: self.archive_id,
+            location: self.location
+            ,
+            checksum: self.checksum
+            ,
+            archive_id: self.archive_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

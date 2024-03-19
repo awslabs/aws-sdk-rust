@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDevicesInPlacementInput {
+pub struct GetDevicesInPlacementInput  {
     /// <p>The name of the project containing the placement.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement to get the devices from.</p>
     pub placement_name: ::std::option::Option<::std::string::String>,
 }
-impl GetDevicesInPlacementInput {
+impl  GetDevicesInPlacementInput  {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the placement to get the devices from.</p>
-    pub fn placement_name(&self) -> ::std::option::Option<&str> {
+    pub fn placement_name(&self) -> ::std::option::Option<& str> {
         self.placement_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDevicesInPlacementInputBuilder {
     }
     /// <p>The name of the project containing the placement.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project containing the placement.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl GetDevicesInPlacementInputBuilder {
     }
     /// <p>The name of the placement to get the devices from.</p>
     pub fn set_placement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.placement_name = input;
-        self
+        self.placement_name = input; self
     }
     /// <p>The name of the placement to get the devices from.</p>
     pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.placement_name
     }
     /// Consumes the builder and constructs a [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_devices_in_placement::GetDevicesInPlacementInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_devices_in_placement::GetDevicesInPlacementInput {
-            project_name: self.project_name,
-            placement_name: self.placement_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices_in_placement::GetDevicesInPlacementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_devices_in_placement::GetDevicesInPlacementInput {
+                project_name: self.project_name
+                ,
+                placement_name: self.placement_name
+                ,
+            }
+        )
     }
 }
+

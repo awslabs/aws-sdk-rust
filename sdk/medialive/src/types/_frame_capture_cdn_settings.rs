@@ -3,13 +3,13 @@
 /// Frame Capture Cdn Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FrameCaptureCdnSettings {
+pub struct FrameCaptureCdnSettings  {
     /// Frame Capture S3 Settings
     pub frame_capture_s3_settings: ::std::option::Option<crate::types::FrameCaptureS3Settings>,
 }
-impl FrameCaptureCdnSettings {
+impl  FrameCaptureCdnSettings  {
     /// Frame Capture S3 Settings
-    pub fn frame_capture_s3_settings(&self) -> ::std::option::Option<&crate::types::FrameCaptureS3Settings> {
+    pub fn frame_capture_s3_settings(&self) -> ::std::option::Option<& crate::types::FrameCaptureS3Settings> {
         self.frame_capture_s3_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FrameCaptureCdnSettingsBuilder {
     }
     /// Frame Capture S3 Settings
     pub fn set_frame_capture_s3_settings(mut self, input: ::std::option::Option<crate::types::FrameCaptureS3Settings>) -> Self {
-        self.frame_capture_s3_settings = input;
-        self
+        self.frame_capture_s3_settings = input; self
     }
     /// Frame Capture S3 Settings
     pub fn get_frame_capture_s3_settings(&self) -> &::std::option::Option<crate::types::FrameCaptureS3Settings> {
@@ -44,7 +43,9 @@ impl FrameCaptureCdnSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureCdnSettings`](crate::types::FrameCaptureCdnSettings).
     pub fn build(self) -> crate::types::FrameCaptureCdnSettings {
         crate::types::FrameCaptureCdnSettings {
-            frame_capture_s3_settings: self.frame_capture_s3_settings,
+            frame_capture_s3_settings: self.frame_capture_s3_settings
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecommenders`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::set_dataset_group_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of recommenders to return.</p><br>
-    /// - On success, responds with [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput) with field(s):
+                            /// - On success, responds with [`ListRecommendersOutput`](crate::operation::list_recommenders::ListRecommendersOutput) with field(s):
     ///   - [`recommenders(Option<Vec::<RecommenderSummary>>)`](crate::operation::list_recommenders::ListRecommendersOutput::recommenders): <p>A list of the recommenders.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommenders::ListRecommendersOutput::next_token): <p>A token for getting the next set of recommenders (if they exist).</p>
-    /// - On failure, responds with [`SdkError<ListRecommendersError>`](crate::operation::list_recommenders::ListRecommendersError)
+                            /// - On failure, responds with [`SdkError<ListRecommendersError>`](crate::operation::list_recommenders::ListRecommendersError)
     pub fn list_recommenders(&self) -> crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder {
-        crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recommenders::builders::ListRecommendersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

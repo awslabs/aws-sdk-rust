@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerApiMetadataInput {}
+pub struct GetContainerApiMetadataInput  {
+}
 impl GetContainerApiMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataInput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataInput).
     pub fn builder() -> crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataInputBuilder {
@@ -13,15 +14,15 @@ impl GetContainerApiMetadataInput {
 /// A builder for [`GetContainerApiMetadataInput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetContainerApiMetadataInputBuilder {}
+pub struct GetContainerApiMetadataInputBuilder {
+}
 impl GetContainerApiMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerApiMetadataInput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_container_api_metadata::GetContainerApiMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_container_api_metadata::GetContainerApiMetadataInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_container_api_metadata::GetContainerApiMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_container_api_metadata::GetContainerApiMetadataInput {
+            }
+        )
     }
 }
+

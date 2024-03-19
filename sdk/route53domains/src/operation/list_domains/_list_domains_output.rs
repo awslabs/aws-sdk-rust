@@ -3,30 +3,31 @@
 /// <p>The ListDomains response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDomainsOutput {
+pub struct ListDomainsOutput  {
     /// <p>A list of domains.</p>
-    pub domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
+    pub domains: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSummary>>,
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDomainsOutput {
+impl  ListDomainsOutput  {
     /// <p>A list of domains.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains.is_none()`.
-    pub fn domains(&self) -> &[crate::types::DomainSummary] {
-        self.domains.as_deref().unwrap_or_default()
+    pub fn domains(&self) -> & [crate::types::DomainSummary] {
+        self.domains.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-    pub fn next_page_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_marker(&self) -> ::std::option::Option<& str> {
         self.next_page_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
     pub fn builder() -> crate::operation::list_domains::builders::ListDomainsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListDomainsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDomainsOutputBuilder {
-    pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSummary>>,
     pub(crate) next_page_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListDomainsOutputBuilder {
     /// <p>A list of domains.</p>
     pub fn domains(mut self, input: crate::types::DomainSummary) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input);
-        self.domains = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domains = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of domains.</p>
-    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>>) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DomainSummary>>) -> Self {
+        self.domains = input; self
     }
     /// <p>A list of domains.</p>
-    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
+    pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DomainSummary>> {
         &self.domains
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
@@ -70,28 +70,30 @@ impl ListDomainsOutputBuilder {
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn set_next_page_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_marker = input;
-        self
+        self.next_page_marker = input; self
     }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
     pub fn build(self) -> crate::operation::list_domains::ListDomainsOutput {
         crate::operation::list_domains::ListDomainsOutput {
-            domains: self.domains,
-            next_page_marker: self.next_page_marker,
+            domains: self.domains
+            ,
+            next_page_marker: self.next_page_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

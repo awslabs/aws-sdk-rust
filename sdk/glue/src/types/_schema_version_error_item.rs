@@ -3,19 +3,19 @@
 /// <p>An object that contains the error details for an operation on a schema version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SchemaVersionErrorItem {
+pub struct SchemaVersionErrorItem  {
     /// <p>The version number of the schema.</p>
     pub version_number: ::std::option::Option<i64>,
     /// <p>The details of the error for the schema version.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl SchemaVersionErrorItem {
+impl  SchemaVersionErrorItem  {
     /// <p>The version number of the schema.</p>
     pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The details of the error for the schema version.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SchemaVersionErrorItemBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn get_version_number(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl SchemaVersionErrorItemBuilder {
     }
     /// <p>The details of the error for the schema version.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>The details of the error for the schema version.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -65,8 +63,11 @@ impl SchemaVersionErrorItemBuilder {
     /// Consumes the builder and constructs a [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
     pub fn build(self) -> crate::types::SchemaVersionErrorItem {
         crate::types::SchemaVersionErrorItem {
-            version_number: self.version_number,
-            error_details: self.error_details,
+            version_number: self.version_number
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

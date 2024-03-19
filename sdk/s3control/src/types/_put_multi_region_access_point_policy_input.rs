@@ -3,22 +3,20 @@
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMultiRegionAccessPointPolicyInput {
+pub struct PutMultiRegionAccessPointPolicyInput  {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
     pub name: ::std::string::String,
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
     pub policy: ::std::string::String,
 }
-impl PutMultiRegionAccessPointPolicyInput {
+impl  PutMultiRegionAccessPointPolicyInput  {
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
 }
 impl PutMultiRegionAccessPointPolicyInput {
@@ -44,8 +42,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     }
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Multi-Region Access Point associated with the request.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy details for the <code>PutMultiRegionAccessPoint</code> request.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +66,21 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::name)
     /// - [`policy`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutMultiRegionAccessPointPolicyInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
-                )
-            })?,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::PutMultiRegionAccessPointPolicyInput {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building PutMultiRegionAccessPointPolicyInput")
+                    )?
+                ,
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building PutMultiRegionAccessPointPolicyInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

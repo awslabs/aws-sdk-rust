@@ -3,7 +3,7 @@
 /// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountModification {
+pub struct AccountModification  {
     /// <p>The state of the modification to the configuration of BYOL.</p>
     pub modification_state: ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
@@ -17,29 +17,29 @@ pub struct AccountModification {
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl AccountModification {
+impl  AccountModification  {
     /// <p>The state of the modification to the configuration of BYOL.</p>
-    pub fn modification_state(&self) -> ::std::option::Option<&crate::types::DedicatedTenancyModificationStateEnum> {
+    pub fn modification_state(&self) -> ::std::option::Option<& crate::types::DedicatedTenancyModificationStateEnum> {
         self.modification_state.as_ref()
     }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
-    pub fn dedicated_tenancy_support(&self) -> ::std::option::Option<&crate::types::DedicatedTenancySupportResultEnum> {
+    pub fn dedicated_tenancy_support(&self) -> ::std::option::Option<& crate::types::DedicatedTenancySupportResultEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
-    pub fn dedicated_tenancy_management_cidr_range(&self) -> ::std::option::Option<&str> {
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> ::std::option::Option<& str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The state of the modification to the configuration of BYOL.</p>
     pub fn set_modification_state(mut self, input: ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>) -> Self {
-        self.modification_state = input;
-        self
+        self.modification_state = input; self
     }
     /// <p>The state of the modification to the configuration of BYOL.</p>
     pub fn get_modification_state(&self) -> &::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum> {
@@ -83,8 +82,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub fn set_dedicated_tenancy_support(mut self, input: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>) -> Self {
-        self.dedicated_tenancy_support = input;
-        self
+        self.dedicated_tenancy_support = input; self
     }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub fn get_dedicated_tenancy_support(&self) -> &::std::option::Option<crate::types::DedicatedTenancySupportResultEnum> {
@@ -97,8 +95,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn set_dedicated_tenancy_management_cidr_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dedicated_tenancy_management_cidr_range = input;
-        self
+        self.dedicated_tenancy_management_cidr_range = input; self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn get_dedicated_tenancy_management_cidr_range(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +121,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl AccountModificationBuilder {
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl AccountModificationBuilder {
     /// Consumes the builder and constructs a [`AccountModification`](crate::types::AccountModification).
     pub fn build(self) -> crate::types::AccountModification {
         crate::types::AccountModification {
-            modification_state: self.modification_state,
-            dedicated_tenancy_support: self.dedicated_tenancy_support,
-            dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range,
-            start_time: self.start_time,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            modification_state: self.modification_state
+            ,
+            dedicated_tenancy_support: self.dedicated_tenancy_support
+            ,
+            dedicated_tenancy_management_cidr_range: self.dedicated_tenancy_management_cidr_range
+            ,
+            start_time: self.start_time
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

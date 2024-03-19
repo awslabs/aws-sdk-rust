@@ -5,7 +5,7 @@
 /// <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationExportJob {
+pub struct RecommendationExportJob  {
     /// <p>The identification number of the export job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the destination of the export file.</p>
@@ -21,33 +21,33 @@ pub struct RecommendationExportJob {
     /// <p>The reason for an export job failure.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationExportJob {
+impl  RecommendationExportJob  {
     /// <p>The identification number of the export job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>An object that describes the destination of the export file.</p>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::ExportDestination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::ExportDestination> {
         self.destination.as_ref()
     }
     /// <p>The resource type of the exported recommendations.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The status of the export job.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp of when the export job was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The timestamp of when the export job was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The reason for an export job failure.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The identification number of the export job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The identification number of the export job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>An object that describes the destination of the export file.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>An object that describes the destination of the export file.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
@@ -106,8 +104,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The resource type of the exported recommendations.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type of the exported recommendations.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -120,8 +117,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The status of the export job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the export job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -134,8 +130,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -148,8 +143,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The timestamp of when the export job was last updated.</p>
     pub fn set_last_updated_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input;
-        self
+        self.last_updated_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was last updated.</p>
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,8 +156,7 @@ impl RecommendationExportJobBuilder {
     }
     /// <p>The reason for an export job failure.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason for an export job failure.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,13 +165,21 @@ impl RecommendationExportJobBuilder {
     /// Consumes the builder and constructs a [`RecommendationExportJob`](crate::types::RecommendationExportJob).
     pub fn build(self) -> crate::types::RecommendationExportJob {
         crate::types::RecommendationExportJob {
-            job_id: self.job_id,
-            destination: self.destination,
-            resource_type: self.resource_type,
-            status: self.status,
-            creation_timestamp: self.creation_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
-            failure_reason: self.failure_reason,
+            job_id: self.job_id
+            ,
+            destination: self.destination
+            ,
+            resource_type: self.resource_type
+            ,
+            status: self.status
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

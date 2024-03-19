@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDataProviderOutput {
+pub struct ModifyDataProviderOutput  {
     /// <p>The data provider that was modified.</p>
     pub data_provider: ::std::option::Option<crate::types::DataProvider>,
     _request_id: Option<String>,
 }
-impl ModifyDataProviderOutput {
+impl  ModifyDataProviderOutput  {
     /// <p>The data provider that was modified.</p>
-    pub fn data_provider(&self) -> ::std::option::Option<&crate::types::DataProvider> {
+    pub fn data_provider(&self) -> ::std::option::Option<& crate::types::DataProvider> {
         self.data_provider.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyDataProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyDataProviderOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDataProviderOutput`](crate::operation::modify_data_provider::ModifyDataProviderOutput).
     pub fn builder() -> crate::operation::modify_data_provider::builders::ModifyDataProviderOutputBuilder {
@@ -40,27 +40,28 @@ impl ModifyDataProviderOutputBuilder {
     }
     /// <p>The data provider that was modified.</p>
     pub fn set_data_provider(mut self, input: ::std::option::Option<crate::types::DataProvider>) -> Self {
-        self.data_provider = input;
-        self
+        self.data_provider = input; self
     }
     /// <p>The data provider that was modified.</p>
     pub fn get_data_provider(&self) -> &::std::option::Option<crate::types::DataProvider> {
         &self.data_provider
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyDataProviderOutput`](crate::operation::modify_data_provider::ModifyDataProviderOutput).
     pub fn build(self) -> crate::operation::modify_data_provider::ModifyDataProviderOutput {
         crate::operation::modify_data_provider::ModifyDataProviderOutput {
-            data_provider: self.data_provider,
+            data_provider: self.data_provider
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

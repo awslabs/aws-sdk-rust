@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetMigrations`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by_attribute(MigrationSortAttribute)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::sort_by_attribute) / [`set_sort_by_attribute(Option<MigrationSortAttribute>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_sort_by_attribute):<br>required: **false**<br><p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p><br>
     ///   - [`sort_by_order(SortOrder)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::sort_by_order) / [`set_sort_by_order(Option<SortOrder>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_sort_by_order):<br>required: **false**<br><p>The order so sort the list.</p><br>
     ///   - [`v1_bot_name_contains(impl Into<String>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::v1_bot_name_contains) / [`set_v1_bot_name_contains(Option<String>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_v1_bot_name_contains):<br>required: **false**<br><p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p><br>
     ///   - [`migration_status_equals(MigrationStatus)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::migration_status_equals) / [`set_migration_status_equals(Option<MigrationStatus>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_migration_status_equals):<br>required: **false**<br><p>Filters the list to contain only migrations in the specified state.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of migrations to return in the response. The default is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p><br>
-    /// - On success, responds with [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput) with field(s):
+                            /// - On success, responds with [`GetMigrationsOutput`](crate::operation::get_migrations::GetMigrationsOutput) with field(s):
     ///   - [`migration_summaries(Option<Vec::<MigrationSummary>>)`](crate::operation::get_migrations::GetMigrationsOutput::migration_summaries): <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_migrations::GetMigrationsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
-    /// - On failure, responds with [`SdkError<GetMigrationsError>`](crate::operation::get_migrations::GetMigrationsError)
+                            /// - On failure, responds with [`SdkError<GetMigrationsError>`](crate::operation::get_migrations::GetMigrationsError)
     pub fn get_migrations(&self) -> crate::operation::get_migrations::builders::GetMigrationsFluentBuilder {
-        crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_migrations::builders::GetMigrationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

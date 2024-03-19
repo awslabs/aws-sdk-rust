@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseParametersInput {
+pub struct GetRelationalDatabaseParametersInput  {
     /// <p>The name of your database for which to get parameters.</p>
     pub relational_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl GetRelationalDatabaseParametersInput {
+impl  GetRelationalDatabaseParametersInput  {
     /// <p>The name of your database for which to get parameters.</p>
-    pub fn relational_database_name(&self) -> ::std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> ::std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GetRelationalDatabaseParametersInputBuilder {
     }
     /// <p>The name of your database for which to get parameters.</p>
     pub fn set_relational_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relational_database_name = input;
-        self
+        self.relational_database_name = input; self
     }
     /// <p>The name of your database for which to get parameters.</p>
     pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl GetRelationalDatabaseParametersInputBuilder {
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseParameters</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
@@ -68,17 +66,15 @@ impl GetRelationalDatabaseParametersInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseParametersInput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersInput {
-                relational_database_name: self.relational_database_name,
-                page_token: self.page_token,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                page_token: self.page_token
+                ,
+            }
         )
     }
 }
+

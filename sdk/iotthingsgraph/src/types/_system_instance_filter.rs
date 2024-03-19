@@ -3,22 +3,23 @@
 /// <p>An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SystemInstanceFilter {
+pub struct SystemInstanceFilter  {
     /// <p>The name of the search filter field.</p>
     pub name: ::std::option::Option<crate::types::SystemInstanceFilterName>,
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SystemInstanceFilter {
+impl  SystemInstanceFilter  {
     /// <p>The name of the search filter field.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SystemInstanceFilterName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SystemInstanceFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.value.is_none()`.
-    pub fn value(&self) -> &[::std::string::String] {
-        self.value.as_deref().unwrap_or_default()
+    pub fn value(&self) -> & [::std::string::String] {
+        self.value.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SystemInstanceFilter {
@@ -33,7 +34,7 @@ impl SystemInstanceFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SystemInstanceFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SystemInstanceFilterName>,
-    pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) value: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SystemInstanceFilterBuilder {
     /// <p>The name of the search filter field.</p>
@@ -43,8 +44,7 @@ impl SystemInstanceFilterBuilder {
     }
     /// <p>The name of the search filter field.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SystemInstanceFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the search filter field.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SystemInstanceFilterName> {
@@ -57,24 +57,26 @@ impl SystemInstanceFilterBuilder {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.value = input; self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.value
     }
     /// Consumes the builder and constructs a [`SystemInstanceFilter`](crate::types::SystemInstanceFilter).
     pub fn build(self) -> crate::types::SystemInstanceFilter {
         crate::types::SystemInstanceFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

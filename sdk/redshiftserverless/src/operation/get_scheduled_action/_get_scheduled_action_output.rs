@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScheduledActionOutput {
+pub struct GetScheduledActionOutput  {
     /// <p>The returned scheduled action object.</p>
     pub scheduled_action: ::std::option::Option<crate::types::ScheduledActionResponse>,
     _request_id: Option<String>,
 }
-impl GetScheduledActionOutput {
+impl  GetScheduledActionOutput  {
     /// <p>The returned scheduled action object.</p>
-    pub fn scheduled_action(&self) -> ::std::option::Option<&crate::types::ScheduledActionResponse> {
+    pub fn scheduled_action(&self) -> ::std::option::Option<& crate::types::ScheduledActionResponse> {
         self.scheduled_action.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetScheduledActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetScheduledActionOutput {
     /// Creates a new builder-style object to manufacture [`GetScheduledActionOutput`](crate::operation::get_scheduled_action::GetScheduledActionOutput).
     pub fn builder() -> crate::operation::get_scheduled_action::builders::GetScheduledActionOutputBuilder {
@@ -40,27 +40,28 @@ impl GetScheduledActionOutputBuilder {
     }
     /// <p>The returned scheduled action object.</p>
     pub fn set_scheduled_action(mut self, input: ::std::option::Option<crate::types::ScheduledActionResponse>) -> Self {
-        self.scheduled_action = input;
-        self
+        self.scheduled_action = input; self
     }
     /// <p>The returned scheduled action object.</p>
     pub fn get_scheduled_action(&self) -> &::std::option::Option<crate::types::ScheduledActionResponse> {
         &self.scheduled_action
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetScheduledActionOutput`](crate::operation::get_scheduled_action::GetScheduledActionOutput).
     pub fn build(self) -> crate::operation::get_scheduled_action::GetScheduledActionOutput {
         crate::operation::get_scheduled_action::GetScheduledActionOutput {
-            scheduled_action: self.scheduled_action,
+            scheduled_action: self.scheduled_action
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

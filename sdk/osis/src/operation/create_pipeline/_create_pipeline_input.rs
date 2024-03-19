@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePipelineInput {
+pub struct CreatePipelineInput  {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
@@ -20,11 +20,11 @@ pub struct CreatePipelineInput {
     /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
     pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreatePipelineInput {
+impl  CreatePipelineInput  {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
@@ -36,30 +36,31 @@ impl CreatePipelineInput {
         self.max_units
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
-    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<& str> {
         self.pipeline_configuration_body.as_deref()
     }
     /// <p>Key-value pairs to configure log publishing.</p>
-    pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
+    pub fn log_publishing_options(&self) -> ::std::option::Option<& crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
-    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<& crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
     /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
-    pub fn buffer_options(&self) -> ::std::option::Option<&crate::types::BufferOptions> {
+    pub fn buffer_options(&self) -> ::std::option::Option<& crate::types::BufferOptions> {
         self.buffer_options.as_ref()
     }
     /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
-    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<& crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreatePipelineInput {
@@ -81,7 +82,7 @@ pub struct CreatePipelineInputBuilder {
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreatePipelineInputBuilder {
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
@@ -92,8 +93,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn set_min_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_units = input;
-        self
+        self.min_units = input; self
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn get_min_units(&self) -> &::std::option::Option<i32> {
@@ -122,8 +121,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_units = input;
-        self
+        self.max_units = input; self
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn get_max_units(&self) -> &::std::option::Option<i32> {
@@ -137,8 +135,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn set_pipeline_configuration_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_configuration_body = input;
-        self
+        self.pipeline_configuration_body = input; self
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +148,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn set_log_publishing_options(mut self, input: ::std::option::Option<crate::types::LogPublishingOptions>) -> Self {
-        self.log_publishing_options = input;
-        self
+        self.log_publishing_options = input; self
     }
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptions> {
@@ -165,8 +161,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
     pub fn set_vpc_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
-        self.vpc_options = input;
-        self
+        self.vpc_options = input; self
     }
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
@@ -179,8 +174,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
     pub fn set_buffer_options(mut self, input: ::std::option::Option<crate::types::BufferOptions>) -> Self {
-        self.buffer_options = input;
-        self
+        self.buffer_options = input; self
     }
     /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
     pub fn get_buffer_options(&self) -> &::std::option::Option<crate::types::BufferOptions> {
@@ -193,8 +187,7 @@ impl CreatePipelineInputBuilder {
     }
     /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
     pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
-        self.encryption_at_rest_options = input;
-        self
+        self.encryption_at_rest_options = input; self
     }
     /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
     pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
@@ -207,33 +200,42 @@ impl CreatePipelineInputBuilder {
     /// <p>List of tags to add to the pipeline upon creation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>List of tags to add to the pipeline upon creation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineInput {
-            pipeline_name: self.pipeline_name,
-            min_units: self.min_units,
-            max_units: self.max_units,
-            pipeline_configuration_body: self.pipeline_configuration_body,
-            log_publishing_options: self.log_publishing_options,
-            vpc_options: self.vpc_options,
-            buffer_options: self.buffer_options,
-            encryption_at_rest_options: self.encryption_at_rest_options,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_pipeline::CreatePipelineInput {
+                pipeline_name: self.pipeline_name
+                ,
+                min_units: self.min_units
+                ,
+                max_units: self.max_units
+                ,
+                pipeline_configuration_body: self.pipeline_configuration_body
+                ,
+                log_publishing_options: self.log_publishing_options
+                ,
+                vpc_options: self.vpc_options
+                ,
+                buffer_options: self.buffer_options
+                ,
+                encryption_at_rest_options: self.encryption_at_rest_options
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

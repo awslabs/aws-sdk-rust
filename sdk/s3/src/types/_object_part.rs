@@ -3,7 +3,7 @@
 /// <p>A container for elements related to an individual part.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectPart {
+pub struct ObjectPart  {
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
     pub part_number: ::std::option::Option<i32>,
     /// <p>The size of the uploaded part in bytes.</p>
@@ -17,7 +17,7 @@ pub struct ObjectPart {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
 }
-impl ObjectPart {
+impl  ObjectPart  {
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> ::std::option::Option<i32> {
         self.part_number
@@ -27,19 +27,19 @@ impl ObjectPart {
         self.size
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_crc32(&self) -> ::std::option::Option<& str> {
         self.checksum_crc32.as_deref()
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32_c(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_crc32_c(&self) -> ::std::option::Option<& str> {
         self.checksum_crc32_c.as_deref()
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha1(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_sha1(&self) -> ::std::option::Option<& str> {
         self.checksum_sha1.as_deref()
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn checksum_sha256(&self) -> ::std::option::Option<& str> {
         self.checksum_sha256.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ObjectPartBuilder {
     }
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.part_number = input;
-        self
+        self.part_number = input; self
     }
     /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
     pub fn get_part_number(&self) -> &::std::option::Option<i32> {
@@ -83,8 +82,7 @@ impl ObjectPartBuilder {
     }
     /// <p>The size of the uploaded part in bytes.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the uploaded part in bytes.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -97,8 +95,7 @@ impl ObjectPartBuilder {
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_crc32 = input;
-        self
+        self.checksum_crc32 = input; self
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl ObjectPartBuilder {
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32_c(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_crc32_c = input;
-        self
+        self.checksum_crc32_c = input; self
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl ObjectPartBuilder {
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_sha1 = input;
-        self
+        self.checksum_sha1 = input; self
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. When you use the API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl ObjectPartBuilder {
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum_sha256 = input;
-        self
+        self.checksum_sha256 = input; self
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. When you use an API operation on an object that was uploaded using multipart uploads, this value may not be a direct checksum value of the full object. Instead, it's a calculation based on the checksum values of each individual part. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl ObjectPartBuilder {
     /// Consumes the builder and constructs a [`ObjectPart`](crate::types::ObjectPart).
     pub fn build(self) -> crate::types::ObjectPart {
         crate::types::ObjectPart {
-            part_number: self.part_number,
-            size: self.size,
-            checksum_crc32: self.checksum_crc32,
-            checksum_crc32_c: self.checksum_crc32_c,
-            checksum_sha1: self.checksum_sha1,
-            checksum_sha256: self.checksum_sha256,
+            part_number: self.part_number
+            ,
+            size: self.size
+            ,
+            checksum_crc32: self.checksum_crc32
+            ,
+            checksum_crc32_c: self.checksum_crc32_c
+            ,
+            checksum_sha1: self.checksum_sha1
+            ,
+            checksum_sha256: self.checksum_sha256
+            ,
         }
     }
 }
+

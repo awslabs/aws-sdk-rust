@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterDefaultPatchBaselineInput {
+pub struct RegisterDefaultPatchBaselineInput  {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
 }
-impl RegisterDefaultPatchBaselineInput {
+impl  RegisterDefaultPatchBaselineInput  {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RegisterDefaultPatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_id
     }
     /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
-            baseline_id: self.baseline_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
+                baseline_id: self.baseline_id
+                ,
+            }
+        )
     }
 }
+

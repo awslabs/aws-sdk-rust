@@ -3,23 +3,23 @@
 /// <p>Contains the part of the generated text that contains a citation, alongside where it begins and ends.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TextResponsePart {
+pub struct TextResponsePart  {
     /// <p>The part of the generated text that contains a citation.</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
     pub span: ::std::option::Option<crate::types::Span>,
 }
-impl TextResponsePart {
+impl  TextResponsePart  {
     /// <p>The part of the generated text that contains a citation.</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
-    pub fn span(&self) -> ::std::option::Option<&crate::types::Span> {
+    pub fn span(&self) -> ::std::option::Option<& crate::types::Span> {
         self.span.as_ref()
     }
 }
-impl ::std::fmt::Debug for TextResponsePart {
+impl  ::std::fmt::Debug for TextResponsePart  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextResponsePart");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl TextResponsePartBuilder {
     }
     /// <p>The part of the generated text that contains a citation.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The part of the generated text that contains a citation.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl TextResponsePartBuilder {
     }
     /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
     pub fn set_span(mut self, input: ::std::option::Option<crate::types::Span>) -> Self {
-        self.span = input;
-        self
+        self.span = input; self
     }
     /// <p>Contains information about where the text with a citation begins and ends in the generated output.</p>
     pub fn get_span(&self) -> &::std::option::Option<crate::types::Span> {
@@ -73,8 +71,10 @@ impl TextResponsePartBuilder {
     /// Consumes the builder and constructs a [`TextResponsePart`](crate::types::TextResponsePart).
     pub fn build(self) -> crate::types::TextResponsePart {
         crate::types::TextResponsePart {
-            text: self.text,
-            span: self.span,
+            text: self.text
+            ,
+            span: self.span
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for TextResponsePartBuilder {
         formatter.finish()
     }
 }
+

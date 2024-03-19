@@ -3,19 +3,19 @@
 /// <p>Container for user interface template information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UiTemplateInfo {
+pub struct UiTemplateInfo  {
     /// <p>The URL for the user interface template.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 digest of the contents of the template.</p>
     pub content_sha256: ::std::option::Option<::std::string::String>,
 }
-impl UiTemplateInfo {
+impl  UiTemplateInfo  {
     /// <p>The URL for the user interface template.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn content_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn content_sha256(&self) -> ::std::option::Option<& str> {
         self.content_sha256.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UiTemplateInfoBuilder {
     }
     /// <p>The URL for the user interface template.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL for the user interface template.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UiTemplateInfoBuilder {
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
     pub fn set_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_sha256 = input;
-        self
+        self.content_sha256 = input; self
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
     pub fn get_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl UiTemplateInfoBuilder {
     /// Consumes the builder and constructs a [`UiTemplateInfo`](crate::types::UiTemplateInfo).
     pub fn build(self) -> crate::types::UiTemplateInfo {
         crate::types::UiTemplateInfo {
-            url: self.url,
-            content_sha256: self.content_sha256,
+            url: self.url
+            ,
+            content_sha256: self.content_sha256
+            ,
         }
     }
 }
+

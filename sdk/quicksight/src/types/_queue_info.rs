@@ -3,22 +3,20 @@
 /// <p>Information about a queued dataset SPICE ingestion.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueueInfo {
+pub struct QueueInfo  {
     /// <p>The ID of the queued ingestion.</p>
     pub waiting_on_ingestion: ::std::string::String,
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub queued_ingestion: ::std::string::String,
 }
-impl QueueInfo {
+impl  QueueInfo  {
     /// <p>The ID of the queued ingestion.</p>
-    pub fn waiting_on_ingestion(&self) -> &str {
-        use std::ops::Deref;
-        self.waiting_on_ingestion.deref()
+    pub fn waiting_on_ingestion(&self) -> & str {
+        use std::ops::Deref; self.waiting_on_ingestion.deref()
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
-    pub fn queued_ingestion(&self) -> &str {
-        use std::ops::Deref;
-        self.queued_ingestion.deref()
+    pub fn queued_ingestion(&self) -> & str {
+        use std::ops::Deref; self.queued_ingestion.deref()
     }
 }
 impl QueueInfo {
@@ -44,8 +42,7 @@ impl QueueInfoBuilder {
     }
     /// <p>The ID of the queued ingestion.</p>
     pub fn set_waiting_on_ingestion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.waiting_on_ingestion = input;
-        self
+        self.waiting_on_ingestion = input; self
     }
     /// <p>The ID of the queued ingestion.</p>
     pub fn get_waiting_on_ingestion(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl QueueInfoBuilder {
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn set_queued_ingestion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queued_ingestion = input;
-        self
+        self.queued_ingestion = input; self
     }
     /// <p>The ID of the ongoing ingestion. The queued ingestion is waiting for the ongoing ingestion to complete.</p>
     pub fn get_queued_ingestion(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl QueueInfoBuilder {
     /// - [`waiting_on_ingestion`](crate::types::builders::QueueInfoBuilder::waiting_on_ingestion)
     /// - [`queued_ingestion`](crate::types::builders::QueueInfoBuilder::queued_ingestion)
     pub fn build(self) -> ::std::result::Result<crate::types::QueueInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueueInfo {
-            waiting_on_ingestion: self.waiting_on_ingestion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "waiting_on_ingestion",
-                    "waiting_on_ingestion was not specified but it is required when building QueueInfo",
-                )
-            })?,
-            queued_ingestion: self.queued_ingestion.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queued_ingestion",
-                    "queued_ingestion was not specified but it is required when building QueueInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueueInfo {
+                waiting_on_ingestion: self.waiting_on_ingestion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("waiting_on_ingestion", "waiting_on_ingestion was not specified but it is required when building QueueInfo")
+                    )?
+                ,
+                queued_ingestion: self.queued_ingestion
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queued_ingestion", "queued_ingestion was not specified but it is required when building QueueInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

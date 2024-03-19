@@ -3,7 +3,8 @@
 /// <p>Information about the status of a workflow run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowRunStatusReason {}
+pub struct WorkflowRunStatusReason  {
+}
 impl WorkflowRunStatusReason {
     /// Creates a new builder-style object to manufacture [`WorkflowRunStatusReason`](crate::types::WorkflowRunStatusReason).
     pub fn builder() -> crate::types::builders::WorkflowRunStatusReasonBuilder {
@@ -14,10 +15,13 @@ impl WorkflowRunStatusReason {
 /// A builder for [`WorkflowRunStatusReason`](crate::types::WorkflowRunStatusReason).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct WorkflowRunStatusReasonBuilder {}
+pub struct WorkflowRunStatusReasonBuilder {
+}
 impl WorkflowRunStatusReasonBuilder {
     /// Consumes the builder and constructs a [`WorkflowRunStatusReason`](crate::types::WorkflowRunStatusReason).
     pub fn build(self) -> crate::types::WorkflowRunStatusReason {
-        crate::types::WorkflowRunStatusReason {}
+        crate::types::WorkflowRunStatusReason {
+        }
     }
 }
+

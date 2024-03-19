@@ -3,9 +3,9 @@
 /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MpdSettings {
+pub struct MpdSettings  {
     /// Optional. Choose Include to have MediaConvert mark up your DASH manifest with <accessibility>
-    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: 
     /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
     /// </accessibility>
     pub accessibility_caption_hints: ::std::option::Option<crate::types::MpdAccessibilityCaptionHints>,
@@ -30,52 +30,52 @@ pub struct MpdSettings {
     /// Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also set ID3 metadata to Passthrough.
     pub timed_metadata_value: ::std::option::Option<::std::string::String>,
 }
-impl MpdSettings {
+impl  MpdSettings  {
     /// Optional. Choose Include to have MediaConvert mark up your DASH manifest with <accessibility>
-    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: 
     /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
     /// </accessibility>
-    pub fn accessibility_caption_hints(&self) -> ::std::option::Option<&crate::types::MpdAccessibilityCaptionHints> {
+    pub fn accessibility_caption_hints(&self) -> ::std::option::Option<& crate::types::MpdAccessibilityCaptionHints> {
         self.accessibility_caption_hints.as_ref()
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::MpdAudioDuration> {
+    pub fn audio_duration(&self) -> ::std::option::Option<& crate::types::MpdAudioDuration> {
         self.audio_duration.as_ref()
     }
     /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
-    pub fn caption_container_type(&self) -> ::std::option::Option<&crate::types::MpdCaptionContainerType> {
+    pub fn caption_container_type(&self) -> ::std::option::Option<& crate::types::MpdCaptionContainerType> {
         self.caption_container_type.as_ref()
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
-    pub fn klv_metadata(&self) -> ::std::option::Option<&crate::types::MpdKlvMetadata> {
+    pub fn klv_metadata(&self) -> ::std::option::Option<& crate::types::MpdKlvMetadata> {
         self.klv_metadata.as_ref()
     }
     /// To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
-    pub fn manifest_metadata_signaling(&self) -> ::std::option::Option<&crate::types::MpdManifestMetadataSignaling> {
+    pub fn manifest_metadata_signaling(&self) -> ::std::option::Option<& crate::types::MpdManifestMetadataSignaling> {
         self.manifest_metadata_signaling.as_ref()
     }
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
-    pub fn scte35_esam(&self) -> ::std::option::Option<&crate::types::MpdScte35Esam> {
+    pub fn scte35_esam(&self) -> ::std::option::Option<& crate::types::MpdScte35Esam> {
         self.scte35_esam.as_ref()
     }
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
-    pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::MpdScte35Source> {
+    pub fn scte35_source(&self) -> ::std::option::Option<& crate::types::MpdScte35Source> {
         self.scte35_source.as_ref()
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
-    pub fn timed_metadata(&self) -> ::std::option::Option<&crate::types::MpdTimedMetadata> {
+    pub fn timed_metadata(&self) -> ::std::option::Option<& crate::types::MpdTimedMetadata> {
         self.timed_metadata.as_ref()
     }
     /// Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata to Passthrough.
-    pub fn timed_metadata_box_version(&self) -> ::std::option::Option<&crate::types::MpdTimedMetadataBoxVersion> {
+    pub fn timed_metadata_box_version(&self) -> ::std::option::Option<& crate::types::MpdTimedMetadataBoxVersion> {
         self.timed_metadata_box_version.as_ref()
     }
     /// Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3 metadata to Passthrough.
-    pub fn timed_metadata_scheme_id_uri(&self) -> ::std::option::Option<&str> {
+    pub fn timed_metadata_scheme_id_uri(&self) -> ::std::option::Option<& str> {
         self.timed_metadata_scheme_id_uri.as_deref()
     }
     /// Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also set ID3 metadata to Passthrough.
-    pub fn timed_metadata_value(&self) -> ::std::option::Option<&str> {
+    pub fn timed_metadata_value(&self) -> ::std::option::Option<& str> {
         self.timed_metadata_value.as_deref()
     }
 }
@@ -104,7 +104,7 @@ pub struct MpdSettingsBuilder {
 }
 impl MpdSettingsBuilder {
     /// Optional. Choose Include to have MediaConvert mark up your DASH manifest with <accessibility>
-    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: 
     /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
     /// </accessibility>
     pub fn accessibility_caption_hints(mut self, input: crate::types::MpdAccessibilityCaptionHints) -> Self {
@@ -112,15 +112,14 @@ impl MpdSettingsBuilder {
         self
     }
     /// Optional. Choose Include to have MediaConvert mark up your DASH manifest with <accessibility>
-    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: 
     /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
     /// </accessibility>
     pub fn set_accessibility_caption_hints(mut self, input: ::std::option::Option<crate::types::MpdAccessibilityCaptionHints>) -> Self {
-        self.accessibility_caption_hints = input;
-        self
+        self.accessibility_caption_hints = input; self
     }
     /// Optional. Choose Include to have MediaConvert mark up your DASH manifest with <accessibility>
-    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest:
+    /// elements for embedded 608 captions. This markup isn't generally required, but some video players require it to discover and play embedded 608 captions. Keep the default value, Exclude, to leave these elements out. When you enable this setting, this is the markup that MediaConvert includes in your manifest: 
     /// <accessibility schemeiduri="urn:scte:dash:cc:cea-608:2015" value="CC1=eng" />
     /// </accessibility>
     pub fn get_accessibility_caption_hints(&self) -> &::std::option::Option<crate::types::MpdAccessibilityCaptionHints> {
@@ -133,8 +132,7 @@ impl MpdSettingsBuilder {
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::MpdAudioDuration>) -> Self {
-        self.audio_duration = input;
-        self
+        self.audio_duration = input; self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::MpdAudioDuration> {
@@ -147,8 +145,7 @@ impl MpdSettingsBuilder {
     }
     /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn set_caption_container_type(mut self, input: ::std::option::Option<crate::types::MpdCaptionContainerType>) -> Self {
-        self.caption_container_type = input;
-        self
+        self.caption_container_type = input; self
     }
     /// Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
     pub fn get_caption_container_type(&self) -> &::std::option::Option<crate::types::MpdCaptionContainerType> {
@@ -161,8 +158,7 @@ impl MpdSettingsBuilder {
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn set_klv_metadata(mut self, input: ::std::option::Option<crate::types::MpdKlvMetadata>) -> Self {
-        self.klv_metadata = input;
-        self
+        self.klv_metadata = input; self
     }
     /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
     pub fn get_klv_metadata(&self) -> &::std::option::Option<crate::types::MpdKlvMetadata> {
@@ -175,8 +171,7 @@ impl MpdSettingsBuilder {
     }
     /// To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
     pub fn set_manifest_metadata_signaling(mut self, input: ::std::option::Option<crate::types::MpdManifestMetadataSignaling>) -> Self {
-        self.manifest_metadata_signaling = input;
-        self
+        self.manifest_metadata_signaling = input; self
     }
     /// To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata to Passthrough.
     pub fn get_manifest_metadata_signaling(&self) -> &::std::option::Option<crate::types::MpdManifestMetadataSignaling> {
@@ -189,8 +184,7 @@ impl MpdSettingsBuilder {
     }
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
     pub fn set_scte35_esam(mut self, input: ::std::option::Option<crate::types::MpdScte35Esam>) -> Self {
-        self.scte35_esam = input;
-        self
+        self.scte35_esam = input; self
     }
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
     pub fn get_scte35_esam(&self) -> &::std::option::Option<crate::types::MpdScte35Esam> {
@@ -203,8 +197,7 @@ impl MpdSettingsBuilder {
     }
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::MpdScte35Source>) -> Self {
-        self.scte35_source = input;
-        self
+        self.scte35_source = input; self
     }
     /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
     pub fn get_scte35_source(&self) -> &::std::option::Option<crate::types::MpdScte35Source> {
@@ -217,8 +210,7 @@ impl MpdSettingsBuilder {
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn set_timed_metadata(mut self, input: ::std::option::Option<crate::types::MpdTimedMetadata>) -> Self {
-        self.timed_metadata = input;
-        self
+        self.timed_metadata = input; self
     }
     /// To include ID3 metadata in this output: Set ID3 metadata to Passthrough. Specify this ID3 metadata in Custom ID3 metadata inserter. MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None or leave blank.
     pub fn get_timed_metadata(&self) -> &::std::option::Option<crate::types::MpdTimedMetadata> {
@@ -231,8 +223,7 @@ impl MpdSettingsBuilder {
     }
     /// Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata to Passthrough.
     pub fn set_timed_metadata_box_version(mut self, input: ::std::option::Option<crate::types::MpdTimedMetadataBoxVersion>) -> Self {
-        self.timed_metadata_box_version = input;
-        self
+        self.timed_metadata_box_version = input; self
     }
     /// Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata to Passthrough.
     pub fn get_timed_metadata_box_version(&self) -> &::std::option::Option<crate::types::MpdTimedMetadataBoxVersion> {
@@ -245,8 +236,7 @@ impl MpdSettingsBuilder {
     }
     /// Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3 metadata to Passthrough.
     pub fn set_timed_metadata_scheme_id_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timed_metadata_scheme_id_uri = input;
-        self
+        self.timed_metadata_scheme_id_uri = input; self
     }
     /// Specify the event message box (eMSG) scheme ID URI for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3 metadata to Passthrough.
     pub fn get_timed_metadata_scheme_id_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +249,7 @@ impl MpdSettingsBuilder {
     }
     /// Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also set ID3 metadata to Passthrough.
     pub fn set_timed_metadata_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timed_metadata_value = input;
-        self
+        self.timed_metadata_value = input; self
     }
     /// Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also set ID3 metadata to Passthrough.
     pub fn get_timed_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -269,17 +258,29 @@ impl MpdSettingsBuilder {
     /// Consumes the builder and constructs a [`MpdSettings`](crate::types::MpdSettings).
     pub fn build(self) -> crate::types::MpdSettings {
         crate::types::MpdSettings {
-            accessibility_caption_hints: self.accessibility_caption_hints,
-            audio_duration: self.audio_duration,
-            caption_container_type: self.caption_container_type,
-            klv_metadata: self.klv_metadata,
-            manifest_metadata_signaling: self.manifest_metadata_signaling,
-            scte35_esam: self.scte35_esam,
-            scte35_source: self.scte35_source,
-            timed_metadata: self.timed_metadata,
-            timed_metadata_box_version: self.timed_metadata_box_version,
-            timed_metadata_scheme_id_uri: self.timed_metadata_scheme_id_uri,
-            timed_metadata_value: self.timed_metadata_value,
+            accessibility_caption_hints: self.accessibility_caption_hints
+            ,
+            audio_duration: self.audio_duration
+            ,
+            caption_container_type: self.caption_container_type
+            ,
+            klv_metadata: self.klv_metadata
+            ,
+            manifest_metadata_signaling: self.manifest_metadata_signaling
+            ,
+            scte35_esam: self.scte35_esam
+            ,
+            scte35_source: self.scte35_source
+            ,
+            timed_metadata: self.timed_metadata
+            ,
+            timed_metadata_box_version: self.timed_metadata_box_version
+            ,
+            timed_metadata_scheme_id_uri: self.timed_metadata_scheme_id_uri
+            ,
+            timed_metadata_value: self.timed_metadata_value
+            ,
         }
     }
 }
+

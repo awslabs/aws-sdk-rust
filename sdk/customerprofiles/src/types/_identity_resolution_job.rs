@@ -3,7 +3,7 @@
 /// <p>Information about the Identity Resolution Job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityResolutionJob {
+pub struct IdentityResolutionJob  {
     /// <p>The unique name of the domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Identity Resolution Job.</p>
@@ -37,13 +37,13 @@ pub struct IdentityResolutionJob {
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl IdentityResolutionJob {
+impl  IdentityResolutionJob  {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the Identity Resolution Job.</p>
@@ -63,27 +63,27 @@ impl IdentityResolutionJob {
     /// <li>
     /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IdentityResolutionJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IdentityResolutionJobStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp of when the job was started or will be started.</p>
-    pub fn job_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn job_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.job_start_time.as_ref()
     }
     /// <p>The timestamp of when the job was completed.</p>
-    pub fn job_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn job_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.job_end_time.as_ref()
     }
     /// <p>Statistics about an Identity Resolution Job.</p>
-    pub fn job_stats(&self) -> ::std::option::Option<&crate::types::JobStats> {
+    pub fn job_stats(&self) -> ::std::option::Option<& crate::types::JobStats> {
         self.job_stats.as_ref()
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
-    pub fn exporting_location(&self) -> ::std::option::Option<&crate::types::ExportingLocation> {
+    pub fn exporting_location(&self) -> ::std::option::Option<& crate::types::ExportingLocation> {
         self.exporting_location.as_ref()
     }
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -115,8 +115,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +128,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +173,7 @@ impl IdentityResolutionJobBuilder {
     /// <p><code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes a message indicating the source of the problem.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IdentityResolutionJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Identity Resolution Job.</p>
     /// <ul>
@@ -205,8 +202,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The timestamp of when the job was started or will be started.</p>
     pub fn set_job_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_start_time = input;
-        self
+        self.job_start_time = input; self
     }
     /// <p>The timestamp of when the job was started or will be started.</p>
     pub fn get_job_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -219,8 +215,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The timestamp of when the job was completed.</p>
     pub fn set_job_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_end_time = input;
-        self
+        self.job_end_time = input; self
     }
     /// <p>The timestamp of when the job was completed.</p>
     pub fn get_job_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -233,8 +228,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>Statistics about an Identity Resolution Job.</p>
     pub fn set_job_stats(mut self, input: ::std::option::Option<crate::types::JobStats>) -> Self {
-        self.job_stats = input;
-        self
+        self.job_stats = input; self
     }
     /// <p>Statistics about an Identity Resolution Job.</p>
     pub fn get_job_stats(&self) -> &::std::option::Option<crate::types::JobStats> {
@@ -247,8 +241,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
     pub fn set_exporting_location(mut self, input: ::std::option::Option<crate::types::ExportingLocation>) -> Self {
-        self.exporting_location = input;
-        self
+        self.exporting_location = input; self
     }
     /// <p>The S3 location where the Identity Resolution Job writes result files.</p>
     pub fn get_exporting_location(&self) -> &::std::option::Option<crate::types::ExportingLocation> {
@@ -261,8 +254,7 @@ impl IdentityResolutionJobBuilder {
     }
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,14 +263,23 @@ impl IdentityResolutionJobBuilder {
     /// Consumes the builder and constructs a [`IdentityResolutionJob`](crate::types::IdentityResolutionJob).
     pub fn build(self) -> crate::types::IdentityResolutionJob {
         crate::types::IdentityResolutionJob {
-            domain_name: self.domain_name,
-            job_id: self.job_id,
-            status: self.status,
-            job_start_time: self.job_start_time,
-            job_end_time: self.job_end_time,
-            job_stats: self.job_stats,
-            exporting_location: self.exporting_location,
-            message: self.message,
+            domain_name: self.domain_name
+            ,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
+            job_start_time: self.job_start_time
+            ,
+            job_end_time: self.job_end_time
+            ,
+            job_stats: self.job_stats
+            ,
+            exporting_location: self.exporting_location
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

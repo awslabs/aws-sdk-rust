@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomRoutingEndpointGroupOutput {
+pub struct CreateCustomRoutingEndpointGroupOutput  {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     pub endpoint_group: ::std::option::Option<crate::types::CustomRoutingEndpointGroup>,
     _request_id: Option<String>,
 }
-impl CreateCustomRoutingEndpointGroupOutput {
+impl  CreateCustomRoutingEndpointGroupOutput  {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
-    pub fn endpoint_group(&self) -> ::std::option::Option<&crate::types::CustomRoutingEndpointGroup> {
+    pub fn endpoint_group(&self) -> ::std::option::Option<& crate::types::CustomRoutingEndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCustomRoutingEndpointGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCustomRoutingEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupOutput`](crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput).
     pub fn builder() -> crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateCustomRoutingEndpointGroupOutputBuilder {
     }
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     pub fn set_endpoint_group(mut self, input: ::std::option::Option<crate::types::CustomRoutingEndpointGroup>) -> Self {
-        self.endpoint_group = input;
-        self
+        self.endpoint_group = input; self
     }
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     pub fn get_endpoint_group(&self) -> &::std::option::Option<crate::types::CustomRoutingEndpointGroup> {
         &self.endpoint_group
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCustomRoutingEndpointGroupOutput`](crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput).
     pub fn build(self) -> crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput {
         crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput {
-            endpoint_group: self.endpoint_group,
+            endpoint_group: self.endpoint_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

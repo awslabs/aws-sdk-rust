@@ -3,19 +3,19 @@
 /// <p>Summary of the data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSummary {
+pub struct DataSummary  {
     /// <p>Reference information about the content.</p>
     pub reference: ::std::option::Option<crate::types::DataReference>,
     /// <p>Details about the data.</p>
     pub details: ::std::option::Option<crate::types::DataDetails>,
 }
-impl DataSummary {
+impl  DataSummary  {
     /// <p>Reference information about the content.</p>
-    pub fn reference(&self) -> ::std::option::Option<&crate::types::DataReference> {
+    pub fn reference(&self) -> ::std::option::Option<& crate::types::DataReference> {
         self.reference.as_ref()
     }
     /// <p>Details about the data.</p>
-    pub fn details(&self) -> ::std::option::Option<&crate::types::DataDetails> {
+    pub fn details(&self) -> ::std::option::Option<& crate::types::DataDetails> {
         self.details.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl DataSummaryBuilder {
     }
     /// <p>Reference information about the content.</p>
     pub fn set_reference(mut self, input: ::std::option::Option<crate::types::DataReference>) -> Self {
-        self.reference = input;
-        self
+        self.reference = input; self
     }
     /// <p>Reference information about the content.</p>
     pub fn get_reference(&self) -> &::std::option::Option<crate::types::DataReference> {
@@ -57,8 +56,7 @@ impl DataSummaryBuilder {
     }
     /// <p>Details about the data.</p>
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::DataDetails>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details about the data.</p>
     pub fn get_details(&self) -> &::std::option::Option<crate::types::DataDetails> {
@@ -67,8 +65,11 @@ impl DataSummaryBuilder {
     /// Consumes the builder and constructs a [`DataSummary`](crate::types::DataSummary).
     pub fn build(self) -> crate::types::DataSummary {
         crate::types::DataSummary {
-            reference: self.reference,
-            details: self.details,
+            reference: self.reference
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

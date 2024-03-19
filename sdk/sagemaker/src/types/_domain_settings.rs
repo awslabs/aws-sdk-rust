@@ -3,9 +3,9 @@
 /// <p>A collection of settings that apply to the <code>SageMaker Domain</code>. These settings are specified through the <code>CreateDomain</code> API call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainSettings {
+pub struct DomainSettings  {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     pub r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
@@ -13,23 +13,24 @@ pub struct DomainSettings {
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
 }
-impl DomainSettings {
+impl  DomainSettings  {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
-    pub fn r_studio_server_pro_domain_settings(&self) -> ::std::option::Option<&crate::types::RStudioServerProDomainSettings> {
+    pub fn r_studio_server_pro_domain_settings(&self) -> ::std::option::Option<& crate::types::RStudioServerProDomainSettings> {
         self.r_studio_server_pro_domain_settings.as_ref()
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
-    pub fn execution_role_identity_config(&self) -> ::std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
+    pub fn execution_role_identity_config(&self) -> ::std::option::Option<& crate::types::ExecutionRoleIdentityConfig> {
         self.execution_role_identity_config.as_ref()
     }
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
-    pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
+    pub fn docker_settings(&self) -> ::std::option::Option<& crate::types::DockerSettings> {
         self.docker_settings.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl DomainSettings {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainSettingsBuilder {
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
@@ -57,17 +58,16 @@ impl DomainSettingsBuilder {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
@@ -77,8 +77,7 @@ impl DomainSettingsBuilder {
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     pub fn set_r_studio_server_pro_domain_settings(mut self, input: ::std::option::Option<crate::types::RStudioServerProDomainSettings>) -> Self {
-        self.r_studio_server_pro_domain_settings = input;
-        self
+        self.r_studio_server_pro_domain_settings = input; self
     }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     pub fn get_r_studio_server_pro_domain_settings(&self) -> &::std::option::Option<crate::types::RStudioServerProDomainSettings> {
@@ -91,8 +90,7 @@ impl DomainSettingsBuilder {
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
     pub fn set_execution_role_identity_config(mut self, input: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>) -> Self {
-        self.execution_role_identity_config = input;
-        self
+        self.execution_role_identity_config = input; self
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
     pub fn get_execution_role_identity_config(&self) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
@@ -105,8 +103,7 @@ impl DomainSettingsBuilder {
     }
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub fn set_docker_settings(mut self, input: ::std::option::Option<crate::types::DockerSettings>) -> Self {
-        self.docker_settings = input;
-        self
+        self.docker_settings = input; self
     }
     /// <p>A collection of settings that configure the domain's Docker interaction.</p>
     pub fn get_docker_settings(&self) -> &::std::option::Option<crate::types::DockerSettings> {
@@ -115,10 +112,15 @@ impl DomainSettingsBuilder {
     /// Consumes the builder and constructs a [`DomainSettings`](crate::types::DomainSettings).
     pub fn build(self) -> crate::types::DomainSettings {
         crate::types::DomainSettings {
-            security_group_ids: self.security_group_ids,
-            r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings,
-            execution_role_identity_config: self.execution_role_identity_config,
-            docker_settings: self.docker_settings,
+            security_group_ids: self.security_group_ids
+            ,
+            r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings
+            ,
+            execution_role_identity_config: self.execution_role_identity_config
+            ,
+            docker_settings: self.docker_settings
+            ,
         }
     }
 }
+

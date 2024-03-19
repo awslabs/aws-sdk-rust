@@ -3,7 +3,7 @@
 /// <p>The input for the <code>CreateChangeSet</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateChangeSetInput {
+pub struct CreateChangeSetInput  {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the body of the revised template, with a minimum length of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by comparing this template with the template of the stack that you specified.</p>
@@ -15,7 +15,7 @@ pub struct CreateChangeSetInput {
     /// <p>Whether to reuse the template that's associated with the stack to create the change set.</p>
     pub use_previous_template: ::std::option::Option<bool>,
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change set. For more information, see the <code>Parameter</code> data type.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
     /// <li>
@@ -58,21 +58,21 @@ pub struct CreateChangeSetInput {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
-    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the change set. The name must be unique among all change sets that are associated with the specified stack.</p>
     /// <p>A change set name can contain only alphanumeric, case sensitive characters, and hyphens. It must start with an alphabetical character and can't exceed 128 characters.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
@@ -85,7 +85,7 @@ pub struct CreateChangeSetInput {
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub change_set_type: ::std::option::Option<crate::types::ChangeSetType>,
     /// <p>The resources to import into your stack.</p>
-    pub resources_to_import: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToImport>>,
+    pub resources_to_import: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceToImport>>,
     /// <p>Creates a change set for the all nested stacks specified in the template. The default behavior of this action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.</p>
     pub include_nested_stacks: ::std::option::Option<bool>,
     /// <p>Determines what action will be taken if stack creation fails. If this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
@@ -104,19 +104,19 @@ pub struct CreateChangeSetInput {
     /// </note>
     pub import_existing_resources: ::std::option::Option<bool>,
 }
-impl CreateChangeSetInput {
+impl  CreateChangeSetInput  {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>A structure that contains the body of the revised template, with a minimum length of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
-    pub fn template_body(&self) -> ::std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The location of the file that contains the revised template. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
-    pub fn template_url(&self) -> ::std::option::Option<&str> {
+    pub fn template_url(&self) -> ::std::option::Option<& str> {
         self.template_url.as_deref()
     }
     /// <p>Whether to reuse the template that's associated with the stack to create the change set.</p>
@@ -124,10 +124,11 @@ impl CreateChangeSetInput {
         self.use_previous_template
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change set. For more information, see the <code>Parameter</code> data type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::Parameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::Parameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -171,65 +172,70 @@ impl CreateChangeSetInput {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::Capability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::Capability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
-    pub fn resource_types(&self) -> &[::std::string::String] {
-        self.resource_types.as_deref().unwrap_or_default()
+    pub fn resource_types(&self) -> & [::std::string::String] {
+        self.resource_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
-    pub fn rollback_configuration(&self) -> ::std::option::Option<&crate::types::RollbackConfiguration> {
+    pub fn rollback_configuration(&self) -> ::std::option::Option<& crate::types::RollbackConfiguration> {
         self.rollback_configuration.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
-    pub fn notification_arns(&self) -> &[::std::string::String] {
-        self.notification_arns.as_deref().unwrap_or_default()
+    pub fn notification_arns(&self) -> & [::std::string::String] {
+        self.notification_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the change set. The name must be unique among all change sets that are associated with the specified stack.</p>
     /// <p>A change set name can contain only alphanumeric, case sensitive characters, and hyphens. It must start with an alphabetical character and can't exceed 128 characters.</p>
-    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another change set with the same name. You might retry <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A description to help you identify this change set.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation, specify <code>IMPORT</code>.</p>
     /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
-    pub fn change_set_type(&self) -> ::std::option::Option<&crate::types::ChangeSetType> {
+    pub fn change_set_type(&self) -> ::std::option::Option<& crate::types::ChangeSetType> {
         self.change_set_type.as_ref()
     }
     /// <p>The resources to import into your stack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources_to_import.is_none()`.
-    pub fn resources_to_import(&self) -> &[crate::types::ResourceToImport] {
-        self.resources_to_import.as_deref().unwrap_or_default()
+    pub fn resources_to_import(&self) -> & [crate::types::ResourceToImport] {
+        self.resources_to_import.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Creates a change set for the all nested stacks specified in the template. The default behavior of this action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.</p>
     pub fn include_nested_stacks(&self) -> ::std::option::Option<bool> {
@@ -245,7 +251,7 @@ impl CreateChangeSetInput {
     /// <p><code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p></li>
     /// </ul>
     /// <p>For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all stacks to be deleted.</p>
-    pub fn on_stack_failure(&self) -> ::std::option::Option<&crate::types::OnStackFailure> {
+    pub fn on_stack_failure(&self) -> ::std::option::Option<& crate::types::OnStackFailure> {
         self.on_stack_failure.as_ref()
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
@@ -270,18 +276,18 @@ pub struct CreateChangeSetInputBuilder {
     pub(crate) template_body: ::std::option::Option<::std::string::String>,
     pub(crate) template_url: ::std::option::Option<::std::string::String>,
     pub(crate) use_previous_template: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
-    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
-    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_type: ::std::option::Option<crate::types::ChangeSetType>,
-    pub(crate) resources_to_import: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToImport>>,
+    pub(crate) resources_to_import: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceToImport>>,
     pub(crate) include_nested_stacks: ::std::option::Option<bool>,
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
     pub(crate) import_existing_resources: ::std::option::Option<bool>,
@@ -295,8 +301,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -311,8 +316,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>A structure that contains the body of the revised template, with a minimum length of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
     pub fn set_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>A structure that contains the body of the revised template, with a minimum length of 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
@@ -328,8 +332,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>The location of the file that contains the revised template. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_url = input;
-        self
+        self.template_url = input; self
     }
     /// <p>The location of the file that contains the revised template. The URL must point to a template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. CloudFormation generates the change set by comparing this template with the stack that you specified. The location for an Amazon S3 bucket must start with <code>https://</code>.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
@@ -343,8 +346,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>Whether to reuse the template that's associated with the stack to create the change set.</p>
     pub fn set_use_previous_template(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_previous_template = input;
-        self
+        self.use_previous_template = input; self
     }
     /// <p>Whether to reuse the template that's associated with the stack to create the change set.</p>
     pub fn get_use_previous_template(&self) -> &::std::option::Option<bool> {
@@ -357,17 +359,16 @@ impl CreateChangeSetInputBuilder {
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change set. For more information, see the <code>Parameter</code> data type.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change set. For more information, see the <code>Parameter</code> data type.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>Parameter</code> structures that specify input parameters for the change set. For more information, see the <code>Parameter</code> data type.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Parameter>> {
         &self.parameters
     }
     /// Appends an item to `capabilities`.
@@ -418,9 +419,9 @@ impl CreateChangeSetInputBuilder {
     /// </note>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -464,9 +465,8 @@ impl CreateChangeSetInputBuilder {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Capability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
@@ -510,7 +510,7 @@ impl CreateChangeSetInputBuilder {
     /// </ul><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Capability>> {
         &self.capabilities
     }
     /// Appends an item to `resource_types`.
@@ -523,23 +523,22 @@ impl CreateChangeSetInputBuilder {
     /// </note>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-        v.push(input.into());
-        self.resource_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_types = input;
-        self
+    pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_types = input; self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p><note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
-    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_types
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
@@ -551,8 +550,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the role's credentials to make calls on your behalf. CloudFormation uses this role for all future operations on the stack. Provided that users have permission to operate on the stack, CloudFormation uses this role even if the users don't have permission to pass it. Ensure that the role grants least permission.</p>
     /// <p>If you don't specify a value, CloudFormation uses the role that was previously associated with the stack. If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.</p>
@@ -566,8 +564,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn set_rollback_configuration(mut self, input: ::std::option::Option<crate::types::RollbackConfiguration>) -> Self {
-        self.rollback_configuration = input;
-        self
+        self.rollback_configuration = input; self
     }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn get_rollback_configuration(&self) -> &::std::option::Option<crate::types::RollbackConfiguration> {
@@ -580,17 +577,16 @@ impl CreateChangeSetInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
     pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-        v.push(input.into());
-        self.notification_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.notification_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
-    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_arns = input;
-        self
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.notification_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS) topics that CloudFormation associates with the stack. To remove all associated notification topics, specify an empty list.</p>
-    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.notification_arns
     }
     /// Appends an item to `tags`.
@@ -600,17 +596,16 @@ impl CreateChangeSetInputBuilder {
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the change set. The name must be unique among all change sets that are associated with the specified stack.</p>
@@ -623,8 +618,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>The name of the change set. The name must be unique among all change sets that are associated with the specified stack.</p>
     /// <p>A change set name can contain only alphanumeric, case sensitive characters, and hyphens. It must start with an alphabetical character and can't exceed 128 characters.</p>
     pub fn set_change_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.change_set_name = input;
-        self
+        self.change_set_name = input; self
     }
     /// <p>The name of the change set. The name must be unique among all change sets that are associated with the specified stack.</p>
     /// <p>A change set name can contain only alphanumeric, case sensitive characters, and hyphens. It must start with an alphabetical character and can't exceed 128 characters.</p>
@@ -638,8 +632,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another change set with the same name. You might retry <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to create another change set with the same name. You might retry <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -652,8 +645,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>A description to help you identify this change set.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description to help you identify this change set.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -670,8 +662,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
     /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a change set for a new stack or the <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub fn set_change_set_type(mut self, input: ::std::option::Option<crate::types::ChangeSetType>) -> Self {
-        self.change_set_type = input;
-        self
+        self.change_set_type = input; self
     }
     /// <p>The type of change set operation. To create a change set for a new stack, specify <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>. To create a change set for an import operation, specify <code>IMPORT</code>.</p>
     /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a> state until you execute the change set.</p>
@@ -686,17 +677,16 @@ impl CreateChangeSetInputBuilder {
     /// <p>The resources to import into your stack.</p>
     pub fn resources_to_import(mut self, input: crate::types::ResourceToImport) -> Self {
         let mut v = self.resources_to_import.unwrap_or_default();
-        v.push(input);
-        self.resources_to_import = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources_to_import = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resources to import into your stack.</p>
-    pub fn set_resources_to_import(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToImport>>) -> Self {
-        self.resources_to_import = input;
-        self
+    pub fn set_resources_to_import(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceToImport>>) -> Self {
+        self.resources_to_import = input; self
     }
     /// <p>The resources to import into your stack.</p>
-    pub fn get_resources_to_import(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceToImport>> {
+    pub fn get_resources_to_import(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceToImport>> {
         &self.resources_to_import
     }
     /// <p>Creates a change set for the all nested stacks specified in the template. The default behavior of this action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.</p>
@@ -706,8 +696,7 @@ impl CreateChangeSetInputBuilder {
     }
     /// <p>Creates a change set for the all nested stacks specified in the template. The default behavior of this action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.</p>
     pub fn set_include_nested_stacks(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_nested_stacks = input;
-        self
+        self.include_nested_stacks = input; self
     }
     /// <p>Creates a change set for the all nested stacks specified in the template. The default behavior of this action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.</p>
     pub fn get_include_nested_stacks(&self) -> &::std::option::Option<bool> {
@@ -738,8 +727,7 @@ impl CreateChangeSetInputBuilder {
     /// </ul>
     /// <p>For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all stacks to be deleted.</p>
     pub fn set_on_stack_failure(mut self, input: ::std::option::Option<crate::types::OnStackFailure>) -> Self {
-        self.on_stack_failure = input;
-        self
+        self.on_stack_failure = input; self
     }
     /// <p>Determines what action will be taken if stack creation fails. If this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
     /// <ul>
@@ -765,8 +753,7 @@ impl CreateChangeSetInputBuilder {
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.import_existing_resources = input;
-        self
+        self.import_existing_resources = input; self
     }
     /// <p>Indicates if the change set imports resources that already exist.</p><note>
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -775,29 +762,49 @@ impl CreateChangeSetInputBuilder {
         &self.import_existing_resources
     }
     /// Consumes the builder and constructs a [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_change_set::CreateChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_change_set::CreateChangeSetInput {
-            stack_name: self.stack_name,
-            template_body: self.template_body,
-            template_url: self.template_url,
-            use_previous_template: self.use_previous_template,
-            parameters: self.parameters,
-            capabilities: self.capabilities,
-            resource_types: self.resource_types,
-            role_arn: self.role_arn,
-            rollback_configuration: self.rollback_configuration,
-            notification_arns: self.notification_arns,
-            tags: self.tags,
-            change_set_name: self.change_set_name,
-            client_token: self.client_token,
-            description: self.description,
-            change_set_type: self.change_set_type,
-            resources_to_import: self.resources_to_import,
-            include_nested_stacks: self.include_nested_stacks,
-            on_stack_failure: self.on_stack_failure,
-            import_existing_resources: self.import_existing_resources,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_change_set::CreateChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_change_set::CreateChangeSetInput {
+                stack_name: self.stack_name
+                ,
+                template_body: self.template_body
+                ,
+                template_url: self.template_url
+                ,
+                use_previous_template: self.use_previous_template
+                ,
+                parameters: self.parameters
+                ,
+                capabilities: self.capabilities
+                ,
+                resource_types: self.resource_types
+                ,
+                role_arn: self.role_arn
+                ,
+                rollback_configuration: self.rollback_configuration
+                ,
+                notification_arns: self.notification_arns
+                ,
+                tags: self.tags
+                ,
+                change_set_name: self.change_set_name
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                change_set_type: self.change_set_type
+                ,
+                resources_to_import: self.resources_to_import
+                ,
+                include_nested_stacks: self.include_nested_stacks
+                ,
+                on_stack_failure: self.on_stack_failure
+                ,
+                import_existing_resources: self.import_existing_resources
+                ,
+            }
+        )
     }
 }
+

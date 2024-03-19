@@ -3,22 +3,23 @@
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SavingsPlanOfferingFilterElement {
+pub struct SavingsPlanOfferingFilterElement  {
     /// <p>The filter name.</p>
     pub name: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>,
     /// <p>The filter values.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl SavingsPlanOfferingFilterElement {
+impl  SavingsPlanOfferingFilterElement  {
     /// <p>The filter name.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::SavingsPlanOfferingFilterAttribute> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::SavingsPlanOfferingFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The filter values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SavingsPlanOfferingFilterElement {
@@ -33,7 +34,7 @@ impl SavingsPlanOfferingFilterElement {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SavingsPlanOfferingFilterElementBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl SavingsPlanOfferingFilterElementBuilder {
     /// <p>The filter name.</p>
@@ -43,8 +44,7 @@ impl SavingsPlanOfferingFilterElementBuilder {
     }
     /// <p>The filter name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The filter name.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SavingsPlanOfferingFilterAttribute> {
@@ -57,24 +57,26 @@ impl SavingsPlanOfferingFilterElementBuilder {
     /// <p>The filter values.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The filter values.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`SavingsPlanOfferingFilterElement`](crate::types::SavingsPlanOfferingFilterElement).
     pub fn build(self) -> crate::types::SavingsPlanOfferingFilterElement {
         crate::types::SavingsPlanOfferingFilterElement {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperimentTemplateLogConfiguration {
+pub struct ExperimentTemplateLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
@@ -11,13 +11,13 @@ pub struct ExperimentTemplateLogConfiguration {
     /// <p>The schema version.</p>
     pub log_schema_version: ::std::option::Option<i32>,
 }
-impl ExperimentTemplateLogConfiguration {
+impl  ExperimentTemplateLogConfiguration  {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration> {
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateS3LogConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::ExperimentTemplateS3LogConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
@@ -47,12 +47,8 @@ impl ExperimentTemplateLogConfigurationBuilder {
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_logs_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration>,
-    ) -> Self {
-        self.cloud_watch_logs_configuration = input;
-        self
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration>) -> Self {
+        self.cloud_watch_logs_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateCloudWatchLogsLogConfiguration> {
@@ -65,8 +61,7 @@ impl ExperimentTemplateLogConfigurationBuilder {
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateS3LogConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateS3LogConfiguration> {
@@ -79,8 +74,7 @@ impl ExperimentTemplateLogConfigurationBuilder {
     }
     /// <p>The schema version.</p>
     pub fn set_log_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.log_schema_version = input;
-        self
+        self.log_schema_version = input; self
     }
     /// <p>The schema version.</p>
     pub fn get_log_schema_version(&self) -> &::std::option::Option<i32> {
@@ -89,9 +83,13 @@ impl ExperimentTemplateLogConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExperimentTemplateLogConfiguration`](crate::types::ExperimentTemplateLogConfiguration).
     pub fn build(self) -> crate::types::ExperimentTemplateLogConfiguration {
         crate::types::ExperimentTemplateLogConfiguration {
-            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
-            s3_configuration: self.s3_configuration,
-            log_schema_version: self.log_schema_version,
+            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration
+            ,
+            s3_configuration: self.s3_configuration
+            ,
+            log_schema_version: self.log_schema_version
+            ,
         }
     }
 }
+

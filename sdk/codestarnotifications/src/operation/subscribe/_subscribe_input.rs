@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscribeInput {
+pub struct SubscribeInput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
@@ -10,17 +10,17 @@ pub struct SubscribeInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl SubscribeInput {
+impl  SubscribeInput  {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SubscribeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SubscribeInputBuilder {
     }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
@@ -77,8 +75,7 @@ impl SubscribeInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl SubscribeInputBuilder {
     }
     /// Consumes the builder and constructs a [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::subscribe::SubscribeInput {
-            arn: self.arn,
-            target: self.target,
-            client_request_token: self.client_request_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::subscribe::SubscribeInput {
+                arn: self.arn
+                ,
+                target: self.target
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

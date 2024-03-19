@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrackerConsumersInput {
+pub struct ListTrackerConsumersInput  {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of resources returned in a single call.</p>
@@ -12,9 +12,9 @@ pub struct ListTrackerConsumersInput {
     /// <p>Default value: <code>null</code></p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTrackerConsumersInput {
+impl  ListTrackerConsumersInput  {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
-    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+    pub fn tracker_name(&self) -> ::std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>An optional limit for the number of resources returned in a single call.</p>
@@ -24,7 +24,7 @@ impl ListTrackerConsumersInput {
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl ListTrackerConsumersInputBuilder {
     }
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     pub fn set_tracker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl ListTrackerConsumersInputBuilder {
     /// <p>An optional limit for the number of resources returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional limit for the number of resources returned in a single call.</p>
     /// <p>Default value: <code>100</code></p>
@@ -85,8 +83,7 @@ impl ListTrackerConsumersInputBuilder {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
@@ -94,14 +91,17 @@ impl ListTrackerConsumersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
-            tracker_name: self.tracker_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
+                tracker_name: self.tracker_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

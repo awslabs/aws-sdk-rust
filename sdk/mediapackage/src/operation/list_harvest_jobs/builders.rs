@@ -5,54 +5,50 @@ pub use crate::operation::list_harvest_jobs::_list_harvest_jobs_input::ListHarve
 
 impl ListHarvestJobsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_harvest_jobs::ListHarvestJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.list_harvest_jobs();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::list_harvest_jobs::ListHarvestJobsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.list_harvest_jobs();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ListHarvestJobs`.
-///
+/// 
 /// Returns a collection of HarvestJob records.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHarvestJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_harvest_jobs::builders::ListHarvestJobsInputBuilder,
+                    inner: crate::operation::list_harvest_jobs::builders::ListHarvestJobsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
-        crate::operation::list_harvest_jobs::ListHarvestJobsError,
-    > for ListHarvestJobsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
-            crate::operation::list_harvest_jobs::ListHarvestJobsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
+                    crate::operation::list_harvest_jobs::ListHarvestJobsError,
+                > for ListHarvestJobsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
+                        crate::operation::list_harvest_jobs::ListHarvestJobsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ListHarvestJobsFluentBuilder {
     /// Creates a new `ListHarvestJobs`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl ListHarvestJobsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_harvest_jobs::ListHarvestJobsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::list_harvest_jobs::ListHarvestJobs::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::list_harvest_jobs::ListHarvestJobs::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::list_harvest_jobs::ListHarvestJobsOutput,
-        crate::operation::list_harvest_jobs::ListHarvestJobsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::list_harvest_jobs::ListHarvestJobsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_harvest_jobs::ListHarvestJobsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::list_harvest_jobs::ListHarvestJobs::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::list_harvest_jobs::ListHarvestJobs::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::list_harvest_jobs::ListHarvestJobsOutput, crate::operation::list_harvest_jobs::ListHarvestJobsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator {
-        crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator {
+                                crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::new(self.handle, self.inner)
+                            }
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
     pub fn include_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.include_channel_id(input.into());
@@ -171,3 +158,4 @@ impl ListHarvestJobsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

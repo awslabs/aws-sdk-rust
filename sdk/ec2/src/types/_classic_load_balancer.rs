@@ -3,13 +3,13 @@
 /// <p>Describes a Classic Load Balancer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassicLoadBalancer {
+pub struct ClassicLoadBalancer  {
     /// <p>The name of the load balancer.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl ClassicLoadBalancer {
+impl  ClassicLoadBalancer  {
     /// <p>The name of the load balancer.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ClassicLoadBalancerBuilder {
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the load balancer.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ClassicLoadBalancerBuilder {
     }
     /// Consumes the builder and constructs a [`ClassicLoadBalancer`](crate::types::ClassicLoadBalancer).
     pub fn build(self) -> crate::types::ClassicLoadBalancer {
-        crate::types::ClassicLoadBalancer { name: self.name }
+        crate::types::ClassicLoadBalancer {
+            name: self.name
+            ,
+        }
     }
 }
+

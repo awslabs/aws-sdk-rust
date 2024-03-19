@@ -3,13 +3,13 @@
 /// <p>Output from validating an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppValidationOutput {
+pub struct AppValidationOutput  {
     /// <p>Output from using SSM to validate the application.</p>
     pub ssm_output: ::std::option::Option<crate::types::SsmOutput>,
 }
-impl AppValidationOutput {
+impl  AppValidationOutput  {
     /// <p>Output from using SSM to validate the application.</p>
-    pub fn ssm_output(&self) -> ::std::option::Option<&crate::types::SsmOutput> {
+    pub fn ssm_output(&self) -> ::std::option::Option<& crate::types::SsmOutput> {
         self.ssm_output.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AppValidationOutputBuilder {
     }
     /// <p>Output from using SSM to validate the application.</p>
     pub fn set_ssm_output(mut self, input: ::std::option::Option<crate::types::SsmOutput>) -> Self {
-        self.ssm_output = input;
-        self
+        self.ssm_output = input; self
     }
     /// <p>Output from using SSM to validate the application.</p>
     pub fn get_ssm_output(&self) -> &::std::option::Option<crate::types::SsmOutput> {
@@ -43,6 +42,10 @@ impl AppValidationOutputBuilder {
     }
     /// Consumes the builder and constructs a [`AppValidationOutput`](crate::types::AppValidationOutput).
     pub fn build(self) -> crate::types::AppValidationOutput {
-        crate::types::AppValidationOutput { ssm_output: self.ssm_output }
+        crate::types::AppValidationOutput {
+            ssm_output: self.ssm_output
+            ,
+        }
     }
 }
+

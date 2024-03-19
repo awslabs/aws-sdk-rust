@@ -3,7 +3,7 @@
 /// <p>Describes an EBS volume for a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduledInstancesEbs {
+pub struct ScheduledInstancesEbs  {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
@@ -19,7 +19,7 @@ pub struct ScheduledInstancesEbs {
     /// <p>Default: <code>gp2</code></p>
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
-impl ScheduledInstancesEbs {
+impl  ScheduledInstancesEbs  {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
@@ -33,7 +33,7 @@ impl ScheduledInstancesEbs {
         self.iops
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -43,7 +43,7 @@ impl ScheduledInstancesEbs {
     }
     /// <p>The volume type.</p>
     /// <p>Default: <code>gp2</code></p>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl ScheduledInstancesEbsBuilder {
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -87,8 +86,7 @@ impl ScheduledInstancesEbsBuilder {
     }
     /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -101,8 +99,7 @@ impl ScheduledInstancesEbsBuilder {
     }
     /// <p>The number of I/O operations per second (IOPS) to provision for a <code>gp3</code>, <code>io1</code>, or <code>io2</code> volume.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of I/O operations per second (IOPS) to provision for a <code>gp3</code>, <code>io1</code>, or <code>io2</code> volume.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -115,8 +112,7 @@ impl ScheduledInstancesEbsBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +127,7 @@ impl ScheduledInstancesEbsBuilder {
     /// <p>The size of the volume, in GiB.</p>
     /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The size of the volume, in GiB.</p>
     /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
@@ -148,8 +143,7 @@ impl ScheduledInstancesEbsBuilder {
     /// <p>The volume type.</p>
     /// <p>Default: <code>gp2</code></p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type.</p>
     /// <p>Default: <code>gp2</code></p>
@@ -159,12 +153,19 @@ impl ScheduledInstancesEbsBuilder {
     /// Consumes the builder and constructs a [`ScheduledInstancesEbs`](crate::types::ScheduledInstancesEbs).
     pub fn build(self) -> crate::types::ScheduledInstancesEbs {
         crate::types::ScheduledInstancesEbs {
-            delete_on_termination: self.delete_on_termination,
-            encrypted: self.encrypted,
-            iops: self.iops,
-            snapshot_id: self.snapshot_id,
-            volume_size: self.volume_size,
-            volume_type: self.volume_type,
+            delete_on_termination: self.delete_on_termination
+            ,
+            encrypted: self.encrypted
+            ,
+            iops: self.iops
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            volume_size: self.volume_size
+            ,
+            volume_type: self.volume_type
+            ,
         }
     }
 }
+

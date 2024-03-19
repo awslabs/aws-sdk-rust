@@ -3,7 +3,7 @@
 /// <p>The status of an inbound cross-cluster connection for OpenSearch Service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InboundConnectionStatus {
+pub struct InboundConnectionStatus  {
     /// <p>The status code for the connection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ pub struct InboundConnectionStatus {
     /// <p>Information about the connection.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl InboundConnectionStatus {
+impl  InboundConnectionStatus  {
     /// <p>The status code for the connection. Can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -47,11 +47,11 @@ impl InboundConnectionStatus {
     /// <li>
     /// <p><b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p></li>
     /// </ul>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::InboundConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::InboundConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Information about the connection.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -113,8 +113,7 @@ impl InboundConnectionStatusBuilder {
     /// <p><b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p></li>
     /// </ul>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::InboundConnectionStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code for the connection. Can be one of the following:</p>
     /// <ul>
@@ -145,8 +144,7 @@ impl InboundConnectionStatusBuilder {
     }
     /// <p>Information about the connection.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Information about the connection.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,11 @@ impl InboundConnectionStatusBuilder {
     /// Consumes the builder and constructs a [`InboundConnectionStatus`](crate::types::InboundConnectionStatus).
     pub fn build(self) -> crate::types::InboundConnectionStatus {
         crate::types::InboundConnectionStatus {
-            status_code: self.status_code,
-            message: self.message,
+            status_code: self.status_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

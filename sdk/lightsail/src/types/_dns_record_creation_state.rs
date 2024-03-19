@@ -4,7 +4,7 @@
 /// <p>When you create an SSL/TLS certificate for a Lightsail resource, you must add a set of CNAME records to the DNS of the domains for the certificate to validate that you own the domains. Lightsail can automatically add the CNAME records to the DNS of the domain if the DNS zone for the domain exists within your Lightsail account. If automatic record addition fails, or if you manage the DNS of your domain using a third-party service, then you must manually add the CNAME records to the DNS of your domain. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/verify-tls-ssl-certificate-using-dns-cname-https">Verify an SSL/TLS certificate in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DnsRecordCreationState {
+pub struct DnsRecordCreationState  {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct DnsRecordCreationState {
     /// <p>The message that describes the reason for the status code.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DnsRecordCreationState {
+impl  DnsRecordCreationState  {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
@@ -30,11 +30,11 @@ impl DnsRecordCreationState {
     /// <li>
     /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::DnsRecordCreationStateCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::DnsRecordCreationStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl DnsRecordCreationStateBuilder {
     /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::DnsRecordCreationStateCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
@@ -101,8 +100,7 @@ impl DnsRecordCreationStateBuilder {
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,11 @@ impl DnsRecordCreationStateBuilder {
     /// Consumes the builder and constructs a [`DnsRecordCreationState`](crate::types::DnsRecordCreationState).
     pub fn build(self) -> crate::types::DnsRecordCreationState {
         crate::types::DnsRecordCreationState {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

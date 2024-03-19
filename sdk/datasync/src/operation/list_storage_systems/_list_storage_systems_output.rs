@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStorageSystemsOutput {
+pub struct ListStorageSystemsOutput  {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
+    pub storage_systems: ::std::option::Option<::std::vec::Vec::<crate::types::StorageSystemListEntry>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStorageSystemsOutput {
+impl  ListStorageSystemsOutput  {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_systems.is_none()`.
-    pub fn storage_systems(&self) -> &[crate::types::StorageSystemListEntry] {
-        self.storage_systems.as_deref().unwrap_or_default()
+    pub fn storage_systems(&self) -> & [crate::types::StorageSystemListEntry] {
+        self.storage_systems.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStorageSystemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStorageSystemsOutput {
     /// Creates a new builder-style object to manufacture [`ListStorageSystemsOutput`](crate::operation::list_storage_systems::ListStorageSystemsOutput).
     pub fn builder() -> crate::operation::list_storage_systems::builders::ListStorageSystemsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListStorageSystemsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageSystemsOutputBuilder {
-    pub(crate) storage_systems: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>,
+    pub(crate) storage_systems: ::std::option::Option<::std::vec::Vec::<crate::types::StorageSystemListEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListStorageSystemsOutputBuilder {
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
     pub fn storage_systems(mut self, input: crate::types::StorageSystemListEntry) -> Self {
         let mut v = self.storage_systems.unwrap_or_default();
-        v.push(input);
-        self.storage_systems = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_systems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn set_storage_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>>) -> Self {
-        self.storage_systems = input;
-        self
+    pub fn set_storage_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StorageSystemListEntry>>) -> Self {
+        self.storage_systems = input; self
     }
     /// <p>The Amazon Resource Names ARNs) of the on-premises storage systems that you're using with DataSync Discovery.</p>
-    pub fn get_storage_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageSystemListEntry>> {
+    pub fn get_storage_systems(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StorageSystemListEntry>> {
         &self.storage_systems
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
@@ -69,28 +69,30 @@ impl ListStorageSystemsOutputBuilder {
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStorageSystemsOutput`](crate::operation::list_storage_systems::ListStorageSystemsOutput).
     pub fn build(self) -> crate::operation::list_storage_systems::ListStorageSystemsOutput {
         crate::operation::list_storage_systems::ListStorageSystemsOutput {
-            storage_systems: self.storage_systems,
-            next_token: self.next_token,
+            storage_systems: self.storage_systems
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

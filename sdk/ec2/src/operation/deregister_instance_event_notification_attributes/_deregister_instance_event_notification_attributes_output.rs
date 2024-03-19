@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterInstanceEventNotificationAttributesOutput {
+pub struct DeregisterInstanceEventNotificationAttributesOutput  {
     /// <p>The resulting set of tag keys.</p>
     pub instance_tag_attribute: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>,
     _request_id: Option<String>,
 }
-impl DeregisterInstanceEventNotificationAttributesOutput {
+impl  DeregisterInstanceEventNotificationAttributesOutput  {
     /// <p>The resulting set of tag keys.</p>
-    pub fn instance_tag_attribute(&self) -> ::std::option::Option<&crate::types::InstanceTagNotificationAttribute> {
+    pub fn instance_tag_attribute(&self) -> ::std::option::Option<& crate::types::InstanceTagNotificationAttribute> {
         self.instance_tag_attribute.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeregisterInstanceEventNotificationAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeregisterInstanceEventNotificationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder {
         crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesOutputBuilder::default()
     }
 }
@@ -42,27 +40,28 @@ impl DeregisterInstanceEventNotificationAttributesOutputBuilder {
     }
     /// <p>The resulting set of tag keys.</p>
     pub fn set_instance_tag_attribute(mut self, input: ::std::option::Option<crate::types::InstanceTagNotificationAttribute>) -> Self {
-        self.instance_tag_attribute = input;
-        self
+        self.instance_tag_attribute = input; self
     }
     /// <p>The resulting set of tag keys.</p>
     pub fn get_instance_tag_attribute(&self) -> &::std::option::Option<crate::types::InstanceTagNotificationAttribute> {
         &self.instance_tag_attribute
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeregisterInstanceEventNotificationAttributesOutput`](crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput).
     pub fn build(self) -> crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput {
         crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput {
-            instance_tag_attribute: self.instance_tag_attribute,
+            instance_tag_attribute: self.instance_tag_attribute
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

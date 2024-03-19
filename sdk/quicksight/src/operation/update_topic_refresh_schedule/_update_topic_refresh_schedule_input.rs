@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTopicRefreshScheduleInput {
+pub struct UpdateTopicRefreshScheduleInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -12,21 +12,21 @@ pub struct UpdateTopicRefreshScheduleInput {
     /// <p>The definition of a refresh schedule.</p>
     pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
-impl UpdateTopicRefreshScheduleInput {
+impl  UpdateTopicRefreshScheduleInput  {
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(&self) -> ::std::option::Option<&str> {
+    pub fn topic_id(&self) -> ::std::option::Option<& str> {
         self.topic_id.as_deref()
     }
     /// <p>The ID of the dataset.</p>
-    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn refresh_schedule(&self) -> ::std::option::Option<&crate::types::TopicRefreshSchedule> {
+    pub fn refresh_schedule(&self) -> ::std::option::Option<& crate::types::TopicRefreshSchedule> {
         self.refresh_schedule.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_id = input;
-        self
+        self.topic_id = input; self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl UpdateTopicRefreshScheduleInputBuilder {
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn set_refresh_schedule(mut self, input: ::std::option::Option<crate::types::TopicRefreshSchedule>) -> Self {
-        self.refresh_schedule = input;
-        self
+        self.refresh_schedule = input; self
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn get_refresh_schedule(&self) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
         &self.refresh_schedule
     }
     /// Consumes the builder and constructs a [`UpdateTopicRefreshScheduleInput`](crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput {
-            aws_account_id: self.aws_account_id,
-            topic_id: self.topic_id,
-            dataset_id: self.dataset_id,
-            refresh_schedule: self.refresh_schedule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleInput {
+                aws_account_id: self.aws_account_id
+                ,
+                topic_id: self.topic_id
+                ,
+                dataset_id: self.dataset_id
+                ,
+                refresh_schedule: self.refresh_schedule
+                ,
+            }
+        )
     }
 }
+

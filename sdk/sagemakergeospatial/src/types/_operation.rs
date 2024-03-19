@@ -3,7 +3,7 @@
 /// <p>Represents an arithmetic operation to compute spectral index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Operation {
+pub struct Operation  {
     /// <p>The name of the operation.</p>
     pub name: ::std::string::String,
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
@@ -11,19 +11,17 @@ pub struct Operation {
     /// <p>The type of the operation.</p>
     pub output_type: ::std::option::Option<crate::types::OutputType>,
 }
-impl Operation {
+impl  Operation  {
     /// <p>The name of the operation.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub fn equation(&self) -> &str {
-        use std::ops::Deref;
-        self.equation.deref()
+    pub fn equation(&self) -> & str {
+        use std::ops::Deref; self.equation.deref()
     }
     /// <p>The type of the operation.</p>
-    pub fn output_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
+    pub fn output_type(&self) -> ::std::option::Option<& crate::types::OutputType> {
         self.output_type.as_ref()
     }
 }
@@ -51,8 +49,7 @@ impl OperationBuilder {
     }
     /// <p>The name of the operation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the operation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl OperationBuilder {
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
     pub fn set_equation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.equation = input;
-        self
+        self.equation = input; self
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
     pub fn get_equation(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl OperationBuilder {
     }
     /// <p>The type of the operation.</p>
     pub fn set_output_type(mut self, input: ::std::option::Option<crate::types::OutputType>) -> Self {
-        self.output_type = input;
-        self
+        self.output_type = input; self
     }
     /// <p>The type of the operation.</p>
     pub fn get_output_type(&self) -> &::std::option::Option<crate::types::OutputType> {
@@ -92,20 +87,22 @@ impl OperationBuilder {
     /// - [`name`](crate::types::builders::OperationBuilder::name)
     /// - [`equation`](crate::types::builders::OperationBuilder::equation)
     pub fn build(self) -> ::std::result::Result<crate::types::Operation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Operation {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Operation",
-                )
-            })?,
-            equation: self.equation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "equation",
-                    "equation was not specified but it is required when building Operation",
-                )
-            })?,
-            output_type: self.output_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Operation {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Operation")
+                    )?
+                ,
+                equation: self.equation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("equation", "equation was not specified but it is required when building Operation")
+                    )?
+                ,
+                output_type: self.output_type
+                ,
+            }
+        )
     }
 }
+

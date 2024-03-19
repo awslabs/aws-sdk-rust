@@ -3,7 +3,7 @@
 /// <p>Input for <code>SetEndpointAttributes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetEndpointAttributesInput {
+pub struct SetEndpointAttributesInput  {
     /// <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
     pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
@@ -15,11 +15,11 @@ pub struct SetEndpointAttributesInput {
     /// <li>
     /// <p><code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p></li>
     /// </ul>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SetEndpointAttributesInput {
+impl  SetEndpointAttributesInput  {
     /// <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
-    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
@@ -31,7 +31,7 @@ impl SetEndpointAttributesInput {
     /// <li>
     /// <p><code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p></li>
     /// </ul>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -47,7 +47,7 @@ impl SetEndpointAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SetEndpointAttributesInputBuilder {
     pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SetEndpointAttributesInputBuilder {
     /// <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
@@ -58,8 +58,7 @@ impl SetEndpointAttributesInputBuilder {
     }
     /// <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>EndpointArn used for <code>SetEndpointAttributes</code> action.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,9 +79,9 @@ impl SetEndpointAttributesInputBuilder {
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -93,9 +92,8 @@ impl SetEndpointAttributesInputBuilder {
     /// <li>
     /// <p><code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p></li>
     /// </ul>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
     /// <ul>
@@ -106,17 +104,19 @@ impl SetEndpointAttributesInputBuilder {
     /// <li>
     /// <p><code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p></li>
     /// </ul>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SetEndpointAttributesInput`](crate::operation::set_endpoint_attributes::SetEndpointAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_endpoint_attributes::SetEndpointAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_endpoint_attributes::SetEndpointAttributesInput {
-            endpoint_arn: self.endpoint_arn,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_endpoint_attributes::SetEndpointAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_endpoint_attributes::SetEndpointAttributesInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

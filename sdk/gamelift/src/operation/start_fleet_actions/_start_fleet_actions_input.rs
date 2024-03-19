@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFleetActionsInput {
+pub struct StartFleetActionsInput  {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>List of actions to restart on the fleet.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAction>>,
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
 }
-impl StartFleetActionsInput {
+impl  StartFleetActionsInput  {
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>List of actions to restart on the fleet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::FleetAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::FleetAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl StartFleetActionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartFleetActionsInputBuilder {
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAction>>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl StartFleetActionsInputBuilder {
@@ -50,8 +51,7 @@ impl StartFleetActionsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl StartFleetActionsInputBuilder {
     /// <p>List of actions to restart on the fleet.</p>
     pub fn actions(mut self, input: crate::types::FleetAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FleetAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>List of actions to restart on the fleet.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FleetAction>> {
         &self.actions
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
@@ -84,21 +83,24 @@ impl StartFleetActionsInputBuilder {
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fleet location to restart fleet actions for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
     /// Consumes the builder and constructs a [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_fleet_actions::StartFleetActionsInput {
-            fleet_id: self.fleet_id,
-            actions: self.actions,
-            location: self.location,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_fleet_actions::StartFleetActionsInput {
+                fleet_id: self.fleet_id
+                ,
+                actions: self.actions
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

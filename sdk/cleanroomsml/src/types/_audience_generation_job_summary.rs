@@ -3,7 +3,7 @@
 /// <p>Provides information about the configured audience generation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudienceGenerationJobSummary {
+pub struct AudienceGenerationJobSummary  {
     /// <p>The time at which the audience generation job was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The most recent time at which the audience generation job was updated.</p>
@@ -23,44 +23,41 @@ pub struct AudienceGenerationJobSummary {
     /// <p>The AWS Account that submitted the job.</p>
     pub started_by: ::std::option::Option<::std::string::String>,
 }
-impl AudienceGenerationJobSummary {
+impl  AudienceGenerationJobSummary  {
     /// <p>The time at which the audience generation job was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
-    pub fn audience_generation_job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.audience_generation_job_arn.deref()
+    pub fn audience_generation_job_arn(&self) -> & str {
+        use std::ops::Deref; self.audience_generation_job_arn.deref()
     }
     /// <p>The name of the audience generation job.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the audience generation job.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the audience generation job.</p>
-    pub fn status(&self) -> &crate::types::AudienceGenerationJobStatus {
+    pub fn status(&self) -> & crate::types::AudienceGenerationJobStatus {
         &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this audience generation job.</p>
-    pub fn configured_audience_model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_audience_model_arn.deref()
+    pub fn configured_audience_model_arn(&self) -> & str {
+        use std::ops::Deref; self.configured_audience_model_arn.deref()
     }
     /// <p>The identifier of the collaboration that contains this audience generation job.</p>
-    pub fn collaboration_id(&self) -> ::std::option::Option<&str> {
+    pub fn collaboration_id(&self) -> ::std::option::Option<& str> {
         self.collaboration_id.as_deref()
     }
     /// <p>The AWS Account that submitted the job.</p>
-    pub fn started_by(&self) -> ::std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<& str> {
         self.started_by.as_deref()
     }
 }
@@ -94,8 +91,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The time at which the audience generation job was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time at which the audience generation job was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -109,8 +105,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The most recent time at which the audience generation job was updated.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -124,8 +119,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn set_audience_generation_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audience_generation_job_arn = input;
-        self
+        self.audience_generation_job_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the audience generation job.</p>
     pub fn get_audience_generation_job_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +133,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The name of the audience generation job.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the audience generation job.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +146,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The description of the audience generation job.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the audience generation job.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +160,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The status of the audience generation job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AudienceGenerationJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the audience generation job.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AudienceGenerationJobStatus> {
@@ -183,8 +174,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this audience generation job.</p>
     pub fn set_configured_audience_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_arn = input;
-        self
+        self.configured_audience_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured audience model that was used for this audience generation job.</p>
     pub fn get_configured_audience_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +187,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The identifier of the collaboration that contains this audience generation job.</p>
     pub fn set_collaboration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collaboration_id = input;
-        self
+        self.collaboration_id = input; self
     }
     /// <p>The identifier of the collaboration that contains this audience generation job.</p>
     pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +200,7 @@ impl AudienceGenerationJobSummaryBuilder {
     }
     /// <p>The AWS Account that submitted the job.</p>
     pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
     }
     /// <p>The AWS Account that submitted the job.</p>
     pub fn get_started_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,46 +215,46 @@ impl AudienceGenerationJobSummaryBuilder {
     /// - [`status`](crate::types::builders::AudienceGenerationJobSummaryBuilder::status)
     /// - [`configured_audience_model_arn`](crate::types::builders::AudienceGenerationJobSummaryBuilder::configured_audience_model_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AudienceGenerationJobSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudienceGenerationJobSummary {
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            audience_generation_job_arn: self.audience_generation_job_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "audience_generation_job_arn",
-                    "audience_generation_job_arn was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            description: self.description,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            configured_audience_model_arn: self.configured_audience_model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configured_audience_model_arn",
-                    "configured_audience_model_arn was not specified but it is required when building AudienceGenerationJobSummary",
-                )
-            })?,
-            collaboration_id: self.collaboration_id,
-            started_by: self.started_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudienceGenerationJobSummary {
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                audience_generation_job_arn: self.audience_generation_job_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("audience_generation_job_arn", "audience_generation_job_arn was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                configured_audience_model_arn: self.configured_audience_model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_audience_model_arn", "configured_audience_model_arn was not specified but it is required when building AudienceGenerationJobSummary")
+                    )?
+                ,
+                collaboration_id: self.collaboration_id
+                ,
+                started_by: self.started_by
+                ,
+            }
+        )
     }
 }
+

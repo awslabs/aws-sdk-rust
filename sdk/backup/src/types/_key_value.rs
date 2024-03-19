@@ -3,7 +3,7 @@
 /// <p>Pair of two related strings. Allowed characters are letters, white space, and numbers that can be represented in UTF-8 and the following characters: <code> + - = . _ : /</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyValue {
+pub struct KeyValue  {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 128.</p>
     /// <p>Pattern: <code>^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</code></p>
@@ -13,20 +13,18 @@ pub struct KeyValue {
     /// <p>Pattern: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</code></p>
     pub value: ::std::string::String,
 }
-impl KeyValue {
+impl  KeyValue  {
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 128.</p>
     /// <p>Pattern: <code>^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</code></p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The value of the key.</p>
     /// <p>Length Constraints: Maximum length of 256.</p>
     /// <p>Pattern: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</code></p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl KeyValue {
@@ -56,8 +54,7 @@ impl KeyValueBuilder {
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 128.</p>
     /// <p>Pattern: <code>^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</code></p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag key (String). The key can't start with <code>aws:</code>.</p>
     /// <p>Length Constraints: Minimum length of 1. Maximum length of 128.</p>
@@ -77,8 +74,7 @@ impl KeyValueBuilder {
     /// <p>Length Constraints: Maximum length of 256.</p>
     /// <p>Pattern: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</code></p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the key.</p>
     /// <p>Length Constraints: Maximum length of 256.</p>
@@ -91,19 +87,20 @@ impl KeyValueBuilder {
     /// - [`key`](crate::types::builders::KeyValueBuilder::key)
     /// - [`value`](crate::types::builders::KeyValueBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyValue {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building KeyValue",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building KeyValue",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyValue {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building KeyValue")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building KeyValue")
+                    )?
+                ,
+            }
+        )
     }
 }
+

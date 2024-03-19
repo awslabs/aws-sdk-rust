@@ -3,15 +3,15 @@
 /// <p>Event sent from the client application to Amazon Lex V2 to indicate that playback of audio is complete and that Amazon Lex V2 should start processing the user's input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlaybackCompletionEvent {
+pub struct PlaybackCompletionEvent  {
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl PlaybackCompletionEvent {
+impl  PlaybackCompletionEvent  {
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -41,8 +41,7 @@ impl PlaybackCompletionEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PlaybackCompletionEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,12 @@ impl PlaybackCompletionEventBuilder {
     /// Consumes the builder and constructs a [`PlaybackCompletionEvent`](crate::types::PlaybackCompletionEvent).
     pub fn build(self) -> crate::types::PlaybackCompletionEvent {
         crate::types::PlaybackCompletionEvent {
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
+            event_id: self.event_id
+            ,
+            client_timestamp_millis: self.client_timestamp_millis
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

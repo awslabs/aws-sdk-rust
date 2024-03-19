@@ -3,16 +3,17 @@
 /// <p>Input to the <code>TerminateJobFlows</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateJobFlowsInput {
+pub struct TerminateJobFlowsInput  {
     /// <p>A list of job flows to be shut down.</p>
-    pub job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TerminateJobFlowsInput {
+impl  TerminateJobFlowsInput  {
     /// <p>A list of job flows to be shut down.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_flow_ids.is_none()`.
-    pub fn job_flow_ids(&self) -> &[::std::string::String] {
-        self.job_flow_ids.as_deref().unwrap_or_default()
+    pub fn job_flow_ids(&self) -> & [::std::string::String] {
+        self.job_flow_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TerminateJobFlowsInput {
@@ -26,7 +27,7 @@ impl TerminateJobFlowsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateJobFlowsInputBuilder {
-    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_flow_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TerminateJobFlowsInputBuilder {
     /// Appends an item to `job_flow_ids`.
@@ -36,25 +37,26 @@ impl TerminateJobFlowsInputBuilder {
     /// <p>A list of job flows to be shut down.</p>
     pub fn job_flow_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_flow_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_flow_ids
     }
     /// Consumes the builder and constructs a [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::terminate_job_flows::TerminateJobFlowsInput {
-            job_flow_ids: self.job_flow_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::terminate_job_flows::TerminateJobFlowsInput {
+                job_flow_ids: self.job_flow_ids
+                ,
+            }
+        )
     }
 }
+

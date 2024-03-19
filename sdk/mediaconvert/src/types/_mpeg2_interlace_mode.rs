@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mpeg2interlacemode = unimplemented!();
 /// match mpeg2interlacemode {
@@ -33,16 +33,14 @@
 /// Specifically, when `mpeg2interlacemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Mpeg2InterlaceMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Mpeg2InterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
     BottomField,
@@ -56,70 +54,71 @@ pub enum Mpeg2InterlaceMode {
     TopField,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Mpeg2InterlaceMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOTTOM_FIELD" => Mpeg2InterlaceMode::BottomField,
-            "FOLLOW_BOTTOM_FIELD" => Mpeg2InterlaceMode::FollowBottomField,
-            "FOLLOW_TOP_FIELD" => Mpeg2InterlaceMode::FollowTopField,
-            "PROGRESSIVE" => Mpeg2InterlaceMode::Progressive,
-            "TOP_FIELD" => Mpeg2InterlaceMode::TopField,
-            other => Mpeg2InterlaceMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BOTTOM_FIELD" => Mpeg2InterlaceMode::BottomField,
+"FOLLOW_BOTTOM_FIELD" => Mpeg2InterlaceMode::FollowBottomField,
+"FOLLOW_TOP_FIELD" => Mpeg2InterlaceMode::FollowTopField,
+"PROGRESSIVE" => Mpeg2InterlaceMode::Progressive,
+"TOP_FIELD" => Mpeg2InterlaceMode::TopField,
+other => Mpeg2InterlaceMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Mpeg2InterlaceMode {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Mpeg2InterlaceMode::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Mpeg2InterlaceMode::from(s))
+                    }
+                }
 impl Mpeg2InterlaceMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Mpeg2InterlaceMode::BottomField => "BOTTOM_FIELD",
-            Mpeg2InterlaceMode::FollowBottomField => "FOLLOW_BOTTOM_FIELD",
-            Mpeg2InterlaceMode::FollowTopField => "FOLLOW_TOP_FIELD",
-            Mpeg2InterlaceMode::Progressive => "PROGRESSIVE",
-            Mpeg2InterlaceMode::TopField => "TOP_FIELD",
-            Mpeg2InterlaceMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BOTTOM_FIELD", "FOLLOW_BOTTOM_FIELD", "FOLLOW_TOP_FIELD", "PROGRESSIVE", "TOP_FIELD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Mpeg2InterlaceMode::BottomField => "BOTTOM_FIELD",
+    Mpeg2InterlaceMode::FollowBottomField => "FOLLOW_BOTTOM_FIELD",
+    Mpeg2InterlaceMode::FollowTopField => "FOLLOW_TOP_FIELD",
+    Mpeg2InterlaceMode::Progressive => "PROGRESSIVE",
+    Mpeg2InterlaceMode::TopField => "TOP_FIELD",
+    Mpeg2InterlaceMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOTTOM_FIELD", "FOLLOW_BOTTOM_FIELD", "FOLLOW_TOP_FIELD", "PROGRESSIVE", "TOP_FIELD"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Mpeg2InterlaceMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Mpeg2InterlaceMode {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Mpeg2InterlaceMode {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Mpeg2InterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
-            Mpeg2InterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
-            Mpeg2InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
-            Mpeg2InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
-            Mpeg2InterlaceMode::TopField => write!(f, "TOP_FIELD"),
-            Mpeg2InterlaceMode::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Mpeg2InterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+Mpeg2InterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+Mpeg2InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+Mpeg2InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+Mpeg2InterlaceMode::TopField => write!(f, "TOP_FIELD"),
+Mpeg2InterlaceMode::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

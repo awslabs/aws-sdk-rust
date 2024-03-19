@@ -3,7 +3,7 @@
 /// <p>The code execution output in JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatementOutput {
+pub struct StatementOutput  {
     /// <p>The code execution output.</p>
     pub data: ::std::option::Option<crate::types::StatementOutputData>,
     /// <p>The execution count of the output.</p>
@@ -15,11 +15,11 @@ pub struct StatementOutput {
     /// <p>The error value of the output.</p>
     pub error_value: ::std::option::Option<::std::string::String>,
     /// <p>The traceback of the output.</p>
-    pub traceback: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub traceback: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StatementOutput {
+impl  StatementOutput  {
     /// <p>The code execution output.</p>
-    pub fn data(&self) -> ::std::option::Option<&crate::types::StatementOutputData> {
+    pub fn data(&self) -> ::std::option::Option<& crate::types::StatementOutputData> {
         self.data.as_ref()
     }
     /// <p>The execution count of the output.</p>
@@ -27,22 +27,23 @@ impl StatementOutput {
         self.execution_count
     }
     /// <p>The status of the code execution output.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StatementState> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StatementState> {
         self.status.as_ref()
     }
     /// <p>The name of the error in the output.</p>
-    pub fn error_name(&self) -> ::std::option::Option<&str> {
+    pub fn error_name(&self) -> ::std::option::Option<& str> {
         self.error_name.as_deref()
     }
     /// <p>The error value of the output.</p>
-    pub fn error_value(&self) -> ::std::option::Option<&str> {
+    pub fn error_value(&self) -> ::std::option::Option<& str> {
         self.error_value.as_deref()
     }
     /// <p>The traceback of the output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traceback.is_none()`.
-    pub fn traceback(&self) -> &[::std::string::String] {
-        self.traceback.as_deref().unwrap_or_default()
+    pub fn traceback(&self) -> & [::std::string::String] {
+        self.traceback.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StatementOutput {
@@ -61,7 +62,7 @@ pub struct StatementOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::StatementState>,
     pub(crate) error_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_value: ::std::option::Option<::std::string::String>,
-    pub(crate) traceback: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) traceback: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StatementOutputBuilder {
     /// <p>The code execution output.</p>
@@ -71,8 +72,7 @@ impl StatementOutputBuilder {
     }
     /// <p>The code execution output.</p>
     pub fn set_data(mut self, input: ::std::option::Option<crate::types::StatementOutputData>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The code execution output.</p>
     pub fn get_data(&self) -> &::std::option::Option<crate::types::StatementOutputData> {
@@ -85,8 +85,7 @@ impl StatementOutputBuilder {
     }
     /// <p>The execution count of the output.</p>
     pub fn set_execution_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_count = input;
-        self
+        self.execution_count = input; self
     }
     /// <p>The execution count of the output.</p>
     pub fn get_execution_count(&self) -> &::std::option::Option<i32> {
@@ -99,8 +98,7 @@ impl StatementOutputBuilder {
     }
     /// <p>The status of the code execution output.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatementState>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the code execution output.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatementState> {
@@ -113,8 +111,7 @@ impl StatementOutputBuilder {
     }
     /// <p>The name of the error in the output.</p>
     pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_name = input;
-        self
+        self.error_name = input; self
     }
     /// <p>The name of the error in the output.</p>
     pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +124,7 @@ impl StatementOutputBuilder {
     }
     /// <p>The error value of the output.</p>
     pub fn set_error_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_value = input;
-        self
+        self.error_value = input; self
     }
     /// <p>The error value of the output.</p>
     pub fn get_error_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,28 +137,35 @@ impl StatementOutputBuilder {
     /// <p>The traceback of the output.</p>
     pub fn traceback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.traceback.unwrap_or_default();
-        v.push(input.into());
-        self.traceback = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.traceback = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The traceback of the output.</p>
-    pub fn set_traceback(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.traceback = input;
-        self
+    pub fn set_traceback(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.traceback = input; self
     }
     /// <p>The traceback of the output.</p>
-    pub fn get_traceback(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_traceback(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.traceback
     }
     /// Consumes the builder and constructs a [`StatementOutput`](crate::types::StatementOutput).
     pub fn build(self) -> crate::types::StatementOutput {
         crate::types::StatementOutput {
-            data: self.data,
-            execution_count: self.execution_count.unwrap_or_default(),
-            status: self.status,
-            error_name: self.error_name,
-            error_value: self.error_value,
-            traceback: self.traceback,
+            data: self.data
+            ,
+            execution_count: self.execution_count
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            error_name: self.error_name
+            ,
+            error_value: self.error_value
+            ,
+            traceback: self.traceback
+            ,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBootstrapActions`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`cluster_id(impl Into<String>)`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::set_cluster_id):<br>required: **true**<br><p>The cluster identifier for the bootstrap actions to list.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput) with field(s):
+                            /// - On success, responds with [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput) with field(s):
     ///   - [`bootstrap_actions(Option<Vec::<Command>>)`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput::bootstrap_actions): <p>The bootstrap actions associated with the cluster.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListBootstrapActionsError>`](crate::operation::list_bootstrap_actions::ListBootstrapActionsError)
+                            /// - On failure, responds with [`SdkError<ListBootstrapActionsError>`](crate::operation::list_bootstrap_actions::ListBootstrapActionsError)
     pub fn list_bootstrap_actions(&self) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder {
-        crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

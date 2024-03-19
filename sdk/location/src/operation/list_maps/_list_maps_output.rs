@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMapsOutput {
+pub struct ListMapsOutput  {
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub entries: ::std::vec::Vec<crate::types::ListMapsResponseEntry>,
+    pub entries: ::std::vec::Vec::<crate::types::ListMapsResponseEntry>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListMapsOutput {
+impl  ListMapsOutput  {
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub fn entries(&self) -> &[crate::types::ListMapsResponseEntry] {
-        use std::ops::Deref;
-        self.entries.deref()
+    pub fn entries(&self) -> & [crate::types::ListMapsResponseEntry] {
+        use std::ops::Deref; self.entries.deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMapsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMapsOutput {
     /// Creates a new builder-style object to manufacture [`ListMapsOutput`](crate::operation::list_maps::ListMapsOutput).
     pub fn builder() -> crate::operation::list_maps::builders::ListMapsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListMapsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMapsOutputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::ListMapsResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListMapsOutputBuilder {
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
     pub fn entries(mut self, input: crate::types::ListMapsResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListMapsResponseEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>Contains a list of maps in your Amazon Web Services account</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListMapsResponseEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListMapsResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
@@ -68,35 +66,37 @@ impl ListMapsOutputBuilder {
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMapsOutput`](crate::operation::list_maps::ListMapsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entries`](crate::operation::list_maps::builders::ListMapsOutputBuilder::entries)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_maps::ListMapsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_maps::ListMapsOutput {
-            entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entries",
-                    "entries was not specified but it is required when building ListMapsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_maps::ListMapsOutput {
+                entries: self.entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entries", "entries was not specified but it is required when building ListMapsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

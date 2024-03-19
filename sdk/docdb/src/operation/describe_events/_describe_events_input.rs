@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>DescribeEvents</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventsInput {
+pub struct DescribeEventsInput  {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -33,9 +33,9 @@ pub struct DescribeEventsInput {
     /// <p>Default: 60</p>
     pub duration: ::std::option::Option<i32>,
     /// <p>A list of event categories that trigger notifications for an event notification subscription.</p>
-    pub event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>This parameter is not currently supported.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -43,7 +43,7 @@ pub struct DescribeEventsInput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventsInput {
+impl  DescribeEventsInput  {
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -60,21 +60,21 @@ impl DescribeEventsInput {
     /// <li>
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The number of minutes to retrieve events for.</p>
@@ -83,16 +83,18 @@ impl DescribeEventsInput {
         self.duration
     }
     /// <p>A list of event categories that trigger notifications for an event notification subscription.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories.is_none()`.
-    pub fn event_categories(&self) -> &[::std::string::String] {
-        self.event_categories.as_deref().unwrap_or_default()
+    pub fn event_categories(&self) -> & [::std::string::String] {
+        self.event_categories.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This parameter is not currently supported.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -101,7 +103,7 @@ impl DescribeEventsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -121,8 +123,8 @@ pub struct DescribeEventsInputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration: ::std::option::Option<i32>,
-    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) event_categories: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
@@ -164,8 +166,7 @@ impl DescribeEventsInputBuilder {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_identifier = input;
-        self
+        self.source_identifier = input; self
     }
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
     /// <p>Constraints:</p>
@@ -193,8 +194,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -209,8 +209,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
@@ -226,8 +225,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p>Example: 2009-07-08T18:00Z</p>
@@ -243,8 +241,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The number of minutes to retrieve events for.</p>
     /// <p>Default: 60</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The number of minutes to retrieve events for.</p>
     /// <p>Default: 60</p>
@@ -258,17 +255,16 @@ impl DescribeEventsInputBuilder {
     /// <p>A list of event categories that trigger notifications for an event notification subscription.</p>
     pub fn event_categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event categories that trigger notifications for an event notification subscription.</p>
-    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_categories = input;
-        self
+    pub fn set_event_categories(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_categories = input; self
     }
     /// <p>A list of event categories that trigger notifications for an event notification subscription.</p>
-    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_categories
     }
     /// Appends an item to `filters`.
@@ -278,17 +274,16 @@ impl DescribeEventsInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
@@ -302,8 +297,7 @@ impl DescribeEventsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -318,27 +312,36 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
-            source_identifier: self.source_identifier,
-            source_type: self.source_type,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            duration: self.duration,
-            event_categories: self.event_categories,
-            filters: self.filters,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_events::DescribeEventsInput {
+                source_identifier: self.source_identifier
+                ,
+                source_type: self.source_type
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                duration: self.duration
+                ,
+                event_categories: self.event_categories
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

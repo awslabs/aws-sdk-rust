@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartWebRtcContactOutput {
+pub struct StartWebRtcContactOutput  {
     /// <p>Information required for the client application (mobile application or website) to connect to the call.</p>
     pub connection_data: ::std::option::Option<crate::types::ConnectionData>,
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
@@ -13,29 +13,29 @@ pub struct StartWebRtcContactOutput {
     pub participant_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartWebRtcContactOutput {
+impl  StartWebRtcContactOutput  {
     /// <p>Information required for the client application (mobile application or website) to connect to the call.</p>
-    pub fn connection_data(&self) -> ::std::option::Option<&crate::types::ConnectionData> {
+    pub fn connection_data(&self) -> ::std::option::Option<& crate::types::ConnectionData> {
         self.connection_data.as_ref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
-    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier for a contact participant. The <code>ParticipantId</code> for a contact participant is the same throughout the contact lifecycle.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The token used by the contact participant to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The participant token is valid for the lifetime of a contact participant.</p>
-    pub fn participant_token(&self) -> ::std::option::Option<&str> {
+    pub fn participant_token(&self) -> ::std::option::Option<& str> {
         self.participant_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartWebRtcContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartWebRtcContactOutput {
     /// Creates a new builder-style object to manufacture [`StartWebRtcContactOutput`](crate::operation::start_web_rtc_contact::StartWebRtcContactOutput).
     pub fn builder() -> crate::operation::start_web_rtc_contact::builders::StartWebRtcContactOutputBuilder {
@@ -61,8 +61,7 @@ impl StartWebRtcContactOutputBuilder {
     }
     /// <p>Information required for the client application (mobile application or website) to connect to the call.</p>
     pub fn set_connection_data(mut self, input: ::std::option::Option<crate::types::ConnectionData>) -> Self {
-        self.connection_data = input;
-        self
+        self.connection_data = input; self
     }
     /// <p>Information required for the client application (mobile application or website) to connect to the call.</p>
     pub fn get_connection_data(&self) -> &::std::option::Option<crate::types::ConnectionData> {
@@ -75,8 +74,7 @@ impl StartWebRtcContactOutputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl StartWebRtcContactOutputBuilder {
     }
     /// <p>The identifier for a contact participant. The <code>ParticipantId</code> for a contact participant is the same throughout the contact lifecycle.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>The identifier for a contact participant. The <code>ParticipantId</code> for a contact participant is the same throughout the contact lifecycle.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,30 +100,34 @@ impl StartWebRtcContactOutputBuilder {
     }
     /// <p>The token used by the contact participant to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The participant token is valid for the lifetime of a contact participant.</p>
     pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_token = input;
-        self
+        self.participant_token = input; self
     }
     /// <p>The token used by the contact participant to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The participant token is valid for the lifetime of a contact participant.</p>
     pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartWebRtcContactOutput`](crate::operation::start_web_rtc_contact::StartWebRtcContactOutput).
     pub fn build(self) -> crate::operation::start_web_rtc_contact::StartWebRtcContactOutput {
         crate::operation::start_web_rtc_contact::StartWebRtcContactOutput {
-            connection_data: self.connection_data,
-            contact_id: self.contact_id,
-            participant_id: self.participant_id,
-            participant_token: self.participant_token,
+            connection_data: self.connection_data
+            ,
+            contact_id: self.contact_id
+            ,
+            participant_id: self.participant_id
+            ,
+            participant_token: self.participant_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

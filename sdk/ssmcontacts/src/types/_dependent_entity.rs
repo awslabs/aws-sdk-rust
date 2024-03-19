@@ -4,22 +4,20 @@
 /// <p>For example, if a contact is a member of a rotation, the rotation is a dependent entity of the contact.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DependentEntity {
+pub struct DependentEntity  {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
     pub relation_type: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub dependent_resource_ids: ::std::vec::Vec<::std::string::String>,
+    pub dependent_resource_ids: ::std::vec::Vec::<::std::string::String>,
 }
-impl DependentEntity {
+impl  DependentEntity  {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub fn relation_type(&self) -> &str {
-        use std::ops::Deref;
-        self.relation_type.deref()
+    pub fn relation_type(&self) -> & str {
+        use std::ops::Deref; self.relation_type.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn dependent_resource_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.dependent_resource_ids.deref()
+    pub fn dependent_resource_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.dependent_resource_ids.deref()
     }
 }
 impl DependentEntity {
@@ -34,7 +32,7 @@ impl DependentEntity {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DependentEntityBuilder {
     pub(crate) relation_type: ::std::option::Option<::std::string::String>,
-    pub(crate) dependent_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dependent_resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DependentEntityBuilder {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
@@ -45,8 +43,7 @@ impl DependentEntityBuilder {
     }
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
     pub fn set_relation_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relation_type = input;
-        self
+        self.relation_type = input; self
     }
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
     pub fn get_relation_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,17 +56,16 @@ impl DependentEntityBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
     pub fn dependent_resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dependent_resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.dependent_resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dependent_resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn set_dependent_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dependent_resource_ids = input;
-        self
+    pub fn set_dependent_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dependent_resource_ids = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn get_dependent_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dependent_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dependent_resource_ids
     }
     /// Consumes the builder and constructs a [`DependentEntity`](crate::types::DependentEntity).
@@ -77,19 +73,20 @@ impl DependentEntityBuilder {
     /// - [`relation_type`](crate::types::builders::DependentEntityBuilder::relation_type)
     /// - [`dependent_resource_ids`](crate::types::builders::DependentEntityBuilder::dependent_resource_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::DependentEntity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DependentEntity {
-            relation_type: self.relation_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relation_type",
-                    "relation_type was not specified but it is required when building DependentEntity",
-                )
-            })?,
-            dependent_resource_ids: self.dependent_resource_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dependent_resource_ids",
-                    "dependent_resource_ids was not specified but it is required when building DependentEntity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DependentEntity {
+                relation_type: self.relation_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relation_type", "relation_type was not specified but it is required when building DependentEntity")
+                    )?
+                ,
+                dependent_resource_ids: self.dependent_resource_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dependent_resource_ids", "dependent_resource_ids was not specified but it is required when building DependentEntity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

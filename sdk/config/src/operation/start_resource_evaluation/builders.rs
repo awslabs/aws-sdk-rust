@@ -5,23 +5,20 @@ pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_
 
 impl StartResourceEvaluationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.start_resource_evaluation();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.start_resource_evaluation();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `StartResourceEvaluation`.
-///
+/// 
 /// <p>Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation context. It runs an execution against the resource details with all of the Config rules in your account that match with the specified proactive mode and resource type.</p><note>
 /// <p>Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.</p>
 /// <p>You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource type schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation registry or with the following CLI commmand: <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.</p>
@@ -30,33 +27,32 @@ impl StartResourceEvaluationInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartResourceEvaluationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder,
+                    inner: crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-    > for StartResourceEvaluationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
+                    crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+                > for StartResourceEvaluationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
+                        crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl StartResourceEvaluationFluentBuilder {
     /// Creates a new `StartResourceEvaluation`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl StartResourceEvaluationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::start_resource_evaluation::StartResourceEvaluation::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::start_resource_evaluation::StartResourceEvaluation::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
-        crate::operation::start_resource_evaluation::StartResourceEvaluationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::start_resource_evaluation::StartResourceEvaluationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_evaluation::StartResourceEvaluationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::start_resource_evaluation::StartResourceEvaluation::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::start_resource_evaluation::StartResourceEvaluation::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::start_resource_evaluation::StartResourceEvaluationOutput, crate::operation::start_resource_evaluation::StartResourceEvaluationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.inner = self.inner.resource_details(input);
@@ -189,3 +176,4 @@ impl StartResourceEvaluationFluentBuilder {
         self.inner.get_client_token()
     }
 }
+

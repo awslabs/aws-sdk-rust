@@ -4,7 +4,7 @@
 /// <p>Amazon Lex V2 accumulates audio chunks until it recognizes a natural pause in speech before processing the input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioInputEvent {
+pub struct AudioInputEvent  {
     /// <p>An encoded stream of audio.</p>
     pub audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The encoding used for the audio chunk. You must use 8 KHz PCM 16-bit mono-channel little-endian format. The value of the field should be:</p>
@@ -15,19 +15,18 @@ pub struct AudioInputEvent {
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl AudioInputEvent {
+impl  AudioInputEvent  {
     /// <p>An encoded stream of audio.</p>
-    pub fn audio_chunk(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn audio_chunk(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
     }
     /// <p>The encoding used for the audio chunk. You must use 8 KHz PCM 16-bit mono-channel little-endian format. The value of the field should be:</p>
     /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -59,8 +58,7 @@ impl AudioInputEventBuilder {
     }
     /// <p>An encoded stream of audio.</p>
     pub fn set_audio_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.audio_chunk = input;
-        self
+        self.audio_chunk = input; self
     }
     /// <p>An encoded stream of audio.</p>
     pub fn get_audio_chunk(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -76,8 +74,7 @@ impl AudioInputEventBuilder {
     /// <p>The encoding used for the audio chunk. You must use 8 KHz PCM 16-bit mono-channel little-endian format. The value of the field should be:</p>
     /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The encoding used for the audio chunk. You must use 8 KHz PCM 16-bit mono-channel little-endian format. The value of the field should be:</p>
     /// <p><code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code></p>
@@ -91,8 +88,7 @@ impl AudioInputEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl AudioInputEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -116,16 +111,22 @@ impl AudioInputEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content_type`](crate::types::builders::AudioInputEventBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AudioInputEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AudioInputEvent {
-            audio_chunk: self.audio_chunk,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building AudioInputEvent",
-                )
-            })?,
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::AudioInputEvent {
+                audio_chunk: self.audio_chunk
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building AudioInputEvent")
+                    )?
+                ,
+                event_id: self.event_id
+                ,
+                client_timestamp_millis: self.client_timestamp_millis
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

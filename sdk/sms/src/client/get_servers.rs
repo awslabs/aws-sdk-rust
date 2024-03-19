@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetServers`](crate::operation::get_servers::builders::GetServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_servers::builders::GetServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_servers::builders::GetServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_servers::builders::GetServersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_servers::builders::GetServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_servers::builders::GetServersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     ///   - [`vm_server_address_list(VmServerAddress)`](crate::operation::get_servers::builders::GetServersFluentBuilder::vm_server_address_list) / [`set_vm_server_address_list(Option<Vec::<VmServerAddress>>)`](crate::operation::get_servers::builders::GetServersFluentBuilder::set_vm_server_address_list):<br>required: **false**<br><p>The server addresses.</p><br>
-    /// - On success, responds with [`GetServersOutput`](crate::operation::get_servers::GetServersOutput) with field(s):
+                            /// - On success, responds with [`GetServersOutput`](crate::operation::get_servers::GetServersOutput) with field(s):
     ///   - [`last_modified_on(Option<DateTime>)`](crate::operation::get_servers::GetServersOutput::last_modified_on): <p>The time when the server was last modified.</p>
     ///   - [`server_catalog_status(Option<ServerCatalogStatus>)`](crate::operation::get_servers::GetServersOutput::server_catalog_status): <p>The status of the server catalog.</p>
     ///   - [`server_list(Option<Vec::<Server>>)`](crate::operation::get_servers::GetServersOutput::server_list): <p>Information about the servers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_servers::GetServersOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<GetServersError>`](crate::operation::get_servers::GetServersError)
+                            /// - On failure, responds with [`SdkError<GetServersError>`](crate::operation::get_servers::GetServersError)
     pub fn get_servers(&self) -> crate::operation::get_servers::builders::GetServersFluentBuilder {
-        crate::operation::get_servers::builders::GetServersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_servers::builders::GetServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

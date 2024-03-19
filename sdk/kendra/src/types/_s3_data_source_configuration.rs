@@ -3,11 +3,11 @@
 /// <p>Provides the configuration information to connect to an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DataSourceConfiguration {
+pub struct S3DataSourceConfiguration  {
     /// <p>The name of the bucket that contains the documents.</p>
     pub bucket_name: ::std::string::String,
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inclusion_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct S3DataSourceConfiguration {
     /// <li>
     /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
     /// </ul>
-    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
     /// <ul>
@@ -29,23 +29,23 @@ pub struct S3DataSourceConfiguration {
     /// <li>
     /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
     /// </ul>
-    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
     pub documents_metadata_configuration: ::std::option::Option<crate::types::DocumentsMetadataConfiguration>,
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
     pub access_control_list_configuration: ::std::option::Option<crate::types::AccessControlListConfiguration>,
 }
-impl S3DataSourceConfiguration {
+impl  S3DataSourceConfiguration  {
     /// <p>The name of the bucket that contains the documents.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_prefixes.is_none()`.
-    pub fn inclusion_prefixes(&self) -> &[::std::string::String] {
-        self.inclusion_prefixes.as_deref().unwrap_or_default()
+    pub fn inclusion_prefixes(&self) -> & [::std::string::String] {
+        self.inclusion_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -57,10 +57,11 @@ impl S3DataSourceConfiguration {
     /// <li>
     /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
-    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
-        self.inclusion_patterns.as_deref().unwrap_or_default()
+    pub fn inclusion_patterns(&self) -> & [::std::string::String] {
+        self.inclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -72,17 +73,18 @@ impl S3DataSourceConfiguration {
     /// <li>
     /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
-    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
-        self.exclusion_patterns.as_deref().unwrap_or_default()
+    pub fn exclusion_patterns(&self) -> & [::std::string::String] {
+        self.exclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
-    pub fn documents_metadata_configuration(&self) -> ::std::option::Option<&crate::types::DocumentsMetadataConfiguration> {
+    pub fn documents_metadata_configuration(&self) -> ::std::option::Option<& crate::types::DocumentsMetadataConfiguration> {
         self.documents_metadata_configuration.as_ref()
     }
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
-    pub fn access_control_list_configuration(&self) -> ::std::option::Option<&crate::types::AccessControlListConfiguration> {
+    pub fn access_control_list_configuration(&self) -> ::std::option::Option<& crate::types::AccessControlListConfiguration> {
         self.access_control_list_configuration.as_ref()
     }
 }
@@ -98,9 +100,9 @@ impl S3DataSourceConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DataSourceConfigurationBuilder {
     pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
-    pub(crate) inclusion_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inclusion_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) documents_metadata_configuration: ::std::option::Option<crate::types::DocumentsMetadataConfiguration>,
     pub(crate) access_control_list_configuration: ::std::option::Option<crate::types::AccessControlListConfiguration>,
 }
@@ -113,8 +115,7 @@ impl S3DataSourceConfigurationBuilder {
     }
     /// <p>The name of the bucket that contains the documents.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the bucket that contains the documents.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +128,16 @@ impl S3DataSourceConfigurationBuilder {
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
     pub fn inclusion_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.inclusion_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inclusion_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    pub fn set_inclusion_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inclusion_prefixes = input;
-        self
+    pub fn set_inclusion_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inclusion_prefixes = input; self
     }
     /// <p>A list of S3 prefixes for the documents that should be included in the index.</p>
-    pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inclusion_prefixes
     }
     /// Appends an item to `inclusion_patterns`.
@@ -156,9 +156,9 @@ impl S3DataSourceConfigurationBuilder {
     /// </ul>
     pub fn inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.inclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -170,9 +170,8 @@ impl S3DataSourceConfigurationBuilder {
     /// <li>
     /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
     /// </ul>
-    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inclusion_patterns = input;
-        self
+    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inclusion_patterns = input; self
     }
     /// <p>A list of glob patterns for documents that should be indexed. If a document that matches an inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -184,7 +183,7 @@ impl S3DataSourceConfigurationBuilder {
     /// <li>
     /// <p><i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes', 'income_tax'.</p></li>
     /// </ul>
-    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
@@ -203,9 +202,9 @@ impl S3DataSourceConfigurationBuilder {
     /// </ul>
     pub fn exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.exclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -217,9 +216,8 @@ impl S3DataSourceConfigurationBuilder {
     /// <li>
     /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
     /// </ul>
-    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclusion_patterns = input;
-        self
+    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclusion_patterns = input; self
     }
     /// <p>A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
     /// <p>Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:</p>
@@ -231,7 +229,7 @@ impl S3DataSourceConfigurationBuilder {
     /// <li>
     /// <p><i>**/*internal*</i> will exclude all internal-related files in a directory and its subdirectories.</p></li>
     /// </ul>
-    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclusion_patterns
     }
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
@@ -241,8 +239,7 @@ impl S3DataSourceConfigurationBuilder {
     }
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
     pub fn set_documents_metadata_configuration(mut self, input: ::std::option::Option<crate::types::DocumentsMetadataConfiguration>) -> Self {
-        self.documents_metadata_configuration = input;
-        self
+        self.documents_metadata_configuration = input; self
     }
     /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
     pub fn get_documents_metadata_configuration(&self) -> &::std::option::Option<crate::types::DocumentsMetadataConfiguration> {
@@ -255,8 +252,7 @@ impl S3DataSourceConfigurationBuilder {
     }
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
     pub fn set_access_control_list_configuration(mut self, input: ::std::option::Option<crate::types::AccessControlListConfiguration>) -> Self {
-        self.access_control_list_configuration = input;
-        self
+        self.access_control_list_configuration = input; self
     }
     /// <p>Provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
     pub fn get_access_control_list_configuration(&self) -> &::std::option::Option<crate::types::AccessControlListConfiguration> {
@@ -266,18 +262,25 @@ impl S3DataSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3DataSourceConfigurationBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DataSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DataSourceConfiguration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3DataSourceConfiguration",
-                )
-            })?,
-            inclusion_prefixes: self.inclusion_prefixes,
-            inclusion_patterns: self.inclusion_patterns,
-            exclusion_patterns: self.exclusion_patterns,
-            documents_metadata_configuration: self.documents_metadata_configuration,
-            access_control_list_configuration: self.access_control_list_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DataSourceConfiguration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3DataSourceConfiguration")
+                    )?
+                ,
+                inclusion_prefixes: self.inclusion_prefixes
+                ,
+                inclusion_patterns: self.inclusion_patterns
+                ,
+                exclusion_patterns: self.exclusion_patterns
+                ,
+                documents_metadata_configuration: self.documents_metadata_configuration
+                ,
+                access_control_list_configuration: self.access_control_list_configuration
+                ,
+            }
+        )
     }
 }
+

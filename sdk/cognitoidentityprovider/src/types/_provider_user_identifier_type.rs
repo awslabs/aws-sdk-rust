@@ -3,7 +3,7 @@
 /// <p>A container for information about an IdP for a user pool.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderUserIdentifierType {
+pub struct ProviderUserIdentifierType  {
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
@@ -11,17 +11,17 @@ pub struct ProviderUserIdentifierType {
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
     pub provider_attribute_value: ::std::option::Option<::std::string::String>,
 }
-impl ProviderUserIdentifierType {
+impl  ProviderUserIdentifierType  {
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
-    pub fn provider_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_attribute_name(&self) -> ::std::option::Option<& str> {
         self.provider_attribute_name.as_deref()
     }
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
-    pub fn provider_attribute_value(&self) -> ::std::option::Option<&str> {
+    pub fn provider_attribute_value(&self) -> ::std::option::Option<& str> {
         self.provider_attribute_value.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ProviderUserIdentifierTypeBuilder {
     }
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ProviderUserIdentifierTypeBuilder {
     }
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
     pub fn set_provider_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_attribute_name = input;
-        self
+        self.provider_attribute_name = input; self
     }
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
     pub fn get_provider_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ProviderUserIdentifierTypeBuilder {
     }
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
     pub fn set_provider_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_attribute_value = input;
-        self
+        self.provider_attribute_value = input; self
     }
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
     pub fn get_provider_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ProviderUserIdentifierTypeBuilder {
     /// Consumes the builder and constructs a [`ProviderUserIdentifierType`](crate::types::ProviderUserIdentifierType).
     pub fn build(self) -> crate::types::ProviderUserIdentifierType {
         crate::types::ProviderUserIdentifierType {
-            provider_name: self.provider_name,
-            provider_attribute_name: self.provider_attribute_name,
-            provider_attribute_value: self.provider_attribute_value,
+            provider_name: self.provider_name
+            ,
+            provider_attribute_name: self.provider_attribute_name
+            ,
+            provider_attribute_value: self.provider_attribute_value
+            ,
         }
     }
 }
+

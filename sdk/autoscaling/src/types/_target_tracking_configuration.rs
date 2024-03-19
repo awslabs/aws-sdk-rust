@@ -3,7 +3,7 @@
 /// <p>Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingConfiguration {
+pub struct TargetTrackingConfiguration  {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
@@ -15,13 +15,13 @@ pub struct TargetTrackingConfiguration {
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub disable_scale_in: ::std::option::Option<bool>,
 }
-impl TargetTrackingConfiguration {
+impl  TargetTrackingConfiguration  {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn predefined_metric_specification(&self) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
+    pub fn predefined_metric_specification(&self) -> ::std::option::Option<& crate::types::PredefinedMetricSpecification> {
         self.predefined_metric_specification.as_ref()
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
-    pub fn customized_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
+    pub fn customized_metric_specification(&self) -> ::std::option::Option<& crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
     /// <p>The target value for the metric.</p><note>
@@ -59,8 +59,7 @@ impl TargetTrackingConfigurationBuilder {
     }
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn set_predefined_metric_specification(mut self, input: ::std::option::Option<crate::types::PredefinedMetricSpecification>) -> Self {
-        self.predefined_metric_specification = input;
-        self
+        self.predefined_metric_specification = input; self
     }
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn get_predefined_metric_specification(&self) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
@@ -73,8 +72,7 @@ impl TargetTrackingConfigurationBuilder {
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn set_customized_metric_specification(mut self, input: ::std::option::Option<crate::types::CustomizedMetricSpecification>) -> Self {
-        self.customized_metric_specification = input;
-        self
+        self.customized_metric_specification = input; self
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn get_customized_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
@@ -92,8 +90,7 @@ impl TargetTrackingConfigurationBuilder {
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
     /// </note>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>The target value for the metric.</p><note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval.</p>
@@ -108,8 +105,7 @@ impl TargetTrackingConfigurationBuilder {
     }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_scale_in = input;
-        self
+        self.disable_scale_in = input; self
     }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub fn get_disable_scale_in(&self) -> &::std::option::Option<bool> {
@@ -118,10 +114,15 @@ impl TargetTrackingConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingConfiguration {
         crate::types::TargetTrackingConfiguration {
-            predefined_metric_specification: self.predefined_metric_specification,
-            customized_metric_specification: self.customized_metric_specification,
-            target_value: self.target_value,
-            disable_scale_in: self.disable_scale_in,
+            predefined_metric_specification: self.predefined_metric_specification
+            ,
+            customized_metric_specification: self.customized_metric_specification
+            ,
+            target_value: self.target_value
+            ,
+            disable_scale_in: self.disable_scale_in
+            ,
         }
     }
 }
+

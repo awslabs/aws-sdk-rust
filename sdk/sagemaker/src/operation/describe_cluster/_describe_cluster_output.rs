@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeClusterOutput {
+pub struct DescribeClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SageMaker HyperPod cluster.</p>
@@ -14,48 +14,49 @@ pub struct DescribeClusterOutput {
     /// <p>The failure message of the SageMaker HyperPod cluster.</p>
     pub failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
-    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
+    pub instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupDetails>>,
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     _request_id: Option<String>,
 }
-impl DescribeClusterOutput {
+impl  DescribeClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
-    pub fn cluster_status(&self) -> ::std::option::Option<&crate::types::ClusterStatus> {
+    pub fn cluster_status(&self) -> ::std::option::Option<& crate::types::ClusterStatus> {
         self.cluster_status.as_ref()
     }
     /// <p>The time when the SageMaker Cluster is created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The failure message of the SageMaker HyperPod cluster.</p>
-    pub fn failure_message(&self) -> ::std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<& str> {
         self.failure_message.as_deref()
     }
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
-    pub fn instance_groups(&self) -> &[crate::types::ClusterInstanceGroupDetails] {
-        self.instance_groups.as_deref().unwrap_or_default()
+    pub fn instance_groups(&self) -> & [crate::types::ClusterInstanceGroupDetails] {
+        self.instance_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeClusterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
     pub fn builder() -> crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder {
@@ -72,7 +73,7 @@ pub struct DescribeClusterOutputBuilder {
     pub(crate) cluster_status: ::std::option::Option<crate::types::ClusterStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_message: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupDetails>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     _request_id: Option<String>,
 }
@@ -85,8 +86,7 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<crate::types::ClusterStatus>) -> Self {
-        self.cluster_status = input;
-        self
+        self.cluster_status = input; self
     }
     /// <p>The status of the SageMaker HyperPod cluster.</p>
     pub fn get_cluster_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
@@ -128,8 +126,7 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>The time when the SageMaker Cluster is created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time when the SageMaker Cluster is created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -142,8 +139,7 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>The failure message of the SageMaker HyperPod cluster.</p>
     pub fn set_failure_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_message = input;
-        self
+        self.failure_message = input; self
     }
     /// <p>The failure message of the SageMaker HyperPod cluster.</p>
     pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,17 +152,16 @@ impl DescribeClusterOutputBuilder {
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
     pub fn instance_groups(mut self, input: crate::types::ClusterInstanceGroupDetails) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
-        v.push(input);
-        self.instance_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
-    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>>) -> Self {
-        self.instance_groups = input;
-        self
+    pub fn set_instance_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupDetails>>) -> Self {
+        self.instance_groups = input; self
     }
     /// <p>The instance groups of the SageMaker HyperPod cluster.</p>
-    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupDetails>> {
+    pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterInstanceGroupDetails>> {
         &self.instance_groups
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
@@ -176,33 +171,40 @@ impl DescribeClusterOutputBuilder {
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
     pub fn build(self) -> crate::operation::describe_cluster::DescribeClusterOutput {
         crate::operation::describe_cluster::DescribeClusterOutput {
-            cluster_arn: self.cluster_arn,
-            cluster_name: self.cluster_name,
-            cluster_status: self.cluster_status,
-            creation_time: self.creation_time,
-            failure_message: self.failure_message,
-            instance_groups: self.instance_groups,
-            vpc_config: self.vpc_config,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_name: self.cluster_name
+            ,
+            cluster_status: self.cluster_status
+            ,
+            creation_time: self.creation_time
+            ,
+            failure_message: self.failure_message
+            ,
+            instance_groups: self.instance_groups
+            ,
+            vpc_config: self.vpc_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

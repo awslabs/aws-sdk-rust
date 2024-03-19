@@ -3,22 +3,23 @@
 /// <p>A warning about an issue that occurred during asynchronous text analysis (<code>StartDocumentAnalysis</code>) or asynchronous document text detection (<code>StartDocumentTextDetection</code>).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Warning {
+pub struct Warning  {
     /// <p>The error code for the warning.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A list of the pages that the warning applies to.</p>
-    pub pages: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub pages: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
-impl Warning {
+impl  Warning  {
     /// <p>The error code for the warning.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A list of the pages that the warning applies to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pages.is_none()`.
-    pub fn pages(&self) -> &[i32] {
-        self.pages.as_deref().unwrap_or_default()
+    pub fn pages(&self) -> & [i32] {
+        self.pages.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Warning {
@@ -33,7 +34,7 @@ impl Warning {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WarningBuilder {
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
-    pub(crate) pages: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) pages: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl WarningBuilder {
     /// <p>The error code for the warning.</p>
@@ -43,8 +44,7 @@ impl WarningBuilder {
     }
     /// <p>The error code for the warning.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code for the warning.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl WarningBuilder {
     /// <p>A list of the pages that the warning applies to.</p>
     pub fn pages(mut self, input: i32) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input);
-        self.pages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.pages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the pages that the warning applies to.</p>
-    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.pages = input;
-        self
+    pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.pages = input; self
     }
     /// <p>A list of the pages that the warning applies to.</p>
-    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.pages
     }
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {
         crate::types::Warning {
-            error_code: self.error_code,
-            pages: self.pages,
+            error_code: self.error_code
+            ,
+            pages: self.pages
+            ,
         }
     }
 }
+

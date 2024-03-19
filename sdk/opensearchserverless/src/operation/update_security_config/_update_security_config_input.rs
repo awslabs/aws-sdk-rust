@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSecurityConfigInput {
+pub struct UpdateSecurityConfigInput  {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
@@ -14,25 +14,25 @@ pub struct UpdateSecurityConfigInput {
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSecurityConfigInput {
+impl  UpdateSecurityConfigInput  {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn config_version(&self) -> ::std::option::Option<&str> {
+    pub fn config_version(&self) -> ::std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>A description of the security configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>SAML options in in the form of a key-value map.</p>
-    pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlConfigOptions> {
+    pub fn saml_options(&self) -> ::std::option::Option<& crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
     pub fn set_config_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.config_version = input;
-        self
+        self.config_version = input; self
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
     pub fn get_config_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>A description of the security configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the security configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>SAML options in in the form of a key-value map.</p>
     pub fn set_saml_options(mut self, input: ::std::option::Option<crate::types::SamlConfigOptions>) -> Self {
-        self.saml_options = input;
-        self
+        self.saml_options = input; self
     }
     /// <p>SAML options in in the form of a key-value map.</p>
     pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlConfigOptions> {
@@ -119,24 +115,28 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_security_config::UpdateSecurityConfigInput {
-            id: self.id,
-            config_version: self.config_version,
-            description: self.description,
-            saml_options: self.saml_options,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_security_config::UpdateSecurityConfigInput {
+                id: self.id
+                ,
+                config_version: self.config_version
+                ,
+                description: self.description
+                ,
+                saml_options: self.saml_options
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

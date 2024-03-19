@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The name of the project to create.</p>
     pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
@@ -10,17 +10,17 @@ pub struct CreateProjectInput {
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
     pub auto_update: ::std::option::Option<crate::types::ProjectAutoUpdate>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The name of the project to create.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
-    pub fn feature(&self) -> ::std::option::Option<&crate::types::CustomizationFeature> {
+    pub fn feature(&self) -> ::std::option::Option<& crate::types::CustomizationFeature> {
         self.feature.as_ref()
     }
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
-    pub fn auto_update(&self) -> ::std::option::Option<&crate::types::ProjectAutoUpdate> {
+    pub fn auto_update(&self) -> ::std::option::Option<& crate::types::ProjectAutoUpdate> {
         self.auto_update.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the project to create.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project to create.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::CustomizationFeature>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::CustomizationFeature> {
@@ -76,21 +74,24 @@ impl CreateProjectInputBuilder {
     }
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<crate::types::ProjectAutoUpdate>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<crate::types::ProjectAutoUpdate> {
         &self.auto_update
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            project_name: self.project_name,
-            feature: self.feature,
-            auto_update: self.auto_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                project_name: self.project_name
+                ,
+                feature: self.feature
+                ,
+                auto_update: self.auto_update
+                ,
+            }
+        )
     }
 }
+

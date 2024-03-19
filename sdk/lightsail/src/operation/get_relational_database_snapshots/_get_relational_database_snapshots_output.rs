@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRelationalDatabaseSnapshotsOutput {
+pub struct GetRelationalDatabaseSnapshotsOutput  {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub relational_database_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
+    pub relational_database_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRelationalDatabaseSnapshotsOutput {
+impl  GetRelationalDatabaseSnapshotsOutput  {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.relational_database_snapshots.is_none()`.
-    pub fn relational_database_snapshots(&self) -> &[crate::types::RelationalDatabaseSnapshot] {
-        self.relational_database_snapshots.as_deref().unwrap_or_default()
+    pub fn relational_database_snapshots(&self) -> & [crate::types::RelationalDatabaseSnapshot] {
+        self.relational_database_snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRelationalDatabaseSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRelationalDatabaseSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
     pub fn builder() -> crate::operation::get_relational_database_snapshots::builders::GetRelationalDatabaseSnapshotsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetRelationalDatabaseSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotsOutputBuilder {
-    pub(crate) relational_database_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
+    pub(crate) relational_database_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,20 +54,16 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
     /// <p>An object describing the result of your get relational database snapshots request.</p>
     pub fn relational_database_snapshots(mut self, input: crate::types::RelationalDatabaseSnapshot) -> Self {
         let mut v = self.relational_database_snapshots.unwrap_or_default();
-        v.push(input);
-        self.relational_database_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relational_database_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn set_relational_database_snapshots(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>>,
-    ) -> Self {
-        self.relational_database_snapshots = input;
-        self
+    pub fn set_relational_database_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseSnapshot>>) -> Self {
+        self.relational_database_snapshots = input; self
     }
     /// <p>An object describing the result of your get relational database snapshots request.</p>
-    pub fn get_relational_database_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalDatabaseSnapshot>> {
+    pub fn get_relational_database_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelationalDatabaseSnapshot>> {
         &self.relational_database_snapshots
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -80,8 +77,7 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -90,20 +86,23 @@ impl GetRelationalDatabaseSnapshotsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotsOutput`](crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput).
     pub fn build(self) -> crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput {
         crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput {
-            relational_database_snapshots: self.relational_database_snapshots,
-            next_page_token: self.next_page_token,
+            relational_database_snapshots: self.relational_database_snapshots
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

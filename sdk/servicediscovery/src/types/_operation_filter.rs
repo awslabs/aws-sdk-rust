@@ -3,7 +3,7 @@
 /// <p>A complex type that lets you select the operations that you want to list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OperationFilter {
+pub struct OperationFilter  {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct OperationFilter {
     /// <li>
     /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
     /// </ul>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
     /// <li>
@@ -43,7 +43,7 @@ pub struct OperationFilter {
     /// </ul>
     pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
-impl OperationFilter {
+impl  OperationFilter  {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
     /// <li>
@@ -57,7 +57,7 @@ impl OperationFilter {
     /// <li>
     /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
     /// </ul>
-    pub fn name(&self) -> &crate::types::OperationFilterName {
+    pub fn name(&self) -> & crate::types::OperationFilterName {
         &self.name
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
@@ -73,9 +73,8 @@ impl OperationFilter {
     /// <li>
     /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
     /// </ul>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
@@ -86,7 +85,7 @@ impl OperationFilter {
     /// <li>
     /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
     /// </ul>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::FilterCondition> {
         self.condition.as_ref()
     }
 }
@@ -102,7 +101,7 @@ impl OperationFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OperationFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OperationFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl OperationFilterBuilder {
@@ -138,8 +137,7 @@ impl OperationFilterBuilder {
     /// <p><b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::OperationFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
@@ -176,9 +174,9 @@ impl OperationFilterBuilder {
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
     /// <ul>
@@ -193,9 +191,8 @@ impl OperationFilterBuilder {
     /// <li>
     /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>:</p>
     /// <ul>
@@ -210,7 +207,7 @@ impl OperationFilterBuilder {
     /// <li>
     /// <p><b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p></li>
     /// </ul>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
@@ -236,8 +233,7 @@ impl OperationFilterBuilder {
     /// <p><code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>.</p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::FilterCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
@@ -256,20 +252,22 @@ impl OperationFilterBuilder {
     /// - [`name`](crate::types::builders::OperationFilterBuilder::name)
     /// - [`values`](crate::types::builders::OperationFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::OperationFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OperationFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building OperationFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building OperationFilter",
-                )
-            })?,
-            condition: self.condition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OperationFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building OperationFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building OperationFilter")
+                    )?
+                ,
+                condition: self.condition
+                ,
+            }
+        )
     }
 }
+

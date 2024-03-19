@@ -3,7 +3,7 @@
 /// <p>Runtime details and status for the workflow step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowStepMetadata {
+pub struct WorkflowStepMetadata  {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow step.</p>
@@ -27,49 +27,49 @@ pub struct WorkflowStepMetadata {
     /// <p>The timestamp when the workflow step finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowStepMetadata {
+impl  WorkflowStepMetadata  {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
-    pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_execution_id(&self) -> ::std::option::Option<& str> {
         self.step_execution_id.as_deref()
     }
     /// <p>The name of the workflow step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the workflow step.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The step action name.</p>
-    pub fn action(&self) -> ::std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>Runtime status for the workflow step.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::WorkflowStepExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
-    pub fn rollback_status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
+    pub fn rollback_status(&self) -> ::std::option::Option<& crate::types::WorkflowStepExecutionRollbackStatus> {
         self.rollback_status.as_ref()
     }
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Input parameters that Image Builder provides for the workflow step.</p>
-    pub fn inputs(&self) -> ::std::option::Option<&str> {
+    pub fn inputs(&self) -> ::std::option::Option<& str> {
         self.inputs.as_deref()
     }
     /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
-    pub fn outputs(&self) -> ::std::option::Option<&str> {
+    pub fn outputs(&self) -> ::std::option::Option<& str> {
         self.outputs.as_deref()
     }
     /// <p>The timestamp when the workflow step started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The timestamp when the workflow step finished.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<& str> {
         self.end_time.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_execution_id = input;
-        self
+        self.step_execution_id = input; self
     }
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>The name of the workflow step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the workflow step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>Description of the workflow step.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the workflow step.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>The step action name.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The step action name.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>Runtime status for the workflow step.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Runtime status for the workflow step.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionStatus> {
@@ -174,8 +169,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
     pub fn set_rollback_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>) -> Self {
-        self.rollback_status = input;
-        self
+        self.rollback_status = input; self
     }
     /// <p>Reports on the rollback status of the step, if applicable.</p>
     pub fn get_rollback_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
@@ -188,8 +182,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>Input parameters that Image Builder provides for the workflow step.</p>
     pub fn set_inputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inputs = input;
-        self
+        self.inputs = input; self
     }
     /// <p>Input parameters that Image Builder provides for the workflow step.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +208,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outputs = input;
-        self
+        self.outputs = input; self
     }
     /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>The timestamp when the workflow step started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp when the workflow step started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +234,7 @@ impl WorkflowStepMetadataBuilder {
     }
     /// <p>The timestamp when the workflow step finished.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp when the workflow step finished.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl WorkflowStepMetadataBuilder {
     /// Consumes the builder and constructs a [`WorkflowStepMetadata`](crate::types::WorkflowStepMetadata).
     pub fn build(self) -> crate::types::WorkflowStepMetadata {
         crate::types::WorkflowStepMetadata {
-            step_execution_id: self.step_execution_id,
-            name: self.name,
-            description: self.description,
-            action: self.action,
-            status: self.status,
-            rollback_status: self.rollback_status,
-            message: self.message,
-            inputs: self.inputs,
-            outputs: self.outputs,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            step_execution_id: self.step_execution_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            action: self.action
+            ,
+            status: self.status
+            ,
+            rollback_status: self.rollback_status
+            ,
+            message: self.message
+            ,
+            inputs: self.inputs
+            ,
+            outputs: self.outputs
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

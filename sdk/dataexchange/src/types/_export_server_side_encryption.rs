@@ -3,19 +3,19 @@
 /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportServerSideEncryption {
+pub struct ExportServerSideEncryption  {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub r#type: crate::types::ServerSideEncryptionTypes,
 }
-impl ExportServerSideEncryption {
+impl  ExportServerSideEncryption  {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub fn r#type(&self) -> &crate::types::ServerSideEncryptionTypes {
+    pub fn r#type(&self) -> & crate::types::ServerSideEncryptionTypes {
         &self.r#type
     }
 }
@@ -41,8 +41,7 @@ impl ExportServerSideEncryptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl ExportServerSideEncryptionBuilder {
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ServerSideEncryptionTypes>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ServerSideEncryptionTypes> {
@@ -67,14 +65,17 @@ impl ExportServerSideEncryptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ExportServerSideEncryptionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportServerSideEncryption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportServerSideEncryption {
-            kms_key_arn: self.kms_key_arn,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ExportServerSideEncryption",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportServerSideEncryption {
+                kms_key_arn: self.kms_key_arn
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ExportServerSideEncryption")
+                    )?
+                ,
+            }
+        )
     }
 }
+

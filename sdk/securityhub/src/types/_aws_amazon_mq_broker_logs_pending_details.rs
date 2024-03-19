@@ -3,13 +3,13 @@
 /// <p>Provides information about logs to be activated for the specified broker.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAmazonMqBrokerLogsPendingDetails {
+pub struct AwsAmazonMqBrokerLogsPendingDetails  {
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub audit: ::std::option::Option<bool>,
     /// <p>Activates general logging.</p>
     pub general: ::std::option::Option<bool>,
 }
-impl AwsAmazonMqBrokerLogsPendingDetails {
+impl  AwsAmazonMqBrokerLogsPendingDetails  {
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn audit(&self) -> ::std::option::Option<bool> {
         self.audit
@@ -41,8 +41,7 @@ impl AwsAmazonMqBrokerLogsPendingDetailsBuilder {
     }
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn set_audit(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.audit = input;
-        self
+        self.audit = input; self
     }
     /// <p>Activates audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers.</p>
     pub fn get_audit(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl AwsAmazonMqBrokerLogsPendingDetailsBuilder {
     }
     /// <p>Activates general logging.</p>
     pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.general = input;
-        self
+        self.general = input; self
     }
     /// <p>Activates general logging.</p>
     pub fn get_general(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl AwsAmazonMqBrokerLogsPendingDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLogsPendingDetails`](crate::types::AwsAmazonMqBrokerLogsPendingDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLogsPendingDetails {
         crate::types::AwsAmazonMqBrokerLogsPendingDetails {
-            audit: self.audit,
-            general: self.general,
+            audit: self.audit
+            ,
+            general: self.general
+            ,
         }
     }
 }
+

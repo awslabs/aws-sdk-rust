@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeModelVersionInput {
+pub struct DescribeModelVersionInput  {
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the machine learning model.</p>
     pub model_version: ::std::option::Option<i64>,
 }
-impl DescribeModelVersionInput {
+impl  DescribeModelVersionInput  {
     /// <p>The name of the machine learning model that this version belongs to.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the machine learning model.</p>
@@ -41,8 +41,7 @@ impl DescribeModelVersionInputBuilder {
     }
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeModelVersionInputBuilder {
     }
     /// <p>The version of the machine learning model.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the machine learning model.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
         &self.model_version
     }
     /// Consumes the builder and constructs a [`DescribeModelVersionInput`](crate::operation::describe_model_version::DescribeModelVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_model_version::DescribeModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_model_version::DescribeModelVersionInput {
-            model_name: self.model_name,
-            model_version: self.model_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_model_version::DescribeModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_model_version::DescribeModelVersionInput {
+                model_name: self.model_name
+                ,
+                model_version: self.model_version
+                ,
+            }
+        )
     }
 }
+

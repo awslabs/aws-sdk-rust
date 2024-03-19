@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateOpsMetadataOutput {
+pub struct UpdateOpsMetadataOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     pub ops_metadata_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateOpsMetadataOutput {
+impl  UpdateOpsMetadataOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
-    pub fn ops_metadata_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ops_metadata_arn(&self) -> ::std::option::Option<& str> {
         self.ops_metadata_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateOpsMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOpsMetadataOutput`](crate::operation::update_ops_metadata::UpdateOpsMetadataOutput).
     pub fn builder() -> crate::operation::update_ops_metadata::builders::UpdateOpsMetadataOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateOpsMetadataOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     pub fn set_ops_metadata_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ops_metadata_arn = input;
-        self
+        self.ops_metadata_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
     pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_metadata_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateOpsMetadataOutput`](crate::operation::update_ops_metadata::UpdateOpsMetadataOutput).
     pub fn build(self) -> crate::operation::update_ops_metadata::UpdateOpsMetadataOutput {
         crate::operation::update_ops_metadata::UpdateOpsMetadataOutput {
-            ops_metadata_arn: self.ops_metadata_arn,
+            ops_metadata_arn: self.ops_metadata_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

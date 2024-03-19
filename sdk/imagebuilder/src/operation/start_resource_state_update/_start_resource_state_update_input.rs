@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartResourceStateUpdateInput {
+pub struct StartResourceStateUpdateInput  {
     /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the lifecycle action to take for this request.</p>
@@ -18,33 +18,33 @@ pub struct StartResourceStateUpdateInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartResourceStateUpdateInput {
+impl  StartResourceStateUpdateInput  {
     /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Indicates the lifecycle action to take for this request.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ResourceState> {
         self.state.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>A list of image resources to update state for.</p>
-    pub fn include_resources(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateIncludeResources> {
+    pub fn include_resources(&self) -> ::std::option::Option<& crate::types::ResourceStateUpdateIncludeResources> {
         self.include_resources.as_ref()
     }
     /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
-    pub fn exclusion_rules(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateExclusionRules> {
+    pub fn exclusion_rules(&self) -> ::std::option::Option<& crate::types::ResourceStateUpdateExclusionRules> {
         self.exclusion_rules.as_ref()
     }
     /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
-    pub fn update_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn update_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.update_at.as_ref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the Image Builder resource that is updated. The state update might also impact associated resources.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>Indicates the lifecycle action to take for this request.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ResourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates the lifecycle action to take for this request.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ResourceState> {
@@ -105,8 +103,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>A list of image resources to update state for.</p>
     pub fn set_include_resources(mut self, input: ::std::option::Option<crate::types::ResourceStateUpdateIncludeResources>) -> Self {
-        self.include_resources = input;
-        self
+        self.include_resources = input; self
     }
     /// <p>A list of image resources to update state for.</p>
     pub fn get_include_resources(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateIncludeResources> {
@@ -133,8 +129,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
     pub fn set_exclusion_rules(mut self, input: ::std::option::Option<crate::types::ResourceStateUpdateExclusionRules>) -> Self {
-        self.exclusion_rules = input;
-        self
+        self.exclusion_rules = input; self
     }
     /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
     pub fn get_exclusion_rules(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateExclusionRules> {
@@ -147,8 +142,7 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
     pub fn set_update_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_at = input;
-        self
+        self.update_at = input; self
     }
     /// <p>The timestamp that indicates when resources are updated by a lifecycle action.</p>
     pub fn get_update_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -162,28 +156,32 @@ impl StartResourceStateUpdateInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartResourceStateUpdateInput`](crate::operation::start_resource_state_update::StartResourceStateUpdateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_resource_state_update::StartResourceStateUpdateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_resource_state_update::StartResourceStateUpdateInput {
-            resource_arn: self.resource_arn,
-            state: self.state,
-            execution_role: self.execution_role,
-            include_resources: self.include_resources,
-            exclusion_rules: self.exclusion_rules,
-            update_at: self.update_at,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_resource_state_update::StartResourceStateUpdateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_resource_state_update::StartResourceStateUpdateInput {
+                resource_arn: self.resource_arn
+                ,
+                state: self.state
+                ,
+                execution_role: self.execution_role
+                ,
+                include_resources: self.include_resources
+                ,
+                exclusion_rules: self.exclusion_rules
+                ,
+                update_at: self.update_at
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

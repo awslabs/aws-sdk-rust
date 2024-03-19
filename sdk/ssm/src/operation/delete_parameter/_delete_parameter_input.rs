@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteParameterInput {
+pub struct DeleteParameterInput  {
     /// <p>The name of the parameter to delete.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteParameterInput {
+impl  DeleteParameterInput  {
     /// <p>The name of the parameter to delete.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteParameterInputBuilder {
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the parameter to delete.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
@@ -52,9 +51,13 @@ impl DeleteParameterInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteParameterInput`](crate::operation::delete_parameter::DeleteParameterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_parameter::DeleteParameterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_parameter::DeleteParameterInput { name: self.name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_parameter::DeleteParameterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_parameter::DeleteParameterInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

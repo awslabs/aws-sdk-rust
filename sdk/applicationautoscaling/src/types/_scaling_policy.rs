@@ -4,7 +4,7 @@
 /// <p>For more information about configuring scaling policies for a specific service, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon Web Services services that you can use with Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalingPolicy {
+pub struct ScalingPolicy  {
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
     pub policy_arn: ::std::string::String,
     /// <p>The name of the scaling policy.</p>
@@ -109,23 +109,21 @@ pub struct ScalingPolicy {
     /// <p>A target tracking scaling policy.</p>
     pub target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>,
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
 }
-impl ScalingPolicy {
+impl  ScalingPolicy  {
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
-    pub fn policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_arn.deref()
+    pub fn policy_arn(&self) -> & str {
+        use std::ops::Deref; self.policy_arn.deref()
     }
     /// <p>The name of the scaling policy.</p>
-    pub fn policy_name(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_name.deref()
+    pub fn policy_name(&self) -> & str {
+        use std::ops::Deref; self.policy_name.deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+    pub fn service_namespace(&self) -> & crate::types::ServiceNamespace {
         &self.service_namespace
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -167,9 +165,8 @@ impl ScalingPolicy {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -218,32 +215,33 @@ impl ScalingPolicy {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> &crate::types::ScalableDimension {
+    pub fn scalable_dimension(&self) -> & crate::types::ScalableDimension {
         &self.scalable_dimension
     }
     /// <p>The scaling policy type.</p>
     /// <p>The following policy types are supported:</p>
     /// <p><code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p><code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
-    pub fn policy_type(&self) -> &crate::types::PolicyType {
+    pub fn policy_type(&self) -> & crate::types::PolicyType {
         &self.policy_type
     }
     /// <p>A step scaling policy.</p>
-    pub fn step_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::StepScalingPolicyConfiguration> {
+    pub fn step_scaling_policy_configuration(&self) -> ::std::option::Option<& crate::types::StepScalingPolicyConfiguration> {
         self.step_scaling_policy_configuration.as_ref()
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<&crate::types::TargetTrackingScalingPolicyConfiguration> {
+    pub fn target_tracking_scaling_policy_configuration(&self) -> ::std::option::Option<& crate::types::TargetTrackingScalingPolicyConfiguration> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alarms.is_none()`.
-    pub fn alarms(&self) -> &[crate::types::Alarm] {
-        self.alarms.as_deref().unwrap_or_default()
+    pub fn alarms(&self) -> & [crate::types::Alarm] {
+        self.alarms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
@@ -266,7 +264,7 @@ pub struct ScalingPolicyBuilder {
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) step_scaling_policy_configuration: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>,
     pub(crate) target_tracking_scaling_policy_configuration: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
-    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScalingPolicyBuilder {
@@ -278,8 +276,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +290,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The name of the scaling policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the scaling policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -308,8 +304,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -399,8 +394,7 @@ impl ScalingPolicyBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -544,8 +538,7 @@ impl ScalingPolicyBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -611,8 +604,7 @@ impl ScalingPolicyBuilder {
     /// <p><code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p>
     /// <p><code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK, Amazon ElastiCache, or Neptune.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The scaling policy type.</p>
     /// <p>The following policy types are supported:</p>
@@ -628,8 +620,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>A step scaling policy.</p>
     pub fn set_step_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::StepScalingPolicyConfiguration>) -> Self {
-        self.step_scaling_policy_configuration = input;
-        self
+        self.step_scaling_policy_configuration = input; self
     }
     /// <p>A step scaling policy.</p>
     pub fn get_step_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::StepScalingPolicyConfiguration> {
@@ -641,12 +632,8 @@ impl ScalingPolicyBuilder {
         self
     }
     /// <p>A target tracking scaling policy.</p>
-    pub fn set_target_tracking_scaling_policy_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>,
-    ) -> Self {
-        self.target_tracking_scaling_policy_configuration = input;
-        self
+    pub fn set_target_tracking_scaling_policy_configuration(mut self, input: ::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration>) -> Self {
+        self.target_tracking_scaling_policy_configuration = input; self
     }
     /// <p>A target tracking scaling policy.</p>
     pub fn get_target_tracking_scaling_policy_configuration(&self) -> &::std::option::Option<crate::types::TargetTrackingScalingPolicyConfiguration> {
@@ -659,17 +646,16 @@ impl ScalingPolicyBuilder {
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alarms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
     }
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
-    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Alarm>> {
         &self.alarms
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
@@ -680,8 +666,7 @@ impl ScalingPolicyBuilder {
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -697,52 +682,51 @@ impl ScalingPolicyBuilder {
     /// - [`policy_type`](crate::types::builders::ScalingPolicyBuilder::policy_type)
     /// - [`creation_time`](crate::types::builders::ScalingPolicyBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ScalingPolicy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScalingPolicy {
-            policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_arn",
-                    "policy_arn was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_name",
-                    "policy_name was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_namespace",
-                    "service_namespace was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scalable_dimension",
-                    "scalable_dimension was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_type",
-                    "policy_type was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-            step_scaling_policy_configuration: self.step_scaling_policy_configuration,
-            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
-            alarms: self.alarms,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ScalingPolicy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScalingPolicy {
+                policy_arn: self.policy_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_arn", "policy_arn was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                policy_name: self.policy_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_name", "policy_name was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                service_namespace: self.service_namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_namespace", "service_namespace was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                scalable_dimension: self.scalable_dimension
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scalable_dimension", "scalable_dimension was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                policy_type: self.policy_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_type", "policy_type was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+                step_scaling_policy_configuration: self.step_scaling_policy_configuration
+                ,
+                target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration
+                ,
+                alarms: self.alarms
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ScalingPolicy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

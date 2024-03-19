@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCodeSnippetInput {
+pub struct BatchGetCodeSnippetInput  {
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetCodeSnippetInput {
+impl  BatchGetCodeSnippetInput  {
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_arns.is_none()`.
-    pub fn finding_arns(&self) -> &[::std::string::String] {
-        self.finding_arns.as_deref().unwrap_or_default()
+    pub fn finding_arns(&self) -> & [::std::string::String] {
+        self.finding_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetCodeSnippetInput {
@@ -25,7 +26,7 @@ impl BatchGetCodeSnippetInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCodeSnippetInputBuilder {
-    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) finding_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetCodeSnippetInputBuilder {
     /// Appends an item to `finding_arns`.
@@ -35,26 +36,26 @@ impl BatchGetCodeSnippetInputBuilder {
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
     pub fn finding_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_arns.unwrap_or_default();
-        v.push(input.into());
-        self.finding_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_arns = input;
-        self
+    pub fn set_finding_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_arns = input; self
     }
     /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
-    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_arns
     }
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
-            finding_arns: self.finding_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
+                finding_arns: self.finding_arns
+                ,
+            }
+        )
     }
 }
+

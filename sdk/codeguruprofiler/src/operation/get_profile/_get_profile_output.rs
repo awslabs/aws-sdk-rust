@@ -3,7 +3,7 @@
 /// <p>The structure representing the getProfileResponse.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProfileOutput {
+pub struct GetProfileOutput  {
     /// <p>Information about the profile.</p>
     pub profile: ::aws_smithy_types::Blob,
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
@@ -12,26 +12,25 @@ pub struct GetProfileOutput {
     pub content_encoding: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetProfileOutput {
+impl  GetProfileOutput  {
     /// <p>Information about the profile.</p>
-    pub fn profile(&self) -> &::aws_smithy_types::Blob {
+    pub fn profile(&self) -> & ::aws_smithy_types::Blob {
         &self.profile
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> & str {
+        use std::ops::Deref; self.content_type.deref()
     }
     /// <p>The content encoding of the profile.</p>
-    pub fn content_encoding(&self) -> ::std::option::Option<&str> {
+    pub fn content_encoding(&self) -> ::std::option::Option<& str> {
         self.content_encoding.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     pub fn builder() -> crate::operation::get_profile::builders::GetProfileOutputBuilder {
@@ -57,8 +56,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>Information about the profile.</p>
     pub fn set_profile(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
     }
     /// <p>Information about the profile.</p>
     pub fn get_profile(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -72,8 +70,7 @@ impl GetProfileOutputBuilder {
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,42 +83,43 @@ impl GetProfileOutputBuilder {
     }
     /// <p>The content encoding of the profile.</p>
     pub fn set_content_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_encoding = input;
-        self
+        self.content_encoding = input; self
     }
     /// <p>The content encoding of the profile.</p>
     pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_encoding
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`profile`](crate::operation::get_profile::builders::GetProfileOutputBuilder::profile)
     /// - [`content_type`](crate::operation::get_profile::builders::GetProfileOutputBuilder::content_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_profile::GetProfileOutput {
-            profile: self.profile.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "profile",
-                    "profile was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building GetProfileOutput",
-                )
-            })?,
-            content_encoding: self.content_encoding,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_profile::GetProfileOutput {
+                profile: self.profile
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("profile", "profile was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                content_type: self.content_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("content_type", "content_type was not specified but it is required when building GetProfileOutput")
+                    )?
+                ,
+                content_encoding: self.content_encoding
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

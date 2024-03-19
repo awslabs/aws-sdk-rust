@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCisScanConfigurationsInput {
+pub struct ListCisScanConfigurationsInput  {
     /// <p>The CIS scan configuration filter criteria.</p>
     pub filter_criteria: ::std::option::Option<crate::types::ListCisScanConfigurationsFilterCriteria>,
     /// <p>The CIS scan configuration sort by order.</p>
@@ -14,21 +14,21 @@ pub struct ListCisScanConfigurationsInput {
     /// <p>The maximum number of CIS scan configurations to be returned in a single page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListCisScanConfigurationsInput {
+impl  ListCisScanConfigurationsInput  {
     /// <p>The CIS scan configuration filter criteria.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::ListCisScanConfigurationsFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::ListCisScanConfigurationsFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The CIS scan configuration sort by order.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::CisScanConfigurationsSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::CisScanConfigurationsSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The CIS scan configuration sort order order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::CisSortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::CisSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of CIS scan configurations to be returned in a single page of results.</p>
@@ -61,8 +61,7 @@ impl ListCisScanConfigurationsInputBuilder {
     }
     /// <p>The CIS scan configuration filter criteria.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ListCisScanConfigurationsFilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>The CIS scan configuration filter criteria.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ListCisScanConfigurationsFilterCriteria> {
@@ -75,8 +74,7 @@ impl ListCisScanConfigurationsInputBuilder {
     }
     /// <p>The CIS scan configuration sort by order.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::CisScanConfigurationsSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The CIS scan configuration sort by order.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::CisScanConfigurationsSortBy> {
@@ -89,8 +87,7 @@ impl ListCisScanConfigurationsInputBuilder {
     }
     /// <p>The CIS scan configuration sort order order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::CisSortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The CIS scan configuration sort order order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::CisSortOrder> {
@@ -103,8 +100,7 @@ impl ListCisScanConfigurationsInputBuilder {
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from a previous request that's used to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,26 +113,28 @@ impl ListCisScanConfigurationsInputBuilder {
     }
     /// <p>The maximum number of CIS scan configurations to be returned in a single page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of CIS scan configurations to be returned in a single page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListCisScanConfigurationsInput`](crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput {
-            filter_criteria: self.filter_criteria,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsInput {
+                filter_criteria: self.filter_criteria
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

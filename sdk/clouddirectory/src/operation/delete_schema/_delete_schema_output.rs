@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaOutput {
+pub struct DeleteSchemaOutput  {
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     pub schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteSchemaOutput {
+impl  DeleteSchemaOutput  {
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput).
     pub fn builder() -> crate::operation::delete_schema::builders::DeleteSchemaOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteSchemaOutputBuilder {
     }
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSchemaOutput`](crate::operation::delete_schema::DeleteSchemaOutput).
     pub fn build(self) -> crate::operation::delete_schema::DeleteSchemaOutput {
         crate::operation::delete_schema::DeleteSchemaOutput {
-            schema_arn: self.schema_arn,
+            schema_arn: self.schema_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

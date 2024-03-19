@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartReferenceImportJobOutput {
+pub struct StartReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
     pub id: ::std::string::String,
     /// <p>The job's reference store ID.</p>
@@ -15,36 +15,33 @@ pub struct StartReferenceImportJobOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl StartReferenceImportJobOutput {
+impl  StartReferenceImportJobOutput  {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_store_id.deref()
+    pub fn reference_store_id(&self) -> & str {
+        use std::ops::Deref; self.reference_store_id.deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> &crate::types::ReferenceImportJobStatus {
+    pub fn status(&self) -> & crate::types::ReferenceImportJobStatus {
         &self.status
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
 }
 impl ::aws_types::request_id::RequestId for StartReferenceImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartReferenceImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReferenceImportJobOutput`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput).
     pub fn builder() -> crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder {
@@ -72,8 +69,7 @@ impl StartReferenceImportJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The job's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl StartReferenceImportJobOutputBuilder {
     }
     /// <p>The job's reference store ID.</p>
     pub fn set_reference_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_store_id = input;
-        self
+        self.reference_store_id = input; self
     }
     /// <p>The job's reference store ID.</p>
     pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl StartReferenceImportJobOutputBuilder {
     }
     /// <p>The job's service role ARN.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The job's service role ARN.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl StartReferenceImportJobOutputBuilder {
     }
     /// <p>The job's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The job's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceImportJobStatus> {
@@ -132,22 +125,21 @@ impl StartReferenceImportJobOutputBuilder {
     }
     /// <p>When the job was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the job was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartReferenceImportJobOutput`](crate::operation::start_reference_import_job::StartReferenceImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder::id)
@@ -155,44 +147,37 @@ impl StartReferenceImportJobOutputBuilder {
     /// - [`role_arn`](crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder::role_arn)
     /// - [`status`](crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder::status)
     /// - [`creation_time`](crate::operation::start_reference_import_job::builders::StartReferenceImportJobOutputBuilder::creation_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_reference_import_job::StartReferenceImportJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_reference_import_job::StartReferenceImportJobOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building StartReferenceImportJobOutput",
-                )
-            })?,
-            reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_store_id",
-                    "reference_store_id was not specified but it is required when building StartReferenceImportJobOutput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building StartReferenceImportJobOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building StartReferenceImportJobOutput",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building StartReferenceImportJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_reference_import_job::StartReferenceImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_reference_import_job::StartReferenceImportJobOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building StartReferenceImportJobOutput")
+                    )?
+                ,
+                reference_store_id: self.reference_store_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_store_id", "reference_store_id was not specified but it is required when building StartReferenceImportJobOutput")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building StartReferenceImportJobOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building StartReferenceImportJobOutput")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building StartReferenceImportJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>The native Hive / HCatalog JsonSerDe. Used by Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HiveJsonSerDe {
+pub struct HiveJsonSerDe  {
     /// <p>Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
-    pub timestamp_formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub timestamp_formats: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl HiveJsonSerDe {
+impl  HiveJsonSerDe  {
     /// <p>Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.timestamp_formats.is_none()`.
-    pub fn timestamp_formats(&self) -> &[::std::string::String] {
-        self.timestamp_formats.as_deref().unwrap_or_default()
+    pub fn timestamp_formats(&self) -> & [::std::string::String] {
+        self.timestamp_formats.as_deref()
+        .unwrap_or_default()
     }
 }
 impl HiveJsonSerDe {
@@ -26,7 +27,7 @@ impl HiveJsonSerDe {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct HiveJsonSerDeBuilder {
-    pub(crate) timestamp_formats: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) timestamp_formats: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl HiveJsonSerDeBuilder {
     /// Appends an item to `timestamp_formats`.
@@ -36,23 +37,24 @@ impl HiveJsonSerDeBuilder {
     /// <p>Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
     pub fn timestamp_formats(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.timestamp_formats.unwrap_or_default();
-        v.push(input.into());
-        self.timestamp_formats = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.timestamp_formats = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
-    pub fn set_timestamp_formats(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.timestamp_formats = input;
-        self
+    pub fn set_timestamp_formats(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.timestamp_formats = input; self
     }
     /// <p>Indicates how you want Firehose to parse the date and timestamps that may be present in your input data JSON. To specify these format strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more information, see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse timestamps in epoch milliseconds. If you don't specify a format, Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
-    pub fn get_timestamp_formats(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_timestamp_formats(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.timestamp_formats
     }
     /// Consumes the builder and constructs a [`HiveJsonSerDe`](crate::types::HiveJsonSerDe).
     pub fn build(self) -> crate::types::HiveJsonSerDe {
         crate::types::HiveJsonSerDe {
-            timestamp_formats: self.timestamp_formats,
+            timestamp_formats: self.timestamp_formats
+            ,
         }
     }
 }
+

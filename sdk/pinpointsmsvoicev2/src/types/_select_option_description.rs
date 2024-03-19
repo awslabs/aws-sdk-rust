@@ -3,7 +3,7 @@
 /// <p>A description of each select option.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectOptionDescription {
+pub struct SelectOptionDescription  {
     /// <p>The value of the option.</p>
     pub option: ::std::string::String,
     /// <p>The title of the select option.</p>
@@ -11,18 +11,17 @@ pub struct SelectOptionDescription {
     /// <p>A description of the option meaning.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl SelectOptionDescription {
+impl  SelectOptionDescription  {
     /// <p>The value of the option.</p>
-    pub fn option(&self) -> &str {
-        use std::ops::Deref;
-        self.option.deref()
+    pub fn option(&self) -> & str {
+        use std::ops::Deref; self.option.deref()
     }
     /// <p>The title of the select option.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>A description of the option meaning.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl SelectOptionDescriptionBuilder {
     }
     /// <p>The value of the option.</p>
     pub fn set_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option = input;
-        self
+        self.option = input; self
     }
     /// <p>The value of the option.</p>
     pub fn get_option(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl SelectOptionDescriptionBuilder {
     }
     /// <p>The title of the select option.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the select option.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl SelectOptionDescriptionBuilder {
     }
     /// <p>A description of the option meaning.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the option meaning.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl SelectOptionDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`option`](crate::types::builders::SelectOptionDescriptionBuilder::option)
     pub fn build(self) -> ::std::result::Result<crate::types::SelectOptionDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SelectOptionDescription {
-            option: self.option.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "option",
-                    "option was not specified but it is required when building SelectOptionDescription",
-                )
-            })?,
-            title: self.title,
-            description: self.description,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SelectOptionDescription {
+                option: self.option
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("option", "option was not specified but it is required when building SelectOptionDescription")
+                    )?
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

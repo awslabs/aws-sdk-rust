@@ -3,13 +3,13 @@
 /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FleetSpotMaintenanceStrategiesRequest {
+pub struct FleetSpotMaintenanceStrategiesRequest  {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest>,
 }
-impl FleetSpotMaintenanceStrategiesRequest {
+impl  FleetSpotMaintenanceStrategiesRequest  {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
-    pub fn capacity_rebalance(&self) -> ::std::option::Option<&crate::types::FleetSpotCapacityRebalanceRequest> {
+    pub fn capacity_rebalance(&self) -> ::std::option::Option<& crate::types::FleetSpotCapacityRebalanceRequest> {
         self.capacity_rebalance.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl FleetSpotMaintenanceStrategiesRequestBuilder {
     }
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub fn set_capacity_rebalance(mut self, input: ::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest>) -> Self {
-        self.capacity_rebalance = input;
-        self
+        self.capacity_rebalance = input; self
     }
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub fn get_capacity_rebalance(&self) -> &::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest> {
@@ -44,7 +43,9 @@ impl FleetSpotMaintenanceStrategiesRequestBuilder {
     /// Consumes the builder and constructs a [`FleetSpotMaintenanceStrategiesRequest`](crate::types::FleetSpotMaintenanceStrategiesRequest).
     pub fn build(self) -> crate::types::FleetSpotMaintenanceStrategiesRequest {
         crate::types::FleetSpotMaintenanceStrategiesRequest {
-            capacity_rebalance: self.capacity_rebalance,
+            capacity_rebalance: self.capacity_rebalance
+            ,
         }
     }
 }
+

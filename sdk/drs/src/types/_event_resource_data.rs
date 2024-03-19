@@ -21,11 +21,7 @@ impl EventResourceData {
     /// Tries to convert the enum instance into [`SourceNetworkData`](crate::types::EventResourceData::SourceNetworkData), extracting the inner [`SourceNetworkData`](crate::types::SourceNetworkData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_source_network_data(&self) -> ::std::result::Result<&crate::types::SourceNetworkData, &Self> {
-        if let EventResourceData::SourceNetworkData(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EventResourceData::SourceNetworkData(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SourceNetworkData`](crate::types::EventResourceData::SourceNetworkData).
     pub fn is_source_network_data(&self) -> bool {
@@ -36,3 +32,4 @@ impl EventResourceData {
         matches!(self, Self::Unknown)
     }
 }
+

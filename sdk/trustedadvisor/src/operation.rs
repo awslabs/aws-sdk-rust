@@ -30,3 +30,4 @@ pub mod update_organization_recommendation_lifecycle;
 
 /// Types for the `UpdateRecommendationLifecycle` operation.
 pub mod update_recommendation_lifecycle;
+

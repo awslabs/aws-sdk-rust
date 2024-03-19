@@ -3,7 +3,7 @@
 /// <p>An object that contains the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryCatalogDataInput {
+pub struct RepositoryCatalogDataInput  {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures appear as badges on the repository and are used as search filters.</p><note>
@@ -19,7 +19,7 @@ pub struct RepositoryCatalogDataInput {
     /// <li>
     /// <p><code>x86-64</code></p></li>
     /// </ul>
-    pub architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub architectures: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
     /// </note>
@@ -29,7 +29,7 @@ pub struct RepositoryCatalogDataInput {
     /// <li>
     /// <p><code>Windows</code></p></li>
     /// </ul>
-    pub operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub operating_systems: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The base64-encoded repository logo payload.</p><note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
@@ -39,9 +39,9 @@ pub struct RepositoryCatalogDataInput {
     /// <p>Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
     pub usage_text: ::std::option::Option<::std::string::String>,
 }
-impl RepositoryCatalogDataInput {
+impl  RepositoryCatalogDataInput  {
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures appear as badges on the repository and are used as search filters.</p><note>
@@ -57,10 +57,11 @@ impl RepositoryCatalogDataInput {
     /// <li>
     /// <p><code>x86-64</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.architectures.is_none()`.
-    pub fn architectures(&self) -> &[::std::string::String] {
-        self.architectures.as_deref().unwrap_or_default()
+    pub fn architectures(&self) -> & [::std::string::String] {
+        self.architectures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -71,23 +72,24 @@ impl RepositoryCatalogDataInput {
     /// <li>
     /// <p><code>Windows</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operating_systems.is_none()`.
-    pub fn operating_systems(&self) -> &[::std::string::String] {
-        self.operating_systems.as_deref().unwrap_or_default()
+    pub fn operating_systems(&self) -> & [::std::string::String] {
+        self.operating_systems.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The base64-encoded repository logo payload.</p><note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
-    pub fn logo_image_blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn logo_image_blob(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.logo_image_blob.as_ref()
     }
     /// <p>A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.</p>
-    pub fn about_text(&self) -> ::std::option::Option<&str> {
+    pub fn about_text(&self) -> ::std::option::Option<& str> {
         self.about_text.as_deref()
     }
     /// <p>Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
-    pub fn usage_text(&self) -> ::std::option::Option<&str> {
+    pub fn usage_text(&self) -> ::std::option::Option<& str> {
         self.usage_text.as_deref()
     }
 }
@@ -103,8 +105,8 @@ impl RepositoryCatalogDataInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RepositoryCatalogDataInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) architectures: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) architectures: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) operating_systems: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) logo_image_blob: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) about_text: ::std::option::Option<::std::string::String>,
     pub(crate) usage_text: ::std::option::Option<::std::string::String>,
@@ -117,8 +119,7 @@ impl RepositoryCatalogDataInputBuilder {
     }
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A short description of the contents of the repository. This text appears in both the image details and also when searching for repositories on the Amazon ECR Public Gallery.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,9 +144,9 @@ impl RepositoryCatalogDataInputBuilder {
     /// </ul>
     pub fn architectures(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input.into());
-        self.architectures = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.architectures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -160,9 +161,8 @@ impl RepositoryCatalogDataInputBuilder {
     /// <li>
     /// <p><code>x86-64</code></p></li>
     /// </ul>
-    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.architectures = input; self
     }
     /// <p>The system architecture that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported architectures appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -177,7 +177,7 @@ impl RepositoryCatalogDataInputBuilder {
     /// <li>
     /// <p><code>x86-64</code></p></li>
     /// </ul>
-    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_architectures(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.architectures
     }
     /// Appends an item to `operating_systems`.
@@ -195,9 +195,9 @@ impl RepositoryCatalogDataInputBuilder {
     /// </ul>
     pub fn operating_systems(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
-        v.push(input.into());
-        self.operating_systems = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.operating_systems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -208,9 +208,8 @@ impl RepositoryCatalogDataInputBuilder {
     /// <li>
     /// <p><code>Windows</code></p></li>
     /// </ul>
-    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.operating_systems = input;
-        self
+    pub fn set_operating_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.operating_systems = input; self
     }
     /// <p>The operating systems that the images in the repository are compatible with. On the Amazon ECR Public Gallery, the following supported operating systems appear as badges on the repository and are used as search filters.</p><note>
     /// <p>If an unsupported tag is added to your repository catalog data, it's associated with the repository and can be retrieved using the API but isn't discoverable in the Amazon ECR Public Gallery.</p>
@@ -221,7 +220,7 @@ impl RepositoryCatalogDataInputBuilder {
     /// <li>
     /// <p><code>Windows</code></p></li>
     /// </ul>
-    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.operating_systems
     }
     /// <p>The base64-encoded repository logo payload.</p><note>
@@ -235,8 +234,7 @@ impl RepositoryCatalogDataInputBuilder {
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
     pub fn set_logo_image_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.logo_image_blob = input;
-        self
+        self.logo_image_blob = input; self
     }
     /// <p>The base64-encoded repository logo payload.</p><note>
     /// <p>The repository logo is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
@@ -251,8 +249,7 @@ impl RepositoryCatalogDataInputBuilder {
     }
     /// <p>A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.</p>
     pub fn set_about_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.about_text = input;
-        self
+        self.about_text = input; self
     }
     /// <p>A detailed description of the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The text must be in markdown format.</p>
     pub fn get_about_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +262,7 @@ impl RepositoryCatalogDataInputBuilder {
     }
     /// <p>Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
     pub fn set_usage_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_text = input;
-        self
+        self.usage_text = input; self
     }
     /// <p>Detailed information about how to use the contents of the repository. It's publicly visible in the Amazon ECR Public Gallery. The usage text provides context, support information, and additional usage details for users of the repository. The text must be in markdown format.</p>
     pub fn get_usage_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,12 +271,19 @@ impl RepositoryCatalogDataInputBuilder {
     /// Consumes the builder and constructs a [`RepositoryCatalogDataInput`](crate::types::RepositoryCatalogDataInput).
     pub fn build(self) -> crate::types::RepositoryCatalogDataInput {
         crate::types::RepositoryCatalogDataInput {
-            description: self.description,
-            architectures: self.architectures,
-            operating_systems: self.operating_systems,
-            logo_image_blob: self.logo_image_blob,
-            about_text: self.about_text,
-            usage_text: self.usage_text,
+            description: self.description
+            ,
+            architectures: self.architectures
+            ,
+            operating_systems: self.operating_systems
+            ,
+            logo_image_blob: self.logo_image_blob
+            ,
+            about_text: self.about_text
+            ,
+            usage_text: self.usage_text
+            ,
         }
     }
 }
+

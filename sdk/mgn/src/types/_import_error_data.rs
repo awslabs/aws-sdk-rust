@@ -3,7 +3,7 @@
 /// <p>Import error data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportErrorData {
+pub struct ImportErrorData  {
     /// <p>Import error data source server ID.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data application ID.</p>
@@ -19,21 +19,21 @@ pub struct ImportErrorData {
     /// <p>Import error data source account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ImportErrorData {
+impl  ImportErrorData  {
     /// <p>Import error data source server ID.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Import error data application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Import error data wave id.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    pub fn ec2_launch_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> ::std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Import error data row number.</p>
@@ -41,11 +41,11 @@ impl ImportErrorData {
         self.row_number
     }
     /// <p>Import error data raw error.</p>
-    pub fn raw_error(&self) -> ::std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<& str> {
         self.raw_error.as_deref()
     }
     /// <p>Import error data source account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data source server ID.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>Import error data source server ID.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Import error data application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data wave id.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Import error data wave id.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
     pub fn set_ec2_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_launch_template_id = input;
-        self
+        self.ec2_launch_template_id = input; self
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
     pub fn get_ec2_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data row number.</p>
     pub fn set_row_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.row_number = input;
-        self
+        self.row_number = input; self
     }
     /// <p>Import error data row number.</p>
     pub fn get_row_number(&self) -> &::std::option::Option<i64> {
@@ -146,8 +141,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data raw error.</p>
     pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.raw_error = input;
-        self
+        self.raw_error = input; self
     }
     /// <p>Import error data raw error.</p>
     pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl ImportErrorDataBuilder {
     }
     /// <p>Import error data source account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Import error data source account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,22 @@ impl ImportErrorDataBuilder {
     /// Consumes the builder and constructs a [`ImportErrorData`](crate::types::ImportErrorData).
     pub fn build(self) -> crate::types::ImportErrorData {
         crate::types::ImportErrorData {
-            source_server_id: self.source_server_id,
-            application_id: self.application_id,
-            wave_id: self.wave_id,
-            ec2_launch_template_id: self.ec2_launch_template_id,
-            row_number: self.row_number.unwrap_or_default(),
-            raw_error: self.raw_error,
-            account_id: self.account_id,
+            source_server_id: self.source_server_id
+            ,
+            application_id: self.application_id
+            ,
+            wave_id: self.wave_id
+            ,
+            ec2_launch_template_id: self.ec2_launch_template_id
+            ,
+            row_number: self.row_number
+                .unwrap_or_default()
+            ,
+            raw_error: self.raw_error
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

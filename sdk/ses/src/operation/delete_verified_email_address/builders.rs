@@ -5,54 +5,50 @@ pub use crate::operation::delete_verified_email_address::_delete_verified_email_
 
 impl DeleteVerifiedEmailAddressInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_verified_email_address();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_verified_email_address();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteVerifiedEmailAddress`.
-///
+/// 
 /// <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses and domains.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVerifiedEmailAddressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder,
+                    inner: crate::operation::delete_verified_email_address::builders::DeleteVerifiedEmailAddressInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-    > for DeleteVerifiedEmailAddressFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
+                    crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
+                > for DeleteVerifiedEmailAddressFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
+                        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteVerifiedEmailAddressFluentBuilder {
     /// Creates a new `DeleteVerifiedEmailAddress`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
-        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddress::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput, crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An email address to be removed from the list of verified addresses.</p>
     pub fn email_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email_address(input.into());
@@ -123,3 +110,4 @@ impl DeleteVerifiedEmailAddressFluentBuilder {
         self.inner.get_email_address()
     }
 }
+

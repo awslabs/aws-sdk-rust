@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrails`](crate::operation::list_trails::builders::ListTrailsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trails::builders::ListTrailsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_trails::builders::ListTrailsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trails::builders::ListTrailsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p><br>
-    /// - On success, responds with [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput) with field(s):
+                            /// - On success, responds with [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput) with field(s):
     ///   - [`trails(Option<Vec::<TrailInfo>>)`](crate::operation::list_trails::ListTrailsOutput::trails): <p>Returns the name, ARN, and home Region of trails in the current account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_trails::ListTrailsOutput::next_token): <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    /// - On failure, responds with [`SdkError<ListTrailsError>`](crate::operation::list_trails::ListTrailsError)
+                            /// - On failure, responds with [`SdkError<ListTrailsError>`](crate::operation::list_trails::ListTrailsError)
     pub fn list_trails(&self) -> crate::operation::list_trails::builders::ListTrailsFluentBuilder {
-        crate::operation::list_trails::builders::ListTrailsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_trails::builders::ListTrailsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

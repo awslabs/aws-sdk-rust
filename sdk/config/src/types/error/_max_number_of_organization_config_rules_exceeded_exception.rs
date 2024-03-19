@@ -3,22 +3,20 @@
 /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MaxNumberOfOrganizationConfigRulesExceededException {
+pub struct MaxNumberOfOrganizationConfigRulesExceededException  {
     /// <p>Error executing the command</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl MaxNumberOfOrganizationConfigRulesExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for MaxNumberOfOrganizationConfigRulesExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "MaxNumberOfOrganizationConfigRulesExceededException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -33,9 +31,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MaxNumberOfOrga
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MaxNumberOfOrganizationConfigRulesExceededException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl MaxNumberOfOrganizationConfigRulesExceededException {
     /// Creates a new builder-style object to manufacture [`MaxNumberOfOrganizationConfigRulesExceededException`](crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException).
@@ -59,29 +55,30 @@ impl MaxNumberOfOrganizationConfigRulesExceededExceptionBuilder {
     }
     /// <p>Error executing the command</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Error executing the command</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`MaxNumberOfOrganizationConfigRulesExceededException`](crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException).
     pub fn build(self) -> crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException {
         crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

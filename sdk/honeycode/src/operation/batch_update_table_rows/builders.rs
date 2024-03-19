@@ -5,55 +5,51 @@ pub use crate::operation::batch_update_table_rows::_batch_update_table_rows_inpu
 
 impl BatchUpdateTableRowsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_update_table_rows();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_update_table_rows();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchUpdateTableRows`.
-///
+/// 
 /// <p>The BatchUpdateTableRows API allows you to update one or more rows in a table in a workbook.</p>
 /// <p>You can specify the values to set in some or all of the columns in the table for the specified rows. If a column is not explicitly specified in a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string ("").</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateTableRowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsInputBuilder,
+                    inner: crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-    > for BatchUpdateTableRowsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
+                    crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+                > for BatchUpdateTableRowsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
+                        crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchUpdateTableRowsFluentBuilder {
     /// Creates a new `BatchUpdateTableRows`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl BatchUpdateTableRowsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_update_table_rows::BatchUpdateTableRows::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_update_table_rows::BatchUpdateTableRows::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
-        crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_table_rows::BatchUpdateTableRowsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_update_table_rows::BatchUpdateTableRows::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_update_table_rows::BatchUpdateTableRows::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput, crate::operation::batch_update_table_rows::BatchUpdateTableRowsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the workbook where the rows are being updated.</p>
     /// <p>If a workbook with the specified id could not be found, this API throws ResourceNotFoundException.</p>
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,13 +142,13 @@ impl BatchUpdateTableRowsFluentBuilder {
     }
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn set_rows_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>>) -> Self {
+    pub fn set_rows_to_update(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>>) -> Self {
         self.inner = self.inner.set_rows_to_update(input);
         self
     }
     /// <p>The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update.</p>
     /// <p>Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn get_rows_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateRowData>> {
+    pub fn get_rows_to_update(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateRowData>> {
         self.inner.get_rows_to_update()
     }
     /// <p>The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again.</p>
@@ -182,3 +169,4 @@ impl BatchUpdateTableRowsFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

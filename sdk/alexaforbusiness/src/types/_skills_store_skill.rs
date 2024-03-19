@@ -3,7 +3,7 @@
 /// <p>The detailed information about an Alexa skill.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SkillsStoreSkill {
+pub struct SkillsStoreSkill  {
     /// <p>The ARN of the skill.</p>
     pub skill_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the skill.</p>
@@ -13,37 +13,38 @@ pub struct SkillsStoreSkill {
     /// <p>The URL where the skill icon resides.</p>
     pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p>Sample utterances that interact with the skill.</p>
-    pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sample_utterances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Information about the skill.</p>
     pub skill_details: ::std::option::Option<crate::types::SkillDetails>,
     /// <p>Linking support for a skill.</p>
     pub supports_linking: bool,
 }
-impl SkillsStoreSkill {
+impl  SkillsStoreSkill  {
     /// <p>The ARN of the skill.</p>
-    pub fn skill_id(&self) -> ::std::option::Option<&str> {
+    pub fn skill_id(&self) -> ::std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The name of the skill.</p>
-    pub fn skill_name(&self) -> ::std::option::Option<&str> {
+    pub fn skill_name(&self) -> ::std::option::Option<& str> {
         self.skill_name.as_deref()
     }
     /// <p>Short description about the skill.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The URL where the skill icon resides.</p>
-    pub fn icon_url(&self) -> ::std::option::Option<&str> {
+    pub fn icon_url(&self) -> ::std::option::Option<& str> {
         self.icon_url.as_deref()
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
-    pub fn sample_utterances(&self) -> &[::std::string::String] {
-        self.sample_utterances.as_deref().unwrap_or_default()
+    pub fn sample_utterances(&self) -> & [::std::string::String] {
+        self.sample_utterances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the skill.</p>
-    pub fn skill_details(&self) -> ::std::option::Option<&crate::types::SkillDetails> {
+    pub fn skill_details(&self) -> ::std::option::Option<& crate::types::SkillDetails> {
         self.skill_details.as_ref()
     }
     /// <p>Linking support for a skill.</p>
@@ -66,7 +67,7 @@ pub struct SkillsStoreSkillBuilder {
     pub(crate) skill_name: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) icon_url: ::std::option::Option<::std::string::String>,
-    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) skill_details: ::std::option::Option<crate::types::SkillDetails>,
     pub(crate) supports_linking: ::std::option::Option<bool>,
 }
@@ -78,8 +79,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>The ARN of the skill.</p>
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The ARN of the skill.</p>
     pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>The name of the skill.</p>
     pub fn set_skill_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.skill_name = input;
-        self
+        self.skill_name = input; self
     }
     /// <p>The name of the skill.</p>
     pub fn get_skill_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>Short description about the skill.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>Short description about the skill.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>The URL where the skill icon resides.</p>
     pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.icon_url = input;
-        self
+        self.icon_url = input; self
     }
     /// <p>The URL where the skill icon resides.</p>
     pub fn get_icon_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +131,16 @@ impl SkillsStoreSkillBuilder {
     /// <p>Sample utterances that interact with the skill.</p>
     pub fn sample_utterances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-        v.push(input.into());
-        self.sample_utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sample_utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sample_utterances = input;
-        self
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sample_utterances = input; self
     }
     /// <p>Sample utterances that interact with the skill.</p>
-    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sample_utterances
     }
     /// <p>Information about the skill.</p>
@@ -154,8 +150,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>Information about the skill.</p>
     pub fn set_skill_details(mut self, input: ::std::option::Option<crate::types::SkillDetails>) -> Self {
-        self.skill_details = input;
-        self
+        self.skill_details = input; self
     }
     /// <p>Information about the skill.</p>
     pub fn get_skill_details(&self) -> &::std::option::Option<crate::types::SkillDetails> {
@@ -168,8 +163,7 @@ impl SkillsStoreSkillBuilder {
     }
     /// <p>Linking support for a skill.</p>
     pub fn set_supports_linking(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_linking = input;
-        self
+        self.supports_linking = input; self
     }
     /// <p>Linking support for a skill.</p>
     pub fn get_supports_linking(&self) -> &::std::option::Option<bool> {
@@ -178,13 +172,22 @@ impl SkillsStoreSkillBuilder {
     /// Consumes the builder and constructs a [`SkillsStoreSkill`](crate::types::SkillsStoreSkill).
     pub fn build(self) -> crate::types::SkillsStoreSkill {
         crate::types::SkillsStoreSkill {
-            skill_id: self.skill_id,
-            skill_name: self.skill_name,
-            short_description: self.short_description,
-            icon_url: self.icon_url,
-            sample_utterances: self.sample_utterances,
-            skill_details: self.skill_details,
-            supports_linking: self.supports_linking.unwrap_or_default(),
+            skill_id: self.skill_id
+            ,
+            skill_name: self.skill_name
+            ,
+            short_description: self.short_description
+            ,
+            icon_url: self.icon_url
+            ,
+            sample_utterances: self.sample_utterances
+            ,
+            skill_details: self.skill_details
+            ,
+            supports_linking: self.supports_linking
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

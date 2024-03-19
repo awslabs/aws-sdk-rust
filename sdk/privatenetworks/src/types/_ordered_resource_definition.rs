@@ -3,7 +3,7 @@
 /// <p>Details of the network resources in the order.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrderedResourceDefinition {
+pub struct OrderedResourceDefinition  {
     /// <p>The type of network resource in the order.</p>
     pub r#type: crate::types::NetworkResourceDefinitionType,
     /// <p>The number of network resources in the order.</p>
@@ -11,9 +11,9 @@ pub struct OrderedResourceDefinition {
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
     pub commitment_configuration: ::std::option::Option<crate::types::CommitmentConfiguration>,
 }
-impl OrderedResourceDefinition {
+impl  OrderedResourceDefinition  {
     /// <p>The type of network resource in the order.</p>
-    pub fn r#type(&self) -> &crate::types::NetworkResourceDefinitionType {
+    pub fn r#type(&self) -> & crate::types::NetworkResourceDefinitionType {
         &self.r#type
     }
     /// <p>The number of network resources in the order.</p>
@@ -21,7 +21,7 @@ impl OrderedResourceDefinition {
         self.count
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
-    pub fn commitment_configuration(&self) -> ::std::option::Option<&crate::types::CommitmentConfiguration> {
+    pub fn commitment_configuration(&self) -> ::std::option::Option<& crate::types::CommitmentConfiguration> {
         self.commitment_configuration.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl OrderedResourceDefinitionBuilder {
     }
     /// <p>The type of network resource in the order.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of network resource in the order.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkResourceDefinitionType> {
@@ -64,8 +63,7 @@ impl OrderedResourceDefinitionBuilder {
     }
     /// <p>The number of network resources in the order.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of network resources in the order.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -78,8 +76,7 @@ impl OrderedResourceDefinitionBuilder {
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
     pub fn set_commitment_configuration(mut self, input: ::std::option::Option<crate::types::CommitmentConfiguration>) -> Self {
-        self.commitment_configuration = input;
-        self
+        self.commitment_configuration = input; self
     }
     /// <p>The duration and renewal status of the commitment period for each radio unit in the order. Does not show details if the resource type is DEVICE_IDENTIFIER.</p>
     pub fn get_commitment_configuration(&self) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
@@ -90,20 +87,22 @@ impl OrderedResourceDefinitionBuilder {
     /// - [`r#type`](crate::types::builders::OrderedResourceDefinitionBuilder::r#type)
     /// - [`count`](crate::types::builders::OrderedResourceDefinitionBuilder::count)
     pub fn build(self) -> ::std::result::Result<crate::types::OrderedResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrderedResourceDefinition {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building OrderedResourceDefinition",
-                )
-            })?,
-            count: self.count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "count",
-                    "count was not specified but it is required when building OrderedResourceDefinition",
-                )
-            })?,
-            commitment_configuration: self.commitment_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrderedResourceDefinition {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building OrderedResourceDefinition")
+                    )?
+                ,
+                count: self.count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("count", "count was not specified but it is required when building OrderedResourceDefinition")
+                    )?
+                ,
+                commitment_configuration: self.commitment_configuration
+                ,
+            }
+        )
     }
 }
+

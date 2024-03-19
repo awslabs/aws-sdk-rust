@@ -3,7 +3,7 @@
 /// <p>Provides information about an application, including the default settings for an application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSettingsResource {
+pub struct ApplicationSettingsResource  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
@@ -26,21 +26,21 @@ pub struct ApplicationSettingsResource {
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub journey_limits: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>,
 }
-impl ApplicationSettingsResource {
+impl  ApplicationSettingsResource  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    pub fn campaign_hook(&self) -> ::std::option::Option<&crate::types::CampaignHook> {
+    pub fn campaign_hook(&self) -> ::std::option::Option<& crate::types::CampaignHook> {
         self.campaign_hook.as_ref()
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The default sending limits for campaigns in the application.</p>
-    pub fn limits(&self) -> ::std::option::Option<&crate::types::CampaignLimits> {
+    pub fn limits(&self) -> ::std::option::Option<& crate::types::CampaignLimits> {
         self.limits.as_ref()
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
@@ -53,11 +53,11 @@ impl ApplicationSettingsResource {
     /// <p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<& crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
-    pub fn journey_limits(&self) -> ::std::option::Option<&crate::types::ApplicationSettingsJourneyLimits> {
+    pub fn journey_limits(&self) -> ::std::option::Option<& crate::types::ApplicationSettingsJourneyLimits> {
         self.journey_limits.as_ref()
     }
 }
@@ -88,8 +88,7 @@ impl ApplicationSettingsResourceBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +101,7 @@ impl ApplicationSettingsResourceBuilder {
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     pub fn set_campaign_hook(mut self, input: ::std::option::Option<crate::types::CampaignHook>) -> Self {
-        self.campaign_hook = input;
-        self
+        self.campaign_hook = input; self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     pub fn get_campaign_hook(&self) -> &::std::option::Option<crate::types::CampaignHook> {
@@ -116,8 +114,7 @@ impl ApplicationSettingsResourceBuilder {
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +127,7 @@ impl ApplicationSettingsResourceBuilder {
     }
     /// <p>The default sending limits for campaigns in the application.</p>
     pub fn set_limits(mut self, input: ::std::option::Option<crate::types::CampaignLimits>) -> Self {
-        self.limits = input;
-        self
+        self.limits = input; self
     }
     /// <p>The default sending limits for campaigns in the application.</p>
     pub fn get_limits(&self) -> &::std::option::Option<crate::types::CampaignLimits> {
@@ -162,8 +158,7 @@ impl ApplicationSettingsResourceBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
-        self.quiet_time = input;
-        self
+        self.quiet_time = input; self
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
@@ -185,8 +180,7 @@ impl ApplicationSettingsResourceBuilder {
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub fn set_journey_limits(mut self, input: ::std::option::Option<crate::types::ApplicationSettingsJourneyLimits>) -> Self {
-        self.journey_limits = input;
-        self
+        self.journey_limits = input; self
     }
     /// <p>The default sending limits for journeys in the application. These limits apply to each journey for the application but can be overridden, on a per journey basis, with the JourneyLimits resource.</p>
     pub fn get_journey_limits(&self) -> &::std::option::Option<crate::types::ApplicationSettingsJourneyLimits> {
@@ -195,12 +189,19 @@ impl ApplicationSettingsResourceBuilder {
     /// Consumes the builder and constructs a [`ApplicationSettingsResource`](crate::types::ApplicationSettingsResource).
     pub fn build(self) -> crate::types::ApplicationSettingsResource {
         crate::types::ApplicationSettingsResource {
-            application_id: self.application_id,
-            campaign_hook: self.campaign_hook,
-            last_modified_date: self.last_modified_date,
-            limits: self.limits,
-            quiet_time: self.quiet_time,
-            journey_limits: self.journey_limits,
+            application_id: self.application_id
+            ,
+            campaign_hook: self.campaign_hook
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            limits: self.limits
+            ,
+            quiet_time: self.quiet_time
+            ,
+            journey_limits: self.journey_limits
+            ,
         }
     }
 }
+

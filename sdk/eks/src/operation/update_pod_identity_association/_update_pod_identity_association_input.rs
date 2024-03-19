@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePodIdentityAssociationInput {
+pub struct UpdatePodIdentityAssociationInput  {
     /// <p>The name of the cluster that you want to update the association in.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association to be updated.</p>
@@ -12,21 +12,21 @@ pub struct UpdatePodIdentityAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePodIdentityAssociationInput {
+impl  UpdatePodIdentityAssociationInput  {
     /// <p>The name of the cluster that you want to update the association in.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The ID of the association to be updated.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The new IAM role to change the</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdatePodIdentityAssociationInputBuilder {
     }
     /// <p>The name of the cluster that you want to update the association in.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster that you want to update the association in.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdatePodIdentityAssociationInputBuilder {
     }
     /// <p>The ID of the association to be updated.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association to be updated.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdatePodIdentityAssociationInputBuilder {
     }
     /// <p>The new IAM role to change the</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The new IAM role to change the</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl UpdatePodIdentityAssociationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdatePodIdentityAssociationInput`](crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput {
-            cluster_name: self.cluster_name,
-            association_id: self.association_id,
-            role_arn: self.role_arn,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationInput {
+                cluster_name: self.cluster_name
+                ,
+                association_id: self.association_id
+                ,
+                role_arn: self.role_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateLocationFsxWindowsInput {
+pub struct CreateLocationFsxWindowsInput  {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
@@ -16,9 +16,9 @@ pub struct CreateLocationFsxWindowsInput {
     /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
-    pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required permissions</a> for FSx for Windows File Server locations.</p>
     pub user: ::std::option::Option<::std::string::String>,
@@ -28,13 +28,13 @@ pub struct CreateLocationFsxWindowsInput {
     /// <p>Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl CreateLocationFsxWindowsInput {
+impl  CreateLocationFsxWindowsInput  {
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> ::std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> ::std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
@@ -46,33 +46,35 @@ impl CreateLocationFsxWindowsInput {
     /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
-    pub fn security_group_arns(&self) -> &[::std::string::String] {
-        self.security_group_arns.as_deref().unwrap_or_default()
+    pub fn security_group_arns(&self) -> & [::std::string::String] {
+        self.security_group_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagListEntry] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagListEntry] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required permissions</a> for FSx for Windows File Server locations.</p>
-    pub fn user(&self) -> ::std::option::Option<&str> {
+    pub fn user(&self) -> ::std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateLocationFsxWindowsInput {
+impl  ::std::fmt::Debug for CreateLocationFsxWindowsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLocationFsxWindowsInput");
         formatter.field("subdirectory", &self.subdirectory);
@@ -98,8 +100,8 @@ impl CreateLocationFsxWindowsInput {
 pub struct CreateLocationFsxWindowsInputBuilder {
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
     pub(crate) fsx_filesystem_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
@@ -112,8 +114,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     }
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +128,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
     pub fn set_fsx_filesystem_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fsx_filesystem_arn = input;
-        self
+        self.fsx_filesystem_arn = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
     pub fn get_fsx_filesystem_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,9 +149,9 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// </note>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
@@ -162,9 +162,8 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_arns = input;
-        self
+    pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_arns = input; self
     }
     /// <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p><note>
     /// <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>
@@ -175,7 +174,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <p>Choose a different security group that can communicate with the mount target's security group.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_arns
     }
     /// Appends an item to `tags`.
@@ -185,17 +184,16 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagListEntry>> {
         &self.tags
     }
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
@@ -208,8 +206,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required permissions</a> for FSx for Windows File Server locations.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required permissions</a> for FSx for Windows File Server locations.</p>
@@ -225,8 +222,7 @@ impl CreateLocationFsxWindowsInputBuilder {
     /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     /// <p>If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system.</p>
@@ -241,29 +237,32 @@ impl CreateLocationFsxWindowsInputBuilder {
     }
     /// <p>Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxWindowsInput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput {
-            subdirectory: self.subdirectory,
-            fsx_filesystem_arn: self.fsx_filesystem_arn,
-            security_group_arns: self.security_group_arns,
-            tags: self.tags,
-            user: self.user,
-            domain: self.domain,
-            password: self.password,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput {
+                subdirectory: self.subdirectory
+                ,
+                fsx_filesystem_arn: self.fsx_filesystem_arn
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                tags: self.tags
+                ,
+                user: self.user
+                ,
+                domain: self.domain
+                ,
+                password: self.password
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateLocationFsxWindowsInputBuilder {
@@ -279,3 +278,4 @@ impl ::std::fmt::Debug for CreateLocationFsxWindowsInputBuilder {
         formatter.finish()
     }
 }
+

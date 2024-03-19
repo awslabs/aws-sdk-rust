@@ -3,13 +3,13 @@
 /// <p>Specifies the S3 buckets that are excluded from automated sensitive data discovery for an Amazon Macie account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ClassificationScope {
+pub struct S3ClassificationScope  {
     /// <p>The S3 buckets that are excluded.</p>
     pub excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }
-impl S3ClassificationScope {
+impl  S3ClassificationScope  {
     /// <p>The S3 buckets that are excluded.</p>
-    pub fn excludes(&self) -> ::std::option::Option<&crate::types::S3ClassificationScopeExclusion> {
+    pub fn excludes(&self) -> ::std::option::Option<& crate::types::S3ClassificationScopeExclusion> {
         self.excludes.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl S3ClassificationScopeBuilder {
     }
     /// <p>The S3 buckets that are excluded.</p>
     pub fn set_excludes(mut self, input: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>) -> Self {
-        self.excludes = input;
-        self
+        self.excludes = input; self
     }
     /// <p>The S3 buckets that are excluded.</p>
     pub fn get_excludes(&self) -> &::std::option::Option<crate::types::S3ClassificationScopeExclusion> {
@@ -44,6 +43,10 @@ impl S3ClassificationScopeBuilder {
     }
     /// Consumes the builder and constructs a [`S3ClassificationScope`](crate::types::S3ClassificationScope).
     pub fn build(self) -> crate::types::S3ClassificationScope {
-        crate::types::S3ClassificationScope { excludes: self.excludes }
+        crate::types::S3ClassificationScope {
+            excludes: self.excludes
+            ,
+        }
     }
 }
+

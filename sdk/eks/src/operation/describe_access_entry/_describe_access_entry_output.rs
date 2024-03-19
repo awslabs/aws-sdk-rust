@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccessEntryOutput {
+pub struct DescribeAccessEntryOutput  {
     /// <p>Information about the access entry.</p>
     pub access_entry: ::std::option::Option<crate::types::AccessEntry>,
     _request_id: Option<String>,
 }
-impl DescribeAccessEntryOutput {
+impl  DescribeAccessEntryOutput  {
     /// <p>Information about the access entry.</p>
-    pub fn access_entry(&self) -> ::std::option::Option<&crate::types::AccessEntry> {
+    pub fn access_entry(&self) -> ::std::option::Option<& crate::types::AccessEntry> {
         self.access_entry.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccessEntryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccessEntryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessEntryOutput`](crate::operation::describe_access_entry::DescribeAccessEntryOutput).
     pub fn builder() -> crate::operation::describe_access_entry::builders::DescribeAccessEntryOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAccessEntryOutputBuilder {
     }
     /// <p>Information about the access entry.</p>
     pub fn set_access_entry(mut self, input: ::std::option::Option<crate::types::AccessEntry>) -> Self {
-        self.access_entry = input;
-        self
+        self.access_entry = input; self
     }
     /// <p>Information about the access entry.</p>
     pub fn get_access_entry(&self) -> &::std::option::Option<crate::types::AccessEntry> {
         &self.access_entry
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccessEntryOutput`](crate::operation::describe_access_entry::DescribeAccessEntryOutput).
     pub fn build(self) -> crate::operation::describe_access_entry::DescribeAccessEntryOutput {
         crate::operation::describe_access_entry::DescribeAccessEntryOutput {
-            access_entry: self.access_entry,
+            access_entry: self.access_entry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

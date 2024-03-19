@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAlarmModelInput {
+pub struct CreateAlarmModelInput  {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub alarm_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A description that tells you what the alarm model detects.</p>
@@ -11,7 +11,7 @@ pub struct CreateAlarmModelInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -25,28 +25,29 @@ pub struct CreateAlarmModelInput {
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub alarm_capabilities: ::std::option::Option<crate::types::AlarmCapabilities>,
 }
-impl CreateAlarmModelInput {
+impl  CreateAlarmModelInput  {
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
-    pub fn alarm_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_name(&self) -> ::std::option::Option<& str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>A description that tells you what the alarm model detects.</p>
-    pub fn alarm_model_description(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_model_description(&self) -> ::std::option::Option<& str> {
         self.alarm_model_description.as_deref()
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
@@ -54,19 +55,19 @@ impl CreateAlarmModelInput {
         self.severity
     }
     /// <p>Defines when your alarm is invoked.</p>
-    pub fn alarm_rule(&self) -> ::std::option::Option<&crate::types::AlarmRule> {
+    pub fn alarm_rule(&self) -> ::std::option::Option<& crate::types::AlarmRule> {
         self.alarm_rule.as_ref()
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn alarm_notification(&self) -> ::std::option::Option<&crate::types::AlarmNotification> {
+    pub fn alarm_notification(&self) -> ::std::option::Option<& crate::types::AlarmNotification> {
         self.alarm_notification.as_ref()
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn alarm_event_actions(&self) -> ::std::option::Option<&crate::types::AlarmEventActions> {
+    pub fn alarm_event_actions(&self) -> ::std::option::Option<& crate::types::AlarmEventActions> {
         self.alarm_event_actions.as_ref()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn alarm_capabilities(&self) -> ::std::option::Option<&crate::types::AlarmCapabilities> {
+    pub fn alarm_capabilities(&self) -> ::std::option::Option<& crate::types::AlarmCapabilities> {
         self.alarm_capabilities.as_ref()
     }
 }
@@ -84,7 +85,7 @@ pub struct CreateAlarmModelInputBuilder {
     pub(crate) alarm_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) alarm_model_description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) severity: ::std::option::Option<i32>,
     pub(crate) alarm_rule: ::std::option::Option<crate::types::AlarmRule>,
@@ -101,8 +102,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_name = input;
-        self
+        self.alarm_model_name = input; self
     }
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +115,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>A description that tells you what the alarm model detects.</p>
     pub fn set_alarm_model_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_model_description = input;
-        self
+        self.alarm_model_description = input; self
     }
     /// <p>A description that tells you what the alarm model detects.</p>
     pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,19 +143,18 @@ impl CreateAlarmModelInputBuilder {
     /// <p>You can create up to 50 tags for one alarm model.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
@@ -167,8 +164,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn get_severity(&self) -> &::std::option::Option<i32> {
@@ -196,8 +191,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn set_alarm_rule(mut self, input: ::std::option::Option<crate::types::AlarmRule>) -> Self {
-        self.alarm_rule = input;
-        self
+        self.alarm_rule = input; self
     }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn get_alarm_rule(&self) -> &::std::option::Option<crate::types::AlarmRule> {
@@ -210,8 +204,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>Contains information about one or more notification actions.</p>
     pub fn set_alarm_notification(mut self, input: ::std::option::Option<crate::types::AlarmNotification>) -> Self {
-        self.alarm_notification = input;
-        self
+        self.alarm_notification = input; self
     }
     /// <p>Contains information about one or more notification actions.</p>
     pub fn get_alarm_notification(&self) -> &::std::option::Option<crate::types::AlarmNotification> {
@@ -224,8 +217,7 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>Contains information about one or more alarm actions.</p>
     pub fn set_alarm_event_actions(mut self, input: ::std::option::Option<crate::types::AlarmEventActions>) -> Self {
-        self.alarm_event_actions = input;
-        self
+        self.alarm_event_actions = input; self
     }
     /// <p>Contains information about one or more alarm actions.</p>
     pub fn get_alarm_event_actions(&self) -> &::std::option::Option<crate::types::AlarmEventActions> {
@@ -238,28 +230,38 @@ impl CreateAlarmModelInputBuilder {
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn set_alarm_capabilities(mut self, input: ::std::option::Option<crate::types::AlarmCapabilities>) -> Self {
-        self.alarm_capabilities = input;
-        self
+        self.alarm_capabilities = input; self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn get_alarm_capabilities(&self) -> &::std::option::Option<crate::types::AlarmCapabilities> {
         &self.alarm_capabilities
     }
     /// Consumes the builder and constructs a [`CreateAlarmModelInput`](crate::operation::create_alarm_model::CreateAlarmModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_alarm_model::CreateAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_alarm_model::CreateAlarmModelInput {
-            alarm_model_name: self.alarm_model_name,
-            alarm_model_description: self.alarm_model_description,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            key: self.key,
-            severity: self.severity,
-            alarm_rule: self.alarm_rule,
-            alarm_notification: self.alarm_notification,
-            alarm_event_actions: self.alarm_event_actions,
-            alarm_capabilities: self.alarm_capabilities,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alarm_model::CreateAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_alarm_model::CreateAlarmModelInput {
+                alarm_model_name: self.alarm_model_name
+                ,
+                alarm_model_description: self.alarm_model_description
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                key: self.key
+                ,
+                severity: self.severity
+                ,
+                alarm_rule: self.alarm_rule
+                ,
+                alarm_notification: self.alarm_notification
+                ,
+                alarm_event_actions: self.alarm_event_actions
+                ,
+                alarm_capabilities: self.alarm_capabilities
+                ,
+            }
+        )
     }
 }
+

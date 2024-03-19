@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketsAggregationOutput {
+pub struct GetBucketsAggregationOutput  {
     /// <p>The total number of things that fit the query string criteria.</p>
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p><code>count</code>: The number of documents that have that value.</p>
-    pub buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
+    pub buckets: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>,
     _request_id: Option<String>,
 }
-impl GetBucketsAggregationOutput {
+impl  GetBucketsAggregationOutput  {
     /// <p>The total number of things that fit the query string criteria.</p>
     pub fn total_count(&self) -> i32 {
         self.total_count
@@ -19,17 +19,18 @@ impl GetBucketsAggregationOutput {
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p><code>count</code>: The number of documents that have that value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.buckets.is_none()`.
-    pub fn buckets(&self) -> &[crate::types::Bucket] {
-        self.buckets.as_deref().unwrap_or_default()
+    pub fn buckets(&self) -> & [crate::types::Bucket] {
+        self.buckets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBucketsAggregationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBucketsAggregationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketsAggregationOutput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput).
     pub fn builder() -> crate::operation::get_buckets_aggregation::builders::GetBucketsAggregationOutputBuilder {
@@ -42,7 +43,7 @@ impl GetBucketsAggregationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBucketsAggregationOutputBuilder {
     pub(crate) total_count: ::std::option::Option<i32>,
-    pub(crate) buckets: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>,
+    pub(crate) buckets: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>,
     _request_id: Option<String>,
 }
 impl GetBucketsAggregationOutputBuilder {
@@ -53,8 +54,7 @@ impl GetBucketsAggregationOutputBuilder {
     }
     /// <p>The total number of things that fit the query string criteria.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of things that fit the query string criteria.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
@@ -69,38 +69,41 @@ impl GetBucketsAggregationOutputBuilder {
     /// <p><code>count</code>: The number of documents that have that value.</p>
     pub fn buckets(mut self, input: crate::types::Bucket) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input);
-        self.buckets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.buckets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p><code>count</code>: The number of documents that have that value.</p>
-    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Bucket>>) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Bucket>>) -> Self {
+        self.buckets = input; self
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
     /// <p><code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
     /// <p><code>count</code>: The number of documents that have that value.</p>
-    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Bucket>> {
         &self.buckets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBucketsAggregationOutput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput).
     pub fn build(self) -> crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput {
         crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput {
-            total_count: self.total_count.unwrap_or_default(),
-            buckets: self.buckets,
+            total_count: self.total_count
+                .unwrap_or_default()
+            ,
+            buckets: self.buckets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

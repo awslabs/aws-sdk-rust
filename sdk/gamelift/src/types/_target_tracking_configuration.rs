@@ -4,11 +4,11 @@
 /// <p>Settings for a target-based scaling policy as part of a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html">GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the Amazon GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingConfiguration {
+pub struct TargetTrackingConfiguration  {
     /// <p>Desired value to use with a game server group target-based scaling policy.</p>
     pub target_value: ::std::option::Option<f64>,
 }
-impl TargetTrackingConfiguration {
+impl  TargetTrackingConfiguration  {
     /// <p>Desired value to use with a game server group target-based scaling policy.</p>
     pub fn target_value(&self) -> ::std::option::Option<f64> {
         self.target_value
@@ -36,8 +36,7 @@ impl TargetTrackingConfigurationBuilder {
     }
     /// <p>Desired value to use with a game server group target-based scaling policy.</p>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>Desired value to use with a game server group target-based scaling policy.</p>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {
@@ -46,7 +45,9 @@ impl TargetTrackingConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingConfiguration {
         crate::types::TargetTrackingConfiguration {
-            target_value: self.target_value,
+            target_value: self.target_value
+            ,
         }
     }
 }
+

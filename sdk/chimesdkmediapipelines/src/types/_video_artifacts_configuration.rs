@@ -3,19 +3,19 @@
 /// <p>The video artifact configuration object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VideoArtifactsConfiguration {
+pub struct VideoArtifactsConfiguration  {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     pub state: crate::types::ArtifactsState,
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub mux_type: ::std::option::Option<crate::types::VideoMuxType>,
 }
-impl VideoArtifactsConfiguration {
+impl  VideoArtifactsConfiguration  {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
-    pub fn state(&self) -> &crate::types::ArtifactsState {
+    pub fn state(&self) -> & crate::types::ArtifactsState {
         &self.state
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
-    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::VideoMuxType> {
+    pub fn mux_type(&self) -> ::std::option::Option<& crate::types::VideoMuxType> {
         self.mux_type.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl VideoArtifactsConfigurationBuilder {
     }
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsState> {
@@ -56,8 +55,7 @@ impl VideoArtifactsConfigurationBuilder {
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn set_mux_type(mut self, input: ::std::option::Option<crate::types::VideoMuxType>) -> Self {
-        self.mux_type = input;
-        self
+        self.mux_type = input; self
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn get_mux_type(&self) -> &::std::option::Option<crate::types::VideoMuxType> {
@@ -67,14 +65,17 @@ impl VideoArtifactsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::VideoArtifactsConfigurationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::VideoArtifactsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VideoArtifactsConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building VideoArtifactsConfiguration",
-                )
-            })?,
-            mux_type: self.mux_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VideoArtifactsConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building VideoArtifactsConfiguration")
+                    )?
+                ,
+                mux_type: self.mux_type
+                ,
+            }
+        )
     }
 }
+

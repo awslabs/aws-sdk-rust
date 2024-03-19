@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAgreementsOutput {
+pub struct ListAgreementsOutput  {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub agreements: ::std::vec::Vec<crate::types::ListedAgreement>,
+    pub agreements: ::std::vec::Vec::<crate::types::ListedAgreement>,
     _request_id: Option<String>,
 }
-impl ListAgreementsOutput {
+impl  ListAgreementsOutput  {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn agreements(&self) -> &[crate::types::ListedAgreement] {
-        use std::ops::Deref;
-        self.agreements.deref()
+    pub fn agreements(&self) -> & [crate::types::ListedAgreement] {
+        use std::ops::Deref; self.agreements.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAgreementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAgreementsOutput {
     /// Creates a new builder-style object to manufacture [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
     pub fn builder() -> crate::operation::list_agreements::builders::ListAgreementsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAgreementsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgreementsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) agreements: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>,
+    pub(crate) agreements: ::std::option::Option<::std::vec::Vec::<crate::types::ListedAgreement>>,
     _request_id: Option<String>,
 }
 impl ListAgreementsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListAgreementsOutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,43 +60,43 @@ impl ListAgreementsOutputBuilder {
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
     pub fn agreements(mut self, input: crate::types::ListedAgreement) -> Self {
         let mut v = self.agreements.unwrap_or_default();
-        v.push(input);
-        self.agreements = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.agreements = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>>) -> Self {
-        self.agreements = input;
-        self
+    pub fn set_agreements(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedAgreement>>) -> Self {
+        self.agreements = input; self
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedAgreement>> {
+    pub fn get_agreements(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedAgreement>> {
         &self.agreements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agreements`](crate::operation::list_agreements::builders::ListAgreementsOutputBuilder::agreements)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_agreements::ListAgreementsOutput {
-            next_token: self.next_token,
-            agreements: self.agreements.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agreements",
-                    "agreements was not specified but it is required when building ListAgreementsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_agreements::ListAgreementsOutput {
+                next_token: self.next_token
+                ,
+                agreements: self.agreements
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agreements", "agreements was not specified but it is required when building ListAgreementsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

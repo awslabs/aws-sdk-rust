@@ -3,22 +3,23 @@
 /// <p>Contains the list of errors from a code evaluation response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluateCodeErrorDetail {
+pub struct EvaluateCodeErrorDetail  {
     /// <p>The error payload.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
+    pub code_errors: ::std::option::Option<::std::vec::Vec::<crate::types::CodeError>>,
 }
-impl EvaluateCodeErrorDetail {
+impl  EvaluateCodeErrorDetail  {
     /// <p>The error payload.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_errors.is_none()`.
-    pub fn code_errors(&self) -> &[crate::types::CodeError] {
-        self.code_errors.as_deref().unwrap_or_default()
+    pub fn code_errors(&self) -> & [crate::types::CodeError] {
+        self.code_errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EvaluateCodeErrorDetail {
@@ -33,7 +34,7 @@ impl EvaluateCodeErrorDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EvaluateCodeErrorDetailBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
+    pub(crate) code_errors: ::std::option::Option<::std::vec::Vec::<crate::types::CodeError>>,
 }
 impl EvaluateCodeErrorDetailBuilder {
     /// <p>The error payload.</p>
@@ -43,8 +44,7 @@ impl EvaluateCodeErrorDetailBuilder {
     }
     /// <p>The error payload.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error payload.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl EvaluateCodeErrorDetailBuilder {
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
     pub fn code_errors(mut self, input: crate::types::CodeError) -> Self {
         let mut v = self.code_errors.unwrap_or_default();
-        v.push(input);
-        self.code_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn set_code_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>) -> Self {
-        self.code_errors = input;
-        self
+    pub fn set_code_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeError>>) -> Self {
+        self.code_errors = input; self
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn get_code_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeError>> {
+    pub fn get_code_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeError>> {
         &self.code_errors
     }
     /// Consumes the builder and constructs a [`EvaluateCodeErrorDetail`](crate::types::EvaluateCodeErrorDetail).
     pub fn build(self) -> crate::types::EvaluateCodeErrorDetail {
         crate::types::EvaluateCodeErrorDetail {
-            message: self.message,
-            code_errors: self.code_errors,
+            message: self.message
+            ,
+            code_errors: self.code_errors
+            ,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTargets`](crate::operation::list_targets::builders::ListTargetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_target_group_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the target group.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token for the next page of results.</p><br>
     ///   - [`targets(Target)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::targets) / [`set_targets(Option<Vec::<Target>>)`](crate::operation::list_targets::builders::ListTargetsFluentBuilder::set_targets):<br>required: **false**<br><p>The targets to list.</p><br>
-    /// - On success, responds with [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput) with field(s):
+                            /// - On success, responds with [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput) with field(s):
     ///   - [`items(Vec::<TargetSummary>)`](crate::operation::list_targets::ListTargetsOutput::items): <p>Information about the targets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_targets::ListTargetsOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
+                            /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::operation::list_targets::ListTargetsError)
     pub fn list_targets(&self) -> crate::operation::list_targets::builders::ListTargetsFluentBuilder {
-        crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_targets::builders::ListTargetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

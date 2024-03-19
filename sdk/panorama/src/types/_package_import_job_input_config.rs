@@ -3,13 +3,13 @@
 /// <p>A configuration for a package import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageImportJobInputConfig {
+pub struct PackageImportJobInputConfig  {
     /// <p>The package version's input configuration.</p>
     pub package_version_input_config: ::std::option::Option<crate::types::PackageVersionInputConfig>,
 }
-impl PackageImportJobInputConfig {
+impl  PackageImportJobInputConfig  {
     /// <p>The package version's input configuration.</p>
-    pub fn package_version_input_config(&self) -> ::std::option::Option<&crate::types::PackageVersionInputConfig> {
+    pub fn package_version_input_config(&self) -> ::std::option::Option<& crate::types::PackageVersionInputConfig> {
         self.package_version_input_config.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl PackageImportJobInputConfigBuilder {
     }
     /// <p>The package version's input configuration.</p>
     pub fn set_package_version_input_config(mut self, input: ::std::option::Option<crate::types::PackageVersionInputConfig>) -> Self {
-        self.package_version_input_config = input;
-        self
+        self.package_version_input_config = input; self
     }
     /// <p>The package version's input configuration.</p>
     pub fn get_package_version_input_config(&self) -> &::std::option::Option<crate::types::PackageVersionInputConfig> {
@@ -44,7 +43,9 @@ impl PackageImportJobInputConfigBuilder {
     /// Consumes the builder and constructs a [`PackageImportJobInputConfig`](crate::types::PackageImportJobInputConfig).
     pub fn build(self) -> crate::types::PackageImportJobInputConfig {
         crate::types::PackageImportJobInputConfig {
-            package_version_input_config: self.package_version_input_config,
+            package_version_input_config: self.package_version_input_config
+            ,
         }
     }
 }
+

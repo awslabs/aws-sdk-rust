@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProvisioningArtifactsForServiceActionInput {
+pub struct ListProvisioningArtifactsForServiceActionInput  {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub service_action_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
@@ -18,9 +18,9 @@ pub struct ListProvisioningArtifactsForServiceActionInput {
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
 }
-impl ListProvisioningArtifactsForServiceActionInput {
+impl  ListProvisioningArtifactsForServiceActionInput  {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_action_id(&self) -> ::std::option::Option<& str> {
         self.service_action_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -28,7 +28,7 @@ impl ListProvisioningArtifactsForServiceActionInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
     /// <p>The language code.</p>
@@ -38,14 +38,13 @@ impl ListProvisioningArtifactsForServiceActionInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
 }
 impl ListProvisioningArtifactsForServiceActionInput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningArtifactsForServiceActionInput`](crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionInput).
-    pub fn builder(
-    ) -> crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionInputBuilder {
+    pub fn builder() -> crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionInputBuilder {
         crate::operation::list_provisioning_artifacts_for_service_action::builders::ListProvisioningArtifactsForServiceActionInputBuilder::default()
     }
 }
@@ -68,8 +67,7 @@ impl ListProvisioningArtifactsForServiceActionInputBuilder {
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn set_service_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_action_id = input;
-        self
+        self.service_action_id = input; self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn get_service_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListProvisioningArtifactsForServiceActionInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -96,8 +93,7 @@ impl ListProvisioningArtifactsForServiceActionInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +118,7 @@ impl ListProvisioningArtifactsForServiceActionInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -136,19 +131,19 @@ impl ListProvisioningArtifactsForServiceActionInputBuilder {
         &self.accept_language
     }
     /// Consumes the builder and constructs a [`ListProvisioningArtifactsForServiceActionInput`](crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionInput {
-                service_action_id: self.service_action_id,
-                page_size: self.page_size,
-                page_token: self.page_token,
-                accept_language: self.accept_language,
-            },
+                service_action_id: self.service_action_id
+                ,
+                page_size: self.page_size
+                ,
+                page_token: self.page_token
+                ,
+                accept_language: self.accept_language
+                ,
+            }
         )
     }
 }
+

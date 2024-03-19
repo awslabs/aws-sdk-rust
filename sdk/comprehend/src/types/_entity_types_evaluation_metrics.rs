@@ -3,7 +3,7 @@
 /// <p>Detailed information about the accuracy of an entity recognizer for a specific entity type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityTypesEvaluationMetrics {
+pub struct EntityTypesEvaluationMetrics  {
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones.</p>
     pub precision: ::std::option::Option<f64>,
     /// <p>A measure of how complete the recognizer results are for a specific entity type in the test data. High recall means that the recognizer returned most of the relevant results.</p>
@@ -11,7 +11,7 @@ pub struct EntityTypesEvaluationMetrics {
     /// <p>A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0.</p>
     pub f1_score: ::std::option::Option<f64>,
 }
-impl EntityTypesEvaluationMetrics {
+impl  EntityTypesEvaluationMetrics  {
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones.</p>
     pub fn precision(&self) -> ::std::option::Option<f64> {
         self.precision
@@ -48,8 +48,7 @@ impl EntityTypesEvaluationMetricsBuilder {
     }
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones.</p>
     pub fn get_precision(&self) -> &::std::option::Option<f64> {
@@ -62,8 +61,7 @@ impl EntityTypesEvaluationMetricsBuilder {
     }
     /// <p>A measure of how complete the recognizer results are for a specific entity type in the test data. High recall means that the recognizer returned most of the relevant results.</p>
     pub fn set_recall(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.recall = input;
-        self
+        self.recall = input; self
     }
     /// <p>A measure of how complete the recognizer results are for a specific entity type in the test data. High recall means that the recognizer returned most of the relevant results.</p>
     pub fn get_recall(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl EntityTypesEvaluationMetricsBuilder {
     }
     /// <p>A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0.</p>
     pub fn set_f1_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.f1_score = input;
-        self
+        self.f1_score = input; self
     }
     /// <p>A measure of how accurate the recognizer results are for a specific entity type in the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0.</p>
     pub fn get_f1_score(&self) -> &::std::option::Option<f64> {
@@ -86,9 +83,13 @@ impl EntityTypesEvaluationMetricsBuilder {
     /// Consumes the builder and constructs a [`EntityTypesEvaluationMetrics`](crate::types::EntityTypesEvaluationMetrics).
     pub fn build(self) -> crate::types::EntityTypesEvaluationMetrics {
         crate::types::EntityTypesEvaluationMetrics {
-            precision: self.precision,
-            recall: self.recall,
-            f1_score: self.f1_score,
+            precision: self.precision
+            ,
+            recall: self.recall
+            ,
+            f1_score: self.f1_score
+            ,
         }
     }
 }
+

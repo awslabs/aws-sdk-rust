@@ -3,13 +3,13 @@
 /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
     pub total_segments: i32,
 }
-impl Segment {
+impl  Segment  {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub fn segment_number(&self) -> i32 {
         self.segment_number
@@ -42,8 +42,7 @@ impl SegmentBuilder {
     }
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub fn set_segment_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.segment_number = input;
-        self
+        self.segment_number = input; self
     }
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub fn get_segment_number(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl SegmentBuilder {
     }
     /// <p>The total number of segments.</p>
     pub fn set_total_segments(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_segments = input;
-        self
+        self.total_segments = input; self
     }
     /// <p>The total number of segments.</p>
     pub fn get_total_segments(&self) -> &::std::option::Option<i32> {
@@ -68,14 +66,18 @@ impl SegmentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total_segments`](crate::types::builders::SegmentBuilder::total_segments)
     pub fn build(self) -> ::std::result::Result<crate::types::Segment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Segment {
-            segment_number: self.segment_number.unwrap_or_default(),
-            total_segments: self.total_segments.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "total_segments",
-                    "total_segments was not specified but it is required when building Segment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Segment {
+                segment_number: self.segment_number
+                    .unwrap_or_default()
+                ,
+                total_segments: self.total_segments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("total_segments", "total_segments was not specified but it is required when building Segment")
+                    )?
+                ,
+            }
+        )
     }
 }
+

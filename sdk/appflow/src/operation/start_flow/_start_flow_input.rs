@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFlowInput {
+pub struct StartFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
@@ -11,16 +11,16 @@ pub struct StartFlowInput {
     /// <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartFlowInput {
+impl  StartFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<& str> {
         self.flow_name.as_deref()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs for flows that run on a schedule or based on an event. However, the error doesn't occur for flows that run on demand. You set the conditions that initiate your flow for the <code>triggerConfig</code> parameter.</p>
     /// <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl StartFlowInputBuilder {
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +66,7 @@ impl StartFlowInputBuilder {
     /// <p>If you specify input parameters that differ from your first request, an error occurs for flows that run on a schedule or based on an event. However, the error doesn't occur for flows that run on demand. You set the conditions that initiate your flow for the <code>triggerConfig</code> parameter.</p>
     /// <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
@@ -79,9 +77,14 @@ impl StartFlowInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput {
-            flow_name: self.flow_name,
-            client_token: self.client_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::start_flow::StartFlowInput {
+                flow_name: self.flow_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

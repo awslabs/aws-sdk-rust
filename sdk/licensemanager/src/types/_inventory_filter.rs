@@ -3,7 +3,7 @@
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryFilter {
+pub struct InventoryFilter  {
     /// <p>Name of the filter.</p>
     pub name: ::std::string::String,
     /// <p>Condition of the filter.</p>
@@ -11,18 +11,17 @@ pub struct InventoryFilter {
     /// <p>Value of the filter.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl InventoryFilter {
+impl  InventoryFilter  {
     /// <p>Name of the filter.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Condition of the filter.</p>
-    pub fn condition(&self) -> &crate::types::InventoryFilterCondition {
+    pub fn condition(&self) -> & crate::types::InventoryFilterCondition {
         &self.condition
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl InventoryFilterBuilder {
     }
     /// <p>Name of the filter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the filter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl InventoryFilterBuilder {
     }
     /// <p>Condition of the filter.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::InventoryFilterCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>Condition of the filter.</p>
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::InventoryFilterCondition> {
@@ -79,8 +76,7 @@ impl InventoryFilterBuilder {
     }
     /// <p>Value of the filter.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Value of the filter.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl InventoryFilterBuilder {
     /// - [`name`](crate::types::builders::InventoryFilterBuilder::name)
     /// - [`condition`](crate::types::builders::InventoryFilterBuilder::condition)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building InventoryFilter",
-                )
-            })?,
-            condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "condition",
-                    "condition was not specified but it is required when building InventoryFilter",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building InventoryFilter")
+                    )?
+                ,
+                condition: self.condition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("condition", "condition was not specified but it is required when building InventoryFilter")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

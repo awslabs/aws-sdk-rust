@@ -3,7 +3,7 @@
 /// <p>An error from a batch read set operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReadSetBatchError {
+pub struct ReadSetBatchError  {
     /// <p>The error's ID.</p>
     pub id: ::std::string::String,
     /// <p>The error's code.</p>
@@ -11,21 +11,18 @@ pub struct ReadSetBatchError {
     /// <p>The error's message.</p>
     pub message: ::std::string::String,
 }
-impl ReadSetBatchError {
+impl  ReadSetBatchError  {
     /// <p>The error's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The error's code.</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
     /// <p>The error's message.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ReadSetBatchError {
@@ -52,8 +49,7 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The error's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error's code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error's message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ReadSetBatchErrorBuilder {
     /// - [`code`](crate::types::builders::ReadSetBatchErrorBuilder::code)
     /// - [`message`](crate::types::builders::ReadSetBatchErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ReadSetBatchError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReadSetBatchError {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ReadSetBatchError",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building ReadSetBatchError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ReadSetBatchError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReadSetBatchError {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ReadSetBatchError")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building ReadSetBatchError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ReadSetBatchError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

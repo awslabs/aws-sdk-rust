@@ -3,7 +3,7 @@
 /// <p>Provides details about an Amazon EKS cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEksClusterDetails {
+pub struct AwsEksClusterDetails  {
     /// <p>The ARN of the cluster.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate authority data for the cluster.</p>
@@ -37,13 +37,13 @@ pub struct AwsEksClusterDetails {
     /// <p>The logging configuration for the cluster.</p>
     pub logging: ::std::option::Option<crate::types::AwsEksClusterLoggingDetails>,
 }
-impl AwsEksClusterDetails {
+impl  AwsEksClusterDetails  {
     /// <p>The ARN of the cluster.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The certificate authority data for the cluster.</p>
-    pub fn certificate_authority_data(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_authority_data(&self) -> ::std::option::Option<& str> {
         self.certificate_authority_data.as_deref()
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
@@ -61,31 +61,31 @@ impl AwsEksClusterDetails {
     /// <li>
     /// <p><code>UPDATING</code></p></li>
     /// </ul>
-    pub fn cluster_status(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_status(&self) -> ::std::option::Option<& str> {
         self.cluster_status.as_deref()
     }
     /// <p>The endpoint for the Amazon EKS API server.</p>
-    pub fn endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The VPC configuration used by the cluster control plane.</p>
-    pub fn resources_vpc_config(&self) -> ::std::option::Option<&crate::types::AwsEksClusterResourcesVpcConfigDetails> {
+    pub fn resources_vpc_config(&self) -> ::std::option::Option<& crate::types::AwsEksClusterResourcesVpcConfigDetails> {
         self.resources_vpc_config.as_ref()
     }
     /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon EKS server version for the cluster.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The logging configuration for the cluster.</p>
-    pub fn logging(&self) -> ::std::option::Option<&crate::types::AwsEksClusterLoggingDetails> {
+    pub fn logging(&self) -> ::std::option::Option<& crate::types::AwsEksClusterLoggingDetails> {
         self.logging.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The ARN of the cluster.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the cluster.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The certificate authority data for the cluster.</p>
     pub fn set_certificate_authority_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_authority_data = input;
-        self
+        self.certificate_authority_data = input; self
     }
     /// <p>The certificate authority data for the cluster.</p>
     pub fn get_certificate_authority_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl AwsEksClusterDetailsBuilder {
     /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_status = input;
-        self
+        self.cluster_status = input; self
     }
     /// <p>The status of the cluster. Valid values are as follows:</p>
     /// <ul>
@@ -202,8 +199,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The endpoint for the Amazon EKS API server.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// <p>The endpoint for the Amazon EKS API server.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +212,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The name of the cluster.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the cluster.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +225,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The VPC configuration used by the cluster control plane.</p>
     pub fn set_resources_vpc_config(mut self, input: ::std::option::Option<crate::types::AwsEksClusterResourcesVpcConfigDetails>) -> Self {
-        self.resources_vpc_config = input;
-        self
+        self.resources_vpc_config = input; self
     }
     /// <p>The VPC configuration used by the cluster control plane.</p>
     pub fn get_resources_vpc_config(&self) -> &::std::option::Option<crate::types::AwsEksClusterResourcesVpcConfigDetails> {
@@ -244,8 +238,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that provides permissions for the Amazon EKS control plane to make calls to Amazon Web Services API operations on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +251,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The Amazon EKS server version for the cluster.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The Amazon EKS server version for the cluster.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +264,7 @@ impl AwsEksClusterDetailsBuilder {
     }
     /// <p>The logging configuration for the cluster.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::AwsEksClusterLoggingDetails>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>The logging configuration for the cluster.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::AwsEksClusterLoggingDetails> {
@@ -282,15 +273,25 @@ impl AwsEksClusterDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEksClusterDetails`](crate::types::AwsEksClusterDetails).
     pub fn build(self) -> crate::types::AwsEksClusterDetails {
         crate::types::AwsEksClusterDetails {
-            arn: self.arn,
-            certificate_authority_data: self.certificate_authority_data,
-            cluster_status: self.cluster_status,
-            endpoint: self.endpoint,
-            name: self.name,
-            resources_vpc_config: self.resources_vpc_config,
-            role_arn: self.role_arn,
-            version: self.version,
-            logging: self.logging,
+            arn: self.arn
+            ,
+            certificate_authority_data: self.certificate_authority_data
+            ,
+            cluster_status: self.cluster_status
+            ,
+            endpoint: self.endpoint
+            ,
+            name: self.name
+            ,
+            resources_vpc_config: self.resources_vpc_config
+            ,
+            role_arn: self.role_arn
+            ,
+            version: self.version
+            ,
+            logging: self.logging
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information to connect to Box as your data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BoxConfiguration {
+pub struct BoxConfiguration  {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
     pub enterprise_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
@@ -30,25 +30,24 @@ pub struct BoxConfiguration {
     /// <p><code>TRUE</code> to index web links.</p>
     pub crawl_web_links: bool,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub file_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub file_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub task_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub task_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub comment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub comment_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub web_link_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub web_link_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
 }
-impl BoxConfiguration {
+impl  BoxConfiguration  {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
-    pub fn enterprise_id(&self) -> &str {
-        use std::ops::Deref;
-        self.enterprise_id.deref()
+    pub fn enterprise_id(&self) -> & str {
+        use std::ops::Deref; self.enterprise_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -64,9 +63,8 @@ impl BoxConfiguration {
     /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_arn.deref()
     }
     /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn use_change_log(&self) -> bool {
@@ -85,43 +83,49 @@ impl BoxConfiguration {
         self.crawl_web_links
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_field_mappings.is_none()`.
-    pub fn file_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.file_field_mappings.as_deref().unwrap_or_default()
+    pub fn file_field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.file_field_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_field_mappings.is_none()`.
-    pub fn task_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.task_field_mappings.as_deref().unwrap_or_default()
+    pub fn task_field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.task_field_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.comment_field_mappings.is_none()`.
-    pub fn comment_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.comment_field_mappings.as_deref().unwrap_or_default()
+    pub fn comment_field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.comment_field_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.web_link_field_mappings.is_none()`.
-    pub fn web_link_field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.web_link_field_mappings.as_deref().unwrap_or_default()
+    pub fn web_link_field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.web_link_field_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inclusion_patterns.is_none()`.
-    pub fn inclusion_patterns(&self) -> &[::std::string::String] {
-        self.inclusion_patterns.as_deref().unwrap_or_default()
+    pub fn inclusion_patterns(&self) -> & [::std::string::String] {
+        self.inclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclusion_patterns.is_none()`.
-    pub fn exclusion_patterns(&self) -> &[::std::string::String] {
-        self.exclusion_patterns.as_deref().unwrap_or_default()
+    pub fn exclusion_patterns(&self) -> & [::std::string::String] {
+        self.exclusion_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
@@ -142,12 +146,12 @@ pub struct BoxConfigurationBuilder {
     pub(crate) crawl_comments: ::std::option::Option<bool>,
     pub(crate) crawl_tasks: ::std::option::Option<bool>,
     pub(crate) crawl_web_links: ::std::option::Option<bool>,
-    pub(crate) file_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) task_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) comment_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) web_link_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) file_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) task_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) comment_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) web_link_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
 }
 impl BoxConfigurationBuilder {
@@ -159,8 +163,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
     pub fn set_enterprise_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enterprise_id = input;
-        self
+        self.enterprise_id = input; self
     }
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
     pub fn get_enterprise_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +203,7 @@ impl BoxConfigurationBuilder {
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
@@ -227,8 +229,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_change_log = input;
-        self
+        self.use_change_log = input; self
     }
     /// <p><code>TRUE</code> to use the Slack change log to determine which documents require updating in the index. Depending on the data source change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents.</p>
     pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
@@ -241,8 +242,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to index comments.</p>
     pub fn set_crawl_comments(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_comments = input;
-        self
+        self.crawl_comments = input; self
     }
     /// <p><code>TRUE</code> to index comments.</p>
     pub fn get_crawl_comments(&self) -> &::std::option::Option<bool> {
@@ -255,8 +255,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn set_crawl_tasks(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_tasks = input;
-        self
+        self.crawl_tasks = input; self
     }
     /// <p><code>TRUE</code> to index the contents of tasks.</p>
     pub fn get_crawl_tasks(&self) -> &::std::option::Option<bool> {
@@ -269,8 +268,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to index web links.</p>
     pub fn set_crawl_web_links(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.crawl_web_links = input;
-        self
+        self.crawl_web_links = input; self
     }
     /// <p><code>TRUE</code> to index web links.</p>
     pub fn get_crawl_web_links(&self) -> &::std::option::Option<bool> {
@@ -283,17 +281,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
     pub fn file_field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.file_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.file_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.file_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn set_file_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.file_field_mappings = input;
-        self
+    pub fn set_file_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.file_field_mappings = input; self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box files to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn get_file_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_file_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.file_field_mappings
     }
     /// Appends an item to `task_field_mappings`.
@@ -303,17 +300,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
     pub fn task_field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.task_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.task_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn set_task_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.task_field_mappings = input;
-        self
+    pub fn set_task_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.task_field_mappings = input; self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box tasks to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn get_task_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_task_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.task_field_mappings
     }
     /// Appends an item to `comment_field_mappings`.
@@ -323,17 +319,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
     pub fn comment_field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.comment_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.comment_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.comment_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn set_comment_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.comment_field_mappings = input;
-        self
+    pub fn set_comment_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.comment_field_mappings = input; self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn get_comment_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_comment_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.comment_field_mappings
     }
     /// Appends an item to `web_link_field_mappings`.
@@ -343,17 +338,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
     pub fn web_link_field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.web_link_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.web_link_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.web_link_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn set_web_link_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.web_link_field_mappings = input;
-        self
+    pub fn set_web_link_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.web_link_field_mappings = input; self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Box web links to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Box field names must exist in your Box custom metadata.</p>
-    pub fn get_web_link_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_web_link_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.web_link_field_mappings
     }
     /// Appends an item to `inclusion_patterns`.
@@ -363,17 +357,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
     pub fn inclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.inclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inclusion_patterns = input;
-        self
+    pub fn set_inclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inclusion_patterns = input; self
     }
     /// <p>A list of regular expression patterns to include certain files and folders in your Box platform. Files and folders that match the patterns are included in the index. Files and folders that don't match the patterns are excluded from the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
@@ -383,17 +376,16 @@ impl BoxConfigurationBuilder {
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
     pub fn exclusion_patterns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.exclusion_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.exclusion_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.exclusion_patterns = input;
-        self
+    pub fn set_exclusion_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.exclusion_patterns = input; self
     }
     /// <p>A list of regular expression patterns to exclude certain files and folders from your Box platform. Files and folders that match the patterns are excluded from the index.Files and folders that don't match the patterns are included in the index. If a file or folder matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file or folder isn't included in the index.</p>
-    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_exclusion_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.exclusion_patterns
     }
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
@@ -403,8 +395,7 @@ impl BoxConfigurationBuilder {
     }
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Configuration information for an Amazon VPC to connect to your Box. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
@@ -415,30 +406,46 @@ impl BoxConfigurationBuilder {
     /// - [`enterprise_id`](crate::types::builders::BoxConfigurationBuilder::enterprise_id)
     /// - [`secret_arn`](crate::types::builders::BoxConfigurationBuilder::secret_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BoxConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BoxConfiguration {
-            enterprise_id: self.enterprise_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enterprise_id",
-                    "enterprise_id was not specified but it is required when building BoxConfiguration",
-                )
-            })?,
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building BoxConfiguration",
-                )
-            })?,
-            use_change_log: self.use_change_log.unwrap_or_default(),
-            crawl_comments: self.crawl_comments.unwrap_or_default(),
-            crawl_tasks: self.crawl_tasks.unwrap_or_default(),
-            crawl_web_links: self.crawl_web_links.unwrap_or_default(),
-            file_field_mappings: self.file_field_mappings,
-            task_field_mappings: self.task_field_mappings,
-            comment_field_mappings: self.comment_field_mappings,
-            web_link_field_mappings: self.web_link_field_mappings,
-            inclusion_patterns: self.inclusion_patterns,
-            exclusion_patterns: self.exclusion_patterns,
-            vpc_configuration: self.vpc_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BoxConfiguration {
+                enterprise_id: self.enterprise_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enterprise_id", "enterprise_id was not specified but it is required when building BoxConfiguration")
+                    )?
+                ,
+                secret_arn: self.secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_arn", "secret_arn was not specified but it is required when building BoxConfiguration")
+                    )?
+                ,
+                use_change_log: self.use_change_log
+                    .unwrap_or_default()
+                ,
+                crawl_comments: self.crawl_comments
+                    .unwrap_or_default()
+                ,
+                crawl_tasks: self.crawl_tasks
+                    .unwrap_or_default()
+                ,
+                crawl_web_links: self.crawl_web_links
+                    .unwrap_or_default()
+                ,
+                file_field_mappings: self.file_field_mappings
+                ,
+                task_field_mappings: self.task_field_mappings
+                ,
+                comment_field_mappings: self.comment_field_mappings
+                ,
+                web_link_field_mappings: self.web_link_field_mappings
+                ,
+                inclusion_patterns: self.inclusion_patterns
+                ,
+                exclusion_patterns: self.exclusion_patterns
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+            }
+        )
     }
 }
+

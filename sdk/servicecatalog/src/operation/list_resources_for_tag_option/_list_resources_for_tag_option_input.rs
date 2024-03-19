@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesForTagOptionInput {
+pub struct ListResourcesForTagOptionInput  {
     /// <p>The TagOption identifier.</p>
     pub tag_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
@@ -18,9 +18,9 @@ pub struct ListResourcesForTagOptionInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl ListResourcesForTagOptionInput {
+impl  ListResourcesForTagOptionInput  {
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(&self) -> ::std::option::Option<&str> {
+    pub fn tag_option_id(&self) -> ::std::option::Option<& str> {
         self.tag_option_id.as_deref()
     }
     /// <p>The resource type.</p>
@@ -30,7 +30,7 @@ impl ListResourcesForTagOptionInput {
     /// <li>
     /// <p><code>Product</code></p></li>
     /// </ul>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -38,7 +38,7 @@ impl ListResourcesForTagOptionInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The TagOption identifier.</p>
     pub fn set_tag_option_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_option_id = input;
-        self
+        self.tag_option_id = input; self
     }
     /// <p>The TagOption identifier.</p>
     pub fn get_tag_option_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl ListResourcesForTagOptionInputBuilder {
     /// <p><code>Product</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     /// <ul>
@@ -113,8 +111,7 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -127,25 +124,26 @@ impl ListResourcesForTagOptionInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ListResourcesForTagOptionInput`](crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput {
-            tag_option_id: self.tag_option_id,
-            resource_type: self.resource_type,
-            page_size: self.page_size,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionInput {
+                tag_option_id: self.tag_option_id
+                ,
+                resource_type: self.resource_type
+                ,
+                page_size: self.page_size
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

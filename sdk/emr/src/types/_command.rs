@@ -3,28 +3,29 @@
 /// <p>An entity describing an executable that runs on a cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Command {
+pub struct Command  {
     /// <p>The name of the command.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the command script.</p>
     pub script_path: ::std::option::Option<::std::string::String>,
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Command {
+impl  Command  {
     /// <p>The name of the command.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 location of the command script.</p>
-    pub fn script_path(&self) -> ::std::option::Option<&str> {
+    pub fn script_path(&self) -> ::std::option::Option<& str> {
         self.script_path.as_deref()
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
-    pub fn args(&self) -> &[::std::string::String] {
-        self.args.as_deref().unwrap_or_default()
+    pub fn args(&self) -> & [::std::string::String] {
+        self.args.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Command {
@@ -40,7 +41,7 @@ impl Command {
 pub struct CommandBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) script_path: ::std::option::Option<::std::string::String>,
-    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CommandBuilder {
     /// <p>The name of the command.</p>
@@ -50,8 +51,7 @@ impl CommandBuilder {
     }
     /// <p>The name of the command.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the command.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl CommandBuilder {
     }
     /// <p>The Amazon S3 location of the command script.</p>
     pub fn set_script_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_path = input;
-        self
+        self.script_path = input; self
     }
     /// <p>The Amazon S3 location of the command script.</p>
     pub fn get_script_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl CommandBuilder {
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
     pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-        v.push(input.into());
-        self.args = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.args = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.args = input;
-        self
+    pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.args = input; self
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.args
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).
     pub fn build(self) -> crate::types::Command {
         crate::types::Command {
-            name: self.name,
-            script_path: self.script_path,
-            args: self.args,
+            name: self.name
+            ,
+            script_path: self.script_path
+            ,
+            args: self.args
+            ,
         }
     }
 }
+

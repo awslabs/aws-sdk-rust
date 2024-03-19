@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcePoliciesInput {
+pub struct ListResourcePoliciesInput  {
     /// <p>Not currently supported.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListResourcePoliciesInput {
+impl  ListResourcePoliciesInput  {
     /// <p>Not currently supported.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -33,18 +33,20 @@ impl ListResourcePoliciesInputBuilder {
     }
     /// <p>Not currently supported.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Not currently supported.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResourcePoliciesInput`](crate::operation::list_resource_policies::ListResourcePoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resource_policies::ListResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resource_policies::ListResourcePoliciesInput { next_token: self.next_token })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_policies::ListResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_policies::ListResourcePoliciesInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

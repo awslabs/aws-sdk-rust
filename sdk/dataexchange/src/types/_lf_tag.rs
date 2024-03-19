@@ -3,22 +3,20 @@
 /// <p>A structure that allows an LF-admin to grant permissions on certain conditions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LfTag {
+pub struct LfTag  {
     /// <p>The key name for the LF-tag.</p>
     pub tag_key: ::std::string::String,
     /// <p>A list of LF-tag values.</p>
-    pub tag_values: ::std::vec::Vec<::std::string::String>,
+    pub tag_values: ::std::vec::Vec::<::std::string::String>,
 }
-impl LfTag {
+impl  LfTag  {
     /// <p>The key name for the LF-tag.</p>
-    pub fn tag_key(&self) -> &str {
-        use std::ops::Deref;
-        self.tag_key.deref()
+    pub fn tag_key(&self) -> & str {
+        use std::ops::Deref; self.tag_key.deref()
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn tag_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.tag_values.deref()
+    pub fn tag_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.tag_values.deref()
     }
 }
 impl LfTag {
@@ -33,7 +31,7 @@ impl LfTag {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct LfTagBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LfTagBuilder {
     /// <p>The key name for the LF-tag.</p>
@@ -44,8 +42,7 @@ impl LfTagBuilder {
     }
     /// <p>The key name for the LF-tag.</p>
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// <p>The key name for the LF-tag.</p>
     pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl LfTagBuilder {
     /// <p>A list of LF-tag values.</p>
     pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_values = input; self
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`LfTag`](crate::types::LfTag).
@@ -76,19 +72,20 @@ impl LfTagBuilder {
     /// - [`tag_key`](crate::types::builders::LfTagBuilder::tag_key)
     /// - [`tag_values`](crate::types::builders::LfTagBuilder::tag_values)
     pub fn build(self) -> ::std::result::Result<crate::types::LfTag, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LfTag {
-            tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_key",
-                    "tag_key was not specified but it is required when building LfTag",
-                )
-            })?,
-            tag_values: self.tag_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag_values",
-                    "tag_values was not specified but it is required when building LfTag",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LfTag {
+                tag_key: self.tag_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_key", "tag_key was not specified but it is required when building LfTag")
+                    )?
+                ,
+                tag_values: self.tag_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag_values", "tag_values was not specified but it is required when building LfTag")
+                    )?
+                ,
+            }
+        )
     }
 }
+

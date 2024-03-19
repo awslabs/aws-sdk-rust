@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutVoiceConnectorOriginationOutput {
+pub struct PutVoiceConnectorOriginationOutput  {
     /// <p>The updated origination setting details.</p>
     pub origination: ::std::option::Option<crate::types::Origination>,
     _request_id: Option<String>,
 }
-impl PutVoiceConnectorOriginationOutput {
+impl  PutVoiceConnectorOriginationOutput  {
     /// <p>The updated origination setting details.</p>
-    pub fn origination(&self) -> ::std::option::Option<&crate::types::Origination> {
+    pub fn origination(&self) -> ::std::option::Option<& crate::types::Origination> {
         self.origination.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutVoiceConnectorOriginationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutVoiceConnectorOriginationOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorOriginationOutput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput).
     pub fn builder() -> crate::operation::put_voice_connector_origination::builders::PutVoiceConnectorOriginationOutputBuilder {
@@ -40,27 +40,28 @@ impl PutVoiceConnectorOriginationOutputBuilder {
     }
     /// <p>The updated origination setting details.</p>
     pub fn set_origination(mut self, input: ::std::option::Option<crate::types::Origination>) -> Self {
-        self.origination = input;
-        self
+        self.origination = input; self
     }
     /// <p>The updated origination setting details.</p>
     pub fn get_origination(&self) -> &::std::option::Option<crate::types::Origination> {
         &self.origination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutVoiceConnectorOriginationOutput`](crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput).
     pub fn build(self) -> crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput {
         crate::operation::put_voice_connector_origination::PutVoiceConnectorOriginationOutput {
-            origination: self.origination,
+            origination: self.origination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

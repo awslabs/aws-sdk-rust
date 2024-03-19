@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationInput {
+pub struct DeleteApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApplicationInput {
+impl  DeleteApplicationInput  {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteApplicationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_application::DeleteApplicationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

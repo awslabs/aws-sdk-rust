@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivateDeviceIdentifierInput {
+pub struct ActivateDeviceIdentifierInput  {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub device_identifier_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl ActivateDeviceIdentifierInput {
+impl  ActivateDeviceIdentifierInput  {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_identifier_arn(&self) -> ::std::option::Option<& str> {
         self.device_identifier_arn.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ActivateDeviceIdentifierInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub fn set_device_identifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_identifier_arn = input;
-        self
+        self.device_identifier_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     pub fn get_device_identifier_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl ActivateDeviceIdentifierInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`ActivateDeviceIdentifierInput`](crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
-            device_identifier_arn: self.device_identifier_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
+                device_identifier_arn: self.device_identifier_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

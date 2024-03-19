@@ -3,13 +3,13 @@
 /// <p>Parameters for plaintext encryption using asymmetric keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AsymmetricEncryptionAttributes {
+pub struct AsymmetricEncryptionAttributes  {
     /// <p>The padding to be included with the data.</p>
     pub padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
-impl AsymmetricEncryptionAttributes {
+impl  AsymmetricEncryptionAttributes  {
     /// <p>The padding to be included with the data.</p>
-    pub fn padding_type(&self) -> ::std::option::Option<&crate::types::PaddingType> {
+    pub fn padding_type(&self) -> ::std::option::Option<& crate::types::PaddingType> {
         self.padding_type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AsymmetricEncryptionAttributesBuilder {
     }
     /// <p>The padding to be included with the data.</p>
     pub fn set_padding_type(mut self, input: ::std::option::Option<crate::types::PaddingType>) -> Self {
-        self.padding_type = input;
-        self
+        self.padding_type = input; self
     }
     /// <p>The padding to be included with the data.</p>
     pub fn get_padding_type(&self) -> &::std::option::Option<crate::types::PaddingType> {
@@ -44,7 +43,9 @@ impl AsymmetricEncryptionAttributesBuilder {
     /// Consumes the builder and constructs a [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
     pub fn build(self) -> crate::types::AsymmetricEncryptionAttributes {
         crate::types::AsymmetricEncryptionAttributes {
-            padding_type: self.padding_type,
+            padding_type: self.padding_type
+            ,
         }
     }
 }
+

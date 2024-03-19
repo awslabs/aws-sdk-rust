@@ -4,22 +4,22 @@
 /// <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMlModelOutput {
+pub struct CreateMlModelOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateMlModelOutput {
+impl  CreateMlModelOutput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMlModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateMlModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateMlModelOutput`](crate::operation::create_ml_model::CreateMlModelOutput).
     pub fn builder() -> crate::operation::create_ml_model::builders::CreateMlModelOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateMlModelOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ml_model_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateMlModelOutput`](crate::operation::create_ml_model::CreateMlModelOutput).
     pub fn build(self) -> crate::operation::create_ml_model::CreateMlModelOutput {
         crate::operation::create_ml_model::CreateMlModelOutput {
-            ml_model_id: self.ml_model_id,
+            ml_model_id: self.ml_model_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

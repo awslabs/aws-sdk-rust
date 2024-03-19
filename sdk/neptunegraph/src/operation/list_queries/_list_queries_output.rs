@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListQueriesOutput {
+pub struct ListQueriesOutput  {
     /// <p>A list of current openCypher queries.</p>
-    pub queries: ::std::vec::Vec<crate::types::QuerySummary>,
+    pub queries: ::std::vec::Vec::<crate::types::QuerySummary>,
     _request_id: Option<String>,
 }
-impl ListQueriesOutput {
+impl  ListQueriesOutput  {
     /// <p>A list of current openCypher queries.</p>
-    pub fn queries(&self) -> &[crate::types::QuerySummary] {
-        use std::ops::Deref;
-        self.queries.deref()
+    pub fn queries(&self) -> & [crate::types::QuerySummary] {
+        use std::ops::Deref; self.queries.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListQueriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
     pub fn builder() -> crate::operation::list_queries::builders::ListQueriesOutputBuilder {
@@ -30,7 +29,7 @@ impl ListQueriesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListQueriesOutputBuilder {
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::QuerySummary>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::QuerySummary>>,
     _request_id: Option<String>,
 }
 impl ListQueriesOutputBuilder {
@@ -41,40 +40,41 @@ impl ListQueriesOutputBuilder {
     /// <p>A list of current openCypher queries.</p>
     pub fn queries(mut self, input: crate::types::QuerySummary) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of current openCypher queries.</p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuerySummary>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuerySummary>>) -> Self {
+        self.queries = input; self
     }
     /// <p>A list of current openCypher queries.</p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuerySummary>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuerySummary>> {
         &self.queries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListQueriesOutput`](crate::operation::list_queries::ListQueriesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`queries`](crate::operation::list_queries::builders::ListQueriesOutputBuilder::queries)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesOutput {
-            queries: self.queries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "queries",
-                    "queries was not specified but it is required when building ListQueriesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_queries::ListQueriesOutput {
+                queries: self.queries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("queries", "queries was not specified but it is required when building ListQueriesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssignIpv6AddressesOutput {
+pub struct AssignIpv6AddressesOutput  {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    pub assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    pub assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AssignIpv6AddressesOutput {
+impl  AssignIpv6AddressesOutput  {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_ipv6_addresses.is_none()`.
-    pub fn assigned_ipv6_addresses(&self) -> &[::std::string::String] {
-        self.assigned_ipv6_addresses.as_deref().unwrap_or_default()
+    pub fn assigned_ipv6_addresses(&self) -> & [::std::string::String] {
+        self.assigned_ipv6_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assigned_ipv6_prefixes.is_none()`.
-    pub fn assigned_ipv6_prefixes(&self) -> &[::std::string::String] {
-        self.assigned_ipv6_prefixes.as_deref().unwrap_or_default()
+    pub fn assigned_ipv6_prefixes(&self) -> & [::std::string::String] {
+        self.assigned_ipv6_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AssignIpv6AddressesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssignIpv6AddressesOutput {
     /// Creates a new builder-style object to manufacture [`AssignIpv6AddressesOutput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput).
     pub fn builder() -> crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesOutputBuilder {
@@ -45,8 +47,8 @@ impl AssignIpv6AddressesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssignIpv6AddressesOutputBuilder {
-    pub(crate) assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) assigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl AssignIpv6AddressesOutputBuilder {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
     pub fn assigned_ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assigned_ipv6_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.assigned_ipv6_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assigned_ipv6_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    pub fn set_assigned_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assigned_ipv6_addresses = input;
-        self
+    pub fn set_assigned_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assigned_ipv6_addresses = input; self
     }
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
-    pub fn get_assigned_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assigned_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assigned_ipv6_addresses
     }
     /// Appends an item to `assigned_ipv6_prefixes`.
@@ -78,17 +79,16 @@ impl AssignIpv6AddressesOutputBuilder {
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
     pub fn assigned_ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assigned_ipv6_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.assigned_ipv6_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assigned_ipv6_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    pub fn set_assigned_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assigned_ipv6_prefixes = input;
-        self
+    pub fn set_assigned_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assigned_ipv6_prefixes = input; self
     }
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
-    pub fn get_assigned_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assigned_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assigned_ipv6_prefixes
     }
     /// <p>The ID of the network interface.</p>
@@ -98,29 +98,32 @@ impl AssignIpv6AddressesOutputBuilder {
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_interface_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssignIpv6AddressesOutput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput).
     pub fn build(self) -> crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput {
         crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput {
-            assigned_ipv6_addresses: self.assigned_ipv6_addresses,
-            assigned_ipv6_prefixes: self.assigned_ipv6_prefixes,
-            network_interface_id: self.network_interface_id,
+            assigned_ipv6_addresses: self.assigned_ipv6_addresses
+            ,
+            assigned_ipv6_prefixes: self.assigned_ipv6_prefixes
+            ,
+            network_interface_id: self.network_interface_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

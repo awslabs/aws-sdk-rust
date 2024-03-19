@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSensorStatistics`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dataset_name(impl Into<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::set_dataset_name):<br>required: **true**<br><p>The name of the dataset associated with the list of Sensor Statistics.</p><br>
     ///   - [`ingestion_job_id(impl Into<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::ingestion_job_id) / [`set_ingestion_job_id(Option<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::set_ingestion_job_id):<br>required: **false**<br><p>The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the maximum number of sensors for which to retrieve statistics.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::set_next_token):<br>required: **false**<br><p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p><br>
-    /// - On success, responds with [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput) with field(s):
+                            /// - On success, responds with [`ListSensorStatisticsOutput`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput) with field(s):
     ///   - [`sensor_statistics_summaries(Option<Vec::<SensorStatisticsSummary>>)`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput::sensor_statistics_summaries): <p>Provides ingestion-based statistics regarding the specified sensor with respect to various validation types, such as whether data exists, the number and percentage of missing values, and the number and percentage of duplicate timestamps.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_sensor_statistics::ListSensorStatisticsOutput::next_token): <p>An opaque pagination token indicating where to continue the listing of sensor statistics.</p>
-    /// - On failure, responds with [`SdkError<ListSensorStatisticsError>`](crate::operation::list_sensor_statistics::ListSensorStatisticsError)
+                            /// - On failure, responds with [`SdkError<ListSensorStatisticsError>`](crate::operation::list_sensor_statistics::ListSensorStatisticsError)
     pub fn list_sensor_statistics(&self) -> crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder {
-        crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_sensor_statistics::builders::ListSensorStatisticsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

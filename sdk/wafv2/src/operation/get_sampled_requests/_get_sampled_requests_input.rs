@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSampledRequestsInput {
+pub struct GetSampledRequestsInput  {
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
@@ -21,13 +21,13 @@ pub struct GetSampledRequestsInput {
     /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.</p>
     pub max_items: ::std::option::Option<i64>,
 }
-impl GetSampledRequestsInput {
+impl  GetSampledRequestsInput  {
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
-    pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
+    pub fn web_acl_arn(&self) -> ::std::option::Option<& str> {
         self.web_acl_arn.as_deref()
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
-    pub fn rule_metric_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_metric_name(&self) -> ::std::option::Option<& str> {
         self.rule_metric_name.as_deref()
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -38,11 +38,11 @@ impl GetSampledRequestsInput {
     /// <li>
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
-    pub fn time_window(&self) -> ::std::option::Option<&crate::types::TimeWindow> {
+    pub fn time_window(&self) -> ::std::option::Option<& crate::types::TimeWindow> {
         self.time_window.as_ref()
     }
     /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.</p>
@@ -76,8 +76,7 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_acl_arn = input;
-        self
+        self.web_acl_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     pub fn set_rule_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_metric_name = input;
-        self
+        self.rule_metric_name = input; self
     }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     pub fn get_rule_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl GetSampledRequestsInputBuilder {
     /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
@@ -142,8 +139,7 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
     pub fn set_time_window(mut self, input: ::std::option::Option<crate::types::TimeWindow>) -> Self {
-        self.time_window = input;
-        self
+        self.time_window = input; self
     }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
     pub fn get_time_window(&self) -> &::std::option::Option<crate::types::TimeWindow> {
@@ -157,24 +153,28 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i64> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_sampled_requests::GetSampledRequestsInput {
-            web_acl_arn: self.web_acl_arn,
-            rule_metric_name: self.rule_metric_name,
-            scope: self.scope,
-            time_window: self.time_window,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sampled_requests::GetSampledRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sampled_requests::GetSampledRequestsInput {
+                web_acl_arn: self.web_acl_arn
+                ,
+                rule_metric_name: self.rule_metric_name
+                ,
+                scope: self.scope
+                ,
+                time_window: self.time_window
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

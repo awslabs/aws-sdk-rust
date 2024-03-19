@@ -22,7 +22,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -33,102 +33,78 @@ impl ::std::fmt::Display for Error {
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::SessionExpiredException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::ClientLimitExceededException(inner) => inner.meta(),
-            Self::InvalidArgumentException(inner) => inner.meta(),
-            Self::InvalidClientException(inner) => inner.meta(),
-            Self::NotAuthorizedException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::SessionExpiredException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::ClientLimitExceededException(inner) => inner.meta(),
+Self::InvalidArgumentException(inner) => inner.meta(),
+Self::InvalidClientException(inner) => inner.meta(),
+Self::NotAuthorizedException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::SessionExpiredException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ice_server_config::GetIceServerConfigError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_ice_server_config::GetIceServerConfigError> for Error {
     fn from(err: crate::operation::get_ice_server_config::GetIceServerConfigError) -> Self {
         match err {
-            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidClientException(inner) => Error::InvalidClientException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
-            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::SessionExpiredException(inner) => Error::SessionExpiredException(inner),
             crate::operation::get_ice_server_config::GetIceServerConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError> for Error {
     fn from(err: crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError) -> Self {
         match err {
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -142,7 +118,7 @@ impl ::std::error::Error for Error {
             Error::NotAuthorizedException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::SessionExpiredException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -159,3 +135,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

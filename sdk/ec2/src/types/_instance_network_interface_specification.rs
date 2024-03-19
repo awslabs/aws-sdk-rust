@@ -3,7 +3,7 @@
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceNetworkInterfaceSpecification {
+pub struct InstanceNetworkInterfaceSpecification  {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub associate_public_ip_address: ::std::option::Option<bool>,
@@ -15,18 +15,18 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// <p>If you specify a network interface when launching an instance, you must specify the device index.</p>
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>>,
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address of the network interface. Applies only if creating a network interface when launching an instance. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub private_ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateIpAddressSpecification>>,
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
@@ -41,11 +41,11 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because you can’t specify the network card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub network_card_index: ::std::option::Option<i32>,
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv4PrefixSpecificationRequest>>,
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub ipv4_prefix_count: ::std::option::Option<i32>,
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6PrefixSpecificationRequest>>,
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub ipv6_prefix_count: ::std::option::Option<i32>,
     /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
@@ -55,7 +55,7 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
-impl InstanceNetworkInterfaceSpecification {
+impl  InstanceNetworkInterfaceSpecification  {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
@@ -66,7 +66,7 @@ impl InstanceNetworkInterfaceSpecification {
         self.delete_on_termination
     }
     /// <p>The description of the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The position of the network interface in the attachment order. A primary network interface has a device index of 0.</p>
@@ -75,42 +75,45 @@ impl InstanceNetworkInterfaceSpecification {
         self.device_index
     }
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[::std::string::String] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [::std::string::String] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
-    pub fn ipv6_addresses(&self) -> &[crate::types::InstanceIpv6Address] {
-        self.ipv6_addresses.as_deref().unwrap_or_default()
+    pub fn ipv6_addresses(&self) -> & [crate::types::InstanceIpv6Address] {
+        self.ipv6_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
-    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The private IPv4 address of the network interface. Applies only if creating a network interface when launching an instance. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_ip_addresses.is_none()`.
-    pub fn private_ip_addresses(&self) -> &[crate::types::PrivateIpAddressSpecification] {
-        self.private_ip_addresses.as_deref().unwrap_or_default()
+    pub fn private_ip_addresses(&self) -> & [crate::types::PrivateIpAddressSpecification] {
+        self.private_ip_addresses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
         self.secondary_private_ip_address_count
     }
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Indicates whether to assign a carrier IP address to the network interface.</p>
@@ -120,7 +123,7 @@ impl InstanceNetworkInterfaceSpecification {
     }
     /// <p>The type of network interface.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
-    pub fn interface_type(&self) -> ::std::option::Option<&str> {
+    pub fn interface_type(&self) -> ::std::option::Option<& str> {
         self.interface_type.as_deref()
     }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
@@ -129,20 +132,22 @@ impl InstanceNetworkInterfaceSpecification {
         self.network_card_index
     }
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
-    pub fn ipv4_prefixes(&self) -> &[crate::types::Ipv4PrefixSpecificationRequest] {
-        self.ipv4_prefixes.as_deref().unwrap_or_default()
+    pub fn ipv4_prefixes(&self) -> & [crate::types::Ipv4PrefixSpecificationRequest] {
+        self.ipv4_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub fn ipv4_prefix_count(&self) -> ::std::option::Option<i32> {
         self.ipv4_prefix_count
     }
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_prefixes.is_none()`.
-    pub fn ipv6_prefixes(&self) -> &[crate::types::Ipv6PrefixSpecificationRequest] {
-        self.ipv6_prefixes.as_deref().unwrap_or_default()
+    pub fn ipv6_prefixes(&self) -> & [crate::types::Ipv6PrefixSpecificationRequest] {
+        self.ipv6_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub fn ipv6_prefix_count(&self) -> ::std::option::Option<i32> {
@@ -153,11 +158,11 @@ impl InstanceNetworkInterfaceSpecification {
         self.primary_ipv6
     }
     /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
-    pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::EnaSrdSpecificationRequest> {
+    pub fn ena_srd_specification(&self) -> ::std::option::Option<& crate::types::EnaSrdSpecificationRequest> {
         self.ena_srd_specification.as_ref()
     }
     /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
+    pub fn connection_tracking_specification(&self) -> ::std::option::Option<& crate::types::ConnectionTrackingSpecificationRequest> {
         self.connection_tracking_specification.as_ref()
     }
 }
@@ -176,20 +181,20 @@ pub struct InstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) device_index: ::std::option::Option<i32>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) ipv6_address_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
-    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+    pub(crate) private_ip_addresses: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateIpAddressSpecification>>,
     pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) associate_carrier_ip_address: ::std::option::Option<bool>,
     pub(crate) interface_type: ::std::option::Option<::std::string::String>,
     pub(crate) network_card_index: ::std::option::Option<i32>,
-    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv4PrefixSpecificationRequest>>,
     pub(crate) ipv4_prefix_count: ::std::option::Option<i32>,
-    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+    pub(crate) ipv6_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6PrefixSpecificationRequest>>,
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) primary_ipv6: ::std::option::Option<bool>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>,
@@ -205,8 +210,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.associate_public_ip_address = input;
-        self
+        self.associate_public_ip_address = input; self
     }
     /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     /// <p>Amazon Web Services charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
@@ -220,8 +224,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>If set to <code>true</code>, the interface is deleted when the instance is terminated. You can specify <code>true</code> only if creating a new network interface when launching an instance.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>If set to <code>true</code>, the interface is deleted when the instance is terminated. You can specify <code>true</code> only if creating a new network interface when launching an instance.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -234,8 +237,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The description of the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,8 +252,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The position of the network interface in the attachment order. A primary network interface has a device index of 0.</p>
     /// <p>If you specify a network interface when launching an instance, you must specify the device index.</p>
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.device_index = input;
-        self
+        self.device_index = input; self
     }
     /// <p>The position of the network interface in the attachment order. A primary network interface has a device index of 0.</p>
     /// <p>If you specify a network interface when launching an instance, you must specify the device index.</p>
@@ -265,17 +266,16 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input.into());
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The IDs of the security groups for the network interface. Applies only if creating a network interface when launching an instance.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.groups
     }
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
@@ -285,8 +285,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ipv6_address_count = input;
-        self
+        self.ipv6_address_count = input; self
     }
     /// <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses the IPv6 addresses from the range of the subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
@@ -299,17 +298,16 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     pub fn ipv6_addresses(mut self, input: crate::types::InstanceIpv6Address) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
-        v.push(input);
-        self.ipv6_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>) -> Self {
-        self.ipv6_addresses = input;
-        self
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>>) -> Self {
+        self.ipv6_addresses = input; self
     }
     /// <p>The IPv6 addresses to assign to the network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
-    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>> {
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceIpv6Address>> {
         &self.ipv6_addresses
     }
     /// <p>The ID of the network interface.</p>
@@ -321,8 +319,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
     pub fn set_network_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_interface_id = input;
-        self
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     /// <p>If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a launch specification.</p>
@@ -336,8 +333,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The private IPv4 address of the network interface. Applies only if creating a network interface when launching an instance. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn set_private_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip_address = input;
-        self
+        self.private_ip_address = input; self
     }
     /// <p>The private IPv4 address of the network interface. Applies only if creating a network interface when launching an instance. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,17 +346,16 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn private_ip_addresses(mut self, input: crate::types::PrivateIpAddressSpecification) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.private_ip_addresses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.private_ip_addresses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PrivateIpAddressSpecification>>) -> Self {
+        self.private_ip_addresses = input; self
     }
     /// <p>The private IPv4 addresses to assign to the network interface. Only one private IPv4 address can be designated as primary. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
-    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>> {
+    pub fn get_private_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PrivateIpAddressSpecification>> {
         &self.private_ip_addresses
     }
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
@@ -370,8 +365,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn set_secondary_private_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.secondary_private_ip_address_count = input;
-        self
+        self.secondary_private_ip_address_count = input; self
     }
     /// <p>The number of secondary private IPv4 addresses. You can't specify this option and specify more than one private IP address using the private IP addresses option. You cannot specify this option if you're launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> request.</p>
     pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
@@ -384,8 +378,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the subnet associated with the network interface. Applies only if creating a network interface when launching an instance.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +393,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to assign a carrier IP address to the network interface.</p>
     /// <p>You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For more information about carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
     pub fn set_associate_carrier_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.associate_carrier_ip_address = input;
-        self
+        self.associate_carrier_ip_address = input; self
     }
     /// <p>Indicates whether to assign a carrier IP address to the network interface.</p>
     /// <p>You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For more information about carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP address</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
@@ -417,8 +409,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The type of network interface.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
     pub fn set_interface_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.interface_type = input;
-        self
+        self.interface_type = input; self
     }
     /// <p>The type of network interface.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code></p>
@@ -434,8 +425,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because you can’t specify the network card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.network_card_index = input;
-        self
+        self.network_card_index = input; self
     }
     /// <p>The index of the network card. Some instance types support multiple network cards. The primary network interface must be assigned to network card index 0. The default is network card index 0.</p>
     /// <p>If you are using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a> to create Spot Instances, omit this parameter because you can’t specify the network card index when using this API. To specify the network card index, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
@@ -449,17 +439,16 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub fn ipv4_prefixes(mut self, input: crate::types::Ipv4PrefixSpecificationRequest) -> Self {
         let mut v = self.ipv4_prefixes.unwrap_or_default();
-        v.push(input);
-        self.ipv4_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv4_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>) -> Self {
-        self.ipv4_prefixes = input;
-        self
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv4PrefixSpecificationRequest>>) -> Self {
+        self.ipv4_prefixes = input; self
     }
     /// <p>The IPv4 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>> {
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ipv4PrefixSpecificationRequest>> {
         &self.ipv4_prefixes
     }
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
@@ -469,8 +458,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ipv4_prefix_count = input;
-        self
+        self.ipv4_prefix_count = input; self
     }
     /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
     pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
@@ -483,17 +471,16 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
     pub fn ipv6_prefixes(mut self, input: crate::types::Ipv6PrefixSpecificationRequest) -> Self {
         let mut v = self.ipv6_prefixes.unwrap_or_default();
-        v.push(input);
-        self.ipv6_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>) -> Self {
-        self.ipv6_prefixes = input;
-        self
+    pub fn set_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ipv6PrefixSpecificationRequest>>) -> Self {
+        self.ipv6_prefixes = input; self
     }
     /// <p>The IPv6 delegated prefixes to be assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
-    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>> {
+    pub fn get_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ipv6PrefixSpecificationRequest>> {
         &self.ipv6_prefixes
     }
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
@@ -503,8 +490,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub fn set_ipv6_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ipv6_prefix_count = input;
-        self
+        self.ipv6_prefix_count = input; self
     }
     /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
     pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
@@ -517,8 +503,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub fn set_primary_ipv6(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.primary_ipv6 = input;
-        self
+        self.primary_ipv6 = input; self
     }
     /// <p>The primary IPv6 address of the network interface. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. For more information about primary IPv6 addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
     pub fn get_primary_ipv6(&self) -> &::std::option::Option<bool> {
@@ -531,8 +516,7 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     }
     /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
     pub fn set_ena_srd_specification(mut self, input: ::std::option::Option<crate::types::EnaSrdSpecificationRequest>) -> Self {
-        self.ena_srd_specification = input;
-        self
+        self.ena_srd_specification = input; self
     }
     /// <p>Specifies the ENA Express settings for the network interface that's attached to the instance.</p>
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::EnaSrdSpecificationRequest> {
@@ -544,12 +528,8 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
         self
     }
     /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_connection_tracking_specification(
-        mut self,
-        input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
-    ) -> Self {
-        self.connection_tracking_specification = input;
-        self
+    pub fn set_connection_tracking_specification(mut self, input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>) -> Self {
+        self.connection_tracking_specification = input; self
     }
     /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
@@ -558,28 +538,51 @@ impl InstanceNetworkInterfaceSpecificationBuilder {
     /// Consumes the builder and constructs a [`InstanceNetworkInterfaceSpecification`](crate::types::InstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::InstanceNetworkInterfaceSpecification {
         crate::types::InstanceNetworkInterfaceSpecification {
-            associate_public_ip_address: self.associate_public_ip_address,
-            delete_on_termination: self.delete_on_termination,
-            description: self.description,
-            device_index: self.device_index,
-            groups: self.groups,
-            ipv6_address_count: self.ipv6_address_count,
-            ipv6_addresses: self.ipv6_addresses,
-            network_interface_id: self.network_interface_id,
-            private_ip_address: self.private_ip_address,
-            private_ip_addresses: self.private_ip_addresses,
-            secondary_private_ip_address_count: self.secondary_private_ip_address_count,
-            subnet_id: self.subnet_id,
-            associate_carrier_ip_address: self.associate_carrier_ip_address,
-            interface_type: self.interface_type,
-            network_card_index: self.network_card_index,
-            ipv4_prefixes: self.ipv4_prefixes,
-            ipv4_prefix_count: self.ipv4_prefix_count,
-            ipv6_prefixes: self.ipv6_prefixes,
-            ipv6_prefix_count: self.ipv6_prefix_count,
-            primary_ipv6: self.primary_ipv6,
-            ena_srd_specification: self.ena_srd_specification,
-            connection_tracking_specification: self.connection_tracking_specification,
+            associate_public_ip_address: self.associate_public_ip_address
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            description: self.description
+            ,
+            device_index: self.device_index
+            ,
+            groups: self.groups
+            ,
+            ipv6_address_count: self.ipv6_address_count
+            ,
+            ipv6_addresses: self.ipv6_addresses
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            private_ip_addresses: self.private_ip_addresses
+            ,
+            secondary_private_ip_address_count: self.secondary_private_ip_address_count
+            ,
+            subnet_id: self.subnet_id
+            ,
+            associate_carrier_ip_address: self.associate_carrier_ip_address
+            ,
+            interface_type: self.interface_type
+            ,
+            network_card_index: self.network_card_index
+            ,
+            ipv4_prefixes: self.ipv4_prefixes
+            ,
+            ipv4_prefix_count: self.ipv4_prefix_count
+            ,
+            ipv6_prefixes: self.ipv6_prefixes
+            ,
+            ipv6_prefix_count: self.ipv6_prefix_count
+            ,
+            primary_ipv6: self.primary_ipv6
+            ,
+            ena_srd_specification: self.ena_srd_specification
+            ,
+            connection_tracking_specification: self.connection_tracking_specification
+            ,
         }
     }
 }
+

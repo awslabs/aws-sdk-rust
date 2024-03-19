@@ -3,11 +3,11 @@
 /// <p>The configuration of data that is available for querying from this database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxDatabaseConfiguration {
+pub struct KxDatabaseConfiguration  {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
     pub database_name: ::std::string::String,
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
+    pub cache_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataview to be used for caching historical data on disk.</p>
@@ -15,28 +15,28 @@ pub struct KxDatabaseConfiguration {
     /// <p>The configuration of the dataview to be used with specified cluster.</p>
     pub dataview_configuration: ::std::option::Option<crate::types::KxDataviewConfiguration>,
 }
-impl KxDatabaseConfiguration {
+impl  KxDatabaseConfiguration  {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_configurations.is_none()`.
-    pub fn cache_configurations(&self) -> &[crate::types::KxDatabaseCacheConfiguration] {
-        self.cache_configurations.as_deref().unwrap_or_default()
+    pub fn cache_configurations(&self) -> & [crate::types::KxDatabaseCacheConfiguration] {
+        self.cache_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The name of the dataview to be used for caching historical data on disk.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
     /// <p>The configuration of the dataview to be used with specified cluster.</p>
-    pub fn dataview_configuration(&self) -> ::std::option::Option<&crate::types::KxDataviewConfiguration> {
+    pub fn dataview_configuration(&self) -> ::std::option::Option<& crate::types::KxDataviewConfiguration> {
         self.dataview_configuration.as_ref()
     }
 }
@@ -52,7 +52,7 @@ impl KxDatabaseConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KxDatabaseConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
+    pub(crate) cache_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseCacheConfiguration>>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataview_configuration: ::std::option::Option<crate::types::KxDataviewConfiguration>,
@@ -66,8 +66,7 @@ impl KxDatabaseConfigurationBuilder {
     }
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,17 +79,16 @@ impl KxDatabaseConfigurationBuilder {
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
     pub fn cache_configurations(mut self, input: crate::types::KxDatabaseCacheConfiguration) -> Self {
         let mut v = self.cache_configurations.unwrap_or_default();
-        v.push(input);
-        self.cache_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn set_cache_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>) -> Self {
-        self.cache_configurations = input;
-        self
+    pub fn set_cache_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseCacheConfiguration>>) -> Self {
+        self.cache_configurations = input; self
     }
     /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
-    pub fn get_cache_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>> {
+    pub fn get_cache_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDatabaseCacheConfiguration>> {
         &self.cache_configurations
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
@@ -100,8 +98,7 @@ impl KxDatabaseConfigurationBuilder {
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl KxDatabaseConfigurationBuilder {
     }
     /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>The name of the dataview to be used for caching historical data on disk.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl KxDatabaseConfigurationBuilder {
     }
     /// <p>The configuration of the dataview to be used with specified cluster.</p>
     pub fn set_dataview_configuration(mut self, input: ::std::option::Option<crate::types::KxDataviewConfiguration>) -> Self {
-        self.dataview_configuration = input;
-        self
+        self.dataview_configuration = input; self
     }
     /// <p>The configuration of the dataview to be used with specified cluster.</p>
     pub fn get_dataview_configuration(&self) -> &::std::option::Option<crate::types::KxDataviewConfiguration> {
@@ -139,17 +134,23 @@ impl KxDatabaseConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`database_name`](crate::types::builders::KxDatabaseConfigurationBuilder::database_name)
     pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KxDatabaseConfiguration {
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building KxDatabaseConfiguration",
-                )
-            })?,
-            cache_configurations: self.cache_configurations,
-            changeset_id: self.changeset_id,
-            dataview_name: self.dataview_name,
-            dataview_configuration: self.dataview_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KxDatabaseConfiguration {
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building KxDatabaseConfiguration")
+                    )?
+                ,
+                cache_configurations: self.cache_configurations
+                ,
+                changeset_id: self.changeset_id
+                ,
+                dataview_name: self.dataview_name
+                ,
+                dataview_configuration: self.dataview_configuration
+                ,
+            }
+        )
     }
 }
+

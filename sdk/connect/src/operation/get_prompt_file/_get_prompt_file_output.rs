@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPromptFileOutput {
+pub struct GetPromptFileOutput  {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     pub prompt_presigned_url: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this resource was last modified.</p>
@@ -11,25 +11,25 @@ pub struct GetPromptFileOutput {
     pub last_modified_region: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetPromptFileOutput {
+impl  GetPromptFileOutput  {
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
-    pub fn prompt_presigned_url(&self) -> ::std::option::Option<&str> {
+    pub fn prompt_presigned_url(&self) -> ::std::option::Option<& str> {
         self.prompt_presigned_url.as_deref()
     }
     /// <p>The timestamp when this resource was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
-    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_region(&self) -> ::std::option::Option<& str> {
         self.last_modified_region.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPromptFileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPromptFileOutput {
     /// Creates a new builder-style object to manufacture [`GetPromptFileOutput`](crate::operation::get_prompt_file::GetPromptFileOutput).
     pub fn builder() -> crate::operation::get_prompt_file::builders::GetPromptFileOutputBuilder {
@@ -54,8 +54,7 @@ impl GetPromptFileOutputBuilder {
     }
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     pub fn set_prompt_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prompt_presigned_url = input;
-        self
+        self.prompt_presigned_url = input; self
     }
     /// <p>A generated URL to the prompt that can be given to an unauthorized user so they can access the prompt in S3.</p>
     pub fn get_prompt_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetPromptFileOutputBuilder {
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when this resource was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,29 +80,32 @@ impl GetPromptFileOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_region = input;
-        self
+        self.last_modified_region = input; self
     }
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPromptFileOutput`](crate::operation::get_prompt_file::GetPromptFileOutput).
     pub fn build(self) -> crate::operation::get_prompt_file::GetPromptFileOutput {
         crate::operation::get_prompt_file::GetPromptFileOutput {
-            prompt_presigned_url: self.prompt_presigned_url,
-            last_modified_time: self.last_modified_time,
-            last_modified_region: self.last_modified_region,
+            prompt_presigned_url: self.prompt_presigned_url
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_region: self.last_modified_region
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

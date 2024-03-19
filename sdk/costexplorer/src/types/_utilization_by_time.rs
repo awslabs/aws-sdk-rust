@@ -3,27 +3,28 @@
 /// <p>The amount of utilization, in hours.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtilizationByTime {
+pub struct UtilizationByTime  {
     /// <p>The period of time that this utilization was used for.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The groups that this utilization result uses.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationUtilizationGroup>>,
     /// <p>The total number of reservation hours that were used.</p>
     pub total: ::std::option::Option<crate::types::ReservationAggregates>,
 }
-impl UtilizationByTime {
+impl  UtilizationByTime  {
     /// <p>The period of time that this utilization was used for.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups that this utilization result uses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::ReservationUtilizationGroup] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::ReservationUtilizationGroup] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total number of reservation hours that were used.</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::ReservationAggregates> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::ReservationAggregates> {
         self.total.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl UtilizationByTime {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UtilizationByTimeBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationUtilizationGroup>>,
     pub(crate) total: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl UtilizationByTimeBuilder {
@@ -50,8 +51,7 @@ impl UtilizationByTimeBuilder {
     }
     /// <p>The period of time that this utilization was used for.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>The period of time that this utilization was used for.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -64,17 +64,16 @@ impl UtilizationByTimeBuilder {
     /// <p>The groups that this utilization result uses.</p>
     pub fn groups(mut self, input: crate::types::ReservationUtilizationGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservationUtilizationGroup>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservationUtilizationGroup>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservationUtilizationGroup>> {
         &self.groups
     }
     /// <p>The total number of reservation hours that were used.</p>
@@ -84,8 +83,7 @@ impl UtilizationByTimeBuilder {
     }
     /// <p>The total number of reservation hours that were used.</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::ReservationAggregates>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total number of reservation hours that were used.</p>
     pub fn get_total(&self) -> &::std::option::Option<crate::types::ReservationAggregates> {
@@ -94,9 +92,13 @@ impl UtilizationByTimeBuilder {
     /// Consumes the builder and constructs a [`UtilizationByTime`](crate::types::UtilizationByTime).
     pub fn build(self) -> crate::types::UtilizationByTime {
         crate::types::UtilizationByTime {
-            time_period: self.time_period,
-            groups: self.groups,
-            total: self.total,
+            time_period: self.time_period
+            ,
+            groups: self.groups
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

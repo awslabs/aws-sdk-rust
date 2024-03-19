@@ -3,17 +3,17 @@
 /// <p>Represents the request to sign out all devices.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GlobalSignOutInput {
+pub struct GlobalSignOutInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
-impl GlobalSignOutInput {
+impl  GlobalSignOutInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for GlobalSignOutInput {
+impl  ::std::fmt::Debug for GlobalSignOutInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GlobalSignOutInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -42,20 +42,20 @@ impl GlobalSignOutInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`GlobalSignOutInput`](crate::operation::global_sign_out::GlobalSignOutInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::global_sign_out::GlobalSignOutInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::global_sign_out::GlobalSignOutInput {
-            access_token: self.access_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::global_sign_out::GlobalSignOutInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::global_sign_out::GlobalSignOutInput {
+                access_token: self.access_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GlobalSignOutInputBuilder {
@@ -65,3 +65,4 @@ impl ::std::fmt::Debug for GlobalSignOutInputBuilder {
         formatter.finish()
     }
 }
+

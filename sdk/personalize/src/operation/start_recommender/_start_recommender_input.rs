@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartRecommenderInput {
+pub struct StartRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     pub recommender_arn: ::std::option::Option<::std::string::String>,
 }
-impl StartRecommenderInput {
+impl  StartRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StartRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_arn
     }
     /// Consumes the builder and constructs a [`StartRecommenderInput`](crate::operation::start_recommender::StartRecommenderInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_recommender::StartRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_recommender::StartRecommenderInput {
-            recommender_arn: self.recommender_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_recommender::StartRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_recommender::StartRecommenderInput {
+                recommender_arn: self.recommender_arn
+                ,
+            }
+        )
     }
 }
+

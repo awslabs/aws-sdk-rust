@@ -3,9 +3,9 @@
 /// <p>The configuration for the filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails  {
     /// <p>The values to use for the filter.</p>
-    pub operands: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
+    pub operands: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
     /// <p>A prefix filter.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>A tag filter.</p>
@@ -13,23 +13,24 @@ pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
+impl  AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails  {
     /// <p>The values to use for the filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operands.is_none()`.
-    pub fn operands(&self) -> &[crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails] {
-        self.operands.as_deref().unwrap_or_default()
+    pub fn operands(&self) -> & [crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails] {
+        self.operands.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A prefix filter.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A tag filter.</p>
-    pub fn tag(&self) -> ::std::option::Option<&crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails> {
+    pub fn tag(&self) -> ::std::option::Option<& crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails> {
         self.tag.as_ref()
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -44,8 +45,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
-    pub(crate) operands:
-        ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
+    pub(crate) operands: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tag: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -58,22 +58,16 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     /// <p>The values to use for the filter.</p>
     pub fn operands(mut self, input: crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails) -> Self {
         let mut v = self.operands.unwrap_or_default();
-        v.push(input);
-        self.operands = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.operands = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn set_operands(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
-    ) -> Self {
-        self.operands = input;
-        self
+    pub fn set_operands(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>) -> Self {
+        self.operands = input; self
     }
     /// <p>The values to use for the filter.</p>
-    pub fn get_operands(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>> {
+    pub fn get_operands(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>> {
         &self.operands
     }
     /// <p>A prefix filter.</p>
@@ -83,8 +77,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     }
     /// <p>A prefix filter.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>A prefix filter.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,12 +89,8 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
         self
     }
     /// <p>A tag filter.</p>
-    pub fn set_tag(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>,
-    ) -> Self {
-        self.tag = input;
-        self
+    pub fn set_tag(mut self, input: ::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails>) -> Self {
+        self.tag = input; self
     }
     /// <p>A tag filter.</p>
     pub fn get_tag(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails> {
@@ -114,8 +103,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,10 +112,15 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
-            operands: self.operands,
-            prefix: self.prefix,
-            tag: self.tag,
-            r#type: self.r#type,
+            operands: self.operands
+            ,
+            prefix: self.prefix
+            ,
+            tag: self.tag
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

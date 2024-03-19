@@ -3,7 +3,7 @@
 /// <p>Details about the source content data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceContentDataDetails {
+pub struct SourceContentDataDetails  {
     /// <p>The identifier of the source content.</p>
     pub id: ::std::string::String,
     /// <p>The type of the source content.</p>
@@ -13,22 +13,21 @@ pub struct SourceContentDataDetails {
     /// <p>Details about the source content ranking data.</p>
     pub ranking_data: ::std::option::Option<crate::types::RankingData>,
 }
-impl SourceContentDataDetails {
+impl  SourceContentDataDetails  {
     /// <p>The identifier of the source content.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The type of the source content.</p>
-    pub fn r#type(&self) -> &crate::types::SourceContentType {
+    pub fn r#type(&self) -> & crate::types::SourceContentType {
         &self.r#type
     }
     /// <p>Details about the source content text data.</p>
-    pub fn text_data(&self) -> ::std::option::Option<&crate::types::TextData> {
+    pub fn text_data(&self) -> ::std::option::Option<& crate::types::TextData> {
         self.text_data.as_ref()
     }
     /// <p>Details about the source content ranking data.</p>
-    pub fn ranking_data(&self) -> ::std::option::Option<&crate::types::RankingData> {
+    pub fn ranking_data(&self) -> ::std::option::Option<& crate::types::RankingData> {
         self.ranking_data.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl SourceContentDataDetailsBuilder {
     }
     /// <p>The identifier of the source content.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the source content.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +70,7 @@ impl SourceContentDataDetailsBuilder {
     }
     /// <p>The type of the source content.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceContentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the source content.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceContentType> {
@@ -87,8 +84,7 @@ impl SourceContentDataDetailsBuilder {
     }
     /// <p>Details about the source content text data.</p>
     pub fn set_text_data(mut self, input: ::std::option::Option<crate::types::TextData>) -> Self {
-        self.text_data = input;
-        self
+        self.text_data = input; self
     }
     /// <p>Details about the source content text data.</p>
     pub fn get_text_data(&self) -> &::std::option::Option<crate::types::TextData> {
@@ -102,8 +98,7 @@ impl SourceContentDataDetailsBuilder {
     }
     /// <p>Details about the source content ranking data.</p>
     pub fn set_ranking_data(mut self, input: ::std::option::Option<crate::types::RankingData>) -> Self {
-        self.ranking_data = input;
-        self
+        self.ranking_data = input; self
     }
     /// <p>Details about the source content ranking data.</p>
     pub fn get_ranking_data(&self) -> &::std::option::Option<crate::types::RankingData> {
@@ -114,21 +109,24 @@ impl SourceContentDataDetailsBuilder {
     /// - [`id`](crate::types::builders::SourceContentDataDetailsBuilder::id)
     /// - [`r#type`](crate::types::builders::SourceContentDataDetailsBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceContentDataDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SourceContentDataDetails {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building SourceContentDataDetails",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building SourceContentDataDetails",
-                )
-            })?,
-            text_data: self.text_data,
-            ranking_data: self.ranking_data,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SourceContentDataDetails {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building SourceContentDataDetails")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building SourceContentDataDetails")
+                    )?
+                ,
+                text_data: self.text_data
+                ,
+                ranking_data: self.ranking_data
+                ,
+            }
+        )
     }
 }
+

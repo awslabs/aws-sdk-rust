@@ -3,7 +3,7 @@
 /// <p>The summary of the SAP application registered with AWS Systems Manager for SAP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The ID of the application.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the latest discovery.</p>
@@ -13,27 +13,27 @@ pub struct ApplicationSummary {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags on the application.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The ID of the application.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the latest discovery.</p>
-    pub fn discovery_status(&self) -> ::std::option::Option<&crate::types::ApplicationDiscoveryStatus> {
+    pub fn discovery_status(&self) -> ::std::option::Option<& crate::types::ApplicationDiscoveryStatus> {
         self.discovery_status.as_ref()
     }
     /// <p>The type of the application.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ApplicationType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tags on the application.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,7 +52,7 @@ pub struct ApplicationSummaryBuilder {
     pub(crate) discovery_status: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApplicationType>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ApplicationSummaryBuilder {
     /// <p>The ID of the application.</p>
@@ -62,8 +62,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The status of the latest discovery.</p>
     pub fn set_discovery_status(mut self, input: ::std::option::Option<crate::types::ApplicationDiscoveryStatus>) -> Self {
-        self.discovery_status = input;
-        self
+        self.discovery_status = input; self
     }
     /// <p>The status of the latest discovery.</p>
     pub fn get_discovery_status(&self) -> &::std::option::Option<crate::types::ApplicationDiscoveryStatus> {
@@ -90,8 +88,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The type of the application.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the application.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
@@ -104,8 +101,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,27 +114,32 @@ impl ApplicationSummaryBuilder {
     /// <p>The tags on the application.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags on the application.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags on the application.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {
         crate::types::ApplicationSummary {
-            id: self.id,
-            discovery_status: self.discovery_status,
-            r#type: self.r#type,
-            arn: self.arn,
-            tags: self.tags,
+            id: self.id
+            ,
+            discovery_status: self.discovery_status
+            ,
+            r#type: self.r#type
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

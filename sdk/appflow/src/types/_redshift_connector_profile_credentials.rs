@@ -3,23 +3,23 @@
 /// <p>The connector-specific profile credentials required when using Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RedshiftConnectorProfileCredentials {
+pub struct RedshiftConnectorProfileCredentials  {
     /// <p>The name of the user.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password that corresponds to the user name.</p>
     pub password: ::std::option::Option<::std::string::String>,
 }
-impl RedshiftConnectorProfileCredentials {
+impl  RedshiftConnectorProfileCredentials  {
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password that corresponds to the user name.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl ::std::fmt::Debug for RedshiftConnectorProfileCredentials {
+impl  ::std::fmt::Debug for RedshiftConnectorProfileCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftConnectorProfileCredentials");
         formatter.field("username", &self.username);
@@ -49,8 +49,7 @@ impl RedshiftConnectorProfileCredentialsBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The name of the user.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RedshiftConnectorProfileCredentialsBuilder {
     }
     /// <p>The password that corresponds to the user name.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password that corresponds to the user name.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl RedshiftConnectorProfileCredentialsBuilder {
     /// Consumes the builder and constructs a [`RedshiftConnectorProfileCredentials`](crate::types::RedshiftConnectorProfileCredentials).
     pub fn build(self) -> crate::types::RedshiftConnectorProfileCredentials {
         crate::types::RedshiftConnectorProfileCredentials {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RedshiftConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

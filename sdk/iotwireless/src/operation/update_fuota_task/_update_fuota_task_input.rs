@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFuotaTaskInput {
+pub struct UpdateFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a FUOTA task.</p>
@@ -24,29 +24,29 @@ pub struct UpdateFuotaTaskInput {
     /// </note>
     pub fragment_interval_ms: ::std::option::Option<i32>,
 }
-impl UpdateFuotaTaskInput {
+impl  UpdateFuotaTaskInput  {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanFuotaTask> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<& crate::types::LoRaWanFuotaTask> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(&self) -> ::std::option::Option<&str> {
+    pub fn firmware_update_image(&self) -> ::std::option::Option<& str> {
         self.firmware_update_image.as_deref()
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(&self) -> ::std::option::Option<&str> {
+    pub fn firmware_update_role(&self) -> ::std::option::Option<& str> {
         self.firmware_update_role.as_deref()
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
@@ -94,8 +94,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a FUOTA task.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +120,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn set_lo_ra_wan(mut self, input: ::std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
-        self.lo_ra_wan = input;
-        self
+        self.lo_ra_wan = input; self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanFuotaTask> {
@@ -150,8 +146,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firmware_update_image = input;
-        self
+        self.firmware_update_image = input; self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn get_firmware_update_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +159,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firmware_update_role = input;
-        self
+        self.firmware_update_role = input; self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn get_firmware_update_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +172,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn set_redundancy_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.redundancy_percent = input;
-        self
+        self.redundancy_percent = input; self
     }
     /// <p>The percentage of the added fragments that are redundant. For example, if the size of the firmware image file is 100 bytes and the fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
     pub fn get_redundancy_percent(&self) -> &::std::option::Option<i32> {
@@ -192,8 +185,7 @@ impl UpdateFuotaTaskInputBuilder {
     }
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn set_fragment_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fragment_size_bytes = input;
-        self
+        self.fragment_size_bytes = input; self
     }
     /// <p>The size of each fragment in bytes. This parameter is supported only for FUOTA tasks with multicast groups.</p>
     pub fn get_fragment_size_bytes(&self) -> &::std::option::Option<i32> {
@@ -210,8 +202,7 @@ impl UpdateFuotaTaskInputBuilder {
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
     /// </note>
     pub fn set_fragment_interval_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.fragment_interval_ms = input;
-        self
+        self.fragment_interval_ms = input; self
     }
     /// <p>The interval for sending fragments in milliseconds, rounded to the nearest second.</p><note>
     /// <p>This interval only determines the timing for when the Cloud sends down the fragments to yor device. There can be a delay for when your device will receive these fragments. This delay depends on the device's class and the communication delay with the cloud.</p>
@@ -220,19 +211,29 @@ impl UpdateFuotaTaskInputBuilder {
         &self.fragment_interval_ms
     }
     /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::operation::update_fuota_task::UpdateFuotaTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_fuota_task::UpdateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_fuota_task::UpdateFuotaTaskInput {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            lo_ra_wan: self.lo_ra_wan,
-            firmware_update_image: self.firmware_update_image,
-            firmware_update_role: self.firmware_update_role,
-            redundancy_percent: self.redundancy_percent,
-            fragment_size_bytes: self.fragment_size_bytes,
-            fragment_interval_ms: self.fragment_interval_ms,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_fuota_task::UpdateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_fuota_task::UpdateFuotaTaskInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                lo_ra_wan: self.lo_ra_wan
+                ,
+                firmware_update_image: self.firmware_update_image
+                ,
+                firmware_update_role: self.firmware_update_role
+                ,
+                redundancy_percent: self.redundancy_percent
+                ,
+                fragment_size_bytes: self.fragment_size_bytes
+                ,
+                fragment_interval_ms: self.fragment_interval_ms
+                ,
+            }
+        )
     }
 }
+

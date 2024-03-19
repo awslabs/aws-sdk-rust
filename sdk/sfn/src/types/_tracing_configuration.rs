@@ -3,11 +3,11 @@
 /// <p>Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TracingConfiguration {
+pub struct TracingConfiguration  {
     /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
     pub enabled: bool,
 }
-impl TracingConfiguration {
+impl  TracingConfiguration  {
     /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
@@ -34,8 +34,7 @@ impl TracingConfigurationBuilder {
     }
     /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>When set to <code>true</code>, X-Ray tracing is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl TracingConfigurationBuilder {
     /// Consumes the builder and constructs a [`TracingConfiguration`](crate::types::TracingConfiguration).
     pub fn build(self) -> crate::types::TracingConfiguration {
         crate::types::TracingConfiguration {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

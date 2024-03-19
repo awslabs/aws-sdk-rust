@@ -3,7 +3,7 @@
 /// <p>The details of a business glossary term.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GlossaryTermItem {
+pub struct GlossaryTermItem  {
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
     pub domain_id: ::std::string::String,
     /// <p>The identifier of the business glossary to which the term belongs.</p>
@@ -29,61 +29,57 @@ pub struct GlossaryTermItem {
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
-impl GlossaryTermItem {
+impl  GlossaryTermItem  {
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The identifier of the business glossary to which the term belongs.</p>
-    pub fn glossary_id(&self) -> &str {
-        use std::ops::Deref;
-        self.glossary_id.deref()
+    pub fn glossary_id(&self) -> & str {
+        use std::ops::Deref; self.glossary_id.deref()
     }
     /// <p>The identifier of the business glossary term.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of the business glossary term.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The short description of the business glossary term.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The long description of the business glossary term.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The relations of the business glossary term.</p>
-    pub fn term_relations(&self) -> ::std::option::Option<&crate::types::TermRelations> {
+    pub fn term_relations(&self) -> ::std::option::Option<& crate::types::TermRelations> {
         self.term_relations.as_ref()
     }
     /// <p>The status of the business glossary term.</p>
-    pub fn status(&self) -> &crate::types::GlossaryTermStatus {
+    pub fn status(&self) -> & crate::types::GlossaryTermStatus {
         &self.status
     }
     /// <p>The timestamp of when a business glossary term was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The timestamp of when a business glossary term was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
-impl ::std::fmt::Debug for GlossaryTermItem {
+impl  ::std::fmt::Debug for GlossaryTermItem  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GlossaryTermItem");
         formatter.field("domain_id", &self.domain_id);
@@ -134,8 +130,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which the business glossary exists.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The identifier of the business glossary to which the term belongs.</p>
     pub fn set_glossary_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.glossary_id = input;
-        self
+        self.glossary_id = input; self
     }
     /// <p>The identifier of the business glossary to which the term belongs.</p>
     pub fn get_glossary_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +158,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The identifier of the business glossary term.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the business glossary term.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +172,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The name of the business glossary term.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the business glossary term.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +185,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The short description of the business glossary term.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>The short description of the business glossary term.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +198,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The long description of the business glossary term.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>The long description of the business glossary term.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +211,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The relations of the business glossary term.</p>
     pub fn set_term_relations(mut self, input: ::std::option::Option<crate::types::TermRelations>) -> Self {
-        self.term_relations = input;
-        self
+        self.term_relations = input; self
     }
     /// <p>The relations of the business glossary term.</p>
     pub fn get_term_relations(&self) -> &::std::option::Option<crate::types::TermRelations> {
@@ -236,8 +225,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The status of the business glossary term.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryTermStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the business glossary term.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryTermStatus> {
@@ -250,8 +238,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The timestamp of when a business glossary term was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when a business glossary term was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -264,8 +251,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The Amazon DataZone user who created the business glossary.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +264,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The timestamp of when a business glossary term was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when a business glossary term was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -292,8 +277,7 @@ impl GlossaryTermItemBuilder {
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p>The Amazon DataZone user who updated the business glossary term.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,45 +291,49 @@ impl GlossaryTermItemBuilder {
     /// - [`name`](crate::types::builders::GlossaryTermItemBuilder::name)
     /// - [`status`](crate::types::builders::GlossaryTermItemBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::GlossaryTermItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlossaryTermItem {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GlossaryTermItem",
-                )
-            })?,
-            glossary_id: self.glossary_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "glossary_id",
-                    "glossary_id was not specified but it is required when building GlossaryTermItem",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GlossaryTermItem",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GlossaryTermItem",
-                )
-            })?,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            term_relations: self.term_relations,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GlossaryTermItem",
-                )
-            })?,
-            created_at: self.created_at,
-            created_by: self.created_by,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlossaryTermItem {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building GlossaryTermItem")
+                    )?
+                ,
+                glossary_id: self.glossary_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("glossary_id", "glossary_id was not specified but it is required when building GlossaryTermItem")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GlossaryTermItem")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GlossaryTermItem")
+                    )?
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                term_relations: self.term_relations
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GlossaryTermItem")
+                    )?
+                ,
+                created_at: self.created_at
+                ,
+                created_by: self.created_by
+                ,
+                updated_at: self.updated_at
+                ,
+                updated_by: self.updated_by
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GlossaryTermItemBuilder {
@@ -366,3 +354,4 @@ impl ::std::fmt::Debug for GlossaryTermItemBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxDataviewInput {
+pub struct GetKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database where you created the dataview.</p>
@@ -10,17 +10,17 @@ pub struct GetKxDataviewInput {
     /// <p>A unique identifier for the dataview.</p>
     pub dataview_name: ::std::option::Option<::std::string::String>,
 }
-impl GetKxDataviewInput {
+impl  GetKxDataviewInput  {
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the database where you created the dataview.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A unique identifier for the dataview.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, from where you want to retrieve the dataview details.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetKxDataviewInputBuilder {
     }
     /// <p>The name of the database where you created the dataview.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database where you created the dataview.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl GetKxDataviewInputBuilder {
     }
     /// <p>A unique identifier for the dataview.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>A unique identifier for the dataview.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataview_name
     }
     /// Consumes the builder and constructs a [`GetKxDataviewInput`](crate::operation::get_kx_dataview::GetKxDataviewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kx_dataview::GetKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_kx_dataview::GetKxDataviewInput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            dataview_name: self.dataview_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kx_dataview::GetKxDataviewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kx_dataview::GetKxDataviewInput {
+                environment_id: self.environment_id
+                ,
+                database_name: self.database_name
+                ,
+                dataview_name: self.dataview_name
+                ,
+            }
+        )
     }
 }
+

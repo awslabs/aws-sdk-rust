@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput {
+pub struct DeleteResourcePolicyInput  {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy ID.</p>
@@ -10,17 +10,17 @@ pub struct DeleteResourcePolicyInput {
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub policy_hash: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourcePolicyInput {
+impl  DeleteResourcePolicyInput  {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The policy ID.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
-    pub fn policy_hash(&self) -> ::std::option::Option<&str> {
+    pub fn policy_hash(&self) -> ::std::option::Option<& str> {
         self.policy_hash.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The policy ID.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The policy ID.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_hash = input;
-        self
+        self.policy_hash = input; self
     }
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_hash
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy_id: self.policy_id,
-            policy_hash: self.policy_hash,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy_id: self.policy_id
+                ,
+                policy_hash: self.policy_hash
+                ,
+            }
+        )
     }
 }
+

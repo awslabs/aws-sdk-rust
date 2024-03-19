@@ -3,7 +3,7 @@
 /// <p>The details for a local or partner AS2 profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribedProfile {
+pub struct DescribedProfile  {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
     pub arn: ::std::string::String,
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
@@ -13,39 +13,40 @@ pub struct DescribedProfile {
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub as2_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub certificate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub certificate_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DescribedProfile {
+impl  DescribedProfile  {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+    pub fn profile_type(&self) -> ::std::option::Option<& crate::types::ProfileType> {
         self.profile_type.as_ref()
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
-    pub fn as2_id(&self) -> ::std::option::Option<&str> {
+    pub fn as2_id(&self) -> ::std::option::Option<& str> {
         self.as2_id.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_ids.is_none()`.
-    pub fn certificate_ids(&self) -> &[::std::string::String] {
-        self.certificate_ids.as_deref().unwrap_or_default()
+    pub fn certificate_ids(&self) -> & [::std::string::String] {
+        self.certificate_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribedProfile {
@@ -63,8 +64,8 @@ pub struct DescribedProfileBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
     pub(crate) as2_id: ::std::option::Option<::std::string::String>,
-    pub(crate) certificate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) certificate_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DescribedProfileBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
@@ -75,8 +76,7 @@ impl DescribedProfileBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl DescribedProfileBuilder {
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl DescribedProfileBuilder {
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
-        self.profile_type = input;
-        self
+        self.profile_type = input; self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
@@ -117,8 +115,7 @@ impl DescribedProfileBuilder {
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn set_as2_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.as2_id = input;
-        self
+        self.as2_id = input; self
     }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn get_as2_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +128,16 @@ impl DescribedProfileBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_ids.unwrap_or_default();
-        v.push(input.into());
-        self.certificate_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.certificate_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.certificate_ids = input;
-        self
+    pub fn set_certificate_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.certificate_ids = input; self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_certificate_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.certificate_ids
     }
     /// Appends an item to `tags`.
@@ -151,35 +147,41 @@ impl DescribedProfileBuilder {
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Key-value pairs that can be used to group and search for profiles.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DescribedProfile`](crate::types::DescribedProfile).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedProfileBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DescribedProfile, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DescribedProfile {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DescribedProfile",
-                )
-            })?,
-            profile_id: self.profile_id,
-            profile_type: self.profile_type,
-            as2_id: self.as2_id,
-            certificate_ids: self.certificate_ids,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DescribedProfile {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building DescribedProfile")
+                    )?
+                ,
+                profile_id: self.profile_id
+                ,
+                profile_type: self.profile_type
+                ,
+                as2_id: self.as2_id
+                ,
+                certificate_ids: self.certificate_ids
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

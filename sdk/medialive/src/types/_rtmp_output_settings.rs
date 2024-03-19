@@ -3,7 +3,7 @@
 /// Rtmp Output Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RtmpOutputSettings {
+pub struct RtmpOutputSettings  {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     pub certificate_mode: ::std::option::Option<crate::types::RtmpOutputCertificateMode>,
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
@@ -13,9 +13,9 @@ pub struct RtmpOutputSettings {
     /// Number of retry attempts.
     pub num_retries: ::std::option::Option<i32>,
 }
-impl RtmpOutputSettings {
+impl  RtmpOutputSettings  {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
-    pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::RtmpOutputCertificateMode> {
+    pub fn certificate_mode(&self) -> ::std::option::Option<& crate::types::RtmpOutputCertificateMode> {
         self.certificate_mode.as_ref()
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
@@ -23,7 +23,7 @@ impl RtmpOutputSettings {
         self.connection_retry_interval
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
     /// Number of retry attempts.
@@ -55,8 +55,7 @@ impl RtmpOutputSettingsBuilder {
     }
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     pub fn set_certificate_mode(mut self, input: ::std::option::Option<crate::types::RtmpOutputCertificateMode>) -> Self {
-        self.certificate_mode = input;
-        self
+        self.certificate_mode = input; self
     }
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
     pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::RtmpOutputCertificateMode> {
@@ -69,8 +68,7 @@ impl RtmpOutputSettingsBuilder {
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
     pub fn set_connection_retry_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.connection_retry_interval = input;
-        self
+        self.connection_retry_interval = input; self
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
     pub fn get_connection_retry_interval(&self) -> &::std::option::Option<i32> {
@@ -84,8 +82,7 @@ impl RtmpOutputSettingsBuilder {
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::OutputLocationRef>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::OutputLocationRef> {
@@ -98,8 +95,7 @@ impl RtmpOutputSettingsBuilder {
     }
     /// Number of retry attempts.
     pub fn set_num_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_retries = input;
-        self
+        self.num_retries = input; self
     }
     /// Number of retry attempts.
     pub fn get_num_retries(&self) -> &::std::option::Option<i32> {
@@ -108,10 +104,15 @@ impl RtmpOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`RtmpOutputSettings`](crate::types::RtmpOutputSettings).
     pub fn build(self) -> crate::types::RtmpOutputSettings {
         crate::types::RtmpOutputSettings {
-            certificate_mode: self.certificate_mode,
-            connection_retry_interval: self.connection_retry_interval,
-            destination: self.destination,
-            num_retries: self.num_retries,
+            certificate_mode: self.certificate_mode
+            ,
+            connection_retry_interval: self.connection_retry_interval
+            ,
+            destination: self.destination
+            ,
+            num_retries: self.num_retries
+            ,
         }
     }
 }
+

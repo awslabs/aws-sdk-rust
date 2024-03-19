@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutBucketLifecycleConfigurationInput {
+pub struct PutBucketLifecycleConfigurationInput  {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bucket for which to set the configuration.</p>
@@ -10,17 +10,17 @@ pub struct PutBucketLifecycleConfigurationInput {
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
 }
-impl PutBucketLifecycleConfigurationInput {
+impl  PutBucketLifecycleConfigurationInput  {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> ::std::option::Option<& crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
-        self.lifecycle_configuration = input;
-        self
+        self.lifecycle_configuration = input; self
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput {
-                account_id: self.account_id,
-                bucket: self.bucket,
-                lifecycle_configuration: self.lifecycle_configuration,
-            },
+                account_id: self.account_id
+                ,
+                bucket: self.bucket
+                ,
+                lifecycle_configuration: self.lifecycle_configuration
+                ,
+            }
         )
     }
 }
+

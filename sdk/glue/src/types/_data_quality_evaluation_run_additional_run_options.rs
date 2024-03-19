@@ -3,19 +3,19 @@
 /// <p>Additional run options you can specify for an evaluation run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataQualityEvaluationRunAdditionalRunOptions {
+pub struct DataQualityEvaluationRunAdditionalRunOptions  {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Prefix for Amazon S3 to store results.</p>
     pub results_s3_prefix: ::std::option::Option<::std::string::String>,
 }
-impl DataQualityEvaluationRunAdditionalRunOptions {
+impl  DataQualityEvaluationRunAdditionalRunOptions  {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     pub fn cloud_watch_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.cloud_watch_metrics_enabled
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
-    pub fn results_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn results_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.results_s3_prefix.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     }
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cloud_watch_metrics_enabled = input;
-        self
+        self.cloud_watch_metrics_enabled = input; self
     }
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
     pub fn set_results_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.results_s3_prefix = input;
-        self
+        self.results_s3_prefix = input; self
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
     pub fn get_results_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     /// Consumes the builder and constructs a [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
     pub fn build(self) -> crate::types::DataQualityEvaluationRunAdditionalRunOptions {
         crate::types::DataQualityEvaluationRunAdditionalRunOptions {
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
-            results_s3_prefix: self.results_s3_prefix,
+            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
+            ,
+            results_s3_prefix: self.results_s3_prefix
+            ,
         }
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>Assigns Athena workgroups (and hence their queries) to capacity reservations. A capacity reservation can have only one capacity assignment configuration, but the capacity assignment configuration can be made up of multiple individual assignments. Each assignment specifies how Athena queries can consume capacity from the capacity reservation that their workgroup is mapped to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityAssignmentConfiguration {
+pub struct CapacityAssignmentConfiguration  {
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
     pub capacity_reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub capacity_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityAssignment>>,
 }
-impl CapacityAssignmentConfiguration {
+impl  CapacityAssignmentConfiguration  {
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
-    pub fn capacity_reservation_name(&self) -> ::std::option::Option<&str> {
+    pub fn capacity_reservation_name(&self) -> ::std::option::Option<& str> {
         self.capacity_reservation_name.as_deref()
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_assignments.is_none()`.
-    pub fn capacity_assignments(&self) -> &[crate::types::CapacityAssignment] {
-        self.capacity_assignments.as_deref().unwrap_or_default()
+    pub fn capacity_assignments(&self) -> & [crate::types::CapacityAssignment] {
+        self.capacity_assignments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CapacityAssignmentConfiguration {
@@ -33,7 +34,7 @@ impl CapacityAssignmentConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CapacityAssignmentConfigurationBuilder {
     pub(crate) capacity_reservation_name: ::std::option::Option<::std::string::String>,
-    pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>,
+    pub(crate) capacity_assignments: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityAssignment>>,
 }
 impl CapacityAssignmentConfigurationBuilder {
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
@@ -43,8 +44,7 @@ impl CapacityAssignmentConfigurationBuilder {
     }
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
     pub fn set_capacity_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capacity_reservation_name = input;
-        self
+        self.capacity_reservation_name = input; self
     }
     /// <p>The name of the reservation that the capacity assignment configuration is for.</p>
     pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl CapacityAssignmentConfigurationBuilder {
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
     pub fn capacity_assignments(mut self, input: crate::types::CapacityAssignment) -> Self {
         let mut v = self.capacity_assignments.unwrap_or_default();
-        v.push(input);
-        self.capacity_assignments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_assignments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn set_capacity_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>>) -> Self {
-        self.capacity_assignments = input;
-        self
+    pub fn set_capacity_assignments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityAssignment>>) -> Self {
+        self.capacity_assignments = input; self
     }
     /// <p>The list of assignments that make up the capacity assignment configuration.</p>
-    pub fn get_capacity_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+    pub fn get_capacity_assignments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityAssignment>> {
         &self.capacity_assignments
     }
     /// Consumes the builder and constructs a [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).
     pub fn build(self) -> crate::types::CapacityAssignmentConfiguration {
         crate::types::CapacityAssignmentConfiguration {
-            capacity_reservation_name: self.capacity_reservation_name,
-            capacity_assignments: self.capacity_assignments,
+            capacity_reservation_name: self.capacity_reservation_name
+            ,
+            capacity_assignments: self.capacity_assignments
+            ,
         }
     }
 }
+

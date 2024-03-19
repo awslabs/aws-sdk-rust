@@ -3,19 +3,19 @@
 /// <p>Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CelebrityRecognition {
+pub struct CelebrityRecognition  {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     pub timestamp: i64,
     /// <p>Information about a recognized celebrity.</p>
     pub celebrity: ::std::option::Option<crate::types::CelebrityDetail>,
 }
-impl CelebrityRecognition {
+impl  CelebrityRecognition  {
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     pub fn timestamp(&self) -> i64 {
         self.timestamp
     }
     /// <p>Information about a recognized celebrity.</p>
-    pub fn celebrity(&self) -> ::std::option::Option<&crate::types::CelebrityDetail> {
+    pub fn celebrity(&self) -> ::std::option::Option<& crate::types::CelebrityDetail> {
         self.celebrity.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CelebrityRecognitionBuilder {
     }
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl CelebrityRecognitionBuilder {
     }
     /// <p>Information about a recognized celebrity.</p>
     pub fn set_celebrity(mut self, input: ::std::option::Option<crate::types::CelebrityDetail>) -> Self {
-        self.celebrity = input;
-        self
+        self.celebrity = input; self
     }
     /// <p>Information about a recognized celebrity.</p>
     pub fn get_celebrity(&self) -> &::std::option::Option<crate::types::CelebrityDetail> {
@@ -65,8 +63,12 @@ impl CelebrityRecognitionBuilder {
     /// Consumes the builder and constructs a [`CelebrityRecognition`](crate::types::CelebrityRecognition).
     pub fn build(self) -> crate::types::CelebrityRecognition {
         crate::types::CelebrityRecognition {
-            timestamp: self.timestamp.unwrap_or_default(),
-            celebrity: self.celebrity,
+            timestamp: self.timestamp
+                .unwrap_or_default()
+            ,
+            celebrity: self.celebrity
+            ,
         }
     }
 }
+

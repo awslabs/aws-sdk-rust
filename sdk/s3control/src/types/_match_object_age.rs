@@ -3,13 +3,13 @@
 /// <p>A filter condition that specifies the object age range of included objects in days. Only integers are supported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchObjectAge {
+pub struct MatchObjectAge  {
     /// <p>Specifies the maximum object age in days. Must be a positive whole number, greater than the minimum object age and less than or equal to 2,147,483,647.</p>
     pub days_greater_than: i32,
     /// <p>Specifies the minimum object age in days. The value must be a positive whole number, greater than 0 and less than or equal to 2,147,483,647.</p>
     pub days_less_than: i32,
 }
-impl MatchObjectAge {
+impl  MatchObjectAge  {
     /// <p>Specifies the maximum object age in days. Must be a positive whole number, greater than the minimum object age and less than or equal to 2,147,483,647.</p>
     pub fn days_greater_than(&self) -> i32 {
         self.days_greater_than
@@ -41,8 +41,7 @@ impl MatchObjectAgeBuilder {
     }
     /// <p>Specifies the maximum object age in days. Must be a positive whole number, greater than the minimum object age and less than or equal to 2,147,483,647.</p>
     pub fn set_days_greater_than(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days_greater_than = input;
-        self
+        self.days_greater_than = input; self
     }
     /// <p>Specifies the maximum object age in days. Must be a positive whole number, greater than the minimum object age and less than or equal to 2,147,483,647.</p>
     pub fn get_days_greater_than(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl MatchObjectAgeBuilder {
     }
     /// <p>Specifies the minimum object age in days. The value must be a positive whole number, greater than 0 and less than or equal to 2,147,483,647.</p>
     pub fn set_days_less_than(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.days_less_than = input;
-        self
+        self.days_less_than = input; self
     }
     /// <p>Specifies the minimum object age in days. The value must be a positive whole number, greater than 0 and less than or equal to 2,147,483,647.</p>
     pub fn get_days_less_than(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl MatchObjectAgeBuilder {
     /// Consumes the builder and constructs a [`MatchObjectAge`](crate::types::MatchObjectAge).
     pub fn build(self) -> crate::types::MatchObjectAge {
         crate::types::MatchObjectAge {
-            days_greater_than: self.days_greater_than.unwrap_or_default(),
-            days_less_than: self.days_less_than.unwrap_or_default(),
+            days_greater_than: self.days_greater_than
+                .unwrap_or_default()
+            ,
+            days_less_than: self.days_less_than
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

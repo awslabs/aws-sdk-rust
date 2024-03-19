@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachTypedLinkInput {
+pub struct AttachTypedLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
@@ -12,30 +12,31 @@ pub struct AttachTypedLinkInput {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>>,
 }
-impl AttachTypedLinkInput {
+impl  AttachTypedLinkInput  {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn source_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn source_object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.source_object_reference.as_ref()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn target_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn typed_link_facet(&self) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
+    pub fn typed_link_facet(&self) -> ::std::option::Option<& crate::types::TypedLinkSchemaAndFacetName> {
         self.typed_link_facet.as_ref()
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AttributeNameAndValue] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AttributeNameAndValue] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AttachTypedLinkInput {
@@ -53,7 +54,7 @@ pub struct AttachTypedLinkInputBuilder {
     pub(crate) source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>>,
 }
 impl AttachTypedLinkInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
@@ -64,8 +65,7 @@ impl AttachTypedLinkInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl AttachTypedLinkInputBuilder {
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn set_source_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.source_object_reference = input;
-        self
+        self.source_object_reference = input; self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn get_source_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -94,8 +93,7 @@ impl AttachTypedLinkInputBuilder {
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn set_target_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.target_object_reference = input;
-        self
+        self.target_object_reference = input; self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn get_target_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -109,8 +107,7 @@ impl AttachTypedLinkInputBuilder {
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn set_typed_link_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>) -> Self {
-        self.typed_link_facet = input;
-        self
+        self.typed_link_facet = input; self
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn get_typed_link_facet(&self) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
@@ -123,29 +120,34 @@ impl AttachTypedLinkInputBuilder {
     /// <p>A set of attributes that are associated with the typed link.</p>
     pub fn attributes(mut self, input: crate::types::AttributeNameAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeNameAndValue>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`AttachTypedLinkInput`](crate::operation::attach_typed_link::AttachTypedLinkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::attach_typed_link::AttachTypedLinkInput {
-            directory_arn: self.directory_arn,
-            source_object_reference: self.source_object_reference,
-            target_object_reference: self.target_object_reference,
-            typed_link_facet: self.typed_link_facet,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::attach_typed_link::AttachTypedLinkInput {
+                directory_arn: self.directory_arn
+                ,
+                source_object_reference: self.source_object_reference
+                ,
+                target_object_reference: self.target_object_reference
+                ,
+                typed_link_facet: self.typed_link_facet
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

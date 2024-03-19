@@ -3,7 +3,7 @@
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutGeofenceSuccess {
+pub struct BatchPutGeofenceSuccess  {
     /// <p>The geofence successfully stored in a geofence collection.</p>
     pub geofence_id: ::std::string::String,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
@@ -11,18 +11,17 @@ pub struct BatchPutGeofenceSuccess {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub update_time: ::aws_smithy_types::DateTime,
 }
-impl BatchPutGeofenceSuccess {
+impl  BatchPutGeofenceSuccess  {
     /// <p>The geofence successfully stored in a geofence collection.</p>
-    pub fn geofence_id(&self) -> &str {
-        use std::ops::Deref;
-        self.geofence_id.deref()
+    pub fn geofence_id(&self) -> & str {
+        use std::ops::Deref; self.geofence_id.deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
-    pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn update_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.update_time
     }
 }
@@ -50,8 +49,7 @@ impl BatchPutGeofenceSuccessBuilder {
     }
     /// <p>The geofence successfully stored in a geofence collection.</p>
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
     }
     /// <p>The geofence successfully stored in a geofence collection.</p>
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl BatchPutGeofenceSuccessBuilder {
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -80,8 +77,7 @@ impl BatchPutGeofenceSuccessBuilder {
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input;
-        self
+        self.update_time = input; self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code></p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -93,25 +89,25 @@ impl BatchPutGeofenceSuccessBuilder {
     /// - [`create_time`](crate::types::builders::BatchPutGeofenceSuccessBuilder::create_time)
     /// - [`update_time`](crate::types::builders::BatchPutGeofenceSuccessBuilder::update_time)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchPutGeofenceSuccess, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchPutGeofenceSuccess {
-            geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "geofence_id",
-                    "geofence_id was not specified but it is required when building BatchPutGeofenceSuccess",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building BatchPutGeofenceSuccess",
-                )
-            })?,
-            update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_time",
-                    "update_time was not specified but it is required when building BatchPutGeofenceSuccess",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchPutGeofenceSuccess {
+                geofence_id: self.geofence_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("geofence_id", "geofence_id was not specified but it is required when building BatchPutGeofenceSuccess")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building BatchPutGeofenceSuccess")
+                    )?
+                ,
+                update_time: self.update_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_time", "update_time was not specified but it is required when building BatchPutGeofenceSuccess")
+                    )?
+                ,
+            }
+        )
     }
 }
+

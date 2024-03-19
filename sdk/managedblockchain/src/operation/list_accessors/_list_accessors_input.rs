@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessorsInput {
+pub struct ListAccessorsInput  {
     /// <p>The maximum number of accessors to list.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -12,19 +12,19 @@ pub struct ListAccessorsInput {
     /// </note>
     pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
-impl ListAccessorsInput {
+impl  ListAccessorsInput  {
     /// <p>The maximum number of accessors to list.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
-    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+    pub fn network_type(&self) -> ::std::option::Option<& crate::types::AccessorNetworkType> {
         self.network_type.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ListAccessorsInputBuilder {
     }
     /// <p>The maximum number of accessors to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of accessors to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -65,8 +64,7 @@ impl ListAccessorsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListAccessorsInputBuilder {
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
     /// </note>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The blockchain network that the <code>Accessor</code> token is created for.</p><note>
     /// <p>Use the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> for all existing <code>Accessors</code> tokens that were created before the <code>networkType</code> property was introduced.</p>
@@ -93,13 +90,17 @@ impl ListAccessorsInputBuilder {
         &self.network_type
     }
     /// Consumes the builder and constructs a [`ListAccessorsInput`](crate::operation::list_accessors::ListAccessorsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_accessors::ListAccessorsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_accessors::ListAccessorsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            network_type: self.network_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_accessors::ListAccessorsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_accessors::ListAccessorsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                network_type: self.network_type
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes an action that writes data to an Amazon Kinesis Firehose stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FirehoseAction {
+pub struct FirehoseAction  {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
     pub role_arn: ::std::string::String,
     /// <p>The delivery stream name.</p>
@@ -14,19 +14,17 @@ pub struct FirehoseAction {
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
     pub batch_mode: ::std::option::Option<bool>,
 }
-impl FirehoseAction {
+impl  FirehoseAction  {
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The delivery stream name.</p>
-    pub fn delivery_stream_name(&self) -> &str {
-        use std::ops::Deref;
-        self.delivery_stream_name.deref()
+    pub fn delivery_stream_name(&self) -> & str {
+        use std::ops::Deref; self.delivery_stream_name.deref()
     }
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
-    pub fn separator(&self) -> ::std::option::Option<&str> {
+    pub fn separator(&self) -> ::std::option::Option<& str> {
         self.separator.as_deref()
     }
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
@@ -60,8 +58,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +72,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>The delivery stream name.</p>
     pub fn set_delivery_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_stream_name = input;
-        self
+        self.delivery_stream_name = input; self
     }
     /// <p>The delivery stream name.</p>
     pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +85,7 @@ impl FirehoseActionBuilder {
     }
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn set_separator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.separator = input;
-        self
+        self.separator = input; self
     }
     /// <p>A character separator that will be used to separate records written to the Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ',' (comma).</p>
     pub fn get_separator(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +100,7 @@ impl FirehoseActionBuilder {
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
     pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.batch_mode = input;
-        self
+        self.batch_mode = input; self
     }
     /// <p>Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.</p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html"> <code>PutRecordBatch</code> </a> request. The resulting array can't have more than 500 records.</p>
@@ -118,21 +112,24 @@ impl FirehoseActionBuilder {
     /// - [`role_arn`](crate::types::builders::FirehoseActionBuilder::role_arn)
     /// - [`delivery_stream_name`](crate::types::builders::FirehoseActionBuilder::delivery_stream_name)
     pub fn build(self) -> ::std::result::Result<crate::types::FirehoseAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FirehoseAction {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building FirehoseAction",
-                )
-            })?,
-            delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delivery_stream_name",
-                    "delivery_stream_name was not specified but it is required when building FirehoseAction",
-                )
-            })?,
-            separator: self.separator,
-            batch_mode: self.batch_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FirehoseAction {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building FirehoseAction")
+                    )?
+                ,
+                delivery_stream_name: self.delivery_stream_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delivery_stream_name", "delivery_stream_name was not specified but it is required when building FirehoseAction")
+                    )?
+                ,
+                separator: self.separator
+                ,
+                batch_mode: self.batch_mode
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationInput {
+pub struct DescribeOrganizationConfigurationInput  {
     /// <p>The ARN of the organization behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeOrganizationConfigurationInput {
+impl  DescribeOrganizationConfigurationInput  {
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeOrganizationConfigurationInputBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_arn
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput { graph_arn: self.graph_arn },
+            crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
+                graph_arn: self.graph_arn
+                ,
+            }
         )
     }
 }
+

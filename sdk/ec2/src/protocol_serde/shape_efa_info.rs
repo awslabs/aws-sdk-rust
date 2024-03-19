@@ -25,3 +25,4 @@ pub fn de_efa_info(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
     }
     Ok(builder.build())
 }
+

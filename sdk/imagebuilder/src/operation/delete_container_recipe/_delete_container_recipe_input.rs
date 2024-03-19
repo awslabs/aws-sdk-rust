@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteContainerRecipeInput {
+pub struct DeleteContainerRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteContainerRecipeInput {
+impl  DeleteContainerRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
-    pub fn container_recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> ::std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteContainerRecipeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_recipe_arn = input;
-        self
+        self.container_recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_recipe_arn
     }
     /// Consumes the builder and constructs a [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_container_recipe::DeleteContainerRecipeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_container_recipe::DeleteContainerRecipeInput {
-            container_recipe_arn: self.container_recipe_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_container_recipe::DeleteContainerRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_container_recipe::DeleteContainerRecipeInput {
+                container_recipe_arn: self.container_recipe_arn
+                ,
+            }
+        )
     }
 }
+

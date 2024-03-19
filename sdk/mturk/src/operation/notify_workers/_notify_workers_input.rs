@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotifyWorkersInput {
+pub struct NotifyWorkersInput  {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub message_text: ::std::option::Option<::std::string::String>,
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub worker_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub worker_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl NotifyWorkersInput {
+impl  NotifyWorkersInput  {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
-    pub fn message_text(&self) -> ::std::option::Option<&str> {
+    pub fn message_text(&self) -> ::std::option::Option<& str> {
         self.message_text.as_deref()
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.worker_ids.is_none()`.
-    pub fn worker_ids(&self) -> &[::std::string::String] {
-        self.worker_ids.as_deref().unwrap_or_default()
+    pub fn worker_ids(&self) -> & [::std::string::String] {
+        self.worker_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NotifyWorkersInput {
@@ -39,7 +40,7 @@ impl NotifyWorkersInput {
 pub struct NotifyWorkersInputBuilder {
     pub(crate) subject: ::std::option::Option<::std::string::String>,
     pub(crate) message_text: ::std::option::Option<::std::string::String>,
-    pub(crate) worker_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) worker_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NotifyWorkersInputBuilder {
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
@@ -50,8 +51,7 @@ impl NotifyWorkersInputBuilder {
     }
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl NotifyWorkersInputBuilder {
     }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub fn set_message_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_text = input;
-        self
+        self.message_text = input; self
     }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub fn get_message_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,27 +78,30 @@ impl NotifyWorkersInputBuilder {
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
     pub fn worker_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.worker_ids.unwrap_or_default();
-        v.push(input.into());
-        self.worker_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.worker_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn set_worker_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.worker_ids = input;
-        self
+    pub fn set_worker_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.worker_ids = input; self
     }
     /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
-    pub fn get_worker_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_worker_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.worker_ids
     }
     /// Consumes the builder and constructs a [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::notify_workers::NotifyWorkersInput {
-            subject: self.subject,
-            message_text: self.message_text,
-            worker_ids: self.worker_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::notify_workers::NotifyWorkersInput {
+                subject: self.subject
+                ,
+                message_text: self.message_text
+                ,
+                worker_ids: self.worker_ids
+                ,
+            }
+        )
     }
 }
+

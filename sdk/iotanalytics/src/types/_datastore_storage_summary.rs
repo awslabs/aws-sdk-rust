@@ -3,7 +3,7 @@
 /// <p>Contains information about your data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatastoreStorageSummary {
+pub struct DatastoreStorageSummary  {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary>,
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
@@ -11,17 +11,17 @@ pub struct DatastoreStorageSummary {
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     pub iot_site_wise_multi_layer_storage: ::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary>,
 }
-impl DatastoreStorageSummary {
+impl  DatastoreStorageSummary  {
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
-    pub fn service_managed_s3(&self) -> ::std::option::Option<&crate::types::ServiceManagedDatastoreS3StorageSummary> {
+    pub fn service_managed_s3(&self) -> ::std::option::Option<& crate::types::ServiceManagedDatastoreS3StorageSummary> {
         self.service_managed_s3.as_ref()
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
-    pub fn customer_managed_s3(&self) -> ::std::option::Option<&crate::types::CustomerManagedDatastoreS3StorageSummary> {
+    pub fn customer_managed_s3(&self) -> ::std::option::Option<& crate::types::CustomerManagedDatastoreS3StorageSummary> {
         self.customer_managed_s3.as_ref()
     }
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
-    pub fn iot_site_wise_multi_layer_storage(&self) -> ::std::option::Option<&crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary> {
+    pub fn iot_site_wise_multi_layer_storage(&self) -> ::std::option::Option<& crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary> {
         self.iot_site_wise_multi_layer_storage.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DatastoreStorageSummaryBuilder {
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub fn set_service_managed_s3(mut self, input: ::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary>) -> Self {
-        self.service_managed_s3 = input;
-        self
+        self.service_managed_s3 = input; self
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub fn get_service_managed_s3(&self) -> &::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary> {
@@ -62,8 +61,7 @@ impl DatastoreStorageSummaryBuilder {
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub fn set_customer_managed_s3(mut self, input: ::std::option::Option<crate::types::CustomerManagedDatastoreS3StorageSummary>) -> Self {
-        self.customer_managed_s3 = input;
-        self
+        self.customer_managed_s3 = input; self
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub fn get_customer_managed_s3(&self) -> &::std::option::Option<crate::types::CustomerManagedDatastoreS3StorageSummary> {
@@ -75,12 +73,8 @@ impl DatastoreStorageSummaryBuilder {
         self
     }
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
-    pub fn set_iot_site_wise_multi_layer_storage(
-        mut self,
-        input: ::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary>,
-    ) -> Self {
-        self.iot_site_wise_multi_layer_storage = input;
-        self
+    pub fn set_iot_site_wise_multi_layer_storage(mut self, input: ::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary>) -> Self {
+        self.iot_site_wise_multi_layer_storage = input; self
     }
     /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
     pub fn get_iot_site_wise_multi_layer_storage(&self) -> &::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary> {
@@ -89,9 +83,13 @@ impl DatastoreStorageSummaryBuilder {
     /// Consumes the builder and constructs a [`DatastoreStorageSummary`](crate::types::DatastoreStorageSummary).
     pub fn build(self) -> crate::types::DatastoreStorageSummary {
         crate::types::DatastoreStorageSummary {
-            service_managed_s3: self.service_managed_s3,
-            customer_managed_s3: self.customer_managed_s3,
-            iot_site_wise_multi_layer_storage: self.iot_site_wise_multi_layer_storage,
+            service_managed_s3: self.service_managed_s3
+            ,
+            customer_managed_s3: self.customer_managed_s3
+            ,
+            iot_site_wise_multi_layer_storage: self.iot_site_wise_multi_layer_storage
+            ,
         }
     }
 }
+

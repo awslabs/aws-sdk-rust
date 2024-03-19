@@ -3,7 +3,7 @@
 /// <p>Application configuration information for a robot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RobotApplicationConfig {
+pub struct RobotApplicationConfig  {
     /// <p>The application information for the robot application.</p>
     pub application: ::std::string::String,
     /// <p>The version of the robot application.</p>
@@ -11,67 +11,60 @@ pub struct RobotApplicationConfig {
     /// <p>The launch configuration for the robot application.</p>
     pub launch_config: ::std::option::Option<crate::types::LaunchConfig>,
     /// <p>The upload configurations for the robot application.</p>
-    pub upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
+    pub upload_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::UploadConfiguration>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub use_default_upload_configurations: ::std::option::Option<bool>,
     /// <p>Information about tools configured for the robot application.</p>
-    pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
+    pub tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub use_default_tools: ::std::option::Option<bool>,
 }
-impl RobotApplicationConfig {
+impl  RobotApplicationConfig  {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> &str {
-        use std::ops::Deref;
-        self.application.deref()
+    pub fn application(&self) -> & str {
+        use std::ops::Deref; self.application.deref()
     }
     /// <p>The version of the robot application.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&str> {
+    pub fn application_version(&self) -> ::std::option::Option<& str> {
         self.application_version.as_deref()
     }
     /// <p>The launch configuration for the robot application.</p>
-    pub fn launch_config(&self) -> ::std::option::Option<&crate::types::LaunchConfig> {
+    pub fn launch_config(&self) -> ::std::option::Option<& crate::types::LaunchConfig> {
         self.launch_config.as_ref()
     }
     /// <p>The upload configurations for the robot application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upload_configurations.is_none()`.
-    pub fn upload_configurations(&self) -> &[crate::types::UploadConfiguration] {
-        self.upload_configurations.as_deref().unwrap_or_default()
+    pub fn upload_configurations(&self) -> & [crate::types::UploadConfiguration] {
+        self.upload_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_upload_configurations(&self) -> ::std::option::Option<bool> {
         self.use_default_upload_configurations
     }
     /// <p>Information about tools configured for the robot application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tools.is_none()`.
-    pub fn tools(&self) -> &[crate::types::Tool] {
-        self.tools.as_deref().unwrap_or_default()
+    pub fn tools(&self) -> & [crate::types::Tool] {
+        self.tools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_tools(&self) -> ::std::option::Option<bool> {
         self.use_default_tools
     }
@@ -90,9 +83,9 @@ pub struct RobotApplicationConfigBuilder {
     pub(crate) application: ::std::option::Option<::std::string::String>,
     pub(crate) application_version: ::std::option::Option<::std::string::String>,
     pub(crate) launch_config: ::std::option::Option<crate::types::LaunchConfig>,
-    pub(crate) upload_configurations: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>,
+    pub(crate) upload_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::UploadConfiguration>>,
     pub(crate) use_default_upload_configurations: ::std::option::Option<bool>,
-    pub(crate) tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
+    pub(crate) tools: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>,
     pub(crate) use_default_tools: ::std::option::Option<bool>,
 }
 impl RobotApplicationConfigBuilder {
@@ -104,8 +97,7 @@ impl RobotApplicationConfigBuilder {
     }
     /// <p>The application information for the robot application.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The application information for the robot application.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +110,7 @@ impl RobotApplicationConfigBuilder {
     }
     /// <p>The version of the robot application.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The version of the robot application.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +124,7 @@ impl RobotApplicationConfigBuilder {
     }
     /// <p>The launch configuration for the robot application.</p>
     pub fn set_launch_config(mut self, input: ::std::option::Option<crate::types::LaunchConfig>) -> Self {
-        self.launch_config = input;
-        self
+        self.launch_config = input; self
     }
     /// <p>The launch configuration for the robot application.</p>
     pub fn get_launch_config(&self) -> &::std::option::Option<crate::types::LaunchConfig> {
@@ -147,26 +137,23 @@ impl RobotApplicationConfigBuilder {
     /// <p>The upload configurations for the robot application.</p>
     pub fn upload_configurations(mut self, input: crate::types::UploadConfiguration) -> Self {
         let mut v = self.upload_configurations.unwrap_or_default();
-        v.push(input);
-        self.upload_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.upload_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn set_upload_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>>) -> Self {
-        self.upload_configurations = input;
-        self
+    pub fn set_upload_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UploadConfiguration>>) -> Self {
+        self.upload_configurations = input; self
     }
     /// <p>The upload configurations for the robot application.</p>
-    pub fn get_upload_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadConfiguration>> {
+    pub fn get_upload_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UploadConfiguration>> {
         &self.upload_configurations
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_upload_configurations(mut self, input: bool) -> Self {
         self.use_default_upload_configurations = ::std::option::Option::Some(input);
         self
@@ -175,20 +162,15 @@ impl RobotApplicationConfigBuilder {
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn set_use_default_upload_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_default_upload_configurations = input;
-        self
+        self.use_default_upload_configurations = input; self
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
     /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn get_use_default_upload_configurations(&self) -> &::std::option::Option<bool> {
         &self.use_default_upload_configurations
     }
@@ -199,25 +181,22 @@ impl RobotApplicationConfigBuilder {
     /// <p>Information about tools configured for the robot application.</p>
     pub fn tools(mut self, input: crate::types::Tool) -> Self {
         let mut v = self.tools.unwrap_or_default();
-        v.push(input);
-        self.tools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about tools configured for the robot application.</p>
-    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>) -> Self {
-        self.tools = input;
-        self
+    pub fn set_tools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tool>>) -> Self {
+        self.tools = input; self
     }
     /// <p>Information about tools configured for the robot application.</p>
-    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tool>> {
         &self.tools
     }
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn use_default_tools(mut self, input: bool) -> Self {
         self.use_default_tools = ::std::option::Option::Some(input);
         self
@@ -225,19 +204,14 @@ impl RobotApplicationConfigBuilder {
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn set_use_default_tools(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_default_tools = input;
-        self
+        self.use_default_tools = input; self
     }
     /// <p>A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
-    #[deprecated(
-        note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
-    )]
+    #[deprecated(note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html.")]
     pub fn get_use_default_tools(&self) -> &::std::option::Option<bool> {
         &self.use_default_tools
     }
@@ -245,19 +219,27 @@ impl RobotApplicationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application`](crate::types::builders::RobotApplicationConfigBuilder::application)
     pub fn build(self) -> ::std::result::Result<crate::types::RobotApplicationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RobotApplicationConfig {
-            application: self.application.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application",
-                    "application was not specified but it is required when building RobotApplicationConfig",
-                )
-            })?,
-            application_version: self.application_version,
-            launch_config: self.launch_config,
-            upload_configurations: self.upload_configurations,
-            use_default_upload_configurations: self.use_default_upload_configurations,
-            tools: self.tools,
-            use_default_tools: self.use_default_tools,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RobotApplicationConfig {
+                application: self.application
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application", "application was not specified but it is required when building RobotApplicationConfig")
+                    )?
+                ,
+                application_version: self.application_version
+                ,
+                launch_config: self.launch_config
+                ,
+                upload_configurations: self.upload_configurations
+                ,
+                use_default_upload_configurations: self.use_default_upload_configurations
+                ,
+                tools: self.tools
+                ,
+                use_default_tools: self.use_default_tools
+                ,
+            }
+        )
     }
 }
+

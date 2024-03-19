@@ -3,22 +3,23 @@
 /// <p>Information about the EC2 Mac Dedicated Host.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MacHost {
+pub struct MacHost  {
     /// <p>The EC2 Mac Dedicated Host ID.</p>
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The latest macOS versions that the EC2 Mac Dedicated Host can launch without being upgraded.</p>
-    pub mac_os_latest_supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub mac_os_latest_supported_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl MacHost {
+impl  MacHost  {
     /// <p>The EC2 Mac Dedicated Host ID.</p>
-    pub fn host_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<& str> {
         self.host_id.as_deref()
     }
     /// <p>The latest macOS versions that the EC2 Mac Dedicated Host can launch without being upgraded.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mac_os_latest_supported_versions.is_none()`.
-    pub fn mac_os_latest_supported_versions(&self) -> &[::std::string::String] {
-        self.mac_os_latest_supported_versions.as_deref().unwrap_or_default()
+    pub fn mac_os_latest_supported_versions(&self) -> & [::std::string::String] {
+        self.mac_os_latest_supported_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MacHost {
@@ -33,7 +34,7 @@ impl MacHost {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MacHostBuilder {
     pub(crate) host_id: ::std::option::Option<::std::string::String>,
-    pub(crate) mac_os_latest_supported_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) mac_os_latest_supported_versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl MacHostBuilder {
     /// <p>The EC2 Mac Dedicated Host ID.</p>
@@ -43,8 +44,7 @@ impl MacHostBuilder {
     }
     /// <p>The EC2 Mac Dedicated Host ID.</p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_id = input;
-        self
+        self.host_id = input; self
     }
     /// <p>The EC2 Mac Dedicated Host ID.</p>
     pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl MacHostBuilder {
     /// <p>The latest macOS versions that the EC2 Mac Dedicated Host can launch without being upgraded.</p>
     pub fn mac_os_latest_supported_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.mac_os_latest_supported_versions.unwrap_or_default();
-        v.push(input.into());
-        self.mac_os_latest_supported_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.mac_os_latest_supported_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The latest macOS versions that the EC2 Mac Dedicated Host can launch without being upgraded.</p>
-    pub fn set_mac_os_latest_supported_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.mac_os_latest_supported_versions = input;
-        self
+    pub fn set_mac_os_latest_supported_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.mac_os_latest_supported_versions = input; self
     }
     /// <p>The latest macOS versions that the EC2 Mac Dedicated Host can launch without being upgraded.</p>
-    pub fn get_mac_os_latest_supported_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_mac_os_latest_supported_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.mac_os_latest_supported_versions
     }
     /// Consumes the builder and constructs a [`MacHost`](crate::types::MacHost).
     pub fn build(self) -> crate::types::MacHost {
         crate::types::MacHost {
-            host_id: self.host_id,
-            mac_os_latest_supported_versions: self.mac_os_latest_supported_versions,
+            host_id: self.host_id
+            ,
+            mac_os_latest_supported_versions: self.mac_os_latest_supported_versions
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a kdb cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxCluster {
+pub struct KxCluster  {
     /// <p>The status of a cluster.</p>
     /// <ul>
     /// <li>
@@ -47,7 +47,7 @@ pub struct KxCluster {
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
     /// <p>A list of volumes attached to the cluster.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
@@ -67,7 +67,7 @@ pub struct KxCluster {
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl KxCluster {
+impl  KxCluster  {
     /// <p>The status of a cluster.</p>
     /// <ul>
     /// <li>
@@ -87,15 +87,15 @@ impl KxCluster {
     /// <li>
     /// <p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KxClusterStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KxClusterStatus> {
         self.status.as_ref()
     }
     /// <p>The error message when a failed state occurs.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>A unique name for the cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
@@ -111,29 +111,30 @@ impl KxCluster {
     /// <li>
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::KxClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>A description of the cluster.</p>
-    pub fn cluster_description(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_description(&self) -> ::std::option::Option<& str> {
         self.cluster_description.as_deref()
     }
     /// <p>A version of the FinSpace managed kdb to run.</p>
-    pub fn release_label(&self) -> ::std::option::Option<&str> {
+    pub fn release_label(&self) -> ::std::option::Option<& str> {
         self.release_label.as_deref()
     }
     /// <p>A list of volumes attached to the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::Volume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::Volume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
-    pub fn initialization_script(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_script(&self) -> ::std::option::Option<& str> {
         self.initialization_script.as_deref()
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
-    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<& str> {
         self.execution_role.as_deref()
     }
     /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
@@ -143,19 +144,19 @@ impl KxCluster {
     /// <li>
     /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The last time that the cluster was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -176,7 +177,7 @@ pub struct KxClusterBuilder {
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,
     pub(crate) cluster_description: ::std::option::Option<::std::string::String>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>,
     pub(crate) initialization_script: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
@@ -228,8 +229,7 @@ impl KxClusterBuilder {
     /// <p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxClusterStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a cluster.</p>
     /// <ul>
@@ -260,8 +260,7 @@ impl KxClusterBuilder {
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The error message when a failed state occurs.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +273,7 @@ impl KxClusterBuilder {
     }
     /// <p>A unique name for the cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>A unique name for the cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,8 +310,7 @@ impl KxClusterBuilder {
     /// <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p></li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available:</p>
     /// <ul>
@@ -338,8 +335,7 @@ impl KxClusterBuilder {
     }
     /// <p>A description of the cluster.</p>
     pub fn set_cluster_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_description = input;
-        self
+        self.cluster_description = input; self
     }
     /// <p>A description of the cluster.</p>
     pub fn get_cluster_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -352,8 +348,7 @@ impl KxClusterBuilder {
     }
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub fn set_release_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_label = input;
-        self
+        self.release_label = input; self
     }
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -366,17 +361,16 @@ impl KxClusterBuilder {
     /// <p>A list of volumes attached to the cluster.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of volumes attached to the cluster.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>A list of volumes attached to the cluster.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Volume>> {
         &self.volumes
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
@@ -386,8 +380,7 @@ impl KxClusterBuilder {
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn set_initialization_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_script = input;
-        self
+        self.initialization_script = input; self
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn get_initialization_script(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +393,7 @@ impl KxClusterBuilder {
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role = input;
-        self
+        self.execution_role = input; self
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -426,8 +418,7 @@ impl KxClusterBuilder {
     /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones assigned per cluster. This can be one of the following:</p>
     /// <ul>
@@ -446,8 +437,7 @@ impl KxClusterBuilder {
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -460,8 +450,7 @@ impl KxClusterBuilder {
     }
     /// <p>The last time that the cluster was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the cluster was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -474,8 +463,7 @@ impl KxClusterBuilder {
     }
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the cluster was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -484,19 +472,33 @@ impl KxClusterBuilder {
     /// Consumes the builder and constructs a [`KxCluster`](crate::types::KxCluster).
     pub fn build(self) -> crate::types::KxCluster {
         crate::types::KxCluster {
-            status: self.status,
-            status_reason: self.status_reason,
-            cluster_name: self.cluster_name,
-            cluster_type: self.cluster_type,
-            cluster_description: self.cluster_description,
-            release_label: self.release_label,
-            volumes: self.volumes,
-            initialization_script: self.initialization_script,
-            execution_role: self.execution_role,
-            az_mode: self.az_mode,
-            availability_zone_id: self.availability_zone_id,
-            last_modified_timestamp: self.last_modified_timestamp,
-            created_timestamp: self.created_timestamp,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            cluster_name: self.cluster_name
+            ,
+            cluster_type: self.cluster_type
+            ,
+            cluster_description: self.cluster_description
+            ,
+            release_label: self.release_label
+            ,
+            volumes: self.volumes
+            ,
+            initialization_script: self.initialization_script
+            ,
+            execution_role: self.execution_role
+            ,
+            az_mode: self.az_mode
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
+            created_timestamp: self.created_timestamp
+            ,
         }
     }
 }
+

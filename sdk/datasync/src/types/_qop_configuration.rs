@@ -3,19 +3,19 @@
 /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QopConfiguration {
+pub struct QopConfiguration  {
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
     pub rpc_protection: ::std::option::Option<crate::types::HdfsRpcProtection>,
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
     pub data_transfer_protection: ::std::option::Option<crate::types::HdfsDataTransferProtection>,
 }
-impl QopConfiguration {
+impl  QopConfiguration  {
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
-    pub fn rpc_protection(&self) -> ::std::option::Option<&crate::types::HdfsRpcProtection> {
+    pub fn rpc_protection(&self) -> ::std::option::Option<& crate::types::HdfsRpcProtection> {
         self.rpc_protection.as_ref()
     }
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
-    pub fn data_transfer_protection(&self) -> ::std::option::Option<&crate::types::HdfsDataTransferProtection> {
+    pub fn data_transfer_protection(&self) -> ::std::option::Option<& crate::types::HdfsDataTransferProtection> {
         self.data_transfer_protection.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl QopConfigurationBuilder {
     }
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
     pub fn set_rpc_protection(mut self, input: ::std::option::Option<crate::types::HdfsRpcProtection>) -> Self {
-        self.rpc_protection = input;
-        self
+        self.rpc_protection = input; self
     }
     /// <p>The RPC protection setting configured on the HDFS cluster. This setting corresponds to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code> file on your Hadoop cluster.</p>
     pub fn get_rpc_protection(&self) -> &::std::option::Option<crate::types::HdfsRpcProtection> {
@@ -55,8 +54,7 @@ impl QopConfigurationBuilder {
     }
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
     pub fn set_data_transfer_protection(mut self, input: ::std::option::Option<crate::types::HdfsDataTransferProtection>) -> Self {
-        self.data_transfer_protection = input;
-        self
+        self.data_transfer_protection = input; self
     }
     /// <p>The data transfer protection setting configured on the HDFS cluster. This setting corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code> file on your Hadoop cluster.</p>
     pub fn get_data_transfer_protection(&self) -> &::std::option::Option<crate::types::HdfsDataTransferProtection> {
@@ -65,8 +63,11 @@ impl QopConfigurationBuilder {
     /// Consumes the builder and constructs a [`QopConfiguration`](crate::types::QopConfiguration).
     pub fn build(self) -> crate::types::QopConfiguration {
         crate::types::QopConfiguration {
-            rpc_protection: self.rpc_protection,
-            data_transfer_protection: self.data_transfer_protection,
+            rpc_protection: self.rpc_protection
+            ,
+            data_transfer_protection: self.data_transfer_protection
+            ,
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisualCustomActionOperation {
+pub struct VisualCustomActionOperation  {
     /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
     pub filter_operation: ::std::option::Option<crate::types::CustomActionFilterOperation>,
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
@@ -14,21 +14,21 @@ pub struct VisualCustomActionOperation {
     /// <p>The set parameter operation that sets parameters in custom action.</p>
     pub set_parameters_operation: ::std::option::Option<crate::types::CustomActionSetParametersOperation>,
 }
-impl VisualCustomActionOperation {
+impl  VisualCustomActionOperation  {
     /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
-    pub fn filter_operation(&self) -> ::std::option::Option<&crate::types::CustomActionFilterOperation> {
+    pub fn filter_operation(&self) -> ::std::option::Option<& crate::types::CustomActionFilterOperation> {
         self.filter_operation.as_ref()
     }
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
-    pub fn navigation_operation(&self) -> ::std::option::Option<&crate::types::CustomActionNavigationOperation> {
+    pub fn navigation_operation(&self) -> ::std::option::Option<& crate::types::CustomActionNavigationOperation> {
         self.navigation_operation.as_ref()
     }
     /// <p>The URL operation that opens a link to another webpage.</p>
-    pub fn url_operation(&self) -> ::std::option::Option<&crate::types::CustomActionUrlOperation> {
+    pub fn url_operation(&self) -> ::std::option::Option<& crate::types::CustomActionUrlOperation> {
         self.url_operation.as_ref()
     }
     /// <p>The set parameter operation that sets parameters in custom action.</p>
-    pub fn set_parameters_operation(&self) -> ::std::option::Option<&crate::types::CustomActionSetParametersOperation> {
+    pub fn set_parameters_operation(&self) -> ::std::option::Option<& crate::types::CustomActionSetParametersOperation> {
         self.set_parameters_operation.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl VisualCustomActionOperationBuilder {
     }
     /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
     pub fn set_filter_operation(mut self, input: ::std::option::Option<crate::types::CustomActionFilterOperation>) -> Self {
-        self.filter_operation = input;
-        self
+        self.filter_operation = input; self
     }
     /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
     pub fn get_filter_operation(&self) -> &::std::option::Option<crate::types::CustomActionFilterOperation> {
@@ -70,8 +69,7 @@ impl VisualCustomActionOperationBuilder {
     }
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
     pub fn set_navigation_operation(mut self, input: ::std::option::Option<crate::types::CustomActionNavigationOperation>) -> Self {
-        self.navigation_operation = input;
-        self
+        self.navigation_operation = input; self
     }
     /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
     pub fn get_navigation_operation(&self) -> &::std::option::Option<crate::types::CustomActionNavigationOperation> {
@@ -84,8 +82,7 @@ impl VisualCustomActionOperationBuilder {
     }
     /// <p>The URL operation that opens a link to another webpage.</p>
     pub fn set_url_operation(mut self, input: ::std::option::Option<crate::types::CustomActionUrlOperation>) -> Self {
-        self.url_operation = input;
-        self
+        self.url_operation = input; self
     }
     /// <p>The URL operation that opens a link to another webpage.</p>
     pub fn get_url_operation(&self) -> &::std::option::Option<crate::types::CustomActionUrlOperation> {
@@ -98,8 +95,7 @@ impl VisualCustomActionOperationBuilder {
     }
     /// <p>The set parameter operation that sets parameters in custom action.</p>
     pub fn set_set_parameters_operation(mut self, input: ::std::option::Option<crate::types::CustomActionSetParametersOperation>) -> Self {
-        self.set_parameters_operation = input;
-        self
+        self.set_parameters_operation = input; self
     }
     /// <p>The set parameter operation that sets parameters in custom action.</p>
     pub fn get_set_parameters_operation(&self) -> &::std::option::Option<crate::types::CustomActionSetParametersOperation> {
@@ -108,10 +104,15 @@ impl VisualCustomActionOperationBuilder {
     /// Consumes the builder and constructs a [`VisualCustomActionOperation`](crate::types::VisualCustomActionOperation).
     pub fn build(self) -> crate::types::VisualCustomActionOperation {
         crate::types::VisualCustomActionOperation {
-            filter_operation: self.filter_operation,
-            navigation_operation: self.navigation_operation,
-            url_operation: self.url_operation,
-            set_parameters_operation: self.set_parameters_operation,
+            filter_operation: self.filter_operation
+            ,
+            navigation_operation: self.navigation_operation
+            ,
+            url_operation: self.url_operation
+            ,
+            set_parameters_operation: self.set_parameters_operation
+            ,
         }
     }
 }
+

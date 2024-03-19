@@ -24,11 +24,7 @@ impl BatchJobIdentifier {
     /// Tries to convert the enum instance into [`FileBatchJobIdentifier`](crate::types::BatchJobIdentifier::FileBatchJobIdentifier), extracting the inner [`FileBatchJobIdentifier`](crate::types::FileBatchJobIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file_batch_job_identifier(&self) -> ::std::result::Result<&crate::types::FileBatchJobIdentifier, &Self> {
-        if let BatchJobIdentifier::FileBatchJobIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let BatchJobIdentifier::FileBatchJobIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FileBatchJobIdentifier`](crate::types::BatchJobIdentifier::FileBatchJobIdentifier).
     pub fn is_file_batch_job_identifier(&self) -> bool {
@@ -37,11 +33,7 @@ impl BatchJobIdentifier {
     /// Tries to convert the enum instance into [`S3BatchJobIdentifier`](crate::types::BatchJobIdentifier::S3BatchJobIdentifier), extracting the inner [`S3BatchJobIdentifier`](crate::types::S3BatchJobIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_batch_job_identifier(&self) -> ::std::result::Result<&crate::types::S3BatchJobIdentifier, &Self> {
-        if let BatchJobIdentifier::S3BatchJobIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let BatchJobIdentifier::S3BatchJobIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`S3BatchJobIdentifier`](crate::types::BatchJobIdentifier::S3BatchJobIdentifier).
     pub fn is_s3_batch_job_identifier(&self) -> bool {
@@ -50,11 +42,7 @@ impl BatchJobIdentifier {
     /// Tries to convert the enum instance into [`ScriptBatchJobIdentifier`](crate::types::BatchJobIdentifier::ScriptBatchJobIdentifier), extracting the inner [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_script_batch_job_identifier(&self) -> ::std::result::Result<&crate::types::ScriptBatchJobIdentifier, &Self> {
-        if let BatchJobIdentifier::ScriptBatchJobIdentifier(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let BatchJobIdentifier::ScriptBatchJobIdentifier(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ScriptBatchJobIdentifier`](crate::types::BatchJobIdentifier::ScriptBatchJobIdentifier).
     pub fn is_script_batch_job_identifier(&self) -> bool {
@@ -65,3 +53,4 @@ impl BatchJobIdentifier {
         matches!(self, Self::Unknown)
     }
 }
+

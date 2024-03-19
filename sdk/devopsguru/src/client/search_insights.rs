@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchInsights`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`start_time_range(StartTimeRange)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::start_time_range) / [`set_start_time_range(Option<StartTimeRange>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::set_start_time_range):<br>required: **true**<br><p>The start of the time range passed in. Returned insights occurred after this time.</p><br>
     ///   - [`filters(SearchInsightsFilters)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::filters) / [`set_filters(Option<SearchInsightsFilters>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::set_filters):<br>required: **false**<br><p>A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`r#type(InsightType)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::type) / [`set_type(Option<InsightType>)`](crate::operation::search_insights::builders::SearchInsightsFluentBuilder::set_type):<br>required: **true**<br><p>The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).</p><br>
-    /// - On success, responds with [`SearchInsightsOutput`](crate::operation::search_insights::SearchInsightsOutput) with field(s):
+                            /// - On success, responds with [`SearchInsightsOutput`](crate::operation::search_insights::SearchInsightsOutput) with field(s):
     ///   - [`proactive_insights(Option<Vec::<ProactiveInsightSummary>>)`](crate::operation::search_insights::SearchInsightsOutput::proactive_insights): <p>The returned proactive insights.</p>
     ///   - [`reactive_insights(Option<Vec::<ReactiveInsightSummary>>)`](crate::operation::search_insights::SearchInsightsOutput::reactive_insights): <p>The returned reactive insights.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_insights::SearchInsightsOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<SearchInsightsError>`](crate::operation::search_insights::SearchInsightsError)
+                            /// - On failure, responds with [`SdkError<SearchInsightsError>`](crate::operation::search_insights::SearchInsightsError)
     pub fn search_insights(&self) -> crate::operation::search_insights::builders::SearchInsightsFluentBuilder {
-        crate::operation::search_insights::builders::SearchInsightsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_insights::builders::SearchInsightsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

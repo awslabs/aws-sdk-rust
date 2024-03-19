@@ -4,15 +4,15 @@
 /// <p>For the query strings that you specify, your distribution caches separate versions of the specified content based on the query string values in viewer requests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryStringObject {
+pub struct QueryStringObject  {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
     pub option: ::std::option::Option<bool>,
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub query_strings_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub query_strings_allow_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl QueryStringObject {
+impl  QueryStringObject  {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
     pub fn option(&self) -> ::std::option::Option<bool> {
         self.option
@@ -20,10 +20,11 @@ impl QueryStringObject {
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_strings_allow_list.is_none()`.
-    pub fn query_strings_allow_list(&self) -> &[::std::string::String] {
-        self.query_strings_allow_list.as_deref().unwrap_or_default()
+    pub fn query_strings_allow_list(&self) -> & [::std::string::String] {
+        self.query_strings_allow_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl QueryStringObject {
@@ -38,7 +39,7 @@ impl QueryStringObject {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStringObjectBuilder {
     pub(crate) option: ::std::option::Option<bool>,
-    pub(crate) query_strings_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) query_strings_allow_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl QueryStringObjectBuilder {
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
@@ -48,8 +49,7 @@ impl QueryStringObjectBuilder {
     }
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
     pub fn set_option(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.option = input;
-        self
+        self.option = input; self
     }
     /// <p>Indicates whether the distribution forwards and caches based on query strings.</p>
     pub fn get_option(&self) -> &::std::option::Option<bool> {
@@ -64,28 +64,30 @@ impl QueryStringObjectBuilder {
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
     pub fn query_strings_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.query_strings_allow_list.unwrap_or_default();
-        v.push(input.into());
-        self.query_strings_allow_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.query_strings_allow_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn set_query_strings_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.query_strings_allow_list = input;
-        self
+    pub fn set_query_strings_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.query_strings_allow_list = input; self
     }
     /// <p>The specific query strings that the distribution forwards to the origin.</p>
     /// <p>Your distribution will cache content based on the specified query strings.</p>
     /// <p>If the <code>option</code> parameter is true, then your distribution forwards all query strings, regardless of what you specify using the <code>queryStringsAllowList</code> parameter.</p>
-    pub fn get_query_strings_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_strings_allow_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.query_strings_allow_list
     }
     /// Consumes the builder and constructs a [`QueryStringObject`](crate::types::QueryStringObject).
     pub fn build(self) -> crate::types::QueryStringObject {
         crate::types::QueryStringObject {
-            option: self.option,
-            query_strings_allow_list: self.query_strings_allow_list,
+            option: self.option
+            ,
+            query_strings_allow_list: self.query_strings_allow_list
+            ,
         }
     }
 }
+

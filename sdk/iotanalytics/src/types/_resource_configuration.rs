@@ -3,15 +3,15 @@
 /// <p>The configuration of the resource used to execute the <code>containerAction</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceConfiguration {
+pub struct ResourceConfiguration  {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub compute_type: crate::types::ComputeType,
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub volume_size_in_gb: i32,
 }
-impl ResourceConfiguration {
+impl  ResourceConfiguration  {
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
-    pub fn compute_type(&self) -> &crate::types::ComputeType {
+    pub fn compute_type(&self) -> & crate::types::ComputeType {
         &self.compute_type
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
@@ -42,8 +42,7 @@ impl ResourceConfigurationBuilder {
     }
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
-        self.compute_type = input;
-        self
+        self.compute_type = input; self
     }
     /// <p>The type of the compute resource used to execute the <code>containerAction</code>. Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).</p>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
@@ -57,8 +56,7 @@ impl ResourceConfigurationBuilder {
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>The size, in GB, of the persistent storage available to the resource instance used to execute the <code>containerAction</code> (min: 1, max: 50).</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -69,19 +67,20 @@ impl ResourceConfigurationBuilder {
     /// - [`compute_type`](crate::types::builders::ResourceConfigurationBuilder::compute_type)
     /// - [`volume_size_in_gb`](crate::types::builders::ResourceConfigurationBuilder::volume_size_in_gb)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourceConfiguration {
-            compute_type: self.compute_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compute_type",
-                    "compute_type was not specified but it is required when building ResourceConfiguration",
-                )
-            })?,
-            volume_size_in_gb: self.volume_size_in_gb.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "volume_size_in_gb",
-                    "volume_size_in_gb was not specified but it is required when building ResourceConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourceConfiguration {
+                compute_type: self.compute_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compute_type", "compute_type was not specified but it is required when building ResourceConfiguration")
+                    )?
+                ,
+                volume_size_in_gb: self.volume_size_in_gb
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("volume_size_in_gb", "volume_size_in_gb was not specified but it is required when building ResourceConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

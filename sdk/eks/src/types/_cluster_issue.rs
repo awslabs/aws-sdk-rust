@@ -3,28 +3,29 @@
 /// <p>An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterIssue {
+pub struct ClusterIssue  {
     /// <p>The error code of the issue.</p>
     pub code: ::std::option::Option<crate::types::ClusterIssueCode>,
     /// <p>A description of the issue.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource IDs that the issue relates to.</p>
-    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ClusterIssue {
+impl  ClusterIssue  {
     /// <p>The error code of the issue.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ClusterIssueCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ClusterIssueCode> {
         self.code.as_ref()
     }
     /// <p>A description of the issue.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The resource IDs that the issue relates to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
-    pub fn resource_ids(&self) -> &[::std::string::String] {
-        self.resource_ids.as_deref().unwrap_or_default()
+    pub fn resource_ids(&self) -> & [::std::string::String] {
+        self.resource_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ClusterIssue {
@@ -40,7 +41,7 @@ impl ClusterIssue {
 pub struct ClusterIssueBuilder {
     pub(crate) code: ::std::option::Option<crate::types::ClusterIssueCode>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ClusterIssueBuilder {
     /// <p>The error code of the issue.</p>
@@ -50,8 +51,7 @@ impl ClusterIssueBuilder {
     }
     /// <p>The error code of the issue.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClusterIssueCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code of the issue.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ClusterIssueCode> {
@@ -64,8 +64,7 @@ impl ClusterIssueBuilder {
     }
     /// <p>A description of the issue.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the issue.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,25 +77,28 @@ impl ClusterIssueBuilder {
     /// <p>The resource IDs that the issue relates to.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource IDs that the issue relates to.</p>
-    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// <p>The resource IDs that the issue relates to.</p>
-    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ClusterIssue`](crate::types::ClusterIssue).
     pub fn build(self) -> crate::types::ClusterIssue {
         crate::types::ClusterIssue {
-            code: self.code,
-            message: self.message,
-            resource_ids: self.resource_ids,
+            code: self.code
+            ,
+            message: self.message
+            ,
+            resource_ids: self.resource_ids
+            ,
         }
     }
 }
+

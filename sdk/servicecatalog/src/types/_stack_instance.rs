@@ -3,7 +3,7 @@
 /// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StackInstance {
+pub struct StackInstance  {
     /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
@@ -19,13 +19,13 @@ pub struct StackInstance {
     /// </ul>
     pub stack_instance_status: ::std::option::Option<crate::types::StackInstanceStatus>,
 }
-impl StackInstance {
+impl  StackInstance  {
     /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
@@ -37,7 +37,7 @@ impl StackInstance {
     /// <li>
     /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
     /// </ul>
-    pub fn stack_instance_status(&self) -> ::std::option::Option<&crate::types::StackInstanceStatus> {
+    pub fn stack_instance_status(&self) -> ::std::option::Option<& crate::types::StackInstanceStatus> {
         self.stack_instance_status.as_ref()
     }
 }
@@ -64,8 +64,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl StackInstanceBuilder {
     /// <p><code>CURRENT</code>: The stack is currently up to date with the stack set.</p></li>
     /// </ul>
     pub fn set_stack_instance_status(mut self, input: ::std::option::Option<crate::types::StackInstanceStatus>) -> Self {
-        self.stack_instance_status = input;
-        self
+        self.stack_instance_status = input; self
     }
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
@@ -126,9 +123,13 @@ impl StackInstanceBuilder {
     /// Consumes the builder and constructs a [`StackInstance`](crate::types::StackInstance).
     pub fn build(self) -> crate::types::StackInstance {
         crate::types::StackInstance {
-            account: self.account,
-            region: self.region,
-            stack_instance_status: self.stack_instance_status,
+            account: self.account
+            ,
+            region: self.region
+            ,
+            stack_instance_status: self.stack_instance_status
+            ,
         }
     }
 }
+

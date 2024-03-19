@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServicePrimaryTaskSetOutput {
+pub struct UpdateServicePrimaryTaskSetOutput  {
     /// <p>The details about the task set.</p>
     pub task_set: ::std::option::Option<crate::types::TaskSet>,
     _request_id: Option<String>,
 }
-impl UpdateServicePrimaryTaskSetOutput {
+impl  UpdateServicePrimaryTaskSetOutput  {
     /// <p>The details about the task set.</p>
-    pub fn task_set(&self) -> ::std::option::Option<&crate::types::TaskSet> {
+    pub fn task_set(&self) -> ::std::option::Option<& crate::types::TaskSet> {
         self.task_set.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateServicePrimaryTaskSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateServicePrimaryTaskSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
     pub fn builder() -> crate::operation::update_service_primary_task_set::builders::UpdateServicePrimaryTaskSetOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateServicePrimaryTaskSetOutputBuilder {
     }
     /// <p>The details about the task set.</p>
     pub fn set_task_set(mut self, input: ::std::option::Option<crate::types::TaskSet>) -> Self {
-        self.task_set = input;
-        self
+        self.task_set = input; self
     }
     /// <p>The details about the task set.</p>
     pub fn get_task_set(&self) -> &::std::option::Option<crate::types::TaskSet> {
         &self.task_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateServicePrimaryTaskSetOutput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput).
     pub fn build(self) -> crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput {
         crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput {
-            task_set: self.task_set,
+            task_set: self.task_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

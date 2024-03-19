@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNotificationSubscriptions`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::set_organization_id):<br>required: **true**<br><p>The ID of the organization.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results. (You received this marker from a previous call.)</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return with this call.</p><br>
-    /// - On success, responds with [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeNotificationSubscriptionsOutput`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput) with field(s):
     ///   - [`subscriptions(Option<Vec::<Subscription>>)`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput::subscriptions): <p>The subscriptions.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput::marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotificationSubscriptionsError>`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError)
-    pub fn describe_notification_subscriptions(
-        &self,
-    ) -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder {
-        crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeNotificationSubscriptionsError>`](crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError)
+    pub fn describe_notification_subscriptions(&self) -> crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder {
+                                crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

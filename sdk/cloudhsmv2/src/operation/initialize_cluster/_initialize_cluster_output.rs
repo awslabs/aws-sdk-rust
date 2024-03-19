@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InitializeClusterOutput {
+pub struct InitializeClusterOutput  {
     /// <p>The cluster's state.</p>
     pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>A description of the cluster's state.</p>
     pub state_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl InitializeClusterOutput {
+impl  InitializeClusterOutput  {
     /// <p>The cluster's state.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ClusterState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ClusterState> {
         self.state.as_ref()
     }
     /// <p>A description of the cluster's state.</p>
-    pub fn state_message(&self) -> ::std::option::Option<&str> {
+    pub fn state_message(&self) -> ::std::option::Option<& str> {
         self.state_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for InitializeClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InitializeClusterOutput {
     /// Creates a new builder-style object to manufacture [`InitializeClusterOutput`](crate::operation::initialize_cluster::InitializeClusterOutput).
     pub fn builder() -> crate::operation::initialize_cluster::builders::InitializeClusterOutputBuilder {
@@ -47,8 +47,7 @@ impl InitializeClusterOutputBuilder {
     }
     /// <p>The cluster's state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The cluster's state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
@@ -61,28 +60,30 @@ impl InitializeClusterOutputBuilder {
     }
     /// <p>A description of the cluster's state.</p>
     pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_message = input;
-        self
+        self.state_message = input; self
     }
     /// <p>A description of the cluster's state.</p>
     pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InitializeClusterOutput`](crate::operation::initialize_cluster::InitializeClusterOutput).
     pub fn build(self) -> crate::operation::initialize_cluster::InitializeClusterOutput {
         crate::operation::initialize_cluster::InitializeClusterOutput {
-            state: self.state,
-            state_message: self.state_message,
+            state: self.state
+            ,
+            state_message: self.state_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

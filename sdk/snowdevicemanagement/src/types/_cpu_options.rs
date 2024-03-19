@@ -3,13 +3,13 @@
 /// <p>The options for how a device's CPU is configured.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CpuOptions {
+pub struct CpuOptions  {
     /// <p>The number of cores that the CPU can use.</p>
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per core in the CPU.</p>
     pub threads_per_core: ::std::option::Option<i32>,
 }
-impl CpuOptions {
+impl  CpuOptions  {
     /// <p>The number of cores that the CPU can use.</p>
     pub fn core_count(&self) -> ::std::option::Option<i32> {
         self.core_count
@@ -41,8 +41,7 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of cores that the CPU can use.</p>
     pub fn set_core_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.core_count = input;
-        self
+        self.core_count = input; self
     }
     /// <p>The number of cores that the CPU can use.</p>
     pub fn get_core_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of threads per core in the CPU.</p>
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.threads_per_core = input;
-        self
+        self.threads_per_core = input; self
     }
     /// <p>The number of threads per core in the CPU.</p>
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl CpuOptionsBuilder {
     /// Consumes the builder and constructs a [`CpuOptions`](crate::types::CpuOptions).
     pub fn build(self) -> crate::types::CpuOptions {
         crate::types::CpuOptions {
-            core_count: self.core_count,
-            threads_per_core: self.threads_per_core,
+            core_count: self.core_count
+            ,
+            threads_per_core: self.threads_per_core
+            ,
         }
     }
 }
+

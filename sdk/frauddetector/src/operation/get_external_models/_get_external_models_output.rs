@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExternalModelsOutput {
+pub struct GetExternalModelsOutput  {
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub external_models: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>,
+    pub external_models: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalModel>>,
     /// <p>The next page token to be used in subsequent requests.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetExternalModelsOutput {
+impl  GetExternalModelsOutput  {
     /// <p>Gets the Amazon SageMaker models.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.external_models.is_none()`.
-    pub fn external_models(&self) -> &[crate::types::ExternalModel] {
-        self.external_models.as_deref().unwrap_or_default()
+    pub fn external_models(&self) -> & [crate::types::ExternalModel] {
+        self.external_models.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next page token to be used in subsequent requests.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetExternalModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetExternalModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput).
     pub fn builder() -> crate::operation::get_external_models::builders::GetExternalModelsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetExternalModelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetExternalModelsOutputBuilder {
-    pub(crate) external_models: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>,
+    pub(crate) external_models: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalModel>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetExternalModelsOutputBuilder {
     /// <p>Gets the Amazon SageMaker models.</p>
     pub fn external_models(mut self, input: crate::types::ExternalModel) -> Self {
         let mut v = self.external_models.unwrap_or_default();
-        v.push(input);
-        self.external_models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.external_models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn set_external_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>>) -> Self {
-        self.external_models = input;
-        self
+    pub fn set_external_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ExternalModel>>) -> Self {
+        self.external_models = input; self
     }
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn get_external_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExternalModel>> {
+    pub fn get_external_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ExternalModel>> {
         &self.external_models
     }
     /// <p>The next page token to be used in subsequent requests.</p>
@@ -69,28 +69,30 @@ impl GetExternalModelsOutputBuilder {
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page token to be used in subsequent requests.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetExternalModelsOutput`](crate::operation::get_external_models::GetExternalModelsOutput).
     pub fn build(self) -> crate::operation::get_external_models::GetExternalModelsOutput {
         crate::operation::get_external_models::GetExternalModelsOutput {
-            external_models: self.external_models,
-            next_token: self.next_token,
+            external_models: self.external_models
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

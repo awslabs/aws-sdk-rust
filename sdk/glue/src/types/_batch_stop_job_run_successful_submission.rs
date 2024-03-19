@@ -3,19 +3,19 @@
 /// <p>Records a successful request to stop a specified <code>JobRun</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStopJobRunSuccessfulSubmission {
+pub struct BatchStopJobRunSuccessfulSubmission  {
     /// <p>The name of the job definition used in the job run that was stopped.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub job_run_id: ::std::option::Option<::std::string::String>,
 }
-impl BatchStopJobRunSuccessfulSubmission {
+impl  BatchStopJobRunSuccessfulSubmission  {
     /// <p>The name of the job definition used in the job run that was stopped.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
-    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<& str> {
         self.job_run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchStopJobRunSuccessfulSubmissionBuilder {
     }
     /// <p>The name of the job definition used in the job run that was stopped.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job definition used in the job run that was stopped.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl BatchStopJobRunSuccessfulSubmissionBuilder {
     }
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_run_id = input;
-        self
+        self.job_run_id = input; self
     }
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BatchStopJobRunSuccessfulSubmissionBuilder {
     /// Consumes the builder and constructs a [`BatchStopJobRunSuccessfulSubmission`](crate::types::BatchStopJobRunSuccessfulSubmission).
     pub fn build(self) -> crate::types::BatchStopJobRunSuccessfulSubmission {
         crate::types::BatchStopJobRunSuccessfulSubmission {
-            job_name: self.job_name,
-            job_run_id: self.job_run_id,
+            job_name: self.job_name
+            ,
+            job_run_id: self.job_run_id
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Request to delete a draft environment configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEnvironmentConfigurationInput {
+pub struct DeleteEnvironmentConfigurationInput  {
     /// <p>The name of the application the environment is associated with.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to delete the draft configuration from.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEnvironmentConfigurationInput {
+impl  DeleteEnvironmentConfigurationInput  {
     /// <p>The name of the application the environment is associated with.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteEnvironmentConfigurationInputBuilder {
     }
     /// <p>The name of the application the environment is associated with.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application the environment is associated with.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DeleteEnvironmentConfigurationInputBuilder {
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the environment to delete the draft configuration from.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentConfigurationInput`](crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput {
-            application_name: self.application_name,
-            environment_name: self.environment_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput {
+                application_name: self.application_name
+                ,
+                environment_name: self.environment_name
+                ,
+            }
+        )
     }
 }
+

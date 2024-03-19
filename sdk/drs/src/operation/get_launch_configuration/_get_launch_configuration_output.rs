@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLaunchConfigurationOutput {
+pub struct GetLaunchConfigurationOutput  {
     /// <p>The ID of the Source Server for this launch configuration.</p>
     pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch configuration.</p>
@@ -25,25 +25,25 @@ pub struct GetLaunchConfigurationOutput {
     pub launch_into_instance_properties: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>,
     _request_id: Option<String>,
 }
-impl GetLaunchConfigurationOutput {
+impl  GetLaunchConfigurationOutput  {
     /// <p>The ID of the Source Server for this launch configuration.</p>
-    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
-    pub fn ec2_launch_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> ::std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> ::std::option::Option<& crate::types::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> ::std::option::Option<& crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -55,7 +55,7 @@ impl GetLaunchConfigurationOutput {
         self.copy_tags
     }
     /// <p>The licensing configuration to be used for this launch configuration.</p>
-    pub fn licensing(&self) -> ::std::option::Option<&crate::types::Licensing> {
+    pub fn licensing(&self) -> ::std::option::Option<& crate::types::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
@@ -63,15 +63,15 @@ impl GetLaunchConfigurationOutput {
         self.post_launch_enabled
     }
     /// <p>Launch into existing instance properties.</p>
-    pub fn launch_into_instance_properties(&self) -> ::std::option::Option<&crate::types::LaunchIntoInstanceProperties> {
+    pub fn launch_into_instance_properties(&self) -> ::std::option::Option<& crate::types::LaunchIntoInstanceProperties> {
         self.launch_into_instance_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLaunchConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchConfigurationOutput`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput).
     pub fn builder() -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationOutputBuilder {
@@ -103,8 +103,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>The ID of the Source Server for this launch configuration.</p>
     pub fn set_source_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of the Source Server for this launch configuration.</p>
     pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>The name of the launch configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the launch configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
     pub fn set_ec2_launch_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_launch_template_id = input;
-        self
+        self.ec2_launch_template_id = input; self
     }
     /// <p>The EC2 launch template ID of this launch configuration.</p>
     pub fn get_ec2_launch_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
     pub fn set_launch_disposition(mut self, input: ::std::option::Option<crate::types::LaunchDisposition>) -> Self {
-        self.launch_disposition = input;
-        self
+        self.launch_disposition = input; self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
     pub fn get_launch_disposition(&self) -> &::std::option::Option<crate::types::LaunchDisposition> {
@@ -158,12 +154,8 @@ impl GetLaunchConfigurationOutputBuilder {
         self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn set_target_instance_type_right_sizing_method(
-        mut self,
-        input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
-    ) -> Self {
-        self.target_instance_type_right_sizing_method = input;
-        self
+    pub fn set_target_instance_type_right_sizing_method(mut self, input: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
+        self.target_instance_type_right_sizing_method = input; self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
     pub fn get_target_instance_type_right_sizing_method(&self) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
@@ -176,8 +168,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_private_ip = input;
-        self
+        self.copy_private_ip = input; self
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
     pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
@@ -190,8 +181,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -204,8 +194,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
-        self.licensing = input;
-        self
+        self.licensing = input; self
     }
     /// <p>The licensing configuration to be used for this launch configuration.</p>
     pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
@@ -218,8 +207,7 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
     pub fn set_post_launch_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.post_launch_enabled = input;
-        self
+        self.post_launch_enabled = input; self
     }
     /// <p>Whether we want to activate post-launch actions for the Source Server.</p>
     pub fn get_post_launch_enabled(&self) -> &::std::option::Option<bool> {
@@ -232,36 +220,46 @@ impl GetLaunchConfigurationOutputBuilder {
     }
     /// <p>Launch into existing instance properties.</p>
     pub fn set_launch_into_instance_properties(mut self, input: ::std::option::Option<crate::types::LaunchIntoInstanceProperties>) -> Self {
-        self.launch_into_instance_properties = input;
-        self
+        self.launch_into_instance_properties = input; self
     }
     /// <p>Launch into existing instance properties.</p>
     pub fn get_launch_into_instance_properties(&self) -> &::std::option::Option<crate::types::LaunchIntoInstanceProperties> {
         &self.launch_into_instance_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetLaunchConfigurationOutput`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput).
     pub fn build(self) -> crate::operation::get_launch_configuration::GetLaunchConfigurationOutput {
         crate::operation::get_launch_configuration::GetLaunchConfigurationOutput {
-            source_server_id: self.source_server_id,
-            name: self.name,
-            ec2_launch_template_id: self.ec2_launch_template_id,
-            launch_disposition: self.launch_disposition,
-            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
-            copy_private_ip: self.copy_private_ip,
-            copy_tags: self.copy_tags,
-            licensing: self.licensing,
-            post_launch_enabled: self.post_launch_enabled,
-            launch_into_instance_properties: self.launch_into_instance_properties,
+            source_server_id: self.source_server_id
+            ,
+            name: self.name
+            ,
+            ec2_launch_template_id: self.ec2_launch_template_id
+            ,
+            launch_disposition: self.launch_disposition
+            ,
+            target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+            ,
+            copy_private_ip: self.copy_private_ip
+            ,
+            copy_tags: self.copy_tags
+            ,
+            licensing: self.licensing
+            ,
+            post_launch_enabled: self.post_launch_enabled
+            ,
+            launch_into_instance_properties: self.launch_into_instance_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

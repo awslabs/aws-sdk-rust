@@ -3,15 +3,14 @@
 /// <p>Object containing the choice of application destination that you specify.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsManagedResources {
+pub struct AwsManagedResources  {
     /// <p>The choice of application destination that you specify.</p>
-    pub target_destination: ::std::vec::Vec<crate::types::AwsManagedTargetDestination>,
+    pub target_destination: ::std::vec::Vec::<crate::types::AwsManagedTargetDestination>,
 }
-impl AwsManagedResources {
+impl  AwsManagedResources  {
     /// <p>The choice of application destination that you specify.</p>
-    pub fn target_destination(&self) -> &[crate::types::AwsManagedTargetDestination] {
-        use std::ops::Deref;
-        self.target_destination.deref()
+    pub fn target_destination(&self) -> & [crate::types::AwsManagedTargetDestination] {
+        use std::ops::Deref; self.target_destination.deref()
     }
 }
 impl AwsManagedResources {
@@ -25,7 +24,7 @@ impl AwsManagedResources {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsManagedResourcesBuilder {
-    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>,
+    pub(crate) target_destination: ::std::option::Option<::std::vec::Vec::<crate::types::AwsManagedTargetDestination>>,
 }
 impl AwsManagedResourcesBuilder {
     /// Appends an item to `target_destination`.
@@ -35,30 +34,31 @@ impl AwsManagedResourcesBuilder {
     /// <p>The choice of application destination that you specify.</p>
     pub fn target_destination(mut self, input: crate::types::AwsManagedTargetDestination) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
-        v.push(input);
-        self.target_destination = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_destination = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The choice of application destination that you specify.</p>
-    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>>) -> Self {
-        self.target_destination = input;
-        self
+    pub fn set_target_destination(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsManagedTargetDestination>>) -> Self {
+        self.target_destination = input; self
     }
     /// <p>The choice of application destination that you specify.</p>
-    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsManagedTargetDestination>> {
+    pub fn get_target_destination(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsManagedTargetDestination>> {
         &self.target_destination
     }
     /// Consumes the builder and constructs a [`AwsManagedResources`](crate::types::AwsManagedResources).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_destination`](crate::types::builders::AwsManagedResourcesBuilder::target_destination)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedResources, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsManagedResources {
-            target_destination: self.target_destination.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_destination",
-                    "target_destination was not specified but it is required when building AwsManagedResources",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsManagedResources {
+                target_destination: self.target_destination
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target_destination", "target_destination was not specified but it is required when building AwsManagedResources")
+                    )?
+                ,
+            }
+        )
     }
 }
+

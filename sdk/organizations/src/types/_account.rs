@@ -3,7 +3,7 @@
 /// <p>Contains information about an Amazon Web Services account that is a member of an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Account {
+pub struct Account  {
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -23,41 +23,41 @@ pub struct Account {
     /// <p>The date the account became a part of the organization.</p>
     pub joined_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Account {
+impl  Account  {
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The friendly name of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the account in the organization.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AccountStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AccountStatus> {
         self.status.as_ref()
     }
     /// <p>The method by which the account joined the organization.</p>
-    pub fn joined_method(&self) -> ::std::option::Option<&crate::types::AccountJoinedMethod> {
+    pub fn joined_method(&self) -> ::std::option::Option<& crate::types::AccountJoinedMethod> {
         self.joined_method.as_ref()
     }
     /// <p>The date the account became a part of the organization.</p>
-    pub fn joined_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn joined_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.joined_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for Account {
+impl  ::std::fmt::Debug for Account  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Account");
         formatter.field("id", &self.id);
@@ -99,8 +99,7 @@ impl AccountBuilder {
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier (ID) of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
@@ -116,8 +115,7 @@ impl AccountBuilder {
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
@@ -133,8 +131,7 @@ impl AccountBuilder {
     /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address associated with the Amazon Web Services account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
@@ -150,8 +147,7 @@ impl AccountBuilder {
     /// <p>The friendly name of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -165,8 +161,7 @@ impl AccountBuilder {
     }
     /// <p>The status of the account in the organization.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccountStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the account in the organization.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccountStatus> {
@@ -179,8 +174,7 @@ impl AccountBuilder {
     }
     /// <p>The method by which the account joined the organization.</p>
     pub fn set_joined_method(mut self, input: ::std::option::Option<crate::types::AccountJoinedMethod>) -> Self {
-        self.joined_method = input;
-        self
+        self.joined_method = input; self
     }
     /// <p>The method by which the account joined the organization.</p>
     pub fn get_joined_method(&self) -> &::std::option::Option<crate::types::AccountJoinedMethod> {
@@ -193,8 +187,7 @@ impl AccountBuilder {
     }
     /// <p>The date the account became a part of the organization.</p>
     pub fn set_joined_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.joined_timestamp = input;
-        self
+        self.joined_timestamp = input; self
     }
     /// <p>The date the account became a part of the organization.</p>
     pub fn get_joined_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,13 +196,20 @@ impl AccountBuilder {
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {
         crate::types::Account {
-            id: self.id,
-            arn: self.arn,
-            email: self.email,
-            name: self.name,
-            status: self.status,
-            joined_method: self.joined_method,
-            joined_timestamp: self.joined_timestamp,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            email: self.email
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            joined_method: self.joined_method
+            ,
+            joined_timestamp: self.joined_timestamp
+            ,
         }
     }
 }
@@ -226,3 +226,4 @@ impl ::std::fmt::Debug for AccountBuilder {
         formatter.finish()
     }
 }
+

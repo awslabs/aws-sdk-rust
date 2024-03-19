@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeWithResponseStreamInput {
+pub struct InvokeWithResponseStreamInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -33,7 +33,7 @@ pub struct InvokeWithResponseStreamInput {
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl InvokeWithResponseStreamInput {
+impl  InvokeWithResponseStreamInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -45,7 +45,7 @@ impl InvokeWithResponseStreamInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Use one of the following options:</p>
@@ -55,28 +55,28 @@ impl InvokeWithResponseStreamInput {
     /// <li>
     /// <p><code>DryRun</code> – Validate parameter values and verify that the IAM user or role has permission to invoke the function.</p></li>
     /// </ul>
-    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::ResponseStreamingInvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<& crate::types::ResponseStreamingInvocationType> {
         self.invocation_type.as_ref()
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
-    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> ::std::option::Option<& crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn client_context(&self) -> ::std::option::Option<&str> {
+    pub fn client_context(&self) -> ::std::option::Option<& str> {
         self.client_context.as_deref()
     }
     /// <p>The alias name.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
-    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
-impl ::std::fmt::Debug for InvokeWithResponseStreamInput {
+impl  ::std::fmt::Debug for InvokeWithResponseStreamInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeWithResponseStreamInput");
         formatter.field("function_name", &self.function_name);
@@ -135,8 +135,7 @@ impl InvokeWithResponseStreamInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -171,8 +170,7 @@ impl InvokeWithResponseStreamInputBuilder {
     /// <p><code>DryRun</code> – Validate parameter values and verify that the IAM user or role has permission to invoke the function.</p></li>
     /// </ul>
     pub fn set_invocation_type(mut self, input: ::std::option::Option<crate::types::ResponseStreamingInvocationType>) -> Self {
-        self.invocation_type = input;
-        self
+        self.invocation_type = input; self
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -191,8 +189,7 @@ impl InvokeWithResponseStreamInputBuilder {
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -205,8 +202,7 @@ impl InvokeWithResponseStreamInputBuilder {
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_context = input;
-        self
+        self.client_context = input; self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +215,7 @@ impl InvokeWithResponseStreamInputBuilder {
     }
     /// <p>The alias name.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>The alias name.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +230,7 @@ impl InvokeWithResponseStreamInputBuilder {
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
@@ -244,20 +238,23 @@ impl InvokeWithResponseStreamInputBuilder {
         &self.payload
     }
     /// Consumes the builder and constructs a [`InvokeWithResponseStreamInput`](crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput {
-            function_name: self.function_name,
-            invocation_type: self.invocation_type,
-            log_type: self.log_type,
-            client_context: self.client_context,
-            qualifier: self.qualifier,
-            payload: self.payload,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamInput {
+                function_name: self.function_name
+                ,
+                invocation_type: self.invocation_type
+                ,
+                log_type: self.log_type
+                ,
+                client_context: self.client_context
+                ,
+                qualifier: self.qualifier
+                ,
+                payload: self.payload
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeWithResponseStreamInputBuilder {
@@ -272,3 +269,4 @@ impl ::std::fmt::Debug for InvokeWithResponseStreamInputBuilder {
         formatter.finish()
     }
 }
+

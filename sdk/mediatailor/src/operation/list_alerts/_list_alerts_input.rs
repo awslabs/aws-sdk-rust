@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAlertsInput {
+pub struct ListAlertsInput  {
     /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -10,17 +10,17 @@ pub struct ListAlertsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl ListAlertsInput {
+impl  ListAlertsInput  {
     /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of alerts that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> alerts, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ListAlertsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,10 +82,16 @@ impl ListAlertsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListAlertsInput`](crate::operation::list_alerts::ListAlertsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_alerts::ListAlertsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_alerts::ListAlertsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            resource_arn: self.resource_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_alerts::ListAlertsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

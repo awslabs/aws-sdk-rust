@@ -3,7 +3,7 @@
 /// <p>A radar chart visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RadarChartVisual {
+pub struct RadarChartVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
@@ -13,39 +13,40 @@ pub struct RadarChartVisual {
     /// <p>The configuration settings of the visual.</p>
     pub chart_configuration: ::std::option::Option<crate::types::RadarChartConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub column_hierarchies: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>,
 }
-impl RadarChartVisual {
+impl  RadarChartVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> &str {
-        use std::ops::Deref;
-        self.visual_id.deref()
+    pub fn visual_id(&self) -> & str {
+        use std::ops::Deref; self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<& crate::types::VisualTitleLabelOptions> {
         self.title.as_ref()
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
+    pub fn subtitle(&self) -> ::std::option::Option<& crate::types::VisualSubtitleLabelOptions> {
         self.subtitle.as_ref()
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::RadarChartConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<& crate::types::RadarChartConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::VisualCustomAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_hierarchies.is_none()`.
-    pub fn column_hierarchies(&self) -> &[crate::types::ColumnHierarchy] {
-        self.column_hierarchies.as_deref().unwrap_or_default()
+    pub fn column_hierarchies(&self) -> & [crate::types::ColumnHierarchy] {
+        self.column_hierarchies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RadarChartVisual {
@@ -63,8 +64,8 @@ pub struct RadarChartVisualBuilder {
     pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::RadarChartConfiguration>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
-    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
+    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>,
 }
 impl RadarChartVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
@@ -75,8 +76,7 @@ impl RadarChartVisualBuilder {
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visual_id = input;
-        self
+        self.visual_id = input; self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl RadarChartVisualBuilder {
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn get_title(&self) -> &::std::option::Option<crate::types::VisualTitleLabelOptions> {
@@ -103,8 +102,7 @@ impl RadarChartVisualBuilder {
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<crate::types::VisualSubtitleLabelOptions> {
@@ -117,8 +115,7 @@ impl RadarChartVisualBuilder {
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::RadarChartConfiguration>) -> Self {
-        self.chart_configuration = input;
-        self
+        self.chart_configuration = input; self
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::RadarChartConfiguration> {
@@ -131,17 +128,16 @@ impl RadarChartVisualBuilder {
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Appends an item to `column_hierarchies`.
@@ -151,35 +147,41 @@ impl RadarChartVisualBuilder {
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
     pub fn column_hierarchies(mut self, input: crate::types::ColumnHierarchy) -> Self {
         let mut v = self.column_hierarchies.unwrap_or_default();
-        v.push(input);
-        self.column_hierarchies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_hierarchies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>) -> Self {
-        self.column_hierarchies = input;
-        self
+    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>) -> Self {
+        self.column_hierarchies = input; self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
+    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>> {
         &self.column_hierarchies
     }
     /// Consumes the builder and constructs a [`RadarChartVisual`](crate::types::RadarChartVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::RadarChartVisualBuilder::visual_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RadarChartVisual, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RadarChartVisual {
-            visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "visual_id",
-                    "visual_id was not specified but it is required when building RadarChartVisual",
-                )
-            })?,
-            title: self.title,
-            subtitle: self.subtitle,
-            chart_configuration: self.chart_configuration,
-            actions: self.actions,
-            column_hierarchies: self.column_hierarchies,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RadarChartVisual {
+                visual_id: self.visual_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("visual_id", "visual_id was not specified but it is required when building RadarChartVisual")
+                    )?
+                ,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                chart_configuration: self.chart_configuration
+                ,
+                actions: self.actions
+                ,
+                column_hierarchies: self.column_hierarchies
+                ,
+            }
+        )
     }
 }
+

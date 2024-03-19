@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEncryptionConfigurationInput {}
+pub struct GetEncryptionConfigurationInput  {
+}
 impl GetEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetEncryptionConfigurationInput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput).
     pub fn builder() -> crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl GetEncryptionConfigurationInput {
 /// A builder for [`GetEncryptionConfigurationInput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetEncryptionConfigurationInputBuilder {}
+pub struct GetEncryptionConfigurationInputBuilder {
+}
 impl GetEncryptionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetEncryptionConfigurationInput`](crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput {
+            }
+        )
     }
 }
+

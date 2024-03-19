@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTemplateGroupAccessControlEntryInput {
+pub struct CreateTemplateGroupAccessControlEntryInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
@@ -14,25 +14,25 @@ pub struct CreateTemplateGroupAccessControlEntryInput {
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateTemplateGroupAccessControlEntryInput {
+impl  CreateTemplateGroupAccessControlEntryInput  {
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
-    pub fn group_security_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_security_identifier(&self) -> ::std::option::Option<& str> {
         self.group_security_identifier.as_deref()
     }
     /// <p>Name of the Active Directory group. This name does not need to match the group name in Active Directory.</p>
-    pub fn group_display_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_display_name(&self) -> ::std::option::Option<& str> {
         self.group_display_name.as_deref()
     }
     /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
-    pub fn access_rights(&self) -> ::std::option::Option<&crate::types::AccessRights> {
+    pub fn access_rights(&self) -> ::std::option::Option<& crate::types::AccessRights> {
         self.access_rights.as_ref()
     }
     /// <p>Idempotency token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
     pub fn set_group_security_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_security_identifier = input;
-        self
+        self.group_security_identifier = input; self
     }
     /// <p>Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".</p>
     pub fn get_group_security_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>Name of the Active Directory group. This name does not need to match the group name in Active Directory.</p>
     pub fn set_group_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_display_name = input;
-        self
+        self.group_display_name = input; self
     }
     /// <p>Name of the Active Directory group. This name does not need to match the group name in Active Directory.</p>
     pub fn get_group_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn set_access_rights(mut self, input: ::std::option::Option<crate::types::AccessRights>) -> Self {
-        self.access_rights = input;
-        self
+        self.access_rights = input; self
     }
     /// <p>Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.</p>
     pub fn get_access_rights(&self) -> &::std::option::Option<crate::types::AccessRights> {
@@ -121,28 +117,28 @@ impl CreateTemplateGroupAccessControlEntryInputBuilder {
     }
     /// <p>Idempotency token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Idempotency token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTemplateGroupAccessControlEntryInput`](crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_template_group_access_control_entry::CreateTemplateGroupAccessControlEntryInput {
-                template_arn: self.template_arn,
-                group_security_identifier: self.group_security_identifier,
-                group_display_name: self.group_display_name,
-                access_rights: self.access_rights,
-                client_token: self.client_token,
-            },
+                template_arn: self.template_arn
+                ,
+                group_security_identifier: self.group_security_identifier
+                ,
+                group_display_name: self.group_display_name
+                ,
+                access_rights: self.access_rights
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>An optional parameter that overrides the validation strategy for all analyses and dashboards before the resource is imported.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobOverrideValidationStrategy {
+pub struct AssetBundleImportJobOverrideValidationStrategy  {
     /// <p>A Boolean value that indicates whether to import all analyses and dashboards under strict or lenient mode.</p>
     pub strict_mode_for_all_resources: bool,
 }
-impl AssetBundleImportJobOverrideValidationStrategy {
+impl  AssetBundleImportJobOverrideValidationStrategy  {
     /// <p>A Boolean value that indicates whether to import all analyses and dashboards under strict or lenient mode.</p>
     pub fn strict_mode_for_all_resources(&self) -> bool {
         self.strict_mode_for_all_resources
@@ -34,8 +34,7 @@ impl AssetBundleImportJobOverrideValidationStrategyBuilder {
     }
     /// <p>A Boolean value that indicates whether to import all analyses and dashboards under strict or lenient mode.</p>
     pub fn set_strict_mode_for_all_resources(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.strict_mode_for_all_resources = input;
-        self
+        self.strict_mode_for_all_resources = input; self
     }
     /// <p>A Boolean value that indicates whether to import all analyses and dashboards under strict or lenient mode.</p>
     pub fn get_strict_mode_for_all_resources(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,10 @@ impl AssetBundleImportJobOverrideValidationStrategyBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverrideValidationStrategy`](crate::types::AssetBundleImportJobOverrideValidationStrategy).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverrideValidationStrategy {
         crate::types::AssetBundleImportJobOverrideValidationStrategy {
-            strict_mode_for_all_resources: self.strict_mode_for_all_resources.unwrap_or_default(),
+            strict_mode_for_all_resources: self.strict_mode_for_all_resources
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

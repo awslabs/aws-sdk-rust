@@ -3,7 +3,7 @@
 /// <p>A package summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageListItem {
+pub struct PackageListItem  {
     /// <p>The package's ID.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The package's name.</p>
@@ -13,27 +13,27 @@ pub struct PackageListItem {
     /// <p>When the package was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The package's tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PackageListItem {
+impl  PackageListItem  {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The package's name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The package's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>When the package was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The package's tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -52,7 +52,7 @@ pub struct PackageListItemBuilder {
     pub(crate) package_name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PackageListItemBuilder {
     /// <p>The package's ID.</p>
@@ -62,8 +62,7 @@ impl PackageListItemBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The package's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl PackageListItemBuilder {
     }
     /// <p>The package's name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The package's name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl PackageListItemBuilder {
     }
     /// <p>The package's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The package's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl PackageListItemBuilder {
     }
     /// <p>When the package was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>When the package was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,27 +114,32 @@ impl PackageListItemBuilder {
     /// <p>The package's tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The package's tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The package's tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PackageListItem`](crate::types::PackageListItem).
     pub fn build(self) -> crate::types::PackageListItem {
         crate::types::PackageListItem {
-            package_id: self.package_id,
-            package_name: self.package_name,
-            arn: self.arn,
-            created_time: self.created_time,
-            tags: self.tags,
+            package_id: self.package_id
+            ,
+            package_name: self.package_name
+            ,
+            arn: self.arn
+            ,
+            created_time: self.created_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

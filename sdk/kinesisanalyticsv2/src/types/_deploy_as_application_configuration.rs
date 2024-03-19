@@ -3,13 +3,13 @@
 /// <p>The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployAsApplicationConfiguration {
+pub struct DeployAsApplicationConfiguration  {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub s3_content_location: ::std::option::Option<crate::types::S3ContentBaseLocation>,
 }
-impl DeployAsApplicationConfiguration {
+impl  DeployAsApplicationConfiguration  {
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
-    pub fn s3_content_location(&self) -> ::std::option::Option<&crate::types::S3ContentBaseLocation> {
+    pub fn s3_content_location(&self) -> ::std::option::Option<& crate::types::S3ContentBaseLocation> {
         self.s3_content_location.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DeployAsApplicationConfigurationBuilder {
     }
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn set_s3_content_location(mut self, input: ::std::option::Option<crate::types::S3ContentBaseLocation>) -> Self {
-        self.s3_content_location = input;
-        self
+        self.s3_content_location = input; self
     }
     /// <p>The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn get_s3_content_location(&self) -> &::std::option::Option<crate::types::S3ContentBaseLocation> {
@@ -45,7 +44,9 @@ impl DeployAsApplicationConfigurationBuilder {
     /// Consumes the builder and constructs a [`DeployAsApplicationConfiguration`](crate::types::DeployAsApplicationConfiguration).
     pub fn build(self) -> crate::types::DeployAsApplicationConfiguration {
         crate::types::DeployAsApplicationConfiguration {
-            s3_content_location: self.s3_content_location,
+            s3_content_location: self.s3_content_location
+            ,
         }
     }
 }
+

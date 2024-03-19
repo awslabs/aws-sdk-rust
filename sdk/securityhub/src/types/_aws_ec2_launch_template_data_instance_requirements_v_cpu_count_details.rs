@@ -3,13 +3,13 @@
 /// <p>The minimum and maximum number of vCPUs for an Amazon EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails  {
     /// <p>The maximum number of vCPUs.</p>
     pub max: ::std::option::Option<i32>,
     /// <p>The minimum number of vCPUs.</p>
     pub min: ::std::option::Option<i32>,
 }
-impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
+impl  AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails  {
     /// <p>The maximum number of vCPUs.</p>
     pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
@@ -41,8 +41,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     }
     /// <p>The maximum number of vCPUs.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum number of vCPUs.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     }
     /// <p>The minimum number of vCPUs.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum number of vCPUs.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
-            max: self.max,
-            min: self.min,
+            max: self.max
+            ,
+            min: self.min
+            ,
         }
     }
 }
+

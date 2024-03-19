@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct InvokeAgentInput {
+pub struct InvokeAgentInput  {
     /// <p>Contains parameters that specify various attributes of the session.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>The unique identifier of the agent to use.</p>
@@ -18,21 +18,21 @@ pub struct InvokeAgentInput {
     /// <p>The prompt text to send the agent.</p>
     pub input_text: ::std::option::Option<::std::string::String>,
 }
-impl InvokeAgentInput {
+impl  InvokeAgentInput  {
     /// <p>Contains parameters that specify various attributes of the session.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.session_state.as_ref()
     }
     /// <p>The unique identifier of the agent to use.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The alias of the agent to use.</p>
-    pub fn agent_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_alias_id(&self) -> ::std::option::Option<& str> {
         self.agent_alias_id.as_deref()
     }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Specifies whether to end the session with the agent or not.</p>
@@ -44,11 +44,11 @@ impl InvokeAgentInput {
         self.enable_trace
     }
     /// <p>The prompt text to send the agent.</p>
-    pub fn input_text(&self) -> ::std::option::Option<&str> {
+    pub fn input_text(&self) -> ::std::option::Option<& str> {
         self.input_text.as_deref()
     }
 }
-impl ::std::fmt::Debug for InvokeAgentInput {
+impl  ::std::fmt::Debug for InvokeAgentInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeAgentInput");
         formatter.field("session_state", &self.session_state);
@@ -88,8 +88,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>Contains parameters that specify various attributes of the session.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>Contains parameters that specify various attributes of the session.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
@@ -103,8 +102,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>The unique identifier of the agent to use.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>The unique identifier of the agent to use.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>The alias of the agent to use.</p>
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// <p>The alias of the agent to use.</p>
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +130,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +143,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>Specifies whether to end the session with the agent or not.</p>
     pub fn set_end_session(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.end_session = input;
-        self
+        self.end_session = input; self
     }
     /// <p>Specifies whether to end the session with the agent or not.</p>
     pub fn get_end_session(&self) -> &::std::option::Option<bool> {
@@ -161,8 +156,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace enablement</a>.</p>
     pub fn set_enable_trace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_trace = input;
-        self
+        self.enable_trace = input; self
     }
     /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace enablement</a>.</p>
     pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
@@ -176,8 +170,7 @@ impl InvokeAgentInputBuilder {
     }
     /// <p>The prompt text to send the agent.</p>
     pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_text = input;
-        self
+        self.input_text = input; self
     }
     /// <p>The prompt text to send the agent.</p>
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,15 +178,24 @@ impl InvokeAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`InvokeAgentInput`](crate::operation::invoke_agent::InvokeAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::invoke_agent::InvokeAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::invoke_agent::InvokeAgentInput {
-            session_state: self.session_state,
-            agent_id: self.agent_id,
-            agent_alias_id: self.agent_alias_id,
-            session_id: self.session_id,
-            end_session: self.end_session,
-            enable_trace: self.enable_trace,
-            input_text: self.input_text,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::invoke_agent::InvokeAgentInput {
+                session_state: self.session_state
+                ,
+                agent_id: self.agent_id
+                ,
+                agent_alias_id: self.agent_alias_id
+                ,
+                session_id: self.session_id
+                ,
+                end_session: self.end_session
+                ,
+                enable_trace: self.enable_trace
+                ,
+                input_text: self.input_text
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for InvokeAgentInputBuilder {
@@ -209,3 +211,4 @@ impl ::std::fmt::Debug for InvokeAgentInputBuilder {
         formatter.finish()
     }
 }
+

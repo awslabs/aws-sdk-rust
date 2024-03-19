@@ -3,7 +3,7 @@
 /// <p>The input for the DescribeEndpoint operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointInput {
+pub struct DescribeEndpointInput  {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ pub struct DescribeEndpointInput {
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
     pub endpoint_type: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEndpointInput {
+impl  DescribeEndpointInput  {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
     /// <li>
@@ -43,7 +43,7 @@ impl DescribeEndpointInput {
     /// <p><code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p></li>
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
-    pub fn endpoint_type(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
 }
@@ -102,8 +102,7 @@ impl DescribeEndpointInputBuilder {
     /// </ul>
     /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities. ATS Signed Certificates are more secure and are trusted by most popular browsers.</p>
     pub fn set_endpoint_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_type = input;
-        self
+        self.endpoint_type = input; self
     }
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
@@ -127,11 +126,13 @@ impl DescribeEndpointInputBuilder {
         &self.endpoint_type
     }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
-            endpoint_type: self.endpoint_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_endpoint::DescribeEndpointInput {
+                endpoint_type: self.endpoint_type
+                ,
+            }
+        )
     }
 }
+

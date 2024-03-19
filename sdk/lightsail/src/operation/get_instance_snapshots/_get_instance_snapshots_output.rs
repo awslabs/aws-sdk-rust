@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInstanceSnapshotsOutput {
+pub struct GetInstanceSnapshotsOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub instance_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
+    pub instance_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSnapshot>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetInstanceSnapshotsOutput {
+impl  GetInstanceSnapshotsOutput  {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_snapshots.is_none()`.
-    pub fn instance_snapshots(&self) -> &[crate::types::InstanceSnapshot] {
-        self.instance_snapshots.as_deref().unwrap_or_default()
+    pub fn instance_snapshots(&self) -> & [crate::types::InstanceSnapshot] {
+        self.instance_snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInstanceSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInstanceSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotsOutput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput).
     pub fn builder() -> crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetInstanceSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetInstanceSnapshotsOutputBuilder {
-    pub(crate) instance_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>,
+    pub(crate) instance_snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSnapshot>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetInstanceSnapshotsOutputBuilder {
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
     pub fn instance_snapshots(mut self, input: crate::types::InstanceSnapshot) -> Self {
         let mut v = self.instance_snapshots.unwrap_or_default();
-        v.push(input);
-        self.instance_snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub fn set_instance_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>>) -> Self {
-        self.instance_snapshots = input;
-        self
+    pub fn set_instance_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceSnapshot>>) -> Self {
+        self.instance_snapshots = input; self
     }
     /// <p>An array of key-value pairs containing information about the results of your get instance snapshots request.</p>
-    pub fn get_instance_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceSnapshot>> {
+    pub fn get_instance_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceSnapshot>> {
         &self.instance_snapshots
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetInstanceSnapshotsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetInstanceSnapshots</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetInstanceSnapshotsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInstanceSnapshotsOutput`](crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput).
     pub fn build(self) -> crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput {
         crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput {
-            instance_snapshots: self.instance_snapshots,
-            next_page_token: self.next_page_token,
+            instance_snapshots: self.instance_snapshots
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

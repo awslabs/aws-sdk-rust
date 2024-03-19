@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceConfigurationOutput {
+pub struct DescribeWorkspaceConfigurationOutput  {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub configuration: ::std::string::String,
     /// <p>The supported Grafana version for the workspace.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeWorkspaceConfigurationOutput {
+impl  DescribeWorkspaceConfigurationOutput  {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration.deref()
+    pub fn configuration(&self) -> & str {
+        use std::ops::Deref; self.configuration.deref()
     }
     /// <p>The supported Grafana version for the workspace.</p>
-    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
+    pub fn grafana_version(&self) -> ::std::option::Option<& str> {
         self.grafana_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkspaceConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
     pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder {
@@ -49,8 +48,7 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
     }
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,40 +61,37 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
     }
     /// <p>The supported Grafana version for the workspace.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_version = input;
-        self
+        self.grafana_version = input; self
     }
     /// <p>The supported Grafana version for the workspace.</p>
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration`](crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder::configuration)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
-            configuration: self.configuration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "configuration",
-                    "configuration was not specified but it is required when building DescribeWorkspaceConfigurationOutput",
-                )
-            })?,
-            grafana_version: self.grafana_version,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
+                configuration: self.configuration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configuration", "configuration was not specified but it is required when building DescribeWorkspaceConfigurationOutput")
+                    )?
+                ,
+                grafana_version: self.grafana_version
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSchemaInput {
+pub struct CreateSchemaInput  {
     /// <p>This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
@@ -34,23 +34,23 @@ pub struct CreateSchemaInput {
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     pub schema_definition: ::std::option::Option<::std::string::String>,
 }
-impl CreateSchemaInput {
+impl  CreateSchemaInput  {
     /// <p>This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&crate::types::RegistryId> {
+    pub fn registry_id(&self) -> ::std::option::Option<& crate::types::RegistryId> {
         self.registry_id.as_ref()
     }
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
+    pub fn data_format(&self) -> ::std::option::Option<& crate::types::DataFormat> {
         self.data_format.as_ref()
     }
     /// <p>The compatibility mode of the schema. The possible values are:</p>
@@ -72,19 +72,19 @@ impl CreateSchemaInput {
     /// <li>
     /// <p><i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p></li>
     /// </ul>
-    pub fn compatibility(&self) -> ::std::option::Option<&crate::types::Compatibility> {
+    pub fn compatibility(&self) -> ::std::option::Option<& crate::types::Compatibility> {
         self.compatibility.as_ref()
     }
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-    pub fn schema_definition(&self) -> ::std::option::Option<&str> {
+    pub fn schema_definition(&self) -> ::std::option::Option<& str> {
         self.schema_definition.as_deref()
     }
 }
@@ -104,7 +104,7 @@ pub struct CreateSchemaInputBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
     pub(crate) compatibility: ::std::option::Option<crate::types::Compatibility>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) schema_definition: ::std::option::Option<::std::string::String>,
 }
 impl CreateSchemaInputBuilder {
@@ -119,8 +119,7 @@ impl CreateSchemaInputBuilder {
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<crate::types::RegistryId>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>
     /// :registry/default-registry:random-5-letter-id
@@ -136,8 +135,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +149,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
@@ -201,8 +198,7 @@ impl CreateSchemaInputBuilder {
     /// <p><i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p></li>
     /// </ul>
     pub fn set_compatibility(mut self, input: ::std::option::Option<crate::types::Compatibility>) -> Self {
-        self.compatibility = input;
-        self
+        self.compatibility = input; self
     }
     /// <p>The compatibility mode of the schema. The possible values are:</p>
     /// <ul>
@@ -233,8 +229,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,17 +242,16 @@ impl CreateSchemaInputBuilder {
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
@@ -267,25 +261,32 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     pub fn set_schema_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_definition = input;
-        self
+        self.schema_definition = input; self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_definition
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_schema::CreateSchemaInput {
-            registry_id: self.registry_id,
-            schema_name: self.schema_name,
-            data_format: self.data_format,
-            compatibility: self.compatibility,
-            description: self.description,
-            tags: self.tags,
-            schema_definition: self.schema_definition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schema::CreateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_schema::CreateSchemaInput {
+                registry_id: self.registry_id
+                ,
+                schema_name: self.schema_name
+                ,
+                data_format: self.data_format
+                ,
+                compatibility: self.compatibility
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                schema_definition: self.schema_definition
+                ,
+            }
+        )
     }
 }
+

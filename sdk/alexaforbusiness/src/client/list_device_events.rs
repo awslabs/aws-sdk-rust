@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDeviceEvents`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`device_arn(impl Into<String>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::set_device_arn):<br>required: **true**<br><p>The ARN of a device.</p><br>
     ///   - [`event_type(DeviceEventType)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::event_type) / [`set_event_type(Option<DeviceEventType>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::set_event_type):<br>required: **false**<br><p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p><br>
-    /// - On success, responds with [`ListDeviceEventsOutput`](crate::operation::list_device_events::ListDeviceEventsOutput) with field(s):
+                            /// - On success, responds with [`ListDeviceEventsOutput`](crate::operation::list_device_events::ListDeviceEventsOutput) with field(s):
     ///   - [`device_events(Option<Vec::<DeviceEvent>>)`](crate::operation::list_device_events::ListDeviceEventsOutput::device_events): <p>The device events requested for the device ARN.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_device_events::ListDeviceEventsOutput::next_token): <p>The token returned to indicate that there is more data available.</p>
-    /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::operation::list_device_events::ListDeviceEventsError)
+                            /// - On failure, responds with [`SdkError<ListDeviceEventsError>`](crate::operation::list_device_events::ListDeviceEventsError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_device_events(&self) -> crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder {
-        crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_device_events::builders::ListDeviceEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BedrockModelSpecification {
+pub struct BedrockModelSpecification  {
     /// <p>The ARN of the foundation model used in descriptive bot building.</p>
     pub model_arn: ::std::string::String,
 }
-impl BedrockModelSpecification {
+impl  BedrockModelSpecification  {
     /// <p>The ARN of the foundation model used in descriptive bot building.</p>
-    pub fn model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.model_arn.deref()
+    pub fn model_arn(&self) -> & str {
+        use std::ops::Deref; self.model_arn.deref()
     }
 }
 impl BedrockModelSpecification {
@@ -36,8 +35,7 @@ impl BedrockModelSpecificationBuilder {
     }
     /// <p>The ARN of the foundation model used in descriptive bot building.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The ARN of the foundation model used in descriptive bot building.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl BedrockModelSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::BedrockModelSpecificationBuilder::model_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::BedrockModelSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BedrockModelSpecification {
-            model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_arn",
-                    "model_arn was not specified but it is required when building BedrockModelSpecification",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BedrockModelSpecification {
+                model_arn: self.model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_arn", "model_arn was not specified but it is required when building BedrockModelSpecification")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes which mitigation actions should be executed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectMitigationActionExecution {
+pub struct DetectMitigationActionExecution  {
     /// <p>The unique identifier of the task.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the violation.</p>
@@ -23,41 +23,41 @@ pub struct DetectMitigationActionExecution {
     /// <p>The message of a mitigation action.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DetectMitigationActionExecution {
+impl  DetectMitigationActionExecution  {
     /// <p>The unique identifier of the task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The unique identifier of the violation.</p>
-    pub fn violation_id(&self) -> ::std::option::Option<&str> {
+    pub fn violation_id(&self) -> ::std::option::Option<& str> {
         self.violation_id.as_deref()
     }
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The date a mitigation action was started.</p>
-    pub fn execution_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn execution_start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.execution_start_date.as_ref()
     }
     /// <p>The date a mitigation action ended.</p>
-    pub fn execution_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn execution_end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.execution_end_date.as_ref()
     }
     /// <p>The status of a mitigation action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DetectMitigationActionExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DetectMitigationActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The error code of a mitigation action.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message of a mitigation action.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The unique identifier of the task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier of the task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The unique identifier of the violation.</p>
     pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.violation_id = input;
-        self
+        self.violation_id = input; self
     }
     /// <p>The unique identifier of the violation.</p>
     pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The date a mitigation action was started.</p>
     pub fn set_execution_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.execution_start_date = input;
-        self
+        self.execution_start_date = input; self
     }
     /// <p>The date a mitigation action was started.</p>
     pub fn get_execution_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +155,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The date a mitigation action ended.</p>
     pub fn set_execution_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.execution_end_date = input;
-        self
+        self.execution_end_date = input; self
     }
     /// <p>The date a mitigation action ended.</p>
     pub fn get_execution_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The status of a mitigation action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a mitigation action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectMitigationActionExecutionStatus> {
@@ -188,8 +181,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The error code of a mitigation action.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code of a mitigation action.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl DetectMitigationActionExecutionBuilder {
     }
     /// <p>The message of a mitigation action.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message of a mitigation action.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl DetectMitigationActionExecutionBuilder {
     /// Consumes the builder and constructs a [`DetectMitigationActionExecution`](crate::types::DetectMitigationActionExecution).
     pub fn build(self) -> crate::types::DetectMitigationActionExecution {
         crate::types::DetectMitigationActionExecution {
-            task_id: self.task_id,
-            violation_id: self.violation_id,
-            action_name: self.action_name,
-            thing_name: self.thing_name,
-            execution_start_date: self.execution_start_date,
-            execution_end_date: self.execution_end_date,
-            status: self.status,
-            error_code: self.error_code,
-            message: self.message,
+            task_id: self.task_id
+            ,
+            violation_id: self.violation_id
+            ,
+            action_name: self.action_name
+            ,
+            thing_name: self.thing_name
+            ,
+            execution_start_date: self.execution_start_date
+            ,
+            execution_end_date: self.execution_end_date
+            ,
+            status: self.status
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

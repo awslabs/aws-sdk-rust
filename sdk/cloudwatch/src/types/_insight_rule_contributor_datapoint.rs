@@ -4,15 +4,15 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InsightRuleContributorDatapoint {
+pub struct InsightRuleContributorDatapoint  {
     /// <p>The timestamp of the data point.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub approximate_value: ::std::option::Option<f64>,
 }
-impl InsightRuleContributorDatapoint {
+impl  InsightRuleContributorDatapoint  {
     /// <p>The timestamp of the data point.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
@@ -43,8 +43,7 @@ impl InsightRuleContributorDatapointBuilder {
     }
     /// <p>The timestamp of the data point.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the data point.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -58,8 +57,7 @@ impl InsightRuleContributorDatapointBuilder {
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub fn set_approximate_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.approximate_value = input;
-        self
+        self.approximate_value = input; self
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub fn get_approximate_value(&self) -> &::std::option::Option<f64> {
@@ -68,8 +66,11 @@ impl InsightRuleContributorDatapointBuilder {
     /// Consumes the builder and constructs a [`InsightRuleContributorDatapoint`](crate::types::InsightRuleContributorDatapoint).
     pub fn build(self) -> crate::types::InsightRuleContributorDatapoint {
         crate::types::InsightRuleContributorDatapoint {
-            timestamp: self.timestamp,
-            approximate_value: self.approximate_value,
+            timestamp: self.timestamp
+            ,
+            approximate_value: self.approximate_value
+            ,
         }
     }
 }
+

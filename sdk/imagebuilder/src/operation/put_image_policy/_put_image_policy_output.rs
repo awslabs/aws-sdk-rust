@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutImagePolicyOutput {
+pub struct PutImagePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     pub image_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutImagePolicyOutput {
+impl  PutImagePolicyOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
-    pub fn image_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_arn(&self) -> ::std::option::Option<& str> {
         self.image_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutImagePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutImagePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutImagePolicyOutput`](crate::operation::put_image_policy::PutImagePolicyOutput).
     pub fn builder() -> crate::operation::put_image_policy::builders::PutImagePolicyOutputBuilder {
@@ -47,8 +47,7 @@ impl PutImagePolicyOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl PutImagePolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutImagePolicyOutput`](crate::operation::put_image_policy::PutImagePolicyOutput).
     pub fn build(self) -> crate::operation::put_image_policy::PutImagePolicyOutput {
         crate::operation::put_image_policy::PutImagePolicyOutput {
-            request_id: self.request_id,
-            image_arn: self.image_arn,
+            request_id: self.request_id
+            ,
+            image_arn: self.image_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

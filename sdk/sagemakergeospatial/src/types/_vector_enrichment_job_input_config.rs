@@ -3,19 +3,19 @@
 /// <p>The input structure for the InputConfig in a VectorEnrichmentJob.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VectorEnrichmentJobInputConfig {
+pub struct VectorEnrichmentJobInputConfig  {
     /// <p>The input structure that defines the data source file type.</p>
     pub document_type: crate::types::VectorEnrichmentJobDocumentType,
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub data_source_config: ::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>,
 }
-impl VectorEnrichmentJobInputConfig {
+impl  VectorEnrichmentJobInputConfig  {
     /// <p>The input structure that defines the data source file type.</p>
-    pub fn document_type(&self) -> &crate::types::VectorEnrichmentJobDocumentType {
+    pub fn document_type(&self) -> & crate::types::VectorEnrichmentJobDocumentType {
         &self.document_type
     }
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
-    pub fn data_source_config(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobDataSourceConfigInput> {
+    pub fn data_source_config(&self) -> ::std::option::Option<& crate::types::VectorEnrichmentJobDataSourceConfigInput> {
         self.data_source_config.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl VectorEnrichmentJobInputConfigBuilder {
     }
     /// <p>The input structure that defines the data source file type.</p>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobDocumentType>) -> Self {
-        self.document_type = input;
-        self
+        self.document_type = input; self
     }
     /// <p>The input structure that defines the data source file type.</p>
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobDocumentType> {
@@ -57,8 +56,7 @@ impl VectorEnrichmentJobInputConfigBuilder {
     }
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn set_data_source_config(mut self, input: ::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput>) -> Self {
-        self.data_source_config = input;
-        self
+        self.data_source_config = input; self
     }
     /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
     pub fn get_data_source_config(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobDataSourceConfigInput> {
@@ -68,14 +66,17 @@ impl VectorEnrichmentJobInputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`document_type`](crate::types::builders::VectorEnrichmentJobInputConfigBuilder::document_type)
     pub fn build(self) -> ::std::result::Result<crate::types::VectorEnrichmentJobInputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VectorEnrichmentJobInputConfig {
-            document_type: self.document_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_type",
-                    "document_type was not specified but it is required when building VectorEnrichmentJobInputConfig",
-                )
-            })?,
-            data_source_config: self.data_source_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VectorEnrichmentJobInputConfig {
+                document_type: self.document_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_type", "document_type was not specified but it is required when building VectorEnrichmentJobInputConfig")
+                    )?
+                ,
+                data_source_config: self.data_source_config
+                ,
+            }
+        )
     }
 }
+

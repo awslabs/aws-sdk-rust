@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReviewTemplateLensReviewOutput {
+pub struct GetReviewTemplateLensReviewOutput  {
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>A lens review of a question.</p>
     pub lens_review: ::std::option::Option<crate::types::ReviewTemplateLensReview>,
     _request_id: Option<String>,
 }
-impl GetReviewTemplateLensReviewOutput {
+impl  GetReviewTemplateLensReviewOutput  {
     /// <p>The review template ARN.</p>
-    pub fn template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>A lens review of a question.</p>
-    pub fn lens_review(&self) -> ::std::option::Option<&crate::types::ReviewTemplateLensReview> {
+    pub fn lens_review(&self) -> ::std::option::Option<& crate::types::ReviewTemplateLensReview> {
         self.lens_review.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReviewTemplateLensReviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReviewTemplateLensReviewOutput {
     /// Creates a new builder-style object to manufacture [`GetReviewTemplateLensReviewOutput`](crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewOutput).
     pub fn builder() -> crate::operation::get_review_template_lens_review::builders::GetReviewTemplateLensReviewOutputBuilder {
@@ -47,8 +47,7 @@ impl GetReviewTemplateLensReviewOutputBuilder {
     }
     /// <p>The review template ARN.</p>
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_arn = input;
-        self
+        self.template_arn = input; self
     }
     /// <p>The review template ARN.</p>
     pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetReviewTemplateLensReviewOutputBuilder {
     }
     /// <p>A lens review of a question.</p>
     pub fn set_lens_review(mut self, input: ::std::option::Option<crate::types::ReviewTemplateLensReview>) -> Self {
-        self.lens_review = input;
-        self
+        self.lens_review = input; self
     }
     /// <p>A lens review of a question.</p>
     pub fn get_lens_review(&self) -> &::std::option::Option<crate::types::ReviewTemplateLensReview> {
         &self.lens_review
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReviewTemplateLensReviewOutput`](crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewOutput).
     pub fn build(self) -> crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewOutput {
         crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewOutput {
-            template_arn: self.template_arn,
-            lens_review: self.lens_review,
+            template_arn: self.template_arn
+            ,
+            lens_review: self.lens_review
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

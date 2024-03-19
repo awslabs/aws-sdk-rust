@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomains`](crate::operation::list_domains::builders::ListDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_fleet_arn):<br>required: **true**<br><p>The ARN of the fleet.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains::builders::ListDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to be included in the next page.</p><br>
-    /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput) with field(s):
     ///   - [`domains(Option<Vec::<DomainSummary>>)`](crate::operation::list_domains::ListDomainsOutput::domains): <p>Information about the domains.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains::ListDomainsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
+                            /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::operation::list_domains::ListDomainsError)
     #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
     pub fn list_domains(&self) -> crate::operation::list_domains::builders::ListDomainsFluentBuilder {
-        crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains::builders::ListDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

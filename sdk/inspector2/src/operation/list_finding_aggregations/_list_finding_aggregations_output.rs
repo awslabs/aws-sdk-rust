@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFindingAggregationsOutput {
+pub struct ListFindingAggregationsOutput  {
     /// <p>The type of aggregation to perform.</p>
     pub aggregation_type: crate::types::AggregationType,
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub responses: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>,
+    pub responses: ::std::option::Option<::std::vec::Vec::<crate::types::AggregationResponse>>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFindingAggregationsOutput {
+impl  ListFindingAggregationsOutput  {
     /// <p>The type of aggregation to perform.</p>
-    pub fn aggregation_type(&self) -> &crate::types::AggregationType {
+    pub fn aggregation_type(&self) -> & crate::types::AggregationType {
         &self.aggregation_type
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.responses.is_none()`.
-    pub fn responses(&self) -> &[crate::types::AggregationResponse] {
-        self.responses.as_deref().unwrap_or_default()
+    pub fn responses(&self) -> & [crate::types::AggregationResponse] {
+        self.responses.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFindingAggregationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFindingAggregationsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput).
     pub fn builder() -> crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder {
@@ -44,7 +45,7 @@ impl ListFindingAggregationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsOutputBuilder {
     pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
-    pub(crate) responses: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>,
+    pub(crate) responses: ::std::option::Option<::std::vec::Vec::<crate::types::AggregationResponse>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +58,7 @@ impl ListFindingAggregationsOutputBuilder {
     }
     /// <p>The type of aggregation to perform.</p>
     pub fn set_aggregation_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
-        self.aggregation_type = input;
-        self
+        self.aggregation_type = input; self
     }
     /// <p>The type of aggregation to perform.</p>
     pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
@@ -71,17 +71,16 @@ impl ListFindingAggregationsOutputBuilder {
     /// <p>Objects that contain the results of an aggregation operation.</p>
     pub fn responses(mut self, input: crate::types::AggregationResponse) -> Self {
         let mut v = self.responses.unwrap_or_default();
-        v.push(input);
-        self.responses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.responses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>>) -> Self {
-        self.responses = input;
-        self
+    pub fn set_responses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AggregationResponse>>) -> Self {
+        self.responses = input; self
     }
     /// <p>Objects that contain the results of an aggregation operation.</p>
-    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationResponse>> {
+    pub fn get_responses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AggregationResponse>> {
         &self.responses
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
@@ -91,41 +90,39 @@ impl ListFindingAggregationsOutputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFindingAggregationsOutput`](crate::operation::list_finding_aggregations::ListFindingAggregationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`aggregation_type`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsOutputBuilder::aggregation_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
-            aggregation_type: self.aggregation_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_type",
-                    "aggregation_type was not specified but it is required when building ListFindingAggregationsOutput",
-                )
-            })?,
-            responses: self.responses,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_finding_aggregations::ListFindingAggregationsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
+                aggregation_type: self.aggregation_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_type", "aggregation_type was not specified but it is required when building ListFindingAggregationsOutput")
+                    )?
+                ,
+                responses: self.responses
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Create Action Group Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAgentActionGroupInput {
+pub struct CreateAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
     /// Draft Version of the Agent.
@@ -23,41 +23,41 @@ pub struct CreateAgentActionGroupInput {
     /// State of the action group
     pub action_group_state: ::std::option::Option<crate::types::ActionGroupState>,
 }
-impl CreateAgentActionGroupInput {
+impl  CreateAgentActionGroupInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// Draft Version of the Agent.
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// Name for a resource.
-    pub fn action_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_group_name(&self) -> ::std::option::Option<& str> {
         self.action_group_name.as_deref()
     }
     /// Client specified token used for idempotency checks
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// Description of the Resource.
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Action Group Signature for a BuiltIn Action
-    pub fn parent_action_group_signature(&self) -> ::std::option::Option<&crate::types::ActionGroupSignature> {
+    pub fn parent_action_group_signature(&self) -> ::std::option::Option<& crate::types::ActionGroupSignature> {
         self.parent_action_group_signature.as_ref()
     }
     /// Type of Executors for an Action Group
-    pub fn action_group_executor(&self) -> ::std::option::Option<&crate::types::ActionGroupExecutor> {
+    pub fn action_group_executor(&self) -> ::std::option::Option<& crate::types::ActionGroupExecutor> {
         self.action_group_executor.as_ref()
     }
     /// Contains information about the API Schema for the Action Group
-    pub fn api_schema(&self) -> ::std::option::Option<&crate::types::ApiSchema> {
+    pub fn api_schema(&self) -> ::std::option::Option<& crate::types::ApiSchema> {
         self.api_schema.as_ref()
     }
     /// State of the action group
-    pub fn action_group_state(&self) -> ::std::option::Option<&crate::types::ActionGroupState> {
+    pub fn action_group_state(&self) -> ::std::option::Option<& crate::types::ActionGroupState> {
         self.action_group_state.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Draft Version of the Agent.
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Draft Version of the Agent.
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Name for a resource.
     pub fn set_action_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_group_name = input;
-        self
+        self.action_group_name = input; self
     }
     /// Name for a resource.
     pub fn get_action_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Client specified token used for idempotency checks
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Client specified token used for idempotency checks
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +145,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Description of the Resource.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Description of the Resource.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +158,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Action Group Signature for a BuiltIn Action
     pub fn set_parent_action_group_signature(mut self, input: ::std::option::Option<crate::types::ActionGroupSignature>) -> Self {
-        self.parent_action_group_signature = input;
-        self
+        self.parent_action_group_signature = input; self
     }
     /// Action Group Signature for a BuiltIn Action
     pub fn get_parent_action_group_signature(&self) -> &::std::option::Option<crate::types::ActionGroupSignature> {
@@ -177,8 +171,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Type of Executors for an Action Group
     pub fn set_action_group_executor(mut self, input: ::std::option::Option<crate::types::ActionGroupExecutor>) -> Self {
-        self.action_group_executor = input;
-        self
+        self.action_group_executor = input; self
     }
     /// Type of Executors for an Action Group
     pub fn get_action_group_executor(&self) -> &::std::option::Option<crate::types::ActionGroupExecutor> {
@@ -191,8 +184,7 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// Contains information about the API Schema for the Action Group
     pub fn set_api_schema(mut self, input: ::std::option::Option<crate::types::ApiSchema>) -> Self {
-        self.api_schema = input;
-        self
+        self.api_schema = input; self
     }
     /// Contains information about the API Schema for the Action Group
     pub fn get_api_schema(&self) -> &::std::option::Option<crate::types::ApiSchema> {
@@ -205,30 +197,36 @@ impl CreateAgentActionGroupInputBuilder {
     }
     /// State of the action group
     pub fn set_action_group_state(mut self, input: ::std::option::Option<crate::types::ActionGroupState>) -> Self {
-        self.action_group_state = input;
-        self
+        self.action_group_state = input; self
     }
     /// State of the action group
     pub fn get_action_group_state(&self) -> &::std::option::Option<crate::types::ActionGroupState> {
         &self.action_group_state
     }
     /// Consumes the builder and constructs a [`CreateAgentActionGroupInput`](crate::operation::create_agent_action_group::CreateAgentActionGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_agent_action_group::CreateAgentActionGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_agent_action_group::CreateAgentActionGroupInput {
-            agent_id: self.agent_id,
-            agent_version: self.agent_version,
-            action_group_name: self.action_group_name,
-            client_token: self.client_token,
-            description: self.description,
-            parent_action_group_signature: self.parent_action_group_signature,
-            action_group_executor: self.action_group_executor,
-            api_schema: self.api_schema,
-            action_group_state: self.action_group_state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_agent_action_group::CreateAgentActionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_agent_action_group::CreateAgentActionGroupInput {
+                agent_id: self.agent_id
+                ,
+                agent_version: self.agent_version
+                ,
+                action_group_name: self.action_group_name
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                parent_action_group_signature: self.parent_action_group_signature
+                ,
+                action_group_executor: self.action_group_executor
+                ,
+                api_schema: self.api_schema
+                ,
+                action_group_state: self.action_group_state
+                ,
+            }
+        )
     }
 }
+

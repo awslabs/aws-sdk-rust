@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainTransferability {
+pub struct DomainTransferability  {
     /// <p>Whether the domain name can be transferred to Route 53.</p><note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
@@ -48,7 +48,7 @@ pub struct DomainTransferability {
     /// </dl>
     pub transferable: ::std::option::Option<crate::types::Transferable>,
 }
-impl DomainTransferability {
+impl  DomainTransferability  {
     /// <p>Whether the domain name can be transferred to Route 53.</p><note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
     /// </note>
@@ -91,7 +91,7 @@ impl DomainTransferability {
     /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
-    pub fn transferable(&self) -> ::std::option::Option<&crate::types::Transferable> {
+    pub fn transferable(&self) -> ::std::option::Option<& crate::types::Transferable> {
         self.transferable.as_ref()
     }
 }
@@ -198,8 +198,7 @@ impl DomainTransferabilityBuilder {
     /// </dd>
     /// </dl>
     pub fn set_transferable(mut self, input: ::std::option::Option<crate::types::Transferable>) -> Self {
-        self.transferable = input;
-        self
+        self.transferable = input; self
     }
     /// <p>Whether the domain name can be transferred to Route 53.</p><note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
@@ -249,7 +248,9 @@ impl DomainTransferabilityBuilder {
     /// Consumes the builder and constructs a [`DomainTransferability`](crate::types::DomainTransferability).
     pub fn build(self) -> crate::types::DomainTransferability {
         crate::types::DomainTransferability {
-            transferable: self.transferable,
+            transferable: self.transferable
+            ,
         }
     }
 }
+

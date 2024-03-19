@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopLabelingJobInput {
+pub struct StopLabelingJobInput  {
     /// <p>The name of the labeling job to stop.</p>
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
 }
-impl StopLabelingJobInput {
+impl  StopLabelingJobInput  {
     /// <p>The name of the labeling job to stop.</p>
-    pub fn labeling_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_name(&self) -> ::std::option::Option<& str> {
         self.labeling_job_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopLabelingJobInputBuilder {
     }
     /// <p>The name of the labeling job to stop.</p>
     pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_name = input;
-        self
+        self.labeling_job_name = input; self
     }
     /// <p>The name of the labeling job to stop.</p>
     pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.labeling_job_name
     }
     /// Consumes the builder and constructs a [`StopLabelingJobInput`](crate::operation::stop_labeling_job::StopLabelingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_labeling_job::StopLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_labeling_job::StopLabelingJobInput {
-            labeling_job_name: self.labeling_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_labeling_job::StopLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_labeling_job::StopLabelingJobInput {
+                labeling_job_name: self.labeling_job_name
+                ,
+            }
+        )
     }
 }
+

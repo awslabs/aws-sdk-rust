@@ -3,21 +3,20 @@
 /// <p>Information of the user which performed the audit.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditEventPerformedBy {
+pub struct AuditEventPerformedBy  {
     /// <p>Represents the identity of the person who performed the action.</p>
     pub user: ::std::option::Option<crate::types::UserUnion>,
     /// <p>Unique identifier of an IAM role.</p>
     pub iam_principal_arn: ::std::string::String,
 }
-impl AuditEventPerformedBy {
+impl  AuditEventPerformedBy  {
     /// <p>Represents the identity of the person who performed the action.</p>
-    pub fn user(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+    pub fn user(&self) -> ::std::option::Option<& crate::types::UserUnion> {
         self.user.as_ref()
     }
     /// <p>Unique identifier of an IAM role.</p>
-    pub fn iam_principal_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_principal_arn.deref()
+    pub fn iam_principal_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_principal_arn.deref()
     }
 }
 impl AuditEventPerformedBy {
@@ -42,8 +41,7 @@ impl AuditEventPerformedByBuilder {
     }
     /// <p>Represents the identity of the person who performed the action.</p>
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>Represents the identity of the person who performed the action.</p>
     pub fn get_user(&self) -> &::std::option::Option<crate::types::UserUnion> {
@@ -57,8 +55,7 @@ impl AuditEventPerformedByBuilder {
     }
     /// <p>Unique identifier of an IAM role.</p>
     pub fn set_iam_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_principal_arn = input;
-        self
+        self.iam_principal_arn = input; self
     }
     /// <p>Unique identifier of an IAM role.</p>
     pub fn get_iam_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl AuditEventPerformedByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`iam_principal_arn`](crate::types::builders::AuditEventPerformedByBuilder::iam_principal_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::AuditEventPerformedBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuditEventPerformedBy {
-            user: self.user,
-            iam_principal_arn: self.iam_principal_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_principal_arn",
-                    "iam_principal_arn was not specified but it is required when building AuditEventPerformedBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuditEventPerformedBy {
+                user: self.user
+                ,
+                iam_principal_arn: self.iam_principal_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_principal_arn", "iam_principal_arn was not specified but it is required when building AuditEventPerformedBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

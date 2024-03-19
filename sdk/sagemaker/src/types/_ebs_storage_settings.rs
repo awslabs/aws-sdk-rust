@@ -3,11 +3,11 @@
 /// <p>A collection of EBS storage settings that applies to private spaces.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsStorageSettings {
+pub struct EbsStorageSettings  {
     /// <p>The size of an EBS storage volume for a private space.</p>
     pub ebs_volume_size_in_gb: ::std::option::Option<i32>,
 }
-impl EbsStorageSettings {
+impl  EbsStorageSettings  {
     /// <p>The size of an EBS storage volume for a private space.</p>
     pub fn ebs_volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.ebs_volume_size_in_gb
@@ -35,8 +35,7 @@ impl EbsStorageSettingsBuilder {
     }
     /// <p>The size of an EBS storage volume for a private space.</p>
     pub fn set_ebs_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ebs_volume_size_in_gb = input;
-        self
+        self.ebs_volume_size_in_gb = input; self
     }
     /// <p>The size of an EBS storage volume for a private space.</p>
     pub fn get_ebs_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -45,7 +44,9 @@ impl EbsStorageSettingsBuilder {
     /// Consumes the builder and constructs a [`EbsStorageSettings`](crate::types::EbsStorageSettings).
     pub fn build(self) -> crate::types::EbsStorageSettings {
         crate::types::EbsStorageSettings {
-            ebs_volume_size_in_gb: self.ebs_volume_size_in_gb,
+            ebs_volume_size_in_gb: self.ebs_volume_size_in_gb
+            ,
         }
     }
 }
+

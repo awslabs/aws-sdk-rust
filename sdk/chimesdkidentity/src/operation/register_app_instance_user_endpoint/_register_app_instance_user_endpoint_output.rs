@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAppInstanceUserEndpointOutput {
+pub struct RegisterAppInstanceUserEndpointOutput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterAppInstanceUserEndpointOutput {
+impl  RegisterAppInstanceUserEndpointOutput  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterAppInstanceUserEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointOutput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput).
     pub fn builder() -> crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointOutputBuilder {
@@ -47,8 +47,7 @@ impl RegisterAppInstanceUserEndpointOutputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_user_arn = input;
-        self
+        self.app_instance_user_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl RegisterAppInstanceUserEndpointOutputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointOutput`](crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput).
     pub fn build(self) -> crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput {
         crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput {
-            app_instance_user_arn: self.app_instance_user_arn,
-            endpoint_id: self.endpoint_id,
+            app_instance_user_arn: self.app_instance_user_arn
+            ,
+            endpoint_id: self.endpoint_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

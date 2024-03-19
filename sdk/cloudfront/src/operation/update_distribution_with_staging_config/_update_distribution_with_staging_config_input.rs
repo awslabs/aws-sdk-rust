@@ -2,33 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDistributionWithStagingConfigInput {
+pub struct UpdateDistributionWithStagingConfigInput  {
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub staging_distribution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDistributionWithStagingConfigInput {
+impl  UpdateDistributionWithStagingConfigInput  {
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    pub fn staging_distribution_id(&self) -> ::std::option::Option<&str> {
+    pub fn staging_distribution_id(&self) -> ::std::option::Option<& str> {
         self.staging_distribution_id.as_deref()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
     }
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub fn set_staging_distribution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.staging_distribution_id = input;
-        self
+        self.staging_distribution_id = input; self
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub fn get_staging_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,7 +77,7 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,34 +86,32 @@ impl UpdateDistributionWithStagingConfigInputBuilder {
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p><code><primary etag>
-    /// ,
+    /// , 
     /// <staging etag></staging>
     /// </primary></code></p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateDistributionWithStagingConfigInput`](crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigInput {
-                id: self.id,
-                staging_distribution_id: self.staging_distribution_id,
-                if_match: self.if_match,
-            },
+                id: self.id
+                ,
+                staging_distribution_id: self.staging_distribution_id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

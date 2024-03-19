@@ -3,21 +3,21 @@
 /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventFilter {
+pub struct EventFilter  {
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
     pub dimensions: ::std::option::Option<crate::types::EventDimensions>,
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     pub filter_type: ::std::option::Option<crate::types::FilterType>,
 }
-impl EventFilter {
+impl  EventFilter  {
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::EventDimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<& crate::types::EventDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
-    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::FilterType> {
+    pub fn filter_type(&self) -> ::std::option::Option<& crate::types::FilterType> {
         self.filter_type.as_ref()
     }
 }
@@ -44,8 +44,7 @@ impl EventFilterBuilder {
     }
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::EventDimensions>) -> Self {
-        self.dimensions = input;
-        self
+        self.dimensions = input; self
     }
     /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::EventDimensions> {
@@ -61,8 +60,7 @@ impl EventFilterBuilder {
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::FilterType>) -> Self {
-        self.filter_type = input;
-        self
+        self.filter_type = input; self
     }
     /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
@@ -72,8 +70,11 @@ impl EventFilterBuilder {
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {
         crate::types::EventFilter {
-            dimensions: self.dimensions,
-            filter_type: self.filter_type,
+            dimensions: self.dimensions
+            ,
+            filter_type: self.filter_type
+            ,
         }
     }
 }
+

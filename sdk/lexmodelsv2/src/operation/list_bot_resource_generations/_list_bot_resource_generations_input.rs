@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotResourceGenerationsInput {
+pub struct ListBotResourceGenerationsInput  {
     /// <p>The unique identifier of the bot whose generation requests you want to view.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot whose generation requests you want to view.</p>
@@ -16,21 +16,21 @@ pub struct ListBotResourceGenerationsInput {
     /// <p>If the total number of results is greater than the number specified in the <code>maxResults</code>, the response returns a token in the <code>nextToken</code> field. Use this token when making a request to return the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListBotResourceGenerationsInput {
+impl  ListBotResourceGenerationsInput  {
     /// <p>The unique identifier of the bot whose generation requests you want to view.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot whose generation requests you want to view.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale of the bot whose generation requests you want to view.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>An object containing information about the attribute and the method by which to sort the results</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::GenerationSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::GenerationSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -38,7 +38,7 @@ impl ListBotResourceGenerationsInput {
         self.max_results
     }
     /// <p>If the total number of results is greater than the number specified in the <code>maxResults</code>, the response returns a token in the <code>nextToken</code> field. Use this token when making a request to return the next batch of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>The unique identifier of the bot whose generation requests you want to view.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot whose generation requests you want to view.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>The version of the bot whose generation requests you want to view.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot whose generation requests you want to view.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>The locale of the bot whose generation requests you want to view.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale of the bot whose generation requests you want to view.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +110,7 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>An object containing information about the attribute and the method by which to sort the results</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::GenerationSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>An object containing information about the attribute and the method by which to sort the results</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::GenerationSortBy> {
@@ -127,8 +123,7 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -141,27 +136,30 @@ impl ListBotResourceGenerationsInputBuilder {
     }
     /// <p>If the total number of results is greater than the number specified in the <code>maxResults</code>, the response returns a token in the <code>nextToken</code> field. Use this token when making a request to return the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the total number of results is greater than the number specified in the <code>maxResults</code>, the response returns a token in the <code>nextToken</code> field. Use this token when making a request to return the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBotResourceGenerationsInput`](crate::operation::list_bot_resource_generations::ListBotResourceGenerationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_bot_resource_generations::ListBotResourceGenerationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_bot_resource_generations::ListBotResourceGenerationsInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            sort_by: self.sort_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bot_resource_generations::ListBotResourceGenerationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

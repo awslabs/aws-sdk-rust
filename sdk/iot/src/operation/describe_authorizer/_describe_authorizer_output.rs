@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAuthorizerOutput {
+pub struct DescribeAuthorizerOutput  {
     /// <p>The authorizer description.</p>
     pub authorizer_description: ::std::option::Option<crate::types::AuthorizerDescription>,
     _request_id: Option<String>,
 }
-impl DescribeAuthorizerOutput {
+impl  DescribeAuthorizerOutput  {
     /// <p>The authorizer description.</p>
-    pub fn authorizer_description(&self) -> ::std::option::Option<&crate::types::AuthorizerDescription> {
+    pub fn authorizer_description(&self) -> ::std::option::Option<& crate::types::AuthorizerDescription> {
         self.authorizer_description.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAuthorizerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput).
     pub fn builder() -> crate::operation::describe_authorizer::builders::DescribeAuthorizerOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAuthorizerOutputBuilder {
     }
     /// <p>The authorizer description.</p>
     pub fn set_authorizer_description(mut self, input: ::std::option::Option<crate::types::AuthorizerDescription>) -> Self {
-        self.authorizer_description = input;
-        self
+        self.authorizer_description = input; self
     }
     /// <p>The authorizer description.</p>
     pub fn get_authorizer_description(&self) -> &::std::option::Option<crate::types::AuthorizerDescription> {
         &self.authorizer_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAuthorizerOutput`](crate::operation::describe_authorizer::DescribeAuthorizerOutput).
     pub fn build(self) -> crate::operation::describe_authorizer::DescribeAuthorizerOutput {
         crate::operation::describe_authorizer::DescribeAuthorizerOutput {
-            authorizer_description: self.authorizer_description,
+            authorizer_description: self.authorizer_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

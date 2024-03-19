@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyPackageVersionsInput {
+pub struct CopyPackageVersionsInput  {
     /// <p>The name of the domain that contains the source and destination repositories.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -30,35 +30,35 @@ pub struct CopyPackageVersionsInput {
     /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub version_revisions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub version_revisions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code.</p>
     pub allow_overwrite: ::std::option::Option<bool>,
     /// <p>Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub include_from_upstream: ::std::option::Option<bool>,
 }
-impl CopyPackageVersionsInput {
+impl  CopyPackageVersionsInput  {
     /// <p>The name of the domain that contains the source and destination repositories.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package versions to be copied.</p>
-    pub fn source_repository(&self) -> ::std::option::Option<&str> {
+    pub fn source_repository(&self) -> ::std::option::Option<& str> {
         self.source_repository.as_deref()
     }
     /// <p>The name of the repository into which package versions are copied.</p>
-    pub fn destination_repository(&self) -> ::std::option::Option<&str> {
+    pub fn destination_repository(&self) -> ::std::option::Option<& str> {
         self.destination_repository.as_deref()
     }
     /// <p>The format of the package versions to be copied.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -72,25 +72,26 @@ impl CopyPackageVersionsInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package that contains the versions to be copied.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.versions.is_none()`.
-    pub fn versions(&self) -> &[::std::string::String] {
-        self.versions.as_deref().unwrap_or_default()
+    pub fn versions(&self) -> & [::std::string::String] {
+        self.versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn version_revisions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn version_revisions(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.version_revisions.as_ref()
     }
     /// <p>Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code.</p>
@@ -120,8 +121,8 @@ pub struct CopyPackageVersionsInputBuilder {
     pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) package: ::std::option::Option<::std::string::String>,
-    pub(crate) versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) version_revisions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) versions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) version_revisions: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) allow_overwrite: ::std::option::Option<bool>,
     pub(crate) include_from_upstream: ::std::option::Option<bool>,
 }
@@ -134,8 +135,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The name of the domain that contains the source and destination repositories.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the source and destination repositories.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +148,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +162,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The name of the repository that contains the package versions to be copied.</p>
     pub fn set_source_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_repository = input;
-        self
+        self.source_repository = input; self
     }
     /// <p>The name of the repository that contains the package versions to be copied.</p>
     pub fn get_source_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +176,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The name of the repository into which package versions are copied.</p>
     pub fn set_destination_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_repository = input;
-        self
+        self.destination_repository = input; self
     }
     /// <p>The name of the repository into which package versions are copied.</p>
     pub fn get_destination_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +190,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The format of the package versions to be copied.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the package versions to be copied.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -227,8 +223,7 @@ impl CopyPackageVersionsInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -252,8 +247,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>The name of the package that contains the versions to be copied.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package that contains the versions to be copied.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,21 +262,20 @@ impl CopyPackageVersionsInputBuilder {
     /// </note>
     pub fn versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// <p>The versions of the package to be copied.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_versions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.versions
     }
     /// Adds a key-value pair to `version_revisions`.
@@ -292,30 +285,22 @@ impl CopyPackageVersionsInputBuilder {
     /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn version_revisions(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn version_revisions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.version_revisions.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.version_revisions = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.version_revisions = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn set_version_revisions(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.version_revisions = input;
-        self
+    pub fn set_version_revisions(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.version_revisions = input; self
     }
     /// <p>A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision.</p><note>
     /// <p>You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both.</p>
     /// </note>
-    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_version_revisions(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.version_revisions
     }
     /// <p>Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code.</p>
@@ -325,8 +310,7 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code.</p>
     pub fn set_allow_overwrite(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_overwrite = input;
-        self
+        self.allow_overwrite = input; self
     }
     /// <p>Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code.</p>
     pub fn get_allow_overwrite(&self) -> &::std::option::Option<bool> {
@@ -339,30 +323,40 @@ impl CopyPackageVersionsInputBuilder {
     }
     /// <p>Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn set_include_from_upstream(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_from_upstream = input;
-        self
+        self.include_from_upstream = input; self
     }
     /// <p>Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>.</p>
     pub fn get_include_from_upstream(&self) -> &::std::option::Option<bool> {
         &self.include_from_upstream
     }
     /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::operation::copy_package_versions::CopyPackageVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::copy_package_versions::CopyPackageVersionsInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            source_repository: self.source_repository,
-            destination_repository: self.destination_repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            versions: self.versions,
-            version_revisions: self.version_revisions,
-            allow_overwrite: self.allow_overwrite,
-            include_from_upstream: self.include_from_upstream,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_package_versions::CopyPackageVersionsInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                source_repository: self.source_repository
+                ,
+                destination_repository: self.destination_repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                versions: self.versions
+                ,
+                version_revisions: self.version_revisions
+                ,
+                allow_overwrite: self.allow_overwrite
+                ,
+                include_from_upstream: self.include_from_upstream
+                ,
+            }
+        )
     }
 }
+

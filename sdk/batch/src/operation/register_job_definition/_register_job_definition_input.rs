@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for <code>RegisterJobDefinition</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterJobDefinitionInput {
+pub struct RegisterJobDefinitionInput  {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
@@ -17,7 +17,7 @@ pub struct RegisterJobDefinitionInput {
     /// </note>
     pub r#type: ::std::option::Option<crate::types::JobDefinitionType>,
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
@@ -40,19 +40,19 @@ pub struct RegisterJobDefinitionInput {
     /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
     /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p><note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
-    pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
+    pub platform_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformCapability>>,
     /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
     /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
     pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
-impl RegisterJobDefinitionInput {
+impl  RegisterJobDefinitionInput  {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_definition_name(&self) -> ::std::option::Option<& str> {
         self.job_definition_name.as_deref()
     }
     /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
@@ -64,11 +64,11 @@ impl RegisterJobDefinitionInput {
     /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::JobDefinitionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::JobDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
@@ -79,7 +79,7 @@ impl RegisterJobDefinitionInput {
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
-    pub fn container_properties(&self) -> ::std::option::Option<&crate::types::ContainerProperties> {
+    pub fn container_properties(&self) -> ::std::option::Option<& crate::types::ContainerProperties> {
         self.container_properties.as_ref()
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
@@ -87,11 +87,11 @@ impl RegisterJobDefinitionInput {
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
-    pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodeProperties> {
+    pub fn node_properties(&self) -> ::std::option::Option<& crate::types::NodeProperties> {
         self.node_properties.as_ref()
     }
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
-    pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
+    pub fn retry_strategy(&self) -> ::std::option::Option<& crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p><note>
@@ -101,27 +101,28 @@ impl RegisterJobDefinitionInput {
         self.propagate_tags
     }
     /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
-    pub fn timeout(&self) -> ::std::option::Option<&crate::types::JobTimeout> {
+    pub fn timeout(&self) -> ::std::option::Option<& crate::types::JobTimeout> {
         self.timeout.as_ref()
     }
     /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p><note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_capabilities.is_none()`.
-    pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
-        self.platform_capabilities.as_deref().unwrap_or_default()
+    pub fn platform_capabilities(&self) -> & [crate::types::PlatformCapability] {
+        self.platform_capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
-    pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
+    pub fn eks_properties(&self) -> ::std::option::Option<& crate::types::EksProperties> {
         self.eks_properties.as_ref()
     }
     /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
-    pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
+    pub fn ecs_properties(&self) -> ::std::option::Option<& crate::types::EcsProperties> {
         self.ecs_properties.as_ref()
     }
 }
@@ -138,15 +139,15 @@ impl RegisterJobDefinitionInput {
 pub struct RegisterJobDefinitionInputBuilder {
     pub(crate) job_definition_name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::JobDefinitionType>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) scheduling_priority: ::std::option::Option<i32>,
     pub(crate) container_properties: ::std::option::Option<crate::types::ContainerProperties>,
     pub(crate) node_properties: ::std::option::Option<crate::types::NodeProperties>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) propagate_tags: ::std::option::Option<bool>,
     pub(crate) timeout: ::std::option::Option<crate::types::JobTimeout>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformCapability>>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
@@ -159,8 +160,7 @@ impl RegisterJobDefinitionInputBuilder {
     }
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn set_job_definition_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_definition_name = input;
-        self
+        self.job_definition_name = input; self
     }
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +190,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::JobDefinitionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
     /// <ul>
@@ -212,17 +211,16 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
@@ -234,8 +232,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scheduling_priority = input;
-        self
+        self.scheduling_priority = input; self
     }
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
@@ -253,8 +250,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn set_container_properties(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
-        self.container_properties = input;
-        self
+        self.container_properties = input; self
     }
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
@@ -277,8 +273,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
-        self.node_properties = input;
-        self
+        self.node_properties = input; self
     }
     /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
@@ -295,8 +290,7 @@ impl RegisterJobDefinitionInputBuilder {
     }
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
     pub fn set_retry_strategy(mut self, input: ::std::option::Option<crate::types::RetryStrategy>) -> Self {
-        self.retry_strategy = input;
-        self
+        self.retry_strategy = input; self
     }
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
@@ -313,8 +307,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.</p>
     /// </note>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.propagate_tags = input;
-        self
+        self.propagate_tags = input; self
     }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p><note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.</p>
@@ -329,8 +322,7 @@ impl RegisterJobDefinitionInputBuilder {
     }
     /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::JobTimeout>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::JobTimeout> {
@@ -343,17 +335,16 @@ impl RegisterJobDefinitionInputBuilder {
     /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `platform_capabilities`.
@@ -365,21 +356,20 @@ impl RegisterJobDefinitionInputBuilder {
     /// </note>
     pub fn platform_capabilities(mut self, input: crate::types::PlatformCapability) -> Self {
         let mut v = self.platform_capabilities.unwrap_or_default();
-        v.push(input);
-        self.platform_capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.platform_capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p><note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
-    pub fn set_platform_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>) -> Self {
-        self.platform_capabilities = input;
-        self
+    pub fn set_platform_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformCapability>>) -> Self {
+        self.platform_capabilities = input; self
     }
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p><note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
-    pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
+    pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }
     /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
@@ -389,8 +379,7 @@ impl RegisterJobDefinitionInputBuilder {
     }
     /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksProperties>) -> Self {
-        self.eks_properties = input;
-        self
+        self.eks_properties = input; self
     }
     /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksProperties> {
@@ -403,32 +392,44 @@ impl RegisterJobDefinitionInputBuilder {
     }
     /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
     pub fn set_ecs_properties(mut self, input: ::std::option::Option<crate::types::EcsProperties>) -> Self {
-        self.ecs_properties = input;
-        self
+        self.ecs_properties = input; self
     }
     /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
     pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
         &self.ecs_properties
     }
     /// Consumes the builder and constructs a [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_job_definition::RegisterJobDefinitionInput {
-            job_definition_name: self.job_definition_name,
-            r#type: self.r#type,
-            parameters: self.parameters,
-            scheduling_priority: self.scheduling_priority,
-            container_properties: self.container_properties,
-            node_properties: self.node_properties,
-            retry_strategy: self.retry_strategy,
-            propagate_tags: self.propagate_tags,
-            timeout: self.timeout,
-            tags: self.tags,
-            platform_capabilities: self.platform_capabilities,
-            eks_properties: self.eks_properties,
-            ecs_properties: self.ecs_properties,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_job_definition::RegisterJobDefinitionInput {
+                job_definition_name: self.job_definition_name
+                ,
+                r#type: self.r#type
+                ,
+                parameters: self.parameters
+                ,
+                scheduling_priority: self.scheduling_priority
+                ,
+                container_properties: self.container_properties
+                ,
+                node_properties: self.node_properties
+                ,
+                retry_strategy: self.retry_strategy
+                ,
+                propagate_tags: self.propagate_tags
+                ,
+                timeout: self.timeout
+                ,
+                tags: self.tags
+                ,
+                platform_capabilities: self.platform_capabilities
+                ,
+                eks_properties: self.eks_properties
+                ,
+                ecs_properties: self.ecs_properties
+                ,
+            }
+        )
     }
 }
+

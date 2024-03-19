@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID.</p>
@@ -12,30 +12,31 @@ pub struct UpdateEnvironmentInput {
     /// <p>A description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
+    pub monitors: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>,
 }
-impl UpdateEnvironmentInput {
+impl  UpdateEnvironmentInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the environment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.monitors.is_none()`.
-    pub fn monitors(&self) -> &[crate::types::Monitor] {
-        self.monitors.as_deref().unwrap_or_default()
+    pub fn monitors(&self) -> & [crate::types::Monitor] {
+        self.monitors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateEnvironmentInput {
@@ -53,7 +54,7 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) monitors: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>,
+    pub(crate) monitors: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The application ID.</p>
@@ -64,8 +65,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The environment ID.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +105,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>A description of the environment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the environment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,29 +118,34 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
     pub fn monitors(mut self, input: crate::types::Monitor) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-        v.push(input);
-        self.monitors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.monitors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Monitor>>) -> Self {
-        self.monitors = input;
-        self
+    pub fn set_monitors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Monitor>>) -> Self {
+        self.monitors = input; self
     }
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
-    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Monitor>> {
         &self.monitors
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            application_id: self.application_id,
-            environment_id: self.environment_id,
-            name: self.name,
-            description: self.description,
-            monitors: self.monitors,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentInput {
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                monitors: self.monitors
+                ,
+            }
+        )
     }
 }
+

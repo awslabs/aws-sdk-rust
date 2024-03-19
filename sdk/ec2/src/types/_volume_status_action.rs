@@ -3,7 +3,7 @@
 /// <p>Describes a volume status operation code.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeStatusAction {
+pub struct VolumeStatusAction  {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the operation.</p>
@@ -13,21 +13,21 @@ pub struct VolumeStatusAction {
     /// <p>The event type associated with this operation.</p>
     pub event_type: ::std::option::Option<::std::string::String>,
 }
-impl VolumeStatusAction {
+impl  VolumeStatusAction  {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A description of the operation.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the event associated with this operation.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type associated with this operation.</p>
-    pub fn event_type(&self) -> ::std::option::Option<&str> {
+    pub fn event_type(&self) -> ::std::option::Option<& str> {
         self.event_type.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl VolumeStatusActionBuilder {
     }
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl VolumeStatusActionBuilder {
     }
     /// <p>A description of the operation.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the operation.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl VolumeStatusActionBuilder {
     }
     /// <p>The ID of the event associated with this operation.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The ID of the event associated with this operation.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl VolumeStatusActionBuilder {
     }
     /// <p>The event type associated with this operation.</p>
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_type = input;
-        self
+        self.event_type = input; self
     }
     /// <p>The event type associated with this operation.</p>
     pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl VolumeStatusActionBuilder {
     /// Consumes the builder and constructs a [`VolumeStatusAction`](crate::types::VolumeStatusAction).
     pub fn build(self) -> crate::types::VolumeStatusAction {
         crate::types::VolumeStatusAction {
-            code: self.code,
-            description: self.description,
-            event_id: self.event_id,
-            event_type: self.event_type,
+            code: self.code
+            ,
+            description: self.description
+            ,
+            event_id: self.event_id
+            ,
+            event_type: self.event_type
+            ,
         }
     }
 }
+

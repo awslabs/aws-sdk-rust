@@ -3,19 +3,19 @@
 /// <p>Contains metadata for a UserID matched with a given face.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MatchedUser {
+pub struct MatchedUser  {
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user matched to a provided FaceID.</p>
     pub user_status: ::std::option::Option<crate::types::UserStatus>,
 }
-impl MatchedUser {
+impl  MatchedUser  {
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The status of the user matched to a provided FaceID.</p>
-    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
+    pub fn user_status(&self) -> ::std::option::Option<& crate::types::UserStatus> {
         self.user_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MatchedUserBuilder {
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl MatchedUserBuilder {
     }
     /// <p>The status of the user matched to a provided FaceID.</p>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
-        self.user_status = input;
-        self
+        self.user_status = input; self
     }
     /// <p>The status of the user matched to a provided FaceID.</p>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
@@ -65,8 +63,11 @@ impl MatchedUserBuilder {
     /// Consumes the builder and constructs a [`MatchedUser`](crate::types::MatchedUser).
     pub fn build(self) -> crate::types::MatchedUser {
         crate::types::MatchedUser {
-            user_id: self.user_id,
-            user_status: self.user_status,
+            user_id: self.user_id
+            ,
+            user_status: self.user_status
+            ,
         }
     }
 }
+

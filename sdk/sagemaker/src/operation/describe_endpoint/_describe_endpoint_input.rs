@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEndpointInput {
+pub struct DescribeEndpointInput  {
     /// <p>The name of the endpoint.</p>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEndpointInput {
+impl  DescribeEndpointInput  {
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeEndpointInputBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_name
     }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
-            endpoint_name: self.endpoint_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_endpoint::DescribeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_endpoint::DescribeEndpointInput {
+                endpoint_name: self.endpoint_name
+                ,
+            }
+        )
     }
 }
+

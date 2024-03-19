@@ -2,31 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancersInput {
+pub struct DescribeLoadBalancersInput  {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    pub load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub load_balancer_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The names of the load balancers.</p>
-    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl DescribeLoadBalancersInput {
+impl  DescribeLoadBalancersInput  {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancer_arns.is_none()`.
-    pub fn load_balancer_arns(&self) -> &[::std::string::String] {
-        self.load_balancer_arns.as_deref().unwrap_or_default()
+    pub fn load_balancer_arns(&self) -> & [::std::string::String] {
+        self.load_balancer_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The names of the load balancers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
-    pub fn names(&self) -> &[::std::string::String] {
-        self.names.as_deref().unwrap_or_default()
+    pub fn names(&self) -> & [::std::string::String] {
+        self.names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call.</p>
@@ -45,8 +47,8 @@ impl DescribeLoadBalancersInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersInputBuilder {
-    pub(crate) load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) load_balancer_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
 }
@@ -58,17 +60,16 @@ impl DescribeLoadBalancersInputBuilder {
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
     pub fn load_balancer_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.load_balancer_arns.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    pub fn set_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.load_balancer_arns = input;
-        self
+    pub fn set_load_balancer_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.load_balancer_arns = input; self
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
-    pub fn get_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_load_balancer_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.load_balancer_arns
     }
     /// Appends an item to `names`.
@@ -78,17 +79,16 @@ impl DescribeLoadBalancersInputBuilder {
     /// <p>The names of the load balancers.</p>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.names
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
@@ -98,8 +98,7 @@ impl DescribeLoadBalancersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,23 +111,26 @@ impl DescribeLoadBalancersInputBuilder {
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of results to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
-            load_balancer_arns: self.load_balancer_arns,
-            names: self.names,
-            marker: self.marker,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
+                load_balancer_arns: self.load_balancer_arns
+                ,
+                names: self.names
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

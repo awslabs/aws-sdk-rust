@@ -3,20 +3,19 @@
 /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>The path to the input data files in the S3 bucket.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The URI of the S3 bucket that contains the input data. The bucket must be in the same region as the API endpoint that you are calling.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The path to the input data files in the S3 bucket.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl InputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket`](crate::types::builders::InputDataConfigBuilder::s3_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-            s3_key: self.s3_key,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+                s3_key: self.s3_key
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let audiodurationcorrection = unimplemented!();
 /// match audiodurationcorrection {
@@ -32,16 +32,14 @@
 /// Specifically, when `audiodurationcorrection` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioDurationCorrection::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio content such as speech or percussion.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AudioDurationCorrection {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -53,67 +51,68 @@ pub enum AudioDurationCorrection {
     Track,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AudioDurationCorrection {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => AudioDurationCorrection::Auto,
-            "DISABLED" => AudioDurationCorrection::Disabled,
-            "FRAME" => AudioDurationCorrection::Frame,
-            "TRACK" => AudioDurationCorrection::Track,
-            other => AudioDurationCorrection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AUTO" => AudioDurationCorrection::Auto,
+"DISABLED" => AudioDurationCorrection::Disabled,
+"FRAME" => AudioDurationCorrection::Frame,
+"TRACK" => AudioDurationCorrection::Track,
+other => AudioDurationCorrection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AudioDurationCorrection {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AudioDurationCorrection::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AudioDurationCorrection::from(s))
+                    }
+                }
 impl AudioDurationCorrection {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AudioDurationCorrection::Auto => "AUTO",
-            AudioDurationCorrection::Disabled => "DISABLED",
-            AudioDurationCorrection::Frame => "FRAME",
-            AudioDurationCorrection::Track => "TRACK",
-            AudioDurationCorrection::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "DISABLED", "FRAME", "TRACK"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AudioDurationCorrection::Auto => "AUTO",
+    AudioDurationCorrection::Disabled => "DISABLED",
+    AudioDurationCorrection::Frame => "FRAME",
+    AudioDurationCorrection::Track => "TRACK",
+    AudioDurationCorrection::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "DISABLED", "FRAME", "TRACK"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AudioDurationCorrection {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AudioDurationCorrection {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AudioDurationCorrection {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AudioDurationCorrection::Auto => write!(f, "AUTO"),
-            AudioDurationCorrection::Disabled => write!(f, "DISABLED"),
-            AudioDurationCorrection::Frame => write!(f, "FRAME"),
-            AudioDurationCorrection::Track => write!(f, "TRACK"),
-            AudioDurationCorrection::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AudioDurationCorrection::Auto => write!(f, "AUTO"),
+AudioDurationCorrection::Disabled => write!(f, "DISABLED"),
+AudioDurationCorrection::Frame => write!(f, "FRAME"),
+AudioDurationCorrection::Track => write!(f, "TRACK"),
+AudioDurationCorrection::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

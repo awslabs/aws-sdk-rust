@@ -3,13 +3,13 @@
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessSasl {
+pub struct ServerlessSasl  {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub iam: ::std::option::Option<crate::types::Iam>,
 }
-impl ServerlessSasl {
+impl  ServerlessSasl  {
     /// <p>Indicates whether IAM access control is enabled.</p>
-    pub fn iam(&self) -> ::std::option::Option<&crate::types::Iam> {
+    pub fn iam(&self) -> ::std::option::Option<& crate::types::Iam> {
         self.iam.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ServerlessSaslBuilder {
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn set_iam(mut self, input: ::std::option::Option<crate::types::Iam>) -> Self {
-        self.iam = input;
-        self
+        self.iam = input; self
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn get_iam(&self) -> &::std::option::Option<crate::types::Iam> {
@@ -43,6 +42,10 @@ impl ServerlessSaslBuilder {
     }
     /// Consumes the builder and constructs a [`ServerlessSasl`](crate::types::ServerlessSasl).
     pub fn build(self) -> crate::types::ServerlessSasl {
-        crate::types::ServerlessSasl { iam: self.iam }
+        crate::types::ServerlessSasl {
+            iam: self.iam
+            ,
+        }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CachePolicyHeadersConfig {
+pub struct CachePolicyHeadersConfig  {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct CachePolicyHeadersConfig {
     /// <p>Contains a list of HTTP header names.</p>
     pub headers: ::std::option::Option<crate::types::Headers>,
 }
-impl CachePolicyHeadersConfig {
+impl  CachePolicyHeadersConfig  {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl CachePolicyHeadersConfig {
     /// <li>
     /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
-    pub fn header_behavior(&self) -> &crate::types::CachePolicyHeaderBehavior {
+    pub fn header_behavior(&self) -> & crate::types::CachePolicyHeaderBehavior {
         &self.header_behavior
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<& crate::types::Headers> {
         self.headers.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl CachePolicyHeadersConfigBuilder {
     /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub fn set_header_behavior(mut self, input: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>) -> Self {
-        self.header_behavior = input;
-        self
+        self.header_behavior = input; self
     }
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -86,8 +85,7 @@ impl CachePolicyHeadersConfigBuilder {
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
-        self.headers = input;
-        self
+        self.headers = input; self
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn get_headers(&self) -> &::std::option::Option<crate::types::Headers> {
@@ -97,14 +95,17 @@ impl CachePolicyHeadersConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header_behavior`](crate::types::builders::CachePolicyHeadersConfigBuilder::header_behavior)
     pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CachePolicyHeadersConfig {
-            header_behavior: self.header_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header_behavior",
-                    "header_behavior was not specified but it is required when building CachePolicyHeadersConfig",
-                )
-            })?,
-            headers: self.headers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CachePolicyHeadersConfig {
+                header_behavior: self.header_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header_behavior", "header_behavior was not specified but it is required when building CachePolicyHeadersConfig")
+                    )?
+                ,
+                headers: self.headers
+                ,
+            }
+        )
     }
 }
+

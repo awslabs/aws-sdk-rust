@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataQualityMetricsOutput {
+pub struct GetDataQualityMetricsOutput  {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    pub anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
+    pub anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorDataQualityMetric>>,
     _request_id: Option<String>,
 }
-impl GetDataQualityMetricsOutput {
+impl  GetDataQualityMetricsOutput  {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anomaly_detector_data_quality_metric_list.is_none()`.
-    pub fn anomaly_detector_data_quality_metric_list(&self) -> &[crate::types::AnomalyDetectorDataQualityMetric] {
-        self.anomaly_detector_data_quality_metric_list.as_deref().unwrap_or_default()
+    pub fn anomaly_detector_data_quality_metric_list(&self) -> & [crate::types::AnomalyDetectorDataQualityMetric] {
+        self.anomaly_detector_data_quality_metric_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataQualityMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataQualityMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityMetricsOutput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput).
     pub fn builder() -> crate::operation::get_data_quality_metrics::builders::GetDataQualityMetricsOutputBuilder {
@@ -31,7 +32,7 @@ impl GetDataQualityMetricsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataQualityMetricsOutputBuilder {
-    pub(crate) anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
+    pub(crate) anomaly_detector_data_quality_metric_list: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorDataQualityMetric>>,
     _request_id: Option<String>,
 }
 impl GetDataQualityMetricsOutputBuilder {
@@ -42,38 +43,34 @@ impl GetDataQualityMetricsOutputBuilder {
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
     pub fn anomaly_detector_data_quality_metric_list(mut self, input: crate::types::AnomalyDetectorDataQualityMetric) -> Self {
         let mut v = self.anomaly_detector_data_quality_metric_list.unwrap_or_default();
-        v.push(input);
-        self.anomaly_detector_data_quality_metric_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anomaly_detector_data_quality_metric_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    pub fn set_anomaly_detector_data_quality_metric_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
-    ) -> Self {
-        self.anomaly_detector_data_quality_metric_list = input;
-        self
+    pub fn set_anomaly_detector_data_quality_metric_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorDataQualityMetric>>) -> Self {
+        self.anomaly_detector_data_quality_metric_list = input; self
     }
     /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
-    pub fn get_anomaly_detector_data_quality_metric_list(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>> {
+    pub fn get_anomaly_detector_data_quality_metric_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnomalyDetectorDataQualityMetric>> {
         &self.anomaly_detector_data_quality_metric_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataQualityMetricsOutput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput).
     pub fn build(self) -> crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput {
         crate::operation::get_data_quality_metrics::GetDataQualityMetricsOutput {
-            anomaly_detector_data_quality_metric_list: self.anomaly_detector_data_quality_metric_list,
+            anomaly_detector_data_quality_metric_list: self.anomaly_detector_data_quality_metric_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

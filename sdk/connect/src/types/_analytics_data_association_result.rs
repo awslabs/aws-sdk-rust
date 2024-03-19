@@ -4,7 +4,7 @@
 /// <p>Information about associations that are successfully created: <code>DataSetId</code>, <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsDataAssociationResult {
+pub struct AnalyticsDataAssociationResult  {
     /// <p>The identifier of the dataset.</p>
     pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target account.</p>
@@ -14,21 +14,21 @@ pub struct AnalyticsDataAssociationResult {
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
 }
-impl AnalyticsDataAssociationResult {
+impl  AnalyticsDataAssociationResult  {
     /// <p>The identifier of the dataset.</p>
-    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The identifier of the target account.</p>
-    pub fn target_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_account_id(&self) -> ::std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
     /// <p>The Resource Access Manager share ID.</p>
-    pub fn resource_share_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_id(&self) -> ::std::option::Option<& str> {
         self.resource_share_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
-    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<& str> {
         self.resource_share_arn.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl AnalyticsDataAssociationResultBuilder {
     }
     /// <p>The identifier of the dataset.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The identifier of the dataset.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AnalyticsDataAssociationResultBuilder {
     }
     /// <p>The identifier of the target account.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_account_id = input;
-        self
+        self.target_account_id = input; self
     }
     /// <p>The identifier of the target account.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl AnalyticsDataAssociationResultBuilder {
     }
     /// <p>The Resource Access Manager share ID.</p>
     pub fn set_resource_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_id = input;
-        self
+        self.resource_share_id = input; self
     }
     /// <p>The Resource Access Manager share ID.</p>
     pub fn get_resource_share_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl AnalyticsDataAssociationResultBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub fn set_resource_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_share_arn = input;
-        self
+        self.resource_share_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,10 +104,15 @@ impl AnalyticsDataAssociationResultBuilder {
     /// Consumes the builder and constructs a [`AnalyticsDataAssociationResult`](crate::types::AnalyticsDataAssociationResult).
     pub fn build(self) -> crate::types::AnalyticsDataAssociationResult {
         crate::types::AnalyticsDataAssociationResult {
-            data_set_id: self.data_set_id,
-            target_account_id: self.target_account_id,
-            resource_share_id: self.resource_share_id,
-            resource_share_arn: self.resource_share_arn,
+            data_set_id: self.data_set_id
+            ,
+            target_account_id: self.target_account_id
+            ,
+            resource_share_id: self.resource_share_id
+            ,
+            resource_share_arn: self.resource_share_arn
+            ,
         }
     }
 }
+

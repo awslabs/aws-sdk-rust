@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCertificateProviderOutput {
+pub struct DescribeCertificateProviderOutput  {
     /// <p>The name of the certificate provider.</p>
     pub certificate_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the certificate provider.</p>
@@ -10,46 +10,47 @@ pub struct DescribeCertificateProviderOutput {
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
     /// <p>The date-time string that indicates when the certificate provider was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date-time string that indicates when the certificate provider was last updated.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DescribeCertificateProviderOutput {
+impl  DescribeCertificateProviderOutput  {
     /// <p>The name of the certificate provider.</p>
-    pub fn certificate_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_name(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_name.as_deref()
     }
     /// <p>The ARN of the certificate provider.</p>
-    pub fn certificate_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_arn.as_deref()
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
-    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_default_for_operations.is_none()`.
-    pub fn account_default_for_operations(&self) -> &[crate::types::CertificateProviderOperation] {
-        self.account_default_for_operations.as_deref().unwrap_or_default()
+    pub fn account_default_for_operations(&self) -> & [crate::types::CertificateProviderOperation] {
+        self.account_default_for_operations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date-time string that indicates when the certificate provider was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date-time string that indicates when the certificate provider was last updated.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCertificateProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCertificateProviderOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateProviderOutput`](crate::operation::describe_certificate_provider::DescribeCertificateProviderOutput).
     pub fn builder() -> crate::operation::describe_certificate_provider::builders::DescribeCertificateProviderOutputBuilder {
@@ -64,7 +65,7 @@ pub struct DescribeCertificateProviderOutputBuilder {
     pub(crate) certificate_provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
+    pub(crate) account_default_for_operations: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -77,8 +78,7 @@ impl DescribeCertificateProviderOutputBuilder {
     }
     /// <p>The name of the certificate provider.</p>
     pub fn set_certificate_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_name = input;
-        self
+        self.certificate_provider_name = input; self
     }
     /// <p>The name of the certificate provider.</p>
     pub fn get_certificate_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl DescribeCertificateProviderOutputBuilder {
     }
     /// <p>The ARN of the certificate provider.</p>
     pub fn set_certificate_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_arn = input;
-        self
+        self.certificate_provider_arn = input; self
     }
     /// <p>The ARN of the certificate provider.</p>
     pub fn get_certificate_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl DescribeCertificateProviderOutputBuilder {
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_function_arn = input;
-        self
+        self.lambda_function_arn = input; self
     }
     /// <p>The Lambda function ARN that's associated with the certificate provider.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,20 +117,16 @@ impl DescribeCertificateProviderOutputBuilder {
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
     pub fn account_default_for_operations(mut self, input: crate::types::CertificateProviderOperation) -> Self {
         let mut v = self.account_default_for_operations.unwrap_or_default();
-        v.push(input);
-        self.account_default_for_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.account_default_for_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn set_account_default_for_operations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>>,
-    ) -> Self {
-        self.account_default_for_operations = input;
-        self
+    pub fn set_account_default_for_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>>) -> Self {
+        self.account_default_for_operations = input; self
     }
     /// <p>A list of the operations that the certificate provider will use to generate certificates. Valid value: <code>CreateCertificateFromCsr</code>.</p>
-    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateProviderOperation>> {
+    pub fn get_account_default_for_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CertificateProviderOperation>> {
         &self.account_default_for_operations
     }
     /// <p>The date-time string that indicates when the certificate provider was created.</p>
@@ -142,8 +136,7 @@ impl DescribeCertificateProviderOutputBuilder {
     }
     /// <p>The date-time string that indicates when the certificate provider was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date-time string that indicates when the certificate provider was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -156,32 +149,38 @@ impl DescribeCertificateProviderOutputBuilder {
     }
     /// <p>The date-time string that indicates when the certificate provider was last updated.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date-time string that indicates when the certificate provider was last updated.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCertificateProviderOutput`](crate::operation::describe_certificate_provider::DescribeCertificateProviderOutput).
     pub fn build(self) -> crate::operation::describe_certificate_provider::DescribeCertificateProviderOutput {
         crate::operation::describe_certificate_provider::DescribeCertificateProviderOutput {
-            certificate_provider_name: self.certificate_provider_name,
-            certificate_provider_arn: self.certificate_provider_arn,
-            lambda_function_arn: self.lambda_function_arn,
-            account_default_for_operations: self.account_default_for_operations,
-            creation_date: self.creation_date,
-            last_modified_date: self.last_modified_date,
+            certificate_provider_name: self.certificate_provider_name
+            ,
+            certificate_provider_arn: self.certificate_provider_arn
+            ,
+            lambda_function_arn: self.lambda_function_arn
+            ,
+            account_default_for_operations: self.account_default_for_operations
+            ,
+            creation_date: self.creation_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstallToRemoteAccessSessionOutput {
+pub struct InstallToRemoteAccessSessionOutput  {
     /// <p>An app to upload or that has been uploaded.</p>
     pub app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }
-impl InstallToRemoteAccessSessionOutput {
+impl  InstallToRemoteAccessSessionOutput  {
     /// <p>An app to upload or that has been uploaded.</p>
-    pub fn app_upload(&self) -> ::std::option::Option<&crate::types::Upload> {
+    pub fn app_upload(&self) -> ::std::option::Option<& crate::types::Upload> {
         self.app_upload.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for InstallToRemoteAccessSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl InstallToRemoteAccessSessionOutput {
     /// Creates a new builder-style object to manufacture [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
     pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder {
@@ -41,27 +41,28 @@ impl InstallToRemoteAccessSessionOutputBuilder {
     }
     /// <p>An app to upload or that has been uploaded.</p>
     pub fn set_app_upload(mut self, input: ::std::option::Option<crate::types::Upload>) -> Self {
-        self.app_upload = input;
-        self
+        self.app_upload = input; self
     }
     /// <p>An app to upload or that has been uploaded.</p>
     pub fn get_app_upload(&self) -> &::std::option::Option<crate::types::Upload> {
         &self.app_upload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
     pub fn build(self) -> crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput {
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput {
-            app_upload: self.app_upload,
+            app_upload: self.app_upload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

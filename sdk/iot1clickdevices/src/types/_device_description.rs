@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeviceDescription {
+pub struct DeviceDescription  {
     /// <p>The ARN of the device.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
@@ -16,19 +16,19 @@ pub struct DeviceDescription {
     /// <p>The type of the device, such as "button".</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DeviceDescription {
+impl  DeviceDescription  {
     /// <p>The ARN of the device.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
@@ -40,11 +40,11 @@ impl DeviceDescription {
         self.remaining_life
     }
     /// <p>The type of the device, such as "button".</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -60,12 +60,12 @@ impl DeviceDescription {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeviceDescriptionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) device_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) remaining_life: ::std::option::Option<f64>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DeviceDescriptionBuilder {
     /// <p>The ARN of the device.</p>
@@ -75,8 +75,7 @@ impl DeviceDescriptionBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the device.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,17 +88,16 @@ impl DeviceDescriptionBuilder {
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>The unique identifier of the device.</p>
@@ -109,8 +107,7 @@ impl DeviceDescriptionBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl DeviceDescriptionBuilder {
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -137,8 +133,7 @@ impl DeviceDescriptionBuilder {
     }
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     pub fn set_remaining_life(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.remaining_life = input;
-        self
+        self.remaining_life = input; self
     }
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     pub fn get_remaining_life(&self) -> &::std::option::Option<f64> {
@@ -151,8 +146,7 @@ impl DeviceDescriptionBuilder {
     }
     /// <p>The type of the device, such as "button".</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the device, such as "button".</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,29 +159,36 @@ impl DeviceDescriptionBuilder {
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags currently associated with the AWS IoT 1-Click device.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DeviceDescription`](crate::types::DeviceDescription).
     pub fn build(self) -> crate::types::DeviceDescription {
         crate::types::DeviceDescription {
-            arn: self.arn,
-            attributes: self.attributes,
-            device_id: self.device_id,
-            enabled: self.enabled,
-            remaining_life: self.remaining_life,
-            r#type: self.r#type,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            attributes: self.attributes
+            ,
+            device_id: self.device_id
+            ,
+            enabled: self.enabled
+            ,
+            remaining_life: self.remaining_life
+            ,
+            r#type: self.r#type
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePlatformVersionInput {
+pub struct DeletePlatformVersionInput  {
     /// <p>The ARN of the version of the custom platform.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeletePlatformVersionInput {
+impl  DeletePlatformVersionInput  {
     /// <p>The ARN of the version of the custom platform.</p>
-    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<& str> {
         self.platform_arn.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl DeletePlatformVersionInputBuilder {
     }
     /// <p>The ARN of the version of the custom platform.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_arn = input;
-        self
+        self.platform_arn = input; self
     }
     /// <p>The ARN of the version of the custom platform.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_arn
     }
     /// Consumes the builder and constructs a [`DeletePlatformVersionInput`](crate::operation::delete_platform_version::DeletePlatformVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_platform_version::DeletePlatformVersionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_platform_version::DeletePlatformVersionInput {
-            platform_arn: self.platform_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_platform_version::DeletePlatformVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_platform_version::DeletePlatformVersionInput {
+                platform_arn: self.platform_arn
+                ,
+            }
+        )
     }
 }
+

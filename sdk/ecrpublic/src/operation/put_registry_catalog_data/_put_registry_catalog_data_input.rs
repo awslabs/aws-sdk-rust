@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRegistryCatalogDataInput {
+pub struct PutRegistryCatalogDataInput  {
     /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p><note>
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl PutRegistryCatalogDataInput {
+impl  PutRegistryCatalogDataInput  {
     /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p><note>
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutRegistryCatalogDataInputBuilder {
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
     /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.</p><note>
     /// <p>The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.</p>
@@ -51,14 +50,13 @@ impl PutRegistryCatalogDataInputBuilder {
         &self.display_name
     }
     /// Consumes the builder and constructs a [`PutRegistryCatalogDataInput`](crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput {
-            display_name: self.display_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_registry_catalog_data::PutRegistryCatalogDataInput {
+                display_name: self.display_name
+                ,
+            }
+        )
     }
 }
+

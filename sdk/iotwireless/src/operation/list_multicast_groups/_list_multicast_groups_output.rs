@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMulticastGroupsOutput {
+pub struct ListMulticastGroupsOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of multicast groups.</p>
-    pub multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>,
+    pub multicast_group_list: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroup>>,
     _request_id: Option<String>,
 }
-impl ListMulticastGroupsOutput {
+impl  ListMulticastGroupsOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of multicast groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multicast_group_list.is_none()`.
-    pub fn multicast_group_list(&self) -> &[crate::types::MulticastGroup] {
-        self.multicast_group_list.as_deref().unwrap_or_default()
+    pub fn multicast_group_list(&self) -> & [crate::types::MulticastGroup] {
+        self.multicast_group_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMulticastGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMulticastGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput).
     pub fn builder() -> crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListMulticastGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>,
+    pub(crate) multicast_group_list: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroup>>,
     _request_id: Option<String>,
 }
 impl ListMulticastGroupsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListMulticastGroupsOutputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListMulticastGroupsOutputBuilder {
     /// <p>List of multicast groups.</p>
     pub fn multicast_group_list(mut self, input: crate::types::MulticastGroup) -> Self {
         let mut v = self.multicast_group_list.unwrap_or_default();
-        v.push(input);
-        self.multicast_group_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.multicast_group_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of multicast groups.</p>
-    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>>) -> Self {
-        self.multicast_group_list = input;
-        self
+    pub fn set_multicast_group_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroup>>) -> Self {
+        self.multicast_group_list = input; self
     }
     /// <p>List of multicast groups.</p>
-    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroup>> {
+    pub fn get_multicast_group_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MulticastGroup>> {
         &self.multicast_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMulticastGroupsOutput`](crate::operation::list_multicast_groups::ListMulticastGroupsOutput).
     pub fn build(self) -> crate::operation::list_multicast_groups::ListMulticastGroupsOutput {
         crate::operation::list_multicast_groups::ListMulticastGroupsOutput {
-            next_token: self.next_token,
-            multicast_group_list: self.multicast_group_list,
+            next_token: self.next_token
+            ,
+            multicast_group_list: self.multicast_group_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

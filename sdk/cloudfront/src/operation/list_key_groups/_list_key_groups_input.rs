@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListKeyGroupsInput {
+pub struct ListKeyGroupsInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListKeyGroupsInput {
+impl  ListKeyGroupsInput  {
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of key groups that you want in the response.</p>
@@ -40,8 +40,7 @@ impl ListKeyGroupsInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl ListKeyGroupsInputBuilder {
     }
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListKeyGroupsInput`](crate::operation::list_key_groups::ListKeyGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_key_groups::ListKeyGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_key_groups::ListKeyGroupsInput {
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_key_groups::ListKeyGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_key_groups::ListKeyGroupsInput {
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectCustomLabelsOutput {
+pub struct DetectCustomLabelsOutput  {
     /// <p>An array of custom labels detected in the input image.</p>
-    pub custom_labels: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
+    pub custom_labels: ::std::option::Option<::std::vec::Vec::<crate::types::CustomLabel>>,
     _request_id: Option<String>,
 }
-impl DetectCustomLabelsOutput {
+impl  DetectCustomLabelsOutput  {
     /// <p>An array of custom labels detected in the input image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_labels.is_none()`.
-    pub fn custom_labels(&self) -> &[crate::types::CustomLabel] {
-        self.custom_labels.as_deref().unwrap_or_default()
+    pub fn custom_labels(&self) -> & [crate::types::CustomLabel] {
+        self.custom_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectCustomLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectCustomLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
     pub fn builder() -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder {
@@ -31,7 +32,7 @@ impl DetectCustomLabelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectCustomLabelsOutputBuilder {
-    pub(crate) custom_labels: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>,
+    pub(crate) custom_labels: ::std::option::Option<::std::vec::Vec::<crate::types::CustomLabel>>,
     _request_id: Option<String>,
 }
 impl DetectCustomLabelsOutputBuilder {
@@ -42,33 +43,34 @@ impl DetectCustomLabelsOutputBuilder {
     /// <p>An array of custom labels detected in the input image.</p>
     pub fn custom_labels(mut self, input: crate::types::CustomLabel) -> Self {
         let mut v = self.custom_labels.unwrap_or_default();
-        v.push(input);
-        self.custom_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn set_custom_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>>) -> Self {
-        self.custom_labels = input;
-        self
+    pub fn set_custom_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomLabel>>) -> Self {
+        self.custom_labels = input; self
     }
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn get_custom_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomLabel>> {
+    pub fn get_custom_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomLabel>> {
         &self.custom_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
     pub fn build(self) -> crate::operation::detect_custom_labels::DetectCustomLabelsOutput {
         crate::operation::detect_custom_labels::DetectCustomLabelsOutput {
-            custom_labels: self.custom_labels,
+            custom_labels: self.custom_labels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

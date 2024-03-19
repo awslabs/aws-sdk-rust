@@ -3,7 +3,7 @@
 /// <p>A summary of accessor properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessorSummary {
+pub struct AccessorSummary  {
     /// <p>The unique identifier of the accessor.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the accessor.</p><note>
@@ -19,31 +19,31 @@ pub struct AccessorSummary {
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
-impl AccessorSummary {
+impl  AccessorSummary  {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the accessor.</p><note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessorType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AccessorType> {
         self.r#type.as_ref()
     }
     /// <p>The current status of the accessor.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AccessorStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AccessorStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
-    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+    pub fn network_type(&self) -> ::std::option::Option<& crate::types::AccessorNetworkType> {
         self.network_type.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl AccessorSummaryBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl AccessorSummaryBuilder {
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the accessor.</p><note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
@@ -107,8 +105,7 @@ impl AccessorSummaryBuilder {
     }
     /// <p>The current status of the accessor.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AccessorStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the accessor.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AccessorStatus> {
@@ -121,8 +118,7 @@ impl AccessorSummaryBuilder {
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -135,8 +131,7 @@ impl AccessorSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +144,7 @@ impl AccessorSummaryBuilder {
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The blockchain network that the Accessor token is created for.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {
@@ -159,12 +153,19 @@ impl AccessorSummaryBuilder {
     /// Consumes the builder and constructs a [`AccessorSummary`](crate::types::AccessorSummary).
     pub fn build(self) -> crate::types::AccessorSummary {
         crate::types::AccessorSummary {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            creation_date: self.creation_date,
-            arn: self.arn,
-            network_type: self.network_type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            creation_date: self.creation_date
+            ,
+            arn: self.arn
+            ,
+            network_type: self.network_type
+            ,
         }
     }
 }
+

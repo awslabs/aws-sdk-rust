@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstanceInformation`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_information_filter_list(InstanceInformationFilter)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::instance_information_filter_list) / [`set_instance_information_filter_list(Option<Vec::<InstanceInformationFilter>>)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::set_instance_information_filter_list):<br>required: **false**<br><p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p><note>  <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error.</p> </note><br>
     ///   - [`filters(InstanceInformationStringFilter)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::filters) / [`set_filters(Option<Vec::<InstanceInformationStringFilter>>)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to your managed nodes. Tag filters can't be combined with other filter types. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. The default value is 10 items.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeInstanceInformationOutput`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput) with field(s):
+                            /// - On success, responds with [`DescribeInstanceInformationOutput`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput) with field(s):
     ///   - [`instance_information_list(Option<Vec::<InstanceInformation>>)`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput::instance_information_list): <p>The managed node information list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_information::DescribeInstanceInformationOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstanceInformationError>`](crate::operation::describe_instance_information::DescribeInstanceInformationError)
-    pub fn describe_instance_information(
-        &self,
-    ) -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder {
-        crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeInstanceInformationError>`](crate::operation::describe_instance_information::DescribeInstanceInformationError)
+    pub fn describe_instance_information(&self) -> crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder {
+                                crate::operation::describe_instance_information::builders::DescribeInstanceInformationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

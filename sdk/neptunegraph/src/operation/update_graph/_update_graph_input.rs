@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGraphInput {
+pub struct UpdateGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
@@ -12,9 +12,9 @@ pub struct UpdateGraphInput {
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
 }
-impl UpdateGraphInput {
+impl  UpdateGraphInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
@@ -55,8 +55,7 @@ impl UpdateGraphInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateGraphInputBuilder {
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_connectivity = input;
-        self
+        self.public_connectivity = input; self
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl UpdateGraphInputBuilder {
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_memory = input;
-        self
+        self.provisioned_memory = input; self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
@@ -97,8 +94,7 @@ impl UpdateGraphInputBuilder {
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -106,11 +102,18 @@ impl UpdateGraphInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateGraphInput`](crate::operation::update_graph::UpdateGraphInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_graph::UpdateGraphInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_graph::UpdateGraphInput {
-            graph_identifier: self.graph_identifier,
-            public_connectivity: self.public_connectivity,
-            provisioned_memory: self.provisioned_memory,
-            deletion_protection: self.deletion_protection,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_graph::UpdateGraphInput {
+                graph_identifier: self.graph_identifier
+                ,
+                public_connectivity: self.public_connectivity
+                ,
+                provisioned_memory: self.provisioned_memory
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+            }
+        )
     }
 }
+

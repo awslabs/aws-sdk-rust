@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueuedReservedInstancesInput {
+pub struct DeleteQueuedReservedInstancesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Reserved Instances.</p>
-    pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteQueuedReservedInstancesInput {
+impl  DeleteQueuedReservedInstancesInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_ids.is_none()`.
-    pub fn reserved_instances_ids(&self) -> &[::std::string::String] {
-        self.reserved_instances_ids.as_deref().unwrap_or_default()
+    pub fn reserved_instances_ids(&self) -> & [::std::string::String] {
+        self.reserved_instances_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteQueuedReservedInstancesInput {
@@ -32,7 +33,7 @@ impl DeleteQueuedReservedInstancesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteQueuedReservedInstancesInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reserved_instances_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteQueuedReservedInstancesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,8 +43,7 @@ impl DeleteQueuedReservedInstancesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -56,29 +56,28 @@ impl DeleteQueuedReservedInstancesInputBuilder {
     /// <p>The IDs of the Reserved Instances.</p>
     pub fn reserved_instances_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.reserved_instances_ids.unwrap_or_default();
-        v.push(input.into());
-        self.reserved_instances_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.reserved_instances_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.reserved_instances_ids = input;
-        self
+    pub fn set_reserved_instances_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.reserved_instances_ids = input; self
     }
     /// <p>The IDs of the Reserved Instances.</p>
-    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_reserved_instances_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.reserved_instances_ids
     }
     /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesInput`](crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput {
-            dry_run: self.dry_run,
-            reserved_instances_ids: self.reserved_instances_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesInput {
+                dry_run: self.dry_run
+                ,
+                reserved_instances_ids: self.reserved_instances_ids
+                ,
+            }
+        )
     }
 }
+

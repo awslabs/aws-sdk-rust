@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PipelineContext {
+pub struct PipelineContext  {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The stage of the pipeline.</p>
@@ -17,25 +17,25 @@ pub struct PipelineContext {
     /// <p>The execution ID of the pipeline.</p>
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
 }
-impl PipelineContext {
+impl  PipelineContext  {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The stage of the pipeline.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::StageContext> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::StageContext> {
         self.stage.as_ref()
     }
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::ActionContext> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::ActionContext> {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The execution ID of the pipeline.</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl PipelineContextBuilder {
     }
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl PipelineContextBuilder {
     }
     /// <p>The stage of the pipeline.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::StageContext>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The stage of the pipeline.</p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::StageContext> {
@@ -92,8 +90,7 @@ impl PipelineContextBuilder {
     }
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::ActionContext>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionContext> {
@@ -106,8 +103,7 @@ impl PipelineContextBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_arn = input;
-        self
+        self.pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl PipelineContextBuilder {
     }
     /// <p>The execution ID of the pipeline.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The execution ID of the pipeline.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,11 +125,17 @@ impl PipelineContextBuilder {
     /// Consumes the builder and constructs a [`PipelineContext`](crate::types::PipelineContext).
     pub fn build(self) -> crate::types::PipelineContext {
         crate::types::PipelineContext {
-            pipeline_name: self.pipeline_name,
-            stage: self.stage,
-            action: self.action,
-            pipeline_arn: self.pipeline_arn,
-            pipeline_execution_id: self.pipeline_execution_id,
+            pipeline_name: self.pipeline_name
+            ,
+            stage: self.stage
+            ,
+            action: self.action
+            ,
+            pipeline_arn: self.pipeline_arn
+            ,
+            pipeline_execution_id: self.pipeline_execution_id
+            ,
         }
     }
 }
+

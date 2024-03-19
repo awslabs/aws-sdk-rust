@@ -4,15 +4,14 @@
 /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LcmOperationInfo {
+pub struct LcmOperationInfo  {
     /// <p>The identifier of the network operation.</p>
     pub ns_lcm_op_occ_id: ::std::string::String,
 }
-impl LcmOperationInfo {
+impl  LcmOperationInfo  {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ns_lcm_op_occ_id.deref()
+    pub fn ns_lcm_op_occ_id(&self) -> & str {
+        use std::ops::Deref; self.ns_lcm_op_occ_id.deref()
     }
 }
 impl LcmOperationInfo {
@@ -37,8 +36,7 @@ impl LcmOperationInfoBuilder {
     }
     /// <p>The identifier of the network operation.</p>
     pub fn set_ns_lcm_op_occ_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_lcm_op_occ_id = input;
-        self
+        self.ns_lcm_op_occ_id = input; self
     }
     /// <p>The identifier of the network operation.</p>
     pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -48,13 +46,15 @@ impl LcmOperationInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ns_lcm_op_occ_id`](crate::types::builders::LcmOperationInfoBuilder::ns_lcm_op_occ_id)
     pub fn build(self) -> ::std::result::Result<crate::types::LcmOperationInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LcmOperationInfo {
-            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ns_lcm_op_occ_id",
-                    "ns_lcm_op_occ_id was not specified but it is required when building LcmOperationInfo",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LcmOperationInfo {
+                ns_lcm_op_occ_id: self.ns_lcm_op_occ_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ns_lcm_op_occ_id", "ns_lcm_op_occ_id was not specified but it is required when building LcmOperationInfo")
+                    )?
+                ,
+            }
+        )
     }
 }
+

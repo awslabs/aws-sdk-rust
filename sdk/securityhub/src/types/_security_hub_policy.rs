@@ -3,27 +3,28 @@
 /// <p>An object that defines how Security Hub is configured. The configuration policy includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityHubPolicy {
+pub struct SecurityHubPolicy  {
     /// <p>Indicates whether Security Hub is enabled in the policy.</p>
     pub service_enabled: ::std::option::Option<bool>,
     /// <p>A list that defines which security standards are enabled in the configuration policy.</p>
-    pub enabled_standard_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enabled_standard_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An object that defines which security controls are enabled in the configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
     pub security_controls_configuration: ::std::option::Option<crate::types::SecurityControlsConfiguration>,
 }
-impl SecurityHubPolicy {
+impl  SecurityHubPolicy  {
     /// <p>Indicates whether Security Hub is enabled in the policy.</p>
     pub fn service_enabled(&self) -> ::std::option::Option<bool> {
         self.service_enabled
     }
     /// <p>A list that defines which security standards are enabled in the configuration policy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_standard_identifiers.is_none()`.
-    pub fn enabled_standard_identifiers(&self) -> &[::std::string::String] {
-        self.enabled_standard_identifiers.as_deref().unwrap_or_default()
+    pub fn enabled_standard_identifiers(&self) -> & [::std::string::String] {
+        self.enabled_standard_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that defines which security controls are enabled in the configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
-    pub fn security_controls_configuration(&self) -> ::std::option::Option<&crate::types::SecurityControlsConfiguration> {
+    pub fn security_controls_configuration(&self) -> ::std::option::Option<& crate::types::SecurityControlsConfiguration> {
         self.security_controls_configuration.as_ref()
     }
 }
@@ -39,7 +40,7 @@ impl SecurityHubPolicy {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SecurityHubPolicyBuilder {
     pub(crate) service_enabled: ::std::option::Option<bool>,
-    pub(crate) enabled_standard_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enabled_standard_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) security_controls_configuration: ::std::option::Option<crate::types::SecurityControlsConfiguration>,
 }
 impl SecurityHubPolicyBuilder {
@@ -50,8 +51,7 @@ impl SecurityHubPolicyBuilder {
     }
     /// <p>Indicates whether Security Hub is enabled in the policy.</p>
     pub fn set_service_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.service_enabled = input;
-        self
+        self.service_enabled = input; self
     }
     /// <p>Indicates whether Security Hub is enabled in the policy.</p>
     pub fn get_service_enabled(&self) -> &::std::option::Option<bool> {
@@ -64,17 +64,16 @@ impl SecurityHubPolicyBuilder {
     /// <p>A list that defines which security standards are enabled in the configuration policy.</p>
     pub fn enabled_standard_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_standard_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.enabled_standard_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enabled_standard_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that defines which security standards are enabled in the configuration policy.</p>
-    pub fn set_enabled_standard_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enabled_standard_identifiers = input;
-        self
+    pub fn set_enabled_standard_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enabled_standard_identifiers = input; self
     }
     /// <p>A list that defines which security standards are enabled in the configuration policy.</p>
-    pub fn get_enabled_standard_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enabled_standard_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enabled_standard_identifiers
     }
     /// <p>An object that defines which security controls are enabled in the configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
@@ -84,8 +83,7 @@ impl SecurityHubPolicyBuilder {
     }
     /// <p>An object that defines which security controls are enabled in the configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
     pub fn set_security_controls_configuration(mut self, input: ::std::option::Option<crate::types::SecurityControlsConfiguration>) -> Self {
-        self.security_controls_configuration = input;
-        self
+        self.security_controls_configuration = input; self
     }
     /// <p>An object that defines which security controls are enabled in the configuration policy. The enablement status of a control is aligned across all of the enabled standards in an account.</p>
     pub fn get_security_controls_configuration(&self) -> &::std::option::Option<crate::types::SecurityControlsConfiguration> {
@@ -94,9 +92,13 @@ impl SecurityHubPolicyBuilder {
     /// Consumes the builder and constructs a [`SecurityHubPolicy`](crate::types::SecurityHubPolicy).
     pub fn build(self) -> crate::types::SecurityHubPolicy {
         crate::types::SecurityHubPolicy {
-            service_enabled: self.service_enabled,
-            enabled_standard_identifiers: self.enabled_standard_identifiers,
-            security_controls_configuration: self.security_controls_configuration,
+            service_enabled: self.service_enabled
+            ,
+            enabled_standard_identifiers: self.enabled_standard_identifiers
+            ,
+            security_controls_configuration: self.security_controls_configuration
+            ,
         }
     }
 }
+

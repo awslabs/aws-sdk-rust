@@ -3,23 +3,23 @@
 /// <p>The details of the schedule of the data source runs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ScheduleConfiguration {
+pub struct ScheduleConfiguration  {
     /// <p>The timezone of the data source run.</p>
     pub timezone: ::std::option::Option<crate::types::Timezone>,
     /// <p>The schedule of the data source runs.</p>
     pub schedule: ::std::option::Option<::std::string::String>,
 }
-impl ScheduleConfiguration {
+impl  ScheduleConfiguration  {
     /// <p>The timezone of the data source run.</p>
-    pub fn timezone(&self) -> ::std::option::Option<&crate::types::Timezone> {
+    pub fn timezone(&self) -> ::std::option::Option<& crate::types::Timezone> {
         self.timezone.as_ref()
     }
     /// <p>The schedule of the data source runs.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<& str> {
         self.schedule.as_deref()
     }
 }
-impl ::std::fmt::Debug for ScheduleConfiguration {
+impl  ::std::fmt::Debug for ScheduleConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduleConfiguration");
         formatter.field("timezone", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>The timezone of the data source run.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<crate::types::Timezone>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// <p>The timezone of the data source run.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<crate::types::Timezone> {
@@ -63,8 +62,7 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>The schedule of the data source runs.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule of the data source runs.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl ScheduleConfigurationBuilder {
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {
-            timezone: self.timezone,
-            schedule: self.schedule,
+            timezone: self.timezone
+            ,
+            schedule: self.schedule
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for ScheduleConfigurationBuilder {
         formatter.finish()
     }
 }
+

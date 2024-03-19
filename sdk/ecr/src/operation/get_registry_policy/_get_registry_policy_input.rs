@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRegistryPolicyInput {}
+pub struct GetRegistryPolicyInput  {
+}
 impl GetRegistryPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetRegistryPolicyInput`](crate::operation::get_registry_policy::GetRegistryPolicyInput).
     pub fn builder() -> crate::operation::get_registry_policy::builders::GetRegistryPolicyInputBuilder {
@@ -13,12 +14,15 @@ impl GetRegistryPolicyInput {
 /// A builder for [`GetRegistryPolicyInput`](crate::operation::get_registry_policy::GetRegistryPolicyInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetRegistryPolicyInputBuilder {}
+pub struct GetRegistryPolicyInputBuilder {
+}
 impl GetRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryPolicyInput`](crate::operation::get_registry_policy::GetRegistryPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_registry_policy::GetRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_registry_policy::GetRegistryPolicyInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_registry_policy::GetRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_registry_policy::GetRegistryPolicyInput {
+            }
+        )
     }
 }
+

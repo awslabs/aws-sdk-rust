@@ -3,7 +3,7 @@
 /// <p>Information about the Amazon Elastic File System file system that is used for task storage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
+pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails  {
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub authorization_config: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
     /// <p>The Amazon EFS file system identifier to use.</p>
@@ -15,23 +15,21 @@ pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
     pub transit_encryption_port: ::std::option::Option<i32>,
 }
-impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
+impl  AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails  {
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn authorization_config(
-        &self,
-    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails> {
+    pub fn authorization_config(&self) -> ::std::option::Option<& crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails> {
         self.authorization_config.as_ref()
     }
     /// <p>The Amazon EFS file system identifier to use.</p>
-    pub fn filesystem_id(&self) -> ::std::option::Option<&str> {
+    pub fn filesystem_id(&self) -> ::std::option::Option<& str> {
         self.filesystem_id.as_deref()
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
-    pub fn root_directory(&self) -> ::std::option::Option<&str> {
+    pub fn root_directory(&self) -> ::std::option::Option<& str> {
         self.root_directory.as_deref()
     }
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
-    pub fn transit_encryption(&self) -> ::std::option::Option<&str> {
+    pub fn transit_encryption(&self) -> ::std::option::Option<& str> {
         self.transit_encryption.as_deref()
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
@@ -63,17 +61,11 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
         self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn set_authorization_config(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
-    ) -> Self {
-        self.authorization_config = input;
-        self
+    pub fn set_authorization_config(mut self, input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>) -> Self {
+        self.authorization_config = input; self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
-    pub fn get_authorization_config(
-        &self,
-    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails> {
+    pub fn get_authorization_config(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails> {
         &self.authorization_config
     }
     /// <p>The Amazon EFS file system identifier to use.</p>
@@ -83,8 +75,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     }
     /// <p>The Amazon EFS file system identifier to use.</p>
     pub fn set_filesystem_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filesystem_id = input;
-        self
+        self.filesystem_id = input; self
     }
     /// <p>The Amazon EFS file system identifier to use.</p>
     pub fn get_filesystem_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +88,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
     pub fn set_root_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_directory = input;
-        self
+        self.root_directory = input; self
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
     pub fn get_root_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +101,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     }
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
     pub fn set_transit_encryption(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_encryption = input;
-        self
+        self.transit_encryption = input; self
     }
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server.</p>
     pub fn get_transit_encryption(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +114,7 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
     pub fn set_transit_encryption_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.transit_encryption_port = input;
-        self
+        self.transit_encryption_port = input; self
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
     pub fn get_transit_encryption_port(&self) -> &::std::option::Option<i32> {
@@ -135,11 +123,17 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
         crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
-            authorization_config: self.authorization_config,
-            filesystem_id: self.filesystem_id,
-            root_directory: self.root_directory,
-            transit_encryption: self.transit_encryption,
-            transit_encryption_port: self.transit_encryption_port,
+            authorization_config: self.authorization_config
+            ,
+            filesystem_id: self.filesystem_id
+            ,
+            root_directory: self.root_directory
+            ,
+            transit_encryption: self.transit_encryption
+            ,
+            transit_encryption_port: self.transit_encryption_port
+            ,
         }
     }
 }
+

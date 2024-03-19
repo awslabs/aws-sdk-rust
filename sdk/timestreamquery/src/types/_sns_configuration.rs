@@ -3,15 +3,14 @@
 /// <p>Details on SNS that are required to send the notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnsConfiguration {
+pub struct SnsConfiguration  {
     /// <p>SNS topic ARN that the scheduled query status notifications will be sent to.</p>
     pub topic_arn: ::std::string::String,
 }
-impl SnsConfiguration {
+impl  SnsConfiguration  {
     /// <p>SNS topic ARN that the scheduled query status notifications will be sent to.</p>
-    pub fn topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_arn.deref()
+    pub fn topic_arn(&self) -> & str {
+        use std::ops::Deref; self.topic_arn.deref()
     }
 }
 impl SnsConfiguration {
@@ -36,8 +35,7 @@ impl SnsConfigurationBuilder {
     }
     /// <p>SNS topic ARN that the scheduled query status notifications will be sent to.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>SNS topic ARN that the scheduled query status notifications will be sent to.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SnsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_arn`](crate::types::builders::SnsConfigurationBuilder::topic_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::SnsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnsConfiguration {
-            topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_arn",
-                    "topic_arn was not specified but it is required when building SnsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnsConfiguration {
+                topic_arn: self.topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_arn", "topic_arn was not specified but it is required when building SnsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVirtualGatewaysOutput {
+pub struct ListVirtualGatewaysOutput  {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-    pub virtual_gateways: ::std::vec::Vec<crate::types::VirtualGatewayRef>,
+    pub virtual_gateways: ::std::vec::Vec::<crate::types::VirtualGatewayRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListVirtualGatewaysOutput {
+impl  ListVirtualGatewaysOutput  {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-    pub fn virtual_gateways(&self) -> &[crate::types::VirtualGatewayRef] {
-        use std::ops::Deref;
-        self.virtual_gateways.deref()
+    pub fn virtual_gateways(&self) -> & [crate::types::VirtualGatewayRef] {
+        use std::ops::Deref; self.virtual_gateways.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVirtualGatewaysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVirtualGatewaysOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput).
     pub fn builder() -> crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysOutputBuilder {
@@ -36,7 +35,7 @@ impl ListVirtualGatewaysOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualGatewaysOutputBuilder {
-    pub(crate) virtual_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayRef>>,
+    pub(crate) virtual_gateways: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualGatewayRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListVirtualGatewaysOutputBuilder {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
     pub fn virtual_gateways(mut self, input: crate::types::VirtualGatewayRef) -> Self {
         let mut v = self.virtual_gateways.unwrap_or_default();
-        v.push(input);
-        self.virtual_gateways = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.virtual_gateways = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-    pub fn set_virtual_gateways(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayRef>>) -> Self {
-        self.virtual_gateways = input;
-        self
+    pub fn set_virtual_gateways(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualGatewayRef>>) -> Self {
+        self.virtual_gateways = input; self
     }
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
-    pub fn get_virtual_gateways(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayRef>> {
+    pub fn get_virtual_gateways(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VirtualGatewayRef>> {
         &self.virtual_gateways
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -68,38 +66,37 @@ impl ListVirtualGatewaysOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVirtualGatewaysOutput`](crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_gateways`](crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysOutputBuilder::virtual_gateways)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput {
-            virtual_gateways: self.virtual_gateways.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_gateways",
-                    "virtual_gateways was not specified but it is required when building ListVirtualGatewaysOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput {
+                virtual_gateways: self.virtual_gateways
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_gateways", "virtual_gateways was not specified but it is required when building ListVirtualGatewaysOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

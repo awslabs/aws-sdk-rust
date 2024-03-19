@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateFormTypeInput {
+pub struct CreateFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of this Amazon DataZone metadata form type.</p>
@@ -16,33 +16,33 @@ pub struct CreateFormTypeInput {
     /// <p>The description of this Amazon DataZone metadata form type.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl CreateFormTypeInput {
+impl  CreateFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The model of this Amazon DataZone metadata form type.</p>
-    pub fn model(&self) -> ::std::option::Option<&crate::types::Model> {
+    pub fn model(&self) -> ::std::option::Option<& crate::types::Model> {
         self.model.as_ref()
     }
     /// <p>The ID of the Amazon DataZone project that owns this metadata form type.</p>
-    pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn owning_project_identifier(&self) -> ::std::option::Option<& str> {
         self.owning_project_identifier.as_deref()
     }
     /// <p>The status of this Amazon DataZone metadata form type.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::FormTypeStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::FormTypeStatus> {
         self.status.as_ref()
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateFormTypeInput {
+impl  ::std::fmt::Debug for CreateFormTypeInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateFormTypeInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -81,8 +81,7 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this metadata form type is created.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this Amazon DataZone metadata form type.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The model of this Amazon DataZone metadata form type.</p>
     pub fn set_model(mut self, input: ::std::option::Option<crate::types::Model>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The model of this Amazon DataZone metadata form type.</p>
     pub fn get_model(&self) -> &::std::option::Option<crate::types::Model> {
@@ -126,8 +123,7 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone project that owns this metadata form type.</p>
     pub fn set_owning_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_identifier = input;
-        self
+        self.owning_project_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone project that owns this metadata form type.</p>
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The status of this Amazon DataZone metadata form type.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FormTypeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this Amazon DataZone metadata form type.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FormTypeStatus> {
@@ -154,25 +149,30 @@ impl CreateFormTypeInputBuilder {
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this Amazon DataZone metadata form type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateFormTypeInput`](crate::operation::create_form_type::CreateFormTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_form_type::CreateFormTypeInput {
-            domain_identifier: self.domain_identifier,
-            name: self.name,
-            model: self.model,
-            owning_project_identifier: self.owning_project_identifier,
-            status: self.status,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_form_type::CreateFormTypeInput {
+                domain_identifier: self.domain_identifier
+                ,
+                name: self.name
+                ,
+                model: self.model
+                ,
+                owning_project_identifier: self.owning_project_identifier
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateFormTypeInputBuilder {
@@ -187,3 +187,4 @@ impl ::std::fmt::Debug for CreateFormTypeInputBuilder {
         formatter.finish()
     }
 }
+

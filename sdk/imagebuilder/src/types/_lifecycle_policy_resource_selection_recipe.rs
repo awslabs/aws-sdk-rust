@@ -3,22 +3,20 @@
 /// <p>Specifies an Image Builder recipe that the lifecycle policy uses for resource selection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyResourceSelectionRecipe {
+pub struct LifecyclePolicyResourceSelectionRecipe  {
     /// <p>The name of an Image Builder recipe that the lifecycle policy uses for resource selection.</p>
     pub name: ::std::string::String,
     /// <p>The version of the Image Builder recipe specified by the <code>name</code> field.</p>
     pub semantic_version: ::std::string::String,
 }
-impl LifecyclePolicyResourceSelectionRecipe {
+impl  LifecyclePolicyResourceSelectionRecipe  {
     /// <p>The name of an Image Builder recipe that the lifecycle policy uses for resource selection.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The version of the Image Builder recipe specified by the <code>name</code> field.</p>
-    pub fn semantic_version(&self) -> &str {
-        use std::ops::Deref;
-        self.semantic_version.deref()
+    pub fn semantic_version(&self) -> & str {
+        use std::ops::Deref; self.semantic_version.deref()
     }
 }
 impl LifecyclePolicyResourceSelectionRecipe {
@@ -44,8 +42,7 @@ impl LifecyclePolicyResourceSelectionRecipeBuilder {
     }
     /// <p>The name of an Image Builder recipe that the lifecycle policy uses for resource selection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an Image Builder recipe that the lifecycle policy uses for resource selection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl LifecyclePolicyResourceSelectionRecipeBuilder {
     }
     /// <p>The version of the Image Builder recipe specified by the <code>name</code> field.</p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The version of the Image Builder recipe specified by the <code>name</code> field.</p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +66,21 @@ impl LifecyclePolicyResourceSelectionRecipeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::LifecyclePolicyResourceSelectionRecipeBuilder::name)
     /// - [`semantic_version`](crate::types::builders::LifecyclePolicyResourceSelectionRecipeBuilder::semantic_version)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::LifecyclePolicyResourceSelectionRecipe, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LifecyclePolicyResourceSelectionRecipe {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building LifecyclePolicyResourceSelectionRecipe",
-                )
-            })?,
-            semantic_version: self.semantic_version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "semantic_version",
-                    "semantic_version was not specified but it is required when building LifecyclePolicyResourceSelectionRecipe",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::LifecyclePolicyResourceSelectionRecipe, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::LifecyclePolicyResourceSelectionRecipe {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building LifecyclePolicyResourceSelectionRecipe")
+                    )?
+                ,
+                semantic_version: self.semantic_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("semantic_version", "semantic_version was not specified but it is required when building LifecyclePolicyResourceSelectionRecipe")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataCatalogInputDefinition {
+pub struct DataCatalogInputDefinition  {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database in the Data Catalog.</p>
@@ -13,23 +13,21 @@ pub struct DataCatalogInputDefinition {
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub temp_directory: ::std::option::Option<crate::types::S3Location>,
 }
-impl DataCatalogInputDefinition {
+impl  DataCatalogInputDefinition  {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
-    pub fn temp_directory(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn temp_directory(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.temp_directory.as_ref()
     }
 }
@@ -57,8 +55,7 @@ impl DataCatalogInputDefinitionBuilder {
     }
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +69,7 @@ impl DataCatalogInputDefinitionBuilder {
     }
     /// <p>The name of a database in the Data Catalog.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of a database in the Data Catalog.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl DataCatalogInputDefinitionBuilder {
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl DataCatalogInputDefinitionBuilder {
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub fn set_temp_directory(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.temp_directory = input;
-        self
+        self.temp_directory = input; self
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
     pub fn get_temp_directory(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -113,21 +107,24 @@ impl DataCatalogInputDefinitionBuilder {
     /// - [`database_name`](crate::types::builders::DataCatalogInputDefinitionBuilder::database_name)
     /// - [`table_name`](crate::types::builders::DataCatalogInputDefinitionBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DataCatalogInputDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataCatalogInputDefinition {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building DataCatalogInputDefinition",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building DataCatalogInputDefinition",
-                )
-            })?,
-            temp_directory: self.temp_directory,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataCatalogInputDefinition {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building DataCatalogInputDefinition")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building DataCatalogInputDefinition")
+                    )?
+                ,
+                temp_directory: self.temp_directory
+                ,
+            }
+        )
     }
 }
+

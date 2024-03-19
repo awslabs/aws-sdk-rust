@@ -3,7 +3,7 @@
 /// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseTimeRootCauseEntity {
+pub struct ResponseTimeRootCauseEntity  {
     /// <p>The name of the entity.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type and messages of the exceptions.</p>
@@ -11,9 +11,9 @@ pub struct ResponseTimeRootCauseEntity {
     /// <p>A flag that denotes a remote subsegment.</p>
     pub remote: ::std::option::Option<bool>,
 }
-impl ResponseTimeRootCauseEntity {
+impl  ResponseTimeRootCauseEntity  {
     /// <p>The name of the entity.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type and messages of the exceptions.</p>
@@ -48,8 +48,7 @@ impl ResponseTimeRootCauseEntityBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ResponseTimeRootCauseEntityBuilder {
     }
     /// <p>The type and messages of the exceptions.</p>
     pub fn set_coverage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.coverage = input;
-        self
+        self.coverage = input; self
     }
     /// <p>The type and messages of the exceptions.</p>
     pub fn get_coverage(&self) -> &::std::option::Option<f64> {
@@ -76,8 +74,7 @@ impl ResponseTimeRootCauseEntityBuilder {
     }
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn set_remote(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote = input;
-        self
+        self.remote = input; self
     }
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn get_remote(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl ResponseTimeRootCauseEntityBuilder {
     /// Consumes the builder and constructs a [`ResponseTimeRootCauseEntity`](crate::types::ResponseTimeRootCauseEntity).
     pub fn build(self) -> crate::types::ResponseTimeRootCauseEntity {
         crate::types::ResponseTimeRootCauseEntity {
-            name: self.name,
-            coverage: self.coverage,
-            remote: self.remote,
+            name: self.name
+            ,
+            coverage: self.coverage
+            ,
+            remote: self.remote
+            ,
         }
     }
 }
+

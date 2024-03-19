@@ -3,15 +3,14 @@
 /// <p>The metadata transfer job AWS IoT TwinMaker destination configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IotTwinMakerDestinationConfiguration {
+pub struct IotTwinMakerDestinationConfiguration  {
     /// <p>The IoT TwinMaker workspace.</p>
     pub workspace: ::std::string::String,
 }
-impl IotTwinMakerDestinationConfiguration {
+impl  IotTwinMakerDestinationConfiguration  {
     /// <p>The IoT TwinMaker workspace.</p>
-    pub fn workspace(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace.deref()
+    pub fn workspace(&self) -> & str {
+        use std::ops::Deref; self.workspace.deref()
     }
 }
 impl IotTwinMakerDestinationConfiguration {
@@ -36,8 +35,7 @@ impl IotTwinMakerDestinationConfigurationBuilder {
     }
     /// <p>The IoT TwinMaker workspace.</p>
     pub fn set_workspace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace = input;
-        self
+        self.workspace = input; self
     }
     /// <p>The IoT TwinMaker workspace.</p>
     pub fn get_workspace(&self) -> &::std::option::Option<::std::string::String> {
@@ -46,16 +44,16 @@ impl IotTwinMakerDestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`IotTwinMakerDestinationConfiguration`](crate::types::IotTwinMakerDestinationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace`](crate::types::builders::IotTwinMakerDestinationConfigurationBuilder::workspace)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::IotTwinMakerDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IotTwinMakerDestinationConfiguration {
-            workspace: self.workspace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workspace",
-                    "workspace was not specified but it is required when building IotTwinMakerDestinationConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::IotTwinMakerDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::IotTwinMakerDestinationConfiguration {
+                workspace: self.workspace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workspace", "workspace was not specified but it is required when building IotTwinMakerDestinationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -5,56 +5,52 @@ pub use crate::operation::cancel_update_stack::_cancel_update_stack_input::Cance
 
 impl CancelUpdateStackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.cancel_update_stack();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::cancel_update_stack::CancelUpdateStackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.cancel_update_stack();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CancelUpdateStack`.
-///
+/// 
 /// <p>Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and reverts to the previous stack configuration.</p><note>
 /// <p>You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelUpdateStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder,
+                    inner: crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        crate::operation::cancel_update_stack::CancelUpdateStackError,
-    > for CancelUpdateStackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::cancel_update_stack::CancelUpdateStackOutput,
+                    crate::operation::cancel_update_stack::CancelUpdateStackError,
+                > for CancelUpdateStackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
+                        crate::operation::cancel_update_stack::CancelUpdateStackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CancelUpdateStackFluentBuilder {
     /// Creates a new `CancelUpdateStack`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CancelUpdateStackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_update_stack::CancelUpdateStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::cancel_update_stack::CancelUpdateStack::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::cancel_update_stack::CancelUpdateStack::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
-        crate::operation::cancel_update_stack::CancelUpdateStackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_update_stack::CancelUpdateStackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_update_stack::CancelUpdateStackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::cancel_update_stack::CancelUpdateStack::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::cancel_update_stack::CancelUpdateStack::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::cancel_update_stack::CancelUpdateStackOutput, crate::operation::cancel_update_stack::CancelUpdateStackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <note>
     /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p>
     /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p>
@@ -154,3 +141,4 @@ impl CancelUpdateStackFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

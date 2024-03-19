@@ -3,20 +3,19 @@
 /// <p>The threshold for the calculated attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Threshold {
+pub struct Threshold  {
     /// <p>The value of the threshold.</p>
     pub value: ::std::string::String,
     /// <p>The operator of the threshold.</p>
     pub operator: crate::types::Operator,
 }
-impl Threshold {
+impl  Threshold  {
     /// <p>The value of the threshold.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The operator of the threshold.</p>
-    pub fn operator(&self) -> &crate::types::Operator {
+    pub fn operator(&self) -> & crate::types::Operator {
         &self.operator
     }
 }
@@ -43,8 +42,7 @@ impl ThresholdBuilder {
     }
     /// <p>The value of the threshold.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the threshold.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ThresholdBuilder {
     }
     /// <p>The operator of the threshold.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator of the threshold.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
@@ -70,19 +67,20 @@ impl ThresholdBuilder {
     /// - [`value`](crate::types::builders::ThresholdBuilder::value)
     /// - [`operator`](crate::types::builders::ThresholdBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::Threshold, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Threshold {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Threshold",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building Threshold",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Threshold {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Threshold")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building Threshold")
+                    )?
+                ,
+            }
+        )
     }
 }
+

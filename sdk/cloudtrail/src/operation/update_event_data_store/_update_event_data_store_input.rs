@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEventDataStoreInput {
+pub struct UpdateEventDataStoreInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
     pub event_data_store: ::std::option::Option<::std::string::String>,
     /// <p>The event data store name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub multi_region_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p><note>
@@ -52,20 +52,21 @@ pub struct UpdateEventDataStoreInput {
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
-impl UpdateEventDataStoreInput {
+impl  UpdateEventDataStoreInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
-    pub fn event_data_store(&self) -> ::std::option::Option<&str> {
+    pub fn event_data_store(&self) -> ::std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>The event data store name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.advanced_event_selectors.is_none()`.
-    pub fn advanced_event_selectors(&self) -> &[crate::types::AdvancedEventSelector] {
-        self.advanced_event_selectors.as_deref().unwrap_or_default()
+    pub fn advanced_event_selectors(&self) -> & [crate::types::AdvancedEventSelector] {
+        self.advanced_event_selectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(&self) -> ::std::option::Option<bool> {
@@ -103,7 +104,7 @@ impl UpdateEventDataStoreInput {
     /// <li>
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <note>
@@ -118,7 +119,7 @@ impl UpdateEventDataStoreInput {
     /// <p><code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect to ingest more than 25 TB of event data per month and need a retention period of up to 2557 days (about 7 years). The default retention period for this billing mode is 2557 days.</p></li>
     /// </ul>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
-    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+    pub fn billing_mode(&self) -> ::std::option::Option<& crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
 }
@@ -135,7 +136,7 @@ impl UpdateEventDataStoreInput {
 pub struct UpdateEventDataStoreInputBuilder {
     pub(crate) event_data_store: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
+    pub(crate) advanced_event_selectors: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>,
     pub(crate) multi_region_enabled: ::std::option::Option<bool>,
     pub(crate) organization_enabled: ::std::option::Option<bool>,
     pub(crate) retention_period: ::std::option::Option<i32>,
@@ -152,8 +153,7 @@ impl UpdateEventDataStoreInputBuilder {
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
     pub fn set_event_data_store(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
     pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +166,7 @@ impl UpdateEventDataStoreInputBuilder {
     }
     /// <p>The event data store name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The event data store name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,17 +179,16 @@ impl UpdateEventDataStoreInputBuilder {
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
     pub fn advanced_event_selectors(mut self, input: crate::types::AdvancedEventSelector) -> Self {
         let mut v = self.advanced_event_selectors.unwrap_or_default();
-        v.push(input);
-        self.advanced_event_selectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.advanced_event_selectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>) -> Self {
-        self.advanced_event_selectors = input;
-        self
+    pub fn set_advanced_event_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>>) -> Self {
+        self.advanced_event_selectors = input; self
     }
     /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
-    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+    pub fn get_advanced_event_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdvancedEventSelector>> {
         &self.advanced_event_selectors
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
@@ -200,8 +198,7 @@ impl UpdateEventDataStoreInputBuilder {
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_region_enabled = input;
-        self
+        self.multi_region_enabled = input; self
     }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
@@ -218,8 +215,7 @@ impl UpdateEventDataStoreInputBuilder {
     /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
     /// </note>
     pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.organization_enabled = input;
-        self
+        self.organization_enabled = input; self
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p><note>
     /// <p>Only the management account for the organization can convert an organization event data store to a non-organization event data store, or convert a non-organization event data store to an organization event data store.</p>
@@ -240,8 +236,7 @@ impl UpdateEventDataStoreInputBuilder {
     /// <p>If you decrease the retention period of an event data store, CloudTrail will remove any events with an <code>eventTime</code> older than the new retention period. For example, if the previous retention period was 365 days and you decrease it to 100 days, CloudTrail will remove events with an <code>eventTime</code> older than 100 days.</p>
     /// </note>
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The retention period of the event data store, in days. If <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period of up to 3653 days, the equivalent of 10 years. If <code>BillingMode</code> is set to <code>FIXED_RETENTION_PRICING</code>, you can set a retention period of up to 2557 days, the equivalent of seven years.</p>
     /// <p>CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code> of the event is within the specified retention period. For example, if you set a retention period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is older than 90 days.</p><note>
@@ -257,8 +252,7 @@ impl UpdateEventDataStoreInputBuilder {
     }
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
     pub fn set_termination_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.termination_protection_enabled = input;
-        self
+        self.termination_protection_enabled = input; self
     }
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
     pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
@@ -299,8 +293,7 @@ impl UpdateEventDataStoreInputBuilder {
     /// <p><code>12345678-1234-1234-1234-123456789012</code></p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p><important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -349,8 +342,7 @@ impl UpdateEventDataStoreInputBuilder {
     /// </ul>
     /// <p>For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-manage-costs.html">Managing CloudTrail Lake costs</a>.</p>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
-        self.billing_mode = input;
-        self
+        self.billing_mode = input; self
     }
     /// <note>
     /// <p>You can't change the billing mode from <code>EXTENDABLE_RETENTION_PRICING</code> to <code>FIXED_RETENTION_PRICING</code>. If <code>BillingMode</code> is set to <code>EXTENDABLE_RETENTION_PRICING</code> and you want to use <code>FIXED_RETENTION_PRICING</code> instead, you'll need to stop ingestion on the event data store and create a new event data store that uses <code>FIXED_RETENTION_PRICING</code>.</p>
@@ -368,20 +360,29 @@ impl UpdateEventDataStoreInputBuilder {
         &self.billing_mode
     }
     /// Consumes the builder and constructs a [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_event_data_store::UpdateEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_event_data_store::UpdateEventDataStoreInput {
-            event_data_store: self.event_data_store,
-            name: self.name,
-            advanced_event_selectors: self.advanced_event_selectors,
-            multi_region_enabled: self.multi_region_enabled,
-            organization_enabled: self.organization_enabled,
-            retention_period: self.retention_period,
-            termination_protection_enabled: self.termination_protection_enabled,
-            kms_key_id: self.kms_key_id,
-            billing_mode: self.billing_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_event_data_store::UpdateEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_event_data_store::UpdateEventDataStoreInput {
+                event_data_store: self.event_data_store
+                ,
+                name: self.name
+                ,
+                advanced_event_selectors: self.advanced_event_selectors
+                ,
+                multi_region_enabled: self.multi_region_enabled
+                ,
+                organization_enabled: self.organization_enabled
+                ,
+                retention_period: self.retention_period
+                ,
+                termination_protection_enabled: self.termination_protection_enabled
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                billing_mode: self.billing_mode
+                ,
+            }
+        )
     }
 }
+

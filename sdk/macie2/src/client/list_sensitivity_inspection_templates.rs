@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSensitivityInspectionTemplates`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of a paginated response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     ///   - [`sensitivity_inspection_templates(Option<Vec::<SensitivityInspectionTemplatesEntry>>)`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput::sensitivity_inspection_templates): <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    /// - On failure, responds with [`SdkError<ListSensitivityInspectionTemplatesError>`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesError)
-    pub fn list_sensitivity_inspection_templates(
-        &self,
-    ) -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder {
-        crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSensitivityInspectionTemplatesError>`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesError)
+    pub fn list_sensitivity_inspection_templates(&self) -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder {
+                                crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

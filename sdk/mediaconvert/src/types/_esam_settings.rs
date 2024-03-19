@@ -3,7 +3,7 @@
 /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EsamSettings {
+pub struct EsamSettings  {
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     pub manifest_confirm_condition_notification: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
@@ -11,9 +11,9 @@ pub struct EsamSettings {
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub signal_processing_notification: ::std::option::Option<crate::types::EsamSignalProcessingNotification>,
 }
-impl EsamSettings {
+impl  EsamSettings  {
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
-    pub fn manifest_confirm_condition_notification(&self) -> ::std::option::Option<&crate::types::EsamManifestConfirmConditionNotification> {
+    pub fn manifest_confirm_condition_notification(&self) -> ::std::option::Option<& crate::types::EsamManifestConfirmConditionNotification> {
         self.manifest_confirm_condition_notification.as_ref()
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
@@ -21,7 +21,7 @@ impl EsamSettings {
         self.response_signal_preroll
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
-    pub fn signal_processing_notification(&self) -> ::std::option::Option<&crate::types::EsamSignalProcessingNotification> {
+    pub fn signal_processing_notification(&self) -> ::std::option::Option<& crate::types::EsamSignalProcessingNotification> {
         self.signal_processing_notification.as_ref()
     }
 }
@@ -47,12 +47,8 @@ impl EsamSettingsBuilder {
         self
     }
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
-    pub fn set_manifest_confirm_condition_notification(
-        mut self,
-        input: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
-    ) -> Self {
-        self.manifest_confirm_condition_notification = input;
-        self
+    pub fn set_manifest_confirm_condition_notification(mut self, input: ::std::option::Option<crate::types::EsamManifestConfirmConditionNotification>) -> Self {
+        self.manifest_confirm_condition_notification = input; self
     }
     /// Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
     pub fn get_manifest_confirm_condition_notification(&self) -> &::std::option::Option<crate::types::EsamManifestConfirmConditionNotification> {
@@ -65,8 +61,7 @@ impl EsamSettingsBuilder {
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     pub fn set_response_signal_preroll(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.response_signal_preroll = input;
-        self
+        self.response_signal_preroll = input; self
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     pub fn get_response_signal_preroll(&self) -> &::std::option::Option<i32> {
@@ -79,8 +74,7 @@ impl EsamSettingsBuilder {
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub fn set_signal_processing_notification(mut self, input: ::std::option::Option<crate::types::EsamSignalProcessingNotification>) -> Self {
-        self.signal_processing_notification = input;
-        self
+        self.signal_processing_notification = input; self
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML.
     pub fn get_signal_processing_notification(&self) -> &::std::option::Option<crate::types::EsamSignalProcessingNotification> {
@@ -89,9 +83,13 @@ impl EsamSettingsBuilder {
     /// Consumes the builder and constructs a [`EsamSettings`](crate::types::EsamSettings).
     pub fn build(self) -> crate::types::EsamSettings {
         crate::types::EsamSettings {
-            manifest_confirm_condition_notification: self.manifest_confirm_condition_notification,
-            response_signal_preroll: self.response_signal_preroll,
-            signal_processing_notification: self.signal_processing_notification,
+            manifest_confirm_condition_notification: self.manifest_confirm_condition_notification
+            ,
+            response_signal_preroll: self.response_signal_preroll
+            ,
+            signal_processing_notification: self.signal_processing_notification
+            ,
         }
     }
 }
+

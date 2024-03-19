@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPermissionSets`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::instance_arn) / [`set_instance_arn(Option<String>)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::set_instance_arn):<br>required: **true**<br><p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display for the assignment.</p><br>
-    /// - On success, responds with [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput) with field(s):
+                            /// - On success, responds with [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput) with field(s):
     ///   - [`permission_sets(Option<Vec::<String>>)`](crate::operation::list_permission_sets::ListPermissionSetsOutput::permission_sets): <p>Defines the level of access on an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_permission_sets::ListPermissionSetsOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    /// - On failure, responds with [`SdkError<ListPermissionSetsError>`](crate::operation::list_permission_sets::ListPermissionSetsError)
+                            /// - On failure, responds with [`SdkError<ListPermissionSetsError>`](crate::operation::list_permission_sets::ListPermissionSetsError)
     pub fn list_permission_sets(&self) -> crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder {
-        crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_permission_sets::builders::ListPermissionSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

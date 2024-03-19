@@ -3,17 +3,16 @@
 /// <p>The configuration of an Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisVideoStreamConfiguration {
+pub struct KinesisVideoStreamConfiguration  {
     /// <p>The Amazon Web Services Region of the video stream.</p>
     pub region: ::std::string::String,
     /// <p>The amount of time that data is retained.</p>
     pub data_retention_in_hours: ::std::option::Option<i32>,
 }
-impl KinesisVideoStreamConfiguration {
+impl  KinesisVideoStreamConfiguration  {
     /// <p>The Amazon Web Services Region of the video stream.</p>
-    pub fn region(&self) -> &str {
-        use std::ops::Deref;
-        self.region.deref()
+    pub fn region(&self) -> & str {
+        use std::ops::Deref; self.region.deref()
     }
     /// <p>The amount of time that data is retained.</p>
     pub fn data_retention_in_hours(&self) -> ::std::option::Option<i32> {
@@ -43,8 +42,7 @@ impl KinesisVideoStreamConfigurationBuilder {
     }
     /// <p>The Amazon Web Services Region of the video stream.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the video stream.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl KinesisVideoStreamConfigurationBuilder {
     }
     /// <p>The amount of time that data is retained.</p>
     pub fn set_data_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.data_retention_in_hours = input;
-        self
+        self.data_retention_in_hours = input; self
     }
     /// <p>The amount of time that data is retained.</p>
     pub fn get_data_retention_in_hours(&self) -> &::std::option::Option<i32> {
@@ -68,14 +65,17 @@ impl KinesisVideoStreamConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::KinesisVideoStreamConfigurationBuilder::region)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisVideoStreamConfiguration {
-            region: self.region.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "region",
-                    "region was not specified but it is required when building KinesisVideoStreamConfiguration",
-                )
-            })?,
-            data_retention_in_hours: self.data_retention_in_hours,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisVideoStreamConfiguration {
+                region: self.region
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("region", "region was not specified but it is required when building KinesisVideoStreamConfiguration")
+                    )?
+                ,
+                data_retention_in_hours: self.data_retention_in_hours
+                ,
+            }
+        )
     }
 }
+

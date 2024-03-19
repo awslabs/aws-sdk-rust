@@ -3,13 +3,13 @@
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Baseline {
+pub struct Baseline  {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub predictor_baseline: ::std::option::Option<crate::types::PredictorBaseline>,
 }
-impl Baseline {
+impl  Baseline  {
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
-    pub fn predictor_baseline(&self) -> ::std::option::Option<&crate::types::PredictorBaseline> {
+    pub fn predictor_baseline(&self) -> ::std::option::Option<& crate::types::PredictorBaseline> {
         self.predictor_baseline.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl BaselineBuilder {
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub fn set_predictor_baseline(mut self, input: ::std::option::Option<crate::types::PredictorBaseline>) -> Self {
-        self.predictor_baseline = input;
-        self
+        self.predictor_baseline = input; self
     }
     /// <p>The initial <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">accuracy metrics</a> for the predictor you are monitoring. Use these metrics as a baseline for comparison purposes as you use your predictor and the metrics change.</p>
     pub fn get_predictor_baseline(&self) -> &::std::option::Option<crate::types::PredictorBaseline> {
@@ -44,7 +43,9 @@ impl BaselineBuilder {
     /// Consumes the builder and constructs a [`Baseline`](crate::types::Baseline).
     pub fn build(self) -> crate::types::Baseline {
         crate::types::Baseline {
-            predictor_baseline: self.predictor_baseline,
+            predictor_baseline: self.predictor_baseline
+            ,
         }
     }
 }
+

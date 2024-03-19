@@ -3,11 +3,11 @@
 /// <p>Contains information about the validation of each domain name in the certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainValidation {
+pub struct DomainValidation  {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub domain_name: ::std::string::String,
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub validation_emails: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
@@ -26,20 +26,20 @@ pub struct DomainValidation {
     /// <p>Specifies the domain validation method.</p>
     pub validation_method: ::std::option::Option<crate::types::ValidationMethod>,
 }
-impl DomainValidation {
+impl  DomainValidation  {
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_emails.is_none()`.
-    pub fn validation_emails(&self) -> &[::std::string::String] {
-        self.validation_emails.as_deref().unwrap_or_default()
+    pub fn validation_emails(&self) -> & [::std::string::String] {
+        self.validation_emails.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
-    pub fn validation_domain(&self) -> ::std::option::Option<&str> {
+    pub fn validation_domain(&self) -> ::std::option::Option<& str> {
         self.validation_domain.as_deref()
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
@@ -51,16 +51,16 @@ impl DomainValidation {
     /// <li>
     /// <p><code></code>FAILED</p></li>
     /// </ul>
-    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<& crate::types::DomainStatus> {
         self.validation_status.as_ref()
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
-    pub fn resource_record(&self) -> ::std::option::Option<&crate::types::ResourceRecord> {
+    pub fn resource_record(&self) -> ::std::option::Option<& crate::types::ResourceRecord> {
         self.resource_record.as_ref()
     }
     /// <p>Specifies the domain validation method.</p>
-    pub fn validation_method(&self) -> ::std::option::Option<&crate::types::ValidationMethod> {
+    pub fn validation_method(&self) -> ::std::option::Option<& crate::types::ValidationMethod> {
         self.validation_method.as_ref()
     }
 }
@@ -76,7 +76,7 @@ impl DomainValidation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DomainValidationBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) validation_emails: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) validation_emails: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) validation_domain: ::std::option::Option<::std::string::String>,
     pub(crate) validation_status: ::std::option::Option<crate::types::DomainStatus>,
     pub(crate) resource_record: ::std::option::Option<crate::types::ResourceRecord>,
@@ -91,8 +91,7 @@ impl DomainValidationBuilder {
     }
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,17 +104,16 @@ impl DomainValidationBuilder {
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
     pub fn validation_emails(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.validation_emails.unwrap_or_default();
-        v.push(input.into());
-        self.validation_emails = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.validation_emails = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn set_validation_emails(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.validation_emails = input;
-        self
+    pub fn set_validation_emails(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.validation_emails = input; self
     }
     /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
-    pub fn get_validation_emails(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_validation_emails(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.validation_emails
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
@@ -125,8 +123,7 @@ impl DomainValidationBuilder {
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.validation_domain = input;
-        self
+        self.validation_domain = input; self
     }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl DomainValidationBuilder {
     /// <p><code></code>FAILED</p></li>
     /// </ul>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.validation_status = input;
-        self
+        self.validation_status = input; self
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
@@ -179,8 +175,7 @@ impl DomainValidationBuilder {
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn set_resource_record(mut self, input: ::std::option::Option<crate::types::ResourceRecord>) -> Self {
-        self.resource_record = input;
-        self
+        self.resource_record = input; self
     }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
@@ -194,8 +189,7 @@ impl DomainValidationBuilder {
     }
     /// <p>Specifies the domain validation method.</p>
     pub fn set_validation_method(mut self, input: ::std::option::Option<crate::types::ValidationMethod>) -> Self {
-        self.validation_method = input;
-        self
+        self.validation_method = input; self
     }
     /// <p>Specifies the domain validation method.</p>
     pub fn get_validation_method(&self) -> &::std::option::Option<crate::types::ValidationMethod> {
@@ -205,18 +199,25 @@ impl DomainValidationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::DomainValidationBuilder::domain_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DomainValidation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DomainValidation {
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building DomainValidation",
-                )
-            })?,
-            validation_emails: self.validation_emails,
-            validation_domain: self.validation_domain,
-            validation_status: self.validation_status,
-            resource_record: self.resource_record,
-            validation_method: self.validation_method,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DomainValidation {
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building DomainValidation")
+                    )?
+                ,
+                validation_emails: self.validation_emails
+                ,
+                validation_domain: self.validation_domain
+                ,
+                validation_status: self.validation_status
+                ,
+                resource_record: self.resource_record
+                ,
+                validation_method: self.validation_method
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbInstanceInput {
+pub struct DeleteDbInstanceInput  {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -33,14 +33,14 @@ pub struct DeleteDbInstanceInput {
     /// </ul>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbInstanceInput {
+impl  DeleteDbInstanceInput  {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Determines whether a final DB snapshot is created before the DB instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified, a DB snapshot is created before the DB instance is deleted.</p>
@@ -66,7 +66,7 @@ impl DeleteDbInstanceInput {
     /// <li>
     /// <p>Cannot be specified when deleting a Read Replica.</p></li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.final_db_snapshot_identifier.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>Must match the name of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -133,8 +132,7 @@ impl DeleteDbInstanceInputBuilder {
     /// </note>
     /// <p>Default: <code>false</code></p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_final_snapshot = input;
-        self
+        self.skip_final_snapshot = input; self
     }
     /// <p>Determines whether a final DB snapshot is created before the DB instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified, a DB snapshot is created before the DB instance is deleted.</p>
     /// <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>
@@ -178,8 +176,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>Cannot be specified when deleting a Read Replica.</p></li>
     /// </ul>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_db_snapshot_identifier = input;
-        self
+        self.final_db_snapshot_identifier = input; self
     }
     /// <p>The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p><note>
     /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
@@ -199,13 +196,17 @@ impl DeleteDbInstanceInputBuilder {
         &self.final_db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-            skip_final_snapshot: self.skip_final_snapshot,
-            final_db_snapshot_identifier: self.final_db_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_instance::DeleteDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                skip_final_snapshot: self.skip_final_snapshot
+                ,
+                final_db_snapshot_identifier: self.final_db_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

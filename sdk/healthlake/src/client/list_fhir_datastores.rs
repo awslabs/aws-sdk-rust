@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFHIRDatastores`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(DatastoreFilter)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::filter) / [`set_filter(Option<DatastoreFilter>)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::set_filter):<br>required: **false**<br><p>Lists all filters associated with a FHIR data store request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::set_next_token):<br>required: **false**<br><p>Fetches the next page of data stores when results are paginated.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.</p><br>
-    /// - On success, responds with [`ListFhirDatastoresOutput`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput) with field(s):
+                            /// - On success, responds with [`ListFhirDatastoresOutput`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput) with field(s):
     ///   - [`datastore_properties_list(Vec::<DatastoreProperties>)`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput::datastore_properties_list): <p>All properties associated with the listed data stores.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fhir_datastores::ListFhirDatastoresOutput::next_token): <p>Pagination token that can be used to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListFHIRDatastoresError>`](crate::operation::list_fhir_datastores::ListFHIRDatastoresError)
+                            /// - On failure, responds with [`SdkError<ListFHIRDatastoresError>`](crate::operation::list_fhir_datastores::ListFHIRDatastoresError)
     pub fn list_fhir_datastores(&self) -> crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder {
-        crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fhir_datastores::builders::ListFHIRDatastoresFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartInferenceExperimentOutput {
+pub struct StartInferenceExperimentOutput  {
     /// <p>The ARN of the started inference experiment to start.</p>
     pub inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartInferenceExperimentOutput {
+impl  StartInferenceExperimentOutput  {
     /// <p>The ARN of the started inference experiment to start.</p>
-    pub fn inference_experiment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_experiment_arn(&self) -> ::std::option::Option<& str> {
         self.inference_experiment_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartInferenceExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartInferenceExperimentOutput {
     /// Creates a new builder-style object to manufacture [`StartInferenceExperimentOutput`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput).
     pub fn builder() -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder {
@@ -41,27 +41,28 @@ impl StartInferenceExperimentOutputBuilder {
     }
     /// <p>The ARN of the started inference experiment to start.</p>
     pub fn set_inference_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_experiment_arn = input;
-        self
+        self.inference_experiment_arn = input; self
     }
     /// <p>The ARN of the started inference experiment to start.</p>
     pub fn get_inference_experiment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_experiment_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartInferenceExperimentOutput`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput).
     pub fn build(self) -> crate::operation::start_inference_experiment::StartInferenceExperimentOutput {
         crate::operation::start_inference_experiment::StartInferenceExperimentOutput {
-            inference_experiment_arn: self.inference_experiment_arn,
+            inference_experiment_arn: self.inference_experiment_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

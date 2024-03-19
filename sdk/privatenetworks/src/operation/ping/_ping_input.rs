@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PingInput {}
+pub struct PingInput  {
+}
 impl PingInput {
     /// Creates a new builder-style object to manufacture [`PingInput`](crate::operation::ping::PingInput).
     pub fn builder() -> crate::operation::ping::builders::PingInputBuilder {
@@ -13,10 +14,15 @@ impl PingInput {
 /// A builder for [`PingInput`](crate::operation::ping::PingInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct PingInputBuilder {}
+pub struct PingInputBuilder {
+}
 impl PingInputBuilder {
     /// Consumes the builder and constructs a [`PingInput`](crate::operation::ping::PingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::ping::PingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::ping::PingInput {})
+        ::std::result::Result::Ok(
+            crate::operation::ping::PingInput {
+            }
+        )
     }
 }
+

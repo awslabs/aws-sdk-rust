@@ -3,23 +3,22 @@
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartQueryPlanningOutput {
+pub struct StartQueryPlanningOutput  {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     pub query_id: ::std::string::String,
     _request_id: Option<String>,
 }
-impl StartQueryPlanningOutput {
+impl  StartQueryPlanningOutput  {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn query_id(&self) -> &str {
-        use std::ops::Deref;
-        self.query_id.deref()
+    pub fn query_id(&self) -> & str {
+        use std::ops::Deref; self.query_id.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartQueryPlanningOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartQueryPlanningOutput {
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
     pub fn builder() -> crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder {
@@ -43,37 +42,35 @@ impl StartQueryPlanningOutputBuilder {
     }
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_id`](crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder::query_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningOutput {
-            query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_id",
-                    "query_id was not specified but it is required when building StartQueryPlanningOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_query_planning::StartQueryPlanningOutput {
+                query_id: self.query_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_id", "query_id was not specified but it is required when building StartQueryPlanningOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

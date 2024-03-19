@@ -3,7 +3,7 @@
 /// <p>A control from a date filter that is used to specify the relative date.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterRelativeDateTimeControl {
+pub struct FilterRelativeDateTimeControl  {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
     pub filter_control_id: ::std::string::String,
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
@@ -13,24 +13,21 @@ pub struct FilterRelativeDateTimeControl {
     /// <p>The display options of a control.</p>
     pub display_options: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>,
 }
-impl FilterRelativeDateTimeControl {
+impl  FilterRelativeDateTimeControl  {
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn filter_control_id(&self) -> &str {
-        use std::ops::Deref;
-        self.filter_control_id.deref()
+    pub fn filter_control_id(&self) -> & str {
+        use std::ops::Deref; self.filter_control_id.deref()
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
-    pub fn source_filter_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_filter_id.deref()
+    pub fn source_filter_id(&self) -> & str {
+        use std::ops::Deref; self.source_filter_id.deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(&self) -> ::std::option::Option<&crate::types::RelativeDateTimeControlDisplayOptions> {
+    pub fn display_options(&self) -> ::std::option::Option<& crate::types::RelativeDateTimeControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -59,8 +56,7 @@ impl FilterRelativeDateTimeControlBuilder {
     }
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
     pub fn set_filter_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_control_id = input;
-        self
+        self.filter_control_id = input; self
     }
     /// <p>The ID of the <code>FilterTextAreaControl</code>.</p>
     pub fn get_filter_control_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl FilterRelativeDateTimeControlBuilder {
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the <code>FilterTextAreaControl</code>.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl FilterRelativeDateTimeControlBuilder {
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
     pub fn set_source_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_filter_id = input;
-        self
+        self.source_filter_id = input; self
     }
     /// <p>The source filter ID of the <code>FilterTextAreaControl</code>.</p>
     pub fn get_source_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl FilterRelativeDateTimeControlBuilder {
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(mut self, input: ::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions>) -> Self {
-        self.display_options = input;
-        self
+        self.display_options = input; self
     }
     /// <p>The display options of a control.</p>
     pub fn get_display_options(&self) -> &::std::option::Option<crate::types::RelativeDateTimeControlDisplayOptions> {
@@ -116,26 +109,27 @@ impl FilterRelativeDateTimeControlBuilder {
     /// - [`title`](crate::types::builders::FilterRelativeDateTimeControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterRelativeDateTimeControlBuilder::source_filter_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilterRelativeDateTimeControl, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilterRelativeDateTimeControl {
-            filter_control_id: self.filter_control_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filter_control_id",
-                    "filter_control_id was not specified but it is required when building FilterRelativeDateTimeControl",
-                )
-            })?,
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building FilterRelativeDateTimeControl",
-                )
-            })?,
-            source_filter_id: self.source_filter_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_filter_id",
-                    "source_filter_id was not specified but it is required when building FilterRelativeDateTimeControl",
-                )
-            })?,
-            display_options: self.display_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilterRelativeDateTimeControl {
+                filter_control_id: self.filter_control_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filter_control_id", "filter_control_id was not specified but it is required when building FilterRelativeDateTimeControl")
+                    )?
+                ,
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building FilterRelativeDateTimeControl")
+                    )?
+                ,
+                source_filter_id: self.source_filter_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_filter_id", "source_filter_id was not specified but it is required when building FilterRelativeDateTimeControl")
+                    )?
+                ,
+                display_options: self.display_options
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAccessPointPolicyStatusOutput {
+pub struct GetAccessPointPolicyStatusOutput  {
     /// <p>Indicates the current policy status of the specified access point.</p>
     pub policy_status: ::std::option::Option<crate::types::PolicyStatus>,
     _request_id: Option<String>,
 }
-impl GetAccessPointPolicyStatusOutput {
+impl  GetAccessPointPolicyStatusOutput  {
     /// <p>Indicates the current policy status of the specified access point.</p>
-    pub fn policy_status(&self) -> ::std::option::Option<&crate::types::PolicyStatus> {
+    pub fn policy_status(&self) -> ::std::option::Option<& crate::types::PolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAccessPointPolicyStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAccessPointPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput).
     pub fn builder() -> crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusOutputBuilder {
@@ -40,27 +40,28 @@ impl GetAccessPointPolicyStatusOutputBuilder {
     }
     /// <p>Indicates the current policy status of the specified access point.</p>
     pub fn set_policy_status(mut self, input: ::std::option::Option<crate::types::PolicyStatus>) -> Self {
-        self.policy_status = input;
-        self
+        self.policy_status = input; self
     }
     /// <p>Indicates the current policy status of the specified access point.</p>
     pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
         &self.policy_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusOutput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput).
     pub fn build(self) -> crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput {
         crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput {
-            policy_status: self.policy_status,
+            policy_status: self.policy_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

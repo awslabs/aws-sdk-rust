@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFilteredTransactionEvents`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`network(impl Into<String>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::network) / [`set_network(Option<String>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_network):<br>required: **true**<br><p>The blockchain network where the transaction occurred.</p> <p>Valid Values: <code>BITCOIN_MAINNET</code> | <code>BITCOIN_TESTNET</code></p><br>
     ///   - [`address_identifier_filter(AddressIdentifierFilter)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::address_identifier_filter) / [`set_address_identifier_filter(Option<AddressIdentifierFilter>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_address_identifier_filter):<br>required: **true**<br><p>This is the unique public address on the blockchain for which the transaction events are being requested.</p><br>
     ///   - [`time_filter(TimeFilter)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::time_filter) / [`set_time_filter(Option<TimeFilter>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_time_filter):<br>required: **false**<br><p>This container specifies the time frame for the transaction events returned in the response.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`sort(ListFilteredTransactionEventsSort)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::sort) / [`set_sort(Option<ListFilteredTransactionEventsSort>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_sort):<br>required: **false**<br><p>The order by which the results will be sorted.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that indicates the next set of results to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of transaction events to list.</p> <p>Default: <code>100</code></p><note>  <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>  <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p> </note><br>
-    /// - On success, responds with [`ListFilteredTransactionEventsOutput`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput) with field(s):
+                            /// - On success, responds with [`ListFilteredTransactionEventsOutput`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput) with field(s):
     ///   - [`events(Vec::<TransactionEvent>)`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput::events): <p>The transaction events returned by the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListFilteredTransactionEventsError>`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsError)
-    pub fn list_filtered_transaction_events(
-        &self,
-    ) -> crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder {
-        crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListFilteredTransactionEventsError>`](crate::operation::list_filtered_transaction_events::ListFilteredTransactionEventsError)
+    pub fn list_filtered_transaction_events(&self) -> crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder {
+                                crate::operation::list_filtered_transaction_events::builders::ListFilteredTransactionEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

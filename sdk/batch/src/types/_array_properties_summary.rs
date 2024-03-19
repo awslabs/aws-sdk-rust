@@ -3,13 +3,13 @@
 /// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ArrayPropertiesSummary {
+pub struct ArrayPropertiesSummary  {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub size: ::std::option::Option<i32>,
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
     pub index: ::std::option::Option<i32>,
 }
-impl ArrayPropertiesSummary {
+impl  ArrayPropertiesSummary  {
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
@@ -41,8 +41,7 @@ impl ArrayPropertiesSummaryBuilder {
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ArrayPropertiesSummaryBuilder {
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for children of array jobs.</p>
     pub fn get_index(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl ArrayPropertiesSummaryBuilder {
     /// Consumes the builder and constructs a [`ArrayPropertiesSummary`](crate::types::ArrayPropertiesSummary).
     pub fn build(self) -> crate::types::ArrayPropertiesSummary {
         crate::types::ArrayPropertiesSummary {
-            size: self.size,
-            index: self.index,
+            size: self.size
+            ,
+            index: self.index
+            ,
         }
     }
 }
+

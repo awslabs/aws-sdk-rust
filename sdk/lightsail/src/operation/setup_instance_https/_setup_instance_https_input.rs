@@ -2,37 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SetupInstanceHttpsInput {
+pub struct SetupInstanceHttpsInput  {
     /// <p>The name of the Lightsail instance.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The contact method for SSL/TLS certificate renewal alerts. You can enter one email address.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain and subdomains that were specified for the SSL/TLS certificate.</p>
-    pub domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The certificate authority that issues the SSL/TLS certificate.</p>
     pub certificate_provider: ::std::option::Option<crate::types::CertificateProvider>,
 }
-impl SetupInstanceHttpsInput {
+impl  SetupInstanceHttpsInput  {
     /// <p>The name of the Lightsail instance.</p>
-    pub fn instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<& str> {
         self.instance_name.as_deref()
     }
     /// <p>The contact method for SSL/TLS certificate renewal alerts. You can enter one email address.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The name of the domain and subdomains that were specified for the SSL/TLS certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_names.is_none()`.
-    pub fn domain_names(&self) -> &[::std::string::String] {
-        self.domain_names.as_deref().unwrap_or_default()
+    pub fn domain_names(&self) -> & [::std::string::String] {
+        self.domain_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The certificate authority that issues the SSL/TLS certificate.</p>
-    pub fn certificate_provider(&self) -> ::std::option::Option<&crate::types::CertificateProvider> {
+    pub fn certificate_provider(&self) -> ::std::option::Option<& crate::types::CertificateProvider> {
         self.certificate_provider.as_ref()
     }
 }
-impl ::std::fmt::Debug for SetupInstanceHttpsInput {
+impl  ::std::fmt::Debug for SetupInstanceHttpsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetupInstanceHttpsInput");
         formatter.field("instance_name", &self.instance_name);
@@ -55,7 +56,7 @@ impl SetupInstanceHttpsInput {
 pub struct SetupInstanceHttpsInputBuilder {
     pub(crate) instance_name: ::std::option::Option<::std::string::String>,
     pub(crate) email_address: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domain_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) certificate_provider: ::std::option::Option<crate::types::CertificateProvider>,
 }
 impl SetupInstanceHttpsInputBuilder {
@@ -67,8 +68,7 @@ impl SetupInstanceHttpsInputBuilder {
     }
     /// <p>The name of the Lightsail instance.</p>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// <p>The name of the Lightsail instance.</p>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +82,7 @@ impl SetupInstanceHttpsInputBuilder {
     }
     /// <p>The contact method for SSL/TLS certificate renewal alerts. You can enter one email address.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The contact method for SSL/TLS certificate renewal alerts. You can enter one email address.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +95,16 @@ impl SetupInstanceHttpsInputBuilder {
     /// <p>The name of the domain and subdomains that were specified for the SSL/TLS certificate.</p>
     pub fn domain_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.domain_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.domain_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name of the domain and subdomains that were specified for the SSL/TLS certificate.</p>
-    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.domain_names = input;
-        self
+    pub fn set_domain_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.domain_names = input; self
     }
     /// <p>The name of the domain and subdomains that were specified for the SSL/TLS certificate.</p>
-    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_domain_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.domain_names
     }
     /// <p>The certificate authority that issues the SSL/TLS certificate.</p>
@@ -117,24 +115,26 @@ impl SetupInstanceHttpsInputBuilder {
     }
     /// <p>The certificate authority that issues the SSL/TLS certificate.</p>
     pub fn set_certificate_provider(mut self, input: ::std::option::Option<crate::types::CertificateProvider>) -> Self {
-        self.certificate_provider = input;
-        self
+        self.certificate_provider = input; self
     }
     /// <p>The certificate authority that issues the SSL/TLS certificate.</p>
     pub fn get_certificate_provider(&self) -> &::std::option::Option<crate::types::CertificateProvider> {
         &self.certificate_provider
     }
     /// Consumes the builder and constructs a [`SetupInstanceHttpsInput`](crate::operation::setup_instance_https::SetupInstanceHttpsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::setup_instance_https::SetupInstanceHttpsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::setup_instance_https::SetupInstanceHttpsInput {
-            instance_name: self.instance_name,
-            email_address: self.email_address,
-            domain_names: self.domain_names,
-            certificate_provider: self.certificate_provider,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::setup_instance_https::SetupInstanceHttpsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::setup_instance_https::SetupInstanceHttpsInput {
+                instance_name: self.instance_name
+                ,
+                email_address: self.email_address
+                ,
+                domain_names: self.domain_names
+                ,
+                certificate_provider: self.certificate_provider
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SetupInstanceHttpsInputBuilder {
@@ -147,3 +147,4 @@ impl ::std::fmt::Debug for SetupInstanceHttpsInputBuilder {
         formatter.finish()
     }
 }
+

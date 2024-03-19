@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScheduleInput {
+pub struct CreateScheduleInput  {
     /// <p>The name or names of one or more jobs to be run.</p>
-    pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this schedule.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl CreateScheduleInput {
+impl  CreateScheduleInput  {
     /// <p>The name or names of one or more jobs to be run.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_names.is_none()`.
-    pub fn job_names(&self) -> &[::std::string::String] {
-        self.job_names.as_deref().unwrap_or_default()
+    pub fn job_names(&self) -> & [::std::string::String] {
+        self.job_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p>Metadata tags to apply to this schedule.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -43,9 +44,9 @@ impl CreateScheduleInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateScheduleInputBuilder {
-    pub(crate) job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CreateScheduleInputBuilder {
@@ -56,17 +57,16 @@ impl CreateScheduleInputBuilder {
     /// <p>The name or names of one or more jobs to be run.</p>
     pub fn job_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.job_names.unwrap_or_default();
-        v.push(input.into());
-        self.job_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.job_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The name or names of one or more jobs to be run.</p>
-    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_names = input;
-        self
+    pub fn set_job_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.job_names = input; self
     }
     /// <p>The name or names of one or more jobs to be run.</p>
-    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.job_names
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
@@ -77,8 +77,7 @@ impl CreateScheduleInputBuilder {
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cron_expression = input;
-        self
+        self.cron_expression = input; self
     }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,17 +90,16 @@ impl CreateScheduleInputBuilder {
     /// <p>Metadata tags to apply to this schedule.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata tags to apply to this schedule.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata tags to apply to this schedule.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -112,22 +110,26 @@ impl CreateScheduleInputBuilder {
     }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateScheduleInput`](crate::operation::create_schedule::CreateScheduleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_schedule::CreateScheduleInput {
-            job_names: self.job_names,
-            cron_expression: self.cron_expression,
-            tags: self.tags,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_schedule::CreateScheduleInput {
+                job_names: self.job_names
+                ,
+                cron_expression: self.cron_expression
+                ,
+                tags: self.tags
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

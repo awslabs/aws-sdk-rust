@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateProfileJobInput {
+pub struct CreateProfileJobInput  {
     /// <p>The name of the dataset that this job is to act upon.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
@@ -28,23 +28,23 @@ pub struct CreateProfileJobInput {
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub validation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this job.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub timeout: ::std::option::Option<i32>,
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub job_sample: ::std::option::Option<crate::types::JobSample>,
 }
-impl CreateProfileJobInput {
+impl  CreateProfileJobInput  {
     /// <p>The name of the dataset that this job is to act upon.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
@@ -54,15 +54,15 @@ impl CreateProfileJobInput {
     /// <li>
     /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
-    pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<& crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn log_subscription(&self) -> ::std::option::Option<&crate::types::LogSubscription> {
+    pub fn log_subscription(&self) -> ::std::option::Option<& crate::types::LogSubscription> {
         self.log_subscription.as_ref()
     }
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
@@ -74,25 +74,26 @@ impl CreateProfileJobInput {
         self.max_retries
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn output_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
+    pub fn output_location(&self) -> ::std::option::Option<& crate::types::S3Location> {
         self.output_location.as_ref()
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ProfileConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ProfileConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_configurations.is_none()`.
-    pub fn validation_configurations(&self) -> &[crate::types::ValidationConfiguration] {
-        self.validation_configurations.as_deref().unwrap_or_default()
+    pub fn validation_configurations(&self) -> & [crate::types::ValidationConfiguration] {
+        self.validation_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -100,7 +101,7 @@ impl CreateProfileJobInput {
         self.timeout
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
-    pub fn job_sample(&self) -> ::std::option::Option<&crate::types::JobSample> {
+    pub fn job_sample(&self) -> ::std::option::Option<& crate::types::JobSample> {
         self.job_sample.as_ref()
     }
 }
@@ -124,9 +125,9 @@ pub struct CreateProfileJobInputBuilder {
     pub(crate) max_retries: ::std::option::Option<i32>,
     pub(crate) output_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
-    pub(crate) validation_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
+    pub(crate) validation_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationConfiguration>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) timeout: ::std::option::Option<i32>,
     pub(crate) job_sample: ::std::option::Option<crate::types::JobSample>,
 }
@@ -139,8 +140,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The name of the dataset that this job is to act upon.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset that this job is to act upon.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +153,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +178,7 @@ impl CreateProfileJobInputBuilder {
     /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
-        self.encryption_mode = input;
-        self
+        self.encryption_mode = input; self
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
@@ -200,8 +198,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +211,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn set_log_subscription(mut self, input: ::std::option::Option<crate::types::LogSubscription>) -> Self {
-        self.log_subscription = input;
-        self
+        self.log_subscription = input; self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn get_log_subscription(&self) -> &::std::option::Option<crate::types::LogSubscription> {
@@ -228,8 +224,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
@@ -242,8 +237,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_retries = input;
-        self
+        self.max_retries = input; self
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
     pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
@@ -257,8 +251,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<crate::types::S3Location> {
@@ -271,8 +264,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ProfileConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
@@ -285,17 +277,16 @@ impl CreateProfileJobInputBuilder {
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub fn validation_configurations(mut self, input: crate::types::ValidationConfiguration) -> Self {
         let mut v = self.validation_configurations.unwrap_or_default();
-        v.push(input);
-        self.validation_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.validation_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn set_validation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>) -> Self {
-        self.validation_configurations = input;
-        self
+    pub fn set_validation_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ValidationConfiguration>>) -> Self {
+        self.validation_configurations = input; self
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn get_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>> {
+    pub fn get_validation_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ValidationConfiguration>> {
         &self.validation_configurations
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
@@ -306,8 +297,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -320,17 +310,16 @@ impl CreateProfileJobInputBuilder {
     /// <p>Metadata tags to apply to this job.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata tags to apply to this job.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -340,8 +329,7 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
@@ -354,32 +342,46 @@ impl CreateProfileJobInputBuilder {
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn set_job_sample(mut self, input: ::std::option::Option<crate::types::JobSample>) -> Self {
-        self.job_sample = input;
-        self
+        self.job_sample = input; self
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
     pub fn get_job_sample(&self) -> &::std::option::Option<crate::types::JobSample> {
         &self.job_sample
     }
     /// Consumes the builder and constructs a [`CreateProfileJobInput`](crate::operation::create_profile_job::CreateProfileJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_profile_job::CreateProfileJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_profile_job::CreateProfileJobInput {
-            dataset_name: self.dataset_name,
-            encryption_key_arn: self.encryption_key_arn,
-            encryption_mode: self.encryption_mode,
-            name: self.name,
-            log_subscription: self.log_subscription,
-            max_capacity: self.max_capacity,
-            max_retries: self.max_retries,
-            output_location: self.output_location,
-            configuration: self.configuration,
-            validation_configurations: self.validation_configurations,
-            role_arn: self.role_arn,
-            tags: self.tags,
-            timeout: self.timeout,
-            job_sample: self.job_sample,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_profile_job::CreateProfileJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_profile_job::CreateProfileJobInput {
+                dataset_name: self.dataset_name
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                name: self.name
+                ,
+                log_subscription: self.log_subscription
+                ,
+                max_capacity: self.max_capacity
+                ,
+                max_retries: self.max_retries
+                ,
+                output_location: self.output_location
+                ,
+                configuration: self.configuration
+                ,
+                validation_configurations: self.validation_configurations
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                timeout: self.timeout
+                ,
+                job_sample: self.job_sample
+                ,
+            }
+        )
     }
 }
+

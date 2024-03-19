@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFleetInput {
+pub struct CreateFleetInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
@@ -15,7 +15,7 @@ pub struct CreateFleetInput {
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+    pub launch_template_configs: ::std::option::Option<::std::vec::Vec::<crate::types::FleetLaunchTemplateConfigRequest>>,
     /// <p>The number of units to request.</p>
     pub target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
@@ -40,40 +40,41 @@ pub struct CreateFleetInput {
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
 }
-impl CreateFleetInput {
+impl  CreateFleetInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
-    pub fn spot_options(&self) -> ::std::option::Option<&crate::types::SpotOptionsRequest> {
+    pub fn spot_options(&self) -> ::std::option::Option<& crate::types::SpotOptionsRequest> {
         self.spot_options.as_ref()
     }
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
-    pub fn on_demand_options(&self) -> ::std::option::Option<&crate::types::OnDemandOptionsRequest> {
+    pub fn on_demand_options(&self) -> ::std::option::Option<& crate::types::OnDemandOptionsRequest> {
         self.on_demand_options.as_ref()
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<&crate::types::FleetExcessCapacityTerminationPolicy> {
+    pub fn excess_capacity_termination_policy(&self) -> ::std::option::Option<& crate::types::FleetExcessCapacityTerminationPolicy> {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The configuration for the EC2 Fleet.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_template_configs.is_none()`.
-    pub fn launch_template_configs(&self) -> &[crate::types::FleetLaunchTemplateConfigRequest] {
-        self.launch_template_configs.as_deref().unwrap_or_default()
+    pub fn launch_template_configs(&self) -> & [crate::types::FleetLaunchTemplateConfigRequest] {
+        self.launch_template_configs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of units to request.</p>
-    pub fn target_capacity_specification(&self) -> ::std::option::Option<&crate::types::TargetCapacitySpecificationRequest> {
+    pub fn target_capacity_specification(&self) -> ::std::option::Option<& crate::types::TargetCapacitySpecificationRequest> {
         self.target_capacity_specification.as_ref()
     }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
@@ -90,15 +91,15 @@ impl CreateFleetInput {
     /// <p><code>instant</code> - The EC2 Fleet places a synchronous one-time request for your desired capacity, and returns errors for any instances that could not be launched.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FleetType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::FleetType> {
         self.r#type.as_ref()
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
-    pub fn valid_from(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_from(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
-    pub fn valid_until(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -108,13 +109,14 @@ impl CreateFleetInput {
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Reserved.</p>
-    pub fn context(&self) -> ::std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<& str> {
         self.context.as_deref()
     }
 }
@@ -134,14 +136,14 @@ pub struct CreateFleetInputBuilder {
     pub(crate) spot_options: ::std::option::Option<crate::types::SpotOptionsRequest>,
     pub(crate) on_demand_options: ::std::option::Option<crate::types::OnDemandOptionsRequest>,
     pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
-    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+    pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec::<crate::types::FleetLaunchTemplateConfigRequest>>,
     pub(crate) target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     pub(crate) terminate_instances_with_expiration: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<crate::types::FleetType>,
     pub(crate) valid_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) replace_unhealthy_instances: ::std::option::Option<bool>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl CreateFleetInputBuilder {
@@ -152,8 +154,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -166,8 +167,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +180,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
     pub fn set_spot_options(mut self, input: ::std::option::Option<crate::types::SpotOptionsRequest>) -> Self {
-        self.spot_options = input;
-        self
+        self.spot_options = input; self
     }
     /// <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
     pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::SpotOptionsRequest> {
@@ -194,8 +193,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub fn set_on_demand_options(mut self, input: ::std::option::Option<crate::types::OnDemandOptionsRequest>) -> Self {
-        self.on_demand_options = input;
-        self
+        self.on_demand_options = input; self
     }
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub fn get_on_demand_options(&self) -> &::std::option::Option<crate::types::OnDemandOptionsRequest> {
@@ -209,12 +207,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
-    pub fn set_excess_capacity_termination_policy(
-        mut self,
-        input: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
-    ) -> Self {
-        self.excess_capacity_termination_policy = input;
-        self
+    pub fn set_excess_capacity_termination_policy(mut self, input: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>) -> Self {
+        self.excess_capacity_termination_policy = input; self
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
@@ -228,20 +222,16 @@ impl CreateFleetInputBuilder {
     /// <p>The configuration for the EC2 Fleet.</p>
     pub fn launch_template_configs(mut self, input: crate::types::FleetLaunchTemplateConfigRequest) -> Self {
         let mut v = self.launch_template_configs.unwrap_or_default();
-        v.push(input);
-        self.launch_template_configs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.launch_template_configs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub fn set_launch_template_configs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
-    ) -> Self {
-        self.launch_template_configs = input;
-        self
+    pub fn set_launch_template_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FleetLaunchTemplateConfigRequest>>) -> Self {
+        self.launch_template_configs = input; self
     }
     /// <p>The configuration for the EC2 Fleet.</p>
-    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>> {
+    pub fn get_launch_template_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FleetLaunchTemplateConfigRequest>> {
         &self.launch_template_configs
     }
     /// <p>The number of units to request.</p>
@@ -252,8 +242,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The number of units to request.</p>
     pub fn set_target_capacity_specification(mut self, input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>) -> Self {
-        self.target_capacity_specification = input;
-        self
+        self.target_capacity_specification = input; self
     }
     /// <p>The number of units to request.</p>
     pub fn get_target_capacity_specification(&self) -> &::std::option::Option<crate::types::TargetCapacitySpecificationRequest> {
@@ -266,8 +255,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn set_terminate_instances_with_expiration(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.terminate_instances_with_expiration = input;
-        self
+        self.terminate_instances_with_expiration = input; self
     }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn get_terminate_instances_with_expiration(&self) -> &::std::option::Option<bool> {
@@ -298,8 +286,7 @@ impl CreateFleetInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The fleet type. The default value is <code>maintain</code>.</p>
     /// <ul>
@@ -321,8 +308,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn set_valid_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_from = input;
-        self
+        self.valid_from = input; self
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -335,8 +321,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
     pub fn set_valid_until(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_until = input;
-        self
+        self.valid_until = input; self
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
     pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -349,8 +334,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_replace_unhealthy_instances(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replace_unhealthy_instances = input;
-        self
+        self.replace_unhealthy_instances = input; self
     }
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_replace_unhealthy_instances(&self) -> &::std::option::Option<bool> {
@@ -365,21 +349,20 @@ impl CreateFleetInputBuilder {
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     /// <p>If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to tag the instances at launch.</p>
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Reserved.</p>
@@ -389,8 +372,7 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Reserved.</p>
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,21 +380,38 @@ impl CreateFleetInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
-            dry_run: self.dry_run,
-            client_token: self.client_token,
-            spot_options: self.spot_options,
-            on_demand_options: self.on_demand_options,
-            excess_capacity_termination_policy: self.excess_capacity_termination_policy,
-            launch_template_configs: self.launch_template_configs,
-            target_capacity_specification: self.target_capacity_specification,
-            terminate_instances_with_expiration: self.terminate_instances_with_expiration,
-            r#type: self.r#type,
-            valid_from: self.valid_from,
-            valid_until: self.valid_until,
-            replace_unhealthy_instances: self.replace_unhealthy_instances,
-            tag_specifications: self.tag_specifications,
-            context: self.context,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_fleet::CreateFleetInput {
+                dry_run: self.dry_run
+                ,
+                client_token: self.client_token
+                ,
+                spot_options: self.spot_options
+                ,
+                on_demand_options: self.on_demand_options
+                ,
+                excess_capacity_termination_policy: self.excess_capacity_termination_policy
+                ,
+                launch_template_configs: self.launch_template_configs
+                ,
+                target_capacity_specification: self.target_capacity_specification
+                ,
+                terminate_instances_with_expiration: self.terminate_instances_with_expiration
+                ,
+                r#type: self.r#type
+                ,
+                valid_from: self.valid_from
+                ,
+                valid_until: self.valid_until
+                ,
+                replace_unhealthy_instances: self.replace_unhealthy_instances
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                context: self.context
+                ,
+            }
+        )
     }
 }
+

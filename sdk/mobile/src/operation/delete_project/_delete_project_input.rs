@@ -3,13 +3,13 @@
 /// <p>Request structure used to request a project be deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>Unique project identifier.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProjectInput {
+impl  DeleteProjectInput  {
     /// <p>Unique project identifier.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
@@ -35,17 +35,20 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>Unique project identifier.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>Unique project identifier.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_id
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput { project_id: self.project_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_project::DeleteProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                project_id: self.project_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeParametersOutput {
+pub struct DescribeParametersOutput  {
     /// <p>Parameters returned by the request.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterMetadata>>,
     /// <p>The token to use when requesting the next set of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeParametersOutput {
+impl  DescribeParametersOutput  {
     /// <p>Parameters returned by the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::ParameterMetadata] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::ParameterMetadata] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use when requesting the next set of items.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersOutput`](crate::operation::describe_parameters::DescribeParametersOutput).
     pub fn builder() -> crate::operation::describe_parameters::builders::DescribeParametersOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeParametersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeParametersOutputBuilder {
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeParametersOutputBuilder {
     /// <p>Parameters returned by the request.</p>
     pub fn parameters(mut self, input: crate::types::ParameterMetadata) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Parameters returned by the request.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterMetadata>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>Parameters returned by the request.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterMetadata>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterMetadata>> {
         &self.parameters
     }
     /// <p>The token to use when requesting the next set of items.</p>
@@ -69,28 +69,30 @@ impl DescribeParametersOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use when requesting the next set of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeParametersOutput`](crate::operation::describe_parameters::DescribeParametersOutput).
     pub fn build(self) -> crate::operation::describe_parameters::DescribeParametersOutput {
         crate::operation::describe_parameters::DescribeParametersOutput {
-            parameters: self.parameters,
-            next_token: self.next_token,
+            parameters: self.parameters
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

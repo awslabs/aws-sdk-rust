@@ -3,7 +3,7 @@
 /// <p>Represents the input for <code>GetShardIterator</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetShardIteratorInput {
+pub struct GetShardIteratorInput  {
     /// <p>The name of the Amazon Kinesis data stream.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
@@ -30,13 +30,13 @@ pub struct GetShardIteratorInput {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetShardIteratorInput {
+impl  GetShardIteratorInput  {
     /// <p>The name of the Amazon Kinesis data stream.</p>
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-    pub fn shard_id(&self) -> ::std::option::Option<&str> {
+    pub fn shard_id(&self) -> ::std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
@@ -53,19 +53,19 @@ impl GetShardIteratorInput {
     /// <li>
     /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
     /// </ul>
-    pub fn shard_iterator_type(&self) -> ::std::option::Option<&crate::types::ShardIteratorType> {
+    pub fn shard_iterator_type(&self) -> ::std::option::Option<& crate::types::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-    pub fn starting_sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn starting_sequence_number(&self) -> ::std::option::Option<& str> {
         self.starting_sequence_number.as_deref()
     }
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
@@ -95,8 +95,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The name of the Amazon Kinesis data stream.</p>
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The name of the Amazon Kinesis data stream.</p>
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
     pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
     /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
     pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +149,7 @@ impl GetShardIteratorInputBuilder {
     /// <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p></li>
     /// </ul>
     pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
-        self.shard_iterator_type = input;
-        self
+        self.shard_iterator_type = input; self
     }
     /// <p>Determines how the shard iterator is used to start reading data records from the shard.</p>
     /// <p>The following are the valid Amazon Kinesis shard iterator types:</p>
@@ -178,8 +175,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub fn set_starting_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_sequence_number = input;
-        self
+        self.starting_sequence_number = input; self
     }
     /// <p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
     pub fn get_starting_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +188,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -206,24 +201,30 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_shard_iterator::GetShardIteratorInput {
-            stream_name: self.stream_name,
-            shard_id: self.shard_id,
-            shard_iterator_type: self.shard_iterator_type,
-            starting_sequence_number: self.starting_sequence_number,
-            timestamp: self.timestamp,
-            stream_arn: self.stream_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_shard_iterator::GetShardIteratorInput {
+                stream_name: self.stream_name
+                ,
+                shard_id: self.shard_id
+                ,
+                shard_iterator_type: self.shard_iterator_type
+                ,
+                starting_sequence_number: self.starting_sequence_number
+                ,
+                timestamp: self.timestamp
+                ,
+                stream_arn: self.stream_arn
+                ,
+            }
+        )
     }
 }
+

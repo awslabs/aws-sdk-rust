@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListWorkforces`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(ListWorkforcesSortByOptions)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::sort_by) / [`set_sort_by(Option<ListWorkforcesSortByOptions>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sort workforces using the workforce name or creation date.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_sort_order):<br>required: **false**<br><p>Sort workforces in ascending or descending order.</p><br>
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_name_contains):<br>required: **false**<br><p>A filter you can use to search for workforces using part of the workforce name.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to resume pagination.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of workforces returned in the response.</p><br>
-    /// - On success, responds with [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput) with field(s):
+                            /// - On success, responds with [`ListWorkforcesOutput`](crate::operation::list_workforces::ListWorkforcesOutput) with field(s):
     ///   - [`workforces(Option<Vec::<Workforce>>)`](crate::operation::list_workforces::ListWorkforcesOutput::workforces): <p>A list containing information about your workforce.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_workforces::ListWorkforcesOutput::next_token): <p>A token to resume pagination.</p>
-    /// - On failure, responds with [`SdkError<ListWorkforcesError>`](crate::operation::list_workforces::ListWorkforcesError)
+                            /// - On failure, responds with [`SdkError<ListWorkforcesError>`](crate::operation::list_workforces::ListWorkforcesError)
     pub fn list_workforces(&self) -> crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder {
-        crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_workforces::builders::ListWorkforcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

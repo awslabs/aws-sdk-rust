@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRoutingControls`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`control_panel_arn(impl Into<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::set_control_panel_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the control panel.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of objects that you want to return with this call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that identifies which batch of results you want to see.</p><br>
-    /// - On success, responds with [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput) with field(s):
+                            /// - On success, responds with [`ListRoutingControlsOutput`](crate::operation::list_routing_controls::ListRoutingControlsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`routing_controls(Option<Vec::<RoutingControl>>)`](crate::operation::list_routing_controls::ListRoutingControlsOutput::routing_controls): <p>An array of routing controls.</p>
-    /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::operation::list_routing_controls::ListRoutingControlsError)
+                            /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::operation::list_routing_controls::ListRoutingControlsError)
     pub fn list_routing_controls(&self) -> crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder {
-        crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_routing_controls::builders::ListRoutingControlsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

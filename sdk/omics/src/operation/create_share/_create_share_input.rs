@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateShareInput {
+pub struct CreateShareInput  {
     /// <p>The resource ARN for the analytics store to be shared.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
@@ -10,17 +10,17 @@ pub struct CreateShareInput {
     /// <p>A name given to the share.</p>
     pub share_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateShareInput {
+impl  CreateShareInput  {
     /// <p>The resource ARN for the analytics store to be shared.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
-    pub fn principal_subscriber(&self) -> ::std::option::Option<&str> {
+    pub fn principal_subscriber(&self) -> ::std::option::Option<& str> {
         self.principal_subscriber.as_deref()
     }
     /// <p>A name given to the share.</p>
-    pub fn share_name(&self) -> ::std::option::Option<&str> {
+    pub fn share_name(&self) -> ::std::option::Option<& str> {
         self.share_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl CreateShareInputBuilder {
     }
     /// <p>The resource ARN for the analytics store to be shared.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The resource ARN for the analytics store to be shared.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateShareInputBuilder {
     }
     /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub fn set_principal_subscriber(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_subscriber = input;
-        self
+        self.principal_subscriber = input; self
     }
     /// <p>The principal subscriber is the account being given access to the analytics store data through the share offer.</p>
     pub fn get_principal_subscriber(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl CreateShareInputBuilder {
     }
     /// <p>A name given to the share.</p>
     pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.share_name = input;
-        self
+        self.share_name = input; self
     }
     /// <p>A name given to the share.</p>
     pub fn get_share_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,10 +83,16 @@ impl CreateShareInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateShareInput`](crate::operation::create_share::CreateShareInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_share::CreateShareInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_share::CreateShareInput {
-            resource_arn: self.resource_arn,
-            principal_subscriber: self.principal_subscriber,
-            share_name: self.share_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_share::CreateShareInput {
+                resource_arn: self.resource_arn
+                ,
+                principal_subscriber: self.principal_subscriber
+                ,
+                share_name: self.share_name
+                ,
+            }
+        )
     }
 }
+

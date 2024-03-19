@@ -3,7 +3,7 @@
 /// <p>Describes an app block builder.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppBlockBuilder {
+pub struct AppBlockBuilder  {
     /// <p>The ARN of the app block builder.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app block builder.</p>
@@ -28,36 +28,36 @@ pub struct AppBlockBuilder {
     /// <p>The creation time of the app block builder.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The app block builder errors.</p>
-    pub app_block_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub app_block_builder_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
     /// <p>The state change reason.</p>
     pub state_change_reason: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
-impl AppBlockBuilder {
+impl  AppBlockBuilder  {
     /// <p>The ARN of the app block builder.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the app block builder.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name of the app block builder.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the app block builder.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
-    pub fn platform(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderPlatformType> {
+    pub fn platform(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderPlatformType> {
         self.platform.as_ref()
     }
     /// <p>The instance type of the app block builder.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
@@ -65,36 +65,38 @@ impl AppBlockBuilder {
         self.enable_default_internet_access
     }
     /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The VPC configuration for the app block builder.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The state of the app block builder.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderState> {
         self.state.as_ref()
     }
     /// <p>The creation time of the app block builder.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The app block builder errors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_block_builder_errors.is_none()`.
-    pub fn app_block_builder_errors(&self) -> &[crate::types::ResourceError] {
-        self.app_block_builder_errors.as_deref().unwrap_or_default()
+    pub fn app_block_builder_errors(&self) -> & [crate::types::ResourceError] {
+        self.app_block_builder_errors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state change reason.</p>
-    pub fn state_change_reason(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderStateChangeReason> {
+    pub fn state_change_reason(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_endpoints.is_none()`.
-    pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
-        self.access_endpoints.as_deref().unwrap_or_default()
+    pub fn access_endpoints(&self) -> & [crate::types::AccessEndpoint] {
+        self.access_endpoints.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AppBlockBuilder {
@@ -119,9 +121,9 @@ pub struct AppBlockBuilderBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) state: ::std::option::Option<crate::types::AppBlockBuilderState>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) app_block_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
+    pub(crate) app_block_builder_errors: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>,
-    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>,
 }
 impl AppBlockBuilderBuilder {
     /// <p>The ARN of the app block builder.</p>
@@ -132,8 +134,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The ARN of the app block builder.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the app block builder.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +148,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The name of the app block builder.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the app block builder.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +161,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The display name of the app block builder.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the app block builder.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +174,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The description of the app block builder.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the app block builder.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,8 +190,7 @@ impl AppBlockBuilderBuilder {
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderPlatformType>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the app block builder.</p>
     /// <p><code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
@@ -208,8 +205,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The instance type of the app block builder.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the app block builder.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +218,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
     pub fn set_enable_default_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_default_internet_access = input;
-        self
+        self.enable_default_internet_access = input; self
     }
     /// <p>Indicates whether default internet access is enabled for the app block builder.</p>
     pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
@@ -236,8 +231,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is applied to the app block builder.</p>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -251,8 +245,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The VPC configuration for the app block builder.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC configuration for the app block builder.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
@@ -266,8 +259,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The state of the app block builder.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the app block builder.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AppBlockBuilderState> {
@@ -280,8 +272,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The creation time of the app block builder.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The creation time of the app block builder.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -294,17 +285,16 @@ impl AppBlockBuilderBuilder {
     /// <p>The app block builder errors.</p>
     pub fn app_block_builder_errors(mut self, input: crate::types::ResourceError) -> Self {
         let mut v = self.app_block_builder_errors.unwrap_or_default();
-        v.push(input);
-        self.app_block_builder_errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_block_builder_errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The app block builder errors.</p>
-    pub fn set_app_block_builder_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>) -> Self {
-        self.app_block_builder_errors = input;
-        self
+    pub fn set_app_block_builder_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>>) -> Self {
+        self.app_block_builder_errors = input; self
     }
     /// <p>The app block builder errors.</p>
-    pub fn get_app_block_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceError>> {
+    pub fn get_app_block_builder_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceError>> {
         &self.app_block_builder_errors
     }
     /// <p>The state change reason.</p>
@@ -314,8 +304,7 @@ impl AppBlockBuilderBuilder {
     }
     /// <p>The state change reason.</p>
     pub fn set_state_change_reason(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>) -> Self {
-        self.state_change_reason = input;
-        self
+        self.state_change_reason = input; self
     }
     /// <p>The state change reason.</p>
     pub fn get_state_change_reason(&self) -> &::std::option::Option<crate::types::AppBlockBuilderStateChangeReason> {
@@ -328,36 +317,50 @@ impl AppBlockBuilderBuilder {
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
-        v.push(input);
-        self.access_endpoints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_endpoints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
-        self.access_endpoints = input;
-        self
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
+        self.access_endpoints = input; self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
     /// Consumes the builder and constructs a [`AppBlockBuilder`](crate::types::AppBlockBuilder).
     pub fn build(self) -> crate::types::AppBlockBuilder {
         crate::types::AppBlockBuilder {
-            arn: self.arn,
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
-            platform: self.platform,
-            instance_type: self.instance_type,
-            enable_default_internet_access: self.enable_default_internet_access,
-            iam_role_arn: self.iam_role_arn,
-            vpc_config: self.vpc_config,
-            state: self.state,
-            created_time: self.created_time,
-            app_block_builder_errors: self.app_block_builder_errors,
-            state_change_reason: self.state_change_reason,
-            access_endpoints: self.access_endpoints,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            platform: self.platform
+            ,
+            instance_type: self.instance_type
+            ,
+            enable_default_internet_access: self.enable_default_internet_access
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
+            vpc_config: self.vpc_config
+            ,
+            state: self.state
+            ,
+            created_time: self.created_time
+            ,
+            app_block_builder_errors: self.app_block_builder_errors
+            ,
+            state_change_reason: self.state_change_reason
+            ,
+            access_endpoints: self.access_endpoints
+            ,
         }
     }
 }
+

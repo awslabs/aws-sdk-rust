@@ -3,7 +3,7 @@
 /// <p>The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MavenReference {
+pub struct MavenReference  {
     /// <p>The group ID of the Maven reference.</p>
     pub group_id: ::std::string::String,
     /// <p>The artifact ID of the Maven reference.</p>
@@ -11,21 +11,18 @@ pub struct MavenReference {
     /// <p>The version of the Maven reference.</p>
     pub version: ::std::string::String,
 }
-impl MavenReference {
+impl  MavenReference  {
     /// <p>The group ID of the Maven reference.</p>
-    pub fn group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.group_id.deref()
+    pub fn group_id(&self) -> & str {
+        use std::ops::Deref; self.group_id.deref()
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn artifact_id(&self) -> &str {
-        use std::ops::Deref;
-        self.artifact_id.deref()
+    pub fn artifact_id(&self) -> & str {
+        use std::ops::Deref; self.artifact_id.deref()
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl MavenReference {
@@ -52,8 +49,7 @@ impl MavenReferenceBuilder {
     }
     /// <p>The group ID of the Maven reference.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The group ID of the Maven reference.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl MavenReferenceBuilder {
     }
     /// <p>The artifact ID of the Maven reference.</p>
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_id = input;
-        self
+        self.artifact_id = input; self
     }
     /// <p>The artifact ID of the Maven reference.</p>
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl MavenReferenceBuilder {
     }
     /// <p>The version of the Maven reference.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the Maven reference.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl MavenReferenceBuilder {
     /// - [`artifact_id`](crate::types::builders::MavenReferenceBuilder::artifact_id)
     /// - [`version`](crate::types::builders::MavenReferenceBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::MavenReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MavenReference {
-            group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "group_id",
-                    "group_id was not specified but it is required when building MavenReference",
-                )
-            })?,
-            artifact_id: self.artifact_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "artifact_id",
-                    "artifact_id was not specified but it is required when building MavenReference",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building MavenReference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MavenReference {
+                group_id: self.group_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("group_id", "group_id was not specified but it is required when building MavenReference")
+                    )?
+                ,
+                artifact_id: self.artifact_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("artifact_id", "artifact_id was not specified but it is required when building MavenReference")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building MavenReference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

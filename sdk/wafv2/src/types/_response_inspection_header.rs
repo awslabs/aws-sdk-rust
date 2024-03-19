@@ -5,35 +5,32 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseInspectionHeader {
+pub struct ResponseInspectionHeader  {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
     pub name: ::std::string::String,
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
-    pub success_values: ::std::vec::Vec<::std::string::String>,
+    pub success_values: ::std::vec::Vec::<::std::string::String>,
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
-    pub failure_values: ::std::vec::Vec<::std::string::String>,
+    pub failure_values: ::std::vec::Vec::<::std::string::String>,
 }
-impl ResponseInspectionHeader {
+impl  ResponseInspectionHeader  {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
-    pub fn success_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.success_values.deref()
+    pub fn success_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.success_values.deref()
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
-    pub fn failure_values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.failure_values.deref()
+    pub fn failure_values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.failure_values.deref()
     }
 }
 impl ResponseInspectionHeader {
@@ -48,8 +45,8 @@ impl ResponseInspectionHeader {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseInspectionHeaderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) success_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) failure_values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResponseInspectionHeaderBuilder {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
@@ -62,8 +59,7 @@ impl ResponseInspectionHeaderBuilder {
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code></p>
@@ -78,19 +74,18 @@ impl ResponseInspectionHeaderBuilder {
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
     pub fn success_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.success_values.unwrap_or_default();
-        v.push(input.into());
-        self.success_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.success_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
-    pub fn set_success_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.success_values = input;
-        self
+    pub fn set_success_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.success_values = input; self
     }
     /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code></p>
-    pub fn get_success_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_success_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.success_values
     }
     /// Appends an item to `failure_values`.
@@ -101,19 +96,18 @@ impl ResponseInspectionHeaderBuilder {
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
     pub fn failure_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_values.unwrap_or_default();
-        v.push(input.into());
-        self.failure_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
-    pub fn set_failure_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_values = input;
-        self
+    pub fn set_failure_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_values = input; self
     }
     /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values.</p>
     /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code></p>
-    pub fn get_failure_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_values
     }
     /// Consumes the builder and constructs a [`ResponseInspectionHeader`](crate::types::ResponseInspectionHeader).
@@ -122,25 +116,25 @@ impl ResponseInspectionHeaderBuilder {
     /// - [`success_values`](crate::types::builders::ResponseInspectionHeaderBuilder::success_values)
     /// - [`failure_values`](crate::types::builders::ResponseInspectionHeaderBuilder::failure_values)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionHeader, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseInspectionHeader {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ResponseInspectionHeader",
-                )
-            })?,
-            success_values: self.success_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "success_values",
-                    "success_values was not specified but it is required when building ResponseInspectionHeader",
-                )
-            })?,
-            failure_values: self.failure_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failure_values",
-                    "failure_values was not specified but it is required when building ResponseInspectionHeader",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseInspectionHeader {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ResponseInspectionHeader")
+                    )?
+                ,
+                success_values: self.success_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("success_values", "success_values was not specified but it is required when building ResponseInspectionHeader")
+                    )?
+                ,
+                failure_values: self.failure_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failure_values", "failure_values was not specified but it is required when building ResponseInspectionHeader")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Details of an Amazon MSK Cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AmazonMskCluster {
+pub struct AmazonMskCluster  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>
     pub msk_cluster_arn: ::std::option::Option<::std::string::String>,
 }
-impl AmazonMskCluster {
+impl  AmazonMskCluster  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>
-    pub fn msk_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn msk_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.msk_cluster_arn.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl AmazonMskClusterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>
     pub fn set_msk_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.msk_cluster_arn = input;
-        self
+        self.msk_cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon MSK cluster.</p>
     pub fn get_msk_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl AmazonMskClusterBuilder {
     /// Consumes the builder and constructs a [`AmazonMskCluster`](crate::types::AmazonMskCluster).
     pub fn build(self) -> crate::types::AmazonMskCluster {
         crate::types::AmazonMskCluster {
-            msk_cluster_arn: self.msk_cluster_arn,
+            msk_cluster_arn: self.msk_cluster_arn
+            ,
         }
     }
 }
+

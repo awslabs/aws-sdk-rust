@@ -3,7 +3,7 @@
 /// <p>The basic building block of a workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowStep {
+pub struct WorkflowStep  {
     /// <p>Currently, the following step types are supported.</p>
     /// <ul>
     /// <li>
@@ -53,7 +53,7 @@ pub struct WorkflowStep {
     /// </ul>
     pub decrypt_step_details: ::std::option::Option<crate::types::DecryptStepDetails>,
 }
-impl WorkflowStep {
+impl  WorkflowStep  {
     /// <p>Currently, the following step types are supported.</p>
     /// <ul>
     /// <li>
@@ -67,7 +67,7 @@ impl WorkflowStep {
     /// <li>
     /// <p><b> <code>TAG</code> </b> - Add a tag to the file.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowStepType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::WorkflowStepType> {
         self.r#type.as_ref()
     }
     /// <p>Details for a step that performs a file copy.</p>
@@ -80,21 +80,21 @@ impl WorkflowStep {
     /// <li>
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p></li>
     /// </ul>
-    pub fn copy_step_details(&self) -> ::std::option::Option<&crate::types::CopyStepDetails> {
+    pub fn copy_step_details(&self) -> ::std::option::Option<& crate::types::CopyStepDetails> {
         self.copy_step_details.as_ref()
     }
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds).</p>
-    pub fn custom_step_details(&self) -> ::std::option::Option<&crate::types::CustomStepDetails> {
+    pub fn custom_step_details(&self) -> ::std::option::Option<& crate::types::CustomStepDetails> {
         self.custom_step_details.as_ref()
     }
     /// <p>Details for a step that deletes the file.</p>
-    pub fn delete_step_details(&self) -> ::std::option::Option<&crate::types::DeleteStepDetails> {
+    pub fn delete_step_details(&self) -> ::std::option::Option<& crate::types::DeleteStepDetails> {
         self.delete_step_details.as_ref()
     }
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
-    pub fn tag_step_details(&self) -> ::std::option::Option<&crate::types::TagStepDetails> {
+    pub fn tag_step_details(&self) -> ::std::option::Option<& crate::types::TagStepDetails> {
         self.tag_step_details.as_ref()
     }
     /// <p>Details for a step that decrypts an encrypted file.</p>
@@ -111,7 +111,7 @@ impl WorkflowStep {
     /// <li>
     /// <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p></li>
     /// </ul>
-    pub fn decrypt_step_details(&self) -> ::std::option::Option<&crate::types::DecryptStepDetails> {
+    pub fn decrypt_step_details(&self) -> ::std::option::Option<& crate::types::DecryptStepDetails> {
         self.decrypt_step_details.as_ref()
     }
 }
@@ -165,8 +165,7 @@ impl WorkflowStepBuilder {
     /// <p><b> <code>TAG</code> </b> - Add a tag to the file.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowStepType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Currently, the following step types are supported.</p>
     /// <ul>
@@ -209,8 +208,7 @@ impl WorkflowStepBuilder {
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p></li>
     /// </ul>
     pub fn set_copy_step_details(mut self, input: ::std::option::Option<crate::types::CopyStepDetails>) -> Self {
-        self.copy_step_details = input;
-        self
+        self.copy_step_details = input; self
     }
     /// <p>Details for a step that performs a file copy.</p>
     /// <p>Consists of the following values:</p>
@@ -234,8 +232,7 @@ impl WorkflowStepBuilder {
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds).</p>
     pub fn set_custom_step_details(mut self, input: ::std::option::Option<crate::types::CustomStepDetails>) -> Self {
-        self.custom_step_details = input;
-        self
+        self.custom_step_details = input; self
     }
     /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds).</p>
@@ -249,8 +246,7 @@ impl WorkflowStepBuilder {
     }
     /// <p>Details for a step that deletes the file.</p>
     pub fn set_delete_step_details(mut self, input: ::std::option::Option<crate::types::DeleteStepDetails>) -> Self {
-        self.delete_step_details = input;
-        self
+        self.delete_step_details = input; self
     }
     /// <p>Details for a step that deletes the file.</p>
     pub fn get_delete_step_details(&self) -> &::std::option::Option<crate::types::DeleteStepDetails> {
@@ -265,8 +261,7 @@ impl WorkflowStepBuilder {
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
     pub fn set_tag_step_details(mut self, input: ::std::option::Option<crate::types::TagStepDetails>) -> Self {
-        self.tag_step_details = input;
-        self
+        self.tag_step_details = input; self
     }
     /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
@@ -306,8 +301,7 @@ impl WorkflowStepBuilder {
     /// <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p></li>
     /// </ul>
     pub fn set_decrypt_step_details(mut self, input: ::std::option::Option<crate::types::DecryptStepDetails>) -> Self {
-        self.decrypt_step_details = input;
-        self
+        self.decrypt_step_details = input; self
     }
     /// <p>Details for a step that decrypts an encrypted file.</p>
     /// <p>Consists of the following values:</p>
@@ -329,12 +323,19 @@ impl WorkflowStepBuilder {
     /// Consumes the builder and constructs a [`WorkflowStep`](crate::types::WorkflowStep).
     pub fn build(self) -> crate::types::WorkflowStep {
         crate::types::WorkflowStep {
-            r#type: self.r#type,
-            copy_step_details: self.copy_step_details,
-            custom_step_details: self.custom_step_details,
-            delete_step_details: self.delete_step_details,
-            tag_step_details: self.tag_step_details,
-            decrypt_step_details: self.decrypt_step_details,
+            r#type: self.r#type
+            ,
+            copy_step_details: self.copy_step_details
+            ,
+            custom_step_details: self.custom_step_details
+            ,
+            delete_step_details: self.delete_step_details
+            ,
+            tag_step_details: self.tag_step_details
+            ,
+            decrypt_step_details: self.decrypt_step_details
+            ,
         }
     }
 }
+

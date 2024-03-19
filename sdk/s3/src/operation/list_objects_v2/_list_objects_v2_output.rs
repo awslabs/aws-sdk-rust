@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectsV2Output {
+pub struct ListObjectsV2Output  {
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>Metadata about each object returned.</p>
-    pub contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
+    pub contents: ::std::option::Option<::std::vec::Vec::<crate::types::Object>>,
     /// <p>The bucket name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Keys that begin with the indicated prefix.</p><note>
@@ -31,7 +31,7 @@ pub struct ListObjectsV2Output {
     /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
     /// </ul>
     /// </note>
-    pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
+    pub common_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
@@ -53,31 +53,32 @@ pub struct ListObjectsV2Output {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl ListObjectsV2Output {
+impl  ListObjectsV2Output  {
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
     pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>Metadata about each object returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contents.is_none()`.
-    pub fn contents(&self) -> &[crate::types::Object] {
-        self.contents.as_deref().unwrap_or_default()
+    pub fn contents(&self) -> & [crate::types::Object] {
+        self.contents.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The bucket name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Keys that begin with the indicated prefix.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
@@ -96,15 +97,16 @@ impl ListObjectsV2Output {
     /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.common_prefixes.is_none()`.
-    pub fn common_prefixes(&self) -> &[crate::types::CommonPrefix] {
-        self.common_prefixes.as_deref().unwrap_or_default()
+    pub fn common_prefixes(&self) -> & [crate::types::CommonPrefix] {
+        self.common_prefixes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
-    pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding_type(&self) -> ::std::option::Option<& crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
     /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
@@ -112,36 +114,36 @@ impl ListObjectsV2Output {
         self.key_count
     }
     /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
-    pub fn next_continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_continuation_token(&self) -> ::std::option::Option<& str> {
         self.next_continuation_token.as_deref()
     }
     /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn start_after(&self) -> ::std::option::Option<&str> {
+    pub fn start_after(&self) -> ::std::option::Option<& str> {
         self.start_after.as_deref()
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> ::std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListObjectsV2Output {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for ListObjectsV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListObjectsV2Output {
     /// Creates a new builder-style object to manufacture [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
     pub fn builder() -> crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder {
@@ -154,12 +156,12 @@ impl ListObjectsV2Output {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListObjectsV2OutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
-    pub(crate) contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
+    pub(crate) contents: ::std::option::Option<::std::vec::Vec::<crate::types::Object>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) max_keys: ::std::option::Option<i32>,
-    pub(crate) common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
+    pub(crate) common_prefixes: ::std::option::Option<::std::vec::Vec::<crate::types::CommonPrefix>>,
     pub(crate) encoding_type: ::std::option::Option<crate::types::EncodingType>,
     pub(crate) key_count: ::std::option::Option<i32>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
@@ -177,8 +179,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -191,17 +192,16 @@ impl ListObjectsV2OutputBuilder {
     /// <p>Metadata about each object returned.</p>
     pub fn contents(mut self, input: crate::types::Object) -> Self {
         let mut v = self.contents.unwrap_or_default();
-        v.push(input);
-        self.contents = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contents = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn set_contents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Object>>) -> Self {
-        self.contents = input;
-        self
+    pub fn set_contents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Object>>) -> Self {
+        self.contents = input; self
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn get_contents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Object>> {
+    pub fn get_contents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Object>> {
         &self.contents
     }
     /// <p>The bucket name.</p>
@@ -211,8 +211,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>The bucket name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The bucket name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +228,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Keys that begin with the indicated prefix.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
@@ -249,8 +247,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
     /// </note>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported delimiter.</p>
@@ -265,8 +262,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn set_max_keys(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_keys = input;
-        self
+        self.max_keys = input; self
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
@@ -290,9 +286,9 @@ impl ListObjectsV2OutputBuilder {
     /// </note>
     pub fn common_prefixes(mut self, input: crate::types::CommonPrefix) -> Self {
         let mut v = self.common_prefixes.unwrap_or_default();
-        v.push(input);
-        self.common_prefixes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.common_prefixes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
@@ -306,9 +302,8 @@ impl ListObjectsV2OutputBuilder {
     /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_common_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>) -> Self {
-        self.common_prefixes = input;
-        self
+    pub fn set_common_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CommonPrefix>>) -> Self {
+        self.common_prefixes = input; self
     }
     /// <p>All of the keys (up to 1,000) that share the same prefix are grouped together. When counting the total numbers of returns by this API operation, this group of keys is considered as one item.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
@@ -322,7 +317,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_common_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>> {
+    pub fn get_common_prefixes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CommonPrefix>> {
         &self.common_prefixes
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
@@ -336,8 +331,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p><code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
-        self.encoding_type = input;
-        self
+        self.encoding_type = input; self
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
@@ -352,8 +346,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn set_key_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.key_count = input;
-        self
+        self.key_count = input; self
     }
     /// <p><code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
     pub fn get_key_count(&self) -> &::std::option::Option<i32> {
@@ -366,8 +359,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p>If <code>ContinuationToken</code> was sent with the request, it is included in the response. You can use the returned <code>ContinuationToken</code> for pagination of the list response. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -380,8 +372,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn set_next_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_continuation_token = input;
-        self
+        self.next_continuation_token = input; self
     }
     /// <p><code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn get_next_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,8 +389,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_start_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_after = input;
-        self
+        self.start_after = input; self
     }
     /// <p>If StartAfter was sent with the request, it is included in the response.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -418,8 +408,7 @@ impl ListObjectsV2OutputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
-        self.request_charged = input;
-        self
+        self.request_charged = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -428,41 +417,55 @@ impl ListObjectsV2OutputBuilder {
         &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
     pub fn build(self) -> crate::operation::list_objects_v2::ListObjectsV2Output {
         crate::operation::list_objects_v2::ListObjectsV2Output {
-            is_truncated: self.is_truncated,
-            contents: self.contents,
-            name: self.name,
-            prefix: self.prefix,
-            delimiter: self.delimiter,
-            max_keys: self.max_keys,
-            common_prefixes: self.common_prefixes,
-            encoding_type: self.encoding_type,
-            key_count: self.key_count,
-            continuation_token: self.continuation_token,
-            next_continuation_token: self.next_continuation_token,
-            start_after: self.start_after,
-            request_charged: self.request_charged,
+            is_truncated: self.is_truncated
+            ,
+            contents: self.contents
+            ,
+            name: self.name
+            ,
+            prefix: self.prefix
+            ,
+            delimiter: self.delimiter
+            ,
+            max_keys: self.max_keys
+            ,
+            common_prefixes: self.common_prefixes
+            ,
+            encoding_type: self.encoding_type
+            ,
+            key_count: self.key_count
+            ,
+            continuation_token: self.continuation_token
+            ,
+            next_continuation_token: self.next_continuation_token
+            ,
+            start_after: self.start_after
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

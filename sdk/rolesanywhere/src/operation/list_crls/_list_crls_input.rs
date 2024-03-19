@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCrlsInput {
+pub struct ListCrlsInput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of resources in the paginated list.</p>
     pub page_size: ::std::option::Option<i32>,
 }
-impl ListCrlsInput {
+impl  ListCrlsInput  {
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of resources in the paginated list.</p>
@@ -40,8 +40,7 @@ impl ListCrlsInputBuilder {
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,8 +53,7 @@ impl ListCrlsInputBuilder {
     }
     /// <p>The number of resources in the paginated list.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The number of resources in the paginated list.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -63,9 +61,14 @@ impl ListCrlsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListCrlsInput`](crate::operation::list_crls::ListCrlsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_crls::ListCrlsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_crls::ListCrlsInput {
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_crls::ListCrlsInput {
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

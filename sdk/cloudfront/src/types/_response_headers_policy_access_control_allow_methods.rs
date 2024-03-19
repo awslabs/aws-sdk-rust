@@ -4,7 +4,7 @@
 /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyAccessControlAllowMethods {
+pub struct ResponseHeadersPolicyAccessControlAllowMethods  {
     /// <p>The number of HTTP methods in the list.</p>
     pub quantity: i32,
     /// <p>The list of HTTP methods. Valid values are:</p>
@@ -27,9 +27,9 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub items: ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+    pub items: ::std::vec::Vec::<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
 }
-impl ResponseHeadersPolicyAccessControlAllowMethods {
+impl  ResponseHeadersPolicyAccessControlAllowMethods  {
     /// <p>The number of HTTP methods in the list.</p>
     pub fn quantity(&self) -> i32 {
         self.quantity
@@ -54,9 +54,8 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn items(&self) -> &[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues] {
+        use std::ops::Deref; self.items.deref()
     }
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {
@@ -71,7 +70,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p>The number of HTTP methods in the list.</p>
@@ -82,8 +81,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     }
     /// <p>The number of HTTP methods in the list.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The number of HTTP methods in the list.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -115,9 +113,9 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn items(mut self, input: crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
@@ -139,12 +137,8 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn set_items(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>>) -> Self {
+        self.items = input; self
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
@@ -166,29 +160,28 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p><code>ALL</code></p></li>
     /// </ul>
     /// <p><code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowMethodsBuilder::quantity)
     /// - [`items`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowMethodsBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowMethods, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlAllowMethods {
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowMethods",
-                )
-            })?,
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowMethods",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowMethods, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyAccessControlAllowMethods {
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowMethods")
+                    )?
+                ,
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowMethods")
+                    )?
+                ,
+            }
+        )
     }
 }
+

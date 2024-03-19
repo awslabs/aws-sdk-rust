@@ -3,19 +3,19 @@
 /// <p>Where channel data is stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelStorageSummary {
+pub struct ChannelStorageSummary  {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3StorageSummary>,
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
     pub customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3StorageSummary>,
 }
-impl ChannelStorageSummary {
+impl  ChannelStorageSummary  {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
-    pub fn service_managed_s3(&self) -> ::std::option::Option<&crate::types::ServiceManagedChannelS3StorageSummary> {
+    pub fn service_managed_s3(&self) -> ::std::option::Option<& crate::types::ServiceManagedChannelS3StorageSummary> {
         self.service_managed_s3.as_ref()
     }
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
-    pub fn customer_managed_s3(&self) -> ::std::option::Option<&crate::types::CustomerManagedChannelS3StorageSummary> {
+    pub fn customer_managed_s3(&self) -> ::std::option::Option<& crate::types::CustomerManagedChannelS3StorageSummary> {
         self.customer_managed_s3.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ChannelStorageSummaryBuilder {
     }
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     pub fn set_service_managed_s3(mut self, input: ::std::option::Option<crate::types::ServiceManagedChannelS3StorageSummary>) -> Self {
-        self.service_managed_s3 = input;
-        self
+        self.service_managed_s3 = input; self
     }
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     pub fn get_service_managed_s3(&self) -> &::std::option::Option<crate::types::ServiceManagedChannelS3StorageSummary> {
@@ -55,8 +54,7 @@ impl ChannelStorageSummaryBuilder {
     }
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
     pub fn set_customer_managed_s3(mut self, input: ::std::option::Option<crate::types::CustomerManagedChannelS3StorageSummary>) -> Self {
-        self.customer_managed_s3 = input;
-        self
+        self.customer_managed_s3 = input; self
     }
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
     pub fn get_customer_managed_s3(&self) -> &::std::option::Option<crate::types::CustomerManagedChannelS3StorageSummary> {
@@ -65,8 +63,11 @@ impl ChannelStorageSummaryBuilder {
     /// Consumes the builder and constructs a [`ChannelStorageSummary`](crate::types::ChannelStorageSummary).
     pub fn build(self) -> crate::types::ChannelStorageSummary {
         crate::types::ChannelStorageSummary {
-            service_managed_s3: self.service_managed_s3,
-            customer_managed_s3: self.customer_managed_s3,
+            service_managed_s3: self.service_managed_s3
+            ,
+            customer_managed_s3: self.customer_managed_s3
+            ,
         }
     }
 }
+

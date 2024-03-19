@@ -5,54 +5,50 @@ pub use crate::operation::update_deployment_group::_update_deployment_group_inpu
 
 impl UpdateDeploymentGroupInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_deployment_group();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_deployment_group();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateDeploymentGroup`.
-///
+/// 
 /// <p>Changes information about a deployment group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDeploymentGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_deployment_group::builders::UpdateDeploymentGroupInputBuilder,
+                    inner: crate::operation::update_deployment_group::builders::UpdateDeploymentGroupInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-    > for UpdateDeploymentGroupFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
+                    crate::operation::update_deployment_group::UpdateDeploymentGroupError,
+                > for UpdateDeploymentGroupFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
+                        crate::operation::update_deployment_group::UpdateDeploymentGroupError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateDeploymentGroupFluentBuilder {
     /// Creates a new `UpdateDeploymentGroup`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateDeploymentGroupFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_deployment_group::UpdateDeploymentGroup::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_deployment_group::UpdateDeploymentGroup::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
-        crate::operation::update_deployment_group::UpdateDeploymentGroupError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_deployment_group::UpdateDeploymentGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_deployment_group::UpdateDeploymentGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_deployment_group::UpdateDeploymentGroup::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_deployment_group::UpdateDeploymentGroup::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_deployment_group::UpdateDeploymentGroupOutput, crate::operation::update_deployment_group::UpdateDeploymentGroupError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The application name that corresponds to the deployment group to update.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -174,12 +161,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn set_ec2_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>) -> Self {
+    pub fn set_ec2_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Ec2TagFilter>>) -> Self {
         self.inner = self.inner.set_ec2_tag_filters(input);
         self
     }
     /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn get_ec2_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>> {
+    pub fn get_ec2_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Ec2TagFilter>> {
         self.inner.get_ec2_tag_filters()
     }
     /// Appends an item to `onPremisesInstanceTagFilters`.
@@ -192,12 +179,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn set_on_premises_instance_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>) -> Self {
+    pub fn set_on_premises_instance_tag_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>>) -> Self {
         self.inner = self.inner.set_on_premises_instance_tag_filters(input);
         self
     }
     /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
-    pub fn get_on_premises_instance_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+    pub fn get_on_premises_instance_tag_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagFilter>> {
         self.inner.get_on_premises_instance_tag_filters()
     }
     /// Appends an item to `autoScalingGroups`.
@@ -222,7 +209,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// <li>
     /// <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p></li>
     /// </ul>
-    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_auto_scaling_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_auto_scaling_groups(input);
         self
     }
@@ -233,7 +220,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// <li>
     /// <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p></li>
     /// </ul>
-    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_auto_scaling_groups()
     }
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
@@ -260,12 +247,12 @@ impl UpdateDeploymentGroupFluentBuilder {
         self
     }
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn set_trigger_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>>) -> Self {
+    pub fn set_trigger_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TriggerConfig>>) -> Self {
         self.inner = self.inner.set_trigger_configurations(input);
         self
     }
     /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn get_trigger_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerConfig>> {
+    pub fn get_trigger_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TriggerConfig>> {
         self.inner.get_trigger_configurations()
     }
     /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
@@ -388,7 +375,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
-    pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>) -> Self {
+    pub fn set_ecs_services(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EcsService>>) -> Self {
         self.inner = self.inner.set_ecs_services(input);
         self
     }
@@ -396,7 +383,7 @@ impl UpdateDeploymentGroupFluentBuilder {
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
-    pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
+    pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EcsService>> {
         self.inner.get_ecs_services()
     }
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
@@ -437,3 +424,4 @@ impl UpdateDeploymentGroupFluentBuilder {
         self.inner.get_termination_hook_enabled()
     }
 }
+

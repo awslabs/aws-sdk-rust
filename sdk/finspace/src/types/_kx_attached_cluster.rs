@@ -3,7 +3,7 @@
 /// <p>The structure containing the metadata of the attached clusters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KxAttachedCluster {
+pub struct KxAttachedCluster  {
     /// <p>A unique name for the attached cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of cluster. The volume for TP and RDB cluster types will be used for TP logs.</p>
@@ -29,13 +29,13 @@ pub struct KxAttachedCluster {
     /// </ul>
     pub cluster_status: ::std::option::Option<crate::types::KxClusterStatus>,
 }
-impl KxAttachedCluster {
+impl  KxAttachedCluster  {
     /// <p>A unique name for the attached cluster.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>Specifies the type of cluster. The volume for TP and RDB cluster types will be used for TP logs.</p>
-    pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
+    pub fn cluster_type(&self) -> ::std::option::Option<& crate::types::KxClusterType> {
         self.cluster_type.as_ref()
     }
     /// <p>The status of the attached cluster.</p>
@@ -57,7 +57,7 @@ impl KxAttachedCluster {
     /// <li>
     /// <p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
-    pub fn cluster_status(&self) -> ::std::option::Option<&crate::types::KxClusterStatus> {
+    pub fn cluster_status(&self) -> ::std::option::Option<& crate::types::KxClusterStatus> {
         self.cluster_status.as_ref()
     }
 }
@@ -84,8 +84,7 @@ impl KxAttachedClusterBuilder {
     }
     /// <p>A unique name for the attached cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>A unique name for the attached cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl KxAttachedClusterBuilder {
     }
     /// <p>Specifies the type of cluster. The volume for TP and RDB cluster types will be used for TP logs.</p>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
-        self.cluster_type = input;
-        self
+        self.cluster_type = input; self
     }
     /// <p>Specifies the type of cluster. The volume for TP and RDB cluster types will be used for TP logs.</p>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
@@ -148,8 +146,7 @@ impl KxAttachedClusterBuilder {
     /// <p>DELETE_FAILED – The cluster failed to delete.</p></li>
     /// </ul>
     pub fn set_cluster_status(mut self, input: ::std::option::Option<crate::types::KxClusterStatus>) -> Self {
-        self.cluster_status = input;
-        self
+        self.cluster_status = input; self
     }
     /// <p>The status of the attached cluster.</p>
     /// <ul>
@@ -176,9 +173,13 @@ impl KxAttachedClusterBuilder {
     /// Consumes the builder and constructs a [`KxAttachedCluster`](crate::types::KxAttachedCluster).
     pub fn build(self) -> crate::types::KxAttachedCluster {
         crate::types::KxAttachedCluster {
-            cluster_name: self.cluster_name,
-            cluster_type: self.cluster_type,
-            cluster_status: self.cluster_status,
+            cluster_name: self.cluster_name
+            ,
+            cluster_type: self.cluster_type
+            ,
+            cluster_status: self.cluster_status
+            ,
         }
     }
 }
+

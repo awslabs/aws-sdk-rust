@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgreementInput {
+pub struct DeleteAgreementInput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The server identifier associated with the agreement that you are deleting.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAgreementInput {
+impl  DeleteAgreementInput  {
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The server identifier associated with the agreement that you are deleting.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteAgreementInputBuilder {
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteAgreementInputBuilder {
     }
     /// <p>The server identifier associated with the agreement that you are deleting.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The server identifier associated with the agreement that you are deleting.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`DeleteAgreementInput`](crate::operation::delete_agreement::DeleteAgreementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_agreement::DeleteAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_agreement::DeleteAgreementInput {
-            agreement_id: self.agreement_id,
-            server_id: self.server_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agreement::DeleteAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_agreement::DeleteAgreementInput {
+                agreement_id: self.agreement_id
+                ,
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

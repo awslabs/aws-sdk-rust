@@ -3,7 +3,7 @@
 /// <p>Describes a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>The ID for the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The account that the recommendation is for.</p>
@@ -45,35 +45,35 @@ pub struct Recommendation {
     /// <p>The source of the recommendation.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>A list of tags assigned to the recommendation.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>The ID for the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The account that the recommendation is for.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The resource ID for the recommendation.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recommendation.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current resource type.</p>
-    pub fn current_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn current_resource_type(&self) -> ::std::option::Option<& str> {
         self.current_resource_type.as_deref()
     }
     /// <p>The recommended resource type.</p>
-    pub fn recommended_resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_resource_type(&self) -> ::std::option::Option<& str> {
         self.recommended_resource_type.as_deref()
     }
     /// <p>The estimated monthly savings amount for the recommendation.</p>
@@ -89,11 +89,11 @@ impl Recommendation {
         self.estimated_monthly_cost
     }
     /// <p>The currency code used for the recommendation.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The effort required to implement the recommendation.</p>
-    pub fn implementation_effort(&self) -> ::std::option::Option<&str> {
+    pub fn implementation_effort(&self) -> ::std::option::Option<& str> {
         self.implementation_effort.as_deref()
     }
     /// <p>Whether or not implementing the recommendation requires a restart.</p>
@@ -101,7 +101,7 @@ impl Recommendation {
         self.restart_needed
     }
     /// <p>The type of tasks that can be carried out by this action.</p>
-    pub fn action_type(&self) -> ::std::option::Option<&str> {
+    pub fn action_type(&self) -> ::std::option::Option<& str> {
         self.action_type.as_deref()
     }
     /// <p>Whether or not implementing the recommendation can be rolled back.</p>
@@ -109,15 +109,15 @@ impl Recommendation {
         self.rollback_possible
     }
     /// <p>Describes the current resource.</p>
-    pub fn current_resource_summary(&self) -> ::std::option::Option<&str> {
+    pub fn current_resource_summary(&self) -> ::std::option::Option<& str> {
         self.current_resource_summary.as_deref()
     }
     /// <p>Describes the recommended resource.</p>
-    pub fn recommended_resource_summary(&self) -> ::std::option::Option<&str> {
+    pub fn recommended_resource_summary(&self) -> ::std::option::Option<& str> {
         self.recommended_resource_summary.as_deref()
     }
     /// <p>The time when the recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_refresh_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
@@ -125,14 +125,15 @@ impl Recommendation {
         self.recommendation_lookback_period_in_days
     }
     /// <p>The source of the recommendation.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>A list of tags assigned to the recommendation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Recommendation {
@@ -166,7 +167,7 @@ pub struct RecommendationBuilder {
     pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) recommendation_lookback_period_in_days: ::std::option::Option<i32>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl RecommendationBuilder {
     /// <p>The ID for the recommendation.</p>
@@ -176,8 +177,7 @@ impl RecommendationBuilder {
     }
     /// <p>The ID for the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The ID for the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +190,7 @@ impl RecommendationBuilder {
     }
     /// <p>The account that the recommendation is for.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account that the recommendation is for.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +203,7 @@ impl RecommendationBuilder {
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the resource.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +216,7 @@ impl RecommendationBuilder {
     }
     /// <p>The resource ID for the recommendation.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID for the recommendation.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +229,7 @@ impl RecommendationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the recommendation.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the recommendation.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +242,7 @@ impl RecommendationBuilder {
     }
     /// <p>The current resource type.</p>
     pub fn set_current_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_resource_type = input;
-        self
+        self.current_resource_type = input; self
     }
     /// <p>The current resource type.</p>
     pub fn get_current_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,8 +255,7 @@ impl RecommendationBuilder {
     }
     /// <p>The recommended resource type.</p>
     pub fn set_recommended_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_resource_type = input;
-        self
+        self.recommended_resource_type = input; self
     }
     /// <p>The recommended resource type.</p>
     pub fn get_recommended_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +268,7 @@ impl RecommendationBuilder {
     }
     /// <p>The estimated monthly savings amount for the recommendation.</p>
     pub fn set_estimated_monthly_savings(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The estimated monthly savings amount for the recommendation.</p>
     pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<f64> {
@@ -288,8 +281,7 @@ impl RecommendationBuilder {
     }
     /// <p>The estimated savings percentage relative to the total cost over the cost calculation lookback period.</p>
     pub fn set_estimated_savings_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_savings_percentage = input;
-        self
+        self.estimated_savings_percentage = input; self
     }
     /// <p>The estimated savings percentage relative to the total cost over the cost calculation lookback period.</p>
     pub fn get_estimated_savings_percentage(&self) -> &::std::option::Option<f64> {
@@ -302,8 +294,7 @@ impl RecommendationBuilder {
     }
     /// <p>The estimated monthly cost for the recommendation.</p>
     pub fn set_estimated_monthly_cost(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.estimated_monthly_cost = input;
-        self
+        self.estimated_monthly_cost = input; self
     }
     /// <p>The estimated monthly cost for the recommendation.</p>
     pub fn get_estimated_monthly_cost(&self) -> &::std::option::Option<f64> {
@@ -316,8 +307,7 @@ impl RecommendationBuilder {
     }
     /// <p>The currency code used for the recommendation.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code used for the recommendation.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -330,8 +320,7 @@ impl RecommendationBuilder {
     }
     /// <p>The effort required to implement the recommendation.</p>
     pub fn set_implementation_effort(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.implementation_effort = input;
-        self
+        self.implementation_effort = input; self
     }
     /// <p>The effort required to implement the recommendation.</p>
     pub fn get_implementation_effort(&self) -> &::std::option::Option<::std::string::String> {
@@ -344,8 +333,7 @@ impl RecommendationBuilder {
     }
     /// <p>Whether or not implementing the recommendation requires a restart.</p>
     pub fn set_restart_needed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.restart_needed = input;
-        self
+        self.restart_needed = input; self
     }
     /// <p>Whether or not implementing the recommendation requires a restart.</p>
     pub fn get_restart_needed(&self) -> &::std::option::Option<bool> {
@@ -358,8 +346,7 @@ impl RecommendationBuilder {
     }
     /// <p>The type of tasks that can be carried out by this action.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of tasks that can be carried out by this action.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -372,8 +359,7 @@ impl RecommendationBuilder {
     }
     /// <p>Whether or not implementing the recommendation can be rolled back.</p>
     pub fn set_rollback_possible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rollback_possible = input;
-        self
+        self.rollback_possible = input; self
     }
     /// <p>Whether or not implementing the recommendation can be rolled back.</p>
     pub fn get_rollback_possible(&self) -> &::std::option::Option<bool> {
@@ -386,8 +372,7 @@ impl RecommendationBuilder {
     }
     /// <p>Describes the current resource.</p>
     pub fn set_current_resource_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_resource_summary = input;
-        self
+        self.current_resource_summary = input; self
     }
     /// <p>Describes the current resource.</p>
     pub fn get_current_resource_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -400,8 +385,7 @@ impl RecommendationBuilder {
     }
     /// <p>Describes the recommended resource.</p>
     pub fn set_recommended_resource_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommended_resource_summary = input;
-        self
+        self.recommended_resource_summary = input; self
     }
     /// <p>Describes the recommended resource.</p>
     pub fn get_recommended_resource_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -414,8 +398,7 @@ impl RecommendationBuilder {
     }
     /// <p>The time when the recommendation was last generated.</p>
     pub fn set_last_refresh_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_refresh_timestamp = input;
-        self
+        self.last_refresh_timestamp = input; self
     }
     /// <p>The time when the recommendation was last generated.</p>
     pub fn get_last_refresh_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -428,8 +411,7 @@ impl RecommendationBuilder {
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
     pub fn set_recommendation_lookback_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.recommendation_lookback_period_in_days = input;
-        self
+        self.recommendation_lookback_period_in_days = input; self
     }
     /// <p>The lookback period that's used to generate the recommendation.</p>
     pub fn get_recommendation_lookback_period_in_days(&self) -> &::std::option::Option<i32> {
@@ -442,8 +424,7 @@ impl RecommendationBuilder {
     }
     /// <p>The source of the recommendation.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The source of the recommendation.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
@@ -456,43 +437,64 @@ impl RecommendationBuilder {
     /// <p>A list of tags assigned to the recommendation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags assigned to the recommendation.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags assigned to the recommendation.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            recommendation_id: self.recommendation_id,
-            account_id: self.account_id,
-            region: self.region,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            current_resource_type: self.current_resource_type,
-            recommended_resource_type: self.recommended_resource_type,
-            estimated_monthly_savings: self.estimated_monthly_savings,
-            estimated_savings_percentage: self.estimated_savings_percentage,
-            estimated_monthly_cost: self.estimated_monthly_cost,
-            currency_code: self.currency_code,
-            implementation_effort: self.implementation_effort,
-            restart_needed: self.restart_needed,
-            action_type: self.action_type,
-            rollback_possible: self.rollback_possible,
-            current_resource_summary: self.current_resource_summary,
-            recommended_resource_summary: self.recommended_resource_summary,
-            last_refresh_timestamp: self.last_refresh_timestamp,
-            recommendation_lookback_period_in_days: self.recommendation_lookback_period_in_days,
-            source: self.source,
-            tags: self.tags,
+            recommendation_id: self.recommendation_id
+            ,
+            account_id: self.account_id
+            ,
+            region: self.region
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            current_resource_type: self.current_resource_type
+            ,
+            recommended_resource_type: self.recommended_resource_type
+            ,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
+            estimated_savings_percentage: self.estimated_savings_percentage
+            ,
+            estimated_monthly_cost: self.estimated_monthly_cost
+            ,
+            currency_code: self.currency_code
+            ,
+            implementation_effort: self.implementation_effort
+            ,
+            restart_needed: self.restart_needed
+            ,
+            action_type: self.action_type
+            ,
+            rollback_possible: self.rollback_possible
+            ,
+            current_resource_summary: self.current_resource_summary
+            ,
+            recommended_resource_summary: self.recommended_resource_summary
+            ,
+            last_refresh_timestamp: self.last_refresh_timestamp
+            ,
+            recommendation_lookback_period_in_days: self.recommendation_lookback_period_in_days
+            ,
+            source: self.source
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

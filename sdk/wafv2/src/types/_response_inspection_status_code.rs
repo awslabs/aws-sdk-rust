@@ -5,26 +5,24 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseInspectionStatusCode {
+pub struct ResponseInspectionStatusCode  {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
-    pub success_codes: ::std::vec::Vec<i32>,
+    pub success_codes: ::std::vec::Vec::<i32>,
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
-    pub failure_codes: ::std::vec::Vec<i32>,
+    pub failure_codes: ::std::vec::Vec::<i32>,
 }
-impl ResponseInspectionStatusCode {
+impl  ResponseInspectionStatusCode  {
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
-    pub fn success_codes(&self) -> &[i32] {
-        use std::ops::Deref;
-        self.success_codes.deref()
+    pub fn success_codes(&self) -> & [i32] {
+        use std::ops::Deref; self.success_codes.deref()
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
-    pub fn failure_codes(&self) -> &[i32] {
-        use std::ops::Deref;
-        self.failure_codes.deref()
+    pub fn failure_codes(&self) -> & [i32] {
+        use std::ops::Deref; self.failure_codes.deref()
     }
 }
 impl ResponseInspectionStatusCode {
@@ -38,8 +36,8 @@ impl ResponseInspectionStatusCode {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResponseInspectionStatusCodeBuilder {
-    pub(crate) success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
-    pub(crate) failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) success_codes: ::std::option::Option<::std::vec::Vec::<i32>>,
+    pub(crate) failure_codes: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl ResponseInspectionStatusCodeBuilder {
     /// Appends an item to `success_codes`.
@@ -50,19 +48,18 @@ impl ResponseInspectionStatusCodeBuilder {
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
     pub fn success_codes(mut self, input: i32) -> Self {
         let mut v = self.success_codes.unwrap_or_default();
-        v.push(input);
-        self.success_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.success_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
-    pub fn set_success_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.success_codes = input;
-        self
+    pub fn set_success_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.success_codes = input; self
     }
     /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code></p>
-    pub fn get_success_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_success_codes(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.success_codes
     }
     /// Appends an item to `failure_codes`.
@@ -73,19 +70,18 @@ impl ResponseInspectionStatusCodeBuilder {
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
     pub fn failure_codes(mut self, input: i32) -> Self {
         let mut v = self.failure_codes.unwrap_or_default();
-        v.push(input);
-        self.failure_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failure_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
-    pub fn set_failure_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.failure_codes = input;
-        self
+    pub fn set_failure_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.failure_codes = input; self
     }
     /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes.</p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code></p>
-    pub fn get_failure_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_failure_codes(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.failure_codes
     }
     /// Consumes the builder and constructs a [`ResponseInspectionStatusCode`](crate::types::ResponseInspectionStatusCode).
@@ -93,19 +89,20 @@ impl ResponseInspectionStatusCodeBuilder {
     /// - [`success_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::success_codes)
     /// - [`failure_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::failure_codes)
     pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionStatusCode, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseInspectionStatusCode {
-            success_codes: self.success_codes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "success_codes",
-                    "success_codes was not specified but it is required when building ResponseInspectionStatusCode",
-                )
-            })?,
-            failure_codes: self.failure_codes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failure_codes",
-                    "failure_codes was not specified but it is required when building ResponseInspectionStatusCode",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResponseInspectionStatusCode {
+                success_codes: self.success_codes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("success_codes", "success_codes was not specified but it is required when building ResponseInspectionStatusCode")
+                    )?
+                ,
+                failure_codes: self.failure_codes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failure_codes", "failure_codes was not specified but it is required when building ResponseInspectionStatusCode")
+                    )?
+                ,
+            }
+        )
     }
 }
+

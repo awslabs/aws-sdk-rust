@@ -5,55 +5,51 @@ pub use crate::operation::describe_cost_category_definition::_describe_cost_cate
 
 impl DescribeCostCategoryDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_cost_category_definition();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_cost_category_definition();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeCostCategoryDefinition`.
-///
+/// 
 /// <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's defined in the account.</p>
 /// <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date. If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder,
+                    inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-    > for DescribeCostCategoryDefinitionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+                    crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
+                > for DescribeCostCategoryDefinitionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
+                        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeCostCategoryDefinitionFluentBuilder {
     /// Creates a new `DescribeCostCategoryDefinition`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput,
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput, crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn cost_category_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
@@ -138,3 +125,4 @@ impl DescribeCostCategoryDefinitionFluentBuilder {
         self.inner.get_effective_on()
     }
 }
+

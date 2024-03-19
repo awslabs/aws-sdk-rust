@@ -3,7 +3,7 @@
 /// <p>Information about the session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionData {
+pub struct SessionData  {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub session_arn: ::std::string::String,
     /// <p>The identifier of the session.</p>
@@ -13,36 +13,33 @@ pub struct SessionData {
     /// <p>The description of the session.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The configuration information for the session integration.</p>
     pub integration_configuration: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
 }
-impl SessionData {
+impl  SessionData  {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.session_arn.deref()
+    pub fn session_arn(&self) -> & str {
+        use std::ops::Deref; self.session_arn.deref()
     }
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> & str {
+        use std::ops::Deref; self.session_id.deref()
     }
     /// <p>The name of the session.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the session.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration information for the session integration.</p>
-    pub fn integration_configuration(&self) -> ::std::option::Option<&crate::types::SessionIntegrationConfiguration> {
+    pub fn integration_configuration(&self) -> ::std::option::Option<& crate::types::SessionIntegrationConfiguration> {
         self.integration_configuration.as_ref()
     }
 }
@@ -61,7 +58,7 @@ pub struct SessionDataBuilder {
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) integration_configuration: ::std::option::Option<crate::types::SessionIntegrationConfiguration>,
 }
 impl SessionDataBuilder {
@@ -73,8 +70,7 @@ impl SessionDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl SessionDataBuilder {
     }
     /// <p>The identifier of the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +98,7 @@ impl SessionDataBuilder {
     }
     /// <p>The name of the session.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the session.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl SessionDataBuilder {
     }
     /// <p>The description of the session.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the session.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,17 +124,16 @@ impl SessionDataBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The configuration information for the session integration.</p>
@@ -151,8 +143,7 @@ impl SessionDataBuilder {
     }
     /// <p>The configuration information for the session integration.</p>
     pub fn set_integration_configuration(mut self, input: ::std::option::Option<crate::types::SessionIntegrationConfiguration>) -> Self {
-        self.integration_configuration = input;
-        self
+        self.integration_configuration = input; self
     }
     /// <p>The configuration information for the session integration.</p>
     pub fn get_integration_configuration(&self) -> &::std::option::Option<crate::types::SessionIntegrationConfiguration> {
@@ -164,28 +155,31 @@ impl SessionDataBuilder {
     /// - [`session_id`](crate::types::builders::SessionDataBuilder::session_id)
     /// - [`name`](crate::types::builders::SessionDataBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::SessionData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SessionData {
-            session_arn: self.session_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_arn",
-                    "session_arn was not specified but it is required when building SessionData",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building SessionData",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SessionData",
-                )
-            })?,
-            description: self.description,
-            tags: self.tags,
-            integration_configuration: self.integration_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SessionData {
+                session_arn: self.session_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_arn", "session_arn was not specified but it is required when building SessionData")
+                    )?
+                ,
+                session_id: self.session_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "session_id was not specified but it is required when building SessionData")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SessionData")
+                    )?
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                integration_configuration: self.integration_configuration
+                ,
+            }
+        )
     }
 }
+

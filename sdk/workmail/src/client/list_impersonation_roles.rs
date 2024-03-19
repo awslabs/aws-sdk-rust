@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImpersonationRoles`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`organization_id(impl Into<String>)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::set_organization_id):<br>required: **true**<br><p>The WorkMail organization to which the listed impersonation roles belong.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to retrieve the next page of results. The first call doesn't require a token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned in a single call.</p><br>
-    /// - On success, responds with [`ListImpersonationRolesOutput`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput) with field(s):
+                            /// - On success, responds with [`ListImpersonationRolesOutput`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput) with field(s):
     ///   - [`roles(Option<Vec::<ImpersonationRole>>)`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput::roles): <p>The list of impersonation roles under the given WorkMail organization.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_impersonation_roles::ListImpersonationRolesOutput::next_token): <p>The token to retrieve the next page of results. The value is <code>null</code> when there are no results to return.</p>
-    /// - On failure, responds with [`SdkError<ListImpersonationRolesError>`](crate::operation::list_impersonation_roles::ListImpersonationRolesError)
+                            /// - On failure, responds with [`SdkError<ListImpersonationRolesError>`](crate::operation::list_impersonation_roles::ListImpersonationRolesError)
     pub fn list_impersonation_roles(&self) -> crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder {
-        crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_impersonation_roles::builders::ListImpersonationRolesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

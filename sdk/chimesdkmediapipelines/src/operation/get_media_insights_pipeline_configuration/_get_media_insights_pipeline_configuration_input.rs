@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMediaInsightsPipelineConfigurationInput {
+pub struct GetMediaInsightsPipelineConfigurationInput  {
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetMediaInsightsPipelineConfigurationInput {
+impl  GetMediaInsightsPipelineConfigurationInput  {
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetMediaInsightsPipelineConfigurationInputBuilder {
     }
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier of the requested resource. Valid values include the name and ARN of the media insights pipeline configuration.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetMediaInsightsPipelineConfigurationInput`](crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput { identifier: self.identifier },
+            crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput {
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

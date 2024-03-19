@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReportPlanInput {
+pub struct DeleteReportPlanInput  {
     /// <p>The unique name of a report plan.</p>
     pub report_plan_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReportPlanInput {
+impl  DeleteReportPlanInput  {
     /// <p>The unique name of a report plan.</p>
-    pub fn report_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn report_plan_name(&self) -> ::std::option::Option<& str> {
         self.report_plan_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteReportPlanInputBuilder {
     }
     /// <p>The unique name of a report plan.</p>
     pub fn set_report_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.report_plan_name = input;
-        self
+        self.report_plan_name = input; self
     }
     /// <p>The unique name of a report plan.</p>
     pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.report_plan_name
     }
     /// Consumes the builder and constructs a [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_report_plan::DeleteReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_report_plan::DeleteReportPlanInput {
-            report_plan_name: self.report_plan_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_report_plan::DeleteReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_report_plan::DeleteReportPlanInput {
+                report_plan_name: self.report_plan_name
+                ,
+            }
+        )
     }
 }
+

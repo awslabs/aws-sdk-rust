@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartCopyJobOutput {
+pub struct StartCopyJobOutput  {
     /// <p>Uniquely identifies a copy job.</p>
     pub copy_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -11,13 +11,13 @@ pub struct StartCopyJobOutput {
     pub is_parent: bool,
     _request_id: Option<String>,
 }
-impl StartCopyJobOutput {
+impl  StartCopyJobOutput  {
     /// <p>Uniquely identifies a copy job.</p>
-    pub fn copy_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn copy_job_id(&self) -> ::std::option::Option<& str> {
         self.copy_job_id.as_deref()
     }
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
@@ -26,10 +26,10 @@ impl StartCopyJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for StartCopyJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartCopyJobOutput {
     /// Creates a new builder-style object to manufacture [`StartCopyJobOutput`](crate::operation::start_copy_job::StartCopyJobOutput).
     pub fn builder() -> crate::operation::start_copy_job::builders::StartCopyJobOutputBuilder {
@@ -54,8 +54,7 @@ impl StartCopyJobOutputBuilder {
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn set_copy_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.copy_job_id = input;
-        self
+        self.copy_job_id = input; self
     }
     /// <p>Uniquely identifies a copy job.</p>
     pub fn get_copy_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl StartCopyJobOutputBuilder {
     }
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time that a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -82,29 +80,33 @@ impl StartCopyJobOutputBuilder {
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
     pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_parent = input;
-        self
+        self.is_parent = input; self
     }
     /// <p>This is a returned boolean value indicating this is a parent (composite) copy job.</p>
     pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
         &self.is_parent
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartCopyJobOutput`](crate::operation::start_copy_job::StartCopyJobOutput).
     pub fn build(self) -> crate::operation::start_copy_job::StartCopyJobOutput {
         crate::operation::start_copy_job::StartCopyJobOutput {
-            copy_job_id: self.copy_job_id,
-            creation_date: self.creation_date,
-            is_parent: self.is_parent.unwrap_or_default(),
+            copy_job_id: self.copy_job_id
+            ,
+            creation_date: self.creation_date
+            ,
+            is_parent: self.is_parent
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBuiltinSlotTypes`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`locale(Locale)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::locale) / [`set_locale(Option<Locale>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::set_locale):<br>required: **false**<br><p>A list of locales that the slot type supports.</p><br>
     ///   - [`signature_contains(impl Into<String>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::signature_contains) / [`set_signature_contains(Option<String>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::set_signature_contains):<br>required: **false**<br><p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of slot types to return in the response. The default is 10.</p><br>
-    /// - On success, responds with [`GetBuiltinSlotTypesOutput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput) with field(s):
+                            /// - On success, responds with [`GetBuiltinSlotTypesOutput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput) with field(s):
     ///   - [`slot_types(Option<Vec::<BuiltinSlotTypeMetadata>>)`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput::slot_types): <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesOutput::next_token): <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
-    /// - On failure, responds with [`SdkError<GetBuiltinSlotTypesError>`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError)
+                            /// - On failure, responds with [`SdkError<GetBuiltinSlotTypesError>`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesError)
     pub fn get_builtin_slot_types(&self) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder {
-        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

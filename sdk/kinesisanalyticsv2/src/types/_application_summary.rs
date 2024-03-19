@@ -3,7 +3,7 @@
 /// <p>Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationSummary {
+pub struct ApplicationSummary  {
     /// <p>The name of the application.</p>
     pub application_name: ::std::string::String,
     /// <p>The ARN of the application.</p>
@@ -17,19 +17,17 @@ pub struct ApplicationSummary {
     /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
-impl ApplicationSummary {
+impl  ApplicationSummary  {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> &str {
-        use std::ops::Deref;
-        self.application_name.deref()
+    pub fn application_name(&self) -> & str {
+        use std::ops::Deref; self.application_name.deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.application_arn.deref()
+    pub fn application_arn(&self) -> & str {
+        use std::ops::Deref; self.application_arn.deref()
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> &crate::types::ApplicationStatus {
+    pub fn application_status(&self) -> & crate::types::ApplicationStatus {
         &self.application_status
     }
     /// <p>Provides the current application version.</p>
@@ -37,11 +35,11 @@ impl ApplicationSummary {
         self.application_version_id
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn runtime_environment(&self) -> &crate::types::RuntimeEnvironment {
+    pub fn runtime_environment(&self) -> & crate::types::RuntimeEnvironment {
         &self.runtime_environment
     }
     /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
-    pub fn application_mode(&self) -> ::std::option::Option<&crate::types::ApplicationMode> {
+    pub fn application_mode(&self) -> ::std::option::Option<& crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
@@ -72,8 +70,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The ARN of the application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +98,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_application_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
-        self.application_status = input;
-        self
+        self.application_status = input; self
     }
     /// <p>The status of the application.</p>
     pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
@@ -117,8 +112,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>Provides the current application version.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>Provides the current application version.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -132,8 +126,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>The runtime environment for the application.</p>
     pub fn set_runtime_environment(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
-        self.runtime_environment = input;
-        self
+        self.runtime_environment = input; self
     }
     /// <p>The runtime environment for the application.</p>
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
@@ -146,8 +139,7 @@ impl ApplicationSummaryBuilder {
     }
     /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
-        self.application_mode = input;
-        self
+        self.application_mode = input; self
     }
     /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
@@ -161,38 +153,37 @@ impl ApplicationSummaryBuilder {
     /// - [`application_version_id`](crate::types::builders::ApplicationSummaryBuilder::application_version_id)
     /// - [`runtime_environment`](crate::types::builders::ApplicationSummaryBuilder::runtime_environment)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationSummary {
-            application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_name",
-                    "application_name was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_arn",
-                    "application_arn was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_status",
-                    "application_status was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_version_id",
-                    "application_version_id was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            runtime_environment: self.runtime_environment.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "runtime_environment",
-                    "runtime_environment was not specified but it is required when building ApplicationSummary",
-                )
-            })?,
-            application_mode: self.application_mode,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationSummary {
+                application_name: self.application_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_name", "application_name was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_arn: self.application_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_arn", "application_arn was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_status: self.application_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_status", "application_status was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_version_id: self.application_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_version_id", "application_version_id was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                runtime_environment: self.runtime_environment
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("runtime_environment", "runtime_environment was not specified but it is required when building ApplicationSummary")
+                    )?
+                ,
+                application_mode: self.application_mode
+                ,
+            }
+        )
     }
 }
+

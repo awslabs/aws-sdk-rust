@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let healthcheckregion = unimplemented!();
 /// match healthcheckregion {
@@ -36,16 +36,14 @@
 /// Specifically, when `healthcheckregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HealthCheckRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum HealthCheckRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -65,88 +63,80 @@ pub enum HealthCheckRegion {
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for HealthCheckRegion {
-    fn from(s: &str) -> Self {
-        match s {
-            "ap-northeast-1" => HealthCheckRegion::ApNortheast1,
-            "ap-southeast-1" => HealthCheckRegion::ApSoutheast1,
-            "ap-southeast-2" => HealthCheckRegion::ApSoutheast2,
-            "eu-west-1" => HealthCheckRegion::EuWest1,
-            "sa-east-1" => HealthCheckRegion::SaEast1,
-            "us-east-1" => HealthCheckRegion::UsEast1,
-            "us-west-1" => HealthCheckRegion::UsWest1,
-            "us-west-2" => HealthCheckRegion::UsWest2,
-            other => HealthCheckRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ap-northeast-1" => HealthCheckRegion::ApNortheast1,
+"ap-southeast-1" => HealthCheckRegion::ApSoutheast1,
+"ap-southeast-2" => HealthCheckRegion::ApSoutheast2,
+"eu-west-1" => HealthCheckRegion::EuWest1,
+"sa-east-1" => HealthCheckRegion::SaEast1,
+"us-east-1" => HealthCheckRegion::UsEast1,
+"us-west-1" => HealthCheckRegion::UsWest1,
+"us-west-2" => HealthCheckRegion::UsWest2,
+other => HealthCheckRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for HealthCheckRegion {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(HealthCheckRegion::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(HealthCheckRegion::from(s))
+                    }
+                }
 impl HealthCheckRegion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HealthCheckRegion::ApNortheast1 => "ap-northeast-1",
-            HealthCheckRegion::ApSoutheast1 => "ap-southeast-1",
-            HealthCheckRegion::ApSoutheast2 => "ap-southeast-2",
-            HealthCheckRegion::EuWest1 => "eu-west-1",
-            HealthCheckRegion::SaEast1 => "sa-east-1",
-            HealthCheckRegion::UsEast1 => "us-east-1",
-            HealthCheckRegion::UsWest1 => "us-west-1",
-            HealthCheckRegion::UsWest2 => "us-west-2",
-            HealthCheckRegion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ap-northeast-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "eu-west-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-west-1",
-            "us-west-2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HealthCheckRegion::ApNortheast1 => "ap-northeast-1",
+    HealthCheckRegion::ApSoutheast1 => "ap-southeast-1",
+    HealthCheckRegion::ApSoutheast2 => "ap-southeast-2",
+    HealthCheckRegion::EuWest1 => "eu-west-1",
+    HealthCheckRegion::SaEast1 => "sa-east-1",
+    HealthCheckRegion::UsEast1 => "us-east-1",
+    HealthCheckRegion::UsWest1 => "us-west-1",
+    HealthCheckRegion::UsWest2 => "us-west-2",
+    HealthCheckRegion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "eu-west-1", "sa-east-1", "us-east-1", "us-west-1", "us-west-2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for HealthCheckRegion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl HealthCheckRegion {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for HealthCheckRegion {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            HealthCheckRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
-            HealthCheckRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
-            HealthCheckRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
-            HealthCheckRegion::EuWest1 => write!(f, "eu-west-1"),
-            HealthCheckRegion::SaEast1 => write!(f, "sa-east-1"),
-            HealthCheckRegion::UsEast1 => write!(f, "us-east-1"),
-            HealthCheckRegion::UsWest1 => write!(f, "us-west-1"),
-            HealthCheckRegion::UsWest2 => write!(f, "us-west-2"),
-            HealthCheckRegion::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                HealthCheckRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+HealthCheckRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+HealthCheckRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+HealthCheckRegion::EuWest1 => write!(f, "eu-west-1"),
+HealthCheckRegion::SaEast1 => write!(f, "sa-east-1"),
+HealthCheckRegion::UsEast1 => write!(f, "us-east-1"),
+HealthCheckRegion::UsWest1 => write!(f, "us-west-1"),
+HealthCheckRegion::UsWest2 => write!(f, "us-west-2"),
+HealthCheckRegion::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EncryptDataInput {
+pub struct EncryptDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The plaintext to be encrypted.</p><note>
@@ -12,23 +12,23 @@ pub struct EncryptDataInput {
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub encryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
 }
-impl EncryptDataInput {
+impl  EncryptDataInput  {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
     /// <p>The plaintext to be encrypted.</p><note>
     /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
     /// </note>
-    pub fn plain_text(&self) -> ::std::option::Option<&str> {
+    pub fn plain_text(&self) -> ::std::option::Option<& str> {
         self.plain_text.as_deref()
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
-    pub fn encryption_attributes(&self) -> ::std::option::Option<&crate::types::EncryptionDecryptionAttributes> {
+    pub fn encryption_attributes(&self) -> ::std::option::Option<& crate::types::EncryptionDecryptionAttributes> {
         self.encryption_attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for EncryptDataInput {
+impl  ::std::fmt::Debug for EncryptDataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptDataInput");
         formatter.field("key_identifier", &self.key_identifier);
@@ -61,8 +61,7 @@ impl EncryptDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl EncryptDataInputBuilder {
     /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
     /// </note>
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plain_text = input;
-        self
+        self.plain_text = input; self
     }
     /// <p>The plaintext to be encrypted.</p><note>
     /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
@@ -97,8 +95,7 @@ impl EncryptDataInputBuilder {
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub fn set_encryption_attributes(mut self, input: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>) -> Self {
-        self.encryption_attributes = input;
-        self
+        self.encryption_attributes = input; self
     }
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub fn get_encryption_attributes(&self) -> &::std::option::Option<crate::types::EncryptionDecryptionAttributes> {
@@ -106,11 +103,16 @@ impl EncryptDataInputBuilder {
     }
     /// Consumes the builder and constructs a [`EncryptDataInput`](crate::operation::encrypt_data::EncryptDataInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::encrypt_data::EncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::encrypt_data::EncryptDataInput {
-            key_identifier: self.key_identifier,
-            plain_text: self.plain_text,
-            encryption_attributes: self.encryption_attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::encrypt_data::EncryptDataInput {
+                key_identifier: self.key_identifier
+                ,
+                plain_text: self.plain_text
+                ,
+                encryption_attributes: self.encryption_attributes
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EncryptDataInputBuilder {
@@ -122,3 +124,4 @@ impl ::std::fmt::Debug for EncryptDataInputBuilder {
         formatter.finish()
     }
 }
+

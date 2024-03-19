@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutUsersInput {
+pub struct PutUsersInput  {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of user data.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub users: ::std::option::Option<::std::vec::Vec::<crate::types::User>>,
 }
-impl PutUsersInput {
+impl  PutUsersInput  {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of user data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
-    pub fn users(&self) -> &[crate::types::User] {
-        self.users.as_deref().unwrap_or_default()
+    pub fn users(&self) -> & [crate::types::User] {
+        self.users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutUsersInput {
@@ -32,7 +33,7 @@ impl PutUsersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutUsersInputBuilder {
     pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<crate::types::User>>,
 }
 impl PutUsersInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
@@ -43,8 +44,7 @@ impl PutUsersInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,28 @@ impl PutUsersInputBuilder {
     /// <p>A list of user data.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of user data.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::User>>) -> Self {
+        self.users = input; self
     }
     /// <p>A list of user data.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::User>> {
         &self.users
     }
     /// Consumes the builder and constructs a [`PutUsersInput`](crate::operation::put_users::PutUsersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_users::PutUsersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_users::PutUsersInput {
-            dataset_arn: self.dataset_arn,
-            users: self.users,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_users::PutUsersInput {
+                dataset_arn: self.dataset_arn
+                ,
+                users: self.users
+                ,
+            }
+        )
     }
 }
+

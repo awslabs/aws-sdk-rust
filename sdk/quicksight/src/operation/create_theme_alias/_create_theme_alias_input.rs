@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateThemeAliasInput {
+pub struct CreateThemeAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>An ID for the theme alias.</p>
@@ -12,17 +12,17 @@ pub struct CreateThemeAliasInput {
     /// <p>The version number of the theme.</p>
     pub theme_version_number: ::std::option::Option<i64>,
 }
-impl CreateThemeAliasInput {
+impl  CreateThemeAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>An ID for the theme alias.</p>
-    pub fn theme_id(&self) -> ::std::option::Option<&str> {
+    pub fn theme_id(&self) -> ::std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The version number of the theme.</p>
@@ -55,8 +55,7 @@ impl CreateThemeAliasInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateThemeAliasInputBuilder {
     }
     /// <p>An ID for the theme alias.</p>
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>An ID for the theme alias.</p>
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateThemeAliasInputBuilder {
     }
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl CreateThemeAliasInputBuilder {
     }
     /// <p>The version number of the theme.</p>
     pub fn set_theme_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.theme_version_number = input;
-        self
+        self.theme_version_number = input; self
     }
     /// <p>The version number of the theme.</p>
     pub fn get_theme_version_number(&self) -> &::std::option::Option<i64> {
         &self.theme_version_number
     }
     /// Consumes the builder and constructs a [`CreateThemeAliasInput`](crate::operation::create_theme_alias::CreateThemeAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_theme_alias::CreateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_theme_alias::CreateThemeAliasInput {
-            aws_account_id: self.aws_account_id,
-            theme_id: self.theme_id,
-            alias_name: self.alias_name,
-            theme_version_number: self.theme_version_number,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme_alias::CreateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_theme_alias::CreateThemeAliasInput {
+                aws_account_id: self.aws_account_id
+                ,
+                theme_id: self.theme_id
+                ,
+                alias_name: self.alias_name
+                ,
+                theme_version_number: self.theme_version_number
+                ,
+            }
+        )
     }
 }
+

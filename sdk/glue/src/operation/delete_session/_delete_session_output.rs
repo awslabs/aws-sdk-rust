@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSessionOutput {
+pub struct DeleteSessionOutput  {
     /// <p>Returns the ID of the deleted session.</p>
     pub id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteSessionOutput {
+impl  DeleteSessionOutput  {
     /// <p>Returns the ID of the deleted session.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteSessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput).
     pub fn builder() -> crate::operation::delete_session::builders::DeleteSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteSessionOutputBuilder {
     }
     /// <p>Returns the ID of the deleted session.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Returns the ID of the deleted session.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput).
     pub fn build(self) -> crate::operation::delete_session::DeleteSessionOutput {
         crate::operation::delete_session::DeleteSessionOutput {
-            id: self.id,
+            id: self.id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

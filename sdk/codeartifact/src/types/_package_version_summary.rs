@@ -3,7 +3,7 @@
 /// <p>Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PackageVersionSummary {
+pub struct PackageVersionSummary  {
     /// <p>Information about a package version.</p>
     pub version: ::std::string::String,
     /// <p>The revision associated with a package version.</p>
@@ -13,22 +13,21 @@ pub struct PackageVersionSummary {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
-impl PackageVersionSummary {
+impl  PackageVersionSummary  {
     /// <p>Information about a package version.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
     /// <p>The revision associated with a package version.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>A string that contains the status of the package version. It can be one of the following:</p>
-    pub fn status(&self) -> &crate::types::PackageVersionStatus {
+    pub fn status(&self) -> & crate::types::PackageVersionStatus {
         &self.status
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::PackageVersionOrigin> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::PackageVersionOrigin> {
         self.origin.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>Information about a package version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Information about a package version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>The revision associated with a package version.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The revision associated with a package version.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>A string that contains the status of the package version. It can be one of the following:</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A string that contains the status of the package version. It can be one of the following:</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PackageVersionStatus> {
@@ -100,8 +96,7 @@ impl PackageVersionSummaryBuilder {
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::PackageVersionOrigin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::PackageVersionOrigin> {
@@ -112,21 +107,24 @@ impl PackageVersionSummaryBuilder {
     /// - [`version`](crate::types::builders::PackageVersionSummaryBuilder::version)
     /// - [`status`](crate::types::builders::PackageVersionSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PackageVersionSummary {
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building PackageVersionSummary",
-                )
-            })?,
-            revision: self.revision,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building PackageVersionSummary",
-                )
-            })?,
-            origin: self.origin,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PackageVersionSummary {
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building PackageVersionSummary")
+                    )?
+                ,
+                revision: self.revision
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building PackageVersionSummary")
+                    )?
+                ,
+                origin: self.origin
+                ,
+            }
+        )
     }
 }
+

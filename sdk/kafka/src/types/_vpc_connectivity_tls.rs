@@ -3,11 +3,11 @@
 /// <p>Details for TLS client authentication for VPC connectivity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectivityTls {
+pub struct VpcConnectivityTls  {
     /// <p>TLS authentication is on or off for VPC connectivity.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl VpcConnectivityTls {
+impl  VpcConnectivityTls  {
     /// <p>TLS authentication is on or off for VPC connectivity.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl VpcConnectivityTlsBuilder {
     }
     /// <p>TLS authentication is on or off for VPC connectivity.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>TLS authentication is on or off for VPC connectivity.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl VpcConnectivityTlsBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConnectivityTls`](crate::types::VpcConnectivityTls).
     pub fn build(self) -> crate::types::VpcConnectivityTls {
-        crate::types::VpcConnectivityTls { enabled: self.enabled }
+        crate::types::VpcConnectivityTls {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

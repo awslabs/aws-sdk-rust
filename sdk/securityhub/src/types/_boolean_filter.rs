@@ -3,11 +3,11 @@
 /// <p>Boolean filter for querying findings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BooleanFilter {
+pub struct BooleanFilter  {
     /// <p>The value of the boolean.</p>
     pub value: ::std::option::Option<bool>,
 }
-impl BooleanFilter {
+impl  BooleanFilter  {
     /// <p>The value of the boolean.</p>
     pub fn value(&self) -> ::std::option::Option<bool> {
         self.value
@@ -34,8 +34,7 @@ impl BooleanFilterBuilder {
     }
     /// <p>The value of the boolean.</p>
     pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the boolean.</p>
     pub fn get_value(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl BooleanFilterBuilder {
     }
     /// Consumes the builder and constructs a [`BooleanFilter`](crate::types::BooleanFilter).
     pub fn build(self) -> crate::types::BooleanFilter {
-        crate::types::BooleanFilter { value: self.value }
+        crate::types::BooleanFilter {
+            value: self.value
+            ,
+        }
     }
 }
+

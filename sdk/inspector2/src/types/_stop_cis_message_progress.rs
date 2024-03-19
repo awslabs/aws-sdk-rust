@@ -3,7 +3,7 @@
 /// <p>The stop CIS message progress.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopCisMessageProgress {
+pub struct StopCisMessageProgress  {
     /// <p>The progress' total checks.</p>
     pub total_checks: i32,
     /// <p>The progress' successful checks.</p>
@@ -21,7 +21,7 @@ pub struct StopCisMessageProgress {
     /// <p>The progress' error checks.</p>
     pub error_checks: i32,
 }
-impl StopCisMessageProgress {
+impl  StopCisMessageProgress  {
     /// <p>The progress' total checks.</p>
     pub fn total_checks(&self) -> i32 {
         self.total_checks
@@ -83,8 +83,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' total checks.</p>
     pub fn set_total_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_checks = input;
-        self
+        self.total_checks = input; self
     }
     /// <p>The progress' total checks.</p>
     pub fn get_total_checks(&self) -> &::std::option::Option<i32> {
@@ -97,8 +96,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' successful checks.</p>
     pub fn set_successful_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.successful_checks = input;
-        self
+        self.successful_checks = input; self
     }
     /// <p>The progress' successful checks.</p>
     pub fn get_successful_checks(&self) -> &::std::option::Option<i32> {
@@ -111,8 +109,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' failed checks.</p>
     pub fn set_failed_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_checks = input;
-        self
+        self.failed_checks = input; self
     }
     /// <p>The progress' failed checks.</p>
     pub fn get_failed_checks(&self) -> &::std::option::Option<i32> {
@@ -125,8 +122,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' not evaluated checks.</p>
     pub fn set_not_evaluated_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.not_evaluated_checks = input;
-        self
+        self.not_evaluated_checks = input; self
     }
     /// <p>The progress' not evaluated checks.</p>
     pub fn get_not_evaluated_checks(&self) -> &::std::option::Option<i32> {
@@ -139,8 +135,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' unknown checks.</p>
     pub fn set_unknown_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unknown_checks = input;
-        self
+        self.unknown_checks = input; self
     }
     /// <p>The progress' unknown checks.</p>
     pub fn get_unknown_checks(&self) -> &::std::option::Option<i32> {
@@ -153,8 +148,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' not applicable checks.</p>
     pub fn set_not_applicable_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.not_applicable_checks = input;
-        self
+        self.not_applicable_checks = input; self
     }
     /// <p>The progress' not applicable checks.</p>
     pub fn get_not_applicable_checks(&self) -> &::std::option::Option<i32> {
@@ -167,8 +161,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' informational checks.</p>
     pub fn set_informational_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.informational_checks = input;
-        self
+        self.informational_checks = input; self
     }
     /// <p>The progress' informational checks.</p>
     pub fn get_informational_checks(&self) -> &::std::option::Option<i32> {
@@ -181,8 +174,7 @@ impl StopCisMessageProgressBuilder {
     }
     /// <p>The progress' error checks.</p>
     pub fn set_error_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.error_checks = input;
-        self
+        self.error_checks = input; self
     }
     /// <p>The progress' error checks.</p>
     pub fn get_error_checks(&self) -> &::std::option::Option<i32> {
@@ -191,14 +183,31 @@ impl StopCisMessageProgressBuilder {
     /// Consumes the builder and constructs a [`StopCisMessageProgress`](crate::types::StopCisMessageProgress).
     pub fn build(self) -> crate::types::StopCisMessageProgress {
         crate::types::StopCisMessageProgress {
-            total_checks: self.total_checks.unwrap_or_default(),
-            successful_checks: self.successful_checks.unwrap_or_default(),
-            failed_checks: self.failed_checks.unwrap_or_default(),
-            not_evaluated_checks: self.not_evaluated_checks.unwrap_or_default(),
-            unknown_checks: self.unknown_checks.unwrap_or_default(),
-            not_applicable_checks: self.not_applicable_checks.unwrap_or_default(),
-            informational_checks: self.informational_checks.unwrap_or_default(),
-            error_checks: self.error_checks.unwrap_or_default(),
+            total_checks: self.total_checks
+                .unwrap_or_default()
+            ,
+            successful_checks: self.successful_checks
+                .unwrap_or_default()
+            ,
+            failed_checks: self.failed_checks
+                .unwrap_or_default()
+            ,
+            not_evaluated_checks: self.not_evaluated_checks
+                .unwrap_or_default()
+            ,
+            unknown_checks: self.unknown_checks
+                .unwrap_or_default()
+            ,
+            not_applicable_checks: self.not_applicable_checks
+                .unwrap_or_default()
+            ,
+            informational_checks: self.informational_checks
+                .unwrap_or_default()
+            ,
+            error_checks: self.error_checks
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

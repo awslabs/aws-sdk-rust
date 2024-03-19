@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFileCommitHistory`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`repository_name(impl Into<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::set_repository_name):<br>required: **true**<br><p>The name of the repository that contains the file.</p><br>
     ///   - [`commit_specifier(impl Into<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::commit_specifier) / [`set_commit_specifier(Option<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::set_commit_specifier):<br>required: **false**<br><p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as <code>refs/heads/main</code>. If none is provided, the head commit is used.</p><br>
     ///   - [`file_path(impl Into<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::file_path) / [`set_file_path(Option<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::set_file_path):<br>required: **true**<br><p>The full path of the file whose history you want to retrieve, including the name of the file.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::set_max_results):<br>required: **false**<br><p>A non-zero, non-negative integer used to limit the number of returned results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::set_next_token):<br>required: **false**<br><p>An enumeration token that allows the operation to batch the results.</p><br>
-    /// - On success, responds with [`ListFileCommitHistoryOutput`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput) with field(s):
+                            /// - On success, responds with [`ListFileCommitHistoryOutput`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput) with field(s):
     ///   - [`revision_dag(Vec::<FileVersion>)`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput::revision_dag): <p>An array of FileVersion objects that form a directed acyclic graph (DAG) of the changes to the file made by the commits that changed the file.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_file_commit_history::ListFileCommitHistoryOutput::next_token): <p>An enumeration token that can be used to return the next batch of results.</p>
-    /// - On failure, responds with [`SdkError<ListFileCommitHistoryError>`](crate::operation::list_file_commit_history::ListFileCommitHistoryError)
+                            /// - On failure, responds with [`SdkError<ListFileCommitHistoryError>`](crate::operation::list_file_commit_history::ListFileCommitHistoryError)
     pub fn list_file_commit_history(&self) -> crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder {
-        crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_file_commit_history::builders::ListFileCommitHistoryFluentBuilder::new(self.handle.clone())
+                            }
 }
+

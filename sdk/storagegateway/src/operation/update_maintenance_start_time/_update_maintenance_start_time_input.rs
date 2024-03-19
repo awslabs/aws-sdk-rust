@@ -13,7 +13,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMaintenanceStartTimeInput {
+pub struct UpdateMaintenanceStartTimeInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -25,9 +25,9 @@ pub struct UpdateMaintenanceStartTimeInput {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub day_of_month: ::std::option::Option<i32>,
 }
-impl UpdateMaintenanceStartTimeInput {
+impl  UpdateMaintenanceStartTimeInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -73,8 +73,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hour_of_day = input;
-        self
+        self.hour_of_day = input; self
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn get_hour_of_day(&self) -> &::std::option::Option<i32> {
@@ -103,8 +101,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minute_of_hour = input;
-        self
+        self.minute_of_hour = input; self
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
@@ -117,8 +114,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     }
     /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
     pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
     pub fn get_day_of_week(&self) -> &::std::option::Option<i32> {
@@ -131,26 +127,28 @@ impl UpdateMaintenanceStartTimeInputBuilder {
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_month = input;
-        self
+        self.day_of_month = input; self
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
         &self.day_of_month
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceStartTimeInput`](crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput {
-            gateway_arn: self.gateway_arn,
-            hour_of_day: self.hour_of_day,
-            minute_of_hour: self.minute_of_hour,
-            day_of_week: self.day_of_week,
-            day_of_month: self.day_of_month,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput {
+                gateway_arn: self.gateway_arn
+                ,
+                hour_of_day: self.hour_of_day
+                ,
+                minute_of_hour: self.minute_of_hour
+                ,
+                day_of_week: self.day_of_week
+                ,
+                day_of_month: self.day_of_month
+                ,
+            }
+        )
     }
 }
+

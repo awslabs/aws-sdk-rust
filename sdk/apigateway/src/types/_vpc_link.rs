@@ -3,7 +3,7 @@
 /// <p>An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcLink {
+pub struct VpcLink  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name used to label and identify the VPC link.</p>
@@ -11,43 +11,44 @@ pub struct VpcLink {
     /// <p>The description of the VPC link.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
     pub status: ::std::option::Option<crate::types::VpcLinkStatus>,
     /// <p>A description about the VPC link status.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl VpcLink {
+impl  VpcLink  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name used to label and identify the VPC link.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the VPC link.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_arns.is_none()`.
-    pub fn target_arns(&self) -> &[::std::string::String] {
-        self.target_arns.as_deref().unwrap_or_default()
+    pub fn target_arns(&self) -> & [::std::string::String] {
+        self.target_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcLinkStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcLinkStatus> {
         self.status.as_ref()
     }
     /// <p>A description about the VPC link status.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -65,10 +66,10 @@ pub struct VpcLinkBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::VpcLinkStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl VpcLinkBuilder {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
@@ -78,8 +79,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The name used to label and identify the VPC link.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name used to label and identify the VPC link.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The description of the VPC link.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the VPC link.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,17 +118,16 @@ impl VpcLinkBuilder {
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
     pub fn target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_arns.unwrap_or_default();
-        v.push(input.into());
-        self.target_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_arns = input;
-        self
+    pub fn set_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_arns = input; self
     }
     /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.</p>
-    pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_arns
     }
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
@@ -140,8 +137,7 @@ impl VpcLinkBuilder {
     }
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcLinkStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcLinkStatus> {
@@ -154,8 +150,7 @@ impl VpcLinkBuilder {
     }
     /// <p>A description about the VPC link status.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A description about the VPC link status.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,29 +163,36 @@ impl VpcLinkBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`VpcLink`](crate::types::VpcLink).
     pub fn build(self) -> crate::types::VpcLink {
         crate::types::VpcLink {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            target_arns: self.target_arns,
-            status: self.status,
-            status_message: self.status_message,
-            tags: self.tags,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            target_arns: self.target_arns
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

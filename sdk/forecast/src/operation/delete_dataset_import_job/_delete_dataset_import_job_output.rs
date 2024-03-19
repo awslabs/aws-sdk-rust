@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDatasetImportJobOutput {
+pub struct DeleteDatasetImportJobOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteDatasetImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDatasetImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput).
     pub fn builder() -> crate::operation::delete_dataset_import_job::builders::DeleteDatasetImportJobOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteDatasetImportJobOutputBuilder {
 }
 impl DeleteDatasetImportJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDatasetImportJobOutput`](crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput).
     pub fn build(self) -> crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput {
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput {
@@ -40,3 +40,4 @@ impl DeleteDatasetImportJobOutputBuilder {
         }
     }
 }
+

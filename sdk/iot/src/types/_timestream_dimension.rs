@@ -3,24 +3,22 @@
 /// <p>Metadata attributes of the time series that are written in each measure record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimestreamDimension {
+pub struct TimestreamDimension  {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub name: ::std::string::String,
     /// <p>The value to write in this column of the database record.</p>
     pub value: ::std::string::String,
 }
-impl TimestreamDimension {
+impl  TimestreamDimension  {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value to write in this column of the database record.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl TimestreamDimension {
@@ -48,8 +46,7 @@ impl TimestreamDimensionBuilder {
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
@@ -64,8 +61,7 @@ impl TimestreamDimensionBuilder {
     }
     /// <p>The value to write in this column of the database record.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value to write in this column of the database record.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,19 +72,20 @@ impl TimestreamDimensionBuilder {
     /// - [`name`](crate::types::builders::TimestreamDimensionBuilder::name)
     /// - [`value`](crate::types::builders::TimestreamDimensionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::TimestreamDimension, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimestreamDimension {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TimestreamDimension",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building TimestreamDimension",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimestreamDimension {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TimestreamDimension")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building TimestreamDimension")
+                    )?
+                ,
+            }
+        )
     }
 }
+

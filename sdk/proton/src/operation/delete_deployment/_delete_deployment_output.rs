@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeploymentOutput {
+pub struct DeleteDeploymentOutput  {
     /// <p>The detailed data of the deployment being deleted.</p>
     pub deployment: ::std::option::Option<crate::types::Deployment>,
     _request_id: Option<String>,
 }
-impl DeleteDeploymentOutput {
+impl  DeleteDeploymentOutput  {
     /// <p>The detailed data of the deployment being deleted.</p>
-    pub fn deployment(&self) -> ::std::option::Option<&crate::types::Deployment> {
+    pub fn deployment(&self) -> ::std::option::Option<& crate::types::Deployment> {
         self.deployment.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
     pub fn builder() -> crate::operation::delete_deployment::builders::DeleteDeploymentOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteDeploymentOutputBuilder {
     }
     /// <p>The detailed data of the deployment being deleted.</p>
     pub fn set_deployment(mut self, input: ::std::option::Option<crate::types::Deployment>) -> Self {
-        self.deployment = input;
-        self
+        self.deployment = input; self
     }
     /// <p>The detailed data of the deployment being deleted.</p>
     pub fn get_deployment(&self) -> &::std::option::Option<crate::types::Deployment> {
         &self.deployment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDeploymentOutput`](crate::operation::delete_deployment::DeleteDeploymentOutput).
     pub fn build(self) -> crate::operation::delete_deployment::DeleteDeploymentOutput {
         crate::operation::delete_deployment::DeleteDeploymentOutput {
-            deployment: self.deployment,
+            deployment: self.deployment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

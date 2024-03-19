@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWebhooksOutput {
+pub struct ListWebhooksOutput  {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub webhooks: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>,
+    pub webhooks: ::std::option::Option<::std::vec::Vec::<crate::types::ListWebhookItem>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListWebhooksOutput {
+impl  ListWebhooksOutput  {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.webhooks.is_none()`.
-    pub fn webhooks(&self) -> &[crate::types::ListWebhookItem] {
-        self.webhooks.as_deref().unwrap_or_default()
+    pub fn webhooks(&self) -> & [crate::types::ListWebhookItem] {
+        self.webhooks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWebhooksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWebhooksOutput {
     /// Creates a new builder-style object to manufacture [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
     pub fn builder() -> crate::operation::list_webhooks::builders::ListWebhooksOutputBuilder {
@@ -37,7 +38,7 @@ impl ListWebhooksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWebhooksOutputBuilder {
-    pub(crate) webhooks: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>,
+    pub(crate) webhooks: ::std::option::Option<::std::vec::Vec::<crate::types::ListWebhookItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListWebhooksOutputBuilder {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
     pub fn webhooks(mut self, input: crate::types::ListWebhookItem) -> Self {
         let mut v = self.webhooks.unwrap_or_default();
-        v.push(input);
-        self.webhooks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.webhooks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub fn set_webhooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>>) -> Self {
-        self.webhooks = input;
-        self
+    pub fn set_webhooks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListWebhookItem>>) -> Self {
+        self.webhooks = input; self
     }
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
-    pub fn get_webhooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListWebhookItem>> {
+    pub fn get_webhooks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListWebhookItem>> {
         &self.webhooks
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
@@ -69,28 +69,30 @@ impl ListWebhooksOutputBuilder {
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
     pub fn build(self) -> crate::operation::list_webhooks::ListWebhooksOutput {
         crate::operation::list_webhooks::ListWebhooksOutput {
-            webhooks: self.webhooks,
-            next_token: self.next_token,
+            webhooks: self.webhooks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

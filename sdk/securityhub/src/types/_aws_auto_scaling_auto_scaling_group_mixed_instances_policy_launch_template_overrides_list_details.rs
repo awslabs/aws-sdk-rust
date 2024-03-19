@@ -3,19 +3,19 @@
 /// <p>Property values to use to override the values in the launch template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
+pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails  {
     /// <p>The instance type. For example, <code>m3.xlarge</code>.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic.</p>
     pub weighted_capacity: ::std::option::Option<::std::string::String>,
 }
-impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
+impl  AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails  {
     /// <p>The instance type. For example, <code>m3.xlarge</code>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic.</p>
-    pub fn weighted_capacity(&self) -> ::std::option::Option<&str> {
+    pub fn weighted_capacity(&self) -> ::std::option::Option<& str> {
         self.weighted_capacity.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
     }
     /// <p>The instance type. For example, <code>m3.xlarge</code>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type. For example, <code>m3.xlarge</code>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
     }
     /// <p>The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic.</p>
     pub fn set_weighted_capacity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.weighted_capacity = input;
-        self
+        self.weighted_capacity = input; self
     }
     /// <p>The number of capacity units provided by the specified instance type in terms of virtual CPUs, memory, storage, throughput, or other relative performance characteristic.</p>
     pub fn get_weighted_capacity(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesLi
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
         crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
-            instance_type: self.instance_type,
-            weighted_capacity: self.weighted_capacity,
+            instance_type: self.instance_type
+            ,
+            weighted_capacity: self.weighted_capacity
+            ,
         }
     }
 }
+

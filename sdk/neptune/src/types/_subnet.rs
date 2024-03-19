@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subnet {
+pub struct Subnet  {
     /// <p>Specifies the identifier of the subnet.</p>
     pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
@@ -12,17 +12,17 @@ pub struct Subnet {
     /// <p>Specifies the status of the subnet.</p>
     pub subnet_status: ::std::option::Option<::std::string::String>,
 }
-impl Subnet {
+impl  Subnet  {
     /// <p>Specifies the identifier of the subnet.</p>
-    pub fn subnet_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_identifier(&self) -> ::std::option::Option<& str> {
         self.subnet_identifier.as_deref()
     }
     /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
-    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&crate::types::AvailabilityZone> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<& crate::types::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>Specifies the status of the subnet.</p>
-    pub fn subnet_status(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_status(&self) -> ::std::option::Option<& str> {
         self.subnet_status.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl SubnetBuilder {
     }
     /// <p>Specifies the identifier of the subnet.</p>
     pub fn set_subnet_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_identifier = input;
-        self
+        self.subnet_identifier = input; self
     }
     /// <p>Specifies the identifier of the subnet.</p>
     pub fn get_subnet_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SubnetBuilder {
     }
     /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
     pub fn set_subnet_availability_zone(mut self, input: ::std::option::Option<crate::types::AvailabilityZone>) -> Self {
-        self.subnet_availability_zone = input;
-        self
+        self.subnet_availability_zone = input; self
     }
     /// <p>Specifies the EC2 Availability Zone that the subnet is in.</p>
     pub fn get_subnet_availability_zone(&self) -> &::std::option::Option<crate::types::AvailabilityZone> {
@@ -77,8 +75,7 @@ impl SubnetBuilder {
     }
     /// <p>Specifies the status of the subnet.</p>
     pub fn set_subnet_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_status = input;
-        self
+        self.subnet_status = input; self
     }
     /// <p>Specifies the status of the subnet.</p>
     pub fn get_subnet_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl SubnetBuilder {
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            subnet_identifier: self.subnet_identifier,
-            subnet_availability_zone: self.subnet_availability_zone,
-            subnet_status: self.subnet_status,
+            subnet_identifier: self.subnet_identifier
+            ,
+            subnet_availability_zone: self.subnet_availability_zone
+            ,
+            subnet_status: self.subnet_status
+            ,
         }
     }
 }
+

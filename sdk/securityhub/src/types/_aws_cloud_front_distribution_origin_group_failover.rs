@@ -3,13 +3,13 @@
 /// <p>Provides information about when an origin group fails over.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginGroupFailover {
+pub struct AwsCloudFrontDistributionOriginGroupFailover  {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     pub status_codes: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
 }
-impl AwsCloudFrontDistributionOriginGroupFailover {
+impl  AwsCloudFrontDistributionOriginGroupFailover  {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
-    pub fn status_codes(&self) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes> {
+    pub fn status_codes(&self) -> ::std::option::Option<& crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes> {
         self.status_codes.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsCloudFrontDistributionOriginGroupFailoverBuilder {
     }
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     pub fn set_status_codes(mut self, input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>) -> Self {
-        self.status_codes = input;
-        self
+        self.status_codes = input; self
     }
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     pub fn get_status_codes(&self) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes> {
@@ -44,7 +43,9 @@ impl AwsCloudFrontDistributionOriginGroupFailoverBuilder {
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailover`](crate::types::AwsCloudFrontDistributionOriginGroupFailover).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroupFailover {
         crate::types::AwsCloudFrontDistributionOriginGroupFailover {
-            status_codes: self.status_codes,
+            status_codes: self.status_codes
+            ,
         }
     }
 }
+

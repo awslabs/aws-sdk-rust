@@ -5,54 +5,50 @@ pub use crate::operation::test_custom_data_identifier::_test_custom_data_identif
 
 impl TestCustomDataIdentifierInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.test_custom_data_identifier();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.test_custom_data_identifier();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `TestCustomDataIdentifier`.
-///
+/// 
 /// <p>Tests a custom data identifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestCustomDataIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder,
+                    inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-    > for TestCustomDataIdentifierFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
+                    crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
+                > for TestCustomDataIdentifierFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
+                        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl TestCustomDataIdentifierFluentBuilder {
     /// Creates a new `TestCustomDataIdentifier`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl TestCustomDataIdentifierFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::test_custom_data_identifier::TestCustomDataIdentifier::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifier::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
-        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::test_custom_data_identifier::TestCustomDataIdentifier::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::test_custom_data_identifier::TestCustomDataIdentifier::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput, crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Appends an item to `ignoreWords`.
     ///
     /// To override the contents of this collection use [`set_ignore_words`](Self::set_ignore_words).
@@ -118,12 +105,12 @@ impl TestCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_ignore_words(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_ignore_words(input);
         self
     }
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ignore_words(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_ignore_words()
     }
     /// Appends an item to `keywords`.
@@ -136,12 +123,12 @@ impl TestCustomDataIdentifierFluentBuilder {
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
     }
     /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_keywords()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
@@ -187,3 +174,4 @@ impl TestCustomDataIdentifierFluentBuilder {
         self.inner.get_sample_text()
     }
 }
+

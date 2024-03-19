@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationAttachmentsOutput {
+pub struct DescribeRegistrationAttachmentsOutput  {
     /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
-    pub registration_attachments: ::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>,
+    pub registration_attachments: ::std::vec::Vec::<crate::types::RegistrationAttachmentsInformation>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeRegistrationAttachmentsOutput {
+impl  DescribeRegistrationAttachmentsOutput  {
     /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
-    pub fn registration_attachments(&self) -> &[crate::types::RegistrationAttachmentsInformation] {
-        use std::ops::Deref;
-        self.registration_attachments.deref()
+    pub fn registration_attachments(&self) -> & [crate::types::RegistrationAttachmentsInformation] {
+        use std::ops::Deref; self.registration_attachments.deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeRegistrationAttachmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeRegistrationAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegistrationAttachmentsOutput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput).
     pub fn builder() -> crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsOutputBuilder {
@@ -36,7 +35,7 @@ impl DescribeRegistrationAttachmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationAttachmentsOutputBuilder {
-    pub(crate) registration_attachments: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>>,
+    pub(crate) registration_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentsInformation>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,20 +47,16 @@ impl DescribeRegistrationAttachmentsOutputBuilder {
     /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
     pub fn registration_attachments(mut self, input: crate::types::RegistrationAttachmentsInformation) -> Self {
         let mut v = self.registration_attachments.unwrap_or_default();
-        v.push(input);
-        self.registration_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.registration_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
-    pub fn set_registration_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>>,
-    ) -> Self {
-        self.registration_attachments = input;
-        self
+    pub fn set_registration_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentsInformation>>) -> Self {
+        self.registration_attachments = input; self
     }
     /// <p>An array of <b>RegistrationAttachments</b> objects that contain the details for the requested registration attachments.</p>
-    pub fn get_registration_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationAttachmentsInformation>> {
+    pub fn get_registration_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAttachmentsInformation>> {
         &self.registration_attachments
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -71,42 +66,37 @@ impl DescribeRegistrationAttachmentsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeRegistrationAttachmentsOutput`](crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_attachments`](crate::operation::describe_registration_attachments::builders::DescribeRegistrationAttachmentsOutputBuilder::registration_attachments)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsOutput {
-                registration_attachments: self.registration_attachments.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "registration_attachments",
-                        "registration_attachments was not specified but it is required when building DescribeRegistrationAttachmentsOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                registration_attachments: self.registration_attachments
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("registration_attachments", "registration_attachments was not specified but it is required when building DescribeRegistrationAttachmentsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

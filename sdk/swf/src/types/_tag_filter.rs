@@ -3,17 +3,16 @@
 /// <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TagFilter {
+pub struct TagFilter  {
     /// <p>Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub tag: ::std::string::String,
 }
-impl TagFilter {
+impl  TagFilter  {
     /// <p>Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tag(&self) -> &str {
-        use std::ops::Deref;
-        self.tag.deref()
+    pub fn tag(&self) -> & str {
+        use std::ops::Deref; self.tag.deref()
     }
 }
 impl TagFilter {
@@ -40,8 +39,7 @@ impl TagFilterBuilder {
     /// <p>Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn set_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tag = input;
-        self
+        self.tag = input; self
     }
     /// <p>Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
@@ -52,13 +50,15 @@ impl TagFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tag`](crate::types::builders::TagFilterBuilder::tag)
     pub fn build(self) -> ::std::result::Result<crate::types::TagFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TagFilter {
-            tag: self.tag.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tag",
-                    "tag was not specified but it is required when building TagFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TagFilter {
+                tag: self.tag
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tag", "tag was not specified but it is required when building TagFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

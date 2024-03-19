@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplicationAssociations`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of associations to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p><br>
     ///   - [`application_id(impl Into<String>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::set_application_id):<br>required: **true**<br><p>The identifier of the specified application.</p><br>
     ///   - [`associated_resource_types(ApplicationAssociatedResourceType)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::associated_resource_types) / [`set_associated_resource_types(Option<Vec::<ApplicationAssociatedResourceType>>)`](crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::set_associated_resource_types):<br>required: **true**<br><p>The resource type of the associated resources.</p><br>
-    /// - On success, responds with [`DescribeApplicationAssociationsOutput`](crate::operation::describe_application_associations::DescribeApplicationAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeApplicationAssociationsOutput`](crate::operation::describe_application_associations::DescribeApplicationAssociationsOutput) with field(s):
     ///   - [`associations(Option<Vec::<ApplicationResourceAssociation>>)`](crate::operation::describe_application_associations::DescribeApplicationAssociationsOutput::associations): <p>List of associations and information about them.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_application_associations::DescribeApplicationAssociationsOutput::next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeApplicationAssociationsError>`](crate::operation::describe_application_associations::DescribeApplicationAssociationsError)
-    pub fn describe_application_associations(
-        &self,
-    ) -> crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder {
-        crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeApplicationAssociationsError>`](crate::operation::describe_application_associations::DescribeApplicationAssociationsError)
+    pub fn describe_application_associations(&self) -> crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder {
+                                crate::operation::describe_application_associations::builders::DescribeApplicationAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

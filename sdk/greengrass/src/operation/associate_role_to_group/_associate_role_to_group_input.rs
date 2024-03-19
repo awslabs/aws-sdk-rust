@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateRoleToGroupInput {
+pub struct AssociateRoleToGroupInput  {
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateRoleToGroupInput {
+impl  AssociateRoleToGroupInput  {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AssociateRoleToGroupInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl AssociateRoleToGroupInputBuilder {
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
-            group_id: self.group_id,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
+                group_id: self.group_id
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

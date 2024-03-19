@@ -3,7 +3,8 @@
 /// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InternetConfiguration {}
+pub struct InternetConfiguration  {
+}
 impl InternetConfiguration {
     /// Creates a new builder-style object to manufacture [`InternetConfiguration`](crate::types::InternetConfiguration).
     pub fn builder() -> crate::types::builders::InternetConfigurationBuilder {
@@ -14,10 +15,13 @@ impl InternetConfiguration {
 /// A builder for [`InternetConfiguration`](crate::types::InternetConfiguration).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct InternetConfigurationBuilder {}
+pub struct InternetConfigurationBuilder {
+}
 impl InternetConfigurationBuilder {
     /// Consumes the builder and constructs a [`InternetConfiguration`](crate::types::InternetConfiguration).
     pub fn build(self) -> crate::types::InternetConfiguration {
-        crate::types::InternetConfiguration {}
+        crate::types::InternetConfiguration {
+        }
     }
 }
+

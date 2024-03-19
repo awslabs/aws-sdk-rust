@@ -3,7 +3,7 @@
 /// <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExtendedKeyUsage {
+pub struct ExtendedKeyUsage  {
     /// <p>The name of an Extended Key Usage value.</p>
     pub name: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280.</p>
@@ -29,9 +29,9 @@ pub struct ExtendedKeyUsage {
     /// </ul>
     pub oid: ::std::option::Option<::std::string::String>,
 }
-impl ExtendedKeyUsage {
+impl  ExtendedKeyUsage  {
     /// <p>The name of an Extended Key Usage value.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::ExtendedKeyUsageName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::ExtendedKeyUsageName> {
         self.name.as_ref()
     }
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280.</p>
@@ -55,7 +55,7 @@ impl ExtendedKeyUsage {
     /// <li>
     /// <p><code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code></p></li>
     /// </ul>
-    pub fn oid(&self) -> ::std::option::Option<&str> {
+    pub fn oid(&self) -> ::std::option::Option<& str> {
         self.oid.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl ExtendedKeyUsageBuilder {
     }
     /// <p>The name of an Extended Key Usage value.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExtendedKeyUsageName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of an Extended Key Usage value.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::ExtendedKeyUsageName> {
@@ -135,8 +134,7 @@ impl ExtendedKeyUsageBuilder {
     /// <p><code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code></p></li>
     /// </ul>
     pub fn set_oid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.oid = input;
-        self
+        self.oid = input; self
     }
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280.</p>
     /// <ul>
@@ -165,8 +163,11 @@ impl ExtendedKeyUsageBuilder {
     /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
     pub fn build(self) -> crate::types::ExtendedKeyUsage {
         crate::types::ExtendedKeyUsage {
-            name: self.name,
-            oid: self.oid,
+            name: self.name
+            ,
+            oid: self.oid
+            ,
         }
     }
 }
+

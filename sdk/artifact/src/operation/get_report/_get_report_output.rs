@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReportOutput {
+pub struct GetReportOutput  {
     /// <p>Presigned S3 url to access the report content.</p>
     pub document_presigned_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetReportOutput {
+impl  GetReportOutput  {
     /// <p>Presigned S3 url to access the report content.</p>
-    pub fn document_presigned_url(&self) -> ::std::option::Option<&str> {
+    pub fn document_presigned_url(&self) -> ::std::option::Option<& str> {
         self.document_presigned_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReportOutput {
     /// Creates a new builder-style object to manufacture [`GetReportOutput`](crate::operation::get_report::GetReportOutput).
     pub fn builder() -> crate::operation::get_report::builders::GetReportOutputBuilder {
@@ -40,27 +40,28 @@ impl GetReportOutputBuilder {
     }
     /// <p>Presigned S3 url to access the report content.</p>
     pub fn set_document_presigned_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_presigned_url = input;
-        self
+        self.document_presigned_url = input; self
     }
     /// <p>Presigned S3 url to access the report content.</p>
     pub fn get_document_presigned_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_presigned_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReportOutput`](crate::operation::get_report::GetReportOutput).
     pub fn build(self) -> crate::operation::get_report::GetReportOutput {
         crate::operation::get_report::GetReportOutput {
-            document_presigned_url: self.document_presigned_url,
+            document_presigned_url: self.document_presigned_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

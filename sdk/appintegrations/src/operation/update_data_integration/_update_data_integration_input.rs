@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataIntegrationInput {
+pub struct UpdateDataIntegrationInput  {
     /// <p>A unique identifier for the DataIntegration.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DataIntegration.</p>
@@ -10,17 +10,17 @@ pub struct UpdateDataIntegrationInput {
     /// <p>A description of the DataIntegration.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDataIntegrationInput {
+impl  UpdateDataIntegrationInput  {
     /// <p>A unique identifier for the DataIntegration.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the DataIntegration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateDataIntegrationInputBuilder {
     }
     /// <p>A unique identifier for the DataIntegration.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>A unique identifier for the DataIntegration.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl UpdateDataIntegrationInputBuilder {
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the DataIntegration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,22 +74,24 @@ impl UpdateDataIntegrationInputBuilder {
     }
     /// <p>A description of the DataIntegration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the DataIntegration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_integration::UpdateDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_data_integration::UpdateDataIntegrationInput {
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_integration::UpdateDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_integration::UpdateDataIntegrationInput {
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

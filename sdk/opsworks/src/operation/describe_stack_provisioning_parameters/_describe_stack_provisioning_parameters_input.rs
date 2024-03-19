@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStackProvisioningParametersInput {
+pub struct DescribeStackProvisioningParametersInput  {
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStackProvisioningParametersInput {
+impl  DescribeStackProvisioningParametersInput  {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeStackProvisioningParametersInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`DescribeStackProvisioningParametersInput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput { stack_id: self.stack_id },
+            crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput {
+                stack_id: self.stack_id
+                ,
+            }
         )
     }
 }
+

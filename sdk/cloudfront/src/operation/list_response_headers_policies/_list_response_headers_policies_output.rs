@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResponseHeadersPoliciesOutput {
+pub struct ListResponseHeadersPoliciesOutput  {
     /// <p>A list of response headers policies.</p>
     pub response_headers_policy_list: ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     _request_id: Option<String>,
 }
-impl ListResponseHeadersPoliciesOutput {
+impl  ListResponseHeadersPoliciesOutput  {
     /// <p>A list of response headers policies.</p>
-    pub fn response_headers_policy_list(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyList> {
+    pub fn response_headers_policy_list(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicyList> {
         self.response_headers_policy_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResponseHeadersPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResponseHeadersPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
     pub fn builder() -> crate::operation::list_response_headers_policies::builders::ListResponseHeadersPoliciesOutputBuilder {
@@ -40,27 +40,28 @@ impl ListResponseHeadersPoliciesOutputBuilder {
     }
     /// <p>A list of response headers policies.</p>
     pub fn set_response_headers_policy_list(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyList>) -> Self {
-        self.response_headers_policy_list = input;
-        self
+        self.response_headers_policy_list = input; self
     }
     /// <p>A list of response headers policies.</p>
     pub fn get_response_headers_policy_list(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyList> {
         &self.response_headers_policy_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResponseHeadersPoliciesOutput`](crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput).
     pub fn build(self) -> crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput {
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput {
-            response_headers_policy_list: self.response_headers_policy_list,
+            response_headers_policy_list: self.response_headers_policy_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

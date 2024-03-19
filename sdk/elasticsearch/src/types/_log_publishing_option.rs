@@ -9,15 +9,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogPublishingOption {
+pub struct LogPublishingOption  {
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
     pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether given log publishing option is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl LogPublishingOption {
+impl  LogPublishingOption  {
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>Specifies whether given log publishing option is enabled or not.</p>
@@ -47,8 +47,7 @@ impl LogPublishingOptionBuilder {
     }
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = input;
-        self
+        self.cloud_watch_logs_log_group_arn = input; self
     }
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl LogPublishingOptionBuilder {
     }
     /// <p>Specifies whether given log publishing option is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether given log publishing option is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -71,8 +69,11 @@ impl LogPublishingOptionBuilder {
     /// Consumes the builder and constructs a [`LogPublishingOption`](crate::types::LogPublishingOption).
     pub fn build(self) -> crate::types::LogPublishingOption {
         crate::types::LogPublishingOption {
-            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
-            enabled: self.enabled,
+            cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

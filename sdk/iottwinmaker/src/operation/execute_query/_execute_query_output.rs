@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteQueryOutput {
+pub struct ExecuteQueryOutput  {
     /// <p>A list of ColumnDescription objects.</p>
-    pub column_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
+    pub column_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDescription>>,
     /// <p>Represents a single row in the query results.</p>
-    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
+    pub rows: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExecuteQueryOutput {
+impl  ExecuteQueryOutput  {
     /// <p>A list of ColumnDescription objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_descriptions.is_none()`.
-    pub fn column_descriptions(&self) -> &[crate::types::ColumnDescription] {
-        self.column_descriptions.as_deref().unwrap_or_default()
+    pub fn column_descriptions(&self) -> & [crate::types::ColumnDescription] {
+        self.column_descriptions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents a single row in the query results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rows.is_none()`.
-    pub fn rows(&self) -> &[crate::types::Row] {
-        self.rows.as_deref().unwrap_or_default()
+    pub fn rows(&self) -> & [crate::types::Row] {
+        self.rows.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteQueryOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteQueryOutput`](crate::operation::execute_query::ExecuteQueryOutput).
     pub fn builder() -> crate::operation::execute_query::builders::ExecuteQueryOutputBuilder {
@@ -45,8 +47,8 @@ impl ExecuteQueryOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteQueryOutputBuilder {
-    pub(crate) column_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>,
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
+    pub(crate) column_descriptions: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDescription>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -58,17 +60,16 @@ impl ExecuteQueryOutputBuilder {
     /// <p>A list of ColumnDescription objects.</p>
     pub fn column_descriptions(mut self, input: crate::types::ColumnDescription) -> Self {
         let mut v = self.column_descriptions.unwrap_or_default();
-        v.push(input);
-        self.column_descriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_descriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ColumnDescription objects.</p>
-    pub fn set_column_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>>) -> Self {
-        self.column_descriptions = input;
-        self
+    pub fn set_column_descriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnDescription>>) -> Self {
+        self.column_descriptions = input; self
     }
     /// <p>A list of ColumnDescription objects.</p>
-    pub fn get_column_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnDescription>> {
+    pub fn get_column_descriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnDescription>> {
         &self.column_descriptions
     }
     /// Appends an item to `rows`.
@@ -78,17 +79,16 @@ impl ExecuteQueryOutputBuilder {
     /// <p>Represents a single row in the query results.</p>
     pub fn rows(mut self, input: crate::types::Row) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Represents a single row in the query results.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>) -> Self {
+        self.rows = input; self
     }
     /// <p>Represents a single row in the query results.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Row>> {
         &self.rows
     }
     /// <p>The string that specifies the next page of results.</p>
@@ -98,29 +98,32 @@ impl ExecuteQueryOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteQueryOutput`](crate::operation::execute_query::ExecuteQueryOutput).
     pub fn build(self) -> crate::operation::execute_query::ExecuteQueryOutput {
         crate::operation::execute_query::ExecuteQueryOutput {
-            column_descriptions: self.column_descriptions,
-            rows: self.rows,
-            next_token: self.next_token,
+            column_descriptions: self.column_descriptions
+            ,
+            rows: self.rows
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

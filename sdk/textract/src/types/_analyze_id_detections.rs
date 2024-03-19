@@ -3,7 +3,7 @@
 /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyzeIdDetections {
+pub struct AnalyzeIdDetections  {
     /// <p>Text of either the normalized field or value associated with it.</p>
     pub text: ::std::string::String,
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
@@ -11,14 +11,13 @@ pub struct AnalyzeIdDetections {
     /// <p>The confidence score of the detected text.</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl AnalyzeIdDetections {
+impl  AnalyzeIdDetections  {
     /// <p>Text of either the normalized field or value associated with it.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
-    pub fn normalized_value(&self) -> ::std::option::Option<&crate::types::NormalizedValue> {
+    pub fn normalized_value(&self) -> ::std::option::Option<& crate::types::NormalizedValue> {
         self.normalized_value.as_ref()
     }
     /// <p>The confidence score of the detected text.</p>
@@ -50,8 +49,7 @@ impl AnalyzeIdDetectionsBuilder {
     }
     /// <p>Text of either the normalized field or value associated with it.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>Text of either the normalized field or value associated with it.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl AnalyzeIdDetectionsBuilder {
     }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
     pub fn set_normalized_value(mut self, input: ::std::option::Option<crate::types::NormalizedValue>) -> Self {
-        self.normalized_value = input;
-        self
+        self.normalized_value = input; self
     }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
     pub fn get_normalized_value(&self) -> &::std::option::Option<crate::types::NormalizedValue> {
@@ -78,8 +75,7 @@ impl AnalyzeIdDetectionsBuilder {
     }
     /// <p>The confidence score of the detected text.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence score of the detected text.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -89,15 +85,19 @@ impl AnalyzeIdDetectionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::AnalyzeIdDetectionsBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyzeIdDetections, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyzeIdDetections {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building AnalyzeIdDetections",
-                )
-            })?,
-            normalized_value: self.normalized_value,
-            confidence: self.confidence,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyzeIdDetections {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building AnalyzeIdDetections")
+                    )?
+                ,
+                normalized_value: self.normalized_value
+                ,
+                confidence: self.confidence
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationSnapshotsOutput {
+pub struct ListApplicationSnapshotsOutput  {
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub snapshot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>,
+    pub snapshot_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotDetails>>,
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationSnapshotsOutput {
+impl  ListApplicationSnapshotsOutput  {
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_summaries.is_none()`.
-    pub fn snapshot_summaries(&self) -> &[crate::types::SnapshotDetails] {
-        self.snapshot_summaries.as_deref().unwrap_or_default()
+    pub fn snapshot_summaries(&self) -> & [crate::types::SnapshotDetails] {
+        self.snapshot_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput).
     pub fn builder() -> crate::operation::list_application_snapshots::builders::ListApplicationSnapshotsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListApplicationSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationSnapshotsOutputBuilder {
-    pub(crate) snapshot_summaries: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>,
+    pub(crate) snapshot_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListApplicationSnapshotsOutputBuilder {
     /// <p>A collection of objects containing information about the application snapshots.</p>
     pub fn snapshot_summaries(mut self, input: crate::types::SnapshotDetails) -> Self {
         let mut v = self.snapshot_summaries.unwrap_or_default();
-        v.push(input);
-        self.snapshot_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snapshot_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn set_snapshot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>>) -> Self {
-        self.snapshot_summaries = input;
-        self
+    pub fn set_snapshot_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotDetails>>) -> Self {
+        self.snapshot_summaries = input; self
     }
     /// <p>A collection of objects containing information about the application snapshots.</p>
-    pub fn get_snapshot_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetails>> {
+    pub fn get_snapshot_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotDetails>> {
         &self.snapshot_summaries
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -69,28 +69,30 @@ impl ListApplicationSnapshotsOutputBuilder {
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationSnapshotsOutput`](crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput).
     pub fn build(self) -> crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput {
         crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput {
-            snapshot_summaries: self.snapshot_summaries,
-            next_token: self.next_token,
+            snapshot_summaries: self.snapshot_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

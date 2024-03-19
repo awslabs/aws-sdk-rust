@@ -3,7 +3,7 @@
 /// <p>Represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimension {
+pub struct Dimension  {
     /// <p>Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.</p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
     pub name: ::std::string::String,
@@ -12,20 +12,18 @@ pub struct Dimension {
     /// <p>The data type of the dimension for the time-series data point.</p>
     pub dimension_value_type: ::std::option::Option<crate::types::DimensionValueType>,
 }
-impl Dimension {
+impl  Dimension  {
     /// <p>Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.</p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
-    pub fn dimension_value_type(&self) -> ::std::option::Option<&crate::types::DimensionValueType> {
+    pub fn dimension_value_type(&self) -> ::std::option::Option<& crate::types::DimensionValueType> {
         self.dimension_value_type.as_ref()
     }
 }
@@ -55,8 +53,7 @@ impl DimensionBuilder {
     /// <p>Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.</p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.</p>
     /// <p>For constraints on dimension names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming Constraints</a>.</p>
@@ -71,8 +68,7 @@ impl DimensionBuilder {
     }
     /// <p>The value of the dimension.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the dimension.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +81,7 @@ impl DimensionBuilder {
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
     pub fn set_dimension_value_type(mut self, input: ::std::option::Option<crate::types::DimensionValueType>) -> Self {
-        self.dimension_value_type = input;
-        self
+        self.dimension_value_type = input; self
     }
     /// <p>The data type of the dimension for the time-series data point.</p>
     pub fn get_dimension_value_type(&self) -> &::std::option::Option<crate::types::DimensionValueType> {
@@ -97,20 +92,22 @@ impl DimensionBuilder {
     /// - [`name`](crate::types::builders::DimensionBuilder::name)
     /// - [`value`](crate::types::builders::DimensionBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Dimension, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Dimension {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Dimension",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Dimension",
-                )
-            })?,
-            dimension_value_type: self.dimension_value_type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Dimension {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Dimension")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Dimension")
+                    )?
+                ,
+                dimension_value_type: self.dimension_value_type
+                ,
+            }
+        )
     }
 }
+

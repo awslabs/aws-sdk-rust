@@ -3,13 +3,13 @@
 /// <p>The repository credentials for private registry authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositoryCredentials {
+pub struct RepositoryCredentials  {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p>
     pub credentials_parameter: ::std::option::Option<::std::string::String>,
 }
-impl RepositoryCredentials {
+impl  RepositoryCredentials  {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p>
-    pub fn credentials_parameter(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_parameter(&self) -> ::std::option::Option<& str> {
         self.credentials_parameter.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl RepositoryCredentialsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p>
     pub fn set_credentials_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_parameter = input;
-        self
+        self.credentials_parameter = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p>
     pub fn get_credentials_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl RepositoryCredentialsBuilder {
     /// Consumes the builder and constructs a [`RepositoryCredentials`](crate::types::RepositoryCredentials).
     pub fn build(self) -> crate::types::RepositoryCredentials {
         crate::types::RepositoryCredentials {
-            credentials_parameter: self.credentials_parameter,
+            credentials_parameter: self.credentials_parameter
+            ,
         }
     }
 }
+

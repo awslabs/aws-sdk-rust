@@ -17,7 +17,9 @@ use ring::digest::{Context, Digest, SHA256};
 use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut};
+use aws_smithy_runtime_api::client::interceptors::context::{
+    BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut,
+};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, LoadedRequestBody};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -64,7 +66,9 @@ impl<I> GlacierAccountIdAutofillInterceptor<I> {
     }
 }
 
-impl<I: GlacierAccountId + Send + Sync + 'static> Intercept for GlacierAccountIdAutofillInterceptor<I> {
+impl<I: GlacierAccountId + Send + Sync + 'static> Intercept
+    for GlacierAccountIdAutofillInterceptor<I>
+{
     fn name(&self) -> &'static str {
         "GlacierAccountIdAutofillInterceptor"
     }
@@ -76,7 +80,9 @@ impl<I: GlacierAccountId + Send + Sync + 'static> Intercept for GlacierAccountId
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let erased_input = context.input_mut();
-        let input: &mut I = erased_input.downcast_mut().expect("typechecked at registration");
+        let input: &mut I = erased_input
+            .downcast_mut()
+            .expect("typechecked at registration");
         input.autofill_account_id();
         Ok(())
     }
@@ -106,10 +112,10 @@ impl Intercept for GlacierApiVersionInterceptor {
         _runtime_components: &RuntimeComponents,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        context
-            .request_mut()
-            .headers_mut()
-            .insert(API_VERSION_HEADER, HeaderValue::from_static(self.api_version));
+        context.request_mut().headers_mut().insert(
+            API_VERSION_HEADER,
+            HeaderValue::from_static(self.api_version),
+        );
         Ok(())
     }
 }
@@ -133,7 +139,8 @@ impl Intercept for GlacierTreeHashHeaderInterceptor {
     ) -> Result<(), BoxError> {
         // Request the request body to be loaded into memory immediately after serialization
         // so that it can be checksummed before signing and transmit
-        cfg.interceptor_state().store_put(LoadedRequestBody::Requested);
+        cfg.interceptor_state()
+            .store_put(LoadedRequestBody::Requested);
         Ok(())
     }
 
@@ -152,12 +159,15 @@ impl Intercept for GlacierTreeHashHeaderInterceptor {
                 .load::<SigV4OperationSigningConfig>()
                 .ok_or("SigV4OperationSigningConfig not found")?
                 .clone();
-            signing_config.signing_options.payload_override = Some(SignableBody::Precomputed(content_sha256));
+            signing_config.signing_options.payload_override =
+                Some(SignableBody::Precomputed(content_sha256));
             cfg.interceptor_state().store_put(signing_config);
         } else {
-            return Err("the request body wasn't loaded into memory before the retry loop, \
+            return Err(
+                "the request body wasn't loaded into memory before the retry loop, \
                 so the Glacier tree hash header can't be computed"
-                .into());
+                    .into(),
+            );
         }
         Ok(())
     }
@@ -174,7 +184,10 @@ impl Intercept for GlacierTreeHashHeaderInterceptor {
 /// chunk (if it exists) is paired at the end.
 ///
 /// See <https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html> for more information.
-fn add_checksum_treehash(request: &mut HttpRequest, body: &Bytes) -> Result<String, byte_stream::error::Error> {
+fn add_checksum_treehash(
+    request: &mut HttpRequest,
+    body: &Bytes,
+) -> Result<String, byte_stream::error::Error> {
     let (full_body, hashes) = compute_hashes(body, MEGABYTE)?;
     let tree_hash = hex::encode(compute_hash_tree(hashes));
     let complete_hash = hex::encode(full_body);
@@ -182,13 +195,18 @@ fn add_checksum_treehash(request: &mut HttpRequest, body: &Bytes) -> Result<Stri
         request.headers_mut().insert(TREE_HASH_HEADER, tree_hash);
     }
     if !request.headers().contains_key(X_AMZ_CONTENT_SHA256) {
-        request.headers_mut().insert(X_AMZ_CONTENT_SHA256, complete_hash.clone());
+        request
+            .headers_mut()
+            .insert(X_AMZ_CONTENT_SHA256, complete_hash.clone());
     }
     Ok(complete_hash)
 }
 
 const MEGABYTE: usize = 1024 * 1024;
-fn compute_hashes(body: &Bytes, chunk_size: usize) -> Result<(Digest, Vec<Digest>), byte_stream::error::Error> {
+fn compute_hashes(
+    body: &Bytes,
+    chunk_size: usize,
+) -> Result<(Digest, Vec<Digest>), byte_stream::error::Error> {
     let mut hashes = Vec::new();
     let mut full_body = Context::new(&SHA256);
     for chunk in body.chunks(chunk_size) {
@@ -254,7 +272,9 @@ mod account_id_autofill_tests {
         let mut context = InterceptorContext::new(Input::erase(SomeInput { account_id: None }));
         let mut context = BeforeSerializationInterceptorContextMut::from(&mut context);
         let interceptor = GlacierAccountIdAutofillInterceptor::<SomeInput>::new();
-        interceptor.modify_before_serialization(&mut context, &rc, &mut cfg).expect("success");
+        interceptor
+            .modify_before_serialization(&mut context, &rc, &mut cfg)
+            .expect("success");
         assert_eq!(
             DEFAULT_ACCOUNT_ID,
             context
@@ -284,9 +304,18 @@ mod api_version_tests {
         let mut context = BeforeTransmitInterceptorContextMut::from(&mut context);
 
         let interceptor = GlacierApiVersionInterceptor::new("some-version");
-        interceptor.modify_before_signing(&mut context, &rc, &mut cfg).expect("success");
+        interceptor
+            .modify_before_signing(&mut context, &rc, &mut cfg)
+            .expect("success");
 
-        assert_eq!("some-version", context.request().headers().get(API_VERSION_HEADER).expect("header set"));
+        assert_eq!(
+            "some-version",
+            context
+                .request()
+                .headers()
+                .get(API_VERSION_HEADER)
+                .expect("header set")
+        );
     }
 }
 
@@ -343,7 +372,13 @@ mod treehash_checksum_tests {
         assert_eq!(hashes.len(), 5);
         assert_eq!(complete.as_ref(), hash!("1234567891011").as_ref());
         let final_digest = compute_hash_tree(hashes);
-        let expected_digest = hash!(hash!(hash!(hash!("123"), hash!("456")), hash!(hash!("789"), hash!("101"))), hash!("1"));
+        let expected_digest = hash!(
+            hash!(
+                hash!(hash!("123"), hash!("456")),
+                hash!(hash!("789"), hash!("101"))
+            ),
+            hash!("1")
+        );
         assert_eq!(expected_digest.as_ref(), final_digest.as_ref());
     }
 
@@ -369,3 +404,4 @@ mod treehash_checksum_tests {
         );
     }
 }
+

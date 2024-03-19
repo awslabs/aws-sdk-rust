@@ -24,14 +24,25 @@ pub struct LogCaptureGuard(#[allow(dead_code)] DefaultGuard);
 pub fn capture_test_logs() -> (LogCaptureGuard, Rx) {
     // it may be helpful to upstream this at some point
     let (mut writer, rx) = Tee::stdout();
-    if env::var("VERBOSE_TEST_LOGS").is_ok() {
-        eprintln!("Enabled verbose test logging.");
+    let (enabled, level) = match env::var("VERBOSE_TEST_LOGS").ok().as_deref() {
+        Some("debug") => (true, Level::DEBUG),
+        Some("error") => (true, Level::ERROR),
+        Some("info") => (true, Level::INFO),
+        Some("warn") => (true, Level::WARN),
+        Some("trace") | Some(_) => (true, Level::TRACE),
+        None => (false, Level::TRACE),
+    };
+    if enabled {
+        eprintln!("Enabled verbose test logging at {level:?}.");
         writer.loud();
     } else {
-        eprintln!("To see full logs from this test set VERBOSE_TEST_LOGS=true");
+        eprintln!(
+            "To see full logs from this test set VERBOSE_TEST_LOGS=true \
+                (or to a log level, e.g., trace, debug, info, etc)"
+        );
     }
     let subscriber = tracing_subscriber::fmt()
-        .with_max_level(Level::TRACE)
+        .with_max_level(level)
         .with_writer(Mutex::new(writer))
         .finish();
     let guard = tracing::subscriber::set_default(subscriber);

@@ -3,7 +3,7 @@
 /// <p>Contains information about an app authorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppAuthorization {
+pub struct AppAuthorization  {
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
     pub app_authorization_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
@@ -37,28 +37,25 @@ pub struct AppAuthorization {
     /// <p>The application URL for the OAuth flow.</p>
     pub auth_url: ::std::option::Option<::std::string::String>,
 }
-impl AppAuthorization {
+impl  AppAuthorization  {
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
-    pub fn app_authorization_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_authorization_arn.deref()
+    pub fn app_authorization_arn(&self) -> & str {
+        use std::ops::Deref; self.app_authorization_arn.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
-    pub fn app_bundle_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_bundle_arn.deref()
+    pub fn app_bundle_arn(&self) -> & str {
+        use std::ops::Deref; self.app_bundle_arn.deref()
     }
     /// <p>The name of the application.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> & str {
+        use std::ops::Deref; self.app.deref()
     }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
-    pub fn tenant(&self) -> ::std::option::Option<&crate::types::Tenant> {
+    pub fn tenant(&self) -> ::std::option::Option<& crate::types::Tenant> {
         self.tenant.as_ref()
     }
     /// <p>The authorization type.</p>
-    pub fn auth_type(&self) -> &crate::types::AuthType {
+    pub fn auth_type(&self) -> & crate::types::AuthType {
         &self.auth_type
     }
     /// <p>The state of the app authorization.</p>
@@ -73,24 +70,24 @@ impl AppAuthorization {
     /// <li>
     /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::AppAuthorizationStatus {
+    pub fn status(&self) -> & crate::types::AppAuthorizationStatus {
         &self.status
     }
     /// <p>The timestamp of when the app authorization was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the app authorization was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The user persona of the app authorization.</p>
     /// <p>This field should always be <code>admin</code>.</p>
-    pub fn persona(&self) -> ::std::option::Option<&crate::types::Persona> {
+    pub fn persona(&self) -> ::std::option::Option<& crate::types::Persona> {
         self.persona.as_ref()
     }
     /// <p>The application URL for the OAuth flow.</p>
-    pub fn auth_url(&self) -> ::std::option::Option<&str> {
+    pub fn auth_url(&self) -> ::std::option::Option<& str> {
         self.auth_url.as_deref()
     }
 }
@@ -125,8 +122,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
     pub fn set_app_authorization_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_authorization_arn = input;
-        self
+        self.app_authorization_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
     pub fn get_app_authorization_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
     pub fn set_app_bundle_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_arn = input;
-        self
+        self.app_bundle_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
     pub fn get_app_bundle_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +150,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
     pub fn set_tenant(mut self, input: ::std::option::Option<crate::types::Tenant>) -> Self {
-        self.tenant = input;
-        self
+        self.tenant = input; self
     }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
     pub fn get_tenant(&self) -> &::std::option::Option<crate::types::Tenant> {
@@ -185,8 +178,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The authorization type.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The authorization type.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
@@ -222,8 +214,7 @@ impl AppAuthorizationBuilder {
     /// <p><code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppAuthorizationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
@@ -248,8 +239,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The timestamp of when the app authorization was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the app authorization was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -263,8 +253,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The timestamp of when the app authorization was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the app authorization was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -279,8 +268,7 @@ impl AppAuthorizationBuilder {
     /// <p>The user persona of the app authorization.</p>
     /// <p>This field should always be <code>admin</code>.</p>
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::Persona>) -> Self {
-        self.persona = input;
-        self
+        self.persona = input; self
     }
     /// <p>The user persona of the app authorization.</p>
     /// <p>This field should always be <code>admin</code>.</p>
@@ -294,8 +282,7 @@ impl AppAuthorizationBuilder {
     }
     /// <p>The application URL for the OAuth flow.</p>
     pub fn set_auth_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_url = input;
-        self
+        self.auth_url = input; self
     }
     /// <p>The application URL for the OAuth flow.</p>
     pub fn get_auth_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -311,52 +298,51 @@ impl AppAuthorizationBuilder {
     /// - [`created_at`](crate::types::builders::AppAuthorizationBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AppAuthorizationBuilder::updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::AppAuthorization, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AppAuthorization {
-            app_authorization_arn: self.app_authorization_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_authorization_arn",
-                    "app_authorization_arn was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            app_bundle_arn: self.app_bundle_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app_bundle_arn",
-                    "app_bundle_arn was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            tenant: self.tenant,
-            auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "auth_type",
-                    "auth_type was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building AppAuthorization",
-                )
-            })?,
-            persona: self.persona,
-            auth_url: self.auth_url,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AppAuthorization {
+                app_authorization_arn: self.app_authorization_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_authorization_arn", "app_authorization_arn was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                app_bundle_arn: self.app_bundle_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_bundle_arn", "app_bundle_arn was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                app: self.app
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app", "app was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                tenant: self.tenant
+                ,
+                auth_type: self.auth_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("auth_type", "auth_type was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building AppAuthorization")
+                    )?
+                ,
+                persona: self.persona
+                ,
+                auth_url: self.auth_url
+                ,
+            }
+        )
     }
 }
+

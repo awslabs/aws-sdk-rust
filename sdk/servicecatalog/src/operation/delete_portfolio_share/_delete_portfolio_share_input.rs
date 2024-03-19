@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePortfolioShareInput {
+pub struct DeletePortfolioShareInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct DeletePortfolioShareInput {
     /// <p>The organization node to whom you are going to stop sharing.</p>
     pub organization_node: ::std::option::Option<crate::types::OrganizationNode>,
 }
-impl DeletePortfolioShareInput {
+impl  DeletePortfolioShareInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,19 +26,19 @@ impl DeletePortfolioShareInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> ::std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> ::std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The organization node to whom you are going to stop sharing.</p>
-    pub fn organization_node(&self) -> ::std::option::Option<&crate::types::OrganizationNode> {
+    pub fn organization_node(&self) -> ::std::option::Option<& crate::types::OrganizationNode> {
         self.organization_node.as_ref()
     }
 }
@@ -78,8 +78,7 @@ impl DeletePortfolioShareInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -99,8 +98,7 @@ impl DeletePortfolioShareInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl DeletePortfolioShareInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,23 +124,26 @@ impl DeletePortfolioShareInputBuilder {
     }
     /// <p>The organization node to whom you are going to stop sharing.</p>
     pub fn set_organization_node(mut self, input: ::std::option::Option<crate::types::OrganizationNode>) -> Self {
-        self.organization_node = input;
-        self
+        self.organization_node = input; self
     }
     /// <p>The organization node to whom you are going to stop sharing.</p>
     pub fn get_organization_node(&self) -> &::std::option::Option<crate::types::OrganizationNode> {
         &self.organization_node
     }
     /// Consumes the builder and constructs a [`DeletePortfolioShareInput`](crate::operation::delete_portfolio_share::DeletePortfolioShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_portfolio_share::DeletePortfolioShareInput {
-            accept_language: self.accept_language,
-            portfolio_id: self.portfolio_id,
-            account_id: self.account_id,
-            organization_node: self.organization_node,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_portfolio_share::DeletePortfolioShareInput {
+                accept_language: self.accept_language
+                ,
+                portfolio_id: self.portfolio_id
+                ,
+                account_id: self.account_id
+                ,
+                organization_node: self.organization_node
+                ,
+            }
+        )
     }
 }
+

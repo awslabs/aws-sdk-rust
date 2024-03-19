@@ -3,13 +3,13 @@
 /// <p>Container for S3 Glacier job parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GlacierJobParameters {
+pub struct GlacierJobParameters  {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub tier: crate::types::Tier,
 }
-impl GlacierJobParameters {
+impl  GlacierJobParameters  {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn tier(&self) -> &crate::types::Tier {
+    pub fn tier(&self) -> & crate::types::Tier {
         &self.tier
     }
 }
@@ -35,8 +35,7 @@ impl GlacierJobParametersBuilder {
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
@@ -46,13 +45,15 @@ impl GlacierJobParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tier`](crate::types::builders::GlacierJobParametersBuilder::tier)
     pub fn build(self) -> ::std::result::Result<crate::types::GlacierJobParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GlacierJobParameters {
-            tier: self.tier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tier",
-                    "tier was not specified but it is required when building GlacierJobParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GlacierJobParameters {
+                tier: self.tier
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tier", "tier was not specified but it is required when building GlacierJobParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DescribeCacheParameters</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCacheParametersInput {
+pub struct DescribeCacheParametersInput  {
     /// <p>The name of a specific cache parameter group to return details for.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter types to return.</p>
@@ -16,14 +16,14 @@ pub struct DescribeCacheParametersInput {
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl DescribeCacheParametersInput {
+impl  DescribeCacheParametersInput  {
     /// <p>The name of a specific cache parameter group to return details for.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The parameter types to return.</p>
     /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -33,7 +33,7 @@ impl DescribeCacheParametersInput {
         self.max_records
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DescribeCacheParametersInputBuilder {
     }
     /// <p>The name of a specific cache parameter group to return details for.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>The name of a specific cache parameter group to return details for.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl DescribeCacheParametersInputBuilder {
     /// <p>The parameter types to return.</p>
     /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The parameter types to return.</p>
     /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code></p>
@@ -97,8 +95,7 @@ impl DescribeCacheParametersInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
@@ -113,25 +110,26 @@ impl DescribeCacheParametersInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeCacheParametersInput`](crate::operation::describe_cache_parameters::DescribeCacheParametersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_cache_parameters::DescribeCacheParametersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_cache_parameters::DescribeCacheParametersInput {
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            source: self.source,
-            max_records: self.max_records,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_cache_parameters::DescribeCacheParametersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_cache_parameters::DescribeCacheParametersInput {
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
+                source: self.source
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

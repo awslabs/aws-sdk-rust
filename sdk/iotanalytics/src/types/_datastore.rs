@@ -3,7 +3,7 @@
 /// <p>Information about a data store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Datastore {
+pub struct Datastore  {
     /// <p>The name of the data store.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
@@ -49,17 +49,17 @@ pub struct Datastore {
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub datastore_partitions: ::std::option::Option<crate::types::DatastorePartitions>,
 }
-impl Datastore {
+impl  Datastore  {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
-    pub fn storage(&self) -> ::std::option::Option<&crate::types::DatastoreStorage> {
+    pub fn storage(&self) -> ::std::option::Option<& crate::types::DatastoreStorage> {
         self.storage.as_ref()
     }
     /// <p>The ARN of the data store.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of a data store:</p>
@@ -83,35 +83,35 @@ impl Datastore {
     /// <p>The data store is being deleted.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatastoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatastoreStatus> {
         self.status.as_ref()
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>When the data store was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data store was updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
-    pub fn last_message_arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_message_arrival_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_message_arrival_time.as_ref()
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
-    pub fn file_format_configuration(&self) -> ::std::option::Option<&crate::types::FileFormatConfiguration> {
+    pub fn file_format_configuration(&self) -> ::std::option::Option<& crate::types::FileFormatConfiguration> {
         self.file_format_configuration.as_ref()
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
-    pub fn datastore_partitions(&self) -> ::std::option::Option<&crate::types::DatastorePartitions> {
+    pub fn datastore_partitions(&self) -> ::std::option::Option<& crate::types::DatastorePartitions> {
         self.datastore_partitions.as_ref()
     }
 }
@@ -145,8 +145,7 @@ impl DatastoreBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +158,7 @@ impl DatastoreBuilder {
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn set_storage(mut self, input: ::std::option::Option<crate::types::DatastoreStorage>) -> Self {
-        self.storage = input;
-        self
+        self.storage = input; self
     }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.</p>
     pub fn get_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorage> {
@@ -173,8 +171,7 @@ impl DatastoreBuilder {
     }
     /// <p>The ARN of the data store.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the data store.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +224,7 @@ impl DatastoreBuilder {
     /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatastoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a data store:</p>
     /// <dl>
@@ -261,8 +257,7 @@ impl DatastoreBuilder {
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -275,8 +270,7 @@ impl DatastoreBuilder {
     }
     /// <p>When the data store was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the data store was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -289,8 +283,7 @@ impl DatastoreBuilder {
     }
     /// <p>The last time the data store was updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The last time the data store was updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -307,8 +300,7 @@ impl DatastoreBuilder {
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020.</p>
     pub fn set_last_message_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_message_arrival_time = input;
-        self
+        self.last_message_arrival_time = input; self
     }
     /// <p>The last time when a new message arrived in the data store.</p>
     /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
@@ -327,8 +319,7 @@ impl DatastoreBuilder {
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn set_file_format_configuration(mut self, input: ::std::option::Option<crate::types::FileFormatConfiguration>) -> Self {
-        self.file_format_configuration = input;
-        self
+        self.file_format_configuration = input; self
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -343,8 +334,7 @@ impl DatastoreBuilder {
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn set_datastore_partitions(mut self, input: ::std::option::Option<crate::types::DatastorePartitions>) -> Self {
-        self.datastore_partitions = input;
-        self
+        self.datastore_partitions = input; self
     }
     /// <p>Contains information about the partition dimensions in a data store.</p>
     pub fn get_datastore_partitions(&self) -> &::std::option::Option<crate::types::DatastorePartitions> {
@@ -353,16 +343,27 @@ impl DatastoreBuilder {
     /// Consumes the builder and constructs a [`Datastore`](crate::types::Datastore).
     pub fn build(self) -> crate::types::Datastore {
         crate::types::Datastore {
-            name: self.name,
-            storage: self.storage,
-            arn: self.arn,
-            status: self.status,
-            retention_period: self.retention_period,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
-            last_message_arrival_time: self.last_message_arrival_time,
-            file_format_configuration: self.file_format_configuration,
-            datastore_partitions: self.datastore_partitions,
+            name: self.name
+            ,
+            storage: self.storage
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            retention_period: self.retention_period
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
+            last_message_arrival_time: self.last_message_arrival_time
+            ,
+            file_format_configuration: self.file_format_configuration
+            ,
+            datastore_partitions: self.datastore_partitions
+            ,
         }
     }
 }
+

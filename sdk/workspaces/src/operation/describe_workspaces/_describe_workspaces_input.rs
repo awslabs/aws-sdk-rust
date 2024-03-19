@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspacesInput {
+pub struct DescribeWorkspacesInput  {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub workspace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub workspace_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
@@ -19,24 +19,25 @@ pub struct DescribeWorkspacesInput {
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub workspace_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorkspacesInput {
+impl  DescribeWorkspacesInput  {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workspace_ids.is_none()`.
-    pub fn workspace_ids(&self) -> &[::std::string::String] {
-        self.workspace_ids.as_deref().unwrap_or_default()
+    pub fn workspace_ids(&self) -> & [::std::string::String] {
+        self.workspace_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
-    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -44,11 +45,11 @@ impl DescribeWorkspacesInput {
         self.limit
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
-    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_name(&self) -> ::std::option::Option<& str> {
         self.workspace_name.as_deref()
     }
 }
@@ -63,7 +64,7 @@ impl DescribeWorkspacesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspacesInputBuilder {
-    pub(crate) workspace_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) workspace_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
@@ -80,19 +81,18 @@ impl DescribeWorkspacesInputBuilder {
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
     pub fn workspace_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.workspace_ids.unwrap_or_default();
-        v.push(input.into());
-        self.workspace_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.workspace_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn set_workspace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.workspace_ids = input;
-        self
+    pub fn set_workspace_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.workspace_ids = input; self
     }
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
     /// <p>Because the <code>CreateWorkspaces</code> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <code>DescribeWorkspaces</code> with this identifier, no information is returned.</p>
-    pub fn get_workspace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_workspace_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.workspace_ids
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
@@ -102,8 +102,7 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The identifier of the directory. In addition, you can optionally specify a specific directory user (see <code>UserName</code>). You cannot combine this parameter with any other filter.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +115,7 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +128,7 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +141,7 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -158,8 +154,7 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,25 +167,32 @@ impl DescribeWorkspacesInputBuilder {
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_name = input;
-        self
+        self.workspace_name = input; self
     }
     /// <p>The name of the user-decoupled WorkSpace.</p>
     pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_name
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_workspaces::DescribeWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_workspaces::DescribeWorkspacesInput {
-            workspace_ids: self.workspace_ids,
-            directory_id: self.directory_id,
-            user_name: self.user_name,
-            bundle_id: self.bundle_id,
-            limit: self.limit,
-            next_token: self.next_token,
-            workspace_name: self.workspace_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspaces::DescribeWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workspaces::DescribeWorkspacesInput {
+                workspace_ids: self.workspace_ids
+                ,
+                directory_id: self.directory_id
+                ,
+                user_name: self.user_name
+                ,
+                bundle_id: self.bundle_id
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+                workspace_name: self.workspace_name
+                ,
+            }
+        )
     }
 }
+

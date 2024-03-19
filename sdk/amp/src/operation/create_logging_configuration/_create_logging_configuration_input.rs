@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateLoggingConfiguration</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLoggingConfigurationInput {
+pub struct CreateLoggingConfigurationInput  {
     /// <p>The ID of the workspace to create the logging configuration for.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
@@ -11,17 +11,17 @@ pub struct CreateLoggingConfigurationInput {
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateLoggingConfigurationInput {
+impl  CreateLoggingConfigurationInput  {
     /// <p>The ID of the workspace to create the logging configuration for.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
-    pub fn log_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> ::std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateLoggingConfigurationInputBuilder {
     }
     /// <p>The ID of the workspace to create the logging configuration for.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to create the logging configuration for.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl CreateLoggingConfigurationInputBuilder {
     }
     /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_arn = input;
-        self
+        self.log_group_arn = input; self
     }
     /// <p>The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this API.</p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl CreateLoggingConfigurationInputBuilder {
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLoggingConfigurationInput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_logging_configuration::CreateLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_logging_configuration::CreateLoggingConfigurationInput {
-            workspace_id: self.workspace_id,
-            log_group_arn: self.log_group_arn,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_logging_configuration::CreateLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_logging_configuration::CreateLoggingConfigurationInput {
+                workspace_id: self.workspace_id
+                ,
+                log_group_arn: self.log_group_arn
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

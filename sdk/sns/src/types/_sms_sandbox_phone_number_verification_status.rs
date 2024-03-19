@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let smssandboxphonenumberverificationstatus = unimplemented!();
 /// match smssandboxphonenumberverificationstatus {
@@ -30,7 +30,7 @@
 /// Specifically, when `smssandboxphonenumberverificationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SmsSandboxPhoneNumberVerificationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -40,9 +40,7 @@
 /// 1. PENDING : The destination phone number is pending verification.
 /// 2. VERIFIED : The destination phone number is verified.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum SmsSandboxPhoneNumberVerificationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -50,61 +48,62 @@ pub enum SmsSandboxPhoneNumberVerificationStatus {
     Verified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for SmsSandboxPhoneNumberVerificationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Pending" => SmsSandboxPhoneNumberVerificationStatus::Pending,
-            "Verified" => SmsSandboxPhoneNumberVerificationStatus::Verified,
-            other => SmsSandboxPhoneNumberVerificationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "Pending" => SmsSandboxPhoneNumberVerificationStatus::Pending,
+"Verified" => SmsSandboxPhoneNumberVerificationStatus::Verified,
+other => SmsSandboxPhoneNumberVerificationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for SmsSandboxPhoneNumberVerificationStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(SmsSandboxPhoneNumberVerificationStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(SmsSandboxPhoneNumberVerificationStatus::from(s))
+                    }
+                }
 impl SmsSandboxPhoneNumberVerificationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SmsSandboxPhoneNumberVerificationStatus::Pending => "Pending",
-            SmsSandboxPhoneNumberVerificationStatus::Verified => "Verified",
-            SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Pending", "Verified"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SmsSandboxPhoneNumberVerificationStatus::Pending => "Pending",
+    SmsSandboxPhoneNumberVerificationStatus::Verified => "Verified",
+    SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Pending", "Verified"]
+                }
+            }
 impl ::std::convert::AsRef<str> for SmsSandboxPhoneNumberVerificationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl SmsSandboxPhoneNumberVerificationStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for SmsSandboxPhoneNumberVerificationStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            SmsSandboxPhoneNumberVerificationStatus::Pending => write!(f, "Pending"),
-            SmsSandboxPhoneNumberVerificationStatus::Verified => write!(f, "Verified"),
-            SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                SmsSandboxPhoneNumberVerificationStatus::Pending => write!(f, "Pending"),
+SmsSandboxPhoneNumberVerificationStatus::Verified => write!(f, "Verified"),
+SmsSandboxPhoneNumberVerificationStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

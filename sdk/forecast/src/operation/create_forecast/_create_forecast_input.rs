@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateForecastInput {
+pub struct CreateForecastInput  {
     /// <p>A name for the forecast.</p>
     pub forecast_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     pub predictor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
-    pub forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub forecast_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -28,7 +28,7 @@ pub struct CreateForecastInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
@@ -41,21 +41,22 @@ pub struct CreateForecastInput {
     /// </ul>
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
 }
-impl CreateForecastInput {
+impl  CreateForecastInput  {
     /// <p>A name for the forecast.</p>
-    pub fn forecast_name(&self) -> ::std::option::Option<&str> {
+    pub fn forecast_name(&self) -> ::std::option::Option<& str> {
         self.forecast_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    pub fn predictor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn predictor_arn(&self) -> ::std::option::Option<& str> {
         self.predictor_arn.as_deref()
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.forecast_types.is_none()`.
-    pub fn forecast_types(&self) -> &[::std::string::String] {
-        self.forecast_types.as_deref().unwrap_or_default()
+    pub fn forecast_types(&self) -> & [::std::string::String] {
+        self.forecast_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -75,10 +76,11 @@ impl CreateForecastInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -90,7 +92,7 @@ impl CreateForecastInput {
     /// <li>
     /// <p><code>Schema</code></p></li>
     /// </ul>
-    pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
+    pub fn time_series_selector(&self) -> ::std::option::Option<& crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
     }
 }
@@ -107,8 +109,8 @@ impl CreateForecastInput {
 pub struct CreateForecastInputBuilder {
     pub(crate) forecast_name: ::std::option::Option<::std::string::String>,
     pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) forecast_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) forecast_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
 }
 impl CreateForecastInputBuilder {
@@ -120,8 +122,7 @@ impl CreateForecastInputBuilder {
     }
     /// <p>A name for the forecast.</p>
     pub fn set_forecast_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.forecast_name = input;
-        self
+        self.forecast_name = input; self
     }
     /// <p>A name for the forecast.</p>
     pub fn get_forecast_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +136,7 @@ impl CreateForecastInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     pub fn set_predictor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.predictor_arn = input;
-        self
+        self.predictor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
     pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,19 +150,18 @@ impl CreateForecastInputBuilder {
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
     pub fn forecast_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.forecast_types.unwrap_or_default();
-        v.push(input.into());
-        self.forecast_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.forecast_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
-    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.forecast_types = input;
-        self
+    pub fn set_forecast_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.forecast_types = input; self
     }
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).</p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.</p>
-    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_forecast_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.forecast_types
     }
     /// Appends an item to `tags`.
@@ -189,9 +188,9 @@ impl CreateForecastInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -211,9 +210,8 @@ impl CreateForecastInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -233,7 +231,7 @@ impl CreateForecastInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
@@ -261,8 +259,7 @@ impl CreateForecastInputBuilder {
     /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
-        self.time_series_selector = input;
-        self
+        self.time_series_selector = input; self
     }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -278,15 +275,21 @@ impl CreateForecastInputBuilder {
         &self.time_series_selector
     }
     /// Consumes the builder and constructs a [`CreateForecastInput`](crate::operation::create_forecast::CreateForecastInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_forecast::CreateForecastInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_forecast::CreateForecastInput {
-            forecast_name: self.forecast_name,
-            predictor_arn: self.predictor_arn,
-            forecast_types: self.forecast_types,
-            tags: self.tags,
-            time_series_selector: self.time_series_selector,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_forecast::CreateForecastInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_forecast::CreateForecastInput {
+                forecast_name: self.forecast_name
+                ,
+                predictor_arn: self.predictor_arn
+                ,
+                forecast_types: self.forecast_types
+                ,
+                tags: self.tags
+                ,
+                time_series_selector: self.time_series_selector
+                ,
+            }
+        )
     }
 }
+

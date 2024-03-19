@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegenerateSecurityTokenInput {
+pub struct RegenerateSecurityTokenInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot ID.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
 }
-impl RegenerateSecurityTokenInput {
+impl  RegenerateSecurityTokenInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RegenerateSecurityTokenInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl RegenerateSecurityTokenInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The bot ID.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_id
     }
     /// Consumes the builder and constructs a [`RegenerateSecurityTokenInput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::regenerate_security_token::RegenerateSecurityTokenInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::regenerate_security_token::RegenerateSecurityTokenInput {
-            account_id: self.account_id,
-            bot_id: self.bot_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::regenerate_security_token::RegenerateSecurityTokenInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::regenerate_security_token::RegenerateSecurityTokenInput {
+                account_id: self.account_id
+                ,
+                bot_id: self.bot_id
+                ,
+            }
+        )
     }
 }
+

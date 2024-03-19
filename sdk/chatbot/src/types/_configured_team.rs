@@ -3,7 +3,7 @@
 /// A Microsoft Teams team that has been authorized with AWS Chatbot.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfiguredTeam {
+pub struct ConfiguredTeam  {
     /// The ID of the Microsoft Teams tenant.
     pub tenant_id: ::std::string::String,
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
@@ -11,19 +11,17 @@ pub struct ConfiguredTeam {
     /// The name of the Microsoft Teams Team.
     pub team_name: ::std::option::Option<::std::string::String>,
 }
-impl ConfiguredTeam {
+impl  ConfiguredTeam  {
     /// The ID of the Microsoft Teams tenant.
-    pub fn tenant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tenant_id.deref()
+    pub fn tenant_id(&self) -> & str {
+        use std::ops::Deref; self.tenant_id.deref()
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
-    pub fn team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.team_id.deref()
+    pub fn team_id(&self) -> & str {
+        use std::ops::Deref; self.team_id.deref()
     }
     /// The name of the Microsoft Teams Team.
-    pub fn team_name(&self) -> ::std::option::Option<&str> {
+    pub fn team_name(&self) -> ::std::option::Option<& str> {
         self.team_name.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl ConfiguredTeamBuilder {
     }
     /// The ID of the Microsoft Teams tenant.
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
     }
     /// The ID of the Microsoft Teams tenant.
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl ConfiguredTeamBuilder {
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// The ID of the Microsoft Team authorized with AWS Chatbot. To get the team ID, you must perform the initial authorization flow with Microsoft Teams in the AWS Chatbot console. Then you can copy and paste the team ID from the console. For more details, see steps 1-4 in Get started with Microsoft Teams in the AWS Chatbot Administrator Guide.
     pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl ConfiguredTeamBuilder {
     }
     /// The name of the Microsoft Teams Team.
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.team_name = input;
-        self
+        self.team_name = input; self
     }
     /// The name of the Microsoft Teams Team.
     pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl ConfiguredTeamBuilder {
     /// - [`tenant_id`](crate::types::builders::ConfiguredTeamBuilder::tenant_id)
     /// - [`team_id`](crate::types::builders::ConfiguredTeamBuilder::team_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTeam, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConfiguredTeam {
-            tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tenant_id",
-                    "tenant_id was not specified but it is required when building ConfiguredTeam",
-                )
-            })?,
-            team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "team_id",
-                    "team_id was not specified but it is required when building ConfiguredTeam",
-                )
-            })?,
-            team_name: self.team_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConfiguredTeam {
+                tenant_id: self.tenant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tenant_id", "tenant_id was not specified but it is required when building ConfiguredTeam")
+                    )?
+                ,
+                team_id: self.team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("team_id", "team_id was not specified but it is required when building ConfiguredTeam")
+                    )?
+                ,
+                team_name: self.team_name
+                ,
+            }
+        )
     }
 }
+

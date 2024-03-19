@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUsageLimitsOutput {
+pub struct DescribeUsageLimitsOutput  {
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
-    pub usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
+    pub usage_limits: ::std::option::Option<::std::vec::Vec::<crate::types::UsageLimit>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeUsageLimitsOutput {
+impl  DescribeUsageLimitsOutput  {
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_limits.is_none()`.
-    pub fn usage_limits(&self) -> &[crate::types::UsageLimit] {
-        self.usage_limits.as_deref().unwrap_or_default()
+    pub fn usage_limits(&self) -> & [crate::types::UsageLimit] {
+        self.usage_limits.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeUsageLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeUsageLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUsageLimitsOutput`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput).
     pub fn builder() -> crate::operation::describe_usage_limits::builders::DescribeUsageLimitsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeUsageLimitsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeUsageLimitsOutputBuilder {
-    pub(crate) usage_limits: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>,
+    pub(crate) usage_limits: ::std::option::Option<::std::vec::Vec::<crate::types::UsageLimit>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeUsageLimitsOutputBuilder {
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
     pub fn usage_limits(mut self, input: crate::types::UsageLimit) -> Self {
         let mut v = self.usage_limits.unwrap_or_default();
-        v.push(input);
-        self.usage_limits = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.usage_limits = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
-    pub fn set_usage_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>>) -> Self {
-        self.usage_limits = input;
-        self
+    pub fn set_usage_limits(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageLimit>>) -> Self {
+        self.usage_limits = input; self
     }
     /// <p>Contains the output from the <code>DescribeUsageLimits</code> action.</p>
-    pub fn get_usage_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageLimit>> {
+    pub fn get_usage_limits(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageLimit>> {
         &self.usage_limits
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
@@ -69,28 +69,30 @@ impl DescribeUsageLimitsOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeUsageLimitsOutput`](crate::operation::describe_usage_limits::DescribeUsageLimitsOutput).
     pub fn build(self) -> crate::operation::describe_usage_limits::DescribeUsageLimitsOutput {
         crate::operation::describe_usage_limits::DescribeUsageLimitsOutput {
-            usage_limits: self.usage_limits,
-            marker: self.marker,
+            usage_limits: self.usage_limits
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

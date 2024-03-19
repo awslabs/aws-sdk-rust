@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestSetDiscrepancyReportOutput {
+pub struct DescribeTestSetDiscrepancyReportOutput  {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
     /// <p>The test set Id for the test set discrepancy report.</p>
@@ -20,54 +20,55 @@ pub struct DescribeTestSetDiscrepancyReportOutput {
     /// <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
     pub test_set_discrepancy_raw_output_url: ::std::option::Option<::std::string::String>,
     /// <p>The failure report for the test set discrepancy report generation action.</p>
-    pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeTestSetDiscrepancyReportOutput {
+impl  DescribeTestSetDiscrepancyReportOutput  {
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
-    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<& str> {
         self.test_set_discrepancy_report_id.as_deref()
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
-    pub fn test_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_id(&self) -> ::std::option::Option<& str> {
         self.test_set_id.as_deref()
     }
     /// <p>The time and date of creation for the test set discrepancy report.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The target bot location for the test set discrepancy report.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportResourceTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::TestSetDiscrepancyReportResourceTarget> {
         self.target.as_ref()
     }
     /// <p>The status for the test set discrepancy report.</p>
-    pub fn test_set_discrepancy_report_status(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyReportStatus> {
+    pub fn test_set_discrepancy_report_status(&self) -> ::std::option::Option<& crate::types::TestSetDiscrepancyReportStatus> {
         self.test_set_discrepancy_report_status.as_ref()
     }
     /// <p>The date and time of the last update for the test set discrepancy report.</p>
-    pub fn last_updated_data_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_data_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_data_time.as_ref()
     }
     /// <p>The top 200 error results from the test set discrepancy report.</p>
-    pub fn test_set_discrepancy_top_errors(&self) -> ::std::option::Option<&crate::types::TestSetDiscrepancyErrors> {
+    pub fn test_set_discrepancy_top_errors(&self) -> ::std::option::Option<& crate::types::TestSetDiscrepancyErrors> {
         self.test_set_discrepancy_top_errors.as_ref()
     }
     /// <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
-    pub fn test_set_discrepancy_raw_output_url(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_discrepancy_raw_output_url(&self) -> ::std::option::Option<& str> {
         self.test_set_discrepancy_raw_output_url.as_deref()
     }
     /// <p>The failure report for the test set discrepancy report generation action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
-    pub fn failure_reasons(&self) -> &[::std::string::String] {
-        self.failure_reasons.as_deref().unwrap_or_default()
+    pub fn failure_reasons(&self) -> & [::std::string::String] {
+        self.failure_reasons.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTestSetDiscrepancyReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTestSetDiscrepancyReportOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTestSetDiscrepancyReportOutput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput).
     pub fn builder() -> crate::operation::describe_test_set_discrepancy_report::builders::DescribeTestSetDiscrepancyReportOutputBuilder {
@@ -87,7 +88,7 @@ pub struct DescribeTestSetDiscrepancyReportOutputBuilder {
     pub(crate) last_updated_data_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) test_set_discrepancy_top_errors: ::std::option::Option<crate::types::TestSetDiscrepancyErrors>,
     pub(crate) test_set_discrepancy_raw_output_url: ::std::option::Option<::std::string::String>,
-    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeTestSetDiscrepancyReportOutputBuilder {
@@ -98,8 +99,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub fn set_test_set_discrepancy_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_discrepancy_report_id = input;
-        self
+        self.test_set_discrepancy_report_id = input; self
     }
     /// <p>The unique identifier of the test set discrepancy report to describe.</p>
     pub fn get_test_set_discrepancy_report_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +112,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_id = input;
-        self
+        self.test_set_id = input; self
     }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The time and date of creation for the test set discrepancy report.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The time and date of creation for the test set discrepancy report.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -140,8 +138,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The target bot location for the test set discrepancy report.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target bot location for the test set discrepancy report.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
@@ -154,8 +151,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The status for the test set discrepancy report.</p>
     pub fn set_test_set_discrepancy_report_status(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyReportStatus>) -> Self {
-        self.test_set_discrepancy_report_status = input;
-        self
+        self.test_set_discrepancy_report_status = input; self
     }
     /// <p>The status for the test set discrepancy report.</p>
     pub fn get_test_set_discrepancy_report_status(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportStatus> {
@@ -168,8 +164,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The date and time of the last update for the test set discrepancy report.</p>
     pub fn set_last_updated_data_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_data_time = input;
-        self
+        self.last_updated_data_time = input; self
     }
     /// <p>The date and time of the last update for the test set discrepancy report.</p>
     pub fn get_last_updated_data_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +177,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>The top 200 error results from the test set discrepancy report.</p>
     pub fn set_test_set_discrepancy_top_errors(mut self, input: ::std::option::Option<crate::types::TestSetDiscrepancyErrors>) -> Self {
-        self.test_set_discrepancy_top_errors = input;
-        self
+        self.test_set_discrepancy_top_errors = input; self
     }
     /// <p>The top 200 error results from the test set discrepancy report.</p>
     pub fn get_test_set_discrepancy_top_errors(&self) -> &::std::option::Option<crate::types::TestSetDiscrepancyErrors> {
@@ -196,8 +190,7 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     }
     /// <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
     pub fn set_test_set_discrepancy_raw_output_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_discrepancy_raw_output_url = input;
-        self
+        self.test_set_discrepancy_raw_output_url = input; self
     }
     /// <p>Pre-signed Amazon S3 URL to download the test set discrepancy report.</p>
     pub fn get_test_set_discrepancy_raw_output_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,41 +203,50 @@ impl DescribeTestSetDiscrepancyReportOutputBuilder {
     /// <p>The failure report for the test set discrepancy report generation action.</p>
     pub fn failure_reasons(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-        v.push(input.into());
-        self.failure_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.failure_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The failure report for the test set discrepancy report generation action.</p>
-    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.failure_reasons = input;
-        self
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.failure_reasons = input; self
     }
     /// <p>The failure report for the test set discrepancy report generation action.</p>
-    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.failure_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTestSetDiscrepancyReportOutput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput).
     pub fn build(self) -> crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput {
         crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportOutput {
-            test_set_discrepancy_report_id: self.test_set_discrepancy_report_id,
-            test_set_id: self.test_set_id,
-            creation_date_time: self.creation_date_time,
-            target: self.target,
-            test_set_discrepancy_report_status: self.test_set_discrepancy_report_status,
-            last_updated_data_time: self.last_updated_data_time,
-            test_set_discrepancy_top_errors: self.test_set_discrepancy_top_errors,
-            test_set_discrepancy_raw_output_url: self.test_set_discrepancy_raw_output_url,
-            failure_reasons: self.failure_reasons,
+            test_set_discrepancy_report_id: self.test_set_discrepancy_report_id
+            ,
+            test_set_id: self.test_set_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            target: self.target
+            ,
+            test_set_discrepancy_report_status: self.test_set_discrepancy_report_status
+            ,
+            last_updated_data_time: self.last_updated_data_time
+            ,
+            test_set_discrepancy_top_errors: self.test_set_discrepancy_top_errors
+            ,
+            test_set_discrepancy_raw_output_url: self.test_set_discrepancy_raw_output_url
+            ,
+            failure_reasons: self.failure_reasons
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

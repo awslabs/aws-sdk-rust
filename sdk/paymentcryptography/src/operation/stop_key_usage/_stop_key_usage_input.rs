@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopKeyUsageInput {
+pub struct StopKeyUsageInput  {
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
 }
-impl StopKeyUsageInput {
+impl  StopKeyUsageInput  {
     /// <p>The <code>KeyArn</code> of the key.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl StopKeyUsageInputBuilder {
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>KeyArn</code> of the key.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_key_usage::StopKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_key_usage::StopKeyUsageInput {
-            key_identifier: self.key_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_key_usage::StopKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_key_usage::StopKeyUsageInput {
+                key_identifier: self.key_identifier
+                ,
+            }
+        )
     }
 }
+

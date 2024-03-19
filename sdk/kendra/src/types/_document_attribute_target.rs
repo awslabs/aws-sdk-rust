@@ -6,7 +6,7 @@
 /// <p>You can also use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeCondition.html">DocumentAttributeCondition</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeTarget {
+pub struct DocumentAttributeTarget  {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub target_document_attribute_key: ::std::option::Option<::std::string::String>,
@@ -16,10 +16,10 @@ pub struct DocumentAttributeTarget {
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
     pub target_document_attribute_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
-impl DocumentAttributeTarget {
+impl  DocumentAttributeTarget  {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
-    pub fn target_document_attribute_key(&self) -> ::std::option::Option<&str> {
+    pub fn target_document_attribute_key(&self) -> ::std::option::Option<& str> {
         self.target_document_attribute_key.as_deref()
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
@@ -28,7 +28,7 @@ impl DocumentAttributeTarget {
     }
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
-    pub fn target_document_attribute_value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn target_document_attribute_value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.target_document_attribute_value.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl DocumentAttributeTargetBuilder {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
     pub fn set_target_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_document_attribute_key = input;
-        self
+        self.target_document_attribute_key = input; self
     }
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
@@ -72,8 +71,7 @@ impl DocumentAttributeTargetBuilder {
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn set_target_document_attribute_value_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.target_document_attribute_value_deletion = input;
-        self
+        self.target_document_attribute_value_deletion = input; self
     }
     /// <p><code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn get_target_document_attribute_value_deletion(&self) -> &::std::option::Option<bool> {
@@ -88,8 +86,7 @@ impl DocumentAttributeTargetBuilder {
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
     pub fn set_target_document_attribute_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.target_document_attribute_value = input;
-        self
+        self.target_document_attribute_value = input; self
     }
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
@@ -99,9 +96,14 @@ impl DocumentAttributeTargetBuilder {
     /// Consumes the builder and constructs a [`DocumentAttributeTarget`](crate::types::DocumentAttributeTarget).
     pub fn build(self) -> crate::types::DocumentAttributeTarget {
         crate::types::DocumentAttributeTarget {
-            target_document_attribute_key: self.target_document_attribute_key,
-            target_document_attribute_value_deletion: self.target_document_attribute_value_deletion.unwrap_or_default(),
-            target_document_attribute_value: self.target_document_attribute_value,
+            target_document_attribute_key: self.target_document_attribute_key
+            ,
+            target_document_attribute_value_deletion: self.target_document_attribute_value_deletion
+                .unwrap_or_default()
+            ,
+            target_document_attribute_value: self.target_document_attribute_value
+            ,
         }
     }
 }
+

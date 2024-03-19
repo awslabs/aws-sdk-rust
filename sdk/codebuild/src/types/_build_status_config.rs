@@ -3,7 +3,7 @@
 /// <p>Contains information that defines how the CodeBuild build project reports the build status to the source provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildStatusConfig {
+pub struct BuildStatusConfig  {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
     /// <dt>
@@ -37,7 +37,7 @@ pub struct BuildStatusConfig {
     /// </dl>
     pub target_url: ::std::option::Option<::std::string::String>,
 }
-impl BuildStatusConfig {
+impl  BuildStatusConfig  {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
     /// <dt>
@@ -53,7 +53,7 @@ impl BuildStatusConfig {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn context(&self) -> ::std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<& str> {
         self.context.as_deref()
     }
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -71,7 +71,7 @@ impl BuildStatusConfig {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn target_url(&self) -> ::std::option::Option<&str> {
+    pub fn target_url(&self) -> ::std::option::Option<& str> {
         self.target_url.as_deref()
     }
 }
@@ -125,8 +125,7 @@ impl BuildStatusConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -181,8 +180,7 @@ impl BuildStatusConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn set_target_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_url = input;
-        self
+        self.target_url = input; self
     }
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -205,8 +203,11 @@ impl BuildStatusConfigBuilder {
     /// Consumes the builder and constructs a [`BuildStatusConfig`](crate::types::BuildStatusConfig).
     pub fn build(self) -> crate::types::BuildStatusConfig {
         crate::types::BuildStatusConfig {
-            context: self.context,
-            target_url: self.target_url,
+            context: self.context
+            ,
+            target_url: self.target_url
+            ,
         }
     }
 }
+

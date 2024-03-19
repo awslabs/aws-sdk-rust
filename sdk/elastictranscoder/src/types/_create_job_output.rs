@@ -3,7 +3,7 @@
 /// <p>The <code>CreateJobOutput</code> structure.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// <p>The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
@@ -35,12 +35,12 @@ pub struct CreateJobOutput {
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
     pub segment_duration: ::std::option::Option<::std::string::String>,
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub watermarks: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
+    pub watermarks: ::std::option::Option<::std::vec::Vec::<crate::types::JobWatermark>>,
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
     pub album_art: ::std::option::Option<crate::types::JobAlbumArt>,
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    pub composition: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
+    pub composition: ::std::option::Option<::std::vec::Vec::<crate::types::Clip>>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
     /// <li>
@@ -62,9 +62,9 @@ pub struct CreateJobOutput {
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
-impl CreateJobOutput {
+impl  CreateJobOutput  {
     /// <p>The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
@@ -81,19 +81,19 @@ impl CreateJobOutput {
     /// <p><b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code> object.</p></li>
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
-    pub fn thumbnail_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn thumbnail_pattern(&self) -> ::std::option::Option<& str> {
         self.thumbnail_pattern.as_deref()
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
-    pub fn thumbnail_encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn thumbnail_encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.thumbnail_encryption.as_ref()
     }
     /// <p>The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following values: <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code> generally works only if the file that you're transcoding contains rotation metadata.</p>
-    pub fn rotate(&self) -> ::std::option::Option<&str> {
+    pub fn rotate(&self) -> ::std::option::Option<& str> {
         self.rotate.as_deref()
     }
     /// <p>The <code>Id</code> of the preset to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses for transcoding.</p>
-    pub fn preset_id(&self) -> ::std::option::Option<&str> {
+    pub fn preset_id(&self) -> ::std::option::Option<& str> {
         self.preset_id.as_deref()
     }
     /// <important>
@@ -102,25 +102,27 @@ impl CreateJobOutput {
     /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code> is the target maximum duration of each segment in seconds. For <code>HLSv3</code> format playlists, each media segment is stored in a separate <code>.ts</code> file. For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an output are stored in a single file. Each segment is approximately the length of the <code>SegmentDuration</code>, though individual segments might be shorter or longer.</p>
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
-    pub fn segment_duration(&self) -> ::std::option::Option<&str> {
+    pub fn segment_duration(&self) -> ::std::option::Option<& str> {
         self.segment_duration.as_deref()
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.watermarks.is_none()`.
-    pub fn watermarks(&self) -> &[crate::types::JobWatermark] {
-        self.watermarks.as_deref().unwrap_or_default()
+    pub fn watermarks(&self) -> & [crate::types::JobWatermark] {
+        self.watermarks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
-    pub fn album_art(&self) -> ::std::option::Option<&crate::types::JobAlbumArt> {
+    pub fn album_art(&self) -> ::std::option::Option<& crate::types::JobAlbumArt> {
         self.album_art.as_ref()
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composition.is_none()`.
     #[deprecated]
-    pub fn composition(&self) -> &[crate::types::Clip] {
-        self.composition.as_deref().unwrap_or_default()
+    pub fn composition(&self) -> & [crate::types::Clip] {
+        self.composition.as_deref()
+        .unwrap_or_default()
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -139,11 +141,11 @@ impl CreateJobOutput {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    pub fn captions(&self) -> ::std::option::Option<&crate::types::Captions> {
+    pub fn captions(&self) -> ::std::option::Option<& crate::types::Captions> {
         self.captions.as_ref()
     }
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
 }
@@ -164,9 +166,9 @@ pub struct CreateJobOutputBuilder {
     pub(crate) rotate: ::std::option::Option<::std::string::String>,
     pub(crate) preset_id: ::std::option::Option<::std::string::String>,
     pub(crate) segment_duration: ::std::option::Option<::std::string::String>,
-    pub(crate) watermarks: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>,
+    pub(crate) watermarks: ::std::option::Option<::std::vec::Vec::<crate::types::JobWatermark>>,
     pub(crate) album_art: ::std::option::Option<crate::types::JobAlbumArt>,
-    pub(crate) composition: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>,
+    pub(crate) composition: ::std::option::Option<::std::vec::Vec::<crate::types::Clip>>,
     pub(crate) captions: ::std::option::Option<crate::types::Captions>,
     pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
 }
@@ -178,8 +180,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +219,7 @@ impl CreateJobOutputBuilder {
     /// </ul>
     /// <p>When creating thumbnails, Elastic Transcoder automatically saves the files in the format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable file name extension.</p>
     pub fn set_thumbnail_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thumbnail_pattern = input;
-        self
+        self.thumbnail_pattern = input; self
     }
     /// <p>Whether you want Elastic Transcoder to create thumbnails for your videos and, if so, how you want Elastic Transcoder to name the files.</p>
     /// <p>If you don't want Elastic Transcoder to create thumbnails, specify "".</p>
@@ -245,8 +245,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
     pub fn set_thumbnail_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.thumbnail_encryption = input;
-        self
+        self.thumbnail_encryption = input; self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your thumbnail.</p>
     pub fn get_thumbnail_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -259,8 +258,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following values: <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code> generally works only if the file that you're transcoding contains rotation metadata.</p>
     pub fn set_rotate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotate = input;
-        self
+        self.rotate = input; self
     }
     /// <p>The number of degrees clockwise by which you want Elastic Transcoder to rotate the output relative to the input. Enter one of the following values: <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>. The value <code>auto</code> generally works only if the file that you're transcoding contains rotation metadata.</p>
     pub fn get_rotate(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +271,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>The <code>Id</code> of the preset to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses for transcoding.</p>
     pub fn set_preset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preset_id = input;
-        self
+        self.preset_id = input; self
     }
     /// <p>The <code>Id</code> of the preset to use for this job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder uses for transcoding.</p>
     pub fn get_preset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -297,8 +294,7 @@ impl CreateJobOutputBuilder {
     /// <p>The range of valid values is 1 to 60 seconds. If the duration of the video is not evenly divisible by <code>SegmentDuration</code>, the duration of the last segment is the remainder of total length/SegmentDuration.</p>
     /// <p>Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code> output that you specify in OutputKeys. To add an output to the master playlist for this job, include it in the <code>OutputKeys</code> of the associated playlist.</p>
     pub fn set_segment_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_duration = input;
-        self
+        self.segment_duration = input; self
     }
     /// <important>
     /// <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -316,17 +312,16 @@ impl CreateJobOutputBuilder {
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
     pub fn watermarks(mut self, input: crate::types::JobWatermark) -> Self {
         let mut v = self.watermarks.unwrap_or_default();
-        v.push(input);
-        self.watermarks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.watermarks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub fn set_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>>) -> Self {
-        self.watermarks = input;
-        self
+    pub fn set_watermarks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobWatermark>>) -> Self {
+        self.watermarks = input; self
     }
     /// <p>Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four watermarks for each output. Settings for each watermark must be defined in the preset for the current output.</p>
-    pub fn get_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobWatermark>> {
+    pub fn get_watermarks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobWatermark>> {
         &self.watermarks
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
@@ -336,8 +331,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
     pub fn set_album_art(mut self, input: ::std::option::Option<crate::types::JobAlbumArt>) -> Self {
-        self.album_art = input;
-        self
+        self.album_art = input; self
     }
     /// <p>Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album artworks for each output. Settings for each artwork must be defined in the job for the current output.</p>
     pub fn get_album_art(&self) -> &::std::option::Option<crate::types::JobAlbumArt> {
@@ -351,19 +345,18 @@ impl CreateJobOutputBuilder {
     #[deprecated]
     pub fn composition(mut self, input: crate::types::Clip) -> Self {
         let mut v = self.composition.unwrap_or_default();
-        v.push(input);
-        self.composition = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.composition = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    pub fn set_composition(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Clip>>) -> Self {
-        self.composition = input;
-        self
+    pub fn set_composition(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Clip>>) -> Self {
+        self.composition = input; self
     }
     /// <p>You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning, middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you can only specify settings for a single clip per output file. The Composition object cannot be null.</p>
     #[deprecated]
-    pub fn get_composition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Clip>> {
+    pub fn get_composition(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Clip>> {
         &self.composition
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
@@ -405,8 +398,7 @@ impl CreateJobOutputBuilder {
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
     pub fn set_captions(mut self, input: ::std::option::Option<crate::types::Captions>) -> Self {
-        self.captions = input;
-        self
+        self.captions = input; self
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
@@ -435,8 +427,7 @@ impl CreateJobOutputBuilder {
     }
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -445,17 +436,29 @@ impl CreateJobOutputBuilder {
     /// Consumes the builder and constructs a [`CreateJobOutput`](crate::types::CreateJobOutput).
     pub fn build(self) -> crate::types::CreateJobOutput {
         crate::types::CreateJobOutput {
-            key: self.key,
-            thumbnail_pattern: self.thumbnail_pattern,
-            thumbnail_encryption: self.thumbnail_encryption,
-            rotate: self.rotate,
-            preset_id: self.preset_id,
-            segment_duration: self.segment_duration,
-            watermarks: self.watermarks,
-            album_art: self.album_art,
-            composition: self.composition,
-            captions: self.captions,
-            encryption: self.encryption,
+            key: self.key
+            ,
+            thumbnail_pattern: self.thumbnail_pattern
+            ,
+            thumbnail_encryption: self.thumbnail_encryption
+            ,
+            rotate: self.rotate
+            ,
+            preset_id: self.preset_id
+            ,
+            segment_duration: self.segment_duration
+            ,
+            watermarks: self.watermarks
+            ,
+            album_art: self.album_art
+            ,
+            composition: self.composition
+            ,
+            captions: self.captions
+            ,
+            encryption: self.encryption
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConfigurationPolicyOutput {
+pub struct CreateConfigurationPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
@@ -19,41 +19,41 @@ pub struct CreateConfigurationPolicyOutput {
     pub configuration_policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
-impl CreateConfigurationPolicyOutput {
+impl  CreateConfigurationPolicyOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the configuration policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If the request included a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If the request included a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
-    pub fn configuration_policy(&self) -> ::std::option::Option<&crate::types::Policy> {
+    pub fn configuration_policy(&self) -> ::std::option::Option<& crate::types::Policy> {
         self.configuration_policy.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateConfigurationPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateConfigurationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationPolicyOutput`](crate::operation::create_configuration_policy::CreateConfigurationPolicyOutput).
     pub fn builder() -> crate::operation::create_configuration_policy::builders::CreateConfigurationPolicyOutputBuilder {
@@ -82,8 +82,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration policy.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The name of the configuration policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The description of the configuration policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the configuration policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -152,8 +147,7 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -166,33 +160,40 @@ impl CreateConfigurationPolicyOutputBuilder {
     }
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If the request included a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If the request included a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
     pub fn set_configuration_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
-        self.configuration_policy = input;
-        self
+        self.configuration_policy = input; self
     }
     /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If the request included a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If the request included a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
     pub fn get_configuration_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         &self.configuration_policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateConfigurationPolicyOutput`](crate::operation::create_configuration_policy::CreateConfigurationPolicyOutput).
     pub fn build(self) -> crate::operation::create_configuration_policy::CreateConfigurationPolicyOutput {
         crate::operation::create_configuration_policy::CreateConfigurationPolicyOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            updated_at: self.updated_at,
-            created_at: self.created_at,
-            configuration_policy: self.configuration_policy,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            updated_at: self.updated_at
+            ,
+            created_at: self.created_at
+            ,
+            configuration_policy: self.configuration_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

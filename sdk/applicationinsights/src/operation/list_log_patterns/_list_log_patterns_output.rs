@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLogPatternsOutput {
+pub struct ListLogPatternsOutput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID for the resource group owner.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of log patterns.</p>
-    pub log_patterns: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>,
+    pub log_patterns: ::std::option::Option<::std::vec::Vec::<crate::types::LogPattern>>,
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLogPatternsOutput {
+impl  ListLogPatternsOutput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The AWS account ID for the resource group owner.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The list of log patterns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_patterns.is_none()`.
-    pub fn log_patterns(&self) -> &[crate::types::LogPattern] {
-        self.log_patterns.as_deref().unwrap_or_default()
+    pub fn log_patterns(&self) -> & [crate::types::LogPattern] {
+        self.log_patterns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLogPatternsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLogPatternsOutput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternsOutput`](crate::operation::list_log_patterns::ListLogPatternsOutput).
     pub fn builder() -> crate::operation::list_log_patterns::builders::ListLogPatternsOutputBuilder {
@@ -51,7 +52,7 @@ impl ListLogPatternsOutput {
 pub struct ListLogPatternsOutputBuilder {
     pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) log_patterns: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>,
+    pub(crate) log_patterns: ::std::option::Option<::std::vec::Vec::<crate::types::LogPattern>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,8 +64,7 @@ impl ListLogPatternsOutputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl ListLogPatternsOutputBuilder {
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The AWS account ID for the resource group owner.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,17 +90,16 @@ impl ListLogPatternsOutputBuilder {
     /// <p>The list of log patterns.</p>
     pub fn log_patterns(mut self, input: crate::types::LogPattern) -> Self {
         let mut v = self.log_patterns.unwrap_or_default();
-        v.push(input);
-        self.log_patterns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_patterns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of log patterns.</p>
-    pub fn set_log_patterns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogPattern>>) -> Self {
-        self.log_patterns = input;
-        self
+    pub fn set_log_patterns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LogPattern>>) -> Self {
+        self.log_patterns = input; self
     }
     /// <p>The list of log patterns.</p>
-    pub fn get_log_patterns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogPattern>> {
+    pub fn get_log_patterns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LogPattern>> {
         &self.log_patterns
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -111,30 +109,34 @@ impl ListLogPatternsOutputBuilder {
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLogPatternsOutput`](crate::operation::list_log_patterns::ListLogPatternsOutput).
     pub fn build(self) -> crate::operation::list_log_patterns::ListLogPatternsOutput {
         crate::operation::list_log_patterns::ListLogPatternsOutput {
-            resource_group_name: self.resource_group_name,
-            account_id: self.account_id,
-            log_patterns: self.log_patterns,
-            next_token: self.next_token,
+            resource_group_name: self.resource_group_name
+            ,
+            account_id: self.account_id
+            ,
+            log_patterns: self.log_patterns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

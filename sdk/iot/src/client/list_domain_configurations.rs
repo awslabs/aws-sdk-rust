@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomainConfigurations`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`service_type(ServiceType)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::service_type) / [`set_service_type(Option<ServiceType>)`](crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::set_service_type):<br>required: **false**<br><p>The type of service delivered by the endpoint.</p><br>
-    /// - On success, responds with [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListDomainConfigurationsOutput`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput) with field(s):
     ///   - [`domain_configurations(Option<Vec::<DomainConfigurationSummary>>)`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput::domain_configurations): <p>A list of objects that contain summary information about the user's domain configurations.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_domain_configurations::ListDomainConfigurationsOutput::next_marker): <p>The marker for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDomainConfigurationsError>`](crate::operation::list_domain_configurations::ListDomainConfigurationsError)
+                            /// - On failure, responds with [`SdkError<ListDomainConfigurationsError>`](crate::operation::list_domain_configurations::ListDomainConfigurationsError)
     pub fn list_domain_configurations(&self) -> crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder {
-        crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domain_configurations::builders::ListDomainConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

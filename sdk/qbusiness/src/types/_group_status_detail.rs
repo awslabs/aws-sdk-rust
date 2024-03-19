@@ -3,7 +3,7 @@
 /// <p>Provides the details of a group's status.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupStatusDetail {
+pub struct GroupStatusDetail  {
     /// <p>The status of a group.</p>
     pub status: ::std::option::Option<crate::types::GroupStatus>,
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
@@ -11,17 +11,17 @@ pub struct GroupStatusDetail {
     /// <p>The details of an error associated a group status.</p>
     pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
-impl GroupStatusDetail {
+impl  GroupStatusDetail  {
     /// <p>The status of a group.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GroupStatus> {
         self.status.as_ref()
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The details of an error associated a group status.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> ::std::option::Option<& crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl GroupStatusDetailBuilder {
     }
     /// <p>The status of a group.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a group.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupStatus> {
@@ -62,8 +61,7 @@ impl GroupStatusDetailBuilder {
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The Unix timestamp when the Amazon Q application was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl GroupStatusDetailBuilder {
     }
     /// <p>The details of an error associated a group status.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error_detail = input;
-        self
+        self.error_detail = input; self
     }
     /// <p>The details of an error associated a group status.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
@@ -86,9 +83,13 @@ impl GroupStatusDetailBuilder {
     /// Consumes the builder and constructs a [`GroupStatusDetail`](crate::types::GroupStatusDetail).
     pub fn build(self) -> crate::types::GroupStatusDetail {
         crate::types::GroupStatusDetail {
-            status: self.status,
-            last_updated_at: self.last_updated_at,
-            error_detail: self.error_detail,
+            status: self.status
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

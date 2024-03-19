@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>DisableStageTransition</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableStageTransitionInput {
+pub struct DisableStageTransitionInput  {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
@@ -13,21 +13,21 @@ pub struct DisableStageTransitionInput {
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl DisableStageTransitionInput {
+impl  DisableStageTransitionInput  {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
-    pub fn stage_name(&self) -> ::std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
-    pub fn transition_type(&self) -> ::std::option::Option<&crate::types::StageTransitionType> {
+    pub fn transition_type(&self) -> ::std::option::Option<& crate::types::StageTransitionType> {
         self.transition_type.as_ref()
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl DisableStageTransitionInputBuilder {
     }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl DisableStageTransitionInputBuilder {
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl DisableStageTransitionInputBuilder {
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn set_transition_type(mut self, input: ::std::option::Option<crate::types::StageTransitionType>) -> Self {
-        self.transition_type = input;
-        self
+        self.transition_type = input; self
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
@@ -101,25 +98,26 @@ impl DisableStageTransitionInputBuilder {
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`DisableStageTransitionInput`](crate::operation::disable_stage_transition::DisableStageTransitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_stage_transition::DisableStageTransitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_stage_transition::DisableStageTransitionInput {
-            pipeline_name: self.pipeline_name,
-            stage_name: self.stage_name,
-            transition_type: self.transition_type,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_stage_transition::DisableStageTransitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_stage_transition::DisableStageTransitionInput {
+                pipeline_name: self.pipeline_name
+                ,
+                stage_name: self.stage_name
+                ,
+                transition_type: self.transition_type
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

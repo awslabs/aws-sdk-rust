@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBasePathMappings`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::set_domain_name):<br>required: **true**<br><p>The domain name of a BasePathMapping resource.</p><br>
     ///   - [`position(impl Into<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
-    /// - On success, responds with [`GetBasePathMappingsOutput`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput) with field(s):
+                            /// - On success, responds with [`GetBasePathMappingsOutput`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput) with field(s):
     ///   - [`items(Option<Vec::<BasePathMapping>>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_base_path_mappings::GetBasePathMappingsOutput::position): <p>The current pagination position in the paged result set.</p>
-    /// - On failure, responds with [`SdkError<GetBasePathMappingsError>`](crate::operation::get_base_path_mappings::GetBasePathMappingsError)
+                            /// - On failure, responds with [`SdkError<GetBasePathMappingsError>`](crate::operation::get_base_path_mappings::GetBasePathMappingsError)
     pub fn get_base_path_mappings(&self) -> crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder {
-        crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_base_path_mappings::builders::GetBasePathMappingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_clust
 
 impl ModifyDbClusterSnapshotAttributeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.modify_db_cluster_snapshot_attribute();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.modify_db_cluster_snapshot_attribute();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ModifyDBClusterSnapshotAttribute`.
-///
+/// 
 /// <p>Adds an attribute and values to, or removes an attribute and values from, a manual cluster snapshot.</p>
 /// <p>To share a manual cluster snapshot with other Amazon Web Services accounts, specify <code>restore</code> as the <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the Amazon Web Services accounts that are authorized to restore the manual cluster snapshot. Use the value <code>all</code> to make the manual cluster snapshot public, which means that it can be copied or restored by all Amazon Web Services accounts. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want available to all Amazon Web Services accounts. If a manual cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized Amazon Web Services account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in this case.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBClusterSnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeInputBuilder,
+                    inner: crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
-    > for ModifyDBClusterSnapshotAttributeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
-            crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
+                    crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
+                > for ModifyDBClusterSnapshotAttributeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
+                        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ModifyDBClusterSnapshotAttributeFluentBuilder {
     /// Creates a new `ModifyDBClusterSnapshotAttribute`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ModifyDBClusterSnapshotAttributeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttribute::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttribute::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput,
-        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttribute::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttribute::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput, crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier for the cluster snapshot to modify the attributes for.</p>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
@@ -152,13 +139,13 @@ impl ModifyDBClusterSnapshotAttributeFluentBuilder {
     }
     /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
-    pub fn set_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_values_to_add(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values_to_add(input);
         self
     }
     /// <p>A list of cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account IDs. To make the manual cluster snapshot restorable by any Amazon Web Services account, set it to <code>all</code>. Do not add the <code>all</code> value for any manual cluster snapshots that contain private information that you don't want to be available to all Amazon Web Services accounts.</p>
-    pub fn get_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values_to_add(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_values_to_add()
     }
     /// Appends an item to `ValuesToRemove`.
@@ -173,13 +160,14 @@ impl ModifyDBClusterSnapshotAttributeFluentBuilder {
     }
     /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
-    pub fn set_values_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_values_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_values_to_remove(input);
         self
     }
     /// <p>A list of cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
     /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual cluster snapshot, set this list to include one or more Amazon Web Services account identifiers. To remove authorization for any Amazon Web Services account to copy or restore the cluster snapshot, set it to <code>all</code> . If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual cluster snapshot.</p>
-    pub fn get_values_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values_to_remove(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_values_to_remove()
     }
 }
+

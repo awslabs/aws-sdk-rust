@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response to a <code>TestDNSAnswer</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestDnsAnswerOutput {
+pub struct TestDnsAnswerOutput  {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     pub nameserver: ::std::string::String,
     /// <p>The name of the resource record set that you submitted a request for.</p>
@@ -11,49 +11,44 @@ pub struct TestDnsAnswerOutput {
     /// <p>The type of the resource record set that you submitted a request for.</p>
     pub record_type: crate::types::RrType,
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub record_data: ::std::vec::Vec<::std::string::String>,
+    pub record_data: ::std::vec::Vec::<::std::string::String>,
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website.</p>
     pub response_code: ::std::string::String,
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>.</p>
     pub protocol: ::std::string::String,
     _request_id: Option<String>,
 }
-impl TestDnsAnswerOutput {
+impl  TestDnsAnswerOutput  {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-    pub fn nameserver(&self) -> &str {
-        use std::ops::Deref;
-        self.nameserver.deref()
+    pub fn nameserver(&self) -> & str {
+        use std::ops::Deref; self.nameserver.deref()
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
-    pub fn record_name(&self) -> &str {
-        use std::ops::Deref;
-        self.record_name.deref()
+    pub fn record_name(&self) -> & str {
+        use std::ops::Deref; self.record_name.deref()
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
-    pub fn record_type(&self) -> &crate::types::RrType {
+    pub fn record_type(&self) -> & crate::types::RrType {
         &self.record_type
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn record_data(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.record_data.deref()
+    pub fn record_data(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.record_data.deref()
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website.</p>
-    pub fn response_code(&self) -> &str {
-        use std::ops::Deref;
-        self.response_code.deref()
+    pub fn response_code(&self) -> & str {
+        use std::ops::Deref; self.response_code.deref()
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>.</p>
-    pub fn protocol(&self) -> &str {
-        use std::ops::Deref;
-        self.protocol.deref()
+    pub fn protocol(&self) -> & str {
+        use std::ops::Deref; self.protocol.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TestDnsAnswerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestDnsAnswerOutput {
     /// Creates a new builder-style object to manufacture [`TestDnsAnswerOutput`](crate::operation::test_dns_answer::TestDnsAnswerOutput).
     pub fn builder() -> crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder {
@@ -68,7 +63,7 @@ pub struct TestDnsAnswerOutputBuilder {
     pub(crate) nameserver: ::std::option::Option<::std::string::String>,
     pub(crate) record_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_type: ::std::option::Option<crate::types::RrType>,
-    pub(crate) record_data: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) record_data: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) response_code: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -82,8 +77,7 @@ impl TestDnsAnswerOutputBuilder {
     }
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     pub fn set_nameserver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nameserver = input;
-        self
+        self.nameserver = input; self
     }
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     pub fn get_nameserver(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl TestDnsAnswerOutputBuilder {
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
     pub fn set_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_name = input;
-        self
+        self.record_name = input; self
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
     pub fn get_record_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl TestDnsAnswerOutputBuilder {
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
     pub fn set_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
-        self.record_type = input;
-        self
+        self.record_type = input; self
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
     pub fn get_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
@@ -126,17 +118,16 @@ impl TestDnsAnswerOutputBuilder {
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
     pub fn record_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.record_data.unwrap_or_default();
-        v.push(input.into());
-        self.record_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.record_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn set_record_data(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.record_data = input;
-        self
+    pub fn set_record_data(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.record_data = input; self
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn get_record_data(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_record_data(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.record_data
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website.</p>
@@ -147,8 +138,7 @@ impl TestDnsAnswerOutputBuilder {
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website.</p>
     pub fn set_response_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_code = input;
-        self
+        self.response_code = input; self
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website.</p>
     pub fn get_response_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,22 +152,21 @@ impl TestDnsAnswerOutputBuilder {
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestDnsAnswerOutput`](crate::operation::test_dns_answer::TestDnsAnswerOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`nameserver`](crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::nameserver)
@@ -186,47 +175,42 @@ impl TestDnsAnswerOutputBuilder {
     /// - [`record_data`](crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::record_data)
     /// - [`response_code`](crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::response_code)
     /// - [`protocol`](crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::protocol)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_dns_answer::TestDnsAnswerOutput {
-            nameserver: self.nameserver.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nameserver",
-                    "nameserver was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            record_name: self.record_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_name",
-                    "record_name was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            record_type: self.record_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_type",
-                    "record_type was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            record_data: self.record_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_data",
-                    "record_data was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            response_code: self.response_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "response_code",
-                    "response_code was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "protocol",
-                    "protocol was not specified but it is required when building TestDnsAnswerOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_dns_answer::TestDnsAnswerOutput {
+                nameserver: self.nameserver
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nameserver", "nameserver was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                record_name: self.record_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_name", "record_name was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                record_type: self.record_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_type", "record_type was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                record_data: self.record_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_data", "record_data was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                response_code: self.response_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("response_code", "response_code was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                protocol: self.protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol", "protocol was not specified but it is required when building TestDnsAnswerOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

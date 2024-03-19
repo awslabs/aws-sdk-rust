@@ -2,30 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateSigninDelegateGroupsFromAccountInput {
+pub struct DisassociateSigninDelegateGroupsFromAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The sign-in delegate group names.</p>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisassociateSigninDelegateGroupsFromAccountInput {
+impl  DisassociateSigninDelegateGroupsFromAccountInput  {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The sign-in delegate group names.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
+    pub fn group_names(&self) -> & [::std::string::String] {
+        self.group_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateSigninDelegateGroupsFromAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSigninDelegateGroupsFromAccountInput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountInputBuilder {
-        crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountInputBuilder {
+        crate::operation::disassociate_signin_delegate_groups_from_account::builders::DisassociateSigninDelegateGroupsFromAccountInputBuilder::default()
     }
 }
 
@@ -34,7 +33,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     /// <p>The Amazon Chime account ID.</p>
@@ -45,8 +44,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,31 +57,28 @@ impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
     /// <p>The sign-in delegate group names.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The sign-in delegate group names.</p>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>The sign-in delegate group names.</p>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_names
     }
     /// Consumes the builder and constructs a [`DisassociateSigninDelegateGroupsFromAccountInput`](crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput {
-                account_id: self.account_id,
-                group_names: self.group_names,
-            },
+                account_id: self.account_id
+                ,
+                group_names: self.group_names
+                ,
+            }
         )
     }
 }
+

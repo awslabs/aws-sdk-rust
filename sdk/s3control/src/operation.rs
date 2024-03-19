@@ -276,3 +276,4 @@ pub mod update_job_status;
 
 /// Types for the `UpdateStorageLensGroup` operation.
 pub mod update_storage_lens_group;
+

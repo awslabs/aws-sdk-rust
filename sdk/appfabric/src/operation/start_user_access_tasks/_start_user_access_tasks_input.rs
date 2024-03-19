@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartUserAccessTasksInput {
+pub struct StartUserAccessTasksInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub app_bundle_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the target user.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl StartUserAccessTasksInput {
+impl  StartUserAccessTasksInput  {
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
-    pub fn app_bundle_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn app_bundle_identifier(&self) -> ::std::option::Option<& str> {
         self.app_bundle_identifier.as_deref()
     }
     /// <p>The email address of the target user.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartUserAccessTasksInput {
+impl  ::std::fmt::Debug for StartUserAccessTasksInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartUserAccessTasksInput");
         formatter.field("app_bundle_identifier", &self.app_bundle_identifier);
@@ -49,8 +49,7 @@ impl StartUserAccessTasksInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn set_app_bundle_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_bundle_identifier = input;
-        self
+        self.app_bundle_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,22 +63,22 @@ impl StartUserAccessTasksInputBuilder {
     }
     /// <p>The email address of the target user.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email address of the target user.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.email
     }
     /// Consumes the builder and constructs a [`StartUserAccessTasksInput`](crate::operation::start_user_access_tasks::StartUserAccessTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
-            app_bundle_identifier: self.app_bundle_identifier,
-            email: self.email,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
+                app_bundle_identifier: self.app_bundle_identifier
+                ,
+                email: self.email
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartUserAccessTasksInputBuilder {
@@ -90,3 +89,4 @@ impl ::std::fmt::Debug for StartUserAccessTasksInputBuilder {
         formatter.finish()
     }
 }
+

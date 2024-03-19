@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerServiceDeploymentsInput {
+pub struct GetContainerServiceDeploymentsInput  {
     /// <p>The name of the container service for which to return deployments.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl GetContainerServiceDeploymentsInput {
+impl  GetContainerServiceDeploymentsInput  {
     /// <p>The name of the container service for which to return deployments.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetContainerServiceDeploymentsInputBuilder {
     }
     /// <p>The name of the container service for which to return deployments.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the container service for which to return deployments.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
-            service_name: self.service_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
+                service_name: self.service_name
+                ,
+            }
+        )
     }
 }
+

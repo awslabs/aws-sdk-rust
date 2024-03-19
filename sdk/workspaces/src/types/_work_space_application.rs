@@ -3,7 +3,7 @@
 /// <p>Describes the WorkSpace application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkSpaceApplication {
+pub struct WorkSpaceApplication  {
     /// <p>The identifier of the application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the application is created.</p>
@@ -19,50 +19,52 @@ pub struct WorkSpaceApplication {
     /// <p>The status of WorkSpace application.</p>
     pub state: ::std::option::Option<crate::types::WorkSpaceApplicationState>,
     /// <p>The supported compute types of the WorkSpace application.</p>
-    pub supported_compute_type_names: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
+    pub supported_compute_type_names: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>,
     /// <p>The supported operating systems of the WorkSpace application.</p>
-    pub supported_operating_system_names: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>,
+    pub supported_operating_system_names: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>,
 }
-impl WorkSpaceApplication {
+impl  WorkSpaceApplication  {
     /// <p>The identifier of the application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The time the application is created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The description of the WorkSpace application.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The license availability for the applications.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::WorkSpaceApplicationLicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::WorkSpaceApplicationLicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The name of the WorkSpace application.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the WorkSpace application.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The status of WorkSpace application.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkSpaceApplicationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::WorkSpaceApplicationState> {
         self.state.as_ref()
     }
     /// <p>The supported compute types of the WorkSpace application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_compute_type_names.is_none()`.
-    pub fn supported_compute_type_names(&self) -> &[crate::types::Compute] {
-        self.supported_compute_type_names.as_deref().unwrap_or_default()
+    pub fn supported_compute_type_names(&self) -> & [crate::types::Compute] {
+        self.supported_compute_type_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The supported operating systems of the WorkSpace application.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_operating_system_names.is_none()`.
-    pub fn supported_operating_system_names(&self) -> &[crate::types::OperatingSystemName] {
-        self.supported_operating_system_names.as_deref().unwrap_or_default()
+    pub fn supported_operating_system_names(&self) -> & [crate::types::OperatingSystemName] {
+        self.supported_operating_system_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl WorkSpaceApplication {
@@ -83,8 +85,8 @@ pub struct WorkSpaceApplicationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::WorkSpaceApplicationState>,
-    pub(crate) supported_compute_type_names: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>,
-    pub(crate) supported_operating_system_names: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>,
+    pub(crate) supported_compute_type_names: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>,
+    pub(crate) supported_operating_system_names: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>,
 }
 impl WorkSpaceApplicationBuilder {
     /// <p>The identifier of the application.</p>
@@ -94,8 +96,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The time the application is created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The time the application is created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +122,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The description of the WorkSpace application.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the WorkSpace application.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The license availability for the applications.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::WorkSpaceApplicationLicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The license availability for the applications.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::WorkSpaceApplicationLicenseType> {
@@ -150,8 +148,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The name of the WorkSpace application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the WorkSpace application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +161,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The owner of the WorkSpace application.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the WorkSpace application.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +174,7 @@ impl WorkSpaceApplicationBuilder {
     }
     /// <p>The status of WorkSpace application.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkSpaceApplicationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The status of WorkSpace application.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkSpaceApplicationState> {
@@ -192,17 +187,16 @@ impl WorkSpaceApplicationBuilder {
     /// <p>The supported compute types of the WorkSpace application.</p>
     pub fn supported_compute_type_names(mut self, input: crate::types::Compute) -> Self {
         let mut v = self.supported_compute_type_names.unwrap_or_default();
-        v.push(input);
-        self.supported_compute_type_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_compute_type_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported compute types of the WorkSpace application.</p>
-    pub fn set_supported_compute_type_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Compute>>) -> Self {
-        self.supported_compute_type_names = input;
-        self
+    pub fn set_supported_compute_type_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Compute>>) -> Self {
+        self.supported_compute_type_names = input; self
     }
     /// <p>The supported compute types of the WorkSpace application.</p>
-    pub fn get_supported_compute_type_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Compute>> {
+    pub fn get_supported_compute_type_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Compute>> {
         &self.supported_compute_type_names
     }
     /// Appends an item to `supported_operating_system_names`.
@@ -212,31 +206,40 @@ impl WorkSpaceApplicationBuilder {
     /// <p>The supported operating systems of the WorkSpace application.</p>
     pub fn supported_operating_system_names(mut self, input: crate::types::OperatingSystemName) -> Self {
         let mut v = self.supported_operating_system_names.unwrap_or_default();
-        v.push(input);
-        self.supported_operating_system_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_operating_system_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported operating systems of the WorkSpace application.</p>
-    pub fn set_supported_operating_system_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>>) -> Self {
-        self.supported_operating_system_names = input;
-        self
+    pub fn set_supported_operating_system_names(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>>) -> Self {
+        self.supported_operating_system_names = input; self
     }
     /// <p>The supported operating systems of the WorkSpace application.</p>
-    pub fn get_supported_operating_system_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemName>> {
+    pub fn get_supported_operating_system_names(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OperatingSystemName>> {
         &self.supported_operating_system_names
     }
     /// Consumes the builder and constructs a [`WorkSpaceApplication`](crate::types::WorkSpaceApplication).
     pub fn build(self) -> crate::types::WorkSpaceApplication {
         crate::types::WorkSpaceApplication {
-            application_id: self.application_id,
-            created: self.created,
-            description: self.description,
-            license_type: self.license_type,
-            name: self.name,
-            owner: self.owner,
-            state: self.state,
-            supported_compute_type_names: self.supported_compute_type_names,
-            supported_operating_system_names: self.supported_operating_system_names,
+            application_id: self.application_id
+            ,
+            created: self.created
+            ,
+            description: self.description
+            ,
+            license_type: self.license_type
+            ,
+            name: self.name
+            ,
+            owner: self.owner
+            ,
+            state: self.state
+            ,
+            supported_compute_type_names: self.supported_compute_type_names
+            ,
+            supported_operating_system_names: self.supported_operating_system_names
+            ,
         }
     }
 }
+

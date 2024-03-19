@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCollectionInput {
+pub struct CreateCollectionInput  {
     /// <p>Name of the collection.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of collection.</p>
@@ -10,37 +10,38 @@ pub struct CreateCollectionInput {
     /// <p>Description of the collection.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
     pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateCollectionInput {
+impl  CreateCollectionInput  {
     /// <p>Name of the collection.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>Description of the collection.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
-    pub fn standby_replicas(&self) -> ::std::option::Option<&crate::types::StandbyReplicas> {
+    pub fn standby_replicas(&self) -> ::std::option::Option<& crate::types::StandbyReplicas> {
         self.standby_replicas.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -58,7 +59,7 @@ pub struct CreateCollectionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::CollectionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +72,7 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Name of the collection.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the collection.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>The type of collection.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of collection.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
@@ -99,8 +98,7 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Description of the collection.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of the collection.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl CreateCollectionInputBuilder {
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
@@ -133,8 +130,7 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
     pub fn set_standby_replicas(mut self, input: ::std::option::Option<crate::types::StandbyReplicas>) -> Self {
-        self.standby_replicas = input;
-        self
+        self.standby_replicas = input; self
     }
     /// <p>Indicates whether standby replicas should be used for a collection.</p>
     pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
@@ -147,24 +143,30 @@ impl CreateCollectionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
-            name: self.name,
-            r#type: self.r#type,
-            description: self.description,
-            tags: self.tags,
-            standby_replicas: self.standby_replicas,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_collection::CreateCollectionInput {
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                standby_replicas: self.standby_replicas
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

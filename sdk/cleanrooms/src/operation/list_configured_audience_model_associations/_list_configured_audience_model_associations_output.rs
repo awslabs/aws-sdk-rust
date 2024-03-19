@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfiguredAudienceModelAssociationsOutput {
+pub struct ListConfiguredAudienceModelAssociationsOutput  {
     /// <p>Summaries of the configured audience model associations that you requested.</p>
-    pub configured_audience_model_association_summaries: ::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>,
+    pub configured_audience_model_association_summaries: ::std::vec::Vec::<crate::types::ConfiguredAudienceModelAssociationSummary>,
     /// <p>The token value provided to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListConfiguredAudienceModelAssociationsOutput {
+impl  ListConfiguredAudienceModelAssociationsOutput  {
     /// <p>Summaries of the configured audience model associations that you requested.</p>
-    pub fn configured_audience_model_association_summaries(&self) -> &[crate::types::ConfiguredAudienceModelAssociationSummary] {
-        use std::ops::Deref;
-        self.configured_audience_model_association_summaries.deref()
+    pub fn configured_audience_model_association_summaries(&self) -> & [crate::types::ConfiguredAudienceModelAssociationSummary] {
+        use std::ops::Deref; self.configured_audience_model_association_summaries.deref()
     }
     /// <p>The token value provided to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConfiguredAudienceModelAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConfiguredAudienceModelAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfiguredAudienceModelAssociationsOutput`](crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput).
-    pub fn builder() -> crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder {
         crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder::default()
     }
 }
@@ -37,8 +35,7 @@ impl ListConfiguredAudienceModelAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfiguredAudienceModelAssociationsOutputBuilder {
-    pub(crate) configured_audience_model_association_summaries:
-        ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>>,
+    pub(crate) configured_audience_model_association_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredAudienceModelAssociationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,22 +47,16 @@ impl ListConfiguredAudienceModelAssociationsOutputBuilder {
     /// <p>Summaries of the configured audience model associations that you requested.</p>
     pub fn configured_audience_model_association_summaries(mut self, input: crate::types::ConfiguredAudienceModelAssociationSummary) -> Self {
         let mut v = self.configured_audience_model_association_summaries.unwrap_or_default();
-        v.push(input);
-        self.configured_audience_model_association_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configured_audience_model_association_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summaries of the configured audience model associations that you requested.</p>
-    pub fn set_configured_audience_model_association_summaries(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>>,
-    ) -> Self {
-        self.configured_audience_model_association_summaries = input;
-        self
+    pub fn set_configured_audience_model_association_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredAudienceModelAssociationSummary>>) -> Self {
+        self.configured_audience_model_association_summaries = input; self
     }
     /// <p>Summaries of the configured audience model associations that you requested.</p>
-    pub fn get_configured_audience_model_association_summaries(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>> {
+    pub fn get_configured_audience_model_association_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfiguredAudienceModelAssociationSummary>> {
         &self.configured_audience_model_association_summaries
     }
     /// <p>The token value provided to access the next page of results.</p>
@@ -75,31 +66,25 @@ impl ListConfiguredAudienceModelAssociationsOutputBuilder {
     }
     /// <p>The token value provided to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value provided to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConfiguredAudienceModelAssociationsOutput`](crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_audience_model_association_summaries`](crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder::configured_audience_model_association_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput {
                 configured_audience_model_association_summaries: self.configured_audience_model_association_summaries
@@ -114,3 +99,4 @@ impl ListConfiguredAudienceModelAssociationsOutputBuilder {
         )
     }
 }
+

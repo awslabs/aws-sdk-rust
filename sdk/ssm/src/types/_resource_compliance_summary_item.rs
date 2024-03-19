@@ -3,7 +3,7 @@
 /// <p>Compliance summary information for a specific resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceComplianceSummaryItem {
+pub struct ResourceComplianceSummaryItem  {
     /// <p>The compliance type.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
@@ -21,37 +21,37 @@ pub struct ResourceComplianceSummaryItem {
     /// <p>A list of items that aren't compliant for the resource.</p>
     pub non_compliant_summary: ::std::option::Option<crate::types::NonCompliantSummary>,
 }
-impl ResourceComplianceSummaryItem {
+impl  ResourceComplianceSummaryItem  {
     /// <p>The compliance type.</p>
-    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The compliance status for the resource.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>The highest severity item found for the resource. The resource is compliant for this item.</p>
-    pub fn overall_severity(&self) -> ::std::option::Option<&crate::types::ComplianceSeverity> {
+    pub fn overall_severity(&self) -> ::std::option::Option<& crate::types::ComplianceSeverity> {
         self.overall_severity.as_ref()
     }
     /// <p>Information about the execution.</p>
-    pub fn execution_summary(&self) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
+    pub fn execution_summary(&self) -> ::std::option::Option<& crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
     /// <p>A list of items that are compliant for the resource.</p>
-    pub fn compliant_summary(&self) -> ::std::option::Option<&crate::types::CompliantSummary> {
+    pub fn compliant_summary(&self) -> ::std::option::Option<& crate::types::CompliantSummary> {
         self.compliant_summary.as_ref()
     }
     /// <p>A list of items that aren't compliant for the resource.</p>
-    pub fn non_compliant_summary(&self) -> ::std::option::Option<&crate::types::NonCompliantSummary> {
+    pub fn non_compliant_summary(&self) -> ::std::option::Option<& crate::types::NonCompliantSummary> {
         self.non_compliant_summary.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>The compliance type.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>The compliance type.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>The compliance status for the resource.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The compliance status for the resource.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
@@ -139,8 +135,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>The highest severity item found for the resource. The resource is compliant for this item.</p>
     pub fn set_overall_severity(mut self, input: ::std::option::Option<crate::types::ComplianceSeverity>) -> Self {
-        self.overall_severity = input;
-        self
+        self.overall_severity = input; self
     }
     /// <p>The highest severity item found for the resource. The resource is compliant for this item.</p>
     pub fn get_overall_severity(&self) -> &::std::option::Option<crate::types::ComplianceSeverity> {
@@ -153,8 +148,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>Information about the execution.</p>
     pub fn set_execution_summary(mut self, input: ::std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
-        self.execution_summary = input;
-        self
+        self.execution_summary = input; self
     }
     /// <p>Information about the execution.</p>
     pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
@@ -167,8 +161,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>A list of items that are compliant for the resource.</p>
     pub fn set_compliant_summary(mut self, input: ::std::option::Option<crate::types::CompliantSummary>) -> Self {
-        self.compliant_summary = input;
-        self
+        self.compliant_summary = input; self
     }
     /// <p>A list of items that are compliant for the resource.</p>
     pub fn get_compliant_summary(&self) -> &::std::option::Option<crate::types::CompliantSummary> {
@@ -181,8 +174,7 @@ impl ResourceComplianceSummaryItemBuilder {
     }
     /// <p>A list of items that aren't compliant for the resource.</p>
     pub fn set_non_compliant_summary(mut self, input: ::std::option::Option<crate::types::NonCompliantSummary>) -> Self {
-        self.non_compliant_summary = input;
-        self
+        self.non_compliant_summary = input; self
     }
     /// <p>A list of items that aren't compliant for the resource.</p>
     pub fn get_non_compliant_summary(&self) -> &::std::option::Option<crate::types::NonCompliantSummary> {
@@ -191,14 +183,23 @@ impl ResourceComplianceSummaryItemBuilder {
     /// Consumes the builder and constructs a [`ResourceComplianceSummaryItem`](crate::types::ResourceComplianceSummaryItem).
     pub fn build(self) -> crate::types::ResourceComplianceSummaryItem {
         crate::types::ResourceComplianceSummaryItem {
-            compliance_type: self.compliance_type,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            status: self.status,
-            overall_severity: self.overall_severity,
-            execution_summary: self.execution_summary,
-            compliant_summary: self.compliant_summary,
-            non_compliant_summary: self.non_compliant_summary,
+            compliance_type: self.compliance_type
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            status: self.status
+            ,
+            overall_severity: self.overall_severity
+            ,
+            execution_summary: self.execution_summary
+            ,
+            compliant_summary: self.compliant_summary
+            ,
+            non_compliant_summary: self.non_compliant_summary
+            ,
         }
     }
 }
+

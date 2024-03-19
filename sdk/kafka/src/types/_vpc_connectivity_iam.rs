@@ -3,11 +3,11 @@
 /// <p>Details for IAM access control for VPC connectivity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcConnectivityIam {
+pub struct VpcConnectivityIam  {
     /// <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
     pub enabled: ::std::option::Option<bool>,
 }
-impl VpcConnectivityIam {
+impl  VpcConnectivityIam  {
     /// <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -34,8 +34,7 @@ impl VpcConnectivityIamBuilder {
     }
     /// <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -43,6 +42,10 @@ impl VpcConnectivityIamBuilder {
     }
     /// Consumes the builder and constructs a [`VpcConnectivityIam`](crate::types::VpcConnectivityIam).
     pub fn build(self) -> crate::types::VpcConnectivityIam {
-        crate::types::VpcConnectivityIam { enabled: self.enabled }
+        crate::types::VpcConnectivityIam {
+            enabled: self.enabled
+            ,
+        }
     }
 }
+

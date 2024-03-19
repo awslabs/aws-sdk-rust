@@ -3,7 +3,7 @@
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JourneyExecutionMetricsResponse {
+pub struct JourneyExecutionMetricsResponse  {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the journey that the metric applies to.</p>
@@ -11,23 +11,23 @@ pub struct JourneyExecutionMetricsResponse {
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
     pub last_evaluated_time: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl JourneyExecutionMetricsResponse {
+impl  JourneyExecutionMetricsResponse  {
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    pub fn journey_id(&self) -> ::std::option::Option<&str> {
+    pub fn journey_id(&self) -> ::std::option::Option<& str> {
         self.journey_id.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
-    pub fn last_evaluated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_evaluated_time(&self) -> ::std::option::Option<& str> {
         self.last_evaluated_time.as_deref()
     }
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    pub fn metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metrics(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metrics.as_ref()
     }
 }
@@ -45,7 +45,7 @@ pub struct JourneyExecutionMetricsResponseBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) journey_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_evaluated_time: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metrics: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl JourneyExecutionMetricsResponseBuilder {
     /// <p>The unique identifier for the application that the metric applies to.</p>
@@ -56,8 +56,7 @@ impl JourneyExecutionMetricsResponseBuilder {
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl JourneyExecutionMetricsResponseBuilder {
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.journey_id = input;
-        self
+        self.journey_id = input; self
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
     pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl JourneyExecutionMetricsResponseBuilder {
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
     pub fn set_last_evaluated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_evaluated_time = input;
-        self
+        self.last_evaluated_time = input; self
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
     pub fn get_last_evaluated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,26 +97,30 @@ impl JourneyExecutionMetricsResponseBuilder {
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metrics = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metrics = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`JourneyExecutionMetricsResponse`](crate::types::JourneyExecutionMetricsResponse).
     pub fn build(self) -> crate::types::JourneyExecutionMetricsResponse {
         crate::types::JourneyExecutionMetricsResponse {
-            application_id: self.application_id,
-            journey_id: self.journey_id,
-            last_evaluated_time: self.last_evaluated_time,
-            metrics: self.metrics,
+            application_id: self.application_id
+            ,
+            journey_id: self.journey_id
+            ,
+            last_evaluated_time: self.last_evaluated_time
+            ,
+            metrics: self.metrics
+            ,
         }
     }
 }
+

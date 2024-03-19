@@ -3,7 +3,7 @@
 /// <p>Details for updating the topic replication of a replicator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicReplicationUpdate {
+pub struct TopicReplicationUpdate  {
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
     pub copy_access_control_lists_for_topics: ::std::option::Option<bool>,
     /// <p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>
@@ -11,11 +11,11 @@ pub struct TopicReplicationUpdate {
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub detect_and_copy_new_topics: ::std::option::Option<bool>,
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    pub topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub topics_to_exclude: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    pub topics_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub topics_to_replicate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TopicReplicationUpdate {
+impl  TopicReplicationUpdate  {
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
     pub fn copy_access_control_lists_for_topics(&self) -> ::std::option::Option<bool> {
         self.copy_access_control_lists_for_topics
@@ -29,16 +29,18 @@ impl TopicReplicationUpdate {
         self.detect_and_copy_new_topics
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_exclude.is_none()`.
-    pub fn topics_to_exclude(&self) -> &[::std::string::String] {
-        self.topics_to_exclude.as_deref().unwrap_or_default()
+    pub fn topics_to_exclude(&self) -> & [::std::string::String] {
+        self.topics_to_exclude.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_to_replicate.is_none()`.
-    pub fn topics_to_replicate(&self) -> &[::std::string::String] {
-        self.topics_to_replicate.as_deref().unwrap_or_default()
+    pub fn topics_to_replicate(&self) -> & [::std::string::String] {
+        self.topics_to_replicate.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TopicReplicationUpdate {
@@ -55,8 +57,8 @@ pub struct TopicReplicationUpdateBuilder {
     pub(crate) copy_access_control_lists_for_topics: ::std::option::Option<bool>,
     pub(crate) copy_topic_configurations: ::std::option::Option<bool>,
     pub(crate) detect_and_copy_new_topics: ::std::option::Option<bool>,
-    pub(crate) topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) topics_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) topics_to_exclude: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) topics_to_replicate: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TopicReplicationUpdateBuilder {
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
@@ -67,8 +69,7 @@ impl TopicReplicationUpdateBuilder {
     }
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
     pub fn set_copy_access_control_lists_for_topics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_access_control_lists_for_topics = input;
-        self
+        self.copy_access_control_lists_for_topics = input; self
     }
     /// <p>Whether to periodically configure remote topic ACLs to match their corresponding upstream topics.</p>
     pub fn get_copy_access_control_lists_for_topics(&self) -> &::std::option::Option<bool> {
@@ -82,8 +83,7 @@ impl TopicReplicationUpdateBuilder {
     }
     /// <p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>
     pub fn set_copy_topic_configurations(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_topic_configurations = input;
-        self
+        self.copy_topic_configurations = input; self
     }
     /// <p>Whether to periodically configure remote topics to match their corresponding upstream topics.</p>
     pub fn get_copy_topic_configurations(&self) -> &::std::option::Option<bool> {
@@ -97,8 +97,7 @@ impl TopicReplicationUpdateBuilder {
     }
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub fn set_detect_and_copy_new_topics(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.detect_and_copy_new_topics = input;
-        self
+        self.detect_and_copy_new_topics = input; self
     }
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub fn get_detect_and_copy_new_topics(&self) -> &::std::option::Option<bool> {
@@ -111,17 +110,16 @@ impl TopicReplicationUpdateBuilder {
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
     pub fn topics_to_exclude(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.topics_to_exclude.unwrap_or_default();
-        v.push(input.into());
-        self.topics_to_exclude = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.topics_to_exclude = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    pub fn set_topics_to_exclude(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.topics_to_exclude = input;
-        self
+    pub fn set_topics_to_exclude(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.topics_to_exclude = input; self
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
-    pub fn get_topics_to_exclude(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_topics_to_exclude(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.topics_to_exclude
     }
     /// Appends an item to `topics_to_replicate`.
@@ -131,27 +129,32 @@ impl TopicReplicationUpdateBuilder {
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
     pub fn topics_to_replicate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.topics_to_replicate.unwrap_or_default();
-        v.push(input.into());
-        self.topics_to_replicate = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.topics_to_replicate = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    pub fn set_topics_to_replicate(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.topics_to_replicate = input;
-        self
+    pub fn set_topics_to_replicate(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.topics_to_replicate = input; self
     }
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
-    pub fn get_topics_to_replicate(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_topics_to_replicate(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.topics_to_replicate
     }
     /// Consumes the builder and constructs a [`TopicReplicationUpdate`](crate::types::TopicReplicationUpdate).
     pub fn build(self) -> crate::types::TopicReplicationUpdate {
         crate::types::TopicReplicationUpdate {
-            copy_access_control_lists_for_topics: self.copy_access_control_lists_for_topics,
-            copy_topic_configurations: self.copy_topic_configurations,
-            detect_and_copy_new_topics: self.detect_and_copy_new_topics,
-            topics_to_exclude: self.topics_to_exclude,
-            topics_to_replicate: self.topics_to_replicate,
+            copy_access_control_lists_for_topics: self.copy_access_control_lists_for_topics
+            ,
+            copy_topic_configurations: self.copy_topic_configurations
+            ,
+            detect_and_copy_new_topics: self.detect_and_copy_new_topics
+            ,
+            topics_to_exclude: self.topics_to_exclude
+            ,
+            topics_to_replicate: self.topics_to_replicate
+            ,
         }
     }
 }
+

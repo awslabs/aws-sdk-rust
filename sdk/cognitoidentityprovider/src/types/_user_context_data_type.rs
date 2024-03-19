@@ -3,23 +3,23 @@
 /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UserContextDataType {
+pub struct UserContextDataType  {
     /// <p>The source IP address of your user's device.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub encoded_data: ::std::option::Option<::std::string::String>,
 }
-impl UserContextDataType {
+impl  UserContextDataType  {
     /// <p>The source IP address of your user's device.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
-    pub fn encoded_data(&self) -> ::std::option::Option<&str> {
+    pub fn encoded_data(&self) -> ::std::option::Option<& str> {
         self.encoded_data.as_deref()
     }
 }
-impl ::std::fmt::Debug for UserContextDataType {
+impl  ::std::fmt::Debug for UserContextDataType  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserContextDataType");
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl UserContextDataTypeBuilder {
     }
     /// <p>The source IP address of your user's device.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The source IP address of your user's device.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UserContextDataTypeBuilder {
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn set_encoded_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encoded_data = input;
-        self
+        self.encoded_data = input; self
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn get_encoded_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl UserContextDataTypeBuilder {
     /// Consumes the builder and constructs a [`UserContextDataType`](crate::types::UserContextDataType).
     pub fn build(self) -> crate::types::UserContextDataType {
         crate::types::UserContextDataType {
-            ip_address: self.ip_address,
-            encoded_data: self.encoded_data,
+            ip_address: self.ip_address
+            ,
+            encoded_data: self.encoded_data
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for UserContextDataTypeBuilder {
         formatter.finish()
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScal
 
 impl PutScalingPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_scaling_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_scaling_policy::PutScalingPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_scaling_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutScalingPolicy`.
-///
+/// 
 /// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling features are not used.</p>
 /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -29,33 +26,32 @@ impl PutScalingPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder,
+                    inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        crate::operation::put_scaling_policy::PutScalingPolicyError,
-    > for PutScalingPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+                    crate::operation::put_scaling_policy::PutScalingPolicyError,
+                > for PutScalingPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+                        crate::operation::put_scaling_policy::PutScalingPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutScalingPolicyFluentBuilder {
     /// Creates a new `PutScalingPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl PutScalingPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_scaling_policy::PutScalingPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_scaling_policy::PutScalingPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_scaling_policy::PutScalingPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        crate::operation::put_scaling_policy::PutScalingPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_scaling_policy::PutScalingPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_scaling_policy::PutScalingPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_scaling_policy::PutScalingPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_scaling_policy::PutScalingPolicyOutput, crate::operation::put_scaling_policy::PutScalingPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
@@ -303,13 +290,13 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)</p>
-    pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>) -> Self {
+    pub fn set_step_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StepAdjustment>>) -> Self {
         self.inner = self.inner.set_step_adjustments(input);
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)</p>
-    pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>> {
+    pub fn get_step_adjustments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StepAdjustment>> {
         self.inner.get_step_adjustments()
     }
     /// <p><i>Not needed if the default instance warmup is defined for the group.</i></p>
@@ -432,3 +419,4 @@ impl PutScalingPolicyFluentBuilder {
         self.inner.get_predictive_scaling_configuration()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that sets information about a property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertyDefinitionRequest {
+pub struct PropertyDefinitionRequest  {
     /// <p>An object that contains information about the data type.</p>
     pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>A Boolean value that specifies whether the property is required.</p>
@@ -17,13 +17,13 @@ pub struct PropertyDefinitionRequest {
     /// <p>An object that contains the default value.</p>
     pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
-    pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A friendly name for the property.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl PropertyDefinitionRequest {
+impl  PropertyDefinitionRequest  {
     /// <p>An object that contains information about the data type.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>A Boolean value that specifies whether the property is required.</p>
@@ -43,15 +43,15 @@ impl PropertyDefinitionRequest {
         self.is_time_series
     }
     /// <p>An object that contains the default value.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&crate::types::DataValue> {
+    pub fn default_value(&self) -> ::std::option::Option<& crate::types::DataValue> {
         self.default_value.as_ref()
     }
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn configuration(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>A friendly name for the property.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -72,7 +72,7 @@ pub struct PropertyDefinitionRequestBuilder {
     pub(crate) is_stored_externally: ::std::option::Option<bool>,
     pub(crate) is_time_series: ::std::option::Option<bool>,
     pub(crate) default_value: ::std::option::Option<crate::types::DataValue>,
-    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionRequestBuilder {
@@ -83,8 +83,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>An object that contains information about the data type.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>An object that contains information about the data type.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
@@ -97,8 +96,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>A Boolean value that specifies whether the property is required.</p>
     pub fn set_is_required_in_entity(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_required_in_entity = input;
-        self
+        self.is_required_in_entity = input; self
     }
     /// <p>A Boolean value that specifies whether the property is required.</p>
     pub fn get_is_required_in_entity(&self) -> &::std::option::Option<bool> {
@@ -111,8 +109,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
     pub fn set_is_external_id(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_external_id = input;
-        self
+        self.is_external_id = input; self
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
     pub fn get_is_external_id(&self) -> &::std::option::Option<bool> {
@@ -125,8 +122,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
     pub fn set_is_stored_externally(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_stored_externally = input;
-        self
+        self.is_stored_externally = input; self
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
     pub fn get_is_stored_externally(&self) -> &::std::option::Option<bool> {
@@ -139,8 +135,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
     pub fn set_is_time_series(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_time_series = input;
-        self
+        self.is_time_series = input; self
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
     pub fn get_is_time_series(&self) -> &::std::option::Option<bool> {
@@ -153,8 +148,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>An object that contains the default value.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>An object that contains the default value.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<crate::types::DataValue> {
@@ -167,20 +161,16 @@ impl PropertyDefinitionRequestBuilder {
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
     pub fn configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.configuration = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.configuration = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
-    pub fn set_configuration(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.configuration = input; self
     }
     /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
-    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.configuration
     }
     /// <p>A friendly name for the property.</p>
@@ -190,8 +180,7 @@ impl PropertyDefinitionRequestBuilder {
     }
     /// <p>A friendly name for the property.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A friendly name for the property.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,14 +189,23 @@ impl PropertyDefinitionRequestBuilder {
     /// Consumes the builder and constructs a [`PropertyDefinitionRequest`](crate::types::PropertyDefinitionRequest).
     pub fn build(self) -> crate::types::PropertyDefinitionRequest {
         crate::types::PropertyDefinitionRequest {
-            data_type: self.data_type,
-            is_required_in_entity: self.is_required_in_entity,
-            is_external_id: self.is_external_id,
-            is_stored_externally: self.is_stored_externally,
-            is_time_series: self.is_time_series,
-            default_value: self.default_value,
-            configuration: self.configuration,
-            display_name: self.display_name,
+            data_type: self.data_type
+            ,
+            is_required_in_entity: self.is_required_in_entity
+            ,
+            is_external_id: self.is_external_id
+            ,
+            is_stored_externally: self.is_stored_externally
+            ,
+            is_time_series: self.is_time_series
+            ,
+            default_value: self.default_value
+            ,
+            configuration: self.configuration
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

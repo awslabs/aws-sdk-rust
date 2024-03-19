@@ -3,7 +3,7 @@
 /// <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShippingDetails {
+pub struct ShippingDetails  {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct ShippingDetails {
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
     pub outbound_shipment: ::std::option::Option<crate::types::Shipment>,
 }
-impl ShippingDetails {
+impl  ShippingDetails  {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
     /// <li>
@@ -33,15 +33,15 @@ impl ShippingDetails {
     /// <li>
     /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
-    pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> ::std::option::Option<& crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
-    pub fn inbound_shipment(&self) -> ::std::option::Option<&crate::types::Shipment> {
+    pub fn inbound_shipment(&self) -> ::std::option::Option<& crate::types::Shipment> {
         self.inbound_shipment.as_ref()
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
-    pub fn outbound_shipment(&self) -> ::std::option::Option<&crate::types::Shipment> {
+    pub fn outbound_shipment(&self) -> ::std::option::Option<& crate::types::Shipment> {
         self.outbound_shipment.as_ref()
     }
 }
@@ -88,8 +88,7 @@ impl ShippingDetailsBuilder {
     /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
-        self.shipping_option = input;
-        self
+        self.shipping_option = input; self
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
@@ -112,8 +111,7 @@ impl ShippingDetailsBuilder {
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
     pub fn set_inbound_shipment(mut self, input: ::std::option::Option<crate::types::Shipment>) -> Self {
-        self.inbound_shipment = input;
-        self
+        self.inbound_shipment = input; self
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
     pub fn get_inbound_shipment(&self) -> &::std::option::Option<crate::types::Shipment> {
@@ -126,8 +124,7 @@ impl ShippingDetailsBuilder {
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
     pub fn set_outbound_shipment(mut self, input: ::std::option::Option<crate::types::Shipment>) -> Self {
-        self.outbound_shipment = input;
-        self
+        self.outbound_shipment = input; self
     }
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being delivered to the address that you specified for a particular job.</p>
     pub fn get_outbound_shipment(&self) -> &::std::option::Option<crate::types::Shipment> {
@@ -136,9 +133,13 @@ impl ShippingDetailsBuilder {
     /// Consumes the builder and constructs a [`ShippingDetails`](crate::types::ShippingDetails).
     pub fn build(self) -> crate::types::ShippingDetails {
         crate::types::ShippingDetails {
-            shipping_option: self.shipping_option,
-            inbound_shipment: self.inbound_shipment,
-            outbound_shipment: self.outbound_shipment,
+            shipping_option: self.shipping_option
+            ,
+            inbound_shipment: self.inbound_shipment
+            ,
+            outbound_shipment: self.outbound_shipment
+            ,
         }
     }
 }
+

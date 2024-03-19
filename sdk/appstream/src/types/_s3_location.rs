@@ -3,7 +3,7 @@
 /// <p>Describes the S3 location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The S3 bucket of the S3 object.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key of the S3 object.</p>
@@ -22,9 +22,9 @@ pub struct S3Location {
     /// </ul>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The S3 bucket of the S3 object.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The S3 key of the S3 object.</p>
@@ -41,7 +41,7 @@ impl S3Location {
     /// <li>
     /// <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p></li>
     /// </ul>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl S3LocationBuilder {
     }
     /// <p>The S3 bucket of the S3 object.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The S3 bucket of the S3 object.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl S3LocationBuilder {
     /// <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p></li>
     /// </ul>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The S3 key of the S3 object.</p>
     /// <p>This is required when used for the following:</p>
@@ -131,8 +129,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

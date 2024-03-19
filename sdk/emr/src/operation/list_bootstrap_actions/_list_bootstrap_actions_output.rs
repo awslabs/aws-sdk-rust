@@ -3,30 +3,31 @@
 /// <p>This output contains the bootstrap actions detail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBootstrapActionsOutput {
+pub struct ListBootstrapActionsOutput  {
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
+    pub bootstrap_actions: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListBootstrapActionsOutput {
+impl  ListBootstrapActionsOutput  {
     /// <p>The bootstrap actions associated with the cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bootstrap_actions.is_none()`.
-    pub fn bootstrap_actions(&self) -> &[crate::types::Command] {
-        self.bootstrap_actions.as_deref().unwrap_or_default()
+    pub fn bootstrap_actions(&self) -> & [crate::types::Command] {
+        self.bootstrap_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBootstrapActionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBootstrapActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput).
     pub fn builder() -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListBootstrapActionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListBootstrapActionsOutputBuilder {
-    pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
+    pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListBootstrapActionsOutputBuilder {
     /// <p>The bootstrap actions associated with the cluster.</p>
     pub fn bootstrap_actions(mut self, input: crate::types::Command) -> Self {
         let mut v = self.bootstrap_actions.unwrap_or_default();
-        v.push(input);
-        self.bootstrap_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bootstrap_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>) -> Self {
-        self.bootstrap_actions = input;
-        self
+    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Command>>) -> Self {
+        self.bootstrap_actions = input; self
     }
     /// <p>The bootstrap actions associated with the cluster.</p>
-    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Command>> {
+    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Command>> {
         &self.bootstrap_actions
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -70,28 +70,30 @@ impl ListBootstrapActionsOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBootstrapActionsOutput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput).
     pub fn build(self) -> crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput {
         crate::operation::list_bootstrap_actions::ListBootstrapActionsOutput {
-            bootstrap_actions: self.bootstrap_actions,
-            marker: self.marker,
+            bootstrap_actions: self.bootstrap_actions
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

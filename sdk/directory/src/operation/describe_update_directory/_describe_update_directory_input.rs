@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeUpdateDirectoryInput {
+pub struct DescribeUpdateDirectoryInput  {
     /// <p>The unique identifier of the directory.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of updates you want to describe for the directory.</p>
@@ -12,21 +12,21 @@ pub struct DescribeUpdateDirectoryInput {
     /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeUpdateDirectoryInput {
+impl  DescribeUpdateDirectoryInput  {
     /// <p>The unique identifier of the directory.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of updates you want to describe for the directory.</p>
-    pub fn update_type(&self) -> ::std::option::Option<&crate::types::UpdateType> {
+    pub fn update_type(&self) -> ::std::option::Option<& crate::types::UpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The name of the Region.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeUpdateDirectoryInputBuilder {
     }
     /// <p>The unique identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The unique identifier of the directory.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeUpdateDirectoryInputBuilder {
     }
     /// <p>The type of updates you want to describe for the directory.</p>
     pub fn set_update_type(mut self, input: ::std::option::Option<crate::types::UpdateType>) -> Self {
-        self.update_type = input;
-        self
+        self.update_type = input; self
     }
     /// <p>The type of updates you want to describe for the directory.</p>
     pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
@@ -84,8 +82,7 @@ impl DescribeUpdateDirectoryInputBuilder {
     }
     /// <p>The name of the Region.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the Region.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl DescribeUpdateDirectoryInputBuilder {
     }
     /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeUpdateDirectoryInput`](crate::operation::describe_update_directory::DescribeUpdateDirectoryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_update_directory::DescribeUpdateDirectoryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_update_directory::DescribeUpdateDirectoryInput {
-            directory_id: self.directory_id,
-            update_type: self.update_type,
-            region_name: self.region_name,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_update_directory::DescribeUpdateDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_update_directory::DescribeUpdateDirectoryInput {
+                directory_id: self.directory_id
+                ,
+                update_type: self.update_type
+                ,
+                region_name: self.region_name
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

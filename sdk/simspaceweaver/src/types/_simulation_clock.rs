@@ -3,19 +3,19 @@
 /// <p>Status information about the simulation clock.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimulationClock {
+pub struct SimulationClock  {
     /// <p>The current status of the simulation clock.</p>
     pub status: ::std::option::Option<crate::types::ClockStatus>,
     /// <p>The desired status of the simulation clock.</p>
     pub target_status: ::std::option::Option<crate::types::ClockTargetStatus>,
 }
-impl SimulationClock {
+impl  SimulationClock  {
     /// <p>The current status of the simulation clock.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClockStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClockStatus> {
         self.status.as_ref()
     }
     /// <p>The desired status of the simulation clock.</p>
-    pub fn target_status(&self) -> ::std::option::Option<&crate::types::ClockTargetStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<& crate::types::ClockTargetStatus> {
         self.target_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SimulationClockBuilder {
     }
     /// <p>The current status of the simulation clock.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClockStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the simulation clock.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClockStatus> {
@@ -55,8 +54,7 @@ impl SimulationClockBuilder {
     }
     /// <p>The desired status of the simulation clock.</p>
     pub fn set_target_status(mut self, input: ::std::option::Option<crate::types::ClockTargetStatus>) -> Self {
-        self.target_status = input;
-        self
+        self.target_status = input; self
     }
     /// <p>The desired status of the simulation clock.</p>
     pub fn get_target_status(&self) -> &::std::option::Option<crate::types::ClockTargetStatus> {
@@ -65,8 +63,11 @@ impl SimulationClockBuilder {
     /// Consumes the builder and constructs a [`SimulationClock`](crate::types::SimulationClock).
     pub fn build(self) -> crate::types::SimulationClock {
         crate::types::SimulationClock {
-            status: self.status,
-            target_status: self.target_status,
+            status: self.status
+            ,
+            target_status: self.target_status
+            ,
         }
     }
 }
+

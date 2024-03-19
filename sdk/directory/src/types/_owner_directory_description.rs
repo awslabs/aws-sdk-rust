@@ -3,13 +3,13 @@
 /// <p>Describes the directory owner account details that have been shared to the directory consumer account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OwnerDirectoryDescription {
+pub struct OwnerDirectoryDescription  {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the directory owner account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub dns_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Information about the VPC settings for the directory.</p>
     pub vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
@@ -17,31 +17,32 @@ pub struct OwnerDirectoryDescription {
     /// <p>Information about the status of the RADIUS server.</p>
     pub radius_status: ::std::option::Option<crate::types::RadiusStatus>,
 }
-impl OwnerDirectoryDescription {
+impl  OwnerDirectoryDescription  {
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>Identifier of the directory owner account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ip_addrs.is_none()`.
-    pub fn dns_ip_addrs(&self) -> &[::std::string::String] {
-        self.dns_ip_addrs.as_deref().unwrap_or_default()
+    pub fn dns_ip_addrs(&self) -> & [::std::string::String] {
+        self.dns_ip_addrs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the VPC settings for the directory.</p>
-    pub fn vpc_settings(&self) -> ::std::option::Option<&crate::types::DirectoryVpcSettingsDescription> {
+    pub fn vpc_settings(&self) -> ::std::option::Option<& crate::types::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn radius_settings(&self) -> ::std::option::Option<&crate::types::RadiusSettings> {
+    pub fn radius_settings(&self) -> ::std::option::Option<& crate::types::RadiusSettings> {
         self.radius_settings.as_ref()
     }
     /// <p>Information about the status of the RADIUS server.</p>
-    pub fn radius_status(&self) -> ::std::option::Option<&crate::types::RadiusStatus> {
+    pub fn radius_status(&self) -> ::std::option::Option<& crate::types::RadiusStatus> {
         self.radius_status.as_ref()
     }
 }
@@ -58,7 +59,7 @@ impl OwnerDirectoryDescription {
 pub struct OwnerDirectoryDescriptionBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
-    pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_ip_addrs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) vpc_settings: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>,
     pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
     pub(crate) radius_status: ::std::option::Option<crate::types::RadiusStatus>,
@@ -71,8 +72,7 @@ impl OwnerDirectoryDescriptionBuilder {
     }
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl OwnerDirectoryDescriptionBuilder {
     }
     /// <p>Identifier of the directory owner account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Identifier of the directory owner account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,17 +98,16 @@ impl OwnerDirectoryDescriptionBuilder {
     /// <p>IP address of the directory’s domain controllers.</p>
     pub fn dns_ip_addrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ip_addrs.unwrap_or_default();
-        v.push(input.into());
-        self.dns_ip_addrs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.dns_ip_addrs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.dns_ip_addrs = input;
-        self
+    pub fn set_dns_ip_addrs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.dns_ip_addrs = input; self
     }
     /// <p>IP address of the directory’s domain controllers.</p>
-    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_dns_ip_addrs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.dns_ip_addrs
     }
     /// <p>Information about the VPC settings for the directory.</p>
@@ -119,8 +117,7 @@ impl OwnerDirectoryDescriptionBuilder {
     }
     /// <p>Information about the VPC settings for the directory.</p>
     pub fn set_vpc_settings(mut self, input: ::std::option::Option<crate::types::DirectoryVpcSettingsDescription>) -> Self {
-        self.vpc_settings = input;
-        self
+        self.vpc_settings = input; self
     }
     /// <p>Information about the VPC settings for the directory.</p>
     pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettingsDescription> {
@@ -133,8 +130,7 @@ impl OwnerDirectoryDescriptionBuilder {
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn set_radius_settings(mut self, input: ::std::option::Option<crate::types::RadiusSettings>) -> Self {
-        self.radius_settings = input;
-        self
+        self.radius_settings = input; self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn get_radius_settings(&self) -> &::std::option::Option<crate::types::RadiusSettings> {
@@ -147,8 +143,7 @@ impl OwnerDirectoryDescriptionBuilder {
     }
     /// <p>Information about the status of the RADIUS server.</p>
     pub fn set_radius_status(mut self, input: ::std::option::Option<crate::types::RadiusStatus>) -> Self {
-        self.radius_status = input;
-        self
+        self.radius_status = input; self
     }
     /// <p>Information about the status of the RADIUS server.</p>
     pub fn get_radius_status(&self) -> &::std::option::Option<crate::types::RadiusStatus> {
@@ -157,12 +152,19 @@ impl OwnerDirectoryDescriptionBuilder {
     /// Consumes the builder and constructs a [`OwnerDirectoryDescription`](crate::types::OwnerDirectoryDescription).
     pub fn build(self) -> crate::types::OwnerDirectoryDescription {
         crate::types::OwnerDirectoryDescription {
-            directory_id: self.directory_id,
-            account_id: self.account_id,
-            dns_ip_addrs: self.dns_ip_addrs,
-            vpc_settings: self.vpc_settings,
-            radius_settings: self.radius_settings,
-            radius_status: self.radius_status,
+            directory_id: self.directory_id
+            ,
+            account_id: self.account_id
+            ,
+            dns_ip_addrs: self.dns_ip_addrs
+            ,
+            vpc_settings: self.vpc_settings
+            ,
+            radius_settings: self.radius_settings
+            ,
+            radius_status: self.radius_status
+            ,
         }
     }
 }
+

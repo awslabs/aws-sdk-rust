@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFunctionsOutput {
+pub struct ListFunctionsOutput  {
     /// <p>A list of <code>Function</code> objects.</p>
-    pub functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub functions: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionConfiguration>>,
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListFunctionsOutput {
+impl  ListFunctionsOutput  {
     /// <p>A list of <code>Function</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.functions.is_none()`.
-    pub fn functions(&self) -> &[crate::types::FunctionConfiguration] {
-        self.functions.as_deref().unwrap_or_default()
+    pub fn functions(&self) -> & [crate::types::FunctionConfiguration] {
+        self.functions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListFunctionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn builder() -> crate::operation::list_functions::builders::ListFunctionsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListFunctionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListFunctionsOutputBuilder {
-    pub(crate) functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub(crate) functions: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionConfiguration>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListFunctionsOutputBuilder {
     /// <p>A list of <code>Function</code> objects.</p>
     pub fn functions(mut self, input: crate::types::FunctionConfiguration) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.functions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FunctionConfiguration>>) -> Self {
+        self.functions = input; self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
+    pub fn get_functions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FunctionConfiguration>> {
         &self.functions
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
@@ -69,28 +69,30 @@ impl ListFunctionsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn build(self) -> crate::operation::list_functions::ListFunctionsOutput {
         crate::operation::list_functions::ListFunctionsOutput {
-            functions: self.functions,
-            next_token: self.next_token,
+            functions: self.functions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

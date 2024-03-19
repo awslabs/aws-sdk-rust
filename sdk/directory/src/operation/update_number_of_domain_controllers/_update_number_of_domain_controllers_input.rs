@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateNumberOfDomainControllersInput {
+pub struct UpdateNumberOfDomainControllersInput  {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of domain controllers desired in the directory.</p>
     pub desired_number: ::std::option::Option<i32>,
 }
-impl UpdateNumberOfDomainControllersInput {
+impl  UpdateNumberOfDomainControllersInput  {
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
-    pub fn directory_id(&self) -> ::std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The number of domain controllers desired in the directory.</p>
@@ -41,8 +41,7 @@ impl UpdateNumberOfDomainControllersInputBuilder {
     }
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateNumberOfDomainControllersInputBuilder {
     }
     /// <p>The number of domain controllers desired in the directory.</p>
     pub fn set_desired_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_number = input;
-        self
+        self.desired_number = input; self
     }
     /// <p>The number of domain controllers desired in the directory.</p>
     pub fn get_desired_number(&self) -> &::std::option::Option<i32> {
         &self.desired_number
     }
     /// Consumes the builder and constructs a [`UpdateNumberOfDomainControllersInput`](crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput {
-                directory_id: self.directory_id,
-                desired_number: self.desired_number,
-            },
+                directory_id: self.directory_id
+                ,
+                desired_number: self.desired_number
+                ,
+            }
         )
     }
 }
+

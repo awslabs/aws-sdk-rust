@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutEncryptionConfigInput {
+pub struct PutEncryptionConfigInput  {
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct PutEncryptionConfigInput {
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub r#type: ::std::option::Option<crate::types::EncryptionType>,
 }
-impl PutEncryptionConfigInput {
+impl  PutEncryptionConfigInput  {
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
     /// <li>
@@ -28,11 +28,11 @@ impl PutEncryptionConfigInput {
     /// <p><b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p></li>
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl PutEncryptionConfigInputBuilder {
     /// </ul>
     /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
     /// <ul>
@@ -100,21 +99,22 @@ impl PutEncryptionConfigInputBuilder {
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_encryption_config::PutEncryptionConfigInput {
-            key_id: self.key_id,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_encryption_config::PutEncryptionConfigInput {
+                key_id: self.key_id
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

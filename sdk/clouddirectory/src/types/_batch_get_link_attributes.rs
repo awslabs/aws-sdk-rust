@@ -3,21 +3,20 @@
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetLinkAttributes {
+pub struct BatchGetLinkAttributes  {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub attribute_names: ::std::vec::Vec<::std::string::String>,
+    pub attribute_names: ::std::vec::Vec::<::std::string::String>,
 }
-impl BatchGetLinkAttributes {
+impl  BatchGetLinkAttributes  {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> ::std::option::Option<&crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> ::std::option::Option<& crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.attribute_names.deref()
+    pub fn attribute_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.attribute_names.deref()
     }
 }
 impl BatchGetLinkAttributes {
@@ -32,7 +31,7 @@ impl BatchGetLinkAttributes {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetLinkAttributesBuilder {
     pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
-    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetLinkAttributesBuilder {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -43,8 +42,7 @@ impl BatchGetLinkAttributesBuilder {
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input;
-        self
+        self.typed_link_specifier = input; self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
@@ -57,31 +55,33 @@ impl BatchGetLinkAttributesBuilder {
     /// <p>A list of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.attribute_names
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_names`](crate::types::builders::BatchGetLinkAttributesBuilder::attribute_names)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetLinkAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetLinkAttributes {
-            typed_link_specifier: self.typed_link_specifier,
-            attribute_names: self.attribute_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_names",
-                    "attribute_names was not specified but it is required when building BatchGetLinkAttributes",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetLinkAttributes {
+                typed_link_specifier: self.typed_link_specifier
+                ,
+                attribute_names: self.attribute_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_names", "attribute_names was not specified but it is required when building BatchGetLinkAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

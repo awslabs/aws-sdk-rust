@@ -3,11 +3,11 @@
 /// <p>A representation of the charge details that are associated with a flat custom line item.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomLineItemFlatChargeDetails {
+pub struct CustomLineItemFlatChargeDetails  {
     /// <p>The custom line item's fixed charge value in USD.</p>
     pub charge_value: f64,
 }
-impl CustomLineItemFlatChargeDetails {
+impl  CustomLineItemFlatChargeDetails  {
     /// <p>The custom line item's fixed charge value in USD.</p>
     pub fn charge_value(&self) -> f64 {
         self.charge_value
@@ -35,8 +35,7 @@ impl CustomLineItemFlatChargeDetailsBuilder {
     }
     /// <p>The custom line item's fixed charge value in USD.</p>
     pub fn set_charge_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.charge_value = input;
-        self
+        self.charge_value = input; self
     }
     /// <p>The custom line item's fixed charge value in USD.</p>
     pub fn get_charge_value(&self) -> &::std::option::Option<f64> {
@@ -46,13 +45,15 @@ impl CustomLineItemFlatChargeDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`charge_value`](crate::types::builders::CustomLineItemFlatChargeDetailsBuilder::charge_value)
     pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemFlatChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CustomLineItemFlatChargeDetails {
-            charge_value: self.charge_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "charge_value",
-                    "charge_value was not specified but it is required when building CustomLineItemFlatChargeDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CustomLineItemFlatChargeDetails {
+                charge_value: self.charge_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("charge_value", "charge_value was not specified but it is required when building CustomLineItemFlatChargeDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

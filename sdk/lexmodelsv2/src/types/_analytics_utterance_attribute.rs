@@ -3,13 +3,13 @@
 /// <p>An object that specifies the last used intent at the time of the utterance as an attribute to return.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsUtteranceAttribute {
+pub struct AnalyticsUtteranceAttribute  {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
     pub name: crate::types::AnalyticsUtteranceAttributeName,
 }
-impl AnalyticsUtteranceAttribute {
+impl  AnalyticsUtteranceAttribute  {
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
-    pub fn name(&self) -> &crate::types::AnalyticsUtteranceAttributeName {
+    pub fn name(&self) -> & crate::types::AnalyticsUtteranceAttributeName {
         &self.name
     }
 }
@@ -35,8 +35,7 @@ impl AnalyticsUtteranceAttributeBuilder {
     }
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceAttributeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An attribute to return. The only available attribute is the intent that the bot mapped the utterance to.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceAttributeName> {
@@ -46,13 +45,15 @@ impl AnalyticsUtteranceAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalyticsUtteranceAttributeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsUtteranceAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsUtteranceAttribute {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsUtteranceAttribute",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsUtteranceAttribute {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsUtteranceAttribute")
+                    )?
+                ,
+            }
+        )
     }
 }
+

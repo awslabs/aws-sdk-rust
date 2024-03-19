@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBackupVaultNotificationsInput {
+pub struct GetBackupVaultNotificationsInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
 }
-impl GetBackupVaultNotificationsInput {
+impl  GetBackupVaultNotificationsInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetBackupVaultNotificationsInputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_name
     }
     /// Consumes the builder and constructs a [`GetBackupVaultNotificationsInput`](crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput {
-            backup_vault_name: self.backup_vault_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsInput {
+                backup_vault_name: self.backup_vault_name
+                ,
+            }
+        )
     }
 }
+

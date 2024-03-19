@@ -3,7 +3,7 @@
 /// <p>Describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CollectorResponse {
+pub struct CollectorResponse  {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     pub collector_referenced_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fleet Advisor collector .</p>
@@ -31,57 +31,57 @@ pub struct CollectorResponse {
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub inventory_data: ::std::option::Option<crate::types::InventoryData>,
 }
-impl CollectorResponse {
+impl  CollectorResponse  {
     /// <p>The reference ID of the Fleet Advisor collector.</p>
-    pub fn collector_referenced_id(&self) -> ::std::option::Option<&str> {
+    pub fn collector_referenced_id(&self) -> ::std::option::Option<& str> {
         self.collector_referenced_id.as_deref()
     }
     /// <p>The name of the Fleet Advisor collector .</p>
-    pub fn collector_name(&self) -> ::std::option::Option<&str> {
+    pub fn collector_name(&self) -> ::std::option::Option<& str> {
         self.collector_name.as_deref()
     }
     /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
-    pub fn collector_version(&self) -> ::std::option::Option<&str> {
+    pub fn collector_version(&self) -> ::std::option::Option<& str> {
         self.collector_version.as_deref()
     }
     /// <p>Whether the collector version is up to date.</p>
-    pub fn version_status(&self) -> ::std::option::Option<&crate::types::VersionStatus> {
+    pub fn version_status(&self) -> ::std::option::Option<& crate::types::VersionStatus> {
         self.version_status.as_ref()
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>Describes the last Fleet Advisor collector health check.</p>
-    pub fn collector_health_check(&self) -> ::std::option::Option<&crate::types::CollectorHealthCheck> {
+    pub fn collector_health_check(&self) -> ::std::option::Option<& crate::types::CollectorHealthCheck> {
         self.collector_health_check.as_ref()
     }
     /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
-    pub fn last_data_received(&self) -> ::std::option::Option<&str> {
+    pub fn last_data_received(&self) -> ::std::option::Option<& str> {
         self.last_data_received.as_deref()
     }
     /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
-    pub fn registered_date(&self) -> ::std::option::Option<&str> {
+    pub fn registered_date(&self) -> ::std::option::Option<& str> {
         self.registered_date.as_deref()
     }
     /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
-    pub fn created_date(&self) -> ::std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
-    pub fn modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn modified_date(&self) -> ::std::option::Option<& str> {
         self.modified_date.as_deref()
     }
     /// <p>Describes a Fleet Advisor collector inventory.</p>
-    pub fn inventory_data(&self) -> ::std::option::Option<&crate::types::InventoryData> {
+    pub fn inventory_data(&self) -> ::std::option::Option<& crate::types::InventoryData> {
         self.inventory_data.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     pub fn set_collector_referenced_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collector_referenced_id = input;
-        self
+        self.collector_referenced_id = input; self
     }
     /// <p>The reference ID of the Fleet Advisor collector.</p>
     pub fn get_collector_referenced_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The name of the Fleet Advisor collector .</p>
     pub fn set_collector_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collector_name = input;
-        self
+        self.collector_name = input; self
     }
     /// <p>The name of the Fleet Advisor collector .</p>
     pub fn get_collector_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn set_collector_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collector_version = input;
-        self
+        self.collector_version = input; self
     }
     /// <p>The version of your Fleet Advisor collector, in semantic versioning format, for example <code>1.0.2</code></p>
     pub fn get_collector_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>Whether the collector version is up to date.</p>
     pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
-        self.version_status = input;
-        self
+        self.version_status = input; self
     }
     /// <p>Whether the collector version is up to date.</p>
     pub fn get_version_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
@@ -174,8 +170,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A summary description of the Fleet Advisor collector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +183,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +196,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn set_service_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_access_role_arn = input;
-        self
+        self.service_access_role_arn = input; self
     }
     /// <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
     pub fn get_service_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +209,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>Describes the last Fleet Advisor collector health check.</p>
     pub fn set_collector_health_check(mut self, input: ::std::option::Option<crate::types::CollectorHealthCheck>) -> Self {
-        self.collector_health_check = input;
-        self
+        self.collector_health_check = input; self
     }
     /// <p>Describes the last Fleet Advisor collector health check.</p>
     pub fn get_collector_health_check(&self) -> &::std::option::Option<crate::types::CollectorHealthCheck> {
@@ -230,8 +222,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_last_data_received(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_data_received = input;
-        self
+        self.last_data_received = input; self
     }
     /// <p>The timestamp of the last time the collector received data, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_last_data_received(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,8 +235,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_registered_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_date = input;
-        self
+        self.registered_date = input; self
     }
     /// <p>The timestamp when DMS registered the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_registered_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -258,8 +248,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp when you created the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +261,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn set_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.modified_date = input;
-        self
+        self.modified_date = input; self
     }
     /// <p>The timestamp when DMS last modified the collector, in the following format: <code>2022-01-24T19:04:02.596113Z</code></p>
     pub fn get_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -286,8 +274,7 @@ impl CollectorResponseBuilder {
     }
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub fn set_inventory_data(mut self, input: ::std::option::Option<crate::types::InventoryData>) -> Self {
-        self.inventory_data = input;
-        self
+        self.inventory_data = input; self
     }
     /// <p>Describes a Fleet Advisor collector inventory.</p>
     pub fn get_inventory_data(&self) -> &::std::option::Option<crate::types::InventoryData> {
@@ -296,19 +283,33 @@ impl CollectorResponseBuilder {
     /// Consumes the builder and constructs a [`CollectorResponse`](crate::types::CollectorResponse).
     pub fn build(self) -> crate::types::CollectorResponse {
         crate::types::CollectorResponse {
-            collector_referenced_id: self.collector_referenced_id,
-            collector_name: self.collector_name,
-            collector_version: self.collector_version,
-            version_status: self.version_status,
-            description: self.description,
-            s3_bucket_name: self.s3_bucket_name,
-            service_access_role_arn: self.service_access_role_arn,
-            collector_health_check: self.collector_health_check,
-            last_data_received: self.last_data_received,
-            registered_date: self.registered_date,
-            created_date: self.created_date,
-            modified_date: self.modified_date,
-            inventory_data: self.inventory_data,
+            collector_referenced_id: self.collector_referenced_id
+            ,
+            collector_name: self.collector_name
+            ,
+            collector_version: self.collector_version
+            ,
+            version_status: self.version_status
+            ,
+            description: self.description
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            collector_health_check: self.collector_health_check
+            ,
+            last_data_received: self.last_data_received
+            ,
+            registered_date: self.registered_date
+            ,
+            created_date: self.created_date
+            ,
+            modified_date: self.modified_date
+            ,
+            inventory_data: self.inventory_data
+            ,
         }
     }
 }
+

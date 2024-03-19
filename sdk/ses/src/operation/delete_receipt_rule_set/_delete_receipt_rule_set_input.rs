@@ -3,13 +3,13 @@
 /// <p>Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReceiptRuleSetInput {
+pub struct DeleteReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to delete.</p>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReceiptRuleSetInput {
+impl  DeleteReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to delete.</p>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the receipt rule set to delete.</p>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the receipt rule set to delete.</p>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_set_name
     }
     /// Consumes the builder and constructs a [`DeleteReceiptRuleSetInput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput {
-            rule_set_name: self.rule_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput {
+                rule_set_name: self.rule_set_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationOutput {
+pub struct DeleteApplicationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
     pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
@@ -26,14 +26,14 @@ pub struct DeleteApplicationOutputBuilder {
 }
 impl DeleteApplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
     pub fn build(self) -> crate::operation::delete_application::DeleteApplicationOutput {
         crate::operation::delete_application::DeleteApplicationOutput {
@@ -41,3 +41,4 @@ impl DeleteApplicationOutputBuilder {
         }
     }
 }
+

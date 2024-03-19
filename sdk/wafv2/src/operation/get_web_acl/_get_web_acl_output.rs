@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWebAclOutput {
+pub struct GetWebAclOutput  {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     pub web_acl: ::std::option::Option<crate::types::WebAcl>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
@@ -11,25 +11,25 @@ pub struct GetWebAclOutput {
     pub application_integration_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetWebAclOutput {
+impl  GetWebAclOutput  {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
-    pub fn web_acl(&self) -> ::std::option::Option<&crate::types::WebAcl> {
+    pub fn web_acl(&self) -> ::std::option::Option<& crate::types::WebAcl> {
         self.web_acl.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn application_integration_url(&self) -> ::std::option::Option<&str> {
+    pub fn application_integration_url(&self) -> ::std::option::Option<& str> {
         self.application_integration_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetWebAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetWebAclOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
     pub fn builder() -> crate::operation::get_web_acl::builders::GetWebAclOutputBuilder {
@@ -54,8 +54,7 @@ impl GetWebAclOutputBuilder {
     }
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     pub fn set_web_acl(mut self, input: ::std::option::Option<crate::types::WebAcl>) -> Self {
-        self.web_acl = input;
-        self
+        self.web_acl = input; self
     }
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     pub fn get_web_acl(&self) -> &::std::option::Option<crate::types::WebAcl> {
@@ -68,8 +67,7 @@ impl GetWebAclOutputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl GetWebAclOutputBuilder {
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_application_integration_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_integration_url = input;
-        self
+        self.application_integration_url = input; self
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_application_integration_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_integration_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::operation::get_web_acl::GetWebAclOutput).
     pub fn build(self) -> crate::operation::get_web_acl::GetWebAclOutput {
         crate::operation::get_web_acl::GetWebAclOutput {
-            web_acl: self.web_acl,
-            lock_token: self.lock_token,
-            application_integration_url: self.application_integration_url,
+            web_acl: self.web_acl
+            ,
+            lock_token: self.lock_token
+            ,
+            application_integration_url: self.application_integration_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

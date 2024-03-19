@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDirectoryRegistrations`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::set_max_results):<br>required: **false**<br><p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::set_next_token):<br>required: **false**<br><p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p><br>
-    /// - On success, responds with [`ListDirectoryRegistrationsOutput`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput) with field(s):
+                            /// - On success, responds with [`ListDirectoryRegistrationsOutput`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput) with field(s):
     ///   - [`directory_registrations(Option<Vec::<DirectoryRegistrationSummary>>)`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput::directory_registrations): <p>Summary information about each directory registration you have created.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput::next_token): <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    /// - On failure, responds with [`SdkError<ListDirectoryRegistrationsError>`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsError)
+                            /// - On failure, responds with [`SdkError<ListDirectoryRegistrationsError>`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsError)
     pub fn list_directory_registrations(&self) -> crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder {
-        crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

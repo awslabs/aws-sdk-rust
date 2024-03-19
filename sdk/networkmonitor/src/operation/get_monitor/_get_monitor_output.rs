@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMonitorOutput {
+pub struct GetMonitorOutput  {
     /// <p>The ARN of the selected monitor.</p>
     pub monitor_arn: ::std::string::String,
     /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
@@ -12,28 +12,26 @@ pub struct GetMonitorOutput {
     /// <p>The aggregation period for the specified monitor.</p>
     pub aggregation_period: i64,
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The details about each probe associated with that monitor.</p>
-    pub probes: ::std::option::Option<::std::vec::Vec<crate::types::Probe>>,
+    pub probes: ::std::option::Option<::std::vec::Vec::<crate::types::Probe>>,
     /// <p>The time and date when the monitor was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The time and date when the monitor was last modified.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl GetMonitorOutput {
+impl  GetMonitorOutput  {
     /// <p>The ARN of the selected monitor.</p>
-    pub fn monitor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_arn.deref()
+    pub fn monitor_arn(&self) -> & str {
+        use std::ops::Deref; self.monitor_arn.deref()
     }
     /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> & str {
+        use std::ops::Deref; self.monitor_name.deref()
     }
     /// <p>Returns a list of the state of each monitor.</p>
-    pub fn state(&self) -> &crate::types::MonitorState {
+    pub fn state(&self) -> & crate::types::MonitorState {
         &self.state
     }
     /// <p>The aggregation period for the specified monitor.</p>
@@ -41,29 +39,30 @@ impl GetMonitorOutput {
         self.aggregation_period
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The details about each probe associated with that monitor.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.probes.is_none()`.
-    pub fn probes(&self) -> &[crate::types::Probe] {
-        self.probes.as_deref().unwrap_or_default()
+    pub fn probes(&self) -> & [crate::types::Probe] {
+        self.probes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time and date when the monitor was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time and date when the monitor was last modified.</p>
-    pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.modified_at
     }
 }
 impl ::aws_types::request_id::RequestId for GetMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMonitorOutput {
     /// Creates a new builder-style object to manufacture [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
     pub fn builder() -> crate::operation::get_monitor::builders::GetMonitorOutputBuilder {
@@ -79,8 +78,8 @@ pub struct GetMonitorOutputBuilder {
     pub(crate) monitor_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::MonitorState>,
     pub(crate) aggregation_period: ::std::option::Option<i64>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) probes: ::std::option::Option<::std::vec::Vec<crate::types::Probe>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) probes: ::std::option::Option<::std::vec::Vec::<crate::types::Probe>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -94,8 +93,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The ARN of the selected monitor.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The ARN of the selected monitor.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor. To get a list of the current monitors and their names, use the <code>ListMonitors</code> action.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>Returns a list of the state of each monitor.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::MonitorState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Returns a list of the state of each monitor.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::MonitorState> {
@@ -139,8 +135,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The aggregation period for the specified monitor.</p>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.aggregation_period = input;
-        self
+        self.aggregation_period = input; self
     }
     /// <p>The aggregation period for the specified monitor.</p>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<i64> {
@@ -153,17 +148,16 @@ impl GetMonitorOutputBuilder {
     /// <p>The list of key-value pairs assigned to the monitor.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The list of key-value pairs assigned to the monitor.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `probes`.
@@ -173,17 +167,16 @@ impl GetMonitorOutputBuilder {
     /// <p>The details about each probe associated with that monitor.</p>
     pub fn probes(mut self, input: crate::types::Probe) -> Self {
         let mut v = self.probes.unwrap_or_default();
-        v.push(input);
-        self.probes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.probes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details about each probe associated with that monitor.</p>
-    pub fn set_probes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Probe>>) -> Self {
-        self.probes = input;
-        self
+    pub fn set_probes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Probe>>) -> Self {
+        self.probes = input; self
     }
     /// <p>The details about each probe associated with that monitor.</p>
-    pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Probe>> {
+    pub fn get_probes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Probe>> {
         &self.probes
     }
     /// <p>The time and date when the monitor was created.</p>
@@ -194,8 +187,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The time and date when the monitor was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time and date when the monitor was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -209,22 +201,21 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The time and date when the monitor was last modified.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_at = input;
-        self
+        self.modified_at = input; self
     }
     /// <p>The time and date when the monitor was last modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_arn`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::monitor_arn)
@@ -234,46 +225,45 @@ impl GetMonitorOutputBuilder {
     /// - [`created_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::created_at)
     /// - [`modified_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::modified_at)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorOutput {
-            monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_arn",
-                    "monitor_arn was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            aggregation_period: self.aggregation_period.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_period",
-                    "aggregation_period was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            tags: self.tags,
-            probes: self.probes,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "modified_at",
-                    "modified_at was not specified but it is required when building GetMonitorOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_monitor::GetMonitorOutput {
+                monitor_arn: self.monitor_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_arn", "monitor_arn was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                monitor_name: self.monitor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_name", "monitor_name was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                aggregation_period: self.aggregation_period
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_period", "aggregation_period was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                probes: self.probes
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                modified_at: self.modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("modified_at", "modified_at was not specified but it is required when building GetMonitorOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

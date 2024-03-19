@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddApplicationReferenceDataSourceInput {
+pub struct AddApplicationReferenceDataSourceInput  {
     /// <p>The name of an existing application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -10,9 +10,9 @@ pub struct AddApplicationReferenceDataSourceInput {
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
     pub reference_data_source: ::std::option::Option<crate::types::ReferenceDataSource>,
 }
-impl AddApplicationReferenceDataSourceInput {
+impl  AddApplicationReferenceDataSourceInput  {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
@@ -20,7 +20,7 @@ impl AddApplicationReferenceDataSourceInput {
         self.current_application_version_id
     }
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
-    pub fn reference_data_source(&self) -> ::std::option::Option<&crate::types::ReferenceDataSource> {
+    pub fn reference_data_source(&self) -> ::std::option::Option<& crate::types::ReferenceDataSource> {
         self.reference_data_source.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AddApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The name of an existing application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an existing application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AddApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
@@ -78,26 +76,24 @@ impl AddApplicationReferenceDataSourceInputBuilder {
     }
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
     pub fn set_reference_data_source(mut self, input: ::std::option::Option<crate::types::ReferenceDataSource>) -> Self {
-        self.reference_data_source = input;
-        self
+        self.reference_data_source = input; self
     }
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.</p>
     pub fn get_reference_data_source(&self) -> &::std::option::Option<crate::types::ReferenceDataSource> {
         &self.reference_data_source
     }
     /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceInput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                reference_data_source: self.reference_data_source,
-            },
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                reference_data_source: self.reference_data_source
+                ,
+            }
         )
     }
 }
+

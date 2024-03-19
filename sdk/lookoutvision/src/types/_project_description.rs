@@ -3,7 +3,7 @@
 /// <p>Describe an Amazon Lookout for Vision project. For more information, see <code>DescribeProject</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectDescription {
+pub struct ProjectDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
@@ -11,26 +11,27 @@ pub struct ProjectDescription {
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of datasets in the project.</p>
-    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
 }
-impl ProjectDescription {
+impl  ProjectDescription  {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> ::std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
-    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>A list of datasets in the project.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.datasets.is_none()`.
-    pub fn datasets(&self) -> &[crate::types::DatasetMetadata] {
-        self.datasets.as_deref().unwrap_or_default()
+    pub fn datasets(&self) -> & [crate::types::DatasetMetadata] {
+        self.datasets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProjectDescription {
@@ -47,7 +48,7 @@ pub struct ProjectDescriptionBuilder {
     pub(crate) project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) project_name: ::std::option::Option<::std::string::String>,
     pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>,
 }
 impl ProjectDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -57,8 +58,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the project.</p>
     pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ProjectDescriptionBuilder {
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input;
-        self
+        self.creation_timestamp = input; self
     }
     /// <p>The unix timestamp for the date and time that the project was created.</p>
     pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,26 +97,30 @@ impl ProjectDescriptionBuilder {
     /// <p>A list of datasets in the project.</p>
     pub fn datasets(mut self, input: crate::types::DatasetMetadata) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-        v.push(input);
-        self.datasets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of datasets in the project.</p>
-    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>) -> Self {
-        self.datasets = input;
-        self
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>>) -> Self {
+        self.datasets = input; self
     }
     /// <p>A list of datasets in the project.</p>
-    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetMetadata>> {
         &self.datasets
     }
     /// Consumes the builder and constructs a [`ProjectDescription`](crate::types::ProjectDescription).
     pub fn build(self) -> crate::types::ProjectDescription {
         crate::types::ProjectDescription {
-            project_arn: self.project_arn,
-            project_name: self.project_name,
-            creation_timestamp: self.creation_timestamp,
-            datasets: self.datasets,
+            project_arn: self.project_arn
+            ,
+            project_name: self.project_name
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            datasets: self.datasets
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Crawler {
+pub struct Crawler  {
     /// <p>The name of the crawler.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
@@ -15,7 +15,7 @@ pub struct Crawler {
     /// <p>A description of the crawler.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
-    pub classifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub classifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     pub recrawl_policy: ::std::option::Option<crate::types::RecrawlPolicy>,
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
@@ -45,55 +45,56 @@ pub struct Crawler {
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
 }
-impl Crawler {
+impl  Crawler  {
     /// <p>The name of the crawler.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>A collection of targets to crawl.</p>
-    pub fn targets(&self) -> ::std::option::Option<&crate::types::CrawlerTargets> {
+    pub fn targets(&self) -> ::std::option::Option<& crate::types::CrawlerTargets> {
         self.targets.as_ref()
     }
     /// <p>The name of the database in which the crawler's output is stored.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A description of the crawler.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classifiers.is_none()`.
-    pub fn classifiers(&self) -> &[::std::string::String] {
-        self.classifiers.as_deref().unwrap_or_default()
+    pub fn classifiers(&self) -> & [::std::string::String] {
+        self.classifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-    pub fn recrawl_policy(&self) -> ::std::option::Option<&crate::types::RecrawlPolicy> {
+    pub fn recrawl_policy(&self) -> ::std::option::Option<& crate::types::RecrawlPolicy> {
         self.recrawl_policy.as_ref()
     }
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
-    pub fn schema_change_policy(&self) -> ::std::option::Option<&crate::types::SchemaChangePolicy> {
+    pub fn schema_change_policy(&self) -> ::std::option::Option<& crate::types::SchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
     /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
-    pub fn lineage_configuration(&self) -> ::std::option::Option<&crate::types::LineageConfiguration> {
+    pub fn lineage_configuration(&self) -> ::std::option::Option<& crate::types::LineageConfiguration> {
         self.lineage_configuration.as_ref()
     }
     /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::CrawlerState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::CrawlerState> {
         self.state.as_ref()
     }
     /// <p>The prefix added to the names of tables that are created.</p>
-    pub fn table_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn table_prefix(&self) -> ::std::option::Option<& str> {
         self.table_prefix.as_deref()
     }
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
@@ -101,15 +102,15 @@ impl Crawler {
         self.crawl_elapsed_time
     }
     /// <p>The time that the crawler was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the crawler was last updated.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
-    pub fn last_crawl(&self) -> ::std::option::Option<&crate::types::LastCrawlInfo> {
+    pub fn last_crawl(&self) -> ::std::option::Option<& crate::types::LastCrawlInfo> {
         self.last_crawl.as_ref()
     }
     /// <p>The version of the crawler.</p>
@@ -117,15 +118,15 @@ impl Crawler {
         self.version
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&str> {
+    pub fn configuration(&self) -> ::std::option::Option<& str> {
         self.configuration.as_deref()
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    pub fn crawler_security_configuration(&self) -> ::std::option::Option<&str> {
+    pub fn crawler_security_configuration(&self) -> ::std::option::Option<& str> {
         self.crawler_security_configuration.as_deref()
     }
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
-    pub fn lake_formation_configuration(&self) -> ::std::option::Option<&crate::types::LakeFormationConfiguration> {
+    pub fn lake_formation_configuration(&self) -> ::std::option::Option<& crate::types::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
     }
 }
@@ -145,7 +146,7 @@ pub struct CrawlerBuilder {
     pub(crate) targets: ::std::option::Option<crate::types::CrawlerTargets>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) classifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) classifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) recrawl_policy: ::std::option::Option<crate::types::RecrawlPolicy>,
     pub(crate) schema_change_policy: ::std::option::Option<crate::types::SchemaChangePolicy>,
     pub(crate) lineage_configuration: ::std::option::Option<crate::types::LineageConfiguration>,
@@ -169,8 +170,7 @@ impl CrawlerBuilder {
     }
     /// <p>The name of the crawler.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the crawler.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +183,7 @@ impl CrawlerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +196,7 @@ impl CrawlerBuilder {
     }
     /// <p>A collection of targets to crawl.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<crate::types::CrawlerTargets>) -> Self {
-        self.targets = input;
-        self
+        self.targets = input; self
     }
     /// <p>A collection of targets to crawl.</p>
     pub fn get_targets(&self) -> &::std::option::Option<crate::types::CrawlerTargets> {
@@ -211,8 +209,7 @@ impl CrawlerBuilder {
     }
     /// <p>The name of the database in which the crawler's output is stored.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database in which the crawler's output is stored.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +222,7 @@ impl CrawlerBuilder {
     }
     /// <p>A description of the crawler.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the crawler.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,17 +235,16 @@ impl CrawlerBuilder {
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
     pub fn classifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.classifiers.unwrap_or_default();
-        v.push(input.into());
-        self.classifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.classifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
-    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.classifiers = input;
-        self
+    pub fn set_classifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.classifiers = input; self
     }
     /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
-    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_classifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.classifiers
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -259,8 +254,7 @@ impl CrawlerBuilder {
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     pub fn set_recrawl_policy(mut self, input: ::std::option::Option<crate::types::RecrawlPolicy>) -> Self {
-        self.recrawl_policy = input;
-        self
+        self.recrawl_policy = input; self
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     pub fn get_recrawl_policy(&self) -> &::std::option::Option<crate::types::RecrawlPolicy> {
@@ -273,8 +267,7 @@ impl CrawlerBuilder {
     }
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
     pub fn set_schema_change_policy(mut self, input: ::std::option::Option<crate::types::SchemaChangePolicy>) -> Self {
-        self.schema_change_policy = input;
-        self
+        self.schema_change_policy = input; self
     }
     /// <p>The policy that specifies update and delete behaviors for the crawler.</p>
     pub fn get_schema_change_policy(&self) -> &::std::option::Option<crate::types::SchemaChangePolicy> {
@@ -287,8 +280,7 @@ impl CrawlerBuilder {
     }
     /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
     pub fn set_lineage_configuration(mut self, input: ::std::option::Option<crate::types::LineageConfiguration>) -> Self {
-        self.lineage_configuration = input;
-        self
+        self.lineage_configuration = input; self
     }
     /// <p>A configuration that specifies whether data lineage is enabled for the crawler.</p>
     pub fn get_lineage_configuration(&self) -> &::std::option::Option<crate::types::LineageConfiguration> {
@@ -301,8 +293,7 @@ impl CrawlerBuilder {
     }
     /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CrawlerState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates whether the crawler is running, or whether a run is pending.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CrawlerState> {
@@ -315,8 +306,7 @@ impl CrawlerBuilder {
     }
     /// <p>The prefix added to the names of tables that are created.</p>
     pub fn set_table_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_prefix = input;
-        self
+        self.table_prefix = input; self
     }
     /// <p>The prefix added to the names of tables that are created.</p>
     pub fn get_table_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +319,7 @@ impl CrawlerBuilder {
     }
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
@@ -343,8 +332,7 @@ impl CrawlerBuilder {
     }
     /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
     pub fn set_crawl_elapsed_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.crawl_elapsed_time = input;
-        self
+        self.crawl_elapsed_time = input; self
     }
     /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
     pub fn get_crawl_elapsed_time(&self) -> &::std::option::Option<i64> {
@@ -357,8 +345,7 @@ impl CrawlerBuilder {
     }
     /// <p>The time that the crawler was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time that the crawler was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -371,8 +358,7 @@ impl CrawlerBuilder {
     }
     /// <p>The time that the crawler was last updated.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The time that the crawler was last updated.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -385,8 +371,7 @@ impl CrawlerBuilder {
     }
     /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
     pub fn set_last_crawl(mut self, input: ::std::option::Option<crate::types::LastCrawlInfo>) -> Self {
-        self.last_crawl = input;
-        self
+        self.last_crawl = input; self
     }
     /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
     pub fn get_last_crawl(&self) -> &::std::option::Option<crate::types::LastCrawlInfo> {
@@ -399,8 +384,7 @@ impl CrawlerBuilder {
     }
     /// <p>The version of the crawler.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the crawler.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -413,8 +397,7 @@ impl CrawlerBuilder {
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration options</a>.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -427,8 +410,7 @@ impl CrawlerBuilder {
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn set_crawler_security_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.crawler_security_configuration = input;
-        self
+        self.crawler_security_configuration = input; self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn get_crawler_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
@@ -441,8 +423,7 @@ impl CrawlerBuilder {
     }
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn set_lake_formation_configuration(mut self, input: ::std::option::Option<crate::types::LakeFormationConfiguration>) -> Self {
-        self.lake_formation_configuration = input;
-        self
+        self.lake_formation_configuration = input; self
     }
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub fn get_lake_formation_configuration(&self) -> &::std::option::Option<crate::types::LakeFormationConfiguration> {
@@ -451,26 +432,49 @@ impl CrawlerBuilder {
     /// Consumes the builder and constructs a [`Crawler`](crate::types::Crawler).
     pub fn build(self) -> crate::types::Crawler {
         crate::types::Crawler {
-            name: self.name,
-            role: self.role,
-            targets: self.targets,
-            database_name: self.database_name,
-            description: self.description,
-            classifiers: self.classifiers,
-            recrawl_policy: self.recrawl_policy,
-            schema_change_policy: self.schema_change_policy,
-            lineage_configuration: self.lineage_configuration,
-            state: self.state,
-            table_prefix: self.table_prefix,
-            schedule: self.schedule,
-            crawl_elapsed_time: self.crawl_elapsed_time.unwrap_or_default(),
-            creation_time: self.creation_time,
-            last_updated: self.last_updated,
-            last_crawl: self.last_crawl,
-            version: self.version.unwrap_or_default(),
-            configuration: self.configuration,
-            crawler_security_configuration: self.crawler_security_configuration,
-            lake_formation_configuration: self.lake_formation_configuration,
+            name: self.name
+            ,
+            role: self.role
+            ,
+            targets: self.targets
+            ,
+            database_name: self.database_name
+            ,
+            description: self.description
+            ,
+            classifiers: self.classifiers
+            ,
+            recrawl_policy: self.recrawl_policy
+            ,
+            schema_change_policy: self.schema_change_policy
+            ,
+            lineage_configuration: self.lineage_configuration
+            ,
+            state: self.state
+            ,
+            table_prefix: self.table_prefix
+            ,
+            schedule: self.schedule
+            ,
+            crawl_elapsed_time: self.crawl_elapsed_time
+                .unwrap_or_default()
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated: self.last_updated
+            ,
+            last_crawl: self.last_crawl
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            configuration: self.configuration
+            ,
+            crawler_security_configuration: self.crawler_security_configuration
+            ,
+            lake_formation_configuration: self.lake_formation_configuration
+            ,
         }
     }
 }
+

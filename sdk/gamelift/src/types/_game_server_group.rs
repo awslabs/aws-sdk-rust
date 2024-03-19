@@ -5,7 +5,7 @@
 /// <p>A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GameServerGroup {
+pub struct GameServerGroup  {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A generated unique ID for the game server group.</p>
@@ -13,7 +13,7 @@ pub struct GameServerGroup {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group.</p>
-    pub instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
     /// <li>
@@ -49,30 +49,31 @@ pub struct GameServerGroup {
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub suspended_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub suspended_actions: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerGroupAction>>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl GameServerGroup {
+impl  GameServerGroup  {
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
-    pub fn game_server_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> ::std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>A generated unique ID for the game server group.</p>
-    pub fn game_server_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn game_server_group_arn(&self) -> ::std::option::Option<& str> {
         self.game_server_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_definitions.is_none()`.
-    pub fn instance_definitions(&self) -> &[crate::types::InstanceDefinition] {
-        self.instance_definitions.as_deref().unwrap_or_default()
+    pub fn instance_definitions(&self) -> & [crate::types::InstanceDefinition] {
+        self.instance_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -83,15 +84,15 @@ impl GameServerGroup {
     /// <li>
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
-    pub fn balancing_strategy(&self) -> ::std::option::Option<&crate::types::BalancingStrategy> {
+    pub fn balancing_strategy(&self) -> ::std::option::Option<& crate::types::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
-    pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
+    pub fn game_server_protection_policy(&self) -> ::std::option::Option<& crate::types::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
-    pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_arn(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_arn.as_deref()
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
@@ -111,25 +112,26 @@ impl GameServerGroup {
     /// <li>
     /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GameServerGroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GameServerGroupStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.suspended_actions.is_none()`.
-    pub fn suspended_actions(&self) -> &[crate::types::GameServerGroupAction] {
-        self.suspended_actions.as_deref().unwrap_or_default()
+    pub fn suspended_actions(&self) -> & [crate::types::GameServerGroupAction] {
+        self.suspended_actions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -147,13 +149,13 @@ pub struct GameServerGroupBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) game_server_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>,
+    pub(crate) instance_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>,
     pub(crate) balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
     pub(crate) game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     pub(crate) auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GameServerGroupStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) suspended_actions: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>,
+    pub(crate) suspended_actions: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerGroupAction>>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -165,8 +167,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn set_game_server_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_name = input;
-        self
+        self.game_server_group_name = input; self
     }
     /// <p>A developer-defined identifier for the game server group. The name is unique for each Region in each Amazon Web Services account.</p>
     pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +180,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A generated unique ID for the game server group.</p>
     pub fn set_game_server_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.game_server_group_arn = input;
-        self
+        self.game_server_group_arn = input; self
     }
     /// <p>A generated unique ID for the game server group.</p>
     pub fn get_game_server_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +193,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,17 +206,16 @@ impl GameServerGroupBuilder {
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group.</p>
     pub fn instance_definitions(mut self, input: crate::types::InstanceDefinition) -> Self {
         let mut v = self.instance_definitions.unwrap_or_default();
-        v.push(input);
-        self.instance_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group.</p>
-    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>>) -> Self {
-        self.instance_definitions = input;
-        self
+    pub fn set_instance_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>>) -> Self {
+        self.instance_definitions = input; self
     }
     /// <p>The set of Amazon EC2 instance types that Amazon GameLift FleetIQ can use when balancing and automatically scaling instances in the corresponding Auto Scaling group.</p>
-    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
+    pub fn get_instance_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceDefinition>> {
         &self.instance_definitions
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
@@ -243,8 +241,7 @@ impl GameServerGroupBuilder {
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub fn set_balancing_strategy(mut self, input: ::std::option::Option<crate::types::BalancingStrategy>) -> Self {
-        self.balancing_strategy = input;
-        self
+        self.balancing_strategy = input; self
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -265,8 +262,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn set_game_server_protection_policy(mut self, input: ::std::option::Option<crate::types::GameServerProtectionPolicy>) -> Self {
-        self.game_server_protection_policy = input;
-        self
+        self.game_server_protection_policy = input; self
     }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
@@ -279,8 +275,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     pub fn set_auto_scaling_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_arn = input;
-        self
+        self.auto_scaling_group_arn = input; self
     }
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     pub fn get_auto_scaling_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -325,8 +320,7 @@ impl GameServerGroupBuilder {
     /// <p><code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed, resulting in an error state.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GameServerGroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the game server group. Possible statuses include:</p>
     /// <ul>
@@ -355,8 +349,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>Additional information about the current game server group status. This information might provide additional insight on groups that are in <code>ERROR</code> status.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -369,17 +362,16 @@ impl GameServerGroupBuilder {
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
     pub fn suspended_actions(mut self, input: crate::types::GameServerGroupAction) -> Self {
         let mut v = self.suspended_actions.unwrap_or_default();
-        v.push(input);
-        self.suspended_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.suspended_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn set_suspended_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>>) -> Self {
-        self.suspended_actions = input;
-        self
+    pub fn set_suspended_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameServerGroupAction>>) -> Self {
+        self.suspended_actions = input; self
     }
     /// <p>A list of activities that are currently suspended for this game server group. If this property is empty, all activities are occurring.</p>
-    pub fn get_suspended_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+    pub fn get_suspended_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameServerGroupAction>> {
         &self.suspended_actions
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
@@ -389,8 +381,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -403,8 +394,7 @@ impl GameServerGroupBuilder {
     }
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>A timestamp that indicates when this game server group was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -413,18 +403,31 @@ impl GameServerGroupBuilder {
     /// Consumes the builder and constructs a [`GameServerGroup`](crate::types::GameServerGroup).
     pub fn build(self) -> crate::types::GameServerGroup {
         crate::types::GameServerGroup {
-            game_server_group_name: self.game_server_group_name,
-            game_server_group_arn: self.game_server_group_arn,
-            role_arn: self.role_arn,
-            instance_definitions: self.instance_definitions,
-            balancing_strategy: self.balancing_strategy,
-            game_server_protection_policy: self.game_server_protection_policy,
-            auto_scaling_group_arn: self.auto_scaling_group_arn,
-            status: self.status,
-            status_reason: self.status_reason,
-            suspended_actions: self.suspended_actions,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
+            game_server_group_name: self.game_server_group_name
+            ,
+            game_server_group_arn: self.game_server_group_arn
+            ,
+            role_arn: self.role_arn
+            ,
+            instance_definitions: self.instance_definitions
+            ,
+            balancing_strategy: self.balancing_strategy
+            ,
+            game_server_protection_policy: self.game_server_protection_policy
+            ,
+            auto_scaling_group_arn: self.auto_scaling_group_arn
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            suspended_actions: self.suspended_actions
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

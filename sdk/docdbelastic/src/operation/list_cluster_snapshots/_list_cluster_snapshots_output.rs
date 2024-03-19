@@ -2,32 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClusterSnapshotsOutput {
+pub struct ListClusterSnapshotsOutput  {
     /// <p>A list of snapshots for a specified elastic cluster.</p>
-    pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
+    pub snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSnapshotInList>>,
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListClusterSnapshotsOutput {
+impl  ListClusterSnapshotsOutput  {
     /// <p>A list of snapshots for a specified elastic cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
-    pub fn snapshots(&self) -> &[crate::types::ClusterSnapshotInList] {
-        self.snapshots.as_deref().unwrap_or_default()
+    pub fn snapshots(&self) -> & [crate::types::ClusterSnapshotInList] {
+        self.snapshots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListClusterSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput).
     pub fn builder() -> crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder {
@@ -39,7 +40,7 @@ impl ListClusterSnapshotsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsOutputBuilder {
-    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSnapshotInList>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +52,16 @@ impl ListClusterSnapshotsOutputBuilder {
     /// <p>A list of snapshots for a specified elastic cluster.</p>
     pub fn snapshots(mut self, input: crate::types::ClusterSnapshotInList) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
-        v.push(input);
-        self.snapshots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.snapshots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of snapshots for a specified elastic cluster.</p>
-    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>) -> Self {
-        self.snapshots = input;
-        self
+    pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterSnapshotInList>>) -> Self {
+        self.snapshots = input; self
     }
     /// <p>A list of snapshots for a specified elastic cluster.</p>
-    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterSnapshotInList>> {
         &self.snapshots
     }
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
@@ -73,8 +73,7 @@ impl ListClusterSnapshotsOutputBuilder {
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
@@ -82,20 +81,23 @@ impl ListClusterSnapshotsOutputBuilder {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListClusterSnapshotsOutput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput).
     pub fn build(self) -> crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput {
         crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput {
-            snapshots: self.snapshots,
-            next_token: self.next_token,
+            snapshots: self.snapshots
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

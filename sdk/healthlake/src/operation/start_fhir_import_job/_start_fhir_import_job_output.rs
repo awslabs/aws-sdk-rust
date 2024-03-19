@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFhirImportJobOutput {
+pub struct StartFhirImportJobOutput  {
     /// <p>The AWS-generated job ID.</p>
     pub job_id: ::std::string::String,
     /// <p>The status of an import job.</p>
@@ -11,26 +11,25 @@ pub struct StartFhirImportJobOutput {
     pub datastore_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartFhirImportJobOutput {
+impl  StartFhirImportJobOutput  {
     /// <p>The AWS-generated job ID.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The status of an import job.</p>
-    pub fn job_status(&self) -> &crate::types::JobStatus {
+    pub fn job_status(&self) -> & crate::types::JobStatus {
         &self.job_status
     }
     /// <p>The AWS-generated data store ID.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartFhirImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
     pub fn builder() -> crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder {
@@ -56,8 +55,7 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The status of an import job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of an import job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -85,45 +82,43 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The AWS-generated data store ID.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The AWS-generated data store ID.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::job_id)
     /// - [`job_status`](crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::job_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::start_fhir_import_job::StartFhirImportJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building StartFhirImportJobOutput",
-                )
-            })?,
-            job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_status",
-                    "job_status was not specified but it is required when building StartFhirImportJobOutput",
-                )
-            })?,
-            datastore_id: self.datastore_id,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_fhir_import_job::StartFhirImportJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building StartFhirImportJobOutput")
+                    )?
+                ,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building StartFhirImportJobOutput")
+                    )?
+                ,
+                datastore_id: self.datastore_id
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

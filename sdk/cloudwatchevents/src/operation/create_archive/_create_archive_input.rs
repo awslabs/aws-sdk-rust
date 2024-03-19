@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateArchiveInput {
+pub struct CreateArchiveInput  {
     /// <p>The name for the archive to create.</p>
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus that sends events to the archive.</p>
@@ -14,21 +14,21 @@ pub struct CreateArchiveInput {
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub retention_days: ::std::option::Option<i32>,
 }
-impl CreateArchiveInput {
+impl  CreateArchiveInput  {
     /// <p>The name for the archive to create.</p>
-    pub fn archive_name(&self) -> ::std::option::Option<&str> {
+    pub fn archive_name(&self) -> ::std::option::Option<& str> {
         self.archive_name.as_deref()
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>A description for the archive.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
@@ -62,8 +62,7 @@ impl CreateArchiveInputBuilder {
     }
     /// <p>The name for the archive to create.</p>
     pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_name = input;
-        self
+        self.archive_name = input; self
     }
     /// <p>The name for the archive to create.</p>
     pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateArchiveInputBuilder {
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
     pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>The ARN of the event bus that sends events to the archive.</p>
     pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl CreateArchiveInputBuilder {
     }
     /// <p>A description for the archive.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the archive.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl CreateArchiveInputBuilder {
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>An event pattern to use to filter events sent to the archive.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,23 +115,28 @@ impl CreateArchiveInputBuilder {
     }
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
     }
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
         &self.retention_days
     }
     /// Consumes the builder and constructs a [`CreateArchiveInput`](crate::operation::create_archive::CreateArchiveInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_archive::CreateArchiveInput {
-            archive_name: self.archive_name,
-            event_source_arn: self.event_source_arn,
-            description: self.description,
-            event_pattern: self.event_pattern,
-            retention_days: self.retention_days,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_archive::CreateArchiveInput {
+                archive_name: self.archive_name
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                description: self.description
+                ,
+                event_pattern: self.event_pattern
+                ,
+                retention_days: self.retention_days
+                ,
+            }
+        )
     }
 }
+

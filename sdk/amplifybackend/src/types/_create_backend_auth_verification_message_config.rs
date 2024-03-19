@@ -3,7 +3,7 @@
 /// <p>Creates an email or SMS verification message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateBackendAuthVerificationMessageConfig {
+pub struct CreateBackendAuthVerificationMessageConfig  {
     /// <p>The type of verification message to send.</p>
     pub delivery_method: ::std::option::Option<crate::types::DeliveryMethod>,
     /// <p>The settings for the email message.</p>
@@ -11,21 +11,21 @@ pub struct CreateBackendAuthVerificationMessageConfig {
     /// <p>The settings for the SMS message.</p>
     pub sms_settings: ::std::option::Option<crate::types::SmsSettings>,
 }
-impl CreateBackendAuthVerificationMessageConfig {
+impl  CreateBackendAuthVerificationMessageConfig  {
     /// <p>The type of verification message to send.</p>
-    pub fn delivery_method(&self) -> ::std::option::Option<&crate::types::DeliveryMethod> {
+    pub fn delivery_method(&self) -> ::std::option::Option<& crate::types::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p>The settings for the email message.</p>
-    pub fn email_settings(&self) -> ::std::option::Option<&crate::types::EmailSettings> {
+    pub fn email_settings(&self) -> ::std::option::Option<& crate::types::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p>The settings for the SMS message.</p>
-    pub fn sms_settings(&self) -> ::std::option::Option<&crate::types::SmsSettings> {
+    pub fn sms_settings(&self) -> ::std::option::Option<& crate::types::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateBackendAuthVerificationMessageConfig {
+impl  ::std::fmt::Debug for CreateBackendAuthVerificationMessageConfig  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBackendAuthVerificationMessageConfig");
         formatter.field("delivery_method", &self.delivery_method);
@@ -58,8 +58,7 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
     }
     /// <p>The type of verification message to send.</p>
     pub fn set_delivery_method(mut self, input: ::std::option::Option<crate::types::DeliveryMethod>) -> Self {
-        self.delivery_method = input;
-        self
+        self.delivery_method = input; self
     }
     /// <p>The type of verification message to send.</p>
     pub fn get_delivery_method(&self) -> &::std::option::Option<crate::types::DeliveryMethod> {
@@ -72,8 +71,7 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
     }
     /// <p>The settings for the email message.</p>
     pub fn set_email_settings(mut self, input: ::std::option::Option<crate::types::EmailSettings>) -> Self {
-        self.email_settings = input;
-        self
+        self.email_settings = input; self
     }
     /// <p>The settings for the email message.</p>
     pub fn get_email_settings(&self) -> &::std::option::Option<crate::types::EmailSettings> {
@@ -86,8 +84,7 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
     }
     /// <p>The settings for the SMS message.</p>
     pub fn set_sms_settings(mut self, input: ::std::option::Option<crate::types::SmsSettings>) -> Self {
-        self.sms_settings = input;
-        self
+        self.sms_settings = input; self
     }
     /// <p>The settings for the SMS message.</p>
     pub fn get_sms_settings(&self) -> &::std::option::Option<crate::types::SmsSettings> {
@@ -96,9 +93,12 @@ impl CreateBackendAuthVerificationMessageConfigBuilder {
     /// Consumes the builder and constructs a [`CreateBackendAuthVerificationMessageConfig`](crate::types::CreateBackendAuthVerificationMessageConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthVerificationMessageConfig {
         crate::types::CreateBackendAuthVerificationMessageConfig {
-            delivery_method: self.delivery_method,
-            email_settings: self.email_settings,
-            sms_settings: self.sms_settings,
+            delivery_method: self.delivery_method
+            ,
+            email_settings: self.email_settings
+            ,
+            sms_settings: self.sms_settings
+            ,
         }
     }
 }
@@ -111,3 +111,4 @@ impl ::std::fmt::Debug for CreateBackendAuthVerificationMessageConfigBuilder {
         formatter.finish()
     }
 }
+

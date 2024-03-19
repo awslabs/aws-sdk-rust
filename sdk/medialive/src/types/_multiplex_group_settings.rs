@@ -3,7 +3,8 @@
 /// Multiplex Group Settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiplexGroupSettings {}
+pub struct MultiplexGroupSettings  {
+}
 impl MultiplexGroupSettings {
     /// Creates a new builder-style object to manufacture [`MultiplexGroupSettings`](crate::types::MultiplexGroupSettings).
     pub fn builder() -> crate::types::builders::MultiplexGroupSettingsBuilder {
@@ -14,10 +15,13 @@ impl MultiplexGroupSettings {
 /// A builder for [`MultiplexGroupSettings`](crate::types::MultiplexGroupSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct MultiplexGroupSettingsBuilder {}
+pub struct MultiplexGroupSettingsBuilder {
+}
 impl MultiplexGroupSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexGroupSettings`](crate::types::MultiplexGroupSettings).
     pub fn build(self) -> crate::types::MultiplexGroupSettings {
-        crate::types::MultiplexGroupSettings {}
+        crate::types::MultiplexGroupSettings {
+        }
     }
 }
+

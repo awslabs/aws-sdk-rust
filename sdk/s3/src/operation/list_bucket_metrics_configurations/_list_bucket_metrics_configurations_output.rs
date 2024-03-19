@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBucketMetricsConfigurationsOutput {
+pub struct ListBucketMetricsConfigurationsOutput  {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub is_truncated: ::std::option::Option<bool>,
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
@@ -10,40 +10,41 @@ pub struct ListBucketMetricsConfigurationsOutput {
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of metrics configurations for a bucket.</p>
-    pub metrics_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricsConfiguration>>,
+    pub metrics_configuration_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
-impl ListBucketMetricsConfigurationsOutput {
+impl  ListBucketMetricsConfigurationsOutput  {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
-    pub fn next_continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_continuation_token(&self) -> ::std::option::Option<& str> {
         self.next_continuation_token.as_deref()
     }
     /// <p>The list of metrics configurations for a bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_configuration_list.is_none()`.
-    pub fn metrics_configuration_list(&self) -> &[crate::types::MetricsConfiguration] {
-        self.metrics_configuration_list.as_deref().unwrap_or_default()
+    pub fn metrics_configuration_list(&self) -> & [crate::types::MetricsConfiguration] {
+        self.metrics_configuration_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListBucketMetricsConfigurationsOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                    fn extended_request_id(&self) -> Option<&str> {
+                                        self._extended_request_id.as_deref()
+                                    }
+                                }
 impl ::aws_types::request_id::RequestId for ListBucketMetricsConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBucketMetricsConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListBucketMetricsConfigurationsOutput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput).
     pub fn builder() -> crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsOutputBuilder {
@@ -58,7 +59,7 @@ pub struct ListBucketMetricsConfigurationsOutputBuilder {
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
     pub(crate) next_continuation_token: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricsConfiguration>>,
+    pub(crate) metrics_configuration_list: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsConfiguration>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -70,8 +71,7 @@ impl ListBucketMetricsConfigurationsOutputBuilder {
     }
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -84,8 +84,7 @@ impl ListBucketMetricsConfigurationsOutputBuilder {
     }
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl ListBucketMetricsConfigurationsOutputBuilder {
     }
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn set_next_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_continuation_token = input;
-        self
+        self.next_continuation_token = input; self
     }
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn get_next_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,46 +110,50 @@ impl ListBucketMetricsConfigurationsOutputBuilder {
     /// <p>The list of metrics configurations for a bucket.</p>
     pub fn metrics_configuration_list(mut self, input: crate::types::MetricsConfiguration) -> Self {
         let mut v = self.metrics_configuration_list.unwrap_or_default();
-        v.push(input);
-        self.metrics_configuration_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics_configuration_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of metrics configurations for a bucket.</p>
-    pub fn set_metrics_configuration_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsConfiguration>>) -> Self {
-        self.metrics_configuration_list = input;
-        self
+    pub fn set_metrics_configuration_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MetricsConfiguration>>) -> Self {
+        self.metrics_configuration_list = input; self
     }
     /// <p>The list of metrics configurations for a bucket.</p>
-    pub fn get_metrics_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricsConfiguration>> {
+    pub fn get_metrics_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MetricsConfiguration>> {
         &self.metrics_configuration_list
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                        self._extended_request_id = Some(extended_request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                        self._extended_request_id = extended_request_id;
+                                        self
+                                    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsOutput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput {
         crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput {
-            is_truncated: self.is_truncated,
-            continuation_token: self.continuation_token,
-            next_continuation_token: self.next_continuation_token,
-            metrics_configuration_list: self.metrics_configuration_list,
+            is_truncated: self.is_truncated
+            ,
+            continuation_token: self.continuation_token
+            ,
+            next_continuation_token: self.next_continuation_token
+            ,
+            metrics_configuration_list: self.metrics_configuration_list
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

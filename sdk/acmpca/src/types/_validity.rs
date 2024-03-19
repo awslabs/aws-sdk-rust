@@ -4,7 +4,7 @@
 /// <p>Amazon Web Services Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Validity {
+pub struct Validity  {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub value: i64,
     /// <p>Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output.</p>
@@ -33,7 +33,7 @@ pub struct Validity {
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub r#type: crate::types::ValidityPeriodType,
 }
-impl Validity {
+impl  Validity  {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub fn value(&self) -> i64 {
         self.value
@@ -62,7 +62,7 @@ impl Validity {
     /// <p>Output expiration date: 01/10/2020 12:34:54 UTC</p></li>
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
-    pub fn r#type(&self) -> &crate::types::ValidityPeriodType {
+    pub fn r#type(&self) -> & crate::types::ValidityPeriodType {
         &self.r#type
     }
 }
@@ -89,8 +89,7 @@ impl ValidityBuilder {
     }
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub fn get_value(&self) -> &::std::option::Option<i64> {
@@ -150,8 +149,7 @@ impl ValidityBuilder {
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ValidityPeriodType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output.</p>
     /// <p><code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
@@ -185,19 +183,20 @@ impl ValidityBuilder {
     /// - [`value`](crate::types::builders::ValidityBuilder::value)
     /// - [`r#type`](crate::types::builders::ValidityBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Validity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Validity {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Validity",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Validity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Validity {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Validity")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Validity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

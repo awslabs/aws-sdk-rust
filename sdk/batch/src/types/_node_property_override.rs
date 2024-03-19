@@ -3,7 +3,7 @@
 /// <p>The object that represents any node overrides to a job definition that's used in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodePropertyOverride {
+pub struct NodePropertyOverride  {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     pub target_nodes: ::std::option::Option<::std::string::String>,
     /// <p>The overrides that are sent to a node range.</p>
@@ -11,26 +11,27 @@ pub struct NodePropertyOverride {
     /// <p>An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.</p>
     pub ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
-    pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl NodePropertyOverride {
+impl  NodePropertyOverride  {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
-    pub fn target_nodes(&self) -> ::std::option::Option<&str> {
+    pub fn target_nodes(&self) -> ::std::option::Option<& str> {
         self.target_nodes.as_deref()
     }
     /// <p>The overrides that are sent to a node range.</p>
-    pub fn container_overrides(&self) -> ::std::option::Option<&crate::types::ContainerOverrides> {
+    pub fn container_overrides(&self) -> ::std::option::Option<& crate::types::ContainerOverrides> {
         self.container_overrides.as_ref()
     }
     /// <p>An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.</p>
-    pub fn ecs_properties_override(&self) -> ::std::option::Option<&crate::types::EcsPropertiesOverride> {
+    pub fn ecs_properties_override(&self) -> ::std::option::Option<& crate::types::EcsPropertiesOverride> {
         self.ecs_properties_override.as_ref()
     }
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
-    pub fn instance_types(&self) -> &[::std::string::String] {
-        self.instance_types.as_deref().unwrap_or_default()
+    pub fn instance_types(&self) -> & [::std::string::String] {
+        self.instance_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NodePropertyOverride {
@@ -47,7 +48,7 @@ pub struct NodePropertyOverrideBuilder {
     pub(crate) target_nodes: ::std::option::Option<::std::string::String>,
     pub(crate) container_overrides: ::std::option::Option<crate::types::ContainerOverrides>,
     pub(crate) ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
-    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl NodePropertyOverrideBuilder {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
@@ -58,8 +59,7 @@ impl NodePropertyOverrideBuilder {
     }
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     pub fn set_target_nodes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_nodes = input;
-        self
+        self.target_nodes = input; self
     }
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     pub fn get_target_nodes(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl NodePropertyOverrideBuilder {
     }
     /// <p>The overrides that are sent to a node range.</p>
     pub fn set_container_overrides(mut self, input: ::std::option::Option<crate::types::ContainerOverrides>) -> Self {
-        self.container_overrides = input;
-        self
+        self.container_overrides = input; self
     }
     /// <p>The overrides that are sent to a node range.</p>
     pub fn get_container_overrides(&self) -> &::std::option::Option<crate::types::ContainerOverrides> {
@@ -86,8 +85,7 @@ impl NodePropertyOverrideBuilder {
     }
     /// <p>An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.</p>
     pub fn set_ecs_properties_override(mut self, input: ::std::option::Option<crate::types::EcsPropertiesOverride>) -> Self {
-        self.ecs_properties_override = input;
-        self
+        self.ecs_properties_override = input; self
     }
     /// <p>An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.</p>
     pub fn get_ecs_properties_override(&self) -> &::std::option::Option<crate::types::EcsPropertiesOverride> {
@@ -100,26 +98,30 @@ impl NodePropertyOverrideBuilder {
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
     pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
-    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_types = input; self
     }
     /// <p>An object that contains the instance types that you want to replace for the existing resources of a job.</p>
-    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_types
     }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).
     pub fn build(self) -> crate::types::NodePropertyOverride {
         crate::types::NodePropertyOverride {
-            target_nodes: self.target_nodes,
-            container_overrides: self.container_overrides,
-            ecs_properties_override: self.ecs_properties_override,
-            instance_types: self.instance_types,
+            target_nodes: self.target_nodes
+            ,
+            container_overrides: self.container_overrides
+            ,
+            ecs_properties_override: self.ecs_properties_override
+            ,
+            instance_types: self.instance_types
+            ,
         }
     }
 }
+

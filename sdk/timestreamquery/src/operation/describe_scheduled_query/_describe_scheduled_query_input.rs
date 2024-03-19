@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScheduledQueryInput {
+pub struct DescribeScheduledQueryInput  {
     /// <p>The ARN of the scheduled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeScheduledQueryInput {
+impl  DescribeScheduledQueryInput  {
     /// <p>The ARN of the scheduled query.</p>
-    pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_query_arn(&self) -> ::std::option::Option<& str> {
         self.scheduled_query_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeScheduledQueryInputBuilder {
     }
     /// <p>The ARN of the scheduled query.</p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_query_arn = input;
-        self
+        self.scheduled_query_arn = input; self
     }
     /// <p>The ARN of the scheduled query.</p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduled_query_arn
     }
     /// Consumes the builder and constructs a [`DescribeScheduledQueryInput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_scheduled_query::DescribeScheduledQueryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_scheduled_query::DescribeScheduledQueryInput {
-            scheduled_query_arn: self.scheduled_query_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_scheduled_query::DescribeScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_scheduled_query::DescribeScheduledQueryInput {
+                scheduled_query_arn: self.scheduled_query_arn
+                ,
+            }
+        )
     }
 }
+

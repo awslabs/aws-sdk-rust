@@ -3,13 +3,13 @@
 /// <p>The configuration of the prediction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredictionConfiguration {
+pub struct PredictionConfiguration  {
     /// <p>The business name generation mechanism.</p>
     pub business_name_generation: ::std::option::Option<crate::types::BusinessNameGenerationConfiguration>,
 }
-impl PredictionConfiguration {
+impl  PredictionConfiguration  {
     /// <p>The business name generation mechanism.</p>
-    pub fn business_name_generation(&self) -> ::std::option::Option<&crate::types::BusinessNameGenerationConfiguration> {
+    pub fn business_name_generation(&self) -> ::std::option::Option<& crate::types::BusinessNameGenerationConfiguration> {
         self.business_name_generation.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl PredictionConfigurationBuilder {
     }
     /// <p>The business name generation mechanism.</p>
     pub fn set_business_name_generation(mut self, input: ::std::option::Option<crate::types::BusinessNameGenerationConfiguration>) -> Self {
-        self.business_name_generation = input;
-        self
+        self.business_name_generation = input; self
     }
     /// <p>The business name generation mechanism.</p>
     pub fn get_business_name_generation(&self) -> &::std::option::Option<crate::types::BusinessNameGenerationConfiguration> {
@@ -44,7 +43,9 @@ impl PredictionConfigurationBuilder {
     /// Consumes the builder and constructs a [`PredictionConfiguration`](crate::types::PredictionConfiguration).
     pub fn build(self) -> crate::types::PredictionConfiguration {
         crate::types::PredictionConfiguration {
-            business_name_generation: self.business_name_generation,
+            business_name_generation: self.business_name_generation
+            ,
         }
     }
 }
+

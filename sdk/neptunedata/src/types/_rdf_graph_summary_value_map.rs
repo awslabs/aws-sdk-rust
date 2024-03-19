@@ -3,7 +3,7 @@
 /// <p>Payload for an RDF graph summary response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RdfGraphSummaryValueMap {
+pub struct RdfGraphSummaryValueMap  {
     /// <p>The version of this graph summary response.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
@@ -11,17 +11,17 @@ pub struct RdfGraphSummaryValueMap {
     /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub graph_summary: ::std::option::Option<crate::types::RdfGraphSummary>,
 }
-impl RdfGraphSummaryValueMap {
+impl  RdfGraphSummaryValueMap  {
     /// <p>The version of this graph summary response.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
-    pub fn last_statistics_computation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_statistics_computation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_statistics_computation_time.as_ref()
     }
     /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
-    pub fn graph_summary(&self) -> ::std::option::Option<&crate::types::RdfGraphSummary> {
+    pub fn graph_summary(&self) -> ::std::option::Option<& crate::types::RdfGraphSummary> {
         self.graph_summary.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl RdfGraphSummaryValueMapBuilder {
     }
     /// <p>The version of this graph summary response.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of this graph summary response.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RdfGraphSummaryValueMapBuilder {
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
     pub fn set_last_statistics_computation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_statistics_computation_time = input;
-        self
+        self.last_statistics_computation_time = input; self
     }
     /// <p>The timestamp, in ISO 8601 format, of the time at which Neptune last computed statistics.</p>
     pub fn get_last_statistics_computation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl RdfGraphSummaryValueMapBuilder {
     }
     /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn set_graph_summary(mut self, input: ::std::option::Option<crate::types::RdfGraphSummary>) -> Self {
-        self.graph_summary = input;
-        self
+        self.graph_summary = input; self
     }
     /// <p>The graph summary of an RDF graph. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary response for an RDF graph</a>.</p>
     pub fn get_graph_summary(&self) -> &::std::option::Option<crate::types::RdfGraphSummary> {
@@ -86,9 +83,13 @@ impl RdfGraphSummaryValueMapBuilder {
     /// Consumes the builder and constructs a [`RdfGraphSummaryValueMap`](crate::types::RdfGraphSummaryValueMap).
     pub fn build(self) -> crate::types::RdfGraphSummaryValueMap {
         crate::types::RdfGraphSummaryValueMap {
-            version: self.version,
-            last_statistics_computation_time: self.last_statistics_computation_time,
-            graph_summary: self.graph_summary,
+            version: self.version
+            ,
+            last_statistics_computation_time: self.last_statistics_computation_time
+            ,
+            graph_summary: self.graph_summary
+            ,
         }
     }
 }
+

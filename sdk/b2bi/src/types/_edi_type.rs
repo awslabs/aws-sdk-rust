@@ -21,11 +21,7 @@ impl EdiType {
     /// Tries to convert the enum instance into [`X12Details`](crate::types::EdiType::X12Details), extracting the inner [`X12Details`](crate::types::X12Details).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_x12_details(&self) -> ::std::result::Result<&crate::types::X12Details, &Self> {
-        if let EdiType::X12Details(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let EdiType::X12Details(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`X12Details`](crate::types::EdiType::X12Details).
     pub fn is_x12_details(&self) -> bool {
@@ -36,3 +32,4 @@ impl EdiType {
         matches!(self, Self::Unknown)
     }
 }
+

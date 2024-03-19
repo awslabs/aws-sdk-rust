@@ -2,48 +2,50 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurchaseHostReservationInput {
+pub struct PurchaseHostReservationInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub host_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
     pub limit_price: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the offering.</p>
     pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl PurchaseHostReservationInput {
+impl  PurchaseHostReservationInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> ::std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.host_id_set.is_none()`.
-    pub fn host_id_set(&self) -> &[::std::string::String] {
-        self.host_id_set.as_deref().unwrap_or_default()
+    pub fn host_id_set(&self) -> & [::std::string::String] {
+        self.host_id_set.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
-    pub fn limit_price(&self) -> ::std::option::Option<&str> {
+    pub fn limit_price(&self) -> ::std::option::Option<& str> {
         self.limit_price.as_deref()
     }
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PurchaseHostReservationInput {
@@ -59,10 +61,10 @@ impl PurchaseHostReservationInput {
 pub struct PurchaseHostReservationInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<crate::types::CurrencyCodeValues>,
-    pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) host_id_set: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit_price: ::std::option::Option<::std::string::String>,
     pub(crate) offering_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl PurchaseHostReservationInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
@@ -72,8 +74,7 @@ impl PurchaseHostReservationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +87,7 @@ impl PurchaseHostReservationInputBuilder {
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
@@ -100,17 +100,16 @@ impl PurchaseHostReservationInputBuilder {
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
     pub fn host_id_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_id_set.unwrap_or_default();
-        v.push(input.into());
-        self.host_id_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.host_id_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.host_id_set = input;
-        self
+    pub fn set_host_id_set(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.host_id_set = input; self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_host_id_set(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.host_id_set
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
@@ -120,8 +119,7 @@ impl PurchaseHostReservationInputBuilder {
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
     pub fn set_limit_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.limit_price = input;
-        self
+        self.limit_price = input; self
     }
     /// <p>The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit, the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price of USD 100, specify 100.00.</p>
     pub fn get_limit_price(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +133,7 @@ impl PurchaseHostReservationInputBuilder {
     }
     /// <p>The ID of the offering.</p>
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// <p>The ID of the offering.</p>
     pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,33 +146,36 @@ impl PurchaseHostReservationInputBuilder {
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`PurchaseHostReservationInput`](crate::operation::purchase_host_reservation::PurchaseHostReservationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::purchase_host_reservation::PurchaseHostReservationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::purchase_host_reservation::PurchaseHostReservationInput {
-            client_token: self.client_token,
-            currency_code: self.currency_code,
-            host_id_set: self.host_id_set,
-            limit_price: self.limit_price,
-            offering_id: self.offering_id,
-            tag_specifications: self.tag_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_host_reservation::PurchaseHostReservationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::purchase_host_reservation::PurchaseHostReservationInput {
+                client_token: self.client_token
+                ,
+                currency_code: self.currency_code
+                ,
+                host_id_set: self.host_id_set
+                ,
+                limit_price: self.limit_price
+                ,
+                offering_id: self.offering_id
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

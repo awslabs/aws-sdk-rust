@@ -3,7 +3,7 @@
 /// <p>Update information relating to replication between a given source and target Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReplicationInfoInput {
+pub struct UpdateReplicationInfoInput  {
     /// <p>Updated consumer group replication information.</p>
     pub consumer_group_replication: ::std::option::Option<crate::types::ConsumerGroupReplicationUpdate>,
     /// <p>Current replicator version.</p>
@@ -17,29 +17,29 @@ pub struct UpdateReplicationInfoInput {
     /// <p>Updated topic replication information.</p>
     pub topic_replication: ::std::option::Option<crate::types::TopicReplicationUpdate>,
 }
-impl UpdateReplicationInfoInput {
+impl  UpdateReplicationInfoInput  {
     /// <p>Updated consumer group replication information.</p>
-    pub fn consumer_group_replication(&self) -> ::std::option::Option<&crate::types::ConsumerGroupReplicationUpdate> {
+    pub fn consumer_group_replication(&self) -> ::std::option::Option<& crate::types::ConsumerGroupReplicationUpdate> {
         self.consumer_group_replication.as_ref()
     }
     /// <p>Current replicator version.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>
-    pub fn replicator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replicator_arn(&self) -> ::std::option::Option<& str> {
         self.replicator_arn.as_deref()
     }
     /// <p>The ARN of the source Kafka cluster.</p>
-    pub fn source_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_kafka_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.source_kafka_cluster_arn.as_deref()
     }
     /// <p>The ARN of the target Kafka cluster.</p>
-    pub fn target_kafka_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_kafka_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.target_kafka_cluster_arn.as_deref()
     }
     /// <p>Updated topic replication information.</p>
-    pub fn topic_replication(&self) -> ::std::option::Option<&crate::types::TopicReplicationUpdate> {
+    pub fn topic_replication(&self) -> ::std::option::Option<& crate::types::TopicReplicationUpdate> {
         self.topic_replication.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>Updated consumer group replication information.</p>
     pub fn set_consumer_group_replication(mut self, input: ::std::option::Option<crate::types::ConsumerGroupReplicationUpdate>) -> Self {
-        self.consumer_group_replication = input;
-        self
+        self.consumer_group_replication = input; self
     }
     /// <p>Updated consumer group replication information.</p>
     pub fn get_consumer_group_replication(&self) -> &::std::option::Option<crate::types::ConsumerGroupReplicationUpdate> {
@@ -84,8 +83,7 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>Current replicator version.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>Current replicator version.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>
     pub fn set_replicator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replicator_arn = input;
-        self
+        self.replicator_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicator to be updated.</p>
     pub fn get_replicator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>The ARN of the source Kafka cluster.</p>
     pub fn set_source_kafka_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_kafka_cluster_arn = input;
-        self
+        self.source_kafka_cluster_arn = input; self
     }
     /// <p>The ARN of the source Kafka cluster.</p>
     pub fn get_source_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn set_target_kafka_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_kafka_cluster_arn = input;
-        self
+        self.target_kafka_cluster_arn = input; self
     }
     /// <p>The ARN of the target Kafka cluster.</p>
     pub fn get_target_kafka_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,25 +138,30 @@ impl UpdateReplicationInfoInputBuilder {
     }
     /// <p>Updated topic replication information.</p>
     pub fn set_topic_replication(mut self, input: ::std::option::Option<crate::types::TopicReplicationUpdate>) -> Self {
-        self.topic_replication = input;
-        self
+        self.topic_replication = input; self
     }
     /// <p>Updated topic replication information.</p>
     pub fn get_topic_replication(&self) -> &::std::option::Option<crate::types::TopicReplicationUpdate> {
         &self.topic_replication
     }
     /// Consumes the builder and constructs a [`UpdateReplicationInfoInput`](crate::operation::update_replication_info::UpdateReplicationInfoInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_replication_info::UpdateReplicationInfoInput {
-            consumer_group_replication: self.consumer_group_replication,
-            current_version: self.current_version,
-            replicator_arn: self.replicator_arn,
-            source_kafka_cluster_arn: self.source_kafka_cluster_arn,
-            target_kafka_cluster_arn: self.target_kafka_cluster_arn,
-            topic_replication: self.topic_replication,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_replication_info::UpdateReplicationInfoInput {
+                consumer_group_replication: self.consumer_group_replication
+                ,
+                current_version: self.current_version
+                ,
+                replicator_arn: self.replicator_arn
+                ,
+                source_kafka_cluster_arn: self.source_kafka_cluster_arn
+                ,
+                target_kafka_cluster_arn: self.target_kafka_cluster_arn
+                ,
+                topic_replication: self.topic_replication
+                ,
+            }
+        )
     }
 }
+

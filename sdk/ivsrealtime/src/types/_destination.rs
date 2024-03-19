@@ -3,7 +3,7 @@
 /// <p>Object specifying the status of a Destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub id: ::std::string::String,
     /// <p>State of the Composition Destination.</p>
@@ -17,30 +17,29 @@ pub struct Destination {
     /// <p>Optional details regarding the status of the destination.</p>
     pub detail: ::std::option::Option<crate::types::DestinationDetail>,
 }
-impl Destination {
+impl  Destination  {
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>State of the Composition Destination.</p>
-    pub fn state(&self) -> &crate::types::DestinationState {
+    pub fn state(&self) -> & crate::types::DestinationState {
         &self.state
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Configuration used to create this destination.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::DestinationConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>Optional details regarding the status of the destination.</p>
-    pub fn detail(&self) -> ::std::option::Option<&crate::types::DestinationDetail> {
+    pub fn detail(&self) -> ::std::option::Option<& crate::types::DestinationDetail> {
         self.detail.as_ref()
     }
 }
@@ -71,8 +70,7 @@ impl DestinationBuilder {
     }
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique identifier for this destination, assigned by IVS.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl DestinationBuilder {
     }
     /// <p>State of the Composition Destination.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DestinationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the Composition Destination.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DestinationState> {
@@ -100,8 +97,7 @@ impl DestinationBuilder {
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>UTC time of the destination start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -114,8 +110,7 @@ impl DestinationBuilder {
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>UTC time of the destination end. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -129,8 +124,7 @@ impl DestinationBuilder {
     }
     /// <p>Configuration used to create this destination.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Configuration used to create this destination.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
@@ -143,8 +137,7 @@ impl DestinationBuilder {
     }
     /// <p>Optional details regarding the status of the destination.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<crate::types::DestinationDetail>) -> Self {
-        self.detail = input;
-        self
+        self.detail = input; self
     }
     /// <p>Optional details regarding the status of the destination.</p>
     pub fn get_detail(&self) -> &::std::option::Option<crate::types::DestinationDetail> {
@@ -155,23 +148,28 @@ impl DestinationBuilder {
     /// - [`id`](crate::types::builders::DestinationBuilder::id)
     /// - [`state`](crate::types::builders::DestinationBuilder::state)
     pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Destination {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Destination",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building Destination",
-                )
-            })?,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            configuration: self.configuration,
-            detail: self.detail,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Destination {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Destination")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building Destination")
+                    )?
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                configuration: self.configuration
+                ,
+                detail: self.detail
+                ,
+            }
+        )
     }
 }
+

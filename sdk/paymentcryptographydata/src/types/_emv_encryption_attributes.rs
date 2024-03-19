@@ -3,7 +3,7 @@
 /// <p>Parameters for plaintext encryption using EMV keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct EmvEncryptionAttributes {
+pub struct EmvEncryptionAttributes  {
     /// <p>The EMV derivation mode to use for ICC master key derivation as per EMV version 4.3 book 2.</p>
     pub major_key_derivation_mode: crate::types::EmvMajorKeyDerivationMode,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
@@ -17,36 +17,33 @@ pub struct EmvEncryptionAttributes {
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub initialization_vector: ::std::option::Option<::std::string::String>,
 }
-impl EmvEncryptionAttributes {
+impl  EmvEncryptionAttributes  {
     /// <p>The EMV derivation mode to use for ICC master key derivation as per EMV version 4.3 book 2.</p>
-    pub fn major_key_derivation_mode(&self) -> &crate::types::EmvMajorKeyDerivationMode {
+    pub fn major_key_derivation_mode(&self) -> & crate::types::EmvMajorKeyDerivationMode {
         &self.major_key_derivation_mode
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
-    pub fn primary_account_number(&self) -> &str {
-        use std::ops::Deref;
-        self.primary_account_number.deref()
+    pub fn primary_account_number(&self) -> & str {
+        use std::ops::Deref; self.primary_account_number.deref()
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
-    pub fn pan_sequence_number(&self) -> &str {
-        use std::ops::Deref;
-        self.pan_sequence_number.deref()
+    pub fn pan_sequence_number(&self) -> & str {
+        use std::ops::Deref; self.pan_sequence_number.deref()
     }
     /// <p>The derivation value used to derive the ICC session key. It is typically the application transaction counter value padded with zeros or previous ARQC value padded with zeros as per EMV version 4.3 book 2.</p>
-    pub fn session_derivation_data(&self) -> &str {
-        use std::ops::Deref;
-        self.session_derivation_data.deref()
+    pub fn session_derivation_data(&self) -> & str {
+        use std::ops::Deref; self.session_derivation_data.deref()
     }
     /// <p>The block cipher method to use for encryption.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::EmvEncryptionMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::EmvEncryptionMode> {
         self.mode.as_ref()
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
-    pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_vector(&self) -> ::std::option::Option<& str> {
         self.initialization_vector.as_deref()
     }
 }
-impl ::std::fmt::Debug for EmvEncryptionAttributes {
+impl  ::std::fmt::Debug for EmvEncryptionAttributes  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EmvEncryptionAttributes");
         formatter.field("major_key_derivation_mode", &self.major_key_derivation_mode);
@@ -85,8 +82,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>The EMV derivation mode to use for ICC master key derivation as per EMV version 4.3 book 2.</p>
     pub fn set_major_key_derivation_mode(mut self, input: ::std::option::Option<crate::types::EmvMajorKeyDerivationMode>) -> Self {
-        self.major_key_derivation_mode = input;
-        self
+        self.major_key_derivation_mode = input; self
     }
     /// <p>The EMV derivation mode to use for ICC master key derivation as per EMV version 4.3 book 2.</p>
     pub fn get_major_key_derivation_mode(&self) -> &::std::option::Option<crate::types::EmvMajorKeyDerivationMode> {
@@ -100,8 +96,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_account_number = input;
-        self
+        self.primary_account_number = input; self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card and associates the card to a specific account holder.</p>
     pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +110,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn set_pan_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pan_sequence_number = input;
-        self
+        self.pan_sequence_number = input; self
     }
     /// <p>A number that identifies and differentiates payment cards with the same Primary Account Number (PAN).</p>
     pub fn get_pan_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +124,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>The derivation value used to derive the ICC session key. It is typically the application transaction counter value padded with zeros or previous ARQC value padded with zeros as per EMV version 4.3 book 2.</p>
     pub fn set_session_derivation_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_derivation_data = input;
-        self
+        self.session_derivation_data = input; self
     }
     /// <p>The derivation value used to derive the ICC session key. It is typically the application transaction counter value padded with zeros or previous ARQC value padded with zeros as per EMV version 4.3 book 2.</p>
     pub fn get_session_derivation_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +137,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>The block cipher method to use for encryption.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::EmvEncryptionMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The block cipher method to use for encryption.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::EmvEncryptionMode> {
@@ -158,8 +150,7 @@ impl EmvEncryptionAttributesBuilder {
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_vector = input;
-        self
+        self.initialization_vector = input; self
     }
     /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,34 +163,34 @@ impl EmvEncryptionAttributesBuilder {
     /// - [`pan_sequence_number`](crate::types::builders::EmvEncryptionAttributesBuilder::pan_sequence_number)
     /// - [`session_derivation_data`](crate::types::builders::EmvEncryptionAttributesBuilder::session_derivation_data)
     pub fn build(self) -> ::std::result::Result<crate::types::EmvEncryptionAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EmvEncryptionAttributes {
-            major_key_derivation_mode: self.major_key_derivation_mode.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "major_key_derivation_mode",
-                    "major_key_derivation_mode was not specified but it is required when building EmvEncryptionAttributes",
-                )
-            })?,
-            primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "primary_account_number",
-                    "primary_account_number was not specified but it is required when building EmvEncryptionAttributes",
-                )
-            })?,
-            pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pan_sequence_number",
-                    "pan_sequence_number was not specified but it is required when building EmvEncryptionAttributes",
-                )
-            })?,
-            session_derivation_data: self.session_derivation_data.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_derivation_data",
-                    "session_derivation_data was not specified but it is required when building EmvEncryptionAttributes",
-                )
-            })?,
-            mode: self.mode,
-            initialization_vector: self.initialization_vector,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EmvEncryptionAttributes {
+                major_key_derivation_mode: self.major_key_derivation_mode
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("major_key_derivation_mode", "major_key_derivation_mode was not specified but it is required when building EmvEncryptionAttributes")
+                    )?
+                ,
+                primary_account_number: self.primary_account_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("primary_account_number", "primary_account_number was not specified but it is required when building EmvEncryptionAttributes")
+                    )?
+                ,
+                pan_sequence_number: self.pan_sequence_number
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pan_sequence_number", "pan_sequence_number was not specified but it is required when building EmvEncryptionAttributes")
+                    )?
+                ,
+                session_derivation_data: self.session_derivation_data
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_derivation_data", "session_derivation_data was not specified but it is required when building EmvEncryptionAttributes")
+                    )?
+                ,
+                mode: self.mode
+                ,
+                initialization_vector: self.initialization_vector
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EmvEncryptionAttributesBuilder {
@@ -214,3 +205,4 @@ impl ::std::fmt::Debug for EmvEncryptionAttributesBuilder {
         formatter.finish()
     }
 }
+

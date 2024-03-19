@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFoundationModelInput {
+pub struct GetFoundationModelInput  {
     /// <p>The model identifier.</p>
     pub model_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetFoundationModelInput {
+impl  GetFoundationModelInput  {
     /// <p>The model identifier.</p>
-    pub fn model_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn model_identifier(&self) -> ::std::option::Option<& str> {
         self.model_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetFoundationModelInputBuilder {
     }
     /// <p>The model identifier.</p>
     pub fn set_model_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_identifier = input;
-        self
+        self.model_identifier = input; self
     }
     /// <p>The model identifier.</p>
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_identifier
     }
     /// Consumes the builder and constructs a [`GetFoundationModelInput`](crate::operation::get_foundation_model::GetFoundationModelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_foundation_model::GetFoundationModelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_foundation_model::GetFoundationModelInput {
-            model_identifier: self.model_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_foundation_model::GetFoundationModelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_foundation_model::GetFoundationModelInput {
+                model_identifier: self.model_identifier
+                ,
+            }
+        )
     }
 }
+

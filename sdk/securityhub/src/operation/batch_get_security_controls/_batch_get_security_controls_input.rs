@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetSecurityControlsInput {
+pub struct BatchGetSecurityControlsInput  {
     /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
-    pub security_control_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_control_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetSecurityControlsInput {
+impl  BatchGetSecurityControlsInput  {
     /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_ids.is_none()`.
-    pub fn security_control_ids(&self) -> &[::std::string::String] {
-        self.security_control_ids.as_deref().unwrap_or_default()
+    pub fn security_control_ids(&self) -> & [::std::string::String] {
+        self.security_control_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetSecurityControlsInput {
@@ -25,7 +26,7 @@ impl BatchGetSecurityControlsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSecurityControlsInputBuilder {
-    pub(crate) security_control_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_control_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetSecurityControlsInputBuilder {
     /// Appends an item to `security_control_ids`.
@@ -35,28 +36,26 @@ impl BatchGetSecurityControlsInputBuilder {
     /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
     pub fn security_control_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_control_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_control_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_control_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
-    pub fn set_security_control_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_control_ids = input;
-        self
+    pub fn set_security_control_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_control_ids = input; self
     }
     /// <p>A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.</p>
-    pub fn get_security_control_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_control_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_control_ids
     }
     /// Consumes the builder and constructs a [`BatchGetSecurityControlsInput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput {
-            security_control_ids: self.security_control_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput {
+                security_control_ids: self.security_control_ids
+                ,
+            }
+        )
     }
 }
+

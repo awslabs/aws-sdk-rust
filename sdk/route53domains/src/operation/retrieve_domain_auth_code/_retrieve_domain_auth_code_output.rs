@@ -3,18 +3,18 @@
 /// <p>The RetrieveDomainAuthCode response includes the following element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RetrieveDomainAuthCodeOutput {
+pub struct RetrieveDomainAuthCodeOutput  {
     /// <p>The authorization code for the domain.</p>
     pub auth_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RetrieveDomainAuthCodeOutput {
+impl  RetrieveDomainAuthCodeOutput  {
     /// <p>The authorization code for the domain.</p>
-    pub fn auth_code(&self) -> ::std::option::Option<&str> {
+    pub fn auth_code(&self) -> ::std::option::Option<& str> {
         self.auth_code.as_deref()
     }
 }
-impl ::std::fmt::Debug for RetrieveDomainAuthCodeOutput {
+impl  ::std::fmt::Debug for RetrieveDomainAuthCodeOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveDomainAuthCodeOutput");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
@@ -23,10 +23,10 @@ impl ::std::fmt::Debug for RetrieveDomainAuthCodeOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RetrieveDomainAuthCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RetrieveDomainAuthCodeOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
     pub fn builder() -> crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeOutputBuilder {
@@ -49,26 +49,26 @@ impl RetrieveDomainAuthCodeOutputBuilder {
     }
     /// <p>The authorization code for the domain.</p>
     pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_code = input;
-        self
+        self.auth_code = input; self
     }
     /// <p>The authorization code for the domain.</p>
     pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
     pub fn build(self) -> crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput {
         crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput {
-            auth_code: self.auth_code,
+            auth_code: self.auth_code
+            ,
             _request_id: self._request_id,
         }
     }
@@ -81,3 +81,4 @@ impl ::std::fmt::Debug for RetrieveDomainAuthCodeOutputBuilder {
         formatter.finish()
     }
 }
+

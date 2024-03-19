@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceBundlesInput {
+pub struct DescribeWorkspaceBundlesInput  {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bundle_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeWorkspaceBundlesInput {
+impl  DescribeWorkspaceBundlesInput  {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bundle_ids.is_none()`.
-    pub fn bundle_ids(&self) -> &[::std::string::String] {
-        self.bundle_ids.as_deref().unwrap_or_default()
+    pub fn bundle_ids(&self) -> & [::std::string::String] {
+        self.bundle_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl DescribeWorkspaceBundlesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceBundlesInputBuilder {
-    pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bundle_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +52,16 @@ impl DescribeWorkspaceBundlesInputBuilder {
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
     pub fn bundle_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bundle_ids.unwrap_or_default();
-        v.push(input.into());
-        self.bundle_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bundle_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bundle_ids = input;
-        self
+    pub fn set_bundle_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bundle_ids = input; self
     }
     /// <p>The identifiers of the bundles. You cannot combine this parameter with any other filter.</p>
-    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bundle_ids
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
@@ -73,8 +73,7 @@ impl DescribeWorkspaceBundlesInputBuilder {
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
     /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>. To describe the bundles that belong to your account, don't specify a value.</p>
@@ -88,24 +87,24 @@ impl DescribeWorkspaceBundlesInputBuilder {
     }
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceBundlesInput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput {
-            bundle_ids: self.bundle_ids,
-            owner: self.owner,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput {
+                bundle_ids: self.bundle_ids
+                ,
+                owner: self.owner
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

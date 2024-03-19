@@ -3,19 +3,19 @@
 /// <p>A structure that describes a resource type supported by Amazon Web Services Resource Explorer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SupportedResourceType {
+pub struct SupportedResourceType  {
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
 }
-impl SupportedResourceType {
+impl  SupportedResourceType  {
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The unique identifier of the resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SupportedResourceTypeBuilder {
     }
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The Amazon Web Service that is associated with the resource type. This is the primary service that lets you create and interact with resources of this type.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SupportedResourceTypeBuilder {
     }
     /// <p>The unique identifier of the resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The unique identifier of the resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SupportedResourceTypeBuilder {
     /// Consumes the builder and constructs a [`SupportedResourceType`](crate::types::SupportedResourceType).
     pub fn build(self) -> crate::types::SupportedResourceType {
         crate::types::SupportedResourceType {
-            service: self.service,
-            resource_type: self.resource_type,
+            service: self.service
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

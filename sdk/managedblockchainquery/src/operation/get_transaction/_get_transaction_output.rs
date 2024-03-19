@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransactionOutput {
+pub struct GetTransactionOutput  {
     /// <p>Contains the details of the transaction.</p>
     pub transaction: ::std::option::Option<crate::types::Transaction>,
     _request_id: Option<String>,
 }
-impl GetTransactionOutput {
+impl  GetTransactionOutput  {
     /// <p>Contains the details of the transaction.</p>
-    pub fn transaction(&self) -> ::std::option::Option<&crate::types::Transaction> {
+    pub fn transaction(&self) -> ::std::option::Option<& crate::types::Transaction> {
         self.transaction.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTransactionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTransactionOutput {
     /// Creates a new builder-style object to manufacture [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput).
     pub fn builder() -> crate::operation::get_transaction::builders::GetTransactionOutputBuilder {
@@ -41,27 +41,28 @@ impl GetTransactionOutputBuilder {
     }
     /// <p>Contains the details of the transaction.</p>
     pub fn set_transaction(mut self, input: ::std::option::Option<crate::types::Transaction>) -> Self {
-        self.transaction = input;
-        self
+        self.transaction = input; self
     }
     /// <p>Contains the details of the transaction.</p>
     pub fn get_transaction(&self) -> &::std::option::Option<crate::types::Transaction> {
         &self.transaction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTransactionOutput`](crate::operation::get_transaction::GetTransactionOutput).
     pub fn build(self) -> crate::operation::get_transaction::GetTransactionOutput {
         crate::operation::get_transaction::GetTransactionOutput {
-            transaction: self.transaction,
+            transaction: self.transaction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

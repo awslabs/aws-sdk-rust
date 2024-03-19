@@ -3,24 +3,26 @@
 /// <p>The required configuration fields to give intermediate access to a provider service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderIntermediateDataAccessConfiguration {
+pub struct ProviderIntermediateDataAccessConfiguration  {
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
-    pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
-    pub required_bucket_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub required_bucket_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ProviderIntermediateDataAccessConfiguration {
+impl  ProviderIntermediateDataAccessConfiguration  {
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
-    pub fn aws_account_ids(&self) -> &[::std::string::String] {
-        self.aws_account_ids.as_deref().unwrap_or_default()
+    pub fn aws_account_ids(&self) -> & [::std::string::String] {
+        self.aws_account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.required_bucket_actions.is_none()`.
-    pub fn required_bucket_actions(&self) -> &[::std::string::String] {
-        self.required_bucket_actions.as_deref().unwrap_or_default()
+    pub fn required_bucket_actions(&self) -> & [::std::string::String] {
+        self.required_bucket_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProviderIntermediateDataAccessConfiguration {
@@ -34,8 +36,8 @@ impl ProviderIntermediateDataAccessConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProviderIntermediateDataAccessConfigurationBuilder {
-    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) required_bucket_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) required_bucket_actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ProviderIntermediateDataAccessConfigurationBuilder {
     /// Appends an item to `aws_account_ids`.
@@ -45,17 +47,16 @@ impl ProviderIntermediateDataAccessConfigurationBuilder {
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
     pub fn aws_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.aws_account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.aws_account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
-    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.aws_account_ids = input;
-        self
+    pub fn set_aws_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.aws_account_ids = input; self
     }
     /// <p>The Amazon Web Services account that provider can use to read or write data into the customer's intermediate S3 bucket.</p>
-    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.aws_account_ids
     }
     /// Appends an item to `required_bucket_actions`.
@@ -65,24 +66,26 @@ impl ProviderIntermediateDataAccessConfigurationBuilder {
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
     pub fn required_bucket_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.required_bucket_actions.unwrap_or_default();
-        v.push(input.into());
-        self.required_bucket_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.required_bucket_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
-    pub fn set_required_bucket_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.required_bucket_actions = input;
-        self
+    pub fn set_required_bucket_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.required_bucket_actions = input; self
     }
     /// <p>The S3 bucket actions that the provider requires permission for.</p>
-    pub fn get_required_bucket_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_required_bucket_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.required_bucket_actions
     }
     /// Consumes the builder and constructs a [`ProviderIntermediateDataAccessConfiguration`](crate::types::ProviderIntermediateDataAccessConfiguration).
     pub fn build(self) -> crate::types::ProviderIntermediateDataAccessConfiguration {
         crate::types::ProviderIntermediateDataAccessConfiguration {
-            aws_account_ids: self.aws_account_ids,
-            required_bucket_actions: self.required_bucket_actions,
+            aws_account_ids: self.aws_account_ids
+            ,
+            required_bucket_actions: self.required_bucket_actions
+            ,
         }
     }
 }
+

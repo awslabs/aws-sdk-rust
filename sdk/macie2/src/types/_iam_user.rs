@@ -3,7 +3,7 @@
 /// <p>Provides information about an Identity and Access Management (IAM) user who performed an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IamUser {
+pub struct IamUser  {
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
@@ -13,21 +13,21 @@ pub struct IamUser {
     /// <p>The username of the IAM user who performed the action.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl IamUser {
+impl  IamUser  {
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the IAM user who performed the action.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The username of the IAM user who performed the action.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl IamUserBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl IamUserBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl IamUserBuilder {
     }
     /// <p>The unique identifier for the IAM user who performed the action.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The unique identifier for the IAM user who performed the action.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl IamUserBuilder {
     }
     /// <p>The username of the IAM user who performed the action.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The username of the IAM user who performed the action.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl IamUserBuilder {
     /// Consumes the builder and constructs a [`IamUser`](crate::types::IamUser).
     pub fn build(self) -> crate::types::IamUser {
         crate::types::IamUser {
-            account_id: self.account_id,
-            arn: self.arn,
-            principal_id: self.principal_id,
-            user_name: self.user_name,
+            account_id: self.account_id
+            ,
+            arn: self.arn
+            ,
+            principal_id: self.principal_id
+            ,
+            user_name: self.user_name
+            ,
         }
     }
 }
+

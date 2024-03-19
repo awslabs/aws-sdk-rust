@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamingSessionBackupInput {
+pub struct GetStreamingSessionBackupInput  {
     /// <p>The ID of the backup.</p>
     pub backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The studio ID.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStreamingSessionBackupInput {
+impl  GetStreamingSessionBackupInput  {
     /// <p>The ID of the backup.</p>
-    pub fn backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_id(&self) -> ::std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>The studio ID.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetStreamingSessionBackupInputBuilder {
     }
     /// <p>The ID of the backup.</p>
     pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// <p>The ID of the backup.</p>
     pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetStreamingSessionBackupInputBuilder {
     }
     /// <p>The studio ID.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The studio ID.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStreamingSessionBackupInput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput {
-            backup_id: self.backup_id,
-            studio_id: self.studio_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput {
+                backup_id: self.backup_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
+        )
     }
 }
+

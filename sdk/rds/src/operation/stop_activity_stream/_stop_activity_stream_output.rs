@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopActivityStreamOutput {
+pub struct StopActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -12,26 +12,26 @@ pub struct StopActivityStreamOutput {
     pub status: ::std::option::Option<crate::types::ActivityStreamStatus>,
     _request_id: Option<String>,
 }
-impl StopActivityStreamOutput {
+impl  StopActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-    pub fn kinesis_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn kinesis_stream_name(&self) -> ::std::option::Option<& str> {
         self.kinesis_stream_name.as_deref()
     }
     /// <p>The status of the database activity stream.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActivityStreamStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActivityStreamStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StopActivityStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`StopActivityStreamOutput`](crate::operation::stop_activity_stream::StopActivityStreamOutput).
     pub fn builder() -> crate::operation::stop_activity_stream::builders::StopActivityStreamOutputBuilder {
@@ -58,8 +58,7 @@ impl StopActivityStreamOutputBuilder {
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -73,8 +72,7 @@ impl StopActivityStreamOutputBuilder {
     }
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub fn set_kinesis_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kinesis_stream_name = input;
-        self
+        self.kinesis_stream_name = input; self
     }
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub fn get_kinesis_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,29 +85,32 @@ impl StopActivityStreamOutputBuilder {
     }
     /// <p>The status of the database activity stream.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActivityStreamStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the database activity stream.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActivityStreamStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopActivityStreamOutput`](crate::operation::stop_activity_stream::StopActivityStreamOutput).
     pub fn build(self) -> crate::operation::stop_activity_stream::StopActivityStreamOutput {
         crate::operation::stop_activity_stream::StopActivityStreamOutput {
-            kms_key_id: self.kms_key_id,
-            kinesis_stream_name: self.kinesis_stream_name,
-            status: self.status,
+            kms_key_id: self.kms_key_id
+            ,
+            kinesis_stream_name: self.kinesis_stream_name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

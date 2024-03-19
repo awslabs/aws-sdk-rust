@@ -3,19 +3,19 @@
 /// <p>Indicates which speaker is on which channel. The options are <code>CLINICIAN</code> and <code>PATIENT</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalScribeChannelDefinition {
+pub struct MedicalScribeChannelDefinition  {
     /// <p>Specify the audio channel you want to define.</p>
     pub channel_id: i32,
     /// <p>Specify the participant that you want to flag. The options are <code>CLINICIAN</code> and <code>PATIENT</code></p>
     pub participant_role: crate::types::MedicalScribeParticipantRole,
 }
-impl MedicalScribeChannelDefinition {
+impl  MedicalScribeChannelDefinition  {
     /// <p>Specify the audio channel you want to define.</p>
     pub fn channel_id(&self) -> i32 {
         self.channel_id
     }
     /// <p>Specify the participant that you want to flag. The options are <code>CLINICIAN</code> and <code>PATIENT</code></p>
-    pub fn participant_role(&self) -> &crate::types::MedicalScribeParticipantRole {
+    pub fn participant_role(&self) -> & crate::types::MedicalScribeParticipantRole {
         &self.participant_role
     }
 }
@@ -42,8 +42,7 @@ impl MedicalScribeChannelDefinitionBuilder {
     }
     /// <p>Specify the audio channel you want to define.</p>
     pub fn set_channel_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>Specify the audio channel you want to define.</p>
     pub fn get_channel_id(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl MedicalScribeChannelDefinitionBuilder {
     }
     /// <p>Specify the participant that you want to flag. The options are <code>CLINICIAN</code> and <code>PATIENT</code></p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::MedicalScribeParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>Specify the participant that you want to flag. The options are <code>CLINICIAN</code> and <code>PATIENT</code></p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::MedicalScribeParticipantRole> {
@@ -68,14 +66,18 @@ impl MedicalScribeChannelDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`participant_role`](crate::types::builders::MedicalScribeChannelDefinitionBuilder::participant_role)
     pub fn build(self) -> ::std::result::Result<crate::types::MedicalScribeChannelDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MedicalScribeChannelDefinition {
-            channel_id: self.channel_id.unwrap_or_default(),
-            participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_role",
-                    "participant_role was not specified but it is required when building MedicalScribeChannelDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MedicalScribeChannelDefinition {
+                channel_id: self.channel_id
+                    .unwrap_or_default()
+                ,
+                participant_role: self.participant_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_role", "participant_role was not specified but it is required when building MedicalScribeChannelDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

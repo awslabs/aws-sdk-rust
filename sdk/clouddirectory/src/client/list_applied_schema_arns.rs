@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAppliedSchemaArns`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The ARN of the directory you are listing.</p><br>
     ///   - [`schema_arn(impl Into<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::set_schema_arn):<br>required: **false**<br><p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to retrieve.</p><br>
-    /// - On success, responds with [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput) with field(s):
+                            /// - On success, responds with [`ListAppliedSchemaArnsOutput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput) with field(s):
     ///   - [`schema_arns(Option<Vec::<String>>)`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput::schema_arns): <p>The ARNs of schemas that are applied to the directory.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListAppliedSchemaArnsError>`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError)
+                            /// - On failure, responds with [`SdkError<ListAppliedSchemaArnsError>`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError)
     pub fn list_applied_schema_arns(&self) -> crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder {
-        crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_applied_schema_arns::builders::ListAppliedSchemaArnsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

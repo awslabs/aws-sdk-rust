@@ -3,13 +3,13 @@
 /// <p>A rule for configuring how Amazon Q responds when it encounters a a blocked topic. You can configure a custom message to inform your end users that they have asked about a restricted topic and suggest any next steps they should take.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContentBlockerRule {
+pub struct ContentBlockerRule  {
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub system_message_override: ::std::option::Option<::std::string::String>,
 }
-impl ContentBlockerRule {
+impl  ContentBlockerRule  {
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
-    pub fn system_message_override(&self) -> ::std::option::Option<&str> {
+    pub fn system_message_override(&self) -> ::std::option::Option<& str> {
         self.system_message_override.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ContentBlockerRuleBuilder {
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub fn set_system_message_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.system_message_override = input;
-        self
+        self.system_message_override = input; self
     }
     /// <p>The configured custom message displayed to an end user informing them that they've used a blocked phrase during chat.</p>
     pub fn get_system_message_override(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ContentBlockerRuleBuilder {
     /// Consumes the builder and constructs a [`ContentBlockerRule`](crate::types::ContentBlockerRule).
     pub fn build(self) -> crate::types::ContentBlockerRule {
         crate::types::ContentBlockerRule {
-            system_message_override: self.system_message_override,
+            system_message_override: self.system_message_override
+            ,
         }
     }
 }
+

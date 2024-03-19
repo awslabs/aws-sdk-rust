@@ -2,46 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigurationsInput {
+pub struct ListConfigurationsInput  {
     /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
+    pub order_by: ::std::option::Option<::std::vec::Vec::<crate::types::OrderByElement>>,
 }
-impl ListConfigurationsInput {
+impl  ListConfigurationsInput  {
     /// <p>A valid configuration identified by Application Discovery Service.</p>
-    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<& crate::types::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.order_by.is_none()`.
-    pub fn order_by(&self) -> &[crate::types::OrderByElement] {
-        self.order_by.as_deref().unwrap_or_default()
+    pub fn order_by(&self) -> & [crate::types::OrderByElement] {
+        self.order_by.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListConfigurationsInput {
@@ -56,10 +58,10 @@ impl ListConfigurationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigurationsInputBuilder {
     pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>,
+    pub(crate) order_by: ::std::option::Option<::std::vec::Vec::<crate::types::OrderByElement>>,
 }
 impl ListConfigurationsInputBuilder {
     /// <p>A valid configuration identified by Application Discovery Service.</p>
@@ -70,8 +72,7 @@ impl ListConfigurationsInputBuilder {
     }
     /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub fn set_configuration_type(mut self, input: ::std::option::Option<crate::types::ConfigurationItemType>) -> Self {
-        self.configuration_type = input;
-        self
+        self.configuration_type = input; self
     }
     /// <p>A valid configuration identified by Application Discovery Service.</p>
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationItemType> {
@@ -86,21 +87,20 @@ impl ListConfigurationsInputBuilder {
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:</p>
     /// <p><code>{"key": "serverType", "value": "webServer"}</code></p>
     /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
@@ -110,8 +110,7 @@ impl ListConfigurationsInputBuilder {
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -124,8 +123,7 @@ impl ListConfigurationsInputBuilder {
     }
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,29 +136,34 @@ impl ListConfigurationsInputBuilder {
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
     pub fn order_by(mut self, input: crate::types::OrderByElement) -> Self {
         let mut v = self.order_by.unwrap_or_default();
-        v.push(input);
-        self.order_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.order_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn set_order_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>>) -> Self {
-        self.order_by = input;
-        self
+    pub fn set_order_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrderByElement>>) -> Self {
+        self.order_by = input; self
     }
     /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
-    pub fn get_order_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>> {
+    pub fn get_order_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrderByElement>> {
         &self.order_by
     }
     /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_configurations::ListConfigurationsInput {
-            configuration_type: self.configuration_type,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            order_by: self.order_by,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_configurations::ListConfigurationsInput {
+                configuration_type: self.configuration_type
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                order_by: self.order_by
+                ,
+            }
+        )
     }
 }
+

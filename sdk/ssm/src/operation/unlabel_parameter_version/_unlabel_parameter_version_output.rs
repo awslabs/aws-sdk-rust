@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnlabelParameterVersionOutput {
+pub struct UnlabelParameterVersionOutput  {
     /// <p>A list of all labels deleted from the parameter.</p>
-    pub removed_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub removed_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    pub invalid_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub invalid_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UnlabelParameterVersionOutput {
+impl  UnlabelParameterVersionOutput  {
     /// <p>A list of all labels deleted from the parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.removed_labels.is_none()`.
-    pub fn removed_labels(&self) -> &[::std::string::String] {
-        self.removed_labels.as_deref().unwrap_or_default()
+    pub fn removed_labels(&self) -> & [::std::string::String] {
+        self.removed_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_labels.is_none()`.
-    pub fn invalid_labels(&self) -> &[::std::string::String] {
-        self.invalid_labels.as_deref().unwrap_or_default()
+    pub fn invalid_labels(&self) -> & [::std::string::String] {
+        self.invalid_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UnlabelParameterVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UnlabelParameterVersionOutput {
     /// Creates a new builder-style object to manufacture [`UnlabelParameterVersionOutput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput).
     pub fn builder() -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionOutputBuilder {
@@ -39,8 +41,8 @@ impl UnlabelParameterVersionOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionOutputBuilder {
-    pub(crate) removed_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) invalid_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) removed_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) invalid_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UnlabelParameterVersionOutputBuilder {
@@ -51,17 +53,16 @@ impl UnlabelParameterVersionOutputBuilder {
     /// <p>A list of all labels deleted from the parameter.</p>
     pub fn removed_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.removed_labels.unwrap_or_default();
-        v.push(input.into());
-        self.removed_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.removed_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all labels deleted from the parameter.</p>
-    pub fn set_removed_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.removed_labels = input;
-        self
+    pub fn set_removed_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.removed_labels = input; self
     }
     /// <p>A list of all labels deleted from the parameter.</p>
-    pub fn get_removed_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_removed_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.removed_labels
     }
     /// Appends an item to `invalid_labels`.
@@ -71,34 +72,36 @@ impl UnlabelParameterVersionOutputBuilder {
     /// <p>The labels that aren't attached to the given parameter version.</p>
     pub fn invalid_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_labels.unwrap_or_default();
-        v.push(input.into());
-        self.invalid_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.invalid_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    pub fn set_invalid_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.invalid_labels = input;
-        self
+    pub fn set_invalid_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.invalid_labels = input; self
     }
     /// <p>The labels that aren't attached to the given parameter version.</p>
-    pub fn get_invalid_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.invalid_labels
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UnlabelParameterVersionOutput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput).
     pub fn build(self) -> crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput {
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput {
-            removed_labels: self.removed_labels,
-            invalid_labels: self.invalid_labels,
+            removed_labels: self.removed_labels
+            ,
+            invalid_labels: self.invalid_labels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

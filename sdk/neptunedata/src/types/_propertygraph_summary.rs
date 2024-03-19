@@ -3,7 +3,7 @@
 /// <p>The graph summary API returns a read-only list of node and edge labels and property keys, along with counts of nodes, edges, and properties. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-pg-response">Graph summary response for a property graph (PG)</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PropertygraphSummary {
+pub struct PropertygraphSummary  {
     /// <p>The number of nodes in the graph.</p>
     pub num_nodes: ::std::option::Option<i64>,
     /// <p>The number of edges in the graph.</p>
@@ -13,27 +13,27 @@ pub struct PropertygraphSummary {
     /// <p>The number of distinct edge labels in the graph.</p>
     pub num_edge_labels: ::std::option::Option<i64>,
     /// <p>A list of the distinct node labels in the graph.</p>
-    pub node_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub node_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of the distinct edge labels in the graph.</p>
-    pub edge_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub edge_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
     pub num_node_properties: ::std::option::Option<i64>,
     /// <p>The number of distinct edge properties in the graph.</p>
     pub num_edge_properties: ::std::option::Option<i64>,
     /// <p>The number of distinct node properties in the graph.</p>
-    pub node_properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
+    pub node_properties: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    pub edge_properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
+    pub edge_properties: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
     /// <p>The total number of usages of all node properties.</p>
     pub total_node_property_values: ::std::option::Option<i64>,
     /// <p>The total number of usages of all edge properties.</p>
     pub total_edge_property_values: ::std::option::Option<i64>,
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
-    pub node_structures: ::std::option::Option<::std::vec::Vec<crate::types::NodeStructure>>,
+    pub node_structures: ::std::option::Option<::std::vec::Vec::<crate::types::NodeStructure>>,
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
-    pub edge_structures: ::std::option::Option<::std::vec::Vec<crate::types::EdgeStructure>>,
+    pub edge_structures: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeStructure>>,
 }
-impl PropertygraphSummary {
+impl  PropertygraphSummary  {
     /// <p>The number of nodes in the graph.</p>
     pub fn num_nodes(&self) -> ::std::option::Option<i64> {
         self.num_nodes
@@ -51,16 +51,18 @@ impl PropertygraphSummary {
         self.num_edge_labels
     }
     /// <p>A list of the distinct node labels in the graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_labels.is_none()`.
-    pub fn node_labels(&self) -> &[::std::string::String] {
-        self.node_labels.as_deref().unwrap_or_default()
+    pub fn node_labels(&self) -> & [::std::string::String] {
+        self.node_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the distinct edge labels in the graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_labels.is_none()`.
-    pub fn edge_labels(&self) -> &[::std::string::String] {
-        self.edge_labels.as_deref().unwrap_or_default()
+    pub fn edge_labels(&self) -> & [::std::string::String] {
+        self.edge_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
     pub fn num_node_properties(&self) -> ::std::option::Option<i64> {
@@ -71,16 +73,18 @@ impl PropertygraphSummary {
         self.num_edge_properties
     }
     /// <p>The number of distinct node properties in the graph.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_properties.is_none()`.
-    pub fn node_properties(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
-        self.node_properties.as_deref().unwrap_or_default()
+    pub fn node_properties(&self) -> & [::std::collections::HashMap::<::std::string::String, i64>] {
+        self.node_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_properties.is_none()`.
-    pub fn edge_properties(&self) -> &[::std::collections::HashMap<::std::string::String, i64>] {
-        self.edge_properties.as_deref().unwrap_or_default()
+    pub fn edge_properties(&self) -> & [::std::collections::HashMap::<::std::string::String, i64>] {
+        self.edge_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total number of usages of all node properties.</p>
     pub fn total_node_property_values(&self) -> ::std::option::Option<i64> {
@@ -91,16 +95,18 @@ impl PropertygraphSummary {
         self.total_edge_property_values
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_structures.is_none()`.
-    pub fn node_structures(&self) -> &[crate::types::NodeStructure] {
-        self.node_structures.as_deref().unwrap_or_default()
+    pub fn node_structures(&self) -> & [crate::types::NodeStructure] {
+        self.node_structures.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_structures.is_none()`.
-    pub fn edge_structures(&self) -> &[crate::types::EdgeStructure] {
-        self.edge_structures.as_deref().unwrap_or_default()
+    pub fn edge_structures(&self) -> & [crate::types::EdgeStructure] {
+        self.edge_structures.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PropertygraphSummary {
@@ -118,16 +124,16 @@ pub struct PropertygraphSummaryBuilder {
     pub(crate) num_edges: ::std::option::Option<i64>,
     pub(crate) num_node_labels: ::std::option::Option<i64>,
     pub(crate) num_edge_labels: ::std::option::Option<i64>,
-    pub(crate) node_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) edge_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) node_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) edge_labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) num_node_properties: ::std::option::Option<i64>,
     pub(crate) num_edge_properties: ::std::option::Option<i64>,
-    pub(crate) node_properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
-    pub(crate) edge_properties: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
+    pub(crate) node_properties: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
+    pub(crate) edge_properties: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>,
     pub(crate) total_node_property_values: ::std::option::Option<i64>,
     pub(crate) total_edge_property_values: ::std::option::Option<i64>,
-    pub(crate) node_structures: ::std::option::Option<::std::vec::Vec<crate::types::NodeStructure>>,
-    pub(crate) edge_structures: ::std::option::Option<::std::vec::Vec<crate::types::EdgeStructure>>,
+    pub(crate) node_structures: ::std::option::Option<::std::vec::Vec::<crate::types::NodeStructure>>,
+    pub(crate) edge_structures: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeStructure>>,
 }
 impl PropertygraphSummaryBuilder {
     /// <p>The number of nodes in the graph.</p>
@@ -137,8 +143,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The number of nodes in the graph.</p>
     pub fn set_num_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_nodes = input;
-        self
+        self.num_nodes = input; self
     }
     /// <p>The number of nodes in the graph.</p>
     pub fn get_num_nodes(&self) -> &::std::option::Option<i64> {
@@ -151,8 +156,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The number of edges in the graph.</p>
     pub fn set_num_edges(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_edges = input;
-        self
+        self.num_edges = input; self
     }
     /// <p>The number of edges in the graph.</p>
     pub fn get_num_edges(&self) -> &::std::option::Option<i64> {
@@ -165,8 +169,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The number of distinct node labels in the graph.</p>
     pub fn set_num_node_labels(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_node_labels = input;
-        self
+        self.num_node_labels = input; self
     }
     /// <p>The number of distinct node labels in the graph.</p>
     pub fn get_num_node_labels(&self) -> &::std::option::Option<i64> {
@@ -179,8 +182,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The number of distinct edge labels in the graph.</p>
     pub fn set_num_edge_labels(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_edge_labels = input;
-        self
+        self.num_edge_labels = input; self
     }
     /// <p>The number of distinct edge labels in the graph.</p>
     pub fn get_num_edge_labels(&self) -> &::std::option::Option<i64> {
@@ -193,17 +195,16 @@ impl PropertygraphSummaryBuilder {
     /// <p>A list of the distinct node labels in the graph.</p>
     pub fn node_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_labels.unwrap_or_default();
-        v.push(input.into());
-        self.node_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.node_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the distinct node labels in the graph.</p>
-    pub fn set_node_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.node_labels = input;
-        self
+    pub fn set_node_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.node_labels = input; self
     }
     /// <p>A list of the distinct node labels in the graph.</p>
-    pub fn get_node_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_node_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.node_labels
     }
     /// Appends an item to `edge_labels`.
@@ -213,17 +214,16 @@ impl PropertygraphSummaryBuilder {
     /// <p>A list of the distinct edge labels in the graph.</p>
     pub fn edge_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_labels.unwrap_or_default();
-        v.push(input.into());
-        self.edge_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.edge_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the distinct edge labels in the graph.</p>
-    pub fn set_edge_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.edge_labels = input;
-        self
+    pub fn set_edge_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.edge_labels = input; self
     }
     /// <p>A list of the distinct edge labels in the graph.</p>
-    pub fn get_edge_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_edge_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.edge_labels
     }
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
@@ -233,8 +233,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
     pub fn set_num_node_properties(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_node_properties = input;
-        self
+        self.num_node_properties = input; self
     }
     /// <p>A list of the distinct node properties in the graph, along with the count of nodes where each property is used.</p>
     pub fn get_num_node_properties(&self) -> &::std::option::Option<i64> {
@@ -247,8 +246,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The number of distinct edge properties in the graph.</p>
     pub fn set_num_edge_properties(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.num_edge_properties = input;
-        self
+        self.num_edge_properties = input; self
     }
     /// <p>The number of distinct edge properties in the graph.</p>
     pub fn get_num_edge_properties(&self) -> &::std::option::Option<i64> {
@@ -259,22 +257,18 @@ impl PropertygraphSummaryBuilder {
     /// To override the contents of this collection use [`set_node_properties`](Self::set_node_properties).
     ///
     /// <p>The number of distinct node properties in the graph.</p>
-    pub fn node_properties(mut self, input: ::std::collections::HashMap<::std::string::String, i64>) -> Self {
+    pub fn node_properties(mut self, input: ::std::collections::HashMap::<::std::string::String, i64>) -> Self {
         let mut v = self.node_properties.unwrap_or_default();
-        v.push(input);
-        self.node_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The number of distinct node properties in the graph.</p>
-    pub fn set_node_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
-    ) -> Self {
-        self.node_properties = input;
-        self
+    pub fn set_node_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>) -> Self {
+        self.node_properties = input; self
     }
     /// <p>The number of distinct node properties in the graph.</p>
-    pub fn get_node_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>> {
+    pub fn get_node_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>> {
         &self.node_properties
     }
     /// Appends an item to `edge_properties`.
@@ -282,22 +276,18 @@ impl PropertygraphSummaryBuilder {
     /// To override the contents of this collection use [`set_edge_properties`](Self::set_edge_properties).
     ///
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    pub fn edge_properties(mut self, input: ::std::collections::HashMap<::std::string::String, i64>) -> Self {
+    pub fn edge_properties(mut self, input: ::std::collections::HashMap::<::std::string::String, i64>) -> Self {
         let mut v = self.edge_properties.unwrap_or_default();
-        v.push(input);
-        self.edge_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.edge_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    pub fn set_edge_properties(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>>,
-    ) -> Self {
-        self.edge_properties = input;
-        self
+    pub fn set_edge_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>>) -> Self {
+        self.edge_properties = input; self
     }
     /// <p>A list of the distinct edge properties in the graph, along with the count of edges where each property is used.</p>
-    pub fn get_edge_properties(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, i64>>> {
+    pub fn get_edge_properties(&self) -> &::std::option::Option<::std::vec::Vec::<::std::collections::HashMap::<::std::string::String, i64>>> {
         &self.edge_properties
     }
     /// <p>The total number of usages of all node properties.</p>
@@ -307,8 +297,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The total number of usages of all node properties.</p>
     pub fn set_total_node_property_values(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_node_property_values = input;
-        self
+        self.total_node_property_values = input; self
     }
     /// <p>The total number of usages of all node properties.</p>
     pub fn get_total_node_property_values(&self) -> &::std::option::Option<i64> {
@@ -321,8 +310,7 @@ impl PropertygraphSummaryBuilder {
     }
     /// <p>The total number of usages of all edge properties.</p>
     pub fn set_total_edge_property_values(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_edge_property_values = input;
-        self
+        self.total_edge_property_values = input; self
     }
     /// <p>The total number of usages of all edge properties.</p>
     pub fn get_total_edge_property_values(&self) -> &::std::option::Option<i64> {
@@ -335,17 +323,16 @@ impl PropertygraphSummaryBuilder {
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
     pub fn node_structures(mut self, input: crate::types::NodeStructure) -> Self {
         let mut v = self.node_structures.unwrap_or_default();
-        v.push(input);
-        self.node_structures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_structures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
-    pub fn set_node_structures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeStructure>>) -> Self {
-        self.node_structures = input;
-        self
+    pub fn set_node_structures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeStructure>>) -> Self {
+        self.node_structures = input; self
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of node structures.</p>
-    pub fn get_node_structures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeStructure>> {
+    pub fn get_node_structures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeStructure>> {
         &self.node_structures
     }
     /// Appends an item to `edge_structures`.
@@ -355,36 +342,50 @@ impl PropertygraphSummaryBuilder {
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
     pub fn edge_structures(mut self, input: crate::types::EdgeStructure) -> Self {
         let mut v = self.edge_structures.unwrap_or_default();
-        v.push(input);
-        self.edge_structures = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.edge_structures = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
-    pub fn set_edge_structures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EdgeStructure>>) -> Self {
-        self.edge_structures = input;
-        self
+    pub fn set_edge_structures(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EdgeStructure>>) -> Self {
+        self.edge_structures = input; self
     }
     /// <p>This field is only present when the requested mode is <code>DETAILED</code>. It contains a list of edge structures.</p>
-    pub fn get_edge_structures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeStructure>> {
+    pub fn get_edge_structures(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EdgeStructure>> {
         &self.edge_structures
     }
     /// Consumes the builder and constructs a [`PropertygraphSummary`](crate::types::PropertygraphSummary).
     pub fn build(self) -> crate::types::PropertygraphSummary {
         crate::types::PropertygraphSummary {
-            num_nodes: self.num_nodes,
-            num_edges: self.num_edges,
-            num_node_labels: self.num_node_labels,
-            num_edge_labels: self.num_edge_labels,
-            node_labels: self.node_labels,
-            edge_labels: self.edge_labels,
-            num_node_properties: self.num_node_properties,
-            num_edge_properties: self.num_edge_properties,
-            node_properties: self.node_properties,
-            edge_properties: self.edge_properties,
-            total_node_property_values: self.total_node_property_values,
-            total_edge_property_values: self.total_edge_property_values,
-            node_structures: self.node_structures,
-            edge_structures: self.edge_structures,
+            num_nodes: self.num_nodes
+            ,
+            num_edges: self.num_edges
+            ,
+            num_node_labels: self.num_node_labels
+            ,
+            num_edge_labels: self.num_edge_labels
+            ,
+            node_labels: self.node_labels
+            ,
+            edge_labels: self.edge_labels
+            ,
+            num_node_properties: self.num_node_properties
+            ,
+            num_edge_properties: self.num_edge_properties
+            ,
+            node_properties: self.node_properties
+            ,
+            edge_properties: self.edge_properties
+            ,
+            total_node_property_values: self.total_node_property_values
+            ,
+            total_edge_property_values: self.total_edge_property_values
+            ,
+            node_structures: self.node_structures
+            ,
+            edge_structures: self.edge_structures
+            ,
         }
     }
 }
+

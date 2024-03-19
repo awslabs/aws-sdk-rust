@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableImportFindingsForProductInput {
+pub struct DisableImportFindingsForProductInput  {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
     pub product_subscription_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisableImportFindingsForProductInput {
+impl  DisableImportFindingsForProductInput  {
     /// <p>The ARN of the integrated product to disable the integration for.</p>
-    pub fn product_subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn product_subscription_arn(&self) -> ::std::option::Option<& str> {
         self.product_subscription_arn.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DisableImportFindingsForProductInputBuilder {
     }
     /// <p>The ARN of the integrated product to disable the integration for.</p>
     pub fn set_product_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_subscription_arn = input;
-        self
+        self.product_subscription_arn = input; self
     }
     /// <p>The ARN of the integrated product to disable the integration for.</p>
     pub fn get_product_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_subscription_arn
     }
     /// Consumes the builder and constructs a [`DisableImportFindingsForProductInput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput {
-                product_subscription_arn: self.product_subscription_arn,
-            },
+                product_subscription_arn: self.product_subscription_arn
+                ,
+            }
         )
     }
 }
+

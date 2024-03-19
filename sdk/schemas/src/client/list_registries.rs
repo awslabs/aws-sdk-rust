@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRegistries`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_limit):<br>required: **false**<br>(undocumented)<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p><br>
     ///   - [`registry_name_prefix(impl Into<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::registry_name_prefix) / [`set_registry_name_prefix(Option<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_registry_name_prefix):<br>required: **false**<br><p>Specifying this limits the results to only those registry names that start with the specified prefix.</p><br>
     ///   - [`scope(impl Into<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::scope) / [`set_scope(Option<String>)`](crate::operation::list_registries::builders::ListRegistriesFluentBuilder::set_scope):<br>required: **false**<br><p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p><br>
-    /// - On success, responds with [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput) with field(s):
+                            /// - On success, responds with [`ListRegistriesOutput`](crate::operation::list_registries::ListRegistriesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_registries::ListRegistriesOutput::next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`registries(Option<Vec::<RegistrySummary>>)`](crate::operation::list_registries::ListRegistriesOutput::registries): <p>An array of registry summaries.</p>
-    /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
+                            /// - On failure, responds with [`SdkError<ListRegistriesError>`](crate::operation::list_registries::ListRegistriesError)
     pub fn list_registries(&self) -> crate::operation::list_registries::builders::ListRegistriesFluentBuilder {
-        crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_registries::builders::ListRegistriesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

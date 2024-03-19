@@ -21,11 +21,7 @@ impl PrimitiveMessageDefinition {
     /// Tries to convert the enum instance into [`Ros2PrimitiveMessageDefinition`](crate::types::PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition), extracting the inner [`Ros2PrimitiveMessageDefinition`](crate::types::Ros2PrimitiveMessageDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ros2_primitive_message_definition(&self) -> ::std::result::Result<&crate::types::Ros2PrimitiveMessageDefinition, &Self> {
-        if let PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ros2PrimitiveMessageDefinition`](crate::types::PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition).
     pub fn is_ros2_primitive_message_definition(&self) -> bool {
@@ -36,3 +32,4 @@ impl PrimitiveMessageDefinition {
         matches!(self, Self::Unknown)
     }
 }
+

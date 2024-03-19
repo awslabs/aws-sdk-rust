@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateIpAccessSettingsInput {
+pub struct DisassociateIpAccessSettingsInput  {
     /// <p>The ARN of the web portal.</p>
     pub portal_arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateIpAccessSettingsInput {
+impl  DisassociateIpAccessSettingsInput  {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> ::std::option::Option<&str> {
+    pub fn portal_arn(&self) -> ::std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DisassociateIpAccessSettingsInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the web portal.</p>
     pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`DisassociateIpAccessSettingsInput`](crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput {
-            portal_arn: self.portal_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_ip_access_settings::DisassociateIpAccessSettingsInput {
+                portal_arn: self.portal_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents information about the state of transitions between one stage and another stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitionState {
+pub struct TransitionState  {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub enabled: bool,
     /// <p>The ID of the user who last changed the transition state.</p>
@@ -13,21 +13,21 @@ pub struct TransitionState {
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
     pub disabled_reason: ::std::option::Option<::std::string::String>,
 }
-impl TransitionState {
+impl  TransitionState  {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(&self) -> ::std::option::Option<&str> {
+    pub fn last_changed_by(&self) -> ::std::option::Option<& str> {
         self.last_changed_by.as_deref()
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_changed_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_changed_at.as_ref()
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(&self) -> ::std::option::Option<&str> {
+    pub fn disabled_reason(&self) -> ::std::option::Option<& str> {
         self.disabled_reason.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TransitionStateBuilder {
     }
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,8 +68,7 @@ impl TransitionStateBuilder {
     }
     /// <p>The ID of the user who last changed the transition state.</p>
     pub fn set_last_changed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_changed_by = input;
-        self
+        self.last_changed_by = input; self
     }
     /// <p>The ID of the user who last changed the transition state.</p>
     pub fn get_last_changed_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TransitionStateBuilder {
     }
     /// <p>The timestamp when the transition state was last changed.</p>
     pub fn set_last_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_changed_at = input;
-        self
+        self.last_changed_at = input; self
     }
     /// <p>The timestamp when the transition state was last changed.</p>
     pub fn get_last_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -97,8 +94,7 @@ impl TransitionStateBuilder {
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
     pub fn set_disabled_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.disabled_reason = input;
-        self
+        self.disabled_reason = input; self
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
     pub fn get_disabled_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,16 @@ impl TransitionStateBuilder {
     /// Consumes the builder and constructs a [`TransitionState`](crate::types::TransitionState).
     pub fn build(self) -> crate::types::TransitionState {
         crate::types::TransitionState {
-            enabled: self.enabled.unwrap_or_default(),
-            last_changed_by: self.last_changed_by,
-            last_changed_at: self.last_changed_at,
-            disabled_reason: self.disabled_reason,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            last_changed_by: self.last_changed_by
+            ,
+            last_changed_at: self.last_changed_at
+            ,
+            disabled_reason: self.disabled_reason
+            ,
         }
     }
 }
+

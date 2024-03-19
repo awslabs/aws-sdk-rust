@@ -3,7 +3,7 @@
 /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KeyAttributes {
+pub struct KeyAttributes  {
     /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
     pub key_usage: crate::types::KeyUsage,
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
@@ -14,22 +14,22 @@ pub struct KeyAttributes {
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
     pub key_modes_of_use: ::std::option::Option<crate::types::KeyModesOfUse>,
 }
-impl KeyAttributes {
+impl  KeyAttributes  {
     /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
-    pub fn key_usage(&self) -> &crate::types::KeyUsage {
+    pub fn key_usage(&self) -> & crate::types::KeyUsage {
         &self.key_usage
     }
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
-    pub fn key_class(&self) -> &crate::types::KeyClass {
+    pub fn key_class(&self) -> & crate::types::KeyClass {
         &self.key_class
     }
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
-    pub fn key_algorithm(&self) -> &crate::types::KeyAlgorithm {
+    pub fn key_algorithm(&self) -> & crate::types::KeyAlgorithm {
         &self.key_algorithm
     }
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
-    pub fn key_modes_of_use(&self) -> ::std::option::Option<&crate::types::KeyModesOfUse> {
+    pub fn key_modes_of_use(&self) -> ::std::option::Option<& crate::types::KeyModesOfUse> {
         self.key_modes_of_use.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl KeyAttributesBuilder {
     }
     /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
     pub fn set_key_usage(mut self, input: ::std::option::Option<crate::types::KeyUsage>) -> Self {
-        self.key_usage = input;
-        self
+        self.key_usage = input; self
     }
     /// <p>The cryptographic usage of an Amazon Web Services Payment Cryptography key as deﬁned in section A.5.2 of the TR-31 spec.</p>
     pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsage> {
@@ -73,8 +72,7 @@ impl KeyAttributesBuilder {
     }
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
     pub fn set_key_class(mut self, input: ::std::option::Option<crate::types::KeyClass>) -> Self {
-        self.key_class = input;
-        self
+        self.key_class = input; self
     }
     /// <p>The type of Amazon Web Services Payment Cryptography key to create, which determines the classiﬁcation of the cryptographic method and whether Amazon Web Services Payment Cryptography key contains a symmetric key or an asymmetric key pair.</p>
     pub fn get_key_class(&self) -> &::std::option::Option<crate::types::KeyClass> {
@@ -90,8 +88,7 @@ impl KeyAttributesBuilder {
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
     pub fn set_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
-        self.key_algorithm = input;
-        self
+        self.key_algorithm = input; self
     }
     /// <p>The key algorithm to be use during creation of an Amazon Web Services Payment Cryptography key.</p>
     /// <p>For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code> and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.</p>
@@ -106,8 +103,7 @@ impl KeyAttributesBuilder {
     }
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
     pub fn set_key_modes_of_use(mut self, input: ::std::option::Option<crate::types::KeyModesOfUse>) -> Self {
-        self.key_modes_of_use = input;
-        self
+        self.key_modes_of_use = input; self
     }
     /// <p>The list of cryptographic operations that you can perform using the key.</p>
     pub fn get_key_modes_of_use(&self) -> &::std::option::Option<crate::types::KeyModesOfUse> {
@@ -119,26 +115,27 @@ impl KeyAttributesBuilder {
     /// - [`key_class`](crate::types::builders::KeyAttributesBuilder::key_class)
     /// - [`key_algorithm`](crate::types::builders::KeyAttributesBuilder::key_algorithm)
     pub fn build(self) -> ::std::result::Result<crate::types::KeyAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KeyAttributes {
-            key_usage: self.key_usage.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_usage",
-                    "key_usage was not specified but it is required when building KeyAttributes",
-                )
-            })?,
-            key_class: self.key_class.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_class",
-                    "key_class was not specified but it is required when building KeyAttributes",
-                )
-            })?,
-            key_algorithm: self.key_algorithm.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_algorithm",
-                    "key_algorithm was not specified but it is required when building KeyAttributes",
-                )
-            })?,
-            key_modes_of_use: self.key_modes_of_use,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KeyAttributes {
+                key_usage: self.key_usage
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_usage", "key_usage was not specified but it is required when building KeyAttributes")
+                    )?
+                ,
+                key_class: self.key_class
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_class", "key_class was not specified but it is required when building KeyAttributes")
+                    )?
+                ,
+                key_algorithm: self.key_algorithm
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_algorithm", "key_algorithm was not specified but it is required when building KeyAttributes")
+                    )?
+                ,
+                key_modes_of_use: self.key_modes_of_use
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Import task summery waves.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportTaskSummaryWaves {
+pub struct ImportTaskSummaryWaves  {
     /// <p>Import task summery waves created count.</p>
     pub created_count: i64,
     /// <p>Import task summery waves modified count.</p>
     pub modified_count: i64,
 }
-impl ImportTaskSummaryWaves {
+impl  ImportTaskSummaryWaves  {
     /// <p>Import task summery waves created count.</p>
     pub fn created_count(&self) -> i64 {
         self.created_count
@@ -41,8 +41,7 @@ impl ImportTaskSummaryWavesBuilder {
     }
     /// <p>Import task summery waves created count.</p>
     pub fn set_created_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_count = input;
-        self
+        self.created_count = input; self
     }
     /// <p>Import task summery waves created count.</p>
     pub fn get_created_count(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl ImportTaskSummaryWavesBuilder {
     }
     /// <p>Import task summery waves modified count.</p>
     pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.modified_count = input;
-        self
+        self.modified_count = input; self
     }
     /// <p>Import task summery waves modified count.</p>
     pub fn get_modified_count(&self) -> &::std::option::Option<i64> {
@@ -65,8 +63,13 @@ impl ImportTaskSummaryWavesBuilder {
     /// Consumes the builder and constructs a [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
     pub fn build(self) -> crate::types::ImportTaskSummaryWaves {
         crate::types::ImportTaskSummaryWaves {
-            created_count: self.created_count.unwrap_or_default(),
-            modified_count: self.modified_count.unwrap_or_default(),
+            created_count: self.created_count
+                .unwrap_or_default()
+            ,
+            modified_count: self.modified_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

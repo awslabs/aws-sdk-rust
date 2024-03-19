@@ -3,7 +3,7 @@
 /// <p>An CodeArtifact resource policy that contains a resource ARN, document details, and a revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The ARN of the resource associated with the resource policy</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current revision of the resource policy.</p>
@@ -11,17 +11,17 @@ pub struct ResourcePolicy {
     /// <p>The resource policy formatted in JSON.</p>
     pub document: ::std::option::Option<::std::string::String>,
 }
-impl ResourcePolicy {
+impl  ResourcePolicy  {
     /// <p>The ARN of the resource associated with the resource policy</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The current revision of the resource policy.</p>
-    pub fn revision(&self) -> ::std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The resource policy formatted in JSON.</p>
-    pub fn document(&self) -> ::std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<& str> {
         self.document.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The ARN of the resource associated with the resource policy</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource associated with the resource policy</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The current revision of the resource policy.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The current revision of the resource policy.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ResourcePolicyBuilder {
     }
     /// <p>The resource policy formatted in JSON.</p>
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The resource policy formatted in JSON.</p>
     pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ResourcePolicyBuilder {
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {
         crate::types::ResourcePolicy {
-            resource_arn: self.resource_arn,
-            revision: self.revision,
-            document: self.document,
+            resource_arn: self.resource_arn
+            ,
+            revision: self.revision
+            ,
+            document: self.document
+            ,
         }
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListThreatIntelSets`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`detector_id(impl Into<String>)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::set_detector_id):<br>required: **true**<br><p>The unique ID of the detector that the threatIntelSet is associated with.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::set_max_results):<br>required: **false**<br><p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::set_next_token):<br>required: **false**<br><p>You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p><br>
-    /// - On success, responds with [`ListThreatIntelSetsOutput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput) with field(s):
+                            /// - On success, responds with [`ListThreatIntelSetsOutput`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput) with field(s):
     ///   - [`threat_intel_set_ids(Option<Vec::<String>>)`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput::threat_intel_set_ids): <p>The IDs of the ThreatIntelSet resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<ListThreatIntelSetsError>`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsError)
+                            /// - On failure, responds with [`SdkError<ListThreatIntelSetsError>`](crate::operation::list_threat_intel_sets::ListThreatIntelSetsError)
     pub fn list_threat_intel_sets(&self) -> crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder {
-        crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

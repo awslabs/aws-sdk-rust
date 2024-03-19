@@ -3,22 +3,20 @@
 /// <p>The current state of the variable.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Variable {
+pub struct Variable  {
     /// <p>The name of the variable.</p>
     pub name: ::std::string::String,
     /// <p>The current value of the variable.</p>
     pub value: ::std::string::String,
 }
-impl Variable {
+impl  Variable  {
     /// <p>The name of the variable.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The current value of the variable.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl Variable {
@@ -44,8 +42,7 @@ impl VariableBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl VariableBuilder {
     }
     /// <p>The current value of the variable.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The current value of the variable.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl VariableBuilder {
     /// - [`name`](crate::types::builders::VariableBuilder::name)
     /// - [`value`](crate::types::builders::VariableBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::Variable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Variable {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Variable",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building Variable",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Variable {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Variable")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building Variable")
+                    )?
+                ,
+            }
+        )
     }
 }
+

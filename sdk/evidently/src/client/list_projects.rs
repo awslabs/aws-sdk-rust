@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProjects`](crate::operation::list_projects::builders::ListProjectsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to include in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_projects::builders::ListProjectsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</p><br>
-    /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
+                            /// - On success, responds with [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput) with field(s):
     ///   - [`projects(Option<Vec::<ProjectSummary>>)`](crate::operation::list_projects::ListProjectsOutput::projects): <p>An array of structures that contain the configuration details of the projects in the Region.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_projects::ListProjectsOutput::next_token): <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
+                            /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::operation::list_projects::ListProjectsError)
     pub fn list_projects(&self) -> crate::operation::list_projects::builders::ListProjectsFluentBuilder {
-        crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_projects::builders::ListProjectsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

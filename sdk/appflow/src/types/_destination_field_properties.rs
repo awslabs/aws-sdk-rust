@@ -3,7 +3,7 @@
 /// <p>The properties that can be applied to a field when connector is being used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationFieldProperties {
+pub struct DestinationFieldProperties  {
     /// <p>Specifies if the destination field can be created by the current user.</p>
     pub is_creatable: bool,
     /// <p>Specifies if the destination field can have a null value.</p>
@@ -15,9 +15,9 @@ pub struct DestinationFieldProperties {
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
     pub is_defaulted_on_create: bool,
     /// <p>A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option.</p>
-    pub supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub supported_write_operations: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>,
 }
-impl DestinationFieldProperties {
+impl  DestinationFieldProperties  {
     /// <p>Specifies if the destination field can be created by the current user.</p>
     pub fn is_creatable(&self) -> bool {
         self.is_creatable
@@ -39,10 +39,11 @@ impl DestinationFieldProperties {
         self.is_defaulted_on_create
     }
     /// <p>A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_write_operations.is_none()`.
-    pub fn supported_write_operations(&self) -> &[crate::types::WriteOperationType] {
-        self.supported_write_operations.as_deref().unwrap_or_default()
+    pub fn supported_write_operations(&self) -> & [crate::types::WriteOperationType] {
+        self.supported_write_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DestinationFieldProperties {
@@ -61,7 +62,7 @@ pub struct DestinationFieldPropertiesBuilder {
     pub(crate) is_upsertable: ::std::option::Option<bool>,
     pub(crate) is_updatable: ::std::option::Option<bool>,
     pub(crate) is_defaulted_on_create: ::std::option::Option<bool>,
-    pub(crate) supported_write_operations: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>,
+    pub(crate) supported_write_operations: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>,
 }
 impl DestinationFieldPropertiesBuilder {
     /// <p>Specifies if the destination field can be created by the current user.</p>
@@ -71,8 +72,7 @@ impl DestinationFieldPropertiesBuilder {
     }
     /// <p>Specifies if the destination field can be created by the current user.</p>
     pub fn set_is_creatable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_creatable = input;
-        self
+        self.is_creatable = input; self
     }
     /// <p>Specifies if the destination field can be created by the current user.</p>
     pub fn get_is_creatable(&self) -> &::std::option::Option<bool> {
@@ -85,8 +85,7 @@ impl DestinationFieldPropertiesBuilder {
     }
     /// <p>Specifies if the destination field can have a null value.</p>
     pub fn set_is_nullable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_nullable = input;
-        self
+        self.is_nullable = input; self
     }
     /// <p>Specifies if the destination field can have a null value.</p>
     pub fn get_is_nullable(&self) -> &::std::option::Option<bool> {
@@ -99,8 +98,7 @@ impl DestinationFieldPropertiesBuilder {
     }
     /// <p>Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do.</p>
     pub fn set_is_upsertable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_upsertable = input;
-        self
+        self.is_upsertable = input; self
     }
     /// <p>Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do.</p>
     pub fn get_is_upsertable(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl DestinationFieldPropertiesBuilder {
     }
     /// <p>Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.</p>
     pub fn set_is_updatable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_updatable = input;
-        self
+        self.is_updatable = input; self
     }
     /// <p>Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation.</p>
     pub fn get_is_updatable(&self) -> &::std::option::Option<bool> {
@@ -127,8 +124,7 @@ impl DestinationFieldPropertiesBuilder {
     }
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
     pub fn set_is_defaulted_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_defaulted_on_create = input;
-        self
+        self.is_defaulted_on_create = input; self
     }
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
     pub fn get_is_defaulted_on_create(&self) -> &::std::option::Option<bool> {
@@ -141,28 +137,39 @@ impl DestinationFieldPropertiesBuilder {
     /// <p>A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option.</p>
     pub fn supported_write_operations(mut self, input: crate::types::WriteOperationType) -> Self {
         let mut v = self.supported_write_operations.unwrap_or_default();
-        v.push(input);
-        self.supported_write_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_write_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option.</p>
-    pub fn set_supported_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>>) -> Self {
-        self.supported_write_operations = input;
-        self
+    pub fn set_supported_write_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>>) -> Self {
+        self.supported_write_operations = input; self
     }
     /// <p>A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option.</p>
-    pub fn get_supported_write_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>> {
+    pub fn get_supported_write_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WriteOperationType>> {
         &self.supported_write_operations
     }
     /// Consumes the builder and constructs a [`DestinationFieldProperties`](crate::types::DestinationFieldProperties).
     pub fn build(self) -> crate::types::DestinationFieldProperties {
         crate::types::DestinationFieldProperties {
-            is_creatable: self.is_creatable.unwrap_or_default(),
-            is_nullable: self.is_nullable.unwrap_or_default(),
-            is_upsertable: self.is_upsertable.unwrap_or_default(),
-            is_updatable: self.is_updatable.unwrap_or_default(),
-            is_defaulted_on_create: self.is_defaulted_on_create.unwrap_or_default(),
-            supported_write_operations: self.supported_write_operations,
+            is_creatable: self.is_creatable
+                .unwrap_or_default()
+            ,
+            is_nullable: self.is_nullable
+                .unwrap_or_default()
+            ,
+            is_upsertable: self.is_upsertable
+                .unwrap_or_default()
+            ,
+            is_updatable: self.is_updatable
+                .unwrap_or_default()
+            ,
+            is_defaulted_on_create: self.is_defaulted_on_create
+                .unwrap_or_default()
+            ,
+            supported_write_operations: self.supported_write_operations
+            ,
         }
     }
 }
+

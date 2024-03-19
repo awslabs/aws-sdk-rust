@@ -3,7 +3,7 @@
 /// <p>A physical table type for an S3 data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Source {
+pub struct S3Source  {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub data_source_arn: ::std::string::String,
     /// <p>Information about the format for the S3 source file or files.</p>
@@ -11,24 +11,22 @@ pub struct S3Source {
     /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
-    pub input_columns: ::std::vec::Vec<crate::types::InputColumn>,
+    pub input_columns: ::std::vec::Vec::<crate::types::InputColumn>,
 }
-impl S3Source {
+impl  S3Source  {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
-    pub fn data_source_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source_arn.deref()
+    pub fn data_source_arn(&self) -> & str {
+        use std::ops::Deref; self.data_source_arn.deref()
     }
     /// <p>Information about the format for the S3 source file or files.</p>
-    pub fn upload_settings(&self) -> ::std::option::Option<&crate::types::UploadSettings> {
+    pub fn upload_settings(&self) -> ::std::option::Option<& crate::types::UploadSettings> {
         self.upload_settings.as_ref()
     }
     /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
-    pub fn input_columns(&self) -> &[crate::types::InputColumn] {
-        use std::ops::Deref;
-        self.input_columns.deref()
+    pub fn input_columns(&self) -> & [crate::types::InputColumn] {
+        use std::ops::Deref; self.input_columns.deref()
     }
 }
 impl S3Source {
@@ -44,7 +42,7 @@ impl S3Source {
 pub struct S3SourceBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) upload_settings: ::std::option::Option<crate::types::UploadSettings>,
-    pub(crate) input_columns: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>,
+    pub(crate) input_columns: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>,
 }
 impl S3SourceBuilder {
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
@@ -55,8 +53,7 @@ impl S3SourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the data source.</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +66,7 @@ impl S3SourceBuilder {
     }
     /// <p>Information about the format for the S3 source file or files.</p>
     pub fn set_upload_settings(mut self, input: ::std::option::Option<crate::types::UploadSettings>) -> Self {
-        self.upload_settings = input;
-        self
+        self.upload_settings = input; self
     }
     /// <p>Information about the format for the S3 source file or files.</p>
     pub fn get_upload_settings(&self) -> &::std::option::Option<crate::types::UploadSettings> {
@@ -85,21 +81,20 @@ impl S3SourceBuilder {
     /// </note>
     pub fn input_columns(mut self, input: crate::types::InputColumn) -> Self {
         let mut v = self.input_columns.unwrap_or_default();
-        v.push(input);
-        self.input_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
-    pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputColumn>>) -> Self {
-        self.input_columns = input;
-        self
+    pub fn set_input_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>>) -> Self {
+        self.input_columns = input; self
     }
     /// <p>A physical table type for an S3 data source.</p><note>
     /// <p>For files that aren't JSON, only <code>STRING</code> data types are supported in input columns.</p>
     /// </note>
-    pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+    pub fn get_input_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputColumn>> {
         &self.input_columns
     }
     /// Consumes the builder and constructs a [`S3Source`](crate::types::S3Source).
@@ -107,20 +102,22 @@ impl S3SourceBuilder {
     /// - [`data_source_arn`](crate::types::builders::S3SourceBuilder::data_source_arn)
     /// - [`input_columns`](crate::types::builders::S3SourceBuilder::input_columns)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Source, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Source {
-            data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_arn",
-                    "data_source_arn was not specified but it is required when building S3Source",
-                )
-            })?,
-            upload_settings: self.upload_settings,
-            input_columns: self.input_columns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_columns",
-                    "input_columns was not specified but it is required when building S3Source",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Source {
+                data_source_arn: self.data_source_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_arn", "data_source_arn was not specified but it is required when building S3Source")
+                    )?
+                ,
+                upload_settings: self.upload_settings
+                ,
+                input_columns: self.input_columns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_columns", "input_columns was not specified but it is required when building S3Source")
+                    )?
+                ,
+            }
+        )
     }
 }
+

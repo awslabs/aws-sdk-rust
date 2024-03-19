@@ -3,18 +3,18 @@
 /// <p>A POST request to import an API to API Gateway using an input of an API definition file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportRestApiInput {
+pub struct ImportRestApiInput  {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fail_on_warnings: ::std::option::Option<bool>,
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p>To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p>To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p>To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl ImportRestApiInput {
+impl  ImportRestApiInput  {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn fail_on_warnings(&self) -> ::std::option::Option<bool> {
         self.fail_on_warnings
@@ -23,11 +23,11 @@ impl ImportRestApiInput {
     /// <p>To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p>To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p>To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
@@ -43,7 +43,7 @@ impl ImportRestApiInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ImportRestApiInputBuilder {
     pub(crate) fail_on_warnings: ::std::option::Option<bool>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportRestApiInputBuilder {
@@ -54,8 +54,7 @@ impl ImportRestApiInputBuilder {
     }
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_on_warnings = input;
-        self
+        self.fail_on_warnings = input; self
     }
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
@@ -71,23 +70,22 @@ impl ImportRestApiInputBuilder {
     /// <p>To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p>To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p>To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p>To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
     /// <p>To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
     /// <p>To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
     /// <p>To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -98,21 +96,24 @@ impl ImportRestApiInputBuilder {
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.body
     }
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
-            fail_on_warnings: self.fail_on_warnings,
-            parameters: self.parameters,
-            body: self.body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_rest_api::ImportRestApiInput {
+                fail_on_warnings: self.fail_on_warnings
+                ,
+                parameters: self.parameters
+                ,
+                body: self.body
+                ,
+            }
+        )
     }
 }
+

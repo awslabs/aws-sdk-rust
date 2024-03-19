@@ -3,7 +3,7 @@
 /// <p>The output for the DescribeThingType operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeThingTypeOutput {
+pub struct DescribeThingTypeOutput  {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The thing type ID.</p>
@@ -16,33 +16,33 @@ pub struct DescribeThingTypeOutput {
     pub thing_type_metadata: ::std::option::Option<crate::types::ThingTypeMetadata>,
     _request_id: Option<String>,
 }
-impl DescribeThingTypeOutput {
+impl  DescribeThingTypeOutput  {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>The thing type ID.</p>
-    pub fn thing_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_id(&self) -> ::std::option::Option<& str> {
         self.thing_type_id.as_deref()
     }
     /// <p>The thing type ARN.</p>
-    pub fn thing_type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_type_arn(&self) -> ::std::option::Option<& str> {
         self.thing_type_arn.as_deref()
     }
     /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
-    pub fn thing_type_properties(&self) -> ::std::option::Option<&crate::types::ThingTypeProperties> {
+    pub fn thing_type_properties(&self) -> ::std::option::Option<& crate::types::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
-    pub fn thing_type_metadata(&self) -> ::std::option::Option<&crate::types::ThingTypeMetadata> {
+    pub fn thing_type_metadata(&self) -> ::std::option::Option<& crate::types::ThingTypeMetadata> {
         self.thing_type_metadata.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeThingTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeThingTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThingTypeOutput`](crate::operation::describe_thing_type::DescribeThingTypeOutput).
     pub fn builder() -> crate::operation::describe_thing_type::builders::DescribeThingTypeOutputBuilder {
@@ -69,8 +69,7 @@ impl DescribeThingTypeOutputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The name of the thing type.</p>
     pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DescribeThingTypeOutputBuilder {
     }
     /// <p>The thing type ID.</p>
     pub fn set_thing_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_id = input;
-        self
+        self.thing_type_id = input; self
     }
     /// <p>The thing type ID.</p>
     pub fn get_thing_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DescribeThingTypeOutputBuilder {
     }
     /// <p>The thing type ARN.</p>
     pub fn set_thing_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_type_arn = input;
-        self
+        self.thing_type_arn = input; self
     }
     /// <p>The thing type ARN.</p>
     pub fn get_thing_type_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DescribeThingTypeOutputBuilder {
     }
     /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
     pub fn set_thing_type_properties(mut self, input: ::std::option::Option<crate::types::ThingTypeProperties>) -> Self {
-        self.thing_type_properties = input;
-        self
+        self.thing_type_properties = input; self
     }
     /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
     pub fn get_thing_type_properties(&self) -> &::std::option::Option<crate::types::ThingTypeProperties> {
@@ -125,31 +121,36 @@ impl DescribeThingTypeOutputBuilder {
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn set_thing_type_metadata(mut self, input: ::std::option::Option<crate::types::ThingTypeMetadata>) -> Self {
-        self.thing_type_metadata = input;
-        self
+        self.thing_type_metadata = input; self
     }
     /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn get_thing_type_metadata(&self) -> &::std::option::Option<crate::types::ThingTypeMetadata> {
         &self.thing_type_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeThingTypeOutput`](crate::operation::describe_thing_type::DescribeThingTypeOutput).
     pub fn build(self) -> crate::operation::describe_thing_type::DescribeThingTypeOutput {
         crate::operation::describe_thing_type::DescribeThingTypeOutput {
-            thing_type_name: self.thing_type_name,
-            thing_type_id: self.thing_type_id,
-            thing_type_arn: self.thing_type_arn,
-            thing_type_properties: self.thing_type_properties,
-            thing_type_metadata: self.thing_type_metadata,
+            thing_type_name: self.thing_type_name
+            ,
+            thing_type_id: self.thing_type_id
+            ,
+            thing_type_arn: self.thing_type_arn
+            ,
+            thing_type_properties: self.thing_type_properties
+            ,
+            thing_type_metadata: self.thing_type_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

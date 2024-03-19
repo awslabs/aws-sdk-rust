@@ -3,7 +3,7 @@
 /// <p>Specifies the data store in the governed Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GovernedCatalogSource {
+pub struct GovernedCatalogSource  {
     /// <p>The name of the data store.</p>
     pub name: ::std::string::String,
     /// <p>The database to read from.</p>
@@ -15,28 +15,25 @@ pub struct GovernedCatalogSource {
     /// <p>Specifies additional connection options.</p>
     pub additional_options: ::std::option::Option<crate::types::S3SourceAdditionalOptions>,
 }
-impl GovernedCatalogSource {
+impl  GovernedCatalogSource  {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The database to read from.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The database table to read from.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    pub fn partition_predicate(&self) -> ::std::option::Option<&str> {
+    pub fn partition_predicate(&self) -> ::std::option::Option<& str> {
         self.partition_predicate.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(&self) -> ::std::option::Option<&crate::types::S3SourceAdditionalOptions> {
+    pub fn additional_options(&self) -> ::std::option::Option<& crate::types::S3SourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
 }
@@ -66,8 +63,7 @@ impl GovernedCatalogSourceBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl GovernedCatalogSourceBuilder {
     }
     /// <p>The database to read from.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database to read from.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +91,7 @@ impl GovernedCatalogSourceBuilder {
     }
     /// <p>The database table to read from.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The database table to read from.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl GovernedCatalogSourceBuilder {
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub fn set_partition_predicate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partition_predicate = input;
-        self
+        self.partition_predicate = input; self
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub fn get_partition_predicate(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +117,7 @@ impl GovernedCatalogSourceBuilder {
     }
     /// <p>Specifies additional connection options.</p>
     pub fn set_additional_options(mut self, input: ::std::option::Option<crate::types::S3SourceAdditionalOptions>) -> Self {
-        self.additional_options = input;
-        self
+        self.additional_options = input; self
     }
     /// <p>Specifies additional connection options.</p>
     pub fn get_additional_options(&self) -> &::std::option::Option<crate::types::S3SourceAdditionalOptions> {
@@ -137,27 +129,29 @@ impl GovernedCatalogSourceBuilder {
     /// - [`database`](crate::types::builders::GovernedCatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::GovernedCatalogSourceBuilder::table)
     pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GovernedCatalogSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GovernedCatalogSource",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building GovernedCatalogSource",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building GovernedCatalogSource",
-                )
-            })?,
-            partition_predicate: self.partition_predicate,
-            additional_options: self.additional_options,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GovernedCatalogSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GovernedCatalogSource")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building GovernedCatalogSource")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building GovernedCatalogSource")
+                    )?
+                ,
+                partition_predicate: self.partition_predicate
+                ,
+                additional_options: self.additional_options
+                ,
+            }
+        )
     }
 }
+

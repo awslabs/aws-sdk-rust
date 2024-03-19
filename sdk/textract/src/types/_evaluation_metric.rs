@@ -3,7 +3,7 @@
 /// <p>The evaluation metrics (F1 score, Precision, and Recall) for an adapter version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationMetric {
+pub struct EvaluationMetric  {
     /// <p>The F1 score for an adapter version.</p>
     pub f1_score: f32,
     /// <p>The Precision score for an adapter version.</p>
@@ -11,7 +11,7 @@ pub struct EvaluationMetric {
     /// <p>The Recall score for an adapter version.</p>
     pub recall: f32,
 }
-impl EvaluationMetric {
+impl  EvaluationMetric  {
     /// <p>The F1 score for an adapter version.</p>
     pub fn f1_score(&self) -> f32 {
         self.f1_score
@@ -48,8 +48,7 @@ impl EvaluationMetricBuilder {
     }
     /// <p>The F1 score for an adapter version.</p>
     pub fn set_f1_score(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.f1_score = input;
-        self
+        self.f1_score = input; self
     }
     /// <p>The F1 score for an adapter version.</p>
     pub fn get_f1_score(&self) -> &::std::option::Option<f32> {
@@ -62,8 +61,7 @@ impl EvaluationMetricBuilder {
     }
     /// <p>The Precision score for an adapter version.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>The Precision score for an adapter version.</p>
     pub fn get_precision(&self) -> &::std::option::Option<f32> {
@@ -76,8 +74,7 @@ impl EvaluationMetricBuilder {
     }
     /// <p>The Recall score for an adapter version.</p>
     pub fn set_recall(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.recall = input;
-        self
+        self.recall = input; self
     }
     /// <p>The Recall score for an adapter version.</p>
     pub fn get_recall(&self) -> &::std::option::Option<f32> {
@@ -86,9 +83,16 @@ impl EvaluationMetricBuilder {
     /// Consumes the builder and constructs a [`EvaluationMetric`](crate::types::EvaluationMetric).
     pub fn build(self) -> crate::types::EvaluationMetric {
         crate::types::EvaluationMetric {
-            f1_score: self.f1_score.unwrap_or_default(),
-            precision: self.precision.unwrap_or_default(),
-            recall: self.recall.unwrap_or_default(),
+            f1_score: self.f1_score
+                .unwrap_or_default()
+            ,
+            precision: self.precision
+                .unwrap_or_default()
+            ,
+            recall: self.recall
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

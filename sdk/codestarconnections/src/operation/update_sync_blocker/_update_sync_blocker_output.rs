@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSyncBlockerOutput {
+pub struct UpdateSyncBlockerOutput  {
     /// <p>The resource name for the sync blocker.</p>
     pub resource_name: ::std::string::String,
     /// <p>The parent resource name for the sync blocker.</p>
@@ -11,26 +11,25 @@ pub struct UpdateSyncBlockerOutput {
     pub sync_blocker: ::std::option::Option<crate::types::SyncBlocker>,
     _request_id: Option<String>,
 }
-impl UpdateSyncBlockerOutput {
+impl  UpdateSyncBlockerOutput  {
     /// <p>The resource name for the sync blocker.</p>
-    pub fn resource_name(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_name.deref()
+    pub fn resource_name(&self) -> & str {
+        use std::ops::Deref; self.resource_name.deref()
     }
     /// <p>The parent resource name for the sync blocker.</p>
-    pub fn parent_resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn parent_resource_name(&self) -> ::std::option::Option<& str> {
         self.parent_resource_name.as_deref()
     }
     /// <p>Information about the sync blocker to be updated.</p>
-    pub fn sync_blocker(&self) -> ::std::option::Option<&crate::types::SyncBlocker> {
+    pub fn sync_blocker(&self) -> ::std::option::Option<& crate::types::SyncBlocker> {
         self.sync_blocker.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSyncBlockerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSyncBlockerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSyncBlockerOutput`](crate::operation::update_sync_blocker::UpdateSyncBlockerOutput).
     pub fn builder() -> crate::operation::update_sync_blocker::builders::UpdateSyncBlockerOutputBuilder {
@@ -56,8 +55,7 @@ impl UpdateSyncBlockerOutputBuilder {
     }
     /// <p>The resource name for the sync blocker.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The resource name for the sync blocker.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,7 @@ impl UpdateSyncBlockerOutputBuilder {
     }
     /// <p>The parent resource name for the sync blocker.</p>
     pub fn set_parent_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_resource_name = input;
-        self
+        self.parent_resource_name = input; self
     }
     /// <p>The parent resource name for the sync blocker.</p>
     pub fn get_parent_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,38 +82,39 @@ impl UpdateSyncBlockerOutputBuilder {
     }
     /// <p>Information about the sync blocker to be updated.</p>
     pub fn set_sync_blocker(mut self, input: ::std::option::Option<crate::types::SyncBlocker>) -> Self {
-        self.sync_blocker = input;
-        self
+        self.sync_blocker = input; self
     }
     /// <p>Information about the sync blocker to be updated.</p>
     pub fn get_sync_blocker(&self) -> &::std::option::Option<crate::types::SyncBlocker> {
         &self.sync_blocker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSyncBlockerOutput`](crate::operation::update_sync_blocker::UpdateSyncBlockerOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_name`](crate::operation::update_sync_blocker::builders::UpdateSyncBlockerOutputBuilder::resource_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_sync_blocker::UpdateSyncBlockerOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_sync_blocker::UpdateSyncBlockerOutput {
-            resource_name: self.resource_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_name",
-                    "resource_name was not specified but it is required when building UpdateSyncBlockerOutput",
-                )
-            })?,
-            parent_resource_name: self.parent_resource_name,
-            sync_blocker: self.sync_blocker,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_sync_blocker::UpdateSyncBlockerOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_sync_blocker::UpdateSyncBlockerOutput {
+                resource_name: self.resource_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_name", "resource_name was not specified but it is required when building UpdateSyncBlockerOutput")
+                    )?
+                ,
+                parent_resource_name: self.parent_resource_name
+                ,
+                sync_blocker: self.sync_blocker
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDomainsForPackage`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`package_id(impl Into<String>)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::set_package_id):<br>required: **true**<br><p>The unique identifier of the package for which to list associated domains.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::set_max_results):<br>required: **false**<br><p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::set_next_token):<br>required: **false**<br><p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p><br>
-    /// - On success, responds with [`ListDomainsForPackageOutput`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput) with field(s):
+                            /// - On success, responds with [`ListDomainsForPackageOutput`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput) with field(s):
     ///   - [`domain_package_details_list(Option<Vec::<DomainPackageDetails>>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::domain_package_details_list): <p>Information about all domains associated with a package.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::operation::list_domains_for_package::ListDomainsForPackageError)
+                            /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::operation::list_domains_for_package::ListDomainsForPackageError)
     pub fn list_domains_for_package(&self) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder {
-        crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_domains_for_package::builders::ListDomainsForPackageFluentBuilder::new(self.handle.clone())
+                            }
 }
+

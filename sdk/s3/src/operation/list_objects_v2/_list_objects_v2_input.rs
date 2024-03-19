@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectsV2Input {
+pub struct ListObjectsV2Input  {
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
@@ -45,15 +45,15 @@ pub struct ListObjectsV2Input {
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub optional_object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
+    pub optional_object_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::OptionalObjectAttributes>>,
 }
-impl ListObjectsV2Input {
+impl  ListObjectsV2Input  {
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>Access points and Object Lambda access points are not supported by directory buckets.</p>
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>A delimiter is a character that you use to group keys.</p><note>
@@ -64,11 +64,11 @@ impl ListObjectsV2Input {
     /// <p><b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code> response parameter contains the prefixes that are associated with the in-progress multipart uploads. For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p></li>
     /// </ul>
     /// </note>
-    pub fn delimiter(&self) -> ::std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
-    pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding_type(&self) -> ::std::option::Option<& crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
@@ -78,11 +78,11 @@ impl ListObjectsV2Input {
     /// <p>Limits the response to keys that begin with the specified prefix.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
-    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>The owner field is not present in <code>ListObjectsV2</code> by default. If you want to return the owner field with each key in the result, then set the <code>FetchOwner</code> field to <code>true</code>.</p><note>
@@ -94,26 +94,27 @@ impl ListObjectsV2Input {
     /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn start_after(&self) -> ::std::option::Option<&str> {
+    pub fn start_after(&self) -> ::std::option::Option<& str> {
         self.start_after.as_deref()
     }
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn request_payer(&self) -> ::std::option::Option<&crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> ::std::option::Option<& crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.optional_object_attributes.is_none()`.
-    pub fn optional_object_attributes(&self) -> &[crate::types::OptionalObjectAttributes] {
-        self.optional_object_attributes.as_deref().unwrap_or_default()
+    pub fn optional_object_attributes(&self) -> & [crate::types::OptionalObjectAttributes] {
+        self.optional_object_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListObjectsV2Input {
@@ -137,7 +138,7 @@ pub struct ListObjectsV2InputBuilder {
     pub(crate) start_after: ::std::option::Option<::std::string::String>,
     pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
-    pub(crate) optional_object_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>,
+    pub(crate) optional_object_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::OptionalObjectAttributes>>,
 }
 impl ListObjectsV2InputBuilder {
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -156,8 +157,7 @@ impl ListObjectsV2InputBuilder {
     /// </note>
     /// <p><b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p><b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p><b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p><note>
@@ -188,8 +188,7 @@ impl ListObjectsV2InputBuilder {
     /// </ul>
     /// </note>
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>A delimiter is a character that you use to group keys.</p><note>
     /// <ul>
@@ -209,8 +208,7 @@ impl ListObjectsV2InputBuilder {
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
     pub fn set_encoding_type(mut self, input: ::std::option::Option<crate::types::EncodingType>) -> Self {
-        self.encoding_type = input;
-        self
+        self.encoding_type = input; self
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response. If using <code>url</code>, non-ASCII characters used in an object's key name will be URL encoded. For example, the object test_file(3).png will appear as test_file%283%29.png.</p>
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
@@ -223,8 +221,7 @@ impl ListObjectsV2InputBuilder {
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn set_max_keys(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_keys = input;
-        self
+        self.max_keys = input; self
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
@@ -241,8 +238,7 @@ impl ListObjectsV2InputBuilder {
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
     /// </note>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Limits the response to keys that begin with the specified prefix.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<code>/</code>) are supported.</p>
@@ -257,8 +253,7 @@ impl ListObjectsV2InputBuilder {
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn set_continuation_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.continuation_token = input;
-        self
+        self.continuation_token = input; self
     }
     /// <p><code>ContinuationToken</code> indicates to Amazon S3 that the list is being continued on this bucket with a token. <code>ContinuationToken</code> is obfuscated and is not a real key. You can use this <code>ContinuationToken</code> for pagination of the list results.</p>
     pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -275,8 +270,7 @@ impl ListObjectsV2InputBuilder {
     /// <p><b>Directory buckets</b> - For directory buckets, the bucket owner is returned as the object owner for all objects.</p>
     /// </note>
     pub fn set_fetch_owner(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fetch_owner = input;
-        self
+        self.fetch_owner = input; self
     }
     /// <p>The owner field is not present in <code>ListObjectsV2</code> by default. If you want to return the owner field with each key in the result, then set the <code>FetchOwner</code> field to <code>true</code>.</p><note>
     /// <p><b>Directory buckets</b> - For directory buckets, the bucket owner is returned as the object owner for all objects.</p>
@@ -295,8 +289,7 @@ impl ListObjectsV2InputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_start_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.start_after = input;
-        self
+        self.start_after = input; self
     }
     /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -315,8 +308,7 @@ impl ListObjectsV2InputBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input;
-        self
+        self.request_payer = input; self
     }
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -331,8 +323,7 @@ impl ListObjectsV2InputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -347,39 +338,50 @@ impl ListObjectsV2InputBuilder {
     /// </note>
     pub fn optional_object_attributes(mut self, input: crate::types::OptionalObjectAttributes) -> Self {
         let mut v = self.optional_object_attributes.unwrap_or_default();
-        v.push(input);
-        self.optional_object_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.optional_object_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn set_optional_object_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>>) -> Self {
-        self.optional_object_attributes = input;
-        self
+    pub fn set_optional_object_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OptionalObjectAttributes>>) -> Self {
+        self.optional_object_attributes = input; self
     }
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn get_optional_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
+    pub fn get_optional_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OptionalObjectAttributes>> {
         &self.optional_object_attributes
     }
     /// Consumes the builder and constructs a [`ListObjectsV2Input`](crate::operation::list_objects_v2::ListObjectsV2Input).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Input, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_objects_v2::ListObjectsV2Input {
-            bucket: self.bucket,
-            delimiter: self.delimiter,
-            encoding_type: self.encoding_type,
-            max_keys: self.max_keys,
-            prefix: self.prefix,
-            continuation_token: self.continuation_token,
-            fetch_owner: self.fetch_owner,
-            start_after: self.start_after,
-            request_payer: self.request_payer,
-            expected_bucket_owner: self.expected_bucket_owner,
-            optional_object_attributes: self.optional_object_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Input, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_objects_v2::ListObjectsV2Input {
+                bucket: self.bucket
+                ,
+                delimiter: self.delimiter
+                ,
+                encoding_type: self.encoding_type
+                ,
+                max_keys: self.max_keys
+                ,
+                prefix: self.prefix
+                ,
+                continuation_token: self.continuation_token
+                ,
+                fetch_owner: self.fetch_owner
+                ,
+                start_after: self.start_after
+                ,
+                request_payer: self.request_payer
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                optional_object_attributes: self.optional_object_attributes
+                ,
+            }
+        )
     }
 }
+

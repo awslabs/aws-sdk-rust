@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a MongoDB endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MongoDbSettings {
+pub struct MongoDbSettings  {
     /// <p>The user name you use to access the MongoDB source endpoint.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the user account you use to access the MongoDB source endpoint.</p>
@@ -52,17 +52,17 @@ pub struct MongoDbSettings {
     /// </ul>
     pub replicate_shard_collections: ::std::option::Option<bool>,
 }
-impl MongoDbSettings {
+impl  MongoDbSettings  {
     /// <p>The user name you use to access the MongoDB source endpoint.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password for the user account you use to access the MongoDB source endpoint.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The port value for the MongoDB source endpoint.</p>
@@ -70,51 +70,51 @@ impl MongoDbSettings {
         self.port
     }
     /// <p>The database name on the MongoDB source endpoint.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The authentication type you use to access the MongoDB source endpoint.</p>
     /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.</p>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthTypeValue> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthTypeValue> {
         self.auth_type.as_ref()
     }
     /// <p>The authentication mechanism you use to access the MongoDB source endpoint.</p>
     /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
-    pub fn auth_mechanism(&self) -> ::std::option::Option<&crate::types::AuthMechanismValue> {
+    pub fn auth_mechanism(&self) -> ::std::option::Option<& crate::types::AuthMechanismValue> {
         self.auth_mechanism.as_ref()
     }
     /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
-    pub fn nesting_level(&self) -> ::std::option::Option<&crate::types::NestingLevelValue> {
+    pub fn nesting_level(&self) -> ::std::option::Option<& crate::types::NestingLevelValue> {
         self.nesting_level.as_ref()
     }
     /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
     /// <p>Default value is <code>"false"</code>.</p>
-    pub fn extract_doc_id(&self) -> ::std::option::Option<&str> {
+    pub fn extract_doc_id(&self) -> ::std::option::Option<& str> {
         self.extract_doc_id.as_deref()
     }
     /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
-    pub fn docs_to_investigate(&self) -> ::std::option::Option<&str> {
+    pub fn docs_to_investigate(&self) -> ::std::option::Option<& str> {
         self.docs_to_investigate.as_deref()
     }
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
-    pub fn auth_source(&self) -> ::std::option::Option<&str> {
+    pub fn auth_source(&self) -> ::std::option::Option<& str> {
         self.auth_source.as_deref()
     }
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
@@ -133,7 +133,7 @@ impl MongoDbSettings {
         self.replicate_shard_collections
     }
 }
-impl ::std::fmt::Debug for MongoDbSettings {
+impl  ::std::fmt::Debug for MongoDbSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MongoDbSettings");
         formatter.field("username", &self.username);
@@ -191,8 +191,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The user name you use to access the MongoDB source endpoint.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user name you use to access the MongoDB source endpoint.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +204,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The password for the user account you use to access the MongoDB source endpoint.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password for the user account you use to access the MongoDB source endpoint.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +217,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server on the MongoDB source endpoint. For MongoDB Atlas, provide the server name for any of the servers in the replication set.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +230,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The port value for the MongoDB source endpoint.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port value for the MongoDB source endpoint.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -247,8 +243,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The database name on the MongoDB source endpoint.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name on the MongoDB source endpoint.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -263,8 +258,7 @@ impl MongoDbSettingsBuilder {
     /// <p>The authentication type you use to access the MongoDB source endpoint.</p>
     /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthTypeValue>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The authentication type you use to access the MongoDB source endpoint.</p>
     /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and can be empty.</p>
@@ -280,8 +274,7 @@ impl MongoDbSettingsBuilder {
     /// <p>The authentication mechanism you use to access the MongoDB source endpoint.</p>
     /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     pub fn set_auth_mechanism(mut self, input: ::std::option::Option<crate::types::AuthMechanismValue>) -> Self {
-        self.auth_mechanism = input;
-        self
+        self.auth_mechanism = input; self
     }
     /// <p>The authentication mechanism you use to access the MongoDB source endpoint.</p>
     /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
@@ -297,8 +290,7 @@ impl MongoDbSettingsBuilder {
     /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn set_nesting_level(mut self, input: ::std::option::Option<crate::types::NestingLevelValue>) -> Self {
-        self.nesting_level = input;
-        self
+        self.nesting_level = input; self
     }
     /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
@@ -314,8 +306,7 @@ impl MongoDbSettingsBuilder {
     /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub fn set_extract_doc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.extract_doc_id = input;
-        self
+        self.extract_doc_id = input; self
     }
     /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
     /// <p>Default value is <code>"false"</code>.</p>
@@ -331,8 +322,7 @@ impl MongoDbSettingsBuilder {
     /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
     pub fn set_docs_to_investigate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.docs_to_investigate = input;
-        self
+        self.docs_to_investigate = input; self
     }
     /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
@@ -348,8 +338,7 @@ impl MongoDbSettingsBuilder {
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
     pub fn set_auth_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auth_source = input;
-        self
+        self.auth_source = input; self
     }
     /// <p>The MongoDB database name. This setting isn't used when <code>AuthType</code> is set to <code>"no"</code>.</p>
     /// <p>The default is <code>"admin"</code>.</p>
@@ -363,8 +352,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -381,8 +369,7 @@ impl MongoDbSettingsBuilder {
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -397,8 +384,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
     pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -411,8 +397,7 @@ impl MongoDbSettingsBuilder {
     }
     /// <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
     pub fn set_use_update_look_up(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_update_look_up = input;
-        self
+        self.use_update_look_up = input; self
     }
     /// <p>If <code>true</code>, DMS retrieves the entire document from the MongoDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
     pub fn get_use_update_look_up(&self) -> &::std::option::Option<bool> {
@@ -439,8 +424,7 @@ impl MongoDbSettingsBuilder {
     /// <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p></li>
     /// </ul>
     pub fn set_replicate_shard_collections(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.replicate_shard_collections = input;
-        self
+        self.replicate_shard_collections = input; self
     }
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
@@ -456,22 +440,38 @@ impl MongoDbSettingsBuilder {
     /// Consumes the builder and constructs a [`MongoDbSettings`](crate::types::MongoDbSettings).
     pub fn build(self) -> crate::types::MongoDbSettings {
         crate::types::MongoDbSettings {
-            username: self.username,
-            password: self.password,
-            server_name: self.server_name,
-            port: self.port,
-            database_name: self.database_name,
-            auth_type: self.auth_type,
-            auth_mechanism: self.auth_mechanism,
-            nesting_level: self.nesting_level,
-            extract_doc_id: self.extract_doc_id,
-            docs_to_investigate: self.docs_to_investigate,
-            auth_source: self.auth_source,
-            kms_key_id: self.kms_key_id,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            use_update_look_up: self.use_update_look_up,
-            replicate_shard_collections: self.replicate_shard_collections,
+            username: self.username
+            ,
+            password: self.password
+            ,
+            server_name: self.server_name
+            ,
+            port: self.port
+            ,
+            database_name: self.database_name
+            ,
+            auth_type: self.auth_type
+            ,
+            auth_mechanism: self.auth_mechanism
+            ,
+            nesting_level: self.nesting_level
+            ,
+            extract_doc_id: self.extract_doc_id
+            ,
+            docs_to_investigate: self.docs_to_investigate
+            ,
+            auth_source: self.auth_source
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+            ,
+            secrets_manager_secret_id: self.secrets_manager_secret_id
+            ,
+            use_update_look_up: self.use_update_look_up
+            ,
+            replicate_shard_collections: self.replicate_shard_collections
+            ,
         }
     }
 }
@@ -497,3 +497,4 @@ impl ::std::fmt::Debug for MongoDbSettingsBuilder {
         formatter.finish()
     }
 }
+

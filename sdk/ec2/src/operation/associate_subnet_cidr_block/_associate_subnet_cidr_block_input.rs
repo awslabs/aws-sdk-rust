@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateSubnetCidrBlockInput {
+pub struct AssociateSubnetCidrBlockInput  {
     /// <p>The IPv6 CIDR block for your subnet.</p>
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of your subnet.</p>
@@ -12,17 +12,17 @@ pub struct AssociateSubnetCidrBlockInput {
     /// <p>An IPv6 netmask length.</p>
     pub ipv6_netmask_length: ::std::option::Option<i32>,
 }
-impl AssociateSubnetCidrBlockInput {
+impl  AssociateSubnetCidrBlockInput  {
     /// <p>The IPv6 CIDR block for your subnet.</p>
-    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.ipv6_cidr_block.as_deref()
     }
     /// <p>The ID of your subnet.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>An IPv6 IPAM pool ID.</p>
-    pub fn ipv6_ipam_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_ipam_pool_id(&self) -> ::std::option::Option<& str> {
         self.ipv6_ipam_pool_id.as_deref()
     }
     /// <p>An IPv6 netmask length.</p>
@@ -54,8 +54,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
     }
     /// <p>The IPv6 CIDR block for your subnet.</p>
     pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_cidr_block = input;
-        self
+        self.ipv6_cidr_block = input; self
     }
     /// <p>The IPv6 CIDR block for your subnet.</p>
     pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
     }
     /// <p>The ID of your subnet.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of your subnet.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AssociateSubnetCidrBlockInputBuilder {
     }
     /// <p>An IPv6 IPAM pool ID.</p>
     pub fn set_ipv6_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_ipam_pool_id = input;
-        self
+        self.ipv6_ipam_pool_id = input; self
     }
     /// <p>An IPv6 IPAM pool ID.</p>
     pub fn get_ipv6_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl AssociateSubnetCidrBlockInputBuilder {
     }
     /// <p>An IPv6 netmask length.</p>
     pub fn set_ipv6_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ipv6_netmask_length = input;
-        self
+        self.ipv6_netmask_length = input; self
     }
     /// <p>An IPv6 netmask length.</p>
     pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
         &self.ipv6_netmask_length
     }
     /// Consumes the builder and constructs a [`AssociateSubnetCidrBlockInput`](crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput {
-            ipv6_cidr_block: self.ipv6_cidr_block,
-            subnet_id: self.subnet_id,
-            ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
-            ipv6_netmask_length: self.ipv6_netmask_length,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockInput {
+                ipv6_cidr_block: self.ipv6_cidr_block
+                ,
+                subnet_id: self.subnet_id
+                ,
+                ipv6_ipam_pool_id: self.ipv6_ipam_pool_id
+                ,
+                ipv6_netmask_length: self.ipv6_netmask_length
+                ,
+            }
+        )
     }
 }
+

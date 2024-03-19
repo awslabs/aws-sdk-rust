@@ -3,20 +3,19 @@
 /// <p>The Amazon Braket resource and the association type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Association {
+pub struct Association  {
     /// <p>The Amazon Braket resource arn.</p>
     pub arn: ::std::string::String,
     /// <p>The association type for the specified Amazon Braket resource arn.</p>
     pub r#type: crate::types::AssociationType,
 }
-impl Association {
+impl  Association  {
     /// <p>The Amazon Braket resource arn.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The association type for the specified Amazon Braket resource arn.</p>
-    pub fn r#type(&self) -> &crate::types::AssociationType {
+    pub fn r#type(&self) -> & crate::types::AssociationType {
         &self.r#type
     }
 }
@@ -43,8 +42,7 @@ impl AssociationBuilder {
     }
     /// <p>The Amazon Braket resource arn.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Braket resource arn.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AssociationBuilder {
     }
     /// <p>The association type for the specified Amazon Braket resource arn.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AssociationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The association type for the specified Amazon Braket resource arn.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
@@ -70,19 +67,20 @@ impl AssociationBuilder {
     /// - [`arn`](crate::types::builders::AssociationBuilder::arn)
     /// - [`r#type`](crate::types::builders::AssociationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Association, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Association {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Association",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Association",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Association {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Association")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Association")
+                    )?
+                ,
+            }
+        )
     }
 }
+

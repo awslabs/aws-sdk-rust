@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestEventPatternInput {
+pub struct TestEventPatternInput  {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
@@ -24,9 +24,9 @@ pub struct TestEventPatternInput {
     /// </ul>
     pub event: ::std::option::Option<::std::string::String>,
 }
-impl TestEventPatternInput {
+impl  TestEventPatternInput  {
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<& str> {
         self.event_pattern.as_deref()
     }
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
@@ -46,7 +46,7 @@ impl TestEventPatternInput {
     /// <li>
     /// <p><code>detail-type</code></p></li>
     /// </ul>
-    pub fn event(&self) -> ::std::option::Option<&str> {
+    pub fn event(&self) -> ::std::option::Option<& str> {
         self.event.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl TestEventPatternInputBuilder {
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn set_event_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_pattern = input;
-        self
+        self.event_pattern = input; self
     }
     /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl TestEventPatternInputBuilder {
     /// <p><code>detail-type</code></p></li>
     /// </ul>
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
     /// <ul>
@@ -144,12 +142,15 @@ impl TestEventPatternInputBuilder {
         &self.event
     }
     /// Consumes the builder and constructs a [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::test_event_pattern::TestEventPatternInput {
-            event_pattern: self.event_pattern,
-            event: self.event,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_event_pattern::TestEventPatternInput {
+                event_pattern: self.event_pattern
+                ,
+                event: self.event
+                ,
+            }
+        )
     }
 }
+

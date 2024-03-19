@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTemplateActionsInput {
+pub struct ListTemplateActionsInput  {
     /// <p>Launch configuration template ID.</p>
     pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing template post migration custom actions.</p>
@@ -12,13 +12,13 @@ pub struct ListTemplateActionsInput {
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTemplateActionsInput {
+impl  ListTemplateActionsInput  {
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
-    pub fn filters(&self) -> ::std::option::Option<&crate::types::TemplateActionsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<& crate::types::TemplateActionsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
@@ -26,7 +26,7 @@ impl ListTemplateActionsInput {
         self.max_results
     }
     /// <p>Next token to use when listing template post migration custom actions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListTemplateActionsInputBuilder {
     }
     /// <p>Launch configuration template ID.</p>
     pub fn set_launch_configuration_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_configuration_template_id = input;
-        self
+        self.launch_configuration_template_id = input; self
     }
     /// <p>Launch configuration template ID.</p>
     pub fn get_launch_configuration_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListTemplateActionsInputBuilder {
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::TemplateActionsRequestFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
@@ -83,8 +81,7 @@ impl ListTemplateActionsInputBuilder {
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,23 +94,26 @@ impl ListTemplateActionsInputBuilder {
     }
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_template_actions::ListTemplateActionsInput {
-            launch_configuration_template_id: self.launch_configuration_template_id,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_template_actions::ListTemplateActionsInput {
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

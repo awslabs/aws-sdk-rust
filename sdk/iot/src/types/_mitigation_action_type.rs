@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mitigationactiontype = unimplemented!();
 /// match mitigationactiontype {
@@ -34,16 +34,14 @@
 /// Specifically, when `mitigationactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MitigationActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum MitigationActionType {
     #[allow(missing_docs)] // documentation missing in model
     AddThingsToThingGroup,
@@ -59,80 +57,74 @@ pub enum MitigationActionType {
     UpdateDeviceCertificate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for MitigationActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADD_THINGS_TO_THING_GROUP" => MitigationActionType::AddThingsToThingGroup,
-            "ENABLE_IOT_LOGGING" => MitigationActionType::EnableIotLogging,
-            "PUBLISH_FINDING_TO_SNS" => MitigationActionType::PublishFindingToSns,
-            "REPLACE_DEFAULT_POLICY_VERSION" => MitigationActionType::ReplaceDefaultPolicyVersion,
-            "UPDATE_CA_CERTIFICATE" => MitigationActionType::UpdateCaCertificate,
-            "UPDATE_DEVICE_CERTIFICATE" => MitigationActionType::UpdateDeviceCertificate,
-            other => MitigationActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ADD_THINGS_TO_THING_GROUP" => MitigationActionType::AddThingsToThingGroup,
+"ENABLE_IOT_LOGGING" => MitigationActionType::EnableIotLogging,
+"PUBLISH_FINDING_TO_SNS" => MitigationActionType::PublishFindingToSns,
+"REPLACE_DEFAULT_POLICY_VERSION" => MitigationActionType::ReplaceDefaultPolicyVersion,
+"UPDATE_CA_CERTIFICATE" => MitigationActionType::UpdateCaCertificate,
+"UPDATE_DEVICE_CERTIFICATE" => MitigationActionType::UpdateDeviceCertificate,
+other => MitigationActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for MitigationActionType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(MitigationActionType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(MitigationActionType::from(s))
+                    }
+                }
 impl MitigationActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MitigationActionType::AddThingsToThingGroup => "ADD_THINGS_TO_THING_GROUP",
-            MitigationActionType::EnableIotLogging => "ENABLE_IOT_LOGGING",
-            MitigationActionType::PublishFindingToSns => "PUBLISH_FINDING_TO_SNS",
-            MitigationActionType::ReplaceDefaultPolicyVersion => "REPLACE_DEFAULT_POLICY_VERSION",
-            MitigationActionType::UpdateCaCertificate => "UPDATE_CA_CERTIFICATE",
-            MitigationActionType::UpdateDeviceCertificate => "UPDATE_DEVICE_CERTIFICATE",
-            MitigationActionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADD_THINGS_TO_THING_GROUP",
-            "ENABLE_IOT_LOGGING",
-            "PUBLISH_FINDING_TO_SNS",
-            "REPLACE_DEFAULT_POLICY_VERSION",
-            "UPDATE_CA_CERTIFICATE",
-            "UPDATE_DEVICE_CERTIFICATE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MitigationActionType::AddThingsToThingGroup => "ADD_THINGS_TO_THING_GROUP",
+    MitigationActionType::EnableIotLogging => "ENABLE_IOT_LOGGING",
+    MitigationActionType::PublishFindingToSns => "PUBLISH_FINDING_TO_SNS",
+    MitigationActionType::ReplaceDefaultPolicyVersion => "REPLACE_DEFAULT_POLICY_VERSION",
+    MitigationActionType::UpdateCaCertificate => "UPDATE_CA_CERTIFICATE",
+    MitigationActionType::UpdateDeviceCertificate => "UPDATE_DEVICE_CERTIFICATE",
+    MitigationActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADD_THINGS_TO_THING_GROUP", "ENABLE_IOT_LOGGING", "PUBLISH_FINDING_TO_SNS", "REPLACE_DEFAULT_POLICY_VERSION", "UPDATE_CA_CERTIFICATE", "UPDATE_DEVICE_CERTIFICATE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for MitigationActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl MitigationActionType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for MitigationActionType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            MitigationActionType::AddThingsToThingGroup => write!(f, "ADD_THINGS_TO_THING_GROUP"),
-            MitigationActionType::EnableIotLogging => write!(f, "ENABLE_IOT_LOGGING"),
-            MitigationActionType::PublishFindingToSns => write!(f, "PUBLISH_FINDING_TO_SNS"),
-            MitigationActionType::ReplaceDefaultPolicyVersion => write!(f, "REPLACE_DEFAULT_POLICY_VERSION"),
-            MitigationActionType::UpdateCaCertificate => write!(f, "UPDATE_CA_CERTIFICATE"),
-            MitigationActionType::UpdateDeviceCertificate => write!(f, "UPDATE_DEVICE_CERTIFICATE"),
-            MitigationActionType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                MitigationActionType::AddThingsToThingGroup => write!(f, "ADD_THINGS_TO_THING_GROUP"),
+MitigationActionType::EnableIotLogging => write!(f, "ENABLE_IOT_LOGGING"),
+MitigationActionType::PublishFindingToSns => write!(f, "PUBLISH_FINDING_TO_SNS"),
+MitigationActionType::ReplaceDefaultPolicyVersion => write!(f, "REPLACE_DEFAULT_POLICY_VERSION"),
+MitigationActionType::UpdateCaCertificate => write!(f, "UPDATE_CA_CERTIFICATE"),
+MitigationActionType::UpdateDeviceCertificate => write!(f, "UPDATE_DEVICE_CERTIFICATE"),
+MitigationActionType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

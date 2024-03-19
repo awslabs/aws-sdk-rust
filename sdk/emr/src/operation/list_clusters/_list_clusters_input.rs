@@ -3,33 +3,34 @@
 /// <p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClustersInput {
+pub struct ListClustersInput  {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The creation date and time end value filter for listing clusters.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub cluster_states: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>,
+    pub cluster_states: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListClustersInput {
+impl  ListClustersInput  {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The creation date and time end value filter for listing clusters.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cluster_states.is_none()`.
-    pub fn cluster_states(&self) -> &[crate::types::ClusterState] {
-        self.cluster_states.as_deref().unwrap_or_default()
+    pub fn cluster_states(&self) -> & [crate::types::ClusterState] {
+        self.cluster_states.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl ListClustersInput {
 pub struct ListClustersInputBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) cluster_states: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>,
+    pub(crate) cluster_states: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterState>>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl ListClustersInputBuilder {
@@ -57,8 +58,7 @@ impl ListClustersInputBuilder {
     }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -71,8 +71,7 @@ impl ListClustersInputBuilder {
     }
     /// <p>The creation date and time end value filter for listing clusters.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>The creation date and time end value filter for listing clusters.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -85,17 +84,16 @@ impl ListClustersInputBuilder {
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
     pub fn cluster_states(mut self, input: crate::types::ClusterState) -> Self {
         let mut v = self.cluster_states.unwrap_or_default();
-        v.push(input);
-        self.cluster_states = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cluster_states = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn set_cluster_states(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterState>>) -> Self {
-        self.cluster_states = input;
-        self
+    pub fn set_cluster_states(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ClusterState>>) -> Self {
+        self.cluster_states = input; self
     }
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    pub fn get_cluster_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterState>> {
+    pub fn get_cluster_states(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ClusterState>> {
         &self.cluster_states
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -105,22 +103,26 @@ impl ListClustersInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_clusters::ListClustersInput {
-            created_after: self.created_after,
-            created_before: self.created_before,
-            cluster_states: self.cluster_states,
-            marker: self.marker,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_clusters::ListClustersInput {
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                cluster_states: self.cluster_states
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

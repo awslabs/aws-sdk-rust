@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRoomMemberships`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
     ///   - [`room_id(impl Into<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::set_room_id):<br>required: **true**<br><p>The room ID.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput) with field(s):
+                            /// - On success, responds with [`ListRoomMembershipsOutput`](crate::operation::list_room_memberships::ListRoomMembershipsOutput) with field(s):
     ///   - [`room_memberships(Option<Vec::<RoomMembership>>)`](crate::operation::list_room_memberships::ListRoomMembershipsOutput::room_memberships): <p>The room membership details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_room_memberships::ListRoomMembershipsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRoomMembershipsError>`](crate::operation::list_room_memberships::ListRoomMembershipsError)
+                            /// - On failure, responds with [`SdkError<ListRoomMembershipsError>`](crate::operation::list_room_memberships::ListRoomMembershipsError)
     pub fn list_room_memberships(&self) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder {
-        crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_room_memberships::builders::ListRoomMembershipsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProfileObjectsInput {
+pub struct ListProfileObjectsInput  {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of objects returned per page.</p>
@@ -16,9 +16,9 @@ pub struct ListProfileObjectsInput {
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub object_filter: ::std::option::Option<crate::types::ObjectFilter>,
 }
-impl ListProfileObjectsInput {
+impl  ListProfileObjectsInput  {
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -26,19 +26,19 @@ impl ListProfileObjectsInput {
         self.max_results
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn object_type_name(&self) -> ::std::option::Option<& str> {
         self.object_type_name.as_deref()
     }
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
-    pub fn object_filter(&self) -> ::std::option::Option<&crate::types::ObjectFilter> {
+    pub fn object_filter(&self) -> ::std::option::Option<& crate::types::ObjectFilter> {
         self.object_filter.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,8 +95,7 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>The name of the profile object type.</p>
     pub fn set_object_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_type_name = input;
-        self
+        self.object_type_name = input; self
     }
     /// <p>The name of the profile object type.</p>
     pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,25 +136,30 @@ impl ListProfileObjectsInputBuilder {
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn set_object_filter(mut self, input: ::std::option::Option<crate::types::ObjectFilter>) -> Self {
-        self.object_filter = input;
-        self
+        self.object_filter = input; self
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values.</p>
     pub fn get_object_filter(&self) -> &::std::option::Option<crate::types::ObjectFilter> {
         &self.object_filter
     }
     /// Consumes the builder and constructs a [`ListProfileObjectsInput`](crate::operation::list_profile_objects::ListProfileObjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_profile_objects::ListProfileObjectsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            domain_name: self.domain_name,
-            object_type_name: self.object_type_name,
-            profile_id: self.profile_id,
-            object_filter: self.object_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_profile_objects::ListProfileObjectsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                domain_name: self.domain_name
+                ,
+                object_type_name: self.object_type_name
+                ,
+                profile_id: self.profile_id
+                ,
+                object_filter: self.object_filter
+                ,
+            }
+        )
     }
 }
+

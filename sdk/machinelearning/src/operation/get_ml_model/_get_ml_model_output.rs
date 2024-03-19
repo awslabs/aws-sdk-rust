@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlModelOutput {
+pub struct GetMlModelOutput  {
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the training <code>DataSource</code>.</p>
@@ -51,7 +51,7 @@ pub struct GetMlModelOutput {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub training_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
@@ -87,29 +87,29 @@ pub struct GetMlModelOutput {
     pub schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetMlModelOutput {
+impl  GetMlModelOutput  {
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the training <code>DataSource</code>.</p>
-    pub fn training_data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn training_data_source_id(&self) -> ::std::option::Option<& str> {
         self.training_data_source_id.as_deref()
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(&self) -> ::std::option::Option<&str> {
+    pub fn created_by_iam_user(&self) -> ::std::option::Option<& str> {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
@@ -125,7 +125,7 @@ impl GetMlModelOutput {
     /// <li>
     /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EntityStatus> {
         self.status.as_ref()
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
@@ -133,7 +133,7 @@ impl GetMlModelOutput {
         self.size_in_bytes
     }
     /// <p>The current endpoint of the <code>MLModel</code></p>
-    pub fn endpoint_info(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
+    pub fn endpoint_info(&self) -> ::std::option::Option<& crate::types::RealtimeEndpointInfo> {
         self.endpoint_info.as_ref()
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
@@ -153,11 +153,11 @@ impl GetMlModelOutput {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn training_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn training_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.training_parameters.as_ref()
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(&self) -> ::std::option::Option<&str> {
+    pub fn input_data_location_s3(&self) -> ::std::option::Option<& str> {
         self.input_data_location_s3.as_deref()
     }
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
@@ -169,7 +169,7 @@ impl GetMlModelOutput {
     /// <li>
     /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
     /// </ul>
-    pub fn ml_model_type(&self) -> ::std::option::Option<&crate::types::MlModelType> {
+    pub fn ml_model_type(&self) -> ::std::option::Option<& crate::types::MlModelType> {
         self.ml_model_type.as_ref()
     }
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
@@ -178,15 +178,15 @@ impl GetMlModelOutput {
         self.score_threshold
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    pub fn score_threshold_last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn score_threshold_last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.score_threshold_last_updated_at.as_ref()
     }
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
-    pub fn log_uri(&self) -> ::std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<& str> {
         self.log_uri.as_deref()
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
@@ -194,29 +194,29 @@ impl GetMlModelOutput {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn finished_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    pub fn recipe(&self) -> ::std::option::Option<&str> {
+    pub fn recipe(&self) -> ::std::option::Option<& str> {
         self.recipe.as_deref()
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMlModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMlModelOutput {
     /// Creates a new builder-style object to manufacture [`GetMlModelOutput`](crate::operation::get_ml_model::GetMlModelOutput).
     pub fn builder() -> crate::operation::get_ml_model::builders::GetMlModelOutputBuilder {
@@ -237,7 +237,7 @@ pub struct GetMlModelOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EntityStatus>,
     pub(crate) size_in_bytes: ::std::option::Option<i64>,
     pub(crate) endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
-    pub(crate) training_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) training_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) input_data_location_s3: ::std::option::Option<::std::string::String>,
     pub(crate) ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     pub(crate) score_threshold: ::std::option::Option<f32>,
@@ -259,8 +259,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +272,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The ID of the training <code>DataSource</code>.</p>
     pub fn set_training_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.training_data_source_id = input;
-        self
+        self.training_data_source_id = input; self
     }
     /// <p>The ID of the training <code>DataSource</code>.</p>
     pub fn get_training_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +285,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn set_created_by_iam_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by_iam_user = input;
-        self
+        self.created_by_iam_user = input; self
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn get_created_by_iam_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +298,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -315,8 +311,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -329,8 +324,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -367,8 +361,7 @@ impl GetMlModelOutputBuilder {
     /// <p><code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -393,8 +386,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_bytes = input;
-        self
+        self.size_in_bytes = input; self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -407,8 +399,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The current endpoint of the <code>MLModel</code></p>
     pub fn set_endpoint_info(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointInfo>) -> Self {
-        self.endpoint_info = input;
-        self
+        self.endpoint_info = input; self
     }
     /// <p>The current endpoint of the <code>MLModel</code></p>
     pub fn get_endpoint_info(&self) -> &::std::option::Option<crate::types::RealtimeEndpointInfo> {
@@ -435,15 +426,11 @@ impl GetMlModelOutputBuilder {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn training_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn training_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.training_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.training_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.training_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -462,12 +449,8 @@ impl GetMlModelOutputBuilder {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn set_training_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.training_parameters = input;
-        self
+    pub fn set_training_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.training_parameters = input; self
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
@@ -486,7 +469,7 @@ impl GetMlModelOutputBuilder {
     /// <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p>
     /// <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p></li>
     /// </ul>
-    pub fn get_training_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_training_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.training_parameters
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
@@ -496,8 +479,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn set_input_data_location_s3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_data_location_s3 = input;
-        self
+        self.input_data_location_s3 = input; self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn get_input_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
@@ -526,8 +508,7 @@ impl GetMlModelOutputBuilder {
     /// <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p></li>
     /// </ul>
     pub fn set_ml_model_type(mut self, input: ::std::option::Option<crate::types::MlModelType>) -> Self {
-        self.ml_model_type = input;
-        self
+        self.ml_model_type = input; self
     }
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
     /// <ul>
@@ -550,8 +531,7 @@ impl GetMlModelOutputBuilder {
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <code>true</code>. Output values less than the threshold receive a negative response from the MLModel, such as <code>false</code>.</p>
     pub fn set_score_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.score_threshold = input;
-        self
+        self.score_threshold = input; self
     }
     /// <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <code>true</code>. Output values less than the threshold receive a negative response from the MLModel, such as <code>false</code>.</p>
@@ -565,8 +545,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn set_score_threshold_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.score_threshold_last_updated_at = input;
-        self
+        self.score_threshold_last_updated_at = input; self
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn get_score_threshold_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -579,8 +558,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -593,8 +571,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -607,8 +584,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
     pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.compute_time = input;
-        self
+        self.compute_time = input; self
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
     pub fn get_compute_time(&self) -> &::std::option::Option<i64> {
@@ -621,8 +597,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     pub fn set_finished_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.finished_at = input;
-        self
+        self.finished_at = input; self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     pub fn get_finished_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -635,8 +610,7 @@ impl GetMlModelOutputBuilder {
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -651,8 +625,7 @@ impl GetMlModelOutputBuilder {
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe = input;
-        self
+        self.recipe = input; self
     }
     /// <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
@@ -668,8 +641,7 @@ impl GetMlModelOutputBuilder {
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>
     /// <p><b>Note:</b> This parameter is provided as part of the verbose format.</p>
@@ -677,39 +649,61 @@ impl GetMlModelOutputBuilder {
         &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMlModelOutput`](crate::operation::get_ml_model::GetMlModelOutput).
     pub fn build(self) -> crate::operation::get_ml_model::GetMlModelOutput {
         crate::operation::get_ml_model::GetMlModelOutput {
-            ml_model_id: self.ml_model_id,
-            training_data_source_id: self.training_data_source_id,
-            created_by_iam_user: self.created_by_iam_user,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            name: self.name,
-            status: self.status,
-            size_in_bytes: self.size_in_bytes,
-            endpoint_info: self.endpoint_info,
-            training_parameters: self.training_parameters,
-            input_data_location_s3: self.input_data_location_s3,
-            ml_model_type: self.ml_model_type,
-            score_threshold: self.score_threshold,
-            score_threshold_last_updated_at: self.score_threshold_last_updated_at,
-            log_uri: self.log_uri,
-            message: self.message,
-            compute_time: self.compute_time,
-            finished_at: self.finished_at,
-            started_at: self.started_at,
-            recipe: self.recipe,
-            schema: self.schema,
+            ml_model_id: self.ml_model_id
+            ,
+            training_data_source_id: self.training_data_source_id
+            ,
+            created_by_iam_user: self.created_by_iam_user
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            size_in_bytes: self.size_in_bytes
+            ,
+            endpoint_info: self.endpoint_info
+            ,
+            training_parameters: self.training_parameters
+            ,
+            input_data_location_s3: self.input_data_location_s3
+            ,
+            ml_model_type: self.ml_model_type
+            ,
+            score_threshold: self.score_threshold
+            ,
+            score_threshold_last_updated_at: self.score_threshold_last_updated_at
+            ,
+            log_uri: self.log_uri
+            ,
+            message: self.message
+            ,
+            compute_time: self.compute_time
+            ,
+            finished_at: self.finished_at
+            ,
+            started_at: self.started_at
+            ,
+            recipe: self.recipe
+            ,
+            schema: self.schema
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,18 +3,19 @@
 /// <p>Configuration of blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfluenceBlogConfiguration {
+pub struct ConfluenceBlogConfiguration  {
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub blog_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>,
+    pub blog_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceBlogToIndexFieldMapping>>,
 }
-impl ConfluenceBlogConfiguration {
+impl  ConfluenceBlogConfiguration  {
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blog_field_mappings.is_none()`.
-    pub fn blog_field_mappings(&self) -> &[crate::types::ConfluenceBlogToIndexFieldMapping] {
-        self.blog_field_mappings.as_deref().unwrap_or_default()
+    pub fn blog_field_mappings(&self) -> & [crate::types::ConfluenceBlogToIndexFieldMapping] {
+        self.blog_field_mappings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ConfluenceBlogConfiguration {
@@ -28,7 +29,7 @@ impl ConfluenceBlogConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConfluenceBlogConfigurationBuilder {
-    pub(crate) blog_field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>,
+    pub(crate) blog_field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceBlogToIndexFieldMapping>>,
 }
 impl ConfluenceBlogConfigurationBuilder {
     /// Appends an item to `blog_field_mappings`.
@@ -39,25 +40,26 @@ impl ConfluenceBlogConfigurationBuilder {
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     pub fn blog_field_mappings(mut self, input: crate::types::ConfluenceBlogToIndexFieldMapping) -> Self {
         let mut v = self.blog_field_mappings.unwrap_or_default();
-        v.push(input);
-        self.blog_field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.blog_field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn set_blog_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>) -> Self {
-        self.blog_field_mappings = input;
-        self
+    pub fn set_blog_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceBlogToIndexFieldMapping>>) -> Self {
+        self.blog_field_mappings = input; self
     }
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn get_blog_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>> {
+    pub fn get_blog_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfluenceBlogToIndexFieldMapping>> {
         &self.blog_field_mappings
     }
     /// Consumes the builder and constructs a [`ConfluenceBlogConfiguration`](crate::types::ConfluenceBlogConfiguration).
     pub fn build(self) -> crate::types::ConfluenceBlogConfiguration {
         crate::types::ConfluenceBlogConfiguration {
-            blog_field_mappings: self.blog_field_mappings,
+            blog_field_mappings: self.blog_field_mappings
+            ,
         }
     }
 }
+

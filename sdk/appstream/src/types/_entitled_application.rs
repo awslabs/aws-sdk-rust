@@ -3,13 +3,13 @@
 /// <p>The application associated to an entitlement. Access is controlled based on user attributes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntitledApplication {
+pub struct EntitledApplication  {
     /// <p>The identifier of the application.</p>
     pub application_identifier: ::std::option::Option<::std::string::String>,
 }
-impl EntitledApplication {
+impl  EntitledApplication  {
     /// <p>The identifier of the application.</p>
-    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn application_identifier(&self) -> ::std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl EntitledApplicationBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_identifier = input;
-        self
+        self.application_identifier = input; self
     }
     /// <p>The identifier of the application.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl EntitledApplicationBuilder {
     /// Consumes the builder and constructs a [`EntitledApplication`](crate::types::EntitledApplication).
     pub fn build(self) -> crate::types::EntitledApplication {
         crate::types::EntitledApplication {
-            application_identifier: self.application_identifier,
+            application_identifier: self.application_identifier
+            ,
         }
     }
 }
+

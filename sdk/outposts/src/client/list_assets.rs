@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssets`](crate::operation::list_assets::builders::ListAssetsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`outpost_identifier(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::outpost_identifier) / [`set_outpost_identifier(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_outpost_identifier):<br>required: **true**<br><p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p><br>
     ///   - [`host_id_filter(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::host_id_filter) / [`set_host_id_filter(Option<Vec::<String>>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_host_id_filter):<br>required: **false**<br><p>Filters the results by the host ID of a Dedicated Host.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum page size.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`status_filter(AssetState)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::status_filter) / [`set_status_filter(Option<Vec::<AssetState>>)`](crate::operation::list_assets::builders::ListAssetsFluentBuilder::set_status_filter):<br>required: **false**<br><p>Filters the results by state.</p><br>
-    /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):
+                            /// - On success, responds with [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput) with field(s):
     ///   - [`assets(Option<Vec::<AssetInfo>>)`](crate::operation::list_assets::ListAssetsOutput::assets): <p>Information about the hardware assets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assets::ListAssetsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::operation::list_assets::ListAssetsError)
+                            /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::operation::list_assets::ListAssetsError)
     pub fn list_assets(&self) -> crate::operation::list_assets::builders::ListAssetsFluentBuilder {
-        crate::operation::list_assets::builders::ListAssetsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_assets::builders::ListAssetsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

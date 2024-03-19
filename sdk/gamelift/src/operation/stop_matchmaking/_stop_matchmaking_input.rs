@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopMatchmakingInput {
+pub struct StopMatchmakingInput  {
     /// <p>A unique identifier for a matchmaking ticket.</p>
     pub ticket_id: ::std::option::Option<::std::string::String>,
 }
-impl StopMatchmakingInput {
+impl  StopMatchmakingInput  {
     /// <p>A unique identifier for a matchmaking ticket.</p>
-    pub fn ticket_id(&self) -> ::std::option::Option<&str> {
+    pub fn ticket_id(&self) -> ::std::option::Option<& str> {
         self.ticket_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl StopMatchmakingInputBuilder {
     }
     /// <p>A unique identifier for a matchmaking ticket.</p>
     pub fn set_ticket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ticket_id = input;
-        self
+        self.ticket_id = input; self
     }
     /// <p>A unique identifier for a matchmaking ticket.</p>
     pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ticket_id
     }
     /// Consumes the builder and constructs a [`StopMatchmakingInput`](crate::operation::stop_matchmaking::StopMatchmakingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_matchmaking::StopMatchmakingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_matchmaking::StopMatchmakingInput { ticket_id: self.ticket_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_matchmaking::StopMatchmakingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_matchmaking::StopMatchmakingInput {
+                ticket_id: self.ticket_id
+                ,
+            }
+        )
     }
 }
+

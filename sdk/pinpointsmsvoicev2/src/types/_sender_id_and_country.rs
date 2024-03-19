@@ -3,22 +3,20 @@
 /// <p>The alphanumeric sender ID in a specific country that you want to describe. For more information on sender IDs see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-sender-id.html">Requesting sender IDs for SMS messaging with Amazon Pinpoint </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SenderIdAndCountry {
+pub struct SenderIdAndCountry  {
     /// <p>The unique identifier of the sender.</p>
     pub sender_id: ::std::string::String,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub iso_country_code: ::std::string::String,
 }
-impl SenderIdAndCountry {
+impl  SenderIdAndCountry  {
     /// <p>The unique identifier of the sender.</p>
-    pub fn sender_id(&self) -> &str {
-        use std::ops::Deref;
-        self.sender_id.deref()
+    pub fn sender_id(&self) -> & str {
+        use std::ops::Deref; self.sender_id.deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> & str {
+        use std::ops::Deref; self.iso_country_code.deref()
     }
 }
 impl SenderIdAndCountry {
@@ -44,8 +42,7 @@ impl SenderIdAndCountryBuilder {
     }
     /// <p>The unique identifier of the sender.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The unique identifier of the sender.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl SenderIdAndCountryBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iso_country_code = input;
-        self
+        self.iso_country_code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl SenderIdAndCountryBuilder {
     /// - [`sender_id`](crate::types::builders::SenderIdAndCountryBuilder::sender_id)
     /// - [`iso_country_code`](crate::types::builders::SenderIdAndCountryBuilder::iso_country_code)
     pub fn build(self) -> ::std::result::Result<crate::types::SenderIdAndCountry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SenderIdAndCountry {
-            sender_id: self.sender_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sender_id",
-                    "sender_id was not specified but it is required when building SenderIdAndCountry",
-                )
-            })?,
-            iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iso_country_code",
-                    "iso_country_code was not specified but it is required when building SenderIdAndCountry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SenderIdAndCountry {
+                sender_id: self.sender_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sender_id", "sender_id was not specified but it is required when building SenderIdAndCountry")
+                    )?
+                ,
+                iso_country_code: self.iso_country_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iso_country_code", "iso_country_code was not specified but it is required when building SenderIdAndCountry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

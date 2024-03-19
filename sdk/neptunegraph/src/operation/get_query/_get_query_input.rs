@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetQueryInput {
+pub struct GetQueryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the query in question.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
 }
-impl GetQueryInput {
+impl  GetQueryInput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn graph_identifier(&self) -> ::std::option::Option<& str> {
         self.graph_identifier.as_deref()
     }
     /// <p>The ID of the query in question.</p>
-    pub fn query_id(&self) -> ::std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetQueryInputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_identifier = input;
-        self
+        self.graph_identifier = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetQueryInputBuilder {
     }
     /// <p>The ID of the query in question.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>The ID of the query in question.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetQueryInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetQueryInput`](crate::operation::get_query::GetQueryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_query::GetQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_query::GetQueryInput {
-            graph_identifier: self.graph_identifier,
-            query_id: self.query_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_query::GetQueryInput {
+                graph_identifier: self.graph_identifier
+                ,
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

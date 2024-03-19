@@ -4,9 +4,9 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentEnrichmentConfiguration {
+pub struct DocumentEnrichmentConfiguration  {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Q.</p>
-    pub inline_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InlineDocumentEnrichmentConfiguration>>,
+    pub inline_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::InlineDocumentEnrichmentConfiguration>>,
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
@@ -20,19 +20,20 @@ pub struct DocumentEnrichmentConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub post_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
 }
-impl DocumentEnrichmentConfiguration {
+impl  DocumentEnrichmentConfiguration  {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Q.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inline_configurations.is_none()`.
-    pub fn inline_configurations(&self) -> &[crate::types::InlineDocumentEnrichmentConfiguration] {
-        self.inline_configurations.as_deref().unwrap_or_default()
+    pub fn inline_configurations(&self) -> & [crate::types::InlineDocumentEnrichmentConfiguration] {
+        self.inline_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
-    pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
+    pub fn pre_extraction_hook_configuration(&self) -> ::std::option::Option<& crate::types::HookConfiguration> {
         self.pre_extraction_hook_configuration.as_ref()
     }
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
@@ -40,7 +41,7 @@ impl DocumentEnrichmentConfiguration {
     /// <p>If you want to apply advanced alterations on the Amazon Q structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.</p>
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
-    pub fn post_extraction_hook_configuration(&self) -> ::std::option::Option<&crate::types::HookConfiguration> {
+    pub fn post_extraction_hook_configuration(&self) -> ::std::option::Option<& crate::types::HookConfiguration> {
         self.post_extraction_hook_configuration.as_ref()
     }
 }
@@ -55,7 +56,7 @@ impl DocumentEnrichmentConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DocumentEnrichmentConfigurationBuilder {
-    pub(crate) inline_configurations: ::std::option::Option<::std::vec::Vec<crate::types::InlineDocumentEnrichmentConfiguration>>,
+    pub(crate) inline_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::InlineDocumentEnrichmentConfiguration>>,
     pub(crate) pre_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
     pub(crate) post_extraction_hook_configuration: ::std::option::Option<crate::types::HookConfiguration>,
 }
@@ -67,20 +68,16 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Q.</p>
     pub fn inline_configurations(mut self, input: crate::types::InlineDocumentEnrichmentConfiguration) -> Self {
         let mut v = self.inline_configurations.unwrap_or_default();
-        v.push(input);
-        self.inline_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inline_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Q.</p>
-    pub fn set_inline_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::InlineDocumentEnrichmentConfiguration>>,
-    ) -> Self {
-        self.inline_configurations = input;
-        self
+    pub fn set_inline_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InlineDocumentEnrichmentConfiguration>>) -> Self {
+        self.inline_configurations = input; self
     }
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Q.</p>
-    pub fn get_inline_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineDocumentEnrichmentConfiguration>> {
+    pub fn get_inline_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InlineDocumentEnrichmentConfiguration>> {
         &self.inline_configurations
     }
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
@@ -98,8 +95,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_pre_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
-        self.pre_extraction_hook_configuration = input;
-        self
+        self.pre_extraction_hook_configuration = input; self
     }
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
@@ -124,8 +120,7 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// <p>You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_post_extraction_hook_configuration(mut self, input: ::std::option::Option<crate::types::HookConfiguration>) -> Self {
-        self.post_extraction_hook_configuration = input;
-        self
+        self.post_extraction_hook_configuration = input; self
     }
     /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Q.</p>
     /// <p>You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.</p>
@@ -138,9 +133,13 @@ impl DocumentEnrichmentConfigurationBuilder {
     /// Consumes the builder and constructs a [`DocumentEnrichmentConfiguration`](crate::types::DocumentEnrichmentConfiguration).
     pub fn build(self) -> crate::types::DocumentEnrichmentConfiguration {
         crate::types::DocumentEnrichmentConfiguration {
-            inline_configurations: self.inline_configurations,
-            pre_extraction_hook_configuration: self.pre_extraction_hook_configuration,
-            post_extraction_hook_configuration: self.post_extraction_hook_configuration,
+            inline_configurations: self.inline_configurations
+            ,
+            pre_extraction_hook_configuration: self.pre_extraction_hook_configuration
+            ,
+            post_extraction_hook_configuration: self.post_extraction_hook_configuration
+            ,
         }
     }
 }
+

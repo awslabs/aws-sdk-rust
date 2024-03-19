@@ -2,12 +2,12 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetFaceDetection`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_id(impl Into<String>)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::set_job_id):<br>required: **true**<br><p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p><br>
-    /// - On success, responds with [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput) with field(s):
+                            /// - On success, responds with [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput) with field(s):
     ///   - [`job_status(Option<VideoJobStatus>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::job_status): <p>The current status of the face detection job.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     ///   - [`video_metadata(Option<VideoMetadata>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
@@ -16,8 +16,9 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::job_id): <p>Job identifier for the face detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceDetection.</p>
     ///   - [`video(Option<Video>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     ///   - [`job_tag(Option<String>)`](crate::operation::get_face_detection::GetFaceDetectionOutput::job_tag): <p>A job identifier specified in the call to StartFaceDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
-    /// - On failure, responds with [`SdkError<GetFaceDetectionError>`](crate::operation::get_face_detection::GetFaceDetectionError)
+                            /// - On failure, responds with [`SdkError<GetFaceDetectionError>`](crate::operation::get_face_detection::GetFaceDetectionError)
     pub fn get_face_detection(&self) -> crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder {
-        crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_face_detection::builders::GetFaceDetectionFluentBuilder::new(self.handle.clone())
+                            }
 }
+

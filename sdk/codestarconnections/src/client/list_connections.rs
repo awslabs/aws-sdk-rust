@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConnections`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`provider_type_filter(ProviderType)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::provider_type_filter) / [`set_provider_type_filter(Option<ProviderType>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_provider_type_filter):<br>required: **false**<br><p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p><br>
     ///   - [`host_arn_filter(impl Into<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::host_arn_filter) / [`set_host_arn_filter(Option<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_host_arn_filter):<br>required: **false**<br><p>Filters the list of connections to those associated with a specified host.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connections::builders::ListConnectionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p><br>
-    /// - On success, responds with [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput) with field(s):
+                            /// - On success, responds with [`ListConnectionsOutput`](crate::operation::list_connections::ListConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec::<Connection>>)`](crate::operation::list_connections::ListConnectionsOutput::connections): <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connections::ListConnectionsOutput::next_token): <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::operation::list_connections::ListConnectionsError)
+                            /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::operation::list_connections::ListConnectionsError)
     pub fn list_connections(&self) -> crate::operation::list_connections::builders::ListConnectionsFluentBuilder {
-        crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_connections::builders::ListConnectionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

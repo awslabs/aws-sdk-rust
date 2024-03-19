@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSatellitesOutput {
+pub struct ListSatellitesOutput  {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of satellites.</p>
-    pub satellites: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>,
+    pub satellites: ::std::option::Option<::std::vec::Vec::<crate::types::SatelliteListItem>>,
     _request_id: Option<String>,
 }
-impl ListSatellitesOutput {
+impl  ListSatellitesOutput  {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of satellites.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.satellites.is_none()`.
-    pub fn satellites(&self) -> &[crate::types::SatelliteListItem] {
-        self.satellites.as_deref().unwrap_or_default()
+    pub fn satellites(&self) -> & [crate::types::SatelliteListItem] {
+        self.satellites.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSatellitesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSatellitesOutput {
     /// Creates a new builder-style object to manufacture [`ListSatellitesOutput`](crate::operation::list_satellites::ListSatellitesOutput).
     pub fn builder() -> crate::operation::list_satellites::builders::ListSatellitesOutputBuilder {
@@ -39,7 +40,7 @@ impl ListSatellitesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSatellitesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) satellites: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>,
+    pub(crate) satellites: ::std::option::Option<::std::vec::Vec::<crate::types::SatelliteListItem>>,
     _request_id: Option<String>,
 }
 impl ListSatellitesOutputBuilder {
@@ -50,8 +51,7 @@ impl ListSatellitesOutputBuilder {
     }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl ListSatellitesOutputBuilder {
     /// <p>List of satellites.</p>
     pub fn satellites(mut self, input: crate::types::SatelliteListItem) -> Self {
         let mut v = self.satellites.unwrap_or_default();
-        v.push(input);
-        self.satellites = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.satellites = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of satellites.</p>
-    pub fn set_satellites(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>>) -> Self {
-        self.satellites = input;
-        self
+    pub fn set_satellites(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SatelliteListItem>>) -> Self {
+        self.satellites = input; self
     }
     /// <p>List of satellites.</p>
-    pub fn get_satellites(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>> {
+    pub fn get_satellites(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SatelliteListItem>> {
         &self.satellites
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSatellitesOutput`](crate::operation::list_satellites::ListSatellitesOutput).
     pub fn build(self) -> crate::operation::list_satellites::ListSatellitesOutput {
         crate::operation::list_satellites::ListSatellitesOutput {
-            next_token: self.next_token,
-            satellites: self.satellites,
+            next_token: self.next_token
+            ,
+            satellites: self.satellites
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

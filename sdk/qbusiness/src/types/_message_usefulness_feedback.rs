@@ -3,7 +3,7 @@
 /// <p>End user feedback on an AI-generated web experience chat message usefulness.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MessageUsefulnessFeedback {
+pub struct MessageUsefulnessFeedback  {
     /// <p>The usefulness value assigned by an end user to a message.</p>
     pub usefulness: crate::types::MessageUsefulness,
     /// <p>The reason for a usefulness rating.</p>
@@ -13,21 +13,21 @@ pub struct MessageUsefulnessFeedback {
     /// <p>The timestamp for when the feedback was submitted.</p>
     pub submitted_at: ::aws_smithy_types::DateTime,
 }
-impl MessageUsefulnessFeedback {
+impl  MessageUsefulnessFeedback  {
     /// <p>The usefulness value assigned by an end user to a message.</p>
-    pub fn usefulness(&self) -> &crate::types::MessageUsefulness {
+    pub fn usefulness(&self) -> & crate::types::MessageUsefulness {
         &self.usefulness
     }
     /// <p>The reason for a usefulness rating.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::MessageUsefulnessReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::MessageUsefulnessReason> {
         self.reason.as_ref()
     }
     /// <p>A comment given by an end user on the usefulness of an AI-generated chat message.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The timestamp for when the feedback was submitted.</p>
-    pub fn submitted_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn submitted_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.submitted_at
     }
 }
@@ -56,8 +56,7 @@ impl MessageUsefulnessFeedbackBuilder {
     }
     /// <p>The usefulness value assigned by an end user to a message.</p>
     pub fn set_usefulness(mut self, input: ::std::option::Option<crate::types::MessageUsefulness>) -> Self {
-        self.usefulness = input;
-        self
+        self.usefulness = input; self
     }
     /// <p>The usefulness value assigned by an end user to a message.</p>
     pub fn get_usefulness(&self) -> &::std::option::Option<crate::types::MessageUsefulness> {
@@ -70,8 +69,7 @@ impl MessageUsefulnessFeedbackBuilder {
     }
     /// <p>The reason for a usefulness rating.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::MessageUsefulnessReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for a usefulness rating.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::MessageUsefulnessReason> {
@@ -84,8 +82,7 @@ impl MessageUsefulnessFeedbackBuilder {
     }
     /// <p>A comment given by an end user on the usefulness of an AI-generated chat message.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>A comment given by an end user on the usefulness of an AI-generated chat message.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl MessageUsefulnessFeedbackBuilder {
     }
     /// <p>The timestamp for when the feedback was submitted.</p>
     pub fn set_submitted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.submitted_at = input;
-        self
+        self.submitted_at = input; self
     }
     /// <p>The timestamp for when the feedback was submitted.</p>
     pub fn get_submitted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,21 +107,24 @@ impl MessageUsefulnessFeedbackBuilder {
     /// - [`usefulness`](crate::types::builders::MessageUsefulnessFeedbackBuilder::usefulness)
     /// - [`submitted_at`](crate::types::builders::MessageUsefulnessFeedbackBuilder::submitted_at)
     pub fn build(self) -> ::std::result::Result<crate::types::MessageUsefulnessFeedback, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MessageUsefulnessFeedback {
-            usefulness: self.usefulness.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "usefulness",
-                    "usefulness was not specified but it is required when building MessageUsefulnessFeedback",
-                )
-            })?,
-            reason: self.reason,
-            comment: self.comment,
-            submitted_at: self.submitted_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "submitted_at",
-                    "submitted_at was not specified but it is required when building MessageUsefulnessFeedback",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MessageUsefulnessFeedback {
+                usefulness: self.usefulness
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("usefulness", "usefulness was not specified but it is required when building MessageUsefulnessFeedback")
+                    )?
+                ,
+                reason: self.reason
+                ,
+                comment: self.comment
+                ,
+                submitted_at: self.submitted_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("submitted_at", "submitted_at was not specified but it is required when building MessageUsefulnessFeedback")
+                    )?
+                ,
+            }
+        )
     }
 }
+

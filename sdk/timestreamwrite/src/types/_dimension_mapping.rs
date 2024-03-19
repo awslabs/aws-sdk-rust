@@ -3,19 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DimensionMapping {
+pub struct DimensionMapping  {
     /// <p></p>
     pub source_column: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub destination_column: ::std::option::Option<::std::string::String>,
 }
-impl DimensionMapping {
+impl  DimensionMapping  {
     /// <p></p>
-    pub fn source_column(&self) -> ::std::option::Option<&str> {
+    pub fn source_column(&self) -> ::std::option::Option<& str> {
         self.source_column.as_deref()
     }
     /// <p></p>
-    pub fn destination_column(&self) -> ::std::option::Option<&str> {
+    pub fn destination_column(&self) -> ::std::option::Option<& str> {
         self.destination_column.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DimensionMappingBuilder {
     }
     /// <p></p>
     pub fn set_source_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_column = input;
-        self
+        self.source_column = input; self
     }
     /// <p></p>
     pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DimensionMappingBuilder {
     }
     /// <p></p>
     pub fn set_destination_column(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_column = input;
-        self
+        self.destination_column = input; self
     }
     /// <p></p>
     pub fn get_destination_column(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DimensionMappingBuilder {
     /// Consumes the builder and constructs a [`DimensionMapping`](crate::types::DimensionMapping).
     pub fn build(self) -> crate::types::DimensionMapping {
         crate::types::DimensionMapping {
-            source_column: self.source_column,
-            destination_column: self.destination_column,
+            source_column: self.source_column
+            ,
+            destination_column: self.destination_column
+            ,
         }
     }
 }
+

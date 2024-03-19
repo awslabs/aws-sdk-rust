@@ -3,7 +3,7 @@
 /// <p>Provides information about the current status of an allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowListStatus {
+pub struct AllowListStatus  {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
     /// <p>If the list's criteria specify an S3 object, possible values are:</p>
     /// <ul>
@@ -28,7 +28,7 @@ pub struct AllowListStatus {
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl AllowListStatus {
+impl  AllowListStatus  {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
     /// <p>If the list's criteria specify an S3 object, possible values are:</p>
     /// <ul>
@@ -49,11 +49,11 @@ impl AllowListStatus {
     /// <li>
     /// <p>UNKNOWN_ERROR - A transient or internal error occurred when Macie attempted to retrieve or parse the object. Wait a few minutes and then try again. A list can also have this status if it's encrypted with a key that Amazon S3 and Macie can't access or use.</p></li>
     /// </ul>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AllowListStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::AllowListStatusCode> {
         self.code.as_ref()
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -118,8 +118,7 @@ impl AllowListStatusBuilder {
     /// <p>UNKNOWN_ERROR - A transient or internal error occurred when Macie attempted to retrieve or parse the object. Wait a few minutes and then try again. A list can also have this status if it's encrypted with a key that Amazon S3 and Macie can't access or use.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AllowListStatusCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
     /// <p>If the list's criteria specify an S3 object, possible values are:</p>
@@ -151,8 +150,7 @@ impl AllowListStatusBuilder {
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +159,11 @@ impl AllowListStatusBuilder {
     /// Consumes the builder and constructs a [`AllowListStatus`](crate::types::AllowListStatus).
     pub fn build(self) -> crate::types::AllowListStatus {
         crate::types::AllowListStatus {
-            code: self.code,
-            description: self.description,
+            code: self.code
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

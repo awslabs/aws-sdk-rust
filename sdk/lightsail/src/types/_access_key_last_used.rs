@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessKeyLastUsed {
+pub struct AccessKeyLastUsed  {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
     pub last_used_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,20 +16,20 @@ pub struct AccessKeyLastUsed {
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
 }
-impl AccessKeyLastUsed {
+impl  AccessKeyLastUsed  {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
-    pub fn last_used_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_used_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_used_date.as_ref()
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl AccessKeyLastUsedBuilder {
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
     pub fn set_last_used_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_used_date = input;
-        self
+        self.last_used_date = input; self
     }
     /// <p>The date and time when the access key was most recently used.</p>
     /// <p>This value is null if the access key has not been used.</p>
@@ -75,8 +74,7 @@ impl AccessKeyLastUsedBuilder {
     /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region where this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
@@ -92,8 +90,7 @@ impl AccessKeyLastUsedBuilder {
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used.</p>
     /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
@@ -103,9 +100,13 @@ impl AccessKeyLastUsedBuilder {
     /// Consumes the builder and constructs a [`AccessKeyLastUsed`](crate::types::AccessKeyLastUsed).
     pub fn build(self) -> crate::types::AccessKeyLastUsed {
         crate::types::AccessKeyLastUsed {
-            last_used_date: self.last_used_date,
-            region: self.region,
-            service_name: self.service_name,
+            last_used_date: self.last_used_date
+            ,
+            region: self.region
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

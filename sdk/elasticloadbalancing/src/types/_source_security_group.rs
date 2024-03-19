@@ -3,19 +3,19 @@
 /// <p>Information about a source security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceSecurityGroup {
+pub struct SourceSecurityGroup  {
     /// <p>The owner of the security group.</p>
     pub owner_alias: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
 }
-impl SourceSecurityGroup {
+impl  SourceSecurityGroup  {
     /// <p>The owner of the security group.</p>
-    pub fn owner_alias(&self) -> ::std::option::Option<&str> {
+    pub fn owner_alias(&self) -> ::std::option::Option<& str> {
         self.owner_alias.as_deref()
     }
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SourceSecurityGroupBuilder {
     }
     /// <p>The owner of the security group.</p>
     pub fn set_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_alias = input;
-        self
+        self.owner_alias = input; self
     }
     /// <p>The owner of the security group.</p>
     pub fn get_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SourceSecurityGroupBuilder {
     }
     /// <p>The name of the security group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the security group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SourceSecurityGroupBuilder {
     /// Consumes the builder and constructs a [`SourceSecurityGroup`](crate::types::SourceSecurityGroup).
     pub fn build(self) -> crate::types::SourceSecurityGroup {
         crate::types::SourceSecurityGroup {
-            owner_alias: self.owner_alias,
-            group_name: self.group_name,
+            owner_alias: self.owner_alias
+            ,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

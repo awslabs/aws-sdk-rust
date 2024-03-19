@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationInput {
+pub struct CreateApplicationInput  {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A summary description of the application.</p>
@@ -14,47 +14,49 @@ pub struct CreateApplicationInput {
     /// <p>Use this parameter to configure the application.</p>
     pub application_configuration: ::std::option::Option<crate::types::ApplicationConfiguration>,
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
+    pub cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>,
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
-impl CreateApplicationInput {
+impl  CreateApplicationInput  {
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>A summary description of the application.</p>
-    pub fn application_description(&self) -> ::std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
+    pub fn runtime_environment(&self) -> ::std::option::Option<& crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
-    pub fn service_execution_role(&self) -> ::std::option::Option<&str> {
+    pub fn service_execution_role(&self) -> ::std::option::Option<& str> {
         self.service_execution_role.as_deref()
     }
     /// <p>Use this parameter to configure the application.</p>
-    pub fn application_configuration(&self) -> ::std::option::Option<&crate::types::ApplicationConfiguration> {
+    pub fn application_configuration(&self) -> ::std::option::Option<& crate::types::ApplicationConfiguration> {
         self.application_configuration.as_ref()
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_options.is_none()`.
-    pub fn cloud_watch_logging_options(&self) -> &[crate::types::CloudWatchLoggingOption] {
-        self.cloud_watch_logging_options.as_deref().unwrap_or_default()
+    pub fn cloud_watch_logging_options(&self) -> & [crate::types::CloudWatchLoggingOption] {
+        self.cloud_watch_logging_options.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
-    pub fn application_mode(&self) -> ::std::option::Option<&crate::types::ApplicationMode> {
+    pub fn application_mode(&self) -> ::std::option::Option<& crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
@@ -74,8 +76,8 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     pub(crate) service_execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) application_configuration: ::std::option::Option<crate::types::ApplicationConfiguration>,
-    pub(crate) cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) cloud_watch_logging_options: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl CreateApplicationInputBuilder {
@@ -87,8 +89,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of your application (for example, <code>sample-app</code>).</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +102,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>A summary description of the application.</p>
     pub fn set_application_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_description = input;
-        self
+        self.application_description = input; self
     }
     /// <p>A summary description of the application.</p>
     pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +116,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The runtime environment for the application.</p>
     pub fn set_runtime_environment(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
-        self.runtime_environment = input;
-        self
+        self.runtime_environment = input; self
     }
     /// <p>The runtime environment for the application.</p>
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
@@ -131,8 +130,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub fn set_service_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_execution_role = input;
-        self
+        self.service_execution_role = input; self
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +143,7 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Use this parameter to configure the application.</p>
     pub fn set_application_configuration(mut self, input: ::std::option::Option<crate::types::ApplicationConfiguration>) -> Self {
-        self.application_configuration = input;
-        self
+        self.application_configuration = input; self
     }
     /// <p>Use this parameter to configure the application.</p>
     pub fn get_application_configuration(&self) -> &::std::option::Option<crate::types::ApplicationConfiguration> {
@@ -159,17 +156,16 @@ impl CreateApplicationInputBuilder {
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
     pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOption) -> Self {
         let mut v = self.cloud_watch_logging_options.unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_logging_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cloud_watch_logging_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+    pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>>) -> Self {
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.</p>
-    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
+    pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CloudWatchLoggingOption>> {
         &self.cloud_watch_logging_options
     }
     /// Appends an item to `tags`.
@@ -179,17 +175,16 @@ impl CreateApplicationInputBuilder {
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
@@ -199,26 +194,34 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
-        self.application_mode = input;
-        self
+        self.application_mode = input; self
     }
     /// <p>Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
         &self.application_mode
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            application_name: self.application_name,
-            application_description: self.application_description,
-            runtime_environment: self.runtime_environment,
-            service_execution_role: self.service_execution_role,
-            application_configuration: self.application_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            tags: self.tags,
-            application_mode: self.application_mode,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_application::CreateApplicationInput {
+                application_name: self.application_name
+                ,
+                application_description: self.application_description
+                ,
+                runtime_environment: self.runtime_environment
+                ,
+                service_execution_role: self.service_execution_role
+                ,
+                application_configuration: self.application_configuration
+                ,
+                cloud_watch_logging_options: self.cloud_watch_logging_options
+                ,
+                tags: self.tags
+                ,
+                application_mode: self.application_mode
+                ,
+            }
+        )
     }
 }
+

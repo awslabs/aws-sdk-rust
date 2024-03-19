@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEntityAggregatesForOrganizationOutput {
+pub struct DescribeEntityAggregatesForOrganizationOutput  {
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
-    pub organization_entity_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEntityAggregate>>,
+    pub organization_entity_aggregates: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationEntityAggregate>>,
     _request_id: Option<String>,
 }
-impl DescribeEntityAggregatesForOrganizationOutput {
+impl  DescribeEntityAggregatesForOrganizationOutput  {
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_entity_aggregates.is_none()`.
-    pub fn organization_entity_aggregates(&self) -> &[crate::types::OrganizationEntityAggregate] {
-        self.organization_entity_aggregates.as_deref().unwrap_or_default()
+    pub fn organization_entity_aggregates(&self) -> & [crate::types::OrganizationEntityAggregate] {
+        self.organization_entity_aggregates.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEntityAggregatesForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeEntityAggregatesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesForOrganizationOutput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_entity_aggregates_for_organization::builders::DescribeEntityAggregatesForOrganizationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_entity_aggregates_for_organization::builders::DescribeEntityAggregatesForOrganizationOutputBuilder {
         crate::operation::describe_entity_aggregates_for_organization::builders::DescribeEntityAggregatesForOrganizationOutputBuilder::default()
     }
 }
@@ -32,7 +32,7 @@ impl DescribeEntityAggregatesForOrganizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeEntityAggregatesForOrganizationOutputBuilder {
-    pub(crate) organization_entity_aggregates: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEntityAggregate>>,
+    pub(crate) organization_entity_aggregates: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationEntityAggregate>>,
     _request_id: Option<String>,
 }
 impl DescribeEntityAggregatesForOrganizationOutputBuilder {
@@ -43,36 +43,34 @@ impl DescribeEntityAggregatesForOrganizationOutputBuilder {
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
     pub fn organization_entity_aggregates(mut self, input: crate::types::OrganizationEntityAggregate) -> Self {
         let mut v = self.organization_entity_aggregates.unwrap_or_default();
-        v.push(input);
-        self.organization_entity_aggregates = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.organization_entity_aggregates = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
-    pub fn set_organization_entity_aggregates(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEntityAggregate>>,
-    ) -> Self {
-        self.organization_entity_aggregates = input;
-        self
+    pub fn set_organization_entity_aggregates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationEntityAggregate>>) -> Self {
+        self.organization_entity_aggregates = input; self
     }
     /// <p>The list of entity aggregates for each of the specified accounts that are affected by each of the specified events.</p>
-    pub fn get_organization_entity_aggregates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationEntityAggregate>> {
+    pub fn get_organization_entity_aggregates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrganizationEntityAggregate>> {
         &self.organization_entity_aggregates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesForOrganizationOutput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationOutput).
     pub fn build(self) -> crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationOutput {
         crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationOutput {
-            organization_entity_aggregates: self.organization_entity_aggregates,
+            organization_entity_aggregates: self.organization_entity_aggregates
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProvisioningTemplates`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListProvisioningTemplatesOutput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput) with field(s):
     ///   - [`templates(Option<Vec::<ProvisioningTemplateSummary>>)`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput::templates): <p>A list of provisioning templates</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput::next_token): <p>A token to retrieve the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProvisioningTemplatesError>`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListProvisioningTemplatesError>`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesError)
     pub fn list_provisioning_templates(&self) -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder {
-        crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

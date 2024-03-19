@@ -3,29 +3,28 @@
 /// <p>List managed accounts response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedAccountsOutput {
+pub struct ListManagedAccountsOutput  {
     /// <p>List managed accounts response items.</p>
-    pub items: ::std::vec::Vec<crate::types::ManagedAccount>,
+    pub items: ::std::vec::Vec::<crate::types::ManagedAccount>,
     /// <p>List managed accounts response next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListManagedAccountsOutput {
+impl  ListManagedAccountsOutput  {
     /// <p>List managed accounts response items.</p>
-    pub fn items(&self) -> &[crate::types::ManagedAccount] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::ManagedAccount] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>List managed accounts response next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListManagedAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListManagedAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
     pub fn builder() -> crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListManagedAccountsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListManagedAccountsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedAccount>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListManagedAccountsOutputBuilder {
     /// <p>List managed accounts response items.</p>
     pub fn items(mut self, input: crate::types::ManagedAccount) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List managed accounts response items.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedAccount>>) -> Self {
+        self.items = input; self
     }
     /// <p>List managed accounts response items.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedAccount>> {
         &self.items
     }
     /// <p>List managed accounts response next token.</p>
@@ -69,38 +67,37 @@ impl ListManagedAccountsOutputBuilder {
     }
     /// <p>List managed accounts response next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>List managed accounts response next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListManagedAccountsOutput`](crate::operation::list_managed_accounts::ListManagedAccountsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_managed_accounts::builders::ListManagedAccountsOutputBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_managed_accounts::ListManagedAccountsOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListManagedAccountsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_managed_accounts::ListManagedAccountsOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListManagedAccountsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

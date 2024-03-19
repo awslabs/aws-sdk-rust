@@ -3,19 +3,19 @@
 /// <p>Information about a project in a space.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectInformation {
+pub struct ProjectInformation  {
     /// <p>The name of the project in the space.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the project.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
 }
-impl ProjectInformation {
+impl  ProjectInformation  {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system-generated unique ID of the project.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ProjectInformationBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ProjectInformationBuilder {
     }
     /// <p>The system-generated unique ID of the project.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The system-generated unique ID of the project.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ProjectInformationBuilder {
     /// Consumes the builder and constructs a [`ProjectInformation`](crate::types::ProjectInformation).
     pub fn build(self) -> crate::types::ProjectInformation {
         crate::types::ProjectInformation {
-            name: self.name,
-            project_id: self.project_id,
+            name: self.name
+            ,
+            project_id: self.project_id
+            ,
         }
     }
 }
+

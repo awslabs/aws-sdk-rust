@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDocumentPermissionInput {
+pub struct DescribeDocumentPermissionInput  {
     /// <p>The name of the document for which you are the owner.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
@@ -12,13 +12,13 @@ pub struct DescribeDocumentPermissionInput {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDocumentPermissionInput {
+impl  DescribeDocumentPermissionInput  {
     /// <p>The name of the document for which you are the owner.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::DocumentPermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<& crate::types::DocumentPermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -26,7 +26,7 @@ impl DescribeDocumentPermissionInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeDocumentPermissionInputBuilder {
     }
     /// <p>The name of the document for which you are the owner.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the document for which you are the owner.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeDocumentPermissionInputBuilder {
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::DocumentPermissionType>) -> Self {
-        self.permission_type = input;
-        self
+        self.permission_type = input; self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::DocumentPermissionType> {
@@ -84,8 +82,7 @@ impl DescribeDocumentPermissionInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,25 +95,26 @@ impl DescribeDocumentPermissionInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeDocumentPermissionInput`](crate::operation::describe_document_permission::DescribeDocumentPermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_document_permission::DescribeDocumentPermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_document_permission::DescribeDocumentPermissionInput {
-            name: self.name,
-            permission_type: self.permission_type,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_document_permission::DescribeDocumentPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_document_permission::DescribeDocumentPermissionInput {
+                name: self.name
+                ,
+                permission_type: self.permission_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

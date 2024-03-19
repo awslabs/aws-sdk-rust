@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleKeyDeletionOutput {
+pub struct ScheduleKeyDeletionOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time after which KMS deletes the KMS key.</p>
@@ -16,19 +16,19 @@ pub struct ScheduleKeyDeletionOutput {
     pub pending_window_in_days: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl ScheduleKeyDeletionOutput {
+impl  ScheduleKeyDeletionOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
-    pub fn key_id(&self) -> ::std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The date and time after which KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
-    pub fn deletion_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deletion_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn key_state(&self) -> ::std::option::Option<&crate::types::KeyState> {
+    pub fn key_state(&self) -> ::std::option::Option<& crate::types::KeyState> {
         self.key_state.as_ref()
     }
     /// <p>The waiting period before the KMS key is deleted.</p>
@@ -38,10 +38,10 @@ impl ScheduleKeyDeletionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for ScheduleKeyDeletionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ScheduleKeyDeletionOutput {
     /// Creates a new builder-style object to manufacture [`ScheduleKeyDeletionOutput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput).
     pub fn builder() -> crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionOutputBuilder {
@@ -67,8 +67,7 @@ impl ScheduleKeyDeletionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl ScheduleKeyDeletionOutputBuilder {
     /// <p>The date and time after which KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
     pub fn set_deletion_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deletion_date = input;
-        self
+        self.deletion_date = input; self
     }
     /// <p>The date and time after which KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
@@ -100,8 +98,7 @@ impl ScheduleKeyDeletionOutputBuilder {
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_key_state(mut self, input: ::std::option::Option<crate::types::KeyState>) -> Self {
-        self.key_state = input;
-        self
+        self.key_state = input; self
     }
     /// <p>The current status of the KMS key.</p>
     /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -117,8 +114,7 @@ impl ScheduleKeyDeletionOutputBuilder {
     /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn set_pending_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pending_window_in_days = input;
-        self
+        self.pending_window_in_days = input; self
     }
     /// <p>The waiting period before the KMS key is deleted.</p>
     /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
@@ -126,22 +122,27 @@ impl ScheduleKeyDeletionOutputBuilder {
         &self.pending_window_in_days
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ScheduleKeyDeletionOutput`](crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput).
     pub fn build(self) -> crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput {
         crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput {
-            key_id: self.key_id,
-            deletion_date: self.deletion_date,
-            key_state: self.key_state,
-            pending_window_in_days: self.pending_window_in_days,
+            key_id: self.key_id
+            ,
+            deletion_date: self.deletion_date
+            ,
+            key_state: self.key_state
+            ,
+            pending_window_in_days: self.pending_window_in_days
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

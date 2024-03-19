@@ -3,7 +3,7 @@
 /// <p>Describes the validation record of each domain name in the SSL/TLS certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTlsCertificateDomainValidationRecord {
+pub struct LoadBalancerTlsCertificateDomainValidationRecord  {
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of validation record. For example, <code>CNAME</code> for domain validation.</p>
@@ -17,29 +17,29 @@ pub struct LoadBalancerTlsCertificateDomainValidationRecord {
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
     pub dns_record_creation_state: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationState>,
 }
-impl LoadBalancerTlsCertificateDomainValidationRecord {
+impl  LoadBalancerTlsCertificateDomainValidationRecord  {
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of validation record. For example, <code>CNAME</code> for domain validation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value for that type.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The validation status. Valid values are listed below.</p>
-    pub fn validation_status(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDomainStatus> {
+    pub fn validation_status(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateDomainStatus> {
         self.validation_status.as_ref()
     }
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
-    pub fn dns_record_creation_state(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDnsRecordCreationState> {
+    pub fn dns_record_creation_state(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateDnsRecordCreationState> {
         self.dns_record_creation_state.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     }
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A fully qualified domain name in the certificate. For example, <code>example.com</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     }
     /// <p>The type of validation record. For example, <code>CNAME</code> for domain validation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of validation record. For example, <code>CNAME</code> for domain validation.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     }
     /// <p>The value for that type.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for that type.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     }
     /// <p>The validation status. Valid values are listed below.</p>
     pub fn set_validation_status(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>) -> Self {
-        self.validation_status = input;
-        self
+        self.validation_status = input; self
     }
     /// <p>The validation status. Valid values are listed below.</p>
     pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus> {
@@ -125,8 +121,7 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     }
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name against which your SSL/TLS certificate was validated.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,12 +133,8 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
         self
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
-    pub fn set_dns_record_creation_state(
-        mut self,
-        input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationState>,
-    ) -> Self {
-        self.dns_record_creation_state = input;
-        self
+    pub fn set_dns_record_creation_state(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationState>) -> Self {
+        self.dns_record_creation_state = input; self
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of a domain to validate domain ownership.</p>
     pub fn get_dns_record_creation_state(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateDnsRecordCreationState> {
@@ -152,12 +143,19 @@ impl LoadBalancerTlsCertificateDomainValidationRecordBuilder {
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificateDomainValidationRecord`](crate::types::LoadBalancerTlsCertificateDomainValidationRecord).
     pub fn build(self) -> crate::types::LoadBalancerTlsCertificateDomainValidationRecord {
         crate::types::LoadBalancerTlsCertificateDomainValidationRecord {
-            name: self.name,
-            r#type: self.r#type,
-            value: self.value,
-            validation_status: self.validation_status,
-            domain_name: self.domain_name,
-            dns_record_creation_state: self.dns_record_creation_state,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
+            validation_status: self.validation_status
+            ,
+            domain_name: self.domain_name
+            ,
+            dns_record_creation_state: self.dns_record_creation_state
+            ,
         }
     }
 }
+

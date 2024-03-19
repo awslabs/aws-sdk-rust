@@ -4,7 +4,7 @@
 /// <p>For more information about geoproximity routing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-geoproximity.html">Geoproximity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoProximityLocation {
+pub struct GeoProximityLocation  {
     /// <p>The Amazon Web Services Region the resource you are directing DNS traffic to, is in.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an Amazon Web Services Local Zone Group.</p>
@@ -24,20 +24,20 @@ pub struct GeoProximityLocation {
     /// </ul>
     pub bias: ::std::option::Option<i32>,
 }
-impl GeoProximityLocation {
+impl  GeoProximityLocation  {
     /// <p>The Amazon Web Services Region the resource you are directing DNS traffic to, is in.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>Specifies an Amazon Web Services Local Zone Group.</p>
     /// <p>A local Zone Group is usually the Local Zone code without the ending character. For example, if the Local Zone is <code>us-east-1-bue-1a</code> the Local Zone Group is <code>us-east-1-bue-1</code>.</p>
     /// <p>You can identify the Local Zones Group for a specific Local Zone by using the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-availability-zones.html">describe-availability-zones</a> CLI command:</p>
     /// <p>This command returns: <code>"GroupName": "us-west-2-den-1"</code>, specifying that the Local Zone <code>us-west-2-den-1a</code> belongs to the Local Zone Group <code>us-west-2-den-1</code>.</p>
-    pub fn local_zone_group(&self) -> ::std::option::Option<&str> {
+    pub fn local_zone_group(&self) -> ::std::option::Option<& str> {
         self.local_zone_group.as_deref()
     }
     /// <p>Contains the longitude and latitude for a geographic region.</p>
-    pub fn coordinates(&self) -> ::std::option::Option<&crate::types::Coordinates> {
+    pub fn coordinates(&self) -> ::std::option::Option<& crate::types::Coordinates> {
         self.coordinates.as_ref()
     }
     /// <p>The bias increases or decreases the size of the geographic region from which Route&nbsp;53 routes traffic to a resource.</p>
@@ -76,8 +76,7 @@ impl GeoProximityLocationBuilder {
     }
     /// <p>The Amazon Web Services Region the resource you are directing DNS traffic to, is in.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region the resource you are directing DNS traffic to, is in.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl GeoProximityLocationBuilder {
     /// <p>You can identify the Local Zones Group for a specific Local Zone by using the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-availability-zones.html">describe-availability-zones</a> CLI command:</p>
     /// <p>This command returns: <code>"GroupName": "us-west-2-den-1"</code>, specifying that the Local Zone <code>us-west-2-den-1a</code> belongs to the Local Zone Group <code>us-west-2-den-1</code>.</p>
     pub fn set_local_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_zone_group = input;
-        self
+        self.local_zone_group = input; self
     }
     /// <p>Specifies an Amazon Web Services Local Zone Group.</p>
     /// <p>A local Zone Group is usually the Local Zone code without the ending character. For example, if the Local Zone is <code>us-east-1-bue-1a</code> the Local Zone Group is <code>us-east-1-bue-1</code>.</p>
@@ -113,8 +111,7 @@ impl GeoProximityLocationBuilder {
     }
     /// <p>Contains the longitude and latitude for a geographic region.</p>
     pub fn set_coordinates(mut self, input: ::std::option::Option<crate::types::Coordinates>) -> Self {
-        self.coordinates = input;
-        self
+        self.coordinates = input; self
     }
     /// <p>Contains the longitude and latitude for a geographic region.</p>
     pub fn get_coordinates(&self) -> &::std::option::Option<crate::types::Coordinates> {
@@ -141,8 +138,7 @@ impl GeoProximityLocationBuilder {
     /// <p>To shrink the size of the geographic region from which Route&nbsp;53 routes traffic to a resource, specify a negative bias of -1 to -99. Route&nbsp;53 expands the size of adjacent regions.</p></li>
     /// </ul>
     pub fn set_bias(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bias = input;
-        self
+        self.bias = input; self
     }
     /// <p>The bias increases or decreases the size of the geographic region from which Route&nbsp;53 routes traffic to a resource.</p>
     /// <p>To use <code>Bias</code> to change the size of the geographic region, specify the applicable value for the bias:</p>
@@ -158,10 +154,15 @@ impl GeoProximityLocationBuilder {
     /// Consumes the builder and constructs a [`GeoProximityLocation`](crate::types::GeoProximityLocation).
     pub fn build(self) -> crate::types::GeoProximityLocation {
         crate::types::GeoProximityLocation {
-            aws_region: self.aws_region,
-            local_zone_group: self.local_zone_group,
-            coordinates: self.coordinates,
-            bias: self.bias,
+            aws_region: self.aws_region
+            ,
+            local_zone_group: self.local_zone_group
+            ,
+            coordinates: self.coordinates
+            ,
+            bias: self.bias
+            ,
         }
     }
 }
+

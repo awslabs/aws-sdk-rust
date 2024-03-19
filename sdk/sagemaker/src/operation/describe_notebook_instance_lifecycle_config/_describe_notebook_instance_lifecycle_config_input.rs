@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNotebookInstanceLifecycleConfigInput {
+pub struct DescribeNotebookInstanceLifecycleConfigInput  {
     /// <p>The name of the lifecycle configuration to describe.</p>
     pub notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNotebookInstanceLifecycleConfigInput {
+impl  DescribeNotebookInstanceLifecycleConfigInput  {
     /// <p>The name of the lifecycle configuration to describe.</p>
-    pub fn notebook_instance_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn notebook_instance_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.notebook_instance_lifecycle_config_name.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribeNotebookInstanceLifecycleConfigInputBuilder {
     }
     /// <p>The name of the lifecycle configuration to describe.</p>
     pub fn set_notebook_instance_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notebook_instance_lifecycle_config_name = input;
-        self
+        self.notebook_instance_lifecycle_config_name = input; self
     }
     /// <p>The name of the lifecycle configuration to describe.</p>
     pub fn get_notebook_instance_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.notebook_instance_lifecycle_config_name
     }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceLifecycleConfigInput`](crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput {
-                notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name,
-            },
+                notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name
+                ,
+            }
         )
     }
 }
+

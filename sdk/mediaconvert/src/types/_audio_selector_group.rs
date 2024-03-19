@@ -3,16 +3,17 @@
 /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioSelectorGroup {
+pub struct AudioSelectorGroup  {
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
-    pub audio_selector_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub audio_selector_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AudioSelectorGroup {
+impl  AudioSelectorGroup  {
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_selector_names.is_none()`.
-    pub fn audio_selector_names(&self) -> &[::std::string::String] {
-        self.audio_selector_names.as_deref().unwrap_or_default()
+    pub fn audio_selector_names(&self) -> & [::std::string::String] {
+        self.audio_selector_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AudioSelectorGroup {
@@ -26,7 +27,7 @@ impl AudioSelectorGroup {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AudioSelectorGroupBuilder {
-    pub(crate) audio_selector_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audio_selector_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AudioSelectorGroupBuilder {
     /// Appends an item to `audio_selector_names`.
@@ -36,23 +37,24 @@ impl AudioSelectorGroupBuilder {
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
     pub fn audio_selector_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.audio_selector_names.unwrap_or_default();
-        v.push(input.into());
-        self.audio_selector_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.audio_selector_names = ::std::option::Option::Some(v);
+                        self
     }
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
-    pub fn set_audio_selector_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.audio_selector_names = input;
-        self
+    pub fn set_audio_selector_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.audio_selector_names = input; self
     }
     /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
-    pub fn get_audio_selector_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_audio_selector_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.audio_selector_names
     }
     /// Consumes the builder and constructs a [`AudioSelectorGroup`](crate::types::AudioSelectorGroup).
     pub fn build(self) -> crate::types::AudioSelectorGroup {
         crate::types::AudioSelectorGroup {
-            audio_selector_names: self.audio_selector_names,
+            audio_selector_names: self.audio_selector_names
+            ,
         }
     }
 }
+

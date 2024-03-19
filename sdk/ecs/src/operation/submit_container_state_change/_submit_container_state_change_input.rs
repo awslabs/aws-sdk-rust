@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubmitContainerStateChangeInput {
+pub struct SubmitContainerStateChangeInput  {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
@@ -18,27 +18,27 @@ pub struct SubmitContainerStateChangeInput {
     /// <p>The reason for the state change request.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The network bindings of the container.</p>
-    pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub network_bindings: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkBinding>>,
 }
-impl SubmitContainerStateChangeInput {
+impl  SubmitContainerStateChangeInput  {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
-    pub fn task(&self) -> ::std::option::Option<&str> {
+    pub fn task(&self) -> ::std::option::Option<& str> {
         self.task.as_deref()
     }
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The ID of the Docker container.</p>
-    pub fn runtime_id(&self) -> ::std::option::Option<&str> {
+    pub fn runtime_id(&self) -> ::std::option::Option<& str> {
         self.runtime_id.as_deref()
     }
     /// <p>The status of the state change request.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The exit code that's returned for the state change request.</p>
@@ -46,14 +46,15 @@ impl SubmitContainerStateChangeInput {
         self.exit_code
     }
     /// <p>The reason for the state change request.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The network bindings of the container.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_bindings.is_none()`.
-    pub fn network_bindings(&self) -> &[crate::types::NetworkBinding] {
-        self.network_bindings.as_deref().unwrap_or_default()
+    pub fn network_bindings(&self) -> & [crate::types::NetworkBinding] {
+        self.network_bindings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubmitContainerStateChangeInput {
@@ -74,7 +75,7 @@ pub struct SubmitContainerStateChangeInputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) exit_code: ::std::option::Option<i32>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
-    pub(crate) network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub(crate) network_bindings: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkBinding>>,
 }
 impl SubmitContainerStateChangeInputBuilder {
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
@@ -84,8 +85,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +98,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The ID of the Docker container.</p>
     pub fn set_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_id = input;
-        self
+        self.runtime_id = input; self
     }
     /// <p>The ID of the Docker container.</p>
     pub fn get_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The status of the state change request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the state change request.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The exit code that's returned for the state change request.</p>
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.exit_code = input;
-        self
+        self.exit_code = input; self
     }
     /// <p>The exit code that's returned for the state change request.</p>
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
@@ -168,8 +163,7 @@ impl SubmitContainerStateChangeInputBuilder {
     }
     /// <p>The reason for the state change request.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the state change request.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,35 +176,40 @@ impl SubmitContainerStateChangeInputBuilder {
     /// <p>The network bindings of the container.</p>
     pub fn network_bindings(mut self, input: crate::types::NetworkBinding) -> Self {
         let mut v = self.network_bindings.unwrap_or_default();
-        v.push(input);
-        self.network_bindings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_bindings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The network bindings of the container.</p>
-    pub fn set_network_bindings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
-        self.network_bindings = input;
-        self
+    pub fn set_network_bindings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkBinding>>) -> Self {
+        self.network_bindings = input; self
     }
     /// <p>The network bindings of the container.</p>
-    pub fn get_network_bindings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+    pub fn get_network_bindings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkBinding>> {
         &self.network_bindings
     }
     /// Consumes the builder and constructs a [`SubmitContainerStateChangeInput`](crate::operation::submit_container_state_change::SubmitContainerStateChangeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::submit_container_state_change::SubmitContainerStateChangeInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::submit_container_state_change::SubmitContainerStateChangeInput {
-            cluster: self.cluster,
-            task: self.task,
-            container_name: self.container_name,
-            runtime_id: self.runtime_id,
-            status: self.status,
-            exit_code: self.exit_code,
-            reason: self.reason,
-            network_bindings: self.network_bindings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::submit_container_state_change::SubmitContainerStateChangeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeInput {
+                cluster: self.cluster
+                ,
+                task: self.task
+                ,
+                container_name: self.container_name
+                ,
+                runtime_id: self.runtime_id
+                ,
+                status: self.status
+                ,
+                exit_code: self.exit_code
+                ,
+                reason: self.reason
+                ,
+                network_bindings: self.network_bindings
+                ,
+            }
+        )
     }
 }
+

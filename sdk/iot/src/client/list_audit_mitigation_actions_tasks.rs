@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAuditMitigationActionsTasks`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`audit_task_id(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::audit_task_id) / [`set_audit_task_id(Option<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_audit_task_id):<br>required: **false**<br><p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p><br>
     ///   - [`finding_id(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::finding_id) / [`set_finding_id(Option<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_finding_id):<br>required: **false**<br><p>Specify this filter to limit results to tasks that were applied to a specific audit finding.</p><br>
     ///   - [`task_status(AuditMitigationActionsTaskStatus)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::task_status) / [`set_task_status(Option<AuditMitigationActionsTaskStatus>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_task_status):<br>required: **false**<br><p>Specify this filter to limit results to tasks that are in a specific state.</p><br>
@@ -11,13 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_start_time):<br>required: **true**<br><p>Specify this filter to limit results to tasks that began on or after a specific date and time.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::set_end_time):<br>required: **true**<br><p>Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.</p><br>
-    /// - On success, responds with [`ListAuditMitigationActionsTasksOutput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput) with field(s):
+                            /// - On success, responds with [`ListAuditMitigationActionsTasksOutput`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput) with field(s):
     ///   - [`tasks(Option<Vec::<AuditMitigationActionsTaskMetadata>>)`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput::tasks): <p>The collection of audit mitigation tasks that matched the filter criteria.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksOutput::next_token): <p>The token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAuditMitigationActionsTasksError>`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError)
-    pub fn list_audit_mitigation_actions_tasks(
-        &self,
-    ) -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder {
-        crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListAuditMitigationActionsTasksError>`](crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasksError)
+    pub fn list_audit_mitigation_actions_tasks(&self) -> crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder {
+                                crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

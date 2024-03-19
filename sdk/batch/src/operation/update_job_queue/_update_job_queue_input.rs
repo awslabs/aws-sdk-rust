@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for <code>UpdateJobQueue</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateJobQueueInput {
+pub struct UpdateJobQueueInput  {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     pub job_queue: ::std::option::Option<::std::string::String>,
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
@@ -15,21 +15,21 @@ pub struct UpdateJobQueueInput {
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+    pub compute_environment_order: ::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>>,
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    pub job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>,
+    pub job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>>,
 }
-impl UpdateJobQueueInput {
+impl  UpdateJobQueueInput  {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn job_queue(&self) -> ::std::option::Option<&str> {
+    pub fn job_queue(&self) -> ::std::option::Option<& str> {
         self.job_queue.as_deref()
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::JqState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::JqState> {
         self.state.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn scheduling_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduling_policy_arn(&self) -> ::std::option::Option<& str> {
         self.scheduling_policy_arn.as_deref()
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
@@ -39,16 +39,18 @@ impl UpdateJobQueueInput {
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compute_environment_order.is_none()`.
-    pub fn compute_environment_order(&self) -> &[crate::types::ComputeEnvironmentOrder] {
-        self.compute_environment_order.as_deref().unwrap_or_default()
+    pub fn compute_environment_order(&self) -> & [crate::types::ComputeEnvironmentOrder] {
+        self.compute_environment_order.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_state_time_limit_actions.is_none()`.
-    pub fn job_state_time_limit_actions(&self) -> &[crate::types::JobStateTimeLimitAction] {
-        self.job_state_time_limit_actions.as_deref().unwrap_or_default()
+    pub fn job_state_time_limit_actions(&self) -> & [crate::types::JobStateTimeLimitAction] {
+        self.job_state_time_limit_actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateJobQueueInput {
@@ -66,8 +68,8 @@ pub struct UpdateJobQueueInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::JqState>,
     pub(crate) scheduling_policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
-    pub(crate) compute_environment_order: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
-    pub(crate) job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>,
+    pub(crate) compute_environment_order: ::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>>,
+    pub(crate) job_state_time_limit_actions: ::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>>,
 }
 impl UpdateJobQueueInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
@@ -78,8 +80,7 @@ impl UpdateJobQueueInputBuilder {
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_queue = input;
-        self
+        self.job_queue = input; self
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +93,7 @@ impl UpdateJobQueueInputBuilder {
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::JqState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::JqState> {
@@ -106,8 +106,7 @@ impl UpdateJobQueueInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn set_scheduling_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduling_policy_arn = input;
-        self
+        self.scheduling_policy_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn get_scheduling_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl UpdateJobQueueInputBuilder {
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -136,21 +134,20 @@ impl UpdateJobQueueInputBuilder {
     /// </note>
     pub fn compute_environment_order(mut self, input: crate::types::ComputeEnvironmentOrder) -> Self {
         let mut v = self.compute_environment_order.unwrap_or_default();
-        v.push(input);
-        self.compute_environment_order = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compute_environment_order = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>) -> Self {
-        self.compute_environment_order = input;
-        self
+    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>>) -> Self {
+        self.compute_environment_order = input; self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
+    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>> {
         &self.compute_environment_order
     }
     /// Appends an item to `job_state_time_limit_actions`.
@@ -160,30 +157,36 @@ impl UpdateJobQueueInputBuilder {
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
     pub fn job_state_time_limit_actions(mut self, input: crate::types::JobStateTimeLimitAction) -> Self {
         let mut v = self.job_state_time_limit_actions.unwrap_or_default();
-        v.push(input);
-        self.job_state_time_limit_actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_state_time_limit_actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>) -> Self {
-        self.job_state_time_limit_actions = input;
-        self
+    pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>>) -> Self {
+        self.job_state_time_limit_actions = input; self
     }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>> {
+    pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>> {
         &self.job_state_time_limit_actions
     }
     /// Consumes the builder and constructs a [`UpdateJobQueueInput`](crate::operation::update_job_queue::UpdateJobQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_job_queue::UpdateJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_job_queue::UpdateJobQueueInput {
-            job_queue: self.job_queue,
-            state: self.state,
-            scheduling_policy_arn: self.scheduling_policy_arn,
-            priority: self.priority,
-            compute_environment_order: self.compute_environment_order,
-            job_state_time_limit_actions: self.job_state_time_limit_actions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_job_queue::UpdateJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_job_queue::UpdateJobQueueInput {
+                job_queue: self.job_queue
+                ,
+                state: self.state
+                ,
+                scheduling_policy_arn: self.scheduling_policy_arn
+                ,
+                priority: self.priority
+                ,
+                compute_environment_order: self.compute_environment_order
+                ,
+                job_state_time_limit_actions: self.job_state_time_limit_actions
+                ,
+            }
+        )
     }
 }
+

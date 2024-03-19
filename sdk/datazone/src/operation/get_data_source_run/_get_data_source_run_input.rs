@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceRunInput {
+pub struct GetDataSourceRunInput  {
     /// <p>The ID of the domain in which this data source run was performed.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the data source run.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetDataSourceRunInput {
+impl  GetDataSourceRunInput  {
     /// <p>The ID of the domain in which this data source run was performed.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the data source run.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetDataSourceRunInputBuilder {
     }
     /// <p>The ID of the domain in which this data source run was performed.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the domain in which this data source run was performed.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetDataSourceRunInputBuilder {
     }
     /// <p>The ID of the data source run.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the data source run.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetDataSourceRunInput`](crate::operation::get_data_source_run::GetDataSourceRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_data_source_run::GetDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_source_run::GetDataSourceRunInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_source_run::GetDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_source_run::GetDataSourceRunInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

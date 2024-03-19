@@ -3,19 +3,19 @@
 /// The output of the bridge.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BridgeOutput {
+pub struct BridgeOutput  {
     /// The output of the bridge. A flow output is delivered to the AWS cloud.
     pub flow_output: ::std::option::Option<crate::types::BridgeFlowOutput>,
     /// The output of the bridge. A network output is delivered to your premises.
     pub network_output: ::std::option::Option<crate::types::BridgeNetworkOutput>,
 }
-impl BridgeOutput {
+impl  BridgeOutput  {
     /// The output of the bridge. A flow output is delivered to the AWS cloud.
-    pub fn flow_output(&self) -> ::std::option::Option<&crate::types::BridgeFlowOutput> {
+    pub fn flow_output(&self) -> ::std::option::Option<& crate::types::BridgeFlowOutput> {
         self.flow_output.as_ref()
     }
     /// The output of the bridge. A network output is delivered to your premises.
-    pub fn network_output(&self) -> ::std::option::Option<&crate::types::BridgeNetworkOutput> {
+    pub fn network_output(&self) -> ::std::option::Option<& crate::types::BridgeNetworkOutput> {
         self.network_output.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl BridgeOutputBuilder {
     }
     /// The output of the bridge. A flow output is delivered to the AWS cloud.
     pub fn set_flow_output(mut self, input: ::std::option::Option<crate::types::BridgeFlowOutput>) -> Self {
-        self.flow_output = input;
-        self
+        self.flow_output = input; self
     }
     /// The output of the bridge. A flow output is delivered to the AWS cloud.
     pub fn get_flow_output(&self) -> &::std::option::Option<crate::types::BridgeFlowOutput> {
@@ -55,8 +54,7 @@ impl BridgeOutputBuilder {
     }
     /// The output of the bridge. A network output is delivered to your premises.
     pub fn set_network_output(mut self, input: ::std::option::Option<crate::types::BridgeNetworkOutput>) -> Self {
-        self.network_output = input;
-        self
+        self.network_output = input; self
     }
     /// The output of the bridge. A network output is delivered to your premises.
     pub fn get_network_output(&self) -> &::std::option::Option<crate::types::BridgeNetworkOutput> {
@@ -65,8 +63,11 @@ impl BridgeOutputBuilder {
     /// Consumes the builder and constructs a [`BridgeOutput`](crate::types::BridgeOutput).
     pub fn build(self) -> crate::types::BridgeOutput {
         crate::types::BridgeOutput {
-            flow_output: self.flow_output,
-            network_output: self.network_output,
+            flow_output: self.flow_output
+            ,
+            network_output: self.network_output
+            ,
         }
     }
 }
+

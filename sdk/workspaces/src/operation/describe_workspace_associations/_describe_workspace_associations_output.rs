@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeWorkspaceAssociationsOutput {
+pub struct DescribeWorkspaceAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>,
     _request_id: Option<String>,
 }
-impl DescribeWorkspaceAssociationsOutput {
+impl  DescribeWorkspaceAssociationsOutput  {
     /// <p>List of information about the specified associations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
-    pub fn associations(&self) -> &[crate::types::WorkspaceResourceAssociation] {
-        self.associations.as_deref().unwrap_or_default()
+    pub fn associations(&self) -> & [crate::types::WorkspaceResourceAssociation] {
+        self.associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeWorkspaceAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeWorkspaceAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceAssociationsOutput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsOutput).
     pub fn builder() -> crate::operation::describe_workspace_associations::builders::DescribeWorkspaceAssociationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeWorkspaceAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceAssociationsOutputBuilder {
-    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceAssociationsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeWorkspaceAssociationsOutputBuilder {
     /// <p>List of information about the specified associations.</p>
     pub fn associations(mut self, input: crate::types::WorkspaceResourceAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>) -> Self {
+        self.associations = input; self
     }
     /// <p>List of information about the specified associations.</p>
-    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>> {
         &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceAssociationsOutput`](crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsOutput).
     pub fn build(self) -> crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsOutput {
         crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsOutput {
-            associations: self.associations,
+            associations: self.associations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

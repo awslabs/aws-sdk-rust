@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListKxEnvironments`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in this request.</p><br>
-    /// - On success, responds with [`ListKxEnvironmentsOutput`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput) with field(s):
+                            /// - On success, responds with [`ListKxEnvironmentsOutput`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput) with field(s):
     ///   - [`environments(Option<Vec::<KxEnvironment>>)`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput::environments): <p>A list of environments in an account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_kx_environments::ListKxEnvironmentsOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    /// - On failure, responds with [`SdkError<ListKxEnvironmentsError>`](crate::operation::list_kx_environments::ListKxEnvironmentsError)
+                            /// - On failure, responds with [`SdkError<ListKxEnvironmentsError>`](crate::operation::list_kx_environments::ListKxEnvironmentsError)
     pub fn list_kx_environments(&self) -> crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder {
-        crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_kx_environments::builders::ListKxEnvironmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

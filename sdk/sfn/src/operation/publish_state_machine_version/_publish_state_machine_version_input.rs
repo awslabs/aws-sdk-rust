@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PublishStateMachineVersionInput {
+pub struct PublishStateMachineVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
@@ -13,24 +13,24 @@ pub struct PublishStateMachineVersionInput {
     /// <p>An optional description of the state machine version.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl PublishStateMachineVersionInput {
+impl  PublishStateMachineVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
     /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p><note>
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
     /// </note>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>An optional description of the state machine version.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for PublishStateMachineVersionInput {
+impl  ::std::fmt::Debug for PublishStateMachineVersionInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PublishStateMachineVersionInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -63,8 +63,7 @@ impl PublishStateMachineVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub fn set_state_machine_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_machine_arn = input;
-        self
+        self.state_machine_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl PublishStateMachineVersionInputBuilder {
     /// <p>To specify an initial revision ID for a state machine with no revision ID assigned, specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter. For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when you create a state machine using the <code>CreateStateMachine</code> API action.</p>
     /// </note>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>Only publish the state machine version if the current state machine's revision ID matches the specified ID.</p>
     /// <p>Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns <code>ConflictException</code>.</p><note>
@@ -100,25 +98,24 @@ impl PublishStateMachineVersionInputBuilder {
     }
     /// <p>An optional description of the state machine version.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the state machine version.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`PublishStateMachineVersionInput`](crate::operation::publish_state_machine_version::PublishStateMachineVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::publish_state_machine_version::PublishStateMachineVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
-            state_machine_arn: self.state_machine_arn,
-            revision_id: self.revision_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish_state_machine_version::PublishStateMachineVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PublishStateMachineVersionInputBuilder {
@@ -130,3 +127,4 @@ impl ::std::fmt::Debug for PublishStateMachineVersionInputBuilder {
         formatter.finish()
     }
 }
+

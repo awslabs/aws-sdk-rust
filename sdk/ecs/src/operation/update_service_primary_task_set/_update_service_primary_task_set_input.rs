@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServicePrimaryTaskSetInput {
+pub struct UpdateServicePrimaryTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
@@ -10,17 +10,17 @@ pub struct UpdateServicePrimaryTaskSetInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
     pub primary_task_set: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServicePrimaryTaskSetInput {
+impl  UpdateServicePrimaryTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
-    pub fn primary_task_set(&self) -> ::std::option::Option<&str> {
+    pub fn primary_task_set(&self) -> ::std::option::Option<& str> {
         self.primary_task_set.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set exists in.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set exists in.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateServicePrimaryTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
     pub fn set_primary_task_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_task_set = input;
-        self
+        self.primary_task_set = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to set as the primary task set in the deployment.</p>
     pub fn get_primary_task_set(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_task_set
     }
     /// Consumes the builder and constructs a [`UpdateServicePrimaryTaskSetInput`](crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput {
-            cluster: self.cluster,
-            service: self.service,
-            primary_task_set: self.primary_task_set,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetInput {
+                cluster: self.cluster
+                ,
+                service: self.service
+                ,
+                primary_task_set: self.primary_task_set
+                ,
+            }
+        )
     }
 }
+

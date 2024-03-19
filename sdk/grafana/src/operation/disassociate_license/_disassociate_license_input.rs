@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateLicenseInput {
+pub struct DisassociateLicenseInput  {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of license to remove from the workspace.</p>
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
 }
-impl DisassociateLicenseInput {
+impl  DisassociateLicenseInput  {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The type of license to remove from the workspace.</p>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::LicenseType> {
         self.license_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DisassociateLicenseInputBuilder {
     }
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DisassociateLicenseInputBuilder {
     }
     /// <p>The type of license to remove from the workspace.</p>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The type of license to remove from the workspace.</p>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
         &self.license_type
     }
     /// Consumes the builder and constructs a [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disassociate_license::DisassociateLicenseInput {
-            workspace_id: self.workspace_id,
-            license_type: self.license_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_license::DisassociateLicenseInput {
+                workspace_id: self.workspace_id
+                ,
+                license_type: self.license_type
+                ,
+            }
+        )
     }
 }
+

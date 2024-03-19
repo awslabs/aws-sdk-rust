@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAnalyzers`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token used for pagination of results returned.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the response.</p><br>
     ///   - [`r#type(Type)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::set_type):<br>required: **false**<br><p>The type of analyzer.</p><br>
-    /// - On success, responds with [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput) with field(s):
+                            /// - On success, responds with [`ListAnalyzersOutput`](crate::operation::list_analyzers::ListAnalyzersOutput) with field(s):
     ///   - [`analyzers(Vec::<AnalyzerSummary>)`](crate::operation::list_analyzers::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_analyzers::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
-    /// - On failure, responds with [`SdkError<ListAnalyzersError>`](crate::operation::list_analyzers::ListAnalyzersError)
+                            /// - On failure, responds with [`SdkError<ListAnalyzersError>`](crate::operation::list_analyzers::ListAnalyzersError)
     pub fn list_analyzers(&self) -> crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder {
-        crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_analyzers::builders::ListAnalyzersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

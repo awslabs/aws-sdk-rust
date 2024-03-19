@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInsightsInput {
+pub struct ListInsightsInput  {
     /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub status_filter: ::std::option::Option<crate::types::ListInsightsStatusFilter>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -10,9 +10,9 @@ pub struct ListInsightsInput {
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListInsightsInput {
+impl  ListInsightsInput  {
     /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
-    pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ListInsightsStatusFilter> {
+    pub fn status_filter(&self) -> ::std::option::Option<& crate::types::ListInsightsStatusFilter> {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -20,7 +20,7 @@ impl ListInsightsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListInsightsInputBuilder {
     }
     /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ListInsightsStatusFilter>) -> Self {
-        self.status_filter = input;
-        self
+        self.status_filter = input; self
     }
     /// <p>A filter used to filter the returned insights by their status. You can specify one status filter.</p>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
@@ -62,8 +61,7 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -76,21 +74,24 @@ impl ListInsightsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListInsightsInput`](crate::operation::list_insights::ListInsightsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_insights::ListInsightsInput {
-            status_filter: self.status_filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_insights::ListInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_insights::ListInsightsInput {
+                status_filter: self.status_filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The private repository authentication credentials to use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails  {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     pub credentials_parameter: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails  {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    pub fn credentials_parameter(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_parameter(&self) -> ::std::option::Option<& str> {
         self.credentials_parameter.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder
     }
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     pub fn set_credentials_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_parameter = input;
-        self
+        self.credentials_parameter = input; self
     }
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     pub fn get_credentials_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
-            credentials_parameter: self.credentials_parameter,
+            credentials_parameter: self.credentials_parameter
+            ,
         }
     }
 }
+

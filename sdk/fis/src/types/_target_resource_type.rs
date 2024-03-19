@@ -3,27 +3,25 @@
 /// <p>Describes a resource type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetResourceType {
+pub struct TargetResourceType  {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A description of the resource type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the resource type.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TargetResourceTypeParameter>>,
 }
-impl TargetResourceType {
+impl  TargetResourceType  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>A description of the resource type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the resource type.</p>
-    pub fn parameters(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::TargetResourceTypeParameter>> {
         self.parameters.as_ref()
     }
 }
@@ -40,7 +38,7 @@ impl TargetResourceType {
 pub struct TargetResourceTypeBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TargetResourceTypeParameter>>,
 }
 impl TargetResourceTypeBuilder {
     /// <p>The resource type.</p>
@@ -50,8 +48,7 @@ impl TargetResourceTypeBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +61,7 @@ impl TargetResourceTypeBuilder {
     }
     /// <p>A description of the resource type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the resource type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,30 +74,28 @@ impl TargetResourceTypeBuilder {
     /// <p>The parameters for the resource type.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TargetResourceTypeParameter) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The parameters for the resource type.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TargetResourceTypeParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The parameters for the resource type.</p>
-    pub fn get_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TargetResourceTypeParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::TargetResourceTypeParameter>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`TargetResourceType`](crate::types::TargetResourceType).
     pub fn build(self) -> crate::types::TargetResourceType {
         crate::types::TargetResourceType {
-            resource_type: self.resource_type,
-            description: self.description,
-            parameters: self.parameters,
+            resource_type: self.resource_type
+            ,
+            description: self.description
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

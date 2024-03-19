@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutSecretValueInput {
+pub struct PutSecretValueInput  {
     /// <p>The ARN or name of the secret to add a new version to.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
@@ -33,13 +33,13 @@ pub struct PutSecretValueInput {
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    pub version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PutSecretValueInput {
+impl  PutSecretValueInput  {
     /// <p>The ARN or name of the secret to add a new version to.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
-    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<& str> {
         self.secret_id.as_deref()
     }
     /// <p>A unique identifier for the new version of the secret.</p><note>
@@ -56,31 +56,32 @@ impl PutSecretValueInput {
     /// <p>If a version with this value already exists and the version of the <code>SecretString</code> and <code>SecretBinary</code> values are different from those in the request, then the request fails because you can't modify a secret version. You can only create new versions to store new secret values.</p></li>
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The binary data to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>You can't access this value from the Secrets Manager console.</p>
-    pub fn secret_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn secret_binary(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
     /// <p>The text to encrypt and store in the new version of the secret.</p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>We recommend you create the secret string as JSON key/value pairs, as shown in the example.</p>
-    pub fn secret_string(&self) -> ::std::option::Option<&str> {
+    pub fn secret_string(&self) -> ::std::option::Option<& str> {
         self.secret_string.as_deref()
     }
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.version_stages.is_none()`.
-    pub fn version_stages(&self) -> &[::std::string::String] {
-        self.version_stages.as_deref().unwrap_or_default()
+    pub fn version_stages(&self) -> & [::std::string::String] {
+        self.version_stages.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for PutSecretValueInput {
+impl  ::std::fmt::Debug for PutSecretValueInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutSecretValueInput");
         formatter.field("secret_id", &self.secret_id);
@@ -106,7 +107,7 @@ pub struct PutSecretValueInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) secret_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) secret_string: ::std::option::Option<::std::string::String>,
-    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) version_stages: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PutSecretValueInputBuilder {
     /// <p>The ARN or name of the secret to add a new version to.</p>
@@ -121,8 +122,7 @@ impl PutSecretValueInputBuilder {
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     /// <p>If the secret doesn't already exist, use <code>CreateSecret</code> instead.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_id = input;
-        self
+        self.secret_id = input; self
     }
     /// <p>The ARN or name of the secret to add a new version to.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
@@ -163,8 +163,7 @@ impl PutSecretValueInputBuilder {
     /// </ul>
     /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique identifier for the new version of the secret.</p><note>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request.</p>
@@ -194,8 +193,7 @@ impl PutSecretValueInputBuilder {
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>You can't access this value from the Secrets Manager console.</p>
     pub fn set_secret_binary(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.secret_binary = input;
-        self
+        self.secret_binary = input; self
     }
     /// <p>The binary data to encrypt and store in the new version of the secret. To use this parameter in the command-line tools, we recommend that you store your binary data in a file and then pass the contents of the file as a parameter.</p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
@@ -214,8 +212,7 @@ impl PutSecretValueInputBuilder {
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
     /// <p>We recommend you create the secret string as JSON key/value pairs, as shown in the example.</p>
     pub fn set_secret_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_string = input;
-        self
+        self.secret_string = input; self
     }
     /// <p>The text to encrypt and store in the new version of the secret.</p>
     /// <p>You must include <code>SecretBinary</code> or <code>SecretString</code>, but not both.</p>
@@ -232,34 +229,38 @@ impl PutSecretValueInputBuilder {
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
     pub fn version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.version_stages.unwrap_or_default();
-        v.push(input.into());
-        self.version_stages = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.version_stages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.version_stages = input;
-        self
+    pub fn set_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.version_stages = input; self
     }
     /// <p>A list of staging labels to attach to this version of the secret. Secrets Manager uses staging labels to track versions of a secret through the rotation process.</p>
     /// <p>If you specify a staging label that's already associated with a different version of the same secret, then Secrets Manager removes the label from the other version and attaches it to this version. If you specify <code>AWSCURRENT</code>, and it is already attached to another version, then Secrets Manager also moves the staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.</p>
     /// <p>If you don't include <code>VersionStages</code>, then Secrets Manager automatically moves the staging label <code>AWSCURRENT</code> to this version.</p>
-    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_version_stages(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.version_stages
     }
     /// Consumes the builder and constructs a [`PutSecretValueInput`](crate::operation::put_secret_value::PutSecretValueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_secret_value::PutSecretValueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_secret_value::PutSecretValueInput {
-            secret_id: self.secret_id,
-            client_request_token: self.client_request_token,
-            secret_binary: self.secret_binary,
-            secret_string: self.secret_string,
-            version_stages: self.version_stages,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_secret_value::PutSecretValueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_secret_value::PutSecretValueInput {
+                secret_id: self.secret_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                secret_binary: self.secret_binary
+                ,
+                secret_string: self.secret_string
+                ,
+                version_stages: self.version_stages
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutSecretValueInputBuilder {
@@ -273,3 +274,4 @@ impl ::std::fmt::Debug for PutSecretValueInputBuilder {
         formatter.finish()
     }
 }
+

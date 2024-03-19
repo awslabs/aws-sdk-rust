@@ -3,7 +3,7 @@
 /// <p>Describes an update for a destination in Splunk.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SplunkDestinationUpdate {
+pub struct SplunkDestinationUpdate  {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub hec_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
@@ -26,17 +26,17 @@ pub struct SplunkDestinationUpdate {
     /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
     pub buffering_hints: ::std::option::Option<crate::types::SplunkBufferingHints>,
 }
-impl SplunkDestinationUpdate {
+impl  SplunkDestinationUpdate  {
     /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
-    pub fn hec_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn hec_endpoint(&self) -> ::std::option::Option<& str> {
         self.hec_endpoint.as_deref()
     }
     /// <p>This type can be either "Raw" or "Event."</p>
-    pub fn hec_endpoint_type(&self) -> ::std::option::Option<&crate::types::HecEndpointType> {
+    pub fn hec_endpoint_type(&self) -> ::std::option::Option<& crate::types::HecEndpointType> {
         self.hec_endpoint_type.as_ref()
     }
     /// <p>A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
-    pub fn hec_token(&self) -> ::std::option::Option<&str> {
+    pub fn hec_token(&self) -> ::std::option::Option<& str> {
         self.hec_token.as_deref()
     }
     /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
@@ -44,28 +44,28 @@ impl SplunkDestinationUpdate {
         self.hec_acknowledgment_timeout_in_seconds
     }
     /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
-    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SplunkRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<& crate::types::SplunkRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
-    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::SplunkS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<& crate::types::SplunkS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Your update to the configuration of the backup Amazon S3 location.</p>
-    pub fn s3_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
+    pub fn s3_update(&self) -> ::std::option::Option<& crate::types::S3DestinationUpdate> {
         self.s3_update.as_ref()
     }
     /// <p>The data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
-    pub fn buffering_hints(&self) -> ::std::option::Option<&crate::types::SplunkBufferingHints> {
+    pub fn buffering_hints(&self) -> ::std::option::Option<& crate::types::SplunkBufferingHints> {
         self.buffering_hints.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn set_hec_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hec_endpoint = input;
-        self
+        self.hec_endpoint = input; self
     }
     /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn get_hec_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>This type can be either "Raw" or "Event."</p>
     pub fn set_hec_endpoint_type(mut self, input: ::std::option::Option<crate::types::HecEndpointType>) -> Self {
-        self.hec_endpoint_type = input;
-        self
+        self.hec_endpoint_type = input; self
     }
     /// <p>This type can be either "Raw" or "Event."</p>
     pub fn get_hec_endpoint_type(&self) -> &::std::option::Option<crate::types::HecEndpointType> {
@@ -127,8 +125,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
     pub fn set_hec_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hec_token = input;
-        self
+        self.hec_token = input; self
     }
     /// <p>A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
     pub fn get_hec_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn set_hec_acknowledgment_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hec_acknowledgment_timeout_in_seconds = input;
-        self
+        self.hec_acknowledgment_timeout_in_seconds = input; self
     }
     /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn get_hec_acknowledgment_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -155,8 +151,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SplunkRetryOptions>) -> Self {
-        self.retry_options = input;
-        self
+        self.retry_options = input; self
     }
     /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SplunkRetryOptions> {
@@ -171,8 +166,7 @@ impl SplunkDestinationUpdateBuilder {
     /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SplunkS3BackupMode>) -> Self {
-        self.s3_backup_mode = input;
-        self
+        self.s3_backup_mode = input; self
     }
     /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
@@ -186,8 +180,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>Your update to the configuration of the backup Amazon S3 location.</p>
     pub fn set_s3_update(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdate>) -> Self {
-        self.s3_update = input;
-        self
+        self.s3_update = input; self
     }
     /// <p>Your update to the configuration of the backup Amazon S3 location.</p>
     pub fn get_s3_update(&self) -> &::std::option::Option<crate::types::S3DestinationUpdate> {
@@ -200,8 +193,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>The data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -214,8 +206,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -228,8 +219,7 @@ impl SplunkDestinationUpdateBuilder {
     }
     /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
     pub fn set_buffering_hints(mut self, input: ::std::option::Option<crate::types::SplunkBufferingHints>) -> Self {
-        self.buffering_hints = input;
-        self
+        self.buffering_hints = input; self
     }
     /// <p>The buffering options. If no value is specified, the default values for Splunk are used.</p>
     pub fn get_buffering_hints(&self) -> &::std::option::Option<crate::types::SplunkBufferingHints> {
@@ -238,16 +228,27 @@ impl SplunkDestinationUpdateBuilder {
     /// Consumes the builder and constructs a [`SplunkDestinationUpdate`](crate::types::SplunkDestinationUpdate).
     pub fn build(self) -> crate::types::SplunkDestinationUpdate {
         crate::types::SplunkDestinationUpdate {
-            hec_endpoint: self.hec_endpoint,
-            hec_endpoint_type: self.hec_endpoint_type,
-            hec_token: self.hec_token,
-            hec_acknowledgment_timeout_in_seconds: self.hec_acknowledgment_timeout_in_seconds,
-            retry_options: self.retry_options,
-            s3_backup_mode: self.s3_backup_mode,
-            s3_update: self.s3_update,
-            processing_configuration: self.processing_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            buffering_hints: self.buffering_hints,
+            hec_endpoint: self.hec_endpoint
+            ,
+            hec_endpoint_type: self.hec_endpoint_type
+            ,
+            hec_token: self.hec_token
+            ,
+            hec_acknowledgment_timeout_in_seconds: self.hec_acknowledgment_timeout_in_seconds
+            ,
+            retry_options: self.retry_options
+            ,
+            s3_backup_mode: self.s3_backup_mode
+            ,
+            s3_update: self.s3_update
+            ,
+            processing_configuration: self.processing_configuration
+            ,
+            cloud_watch_logging_options: self.cloud_watch_logging_options
+            ,
+            buffering_hints: self.buffering_hints
+            ,
         }
     }
 }
+

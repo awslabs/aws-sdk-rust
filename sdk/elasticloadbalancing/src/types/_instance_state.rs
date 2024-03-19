@@ -3,7 +3,7 @@
 /// <p>Information about the state of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceState {
+pub struct InstanceState  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the instance.</p>
@@ -41,19 +41,19 @@ pub struct InstanceState {
     /// </ul>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl InstanceState {
+impl  InstanceState  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code></p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code></p>
-    pub fn reason_code(&self) -> ::std::option::Option<&str> {
+    pub fn reason_code(&self) -> ::std::option::Option<& str> {
         self.reason_code.as_deref()
     }
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
@@ -83,7 +83,7 @@ impl InstanceState {
     /// <li>
     /// <p><code>Instance is in terminated state.</code></p></li>
     /// </ul>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl InstanceStateBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl InstanceStateBuilder {
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code></p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code></p>
@@ -144,8 +142,7 @@ impl InstanceStateBuilder {
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code></p>
     pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason_code = input;
-        self
+        self.reason_code = input; self
     }
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code></p>
@@ -211,8 +208,7 @@ impl InstanceStateBuilder {
     /// <p><code>Instance is in terminated state.</code></p></li>
     /// </ul>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
@@ -247,10 +243,15 @@ impl InstanceStateBuilder {
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {
         crate::types::InstanceState {
-            instance_id: self.instance_id,
-            state: self.state,
-            reason_code: self.reason_code,
-            description: self.description,
+            instance_id: self.instance_id
+            ,
+            state: self.state
+            ,
+            reason_code: self.reason_code
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

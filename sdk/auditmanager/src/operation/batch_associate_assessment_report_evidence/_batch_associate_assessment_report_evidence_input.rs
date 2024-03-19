@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAssociateAssessmentReportEvidenceInput {
+pub struct BatchAssociateAssessmentReportEvidenceInput  {
     /// <p>The identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub evidence_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of evidence identifiers.</p>
-    pub evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub evidence_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchAssociateAssessmentReportEvidenceInput {
+impl  BatchAssociateAssessmentReportEvidenceInput  {
     /// <p>The identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
-    pub fn evidence_folder_id(&self) -> ::std::option::Option<&str> {
+    pub fn evidence_folder_id(&self) -> ::std::option::Option<& str> {
         self.evidence_folder_id.as_deref()
     }
     /// <p>The list of evidence identifiers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evidence_ids.is_none()`.
-    pub fn evidence_ids(&self) -> &[::std::string::String] {
-        self.evidence_ids.as_deref().unwrap_or_default()
+    pub fn evidence_ids(&self) -> & [::std::string::String] {
+        self.evidence_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchAssociateAssessmentReportEvidenceInput {
@@ -39,7 +40,7 @@ impl BatchAssociateAssessmentReportEvidenceInput {
 pub struct BatchAssociateAssessmentReportEvidenceInputBuilder {
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
     pub(crate) evidence_folder_id: ::std::option::Option<::std::string::String>,
-    pub(crate) evidence_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) evidence_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     /// <p>The identifier for the assessment.</p>
@@ -50,8 +51,7 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     }
     /// <p>The identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn set_evidence_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.evidence_folder_id = input;
-        self
+        self.evidence_folder_id = input; self
     }
     /// <p>The identifier for the folder that the evidence is stored in.</p>
     pub fn get_evidence_folder_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,32 +78,30 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
     /// <p>The list of evidence identifiers.</p>
     pub fn evidence_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.evidence_ids.unwrap_or_default();
-        v.push(input.into());
-        self.evidence_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.evidence_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of evidence identifiers.</p>
-    pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.evidence_ids = input;
-        self
+    pub fn set_evidence_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.evidence_ids = input; self
     }
     /// <p>The list of evidence identifiers.</p>
-    pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_evidence_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.evidence_ids
     }
     /// Consumes the builder and constructs a [`BatchAssociateAssessmentReportEvidenceInput`](crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput {
-                assessment_id: self.assessment_id,
-                evidence_folder_id: self.evidence_folder_id,
-                evidence_ids: self.evidence_ids,
-            },
+                assessment_id: self.assessment_id
+                ,
+                evidence_folder_id: self.evidence_folder_id
+                ,
+                evidence_ids: self.evidence_ids
+                ,
+            }
         )
     }
 }
+

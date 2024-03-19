@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicies`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_policies::builders::ListPoliciesFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Specifies the order for results. If true, the results are returned in ascending creation order.</p><br>
-    /// - On success, responds with [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec::<Policy>>)`](crate::operation::list_policies::ListPoliciesOutput::policies): <p>The descriptions of the policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_policies::ListPoliciesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::operation::list_policies::ListPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::operation::list_policies::ListPoliciesError)
     pub fn list_policies(&self) -> crate::operation::list_policies::builders::ListPoliciesFluentBuilder {
-        crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_policies::builders::ListPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

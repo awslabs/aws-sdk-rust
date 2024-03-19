@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operatorpropertieskeys = unimplemented!();
 /// match operatorpropertieskeys {
@@ -42,16 +42,14 @@
 /// Specifically, when `operatorpropertieskeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperatorPropertiesKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum OperatorPropertiesKeys {
     #[allow(missing_docs)] // documentation missing in model
     ConcatFormat,
@@ -83,112 +81,98 @@ pub enum OperatorPropertiesKeys {
     Values,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for OperatorPropertiesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONCAT_FORMAT" => OperatorPropertiesKeys::ConcatFormat,
-            "DATA_TYPE" => OperatorPropertiesKeys::DataType,
-            "DESTINATION_DATA_TYPE" => OperatorPropertiesKeys::DestinationDataType,
-            "LOWER_BOUND" => OperatorPropertiesKeys::LowerBound,
-            "MASK_LENGTH" => OperatorPropertiesKeys::MaskLength,
-            "MASK_VALUE" => OperatorPropertiesKeys::MaskValue,
-            "MATH_OPERATION_FIELDS_ORDER" => OperatorPropertiesKeys::MathOperationFieldsOrder,
-            "SOURCE_DATA_TYPE" => OperatorPropertiesKeys::SourceDataType,
-            "SUBFIELD_CATEGORY_MAP" => OperatorPropertiesKeys::SubfieldCategoryMap,
-            "TRUNCATE_LENGTH" => OperatorPropertiesKeys::TruncateLength,
-            "UPPER_BOUND" => OperatorPropertiesKeys::UpperBound,
-            "VALIDATION_ACTION" => OperatorPropertiesKeys::ValidationAction,
-            "VALUE" => OperatorPropertiesKeys::Value,
-            "VALUES" => OperatorPropertiesKeys::Values,
-            other => OperatorPropertiesKeys::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CONCAT_FORMAT" => OperatorPropertiesKeys::ConcatFormat,
+"DATA_TYPE" => OperatorPropertiesKeys::DataType,
+"DESTINATION_DATA_TYPE" => OperatorPropertiesKeys::DestinationDataType,
+"LOWER_BOUND" => OperatorPropertiesKeys::LowerBound,
+"MASK_LENGTH" => OperatorPropertiesKeys::MaskLength,
+"MASK_VALUE" => OperatorPropertiesKeys::MaskValue,
+"MATH_OPERATION_FIELDS_ORDER" => OperatorPropertiesKeys::MathOperationFieldsOrder,
+"SOURCE_DATA_TYPE" => OperatorPropertiesKeys::SourceDataType,
+"SUBFIELD_CATEGORY_MAP" => OperatorPropertiesKeys::SubfieldCategoryMap,
+"TRUNCATE_LENGTH" => OperatorPropertiesKeys::TruncateLength,
+"UPPER_BOUND" => OperatorPropertiesKeys::UpperBound,
+"VALIDATION_ACTION" => OperatorPropertiesKeys::ValidationAction,
+"VALUE" => OperatorPropertiesKeys::Value,
+"VALUES" => OperatorPropertiesKeys::Values,
+other => OperatorPropertiesKeys::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for OperatorPropertiesKeys {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(OperatorPropertiesKeys::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(OperatorPropertiesKeys::from(s))
+                    }
+                }
 impl OperatorPropertiesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperatorPropertiesKeys::ConcatFormat => "CONCAT_FORMAT",
-            OperatorPropertiesKeys::DataType => "DATA_TYPE",
-            OperatorPropertiesKeys::DestinationDataType => "DESTINATION_DATA_TYPE",
-            OperatorPropertiesKeys::LowerBound => "LOWER_BOUND",
-            OperatorPropertiesKeys::MaskLength => "MASK_LENGTH",
-            OperatorPropertiesKeys::MaskValue => "MASK_VALUE",
-            OperatorPropertiesKeys::MathOperationFieldsOrder => "MATH_OPERATION_FIELDS_ORDER",
-            OperatorPropertiesKeys::SourceDataType => "SOURCE_DATA_TYPE",
-            OperatorPropertiesKeys::SubfieldCategoryMap => "SUBFIELD_CATEGORY_MAP",
-            OperatorPropertiesKeys::TruncateLength => "TRUNCATE_LENGTH",
-            OperatorPropertiesKeys::UpperBound => "UPPER_BOUND",
-            OperatorPropertiesKeys::ValidationAction => "VALIDATION_ACTION",
-            OperatorPropertiesKeys::Value => "VALUE",
-            OperatorPropertiesKeys::Values => "VALUES",
-            OperatorPropertiesKeys::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONCAT_FORMAT",
-            "DATA_TYPE",
-            "DESTINATION_DATA_TYPE",
-            "LOWER_BOUND",
-            "MASK_LENGTH",
-            "MASK_VALUE",
-            "MATH_OPERATION_FIELDS_ORDER",
-            "SOURCE_DATA_TYPE",
-            "SUBFIELD_CATEGORY_MAP",
-            "TRUNCATE_LENGTH",
-            "UPPER_BOUND",
-            "VALIDATION_ACTION",
-            "VALUE",
-            "VALUES",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperatorPropertiesKeys::ConcatFormat => "CONCAT_FORMAT",
+    OperatorPropertiesKeys::DataType => "DATA_TYPE",
+    OperatorPropertiesKeys::DestinationDataType => "DESTINATION_DATA_TYPE",
+    OperatorPropertiesKeys::LowerBound => "LOWER_BOUND",
+    OperatorPropertiesKeys::MaskLength => "MASK_LENGTH",
+    OperatorPropertiesKeys::MaskValue => "MASK_VALUE",
+    OperatorPropertiesKeys::MathOperationFieldsOrder => "MATH_OPERATION_FIELDS_ORDER",
+    OperatorPropertiesKeys::SourceDataType => "SOURCE_DATA_TYPE",
+    OperatorPropertiesKeys::SubfieldCategoryMap => "SUBFIELD_CATEGORY_MAP",
+    OperatorPropertiesKeys::TruncateLength => "TRUNCATE_LENGTH",
+    OperatorPropertiesKeys::UpperBound => "UPPER_BOUND",
+    OperatorPropertiesKeys::ValidationAction => "VALIDATION_ACTION",
+    OperatorPropertiesKeys::Value => "VALUE",
+    OperatorPropertiesKeys::Values => "VALUES",
+    OperatorPropertiesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONCAT_FORMAT", "DATA_TYPE", "DESTINATION_DATA_TYPE", "LOWER_BOUND", "MASK_LENGTH", "MASK_VALUE", "MATH_OPERATION_FIELDS_ORDER", "SOURCE_DATA_TYPE", "SUBFIELD_CATEGORY_MAP", "TRUNCATE_LENGTH", "UPPER_BOUND", "VALIDATION_ACTION", "VALUE", "VALUES"]
+                }
+            }
 impl ::std::convert::AsRef<str> for OperatorPropertiesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl OperatorPropertiesKeys {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for OperatorPropertiesKeys {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            OperatorPropertiesKeys::ConcatFormat => write!(f, "CONCAT_FORMAT"),
-            OperatorPropertiesKeys::DataType => write!(f, "DATA_TYPE"),
-            OperatorPropertiesKeys::DestinationDataType => write!(f, "DESTINATION_DATA_TYPE"),
-            OperatorPropertiesKeys::LowerBound => write!(f, "LOWER_BOUND"),
-            OperatorPropertiesKeys::MaskLength => write!(f, "MASK_LENGTH"),
-            OperatorPropertiesKeys::MaskValue => write!(f, "MASK_VALUE"),
-            OperatorPropertiesKeys::MathOperationFieldsOrder => write!(f, "MATH_OPERATION_FIELDS_ORDER"),
-            OperatorPropertiesKeys::SourceDataType => write!(f, "SOURCE_DATA_TYPE"),
-            OperatorPropertiesKeys::SubfieldCategoryMap => write!(f, "SUBFIELD_CATEGORY_MAP"),
-            OperatorPropertiesKeys::TruncateLength => write!(f, "TRUNCATE_LENGTH"),
-            OperatorPropertiesKeys::UpperBound => write!(f, "UPPER_BOUND"),
-            OperatorPropertiesKeys::ValidationAction => write!(f, "VALIDATION_ACTION"),
-            OperatorPropertiesKeys::Value => write!(f, "VALUE"),
-            OperatorPropertiesKeys::Values => write!(f, "VALUES"),
-            OperatorPropertiesKeys::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                OperatorPropertiesKeys::ConcatFormat => write!(f, "CONCAT_FORMAT"),
+OperatorPropertiesKeys::DataType => write!(f, "DATA_TYPE"),
+OperatorPropertiesKeys::DestinationDataType => write!(f, "DESTINATION_DATA_TYPE"),
+OperatorPropertiesKeys::LowerBound => write!(f, "LOWER_BOUND"),
+OperatorPropertiesKeys::MaskLength => write!(f, "MASK_LENGTH"),
+OperatorPropertiesKeys::MaskValue => write!(f, "MASK_VALUE"),
+OperatorPropertiesKeys::MathOperationFieldsOrder => write!(f, "MATH_OPERATION_FIELDS_ORDER"),
+OperatorPropertiesKeys::SourceDataType => write!(f, "SOURCE_DATA_TYPE"),
+OperatorPropertiesKeys::SubfieldCategoryMap => write!(f, "SUBFIELD_CATEGORY_MAP"),
+OperatorPropertiesKeys::TruncateLength => write!(f, "TRUNCATE_LENGTH"),
+OperatorPropertiesKeys::UpperBound => write!(f, "UPPER_BOUND"),
+OperatorPropertiesKeys::ValidationAction => write!(f, "VALIDATION_ACTION"),
+OperatorPropertiesKeys::Value => write!(f, "VALUE"),
+OperatorPropertiesKeys::Values => write!(f, "VALUES"),
+OperatorPropertiesKeys::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

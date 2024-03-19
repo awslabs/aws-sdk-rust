@@ -3,19 +3,19 @@
 /// <p>List managed accounts request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedAccountsInput {
+pub struct ListManagedAccountsInput  {
     /// <p>List managed accounts request max results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>List managed accounts request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListManagedAccountsInput {
+impl  ListManagedAccountsInput  {
     /// <p>List managed accounts request max results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>List managed accounts request next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListManagedAccountsInputBuilder {
     }
     /// <p>List managed accounts request max results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>List managed accounts request max results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -55,21 +54,22 @@ impl ListManagedAccountsInputBuilder {
     }
     /// <p>List managed accounts request next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>List managed accounts request next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListManagedAccountsInput`](crate::operation::list_managed_accounts::ListManagedAccountsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_managed_accounts::ListManagedAccountsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_managed_accounts::ListManagedAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_managed_accounts::ListManagedAccountsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLendingAnalysisSummaryInput {
+pub struct GetLendingAnalysisSummaryInput  {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetLendingAnalysisSummaryInput {
+impl  GetLendingAnalysisSummaryInput  {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetLendingAnalysisSummaryInputBuilder {
     }
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from StartLendingAnalysis. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryInput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput { job_id: self.job_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput {
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

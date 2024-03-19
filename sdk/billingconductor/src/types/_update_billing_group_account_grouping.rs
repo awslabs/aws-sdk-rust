@@ -3,11 +3,11 @@
 /// <p>Specifies if the billing group has the following features enabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBillingGroupAccountGrouping {
+pub struct UpdateBillingGroupAccountGrouping  {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub auto_associate: ::std::option::Option<bool>,
 }
-impl UpdateBillingGroupAccountGrouping {
+impl  UpdateBillingGroupAccountGrouping  {
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(&self) -> ::std::option::Option<bool> {
         self.auto_associate
@@ -34,8 +34,7 @@ impl UpdateBillingGroupAccountGroupingBuilder {
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn set_auto_associate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_associate = input;
-        self
+        self.auto_associate = input; self
     }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
@@ -44,7 +43,9 @@ impl UpdateBillingGroupAccountGroupingBuilder {
     /// Consumes the builder and constructs a [`UpdateBillingGroupAccountGrouping`](crate::types::UpdateBillingGroupAccountGrouping).
     pub fn build(self) -> crate::types::UpdateBillingGroupAccountGrouping {
         crate::types::UpdateBillingGroupAccountGrouping {
-            auto_associate: self.auto_associate,
+            auto_associate: self.auto_associate
+            ,
         }
     }
 }
+

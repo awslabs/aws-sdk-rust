@@ -3,7 +3,7 @@
 /// <p>The schedule's ad break properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleAdBreak {
+pub struct ScheduleAdBreak  {
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub approximate_duration_seconds: ::std::option::Option<i64>,
     /// <p>The approximate time that the ad will start playing.</p>
@@ -13,21 +13,21 @@ pub struct ScheduleAdBreak {
     /// <p>The name of the VOD source used for the ad break.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
-impl ScheduleAdBreak {
+impl  ScheduleAdBreak  {
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub fn approximate_duration_seconds(&self) -> ::std::option::Option<i64> {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the ad will start playing.</p>
-    pub fn approximate_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn approximate_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.approximate_start_time.as_ref()
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD source used for the ad break.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ScheduleAdBreakBuilder {
     }
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub fn set_approximate_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_duration_seconds = input;
-        self
+        self.approximate_duration_seconds = input; self
     }
     /// <p>The approximate duration of the ad break, in seconds.</p>
     pub fn get_approximate_duration_seconds(&self) -> &::std::option::Option<i64> {
@@ -69,8 +68,7 @@ impl ScheduleAdBreakBuilder {
     }
     /// <p>The approximate time that the ad will start playing.</p>
     pub fn set_approximate_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.approximate_start_time = input;
-        self
+        self.approximate_start_time = input; self
     }
     /// <p>The approximate time that the ad will start playing.</p>
     pub fn get_approximate_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -83,8 +81,7 @@ impl ScheduleAdBreakBuilder {
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ScheduleAdBreakBuilder {
     }
     /// <p>The name of the VOD source used for the ad break.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The name of the VOD source used for the ad break.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ScheduleAdBreakBuilder {
     /// Consumes the builder and constructs a [`ScheduleAdBreak`](crate::types::ScheduleAdBreak).
     pub fn build(self) -> crate::types::ScheduleAdBreak {
         crate::types::ScheduleAdBreak {
-            approximate_duration_seconds: self.approximate_duration_seconds,
-            approximate_start_time: self.approximate_start_time,
-            source_location_name: self.source_location_name,
-            vod_source_name: self.vod_source_name,
+            approximate_duration_seconds: self.approximate_duration_seconds
+            ,
+            approximate_start_time: self.approximate_start_time
+            ,
+            source_location_name: self.source_location_name
+            ,
+            vod_source_name: self.vod_source_name
+            ,
         }
     }
 }
+

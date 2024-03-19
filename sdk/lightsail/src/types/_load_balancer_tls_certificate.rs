@@ -4,7 +4,7 @@
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerTlsCertificate {
+pub struct LoadBalancerTlsCertificate  {
     /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
@@ -40,7 +40,7 @@ pub struct LoadBalancerTlsCertificate {
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
@@ -50,7 +50,7 @@ pub struct LoadBalancerTlsCertificate {
     /// <p>The domain name for your SSL/TLS certificate.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
-    pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
+    pub domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
     /// <ul>
@@ -93,27 +93,27 @@ pub struct LoadBalancerTlsCertificate {
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
-    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl LoadBalancerTlsCertificate {
+impl  LoadBalancerTlsCertificate  {
     /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> ::std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The time when you created your SSL/TLS certificate.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
@@ -139,17 +139,18 @@ impl LoadBalancerTlsCertificate {
     /// <li>
     /// <p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
-    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
@@ -157,18 +158,19 @@ impl LoadBalancerTlsCertificate {
         self.is_attached
     }
     /// <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateStatus> {
         self.status.as_ref()
     }
     /// <p>The domain name for your SSL/TLS certificate.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_validation_records.is_none()`.
-    pub fn domain_validation_records(&self) -> &[crate::types::LoadBalancerTlsCertificateDomainValidationRecord] {
-        self.domain_validation_records.as_deref().unwrap_or_default()
+    pub fn domain_validation_records(&self) -> & [crate::types::LoadBalancerTlsCertificateDomainValidationRecord] {
+        self.domain_validation_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -188,58 +190,59 @@ impl LoadBalancerTlsCertificate {
     /// <li>
     /// <p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
-    pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateFailureReason> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateFailureReason> {
         self.failure_reason.as_ref()
     }
     /// <p>The time when the SSL/TLS certificate was issued.</p>
-    pub fn issued_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn issued_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.issued_at.as_ref()
     }
     /// <p>The issuer of the certificate.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The algorithm used to generate the key pair (the public and private key).</p>
-    pub fn key_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn key_algorithm(&self) -> ::std::option::Option<& str> {
         self.key_algorithm.as_deref()
     }
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
-    pub fn not_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
-    pub fn not_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
-    pub fn renewal_summary(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateRenewalSummary> {
+    pub fn renewal_summary(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateRenewalSummary> {
         self.renewal_summary.as_ref()
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    pub fn revocation_reason(&self) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateRevocationReason> {
+    pub fn revocation_reason(&self) -> ::std::option::Option<& crate::types::LoadBalancerTlsCertificateRevocationReason> {
         self.revocation_reason.as_ref()
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
-    pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial(&self) -> ::std::option::Option<&str> {
+    pub fn serial(&self) -> ::std::option::Option<& str> {
         self.serial.as_deref()
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
-    pub fn signature_algorithm(&self) -> ::std::option::Option<&str> {
+    pub fn signature_algorithm(&self) -> ::std::option::Option<& str> {
         self.signature_algorithm.as_deref()
     }
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
-    pub fn subject(&self) -> ::std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
-    pub fn subject_alternative_names(&self) -> &[::std::string::String] {
-        self.subject_alternative_names.as_deref().unwrap_or_default()
+    pub fn subject_alternative_names(&self) -> & [::std::string::String] {
+        self.subject_alternative_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl LoadBalancerTlsCertificate {
@@ -259,12 +262,12 @@ pub struct LoadBalancerTlsCertificateBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
     pub(crate) is_attached: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::LoadBalancerTlsCertificateStatus>,
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
+    pub(crate) domain_validation_records: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
     pub(crate) failure_reason: ::std::option::Option<crate::types::LoadBalancerTlsCertificateFailureReason>,
     pub(crate) issued_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) issuer: ::std::option::Option<::std::string::String>,
@@ -277,7 +280,7 @@ pub struct LoadBalancerTlsCertificateBuilder {
     pub(crate) serial: ::std::option::Option<::std::string::String>,
     pub(crate) signature_algorithm: ::std::option::Option<::std::string::String>,
     pub(crate) subject: ::std::option::Option<::std::string::String>,
-    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl LoadBalancerTlsCertificateBuilder {
     /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
@@ -287,8 +290,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +303,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +316,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -329,8 +329,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The time when you created your SSL/TLS certificate.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when you created your SSL/TLS certificate.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -343,8 +342,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
@@ -401,8 +399,7 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p><b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
@@ -437,17 +434,16 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
@@ -457,8 +453,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_name = input;
-        self
+        self.load_balancer_name = input; self
     }
     /// <p>The load balancer name where your SSL/TLS certificate is attached.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -471,8 +466,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn set_is_attached(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_attached = input;
-        self
+        self.is_attached = input; self
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
@@ -485,8 +479,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The validation status of the SSL/TLS certificate. Valid values are below.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateStatus> {
@@ -499,8 +492,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The domain name for your SSL/TLS certificate.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name for your SSL/TLS certificate.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -513,22 +505,16 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
     pub fn domain_validation_records(mut self, input: crate::types::LoadBalancerTlsCertificateDomainValidationRecord) -> Self {
         let mut v = self.domain_validation_records.unwrap_or_default();
-        v.push(input);
-        self.domain_validation_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_validation_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
-    pub fn set_domain_validation_records(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
-    ) -> Self {
-        self.domain_validation_records = input;
-        self
+    pub fn set_domain_validation_records(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>) -> Self {
+        self.domain_validation_records = input; self
     }
     /// <p>An array of LoadBalancerTlsCertificateDomainValidationRecord objects describing the records.</p>
-    pub fn get_domain_validation_records(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>> {
+    pub fn get_domain_validation_records(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>> {
         &self.domain_validation_records
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
@@ -572,8 +558,7 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p><b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more of the domain names in the certificate request. Try to request a certificate again, correcting any spelling errors or typos that were in the failed request.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateFailureReason>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The validation failure reason, if any, of the certificate.</p>
     /// <p>The following failure reasons are possible:</p>
@@ -603,8 +588,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The time when the SSL/TLS certificate was issued.</p>
     pub fn set_issued_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.issued_at = input;
-        self
+        self.issued_at = input; self
     }
     /// <p>The time when the SSL/TLS certificate was issued.</p>
     pub fn get_issued_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -617,8 +601,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The issuer of the certificate.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// <p>The issuer of the certificate.</p>
     pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
@@ -631,8 +614,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The algorithm used to generate the key pair (the public and private key).</p>
     pub fn set_key_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_algorithm = input;
-        self
+        self.key_algorithm = input; self
     }
     /// <p>The algorithm used to generate the key pair (the public and private key).</p>
     pub fn get_key_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -645,8 +627,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
     pub fn set_not_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_after = input;
-        self
+        self.not_after = input; self
     }
     /// <p>The timestamp when the SSL/TLS certificate expires.</p>
     pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -659,8 +640,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
     pub fn set_not_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.not_before = input;
-        self
+        self.not_before = input; self
     }
     /// <p>The timestamp when the SSL/TLS certificate is first valid.</p>
     pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -673,8 +653,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
     pub fn set_renewal_summary(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalSummary>) -> Self {
-        self.renewal_summary = input;
-        self
+        self.renewal_summary = input; self
     }
     /// <p>An object that describes the status of the certificate renewal managed by Lightsail.</p>
     pub fn get_renewal_summary(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateRenewalSummary> {
@@ -687,8 +666,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn set_revocation_reason(mut self, input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateRevocationReason>) -> Self {
-        self.revocation_reason = input;
-        self
+        self.revocation_reason = input; self
     }
     /// <p>The reason the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn get_revocation_reason(&self) -> &::std::option::Option<crate::types::LoadBalancerTlsCertificateRevocationReason> {
@@ -701,8 +679,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn set_revoked_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.revoked_at = input;
-        self
+        self.revoked_at = input; self
     }
     /// <p>The timestamp when the certificate was revoked. This value is present only when the certificate status is <code>REVOKED</code>.</p>
     pub fn get_revoked_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -715,8 +692,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The serial number of the certificate.</p>
     pub fn set_serial(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial = input;
-        self
+        self.serial = input; self
     }
     /// <p>The serial number of the certificate.</p>
     pub fn get_serial(&self) -> &::std::option::Option<::std::string::String> {
@@ -729,8 +705,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
     pub fn set_signature_algorithm(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.signature_algorithm = input;
-        self
+        self.signature_algorithm = input; self
     }
     /// <p>The algorithm that was used to sign the certificate.</p>
     pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
@@ -743,8 +718,7 @@ impl LoadBalancerTlsCertificateBuilder {
     }
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject = input;
-        self
+        self.subject = input; self
     }
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -757,47 +731,72 @@ impl LoadBalancerTlsCertificateBuilder {
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
-        v.push(input.into());
-        self.subject_alternative_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subject_alternative_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
-    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subject_alternative_names = input;
-        self
+    pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subject_alternative_names = input; self
     }
     /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
-    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subject_alternative_names
     }
     /// Consumes the builder and constructs a [`LoadBalancerTlsCertificate`](crate::types::LoadBalancerTlsCertificate).
     pub fn build(self) -> crate::types::LoadBalancerTlsCertificate {
         crate::types::LoadBalancerTlsCertificate {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            load_balancer_name: self.load_balancer_name,
-            is_attached: self.is_attached,
-            status: self.status,
-            domain_name: self.domain_name,
-            domain_validation_records: self.domain_validation_records,
-            failure_reason: self.failure_reason,
-            issued_at: self.issued_at,
-            issuer: self.issuer,
-            key_algorithm: self.key_algorithm,
-            not_after: self.not_after,
-            not_before: self.not_before,
-            renewal_summary: self.renewal_summary,
-            revocation_reason: self.revocation_reason,
-            revoked_at: self.revoked_at,
-            serial: self.serial,
-            signature_algorithm: self.signature_algorithm,
-            subject: self.subject,
-            subject_alternative_names: self.subject_alternative_names,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            load_balancer_name: self.load_balancer_name
+            ,
+            is_attached: self.is_attached
+            ,
+            status: self.status
+            ,
+            domain_name: self.domain_name
+            ,
+            domain_validation_records: self.domain_validation_records
+            ,
+            failure_reason: self.failure_reason
+            ,
+            issued_at: self.issued_at
+            ,
+            issuer: self.issuer
+            ,
+            key_algorithm: self.key_algorithm
+            ,
+            not_after: self.not_after
+            ,
+            not_before: self.not_before
+            ,
+            renewal_summary: self.renewal_summary
+            ,
+            revocation_reason: self.revocation_reason
+            ,
+            revoked_at: self.revoked_at
+            ,
+            serial: self.serial
+            ,
+            signature_algorithm: self.signature_algorithm
+            ,
+            subject: self.subject
+            ,
+            subject_alternative_names: self.subject_alternative_names
+            ,
         }
     }
 }
+

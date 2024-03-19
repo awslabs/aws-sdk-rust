@@ -3,7 +3,7 @@
 /// <p>Information about a foundation model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FoundationModelDetails {
+pub struct FoundationModelDetails  {
     /// <p>The model ARN.</p>
     pub model_arn: ::std::string::String,
     /// <p>The model identifier.</p>
@@ -13,67 +13,69 @@ pub struct FoundationModelDetails {
     /// <p>he model's provider name.</p>
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The input modalities that the model supports.</p>
-    pub input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>,
+    pub input_modalities: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>,
     /// <p>The output modalities that the model supports.</p>
-    pub output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>,
+    pub output_modalities: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>,
     /// <p>Indicates whether the model supports streaming.</p>
     pub response_streaming_supported: ::std::option::Option<bool>,
     /// <p>The customization that the model supports.</p>
-    pub customizations_supported: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>>,
+    pub customizations_supported: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomization>>,
     /// <p>The inference types that the model supports.</p>
-    pub inference_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::InferenceType>>,
+    pub inference_types_supported: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceType>>,
     /// <p>Contains details about whether a model version is available or deprecated</p>
     pub model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
-impl FoundationModelDetails {
+impl  FoundationModelDetails  {
     /// <p>The model ARN.</p>
-    pub fn model_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.model_arn.deref()
+    pub fn model_arn(&self) -> & str {
+        use std::ops::Deref; self.model_arn.deref()
     }
     /// <p>The model identifier.</p>
-    pub fn model_id(&self) -> &str {
-        use std::ops::Deref;
-        self.model_id.deref()
+    pub fn model_id(&self) -> & str {
+        use std::ops::Deref; self.model_id.deref()
     }
     /// <p>The model name.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>he model's provider name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The input modalities that the model supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_modalities.is_none()`.
-    pub fn input_modalities(&self) -> &[crate::types::ModelModality] {
-        self.input_modalities.as_deref().unwrap_or_default()
+    pub fn input_modalities(&self) -> & [crate::types::ModelModality] {
+        self.input_modalities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The output modalities that the model supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_modalities.is_none()`.
-    pub fn output_modalities(&self) -> &[crate::types::ModelModality] {
-        self.output_modalities.as_deref().unwrap_or_default()
+    pub fn output_modalities(&self) -> & [crate::types::ModelModality] {
+        self.output_modalities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether the model supports streaming.</p>
     pub fn response_streaming_supported(&self) -> ::std::option::Option<bool> {
         self.response_streaming_supported
     }
     /// <p>The customization that the model supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customizations_supported.is_none()`.
-    pub fn customizations_supported(&self) -> &[crate::types::ModelCustomization] {
-        self.customizations_supported.as_deref().unwrap_or_default()
+    pub fn customizations_supported(&self) -> & [crate::types::ModelCustomization] {
+        self.customizations_supported.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The inference types that the model supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_types_supported.is_none()`.
-    pub fn inference_types_supported(&self) -> &[crate::types::InferenceType] {
-        self.inference_types_supported.as_deref().unwrap_or_default()
+    pub fn inference_types_supported(&self) -> & [crate::types::InferenceType] {
+        self.inference_types_supported.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains details about whether a model version is available or deprecated</p>
-    pub fn model_lifecycle(&self) -> ::std::option::Option<&crate::types::FoundationModelLifecycle> {
+    pub fn model_lifecycle(&self) -> ::std::option::Option<& crate::types::FoundationModelLifecycle> {
         self.model_lifecycle.as_ref()
     }
 }
@@ -92,11 +94,11 @@ pub struct FoundationModelDetailsBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
-    pub(crate) input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>,
-    pub(crate) output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>,
+    pub(crate) input_modalities: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>,
+    pub(crate) output_modalities: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>,
     pub(crate) response_streaming_supported: ::std::option::Option<bool>,
-    pub(crate) customizations_supported: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>>,
-    pub(crate) inference_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::InferenceType>>,
+    pub(crate) customizations_supported: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomization>>,
+    pub(crate) inference_types_supported: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceType>>,
     pub(crate) model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelDetailsBuilder {
@@ -108,8 +110,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>The model ARN.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The model ARN.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +124,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>The model identifier.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// <p>The model identifier.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +137,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>The model name.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The model name.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +150,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>he model's provider name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>he model's provider name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,17 +163,16 @@ impl FoundationModelDetailsBuilder {
     /// <p>The input modalities that the model supports.</p>
     pub fn input_modalities(mut self, input: crate::types::ModelModality) -> Self {
         let mut v = self.input_modalities.unwrap_or_default();
-        v.push(input);
-        self.input_modalities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_modalities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The input modalities that the model supports.</p>
-    pub fn set_input_modalities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>) -> Self {
-        self.input_modalities = input;
-        self
+    pub fn set_input_modalities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>) -> Self {
+        self.input_modalities = input; self
     }
     /// <p>The input modalities that the model supports.</p>
-    pub fn get_input_modalities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelModality>> {
+    pub fn get_input_modalities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>> {
         &self.input_modalities
     }
     /// Appends an item to `output_modalities`.
@@ -185,17 +182,16 @@ impl FoundationModelDetailsBuilder {
     /// <p>The output modalities that the model supports.</p>
     pub fn output_modalities(mut self, input: crate::types::ModelModality) -> Self {
         let mut v = self.output_modalities.unwrap_or_default();
-        v.push(input);
-        self.output_modalities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_modalities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The output modalities that the model supports.</p>
-    pub fn set_output_modalities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelModality>>) -> Self {
-        self.output_modalities = input;
-        self
+    pub fn set_output_modalities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>>) -> Self {
+        self.output_modalities = input; self
     }
     /// <p>The output modalities that the model supports.</p>
-    pub fn get_output_modalities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelModality>> {
+    pub fn get_output_modalities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelModality>> {
         &self.output_modalities
     }
     /// <p>Indicates whether the model supports streaming.</p>
@@ -205,8 +201,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>Indicates whether the model supports streaming.</p>
     pub fn set_response_streaming_supported(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.response_streaming_supported = input;
-        self
+        self.response_streaming_supported = input; self
     }
     /// <p>Indicates whether the model supports streaming.</p>
     pub fn get_response_streaming_supported(&self) -> &::std::option::Option<bool> {
@@ -219,17 +214,16 @@ impl FoundationModelDetailsBuilder {
     /// <p>The customization that the model supports.</p>
     pub fn customizations_supported(mut self, input: crate::types::ModelCustomization) -> Self {
         let mut v = self.customizations_supported.unwrap_or_default();
-        v.push(input);
-        self.customizations_supported = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.customizations_supported = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The customization that the model supports.</p>
-    pub fn set_customizations_supported(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>>) -> Self {
-        self.customizations_supported = input;
-        self
+    pub fn set_customizations_supported(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomization>>) -> Self {
+        self.customizations_supported = input; self
     }
     /// <p>The customization that the model supports.</p>
-    pub fn get_customizations_supported(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>> {
+    pub fn get_customizations_supported(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModelCustomization>> {
         &self.customizations_supported
     }
     /// Appends an item to `inference_types_supported`.
@@ -239,17 +233,16 @@ impl FoundationModelDetailsBuilder {
     /// <p>The inference types that the model supports.</p>
     pub fn inference_types_supported(mut self, input: crate::types::InferenceType) -> Self {
         let mut v = self.inference_types_supported.unwrap_or_default();
-        v.push(input);
-        self.inference_types_supported = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_types_supported = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inference types that the model supports.</p>
-    pub fn set_inference_types_supported(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceType>>) -> Self {
-        self.inference_types_supported = input;
-        self
+    pub fn set_inference_types_supported(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceType>>) -> Self {
+        self.inference_types_supported = input; self
     }
     /// <p>The inference types that the model supports.</p>
-    pub fn get_inference_types_supported(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceType>> {
+    pub fn get_inference_types_supported(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceType>> {
         &self.inference_types_supported
     }
     /// <p>Contains details about whether a model version is available or deprecated</p>
@@ -259,8 +252,7 @@ impl FoundationModelDetailsBuilder {
     }
     /// <p>Contains details about whether a model version is available or deprecated</p>
     pub fn set_model_lifecycle(mut self, input: ::std::option::Option<crate::types::FoundationModelLifecycle>) -> Self {
-        self.model_lifecycle = input;
-        self
+        self.model_lifecycle = input; self
     }
     /// <p>Contains details about whether a model version is available or deprecated</p>
     pub fn get_model_lifecycle(&self) -> &::std::option::Option<crate::types::FoundationModelLifecycle> {
@@ -271,27 +263,36 @@ impl FoundationModelDetailsBuilder {
     /// - [`model_arn`](crate::types::builders::FoundationModelDetailsBuilder::model_arn)
     /// - [`model_id`](crate::types::builders::FoundationModelDetailsBuilder::model_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FoundationModelDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FoundationModelDetails {
-            model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_arn",
-                    "model_arn was not specified but it is required when building FoundationModelDetails",
-                )
-            })?,
-            model_id: self.model_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "model_id",
-                    "model_id was not specified but it is required when building FoundationModelDetails",
-                )
-            })?,
-            model_name: self.model_name,
-            provider_name: self.provider_name,
-            input_modalities: self.input_modalities,
-            output_modalities: self.output_modalities,
-            response_streaming_supported: self.response_streaming_supported,
-            customizations_supported: self.customizations_supported,
-            inference_types_supported: self.inference_types_supported,
-            model_lifecycle: self.model_lifecycle,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FoundationModelDetails {
+                model_arn: self.model_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_arn", "model_arn was not specified but it is required when building FoundationModelDetails")
+                    )?
+                ,
+                model_id: self.model_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("model_id", "model_id was not specified but it is required when building FoundationModelDetails")
+                    )?
+                ,
+                model_name: self.model_name
+                ,
+                provider_name: self.provider_name
+                ,
+                input_modalities: self.input_modalities
+                ,
+                output_modalities: self.output_modalities
+                ,
+                response_streaming_supported: self.response_streaming_supported
+                ,
+                customizations_supported: self.customizations_supported
+                ,
+                inference_types_supported: self.inference_types_supported
+                ,
+                model_lifecycle: self.model_lifecycle
+                ,
+            }
+        )
     }
 }
+

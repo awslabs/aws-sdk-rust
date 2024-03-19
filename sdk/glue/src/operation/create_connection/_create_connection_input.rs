@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub connection_input: ::std::option::Option<crate::types::ConnectionInput>,
     /// <p>The tags you assign to the connection.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateConnectionInput {
+impl  CreateConnectionInput  {
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
-    pub fn connection_input(&self) -> ::std::option::Option<&crate::types::ConnectionInput> {
+    pub fn connection_input(&self) -> ::std::option::Option<& crate::types::ConnectionInput> {
         self.connection_input.as_ref()
     }
     /// <p>The tags you assign to the connection.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl CreateConnectionInput {
 pub struct CreateConnectionInputBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_input: ::std::option::Option<crate::types::ConnectionInput>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateConnectionInputBuilder {
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
@@ -47,8 +47,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub fn set_connection_input(mut self, input: ::std::option::Option<crate::types::ConnectionInput>) -> Self {
-        self.connection_input = input;
-        self
+        self.connection_input = input; self
     }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub fn get_connection_input(&self) -> &::std::option::Option<crate::types::ConnectionInput> {
@@ -76,27 +74,30 @@ impl CreateConnectionInputBuilder {
     /// <p>The tags you assign to the connection.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags you assign to the connection.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags you assign to the connection.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
-            catalog_id: self.catalog_id,
-            connection_input: self.connection_input,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                catalog_id: self.catalog_id
+                ,
+                connection_input: self.connection_input
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteActionOutput {
+pub struct DeleteActionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub action_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteActionOutput {
+impl  DeleteActionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
-    pub fn action_arn(&self) -> ::std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<& str> {
         self.action_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteActionOutput`](crate::operation::delete_action::DeleteActionOutput).
     pub fn builder() -> crate::operation::delete_action::builders::DeleteActionOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteActionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_arn = input;
-        self
+        self.action_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the action.</p>
     pub fn get_action_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteActionOutput`](crate::operation::delete_action::DeleteActionOutput).
     pub fn build(self) -> crate::operation::delete_action::DeleteActionOutput {
         crate::operation::delete_action::DeleteActionOutput {
-            action_arn: self.action_arn,
+            action_arn: self.action_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

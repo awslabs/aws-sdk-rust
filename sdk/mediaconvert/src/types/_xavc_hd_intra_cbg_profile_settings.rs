@@ -3,13 +3,13 @@
 /// Required when you set Profile to the value XAVC_HD_INTRA_CBG.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XavcHdIntraCbgProfileSettings {
+pub struct XavcHdIntraCbgProfileSettings  {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub xavc_class: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
 }
-impl XavcHdIntraCbgProfileSettings {
+impl  XavcHdIntraCbgProfileSettings  {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn xavc_class(&self) -> ::std::option::Option<&crate::types::XavcHdIntraCbgProfileClass> {
+    pub fn xavc_class(&self) -> ::std::option::Option<& crate::types::XavcHdIntraCbgProfileClass> {
         self.xavc_class.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl XavcHdIntraCbgProfileSettingsBuilder {
     }
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn set_xavc_class(mut self, input: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>) -> Self {
-        self.xavc_class = input;
-        self
+        self.xavc_class = input; self
     }
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn get_xavc_class(&self) -> &::std::option::Option<crate::types::XavcHdIntraCbgProfileClass> {
@@ -43,6 +42,10 @@ impl XavcHdIntraCbgProfileSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`XavcHdIntraCbgProfileSettings`](crate::types::XavcHdIntraCbgProfileSettings).
     pub fn build(self) -> crate::types::XavcHdIntraCbgProfileSettings {
-        crate::types::XavcHdIntraCbgProfileSettings { xavc_class: self.xavc_class }
+        crate::types::XavcHdIntraCbgProfileSettings {
+            xavc_class: self.xavc_class
+            ,
+        }
     }
 }
+

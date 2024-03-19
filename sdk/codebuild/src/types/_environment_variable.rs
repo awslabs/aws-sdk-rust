@@ -3,7 +3,7 @@
 /// <p>Information about an environment variable for a build project or a build.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnvironmentVariable {
+pub struct EnvironmentVariable  {
     /// <p>The name or key of the environment variable.</p>
     pub name: ::std::string::String,
     /// <p>The value of the environment variable.</p><important>
@@ -21,18 +21,16 @@ pub struct EnvironmentVariable {
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::EnvironmentVariableType>,
 }
-impl EnvironmentVariable {
+impl  EnvironmentVariable  {
     /// <p>The name or key of the environment variable.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the environment variable.</p><important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
     /// </important>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
@@ -43,7 +41,7 @@ impl EnvironmentVariable {
     /// <li>
     /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentVariableType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::EnvironmentVariableType> {
         self.r#type.as_ref()
     }
 }
@@ -71,8 +69,7 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>The name or key of the environment variable.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name or key of the environment variable.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +87,7 @@ impl EnvironmentVariableBuilder {
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
     /// </important>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the environment variable.</p><important>
     /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code> environment variables can be displayed in plain text using the CodeBuild console and the CLI. For sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>.</p>
@@ -122,8 +118,7 @@ impl EnvironmentVariableBuilder {
     /// <p><code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. For environment variables of this type, specify the name of the secret as the <code>value</code> of the EnvironmentVariable. The secret value will be substituted for the name at runtime. You can also define Secrets Manager environment variables in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the <i>CodeBuild User Guide</i>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentVariableType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of environment variable. Valid values include:</p>
     /// <ul>
@@ -142,20 +137,22 @@ impl EnvironmentVariableBuilder {
     /// - [`name`](crate::types::builders::EnvironmentVariableBuilder::name)
     /// - [`value`](crate::types::builders::EnvironmentVariableBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentVariable, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EnvironmentVariable {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building EnvironmentVariable",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building EnvironmentVariable",
-                )
-            })?,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EnvironmentVariable {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building EnvironmentVariable")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building EnvironmentVariable")
+                    )?
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

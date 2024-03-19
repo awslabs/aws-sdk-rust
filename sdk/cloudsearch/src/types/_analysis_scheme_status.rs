@@ -3,19 +3,19 @@
 /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisSchemeStatus {
+pub struct AnalysisSchemeStatus  {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub options: ::std::option::Option<crate::types::AnalysisScheme>,
     /// <p>The status of domain configuration option.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl AnalysisSchemeStatus {
+impl  AnalysisSchemeStatus  {
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::AnalysisScheme> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::AnalysisScheme> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AnalysisSchemeStatusBuilder {
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::AnalysisScheme>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::AnalysisScheme> {
@@ -57,8 +56,7 @@ impl AnalysisSchemeStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,11 @@ impl AnalysisSchemeStatusBuilder {
     /// Consumes the builder and constructs a [`AnalysisSchemeStatus`](crate::types::AnalysisSchemeStatus).
     pub fn build(self) -> crate::types::AnalysisSchemeStatus {
         crate::types::AnalysisSchemeStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

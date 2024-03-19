@@ -3,7 +3,7 @@
 /// <p>Retrieve the HTTP live streaming (HLS) manifest configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetHlsManifestConfiguration {
+pub struct GetHlsManifestConfiguration  {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub manifest_name: ::std::string::String,
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
@@ -20,19 +20,17 @@ pub struct GetHlsManifestConfiguration {
     /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
-impl GetHlsManifestConfiguration {
+impl  GetHlsManifestConfiguration  {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub fn manifest_name(&self) -> &str {
-        use std::ops::Deref;
-        self.manifest_name.deref()
+    pub fn manifest_name(&self) -> & str {
+        use std::ops::Deref; self.manifest_name.deref()
     }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
-    pub fn url(&self) -> &str {
-        use std::ops::Deref;
-        self.url.deref()
+    pub fn url(&self) -> & str {
+        use std::ops::Deref; self.url.deref()
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
-    pub fn child_manifest_name(&self) -> ::std::option::Option<&str> {
+    pub fn child_manifest_name(&self) -> ::std::option::Option<& str> {
         self.child_manifest_name.as_deref()
     }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
@@ -45,11 +43,11 @@ impl GetHlsManifestConfiguration {
         self.program_date_time_interval_seconds
     }
     /// <p>The SCTE configuration.</p>
-    pub fn scte_hls(&self) -> ::std::option::Option<&crate::types::ScteHls> {
+    pub fn scte_hls(&self) -> ::std::option::Option<& crate::types::ScteHls> {
         self.scte_hls.as_ref()
     }
     /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
-    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+    pub fn filter_configuration(&self) -> ::std::option::Option<& crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
 }
@@ -81,8 +79,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn set_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest_name = input;
-        self
+        self.manifest_name = input; self
     }
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +106,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn set_child_manifest_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.child_manifest_name = input;
-        self
+        self.child_manifest_name = input; self
     }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn get_child_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +119,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.manifest_window_seconds = input;
-        self
+        self.manifest_window_seconds = input; self
     }
     /// <p>The total duration (in seconds) of the manifest's content.</p>
     pub fn get_manifest_window_seconds(&self) -> &::std::option::Option<i32> {
@@ -140,8 +134,7 @@ impl GetHlsManifestConfigurationBuilder {
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
     pub fn set_program_date_time_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.program_date_time_interval_seconds = input;
-        self
+        self.program_date_time_interval_seconds = input; self
     }
     /// <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.</p>
     /// <p>Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.</p>
@@ -155,8 +148,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>The SCTE configuration.</p>
     pub fn set_scte_hls(mut self, input: ::std::option::Option<crate::types::ScteHls>) -> Self {
-        self.scte_hls = input;
-        self
+        self.scte_hls = input; self
     }
     /// <p>The SCTE configuration.</p>
     pub fn get_scte_hls(&self) -> &::std::option::Option<crate::types::ScteHls> {
@@ -169,8 +161,7 @@ impl GetHlsManifestConfigurationBuilder {
     }
     /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
     pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
-        self.filter_configuration = input;
-        self
+        self.filter_configuration = input; self
     }
     /// <p>Filter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest.</p>
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
@@ -181,24 +172,30 @@ impl GetHlsManifestConfigurationBuilder {
     /// - [`manifest_name`](crate::types::builders::GetHlsManifestConfigurationBuilder::manifest_name)
     /// - [`url`](crate::types::builders::GetHlsManifestConfigurationBuilder::url)
     pub fn build(self) -> ::std::result::Result<crate::types::GetHlsManifestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GetHlsManifestConfiguration {
-            manifest_name: self.manifest_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "manifest_name",
-                    "manifest_name was not specified but it is required when building GetHlsManifestConfiguration",
-                )
-            })?,
-            url: self.url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "url",
-                    "url was not specified but it is required when building GetHlsManifestConfiguration",
-                )
-            })?,
-            child_manifest_name: self.child_manifest_name,
-            manifest_window_seconds: self.manifest_window_seconds,
-            program_date_time_interval_seconds: self.program_date_time_interval_seconds,
-            scte_hls: self.scte_hls,
-            filter_configuration: self.filter_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GetHlsManifestConfiguration {
+                manifest_name: self.manifest_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("manifest_name", "manifest_name was not specified but it is required when building GetHlsManifestConfiguration")
+                    )?
+                ,
+                url: self.url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("url", "url was not specified but it is required when building GetHlsManifestConfiguration")
+                    )?
+                ,
+                child_manifest_name: self.child_manifest_name
+                ,
+                manifest_window_seconds: self.manifest_window_seconds
+                ,
+                program_date_time_interval_seconds: self.program_date_time_interval_seconds
+                ,
+                scte_hls: self.scte_hls
+                ,
+                filter_configuration: self.filter_configuration
+                ,
+            }
+        )
     }
 }
+

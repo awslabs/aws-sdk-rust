@@ -5,7 +5,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InlineDocumentEnrichmentConfiguration {
+pub struct InlineDocumentEnrichmentConfiguration  {
     /// <p>The condition used for the target document attribute or metadata field when ingesting documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a> to apply the condition.</p>
     /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Q then will map your newly created metadata field to your index field.</p>
@@ -18,22 +18,22 @@ pub struct InlineDocumentEnrichmentConfiguration {
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub document_content_operator: ::std::option::Option<crate::types::DocumentContentOperator>,
 }
-impl InlineDocumentEnrichmentConfiguration {
+impl  InlineDocumentEnrichmentConfiguration  {
     /// <p>The condition used for the target document attribute or metadata field when ingesting documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a> to apply the condition.</p>
     /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Q then will map your newly created metadata field to your index field.</p>
-    pub fn condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn condition(&self) -> ::std::option::Option<& crate::types::DocumentAttributeCondition> {
         self.condition.as_ref()
     }
     /// <p>The target document attribute or metadata field you want to alter when ingesting documents into Amazon Q.</p>
     /// <p>For example, you can delete all customer identification numbers associated with the documents, stored in the document metadata field called 'Customer_ID' by setting the target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all customer ID values in the field 'Customer_ID'. This would scrub personally identifiable information from each document's metadata.</p>
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly created document attribute to your index field.</p>
     /// <p>You can also use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html"> <code>DocumentAttributeCondition</code> </a>.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::DocumentAttributeTarget> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::DocumentAttributeTarget> {
         self.target.as_ref()
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
-    pub fn document_content_operator(&self) -> ::std::option::Option<&crate::types::DocumentContentOperator> {
+    pub fn document_content_operator(&self) -> ::std::option::Option<& crate::types::DocumentContentOperator> {
         self.document_content_operator.as_ref()
     }
 }
@@ -64,8 +64,7 @@ impl InlineDocumentEnrichmentConfigurationBuilder {
     /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Q then will map your newly created metadata field to your index field.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::DocumentAttributeCondition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The condition used for the target document attribute or metadata field when ingesting documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a> to apply the condition.</p>
     /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
@@ -86,8 +85,7 @@ impl InlineDocumentEnrichmentConfigurationBuilder {
     /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeTarget.html"> <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly created document attribute to your index field.</p>
     /// <p>You can also use this with <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeCondition.html"> <code>DocumentAttributeCondition</code> </a>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::DocumentAttributeTarget>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The target document attribute or metadata field you want to alter when ingesting documents into Amazon Q.</p>
     /// <p>For example, you can delete all customer identification numbers associated with the documents, stored in the document metadata field called 'Customer_ID' by setting the target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all customer ID values in the field 'Customer_ID'. This would scrub personally identifiable information from each document's metadata.</p>
@@ -103,8 +101,7 @@ impl InlineDocumentEnrichmentConfigurationBuilder {
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn set_document_content_operator(mut self, input: ::std::option::Option<crate::types::DocumentContentOperator>) -> Self {
-        self.document_content_operator = input;
-        self
+        self.document_content_operator = input; self
     }
     /// <p><code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn get_document_content_operator(&self) -> &::std::option::Option<crate::types::DocumentContentOperator> {
@@ -113,9 +110,13 @@ impl InlineDocumentEnrichmentConfigurationBuilder {
     /// Consumes the builder and constructs a [`InlineDocumentEnrichmentConfiguration`](crate::types::InlineDocumentEnrichmentConfiguration).
     pub fn build(self) -> crate::types::InlineDocumentEnrichmentConfiguration {
         crate::types::InlineDocumentEnrichmentConfiguration {
-            condition: self.condition,
-            target: self.target,
-            document_content_operator: self.document_content_operator,
+            condition: self.condition
+            ,
+            target: self.target
+            ,
+            document_content_operator: self.document_content_operator
+            ,
         }
     }
 }
+

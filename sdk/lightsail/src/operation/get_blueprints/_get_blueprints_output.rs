@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBlueprintsOutput {
+pub struct GetBlueprintsOutput  {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-    pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
+    pub blueprints: ::std::option::Option<::std::vec::Vec::<crate::types::Blueprint>>,
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBlueprintsOutput {
+impl  GetBlueprintsOutput  {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.blueprints.is_none()`.
-    pub fn blueprints(&self) -> &[crate::types::Blueprint] {
-        self.blueprints.as_deref().unwrap_or_default()
+    pub fn blueprints(&self) -> & [crate::types::Blueprint] {
+        self.blueprints.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBlueprintsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintsOutput`](crate::operation::get_blueprints::GetBlueprintsOutput).
     pub fn builder() -> crate::operation::get_blueprints::builders::GetBlueprintsOutputBuilder {
@@ -41,7 +42,7 @@ impl GetBlueprintsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBlueprintsOutputBuilder {
-    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
+    pub(crate) blueprints: ::std::option::Option<::std::vec::Vec::<crate::types::Blueprint>>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl GetBlueprintsOutputBuilder {
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
     pub fn blueprints(mut self, input: crate::types::Blueprint) -> Self {
         let mut v = self.blueprints.unwrap_or_default();
-        v.push(input);
-        self.blueprints = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.blueprints = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>) -> Self {
-        self.blueprints = input;
-        self
+    pub fn set_blueprints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Blueprint>>) -> Self {
+        self.blueprints = input; self
     }
     /// <p>An array of key-value pairs that contains information about the available blueprints.</p>
-    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Blueprint>> {
+    pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Blueprint>> {
         &self.blueprints
     }
     /// <p>The token to advance to the next page of results from your request.</p>
@@ -77,8 +77,7 @@ impl GetBlueprintsOutputBuilder {
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetBlueprints</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
@@ -87,20 +86,23 @@ impl GetBlueprintsOutputBuilder {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBlueprintsOutput`](crate::operation::get_blueprints::GetBlueprintsOutput).
     pub fn build(self) -> crate::operation::get_blueprints::GetBlueprintsOutput {
         crate::operation::get_blueprints::GetBlueprintsOutput {
-            blueprints: self.blueprints,
-            next_page_token: self.next_page_token,
+            blueprints: self.blueprints
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

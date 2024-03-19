@@ -3,7 +3,7 @@
 /// <p>The [link to action] metadata transfer job destination configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationConfiguration {
+pub struct DestinationConfiguration  {
     /// <p>The destination type.</p>
     pub r#type: crate::types::DestinationType,
     /// <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
@@ -11,17 +11,17 @@ pub struct DestinationConfiguration {
     /// <p>The metadata transfer job Amazon Web Services IoT TwinMaker configuration.</p>
     pub iot_twin_maker_configuration: ::std::option::Option<crate::types::IotTwinMakerDestinationConfiguration>,
 }
-impl DestinationConfiguration {
+impl  DestinationConfiguration  {
     /// <p>The destination type.</p>
-    pub fn r#type(&self) -> &crate::types::DestinationType {
+    pub fn r#type(&self) -> & crate::types::DestinationType {
         &self.r#type
     }
     /// <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
-    pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3_configuration(&self) -> ::std::option::Option<& crate::types::S3DestinationConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The metadata transfer job Amazon Web Services IoT TwinMaker configuration.</p>
-    pub fn iot_twin_maker_configuration(&self) -> ::std::option::Option<&crate::types::IotTwinMakerDestinationConfiguration> {
+    pub fn iot_twin_maker_configuration(&self) -> ::std::option::Option<& crate::types::IotTwinMakerDestinationConfiguration> {
         self.iot_twin_maker_configuration.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>The destination type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DestinationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The destination type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DestinationType> {
@@ -63,8 +62,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
-        self.s3_configuration = input;
-        self
+        self.s3_configuration = input; self
     }
     /// <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
@@ -77,8 +75,7 @@ impl DestinationConfigurationBuilder {
     }
     /// <p>The metadata transfer job Amazon Web Services IoT TwinMaker configuration.</p>
     pub fn set_iot_twin_maker_configuration(mut self, input: ::std::option::Option<crate::types::IotTwinMakerDestinationConfiguration>) -> Self {
-        self.iot_twin_maker_configuration = input;
-        self
+        self.iot_twin_maker_configuration = input; self
     }
     /// <p>The metadata transfer job Amazon Web Services IoT TwinMaker configuration.</p>
     pub fn get_iot_twin_maker_configuration(&self) -> &::std::option::Option<crate::types::IotTwinMakerDestinationConfiguration> {
@@ -88,15 +85,19 @@ impl DestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DestinationConfigurationBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::DestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DestinationConfiguration {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building DestinationConfiguration",
-                )
-            })?,
-            s3_configuration: self.s3_configuration,
-            iot_twin_maker_configuration: self.iot_twin_maker_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DestinationConfiguration {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building DestinationConfiguration")
+                    )?
+                ,
+                s3_configuration: self.s3_configuration
+                ,
+                iot_twin_maker_configuration: self.iot_twin_maker_configuration
+                ,
+            }
+        )
     }
 }
+

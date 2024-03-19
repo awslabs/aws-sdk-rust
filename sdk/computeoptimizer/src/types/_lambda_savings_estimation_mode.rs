@@ -3,13 +3,13 @@
 /// <p>Describes the savings estimation used for calculating savings opportunity for Lambda functions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaSavingsEstimationMode {
+pub struct LambdaSavingsEstimationMode  {
     /// <p>Describes the source for calculation of savings opportunity for Lambda functions.</p>
     pub source: ::std::option::Option<crate::types::LambdaSavingsEstimationModeSource>,
 }
-impl LambdaSavingsEstimationMode {
+impl  LambdaSavingsEstimationMode  {
     /// <p>Describes the source for calculation of savings opportunity for Lambda functions.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::LambdaSavingsEstimationModeSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::LambdaSavingsEstimationModeSource> {
         self.source.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LambdaSavingsEstimationModeBuilder {
     }
     /// <p>Describes the source for calculation of savings opportunity for Lambda functions.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::LambdaSavingsEstimationModeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Describes the source for calculation of savings opportunity for Lambda functions.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::LambdaSavingsEstimationModeSource> {
@@ -43,6 +42,10 @@ impl LambdaSavingsEstimationModeBuilder {
     }
     /// Consumes the builder and constructs a [`LambdaSavingsEstimationMode`](crate::types::LambdaSavingsEstimationMode).
     pub fn build(self) -> crate::types::LambdaSavingsEstimationMode {
-        crate::types::LambdaSavingsEstimationMode { source: self.source }
+        crate::types::LambdaSavingsEstimationMode {
+            source: self.source
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
@@ -18,7 +18,7 @@ pub struct CreateClusterInput {
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
@@ -48,13 +48,13 @@ pub struct CreateClusterInput {
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub snapshot_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p>Example: 05:00-09:00</p>
     /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
@@ -68,21 +68,21 @@ pub struct CreateClusterInput {
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub data_tiering: ::std::option::Option<bool>,
 }
-impl CreateClusterInput {
+impl  CreateClusterInput  {
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-    pub fn node_type(&self) -> ::std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>An optional description of the cluster.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of shards the cluster will contain. The default value is 1.</p>
@@ -94,14 +94,15 @@ impl CreateClusterInput {
         self.num_replicas_per_shard
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
-    pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>A list of security group names to associate with this cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -122,7 +123,7 @@ impl CreateClusterInput {
     /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
-    pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<& str> {
         self.maintenance_window.as_deref()
     }
     /// <p>The port number on which each of the nodes accepts connections.</p>
@@ -130,7 +131,7 @@ impl CreateClusterInput {
         self.port
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
@@ -138,17 +139,18 @@ impl CreateClusterInput {
         self.tls_enabled
     }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshot_arns.is_none()`.
-    pub fn snapshot_arns(&self) -> &[::std::string::String] {
-        self.snapshot_arns.as_deref().unwrap_or_default()
+    pub fn snapshot_arns(&self) -> & [::std::string::String] {
+        self.snapshot_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -156,23 +158,24 @@ impl CreateClusterInput {
         self.snapshot_retention_limit
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p>Example: 05:00-09:00</p>
     /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_window(&self) -> ::std::option::Option<& str> {
         self.snapshot_window.as_deref()
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
-    pub fn acl_name(&self) -> ::std::option::Option<&str> {
+    pub fn acl_name(&self) -> ::std::option::Option<& str> {
         self.acl_name.as_deref()
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
@@ -202,16 +205,16 @@ pub struct CreateClusterInputBuilder {
     pub(crate) num_shards: ::std::option::Option<i32>,
     pub(crate) num_replicas_per_shard: ::std::option::Option<i32>,
     pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tls_enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) snapshot_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) snapshot_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
     pub(crate) acl_name: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
@@ -227,8 +230,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +244,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +257,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -270,8 +270,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>An optional description of the cluster.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of the cluster.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,8 +283,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of shards the cluster will contain. The default value is 1.</p>
     pub fn set_num_shards(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_shards = input;
-        self
+        self.num_shards = input; self
     }
     /// <p>The number of shards the cluster will contain. The default value is 1.</p>
     pub fn get_num_shards(&self) -> &::std::option::Option<i32> {
@@ -298,8 +296,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
     pub fn set_num_replicas_per_shard(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_replicas_per_shard = input;
-        self
+        self.num_replicas_per_shard = input; self
     }
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5.</p>
     pub fn get_num_replicas_per_shard(&self) -> &::std::option::Option<i32> {
@@ -312,8 +309,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub fn set_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_group_name = input;
-        self
+        self.subnet_group_name = input; self
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -326,17 +322,16 @@ impl CreateClusterInputBuilder {
     /// <p>A list of security group names to associate with this cluster.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -382,8 +377,7 @@ impl CreateClusterInputBuilder {
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.maintenance_window = input;
-        self
+        self.maintenance_window = input; self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -414,8 +408,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The port number on which each of the nodes accepts connections.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which each of the nodes accepts connections.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -428,8 +421,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -442,8 +434,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
     pub fn set_tls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.tls_enabled = input;
-        self
+        self.tls_enabled = input; self
     }
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
     pub fn get_tls_enabled(&self) -> &::std::option::Option<bool> {
@@ -456,8 +447,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -470,17 +460,16 @@ impl CreateClusterInputBuilder {
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
     pub fn snapshot_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.snapshot_arns.unwrap_or_default();
-        v.push(input.into());
-        self.snapshot_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.snapshot_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.snapshot_arns = input;
-        self
+    pub fn set_snapshot_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.snapshot_arns = input; self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.snapshot_arns
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
@@ -490,8 +479,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -504,8 +492,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.snapshot_retention_limit = input;
-        self
+        self.snapshot_retention_limit = input; self
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
@@ -518,17 +505,16 @@ impl CreateClusterInputBuilder {
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
@@ -542,8 +528,7 @@ impl CreateClusterInputBuilder {
     /// <p>Example: 05:00-09:00</p>
     /// <p>If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn set_snapshot_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_window = input;
-        self
+        self.snapshot_window = input; self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p>Example: 05:00-09:00</p>
@@ -559,8 +544,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.acl_name = input;
-        self
+        self.acl_name = input; self
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -573,8 +557,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -587,8 +570,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -601,40 +583,62 @@ impl CreateClusterInputBuilder {
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn set_data_tiering(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.data_tiering = input;
-        self
+        self.data_tiering = input; self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn get_data_tiering(&self) -> &::std::option::Option<bool> {
         &self.data_tiering
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            cluster_name: self.cluster_name,
-            node_type: self.node_type,
-            parameter_group_name: self.parameter_group_name,
-            description: self.description,
-            num_shards: self.num_shards,
-            num_replicas_per_shard: self.num_replicas_per_shard,
-            subnet_group_name: self.subnet_group_name,
-            security_group_ids: self.security_group_ids,
-            maintenance_window: self.maintenance_window,
-            port: self.port,
-            sns_topic_arn: self.sns_topic_arn,
-            tls_enabled: self.tls_enabled,
-            kms_key_id: self.kms_key_id,
-            snapshot_arns: self.snapshot_arns,
-            snapshot_name: self.snapshot_name,
-            snapshot_retention_limit: self.snapshot_retention_limit,
-            tags: self.tags,
-            snapshot_window: self.snapshot_window,
-            acl_name: self.acl_name,
-            engine_version: self.engine_version,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            data_tiering: self.data_tiering,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                cluster_name: self.cluster_name
+                ,
+                node_type: self.node_type
+                ,
+                parameter_group_name: self.parameter_group_name
+                ,
+                description: self.description
+                ,
+                num_shards: self.num_shards
+                ,
+                num_replicas_per_shard: self.num_replicas_per_shard
+                ,
+                subnet_group_name: self.subnet_group_name
+                ,
+                security_group_ids: self.security_group_ids
+                ,
+                maintenance_window: self.maintenance_window
+                ,
+                port: self.port
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                tls_enabled: self.tls_enabled
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                snapshot_arns: self.snapshot_arns
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_retention_limit: self.snapshot_retention_limit
+                ,
+                tags: self.tags
+                ,
+                snapshot_window: self.snapshot_window
+                ,
+                acl_name: self.acl_name
+                ,
+                engine_version: self.engine_version
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                data_tiering: self.data_tiering
+                ,
+            }
+        )
     }
 }
+

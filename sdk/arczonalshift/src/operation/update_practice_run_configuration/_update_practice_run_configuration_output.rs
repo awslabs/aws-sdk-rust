@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePracticeRunConfigurationOutput {
+pub struct UpdatePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you updated the practice run for.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the resource that you updated the practice run for.</p>
@@ -13,31 +13,29 @@ pub struct UpdatePracticeRunConfigurationOutput {
     pub practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdatePracticeRunConfigurationOutput {
+impl  UpdatePracticeRunConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource that you updated the practice run for.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the resource that you updated the practice run for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The zonal autoshift status for the resource that you updated the practice run for.</p>
-    pub fn zonal_autoshift_status(&self) -> &crate::types::ZonalAutoshiftStatus {
+    pub fn zonal_autoshift_status(&self) -> & crate::types::ZonalAutoshiftStatus {
         &self.zonal_autoshift_status
     }
     /// <p>The practice run configuration that was updated.</p>
-    pub fn practice_run_configuration(&self) -> ::std::option::Option<&crate::types::PracticeRunConfiguration> {
+    pub fn practice_run_configuration(&self) -> ::std::option::Option<& crate::types::PracticeRunConfiguration> {
         self.practice_run_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePracticeRunConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePracticeRunConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePracticeRunConfigurationOutput`](crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput).
     pub fn builder() -> crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder {
@@ -64,8 +62,7 @@ impl UpdatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you updated the practice run for.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource that you updated the practice run for.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl UpdatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The name of the resource that you updated the practice run for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource that you updated the practice run for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl UpdatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The zonal autoshift status for the resource that you updated the practice run for.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
-        self.zonal_autoshift_status = input;
-        self
+        self.zonal_autoshift_status = input; self
     }
     /// <p>The zonal autoshift status for the resource that you updated the practice run for.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
@@ -109,56 +104,49 @@ impl UpdatePracticeRunConfigurationOutputBuilder {
     }
     /// <p>The practice run configuration that was updated.</p>
     pub fn set_practice_run_configuration(mut self, input: ::std::option::Option<crate::types::PracticeRunConfiguration>) -> Self {
-        self.practice_run_configuration = input;
-        self
+        self.practice_run_configuration = input; self
     }
     /// <p>The practice run configuration that was updated.</p>
     pub fn get_practice_run_configuration(&self) -> &::std::option::Option<crate::types::PracticeRunConfiguration> {
         &self.practice_run_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePracticeRunConfigurationOutput`](crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder::arn)
     /// - [`name`](crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder::name)
     /// - [`zonal_autoshift_status`](crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder::zonal_autoshift_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationOutput {
-                arn: self.arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "arn",
-                        "arn was not specified but it is required when building UpdatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                name: self.name.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "name",
-                        "name was not specified but it is required when building UpdatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                zonal_autoshift_status: self.zonal_autoshift_status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "zonal_autoshift_status",
-                        "zonal_autoshift_status was not specified but it is required when building UpdatePracticeRunConfigurationOutput",
-                    )
-                })?,
-                practice_run_configuration: self.practice_run_configuration,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building UpdatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building UpdatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                zonal_autoshift_status: self.zonal_autoshift_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("zonal_autoshift_status", "zonal_autoshift_status was not specified but it is required when building UpdatePracticeRunConfigurationOutput")
+                    )?
+                ,
+                practice_run_configuration: self.practice_run_configuration
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

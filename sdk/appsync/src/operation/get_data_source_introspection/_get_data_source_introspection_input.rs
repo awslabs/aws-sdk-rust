@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataSourceIntrospectionInput {
+pub struct GetDataSourceIntrospectionInput  {
     /// <p>The introspection ID. Each introspection contains a unique ID that can be used to reference the instrospection record.</p>
     pub introspection_id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
@@ -12,9 +12,9 @@ pub struct GetDataSourceIntrospectionInput {
     /// <p>The maximum number of introspected types that will be returned in a single response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetDataSourceIntrospectionInput {
+impl  GetDataSourceIntrospectionInput  {
     /// <p>The introspection ID. Each introspection contains a unique ID that can be used to reference the instrospection record.</p>
-    pub fn introspection_id(&self) -> ::std::option::Option<&str> {
+    pub fn introspection_id(&self) -> ::std::option::Option<& str> {
         self.introspection_id.as_deref()
     }
     /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
@@ -22,7 +22,7 @@ impl GetDataSourceIntrospectionInput {
         self.include_models_sdl
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of introspected types that will be returned in a single response.</p>
@@ -55,8 +55,7 @@ impl GetDataSourceIntrospectionInputBuilder {
     }
     /// <p>The introspection ID. Each introspection contains a unique ID that can be used to reference the instrospection record.</p>
     pub fn set_introspection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.introspection_id = input;
-        self
+        self.introspection_id = input; self
     }
     /// <p>The introspection ID. Each introspection contains a unique ID that can be used to reference the instrospection record.</p>
     pub fn get_introspection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GetDataSourceIntrospectionInputBuilder {
     }
     /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
     pub fn set_include_models_sdl(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_models_sdl = input;
-        self
+        self.include_models_sdl = input; self
     }
     /// <p>A boolean flag that determines whether SDL should be generated for introspected types or not. If set to <code>true</code>, each model will contain an <code>sdl</code> property that contains the SDL for that type. The SDL only contains the type data and no additional metadata or directives.</p>
     pub fn get_include_models_sdl(&self) -> &::std::option::Option<bool> {
@@ -83,8 +81,7 @@ impl GetDataSourceIntrospectionInputBuilder {
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Determines the number of types to be returned in a single response before paginating. This value is typically taken from <code>nextToken</code> value from the previous response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,25 +94,26 @@ impl GetDataSourceIntrospectionInputBuilder {
     }
     /// <p>The maximum number of introspected types that will be returned in a single response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of introspected types that will be returned in a single response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetDataSourceIntrospectionInput`](crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput {
-            introspection_id: self.introspection_id,
-            include_models_sdl: self.include_models_sdl,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_data_source_introspection::GetDataSourceIntrospectionInput {
+                introspection_id: self.introspection_id
+                ,
+                include_models_sdl: self.include_models_sdl
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

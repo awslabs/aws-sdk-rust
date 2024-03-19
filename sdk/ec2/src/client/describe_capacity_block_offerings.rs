@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCapacityBlockOfferings`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`instance_type(impl Into<String>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::instance_type) / [`set_instance_type(Option<String>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_instance_type):<br>required: **true**<br><p>The type of instance for which the Capacity Block offering reserves capacity.</p><br>
     ///   - [`instance_count(i32)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::instance_count) / [`set_instance_count(Option<i32>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_instance_count):<br>required: **true**<br><p>The number of instances for which to reserve capacity.</p><br>
@@ -12,13 +12,12 @@ impl super::Client {
     ///   - [`capacity_duration_hours(i32)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::capacity_duration_hours) / [`set_capacity_duration_hours(Option<i32>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_capacity_duration_hours):<br>required: **true**<br><p>The number of hours for which to reserve Capacity Block.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p><br>
-    /// - On success, responds with [`DescribeCapacityBlockOfferingsOutput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput) with field(s):
+                            /// - On success, responds with [`DescribeCapacityBlockOfferingsOutput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput) with field(s):
     ///   - [`capacity_block_offerings(Option<Vec::<CapacityBlockOffering>>)`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput::capacity_block_offerings): <p>The recommended Capacity Block offering for the dates specified.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeCapacityBlockOfferingsError>`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError)
-    pub fn describe_capacity_block_offerings(
-        &self,
-    ) -> crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder {
-        crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeCapacityBlockOfferingsError>`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsError)
+    pub fn describe_capacity_block_offerings(&self) -> crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder {
+                                crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

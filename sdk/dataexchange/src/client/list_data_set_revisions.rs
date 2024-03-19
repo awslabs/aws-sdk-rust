@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSetRevisions`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`data_set_id(impl Into<String>)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results returned by a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token value retrieved from a previous call to access the next page of results.</p><br>
-    /// - On success, responds with [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput) with field(s):
+                            /// - On success, responds with [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`revisions(Option<Vec::<RevisionEntry>>)`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput::revisions): <p>The asset objects listed by the request.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetRevisionsError>`](crate::operation::list_data_set_revisions::ListDataSetRevisionsError)
+                            /// - On failure, responds with [`SdkError<ListDataSetRevisionsError>`](crate::operation::list_data_set_revisions::ListDataSetRevisionsError)
     pub fn list_data_set_revisions(&self) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder {
-        crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

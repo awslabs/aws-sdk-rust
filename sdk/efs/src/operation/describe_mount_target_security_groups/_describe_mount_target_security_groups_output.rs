@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMountTargetSecurityGroupsOutput {
+pub struct DescribeMountTargetSecurityGroupsOutput  {
     /// <p>An array of security groups.</p>
-    pub security_groups: ::std::vec::Vec<::std::string::String>,
+    pub security_groups: ::std::vec::Vec::<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeMountTargetSecurityGroupsOutput {
+impl  DescribeMountTargetSecurityGroupsOutput  {
     /// <p>An array of security groups.</p>
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.security_groups.deref()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.security_groups.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeMountTargetSecurityGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeMountTargetSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
     pub fn builder() -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder {
@@ -30,7 +29,7 @@ impl DescribeMountTargetSecurityGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsOutputBuilder {
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeMountTargetSecurityGroupsOutputBuilder {
@@ -41,47 +40,41 @@ impl DescribeMountTargetSecurityGroupsOutputBuilder {
     /// <p>An array of security groups.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of security groups.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>An array of security groups.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsOutput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`security_groups`](crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder::security_groups)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsOutput {
-                security_groups: self.security_groups.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "security_groups",
-                        "security_groups was not specified but it is required when building DescribeMountTargetSecurityGroupsOutput",
-                    )
-                })?,
+                security_groups: self.security_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("security_groups", "security_groups was not specified but it is required when building DescribeMountTargetSecurityGroupsOutput")
+                    )?
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

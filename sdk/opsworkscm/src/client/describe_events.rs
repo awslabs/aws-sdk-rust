@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEvents`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`server_name(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::server_name) / [`set_server_name(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_server_name):<br>required: **true**<br><p>The name of the server for which you want to view events.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_next_token):<br>required: **false**<br><p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_events::builders::DescribeEventsFluentBuilder::set_max_results):<br>required: **false**<br><p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p><br>
-    /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
+                            /// - On success, responds with [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput) with field(s):
     ///   - [`server_events(Option<Vec::<ServerEvent>>)`](crate::operation::describe_events::DescribeEventsOutput::server_events): <p>Contains the response to a <code>DescribeEvents</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_events::DescribeEventsOutput::next_token): <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
+                            /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::operation::describe_events::DescribeEventsError)
     pub fn describe_events(&self) -> crate::operation::describe_events::builders::DescribeEventsFluentBuilder {
-        crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_events::builders::DescribeEventsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

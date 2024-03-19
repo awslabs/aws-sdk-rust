@@ -3,21 +3,20 @@
 /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailureDescription {
+pub struct FailureDescription  {
     /// <p>The type of error that caused the failure.</p>
     pub r#type: crate::types::DeliveryStreamFailureType,
     /// <p>A message providing details about the error that caused the failure.</p>
     pub details: ::std::string::String,
 }
-impl FailureDescription {
+impl  FailureDescription  {
     /// <p>The type of error that caused the failure.</p>
-    pub fn r#type(&self) -> &crate::types::DeliveryStreamFailureType {
+    pub fn r#type(&self) -> & crate::types::DeliveryStreamFailureType {
         &self.r#type
     }
     /// <p>A message providing details about the error that caused the failure.</p>
-    pub fn details(&self) -> &str {
-        use std::ops::Deref;
-        self.details.deref()
+    pub fn details(&self) -> & str {
+        use std::ops::Deref; self.details.deref()
     }
 }
 impl FailureDescription {
@@ -43,8 +42,7 @@ impl FailureDescriptionBuilder {
     }
     /// <p>The type of error that caused the failure.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamFailureType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of error that caused the failure.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamFailureType> {
@@ -58,8 +56,7 @@ impl FailureDescriptionBuilder {
     }
     /// <p>A message providing details about the error that caused the failure.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>A message providing details about the error that caused the failure.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,19 +67,20 @@ impl FailureDescriptionBuilder {
     /// - [`r#type`](crate::types::builders::FailureDescriptionBuilder::r#type)
     /// - [`details`](crate::types::builders::FailureDescriptionBuilder::details)
     pub fn build(self) -> ::std::result::Result<crate::types::FailureDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FailureDescription {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building FailureDescription",
-                )
-            })?,
-            details: self.details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "details",
-                    "details was not specified but it is required when building FailureDescription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FailureDescription {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building FailureDescription")
+                    )?
+                ,
+                details: self.details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("details", "details was not specified but it is required when building FailureDescription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

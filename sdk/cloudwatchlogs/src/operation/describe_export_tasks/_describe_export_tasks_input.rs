@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeExportTasksInput {
+pub struct DescribeExportTasksInput  {
     /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
@@ -12,17 +12,17 @@ pub struct DescribeExportTasksInput {
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: ::std::option::Option<i32>,
 }
-impl DescribeExportTasksInput {
+impl  DescribeExportTasksInput  {
     /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
-    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ExportTaskStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<& crate::types::ExportTaskStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
@@ -54,8 +54,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ExportTaskStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code of the export task. Specifying a status code filters the results to zero or more export tasks.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ExportTaskStatusCode> {
@@ -82,8 +80,7 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,23 +93,26 @@ impl DescribeExportTasksInputBuilder {
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_export_tasks::DescribeExportTasksInput {
-            task_id: self.task_id,
-            status_code: self.status_code,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_export_tasks::DescribeExportTasksInput {
+                task_id: self.task_id
+                ,
+                status_code: self.status_code
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

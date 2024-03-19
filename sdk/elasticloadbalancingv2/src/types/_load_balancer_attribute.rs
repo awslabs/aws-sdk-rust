@@ -3,7 +3,7 @@
 /// <p>Information about a load balancer attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoadBalancerAttribute {
+pub struct LoadBalancerAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
@@ -69,7 +69,7 @@ pub struct LoadBalancerAttribute {
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl LoadBalancerAttribute {
+impl  LoadBalancerAttribute  {
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
     /// <ul>
@@ -131,11 +131,11 @@ impl LoadBalancerAttribute {
     /// <li>
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -281,8 +281,7 @@ impl LoadBalancerAttributeBuilder {
     /// <p><code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code> with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal affinity.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the attribute.</p>
     /// <p>The following attributes are supported by all load balancers:</p>
@@ -355,8 +354,7 @@ impl LoadBalancerAttributeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -365,8 +363,11 @@ impl LoadBalancerAttributeBuilder {
     /// Consumes the builder and constructs a [`LoadBalancerAttribute`](crate::types::LoadBalancerAttribute).
     pub fn build(self) -> crate::types::LoadBalancerAttribute {
         crate::types::LoadBalancerAttribute {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

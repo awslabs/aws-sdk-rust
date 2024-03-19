@@ -3,19 +3,19 @@
 /// <p>Network analyzer configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkAnalyzerConfigurations {
+pub struct NetworkAnalyzerConfigurations  {
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the network analyzer configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl NetworkAnalyzerConfigurations {
+impl  NetworkAnalyzerConfigurations  {
     /// <p>The Amazon Resource Name of the new resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NetworkAnalyzerConfigurationsBuilder {
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name of the new resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NetworkAnalyzerConfigurationsBuilder {
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NetworkAnalyzerConfigurationsBuilder {
     /// Consumes the builder and constructs a [`NetworkAnalyzerConfigurations`](crate::types::NetworkAnalyzerConfigurations).
     pub fn build(self) -> crate::types::NetworkAnalyzerConfigurations {
         crate::types::NetworkAnalyzerConfigurations {
-            arn: self.arn,
-            name: self.name,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

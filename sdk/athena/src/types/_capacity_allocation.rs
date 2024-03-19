@@ -3,7 +3,7 @@
 /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityAllocation {
+pub struct CapacityAllocation  {
     /// <p>The status of the capacity allocation.</p>
     pub status: crate::types::CapacityAllocationStatus,
     /// <p>The status message of the capacity allocation.</p>
@@ -13,21 +13,21 @@ pub struct CapacityAllocation {
     /// <p>The time when the capacity allocation request was completed.</p>
     pub request_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CapacityAllocation {
+impl  CapacityAllocation  {
     /// <p>The status of the capacity allocation.</p>
-    pub fn status(&self) -> &crate::types::CapacityAllocationStatus {
+    pub fn status(&self) -> & crate::types::CapacityAllocationStatus {
         &self.status
     }
     /// <p>The status message of the capacity allocation.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The time when the capacity allocation was requested.</p>
-    pub fn request_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn request_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.request_time
     }
     /// <p>The time when the capacity allocation request was completed.</p>
-    pub fn request_completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn request_completion_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.request_completion_time.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The status of the capacity allocation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CapacityAllocationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the capacity allocation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CapacityAllocationStatus> {
@@ -70,8 +69,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The status message of the capacity allocation.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the capacity allocation.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The time when the capacity allocation was requested.</p>
     pub fn set_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.request_time = input;
-        self
+        self.request_time = input; self
     }
     /// <p>The time when the capacity allocation was requested.</p>
     pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -99,8 +96,7 @@ impl CapacityAllocationBuilder {
     }
     /// <p>The time when the capacity allocation request was completed.</p>
     pub fn set_request_completion_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.request_completion_time = input;
-        self
+        self.request_completion_time = input; self
     }
     /// <p>The time when the capacity allocation request was completed.</p>
     pub fn get_request_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,21 +107,24 @@ impl CapacityAllocationBuilder {
     /// - [`status`](crate::types::builders::CapacityAllocationBuilder::status)
     /// - [`request_time`](crate::types::builders::CapacityAllocationBuilder::request_time)
     pub fn build(self) -> ::std::result::Result<crate::types::CapacityAllocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CapacityAllocation {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CapacityAllocation",
-                )
-            })?,
-            status_message: self.status_message,
-            request_time: self.request_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "request_time",
-                    "request_time was not specified but it is required when building CapacityAllocation",
-                )
-            })?,
-            request_completion_time: self.request_completion_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CapacityAllocation {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CapacityAllocation")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+                request_time: self.request_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("request_time", "request_time was not specified but it is required when building CapacityAllocation")
+                    )?
+                ,
+                request_completion_time: self.request_completion_time
+                ,
+            }
+        )
     }
 }
+

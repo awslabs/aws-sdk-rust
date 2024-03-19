@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrainingJobsInput {
+pub struct ListTrainingJobsInput  {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of training jobs to return in the response.</p>
@@ -26,9 +26,9 @@ pub struct ListTrainingJobsInput {
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
     pub warm_pool_status_equals: ::std::option::Option<crate::types::WarmPoolResourceStatus>,
 }
-impl ListTrainingJobsInput {
+impl  ListTrainingJobsInput  {
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of training jobs to return in the response.</p>
@@ -36,39 +36,39 @@ impl ListTrainingJobsInput {
         self.max_results
     }
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
-    pub fn last_modified_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
-    pub fn last_modified_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
-    pub fn status_equals(&self) -> ::std::option::Option<&crate::types::TrainingJobStatus> {
+    pub fn status_equals(&self) -> ::std::option::Option<& crate::types::TrainingJobStatus> {
         self.status_equals.as_ref()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
-    pub fn warm_pool_status_equals(&self) -> ::std::option::Option<&crate::types::WarmPoolResourceStatus> {
+    pub fn warm_pool_status_equals(&self) -> ::std::option::Option<& crate::types::WarmPoolResourceStatus> {
         self.warm_pool_status_equals.as_ref()
     }
 }
@@ -103,8 +103,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>The maximum number of training jobs to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of training jobs to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -131,8 +129,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +142,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +155,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
     pub fn set_last_modified_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_after = input;
-        self
+        self.last_modified_time_after = input; self
     }
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
     pub fn get_last_modified_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +168,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
     pub fn set_last_modified_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time_before = input;
-        self
+        self.last_modified_time_before = input; self
     }
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
     pub fn get_last_modified_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +181,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +194,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::TrainingJobStatus>) -> Self {
-        self.status_equals = input;
-        self
+        self.status_equals = input; self
     }
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
@@ -215,8 +207,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortBy> {
@@ -229,8 +220,7 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -243,29 +233,40 @@ impl ListTrainingJobsInputBuilder {
     }
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
     pub fn set_warm_pool_status_equals(mut self, input: ::std::option::Option<crate::types::WarmPoolResourceStatus>) -> Self {
-        self.warm_pool_status_equals = input;
-        self
+        self.warm_pool_status_equals = input; self
     }
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
     pub fn get_warm_pool_status_equals(&self) -> &::std::option::Option<crate::types::WarmPoolResourceStatus> {
         &self.warm_pool_status_equals
     }
     /// Consumes the builder and constructs a [`ListTrainingJobsInput`](crate::operation::list_training_jobs::ListTrainingJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_training_jobs::ListTrainingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_training_jobs::ListTrainingJobsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            creation_time_after: self.creation_time_after,
-            creation_time_before: self.creation_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            name_contains: self.name_contains,
-            status_equals: self.status_equals,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            warm_pool_status_equals: self.warm_pool_status_equals,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_training_jobs::ListTrainingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_training_jobs::ListTrainingJobsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                name_contains: self.name_contains
+                ,
+                status_equals: self.status_equals
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                warm_pool_status_equals: self.warm_pool_status_equals
+                ,
+            }
+        )
     }
 }
+

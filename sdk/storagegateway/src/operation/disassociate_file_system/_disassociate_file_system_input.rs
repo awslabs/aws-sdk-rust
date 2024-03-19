@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFileSystemInput {
+pub struct DisassociateFileSystemInput  {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
     pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub force_delete: ::std::option::Option<bool>,
 }
-impl DisassociateFileSystemInput {
+impl  DisassociateFileSystemInput  {
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
-    pub fn file_system_association_arn(&self) -> ::std::option::Option<&str> {
+    pub fn file_system_association_arn(&self) -> ::std::option::Option<& str> {
         self.file_system_association_arn.as_deref()
     }
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
@@ -41,8 +41,7 @@ impl DisassociateFileSystemInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
     pub fn set_file_system_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_system_association_arn = input;
-        self
+        self.file_system_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
     pub fn get_file_system_association_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DisassociateFileSystemInputBuilder {
     }
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
     pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_file_system::DisassociateFileSystemInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_file_system::DisassociateFileSystemInput {
-            file_system_association_arn: self.file_system_association_arn,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_file_system::DisassociateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_file_system::DisassociateFileSystemInput {
+                file_system_association_arn: self.file_system_association_arn
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

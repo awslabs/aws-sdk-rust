@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateStudioInput {
+pub struct UpdateStudioInput  {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
@@ -10,37 +10,38 @@ pub struct UpdateStudioInput {
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub default_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateStudioInput {
+impl  UpdateStudioInput  {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
-    pub fn studio_id(&self) -> ::std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<& str> {
         self.studio_id.as_deref()
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    pub fn default_s3_location(&self) -> ::std::option::Option<&str> {
+    pub fn default_s3_location(&self) -> ::std::option::Option<& str> {
         self.default_s3_location.as_deref()
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
-    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
 }
@@ -58,7 +59,7 @@ pub struct UpdateStudioInputBuilder {
     pub(crate) studio_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) default_s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
@@ -71,8 +72,7 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +111,16 @@ impl UpdateStudioInputBuilder {
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
@@ -133,8 +130,7 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub fn set_default_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_s3_location = input;
-        self
+        self.default_s3_location = input; self
     }
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,24 +143,30 @@ impl UpdateStudioInputBuilder {
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key_arn = input;
-        self
+        self.encryption_key_arn = input; self
     }
     /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
-            studio_id: self.studio_id,
-            name: self.name,
-            description: self.description,
-            subnet_ids: self.subnet_ids,
-            default_s3_location: self.default_s3_location,
-            encryption_key_arn: self.encryption_key_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_studio::UpdateStudioInput {
+                studio_id: self.studio_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                default_s3_location: self.default_s3_location
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+            }
+        )
     }
 }
+

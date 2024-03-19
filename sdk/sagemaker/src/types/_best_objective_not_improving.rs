@@ -3,11 +3,11 @@
 /// <p>A structure that keeps track of which training jobs launched by your hyperparameter tuning job are not improving model performance as evaluated against an objective function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BestObjectiveNotImproving {
+pub struct BestObjectiveNotImproving  {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }
-impl BestObjectiveNotImproving {
+impl  BestObjectiveNotImproving  {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub fn max_number_of_training_jobs_not_improving(&self) -> ::std::option::Option<i32> {
         self.max_number_of_training_jobs_not_improving
@@ -34,8 +34,7 @@ impl BestObjectiveNotImprovingBuilder {
     }
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub fn set_max_number_of_training_jobs_not_improving(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_number_of_training_jobs_not_improving = input;
-        self
+        self.max_number_of_training_jobs_not_improving = input; self
     }
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub fn get_max_number_of_training_jobs_not_improving(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl BestObjectiveNotImprovingBuilder {
     /// Consumes the builder and constructs a [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
     pub fn build(self) -> crate::types::BestObjectiveNotImproving {
         crate::types::BestObjectiveNotImproving {
-            max_number_of_training_jobs_not_improving: self.max_number_of_training_jobs_not_improving,
+            max_number_of_training_jobs_not_improving: self.max_number_of_training_jobs_not_improving
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes the market (purchasing) option for the instances.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceMarketOptionsRequest {
+pub struct InstanceMarketOptionsRequest  {
     /// <p>The market type.</p>
     pub market_type: ::std::option::Option<crate::types::MarketType>,
     /// <p>The options for Spot Instances.</p>
     pub spot_options: ::std::option::Option<crate::types::SpotMarketOptions>,
 }
-impl InstanceMarketOptionsRequest {
+impl  InstanceMarketOptionsRequest  {
     /// <p>The market type.</p>
-    pub fn market_type(&self) -> ::std::option::Option<&crate::types::MarketType> {
+    pub fn market_type(&self) -> ::std::option::Option<& crate::types::MarketType> {
         self.market_type.as_ref()
     }
     /// <p>The options for Spot Instances.</p>
-    pub fn spot_options(&self) -> ::std::option::Option<&crate::types::SpotMarketOptions> {
+    pub fn spot_options(&self) -> ::std::option::Option<& crate::types::SpotMarketOptions> {
         self.spot_options.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InstanceMarketOptionsRequestBuilder {
     }
     /// <p>The market type.</p>
     pub fn set_market_type(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
-        self.market_type = input;
-        self
+        self.market_type = input; self
     }
     /// <p>The market type.</p>
     pub fn get_market_type(&self) -> &::std::option::Option<crate::types::MarketType> {
@@ -55,8 +54,7 @@ impl InstanceMarketOptionsRequestBuilder {
     }
     /// <p>The options for Spot Instances.</p>
     pub fn set_spot_options(mut self, input: ::std::option::Option<crate::types::SpotMarketOptions>) -> Self {
-        self.spot_options = input;
-        self
+        self.spot_options = input; self
     }
     /// <p>The options for Spot Instances.</p>
     pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::SpotMarketOptions> {
@@ -65,8 +63,11 @@ impl InstanceMarketOptionsRequestBuilder {
     /// Consumes the builder and constructs a [`InstanceMarketOptionsRequest`](crate::types::InstanceMarketOptionsRequest).
     pub fn build(self) -> crate::types::InstanceMarketOptionsRequest {
         crate::types::InstanceMarketOptionsRequest {
-            market_type: self.market_type,
-            spot_options: self.spot_options,
+            market_type: self.market_type
+            ,
+            spot_options: self.spot_options
+            ,
         }
     }
 }
+

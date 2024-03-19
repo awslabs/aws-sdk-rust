@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
+pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput  {
     /// <p>Information about the quota increase request.</p>
     pub service_quota_increase_request_in_template: ::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
     _request_id: Option<String>,
 }
-impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
+impl  GetServiceQuotaIncreaseRequestFromTemplateOutput  {
     /// <p>Information about the quota increase request.</p>
-    pub fn service_quota_increase_request_in_template(&self) -> ::std::option::Option<&crate::types::ServiceQuotaIncreaseRequestInTemplate> {
+    pub fn service_quota_increase_request_in_template(&self) -> ::std::option::Option<& crate::types::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetServiceQuotaIncreaseRequestFromTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
-        crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
+        crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateOutputBuilder::default()
     }
 }
 
@@ -41,31 +39,29 @@ impl GetServiceQuotaIncreaseRequestFromTemplateOutputBuilder {
         self
     }
     /// <p>Information about the quota increase request.</p>
-    pub fn set_service_quota_increase_request_in_template(
-        mut self,
-        input: ::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>,
-    ) -> Self {
-        self.service_quota_increase_request_in_template = input;
-        self
+    pub fn set_service_quota_increase_request_in_template(mut self, input: ::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate>) -> Self {
+        self.service_quota_increase_request_in_template = input; self
     }
     /// <p>Information about the quota increase request.</p>
     pub fn get_service_quota_increase_request_in_template(&self) -> &::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate> {
         &self.service_quota_increase_request_in_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateOutput).
     pub fn build(self) -> crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateOutput {
         crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateOutput {
-            service_quota_increase_request_in_template: self.service_quota_increase_request_in_template,
+            service_quota_increase_request_in_template: self.service_quota_increase_request_in_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

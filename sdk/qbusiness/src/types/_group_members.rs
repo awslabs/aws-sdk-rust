@@ -3,24 +3,26 @@
 /// <p>A list of users or sub groups that belong to a group. This is for generating Amazon Q chat results only from document a user has access to.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupMembers {
+pub struct GroupMembers  {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
+    pub member_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>,
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    pub member_users: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>,
 }
-impl GroupMembers {
+impl  GroupMembers  {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_groups.is_none()`.
-    pub fn member_groups(&self) -> &[crate::types::MemberGroup] {
-        self.member_groups.as_deref().unwrap_or_default()
+    pub fn member_groups(&self) -> & [crate::types::MemberGroup] {
+        self.member_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_users.is_none()`.
-    pub fn member_users(&self) -> &[crate::types::MemberUser] {
-        self.member_users.as_deref().unwrap_or_default()
+    pub fn member_users(&self) -> & [crate::types::MemberUser] {
+        self.member_users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GroupMembers {
@@ -34,8 +36,8 @@ impl GroupMembers {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupMembersBuilder {
-    pub(crate) member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
-    pub(crate) member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    pub(crate) member_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>,
+    pub(crate) member_users: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>,
 }
 impl GroupMembersBuilder {
     /// Appends an item to `member_groups`.
@@ -45,17 +47,16 @@ impl GroupMembersBuilder {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
     pub fn member_groups(mut self, input: crate::types::MemberGroup) -> Self {
         let mut v = self.member_groups.unwrap_or_default();
-        v.push(input);
-        self.member_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub fn set_member_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>) -> Self {
-        self.member_groups = input;
-        self
+    pub fn set_member_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>) -> Self {
+        self.member_groups = input; self
     }
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub fn get_member_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>> {
+    pub fn get_member_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>> {
         &self.member_groups
     }
     /// Appends an item to `member_users`.
@@ -65,24 +66,26 @@ impl GroupMembersBuilder {
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
     pub fn member_users(mut self, input: crate::types::MemberUser) -> Self {
         let mut v = self.member_users.unwrap_or_default();
-        v.push(input);
-        self.member_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub fn set_member_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>) -> Self {
-        self.member_users = input;
-        self
+    pub fn set_member_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>) -> Self {
+        self.member_users = input; self
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub fn get_member_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberUser>> {
+    pub fn get_member_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>> {
         &self.member_users
     }
     /// Consumes the builder and constructs a [`GroupMembers`](crate::types::GroupMembers).
     pub fn build(self) -> crate::types::GroupMembers {
         crate::types::GroupMembers {
-            member_groups: self.member_groups,
-            member_users: self.member_users,
+            member_groups: self.member_groups
+            ,
+            member_users: self.member_users
+            ,
         }
     }
 }
+

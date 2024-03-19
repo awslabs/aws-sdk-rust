@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartNetworkInsightsAccessScopeAnalysisInput {
+pub struct StartNetworkInsightsAccessScopeAnalysisInput  {
     /// <p>The ID of the Network Access Scope.</p>
     pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The tags to apply.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl StartNetworkInsightsAccessScopeAnalysisInput {
+impl  StartNetworkInsightsAccessScopeAnalysisInput  {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<& str> {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,20 +22,20 @@ impl StartNetworkInsightsAccessScopeAnalysisInput {
         self.dry_run
     }
     /// <p>The tags to apply.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl StartNetworkInsightsAccessScopeAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartNetworkInsightsAccessScopeAnalysisInput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput).
-    pub fn builder() -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder {
         crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisInputBuilder::default()
     }
 }
@@ -46,7 +46,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInput {
 pub struct StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
@@ -58,8 +58,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn set_network_insights_access_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_insights_access_scope_id = input;
-        self
+        self.network_insights_access_scope_id = input; self
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn get_network_insights_access_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -86,17 +84,16 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     /// <p>The tags to apply.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -107,27 +104,26 @@ impl StartNetworkInsightsAccessScopeAnalysisInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartNetworkInsightsAccessScopeAnalysisInput`](crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_network_insights_access_scope_analysis::StartNetworkInsightsAccessScopeAnalysisInput {
-                network_insights_access_scope_id: self.network_insights_access_scope_id,
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-                client_token: self.client_token,
-            },
+                network_insights_access_scope_id: self.network_insights_access_scope_id
+                ,
+                dry_run: self.dry_run
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

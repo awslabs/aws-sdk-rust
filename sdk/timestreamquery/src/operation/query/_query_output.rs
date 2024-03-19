@@ -2,49 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryOutput {
+pub struct QueryOutput  {
     /// <p>A unique ID for the given query.</p>
     pub query_id: ::std::string::String,
     /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The result set rows returned by the query.</p>
-    pub rows: ::std::vec::Vec<crate::types::Row>,
+    pub rows: ::std::vec::Vec::<crate::types::Row>,
     /// <p>The column data types of the returned result set.</p>
-    pub column_info: ::std::vec::Vec<crate::types::ColumnInfo>,
+    pub column_info: ::std::vec::Vec::<crate::types::ColumnInfo>,
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }
-impl QueryOutput {
+impl  QueryOutput  {
     /// <p>A unique ID for the given query.</p>
-    pub fn query_id(&self) -> &str {
-        use std::ops::Deref;
-        self.query_id.deref()
+    pub fn query_id(&self) -> & str {
+        use std::ops::Deref; self.query_id.deref()
     }
     /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The result set rows returned by the query.</p>
-    pub fn rows(&self) -> &[crate::types::Row] {
-        use std::ops::Deref;
-        self.rows.deref()
+    pub fn rows(&self) -> & [crate::types::Row] {
+        use std::ops::Deref; self.rows.deref()
     }
     /// <p>The column data types of the returned result set.</p>
-    pub fn column_info(&self) -> &[crate::types::ColumnInfo] {
-        use std::ops::Deref;
-        self.column_info.deref()
+    pub fn column_info(&self) -> & [crate::types::ColumnInfo] {
+        use std::ops::Deref; self.column_info.deref()
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
-    pub fn query_status(&self) -> ::std::option::Option<&crate::types::QueryStatus> {
+    pub fn query_status(&self) -> ::std::option::Option<& crate::types::QueryStatus> {
         self.query_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for QueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl QueryOutput {
     /// Creates a new builder-style object to manufacture [`QueryOutput`](crate::operation::query::QueryOutput).
     pub fn builder() -> crate::operation::query::builders::QueryOutputBuilder {
@@ -58,8 +55,8 @@ impl QueryOutput {
 pub struct QueryOutputBuilder {
     pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::Row>>,
-    pub(crate) column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>,
+    pub(crate) column_info: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>>,
     pub(crate) query_status: ::std::option::Option<crate::types::QueryStatus>,
     _request_id: Option<String>,
 }
@@ -72,8 +69,7 @@ impl QueryOutputBuilder {
     }
     /// <p>A unique ID for the given query.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// <p>A unique ID for the given query.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +82,7 @@ impl QueryOutputBuilder {
     }
     /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token that can be used again on a <code>Query</code> call to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +95,16 @@ impl QueryOutputBuilder {
     /// <p>The result set rows returned by the query.</p>
     pub fn rows(mut self, input: crate::types::Row) -> Self {
         let mut v = self.rows.unwrap_or_default();
-        v.push(input);
-        self.rows = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rows = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The result set rows returned by the query.</p>
-    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Row>>) -> Self {
-        self.rows = input;
-        self
+    pub fn set_rows(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Row>>) -> Self {
+        self.rows = input; self
     }
     /// <p>The result set rows returned by the query.</p>
-    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Row>> {
         &self.rows
     }
     /// Appends an item to `column_info`.
@@ -120,17 +114,16 @@ impl QueryOutputBuilder {
     /// <p>The column data types of the returned result set.</p>
     pub fn column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         let mut v = self.column_info.unwrap_or_default();
-        v.push(input);
-        self.column_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column data types of the returned result set.</p>
-    pub fn set_column_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
-        self.column_info = input;
-        self
+    pub fn set_column_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>>) -> Self {
+        self.column_info = input; self
     }
     /// <p>The column data types of the returned result set.</p>
-    pub fn get_column_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+    pub fn get_column_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnInfo>> {
         &self.column_info
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
@@ -140,50 +133,51 @@ impl QueryOutputBuilder {
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub fn set_query_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
-        self.query_status = input;
-        self
+        self.query_status = input; self
     }
     /// <p>Information about the status of the query, including progress and bytes scanned.</p>
     pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
         &self.query_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`QueryOutput`](crate::operation::query::QueryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_id`](crate::operation::query::builders::QueryOutputBuilder::query_id)
     /// - [`rows`](crate::operation::query::builders::QueryOutputBuilder::rows)
     /// - [`column_info`](crate::operation::query::builders::QueryOutputBuilder::column_info)
     pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::query::QueryOutput {
-            query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_id",
-                    "query_id was not specified but it is required when building QueryOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rows",
-                    "rows was not specified but it is required when building QueryOutput",
-                )
-            })?,
-            column_info: self.column_info.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "column_info",
-                    "column_info was not specified but it is required when building QueryOutput",
-                )
-            })?,
-            query_status: self.query_status,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::query::QueryOutput {
+                query_id: self.query_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_id", "query_id was not specified but it is required when building QueryOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                rows: self.rows
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rows", "rows was not specified but it is required when building QueryOutput")
+                    )?
+                ,
+                column_info: self.column_info
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("column_info", "column_info was not specified but it is required when building QueryOutput")
+                    )?
+                ,
+                query_status: self.query_status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

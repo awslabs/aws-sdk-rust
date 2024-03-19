@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListConfigsOutput {
+pub struct ListConfigsOutput  {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of <code>Config</code> items.</p>
-    pub config_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>,
+    pub config_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigListItem>>,
     _request_id: Option<String>,
 }
-impl ListConfigsOutput {
+impl  ListConfigsOutput  {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of <code>Config</code> items.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_list.is_none()`.
-    pub fn config_list(&self) -> &[crate::types::ConfigListItem] {
-        self.config_list.as_deref().unwrap_or_default()
+    pub fn config_list(&self) -> & [crate::types::ConfigListItem] {
+        self.config_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigsOutput`](crate::operation::list_configs::ListConfigsOutput).
     pub fn builder() -> crate::operation::list_configs::builders::ListConfigsOutputBuilder {
@@ -39,7 +40,7 @@ impl ListConfigsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConfigsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) config_list: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>,
+    pub(crate) config_list: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigListItem>>,
     _request_id: Option<String>,
 }
 impl ListConfigsOutputBuilder {
@@ -50,8 +51,7 @@ impl ListConfigsOutputBuilder {
     }
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl ListConfigsOutputBuilder {
     /// <p>List of <code>Config</code> items.</p>
     pub fn config_list(mut self, input: crate::types::ConfigListItem) -> Self {
         let mut v = self.config_list.unwrap_or_default();
-        v.push(input);
-        self.config_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.config_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn set_config_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>>) -> Self {
-        self.config_list = input;
-        self
+    pub fn set_config_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConfigListItem>>) -> Self {
+        self.config_list = input; self
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn get_config_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigListItem>> {
+    pub fn get_config_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConfigListItem>> {
         &self.config_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListConfigsOutput`](crate::operation::list_configs::ListConfigsOutput).
     pub fn build(self) -> crate::operation::list_configs::ListConfigsOutput {
         crate::operation::list_configs::ListConfigsOutput {
-            next_token: self.next_token,
-            config_list: self.config_list,
+            next_token: self.next_token
+            ,
+            config_list: self.config_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the type of server-side encryption used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Encryption {
+pub struct Encryption  {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub encryption_type: crate::types::ServerSideEncryption,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
@@ -11,21 +11,21 @@ pub struct Encryption {
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
     pub kms_context: ::std::option::Option<::std::string::String>,
 }
-impl Encryption {
+impl  Encryption  {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
-    pub fn encryption_type(&self) -> &crate::types::ServerSideEncryption {
+    pub fn encryption_type(&self) -> & crate::types::ServerSideEncryption {
         &self.encryption_type
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
-    pub fn kms_context(&self) -> ::std::option::Option<&str> {
+    pub fn kms_context(&self) -> ::std::option::Option<& str> {
         self.kms_context.as_deref()
     }
 }
-impl ::std::fmt::Debug for Encryption {
+impl  ::std::fmt::Debug for Encryption  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Encryption");
         formatter.field("encryption_type", &self.encryption_type);
@@ -58,8 +58,7 @@ impl EncryptionBuilder {
     }
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
@@ -72,8 +71,7 @@ impl EncryptionBuilder {
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric encryption customer managed key to use for encryption of job results. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl EncryptionBuilder {
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
     pub fn set_kms_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_context = input;
-        self
+        self.kms_context = input; self
     }
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
     pub fn get_kms_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,16 +94,19 @@ impl EncryptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`encryption_type`](crate::types::builders::EncryptionBuilder::encryption_type)
     pub fn build(self) -> ::std::result::Result<crate::types::Encryption, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Encryption {
-            encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_type",
-                    "encryption_type was not specified but it is required when building Encryption",
-                )
-            })?,
-            kms_key_id: self.kms_key_id,
-            kms_context: self.kms_context,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Encryption {
+                encryption_type: self.encryption_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_type", "encryption_type was not specified but it is required when building Encryption")
+                    )?
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                kms_context: self.kms_context
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EncryptionBuilder {
@@ -118,3 +118,4 @@ impl ::std::fmt::Debug for EncryptionBuilder {
         formatter.finish()
     }
 }
+

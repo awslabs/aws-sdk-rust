@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetV2LoggingOptionsInput {}
+pub struct GetV2LoggingOptionsInput  {
+}
 impl GetV2LoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
     pub fn builder() -> crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsInputBuilder {
@@ -13,13 +14,15 @@ impl GetV2LoggingOptionsInput {
 /// A builder for [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetV2LoggingOptionsInputBuilder {}
+pub struct GetV2LoggingOptionsInputBuilder {
+}
 impl GetV2LoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetV2LoggingOptionsInput`](crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_v2_logging_options::GetV2LoggingOptionsInput {
+            }
+        )
     }
 }
+

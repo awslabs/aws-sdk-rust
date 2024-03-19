@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDatasetInput {
+pub struct DescribeDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
     pub dataset_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDatasetInput {
+impl  DescribeDatasetInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeDatasetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to describe.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_arn
     }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
-            dataset_arn: self.dataset_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dataset::DescribeDatasetInput {
+                dataset_arn: self.dataset_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeviceUsageDataInput {
+pub struct DeleteDeviceUsageDataInput  {
     /// <p>The ARN of the device.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of usage data to delete.</p>
     pub device_usage_type: ::std::option::Option<crate::types::DeviceUsageType>,
 }
-impl DeleteDeviceUsageDataInput {
+impl  DeleteDeviceUsageDataInput  {
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The type of usage data to delete.</p>
-    pub fn device_usage_type(&self) -> ::std::option::Option<&crate::types::DeviceUsageType> {
+    pub fn device_usage_type(&self) -> ::std::option::Option<& crate::types::DeviceUsageType> {
         self.device_usage_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteDeviceUsageDataInputBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteDeviceUsageDataInputBuilder {
     }
     /// <p>The type of usage data to delete.</p>
     pub fn set_device_usage_type(mut self, input: ::std::option::Option<crate::types::DeviceUsageType>) -> Self {
-        self.device_usage_type = input;
-        self
+        self.device_usage_type = input; self
     }
     /// <p>The type of usage data to delete.</p>
     pub fn get_device_usage_type(&self) -> &::std::option::Option<crate::types::DeviceUsageType> {
         &self.device_usage_type
     }
     /// Consumes the builder and constructs a [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput {
-            device_arn: self.device_arn,
-            device_usage_type: self.device_usage_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput {
+                device_arn: self.device_arn
+                ,
+                device_usage_type: self.device_usage_type
+                ,
+            }
+        )
     }
 }
+

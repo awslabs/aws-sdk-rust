@@ -3,7 +3,7 @@
 /// <p>Describes the instance's Capacity Reservation targeting preferences. The action returns the <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response element if the instance explicily targets a specific Capacity Reservation or Capacity Reservation group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CapacityReservationSpecificationResponse {
+pub struct CapacityReservationSpecificationResponse  {
     /// <p>Describes the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct CapacityReservationSpecificationResponse {
     /// <p>Information about the targeted Capacity Reservation or Capacity Reservation group.</p>
     pub capacity_reservation_target: ::std::option::Option<crate::types::CapacityReservationTargetResponse>,
 }
-impl CapacityReservationSpecificationResponse {
+impl  CapacityReservationSpecificationResponse  {
     /// <p>Describes the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
     /// <li>
@@ -23,11 +23,11 @@ impl CapacityReservationSpecificationResponse {
     /// <li>
     /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p></li>
     /// </ul>
-    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&crate::types::CapacityReservationPreference> {
+    pub fn capacity_reservation_preference(&self) -> ::std::option::Option<& crate::types::CapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
     }
     /// <p>Information about the targeted Capacity Reservation or Capacity Reservation group.</p>
-    pub fn capacity_reservation_target(&self) -> ::std::option::Option<&crate::types::CapacityReservationTargetResponse> {
+    pub fn capacity_reservation_target(&self) -> ::std::option::Option<& crate::types::CapacityReservationTargetResponse> {
         self.capacity_reservation_target.as_ref()
     }
 }
@@ -65,8 +65,7 @@ impl CapacityReservationSpecificationResponseBuilder {
     /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p></li>
     /// </ul>
     pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<crate::types::CapacityReservationPreference>) -> Self {
-        self.capacity_reservation_preference = input;
-        self
+        self.capacity_reservation_preference = input; self
     }
     /// <p>Describes the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
@@ -85,8 +84,7 @@ impl CapacityReservationSpecificationResponseBuilder {
     }
     /// <p>Information about the targeted Capacity Reservation or Capacity Reservation group.</p>
     pub fn set_capacity_reservation_target(mut self, input: ::std::option::Option<crate::types::CapacityReservationTargetResponse>) -> Self {
-        self.capacity_reservation_target = input;
-        self
+        self.capacity_reservation_target = input; self
     }
     /// <p>Information about the targeted Capacity Reservation or Capacity Reservation group.</p>
     pub fn get_capacity_reservation_target(&self) -> &::std::option::Option<crate::types::CapacityReservationTargetResponse> {
@@ -95,8 +93,11 @@ impl CapacityReservationSpecificationResponseBuilder {
     /// Consumes the builder and constructs a [`CapacityReservationSpecificationResponse`](crate::types::CapacityReservationSpecificationResponse).
     pub fn build(self) -> crate::types::CapacityReservationSpecificationResponse {
         crate::types::CapacityReservationSpecificationResponse {
-            capacity_reservation_preference: self.capacity_reservation_preference,
-            capacity_reservation_target: self.capacity_reservation_target,
+            capacity_reservation_preference: self.capacity_reservation_preference
+            ,
+            capacity_reservation_target: self.capacity_reservation_target
+            ,
         }
     }
 }
+

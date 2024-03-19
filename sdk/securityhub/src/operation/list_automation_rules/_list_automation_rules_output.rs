@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAutomationRulesOutput {
+pub struct ListAutomationRulesOutput  {
     /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
+    pub automation_rules_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesMetadata>>,
     /// <p>A pagination token for the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAutomationRulesOutput {
+impl  ListAutomationRulesOutput  {
     /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.automation_rules_metadata.is_none()`.
-    pub fn automation_rules_metadata(&self) -> &[crate::types::AutomationRulesMetadata] {
-        self.automation_rules_metadata.as_deref().unwrap_or_default()
+    pub fn automation_rules_metadata(&self) -> & [crate::types::AutomationRulesMetadata] {
+        self.automation_rules_metadata.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A pagination token for the response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAutomationRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAutomationRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListAutomationRulesOutput`](crate::operation::list_automation_rules::ListAutomationRulesOutput).
     pub fn builder() -> crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAutomationRulesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAutomationRulesOutputBuilder {
-    pub(crate) automation_rules_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>,
+    pub(crate) automation_rules_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAutomationRulesOutputBuilder {
     /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
     pub fn automation_rules_metadata(mut self, input: crate::types::AutomationRulesMetadata) -> Self {
         let mut v = self.automation_rules_metadata.unwrap_or_default();
-        v.push(input);
-        self.automation_rules_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.automation_rules_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn set_automation_rules_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>>) -> Self {
-        self.automation_rules_metadata = input;
-        self
+    pub fn set_automation_rules_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesMetadata>>) -> Self {
+        self.automation_rules_metadata = input; self
     }
     /// <p>Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn get_automation_rules_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationRulesMetadata>> {
+    pub fn get_automation_rules_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutomationRulesMetadata>> {
         &self.automation_rules_metadata
     }
     /// <p>A pagination token for the response.</p>
@@ -69,28 +69,30 @@ impl ListAutomationRulesOutputBuilder {
     }
     /// <p>A pagination token for the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAutomationRulesOutput`](crate::operation::list_automation_rules::ListAutomationRulesOutput).
     pub fn build(self) -> crate::operation::list_automation_rules::ListAutomationRulesOutput {
         crate::operation::list_automation_rules::ListAutomationRulesOutput {
-            automation_rules_metadata: self.automation_rules_metadata,
-            next_token: self.next_token,
+            automation_rules_metadata: self.automation_rules_metadata
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

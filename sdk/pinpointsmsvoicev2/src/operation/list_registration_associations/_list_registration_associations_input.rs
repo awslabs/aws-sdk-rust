@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRegistrationAssociationsInput {
+pub struct ListRegistrationAssociationsInput  {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of RegistrationAssociationFilter to apply to the results that are returned.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAssociationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAssociationFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRegistrationAssociationsInput {
+impl  ListRegistrationAssociationsInput  {
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
     /// <p>An array of RegistrationAssociationFilter to apply to the results that are returned.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::RegistrationAssociationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::RegistrationAssociationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -44,7 +45,7 @@ impl ListRegistrationAssociationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRegistrationAssociationsInputBuilder {
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAssociationFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAssociationFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,8 +58,7 @@ impl ListRegistrationAssociationsInputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl ListRegistrationAssociationsInputBuilder {
     /// <p>An array of RegistrationAssociationFilter to apply to the results that are returned.</p>
     pub fn filters(mut self, input: crate::types::RegistrationAssociationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationAssociationFilter to apply to the results that are returned.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationAssociationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAssociationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of RegistrationAssociationFilter to apply to the results that are returned.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationAssociationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationAssociationFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -91,8 +90,7 @@ impl ListRegistrationAssociationsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,25 +103,26 @@ impl ListRegistrationAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRegistrationAssociationsInput`](crate::operation::list_registration_associations::ListRegistrationAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_registration_associations::ListRegistrationAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_registration_associations::ListRegistrationAssociationsInput {
-            registration_id: self.registration_id,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_registration_associations::ListRegistrationAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_registration_associations::ListRegistrationAssociationsInput {
+                registration_id: self.registration_id
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

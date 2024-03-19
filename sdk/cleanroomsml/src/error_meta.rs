@@ -20,7 +20,7 @@ pub enum Error {
     &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
      \
     See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-Error) for what information is available for the error.")]
-    Unhandled(crate::error::sealed_unhandled::Unhandled),
+    Unhandled(crate::error::sealed_unhandled::Unhandled)
 }
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30,47 +30,41 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(_) => {
-                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
-                    write!(f, "unhandled error ({code})")
-                } else {
-                    f.write_str("unhandled error")
-                }
-            }
+            Error::Unhandled(_) => if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                                        write!(f, "unhandled error ({code})")
+                                    } else {
+                                        f.write_str("unhandled error")
+                                    }
         }
     }
 }
 impl From<::aws_smithy_types::error::operation::BuildError> for Error {
-    fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
-        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-            source: value.into(),
-            meta: ::std::default::Default::default(),
-        })
-    }
-}
+                fn from(value: ::aws_smithy_types::error::operation::BuildError) -> Self {
+                    Error::Unhandled(crate::error::sealed_unhandled::Unhandled { source: value.into(), meta: ::std::default::Default::default() })
+                }
+            }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
-    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::ConflictException(inner) => inner.meta(),
-            Self::ResourceNotFoundException(inner) => inner.meta(),
-            Self::ServiceQuotaExceededException(inner) => inner.meta(),
-            Self::ValidationException(inner) => inner.meta(),
-            Self::Unhandled(inner) => &inner.meta,
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_audience_model::CreateAudienceModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+                fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+                    match self {
+                        Self::AccessDeniedException(inner) => inner.meta(),
+Self::ConflictException(inner) => inner.meta(),
+Self::ResourceNotFoundException(inner) => inner.meta(),
+Self::ServiceQuotaExceededException(inner) => inner.meta(),
+Self::ValidationException(inner) => inner.meta(),
+                        Self::Unhandled(inner) => &inner.meta,
+                    }
+                }
+            }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_audience_model::CreateAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_audience_model::CreateAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -79,140 +73,95 @@ impl From<crate::operation::create_audience_model::CreateAudienceModelError> for
         match err {
             crate::operation::create_audience_model::CreateAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_audience_model::CreateAudienceModelError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::create_audience_model::CreateAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_audience_model::CreateAudienceModelError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::create_audience_model::CreateAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_audience_model::CreateAudienceModelError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_audience_model::CreateAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_audience_model::CreateAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError> for Error {
     fn from(err: crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError) -> Self {
         match err {
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_dataset::CreateTrainingDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_dataset::CreateTrainingDatasetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_dataset::CreateTrainingDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_dataset::CreateTrainingDatasetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_training_dataset::CreateTrainingDatasetError> for Error {
     fn from(err: crate::operation::create_training_dataset::CreateTrainingDatasetError) -> Self {
         match err {
-            crate::operation::create_training_dataset::CreateTrainingDatasetError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::create_training_dataset::CreateTrainingDatasetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_training_dataset::CreateTrainingDatasetError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_training_dataset::CreateTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_training_dataset::CreateTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError> for Error {
     fn from(err: crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError) -> Self {
         match err {
-            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_model::DeleteAudienceModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_model::DeleteAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_audience_model::DeleteAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -221,173 +170,116 @@ impl From<crate::operation::delete_audience_model::DeleteAudienceModelError> for
         match err {
             crate::operation::delete_audience_model::DeleteAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_audience_model::DeleteAudienceModelError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_audience_model::DeleteAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_audience_model::DeleteAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_audience_model::DeleteAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_audience_model::DeleteAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError> for Error {
     fn from(err: crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError) -> Self {
         match err {
-            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError> for Error {
     fn from(err: crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError) -> Self {
         match err {
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_dataset::DeleteTrainingDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_dataset::DeleteTrainingDatasetError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_dataset::DeleteTrainingDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_dataset::DeleteTrainingDatasetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_training_dataset::DeleteTrainingDatasetError> for Error {
     fn from(err: crate::operation::delete_training_dataset::DeleteTrainingDatasetError) -> Self {
         match err {
-            crate::operation::delete_training_dataset::DeleteTrainingDatasetError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::delete_training_dataset::DeleteTrainingDatasetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_generation_job::GetAudienceGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_generation_job::GetAudienceGenerationJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_generation_job::GetAudienceGenerationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_generation_job::GetAudienceGenerationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_audience_generation_job::GetAudienceGenerationJobError> for Error {
     fn from(err: crate::operation::get_audience_generation_job::GetAudienceGenerationJobError) -> Self {
         match err {
-            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_model::GetAudienceModelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_model::GetAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_audience_model::GetAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -401,93 +293,62 @@ impl From<crate::operation::get_audience_model::GetAudienceModelError> for Error
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError> for Error {
     fn from(err: crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError) -> Self {
         match err {
-            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError> for Error {
     fn from(err: crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError) -> Self {
         match err {
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_training_dataset::GetTrainingDatasetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_training_dataset::GetTrainingDatasetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_training_dataset::GetTrainingDatasetError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -495,83 +356,66 @@ impl From<crate::operation::get_training_dataset::GetTrainingDatasetError> for E
     fn from(err: crate::operation::get_training_dataset::GetTrainingDatasetError) -> Self {
         match err {
             crate::operation::get_training_dataset::GetTrainingDatasetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_training_dataset::GetTrainingDatasetError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_training_dataset::GetTrainingDatasetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_training_dataset::GetTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_training_dataset::GetTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_export_jobs::ListAudienceExportJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_export_jobs::ListAudienceExportJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_export_jobs::ListAudienceExportJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_export_jobs::ListAudienceExportJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_audience_export_jobs::ListAudienceExportJobsError> for Error {
     fn from(err: crate::operation::list_audience_export_jobs::ListAudienceExportJobsError) -> Self {
         match err {
-            crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError> for Error {
     fn from(err: crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError) -> Self {
         match err {
-            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_models::ListAudienceModelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_models::ListAudienceModelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_audience_models::ListAudienceModelsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -584,51 +428,38 @@ impl From<crate::operation::list_audience_models::ListAudienceModelsError> for E
         }
     }
 }
-impl<R>
-    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError> for Error {
     fn from(err: crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError) -> Self {
         match err {
-            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -636,25 +467,22 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_training_datasets::ListTrainingDatasetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_training_datasets::ListTrainingDatasetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_training_datasets::ListTrainingDatasetsError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -667,134 +495,89 @@ impl From<crate::operation::list_training_datasets::ListTrainingDatasetsError> f
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError> for Error {
     fn from(err: crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError) -> Self {
         match err {
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_export_job::StartAudienceExportJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_export_job::StartAudienceExportJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_export_job::StartAudienceExportJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_export_job::StartAudienceExportJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_audience_export_job::StartAudienceExportJobError> for Error {
     fn from(err: crate::operation::start_audience_export_job::StartAudienceExportJobError) -> Self {
         match err {
-            crate::operation::start_audience_export_job::StartAudienceExportJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
+            crate::operation::start_audience_export_job::StartAudienceExportJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_audience_export_job::StartAudienceExportJobError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::start_audience_export_job::StartAudienceExportJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_audience_export_job::StartAudienceExportJobError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::start_audience_export_job::StartAudienceExportJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_audience_export_job::StartAudienceExportJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::start_audience_export_job::StartAudienceExportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_audience_export_job::StartAudienceExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_generation_job::StartAudienceGenerationJobError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_generation_job::StartAudienceGenerationJobError, R>,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_generation_job::StartAudienceGenerationJobError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_audience_generation_job::StartAudienceGenerationJobError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_audience_generation_job::StartAudienceGenerationJobError> for Error {
     fn from(err: crate::operation::start_audience_generation_job::StartAudienceGenerationJobError) -> Self {
         match err {
-            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_audience_generation_job::StartAudienceGenerationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -808,17 +591,16 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
@@ -832,43 +614,26 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError, R>) -> Self {
         match err {
             ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
+            _ => Error::Unhandled(
+                                            crate::error::sealed_unhandled::Unhandled {
+                                                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                                source: err.into(),
+                                            }
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError> for Error {
     fn from(err: crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError) -> Self {
         match err {
-            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -881,7 +646,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
-            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
+            Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source)
         }
     }
 }
@@ -897,3 +662,4 @@ impl ::aws_types::request_id::RequestId for Error {
         }
     }
 }
+

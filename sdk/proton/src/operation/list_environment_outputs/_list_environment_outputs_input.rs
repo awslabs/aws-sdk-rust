@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListEnvironmentOutputsInput {
+pub struct ListEnvironmentOutputsInput  {
     /// <p>The environment name.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
@@ -10,17 +10,17 @@ pub struct ListEnvironmentOutputsInput {
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl ListEnvironmentOutputsInput {
+impl  ListEnvironmentOutputsInput  {
     /// <p>The environment name.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListEnvironmentOutputsInputBuilder {
     }
     /// <p>The environment name.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The environment name.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListEnvironmentOutputsInputBuilder {
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListEnvironmentOutputsInputBuilder {
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_environment_outputs::ListEnvironmentOutputsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
-            environment_name: self.environment_name,
-            next_token: self.next_token,
-            deployment_id: self.deployment_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_environment_outputs::ListEnvironmentOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

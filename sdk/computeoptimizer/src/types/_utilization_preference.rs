@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UtilizationPreference {
+pub struct UtilizationPreference  {
     /// <p>The name of the resource utilization metric name to customize.</p><note>
     /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
     /// </note>
@@ -13,15 +13,15 @@ pub struct UtilizationPreference {
     /// <p>The parameters to set when customizing the resource utilization thresholds.</p>
     pub metric_parameters: ::std::option::Option<crate::types::CustomizableMetricParameters>,
 }
-impl UtilizationPreference {
+impl  UtilizationPreference  {
     /// <p>The name of the resource utilization metric name to customize.</p><note>
     /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
     /// </note>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::CustomizableMetricName> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::CustomizableMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>The parameters to set when customizing the resource utilization thresholds.</p>
-    pub fn metric_parameters(&self) -> ::std::option::Option<&crate::types::CustomizableMetricParameters> {
+    pub fn metric_parameters(&self) -> ::std::option::Option<& crate::types::CustomizableMetricParameters> {
         self.metric_parameters.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl UtilizationPreferenceBuilder {
     /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
     /// </note>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::CustomizableMetricName>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the resource utilization metric name to customize.</p><note>
     /// <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p>
@@ -67,8 +66,7 @@ impl UtilizationPreferenceBuilder {
     }
     /// <p>The parameters to set when customizing the resource utilization thresholds.</p>
     pub fn set_metric_parameters(mut self, input: ::std::option::Option<crate::types::CustomizableMetricParameters>) -> Self {
-        self.metric_parameters = input;
-        self
+        self.metric_parameters = input; self
     }
     /// <p>The parameters to set when customizing the resource utilization thresholds.</p>
     pub fn get_metric_parameters(&self) -> &::std::option::Option<crate::types::CustomizableMetricParameters> {
@@ -77,8 +75,11 @@ impl UtilizationPreferenceBuilder {
     /// Consumes the builder and constructs a [`UtilizationPreference`](crate::types::UtilizationPreference).
     pub fn build(self) -> crate::types::UtilizationPreference {
         crate::types::UtilizationPreference {
-            metric_name: self.metric_name,
-            metric_parameters: self.metric_parameters,
+            metric_name: self.metric_name
+            ,
+            metric_parameters: self.metric_parameters
+            ,
         }
     }
 }
+

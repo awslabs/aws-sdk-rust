@@ -3,15 +3,14 @@
 /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftCredentialConfiguration {
+pub struct RedshiftCredentialConfiguration  {
     /// <p>The ARN of a secret manager for an Amazon Redshift cluster.</p>
     pub secret_manager_arn: ::std::string::String,
 }
-impl RedshiftCredentialConfiguration {
+impl  RedshiftCredentialConfiguration  {
     /// <p>The ARN of a secret manager for an Amazon Redshift cluster.</p>
-    pub fn secret_manager_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_manager_arn.deref()
+    pub fn secret_manager_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_manager_arn.deref()
     }
 }
 impl RedshiftCredentialConfiguration {
@@ -36,8 +35,7 @@ impl RedshiftCredentialConfigurationBuilder {
     }
     /// <p>The ARN of a secret manager for an Amazon Redshift cluster.</p>
     pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_manager_arn = input;
-        self
+        self.secret_manager_arn = input; self
     }
     /// <p>The ARN of a secret manager for an Amazon Redshift cluster.</p>
     pub fn get_secret_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl RedshiftCredentialConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`secret_manager_arn`](crate::types::builders::RedshiftCredentialConfigurationBuilder::secret_manager_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftCredentialConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftCredentialConfiguration {
-            secret_manager_arn: self.secret_manager_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_manager_arn",
-                    "secret_manager_arn was not specified but it is required when building RedshiftCredentialConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftCredentialConfiguration {
+                secret_manager_arn: self.secret_manager_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_manager_arn", "secret_manager_arn was not specified but it is required when building RedshiftCredentialConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

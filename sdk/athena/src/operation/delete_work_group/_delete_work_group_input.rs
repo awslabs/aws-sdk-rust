@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkGroupInput {
+pub struct DeleteWorkGroupInput  {
     /// <p>The unique name of the workgroup to delete.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub recursive_delete_option: ::std::option::Option<bool>,
 }
-impl DeleteWorkGroupInput {
+impl  DeleteWorkGroupInput  {
     /// <p>The unique name of the workgroup to delete.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
@@ -41,8 +41,7 @@ impl DeleteWorkGroupInputBuilder {
     }
     /// <p>The unique name of the workgroup to delete.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The unique name of the workgroup to delete.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DeleteWorkGroupInputBuilder {
     }
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn set_recursive_delete_option(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.recursive_delete_option = input;
-        self
+        self.recursive_delete_option = input; self
     }
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn get_recursive_delete_option(&self) -> &::std::option::Option<bool> {
         &self.recursive_delete_option
     }
     /// Consumes the builder and constructs a [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_work_group::DeleteWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_work_group::DeleteWorkGroupInput {
-            work_group: self.work_group,
-            recursive_delete_option: self.recursive_delete_option,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_work_group::DeleteWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_work_group::DeleteWorkGroupInput {
+                work_group: self.work_group
+                ,
+                recursive_delete_option: self.recursive_delete_option
+                ,
+            }
+        )
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnrollmentStatusInput {
+pub struct UpdateEnrollmentStatusInput  {
     /// <p>Sets the account status.</p>
     pub status: ::std::option::Option<crate::types::EnrollmentStatus>,
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
     pub include_member_accounts: ::std::option::Option<bool>,
 }
-impl UpdateEnrollmentStatusInput {
+impl  UpdateEnrollmentStatusInput  {
     /// <p>Sets the account status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::EnrollmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::EnrollmentStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
@@ -41,8 +41,7 @@ impl UpdateEnrollmentStatusInputBuilder {
     }
     /// <p>Sets the account status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnrollmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Sets the account status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnrollmentStatus> {
@@ -55,23 +54,22 @@ impl UpdateEnrollmentStatusInputBuilder {
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_member_accounts = input;
-        self
+        self.include_member_accounts = input; self
     }
     /// <p>Indicates whether to enroll member accounts of the organization if the account is the management account.</p>
     pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_member_accounts
     }
     /// Consumes the builder and constructs a [`UpdateEnrollmentStatusInput`](crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
-            status: self.status,
-            include_member_accounts: self.include_member_accounts,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusInput {
+                status: self.status
+                ,
+                include_member_accounts: self.include_member_accounts
+                ,
+            }
+        )
     }
 }
+

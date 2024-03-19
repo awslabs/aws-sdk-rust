@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListIdMappingWorkflows`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListIdMappingWorkflowsOutput`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput) with field(s):
+                            /// - On success, responds with [`ListIdMappingWorkflowsOutput`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput) with field(s):
     ///   - [`workflow_summaries(Option<Vec::<IdMappingWorkflowSummary>>)`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput::workflow_summaries): <p>A list of <code>IdMappingWorkflowSummary</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListIdMappingWorkflowsError>`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError)
+                            /// - On failure, responds with [`SdkError<ListIdMappingWorkflowsError>`](crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsError)
     pub fn list_id_mapping_workflows(&self) -> crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder {
-        crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_id_mapping_workflows::builders::ListIdMappingWorkflowsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -4,7 +4,7 @@
 /// <p>If the email identity is an email address, this object is empty.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEmailIdentityOutput {
+pub struct CreateEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
@@ -13,9 +13,9 @@ pub struct CreateEmailIdentityOutput {
     pub dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     _request_id: Option<String>,
 }
-impl CreateEmailIdentityOutput {
+impl  CreateEmailIdentityOutput  {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
@@ -23,15 +23,15 @@ impl CreateEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn dkim_attributes(&self) -> ::std::option::Option<&crate::types::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> ::std::option::Option<& crate::types::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEmailIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
     pub fn builder() -> crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder {
@@ -56,8 +56,7 @@ impl CreateEmailIdentityOutputBuilder {
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input;
-        self
+        self.identity_type = input; self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
@@ -70,8 +69,7 @@ impl CreateEmailIdentityOutputBuilder {
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.verified_for_sending_status = input;
-        self
+        self.verified_for_sending_status = input; self
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn get_verified_for_sending_status(&self) -> &::std::option::Option<bool> {
@@ -84,29 +82,33 @@ impl CreateEmailIdentityOutputBuilder {
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn set_dkim_attributes(mut self, input: ::std::option::Option<crate::types::DkimAttributes>) -> Self {
-        self.dkim_attributes = input;
-        self
+        self.dkim_attributes = input; self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn get_dkim_attributes(&self) -> &::std::option::Option<crate::types::DkimAttributes> {
         &self.dkim_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
     pub fn build(self) -> crate::operation::create_email_identity::CreateEmailIdentityOutput {
         crate::operation::create_email_identity::CreateEmailIdentityOutput {
-            identity_type: self.identity_type,
-            verified_for_sending_status: self.verified_for_sending_status.unwrap_or_default(),
-            dkim_attributes: self.dkim_attributes,
+            identity_type: self.identity_type
+            ,
+            verified_for_sending_status: self.verified_for_sending_status
+                .unwrap_or_default()
+            ,
+            dkim_attributes: self.dkim_attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

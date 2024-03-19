@@ -3,32 +3,35 @@
 /// <p>Aggregated field wells of a tree map.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TreeMapAggregatedFieldWells {
+pub struct TreeMapAggregatedFieldWells  {
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub groups: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    pub sizes: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub sizes: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    pub colors: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub colors: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
-impl TreeMapAggregatedFieldWells {
+impl  TreeMapAggregatedFieldWells  {
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
-    pub fn groups(&self) -> &[crate::types::DimensionField] {
-        self.groups.as_deref().unwrap_or_default()
+    pub fn groups(&self) -> & [crate::types::DimensionField] {
+        self.groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sizes.is_none()`.
-    pub fn sizes(&self) -> &[crate::types::MeasureField] {
-        self.sizes.as_deref().unwrap_or_default()
+    pub fn sizes(&self) -> & [crate::types::MeasureField] {
+        self.sizes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.colors.is_none()`.
-    pub fn colors(&self) -> &[crate::types::MeasureField] {
-        self.colors.as_deref().unwrap_or_default()
+    pub fn colors(&self) -> & [crate::types::MeasureField] {
+        self.colors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TreeMapAggregatedFieldWells {
@@ -42,9 +45,9 @@ impl TreeMapAggregatedFieldWells {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TreeMapAggregatedFieldWellsBuilder {
-    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) sizes: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
-    pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>,
+    pub(crate) sizes: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
+    pub(crate) colors: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>,
 }
 impl TreeMapAggregatedFieldWellsBuilder {
     /// Appends an item to `groups`.
@@ -54,17 +57,16 @@ impl TreeMapAggregatedFieldWellsBuilder {
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
     pub fn groups(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
-    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DimensionField>> {
         &self.groups
     }
     /// Appends an item to `sizes`.
@@ -74,17 +76,16 @@ impl TreeMapAggregatedFieldWellsBuilder {
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
     pub fn sizes(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.sizes.unwrap_or_default();
-        v.push(input);
-        self.sizes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sizes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    pub fn set_sizes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.sizes = input;
-        self
+    pub fn set_sizes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.sizes = input; self
     }
     /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
-    pub fn get_sizes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_sizes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.sizes
     }
     /// Appends an item to `colors`.
@@ -94,25 +95,28 @@ impl TreeMapAggregatedFieldWellsBuilder {
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
     pub fn colors(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.colors.unwrap_or_default();
-        v.push(input);
-        self.colors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.colors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.colors = input;
-        self
+    pub fn set_colors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>>) -> Self {
+        self.colors = input; self
     }
     /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
-    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+    pub fn get_colors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MeasureField>> {
         &self.colors
     }
     /// Consumes the builder and constructs a [`TreeMapAggregatedFieldWells`](crate::types::TreeMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::TreeMapAggregatedFieldWells {
         crate::types::TreeMapAggregatedFieldWells {
-            groups: self.groups,
-            sizes: self.sizes,
-            colors: self.colors,
+            groups: self.groups
+            ,
+            sizes: self.sizes
+            ,
+            colors: self.colors
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrammarSlotTypeSource {
+pub struct GrammarSlotTypeSource  {
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub s3_bucket_name: ::std::string::String,
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
@@ -11,19 +11,17 @@ pub struct GrammarSlotTypeSource {
     /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl GrammarSlotTypeSource {
+impl  GrammarSlotTypeSource  {
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket_name.deref()
+    pub fn s3_bucket_name(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket_name.deref()
     }
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
-    pub fn s3_object_key(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_object_key.deref()
+    pub fn s3_object_key(&self) -> & str {
+        use std::ops::Deref; self.s3_object_key.deref()
     }
     /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket that contains the grammar source.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     pub fn set_s3_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_object_key = input;
-        self
+        self.s3_object_key = input; self
     }
     /// <p>The path to the grammar in the Amazon S3 bucket.</p>
     pub fn get_s3_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl GrammarSlotTypeSourceBuilder {
     /// - [`s3_bucket_name`](crate::types::builders::GrammarSlotTypeSourceBuilder::s3_bucket_name)
     /// - [`s3_object_key`](crate::types::builders::GrammarSlotTypeSourceBuilder::s3_object_key)
     pub fn build(self) -> ::std::result::Result<crate::types::GrammarSlotTypeSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GrammarSlotTypeSource {
-            s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket_name",
-                    "s3_bucket_name was not specified but it is required when building GrammarSlotTypeSource",
-                )
-            })?,
-            s3_object_key: self.s3_object_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_object_key",
-                    "s3_object_key was not specified but it is required when building GrammarSlotTypeSource",
-                )
-            })?,
-            kms_key_arn: self.kms_key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GrammarSlotTypeSource {
+                s3_bucket_name: self.s3_bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket_name", "s3_bucket_name was not specified but it is required when building GrammarSlotTypeSource")
+                    )?
+                ,
+                s3_object_key: self.s3_object_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_object_key", "s3_object_key was not specified but it is required when building GrammarSlotTypeSource")
+                    )?
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+            }
+        )
     }
 }
+

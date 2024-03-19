@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableDomainAutoRenewInput {
+pub struct EnableDomainAutoRenewInput  {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl EnableDomainAutoRenewInput {
+impl  EnableDomainAutoRenewInput  {
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl EnableDomainAutoRenewInputBuilder {
     }
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the domain that you want to enable automatic renewal for.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`EnableDomainAutoRenewInput`](crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput {
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewInput {
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

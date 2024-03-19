@@ -5,16 +5,17 @@
 /// </important>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EmailRecipients {
+pub struct EmailRecipients  {
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
+    pub to: ::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>>,
 }
-impl EmailRecipients {
+impl  EmailRecipients  {
     /// <p>Specifies one or more recipients who receive the email.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.to.is_none()`.
-    pub fn to(&self) -> &[crate::types::RecipientDetail] {
-        self.to.as_deref().unwrap_or_default()
+    pub fn to(&self) -> & [crate::types::RecipientDetail] {
+        self.to.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EmailRecipients {
@@ -28,7 +29,7 @@ impl EmailRecipients {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EmailRecipientsBuilder {
-    pub(crate) to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
+    pub(crate) to: ::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>>,
 }
 impl EmailRecipientsBuilder {
     /// Appends an item to `to`.
@@ -38,21 +39,24 @@ impl EmailRecipientsBuilder {
     /// <p>Specifies one or more recipients who receive the email.</p>
     pub fn to(mut self, input: crate::types::RecipientDetail) -> Self {
         let mut v = self.to.unwrap_or_default();
-        v.push(input);
-        self.to = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.to = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub fn set_to(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>) -> Self {
-        self.to = input;
-        self
+    pub fn set_to(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>>) -> Self {
+        self.to = input; self
     }
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub fn get_to(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>> {
+    pub fn get_to(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>> {
         &self.to
     }
     /// Consumes the builder and constructs a [`EmailRecipients`](crate::types::EmailRecipients).
     pub fn build(self) -> crate::types::EmailRecipients {
-        crate::types::EmailRecipients { to: self.to }
+        crate::types::EmailRecipients {
+            to: self.to
+            ,
+        }
     }
 }
+

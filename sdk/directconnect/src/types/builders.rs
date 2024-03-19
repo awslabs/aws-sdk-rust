@@ -52,3 +52,4 @@ pub use crate::types::_new_transit_virtual_interface_allocation::NewTransitVirtu
 pub use crate::types::_new_public_virtual_interface_allocation::NewPublicVirtualInterfaceAllocationBuilder;
 
 pub use crate::types::_new_private_virtual_interface_allocation::NewPrivateVirtualInterfaceAllocationBuilder;
+

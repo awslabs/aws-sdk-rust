@@ -6,20 +6,19 @@
 /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputConfig {
+pub struct OutputConfig  {
     /// <p>The name of the bucket your output will go to.</p>
     pub s3_bucket: ::std::string::String,
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
-impl OutputConfig {
+impl  OutputConfig  {
     /// <p>The name of the bucket your output will go to.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> & str {
+        use std::ops::Deref; self.s3_bucket.deref()
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -46,8 +45,7 @@ impl OutputConfigBuilder {
     }
     /// <p>The name of the bucket your output will go to.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The name of the bucket your output will go to.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +58,7 @@ impl OutputConfigBuilder {
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,14 +68,17 @@ impl OutputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket`](crate::types::builders::OutputConfigBuilder::s3_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::OutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OutputConfig {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building OutputConfig",
-                )
-            })?,
-            s3_prefix: self.s3_prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OutputConfig {
+                s3_bucket: self.s3_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_bucket", "s3_bucket was not specified but it is required when building OutputConfig")
+                    )?
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+            }
+        )
     }
 }
+

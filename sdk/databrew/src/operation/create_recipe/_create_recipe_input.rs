@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRecipeInput {
+pub struct CreateRecipeInput  {
     /// <p>A description for the recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
-    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>,
     /// <p>Metadata tags to apply to this recipe.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateRecipeInput {
+impl  CreateRecipeInput  {
     /// <p>A description for the recipe.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
-    pub fn steps(&self) -> &[crate::types::RecipeStep] {
-        self.steps.as_deref().unwrap_or_default()
+    pub fn steps(&self) -> & [crate::types::RecipeStep] {
+        self.steps.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata tags to apply to this recipe.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -45,8 +46,8 @@ impl CreateRecipeInput {
 pub struct CreateRecipeInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateRecipeInputBuilder {
     /// <p>A description for the recipe.</p>
@@ -56,8 +57,7 @@ impl CreateRecipeInputBuilder {
     }
     /// <p>A description for the recipe.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the recipe.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateRecipeInputBuilder {
     }
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl CreateRecipeInputBuilder {
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
     pub fn steps(mut self, input: crate::types::RecipeStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>>) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>>) -> Self {
+        self.steps = input; self
     }
     /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipeStep>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecipeStep>> {
         &self.steps
     }
     /// Adds a key-value pair to `tags`.
@@ -105,28 +103,32 @@ impl CreateRecipeInputBuilder {
     /// <p>Metadata tags to apply to this recipe.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata tags to apply to this recipe.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata tags to apply to this recipe.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRecipeInput`](crate::operation::create_recipe::CreateRecipeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_recipe::CreateRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_recipe::CreateRecipeInput {
-            description: self.description,
-            name: self.name,
-            steps: self.steps,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_recipe::CreateRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_recipe::CreateRecipeInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                steps: self.steps
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an association between a branch network interface with a trunk network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrunkInterfaceAssociation {
+pub struct TrunkInterfaceAssociation  {
     /// <p>The ID of the association.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the branch network interface.</p>
@@ -17,23 +17,23 @@ pub struct TrunkInterfaceAssociation {
     /// <p>The application key when you use the GRE protocol.</p>
     pub gre_key: ::std::option::Option<i32>,
     /// <p>The tags for the trunk interface association.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl TrunkInterfaceAssociation {
+impl  TrunkInterfaceAssociation  {
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the branch network interface.</p>
-    pub fn branch_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn branch_interface_id(&self) -> ::std::option::Option<& str> {
         self.branch_interface_id.as_deref()
     }
     /// <p>The ID of the trunk network interface.</p>
-    pub fn trunk_interface_id(&self) -> ::std::option::Option<&str> {
+    pub fn trunk_interface_id(&self) -> ::std::option::Option<& str> {
         self.trunk_interface_id.as_deref()
     }
     /// <p>The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p>
-    pub fn interface_protocol(&self) -> ::std::option::Option<&crate::types::InterfaceProtocolType> {
+    pub fn interface_protocol(&self) -> ::std::option::Option<& crate::types::InterfaceProtocolType> {
         self.interface_protocol.as_ref()
     }
     /// <p>The ID of the VLAN when you use the VLAN protocol.</p>
@@ -45,10 +45,11 @@ impl TrunkInterfaceAssociation {
         self.gre_key
     }
     /// <p>The tags for the trunk interface association.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TrunkInterfaceAssociation {
@@ -68,7 +69,7 @@ pub struct TrunkInterfaceAssociationBuilder {
     pub(crate) interface_protocol: ::std::option::Option<crate::types::InterfaceProtocolType>,
     pub(crate) vlan_id: ::std::option::Option<i32>,
     pub(crate) gre_key: ::std::option::Option<i32>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl TrunkInterfaceAssociationBuilder {
     /// <p>The ID of the association.</p>
@@ -78,8 +79,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The ID of the association.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The ID of the branch network interface.</p>
     pub fn set_branch_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_interface_id = input;
-        self
+        self.branch_interface_id = input; self
     }
     /// <p>The ID of the branch network interface.</p>
     pub fn get_branch_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The ID of the trunk network interface.</p>
     pub fn set_trunk_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trunk_interface_id = input;
-        self
+        self.trunk_interface_id = input; self
     }
     /// <p>The ID of the trunk network interface.</p>
     pub fn get_trunk_interface_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p>
     pub fn set_interface_protocol(mut self, input: ::std::option::Option<crate::types::InterfaceProtocolType>) -> Self {
-        self.interface_protocol = input;
-        self
+        self.interface_protocol = input; self
     }
     /// <p>The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p>
     pub fn get_interface_protocol(&self) -> &::std::option::Option<crate::types::InterfaceProtocolType> {
@@ -134,8 +131,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The ID of the VLAN when you use the VLAN protocol.</p>
     pub fn set_vlan_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.vlan_id = input;
-        self
+        self.vlan_id = input; self
     }
     /// <p>The ID of the VLAN when you use the VLAN protocol.</p>
     pub fn get_vlan_id(&self) -> &::std::option::Option<i32> {
@@ -148,8 +144,7 @@ impl TrunkInterfaceAssociationBuilder {
     }
     /// <p>The application key when you use the GRE protocol.</p>
     pub fn set_gre_key(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gre_key = input;
-        self
+        self.gre_key = input; self
     }
     /// <p>The application key when you use the GRE protocol.</p>
     pub fn get_gre_key(&self) -> &::std::option::Option<i32> {
@@ -162,29 +157,36 @@ impl TrunkInterfaceAssociationBuilder {
     /// <p>The tags for the trunk interface association.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the trunk interface association.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags for the trunk interface association.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TrunkInterfaceAssociation`](crate::types::TrunkInterfaceAssociation).
     pub fn build(self) -> crate::types::TrunkInterfaceAssociation {
         crate::types::TrunkInterfaceAssociation {
-            association_id: self.association_id,
-            branch_interface_id: self.branch_interface_id,
-            trunk_interface_id: self.trunk_interface_id,
-            interface_protocol: self.interface_protocol,
-            vlan_id: self.vlan_id,
-            gre_key: self.gre_key,
-            tags: self.tags,
+            association_id: self.association_id
+            ,
+            branch_interface_id: self.branch_interface_id
+            ,
+            trunk_interface_id: self.trunk_interface_id
+            ,
+            interface_protocol: self.interface_protocol
+            ,
+            vlan_id: self.vlan_id
+            ,
+            gre_key: self.gre_key
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

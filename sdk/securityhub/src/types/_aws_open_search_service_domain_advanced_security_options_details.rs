@@ -3,7 +3,7 @@
 /// <p>Provides information about domain access control options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
+pub struct AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails  {
     /// <p>Enables fine-grained access control.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>Enables the internal user database.</p>
@@ -11,7 +11,7 @@ pub struct AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
     /// <p>Specifies information about the master user of the domain.</p>
     pub master_user_options: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails>,
 }
-impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
+impl  AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails  {
     /// <p>Enables fine-grained access control.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -21,7 +21,7 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
         self.internal_user_database_enabled
     }
     /// <p>Specifies information about the master user of the domain.</p>
-    pub fn master_user_options(&self) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails> {
+    pub fn master_user_options(&self) -> ::std::option::Option<& crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails> {
         self.master_user_options.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsBuilder {
     }
     /// <p>Enables fine-grained access control.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Enables fine-grained access control.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsBuilder {
     }
     /// <p>Enables the internal user database.</p>
     pub fn set_internal_user_database_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.internal_user_database_enabled = input;
-        self
+        self.internal_user_database_enabled = input; self
     }
     /// <p>Enables the internal user database.</p>
     pub fn get_internal_user_database_enabled(&self) -> &::std::option::Option<bool> {
@@ -76,8 +74,7 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsBuilder {
     }
     /// <p>Specifies information about the master user of the domain.</p>
     pub fn set_master_user_options(mut self, input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails>) -> Self {
-        self.master_user_options = input;
-        self
+        self.master_user_options = input; self
     }
     /// <p>Specifies information about the master user of the domain.</p>
     pub fn get_master_user_options(&self) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails> {
@@ -86,9 +83,13 @@ impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
-            enabled: self.enabled,
-            internal_user_database_enabled: self.internal_user_database_enabled,
-            master_user_options: self.master_user_options,
+            enabled: self.enabled
+            ,
+            internal_user_database_enabled: self.internal_user_database_enabled
+            ,
+            master_user_options: self.master_user_options
+            ,
         }
     }
 }
+

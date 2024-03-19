@@ -5,54 +5,50 @@ pub use crate::operation::revoke_permissions::_revoke_permissions_input::RevokeP
 
 impl RevokePermissionsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_permissions::RevokePermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.revoke_permissions();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::revoke_permissions::RevokePermissionsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::revoke_permissions::RevokePermissionsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.revoke_permissions();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RevokePermissions`.
-///
+/// 
 /// <p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder,
+                    inner: crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::revoke_permissions::RevokePermissionsOutput,
-        crate::operation::revoke_permissions::RevokePermissionsError,
-    > for RevokePermissionsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::revoke_permissions::RevokePermissionsOutput,
-            crate::operation::revoke_permissions::RevokePermissionsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::revoke_permissions::RevokePermissionsOutput,
+                    crate::operation::revoke_permissions::RevokePermissionsError,
+                > for RevokePermissionsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::revoke_permissions::RevokePermissionsOutput,
+                        crate::operation::revoke_permissions::RevokePermissionsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RevokePermissionsFluentBuilder {
     /// Creates a new `RevokePermissions`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl RevokePermissionsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::revoke_permissions::RevokePermissionsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::revoke_permissions::RevokePermissionsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::revoke_permissions::RevokePermissions::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::revoke_permissions::RevokePermissions::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::revoke_permissions::RevokePermissionsOutput,
-        crate::operation::revoke_permissions::RevokePermissionsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::revoke_permissions::RevokePermissionsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_permissions::RevokePermissionsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::revoke_permissions::RevokePermissions::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::revoke_permissions::RevokePermissions::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::revoke_permissions::RevokePermissionsOutput, crate::operation::revoke_permissions::RevokePermissionsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -160,12 +147,12 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
-    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         self.inner.get_permissions()
     }
     /// Appends an item to `PermissionsWithGrantOption`.
@@ -178,12 +165,13 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
+    pub fn set_permissions_with_grant_option(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions_with_grant_option(input);
         self
     }
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
-    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+    pub fn get_permissions_with_grant_option(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Permission>> {
         self.inner.get_permissions_with_grant_option()
     }
 }
+

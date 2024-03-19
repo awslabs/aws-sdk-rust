@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReferenceStoreInput {
+pub struct CreateReferenceStoreInput  {
     /// <p>A name for the store.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the store.</p>
@@ -10,29 +10,29 @@ pub struct CreateReferenceStoreInput {
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>Tags for the store.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateReferenceStoreInput {
+impl  CreateReferenceStoreInput  {
     /// <p>A name for the store.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the store.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
-    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<& crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>Tags for the store.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -50,7 +50,7 @@ pub struct CreateReferenceStoreInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateReferenceStoreInputBuilder {
@@ -62,8 +62,7 @@ impl CreateReferenceStoreInputBuilder {
     }
     /// <p>A name for the store.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the store.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl CreateReferenceStoreInputBuilder {
     }
     /// <p>A description for the store.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the store.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl CreateReferenceStoreInputBuilder {
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
-        self.sse_config = input;
-        self
+        self.sse_config = input; self
     }
     /// <p>Server-side encryption (SSE) settings for the store.</p>
     pub fn get_sse_config(&self) -> &::std::option::Option<crate::types::SseConfig> {
@@ -104,17 +101,16 @@ impl CreateReferenceStoreInputBuilder {
     /// <p>Tags for the store.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags for the store.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
@@ -124,24 +120,28 @@ impl CreateReferenceStoreInputBuilder {
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateReferenceStoreInput`](crate::operation::create_reference_store::CreateReferenceStoreInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_reference_store::CreateReferenceStoreInput {
-            name: self.name,
-            description: self.description,
-            sse_config: self.sse_config,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_reference_store::CreateReferenceStoreInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                sse_config: self.sse_config
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

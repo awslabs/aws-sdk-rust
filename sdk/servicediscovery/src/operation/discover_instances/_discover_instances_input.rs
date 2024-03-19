@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoverInstancesInput {
+pub struct DiscoverInstancesInput  {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you specified when you registered the instance.</p>
@@ -10,9 +10,9 @@ pub struct DiscoverInstancesInput {
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub query_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub query_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub optional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub optional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
     /// <dl>
     /// <dt>
@@ -42,13 +42,13 @@ pub struct DiscoverInstancesInput {
     /// </dl>
     pub health_status: ::std::option::Option<crate::types::HealthStatusFilter>,
 }
-impl DiscoverInstancesInput {
+impl  DiscoverInstancesInput  {
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
@@ -56,11 +56,11 @@ impl DiscoverInstancesInput {
         self.max_results
     }
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub fn query_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn query_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.query_parameters.as_ref()
     }
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub fn optional_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn optional_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.optional_parameters.as_ref()
     }
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
@@ -90,7 +90,7 @@ impl DiscoverInstancesInput {
     /// <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>
     /// </dd>
     /// </dl>
-    pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatusFilter> {
+    pub fn health_status(&self) -> ::std::option::Option<& crate::types::HealthStatusFilter> {
         self.health_status.as_ref()
     }
 }
@@ -108,8 +108,8 @@ pub struct DiscoverInstancesInputBuilder {
     pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) query_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) optional_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) query_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) optional_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) health_status: ::std::option::Option<crate::types::HealthStatusFilter>,
 }
 impl DiscoverInstancesInputBuilder {
@@ -121,8 +121,7 @@ impl DiscoverInstancesInputBuilder {
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +135,7 @@ impl DiscoverInstancesInputBuilder {
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that you specified when you registered the instance.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl DiscoverInstancesInputBuilder {
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -162,26 +159,18 @@ impl DiscoverInstancesInputBuilder {
     /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
     ///
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub fn query_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn query_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.query_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.query_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.query_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub fn set_query_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.query_parameters = input;
-        self
+    pub fn set_query_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.query_parameters = input; self
     }
     /// <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
-    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_query_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.query_parameters
     }
     /// Adds a key-value pair to `optional_parameters`.
@@ -189,26 +178,18 @@ impl DiscoverInstancesInputBuilder {
     /// To override the contents of this collection use [`set_optional_parameters`](Self::set_optional_parameters).
     ///
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub fn optional_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn optional_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.optional_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.optional_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.optional_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub fn set_optional_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.optional_parameters = input;
-        self
+    pub fn set_optional_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.optional_parameters = input; self
     }
     /// <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
-    pub fn get_optional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_optional_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.optional_parameters
     }
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
@@ -270,8 +251,7 @@ impl DiscoverInstancesInputBuilder {
     /// </dd>
     /// </dl>
     pub fn set_health_status(mut self, input: ::std::option::Option<crate::types::HealthStatusFilter>) -> Self {
-        self.health_status = input;
-        self
+        self.health_status = input; self
     }
     /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>
     /// <dl>
@@ -304,16 +284,23 @@ impl DiscoverInstancesInputBuilder {
         &self.health_status
     }
     /// Consumes the builder and constructs a [`DiscoverInstancesInput`](crate::operation::discover_instances::DiscoverInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::discover_instances::DiscoverInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::discover_instances::DiscoverInstancesInput {
-            namespace_name: self.namespace_name,
-            service_name: self.service_name,
-            max_results: self.max_results,
-            query_parameters: self.query_parameters,
-            optional_parameters: self.optional_parameters,
-            health_status: self.health_status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::discover_instances::DiscoverInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::discover_instances::DiscoverInstancesInput {
+                namespace_name: self.namespace_name
+                ,
+                service_name: self.service_name
+                ,
+                max_results: self.max_results
+                ,
+                query_parameters: self.query_parameters
+                ,
+                optional_parameters: self.optional_parameters
+                ,
+                health_status: self.health_status
+                ,
+            }
+        )
     }
 }
+

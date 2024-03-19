@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBotRecommendationInput {
+pub struct DescribeBotRecommendationInput  {
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot associated with the bot recommendation.</p>
@@ -12,21 +12,21 @@ pub struct DescribeBotRecommendationInput {
     /// <p>The identifier of the bot recommendation to describe.</p>
     pub bot_recommendation_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBotRecommendationInput {
+impl  DescribeBotRecommendationInput  {
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the bot recommendation.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
-    pub fn bot_recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> ::std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DescribeBotRecommendationInputBuilder {
     }
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot associated with the bot recommendation.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl DescribeBotRecommendationInputBuilder {
     }
     /// <p>The version of the bot associated with the bot recommendation.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot associated with the bot recommendation.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl DescribeBotRecommendationInputBuilder {
     }
     /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl DescribeBotRecommendationInputBuilder {
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
     pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_recommendation_id = input;
-        self
+        self.bot_recommendation_id = input; self
     }
     /// <p>The identifier of the bot recommendation to describe.</p>
     pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_recommendation_id
     }
     /// Consumes the builder and constructs a [`DescribeBotRecommendationInput`](crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_recommendation_id: self.bot_recommendation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bot_recommendation::DescribeBotRecommendationInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                ,
+            }
+        )
     }
 }
+

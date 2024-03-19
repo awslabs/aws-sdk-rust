@@ -3,19 +3,19 @@
 /// <p>Deletes an existing documentation part of an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDocumentationPartInput {
+pub struct DeleteDocumentationPartInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub documentation_part_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDocumentationPartInput {
+impl  DeleteDocumentationPartInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
-    pub fn documentation_part_id(&self) -> ::std::option::Option<&str> {
+    pub fn documentation_part_id(&self) -> ::std::option::Option<& str> {
         self.documentation_part_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteDocumentationPartInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl DeleteDocumentationPartInputBuilder {
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub fn set_documentation_part_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.documentation_part_id = input;
-        self
+        self.documentation_part_id = input; self
     }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.documentation_part_id
     }
     /// Consumes the builder and constructs a [`DeleteDocumentationPartInput`](crate::operation::delete_documentation_part::DeleteDocumentationPartInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_documentation_part::DeleteDocumentationPartInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_documentation_part::DeleteDocumentationPartInput {
-            rest_api_id: self.rest_api_id,
-            documentation_part_id: self.documentation_part_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_documentation_part::DeleteDocumentationPartInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_documentation_part::DeleteDocumentationPartInput {
+                rest_api_id: self.rest_api_id
+                ,
+                documentation_part_id: self.documentation_part_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The script location for a particular operating system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PlatformScriptKey {
+pub struct PlatformScriptKey  {
     /// <p>The script location for Linux.</p>
     pub linux: ::std::option::Option<::std::string::String>,
     /// <p>The script location for Windows.</p>
     pub windows: ::std::option::Option<::std::string::String>,
 }
-impl PlatformScriptKey {
+impl  PlatformScriptKey  {
     /// <p>The script location for Linux.</p>
-    pub fn linux(&self) -> ::std::option::Option<&str> {
+    pub fn linux(&self) -> ::std::option::Option<& str> {
         self.linux.as_deref()
     }
     /// <p>The script location for Windows.</p>
-    pub fn windows(&self) -> ::std::option::Option<&str> {
+    pub fn windows(&self) -> ::std::option::Option<& str> {
         self.windows.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PlatformScriptKeyBuilder {
     }
     /// <p>The script location for Linux.</p>
     pub fn set_linux(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.linux = input;
-        self
+        self.linux = input; self
     }
     /// <p>The script location for Linux.</p>
     pub fn get_linux(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PlatformScriptKeyBuilder {
     }
     /// <p>The script location for Windows.</p>
     pub fn set_windows(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.windows = input;
-        self
+        self.windows = input; self
     }
     /// <p>The script location for Windows.</p>
     pub fn get_windows(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PlatformScriptKeyBuilder {
     /// Consumes the builder and constructs a [`PlatformScriptKey`](crate::types::PlatformScriptKey).
     pub fn build(self) -> crate::types::PlatformScriptKey {
         crate::types::PlatformScriptKey {
-            linux: self.linux,
-            windows: self.windows,
+            linux: self.linux
+            ,
+            windows: self.windows
+            ,
         }
     }
 }
+

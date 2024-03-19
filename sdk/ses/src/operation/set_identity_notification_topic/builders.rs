@@ -5,56 +5,52 @@ pub use crate::operation::set_identity_notification_topic::_set_identity_notific
 
 impl SetIdentityNotificationTopicInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.set_identity_notification_topic();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.set_identity_notification_topic();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SetIdentityNotificationTopic`.
-///
+/// 
 /// <p>Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications. When you use this operation, you specify a verified identity, such as an email address or domain. When you send an email that uses the chosen identity in the Source field, Amazon SES sends notifications to the topic you specified. You can send bounce, complaint, or delivery notifications (or any combination of the three) to the Amazon SNS topic that you specify.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 /// <p>For more information about feedback notification, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder,
+                    inner: crate::operation::set_identity_notification_topic::builders::SetIdentityNotificationTopicInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-    > for SetIdentityNotificationTopicFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
+                    crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
+                > for SetIdentityNotificationTopicFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
+                        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SetIdentityNotificationTopicFluentBuilder {
     /// Creates a new `SetIdentityNotificationTopic`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl SetIdentityNotificationTopicFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
-        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopic::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput, crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identity (email address or domain) for the Amazon SNS topic.</p><important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
@@ -162,3 +149,4 @@ impl SetIdentityNotificationTopicFluentBuilder {
         self.inner.get_sns_topic()
     }
 }
+

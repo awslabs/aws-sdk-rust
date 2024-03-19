@@ -3,13 +3,13 @@
 /// <p>An object that contains information on the status of Kubernetes data sources for the detector.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsGuardDutyDetectorDataSourcesKubernetesDetails {
+pub struct AwsGuardDutyDetectorDataSourcesKubernetesDetails  {
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub audit_logs: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails>,
 }
-impl AwsGuardDutyDetectorDataSourcesKubernetesDetails {
+impl  AwsGuardDutyDetectorDataSourcesKubernetesDetails  {
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
-    pub fn audit_logs(&self) -> ::std::option::Option<&crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails> {
+    pub fn audit_logs(&self) -> ::std::option::Option<& crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails> {
         self.audit_logs.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesDetailsBuilder {
     }
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub fn set_audit_logs(mut self, input: ::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails>) -> Self {
-        self.audit_logs = input;
-        self
+        self.audit_logs = input; self
     }
     /// <p>Describes whether Kubernetes audit logs are activated as a data source for the detector.</p>
     pub fn get_audit_logs(&self) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails> {
@@ -43,6 +42,10 @@ impl AwsGuardDutyDetectorDataSourcesKubernetesDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesKubernetesDetails`](crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails {
-        crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails { audit_logs: self.audit_logs }
+        crate::types::AwsGuardDutyDetectorDataSourcesKubernetesDetails {
+            audit_logs: self.audit_logs
+            ,
+        }
     }
 }
+

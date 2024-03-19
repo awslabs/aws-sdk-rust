@@ -3,7 +3,7 @@
 /// Details about the input device that is being transferred.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransferringInputDeviceSummary {
+pub struct TransferringInputDeviceSummary  {
     /// The unique ID of the input device.
     pub id: ::std::option::Option<::std::string::String>,
     /// The optional message that the sender has attached to the transfer.
@@ -13,21 +13,21 @@ pub struct TransferringInputDeviceSummary {
     /// The type (direction) of the input device transfer.
     pub transfer_type: ::std::option::Option<crate::types::InputDeviceTransferType>,
 }
-impl TransferringInputDeviceSummary {
+impl  TransferringInputDeviceSummary  {
     /// The unique ID of the input device.
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The optional message that the sender has attached to the transfer.
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// The AWS account ID for the recipient of the input device transfer.
-    pub fn target_customer_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_customer_id(&self) -> ::std::option::Option<& str> {
         self.target_customer_id.as_deref()
     }
     /// The type (direction) of the input device transfer.
-    pub fn transfer_type(&self) -> ::std::option::Option<&crate::types::InputDeviceTransferType> {
+    pub fn transfer_type(&self) -> ::std::option::Option<& crate::types::InputDeviceTransferType> {
         self.transfer_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl TransferringInputDeviceSummaryBuilder {
     }
     /// The unique ID of the input device.
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The unique ID of the input device.
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl TransferringInputDeviceSummaryBuilder {
     }
     /// The optional message that the sender has attached to the transfer.
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// The optional message that the sender has attached to the transfer.
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl TransferringInputDeviceSummaryBuilder {
     }
     /// The AWS account ID for the recipient of the input device transfer.
     pub fn set_target_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_customer_id = input;
-        self
+        self.target_customer_id = input; self
     }
     /// The AWS account ID for the recipient of the input device transfer.
     pub fn get_target_customer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TransferringInputDeviceSummaryBuilder {
     }
     /// The type (direction) of the input device transfer.
     pub fn set_transfer_type(mut self, input: ::std::option::Option<crate::types::InputDeviceTransferType>) -> Self {
-        self.transfer_type = input;
-        self
+        self.transfer_type = input; self
     }
     /// The type (direction) of the input device transfer.
     pub fn get_transfer_type(&self) -> &::std::option::Option<crate::types::InputDeviceTransferType> {
@@ -107,10 +103,15 @@ impl TransferringInputDeviceSummaryBuilder {
     /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::types::TransferringInputDeviceSummary).
     pub fn build(self) -> crate::types::TransferringInputDeviceSummary {
         crate::types::TransferringInputDeviceSummary {
-            id: self.id,
-            message: self.message,
-            target_customer_id: self.target_customer_id,
-            transfer_type: self.transfer_type,
+            id: self.id
+            ,
+            message: self.message
+            ,
+            target_customer_id: self.target_customer_id
+            ,
+            transfer_type: self.transfer_type
+            ,
         }
     }
 }
+

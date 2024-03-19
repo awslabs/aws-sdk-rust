@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>CreateCacheParameterGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCacheParameterGroupInput {
+pub struct CreateCacheParameterGroupInput  {
     /// <p>A user-specified name for the cache parameter group.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
@@ -12,27 +12,28 @@ pub struct CreateCacheParameterGroupInput {
     /// <p>A user-specified description for the cache parameter group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateCacheParameterGroupInput {
+impl  CreateCacheParameterGroupInput  {
     /// <p>A user-specified name for the cache parameter group.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
-    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_family.as_deref()
     }
     /// <p>A user-specified description for the cache parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCacheParameterGroupInput {
@@ -49,7 +50,7 @@ pub struct CreateCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_group_family: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateCacheParameterGroupInputBuilder {
     /// <p>A user-specified name for the cache parameter group.</p>
@@ -60,8 +61,7 @@ impl CreateCacheParameterGroupInputBuilder {
     }
     /// <p>A user-specified name for the cache parameter group.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>A user-specified name for the cache parameter group.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl CreateCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
     pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_family = input;
-        self
+        self.cache_parameter_group_family = input; self
     }
     /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
@@ -93,8 +92,7 @@ impl CreateCacheParameterGroupInputBuilder {
     }
     /// <p>A user-specified description for the cache parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A user-specified description for the cache parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,31 +105,32 @@ impl CreateCacheParameterGroupInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCacheParameterGroupInput`](crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput {
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            cache_parameter_group_family: self.cache_parameter_group_family,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput {
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
+                cache_parameter_group_family: self.cache_parameter_group_family
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

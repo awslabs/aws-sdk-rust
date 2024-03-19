@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCoipPoolsOutput {
+pub struct DescribeCoipPoolsOutput  {
     /// <p>Information about the address pools.</p>
-    pub coip_pools: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>,
+    pub coip_pools: ::std::option::Option<::std::vec::Vec::<crate::types::CoipPool>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeCoipPoolsOutput {
+impl  DescribeCoipPoolsOutput  {
     /// <p>Information about the address pools.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.coip_pools.is_none()`.
-    pub fn coip_pools(&self) -> &[crate::types::CoipPool] {
-        self.coip_pools.as_deref().unwrap_or_default()
+    pub fn coip_pools(&self) -> & [crate::types::CoipPool] {
+        self.coip_pools.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCoipPoolsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCoipPoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCoipPoolsOutput`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput).
     pub fn builder() -> crate::operation::describe_coip_pools::builders::DescribeCoipPoolsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeCoipPoolsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCoipPoolsOutputBuilder {
-    pub(crate) coip_pools: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>,
+    pub(crate) coip_pools: ::std::option::Option<::std::vec::Vec::<crate::types::CoipPool>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeCoipPoolsOutputBuilder {
     /// <p>Information about the address pools.</p>
     pub fn coip_pools(mut self, input: crate::types::CoipPool) -> Self {
         let mut v = self.coip_pools.unwrap_or_default();
-        v.push(input);
-        self.coip_pools = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.coip_pools = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the address pools.</p>
-    pub fn set_coip_pools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoipPool>>) -> Self {
-        self.coip_pools = input;
-        self
+    pub fn set_coip_pools(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CoipPool>>) -> Self {
+        self.coip_pools = input; self
     }
     /// <p>Information about the address pools.</p>
-    pub fn get_coip_pools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoipPool>> {
+    pub fn get_coip_pools(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CoipPool>> {
         &self.coip_pools
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -69,28 +69,30 @@ impl DescribeCoipPoolsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCoipPoolsOutput`](crate::operation::describe_coip_pools::DescribeCoipPoolsOutput).
     pub fn build(self) -> crate::operation::describe_coip_pools::DescribeCoipPoolsOutput {
         crate::operation::describe_coip_pools::DescribeCoipPoolsOutput {
-            coip_pools: self.coip_pools,
-            next_token: self.next_token,
+            coip_pools: self.coip_pools
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

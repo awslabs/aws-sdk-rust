@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFleetOutput {
+pub struct DeleteFleetOutput  {
     /// <p>The ID of the deleted fleet.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteFleetOutput {
+impl  DeleteFleetOutput  {
     /// <p>The ID of the deleted fleet.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteFleetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteFleetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput).
     pub fn builder() -> crate::operation::delete_fleet::builders::DeleteFleetOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteFleetOutputBuilder {
     }
     /// <p>The ID of the deleted fleet.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the deleted fleet.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteFleetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted fleet.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput).
     pub fn build(self) -> crate::operation::delete_fleet::DeleteFleetOutput {
         crate::operation::delete_fleet::DeleteFleetOutput {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

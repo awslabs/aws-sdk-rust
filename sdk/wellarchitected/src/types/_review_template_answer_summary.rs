@@ -3,7 +3,7 @@
 /// <p>The summary of review template answers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReviewTemplateAnswerSummary {
+pub struct ReviewTemplateAnswerSummary  {
     /// <p>The ID of the question.</p>
     pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -12,12 +12,12 @@ pub struct ReviewTemplateAnswerSummary {
     /// <p>The title of the question.</p>
     pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>List of choices available for a question.</p>
-    pub choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
+    pub choices: ::std::option::Option<::std::vec::Vec::<crate::types::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub selected_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of selected choices to a question in the review template.</p>
-    pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub choice_answer_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceAnswerSummary>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub is_applicable: ::std::option::Option<bool>,
     /// <p>The status of whether or not this question has been answered.</p>
@@ -27,53 +27,56 @@ pub struct ReviewTemplateAnswerSummary {
     /// <p>The type of question.</p>
     pub question_type: ::std::option::Option<crate::types::QuestionType>,
 }
-impl ReviewTemplateAnswerSummary {
+impl  ReviewTemplateAnswerSummary  {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> ::std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<& str> {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> ::std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<& str> {
         self.question_title.as_deref()
     }
     /// <p>List of choices available for a question.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.choices.is_none()`.
-    pub fn choices(&self) -> &[crate::types::Choice] {
-        self.choices.as_deref().unwrap_or_default()
+    pub fn choices(&self) -> & [crate::types::Choice] {
+        self.choices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_choices.is_none()`.
-    pub fn selected_choices(&self) -> &[::std::string::String] {
-        self.selected_choices.as_deref().unwrap_or_default()
+    pub fn selected_choices(&self) -> & [::std::string::String] {
+        self.selected_choices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of selected choices to a question in the review template.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.choice_answer_summaries.is_none()`.
-    pub fn choice_answer_summaries(&self) -> &[crate::types::ChoiceAnswerSummary] {
-        self.choice_answer_summaries.as_deref().unwrap_or_default()
+    pub fn choice_answer_summaries(&self) -> & [crate::types::ChoiceAnswerSummary] {
+        self.choice_answer_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(&self) -> ::std::option::Option<bool> {
         self.is_applicable
     }
     /// <p>The status of whether or not this question has been answered.</p>
-    pub fn answer_status(&self) -> ::std::option::Option<&crate::types::ReviewTemplateAnswerStatus> {
+    pub fn answer_status(&self) -> ::std::option::Option<& crate::types::ReviewTemplateAnswerStatus> {
         self.answer_status.as_ref()
     }
     /// <p>The reason why a choice is not-applicable to a question in the review template.</p>
-    pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
+    pub fn reason(&self) -> ::std::option::Option<& crate::types::AnswerReason> {
         self.reason.as_ref()
     }
     /// <p>The type of question.</p>
-    pub fn question_type(&self) -> ::std::option::Option<&crate::types::QuestionType> {
+    pub fn question_type(&self) -> ::std::option::Option<& crate::types::QuestionType> {
         self.question_type.as_ref()
     }
 }
@@ -91,9 +94,9 @@ pub struct ReviewTemplateAnswerSummaryBuilder {
     pub(crate) question_id: ::std::option::Option<::std::string::String>,
     pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
     pub(crate) question_title: ::std::option::Option<::std::string::String>,
-    pub(crate) choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
-    pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) choice_answer_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>,
+    pub(crate) choices: ::std::option::Option<::std::vec::Vec::<crate::types::Choice>>,
+    pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) choice_answer_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceAnswerSummary>>,
     pub(crate) is_applicable: ::std::option::Option<bool>,
     pub(crate) answer_status: ::std::option::Option<crate::types::ReviewTemplateAnswerStatus>,
     pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
@@ -107,8 +110,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>The ID of the question.</p>
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_id = input;
-        self
+        self.question_id = input; self
     }
     /// <p>The ID of the question.</p>
     pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +125,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -138,8 +139,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>The title of the question.</p>
     pub fn set_question_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.question_title = input;
-        self
+        self.question_title = input; self
     }
     /// <p>The title of the question.</p>
     pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,17 +152,16 @@ impl ReviewTemplateAnswerSummaryBuilder {
     /// <p>List of choices available for a question.</p>
     pub fn choices(mut self, input: crate::types::Choice) -> Self {
         let mut v = self.choices.unwrap_or_default();
-        v.push(input);
-        self.choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of choices available for a question.</p>
-    pub fn set_choices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>) -> Self {
-        self.choices = input;
-        self
+    pub fn set_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Choice>>) -> Self {
+        self.choices = input; self
     }
     /// <p>List of choices available for a question.</p>
-    pub fn get_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Choice>> {
+    pub fn get_choices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Choice>> {
         &self.choices
     }
     /// Appends an item to `selected_choices`.
@@ -173,19 +172,18 @@ impl ReviewTemplateAnswerSummaryBuilder {
     /// <p>The values entered replace the previously selected choices.</p>
     pub fn selected_choices(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
-        v.push(input.into());
-        self.selected_choices = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_choices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.selected_choices = input;
-        self
+    pub fn set_selected_choices(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.selected_choices = input; self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_choices(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.selected_choices
     }
     /// Appends an item to `choice_answer_summaries`.
@@ -195,17 +193,16 @@ impl ReviewTemplateAnswerSummaryBuilder {
     /// <p>A list of selected choices to a question in the review template.</p>
     pub fn choice_answer_summaries(mut self, input: crate::types::ChoiceAnswerSummary) -> Self {
         let mut v = self.choice_answer_summaries.unwrap_or_default();
-        v.push(input);
-        self.choice_answer_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.choice_answer_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of selected choices to a question in the review template.</p>
-    pub fn set_choice_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>>) -> Self {
-        self.choice_answer_summaries = input;
-        self
+    pub fn set_choice_answer_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChoiceAnswerSummary>>) -> Self {
+        self.choice_answer_summaries = input; self
     }
     /// <p>A list of selected choices to a question in the review template.</p>
-    pub fn get_choice_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswerSummary>> {
+    pub fn get_choice_answer_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChoiceAnswerSummary>> {
         &self.choice_answer_summaries
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -215,8 +212,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_applicable = input;
-        self
+        self.is_applicable = input; self
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
@@ -229,8 +225,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>The status of whether or not this question has been answered.</p>
     pub fn set_answer_status(mut self, input: ::std::option::Option<crate::types::ReviewTemplateAnswerStatus>) -> Self {
-        self.answer_status = input;
-        self
+        self.answer_status = input; self
     }
     /// <p>The status of whether or not this question has been answered.</p>
     pub fn get_answer_status(&self) -> &::std::option::Option<crate::types::ReviewTemplateAnswerStatus> {
@@ -243,8 +238,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>The reason why a choice is not-applicable to a question in the review template.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason why a choice is not-applicable to a question in the review template.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
@@ -257,8 +251,7 @@ impl ReviewTemplateAnswerSummaryBuilder {
     }
     /// <p>The type of question.</p>
     pub fn set_question_type(mut self, input: ::std::option::Option<crate::types::QuestionType>) -> Self {
-        self.question_type = input;
-        self
+        self.question_type = input; self
     }
     /// <p>The type of question.</p>
     pub fn get_question_type(&self) -> &::std::option::Option<crate::types::QuestionType> {
@@ -267,16 +260,27 @@ impl ReviewTemplateAnswerSummaryBuilder {
     /// Consumes the builder and constructs a [`ReviewTemplateAnswerSummary`](crate::types::ReviewTemplateAnswerSummary).
     pub fn build(self) -> crate::types::ReviewTemplateAnswerSummary {
         crate::types::ReviewTemplateAnswerSummary {
-            question_id: self.question_id,
-            pillar_id: self.pillar_id,
-            question_title: self.question_title,
-            choices: self.choices,
-            selected_choices: self.selected_choices,
-            choice_answer_summaries: self.choice_answer_summaries,
-            is_applicable: self.is_applicable,
-            answer_status: self.answer_status,
-            reason: self.reason,
-            question_type: self.question_type,
+            question_id: self.question_id
+            ,
+            pillar_id: self.pillar_id
+            ,
+            question_title: self.question_title
+            ,
+            choices: self.choices
+            ,
+            selected_choices: self.selected_choices
+            ,
+            choice_answer_summaries: self.choice_answer_summaries
+            ,
+            is_applicable: self.is_applicable
+            ,
+            answer_status: self.answer_status
+            ,
+            reason: self.reason
+            ,
+            question_type: self.question_type
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub compliance_status: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
@@ -11,9 +11,9 @@ pub struct EvaluationResult {
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub evaluation_limit_exceeded: bool,
 }
-impl EvaluationResult {
+impl  EvaluationResult  {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
-    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::PolicyComplianceStatusType> {
+    pub fn compliance_status(&self) -> ::std::option::Option<& crate::types::PolicyComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
@@ -48,8 +48,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub fn set_compliance_status(mut self, input: ::std::option::Option<crate::types::PolicyComplianceStatusType>) -> Self {
-        self.compliance_status = input;
-        self
+        self.compliance_status = input; self
     }
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub fn get_compliance_status(&self) -> &::std::option::Option<crate::types::PolicyComplianceStatusType> {
@@ -62,8 +61,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
     pub fn set_violator_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.violator_count = input;
-        self
+        self.violator_count = input; self
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
     pub fn get_violator_count(&self) -> &::std::option::Option<i64> {
@@ -76,8 +74,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn set_evaluation_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.evaluation_limit_exceeded = input;
-        self
+        self.evaluation_limit_exceeded = input; self
     }
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn get_evaluation_limit_exceeded(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,15 @@ impl EvaluationResultBuilder {
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {
         crate::types::EvaluationResult {
-            compliance_status: self.compliance_status,
-            violator_count: self.violator_count.unwrap_or_default(),
-            evaluation_limit_exceeded: self.evaluation_limit_exceeded.unwrap_or_default(),
+            compliance_status: self.compliance_status
+            ,
+            violator_count: self.violator_count
+                .unwrap_or_default()
+            ,
+            evaluation_limit_exceeded: self.evaluation_limit_exceeded
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

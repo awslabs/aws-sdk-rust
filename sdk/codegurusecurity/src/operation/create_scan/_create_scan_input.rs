@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateScanInput {
+pub struct CreateScanInput  {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for an input resource used to create a scan.</p>
@@ -21,28 +21,28 @@ pub struct CreateScanInput {
     /// <li>
     /// <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateScanInput {
+impl  CreateScanInput  {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier for an input resource used to create a scan.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&crate::types::ResourceId> {
+    pub fn resource_id(&self) -> ::std::option::Option<& crate::types::ResourceId> {
         self.resource_id.as_ref()
     }
     /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
     /// <p><code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
-    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<& crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
-    pub fn analysis_type(&self) -> ::std::option::Option<&crate::types::AnalysisType> {
+    pub fn analysis_type(&self) -> ::std::option::Option<& crate::types::AnalysisType> {
         self.analysis_type.as_ref()
     }
     /// <p>An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:</p>
@@ -52,7 +52,7 @@ impl CreateScanInput {
     /// <li>
     /// <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -72,7 +72,7 @@ pub struct CreateScanInputBuilder {
     pub(crate) scan_name: ::std::option::Option<::std::string::String>,
     pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
     pub(crate) analysis_type: ::std::option::Option<crate::types::AnalysisType>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateScanInputBuilder {
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
@@ -82,8 +82,7 @@ impl CreateScanInputBuilder {
     }
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl CreateScanInputBuilder {
     }
     /// <p>The identifier for an input resource used to create a scan.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<crate::types::ResourceId>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier for an input resource used to create a scan.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<crate::types::ResourceId> {
@@ -112,8 +110,7 @@ impl CreateScanInputBuilder {
     }
     /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +125,7 @@ impl CreateScanInputBuilder {
     /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
     /// <p><code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
-        self.scan_type = input;
-        self
+        self.scan_type = input; self
     }
     /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
     /// <p><code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
@@ -143,8 +139,7 @@ impl CreateScanInputBuilder {
     }
     /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
     pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::AnalysisType>) -> Self {
-        self.analysis_type = input;
-        self
+        self.analysis_type = input; self
     }
     /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
     pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
@@ -163,9 +158,9 @@ impl CreateScanInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -174,9 +169,8 @@ impl CreateScanInputBuilder {
     /// <li>
     /// <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -185,18 +179,27 @@ impl CreateScanInputBuilder {
     /// <li>
     /// <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScanInput`](crate::operation::create_scan::CreateScanInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_scan::CreateScanInput {
-            client_token: self.client_token,
-            resource_id: self.resource_id,
-            scan_name: self.scan_name,
-            scan_type: self.scan_type,
-            analysis_type: self.analysis_type,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_scan::CreateScanInput {
+                client_token: self.client_token
+                ,
+                resource_id: self.resource_id
+                ,
+                scan_name: self.scan_name
+                ,
+                scan_type: self.scan_type
+                ,
+                analysis_type: self.analysis_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

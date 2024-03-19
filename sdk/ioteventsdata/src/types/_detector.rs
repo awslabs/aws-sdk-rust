@@ -3,7 +3,7 @@
 /// <p>Information about the detector (instance).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Detector {
+pub struct Detector  {
     /// <p>The name of the detector model that created this detector (instance).</p>
     pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
@@ -17,29 +17,29 @@ pub struct Detector {
     /// <p>The time the detector (instance) was last updated.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Detector {
+impl  Detector  {
     /// <p>The name of the detector model that created this detector (instance).</p>
-    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> ::std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
-    pub fn key_value(&self) -> ::std::option::Option<&str> {
+    pub fn key_value(&self) -> ::std::option::Option<& str> {
         self.key_value.as_deref()
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
-    pub fn detector_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn detector_model_version(&self) -> ::std::option::Option<& str> {
         self.detector_model_version.as_deref()
     }
     /// <p>The current state of the detector (instance).</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DetectorState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DetectorState> {
         self.state.as_ref()
     }
     /// <p>The time the detector (instance) was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the detector (instance) was last updated.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl DetectorBuilder {
     }
     /// <p>The name of the detector model that created this detector (instance).</p>
     pub fn set_detector_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_model_name = input;
-        self
+        self.detector_model_name = input; self
     }
     /// <p>The name of the detector model that created this detector (instance).</p>
     pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl DetectorBuilder {
     }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl DetectorBuilder {
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
     pub fn set_detector_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_model_version = input;
-        self
+        self.detector_model_version = input; self
     }
     /// <p>The version of the detector model that created this detector (instance).</p>
     pub fn get_detector_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl DetectorBuilder {
     }
     /// <p>The current state of the detector (instance).</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DetectorState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the detector (instance).</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DetectorState> {
@@ -125,8 +121,7 @@ impl DetectorBuilder {
     }
     /// <p>The time the detector (instance) was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the detector (instance) was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl DetectorBuilder {
     }
     /// <p>The time the detector (instance) was last updated.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The time the detector (instance) was last updated.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl DetectorBuilder {
     /// Consumes the builder and constructs a [`Detector`](crate::types::Detector).
     pub fn build(self) -> crate::types::Detector {
         crate::types::Detector {
-            detector_model_name: self.detector_model_name,
-            key_value: self.key_value,
-            detector_model_version: self.detector_model_version,
-            state: self.state,
-            creation_time: self.creation_time,
-            last_update_time: self.last_update_time,
+            detector_model_name: self.detector_model_name
+            ,
+            key_value: self.key_value
+            ,
+            detector_model_version: self.detector_model_version
+            ,
+            state: self.state
+            ,
+            creation_time: self.creation_time
+            ,
+            last_update_time: self.last_update_time
+            ,
         }
     }
 }
+

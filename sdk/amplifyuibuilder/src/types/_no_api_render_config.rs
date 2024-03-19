@@ -3,7 +3,8 @@
 /// <p>Describes the configuration for an application with no API being used.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NoApiRenderConfig {}
+pub struct NoApiRenderConfig  {
+}
 impl NoApiRenderConfig {
     /// Creates a new builder-style object to manufacture [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).
     pub fn builder() -> crate::types::builders::NoApiRenderConfigBuilder {
@@ -14,10 +15,13 @@ impl NoApiRenderConfig {
 /// A builder for [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct NoApiRenderConfigBuilder {}
+pub struct NoApiRenderConfigBuilder {
+}
 impl NoApiRenderConfigBuilder {
     /// Consumes the builder and constructs a [`NoApiRenderConfig`](crate::types::NoApiRenderConfig).
     pub fn build(self) -> crate::types::NoApiRenderConfig {
-        crate::types::NoApiRenderConfig {}
+        crate::types::NoApiRenderConfig {
+        }
     }
 }
+

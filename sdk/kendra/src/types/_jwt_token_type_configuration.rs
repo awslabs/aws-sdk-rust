@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for the JWT token type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JwtTokenTypeConfiguration {
+pub struct JwtTokenTypeConfiguration  {
     /// <p>The location of the key.</p>
     pub key_location: crate::types::KeyLocation,
     /// <p>The signing key URL.</p>
@@ -19,33 +19,33 @@ pub struct JwtTokenTypeConfiguration {
     /// <p>The regular expression that identifies the claim.</p>
     pub claim_regex: ::std::option::Option<::std::string::String>,
 }
-impl JwtTokenTypeConfiguration {
+impl  JwtTokenTypeConfiguration  {
     /// <p>The location of the key.</p>
-    pub fn key_location(&self) -> &crate::types::KeyLocation {
+    pub fn key_location(&self) -> & crate::types::KeyLocation {
         &self.key_location
     }
     /// <p>The signing key URL.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    pub fn secret_manager_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> ::std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> ::std::option::Option<&str> {
+    pub fn user_name_attribute_field(&self) -> ::std::option::Option<& str> {
         self.user_name_attribute_field.as_deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> ::std::option::Option<&str> {
+    pub fn group_attribute_field(&self) -> ::std::option::Option<& str> {
         self.group_attribute_field.as_deref()
     }
     /// <p>The issuer of the token.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The regular expression that identifies the claim.</p>
-    pub fn claim_regex(&self) -> ::std::option::Option<&str> {
+    pub fn claim_regex(&self) -> ::std::option::Option<& str> {
         self.claim_regex.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The location of the key.</p>
     pub fn set_key_location(mut self, input: ::std::option::Option<crate::types::KeyLocation>) -> Self {
-        self.key_location = input;
-        self
+        self.key_location = input; self
     }
     /// <p>The location of the key.</p>
     pub fn get_key_location(&self) -> &::std::option::Option<crate::types::KeyLocation> {
@@ -91,8 +90,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The signing key URL.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The signing key URL.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
     pub fn set_secret_manager_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_manager_arn = input;
-        self
+        self.secret_manager_arn = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
     pub fn get_secret_manager_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +116,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The user name attribute field.</p>
     pub fn set_user_name_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name_attribute_field = input;
-        self
+        self.user_name_attribute_field = input; self
     }
     /// <p>The user name attribute field.</p>
     pub fn get_user_name_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The group attribute field.</p>
     pub fn set_group_attribute_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_attribute_field = input;
-        self
+        self.group_attribute_field = input; self
     }
     /// <p>The group attribute field.</p>
     pub fn get_group_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +142,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The issuer of the token.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// <p>The issuer of the token.</p>
     pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +155,7 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The regular expression that identifies the claim.</p>
     pub fn set_claim_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.claim_regex = input;
-        self
+        self.claim_regex = input; self
     }
     /// <p>The regular expression that identifies the claim.</p>
     pub fn get_claim_regex(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,19 +165,27 @@ impl JwtTokenTypeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_location`](crate::types::builders::JwtTokenTypeConfigurationBuilder::key_location)
     pub fn build(self) -> ::std::result::Result<crate::types::JwtTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JwtTokenTypeConfiguration {
-            key_location: self.key_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_location",
-                    "key_location was not specified but it is required when building JwtTokenTypeConfiguration",
-                )
-            })?,
-            url: self.url,
-            secret_manager_arn: self.secret_manager_arn,
-            user_name_attribute_field: self.user_name_attribute_field,
-            group_attribute_field: self.group_attribute_field,
-            issuer: self.issuer,
-            claim_regex: self.claim_regex,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JwtTokenTypeConfiguration {
+                key_location: self.key_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_location", "key_location was not specified but it is required when building JwtTokenTypeConfiguration")
+                    )?
+                ,
+                url: self.url
+                ,
+                secret_manager_arn: self.secret_manager_arn
+                ,
+                user_name_attribute_field: self.user_name_attribute_field
+                ,
+                group_attribute_field: self.group_attribute_field
+                ,
+                issuer: self.issuer
+                ,
+                claim_regex: self.claim_regex
+                ,
+            }
+        )
     }
 }
+

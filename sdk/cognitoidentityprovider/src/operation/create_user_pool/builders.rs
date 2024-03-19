@@ -5,23 +5,20 @@ pub use crate::operation::create_user_pool::_create_user_pool_input::CreateUserP
 
 impl CreateUserPoolInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_pool::CreateUserPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_user_pool::CreateUserPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_user_pool();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_user_pool::CreateUserPoolOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_user_pool::CreateUserPoolError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_user_pool();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateUserPool`.
-///
+/// 
 /// <note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
 /// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -41,33 +38,32 @@ impl CreateUserPoolInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_user_pool::builders::CreateUserPoolInputBuilder,
+                    inner: crate::operation::create_user_pool::builders::CreateUserPoolInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_user_pool::CreateUserPoolOutput,
-        crate::operation::create_user_pool::CreateUserPoolError,
-    > for CreateUserPoolFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_user_pool::CreateUserPoolOutput,
-            crate::operation::create_user_pool::CreateUserPoolError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_user_pool::CreateUserPoolOutput,
+                    crate::operation::create_user_pool::CreateUserPoolError,
+                > for CreateUserPoolFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_user_pool::CreateUserPoolOutput,
+                        crate::operation::create_user_pool::CreateUserPoolError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateUserPoolFluentBuilder {
     /// Creates a new `CreateUserPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -76,53 +72,44 @@ impl CreateUserPoolFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_user_pool::CreateUserPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_user_pool::CreateUserPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_user_pool::CreateUserPool::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_user_pool::CreateUserPool::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_user_pool::CreateUserPoolOutput,
-        crate::operation::create_user_pool::CreateUserPoolError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_user_pool::CreateUserPoolOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_pool::CreateUserPoolError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_user_pool::CreateUserPool::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_user_pool::CreateUserPool::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_user_pool::CreateUserPoolOutput, crate::operation::create_user_pool::CreateUserPoolError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A string used to name the user pool.</p>
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_name(input.into());
@@ -207,12 +194,12 @@ impl CreateUserPoolFluentBuilder {
         self
     }
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
-    pub fn set_auto_verified_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>>) -> Self {
+    pub fn set_auto_verified_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAttributeType>>) -> Self {
         self.inner = self.inner.set_auto_verified_attributes(input);
         self
     }
     /// <p>The attributes to be auto-verified. Possible values: <b>email</b>, <b>phone_number</b>.</p>
-    pub fn get_auto_verified_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VerifiedAttributeType>> {
+    pub fn get_auto_verified_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VerifiedAttributeType>> {
         self.inner.get_auto_verified_attributes()
     }
     /// Appends an item to `AliasAttributes`.
@@ -225,12 +212,12 @@ impl CreateUserPoolFluentBuilder {
         self
     }
     /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
-    pub fn set_alias_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasAttributeType>>) -> Self {
+    pub fn set_alias_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AliasAttributeType>>) -> Self {
         self.inner = self.inner.set_alias_attributes(input);
         self
     }
     /// <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
-    pub fn get_alias_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasAttributeType>> {
+    pub fn get_alias_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AliasAttributeType>> {
         self.inner.get_alias_attributes()
     }
     /// Appends an item to `UsernameAttributes`.
@@ -243,12 +230,12 @@ impl CreateUserPoolFluentBuilder {
         self
     }
     /// <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
-    pub fn set_username_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsernameAttributeType>>) -> Self {
+    pub fn set_username_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsernameAttributeType>>) -> Self {
         self.inner = self.inner.set_username_attributes(input);
         self
     }
     /// <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
-    pub fn get_username_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsernameAttributeType>> {
+    pub fn get_username_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsernameAttributeType>> {
         self.inner.get_username_attributes()
     }
     /// <p>This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.</p>
@@ -402,24 +389,17 @@ impl CreateUserPoolFluentBuilder {
     /// To override the contents of this collection use [`set_user_pool_tags`](Self::set_user_pool_tags).
     ///
     /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn user_pool_tags(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_pool_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_tags(k.into(), v.into());
         self
     }
     /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn set_user_pool_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_user_pool_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_user_pool_tags(input);
         self
     }
     /// <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn get_user_pool_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_user_pool_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_user_pool_tags()
     }
     /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
@@ -446,12 +426,12 @@ impl CreateUserPoolFluentBuilder {
         self
     }
     /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
-    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
     /// <p>An array of schema attributes for the new user pool. These attributes can be standard or custom attributes.</p>
-    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
+    pub fn get_schema(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SchemaAttributeType>> {
         self.inner.get_schema()
     }
     /// <p>User pool add-ons. Contains settings for activation of advanced security features. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
@@ -503,3 +483,4 @@ impl CreateUserPoolFluentBuilder {
         self.inner.get_account_recovery_setting()
     }
 }
+

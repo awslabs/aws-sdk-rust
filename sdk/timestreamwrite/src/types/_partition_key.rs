@@ -3,7 +3,7 @@
 /// <p>An attribute used in partitioning data in a table. A dimension key partitions data using the values of the dimension specified by the dimension-name as partition key, while a measure key partitions data using measure names (values of the 'measure_name' column).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PartitionKey {
+pub struct PartitionKey  {
     /// <p>The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key).</p>
     pub r#type: crate::types::PartitionKeyType,
     /// <p>The name of the attribute used for a dimension key.</p>
@@ -11,17 +11,17 @@ pub struct PartitionKey {
     /// <p>The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified).</p>
     pub enforcement_in_record: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>,
 }
-impl PartitionKey {
+impl  PartitionKey  {
     /// <p>The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key).</p>
-    pub fn r#type(&self) -> &crate::types::PartitionKeyType {
+    pub fn r#type(&self) -> & crate::types::PartitionKeyType {
         &self.r#type
     }
     /// <p>The name of the attribute used for a dimension key.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified).</p>
-    pub fn enforcement_in_record(&self) -> ::std::option::Option<&crate::types::PartitionKeyEnforcementLevel> {
+    pub fn enforcement_in_record(&self) -> ::std::option::Option<& crate::types::PartitionKeyEnforcementLevel> {
         self.enforcement_in_record.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl PartitionKeyBuilder {
     }
     /// <p>The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PartitionKeyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PartitionKeyType> {
@@ -63,8 +62,7 @@ impl PartitionKeyBuilder {
     }
     /// <p>The name of the attribute used for a dimension key.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute used for a dimension key.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl PartitionKeyBuilder {
     }
     /// <p>The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified).</p>
     pub fn set_enforcement_in_record(mut self, input: ::std::option::Option<crate::types::PartitionKeyEnforcementLevel>) -> Self {
-        self.enforcement_in_record = input;
-        self
+        self.enforcement_in_record = input; self
     }
     /// <p>The level of enforcement for the specification of a dimension key in ingested records. Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key does not have to be specified).</p>
     pub fn get_enforcement_in_record(&self) -> &::std::option::Option<crate::types::PartitionKeyEnforcementLevel> {
@@ -88,15 +85,19 @@ impl PartitionKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::PartitionKeyBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::PartitionKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PartitionKey {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building PartitionKey",
-                )
-            })?,
-            name: self.name,
-            enforcement_in_record: self.enforcement_in_record,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PartitionKey {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building PartitionKey")
+                    )?
+                ,
+                name: self.name
+                ,
+                enforcement_in_record: self.enforcement_in_record
+                ,
+            }
+        )
     }
 }
+

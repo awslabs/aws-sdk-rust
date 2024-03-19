@@ -3,19 +3,19 @@
 /// <p>UpdateAgentRequest</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAgentInput {
+pub struct UpdateAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
     pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that you want to use to configure the agent.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAgentInput {
+impl  UpdateAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-    pub fn agent_arn(&self) -> ::std::option::Option<&str> {
+    pub fn agent_arn(&self) -> ::std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name that you want to use to configure the agent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateAgentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
     pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
     pub fn get_agent_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl UpdateAgentInputBuilder {
     }
     /// <p>The name that you want to use to configure the agent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that you want to use to configure the agent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl UpdateAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAgentInput`](crate::operation::update_agent::UpdateAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_agent::UpdateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_agent::UpdateAgentInput {
-            agent_arn: self.agent_arn,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_agent::UpdateAgentInput {
+                agent_arn: self.agent_arn
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchTemplateInstanceMetadataOptionsRequest {
+pub struct LaunchTemplateInstanceMetadataOptionsRequest  {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct LaunchTemplateInstanceMetadataOptionsRequest {
     /// <p>Default: <code>disabled</code></p>
     pub instance_metadata_tags: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataTagsState>,
 }
-impl LaunchTemplateInstanceMetadataOptionsRequest {
+impl  LaunchTemplateInstanceMetadataOptionsRequest  {
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequest {
     /// <p><code>required</code> - IMDSv2 is required. You must send a session token in your instance metadata retrieval requests. With this option, retrieving the IAM role credentials always returns IMDSv2 credentials; IMDSv1 credentials are not available.</p></li>
     /// </ul>
     /// <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, the default is <code>required</code>.</p>
-    pub fn http_tokens(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHttpTokensState> {
+    pub fn http_tokens(&self) -> ::std::option::Option<& crate::types::LaunchTemplateHttpTokensState> {
         self.http_tokens.as_ref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
@@ -49,17 +49,17 @@ impl LaunchTemplateInstanceMetadataOptionsRequest {
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p><note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
-    pub fn http_endpoint(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataEndpointState> {
+    pub fn http_endpoint(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMetadataEndpointState> {
         self.http_endpoint.as_ref()
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     /// <p>Default: <code>disabled</code></p>
-    pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataProtocolIpv6> {
+    pub fn http_protocol_ipv6(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMetadataProtocolIpv6> {
         self.http_protocol_ipv6.as_ref()
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
-    pub fn instance_metadata_tags(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataTagsState> {
+    pub fn instance_metadata_tags(&self) -> ::std::option::Option<& crate::types::LaunchTemplateInstanceMetadataTagsState> {
         self.instance_metadata_tags.as_ref()
     }
 }
@@ -102,8 +102,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// </ul>
     /// <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is <code>v2.0</code>, the default is <code>required</code>.</p>
     pub fn set_http_tokens(mut self, input: ::std::option::Option<crate::types::LaunchTemplateHttpTokensState>) -> Self {
-        self.http_tokens = input;
-        self
+        self.http_tokens = input; self
     }
     /// <p>Indicates whether IMDSv2 is required.</p>
     /// <ul>
@@ -127,8 +126,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// <p>Default: <code>1</code></p>
     /// <p>Possible values: Integers from 1 to 64</p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.http_put_response_hop_limit = input;
-        self
+        self.http_put_response_hop_limit = input; self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
     /// <p>Default: <code>1</code></p>
@@ -147,8 +145,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
     /// </note>
     pub fn set_http_endpoint(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataEndpointState>) -> Self {
-        self.http_endpoint = input;
-        self
+        self.http_endpoint = input; self
     }
     /// <p>Enables or disables the HTTP metadata endpoint on your instances. If the parameter is not specified, the default state is <code>enabled</code>.</p><note>
     /// <p>If you specify a value of <code>disabled</code>, you will not be able to access your instance metadata.</p>
@@ -165,8 +162,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataProtocolIpv6>) -> Self {
-        self.http_protocol_ipv6 = input;
-        self
+        self.http_protocol_ipv6 = input; self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
     /// <p>Default: <code>disabled</code></p>
@@ -182,8 +178,7 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataTagsState>) -> Self {
-        self.instance_metadata_tags = input;
-        self
+        self.instance_metadata_tags = input; self
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
@@ -193,11 +188,17 @@ impl LaunchTemplateInstanceMetadataOptionsRequestBuilder {
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMetadataOptionsRequest`](crate::types::LaunchTemplateInstanceMetadataOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceMetadataOptionsRequest {
         crate::types::LaunchTemplateInstanceMetadataOptionsRequest {
-            http_tokens: self.http_tokens,
-            http_put_response_hop_limit: self.http_put_response_hop_limit,
-            http_endpoint: self.http_endpoint,
-            http_protocol_ipv6: self.http_protocol_ipv6,
-            instance_metadata_tags: self.instance_metadata_tags,
+            http_tokens: self.http_tokens
+            ,
+            http_put_response_hop_limit: self.http_put_response_hop_limit
+            ,
+            http_endpoint: self.http_endpoint
+            ,
+            http_protocol_ipv6: self.http_protocol_ipv6
+            ,
+            instance_metadata_tags: self.instance_metadata_tags
+            ,
         }
     }
 }
+

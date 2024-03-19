@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpcconnectionstate = unimplemented!();
 /// match vpcconnectionstate {
@@ -36,16 +36,14 @@
 /// Specifically, when `vpcconnectionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcConnectionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The state of a VPC connection.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum VpcConnectionState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -65,88 +63,80 @@ pub enum VpcConnectionState {
     Rejecting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for VpcConnectionState {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => VpcConnectionState::Available,
-            "CREATING" => VpcConnectionState::Creating,
-            "DEACTIVATING" => VpcConnectionState::Deactivating,
-            "DELETING" => VpcConnectionState::Deleting,
-            "FAILED" => VpcConnectionState::Failed,
-            "INACTIVE" => VpcConnectionState::Inactive,
-            "REJECTED" => VpcConnectionState::Rejected,
-            "REJECTING" => VpcConnectionState::Rejecting,
-            other => VpcConnectionState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AVAILABLE" => VpcConnectionState::Available,
+"CREATING" => VpcConnectionState::Creating,
+"DEACTIVATING" => VpcConnectionState::Deactivating,
+"DELETING" => VpcConnectionState::Deleting,
+"FAILED" => VpcConnectionState::Failed,
+"INACTIVE" => VpcConnectionState::Inactive,
+"REJECTED" => VpcConnectionState::Rejected,
+"REJECTING" => VpcConnectionState::Rejecting,
+other => VpcConnectionState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for VpcConnectionState {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(VpcConnectionState::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(VpcConnectionState::from(s))
+                    }
+                }
 impl VpcConnectionState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcConnectionState::Available => "AVAILABLE",
-            VpcConnectionState::Creating => "CREATING",
-            VpcConnectionState::Deactivating => "DEACTIVATING",
-            VpcConnectionState::Deleting => "DELETING",
-            VpcConnectionState::Failed => "FAILED",
-            VpcConnectionState::Inactive => "INACTIVE",
-            VpcConnectionState::Rejected => "REJECTED",
-            VpcConnectionState::Rejecting => "REJECTING",
-            VpcConnectionState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "CREATING",
-            "DEACTIVATING",
-            "DELETING",
-            "FAILED",
-            "INACTIVE",
-            "REJECTED",
-            "REJECTING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcConnectionState::Available => "AVAILABLE",
+    VpcConnectionState::Creating => "CREATING",
+    VpcConnectionState::Deactivating => "DEACTIVATING",
+    VpcConnectionState::Deleting => "DELETING",
+    VpcConnectionState::Failed => "FAILED",
+    VpcConnectionState::Inactive => "INACTIVE",
+    VpcConnectionState::Rejected => "REJECTED",
+    VpcConnectionState::Rejecting => "REJECTING",
+    VpcConnectionState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "CREATING", "DEACTIVATING", "DELETING", "FAILED", "INACTIVE", "REJECTED", "REJECTING"]
+                }
+            }
 impl ::std::convert::AsRef<str> for VpcConnectionState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl VpcConnectionState {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for VpcConnectionState {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            VpcConnectionState::Available => write!(f, "AVAILABLE"),
-            VpcConnectionState::Creating => write!(f, "CREATING"),
-            VpcConnectionState::Deactivating => write!(f, "DEACTIVATING"),
-            VpcConnectionState::Deleting => write!(f, "DELETING"),
-            VpcConnectionState::Failed => write!(f, "FAILED"),
-            VpcConnectionState::Inactive => write!(f, "INACTIVE"),
-            VpcConnectionState::Rejected => write!(f, "REJECTED"),
-            VpcConnectionState::Rejecting => write!(f, "REJECTING"),
-            VpcConnectionState::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                VpcConnectionState::Available => write!(f, "AVAILABLE"),
+VpcConnectionState::Creating => write!(f, "CREATING"),
+VpcConnectionState::Deactivating => write!(f, "DEACTIVATING"),
+VpcConnectionState::Deleting => write!(f, "DELETING"),
+VpcConnectionState::Failed => write!(f, "FAILED"),
+VpcConnectionState::Inactive => write!(f, "INACTIVE"),
+VpcConnectionState::Rejected => write!(f, "REJECTED"),
+VpcConnectionState::Rejecting => write!(f, "REJECTING"),
+VpcConnectionState::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let runtime = unimplemented!();
 /// match runtime {
@@ -65,16 +65,14 @@
 /// Specifically, when `runtime` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Runtime::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Dotnet6,
@@ -152,204 +150,167 @@ pub enum Runtime {
     Ruby32,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Runtime {
-    fn from(s: &str) -> Self {
-        match s {
-            "dotnet6" => Runtime::Dotnet6,
-            "dotnet8" => Runtime::Dotnet8,
-            "dotnetcore1.0" => Runtime::Dotnetcore10,
-            "dotnetcore2.0" => Runtime::Dotnetcore20,
-            "dotnetcore2.1" => Runtime::Dotnetcore21,
-            "dotnetcore3.1" => Runtime::Dotnetcore31,
-            "go1.x" => Runtime::Go1x,
-            "java11" => Runtime::Java11,
-            "java17" => Runtime::Java17,
-            "java21" => Runtime::Java21,
-            "java8" => Runtime::Java8,
-            "java8.al2" => Runtime::Java8al2,
-            "nodejs" => Runtime::Nodejs,
-            "nodejs10.x" => Runtime::Nodejs10x,
-            "nodejs12.x" => Runtime::Nodejs12x,
-            "nodejs14.x" => Runtime::Nodejs14x,
-            "nodejs16.x" => Runtime::Nodejs16x,
-            "nodejs18.x" => Runtime::Nodejs18x,
-            "nodejs20.x" => Runtime::Nodejs20x,
-            "nodejs4.3" => Runtime::Nodejs43,
-            "nodejs4.3-edge" => Runtime::Nodejs43edge,
-            "nodejs6.10" => Runtime::Nodejs610,
-            "nodejs8.10" => Runtime::Nodejs810,
-            "provided" => Runtime::Provided,
-            "provided.al2" => Runtime::Providedal2,
-            "provided.al2023" => Runtime::Providedal2023,
-            "python2.7" => Runtime::Python27,
-            "python3.10" => Runtime::Python310,
-            "python3.11" => Runtime::Python311,
-            "python3.12" => Runtime::Python312,
-            "python3.6" => Runtime::Python36,
-            "python3.7" => Runtime::Python37,
-            "python3.8" => Runtime::Python38,
-            "python3.9" => Runtime::Python39,
-            "ruby2.5" => Runtime::Ruby25,
-            "ruby2.7" => Runtime::Ruby27,
-            "ruby3.2" => Runtime::Ruby32,
-            other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "dotnet6" => Runtime::Dotnet6,
+"dotnet8" => Runtime::Dotnet8,
+"dotnetcore1.0" => Runtime::Dotnetcore10,
+"dotnetcore2.0" => Runtime::Dotnetcore20,
+"dotnetcore2.1" => Runtime::Dotnetcore21,
+"dotnetcore3.1" => Runtime::Dotnetcore31,
+"go1.x" => Runtime::Go1x,
+"java11" => Runtime::Java11,
+"java17" => Runtime::Java17,
+"java21" => Runtime::Java21,
+"java8" => Runtime::Java8,
+"java8.al2" => Runtime::Java8al2,
+"nodejs" => Runtime::Nodejs,
+"nodejs10.x" => Runtime::Nodejs10x,
+"nodejs12.x" => Runtime::Nodejs12x,
+"nodejs14.x" => Runtime::Nodejs14x,
+"nodejs16.x" => Runtime::Nodejs16x,
+"nodejs18.x" => Runtime::Nodejs18x,
+"nodejs20.x" => Runtime::Nodejs20x,
+"nodejs4.3" => Runtime::Nodejs43,
+"nodejs4.3-edge" => Runtime::Nodejs43edge,
+"nodejs6.10" => Runtime::Nodejs610,
+"nodejs8.10" => Runtime::Nodejs810,
+"provided" => Runtime::Provided,
+"provided.al2" => Runtime::Providedal2,
+"provided.al2023" => Runtime::Providedal2023,
+"python2.7" => Runtime::Python27,
+"python3.10" => Runtime::Python310,
+"python3.11" => Runtime::Python311,
+"python3.12" => Runtime::Python312,
+"python3.6" => Runtime::Python36,
+"python3.7" => Runtime::Python37,
+"python3.8" => Runtime::Python38,
+"python3.9" => Runtime::Python39,
+"ruby2.5" => Runtime::Ruby25,
+"ruby2.7" => Runtime::Ruby27,
+"ruby3.2" => Runtime::Ruby32,
+other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Runtime {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Runtime::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Runtime::from(s))
+                    }
+                }
 impl Runtime {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Runtime::Dotnet6 => "dotnet6",
-            Runtime::Dotnet8 => "dotnet8",
-            Runtime::Dotnetcore10 => "dotnetcore1.0",
-            Runtime::Dotnetcore20 => "dotnetcore2.0",
-            Runtime::Dotnetcore21 => "dotnetcore2.1",
-            Runtime::Dotnetcore31 => "dotnetcore3.1",
-            Runtime::Go1x => "go1.x",
-            Runtime::Java11 => "java11",
-            Runtime::Java17 => "java17",
-            Runtime::Java21 => "java21",
-            Runtime::Java8 => "java8",
-            Runtime::Java8al2 => "java8.al2",
-            Runtime::Nodejs => "nodejs",
-            Runtime::Nodejs10x => "nodejs10.x",
-            Runtime::Nodejs12x => "nodejs12.x",
-            Runtime::Nodejs14x => "nodejs14.x",
-            Runtime::Nodejs16x => "nodejs16.x",
-            Runtime::Nodejs18x => "nodejs18.x",
-            Runtime::Nodejs20x => "nodejs20.x",
-            Runtime::Nodejs43 => "nodejs4.3",
-            Runtime::Nodejs43edge => "nodejs4.3-edge",
-            Runtime::Nodejs610 => "nodejs6.10",
-            Runtime::Nodejs810 => "nodejs8.10",
-            Runtime::Provided => "provided",
-            Runtime::Providedal2 => "provided.al2",
-            Runtime::Providedal2023 => "provided.al2023",
-            Runtime::Python27 => "python2.7",
-            Runtime::Python310 => "python3.10",
-            Runtime::Python311 => "python3.11",
-            Runtime::Python312 => "python3.12",
-            Runtime::Python36 => "python3.6",
-            Runtime::Python37 => "python3.7",
-            Runtime::Python38 => "python3.8",
-            Runtime::Python39 => "python3.9",
-            Runtime::Ruby25 => "ruby2.5",
-            Runtime::Ruby27 => "ruby2.7",
-            Runtime::Ruby32 => "ruby3.2",
-            Runtime::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "dotnet6",
-            "dotnet8",
-            "dotnetcore1.0",
-            "dotnetcore2.0",
-            "dotnetcore2.1",
-            "dotnetcore3.1",
-            "go1.x",
-            "java11",
-            "java17",
-            "java21",
-            "java8",
-            "java8.al2",
-            "nodejs",
-            "nodejs10.x",
-            "nodejs12.x",
-            "nodejs14.x",
-            "nodejs16.x",
-            "nodejs18.x",
-            "nodejs20.x",
-            "nodejs4.3",
-            "nodejs4.3-edge",
-            "nodejs6.10",
-            "nodejs8.10",
-            "provided",
-            "provided.al2",
-            "provided.al2023",
-            "python2.7",
-            "python3.10",
-            "python3.11",
-            "python3.12",
-            "python3.6",
-            "python3.7",
-            "python3.8",
-            "python3.9",
-            "ruby2.5",
-            "ruby2.7",
-            "ruby3.2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Runtime::Dotnet6 => "dotnet6",
+    Runtime::Dotnet8 => "dotnet8",
+    Runtime::Dotnetcore10 => "dotnetcore1.0",
+    Runtime::Dotnetcore20 => "dotnetcore2.0",
+    Runtime::Dotnetcore21 => "dotnetcore2.1",
+    Runtime::Dotnetcore31 => "dotnetcore3.1",
+    Runtime::Go1x => "go1.x",
+    Runtime::Java11 => "java11",
+    Runtime::Java17 => "java17",
+    Runtime::Java21 => "java21",
+    Runtime::Java8 => "java8",
+    Runtime::Java8al2 => "java8.al2",
+    Runtime::Nodejs => "nodejs",
+    Runtime::Nodejs10x => "nodejs10.x",
+    Runtime::Nodejs12x => "nodejs12.x",
+    Runtime::Nodejs14x => "nodejs14.x",
+    Runtime::Nodejs16x => "nodejs16.x",
+    Runtime::Nodejs18x => "nodejs18.x",
+    Runtime::Nodejs20x => "nodejs20.x",
+    Runtime::Nodejs43 => "nodejs4.3",
+    Runtime::Nodejs43edge => "nodejs4.3-edge",
+    Runtime::Nodejs610 => "nodejs6.10",
+    Runtime::Nodejs810 => "nodejs8.10",
+    Runtime::Provided => "provided",
+    Runtime::Providedal2 => "provided.al2",
+    Runtime::Providedal2023 => "provided.al2023",
+    Runtime::Python27 => "python2.7",
+    Runtime::Python310 => "python3.10",
+    Runtime::Python311 => "python3.11",
+    Runtime::Python312 => "python3.12",
+    Runtime::Python36 => "python3.6",
+    Runtime::Python37 => "python3.7",
+    Runtime::Python38 => "python3.8",
+    Runtime::Python39 => "python3.9",
+    Runtime::Ruby25 => "ruby2.5",
+    Runtime::Ruby27 => "ruby2.7",
+    Runtime::Ruby32 => "ruby3.2",
+    Runtime::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["dotnet6", "dotnet8", "dotnetcore1.0", "dotnetcore2.0", "dotnetcore2.1", "dotnetcore3.1", "go1.x", "java11", "java17", "java21", "java8", "java8.al2", "nodejs", "nodejs10.x", "nodejs12.x", "nodejs14.x", "nodejs16.x", "nodejs18.x", "nodejs20.x", "nodejs4.3", "nodejs4.3-edge", "nodejs6.10", "nodejs8.10", "provided", "provided.al2", "provided.al2023", "python2.7", "python3.10", "python3.11", "python3.12", "python3.6", "python3.7", "python3.8", "python3.9", "ruby2.5", "ruby2.7", "ruby3.2"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Runtime {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Runtime {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Runtime {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Runtime::Dotnet6 => write!(f, "dotnet6"),
-            Runtime::Dotnet8 => write!(f, "dotnet8"),
-            Runtime::Dotnetcore10 => write!(f, "dotnetcore1.0"),
-            Runtime::Dotnetcore20 => write!(f, "dotnetcore2.0"),
-            Runtime::Dotnetcore21 => write!(f, "dotnetcore2.1"),
-            Runtime::Dotnetcore31 => write!(f, "dotnetcore3.1"),
-            Runtime::Go1x => write!(f, "go1.x"),
-            Runtime::Java11 => write!(f, "java11"),
-            Runtime::Java17 => write!(f, "java17"),
-            Runtime::Java21 => write!(f, "java21"),
-            Runtime::Java8 => write!(f, "java8"),
-            Runtime::Java8al2 => write!(f, "java8.al2"),
-            Runtime::Nodejs => write!(f, "nodejs"),
-            Runtime::Nodejs10x => write!(f, "nodejs10.x"),
-            Runtime::Nodejs12x => write!(f, "nodejs12.x"),
-            Runtime::Nodejs14x => write!(f, "nodejs14.x"),
-            Runtime::Nodejs16x => write!(f, "nodejs16.x"),
-            Runtime::Nodejs18x => write!(f, "nodejs18.x"),
-            Runtime::Nodejs20x => write!(f, "nodejs20.x"),
-            Runtime::Nodejs43 => write!(f, "nodejs4.3"),
-            Runtime::Nodejs43edge => write!(f, "nodejs4.3-edge"),
-            Runtime::Nodejs610 => write!(f, "nodejs6.10"),
-            Runtime::Nodejs810 => write!(f, "nodejs8.10"),
-            Runtime::Provided => write!(f, "provided"),
-            Runtime::Providedal2 => write!(f, "provided.al2"),
-            Runtime::Providedal2023 => write!(f, "provided.al2023"),
-            Runtime::Python27 => write!(f, "python2.7"),
-            Runtime::Python310 => write!(f, "python3.10"),
-            Runtime::Python311 => write!(f, "python3.11"),
-            Runtime::Python312 => write!(f, "python3.12"),
-            Runtime::Python36 => write!(f, "python3.6"),
-            Runtime::Python37 => write!(f, "python3.7"),
-            Runtime::Python38 => write!(f, "python3.8"),
-            Runtime::Python39 => write!(f, "python3.9"),
-            Runtime::Ruby25 => write!(f, "ruby2.5"),
-            Runtime::Ruby27 => write!(f, "ruby2.7"),
-            Runtime::Ruby32 => write!(f, "ruby3.2"),
-            Runtime::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Runtime::Dotnet6 => write!(f, "dotnet6"),
+Runtime::Dotnet8 => write!(f, "dotnet8"),
+Runtime::Dotnetcore10 => write!(f, "dotnetcore1.0"),
+Runtime::Dotnetcore20 => write!(f, "dotnetcore2.0"),
+Runtime::Dotnetcore21 => write!(f, "dotnetcore2.1"),
+Runtime::Dotnetcore31 => write!(f, "dotnetcore3.1"),
+Runtime::Go1x => write!(f, "go1.x"),
+Runtime::Java11 => write!(f, "java11"),
+Runtime::Java17 => write!(f, "java17"),
+Runtime::Java21 => write!(f, "java21"),
+Runtime::Java8 => write!(f, "java8"),
+Runtime::Java8al2 => write!(f, "java8.al2"),
+Runtime::Nodejs => write!(f, "nodejs"),
+Runtime::Nodejs10x => write!(f, "nodejs10.x"),
+Runtime::Nodejs12x => write!(f, "nodejs12.x"),
+Runtime::Nodejs14x => write!(f, "nodejs14.x"),
+Runtime::Nodejs16x => write!(f, "nodejs16.x"),
+Runtime::Nodejs18x => write!(f, "nodejs18.x"),
+Runtime::Nodejs20x => write!(f, "nodejs20.x"),
+Runtime::Nodejs43 => write!(f, "nodejs4.3"),
+Runtime::Nodejs43edge => write!(f, "nodejs4.3-edge"),
+Runtime::Nodejs610 => write!(f, "nodejs6.10"),
+Runtime::Nodejs810 => write!(f, "nodejs8.10"),
+Runtime::Provided => write!(f, "provided"),
+Runtime::Providedal2 => write!(f, "provided.al2"),
+Runtime::Providedal2023 => write!(f, "provided.al2023"),
+Runtime::Python27 => write!(f, "python2.7"),
+Runtime::Python310 => write!(f, "python3.10"),
+Runtime::Python311 => write!(f, "python3.11"),
+Runtime::Python312 => write!(f, "python3.12"),
+Runtime::Python36 => write!(f, "python3.6"),
+Runtime::Python37 => write!(f, "python3.7"),
+Runtime::Python38 => write!(f, "python3.8"),
+Runtime::Python39 => write!(f, "python3.9"),
+Runtime::Ruby25 => write!(f, "ruby2.5"),
+Runtime::Ruby27 => write!(f, "ruby2.7"),
+Runtime::Ruby32 => write!(f, "ruby3.2"),
+Runtime::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

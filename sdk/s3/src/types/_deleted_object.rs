@@ -3,7 +3,7 @@
 /// <p>Information about the deleted object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletedObject {
+pub struct DeletedObject  {
     /// <p>The name of the deleted object.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the deleted object.</p><note>
@@ -19,15 +19,15 @@ pub struct DeletedObject {
     /// </note>
     pub delete_marker_version_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletedObject {
+impl  DeletedObject  {
     /// <p>The name of the deleted object.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The version ID of the deleted object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn version_id(&self) -> ::std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
@@ -39,7 +39,7 @@ impl DeletedObject {
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn delete_marker_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn delete_marker_version_id(&self) -> ::std::option::Option<& str> {
         self.delete_marker_version_id.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl DeletedObjectBuilder {
     }
     /// <p>The name of the deleted object.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the deleted object.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl DeletedObjectBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The version ID of the deleted object.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -105,8 +103,7 @@ impl DeletedObjectBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_marker = input;
-        self
+        self.delete_marker = input; self
     }
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -125,8 +122,7 @@ impl DeletedObjectBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_delete_marker_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delete_marker_version_id = input;
-        self
+        self.delete_marker_version_id = input; self
     }
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -137,10 +133,15 @@ impl DeletedObjectBuilder {
     /// Consumes the builder and constructs a [`DeletedObject`](crate::types::DeletedObject).
     pub fn build(self) -> crate::types::DeletedObject {
         crate::types::DeletedObject {
-            key: self.key,
-            version_id: self.version_id,
-            delete_marker: self.delete_marker,
-            delete_marker_version_id: self.delete_marker_version_id,
+            key: self.key
+            ,
+            version_id: self.version_id
+            ,
+            delete_marker: self.delete_marker
+            ,
+            delete_marker_version_id: self.delete_marker_version_id
+            ,
         }
     }
 }
+

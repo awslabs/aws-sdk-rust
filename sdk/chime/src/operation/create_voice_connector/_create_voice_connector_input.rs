@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVoiceConnectorInput {
+pub struct CreateVoiceConnectorInput  {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
@@ -10,13 +10,13 @@ pub struct CreateVoiceConnectorInput {
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub require_encryption: ::std::option::Option<bool>,
 }
-impl CreateVoiceConnectorInput {
+impl  CreateVoiceConnectorInput  {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&crate::types::VoiceConnectorAwsRegion> {
+    pub fn aws_region(&self) -> ::std::option::Option<& crate::types::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
@@ -48,8 +48,7 @@ impl CreateVoiceConnectorInputBuilder {
     }
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl CreateVoiceConnectorInputBuilder {
     }
     /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<crate::types::VoiceConnectorAwsRegion>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> .</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<crate::types::VoiceConnectorAwsRegion> {
@@ -77,22 +75,24 @@ impl CreateVoiceConnectorInputBuilder {
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.require_encryption = input;
-        self
+        self.require_encryption = input; self
     }
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
         &self.require_encryption
     }
     /// Consumes the builder and constructs a [`CreateVoiceConnectorInput`](crate::operation::create_voice_connector::CreateVoiceConnectorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_voice_connector::CreateVoiceConnectorInput {
-            name: self.name,
-            aws_region: self.aws_region,
-            require_encryption: self.require_encryption,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_voice_connector::CreateVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_voice_connector::CreateVoiceConnectorInput {
+                name: self.name
+                ,
+                aws_region: self.aws_region
+                ,
+                require_encryption: self.require_encryption
+                ,
+            }
+        )
     }
 }
+

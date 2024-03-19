@@ -3,7 +3,7 @@
 /// <p>Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your medical transcription job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MedicalTranscriptionSetting {
+pub struct MedicalTranscriptionSetting  {
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -30,7 +30,7 @@ pub struct MedicalTranscriptionSetting {
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
 }
-impl MedicalTranscriptionSetting {
+impl  MedicalTranscriptionSetting  {
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
@@ -65,7 +65,7 @@ impl MedicalTranscriptionSetting {
     }
     /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
-    pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> ::std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn set_show_speaker_labels(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_speaker_labels = input;
-        self
+        self.show_speaker_labels = input; self
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>.</p>
@@ -119,8 +118,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
     /// <p>If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
     pub fn set_max_speaker_labels(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_speaker_labels = input;
-        self
+        self.max_speaker_labels = input; self
     }
     /// <p>Specify the maximum number of speakers you want to partition in your media.</p>
     /// <p>Note that if your media contains more speakers than the specified number, multiple speakers are treated as a single speaker.</p>
@@ -141,8 +139,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript does not separate the speech by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.channel_identification = input;
-        self
+        self.channel_identification = input; self
     }
     /// <p>Enables channel identification in multi-channel audio.</p>
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
@@ -162,8 +159,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>, which is the maximum number of alternative transcriptions you want Amazon Transcribe Medical to generate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative transcriptions</a>.</p>
     pub fn set_show_alternatives(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_alternatives = input;
-        self
+        self.show_alternatives = input; self
     }
     /// <p>To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code> in your transcription request.</p>
     /// <p>If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>, which is the maximum number of alternative transcriptions you want Amazon Transcribe Medical to generate.</p>
@@ -184,8 +180,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>If you include <code>MaxAlternatives</code> in your request, you must also include <code>ShowAlternatives</code> with a value of <code>true</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative transcriptions</a>.</p>
     pub fn set_max_alternatives(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_alternatives = input;
-        self
+        self.max_alternatives = input; self
     }
     /// <p>Indicate the maximum number of alternative transcriptions you want Amazon Transcribe Medical to include in your transcript.</p>
     /// <p>If you select a number greater than the number of alternative transcriptions generated by Amazon Transcribe Medical, only the actual number of alternative transcriptions are included.</p>
@@ -203,8 +198,7 @@ impl MedicalTranscriptionSettingBuilder {
     /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
     pub fn set_vocabulary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The name of the custom vocabulary you want to use when processing your medical transcription job. Custom vocabulary names are case sensitive.</p>
     /// <p>The language of the specified custom vocabulary must match the language code that you specify in your transcription request. If the languages do not match, the custom vocabulary isn't applied. There are no errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.</p>
@@ -214,12 +208,19 @@ impl MedicalTranscriptionSettingBuilder {
     /// Consumes the builder and constructs a [`MedicalTranscriptionSetting`](crate::types::MedicalTranscriptionSetting).
     pub fn build(self) -> crate::types::MedicalTranscriptionSetting {
         crate::types::MedicalTranscriptionSetting {
-            show_speaker_labels: self.show_speaker_labels,
-            max_speaker_labels: self.max_speaker_labels,
-            channel_identification: self.channel_identification,
-            show_alternatives: self.show_alternatives,
-            max_alternatives: self.max_alternatives,
-            vocabulary_name: self.vocabulary_name,
+            show_speaker_labels: self.show_speaker_labels
+            ,
+            max_speaker_labels: self.max_speaker_labels
+            ,
+            channel_identification: self.channel_identification
+            ,
+            show_alternatives: self.show_alternatives
+            ,
+            max_alternatives: self.max_alternatives
+            ,
+            vocabulary_name: self.vocabulary_name
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualNodeStatus {
+pub struct VirtualNodeStatus  {
     /// <p>The current status of the virtual node.</p>
     pub status: crate::types::VirtualNodeStatusCode,
 }
-impl VirtualNodeStatus {
+impl  VirtualNodeStatus  {
     /// <p>The current status of the virtual node.</p>
-    pub fn status(&self) -> &crate::types::VirtualNodeStatusCode {
+    pub fn status(&self) -> & crate::types::VirtualNodeStatusCode {
         &self.status
     }
 }
@@ -35,8 +35,7 @@ impl VirtualNodeStatusBuilder {
     }
     /// <p>The current status of the virtual node.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VirtualNodeStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the virtual node.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualNodeStatusCode> {
@@ -46,13 +45,15 @@ impl VirtualNodeStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::VirtualNodeStatusBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualNodeStatus {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building VirtualNodeStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualNodeStatus {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building VirtualNodeStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

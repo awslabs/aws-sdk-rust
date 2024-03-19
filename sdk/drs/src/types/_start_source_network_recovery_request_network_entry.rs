@@ -3,24 +3,23 @@
 /// <p>An object representing the Source Network to recover.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct StartSourceNetworkRecoveryRequestNetworkEntry {
+pub struct StartSourceNetworkRecoveryRequestNetworkEntry  {
     /// <p>The ID of the Source Network you want to recover.</p>
     pub source_network_id: ::std::string::String,
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
     pub cfn_stack_name: ::std::option::Option<::std::string::String>,
 }
-impl StartSourceNetworkRecoveryRequestNetworkEntry {
+impl  StartSourceNetworkRecoveryRequestNetworkEntry  {
     /// <p>The ID of the Source Network you want to recover.</p>
-    pub fn source_network_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_network_id.deref()
+    pub fn source_network_id(&self) -> & str {
+        use std::ops::Deref; self.source_network_id.deref()
     }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
-    pub fn cfn_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn cfn_stack_name(&self) -> ::std::option::Option<& str> {
         self.cfn_stack_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for StartSourceNetworkRecoveryRequestNetworkEntry {
+impl  ::std::fmt::Debug for StartSourceNetworkRecoveryRequestNetworkEntry  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartSourceNetworkRecoveryRequestNetworkEntry");
         formatter.field("source_network_id", &self.source_network_id);
@@ -51,8 +50,7 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     }
     /// <p>The ID of the Source Network you want to recover.</p>
     pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_network_id = input;
-        self
+        self.source_network_id = input; self
     }
     /// <p>The ID of the Source Network you want to recover.</p>
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
     pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cfn_stack_name = input;
-        self
+        self.cfn_stack_name = input; self
     }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
     pub fn get_cfn_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,18 +72,18 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     /// Consumes the builder and constructs a [`StartSourceNetworkRecoveryRequestNetworkEntry`](crate::types::StartSourceNetworkRecoveryRequestNetworkEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_network_id`](crate::types::builders::StartSourceNetworkRecoveryRequestNetworkEntryBuilder::source_network_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartSourceNetworkRecoveryRequestNetworkEntry {
-            source_network_id: self.source_network_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_network_id",
-                    "source_network_id was not specified but it is required when building StartSourceNetworkRecoveryRequestNetworkEntry",
-                )
-            })?,
-            cfn_stack_name: self.cfn_stack_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::StartSourceNetworkRecoveryRequestNetworkEntry {
+                source_network_id: self.source_network_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_network_id", "source_network_id was not specified but it is required when building StartSourceNetworkRecoveryRequestNetworkEntry")
+                    )?
+                ,
+                cfn_stack_name: self.cfn_stack_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
@@ -97,3 +94,4 @@ impl ::std::fmt::Debug for StartSourceNetworkRecoveryRequestNetworkEntryBuilder 
         formatter.finish()
     }
 }
+

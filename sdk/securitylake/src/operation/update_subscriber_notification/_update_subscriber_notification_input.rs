@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSubscriberNotificationInput {
+pub struct UpdateSubscriberNotificationInput  {
     /// <p>The subscription ID for which the subscription notification is specified.</p>
     pub subscriber_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for subscriber notification.</p>
     pub configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
 }
-impl UpdateSubscriberNotificationInput {
+impl  UpdateSubscriberNotificationInput  {
     /// <p>The subscription ID for which the subscription notification is specified.</p>
-    pub fn subscriber_id(&self) -> ::std::option::Option<&str> {
+    pub fn subscriber_id(&self) -> ::std::option::Option<& str> {
         self.subscriber_id.as_deref()
     }
     /// <p>The configuration for subscriber notification.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateSubscriberNotificationInputBuilder {
     }
     /// <p>The subscription ID for which the subscription notification is specified.</p>
     pub fn set_subscriber_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscriber_id = input;
-        self
+        self.subscriber_id = input; self
     }
     /// <p>The subscription ID for which the subscription notification is specified.</p>
     pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateSubscriberNotificationInputBuilder {
     }
     /// <p>The configuration for subscriber notification.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration for subscriber notification.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberNotificationInput`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput {
-            subscriber_id: self.subscriber_id,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput {
+                subscriber_id: self.subscriber_id
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

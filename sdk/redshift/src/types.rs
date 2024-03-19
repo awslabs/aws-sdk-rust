@@ -488,3 +488,4 @@ pub mod builders;
 
 /// Error types that Amazon Redshift can respond with.
 pub mod error;
+

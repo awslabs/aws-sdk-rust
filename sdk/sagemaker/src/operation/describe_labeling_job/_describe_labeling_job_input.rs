@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLabelingJobInput {
+pub struct DescribeLabelingJobInput  {
     /// <p>The name of the labeling job to return information for.</p>
     pub labeling_job_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLabelingJobInput {
+impl  DescribeLabelingJobInput  {
     /// <p>The name of the labeling job to return information for.</p>
-    pub fn labeling_job_name(&self) -> ::std::option::Option<&str> {
+    pub fn labeling_job_name(&self) -> ::std::option::Option<& str> {
         self.labeling_job_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeLabelingJobInputBuilder {
     }
     /// <p>The name of the labeling job to return information for.</p>
     pub fn set_labeling_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.labeling_job_name = input;
-        self
+        self.labeling_job_name = input; self
     }
     /// <p>The name of the labeling job to return information for.</p>
     pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.labeling_job_name
     }
     /// Consumes the builder and constructs a [`DescribeLabelingJobInput`](crate::operation::describe_labeling_job::DescribeLabelingJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_labeling_job::DescribeLabelingJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_labeling_job::DescribeLabelingJobInput {
-            labeling_job_name: self.labeling_job_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_labeling_job::DescribeLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_labeling_job::DescribeLabelingJobInput {
+                labeling_job_name: self.labeling_job_name
+                ,
+            }
+        )
     }
 }
+

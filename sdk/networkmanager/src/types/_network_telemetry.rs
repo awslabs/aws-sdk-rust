@@ -3,7 +3,7 @@
 /// <p>Describes the telemetry information for a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkTelemetry {
+pub struct NetworkTelemetry  {
     /// <p>The ARN of the gateway.</p>
     pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
@@ -23,41 +23,41 @@ pub struct NetworkTelemetry {
     /// <p>The connection health.</p>
     pub health: ::std::option::Option<crate::types::ConnectionHealth>,
 }
-impl NetworkTelemetry {
+impl  NetworkTelemetry  {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registered_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.registered_gateway_arn.as_deref()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The address.</p>
-    pub fn address(&self) -> ::std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The connection health.</p>
-    pub fn health(&self) -> ::std::option::Option<&crate::types::ConnectionHealth> {
+    pub fn health(&self) -> ::std::option::Option<& crate::types::ConnectionHealth> {
         self.health.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_gateway_arn = input;
-        self
+        self.registered_gateway_arn = input; self
     }
     /// <p>The ARN of the gateway.</p>
     pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +168,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The address.</p>
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The address.</p>
     pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl NetworkTelemetryBuilder {
     }
     /// <p>The connection health.</p>
     pub fn set_health(mut self, input: ::std::option::Option<crate::types::ConnectionHealth>) -> Self {
-        self.health = input;
-        self
+        self.health = input; self
     }
     /// <p>The connection health.</p>
     pub fn get_health(&self) -> &::std::option::Option<crate::types::ConnectionHealth> {
@@ -212,15 +203,25 @@ impl NetworkTelemetryBuilder {
     /// Consumes the builder and constructs a [`NetworkTelemetry`](crate::types::NetworkTelemetry).
     pub fn build(self) -> crate::types::NetworkTelemetry {
         crate::types::NetworkTelemetry {
-            registered_gateway_arn: self.registered_gateway_arn,
-            core_network_id: self.core_network_id,
-            aws_region: self.aws_region,
-            account_id: self.account_id,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            address: self.address,
-            health: self.health,
+            registered_gateway_arn: self.registered_gateway_arn
+            ,
+            core_network_id: self.core_network_id
+            ,
+            aws_region: self.aws_region
+            ,
+            account_id: self.account_id
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            address: self.address
+            ,
+            health: self.health
+            ,
         }
     }
 }
+

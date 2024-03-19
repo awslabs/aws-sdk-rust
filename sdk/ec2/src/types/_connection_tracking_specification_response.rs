@@ -3,7 +3,7 @@
 /// <p>A security group connection tracking specification response that enables you to set the idle timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionTrackingSpecificationResponse {
+pub struct ConnectionTrackingSpecificationResponse  {
     /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
     pub tcp_established_timeout: ::std::option::Option<i32>,
     /// <p>Timeout (in seconds) for idle UDP flows classified as streams which have seen more than one request-response transaction. Min: 60 seconds. Max: 180 seconds (3 minutes). Default: 180 seconds.</p>
@@ -11,7 +11,7 @@ pub struct ConnectionTrackingSpecificationResponse {
     /// <p>Timeout (in seconds) for idle UDP flows that have seen traffic only in a single direction or a single request-response transaction. Min: 30 seconds. Max: 60 seconds. Default: 30 seconds.</p>
     pub udp_timeout: ::std::option::Option<i32>,
 }
-impl ConnectionTrackingSpecificationResponse {
+impl  ConnectionTrackingSpecificationResponse  {
     /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
     pub fn tcp_established_timeout(&self) -> ::std::option::Option<i32> {
         self.tcp_established_timeout
@@ -48,8 +48,7 @@ impl ConnectionTrackingSpecificationResponseBuilder {
     }
     /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
     pub fn set_tcp_established_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.tcp_established_timeout = input;
-        self
+        self.tcp_established_timeout = input; self
     }
     /// <p>Timeout (in seconds) for idle TCP connections in an established state. Min: 60 seconds. Max: 432000 seconds (5 days). Default: 432000 seconds. Recommended: Less than 432000 seconds.</p>
     pub fn get_tcp_established_timeout(&self) -> &::std::option::Option<i32> {
@@ -62,8 +61,7 @@ impl ConnectionTrackingSpecificationResponseBuilder {
     }
     /// <p>Timeout (in seconds) for idle UDP flows classified as streams which have seen more than one request-response transaction. Min: 60 seconds. Max: 180 seconds (3 minutes). Default: 180 seconds.</p>
     pub fn set_udp_stream_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.udp_stream_timeout = input;
-        self
+        self.udp_stream_timeout = input; self
     }
     /// <p>Timeout (in seconds) for idle UDP flows classified as streams which have seen more than one request-response transaction. Min: 60 seconds. Max: 180 seconds (3 minutes). Default: 180 seconds.</p>
     pub fn get_udp_stream_timeout(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl ConnectionTrackingSpecificationResponseBuilder {
     }
     /// <p>Timeout (in seconds) for idle UDP flows that have seen traffic only in a single direction or a single request-response transaction. Min: 30 seconds. Max: 60 seconds. Default: 30 seconds.</p>
     pub fn set_udp_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.udp_timeout = input;
-        self
+        self.udp_timeout = input; self
     }
     /// <p>Timeout (in seconds) for idle UDP flows that have seen traffic only in a single direction or a single request-response transaction. Min: 30 seconds. Max: 60 seconds. Default: 30 seconds.</p>
     pub fn get_udp_timeout(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,13 @@ impl ConnectionTrackingSpecificationResponseBuilder {
     /// Consumes the builder and constructs a [`ConnectionTrackingSpecificationResponse`](crate::types::ConnectionTrackingSpecificationResponse).
     pub fn build(self) -> crate::types::ConnectionTrackingSpecificationResponse {
         crate::types::ConnectionTrackingSpecificationResponse {
-            tcp_established_timeout: self.tcp_established_timeout,
-            udp_stream_timeout: self.udp_stream_timeout,
-            udp_timeout: self.udp_timeout,
+            tcp_established_timeout: self.tcp_established_timeout
+            ,
+            udp_stream_timeout: self.udp_stream_timeout
+            ,
+            udp_timeout: self.udp_timeout
+            ,
         }
     }
 }
+

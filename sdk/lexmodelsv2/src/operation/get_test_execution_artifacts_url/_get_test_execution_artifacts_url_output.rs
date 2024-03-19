@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTestExecutionArtifactsUrlOutput {
+pub struct GetTestExecutionArtifactsUrlOutput  {
     /// <p>The unique identifier of the completed test execution.</p>
     pub test_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
     pub download_artifacts_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetTestExecutionArtifactsUrlOutput {
+impl  GetTestExecutionArtifactsUrlOutput  {
     /// <p>The unique identifier of the completed test execution.</p>
-    pub fn test_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_execution_id(&self) -> ::std::option::Option<& str> {
         self.test_execution_id.as_deref()
     }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
-    pub fn download_artifacts_url(&self) -> ::std::option::Option<&str> {
+    pub fn download_artifacts_url(&self) -> ::std::option::Option<& str> {
         self.download_artifacts_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTestExecutionArtifactsUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetTestExecutionArtifactsUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
     pub fn builder() -> crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlOutputBuilder {
@@ -47,8 +47,7 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
     }
     /// <p>The unique identifier of the completed test execution.</p>
     pub fn set_test_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_execution_id = input;
-        self
+        self.test_execution_id = input; self
     }
     /// <p>The unique identifier of the completed test execution.</p>
     pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetTestExecutionArtifactsUrlOutputBuilder {
     }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
     pub fn set_download_artifacts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.download_artifacts_url = input;
-        self
+        self.download_artifacts_url = input; self
     }
     /// <p>The pre-signed Amazon S3 URL to download completed test execution.</p>
     pub fn get_download_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.download_artifacts_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetTestExecutionArtifactsUrlOutput`](crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput).
     pub fn build(self) -> crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput {
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput {
-            test_execution_id: self.test_execution_id,
-            download_artifacts_url: self.download_artifacts_url,
+            test_execution_id: self.test_execution_id
+            ,
+            download_artifacts_url: self.download_artifacts_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

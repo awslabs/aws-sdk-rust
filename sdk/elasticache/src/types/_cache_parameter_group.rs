@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CacheParameterGroup {
+pub struct CacheParameterGroup  {
     /// <p>The name of the cache parameter group.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
@@ -16,18 +16,18 @@ pub struct CacheParameterGroup {
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl CacheParameterGroup {
+impl  CacheParameterGroup  {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
-    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_family(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_family.as_deref()
     }
     /// <p>The description for this cache parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
@@ -35,7 +35,7 @@ impl CacheParameterGroup {
         self.is_global
     }
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl CacheParameterGroupBuilder {
     }
     /// <p>The name of the cache parameter group.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>The name of the cache parameter group.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl CacheParameterGroupBuilder {
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
     pub fn set_cache_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_family = input;
-        self
+        self.cache_parameter_group_family = input; self
     }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code></p>
@@ -95,8 +93,7 @@ impl CacheParameterGroupBuilder {
     }
     /// <p>The description for this cache parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for this cache parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +106,7 @@ impl CacheParameterGroupBuilder {
     }
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
     pub fn set_is_global(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_global = input;
-        self
+        self.is_global = input; self
     }
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
     pub fn get_is_global(&self) -> &::std::option::Option<bool> {
@@ -123,8 +119,7 @@ impl CacheParameterGroupBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,11 +128,17 @@ impl CacheParameterGroupBuilder {
     /// Consumes the builder and constructs a [`CacheParameterGroup`](crate::types::CacheParameterGroup).
     pub fn build(self) -> crate::types::CacheParameterGroup {
         crate::types::CacheParameterGroup {
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            cache_parameter_group_family: self.cache_parameter_group_family,
-            description: self.description,
-            is_global: self.is_global,
-            arn: self.arn,
+            cache_parameter_group_name: self.cache_parameter_group_name
+            ,
+            cache_parameter_group_family: self.cache_parameter_group_family
+            ,
+            description: self.description
+            ,
+            is_global: self.is_global
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

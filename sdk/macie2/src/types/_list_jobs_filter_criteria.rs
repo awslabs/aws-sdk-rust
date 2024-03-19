@@ -3,24 +3,26 @@
 /// <p>Specifies criteria for filtering the results of a request for information about classification jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListJobsFilterCriteria {
+pub struct ListJobsFilterCriteria  {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>,
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub includes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
+    pub includes: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>,
 }
-impl ListJobsFilterCriteria {
+impl  ListJobsFilterCriteria  {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
-    pub fn excludes(&self) -> &[crate::types::ListJobsFilterTerm] {
-        self.excludes.as_deref().unwrap_or_default()
+    pub fn excludes(&self) -> & [crate::types::ListJobsFilterTerm] {
+        self.excludes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
-    pub fn includes(&self) -> &[crate::types::ListJobsFilterTerm] {
-        self.includes.as_deref().unwrap_or_default()
+    pub fn includes(&self) -> & [crate::types::ListJobsFilterTerm] {
+        self.includes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListJobsFilterCriteria {
@@ -34,8 +36,8 @@ impl ListJobsFilterCriteria {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListJobsFilterCriteriaBuilder {
-    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
-    pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>,
 }
 impl ListJobsFilterCriteriaBuilder {
     /// Appends an item to `excludes`.
@@ -45,17 +47,16 @@ impl ListJobsFilterCriteriaBuilder {
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
     pub fn excludes(mut self, input: crate::types::ListJobsFilterTerm) -> Self {
         let mut v = self.excludes.unwrap_or_default();
-        v.push(input);
-        self.excludes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excludes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>) -> Self {
-        self.excludes = input;
-        self
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>) -> Self {
+        self.excludes = input; self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
-    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>> {
         &self.excludes
     }
     /// Appends an item to `includes`.
@@ -65,24 +66,26 @@ impl ListJobsFilterCriteriaBuilder {
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
     pub fn includes(mut self, input: crate::types::ListJobsFilterTerm) -> Self {
         let mut v = self.includes.unwrap_or_default();
-        v.push(input);
-        self.includes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.includes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>>) -> Self {
-        self.includes = input;
-        self
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>>) -> Self {
+        self.includes = input; self
     }
     /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
-    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListJobsFilterTerm>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListJobsFilterTerm>> {
         &self.includes
     }
     /// Consumes the builder and constructs a [`ListJobsFilterCriteria`](crate::types::ListJobsFilterCriteria).
     pub fn build(self) -> crate::types::ListJobsFilterCriteria {
         crate::types::ListJobsFilterCriteria {
-            excludes: self.excludes,
-            includes: self.includes,
+            excludes: self.excludes
+            ,
+            includes: self.includes
+            ,
         }
     }
 }
+

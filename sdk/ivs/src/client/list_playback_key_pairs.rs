@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPlaybackKeyPairs`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::set_next_token):<br>required: **false**<br><p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p><br>
-    /// - On success, responds with [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput) with field(s):
+                            /// - On success, responds with [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput) with field(s):
     ///   - [`key_pairs(Vec::<PlaybackKeyPairSummary>)`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput::key_pairs): <p>List of key pairs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput::next_token): <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListPlaybackKeyPairsError>`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError)
+                            /// - On failure, responds with [`SdkError<ListPlaybackKeyPairsError>`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError)
     pub fn list_playback_key_pairs(&self) -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder {
-        crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIpAccessSettingsOutput {
+pub struct GetIpAccessSettingsOutput  {
     /// <p>The IP access settings.</p>
     pub ip_access_settings: ::std::option::Option<crate::types::IpAccessSettings>,
     _request_id: Option<String>,
 }
-impl GetIpAccessSettingsOutput {
+impl  GetIpAccessSettingsOutput  {
     /// <p>The IP access settings.</p>
-    pub fn ip_access_settings(&self) -> ::std::option::Option<&crate::types::IpAccessSettings> {
+    pub fn ip_access_settings(&self) -> ::std::option::Option<& crate::types::IpAccessSettings> {
         self.ip_access_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIpAccessSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpAccessSettingsOutput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput).
     pub fn builder() -> crate::operation::get_ip_access_settings::builders::GetIpAccessSettingsOutputBuilder {
@@ -40,27 +40,28 @@ impl GetIpAccessSettingsOutputBuilder {
     }
     /// <p>The IP access settings.</p>
     pub fn set_ip_access_settings(mut self, input: ::std::option::Option<crate::types::IpAccessSettings>) -> Self {
-        self.ip_access_settings = input;
-        self
+        self.ip_access_settings = input; self
     }
     /// <p>The IP access settings.</p>
     pub fn get_ip_access_settings(&self) -> &::std::option::Option<crate::types::IpAccessSettings> {
         &self.ip_access_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIpAccessSettingsOutput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput).
     pub fn build(self) -> crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput {
         crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput {
-            ip_access_settings: self.ip_access_settings,
+            ip_access_settings: self.ip_access_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

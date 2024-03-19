@@ -3,7 +3,7 @@
 /// <p>A list of distribution IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DistributionIdList {
+pub struct DistributionIdList  {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
     pub marker: ::std::string::String,
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
@@ -15,16 +15,15 @@ pub struct DistributionIdList {
     /// <p>The total number of distribution IDs returned in the response.</p>
     pub quantity: i32,
     /// <p>Contains the distribution IDs in the list.</p>
-    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DistributionIdList {
+impl  DistributionIdList  {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
-    pub fn marker(&self) -> &str {
-        use std::ops::Deref;
-        self.marker.deref()
+    pub fn marker(&self) -> & str {
+        use std::ops::Deref; self.marker.deref()
     }
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of distribution IDs requested.</p>
@@ -40,10 +39,11 @@ impl DistributionIdList {
         self.quantity
     }
     /// <p>Contains the distribution IDs in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
-    pub fn items(&self) -> &[::std::string::String] {
-        self.items.as_deref().unwrap_or_default()
+    pub fn items(&self) -> & [::std::string::String] {
+        self.items.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DistributionIdList {
@@ -62,7 +62,7 @@ pub struct DistributionIdListBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
     pub(crate) is_truncated: ::std::option::Option<bool>,
     pub(crate) quantity: ::std::option::Option<i32>,
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DistributionIdListBuilder {
     /// <p>The value provided in the <code>Marker</code> request field.</p>
@@ -73,8 +73,7 @@ impl DistributionIdListBuilder {
     }
     /// <p>The value provided in the <code>Marker</code> request field.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The value provided in the <code>Marker</code> request field.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl DistributionIdListBuilder {
     }
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>Contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing distribution IDs where you left off.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl DistributionIdListBuilder {
     }
     /// <p>The maximum number of distribution IDs requested.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of distribution IDs requested.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -117,8 +114,7 @@ impl DistributionIdListBuilder {
     }
     /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your results were truncated, you can make a subsequent request using the <code>Marker</code> request field to retrieve more distribution IDs in the list.</p>
     pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
@@ -132,8 +128,7 @@ impl DistributionIdListBuilder {
     }
     /// <p>The total number of distribution IDs returned in the response.</p>
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// <p>The total number of distribution IDs returned in the response.</p>
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
@@ -146,17 +141,16 @@ impl DistributionIdListBuilder {
     /// <p>Contains the distribution IDs in the list.</p>
     pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains the distribution IDs in the list.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// <p>Contains the distribution IDs in the list.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.items
     }
     /// Consumes the builder and constructs a [`DistributionIdList`](crate::types::DistributionIdList).
@@ -166,33 +160,34 @@ impl DistributionIdListBuilder {
     /// - [`is_truncated`](crate::types::builders::DistributionIdListBuilder::is_truncated)
     /// - [`quantity`](crate::types::builders::DistributionIdListBuilder::quantity)
     pub fn build(self) -> ::std::result::Result<crate::types::DistributionIdList, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DistributionIdList {
-            marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "marker",
-                    "marker was not specified but it is required when building DistributionIdList",
-                )
-            })?,
-            next_marker: self.next_marker,
-            max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_items",
-                    "max_items was not specified but it is required when building DistributionIdList",
-                )
-            })?,
-            is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "is_truncated",
-                    "is_truncated was not specified but it is required when building DistributionIdList",
-                )
-            })?,
-            quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "quantity",
-                    "quantity was not specified but it is required when building DistributionIdList",
-                )
-            })?,
-            items: self.items,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DistributionIdList {
+                marker: self.marker
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("marker", "marker was not specified but it is required when building DistributionIdList")
+                    )?
+                ,
+                next_marker: self.next_marker
+                ,
+                max_items: self.max_items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_items", "max_items was not specified but it is required when building DistributionIdList")
+                    )?
+                ,
+                is_truncated: self.is_truncated
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("is_truncated", "is_truncated was not specified but it is required when building DistributionIdList")
+                    )?
+                ,
+                quantity: self.quantity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("quantity", "quantity was not specified but it is required when building DistributionIdList")
+                    )?
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

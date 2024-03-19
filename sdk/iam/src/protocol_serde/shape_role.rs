@@ -145,7 +145,6 @@ pub fn de_role(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
             _ => {}
         }
     }
-    Ok(crate::serde_util::role_correct_errors(builder)
-        .build()
-        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+    Ok(crate::serde_util::role_correct_errors(builder).build().map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
 }
+

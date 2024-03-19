@@ -3,17 +3,17 @@
 /// <p>Determine whether your data volume persists on the host container instance and where it's stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Host {
+pub struct Host  {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
     /// </note>
     pub source_path: ::std::option::Option<::std::string::String>,
 }
-impl Host {
+impl  Host  {
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
     /// </note>
-    pub fn source_path(&self) -> ::std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<& str> {
         self.source_path.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl HostBuilder {
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
     /// </note>
     pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_path = input;
-        self
+        self.source_path = input; self
     }
     /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
@@ -54,7 +53,9 @@ impl HostBuilder {
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {
-            source_path: self.source_path,
+            source_path: self.source_path
+            ,
         }
     }
 }
+

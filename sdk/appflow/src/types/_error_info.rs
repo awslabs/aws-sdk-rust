@@ -3,19 +3,19 @@
 /// <p>Provides details in the event of a failed flow, including the failure count and the related error messages.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p>Specifies the failure count for the attempted flow.</p>
     pub put_failures_count: ::std::option::Option<i64>,
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub execution_message: ::std::option::Option<::std::string::String>,
 }
-impl ErrorInfo {
+impl  ErrorInfo  {
     /// <p>Specifies the failure count for the attempted flow.</p>
     pub fn put_failures_count(&self) -> ::std::option::Option<i64> {
         self.put_failures_count
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
-    pub fn execution_message(&self) -> ::std::option::Option<&str> {
+    pub fn execution_message(&self) -> ::std::option::Option<& str> {
         self.execution_message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ErrorInfoBuilder {
     }
     /// <p>Specifies the failure count for the attempted flow.</p>
     pub fn set_put_failures_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.put_failures_count = input;
-        self
+        self.put_failures_count = input; self
     }
     /// <p>Specifies the failure count for the attempted flow.</p>
     pub fn get_put_failures_count(&self) -> &::std::option::Option<i64> {
@@ -55,8 +54,7 @@ impl ErrorInfoBuilder {
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn set_execution_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_message = input;
-        self
+        self.execution_message = input; self
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn get_execution_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ErrorInfoBuilder {
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            put_failures_count: self.put_failures_count,
-            execution_message: self.execution_message,
+            put_failures_count: self.put_failures_count
+            ,
+            execution_message: self.execution_message
+            ,
         }
     }
 }
+

@@ -4,7 +4,8 @@
 /// <p>JSON specification: <code>"RateLimitHTTPMethod": {}</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RateLimitHttpMethod {}
+pub struct RateLimitHttpMethod  {
+}
 impl RateLimitHttpMethod {
     /// Creates a new builder-style object to manufacture [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).
     pub fn builder() -> crate::types::builders::RateLimitHttpMethodBuilder {
@@ -15,10 +16,13 @@ impl RateLimitHttpMethod {
 /// A builder for [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct RateLimitHttpMethodBuilder {}
+pub struct RateLimitHttpMethodBuilder {
+}
 impl RateLimitHttpMethodBuilder {
     /// Consumes the builder and constructs a [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).
     pub fn build(self) -> crate::types::RateLimitHttpMethod {
-        crate::types::RateLimitHttpMethod {}
+        crate::types::RateLimitHttpMethod {
+        }
     }
 }
+

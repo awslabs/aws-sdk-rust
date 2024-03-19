@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountAliasInput {
+pub struct PutAccountAliasInput  {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     pub account_alias: ::std::option::Option<::std::string::String>,
 }
-impl PutAccountAliasInput {
+impl  PutAccountAliasInput  {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn account_alias(&self) -> ::std::option::Option<&str> {
+    pub fn account_alias(&self) -> ::std::option::Option<& str> {
         self.account_alias.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl PutAccountAliasInputBuilder {
     }
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_alias = input;
-        self
+        self.account_alias = input; self
     }
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     pub fn get_account_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_alias
     }
     /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::operation::put_account_alias::PutAccountAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_account_alias::PutAccountAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_account_alias::PutAccountAliasInput {
-            account_alias: self.account_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_alias::PutAccountAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_account_alias::PutAccountAliasInput {
+                account_alias: self.account_alias
+                ,
+            }
+        )
     }
 }
+

@@ -21,11 +21,7 @@ impl CodegenJobRenderConfig {
     /// Tries to convert the enum instance into [`React`](crate::types::CodegenJobRenderConfig::React), extracting the inner [`ReactStartCodegenJobData`](crate::types::ReactStartCodegenJobData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_react(&self) -> ::std::result::Result<&crate::types::ReactStartCodegenJobData, &Self> {
-        if let CodegenJobRenderConfig::React(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let CodegenJobRenderConfig::React(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`React`](crate::types::CodegenJobRenderConfig::React).
     pub fn is_react(&self) -> bool {
@@ -36,3 +32,4 @@ impl CodegenJobRenderConfig {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::create_auto_ml_job_v2::_create_auto_ml_job_v2_input::C
 
 impl CreateAutoMlJobV2InputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_auto_ml_job_v2();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_auto_ml_job_v2();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateAutoMLJobV2`.
-///
+/// 
 /// <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML job V2.</p><note>
 /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a> are new versions of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a> which offer backward compatibility.</p>
 /// <p><code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting, non-tabular problem types such as image or text classification, and text generation (LLMs fine-tuning).</p>
@@ -32,33 +29,32 @@ impl CreateAutoMlJobV2InputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAutoMLJobV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder,
+                    inner: crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-    > for CreateAutoMLJobV2FluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
+                    crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+                > for CreateAutoMLJobV2FluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
+                        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateAutoMLJobV2FluentBuilder {
     /// Creates a new `CreateAutoMLJobV2`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl CreateAutoMLJobV2FluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output,
-        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Output, crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
     pub fn auto_ml_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auto_ml_job_name(input.into());
@@ -162,7 +149,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li>
     /// <p>For text generation (LLMs fine-tuning): <code>S3Prefix</code>.</p></li>
     /// </ul>
-    pub fn set_auto_ml_job_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>) -> Self {
+    pub fn set_auto_ml_job_input_data_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AutoMlJobChannel>>) -> Self {
         self.inner = self.inner.set_auto_ml_job_input_data_config(input);
         self
     }
@@ -179,7 +166,7 @@ impl CreateAutoMLJobV2FluentBuilder {
     /// <li>
     /// <p>For text generation (LLMs fine-tuning): <code>S3Prefix</code>.</p></li>
     /// </ul>
-    pub fn get_auto_ml_job_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>> {
+    pub fn get_auto_ml_job_input_data_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AutoMlJobChannel>> {
         self.inner.get_auto_ml_job_input_data_config()
     }
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
@@ -234,12 +221,12 @@ impl CreateAutoMLJobV2FluentBuilder {
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
@@ -329,3 +316,4 @@ impl CreateAutoMLJobV2FluentBuilder {
         self.inner.get_data_split_config()
     }
 }
+

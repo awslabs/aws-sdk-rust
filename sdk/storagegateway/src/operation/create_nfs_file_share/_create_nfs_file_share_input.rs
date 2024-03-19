@@ -3,7 +3,7 @@
 /// <p>CreateNFSFileShareInput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNfsFileShareInput {
+pub struct CreateNfsFileShareInput  {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>File share default values. Optional.</p>
@@ -34,7 +34,7 @@ pub struct CreateNfsFileShareInput {
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: ::std::option::Option<crate::types::ObjectAcl>,
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub client_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A value that maps a user to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
@@ -60,7 +60,7 @@ pub struct CreateNfsFileShareInput {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
@@ -86,17 +86,17 @@ pub struct CreateNfsFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub audit_destination_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateNfsFileShareInput {
+impl  CreateNfsFileShareInput  {
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>File share default values. Optional.</p>
-    pub fn nfs_file_share_defaults(&self) -> ::std::option::Option<&crate::types::NfsFileShareDefaults> {
+    pub fn nfs_file_share_defaults(&self) -> ::std::option::Option<& crate::types::NfsFileShareDefaults> {
         self.nfs_file_share_defaults.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
@@ -105,11 +105,11 @@ impl CreateNfsFileShareInput {
         self.kms_encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
-    pub fn role(&self) -> ::std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
@@ -122,23 +122,24 @@ impl CreateNfsFileShareInput {
     /// <p>Access point alias:</p>
     /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
     /// </note>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
-    pub fn default_storage_class(&self) -> ::std::option::Option<&str> {
+    pub fn default_storage_class(&self) -> ::std::option::Option<& str> {
         self.default_storage_class.as_deref()
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    pub fn object_acl(&self) -> ::std::option::Option<&crate::types::ObjectAcl> {
+    pub fn object_acl(&self) -> ::std::option::Option<& crate::types::ObjectAcl> {
         self.object_acl.as_ref()
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_list.is_none()`.
-    pub fn client_list(&self) -> &[::std::string::String] {
-        self.client_list.as_deref().unwrap_or_default()
+    pub fn client_list(&self) -> & [::std::string::String] {
+        self.client_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A value that maps a user to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -150,7 +151,7 @@ impl CreateNfsFileShareInput {
     /// <li>
     /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
-    pub fn squash(&self) -> ::std::option::Option<&str> {
+    pub fn squash(&self) -> ::std::option::Option<& str> {
         self.squash.as_deref()
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
@@ -173,19 +174,20 @@ impl CreateNfsFileShareInput {
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_share_name(&self) -> ::std::option::Option<& str> {
         self.file_share_name.as_deref()
     }
     /// <p>Specifies refresh cache information for the file share.</p>
-    pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
+    pub fn cache_attributes(&self) -> ::std::option::Option<& crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
@@ -195,23 +197,23 @@ impl CreateNfsFileShareInput {
     /// <p><code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code></p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p><code>{}</code></p>
-    pub fn notification_policy(&self) -> ::std::option::Option<&str> {
+    pub fn notification_policy(&self) -> ::std::option::Option<& str> {
         self.notification_policy.as_deref()
     }
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p><note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn vpc_endpoint_dns_name(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_dns_name(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_dns_name.as_deref()
     }
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p><note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
-    pub fn bucket_region(&self) -> ::std::option::Option<&str> {
+    pub fn bucket_region(&self) -> ::std::option::Option<& str> {
         self.bucket_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(&self) -> ::std::option::Option<&str> {
+    pub fn audit_destination_arn(&self) -> ::std::option::Option<& str> {
         self.audit_destination_arn.as_deref()
     }
 }
@@ -235,12 +237,12 @@ pub struct CreateNfsFileShareInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_storage_class: ::std::option::Option<::std::string::String>,
     pub(crate) object_acl: ::std::option::Option<crate::types::ObjectAcl>,
-    pub(crate) client_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) client_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) squash: ::std::option::Option<::std::string::String>,
     pub(crate) read_only: ::std::option::Option<bool>,
     pub(crate) guess_mime_type_enabled: ::std::option::Option<bool>,
     pub(crate) requester_pays: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) file_share_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
     pub(crate) notification_policy: ::std::option::Option<::std::string::String>,
@@ -257,8 +259,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +272,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>File share default values. Optional.</p>
     pub fn set_nfs_file_share_defaults(mut self, input: ::std::option::Option<crate::types::NfsFileShareDefaults>) -> Self {
-        self.nfs_file_share_defaults = input;
-        self
+        self.nfs_file_share_defaults = input; self
     }
     /// <p>File share default values. Optional.</p>
     pub fn get_nfs_file_share_defaults(&self) -> &::std::option::Option<crate::types::NfsFileShareDefaults> {
@@ -286,8 +286,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +301,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.kms_encrypted = input;
-        self
+        self.kms_encrypted = input; self
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -317,8 +315,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -332,8 +329,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -365,8 +361,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p><code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code></p>
     /// </note>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p><note>
     /// <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>
@@ -390,8 +385,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
     pub fn set_default_storage_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_storage_class = input;
-        self
+        self.default_storage_class = input; self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code></p>
@@ -405,8 +399,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub fn set_object_acl(mut self, input: ::std::option::Option<crate::types::ObjectAcl>) -> Self {
-        self.object_acl = input;
-        self
+        self.object_acl = input; self
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub fn get_object_acl(&self) -> &::std::option::Option<crate::types::ObjectAcl> {
@@ -419,17 +412,16 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
     pub fn client_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.client_list.unwrap_or_default();
-        v.push(input.into());
-        self.client_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.client_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.client_list = input;
-        self
+    pub fn set_client_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.client_list = input; self
     }
     /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
-    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_client_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.client_list
     }
     /// <p>A value that maps a user to anonymous user.</p>
@@ -457,8 +449,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn set_squash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.squash = input;
-        self
+        self.squash = input; self
     }
     /// <p>A value that maps a user to anonymous user.</p>
     /// <p>Valid values are the following:</p>
@@ -482,8 +473,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -499,8 +489,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_guess_mime_type_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.guess_mime_type_enabled = input;
-        self
+        self.guess_mime_type_enabled = input; self
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -520,8 +509,7 @@ impl CreateNfsFileShareInputBuilder {
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn set_requester_pays(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.requester_pays = input;
-        self
+        self.requester_pays = input; self
     }
     /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
@@ -539,21 +527,20 @@ impl CreateNfsFileShareInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The name of the file share. Optional.</p><note>
@@ -567,8 +554,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_share_name = input;
-        self
+        self.file_share_name = input; self
     }
     /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
@@ -583,8 +569,7 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>Specifies refresh cache information for the file share.</p>
     pub fn set_cache_attributes(mut self, input: ::std::option::Option<crate::types::CacheAttributes>) -> Self {
-        self.cache_attributes = input;
-        self
+        self.cache_attributes = input; self
     }
     /// <p>Specifies refresh cache information for the file share.</p>
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
@@ -609,8 +594,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p><code>{}</code></p>
     pub fn set_notification_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_policy = input;
-        self
+        self.notification_policy = input; self
     }
     /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
@@ -633,8 +617,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn set_vpc_endpoint_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_dns_name = input;
-        self
+        self.vpc_endpoint_dns_name = input; self
     }
     /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p><note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
@@ -653,8 +636,7 @@ impl CreateNfsFileShareInputBuilder {
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
     /// </note>
     pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_region = input;
-        self
+        self.bucket_region = input; self
     }
     /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p><note>
     /// <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
@@ -669,40 +651,60 @@ impl CreateNfsFileShareInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn set_audit_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.audit_destination_arn = input;
-        self
+        self.audit_destination_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn get_audit_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.audit_destination_arn
     }
     /// Consumes the builder and constructs a [`CreateNfsFileShareInput`](crate::operation::create_nfs_file_share::CreateNfsFileShareInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_nfs_file_share::CreateNfsFileShareInput {
-            client_token: self.client_token,
-            nfs_file_share_defaults: self.nfs_file_share_defaults,
-            gateway_arn: self.gateway_arn,
-            kms_encrypted: self.kms_encrypted,
-            kms_key: self.kms_key,
-            role: self.role,
-            location_arn: self.location_arn,
-            default_storage_class: self.default_storage_class,
-            object_acl: self.object_acl,
-            client_list: self.client_list,
-            squash: self.squash,
-            read_only: self.read_only,
-            guess_mime_type_enabled: self.guess_mime_type_enabled,
-            requester_pays: self.requester_pays,
-            tags: self.tags,
-            file_share_name: self.file_share_name,
-            cache_attributes: self.cache_attributes,
-            notification_policy: self.notification_policy,
-            vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
-            bucket_region: self.bucket_region,
-            audit_destination_arn: self.audit_destination_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_nfs_file_share::CreateNfsFileShareInput {
+                client_token: self.client_token
+                ,
+                nfs_file_share_defaults: self.nfs_file_share_defaults
+                ,
+                gateway_arn: self.gateway_arn
+                ,
+                kms_encrypted: self.kms_encrypted
+                ,
+                kms_key: self.kms_key
+                ,
+                role: self.role
+                ,
+                location_arn: self.location_arn
+                ,
+                default_storage_class: self.default_storage_class
+                ,
+                object_acl: self.object_acl
+                ,
+                client_list: self.client_list
+                ,
+                squash: self.squash
+                ,
+                read_only: self.read_only
+                ,
+                guess_mime_type_enabled: self.guess_mime_type_enabled
+                ,
+                requester_pays: self.requester_pays
+                ,
+                tags: self.tags
+                ,
+                file_share_name: self.file_share_name
+                ,
+                cache_attributes: self.cache_attributes
+                ,
+                notification_policy: self.notification_policy
+                ,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name
+                ,
+                bucket_region: self.bucket_region
+                ,
+                audit_destination_arn: self.audit_destination_arn
+                ,
+            }
+        )
     }
 }
+

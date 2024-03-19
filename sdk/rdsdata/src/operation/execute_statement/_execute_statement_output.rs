@@ -3,34 +3,36 @@
 /// <p>The response elements represent the output of a request to run a SQL statement against a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteStatementOutput {
+pub struct ExecuteStatementOutput  {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
+    pub records: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::Field>>>,
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub column_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>,
     /// <p>The number of records updated by the request.</p>
     pub number_of_records_updated: i64,
     /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub generated_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     pub formatted_records: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ExecuteStatementOutput {
+impl  ExecuteStatementOutput  {
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.records.is_none()`.
-    pub fn records(&self) -> &[::std::vec::Vec<crate::types::Field>] {
-        self.records.as_deref().unwrap_or_default()
+    pub fn records(&self) -> & [::std::vec::Vec::<crate::types::Field>] {
+        self.records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_metadata.is_none()`.
-    pub fn column_metadata(&self) -> &[crate::types::ColumnMetadata] {
-        self.column_metadata.as_deref().unwrap_or_default()
+    pub fn column_metadata(&self) -> & [crate::types::ColumnMetadata] {
+        self.column_metadata.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The number of records updated by the request.</p>
     pub fn number_of_records_updated(&self) -> i64 {
@@ -39,22 +41,23 @@ impl ExecuteStatementOutput {
     /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generated_fields.is_none()`.
-    pub fn generated_fields(&self) -> &[crate::types::Field] {
-        self.generated_fields.as_deref().unwrap_or_default()
+    pub fn generated_fields(&self) -> & [crate::types::Field] {
+        self.generated_fields.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
-    pub fn formatted_records(&self) -> ::std::option::Option<&str> {
+    pub fn formatted_records(&self) -> ::std::option::Option<& str> {
         self.formatted_records.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteStatementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteStatementOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
     pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementOutputBuilder {
@@ -66,10 +69,10 @@ impl ExecuteStatementOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExecuteStatementOutputBuilder {
-    pub(crate) records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>,
-    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::Field>>>,
+    pub(crate) column_metadata: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>,
     pub(crate) number_of_records_updated: ::std::option::Option<i64>,
-    pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>,
     pub(crate) formatted_records: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -79,19 +82,18 @@ impl ExecuteStatementOutputBuilder {
     /// To override the contents of this collection use [`set_records`](Self::set_records).
     ///
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn records(mut self, input: ::std::vec::Vec<crate::types::Field>) -> Self {
+    pub fn records(mut self, input: ::std::vec::Vec::<crate::types::Field>) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>>) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::Field>>>) -> Self {
+        self.records = input; self
     }
     /// <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::Field>>> {
         &self.records
     }
     /// Appends an item to `column_metadata`.
@@ -101,17 +103,16 @@ impl ExecuteStatementOutputBuilder {
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     pub fn column_metadata(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.column_metadata.unwrap_or_default();
-        v.push(input);
-        self.column_metadata = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_metadata = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
-        self.column_metadata = input;
-        self
+    pub fn set_column_metadata(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>>) -> Self {
+        self.column_metadata = input; self
     }
     /// <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+    pub fn get_column_metadata(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnMetadata>> {
         &self.column_metadata
     }
     /// <p>The number of records updated by the request.</p>
@@ -121,8 +122,7 @@ impl ExecuteStatementOutputBuilder {
     }
     /// <p>The number of records updated by the request.</p>
     pub fn set_number_of_records_updated(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_records_updated = input;
-        self
+        self.number_of_records_updated = input; self
     }
     /// <p>The number of records updated by the request.</p>
     pub fn get_number_of_records_updated(&self) -> &::std::option::Option<i64> {
@@ -137,21 +137,20 @@ impl ExecuteStatementOutputBuilder {
     /// </note>
     pub fn generated_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.generated_fields.unwrap_or_default();
-        v.push(input);
-        self.generated_fields = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.generated_fields = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
-        self.generated_fields = input;
-        self
+    pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Field>>) -> Self {
+        self.generated_fields = input; self
     }
     /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
-    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+    pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Field>> {
         &self.generated_fields
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
@@ -163,8 +162,7 @@ impl ExecuteStatementOutputBuilder {
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
     pub fn set_formatted_records(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.formatted_records = input;
-        self
+        self.formatted_records = input; self
     }
     /// <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
     /// <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
@@ -172,23 +170,30 @@ impl ExecuteStatementOutputBuilder {
         &self.formatted_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::operation::execute_statement::ExecuteStatementOutput).
     pub fn build(self) -> crate::operation::execute_statement::ExecuteStatementOutput {
         crate::operation::execute_statement::ExecuteStatementOutput {
-            records: self.records,
-            column_metadata: self.column_metadata,
-            number_of_records_updated: self.number_of_records_updated.unwrap_or_default(),
-            generated_fields: self.generated_fields,
-            formatted_records: self.formatted_records,
+            records: self.records
+            ,
+            column_metadata: self.column_metadata
+            ,
+            number_of_records_updated: self.number_of_records_updated
+                .unwrap_or_default()
+            ,
+            generated_fields: self.generated_fields
+            ,
+            formatted_records: self.formatted_records
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

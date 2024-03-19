@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePlaceIndexInput {
+pub struct CreatePlaceIndexInput  {
     /// <p>The name of the place index resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -54,9 +54,9 @@ pub struct CreatePlaceIndexInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreatePlaceIndexInput {
+impl  CreatePlaceIndexInput  {
     /// <p>The name of the place index resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
@@ -67,7 +67,7 @@ impl CreatePlaceIndexInput {
     /// <li>
     /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
     /// </ul>
-    pub fn index_name(&self) -> ::std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>Specifies the geospatial data provider for the new place index.</p><note>
@@ -85,20 +85,20 @@ impl CreatePlaceIndexInput {
     /// </important></li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&str> {
+    pub fn data_source(&self) -> ::std::option::Option<& str> {
         self.data_source.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the data storage option requesting Places.</p>
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
@@ -118,7 +118,7 @@ impl CreatePlaceIndexInput {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -138,7 +138,7 @@ pub struct CreatePlaceIndexInputBuilder {
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreatePlaceIndexInputBuilder {
     /// <p>The name of the place index resource.</p>
@@ -167,8 +167,7 @@ impl CreatePlaceIndexInputBuilder {
     /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p></li>
     /// </ul>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the place index resource.</p>
     /// <p>Requirements:</p>
@@ -219,8 +218,7 @@ impl CreatePlaceIndexInputBuilder {
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Specifies the geospatial data provider for the new place index.</p><note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -249,8 +247,7 @@ impl CreatePlaceIndexInputBuilder {
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input;
-        self
+        self.pricing_plan = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -264,8 +261,7 @@ impl CreatePlaceIndexInputBuilder {
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,8 +274,7 @@ impl CreatePlaceIndexInputBuilder {
     }
     /// <p>Specifies the data storage option requesting Places.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// <p>Specifies the data storage option requesting Places.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -308,9 +303,9 @@ impl CreatePlaceIndexInputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -329,9 +324,8 @@ impl CreatePlaceIndexInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code></p>
@@ -350,20 +344,27 @@ impl CreatePlaceIndexInputBuilder {
     /// <li>
     /// <p>Cannot use "aws:" as a prefix for a key.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePlaceIndexInput`](crate::operation::create_place_index::CreatePlaceIndexInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_place_index::CreatePlaceIndexInput {
-            index_name: self.index_name,
-            data_source: self.data_source,
-            pricing_plan: self.pricing_plan,
-            description: self.description,
-            data_source_configuration: self.data_source_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_place_index::CreatePlaceIndexInput {
+                index_name: self.index_name
+                ,
+                data_source: self.data_source
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+                data_source_configuration: self.data_source_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

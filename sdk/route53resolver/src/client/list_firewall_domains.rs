@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFirewallDomains`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`firewall_domain_list_id(impl Into<String>)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::firewall_domain_list_id) / [`set_firewall_domain_list_id(Option<String>)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::set_firewall_domain_list_id):<br>required: **true**<br><p>The ID of the domain list whose domains you want to retrieve.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::set_next_token):<br>required: **false**<br><p>For the first call to this list request, omit this value.</p> <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p><br>
-    /// - On success, responds with [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput) with field(s):
+                            /// - On success, responds with [`ListFirewallDomainsOutput`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput::next_token): <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     ///   - [`domains(Option<Vec::<String>>)`](crate::operation::list_firewall_domains::ListFirewallDomainsOutput::domains): <p>A list of the domains in the firewall domain list.</p> <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>.</p>
-    /// - On failure, responds with [`SdkError<ListFirewallDomainsError>`](crate::operation::list_firewall_domains::ListFirewallDomainsError)
+                            /// - On failure, responds with [`SdkError<ListFirewallDomainsError>`](crate::operation::list_firewall_domains::ListFirewallDomainsError)
     pub fn list_firewall_domains(&self) -> crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder {
-        crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_firewall_domains::builders::ListFirewallDomainsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

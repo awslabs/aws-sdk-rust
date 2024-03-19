@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerServicePowersOutput {
+pub struct GetContainerServicePowersOutput  {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub powers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
+    pub powers: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerServicePower>>,
     _request_id: Option<String>,
 }
-impl GetContainerServicePowersOutput {
+impl  GetContainerServicePowersOutput  {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.powers.is_none()`.
-    pub fn powers(&self) -> &[crate::types::ContainerServicePower] {
-        self.powers.as_deref().unwrap_or_default()
+    pub fn powers(&self) -> & [crate::types::ContainerServicePower] {
+        self.powers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContainerServicePowersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContainerServicePowersOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
     pub fn builder() -> crate::operation::get_container_service_powers::builders::GetContainerServicePowersOutputBuilder {
@@ -31,7 +32,7 @@ impl GetContainerServicePowersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetContainerServicePowersOutputBuilder {
-    pub(crate) powers: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>,
+    pub(crate) powers: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerServicePower>>,
     _request_id: Option<String>,
 }
 impl GetContainerServicePowersOutputBuilder {
@@ -42,33 +43,34 @@ impl GetContainerServicePowersOutputBuilder {
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
     pub fn powers(mut self, input: crate::types::ContainerServicePower) -> Self {
         let mut v = self.powers.unwrap_or_default();
-        v.push(input);
-        self.powers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.powers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn set_powers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>>) -> Self {
-        self.powers = input;
-        self
+    pub fn set_powers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContainerServicePower>>) -> Self {
+        self.powers = input; self
     }
     /// <p>An array of objects that describe the powers that can be specified for a container service.</p>
-    pub fn get_powers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerServicePower>> {
+    pub fn get_powers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContainerServicePower>> {
         &self.powers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContainerServicePowersOutput`](crate::operation::get_container_service_powers::GetContainerServicePowersOutput).
     pub fn build(self) -> crate::operation::get_container_service_powers::GetContainerServicePowersOutput {
         crate::operation::get_container_service_powers::GetContainerServicePowersOutput {
-            powers: self.powers,
+            powers: self.powers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

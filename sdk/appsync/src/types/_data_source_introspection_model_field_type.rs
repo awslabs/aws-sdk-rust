@@ -3,7 +3,7 @@
 /// <p>Represents the type data for each field retrieved from the introspection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceIntrospectionModelFieldType {
+pub struct DataSourceIntrospectionModelFieldType  {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -21,9 +21,9 @@ pub struct DataSourceIntrospectionModelFieldType {
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub r#type: ::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>,
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DataSourceIntrospectionModelFieldType {
+impl  DataSourceIntrospectionModelFieldType  {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -34,23 +34,24 @@ impl DataSourceIntrospectionModelFieldType {
     /// <li>
     /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
-    pub fn kind(&self) -> ::std::option::Option<&str> {
+    pub fn kind(&self) -> ::std::option::Option<& str> {
         self.kind.as_deref()
     }
     /// <p>The name of the data type that represents the field. For example, <code>String</code> is a valid <code>name</code> value.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceIntrospectionModelFieldType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataSourceIntrospectionModelFieldType> {
         self.r#type.as_deref()
     }
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[::std::string::String] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [::std::string::String] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataSourceIntrospectionModelFieldType {
@@ -67,7 +68,7 @@ pub struct DataSourceIntrospectionModelFieldTypeBuilder {
     pub(crate) kind: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
@@ -95,8 +96,7 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kind = input;
-        self
+        self.kind = input; self
     }
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
@@ -118,8 +118,7 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     }
     /// <p>The name of the data type that represents the field. For example, <code>String</code> is a valid <code>name</code> value.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data type that represents the field. For example, <code>String</code> is a valid <code>name</code> value.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +133,7 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::DataSourceIntrospectionModelFieldType>>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code> is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set to <code>NonNull</code> or <code>List</code>.</p>
     /// <p>The <code>type</code> typically contains its own <code>kind</code> and <code>name</code> fields to represent the actual type data. For instance, <code>type</code> could contain a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be collectively stored in the <code>values</code> field.</p>
@@ -149,26 +147,30 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the <code>type</code> field. This field represents the AppSync data type equivalent of the introspected field.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DataSourceIntrospectionModelFieldType`](crate::types::DataSourceIntrospectionModelFieldType).
     pub fn build(self) -> crate::types::DataSourceIntrospectionModelFieldType {
         crate::types::DataSourceIntrospectionModelFieldType {
-            kind: self.kind,
-            name: self.name,
-            r#type: self.r#type,
-            values: self.values,
+            kind: self.kind
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSpeechSynthesisTasksInput {
+pub struct ListSpeechSynthesisTasksInput  {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
@@ -10,17 +10,17 @@ pub struct ListSpeechSynthesisTasksInput {
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub status: ::std::option::Option<crate::types::TaskStatus>,
 }
-impl ListSpeechSynthesisTasksInput {
+impl  ListSpeechSynthesisTasksInput  {
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskStatus> {
         self.status.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListSpeechSynthesisTasksInputBuilder {
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

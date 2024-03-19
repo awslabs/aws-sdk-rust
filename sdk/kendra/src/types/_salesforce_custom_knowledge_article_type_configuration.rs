@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for indexing Salesforce custom articles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SalesforceCustomKnowledgeArticleTypeConfiguration {
+pub struct SalesforceCustomKnowledgeArticleTypeConfiguration  {
     /// <p>The name of the configuration.</p>
     pub name: ::std::string::String,
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
@@ -11,28 +11,27 @@ pub struct SalesforceCustomKnowledgeArticleTypeConfiguration {
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
     pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
 }
-impl SalesforceCustomKnowledgeArticleTypeConfiguration {
+impl  SalesforceCustomKnowledgeArticleTypeConfiguration  {
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
-    pub fn document_data_field_name(&self) -> &str {
-        use std::ops::Deref;
-        self.document_data_field_name.deref()
+    pub fn document_data_field_name(&self) -> & str {
+        use std::ops::Deref; self.document_data_field_name.deref()
     }
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
-    pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_title_field_name(&self) -> ::std::option::Option<& str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_mappings.is_none()`.
-    pub fn field_mappings(&self) -> &[crate::types::DataSourceToIndexFieldMapping] {
-        self.field_mappings.as_deref().unwrap_or_default()
+    pub fn field_mappings(&self) -> & [crate::types::DataSourceToIndexFieldMapping] {
+        self.field_mappings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SalesforceCustomKnowledgeArticleTypeConfiguration {
@@ -49,7 +48,7 @@ pub struct SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) document_data_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) document_title_field_name: ::std::option::Option<::std::string::String>,
-    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) field_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     /// <p>The name of the configuration.</p>
@@ -60,8 +59,7 @@ impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     }
     /// <p>The name of the configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     }
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
     pub fn set_document_data_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_data_field_name = input;
-        self
+        self.document_data_field_name = input; self
     }
     /// <p>The name of the field in the custom knowledge article that contains the document data to index.</p>
     pub fn get_document_data_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +86,7 @@ impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     }
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
     pub fn set_document_title_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_title_field_name = input;
-        self
+        self.document_title_field_name = input; self
     }
     /// <p>The name of the field in the custom knowledge article that contains the document title.</p>
     pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,42 +99,41 @@ impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
-        v.push(input);
-        self.field_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.field_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
-        self.field_mappings = input;
-        self
+    pub fn set_field_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.field_mappings = input; self
     }
     /// <p>Maps attributes or field names of the custom knowledge article to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+    pub fn get_field_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceToIndexFieldMapping>> {
         &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SalesforceCustomKnowledgeArticleTypeConfiguration`](crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SalesforceCustomKnowledgeArticleTypeConfigurationBuilder::name)
     /// - [`document_data_field_name`](crate::types::builders::SalesforceCustomKnowledgeArticleTypeConfigurationBuilder::document_data_field_name)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration",
-                )
-            })?,
-            document_data_field_name: self.document_data_field_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "document_data_field_name",
-                    "document_data_field_name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration",
-                )
-            })?,
-            document_title_field_name: self.document_title_field_name,
-            field_mappings: self.field_mappings,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration")
+                    )?
+                ,
+                document_data_field_name: self.document_data_field_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("document_data_field_name", "document_data_field_name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration")
+                    )?
+                ,
+                document_title_field_name: self.document_title_field_name
+                ,
+                field_mappings: self.field_mappings
+                ,
+            }
+        )
     }
 }
+

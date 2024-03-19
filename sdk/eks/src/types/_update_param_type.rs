@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateparamtype = unimplemented!();
 /// match updateparamtype {
@@ -55,16 +55,14 @@
 /// Specifically, when `updateparamtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateParamType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
@@ -122,164 +120,137 @@ pub enum UpdateParamType {
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UpdateParamType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AddonVersion" => UpdateParamType::AddonVersion,
-            "AuthenticationMode" => UpdateParamType::AuthenticationMode,
-            "ClusterLogging" => UpdateParamType::ClusterLogging,
-            "ConfigurationValues" => UpdateParamType::ConfigurationValues,
-            "DesiredSize" => UpdateParamType::DesiredSize,
-            "EncryptionConfig" => UpdateParamType::EncryptionConfig,
-            "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
-            "EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
-            "IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
-            "LabelsToAdd" => UpdateParamType::LabelsToAdd,
-            "LabelsToRemove" => UpdateParamType::LabelsToRemove,
-            "LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
-            "LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
-            "MaxSize" => UpdateParamType::MaxSize,
-            "MaxUnavailable" => UpdateParamType::MaxUnavailable,
-            "MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
-            "MinSize" => UpdateParamType::MinSize,
-            "PlatformVersion" => UpdateParamType::PlatformVersion,
-            "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
-            "ReleaseVersion" => UpdateParamType::ReleaseVersion,
-            "ResolveConflicts" => UpdateParamType::ResolveConflicts,
-            "SecurityGroups" => UpdateParamType::SecurityGroups,
-            "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
-            "Subnets" => UpdateParamType::Subnets,
-            "TaintsToAdd" => UpdateParamType::TaintsToAdd,
-            "TaintsToRemove" => UpdateParamType::TaintsToRemove,
-            "Version" => UpdateParamType::Version,
-            other => UpdateParamType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AddonVersion" => UpdateParamType::AddonVersion,
+"AuthenticationMode" => UpdateParamType::AuthenticationMode,
+"ClusterLogging" => UpdateParamType::ClusterLogging,
+"ConfigurationValues" => UpdateParamType::ConfigurationValues,
+"DesiredSize" => UpdateParamType::DesiredSize,
+"EncryptionConfig" => UpdateParamType::EncryptionConfig,
+"EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
+"EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
+"IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
+"LabelsToAdd" => UpdateParamType::LabelsToAdd,
+"LabelsToRemove" => UpdateParamType::LabelsToRemove,
+"LaunchTemplateName" => UpdateParamType::LaunchTemplateName,
+"LaunchTemplateVersion" => UpdateParamType::LaunchTemplateVersion,
+"MaxSize" => UpdateParamType::MaxSize,
+"MaxUnavailable" => UpdateParamType::MaxUnavailable,
+"MaxUnavailablePercentage" => UpdateParamType::MaxUnavailablePercentage,
+"MinSize" => UpdateParamType::MinSize,
+"PlatformVersion" => UpdateParamType::PlatformVersion,
+"PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
+"ReleaseVersion" => UpdateParamType::ReleaseVersion,
+"ResolveConflicts" => UpdateParamType::ResolveConflicts,
+"SecurityGroups" => UpdateParamType::SecurityGroups,
+"ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
+"Subnets" => UpdateParamType::Subnets,
+"TaintsToAdd" => UpdateParamType::TaintsToAdd,
+"TaintsToRemove" => UpdateParamType::TaintsToRemove,
+"Version" => UpdateParamType::Version,
+other => UpdateParamType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UpdateParamType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UpdateParamType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UpdateParamType::from(s))
+                    }
+                }
 impl UpdateParamType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateParamType::AddonVersion => "AddonVersion",
-            UpdateParamType::AuthenticationMode => "AuthenticationMode",
-            UpdateParamType::ClusterLogging => "ClusterLogging",
-            UpdateParamType::ConfigurationValues => "ConfigurationValues",
-            UpdateParamType::DesiredSize => "DesiredSize",
-            UpdateParamType::EncryptionConfig => "EncryptionConfig",
-            UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
-            UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
-            UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
-            UpdateParamType::LabelsToAdd => "LabelsToAdd",
-            UpdateParamType::LabelsToRemove => "LabelsToRemove",
-            UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
-            UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
-            UpdateParamType::MaxSize => "MaxSize",
-            UpdateParamType::MaxUnavailable => "MaxUnavailable",
-            UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
-            UpdateParamType::MinSize => "MinSize",
-            UpdateParamType::PlatformVersion => "PlatformVersion",
-            UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
-            UpdateParamType::ReleaseVersion => "ReleaseVersion",
-            UpdateParamType::ResolveConflicts => "ResolveConflicts",
-            UpdateParamType::SecurityGroups => "SecurityGroups",
-            UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
-            UpdateParamType::Subnets => "Subnets",
-            UpdateParamType::TaintsToAdd => "TaintsToAdd",
-            UpdateParamType::TaintsToRemove => "TaintsToRemove",
-            UpdateParamType::Version => "Version",
-            UpdateParamType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AddonVersion",
-            "AuthenticationMode",
-            "ClusterLogging",
-            "ConfigurationValues",
-            "DesiredSize",
-            "EncryptionConfig",
-            "EndpointPrivateAccess",
-            "EndpointPublicAccess",
-            "IdentityProviderConfig",
-            "LabelsToAdd",
-            "LabelsToRemove",
-            "LaunchTemplateName",
-            "LaunchTemplateVersion",
-            "MaxSize",
-            "MaxUnavailable",
-            "MaxUnavailablePercentage",
-            "MinSize",
-            "PlatformVersion",
-            "PublicAccessCidrs",
-            "ReleaseVersion",
-            "ResolveConflicts",
-            "SecurityGroups",
-            "ServiceAccountRoleArn",
-            "Subnets",
-            "TaintsToAdd",
-            "TaintsToRemove",
-            "Version",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateParamType::AddonVersion => "AddonVersion",
+    UpdateParamType::AuthenticationMode => "AuthenticationMode",
+    UpdateParamType::ClusterLogging => "ClusterLogging",
+    UpdateParamType::ConfigurationValues => "ConfigurationValues",
+    UpdateParamType::DesiredSize => "DesiredSize",
+    UpdateParamType::EncryptionConfig => "EncryptionConfig",
+    UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
+    UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
+    UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
+    UpdateParamType::LabelsToAdd => "LabelsToAdd",
+    UpdateParamType::LabelsToRemove => "LabelsToRemove",
+    UpdateParamType::LaunchTemplateName => "LaunchTemplateName",
+    UpdateParamType::LaunchTemplateVersion => "LaunchTemplateVersion",
+    UpdateParamType::MaxSize => "MaxSize",
+    UpdateParamType::MaxUnavailable => "MaxUnavailable",
+    UpdateParamType::MaxUnavailablePercentage => "MaxUnavailablePercentage",
+    UpdateParamType::MinSize => "MinSize",
+    UpdateParamType::PlatformVersion => "PlatformVersion",
+    UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
+    UpdateParamType::ReleaseVersion => "ReleaseVersion",
+    UpdateParamType::ResolveConflicts => "ResolveConflicts",
+    UpdateParamType::SecurityGroups => "SecurityGroups",
+    UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
+    UpdateParamType::Subnets => "Subnets",
+    UpdateParamType::TaintsToAdd => "TaintsToAdd",
+    UpdateParamType::TaintsToRemove => "TaintsToRemove",
+    UpdateParamType::Version => "Version",
+    UpdateParamType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AddonVersion", "AuthenticationMode", "ClusterLogging", "ConfigurationValues", "DesiredSize", "EncryptionConfig", "EndpointPrivateAccess", "EndpointPublicAccess", "IdentityProviderConfig", "LabelsToAdd", "LabelsToRemove", "LaunchTemplateName", "LaunchTemplateVersion", "MaxSize", "MaxUnavailable", "MaxUnavailablePercentage", "MinSize", "PlatformVersion", "PublicAccessCidrs", "ReleaseVersion", "ResolveConflicts", "SecurityGroups", "ServiceAccountRoleArn", "Subnets", "TaintsToAdd", "TaintsToRemove", "Version"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UpdateParamType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UpdateParamType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UpdateParamType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UpdateParamType::AddonVersion => write!(f, "AddonVersion"),
-            UpdateParamType::AuthenticationMode => write!(f, "AuthenticationMode"),
-            UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
-            UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
-            UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
-            UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
-            UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),
-            UpdateParamType::EndpointPublicAccess => write!(f, "EndpointPublicAccess"),
-            UpdateParamType::IdentityProviderConfig => write!(f, "IdentityProviderConfig"),
-            UpdateParamType::LabelsToAdd => write!(f, "LabelsToAdd"),
-            UpdateParamType::LabelsToRemove => write!(f, "LabelsToRemove"),
-            UpdateParamType::LaunchTemplateName => write!(f, "LaunchTemplateName"),
-            UpdateParamType::LaunchTemplateVersion => write!(f, "LaunchTemplateVersion"),
-            UpdateParamType::MaxSize => write!(f, "MaxSize"),
-            UpdateParamType::MaxUnavailable => write!(f, "MaxUnavailable"),
-            UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
-            UpdateParamType::MinSize => write!(f, "MinSize"),
-            UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
-            UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
-            UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
-            UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),
-            UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
-            UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),
-            UpdateParamType::Subnets => write!(f, "Subnets"),
-            UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
-            UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
-            UpdateParamType::Version => write!(f, "Version"),
-            UpdateParamType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UpdateParamType::AddonVersion => write!(f, "AddonVersion"),
+UpdateParamType::AuthenticationMode => write!(f, "AuthenticationMode"),
+UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
+UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
+UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
+UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
+UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),
+UpdateParamType::EndpointPublicAccess => write!(f, "EndpointPublicAccess"),
+UpdateParamType::IdentityProviderConfig => write!(f, "IdentityProviderConfig"),
+UpdateParamType::LabelsToAdd => write!(f, "LabelsToAdd"),
+UpdateParamType::LabelsToRemove => write!(f, "LabelsToRemove"),
+UpdateParamType::LaunchTemplateName => write!(f, "LaunchTemplateName"),
+UpdateParamType::LaunchTemplateVersion => write!(f, "LaunchTemplateVersion"),
+UpdateParamType::MaxSize => write!(f, "MaxSize"),
+UpdateParamType::MaxUnavailable => write!(f, "MaxUnavailable"),
+UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
+UpdateParamType::MinSize => write!(f, "MinSize"),
+UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
+UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
+UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
+UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),
+UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
+UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),
+UpdateParamType::Subnets => write!(f, "Subnets"),
+UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
+UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
+UpdateParamType::Version => write!(f, "Version"),
+UpdateParamType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

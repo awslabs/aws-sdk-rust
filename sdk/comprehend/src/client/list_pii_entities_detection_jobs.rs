@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPiiEntitiesDetectionJobs`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter(PiiEntitiesDetectionJobFilter)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::filter) / [`set_filter(Option<PiiEntitiesDetectionJobFilter>)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::set_filter):<br>required: **false**<br><p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in each page.</p><br>
-    /// - On success, responds with [`ListPiiEntitiesDetectionJobsOutput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput) with field(s):
+                            /// - On success, responds with [`ListPiiEntitiesDetectionJobsOutput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput) with field(s):
     ///   - [`pii_entities_detection_job_properties_list(Option<Vec::<PiiEntitiesDetectionJobProperties>>)`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput::pii_entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListPiiEntitiesDetectionJobsError>`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError)
-    pub fn list_pii_entities_detection_jobs(
-        &self,
-    ) -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder {
-        crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListPiiEntitiesDetectionJobsError>`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError)
+    pub fn list_pii_entities_detection_jobs(&self) -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder {
+                                crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

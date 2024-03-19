@@ -5,54 +5,50 @@ pub use crate::operation::update_log_levels_by_resource_types::_update_log_level
 
 impl UpdateLogLevelsByResourceTypesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_log_levels_by_resource_types();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_log_levels_by_resource_types();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
-///
+/// 
 /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder,
+                    inner: crate::operation::update_log_levels_by_resource_types::builders::UpdateLogLevelsByResourceTypesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-    > for UpdateLogLevelsByResourceTypesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+                    crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
+                > for UpdateLogLevelsByResourceTypesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
+                        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateLogLevelsByResourceTypesFluentBuilder {
     /// Creates a new `UpdateLogLevelsByResourceTypes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput,
-        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.inner = self.inner.default_log_level(input);
@@ -132,12 +119,12 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn set_wireless_device_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>) -> Self {
+    pub fn set_wireless_device_log_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WirelessDeviceLogOption>>) -> Self {
         self.inner = self.inner.set_wireless_device_log_options(input);
         self
     }
     /// <p>The list of wireless device log options.</p>
-    pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>> {
+    pub fn get_wireless_device_log_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WirelessDeviceLogOption>> {
         self.inner.get_wireless_device_log_options()
     }
     /// Appends an item to `WirelessGatewayLogOptions`.
@@ -150,12 +137,13 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn set_wireless_gateway_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>>) -> Self {
+    pub fn set_wireless_gateway_log_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayLogOption>>) -> Self {
         self.inner = self.inner.set_wireless_gateway_log_options(input);
         self
     }
     /// <p>The list of wireless gateway log options.</p>
-    pub fn get_wireless_gateway_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WirelessGatewayLogOption>> {
+    pub fn get_wireless_gateway_log_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WirelessGatewayLogOption>> {
         self.inner.get_wireless_gateway_log_options()
     }
 }
+

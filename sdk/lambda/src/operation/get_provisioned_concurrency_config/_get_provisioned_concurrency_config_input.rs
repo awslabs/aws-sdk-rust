@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProvisionedConcurrencyConfigInput {
+pub struct GetProvisionedConcurrencyConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct GetProvisionedConcurrencyConfigInput {
     /// <p>The version number or alias name.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
-impl GetProvisionedConcurrencyConfigInput {
+impl  GetProvisionedConcurrencyConfigInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -30,11 +30,11 @@ impl GetProvisionedConcurrencyConfigInput {
     /// <p><b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The version number or alias name.</p>
-    pub fn qualifier(&self) -> ::std::option::Option<&str> {
+    pub fn qualifier(&self) -> ::std::option::Option<& str> {
         self.qualifier.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl GetProvisionedConcurrencyConfigInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -106,25 +105,22 @@ impl GetProvisionedConcurrencyConfigInputBuilder {
     }
     /// <p>The version number or alias name.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.qualifier = input;
-        self
+        self.qualifier = input; self
     }
     /// <p>The version number or alias name.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`GetProvisionedConcurrencyConfigInput`](crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfigInput {
-                function_name: self.function_name,
-                qualifier: self.qualifier,
-            },
+                function_name: self.function_name
+                ,
+                qualifier: self.qualifier
+                ,
+            }
         )
     }
 }
+

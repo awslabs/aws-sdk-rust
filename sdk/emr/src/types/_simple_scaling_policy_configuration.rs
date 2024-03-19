@@ -3,7 +3,7 @@
 /// <p>An automatic scaling configuration, which describes how the policy adds or removes instances, the cooldown period, and the number of Amazon EC2 instances that will be added each time the CloudWatch metric alarm condition is satisfied.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleScalingPolicyConfiguration {
+pub struct SimpleScalingPolicyConfiguration  {
     /// <p>The way in which Amazon EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the Amazon EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of Amazon EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
     pub adjustment_type: ::std::option::Option<crate::types::AdjustmentType>,
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's Amazon EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
@@ -11,9 +11,9 @@ pub struct SimpleScalingPolicyConfiguration {
     /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
     pub cool_down: ::std::option::Option<i32>,
 }
-impl SimpleScalingPolicyConfiguration {
+impl  SimpleScalingPolicyConfiguration  {
     /// <p>The way in which Amazon EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the Amazon EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of Amazon EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
-    pub fn adjustment_type(&self) -> ::std::option::Option<&crate::types::AdjustmentType> {
+    pub fn adjustment_type(&self) -> ::std::option::Option<& crate::types::AdjustmentType> {
         self.adjustment_type.as_ref()
     }
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's Amazon EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
@@ -48,8 +48,7 @@ impl SimpleScalingPolicyConfigurationBuilder {
     }
     /// <p>The way in which Amazon EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the Amazon EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of Amazon EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
     pub fn set_adjustment_type(mut self, input: ::std::option::Option<crate::types::AdjustmentType>) -> Self {
-        self.adjustment_type = input;
-        self
+        self.adjustment_type = input; self
     }
     /// <p>The way in which Amazon EC2 instances are added (if <code>ScalingAdjustment</code> is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the Amazon EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of Amazon EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.</p>
     pub fn get_adjustment_type(&self) -> &::std::option::Option<crate::types::AdjustmentType> {
@@ -63,8 +62,7 @@ impl SimpleScalingPolicyConfigurationBuilder {
     }
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's Amazon EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
     pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.scaling_adjustment = input;
-        self
+        self.scaling_adjustment = input; self
     }
     /// <p>The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A positive value adds to the instance group's Amazon EC2 instance count while a negative number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.</p>
     pub fn get_scaling_adjustment(&self) -> &::std::option::Option<i32> {
@@ -77,8 +75,7 @@ impl SimpleScalingPolicyConfigurationBuilder {
     }
     /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
     pub fn set_cool_down(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cool_down = input;
-        self
+        self.cool_down = input; self
     }
     /// <p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. The default value is 0.</p>
     pub fn get_cool_down(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,13 @@ impl SimpleScalingPolicyConfigurationBuilder {
     /// Consumes the builder and constructs a [`SimpleScalingPolicyConfiguration`](crate::types::SimpleScalingPolicyConfiguration).
     pub fn build(self) -> crate::types::SimpleScalingPolicyConfiguration {
         crate::types::SimpleScalingPolicyConfiguration {
-            adjustment_type: self.adjustment_type,
-            scaling_adjustment: self.scaling_adjustment,
-            cool_down: self.cool_down,
+            adjustment_type: self.adjustment_type
+            ,
+            scaling_adjustment: self.scaling_adjustment
+            ,
+            cool_down: self.cool_down
+            ,
         }
     }
 }
+

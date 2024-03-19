@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeResourceInput {
+pub struct DescribeResourceInput  {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource to be described.</p>
@@ -17,9 +17,9 @@ pub struct DescribeResourceInput {
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeResourceInput {
+impl  DescribeResourceInput  {
     /// <p>The identifier associated with the organization for which the resource is described.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the resource to be described.</p>
@@ -32,7 +32,7 @@ impl DescribeResourceInput {
     /// <li>
     /// <p>Resource name: resource</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DescribeResourceInputBuilder {
     }
     /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl DescribeResourceInputBuilder {
     /// <p>Resource name: resource</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource to be described.</p>
     /// <p>The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -109,12 +107,15 @@ impl DescribeResourceInputBuilder {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_resource::DescribeResourceInput {
-            organization_id: self.organization_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_resource::DescribeResourceInput {
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

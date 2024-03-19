@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateServiceActionWithProvisioningArtifactOutput {
+pub struct AssociateServiceActionWithProvisioningArtifactOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for AssociateServiceActionWithProvisioningArtifactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AssociateServiceActionWithProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder {
         crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct AssociateServiceActionWithProvisioningArtifactOutputBuilder {
 }
 impl AssociateServiceActionWithProvisioningArtifactOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput {
+    pub fn build(self) -> crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput {
         crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput {
             _request_id: self._request_id,
         }
     }
 }
+

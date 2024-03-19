@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLanguagesOutput {
+pub struct ListLanguagesOutput  {
     /// <p>The list of supported languages.</p>
-    pub languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
+    pub languages: ::std::option::Option<::std::vec::Vec::<crate::types::Language>>,
     /// <p>The language code passed in with the request.</p>
     pub display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
     /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListLanguagesOutput {
+impl  ListLanguagesOutput  {
     /// <p>The list of supported languages.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.languages.is_none()`.
-    pub fn languages(&self) -> &[crate::types::Language] {
-        self.languages.as_deref().unwrap_or_default()
+    pub fn languages(&self) -> & [crate::types::Language] {
+        self.languages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The language code passed in with the request.</p>
-    pub fn display_language_code(&self) -> ::std::option::Option<&crate::types::DisplayLanguageCode> {
+    pub fn display_language_code(&self) -> ::std::option::Option<& crate::types::DisplayLanguageCode> {
         self.display_language_code.as_ref()
     }
     /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListLanguagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListLanguagesOutput {
     /// Creates a new builder-style object to manufacture [`ListLanguagesOutput`](crate::operation::list_languages::ListLanguagesOutput).
     pub fn builder() -> crate::operation::list_languages::builders::ListLanguagesOutputBuilder {
@@ -43,7 +44,7 @@ impl ListLanguagesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListLanguagesOutputBuilder {
-    pub(crate) languages: ::std::option::Option<::std::vec::Vec<crate::types::Language>>,
+    pub(crate) languages: ::std::option::Option<::std::vec::Vec::<crate::types::Language>>,
     pub(crate) display_language_code: ::std::option::Option<crate::types::DisplayLanguageCode>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl ListLanguagesOutputBuilder {
     /// <p>The list of supported languages.</p>
     pub fn languages(mut self, input: crate::types::Language) -> Self {
         let mut v = self.languages.unwrap_or_default();
-        v.push(input);
-        self.languages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.languages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of supported languages.</p>
-    pub fn set_languages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Language>>) -> Self {
-        self.languages = input;
-        self
+    pub fn set_languages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Language>>) -> Self {
+        self.languages = input; self
     }
     /// <p>The list of supported languages.</p>
-    pub fn get_languages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Language>> {
+    pub fn get_languages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Language>> {
         &self.languages
     }
     /// <p>The language code passed in with the request.</p>
@@ -76,8 +76,7 @@ impl ListLanguagesOutputBuilder {
     }
     /// <p>The language code passed in with the request.</p>
     pub fn set_display_language_code(mut self, input: ::std::option::Option<crate::types::DisplayLanguageCode>) -> Self {
-        self.display_language_code = input;
-        self
+        self.display_language_code = input; self
     }
     /// <p>The language code passed in with the request.</p>
     pub fn get_display_language_code(&self) -> &::std::option::Option<crate::types::DisplayLanguageCode> {
@@ -90,29 +89,32 @@ impl ListLanguagesOutputBuilder {
     }
     /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListLanguagesOutput`](crate::operation::list_languages::ListLanguagesOutput).
     pub fn build(self) -> crate::operation::list_languages::ListLanguagesOutput {
         crate::operation::list_languages::ListLanguagesOutput {
-            languages: self.languages,
-            display_language_code: self.display_language_code,
-            next_token: self.next_token,
+            languages: self.languages
+            ,
+            display_language_code: self.display_language_code
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

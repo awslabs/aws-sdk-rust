@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ImportCertificateInput {
+pub struct ImportCertificateInput  {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
@@ -11,30 +11,31 @@ pub struct ImportCertificateInput {
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportCertificateInput {
+impl  ImportCertificateInput  {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn certificate_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_identifier(&self) -> ::std::option::Option<& str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn certificate_pem(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> ::std::option::Option<& str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
-    pub fn certificate_wallet(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn certificate_wallet(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
     /// <p>The tags associated with the certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for ImportCertificateInput {
+impl  ::std::fmt::Debug for ImportCertificateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateInput");
         formatter.field("certificate_identifier", &self.certificate_identifier);
@@ -58,7 +59,7 @@ pub struct ImportCertificateInputBuilder {
     pub(crate) certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_wallet: ::std::option::Option<::aws_smithy_types::Blob>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportCertificateInputBuilder {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -69,8 +70,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_identifier = input;
-        self
+        self.certificate_identifier = input; self
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +83,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_pem = input;
-        self
+        self.certificate_pem = input; self
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl ImportCertificateInputBuilder {
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
     pub fn set_certificate_wallet(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.certificate_wallet = input;
-        self
+        self.certificate_wallet = input; self
     }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code></p>
@@ -114,29 +112,32 @@ impl ImportCertificateInputBuilder {
     /// <p>The tags associated with the certificate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
-            certificate_identifier: self.certificate_identifier,
-            certificate_pem: self.certificate_pem,
-            certificate_wallet: self.certificate_wallet,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_certificate::ImportCertificateInput {
+                certificate_identifier: self.certificate_identifier
+                ,
+                certificate_pem: self.certificate_pem
+                ,
+                certificate_wallet: self.certificate_wallet
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ImportCertificateInputBuilder {
@@ -149,3 +150,4 @@ impl ::std::fmt::Debug for ImportCertificateInputBuilder {
         formatter.finish()
     }
 }
+

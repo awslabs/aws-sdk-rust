@@ -3,7 +3,7 @@
 /// <p>Information on a package that is associated with a domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainPackageDetails {
+pub struct DomainPackageDetails  {
     /// <p>Internal ID of the package.</p>
     pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>User specified name of the package.</p>
@@ -23,41 +23,41 @@ pub struct DomainPackageDetails {
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl DomainPackageDetails {
+impl  DomainPackageDetails  {
     /// <p>Internal ID of the package.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>User specified name of the package.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
-    pub fn package_type(&self) -> ::std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> ::std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>Timestamp of the most-recent update to the association status.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>Name of the domain you've associated a package with.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
-    pub fn domain_package_status(&self) -> ::std::option::Option<&crate::types::DomainPackageStatus> {
+    pub fn domain_package_status(&self) -> ::std::option::Option<& crate::types::DomainPackageStatus> {
         self.domain_package_status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
-    pub fn reference_path(&self) -> ::std::option::Option<&str> {
+    pub fn reference_path(&self) -> ::std::option::Option<& str> {
         self.reference_path.as_deref()
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -90,8 +90,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Internal ID of the package.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>Internal ID of the package.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>User specified name of the package.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>User specified name of the package.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
     pub fn set_package_type(mut self, input: ::std::option::Option<crate::types::PackageType>) -> Self {
-        self.package_type = input;
-        self
+        self.package_type = input; self
     }
     /// <p>Currently supports only TXT-DICTIONARY.</p>
     pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
@@ -132,8 +129,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Timestamp of the most-recent update to the association status.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>Timestamp of the most-recent update to the association status.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +142,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Name of the domain you've associated a package with.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Name of the domain you've associated a package with.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +155,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
     pub fn set_domain_package_status(mut self, input: ::std::option::Option<crate::types::DomainPackageStatus>) -> Self {
-        self.domain_package_status = input;
-        self
+        self.domain_package_status = input; self
     }
     /// <p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>
     pub fn get_domain_package_status(&self) -> &::std::option::Option<crate::types::DomainPackageStatus> {
@@ -174,8 +168,7 @@ impl DomainPackageDetailsBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +181,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
     pub fn set_reference_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_path = input;
-        self
+        self.reference_path = input; self
     }
     /// <p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>
     pub fn get_reference_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_details = input;
-        self
+        self.error_details = input; self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -212,15 +203,25 @@ impl DomainPackageDetailsBuilder {
     /// Consumes the builder and constructs a [`DomainPackageDetails`](crate::types::DomainPackageDetails).
     pub fn build(self) -> crate::types::DomainPackageDetails {
         crate::types::DomainPackageDetails {
-            package_id: self.package_id,
-            package_name: self.package_name,
-            package_type: self.package_type,
-            last_updated: self.last_updated,
-            domain_name: self.domain_name,
-            domain_package_status: self.domain_package_status,
-            package_version: self.package_version,
-            reference_path: self.reference_path,
-            error_details: self.error_details,
+            package_id: self.package_id
+            ,
+            package_name: self.package_name
+            ,
+            package_type: self.package_type
+            ,
+            last_updated: self.last_updated
+            ,
+            domain_name: self.domain_name
+            ,
+            domain_package_status: self.domain_package_status
+            ,
+            package_version: self.package_version
+            ,
+            reference_path: self.reference_path
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

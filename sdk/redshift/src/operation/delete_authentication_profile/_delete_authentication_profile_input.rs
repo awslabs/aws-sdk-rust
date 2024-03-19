@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAuthenticationProfileInput {
+pub struct DeleteAuthenticationProfileInput  {
     /// <p>The name of the authentication profile to delete.</p>
     pub authentication_profile_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAuthenticationProfileInput {
+impl  DeleteAuthenticationProfileInput  {
     /// <p>The name of the authentication profile to delete.</p>
-    pub fn authentication_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_profile_name(&self) -> ::std::option::Option<& str> {
         self.authentication_profile_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteAuthenticationProfileInputBuilder {
     }
     /// <p>The name of the authentication profile to delete.</p>
     pub fn set_authentication_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_profile_name = input;
-        self
+        self.authentication_profile_name = input; self
     }
     /// <p>The name of the authentication profile to delete.</p>
     pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_profile_name
     }
     /// Consumes the builder and constructs a [`DeleteAuthenticationProfileInput`](crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput {
-            authentication_profile_name: self.authentication_profile_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput {
+                authentication_profile_name: self.authentication_profile_name
+                ,
+            }
+        )
     }
 }
+

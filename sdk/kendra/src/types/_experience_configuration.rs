@@ -3,19 +3,19 @@
 /// <p>Provides the configuration information for your Amazon Kendra experience. This includes the data source IDs and/or FAQ IDs, and user or group information to grant access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExperienceConfiguration {
+pub struct ExperienceConfiguration  {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     pub content_source_configuration: ::std::option::Option<crate::types::ContentSourceConfiguration>,
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     pub user_identity_configuration: ::std::option::Option<crate::types::UserIdentityConfiguration>,
 }
-impl ExperienceConfiguration {
+impl  ExperienceConfiguration  {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
-    pub fn content_source_configuration(&self) -> ::std::option::Option<&crate::types::ContentSourceConfiguration> {
+    pub fn content_source_configuration(&self) -> ::std::option::Option<& crate::types::ContentSourceConfiguration> {
         self.content_source_configuration.as_ref()
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
-    pub fn user_identity_configuration(&self) -> ::std::option::Option<&crate::types::UserIdentityConfiguration> {
+    pub fn user_identity_configuration(&self) -> ::std::option::Option<& crate::types::UserIdentityConfiguration> {
         self.user_identity_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ExperienceConfigurationBuilder {
     }
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     pub fn set_content_source_configuration(mut self, input: ::std::option::Option<crate::types::ContentSourceConfiguration>) -> Self {
-        self.content_source_configuration = input;
-        self
+        self.content_source_configuration = input; self
     }
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     pub fn get_content_source_configuration(&self) -> &::std::option::Option<crate::types::ContentSourceConfiguration> {
@@ -55,8 +54,7 @@ impl ExperienceConfigurationBuilder {
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     pub fn set_user_identity_configuration(mut self, input: ::std::option::Option<crate::types::UserIdentityConfiguration>) -> Self {
-        self.user_identity_configuration = input;
-        self
+        self.user_identity_configuration = input; self
     }
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails.</p>
     pub fn get_user_identity_configuration(&self) -> &::std::option::Option<crate::types::UserIdentityConfiguration> {
@@ -65,8 +63,11 @@ impl ExperienceConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExperienceConfiguration`](crate::types::ExperienceConfiguration).
     pub fn build(self) -> crate::types::ExperienceConfiguration {
         crate::types::ExperienceConfiguration {
-            content_source_configuration: self.content_source_configuration,
-            user_identity_configuration: self.user_identity_configuration,
+            content_source_configuration: self.content_source_configuration
+            ,
+            user_identity_configuration: self.user_identity_configuration
+            ,
         }
     }
 }
+

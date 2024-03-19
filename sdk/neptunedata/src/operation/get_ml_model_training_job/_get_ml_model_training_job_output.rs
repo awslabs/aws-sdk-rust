@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlModelTrainingJobOutput {
+pub struct GetMlModelTrainingJobOutput  {
     /// <p>The status of the model training job.</p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of this model-training job.</p>
@@ -14,42 +14,43 @@ pub struct GetMlModelTrainingJobOutput {
     /// <p>The model transform job.</p>
     pub model_transform_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     /// <p>A list of the configurations of the ML models being used.</p>
-    pub ml_models: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>,
+    pub ml_models: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>,
     _request_id: Option<String>,
 }
-impl GetMlModelTrainingJobOutput {
+impl  GetMlModelTrainingJobOutput  {
     /// <p>The status of the model training job.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The unique identifier of this model-training job.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The data processing job.</p>
-    pub fn processing_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn processing_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.processing_job.as_ref()
     }
     /// <p>The HPO job.</p>
-    pub fn hpo_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn hpo_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.hpo_job.as_ref()
     }
     /// <p>The model transform job.</p>
-    pub fn model_transform_job(&self) -> ::std::option::Option<&crate::types::MlResourceDefinition> {
+    pub fn model_transform_job(&self) -> ::std::option::Option<& crate::types::MlResourceDefinition> {
         self.model_transform_job.as_ref()
     }
     /// <p>A list of the configurations of the ML models being used.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ml_models.is_none()`.
-    pub fn ml_models(&self) -> &[crate::types::MlConfigDefinition] {
-        self.ml_models.as_deref().unwrap_or_default()
+    pub fn ml_models(&self) -> & [crate::types::MlConfigDefinition] {
+        self.ml_models.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMlModelTrainingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMlModelTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`GetMlModelTrainingJobOutput`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput).
     pub fn builder() -> crate::operation::get_ml_model_training_job::builders::GetMlModelTrainingJobOutputBuilder {
@@ -66,7 +67,7 @@ pub struct GetMlModelTrainingJobOutputBuilder {
     pub(crate) processing_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     pub(crate) hpo_job: ::std::option::Option<crate::types::MlResourceDefinition>,
     pub(crate) model_transform_job: ::std::option::Option<crate::types::MlResourceDefinition>,
-    pub(crate) ml_models: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>,
+    pub(crate) ml_models: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>,
     _request_id: Option<String>,
 }
 impl GetMlModelTrainingJobOutputBuilder {
@@ -77,8 +78,7 @@ impl GetMlModelTrainingJobOutputBuilder {
     }
     /// <p>The status of the model training job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the model training job.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +91,7 @@ impl GetMlModelTrainingJobOutputBuilder {
     }
     /// <p>The unique identifier of this model-training job.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of this model-training job.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl GetMlModelTrainingJobOutputBuilder {
     }
     /// <p>The data processing job.</p>
     pub fn set_processing_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.processing_job = input;
-        self
+        self.processing_job = input; self
     }
     /// <p>The data processing job.</p>
     pub fn get_processing_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -119,8 +117,7 @@ impl GetMlModelTrainingJobOutputBuilder {
     }
     /// <p>The HPO job.</p>
     pub fn set_hpo_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.hpo_job = input;
-        self
+        self.hpo_job = input; self
     }
     /// <p>The HPO job.</p>
     pub fn get_hpo_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -133,8 +130,7 @@ impl GetMlModelTrainingJobOutputBuilder {
     }
     /// <p>The model transform job.</p>
     pub fn set_model_transform_job(mut self, input: ::std::option::Option<crate::types::MlResourceDefinition>) -> Self {
-        self.model_transform_job = input;
-        self
+        self.model_transform_job = input; self
     }
     /// <p>The model transform job.</p>
     pub fn get_model_transform_job(&self) -> &::std::option::Option<crate::types::MlResourceDefinition> {
@@ -147,38 +143,44 @@ impl GetMlModelTrainingJobOutputBuilder {
     /// <p>A list of the configurations of the ML models being used.</p>
     pub fn ml_models(mut self, input: crate::types::MlConfigDefinition) -> Self {
         let mut v = self.ml_models.unwrap_or_default();
-        v.push(input);
-        self.ml_models = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ml_models = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the configurations of the ML models being used.</p>
-    pub fn set_ml_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>>) -> Self {
-        self.ml_models = input;
-        self
+    pub fn set_ml_models(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>>) -> Self {
+        self.ml_models = input; self
     }
     /// <p>A list of the configurations of the ML models being used.</p>
-    pub fn get_ml_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MlConfigDefinition>> {
+    pub fn get_ml_models(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MlConfigDefinition>> {
         &self.ml_models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMlModelTrainingJobOutput`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput).
     pub fn build(self) -> crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput {
         crate::operation::get_ml_model_training_job::GetMlModelTrainingJobOutput {
-            status: self.status,
-            id: self.id,
-            processing_job: self.processing_job,
-            hpo_job: self.hpo_job,
-            model_transform_job: self.model_transform_job,
-            ml_models: self.ml_models,
+            status: self.status
+            ,
+            id: self.id
+            ,
+            processing_job: self.processing_job
+            ,
+            hpo_job: self.hpo_job
+            ,
+            model_transform_job: self.model_transform_job
+            ,
+            ml_models: self.ml_models
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

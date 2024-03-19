@@ -3,13 +3,13 @@
 /// <p>The options that determine the layout a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiVisualLayoutOptions {
+pub struct KpiVisualLayoutOptions  {
     /// <p>The standard layout of the KPI visual.</p>
     pub standard_layout: ::std::option::Option<crate::types::KpiVisualStandardLayout>,
 }
-impl KpiVisualLayoutOptions {
+impl  KpiVisualLayoutOptions  {
     /// <p>The standard layout of the KPI visual.</p>
-    pub fn standard_layout(&self) -> ::std::option::Option<&crate::types::KpiVisualStandardLayout> {
+    pub fn standard_layout(&self) -> ::std::option::Option<& crate::types::KpiVisualStandardLayout> {
         self.standard_layout.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl KpiVisualLayoutOptionsBuilder {
     }
     /// <p>The standard layout of the KPI visual.</p>
     pub fn set_standard_layout(mut self, input: ::std::option::Option<crate::types::KpiVisualStandardLayout>) -> Self {
-        self.standard_layout = input;
-        self
+        self.standard_layout = input; self
     }
     /// <p>The standard layout of the KPI visual.</p>
     pub fn get_standard_layout(&self) -> &::std::option::Option<crate::types::KpiVisualStandardLayout> {
@@ -44,7 +43,9 @@ impl KpiVisualLayoutOptionsBuilder {
     /// Consumes the builder and constructs a [`KpiVisualLayoutOptions`](crate::types::KpiVisualLayoutOptions).
     pub fn build(self) -> crate::types::KpiVisualLayoutOptions {
         crate::types::KpiVisualLayoutOptions {
-            standard_layout: self.standard_layout,
+            standard_layout: self.standard_layout
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbClusterAutomatedBackupInput {
+pub struct DeleteDbClusterAutomatedBackupInput  {
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbClusterAutomatedBackupInput {
+impl  DeleteDbClusterAutomatedBackupInput  {
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<& str> {
         self.db_cluster_resource_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteDbClusterAutomatedBackupInputBuilder {
     }
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn set_db_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_resource_id = input;
-        self
+        self.db_cluster_resource_id = input; self
     }
     /// <p>The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_resource_id
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterAutomatedBackupInput`](crate::operation::delete_db_cluster_automated_backup::DeleteDbClusterAutomatedBackupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_cluster_automated_backup::DeleteDbClusterAutomatedBackupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_cluster_automated_backup::DeleteDbClusterAutomatedBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_db_cluster_automated_backup::DeleteDbClusterAutomatedBackupInput {
-                db_cluster_resource_id: self.db_cluster_resource_id,
-            },
+                db_cluster_resource_id: self.db_cluster_resource_id
+                ,
+            }
         )
     }
 }
+

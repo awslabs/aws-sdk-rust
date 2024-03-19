@@ -5,13 +5,13 @@
 /// <p>The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">External key</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct XksKeyConfigurationType {
+pub struct XksKeyConfigurationType  {
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl XksKeyConfigurationType {
+impl  XksKeyConfigurationType  {
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -36,8 +36,7 @@ impl XksKeyConfigurationTypeBuilder {
     }
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the external key in its external key manager. This is the ID that the external key store proxy uses to identify the external key.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,6 +44,10 @@ impl XksKeyConfigurationTypeBuilder {
     }
     /// Consumes the builder and constructs a [`XksKeyConfigurationType`](crate::types::XksKeyConfigurationType).
     pub fn build(self) -> crate::types::XksKeyConfigurationType {
-        crate::types::XksKeyConfigurationType { id: self.id }
+        crate::types::XksKeyConfigurationType {
+            id: self.id
+            ,
+        }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelAuditTaskInput {
+pub struct CancelAuditTaskInput  {
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub task_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelAuditTaskInput {
+impl  CancelAuditTaskInput  {
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl CancelAuditTaskInputBuilder {
     }
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_audit_task::CancelAuditTaskInput { task_id: self.task_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_audit_task::CancelAuditTaskInput {
+                task_id: self.task_id
+                ,
+            }
+        )
     }
 }
+

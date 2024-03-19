@@ -3,22 +3,20 @@
 /// <p>The country and area code for a proxy phone number in a proxy phone session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoMatchParams {
+pub struct GeoMatchParams  {
     /// <p>The country.</p>
     pub country: ::std::string::String,
     /// <p>The area code.</p>
     pub area_code: ::std::string::String,
 }
-impl GeoMatchParams {
+impl  GeoMatchParams  {
     /// <p>The country.</p>
-    pub fn country(&self) -> &str {
-        use std::ops::Deref;
-        self.country.deref()
+    pub fn country(&self) -> & str {
+        use std::ops::Deref; self.country.deref()
     }
     /// <p>The area code.</p>
-    pub fn area_code(&self) -> &str {
-        use std::ops::Deref;
-        self.area_code.deref()
+    pub fn area_code(&self) -> & str {
+        use std::ops::Deref; self.area_code.deref()
     }
 }
 impl GeoMatchParams {
@@ -44,8 +42,7 @@ impl GeoMatchParamsBuilder {
     }
     /// <p>The country.</p>
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country.</p>
     pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl GeoMatchParamsBuilder {
     }
     /// <p>The area code.</p>
     pub fn set_area_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.area_code = input;
-        self
+        self.area_code = input; self
     }
     /// <p>The area code.</p>
     pub fn get_area_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl GeoMatchParamsBuilder {
     /// - [`country`](crate::types::builders::GeoMatchParamsBuilder::country)
     /// - [`area_code`](crate::types::builders::GeoMatchParamsBuilder::area_code)
     pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchParams, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GeoMatchParams {
-            country: self.country.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "country",
-                    "country was not specified but it is required when building GeoMatchParams",
-                )
-            })?,
-            area_code: self.area_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "area_code",
-                    "area_code was not specified but it is required when building GeoMatchParams",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GeoMatchParams {
+                country: self.country
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("country", "country was not specified but it is required when building GeoMatchParams")
+                    )?
+                ,
+                area_code: self.area_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("area_code", "area_code was not specified but it is required when building GeoMatchParams")
+                    )?
+                ,
+            }
+        )
     }
 }
+

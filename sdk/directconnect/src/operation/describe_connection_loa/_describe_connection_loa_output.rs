@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeConnectionLoaOutput {
+pub struct DescribeConnectionLoaOutput  {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     pub loa: ::std::option::Option<crate::types::Loa>,
     _request_id: Option<String>,
 }
-impl DescribeConnectionLoaOutput {
+impl  DescribeConnectionLoaOutput  {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
-    pub fn loa(&self) -> ::std::option::Option<&crate::types::Loa> {
+    pub fn loa(&self) -> ::std::option::Option<& crate::types::Loa> {
         self.loa.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeConnectionLoaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeConnectionLoaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::operation::describe_connection_loa::DescribeConnectionLoaOutput).
     pub fn builder() -> crate::operation::describe_connection_loa::builders::DescribeConnectionLoaOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeConnectionLoaOutputBuilder {
     }
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     pub fn set_loa(mut self, input: ::std::option::Option<crate::types::Loa>) -> Self {
-        self.loa = input;
-        self
+        self.loa = input; self
     }
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     pub fn get_loa(&self) -> &::std::option::Option<crate::types::Loa> {
         &self.loa
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeConnectionLoaOutput`](crate::operation::describe_connection_loa::DescribeConnectionLoaOutput).
     pub fn build(self) -> crate::operation::describe_connection_loa::DescribeConnectionLoaOutput {
         crate::operation::describe_connection_loa::DescribeConnectionLoaOutput {
-            loa: self.loa,
+            loa: self.loa
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

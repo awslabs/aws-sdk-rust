@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFragments`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`stream_name(impl Into<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::set_stream_name):<br>required: **false**<br><p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p><br>
     ///   - [`stream_arn(impl Into<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::set_stream_arn):<br>required: **false**<br><p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p><br>
     ///   - [`max_results(i64)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::max_results) / [`set_max_results(Option<i64>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p><br>
     ///   - [`fragment_selector(FragmentSelector)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::fragment_selector) / [`set_fragment_selector(Option<FragmentSelector>)`](crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::set_fragment_selector):<br>required: **false**<br><p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>  <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p> </note><br>
-    /// - On success, responds with [`ListFragmentsOutput`](crate::operation::list_fragments::ListFragmentsOutput) with field(s):
+                            /// - On success, responds with [`ListFragmentsOutput`](crate::operation::list_fragments::ListFragmentsOutput) with field(s):
     ///   - [`fragments(Option<Vec::<Fragment>>)`](crate::operation::list_fragments::ListFragmentsOutput::fragments): <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_fragments::ListFragmentsOutput::next_token): <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListFragmentsError>`](crate::operation::list_fragments::ListFragmentsError)
+                            /// - On failure, responds with [`SdkError<ListFragmentsError>`](crate::operation::list_fragments::ListFragmentsError)
     pub fn list_fragments(&self) -> crate::operation::list_fragments::builders::ListFragmentsFluentBuilder {
-        crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_fragments::builders::ListFragmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

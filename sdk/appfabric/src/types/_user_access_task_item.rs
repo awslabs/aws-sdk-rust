@@ -3,7 +3,7 @@
 /// <p>Contains information about a user access task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserAccessTaskItem {
+pub struct UserAccessTaskItem  {
     /// <p>The name of the application.</p>
     pub app: ::std::string::String,
     /// <p>The ID of the application tenant.</p>
@@ -13,23 +13,21 @@ pub struct UserAccessTaskItem {
     /// <p>Error from the task, if any.</p>
     pub error: ::std::option::Option<crate::types::TaskError>,
 }
-impl UserAccessTaskItem {
+impl  UserAccessTaskItem  {
     /// <p>The name of the application.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> & str {
+        use std::ops::Deref; self.app.deref()
     }
     /// <p>The ID of the application tenant.</p>
-    pub fn tenant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.tenant_id.deref()
+    pub fn tenant_id(&self) -> & str {
+        use std::ops::Deref; self.tenant_id.deref()
     }
     /// <p>The unique ID of the task.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Error from the task, if any.</p>
-    pub fn error(&self) -> ::std::option::Option<&crate::types::TaskError> {
+    pub fn error(&self) -> ::std::option::Option<& crate::types::TaskError> {
         self.error.as_ref()
     }
 }
@@ -58,8 +56,7 @@ impl UserAccessTaskItemBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app = input;
-        self
+        self.app = input; self
     }
     /// <p>The name of the application.</p>
     pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl UserAccessTaskItemBuilder {
     }
     /// <p>The ID of the application tenant.</p>
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_id = input;
-        self
+        self.tenant_id = input; self
     }
     /// <p>The ID of the application tenant.</p>
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl UserAccessTaskItemBuilder {
     }
     /// <p>The unique ID of the task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique ID of the task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl UserAccessTaskItemBuilder {
     }
     /// <p>Error from the task, if any.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::TaskError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Error from the task, if any.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::TaskError> {
@@ -113,21 +107,24 @@ impl UserAccessTaskItemBuilder {
     /// - [`app`](crate::types::builders::UserAccessTaskItemBuilder::app)
     /// - [`tenant_id`](crate::types::builders::UserAccessTaskItemBuilder::tenant_id)
     pub fn build(self) -> ::std::result::Result<crate::types::UserAccessTaskItem, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UserAccessTaskItem {
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building UserAccessTaskItem",
-                )
-            })?,
-            tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tenant_id",
-                    "tenant_id was not specified but it is required when building UserAccessTaskItem",
-                )
-            })?,
-            task_id: self.task_id,
-            error: self.error,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UserAccessTaskItem {
+                app: self.app
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app", "app was not specified but it is required when building UserAccessTaskItem")
+                    )?
+                ,
+                tenant_id: self.tenant_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("tenant_id", "tenant_id was not specified but it is required when building UserAccessTaskItem")
+                    )?
+                ,
+                task_id: self.task_id
+                ,
+                error: self.error
+                ,
+            }
+        )
     }
 }
+

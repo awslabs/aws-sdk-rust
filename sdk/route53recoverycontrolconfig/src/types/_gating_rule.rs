@@ -4,11 +4,11 @@
 /// <p>For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true; that is, for the gating control "switch" to be "On". When you do that, then you can update the routing control states for the target routing controls that you specify in the gating rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GatingRule {
+pub struct GatingRule  {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
-    pub gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub gating_controls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that you set for gating routing controls that designate how many of the routing control states must be ON to allow you to update target routing control states.</p>
@@ -18,51 +18,53 @@ pub struct GatingRule {
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
-    pub target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_controls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
     pub owner: ::std::option::Option<::std::string::String>,
 }
-impl GatingRule {
+impl  GatingRule  {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gating_controls.is_none()`.
-    pub fn gating_controls(&self) -> &[::std::string::String] {
-        self.gating_controls.as_deref().unwrap_or_default()
+    pub fn gating_controls(&self) -> & [::std::string::String] {
+        self.gating_controls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The criteria that you set for gating routing controls that designate how many of the routing control states must be ON to allow you to update target routing control states.</p>
-    pub fn rule_config(&self) -> ::std::option::Option<&crate::types::RuleConfig> {
+    pub fn rule_config(&self) -> ::std::option::Option<& crate::types::RuleConfig> {
         self.rule_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
-    pub fn safety_rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn safety_rule_arn(&self) -> ::std::option::Option<& str> {
         self.safety_rule_arn.as_deref()
     }
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_controls.is_none()`.
-    pub fn target_controls(&self) -> &[::std::string::String] {
-        self.target_controls.as_deref().unwrap_or_default()
+    pub fn target_controls(&self) -> & [::std::string::String] {
+        self.target_controls.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
         self.wait_period_ms
     }
     /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
 }
@@ -78,12 +80,12 @@ impl GatingRule {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GatingRuleBuilder {
     pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gating_controls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) rule_config: ::std::option::Option<crate::types::RuleConfig>,
     pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
-    pub(crate) target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_controls: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) wait_period_ms: ::std::option::Option<i32>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
 }
@@ -96,8 +98,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_panel_arn = input;
-        self
+        self.control_panel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,17 +111,16 @@ impl GatingRuleBuilder {
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
     pub fn gating_controls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.gating_controls.unwrap_or_default();
-        v.push(input.into());
-        self.gating_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.gating_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
-    pub fn set_gating_controls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.gating_controls = input;
-        self
+    pub fn set_gating_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.gating_controls = input; self
     }
     /// <p>An array of gating routing control Amazon Resource Names (ARNs). For a simple "on/off" switch, specify the ARN for one routing control. The gating routing controls are evaluated by the rule configuration that you specify to determine if the target routing control states can be changed.</p>
-    pub fn get_gating_controls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_gating_controls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.gating_controls
     }
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
@@ -131,8 +131,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The criteria that you set for gating routing controls that designate how many of the routing control states must be ON to allow you to update target routing control states.</p>
     pub fn set_rule_config(mut self, input: ::std::option::Option<crate::types::RuleConfig>) -> Self {
-        self.rule_config = input;
-        self
+        self.rule_config = input; self
     }
     /// <p>The criteria that you set for gating routing controls that designate how many of the routing control states must be ON to allow you to update target routing control states.</p>
     pub fn get_rule_config(&self) -> &::std::option::Option<crate::types::RuleConfig> {
@@ -161,8 +159,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
     pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.safety_rule_arn = input;
-        self
+        self.safety_rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gating rule.</p>
     pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +173,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The deployment status of a gating rule. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -190,17 +186,16 @@ impl GatingRuleBuilder {
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
     pub fn target_controls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_controls.unwrap_or_default();
-        v.push(input.into());
-        self.target_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.target_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
-    pub fn set_target_controls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_controls = input;
-        self
+    pub fn set_target_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.target_controls = input; self
     }
     /// <p>An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can use this to manually override automated failover, for example.</p>
-    pub fn get_target_controls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_target_controls(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.target_controls
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
@@ -211,8 +206,7 @@ impl GatingRuleBuilder {
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.wait_period_ms = input;
-        self
+        self.wait_period_ms = input; self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
@@ -225,8 +219,7 @@ impl GatingRuleBuilder {
     }
     /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The Amazon Web Services account ID of the gating rule owner.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,15 +228,25 @@ impl GatingRuleBuilder {
     /// Consumes the builder and constructs a [`GatingRule`](crate::types::GatingRule).
     pub fn build(self) -> crate::types::GatingRule {
         crate::types::GatingRule {
-            control_panel_arn: self.control_panel_arn,
-            gating_controls: self.gating_controls,
-            name: self.name,
-            rule_config: self.rule_config,
-            safety_rule_arn: self.safety_rule_arn,
-            status: self.status,
-            target_controls: self.target_controls,
-            wait_period_ms: self.wait_period_ms,
-            owner: self.owner,
+            control_panel_arn: self.control_panel_arn
+            ,
+            gating_controls: self.gating_controls
+            ,
+            name: self.name
+            ,
+            rule_config: self.rule_config
+            ,
+            safety_rule_arn: self.safety_rule_arn
+            ,
+            status: self.status
+            ,
+            target_controls: self.target_controls
+            ,
+            wait_period_ms: self.wait_period_ms
+            ,
+            owner: self.owner
+            ,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSlotTypes`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_bot_id):<br>required: **true**<br><p>The unique identifier of the bot that contains the slot types.</p><br>
     ///   - [`bot_version(impl Into<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_bot_version):<br>required: **true**<br><p>The version of the bot that contains the slot type.</p><br>
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_locale_id):<br>required: **true**<br><p>The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p><br>
@@ -11,14 +11,15 @@ impl super::Client {
     ///   - [`filters(SlotTypeFilter)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::filters) / [`set_filters(Option<Vec::<SlotTypeFilter>>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_filters):<br>required: **false**<br><p>Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListSlotTypes</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListSlotTypesOutput`](crate::operation::list_slot_types::ListSlotTypesOutput) with field(s):
+                            /// - On success, responds with [`ListSlotTypesOutput`](crate::operation::list_slot_types::ListSlotTypesOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_slot_types::ListSlotTypesOutput::bot_id): <p>The identifier of the bot that contains the slot types.</p>
     ///   - [`bot_version(Option<String>)`](crate::operation::list_slot_types::ListSlotTypesOutput::bot_version): <p>The version of the bot that contains the slot types.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_slot_types::ListSlotTypesOutput::locale_id): <p>The language and local of the slot types in the list.</p>
     ///   - [`slot_type_summaries(Option<Vec::<SlotTypeSummary>>)`](crate::operation::list_slot_types::ListSlotTypesOutput::slot_type_summaries): <p>Summary information for the slot types that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter of the request. If there are more slot types available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_slot_types::ListSlotTypesOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListSlotTypes</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListSlotTypes</code> operation request to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSlotTypesError>`](crate::operation::list_slot_types::ListSlotTypesError)
+                            /// - On failure, responds with [`SdkError<ListSlotTypesError>`](crate::operation::list_slot_types::ListSlotTypesError)
     pub fn list_slot_types(&self) -> crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder {
-        crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_slot_types::builders::ListSlotTypesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

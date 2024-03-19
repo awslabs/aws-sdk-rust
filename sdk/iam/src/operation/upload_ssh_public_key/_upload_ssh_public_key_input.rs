@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UploadSshPublicKeyInput {
+pub struct UploadSshPublicKeyInput  {
     /// <p>The name of the IAM user to associate the SSH public key with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -18,10 +18,10 @@ pub struct UploadSshPublicKeyInput {
     /// </ul>
     pub ssh_public_key_body: ::std::option::Option<::std::string::String>,
 }
-impl UploadSshPublicKeyInput {
+impl  UploadSshPublicKeyInput  {
     /// <p>The name of the IAM user to associate the SSH public key with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format. The minimum bit-length of the public key is 2048 bits. For example, you can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
@@ -34,7 +34,7 @@ impl UploadSshPublicKeyInput {
     /// <li>
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
-    pub fn ssh_public_key_body(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key_body(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key_body.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl UploadSshPublicKeyInputBuilder {
     /// <p>The name of the IAM user to associate the SSH public key with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user to associate the SSH public key with.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -97,8 +96,7 @@ impl UploadSshPublicKeyInputBuilder {
     /// <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p></li>
     /// </ul>
     pub fn set_ssh_public_key_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_body = input;
-        self
+        self.ssh_public_key_body = input; self
     }
     /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format. The minimum bit-length of the public key is 2048 bits. For example, you can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
@@ -114,13 +112,15 @@ impl UploadSshPublicKeyInputBuilder {
         &self.ssh_public_key_body
     }
     /// Consumes the builder and constructs a [`UploadSshPublicKeyInput`](crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput {
-            user_name: self.user_name,
-            ssh_public_key_body: self.ssh_public_key_body,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::upload_ssh_public_key::UploadSshPublicKeyInput {
+                user_name: self.user_name
+                ,
+                ssh_public_key_body: self.ssh_public_key_body
+                ,
+            }
+        )
     }
 }
+

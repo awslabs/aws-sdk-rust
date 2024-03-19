@@ -3,11 +3,11 @@
 /// <p>Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Soa {
+pub struct Soa  {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub ttl: i64,
 }
-impl Soa {
+impl  Soa  {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn ttl(&self) -> i64 {
         self.ttl
@@ -35,8 +35,7 @@ impl SoaBuilder {
     }
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn get_ttl(&self) -> &::std::option::Option<i64> {
@@ -46,10 +45,15 @@ impl SoaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ttl`](crate::types::builders::SoaBuilder::ttl)
     pub fn build(self) -> ::std::result::Result<crate::types::Soa, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Soa {
-            ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("ttl", "ttl was not specified but it is required when building Soa")
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Soa {
+                ttl: self.ttl
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ttl", "ttl was not specified but it is required when building Soa")
+                    )?
+                ,
+            }
+        )
     }
 }
+

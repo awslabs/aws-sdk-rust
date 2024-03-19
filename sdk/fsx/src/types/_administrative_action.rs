@@ -3,7 +3,7 @@
 /// <p>Describes a specific Amazon FSx administrative action for the current Windows, Lustre, OpenZFS, or ONTAP file system or volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AdministrativeAction {
+pub struct AdministrativeAction  {
     /// <p>Describes the type of administrative action, as follows:</p>
     /// <ul>
     /// <li>
@@ -75,7 +75,7 @@ pub struct AdministrativeAction {
     /// <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.</p>
     pub remaining_transfer_bytes: ::std::option::Option<i64>,
 }
-impl AdministrativeAction {
+impl  AdministrativeAction  {
     /// <p>Describes the type of administrative action, as follows:</p>
     /// <ul>
     /// <li>
@@ -115,7 +115,7 @@ impl AdministrativeAction {
     /// <li>
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
     /// </ul>
-    pub fn administrative_action_type(&self) -> ::std::option::Option<&crate::types::AdministrativeActionType> {
+    pub fn administrative_action_type(&self) -> ::std::option::Option<& crate::types::AdministrativeActionType> {
         self.administrative_action_type.as_ref()
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
@@ -123,7 +123,7 @@ impl AdministrativeAction {
         self.progress_percent
     }
     /// <p>The time that the administrative action request was received.</p>
-    pub fn request_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The status of the administrative action, as follows:</p>
@@ -139,23 +139,23 @@ impl AdministrativeAction {
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.</p>
-    pub fn target_file_system_values(&self) -> ::std::option::Option<&crate::types::FileSystem> {
+    pub fn target_file_system_values(&self) -> ::std::option::Option<& crate::types::FileSystem> {
         self.target_file_system_values.as_ref()
     }
     /// <p>Provides information about a failed administrative action.</p>
-    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::AdministrativeActionFailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<& crate::types::AdministrativeActionFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Describes an Amazon FSx volume.</p>
-    pub fn target_volume_values(&self) -> ::std::option::Option<&crate::types::Volume> {
+    pub fn target_volume_values(&self) -> ::std::option::Option<& crate::types::Volume> {
         self.target_volume_values.as_ref()
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
-    pub fn target_snapshot_values(&self) -> ::std::option::Option<&crate::types::Snapshot> {
+    pub fn target_snapshot_values(&self) -> ::std::option::Option<& crate::types::Snapshot> {
         self.target_snapshot_values.as_ref()
     }
     /// <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.</p>
@@ -273,8 +273,7 @@ impl AdministrativeActionBuilder {
     /// <p><code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CopySnapshotAndUpdateVolume</code>), or CLI (<code>copy-snapshot-and-update-volume</code>).</p></li>
     /// </ul>
     pub fn set_administrative_action_type(mut self, input: ::std::option::Option<crate::types::AdministrativeActionType>) -> Self {
-        self.administrative_action_type = input;
-        self
+        self.administrative_action_type = input; self
     }
     /// <p>Describes the type of administrative action, as follows:</p>
     /// <ul>
@@ -325,8 +324,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.progress_percent = input;
-        self
+        self.progress_percent = input; self
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
@@ -339,8 +337,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The time that the administrative action request was received.</p>
     pub fn set_request_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.request_time = input;
-        self
+        self.request_time = input; self
     }
     /// <p>The time that the administrative action request was received.</p>
     pub fn get_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -377,8 +374,7 @@ impl AdministrativeActionBuilder {
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the administrative action, as follows:</p>
     /// <ul>
@@ -403,8 +399,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.</p>
     pub fn set_target_file_system_values(mut self, input: ::std::option::Option<crate::types::FileSystem>) -> Self {
-        self.target_file_system_values = input;
-        self
+        self.target_file_system_values = input; self
     }
     /// <p>The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.</p>
     pub fn get_target_file_system_values(&self) -> &::std::option::Option<crate::types::FileSystem> {
@@ -417,8 +412,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>Provides information about a failed administrative action.</p>
     pub fn set_failure_details(mut self, input: ::std::option::Option<crate::types::AdministrativeActionFailureDetails>) -> Self {
-        self.failure_details = input;
-        self
+        self.failure_details = input; self
     }
     /// <p>Provides information about a failed administrative action.</p>
     pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::AdministrativeActionFailureDetails> {
@@ -431,8 +425,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>Describes an Amazon FSx volume.</p>
     pub fn set_target_volume_values(mut self, input: ::std::option::Option<crate::types::Volume>) -> Self {
-        self.target_volume_values = input;
-        self
+        self.target_volume_values = input; self
     }
     /// <p>Describes an Amazon FSx volume.</p>
     pub fn get_target_volume_values(&self) -> &::std::option::Option<crate::types::Volume> {
@@ -445,8 +438,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn set_target_snapshot_values(mut self, input: ::std::option::Option<crate::types::Snapshot>) -> Self {
-        self.target_snapshot_values = input;
-        self
+        self.target_snapshot_values = input; self
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn get_target_snapshot_values(&self) -> &::std::option::Option<crate::types::Snapshot> {
@@ -459,8 +451,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.</p>
     pub fn set_total_transfer_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_transfer_bytes = input;
-        self
+        self.total_transfer_bytes = input; self
     }
     /// <p>The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.</p>
     pub fn get_total_transfer_bytes(&self) -> &::std::option::Option<i64> {
@@ -473,8 +464,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.</p>
     pub fn set_remaining_transfer_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.remaining_transfer_bytes = input;
-        self
+        self.remaining_transfer_bytes = input; self
     }
     /// <p>The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.</p>
     pub fn get_remaining_transfer_bytes(&self) -> &::std::option::Option<i64> {
@@ -483,16 +473,27 @@ impl AdministrativeActionBuilder {
     /// Consumes the builder and constructs a [`AdministrativeAction`](crate::types::AdministrativeAction).
     pub fn build(self) -> crate::types::AdministrativeAction {
         crate::types::AdministrativeAction {
-            administrative_action_type: self.administrative_action_type,
-            progress_percent: self.progress_percent,
-            request_time: self.request_time,
-            status: self.status,
-            target_file_system_values: self.target_file_system_values,
-            failure_details: self.failure_details,
-            target_volume_values: self.target_volume_values,
-            target_snapshot_values: self.target_snapshot_values,
-            total_transfer_bytes: self.total_transfer_bytes,
-            remaining_transfer_bytes: self.remaining_transfer_bytes,
+            administrative_action_type: self.administrative_action_type
+            ,
+            progress_percent: self.progress_percent
+            ,
+            request_time: self.request_time
+            ,
+            status: self.status
+            ,
+            target_file_system_values: self.target_file_system_values
+            ,
+            failure_details: self.failure_details
+            ,
+            target_volume_values: self.target_volume_values
+            ,
+            target_snapshot_values: self.target_snapshot_values
+            ,
+            total_transfer_bytes: self.total_transfer_bytes
+            ,
+            remaining_transfer_bytes: self.remaining_transfer_bytes
+            ,
         }
     }
 }
+

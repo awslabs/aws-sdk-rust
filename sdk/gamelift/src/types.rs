@@ -420,3 +420,4 @@ pub mod builders;
 
 /// Error types that Amazon GameLift can respond with.
 pub mod error;
+

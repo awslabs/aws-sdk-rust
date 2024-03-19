@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEdgePackagingJobs`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The response from the last list when returning a list large enough to need tokening.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of results to select.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Select jobs where the job was created after specified time.</p><br>
@@ -15,11 +15,12 @@ impl super::Client {
     ///   - [`status_equals(EdgePackagingJobStatus)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::status_equals) / [`set_status_equals(Option<EdgePackagingJobStatus>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_status_equals):<br>required: **false**<br><p>The job status to filter for.</p><br>
     ///   - [`sort_by(ListEdgePackagingJobsSortBy)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::sort_by) / [`set_sort_by(Option<ListEdgePackagingJobsSortBy>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Use to specify what column to sort by.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>What direction to sort by.</p><br>
-    /// - On success, responds with [`ListEdgePackagingJobsOutput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput) with field(s):
+                            /// - On success, responds with [`ListEdgePackagingJobsOutput`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput) with field(s):
     ///   - [`edge_packaging_job_summaries(Option<Vec::<EdgePackagingJobSummary>>)`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput::edge_packaging_job_summaries): <p>Summaries of edge packaging jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsOutput::next_token): <p>Token to use when calling the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListEdgePackagingJobsError>`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError)
+                            /// - On failure, responds with [`SdkError<ListEdgePackagingJobsError>`](crate::operation::list_edge_packaging_jobs::ListEdgePackagingJobsError)
     pub fn list_edge_packaging_jobs(&self) -> crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder {
-        crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_edge_packaging_jobs::builders::ListEdgePackagingJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The information about the service integration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Integrations {
+pub struct Integrations  {
     /// <p>The information about the resource group integration.</p>
     pub resource_group: ::std::option::Option<crate::types::ResourceGroup>,
     /// <p>The information about the resource group integration.</p>
     pub application_tag_resource_group: ::std::option::Option<crate::types::ResourceGroup>,
 }
-impl Integrations {
+impl  Integrations  {
     /// <p>The information about the resource group integration.</p>
-    pub fn resource_group(&self) -> ::std::option::Option<&crate::types::ResourceGroup> {
+    pub fn resource_group(&self) -> ::std::option::Option<& crate::types::ResourceGroup> {
         self.resource_group.as_ref()
     }
     /// <p>The information about the resource group integration.</p>
-    pub fn application_tag_resource_group(&self) -> ::std::option::Option<&crate::types::ResourceGroup> {
+    pub fn application_tag_resource_group(&self) -> ::std::option::Option<& crate::types::ResourceGroup> {
         self.application_tag_resource_group.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl IntegrationsBuilder {
     }
     /// <p>The information about the resource group integration.</p>
     pub fn set_resource_group(mut self, input: ::std::option::Option<crate::types::ResourceGroup>) -> Self {
-        self.resource_group = input;
-        self
+        self.resource_group = input; self
     }
     /// <p>The information about the resource group integration.</p>
     pub fn get_resource_group(&self) -> &::std::option::Option<crate::types::ResourceGroup> {
@@ -55,8 +54,7 @@ impl IntegrationsBuilder {
     }
     /// <p>The information about the resource group integration.</p>
     pub fn set_application_tag_resource_group(mut self, input: ::std::option::Option<crate::types::ResourceGroup>) -> Self {
-        self.application_tag_resource_group = input;
-        self
+        self.application_tag_resource_group = input; self
     }
     /// <p>The information about the resource group integration.</p>
     pub fn get_application_tag_resource_group(&self) -> &::std::option::Option<crate::types::ResourceGroup> {
@@ -65,8 +63,11 @@ impl IntegrationsBuilder {
     /// Consumes the builder and constructs a [`Integrations`](crate::types::Integrations).
     pub fn build(self) -> crate::types::Integrations {
         crate::types::Integrations {
-            resource_group: self.resource_group,
-            application_tag_resource_group: self.application_tag_resource_group,
+            resource_group: self.resource_group
+            ,
+            application_tag_resource_group: self.application_tag_resource_group
+            ,
         }
     }
 }
+

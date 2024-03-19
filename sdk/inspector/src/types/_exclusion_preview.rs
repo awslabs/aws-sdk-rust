@@ -3,7 +3,7 @@
 /// <p>Contains information about what is excluded from an assessment run given the current state of the assessment template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExclusionPreview {
+pub struct ExclusionPreview  {
     /// <p>The name of the exclusion preview.</p>
     pub title: ::std::string::String,
     /// <p>The description of the exclusion preview.</p>
@@ -11,36 +11,33 @@ pub struct ExclusionPreview {
     /// <p>The recommendation for the exclusion preview.</p>
     pub recommendation: ::std::string::String,
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub scopes: ::std::vec::Vec<crate::types::Scope>,
+    pub scopes: ::std::vec::Vec::<crate::types::Scope>,
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
-impl ExclusionPreview {
+impl  ExclusionPreview  {
     /// <p>The name of the exclusion preview.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The description of the exclusion preview.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The recommendation for the exclusion preview.</p>
-    pub fn recommendation(&self) -> &str {
-        use std::ops::Deref;
-        self.recommendation.deref()
+    pub fn recommendation(&self) -> & str {
+        use std::ops::Deref; self.recommendation.deref()
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn scopes(&self) -> &[crate::types::Scope] {
-        use std::ops::Deref;
-        self.scopes.deref()
+    pub fn scopes(&self) -> & [crate::types::Scope] {
+        use std::ops::Deref; self.scopes.deref()
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::Attribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::Attribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExclusionPreview {
@@ -57,8 +54,8 @@ pub struct ExclusionPreviewBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation: ::std::option::Option<::std::string::String>,
-    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec::<crate::types::Scope>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>,
 }
 impl ExclusionPreviewBuilder {
     /// <p>The name of the exclusion preview.</p>
@@ -69,8 +66,7 @@ impl ExclusionPreviewBuilder {
     }
     /// <p>The name of the exclusion preview.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The name of the exclusion preview.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +80,7 @@ impl ExclusionPreviewBuilder {
     }
     /// <p>The description of the exclusion preview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the exclusion preview.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +94,7 @@ impl ExclusionPreviewBuilder {
     }
     /// <p>The recommendation for the exclusion preview.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation = input;
-        self
+        self.recommendation = input; self
     }
     /// <p>The recommendation for the exclusion preview.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,17 +107,16 @@ impl ExclusionPreviewBuilder {
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
     pub fn scopes(mut self, input: crate::types::Scope) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Scope>>) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Scope>>) -> Self {
+        self.scopes = input; self
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Scope>> {
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Scope>> {
         &self.scopes
     }
     /// Appends an item to `attributes`.
@@ -133,17 +126,16 @@ impl ExclusionPreviewBuilder {
     /// <p>The system-defined attributes for the exclusion preview.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ExclusionPreview`](crate::types::ExclusionPreview).
@@ -153,32 +145,32 @@ impl ExclusionPreviewBuilder {
     /// - [`recommendation`](crate::types::builders::ExclusionPreviewBuilder::recommendation)
     /// - [`scopes`](crate::types::builders::ExclusionPreviewBuilder::scopes)
     pub fn build(self) -> ::std::result::Result<crate::types::ExclusionPreview, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExclusionPreview {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building ExclusionPreview",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building ExclusionPreview",
-                )
-            })?,
-            recommendation: self.recommendation.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recommendation",
-                    "recommendation was not specified but it is required when building ExclusionPreview",
-                )
-            })?,
-            scopes: self.scopes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scopes",
-                    "scopes was not specified but it is required when building ExclusionPreview",
-                )
-            })?,
-            attributes: self.attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExclusionPreview {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building ExclusionPreview")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building ExclusionPreview")
+                    )?
+                ,
+                recommendation: self.recommendation
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recommendation", "recommendation was not specified but it is required when building ExclusionPreview")
+                    )?
+                ,
+                scopes: self.scopes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scopes", "scopes was not specified but it is required when building ExclusionPreview")
+                    )?
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

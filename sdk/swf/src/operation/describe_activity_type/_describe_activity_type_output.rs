@@ -3,7 +3,7 @@
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeActivityTypeOutput {
+pub struct DescribeActivityTypeOutput  {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
@@ -17,7 +17,7 @@ pub struct DescribeActivityTypeOutput {
     pub configuration: ::std::option::Option<crate::types::ActivityTypeConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeActivityTypeOutput {
+impl  DescribeActivityTypeOutput  {
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
     /// <ul>
@@ -26,19 +26,19 @@ impl DescribeActivityTypeOutput {
     /// <li>
     /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
     /// </ul>
-    pub fn type_info(&self) -> ::std::option::Option<&crate::types::ActivityTypeInfo> {
+    pub fn type_info(&self) -> ::std::option::Option<& crate::types::ActivityTypeInfo> {
         self.type_info.as_ref()
     }
     /// <p>The configuration settings registered with the activity type.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ActivityTypeConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ActivityTypeConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeActivityTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::operation::describe_activity_type::DescribeActivityTypeOutput).
     pub fn builder() -> crate::operation::describe_activity_type::builders::DescribeActivityTypeOutputBuilder {
@@ -77,8 +77,7 @@ impl DescribeActivityTypeOutputBuilder {
     /// <p><code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type.</p></li>
     /// </ul>
     pub fn set_type_info(mut self, input: ::std::option::Option<crate::types::ActivityTypeInfo>) -> Self {
-        self.type_info = input;
-        self
+        self.type_info = input; self
     }
     /// <p>General information about the activity type.</p>
     /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
@@ -99,28 +98,30 @@ impl DescribeActivityTypeOutputBuilder {
     }
     /// <p>The configuration settings registered with the activity type.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ActivityTypeConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration settings registered with the activity type.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ActivityTypeConfiguration> {
         &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::operation::describe_activity_type::DescribeActivityTypeOutput).
     pub fn build(self) -> crate::operation::describe_activity_type::DescribeActivityTypeOutput {
         crate::operation::describe_activity_type::DescribeActivityTypeOutput {
-            type_info: self.type_info,
-            configuration: self.configuration,
+            type_info: self.type_info
+            ,
+            configuration: self.configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

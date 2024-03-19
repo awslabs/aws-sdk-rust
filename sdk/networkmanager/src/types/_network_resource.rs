@@ -3,7 +3,7 @@
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkResource {
+pub struct NetworkResource  {
     /// <p>The ARN of the gateway.</p>
     pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
@@ -58,25 +58,25 @@ pub struct NetworkResource {
     /// <p>The time that the resource definition was retrieved.</p>
     pub definition_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The resource metadata.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl NetworkResource {
+impl  NetworkResource  {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn registered_gateway_arn(&self) -> ::std::option::Option<& str> {
         self.registered_gateway_arn.as_deref()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The resource type.</p>
@@ -115,33 +115,34 @@ impl NetworkResource {
     /// <li>
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn definition(&self) -> ::std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The time that the resource definition was retrieved.</p>
-    pub fn definition_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn definition_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.definition_timestamp.as_ref()
     }
     /// <p>The tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The resource metadata.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
@@ -165,8 +166,8 @@ pub struct NetworkResourceBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) definition_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl NetworkResourceBuilder {
     /// <p>The ARN of the gateway.</p>
@@ -176,8 +177,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_registered_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_gateway_arn = input;
-        self
+        self.registered_gateway_arn = input; self
     }
     /// <p>The ARN of the gateway.</p>
     pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +190,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +203,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +216,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +299,7 @@ impl NetworkResourceBuilder {
     /// <p><code>vpn-connection</code></p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -351,8 +347,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -365,8 +360,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -379,8 +373,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -393,8 +386,7 @@ impl NetworkResourceBuilder {
     }
     /// <p>The time that the resource definition was retrieved.</p>
     pub fn set_definition_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.definition_timestamp = input;
-        self
+        self.definition_timestamp = input; self
     }
     /// <p>The time that the resource definition was retrieved.</p>
     pub fn get_definition_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -407,17 +399,16 @@ impl NetworkResourceBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Adds a key-value pair to `metadata`.
@@ -427,33 +418,44 @@ impl NetworkResourceBuilder {
     /// <p>The resource metadata.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The resource metadata.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>The resource metadata.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`NetworkResource`](crate::types::NetworkResource).
     pub fn build(self) -> crate::types::NetworkResource {
         crate::types::NetworkResource {
-            registered_gateway_arn: self.registered_gateway_arn,
-            core_network_id: self.core_network_id,
-            aws_region: self.aws_region,
-            account_id: self.account_id,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
-            definition: self.definition,
-            definition_timestamp: self.definition_timestamp,
-            tags: self.tags,
-            metadata: self.metadata,
+            registered_gateway_arn: self.registered_gateway_arn
+            ,
+            core_network_id: self.core_network_id
+            ,
+            aws_region: self.aws_region
+            ,
+            account_id: self.account_id
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            definition: self.definition
+            ,
+            definition_timestamp: self.definition_timestamp
+            ,
+            tags: self.tags
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
+

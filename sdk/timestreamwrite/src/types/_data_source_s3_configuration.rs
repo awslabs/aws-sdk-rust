@@ -3,20 +3,19 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceS3Configuration {
+pub struct DataSourceS3Configuration  {
     /// <p>The bucket name of the customer S3 bucket.</p>
     pub bucket_name: ::std::string::String,
     /// <p></p>
     pub object_key_prefix: ::std::option::Option<::std::string::String>,
 }
-impl DataSourceS3Configuration {
+impl  DataSourceS3Configuration  {
     /// <p>The bucket name of the customer S3 bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p></p>
-    pub fn object_key_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn object_key_prefix(&self) -> ::std::option::Option<& str> {
         self.object_key_prefix.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl DataSourceS3ConfigurationBuilder {
     }
     /// <p>The bucket name of the customer S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The bucket name of the customer S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DataSourceS3ConfigurationBuilder {
     }
     /// <p></p>
     pub fn set_object_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key_prefix = input;
-        self
+        self.object_key_prefix = input; self
     }
     /// <p></p>
     pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,14 +65,17 @@ impl DataSourceS3ConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::DataSourceS3ConfigurationBuilder::bucket_name)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceS3Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceS3Configuration {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building DataSourceS3Configuration",
-                )
-            })?,
-            object_key_prefix: self.object_key_prefix,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceS3Configuration {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building DataSourceS3Configuration")
+                    )?
+                ,
+                object_key_prefix: self.object_key_prefix
+                ,
+            }
+        )
     }
 }
+

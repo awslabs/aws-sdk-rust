@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListServicesForAutoScalingConfigurationOutput {
+pub struct ListServicesForAutoScalingConfigurationOutput  {
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub service_arn_list: ::std::vec::Vec<::std::string::String>,
+    pub service_arn_list: ::std::vec::Vec::<::std::string::String>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListServicesForAutoScalingConfigurationOutput {
+impl  ListServicesForAutoScalingConfigurationOutput  {
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn service_arn_list(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.service_arn_list.deref()
+    pub fn service_arn_list(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.service_arn_list.deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListServicesForAutoScalingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListServicesForAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ListServicesForAutoScalingConfigurationOutput`](crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput).
-    pub fn builder() -> crate::operation::list_services_for_auto_scaling_configuration::builders::ListServicesForAutoScalingConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_services_for_auto_scaling_configuration::builders::ListServicesForAutoScalingConfigurationOutputBuilder {
         crate::operation::list_services_for_auto_scaling_configuration::builders::ListServicesForAutoScalingConfigurationOutputBuilder::default()
     }
 }
@@ -37,7 +35,7 @@ impl ListServicesForAutoScalingConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListServicesForAutoScalingConfigurationOutputBuilder {
-    pub(crate) service_arn_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) service_arn_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +47,16 @@ impl ListServicesForAutoScalingConfigurationOutputBuilder {
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn service_arn_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.service_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.service_arn_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.service_arn_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_service_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.service_arn_list = input;
-        self
+    pub fn set_service_arn_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.service_arn_list = input; self
     }
     /// <p>A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn get_service_arn_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_service_arn_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.service_arn_list
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
@@ -69,42 +66,37 @@ impl ListServicesForAutoScalingConfigurationOutputBuilder {
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListServicesForAutoScalingConfigurationOutput`](crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_arn_list`](crate::operation::list_services_for_auto_scaling_configuration::builders::ListServicesForAutoScalingConfigurationOutputBuilder::service_arn_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_services_for_auto_scaling_configuration::ListServicesForAutoScalingConfigurationOutput {
-                service_arn_list: self.service_arn_list.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "service_arn_list",
-                        "service_arn_list was not specified but it is required when building ListServicesForAutoScalingConfigurationOutput",
-                    )
-                })?,
-                next_token: self.next_token,
+                service_arn_list: self.service_arn_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_arn_list", "service_arn_list was not specified but it is required when building ListServicesForAutoScalingConfigurationOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

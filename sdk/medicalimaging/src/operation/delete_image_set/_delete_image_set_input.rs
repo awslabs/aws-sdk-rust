@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteImageSetInput {
+pub struct DeleteImageSetInput  {
     /// <p>The data store identifier.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The image set identifier.</p>
     pub image_set_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteImageSetInput {
+impl  DeleteImageSetInput  {
     /// <p>The data store identifier.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The image set identifier.</p>
-    pub fn image_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_set_id(&self) -> ::std::option::Option<& str> {
         self.image_set_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteImageSetInputBuilder {
     }
     /// <p>The data store identifier.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The data store identifier.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteImageSetInputBuilder {
     }
     /// <p>The image set identifier.</p>
     pub fn set_image_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_set_id = input;
-        self
+        self.image_set_id = input; self
     }
     /// <p>The image set identifier.</p>
     pub fn get_image_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_set_id
     }
     /// Consumes the builder and constructs a [`DeleteImageSetInput`](crate::operation::delete_image_set::DeleteImageSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_image_set::DeleteImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_image_set::DeleteImageSetInput {
-            datastore_id: self.datastore_id,
-            image_set_id: self.image_set_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image_set::DeleteImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_image_set::DeleteImageSetInput {
+                datastore_id: self.datastore_id
+                ,
+                image_set_id: self.image_set_id
+                ,
+            }
+        )
     }
 }
+

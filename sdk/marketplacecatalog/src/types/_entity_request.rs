@@ -3,22 +3,20 @@
 /// <p>An object that contains entity ID and the catalog in which the entity is present.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityRequest {
+pub struct EntityRequest  {
     /// <p>The name of the catalog the entity is present in. The only value at this time is <code>AWSMarketplace</code>.</p>
     pub catalog: ::std::string::String,
     /// <p>The ID of the entity.</p>
     pub entity_id: ::std::string::String,
 }
-impl EntityRequest {
+impl  EntityRequest  {
     /// <p>The name of the catalog the entity is present in. The only value at this time is <code>AWSMarketplace</code>.</p>
-    pub fn catalog(&self) -> &str {
-        use std::ops::Deref;
-        self.catalog.deref()
+    pub fn catalog(&self) -> & str {
+        use std::ops::Deref; self.catalog.deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
 }
 impl EntityRequest {
@@ -44,8 +42,7 @@ impl EntityRequestBuilder {
     }
     /// <p>The name of the catalog the entity is present in. The only value at this time is <code>AWSMarketplace</code>.</p>
     pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// <p>The name of the catalog the entity is present in. The only value at this time is <code>AWSMarketplace</code>.</p>
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl EntityRequestBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl EntityRequestBuilder {
     /// - [`catalog`](crate::types::builders::EntityRequestBuilder::catalog)
     /// - [`entity_id`](crate::types::builders::EntityRequestBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityRequest, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityRequest {
-            catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "catalog",
-                    "catalog was not specified but it is required when building EntityRequest",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EntityRequest",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityRequest {
+                catalog: self.catalog
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("catalog", "catalog was not specified but it is required when building EntityRequest")
+                    )?
+                ,
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building EntityRequest")
+                    )?
+                ,
+            }
+        )
     }
 }
+

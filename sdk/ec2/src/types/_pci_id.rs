@@ -3,7 +3,7 @@
 /// <p>Describes the data that identifies an Amazon FPGA image (AFI) on the PCI bus.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PciId {
+pub struct PciId  {
     /// <p>The ID of the device.</p>
     pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the vendor.</p>
@@ -13,21 +13,21 @@ pub struct PciId {
     /// <p>The ID of the vendor for the subsystem.</p>
     pub subsystem_vendor_id: ::std::option::Option<::std::string::String>,
 }
-impl PciId {
+impl  PciId  {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the vendor.</p>
-    pub fn vendor_id(&self) -> ::std::option::Option<&str> {
+    pub fn vendor_id(&self) -> ::std::option::Option<& str> {
         self.vendor_id.as_deref()
     }
     /// <p>The ID of the subsystem.</p>
-    pub fn subsystem_id(&self) -> ::std::option::Option<&str> {
+    pub fn subsystem_id(&self) -> ::std::option::Option<& str> {
         self.subsystem_id.as_deref()
     }
     /// <p>The ID of the vendor for the subsystem.</p>
-    pub fn subsystem_vendor_id(&self) -> ::std::option::Option<&str> {
+    pub fn subsystem_vendor_id(&self) -> ::std::option::Option<& str> {
         self.subsystem_vendor_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PciIdBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The ID of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl PciIdBuilder {
     }
     /// <p>The ID of the vendor.</p>
     pub fn set_vendor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vendor_id = input;
-        self
+        self.vendor_id = input; self
     }
     /// <p>The ID of the vendor.</p>
     pub fn get_vendor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl PciIdBuilder {
     }
     /// <p>The ID of the subsystem.</p>
     pub fn set_subsystem_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subsystem_id = input;
-        self
+        self.subsystem_id = input; self
     }
     /// <p>The ID of the subsystem.</p>
     pub fn get_subsystem_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl PciIdBuilder {
     }
     /// <p>The ID of the vendor for the subsystem.</p>
     pub fn set_subsystem_vendor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subsystem_vendor_id = input;
-        self
+        self.subsystem_vendor_id = input; self
     }
     /// <p>The ID of the vendor for the subsystem.</p>
     pub fn get_subsystem_vendor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl PciIdBuilder {
     /// Consumes the builder and constructs a [`PciId`](crate::types::PciId).
     pub fn build(self) -> crate::types::PciId {
         crate::types::PciId {
-            device_id: self.device_id,
-            vendor_id: self.vendor_id,
-            subsystem_id: self.subsystem_id,
-            subsystem_vendor_id: self.subsystem_vendor_id,
+            device_id: self.device_id
+            ,
+            vendor_id: self.vendor_id
+            ,
+            subsystem_id: self.subsystem_id
+            ,
+            subsystem_vendor_id: self.subsystem_vendor_id
+            ,
         }
     }
 }
+

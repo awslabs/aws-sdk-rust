@@ -3,15 +3,15 @@
 /// <p>Describes the estimated monthly savings possible for Lambda functions by adopting Compute Optimizer recommendations. This is based on Lambda functions pricing after applying Savings Plans discounts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaEstimatedMonthlySavings {
+pub struct LambdaEstimatedMonthlySavings  {
     /// <p>The currency of the estimated monthly savings.</p>
     pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The value of the estimated monthly savings.</p>
     pub value: f64,
 }
-impl LambdaEstimatedMonthlySavings {
+impl  LambdaEstimatedMonthlySavings  {
     /// <p>The currency of the estimated monthly savings.</p>
-    pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
+    pub fn currency(&self) -> ::std::option::Option<& crate::types::Currency> {
         self.currency.as_ref()
     }
     /// <p>The value of the estimated monthly savings.</p>
@@ -41,8 +41,7 @@ impl LambdaEstimatedMonthlySavingsBuilder {
     }
     /// <p>The currency of the estimated monthly savings.</p>
     pub fn set_currency(mut self, input: ::std::option::Option<crate::types::Currency>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The currency of the estimated monthly savings.</p>
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
@@ -55,8 +54,7 @@ impl LambdaEstimatedMonthlySavingsBuilder {
     }
     /// <p>The value of the estimated monthly savings.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the estimated monthly savings.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,12 @@ impl LambdaEstimatedMonthlySavingsBuilder {
     /// Consumes the builder and constructs a [`LambdaEstimatedMonthlySavings`](crate::types::LambdaEstimatedMonthlySavings).
     pub fn build(self) -> crate::types::LambdaEstimatedMonthlySavings {
         crate::types::LambdaEstimatedMonthlySavings {
-            currency: self.currency,
-            value: self.value.unwrap_or_default(),
+            currency: self.currency
+            ,
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

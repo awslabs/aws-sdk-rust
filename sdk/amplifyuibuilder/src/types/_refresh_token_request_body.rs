@@ -3,24 +3,23 @@
 /// <p>Describes a refresh token.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RefreshTokenRequestBody {
+pub struct RefreshTokenRequestBody  {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     pub token: ::std::string::String,
     /// <p>The ID of the client to request the token from.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
-impl RefreshTokenRequestBody {
+impl  RefreshTokenRequestBody  {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn token(&self) -> &str {
-        use std::ops::Deref;
-        self.token.deref()
+    pub fn token(&self) -> & str {
+        use std::ops::Deref; self.token.deref()
     }
     /// <p>The ID of the client to request the token from.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for RefreshTokenRequestBody {
+impl  ::std::fmt::Debug for RefreshTokenRequestBody  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenRequestBody");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl RefreshTokenRequestBodyBuilder {
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl RefreshTokenRequestBodyBuilder {
     }
     /// <p>The ID of the client to request the token from.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The ID of the client to request the token from.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,15 +73,17 @@ impl RefreshTokenRequestBodyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`token`](crate::types::builders::RefreshTokenRequestBodyBuilder::token)
     pub fn build(self) -> ::std::result::Result<crate::types::RefreshTokenRequestBody, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RefreshTokenRequestBody {
-            token: self.token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "token",
-                    "token was not specified but it is required when building RefreshTokenRequestBody",
-                )
-            })?,
-            client_id: self.client_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RefreshTokenRequestBody {
+                token: self.token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("token", "token was not specified but it is required when building RefreshTokenRequestBody")
+                    )?
+                ,
+                client_id: self.client_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RefreshTokenRequestBodyBuilder {
@@ -95,3 +94,4 @@ impl ::std::fmt::Debug for RefreshTokenRequestBodyBuilder {
         formatter.finish()
     }
 }
+

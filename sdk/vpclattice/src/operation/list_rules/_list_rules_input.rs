@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRulesInput {
+pub struct ListRulesInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
@@ -12,13 +12,13 @@ pub struct ListRulesInput {
     /// <p>A pagination token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRulesInput {
+impl  ListRulesInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn listener_identifier(&self) -> ::std::option::Option<& str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -26,7 +26,7 @@ impl ListRulesInput {
         self.max_results
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_identifier = input;
-        self
+        self.listener_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl ListRulesInputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +103,18 @@ impl ListRulesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_rules::ListRulesInput {
+                service_identifier: self.service_identifier
+                ,
+                listener_identifier: self.listener_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

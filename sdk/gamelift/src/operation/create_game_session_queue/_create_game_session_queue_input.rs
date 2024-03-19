@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGameSessionQueueInput {
+pub struct CreateGameSessionQueueInput  {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.</p>
     pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
-    pub player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
+    pub player_latency_policies: ::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>>,
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>>,
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
@@ -20,11 +20,11 @@ pub struct CreateGameSessionQueueInput {
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub notification_target: ::std::option::Option<::std::string::String>,
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGameSessionQueueInput {
+impl  CreateGameSessionQueueInput  {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.</p>
@@ -32,38 +32,41 @@ impl CreateGameSessionQueueInput {
         self.timeout_in_seconds
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.player_latency_policies.is_none()`.
-    pub fn player_latency_policies(&self) -> &[crate::types::PlayerLatencyPolicy] {
-        self.player_latency_policies.as_deref().unwrap_or_default()
+    pub fn player_latency_policies(&self) -> & [crate::types::PlayerLatencyPolicy] {
+        self.player_latency_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
-    pub fn destinations(&self) -> &[crate::types::GameSessionQueueDestination] {
-        self.destinations.as_deref().unwrap_or_default()
+    pub fn destinations(&self) -> & [crate::types::GameSessionQueueDestination] {
+        self.destinations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
-    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+    pub fn filter_configuration(&self) -> ::std::option::Option<& crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
-    pub fn priority_configuration(&self) -> ::std::option::Option<&crate::types::PriorityConfiguration> {
+    pub fn priority_configuration(&self) -> ::std::option::Option<& crate::types::PriorityConfiguration> {
         self.priority_configuration.as_ref()
     }
     /// <p>Information to be added to all events that are related to this game session queue.</p>
-    pub fn custom_event_data(&self) -> ::std::option::Option<&str> {
+    pub fn custom_event_data(&self) -> ::std::option::Option<& str> {
         self.custom_event_data.as_deref()
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
-    pub fn notification_target(&self) -> ::std::option::Option<&str> {
+    pub fn notification_target(&self) -> ::std::option::Option<& str> {
         self.notification_target.as_deref()
     }
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGameSessionQueueInput {
@@ -79,13 +82,13 @@ impl CreateGameSessionQueueInput {
 pub struct CreateGameSessionQueueInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
-    pub(crate) player_latency_policies: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>,
-    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>,
+    pub(crate) player_latency_policies: ::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     pub(crate) priority_configuration: ::std::option::Option<crate::types::PriorityConfiguration>,
     pub(crate) custom_event_data: ::std::option::Option<::std::string::String>,
     pub(crate) notification_target: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGameSessionQueueInputBuilder {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
@@ -96,8 +99,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +112,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
     }
     /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.</p>
     pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -124,17 +125,16 @@ impl CreateGameSessionQueueInputBuilder {
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
     pub fn player_latency_policies(mut self, input: crate::types::PlayerLatencyPolicy) -> Self {
         let mut v = self.player_latency_policies.unwrap_or_default();
-        v.push(input);
-        self.player_latency_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.player_latency_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
-    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>>) -> Self {
-        self.player_latency_policies = input;
-        self
+    pub fn set_player_latency_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>>) -> Self {
+        self.player_latency_policies = input; self
     }
     /// <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
-    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatencyPolicy>> {
+    pub fn get_player_latency_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlayerLatencyPolicy>> {
         &self.player_latency_policies
     }
     /// Appends an item to `destinations`.
@@ -144,17 +144,16 @@ impl CreateGameSessionQueueInputBuilder {
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
     pub fn destinations(mut self, input: crate::types::GameSessionQueueDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.destinations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>>) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
-    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameSessionQueueDestination>> {
+    pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GameSessionQueueDestination>> {
         &self.destinations
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
@@ -164,8 +163,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
-        self.filter_configuration = input;
-        self
+        self.filter_configuration = input; self
     }
     /// <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location.</p>
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
@@ -178,8 +176,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn set_priority_configuration(mut self, input: ::std::option::Option<crate::types::PriorityConfiguration>) -> Self {
-        self.priority_configuration = input;
-        self
+        self.priority_configuration = input; self
     }
     /// <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process.</p>
     pub fn get_priority_configuration(&self) -> &::std::option::Option<crate::types::PriorityConfiguration> {
@@ -192,8 +189,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>Information to be added to all events that are related to this game session queue.</p>
     pub fn set_custom_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_event_data = input;
-        self
+        self.custom_event_data = input; self
     }
     /// <p>Information to be added to all events that are related to this game session queue.</p>
     pub fn get_custom_event_data(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,8 +202,7 @@ impl CreateGameSessionQueueInputBuilder {
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn set_notification_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notification_target = input;
-        self
+        self.notification_target = input; self
     }
     /// <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
     pub fn get_notification_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -220,36 +215,42 @@ impl CreateGameSessionQueueInputBuilder {
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGameSessionQueueInput`](crate::operation::create_game_session_queue::CreateGameSessionQueueInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_game_session_queue::CreateGameSessionQueueInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_game_session_queue::CreateGameSessionQueueInput {
-            name: self.name,
-            timeout_in_seconds: self.timeout_in_seconds,
-            player_latency_policies: self.player_latency_policies,
-            destinations: self.destinations,
-            filter_configuration: self.filter_configuration,
-            priority_configuration: self.priority_configuration,
-            custom_event_data: self.custom_event_data,
-            notification_target: self.notification_target,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_game_session_queue::CreateGameSessionQueueInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_game_session_queue::CreateGameSessionQueueInput {
+                name: self.name
+                ,
+                timeout_in_seconds: self.timeout_in_seconds
+                ,
+                player_latency_policies: self.player_latency_policies
+                ,
+                destinations: self.destinations
+                ,
+                filter_configuration: self.filter_configuration
+                ,
+                priority_configuration: self.priority_configuration
+                ,
+                custom_event_data: self.custom_event_data
+                ,
+                notification_target: self.notification_target
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

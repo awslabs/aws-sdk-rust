@@ -3,30 +3,31 @@
 /// <p>Contains the output of DescribeReservedInstancesModifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReservedInstancesModificationsOutput {
+pub struct DescribeReservedInstancesModificationsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
-    pub reserved_instances_modifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
+    pub reserved_instances_modifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
-impl DescribeReservedInstancesModificationsOutput {
+impl  DescribeReservedInstancesModificationsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance modification information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.reserved_instances_modifications.is_none()`.
-    pub fn reserved_instances_modifications(&self) -> &[crate::types::ReservedInstancesModification] {
-        self.reserved_instances_modifications.as_deref().unwrap_or_default()
+    pub fn reserved_instances_modifications(&self) -> & [crate::types::ReservedInstancesModification] {
+        self.reserved_instances_modifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReservedInstancesModificationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReservedInstancesModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
     pub fn builder() -> crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReservedInstancesModificationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) reserved_instances_modifications: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
+    pub(crate) reserved_instances_modifications: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesModificationsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
     /// <p>The Reserved Instance modification information.</p>
     pub fn reserved_instances_modifications(mut self, input: crate::types::ReservedInstancesModification) -> Self {
         let mut v = self.reserved_instances_modifications.unwrap_or_default();
-        v.push(input);
-        self.reserved_instances_modifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.reserved_instances_modifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Reserved Instance modification information.</p>
-    pub fn set_reserved_instances_modifications(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
-    ) -> Self {
-        self.reserved_instances_modifications = input;
-        self
+    pub fn set_reserved_instances_modifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstancesModification>>) -> Self {
+        self.reserved_instances_modifications = input; self
     }
     /// <p>The Reserved Instance modification information.</p>
-    pub fn get_reserved_instances_modifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>> {
+    pub fn get_reserved_instances_modifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReservedInstancesModification>> {
         &self.reserved_instances_modifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
     pub fn build(self) -> crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput {
         crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput {
-            next_token: self.next_token,
-            reserved_instances_modifications: self.reserved_instances_modifications,
+            next_token: self.next_token
+            ,
+            reserved_instances_modifications: self.reserved_instances_modifications
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

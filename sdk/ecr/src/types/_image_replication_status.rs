@@ -3,7 +3,7 @@
 /// <p>The status of the replication process for an image.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImageReplicationStatus {
+pub struct ImageReplicationStatus  {
     /// <p>The destination Region for the image replication.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
@@ -13,21 +13,21 @@ pub struct ImageReplicationStatus {
     /// <p>The failure code for a replication that has failed.</p>
     pub failure_code: ::std::option::Option<::std::string::String>,
 }
-impl ImageReplicationStatus {
+impl  ImageReplicationStatus  {
     /// <p>The destination Region for the image replication.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The image replication status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ReplicationStatus> {
         self.status.as_ref()
     }
     /// <p>The failure code for a replication that has failed.</p>
-    pub fn failure_code(&self) -> ::std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<& str> {
         self.failure_code.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ImageReplicationStatusBuilder {
     }
     /// <p>The destination Region for the image replication.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The destination Region for the image replication.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ImageReplicationStatusBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry to which the image belongs.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ImageReplicationStatusBuilder {
     }
     /// <p>The image replication status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReplicationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The image replication status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
@@ -97,8 +94,7 @@ impl ImageReplicationStatusBuilder {
     }
     /// <p>The failure code for a replication that has failed.</p>
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_code = input;
-        self
+        self.failure_code = input; self
     }
     /// <p>The failure code for a replication that has failed.</p>
     pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ImageReplicationStatusBuilder {
     /// Consumes the builder and constructs a [`ImageReplicationStatus`](crate::types::ImageReplicationStatus).
     pub fn build(self) -> crate::types::ImageReplicationStatus {
         crate::types::ImageReplicationStatus {
-            region: self.region,
-            registry_id: self.registry_id,
-            status: self.status,
-            failure_code: self.failure_code,
+            region: self.region
+            ,
+            registry_id: self.registry_id
+            ,
+            status: self.status
+            ,
+            failure_code: self.failure_code
+            ,
         }
     }
 }
+

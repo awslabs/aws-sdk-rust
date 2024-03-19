@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RejectSubscriptionRequestInput {
+pub struct RejectSubscriptionRequestInput  {
     /// <p>The identifier of the Amazon DataZone domain in which the subscription request was rejected.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the subscription request that was rejected.</p>
@@ -10,21 +10,21 @@ pub struct RejectSubscriptionRequestInput {
     /// <p>The decision comment of the rejected subscription request.</p>
     pub decision_comment: ::std::option::Option<::std::string::String>,
 }
-impl RejectSubscriptionRequestInput {
+impl  RejectSubscriptionRequestInput  {
     /// <p>The identifier of the Amazon DataZone domain in which the subscription request was rejected.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the subscription request that was rejected.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The decision comment of the rejected subscription request.</p>
-    pub fn decision_comment(&self) -> ::std::option::Option<&str> {
+    pub fn decision_comment(&self) -> ::std::option::Option<& str> {
         self.decision_comment.as_deref()
     }
 }
-impl ::std::fmt::Debug for RejectSubscriptionRequestInput {
+impl  ::std::fmt::Debug for RejectSubscriptionRequestInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RejectSubscriptionRequestInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -57,8 +57,7 @@ impl RejectSubscriptionRequestInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription request was rejected.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which the subscription request was rejected.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl RejectSubscriptionRequestInputBuilder {
     }
     /// <p>The identifier of the subscription request that was rejected.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the subscription request that was rejected.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,25 +84,24 @@ impl RejectSubscriptionRequestInputBuilder {
     }
     /// <p>The decision comment of the rejected subscription request.</p>
     pub fn set_decision_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.decision_comment = input;
-        self
+        self.decision_comment = input; self
     }
     /// <p>The decision comment of the rejected subscription request.</p>
     pub fn get_decision_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.decision_comment
     }
     /// Consumes the builder and constructs a [`RejectSubscriptionRequestInput`](crate::operation::reject_subscription_request::RejectSubscriptionRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reject_subscription_request::RejectSubscriptionRequestInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reject_subscription_request::RejectSubscriptionRequestInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            decision_comment: self.decision_comment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reject_subscription_request::RejectSubscriptionRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reject_subscription_request::RejectSubscriptionRequestInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                decision_comment: self.decision_comment
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RejectSubscriptionRequestInputBuilder {
@@ -116,3 +113,4 @@ impl ::std::fmt::Debug for RejectSubscriptionRequestInputBuilder {
         formatter.finish()
     }
 }
+

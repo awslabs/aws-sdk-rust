@@ -3,7 +3,7 @@
 /// <p>A structure that describes an assignment of an Amazon Web Services account to a principal and the permissions that principal has in the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccountAssignmentForPrincipal {
+pub struct AccountAssignmentForPrincipal  {
     /// <p>The account ID number of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM Identity Center permission set assigned to this principal for this Amazon Web Services account.</p>
@@ -13,21 +13,21 @@ pub struct AccountAssignmentForPrincipal {
     /// <p>The type of the principal.</p>
     pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
 }
-impl AccountAssignmentForPrincipal {
+impl  AccountAssignmentForPrincipal  {
     /// <p>The account ID number of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the IAM Identity Center permission set assigned to this principal for this Amazon Web Services account.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The ID of the principal.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The type of the principal.</p>
-    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AccountAssignmentForPrincipalBuilder {
     }
     /// <p>The account ID number of the Amazon Web Services account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID number of the Amazon Web Services account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl AccountAssignmentForPrincipalBuilder {
     }
     /// <p>The ARN of the IAM Identity Center permission set assigned to this principal for this Amazon Web Services account.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_set_arn = input;
-        self
+        self.permission_set_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center permission set assigned to this principal for this Amazon Web Services account.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl AccountAssignmentForPrincipalBuilder {
     }
     /// <p>The ID of the principal.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The ID of the principal.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl AccountAssignmentForPrincipalBuilder {
     }
     /// <p>The type of the principal.</p>
     pub fn set_principal_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input;
-        self
+        self.principal_type = input; self
     }
     /// <p>The type of the principal.</p>
     pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
@@ -107,10 +103,15 @@ impl AccountAssignmentForPrincipalBuilder {
     /// Consumes the builder and constructs a [`AccountAssignmentForPrincipal`](crate::types::AccountAssignmentForPrincipal).
     pub fn build(self) -> crate::types::AccountAssignmentForPrincipal {
         crate::types::AccountAssignmentForPrincipal {
-            account_id: self.account_id,
-            permission_set_arn: self.permission_set_arn,
-            principal_id: self.principal_id,
-            principal_type: self.principal_type,
+            account_id: self.account_id
+            ,
+            permission_set_arn: self.permission_set_arn
+            ,
+            principal_id: self.principal_id
+            ,
+            principal_type: self.principal_type
+            ,
         }
     }
 }
+

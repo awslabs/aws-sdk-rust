@@ -3,19 +3,19 @@
 /// <p>Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVpcIngressConnectionsFilter {
+pub struct ListVpcIngressConnectionsFilter  {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC Endpoint to filter by.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
-impl ListVpcIngressConnectionsFilter {
+impl  ListVpcIngressConnectionsFilter  {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
-    pub fn service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<& str> {
         self.service_arn.as_deref()
     }
     /// <p>The ID of a VPC Endpoint to filter by.</p>
-    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ListVpcIngressConnectionsFilterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
     pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a service to filter by.</p>
     pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ListVpcIngressConnectionsFilterBuilder {
     }
     /// <p>The ID of a VPC Endpoint to filter by.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The ID of a VPC Endpoint to filter by.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ListVpcIngressConnectionsFilterBuilder {
     /// Consumes the builder and constructs a [`ListVpcIngressConnectionsFilter`](crate::types::ListVpcIngressConnectionsFilter).
     pub fn build(self) -> crate::types::ListVpcIngressConnectionsFilter {
         crate::types::ListVpcIngressConnectionsFilter {
-            service_arn: self.service_arn,
-            vpc_endpoint_id: self.vpc_endpoint_id,
+            service_arn: self.service_arn
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
         }
     }
 }
+

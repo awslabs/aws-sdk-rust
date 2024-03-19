@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportSourceNetworkCfnTemplateInput {
+pub struct ExportSourceNetworkCfnTemplateInput  {
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
 }
-impl ExportSourceNetworkCfnTemplateInput {
+impl  ExportSourceNetworkCfnTemplateInput  {
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
-    pub fn source_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_network_id(&self) -> ::std::option::Option<& str> {
         self.source_network_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl ExportSourceNetworkCfnTemplateInputBuilder {
     }
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
     pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_network_id = input;
-        self
+        self.source_network_id = input; self
     }
     /// <p>The Source Network ID to export its CloudFormation template to an S3 bucket.</p>
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_network_id
     }
     /// Consumes the builder and constructs a [`ExportSourceNetworkCfnTemplateInput`](crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput {
-                source_network_id: self.source_network_id,
-            },
+                source_network_id: self.source_network_id
+                ,
+            }
         )
     }
 }
+

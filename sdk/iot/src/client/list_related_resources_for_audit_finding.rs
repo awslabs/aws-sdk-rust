@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRelatedResourcesForAuditFinding`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`finding_id(impl Into<String>)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::finding_id) / [`set_finding_id(Option<String>)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::set_finding_id):<br>required: **true**<br><p>The finding Id.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
-    /// - On success, responds with [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput) with field(s):
+                            /// - On success, responds with [`ListRelatedResourcesForAuditFindingOutput`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput) with field(s):
     ///   - [`related_resources(Option<Vec::<RelatedResource>>)`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput::related_resources): <p>The related resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> for the first API call.</p>
-    /// - On failure, responds with [`SdkError<ListRelatedResourcesForAuditFindingError>`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError)
-    pub fn list_related_resources_for_audit_finding(
-        &self,
-    ) -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder {
-        crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListRelatedResourcesForAuditFindingError>`](crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError)
+    pub fn list_related_resources_for_audit_finding(&self) -> crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder {
+                                crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingFluentBuilder::new(self.handle.clone())
+                            }
 }
+

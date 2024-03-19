@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPeerings`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`core_network_id(impl Into<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_core_network_id):<br>required: **false**<br><p>The ID of a core network.</p><br>
     ///   - [`peering_type(PeeringType)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::peering_type) / [`set_peering_type(Option<PeeringType>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_peering_type):<br>required: **false**<br><p>Returns a list of a peering requests.</p><br>
     ///   - [`edge_location(impl Into<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::edge_location) / [`set_edge_location(Option<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_edge_location):<br>required: **false**<br><p>Returns a list edge locations for the</p><br>
     ///   - [`state(PeeringState)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::state) / [`set_state(Option<PeeringState>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_state):<br>required: **false**<br><p>Returns a list of the peering request states.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListPeeringsOutput`](crate::operation::list_peerings::ListPeeringsOutput) with field(s):
+                            /// - On success, responds with [`ListPeeringsOutput`](crate::operation::list_peerings::ListPeeringsOutput) with field(s):
     ///   - [`peerings(Option<Vec::<Peering>>)`](crate::operation::list_peerings::ListPeeringsOutput::peerings): <p>Lists the transit gateway peerings for the <code>ListPeerings</code> request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_peerings::ListPeeringsOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPeeringsError>`](crate::operation::list_peerings::ListPeeringsError)
+                            /// - On failure, responds with [`SdkError<ListPeeringsError>`](crate::operation::list_peerings::ListPeeringsError)
     pub fn list_peerings(&self) -> crate::operation::list_peerings::builders::ListPeeringsFluentBuilder {
-        crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_peerings::builders::ListPeeringsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

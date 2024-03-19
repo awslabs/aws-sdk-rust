@@ -3,23 +3,23 @@
 /// <p>The output structure of the time range filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TimeRangeFilterOutput {
+pub struct TimeRangeFilterOutput  {
     /// <p>The starting time for the time range filter.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The ending time for the time range filter.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
-impl TimeRangeFilterOutput {
+impl  TimeRangeFilterOutput  {
     /// <p>The starting time for the time range filter.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The ending time for the time range filter.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
 }
-impl ::std::fmt::Debug for TimeRangeFilterOutput {
+impl  ::std::fmt::Debug for TimeRangeFilterOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TimeRangeFilterOutput");
         formatter.field("start_time", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,7 @@ impl TimeRangeFilterOutputBuilder {
     }
     /// <p>The starting time for the time range filter.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The starting time for the time range filter.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +64,7 @@ impl TimeRangeFilterOutputBuilder {
     }
     /// <p>The ending time for the time range filter.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The ending time for the time range filter.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -77,20 +75,20 @@ impl TimeRangeFilterOutputBuilder {
     /// - [`start_time`](crate::types::builders::TimeRangeFilterOutputBuilder::start_time)
     /// - [`end_time`](crate::types::builders::TimeRangeFilterOutputBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeFilterOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeRangeFilterOutput {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building TimeRangeFilterOutput",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building TimeRangeFilterOutput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeRangeFilterOutput {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building TimeRangeFilterOutput")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building TimeRangeFilterOutput")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TimeRangeFilterOutputBuilder {
@@ -101,3 +99,4 @@ impl ::std::fmt::Debug for TimeRangeFilterOutputBuilder {
         formatter.finish()
     }
 }
+

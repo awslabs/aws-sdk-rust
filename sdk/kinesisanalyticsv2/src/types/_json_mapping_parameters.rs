@@ -3,15 +3,14 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonMappingParameters {
+pub struct JsonMappingParameters  {
     /// <p>The path to the top-level parent that contains the records.</p>
     pub record_row_path: ::std::string::String,
 }
-impl JsonMappingParameters {
+impl  JsonMappingParameters  {
     /// <p>The path to the top-level parent that contains the records.</p>
-    pub fn record_row_path(&self) -> &str {
-        use std::ops::Deref;
-        self.record_row_path.deref()
+    pub fn record_row_path(&self) -> & str {
+        use std::ops::Deref; self.record_row_path.deref()
     }
 }
 impl JsonMappingParameters {
@@ -36,8 +35,7 @@ impl JsonMappingParametersBuilder {
     }
     /// <p>The path to the top-level parent that contains the records.</p>
     pub fn set_record_row_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_row_path = input;
-        self
+        self.record_row_path = input; self
     }
     /// <p>The path to the top-level parent that contains the records.</p>
     pub fn get_record_row_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl JsonMappingParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`record_row_path`](crate::types::builders::JsonMappingParametersBuilder::record_row_path)
     pub fn build(self) -> ::std::result::Result<crate::types::JsonMappingParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JsonMappingParameters {
-            record_row_path: self.record_row_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "record_row_path",
-                    "record_row_path was not specified but it is required when building JsonMappingParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JsonMappingParameters {
+                record_row_path: self.record_row_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("record_row_path", "record_row_path was not specified but it is required when building JsonMappingParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

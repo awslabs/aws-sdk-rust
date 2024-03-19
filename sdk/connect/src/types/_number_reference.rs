@@ -3,19 +3,19 @@
 /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NumberReference {
+pub struct NumberReference  {
     /// <p>Identifier of the number reference.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A valid number.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl NumberReference {
+impl  NumberReference  {
     /// <p>Identifier of the number reference.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A valid number.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NumberReferenceBuilder {
     }
     /// <p>Identifier of the number reference.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Identifier of the number reference.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NumberReferenceBuilder {
     }
     /// <p>A valid number.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A valid number.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NumberReferenceBuilder {
     /// Consumes the builder and constructs a [`NumberReference`](crate::types::NumberReference).
     pub fn build(self) -> crate::types::NumberReference {
         crate::types::NumberReference {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

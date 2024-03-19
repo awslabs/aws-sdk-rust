@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>GetApplicationRevision</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationRevisionInput {
+pub struct GetApplicationRevisionInput  {
     /// <p>The name of the application that corresponds to the revision.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the application revision to get, including type and location.</p>
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
 }
-impl GetApplicationRevisionInput {
+impl  GetApplicationRevisionInput  {
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Information about the application revision to get, including type and location.</p>
-    pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision(&self) -> ::std::option::Option<& crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl GetApplicationRevisionInputBuilder {
     }
     /// <p>The name of the application that corresponds to the revision.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the application that corresponds to the revision.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl GetApplicationRevisionInputBuilder {
     }
     /// <p>Information about the application revision to get, including type and location.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>Information about the application revision to get, including type and location.</p>
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetApplicationRevisionInput`](crate::operation::get_application_revision::GetApplicationRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_application_revision::GetApplicationRevisionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_application_revision::GetApplicationRevisionInput {
-            application_name: self.application_name,
-            revision: self.revision,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_application_revision::GetApplicationRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_application_revision::GetApplicationRevisionInput {
+                application_name: self.application_name
+                ,
+                revision: self.revision
+                ,
+            }
+        )
     }
 }
+

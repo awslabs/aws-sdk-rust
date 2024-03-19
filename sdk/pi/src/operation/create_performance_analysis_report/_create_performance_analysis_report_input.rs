@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePerformanceAnalysisReportInput {
+pub struct CreatePerformanceAnalysisReportInput  {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub service_type: ::std::option::Option<crate::types::ServiceType>,
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
@@ -13,31 +13,32 @@ pub struct CreatePerformanceAnalysisReportInput {
     /// <p>The end time defined for the analysis report.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreatePerformanceAnalysisReportInput {
+impl  CreatePerformanceAnalysisReportInput  {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
-    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<& crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-ADECBTYHKTSAUMUZQYPDS2GW4A</code>.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The start time defined for the analysis report.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time defined for the analysis report.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreatePerformanceAnalysisReportInput {
@@ -55,7 +56,7 @@ pub struct CreatePerformanceAnalysisReportInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreatePerformanceAnalysisReportInputBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
@@ -66,8 +67,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input;
-        self
+        self.service_type = input; self
     }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid value is <code>RDS</code>.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
@@ -83,8 +83,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-ADECBTYHKTSAUMUZQYPDS2GW4A</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
     /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example, specify <code>db-ADECBTYHKTSAUMUZQYPDS2GW4A</code>.</p>
@@ -99,8 +98,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     }
     /// <p>The start time defined for the analysis report.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The start time defined for the analysis report.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -114,8 +112,7 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     }
     /// <p>The end time defined for the analysis report.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end time defined for the analysis report.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,34 +125,34 @@ impl CreatePerformanceAnalysisReportInputBuilder {
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata assigned to the analysis report consisting of a key-value pair.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePerformanceAnalysisReportInput`](crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportInput {
-                service_type: self.service_type,
-                identifier: self.identifier,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                tags: self.tags,
-            },
+                service_type: self.service_type
+                ,
+                identifier: self.identifier
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

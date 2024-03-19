@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let av1adaptivequantization = unimplemented!();
 /// match av1adaptivequantization {
@@ -34,16 +34,14 @@
 /// Specifically, when `av1adaptivequantization` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Av1AdaptiveQuantization::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Av1AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -59,73 +57,74 @@ pub enum Av1AdaptiveQuantization {
     Off,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Av1AdaptiveQuantization {
-    fn from(s: &str) -> Self {
-        match s {
-            "HIGH" => Av1AdaptiveQuantization::High,
-            "HIGHER" => Av1AdaptiveQuantization::Higher,
-            "LOW" => Av1AdaptiveQuantization::Low,
-            "MAX" => Av1AdaptiveQuantization::Max,
-            "MEDIUM" => Av1AdaptiveQuantization::Medium,
-            "OFF" => Av1AdaptiveQuantization::Off,
-            other => Av1AdaptiveQuantization::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "HIGH" => Av1AdaptiveQuantization::High,
+"HIGHER" => Av1AdaptiveQuantization::Higher,
+"LOW" => Av1AdaptiveQuantization::Low,
+"MAX" => Av1AdaptiveQuantization::Max,
+"MEDIUM" => Av1AdaptiveQuantization::Medium,
+"OFF" => Av1AdaptiveQuantization::Off,
+other => Av1AdaptiveQuantization::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Av1AdaptiveQuantization {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Av1AdaptiveQuantization::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Av1AdaptiveQuantization::from(s))
+                    }
+                }
 impl Av1AdaptiveQuantization {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Av1AdaptiveQuantization::High => "HIGH",
-            Av1AdaptiveQuantization::Higher => "HIGHER",
-            Av1AdaptiveQuantization::Low => "LOW",
-            Av1AdaptiveQuantization::Max => "MAX",
-            Av1AdaptiveQuantization::Medium => "MEDIUM",
-            Av1AdaptiveQuantization::Off => "OFF",
-            Av1AdaptiveQuantization::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Av1AdaptiveQuantization::High => "HIGH",
+    Av1AdaptiveQuantization::Higher => "HIGHER",
+    Av1AdaptiveQuantization::Low => "LOW",
+    Av1AdaptiveQuantization::Max => "MAX",
+    Av1AdaptiveQuantization::Medium => "MEDIUM",
+    Av1AdaptiveQuantization::Off => "OFF",
+    Av1AdaptiveQuantization::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Av1AdaptiveQuantization {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Av1AdaptiveQuantization {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Av1AdaptiveQuantization {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Av1AdaptiveQuantization::High => write!(f, "HIGH"),
-            Av1AdaptiveQuantization::Higher => write!(f, "HIGHER"),
-            Av1AdaptiveQuantization::Low => write!(f, "LOW"),
-            Av1AdaptiveQuantization::Max => write!(f, "MAX"),
-            Av1AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
-            Av1AdaptiveQuantization::Off => write!(f, "OFF"),
-            Av1AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Av1AdaptiveQuantization::High => write!(f, "HIGH"),
+Av1AdaptiveQuantization::Higher => write!(f, "HIGHER"),
+Av1AdaptiveQuantization::Low => write!(f, "LOW"),
+Av1AdaptiveQuantization::Max => write!(f, "MAX"),
+Av1AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+Av1AdaptiveQuantization::Off => write!(f, "OFF"),
+Av1AdaptiveQuantization::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

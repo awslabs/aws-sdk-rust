@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAnomalyDetectionExecutions`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::set_anomaly_detector_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the anomaly detector.</p><br>
     ///   - [`timestamp(impl Into<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::timestamp) / [`set_timestamp(Option<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::set_timestamp):<br>required: **false**<br><p>The timestamp of the anomaly detection job.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of items to return in the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput) with field(s):
+                            /// - On success, responds with [`DescribeAnomalyDetectionExecutionsOutput`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput) with field(s):
     ///   - [`execution_list(Option<Vec::<ExecutionStatus>>)`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput::execution_list): <p>A list of detection jobs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput::next_token): <p>The pagination token that's included if more results are available.</p>
-    /// - On failure, responds with [`SdkError<DescribeAnomalyDetectionExecutionsError>`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError)
-    pub fn describe_anomaly_detection_executions(
-        &self,
-    ) -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder {
-        crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeAnomalyDetectionExecutionsError>`](crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError)
+    pub fn describe_anomaly_detection_executions(&self) -> crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder {
+                                crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePermissionsInput {
+pub struct UpdatePermissionsInput  {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub update_instruction_batch: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
+    pub update_instruction_batch: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateInstruction>>,
     /// <p>The ID of the workspace to update.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePermissionsInput {
+impl  UpdatePermissionsInput  {
     /// <p>An array of structures that contain the permission updates to make.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.update_instruction_batch.is_none()`.
-    pub fn update_instruction_batch(&self) -> &[crate::types::UpdateInstruction] {
-        self.update_instruction_batch.as_deref().unwrap_or_default()
+    pub fn update_instruction_batch(&self) -> & [crate::types::UpdateInstruction] {
+        self.update_instruction_batch.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -31,7 +32,7 @@ impl UpdatePermissionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdatePermissionsInputBuilder {
-    pub(crate) update_instruction_batch: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>,
+    pub(crate) update_instruction_batch: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateInstruction>>,
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePermissionsInputBuilder {
@@ -42,17 +43,16 @@ impl UpdatePermissionsInputBuilder {
     /// <p>An array of structures that contain the permission updates to make.</p>
     pub fn update_instruction_batch(mut self, input: crate::types::UpdateInstruction) -> Self {
         let mut v = self.update_instruction_batch.unwrap_or_default();
-        v.push(input);
-        self.update_instruction_batch = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.update_instruction_batch = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn set_update_instruction_batch(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>>) -> Self {
-        self.update_instruction_batch = input;
-        self
+    pub fn set_update_instruction_batch(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateInstruction>>) -> Self {
+        self.update_instruction_batch = input; self
     }
     /// <p>An array of structures that contain the permission updates to make.</p>
-    pub fn get_update_instruction_batch(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>> {
+    pub fn get_update_instruction_batch(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateInstruction>> {
         &self.update_instruction_batch
     }
     /// <p>The ID of the workspace to update.</p>
@@ -63,20 +63,22 @@ impl UpdatePermissionsInputBuilder {
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to update.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsInput {
-            update_instruction_batch: self.update_instruction_batch,
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_permissions::UpdatePermissionsInput {
+                update_instruction_batch: self.update_instruction_batch
+                ,
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

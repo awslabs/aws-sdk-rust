@@ -3,7 +3,7 @@
 /// <p>The relationship of the related resource to the main resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Relationship {
+pub struct Relationship  {
     /// <p>The resource type of the related resource.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
@@ -13,21 +13,21 @@ pub struct Relationship {
     /// <p>The type of relationship with the related resource.</p>
     pub relationship_name: ::std::option::Option<::std::string::String>,
 }
-impl Relationship {
+impl  Relationship  {
     /// <p>The resource type of the related resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The custom name of the related resource, if available.</p>
-    pub fn resource_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<& str> {
         self.resource_name.as_deref()
     }
     /// <p>The type of relationship with the related resource.</p>
-    pub fn relationship_name(&self) -> ::std::option::Option<&str> {
+    pub fn relationship_name(&self) -> ::std::option::Option<& str> {
         self.relationship_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl RelationshipBuilder {
     }
     /// <p>The resource type of the related resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type of the related resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -69,8 +68,7 @@ impl RelationshipBuilder {
     }
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl RelationshipBuilder {
     }
     /// <p>The custom name of the related resource, if available.</p>
     pub fn set_resource_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// <p>The custom name of the related resource, if available.</p>
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl RelationshipBuilder {
     }
     /// <p>The type of relationship with the related resource.</p>
     pub fn set_relationship_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.relationship_name = input;
-        self
+        self.relationship_name = input; self
     }
     /// <p>The type of relationship with the related resource.</p>
     pub fn get_relationship_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl RelationshipBuilder {
     /// Consumes the builder and constructs a [`Relationship`](crate::types::Relationship).
     pub fn build(self) -> crate::types::Relationship {
         crate::types::Relationship {
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
-            resource_name: self.resource_name,
-            relationship_name: self.relationship_name,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_name: self.resource_name
+            ,
+            relationship_name: self.relationship_name
+            ,
         }
     }
 }
+

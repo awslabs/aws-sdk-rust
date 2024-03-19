@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRouteInput {
+pub struct DeleteRouteInput  {
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
@@ -14,17 +14,17 @@ pub struct DeleteRouteInput {
     /// <p>The ID of the route table.</p>
     pub route_table_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRouteInput {
+impl  DeleteRouteInput  {
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
-    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_ipv6_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_ipv6_cidr_block.as_deref()
     }
     /// <p>The ID of the prefix list for the route.</p>
-    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -32,7 +32,7 @@ impl DeleteRouteInput {
         self.dry_run
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn set_destination_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_ipv6_cidr_block = input;
-        self
+        self.destination_ipv6_cidr_block = input; self
     }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn set_destination_prefix_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+        self.destination_prefix_list_id = input; self
     }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -118,8 +114,7 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,12 +122,20 @@ impl DeleteRouteInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_route::DeleteRouteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_route::DeleteRouteInput {
-            destination_cidr_block: self.destination_cidr_block,
-            destination_ipv6_cidr_block: self.destination_ipv6_cidr_block,
-            destination_prefix_list_id: self.destination_prefix_list_id,
-            dry_run: self.dry_run,
-            route_table_id: self.route_table_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_route::DeleteRouteInput {
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                destination_ipv6_cidr_block: self.destination_ipv6_cidr_block
+                ,
+                destination_prefix_list_id: self.destination_prefix_list_id
+                ,
+                dry_run: self.dry_run
+                ,
+                route_table_id: self.route_table_id
+                ,
+            }
+        )
     }
 }
+

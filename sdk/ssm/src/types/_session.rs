@@ -3,7 +3,7 @@
 /// <p>Information about a Session Manager connection to a managed node.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Session {
+pub struct Session  {
     /// <p>The ID of the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed node that the Session Manager session connected to.</p>
@@ -27,49 +27,49 @@ pub struct Session {
     /// <p>The maximum duration of a session before it terminates.</p>
     pub max_session_duration: ::std::option::Option<::std::string::String>,
 }
-impl Session {
+impl  Session  {
     /// <p>The ID of the session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The managed node that the Session Manager session connected to.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SessionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
-    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
-    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
-    pub fn document_name(&self) -> ::std::option::Option<&str> {
+    pub fn document_name(&self) -> ::std::option::Option<& str> {
         self.document_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services user that started the session.</p>
-    pub fn owner(&self) -> ::std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The reason for connecting to the instance.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn output_url(&self) -> ::std::option::Option<&crate::types::SessionManagerOutputUrl> {
+    pub fn output_url(&self) -> ::std::option::Option<& crate::types::SessionManagerOutputUrl> {
         self.output_url.as_ref()
     }
     /// <p>The maximum duration of a session before it terminates.</p>
-    pub fn max_session_duration(&self) -> ::std::option::Option<&str> {
+    pub fn max_session_duration(&self) -> ::std::option::Option<& str> {
         self.max_session_duration.as_deref()
     }
 }
@@ -104,8 +104,7 @@ impl SessionBuilder {
     }
     /// <p>The ID of the session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The ID of the session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +117,7 @@ impl SessionBuilder {
     }
     /// <p>The managed node that the Session Manager session connected to.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The managed node that the Session Manager session connected to.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl SessionBuilder {
     }
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the session. For example, "Connected" or "Terminated".</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
@@ -146,8 +143,7 @@ impl SessionBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +156,7 @@ impl SessionBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
     pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The date and time, in ISO-8601 Extended format, when the session was terminated.</p>
     pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +169,7 @@ impl SessionBuilder {
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_name = input;
-        self
+        self.document_name = input; self
     }
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +182,7 @@ impl SessionBuilder {
     }
     /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The ID of the Amazon Web Services user that started the session.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +195,7 @@ impl SessionBuilder {
     }
     /// <p>The reason for connecting to the instance.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for connecting to the instance.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +208,7 @@ impl SessionBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +221,7 @@ impl SessionBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_output_url(mut self, input: ::std::option::Option<crate::types::SessionManagerOutputUrl>) -> Self {
-        self.output_url = input;
-        self
+        self.output_url = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_output_url(&self) -> &::std::option::Option<crate::types::SessionManagerOutputUrl> {
@@ -244,8 +234,7 @@ impl SessionBuilder {
     }
     /// <p>The maximum duration of a session before it terminates.</p>
     pub fn set_max_session_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_session_duration = input;
-        self
+        self.max_session_duration = input; self
     }
     /// <p>The maximum duration of a session before it terminates.</p>
     pub fn get_max_session_duration(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,17 +243,29 @@ impl SessionBuilder {
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
-            session_id: self.session_id,
-            target: self.target,
-            status: self.status,
-            start_date: self.start_date,
-            end_date: self.end_date,
-            document_name: self.document_name,
-            owner: self.owner,
-            reason: self.reason,
-            details: self.details,
-            output_url: self.output_url,
-            max_session_duration: self.max_session_duration,
+            session_id: self.session_id
+            ,
+            target: self.target
+            ,
+            status: self.status
+            ,
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            document_name: self.document_name
+            ,
+            owner: self.owner
+            ,
+            reason: self.reason
+            ,
+            details: self.details
+            ,
+            output_url: self.output_url
+            ,
+            max_session_duration: self.max_session_duration
+            ,
         }
     }
 }
+

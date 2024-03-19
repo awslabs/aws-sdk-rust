@@ -3,30 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationTaskAssessmentRunsOutput {
+pub struct DescribeReplicationTaskAssessmentRunsOutput  {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+    pub replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationTaskAssessmentRunsOutput {
+impl  DescribeReplicationTaskAssessmentRunsOutput  {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_task_assessment_runs.is_none()`.
-    pub fn replication_task_assessment_runs(&self) -> &[crate::types::ReplicationTaskAssessmentRun] {
-        self.replication_task_assessment_runs.as_deref().unwrap_or_default()
+    pub fn replication_task_assessment_runs(&self) -> & [crate::types::ReplicationTaskAssessmentRun] {
+        self.replication_task_assessment_runs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationTaskAssessmentRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationTaskAssessmentRunsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
     pub fn builder() -> crate::operation::describe_replication_task_assessment_runs::builders::DescribeReplicationTaskAssessmentRunsOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentRunsOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+    pub(crate) replication_task_assessment_runs: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     }
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     pub fn replication_task_assessment_runs(mut self, input: crate::types::ReplicationTaskAssessmentRun) -> Self {
         let mut v = self.replication_task_assessment_runs.unwrap_or_default();
-        v.push(input);
-        self.replication_task_assessment_runs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_task_assessment_runs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn set_replication_task_assessment_runs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
-    ) -> Self {
-        self.replication_task_assessment_runs = input;
-        self
+    pub fn set_replication_task_assessment_runs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTaskAssessmentRun>>) -> Self {
+        self.replication_task_assessment_runs = input; self
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    pub fn get_replication_task_assessment_runs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>> {
+    pub fn get_replication_task_assessment_runs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ReplicationTaskAssessmentRun>> {
         &self.replication_task_assessment_runs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
     pub fn build(self) -> crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput {
         crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput {
-            marker: self.marker,
-            replication_task_assessment_runs: self.replication_task_assessment_runs,
+            marker: self.marker
+            ,
+            replication_task_assessment_runs: self.replication_task_assessment_runs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

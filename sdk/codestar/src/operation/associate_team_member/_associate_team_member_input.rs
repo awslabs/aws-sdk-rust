@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateTeamMemberInput {
+pub struct AssociateTeamMemberInput  {
     /// <p>The ID of the project to which you will add the IAM user.</p>
     pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
@@ -14,21 +14,21 @@ pub struct AssociateTeamMemberInput {
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
     pub remote_access_allowed: ::std::option::Option<bool>,
 }
-impl AssociateTeamMemberInput {
+impl  AssociateTeamMemberInput  {
     /// <p>The ID of the project to which you will add the IAM user.</p>
-    pub fn project_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
-    pub fn project_role(&self) -> ::std::option::Option<&str> {
+    pub fn project_role(&self) -> ::std::option::Option<& str> {
         self.project_role.as_deref()
     }
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
@@ -62,8 +62,7 @@ impl AssociateTeamMemberInputBuilder {
     }
     /// <p>The ID of the project to which you will add the IAM user.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project to which you will add the IAM user.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl AssociateTeamMemberInputBuilder {
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl AssociateTeamMemberInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl AssociateTeamMemberInputBuilder {
     }
     /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
     pub fn set_project_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_role = input;
-        self
+        self.project_role = input; self
     }
     /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
     pub fn get_project_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,24 +116,28 @@ impl AssociateTeamMemberInputBuilder {
     }
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
     pub fn set_remote_access_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.remote_access_allowed = input;
-        self
+        self.remote_access_allowed = input; self
     }
     /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
     pub fn get_remote_access_allowed(&self) -> &::std::option::Option<bool> {
         &self.remote_access_allowed
     }
     /// Consumes the builder and constructs a [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_team_member::AssociateTeamMemberInput {
-            project_id: self.project_id,
-            client_request_token: self.client_request_token,
-            user_arn: self.user_arn,
-            project_role: self.project_role,
-            remote_access_allowed: self.remote_access_allowed,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_team_member::AssociateTeamMemberInput {
+                project_id: self.project_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                user_arn: self.user_arn
+                ,
+                project_role: self.project_role
+                ,
+                remote_access_allowed: self.remote_access_allowed
+                ,
+            }
+        )
     }
 }
+

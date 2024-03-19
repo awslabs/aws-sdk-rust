@@ -3,7 +3,7 @@
 /// <p>Updates meeting room settings of a room profile.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMeetingRoomConfiguration {
+pub struct UpdateMeetingRoomConfiguration  {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub room_utilization_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
@@ -15,25 +15,25 @@ pub struct UpdateMeetingRoomConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     pub proactive_join: ::std::option::Option<crate::types::UpdateProactiveJoin>,
 }
-impl UpdateMeetingRoomConfiguration {
+impl  UpdateMeetingRoomConfiguration  {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub fn room_utilization_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.room_utilization_metrics_enabled
     }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
-    pub fn end_of_meeting_reminder(&self) -> ::std::option::Option<&crate::types::UpdateEndOfMeetingReminder> {
+    pub fn end_of_meeting_reminder(&self) -> ::std::option::Option<& crate::types::UpdateEndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
     /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
-    pub fn instant_booking(&self) -> ::std::option::Option<&crate::types::UpdateInstantBooking> {
+    pub fn instant_booking(&self) -> ::std::option::Option<& crate::types::UpdateInstantBooking> {
         self.instant_booking.as_ref()
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
-    pub fn require_check_in(&self) -> ::std::option::Option<&crate::types::UpdateRequireCheckIn> {
+    pub fn require_check_in(&self) -> ::std::option::Option<& crate::types::UpdateRequireCheckIn> {
         self.require_check_in.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn proactive_join(&self) -> ::std::option::Option<&crate::types::UpdateProactiveJoin> {
+    pub fn proactive_join(&self) -> ::std::option::Option<& crate::types::UpdateProactiveJoin> {
         self.proactive_join.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
     }
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub fn set_room_utilization_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.room_utilization_metrics_enabled = input;
-        self
+        self.room_utilization_metrics_enabled = input; self
     }
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub fn get_room_utilization_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -76,8 +75,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
     }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
     pub fn set_end_of_meeting_reminder(mut self, input: ::std::option::Option<crate::types::UpdateEndOfMeetingReminder>) -> Self {
-        self.end_of_meeting_reminder = input;
-        self
+        self.end_of_meeting_reminder = input; self
     }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
     pub fn get_end_of_meeting_reminder(&self) -> &::std::option::Option<crate::types::UpdateEndOfMeetingReminder> {
@@ -90,8 +88,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
     }
     /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
     pub fn set_instant_booking(mut self, input: ::std::option::Option<crate::types::UpdateInstantBooking>) -> Self {
-        self.instant_booking = input;
-        self
+        self.instant_booking = input; self
     }
     /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
     pub fn get_instant_booking(&self) -> &::std::option::Option<crate::types::UpdateInstantBooking> {
@@ -104,8 +101,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
     pub fn set_require_check_in(mut self, input: ::std::option::Option<crate::types::UpdateRequireCheckIn>) -> Self {
-        self.require_check_in = input;
-        self
+        self.require_check_in = input; self
     }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.”</p>
     pub fn get_require_check_in(&self) -> &::std::option::Option<crate::types::UpdateRequireCheckIn> {
@@ -118,8 +114,7 @@ impl UpdateMeetingRoomConfigurationBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_proactive_join(mut self, input: ::std::option::Option<crate::types::UpdateProactiveJoin>) -> Self {
-        self.proactive_join = input;
-        self
+        self.proactive_join = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_proactive_join(&self) -> &::std::option::Option<crate::types::UpdateProactiveJoin> {
@@ -128,11 +123,17 @@ impl UpdateMeetingRoomConfigurationBuilder {
     /// Consumes the builder and constructs a [`UpdateMeetingRoomConfiguration`](crate::types::UpdateMeetingRoomConfiguration).
     pub fn build(self) -> crate::types::UpdateMeetingRoomConfiguration {
         crate::types::UpdateMeetingRoomConfiguration {
-            room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
-            end_of_meeting_reminder: self.end_of_meeting_reminder,
-            instant_booking: self.instant_booking,
-            require_check_in: self.require_check_in,
-            proactive_join: self.proactive_join,
+            room_utilization_metrics_enabled: self.room_utilization_metrics_enabled
+            ,
+            end_of_meeting_reminder: self.end_of_meeting_reminder
+            ,
+            instant_booking: self.instant_booking
+            ,
+            require_check_in: self.require_check_in
+            ,
+            proactive_join: self.proactive_join
+            ,
         }
     }
 }
+

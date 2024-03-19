@@ -3,27 +3,26 @@
 /// <p>Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateInstruction {
+pub struct UpdateInstruction  {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     pub action: crate::types::UpdateAction,
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub role: crate::types::Role,
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub users: ::std::vec::Vec<crate::types::User>,
+    pub users: ::std::vec::Vec::<crate::types::User>,
 }
-impl UpdateInstruction {
+impl  UpdateInstruction  {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    pub fn action(&self) -> &crate::types::UpdateAction {
+    pub fn action(&self) -> & crate::types::UpdateAction {
         &self.action
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    pub fn role(&self) -> &crate::types::Role {
+    pub fn role(&self) -> & crate::types::Role {
         &self.role
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn users(&self) -> &[crate::types::User] {
-        use std::ops::Deref;
-        self.users.deref()
+    pub fn users(&self) -> & [crate::types::User] {
+        use std::ops::Deref; self.users.deref()
     }
 }
 impl UpdateInstruction {
@@ -39,7 +38,7 @@ impl UpdateInstruction {
 pub struct UpdateInstructionBuilder {
     pub(crate) action: ::std::option::Option<crate::types::UpdateAction>,
     pub(crate) role: ::std::option::Option<crate::types::Role>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<crate::types::User>>,
 }
 impl UpdateInstructionBuilder {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
@@ -50,8 +49,7 @@ impl UpdateInstructionBuilder {
     }
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::UpdateAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::UpdateAction> {
@@ -65,8 +63,7 @@ impl UpdateInstructionBuilder {
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::Role> {
@@ -79,17 +76,16 @@ impl UpdateInstructionBuilder {
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::User>>) -> Self {
+        self.users = input; self
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::User>> {
         &self.users
     }
     /// Consumes the builder and constructs a [`UpdateInstruction`](crate::types::UpdateInstruction).
@@ -98,25 +94,25 @@ impl UpdateInstructionBuilder {
     /// - [`role`](crate::types::builders::UpdateInstructionBuilder::role)
     /// - [`users`](crate::types::builders::UpdateInstructionBuilder::users)
     pub fn build(self) -> ::std::result::Result<crate::types::UpdateInstruction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UpdateInstruction {
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building UpdateInstruction",
-                )
-            })?,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building UpdateInstruction",
-                )
-            })?,
-            users: self.users.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "users",
-                    "users was not specified but it is required when building UpdateInstruction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::UpdateInstruction {
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building UpdateInstruction")
+                    )?
+                ,
+                role: self.role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role", "role was not specified but it is required when building UpdateInstruction")
+                    )?
+                ,
+                users: self.users
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("users", "users was not specified but it is required when building UpdateInstruction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

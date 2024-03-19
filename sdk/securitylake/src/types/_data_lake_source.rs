@@ -3,7 +3,7 @@
 /// <p>Amazon Security Lake collects logs and events from supported Amazon Web Services and custom sources. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataLakeSource {
+pub struct DataLakeSource  {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
@@ -69,17 +69,17 @@ pub struct DataLakeSource {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The log status for the Security Lake account.</p>
-    pub source_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
+    pub source_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSourceStatus>>,
 }
-impl DataLakeSource {
+impl  DataLakeSource  {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
@@ -143,16 +143,18 @@ impl DataLakeSource {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_classes.is_none()`.
-    pub fn event_classes(&self) -> &[::std::string::String] {
-        self.event_classes.as_deref().unwrap_or_default()
+    pub fn event_classes(&self) -> & [::std::string::String] {
+        self.event_classes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The log status for the Security Lake account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_statuses.is_none()`.
-    pub fn source_statuses(&self) -> &[crate::types::DataLakeSourceStatus] {
-        self.source_statuses.as_deref().unwrap_or_default()
+    pub fn source_statuses(&self) -> & [crate::types::DataLakeSourceStatus] {
+        self.source_statuses.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DataLakeSource {
@@ -168,8 +170,8 @@ impl DataLakeSource {
 pub struct DataLakeSourceBuilder {
     pub(crate) account: ::std::option::Option<::std::string::String>,
     pub(crate) source_name: ::std::option::Option<::std::string::String>,
-    pub(crate) event_classes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) source_statuses: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>,
+    pub(crate) event_classes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) source_statuses: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSourceStatus>>,
 }
 impl DataLakeSourceBuilder {
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
@@ -179,8 +181,7 @@ impl DataLakeSourceBuilder {
     }
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The ID of the Security Lake account for which logs are collected.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +194,7 @@ impl DataLakeSourceBuilder {
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -267,9 +267,9 @@ impl DataLakeSourceBuilder {
     /// </ul>
     pub fn event_classes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_classes.unwrap_or_default();
-        v.push(input.into());
-        self.event_classes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_classes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -332,9 +332,8 @@ impl DataLakeSourceBuilder {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_classes = input;
-        self
+    pub fn set_event_classes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_classes = input; self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type of data that the custom source will send to Security Lake. The supported event classes are:</p>
     /// <ul>
@@ -397,7 +396,7 @@ impl DataLakeSourceBuilder {
     /// <li>
     /// <p><code>CLOUD_API</code></p></li>
     /// </ul>
-    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_classes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_classes
     }
     /// Appends an item to `source_statuses`.
@@ -407,26 +406,30 @@ impl DataLakeSourceBuilder {
     /// <p>The log status for the Security Lake account.</p>
     pub fn source_statuses(mut self, input: crate::types::DataLakeSourceStatus) -> Self {
         let mut v = self.source_statuses.unwrap_or_default();
-        v.push(input);
-        self.source_statuses = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_statuses = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn set_source_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>>) -> Self {
-        self.source_statuses = input;
-        self
+    pub fn set_source_statuses(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSourceStatus>>) -> Self {
+        self.source_statuses = input; self
     }
     /// <p>The log status for the Security Lake account.</p>
-    pub fn get_source_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeSourceStatus>> {
+    pub fn get_source_statuses(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataLakeSourceStatus>> {
         &self.source_statuses
     }
     /// Consumes the builder and constructs a [`DataLakeSource`](crate::types::DataLakeSource).
     pub fn build(self) -> crate::types::DataLakeSource {
         crate::types::DataLakeSource {
-            account: self.account,
-            source_name: self.source_name,
-            event_classes: self.event_classes,
-            source_statuses: self.source_statuses,
+            account: self.account
+            ,
+            source_name: self.source_name
+            ,
+            event_classes: self.event_classes
+            ,
+            source_statuses: self.source_statuses
+            ,
         }
     }
 }
+

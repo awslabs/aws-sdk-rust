@@ -4,7 +4,7 @@
 /// <p>When you create a new Amazon Web Services organization, it might take up to 24 hours to generate the statistics summary for this organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationStatistics {
+pub struct OrganizationStatistics  {
     /// <p>Total number of accounts in your Amazon Web Services organization.</p>
     pub total_accounts_count: ::std::option::Option<i32>,
     /// <p>Total number of accounts in your Amazon Web Services organization that are associated with GuardDuty.</p>
@@ -14,9 +14,9 @@ pub struct OrganizationStatistics {
     /// <p>Total number of accounts that have enabled GuardDuty.</p>
     pub enabled_accounts_count: ::std::option::Option<i32>,
     /// <p>Retrieves the coverage statistics for each feature.</p>
-    pub count_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureStatistics>>,
+    pub count_by_feature: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureStatistics>>,
 }
-impl OrganizationStatistics {
+impl  OrganizationStatistics  {
     /// <p>Total number of accounts in your Amazon Web Services organization.</p>
     pub fn total_accounts_count(&self) -> ::std::option::Option<i32> {
         self.total_accounts_count
@@ -34,10 +34,11 @@ impl OrganizationStatistics {
         self.enabled_accounts_count
     }
     /// <p>Retrieves the coverage statistics for each feature.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.count_by_feature.is_none()`.
-    pub fn count_by_feature(&self) -> &[crate::types::OrganizationFeatureStatistics] {
-        self.count_by_feature.as_deref().unwrap_or_default()
+    pub fn count_by_feature(&self) -> & [crate::types::OrganizationFeatureStatistics] {
+        self.count_by_feature.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OrganizationStatistics {
@@ -55,7 +56,7 @@ pub struct OrganizationStatisticsBuilder {
     pub(crate) member_accounts_count: ::std::option::Option<i32>,
     pub(crate) active_accounts_count: ::std::option::Option<i32>,
     pub(crate) enabled_accounts_count: ::std::option::Option<i32>,
-    pub(crate) count_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureStatistics>>,
+    pub(crate) count_by_feature: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureStatistics>>,
 }
 impl OrganizationStatisticsBuilder {
     /// <p>Total number of accounts in your Amazon Web Services organization.</p>
@@ -65,8 +66,7 @@ impl OrganizationStatisticsBuilder {
     }
     /// <p>Total number of accounts in your Amazon Web Services organization.</p>
     pub fn set_total_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_accounts_count = input;
-        self
+        self.total_accounts_count = input; self
     }
     /// <p>Total number of accounts in your Amazon Web Services organization.</p>
     pub fn get_total_accounts_count(&self) -> &::std::option::Option<i32> {
@@ -79,8 +79,7 @@ impl OrganizationStatisticsBuilder {
     }
     /// <p>Total number of accounts in your Amazon Web Services organization that are associated with GuardDuty.</p>
     pub fn set_member_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.member_accounts_count = input;
-        self
+        self.member_accounts_count = input; self
     }
     /// <p>Total number of accounts in your Amazon Web Services organization that are associated with GuardDuty.</p>
     pub fn get_member_accounts_count(&self) -> &::std::option::Option<i32> {
@@ -93,8 +92,7 @@ impl OrganizationStatisticsBuilder {
     }
     /// <p>Total number of active accounts in your Amazon Web Services organization that are associated with GuardDuty.</p>
     pub fn set_active_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.active_accounts_count = input;
-        self
+        self.active_accounts_count = input; self
     }
     /// <p>Total number of active accounts in your Amazon Web Services organization that are associated with GuardDuty.</p>
     pub fn get_active_accounts_count(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl OrganizationStatisticsBuilder {
     }
     /// <p>Total number of accounts that have enabled GuardDuty.</p>
     pub fn set_enabled_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.enabled_accounts_count = input;
-        self
+        self.enabled_accounts_count = input; self
     }
     /// <p>Total number of accounts that have enabled GuardDuty.</p>
     pub fn get_enabled_accounts_count(&self) -> &::std::option::Option<i32> {
@@ -121,27 +118,32 @@ impl OrganizationStatisticsBuilder {
     /// <p>Retrieves the coverage statistics for each feature.</p>
     pub fn count_by_feature(mut self, input: crate::types::OrganizationFeatureStatistics) -> Self {
         let mut v = self.count_by_feature.unwrap_or_default();
-        v.push(input);
-        self.count_by_feature = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.count_by_feature = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Retrieves the coverage statistics for each feature.</p>
-    pub fn set_count_by_feature(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureStatistics>>) -> Self {
-        self.count_by_feature = input;
-        self
+    pub fn set_count_by_feature(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureStatistics>>) -> Self {
+        self.count_by_feature = input; self
     }
     /// <p>Retrieves the coverage statistics for each feature.</p>
-    pub fn get_count_by_feature(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureStatistics>> {
+    pub fn get_count_by_feature(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OrganizationFeatureStatistics>> {
         &self.count_by_feature
     }
     /// Consumes the builder and constructs a [`OrganizationStatistics`](crate::types::OrganizationStatistics).
     pub fn build(self) -> crate::types::OrganizationStatistics {
         crate::types::OrganizationStatistics {
-            total_accounts_count: self.total_accounts_count,
-            member_accounts_count: self.member_accounts_count,
-            active_accounts_count: self.active_accounts_count,
-            enabled_accounts_count: self.enabled_accounts_count,
-            count_by_feature: self.count_by_feature,
+            total_accounts_count: self.total_accounts_count
+            ,
+            member_accounts_count: self.member_accounts_count
+            ,
+            active_accounts_count: self.active_accounts_count
+            ,
+            enabled_accounts_count: self.enabled_accounts_count
+            ,
+            count_by_feature: self.count_by_feature
+            ,
         }
     }
 }
+

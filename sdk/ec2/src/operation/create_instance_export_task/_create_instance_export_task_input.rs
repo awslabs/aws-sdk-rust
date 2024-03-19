@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateInstanceExportTaskInput {
+pub struct CreateInstanceExportTaskInput  {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The format and location for an export instance task.</p>
@@ -12,30 +12,31 @@ pub struct CreateInstanceExportTaskInput {
     /// <p>The target virtualization environment.</p>
     pub target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
-impl CreateInstanceExportTaskInput {
+impl  CreateInstanceExportTaskInput  {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The format and location for an export instance task.</p>
-    pub fn export_to_s3_task(&self) -> ::std::option::Option<&crate::types::ExportToS3TaskSpecification> {
+    pub fn export_to_s3_task(&self) -> ::std::option::Option<& crate::types::ExportToS3TaskSpecification> {
         self.export_to_s3_task.as_ref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The target virtualization environment.</p>
-    pub fn target_environment(&self) -> ::std::option::Option<&crate::types::ExportEnvironment> {
+    pub fn target_environment(&self) -> ::std::option::Option<& crate::types::ExportEnvironment> {
         self.target_environment.as_ref()
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateInstanceExportTaskInput {
@@ -53,7 +54,7 @@ pub struct CreateInstanceExportTaskInputBuilder {
     pub(crate) export_to_s3_task: ::std::option::Option<crate::types::ExportToS3TaskSpecification>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
 }
 impl CreateInstanceExportTaskInputBuilder {
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
@@ -63,8 +64,7 @@ impl CreateInstanceExportTaskInputBuilder {
     }
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description for the conversion task or the resource being exported. The maximum length is 255 characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl CreateInstanceExportTaskInputBuilder {
     }
     /// <p>The format and location for an export instance task.</p>
     pub fn set_export_to_s3_task(mut self, input: ::std::option::Option<crate::types::ExportToS3TaskSpecification>) -> Self {
-        self.export_to_s3_task = input;
-        self
+        self.export_to_s3_task = input; self
     }
     /// <p>The format and location for an export instance task.</p>
     pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3TaskSpecification> {
@@ -93,8 +92,7 @@ impl CreateInstanceExportTaskInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl CreateInstanceExportTaskInputBuilder {
     }
     /// <p>The target virtualization environment.</p>
     pub fn set_target_environment(mut self, input: ::std::option::Option<crate::types::ExportEnvironment>) -> Self {
-        self.target_environment = input;
-        self
+        self.target_environment = input; self
     }
     /// <p>The target virtualization environment.</p>
     pub fn get_target_environment(&self) -> &::std::option::Option<crate::types::ExportEnvironment> {
@@ -122,32 +119,34 @@ impl CreateInstanceExportTaskInputBuilder {
     /// <p>The tags to apply to the export instance task during creation.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags to apply to the export instance task during creation.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateInstanceExportTaskInput`](crate::operation::create_instance_export_task::CreateInstanceExportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_instance_export_task::CreateInstanceExportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_instance_export_task::CreateInstanceExportTaskInput {
-            description: self.description,
-            export_to_s3_task: self.export_to_s3_task,
-            instance_id: self.instance_id,
-            target_environment: self.target_environment,
-            tag_specifications: self.tag_specifications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_instance_export_task::CreateInstanceExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_instance_export_task::CreateInstanceExportTaskInput {
+                description: self.description
+                ,
+                export_to_s3_task: self.export_to_s3_task
+                ,
+                instance_id: self.instance_id
+                ,
+                target_environment: self.target_environment
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
+        )
     }
 }
+

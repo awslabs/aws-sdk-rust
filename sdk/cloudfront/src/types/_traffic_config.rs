@@ -3,7 +3,7 @@
 /// <p>The traffic configuration of your continuous deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrafficConfig {
+pub struct TrafficConfig  {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
     pub single_weight_config: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>,
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
@@ -11,17 +11,17 @@ pub struct TrafficConfig {
     /// <p>The type of traffic configuration.</p>
     pub r#type: crate::types::ContinuousDeploymentPolicyType,
 }
-impl TrafficConfig {
+impl  TrafficConfig  {
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
-    pub fn single_weight_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleWeightConfig> {
+    pub fn single_weight_config(&self) -> ::std::option::Option<& crate::types::ContinuousDeploymentSingleWeightConfig> {
         self.single_weight_config.as_ref()
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
-    pub fn single_header_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentSingleHeaderConfig> {
+    pub fn single_header_config(&self) -> ::std::option::Option<& crate::types::ContinuousDeploymentSingleHeaderConfig> {
         self.single_header_config.as_ref()
     }
     /// <p>The type of traffic configuration.</p>
-    pub fn r#type(&self) -> &crate::types::ContinuousDeploymentPolicyType {
+    pub fn r#type(&self) -> & crate::types::ContinuousDeploymentPolicyType {
         &self.r#type
     }
 }
@@ -48,8 +48,7 @@ impl TrafficConfigBuilder {
     }
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
     pub fn set_single_weight_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig>) -> Self {
-        self.single_weight_config = input;
-        self
+        self.single_weight_config = input; self
     }
     /// <p>Contains the percentage of traffic to send to the staging distribution.</p>
     pub fn get_single_weight_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleWeightConfig> {
@@ -62,8 +61,7 @@ impl TrafficConfigBuilder {
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
     pub fn set_single_header_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig>) -> Self {
-        self.single_header_config = input;
-        self
+        self.single_header_config = input; self
     }
     /// <p>Determines which HTTP requests are sent to the staging distribution.</p>
     pub fn get_single_header_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentSingleHeaderConfig> {
@@ -77,8 +75,7 @@ impl TrafficConfigBuilder {
     }
     /// <p>The type of traffic configuration.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of traffic configuration.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyType> {
@@ -88,15 +85,19 @@ impl TrafficConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::TrafficConfigBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::TrafficConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TrafficConfig {
-            single_weight_config: self.single_weight_config,
-            single_header_config: self.single_header_config,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building TrafficConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TrafficConfig {
+                single_weight_config: self.single_weight_config
+                ,
+                single_header_config: self.single_header_config
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building TrafficConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

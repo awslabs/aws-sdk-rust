@@ -3,7 +3,7 @@
 /// <p>Aggregation of Recommendation Resources</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationResourcesAggregates {
+pub struct RecommendationResourcesAggregates  {
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
     pub ok_count: i64,
     /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
@@ -11,7 +11,7 @@ pub struct RecommendationResourcesAggregates {
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub error_count: i64,
 }
-impl RecommendationResourcesAggregates {
+impl  RecommendationResourcesAggregates  {
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
     pub fn ok_count(&self) -> i64 {
         self.ok_count
@@ -49,8 +49,7 @@ impl RecommendationResourcesAggregatesBuilder {
     }
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
     pub fn set_ok_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ok_count = input;
-        self
+        self.ok_count = input; self
     }
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
     pub fn get_ok_count(&self) -> &::std::option::Option<i64> {
@@ -64,8 +63,7 @@ impl RecommendationResourcesAggregatesBuilder {
     }
     /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub fn set_warning_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.warning_count = input;
-        self
+        self.warning_count = input; self
     }
     /// <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check</p>
     pub fn get_warning_count(&self) -> &::std::option::Option<i64> {
@@ -79,8 +77,7 @@ impl RecommendationResourcesAggregatesBuilder {
     }
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub fn set_error_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.error_count = input;
-        self
+        self.error_count = input; self
     }
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub fn get_error_count(&self) -> &::std::option::Option<i64> {
@@ -92,25 +89,25 @@ impl RecommendationResourcesAggregatesBuilder {
     /// - [`warning_count`](crate::types::builders::RecommendationResourcesAggregatesBuilder::warning_count)
     /// - [`error_count`](crate::types::builders::RecommendationResourcesAggregatesBuilder::error_count)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationResourcesAggregates, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationResourcesAggregates {
-            ok_count: self.ok_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ok_count",
-                    "ok_count was not specified but it is required when building RecommendationResourcesAggregates",
-                )
-            })?,
-            warning_count: self.warning_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "warning_count",
-                    "warning_count was not specified but it is required when building RecommendationResourcesAggregates",
-                )
-            })?,
-            error_count: self.error_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_count",
-                    "error_count was not specified but it is required when building RecommendationResourcesAggregates",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecommendationResourcesAggregates {
+                ok_count: self.ok_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("ok_count", "ok_count was not specified but it is required when building RecommendationResourcesAggregates")
+                    )?
+                ,
+                warning_count: self.warning_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("warning_count", "warning_count was not specified but it is required when building RecommendationResourcesAggregates")
+                    )?
+                ,
+                error_count: self.error_count
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_count", "error_count was not specified but it is required when building RecommendationResourcesAggregates")
+                    )?
+                ,
+            }
+        )
     }
 }
+

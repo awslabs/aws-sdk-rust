@@ -3,22 +3,21 @@
 /// <p>An object that contains details about the data source of the import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportDataSource {
+pub struct ImportDataSource  {
     /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
     /// <p></p></object></i></p>
     pub s3_url: ::std::string::String,
     /// <p>The data format of the import job's data source.</p>
     pub data_format: crate::types::DataFormat,
 }
-impl ImportDataSource {
+impl  ImportDataSource  {
     /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
     /// <p></p></object></i></p>
-    pub fn s3_url(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_url.deref()
+    pub fn s3_url(&self) -> & str {
+        use std::ops::Deref; self.s3_url.deref()
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn data_format(&self) -> &crate::types::DataFormat {
+    pub fn data_format(&self) -> & crate::types::DataFormat {
         &self.data_format
     }
 }
@@ -47,8 +46,7 @@ impl ImportDataSourceBuilder {
     /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
     /// <p></p></object></i></p>
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_url = input;
-        self
+        self.s3_url = input; self
     }
     /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
     /// <p></p></object></i></p>
@@ -63,8 +61,7 @@ impl ImportDataSourceBuilder {
     }
     /// <p>The data format of the import job's data source.</p>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>The data format of the import job's data source.</p>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
@@ -75,19 +72,20 @@ impl ImportDataSourceBuilder {
     /// - [`s3_url`](crate::types::builders::ImportDataSourceBuilder::s3_url)
     /// - [`data_format`](crate::types::builders::ImportDataSourceBuilder::data_format)
     pub fn build(self) -> ::std::result::Result<crate::types::ImportDataSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ImportDataSource {
-            s3_url: self.s3_url.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_url",
-                    "s3_url was not specified but it is required when building ImportDataSource",
-                )
-            })?,
-            data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_format",
-                    "data_format was not specified but it is required when building ImportDataSource",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ImportDataSource {
+                s3_url: self.s3_url
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_url", "s3_url was not specified but it is required when building ImportDataSource")
+                    )?
+                ,
+                data_format: self.data_format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_format", "data_format was not specified but it is required when building ImportDataSource")
+                    )?
+                ,
+            }
+        )
     }
 }
+

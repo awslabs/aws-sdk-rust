@@ -2,12 +2,10 @@
 
 /// Opaque struct used as inner data for the `Unknown` variant defined in enums in
 /// the crate.
-///
+/// 
 /// This is not intended to be used directly.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub struct UnknownVariantValue(pub(crate) ::std::string::String);
 impl UnknownVariantValue {
     pub(crate) fn as_str(&self) -> &str {
@@ -15,7 +13,8 @@ impl UnknownVariantValue {
     }
 }
 impl ::std::fmt::Display for UnknownVariantValue {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        write!(f, "{}", self.0)
-    }
-}
+                    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                        write!(f, "{}", self.0)
+                    }
+                }
+

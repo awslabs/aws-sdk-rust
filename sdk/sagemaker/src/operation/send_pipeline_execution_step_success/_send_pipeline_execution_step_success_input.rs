@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendPipelineExecutionStepSuccessInput {
+pub struct SendPipelineExecutionStepSuccessInput  {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     pub callback_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the output parameters of the callback step.</p>
-    pub output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
+    pub output_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::OutputParameter>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
-impl SendPipelineExecutionStepSuccessInput {
+impl  SendPipelineExecutionStepSuccessInput  {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(&self) -> ::std::option::Option<&str> {
+    pub fn callback_token(&self) -> ::std::option::Option<& str> {
         self.callback_token.as_deref()
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_parameters.is_none()`.
-    pub fn output_parameters(&self) -> &[crate::types::OutputParameter] {
-        self.output_parameters.as_deref().unwrap_or_default()
+    pub fn output_parameters(&self) -> & [crate::types::OutputParameter] {
+        self.output_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl SendPipelineExecutionStepSuccessInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepSuccessInputBuilder {
     pub(crate) callback_token: ::std::option::Option<::std::string::String>,
-    pub(crate) output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
+    pub(crate) output_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::OutputParameter>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl SendPipelineExecutionStepSuccessInputBuilder {
@@ -50,8 +51,7 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     pub fn set_callback_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.callback_token = input;
-        self
+        self.callback_token = input; self
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
     /// <p>A list of the output parameters of the callback step.</p>
     pub fn output_parameters(mut self, input: crate::types::OutputParameter) -> Self {
         let mut v = self.output_parameters.unwrap_or_default();
-        v.push(input);
-        self.output_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    pub fn set_output_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>) -> Self {
-        self.output_parameters = input;
-        self
+    pub fn set_output_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputParameter>>) -> Self {
+        self.output_parameters = input; self
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    pub fn get_output_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+    pub fn get_output_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputParameter>> {
         &self.output_parameters
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
@@ -84,26 +83,24 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepSuccessInput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput {
-                callback_token: self.callback_token,
-                output_parameters: self.output_parameters,
-                client_request_token: self.client_request_token,
-            },
+                callback_token: self.callback_token
+                ,
+                output_parameters: self.output_parameters
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

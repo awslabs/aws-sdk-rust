@@ -3,13 +3,13 @@
 /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecondaryValueOptions {
+pub struct SecondaryValueOptions  {
     /// <p>Determines the visibility of the secondary value.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
-impl SecondaryValueOptions {
+impl  SecondaryValueOptions  {
     /// <p>Determines the visibility of the secondary value.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl SecondaryValueOptionsBuilder {
     }
     /// <p>Determines the visibility of the secondary value.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>Determines the visibility of the secondary value.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
@@ -43,6 +42,10 @@ impl SecondaryValueOptionsBuilder {
     }
     /// Consumes the builder and constructs a [`SecondaryValueOptions`](crate::types::SecondaryValueOptions).
     pub fn build(self) -> crate::types::SecondaryValueOptions {
-        crate::types::SecondaryValueOptions { visibility: self.visibility }
+        crate::types::SecondaryValueOptions {
+            visibility: self.visibility
+            ,
+        }
     }
 }
+

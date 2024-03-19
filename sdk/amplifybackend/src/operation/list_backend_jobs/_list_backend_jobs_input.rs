@@ -3,7 +3,7 @@
 /// <p>The request body for ListBackendJobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBackendJobsInput {
+pub struct ListBackendJobsInput  {
     /// <p>The app ID.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment.</p>
@@ -19,17 +19,17 @@ pub struct ListBackendJobsInput {
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl ListBackendJobsInput {
+impl  ListBackendJobsInput  {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> ::std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of results that you want in the response.</p>
@@ -37,15 +37,15 @@ impl ListBackendJobsInput {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>The name of the backend environment.</p>
     pub fn set_backend_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backend_environment_name = input;
-        self
+        self.backend_environment_name = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID for the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +117,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>The maximum number of results that you want in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results that you want in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -134,8 +130,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +143,7 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,25 +156,32 @@ impl ListBackendJobsInputBuilder {
     }
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Filters the list of response objects to include only those with the specified status.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListBackendJobsInput`](crate::operation::list_backend_jobs::ListBackendJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_backend_jobs::ListBackendJobsInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            job_id: self.job_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            operation: self.operation,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_backend_jobs::ListBackendJobsInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                operation: self.operation
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

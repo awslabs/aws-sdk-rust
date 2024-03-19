@@ -3,7 +3,7 @@
 /// Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDecryptionSettings {
+pub struct InputDecryptionSettings  {
     /// Specify the encryption mode that you used to encrypt your input files.
     pub decryption_mode: ::std::option::Option<crate::types::DecryptionMode>,
     /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
@@ -13,21 +13,21 @@ pub struct InputDecryptionSettings {
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
     pub kms_key_region: ::std::option::Option<::std::string::String>,
 }
-impl InputDecryptionSettings {
+impl  InputDecryptionSettings  {
     /// Specify the encryption mode that you used to encrypt your input files.
-    pub fn decryption_mode(&self) -> ::std::option::Option<&crate::types::DecryptionMode> {
+    pub fn decryption_mode(&self) -> ::std::option::Option<& crate::types::DecryptionMode> {
         self.decryption_mode.as_ref()
     }
     /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
-    pub fn encrypted_decryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encrypted_decryption_key(&self) -> ::std::option::Option<& str> {
         self.encrypted_decryption_key.as_deref()
     }
     /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
-    pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
+    pub fn initialization_vector(&self) -> ::std::option::Option<& str> {
         self.initialization_vector.as_deref()
     }
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
-    pub fn kms_key_region(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_region(&self) -> ::std::option::Option<& str> {
         self.kms_key_region.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl InputDecryptionSettingsBuilder {
     }
     /// Specify the encryption mode that you used to encrypt your input files.
     pub fn set_decryption_mode(mut self, input: ::std::option::Option<crate::types::DecryptionMode>) -> Self {
-        self.decryption_mode = input;
-        self
+        self.decryption_mode = input; self
     }
     /// Specify the encryption mode that you used to encrypt your input files.
     pub fn get_decryption_mode(&self) -> &::std::option::Option<crate::types::DecryptionMode> {
@@ -69,8 +68,7 @@ impl InputDecryptionSettingsBuilder {
     }
     /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
     pub fn set_encrypted_decryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encrypted_decryption_key = input;
-        self
+        self.encrypted_decryption_key = input; self
     }
     /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
     pub fn get_encrypted_decryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl InputDecryptionSettingsBuilder {
     }
     /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
     pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.initialization_vector = input;
-        self
+        self.initialization_vector = input; self
     }
     /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl InputDecryptionSettingsBuilder {
     }
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
     pub fn set_kms_key_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_region = input;
-        self
+        self.kms_key_region = input; self
     }
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
     pub fn get_kms_key_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl InputDecryptionSettingsBuilder {
     /// Consumes the builder and constructs a [`InputDecryptionSettings`](crate::types::InputDecryptionSettings).
     pub fn build(self) -> crate::types::InputDecryptionSettings {
         crate::types::InputDecryptionSettings {
-            decryption_mode: self.decryption_mode,
-            encrypted_decryption_key: self.encrypted_decryption_key,
-            initialization_vector: self.initialization_vector,
-            kms_key_region: self.kms_key_region,
+            decryption_mode: self.decryption_mode
+            ,
+            encrypted_decryption_key: self.encrypted_decryption_key
+            ,
+            initialization_vector: self.initialization_vector
+            ,
+            kms_key_region: self.kms_key_region
+            ,
         }
     }
 }
+

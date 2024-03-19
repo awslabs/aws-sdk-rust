@@ -3,7 +3,7 @@
 /// <p>Defines a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationItem {
+pub struct RecommendationItem  {
     /// <p>Identifier of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifier of the target account.</p>
@@ -17,17 +17,17 @@ pub struct RecommendationItem {
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
-impl RecommendationItem {
+impl  RecommendationItem  {
     /// <p>Identifier of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Identifier of the target account.</p>
-    pub fn target_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_account_id(&self) -> ::std::option::Option<& str> {
         self.target_account_id.as_deref()
     }
     /// <p>The target region.</p>
-    pub fn target_region(&self) -> ::std::option::Option<&str> {
+    pub fn target_region(&self) -> ::std::option::Option<& str> {
         self.target_region.as_deref()
     }
     /// <p>Specifies if the recommendation has already been implemented.</p>
@@ -39,7 +39,7 @@ impl RecommendationItem {
         self.excluded
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
-    pub fn exclude_reason(&self) -> ::std::option::Option<&crate::types::ExcludeRecommendationReason> {
+    pub fn exclude_reason(&self) -> ::std::option::Option<& crate::types::ExcludeRecommendationReason> {
         self.exclude_reason.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>Identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Identifier of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>Identifier of the target account.</p>
     pub fn set_target_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_account_id = input;
-        self
+        self.target_account_id = input; self
     }
     /// <p>Identifier of the target account.</p>
     pub fn get_target_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>The target region.</p>
     pub fn set_target_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_region = input;
-        self
+        self.target_region = input; self
     }
     /// <p>The target region.</p>
     pub fn get_target_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub fn set_already_implemented(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.already_implemented = input;
-        self
+        self.already_implemented = input; self
     }
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub fn get_already_implemented(&self) -> &::std::option::Option<bool> {
@@ -125,8 +121,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>Indicates if an operational recommendation item is excluded.</p>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Indicates if an operational recommendation item is excluded.</p>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
@@ -139,8 +134,7 @@ impl RecommendationItemBuilder {
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn set_exclude_reason(mut self, input: ::std::option::Option<crate::types::ExcludeRecommendationReason>) -> Self {
-        self.exclude_reason = input;
-        self
+        self.exclude_reason = input; self
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn get_exclude_reason(&self) -> &::std::option::Option<crate::types::ExcludeRecommendationReason> {
@@ -149,12 +143,19 @@ impl RecommendationItemBuilder {
     /// Consumes the builder and constructs a [`RecommendationItem`](crate::types::RecommendationItem).
     pub fn build(self) -> crate::types::RecommendationItem {
         crate::types::RecommendationItem {
-            resource_id: self.resource_id,
-            target_account_id: self.target_account_id,
-            target_region: self.target_region,
-            already_implemented: self.already_implemented,
-            excluded: self.excluded,
-            exclude_reason: self.exclude_reason,
+            resource_id: self.resource_id
+            ,
+            target_account_id: self.target_account_id
+            ,
+            target_region: self.target_region
+            ,
+            already_implemented: self.already_implemented
+            ,
+            excluded: self.excluded
+            ,
+            exclude_reason: self.exclude_reason
+            ,
         }
     }
 }
+

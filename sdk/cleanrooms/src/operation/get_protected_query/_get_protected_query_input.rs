@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProtectedQueryInput {
+pub struct GetProtectedQueryInput  {
     /// <p>The identifier for a membership in a protected query instance.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a protected query instance.</p>
     pub protected_query_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetProtectedQueryInput {
+impl  GetProtectedQueryInput  {
     /// <p>The identifier for a membership in a protected query instance.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn protected_query_identifier(&self) -> ::std::option::Option<& str> {
         self.protected_query_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProtectedQueryInputBuilder {
     }
     /// <p>The identifier for a membership in a protected query instance.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for a membership in a protected query instance.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetProtectedQueryInputBuilder {
     }
     /// <p>The identifier for a protected query instance.</p>
     pub fn set_protected_query_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protected_query_identifier = input;
-        self
+        self.protected_query_identifier = input; self
     }
     /// <p>The identifier for a protected query instance.</p>
     pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.protected_query_identifier
     }
     /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_protected_query::GetProtectedQueryInput {
-            membership_identifier: self.membership_identifier,
-            protected_query_identifier: self.protected_query_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_protected_query::GetProtectedQueryInput {
+                membership_identifier: self.membership_identifier
+                ,
+                protected_query_identifier: self.protected_query_identifier
+                ,
+            }
+        )
     }
 }
+

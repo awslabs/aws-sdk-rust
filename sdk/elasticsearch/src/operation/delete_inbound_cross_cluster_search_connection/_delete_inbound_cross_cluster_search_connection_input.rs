@@ -3,20 +3,19 @@
 /// <p>Container for the parameters to the <code><code>DeleteInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInboundCrossClusterSearchConnectionInput {
+pub struct DeleteInboundCrossClusterSearchConnectionInput  {
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
     pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteInboundCrossClusterSearchConnectionInput {
+impl  DeleteInboundCrossClusterSearchConnectionInput  {
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
-    pub fn cross_cluster_search_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn cross_cluster_search_connection_id(&self) -> ::std::option::Option<& str> {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
 impl DeleteInboundCrossClusterSearchConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionInput`](crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder {
+    pub fn builder() -> crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder {
         crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder::default()
     }
 }
@@ -36,24 +35,20 @@ impl DeleteInboundCrossClusterSearchConnectionInputBuilder {
     }
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
     pub fn set_cross_cluster_search_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cross_cluster_search_connection_id = input;
-        self
+        self.cross_cluster_search_connection_id = input; self
     }
     /// <p>The id of the inbound connection that you want to permanently delete.</p>
     pub fn get_cross_cluster_search_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cross_cluster_search_connection_id
     }
     /// Consumes the builder and constructs a [`DeleteInboundCrossClusterSearchConnectionInput`](crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnectionInput {
-                cross_cluster_search_connection_id: self.cross_cluster_search_connection_id,
-            },
+                cross_cluster_search_connection_id: self.cross_cluster_search_connection_id
+                ,
+            }
         )
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>Result message wrapping a single description of an application version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApplicationVersionOutput {
+pub struct CreateApplicationVersionOutput  {
     /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }
-impl CreateApplicationVersionOutput {
+impl  CreateApplicationVersionOutput  {
     /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
-    pub fn application_version(&self) -> ::std::option::Option<&crate::types::ApplicationVersionDescription> {
+    pub fn application_version(&self) -> ::std::option::Option<& crate::types::ApplicationVersionDescription> {
         self.application_version.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateApplicationVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput).
     pub fn builder() -> crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateApplicationVersionOutputBuilder {
     }
     /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn set_application_version(mut self, input: ::std::option::Option<crate::types::ApplicationVersionDescription>) -> Self {
-        self.application_version = input;
-        self
+        self.application_version = input; self
     }
     /// <p>The <code>ApplicationVersionDescription</code> of the application version.</p>
     pub fn get_application_version(&self) -> &::std::option::Option<crate::types::ApplicationVersionDescription> {
         &self.application_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput).
     pub fn build(self) -> crate::operation::create_application_version::CreateApplicationVersionOutput {
         crate::operation::create_application_version::CreateApplicationVersionOutput {
-            application_version: self.application_version,
+            application_version: self.application_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

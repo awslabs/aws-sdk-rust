@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEventStreamOutput {
+pub struct CreateEventStreamOutput  {
     /// <p>A unique identifier for the event stream.</p>
     pub event_stream_arn: ::std::string::String,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CreateEventStreamOutput {
+impl  CreateEventStreamOutput  {
     /// <p>A unique identifier for the event stream.</p>
-    pub fn event_stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.event_stream_arn.deref()
+    pub fn event_stream_arn(&self) -> & str {
+        use std::ops::Deref; self.event_stream_arn.deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateEventStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateEventStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventStreamOutput`](crate::operation::create_event_stream::CreateEventStreamOutput).
     pub fn builder() -> crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder {
@@ -37,7 +36,7 @@ impl CreateEventStreamOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateEventStreamOutputBuilder {
     pub(crate) event_stream_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateEventStreamOutputBuilder {
@@ -49,8 +48,7 @@ impl CreateEventStreamOutputBuilder {
     }
     /// <p>A unique identifier for the event stream.</p>
     pub fn set_event_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_stream_arn = input;
-        self
+        self.event_stream_arn = input; self
     }
     /// <p>A unique identifier for the event stream.</p>
     pub fn get_event_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,43 +61,43 @@ impl CreateEventStreamOutputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateEventStreamOutput`](crate::operation::create_event_stream::CreateEventStreamOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_stream_arn`](crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder::event_stream_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_event_stream::CreateEventStreamOutput {
-            event_stream_arn: self.event_stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_stream_arn",
-                    "event_stream_arn was not specified but it is required when building CreateEventStreamOutput",
-                )
-            })?,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_event_stream::CreateEventStreamOutput {
+                event_stream_arn: self.event_stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_stream_arn", "event_stream_arn was not specified but it is required when building CreateEventStreamOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

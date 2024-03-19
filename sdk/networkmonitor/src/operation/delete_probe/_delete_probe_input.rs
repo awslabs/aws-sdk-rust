@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProbeInput {
+pub struct DeleteProbeInput  {
     /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
     pub probe_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteProbeInput {
+impl  DeleteProbeInput  {
     /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
-    pub fn probe_id(&self) -> ::std::option::Option<&str> {
+    pub fn probe_id(&self) -> ::std::option::Option<& str> {
         self.probe_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteProbeInputBuilder {
     }
     /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code> action.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl DeleteProbeInputBuilder {
     }
     /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
     pub fn set_probe_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.probe_id = input;
-        self
+        self.probe_id = input; self
     }
     /// <p>The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes and probe IDs associated with the monitor.</p>
     pub fn get_probe_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl DeleteProbeInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteProbeInput`](crate::operation::delete_probe::DeleteProbeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_probe::DeleteProbeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_probe::DeleteProbeInput {
-            monitor_name: self.monitor_name,
-            probe_id: self.probe_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_probe::DeleteProbeInput {
+                monitor_name: self.monitor_name
+                ,
+                probe_id: self.probe_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A collection of space settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpaceSettings {
+pub struct SpaceSettings  {
     /// <p>The JupyterServer app settings.</p>
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
@@ -17,38 +17,39 @@ pub struct SpaceSettings {
     /// <p>The storage settings for a private space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
+    pub custom_file_systems: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystem>>,
 }
-impl SpaceSettings {
+impl  SpaceSettings  {
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(&self) -> ::std::option::Option<& crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<& crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
     /// <p>The Code Editor application settings.</p>
-    pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::SpaceCodeEditorAppSettings> {
+    pub fn code_editor_app_settings(&self) -> ::std::option::Option<& crate::types::SpaceCodeEditorAppSettings> {
         self.code_editor_app_settings.as_ref()
     }
     /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::SpaceJupyterLabAppSettings> {
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<& crate::types::SpaceJupyterLabAppSettings> {
         self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The type of app created within the space.</p>
-    pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> ::std::option::Option<& crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p>The storage settings for a private space.</p>
-    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
+    pub fn space_storage_settings(&self) -> ::std::option::Option<& crate::types::SpaceStorageSettings> {
         self.space_storage_settings.as_ref()
     }
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_systems.is_none()`.
-    pub fn custom_file_systems(&self) -> &[crate::types::CustomFileSystem] {
-        self.custom_file_systems.as_deref().unwrap_or_default()
+    pub fn custom_file_systems(&self) -> & [crate::types::CustomFileSystem] {
+        self.custom_file_systems.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SpaceSettings {
@@ -68,7 +69,7 @@ pub struct SpaceSettingsBuilder {
     pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
-    pub(crate) custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
+    pub(crate) custom_file_systems: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystem>>,
 }
 impl SpaceSettingsBuilder {
     /// <p>The JupyterServer app settings.</p>
@@ -78,8 +79,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn set_jupyter_server_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
-        self.jupyter_server_app_settings = input;
-        self
+        self.jupyter_server_app_settings = input; self
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn get_jupyter_server_app_settings(&self) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
@@ -92,8 +92,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn set_kernel_gateway_app_settings(mut self, input: ::std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
-        self.kernel_gateway_app_settings = input;
-        self
+        self.kernel_gateway_app_settings = input; self
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
@@ -106,8 +105,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The Code Editor application settings.</p>
     pub fn set_code_editor_app_settings(mut self, input: ::std::option::Option<crate::types::SpaceCodeEditorAppSettings>) -> Self {
-        self.code_editor_app_settings = input;
-        self
+        self.code_editor_app_settings = input; self
     }
     /// <p>The Code Editor application settings.</p>
     pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::SpaceCodeEditorAppSettings> {
@@ -120,8 +118,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The settings for the JupyterLab application.</p>
     pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>) -> Self {
-        self.jupyter_lab_app_settings = input;
-        self
+        self.jupyter_lab_app_settings = input; self
     }
     /// <p>The settings for the JupyterLab application.</p>
     pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::SpaceJupyterLabAppSettings> {
@@ -134,8 +131,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The type of app created within the space.</p>
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
-        self.app_type = input;
-        self
+        self.app_type = input; self
     }
     /// <p>The type of app created within the space.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
@@ -148,8 +144,7 @@ impl SpaceSettingsBuilder {
     }
     /// <p>The storage settings for a private space.</p>
     pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
-        self.space_storage_settings = input;
-        self
+        self.space_storage_settings = input; self
     }
     /// <p>The storage settings for a private space.</p>
     pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
@@ -162,29 +157,36 @@ impl SpaceSettingsBuilder {
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     pub fn custom_file_systems(mut self, input: crate::types::CustomFileSystem) -> Self {
         let mut v = self.custom_file_systems.unwrap_or_default();
-        v.push(input);
-        self.custom_file_systems = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.custom_file_systems = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub fn set_custom_file_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>) -> Self {
-        self.custom_file_systems = input;
-        self
+    pub fn set_custom_file_systems(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystem>>) -> Self {
+        self.custom_file_systems = input; self
     }
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
-    pub fn get_custom_file_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>> {
+    pub fn get_custom_file_systems(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomFileSystem>> {
         &self.custom_file_systems
     }
     /// Consumes the builder and constructs a [`SpaceSettings`](crate::types::SpaceSettings).
     pub fn build(self) -> crate::types::SpaceSettings {
         crate::types::SpaceSettings {
-            jupyter_server_app_settings: self.jupyter_server_app_settings,
-            kernel_gateway_app_settings: self.kernel_gateway_app_settings,
-            code_editor_app_settings: self.code_editor_app_settings,
-            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
-            app_type: self.app_type,
-            space_storage_settings: self.space_storage_settings,
-            custom_file_systems: self.custom_file_systems,
+            jupyter_server_app_settings: self.jupyter_server_app_settings
+            ,
+            kernel_gateway_app_settings: self.kernel_gateway_app_settings
+            ,
+            code_editor_app_settings: self.code_editor_app_settings
+            ,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings
+            ,
+            app_type: self.app_type
+            ,
+            space_storage_settings: self.space_storage_settings
+            ,
+            custom_file_systems: self.custom_file_systems
+            ,
         }
     }
 }
+

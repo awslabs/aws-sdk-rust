@@ -3,19 +3,19 @@
 /// Avail Blanking
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailBlanking {
+pub struct AvailBlanking  {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     pub avail_blanking_image: ::std::option::Option<crate::types::InputLocation>,
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
     pub state: ::std::option::Option<crate::types::AvailBlankingState>,
 }
-impl AvailBlanking {
+impl  AvailBlanking  {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn avail_blanking_image(&self) -> ::std::option::Option<&crate::types::InputLocation> {
+    pub fn avail_blanking_image(&self) -> ::std::option::Option<& crate::types::InputLocation> {
         self.avail_blanking_image.as_ref()
     }
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
-    pub fn state(&self) -> ::std::option::Option<&crate::types::AvailBlankingState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::AvailBlankingState> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl AvailBlankingBuilder {
     }
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     pub fn set_avail_blanking_image(mut self, input: ::std::option::Option<crate::types::InputLocation>) -> Self {
-        self.avail_blanking_image = input;
-        self
+        self.avail_blanking_image = input; self
     }
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     pub fn get_avail_blanking_image(&self) -> &::std::option::Option<crate::types::InputLocation> {
@@ -55,8 +54,7 @@ impl AvailBlankingBuilder {
     }
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AvailBlankingState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AvailBlankingState> {
@@ -65,8 +63,11 @@ impl AvailBlankingBuilder {
     /// Consumes the builder and constructs a [`AvailBlanking`](crate::types::AvailBlanking).
     pub fn build(self) -> crate::types::AvailBlanking {
         crate::types::AvailBlanking {
-            avail_blanking_image: self.avail_blanking_image,
-            state: self.state,
+            avail_blanking_image: self.avail_blanking_image
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

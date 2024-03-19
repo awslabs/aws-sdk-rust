@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConferenceProviders`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::set_next_token):<br>required: **false**<br><p>The tokens used for pagination.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of conference providers to be returned, per paginated calls.</p><br>
-    /// - On success, responds with [`ListConferenceProvidersOutput`](crate::operation::list_conference_providers::ListConferenceProvidersOutput) with field(s):
+                            /// - On success, responds with [`ListConferenceProvidersOutput`](crate::operation::list_conference_providers::ListConferenceProvidersOutput) with field(s):
     ///   - [`conference_providers(Option<Vec::<ConferenceProvider>>)`](crate::operation::list_conference_providers::ListConferenceProvidersOutput::conference_providers): <p>The conference providers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_conference_providers::ListConferenceProvidersOutput::next_token): <p>The tokens used for pagination.</p>
-    /// - On failure, responds with [`SdkError<ListConferenceProvidersError>`](crate::operation::list_conference_providers::ListConferenceProvidersError)
+                            /// - On failure, responds with [`SdkError<ListConferenceProvidersError>`](crate::operation::list_conference_providers::ListConferenceProvidersError)
     #[deprecated(note = "Alexa For Business is no longer supported")]
     pub fn list_conference_providers(&self) -> crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder {
-        crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_conference_providers::builders::ListConferenceProvidersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

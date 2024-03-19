@@ -3,7 +3,7 @@
 /// <p>A representation of a linked account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AccountAssociationsListElement {
+pub struct AccountAssociationsListElement  {
     /// <p>The associating array of account IDs.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
@@ -13,25 +13,25 @@ pub struct AccountAssociationsListElement {
     /// <p>The Amazon Web Services account email.</p>
     pub account_email: ::std::option::Option<::std::string::String>,
 }
-impl AccountAssociationsListElement {
+impl  AccountAssociationsListElement  {
     /// <p>The associating array of account IDs.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
-    pub fn billing_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn billing_group_arn(&self) -> ::std::option::Option<& str> {
         self.billing_group_arn.as_deref()
     }
     /// <p>The Amazon Web Services account name.</p>
-    pub fn account_name(&self) -> ::std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The Amazon Web Services account email.</p>
-    pub fn account_email(&self) -> ::std::option::Option<&str> {
+    pub fn account_email(&self) -> ::std::option::Option<& str> {
         self.account_email.as_deref()
     }
 }
-impl ::std::fmt::Debug for AccountAssociationsListElement {
+impl  ::std::fmt::Debug for AccountAssociationsListElement  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountAssociationsListElement");
         formatter.field("account_id", &self.account_id);
@@ -65,8 +65,7 @@ impl AccountAssociationsListElementBuilder {
     }
     /// <p>The associating array of account IDs.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The associating array of account IDs.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl AccountAssociationsListElementBuilder {
     }
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
     pub fn set_billing_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.billing_group_arn = input;
-        self
+        self.billing_group_arn = input; self
     }
     /// <p>The Billing Group Arn that the linked account is associated to.</p>
     pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl AccountAssociationsListElementBuilder {
     }
     /// <p>The Amazon Web Services account name.</p>
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p>The Amazon Web Services account name.</p>
     pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +104,7 @@ impl AccountAssociationsListElementBuilder {
     }
     /// <p>The Amazon Web Services account email.</p>
     pub fn set_account_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_email = input;
-        self
+        self.account_email = input; self
     }
     /// <p>The Amazon Web Services account email.</p>
     pub fn get_account_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,10 +113,14 @@ impl AccountAssociationsListElementBuilder {
     /// Consumes the builder and constructs a [`AccountAssociationsListElement`](crate::types::AccountAssociationsListElement).
     pub fn build(self) -> crate::types::AccountAssociationsListElement {
         crate::types::AccountAssociationsListElement {
-            account_id: self.account_id,
-            billing_group_arn: self.billing_group_arn,
-            account_name: self.account_name,
-            account_email: self.account_email,
+            account_id: self.account_id
+            ,
+            billing_group_arn: self.billing_group_arn
+            ,
+            account_name: self.account_name
+            ,
+            account_email: self.account_email
+            ,
         }
     }
 }
@@ -134,3 +134,4 @@ impl ::std::fmt::Debug for AccountAssociationsListElementBuilder {
         formatter.finish()
     }
 }
+

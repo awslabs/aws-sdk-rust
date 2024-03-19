@@ -3,7 +3,7 @@
 /// <p>A response that contains the results of an Amazon Web Services Lambda function layer finding aggregation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaLayerAggregationResponse {
+pub struct LambdaLayerAggregationResponse  {
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
     pub function_name: ::std::string::String,
     /// <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
@@ -15,29 +15,25 @@ pub struct LambdaLayerAggregationResponse {
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
-impl LambdaLayerAggregationResponse {
+impl  LambdaLayerAggregationResponse  {
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
-    pub fn function_name(&self) -> &str {
-        use std::ops::Deref;
-        self.function_name.deref()
+    pub fn function_name(&self) -> & str {
+        use std::ops::Deref; self.function_name.deref()
     }
     /// <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
-    pub fn layer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.layer_arn.deref()
+    pub fn layer_arn(&self) -> & str {
+        use std::ops::Deref; self.layer_arn.deref()
     }
     /// <p>The account ID of the Amazon Web Services Lambda function layer.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> & str {
+        use std::ops::Deref; self.account_id.deref()
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
-    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -67,8 +63,7 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The names of the Amazon Web Services Lambda functions associated with the layers.</p>
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The Resource ID of the Amazon Web Services Lambda function layer.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
     pub fn set_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.layer_arn = input;
-        self
+        self.layer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function layer.</p>
     pub fn get_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>The account ID of the Amazon Web Services Lambda function layer.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID of the Amazon Web Services Lambda function layer.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl LambdaLayerAggregationResponseBuilder {
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn set_severity_counts(mut self, input: ::std::option::Option<crate::types::SeverityCounts>) -> Self {
-        self.severity_counts = input;
-        self
+        self.severity_counts = input; self
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
@@ -140,32 +131,32 @@ impl LambdaLayerAggregationResponseBuilder {
     /// - [`layer_arn`](crate::types::builders::LambdaLayerAggregationResponseBuilder::layer_arn)
     /// - [`account_id`](crate::types::builders::LambdaLayerAggregationResponseBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaLayerAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaLayerAggregationResponse {
-            function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_name",
-                    "function_name was not specified but it is required when building LambdaLayerAggregationResponse",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building LambdaLayerAggregationResponse",
-                )
-            })?,
-            layer_arn: self.layer_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "layer_arn",
-                    "layer_arn was not specified but it is required when building LambdaLayerAggregationResponse",
-                )
-            })?,
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building LambdaLayerAggregationResponse",
-                )
-            })?,
-            severity_counts: self.severity_counts,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaLayerAggregationResponse {
+                function_name: self.function_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_name", "function_name was not specified but it is required when building LambdaLayerAggregationResponse")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building LambdaLayerAggregationResponse")
+                    )?
+                ,
+                layer_arn: self.layer_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("layer_arn", "layer_arn was not specified but it is required when building LambdaLayerAggregationResponse")
+                    )?
+                ,
+                account_id: self.account_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "account_id was not specified but it is required when building LambdaLayerAggregationResponse")
+                    )?
+                ,
+                severity_counts: self.severity_counts
+                ,
+            }
+        )
     }
 }
+

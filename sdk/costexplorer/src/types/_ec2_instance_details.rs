@@ -3,7 +3,7 @@
 /// <p>Details about the Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2InstanceDetails {
+pub struct Ec2InstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
     pub family: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance that Amazon Web Services recommends.</p>
@@ -21,29 +21,29 @@ pub struct Ec2InstanceDetails {
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub size_flex_eligible: bool,
 }
-impl Ec2InstanceDetails {
+impl  Ec2InstanceDetails  {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> ::std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<& str> {
         self.family.as_deref()
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Availability Zone of the recommended reservation.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&str> {
+    pub fn tenancy(&self) -> ::std::option::Option<& str> {
         self.tenancy.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -83,8 +83,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.family = input;
-        self
+        self.family = input; self
     }
     /// <p>The instance family of the recommended reservation.</p>
     pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +122,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>The Availability Zone of the recommended reservation.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the recommended reservation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the recommended reservation. The platform is the specific combination of operating system, license model, and software on an instance.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +148,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
     pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +161,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.current_generation = input;
-        self
+        self.current_generation = input; self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
@@ -181,8 +174,7 @@ impl Ec2InstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.size_flex_eligible = input;
-        self
+        self.size_flex_eligible = input; self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
@@ -191,14 +183,25 @@ impl Ec2InstanceDetailsBuilder {
     /// Consumes the builder and constructs a [`Ec2InstanceDetails`](crate::types::Ec2InstanceDetails).
     pub fn build(self) -> crate::types::Ec2InstanceDetails {
         crate::types::Ec2InstanceDetails {
-            family: self.family,
-            instance_type: self.instance_type,
-            region: self.region,
-            availability_zone: self.availability_zone,
-            platform: self.platform,
-            tenancy: self.tenancy,
-            current_generation: self.current_generation.unwrap_or_default(),
-            size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
+            family: self.family
+            ,
+            instance_type: self.instance_type
+            ,
+            region: self.region
+            ,
+            availability_zone: self.availability_zone
+            ,
+            platform: self.platform
+            ,
+            tenancy: self.tenancy
+            ,
+            current_generation: self.current_generation
+                .unwrap_or_default()
+            ,
+            size_flex_eligible: self.size_flex_eligible
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

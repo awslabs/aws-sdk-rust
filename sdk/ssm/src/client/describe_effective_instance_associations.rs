@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEffectiveInstanceAssociations`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_id(impl Into<String>)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The managed node ID for which you want to view all associations.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
-    /// - On success, responds with [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput) with field(s):
     ///   - [`associations(Option<Vec::<InstanceAssociation>>)`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput::associations): <p>The associations for the requested managed node.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    /// - On failure, responds with [`SdkError<DescribeEffectiveInstanceAssociationsError>`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsError)
-    pub fn describe_effective_instance_associations(
-        &self,
-    ) -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder {
-        crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<DescribeEffectiveInstanceAssociationsError>`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsError)
+    pub fn describe_effective_instance_associations(&self) -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder {
+                                crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

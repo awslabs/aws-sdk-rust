@@ -2,36 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListBotReplicasOutput {
+pub struct ListBotReplicasOutput  {
     /// <p>the unique bot IDs in the list of replicated bots.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region of the source bots in the list of replicated bots.</p>
     pub source_region: ::std::option::Option<::std::string::String>,
     /// <p>The summary details for the replicated bots.</p>
-    pub bot_replica_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotReplicaSummary>>,
+    pub bot_replica_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BotReplicaSummary>>,
     _request_id: Option<String>,
 }
-impl ListBotReplicasOutput {
+impl  ListBotReplicasOutput  {
     /// <p>the unique bot IDs in the list of replicated bots.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The source region of the source bots in the list of replicated bots.</p>
-    pub fn source_region(&self) -> ::std::option::Option<&str> {
+    pub fn source_region(&self) -> ::std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The summary details for the replicated bots.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bot_replica_summaries.is_none()`.
-    pub fn bot_replica_summaries(&self) -> &[crate::types::BotReplicaSummary] {
-        self.bot_replica_summaries.as_deref().unwrap_or_default()
+    pub fn bot_replica_summaries(&self) -> & [crate::types::BotReplicaSummary] {
+        self.bot_replica_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListBotReplicasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListBotReplicasOutput {
     /// Creates a new builder-style object to manufacture [`ListBotReplicasOutput`](crate::operation::list_bot_replicas::ListBotReplicasOutput).
     pub fn builder() -> crate::operation::list_bot_replicas::builders::ListBotReplicasOutputBuilder {
@@ -45,7 +46,7 @@ impl ListBotReplicasOutput {
 pub struct ListBotReplicasOutputBuilder {
     pub(crate) bot_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_region: ::std::option::Option<::std::string::String>,
-    pub(crate) bot_replica_summaries: ::std::option::Option<::std::vec::Vec<crate::types::BotReplicaSummary>>,
+    pub(crate) bot_replica_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BotReplicaSummary>>,
     _request_id: Option<String>,
 }
 impl ListBotReplicasOutputBuilder {
@@ -56,8 +57,7 @@ impl ListBotReplicasOutputBuilder {
     }
     /// <p>the unique bot IDs in the list of replicated bots.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>the unique bot IDs in the list of replicated bots.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +70,7 @@ impl ListBotReplicasOutputBuilder {
     }
     /// <p>The source region of the source bots in the list of replicated bots.</p>
     pub fn set_source_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The source region of the source bots in the list of replicated bots.</p>
     pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,35 +83,38 @@ impl ListBotReplicasOutputBuilder {
     /// <p>The summary details for the replicated bots.</p>
     pub fn bot_replica_summaries(mut self, input: crate::types::BotReplicaSummary) -> Self {
         let mut v = self.bot_replica_summaries.unwrap_or_default();
-        v.push(input);
-        self.bot_replica_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bot_replica_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The summary details for the replicated bots.</p>
-    pub fn set_bot_replica_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BotReplicaSummary>>) -> Self {
-        self.bot_replica_summaries = input;
-        self
+    pub fn set_bot_replica_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BotReplicaSummary>>) -> Self {
+        self.bot_replica_summaries = input; self
     }
     /// <p>The summary details for the replicated bots.</p>
-    pub fn get_bot_replica_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotReplicaSummary>> {
+    pub fn get_bot_replica_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BotReplicaSummary>> {
         &self.bot_replica_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListBotReplicasOutput`](crate::operation::list_bot_replicas::ListBotReplicasOutput).
     pub fn build(self) -> crate::operation::list_bot_replicas::ListBotReplicasOutput {
         crate::operation::list_bot_replicas::ListBotReplicasOutput {
-            bot_id: self.bot_id,
-            source_region: self.source_region,
-            bot_replica_summaries: self.bot_replica_summaries,
+            bot_id: self.bot_id
+            ,
+            source_region: self.source_region
+            ,
+            bot_replica_summaries: self.bot_replica_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

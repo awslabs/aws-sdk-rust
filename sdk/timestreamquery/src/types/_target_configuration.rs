@@ -3,13 +3,13 @@
 /// <p>Configuration used for writing the output of a query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetConfiguration {
+pub struct TargetConfiguration  {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
     pub timestream_configuration: ::std::option::Option<crate::types::TimestreamConfiguration>,
 }
-impl TargetConfiguration {
+impl  TargetConfiguration  {
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
-    pub fn timestream_configuration(&self) -> ::std::option::Option<&crate::types::TimestreamConfiguration> {
+    pub fn timestream_configuration(&self) -> ::std::option::Option<& crate::types::TimestreamConfiguration> {
         self.timestream_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl TargetConfigurationBuilder {
     }
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
     pub fn set_timestream_configuration(mut self, input: ::std::option::Option<crate::types::TimestreamConfiguration>) -> Self {
-        self.timestream_configuration = input;
-        self
+        self.timestream_configuration = input; self
     }
     /// <p>Configuration needed to write data into the Timestream database and table.</p>
     pub fn get_timestream_configuration(&self) -> &::std::option::Option<crate::types::TimestreamConfiguration> {
@@ -45,7 +44,9 @@ impl TargetConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetConfiguration`](crate::types::TargetConfiguration).
     pub fn build(self) -> crate::types::TargetConfiguration {
         crate::types::TargetConfiguration {
-            timestream_configuration: self.timestream_configuration,
+            timestream_configuration: self.timestream_configuration
+            ,
         }
     }
 }
+

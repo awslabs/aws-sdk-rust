@@ -3,7 +3,7 @@
 /// <p>Specifies the content and "From" address for an email message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CampaignEmailMessage {
+pub struct CampaignEmailMessage  {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
@@ -13,21 +13,21 @@ pub struct CampaignEmailMessage {
     /// <p>The subject line, or title, of the email.</p>
     pub title: ::std::option::Option<::std::string::String>,
 }
-impl CampaignEmailMessage {
+impl  CampaignEmailMessage  {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
-    pub fn body(&self) -> ::std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(&self) -> ::std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<& str> {
         self.from_address.as_deref()
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
-    pub fn html_body(&self) -> ::std::option::Option<&str> {
+    pub fn html_body(&self) -> ::std::option::Option<& str> {
         self.html_body.as_deref()
     }
     /// <p>The subject line, or title, of the email.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CampaignEmailMessageBuilder {
     }
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CampaignEmailMessageBuilder {
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.from_address = input;
-        self
+        self.from_address = input; self
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     pub fn get_from_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl CampaignEmailMessageBuilder {
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub fn set_html_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.html_body = input;
-        self
+        self.html_body = input; self
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     pub fn get_html_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl CampaignEmailMessageBuilder {
     }
     /// <p>The subject line, or title, of the email.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The subject line, or title, of the email.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl CampaignEmailMessageBuilder {
     /// Consumes the builder and constructs a [`CampaignEmailMessage`](crate::types::CampaignEmailMessage).
     pub fn build(self) -> crate::types::CampaignEmailMessage {
         crate::types::CampaignEmailMessage {
-            body: self.body,
-            from_address: self.from_address,
-            html_body: self.html_body,
-            title: self.title,
+            body: self.body
+            ,
+            from_address: self.from_address
+            ,
+            html_body: self.html_body
+            ,
+            title: self.title
+            ,
         }
     }
 }
+

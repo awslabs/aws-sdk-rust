@@ -3,19 +3,19 @@
 /// <p>A list of parameters for a control. A control can have zero, one, or more than one parameter. An example of a control with two parameters is: "backup plan frequency is at least <code>daily</code> and the retention period is at least <code>1 year</code>". The first parameter is <code>daily</code>. The second parameter is <code>1 year</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ControlInputParameter {
+pub struct ControlInputParameter  {
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub parameter_value: ::std::option::Option<::std::string::String>,
 }
-impl ControlInputParameter {
+impl  ControlInputParameter  {
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
-    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
-    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<& str> {
         self.parameter_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ControlInputParameterBuilder {
     }
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_name = input;
-        self
+        self.parameter_name = input; self
     }
     /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ControlInputParameterBuilder {
     }
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub fn set_parameter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_value = input;
-        self
+        self.parameter_value = input; self
     }
     /// <p>The value of parameter, for example, <code>hourly</code>.</p>
     pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ControlInputParameterBuilder {
     /// Consumes the builder and constructs a [`ControlInputParameter`](crate::types::ControlInputParameter).
     pub fn build(self) -> crate::types::ControlInputParameter {
         crate::types::ControlInputParameter {
-            parameter_name: self.parameter_name,
-            parameter_value: self.parameter_value,
+            parameter_name: self.parameter_name
+            ,
+            parameter_value: self.parameter_value
+            ,
         }
     }
 }
+

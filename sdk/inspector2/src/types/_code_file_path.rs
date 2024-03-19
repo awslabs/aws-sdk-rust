@@ -3,7 +3,7 @@
 /// <p>Contains information on where a code vulnerability is located in your Lambda function.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeFilePath {
+pub struct CodeFilePath  {
     /// <p>The name of the file the code vulnerability was found in.</p>
     pub file_name: ::std::string::String,
     /// <p>The file path to the code that a vulnerability was found in.</p>
@@ -13,16 +13,14 @@ pub struct CodeFilePath {
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
     pub end_line: i32,
 }
-impl CodeFilePath {
+impl  CodeFilePath  {
     /// <p>The name of the file the code vulnerability was found in.</p>
-    pub fn file_name(&self) -> &str {
-        use std::ops::Deref;
-        self.file_name.deref()
+    pub fn file_name(&self) -> & str {
+        use std::ops::Deref; self.file_name.deref()
     }
     /// <p>The file path to the code that a vulnerability was found in.</p>
-    pub fn file_path(&self) -> &str {
-        use std::ops::Deref;
-        self.file_path.deref()
+    pub fn file_path(&self) -> & str {
+        use std::ops::Deref; self.file_path.deref()
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
     pub fn start_line(&self) -> i32 {
@@ -58,8 +56,7 @@ impl CodeFilePathBuilder {
     }
     /// <p>The name of the file the code vulnerability was found in.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The name of the file the code vulnerability was found in.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl CodeFilePathBuilder {
     }
     /// <p>The file path to the code that a vulnerability was found in.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The file path to the code that a vulnerability was found in.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +84,7 @@ impl CodeFilePathBuilder {
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
     pub fn set_start_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.start_line = input;
-        self
+        self.start_line = input; self
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
     pub fn get_start_line(&self) -> &::std::option::Option<i32> {
@@ -103,8 +98,7 @@ impl CodeFilePathBuilder {
     }
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.end_line = input;
-        self
+        self.end_line = input; self
     }
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
     pub fn get_end_line(&self) -> &::std::option::Option<i32> {
@@ -117,31 +111,30 @@ impl CodeFilePathBuilder {
     /// - [`start_line`](crate::types::builders::CodeFilePathBuilder::start_line)
     /// - [`end_line`](crate::types::builders::CodeFilePathBuilder::end_line)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeFilePath, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeFilePath {
-            file_name: self.file_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_name",
-                    "file_name was not specified but it is required when building CodeFilePath",
-                )
-            })?,
-            file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "file_path",
-                    "file_path was not specified but it is required when building CodeFilePath",
-                )
-            })?,
-            start_line: self.start_line.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_line",
-                    "start_line was not specified but it is required when building CodeFilePath",
-                )
-            })?,
-            end_line: self.end_line.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_line",
-                    "end_line was not specified but it is required when building CodeFilePath",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeFilePath {
+                file_name: self.file_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_name", "file_name was not specified but it is required when building CodeFilePath")
+                    )?
+                ,
+                file_path: self.file_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("file_path", "file_path was not specified but it is required when building CodeFilePath")
+                    )?
+                ,
+                start_line: self.start_line
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_line", "start_line was not specified but it is required when building CodeFilePath")
+                    )?
+                ,
+                end_line: self.end_line
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_line", "end_line was not specified but it is required when building CodeFilePath")
+                    )?
+                ,
+            }
+        )
     }
 }
+

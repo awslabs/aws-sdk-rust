@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserRoutingProfileInput {
+pub struct UpdateUserRoutingProfileInput  {
     /// <p>The identifier of the routing profile for the user.</p>
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user account.</p>
@@ -10,17 +10,17 @@ pub struct UpdateUserRoutingProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
 }
-impl UpdateUserRoutingProfileInput {
+impl  UpdateUserRoutingProfileInput  {
     /// <p>The identifier of the routing profile for the user.</p>
-    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateUserRoutingProfileInputBuilder {
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn set_routing_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_profile_id = input;
-        self
+        self.routing_profile_id = input; self
     }
     /// <p>The identifier of the routing profile for the user.</p>
     pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateUserRoutingProfileInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl UpdateUserRoutingProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`UpdateUserRoutingProfileInput`](crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput {
-            routing_profile_id: self.routing_profile_id,
-            user_id: self.user_id,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput {
+                routing_profile_id: self.routing_profile_id
+                ,
+                user_id: self.user_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

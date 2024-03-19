@@ -5,7 +5,7 @@
 /// <p>Amazon Q can't create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Q then will map your newly created metadata field to your index field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttributeCondition {
+pub struct DocumentAttributeCondition  {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Q currently doesn't support <code>_document_body</code> as an attribute key used for the condition.</p>
@@ -17,22 +17,21 @@ pub struct DocumentAttributeCondition {
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
-impl DocumentAttributeCondition {
+impl  DocumentAttributeCondition  {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Q currently doesn't support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn key(&self) -> &str {
-        use std::ops::Deref;
-        self.key.deref()
+    pub fn key(&self) -> & str {
+        use std::ops::Deref; self.key.deref()
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn operator(&self) -> &crate::types::DocumentEnrichmentConditionOperator {
+    pub fn operator(&self) -> & crate::types::DocumentEnrichmentConditionOperator {
         &self.operator
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Q currently doesn't support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
@@ -85,8 +83,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::DocumentEnrichmentConditionOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
@@ -101,8 +98,7 @@ impl DocumentAttributeConditionBuilder {
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
@@ -113,20 +109,22 @@ impl DocumentAttributeConditionBuilder {
     /// - [`key`](crate::types::builders::DocumentAttributeConditionBuilder::key)
     /// - [`operator`](crate::types::builders::DocumentAttributeConditionBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeCondition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentAttributeCondition {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building DocumentAttributeCondition",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building DocumentAttributeCondition",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentAttributeCondition {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building DocumentAttributeCondition")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building DocumentAttributeCondition")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

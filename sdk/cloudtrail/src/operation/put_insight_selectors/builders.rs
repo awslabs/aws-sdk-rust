@@ -5,23 +5,20 @@ pub use crate::operation::put_insight_selectors::_put_insight_selectors_input::P
 
 impl PutInsightSelectorsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_insight_selectors();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_insight_selectors::PutInsightSelectorsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_insight_selectors();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutInsightSelectors`.
-///
+/// 
 /// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail or event data store. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of Insights types. The valid Insights event types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
 /// <p>To enable Insights on an event data store, you must specify the ARNs (or ID suffix of the ARNs) for the source event data store (<code>EventDataStore</code>) and the destination event data store (<code>InsightsDestination</code>). The source event data store logs management events and enables Insights. The destination event data store logs Insights events based upon the management event activity of the source event data store. The source and destination event data stores must belong to the same Amazon Web Services account.</p>
 /// <p>To log Insights events for a trail, you must specify the name (<code>TrailName</code>) of the CloudTrail trail for which you want to change or add Insights selectors.</p>
@@ -30,33 +27,32 @@ impl PutInsightSelectorsInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInsightSelectorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder,
+                    inner: crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        crate::operation::put_insight_selectors::PutInsightSelectorsError,
-    > for PutInsightSelectorsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
+                    crate::operation::put_insight_selectors::PutInsightSelectorsError,
+                > for PutInsightSelectorsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
+                        crate::operation::put_insight_selectors::PutInsightSelectorsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutInsightSelectorsFluentBuilder {
     /// Creates a new `PutInsightSelectors`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl PutInsightSelectorsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_insight_selectors::PutInsightSelectorsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_insight_selectors::PutInsightSelectors::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_insight_selectors::PutInsightSelectors::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
-        crate::operation::put_insight_selectors::PutInsightSelectorsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_insight_selectors::PutInsightSelectorsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_insight_selectors::PutInsightSelectorsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_insight_selectors::PutInsightSelectors::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_insight_selectors::PutInsightSelectors::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_insight_selectors::PutInsightSelectorsOutput, crate::operation::put_insight_selectors::PutInsightSelectorsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     /// <p>You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
     pub fn trail_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,14 +130,14 @@ impl PutInsightSelectorsFluentBuilder {
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>>) -> Self {
+    pub fn set_insight_selectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>>) -> Self {
         self.inner = self.inner.set_insight_selectors(input);
         self
     }
     /// <p>A JSON string that contains the Insights types you want to log on a trail or event data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
     /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
     /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
-    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+    pub fn get_insight_selectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InsightSelector>> {
         self.inner.get_insight_selectors()
     }
     /// <p>The ARN (or ID suffix of the ARN) of the source event data store for which you want to change or add Insights selectors. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code> parameters.</p>
@@ -188,3 +175,4 @@ impl PutInsightSelectorsFluentBuilder {
         self.inner.get_insights_destination()
     }
 }
+

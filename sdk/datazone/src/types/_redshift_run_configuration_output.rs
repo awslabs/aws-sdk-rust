@@ -3,7 +3,7 @@
 /// <p>The configuration details of the Amazon Redshift data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftRunConfigurationOutput {
+pub struct RedshiftRunConfigurationOutput  {
     /// <p>The ID of the Amazon Web Services account included in the configuration details of the Amazon Redshift data source.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Redshift data source.</p>
@@ -11,36 +11,35 @@ pub struct RedshiftRunConfigurationOutput {
     /// <p>The data access role included in the configuration details of the Amazon Redshift data source.</p>
     pub data_access_role: ::std::option::Option<::std::string::String>,
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub relational_filter_configurations: ::std::vec::Vec<crate::types::RelationalFilterConfiguration>,
+    pub relational_filter_configurations: ::std::vec::Vec::<crate::types::RelationalFilterConfiguration>,
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
     pub redshift_credential_configuration: ::std::option::Option<crate::types::RedshiftCredentialConfiguration>,
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
     pub redshift_storage: ::std::option::Option<crate::types::RedshiftStorage>,
 }
-impl RedshiftRunConfigurationOutput {
+impl  RedshiftRunConfigurationOutput  {
     /// <p>The ID of the Amazon Web Services account included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The data access role included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn data_access_role(&self) -> ::std::option::Option<&str> {
+    pub fn data_access_role(&self) -> ::std::option::Option<& str> {
         self.data_access_role.as_deref()
     }
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn relational_filter_configurations(&self) -> &[crate::types::RelationalFilterConfiguration] {
-        use std::ops::Deref;
-        self.relational_filter_configurations.deref()
+    pub fn relational_filter_configurations(&self) -> & [crate::types::RelationalFilterConfiguration] {
+        use std::ops::Deref; self.relational_filter_configurations.deref()
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
-    pub fn redshift_credential_configuration(&self) -> ::std::option::Option<&crate::types::RedshiftCredentialConfiguration> {
+    pub fn redshift_credential_configuration(&self) -> ::std::option::Option<& crate::types::RedshiftCredentialConfiguration> {
         self.redshift_credential_configuration.as_ref()
     }
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
-    pub fn redshift_storage(&self) -> ::std::option::Option<&crate::types::RedshiftStorage> {
+    pub fn redshift_storage(&self) -> ::std::option::Option<& crate::types::RedshiftStorage> {
         self.redshift_storage.as_ref()
     }
 }
@@ -58,7 +57,7 @@ pub struct RedshiftRunConfigurationOutputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) data_access_role: ::std::option::Option<::std::string::String>,
-    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
+    pub(crate) relational_filter_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>,
     pub(crate) redshift_credential_configuration: ::std::option::Option<crate::types::RedshiftCredentialConfiguration>,
     pub(crate) redshift_storage: ::std::option::Option<crate::types::RedshiftStorage>,
 }
@@ -70,8 +69,7 @@ impl RedshiftRunConfigurationOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account included in the configuration details of the Amazon Redshift data source.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account included in the configuration details of the Amazon Redshift data source.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl RedshiftRunConfigurationOutputBuilder {
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Redshift data source.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services region included in the configuration details of the Amazon Redshift data source.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +95,7 @@ impl RedshiftRunConfigurationOutputBuilder {
     }
     /// <p>The data access role included in the configuration details of the Amazon Redshift data source.</p>
     pub fn set_data_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role = input;
-        self
+        self.data_access_role = input; self
     }
     /// <p>The data access role included in the configuration details of the Amazon Redshift data source.</p>
     pub fn get_data_access_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,20 +108,16 @@ impl RedshiftRunConfigurationOutputBuilder {
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
     pub fn relational_filter_configurations(mut self, input: crate::types::RelationalFilterConfiguration) -> Self {
         let mut v = self.relational_filter_configurations.unwrap_or_default();
-        v.push(input);
-        self.relational_filter_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.relational_filter_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn set_relational_filter_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>>,
-    ) -> Self {
-        self.relational_filter_configurations = input;
-        self
+    pub fn set_relational_filter_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>>) -> Self {
+        self.relational_filter_configurations = input; self
     }
     /// <p>The relational filger configurations included in the configuration details of the Amazon Redshift data source.</p>
-    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelationalFilterConfiguration>> {
+    pub fn get_relational_filter_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelationalFilterConfiguration>> {
         &self.relational_filter_configurations
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
@@ -136,8 +128,7 @@ impl RedshiftRunConfigurationOutputBuilder {
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
     pub fn set_redshift_credential_configuration(mut self, input: ::std::option::Option<crate::types::RedshiftCredentialConfiguration>) -> Self {
-        self.redshift_credential_configuration = input;
-        self
+        self.redshift_credential_configuration = input; self
     }
     /// <p>The details of the credentials required to access an Amazon Redshift cluster.</p>
     pub fn get_redshift_credential_configuration(&self) -> &::std::option::Option<crate::types::RedshiftCredentialConfiguration> {
@@ -151,8 +142,7 @@ impl RedshiftRunConfigurationOutputBuilder {
     }
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
     pub fn set_redshift_storage(mut self, input: ::std::option::Option<crate::types::RedshiftStorage>) -> Self {
-        self.redshift_storage = input;
-        self
+        self.redshift_storage = input; self
     }
     /// <p>The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.</p>
     pub fn get_redshift_storage(&self) -> &::std::option::Option<crate::types::RedshiftStorage> {
@@ -162,18 +152,25 @@ impl RedshiftRunConfigurationOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::RedshiftRunConfigurationOutputBuilder::relational_filter_configurations)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftRunConfigurationOutput {
-            account_id: self.account_id,
-            region: self.region,
-            data_access_role: self.data_access_role,
-            relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relational_filter_configurations",
-                    "relational_filter_configurations was not specified but it is required when building RedshiftRunConfigurationOutput",
-                )
-            })?,
-            redshift_credential_configuration: self.redshift_credential_configuration,
-            redshift_storage: self.redshift_storage,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftRunConfigurationOutput {
+                account_id: self.account_id
+                ,
+                region: self.region
+                ,
+                data_access_role: self.data_access_role
+                ,
+                relational_filter_configurations: self.relational_filter_configurations
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relational_filter_configurations", "relational_filter_configurations was not specified but it is required when building RedshiftRunConfigurationOutput")
+                    )?
+                ,
+                redshift_credential_configuration: self.redshift_credential_configuration
+                ,
+                redshift_storage: self.redshift_storage
+                ,
+            }
+        )
     }
 }
+

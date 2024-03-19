@@ -3,13 +3,13 @@
 /// Settings specific to Teletext caption sources, including Page number.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TeletextSourceSettings {
+pub struct TeletextSourceSettings  {
     /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub page_number: ::std::option::Option<::std::string::String>,
 }
-impl TeletextSourceSettings {
+impl  TeletextSourceSettings  {
     /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
-    pub fn page_number(&self) -> ::std::option::Option<&str> {
+    pub fn page_number(&self) -> ::std::option::Option<& str> {
         self.page_number.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TeletextSourceSettingsBuilder {
     }
     /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub fn set_page_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
     pub fn get_page_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl TeletextSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::types::TeletextSourceSettings).
     pub fn build(self) -> crate::types::TeletextSourceSettings {
         crate::types::TeletextSourceSettings {
-            page_number: self.page_number,
+            page_number: self.page_number
+            ,
         }
     }
 }
+

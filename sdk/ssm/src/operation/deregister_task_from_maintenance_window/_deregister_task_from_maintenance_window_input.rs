@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterTaskFromMaintenanceWindowInput {
+pub struct DeregisterTaskFromMaintenanceWindowInput  {
     /// <p>The ID of the maintenance window the task should be removed from.</p>
     pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub window_task_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterTaskFromMaintenanceWindowInput {
+impl  DeregisterTaskFromMaintenanceWindowInput  {
     /// <p>The ID of the maintenance window the task should be removed from.</p>
-    pub fn window_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>The ID of the task to remove from the maintenance window.</p>
-    pub fn window_task_id(&self) -> ::std::option::Option<&str> {
+    pub fn window_task_id(&self) -> ::std::option::Option<& str> {
         self.window_task_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
     }
     /// <p>The ID of the maintenance window the task should be removed from.</p>
     pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// <p>The ID of the maintenance window the task should be removed from.</p>
     pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
     }
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub fn set_window_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.window_task_id = input;
-        self
+        self.window_task_id = input; self
     }
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.window_task_id
     }
     /// Consumes the builder and constructs a [`DeregisterTaskFromMaintenanceWindowInput`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput {
-                window_id: self.window_id,
-                window_task_id: self.window_task_id,
-            },
+                window_id: self.window_id
+                ,
+                window_task_id: self.window_task_id
+                ,
+            }
         )
     }
 }
+

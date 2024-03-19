@@ -3,7 +3,8 @@
 /// Settings to configure an action so that it occurs as soon as possible.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImmediateModeScheduleActionStartSettings {}
+pub struct ImmediateModeScheduleActionStartSettings  {
+}
 impl ImmediateModeScheduleActionStartSettings {
     /// Creates a new builder-style object to manufacture [`ImmediateModeScheduleActionStartSettings`](crate::types::ImmediateModeScheduleActionStartSettings).
     pub fn builder() -> crate::types::builders::ImmediateModeScheduleActionStartSettingsBuilder {
@@ -14,10 +15,13 @@ impl ImmediateModeScheduleActionStartSettings {
 /// A builder for [`ImmediateModeScheduleActionStartSettings`](crate::types::ImmediateModeScheduleActionStartSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ImmediateModeScheduleActionStartSettingsBuilder {}
+pub struct ImmediateModeScheduleActionStartSettingsBuilder {
+}
 impl ImmediateModeScheduleActionStartSettingsBuilder {
     /// Consumes the builder and constructs a [`ImmediateModeScheduleActionStartSettings`](crate::types::ImmediateModeScheduleActionStartSettings).
     pub fn build(self) -> crate::types::ImmediateModeScheduleActionStartSettings {
-        crate::types::ImmediateModeScheduleActionStartSettings {}
+        crate::types::ImmediateModeScheduleActionStartSettings {
+        }
     }
 }
+

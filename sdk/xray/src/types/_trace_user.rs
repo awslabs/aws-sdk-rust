@@ -3,22 +3,23 @@
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TraceUser {
+pub struct TraceUser  {
     /// <p>The user's name.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Services that the user's request hit.</p>
-    pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
+    pub service_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceId>>,
 }
-impl TraceUser {
+impl  TraceUser  {
     /// <p>The user's name.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Services that the user's request hit.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_ids.is_none()`.
-    pub fn service_ids(&self) -> &[crate::types::ServiceId] {
-        self.service_ids.as_deref().unwrap_or_default()
+    pub fn service_ids(&self) -> & [crate::types::ServiceId] {
+        self.service_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TraceUser {
@@ -33,7 +34,7 @@ impl TraceUser {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TraceUserBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
-    pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
+    pub(crate) service_ids: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceId>>,
 }
 impl TraceUserBuilder {
     /// <p>The user's name.</p>
@@ -43,8 +44,7 @@ impl TraceUserBuilder {
     }
     /// <p>The user's name.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The user's name.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl TraceUserBuilder {
     /// <p>Services that the user's request hit.</p>
     pub fn service_ids(mut self, input: crate::types::ServiceId) -> Self {
         let mut v = self.service_ids.unwrap_or_default();
-        v.push(input);
-        self.service_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>) -> Self {
-        self.service_ids = input;
-        self
+    pub fn set_service_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceId>>) -> Self {
+        self.service_ids = input; self
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+    pub fn get_service_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceId>> {
         &self.service_ids
     }
     /// Consumes the builder and constructs a [`TraceUser`](crate::types::TraceUser).
     pub fn build(self) -> crate::types::TraceUser {
         crate::types::TraceUser {
-            user_name: self.user_name,
-            service_ids: self.service_ids,
+            user_name: self.user_name
+            ,
+            service_ids: self.service_ids
+            ,
         }
     }
 }
+

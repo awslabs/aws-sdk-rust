@@ -14,7 +14,9 @@ use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Input};
+use aws_smithy_runtime_api::client::interceptors::context::{
+    BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Input,
+};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -36,7 +38,10 @@ pub(crate) enum Error {
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::UnsizedRequestBody => write!(f, "Only request bodies with a known size can be checksum validated."),
+            Self::UnsizedRequestBody => write!(
+                f,
+                "Only request bodies with a known size can be checksum validated."
+            ),
             Self::ChecksumHeadersAreUnsupportedForStreamingBody => write!(
                 f,
                 "Checksum header insertion is only supported for non-streaming HTTP bodies. \
@@ -56,7 +61,12 @@ impl Storable for RequestChecksumInterceptorState {
     type Storer = StoreReplace<Self>;
 }
 
-type CustomDefaultFn = Box<dyn Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm> + Send + Sync + 'static>;
+type CustomDefaultFn = Box<
+    dyn Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm>
+        + Send
+        + Sync
+        + 'static,
+>;
 
 pub(crate) struct DefaultRequestChecksumOverride {
     custom_default: CustomDefaultFn,
@@ -72,13 +82,20 @@ impl Storable for DefaultRequestChecksumOverride {
 impl DefaultRequestChecksumOverride {
     pub(crate) fn new<F>(custom_default: F) -> Self
     where
-        F: Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm> + Send + Sync + 'static,
+        F: Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm>
+            + Send
+            + Sync
+            + 'static,
     {
         Self {
             custom_default: Box::new(custom_default),
         }
     }
-    pub(crate) fn custom_default(&self, original: Option<ChecksumAlgorithm>, config_bag: &ConfigBag) -> Option<ChecksumAlgorithm> {
+    pub(crate) fn custom_default(
+        &self,
+        original: Option<ChecksumAlgorithm>,
+        config_bag: &ConfigBag,
+    ) -> Option<ChecksumAlgorithm> {
         (self.custom_default)(original, config_bag)
     }
 }
@@ -131,7 +148,9 @@ where
         _runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let state = cfg.load::<RequestChecksumInterceptorState>().expect("set in `read_before_serialization`");
+        let state = cfg
+            .load::<RequestChecksumInterceptorState>()
+            .expect("set in `read_before_serialization`");
 
         let checksum_algorithm = incorporate_custom_default(state.checksum_algorithm, cfg);
         if let Some(checksum_algorithm) = checksum_algorithm {
@@ -143,14 +162,21 @@ where
     }
 }
 
-fn incorporate_custom_default(checksum: Option<ChecksumAlgorithm>, cfg: &ConfigBag) -> Option<ChecksumAlgorithm> {
+fn incorporate_custom_default(
+    checksum: Option<ChecksumAlgorithm>,
+    cfg: &ConfigBag,
+) -> Option<ChecksumAlgorithm> {
     match cfg.load::<DefaultRequestChecksumOverride>() {
         Some(checksum_override) => checksum_override.custom_default(checksum, cfg),
         None => checksum,
     }
 }
 
-fn add_checksum_for_request_body(request: &mut HttpRequest, checksum_algorithm: ChecksumAlgorithm, cfg: &mut ConfigBag) -> Result<(), BoxError> {
+fn add_checksum_for_request_body(
+    request: &mut HttpRequest,
+    checksum_algorithm: ChecksumAlgorithm,
+    cfg: &mut ConfigBag,
+) -> Result<(), BoxError> {
     match request.body().bytes() {
         // Body is in-memory: read it and insert the checksum as a header.
         Some(data) => {
@@ -158,13 +184,16 @@ fn add_checksum_for_request_body(request: &mut HttpRequest, checksum_algorithm: 
             let mut checksum = checksum_algorithm.into_impl();
             checksum.update(data);
 
-            request.headers_mut().insert(checksum.header_name(), checksum.header_value());
+            request
+                .headers_mut()
+                .insert(checksum.header_name(), checksum.header_value());
         }
         // Body is streaming: wrap the body so it will emit a checksum as a trailer.
         None => {
             tracing::debug!("applying {checksum_algorithm:?} of the request body as a trailer");
             if let Some(mut signing_config) = cfg.load::<SigV4OperationSigningConfig>().cloned() {
-                signing_config.signing_options.payload_override = Some(SignableBody::StreamingUnsignedPayloadTrailer);
+                signing_config.signing_options.payload_override =
+                    Some(SignableBody::StreamingUnsignedPayloadTrailer);
                 cfg.interceptor_state().store_put(signing_config);
             }
             wrap_streaming_request_body_in_checksum_calculating_body(request, checksum_algorithm)?;
@@ -190,7 +219,8 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
             let checksum = checksum_algorithm.into_impl();
             let trailer_len = HttpChecksum::size(checksum.as_ref());
             let body = calculate::ChecksumBody::new(body, checksum);
-            let aws_chunked_body_options = AwsChunkedBodyOptions::new(original_body_size, vec![trailer_len]);
+            let aws_chunked_body_options =
+                AwsChunkedBodyOptions::new(original_body_size, vec![trailer_len]);
 
             let body = AwsChunkedBody::new(body, aws_chunked_body_options);
 
@@ -198,7 +228,10 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
         })
     };
 
-    let encoded_content_length = body.size_hint().exact().ok_or_else(|| BuildError::other(Error::UnsizedRequestBody))?;
+    let encoded_content_length = body
+        .size_hint()
+        .exact()
+        .ok_or_else(|| BuildError::other(Error::UnsizedRequestBody))?;
 
     let headers = request.headers_mut();
 
@@ -207,7 +240,10 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
         checksum_algorithm.into_impl().header_name(),
     );
 
-    headers.insert(http::header::CONTENT_LENGTH, HeaderValue::from(encoded_content_length));
+    headers.insert(
+        http::header::CONTENT_LENGTH,
+        HeaderValue::from(encoded_content_length),
+    );
     headers.insert(
         http::header::HeaderName::from_static("x-amz-decoded-content-length"),
         HeaderValue::from(original_body_size),
@@ -250,7 +286,8 @@ mod tests {
         assert!(request.body().try_clone().is_some());
 
         let checksum_algorithm: ChecksumAlgorithm = "crc32".parse().unwrap();
-        wrap_streaming_request_body_in_checksum_calculating_body(&mut request, checksum_algorithm).unwrap();
+        wrap_streaming_request_body_in_checksum_calculating_body(&mut request, checksum_algorithm)
+            .unwrap();
 
         // ensure wrapped SdkBody is retryable
         let mut body = request.body().try_clone().expect("body is retryable");
@@ -261,7 +298,9 @@ mod tests {
         }
         let body = std::str::from_utf8(&body_data).unwrap();
         assert_eq!(
-            format!("{chunk_len_hex}\r\n{input_text}\r\n0\r\nx-amz-checksum-crc32:i9aeUg==\r\n\r\n"),
+            format!(
+                "{chunk_len_hex}\r\n{input_text}\r\n0\r\nx-amz-checksum-crc32:i9aeUg==\r\n\r\n"
+            ),
             body
         );
     }
@@ -280,12 +319,21 @@ mod tests {
         }
         let crc32c_checksum = crc32c_checksum.finalize();
 
-        let mut request = HttpRequest::new(ByteStream::read_from().path(&file).buffer_size(1024).build().await.unwrap().into_inner());
+        let mut request = HttpRequest::new(
+            ByteStream::read_from()
+                .path(&file)
+                .buffer_size(1024)
+                .build()
+                .await
+                .unwrap()
+                .into_inner(),
+        );
 
         // ensure original SdkBody is retryable
         assert!(request.body().try_clone().is_some());
 
-        wrap_streaming_request_body_in_checksum_calculating_body(&mut request, checksum_algorithm).unwrap();
+        wrap_streaming_request_body_in_checksum_calculating_body(&mut request, checksum_algorithm)
+            .unwrap();
 
         // ensure wrapped SdkBody is retryable
         let mut body = request.body().try_clone().expect("body is retryable");
@@ -297,6 +345,10 @@ mod tests {
         let body = std::str::from_utf8(&body_data).unwrap();
         let expected_checksum = base64::encode(&crc32c_checksum);
         let expected = format!("This is a large file created for testing purposes 9999\r\n0\r\nx-amz-checksum-crc32c:{expected_checksum}\r\n\r\n");
-        assert!(body.ends_with(&expected), "expected {body} to end with '{expected}'");
+        assert!(
+            body.ends_with(&expected),
+            "expected {body} to end with '{expected}'"
+        );
     }
 }
+

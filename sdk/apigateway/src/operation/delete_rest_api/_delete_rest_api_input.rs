@@ -3,13 +3,13 @@
 /// <p>Request to delete the specified API from your collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRestApiInput {
+pub struct DeleteRestApiInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRestApiInput {
+impl  DeleteRestApiInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
 }
@@ -35,19 +35,20 @@ impl DeleteRestApiInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rest_api_id
     }
     /// Consumes the builder and constructs a [`DeleteRestApiInput`](crate::operation::delete_rest_api::DeleteRestApiInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_rest_api::DeleteRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_rest_api::DeleteRestApiInput {
-            rest_api_id: self.rest_api_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rest_api::DeleteRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_rest_api::DeleteRestApiInput {
+                rest_api_id: self.rest_api_id
+                ,
+            }
+        )
     }
 }
+

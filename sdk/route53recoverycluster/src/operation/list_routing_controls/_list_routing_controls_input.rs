@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRoutingControlsInput {
+pub struct ListRoutingControlsInput  {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
@@ -10,13 +10,13 @@ pub struct ListRoutingControlsInput {
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListRoutingControlsInput {
+impl  ListRoutingControlsInput  {
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
@@ -47,8 +47,7 @@ impl ListRoutingControlsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     pub fn set_control_panel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.control_panel_arn = input;
-        self
+        self.control_panel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListRoutingControlsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListRoutingControlsInputBuilder {
     }
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRoutingControlsInput`](crate::operation::list_routing_controls::ListRoutingControlsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_routing_controls::ListRoutingControlsInput {
-            control_panel_arn: self.control_panel_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_routing_controls::ListRoutingControlsInput {
+                control_panel_arn: self.control_panel_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

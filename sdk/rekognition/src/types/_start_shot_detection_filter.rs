@@ -3,12 +3,12 @@
 /// <p>Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartShotDetectionFilter {
+pub struct StartShotDetectionFilter  {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub min_segment_confidence: ::std::option::Option<f32>,
 }
-impl StartShotDetectionFilter {
+impl  StartShotDetectionFilter  {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(&self) -> ::std::option::Option<f32> {
@@ -38,8 +38,7 @@ impl StartShotDetectionFilterBuilder {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn set_min_segment_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.min_segment_confidence = input;
-        self
+        self.min_segment_confidence = input; self
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
@@ -49,7 +48,9 @@ impl StartShotDetectionFilterBuilder {
     /// Consumes the builder and constructs a [`StartShotDetectionFilter`](crate::types::StartShotDetectionFilter).
     pub fn build(self) -> crate::types::StartShotDetectionFilter {
         crate::types::StartShotDetectionFilter {
-            min_segment_confidence: self.min_segment_confidence,
+            min_segment_confidence: self.min_segment_confidence
+            ,
         }
     }
 }
+

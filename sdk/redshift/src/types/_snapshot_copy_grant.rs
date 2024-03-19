@@ -4,28 +4,29 @@
 /// <p>For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotCopyGrant {
+pub struct SnapshotCopyGrant  {
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl SnapshotCopyGrant {
+impl  SnapshotCopyGrant  {
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_copy_grant_name.as_deref()
     }
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotCopyGrant {
@@ -41,7 +42,7 @@ impl SnapshotCopyGrant {
 pub struct SnapshotCopyGrantBuilder {
     pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl SnapshotCopyGrantBuilder {
     /// <p>The name of the snapshot copy grant.</p>
@@ -51,8 +52,7 @@ impl SnapshotCopyGrantBuilder {
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn set_snapshot_copy_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = input;
-        self
+        self.snapshot_copy_grant_name = input; self
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl SnapshotCopyGrantBuilder {
     }
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The unique identifier of the encrypted symmetric key in Amazon Web Services KMS to which Amazon Redshift is granted permission.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,25 +78,28 @@ impl SnapshotCopyGrantBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tag instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SnapshotCopyGrant`](crate::types::SnapshotCopyGrant).
     pub fn build(self) -> crate::types::SnapshotCopyGrant {
         crate::types::SnapshotCopyGrant {
-            snapshot_copy_grant_name: self.snapshot_copy_grant_name,
-            kms_key_id: self.kms_key_id,
-            tags: self.tags,
+            snapshot_copy_grant_name: self.snapshot_copy_grant_name
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

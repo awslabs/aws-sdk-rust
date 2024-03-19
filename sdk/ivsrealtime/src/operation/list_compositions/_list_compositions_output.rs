@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCompositionsOutput {
+pub struct ListCompositionsOutput  {
     /// <p>List of the matching Compositions (summary information only).</p>
-    pub compositions: ::std::vec::Vec<crate::types::CompositionSummary>,
+    pub compositions: ::std::vec::Vec::<crate::types::CompositionSummary>,
     /// <p>If there are more compositions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListCompositionsOutput {
+impl  ListCompositionsOutput  {
     /// <p>List of the matching Compositions (summary information only).</p>
-    pub fn compositions(&self) -> &[crate::types::CompositionSummary] {
-        use std::ops::Deref;
-        self.compositions.deref()
+    pub fn compositions(&self) -> & [crate::types::CompositionSummary] {
+        use std::ops::Deref; self.compositions.deref()
     }
     /// <p>If there are more compositions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCompositionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCompositionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCompositionsOutput`](crate::operation::list_compositions::ListCompositionsOutput).
     pub fn builder() -> crate::operation::list_compositions::builders::ListCompositionsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListCompositionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListCompositionsOutputBuilder {
-    pub(crate) compositions: ::std::option::Option<::std::vec::Vec<crate::types::CompositionSummary>>,
+    pub(crate) compositions: ::std::option::Option<::std::vec::Vec::<crate::types::CompositionSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListCompositionsOutputBuilder {
     /// <p>List of the matching Compositions (summary information only).</p>
     pub fn compositions(mut self, input: crate::types::CompositionSummary) -> Self {
         let mut v = self.compositions.unwrap_or_default();
-        v.push(input);
-        self.compositions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compositions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of the matching Compositions (summary information only).</p>
-    pub fn set_compositions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompositionSummary>>) -> Self {
-        self.compositions = input;
-        self
+    pub fn set_compositions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CompositionSummary>>) -> Self {
+        self.compositions = input; self
     }
     /// <p>List of the matching Compositions (summary information only).</p>
-    pub fn get_compositions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompositionSummary>> {
+    pub fn get_compositions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CompositionSummary>> {
         &self.compositions
     }
     /// <p>If there are more compositions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
@@ -68,37 +66,37 @@ impl ListCompositionsOutputBuilder {
     }
     /// <p>If there are more compositions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are more compositions than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCompositionsOutput`](crate::operation::list_compositions::ListCompositionsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`compositions`](crate::operation::list_compositions::builders::ListCompositionsOutputBuilder::compositions)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_compositions::ListCompositionsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_compositions::ListCompositionsOutput {
-            compositions: self.compositions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compositions",
-                    "compositions was not specified but it is required when building ListCompositionsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_compositions::ListCompositionsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_compositions::ListCompositionsOutput {
+                compositions: self.compositions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compositions", "compositions was not specified but it is required when building ListCompositionsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

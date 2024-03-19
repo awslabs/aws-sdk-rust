@@ -3,7 +3,7 @@
 /// <p>Information about the recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationData {
+pub struct RecommendationData  {
     /// <p>The identifier of the recommendation.</p>
     pub recommendation_id: ::std::string::String,
     /// <p>The recommended document.</p>
@@ -15,14 +15,13 @@ pub struct RecommendationData {
     /// <p>The type of recommendation.</p>
     pub r#type: ::std::option::Option<crate::types::RecommendationType>,
 }
-impl RecommendationData {
+impl  RecommendationData  {
     /// <p>The identifier of the recommendation.</p>
-    pub fn recommendation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.recommendation_id.deref()
+    pub fn recommendation_id(&self) -> & str {
+        use std::ops::Deref; self.recommendation_id.deref()
     }
     /// <p>The recommended document.</p>
-    pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
+    pub fn document(&self) -> ::std::option::Option<& crate::types::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the recommendation.</p>
@@ -30,11 +29,11 @@ impl RecommendationData {
         self.relevance_score
     }
     /// <p>The relevance level of the recommendation.</p>
-    pub fn relevance_level(&self) -> ::std::option::Option<&crate::types::RelevanceLevel> {
+    pub fn relevance_level(&self) -> ::std::option::Option<& crate::types::RelevanceLevel> {
         self.relevance_level.as_ref()
     }
     /// <p>The type of recommendation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
 }
@@ -64,8 +63,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The identifier of the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The identifier of the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The recommended document.</p>
     pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The recommended document.</p>
     pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
@@ -93,8 +90,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The relevance score of the recommendation.</p>
     pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.relevance_score = input;
-        self
+        self.relevance_score = input; self
     }
     /// <p>The relevance score of the recommendation.</p>
     pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
@@ -107,8 +103,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn set_relevance_level(mut self, input: ::std::option::Option<crate::types::RelevanceLevel>) -> Self {
-        self.relevance_level = input;
-        self
+        self.relevance_level = input; self
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn get_relevance_level(&self) -> &::std::option::Option<crate::types::RelevanceLevel> {
@@ -121,8 +116,7 @@ impl RecommendationDataBuilder {
     }
     /// <p>The type of recommendation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of recommendation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
@@ -132,17 +126,24 @@ impl RecommendationDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`recommendation_id`](crate::types::builders::RecommendationDataBuilder::recommendation_id)
     pub fn build(self) -> ::std::result::Result<crate::types::RecommendationData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecommendationData {
-            recommendation_id: self.recommendation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recommendation_id",
-                    "recommendation_id was not specified but it is required when building RecommendationData",
-                )
-            })?,
-            document: self.document,
-            relevance_score: self.relevance_score.unwrap_or_default(),
-            relevance_level: self.relevance_level,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecommendationData {
+                recommendation_id: self.recommendation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recommendation_id", "recommendation_id was not specified but it is required when building RecommendationData")
+                    )?
+                ,
+                document: self.document
+                ,
+                relevance_score: self.relevance_score
+                    .unwrap_or_default()
+                ,
+                relevance_level: self.relevance_level
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

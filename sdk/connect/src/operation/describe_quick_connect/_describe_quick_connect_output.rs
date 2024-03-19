@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQuickConnectOutput {
+pub struct DescribeQuickConnectOutput  {
     /// <p>Information about the quick connect.</p>
     pub quick_connect: ::std::option::Option<crate::types::QuickConnect>,
     _request_id: Option<String>,
 }
-impl DescribeQuickConnectOutput {
+impl  DescribeQuickConnectOutput  {
     /// <p>Information about the quick connect.</p>
-    pub fn quick_connect(&self) -> ::std::option::Option<&crate::types::QuickConnect> {
+    pub fn quick_connect(&self) -> ::std::option::Option<& crate::types::QuickConnect> {
         self.quick_connect.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeQuickConnectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeQuickConnectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQuickConnectOutput`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput).
     pub fn builder() -> crate::operation::describe_quick_connect::builders::DescribeQuickConnectOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeQuickConnectOutputBuilder {
     }
     /// <p>Information about the quick connect.</p>
     pub fn set_quick_connect(mut self, input: ::std::option::Option<crate::types::QuickConnect>) -> Self {
-        self.quick_connect = input;
-        self
+        self.quick_connect = input; self
     }
     /// <p>Information about the quick connect.</p>
     pub fn get_quick_connect(&self) -> &::std::option::Option<crate::types::QuickConnect> {
         &self.quick_connect
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeQuickConnectOutput`](crate::operation::describe_quick_connect::DescribeQuickConnectOutput).
     pub fn build(self) -> crate::operation::describe_quick_connect::DescribeQuickConnectOutput {
         crate::operation::describe_quick_connect::DescribeQuickConnectOutput {
-            quick_connect: self.quick_connect,
+            quick_connect: self.quick_connect
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

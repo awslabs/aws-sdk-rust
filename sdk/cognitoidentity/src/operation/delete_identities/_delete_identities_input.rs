@@ -3,16 +3,17 @@
 /// <p>Input to the <code>DeleteIdentities</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdentitiesInput {
+pub struct DeleteIdentitiesInput  {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub identity_ids_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub identity_ids_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteIdentitiesInput {
+impl  DeleteIdentitiesInput  {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identity_ids_to_delete.is_none()`.
-    pub fn identity_ids_to_delete(&self) -> &[::std::string::String] {
-        self.identity_ids_to_delete.as_deref().unwrap_or_default()
+    pub fn identity_ids_to_delete(&self) -> & [::std::string::String] {
+        self.identity_ids_to_delete.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteIdentitiesInput {
@@ -26,7 +27,7 @@ impl DeleteIdentitiesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteIdentitiesInputBuilder {
-    pub(crate) identity_ids_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) identity_ids_to_delete: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteIdentitiesInputBuilder {
     /// Appends an item to `identity_ids_to_delete`.
@@ -36,25 +37,26 @@ impl DeleteIdentitiesInputBuilder {
     /// <p>A list of 1-60 identities that you want to delete.</p>
     pub fn identity_ids_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identity_ids_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.identity_ids_to_delete = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.identity_ids_to_delete = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn set_identity_ids_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.identity_ids_to_delete = input;
-        self
+    pub fn set_identity_ids_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.identity_ids_to_delete = input; self
     }
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn get_identity_ids_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_identity_ids_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.identity_ids_to_delete
     }
     /// Consumes the builder and constructs a [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_identities::DeleteIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_identities::DeleteIdentitiesInput {
-            identity_ids_to_delete: self.identity_ids_to_delete,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_identities::DeleteIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_identities::DeleteIdentitiesInput {
+                identity_ids_to_delete: self.identity_ids_to_delete
+                ,
+            }
+        )
     }
 }
+

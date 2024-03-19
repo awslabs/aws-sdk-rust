@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMetadataTransferJobInput {
+pub struct GetMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
 }
-impl GetMetadataTransferJobInput {
+impl  GetMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<& str> {
         self.metadata_transfer_job_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetMetadataTransferJobInputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.metadata_transfer_job_id
     }
     /// Consumes the builder and constructs a [`GetMetadataTransferJobInput`](crate::operation::get_metadata_transfer_job::GetMetadataTransferJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_metadata_transfer_job::GetMetadataTransferJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_metadata_transfer_job::GetMetadataTransferJobInput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata_transfer_job::GetMetadataTransferJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobInput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                ,
+            }
+        )
     }
 }
+

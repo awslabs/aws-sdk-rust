@@ -3,7 +3,7 @@
 /// <p>Gets metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryStatisticsForDescribeQuery {
+pub struct QueryStatisticsForDescribeQuery  {
     /// <p>The number of events that matched a query.</p>
     pub events_matched: ::std::option::Option<i64>,
     /// <p>The number of events that the query scanned in the event data store.</p>
@@ -15,7 +15,7 @@ pub struct QueryStatisticsForDescribeQuery {
     /// <p>The creation time of the query.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl QueryStatisticsForDescribeQuery {
+impl  QueryStatisticsForDescribeQuery  {
     /// <p>The number of events that matched a query.</p>
     pub fn events_matched(&self) -> ::std::option::Option<i64> {
         self.events_matched
@@ -33,7 +33,7 @@ impl QueryStatisticsForDescribeQuery {
         self.execution_time_in_millis
     }
     /// <p>The creation time of the query.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl QueryStatisticsForDescribeQueryBuilder {
     }
     /// <p>The number of events that matched a query.</p>
     pub fn set_events_matched(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.events_matched = input;
-        self
+        self.events_matched = input; self
     }
     /// <p>The number of events that matched a query.</p>
     pub fn get_events_matched(&self) -> &::std::option::Option<i64> {
@@ -76,8 +75,7 @@ impl QueryStatisticsForDescribeQueryBuilder {
     }
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub fn set_events_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.events_scanned = input;
-        self
+        self.events_scanned = input; self
     }
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub fn get_events_scanned(&self) -> &::std::option::Option<i64> {
@@ -90,8 +88,7 @@ impl QueryStatisticsForDescribeQueryBuilder {
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_scanned = input;
-        self
+        self.bytes_scanned = input; self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn get_bytes_scanned(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl QueryStatisticsForDescribeQueryBuilder {
     }
     /// <p>The query's run time, in milliseconds.</p>
     pub fn set_execution_time_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_time_in_millis = input;
-        self
+        self.execution_time_in_millis = input; self
     }
     /// <p>The query's run time, in milliseconds.</p>
     pub fn get_execution_time_in_millis(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl QueryStatisticsForDescribeQueryBuilder {
     }
     /// <p>The creation time of the query.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The creation time of the query.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl QueryStatisticsForDescribeQueryBuilder {
     /// Consumes the builder and constructs a [`QueryStatisticsForDescribeQuery`](crate::types::QueryStatisticsForDescribeQuery).
     pub fn build(self) -> crate::types::QueryStatisticsForDescribeQuery {
         crate::types::QueryStatisticsForDescribeQuery {
-            events_matched: self.events_matched,
-            events_scanned: self.events_scanned,
-            bytes_scanned: self.bytes_scanned,
-            execution_time_in_millis: self.execution_time_in_millis,
-            creation_time: self.creation_time,
+            events_matched: self.events_matched
+            ,
+            events_scanned: self.events_scanned
+            ,
+            bytes_scanned: self.bytes_scanned
+            ,
+            execution_time_in_millis: self.execution_time_in_millis
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

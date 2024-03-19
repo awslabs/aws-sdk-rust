@@ -3,7 +3,7 @@
 /// <p>Object for errors on fields.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FieldError {
+pub struct FieldError  {
     /// <p>The field identifier that caused the error.</p>
     pub id: ::std::string::String,
     /// <p>The error code from getting a field.</p>
@@ -11,19 +11,17 @@ pub struct FieldError {
     /// <p>The error message from getting a field.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl FieldError {
+impl  FieldError  {
     /// <p>The field identifier that caused the error.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The error code from getting a field.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The error message from getting a field.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl FieldErrorBuilder {
     }
     /// <p>The field identifier that caused the error.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The field identifier that caused the error.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl FieldErrorBuilder {
     }
     /// <p>The error code from getting a field.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code from getting a field.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl FieldErrorBuilder {
     }
     /// <p>The error message from getting a field.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message from getting a field.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl FieldErrorBuilder {
     /// - [`id`](crate::types::builders::FieldErrorBuilder::id)
     /// - [`error_code`](crate::types::builders::FieldErrorBuilder::error_code)
     pub fn build(self) -> ::std::result::Result<crate::types::FieldError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FieldError {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building FieldError",
-                )
-            })?,
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building FieldError",
-                )
-            })?,
-            message: self.message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FieldError {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building FieldError")
+                    )?
+                ,
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building FieldError")
+                    )?
+                ,
+                message: self.message
+                ,
+            }
+        )
     }
 }
+

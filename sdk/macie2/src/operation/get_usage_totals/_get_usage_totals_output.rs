@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetUsageTotalsOutput {
+pub struct GetUsageTotalsOutput  {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub usage_totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
+    pub usage_totals: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>,
     _request_id: Option<String>,
 }
-impl GetUsageTotalsOutput {
+impl  GetUsageTotalsOutput  {
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    pub fn time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
+    pub fn time_range(&self) -> ::std::option::Option<& crate::types::TimeRange> {
         self.time_range.as_ref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_totals.is_none()`.
-    pub fn usage_totals(&self) -> &[crate::types::UsageTotal] {
-        self.usage_totals.as_deref().unwrap_or_default()
+    pub fn usage_totals(&self) -> & [crate::types::UsageTotal] {
+        self.usage_totals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetUsageTotalsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetUsageTotalsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageTotalsOutput`](crate::operation::get_usage_totals::GetUsageTotalsOutput).
     pub fn builder() -> crate::operation::get_usage_totals::builders::GetUsageTotalsOutputBuilder {
@@ -38,7 +39,7 @@ impl GetUsageTotalsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUsageTotalsOutputBuilder {
     pub(crate) time_range: ::std::option::Option<crate::types::TimeRange>,
-    pub(crate) usage_totals: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>,
+    pub(crate) usage_totals: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>,
     _request_id: Option<String>,
 }
 impl GetUsageTotalsOutputBuilder {
@@ -49,8 +50,7 @@ impl GetUsageTotalsOutputBuilder {
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
-        self.time_range = input;
-        self
+        self.time_range = input; self
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
@@ -63,34 +63,36 @@ impl GetUsageTotalsOutputBuilder {
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
     pub fn usage_totals(mut self, input: crate::types::UsageTotal) -> Self {
         let mut v = self.usage_totals.unwrap_or_default();
-        v.push(input);
-        self.usage_totals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.usage_totals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn set_usage_totals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>>) -> Self {
-        self.usage_totals = input;
-        self
+    pub fn set_usage_totals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>>) -> Self {
+        self.usage_totals = input; self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
-    pub fn get_usage_totals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
+    pub fn get_usage_totals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UsageTotal>> {
         &self.usage_totals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetUsageTotalsOutput`](crate::operation::get_usage_totals::GetUsageTotalsOutput).
     pub fn build(self) -> crate::operation::get_usage_totals::GetUsageTotalsOutput {
         crate::operation::get_usage_totals::GetUsageTotalsOutput {
-            time_range: self.time_range,
-            usage_totals: self.usage_totals,
+            time_range: self.time_range
+            ,
+            usage_totals: self.usage_totals
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

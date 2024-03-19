@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetScanInput {
+pub struct GetScanInput  {
     /// <p>The name of the scan you want to view details about.</p>
     pub scan_name: ::std::option::Option<::std::string::String>,
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetScanInput {
+impl  GetScanInput  {
     /// <p>The name of the scan you want to view details about.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetScanInputBuilder {
     }
     /// <p>The name of the scan you want to view details about.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The name of the scan you want to view details about.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetScanInputBuilder {
     }
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl GetScanInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetScanInput`](crate::operation::get_scan::GetScanInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_scan::GetScanInput {
-            scan_name: self.scan_name,
-            run_id: self.run_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_scan::GetScanInput {
+                scan_name: self.scan_name
+                ,
+                run_id: self.run_id
+                ,
+            }
+        )
     }
 }
+

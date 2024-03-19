@@ -3,13 +3,13 @@
 /// <p>Details about the POSIX identity that is used for file system operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomPosixUserConfig {
+pub struct CustomPosixUserConfig  {
     /// <p>The POSIX user ID.</p>
     pub uid: ::std::option::Option<i64>,
     /// <p>The POSIX group ID.</p>
     pub gid: ::std::option::Option<i64>,
 }
-impl CustomPosixUserConfig {
+impl  CustomPosixUserConfig  {
     /// <p>The POSIX user ID.</p>
     pub fn uid(&self) -> ::std::option::Option<i64> {
         self.uid
@@ -42,8 +42,7 @@ impl CustomPosixUserConfigBuilder {
     }
     /// <p>The POSIX user ID.</p>
     pub fn set_uid(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>The POSIX user ID.</p>
     pub fn get_uid(&self) -> &::std::option::Option<i64> {
@@ -57,8 +56,7 @@ impl CustomPosixUserConfigBuilder {
     }
     /// <p>The POSIX group ID.</p>
     pub fn set_gid(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.gid = input;
-        self
+        self.gid = input; self
     }
     /// <p>The POSIX group ID.</p>
     pub fn get_gid(&self) -> &::std::option::Option<i64> {
@@ -67,8 +65,11 @@ impl CustomPosixUserConfigBuilder {
     /// Consumes the builder and constructs a [`CustomPosixUserConfig`](crate::types::CustomPosixUserConfig).
     pub fn build(self) -> crate::types::CustomPosixUserConfig {
         crate::types::CustomPosixUserConfig {
-            uid: self.uid,
-            gid: self.gid,
+            uid: self.uid
+            ,
+            gid: self.gid
+            ,
         }
     }
 }
+

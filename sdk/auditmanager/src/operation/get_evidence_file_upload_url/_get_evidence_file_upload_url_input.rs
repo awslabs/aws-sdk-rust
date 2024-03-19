@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetEvidenceFileUploadUrlInput {
+pub struct GetEvidenceFileUploadUrlInput  {
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
 }
-impl GetEvidenceFileUploadUrlInput {
+impl  GetEvidenceFileUploadUrlInput  {
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
-    pub fn file_name(&self) -> ::std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<& str> {
         self.file_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetEvidenceFileUploadUrlInput {
+impl  ::std::fmt::Debug for GetEvidenceFileUploadUrlInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetEvidenceFileUploadUrlInput");
         formatter.field("file_name", &"*** Sensitive Data Redacted ***");
@@ -41,21 +41,20 @@ impl GetEvidenceFileUploadUrlInputBuilder {
     }
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_name = input;
-        self
+        self.file_name = input; self
     }
     /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }
     /// Consumes the builder and constructs a [`GetEvidenceFileUploadUrlInput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput { file_name: self.file_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput {
+                file_name: self.file_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetEvidenceFileUploadUrlInputBuilder {
@@ -65,3 +64,4 @@ impl ::std::fmt::Debug for GetEvidenceFileUploadUrlInputBuilder {
         formatter.finish()
     }
 }
+

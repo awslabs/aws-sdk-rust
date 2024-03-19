@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAliasInput {
+pub struct UpdateAliasInput  {
     /// <p>The alias whose associated key is changing.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
     pub key_arn: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAliasInput {
+impl  UpdateAliasInput  {
     /// <p>The alias whose associated key is changing.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
-    pub fn key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>The alias whose associated key is changing.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The alias whose associated key is changing.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl UpdateAliasInputBuilder {
     }
     /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl UpdateAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_alias::UpdateAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_alias::UpdateAliasInput {
-            alias_name: self.alias_name,
-            key_arn: self.key_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_alias::UpdateAliasInput {
+                alias_name: self.alias_name
+                ,
+                key_arn: self.key_arn
+                ,
+            }
+        )
     }
 }
+

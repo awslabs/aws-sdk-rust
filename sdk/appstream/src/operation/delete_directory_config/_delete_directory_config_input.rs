@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDirectoryConfigInput {
+pub struct DeleteDirectoryConfigInput  {
     /// <p>The name of the directory configuration.</p>
     pub directory_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDirectoryConfigInput {
+impl  DeleteDirectoryConfigInput  {
     /// <p>The name of the directory configuration.</p>
-    pub fn directory_name(&self) -> ::std::option::Option<&str> {
+    pub fn directory_name(&self) -> ::std::option::Option<& str> {
         self.directory_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteDirectoryConfigInputBuilder {
     }
     /// <p>The name of the directory configuration.</p>
     pub fn set_directory_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_name = input;
-        self
+        self.directory_name = input; self
     }
     /// <p>The name of the directory configuration.</p>
     pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_name
     }
     /// Consumes the builder and constructs a [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_directory_config::DeleteDirectoryConfigInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_directory_config::DeleteDirectoryConfigInput {
-            directory_name: self.directory_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_directory_config::DeleteDirectoryConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_directory_config::DeleteDirectoryConfigInput {
+                directory_name: self.directory_name
+                ,
+            }
+        )
     }
 }
+

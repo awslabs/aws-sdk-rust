@@ -3,7 +3,7 @@
 /// <p>Information about the build input source code for the build project.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProjectSource {
+pub struct ProjectSource  {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -84,7 +84,7 @@ pub struct ProjectSource {
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length.</p>
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
-impl ProjectSource {
+impl  ProjectSource  {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
     /// <li>
@@ -102,7 +102,7 @@ impl ProjectSource {
     /// <li>
     /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::SourceType {
+    pub fn r#type(&self) -> & crate::types::SourceType {
         &self.r#type
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
@@ -144,7 +144,7 @@ impl ProjectSource {
     /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>Information about the Git clone depth for the build project.</p>
@@ -152,17 +152,17 @@ impl ProjectSource {
         self.git_clone_depth
     }
     /// <p>Information about the Git submodules configuration for the build project.</p>
-    pub fn git_submodules_config(&self) -> ::std::option::Option<&crate::types::GitSubmodulesConfig> {
+    pub fn git_submodules_config(&self) -> ::std::option::Option<& crate::types::GitSubmodulesConfig> {
         self.git_submodules_config.as_ref()
     }
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>.</p>
-    pub fn buildspec(&self) -> ::std::option::Option<&str> {
+    pub fn buildspec(&self) -> ::std::option::Option<& str> {
         self.buildspec.as_deref()
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
-    pub fn auth(&self) -> ::std::option::Option<&crate::types::SourceAuth> {
+    pub fn auth(&self) -> ::std::option::Option<& crate::types::SourceAuth> {
         self.auth.as_ref()
     }
     /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
@@ -173,7 +173,7 @@ impl ProjectSource {
         self.report_build_status
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
-    pub fn build_status_config(&self) -> ::std::option::Option<&crate::types::BuildStatusConfig> {
+    pub fn build_status_config(&self) -> ::std::option::Option<& crate::types::BuildStatusConfig> {
         self.build_status_config.as_ref()
     }
     /// <p>Enable this flag to ignore SSL warnings while connecting to the project source code.</p>
@@ -181,7 +181,7 @@ impl ProjectSource {
         self.insecure_ssl
     }
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length.</p>
-    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<& str> {
         self.source_identifier.as_deref()
     }
 }
@@ -248,8 +248,7 @@ impl ProjectSourceBuilder {
     /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
@@ -354,8 +353,7 @@ impl ProjectSourceBuilder {
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
@@ -406,8 +404,7 @@ impl ProjectSourceBuilder {
     }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn set_git_clone_depth(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.git_clone_depth = input;
-        self
+        self.git_clone_depth = input; self
     }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn get_git_clone_depth(&self) -> &::std::option::Option<i32> {
@@ -420,8 +417,7 @@ impl ProjectSourceBuilder {
     }
     /// <p>Information about the Git submodules configuration for the build project.</p>
     pub fn set_git_submodules_config(mut self, input: ::std::option::Option<crate::types::GitSubmodulesConfig>) -> Self {
-        self.git_submodules_config = input;
-        self
+        self.git_submodules_config = input; self
     }
     /// <p>Information about the Git submodules configuration for the build project.</p>
     pub fn get_git_submodules_config(&self) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
@@ -436,8 +432,7 @@ impl ProjectSourceBuilder {
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>.</p>
     pub fn set_buildspec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.buildspec = input;
-        self
+        self.buildspec = input; self
     }
     /// <p>The buildspec file declaration to use for the builds in this build project.</p>
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>.</p>
@@ -453,8 +448,7 @@ impl ProjectSourceBuilder {
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
     pub fn set_auth(mut self, input: ::std::option::Option<crate::types::SourceAuth>) -> Self {
-        self.auth = input;
-        self
+        self.auth = input; self
     }
     /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
     /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
@@ -474,8 +468,7 @@ impl ProjectSourceBuilder {
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// <p>If your project's builds are triggered by a webhook, you must push a new commit to the repo for a change to this property to take effect.</p>
     pub fn set_report_build_status(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.report_build_status = input;
-        self
+        self.report_build_status = input; self
     }
     /// <p>Set to true to report the status of a build's start and finish to your source provider. This option is valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code> is thrown.</p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
@@ -491,8 +484,7 @@ impl ProjectSourceBuilder {
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
     pub fn set_build_status_config(mut self, input: ::std::option::Option<crate::types::BuildStatusConfig>) -> Self {
-        self.build_status_config = input;
-        self
+        self.build_status_config = input; self
     }
     /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
     pub fn get_build_status_config(&self) -> &::std::option::Option<crate::types::BuildStatusConfig> {
@@ -505,8 +497,7 @@ impl ProjectSourceBuilder {
     }
     /// <p>Enable this flag to ignore SSL warnings while connecting to the project source code.</p>
     pub fn set_insecure_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.insecure_ssl = input;
-        self
+        self.insecure_ssl = input; self
     }
     /// <p>Enable this flag to ignore SSL warnings while connecting to the project source code.</p>
     pub fn get_insecure_ssl(&self) -> &::std::option::Option<bool> {
@@ -519,8 +510,7 @@ impl ProjectSourceBuilder {
     }
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length.</p>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_identifier = input;
-        self
+        self.source_identifier = input; self
     }
     /// <p>An identifier for this project source. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length.</p>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -530,22 +520,33 @@ impl ProjectSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProjectSourceBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::ProjectSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProjectSource {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ProjectSource",
-                )
-            })?,
-            location: self.location,
-            git_clone_depth: self.git_clone_depth,
-            git_submodules_config: self.git_submodules_config,
-            buildspec: self.buildspec,
-            auth: self.auth,
-            report_build_status: self.report_build_status,
-            build_status_config: self.build_status_config,
-            insecure_ssl: self.insecure_ssl,
-            source_identifier: self.source_identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProjectSource {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ProjectSource")
+                    )?
+                ,
+                location: self.location
+                ,
+                git_clone_depth: self.git_clone_depth
+                ,
+                git_submodules_config: self.git_submodules_config
+                ,
+                buildspec: self.buildspec
+                ,
+                auth: self.auth
+                ,
+                report_build_status: self.report_build_status
+                ,
+                build_status_config: self.build_status_config
+                ,
+                insecure_ssl: self.insecure_ssl
+                ,
+                source_identifier: self.source_identifier
+                ,
+            }
+        )
     }
 }
+

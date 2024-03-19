@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPrincipalPolicies`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`principal(impl Into<String>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::principal) / [`set_principal(Option<String>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::set_principal):<br>required: **true**<br><p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::set_page_size):<br>required: **false**<br><p>The result page size.</p><br>
     ///   - [`ascending_order(bool)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::ascending_order) / [`set_ascending_order(Option<bool>)`](crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::set_ascending_order):<br>required: **false**<br><p>Specifies the order for results. If true, results are returned in ascending creation order.</p><br>
-    /// - On success, responds with [`ListPrincipalPoliciesOutput`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput) with field(s):
+                            /// - On success, responds with [`ListPrincipalPoliciesOutput`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput) with field(s):
     ///   - [`policies(Option<Vec::<Policy>>)`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListPrincipalPoliciesError>`](crate::operation::list_principal_policies::ListPrincipalPoliciesError)
+                            /// - On failure, responds with [`SdkError<ListPrincipalPoliciesError>`](crate::operation::list_principal_policies::ListPrincipalPoliciesError)
     #[deprecated]
     pub fn list_principal_policies(&self) -> crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder {
-        crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_principal_policies::builders::ListPrincipalPoliciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

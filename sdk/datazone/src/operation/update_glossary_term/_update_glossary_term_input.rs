@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateGlossaryTermInput {
+pub struct UpdateGlossaryTermInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the business glossary in which a term is to be updated.</p>
@@ -20,41 +20,41 @@ pub struct UpdateGlossaryTermInput {
     /// <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub status: ::std::option::Option<crate::types::GlossaryTermStatus>,
 }
-impl UpdateGlossaryTermInput {
+impl  UpdateGlossaryTermInput  {
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the business glossary in which a term is to be updated.</p>
-    pub fn glossary_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn glossary_identifier(&self) -> ::std::option::Option<& str> {
         self.glossary_identifier.as_deref()
     }
     /// <p>The identifier of the business glossary term that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The short description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
-    pub fn short_description(&self) -> ::std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<& str> {
         self.short_description.as_deref()
     }
     /// <p>The long description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
-    pub fn long_description(&self) -> ::std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<& str> {
         self.long_description.as_deref()
     }
     /// <p>The term relations to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
-    pub fn term_relations(&self) -> ::std::option::Option<&crate::types::TermRelations> {
+    pub fn term_relations(&self) -> ::std::option::Option<& crate::types::TermRelations> {
         self.term_relations.as_ref()
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GlossaryTermStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GlossaryTermStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateGlossaryTermInput {
+impl  ::std::fmt::Debug for UpdateGlossaryTermInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGlossaryTermInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -97,8 +97,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The identifier of the business glossary in which a term is to be updated.</p>
     pub fn set_glossary_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.glossary_identifier = input;
-        self
+        self.glossary_identifier = input; self
     }
     /// <p>The identifier of the business glossary in which a term is to be updated.</p>
     pub fn get_glossary_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The identifier of the business glossary term that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the business glossary term that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The short description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.short_description = input;
-        self
+        self.short_description = input; self
     }
     /// <p>The short description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +163,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The long description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.long_description = input;
-        self
+        self.long_description = input; self
     }
     /// <p>The long description to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +176,7 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The term relations to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn set_term_relations(mut self, input: ::std::option::Option<crate::types::TermRelations>) -> Self {
-        self.term_relations = input;
-        self
+        self.term_relations = input; self
     }
     /// <p>The term relations to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn get_term_relations(&self) -> &::std::option::Option<crate::types::TermRelations> {
@@ -196,28 +189,34 @@ impl UpdateGlossaryTermInputBuilder {
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GlossaryTermStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status to be updated as part of the <code>UpdateGlossaryTerm</code> action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GlossaryTermStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateGlossaryTermInput`](crate::operation::update_glossary_term::UpdateGlossaryTermInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_glossary_term::UpdateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_glossary_term::UpdateGlossaryTermInput {
-            domain_identifier: self.domain_identifier,
-            glossary_identifier: self.glossary_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            short_description: self.short_description,
-            long_description: self.long_description,
-            term_relations: self.term_relations,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_glossary_term::UpdateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_glossary_term::UpdateGlossaryTermInput {
+                domain_identifier: self.domain_identifier
+                ,
+                glossary_identifier: self.glossary_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                short_description: self.short_description
+                ,
+                long_description: self.long_description
+                ,
+                term_relations: self.term_relations
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateGlossaryTermInputBuilder {
@@ -234,3 +233,4 @@ impl ::std::fmt::Debug for UpdateGlossaryTermInputBuilder {
         formatter.finish()
     }
 }
+

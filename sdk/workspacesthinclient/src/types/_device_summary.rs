@@ -3,7 +3,7 @@
 /// <p>Describes a thin client device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeviceSummary {
+pub struct DeviceSummary  {
     /// <p>The ID of the device.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The hardware serial number of the device.</p>
@@ -37,73 +37,73 @@ pub struct DeviceSummary {
     /// <p>The tag keys and optional values for the resource.</p>
     pub tags: ::std::option::Option<crate::types::EmbeddedTag>,
 }
-impl DeviceSummary {
+impl  DeviceSummary  {
     /// <p>The ID of the device.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The hardware serial number of the device.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The name of the device.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The model number of the device.</p>
-    pub fn model(&self) -> ::std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The ID of the environment the device is associated with.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The status of the device.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DeviceStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the software set currently installed on the device.</p>
-    pub fn current_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn current_software_set_id(&self) -> ::std::option::Option<& str> {
         self.current_software_set_id.as_deref()
     }
     /// <p>The ID of the software set which the device has been set to.</p>
-    pub fn desired_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn desired_software_set_id(&self) -> ::std::option::Option<& str> {
         self.desired_software_set_id.as_deref()
     }
     /// <p>The ID of the software set that is pending to be installed on the device.</p>
-    pub fn pending_software_set_id(&self) -> ::std::option::Option<&str> {
+    pub fn pending_software_set_id(&self) -> ::std::option::Option<& str> {
         self.pending_software_set_id.as_deref()
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
-    pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
+    pub fn software_set_update_schedule(&self) -> ::std::option::Option<& crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
     /// <p>The timestamp of the most recent session on the device.</p>
-    pub fn last_connected_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_connected_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_connected_at.as_ref()
     }
     /// <p>The timestamp of the most recent check-in of the device.</p>
-    pub fn last_posture_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_posture_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_posture_at.as_ref()
     }
     /// <p>The timestamp of when the device was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the device was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tag keys and optional values for the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::EmbeddedTag> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::EmbeddedTag> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for DeviceSummary {
+impl  ::std::fmt::Debug for DeviceSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceSummary");
         formatter.field("id", &self.id);
@@ -161,8 +161,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the device.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +174,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The hardware serial number of the device.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The hardware serial number of the device.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +187,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The name of the device.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the device.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +200,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The model number of the device.</p>
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The model number of the device.</p>
     pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +213,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the environment the device is associated with.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment the device is associated with.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +226,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The status of the device.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DeviceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the device.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
@@ -245,8 +239,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the software set currently installed on the device.</p>
     pub fn set_current_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_software_set_id = input;
-        self
+        self.current_software_set_id = input; self
     }
     /// <p>The ID of the software set currently installed on the device.</p>
     pub fn get_current_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -259,8 +252,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the software set which the device has been set to.</p>
     pub fn set_desired_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.desired_software_set_id = input;
-        self
+        self.desired_software_set_id = input; self
     }
     /// <p>The ID of the software set which the device has been set to.</p>
     pub fn get_desired_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +265,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ID of the software set that is pending to be installed on the device.</p>
     pub fn set_pending_software_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pending_software_set_id = input;
-        self
+        self.pending_software_set_id = input; self
     }
     /// <p>The ID of the software set that is pending to be installed on the device.</p>
     pub fn get_pending_software_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +278,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn set_software_set_update_schedule(mut self, input: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>) -> Self {
-        self.software_set_update_schedule = input;
-        self
+        self.software_set_update_schedule = input; self
     }
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
@@ -301,8 +291,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The timestamp of the most recent session on the device.</p>
     pub fn set_last_connected_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_connected_at = input;
-        self
+        self.last_connected_at = input; self
     }
     /// <p>The timestamp of the most recent session on the device.</p>
     pub fn get_last_connected_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -315,8 +304,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The timestamp of the most recent check-in of the device.</p>
     pub fn set_last_posture_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_posture_at = input;
-        self
+        self.last_posture_at = input; self
     }
     /// <p>The timestamp of the most recent check-in of the device.</p>
     pub fn get_last_posture_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -329,8 +317,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The timestamp of when the device was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the device was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -343,8 +330,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The timestamp of when the device was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the device was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -357,8 +343,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -371,8 +356,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The tag keys and optional values for the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::EmbeddedTag>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>The tag keys and optional values for the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::EmbeddedTag> {
@@ -381,22 +365,38 @@ impl DeviceSummaryBuilder {
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {
         crate::types::DeviceSummary {
-            id: self.id,
-            serial_number: self.serial_number,
-            name: self.name,
-            model: self.model,
-            environment_id: self.environment_id,
-            status: self.status,
-            current_software_set_id: self.current_software_set_id,
-            desired_software_set_id: self.desired_software_set_id,
-            pending_software_set_id: self.pending_software_set_id,
-            software_set_update_schedule: self.software_set_update_schedule,
-            last_connected_at: self.last_connected_at,
-            last_posture_at: self.last_posture_at,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            arn: self.arn,
-            tags: self.tags,
+            id: self.id
+            ,
+            serial_number: self.serial_number
+            ,
+            name: self.name
+            ,
+            model: self.model
+            ,
+            environment_id: self.environment_id
+            ,
+            status: self.status
+            ,
+            current_software_set_id: self.current_software_set_id
+            ,
+            desired_software_set_id: self.desired_software_set_id
+            ,
+            pending_software_set_id: self.pending_software_set_id
+            ,
+            software_set_update_schedule: self.software_set_update_schedule
+            ,
+            last_connected_at: self.last_connected_at
+            ,
+            last_posture_at: self.last_posture_at
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -422,3 +422,4 @@ impl ::std::fmt::Debug for DeviceSummaryBuilder {
         formatter.finish()
     }
 }
+

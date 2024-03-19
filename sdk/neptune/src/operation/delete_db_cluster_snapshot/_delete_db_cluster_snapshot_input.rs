@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDbClusterSnapshotInput {
+pub struct DeleteDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDbClusterSnapshotInput {
+impl  DeleteDbClusterSnapshotInput  {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
-    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DeleteDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = input;
-        self
+        self.db_cluster_snapshot_identifier = input; self
     }
     /// <p>The identifier of the DB cluster snapshot to delete.</p>
     /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
@@ -47,14 +46,13 @@ impl DeleteDbClusterSnapshotInputBuilder {
         &self.db_cluster_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotInput`](crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput {
-            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_db_cluster_snapshot::DeleteDbClusterSnapshotInput {
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

@@ -3,20 +3,19 @@
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaGlobalSecondaryIndex {
+pub struct ReplicaGlobalSecondaryIndex  {
     /// <p>The name of the global secondary index.</p>
     pub index_name: ::std::string::String,
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
     pub provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
 }
-impl ReplicaGlobalSecondaryIndex {
+impl  ReplicaGlobalSecondaryIndex  {
     /// <p>The name of the global secondary index.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> & str {
+        use std::ops::Deref; self.index_name.deref()
     }
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
-    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
+    pub fn provisioned_throughput_override(&self) -> ::std::option::Option<& crate::types::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl ReplicaGlobalSecondaryIndexBuilder {
     }
     /// <p>The name of the global secondary index.</p>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The name of the global secondary index.</p>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl ReplicaGlobalSecondaryIndexBuilder {
     }
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
     pub fn set_provisioned_throughput_override(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughputOverride>) -> Self {
-        self.provisioned_throughput_override = input;
-        self
+        self.provisioned_throughput_override = input; self
     }
     /// <p>Replica table GSI-specific provisioned throughput. If not specified, uses the source table GSI's read capacity settings.</p>
     pub fn get_provisioned_throughput_override(&self) -> &::std::option::Option<crate::types::ProvisionedThroughputOverride> {
@@ -68,14 +65,17 @@ impl ReplicaGlobalSecondaryIndexBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexBuilder::index_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndex, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndex {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndex",
-                )
-            })?,
-            provisioned_throughput_override: self.provisioned_throughput_override,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReplicaGlobalSecondaryIndex {
+                index_name: self.index_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("index_name", "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndex")
+                    )?
+                ,
+                provisioned_throughput_override: self.provisioned_throughput_override
+                ,
+            }
+        )
     }
 }
+

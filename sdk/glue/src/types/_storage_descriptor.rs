@@ -3,13 +3,13 @@
 /// <p>Describes the physical storage of table data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StorageDescriptor {
+pub struct StorageDescriptor  {
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub columns: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>,
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub additional_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub additional_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub input_format: ::std::option::Option<::std::string::String>,
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
@@ -21,11 +21,11 @@ pub struct StorageDescriptor {
     /// <p>The serialization/deserialization (SerDe) information.</p>
     pub serde_info: ::std::option::Option<crate::types::SerDeInfo>,
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub bucket_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub bucket_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    pub sort_columns: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
+    pub sort_columns: ::std::option::Option<::std::vec::Vec::<crate::types::Order>>,
     /// <p>The user-supplied properties in key-value form.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
     /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
@@ -34,29 +34,31 @@ pub struct StorageDescriptor {
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub schema_reference: ::std::option::Option<crate::types::SchemaReference>,
 }
-impl StorageDescriptor {
+impl  StorageDescriptor  {
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.columns.is_none()`.
-    pub fn columns(&self) -> &[crate::types::Column] {
-        self.columns.as_deref().unwrap_or_default()
+    pub fn columns(&self) -> & [crate::types::Column] {
+        self.columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_locations.is_none()`.
-    pub fn additional_locations(&self) -> &[::std::string::String] {
-        self.additional_locations.as_deref().unwrap_or_default()
+    pub fn additional_locations(&self) -> & [::std::string::String] {
+        self.additional_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
-    pub fn input_format(&self) -> ::std::option::Option<&str> {
+    pub fn input_format(&self) -> ::std::option::Option<& str> {
         self.input_format.as_deref()
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
-    pub fn output_format(&self) -> ::std::option::Option<&str> {
+    pub fn output_format(&self) -> ::std::option::Option<& str> {
         self.output_format.as_deref()
     }
     /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
@@ -68,27 +70,29 @@ impl StorageDescriptor {
         self.number_of_buckets
     }
     /// <p>The serialization/deserialization (SerDe) information.</p>
-    pub fn serde_info(&self) -> ::std::option::Option<&crate::types::SerDeInfo> {
+    pub fn serde_info(&self) -> ::std::option::Option<& crate::types::SerDeInfo> {
         self.serde_info.as_ref()
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bucket_columns.is_none()`.
-    pub fn bucket_columns(&self) -> &[::std::string::String] {
-        self.bucket_columns.as_deref().unwrap_or_default()
+    pub fn bucket_columns(&self) -> & [::std::string::String] {
+        self.bucket_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort_columns.is_none()`.
-    pub fn sort_columns(&self) -> &[crate::types::Order] {
-        self.sort_columns.as_deref().unwrap_or_default()
+    pub fn sort_columns(&self) -> & [crate::types::Order] {
+        self.sort_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
-    pub fn skewed_info(&self) -> ::std::option::Option<&crate::types::SkewedInfo> {
+    pub fn skewed_info(&self) -> ::std::option::Option<& crate::types::SkewedInfo> {
         self.skewed_info.as_ref()
     }
     /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
@@ -97,7 +101,7 @@ impl StorageDescriptor {
     }
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
-    pub fn schema_reference(&self) -> ::std::option::Option<&crate::types::SchemaReference> {
+    pub fn schema_reference(&self) -> ::std::option::Option<& crate::types::SchemaReference> {
         self.schema_reference.as_ref()
     }
 }
@@ -112,17 +116,17 @@ impl StorageDescriptor {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StorageDescriptorBuilder {
-    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) input_format: ::std::option::Option<::std::string::String>,
     pub(crate) output_format: ::std::option::Option<::std::string::String>,
     pub(crate) compressed: ::std::option::Option<bool>,
     pub(crate) number_of_buckets: ::std::option::Option<i32>,
     pub(crate) serde_info: ::std::option::Option<crate::types::SerDeInfo>,
-    pub(crate) bucket_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec<crate::types::Order>>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) bucket_columns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) sort_columns: ::std::option::Option<::std::vec::Vec::<crate::types::Order>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) skewed_info: ::std::option::Option<crate::types::SkewedInfo>,
     pub(crate) stored_as_sub_directories: ::std::option::Option<bool>,
     pub(crate) schema_reference: ::std::option::Option<crate::types::SchemaReference>,
@@ -135,17 +139,16 @@ impl StorageDescriptorBuilder {
     /// <p>A list of the <code>Columns</code> in the table.</p>
     pub fn columns(mut self, input: crate::types::Column) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Column>>) -> Self {
+        self.columns = input; self
     }
     /// <p>A list of the <code>Columns</code> in the table.</p>
-    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Column>> {
         &self.columns
     }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
@@ -155,8 +158,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,17 +171,16 @@ impl StorageDescriptorBuilder {
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
     pub fn additional_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_locations.unwrap_or_default();
-        v.push(input.into());
-        self.additional_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.additional_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn set_additional_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.additional_locations = input;
-        self
+    pub fn set_additional_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.additional_locations = input; self
     }
     /// <p>A list of locations that point to the path where a Delta table is located.</p>
-    pub fn get_additional_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_additional_locations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.additional_locations
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
@@ -189,8 +190,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub fn set_input_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_format = input;
-        self
+        self.input_format = input; self
     }
     /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub fn get_input_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +203,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_format = input;
-        self
+        self.output_format = input; self
     }
     /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +216,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn set_compressed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.compressed = input;
-        self
+        self.compressed = input; self
     }
     /// <p><code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn get_compressed(&self) -> &::std::option::Option<bool> {
@@ -231,8 +229,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>Must be specified if the table contains any dimension columns.</p>
     pub fn set_number_of_buckets(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.number_of_buckets = input;
-        self
+        self.number_of_buckets = input; self
     }
     /// <p>Must be specified if the table contains any dimension columns.</p>
     pub fn get_number_of_buckets(&self) -> &::std::option::Option<i32> {
@@ -245,8 +242,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>The serialization/deserialization (SerDe) information.</p>
     pub fn set_serde_info(mut self, input: ::std::option::Option<crate::types::SerDeInfo>) -> Self {
-        self.serde_info = input;
-        self
+        self.serde_info = input; self
     }
     /// <p>The serialization/deserialization (SerDe) information.</p>
     pub fn get_serde_info(&self) -> &::std::option::Option<crate::types::SerDeInfo> {
@@ -259,17 +255,16 @@ impl StorageDescriptorBuilder {
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
     pub fn bucket_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bucket_columns.unwrap_or_default();
-        v.push(input.into());
-        self.bucket_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.bucket_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn set_bucket_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.bucket_columns = input;
-        self
+    pub fn set_bucket_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.bucket_columns = input; self
     }
     /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
-    pub fn get_bucket_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_bucket_columns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.bucket_columns
     }
     /// Appends an item to `sort_columns`.
@@ -279,17 +274,16 @@ impl StorageDescriptorBuilder {
     /// <p>A list specifying the sort order of each bucket in the table.</p>
     pub fn sort_columns(mut self, input: crate::types::Order) -> Self {
         let mut v = self.sort_columns.unwrap_or_default();
-        v.push(input);
-        self.sort_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sort_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Order>>) -> Self {
-        self.sort_columns = input;
-        self
+    pub fn set_sort_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Order>>) -> Self {
+        self.sort_columns = input; self
     }
     /// <p>A list specifying the sort order of each bucket in the table.</p>
-    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Order>> {
+    pub fn get_sort_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Order>> {
         &self.sort_columns
     }
     /// Adds a key-value pair to `parameters`.
@@ -299,17 +293,16 @@ impl StorageDescriptorBuilder {
     /// <p>The user-supplied properties in key-value form.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The user-supplied properties in key-value form.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
@@ -319,8 +312,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub fn set_skewed_info(mut self, input: ::std::option::Option<crate::types::SkewedInfo>) -> Self {
-        self.skewed_info = input;
-        self
+        self.skewed_info = input; self
     }
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub fn get_skewed_info(&self) -> &::std::option::Option<crate::types::SkewedInfo> {
@@ -333,8 +325,7 @@ impl StorageDescriptorBuilder {
     }
     /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn set_stored_as_sub_directories(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.stored_as_sub_directories = input;
-        self
+        self.stored_as_sub_directories = input; self
     }
     /// <p><code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn get_stored_as_sub_directories(&self) -> &::std::option::Option<bool> {
@@ -349,8 +340,7 @@ impl StorageDescriptorBuilder {
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub fn set_schema_reference(mut self, input: ::std::option::Option<crate::types::SchemaReference>) -> Self {
-        self.schema_reference = input;
-        self
+        self.schema_reference = input; self
     }
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
@@ -360,20 +350,38 @@ impl StorageDescriptorBuilder {
     /// Consumes the builder and constructs a [`StorageDescriptor`](crate::types::StorageDescriptor).
     pub fn build(self) -> crate::types::StorageDescriptor {
         crate::types::StorageDescriptor {
-            columns: self.columns,
-            location: self.location,
-            additional_locations: self.additional_locations,
-            input_format: self.input_format,
-            output_format: self.output_format,
-            compressed: self.compressed.unwrap_or_default(),
-            number_of_buckets: self.number_of_buckets.unwrap_or_default(),
-            serde_info: self.serde_info,
-            bucket_columns: self.bucket_columns,
-            sort_columns: self.sort_columns,
-            parameters: self.parameters,
-            skewed_info: self.skewed_info,
-            stored_as_sub_directories: self.stored_as_sub_directories.unwrap_or_default(),
-            schema_reference: self.schema_reference,
+            columns: self.columns
+            ,
+            location: self.location
+            ,
+            additional_locations: self.additional_locations
+            ,
+            input_format: self.input_format
+            ,
+            output_format: self.output_format
+            ,
+            compressed: self.compressed
+                .unwrap_or_default()
+            ,
+            number_of_buckets: self.number_of_buckets
+                .unwrap_or_default()
+            ,
+            serde_info: self.serde_info
+            ,
+            bucket_columns: self.bucket_columns
+            ,
+            sort_columns: self.sort_columns
+            ,
+            parameters: self.parameters
+            ,
+            skewed_info: self.skewed_info
+            ,
+            stored_as_sub_directories: self.stored_as_sub_directories
+                .unwrap_or_default()
+            ,
+            schema_reference: self.schema_reference
+            ,
         }
     }
 }
+

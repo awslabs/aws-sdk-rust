@@ -3,7 +3,7 @@
 /// <p><b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or event-based lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicy {
+pub struct LifecyclePolicy  {
     /// <p>The identifier of the lifecycle policy.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the lifecycle policy.</p>
@@ -21,7 +21,7 @@ pub struct LifecyclePolicy {
     /// <p>The configuration of the lifecycle policy</p>
     pub policy_details: ::std::option::Option<crate::types::PolicyDetails>,
     /// <p>The tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
@@ -33,45 +33,45 @@ pub struct LifecyclePolicy {
     /// </ul>
     pub default_policy: ::std::option::Option<bool>,
 }
-impl LifecyclePolicy {
+impl  LifecyclePolicy  {
     /// <p>The identifier of the lifecycle policy.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The description of the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The activation state of the lifecycle policy.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::GettablePolicyStateValues> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::GettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>The description of the status.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The local date and time when the lifecycle policy was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
-    pub fn date_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
     /// <p>The configuration of the lifecycle policy</p>
-    pub fn policy_details(&self) -> ::std::option::Option<&crate::types::PolicyDetails> {
+    pub fn policy_details(&self) -> ::std::option::Option<& crate::types::PolicyDetails> {
         self.policy_details.as_ref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
@@ -104,7 +104,7 @@ pub struct LifecyclePolicyBuilder {
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_details: ::std::option::Option<crate::types::PolicyDetails>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) default_policy: ::std::option::Option<bool>,
 }
@@ -116,8 +116,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -130,8 +129,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +142,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The activation state of the lifecycle policy.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::GettablePolicyStateValues>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The activation state of the lifecycle policy.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
@@ -158,8 +155,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The description of the status.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The description of the status.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +168,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +181,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The local date and time when the lifecycle policy was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The local date and time when the lifecycle policy was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -200,8 +194,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
     pub fn set_date_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_modified = input;
-        self
+        self.date_modified = input; self
     }
     /// <p>The local date and time when the lifecycle policy was last modified.</p>
     pub fn get_date_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,8 +207,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The configuration of the lifecycle policy</p>
     pub fn set_policy_details(mut self, input: ::std::option::Option<crate::types::PolicyDetails>) -> Self {
-        self.policy_details = input;
-        self
+        self.policy_details = input; self
     }
     /// <p>The configuration of the lifecycle policy</p>
     pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
@@ -228,17 +220,16 @@ impl LifecyclePolicyBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
@@ -248,8 +239,7 @@ impl LifecyclePolicyBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,8 +264,7 @@ impl LifecyclePolicyBuilder {
     /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn set_default_policy(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.default_policy = input;
-        self
+        self.default_policy = input; self
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
@@ -290,17 +279,29 @@ impl LifecyclePolicyBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicy`](crate::types::LifecyclePolicy).
     pub fn build(self) -> crate::types::LifecyclePolicy {
         crate::types::LifecyclePolicy {
-            policy_id: self.policy_id,
-            description: self.description,
-            state: self.state,
-            status_message: self.status_message,
-            execution_role_arn: self.execution_role_arn,
-            date_created: self.date_created,
-            date_modified: self.date_modified,
-            policy_details: self.policy_details,
-            tags: self.tags,
-            policy_arn: self.policy_arn,
-            default_policy: self.default_policy,
+            policy_id: self.policy_id
+            ,
+            description: self.description
+            ,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
+            execution_role_arn: self.execution_role_arn
+            ,
+            date_created: self.date_created
+            ,
+            date_modified: self.date_modified
+            ,
+            policy_details: self.policy_details
+            ,
+            tags: self.tags
+            ,
+            policy_arn: self.policy_arn
+            ,
+            default_policy: self.default_policy
+            ,
         }
     }
 }
+

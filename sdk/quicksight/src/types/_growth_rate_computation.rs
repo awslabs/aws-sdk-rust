@@ -3,7 +3,7 @@
 /// <p>The growth rate computation configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GrowthRateComputation {
+pub struct GrowthRateComputation  {
     /// <p>The ID for a computation.</p>
     pub computation_id: ::std::string::String,
     /// <p>The name of a computation.</p>
@@ -15,22 +15,21 @@ pub struct GrowthRateComputation {
     /// <p>The period size setup of a growth rate computation.</p>
     pub period_size: ::std::option::Option<i32>,
 }
-impl GrowthRateComputation {
+impl  GrowthRateComputation  {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.computation_id.deref()
+    pub fn computation_id(&self) -> & str {
+        use std::ops::Deref; self.computation_id.deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> ::std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> ::std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::MeasureField> {
         self.value.as_ref()
     }
     /// <p>The period size setup of a growth rate computation.</p>
@@ -64,8 +63,7 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The ID for a computation.</p>
     pub fn set_computation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.computation_id = input;
-        self
+        self.computation_id = input; self
     }
     /// <p>The ID for a computation.</p>
     pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a computation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +89,7 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
@@ -106,8 +102,7 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
@@ -120,8 +115,7 @@ impl GrowthRateComputationBuilder {
     }
     /// <p>The period size setup of a growth rate computation.</p>
     pub fn set_period_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.period_size = input;
-        self
+        self.period_size = input; self
     }
     /// <p>The period size setup of a growth rate computation.</p>
     pub fn get_period_size(&self) -> &::std::option::Option<i32> {
@@ -131,17 +125,23 @@ impl GrowthRateComputationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::GrowthRateComputationBuilder::computation_id)
     pub fn build(self) -> ::std::result::Result<crate::types::GrowthRateComputation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GrowthRateComputation {
-            computation_id: self.computation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "computation_id",
-                    "computation_id was not specified but it is required when building GrowthRateComputation",
-                )
-            })?,
-            name: self.name,
-            time: self.time,
-            value: self.value,
-            period_size: self.period_size,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GrowthRateComputation {
+                computation_id: self.computation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("computation_id", "computation_id was not specified but it is required when building GrowthRateComputation")
+                    )?
+                ,
+                name: self.name
+                ,
+                time: self.time
+                ,
+                value: self.value
+                ,
+                period_size: self.period_size
+                ,
+            }
+        )
     }
 }
+

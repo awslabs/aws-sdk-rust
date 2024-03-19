@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetCrawlerMetrics`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`crawler_name_list(impl Into<String>)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::crawler_name_list) / [`set_crawler_name_list(Option<Vec::<String>>)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::set_crawler_name_list):<br>required: **false**<br><p>A list of the names of crawlers about which to retrieve metrics.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of a list to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
-    /// - On success, responds with [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput) with field(s):
+                            /// - On success, responds with [`GetCrawlerMetricsOutput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput) with field(s):
     ///   - [`crawler_metrics_list(Option<Vec::<CrawlerMetrics>>)`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput::crawler_metrics_list): <p>A list of metrics for the specified crawler.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_crawler_metrics::GetCrawlerMetricsOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    /// - On failure, responds with [`SdkError<GetCrawlerMetricsError>`](crate::operation::get_crawler_metrics::GetCrawlerMetricsError)
+                            /// - On failure, responds with [`SdkError<GetCrawlerMetricsError>`](crate::operation::get_crawler_metrics::GetCrawlerMetricsError)
     pub fn get_crawler_metrics(&self) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder {
-        crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

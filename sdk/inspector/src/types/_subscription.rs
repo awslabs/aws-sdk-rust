@@ -3,29 +3,26 @@
 /// <p>This data type is used as a response element in the <code>ListEventSubscriptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
     pub topic_arn: ::std::string::String,
     /// <p>The list of existing event subscriptions.</p>
-    pub event_subscriptions: ::std::vec::Vec<crate::types::EventSubscription>,
+    pub event_subscriptions: ::std::vec::Vec::<crate::types::EventSubscription>,
 }
-impl Subscription {
+impl  Subscription  {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.topic_arn.deref()
+    pub fn topic_arn(&self) -> & str {
+        use std::ops::Deref; self.topic_arn.deref()
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn event_subscriptions(&self) -> &[crate::types::EventSubscription] {
-        use std::ops::Deref;
-        self.event_subscriptions.deref()
+    pub fn event_subscriptions(&self) -> & [crate::types::EventSubscription] {
+        use std::ops::Deref; self.event_subscriptions.deref()
     }
 }
 impl Subscription {
@@ -41,7 +38,7 @@ impl Subscription {
 pub struct SubscriptionBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
+    pub(crate) event_subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::EventSubscription>>,
 }
 impl SubscriptionBuilder {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
@@ -52,8 +49,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl SubscriptionBuilder {
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
     pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,17 +76,16 @@ impl SubscriptionBuilder {
     /// <p>The list of existing event subscriptions.</p>
     pub fn event_subscriptions(mut self, input: crate::types::EventSubscription) -> Self {
         let mut v = self.event_subscriptions.unwrap_or_default();
-        v.push(input);
-        self.event_subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.event_subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn set_event_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>) -> Self {
-        self.event_subscriptions = input;
-        self
+    pub fn set_event_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EventSubscription>>) -> Self {
+        self.event_subscriptions = input; self
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+    pub fn get_event_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EventSubscription>> {
         &self.event_subscriptions
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
@@ -100,25 +94,25 @@ impl SubscriptionBuilder {
     /// - [`topic_arn`](crate::types::builders::SubscriptionBuilder::topic_arn)
     /// - [`event_subscriptions`](crate::types::builders::SubscriptionBuilder::event_subscriptions)
     pub fn build(self) -> ::std::result::Result<crate::types::Subscription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Subscription {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building Subscription",
-                )
-            })?,
-            topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "topic_arn",
-                    "topic_arn was not specified but it is required when building Subscription",
-                )
-            })?,
-            event_subscriptions: self.event_subscriptions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "event_subscriptions",
-                    "event_subscriptions was not specified but it is required when building Subscription",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Subscription {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building Subscription")
+                    )?
+                ,
+                topic_arn: self.topic_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("topic_arn", "topic_arn was not specified but it is required when building Subscription")
+                    )?
+                ,
+                event_subscriptions: self.event_subscriptions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("event_subscriptions", "event_subscriptions was not specified but it is required when building Subscription")
+                    )?
+                ,
+            }
+        )
     }
 }
+

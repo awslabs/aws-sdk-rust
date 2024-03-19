@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTrainingJobs`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of training jobs to return in the response.</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only training jobs created after the specified time (timestamp).</p><br>
@@ -15,11 +15,12 @@ impl super::Client {
     ///   - [`sort_by(SortBy)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_sort_by):<br>required: **false**<br><p>The field to sort results by. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Ascending</code>.</p><br>
     ///   - [`warm_pool_status_equals(WarmPoolResourceStatus)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::warm_pool_status_equals) / [`set_warm_pool_status_equals(Option<WarmPoolResourceStatus>)`](crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::set_warm_pool_status_equals):<br>required: **false**<br><p>A filter that retrieves only training jobs with a specific warm pool status.</p><br>
-    /// - On success, responds with [`ListTrainingJobsOutput`](crate::operation::list_training_jobs::ListTrainingJobsOutput) with field(s):
+                            /// - On success, responds with [`ListTrainingJobsOutput`](crate::operation::list_training_jobs::ListTrainingJobsOutput) with field(s):
     ///   - [`training_job_summaries(Option<Vec::<TrainingJobSummary>>)`](crate::operation::list_training_jobs::ListTrainingJobsOutput::training_job_summaries): <p>An array of <code>TrainingJobSummary</code> objects, each listing a training job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_training_jobs::ListTrainingJobsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of training jobs, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListTrainingJobsError>`](crate::operation::list_training_jobs::ListTrainingJobsError)
+                            /// - On failure, responds with [`SdkError<ListTrainingJobsError>`](crate::operation::list_training_jobs::ListTrainingJobsError)
     pub fn list_training_jobs(&self) -> crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder {
-        crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_training_jobs::builders::ListTrainingJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

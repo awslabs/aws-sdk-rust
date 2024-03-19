@@ -2,14 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStudios`](crate::operation::list_studios::builders::ListStudiosFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_studios::builders::ListStudiosFluentBuilder::set_marker):<br>required: **false**<br><p>The pagination token that indicates the set of results to retrieve.</p><br>
-    /// - On success, responds with [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput) with field(s):
+                            /// - On success, responds with [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput) with field(s):
     ///   - [`studios(Option<Vec::<StudioSummary>>)`](crate::operation::list_studios::ListStudiosOutput::studios): <p>The list of Studio summary objects.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_studios::ListStudiosOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::operation::list_studios::ListStudiosError)
+                            /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::operation::list_studios::ListStudiosError)
     pub fn list_studios(&self) -> crate::operation::list_studios::builders::ListStudiosFluentBuilder {
-        crate::operation::list_studios::builders::ListStudiosFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_studios::builders::ListStudiosFluentBuilder::new(self.handle.clone())
+                            }
 }
+

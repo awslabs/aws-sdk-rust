@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFeedbackInput {
+pub struct PutFeedbackInput  {
     /// <p>The identifier of the application associated with the feedback.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user giving the feedback.</p>
@@ -16,29 +16,29 @@ pub struct PutFeedbackInput {
     /// <p>The feedback usefulness value given by the user to the chat message.</p>
     pub message_usefulness: ::std::option::Option<crate::types::MessageUsefulnessFeedback>,
 }
-impl PutFeedbackInput {
+impl  PutFeedbackInput  {
     /// <p>The identifier of the application associated with the feedback.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the user giving the feedback.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the conversation the feedback is attached to.</p>
-    pub fn conversation_id(&self) -> ::std::option::Option<&str> {
+    pub fn conversation_id(&self) -> ::std::option::Option<& str> {
         self.conversation_id.as_deref()
     }
     /// <p>The identifier of the chat message that the feedback was given for.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The timestamp for when the feedback was recorded.</p>
-    pub fn message_copied_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn message_copied_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.message_copied_at.as_ref()
     }
     /// <p>The feedback usefulness value given by the user to the chat message.</p>
-    pub fn message_usefulness(&self) -> ::std::option::Option<&crate::types::MessageUsefulnessFeedback> {
+    pub fn message_usefulness(&self) -> ::std::option::Option<& crate::types::MessageUsefulnessFeedback> {
         self.message_usefulness.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the application associated with the feedback.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the application associated with the feedback.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the user giving the feedback.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the user giving the feedback.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +97,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the conversation the feedback is attached to.</p>
     pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
+        self.conversation_id = input; self
     }
     /// <p>The identifier of the conversation the feedback is attached to.</p>
     pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +111,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the chat message that the feedback was given for.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The identifier of the chat message that the feedback was given for.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +124,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The timestamp for when the feedback was recorded.</p>
     pub fn set_message_copied_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.message_copied_at = input;
-        self
+        self.message_copied_at = input; self
     }
     /// <p>The timestamp for when the feedback was recorded.</p>
     pub fn get_message_copied_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -142,8 +137,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The feedback usefulness value given by the user to the chat message.</p>
     pub fn set_message_usefulness(mut self, input: ::std::option::Option<crate::types::MessageUsefulnessFeedback>) -> Self {
-        self.message_usefulness = input;
-        self
+        self.message_usefulness = input; self
     }
     /// <p>The feedback usefulness value given by the user to the chat message.</p>
     pub fn get_message_usefulness(&self) -> &::std::option::Option<crate::types::MessageUsefulnessFeedback> {
@@ -151,13 +145,22 @@ impl PutFeedbackInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
-            application_id: self.application_id,
-            user_id: self.user_id,
-            conversation_id: self.conversation_id,
-            message_id: self.message_id,
-            message_copied_at: self.message_copied_at,
-            message_usefulness: self.message_usefulness,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_feedback::PutFeedbackInput {
+                application_id: self.application_id
+                ,
+                user_id: self.user_id
+                ,
+                conversation_id: self.conversation_id
+                ,
+                message_id: self.message_id
+                ,
+                message_copied_at: self.message_copied_at
+                ,
+                message_usefulness: self.message_usefulness
+                ,
+            }
+        )
     }
 }
+

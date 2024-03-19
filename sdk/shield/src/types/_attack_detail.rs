@@ -3,66 +3,70 @@
 /// <p>The details of a DDoS attack.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttackDetail {
+pub struct AttackDetail  {
     /// <p>The unique identifier (ID) of the attack.</p>
     pub attack_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    pub sub_resources: ::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>>,
+    pub sub_resources: ::std::option::Option<::std::vec::Vec::<crate::types::SubResourceSummary>>,
     /// <p>The time the attack started, in Unix time in seconds.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    pub attack_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
+    pub attack_counters: ::std::option::Option<::std::vec::Vec::<crate::types::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
-    pub attack_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>,
+    pub attack_properties: ::std::option::Option<::std::vec::Vec::<crate::types::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
-    pub mitigations: ::std::option::Option<::std::vec::Vec<crate::types::Mitigation>>,
+    pub mitigations: ::std::option::Option<::std::vec::Vec::<crate::types::Mitigation>>,
 }
-impl AttackDetail {
+impl  AttackDetail  {
     /// <p>The unique identifier (ID) of the attack.</p>
-    pub fn attack_id(&self) -> ::std::option::Option<&str> {
+    pub fn attack_id(&self) -> ::std::option::Option<& str> {
         self.attack_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_resources.is_none()`.
-    pub fn sub_resources(&self) -> &[crate::types::SubResourceSummary] {
-        self.sub_resources.as_deref().unwrap_or_default()
+    pub fn sub_resources(&self) -> & [crate::types::SubResourceSummary] {
+        self.sub_resources.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time the attack started, in Unix time in seconds.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the attack ended, in Unix time in seconds.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_counters.is_none()`.
-    pub fn attack_counters(&self) -> &[crate::types::SummarizedCounter] {
-        self.attack_counters.as_deref().unwrap_or_default()
+    pub fn attack_counters(&self) -> & [crate::types::SummarizedCounter] {
+        self.attack_counters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The array of objects that provide details of the Shield event.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attack_properties.is_none()`.
-    pub fn attack_properties(&self) -> &[crate::types::AttackProperty] {
-        self.attack_properties.as_deref().unwrap_or_default()
+    pub fn attack_properties(&self) -> & [crate::types::AttackProperty] {
+        self.attack_properties.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of mitigation actions taken for the attack.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mitigations.is_none()`.
-    pub fn mitigations(&self) -> &[crate::types::Mitigation] {
-        self.mitigations.as_deref().unwrap_or_default()
+    pub fn mitigations(&self) -> & [crate::types::Mitigation] {
+        self.mitigations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AttackDetail {
@@ -78,12 +82,12 @@ impl AttackDetail {
 pub struct AttackDetailBuilder {
     pub(crate) attack_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) sub_resources: ::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>>,
+    pub(crate) sub_resources: ::std::option::Option<::std::vec::Vec::<crate::types::SubResourceSummary>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) attack_counters: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>,
-    pub(crate) attack_properties: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>,
-    pub(crate) mitigations: ::std::option::Option<::std::vec::Vec<crate::types::Mitigation>>,
+    pub(crate) attack_counters: ::std::option::Option<::std::vec::Vec::<crate::types::SummarizedCounter>>,
+    pub(crate) attack_properties: ::std::option::Option<::std::vec::Vec::<crate::types::AttackProperty>>,
+    pub(crate) mitigations: ::std::option::Option<::std::vec::Vec::<crate::types::Mitigation>>,
 }
 impl AttackDetailBuilder {
     /// <p>The unique identifier (ID) of the attack.</p>
@@ -93,8 +97,7 @@ impl AttackDetailBuilder {
     }
     /// <p>The unique identifier (ID) of the attack.</p>
     pub fn set_attack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attack_id = input;
-        self
+        self.attack_id = input; self
     }
     /// <p>The unique identifier (ID) of the attack.</p>
     pub fn get_attack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +110,7 @@ impl AttackDetailBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +123,16 @@ impl AttackDetailBuilder {
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
     pub fn sub_resources(mut self, input: crate::types::SubResourceSummary) -> Self {
         let mut v = self.sub_resources.unwrap_or_default();
-        v.push(input);
-        self.sub_resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sub_resources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    pub fn set_sub_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>>) -> Self {
-        self.sub_resources = input;
-        self
+    pub fn set_sub_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubResourceSummary>>) -> Self {
+        self.sub_resources = input; self
     }
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-    pub fn get_sub_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubResourceSummary>> {
+    pub fn get_sub_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubResourceSummary>> {
         &self.sub_resources
     }
     /// <p>The time the attack started, in Unix time in seconds.</p>
@@ -141,8 +142,7 @@ impl AttackDetailBuilder {
     }
     /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time the attack started, in Unix time in seconds.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +155,7 @@ impl AttackDetailBuilder {
     }
     /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The time the attack ended, in Unix time in seconds.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,17 +168,16 @@ impl AttackDetailBuilder {
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub fn attack_counters(mut self, input: crate::types::SummarizedCounter) -> Self {
         let mut v = self.attack_counters.unwrap_or_default();
-        v.push(input);
-        self.attack_counters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attack_counters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    pub fn set_attack_counters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>>) -> Self {
-        self.attack_counters = input;
-        self
+    pub fn set_attack_counters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SummarizedCounter>>) -> Self {
+        self.attack_counters = input; self
     }
     /// <p>List of counters that describe the attack for the specified time period.</p>
-    pub fn get_attack_counters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>> {
+    pub fn get_attack_counters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SummarizedCounter>> {
         &self.attack_counters
     }
     /// Appends an item to `attack_properties`.
@@ -190,19 +188,18 @@ impl AttackDetailBuilder {
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn attack_properties(mut self, input: crate::types::AttackProperty) -> Self {
         let mut v = self.attack_properties.unwrap_or_default();
-        v.push(input);
-        self.attack_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attack_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The array of objects that provide details of the Shield event.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_attack_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>>) -> Self {
-        self.attack_properties = input;
-        self
+    pub fn set_attack_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttackProperty>>) -> Self {
+        self.attack_properties = input; self
     }
     /// <p>The array of objects that provide details of the Shield event.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn get_attack_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackProperty>> {
+    pub fn get_attack_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttackProperty>> {
         &self.attack_properties
     }
     /// Appends an item to `mitigations`.
@@ -212,30 +209,38 @@ impl AttackDetailBuilder {
     /// <p>List of mitigation actions taken for the attack.</p>
     pub fn mitigations(mut self, input: crate::types::Mitigation) -> Self {
         let mut v = self.mitigations.unwrap_or_default();
-        v.push(input);
-        self.mitigations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.mitigations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of mitigation actions taken for the attack.</p>
-    pub fn set_mitigations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mitigation>>) -> Self {
-        self.mitigations = input;
-        self
+    pub fn set_mitigations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Mitigation>>) -> Self {
+        self.mitigations = input; self
     }
     /// <p>List of mitigation actions taken for the attack.</p>
-    pub fn get_mitigations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mitigation>> {
+    pub fn get_mitigations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Mitigation>> {
         &self.mitigations
     }
     /// Consumes the builder and constructs a [`AttackDetail`](crate::types::AttackDetail).
     pub fn build(self) -> crate::types::AttackDetail {
         crate::types::AttackDetail {
-            attack_id: self.attack_id,
-            resource_arn: self.resource_arn,
-            sub_resources: self.sub_resources,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            attack_counters: self.attack_counters,
-            attack_properties: self.attack_properties,
-            mitigations: self.mitigations,
+            attack_id: self.attack_id
+            ,
+            resource_arn: self.resource_arn
+            ,
+            sub_resources: self.sub_resources
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            attack_counters: self.attack_counters
+            ,
+            attack_properties: self.attack_properties
+            ,
+            mitigations: self.mitigations
+            ,
         }
     }
 }
+

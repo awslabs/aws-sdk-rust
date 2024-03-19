@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOpsMetadataOutput {
+pub struct ListOpsMetadataOutput  {
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub ops_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>,
+    pub ops_metadata_list: ::std::option::Option<::std::vec::Vec::<crate::types::OpsMetadata>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOpsMetadataOutput {
+impl  ListOpsMetadataOutput  {
     /// <p>Returns a list of OpsMetadata objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ops_metadata_list.is_none()`.
-    pub fn ops_metadata_list(&self) -> &[crate::types::OpsMetadata] {
-        self.ops_metadata_list.as_deref().unwrap_or_default()
+    pub fn ops_metadata_list(&self) -> & [crate::types::OpsMetadata] {
+        self.ops_metadata_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOpsMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOpsMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput).
     pub fn builder() -> crate::operation::list_ops_metadata::builders::ListOpsMetadataOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOpsMetadataOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOpsMetadataOutputBuilder {
-    pub(crate) ops_metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>,
+    pub(crate) ops_metadata_list: ::std::option::Option<::std::vec::Vec::<crate::types::OpsMetadata>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOpsMetadataOutputBuilder {
     /// <p>Returns a list of OpsMetadata objects.</p>
     pub fn ops_metadata_list(mut self, input: crate::types::OpsMetadata) -> Self {
         let mut v = self.ops_metadata_list.unwrap_or_default();
-        v.push(input);
-        self.ops_metadata_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ops_metadata_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub fn set_ops_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>>) -> Self {
-        self.ops_metadata_list = input;
-        self
+    pub fn set_ops_metadata_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsMetadata>>) -> Self {
+        self.ops_metadata_list = input; self
     }
     /// <p>Returns a list of OpsMetadata objects.</p>
-    pub fn get_ops_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsMetadata>> {
+    pub fn get_ops_metadata_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsMetadata>> {
         &self.ops_metadata_list
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
@@ -69,28 +69,30 @@ impl ListOpsMetadataOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOpsMetadataOutput`](crate::operation::list_ops_metadata::ListOpsMetadataOutput).
     pub fn build(self) -> crate::operation::list_ops_metadata::ListOpsMetadataOutput {
         crate::operation::list_ops_metadata::ListOpsMetadataOutput {
-            ops_metadata_list: self.ops_metadata_list,
-            next_token: self.next_token,
+            ops_metadata_list: self.ops_metadata_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

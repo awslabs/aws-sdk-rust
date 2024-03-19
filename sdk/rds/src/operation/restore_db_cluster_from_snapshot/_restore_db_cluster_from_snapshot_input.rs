@@ -3,10 +3,10 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreDbClusterFromSnapshotInput {
+pub struct RestoreDbClusterFromSnapshotInput  {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -71,10 +71,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The tags to be assigned to the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
@@ -113,7 +113,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -201,13 +201,14 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Reserved for future use.</p>
     pub rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
 }
-impl RestoreDbClusterFromSnapshotInput {
+impl  RestoreDbClusterFromSnapshotInput  {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
-    pub fn availability_zones(&self) -> &[::std::string::String] {
-        self.availability_zones.as_deref().unwrap_or_default()
+    pub fn availability_zones(&self) -> & [::std::string::String] {
+        self.availability_zones.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -221,7 +222,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
@@ -232,14 +233,14 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The database engine to use for the new DB cluster.</p>
     /// <p>Default: The same as source</p>
     /// <p>Constraint: Must be compatible with the engine of the source</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
@@ -260,7 +261,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p><b>PostgreSQL</b></p>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
@@ -274,32 +275,34 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The database name for the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the option group to use for the restored DB cluster.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<& str> {
         self.option_group_name.as_deref()
     }
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags to be assigned to the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -311,7 +314,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
@@ -345,20 +348,21 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
-    pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
-        self.enable_cloudwatch_logs_exports.as_deref().unwrap_or_default()
+    pub fn enable_cloudwatch_logs_exports(&self) -> & [::std::string::String] {
+        self.enable_cloudwatch_logs_exports.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn engine_mode(&self) -> ::std::option::Option<&str> {
+    pub fn engine_mode(&self) -> ::std::option::Option<& str> {
         self.engine_mode.as_deref()
     }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfiguration> {
+    pub fn scaling_configuration(&self) -> ::std::option::Option<& crate::types::ScalingConfiguration> {
         self.scaling_configuration.as_ref()
     }
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
@@ -374,7 +378,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
@@ -390,18 +394,18 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_iam_role_name(&self) -> ::std::option::Option<& str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn db_cluster_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_cluster_instance_class.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
@@ -409,7 +413,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
@@ -443,7 +447,7 @@ impl RestoreDbClusterFromSnapshotInput {
     }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
+    pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<& crate::types::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
     /// <p>The network type of the DB cluster.</p>
@@ -457,11 +461,11 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn network_type(&self) -> ::std::option::Option<&str> {
+    pub fn network_type(&self) -> ::std::option::Option<& str> {
         self.network_type.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<&crate::types::RdsCustomClusterConfiguration> {
+    pub fn rds_custom_cluster_configuration(&self) -> ::std::option::Option<& crate::types::RdsCustomClusterConfiguration> {
         self.rds_custom_cluster_configuration.as_ref()
     }
 }
@@ -476,7 +480,7 @@ impl RestoreDbClusterFromSnapshotInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RestoreDbClusterFromSnapshotInputBuilder {
-    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
@@ -485,12 +489,12 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_iam_database_authentication: ::std::option::Option<bool>,
     pub(crate) backtrack_window: ::std::option::Option<i64>,
-    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) engine_mode: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfiguration>,
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -515,19 +519,18 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.availability_zones
     }
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
@@ -560,8 +563,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -600,8 +602,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_identifier = input;
-        self
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
@@ -628,8 +629,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Constraint: Must be compatible with the engine of the source</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The database engine to use for the new DB cluster.</p>
     /// <p>Default: The same as source</p>
@@ -679,8 +679,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the database engine to use for the new DB cluster. If you don't specify an engine version, the default version for the database engine in the Amazon Web Services Region is used.</p>
     /// <p>To list all of the available engine versions for Aurora MySQL, use the following command:</p>
@@ -716,8 +715,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Default: The same port as the original DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port number on which the new DB cluster accepts connections.</p>
     /// <p>Constraints: This value must be <code>1150-65535</code></p>
@@ -739,8 +737,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_subnet_group_name = input;
-        self
+        self.db_subnet_group_name = input; self
     }
     /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DB subnet group.</p>
@@ -758,8 +755,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The database name for the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database name for the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -775,8 +771,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the option group to use for the restored DB cluster.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn set_option_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.option_group_name = input;
-        self
+        self.option_group_name = input; self
     }
     /// <p>The name of the option group to use for the restored DB cluster.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
@@ -791,19 +786,18 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// Appends an item to `tags`.
@@ -814,19 +808,18 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags to be assigned to the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the restored DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
@@ -854,8 +847,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
@@ -881,8 +873,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_enable_iam_database_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_iam_database_authentication = input;
-        self
+        self.enable_iam_database_authentication = input; self
     }
     /// <p>Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -915,8 +906,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.backtrack_window = input;
-        self
+        self.backtrack_window = input; self
     }
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
@@ -949,9 +939,9 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
-        v.push(input.into());
-        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>RDS for MySQL</b></p>
@@ -965,9 +955,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.enable_cloudwatch_logs_exports = input;
-        self
+    pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.enable_cloudwatch_logs_exports = input; self
     }
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>RDS for MySQL</b></p>
@@ -981,7 +970,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
@@ -995,8 +984,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_mode = input;
-        self
+        self.engine_mode = input; self
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
@@ -1013,8 +1001,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ScalingConfiguration>) -> Self {
-        self.scaling_configuration = input;
-        self
+        self.scaling_configuration = input; self
     }
     /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -1052,8 +1039,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+        self.db_cluster_parameter_group_name = input; self
     }
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
@@ -1080,8 +1066,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1097,8 +1082,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags_to_snapshot = input;
-        self
+        self.copy_tags_to_snapshot = input; self
     }
     /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1116,8 +1100,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1134,8 +1117,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_domain_iam_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_iam_role_name = input;
-        self
+        self.domain_iam_role_name = input; self
     }
     /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
@@ -1153,8 +1135,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_db_cluster_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_instance_class = input;
-        self
+        self.db_cluster_instance_class = input; self
     }
     /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i></p>
@@ -1177,8 +1158,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
@@ -1201,8 +1181,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1254,8 +1233,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Specifies whether the DB cluster is publicly accessible.</p>
     /// <p>When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB cluster doesn't permit it.</p>
@@ -1288,8 +1266,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_serverless_v2_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
-        self.serverless_v2_scaling_configuration = input;
-        self
+        self.serverless_v2_scaling_configuration = input; self
     }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -1323,8 +1300,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.network_type = input;
-        self
+        self.network_type = input; self
     }
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
@@ -1347,50 +1323,76 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_rds_custom_cluster_configuration(mut self, input: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>) -> Self {
-        self.rds_custom_cluster_configuration = input;
-        self
+        self.rds_custom_cluster_configuration = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn get_rds_custom_cluster_configuration(&self) -> &::std::option::Option<crate::types::RdsCustomClusterConfiguration> {
         &self.rds_custom_cluster_configuration
     }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput {
-            availability_zones: self.availability_zones,
-            db_cluster_identifier: self.db_cluster_identifier,
-            snapshot_identifier: self.snapshot_identifier,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            port: self.port,
-            db_subnet_group_name: self.db_subnet_group_name,
-            database_name: self.database_name,
-            option_group_name: self.option_group_name,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            tags: self.tags,
-            kms_key_id: self.kms_key_id,
-            enable_iam_database_authentication: self.enable_iam_database_authentication,
-            backtrack_window: self.backtrack_window,
-            enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
-            engine_mode: self.engine_mode,
-            scaling_configuration: self.scaling_configuration,
-            db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
-            deletion_protection: self.deletion_protection,
-            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
-            domain: self.domain,
-            domain_iam_role_name: self.domain_iam_role_name,
-            db_cluster_instance_class: self.db_cluster_instance_class,
-            storage_type: self.storage_type,
-            iops: self.iops,
-            publicly_accessible: self.publicly_accessible,
-            serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
-            network_type: self.network_type,
-            rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput {
+                availability_zones: self.availability_zones
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                port: self.port
+                ,
+                db_subnet_group_name: self.db_subnet_group_name
+                ,
+                database_name: self.database_name
+                ,
+                option_group_name: self.option_group_name
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                tags: self.tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                enable_iam_database_authentication: self.enable_iam_database_authentication
+                ,
+                backtrack_window: self.backtrack_window
+                ,
+                enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports
+                ,
+                engine_mode: self.engine_mode
+                ,
+                scaling_configuration: self.scaling_configuration
+                ,
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot
+                ,
+                domain: self.domain
+                ,
+                domain_iam_role_name: self.domain_iam_role_name
+                ,
+                db_cluster_instance_class: self.db_cluster_instance_class
+                ,
+                storage_type: self.storage_type
+                ,
+                iops: self.iops
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration
+                ,
+                network_type: self.network_type
+                ,
+                rds_custom_cluster_configuration: self.rds_custom_cluster_configuration
+                ,
+            }
+        )
     }
 }
+

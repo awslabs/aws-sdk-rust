@@ -3,19 +3,19 @@
 /// <p>Details of an instance in a SageMaker HyperPod cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClusterInstanceStatusDetails {
+pub struct ClusterInstanceStatusDetails  {
     /// <p>The status of an instance in a SageMaker HyperPod cluster.</p>
     pub status: ::std::option::Option<crate::types::ClusterInstanceStatus>,
     /// <p>The message from an instance in a SageMaker HyperPod cluster.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ClusterInstanceStatusDetails {
+impl  ClusterInstanceStatusDetails  {
     /// <p>The status of an instance in a SageMaker HyperPod cluster.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClusterInstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClusterInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The message from an instance in a SageMaker HyperPod cluster.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ClusterInstanceStatusDetailsBuilder {
     }
     /// <p>The status of an instance in a SageMaker HyperPod cluster.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterInstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an instance in a SageMaker HyperPod cluster.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterInstanceStatus> {
@@ -56,8 +55,7 @@ impl ClusterInstanceStatusDetailsBuilder {
     }
     /// <p>The message from an instance in a SageMaker HyperPod cluster.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message from an instance in a SageMaker HyperPod cluster.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl ClusterInstanceStatusDetailsBuilder {
     /// Consumes the builder and constructs a [`ClusterInstanceStatusDetails`](crate::types::ClusterInstanceStatusDetails).
     pub fn build(self) -> crate::types::ClusterInstanceStatusDetails {
         crate::types::ClusterInstanceStatusDetails {
-            status: self.status,
-            message: self.message,
+            status: self.status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

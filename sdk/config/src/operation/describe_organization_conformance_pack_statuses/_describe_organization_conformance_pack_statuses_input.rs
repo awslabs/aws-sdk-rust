@@ -2,36 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeOrganizationConformancePackStatusesInput {
+pub struct DescribeOrganizationConformancePackStatusesInput  {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
-    pub organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeOrganizationConformancePackStatusesInput {
+impl  DescribeOrganizationConformancePackStatusesInput  {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_conformance_pack_names.is_none()`.
-    pub fn organization_conformance_pack_names(&self) -> &[::std::string::String] {
-        self.organization_conformance_pack_names.as_deref().unwrap_or_default()
+    pub fn organization_conformance_pack_names(&self) -> & [::std::string::String] {
+        self.organization_conformance_pack_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeOrganizationConformancePackStatusesInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConformancePackStatusesInput`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesInputBuilder {
-        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesInputBuilder {
+        crate::operation::describe_organization_conformance_pack_statuses::builders::DescribeOrganizationConformancePackStatusesInputBuilder::default()
     }
 }
 
@@ -39,7 +38,7 @@ impl DescribeOrganizationConformancePackStatusesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConformancePackStatusesInputBuilder {
-    pub(crate) organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organization_conformance_pack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +50,16 @@ impl DescribeOrganizationConformancePackStatusesInputBuilder {
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
     pub fn organization_conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organization_conformance_pack_names.unwrap_or_default();
-        v.push(input.into());
-        self.organization_conformance_pack_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.organization_conformance_pack_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
-    pub fn set_organization_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.organization_conformance_pack_names = input;
-        self
+    pub fn set_organization_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.organization_conformance_pack_names = input; self
     }
     /// <p>The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.</p>
-    pub fn get_organization_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_organization_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.organization_conformance_pack_names
     }
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -71,8 +69,7 @@ impl DescribeOrganizationConformancePackStatusesInputBuilder {
     }
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -85,26 +82,24 @@ impl DescribeOrganizationConformancePackStatusesInputBuilder {
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConformancePackStatusesInput`](crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput {
-                organization_conformance_pack_names: self.organization_conformance_pack_names,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                organization_conformance_pack_names: self.organization_conformance_pack_names
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

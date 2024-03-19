@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVariantImportJobsInput {
+pub struct ListVariantImportJobsInput  {
     /// <p>The maximum number of import jobs to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A list of job IDs.</p>
-    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter to apply to the list.</p>
     pub filter: ::std::option::Option<crate::types::ListVariantImportJobsFilter>,
 }
-impl ListVariantImportJobsInput {
+impl  ListVariantImportJobsInput  {
     /// <p>The maximum number of import jobs to return in one page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A list of job IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
-    pub fn ids(&self) -> &[::std::string::String] {
-        self.ids.as_deref().unwrap_or_default()
+    pub fn ids(&self) -> & [::std::string::String] {
+        self.ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ListVariantImportJobsFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ListVariantImportJobsFilter> {
         self.filter.as_ref()
     }
 }
@@ -44,7 +45,7 @@ impl ListVariantImportJobsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVariantImportJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) filter: ::std::option::Option<crate::types::ListVariantImportJobsFilter>,
 }
@@ -56,8 +57,7 @@ impl ListVariantImportJobsInputBuilder {
     }
     /// <p>The maximum number of import jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of import jobs to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -70,17 +70,16 @@ impl ListVariantImportJobsInputBuilder {
     /// <p>A list of job IDs.</p>
     pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of job IDs.</p>
-    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>A list of job IDs.</p>
-    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.ids
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -90,8 +89,7 @@ impl ListVariantImportJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,23 +102,26 @@ impl ListVariantImportJobsInputBuilder {
     }
     /// <p>A filter to apply to the list.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListVariantImportJobsFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListVariantImportJobsFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
-            max_results: self.max_results,
-            ids: self.ids,
-            next_token: self.next_token,
-            filter: self.filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
+                max_results: self.max_results
+                ,
+                ids: self.ids
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

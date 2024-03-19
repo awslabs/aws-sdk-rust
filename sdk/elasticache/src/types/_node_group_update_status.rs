@@ -3,22 +3,23 @@
 /// <p>The status of the service update on the node group</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeGroupUpdateStatus {
+pub struct NodeGroupUpdateStatus  {
     /// <p>The ID of the node group</p>
     pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the service update on the node group member</p>
-    pub node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
+    pub node_group_member_update_status: ::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupMemberUpdateStatus>>,
 }
-impl NodeGroupUpdateStatus {
+impl  NodeGroupUpdateStatus  {
     /// <p>The ID of the node group</p>
-    pub fn node_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_group_id(&self) -> ::std::option::Option<& str> {
         self.node_group_id.as_deref()
     }
     /// <p>The status of the service update on the node group member</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_group_member_update_status.is_none()`.
-    pub fn node_group_member_update_status(&self) -> &[crate::types::NodeGroupMemberUpdateStatus] {
-        self.node_group_member_update_status.as_deref().unwrap_or_default()
+    pub fn node_group_member_update_status(&self) -> & [crate::types::NodeGroupMemberUpdateStatus] {
+        self.node_group_member_update_status.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NodeGroupUpdateStatus {
@@ -33,7 +34,7 @@ impl NodeGroupUpdateStatus {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeGroupUpdateStatusBuilder {
     pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
-    pub(crate) node_group_member_update_status: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
+    pub(crate) node_group_member_update_status: ::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupMemberUpdateStatus>>,
 }
 impl NodeGroupUpdateStatusBuilder {
     /// <p>The ID of the node group</p>
@@ -43,8 +44,7 @@ impl NodeGroupUpdateStatusBuilder {
     }
     /// <p>The ID of the node group</p>
     pub fn set_node_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_group_id = input;
-        self
+        self.node_group_id = input; self
     }
     /// <p>The ID of the node group</p>
     pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,27 +57,26 @@ impl NodeGroupUpdateStatusBuilder {
     /// <p>The status of the service update on the node group member</p>
     pub fn node_group_member_update_status(mut self, input: crate::types::NodeGroupMemberUpdateStatus) -> Self {
         let mut v = self.node_group_member_update_status.unwrap_or_default();
-        v.push(input);
-        self.node_group_member_update_status = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_group_member_update_status = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of the service update on the node group member</p>
-    pub fn set_node_group_member_update_status(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>>,
-    ) -> Self {
-        self.node_group_member_update_status = input;
-        self
+    pub fn set_node_group_member_update_status(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupMemberUpdateStatus>>) -> Self {
+        self.node_group_member_update_status = input; self
     }
     /// <p>The status of the service update on the node group member</p>
-    pub fn get_node_group_member_update_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>> {
+    pub fn get_node_group_member_update_status(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeGroupMemberUpdateStatus>> {
         &self.node_group_member_update_status
     }
     /// Consumes the builder and constructs a [`NodeGroupUpdateStatus`](crate::types::NodeGroupUpdateStatus).
     pub fn build(self) -> crate::types::NodeGroupUpdateStatus {
         crate::types::NodeGroupUpdateStatus {
-            node_group_id: self.node_group_id,
-            node_group_member_update_status: self.node_group_member_update_status,
+            node_group_id: self.node_group_id
+            ,
+            node_group_member_update_status: self.node_group_member_update_status
+            ,
         }
     }
 }
+

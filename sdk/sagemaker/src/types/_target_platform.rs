@@ -3,7 +3,7 @@
 /// <p>Contains information about a target platform that you want your model to run on, such as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetPlatform {
+pub struct TargetPlatform  {
     /// <p>Specifies a target platform OS.</p>
     /// <ul>
     /// <li>
@@ -37,7 +37,7 @@ pub struct TargetPlatform {
     /// </ul>
     pub accelerator: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
 }
-impl TargetPlatform {
+impl  TargetPlatform  {
     /// <p>Specifies a target platform OS.</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl TargetPlatform {
     /// <li>
     /// <p><code>ANDROID</code>: Android operating systems. Android API level can be specified using the <code>ANDROID_PLATFORM</code> compiler option. For example, <code>"CompilerOptions": {'ANDROID_PLATFORM': 28}</code></p></li>
     /// </ul>
-    pub fn os(&self) -> ::std::option::Option<&crate::types::TargetPlatformOs> {
+    pub fn os(&self) -> ::std::option::Option<& crate::types::TargetPlatformOs> {
         self.os.as_ref()
     }
     /// <p>Specifies a target platform architecture.</p>
@@ -61,7 +61,7 @@ impl TargetPlatform {
     /// <li>
     /// <p><code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.</p></li>
     /// </ul>
-    pub fn arch(&self) -> ::std::option::Option<&crate::types::TargetPlatformArch> {
+    pub fn arch(&self) -> ::std::option::Option<& crate::types::TargetPlatformArch> {
         self.arch.as_ref()
     }
     /// <p>Specifies a target platform accelerator (optional).</p>
@@ -73,7 +73,7 @@ impl TargetPlatform {
     /// <li>
     /// <p><code>INTEL_GRAPHICS</code>: Integrated Intel graphics</p></li>
     /// </ul>
-    pub fn accelerator(&self) -> ::std::option::Option<&crate::types::TargetPlatformAccelerator> {
+    pub fn accelerator(&self) -> ::std::option::Option<& crate::types::TargetPlatformAccelerator> {
         self.accelerator.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl TargetPlatformBuilder {
     /// <p><code>ANDROID</code>: Android operating systems. Android API level can be specified using the <code>ANDROID_PLATFORM</code> compiler option. For example, <code>"CompilerOptions": {'ANDROID_PLATFORM': 28}</code></p></li>
     /// </ul>
     pub fn set_os(mut self, input: ::std::option::Option<crate::types::TargetPlatformOs>) -> Self {
-        self.os = input;
-        self
+        self.os = input; self
     }
     /// <p>Specifies a target platform OS.</p>
     /// <ul>
@@ -158,8 +157,7 @@ impl TargetPlatformBuilder {
     /// <p><code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.</p></li>
     /// </ul>
     pub fn set_arch(mut self, input: ::std::option::Option<crate::types::TargetPlatformArch>) -> Self {
-        self.arch = input;
-        self
+        self.arch = input; self
     }
     /// <p>Specifies a target platform architecture.</p>
     /// <ul>
@@ -200,8 +198,7 @@ impl TargetPlatformBuilder {
     /// <p><code>INTEL_GRAPHICS</code>: Integrated Intel graphics</p></li>
     /// </ul>
     pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
-        self.accelerator = input;
-        self
+        self.accelerator = input; self
     }
     /// <p>Specifies a target platform accelerator (optional).</p>
     /// <ul>
@@ -218,9 +215,13 @@ impl TargetPlatformBuilder {
     /// Consumes the builder and constructs a [`TargetPlatform`](crate::types::TargetPlatform).
     pub fn build(self) -> crate::types::TargetPlatform {
         crate::types::TargetPlatform {
-            os: self.os,
-            arch: self.arch,
-            accelerator: self.accelerator,
+            os: self.os
+            ,
+            arch: self.arch
+            ,
+            accelerator: self.accelerator
+            ,
         }
     }
 }
+

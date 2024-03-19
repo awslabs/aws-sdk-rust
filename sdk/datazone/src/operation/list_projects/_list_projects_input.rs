@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListProjectsInput {
+pub struct ListProjectsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon DataZone user.</p>
@@ -16,25 +16,25 @@ pub struct ListProjectsInput {
     /// <p>The maximum number of projects to return in a single call to <code>ListProjects</code>. When the number of projects to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListProjectsInput {
+impl  ListProjectsInput  {
     /// <p>The identifier of the Amazon DataZone domain.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon DataZone user.</p>
-    pub fn user_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn user_identifier(&self) -> ::std::option::Option<& str> {
         self.user_identifier.as_deref()
     }
     /// <p>The identifier of a group.</p>
-    pub fn group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn group_identifier(&self) -> ::std::option::Option<& str> {
         self.group_identifier.as_deref()
     }
     /// <p></p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of projects to return in a single call to <code>ListProjects</code>. When the number of projects to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
@@ -42,7 +42,7 @@ impl ListProjectsInput {
         self.max_results
     }
 }
-impl ::std::fmt::Debug for ListProjectsInput {
+impl  ::std::fmt::Debug for ListProjectsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListProjectsInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -81,8 +81,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +94,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone user.</p>
     pub fn set_user_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_identifier = input;
-        self
+        self.user_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone user.</p>
     pub fn get_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The identifier of a group.</p>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_identifier = input;
-        self
+        self.group_identifier = input; self
     }
     /// <p>The identifier of a group.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,25 +146,30 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The maximum number of projects to return in a single call to <code>ListProjects</code>. When the number of projects to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of projects to return in a single call to <code>ListProjects</code>. When the number of projects to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
-            domain_identifier: self.domain_identifier,
-            user_identifier: self.user_identifier,
-            group_identifier: self.group_identifier,
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_projects::ListProjectsInput {
+                domain_identifier: self.domain_identifier
+                ,
+                user_identifier: self.user_identifier
+                ,
+                group_identifier: self.group_identifier
+                ,
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListProjectsInputBuilder {
@@ -184,3 +184,4 @@ impl ::std::fmt::Debug for ListProjectsInputBuilder {
         formatter.finish()
     }
 }
+

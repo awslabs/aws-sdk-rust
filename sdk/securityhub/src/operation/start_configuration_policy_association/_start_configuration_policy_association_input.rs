@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartConfigurationPolicyAssociationInput {
+pub struct StartConfigurationPolicyAssociationInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub configuration_policy_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub target: ::std::option::Option<crate::types::Target>,
 }
-impl StartConfigurationPolicyAssociationInput {
+impl  StartConfigurationPolicyAssociationInput  {
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
-    pub fn configuration_policy_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_policy_identifier(&self) -> ::std::option::Option<& str> {
         self.configuration_policy_identifier.as_deref()
     }
     /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartConfigurationPolicyAssociationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn set_configuration_policy_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_policy_identifier = input;
-        self
+        self.configuration_policy_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.</p>
     pub fn get_configuration_policy_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl StartConfigurationPolicyAssociationInputBuilder {
     }
     /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The identifier of the target account, organizational unit, or the root to associate with the specified configuration.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
         &self.target
     }
     /// Consumes the builder and constructs a [`StartConfigurationPolicyAssociationInput`](crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationInput {
-                configuration_policy_identifier: self.configuration_policy_identifier,
-                target: self.target,
-            },
+                configuration_policy_identifier: self.configuration_policy_identifier
+                ,
+                target: self.target
+                ,
+            }
         )
     }
 }
+

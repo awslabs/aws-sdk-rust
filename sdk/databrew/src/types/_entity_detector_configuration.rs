@@ -3,7 +3,7 @@
 /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityDetectorConfiguration {
+pub struct EntityDetectorConfiguration  {
     /// <p>Entity types to detect. Can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -46,11 +46,11 @@ pub struct EntityDetectorConfiguration {
     /// <p>DATE</p></li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub entity_types: ::std::vec::Vec<::std::string::String>,
+    pub entity_types: ::std::vec::Vec::<::std::string::String>,
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
+    pub allowed_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedStatistics>>,
 }
-impl EntityDetectorConfiguration {
+impl  EntityDetectorConfiguration  {
     /// <p>Entity types to detect. Can be any of the following:</p>
     /// <ul>
     /// <li>
@@ -93,15 +93,15 @@ impl EntityDetectorConfiguration {
     /// <p>DATE</p></li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn entity_types(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.entity_types.deref()
+    pub fn entity_types(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.entity_types.deref()
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_statistics.is_none()`.
-    pub fn allowed_statistics(&self) -> &[crate::types::AllowedStatistics] {
-        self.allowed_statistics.as_deref().unwrap_or_default()
+    pub fn allowed_statistics(&self) -> & [crate::types::AllowedStatistics] {
+        self.allowed_statistics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl EntityDetectorConfiguration {
@@ -115,8 +115,8 @@ impl EntityDetectorConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityDetectorConfigurationBuilder {
-    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) allowed_statistics: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) allowed_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedStatistics>>,
 }
 impl EntityDetectorConfigurationBuilder {
     /// Appends an item to `entity_types`.
@@ -167,9 +167,9 @@ impl EntityDetectorConfigurationBuilder {
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
     pub fn entity_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-        v.push(input.into());
-        self.entity_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.entity_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Entity types to detect. Can be any of the following:</p>
     /// <ul>
@@ -213,9 +213,8 @@ impl EntityDetectorConfigurationBuilder {
     /// <p>DATE</p></li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.entity_types = input;
-        self
+    pub fn set_entity_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.entity_types = input; self
     }
     /// <p>Entity types to detect. Can be any of the following:</p>
     /// <ul>
@@ -259,7 +258,7 @@ impl EntityDetectorConfigurationBuilder {
     /// <p>DATE</p></li>
     /// </ul>
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_entity_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.entity_types
     }
     /// Appends an item to `allowed_statistics`.
@@ -269,31 +268,33 @@ impl EntityDetectorConfigurationBuilder {
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
     pub fn allowed_statistics(mut self, input: crate::types::AllowedStatistics) -> Self {
         let mut v = self.allowed_statistics.unwrap_or_default();
-        v.push(input);
-        self.allowed_statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.allowed_statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn set_allowed_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>>) -> Self {
-        self.allowed_statistics = input;
-        self
+    pub fn set_allowed_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AllowedStatistics>>) -> Self {
+        self.allowed_statistics = input; self
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn get_allowed_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedStatistics>> {
+    pub fn get_allowed_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AllowedStatistics>> {
         &self.allowed_statistics
     }
     /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_types`](crate::types::builders::EntityDetectorConfigurationBuilder::entity_types)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityDetectorConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityDetectorConfiguration {
-            entity_types: self.entity_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_types",
-                    "entity_types was not specified but it is required when building EntityDetectorConfiguration",
-                )
-            })?,
-            allowed_statistics: self.allowed_statistics,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityDetectorConfiguration {
+                entity_types: self.entity_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_types", "entity_types was not specified but it is required when building EntityDetectorConfiguration")
+                    )?
+                ,
+                allowed_statistics: self.allowed_statistics
+                ,
+            }
+        )
     }
 }
+

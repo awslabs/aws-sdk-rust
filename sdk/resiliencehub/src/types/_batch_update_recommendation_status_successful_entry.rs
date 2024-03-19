@@ -3,7 +3,7 @@
 /// <p>List of operational recommendations that were successfully included or excluded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateRecommendationStatusSuccessfulEntry {
+pub struct BatchUpdateRecommendationStatusSuccessfulEntry  {
     /// <p>An identifier for an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
@@ -17,21 +17,19 @@ pub struct BatchUpdateRecommendationStatusSuccessfulEntry {
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub exclude_reason: ::std::option::Option<crate::types::ExcludeRecommendationReason>,
 }
-impl BatchUpdateRecommendationStatusSuccessfulEntry {
+impl  BatchUpdateRecommendationStatusSuccessfulEntry  {
     /// <p>An identifier for an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>Reference identifier of the operational recommendation.</p>
-    pub fn reference_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_id.deref()
+    pub fn reference_id(&self) -> & str {
+        use std::ops::Deref; self.reference_id.deref()
     }
     /// <p>The operational recommendation item.</p>
-    pub fn item(&self) -> ::std::option::Option<&crate::types::UpdateRecommendationStatusItem> {
+    pub fn item(&self) -> ::std::option::Option<& crate::types::UpdateRecommendationStatusItem> {
         self.item.as_ref()
     }
     /// <p>Indicates if the operational recommendation was successfully excluded.</p>
@@ -39,7 +37,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntry {
         self.excluded
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
-    pub fn exclude_reason(&self) -> ::std::option::Option<&crate::types::ExcludeRecommendationReason> {
+    pub fn exclude_reason(&self) -> ::std::option::Option<& crate::types::ExcludeRecommendationReason> {
         self.exclude_reason.as_ref()
     }
 }
@@ -73,8 +71,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>An identifier for an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
@@ -90,8 +87,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     }
     /// <p>Reference identifier of the operational recommendation.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>Reference identifier of the operational recommendation.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +101,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     }
     /// <p>The operational recommendation item.</p>
     pub fn set_item(mut self, input: ::std::option::Option<crate::types::UpdateRecommendationStatusItem>) -> Self {
-        self.item = input;
-        self
+        self.item = input; self
     }
     /// <p>The operational recommendation item.</p>
     pub fn get_item(&self) -> &::std::option::Option<crate::types::UpdateRecommendationStatusItem> {
@@ -120,8 +115,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     }
     /// <p>Indicates if the operational recommendation was successfully excluded.</p>
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Indicates if the operational recommendation was successfully excluded.</p>
     pub fn get_excluded(&self) -> &::std::option::Option<bool> {
@@ -134,8 +128,7 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn set_exclude_reason(mut self, input: ::std::option::Option<crate::types::ExcludeRecommendationReason>) -> Self {
-        self.exclude_reason = input;
-        self
+        self.exclude_reason = input; self
     }
     /// <p>Indicates the reason for excluding an operational recommendation.</p>
     pub fn get_exclude_reason(&self) -> &::std::option::Option<crate::types::ExcludeRecommendationReason> {
@@ -146,30 +139,30 @@ impl BatchUpdateRecommendationStatusSuccessfulEntryBuilder {
     /// - [`entry_id`](crate::types::builders::BatchUpdateRecommendationStatusSuccessfulEntryBuilder::entry_id)
     /// - [`reference_id`](crate::types::builders::BatchUpdateRecommendationStatusSuccessfulEntryBuilder::reference_id)
     /// - [`excluded`](crate::types::builders::BatchUpdateRecommendationStatusSuccessfulEntryBuilder::excluded)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchUpdateRecommendationStatusSuccessfulEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry",
-                )
-            })?,
-            reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_id",
-                    "reference_id was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry",
-                )
-            })?,
-            item: self.item,
-            excluded: self.excluded.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "excluded",
-                    "excluded was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry",
-                )
-            })?,
-            exclude_reason: self.exclude_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusSuccessfulEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchUpdateRecommendationStatusSuccessfulEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry")
+                    )?
+                ,
+                reference_id: self.reference_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_id", "reference_id was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry")
+                    )?
+                ,
+                item: self.item
+                ,
+                excluded: self.excluded
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("excluded", "excluded was not specified but it is required when building BatchUpdateRecommendationStatusSuccessfulEntry")
+                    )?
+                ,
+                exclude_reason: self.exclude_reason
+                ,
+            }
+        )
     }
 }
+

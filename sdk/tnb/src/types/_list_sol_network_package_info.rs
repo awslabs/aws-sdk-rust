@@ -4,7 +4,7 @@
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolNetworkPackageInfo {
+pub struct ListSolNetworkPackageInfo  {
     /// <p>ID of the individual network package.</p>
     pub id: ::std::string::String,
     /// <p>Network package ARN.</p>
@@ -26,61 +26,60 @@ pub struct ListSolNetworkPackageInfo {
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
     pub nsd_invariant_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vnf_pkg_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The metadata of the network package.</p>
     pub metadata: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>,
 }
-impl ListSolNetworkPackageInfo {
+impl  ListSolNetworkPackageInfo  {
     /// <p>ID of the individual network package.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    pub fn nsd_onboarding_state(&self) -> &crate::types::NsdOnboardingState {
+    pub fn nsd_onboarding_state(&self) -> & crate::types::NsdOnboardingState {
         &self.nsd_onboarding_state
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(&self) -> &crate::types::NsdOperationalState {
+    pub fn nsd_operational_state(&self) -> & crate::types::NsdOperationalState {
         &self.nsd_operational_state
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    pub fn nsd_usage_state(&self) -> &crate::types::NsdUsageState {
+    pub fn nsd_usage_state(&self) -> & crate::types::NsdUsageState {
         &self.nsd_usage_state
     }
     /// <p>ID of the network service descriptor on which the network package is based.</p>
-    pub fn nsd_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_id(&self) -> ::std::option::Option<& str> {
         self.nsd_id.as_deref()
     }
     /// <p>Name of the onboarded network service descriptor in the network package.</p>
-    pub fn nsd_name(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_name(&self) -> ::std::option::Option<& str> {
         self.nsd_name.as_deref()
     }
     /// <p>Version of the onboarded network service descriptor in the network package.</p>
-    pub fn nsd_version(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_version(&self) -> ::std::option::Option<& str> {
         self.nsd_version.as_deref()
     }
     /// <p>Designer of the onboarded network service descriptor in the network package.</p>
-    pub fn nsd_designer(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_designer(&self) -> ::std::option::Option<& str> {
         self.nsd_designer.as_deref()
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
-    pub fn nsd_invariant_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_invariant_id(&self) -> ::std::option::Option<& str> {
         self.nsd_invariant_id.as_deref()
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vnf_pkg_ids.is_none()`.
-    pub fn vnf_pkg_ids(&self) -> &[::std::string::String] {
-        self.vnf_pkg_ids.as_deref().unwrap_or_default()
+    pub fn vnf_pkg_ids(&self) -> & [::std::string::String] {
+        self.vnf_pkg_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The metadata of the network package.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolNetworkPackageMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::ListSolNetworkPackageMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -105,7 +104,7 @@ pub struct ListSolNetworkPackageInfoBuilder {
     pub(crate) nsd_version: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_designer: ::std::option::Option<::std::string::String>,
     pub(crate) nsd_invariant_id: ::std::option::Option<::std::string::String>,
-    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vnf_pkg_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) metadata: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>,
 }
 impl ListSolNetworkPackageInfoBuilder {
@@ -117,8 +116,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>ID of the individual network package.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>ID of the individual network package.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Network package ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Network package ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
     pub fn set_nsd_onboarding_state(mut self, input: ::std::option::Option<crate::types::NsdOnboardingState>) -> Self {
-        self.nsd_onboarding_state = input;
-        self
+        self.nsd_onboarding_state = input; self
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
     pub fn get_nsd_onboarding_state(&self) -> &::std::option::Option<crate::types::NsdOnboardingState> {
@@ -162,8 +158,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn set_nsd_operational_state(mut self, input: ::std::option::Option<crate::types::NsdOperationalState>) -> Self {
-        self.nsd_operational_state = input;
-        self
+        self.nsd_operational_state = input; self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn get_nsd_operational_state(&self) -> &::std::option::Option<crate::types::NsdOperationalState> {
@@ -177,8 +172,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
     pub fn set_nsd_usage_state(mut self, input: ::std::option::Option<crate::types::NsdUsageState>) -> Self {
-        self.nsd_usage_state = input;
-        self
+        self.nsd_usage_state = input; self
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
     pub fn get_nsd_usage_state(&self) -> &::std::option::Option<crate::types::NsdUsageState> {
@@ -191,8 +185,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>ID of the network service descriptor on which the network package is based.</p>
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_id = input;
-        self
+        self.nsd_id = input; self
     }
     /// <p>ID of the network service descriptor on which the network package is based.</p>
     pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -205,8 +198,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Name of the onboarded network service descriptor in the network package.</p>
     pub fn set_nsd_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_name = input;
-        self
+        self.nsd_name = input; self
     }
     /// <p>Name of the onboarded network service descriptor in the network package.</p>
     pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +211,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Version of the onboarded network service descriptor in the network package.</p>
     pub fn set_nsd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_version = input;
-        self
+        self.nsd_version = input; self
     }
     /// <p>Version of the onboarded network service descriptor in the network package.</p>
     pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -233,8 +224,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Designer of the onboarded network service descriptor in the network package.</p>
     pub fn set_nsd_designer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_designer = input;
-        self
+        self.nsd_designer = input; self
     }
     /// <p>Designer of the onboarded network service descriptor in the network package.</p>
     pub fn get_nsd_designer(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +237,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
     pub fn set_nsd_invariant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_invariant_id = input;
-        self
+        self.nsd_invariant_id = input; self
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
     pub fn get_nsd_invariant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,17 +250,16 @@ impl ListSolNetworkPackageInfoBuilder {
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
     pub fn vnf_pkg_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vnf_pkg_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vnf_pkg_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vnf_pkg_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vnf_pkg_ids = input;
-        self
+    pub fn set_vnf_pkg_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vnf_pkg_ids = input; self
     }
     /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
-    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vnf_pkg_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vnf_pkg_ids
     }
     /// <p>The metadata of the network package.</p>
@@ -282,8 +270,7 @@ impl ListSolNetworkPackageInfoBuilder {
     }
     /// <p>The metadata of the network package.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::ListSolNetworkPackageMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The metadata of the network package.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ListSolNetworkPackageMetadata> {
@@ -297,44 +284,49 @@ impl ListSolNetworkPackageInfoBuilder {
     /// - [`nsd_operational_state`](crate::types::builders::ListSolNetworkPackageInfoBuilder::nsd_operational_state)
     /// - [`nsd_usage_state`](crate::types::builders::ListSolNetworkPackageInfoBuilder::nsd_usage_state)
     pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkPackageInfo, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListSolNetworkPackageInfo {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ListSolNetworkPackageInfo",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ListSolNetworkPackageInfo",
-                )
-            })?,
-            nsd_onboarding_state: self.nsd_onboarding_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_onboarding_state",
-                    "nsd_onboarding_state was not specified but it is required when building ListSolNetworkPackageInfo",
-                )
-            })?,
-            nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_operational_state",
-                    "nsd_operational_state was not specified but it is required when building ListSolNetworkPackageInfo",
-                )
-            })?,
-            nsd_usage_state: self.nsd_usage_state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "nsd_usage_state",
-                    "nsd_usage_state was not specified but it is required when building ListSolNetworkPackageInfo",
-                )
-            })?,
-            nsd_id: self.nsd_id,
-            nsd_name: self.nsd_name,
-            nsd_version: self.nsd_version,
-            nsd_designer: self.nsd_designer,
-            nsd_invariant_id: self.nsd_invariant_id,
-            vnf_pkg_ids: self.vnf_pkg_ids,
-            metadata: self.metadata,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListSolNetworkPackageInfo {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ListSolNetworkPackageInfo")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ListSolNetworkPackageInfo")
+                    )?
+                ,
+                nsd_onboarding_state: self.nsd_onboarding_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_onboarding_state", "nsd_onboarding_state was not specified but it is required when building ListSolNetworkPackageInfo")
+                    )?
+                ,
+                nsd_operational_state: self.nsd_operational_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_operational_state", "nsd_operational_state was not specified but it is required when building ListSolNetworkPackageInfo")
+                    )?
+                ,
+                nsd_usage_state: self.nsd_usage_state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("nsd_usage_state", "nsd_usage_state was not specified but it is required when building ListSolNetworkPackageInfo")
+                    )?
+                ,
+                nsd_id: self.nsd_id
+                ,
+                nsd_name: self.nsd_name
+                ,
+                nsd_version: self.nsd_version
+                ,
+                nsd_designer: self.nsd_designer
+                ,
+                nsd_invariant_id: self.nsd_invariant_id
+                ,
+                vnf_pkg_ids: self.vnf_pkg_ids
+                ,
+                metadata: self.metadata
+                ,
+            }
+        )
     }
 }
+

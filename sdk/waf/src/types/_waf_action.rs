@@ -7,7 +7,7 @@
 /// <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WafAction {
+pub struct WafAction  {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct WafAction {
     /// </ul>
     pub r#type: crate::types::WafActionType,
 }
-impl WafAction {
+impl  WafAction  {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ impl WafAction {
     /// <li>
     /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::WafActionType {
+    pub fn r#type(&self) -> & crate::types::WafActionType {
         &self.r#type
     }
 }
@@ -71,8 +71,7 @@ impl WafActionBuilder {
     /// <p><code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WafActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
@@ -90,13 +89,15 @@ impl WafActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::WafActionBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::WafAction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WafAction {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building WafAction",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WafAction {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building WafAction")
+                    )?
+                ,
+            }
+        )
     }
 }
+

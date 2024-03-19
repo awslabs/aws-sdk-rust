@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateScheduledQueryInput {
+pub struct UpdateScheduledQueryInput  {
     /// <p>ARN of the scheuled query.</p>
     pub scheduled_query_arn: ::std::option::Option<::std::string::String>,
     /// <p>State of the scheduled query.</p>
     pub state: ::std::option::Option<crate::types::ScheduledQueryState>,
 }
-impl UpdateScheduledQueryInput {
+impl  UpdateScheduledQueryInput  {
     /// <p>ARN of the scheuled query.</p>
-    pub fn scheduled_query_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_query_arn(&self) -> ::std::option::Option<& str> {
         self.scheduled_query_arn.as_deref()
     }
     /// <p>State of the scheduled query.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ScheduledQueryState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ScheduledQueryState> {
         self.state.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateScheduledQueryInputBuilder {
     }
     /// <p>ARN of the scheuled query.</p>
     pub fn set_scheduled_query_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_query_arn = input;
-        self
+        self.scheduled_query_arn = input; self
     }
     /// <p>ARN of the scheuled query.</p>
     pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateScheduledQueryInputBuilder {
     }
     /// <p>State of the scheduled query.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ScheduledQueryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>State of the scheduled query.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduledQueryState> {
         &self.state
     }
     /// Consumes the builder and constructs a [`UpdateScheduledQueryInput`](crate::operation::update_scheduled_query::UpdateScheduledQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_scheduled_query::UpdateScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_scheduled_query::UpdateScheduledQueryInput {
-            scheduled_query_arn: self.scheduled_query_arn,
-            state: self.state,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scheduled_query::UpdateScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_scheduled_query::UpdateScheduledQueryInput {
+                scheduled_query_arn: self.scheduled_query_arn
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

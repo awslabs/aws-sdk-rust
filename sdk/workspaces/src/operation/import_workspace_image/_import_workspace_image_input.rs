@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportWorkspaceImageInput {
+pub struct ImportWorkspaceImageInput  {
     /// <p>The identifier of the EC2 image.</p>
     pub ec2_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
@@ -15,7 +15,7 @@ pub struct ImportWorkspaceImageInput {
     /// <p>The description of the WorkSpace image.</p>
     pub image_description: ::std::option::Option<::std::string::String>,
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p><note>
     /// <ul>
     /// <li>
@@ -24,33 +24,34 @@ pub struct ImportWorkspaceImageInput {
     /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
-    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
 }
-impl ImportWorkspaceImageInput {
+impl  ImportWorkspaceImageInput  {
     /// <p>The identifier of the EC2 image.</p>
-    pub fn ec2_image_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_image_id(&self) -> ::std::option::Option<& str> {
         self.ec2_image_id.as_deref()
     }
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
-    pub fn ingestion_process(&self) -> ::std::option::Option<&crate::types::WorkspaceImageIngestionProcess> {
+    pub fn ingestion_process(&self) -> ::std::option::Option<& crate::types::WorkspaceImageIngestionProcess> {
         self.ingestion_process.as_ref()
     }
     /// <p>The name of the WorkSpace image.</p>
-    pub fn image_name(&self) -> ::std::option::Option<&str> {
+    pub fn image_name(&self) -> ::std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn image_description(&self) -> ::std::option::Option<&str> {
+    pub fn image_description(&self) -> ::std::option::Option<& str> {
         self.image_description.as_deref()
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p><note>
     /// <ul>
@@ -60,10 +61,11 @@ impl ImportWorkspaceImageInput {
     /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.applications.is_none()`.
-    pub fn applications(&self) -> &[crate::types::Application] {
-        self.applications.as_deref().unwrap_or_default()
+    pub fn applications(&self) -> & [crate::types::Application] {
+        self.applications.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImportWorkspaceImageInput {
@@ -81,8 +83,8 @@ pub struct ImportWorkspaceImageInputBuilder {
     pub(crate) ingestion_process: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
     pub(crate) image_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>,
 }
 impl ImportWorkspaceImageInputBuilder {
     /// <p>The identifier of the EC2 image.</p>
@@ -93,8 +95,7 @@ impl ImportWorkspaceImageInputBuilder {
     }
     /// <p>The identifier of the EC2 image.</p>
     pub fn set_ec2_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_image_id = input;
-        self
+        self.ec2_image_id = input; self
     }
     /// <p>The identifier of the EC2 image.</p>
     pub fn get_ec2_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +115,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
     /// </note>
     pub fn set_ingestion_process(mut self, input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>) -> Self {
-        self.ingestion_process = input;
-        self
+        self.ingestion_process = input; self
     }
     /// <p>The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>. To use BYOP, specify a value that ends in <code>_BYOP</code>.</p>
     /// <p>For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on the protocol.</p><note>
@@ -132,8 +132,7 @@ impl ImportWorkspaceImageInputBuilder {
     }
     /// <p>The name of the WorkSpace image.</p>
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The name of the WorkSpace image.</p>
     pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +146,7 @@ impl ImportWorkspaceImageInputBuilder {
     }
     /// <p>The description of the WorkSpace image.</p>
     pub fn set_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_description = input;
-        self
+        self.image_description = input; self
     }
     /// <p>The description of the WorkSpace image.</p>
     pub fn get_image_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,17 +159,16 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Appends an item to `applications`.
@@ -188,9 +185,9 @@ impl ImportWorkspaceImageInputBuilder {
     /// </note>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         let mut v = self.applications.unwrap_or_default();
-        v.push(input);
-        self.applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p><note>
     /// <ul>
@@ -200,9 +197,8 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
-        self.applications = input;
-        self
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>) -> Self {
+        self.applications = input; self
     }
     /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p><note>
     /// <ul>
@@ -212,21 +208,27 @@ impl ImportWorkspaceImageInputBuilder {
     /// <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Application>> {
         &self.applications
     }
     /// Consumes the builder and constructs a [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_workspace_image::ImportWorkspaceImageInput {
-            ec2_image_id: self.ec2_image_id,
-            ingestion_process: self.ingestion_process,
-            image_name: self.image_name,
-            image_description: self.image_description,
-            tags: self.tags,
-            applications: self.applications,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_workspace_image::ImportWorkspaceImageInput {
+                ec2_image_id: self.ec2_image_id
+                ,
+                ingestion_process: self.ingestion_process
+                ,
+                image_name: self.image_name
+                ,
+                image_description: self.image_description
+                ,
+                tags: self.tags
+                ,
+                applications: self.applications
+                ,
+            }
+        )
     }
 }
+

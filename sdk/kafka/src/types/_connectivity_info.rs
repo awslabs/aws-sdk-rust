@@ -3,19 +3,19 @@
 /// <p>Information about the broker access configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectivityInfo {
+pub struct ConnectivityInfo  {
     /// <p>Public access control for brokers.</p>
     pub public_access: ::std::option::Option<crate::types::PublicAccess>,
     /// <p>VPC connectivity access control for brokers.</p>
     pub vpc_connectivity: ::std::option::Option<crate::types::VpcConnectivity>,
 }
-impl ConnectivityInfo {
+impl  ConnectivityInfo  {
     /// <p>Public access control for brokers.</p>
-    pub fn public_access(&self) -> ::std::option::Option<&crate::types::PublicAccess> {
+    pub fn public_access(&self) -> ::std::option::Option<& crate::types::PublicAccess> {
         self.public_access.as_ref()
     }
     /// <p>VPC connectivity access control for brokers.</p>
-    pub fn vpc_connectivity(&self) -> ::std::option::Option<&crate::types::VpcConnectivity> {
+    pub fn vpc_connectivity(&self) -> ::std::option::Option<& crate::types::VpcConnectivity> {
         self.vpc_connectivity.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>Public access control for brokers.</p>
     pub fn set_public_access(mut self, input: ::std::option::Option<crate::types::PublicAccess>) -> Self {
-        self.public_access = input;
-        self
+        self.public_access = input; self
     }
     /// <p>Public access control for brokers.</p>
     pub fn get_public_access(&self) -> &::std::option::Option<crate::types::PublicAccess> {
@@ -55,8 +54,7 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>VPC connectivity access control for brokers.</p>
     pub fn set_vpc_connectivity(mut self, input: ::std::option::Option<crate::types::VpcConnectivity>) -> Self {
-        self.vpc_connectivity = input;
-        self
+        self.vpc_connectivity = input; self
     }
     /// <p>VPC connectivity access control for brokers.</p>
     pub fn get_vpc_connectivity(&self) -> &::std::option::Option<crate::types::VpcConnectivity> {
@@ -65,8 +63,11 @@ impl ConnectivityInfoBuilder {
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {
         crate::types::ConnectivityInfo {
-            public_access: self.public_access,
-            vpc_connectivity: self.vpc_connectivity,
+            public_access: self.public_access
+            ,
+            vpc_connectivity: self.vpc_connectivity
+            ,
         }
     }
 }
+

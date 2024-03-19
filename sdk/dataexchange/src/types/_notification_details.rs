@@ -3,7 +3,7 @@
 /// <p>Extra details specific to this notification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NotificationDetails {
+pub struct NotificationDetails  {
     /// <p>Extra details specific to a data update type notification.</p>
     pub data_update: ::std::option::Option<crate::types::DataUpdateRequestDetails>,
     /// <p>Extra details specific to a deprecation type notification.</p>
@@ -11,17 +11,17 @@ pub struct NotificationDetails {
     /// <p>Extra details specific to a schema change type notification.</p>
     pub schema_change: ::std::option::Option<crate::types::SchemaChangeRequestDetails>,
 }
-impl NotificationDetails {
+impl  NotificationDetails  {
     /// <p>Extra details specific to a data update type notification.</p>
-    pub fn data_update(&self) -> ::std::option::Option<&crate::types::DataUpdateRequestDetails> {
+    pub fn data_update(&self) -> ::std::option::Option<& crate::types::DataUpdateRequestDetails> {
         self.data_update.as_ref()
     }
     /// <p>Extra details specific to a deprecation type notification.</p>
-    pub fn deprecation(&self) -> ::std::option::Option<&crate::types::DeprecationRequestDetails> {
+    pub fn deprecation(&self) -> ::std::option::Option<& crate::types::DeprecationRequestDetails> {
         self.deprecation.as_ref()
     }
     /// <p>Extra details specific to a schema change type notification.</p>
-    pub fn schema_change(&self) -> ::std::option::Option<&crate::types::SchemaChangeRequestDetails> {
+    pub fn schema_change(&self) -> ::std::option::Option<& crate::types::SchemaChangeRequestDetails> {
         self.schema_change.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl NotificationDetailsBuilder {
     }
     /// <p>Extra details specific to a data update type notification.</p>
     pub fn set_data_update(mut self, input: ::std::option::Option<crate::types::DataUpdateRequestDetails>) -> Self {
-        self.data_update = input;
-        self
+        self.data_update = input; self
     }
     /// <p>Extra details specific to a data update type notification.</p>
     pub fn get_data_update(&self) -> &::std::option::Option<crate::types::DataUpdateRequestDetails> {
@@ -62,8 +61,7 @@ impl NotificationDetailsBuilder {
     }
     /// <p>Extra details specific to a deprecation type notification.</p>
     pub fn set_deprecation(mut self, input: ::std::option::Option<crate::types::DeprecationRequestDetails>) -> Self {
-        self.deprecation = input;
-        self
+        self.deprecation = input; self
     }
     /// <p>Extra details specific to a deprecation type notification.</p>
     pub fn get_deprecation(&self) -> &::std::option::Option<crate::types::DeprecationRequestDetails> {
@@ -76,8 +74,7 @@ impl NotificationDetailsBuilder {
     }
     /// <p>Extra details specific to a schema change type notification.</p>
     pub fn set_schema_change(mut self, input: ::std::option::Option<crate::types::SchemaChangeRequestDetails>) -> Self {
-        self.schema_change = input;
-        self
+        self.schema_change = input; self
     }
     /// <p>Extra details specific to a schema change type notification.</p>
     pub fn get_schema_change(&self) -> &::std::option::Option<crate::types::SchemaChangeRequestDetails> {
@@ -86,9 +83,13 @@ impl NotificationDetailsBuilder {
     /// Consumes the builder and constructs a [`NotificationDetails`](crate::types::NotificationDetails).
     pub fn build(self) -> crate::types::NotificationDetails {
         crate::types::NotificationDetails {
-            data_update: self.data_update,
-            deprecation: self.deprecation,
-            schema_change: self.schema_change,
+            data_update: self.data_update
+            ,
+            deprecation: self.deprecation
+            ,
+            schema_change: self.schema_change
+            ,
         }
     }
 }
+

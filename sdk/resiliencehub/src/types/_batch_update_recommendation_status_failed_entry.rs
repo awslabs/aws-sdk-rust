@@ -3,7 +3,7 @@
 /// <p>List of operational recommendations that did not get included or excluded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchUpdateRecommendationStatusFailedEntry {
+pub struct BatchUpdateRecommendationStatusFailedEntry  {
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
@@ -11,18 +11,16 @@ pub struct BatchUpdateRecommendationStatusFailedEntry {
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
     pub error_message: ::std::string::String,
 }
-impl BatchUpdateRecommendationStatusFailedEntry {
+impl  BatchUpdateRecommendationStatusFailedEntry  {
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
-    pub fn error_message(&self) -> &str {
-        use std::ops::Deref;
-        self.error_message.deref()
+    pub fn error_message(&self) -> & str {
+        use std::ops::Deref; self.error_message.deref()
     }
 }
 impl BatchUpdateRecommendationStatusFailedEntry {
@@ -52,8 +50,7 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
@@ -69,8 +66,7 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
     }
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Indicates the error that occurred while excluding an operational recommendation.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,22 +76,21 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchUpdateRecommendationStatusFailedEntryBuilder::entry_id)
     /// - [`error_message`](crate::types::builders::BatchUpdateRecommendationStatusFailedEntryBuilder::error_message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusFailedEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchUpdateRecommendationStatusFailedEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
-                )
-            })?,
-            error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_message",
-                    "error_message was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusFailedEntry, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::BatchUpdateRecommendationStatusFailedEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry")
+                    )?
+                ,
+                error_message: self.error_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_message", "error_message was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

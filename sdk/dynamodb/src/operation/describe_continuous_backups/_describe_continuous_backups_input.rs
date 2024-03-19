@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeContinuousBackupsInput {
+pub struct DescribeContinuousBackupsInput  {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeContinuousBackupsInput {
+impl  DescribeContinuousBackupsInput  {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeContinuousBackupsInputBuilder {
     }
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeContinuousBackupsInput`](crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput { table_name: self.table_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput {
+                table_name: self.table_name
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dimension = unimplemented!();
 /// match dimension {
@@ -62,16 +62,14 @@
 /// Specifically, when `dimension` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Dimension::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     AgreementEndDateTimeAfter,
@@ -143,192 +141,158 @@ pub enum Dimension {
     UsageTypeGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for Dimension {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGREEMENT_END_DATE_TIME_AFTER" => Dimension::AgreementEndDateTimeAfter,
-            "AGREEMENT_END_DATE_TIME_BEFORE" => Dimension::AgreementEndDateTimeBefore,
-            "ANOMALY_TOTAL_IMPACT_ABSOLUTE" => Dimension::AnomalyTotalImpactAbsolute,
-            "ANOMALY_TOTAL_IMPACT_PERCENTAGE" => Dimension::AnomalyTotalImpactPercentage,
-            "AZ" => Dimension::Az,
-            "BILLING_ENTITY" => Dimension::BillingEntity,
-            "CACHE_ENGINE" => Dimension::CacheEngine,
-            "DATABASE_ENGINE" => Dimension::DatabaseEngine,
-            "DEPLOYMENT_OPTION" => Dimension::DeploymentOption,
-            "INSTANCE_TYPE" => Dimension::InstanceType,
-            "INSTANCE_TYPE_FAMILY" => Dimension::InstanceTypeFamily,
-            "INVOICING_ENTITY" => Dimension::InvoicingEntity,
-            "LEGAL_ENTITY_NAME" => Dimension::LegalEntityName,
-            "LINKED_ACCOUNT" => Dimension::LinkedAccount,
-            "LINKED_ACCOUNT_NAME" => Dimension::LinkedAccountName,
-            "OPERATING_SYSTEM" => Dimension::OperatingSystem,
-            "OPERATION" => Dimension::Operation,
-            "PAYMENT_OPTION" => Dimension::PaymentOption,
-            "PLATFORM" => Dimension::Platform,
-            "PURCHASE_TYPE" => Dimension::PurchaseType,
-            "RECORD_TYPE" => Dimension::RecordType,
-            "REGION" => Dimension::Region,
-            "RESERVATION_ID" => Dimension::ReservationId,
-            "RESOURCE_ID" => Dimension::ResourceId,
-            "RIGHTSIZING_TYPE" => Dimension::RightsizingType,
-            "SAVINGS_PLANS_TYPE" => Dimension::SavingsPlansType,
-            "SAVINGS_PLAN_ARN" => Dimension::SavingsPlanArn,
-            "SCOPE" => Dimension::Scope,
-            "SERVICE" => Dimension::Service,
-            "SERVICE_CODE" => Dimension::ServiceCode,
-            "SUBSCRIPTION_ID" => Dimension::SubscriptionId,
-            "TENANCY" => Dimension::Tenancy,
-            "USAGE_TYPE" => Dimension::UsageType,
-            "USAGE_TYPE_GROUP" => Dimension::UsageTypeGroup,
-            other => Dimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AGREEMENT_END_DATE_TIME_AFTER" => Dimension::AgreementEndDateTimeAfter,
+"AGREEMENT_END_DATE_TIME_BEFORE" => Dimension::AgreementEndDateTimeBefore,
+"ANOMALY_TOTAL_IMPACT_ABSOLUTE" => Dimension::AnomalyTotalImpactAbsolute,
+"ANOMALY_TOTAL_IMPACT_PERCENTAGE" => Dimension::AnomalyTotalImpactPercentage,
+"AZ" => Dimension::Az,
+"BILLING_ENTITY" => Dimension::BillingEntity,
+"CACHE_ENGINE" => Dimension::CacheEngine,
+"DATABASE_ENGINE" => Dimension::DatabaseEngine,
+"DEPLOYMENT_OPTION" => Dimension::DeploymentOption,
+"INSTANCE_TYPE" => Dimension::InstanceType,
+"INSTANCE_TYPE_FAMILY" => Dimension::InstanceTypeFamily,
+"INVOICING_ENTITY" => Dimension::InvoicingEntity,
+"LEGAL_ENTITY_NAME" => Dimension::LegalEntityName,
+"LINKED_ACCOUNT" => Dimension::LinkedAccount,
+"LINKED_ACCOUNT_NAME" => Dimension::LinkedAccountName,
+"OPERATING_SYSTEM" => Dimension::OperatingSystem,
+"OPERATION" => Dimension::Operation,
+"PAYMENT_OPTION" => Dimension::PaymentOption,
+"PLATFORM" => Dimension::Platform,
+"PURCHASE_TYPE" => Dimension::PurchaseType,
+"RECORD_TYPE" => Dimension::RecordType,
+"REGION" => Dimension::Region,
+"RESERVATION_ID" => Dimension::ReservationId,
+"RESOURCE_ID" => Dimension::ResourceId,
+"RIGHTSIZING_TYPE" => Dimension::RightsizingType,
+"SAVINGS_PLANS_TYPE" => Dimension::SavingsPlansType,
+"SAVINGS_PLAN_ARN" => Dimension::SavingsPlanArn,
+"SCOPE" => Dimension::Scope,
+"SERVICE" => Dimension::Service,
+"SERVICE_CODE" => Dimension::ServiceCode,
+"SUBSCRIPTION_ID" => Dimension::SubscriptionId,
+"TENANCY" => Dimension::Tenancy,
+"USAGE_TYPE" => Dimension::UsageType,
+"USAGE_TYPE_GROUP" => Dimension::UsageTypeGroup,
+other => Dimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for Dimension {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(Dimension::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(Dimension::from(s))
+                    }
+                }
 impl Dimension {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Dimension::AgreementEndDateTimeAfter => "AGREEMENT_END_DATE_TIME_AFTER",
-            Dimension::AgreementEndDateTimeBefore => "AGREEMENT_END_DATE_TIME_BEFORE",
-            Dimension::AnomalyTotalImpactAbsolute => "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
-            Dimension::AnomalyTotalImpactPercentage => "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
-            Dimension::Az => "AZ",
-            Dimension::BillingEntity => "BILLING_ENTITY",
-            Dimension::CacheEngine => "CACHE_ENGINE",
-            Dimension::DatabaseEngine => "DATABASE_ENGINE",
-            Dimension::DeploymentOption => "DEPLOYMENT_OPTION",
-            Dimension::InstanceType => "INSTANCE_TYPE",
-            Dimension::InstanceTypeFamily => "INSTANCE_TYPE_FAMILY",
-            Dimension::InvoicingEntity => "INVOICING_ENTITY",
-            Dimension::LegalEntityName => "LEGAL_ENTITY_NAME",
-            Dimension::LinkedAccount => "LINKED_ACCOUNT",
-            Dimension::LinkedAccountName => "LINKED_ACCOUNT_NAME",
-            Dimension::OperatingSystem => "OPERATING_SYSTEM",
-            Dimension::Operation => "OPERATION",
-            Dimension::PaymentOption => "PAYMENT_OPTION",
-            Dimension::Platform => "PLATFORM",
-            Dimension::PurchaseType => "PURCHASE_TYPE",
-            Dimension::RecordType => "RECORD_TYPE",
-            Dimension::Region => "REGION",
-            Dimension::ReservationId => "RESERVATION_ID",
-            Dimension::ResourceId => "RESOURCE_ID",
-            Dimension::RightsizingType => "RIGHTSIZING_TYPE",
-            Dimension::SavingsPlansType => "SAVINGS_PLANS_TYPE",
-            Dimension::SavingsPlanArn => "SAVINGS_PLAN_ARN",
-            Dimension::Scope => "SCOPE",
-            Dimension::Service => "SERVICE",
-            Dimension::ServiceCode => "SERVICE_CODE",
-            Dimension::SubscriptionId => "SUBSCRIPTION_ID",
-            Dimension::Tenancy => "TENANCY",
-            Dimension::UsageType => "USAGE_TYPE",
-            Dimension::UsageTypeGroup => "USAGE_TYPE_GROUP",
-            Dimension::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGREEMENT_END_DATE_TIME_AFTER",
-            "AGREEMENT_END_DATE_TIME_BEFORE",
-            "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
-            "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
-            "AZ",
-            "BILLING_ENTITY",
-            "CACHE_ENGINE",
-            "DATABASE_ENGINE",
-            "DEPLOYMENT_OPTION",
-            "INSTANCE_TYPE",
-            "INSTANCE_TYPE_FAMILY",
-            "INVOICING_ENTITY",
-            "LEGAL_ENTITY_NAME",
-            "LINKED_ACCOUNT",
-            "LINKED_ACCOUNT_NAME",
-            "OPERATING_SYSTEM",
-            "OPERATION",
-            "PAYMENT_OPTION",
-            "PLATFORM",
-            "PURCHASE_TYPE",
-            "RECORD_TYPE",
-            "REGION",
-            "RESERVATION_ID",
-            "RESOURCE_ID",
-            "RIGHTSIZING_TYPE",
-            "SAVINGS_PLANS_TYPE",
-            "SAVINGS_PLAN_ARN",
-            "SCOPE",
-            "SERVICE",
-            "SERVICE_CODE",
-            "SUBSCRIPTION_ID",
-            "TENANCY",
-            "USAGE_TYPE",
-            "USAGE_TYPE_GROUP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Dimension::AgreementEndDateTimeAfter => "AGREEMENT_END_DATE_TIME_AFTER",
+    Dimension::AgreementEndDateTimeBefore => "AGREEMENT_END_DATE_TIME_BEFORE",
+    Dimension::AnomalyTotalImpactAbsolute => "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+    Dimension::AnomalyTotalImpactPercentage => "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
+    Dimension::Az => "AZ",
+    Dimension::BillingEntity => "BILLING_ENTITY",
+    Dimension::CacheEngine => "CACHE_ENGINE",
+    Dimension::DatabaseEngine => "DATABASE_ENGINE",
+    Dimension::DeploymentOption => "DEPLOYMENT_OPTION",
+    Dimension::InstanceType => "INSTANCE_TYPE",
+    Dimension::InstanceTypeFamily => "INSTANCE_TYPE_FAMILY",
+    Dimension::InvoicingEntity => "INVOICING_ENTITY",
+    Dimension::LegalEntityName => "LEGAL_ENTITY_NAME",
+    Dimension::LinkedAccount => "LINKED_ACCOUNT",
+    Dimension::LinkedAccountName => "LINKED_ACCOUNT_NAME",
+    Dimension::OperatingSystem => "OPERATING_SYSTEM",
+    Dimension::Operation => "OPERATION",
+    Dimension::PaymentOption => "PAYMENT_OPTION",
+    Dimension::Platform => "PLATFORM",
+    Dimension::PurchaseType => "PURCHASE_TYPE",
+    Dimension::RecordType => "RECORD_TYPE",
+    Dimension::Region => "REGION",
+    Dimension::ReservationId => "RESERVATION_ID",
+    Dimension::ResourceId => "RESOURCE_ID",
+    Dimension::RightsizingType => "RIGHTSIZING_TYPE",
+    Dimension::SavingsPlansType => "SAVINGS_PLANS_TYPE",
+    Dimension::SavingsPlanArn => "SAVINGS_PLAN_ARN",
+    Dimension::Scope => "SCOPE",
+    Dimension::Service => "SERVICE",
+    Dimension::ServiceCode => "SERVICE_CODE",
+    Dimension::SubscriptionId => "SUBSCRIPTION_ID",
+    Dimension::Tenancy => "TENANCY",
+    Dimension::UsageType => "USAGE_TYPE",
+    Dimension::UsageTypeGroup => "USAGE_TYPE_GROUP",
+    Dimension::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGREEMENT_END_DATE_TIME_AFTER", "AGREEMENT_END_DATE_TIME_BEFORE", "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "AZ", "BILLING_ENTITY", "CACHE_ENGINE", "DATABASE_ENGINE", "DEPLOYMENT_OPTION", "INSTANCE_TYPE", "INSTANCE_TYPE_FAMILY", "INVOICING_ENTITY", "LEGAL_ENTITY_NAME", "LINKED_ACCOUNT", "LINKED_ACCOUNT_NAME", "OPERATING_SYSTEM", "OPERATION", "PAYMENT_OPTION", "PLATFORM", "PURCHASE_TYPE", "RECORD_TYPE", "REGION", "RESERVATION_ID", "RESOURCE_ID", "RIGHTSIZING_TYPE", "SAVINGS_PLANS_TYPE", "SAVINGS_PLAN_ARN", "SCOPE", "SERVICE", "SERVICE_CODE", "SUBSCRIPTION_ID", "TENANCY", "USAGE_TYPE", "USAGE_TYPE_GROUP"]
+                }
+            }
 impl ::std::convert::AsRef<str> for Dimension {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl Dimension {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for Dimension {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            Dimension::AgreementEndDateTimeAfter => write!(f, "AGREEMENT_END_DATE_TIME_AFTER"),
-            Dimension::AgreementEndDateTimeBefore => write!(f, "AGREEMENT_END_DATE_TIME_BEFORE"),
-            Dimension::AnomalyTotalImpactAbsolute => write!(f, "ANOMALY_TOTAL_IMPACT_ABSOLUTE"),
-            Dimension::AnomalyTotalImpactPercentage => write!(f, "ANOMALY_TOTAL_IMPACT_PERCENTAGE"),
-            Dimension::Az => write!(f, "AZ"),
-            Dimension::BillingEntity => write!(f, "BILLING_ENTITY"),
-            Dimension::CacheEngine => write!(f, "CACHE_ENGINE"),
-            Dimension::DatabaseEngine => write!(f, "DATABASE_ENGINE"),
-            Dimension::DeploymentOption => write!(f, "DEPLOYMENT_OPTION"),
-            Dimension::InstanceType => write!(f, "INSTANCE_TYPE"),
-            Dimension::InstanceTypeFamily => write!(f, "INSTANCE_TYPE_FAMILY"),
-            Dimension::InvoicingEntity => write!(f, "INVOICING_ENTITY"),
-            Dimension::LegalEntityName => write!(f, "LEGAL_ENTITY_NAME"),
-            Dimension::LinkedAccount => write!(f, "LINKED_ACCOUNT"),
-            Dimension::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
-            Dimension::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
-            Dimension::Operation => write!(f, "OPERATION"),
-            Dimension::PaymentOption => write!(f, "PAYMENT_OPTION"),
-            Dimension::Platform => write!(f, "PLATFORM"),
-            Dimension::PurchaseType => write!(f, "PURCHASE_TYPE"),
-            Dimension::RecordType => write!(f, "RECORD_TYPE"),
-            Dimension::Region => write!(f, "REGION"),
-            Dimension::ReservationId => write!(f, "RESERVATION_ID"),
-            Dimension::ResourceId => write!(f, "RESOURCE_ID"),
-            Dimension::RightsizingType => write!(f, "RIGHTSIZING_TYPE"),
-            Dimension::SavingsPlansType => write!(f, "SAVINGS_PLANS_TYPE"),
-            Dimension::SavingsPlanArn => write!(f, "SAVINGS_PLAN_ARN"),
-            Dimension::Scope => write!(f, "SCOPE"),
-            Dimension::Service => write!(f, "SERVICE"),
-            Dimension::ServiceCode => write!(f, "SERVICE_CODE"),
-            Dimension::SubscriptionId => write!(f, "SUBSCRIPTION_ID"),
-            Dimension::Tenancy => write!(f, "TENANCY"),
-            Dimension::UsageType => write!(f, "USAGE_TYPE"),
-            Dimension::UsageTypeGroup => write!(f, "USAGE_TYPE_GROUP"),
-            Dimension::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                Dimension::AgreementEndDateTimeAfter => write!(f, "AGREEMENT_END_DATE_TIME_AFTER"),
+Dimension::AgreementEndDateTimeBefore => write!(f, "AGREEMENT_END_DATE_TIME_BEFORE"),
+Dimension::AnomalyTotalImpactAbsolute => write!(f, "ANOMALY_TOTAL_IMPACT_ABSOLUTE"),
+Dimension::AnomalyTotalImpactPercentage => write!(f, "ANOMALY_TOTAL_IMPACT_PERCENTAGE"),
+Dimension::Az => write!(f, "AZ"),
+Dimension::BillingEntity => write!(f, "BILLING_ENTITY"),
+Dimension::CacheEngine => write!(f, "CACHE_ENGINE"),
+Dimension::DatabaseEngine => write!(f, "DATABASE_ENGINE"),
+Dimension::DeploymentOption => write!(f, "DEPLOYMENT_OPTION"),
+Dimension::InstanceType => write!(f, "INSTANCE_TYPE"),
+Dimension::InstanceTypeFamily => write!(f, "INSTANCE_TYPE_FAMILY"),
+Dimension::InvoicingEntity => write!(f, "INVOICING_ENTITY"),
+Dimension::LegalEntityName => write!(f, "LEGAL_ENTITY_NAME"),
+Dimension::LinkedAccount => write!(f, "LINKED_ACCOUNT"),
+Dimension::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
+Dimension::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
+Dimension::Operation => write!(f, "OPERATION"),
+Dimension::PaymentOption => write!(f, "PAYMENT_OPTION"),
+Dimension::Platform => write!(f, "PLATFORM"),
+Dimension::PurchaseType => write!(f, "PURCHASE_TYPE"),
+Dimension::RecordType => write!(f, "RECORD_TYPE"),
+Dimension::Region => write!(f, "REGION"),
+Dimension::ReservationId => write!(f, "RESERVATION_ID"),
+Dimension::ResourceId => write!(f, "RESOURCE_ID"),
+Dimension::RightsizingType => write!(f, "RIGHTSIZING_TYPE"),
+Dimension::SavingsPlansType => write!(f, "SAVINGS_PLANS_TYPE"),
+Dimension::SavingsPlanArn => write!(f, "SAVINGS_PLAN_ARN"),
+Dimension::Scope => write!(f, "SCOPE"),
+Dimension::Service => write!(f, "SERVICE"),
+Dimension::ServiceCode => write!(f, "SERVICE_CODE"),
+Dimension::SubscriptionId => write!(f, "SUBSCRIPTION_ID"),
+Dimension::Tenancy => write!(f, "TENANCY"),
+Dimension::UsageType => write!(f, "USAGE_TYPE"),
+Dimension::UsageTypeGroup => write!(f, "USAGE_TYPE_GROUP"),
+Dimension::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

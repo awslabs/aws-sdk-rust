@@ -3,13 +3,13 @@
 /// <p>Provides information to verify the integrity of stored model artifacts.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelDigests {
+pub struct ModelDigests  {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
     pub artifact_digest: ::std::option::Option<::std::string::String>,
 }
-impl ModelDigests {
+impl  ModelDigests  {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
-    pub fn artifact_digest(&self) -> ::std::option::Option<&str> {
+    pub fn artifact_digest(&self) -> ::std::option::Option<& str> {
         self.artifact_digest.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ModelDigestsBuilder {
     }
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
     pub fn set_artifact_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.artifact_digest = input;
-        self
+        self.artifact_digest = input; self
     }
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
     pub fn get_artifact_digest(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl ModelDigestsBuilder {
     /// Consumes the builder and constructs a [`ModelDigests`](crate::types::ModelDigests).
     pub fn build(self) -> crate::types::ModelDigests {
         crate::types::ModelDigests {
-            artifact_digest: self.artifact_digest,
+            artifact_digest: self.artifact_digest
+            ,
         }
     }
 }
+

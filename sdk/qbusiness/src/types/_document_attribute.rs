@@ -3,20 +3,19 @@
 /// <p>A document attribute or metadata field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DocumentAttribute {
+pub struct DocumentAttribute  {
     /// <p>The identifier for the attribute.</p>
     pub name: ::std::string::String,
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
-impl DocumentAttribute {
+impl  DocumentAttribute  {
     /// <p>The identifier for the attribute.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::DocumentAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl DocumentAttributeBuilder {
     }
     /// <p>The identifier for the attribute.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The identifier for the attribute.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl DocumentAttributeBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::DocumentAttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the attribute.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
@@ -69,14 +66,17 @@ impl DocumentAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DocumentAttributeBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttribute, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DocumentAttribute {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DocumentAttribute",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DocumentAttribute {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DocumentAttribute")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

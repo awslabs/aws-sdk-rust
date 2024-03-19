@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListInferenceEventsOutput {
+pub struct ListInferenceEventsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
-    pub inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
+    pub inference_event_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }
-impl ListInferenceEventsOutput {
+impl  ListInferenceEventsOutput  {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_event_summaries.is_none()`.
-    pub fn inference_event_summaries(&self) -> &[crate::types::InferenceEventSummary] {
-        self.inference_event_summaries.as_deref().unwrap_or_default()
+    pub fn inference_event_summaries(&self) -> & [crate::types::InferenceEventSummary] {
+        self.inference_event_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListInferenceEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListInferenceEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceEventsOutput`](crate::operation::list_inference_events::ListInferenceEventsOutput).
     pub fn builder() -> crate::operation::list_inference_events::builders::ListInferenceEventsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListInferenceEventsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListInferenceEventsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) inference_event_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>,
+    pub(crate) inference_event_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceEventSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceEventsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListInferenceEventsOutputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListInferenceEventsOutputBuilder {
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
     pub fn inference_event_summaries(mut self, input: crate::types::InferenceEventSummary) -> Self {
         let mut v = self.inference_event_summaries.unwrap_or_default();
-        v.push(input);
-        self.inference_event_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inference_event_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
-    pub fn set_inference_event_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>>) -> Self {
-        self.inference_event_summaries = input;
-        self
+    pub fn set_inference_event_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InferenceEventSummary>>) -> Self {
+        self.inference_event_summaries = input; self
     }
     /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on.</p>
-    pub fn get_inference_event_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>> {
+    pub fn get_inference_event_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InferenceEventSummary>> {
         &self.inference_event_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListInferenceEventsOutput`](crate::operation::list_inference_events::ListInferenceEventsOutput).
     pub fn build(self) -> crate::operation::list_inference_events::ListInferenceEventsOutput {
         crate::operation::list_inference_events::ListInferenceEventsOutput {
-            next_token: self.next_token,
-            inference_event_summaries: self.inference_event_summaries,
+            next_token: self.next_token
+            ,
+            inference_event_summaries: self.inference_event_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

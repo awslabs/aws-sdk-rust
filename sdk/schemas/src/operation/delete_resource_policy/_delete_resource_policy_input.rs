@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput {
+pub struct DeleteResourcePolicyInput  {
     /// <p>The name of the registry.</p>
     pub registry_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourcePolicyInput {
+impl  DeleteResourcePolicyInput  {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> ::std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<& str> {
         self.registry_name.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_name
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-            registry_name: self.registry_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
+                registry_name: self.registry_name
+                ,
+            }
+        )
     }
 }
+

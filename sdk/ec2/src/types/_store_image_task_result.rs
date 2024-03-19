@@ -3,7 +3,7 @@
 /// <p>The information about the AMI store task, including the progress of the task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StoreImageTaskResult {
+pub struct StoreImageTaskResult  {
     /// <p>The ID of the AMI that is being stored.</p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The time the task started.</p>
@@ -19,21 +19,21 @@ pub struct StoreImageTaskResult {
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
     pub store_task_failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl StoreImageTaskResult {
+impl  StoreImageTaskResult  {
     /// <p>The ID of the AMI that is being stored.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The time the task started.</p>
-    pub fn task_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn task_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name of the stored AMI object in the bucket.</p>
-    pub fn s3object_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3object_key(&self) -> ::std::option::Option<& str> {
         self.s3object_key.as_deref()
     }
     /// <p>The progress of the task as a percentage.</p>
@@ -41,11 +41,11 @@ impl StoreImageTaskResult {
         self.progress_percentage
     }
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
-    pub fn store_task_state(&self) -> ::std::option::Option<&str> {
+    pub fn store_task_state(&self) -> ::std::option::Option<& str> {
         self.store_task_state.as_deref()
     }
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
-    pub fn store_task_failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn store_task_failure_reason(&self) -> ::std::option::Option<& str> {
         self.store_task_failure_reason.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The ID of the AMI that is being stored.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
     }
     /// <p>The ID of the AMI that is being stored.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The time the task started.</p>
     pub fn set_task_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.task_start_time = input;
-        self
+        self.task_start_time = input; self
     }
     /// <p>The time the task started.</p>
     pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +102,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The name of the stored AMI object in the bucket.</p>
     pub fn set_s3object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3object_key = input;
-        self
+        self.s3object_key = input; self
     }
     /// <p>The name of the stored AMI object in the bucket.</p>
     pub fn get_s3object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The progress of the task as a percentage.</p>
     pub fn set_progress_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.progress_percentage = input;
-        self
+        self.progress_percentage = input; self
     }
     /// <p>The progress of the task as a percentage.</p>
     pub fn get_progress_percentage(&self) -> &::std::option::Option<i32> {
@@ -146,8 +141,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
     pub fn set_store_task_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.store_task_state = input;
-        self
+        self.store_task_state = input; self
     }
     /// <p>The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).</p>
     pub fn get_store_task_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +154,7 @@ impl StoreImageTaskResultBuilder {
     }
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
     pub fn set_store_task_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.store_task_failure_reason = input;
-        self
+        self.store_task_failure_reason = input; self
     }
     /// <p>If the tasks fails, the reason for the failure is returned. If the task succeeds, <code>null</code> is returned.</p>
     pub fn get_store_task_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,13 +163,21 @@ impl StoreImageTaskResultBuilder {
     /// Consumes the builder and constructs a [`StoreImageTaskResult`](crate::types::StoreImageTaskResult).
     pub fn build(self) -> crate::types::StoreImageTaskResult {
         crate::types::StoreImageTaskResult {
-            ami_id: self.ami_id,
-            task_start_time: self.task_start_time,
-            bucket: self.bucket,
-            s3object_key: self.s3object_key,
-            progress_percentage: self.progress_percentage,
-            store_task_state: self.store_task_state,
-            store_task_failure_reason: self.store_task_failure_reason,
+            ami_id: self.ami_id
+            ,
+            task_start_time: self.task_start_time
+            ,
+            bucket: self.bucket
+            ,
+            s3object_key: self.s3object_key
+            ,
+            progress_percentage: self.progress_percentage
+            ,
+            store_task_state: self.store_task_state
+            ,
+            store_task_failure_reason: self.store_task_failure_reason
+            ,
         }
     }
 }
+

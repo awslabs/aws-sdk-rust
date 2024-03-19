@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccessGrantsLocationsOutput {
+pub struct ListAccessGrantsLocationsOutput  {
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A container for a list of registered locations in an S3 Access Grants instance.</p>
-    pub access_grants_locations_list: ::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsLocationsEntry>>,
+    pub access_grants_locations_list: ::std::option::Option<::std::vec::Vec::<crate::types::ListAccessGrantsLocationsEntry>>,
     _request_id: Option<String>,
 }
-impl ListAccessGrantsLocationsOutput {
+impl  ListAccessGrantsLocationsOutput  {
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A container for a list of registered locations in an S3 Access Grants instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_grants_locations_list.is_none()`.
-    pub fn access_grants_locations_list(&self) -> &[crate::types::ListAccessGrantsLocationsEntry] {
-        self.access_grants_locations_list.as_deref().unwrap_or_default()
+    pub fn access_grants_locations_list(&self) -> & [crate::types::ListAccessGrantsLocationsEntry] {
+        self.access_grants_locations_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccessGrantsLocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccessGrantsLocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessGrantsLocationsOutput`](crate::operation::list_access_grants_locations::ListAccessGrantsLocationsOutput).
     pub fn builder() -> crate::operation::list_access_grants_locations::builders::ListAccessGrantsLocationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListAccessGrantsLocationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccessGrantsLocationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) access_grants_locations_list: ::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsLocationsEntry>>,
+    pub(crate) access_grants_locations_list: ::std::option::Option<::std::vec::Vec::<crate::types::ListAccessGrantsLocationsEntry>>,
     _request_id: Option<String>,
 }
 impl ListAccessGrantsLocationsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListAccessGrantsLocationsOutputBuilder {
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token to request the next page of results. Pass this value into a subsequent <code>List Access Grants Locations</code> request in order to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListAccessGrantsLocationsOutputBuilder {
     /// <p>A container for a list of registered locations in an S3 Access Grants instance.</p>
     pub fn access_grants_locations_list(mut self, input: crate::types::ListAccessGrantsLocationsEntry) -> Self {
         let mut v = self.access_grants_locations_list.unwrap_or_default();
-        v.push(input);
-        self.access_grants_locations_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_grants_locations_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A container for a list of registered locations in an S3 Access Grants instance.</p>
-    pub fn set_access_grants_locations_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsLocationsEntry>>,
-    ) -> Self {
-        self.access_grants_locations_list = input;
-        self
+    pub fn set_access_grants_locations_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListAccessGrantsLocationsEntry>>) -> Self {
+        self.access_grants_locations_list = input; self
     }
     /// <p>A container for a list of registered locations in an S3 Access Grants instance.</p>
-    pub fn get_access_grants_locations_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListAccessGrantsLocationsEntry>> {
+    pub fn get_access_grants_locations_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListAccessGrantsLocationsEntry>> {
         &self.access_grants_locations_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccessGrantsLocationsOutput`](crate::operation::list_access_grants_locations::ListAccessGrantsLocationsOutput).
     pub fn build(self) -> crate::operation::list_access_grants_locations::ListAccessGrantsLocationsOutput {
         crate::operation::list_access_grants_locations::ListAccessGrantsLocationsOutput {
-            next_token: self.next_token,
-            access_grants_locations_list: self.access_grants_locations_list,
+            next_token: self.next_token
+            ,
+            access_grants_locations_list: self.access_grants_locations_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

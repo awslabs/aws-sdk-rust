@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cacheclustersize = unimplemented!();
 /// match cacheclustersize {
@@ -36,16 +36,14 @@
 /// Specifically, when `cacheclustersize` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CacheClusterSize::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Returns the size of the CacheCluster.</p>
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CacheClusterSize {
     #[allow(missing_docs)] // documentation missing in model
     Size0Point5Gb,
@@ -65,79 +63,80 @@ pub enum CacheClusterSize {
     Size6Point1Gb,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CacheClusterSize {
-    fn from(s: &str) -> Self {
-        match s {
-            "0.5" => CacheClusterSize::Size0Point5Gb,
-            "1.6" => CacheClusterSize::Size1Point6Gb,
-            "118" => CacheClusterSize::Size118Gb,
-            "13.5" => CacheClusterSize::Size13Point5Gb,
-            "237" => CacheClusterSize::Size237Gb,
-            "28.4" => CacheClusterSize::Size28Point4Gb,
-            "58.2" => CacheClusterSize::Size58Point2Gb,
-            "6.1" => CacheClusterSize::Size6Point1Gb,
-            other => CacheClusterSize::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "0.5" => CacheClusterSize::Size0Point5Gb,
+"1.6" => CacheClusterSize::Size1Point6Gb,
+"118" => CacheClusterSize::Size118Gb,
+"13.5" => CacheClusterSize::Size13Point5Gb,
+"237" => CacheClusterSize::Size237Gb,
+"28.4" => CacheClusterSize::Size28Point4Gb,
+"58.2" => CacheClusterSize::Size58Point2Gb,
+"6.1" => CacheClusterSize::Size6Point1Gb,
+other => CacheClusterSize::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CacheClusterSize {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CacheClusterSize::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CacheClusterSize::from(s))
+                    }
+                }
 impl CacheClusterSize {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CacheClusterSize::Size0Point5Gb => "0.5",
-            CacheClusterSize::Size1Point6Gb => "1.6",
-            CacheClusterSize::Size118Gb => "118",
-            CacheClusterSize::Size13Point5Gb => "13.5",
-            CacheClusterSize::Size237Gb => "237",
-            CacheClusterSize::Size28Point4Gb => "28.4",
-            CacheClusterSize::Size58Point2Gb => "58.2",
-            CacheClusterSize::Size6Point1Gb => "6.1",
-            CacheClusterSize::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["0.5", "1.6", "118", "13.5", "237", "28.4", "58.2", "6.1"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CacheClusterSize::Size0Point5Gb => "0.5",
+    CacheClusterSize::Size1Point6Gb => "1.6",
+    CacheClusterSize::Size118Gb => "118",
+    CacheClusterSize::Size13Point5Gb => "13.5",
+    CacheClusterSize::Size237Gb => "237",
+    CacheClusterSize::Size28Point4Gb => "28.4",
+    CacheClusterSize::Size58Point2Gb => "58.2",
+    CacheClusterSize::Size6Point1Gb => "6.1",
+    CacheClusterSize::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["0.5", "1.6", "118", "13.5", "237", "28.4", "58.2", "6.1"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CacheClusterSize {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CacheClusterSize {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CacheClusterSize {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CacheClusterSize::Size0Point5Gb => write!(f, "0.5"),
-            CacheClusterSize::Size1Point6Gb => write!(f, "1.6"),
-            CacheClusterSize::Size118Gb => write!(f, "118"),
-            CacheClusterSize::Size13Point5Gb => write!(f, "13.5"),
-            CacheClusterSize::Size237Gb => write!(f, "237"),
-            CacheClusterSize::Size28Point4Gb => write!(f, "28.4"),
-            CacheClusterSize::Size58Point2Gb => write!(f, "58.2"),
-            CacheClusterSize::Size6Point1Gb => write!(f, "6.1"),
-            CacheClusterSize::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CacheClusterSize::Size0Point5Gb => write!(f, "0.5"),
+CacheClusterSize::Size1Point6Gb => write!(f, "1.6"),
+CacheClusterSize::Size118Gb => write!(f, "118"),
+CacheClusterSize::Size13Point5Gb => write!(f, "13.5"),
+CacheClusterSize::Size237Gb => write!(f, "237"),
+CacheClusterSize::Size28Point4Gb => write!(f, "28.4"),
+CacheClusterSize::Size58Point2Gb => write!(f, "58.2"),
+CacheClusterSize::Size6Point1Gb => write!(f, "6.1"),
+CacheClusterSize::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

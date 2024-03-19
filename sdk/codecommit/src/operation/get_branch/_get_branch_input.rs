@@ -3,19 +3,19 @@
 /// <p>Represents the input of a get branch operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBranchInput {
+pub struct GetBranchInput  {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub branch_name: ::std::option::Option<::std::string::String>,
 }
-impl GetBranchInput {
+impl  GetBranchInput  {
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
-    pub fn branch_name(&self) -> ::std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetBranchInputBuilder {
     }
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetBranchInputBuilder {
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p>The name of the branch for which you want to retrieve information.</p>
     pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl GetBranchInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetBranchInput`](crate::operation::get_branch::GetBranchInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_branch::GetBranchInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_branch::GetBranchInput {
-            repository_name: self.repository_name,
-            branch_name: self.branch_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_branch::GetBranchInput {
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
+

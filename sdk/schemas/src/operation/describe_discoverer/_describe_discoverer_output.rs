@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDiscovererOutput {
+pub struct DescribeDiscovererOutput  {
     /// <p>The description of the discoverer.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the discoverer.</p>
@@ -16,28 +16,28 @@ pub struct DescribeDiscovererOutput {
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub cross_account: ::std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeDiscovererOutput {
+impl  DescribeDiscovererOutput  {
     /// <p>The description of the discoverer.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the discoverer.</p>
-    pub fn discoverer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_arn(&self) -> ::std::option::Option<& str> {
         self.discoverer_arn.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> ::std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> ::std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The state of the discoverer.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::DiscovererState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::DiscovererState> {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
@@ -45,15 +45,15 @@ impl DescribeDiscovererOutput {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDiscovererOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDiscovererOutput`](crate::operation::describe_discoverer::DescribeDiscovererOutput).
     pub fn builder() -> crate::operation::describe_discoverer::builders::DescribeDiscovererOutputBuilder {
@@ -71,7 +71,7 @@ pub struct DescribeDiscovererOutputBuilder {
     pub(crate) source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::DiscovererState>,
     pub(crate) cross_account: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeDiscovererOutputBuilder {
@@ -82,8 +82,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The description of the discoverer.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the discoverer.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The ARN of the discoverer.</p>
     pub fn set_discoverer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discoverer_arn = input;
-        self
+        self.discoverer_arn = input; self
     }
     /// <p>The ARN of the discoverer.</p>
     pub fn get_discoverer_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +108,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The ID of the discoverer.</p>
     pub fn set_discoverer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.discoverer_id = input;
-        self
+        self.discoverer_id = input; self
     }
     /// <p>The ID of the discoverer.</p>
     pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The ARN of the event bus.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The ARN of the event bus.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +134,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The state of the discoverer.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiscovererState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the discoverer.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::DiscovererState> {
@@ -152,8 +147,7 @@ impl DescribeDiscovererOutputBuilder {
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cross_account = input;
-        self
+        self.cross_account = input; self
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
@@ -166,39 +160,46 @@ impl DescribeDiscovererOutputBuilder {
     /// <p>Tags associated with the resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDiscovererOutput`](crate::operation::describe_discoverer::DescribeDiscovererOutput).
     pub fn build(self) -> crate::operation::describe_discoverer::DescribeDiscovererOutput {
         crate::operation::describe_discoverer::DescribeDiscovererOutput {
-            description: self.description,
-            discoverer_arn: self.discoverer_arn,
-            discoverer_id: self.discoverer_id,
-            source_arn: self.source_arn,
-            state: self.state,
-            cross_account: self.cross_account,
-            tags: self.tags,
+            description: self.description
+            ,
+            discoverer_arn: self.discoverer_arn
+            ,
+            discoverer_id: self.discoverer_id
+            ,
+            source_arn: self.source_arn
+            ,
+            state: self.state
+            ,
+            cross_account: self.cross_account
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

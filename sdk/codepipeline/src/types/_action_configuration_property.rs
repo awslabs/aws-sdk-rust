@@ -3,7 +3,7 @@
 /// <p>Represents information about an action configuration property.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionConfigurationProperty {
+pub struct ActionConfigurationProperty  {
     /// <p>The name of the action configuration property.</p>
     pub name: ::std::string::String,
     /// <p>Whether the configuration property is a required value.</p>
@@ -21,11 +21,10 @@ pub struct ActionConfigurationProperty {
     /// <p>The type of the configuration property.</p>
     pub r#type: ::std::option::Option<crate::types::ActionConfigurationPropertyType>,
 }
-impl ActionConfigurationProperty {
+impl  ActionConfigurationProperty  {
     /// <p>The name of the action configuration property.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Whether the configuration property is a required value.</p>
     pub fn required(&self) -> bool {
@@ -46,11 +45,11 @@ impl ActionConfigurationProperty {
         self.queryable
     }
     /// <p>The description of the action configuration property that is displayed to users.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the configuration property.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ActionConfigurationPropertyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ActionConfigurationPropertyType> {
         self.r#type.as_ref()
     }
 }
@@ -82,8 +81,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>The name of the action configuration property.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the action configuration property.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>Whether the configuration property is a required value.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Whether the configuration property is a required value.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -112,8 +109,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn get_key(&self) -> &::std::option::Option<bool> {
@@ -129,8 +125,7 @@ impl ActionConfigurationPropertyBuilder {
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
     pub fn set_secret(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.secret = input;
-        self
+        self.secret = input; self
     }
     /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
@@ -146,8 +141,7 @@ impl ActionConfigurationPropertyBuilder {
     /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
     pub fn set_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.queryable = input;
-        self
+        self.queryable = input; self
     }
     /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
@@ -161,8 +155,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>The description of the action configuration property that is displayed to users.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the action configuration property that is displayed to users.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +168,7 @@ impl ActionConfigurationPropertyBuilder {
     }
     /// <p>The type of the configuration property.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ActionConfigurationPropertyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the configuration property.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ActionConfigurationPropertyType> {
@@ -186,19 +178,31 @@ impl ActionConfigurationPropertyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ActionConfigurationPropertyBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionConfigurationProperty, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionConfigurationProperty {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ActionConfigurationProperty",
-                )
-            })?,
-            required: self.required.unwrap_or_default(),
-            key: self.key.unwrap_or_default(),
-            secret: self.secret.unwrap_or_default(),
-            queryable: self.queryable.unwrap_or_default(),
-            description: self.description,
-            r#type: self.r#type,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionConfigurationProperty {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ActionConfigurationProperty")
+                    )?
+                ,
+                required: self.required
+                    .unwrap_or_default()
+                ,
+                key: self.key
+                    .unwrap_or_default()
+                ,
+                secret: self.secret
+                    .unwrap_or_default()
+                ,
+                queryable: self.queryable
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

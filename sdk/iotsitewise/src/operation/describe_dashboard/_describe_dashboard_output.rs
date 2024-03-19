@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDashboardOutput {
+pub struct DescribeDashboardOutput  {
     /// <p>The ID of the dashboard.</p>
     pub dashboard_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
@@ -22,51 +22,46 @@ pub struct DescribeDashboardOutput {
     pub dashboard_last_update_date: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl DescribeDashboardOutput {
+impl  DescribeDashboardOutput  {
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> &str {
-        use std::ops::Deref;
-        self.dashboard_id.deref()
+    pub fn dashboard_id(&self) -> & str {
+        use std::ops::Deref; self.dashboard_id.deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
-    pub fn dashboard_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.dashboard_arn.deref()
+    pub fn dashboard_arn(&self) -> & str {
+        use std::ops::Deref; self.dashboard_arn.deref()
     }
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(&self) -> &str {
-        use std::ops::Deref;
-        self.dashboard_name.deref()
+    pub fn dashboard_name(&self) -> & str {
+        use std::ops::Deref; self.dashboard_name.deref()
     }
     /// <p>The ID of the project that the dashboard is in.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The dashboard's description.</p>
-    pub fn dashboard_description(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_description(&self) -> ::std::option::Option<& str> {
         self.dashboard_description.as_deref()
     }
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn dashboard_definition(&self) -> &str {
-        use std::ops::Deref;
-        self.dashboard_definition.deref()
+    pub fn dashboard_definition(&self) -> & str {
+        use std::ops::Deref; self.dashboard_definition.deref()
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
-    pub fn dashboard_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn dashboard_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.dashboard_creation_date
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
-    pub fn dashboard_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn dashboard_last_update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.dashboard_last_update_date
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDashboardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
     pub fn builder() -> crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder {
@@ -97,8 +92,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The ID of the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The ID of the dashboard.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +108,7 @@ impl DescribeDashboardOutputBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
     pub fn set_dashboard_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_arn = input;
-        self
+        self.dashboard_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p><code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code></p>
@@ -130,8 +123,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The name of the dashboard.</p>
     pub fn set_dashboard_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_name = input;
-        self
+        self.dashboard_name = input; self
     }
     /// <p>The name of the dashboard.</p>
     pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +137,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The ID of the project that the dashboard is in.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project that the dashboard is in.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +150,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The dashboard's description.</p>
     pub fn set_dashboard_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_description = input;
-        self
+        self.dashboard_description = input; self
     }
     /// <p>The dashboard's description.</p>
     pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +164,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_dashboard_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_definition = input;
-        self
+        self.dashboard_definition = input; self
     }
     /// <p>The dashboard's definition JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +178,7 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub fn set_dashboard_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.dashboard_creation_date = input;
-        self
+        self.dashboard_creation_date = input; self
     }
     /// <p>The date the dashboard was created, in Unix epoch time.</p>
     pub fn get_dashboard_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -204,22 +192,21 @@ impl DescribeDashboardOutputBuilder {
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn set_dashboard_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.dashboard_last_update_date = input;
-        self
+        self.dashboard_last_update_date = input; self
     }
     /// <p>The date the dashboard was last updated, in Unix epoch time.</p>
     pub fn get_dashboard_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.dashboard_last_update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDashboardOutput`](crate::operation::describe_dashboard::DescribeDashboardOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`dashboard_id`](crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::dashboard_id)
@@ -229,54 +216,49 @@ impl DescribeDashboardOutputBuilder {
     /// - [`dashboard_definition`](crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::dashboard_definition)
     /// - [`dashboard_creation_date`](crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::dashboard_creation_date)
     /// - [`dashboard_last_update_date`](crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::dashboard_last_update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardOutput {
-            dashboard_id: self.dashboard_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_id",
-                    "dashboard_id was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            dashboard_arn: self.dashboard_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_arn",
-                    "dashboard_arn was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            dashboard_name: self.dashboard_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_name",
-                    "dashboard_name was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            dashboard_description: self.dashboard_description,
-            dashboard_definition: self.dashboard_definition.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_definition",
-                    "dashboard_definition was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            dashboard_creation_date: self.dashboard_creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_creation_date",
-                    "dashboard_creation_date was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            dashboard_last_update_date: self.dashboard_last_update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "dashboard_last_update_date",
-                    "dashboard_last_update_date was not specified but it is required when building DescribeDashboardOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_dashboard::DescribeDashboardOutput {
+                dashboard_id: self.dashboard_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_id", "dashboard_id was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                dashboard_arn: self.dashboard_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_arn", "dashboard_arn was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                dashboard_name: self.dashboard_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_name", "dashboard_name was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                dashboard_description: self.dashboard_description
+                ,
+                dashboard_definition: self.dashboard_definition
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_definition", "dashboard_definition was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                dashboard_creation_date: self.dashboard_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_creation_date", "dashboard_creation_date was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                dashboard_last_update_date: self.dashboard_last_update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_last_update_date", "dashboard_last_update_date was not specified but it is required when building DescribeDashboardOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

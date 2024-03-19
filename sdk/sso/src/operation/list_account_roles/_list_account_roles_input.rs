@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ListAccountRolesInput {
+pub struct ListAccountRolesInput  {
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of items that clients can request per page.</p>
@@ -12,9 +12,9 @@ pub struct ListAccountRolesInput {
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl ListAccountRolesInput {
+impl  ListAccountRolesInput  {
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of items that clients can request per page.</p>
@@ -22,15 +22,15 @@ impl ListAccountRolesInput {
         self.max_results
     }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
-    pub fn access_token(&self) -> ::std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for ListAccountRolesInput {
+impl  ::std::fmt::Debug for ListAccountRolesInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountRolesInput");
         formatter.field("next_token", &self.next_token);
@@ -64,8 +64,7 @@ impl ListAccountRolesInputBuilder {
     }
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +77,7 @@ impl ListAccountRolesInputBuilder {
     }
     /// <p>The number of items that clients can request per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of items that clients can request per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -93,8 +91,7 @@ impl ListAccountRolesInputBuilder {
     }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>IAM Identity Center OIDC API Reference Guide</i>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,23 +105,26 @@ impl ListAccountRolesInputBuilder {
     }
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The identifier for the AWS account that is assigned to the user.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListAccountRolesInput`](crate::operation::list_account_roles::ListAccountRolesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_account_roles::ListAccountRolesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_account_roles::ListAccountRolesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            access_token: self.access_token,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_account_roles::ListAccountRolesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_account_roles::ListAccountRolesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                access_token: self.access_token
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ListAccountRolesInputBuilder {
@@ -137,3 +137,4 @@ impl ::std::fmt::Debug for ListAccountRolesInputBuilder {
         formatter.finish()
     }
 }
+

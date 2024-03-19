@@ -3,7 +3,7 @@
 /// <p>Provides details about an error in a core network policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkPolicyError {
+pub struct CoreNetworkPolicyError  {
     /// <p>The error code associated with a core network policy error.</p>
     pub error_code: ::std::string::String,
     /// <p>The message associated with a core network policy error code.</p>
@@ -11,19 +11,17 @@ pub struct CoreNetworkPolicyError {
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub path: ::std::option::Option<::std::string::String>,
 }
-impl CoreNetworkPolicyError {
+impl  CoreNetworkPolicyError  {
     /// <p>The error code associated with a core network policy error.</p>
-    pub fn error_code(&self) -> &str {
-        use std::ops::Deref;
-        self.error_code.deref()
+    pub fn error_code(&self) -> & str {
+        use std::ops::Deref; self.error_code.deref()
     }
     /// <p>The message associated with a core network policy error code.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The error code associated with a core network policy error.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code associated with a core network policy error.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The message associated with a core network policy error code.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message associated with a core network policy error code.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl CoreNetworkPolicyErrorBuilder {
     /// - [`error_code`](crate::types::builders::CoreNetworkPolicyErrorBuilder::error_code)
     /// - [`message`](crate::types::builders::CoreNetworkPolicyErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::CoreNetworkPolicyError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CoreNetworkPolicyError {
-            error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_code",
-                    "error_code was not specified but it is required when building CoreNetworkPolicyError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building CoreNetworkPolicyError",
-                )
-            })?,
-            path: self.path,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CoreNetworkPolicyError {
+                error_code: self.error_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_code", "error_code was not specified but it is required when building CoreNetworkPolicyError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building CoreNetworkPolicyError")
+                    )?
+                ,
+                path: self.path
+                ,
+            }
+        )
     }
 }
+

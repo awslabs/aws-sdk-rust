@@ -2,39 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableBaselineInput {
+pub struct EnableBaselineInput  {
     /// <p>The specific version to be enabled of the specified baseline.</p>
     pub baseline_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>key-value</code> objects that specify enablement parameters, where <code>key</code> is a string and <code>value</code> is a document of any type.</p>
-    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>,
     /// <p>The ARN of the baseline to be enabled.</p>
     pub baseline_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with input to <code>EnableBaseline</code>.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl EnableBaselineInput {
+impl  EnableBaselineInput  {
     /// <p>The specific version to be enabled of the specified baseline.</p>
-    pub fn baseline_version(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_version(&self) -> ::std::option::Option<& str> {
         self.baseline_version.as_deref()
     }
     /// <p>A list of <code>key-value</code> objects that specify enablement parameters, where <code>key</code> is a string and <code>value</code> is a document of any type.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
-    pub fn parameters(&self) -> &[crate::types::EnabledBaselineParameter] {
-        self.parameters.as_deref().unwrap_or_default()
+    pub fn parameters(&self) -> & [crate::types::EnabledBaselineParameter] {
+        self.parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of the baseline to be enabled.</p>
-    pub fn baseline_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_identifier(&self) -> ::std::option::Option<& str> {
         self.baseline_identifier.as_deref()
     }
     /// <p>The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.</p>
-    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn target_identifier(&self) -> ::std::option::Option<& str> {
         self.target_identifier.as_deref()
     }
     /// <p>Tags associated with input to <code>EnableBaseline</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -50,10 +51,10 @@ impl EnableBaselineInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EnableBaselineInputBuilder {
     pub(crate) baseline_version: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>,
     pub(crate) baseline_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) target_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl EnableBaselineInputBuilder {
     /// <p>The specific version to be enabled of the specified baseline.</p>
@@ -64,8 +65,7 @@ impl EnableBaselineInputBuilder {
     }
     /// <p>The specific version to be enabled of the specified baseline.</p>
     pub fn set_baseline_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_version = input;
-        self
+        self.baseline_version = input; self
     }
     /// <p>The specific version to be enabled of the specified baseline.</p>
     pub fn get_baseline_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl EnableBaselineInputBuilder {
     /// <p>A list of <code>key-value</code> objects that specify enablement parameters, where <code>key</code> is a string and <code>value</code> is a document of any type.</p>
     pub fn parameters(mut self, input: crate::types::EnabledBaselineParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>key-value</code> objects that specify enablement parameters, where <code>key</code> is a string and <code>value</code> is a document of any type.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>A list of <code>key-value</code> objects that specify enablement parameters, where <code>key</code> is a string and <code>value</code> is a document of any type.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineParameter>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnabledBaselineParameter>> {
         &self.parameters
     }
     /// <p>The ARN of the baseline to be enabled.</p>
@@ -99,8 +98,7 @@ impl EnableBaselineInputBuilder {
     }
     /// <p>The ARN of the baseline to be enabled.</p>
     pub fn set_baseline_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_identifier = input;
-        self
+        self.baseline_identifier = input; self
     }
     /// <p>The ARN of the baseline to be enabled.</p>
     pub fn get_baseline_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl EnableBaselineInputBuilder {
     }
     /// <p>The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_identifier = input;
-        self
+        self.target_identifier = input; self
     }
     /// <p>The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,29 +125,34 @@ impl EnableBaselineInputBuilder {
     /// <p>Tags associated with input to <code>EnableBaseline</code>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags associated with input to <code>EnableBaseline</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags associated with input to <code>EnableBaseline</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`EnableBaselineInput`](crate::operation::enable_baseline::EnableBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::enable_baseline::EnableBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::enable_baseline::EnableBaselineInput {
-            baseline_version: self.baseline_version,
-            parameters: self.parameters,
-            baseline_identifier: self.baseline_identifier,
-            target_identifier: self.target_identifier,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_baseline::EnableBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_baseline::EnableBaselineInput {
+                baseline_version: self.baseline_version
+                ,
+                parameters: self.parameters
+                ,
+                baseline_identifier: self.baseline_identifier
+                ,
+                target_identifier: self.target_identifier
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

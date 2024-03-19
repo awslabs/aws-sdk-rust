@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataIngestionJobOutput {
+pub struct DescribeDataIngestionJobOutput  {
     /// <p>Indicates the job ID of the data ingestion job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job.</p>
@@ -33,45 +33,45 @@ pub struct DescribeDataIngestionJobOutput {
     pub source_dataset_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDataIngestionJobOutput {
+impl  DescribeDataIngestionJobOutput  {
     /// <p>Indicates the job ID of the data ingestion job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job.</p>
-    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
+    pub fn ingestion_input_configuration(&self) -> ::std::option::Option<& crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time at which the data ingestion job was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed.</p>
-    pub fn failed_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failed_reason(&self) -> ::std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
     /// <p>Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.</p>
-    pub fn data_quality_summary(&self) -> ::std::option::Option<&crate::types::DataQualitySummary> {
+    pub fn data_quality_summary(&self) -> ::std::option::Option<& crate::types::DataQualitySummary> {
         self.data_quality_summary.as_ref()
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
-    pub fn ingested_files_summary(&self) -> ::std::option::Option<&crate::types::IngestedFilesSummary> {
+    pub fn ingested_files_summary(&self) -> ::std::option::Option<& crate::types::IngestedFilesSummary> {
         self.ingested_files_summary.as_ref()
     }
     /// <p>Provides details about status of the ingestion job that is currently in progress.</p>
-    pub fn status_detail(&self) -> ::std::option::Option<&str> {
+    pub fn status_detail(&self) -> ::std::option::Option<& str> {
         self.status_detail.as_deref()
     }
     /// <p>Indicates the size of the ingested dataset.</p>
@@ -79,23 +79,23 @@ impl DescribeDataIngestionJobOutput {
         self.ingested_data_size
     }
     /// <p>Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
-    pub fn data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_start_time.as_ref()
     }
     /// <p>Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
-    pub fn data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.data_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
-    pub fn source_dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_dataset_arn(&self) -> ::std::option::Option<& str> {
         self.source_dataset_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDataIngestionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDataIngestionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput).
     pub fn builder() -> crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobOutputBuilder {
@@ -131,8 +131,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the job ID of the data ingestion job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Indicates the job ID of the data ingestion job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +144,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +157,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job.</p>
     pub fn set_ingestion_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionInputConfiguration>) -> Self {
-        self.ingestion_input_configuration = input;
-        self
+        self.ingestion_input_configuration = input; self
     }
     /// <p>Specifies the S3 location configuration for the data input for the data ingestion job.</p>
     pub fn get_ingestion_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionInputConfiguration> {
@@ -173,8 +170,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +183,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>The time at which the data ingestion job was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time at which the data ingestion job was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +196,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IngestionJobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates the status of the <code>DataIngestionJob</code> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
@@ -215,8 +209,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed.</p>
     pub fn set_failed_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failed_reason = input;
-        self
+        self.failed_reason = input; self
     }
     /// <p>Specifies the reason for failure when a data ingestion job has failed.</p>
     pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +222,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.</p>
     pub fn set_data_quality_summary(mut self, input: ::std::option::Option<crate::types::DataQualitySummary>) -> Self {
-        self.data_quality_summary = input;
-        self
+        self.data_quality_summary = input; self
     }
     /// <p>Gives statistics about a completed ingestion job. These statistics primarily relate to quantifying incorrect data such as MissingCompleteSensorData, MissingSensorData, UnsupportedDateFormats, InsufficientSensorData, and DuplicateTimeStamps.</p>
     pub fn get_data_quality_summary(&self) -> &::std::option::Option<crate::types::DataQualitySummary> {
@@ -243,8 +235,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
     pub fn set_ingested_files_summary(mut self, input: ::std::option::Option<crate::types::IngestedFilesSummary>) -> Self {
-        self.ingested_files_summary = input;
-        self
+        self.ingested_files_summary = input; self
     }
     /// <p>Gives statistics about how many files have been ingested, and which files have not been ingested, for a particular ingestion job.</p>
     pub fn get_ingested_files_summary(&self) -> &::std::option::Option<crate::types::IngestedFilesSummary> {
@@ -257,8 +248,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Provides details about status of the ingestion job that is currently in progress.</p>
     pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_detail = input;
-        self
+        self.status_detail = input; self
     }
     /// <p>Provides details about status of the ingestion job that is currently in progress.</p>
     pub fn get_status_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +261,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the size of the ingested dataset.</p>
     pub fn set_ingested_data_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.ingested_data_size = input;
-        self
+        self.ingested_data_size = input; self
     }
     /// <p>Indicates the size of the ingested dataset.</p>
     pub fn get_ingested_data_size(&self) -> &::std::option::Option<i64> {
@@ -285,8 +274,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
     pub fn set_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_start_time = input;
-        self
+        self.data_start_time = input; self
     }
     /// <p>Indicates the earliest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
     pub fn get_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -299,8 +287,7 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
     pub fn set_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.data_end_time = input;
-        self
+        self.data_end_time = input; self
     }
     /// <p>Indicates the latest timestamp corresponding to data that was successfully ingested during this specific ingestion job.</p>
     pub fn get_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -313,40 +300,54 @@ impl DescribeDataIngestionJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
     pub fn set_source_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_dataset_arn = input;
-        self
+        self.source_dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source dataset from which the data used for the data ingestion job was imported from.</p>
     pub fn get_source_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_dataset_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDataIngestionJobOutput`](crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput).
     pub fn build(self) -> crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput {
         crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput {
-            job_id: self.job_id,
-            dataset_arn: self.dataset_arn,
-            ingestion_input_configuration: self.ingestion_input_configuration,
-            role_arn: self.role_arn,
-            created_at: self.created_at,
-            status: self.status,
-            failed_reason: self.failed_reason,
-            data_quality_summary: self.data_quality_summary,
-            ingested_files_summary: self.ingested_files_summary,
-            status_detail: self.status_detail,
-            ingested_data_size: self.ingested_data_size,
-            data_start_time: self.data_start_time,
-            data_end_time: self.data_end_time,
-            source_dataset_arn: self.source_dataset_arn,
+            job_id: self.job_id
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            ingestion_input_configuration: self.ingestion_input_configuration
+            ,
+            role_arn: self.role_arn
+            ,
+            created_at: self.created_at
+            ,
+            status: self.status
+            ,
+            failed_reason: self.failed_reason
+            ,
+            data_quality_summary: self.data_quality_summary
+            ,
+            ingested_files_summary: self.ingested_files_summary
+            ,
+            status_detail: self.status_detail
+            ,
+            ingested_data_size: self.ingested_data_size
+            ,
+            data_start_time: self.data_start_time
+            ,
+            data_end_time: self.data_end_time
+            ,
+            source_dataset_arn: self.source_dataset_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,30 +3,31 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListImportJobsOutput {
+pub struct ListImportJobsOutput  {
     /// <p>A list of the import job summaries.</p>
-    pub import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>,
+    pub import_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>>,
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListImportJobsOutput {
+impl  ListImportJobsOutput  {
     /// <p>A list of the import job summaries.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_jobs.is_none()`.
-    pub fn import_jobs(&self) -> &[crate::types::ImportJobSummary] {
-        self.import_jobs.as_deref().unwrap_or_default()
+    pub fn import_jobs(&self) -> & [crate::types::ImportJobSummary] {
+        self.import_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput).
     pub fn builder() -> crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListImportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListImportJobsOutputBuilder {
-    pub(crate) import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>,
+    pub(crate) import_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +51,16 @@ impl ListImportJobsOutputBuilder {
     /// <p>A list of the import job summaries.</p>
     pub fn import_jobs(mut self, input: crate::types::ImportJobSummary) -> Self {
         let mut v = self.import_jobs.unwrap_or_default();
-        v.push(input);
-        self.import_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.import_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the import job summaries.</p>
-    pub fn set_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>>) -> Self {
-        self.import_jobs = input;
-        self
+    pub fn set_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>>) -> Self {
+        self.import_jobs = input; self
     }
     /// <p>A list of the import job summaries.</p>
-    pub fn get_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>> {
+    pub fn get_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImportJobSummary>> {
         &self.import_jobs
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
@@ -70,28 +70,30 @@ impl ListImportJobsOutputBuilder {
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput).
     pub fn build(self) -> crate::operation::list_import_jobs::ListImportJobsOutput {
         crate::operation::list_import_jobs::ListImportJobsOutput {
-            import_jobs: self.import_jobs,
-            next_token: self.next_token,
+            import_jobs: self.import_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

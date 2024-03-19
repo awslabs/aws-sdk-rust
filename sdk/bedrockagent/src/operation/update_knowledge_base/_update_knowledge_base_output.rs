@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKnowledgeBaseOutput {
+pub struct UpdateKnowledgeBaseOutput  {
     /// Contains the information of a knowledge base.
     pub knowledge_base: ::std::option::Option<crate::types::KnowledgeBase>,
     _request_id: Option<String>,
 }
-impl UpdateKnowledgeBaseOutput {
+impl  UpdateKnowledgeBaseOutput  {
     /// Contains the information of a knowledge base.
-    pub fn knowledge_base(&self) -> ::std::option::Option<&crate::types::KnowledgeBase> {
+    pub fn knowledge_base(&self) -> ::std::option::Option<& crate::types::KnowledgeBase> {
         self.knowledge_base.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKnowledgeBaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKnowledgeBaseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKnowledgeBaseOutput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseOutput).
     pub fn builder() -> crate::operation::update_knowledge_base::builders::UpdateKnowledgeBaseOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateKnowledgeBaseOutputBuilder {
     }
     /// Contains the information of a knowledge base.
     pub fn set_knowledge_base(mut self, input: ::std::option::Option<crate::types::KnowledgeBase>) -> Self {
-        self.knowledge_base = input;
-        self
+        self.knowledge_base = input; self
     }
     /// Contains the information of a knowledge base.
     pub fn get_knowledge_base(&self) -> &::std::option::Option<crate::types::KnowledgeBase> {
         &self.knowledge_base
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKnowledgeBaseOutput`](crate::operation::update_knowledge_base::UpdateKnowledgeBaseOutput).
     pub fn build(self) -> crate::operation::update_knowledge_base::UpdateKnowledgeBaseOutput {
         crate::operation::update_knowledge_base::UpdateKnowledgeBaseOutput {
-            knowledge_base: self.knowledge_base,
+            knowledge_base: self.knowledge_base
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

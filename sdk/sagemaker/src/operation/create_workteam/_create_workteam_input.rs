@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkteamInput {
+pub struct CreateWorkteamInput  {
     /// <p>The name of the work team. Use this name to identify the work team.</p>
     pub workteam_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workforce.</p>
@@ -11,47 +11,49 @@ pub struct CreateWorkteamInput {
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    pub member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub member_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>,
     /// <p>A description of the work team.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateWorkteamInput {
+impl  CreateWorkteamInput  {
     /// <p>The name of the work team. Use this name to identify the work team.</p>
-    pub fn workteam_name(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_name(&self) -> ::std::option::Option<& str> {
         self.workteam_name.as_deref()
     }
     /// <p>The name of the workforce.</p>
-    pub fn workforce_name(&self) -> ::std::option::Option<&str> {
+    pub fn workforce_name(&self) -> ::std::option::Option<& str> {
         self.workforce_name.as_deref()
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_definitions.is_none()`.
-    pub fn member_definitions(&self) -> &[crate::types::MemberDefinition] {
-        self.member_definitions.as_deref().unwrap_or_default()
+    pub fn member_definitions(&self) -> & [crate::types::MemberDefinition] {
+        self.member_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A description of the work team.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
-    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
+    pub fn notification_configuration(&self) -> ::std::option::Option<& crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateWorkteamInput {
@@ -67,10 +69,10 @@ impl CreateWorkteamInput {
 pub struct CreateWorkteamInputBuilder {
     pub(crate) workteam_name: ::std::option::Option<::std::string::String>,
     pub(crate) workforce_name: ::std::option::Option<::std::string::String>,
-    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
+    pub(crate) member_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateWorkteamInputBuilder {
     /// <p>The name of the work team. Use this name to identify the work team.</p>
@@ -81,8 +83,7 @@ impl CreateWorkteamInputBuilder {
     }
     /// <p>The name of the work team. Use this name to identify the work team.</p>
     pub fn set_workteam_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_name = input;
-        self
+        self.workteam_name = input; self
     }
     /// <p>The name of the work team. Use this name to identify the work team.</p>
     pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +96,7 @@ impl CreateWorkteamInputBuilder {
     }
     /// <p>The name of the workforce.</p>
     pub fn set_workforce_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workforce_name = input;
-        self
+        self.workforce_name = input; self
     }
     /// <p>The name of the workforce.</p>
     pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,23 +112,22 @@ impl CreateWorkteamInputBuilder {
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
     pub fn member_definitions(mut self, input: crate::types::MemberDefinition) -> Self {
         let mut v = self.member_definitions.unwrap_or_default();
-        v.push(input);
-        self.member_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>) -> Self {
-        self.member_definitions = input;
-        self
+    pub fn set_member_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>>) -> Self {
+        self.member_definitions = input; self
     }
     /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team.</p>
     /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
     /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
-    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+    pub fn get_member_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberDefinition>> {
         &self.member_definitions
     }
     /// <p>A description of the work team.</p>
@@ -139,8 +138,7 @@ impl CreateWorkteamInputBuilder {
     }
     /// <p>A description of the work team.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the work team.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl CreateWorkteamInputBuilder {
     }
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
     pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfiguration>) -> Self {
-        self.notification_configuration = input;
-        self
+        self.notification_configuration = input; self
     }
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
     pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfiguration> {
@@ -168,32 +165,38 @@ impl CreateWorkteamInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkteamInput`](crate::operation::create_workteam::CreateWorkteamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_workteam::CreateWorkteamInput {
-            workteam_name: self.workteam_name,
-            workforce_name: self.workforce_name,
-            member_definitions: self.member_definitions,
-            description: self.description,
-            notification_configuration: self.notification_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_workteam::CreateWorkteamInput {
+                workteam_name: self.workteam_name
+                ,
+                workforce_name: self.workforce_name
+                ,
+                member_definitions: self.member_definitions
+                ,
+                description: self.description
+                ,
+                notification_configuration: self.notification_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

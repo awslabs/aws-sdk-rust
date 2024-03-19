@@ -3,15 +3,14 @@
 /// <p>Summary information on an access control configuration that you created for your documents in an index.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlConfigurationSummary {
+pub struct AccessControlConfigurationSummary  {
     /// <p>The identifier of the access control configuration.</p>
     pub id: ::std::string::String,
 }
-impl AccessControlConfigurationSummary {
+impl  AccessControlConfigurationSummary  {
     /// <p>The identifier of the access control configuration.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
 }
 impl AccessControlConfigurationSummary {
@@ -36,8 +35,7 @@ impl AccessControlConfigurationSummaryBuilder {
     }
     /// <p>The identifier of the access control configuration.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the access control configuration.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl AccessControlConfigurationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AccessControlConfigurationSummaryBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessControlConfigurationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessControlConfigurationSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AccessControlConfigurationSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessControlConfigurationSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AccessControlConfigurationSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

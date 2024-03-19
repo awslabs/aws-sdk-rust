@@ -3,28 +3,29 @@
 /// Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OutputGroup {
+pub struct OutputGroup  {
     /// Custom output group name optionally defined by the user.
     pub name: ::std::option::Option<::std::string::String>,
     /// Settings associated with the output group.
     pub output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
     /// Placeholder documentation for __listOfOutput
-    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
 }
-impl OutputGroup {
+impl  OutputGroup  {
     /// Custom output group name optionally defined by the user.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Settings associated with the output group.
-    pub fn output_group_settings(&self) -> ::std::option::Option<&crate::types::OutputGroupSettings> {
+    pub fn output_group_settings(&self) -> ::std::option::Option<& crate::types::OutputGroupSettings> {
         self.output_group_settings.as_ref()
     }
     /// Placeholder documentation for __listOfOutput
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
-    pub fn outputs(&self) -> &[crate::types::Output] {
-        self.outputs.as_deref().unwrap_or_default()
+    pub fn outputs(&self) -> & [crate::types::Output] {
+        self.outputs.as_deref()
+        .unwrap_or_default()
     }
 }
 impl OutputGroup {
@@ -40,7 +41,7 @@ impl OutputGroup {
 pub struct OutputGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) output_group_settings: ::std::option::Option<crate::types::OutputGroupSettings>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>,
 }
 impl OutputGroupBuilder {
     /// Custom output group name optionally defined by the user.
@@ -50,8 +51,7 @@ impl OutputGroupBuilder {
     }
     /// Custom output group name optionally defined by the user.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Custom output group name optionally defined by the user.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl OutputGroupBuilder {
     }
     /// Settings associated with the output group.
     pub fn set_output_group_settings(mut self, input: ::std::option::Option<crate::types::OutputGroupSettings>) -> Self {
-        self.output_group_settings = input;
-        self
+        self.output_group_settings = input; self
     }
     /// Settings associated with the output group.
     pub fn get_output_group_settings(&self) -> &::std::option::Option<crate::types::OutputGroupSettings> {
@@ -79,25 +78,28 @@ impl OutputGroupBuilder {
     /// Placeholder documentation for __listOfOutput
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Output>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`OutputGroup`](crate::types::OutputGroup).
     pub fn build(self) -> crate::types::OutputGroup {
         crate::types::OutputGroup {
-            name: self.name,
-            output_group_settings: self.output_group_settings,
-            outputs: self.outputs,
+            name: self.name
+            ,
+            output_group_settings: self.output_group_settings
+            ,
+            outputs: self.outputs
+            ,
         }
     }
 }
+

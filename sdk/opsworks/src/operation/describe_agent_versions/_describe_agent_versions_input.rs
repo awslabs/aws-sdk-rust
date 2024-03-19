@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAgentVersionsInput {
+pub struct DescribeAgentVersionsInput  {
     /// <p>The stack ID.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration manager.</p>
     pub configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
-impl DescribeAgentVersionsInput {
+impl  DescribeAgentVersionsInput  {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The configuration manager.</p>
-    pub fn configuration_manager(&self) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
+    pub fn configuration_manager(&self) -> ::std::option::Option<& crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl DescribeAgentVersionsInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,21 +53,22 @@ impl DescribeAgentVersionsInputBuilder {
     }
     /// <p>The configuration manager.</p>
     pub fn set_configuration_manager(mut self, input: ::std::option::Option<crate::types::StackConfigurationManager>) -> Self {
-        self.configuration_manager = input;
-        self
+        self.configuration_manager = input; self
     }
     /// <p>The configuration manager.</p>
     pub fn get_configuration_manager(&self) -> &::std::option::Option<crate::types::StackConfigurationManager> {
         &self.configuration_manager
     }
     /// Consumes the builder and constructs a [`DescribeAgentVersionsInput`](crate::operation::describe_agent_versions::DescribeAgentVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_agent_versions::DescribeAgentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_agent_versions::DescribeAgentVersionsInput {
-            stack_id: self.stack_id,
-            configuration_manager: self.configuration_manager,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_agent_versions::DescribeAgentVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_agent_versions::DescribeAgentVersionsInput {
+                stack_id: self.stack_id
+                ,
+                configuration_manager: self.configuration_manager
+                ,
+            }
+        )
     }
 }
+

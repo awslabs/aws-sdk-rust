@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayInput {
+pub struct UpdateGatewayInput  {
     /// <p>The ARN of the gateway to update.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the gateway.</p>
@@ -12,21 +12,21 @@ pub struct UpdateGatewayInput {
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub software_version: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGatewayInput {
+impl  UpdateGatewayInput  {
     /// <p>The ARN of the gateway to update.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The updated name of the gateway.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The updated description of the gateway.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
-    pub fn software_version(&self) -> ::std::option::Option<&str> {
+    pub fn software_version(&self) -> ::std::option::Option<& str> {
         self.software_version.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>The ARN of the gateway to update.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The ARN of the gateway to update.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>The updated name of the gateway.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The updated name of the gateway.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>The updated description of the gateway.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated description of the gateway.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,22 +94,26 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.software_version = input;
-        self
+        self.software_version = input; self
     }
     /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.software_version
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_gateway::UpdateGatewayInput {
-            gateway_arn: self.gateway_arn,
-            name: self.name,
-            description: self.description,
-            software_version: self.software_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_gateway::UpdateGatewayInput {
+                gateway_arn: self.gateway_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                software_version: self.software_version
+                ,
+            }
+        )
     }
 }
+

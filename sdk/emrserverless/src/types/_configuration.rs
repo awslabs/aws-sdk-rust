@@ -3,32 +3,32 @@
 /// <p>A configuration specification to be used when provisioning an application. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Configuration {
+pub struct Configuration  {
     /// <p>The classification within a configuration.</p>
     pub classification: ::std::string::String,
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
 }
-impl Configuration {
+impl  Configuration  {
     /// <p>The classification within a configuration.</p>
-    pub fn classification(&self) -> &str {
-        use std::ops::Deref;
-        self.classification.deref()
+    pub fn classification(&self) -> & str {
+        use std::ops::Deref; self.classification.deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
-    pub fn configurations(&self) -> &[crate::types::Configuration] {
-        self.configurations.as_deref().unwrap_or_default()
+    pub fn configurations(&self) -> & [crate::types::Configuration] {
+        self.configurations.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for Configuration {
+impl  ::std::fmt::Debug for Configuration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Configuration");
         formatter.field("classification", &self.classification);
@@ -49,8 +49,8 @@ impl Configuration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConfigurationBuilder {
     pub(crate) classification: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>,
 }
 impl ConfigurationBuilder {
     /// <p>The classification within a configuration.</p>
@@ -61,8 +61,7 @@ impl ConfigurationBuilder {
     }
     /// <p>The classification within a configuration.</p>
     pub fn set_classification(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.classification = input;
-        self
+        self.classification = input; self
     }
     /// <p>The classification within a configuration.</p>
     pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,17 +74,16 @@ impl ConfigurationBuilder {
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>A set of properties specified within a configuration classification.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.properties
     }
     /// Appends an item to `configurations`.
@@ -95,33 +93,35 @@ impl ConfigurationBuilder {
     /// <p>A list of additional configurations to apply within a configuration object.</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-        v.push(input);
-        self.configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
+        self.configurations = input; self
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         &self.configurations
     }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     /// This method will fail if any of the following fields are not set:
     /// - [`classification`](crate::types::builders::ConfigurationBuilder::classification)
     pub fn build(self) -> ::std::result::Result<crate::types::Configuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Configuration {
-            classification: self.classification.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "classification",
-                    "classification was not specified but it is required when building Configuration",
-                )
-            })?,
-            properties: self.properties,
-            configurations: self.configurations,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Configuration {
+                classification: self.classification
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("classification", "classification was not specified but it is required when building Configuration")
+                    )?
+                ,
+                properties: self.properties
+                ,
+                configurations: self.configurations
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ConfigurationBuilder {
@@ -133,3 +133,4 @@ impl ::std::fmt::Debug for ConfigurationBuilder {
         formatter.finish()
     }
 }
+

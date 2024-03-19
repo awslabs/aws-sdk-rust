@@ -3,24 +3,25 @@
 /// <p>Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSendStatisticsOutput {
+pub struct GetSendStatisticsOutput  {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
+    pub send_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }
-impl GetSendStatisticsOutput {
+impl  GetSendStatisticsOutput  {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.send_data_points.is_none()`.
-    pub fn send_data_points(&self) -> &[crate::types::SendDataPoint] {
-        self.send_data_points.as_deref().unwrap_or_default()
+    pub fn send_data_points(&self) -> & [crate::types::SendDataPoint] {
+        self.send_data_points.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSendStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSendStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
     pub fn builder() -> crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder {
@@ -32,7 +33,7 @@ impl GetSendStatisticsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetSendStatisticsOutputBuilder {
-    pub(crate) send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
+    pub(crate) send_data_points: ::std::option::Option<::std::vec::Vec::<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }
 impl GetSendStatisticsOutputBuilder {
@@ -43,33 +44,34 @@ impl GetSendStatisticsOutputBuilder {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     pub fn send_data_points(mut self, input: crate::types::SendDataPoint) -> Self {
         let mut v = self.send_data_points.unwrap_or_default();
-        v.push(input);
-        self.send_data_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.send_data_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn set_send_data_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>) -> Self {
-        self.send_data_points = input;
-        self
+    pub fn set_send_data_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SendDataPoint>>) -> Self {
+        self.send_data_points = input; self
     }
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn get_send_data_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>> {
+    pub fn get_send_data_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SendDataPoint>> {
         &self.send_data_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
     pub fn build(self) -> crate::operation::get_send_statistics::GetSendStatisticsOutput {
         crate::operation::get_send_statistics::GetSendStatisticsOutput {
-            send_data_points: self.send_data_points,
+            send_data_points: self.send_data_points
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

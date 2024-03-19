@@ -3,7 +3,7 @@
 /// <p>Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAssetPropertyValueEntry {
+pub struct PutAssetPropertyValueEntry  {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     pub entry_id: ::std::string::String,
     /// <p>The ID of the asset to update.</p>
@@ -13,30 +13,28 @@ pub struct PutAssetPropertyValueEntry {
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: ::std::option::Option<::std::string::String>,
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
-    pub property_values: ::std::vec::Vec<crate::types::AssetPropertyValue>,
+    pub property_values: ::std::vec::Vec::<crate::types::AssetPropertyValue>,
 }
-impl PutAssetPropertyValueEntry {
+impl  PutAssetPropertyValueEntry  {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
-    pub fn entry_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entry_id.deref()
+    pub fn entry_id(&self) -> & str {
+        use std::ops::Deref; self.entry_id.deref()
     }
     /// <p>The ID of the asset to update.</p>
-    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property for this entry.</p>
-    pub fn property_id(&self) -> ::std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<& str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> ::std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<& str> {
         self.property_alias.as_deref()
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
-    pub fn property_values(&self) -> &[crate::types::AssetPropertyValue] {
-        use std::ops::Deref;
-        self.property_values.deref()
+    pub fn property_values(&self) -> & [crate::types::AssetPropertyValue] {
+        use std::ops::Deref; self.property_values.deref()
     }
 }
 impl PutAssetPropertyValueEntry {
@@ -54,7 +52,7 @@ pub struct PutAssetPropertyValueEntryBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_alias: ::std::option::Option<::std::string::String>,
-    pub(crate) property_values: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) property_values: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntryBuilder {
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
@@ -65,8 +63,7 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the asset to update.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset to update.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The ID of the asset property for this entry.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// <p>The ID of the asset property for this entry.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +102,7 @@ impl PutAssetPropertyValueEntryBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property_alias = input;
-        self
+        self.property_alias = input; self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,17 +115,16 @@ impl PutAssetPropertyValueEntryBuilder {
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
     pub fn property_values(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.property_values.unwrap_or_default();
-        v.push(input);
-        self.property_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.property_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
-    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
-        self.property_values = input;
-        self
+    pub fn set_property_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>>) -> Self {
+        self.property_values = input; self
     }
     /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.</p>
-    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+    pub fn get_property_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetPropertyValue>> {
         &self.property_values
     }
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
@@ -139,22 +132,26 @@ impl PutAssetPropertyValueEntryBuilder {
     /// - [`entry_id`](crate::types::builders::PutAssetPropertyValueEntryBuilder::entry_id)
     /// - [`property_values`](crate::types::builders::PutAssetPropertyValueEntryBuilder::property_values)
     pub fn build(self) -> ::std::result::Result<crate::types::PutAssetPropertyValueEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutAssetPropertyValueEntry {
-            entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entry_id",
-                    "entry_id was not specified but it is required when building PutAssetPropertyValueEntry",
-                )
-            })?,
-            asset_id: self.asset_id,
-            property_id: self.property_id,
-            property_alias: self.property_alias,
-            property_values: self.property_values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property_values",
-                    "property_values was not specified but it is required when building PutAssetPropertyValueEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PutAssetPropertyValueEntry {
+                entry_id: self.entry_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entry_id", "entry_id was not specified but it is required when building PutAssetPropertyValueEntry")
+                    )?
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+                property_alias: self.property_alias
+                ,
+                property_values: self.property_values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property_values", "property_values was not specified but it is required when building PutAssetPropertyValueEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAcknowledgeAlarmInput {
+pub struct BatchAcknowledgeAlarmInput  {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub acknowledge_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
+    pub acknowledge_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::AcknowledgeAlarmActionRequest>>,
 }
-impl BatchAcknowledgeAlarmInput {
+impl  BatchAcknowledgeAlarmInput  {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acknowledge_action_requests.is_none()`.
-    pub fn acknowledge_action_requests(&self) -> &[crate::types::AcknowledgeAlarmActionRequest] {
-        self.acknowledge_action_requests.as_deref().unwrap_or_default()
+    pub fn acknowledge_action_requests(&self) -> & [crate::types::AcknowledgeAlarmActionRequest] {
+        self.acknowledge_action_requests.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchAcknowledgeAlarmInput {
@@ -25,7 +26,7 @@ impl BatchAcknowledgeAlarmInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchAcknowledgeAlarmInputBuilder {
-    pub(crate) acknowledge_action_requests: ::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
+    pub(crate) acknowledge_action_requests: ::std::option::Option<::std::vec::Vec::<crate::types::AcknowledgeAlarmActionRequest>>,
 }
 impl BatchAcknowledgeAlarmInputBuilder {
     /// Appends an item to `acknowledge_action_requests`.
@@ -35,29 +36,26 @@ impl BatchAcknowledgeAlarmInputBuilder {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
     pub fn acknowledge_action_requests(mut self, input: crate::types::AcknowledgeAlarmActionRequest) -> Self {
         let mut v = self.acknowledge_action_requests.unwrap_or_default();
-        v.push(input);
-        self.acknowledge_action_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.acknowledge_action_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_acknowledge_action_requests(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
-    ) -> Self {
-        self.acknowledge_action_requests = input;
-        self
+    pub fn set_acknowledge_action_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AcknowledgeAlarmActionRequest>>) -> Self {
+        self.acknowledge_action_requests = input; self
     }
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn get_acknowledge_action_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>> {
+    pub fn get_acknowledge_action_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AcknowledgeAlarmActionRequest>> {
         &self.acknowledge_action_requests
     }
     /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput {
-            acknowledge_action_requests: self.acknowledge_action_requests,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput {
+                acknowledge_action_requests: self.acknowledge_action_requests
+                ,
+            }
+        )
     }
 }
+

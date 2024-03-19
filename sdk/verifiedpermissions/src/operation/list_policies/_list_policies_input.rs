@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPoliciesInput {
+pub struct ListPoliciesInput  {
     /// <p>Specifies the ID of the policy store you want to list policies from.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -13,13 +13,13 @@ pub struct ListPoliciesInput {
     /// <p>Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.</p>
     pub filter: ::std::option::Option<crate::types::PolicyFilter>,
 }
-impl ListPoliciesInput {
+impl  ListPoliciesInput  {
     /// <p>Specifies the ID of the policy store you want to list policies from.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -28,7 +28,7 @@ impl ListPoliciesInput {
         self.max_results
     }
     /// <p>Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::PolicyFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::PolicyFilter> {
         self.filter.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>Specifies the ID of the policy store you want to list policies from.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store you want to list policies from.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl ListPoliciesInputBuilder {
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// <p>If you do not specify this parameter, the operation defaults to 10 policies per response. You can specify a maximum of 50 policies per response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// <p>If you do not specify this parameter, the operation defaults to 10 policies per response. You can specify a maximum of 50 policies per response.</p>
@@ -102,22 +99,26 @@ impl ListPoliciesInputBuilder {
     }
     /// <p>Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::PolicyFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::PolicyFilter> {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::operation::list_policies::ListPoliciesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
-            policy_store_id: self.policy_store_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filter: self.filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_policies::ListPoliciesInput {
+                policy_store_id: self.policy_store_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

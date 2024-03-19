@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsoutputselection = unimplemented!();
 /// match hlsoutputselection {
@@ -30,16 +30,14 @@
 /// Specifically, when `hlsoutputselection` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsOutputSelection::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum HlsOutputSelection {
     #[allow(missing_docs)] // documentation missing in model
     ManifestsAndSegments,
@@ -47,61 +45,62 @@ pub enum HlsOutputSelection {
     SegmentsOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for HlsOutputSelection {
-    fn from(s: &str) -> Self {
-        match s {
-            "MANIFESTS_AND_SEGMENTS" => HlsOutputSelection::ManifestsAndSegments,
-            "SEGMENTS_ONLY" => HlsOutputSelection::SegmentsOnly,
-            other => HlsOutputSelection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "MANIFESTS_AND_SEGMENTS" => HlsOutputSelection::ManifestsAndSegments,
+"SEGMENTS_ONLY" => HlsOutputSelection::SegmentsOnly,
+other => HlsOutputSelection::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for HlsOutputSelection {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(HlsOutputSelection::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(HlsOutputSelection::from(s))
+                    }
+                }
 impl HlsOutputSelection {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HlsOutputSelection::ManifestsAndSegments => "MANIFESTS_AND_SEGMENTS",
-            HlsOutputSelection::SegmentsOnly => "SEGMENTS_ONLY",
-            HlsOutputSelection::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["MANIFESTS_AND_SEGMENTS", "SEGMENTS_ONLY"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HlsOutputSelection::ManifestsAndSegments => "MANIFESTS_AND_SEGMENTS",
+    HlsOutputSelection::SegmentsOnly => "SEGMENTS_ONLY",
+    HlsOutputSelection::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MANIFESTS_AND_SEGMENTS", "SEGMENTS_ONLY"]
+                }
+            }
 impl ::std::convert::AsRef<str> for HlsOutputSelection {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl HlsOutputSelection {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for HlsOutputSelection {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            HlsOutputSelection::ManifestsAndSegments => write!(f, "MANIFESTS_AND_SEGMENTS"),
-            HlsOutputSelection::SegmentsOnly => write!(f, "SEGMENTS_ONLY"),
-            HlsOutputSelection::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                HlsOutputSelection::ManifestsAndSegments => write!(f, "MANIFESTS_AND_SEGMENTS"),
+HlsOutputSelection::SegmentsOnly => write!(f, "SEGMENTS_ONLY"),
+HlsOutputSelection::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

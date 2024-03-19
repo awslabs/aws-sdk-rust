@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFileCachesInput {
+pub struct DescribeFileCachesInput  {
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub file_cache_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub file_cache_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFileCachesInput {
+impl  DescribeFileCachesInput  {
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_cache_ids.is_none()`.
-    pub fn file_cache_ids(&self) -> &[::std::string::String] {
-        self.file_cache_ids.as_deref().unwrap_or_default()
+    pub fn file_cache_ids(&self) -> & [::std::string::String] {
+        self.file_cache_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl DescribeFileCachesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileCachesInputBuilder {
-    pub(crate) file_cache_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) file_cache_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl DescribeFileCachesInputBuilder {
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
     pub fn file_cache_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.file_cache_ids.unwrap_or_default();
-        v.push(input.into());
-        self.file_cache_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.file_cache_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn set_file_cache_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.file_cache_ids = input;
-        self
+    pub fn set_file_cache_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.file_cache_ids = input; self
     }
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
-    pub fn get_file_cache_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_file_cache_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.file_cache_ids
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -69,8 +69,7 @@ impl DescribeFileCachesInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -83,22 +82,24 @@ impl DescribeFileCachesInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_file_caches::DescribeFileCachesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_file_caches::DescribeFileCachesInput {
-            file_cache_ids: self.file_cache_ids,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_file_caches::DescribeFileCachesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_file_caches::DescribeFileCachesInput {
+                file_cache_ids: self.file_cache_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

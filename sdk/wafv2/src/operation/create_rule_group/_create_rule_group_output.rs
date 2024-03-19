@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRuleGroupOutput {
+pub struct CreateRuleGroupOutput  {
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     pub summary: ::std::option::Option<crate::types::RuleGroupSummary>,
     _request_id: Option<String>,
 }
-impl CreateRuleGroupOutput {
+impl  CreateRuleGroupOutput  {
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
-    pub fn summary(&self) -> ::std::option::Option<&crate::types::RuleGroupSummary> {
+    pub fn summary(&self) -> ::std::option::Option<& crate::types::RuleGroupSummary> {
         self.summary.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRuleGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     pub fn builder() -> crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateRuleGroupOutputBuilder {
     }
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<crate::types::RuleGroupSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     pub fn get_summary(&self) -> &::std::option::Option<crate::types::RuleGroupSummary> {
         &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::operation::create_rule_group::CreateRuleGroupOutput).
     pub fn build(self) -> crate::operation::create_rule_group::CreateRuleGroupOutput {
         crate::operation::create_rule_group::CreateRuleGroupOutput {
-            summary: self.summary,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

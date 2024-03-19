@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOrganizationStatisticsOutput {
+pub struct GetOrganizationStatisticsOutput  {
     /// <p>Information about the statistics report for your organization.</p>
     pub organization_details: ::std::option::Option<crate::types::OrganizationDetails>,
     _request_id: Option<String>,
 }
-impl GetOrganizationStatisticsOutput {
+impl  GetOrganizationStatisticsOutput  {
     /// <p>Information about the statistics report for your organization.</p>
-    pub fn organization_details(&self) -> ::std::option::Option<&crate::types::OrganizationDetails> {
+    pub fn organization_details(&self) -> ::std::option::Option<& crate::types::OrganizationDetails> {
         self.organization_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOrganizationStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetOrganizationStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationStatisticsOutput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsOutput).
     pub fn builder() -> crate::operation::get_organization_statistics::builders::GetOrganizationStatisticsOutputBuilder {
@@ -40,27 +40,28 @@ impl GetOrganizationStatisticsOutputBuilder {
     }
     /// <p>Information about the statistics report for your organization.</p>
     pub fn set_organization_details(mut self, input: ::std::option::Option<crate::types::OrganizationDetails>) -> Self {
-        self.organization_details = input;
-        self
+        self.organization_details = input; self
     }
     /// <p>Information about the statistics report for your organization.</p>
     pub fn get_organization_details(&self) -> &::std::option::Option<crate::types::OrganizationDetails> {
         &self.organization_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetOrganizationStatisticsOutput`](crate::operation::get_organization_statistics::GetOrganizationStatisticsOutput).
     pub fn build(self) -> crate::operation::get_organization_statistics::GetOrganizationStatisticsOutput {
         crate::operation::get_organization_statistics::GetOrganizationStatisticsOutput {
-            organization_details: self.organization_details,
+            organization_details: self.organization_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

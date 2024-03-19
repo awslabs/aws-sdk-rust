@@ -3,7 +3,7 @@
 /// <p>Provides information about an entity that performed an action that produced a policy finding for a resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FindingActor {
+pub struct FindingActor  {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub domain_details: ::std::option::Option<crate::types::DomainDetails>,
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
@@ -11,17 +11,17 @@ pub struct FindingActor {
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
 }
-impl FindingActor {
+impl  FindingActor  {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
-    pub fn domain_details(&self) -> ::std::option::Option<&crate::types::DomainDetails> {
+    pub fn domain_details(&self) -> ::std::option::Option<& crate::types::DomainDetails> {
         self.domain_details.as_ref()
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
-    pub fn ip_address_details(&self) -> ::std::option::Option<&crate::types::IpAddressDetails> {
+    pub fn ip_address_details(&self) -> ::std::option::Option<& crate::types::IpAddressDetails> {
         self.ip_address_details.as_ref()
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
-    pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
+    pub fn user_identity(&self) -> ::std::option::Option<& crate::types::UserIdentity> {
         self.user_identity.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl FindingActorBuilder {
     }
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub fn set_domain_details(mut self, input: ::std::option::Option<crate::types::DomainDetails>) -> Self {
-        self.domain_details = input;
-        self
+        self.domain_details = input; self
     }
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub fn get_domain_details(&self) -> &::std::option::Option<crate::types::DomainDetails> {
@@ -62,8 +61,7 @@ impl FindingActorBuilder {
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
     pub fn set_ip_address_details(mut self, input: ::std::option::Option<crate::types::IpAddressDetails>) -> Self {
-        self.ip_address_details = input;
-        self
+        self.ip_address_details = input; self
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
     pub fn get_ip_address_details(&self) -> &::std::option::Option<crate::types::IpAddressDetails> {
@@ -76,8 +74,7 @@ impl FindingActorBuilder {
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
-        self.user_identity = input;
-        self
+        self.user_identity = input; self
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
@@ -86,9 +83,13 @@ impl FindingActorBuilder {
     /// Consumes the builder and constructs a [`FindingActor`](crate::types::FindingActor).
     pub fn build(self) -> crate::types::FindingActor {
         crate::types::FindingActor {
-            domain_details: self.domain_details,
-            ip_address_details: self.ip_address_details,
-            user_identity: self.user_identity,
+            domain_details: self.domain_details
+            ,
+            ip_address_details: self.ip_address_details
+            ,
+            user_identity: self.user_identity
+            ,
         }
     }
 }
+

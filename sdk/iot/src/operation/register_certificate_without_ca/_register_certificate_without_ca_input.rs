@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterCertificateWithoutCaInput {
+pub struct RegisterCertificateWithoutCaInput  {
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The status of the register certificate request.</p>
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
 }
-impl RegisterCertificateWithoutCaInput {
+impl  RegisterCertificateWithoutCaInput  {
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> ::std::option::Option<& str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The status of the register certificate request.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CertificateStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn set_certificate_pem(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_pem = input;
-        self
+        self.certificate_pem = input; self
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl RegisterCertificateWithoutCaInputBuilder {
     }
     /// <p>The status of the register certificate request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the register certificate request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`RegisterCertificateWithoutCaInput`](crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
-            certificate_pem: self.certificate_pem,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
+                certificate_pem: self.certificate_pem
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

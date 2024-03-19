@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBulkImportJobOutput {
+pub struct DescribeBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
@@ -26,7 +26,7 @@ pub struct DescribeBulkImportJobOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub job_role_arn: ::std::string::String,
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub files: ::std::vec::Vec<crate::types::File>,
+    pub files: ::std::vec::Vec::<crate::types::File>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
@@ -41,16 +41,14 @@ pub struct DescribeBulkImportJobOutput {
     pub delete_files_after_import: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl DescribeBulkImportJobOutput {
+impl  DescribeBulkImportJobOutput  {
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> & str {
+        use std::ops::Deref; self.job_id.deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn job_name(&self) -> &str {
-        use std::ops::Deref;
-        self.job_name.deref()
+    pub fn job_name(&self) -> & str {
+        use std::ops::Deref; self.job_name.deref()
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -67,33 +65,31 @@ impl DescribeBulkImportJobOutput {
     /// <li>
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
-    pub fn job_status(&self) -> &crate::types::JobStatus {
+    pub fn job_status(&self) -> & crate::types::JobStatus {
         &self.job_status
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
-    pub fn job_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.job_role_arn.deref()
+    pub fn job_role_arn(&self) -> & str {
+        use std::ops::Deref; self.job_role_arn.deref()
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn files(&self) -> &[crate::types::File] {
-        use std::ops::Deref;
-        self.files.deref()
+    pub fn files(&self) -> & [crate::types::File] {
+        use std::ops::Deref; self.files.deref()
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
-    pub fn error_report_location(&self) -> ::std::option::Option<&crate::types::ErrorReportLocation> {
+    pub fn error_report_location(&self) -> ::std::option::Option<& crate::types::ErrorReportLocation> {
         self.error_report_location.as_ref()
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    pub fn job_configuration(&self) -> ::std::option::Option<&crate::types::JobConfiguration> {
+    pub fn job_configuration(&self) -> ::std::option::Option<& crate::types::JobConfiguration> {
         self.job_configuration.as_ref()
     }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
-    pub fn job_creation_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn job_creation_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.job_creation_date
     }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
-    pub fn job_last_update_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn job_last_update_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.job_last_update_date
     }
     /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
@@ -106,10 +102,10 @@ impl DescribeBulkImportJobOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBulkImportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeBulkImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobOutput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput).
     pub fn builder() -> crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder {
@@ -125,7 +121,7 @@ pub struct DescribeBulkImportJobOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
     pub(crate) job_role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
+    pub(crate) files: ::std::option::Option<::std::vec::Vec::<crate::types::File>>,
     pub(crate) error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     pub(crate) job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
     pub(crate) job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -143,8 +139,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,8 +153,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +195,7 @@ impl DescribeBulkImportJobOutputBuilder {
     /// <p><code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
@@ -230,8 +223,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub fn set_job_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_role_arn = input;
-        self
+        self.job_role_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub fn get_job_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -244,17 +236,16 @@ impl DescribeBulkImportJobOutputBuilder {
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
     pub fn files(mut self, input: crate::types::File) -> Self {
         let mut v = self.files.unwrap_or_default();
-        v.push(input);
-        self.files = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.files = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
-        self.files = input;
-        self
+    pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::File>>) -> Self {
+        self.files = input; self
     }
     /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
-    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::File>> {
         &self.files
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
@@ -265,8 +256,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub fn set_error_report_location(mut self, input: ::std::option::Option<crate::types::ErrorReportLocation>) -> Self {
-        self.error_report_location = input;
-        self
+        self.error_report_location = input; self
     }
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub fn get_error_report_location(&self) -> &::std::option::Option<crate::types::ErrorReportLocation> {
@@ -280,8 +270,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub fn set_job_configuration(mut self, input: ::std::option::Option<crate::types::JobConfiguration>) -> Self {
-        self.job_configuration = input;
-        self
+        self.job_configuration = input; self
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub fn get_job_configuration(&self) -> &::std::option::Option<crate::types::JobConfiguration> {
@@ -295,8 +284,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
     pub fn set_job_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_creation_date = input;
-        self
+        self.job_creation_date = input; self
     }
     /// <p>The date the job was created, in Unix epoch TIME.</p>
     pub fn get_job_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -310,8 +298,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
     pub fn set_job_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.job_last_update_date = input;
-        self
+        self.job_last_update_date = input; self
     }
     /// <p>The date the job was last updated, in Unix epoch time.</p>
     pub fn get_job_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -324,8 +311,7 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
     pub fn set_adaptive_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.adaptive_ingestion = input;
-        self
+        self.adaptive_ingestion = input; self
     }
     /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
     pub fn get_adaptive_ingestion(&self) -> &::std::option::Option<bool> {
@@ -338,22 +324,21 @@ impl DescribeBulkImportJobOutputBuilder {
     }
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub fn set_delete_files_after_import(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_files_after_import = input;
-        self
+        self.delete_files_after_import = input; self
     }
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
         &self.delete_files_after_import
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeBulkImportJobOutput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder::job_id)
@@ -363,60 +348,55 @@ impl DescribeBulkImportJobOutputBuilder {
     /// - [`files`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder::files)
     /// - [`job_creation_date`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder::job_creation_date)
     /// - [`job_last_update_date`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder::job_last_update_date)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_name",
-                    "job_name was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_status",
-                    "job_status was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            job_role_arn: self.job_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_role_arn",
-                    "job_role_arn was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            files: self.files.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "files",
-                    "files was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            error_report_location: self.error_report_location,
-            job_configuration: self.job_configuration,
-            job_creation_date: self.job_creation_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_creation_date",
-                    "job_creation_date was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            job_last_update_date: self.job_last_update_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "job_last_update_date",
-                    "job_last_update_date was not specified but it is required when building DescribeBulkImportJobOutput",
-                )
-            })?,
-            adaptive_ingestion: self.adaptive_ingestion,
-            delete_files_after_import: self.delete_files_after_import,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput {
+                job_id: self.job_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "job_id was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                job_name: self.job_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_name", "job_name was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                job_status: self.job_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_status", "job_status was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                job_role_arn: self.job_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_role_arn", "job_role_arn was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                files: self.files
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("files", "files was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                error_report_location: self.error_report_location
+                ,
+                job_configuration: self.job_configuration
+                ,
+                job_creation_date: self.job_creation_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_creation_date", "job_creation_date was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                job_last_update_date: self.job_last_update_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("job_last_update_date", "job_last_update_date was not specified but it is required when building DescribeBulkImportJobOutput")
+                    )?
+                ,
+                adaptive_ingestion: self.adaptive_ingestion
+                ,
+                delete_files_after_import: self.delete_files_after_import
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

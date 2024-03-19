@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSchemaMappingInput {
+pub struct DeleteSchemaMappingInput  {
     /// <p>The name of the schema to delete.</p>
     pub schema_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSchemaMappingInput {
+impl  DeleteSchemaMappingInput  {
     /// <p>The name of the schema to delete.</p>
-    pub fn schema_name(&self) -> ::std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<& str> {
         self.schema_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteSchemaMappingInputBuilder {
     }
     /// <p>The name of the schema to delete.</p>
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The name of the schema to delete.</p>
     pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_name
     }
     /// Consumes the builder and constructs a [`DeleteSchemaMappingInput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_schema_mapping::DeleteSchemaMappingInput {
-            schema_name: self.schema_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_schema_mapping::DeleteSchemaMappingInput {
+                schema_name: self.schema_name
+                ,
+            }
+        )
     }
 }
+

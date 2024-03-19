@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListApplicationStatesOutput {
+pub struct ListApplicationStatesOutput  {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub application_state_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub application_state_list: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>,
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListApplicationStatesOutput {
+impl  ListApplicationStatesOutput  {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_state_list.is_none()`.
-    pub fn application_state_list(&self) -> &[crate::types::ApplicationState] {
-        self.application_state_list.as_deref().unwrap_or_default()
+    pub fn application_state_list(&self) -> & [crate::types::ApplicationState] {
+        self.application_state_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListApplicationStatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListApplicationStatesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesOutput`](crate::operation::list_application_states::ListApplicationStatesOutput).
     pub fn builder() -> crate::operation::list_application_states::builders::ListApplicationStatesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListApplicationStatesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListApplicationStatesOutputBuilder {
-    pub(crate) application_state_list: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>,
+    pub(crate) application_state_list: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListApplicationStatesOutputBuilder {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
     pub fn application_state_list(mut self, input: crate::types::ApplicationState) -> Self {
         let mut v = self.application_state_list.unwrap_or_default();
-        v.push(input);
-        self.application_state_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_state_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn set_application_state_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>>) -> Self {
-        self.application_state_list = input;
-        self
+    pub fn set_application_state_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>>) -> Self {
+        self.application_state_list = input; self
     }
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
-    pub fn get_application_state_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
+    pub fn get_application_state_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationState>> {
         &self.application_state_list
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
@@ -69,28 +69,30 @@ impl ListApplicationStatesOutputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListApplicationStatesOutput`](crate::operation::list_application_states::ListApplicationStatesOutput).
     pub fn build(self) -> crate::operation::list_application_states::ListApplicationStatesOutput {
         crate::operation::list_application_states::ListApplicationStatesOutput {
-            application_state_list: self.application_state_list,
-            next_token: self.next_token,
+            application_state_list: self.application_state_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

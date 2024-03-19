@@ -3,19 +3,19 @@
 /// <p>Provides details in the event of a failed flow, including the error type and the related error message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ErrorInfo {
+pub struct ErrorInfo  {
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of error.</p>
     pub error_type: ::std::option::Option<crate::types::ErrorDetails>,
 }
-impl ErrorInfo {
+impl  ErrorInfo  {
     /// <p>Specifies the error message that appears if a flow fails.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Specifies the type of error.</p>
-    pub fn error_type(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_type(&self) -> ::std::option::Option<& crate::types::ErrorDetails> {
         self.error_type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ErrorInfoBuilder {
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ErrorInfoBuilder {
     }
     /// <p>Specifies the type of error.</p>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     /// <p>Specifies the type of error.</p>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
@@ -65,8 +63,11 @@ impl ErrorInfoBuilder {
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {
         crate::types::ErrorInfo {
-            error_message: self.error_message,
-            error_type: self.error_type,
+            error_message: self.error_message
+            ,
+            error_type: self.error_type
+            ,
         }
     }
 }
+

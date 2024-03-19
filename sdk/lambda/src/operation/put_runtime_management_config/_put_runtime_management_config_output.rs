@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutRuntimeManagementConfigOutput {
+pub struct PutRuntimeManagementConfigOutput  {
     /// <p>The runtime update mode.</p>
     pub update_runtime_on: crate::types::UpdateRuntimeOn,
     /// <p>The ARN of the function</p>
@@ -11,26 +11,25 @@ pub struct PutRuntimeManagementConfigOutput {
     pub runtime_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutRuntimeManagementConfigOutput {
+impl  PutRuntimeManagementConfigOutput  {
     /// <p>The runtime update mode.</p>
-    pub fn update_runtime_on(&self) -> &crate::types::UpdateRuntimeOn {
+    pub fn update_runtime_on(&self) -> & crate::types::UpdateRuntimeOn {
         &self.update_runtime_on
     }
     /// <p>The ARN of the function</p>
-    pub fn function_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.function_arn.deref()
+    pub fn function_arn(&self) -> & str {
+        use std::ops::Deref; self.function_arn.deref()
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
-    pub fn runtime_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn runtime_version_arn(&self) -> ::std::option::Option<& str> {
         self.runtime_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutRuntimeManagementConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutRuntimeManagementConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutRuntimeManagementConfigOutput`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput).
     pub fn builder() -> crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigOutputBuilder {
@@ -56,8 +55,7 @@ impl PutRuntimeManagementConfigOutputBuilder {
     }
     /// <p>The runtime update mode.</p>
     pub fn set_update_runtime_on(mut self, input: ::std::option::Option<crate::types::UpdateRuntimeOn>) -> Self {
-        self.update_runtime_on = input;
-        self
+        self.update_runtime_on = input; self
     }
     /// <p>The runtime update mode.</p>
     pub fn get_update_runtime_on(&self) -> &::std::option::Option<crate::types::UpdateRuntimeOn> {
@@ -71,8 +69,7 @@ impl PutRuntimeManagementConfigOutputBuilder {
     }
     /// <p>The ARN of the function</p>
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// <p>The ARN of the function</p>
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,47 +82,43 @@ impl PutRuntimeManagementConfigOutputBuilder {
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     pub fn set_runtime_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.runtime_version_arn = input;
-        self
+        self.runtime_version_arn = input; self
     }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     pub fn get_runtime_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutRuntimeManagementConfigOutput`](crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_runtime_on`](crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigOutputBuilder::update_runtime_on)
     /// - [`function_arn`](crate::operation::put_runtime_management_config::builders::PutRuntimeManagementConfigOutputBuilder::function_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput {
-            update_runtime_on: self.update_runtime_on.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "update_runtime_on",
-                    "update_runtime_on was not specified but it is required when building PutRuntimeManagementConfigOutput",
-                )
-            })?,
-            function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "function_arn",
-                    "function_arn was not specified but it is required when building PutRuntimeManagementConfigOutput",
-                )
-            })?,
-            runtime_version_arn: self.runtime_version_arn,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput {
+                update_runtime_on: self.update_runtime_on
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("update_runtime_on", "update_runtime_on was not specified but it is required when building PutRuntimeManagementConfigOutput")
+                    )?
+                ,
+                function_arn: self.function_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("function_arn", "function_arn was not specified but it is required when building PutRuntimeManagementConfigOutput")
+                    )?
+                ,
+                runtime_version_arn: self.runtime_version_arn
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

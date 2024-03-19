@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLifecycleEventHookExecutionStatusOutput {
+pub struct PutLifecycleEventHookExecutionStatusOutput  {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub lifecycle_event_hook_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutLifecycleEventHookExecutionStatusOutput {
+impl  PutLifecycleEventHookExecutionStatusOutput  {
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
-    pub fn lifecycle_event_hook_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn lifecycle_event_hook_execution_id(&self) -> ::std::option::Option<& str> {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutLifecycleEventHookExecutionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutLifecycleEventHookExecutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleEventHookExecutionStatusOutput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput).
     pub fn builder() -> crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusOutputBuilder {
@@ -40,27 +40,28 @@ impl PutLifecycleEventHookExecutionStatusOutputBuilder {
     }
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub fn set_lifecycle_event_hook_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lifecycle_event_hook_execution_id = input;
-        self
+        self.lifecycle_event_hook_execution_id = input; self
     }
     /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub fn get_lifecycle_event_hook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_event_hook_execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutLifecycleEventHookExecutionStatusOutput`](crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput).
     pub fn build(self) -> crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput {
         crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput {
-            lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id,
+            lifecycle_event_hook_execution_id: self.lifecycle_event_hook_execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

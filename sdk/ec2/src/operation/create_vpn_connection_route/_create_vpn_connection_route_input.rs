@@ -3,19 +3,19 @@
 /// <p>Contains the parameters for CreateVpnConnectionRoute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVpnConnectionRouteInput {
+pub struct CreateVpnConnectionRouteInput  {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPN connection.</p>
     pub vpn_connection_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateVpnConnectionRouteInput {
+impl  CreateVpnConnectionRouteInput  {
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
-    pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> ::std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the VPN connection.</p>
-    pub fn vpn_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpn_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpn_connection_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateVpnConnectionRouteInputBuilder {
     }
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
     pub fn set_destination_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_cidr_block = input;
-        self
+        self.destination_cidr_block = input; self
     }
     /// <p>The CIDR block associated with the local subnet of the customer network.</p>
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,23 +56,22 @@ impl CreateVpnConnectionRouteInputBuilder {
     }
     /// <p>The ID of the VPN connection.</p>
     pub fn set_vpn_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpn_connection_id = input;
-        self
+        self.vpn_connection_id = input; self
     }
     /// <p>The ID of the VPN connection.</p>
     pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpn_connection_id
     }
     /// Consumes the builder and constructs a [`CreateVpnConnectionRouteInput`](crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput {
-            destination_cidr_block: self.destination_cidr_block,
-            vpn_connection_id: self.vpn_connection_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput {
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                vpn_connection_id: self.vpn_connection_id
+                ,
+            }
+        )
     }
 }
+

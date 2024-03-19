@@ -3,15 +3,14 @@
 /// <p>The primary Region of the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Primary {
+pub struct Primary  {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub health_check: ::std::string::String,
 }
-impl Primary {
+impl  Primary  {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn health_check(&self) -> &str {
-        use std::ops::Deref;
-        self.health_check.deref()
+    pub fn health_check(&self) -> & str {
+        use std::ops::Deref; self.health_check.deref()
     }
 }
 impl Primary {
@@ -36,8 +35,7 @@ impl PrimaryBuilder {
     }
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn set_health_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check = input;
-        self
+        self.health_check = input; self
     }
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn get_health_check(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PrimaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`health_check`](crate::types::builders::PrimaryBuilder::health_check)
     pub fn build(self) -> ::std::result::Result<crate::types::Primary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Primary {
-            health_check: self.health_check.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "health_check",
-                    "health_check was not specified but it is required when building Primary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Primary {
+                health_check: self.health_check
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("health_check", "health_check was not specified but it is required when building Primary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

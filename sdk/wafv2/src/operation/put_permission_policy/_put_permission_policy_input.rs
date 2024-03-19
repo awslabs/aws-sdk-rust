@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPermissionPolicyInput {
+pub struct PutPermissionPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy to attach to the specified rule group.</p>
@@ -22,9 +22,9 @@ pub struct PutPermissionPolicyInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutPermissionPolicyInput {
+impl  PutPermissionPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The policy to attach to the specified rule group.</p>
@@ -42,7 +42,7 @@ impl PutPermissionPolicyInput {
     /// <p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PutPermissionPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl PutPermissionPolicyInputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy to attach to the specified rule group.</p>
     /// <p>The policy specifications must conform to the following:</p>
@@ -134,13 +132,15 @@ impl PutPermissionPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_permission_policy::PutPermissionPolicyInput {
-            resource_arn: self.resource_arn,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_permission_policy::PutPermissionPolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

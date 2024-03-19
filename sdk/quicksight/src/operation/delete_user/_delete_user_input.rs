@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The name of the user that you want to delete.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -10,17 +10,17 @@ pub struct DeleteUserInput {
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl DeleteUserInput {
+impl  DeleteUserInput  {
     /// <p>The name of the user that you want to delete.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The name of the user that you want to delete.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user that you want to delete.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,10 +84,16 @@ impl DeleteUserInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_user::DeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_user::DeleteUserInput {
-            user_name: self.user_name,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                user_name: self.user_name
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

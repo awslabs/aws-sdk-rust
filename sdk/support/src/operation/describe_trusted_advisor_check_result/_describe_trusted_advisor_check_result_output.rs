@@ -3,22 +3,22 @@
 /// <p>The result of the Trusted Advisor check returned by the <code>DescribeTrustedAdvisorCheckResult</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckResultOutput {
+pub struct DescribeTrustedAdvisorCheckResultOutput  {
     /// <p>The detailed results of the Trusted Advisor check.</p>
     pub result: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>,
     _request_id: Option<String>,
 }
-impl DescribeTrustedAdvisorCheckResultOutput {
+impl  DescribeTrustedAdvisorCheckResultOutput  {
     /// <p>The detailed results of the Trusted Advisor check.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorCheckResult> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::TrustedAdvisorCheckResult> {
         self.result.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrustedAdvisorCheckResultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrustedAdvisorCheckResultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
     pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeTrustedAdvisorCheckResultOutputBuilder {
     }
     /// <p>The detailed results of the Trusted Advisor check.</p>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::TrustedAdvisorCheckResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The detailed results of the Trusted Advisor check.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::TrustedAdvisorCheckResult> {
         &self.result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultOutput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput).
     pub fn build(self) -> crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput {
         crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput {
-            result: self.result,
+            result: self.result
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

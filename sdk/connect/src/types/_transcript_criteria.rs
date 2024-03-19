@@ -3,26 +3,25 @@
 /// <p>A structure that defines search criteria base on words or phrases, participants in the Contact Lens conversational analytics transcript.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptCriteria {
+pub struct TranscriptCriteria  {
     /// <p>The participant role in a transcript</p>
     pub participant_role: crate::types::ParticipantRole,
     /// <p>The words or phrases used to search within a transcript.</p>
-    pub search_text: ::std::vec::Vec<::std::string::String>,
+    pub search_text: ::std::vec::Vec::<::std::string::String>,
     /// <p>The match type combining search criteria using multiple search texts in a transcript criteria.</p>
     pub match_type: crate::types::SearchContactsMatchType,
 }
-impl TranscriptCriteria {
+impl  TranscriptCriteria  {
     /// <p>The participant role in a transcript</p>
-    pub fn participant_role(&self) -> &crate::types::ParticipantRole {
+    pub fn participant_role(&self) -> & crate::types::ParticipantRole {
         &self.participant_role
     }
     /// <p>The words or phrases used to search within a transcript.</p>
-    pub fn search_text(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.search_text.deref()
+    pub fn search_text(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.search_text.deref()
     }
     /// <p>The match type combining search criteria using multiple search texts in a transcript criteria.</p>
-    pub fn match_type(&self) -> &crate::types::SearchContactsMatchType {
+    pub fn match_type(&self) -> & crate::types::SearchContactsMatchType {
         &self.match_type
     }
 }
@@ -38,7 +37,7 @@ impl TranscriptCriteria {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TranscriptCriteriaBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
-    pub(crate) search_text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) search_text: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) match_type: ::std::option::Option<crate::types::SearchContactsMatchType>,
 }
 impl TranscriptCriteriaBuilder {
@@ -50,8 +49,7 @@ impl TranscriptCriteriaBuilder {
     }
     /// <p>The participant role in a transcript</p>
     pub fn set_participant_role(mut self, input: ::std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input;
-        self
+        self.participant_role = input; self
     }
     /// <p>The participant role in a transcript</p>
     pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
@@ -64,17 +62,16 @@ impl TranscriptCriteriaBuilder {
     /// <p>The words or phrases used to search within a transcript.</p>
     pub fn search_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.search_text.unwrap_or_default();
-        v.push(input.into());
-        self.search_text = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.search_text = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The words or phrases used to search within a transcript.</p>
-    pub fn set_search_text(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.search_text = input;
-        self
+    pub fn set_search_text(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.search_text = input; self
     }
     /// <p>The words or phrases used to search within a transcript.</p>
-    pub fn get_search_text(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_search_text(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.search_text
     }
     /// <p>The match type combining search criteria using multiple search texts in a transcript criteria.</p>
@@ -85,8 +82,7 @@ impl TranscriptCriteriaBuilder {
     }
     /// <p>The match type combining search criteria using multiple search texts in a transcript criteria.</p>
     pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::SearchContactsMatchType>) -> Self {
-        self.match_type = input;
-        self
+        self.match_type = input; self
     }
     /// <p>The match type combining search criteria using multiple search texts in a transcript criteria.</p>
     pub fn get_match_type(&self) -> &::std::option::Option<crate::types::SearchContactsMatchType> {
@@ -98,25 +94,25 @@ impl TranscriptCriteriaBuilder {
     /// - [`search_text`](crate::types::builders::TranscriptCriteriaBuilder::search_text)
     /// - [`match_type`](crate::types::builders::TranscriptCriteriaBuilder::match_type)
     pub fn build(self) -> ::std::result::Result<crate::types::TranscriptCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TranscriptCriteria {
-            participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "participant_role",
-                    "participant_role was not specified but it is required when building TranscriptCriteria",
-                )
-            })?,
-            search_text: self.search_text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "search_text",
-                    "search_text was not specified but it is required when building TranscriptCriteria",
-                )
-            })?,
-            match_type: self.match_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_type",
-                    "match_type was not specified but it is required when building TranscriptCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TranscriptCriteria {
+                participant_role: self.participant_role
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("participant_role", "participant_role was not specified but it is required when building TranscriptCriteria")
+                    )?
+                ,
+                search_text: self.search_text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("search_text", "search_text was not specified but it is required when building TranscriptCriteria")
+                    )?
+                ,
+                match_type: self.match_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_type", "match_type was not specified but it is required when building TranscriptCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+

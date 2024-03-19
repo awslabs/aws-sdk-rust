@@ -3,16 +3,17 @@
 /// <p>An object that contains overrides for the task definition of a job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskPropertiesOverride {
+pub struct TaskPropertiesOverride  {
     /// <p>The overrides for the container definition of a job.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerOverrides>>,
+    pub containers: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerOverrides>>,
 }
-impl TaskPropertiesOverride {
+impl  TaskPropertiesOverride  {
     /// <p>The overrides for the container definition of a job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
-    pub fn containers(&self) -> &[crate::types::TaskContainerOverrides] {
-        self.containers.as_deref().unwrap_or_default()
+    pub fn containers(&self) -> & [crate::types::TaskContainerOverrides] {
+        self.containers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TaskPropertiesOverride {
@@ -26,7 +27,7 @@ impl TaskPropertiesOverride {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TaskPropertiesOverrideBuilder {
-    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerOverrides>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerOverrides>>,
 }
 impl TaskPropertiesOverrideBuilder {
     /// Appends an item to `containers`.
@@ -36,21 +37,24 @@ impl TaskPropertiesOverrideBuilder {
     /// <p>The overrides for the container definition of a job.</p>
     pub fn containers(mut self, input: crate::types::TaskContainerOverrides) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The overrides for the container definition of a job.</p>
-    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerOverrides>>) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerOverrides>>) -> Self {
+        self.containers = input; self
     }
     /// <p>The overrides for the container definition of a job.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskContainerOverrides>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TaskContainerOverrides>> {
         &self.containers
     }
     /// Consumes the builder and constructs a [`TaskPropertiesOverride`](crate::types::TaskPropertiesOverride).
     pub fn build(self) -> crate::types::TaskPropertiesOverride {
-        crate::types::TaskPropertiesOverride { containers: self.containers }
+        crate::types::TaskPropertiesOverride {
+            containers: self.containers
+            ,
+        }
     }
 }
+

@@ -22,11 +22,7 @@ impl Principal {
     /// Tries to convert the enum instance into [`Group`](crate::types::Principal::Group), extracting the inner [`PrincipalGroup`](crate::types::PrincipalGroup).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_group(&self) -> ::std::result::Result<&crate::types::PrincipalGroup, &Self> {
-        if let Principal::Group(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Principal::Group(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Group`](crate::types::Principal::Group).
     pub fn is_group(&self) -> bool {
@@ -35,11 +31,7 @@ impl Principal {
     /// Tries to convert the enum instance into [`User`](crate::types::Principal::User), extracting the inner [`PrincipalUser`](crate::types::PrincipalUser).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_user(&self) -> ::std::result::Result<&crate::types::PrincipalUser, &Self> {
-        if let Principal::User(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let Principal::User(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`User`](crate::types::Principal::User).
     pub fn is_user(&self) -> bool {
@@ -50,3 +42,4 @@ impl Principal {
         matches!(self, Self::Unknown)
     }
 }
+

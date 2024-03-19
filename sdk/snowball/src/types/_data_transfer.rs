@@ -3,7 +3,7 @@
 /// <p>Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataTransfer {
+pub struct DataTransfer  {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     pub bytes_transferred: i64,
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
@@ -13,7 +13,7 @@ pub struct DataTransfer {
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub total_objects: i64,
 }
-impl DataTransfer {
+impl  DataTransfer  {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     pub fn bytes_transferred(&self) -> i64 {
         self.bytes_transferred
@@ -55,8 +55,7 @@ impl DataTransferBuilder {
     }
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_transferred = input;
-        self
+        self.bytes_transferred = input; self
     }
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
@@ -69,8 +68,7 @@ impl DataTransferBuilder {
     }
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
     pub fn set_objects_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.objects_transferred = input;
-        self
+        self.objects_transferred = input; self
     }
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
     pub fn get_objects_transferred(&self) -> &::std::option::Option<i64> {
@@ -83,8 +81,7 @@ impl DataTransferBuilder {
     }
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn set_total_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_bytes = input;
-        self
+        self.total_bytes = input; self
     }
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn get_total_bytes(&self) -> &::std::option::Option<i64> {
@@ -97,8 +94,7 @@ impl DataTransferBuilder {
     }
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn set_total_objects(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.total_objects = input;
-        self
+        self.total_objects = input; self
     }
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn get_total_objects(&self) -> &::std::option::Option<i64> {
@@ -107,10 +103,19 @@ impl DataTransferBuilder {
     /// Consumes the builder and constructs a [`DataTransfer`](crate::types::DataTransfer).
     pub fn build(self) -> crate::types::DataTransfer {
         crate::types::DataTransfer {
-            bytes_transferred: self.bytes_transferred.unwrap_or_default(),
-            objects_transferred: self.objects_transferred.unwrap_or_default(),
-            total_bytes: self.total_bytes.unwrap_or_default(),
-            total_objects: self.total_objects.unwrap_or_default(),
+            bytes_transferred: self.bytes_transferred
+                .unwrap_or_default()
+            ,
+            objects_transferred: self.objects_transferred
+                .unwrap_or_default()
+            ,
+            total_bytes: self.total_bytes
+                .unwrap_or_default()
+            ,
+            total_objects: self.total_objects
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

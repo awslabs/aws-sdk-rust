@@ -3,7 +3,7 @@
 /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EventSubscription {
+pub struct EventSubscription  {
     /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
     pub customer_aws_id: ::std::option::Option<::std::string::String>,
     /// <p>The RDS event notification subscription Id.</p>
@@ -20,60 +20,62 @@ pub struct EventSubscription {
     /// <p>The source type for the RDS event notification subscription.</p>
     pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of source IDs for the RDS event notification subscription.</p>
-    pub source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_ids_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of event categories for the RDS event notification subscription.</p>
-    pub event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub event_categories_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub event_subscription_arn: ::std::option::Option<::std::string::String>,
 }
-impl EventSubscription {
+impl  EventSubscription  {
     /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
-    pub fn customer_aws_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_aws_id(&self) -> ::std::option::Option<& str> {
         self.customer_aws_id.as_deref()
     }
     /// <p>The RDS event notification subscription Id.</p>
-    pub fn cust_subscription_id(&self) -> ::std::option::Option<&str> {
+    pub fn cust_subscription_id(&self) -> ::std::option::Option<& str> {
         self.cust_subscription_id.as_deref()
     }
     /// <p>The topic ARN of the RDS event notification subscription.</p>
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The status of the RDS event notification subscription.</p>
     /// <p>Constraints:</p>
     /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
     /// <p>The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time the RDS event notification subscription was created.</p>
-    pub fn subscription_creation_time(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_creation_time(&self) -> ::std::option::Option<& str> {
         self.subscription_creation_time.as_deref()
     }
     /// <p>The source type for the RDS event notification subscription.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>A list of source IDs for the RDS event notification subscription.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ids_list.is_none()`.
-    pub fn source_ids_list(&self) -> &[::std::string::String] {
-        self.source_ids_list.as_deref().unwrap_or_default()
+    pub fn source_ids_list(&self) -> & [::std::string::String] {
+        self.source_ids_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of event categories for the RDS event notification subscription.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_categories_list.is_none()`.
-    pub fn event_categories_list(&self) -> &[::std::string::String] {
-        self.event_categories_list.as_deref().unwrap_or_default()
+    pub fn event_categories_list(&self) -> & [::std::string::String] {
+        self.event_categories_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
-    pub fn event_subscription_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_subscription_arn(&self) -> ::std::option::Option<& str> {
         self.event_subscription_arn.as_deref()
     }
 }
@@ -94,8 +96,8 @@ pub struct EventSubscriptionBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<::std::string::String>,
-    pub(crate) source_ids_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) event_categories_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_ids_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) event_categories_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) event_subscription_arn: ::std::option::Option<::std::string::String>,
 }
@@ -107,8 +109,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
     pub fn set_customer_aws_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_aws_id = input;
-        self
+        self.customer_aws_id = input; self
     }
     /// <p>The Amazon Web Services customer account associated with the RDS event notification subscription.</p>
     pub fn get_customer_aws_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +122,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The RDS event notification subscription Id.</p>
     pub fn set_cust_subscription_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cust_subscription_id = input;
-        self
+        self.cust_subscription_id = input; self
     }
     /// <p>The RDS event notification subscription Id.</p>
     pub fn get_cust_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +135,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The topic ARN of the RDS event notification subscription.</p>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>The topic ARN of the RDS event notification subscription.</p>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +154,7 @@ impl EventSubscriptionBuilder {
     /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
     /// <p>The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the RDS event notification subscription.</p>
     /// <p>Constraints:</p>
@@ -172,8 +170,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The time the RDS event notification subscription was created.</p>
     pub fn set_subscription_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_creation_time = input;
-        self
+        self.subscription_creation_time = input; self
     }
     /// <p>The time the RDS event notification subscription was created.</p>
     pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +183,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The source type for the RDS event notification subscription.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source type for the RDS event notification subscription.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,17 +196,16 @@ impl EventSubscriptionBuilder {
     /// <p>A list of source IDs for the RDS event notification subscription.</p>
     pub fn source_ids_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_ids_list.unwrap_or_default();
-        v.push(input.into());
-        self.source_ids_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.source_ids_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of source IDs for the RDS event notification subscription.</p>
-    pub fn set_source_ids_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_ids_list = input;
-        self
+    pub fn set_source_ids_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.source_ids_list = input; self
     }
     /// <p>A list of source IDs for the RDS event notification subscription.</p>
-    pub fn get_source_ids_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_source_ids_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.source_ids_list
     }
     /// Appends an item to `event_categories_list`.
@@ -220,17 +215,16 @@ impl EventSubscriptionBuilder {
     /// <p>A list of event categories for the RDS event notification subscription.</p>
     pub fn event_categories_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.event_categories_list.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of event categories for the RDS event notification subscription.</p>
-    pub fn set_event_categories_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.event_categories_list = input;
-        self
+    pub fn set_event_categories_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.event_categories_list = input; self
     }
     /// <p>A list of event categories for the RDS event notification subscription.</p>
-    pub fn get_event_categories_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_event_categories_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.event_categories_list
     }
     /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
@@ -240,8 +234,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether the subscription is enabled. True indicates the subscription is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -254,8 +247,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub fn set_event_subscription_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_subscription_arn = input;
-        self
+        self.event_subscription_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
     pub fn get_event_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,16 +256,27 @@ impl EventSubscriptionBuilder {
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
     pub fn build(self) -> crate::types::EventSubscription {
         crate::types::EventSubscription {
-            customer_aws_id: self.customer_aws_id,
-            cust_subscription_id: self.cust_subscription_id,
-            sns_topic_arn: self.sns_topic_arn,
-            status: self.status,
-            subscription_creation_time: self.subscription_creation_time,
-            source_type: self.source_type,
-            source_ids_list: self.source_ids_list,
-            event_categories_list: self.event_categories_list,
-            enabled: self.enabled,
-            event_subscription_arn: self.event_subscription_arn,
+            customer_aws_id: self.customer_aws_id
+            ,
+            cust_subscription_id: self.cust_subscription_id
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            status: self.status
+            ,
+            subscription_creation_time: self.subscription_creation_time
+            ,
+            source_type: self.source_type
+            ,
+            source_ids_list: self.source_ids_list
+            ,
+            event_categories_list: self.event_categories_list
+            ,
+            enabled: self.enabled
+            ,
+            event_subscription_arn: self.event_subscription_arn
+            ,
         }
     }
 }
+

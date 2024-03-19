@@ -3,11 +3,11 @@
 /// <p>Describes a core network change.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CoreNetworkChangeValues {
+pub struct CoreNetworkChangeValues  {
     /// <p>The names of the segments in a core network.</p>
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where edges are located in a core network.</p>
-    pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub edge_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The ASN of a core network.</p>
     pub asn: ::std::option::Option<i64>,
     /// <p>The IP addresses used for a core network.</p>
@@ -15,44 +15,47 @@ pub struct CoreNetworkChangeValues {
     /// <p>The ID of the destination.</p>
     pub destination_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The inside IP addresses used for core network change values.</p>
-    pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub inside_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The shared segments for a core network change value.</p>
-    pub shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub shared_segments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl CoreNetworkChangeValues {
+impl  CoreNetworkChangeValues  {
     /// <p>The names of the segments in a core network.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
     /// <p>The Regions where edges are located in a core network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
-    pub fn edge_locations(&self) -> &[::std::string::String] {
-        self.edge_locations.as_deref().unwrap_or_default()
+    pub fn edge_locations(&self) -> & [::std::string::String] {
+        self.edge_locations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ASN of a core network.</p>
     pub fn asn(&self) -> ::std::option::Option<i64> {
         self.asn
     }
     /// <p>The IP addresses used for a core network.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>The ID of the destination.</p>
-    pub fn destination_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn destination_identifier(&self) -> ::std::option::Option<& str> {
         self.destination_identifier.as_deref()
     }
     /// <p>The inside IP addresses used for core network change values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inside_cidr_blocks.is_none()`.
-    pub fn inside_cidr_blocks(&self) -> &[::std::string::String] {
-        self.inside_cidr_blocks.as_deref().unwrap_or_default()
+    pub fn inside_cidr_blocks(&self) -> & [::std::string::String] {
+        self.inside_cidr_blocks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The shared segments for a core network change value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_segments.is_none()`.
-    pub fn shared_segments(&self) -> &[::std::string::String] {
-        self.shared_segments.as_deref().unwrap_or_default()
+    pub fn shared_segments(&self) -> & [::std::string::String] {
+        self.shared_segments.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CoreNetworkChangeValues {
@@ -67,12 +70,12 @@ impl CoreNetworkChangeValues {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
-    pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) asn: ::std::option::Option<i64>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) destination_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inside_cidr_blocks: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) shared_segments: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
@@ -82,8 +85,7 @@ impl CoreNetworkChangeValuesBuilder {
     }
     /// <p>The names of the segments in a core network.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
     }
     /// <p>The names of the segments in a core network.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,17 +98,16 @@ impl CoreNetworkChangeValuesBuilder {
     /// <p>The Regions where edges are located in a core network.</p>
     pub fn edge_locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.edge_locations.unwrap_or_default();
-        v.push(input.into());
-        self.edge_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.edge_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Regions where edges are located in a core network.</p>
-    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.edge_locations = input;
-        self
+    pub fn set_edge_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.edge_locations = input; self
     }
     /// <p>The Regions where edges are located in a core network.</p>
-    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.edge_locations
     }
     /// <p>The ASN of a core network.</p>
@@ -116,8 +117,7 @@ impl CoreNetworkChangeValuesBuilder {
     }
     /// <p>The ASN of a core network.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The ASN of a core network.</p>
     pub fn get_asn(&self) -> &::std::option::Option<i64> {
@@ -130,8 +130,7 @@ impl CoreNetworkChangeValuesBuilder {
     }
     /// <p>The IP addresses used for a core network.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The IP addresses used for a core network.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
@@ -144,8 +143,7 @@ impl CoreNetworkChangeValuesBuilder {
     }
     /// <p>The ID of the destination.</p>
     pub fn set_destination_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_identifier = input;
-        self
+        self.destination_identifier = input; self
     }
     /// <p>The ID of the destination.</p>
     pub fn get_destination_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,17 +156,16 @@ impl CoreNetworkChangeValuesBuilder {
     /// <p>The inside IP addresses used for core network change values.</p>
     pub fn inside_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inside_cidr_blocks.unwrap_or_default();
-        v.push(input.into());
-        self.inside_cidr_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inside_cidr_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The inside IP addresses used for core network change values.</p>
-    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inside_cidr_blocks = input;
-        self
+    pub fn set_inside_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inside_cidr_blocks = input; self
     }
     /// <p>The inside IP addresses used for core network change values.</p>
-    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inside_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inside_cidr_blocks
     }
     /// Appends an item to `shared_segments`.
@@ -178,29 +175,36 @@ impl CoreNetworkChangeValuesBuilder {
     /// <p>The shared segments for a core network change value.</p>
     pub fn shared_segments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_segments.unwrap_or_default();
-        v.push(input.into());
-        self.shared_segments = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.shared_segments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The shared segments for a core network change value.</p>
-    pub fn set_shared_segments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.shared_segments = input;
-        self
+    pub fn set_shared_segments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.shared_segments = input; self
     }
     /// <p>The shared segments for a core network change value.</p>
-    pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_shared_segments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.shared_segments
     }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {
         crate::types::CoreNetworkChangeValues {
-            segment_name: self.segment_name,
-            edge_locations: self.edge_locations,
-            asn: self.asn,
-            cidr: self.cidr,
-            destination_identifier: self.destination_identifier,
-            inside_cidr_blocks: self.inside_cidr_blocks,
-            shared_segments: self.shared_segments,
+            segment_name: self.segment_name
+            ,
+            edge_locations: self.edge_locations
+            ,
+            asn: self.asn
+            ,
+            cidr: self.cidr
+            ,
+            destination_identifier: self.destination_identifier
+            ,
+            inside_cidr_blocks: self.inside_cidr_blocks
+            ,
+            shared_segments: self.shared_segments
+            ,
         }
     }
 }
+

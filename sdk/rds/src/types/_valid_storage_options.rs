@@ -3,60 +3,65 @@
 /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidStorageOptions {
+pub struct ValidStorageOptions  {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
-    pub storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
+    pub storage_size: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
-    pub provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
+    pub provisioned_iops: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>,
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub supports_storage_autoscaling: ::std::option::Option<bool>,
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
-    pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
+    pub provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
-    pub storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>,
 }
-impl ValidStorageOptions {
+impl  ValidStorageOptions  {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_size.is_none()`.
-    pub fn storage_size(&self) -> &[crate::types::Range] {
-        self.storage_size.as_deref().unwrap_or_default()
+    pub fn storage_size(&self) -> & [crate::types::Range] {
+        self.storage_size.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_iops.is_none()`.
-    pub fn provisioned_iops(&self) -> &[crate::types::Range] {
-        self.provisioned_iops.as_deref().unwrap_or_default()
+    pub fn provisioned_iops(&self) -> & [crate::types::Range] {
+        self.provisioned_iops.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.iops_to_storage_ratio.is_none()`.
-    pub fn iops_to_storage_ratio(&self) -> &[crate::types::DoubleRange] {
-        self.iops_to_storage_ratio.as_deref().unwrap_or_default()
+    pub fn iops_to_storage_ratio(&self) -> & [crate::types::DoubleRange] {
+        self.iops_to_storage_ratio.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn supports_storage_autoscaling(&self) -> ::std::option::Option<bool> {
         self.supports_storage_autoscaling
     }
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provisioned_storage_throughput.is_none()`.
-    pub fn provisioned_storage_throughput(&self) -> &[crate::types::Range] {
-        self.provisioned_storage_throughput.as_deref().unwrap_or_default()
+    pub fn provisioned_storage_throughput(&self) -> & [crate::types::Range] {
+        self.provisioned_storage_throughput.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_throughput_to_iops_ratio.is_none()`.
-    pub fn storage_throughput_to_iops_ratio(&self) -> &[crate::types::DoubleRange] {
-        self.storage_throughput_to_iops_ratio.as_deref().unwrap_or_default()
+    pub fn storage_throughput_to_iops_ratio(&self) -> & [crate::types::DoubleRange] {
+        self.storage_throughput_to_iops_ratio.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidStorageOptions {
@@ -71,12 +76,12 @@ impl ValidStorageOptions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidStorageOptionsBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    pub(crate) provisioned_iops: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    pub(crate) iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub(crate) storage_size: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
+    pub(crate) provisioned_iops: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
+    pub(crate) iops_to_storage_ratio: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>,
     pub(crate) supports_storage_autoscaling: ::std::option::Option<bool>,
-    pub(crate) provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
-    pub(crate) storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
+    pub(crate) provisioned_storage_throughput: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>,
+    pub(crate) storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptionsBuilder {
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
@@ -86,8 +91,7 @@ impl ValidStorageOptionsBuilder {
     }
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +104,16 @@ impl ValidStorageOptionsBuilder {
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
     pub fn storage_size(mut self, input: crate::types::Range) -> Self {
         let mut v = self.storage_size.unwrap_or_default();
-        v.push(input);
-        self.storage_size = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_size = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
-    pub fn set_storage_size(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
-        self.storage_size = input;
-        self
+    pub fn set_storage_size(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>) -> Self {
+        self.storage_size = input; self
     }
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
-    pub fn get_storage_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+    pub fn get_storage_size(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Range>> {
         &self.storage_size
     }
     /// Appends an item to `provisioned_iops`.
@@ -120,17 +123,16 @@ impl ValidStorageOptionsBuilder {
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
     pub fn provisioned_iops(mut self, input: crate::types::Range) -> Self {
         let mut v = self.provisioned_iops.unwrap_or_default();
-        v.push(input);
-        self.provisioned_iops = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_iops = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
-    pub fn set_provisioned_iops(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
-        self.provisioned_iops = input;
-        self
+    pub fn set_provisioned_iops(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>) -> Self {
+        self.provisioned_iops = input; self
     }
     /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
-    pub fn get_provisioned_iops(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+    pub fn get_provisioned_iops(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Range>> {
         &self.provisioned_iops
     }
     /// Appends an item to `iops_to_storage_ratio`.
@@ -140,17 +142,16 @@ impl ValidStorageOptionsBuilder {
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
     pub fn iops_to_storage_ratio(mut self, input: crate::types::DoubleRange) -> Self {
         let mut v = self.iops_to_storage_ratio.unwrap_or_default();
-        v.push(input);
-        self.iops_to_storage_ratio = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.iops_to_storage_ratio = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub fn set_iops_to_storage_ratio(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>) -> Self {
-        self.iops_to_storage_ratio = input;
-        self
+    pub fn set_iops_to_storage_ratio(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>) -> Self {
+        self.iops_to_storage_ratio = input; self
     }
     /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
-    pub fn get_iops_to_storage_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+    pub fn get_iops_to_storage_ratio(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>> {
         &self.iops_to_storage_ratio
     }
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
@@ -160,8 +161,7 @@ impl ValidStorageOptionsBuilder {
     }
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.supports_storage_autoscaling = input;
-        self
+        self.supports_storage_autoscaling = input; self
     }
     /// <p>Indicates whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
@@ -174,17 +174,16 @@ impl ValidStorageOptionsBuilder {
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
     pub fn provisioned_storage_throughput(mut self, input: crate::types::Range) -> Self {
         let mut v = self.provisioned_storage_throughput.unwrap_or_default();
-        v.push(input);
-        self.provisioned_storage_throughput = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.provisioned_storage_throughput = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
-    pub fn set_provisioned_storage_throughput(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>) -> Self {
-        self.provisioned_storage_throughput = input;
-        self
+    pub fn set_provisioned_storage_throughput(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Range>>) -> Self {
+        self.provisioned_storage_throughput = input; self
     }
     /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
-    pub fn get_provisioned_storage_throughput(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+    pub fn get_provisioned_storage_throughput(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Range>> {
         &self.provisioned_storage_throughput
     }
     /// Appends an item to `storage_throughput_to_iops_ratio`.
@@ -194,29 +193,36 @@ impl ValidStorageOptionsBuilder {
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
     pub fn storage_throughput_to_iops_ratio(mut self, input: crate::types::DoubleRange) -> Self {
         let mut v = self.storage_throughput_to_iops_ratio.unwrap_or_default();
-        v.push(input);
-        self.storage_throughput_to_iops_ratio = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_throughput_to_iops_ratio = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
-    pub fn set_storage_throughput_to_iops_ratio(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>) -> Self {
-        self.storage_throughput_to_iops_ratio = input;
-        self
+    pub fn set_storage_throughput_to_iops_ratio(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>>) -> Self {
+        self.storage_throughput_to_iops_ratio = input; self
     }
     /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
-    pub fn get_storage_throughput_to_iops_ratio(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+    pub fn get_storage_throughput_to_iops_ratio(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DoubleRange>> {
         &self.storage_throughput_to_iops_ratio
     }
     /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::types::ValidStorageOptions).
     pub fn build(self) -> crate::types::ValidStorageOptions {
         crate::types::ValidStorageOptions {
-            storage_type: self.storage_type,
-            storage_size: self.storage_size,
-            provisioned_iops: self.provisioned_iops,
-            iops_to_storage_ratio: self.iops_to_storage_ratio,
-            supports_storage_autoscaling: self.supports_storage_autoscaling,
-            provisioned_storage_throughput: self.provisioned_storage_throughput,
-            storage_throughput_to_iops_ratio: self.storage_throughput_to_iops_ratio,
+            storage_type: self.storage_type
+            ,
+            storage_size: self.storage_size
+            ,
+            provisioned_iops: self.provisioned_iops
+            ,
+            iops_to_storage_ratio: self.iops_to_storage_ratio
+            ,
+            supports_storage_autoscaling: self.supports_storage_autoscaling
+            ,
+            provisioned_storage_throughput: self.provisioned_storage_throughput
+            ,
+            storage_throughput_to_iops_ratio: self.storage_throughput_to_iops_ratio
+            ,
         }
     }
 }
+

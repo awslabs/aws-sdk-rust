@@ -3,7 +3,7 @@
 /// <p>Contains the response parameters when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionOAuthResponseParameters {
+pub struct ConnectionOAuthResponseParameters  {
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     pub client_parameters: ::std::option::Option<crate::types::ConnectionOAuthClientResponseParameters>,
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
@@ -13,21 +13,21 @@ pub struct ConnectionOAuthResponseParameters {
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub o_auth_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
-impl ConnectionOAuthResponseParameters {
+impl  ConnectionOAuthResponseParameters  {
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
-    pub fn client_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionOAuthClientResponseParameters> {
+    pub fn client_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionOAuthClientResponseParameters> {
         self.client_parameters.as_ref()
     }
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
-    pub fn authorization_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn authorization_endpoint(&self) -> ::std::option::Option<& str> {
         self.authorization_endpoint.as_deref()
     }
     /// <p>The method used to connect to the HTTP endpoint.</p>
-    pub fn http_method(&self) -> ::std::option::Option<&crate::types::ConnectionOAuthHttpMethod> {
+    pub fn http_method(&self) -> ::std::option::Option<& crate::types::ConnectionOAuthHttpMethod> {
         self.http_method.as_ref()
     }
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
-    pub fn o_auth_http_parameters(&self) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
+    pub fn o_auth_http_parameters(&self) -> ::std::option::Option<& crate::types::ConnectionHttpParameters> {
         self.o_auth_http_parameters.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ConnectionOAuthResponseParametersBuilder {
     }
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     pub fn set_client_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionOAuthClientResponseParameters>) -> Self {
-        self.client_parameters = input;
-        self
+        self.client_parameters = input; self
     }
     /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     pub fn get_client_parameters(&self) -> &::std::option::Option<crate::types::ConnectionOAuthClientResponseParameters> {
@@ -69,8 +68,7 @@ impl ConnectionOAuthResponseParametersBuilder {
     }
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
     pub fn set_authorization_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorization_endpoint = input;
-        self
+        self.authorization_endpoint = input; self
     }
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
     pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ConnectionOAuthResponseParametersBuilder {
     }
     /// <p>The method used to connect to the HTTP endpoint.</p>
     pub fn set_http_method(mut self, input: ::std::option::Option<crate::types::ConnectionOAuthHttpMethod>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// <p>The method used to connect to the HTTP endpoint.</p>
     pub fn get_http_method(&self) -> &::std::option::Option<crate::types::ConnectionOAuthHttpMethod> {
@@ -97,8 +94,7 @@ impl ConnectionOAuthResponseParametersBuilder {
     }
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub fn set_o_auth_http_parameters(mut self, input: ::std::option::Option<crate::types::ConnectionHttpParameters>) -> Self {
-        self.o_auth_http_parameters = input;
-        self
+        self.o_auth_http_parameters = input; self
     }
     /// <p>The additional HTTP parameters used for the OAuth authorization request.</p>
     pub fn get_o_auth_http_parameters(&self) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
@@ -107,10 +103,15 @@ impl ConnectionOAuthResponseParametersBuilder {
     /// Consumes the builder and constructs a [`ConnectionOAuthResponseParameters`](crate::types::ConnectionOAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionOAuthResponseParameters {
         crate::types::ConnectionOAuthResponseParameters {
-            client_parameters: self.client_parameters,
-            authorization_endpoint: self.authorization_endpoint,
-            http_method: self.http_method,
-            o_auth_http_parameters: self.o_auth_http_parameters,
+            client_parameters: self.client_parameters
+            ,
+            authorization_endpoint: self.authorization_endpoint
+            ,
+            http_method: self.http_method
+            ,
+            o_auth_http_parameters: self.o_auth_http_parameters
+            ,
         }
     }
 }
+

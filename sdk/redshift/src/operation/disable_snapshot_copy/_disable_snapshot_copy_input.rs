@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableSnapshotCopyInput {
+pub struct DisableSnapshotCopyInput  {
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DisableSnapshotCopyInput {
+impl  DisableSnapshotCopyInput  {
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl DisableSnapshotCopyInputBuilder {
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
@@ -48,12 +47,13 @@ impl DisableSnapshotCopyInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`DisableSnapshotCopyInput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

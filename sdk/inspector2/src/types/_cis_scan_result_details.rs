@@ -3,7 +3,7 @@
 /// <p>The CIS scan result details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisScanResultDetails {
+pub struct CisScanResultDetails  {
     /// <p>The CIS scan result details' scan ARN.</p>
     pub scan_arn: ::std::string::String,
     /// <p>The CIS scan result details' account ID.</p>
@@ -29,54 +29,53 @@ pub struct CisScanResultDetails {
     /// <p>The CIS scan result details' finding ARN.</p>
     pub finding_arn: ::std::option::Option<::std::string::String>,
 }
-impl CisScanResultDetails {
+impl  CisScanResultDetails  {
     /// <p>The CIS scan result details' scan ARN.</p>
-    pub fn scan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_arn.deref()
+    pub fn scan_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_arn.deref()
     }
     /// <p>The CIS scan result details' account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The CIS scan result details' target resource ID.</p>
-    pub fn target_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_resource_id(&self) -> ::std::option::Option<& str> {
         self.target_resource_id.as_deref()
     }
     /// <p>The CIS scan result details' platform.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The CIS scan result details' status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CisFindingStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CisFindingStatus> {
         self.status.as_ref()
     }
     /// <p>The CIS scan result details' status reason.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The CIS scan result details' check ID.</p>
-    pub fn check_id(&self) -> ::std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<& str> {
         self.check_id.as_deref()
     }
     /// <p>The CIS scan result details' title.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The account ID that's associated with the CIS scan result details.</p>
-    pub fn check_description(&self) -> ::std::option::Option<&str> {
+    pub fn check_description(&self) -> ::std::option::Option<& str> {
         self.check_description.as_deref()
     }
     /// <p>The CIS scan result details' remediation.</p>
-    pub fn remediation(&self) -> ::std::option::Option<&str> {
+    pub fn remediation(&self) -> ::std::option::Option<& str> {
         self.remediation.as_deref()
     }
     /// <p>The CIS scan result details' level.</p>
-    pub fn level(&self) -> ::std::option::Option<&crate::types::CisSecurityLevel> {
+    pub fn level(&self) -> ::std::option::Option<& crate::types::CisSecurityLevel> {
         self.level.as_ref()
     }
     /// <p>The CIS scan result details' finding ARN.</p>
-    pub fn finding_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_arn(&self) -> ::std::option::Option<& str> {
         self.finding_arn.as_deref()
     }
 }
@@ -113,8 +112,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' scan ARN.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The CIS scan result details' scan ARN.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The CIS scan result details' account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' target resource ID.</p>
     pub fn set_target_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_resource_id = input;
-        self
+        self.target_resource_id = input; self
     }
     /// <p>The CIS scan result details' target resource ID.</p>
     pub fn get_target_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' platform.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The CIS scan result details' platform.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CisFindingStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The CIS scan result details' status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CisFindingStatus> {
@@ -183,8 +177,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' status reason.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The CIS scan result details' status reason.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +190,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' check ID.</p>
     pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_id = input;
-        self
+        self.check_id = input; self
     }
     /// <p>The CIS scan result details' check ID.</p>
     pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +203,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' title.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The CIS scan result details' title.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -225,8 +216,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The account ID that's associated with the CIS scan result details.</p>
     pub fn set_check_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.check_description = input;
-        self
+        self.check_description = input; self
     }
     /// <p>The account ID that's associated with the CIS scan result details.</p>
     pub fn get_check_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -239,8 +229,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' remediation.</p>
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.remediation = input;
-        self
+        self.remediation = input; self
     }
     /// <p>The CIS scan result details' remediation.</p>
     pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +242,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' level.</p>
     pub fn set_level(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>The CIS scan result details' level.</p>
     pub fn get_level(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -267,8 +255,7 @@ impl CisScanResultDetailsBuilder {
     }
     /// <p>The CIS scan result details' finding ARN.</p>
     pub fn set_finding_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_arn = input;
-        self
+        self.finding_arn = input; self
     }
     /// <p>The CIS scan result details' finding ARN.</p>
     pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -278,24 +265,37 @@ impl CisScanResultDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_arn`](crate::types::builders::CisScanResultDetailsBuilder::scan_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CisScanResultDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisScanResultDetails {
-            scan_arn: self.scan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_arn",
-                    "scan_arn was not specified but it is required when building CisScanResultDetails",
-                )
-            })?,
-            account_id: self.account_id,
-            target_resource_id: self.target_resource_id,
-            platform: self.platform,
-            status: self.status,
-            status_reason: self.status_reason,
-            check_id: self.check_id,
-            title: self.title,
-            check_description: self.check_description,
-            remediation: self.remediation,
-            level: self.level,
-            finding_arn: self.finding_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisScanResultDetails {
+                scan_arn: self.scan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_arn", "scan_arn was not specified but it is required when building CisScanResultDetails")
+                    )?
+                ,
+                account_id: self.account_id
+                ,
+                target_resource_id: self.target_resource_id
+                ,
+                platform: self.platform
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                check_id: self.check_id
+                ,
+                title: self.title
+                ,
+                check_description: self.check_description
+                ,
+                remediation: self.remediation
+                ,
+                level: self.level
+                ,
+                finding_arn: self.finding_arn
+                ,
+            }
+        )
     }
 }
+

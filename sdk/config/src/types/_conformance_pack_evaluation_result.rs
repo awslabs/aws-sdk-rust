@@ -3,7 +3,7 @@
 /// <p>The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConformancePackEvaluationResult {
+pub struct ConformancePackEvaluationResult  {
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub compliance_type: crate::types::ConformancePackComplianceType,
     /// <p>Uniquely identifies an evaluation result.</p>
@@ -15,25 +15,25 @@ pub struct ConformancePackEvaluationResult {
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub annotation: ::std::option::Option<::std::string::String>,
 }
-impl ConformancePackEvaluationResult {
+impl  ConformancePackEvaluationResult  {
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
-    pub fn compliance_type(&self) -> &crate::types::ConformancePackComplianceType {
+    pub fn compliance_type(&self) -> & crate::types::ConformancePackComplianceType {
         &self.compliance_type
     }
     /// <p>Uniquely identifies an evaluation result.</p>
-    pub fn evaluation_result_identifier(&self) -> ::std::option::Option<&crate::types::EvaluationResultIdentifier> {
+    pub fn evaluation_result_identifier(&self) -> ::std::option::Option<& crate::types::EvaluationResultIdentifier> {
         self.evaluation_result_identifier.as_ref()
     }
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
-    pub fn config_rule_invoked_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn config_rule_invoked_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.config_rule_invoked_time
     }
     /// <p>The time when Config recorded the evaluation result.</p>
-    pub fn result_recorded_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn result_recorded_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.result_recorded_time
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn annotation(&self) -> ::std::option::Option<&str> {
+    pub fn annotation(&self) -> ::std::option::Option<& str> {
         self.annotation.as_deref()
     }
 }
@@ -63,8 +63,7 @@ impl ConformancePackEvaluationResultBuilder {
     }
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ConformancePackComplianceType>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// <p>The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
@@ -78,8 +77,7 @@ impl ConformancePackEvaluationResultBuilder {
     }
     /// <p>Uniquely identifies an evaluation result.</p>
     pub fn set_evaluation_result_identifier(mut self, input: ::std::option::Option<crate::types::EvaluationResultIdentifier>) -> Self {
-        self.evaluation_result_identifier = input;
-        self
+        self.evaluation_result_identifier = input; self
     }
     /// <p>Uniquely identifies an evaluation result.</p>
     pub fn get_evaluation_result_identifier(&self) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
@@ -93,8 +91,7 @@ impl ConformancePackEvaluationResultBuilder {
     }
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
     pub fn set_config_rule_invoked_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.config_rule_invoked_time = input;
-        self
+        self.config_rule_invoked_time = input; self
     }
     /// <p>The time when Config rule evaluated Amazon Web Services resource.</p>
     pub fn get_config_rule_invoked_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -108,8 +105,7 @@ impl ConformancePackEvaluationResultBuilder {
     }
     /// <p>The time when Config recorded the evaluation result.</p>
     pub fn set_result_recorded_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.result_recorded_time = input;
-        self
+        self.result_recorded_time = input; self
     }
     /// <p>The time when Config recorded the evaluation result.</p>
     pub fn get_result_recorded_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -122,8 +118,7 @@ impl ConformancePackEvaluationResultBuilder {
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.annotation = input;
-        self
+        self.annotation = input; self
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,27 +130,29 @@ impl ConformancePackEvaluationResultBuilder {
     /// - [`config_rule_invoked_time`](crate::types::builders::ConformancePackEvaluationResultBuilder::config_rule_invoked_time)
     /// - [`result_recorded_time`](crate::types::builders::ConformancePackEvaluationResultBuilder::result_recorded_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackEvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConformancePackEvaluationResult {
-            compliance_type: self.compliance_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "compliance_type",
-                    "compliance_type was not specified but it is required when building ConformancePackEvaluationResult",
-                )
-            })?,
-            evaluation_result_identifier: self.evaluation_result_identifier,
-            config_rule_invoked_time: self.config_rule_invoked_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "config_rule_invoked_time",
-                    "config_rule_invoked_time was not specified but it is required when building ConformancePackEvaluationResult",
-                )
-            })?,
-            result_recorded_time: self.result_recorded_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "result_recorded_time",
-                    "result_recorded_time was not specified but it is required when building ConformancePackEvaluationResult",
-                )
-            })?,
-            annotation: self.annotation,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConformancePackEvaluationResult {
+                compliance_type: self.compliance_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("compliance_type", "compliance_type was not specified but it is required when building ConformancePackEvaluationResult")
+                    )?
+                ,
+                evaluation_result_identifier: self.evaluation_result_identifier
+                ,
+                config_rule_invoked_time: self.config_rule_invoked_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("config_rule_invoked_time", "config_rule_invoked_time was not specified but it is required when building ConformancePackEvaluationResult")
+                    )?
+                ,
+                result_recorded_time: self.result_recorded_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("result_recorded_time", "result_recorded_time was not specified but it is required when building ConformancePackEvaluationResult")
+                    )?
+                ,
+                annotation: self.annotation
+                ,
+            }
+        )
     }
 }
+

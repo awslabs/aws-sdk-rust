@@ -3,19 +3,19 @@
 /// <p>High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SourceMetadata {
+pub struct SourceMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
     pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
     pub source_update_token: ::std::option::Option<::std::string::String>,
 }
-impl SourceMetadata {
+impl  SourceMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
-    pub fn source_update_token(&self) -> ::std::option::Option<&str> {
+    pub fn source_update_token(&self) -> ::std::option::Option<& str> {
         self.source_update_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SourceMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SourceMetadataBuilder {
     }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
     pub fn set_source_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_update_token = input;
-        self
+        self.source_update_token = input; self
     }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
     pub fn get_source_update_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SourceMetadataBuilder {
     /// Consumes the builder and constructs a [`SourceMetadata`](crate::types::SourceMetadata).
     pub fn build(self) -> crate::types::SourceMetadata {
         crate::types::SourceMetadata {
-            source_arn: self.source_arn,
-            source_update_token: self.source_update_token,
+            source_arn: self.source_arn
+            ,
+            source_update_token: self.source_update_token
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Request to describe a BasePathMapping resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBasePathMappingInput {
+pub struct GetBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub base_path: ::std::option::Option<::std::string::String>,
 }
-impl GetBasePathMappingInput {
+impl  GetBasePathMappingInput  {
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
-    pub fn base_path(&self) -> ::std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<& str> {
         self.base_path.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetBasePathMappingInputBuilder {
     }
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name of the BasePathMapping resource to be described.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,21 +56,22 @@ impl GetBasePathMappingInputBuilder {
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_path
     }
     /// Consumes the builder and constructs a [`GetBasePathMappingInput`](crate::operation::get_base_path_mapping::GetBasePathMappingInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_base_path_mapping::GetBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_base_path_mapping::GetBasePathMappingInput {
-            domain_name: self.domain_name,
-            base_path: self.base_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_base_path_mapping::GetBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_base_path_mapping::GetBasePathMappingInput {
+                domain_name: self.domain_name
+                ,
+                base_path: self.base_path
+                ,
+            }
+        )
     }
 }
+

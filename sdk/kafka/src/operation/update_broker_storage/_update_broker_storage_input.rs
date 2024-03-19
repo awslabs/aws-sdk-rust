@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateBrokerStorageInput {
+pub struct UpdateBrokerStorageInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub target_broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
+    pub target_broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec::<crate::types::BrokerEbsVolumeInfo>>,
 }
-impl UpdateBrokerStorageInput {
+impl  UpdateBrokerStorageInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(&self) -> ::std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_broker_ebs_volume_info.is_none()`.
-    pub fn target_broker_ebs_volume_info(&self) -> &[crate::types::BrokerEbsVolumeInfo] {
-        self.target_broker_ebs_volume_info.as_deref().unwrap_or_default()
+    pub fn target_broker_ebs_volume_info(&self) -> & [crate::types::BrokerEbsVolumeInfo] {
+        self.target_broker_ebs_volume_info.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateBrokerStorageInput {
@@ -39,7 +40,7 @@ impl UpdateBrokerStorageInput {
 pub struct UpdateBrokerStorageInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
-    pub(crate) target_broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>,
+    pub(crate) target_broker_ebs_volume_info: ::std::option::Option<::std::vec::Vec::<crate::types::BrokerEbsVolumeInfo>>,
 }
 impl UpdateBrokerStorageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -50,8 +51,7 @@ impl UpdateBrokerStorageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl UpdateBrokerStorageInputBuilder {
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn set_current_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,28 +78,30 @@ impl UpdateBrokerStorageInputBuilder {
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
     pub fn target_broker_ebs_volume_info(mut self, input: crate::types::BrokerEbsVolumeInfo) -> Self {
         let mut v = self.target_broker_ebs_volume_info.unwrap_or_default();
-        v.push(input);
-        self.target_broker_ebs_volume_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_broker_ebs_volume_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn set_target_broker_ebs_volume_info(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>>) -> Self {
-        self.target_broker_ebs_volume_info = input;
-        self
+    pub fn set_target_broker_ebs_volume_info(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BrokerEbsVolumeInfo>>) -> Self {
+        self.target_broker_ebs_volume_info = input; self
     }
     /// <p>Describes the target volume size and the ID of the broker to apply the update to.</p>
-    pub fn get_target_broker_ebs_volume_info(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrokerEbsVolumeInfo>> {
+    pub fn get_target_broker_ebs_volume_info(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BrokerEbsVolumeInfo>> {
         &self.target_broker_ebs_volume_info
     }
     /// Consumes the builder and constructs a [`UpdateBrokerStorageInput`](crate::operation::update_broker_storage::UpdateBrokerStorageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_broker_storage::UpdateBrokerStorageInput {
-            cluster_arn: self.cluster_arn,
-            current_version: self.current_version,
-            target_broker_ebs_volume_info: self.target_broker_ebs_volume_info,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_broker_storage::UpdateBrokerStorageInput {
+                cluster_arn: self.cluster_arn
+                ,
+                current_version: self.current_version
+                ,
+                target_broker_ebs_volume_info: self.target_broker_ebs_volume_info
+                ,
+            }
+        )
     }
 }
+

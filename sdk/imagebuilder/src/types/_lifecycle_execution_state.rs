@@ -3,19 +3,19 @@
 /// <p>The current state of the runtime instance of the lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecycleExecutionState {
+pub struct LifecycleExecutionState  {
     /// <p>The runtime status of the lifecycle execution.</p>
     pub status: ::std::option::Option<crate::types::LifecycleExecutionStatus>,
     /// <p>The reason for the current status.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl LifecycleExecutionState {
+impl  LifecycleExecutionState  {
     /// <p>The runtime status of the lifecycle execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::LifecycleExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current status.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl LifecycleExecutionStateBuilder {
     }
     /// <p>The runtime status of the lifecycle execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The runtime status of the lifecycle execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecycleExecutionStatus> {
@@ -55,8 +54,7 @@ impl LifecycleExecutionStateBuilder {
     }
     /// <p>The reason for the current status.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the current status.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl LifecycleExecutionStateBuilder {
     /// Consumes the builder and constructs a [`LifecycleExecutionState`](crate::types::LifecycleExecutionState).
     pub fn build(self) -> crate::types::LifecycleExecutionState {
         crate::types::LifecycleExecutionState {
-            status: self.status,
-            reason: self.reason,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

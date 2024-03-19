@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTestExecutionResultItems`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`test_execution_id(impl Into<String>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::test_execution_id) / [`set_test_execution_id(Option<String>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::set_test_execution_id):<br>required: **true**<br><p>The unique identifier of the test execution to list the result items.</p><br>
     ///   - [`result_filter_by(TestExecutionResultFilterBy)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::result_filter_by) / [`set_result_filter_by(Option<TestExecutionResultFilterBy>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::set_result_filter_by):<br>required: **true**<br><p>The filter for the list of results from the test set execution.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListTestExecutionResultItems</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response. Use that token in the <code>nextToken</code> parameter to return the next page of results.</p><br>
-    /// - On success, responds with [`ListTestExecutionResultItemsOutput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput) with field(s):
+                            /// - On success, responds with [`ListTestExecutionResultItemsOutput`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput) with field(s):
     ///   - [`test_execution_results(Option<TestExecutionResultItems>)`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput::test_execution_results): <p>The list of results from the test execution.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListTestExecutionResultItems</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListTestExecutionResultItems</code> operation request to get the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListTestExecutionResultItemsError>`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError)
-    pub fn list_test_execution_result_items(
-        &self,
-    ) -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder {
-        crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListTestExecutionResultItemsError>`](crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsError)
+    pub fn list_test_execution_result_items(&self) -> crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder {
+                                crate::operation::list_test_execution_result_items::builders::ListTestExecutionResultItemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

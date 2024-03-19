@@ -9,36 +9,37 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVolumesOutput {
+pub struct ListVolumesOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub volume_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>,
+    pub volume_infos: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeInfo>>,
     _request_id: Option<String>,
 }
-impl ListVolumesOutput {
+impl  ListVolumesOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_infos.is_none()`.
-    pub fn volume_infos(&self) -> &[crate::types::VolumeInfo] {
-        self.volume_infos.as_deref().unwrap_or_default()
+    pub fn volume_infos(&self) -> & [crate::types::VolumeInfo] {
+        self.volume_infos.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVolumesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVolumesOutput {
     /// Creates a new builder-style object to manufacture [`ListVolumesOutput`](crate::operation::list_volumes::ListVolumesOutput).
     pub fn builder() -> crate::operation::list_volumes::builders::ListVolumesOutputBuilder {
@@ -52,7 +53,7 @@ impl ListVolumesOutput {
 pub struct ListVolumesOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_infos: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>,
+    pub(crate) volume_infos: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeInfo>>,
     _request_id: Option<String>,
 }
 impl ListVolumesOutputBuilder {
@@ -63,8 +64,7 @@ impl ListVolumesOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl ListVolumesOutputBuilder {
     }
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,35 +90,38 @@ impl ListVolumesOutputBuilder {
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
     pub fn volume_infos(mut self, input: crate::types::VolumeInfo) -> Self {
         let mut v = self.volume_infos.unwrap_or_default();
-        v.push(input);
-        self.volume_infos = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volume_infos = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub fn set_volume_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>>) -> Self {
-        self.volume_infos = input;
-        self
+    pub fn set_volume_infos(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeInfo>>) -> Self {
+        self.volume_infos = input; self
     }
     /// <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
-    pub fn get_volume_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeInfo>> {
+    pub fn get_volume_infos(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeInfo>> {
         &self.volume_infos
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVolumesOutput`](crate::operation::list_volumes::ListVolumesOutput).
     pub fn build(self) -> crate::operation::list_volumes::ListVolumesOutput {
         crate::operation::list_volumes::ListVolumesOutput {
-            gateway_arn: self.gateway_arn,
-            marker: self.marker,
-            volume_infos: self.volume_infos,
+            gateway_arn: self.gateway_arn
+            ,
+            marker: self.marker
+            ,
+            volume_infos: self.volume_infos
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

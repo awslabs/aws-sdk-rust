@@ -3,11 +3,11 @@
 /// <p>Describes the configuration for the file uploader field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FileUploaderFieldConfig {
+pub struct FileUploaderFieldConfig  {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
     pub access_level: crate::types::StorageAccessLevel,
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub accepted_file_types: ::std::vec::Vec<::std::string::String>,
+    pub accepted_file_types: ::std::vec::Vec::<::std::string::String>,
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub show_thumbnails: ::std::option::Option<bool>,
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
@@ -18,15 +18,14 @@ pub struct FileUploaderFieldConfig {
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub max_size: ::std::option::Option<i32>,
 }
-impl FileUploaderFieldConfig {
+impl  FileUploaderFieldConfig  {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub fn access_level(&self) -> &crate::types::StorageAccessLevel {
+    pub fn access_level(&self) -> & crate::types::StorageAccessLevel {
         &self.access_level
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn accepted_file_types(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.accepted_file_types.deref()
+    pub fn accepted_file_types(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.accepted_file_types.deref()
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn show_thumbnails(&self) -> ::std::option::Option<bool> {
@@ -58,7 +57,7 @@ impl FileUploaderFieldConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FileUploaderFieldConfigBuilder {
     pub(crate) access_level: ::std::option::Option<crate::types::StorageAccessLevel>,
-    pub(crate) accepted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accepted_file_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) show_thumbnails: ::std::option::Option<bool>,
     pub(crate) is_resumable: ::std::option::Option<bool>,
     pub(crate) max_file_count: ::std::option::Option<i32>,
@@ -73,8 +72,7 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
     pub fn set_access_level(mut self, input: ::std::option::Option<crate::types::StorageAccessLevel>) -> Self {
-        self.access_level = input;
-        self
+        self.access_level = input; self
     }
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
     pub fn get_access_level(&self) -> &::std::option::Option<crate::types::StorageAccessLevel> {
@@ -87,17 +85,16 @@ impl FileUploaderFieldConfigBuilder {
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
     pub fn accepted_file_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accepted_file_types.unwrap_or_default();
-        v.push(input.into());
-        self.accepted_file_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accepted_file_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn set_accepted_file_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accepted_file_types = input;
-        self
+    pub fn set_accepted_file_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accepted_file_types = input; self
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn get_accepted_file_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accepted_file_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accepted_file_types
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
@@ -107,8 +104,7 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn set_show_thumbnails(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.show_thumbnails = input;
-        self
+        self.show_thumbnails = input; self
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn get_show_thumbnails(&self) -> &::std::option::Option<bool> {
@@ -123,8 +119,7 @@ impl FileUploaderFieldConfigBuilder {
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
     pub fn set_is_resumable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_resumable = input;
-        self
+        self.is_resumable = input; self
     }
     /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
@@ -138,8 +133,7 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
     pub fn set_max_file_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_file_count = input;
-        self
+        self.max_file_count = input; self
     }
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
     pub fn get_max_file_count(&self) -> &::std::option::Option<i32> {
@@ -152,8 +146,7 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
@@ -164,23 +157,28 @@ impl FileUploaderFieldConfigBuilder {
     /// - [`access_level`](crate::types::builders::FileUploaderFieldConfigBuilder::access_level)
     /// - [`accepted_file_types`](crate::types::builders::FileUploaderFieldConfigBuilder::accepted_file_types)
     pub fn build(self) -> ::std::result::Result<crate::types::FileUploaderFieldConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FileUploaderFieldConfig {
-            access_level: self.access_level.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_level",
-                    "access_level was not specified but it is required when building FileUploaderFieldConfig",
-                )
-            })?,
-            accepted_file_types: self.accepted_file_types.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "accepted_file_types",
-                    "accepted_file_types was not specified but it is required when building FileUploaderFieldConfig",
-                )
-            })?,
-            show_thumbnails: self.show_thumbnails,
-            is_resumable: self.is_resumable,
-            max_file_count: self.max_file_count,
-            max_size: self.max_size,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FileUploaderFieldConfig {
+                access_level: self.access_level
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_level", "access_level was not specified but it is required when building FileUploaderFieldConfig")
+                    )?
+                ,
+                accepted_file_types: self.accepted_file_types
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("accepted_file_types", "accepted_file_types was not specified but it is required when building FileUploaderFieldConfig")
+                    )?
+                ,
+                show_thumbnails: self.show_thumbnails
+                ,
+                is_resumable: self.is_resumable
+                ,
+                max_file_count: self.max_file_count
+                ,
+                max_size: self.max_size
+                ,
+            }
+        )
     }
 }
+

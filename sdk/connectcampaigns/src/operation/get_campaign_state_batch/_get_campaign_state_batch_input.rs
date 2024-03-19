@@ -3,16 +3,17 @@
 /// GetCampaignStateBatchRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCampaignStateBatchInput {
+pub struct GetCampaignStateBatchInput  {
     /// List of CampaignId
-    pub campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub campaign_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetCampaignStateBatchInput {
+impl  GetCampaignStateBatchInput  {
     /// List of CampaignId
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaign_ids.is_none()`.
-    pub fn campaign_ids(&self) -> &[::std::string::String] {
-        self.campaign_ids.as_deref().unwrap_or_default()
+    pub fn campaign_ids(&self) -> & [::std::string::String] {
+        self.campaign_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetCampaignStateBatchInput {
@@ -26,7 +27,7 @@ impl GetCampaignStateBatchInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchInputBuilder {
-    pub(crate) campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) campaign_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetCampaignStateBatchInputBuilder {
     /// Appends an item to `campaign_ids`.
@@ -36,26 +37,26 @@ impl GetCampaignStateBatchInputBuilder {
     /// List of CampaignId
     pub fn campaign_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.campaign_ids.unwrap_or_default();
-        v.push(input.into());
-        self.campaign_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.campaign_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// List of CampaignId
-    pub fn set_campaign_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.campaign_ids = input;
-        self
+    pub fn set_campaign_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.campaign_ids = input; self
     }
     /// List of CampaignId
-    pub fn get_campaign_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_campaign_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.campaign_ids
     }
     /// Consumes the builder and constructs a [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
-            campaign_ids: self.campaign_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
+                campaign_ids: self.campaign_ids
+                ,
+            }
+        )
     }
 }
+

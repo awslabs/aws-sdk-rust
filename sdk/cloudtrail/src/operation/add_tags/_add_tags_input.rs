@@ -3,28 +3,29 @@
 /// <p>Specifies the tags to add to a trail, event data store, or channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddTagsInput {
+pub struct AddTagsInput  {
     /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
     /// <p>The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
     /// <p>The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of tags, up to a limit of 50</p>
-    pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl AddTagsInput {
+impl  AddTagsInput  {
     /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
     /// <p>The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
     /// <p>The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
     /// <p>The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Contains a list of tags, up to a limit of 50</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags_list.is_none()`.
-    pub fn tags_list(&self) -> &[crate::types::Tag] {
-        self.tags_list.as_deref().unwrap_or_default()
+    pub fn tags_list(&self) -> & [crate::types::Tag] {
+        self.tags_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AddTagsInput {
@@ -39,7 +40,7 @@ impl AddTagsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AddTagsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl AddTagsInputBuilder {
     /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
@@ -56,8 +57,7 @@ impl AddTagsInputBuilder {
     /// <p>The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
     /// <p>The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Specifies the ARN of the trail, event data store, or channel to which one or more tags will be added.</p>
     /// <p>The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -73,24 +73,28 @@ impl AddTagsInputBuilder {
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub fn tags_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_list.unwrap_or_default();
-        v.push(input);
-        self.tags_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of tags, up to a limit of 50</p>
-    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags_list = input;
-        self
+    pub fn set_tags_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags_list = input; self
     }
     /// <p>Contains a list of tags, up to a limit of 50</p>
-    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::add_tags::AddTagsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
-            resource_id: self.resource_id,
-            tags_list: self.tags_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::add_tags::AddTagsInput {
+                resource_id: self.resource_id
+                ,
+                tags_list: self.tags_list
+                ,
+            }
+        )
     }
 }
+

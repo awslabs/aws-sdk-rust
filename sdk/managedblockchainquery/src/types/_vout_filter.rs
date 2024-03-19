@@ -3,11 +3,11 @@
 /// <p>This container specifies filtering attributes related to <code>BITCOIN_VOUT</code> event types</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VoutFilter {
+pub struct VoutFilter  {
     /// <p>Specifies if the transaction output is spent or unspent.</p>
     pub vout_spent: bool,
 }
-impl VoutFilter {
+impl  VoutFilter  {
     /// <p>Specifies if the transaction output is spent or unspent.</p>
     pub fn vout_spent(&self) -> bool {
         self.vout_spent
@@ -35,8 +35,7 @@ impl VoutFilterBuilder {
     }
     /// <p>Specifies if the transaction output is spent or unspent.</p>
     pub fn set_vout_spent(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.vout_spent = input;
-        self
+        self.vout_spent = input; self
     }
     /// <p>Specifies if the transaction output is spent or unspent.</p>
     pub fn get_vout_spent(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl VoutFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vout_spent`](crate::types::builders::VoutFilterBuilder::vout_spent)
     pub fn build(self) -> ::std::result::Result<crate::types::VoutFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VoutFilter {
-            vout_spent: self.vout_spent.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "vout_spent",
-                    "vout_spent was not specified but it is required when building VoutFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VoutFilter {
+                vout_spent: self.vout_spent
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("vout_spent", "vout_spent was not specified but it is required when building VoutFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

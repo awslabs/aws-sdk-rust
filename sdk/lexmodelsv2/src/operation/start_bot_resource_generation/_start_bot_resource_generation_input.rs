@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartBotResourceGenerationInput {
+pub struct StartBotResourceGenerationInput  {
     /// <p>The prompt to generate intents and slot types for the bot locale. Your description should be both <i>detailed</i> and <i>precise</i> to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.</p>
     pub generation_input_prompt: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the bot for which to generate intents and slot types.</p>
@@ -12,21 +12,21 @@ pub struct StartBotResourceGenerationInput {
     /// <p>The locale of the bot for which to generate intents and slot types.</p>
     pub locale_id: ::std::option::Option<::std::string::String>,
 }
-impl StartBotResourceGenerationInput {
+impl  StartBotResourceGenerationInput  {
     /// <p>The prompt to generate intents and slot types for the bot locale. Your description should be both <i>detailed</i> and <i>precise</i> to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.</p>
-    pub fn generation_input_prompt(&self) -> ::std::option::Option<&str> {
+    pub fn generation_input_prompt(&self) -> ::std::option::Option<& str> {
         self.generation_input_prompt.as_deref()
     }
     /// <p>The unique identifier of the bot for which to generate intents and slot types.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot for which to generate intents and slot types.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The locale of the bot for which to generate intents and slot types.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl StartBotResourceGenerationInputBuilder {
     }
     /// <p>The prompt to generate intents and slot types for the bot locale. Your description should be both <i>detailed</i> and <i>precise</i> to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.</p>
     pub fn set_generation_input_prompt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generation_input_prompt = input;
-        self
+        self.generation_input_prompt = input; self
     }
     /// <p>The prompt to generate intents and slot types for the bot locale. Your description should be both <i>detailed</i> and <i>precise</i> to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.</p>
     pub fn get_generation_input_prompt(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl StartBotResourceGenerationInputBuilder {
     }
     /// <p>The unique identifier of the bot for which to generate intents and slot types.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The unique identifier of the bot for which to generate intents and slot types.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl StartBotResourceGenerationInputBuilder {
     }
     /// <p>The version of the bot for which to generate intents and slot types.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot for which to generate intents and slot types.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl StartBotResourceGenerationInputBuilder {
     }
     /// <p>The locale of the bot for which to generate intents and slot types.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale of the bot for which to generate intents and slot types.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`StartBotResourceGenerationInput`](crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput {
-            generation_input_prompt: self.generation_input_prompt,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput {
+                generation_input_prompt: self.generation_input_prompt
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
+        )
     }
 }
+

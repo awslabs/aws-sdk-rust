@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSshPublicKeyInput {
+pub struct DeleteSshPublicKeyInput  {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
@@ -10,17 +10,17 @@ pub struct DeleteSshPublicKeyInput {
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSshPublicKeyInput {
+impl  DeleteSshPublicKeyInput  {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
-    pub fn server_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
-    pub fn ssh_public_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub fn set_ssh_public_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key_id = input;
-        self
+        self.ssh_public_key_id = input; self
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,22 +76,24 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput {
-            server_id: self.server_id,
-            ssh_public_key_id: self.ssh_public_key_id,
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput {
+                server_id: self.server_id
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

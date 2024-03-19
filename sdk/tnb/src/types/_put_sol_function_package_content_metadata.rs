@@ -4,15 +4,15 @@
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSolFunctionPackageContentMetadata {
+pub struct PutSolFunctionPackageContentMetadata  {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }
-impl PutSolFunctionPackageContentMetadata {
+impl  PutSolFunctionPackageContentMetadata  {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn vnfd(&self) -> ::std::option::Option<&crate::types::FunctionArtifactMeta> {
+    pub fn vnfd(&self) -> ::std::option::Option<& crate::types::FunctionArtifactMeta> {
         self.vnfd.as_ref()
     }
 }
@@ -39,8 +39,7 @@ impl PutSolFunctionPackageContentMetadataBuilder {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn set_vnfd(mut self, input: ::std::option::Option<crate::types::FunctionArtifactMeta>) -> Self {
-        self.vnfd = input;
-        self
+        self.vnfd = input; self
     }
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
@@ -49,6 +48,10 @@ impl PutSolFunctionPackageContentMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`PutSolFunctionPackageContentMetadata`](crate::types::PutSolFunctionPackageContentMetadata).
     pub fn build(self) -> crate::types::PutSolFunctionPackageContentMetadata {
-        crate::types::PutSolFunctionPackageContentMetadata { vnfd: self.vnfd }
+        crate::types::PutSolFunctionPackageContentMetadata {
+            vnfd: self.vnfd
+            ,
+        }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The error code and error description associated with the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchDescribeModelPackageError {
+pub struct BatchDescribeModelPackageError  {
     /// <p></p>
     pub error_code: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub error_response: ::std::option::Option<::std::string::String>,
 }
-impl BatchDescribeModelPackageError {
+impl  BatchDescribeModelPackageError  {
     /// <p></p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p></p>
-    pub fn error_response(&self) -> ::std::option::Option<&str> {
+    pub fn error_response(&self) -> ::std::option::Option<& str> {
         self.error_response.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl BatchDescribeModelPackageErrorBuilder {
     }
     /// <p></p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p></p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl BatchDescribeModelPackageErrorBuilder {
     }
     /// <p></p>
     pub fn set_error_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_response = input;
-        self
+        self.error_response = input; self
     }
     /// <p></p>
     pub fn get_error_response(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl BatchDescribeModelPackageErrorBuilder {
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageError`](crate::types::BatchDescribeModelPackageError).
     pub fn build(self) -> crate::types::BatchDescribeModelPackageError {
         crate::types::BatchDescribeModelPackageError {
-            error_code: self.error_code,
-            error_response: self.error_response,
+            error_code: self.error_code
+            ,
+            error_response: self.error_response
+            ,
         }
     }
 }
+

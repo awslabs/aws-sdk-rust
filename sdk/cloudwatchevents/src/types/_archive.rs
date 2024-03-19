@@ -3,7 +3,7 @@
 /// <p>An <code>Archive</code> object that contains details about an archive.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Archive {
+pub struct Archive  {
     /// <p>The name of the archive.</p>
     pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
@@ -21,21 +21,21 @@ pub struct Archive {
     /// <p>The time stamp for the time that the archive was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Archive {
+impl  Archive  {
     /// <p>The name of the archive.</p>
-    pub fn archive_name(&self) -> ::std::option::Option<&str> {
+    pub fn archive_name(&self) -> ::std::option::Option<& str> {
         self.archive_name.as_deref()
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The current state of the archive.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::ArchiveState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
@@ -51,7 +51,7 @@ impl Archive {
         self.event_count
     }
     /// <p>The time stamp for the time that the archive was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl ArchiveBuilder {
     }
     /// <p>The name of the archive.</p>
     pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.archive_name = input;
-        self
+        self.archive_name = input; self
     }
     /// <p>The name of the archive.</p>
     pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl ArchiveBuilder {
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
     pub fn set_event_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
     pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +109,7 @@ impl ArchiveBuilder {
     }
     /// <p>The current state of the archive.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArchiveState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the archive.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArchiveState> {
@@ -125,8 +122,7 @@ impl ArchiveBuilder {
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +135,7 @@ impl ArchiveBuilder {
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
     pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_days = input;
-        self
+        self.retention_days = input; self
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
     pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
@@ -153,8 +148,7 @@ impl ArchiveBuilder {
     }
     /// <p>The size of the archive, in bytes.</p>
     pub fn set_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_bytes = input;
-        self
+        self.size_bytes = input; self
     }
     /// <p>The size of the archive, in bytes.</p>
     pub fn get_size_bytes(&self) -> &::std::option::Option<i64> {
@@ -167,8 +161,7 @@ impl ArchiveBuilder {
     }
     /// <p>The number of events in the archive.</p>
     pub fn set_event_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.event_count = input;
-        self
+        self.event_count = input; self
     }
     /// <p>The number of events in the archive.</p>
     pub fn get_event_count(&self) -> &::std::option::Option<i64> {
@@ -181,8 +174,7 @@ impl ArchiveBuilder {
     }
     /// <p>The time stamp for the time that the archive was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time stamp for the time that the archive was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -191,14 +183,25 @@ impl ArchiveBuilder {
     /// Consumes the builder and constructs a [`Archive`](crate::types::Archive).
     pub fn build(self) -> crate::types::Archive {
         crate::types::Archive {
-            archive_name: self.archive_name,
-            event_source_arn: self.event_source_arn,
-            state: self.state,
-            state_reason: self.state_reason,
-            retention_days: self.retention_days,
-            size_bytes: self.size_bytes.unwrap_or_default(),
-            event_count: self.event_count.unwrap_or_default(),
-            creation_time: self.creation_time,
+            archive_name: self.archive_name
+            ,
+            event_source_arn: self.event_source_arn
+            ,
+            state: self.state
+            ,
+            state_reason: self.state_reason
+            ,
+            retention_days: self.retention_days
+            ,
+            size_bytes: self.size_bytes
+                .unwrap_or_default()
+            ,
+            event_count: self.event_count
+                .unwrap_or_default()
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSipMediaApplicationInput {
+pub struct GetSipMediaApplicationInput  {
     /// <p>The SIP media application ID .</p>
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
 }
-impl GetSipMediaApplicationInput {
+impl  GetSipMediaApplicationInput  {
     /// <p>The SIP media application ID .</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetSipMediaApplicationInputBuilder {
     }
     /// <p>The SIP media application ID .</p>
     pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sip_media_application_id = input;
-        self
+        self.sip_media_application_id = input; self
     }
     /// <p>The SIP media application ID .</p>
     pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sip_media_application_id
     }
     /// Consumes the builder and constructs a [`GetSipMediaApplicationInput`](crate::operation::get_sip_media_application::GetSipMediaApplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_sip_media_application::GetSipMediaApplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_sip_media_application::GetSipMediaApplicationInput {
-            sip_media_application_id: self.sip_media_application_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sip_media_application::GetSipMediaApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_sip_media_application::GetSipMediaApplicationInput {
+                sip_media_application_id: self.sip_media_application_id
+                ,
+            }
+        )
     }
 }
+

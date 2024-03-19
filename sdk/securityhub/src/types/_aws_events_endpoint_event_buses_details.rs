@@ -3,13 +3,13 @@
 /// <p>Provides details about the Amazon EventBridge event buses that the endpoint is associated with.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointEventBusesDetails {
+pub struct AwsEventsEndpointEventBusesDetails  {
     /// <p>The Amazon Resource Name (ARN) of the event bus that the endpoint is associated with.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEndpointEventBusesDetails {
+impl  AwsEventsEndpointEventBusesDetails  {
     /// <p>The Amazon Resource Name (ARN) of the event bus that the endpoint is associated with.</p>
-    pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_bus_arn(&self) -> ::std::option::Option<& str> {
         self.event_bus_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEventsEndpointEventBusesDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event bus that the endpoint is associated with.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_bus_arn = input;
-        self
+        self.event_bus_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event bus that the endpoint is associated with.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEventsEndpointEventBusesDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEndpointEventBusesDetails`](crate::types::AwsEventsEndpointEventBusesDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointEventBusesDetails {
         crate::types::AwsEventsEndpointEventBusesDetails {
-            event_bus_arn: self.event_bus_arn,
+            event_bus_arn: self.event_bus_arn
+            ,
         }
     }
 }
+

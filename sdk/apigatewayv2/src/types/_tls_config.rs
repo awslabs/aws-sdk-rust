@@ -3,13 +3,13 @@
 /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TlsConfig {
+pub struct TlsConfig  {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     pub server_name_to_verify: ::std::option::Option<::std::string::String>,
 }
-impl TlsConfig {
+impl  TlsConfig  {
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
-    pub fn server_name_to_verify(&self) -> ::std::option::Option<&str> {
+    pub fn server_name_to_verify(&self) -> ::std::option::Option<& str> {
         self.server_name_to_verify.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl TlsConfigBuilder {
     }
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     pub fn set_server_name_to_verify(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name_to_verify = input;
-        self
+        self.server_name_to_verify = input; self
     }
     /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
     pub fn get_server_name_to_verify(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl TlsConfigBuilder {
     /// Consumes the builder and constructs a [`TlsConfig`](crate::types::TlsConfig).
     pub fn build(self) -> crate::types::TlsConfig {
         crate::types::TlsConfig {
-            server_name_to_verify: self.server_name_to_verify,
+            server_name_to_verify: self.server_name_to_verify
+            ,
         }
     }
 }
+

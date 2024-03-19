@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipelines`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_next_token):<br>required: **false**<br><p>An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.</p><br>
-    /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
+                            /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
     ///   - [`pipelines(Option<Vec::<PipelineSummary>>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipelines): <p>The list of pipelines.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::next_token): <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
-    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
+                            /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
     pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

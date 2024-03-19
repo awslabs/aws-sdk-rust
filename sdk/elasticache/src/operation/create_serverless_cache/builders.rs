@@ -5,54 +5,50 @@ pub use crate::operation::create_serverless_cache::_create_serverless_cache_inpu
 
 impl CreateServerlessCacheInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_serverless_cache::CreateServerlessCacheError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_serverless_cache();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_serverless_cache::CreateServerlessCacheError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_serverless_cache();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateServerlessCache`.
-///
+/// 
 /// <p>Creates a serverless cache.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServerlessCacheFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_serverless_cache::builders::CreateServerlessCacheInputBuilder,
+                    inner: crate::operation::create_serverless_cache::builders::CreateServerlessCacheInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
-        crate::operation::create_serverless_cache::CreateServerlessCacheError,
-    > for CreateServerlessCacheFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
-            crate::operation::create_serverless_cache::CreateServerlessCacheError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
+                    crate::operation::create_serverless_cache::CreateServerlessCacheError,
+                > for CreateServerlessCacheFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
+                        crate::operation::create_serverless_cache::CreateServerlessCacheError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateServerlessCacheFluentBuilder {
     /// Creates a new `CreateServerlessCache`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateServerlessCacheFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_serverless_cache::CreateServerlessCacheError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_serverless_cache::CreateServerlessCache::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_serverless_cache::CreateServerlessCache::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_serverless_cache::CreateServerlessCacheOutput,
-        crate::operation::create_serverless_cache::CreateServerlessCacheError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_serverless_cache::CreateServerlessCacheOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_serverless_cache::CreateServerlessCacheError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_serverless_cache::CreateServerlessCache::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_serverless_cache::CreateServerlessCache::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_serverless_cache::CreateServerlessCacheOutput, crate::operation::create_serverless_cache::CreateServerlessCacheError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
     pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.serverless_cache_name(input.into());
@@ -202,12 +189,12 @@ impl CreateServerlessCacheFluentBuilder {
         self
     }
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p>A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
     /// Appends an item to `SnapshotArnsToRestore`.
@@ -220,12 +207,12 @@ impl CreateServerlessCacheFluentBuilder {
         self
     }
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    pub fn set_snapshot_arns_to_restore(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_snapshot_arns_to_restore(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_snapshot_arns_to_restore(input);
         self
     }
     /// <p>The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Redis only.</p>
-    pub fn get_snapshot_arns_to_restore(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_snapshot_arns_to_restore(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_snapshot_arns_to_restore()
     }
     /// Appends an item to `Tags`.
@@ -238,12 +225,12 @@ impl CreateServerlessCacheFluentBuilder {
         self
     }
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The identifier of the UserGroup to be associated with the serverless cache. Available for Redis only. Default is NULL.</p>
@@ -270,12 +257,12 @@ impl CreateServerlessCacheFluentBuilder {
         self
     }
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
     /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Redis only.</p>
@@ -307,3 +294,4 @@ impl CreateServerlessCacheFluentBuilder {
         self.inner.get_daily_snapshot_time()
     }
 }
+

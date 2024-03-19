@@ -3,22 +3,22 @@
 /// <p>The results of a <code>DeleteInboundConnection</code> operation. Contains details about the deleted inbound connection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInboundConnectionOutput {
+pub struct DeleteInboundConnectionOutput  {
     /// <p>The deleted inbound connection.</p>
     pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
-impl DeleteInboundConnectionOutput {
+impl  DeleteInboundConnectionOutput  {
     /// <p>The deleted inbound connection.</p>
-    pub fn connection(&self) -> ::std::option::Option<&crate::types::InboundConnection> {
+    pub fn connection(&self) -> ::std::option::Option<& crate::types::InboundConnection> {
         self.connection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteInboundConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteInboundConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInboundConnectionOutput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput).
     pub fn builder() -> crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteInboundConnectionOutputBuilder {
     }
     /// <p>The deleted inbound connection.</p>
     pub fn set_connection(mut self, input: ::std::option::Option<crate::types::InboundConnection>) -> Self {
-        self.connection = input;
-        self
+        self.connection = input; self
     }
     /// <p>The deleted inbound connection.</p>
     pub fn get_connection(&self) -> &::std::option::Option<crate::types::InboundConnection> {
         &self.connection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteInboundConnectionOutput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput).
     pub fn build(self) -> crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput {
         crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput {
-            connection: self.connection,
+            connection: self.connection
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

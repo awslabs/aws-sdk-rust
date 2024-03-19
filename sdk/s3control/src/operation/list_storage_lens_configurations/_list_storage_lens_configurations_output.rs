@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStorageLensConfigurationsOutput {
+pub struct ListStorageLensConfigurationsOutput  {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
+    pub storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>>,
     _request_id: Option<String>,
 }
-impl ListStorageLensConfigurationsOutput {
+impl  ListStorageLensConfigurationsOutput  {
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage_lens_configuration_list.is_none()`.
-    pub fn storage_lens_configuration_list(&self) -> &[crate::types::ListStorageLensConfigurationEntry] {
-        self.storage_lens_configuration_list.as_deref().unwrap_or_default()
+    pub fn storage_lens_configuration_list(&self) -> & [crate::types::ListStorageLensConfigurationEntry] {
+        self.storage_lens_configuration_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStorageLensConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStorageLensConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput).
     pub fn builder() -> crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListStorageLensConfigurationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStorageLensConfigurationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
+    pub(crate) storage_lens_configuration_list: ::std::option::Option<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>>,
     _request_id: Option<String>,
 }
 impl ListStorageLensConfigurationsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListStorageLensConfigurationsOutputBuilder {
     }
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListStorageLensConfigurationsOutputBuilder {
     /// <p>A list of S3 Storage Lens configurations.</p>
     pub fn storage_lens_configuration_list(mut self, input: crate::types::ListStorageLensConfigurationEntry) -> Self {
         let mut v = self.storage_lens_configuration_list.unwrap_or_default();
-        v.push(input);
-        self.storage_lens_configuration_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage_lens_configuration_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn set_storage_lens_configuration_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>,
-    ) -> Self {
-        self.storage_lens_configuration_list = input;
-        self
+    pub fn set_storage_lens_configuration_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>>) -> Self {
+        self.storage_lens_configuration_list = input; self
     }
     /// <p>A list of S3 Storage Lens configurations.</p>
-    pub fn get_storage_lens_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>> {
+    pub fn get_storage_lens_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListStorageLensConfigurationEntry>> {
         &self.storage_lens_configuration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationsOutput`](crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput {
         crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsOutput {
-            next_token: self.next_token,
-            storage_lens_configuration_list: self.storage_lens_configuration_list,
+            next_token: self.next_token
+            ,
+            storage_lens_configuration_list: self.storage_lens_configuration_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

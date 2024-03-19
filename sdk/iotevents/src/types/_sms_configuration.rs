@@ -3,7 +3,7 @@
 /// <p>Contains the configuration information of SMS notifications.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmsConfiguration {
+pub struct SmsConfiguration  {
     /// <p>The sender ID.</p>
     pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
@@ -11,23 +11,22 @@ pub struct SmsConfiguration {
     /// <p>Specifies one or more recipients who receive the message.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub recipients: ::std::vec::Vec<crate::types::RecipientDetail>,
+    pub recipients: ::std::vec::Vec::<crate::types::RecipientDetail>,
 }
-impl SmsConfiguration {
+impl  SmsConfiguration  {
     /// <p>The sender ID.</p>
-    pub fn sender_id(&self) -> ::std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<& str> {
         self.sender_id.as_deref()
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(&self) -> ::std::option::Option<&str> {
+    pub fn additional_message(&self) -> ::std::option::Option<& str> {
         self.additional_message.as_deref()
     }
     /// <p>Specifies one or more recipients who receive the message.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn recipients(&self) -> &[crate::types::RecipientDetail] {
-        use std::ops::Deref;
-        self.recipients.deref()
+    pub fn recipients(&self) -> & [crate::types::RecipientDetail] {
+        use std::ops::Deref; self.recipients.deref()
     }
 }
 impl SmsConfiguration {
@@ -43,7 +42,7 @@ impl SmsConfiguration {
 pub struct SmsConfigurationBuilder {
     pub(crate) sender_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_message: ::std::option::Option<::std::string::String>,
-    pub(crate) recipients: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
+    pub(crate) recipients: ::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>>,
 }
 impl SmsConfigurationBuilder {
     /// <p>The sender ID.</p>
@@ -53,8 +52,7 @@ impl SmsConfigurationBuilder {
     }
     /// <p>The sender ID.</p>
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     /// <p>The sender ID.</p>
     pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,7 @@ impl SmsConfigurationBuilder {
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn set_additional_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.additional_message = input;
-        self
+        self.additional_message = input; self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn get_additional_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,36 +80,39 @@ impl SmsConfigurationBuilder {
     /// </important>
     pub fn recipients(mut self, input: crate::types::RecipientDetail) -> Self {
         let mut v = self.recipients.unwrap_or_default();
-        v.push(input);
-        self.recipients = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recipients = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies one or more recipients who receive the message.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>) -> Self {
-        self.recipients = input;
-        self
+    pub fn set_recipients(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>>) -> Self {
+        self.recipients = input; self
     }
     /// <p>Specifies one or more recipients who receive the message.</p><important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>> {
+    pub fn get_recipients(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecipientDetail>> {
         &self.recipients
     }
     /// Consumes the builder and constructs a [`SmsConfiguration`](crate::types::SmsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`recipients`](crate::types::builders::SmsConfigurationBuilder::recipients)
     pub fn build(self) -> ::std::result::Result<crate::types::SmsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SmsConfiguration {
-            sender_id: self.sender_id,
-            additional_message: self.additional_message,
-            recipients: self.recipients.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "recipients",
-                    "recipients was not specified but it is required when building SmsConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SmsConfiguration {
+                sender_id: self.sender_id
+                ,
+                additional_message: self.additional_message
+                ,
+                recipients: self.recipients
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("recipients", "recipients was not specified but it is required when building SmsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

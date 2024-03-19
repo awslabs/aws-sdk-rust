@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRevisionAssetsOutput {
+pub struct ListRevisionAssetsOutput  {
     /// <p>The asset objects listed by the request.</p>
-    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>,
+    pub assets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetEntry>>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListRevisionAssetsOutput {
+impl  ListRevisionAssetsOutput  {
     /// <p>The asset objects listed by the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
-    pub fn assets(&self) -> &[crate::types::AssetEntry] {
-        self.assets.as_deref().unwrap_or_default()
+    pub fn assets(&self) -> & [crate::types::AssetEntry] {
+        self.assets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRevisionAssetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRevisionAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput).
     pub fn builder() -> crate::operation::list_revision_assets::builders::ListRevisionAssetsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListRevisionAssetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRevisionAssetsOutputBuilder {
-    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec::<crate::types::AssetEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListRevisionAssetsOutputBuilder {
     /// <p>The asset objects listed by the request.</p>
     pub fn assets(mut self, input: crate::types::AssetEntry) -> Self {
         let mut v = self.assets.unwrap_or_default();
-        v.push(input);
-        self.assets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>>) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetEntry>>) -> Self {
+        self.assets = input; self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetEntry>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetEntry>> {
         &self.assets
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListRevisionAssetsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRevisionAssetsOutput`](crate::operation::list_revision_assets::ListRevisionAssetsOutput).
     pub fn build(self) -> crate::operation::list_revision_assets::ListRevisionAssetsOutput {
         crate::operation::list_revision_assets::ListRevisionAssetsOutput {
-            assets: self.assets,
-            next_token: self.next_token,
+            assets: self.assets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

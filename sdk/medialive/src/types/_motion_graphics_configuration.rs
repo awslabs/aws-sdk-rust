@@ -3,19 +3,19 @@
 /// Motion Graphics Configuration
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MotionGraphicsConfiguration {
+pub struct MotionGraphicsConfiguration  {
     /// Motion Graphics Insertion
     pub motion_graphics_insertion: ::std::option::Option<crate::types::MotionGraphicsInsertion>,
     /// Motion Graphics Settings
     pub motion_graphics_settings: ::std::option::Option<crate::types::MotionGraphicsSettings>,
 }
-impl MotionGraphicsConfiguration {
+impl  MotionGraphicsConfiguration  {
     /// Motion Graphics Insertion
-    pub fn motion_graphics_insertion(&self) -> ::std::option::Option<&crate::types::MotionGraphicsInsertion> {
+    pub fn motion_graphics_insertion(&self) -> ::std::option::Option<& crate::types::MotionGraphicsInsertion> {
         self.motion_graphics_insertion.as_ref()
     }
     /// Motion Graphics Settings
-    pub fn motion_graphics_settings(&self) -> ::std::option::Option<&crate::types::MotionGraphicsSettings> {
+    pub fn motion_graphics_settings(&self) -> ::std::option::Option<& crate::types::MotionGraphicsSettings> {
         self.motion_graphics_settings.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl MotionGraphicsConfigurationBuilder {
     }
     /// Motion Graphics Insertion
     pub fn set_motion_graphics_insertion(mut self, input: ::std::option::Option<crate::types::MotionGraphicsInsertion>) -> Self {
-        self.motion_graphics_insertion = input;
-        self
+        self.motion_graphics_insertion = input; self
     }
     /// Motion Graphics Insertion
     pub fn get_motion_graphics_insertion(&self) -> &::std::option::Option<crate::types::MotionGraphicsInsertion> {
@@ -56,8 +55,7 @@ impl MotionGraphicsConfigurationBuilder {
     }
     /// Motion Graphics Settings
     pub fn set_motion_graphics_settings(mut self, input: ::std::option::Option<crate::types::MotionGraphicsSettings>) -> Self {
-        self.motion_graphics_settings = input;
-        self
+        self.motion_graphics_settings = input; self
     }
     /// Motion Graphics Settings
     pub fn get_motion_graphics_settings(&self) -> &::std::option::Option<crate::types::MotionGraphicsSettings> {
@@ -66,8 +64,11 @@ impl MotionGraphicsConfigurationBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsConfiguration`](crate::types::MotionGraphicsConfiguration).
     pub fn build(self) -> crate::types::MotionGraphicsConfiguration {
         crate::types::MotionGraphicsConfiguration {
-            motion_graphics_insertion: self.motion_graphics_insertion,
-            motion_graphics_settings: self.motion_graphics_settings,
+            motion_graphics_insertion: self.motion_graphics_insertion
+            ,
+            motion_graphics_settings: self.motion_graphics_settings
+            ,
         }
     }
 }
+

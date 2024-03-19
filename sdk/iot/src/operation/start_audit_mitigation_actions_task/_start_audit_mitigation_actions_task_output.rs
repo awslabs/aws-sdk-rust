@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartAuditMitigationActionsTaskOutput {
+pub struct StartAuditMitigationActionsTaskOutput  {
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartAuditMitigationActionsTaskOutput {
+impl  StartAuditMitigationActionsTaskOutput  {
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartAuditMitigationActionsTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartAuditMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartAuditMitigationActionsTaskOutput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput).
     pub fn builder() -> crate::operation::start_audit_mitigation_actions_task::builders::StartAuditMitigationActionsTaskOutputBuilder {
@@ -40,27 +40,28 @@ impl StartAuditMitigationActionsTaskOutputBuilder {
     }
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier for the audit mitigation task. This matches the <code>taskId</code> that you specified in the request.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartAuditMitigationActionsTaskOutput`](crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput).
     pub fn build(self) -> crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput {
         crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput {
-            task_id: self.task_id,
+            task_id: self.task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

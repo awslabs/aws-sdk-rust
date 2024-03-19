@@ -22,11 +22,7 @@ impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToAdd`](crate::types::RelatedItemsUpdate::ItemToAdd), extracting the inner [`RelatedItem`](crate::types::RelatedItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_add(&self) -> ::std::result::Result<&crate::types::RelatedItem, &Self> {
-        if let RelatedItemsUpdate::ItemToAdd(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RelatedItemsUpdate::ItemToAdd(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ItemToAdd`](crate::types::RelatedItemsUpdate::ItemToAdd).
     pub fn is_item_to_add(&self) -> bool {
@@ -35,11 +31,7 @@ impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToRemove`](crate::types::RelatedItemsUpdate::ItemToRemove), extracting the inner [`ItemIdentifier`](crate::types::ItemIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_item_to_remove(&self) -> ::std::result::Result<&crate::types::ItemIdentifier, &Self> {
-        if let RelatedItemsUpdate::ItemToRemove(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RelatedItemsUpdate::ItemToRemove(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ItemToRemove`](crate::types::RelatedItemsUpdate::ItemToRemove).
     pub fn is_item_to_remove(&self) -> bool {
@@ -50,3 +42,4 @@ impl RelatedItemsUpdate {
         matches!(self, Self::Unknown)
     }
 }
+

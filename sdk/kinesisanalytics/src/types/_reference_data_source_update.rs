@@ -3,7 +3,7 @@
 /// <p>When you update a reference data source configuration for an application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReferenceDataSourceUpdate {
+pub struct ReferenceDataSourceUpdate  {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub reference_id: ::std::string::String,
     /// <p>In-application table name that is created by this update.</p>
@@ -13,22 +13,21 @@ pub struct ReferenceDataSourceUpdate {
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub reference_schema_update: ::std::option::Option<crate::types::SourceSchema>,
 }
-impl ReferenceDataSourceUpdate {
+impl  ReferenceDataSourceUpdate  {
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-    pub fn reference_id(&self) -> &str {
-        use std::ops::Deref;
-        self.reference_id.deref()
+    pub fn reference_id(&self) -> & str {
+        use std::ops::Deref; self.reference_id.deref()
     }
     /// <p>In-application table name that is created by this update.</p>
-    pub fn table_name_update(&self) -> ::std::option::Option<&str> {
+    pub fn table_name_update(&self) -> ::std::option::Option<& str> {
         self.table_name_update.as_deref()
     }
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
-    pub fn s3_reference_data_source_update(&self) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceUpdate> {
+    pub fn s3_reference_data_source_update(&self) -> ::std::option::Option<& crate::types::S3ReferenceDataSourceUpdate> {
         self.s3_reference_data_source_update.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    pub fn reference_schema_update(&self) -> ::std::option::Option<&crate::types::SourceSchema> {
+    pub fn reference_schema_update(&self) -> ::std::option::Option<& crate::types::SourceSchema> {
         self.reference_schema_update.as_ref()
     }
 }
@@ -57,8 +56,7 @@ impl ReferenceDataSourceUpdateBuilder {
     }
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>ID of the reference data source being updated. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +69,7 @@ impl ReferenceDataSourceUpdateBuilder {
     }
     /// <p>In-application table name that is created by this update.</p>
     pub fn set_table_name_update(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name_update = input;
-        self
+        self.table_name_update = input; self
     }
     /// <p>In-application table name that is created by this update.</p>
     pub fn get_table_name_update(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +82,7 @@ impl ReferenceDataSourceUpdateBuilder {
     }
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
     pub fn set_s3_reference_data_source_update(mut self, input: ::std::option::Option<crate::types::S3ReferenceDataSourceUpdate>) -> Self {
-        self.s3_reference_data_source_update = input;
-        self
+        self.s3_reference_data_source_update = input; self
     }
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
     pub fn get_s3_reference_data_source_update(&self) -> &::std::option::Option<crate::types::S3ReferenceDataSourceUpdate> {
@@ -99,8 +95,7 @@ impl ReferenceDataSourceUpdateBuilder {
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn set_reference_schema_update(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
-        self.reference_schema_update = input;
-        self
+        self.reference_schema_update = input; self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn get_reference_schema_update(&self) -> &::std::option::Option<crate::types::SourceSchema> {
@@ -110,16 +105,21 @@ impl ReferenceDataSourceUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`reference_id`](crate::types::builders::ReferenceDataSourceUpdateBuilder::reference_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceUpdate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ReferenceDataSourceUpdate {
-            reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reference_id",
-                    "reference_id was not specified but it is required when building ReferenceDataSourceUpdate",
-                )
-            })?,
-            table_name_update: self.table_name_update,
-            s3_reference_data_source_update: self.s3_reference_data_source_update,
-            reference_schema_update: self.reference_schema_update,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ReferenceDataSourceUpdate {
+                reference_id: self.reference_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reference_id", "reference_id was not specified but it is required when building ReferenceDataSourceUpdate")
+                    )?
+                ,
+                table_name_update: self.table_name_update
+                ,
+                s3_reference_data_source_update: self.s3_reference_data_source_update
+                ,
+                reference_schema_update: self.reference_schema_update
+                ,
+            }
+        )
     }
 }
+

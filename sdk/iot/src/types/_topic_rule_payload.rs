@@ -3,13 +3,13 @@
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TopicRulePayload {
+pub struct TopicRulePayload  {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub sql: ::std::string::String,
     /// <p>The description of the rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions associated with the rule.</p>
-    pub actions: ::std::vec::Vec<crate::types::Action>,
+    pub actions: ::std::vec::Vec::<crate::types::Action>,
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: ::std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -17,31 +17,29 @@ pub struct TopicRulePayload {
     /// <p>The action to take when an error occurs.</p>
     pub error_action: ::std::option::Option<crate::types::Action>,
 }
-impl TopicRulePayload {
+impl  TopicRulePayload  {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub fn sql(&self) -> &str {
-        use std::ops::Deref;
-        self.sql.deref()
+    pub fn sql(&self) -> & str {
+        use std::ops::Deref; self.sql.deref()
     }
     /// <p>The description of the rule.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn actions(&self) -> &[crate::types::Action] {
-        use std::ops::Deref;
-        self.actions.deref()
+    pub fn actions(&self) -> & [crate::types::Action] {
+        use std::ops::Deref; self.actions.deref()
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(&self) -> ::std::option::Option<bool> {
         self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn aws_iot_sql_version(&self) -> ::std::option::Option<&str> {
+    pub fn aws_iot_sql_version(&self) -> ::std::option::Option<& str> {
         self.aws_iot_sql_version.as_deref()
     }
     /// <p>The action to take when an error occurs.</p>
-    pub fn error_action(&self) -> ::std::option::Option<&crate::types::Action> {
+    pub fn error_action(&self) -> ::std::option::Option<& crate::types::Action> {
         self.error_action.as_ref()
     }
 }
@@ -58,7 +56,7 @@ impl TopicRulePayload {
 pub struct TopicRulePayloadBuilder {
     pub(crate) sql: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>,
     pub(crate) rule_disabled: ::std::option::Option<bool>,
     pub(crate) aws_iot_sql_version: ::std::option::Option<::std::string::String>,
     pub(crate) error_action: ::std::option::Option<crate::types::Action>,
@@ -72,8 +70,7 @@ impl TopicRulePayloadBuilder {
     }
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub fn set_sql(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sql = input;
-        self
+        self.sql = input; self
     }
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +83,7 @@ impl TopicRulePayloadBuilder {
     }
     /// <p>The description of the rule.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the rule.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,17 +96,16 @@ impl TopicRulePayloadBuilder {
     /// <p>The actions associated with the rule.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Action>> {
         &self.actions
     }
     /// <p>Specifies whether the rule is disabled.</p>
@@ -120,8 +115,7 @@ impl TopicRulePayloadBuilder {
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rule_disabled = input;
-        self
+        self.rule_disabled = input; self
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn get_rule_disabled(&self) -> &::std::option::Option<bool> {
@@ -134,8 +128,7 @@ impl TopicRulePayloadBuilder {
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn set_aws_iot_sql_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_iot_sql_version = input;
-        self
+        self.aws_iot_sql_version = input; self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn get_aws_iot_sql_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +141,7 @@ impl TopicRulePayloadBuilder {
     }
     /// <p>The action to take when an error occurs.</p>
     pub fn set_error_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
-        self.error_action = input;
-        self
+        self.error_action = input; self
     }
     /// <p>The action to take when an error occurs.</p>
     pub fn get_error_action(&self) -> &::std::option::Option<crate::types::Action> {
@@ -160,23 +152,28 @@ impl TopicRulePayloadBuilder {
     /// - [`sql`](crate::types::builders::TopicRulePayloadBuilder::sql)
     /// - [`actions`](crate::types::builders::TopicRulePayloadBuilder::actions)
     pub fn build(self) -> ::std::result::Result<crate::types::TopicRulePayload, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TopicRulePayload {
-            sql: self.sql.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sql",
-                    "sql was not specified but it is required when building TopicRulePayload",
-                )
-            })?,
-            description: self.description,
-            actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "actions",
-                    "actions was not specified but it is required when building TopicRulePayload",
-                )
-            })?,
-            rule_disabled: self.rule_disabled,
-            aws_iot_sql_version: self.aws_iot_sql_version,
-            error_action: self.error_action,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TopicRulePayload {
+                sql: self.sql
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sql", "sql was not specified but it is required when building TopicRulePayload")
+                    )?
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("actions", "actions was not specified but it is required when building TopicRulePayload")
+                    )?
+                ,
+                rule_disabled: self.rule_disabled
+                ,
+                aws_iot_sql_version: self.aws_iot_sql_version
+                ,
+                error_action: self.error_action
+                ,
+            }
+        )
     }
 }
+

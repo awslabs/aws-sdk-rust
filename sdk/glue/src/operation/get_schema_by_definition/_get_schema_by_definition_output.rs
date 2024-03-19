@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSchemaByDefinitionOutput {
+pub struct GetSchemaByDefinitionOutput  {
     /// <p>The schema ID of the schema version.</p>
     pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
@@ -15,33 +15,33 @@ pub struct GetSchemaByDefinitionOutput {
     pub created_time: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetSchemaByDefinitionOutput {
+impl  GetSchemaByDefinitionOutput  {
     /// <p>The schema ID of the schema version.</p>
-    pub fn schema_version_id(&self) -> ::std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> ::std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
+    pub fn data_format(&self) -> ::std::option::Option<& crate::types::DataFormat> {
         self.data_format.as_ref()
     }
     /// <p>The status of the schema version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SchemaVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the schema was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<& str> {
         self.created_time.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetSchemaByDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetSchemaByDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`GetSchemaByDefinitionOutput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput).
     pub fn builder() -> crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionOutputBuilder {
@@ -68,8 +68,7 @@ impl GetSchemaByDefinitionOutputBuilder {
     }
     /// <p>The schema ID of the schema version.</p>
     pub fn set_schema_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_version_id = input;
-        self
+        self.schema_version_id = input; self
     }
     /// <p>The schema ID of the schema version.</p>
     pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetSchemaByDefinitionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl GetSchemaByDefinitionOutputBuilder {
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
@@ -110,8 +107,7 @@ impl GetSchemaByDefinitionOutputBuilder {
     }
     /// <p>The status of the schema version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the schema version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
@@ -124,31 +120,36 @@ impl GetSchemaByDefinitionOutputBuilder {
     }
     /// <p>The date and time the schema was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time the schema was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetSchemaByDefinitionOutput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput).
     pub fn build(self) -> crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput {
         crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput {
-            schema_version_id: self.schema_version_id,
-            schema_arn: self.schema_arn,
-            data_format: self.data_format,
-            status: self.status,
-            created_time: self.created_time,
+            schema_version_id: self.schema_version_id
+            ,
+            schema_arn: self.schema_arn
+            ,
+            data_format: self.data_format
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

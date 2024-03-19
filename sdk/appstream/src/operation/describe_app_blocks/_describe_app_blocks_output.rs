@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppBlocksOutput {
+pub struct DescribeAppBlocksOutput  {
     /// <p>The app blocks in the list.</p>
-    pub app_blocks: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>,
+    pub app_blocks: ::std::option::Option<::std::vec::Vec::<crate::types::AppBlock>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeAppBlocksOutput {
+impl  DescribeAppBlocksOutput  {
     /// <p>The app blocks in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_blocks.is_none()`.
-    pub fn app_blocks(&self) -> &[crate::types::AppBlock] {
-        self.app_blocks.as_deref().unwrap_or_default()
+    pub fn app_blocks(&self) -> & [crate::types::AppBlock] {
+        self.app_blocks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppBlocksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAppBlocksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppBlocksOutput`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput).
     pub fn builder() -> crate::operation::describe_app_blocks::builders::DescribeAppBlocksOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeAppBlocksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppBlocksOutputBuilder {
-    pub(crate) app_blocks: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>,
+    pub(crate) app_blocks: ::std::option::Option<::std::vec::Vec::<crate::types::AppBlock>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeAppBlocksOutputBuilder {
     /// <p>The app blocks in the list.</p>
     pub fn app_blocks(mut self, input: crate::types::AppBlock) -> Self {
         let mut v = self.app_blocks.unwrap_or_default();
-        v.push(input);
-        self.app_blocks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.app_blocks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The app blocks in the list.</p>
-    pub fn set_app_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppBlock>>) -> Self {
-        self.app_blocks = input;
-        self
+    pub fn set_app_blocks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AppBlock>>) -> Self {
+        self.app_blocks = input; self
     }
     /// <p>The app blocks in the list.</p>
-    pub fn get_app_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlock>> {
+    pub fn get_app_blocks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AppBlock>> {
         &self.app_blocks
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -69,28 +69,30 @@ impl DescribeAppBlocksOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAppBlocksOutput`](crate::operation::describe_app_blocks::DescribeAppBlocksOutput).
     pub fn build(self) -> crate::operation::describe_app_blocks::DescribeAppBlocksOutput {
         crate::operation::describe_app_blocks::DescribeAppBlocksOutput {
-            app_blocks: self.app_blocks,
-            next_token: self.next_token,
+            app_blocks: self.app_blocks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

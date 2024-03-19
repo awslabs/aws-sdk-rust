@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListProviderServices`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token from the previous API call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
     ///   - [`provider_name(impl Into<String>)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::provider_name) / [`set_provider_name(Option<String>)`](crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::set_provider_name):<br>required: **false**<br><p>The name of the provider. This name is typically the company name.</p><br>
-    /// - On success, responds with [`ListProviderServicesOutput`](crate::operation::list_provider_services::ListProviderServicesOutput) with field(s):
+                            /// - On success, responds with [`ListProviderServicesOutput`](crate::operation::list_provider_services::ListProviderServicesOutput) with field(s):
     ///   - [`provider_service_summaries(Option<Vec::<ProviderServiceSummary>>)`](crate::operation::list_provider_services::ListProviderServicesOutput::provider_service_summaries): <p>A list of <code>ProviderServices</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_provider_services::ListProviderServicesOutput::next_token): <p>The pagination token from the previous API call.</p>
-    /// - On failure, responds with [`SdkError<ListProviderServicesError>`](crate::operation::list_provider_services::ListProviderServicesError)
+                            /// - On failure, responds with [`SdkError<ListProviderServicesError>`](crate::operation::list_provider_services::ListProviderServicesError)
     pub fn list_provider_services(&self) -> crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder {
-        crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_provider_services::builders::ListProviderServicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

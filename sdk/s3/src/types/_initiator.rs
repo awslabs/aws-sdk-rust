@@ -3,7 +3,7 @@
 /// <p>Container element that identifies who initiated the multipart upload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Initiator {
+pub struct Initiator  {
     /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p><note>
     /// <p><b>Directory buckets</b> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</p>
     /// </note>
@@ -13,17 +13,17 @@ pub struct Initiator {
     /// </note>
     pub display_name: ::std::option::Option<::std::string::String>,
 }
-impl Initiator {
+impl  Initiator  {
     /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p><note>
     /// <p><b>Directory buckets</b> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</p>
     /// </note>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Name of the Principal.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -53,8 +53,7 @@ impl InitiatorBuilder {
     /// <p><b>Directory buckets</b> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</p>
     /// </note>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p><note>
     /// <p><b>Directory buckets</b> - If the principal is an Amazon Web Services account, it provides the Amazon Web Services account ID. If the principal is an IAM User, it provides a user ARN value.</p>
@@ -73,8 +72,7 @@ impl InitiatorBuilder {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>Name of the Principal.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -85,8 +83,11 @@ impl InitiatorBuilder {
     /// Consumes the builder and constructs a [`Initiator`](crate::types::Initiator).
     pub fn build(self) -> crate::types::Initiator {
         crate::types::Initiator {
-            id: self.id,
-            display_name: self.display_name,
+            id: self.id
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

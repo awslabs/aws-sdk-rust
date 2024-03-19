@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSecurityConfigurationsInput {
+pub struct ListSecurityConfigurationsInput  {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub marker: ::std::option::Option<::std::string::String>,
 }
-impl ListSecurityConfigurationsInput {
+impl  ListSecurityConfigurationsInput  {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -33,20 +33,20 @@ impl ListSecurityConfigurationsInputBuilder {
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListSecurityConfigurationsInput`](crate::operation::list_security_configurations::ListSecurityConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_security_configurations::ListSecurityConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_security_configurations::ListSecurityConfigurationsInput { marker: self.marker })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_security_configurations::ListSecurityConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_security_configurations::ListSecurityConfigurationsInput {
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
+

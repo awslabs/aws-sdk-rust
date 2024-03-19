@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a MySQL endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MySqlSettings {
+pub struct MySqlSettings  {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
     pub after_connect_script: ::std::option::Option<::std::string::String>,
@@ -47,10 +47,10 @@ pub struct MySqlSettings {
     /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
     pub execute_timeout: ::std::option::Option<i32>,
 }
-impl MySqlSettings {
+impl  MySqlSettings  {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
-    pub fn after_connect_script(&self) -> ::std::option::Option<&str> {
+    pub fn after_connect_script(&self) -> ::std::option::Option<& str> {
         self.after_connect_script.as_deref()
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance.</p>
@@ -58,7 +58,7 @@ impl MySqlSettings {
         self.clean_source_metadata_on_mismatch
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
@@ -69,7 +69,7 @@ impl MySqlSettings {
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code></p>
-    pub fn target_db_type(&self) -> ::std::option::Option<&crate::types::TargetDbType> {
+    pub fn target_db_type(&self) -> ::std::option::Option<& crate::types::TargetDbType> {
         self.target_db_type.as_ref()
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
@@ -83,7 +83,7 @@ impl MySqlSettings {
         self.parallel_load_threads
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>Endpoint TCP port.</p>
@@ -93,27 +93,27 @@ impl MySqlSettings {
     /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code></p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn server_timezone(&self) -> ::std::option::Option<&str> {
+    pub fn server_timezone(&self) -> ::std::option::Option<& str> {
         self.server_timezone.as_deref()
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
@@ -121,7 +121,7 @@ impl MySqlSettings {
         self.execute_timeout
     }
 }
-impl ::std::fmt::Debug for MySqlSettings {
+impl  ::std::fmt::Debug for MySqlSettings  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlSettings");
         formatter.field("after_connect_script", &self.after_connect_script);
@@ -179,8 +179,7 @@ impl MySqlSettingsBuilder {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
     pub fn set_after_connect_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_connect_script = input;
-        self
+        self.after_connect_script = input; self
     }
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
@@ -194,8 +193,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance.</p>
     pub fn set_clean_source_metadata_on_mismatch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.clean_source_metadata_on_mismatch = input;
-        self
+        self.clean_source_metadata_on_mismatch = input; self
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance.</p>
     pub fn get_clean_source_metadata_on_mismatch(&self) -> &::std::option::Option<bool> {
@@ -208,8 +206,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +223,7 @@ impl MySqlSettingsBuilder {
     /// <p>Example: <code>eventsPollInterval=5;</code></p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
     pub fn set_events_poll_interval(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.events_poll_interval = input;
-        self
+        self.events_poll_interval = input; self
     }
     /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code></p>
@@ -244,8 +240,7 @@ impl MySqlSettingsBuilder {
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code></p>
     pub fn set_target_db_type(mut self, input: ::std::option::Option<crate::types::TargetDbType>) -> Self {
-        self.target_db_type = input;
-        self
+        self.target_db_type = input; self
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code></p>
@@ -261,8 +256,7 @@ impl MySqlSettingsBuilder {
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
     pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_file_size = input;
-        self
+        self.max_file_size = input; self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code></p>
@@ -278,8 +272,7 @@ impl MySqlSettingsBuilder {
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code></p>
     pub fn set_parallel_load_threads(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.parallel_load_threads = input;
-        self
+        self.parallel_load_threads = input; self
     }
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code></p>
@@ -293,8 +286,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Endpoint connection password.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>Endpoint connection password.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +299,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Endpoint TCP port.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Endpoint TCP port.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -325,8 +316,7 @@ impl MySqlSettingsBuilder {
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The host name of the endpoint database.</p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
@@ -345,8 +335,7 @@ impl MySqlSettingsBuilder {
     /// <p>Example: <code>serverTimezone=US/Pacific;</code></p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
     pub fn set_server_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_timezone = input;
-        self
+        self.server_timezone = input; self
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code></p>
@@ -361,8 +350,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Endpoint connection user name.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>Endpoint connection user name.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -379,8 +367,7 @@ impl MySqlSettingsBuilder {
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     pub fn set_secrets_manager_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p><note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -395,8 +382,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
     pub fn set_secrets_manager_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
     pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -409,8 +395,7 @@ impl MySqlSettingsBuilder {
     }
     /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
     pub fn set_execute_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execute_timeout = input;
-        self
+        self.execute_timeout = input; self
     }
     /// <p>Sets the client statement timeout (in seconds) for a MySQL source endpoint.</p>
     pub fn get_execute_timeout(&self) -> &::std::option::Option<i32> {
@@ -419,21 +404,36 @@ impl MySqlSettingsBuilder {
     /// Consumes the builder and constructs a [`MySqlSettings`](crate::types::MySqlSettings).
     pub fn build(self) -> crate::types::MySqlSettings {
         crate::types::MySqlSettings {
-            after_connect_script: self.after_connect_script,
-            clean_source_metadata_on_mismatch: self.clean_source_metadata_on_mismatch,
-            database_name: self.database_name,
-            events_poll_interval: self.events_poll_interval,
-            target_db_type: self.target_db_type,
-            max_file_size: self.max_file_size,
-            parallel_load_threads: self.parallel_load_threads,
-            password: self.password,
-            port: self.port,
-            server_name: self.server_name,
-            server_timezone: self.server_timezone,
-            username: self.username,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            execute_timeout: self.execute_timeout,
+            after_connect_script: self.after_connect_script
+            ,
+            clean_source_metadata_on_mismatch: self.clean_source_metadata_on_mismatch
+            ,
+            database_name: self.database_name
+            ,
+            events_poll_interval: self.events_poll_interval
+            ,
+            target_db_type: self.target_db_type
+            ,
+            max_file_size: self.max_file_size
+            ,
+            parallel_load_threads: self.parallel_load_threads
+            ,
+            password: self.password
+            ,
+            port: self.port
+            ,
+            server_name: self.server_name
+            ,
+            server_timezone: self.server_timezone
+            ,
+            username: self.username
+            ,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+            ,
+            secrets_manager_secret_id: self.secrets_manager_secret_id
+            ,
+            execute_timeout: self.execute_timeout
+            ,
         }
     }
 }
@@ -458,3 +458,4 @@ impl ::std::fmt::Debug for MySqlSettingsBuilder {
         formatter.finish()
     }
 }
+

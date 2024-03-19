@@ -5,55 +5,51 @@ pub use crate::operation::create_private_virtual_interface::_create_private_virt
 
 impl CreatePrivateVirtualInterfaceInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_private_virtual_interface();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_private_virtual_interface();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreatePrivateVirtualInterface`.
-///
+/// 
 /// <p>Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p>
 /// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
+                    inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-    > for CreatePrivateVirtualInterfaceFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
+                    crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
+                > for CreatePrivateVirtualInterfaceFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
+                        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreatePrivateVirtualInterfaceFluentBuilder {
     /// Creates a new `CreatePrivateVirtualInterface`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
-        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput, crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connection_id(input.into());
@@ -138,3 +125,4 @@ impl CreatePrivateVirtualInterfaceFluentBuilder {
         self.inner.get_new_private_virtual_interface()
     }
 }
+

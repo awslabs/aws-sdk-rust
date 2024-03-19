@@ -3,13 +3,13 @@
 /// <p>A daily schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DailySchedule {
+pub struct DailySchedule  {
     /// <p>The schedule start time.</p>
     pub start_time: ::std::option::Option<crate::types::Time>,
 }
-impl DailySchedule {
+impl  DailySchedule  {
     /// <p>The schedule start time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&crate::types::Time> {
+    pub fn start_time(&self) -> ::std::option::Option<& crate::types::Time> {
         self.start_time.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DailyScheduleBuilder {
     }
     /// <p>The schedule start time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::Time>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The schedule start time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<crate::types::Time> {
@@ -44,6 +43,10 @@ impl DailyScheduleBuilder {
     }
     /// Consumes the builder and constructs a [`DailySchedule`](crate::types::DailySchedule).
     pub fn build(self) -> crate::types::DailySchedule {
-        crate::types::DailySchedule { start_time: self.start_time }
+        crate::types::DailySchedule {
+            start_time: self.start_time
+            ,
+        }
     }
 }
+

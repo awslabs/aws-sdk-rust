@@ -4,7 +4,7 @@
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The name of the component.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -32,64 +32,61 @@ pub struct ComponentSummary {
     /// <p>The ID of the last successful deployment of this component.</p>
     pub last_succeeded_deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl ComponentSummary {
+impl  ComponentSummary  {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> & str {
+        use std::ops::Deref; self.environment_name.deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The time when the component was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn last_modified_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_at
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The component deployment status.</p>
-    pub fn deployment_status(&self) -> &crate::types::DeploymentStatus {
+    pub fn deployment_status(&self) -> & crate::types::DeploymentStatus {
         &self.deployment_status
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> ::std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
-    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_attempted_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_attempted_deployment_id.as_deref()
     }
     /// <p>The ID of the last successful deployment of this component.</p>
-    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_succeeded_deployment_id(&self) -> ::std::option::Option<& str> {
         self.last_succeeded_deployment_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for ComponentSummary {
+impl  ::std::fmt::Debug for ComponentSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentSummary");
         formatter.field("name", &self.name);
@@ -142,8 +139,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +153,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +167,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -186,8 +180,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -200,8 +193,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn set_service_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_instance_name = input;
-        self
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +207,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The time when the component was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time when the component was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -230,8 +221,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The time when the component was last modified.</p>
     pub fn set_last_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_at = input;
-        self
+        self.last_modified_at = input; self
     }
     /// <p>The time when the component was last modified.</p>
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -244,8 +234,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
     pub fn set_last_deployment_attempted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_attempted_at = input;
-        self
+        self.last_deployment_attempted_at = input; self
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
     pub fn get_last_deployment_attempted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +247,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The time when the component was last deployed successfully.</p>
     pub fn set_last_deployment_succeeded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_succeeded_at = input;
-        self
+        self.last_deployment_succeeded_at = input; self
     }
     /// <p>The time when the component was last deployed successfully.</p>
     pub fn get_last_deployment_succeeded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -273,8 +261,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The component deployment status.</p>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input;
-        self
+        self.deployment_status = input; self
     }
     /// <p>The component deployment status.</p>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
@@ -287,8 +274,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The message associated with the component deployment status.</p>
     pub fn set_deployment_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_status_message = input;
-        self
+        self.deployment_status_message = input; self
     }
     /// <p>The message associated with the component deployment status.</p>
     pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -301,8 +287,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
     pub fn set_last_attempted_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_attempted_deployment_id = input;
-        self
+        self.last_attempted_deployment_id = input; self
     }
     /// <p>The ID of the last attempted deployment of this component.</p>
     pub fn get_last_attempted_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,8 +300,7 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the last successful deployment of this component.</p>
     pub fn set_last_succeeded_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_succeeded_deployment_id = input;
-        self
+        self.last_succeeded_deployment_id = input; self
     }
     /// <p>The ID of the last successful deployment of this component.</p>
     pub fn get_last_succeeded_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -331,51 +315,54 @@ impl ComponentSummaryBuilder {
     /// - [`last_modified_at`](crate::types::builders::ComponentSummaryBuilder::last_modified_at)
     /// - [`deployment_status`](crate::types::builders::ComponentSummaryBuilder::deployment_status)
     pub fn build(self) -> ::std::result::Result<crate::types::ComponentSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ComponentSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            service_name: self.service_name,
-            service_instance_name: self.service_instance_name,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_at",
-                    "last_modified_at was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            last_deployment_attempted_at: self.last_deployment_attempted_at,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at,
-            deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_status",
-                    "deployment_status was not specified but it is required when building ComponentSummary",
-                )
-            })?,
-            deployment_status_message: self.deployment_status_message,
-            last_attempted_deployment_id: self.last_attempted_deployment_id,
-            last_succeeded_deployment_id: self.last_succeeded_deployment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ComponentSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                environment_name: self.environment_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_name", "environment_name was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                service_name: self.service_name
+                ,
+                service_instance_name: self.service_instance_name
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                last_modified_at: self.last_modified_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_at", "last_modified_at was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                last_deployment_attempted_at: self.last_deployment_attempted_at
+                ,
+                last_deployment_succeeded_at: self.last_deployment_succeeded_at
+                ,
+                deployment_status: self.deployment_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_status", "deployment_status was not specified but it is required when building ComponentSummary")
+                    )?
+                ,
+                deployment_status_message: self.deployment_status_message
+                ,
+                last_attempted_deployment_id: self.last_attempted_deployment_id
+                ,
+                last_succeeded_deployment_id: self.last_succeeded_deployment_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ComponentSummaryBuilder {
@@ -397,3 +384,4 @@ impl ::std::fmt::Debug for ComponentSummaryBuilder {
         formatter.finish()
     }
 }
+

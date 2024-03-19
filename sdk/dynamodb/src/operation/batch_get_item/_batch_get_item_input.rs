@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>BatchGetItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetItemInput {
+pub struct BatchGetItemInput  {
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
@@ -46,7 +46,7 @@ pub struct BatchGetItemInput {
     /// <li>
     /// <p><code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p></li>
     /// </ul>
-    pub request_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
+    pub request_items: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
     /// <li>
@@ -59,7 +59,7 @@ pub struct BatchGetItemInput {
     /// </ul>
     pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
 }
-impl BatchGetItemInput {
+impl  BatchGetItemInput  {
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
     /// <ul>
@@ -102,7 +102,7 @@ impl BatchGetItemInput {
     /// <li>
     /// <p><code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn request_items(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>> {
+    pub fn request_items(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>> {
         self.request_items.as_ref()
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -115,7 +115,7 @@ impl BatchGetItemInput {
     /// <li>
     /// <p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
-    pub fn return_consumed_capacity(&self) -> ::std::option::Option<&crate::types::ReturnConsumedCapacity> {
+    pub fn return_consumed_capacity(&self) -> ::std::option::Option<& crate::types::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
 }
@@ -130,7 +130,7 @@ impl BatchGetItemInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetItemInputBuilder {
-    pub(crate) request_items: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
+    pub(crate) request_items: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>,
     pub(crate) return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
 }
 impl BatchGetItemInputBuilder {
@@ -182,9 +182,9 @@ impl BatchGetItemInputBuilder {
     /// </ul>
     pub fn request_items(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::KeysAndAttributes) -> Self {
         let mut hash_map = self.request_items.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.request_items = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.request_items = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
@@ -228,12 +228,8 @@ impl BatchGetItemInputBuilder {
     /// <li>
     /// <p><code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn set_request_items(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>>,
-    ) -> Self {
-        self.request_items = input;
-        self
+    pub fn set_request_items(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>>) -> Self {
+        self.request_items = input; self
     }
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
@@ -277,7 +273,7 @@ impl BatchGetItemInputBuilder {
     /// <li>
     /// <p><code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p></li>
     /// </ul>
-    pub fn get_request_items(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>> {
+    pub fn get_request_items(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::KeysAndAttributes>> {
         &self.request_items
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -305,8 +301,7 @@ impl BatchGetItemInputBuilder {
     /// <p><code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p></li>
     /// </ul>
     pub fn set_return_consumed_capacity(mut self, input: ::std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
-        self.return_consumed_capacity = input;
-        self
+        self.return_consumed_capacity = input; self
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -322,12 +317,15 @@ impl BatchGetItemInputBuilder {
         &self.return_consumed_capacity
     }
     /// Consumes the builder and constructs a [`BatchGetItemInput`](crate::operation::batch_get_item::BatchGetItemInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_item::BatchGetItemInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_item::BatchGetItemInput {
-            request_items: self.request_items,
-            return_consumed_capacity: self.return_consumed_capacity,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_item::BatchGetItemInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_item::BatchGetItemInput {
+                request_items: self.request_items
+                ,
+                return_consumed_capacity: self.return_consumed_capacity
+                ,
+            }
+        )
     }
 }
+

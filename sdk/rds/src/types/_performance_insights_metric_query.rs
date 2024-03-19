@@ -8,7 +8,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PerformanceInsightsMetricQuery {
+pub struct PerformanceInsightsMetricQuery  {
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub group_by: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -24,9 +24,9 @@ pub struct PerformanceInsightsMetricQuery {
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub metric: ::std::option::Option<::std::string::String>,
 }
-impl PerformanceInsightsMetricQuery {
+impl  PerformanceInsightsMetricQuery  {
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricDimensionGroup> {
+    pub fn group_by(&self) -> ::std::option::Option<& crate::types::PerformanceInsightsMetricDimensionGroup> {
         self.group_by.as_ref()
     }
     /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -40,7 +40,7 @@ impl PerformanceInsightsMetricQuery {
     /// <p>The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
-    pub fn metric(&self) -> ::std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<& str> {
         self.metric.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights will return all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup> {
@@ -100,8 +99,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid Values:</p>
@@ -120,8 +118,11 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// Consumes the builder and constructs a [`PerformanceInsightsMetricQuery`](crate::types::PerformanceInsightsMetricQuery).
     pub fn build(self) -> crate::types::PerformanceInsightsMetricQuery {
         crate::types::PerformanceInsightsMetricQuery {
-            group_by: self.group_by,
-            metric: self.metric,
+            group_by: self.group_by
+            ,
+            metric: self.metric
+            ,
         }
     }
 }
+

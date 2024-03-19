@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyInstanceCapacityReservationAttributesOutput {
+pub struct ModifyInstanceCapacityReservationAttributesOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl ModifyInstanceCapacityReservationAttributesOutput {
+impl  ModifyInstanceCapacityReservationAttributesOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyInstanceCapacityReservationAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyInstanceCapacityReservationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder {
-        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder {
+        crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,28 @@ impl ModifyInstanceCapacityReservationAttributesOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyInstanceCapacityReservationAttributesOutput`](crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput).
     pub fn build(self) -> crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput {
         crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput {
-            r#return: self.r#return,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

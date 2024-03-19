@@ -3,7 +3,7 @@
 /// <p>Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuditMitigationActionExecutionMetadata {
+pub struct AuditMitigationActionExecutionMetadata  {
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
@@ -23,41 +23,41 @@ pub struct AuditMitigationActionExecutionMetadata {
     /// <p>If an error occurred, a message that describes the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AuditMitigationActionExecutionMetadata {
+impl  AuditMitigationActionExecutionMetadata  {
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
-    pub fn task_id(&self) -> ::std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
-    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<& str> {
         self.finding_id.as_deref()
     }
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
-    pub fn action_id(&self) -> ::std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The current status of the task being executed.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AuditMitigationActionsExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AuditMitigationActionsExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the task was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>If an error occurred, a message that describes the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier for the task that applies the mitigation action.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +103,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// <p>The unique identifier for the findings to which the task and associated mitigation action are applied.</p>
     pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +116,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The friendly name of the mitigation action being applied by the task.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +129,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The unique identifier for the mitigation action being applied by the task.</p>
     pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +142,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The current status of the task being executed.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the task being executed.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
@@ -160,8 +155,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The date and time when the task was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time when the task was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -174,8 +168,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time when the task was completed or canceled. Blank if the task is still running.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -188,8 +181,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>If an error occurred, the code that indicates which type of error occurred.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,8 +194,7 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     }
     /// <p>If an error occurred, a message that describes the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>If an error occurred, a message that describes the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,15 +203,25 @@ impl AuditMitigationActionExecutionMetadataBuilder {
     /// Consumes the builder and constructs a [`AuditMitigationActionExecutionMetadata`](crate::types::AuditMitigationActionExecutionMetadata).
     pub fn build(self) -> crate::types::AuditMitigationActionExecutionMetadata {
         crate::types::AuditMitigationActionExecutionMetadata {
-            task_id: self.task_id,
-            finding_id: self.finding_id,
-            action_name: self.action_name,
-            action_id: self.action_id,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            error_code: self.error_code,
-            message: self.message,
+            task_id: self.task_id
+            ,
+            finding_id: self.finding_id
+            ,
+            action_name: self.action_name
+            ,
+            action_id: self.action_id
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

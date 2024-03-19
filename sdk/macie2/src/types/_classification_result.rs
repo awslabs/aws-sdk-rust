@@ -3,7 +3,7 @@
 /// <p>Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the sensitive data that was detected.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClassificationResult {
+pub struct ClassificationResult  {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).</p>
     pub additional_occurrences: ::std::option::Option<bool>,
@@ -12,38 +12,39 @@ pub struct ClassificationResult {
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
     pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
+    pub sensitive_data: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataItem>>,
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     pub size_classified: ::std::option::Option<i64>,
     /// <p>The status of the finding.</p>
     pub status: ::std::option::Option<crate::types::ClassificationResultStatus>,
 }
-impl ClassificationResult {
+impl  ClassificationResult  {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).</p>
     pub fn additional_occurrences(&self) -> ::std::option::Option<bool> {
         self.additional_occurrences
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
-    pub fn custom_data_identifiers(&self) -> ::std::option::Option<&crate::types::CustomDataIdentifiers> {
+    pub fn custom_data_identifiers(&self) -> ::std::option::Option<& crate::types::CustomDataIdentifiers> {
         self.custom_data_identifiers.as_ref()
     }
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
-    pub fn mime_type(&self) -> ::std::option::Option<&str> {
+    pub fn mime_type(&self) -> ::std::option::Option<& str> {
         self.mime_type.as_deref()
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sensitive_data.is_none()`.
-    pub fn sensitive_data(&self) -> &[crate::types::SensitiveDataItem] {
-        self.sensitive_data.as_deref().unwrap_or_default()
+    pub fn sensitive_data(&self) -> & [crate::types::SensitiveDataItem] {
+        self.sensitive_data.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     pub fn size_classified(&self) -> ::std::option::Option<i64> {
         self.size_classified
     }
     /// <p>The status of the finding.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ClassificationResultStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ClassificationResultStatus> {
         self.status.as_ref()
     }
 }
@@ -61,7 +62,7 @@ pub struct ClassificationResultBuilder {
     pub(crate) additional_occurrences: ::std::option::Option<bool>,
     pub(crate) custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiers>,
     pub(crate) mime_type: ::std::option::Option<::std::string::String>,
-    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>,
+    pub(crate) sensitive_data: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataItem>>,
     pub(crate) size_classified: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ClassificationResultStatus>,
 }
@@ -75,8 +76,7 @@ impl ClassificationResultBuilder {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).</p>
     pub fn set_additional_occurrences(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.additional_occurrences = input;
-        self
+        self.additional_occurrences = input; self
     }
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (classificationDetails.detailedResultsLocation).</p>
@@ -90,8 +90,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
     pub fn set_custom_data_identifiers(mut self, input: ::std::option::Option<crate::types::CustomDataIdentifiers>) -> Self {
-        self.custom_data_identifiers = input;
-        self
+        self.custom_data_identifiers = input; self
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
     pub fn get_custom_data_identifiers(&self) -> &::std::option::Option<crate::types::CustomDataIdentifiers> {
@@ -104,8 +103,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
     pub fn set_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mime_type = input;
-        self
+        self.mime_type = input; self
     }
     /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
     pub fn get_mime_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,17 +116,16 @@ impl ClassificationResultBuilder {
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
     pub fn sensitive_data(mut self, input: crate::types::SensitiveDataItem) -> Self {
         let mut v = self.sensitive_data.unwrap_or_default();
-        v.push(input);
-        self.sensitive_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sensitive_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>>) -> Self {
-        self.sensitive_data = input;
-        self
+    pub fn set_sensitive_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataItem>>) -> Self {
+        self.sensitive_data = input; self
     }
     /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
-    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataItem>> {
+    pub fn get_sensitive_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SensitiveDataItem>> {
         &self.sensitive_data
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
@@ -138,8 +135,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     pub fn set_size_classified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_classified = input;
-        self
+        self.size_classified = input; self
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     pub fn get_size_classified(&self) -> &::std::option::Option<i64> {
@@ -152,8 +148,7 @@ impl ClassificationResultBuilder {
     }
     /// <p>The status of the finding.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClassificationResultStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the finding.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClassificationResultStatus> {
@@ -162,12 +157,19 @@ impl ClassificationResultBuilder {
     /// Consumes the builder and constructs a [`ClassificationResult`](crate::types::ClassificationResult).
     pub fn build(self) -> crate::types::ClassificationResult {
         crate::types::ClassificationResult {
-            additional_occurrences: self.additional_occurrences,
-            custom_data_identifiers: self.custom_data_identifiers,
-            mime_type: self.mime_type,
-            sensitive_data: self.sensitive_data,
-            size_classified: self.size_classified,
-            status: self.status,
+            additional_occurrences: self.additional_occurrences
+            ,
+            custom_data_identifiers: self.custom_data_identifiers
+            ,
+            mime_type: self.mime_type
+            ,
+            sensitive_data: self.sensitive_data
+            ,
+            size_classified: self.size_classified
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

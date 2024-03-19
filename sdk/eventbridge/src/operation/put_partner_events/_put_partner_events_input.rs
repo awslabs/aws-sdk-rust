@@ -2,16 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutPartnerEventsInput {
+pub struct PutPartnerEventsInput  {
     /// <p>The list of events to write to the event bus.</p>
-    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutPartnerEventsRequestEntry>>,
 }
-impl PutPartnerEventsInput {
+impl  PutPartnerEventsInput  {
     /// <p>The list of events to write to the event bus.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
-    pub fn entries(&self) -> &[crate::types::PutPartnerEventsRequestEntry] {
-        self.entries.as_deref().unwrap_or_default()
+    pub fn entries(&self) -> & [crate::types::PutPartnerEventsRequestEntry] {
+        self.entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutPartnerEventsInput {
@@ -25,7 +26,7 @@ impl PutPartnerEventsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutPartnerEventsInputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::PutPartnerEventsRequestEntry>>,
 }
 impl PutPartnerEventsInputBuilder {
     /// Appends an item to `entries`.
@@ -35,23 +36,26 @@ impl PutPartnerEventsInputBuilder {
     /// <p>The list of events to write to the event bus.</p>
     pub fn entries(mut self, input: crate::types::PutPartnerEventsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of events to write to the event bus.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PutPartnerEventsRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The list of events to write to the event bus.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PutPartnerEventsRequestEntry>> {
         &self.entries
     }
     /// Consumes the builder and constructs a [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_partner_events::PutPartnerEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_partner_events::PutPartnerEventsInput { entries: self.entries })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_partner_events::PutPartnerEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_partner_events::PutPartnerEventsInput {
+                entries: self.entries
+                ,
+            }
+        )
     }
 }
+

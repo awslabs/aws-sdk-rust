@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKmsEncryptionKeyInput {}
+pub struct GetKmsEncryptionKeyInput  {
+}
 impl GetKmsEncryptionKeyInput {
     /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
     pub fn builder() -> crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyInputBuilder {
@@ -13,13 +14,15 @@ impl GetKmsEncryptionKeyInput {
 /// A builder for [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetKmsEncryptionKeyInputBuilder {}
+pub struct GetKmsEncryptionKeyInputBuilder {
+}
 impl GetKmsEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetKmsEncryptionKeyInput`](crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput {
+            }
+        )
     }
 }
+

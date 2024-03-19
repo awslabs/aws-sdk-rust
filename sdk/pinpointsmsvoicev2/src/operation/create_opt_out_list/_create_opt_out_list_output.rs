@@ -2,42 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOptOutListOutput {
+pub struct CreateOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
     pub opt_out_list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the new OptOutList.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateOptOutListOutput {
+impl  CreateOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateOptOutListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`CreateOptOutListOutput`](crate::operation::create_opt_out_list::CreateOptOutListOutput).
     pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListOutputBuilder {
@@ -51,7 +52,7 @@ impl CreateOptOutListOutput {
 pub struct CreateOptOutListOutputBuilder {
     pub(crate) opt_out_list_arn: ::std::option::Option<::std::string::String>,
     pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -63,8 +64,7 @@ impl CreateOptOutListOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
     pub fn set_opt_out_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
     pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +77,7 @@ impl CreateOptOutListOutputBuilder {
     }
     /// <p>The name of the new OptOutList.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The name of the new OptOutList.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,17 +90,16 @@ impl CreateOptOutListOutputBuilder {
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -111,30 +109,34 @@ impl CreateOptOutListOutputBuilder {
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateOptOutListOutput`](crate::operation::create_opt_out_list::CreateOptOutListOutput).
     pub fn build(self) -> crate::operation::create_opt_out_list::CreateOptOutListOutput {
         crate::operation::create_opt_out_list::CreateOptOutListOutput {
-            opt_out_list_arn: self.opt_out_list_arn,
-            opt_out_list_name: self.opt_out_list_name,
-            tags: self.tags,
-            created_timestamp: self.created_timestamp,
+            opt_out_list_arn: self.opt_out_list_arn
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            tags: self.tags
+            ,
+            created_timestamp: self.created_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

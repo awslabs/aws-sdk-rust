@@ -3,7 +3,7 @@
 /// <p>A summary of the export job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportJobSummary {
+pub struct ExportJobSummary  {
     /// <p>The export job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The source type of the export job.</p>
@@ -15,25 +15,25 @@ pub struct ExportJobSummary {
     /// <p>The timestamp of when the export job was completed.</p>
     pub completed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ExportJobSummary {
+impl  ExportJobSummary  {
     /// <p>The export job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The source type of the export job.</p>
-    pub fn export_source_type(&self) -> ::std::option::Option<&crate::types::ExportSourceType> {
+    pub fn export_source_type(&self) -> ::std::option::Option<& crate::types::ExportSourceType> {
         self.export_source_type.as_ref()
     }
     /// <p>The status of the export job.</p>
-    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The timestamp of when the export job was created.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp of when the export job was completed.</p>
-    pub fn completed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl ExportJobSummaryBuilder {
     }
     /// <p>The export job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The export job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ExportJobSummaryBuilder {
     }
     /// <p>The source type of the export job.</p>
     pub fn set_export_source_type(mut self, input: ::std::option::Option<crate::types::ExportSourceType>) -> Self {
-        self.export_source_type = input;
-        self
+        self.export_source_type = input; self
     }
     /// <p>The source type of the export job.</p>
     pub fn get_export_source_type(&self) -> &::std::option::Option<crate::types::ExportSourceType> {
@@ -90,8 +88,7 @@ impl ExportJobSummaryBuilder {
     }
     /// <p>The status of the export job.</p>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>The status of the export job.</p>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
@@ -104,8 +101,7 @@ impl ExportJobSummaryBuilder {
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was created.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -118,8 +114,7 @@ impl ExportJobSummaryBuilder {
     }
     /// <p>The timestamp of when the export job was completed.</p>
     pub fn set_completed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.completed_timestamp = input;
-        self
+        self.completed_timestamp = input; self
     }
     /// <p>The timestamp of when the export job was completed.</p>
     pub fn get_completed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,11 +123,17 @@ impl ExportJobSummaryBuilder {
     /// Consumes the builder and constructs a [`ExportJobSummary`](crate::types::ExportJobSummary).
     pub fn build(self) -> crate::types::ExportJobSummary {
         crate::types::ExportJobSummary {
-            job_id: self.job_id,
-            export_source_type: self.export_source_type,
-            job_status: self.job_status,
-            created_timestamp: self.created_timestamp,
-            completed_timestamp: self.completed_timestamp,
+            job_id: self.job_id
+            ,
+            export_source_type: self.export_source_type
+            ,
+            job_status: self.job_status
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            completed_timestamp: self.completed_timestamp
+            ,
         }
     }
 }
+

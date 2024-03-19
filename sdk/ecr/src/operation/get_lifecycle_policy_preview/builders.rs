@@ -5,54 +5,50 @@ pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_pr
 
 impl GetLifecyclePolicyPreviewInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_lifecycle_policy_preview();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_lifecycle_policy_preview();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetLifecyclePolicyPreview`.
-///
+/// 
 /// <p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyPreviewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder,
+                    inner: crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
-    > for GetLifecyclePolicyPreviewFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
-            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
+                    crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+                > for GetLifecyclePolicyPreviewFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
+                        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetLifecyclePolicyPreviewFluentBuilder {
     /// Creates a new `GetLifecyclePolicyPreview`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl GetLifecyclePolicyPreviewFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreview::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput, crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator {
-        crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator {
+                                crate::operation::get_lifecycle_policy_preview::paginator::GetLifecyclePolicyPreviewPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -152,12 +139,12 @@ impl GetLifecyclePolicyPreviewFluentBuilder {
         self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
+    pub fn set_image_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>>) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ImageIdentifier>> {
         self.inner.get_image_ids()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
@@ -203,3 +190,4 @@ impl GetLifecyclePolicyPreviewFluentBuilder {
         self.inner.get_filter()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The VPC endpoint object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VpcEndpointSummary {
+pub struct VpcEndpointSummary  {
     /// <p>The unique identifier of the endpoint.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint.</p>
@@ -11,17 +11,17 @@ pub struct VpcEndpointSummary {
     /// <p>The current status of the endpoint.</p>
     pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
-impl VpcEndpointSummary {
+impl  VpcEndpointSummary  {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the endpoint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl VpcEndpointSummaryBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl VpcEndpointSummaryBuilder {
     }
     /// <p>The name of the endpoint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the endpoint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl VpcEndpointSummaryBuilder {
     }
     /// <p>The current status of the endpoint.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
@@ -86,9 +83,13 @@ impl VpcEndpointSummaryBuilder {
     /// Consumes the builder and constructs a [`VpcEndpointSummary`](crate::types::VpcEndpointSummary).
     pub fn build(self) -> crate::types::VpcEndpointSummary {
         crate::types::VpcEndpointSummary {
-            id: self.id,
-            name: self.name,
-            status: self.status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

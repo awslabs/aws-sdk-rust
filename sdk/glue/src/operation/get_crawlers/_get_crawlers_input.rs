@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCrawlersInput {
+pub struct GetCrawlersInput  {
     /// <p>The number of crawlers to return on each call.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetCrawlersInput {
+impl  GetCrawlersInput  {
     /// <p>The number of crawlers to return on each call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl GetCrawlersInputBuilder {
     }
     /// <p>The number of crawlers to return on each call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The number of crawlers to return on each call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -54,8 +53,7 @@ impl GetCrawlersInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,9 +61,14 @@ impl GetCrawlersInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetCrawlersInput`](crate::operation::get_crawlers::GetCrawlersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_crawlers::GetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_crawlers::GetCrawlersInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_crawlers::GetCrawlersInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

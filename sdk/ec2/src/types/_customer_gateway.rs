@@ -3,7 +3,7 @@
 /// <p>Describes a customer gateway.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerGateway {
+pub struct CustomerGateway  {
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
     pub bgp_asn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the customer gateway.</p>
@@ -19,42 +19,43 @@ pub struct CustomerGateway {
     /// <p>The name of customer gateway device.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the customer gateway.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CustomerGateway {
+impl  CustomerGateway  {
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
-    pub fn bgp_asn(&self) -> ::std::option::Option<&str> {
+    pub fn bgp_asn(&self) -> ::std::option::Option<& str> {
         self.bgp_asn.as_deref()
     }
     /// <p>The ID of the customer gateway.</p>
-    pub fn customer_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn customer_gateway_id(&self) -> ::std::option::Option<& str> {
         self.customer_gateway_id.as_deref()
     }
     /// <p>The IP address of the customer gateway device's outside interface.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The name of customer gateway device.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Any tags assigned to the customer gateway.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CustomerGateway {
@@ -75,7 +76,7 @@ pub struct CustomerGatewayBuilder {
     pub(crate) state: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) device_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CustomerGatewayBuilder {
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
@@ -85,8 +86,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
     pub fn set_bgp_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bgp_asn = input;
-        self
+        self.bgp_asn = input; self
     }
     /// <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
     pub fn get_bgp_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The ID of the customer gateway.</p>
     pub fn set_customer_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.customer_gateway_id = input;
-        self
+        self.customer_gateway_id = input; self
     }
     /// <p>The ID of the customer gateway.</p>
     pub fn get_customer_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The IP address of the customer gateway device's outside interface.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address of the customer gateway device's outside interface.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the customer gateway (<code>pending | available | deleting | deleted</code>).</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +164,7 @@ impl CustomerGatewayBuilder {
     }
     /// <p>The name of customer gateway device.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of customer gateway device.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,30 +177,38 @@ impl CustomerGatewayBuilder {
     /// <p>Any tags assigned to the customer gateway.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any tags assigned to the customer gateway.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Any tags assigned to the customer gateway.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CustomerGateway`](crate::types::CustomerGateway).
     pub fn build(self) -> crate::types::CustomerGateway {
         crate::types::CustomerGateway {
-            bgp_asn: self.bgp_asn,
-            customer_gateway_id: self.customer_gateway_id,
-            ip_address: self.ip_address,
-            certificate_arn: self.certificate_arn,
-            state: self.state,
-            r#type: self.r#type,
-            device_name: self.device_name,
-            tags: self.tags,
+            bgp_asn: self.bgp_asn
+            ,
+            customer_gateway_id: self.customer_gateway_id
+            ,
+            ip_address: self.ip_address
+            ,
+            certificate_arn: self.certificate_arn
+            ,
+            state: self.state
+            ,
+            r#type: self.r#type
+            ,
+            device_name: self.device_name
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

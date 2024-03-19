@@ -3,7 +3,7 @@
 /// <p>Provides information about the permissions settings that determine whether an S3 bucket is publicly accessible.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BucketPublicAccess {
+pub struct BucketPublicAccess  {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct BucketPublicAccess {
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
     pub permission_configuration: ::std::option::Option<crate::types::BucketPermissionConfiguration>,
 }
-impl BucketPublicAccess {
+impl  BucketPublicAccess  {
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
     /// <li>
@@ -27,11 +27,11 @@ impl BucketPublicAccess {
     /// <li>
     /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
-    pub fn effective_permission(&self) -> ::std::option::Option<&crate::types::EffectivePermission> {
+    pub fn effective_permission(&self) -> ::std::option::Option<& crate::types::EffectivePermission> {
         self.effective_permission.as_ref()
     }
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
-    pub fn permission_configuration(&self) -> ::std::option::Option<&crate::types::BucketPermissionConfiguration> {
+    pub fn permission_configuration(&self) -> ::std::option::Option<& crate::types::BucketPermissionConfiguration> {
         self.permission_configuration.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl BucketPublicAccessBuilder {
     /// <p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
     /// </ul>
     pub fn set_effective_permission(mut self, input: ::std::option::Option<crate::types::EffectivePermission>) -> Self {
-        self.effective_permission = input;
-        self
+        self.effective_permission = input; self
     }
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
     /// <ul>
@@ -95,8 +94,7 @@ impl BucketPublicAccessBuilder {
     }
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
     pub fn set_permission_configuration(mut self, input: ::std::option::Option<crate::types::BucketPermissionConfiguration>) -> Self {
-        self.permission_configuration = input;
-        self
+        self.permission_configuration = input; self
     }
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
     pub fn get_permission_configuration(&self) -> &::std::option::Option<crate::types::BucketPermissionConfiguration> {
@@ -105,8 +103,11 @@ impl BucketPublicAccessBuilder {
     /// Consumes the builder and constructs a [`BucketPublicAccess`](crate::types::BucketPublicAccess).
     pub fn build(self) -> crate::types::BucketPublicAccess {
         crate::types::BucketPublicAccess {
-            effective_permission: self.effective_permission,
-            permission_configuration: self.permission_configuration,
+            effective_permission: self.effective_permission
+            ,
+            permission_configuration: self.permission_configuration
+            ,
         }
     }
 }
+

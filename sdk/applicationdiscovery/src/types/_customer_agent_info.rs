@@ -3,7 +3,7 @@
 /// <p>Inventory data for installed discovery agents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CustomerAgentInfo {
+pub struct CustomerAgentInfo  {
     /// <p>Number of active discovery agents.</p>
     pub active_agents: i32,
     /// <p>Number of healthy discovery agents</p>
@@ -19,7 +19,7 @@ pub struct CustomerAgentInfo {
     /// <p>Number of unknown discovery agents.</p>
     pub unknown_agents: i32,
 }
-impl CustomerAgentInfo {
+impl  CustomerAgentInfo  {
     /// <p>Number of active discovery agents.</p>
     pub fn active_agents(&self) -> i32 {
         self.active_agents
@@ -77,8 +77,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of active discovery agents.</p>
     pub fn set_active_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.active_agents = input;
-        self
+        self.active_agents = input; self
     }
     /// <p>Number of active discovery agents.</p>
     pub fn get_active_agents(&self) -> &::std::option::Option<i32> {
@@ -92,8 +91,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of healthy discovery agents</p>
     pub fn set_healthy_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_agents = input;
-        self
+        self.healthy_agents = input; self
     }
     /// <p>Number of healthy discovery agents</p>
     pub fn get_healthy_agents(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of blacklisted discovery agents.</p>
     pub fn set_black_listed_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.black_listed_agents = input;
-        self
+        self.black_listed_agents = input; self
     }
     /// <p>Number of blacklisted discovery agents.</p>
     pub fn get_black_listed_agents(&self) -> &::std::option::Option<i32> {
@@ -122,8 +119,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
     pub fn set_shutdown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.shutdown_agents = input;
-        self
+        self.shutdown_agents = input; self
     }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
     pub fn get_shutdown_agents(&self) -> &::std::option::Option<i32> {
@@ -137,8 +133,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of unhealthy discovery agents.</p>
     pub fn set_unhealthy_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_agents = input;
-        self
+        self.unhealthy_agents = input; self
     }
     /// <p>Number of unhealthy discovery agents.</p>
     pub fn get_unhealthy_agents(&self) -> &::std::option::Option<i32> {
@@ -152,8 +147,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Total number of discovery agents.</p>
     pub fn set_total_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_agents = input;
-        self
+        self.total_agents = input; self
     }
     /// <p>Total number of discovery agents.</p>
     pub fn get_total_agents(&self) -> &::std::option::Option<i32> {
@@ -167,8 +161,7 @@ impl CustomerAgentInfoBuilder {
     }
     /// <p>Number of unknown discovery agents.</p>
     pub fn set_unknown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unknown_agents = input;
-        self
+        self.unknown_agents = input; self
     }
     /// <p>Number of unknown discovery agents.</p>
     pub fn get_unknown_agents(&self) -> &::std::option::Option<i32> {
@@ -177,13 +170,28 @@ impl CustomerAgentInfoBuilder {
     /// Consumes the builder and constructs a [`CustomerAgentInfo`](crate::types::CustomerAgentInfo).
     pub fn build(self) -> crate::types::CustomerAgentInfo {
         crate::types::CustomerAgentInfo {
-            active_agents: self.active_agents.unwrap_or_default(),
-            healthy_agents: self.healthy_agents.unwrap_or_default(),
-            black_listed_agents: self.black_listed_agents.unwrap_or_default(),
-            shutdown_agents: self.shutdown_agents.unwrap_or_default(),
-            unhealthy_agents: self.unhealthy_agents.unwrap_or_default(),
-            total_agents: self.total_agents.unwrap_or_default(),
-            unknown_agents: self.unknown_agents.unwrap_or_default(),
+            active_agents: self.active_agents
+                .unwrap_or_default()
+            ,
+            healthy_agents: self.healthy_agents
+                .unwrap_or_default()
+            ,
+            black_listed_agents: self.black_listed_agents
+                .unwrap_or_default()
+            ,
+            shutdown_agents: self.shutdown_agents
+                .unwrap_or_default()
+            ,
+            unhealthy_agents: self.unhealthy_agents
+                .unwrap_or_default()
+            ,
+            total_agents: self.total_agents
+                .unwrap_or_default()
+            ,
+            unknown_agents: self.unknown_agents
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

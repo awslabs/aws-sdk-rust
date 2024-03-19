@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRepositoryOutput {
+pub struct CreateRepositoryOutput  {
     /// <p>The repository link's detail data that's returned by Proton.</p>
     pub repository: ::std::option::Option<crate::types::Repository>,
     _request_id: Option<String>,
 }
-impl CreateRepositoryOutput {
+impl  CreateRepositoryOutput  {
     /// <p>The repository link's detail data that's returned by Proton.</p>
-    pub fn repository(&self) -> ::std::option::Option<&crate::types::Repository> {
+    pub fn repository(&self) -> ::std::option::Option<& crate::types::Repository> {
         self.repository.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
     pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateRepositoryOutputBuilder {
     }
     /// <p>The repository link's detail data that's returned by Proton.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<crate::types::Repository>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The repository link's detail data that's returned by Proton.</p>
     pub fn get_repository(&self) -> &::std::option::Option<crate::types::Repository> {
         &self.repository
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::operation::create_repository::CreateRepositoryOutput).
     pub fn build(self) -> crate::operation::create_repository::CreateRepositoryOutput {
         crate::operation::create_repository::CreateRepositoryOutput {
-            repository: self.repository,
+            repository: self.repository
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

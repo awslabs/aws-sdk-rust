@@ -2,40 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserOutput {
+pub struct UpdateUserOutput  {
     /// <p>The user aliases that have been to be added to a user id.</p>
-    pub user_aliases_added: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub user_aliases_added: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
     /// <p>The user aliases attached to a user id that have been updated.</p>
-    pub user_aliases_updated: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub user_aliases_updated: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
     /// <p>The user aliases that have been deleted from a user id.</p>
-    pub user_aliases_deleted: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub user_aliases_deleted: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
     _request_id: Option<String>,
 }
-impl UpdateUserOutput {
+impl  UpdateUserOutput  {
     /// <p>The user aliases that have been to be added to a user id.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_aliases_added.is_none()`.
-    pub fn user_aliases_added(&self) -> &[crate::types::UserAlias] {
-        self.user_aliases_added.as_deref().unwrap_or_default()
+    pub fn user_aliases_added(&self) -> & [crate::types::UserAlias] {
+        self.user_aliases_added.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user aliases attached to a user id that have been updated.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_aliases_updated.is_none()`.
-    pub fn user_aliases_updated(&self) -> &[crate::types::UserAlias] {
-        self.user_aliases_updated.as_deref().unwrap_or_default()
+    pub fn user_aliases_updated(&self) -> & [crate::types::UserAlias] {
+        self.user_aliases_updated.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The user aliases that have been deleted from a user id.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_aliases_deleted.is_none()`.
-    pub fn user_aliases_deleted(&self) -> &[crate::types::UserAlias] {
-        self.user_aliases_deleted.as_deref().unwrap_or_default()
+    pub fn user_aliases_deleted(&self) -> & [crate::types::UserAlias] {
+        self.user_aliases_deleted.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
     pub fn builder() -> crate::operation::update_user::builders::UpdateUserOutputBuilder {
@@ -47,9 +50,9 @@ impl UpdateUserOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateUserOutputBuilder {
-    pub(crate) user_aliases_added: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
-    pub(crate) user_aliases_updated: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
-    pub(crate) user_aliases_deleted: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>,
+    pub(crate) user_aliases_added: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
+    pub(crate) user_aliases_updated: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
+    pub(crate) user_aliases_deleted: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>,
     _request_id: Option<String>,
 }
 impl UpdateUserOutputBuilder {
@@ -60,17 +63,16 @@ impl UpdateUserOutputBuilder {
     /// <p>The user aliases that have been to be added to a user id.</p>
     pub fn user_aliases_added(mut self, input: crate::types::UserAlias) -> Self {
         let mut v = self.user_aliases_added.unwrap_or_default();
-        v.push(input);
-        self.user_aliases_added = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_aliases_added = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user aliases that have been to be added to a user id.</p>
-    pub fn set_user_aliases_added(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>) -> Self {
-        self.user_aliases_added = input;
-        self
+    pub fn set_user_aliases_added(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>) -> Self {
+        self.user_aliases_added = input; self
     }
     /// <p>The user aliases that have been to be added to a user id.</p>
-    pub fn get_user_aliases_added(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
+    pub fn get_user_aliases_added(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>> {
         &self.user_aliases_added
     }
     /// Appends an item to `user_aliases_updated`.
@@ -80,17 +82,16 @@ impl UpdateUserOutputBuilder {
     /// <p>The user aliases attached to a user id that have been updated.</p>
     pub fn user_aliases_updated(mut self, input: crate::types::UserAlias) -> Self {
         let mut v = self.user_aliases_updated.unwrap_or_default();
-        v.push(input);
-        self.user_aliases_updated = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_aliases_updated = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user aliases attached to a user id that have been updated.</p>
-    pub fn set_user_aliases_updated(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>) -> Self {
-        self.user_aliases_updated = input;
-        self
+    pub fn set_user_aliases_updated(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>) -> Self {
+        self.user_aliases_updated = input; self
     }
     /// <p>The user aliases attached to a user id that have been updated.</p>
-    pub fn get_user_aliases_updated(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
+    pub fn get_user_aliases_updated(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>> {
         &self.user_aliases_updated
     }
     /// Appends an item to `user_aliases_deleted`.
@@ -100,35 +101,38 @@ impl UpdateUserOutputBuilder {
     /// <p>The user aliases that have been deleted from a user id.</p>
     pub fn user_aliases_deleted(mut self, input: crate::types::UserAlias) -> Self {
         let mut v = self.user_aliases_deleted.unwrap_or_default();
-        v.push(input);
-        self.user_aliases_deleted = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_aliases_deleted = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user aliases that have been deleted from a user id.</p>
-    pub fn set_user_aliases_deleted(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserAlias>>) -> Self {
-        self.user_aliases_deleted = input;
-        self
+    pub fn set_user_aliases_deleted(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>>) -> Self {
+        self.user_aliases_deleted = input; self
     }
     /// <p>The user aliases that have been deleted from a user id.</p>
-    pub fn get_user_aliases_deleted(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAlias>> {
+    pub fn get_user_aliases_deleted(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserAlias>> {
         &self.user_aliases_deleted
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
     pub fn build(self) -> crate::operation::update_user::UpdateUserOutput {
         crate::operation::update_user::UpdateUserOutput {
-            user_aliases_added: self.user_aliases_added,
-            user_aliases_updated: self.user_aliases_updated,
-            user_aliases_deleted: self.user_aliases_deleted,
+            user_aliases_added: self.user_aliases_added
+            ,
+            user_aliases_updated: self.user_aliases_updated
+            ,
+            user_aliases_deleted: self.user_aliases_deleted
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

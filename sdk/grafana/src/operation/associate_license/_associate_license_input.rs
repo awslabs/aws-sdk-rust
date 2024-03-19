@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateLicenseInput {
+pub struct AssociateLicenseInput  {
     /// <p>The ID of the workspace to associate the license with.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of license to associate with the workspace.</p><note>
@@ -12,19 +12,19 @@ pub struct AssociateLicenseInput {
     /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub grafana_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateLicenseInput {
+impl  AssociateLicenseInput  {
     /// <p>The ID of the workspace to associate the license with.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The type of license to associate with the workspace.</p><note>
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
     /// </note>
-    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+    pub fn license_type(&self) -> ::std::option::Option<& crate::types::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
-    pub fn grafana_token(&self) -> ::std::option::Option<&str> {
+    pub fn grafana_token(&self) -> ::std::option::Option<& str> {
         self.grafana_token.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl AssociateLicenseInputBuilder {
     }
     /// <p>The ID of the workspace to associate the license with.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the workspace to associate the license with.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl AssociateLicenseInputBuilder {
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
     /// </note>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
-        self.license_type = input;
-        self
+        self.license_type = input; self
     }
     /// <p>The type of license to associate with the workspace.</p><note>
     /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
@@ -87,21 +85,24 @@ impl AssociateLicenseInputBuilder {
     }
     /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grafana_token = input;
-        self
+        self.grafana_token = input; self
     }
     /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
     pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_token
     }
     /// Consumes the builder and constructs a [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_license::AssociateLicenseInput {
-            workspace_id: self.workspace_id,
-            license_type: self.license_type,
-            grafana_token: self.grafana_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_license::AssociateLicenseInput {
+                workspace_id: self.workspace_id
+                ,
+                license_type: self.license_type
+                ,
+                grafana_token: self.grafana_token
+                ,
+            }
+        )
     }
 }
+

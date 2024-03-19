@@ -5,55 +5,51 @@ pub use crate::operation::discover_input_schema::_discover_input_schema_input::D
 
 impl DiscoverInputSchemaInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.discover_input_schema();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::discover_input_schema::DiscoverInputSchemaError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.discover_input_schema();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DiscoverInputSchema`.
-///
+/// 
 /// <p>Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.</p>
 /// <p>You can use the inferred schema when configuring a streaming source for your application. When you create an application using the Kinesis Data Analytics console, the console uses this operation to infer a schema and show it in the console user interface.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DiscoverInputSchemaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder,
+                    inner: crate::operation::discover_input_schema::builders::DiscoverInputSchemaInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        crate::operation::discover_input_schema::DiscoverInputSchemaError,
-    > for DiscoverInputSchemaFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
+                    crate::operation::discover_input_schema::DiscoverInputSchemaError,
+                > for DiscoverInputSchemaFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
+                        crate::operation::discover_input_schema::DiscoverInputSchemaError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DiscoverInputSchemaFluentBuilder {
     /// Creates a new `DiscoverInputSchema`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DiscoverInputSchemaFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::discover_input_schema::DiscoverInputSchemaError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::discover_input_schema::DiscoverInputSchema::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::discover_input_schema::DiscoverInputSchema::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        crate::operation::discover_input_schema::DiscoverInputSchemaError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::discover_input_schema::DiscoverInputSchemaOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::discover_input_schema::DiscoverInputSchema::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::discover_input_schema::DiscoverInputSchema::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::discover_input_schema::DiscoverInputSchemaOutput, crate::operation::discover_input_schema::DiscoverInputSchemaError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the streaming source.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -143,10 +130,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self
     }
     /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.</p>
-    pub fn set_input_starting_position_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
-    ) -> Self {
+    pub fn set_input_starting_position_configuration(mut self, input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>) -> Self {
         self.inner = self.inner.set_input_starting_position_configuration(input);
         self
     }
@@ -183,3 +167,4 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner.get_input_processing_configuration()
     }
 }
+

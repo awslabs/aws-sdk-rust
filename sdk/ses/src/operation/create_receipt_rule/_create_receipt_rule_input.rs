@@ -3,7 +3,7 @@
 /// <p>Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReceiptRuleInput {
+pub struct CreateReceiptRuleInput  {
     /// <p>The name of the rule set where the receipt rule is added.</p>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
@@ -11,17 +11,17 @@ pub struct CreateReceiptRuleInput {
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub rule: ::std::option::Option<crate::types::ReceiptRule>,
 }
-impl CreateReceiptRuleInput {
+impl  CreateReceiptRuleInput  {
     /// <p>The name of the rule set where the receipt rule is added.</p>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
     /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
-    pub fn after(&self) -> ::std::option::Option<&str> {
+    pub fn after(&self) -> ::std::option::Option<& str> {
         self.after.as_deref()
     }
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::ReceiptRule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::ReceiptRule> {
         self.rule.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CreateReceiptRuleInputBuilder {
     }
     /// <p>The name of the rule set where the receipt rule is added.</p>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the rule set where the receipt rule is added.</p>
     pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateReceiptRuleInputBuilder {
     }
     /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
     pub fn set_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after = input;
-        self
+        self.after = input; self
     }
     /// <p>The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.</p>
     pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl CreateReceiptRuleInputBuilder {
     }
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
         &self.rule
     }
     /// Consumes the builder and constructs a [`CreateReceiptRuleInput`](crate::operation::create_receipt_rule::CreateReceiptRuleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_rule::CreateReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_receipt_rule::CreateReceiptRuleInput {
-            rule_set_name: self.rule_set_name,
-            after: self.after,
-            rule: self.rule,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_receipt_rule::CreateReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_receipt_rule::CreateReceiptRuleInput {
+                rule_set_name: self.rule_set_name
+                ,
+                after: self.after
+                ,
+                rule: self.rule
+                ,
+            }
+        )
     }
 }
+

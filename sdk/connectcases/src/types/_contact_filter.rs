@@ -3,21 +3,22 @@
 /// <p>A filter for related items of type <code>Contact</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactFilter {
+pub struct ContactFilter  {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub channel: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub channel: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
-impl ContactFilter {
+impl  ContactFilter  {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channel.is_none()`.
-    pub fn channel(&self) -> &[::std::string::String] {
-        self.channel.as_deref().unwrap_or_default()
+    pub fn channel(&self) -> & [::std::string::String] {
+        self.channel.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl ContactFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContactFilterBuilder {
-    pub(crate) channel: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) channel: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
 }
 impl ContactFilterBuilder {
@@ -43,17 +44,16 @@ impl ContactFilterBuilder {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.channel.unwrap_or_default();
-        v.push(input.into());
-        self.channel = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.channel = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn set_channel(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.channel = input;
-        self
+    pub fn set_channel(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.channel = input; self
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn get_channel(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_channel(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.channel
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
@@ -63,8 +63,7 @@ impl ContactFilterBuilder {
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl ContactFilterBuilder {
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).
     pub fn build(self) -> crate::types::ContactFilter {
         crate::types::ContactFilter {
-            channel: self.channel,
-            contact_arn: self.contact_arn,
+            channel: self.channel
+            ,
+            contact_arn: self.contact_arn
+            ,
         }
     }
 }
+

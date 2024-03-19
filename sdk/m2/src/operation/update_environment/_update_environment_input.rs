@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEnvironmentInput {
+pub struct UpdateEnvironmentInput  {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
@@ -21,9 +21,9 @@ pub struct UpdateEnvironmentInput {
     /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
     pub force_update: ::std::option::Option<bool>,
 }
-impl UpdateEnvironmentInput {
+impl  UpdateEnvironmentInput  {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
@@ -31,16 +31,16 @@ impl UpdateEnvironmentInput {
         self.desired_capacity
     }
     /// <p>The instance type for the runtime environment to update.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The version of the runtime engine for the runtime environment.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.</p>
     /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
-    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
@@ -82,8 +82,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +95,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.desired_capacity = input;
-        self
+        self.desired_capacity = input; self
     }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
@@ -110,8 +108,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The instance type for the runtime environment to update.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type for the runtime environment to update.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +121,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>The version of the runtime engine for the runtime environment.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the runtime engine for the runtime environment.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +136,7 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.</p>
     /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.preferred_maintenance_window = input;
-        self
+        self.preferred_maintenance_window = input; self
     }
     /// <p>Configures the maintenance window that you want for the runtime environment. The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.</p>
     /// <p>If you do not provide a value, a random system-generated value will be assigned.</p>
@@ -155,8 +150,7 @@ impl UpdateEnvironmentInputBuilder {
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn set_apply_during_maintenance_window(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.apply_during_maintenance_window = input;
-        self
+        self.apply_during_maintenance_window = input; self
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
     pub fn get_apply_during_maintenance_window(&self) -> &::std::option::Option<bool> {
@@ -173,8 +167,7 @@ impl UpdateEnvironmentInputBuilder {
     /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
     /// <p>This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.</p>
     pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_update = input;
-        self
+        self.force_update = input; self
     }
     /// <p>Forces the updates on the environment. This option is needed if the applications in the environment are not stopped or if there are ongoing application-related activities in the environment.</p>
     /// <p>If you use this option, be aware that it could lead to data corruption in the applications, and that you might need to perform repair and recovery procedures for the applications.</p>
@@ -183,17 +176,25 @@ impl UpdateEnvironmentInputBuilder {
         &self.force_update
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            environment_id: self.environment_id,
-            desired_capacity: self.desired_capacity,
-            instance_type: self.instance_type,
-            engine_version: self.engine_version,
-            preferred_maintenance_window: self.preferred_maintenance_window,
-            apply_during_maintenance_window: self.apply_during_maintenance_window,
-            force_update: self.force_update,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment::UpdateEnvironmentInput {
+                environment_id: self.environment_id
+                ,
+                desired_capacity: self.desired_capacity
+                ,
+                instance_type: self.instance_type
+                ,
+                engine_version: self.engine_version
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                apply_during_maintenance_window: self.apply_during_maintenance_window
+                ,
+                force_update: self.force_update
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UnsupportedAvailabilityZoneException {
+pub struct UnsupportedAvailabilityZoneException  {
     /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS cluster associated with the exception.</p>
@@ -11,36 +11,35 @@ pub struct UnsupportedAvailabilityZoneException {
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub valid_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub valid_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl UnsupportedAvailabilityZoneException {
+impl  UnsupportedAvailabilityZoneException  {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<& str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.valid_zones.is_none()`.
-    pub fn valid_zones(&self) -> &[::std::string::String] {
-        self.valid_zones.as_deref().unwrap_or_default()
+    pub fn valid_zones(&self) -> & [::std::string::String] {
+        self.valid_zones.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UnsupportedAvailabilityZoneException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for UnsupportedAvailabilityZoneException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "UnsupportedAvailabilityZoneException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -55,9 +54,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::UnsupportedAvai
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedAvailabilityZoneException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl UnsupportedAvailabilityZoneException {
     /// Creates a new builder-style object to manufacture [`UnsupportedAvailabilityZoneException`](crate::types::error::UnsupportedAvailabilityZoneException).
@@ -73,7 +70,7 @@ pub struct UnsupportedAvailabilityZoneExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
-    pub(crate) valid_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) valid_zones: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnsupportedAvailabilityZoneExceptionBuilder {
@@ -84,8 +81,7 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     }
     /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +107,7 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn set_nodegroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nodegroup_name = input;
-        self
+        self.nodegroup_name = input; self
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,38 +120,42 @@ impl UnsupportedAvailabilityZoneExceptionBuilder {
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
     pub fn valid_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.valid_zones.unwrap_or_default();
-        v.push(input.into());
-        self.valid_zones = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.valid_zones = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub fn set_valid_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.valid_zones = input;
-        self
+    pub fn set_valid_zones(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.valid_zones = input; self
     }
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
-    pub fn get_valid_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_valid_zones(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.valid_zones
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`UnsupportedAvailabilityZoneException`](crate::types::error::UnsupportedAvailabilityZoneException).
     pub fn build(self) -> crate::types::error::UnsupportedAvailabilityZoneException {
         crate::types::error::UnsupportedAvailabilityZoneException {
-            message: self.message,
-            cluster_name: self.cluster_name,
-            nodegroup_name: self.nodegroup_name,
-            valid_zones: self.valid_zones,
+            message: self.message
+            ,
+            cluster_name: self.cluster_name
+            ,
+            nodegroup_name: self.nodegroup_name
+            ,
+            valid_zones: self.valid_zones
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

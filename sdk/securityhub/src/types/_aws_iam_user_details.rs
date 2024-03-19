@@ -3,14 +3,14 @@
 /// <p>Information about an IAM user.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsIamUserDetails {
+pub struct AwsIamUserDetails  {
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub attached_managed_policies: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamAttachedManagedPolicy>>,
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM groups that the user belongs to.</p>
-    pub group_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The path to the user.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The permissions boundary for the user.</p>
@@ -20,47 +20,50 @@ pub struct AwsIamUserDetails {
     /// <p>The name of the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub user_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
+    pub user_policy_list: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamUserPolicy>>,
 }
-impl AwsIamUserDetails {
+impl  AwsIamUserDetails  {
     /// <p>A list of the managed policies that are attached to the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attached_managed_policies.is_none()`.
-    pub fn attached_managed_policies(&self) -> &[crate::types::AwsIamAttachedManagedPolicy] {
-        self.attached_managed_policies.as_deref().unwrap_or_default()
+    pub fn attached_managed_policies(&self) -> & [crate::types::AwsIamAttachedManagedPolicy] {
+        self.attached_managed_policies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(&self) -> ::std::option::Option<&str> {
+    pub fn create_date(&self) -> ::std::option::Option<& str> {
         self.create_date.as_deref()
     }
     /// <p>A list of IAM groups that the user belongs to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_list.is_none()`.
-    pub fn group_list(&self) -> &[::std::string::String] {
-        self.group_list.as_deref().unwrap_or_default()
+    pub fn group_list(&self) -> & [::std::string::String] {
+        self.group_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The path to the user.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The permissions boundary for the user.</p>
-    pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AwsIamPermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> ::std::option::Option<& crate::types::AwsIamPermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_policy_list.is_none()`.
-    pub fn user_policy_list(&self) -> &[crate::types::AwsIamUserPolicy] {
-        self.user_policy_list.as_deref().unwrap_or_default()
+    pub fn user_policy_list(&self) -> & [crate::types::AwsIamUserPolicy] {
+        self.user_policy_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsIamUserDetails {
@@ -74,14 +77,14 @@ impl AwsIamUserDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsIamUserDetailsBuilder {
-    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>,
+    pub(crate) attached_managed_policies: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamAttachedManagedPolicy>>,
     pub(crate) create_date: ::std::option::Option<::std::string::String>,
-    pub(crate) group_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
-    pub(crate) user_policy_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>,
+    pub(crate) user_policy_list: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamUserPolicy>>,
 }
 impl AwsIamUserDetailsBuilder {
     /// Appends an item to `attached_managed_policies`.
@@ -91,17 +94,16 @@ impl AwsIamUserDetailsBuilder {
     /// <p>A list of the managed policies that are attached to the user.</p>
     pub fn attached_managed_policies(mut self, input: crate::types::AwsIamAttachedManagedPolicy) -> Self {
         let mut v = self.attached_managed_policies.unwrap_or_default();
-        v.push(input);
-        self.attached_managed_policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attached_managed_policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>>) -> Self {
-        self.attached_managed_policies = input;
-        self
+    pub fn set_attached_managed_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamAttachedManagedPolicy>>) -> Self {
+        self.attached_managed_policies = input; self
     }
     /// <p>A list of the managed policies that are attached to the user.</p>
-    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+    pub fn get_attached_managed_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsIamAttachedManagedPolicy>> {
         &self.attached_managed_policies
     }
     /// <p>Indicates when the user was created.</p>
@@ -113,8 +115,7 @@ impl AwsIamUserDetailsBuilder {
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -128,17 +129,16 @@ impl AwsIamUserDetailsBuilder {
     /// <p>A list of IAM groups that the user belongs to.</p>
     pub fn group_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_list.unwrap_or_default();
-        v.push(input.into());
-        self.group_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IAM groups that the user belongs to.</p>
-    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_list = input;
-        self
+    pub fn set_group_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_list = input; self
     }
     /// <p>A list of IAM groups that the user belongs to.</p>
-    pub fn get_group_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_list
     }
     /// <p>The path to the user.</p>
@@ -148,8 +148,7 @@ impl AwsIamUserDetailsBuilder {
     }
     /// <p>The path to the user.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The path to the user.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +161,7 @@ impl AwsIamUserDetailsBuilder {
     }
     /// <p>The permissions boundary for the user.</p>
     pub fn set_permissions_boundary(mut self, input: ::std::option::Option<crate::types::AwsIamPermissionsBoundary>) -> Self {
-        self.permissions_boundary = input;
-        self
+        self.permissions_boundary = input; self
     }
     /// <p>The permissions boundary for the user.</p>
     pub fn get_permissions_boundary(&self) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
@@ -176,8 +174,7 @@ impl AwsIamUserDetailsBuilder {
     }
     /// <p>The unique identifier for the user.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the user.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,8 +187,7 @@ impl AwsIamUserDetailsBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,30 +200,38 @@ impl AwsIamUserDetailsBuilder {
     /// <p>The list of inline policies that are embedded in the user.</p>
     pub fn user_policy_list(mut self, input: crate::types::AwsIamUserPolicy) -> Self {
         let mut v = self.user_policy_list.unwrap_or_default();
-        v.push(input);
-        self.user_policy_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_policy_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub fn set_user_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>>) -> Self {
-        self.user_policy_list = input;
-        self
+    pub fn set_user_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsIamUserPolicy>>) -> Self {
+        self.user_policy_list = input; self
     }
     /// <p>The list of inline policies that are embedded in the user.</p>
-    pub fn get_user_policy_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>> {
+    pub fn get_user_policy_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsIamUserPolicy>> {
         &self.user_policy_list
     }
     /// Consumes the builder and constructs a [`AwsIamUserDetails`](crate::types::AwsIamUserDetails).
     pub fn build(self) -> crate::types::AwsIamUserDetails {
         crate::types::AwsIamUserDetails {
-            attached_managed_policies: self.attached_managed_policies,
-            create_date: self.create_date,
-            group_list: self.group_list,
-            path: self.path,
-            permissions_boundary: self.permissions_boundary,
-            user_id: self.user_id,
-            user_name: self.user_name,
-            user_policy_list: self.user_policy_list,
+            attached_managed_policies: self.attached_managed_policies
+            ,
+            create_date: self.create_date
+            ,
+            group_list: self.group_list
+            ,
+            path: self.path
+            ,
+            permissions_boundary: self.permissions_boundary
+            ,
+            user_id: self.user_id
+            ,
+            user_name: self.user_name
+            ,
+            user_policy_list: self.user_policy_list
+            ,
         }
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>An object that returns information about the composite component types of a component type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositeComponentTypeResponse {
+pub struct CompositeComponentTypeResponse  {
     /// <p>This is the <code>componentTypeId</code> that this <code>compositeComponentType</code> refers to.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>This boolean indicates whether this <code>compositeComponentType</code> is inherited from its parent.</p>
     pub is_inherited: ::std::option::Option<bool>,
 }
-impl CompositeComponentTypeResponse {
+impl  CompositeComponentTypeResponse  {
     /// <p>This is the <code>componentTypeId</code> that this <code>compositeComponentType</code> refers to.</p>
-    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
     /// <p>This boolean indicates whether this <code>compositeComponentType</code> is inherited from its parent.</p>
@@ -41,8 +41,7 @@ impl CompositeComponentTypeResponseBuilder {
     }
     /// <p>This is the <code>componentTypeId</code> that this <code>compositeComponentType</code> refers to.</p>
     pub fn set_component_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_type_id = input;
-        self
+        self.component_type_id = input; self
     }
     /// <p>This is the <code>componentTypeId</code> that this <code>compositeComponentType</code> refers to.</p>
     pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CompositeComponentTypeResponseBuilder {
     }
     /// <p>This boolean indicates whether this <code>compositeComponentType</code> is inherited from its parent.</p>
     pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_inherited = input;
-        self
+        self.is_inherited = input; self
     }
     /// <p>This boolean indicates whether this <code>compositeComponentType</code> is inherited from its parent.</p>
     pub fn get_is_inherited(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl CompositeComponentTypeResponseBuilder {
     /// Consumes the builder and constructs a [`CompositeComponentTypeResponse`](crate::types::CompositeComponentTypeResponse).
     pub fn build(self) -> crate::types::CompositeComponentTypeResponse {
         crate::types::CompositeComponentTypeResponse {
-            component_type_id: self.component_type_id,
-            is_inherited: self.is_inherited,
+            component_type_id: self.component_type_id
+            ,
+            is_inherited: self.is_inherited
+            ,
         }
     }
 }
+

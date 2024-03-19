@@ -3,19 +3,19 @@
 /// <p>An object that contains information on the error that caused the snapshot job to fail.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotJobErrorInfo {
+pub struct SnapshotJobErrorInfo  {
     /// <p>The error message.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error type.</p>
     pub error_type: ::std::option::Option<::std::string::String>,
 }
-impl SnapshotJobErrorInfo {
+impl  SnapshotJobErrorInfo  {
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error type.</p>
-    pub fn error_type(&self) -> ::std::option::Option<&str> {
+    pub fn error_type(&self) -> ::std::option::Option<& str> {
         self.error_type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SnapshotJobErrorInfoBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SnapshotJobErrorInfoBuilder {
     }
     /// <p>The error type.</p>
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     /// <p>The error type.</p>
     pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SnapshotJobErrorInfoBuilder {
     /// Consumes the builder and constructs a [`SnapshotJobErrorInfo`](crate::types::SnapshotJobErrorInfo).
     pub fn build(self) -> crate::types::SnapshotJobErrorInfo {
         crate::types::SnapshotJobErrorInfo {
-            error_message: self.error_message,
-            error_type: self.error_type,
+            error_message: self.error_message
+            ,
+            error_type: self.error_type
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Provides details about the primary Amazon Web Services Region of the endpoint.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails {
+pub struct AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails  {
     /// <p>The Amazon Resource Name (ARN) of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub health_check: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails {
+impl  AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails  {
     /// <p>The Amazon Resource Name (ARN) of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn health_check(&self) -> ::std::option::Option<&str> {
+    pub fn health_check(&self) -> ::std::option::Option<& str> {
         self.health_check.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn set_health_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_check = input;
-        self
+        self.health_check = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the health check used by the endpoint to determine whether failover is triggered.</p>
     pub fn get_health_check(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails`](crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails {
         crate::types::AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetails {
-            health_check: self.health_check,
+            health_check: self.health_check
+            ,
         }
     }
 }
+

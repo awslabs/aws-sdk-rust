@@ -7,15 +7,14 @@
 /// <p>The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExcludedRule {
+pub struct ExcludedRule  {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     pub rule_id: ::std::string::String,
 }
-impl ExcludedRule {
+impl  ExcludedRule  {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
-    pub fn rule_id(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_id.deref()
+    pub fn rule_id(&self) -> & str {
+        use std::ops::Deref; self.rule_id.deref()
     }
 }
 impl ExcludedRule {
@@ -40,8 +39,7 @@ impl ExcludedRuleBuilder {
     }
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -51,13 +49,15 @@ impl ExcludedRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_id`](crate::types::builders::ExcludedRuleBuilder::rule_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ExcludedRule, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExcludedRule {
-            rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rule_id",
-                    "rule_id was not specified but it is required when building ExcludedRule",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExcludedRule {
+                rule_id: self.rule_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rule_id", "rule_id was not specified but it is required when building ExcludedRule")
+                    )?
+                ,
+            }
+        )
     }
 }
+

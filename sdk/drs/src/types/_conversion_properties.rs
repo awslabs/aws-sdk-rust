@@ -3,11 +3,9 @@
 /// <p>Properties of a conversion job</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConversionProperties {
+pub struct ConversionProperties  {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    pub volume_to_conversion_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub volume_to_conversion_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     /// <p>The root volume name of a conversion job</p>
     pub root_volume_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the volume being converted uses UEFI or not</p>
@@ -15,22 +13,17 @@ pub struct ConversionProperties {
     /// <p>The timestamp of when the snapshot being converted was taken</p>
     pub data_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A mapping between the volumes and their sizes</p>
-    pub volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub volume_to_volume_size: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>,
     /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
-    pub volume_to_product_codes:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
+    pub volume_to_product_codes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ProductCode>>>,
 }
-impl ConversionProperties {
+impl  ConversionProperties  {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    pub fn volume_to_conversion_map(
-        &self,
-    ) -> ::std::option::Option<
-        &::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn volume_to_conversion_map(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         self.volume_to_conversion_map.as_ref()
     }
     /// <p>The root volume name of a conversion job</p>
-    pub fn root_volume_name(&self) -> ::std::option::Option<&str> {
+    pub fn root_volume_name(&self) -> ::std::option::Option<& str> {
         self.root_volume_name.as_deref()
     }
     /// <p>Whether the volume being converted uses UEFI or not</p>
@@ -38,17 +31,15 @@ impl ConversionProperties {
         self.force_uefi
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
-    pub fn data_timestamp(&self) -> ::std::option::Option<&str> {
+    pub fn data_timestamp(&self) -> ::std::option::Option<& str> {
         self.data_timestamp.as_deref()
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn volume_to_volume_size(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn volume_to_volume_size(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, i64>> {
         self.volume_to_volume_size.as_ref()
     }
     /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
-    pub fn volume_to_product_codes(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>> {
+    pub fn volume_to_product_codes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ProductCode>>> {
         self.volume_to_product_codes.as_ref()
     }
 }
@@ -63,15 +54,12 @@ impl ConversionProperties {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ConversionPropertiesBuilder {
-    pub(crate) volume_to_conversion_map: ::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    >,
+    pub(crate) volume_to_conversion_map: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>,
     pub(crate) root_volume_name: ::std::option::Option<::std::string::String>,
     pub(crate) force_uefi: ::std::option::Option<bool>,
     pub(crate) data_timestamp: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
-    pub(crate) volume_to_product_codes:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
+    pub(crate) volume_to_volume_size: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>,
+    pub(crate) volume_to_product_codes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ProductCode>>>,
 }
 impl ConversionPropertiesBuilder {
     /// Adds a key-value pair to `volume_to_conversion_map`.
@@ -79,32 +67,18 @@ impl ConversionPropertiesBuilder {
     /// To override the contents of this collection use [`set_volume_to_conversion_map`](Self::set_volume_to_conversion_map).
     ///
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    pub fn volume_to_conversion_map(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
-    ) -> Self {
+    pub fn volume_to_conversion_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::collections::HashMap::<::std::string::String, ::std::string::String>) -> Self {
         let mut hash_map = self.volume_to_conversion_map.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.volume_to_conversion_map = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.volume_to_conversion_map = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    pub fn set_volume_to_conversion_map(
-        mut self,
-        input: ::std::option::Option<
-            ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-        >,
-    ) -> Self {
-        self.volume_to_conversion_map = input;
-        self
+    pub fn set_volume_to_conversion_map(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>>) -> Self {
+        self.volume_to_conversion_map = input; self
     }
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
-    pub fn get_volume_to_conversion_map(
-        &self,
-    ) -> &::std::option::Option<
-        ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    > {
+    pub fn get_volume_to_conversion_map(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::collections::HashMap::<::std::string::String, ::std::string::String>>> {
         &self.volume_to_conversion_map
     }
     /// <p>The root volume name of a conversion job</p>
@@ -114,8 +88,7 @@ impl ConversionPropertiesBuilder {
     }
     /// <p>The root volume name of a conversion job</p>
     pub fn set_root_volume_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_volume_name = input;
-        self
+        self.root_volume_name = input; self
     }
     /// <p>The root volume name of a conversion job</p>
     pub fn get_root_volume_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,8 +101,7 @@ impl ConversionPropertiesBuilder {
     }
     /// <p>Whether the volume being converted uses UEFI or not</p>
     pub fn set_force_uefi(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_uefi = input;
-        self
+        self.force_uefi = input; self
     }
     /// <p>Whether the volume being converted uses UEFI or not</p>
     pub fn get_force_uefi(&self) -> &::std::option::Option<bool> {
@@ -142,8 +114,7 @@ impl ConversionPropertiesBuilder {
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
     pub fn set_data_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_timestamp = input;
-        self
+        self.data_timestamp = input; self
     }
     /// <p>The timestamp of when the snapshot being converted was taken</p>
     pub fn get_data_timestamp(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,17 +127,16 @@ impl ConversionPropertiesBuilder {
     /// <p>A mapping between the volumes and their sizes</p>
     pub fn volume_to_volume_size(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i64) -> Self {
         let mut hash_map = self.volume_to_volume_size.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.volume_to_volume_size = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.volume_to_volume_size = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn set_volume_to_volume_size(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>) -> Self {
-        self.volume_to_volume_size = input;
-        self
+    pub fn set_volume_to_volume_size(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>>) -> Self {
+        self.volume_to_volume_size = input; self
     }
     /// <p>A mapping between the volumes and their sizes</p>
-    pub fn get_volume_to_volume_size(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+    pub fn get_volume_to_volume_size(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, i64>> {
         &self.volume_to_volume_size
     }
     /// Adds a key-value pair to `volume_to_product_codes`.
@@ -174,39 +144,36 @@ impl ConversionPropertiesBuilder {
     /// To override the contents of this collection use [`set_volume_to_product_codes`](Self::set_volume_to_product_codes).
     ///
     /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
-    pub fn volume_to_product_codes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: ::std::vec::Vec<crate::types::ProductCode>,
-    ) -> Self {
+    pub fn volume_to_product_codes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec::<crate::types::ProductCode>) -> Self {
         let mut hash_map = self.volume_to_product_codes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.volume_to_product_codes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.volume_to_product_codes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
-    pub fn set_volume_to_product_codes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
-    ) -> Self {
-        self.volume_to_product_codes = input;
-        self
+    pub fn set_volume_to_product_codes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ProductCode>>>) -> Self {
+        self.volume_to_product_codes = input; self
     }
     /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
-    pub fn get_volume_to_product_codes(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>> {
+    pub fn get_volume_to_product_codes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::vec::Vec::<crate::types::ProductCode>>> {
         &self.volume_to_product_codes
     }
     /// Consumes the builder and constructs a [`ConversionProperties`](crate::types::ConversionProperties).
     pub fn build(self) -> crate::types::ConversionProperties {
         crate::types::ConversionProperties {
-            volume_to_conversion_map: self.volume_to_conversion_map,
-            root_volume_name: self.root_volume_name,
-            force_uefi: self.force_uefi,
-            data_timestamp: self.data_timestamp,
-            volume_to_volume_size: self.volume_to_volume_size,
-            volume_to_product_codes: self.volume_to_product_codes,
+            volume_to_conversion_map: self.volume_to_conversion_map
+            ,
+            root_volume_name: self.root_volume_name
+            ,
+            force_uefi: self.force_uefi
+            ,
+            data_timestamp: self.data_timestamp
+            ,
+            volume_to_volume_size: self.volume_to_volume_size
+            ,
+            volume_to_product_codes: self.volume_to_product_codes
+            ,
         }
     }
 }
+

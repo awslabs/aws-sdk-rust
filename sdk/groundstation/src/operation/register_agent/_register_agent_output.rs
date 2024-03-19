@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAgentOutput {
+pub struct RegisterAgentOutput  {
     /// <p>UUID of registered agent.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterAgentOutput {
+impl  RegisterAgentOutput  {
     /// <p>UUID of registered agent.</p>
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterAgentOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAgentOutput`](crate::operation::register_agent::RegisterAgentOutput).
     pub fn builder() -> crate::operation::register_agent::builders::RegisterAgentOutputBuilder {
@@ -40,27 +40,28 @@ impl RegisterAgentOutputBuilder {
     }
     /// <p>UUID of registered agent.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>UUID of registered agent.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterAgentOutput`](crate::operation::register_agent::RegisterAgentOutput).
     pub fn build(self) -> crate::operation::register_agent::RegisterAgentOutput {
         crate::operation::register_agent::RegisterAgentOutput {
-            agent_id: self.agent_id,
+            agent_id: self.agent_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

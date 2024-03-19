@@ -3,13 +3,13 @@
 /// <p>A structure representing an open format table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OpenTableFormatInput {
+pub struct OpenTableFormatInput  {
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
     pub iceberg_input: ::std::option::Option<crate::types::IcebergInput>,
 }
-impl OpenTableFormatInput {
+impl  OpenTableFormatInput  {
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
-    pub fn iceberg_input(&self) -> ::std::option::Option<&crate::types::IcebergInput> {
+    pub fn iceberg_input(&self) -> ::std::option::Option<& crate::types::IcebergInput> {
         self.iceberg_input.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl OpenTableFormatInputBuilder {
     }
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
     pub fn set_iceberg_input(mut self, input: ::std::option::Option<crate::types::IcebergInput>) -> Self {
-        self.iceberg_input = input;
-        self
+        self.iceberg_input = input; self
     }
     /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
     pub fn get_iceberg_input(&self) -> &::std::option::Option<crate::types::IcebergInput> {
@@ -44,7 +43,9 @@ impl OpenTableFormatInputBuilder {
     /// Consumes the builder and constructs a [`OpenTableFormatInput`](crate::types::OpenTableFormatInput).
     pub fn build(self) -> crate::types::OpenTableFormatInput {
         crate::types::OpenTableFormatInput {
-            iceberg_input: self.iceberg_input,
+            iceberg_input: self.iceberg_input
+            ,
         }
     }
 }
+

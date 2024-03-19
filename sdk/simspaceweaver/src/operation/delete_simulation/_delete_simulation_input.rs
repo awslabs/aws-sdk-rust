@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSimulationInput {
+pub struct DeleteSimulationInput  {
     /// <p>The name of the simulation.</p>
     pub simulation: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSimulationInput {
+impl  DeleteSimulationInput  {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> ::std::option::Option<&str> {
+    pub fn simulation(&self) -> ::std::option::Option<& str> {
         self.simulation.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteSimulationInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
     /// <p>The name of the simulation.</p>
     pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_simulation::DeleteSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_simulation::DeleteSimulationInput { simulation: self.simulation })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_simulation::DeleteSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_simulation::DeleteSimulationInput {
+                simulation: self.simulation
+                ,
+            }
+        )
     }
 }
+

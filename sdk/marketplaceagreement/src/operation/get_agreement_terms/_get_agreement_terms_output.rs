@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgreementTermsOutput {
+pub struct GetAgreementTermsOutput  {
     /// <p>A subset of terms proposed by the proposer that have been accepted by the acceptor as part of the agreement creation.</p>
-    pub accepted_terms: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>>,
+    pub accepted_terms: ::std::option::Option<::std::vec::Vec::<crate::types::AcceptedTerm>>,
     /// <p>A token to specify where to start pagination</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetAgreementTermsOutput {
+impl  GetAgreementTermsOutput  {
     /// <p>A subset of terms proposed by the proposer that have been accepted by the acceptor as part of the agreement creation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accepted_terms.is_none()`.
-    pub fn accepted_terms(&self) -> &[crate::types::AcceptedTerm] {
-        self.accepted_terms.as_deref().unwrap_or_default()
+    pub fn accepted_terms(&self) -> & [crate::types::AcceptedTerm] {
+        self.accepted_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to specify where to start pagination</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAgreementTermsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAgreementTermsOutput {
     /// Creates a new builder-style object to manufacture [`GetAgreementTermsOutput`](crate::operation::get_agreement_terms::GetAgreementTermsOutput).
     pub fn builder() -> crate::operation::get_agreement_terms::builders::GetAgreementTermsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetAgreementTermsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAgreementTermsOutputBuilder {
-    pub(crate) accepted_terms: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>>,
+    pub(crate) accepted_terms: ::std::option::Option<::std::vec::Vec::<crate::types::AcceptedTerm>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetAgreementTermsOutputBuilder {
     /// <p>A subset of terms proposed by the proposer that have been accepted by the acceptor as part of the agreement creation.</p>
     pub fn accepted_terms(mut self, input: crate::types::AcceptedTerm) -> Self {
         let mut v = self.accepted_terms.unwrap_or_default();
-        v.push(input);
-        self.accepted_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accepted_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A subset of terms proposed by the proposer that have been accepted by the acceptor as part of the agreement creation.</p>
-    pub fn set_accepted_terms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>>) -> Self {
-        self.accepted_terms = input;
-        self
+    pub fn set_accepted_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AcceptedTerm>>) -> Self {
+        self.accepted_terms = input; self
     }
     /// <p>A subset of terms proposed by the proposer that have been accepted by the acceptor as part of the agreement creation.</p>
-    pub fn get_accepted_terms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>> {
+    pub fn get_accepted_terms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AcceptedTerm>> {
         &self.accepted_terms
     }
     /// <p>A token to specify where to start pagination</p>
@@ -69,28 +69,30 @@ impl GetAgreementTermsOutputBuilder {
     }
     /// <p>A token to specify where to start pagination</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to specify where to start pagination</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAgreementTermsOutput`](crate::operation::get_agreement_terms::GetAgreementTermsOutput).
     pub fn build(self) -> crate::operation::get_agreement_terms::GetAgreementTermsOutput {
         crate::operation::get_agreement_terms::GetAgreementTermsOutput {
-            accepted_terms: self.accepted_terms,
-            next_token: self.next_token,
+            accepted_terms: self.accepted_terms
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

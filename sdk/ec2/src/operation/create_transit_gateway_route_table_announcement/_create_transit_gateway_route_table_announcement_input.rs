@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayRouteTableAnnouncementInput {
+pub struct CreateTransitGatewayRouteTableAnnouncementInput  {
     /// <p>The ID of the transit gateway route table.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the peering attachment.</p>
     pub peering_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateTransitGatewayRouteTableAnnouncementInput {
+impl  CreateTransitGatewayRouteTableAnnouncementInput  {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the peering attachment.</p>
-    pub fn peering_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn peering_attachment_id(&self) -> ::std::option::Option<& str> {
         self.peering_attachment_id.as_deref()
     }
     /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -34,8 +35,7 @@ impl CreateTransitGatewayRouteTableAnnouncementInput {
 }
 impl CreateTransitGatewayRouteTableAnnouncementInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayRouteTableAnnouncementInput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementInput).
-    pub fn builder(
-    ) -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementInputBuilder {
+    pub fn builder() -> crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementInputBuilder {
         crate::operation::create_transit_gateway_route_table_announcement::builders::CreateTransitGatewayRouteTableAnnouncementInputBuilder::default()
     }
 }
@@ -46,7 +46,7 @@ impl CreateTransitGatewayRouteTableAnnouncementInput {
 pub struct CreateTransitGatewayRouteTableAnnouncementInputBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) peering_attachment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayRouteTableAnnouncementInputBuilder {
@@ -58,8 +58,7 @@ impl CreateTransitGatewayRouteTableAnnouncementInputBuilder {
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,7 @@ impl CreateTransitGatewayRouteTableAnnouncementInputBuilder {
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn set_peering_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.peering_attachment_id = input;
-        self
+        self.peering_attachment_id = input; self
     }
     /// <p>The ID of the peering attachment.</p>
     pub fn get_peering_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,17 +85,16 @@ impl CreateTransitGatewayRouteTableAnnouncementInputBuilder {
     /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags specifications applied to the transit gateway route table announcement.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -107,27 +104,26 @@ impl CreateTransitGatewayRouteTableAnnouncementInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableAnnouncementInput`](crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_route_table_announcement::CreateTransitGatewayRouteTableAnnouncementInput {
-                transit_gateway_route_table_id: self.transit_gateway_route_table_id,
-                peering_attachment_id: self.peering_attachment_id,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_route_table_id: self.transit_gateway_route_table_id
+                ,
+                peering_attachment_id: self.peering_attachment_id
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

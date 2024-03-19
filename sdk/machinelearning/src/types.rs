@@ -116,3 +116,4 @@ pub mod builders;
 
 /// Error types that Amazon Machine Learning can respond with.
 pub mod error;
+

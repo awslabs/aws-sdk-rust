@@ -5,54 +5,50 @@ pub use crate::operation::update_stack::_update_stack_input::UpdateStackInputBui
 
 impl UpdateStackInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_stack::UpdateStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_stack::UpdateStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_stack();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_stack::UpdateStackOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_stack::UpdateStackError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_stack();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateStack`.
-///
+/// 
 /// <p>Updates the specified fields for the specified stack.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStackFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_stack::builders::UpdateStackInputBuilder,
+                    inner: crate::operation::update_stack::builders::UpdateStackInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_stack::UpdateStackOutput,
-        crate::operation::update_stack::UpdateStackError,
-    > for UpdateStackFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_stack::UpdateStackOutput,
-            crate::operation::update_stack::UpdateStackError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_stack::UpdateStackOutput,
+                    crate::operation::update_stack::UpdateStackError,
+                > for UpdateStackFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_stack::UpdateStackOutput,
+                        crate::operation::update_stack::UpdateStackError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateStackFluentBuilder {
     /// Creates a new `UpdateStack`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateStackFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_stack::UpdateStackOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_stack::UpdateStackError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_stack::UpdateStack::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_stack::UpdateStack::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_stack::UpdateStackOutput,
-        crate::operation::update_stack::UpdateStackError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_stack::UpdateStackError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_stack::UpdateStack::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_stack::UpdateStack::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_stack::UpdateStackOutput, crate::operation::update_stack::UpdateStackError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The stack name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -160,12 +147,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>) -> Self {
+    pub fn set_storage_connectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>>) -> Self {
         self.inner = self.inner.set_storage_connectors(input);
         self
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>> {
+    pub fn get_storage_connectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StorageConnector>> {
         self.inner.get_storage_connectors()
     }
     /// <p>Deletes the storage connectors currently enabled for the stack.</p>
@@ -223,12 +210,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>>) -> Self {
+    pub fn set_attributes_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>>) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
     /// <p>The stack attributes to delete.</p>
-    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StackAttribute>> {
+    pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StackAttribute>> {
         self.inner.get_attributes_to_delete()
     }
     /// Appends an item to `UserSettings`.
@@ -241,12 +228,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>) -> Self {
+    pub fn set_user_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>>) -> Self {
         self.inner = self.inner.set_user_settings(input);
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserSetting>> {
+    pub fn get_user_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UserSetting>> {
         self.inner.get_user_settings()
     }
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -273,12 +260,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>) -> Self {
+    pub fn set_access_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>>) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
     }
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+    pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
     /// Appends an item to `EmbedHostDomains`.
@@ -291,12 +278,12 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_embed_host_domains(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_embed_host_domains(input);
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_embed_host_domains(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_embed_host_domains()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
@@ -314,3 +301,4 @@ impl UpdateStackFluentBuilder {
         self.inner.get_streaming_experience_settings()
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>A request to change information about an ApiKey resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateApiKeyInput {
+pub struct UpdateApiKeyInput  {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
-impl UpdateApiKeyInput {
+impl  UpdateApiKeyInput  {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_operations.is_none()`.
-    pub fn patch_operations(&self) -> &[crate::types::PatchOperation] {
-        self.patch_operations.as_deref().unwrap_or_default()
+    pub fn patch_operations(&self) -> & [crate::types::PatchOperation] {
+        self.patch_operations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateApiKeyInput {
@@ -33,7 +34,7 @@ impl UpdateApiKeyInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateApiKeyInputBuilder {
     pub(crate) api_key: ::std::option::Option<::std::string::String>,
-    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) patch_operations: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>,
 }
 impl UpdateApiKeyInputBuilder {
     /// <p>The identifier of the ApiKey resource to be updated.</p>
@@ -44,8 +45,7 @@ impl UpdateApiKeyInputBuilder {
     }
     /// <p>The identifier of the ApiKey resource to be updated.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>The identifier of the ApiKey resource to be updated.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,26 +58,28 @@ impl UpdateApiKeyInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+    pub fn get_patch_operations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchOperation>> {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_api_key::UpdateApiKeyInput {
-            api_key: self.api_key,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_api_key::UpdateApiKeyInput {
+                api_key: self.api_key
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

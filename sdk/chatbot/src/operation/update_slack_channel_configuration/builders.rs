@@ -5,54 +5,50 @@ pub use crate::operation::update_slack_channel_configuration::_update_slack_chan
 
 impl UpdateSlackChannelConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_slack_channel_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_slack_channel_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateSlackChannelConfiguration`.
-///
+/// 
 /// Updates Slack Channel Configuration
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder,
+                    inner: crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-    > for UpdateSlackChannelConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+                    crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
+                > for UpdateSlackChannelConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
+                        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateSlackChannelConfigurationFluentBuilder {
     /// Creates a new `UpdateSlackChannelConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput,
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput, crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// The ARN of the SlackChannelConfiguration to update.
     pub fn chat_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chat_configuration_arn(input.into());
@@ -160,12 +147,12 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_sns_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_sns_topic_arns(input);
         self
     }
     /// The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
-    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sns_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_sns_topic_arns()
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
@@ -206,12 +193,12 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    pub fn set_guardrail_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_guardrail_policy_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_guardrail_policy_arns(input);
         self
     }
     /// The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied by default if this is not set.
-    pub fn get_guardrail_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_guardrail_policy_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_guardrail_policy_arns()
     }
     /// Enables use of a user role requirement in your chat configuration.
@@ -229,3 +216,4 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self.inner.get_user_authorization_required()
     }
 }
+

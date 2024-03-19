@@ -3,7 +3,7 @@
 /// <p>Defines column statistics supported for timestamp data columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateColumnStatisticsData {
+pub struct DateColumnStatisticsData  {
     /// <p>The lowest value in the column.</p>
     pub minimum_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The highest value in the column.</p>
@@ -13,13 +13,13 @@ pub struct DateColumnStatisticsData {
     /// <p>The number of distinct values in a column.</p>
     pub number_of_distinct_values: i64,
 }
-impl DateColumnStatisticsData {
+impl  DateColumnStatisticsData  {
     /// <p>The lowest value in the column.</p>
-    pub fn minimum_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn minimum_value(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.minimum_value.as_ref()
     }
     /// <p>The highest value in the column.</p>
-    pub fn maximum_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn maximum_value(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.maximum_value.as_ref()
     }
     /// <p>The number of null values in the column.</p>
@@ -55,8 +55,7 @@ impl DateColumnStatisticsDataBuilder {
     }
     /// <p>The lowest value in the column.</p>
     pub fn set_minimum_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.minimum_value = input;
-        self
+        self.minimum_value = input; self
     }
     /// <p>The lowest value in the column.</p>
     pub fn get_minimum_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,8 +68,7 @@ impl DateColumnStatisticsDataBuilder {
     }
     /// <p>The highest value in the column.</p>
     pub fn set_maximum_value(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.maximum_value = input;
-        self
+        self.maximum_value = input; self
     }
     /// <p>The highest value in the column.</p>
     pub fn get_maximum_value(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -84,8 +82,7 @@ impl DateColumnStatisticsDataBuilder {
     }
     /// <p>The number of null values in the column.</p>
     pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_nulls = input;
-        self
+        self.number_of_nulls = input; self
     }
     /// <p>The number of null values in the column.</p>
     pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
@@ -99,8 +96,7 @@ impl DateColumnStatisticsDataBuilder {
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_distinct_values = input;
-        self
+        self.number_of_distinct_values = input; self
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn get_number_of_distinct_values(&self) -> &::std::option::Option<i64> {
@@ -109,10 +105,17 @@ impl DateColumnStatisticsDataBuilder {
     /// Consumes the builder and constructs a [`DateColumnStatisticsData`](crate::types::DateColumnStatisticsData).
     pub fn build(self) -> crate::types::DateColumnStatisticsData {
         crate::types::DateColumnStatisticsData {
-            minimum_value: self.minimum_value,
-            maximum_value: self.maximum_value,
-            number_of_nulls: self.number_of_nulls.unwrap_or_default(),
-            number_of_distinct_values: self.number_of_distinct_values.unwrap_or_default(),
+            minimum_value: self.minimum_value
+            ,
+            maximum_value: self.maximum_value
+            ,
+            number_of_nulls: self.number_of_nulls
+                .unwrap_or_default()
+            ,
+            number_of_distinct_values: self.number_of_distinct_values
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>Configuration information of a Kinesis data stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamConfig {
+pub struct KinesisStreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub stream_arn: ::std::string::String,
 }
-impl KinesisStreamConfig {
+impl  KinesisStreamConfig  {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> & str {
+        use std::ops::Deref; self.stream_arn.deref()
     }
 }
 impl KinesisStreamConfig {
@@ -36,8 +35,7 @@ impl KinesisStreamConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KinesisStreamConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_arn`](crate::types::builders::KinesisStreamConfigBuilder::stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisStreamConfig {
-            stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_arn",
-                    "stream_arn was not specified but it is required when building KinesisStreamConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisStreamConfig {
+                stream_arn: self.stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_arn", "stream_arn was not specified but it is required when building KinesisStreamConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

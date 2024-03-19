@@ -3,7 +3,7 @@
 /// <p>Information about a CodeDeploy deployment that occurred around the time of an incident and could be a possible cause of the incident.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CodeDeployDeployment {
+pub struct CodeDeployDeployment  {
     /// <p>The timestamp for when the CodeDeploy deployment began.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for when the CodeDeploy deployment ended. Not reported for deployments that are still in progress.</p>
@@ -13,24 +13,22 @@ pub struct CodeDeployDeployment {
     /// <p>The ID of the CodeDeploy deployment.</p>
     pub deployment_id: ::std::string::String,
 }
-impl CodeDeployDeployment {
+impl  CodeDeployDeployment  {
     /// <p>The timestamp for when the CodeDeploy deployment began.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The timestamp for when the CodeDeploy deployment ended. Not reported for deployments that are still in progress.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CodeDeploy deployment group associated with the deployment.</p>
-    pub fn deployment_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.deployment_group_arn.deref()
+    pub fn deployment_group_arn(&self) -> & str {
+        use std::ops::Deref; self.deployment_group_arn.deref()
     }
     /// <p>The ID of the CodeDeploy deployment.</p>
-    pub fn deployment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.deployment_id.deref()
+    pub fn deployment_id(&self) -> & str {
+        use std::ops::Deref; self.deployment_id.deref()
     }
 }
 impl CodeDeployDeployment {
@@ -58,8 +56,7 @@ impl CodeDeployDeploymentBuilder {
     }
     /// <p>The timestamp for when the CodeDeploy deployment began.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp for when the CodeDeploy deployment began.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -72,8 +69,7 @@ impl CodeDeployDeploymentBuilder {
     }
     /// <p>The timestamp for when the CodeDeploy deployment ended. Not reported for deployments that are still in progress.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp for when the CodeDeploy deployment ended. Not reported for deployments that are still in progress.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,8 +83,7 @@ impl CodeDeployDeploymentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CodeDeploy deployment group associated with the deployment.</p>
     pub fn set_deployment_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_group_arn = input;
-        self
+        self.deployment_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CodeDeploy deployment group associated with the deployment.</p>
     pub fn get_deployment_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl CodeDeployDeploymentBuilder {
     }
     /// <p>The ID of the CodeDeploy deployment.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The ID of the CodeDeploy deployment.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,26 +109,27 @@ impl CodeDeployDeploymentBuilder {
     /// - [`deployment_group_arn`](crate::types::builders::CodeDeployDeploymentBuilder::deployment_group_arn)
     /// - [`deployment_id`](crate::types::builders::CodeDeployDeploymentBuilder::deployment_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CodeDeployDeployment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CodeDeployDeployment {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building CodeDeployDeployment",
-                )
-            })?,
-            end_time: self.end_time,
-            deployment_group_arn: self.deployment_group_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_group_arn",
-                    "deployment_group_arn was not specified but it is required when building CodeDeployDeployment",
-                )
-            })?,
-            deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "deployment_id",
-                    "deployment_id was not specified but it is required when building CodeDeployDeployment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CodeDeployDeployment {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building CodeDeployDeployment")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                deployment_group_arn: self.deployment_group_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_group_arn", "deployment_group_arn was not specified but it is required when building CodeDeployDeployment")
+                    )?
+                ,
+                deployment_id: self.deployment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("deployment_id", "deployment_id was not specified but it is required when building CodeDeployDeployment")
+                    )?
+                ,
+            }
+        )
     }
 }
+

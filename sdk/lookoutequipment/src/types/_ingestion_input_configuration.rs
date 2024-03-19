@@ -3,13 +3,13 @@
 /// <p>Specifies configuration information for the input data for the data ingestion job, including input data S3 location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestionInputConfiguration {
+pub struct IngestionInputConfiguration  {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion.</p>
     pub s3_input_configuration: ::std::option::Option<crate::types::IngestionS3InputConfiguration>,
 }
-impl IngestionInputConfiguration {
+impl  IngestionInputConfiguration  {
     /// <p>The location information for the S3 bucket used for input data for the data ingestion.</p>
-    pub fn s3_input_configuration(&self) -> ::std::option::Option<&crate::types::IngestionS3InputConfiguration> {
+    pub fn s3_input_configuration(&self) -> ::std::option::Option<& crate::types::IngestionS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl IngestionInputConfigurationBuilder {
     }
     /// <p>The location information for the S3 bucket used for input data for the data ingestion.</p>
     pub fn set_s3_input_configuration(mut self, input: ::std::option::Option<crate::types::IngestionS3InputConfiguration>) -> Self {
-        self.s3_input_configuration = input;
-        self
+        self.s3_input_configuration = input; self
     }
     /// <p>The location information for the S3 bucket used for input data for the data ingestion.</p>
     pub fn get_s3_input_configuration(&self) -> &::std::option::Option<crate::types::IngestionS3InputConfiguration> {
@@ -45,7 +44,9 @@ impl IngestionInputConfigurationBuilder {
     /// Consumes the builder and constructs a [`IngestionInputConfiguration`](crate::types::IngestionInputConfiguration).
     pub fn build(self) -> crate::types::IngestionInputConfiguration {
         crate::types::IngestionInputConfiguration {
-            s3_input_configuration: self.s3_input_configuration,
+            s3_input_configuration: self.s3_input_configuration
+            ,
         }
     }
 }
+

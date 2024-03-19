@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutMetricsInput {
+pub struct BatchPutMetricsInput  {
     /// <p>The name of the Trial Component to associate with the metrics.</p>
     pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of raw metric values to put.</p>
-    pub metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,
+    pub metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::RawMetricData>>,
 }
-impl BatchPutMetricsInput {
+impl  BatchPutMetricsInput  {
     /// <p>The name of the Trial Component to associate with the metrics.</p>
-    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<& str> {
         self.trial_component_name.as_deref()
     }
     /// <p>A list of raw metric values to put.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data.is_none()`.
-    pub fn metric_data(&self) -> &[crate::types::RawMetricData] {
-        self.metric_data.as_deref().unwrap_or_default()
+    pub fn metric_data(&self) -> & [crate::types::RawMetricData] {
+        self.metric_data.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutMetricsInput {
@@ -32,7 +33,7 @@ impl BatchPutMetricsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutMetricsInputBuilder {
     pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>,
+    pub(crate) metric_data: ::std::option::Option<::std::vec::Vec::<crate::types::RawMetricData>>,
 }
 impl BatchPutMetricsInputBuilder {
     /// <p>The name of the Trial Component to associate with the metrics.</p>
@@ -43,8 +44,7 @@ impl BatchPutMetricsInputBuilder {
     }
     /// <p>The name of the Trial Component to associate with the metrics.</p>
     pub fn set_trial_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_component_name = input;
-        self
+        self.trial_component_name = input; self
     }
     /// <p>The name of the Trial Component to associate with the metrics.</p>
     pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,26 +57,28 @@ impl BatchPutMetricsInputBuilder {
     /// <p>A list of raw metric values to put.</p>
     pub fn metric_data(mut self, input: crate::types::RawMetricData) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-        v.push(input);
-        self.metric_data = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metric_data = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of raw metric values to put.</p>
-    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>>) -> Self {
-        self.metric_data = input;
-        self
+    pub fn set_metric_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RawMetricData>>) -> Self {
+        self.metric_data = input; self
     }
     /// <p>A list of raw metric values to put.</p>
-    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>> {
+    pub fn get_metric_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RawMetricData>> {
         &self.metric_data
     }
     /// Consumes the builder and constructs a [`BatchPutMetricsInput`](crate::operation::batch_put_metrics::BatchPutMetricsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_put_metrics::BatchPutMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_put_metrics::BatchPutMetricsInput {
-            trial_component_name: self.trial_component_name,
-            metric_data: self.metric_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_metrics::BatchPutMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_metrics::BatchPutMetricsInput {
+                trial_component_name: self.trial_component_name
+                ,
+                metric_data: self.metric_data
+                ,
+            }
+        )
     }
 }
+

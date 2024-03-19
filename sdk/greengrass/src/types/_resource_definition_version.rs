@@ -3,16 +3,17 @@
 /// Information about a resource definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceDefinitionVersion {
+pub struct ResourceDefinitionVersion  {
     /// A list of resources.
-    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
-impl ResourceDefinitionVersion {
+impl  ResourceDefinitionVersion  {
     /// A list of resources.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
-    pub fn resources(&self) -> &[crate::types::Resource] {
-        self.resources.as_deref().unwrap_or_default()
+    pub fn resources(&self) -> & [crate::types::Resource] {
+        self.resources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResourceDefinitionVersion {
@@ -26,7 +27,7 @@ impl ResourceDefinitionVersion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourceDefinitionVersionBuilder {
-    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>,
 }
 impl ResourceDefinitionVersionBuilder {
     /// Appends an item to `resources`.
@@ -36,21 +37,24 @@ impl ResourceDefinitionVersionBuilder {
     /// A list of resources.
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resources = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of resources.
-    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// A list of resources.
-    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Resource>> {
         &self.resources
     }
     /// Consumes the builder and constructs a [`ResourceDefinitionVersion`](crate::types::ResourceDefinitionVersion).
     pub fn build(self) -> crate::types::ResourceDefinitionVersion {
-        crate::types::ResourceDefinitionVersion { resources: self.resources }
+        crate::types::ResourceDefinitionVersion {
+            resources: self.resources
+            ,
+        }
     }
 }
+

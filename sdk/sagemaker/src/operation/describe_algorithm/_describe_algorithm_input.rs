@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAlgorithmInput {
+pub struct DescribeAlgorithmInput  {
     /// <p>The name of the algorithm to describe.</p>
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAlgorithmInput {
+impl  DescribeAlgorithmInput  {
     /// <p>The name of the algorithm to describe.</p>
-    pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeAlgorithmInputBuilder {
     }
     /// <p>The name of the algorithm to describe.</p>
     pub fn set_algorithm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// <p>The name of the algorithm to describe.</p>
     pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.algorithm_name
     }
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_algorithm::DescribeAlgorithmInput {
-            algorithm_name: self.algorithm_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_algorithm::DescribeAlgorithmInput {
+                algorithm_name: self.algorithm_name
+                ,
+            }
+        )
     }
 }
+

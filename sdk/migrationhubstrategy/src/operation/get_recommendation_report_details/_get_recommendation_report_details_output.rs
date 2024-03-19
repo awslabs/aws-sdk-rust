@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationReportDetailsOutput {
+pub struct GetRecommendationReportDetailsOutput  {
     /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the recommendation report.</p>
     pub recommendation_report_details: ::std::option::Option<crate::types::RecommendationReportDetails>,
     _request_id: Option<String>,
 }
-impl GetRecommendationReportDetailsOutput {
+impl  GetRecommendationReportDetailsOutput  {
     /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Detailed information about the recommendation report.</p>
-    pub fn recommendation_report_details(&self) -> ::std::option::Option<&crate::types::RecommendationReportDetails> {
+    pub fn recommendation_report_details(&self) -> ::std::option::Option<& crate::types::RecommendationReportDetails> {
         self.recommendation_report_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRecommendationReportDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRecommendationReportDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
     pub fn builder() -> crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder {
@@ -47,8 +47,7 @@ impl GetRecommendationReportDetailsOutputBuilder {
     }
     /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the recommendation report generation task. See the response of <code>StartRecommendationReportGeneration</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl GetRecommendationReportDetailsOutputBuilder {
     }
     /// <p>Detailed information about the recommendation report.</p>
     pub fn set_recommendation_report_details(mut self, input: ::std::option::Option<crate::types::RecommendationReportDetails>) -> Self {
-        self.recommendation_report_details = input;
-        self
+        self.recommendation_report_details = input; self
     }
     /// <p>Detailed information about the recommendation report.</p>
     pub fn get_recommendation_report_details(&self) -> &::std::option::Option<crate::types::RecommendationReportDetails> {
         &self.recommendation_report_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRecommendationReportDetailsOutput`](crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput).
     pub fn build(self) -> crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput {
         crate::operation::get_recommendation_report_details::GetRecommendationReportDetailsOutput {
-            id: self.id,
-            recommendation_report_details: self.recommendation_report_details,
+            id: self.id
+            ,
+            recommendation_report_details: self.recommendation_report_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchVulnerabilities`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_criteria(SearchVulnerabilitiesFilterCriteria)`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::filter_criteria) / [`set_filter_criteria(Option<SearchVulnerabilitiesFilterCriteria>)`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::set_filter_criteria):<br>required: **true**<br><p>The criteria used to filter the results of a vulnerability search.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
-    /// - On success, responds with [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput) with field(s):
+                            /// - On success, responds with [`SearchVulnerabilitiesOutput`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput) with field(s):
     ///   - [`vulnerabilities(Vec::<Vulnerability>)`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput::vulnerabilities): <p>Details about the listed vulnerability.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    /// - On failure, responds with [`SdkError<SearchVulnerabilitiesError>`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesError)
+                            /// - On failure, responds with [`SdkError<SearchVulnerabilitiesError>`](crate::operation::search_vulnerabilities::SearchVulnerabilitiesError)
     pub fn search_vulnerabilities(&self) -> crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder {
-        crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

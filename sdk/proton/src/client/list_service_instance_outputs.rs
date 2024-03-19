@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServiceInstanceOutputs`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`service_instance_name(impl Into<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::service_instance_name) / [`set_service_instance_name(Option<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::set_service_instance_name):<br>required: **true**<br><p>The name of the service instance whose outputs you want.</p><br>
     ///   - [`service_name(impl Into<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::set_service_name):<br>required: **true**<br><p>The name of the service that <code>serviceInstanceName</code> is associated to.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p><br>
     ///   - [`deployment_id(impl Into<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::set_deployment_id):<br>required: **false**<br><p>The ID of the deployment whose outputs you want.</p><br>
-    /// - On success, responds with [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput) with field(s):
+                            /// - On success, responds with [`ListServiceInstanceOutputsOutput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::next_token): <p>A token that indicates the location of the next output in the array of outputs, after the current requested list of outputs.</p>
     ///   - [`outputs(Vec::<Output>)`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-    /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError)
-    pub fn list_service_instance_outputs(
-        &self,
-    ) -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder {
-        crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsError)
+    pub fn list_service_instance_outputs(&self) -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder {
+                                crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

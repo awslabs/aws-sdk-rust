@@ -3,7 +3,7 @@
 /// <p>Basic details used in creating a response plan. The response plan is then used to create an incident record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncidentTemplate {
+pub struct IncidentTemplate  {
     /// <p>The title of the incident.</p>
     pub title: ::std::string::String,
     /// <p>The impact of the incident on your customers and applications.</p>
@@ -29,15 +29,14 @@ pub struct IncidentTemplate {
     /// </note>
     pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
+    pub notification_targets: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>>,
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub incident_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl IncidentTemplate {
+impl  IncidentTemplate  {
     /// <p>The title of the incident.</p>
-    pub fn title(&self) -> &str {
-        use std::ops::Deref;
-        self.title.deref()
+    pub fn title(&self) -> & str {
+        use std::ops::Deref; self.title.deref()
     }
     /// <p>The impact of the incident on your customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
@@ -57,24 +56,25 @@ impl IncidentTemplate {
         self.impact
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
-    pub fn summary(&self) -> ::std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
     /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p><note>
     /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
     /// </note>
-    pub fn dedupe_string(&self) -> ::std::option::Option<&str> {
+    pub fn dedupe_string(&self) -> ::std::option::Option<& str> {
         self.dedupe_string.as_deref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_targets.is_none()`.
-    pub fn notification_targets(&self) -> &[crate::types::NotificationTargetItem] {
-        self.notification_targets.as_deref().unwrap_or_default()
+    pub fn notification_targets(&self) -> & [crate::types::NotificationTargetItem] {
+        self.notification_targets.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn incident_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn incident_tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.incident_tags.as_ref()
     }
 }
@@ -93,8 +93,8 @@ pub struct IncidentTemplateBuilder {
     pub(crate) impact: ::std::option::Option<i32>,
     pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) dedupe_string: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_targets: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
-    pub(crate) incident_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) notification_targets: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>>,
+    pub(crate) incident_tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl IncidentTemplateBuilder {
     /// <p>The title of the incident.</p>
@@ -105,8 +105,7 @@ impl IncidentTemplateBuilder {
     }
     /// <p>The title of the incident.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title of the incident.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl IncidentTemplateBuilder {
     /// <p><code>5</code> - No Impact</p></li>
     /// </ul>
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.impact = input;
-        self
+        self.impact = input; self
     }
     /// <p>The impact of the incident on your customers and applications.</p>
     /// <p class="title"><b>Supported impact codes</b></p>
@@ -173,8 +171,7 @@ impl IncidentTemplateBuilder {
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.</p>
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +190,7 @@ impl IncidentTemplateBuilder {
     /// <p>By default, Incident Manager automatically deduplicates multiple incidents created by the same Amazon CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own deduplication string to prevent duplication for these resource types.</p>
     /// </note>
     pub fn set_dedupe_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dedupe_string = input;
-        self
+        self.dedupe_string = input; self
     }
     /// <p>The string Incident Manager uses to prevent the same root cause from creating multiple incidents in the same account.</p>
     /// <p>A deduplication string is a term or phrase the system uses to check for duplicate incidents. If you specify a deduplication string, Incident Manager searches for open incidents that contain the same string in the <code>dedupeString</code> field when it creates the incident. If a duplicate is detected, Incident Manager deduplicates the newer incident into the existing incident.</p><note>
@@ -210,17 +206,16 @@ impl IncidentTemplateBuilder {
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
         let mut v = self.notification_targets.unwrap_or_default();
-        v.push(input);
-        self.notification_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notification_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn set_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>) -> Self {
-        self.notification_targets = input;
-        self
+    pub fn set_notification_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>>) -> Self {
+        self.notification_targets = input; self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
-    pub fn get_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+    pub fn get_notification_targets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationTargetItem>> {
         &self.notification_targets
     }
     /// Adds a key-value pair to `incident_tags`.
@@ -230,20 +225,16 @@ impl IncidentTemplateBuilder {
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
     pub fn incident_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.incident_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.incident_tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.incident_tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn set_incident_tags(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.incident_tags = input;
-        self
+    pub fn set_incident_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.incident_tags = input; self
     }
     /// <p>Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.</p>
-    pub fn get_incident_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_incident_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.incident_tags
     }
     /// Consumes the builder and constructs a [`IncidentTemplate`](crate::types::IncidentTemplate).
@@ -251,23 +242,28 @@ impl IncidentTemplateBuilder {
     /// - [`title`](crate::types::builders::IncidentTemplateBuilder::title)
     /// - [`impact`](crate::types::builders::IncidentTemplateBuilder::impact)
     pub fn build(self) -> ::std::result::Result<crate::types::IncidentTemplate, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IncidentTemplate {
-            title: self.title.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "title",
-                    "title was not specified but it is required when building IncidentTemplate",
-                )
-            })?,
-            impact: self.impact.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "impact",
-                    "impact was not specified but it is required when building IncidentTemplate",
-                )
-            })?,
-            summary: self.summary,
-            dedupe_string: self.dedupe_string,
-            notification_targets: self.notification_targets,
-            incident_tags: self.incident_tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IncidentTemplate {
+                title: self.title
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("title", "title was not specified but it is required when building IncidentTemplate")
+                    )?
+                ,
+                impact: self.impact
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("impact", "impact was not specified but it is required when building IncidentTemplate")
+                    )?
+                ,
+                summary: self.summary
+                ,
+                dedupe_string: self.dedupe_string
+                ,
+                notification_targets: self.notification_targets
+                ,
+                incident_tags: self.incident_tags
+                ,
+            }
+        )
     }
 }
+

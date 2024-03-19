@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of the recommender.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommenderSummary {
+pub struct RecommenderSummary  {
     /// <p>The name of the recommender.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
@@ -29,25 +29,25 @@ pub struct RecommenderSummary {
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl RecommenderSummary {
+impl  RecommenderSummary  {
     /// <p>The name of the recommender.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
-    pub fn recommender_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> ::std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
-    pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> ::std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The configuration details of the recommender.</p>
-    pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
+    pub fn recommender_config(&self) -> ::std::option::Option<& crate::types::RecommenderConfig> {
         self.recommender_config.as_ref()
     }
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
@@ -59,15 +59,15 @@ impl RecommenderSummary {
     /// <li>
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The name of the recommender.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the recommender.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub fn set_recommender_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recipe_arn = input;
-        self
+        self.recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
     pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn set_recommender_config(mut self, input: ::std::option::Option<crate::types::RecommenderConfig>) -> Self {
-        self.recommender_config = input;
-        self
+        self.recommender_config = input; self
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn get_recommender_config(&self) -> &::std::option::Option<crate::types::RecommenderConfig> {
@@ -185,8 +180,7 @@ impl RecommenderSummaryBuilder {
     /// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
     /// <ul>
@@ -207,8 +201,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -221,8 +214,7 @@ impl RecommenderSummaryBuilder {
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -231,14 +223,23 @@ impl RecommenderSummaryBuilder {
     /// Consumes the builder and constructs a [`RecommenderSummary`](crate::types::RecommenderSummary).
     pub fn build(self) -> crate::types::RecommenderSummary {
         crate::types::RecommenderSummary {
-            name: self.name,
-            recommender_arn: self.recommender_arn,
-            dataset_group_arn: self.dataset_group_arn,
-            recipe_arn: self.recipe_arn,
-            recommender_config: self.recommender_config,
-            status: self.status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            name: self.name
+            ,
+            recommender_arn: self.recommender_arn
+            ,
+            dataset_group_arn: self.dataset_group_arn
+            ,
+            recipe_arn: self.recipe_arn
+            ,
+            recommender_config: self.recommender_config
+            ,
+            status: self.status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

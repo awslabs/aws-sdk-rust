@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExports`](crate::operation::list_exports::builders::ListExportsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_exports::builders::ListExportsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_bot_id):<br>required: **false**<br><p>The unique identifier that Amazon Lex assigned to the bot.</p><br>
     ///   - [`bot_version(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_bot_version):<br>required: **false**<br><p>The version of the bot to list exports for.</p><br>
     ///   - [`sort_by(ExportSortBy)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::sort_by) / [`set_sort_by(Option<ExportSortBy>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Determines the field that the list of exports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p><br>
@@ -11,14 +11,15 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response from the <code>ListExports</code> operation contains more results that specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListExports</code> request to return the next page of results. For a complete set of results, call the <code>ListExports</code> operation until the <code>nextToken</code> returned in the response is null.</p><br>
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_exports::builders::ListExportsFluentBuilder::set_locale_id):<br>required: **false**<br><p>Specifies the resources that should be exported. If you don't specify a resource type in the <code>filters</code> parameter, both bot locales and custom vocabularies are exported.</p><br>
-    /// - On success, responds with [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput) with field(s):
+                            /// - On success, responds with [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_exports::ListExportsOutput::bot_id): <p>The unique identifier assigned to the bot by Amazon Lex.</p>
     ///   - [`bot_version(Option<String>)`](crate::operation::list_exports::ListExportsOutput::bot_version): <p>The version of the bot that was exported.</p>
     ///   - [`export_summaries(Option<Vec::<ExportSummary>>)`](crate::operation::list_exports::ListExportsOutput::export_summaries): <p>Summary information for the exports that meet the filter criteria specified in the request. The length of the list is specified in the <code>maxResults</code> parameter. If there are more exports available, the <code>nextToken</code> field contains a token to get the next page of results.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_exports::ListExportsOutput::next_token): <p>A token that indicates whether there are more results to return in a response to the <code>ListExports</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code> operation request to get the next page of results.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_exports::ListExportsOutput::locale_id): <p>The locale specified in the request.</p>
-    /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
+                            /// - On failure, responds with [`SdkError<ListExportsError>`](crate::operation::list_exports::ListExportsError)
     pub fn list_exports(&self) -> crate::operation::list_exports::builders::ListExportsFluentBuilder {
-        crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_exports::builders::ListExportsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the dimensions for a set of metrics.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dimensions {
+pub struct Dimensions  {
     /// <p>Information about the queue for which metrics are returned.</p>
     pub queue: ::std::option::Option<crate::types::QueueReference>,
     /// <p>The channel used for grouping and filters.</p>
@@ -13,21 +13,21 @@ pub struct Dimensions {
     /// <p>The expression of a step in a routing criteria.</p>
     pub routing_step_expression: ::std::option::Option<::std::string::String>,
 }
-impl Dimensions {
+impl  Dimensions  {
     /// <p>Information about the queue for which metrics are returned.</p>
-    pub fn queue(&self) -> ::std::option::Option<&crate::types::QueueReference> {
+    pub fn queue(&self) -> ::std::option::Option<& crate::types::QueueReference> {
         self.queue.as_ref()
     }
     /// <p>The channel used for grouping and filters.</p>
-    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Information about the routing profile assigned to the user.</p>
-    pub fn routing_profile(&self) -> ::std::option::Option<&crate::types::RoutingProfileReference> {
+    pub fn routing_profile(&self) -> ::std::option::Option<& crate::types::RoutingProfileReference> {
         self.routing_profile.as_ref()
     }
     /// <p>The expression of a step in a routing criteria.</p>
-    pub fn routing_step_expression(&self) -> ::std::option::Option<&str> {
+    pub fn routing_step_expression(&self) -> ::std::option::Option<& str> {
         self.routing_step_expression.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl DimensionsBuilder {
     }
     /// <p>Information about the queue for which metrics are returned.</p>
     pub fn set_queue(mut self, input: ::std::option::Option<crate::types::QueueReference>) -> Self {
-        self.queue = input;
-        self
+        self.queue = input; self
     }
     /// <p>Information about the queue for which metrics are returned.</p>
     pub fn get_queue(&self) -> &::std::option::Option<crate::types::QueueReference> {
@@ -69,8 +68,7 @@ impl DimensionsBuilder {
     }
     /// <p>The channel used for grouping and filters.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The channel used for grouping and filters.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
@@ -83,8 +81,7 @@ impl DimensionsBuilder {
     }
     /// <p>Information about the routing profile assigned to the user.</p>
     pub fn set_routing_profile(mut self, input: ::std::option::Option<crate::types::RoutingProfileReference>) -> Self {
-        self.routing_profile = input;
-        self
+        self.routing_profile = input; self
     }
     /// <p>Information about the routing profile assigned to the user.</p>
     pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfileReference> {
@@ -97,8 +94,7 @@ impl DimensionsBuilder {
     }
     /// <p>The expression of a step in a routing criteria.</p>
     pub fn set_routing_step_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.routing_step_expression = input;
-        self
+        self.routing_step_expression = input; self
     }
     /// <p>The expression of a step in a routing criteria.</p>
     pub fn get_routing_step_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl DimensionsBuilder {
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {
         crate::types::Dimensions {
-            queue: self.queue,
-            channel: self.channel,
-            routing_profile: self.routing_profile,
-            routing_step_expression: self.routing_step_expression,
+            queue: self.queue
+            ,
+            channel: self.channel
+            ,
+            routing_profile: self.routing_profile
+            ,
+            routing_step_expression: self.routing_step_expression
+            ,
         }
     }
 }
+

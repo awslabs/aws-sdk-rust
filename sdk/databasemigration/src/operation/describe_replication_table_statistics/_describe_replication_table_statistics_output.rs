@@ -3,36 +3,37 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReplicationTableStatisticsOutput {
+pub struct DescribeReplicationTableStatisticsOutput  {
     /// <p>The Amazon Resource Name of the replication config.</p>
     pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub replication_table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub replication_table_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>,
     _request_id: Option<String>,
 }
-impl DescribeReplicationTableStatisticsOutput {
+impl  DescribeReplicationTableStatisticsOutput  {
     /// <p>The Amazon Resource Name of the replication config.</p>
-    pub fn replication_config_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_config_arn(&self) -> ::std::option::Option<& str> {
         self.replication_config_arn.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_table_statistics.is_none()`.
-    pub fn replication_table_statistics(&self) -> &[crate::types::TableStatistics] {
-        self.replication_table_statistics.as_deref().unwrap_or_default()
+    pub fn replication_table_statistics(&self) -> & [crate::types::TableStatistics] {
+        self.replication_table_statistics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReplicationTableStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReplicationTableStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
     pub fn builder() -> crate::operation::describe_replication_table_statistics::builders::DescribeReplicationTableStatisticsOutputBuilder {
@@ -46,7 +47,7 @@ impl DescribeReplicationTableStatisticsOutput {
 pub struct DescribeReplicationTableStatisticsOutputBuilder {
     pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) replication_table_statistics: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>,
+    pub(crate) replication_table_statistics: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTableStatisticsOutputBuilder {
@@ -57,8 +58,7 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the replication config.</p>
     pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_config_arn = input;
-        self
+        self.replication_config_arn = input; self
     }
     /// <p>The Amazon Resource Name of the replication config.</p>
     pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,35 +84,38 @@ impl DescribeReplicationTableStatisticsOutputBuilder {
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
     pub fn replication_table_statistics(mut self, input: crate::types::TableStatistics) -> Self {
         let mut v = self.replication_table_statistics.unwrap_or_default();
-        v.push(input);
-        self.replication_table_statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replication_table_statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn set_replication_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>>) -> Self {
-        self.replication_table_statistics = input;
-        self
+    pub fn set_replication_table_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>>) -> Self {
+        self.replication_table_statistics = input; self
     }
     /// <p>Returns table statistics on the replication, including table name, rows inserted, rows updated, and rows deleted.</p>
-    pub fn get_replication_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableStatistics>> {
+    pub fn get_replication_table_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TableStatistics>> {
         &self.replication_table_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReplicationTableStatisticsOutput`](crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput).
     pub fn build(self) -> crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput {
         crate::operation::describe_replication_table_statistics::DescribeReplicationTableStatisticsOutput {
-            replication_config_arn: self.replication_config_arn,
-            marker: self.marker,
-            replication_table_statistics: self.replication_table_statistics,
+            replication_config_arn: self.replication_config_arn
+            ,
+            marker: self.marker
+            ,
+            replication_table_statistics: self.replication_table_statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

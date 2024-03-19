@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationInput {
+pub struct GetRecommendationInput  {
     /// <p>The Recommendation identifier</p>
     pub recommendation_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetRecommendationInput {
+impl  GetRecommendationInput  {
     /// <p>The Recommendation identifier</p>
-    pub fn recommendation_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_identifier(&self) -> ::std::option::Option<& str> {
         self.recommendation_identifier.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetRecommendationInputBuilder {
     }
     /// <p>The Recommendation identifier</p>
     pub fn set_recommendation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_identifier = input;
-        self
+        self.recommendation_identifier = input; self
     }
     /// <p>The Recommendation identifier</p>
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_identifier
     }
     /// Consumes the builder and constructs a [`GetRecommendationInput`](crate::operation::get_recommendation::GetRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_recommendation::GetRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_recommendation::GetRecommendationInput {
-            recommendation_identifier: self.recommendation_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommendation::GetRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recommendation::GetRecommendationInput {
+                recommendation_identifier: self.recommendation_identifier
+                ,
+            }
+        )
     }
 }
+

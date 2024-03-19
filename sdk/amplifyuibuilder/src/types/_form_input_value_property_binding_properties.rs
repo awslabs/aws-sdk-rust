@@ -3,20 +3,19 @@
 /// <p>Associates a form property to a binding property. This enables exposed properties on the top level form to propagate data to the form's property values.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FormInputValuePropertyBindingProperties {
+pub struct FormInputValuePropertyBindingProperties  {
     /// <p>The form property to bind to the data field.</p>
     pub property: ::std::string::String,
     /// <p>The data field to bind the property to.</p>
     pub field: ::std::option::Option<::std::string::String>,
 }
-impl FormInputValuePropertyBindingProperties {
+impl  FormInputValuePropertyBindingProperties  {
     /// <p>The form property to bind to the data field.</p>
-    pub fn property(&self) -> &str {
-        use std::ops::Deref;
-        self.property.deref()
+    pub fn property(&self) -> & str {
+        use std::ops::Deref; self.property.deref()
     }
     /// <p>The data field to bind the property to.</p>
-    pub fn field(&self) -> ::std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<& str> {
         self.field.as_deref()
     }
 }
@@ -43,8 +42,7 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
     }
     /// <p>The form property to bind to the data field.</p>
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.property = input;
-        self
+        self.property = input; self
     }
     /// <p>The form property to bind to the data field.</p>
     pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
     }
     /// <p>The data field to bind the property to.</p>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The data field to bind the property to.</p>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,17 +64,18 @@ impl FormInputValuePropertyBindingPropertiesBuilder {
     /// Consumes the builder and constructs a [`FormInputValuePropertyBindingProperties`](crate::types::FormInputValuePropertyBindingProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`property`](crate::types::builders::FormInputValuePropertyBindingPropertiesBuilder::property)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::FormInputValuePropertyBindingProperties, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FormInputValuePropertyBindingProperties {
-            property: self.property.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "property",
-                    "property was not specified but it is required when building FormInputValuePropertyBindingProperties",
-                )
-            })?,
-            field: self.field,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::FormInputValuePropertyBindingProperties, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::FormInputValuePropertyBindingProperties {
+                property: self.property
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("property", "property was not specified but it is required when building FormInputValuePropertyBindingProperties")
+                    )?
+                ,
+                field: self.field
+                ,
+            }
+        )
     }
 }
+

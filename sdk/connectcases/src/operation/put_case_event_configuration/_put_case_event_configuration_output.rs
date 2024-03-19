@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutCaseEventConfigurationOutput {
+pub struct PutCaseEventConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for PutCaseEventConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutCaseEventConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
     pub fn builder() -> crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct PutCaseEventConfigurationOutputBuilder {
 }
 impl PutCaseEventConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationOutput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput).
     pub fn build(self) -> crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput {
         crate::operation::put_case_event_configuration::PutCaseEventConfigurationOutput {
@@ -40,3 +40,4 @@ impl PutCaseEventConfigurationOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration and other settings for an activity in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Activity {
+pub struct Activity  {
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
     pub custom: ::std::option::Option<crate::types::CustomMessageActivity>,
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
@@ -27,49 +27,49 @@ pub struct Activity {
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub contact_center: ::std::option::Option<crate::types::ContactCenterActivity>,
 }
-impl Activity {
+impl  Activity  {
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
-    pub fn custom(&self) -> ::std::option::Option<&crate::types::CustomMessageActivity> {
+    pub fn custom(&self) -> ::std::option::Option<& crate::types::CustomMessageActivity> {
         self.custom.as_ref()
     }
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
-    pub fn conditional_split(&self) -> ::std::option::Option<&crate::types::ConditionalSplitActivity> {
+    pub fn conditional_split(&self) -> ::std::option::Option<& crate::types::ConditionalSplitActivity> {
         self.conditional_split.as_ref()
     }
     /// <p>The custom description of the activity.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
-    pub fn email(&self) -> ::std::option::Option<&crate::types::EmailMessageActivity> {
+    pub fn email(&self) -> ::std::option::Option<& crate::types::EmailMessageActivity> {
         self.email.as_ref()
     }
     /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
-    pub fn holdout(&self) -> ::std::option::Option<&crate::types::HoldoutActivity> {
+    pub fn holdout(&self) -> ::std::option::Option<& crate::types::HoldoutActivity> {
         self.holdout.as_ref()
     }
     /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
-    pub fn multi_condition(&self) -> ::std::option::Option<&crate::types::MultiConditionalSplitActivity> {
+    pub fn multi_condition(&self) -> ::std::option::Option<& crate::types::MultiConditionalSplitActivity> {
         self.multi_condition.as_ref()
     }
     /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
-    pub fn push(&self) -> ::std::option::Option<&crate::types::PushMessageActivity> {
+    pub fn push(&self) -> ::std::option::Option<& crate::types::PushMessageActivity> {
         self.push.as_ref()
     }
     /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
-    pub fn random_split(&self) -> ::std::option::Option<&crate::types::RandomSplitActivity> {
+    pub fn random_split(&self) -> ::std::option::Option<& crate::types::RandomSplitActivity> {
         self.random_split.as_ref()
     }
     /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
-    pub fn sms(&self) -> ::std::option::Option<&crate::types::SmsMessageActivity> {
+    pub fn sms(&self) -> ::std::option::Option<& crate::types::SmsMessageActivity> {
         self.sms.as_ref()
     }
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
-    pub fn wait(&self) -> ::std::option::Option<&crate::types::WaitActivity> {
+    pub fn wait(&self) -> ::std::option::Option<& crate::types::WaitActivity> {
         self.wait.as_ref()
     }
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
-    pub fn contact_center(&self) -> ::std::option::Option<&crate::types::ContactCenterActivity> {
+    pub fn contact_center(&self) -> ::std::option::Option<& crate::types::ContactCenterActivity> {
         self.contact_center.as_ref()
     }
 }
@@ -104,8 +104,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
     pub fn set_custom(mut self, input: ::std::option::Option<crate::types::CustomMessageActivity>) -> Self {
-        self.custom = input;
-        self
+        self.custom = input; self
     }
     /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
     pub fn get_custom(&self) -> &::std::option::Option<crate::types::CustomMessageActivity> {
@@ -118,8 +117,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
     pub fn set_conditional_split(mut self, input: ::std::option::Option<crate::types::ConditionalSplitActivity>) -> Self {
-        self.conditional_split = input;
-        self
+        self.conditional_split = input; self
     }
     /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
     pub fn get_conditional_split(&self) -> &::std::option::Option<crate::types::ConditionalSplitActivity> {
@@ -132,8 +130,7 @@ impl ActivityBuilder {
     }
     /// <p>The custom description of the activity.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The custom description of the activity.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +143,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
     pub fn set_email(mut self, input: ::std::option::Option<crate::types::EmailMessageActivity>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
     pub fn get_email(&self) -> &::std::option::Option<crate::types::EmailMessageActivity> {
@@ -160,8 +156,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
     pub fn set_holdout(mut self, input: ::std::option::Option<crate::types::HoldoutActivity>) -> Self {
-        self.holdout = input;
-        self
+        self.holdout = input; self
     }
     /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
     pub fn get_holdout(&self) -> &::std::option::Option<crate::types::HoldoutActivity> {
@@ -174,8 +169,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
     pub fn set_multi_condition(mut self, input: ::std::option::Option<crate::types::MultiConditionalSplitActivity>) -> Self {
-        self.multi_condition = input;
-        self
+        self.multi_condition = input; self
     }
     /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
     pub fn get_multi_condition(&self) -> &::std::option::Option<crate::types::MultiConditionalSplitActivity> {
@@ -188,8 +182,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
     pub fn set_push(mut self, input: ::std::option::Option<crate::types::PushMessageActivity>) -> Self {
-        self.push = input;
-        self
+        self.push = input; self
     }
     /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
     pub fn get_push(&self) -> &::std::option::Option<crate::types::PushMessageActivity> {
@@ -202,8 +195,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
     pub fn set_random_split(mut self, input: ::std::option::Option<crate::types::RandomSplitActivity>) -> Self {
-        self.random_split = input;
-        self
+        self.random_split = input; self
     }
     /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
     pub fn get_random_split(&self) -> &::std::option::Option<crate::types::RandomSplitActivity> {
@@ -216,8 +208,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
     pub fn set_sms(mut self, input: ::std::option::Option<crate::types::SmsMessageActivity>) -> Self {
-        self.sms = input;
-        self
+        self.sms = input; self
     }
     /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
     pub fn get_sms(&self) -> &::std::option::Option<crate::types::SmsMessageActivity> {
@@ -230,8 +221,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
     pub fn set_wait(mut self, input: ::std::option::Option<crate::types::WaitActivity>) -> Self {
-        self.wait = input;
-        self
+        self.wait = input; self
     }
     /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
     pub fn get_wait(&self) -> &::std::option::Option<crate::types::WaitActivity> {
@@ -244,8 +234,7 @@ impl ActivityBuilder {
     }
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub fn set_contact_center(mut self, input: ::std::option::Option<crate::types::ContactCenterActivity>) -> Self {
-        self.contact_center = input;
-        self
+        self.contact_center = input; self
     }
     /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
     pub fn get_contact_center(&self) -> &::std::option::Option<crate::types::ContactCenterActivity> {
@@ -254,17 +243,29 @@ impl ActivityBuilder {
     /// Consumes the builder and constructs a [`Activity`](crate::types::Activity).
     pub fn build(self) -> crate::types::Activity {
         crate::types::Activity {
-            custom: self.custom,
-            conditional_split: self.conditional_split,
-            description: self.description,
-            email: self.email,
-            holdout: self.holdout,
-            multi_condition: self.multi_condition,
-            push: self.push,
-            random_split: self.random_split,
-            sms: self.sms,
-            wait: self.wait,
-            contact_center: self.contact_center,
+            custom: self.custom
+            ,
+            conditional_split: self.conditional_split
+            ,
+            description: self.description
+            ,
+            email: self.email
+            ,
+            holdout: self.holdout
+            ,
+            multi_condition: self.multi_condition
+            ,
+            push: self.push
+            ,
+            random_split: self.random_split
+            ,
+            sms: self.sms
+            ,
+            wait: self.wait
+            ,
+            contact_center: self.contact_center
+            ,
         }
     }
 }
+

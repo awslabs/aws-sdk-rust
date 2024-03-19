@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilledMapVisual {
+pub struct FilledMapVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
     pub visual_id: ::std::string::String,
     /// <p>The title that is displayed on the visual.</p>
@@ -16,43 +16,44 @@ pub struct FilledMapVisual {
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
     pub conditional_formatting: ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub column_hierarchies: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>,
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
 }
-impl FilledMapVisual {
+impl  FilledMapVisual  {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub fn visual_id(&self) -> &str {
-        use std::ops::Deref;
-        self.visual_id.deref()
+    pub fn visual_id(&self) -> & str {
+        use std::ops::Deref; self.visual_id.deref()
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<& crate::types::VisualTitleLabelOptions> {
         self.title.as_ref()
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn subtitle(&self) -> ::std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
+    pub fn subtitle(&self) -> ::std::option::Option<& crate::types::VisualSubtitleLabelOptions> {
         self.subtitle.as_ref()
     }
     /// <p>The configuration settings of the visual.</p>
-    pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::FilledMapConfiguration> {
+    pub fn chart_configuration(&self) -> ::std::option::Option<& crate::types::FilledMapConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
-    pub fn conditional_formatting(&self) -> ::std::option::Option<&crate::types::FilledMapConditionalFormatting> {
+    pub fn conditional_formatting(&self) -> ::std::option::Option<& crate::types::FilledMapConditionalFormatting> {
         self.conditional_formatting.as_ref()
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_hierarchies.is_none()`.
-    pub fn column_hierarchies(&self) -> &[crate::types::ColumnHierarchy] {
-        self.column_hierarchies.as_deref().unwrap_or_default()
+    pub fn column_hierarchies(&self) -> & [crate::types::ColumnHierarchy] {
+        self.column_hierarchies.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.actions.is_none()`.
-    pub fn actions(&self) -> &[crate::types::VisualCustomAction] {
-        self.actions.as_deref().unwrap_or_default()
+    pub fn actions(&self) -> & [crate::types::VisualCustomAction] {
+        self.actions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl FilledMapVisual {
@@ -71,8 +72,8 @@ pub struct FilledMapVisualBuilder {
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::FilledMapConfiguration>,
     pub(crate) conditional_formatting: ::std::option::Option<crate::types::FilledMapConditionalFormatting>,
-    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) column_hierarchies: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>,
 }
 impl FilledMapVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
@@ -83,8 +84,7 @@ impl FilledMapVisualBuilder {
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
     pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.visual_id = input;
-        self
+        self.visual_id = input; self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
     pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +97,7 @@ impl FilledMapVisualBuilder {
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn set_title(mut self, input: ::std::option::Option<crate::types::VisualTitleLabelOptions>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn get_title(&self) -> &::std::option::Option<crate::types::VisualTitleLabelOptions> {
@@ -111,8 +110,7 @@ impl FilledMapVisualBuilder {
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn set_subtitle(mut self, input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>) -> Self {
-        self.subtitle = input;
-        self
+        self.subtitle = input; self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn get_subtitle(&self) -> &::std::option::Option<crate::types::VisualSubtitleLabelOptions> {
@@ -125,8 +123,7 @@ impl FilledMapVisualBuilder {
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn set_chart_configuration(mut self, input: ::std::option::Option<crate::types::FilledMapConfiguration>) -> Self {
-        self.chart_configuration = input;
-        self
+        self.chart_configuration = input; self
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::FilledMapConfiguration> {
@@ -139,8 +136,7 @@ impl FilledMapVisualBuilder {
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
     pub fn set_conditional_formatting(mut self, input: ::std::option::Option<crate::types::FilledMapConditionalFormatting>) -> Self {
-        self.conditional_formatting = input;
-        self
+        self.conditional_formatting = input; self
     }
     /// <p>The conditional formatting of a <code>FilledMapVisual</code>.</p>
     pub fn get_conditional_formatting(&self) -> &::std::option::Option<crate::types::FilledMapConditionalFormatting> {
@@ -153,17 +149,16 @@ impl FilledMapVisualBuilder {
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
     pub fn column_hierarchies(mut self, input: crate::types::ColumnHierarchy) -> Self {
         let mut v = self.column_hierarchies.unwrap_or_default();
-        v.push(input);
-        self.column_hierarchies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_hierarchies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>) -> Self {
-        self.column_hierarchies = input;
-        self
+    pub fn set_column_hierarchies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>>) -> Self {
+        self.column_hierarchies = input; self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>> {
+    pub fn get_column_hierarchies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnHierarchy>> {
         &self.column_hierarchies
     }
     /// Appends an item to `actions`.
@@ -173,36 +168,43 @@ impl FilledMapVisualBuilder {
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VisualCustomAction>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`FilledMapVisual`](crate::types::FilledMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::FilledMapVisualBuilder::visual_id)
     pub fn build(self) -> ::std::result::Result<crate::types::FilledMapVisual, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FilledMapVisual {
-            visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "visual_id",
-                    "visual_id was not specified but it is required when building FilledMapVisual",
-                )
-            })?,
-            title: self.title,
-            subtitle: self.subtitle,
-            chart_configuration: self.chart_configuration,
-            conditional_formatting: self.conditional_formatting,
-            column_hierarchies: self.column_hierarchies,
-            actions: self.actions,
-        })
+        ::std::result::Result::Ok(
+            crate::types::FilledMapVisual {
+                visual_id: self.visual_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("visual_id", "visual_id was not specified but it is required when building FilledMapVisual")
+                    )?
+                ,
+                title: self.title
+                ,
+                subtitle: self.subtitle
+                ,
+                chart_configuration: self.chart_configuration
+                ,
+                conditional_formatting: self.conditional_formatting
+                ,
+                column_hierarchies: self.column_hierarchies
+                ,
+                actions: self.actions
+                ,
+            }
+        )
     }
 }
+

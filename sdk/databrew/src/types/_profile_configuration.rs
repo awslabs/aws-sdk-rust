@@ -3,35 +3,37 @@
 /// <p>Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProfileConfiguration {
+pub struct ProfileConfiguration  {
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations.</p>
     pub dataset_statistics_configuration: ::std::option::Option<crate::types::StatisticsConfiguration>,
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns.</p>
-    pub profile_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
+    pub profile_columns: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSelector>>,
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations.</p>
-    pub column_statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>>,
+    pub column_statistics_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatisticsConfiguration>>,
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     pub entity_detector_configuration: ::std::option::Option<crate::types::EntityDetectorConfiguration>,
 }
-impl ProfileConfiguration {
+impl  ProfileConfiguration  {
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations.</p>
-    pub fn dataset_statistics_configuration(&self) -> ::std::option::Option<&crate::types::StatisticsConfiguration> {
+    pub fn dataset_statistics_configuration(&self) -> ::std::option::Option<& crate::types::StatisticsConfiguration> {
         self.dataset_statistics_configuration.as_ref()
     }
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.profile_columns.is_none()`.
-    pub fn profile_columns(&self) -> &[crate::types::ColumnSelector] {
-        self.profile_columns.as_deref().unwrap_or_default()
+    pub fn profile_columns(&self) -> & [crate::types::ColumnSelector] {
+        self.profile_columns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_statistics_configurations.is_none()`.
-    pub fn column_statistics_configurations(&self) -> &[crate::types::ColumnStatisticsConfiguration] {
-        self.column_statistics_configurations.as_deref().unwrap_or_default()
+    pub fn column_statistics_configurations(&self) -> & [crate::types::ColumnStatisticsConfiguration] {
+        self.column_statistics_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
-    pub fn entity_detector_configuration(&self) -> ::std::option::Option<&crate::types::EntityDetectorConfiguration> {
+    pub fn entity_detector_configuration(&self) -> ::std::option::Option<& crate::types::EntityDetectorConfiguration> {
         self.entity_detector_configuration.as_ref()
     }
 }
@@ -47,8 +49,8 @@ impl ProfileConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProfileConfigurationBuilder {
     pub(crate) dataset_statistics_configuration: ::std::option::Option<crate::types::StatisticsConfiguration>,
-    pub(crate) profile_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>,
-    pub(crate) column_statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>>,
+    pub(crate) profile_columns: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSelector>>,
+    pub(crate) column_statistics_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatisticsConfiguration>>,
     pub(crate) entity_detector_configuration: ::std::option::Option<crate::types::EntityDetectorConfiguration>,
 }
 impl ProfileConfigurationBuilder {
@@ -59,8 +61,7 @@ impl ProfileConfigurationBuilder {
     }
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations.</p>
     pub fn set_dataset_statistics_configuration(mut self, input: ::std::option::Option<crate::types::StatisticsConfiguration>) -> Self {
-        self.dataset_statistics_configuration = input;
-        self
+        self.dataset_statistics_configuration = input; self
     }
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations.</p>
     pub fn get_dataset_statistics_configuration(&self) -> &::std::option::Option<crate::types::StatisticsConfiguration> {
@@ -73,17 +74,16 @@ impl ProfileConfigurationBuilder {
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns.</p>
     pub fn profile_columns(mut self, input: crate::types::ColumnSelector) -> Self {
         let mut v = self.profile_columns.unwrap_or_default();
-        v.push(input);
-        self.profile_columns = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.profile_columns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns.</p>
-    pub fn set_profile_columns(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>>) -> Self {
-        self.profile_columns = input;
-        self
+    pub fn set_profile_columns(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnSelector>>) -> Self {
+        self.profile_columns = input; self
     }
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns.</p>
-    pub fn get_profile_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
+    pub fn get_profile_columns(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnSelector>> {
         &self.profile_columns
     }
     /// Appends an item to `column_statistics_configurations`.
@@ -93,20 +93,16 @@ impl ProfileConfigurationBuilder {
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations.</p>
     pub fn column_statistics_configurations(mut self, input: crate::types::ColumnStatisticsConfiguration) -> Self {
         let mut v = self.column_statistics_configurations.unwrap_or_default();
-        v.push(input);
-        self.column_statistics_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.column_statistics_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations.</p>
-    pub fn set_column_statistics_configurations(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>>,
-    ) -> Self {
-        self.column_statistics_configurations = input;
-        self
+    pub fn set_column_statistics_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatisticsConfiguration>>) -> Self {
+        self.column_statistics_configurations = input; self
     }
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations.</p>
-    pub fn get_column_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>> {
+    pub fn get_column_statistics_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ColumnStatisticsConfiguration>> {
         &self.column_statistics_configurations
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
@@ -116,8 +112,7 @@ impl ProfileConfigurationBuilder {
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     pub fn set_entity_detector_configuration(mut self, input: ::std::option::Option<crate::types::EntityDetectorConfiguration>) -> Self {
-        self.entity_detector_configuration = input;
-        self
+        self.entity_detector_configuration = input; self
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     pub fn get_entity_detector_configuration(&self) -> &::std::option::Option<crate::types::EntityDetectorConfiguration> {
@@ -126,10 +121,15 @@ impl ProfileConfigurationBuilder {
     /// Consumes the builder and constructs a [`ProfileConfiguration`](crate::types::ProfileConfiguration).
     pub fn build(self) -> crate::types::ProfileConfiguration {
         crate::types::ProfileConfiguration {
-            dataset_statistics_configuration: self.dataset_statistics_configuration,
-            profile_columns: self.profile_columns,
-            column_statistics_configurations: self.column_statistics_configurations,
-            entity_detector_configuration: self.entity_detector_configuration,
+            dataset_statistics_configuration: self.dataset_statistics_configuration
+            ,
+            profile_columns: self.profile_columns
+            ,
+            column_statistics_configurations: self.column_statistics_configurations
+            ,
+            entity_detector_configuration: self.entity_detector_configuration
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateDefaultViewInput {
+pub struct AssociateDefaultViewInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
     pub view_arn: ::std::option::Option<::std::string::String>,
 }
-impl AssociateDefaultViewInput {
+impl  AssociateDefaultViewInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
-    pub fn view_arn(&self) -> ::std::option::Option<&str> {
+    pub fn view_arn(&self) -> ::std::option::Option<& str> {
         self.view_arn.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl AssociateDefaultViewInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
     pub fn set_view_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_arn = input;
-        self
+        self.view_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
     pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_arn
     }
     /// Consumes the builder and constructs a [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::associate_default_view::AssociateDefaultViewInput { view_arn: self.view_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_default_view::AssociateDefaultViewInput {
+                view_arn: self.view_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteJobInput {
+pub struct DeleteJobInput  {
     /// <p>The ID of the job to be deleted.</p>
     /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
@@ -17,10 +17,10 @@ pub struct DeleteJobInput {
     /// </note>
     pub namespace_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteJobInput {
+impl  DeleteJobInput  {
     /// <p>The ID of the job to be deleted.</p>
     /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p><note>
@@ -34,7 +34,7 @@ impl DeleteJobInput {
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
     /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
-    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
 }
@@ -64,8 +64,7 @@ impl DeleteJobInputBuilder {
     /// <p>The ID of the job to be deleted.</p>
     /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The ID of the job to be deleted.</p>
     /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
@@ -83,8 +82,7 @@ impl DeleteJobInputBuilder {
     /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p><note>
     /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
@@ -107,8 +105,7 @@ impl DeleteJobInputBuilder {
     /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -120,10 +117,16 @@ impl DeleteJobInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput {
-            job_id: self.job_id,
-            force: self.force,
-            namespace_id: self.namespace_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_job::DeleteJobInput {
+                job_id: self.job_id
+                ,
+                force: self.force
+                ,
+                namespace_id: self.namespace_id
+                ,
+            }
+        )
     }
 }
+

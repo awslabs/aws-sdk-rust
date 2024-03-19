@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTypeRegistrationOutput {
+pub struct DescribeTypeRegistrationOutput  {
     /// <p>The current status of the extension registration request.</p>
     pub progress_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The description of the extension registration request.</p>
@@ -15,31 +15,31 @@ pub struct DescribeTypeRegistrationOutput {
     pub type_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTypeRegistrationOutput {
+impl  DescribeTypeRegistrationOutput  {
     /// <p>The current status of the extension registration request.</p>
-    pub fn progress_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn progress_status(&self) -> ::std::option::Option<& crate::types::RegistrationStatus> {
         self.progress_status.as_ref()
     }
     /// <p>The description of the extension registration request.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn type_arn(&self) -> ::std::option::Option<& str> {
         self.type_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
-    pub fn type_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn type_version_arn(&self) -> ::std::option::Option<& str> {
         self.type_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTypeRegistrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTypeRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
     pub fn builder() -> crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder {
@@ -65,8 +65,7 @@ impl DescribeTypeRegistrationOutputBuilder {
     }
     /// <p>The current status of the extension registration request.</p>
     pub fn set_progress_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.progress_status = input;
-        self
+        self.progress_status = input; self
     }
     /// <p>The current status of the extension registration request.</p>
     pub fn get_progress_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
@@ -79,8 +78,7 @@ impl DescribeTypeRegistrationOutputBuilder {
     }
     /// <p>The description of the extension registration request.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the extension registration request.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl DescribeTypeRegistrationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_arn = input;
-        self
+        self.type_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
@@ -112,8 +109,7 @@ impl DescribeTypeRegistrationOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
     pub fn set_type_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_version_arn = input;
-        self
+        self.type_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
@@ -121,22 +117,27 @@ impl DescribeTypeRegistrationOutputBuilder {
         &self.type_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTypeRegistrationOutput`](crate::operation::describe_type_registration::DescribeTypeRegistrationOutput).
     pub fn build(self) -> crate::operation::describe_type_registration::DescribeTypeRegistrationOutput {
         crate::operation::describe_type_registration::DescribeTypeRegistrationOutput {
-            progress_status: self.progress_status,
-            description: self.description,
-            type_arn: self.type_arn,
-            type_version_arn: self.type_version_arn,
+            progress_status: self.progress_status
+            ,
+            description: self.description
+            ,
+            type_arn: self.type_arn
+            ,
+            type_version_arn: self.type_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

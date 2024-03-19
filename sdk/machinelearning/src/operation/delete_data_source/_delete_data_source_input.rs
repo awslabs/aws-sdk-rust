@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataSourceInput {
+pub struct DeleteDataSourceInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDataSourceInput {
+impl  DeleteDataSourceInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteDataSourceInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceInput {
-            data_source_id: self.data_source_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_data_source::DeleteDataSourceInput {
+                data_source_id: self.data_source_id
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CategoryFilterConfiguration {
+pub struct CategoryFilterConfiguration  {
     /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
     pub filter_list_configuration: ::std::option::Option<crate::types::FilterListConfiguration>,
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
@@ -12,17 +12,17 @@ pub struct CategoryFilterConfiguration {
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
     pub custom_filter_configuration: ::std::option::Option<crate::types::CustomFilterConfiguration>,
 }
-impl CategoryFilterConfiguration {
+impl  CategoryFilterConfiguration  {
     /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
-    pub fn filter_list_configuration(&self) -> ::std::option::Option<&crate::types::FilterListConfiguration> {
+    pub fn filter_list_configuration(&self) -> ::std::option::Option<& crate::types::FilterListConfiguration> {
         self.filter_list_configuration.as_ref()
     }
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
-    pub fn custom_filter_list_configuration(&self) -> ::std::option::Option<&crate::types::CustomFilterListConfiguration> {
+    pub fn custom_filter_list_configuration(&self) -> ::std::option::Option<& crate::types::CustomFilterListConfiguration> {
         self.custom_filter_list_configuration.as_ref()
     }
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
-    pub fn custom_filter_configuration(&self) -> ::std::option::Option<&crate::types::CustomFilterConfiguration> {
+    pub fn custom_filter_configuration(&self) -> ::std::option::Option<& crate::types::CustomFilterConfiguration> {
         self.custom_filter_configuration.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl CategoryFilterConfigurationBuilder {
     }
     /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
     pub fn set_filter_list_configuration(mut self, input: ::std::option::Option<crate::types::FilterListConfiguration>) -> Self {
-        self.filter_list_configuration = input;
-        self
+        self.filter_list_configuration = input; self
     }
     /// <p>A list of filter configurations. In the Amazon QuickSight console, this filter type is called a filter list.</p>
     pub fn get_filter_list_configuration(&self) -> &::std::option::Option<crate::types::FilterListConfiguration> {
@@ -63,8 +62,7 @@ impl CategoryFilterConfigurationBuilder {
     }
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
     pub fn set_custom_filter_list_configuration(mut self, input: ::std::option::Option<crate::types::CustomFilterListConfiguration>) -> Self {
-        self.custom_filter_list_configuration = input;
-        self
+        self.custom_filter_list_configuration = input; self
     }
     /// <p>A list of custom filter values. In the Amazon QuickSight console, this filter type is called a custom filter list.</p>
     pub fn get_custom_filter_list_configuration(&self) -> &::std::option::Option<crate::types::CustomFilterListConfiguration> {
@@ -77,8 +75,7 @@ impl CategoryFilterConfigurationBuilder {
     }
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
     pub fn set_custom_filter_configuration(mut self, input: ::std::option::Option<crate::types::CustomFilterConfiguration>) -> Self {
-        self.custom_filter_configuration = input;
-        self
+        self.custom_filter_configuration = input; self
     }
     /// <p>A custom filter that filters based on a single value. This filter can be partially matched.</p>
     pub fn get_custom_filter_configuration(&self) -> &::std::option::Option<crate::types::CustomFilterConfiguration> {
@@ -87,9 +84,13 @@ impl CategoryFilterConfigurationBuilder {
     /// Consumes the builder and constructs a [`CategoryFilterConfiguration`](crate::types::CategoryFilterConfiguration).
     pub fn build(self) -> crate::types::CategoryFilterConfiguration {
         crate::types::CategoryFilterConfiguration {
-            filter_list_configuration: self.filter_list_configuration,
-            custom_filter_list_configuration: self.custom_filter_list_configuration,
-            custom_filter_configuration: self.custom_filter_configuration,
+            filter_list_configuration: self.filter_list_configuration
+            ,
+            custom_filter_list_configuration: self.custom_filter_list_configuration
+            ,
+            custom_filter_configuration: self.custom_filter_configuration
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamProcessingStartSelector {
+pub struct StreamProcessingStartSelector  {
     /// <p>Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream.</p>
     pub kvs_stream_start_selector: ::std::option::Option<crate::types::KinesisVideoStreamStartSelector>,
 }
-impl StreamProcessingStartSelector {
+impl  StreamProcessingStartSelector  {
     /// <p>Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream.</p>
-    pub fn kvs_stream_start_selector(&self) -> ::std::option::Option<&crate::types::KinesisVideoStreamStartSelector> {
+    pub fn kvs_stream_start_selector(&self) -> ::std::option::Option<& crate::types::KinesisVideoStreamStartSelector> {
         self.kvs_stream_start_selector.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl StreamProcessingStartSelectorBuilder {
     }
     /// <p>Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream.</p>
     pub fn set_kvs_stream_start_selector(mut self, input: ::std::option::Option<crate::types::KinesisVideoStreamStartSelector>) -> Self {
-        self.kvs_stream_start_selector = input;
-        self
+        self.kvs_stream_start_selector = input; self
     }
     /// <p>Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a fragment number in a Kinesis stream.</p>
     pub fn get_kvs_stream_start_selector(&self) -> &::std::option::Option<crate::types::KinesisVideoStreamStartSelector> {
@@ -44,7 +43,9 @@ impl StreamProcessingStartSelectorBuilder {
     /// Consumes the builder and constructs a [`StreamProcessingStartSelector`](crate::types::StreamProcessingStartSelector).
     pub fn build(self) -> crate::types::StreamProcessingStartSelector {
         crate::types::StreamProcessingStartSelector {
-            kvs_stream_start_selector: self.kvs_stream_start_selector,
+            kvs_stream_start_selector: self.kvs_stream_start_selector
+            ,
         }
     }
 }
+

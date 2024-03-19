@@ -3,13 +3,13 @@
 /// <p>Defines information about the Glue data source that contains the training data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>A GlueDataSource object that defines the catalog ID, database name, and table name for the training data.</p>
     pub glue_data_source: ::std::option::Option<crate::types::GlueDataSource>,
 }
-impl DataSource {
+impl  DataSource  {
     /// <p>A GlueDataSource object that defines the catalog ID, database name, and table name for the training data.</p>
-    pub fn glue_data_source(&self) -> ::std::option::Option<&crate::types::GlueDataSource> {
+    pub fn glue_data_source(&self) -> ::std::option::Option<& crate::types::GlueDataSource> {
         self.glue_data_source.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl DataSourceBuilder {
     }
     /// <p>A GlueDataSource object that defines the catalog ID, database name, and table name for the training data.</p>
     pub fn set_glue_data_source(mut self, input: ::std::option::Option<crate::types::GlueDataSource>) -> Self {
-        self.glue_data_source = input;
-        self
+        self.glue_data_source = input; self
     }
     /// <p>A GlueDataSource object that defines the catalog ID, database name, and table name for the training data.</p>
     pub fn get_glue_data_source(&self) -> &::std::option::Option<crate::types::GlueDataSource> {
@@ -45,7 +44,9 @@ impl DataSourceBuilder {
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            glue_data_source: self.glue_data_source,
+            glue_data_source: self.glue_data_source
+            ,
         }
     }
 }
+

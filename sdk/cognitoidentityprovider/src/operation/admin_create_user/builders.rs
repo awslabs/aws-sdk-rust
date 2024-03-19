@@ -5,23 +5,20 @@ pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCrea
 
 impl AdminCreateUserInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::admin_create_user::AdminCreateUserOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::admin_create_user::AdminCreateUserError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.admin_create_user();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::admin_create_user::AdminCreateUserOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::admin_create_user::AdminCreateUserError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.admin_create_user();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AdminCreateUser`.
-///
+/// 
 /// <p>Creates a new user in the specified user pool.</p>
 /// <p>If <code>MessageAction</code> isn't set, the default is to send a welcome message via email or phone (SMS).</p><note>
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
@@ -42,33 +39,32 @@ impl AdminCreateUserInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminCreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder,
+                    inner: crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::admin_create_user::AdminCreateUserOutput,
-        crate::operation::admin_create_user::AdminCreateUserError,
-    > for AdminCreateUserFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::admin_create_user::AdminCreateUserOutput,
-            crate::operation::admin_create_user::AdminCreateUserError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::admin_create_user::AdminCreateUserOutput,
+                    crate::operation::admin_create_user::AdminCreateUserError,
+                > for AdminCreateUserFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::admin_create_user::AdminCreateUserOutput,
+                        crate::operation::admin_create_user::AdminCreateUserError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AdminCreateUserFluentBuilder {
     /// Creates a new `AdminCreateUser`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -77,53 +73,44 @@ impl AdminCreateUserFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::admin_create_user::AdminCreateUserOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::admin_create_user::AdminCreateUserError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::admin_create_user::AdminCreateUser::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::admin_create_user::AdminCreateUser::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::admin_create_user::AdminCreateUserOutput,
-        crate::operation::admin_create_user::AdminCreateUserError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::admin_create_user::AdminCreateUserOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_create_user::AdminCreateUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::admin_create_user::AdminCreateUser::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::admin_create_user::AdminCreateUser::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::admin_create_user::AdminCreateUserOutput, crate::operation::admin_create_user::AdminCreateUserError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The user pool ID for the user pool where the user will be created.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -204,7 +191,7 @@ impl AdminCreateUserFluentBuilder {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
+    pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>) -> Self {
         self.inner = self.inner.set_user_attributes(input);
         self
     }
@@ -218,7 +205,7 @@ impl AdminCreateUserFluentBuilder {
     /// <li>
     /// <p><b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p></li>
     /// </ul>
-    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>> {
         self.inner.get_user_attributes()
     }
     /// Appends an item to `ValidationData`.
@@ -235,14 +222,14 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
+    pub fn set_validation_data(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>>) -> Self {
         self.inner = self.inner.set_validation_data(input);
         self
     }
     /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
     /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
     /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
-    pub fn get_validation_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
+    pub fn get_validation_data(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AttributeType>> {
         self.inner.get_validation_data()
     }
     /// <p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p>
@@ -312,12 +299,12 @@ impl AdminCreateUserFluentBuilder {
         self
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub fn set_desired_delivery_mediums(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>>) -> Self {
+    pub fn set_desired_delivery_mediums(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>>) -> Self {
         self.inner = self.inner.set_desired_delivery_mediums(input);
         self
     }
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
-    pub fn get_desired_delivery_mediums(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>> {
+    pub fn get_desired_delivery_mediums(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeliveryMediumType>> {
         self.inner.get_desired_delivery_mediums()
     }
     /// Adds a key-value pair to `ClientMetadata`.
@@ -337,11 +324,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn client_metadata(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn client_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_metadata(k.into(), v.into());
         self
     }
@@ -358,10 +341,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn set_client_metadata(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
+    pub fn set_client_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_client_metadata(input);
         self
     }
@@ -378,7 +358,8 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p></li>
     /// </ul>
     /// </note>
-    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_client_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.inner.get_client_metadata()
     }
 }
+

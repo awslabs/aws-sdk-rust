@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationComponentStrategiesOutput {
+pub struct GetApplicationComponentStrategiesOutput  {
     /// <p>A list of application component strategy recommendations.</p>
-    pub application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
+    pub application_component_strategies: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }
-impl GetApplicationComponentStrategiesOutput {
+impl  GetApplicationComponentStrategiesOutput  {
     /// <p>A list of application component strategy recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_component_strategies.is_none()`.
-    pub fn application_component_strategies(&self) -> &[crate::types::ApplicationComponentStrategy] {
-        self.application_component_strategies.as_deref().unwrap_or_default()
+    pub fn application_component_strategies(&self) -> & [crate::types::ApplicationComponentStrategy] {
+        self.application_component_strategies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationComponentStrategiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationComponentStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
     pub fn builder() -> crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder {
@@ -31,7 +32,7 @@ impl GetApplicationComponentStrategiesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesOutputBuilder {
-    pub(crate) application_component_strategies: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
+    pub(crate) application_component_strategies: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationComponentStrategy>>,
     _request_id: Option<String>,
 }
 impl GetApplicationComponentStrategiesOutputBuilder {
@@ -42,36 +43,34 @@ impl GetApplicationComponentStrategiesOutputBuilder {
     /// <p>A list of application component strategy recommendations.</p>
     pub fn application_component_strategies(mut self, input: crate::types::ApplicationComponentStrategy) -> Self {
         let mut v = self.application_component_strategies.unwrap_or_default();
-        v.push(input);
-        self.application_component_strategies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.application_component_strategies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of application component strategy recommendations.</p>
-    pub fn set_application_component_strategies(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>>,
-    ) -> Self {
-        self.application_component_strategies = input;
-        self
+    pub fn set_application_component_strategies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApplicationComponentStrategy>>) -> Self {
+        self.application_component_strategies = input; self
     }
     /// <p>A list of application component strategy recommendations.</p>
-    pub fn get_application_component_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStrategy>> {
+    pub fn get_application_component_strategies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApplicationComponentStrategy>> {
         &self.application_component_strategies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesOutput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput).
     pub fn build(self) -> crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput {
         crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput {
-            application_component_strategies: self.application_component_strategies,
+            application_component_strategies: self.application_component_strategies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

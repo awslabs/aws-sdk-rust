@@ -4,7 +4,7 @@
 /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThroughputConfigDescription {
+pub struct ThroughputConfigDescription  {
     /// <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or <code>PROVISIONED</code>.</p>
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
@@ -14,9 +14,9 @@ pub struct ThroughputConfigDescription {
     /// <p>This field is not applicable for on-demand feature groups.</p>
     pub provisioned_write_capacity_units: ::std::option::Option<i32>,
 }
-impl ThroughputConfigDescription {
+impl  ThroughputConfigDescription  {
     /// <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or <code>PROVISIONED</code>.</p>
-    pub fn throughput_mode(&self) -> ::std::option::Option<&crate::types::ThroughputMode> {
+    pub fn throughput_mode(&self) -> ::std::option::Option<& crate::types::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
@@ -54,8 +54,7 @@ impl ThroughputConfigDescriptionBuilder {
     }
     /// <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or <code>PROVISIONED</code>.</p>
     pub fn set_throughput_mode(mut self, input: ::std::option::Option<crate::types::ThroughputMode>) -> Self {
-        self.throughput_mode = input;
-        self
+        self.throughput_mode = input; self
     }
     /// <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or <code>PROVISIONED</code>.</p>
     pub fn get_throughput_mode(&self) -> &::std::option::Option<crate::types::ThroughputMode> {
@@ -70,8 +69,7 @@ impl ThroughputConfigDescriptionBuilder {
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
     /// <p>This field is not applicable for on-demand feature groups.</p>
     pub fn set_provisioned_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_read_capacity_units = input;
-        self
+        self.provisioned_read_capacity_units = input; self
     }
     /// <p>For provisioned feature groups with online store enabled, this indicates the read throughput you are billed for and can consume without throttling.</p>
     /// <p>This field is not applicable for on-demand feature groups.</p>
@@ -87,8 +85,7 @@ impl ThroughputConfigDescriptionBuilder {
     /// <p>For provisioned feature groups, this indicates the write throughput you are billed for and can consume without throttling.</p>
     /// <p>This field is not applicable for on-demand feature groups.</p>
     pub fn set_provisioned_write_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.provisioned_write_capacity_units = input;
-        self
+        self.provisioned_write_capacity_units = input; self
     }
     /// <p>For provisioned feature groups, this indicates the write throughput you are billed for and can consume without throttling.</p>
     /// <p>This field is not applicable for on-demand feature groups.</p>
@@ -98,9 +95,13 @@ impl ThroughputConfigDescriptionBuilder {
     /// Consumes the builder and constructs a [`ThroughputConfigDescription`](crate::types::ThroughputConfigDescription).
     pub fn build(self) -> crate::types::ThroughputConfigDescription {
         crate::types::ThroughputConfigDescription {
-            throughput_mode: self.throughput_mode,
-            provisioned_read_capacity_units: self.provisioned_read_capacity_units,
-            provisioned_write_capacity_units: self.provisioned_write_capacity_units,
+            throughput_mode: self.throughput_mode
+            ,
+            provisioned_read_capacity_units: self.provisioned_read_capacity_units
+            ,
+            provisioned_write_capacity_units: self.provisioned_write_capacity_units
+            ,
         }
     }
 }
+

@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetApiKeys`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`position(impl Into<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_position):<br>required: **false**<br><p>The current pagination position in the paged result set.</p><br>
     ///   - [`limit(i32)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p><br>
     ///   - [`name_query(impl Into<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::name_query) / [`set_name_query(Option<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_name_query):<br>required: **false**<br><p>The name of queried API keys.</p><br>
     ///   - [`customer_id(impl Into<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::customer_id) / [`set_customer_id(Option<String>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_customer_id):<br>required: **false**<br><p>The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.</p><br>
     ///   - [`include_values(bool)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::include_values) / [`set_include_values(Option<bool>)`](crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::set_include_values):<br>required: **false**<br><p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p><br>
-    /// - On success, responds with [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput) with field(s):
+                            /// - On success, responds with [`GetApiKeysOutput`](crate::operation::get_api_keys::GetApiKeysOutput) with field(s):
     ///   - [`warnings(Option<Vec::<String>>)`](crate::operation::get_api_keys::GetApiKeysOutput::warnings): <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
     ///   - [`items(Option<Vec::<ApiKey>>)`](crate::operation::get_api_keys::GetApiKeysOutput::items): <p>The current page of elements from this collection.</p>
     ///   - [`position(Option<String>)`](crate::operation::get_api_keys::GetApiKeysOutput::position): <p>The current pagination position in the paged result set.</p>
-    /// - On failure, responds with [`SdkError<GetApiKeysError>`](crate::operation::get_api_keys::GetApiKeysError)
+                            /// - On failure, responds with [`SdkError<GetApiKeysError>`](crate::operation::get_api_keys::GetApiKeysError)
     pub fn get_api_keys(&self) -> crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder {
-        crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_api_keys::builders::GetApiKeysFluentBuilder::new(self.handle.clone())
+                            }
 }
+

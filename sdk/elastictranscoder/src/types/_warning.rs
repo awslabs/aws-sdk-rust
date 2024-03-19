@@ -4,7 +4,7 @@
 /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Warning {
+pub struct Warning  {
     /// <p>The code of the cross-regional warning.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
@@ -12,15 +12,15 @@ pub struct Warning {
     /// </note>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl Warning {
+impl  Warning  {
     /// <p>The code of the cross-regional warning.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl WarningBuilder {
     }
     /// <p>The code of the cross-regional warning.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The code of the cross-regional warning.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl WarningBuilder {
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
@@ -76,8 +74,11 @@ impl WarningBuilder {
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {
         crate::types::Warning {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

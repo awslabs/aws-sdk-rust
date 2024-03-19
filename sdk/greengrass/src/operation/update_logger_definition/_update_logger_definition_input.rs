@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLoggerDefinitionInput {
+pub struct UpdateLoggerDefinitionInput  {
     /// The ID of the logger definition.
     pub logger_definition_id: ::std::option::Option<::std::string::String>,
     /// The name of the definition.
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateLoggerDefinitionInput {
+impl  UpdateLoggerDefinitionInput  {
     /// The ID of the logger definition.
-    pub fn logger_definition_id(&self) -> ::std::option::Option<&str> {
+    pub fn logger_definition_id(&self) -> ::std::option::Option<& str> {
         self.logger_definition_id.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateLoggerDefinitionInputBuilder {
     }
     /// The ID of the logger definition.
     pub fn set_logger_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.logger_definition_id = input;
-        self
+        self.logger_definition_id = input; self
     }
     /// The ID of the logger definition.
     pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl UpdateLoggerDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of the definition.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateLoggerDefinitionInput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_logger_definition::UpdateLoggerDefinitionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_logger_definition::UpdateLoggerDefinitionInput {
-            logger_definition_id: self.logger_definition_id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_logger_definition::UpdateLoggerDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_logger_definition::UpdateLoggerDefinitionInput {
+                logger_definition_id: self.logger_definition_id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

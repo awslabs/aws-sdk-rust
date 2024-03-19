@@ -3,7 +3,7 @@
 /// <p>A structure that contains the information for one performance event that RUM collects from a user session with your application.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RumEvent {
+pub struct RumEvent  {
     /// <p>A unique ID for this event.</p>
     pub id: ::std::string::String,
     /// <p>The exact time that this event occurred.</p>
@@ -15,29 +15,26 @@ pub struct RumEvent {
     /// <p>A string containing details about the event.</p>
     pub details: ::std::string::String,
 }
-impl RumEvent {
+impl  RumEvent  {
     /// <p>A unique ID for this event.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The exact time that this event occurred.</p>
-    pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
+    pub fn timestamp(&self) -> & ::aws_smithy_types::DateTime {
         &self.timestamp
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>A string containing details about the event.</p>
-    pub fn details(&self) -> &str {
-        use std::ops::Deref;
-        self.details.deref()
+    pub fn details(&self) -> & str {
+        use std::ops::Deref; self.details.deref()
     }
 }
 impl RumEvent {
@@ -66,8 +63,7 @@ impl RumEventBuilder {
     }
     /// <p>A unique ID for this event.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique ID for this event.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +77,7 @@ impl RumEventBuilder {
     }
     /// <p>The exact time that this event occurred.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The exact time that this event occurred.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -96,8 +91,7 @@ impl RumEventBuilder {
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +104,7 @@ impl RumEventBuilder {
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +118,7 @@ impl RumEventBuilder {
     }
     /// <p>A string containing details about the event.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>A string containing details about the event.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,32 +131,32 @@ impl RumEventBuilder {
     /// - [`r#type`](crate::types::builders::RumEventBuilder::r#type)
     /// - [`details`](crate::types::builders::RumEventBuilder::details)
     pub fn build(self) -> ::std::result::Result<crate::types::RumEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RumEvent {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RumEvent",
-                )
-            })?,
-            timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timestamp",
-                    "timestamp was not specified but it is required when building RumEvent",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building RumEvent",
-                )
-            })?,
-            metadata: self.metadata,
-            details: self.details.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "details",
-                    "details was not specified but it is required when building RumEvent",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RumEvent {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RumEvent")
+                    )?
+                ,
+                timestamp: self.timestamp
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timestamp", "timestamp was not specified but it is required when building RumEvent")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building RumEvent")
+                    )?
+                ,
+                metadata: self.metadata
+                ,
+                details: self.details
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("details", "details was not specified but it is required when building RumEvent")
+                    )?
+                ,
+            }
+        )
     }
 }
+

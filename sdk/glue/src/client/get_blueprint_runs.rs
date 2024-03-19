@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetBlueprintRuns`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`blueprint_name(impl Into<String>)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::set_blueprint_name):<br>required: **true**<br><p>The name of the blueprint.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation request.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of a list to return.</p><br>
-    /// - On success, responds with [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput) with field(s):
+                            /// - On success, responds with [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput) with field(s):
     ///   - [`blueprint_runs(Option<Vec::<BlueprintRun>>)`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput::blueprint_runs): <p>Returns a list of <code>BlueprintRun</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput::next_token): <p>A continuation token, if not all blueprint runs have been returned.</p>
-    /// - On failure, responds with [`SdkError<GetBlueprintRunsError>`](crate::operation::get_blueprint_runs::GetBlueprintRunsError)
+                            /// - On failure, responds with [`SdkError<GetBlueprintRunsError>`](crate::operation::get_blueprint_runs::GetBlueprintRunsError)
     pub fn get_blueprint_runs(&self) -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder {
-        crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_blueprint_runs::builders::GetBlueprintRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

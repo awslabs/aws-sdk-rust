@@ -3,7 +3,7 @@
 /// <p>The platform on which a model runs on an AWS IoT Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetPlatform {
+pub struct TargetPlatform  {
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported.</p>
     pub os: ::std::option::Option<crate::types::TargetPlatformOs>,
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU).</p>
@@ -17,13 +17,13 @@ pub struct TargetPlatform {
     /// </ul>
     pub accelerator: ::std::option::Option<crate::types::TargetPlatformAccelerator>,
 }
-impl TargetPlatform {
+impl  TargetPlatform  {
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported.</p>
-    pub fn os(&self) -> ::std::option::Option<&crate::types::TargetPlatformOs> {
+    pub fn os(&self) -> ::std::option::Option<& crate::types::TargetPlatformOs> {
         self.os.as_ref()
     }
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU).</p>
-    pub fn arch(&self) -> ::std::option::Option<&crate::types::TargetPlatformArch> {
+    pub fn arch(&self) -> ::std::option::Option<& crate::types::TargetPlatformArch> {
         self.arch.as_ref()
     }
     /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU:</p>
@@ -33,7 +33,7 @@ impl TargetPlatform {
     /// <li>
     /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
     /// </ul>
-    pub fn accelerator(&self) -> ::std::option::Option<&crate::types::TargetPlatformAccelerator> {
+    pub fn accelerator(&self) -> ::std::option::Option<& crate::types::TargetPlatformAccelerator> {
         self.accelerator.as_ref()
     }
 }
@@ -61,8 +61,7 @@ impl TargetPlatformBuilder {
     }
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported.</p>
     pub fn set_os(mut self, input: ::std::option::Option<crate::types::TargetPlatformOs>) -> Self {
-        self.os = input;
-        self
+        self.os = input; self
     }
     /// <p>The target operating system for the model. Linux is the only operating system that is currently supported.</p>
     pub fn get_os(&self) -> &::std::option::Option<crate::types::TargetPlatformOs> {
@@ -76,8 +75,7 @@ impl TargetPlatformBuilder {
     }
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU).</p>
     pub fn set_arch(mut self, input: ::std::option::Option<crate::types::TargetPlatformArch>) -> Self {
-        self.arch = input;
-        self
+        self.arch = input; self
     }
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU).</p>
     pub fn get_arch(&self) -> &::std::option::Option<crate::types::TargetPlatformArch> {
@@ -102,8 +100,7 @@ impl TargetPlatformBuilder {
     /// <p><code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code></p></li>
     /// </ul>
     pub fn set_accelerator(mut self, input: ::std::option::Option<crate::types::TargetPlatformAccelerator>) -> Self {
-        self.accelerator = input;
-        self
+        self.accelerator = input; self
     }
     /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU:</p>
     /// <ul>
@@ -118,9 +115,13 @@ impl TargetPlatformBuilder {
     /// Consumes the builder and constructs a [`TargetPlatform`](crate::types::TargetPlatform).
     pub fn build(self) -> crate::types::TargetPlatform {
         crate::types::TargetPlatform {
-            os: self.os,
-            arch: self.arch,
-            accelerator: self.accelerator,
+            os: self.os
+            ,
+            arch: self.arch
+            ,
+            accelerator: self.accelerator
+            ,
         }
     }
 }
+

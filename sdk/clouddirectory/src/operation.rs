@@ -198,3 +198,4 @@ pub mod upgrade_applied_schema;
 
 /// Types for the `UpgradePublishedSchema` operation.
 pub mod upgrade_published_schema;
+

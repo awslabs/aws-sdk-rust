@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchResourceTagsOutput {
+pub struct SearchResourceTagsOutput  {
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagSet>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SearchResourceTagsOutput {
+impl  SearchResourceTagsOutput  {
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::TagSet] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::TagSet] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchResourceTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchResourceTagsOutput {
     /// Creates a new builder-style object to manufacture [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput).
     pub fn builder() -> crate::operation::search_resource_tags::builders::SearchResourceTagsOutputBuilder {
@@ -37,7 +38,7 @@ impl SearchResourceTagsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchResourceTagsOutputBuilder {
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::TagSet>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl SearchResourceTagsOutputBuilder {
     /// <p>A list of tags used in the Amazon Connect instance.</p>
     pub fn tags(mut self, input: crate::types::TagSet) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSet>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSet>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags used in the Amazon Connect instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSet>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSet>> {
         &self.tags
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -69,28 +69,30 @@ impl SearchResourceTagsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchResourceTagsOutput`](crate::operation::search_resource_tags::SearchResourceTagsOutput).
     pub fn build(self) -> crate::operation::search_resource_tags::SearchResourceTagsOutput {
         crate::operation::search_resource_tags::SearchResourceTagsOutput {
-            tags: self.tags,
-            next_token: self.next_token,
+            tags: self.tags
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

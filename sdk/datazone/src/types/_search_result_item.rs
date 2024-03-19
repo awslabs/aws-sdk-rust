@@ -21,11 +21,7 @@ impl SearchResultItem {
     /// Tries to convert the enum instance into [`AssetListing`](crate::types::SearchResultItem::AssetListing), extracting the inner [`AssetListingItem`](crate::types::AssetListingItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_listing(&self) -> ::std::result::Result<&crate::types::AssetListingItem, &Self> {
-        if let SearchResultItem::AssetListing(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchResultItem::AssetListing(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AssetListing`](crate::types::SearchResultItem::AssetListing).
     pub fn is_asset_listing(&self) -> bool {
@@ -36,3 +32,4 @@ impl SearchResultItem {
         matches!(self, Self::Unknown)
     }
 }
+

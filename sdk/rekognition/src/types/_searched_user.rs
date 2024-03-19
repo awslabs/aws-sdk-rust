@@ -3,13 +3,13 @@
 /// <p>Contains metadata about a User searched for within a collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchedUser {
+pub struct SearchedUser  {
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl SearchedUser {
+impl  SearchedUser  {
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SearchedUserBuilder {
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>A provided ID for the UserID. Unique within the collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl SearchedUserBuilder {
     }
     /// Consumes the builder and constructs a [`SearchedUser`](crate::types::SearchedUser).
     pub fn build(self) -> crate::types::SearchedUser {
-        crate::types::SearchedUser { user_id: self.user_id }
+        crate::types::SearchedUser {
+            user_id: self.user_id
+            ,
+        }
     }
 }
+

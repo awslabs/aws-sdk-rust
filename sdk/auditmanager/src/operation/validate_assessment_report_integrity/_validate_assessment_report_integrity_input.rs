@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidateAssessmentReportIntegrityInput {
+pub struct ValidateAssessmentReportIntegrityInput  {
     /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
     pub s3_relative_path: ::std::option::Option<::std::string::String>,
 }
-impl ValidateAssessmentReportIntegrityInput {
+impl  ValidateAssessmentReportIntegrityInput  {
     /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
-    pub fn s3_relative_path(&self) -> ::std::option::Option<&str> {
+    pub fn s3_relative_path(&self) -> ::std::option::Option<& str> {
         self.s3_relative_path.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl ValidateAssessmentReportIntegrityInputBuilder {
     }
     /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
     pub fn set_s3_relative_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_relative_path = input;
-        self
+        self.s3_relative_path = input; self
     }
     /// <p>The relative path of the Amazon S3 bucket that the assessment report is stored in.</p>
     pub fn get_s3_relative_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_relative_path
     }
     /// Consumes the builder and constructs a [`ValidateAssessmentReportIntegrityInput`](crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput {
-                s3_relative_path: self.s3_relative_path,
-            },
+                s3_relative_path: self.s3_relative_path
+                ,
+            }
         )
     }
 }
+

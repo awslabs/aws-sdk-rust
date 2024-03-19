@@ -3,16 +3,17 @@
 /// <p>Contains information that allowed the authorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Allowed {
+pub struct Allowed  {
     /// <p>A list of policies that allowed the authentication.</p>
-    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
+    pub policies: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>,
 }
-impl Allowed {
+impl  Allowed  {
     /// <p>A list of policies that allowed the authentication.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
-    pub fn policies(&self) -> &[crate::types::Policy] {
-        self.policies.as_deref().unwrap_or_default()
+    pub fn policies(&self) -> & [crate::types::Policy] {
+        self.policies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Allowed {
@@ -26,7 +27,7 @@ impl Allowed {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedBuilder {
-    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>,
 }
 impl AllowedBuilder {
     /// Appends an item to `policies`.
@@ -36,21 +37,24 @@ impl AllowedBuilder {
     /// <p>A list of policies that allowed the authentication.</p>
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of policies that allowed the authentication.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>) -> Self {
+        self.policies = input; self
     }
     /// <p>A list of policies that allowed the authentication.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Policy>> {
         &self.policies
     }
     /// Consumes the builder and constructs a [`Allowed`](crate::types::Allowed).
     pub fn build(self) -> crate::types::Allowed {
-        crate::types::Allowed { policies: self.policies }
+        crate::types::Allowed {
+            policies: self.policies
+            ,
+        }
     }
 }
+

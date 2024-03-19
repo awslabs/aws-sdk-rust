@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNamespaceInput {
+pub struct DeleteNamespaceInput  {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace that you want to delete.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl DeleteNamespaceInput {
+impl  DeleteNamespaceInput  {
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace that you want to delete.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteNamespaceInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteNamespaceInputBuilder {
     }
     /// <p>The namespace that you want to delete.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace that you want to delete.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_namespace::DeleteNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_namespace::DeleteNamespaceInput {
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_namespace::DeleteNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_namespace::DeleteNamespaceInput {
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

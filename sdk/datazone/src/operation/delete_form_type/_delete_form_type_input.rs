@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFormTypeInput {
+pub struct DeleteFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which the metadata form type is deleted.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the metadata form type that is deleted.</p>
     pub form_type_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFormTypeInput {
+impl  DeleteFormTypeInput  {
     /// <p>The ID of the Amazon DataZone domain in which the metadata form type is deleted.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the metadata form type that is deleted.</p>
-    pub fn form_type_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn form_type_identifier(&self) -> ::std::option::Option<& str> {
         self.form_type_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteFormTypeInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the metadata form type is deleted.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the metadata form type is deleted.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteFormTypeInputBuilder {
     }
     /// <p>The ID of the metadata form type that is deleted.</p>
     pub fn set_form_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.form_type_identifier = input;
-        self
+        self.form_type_identifier = input; self
     }
     /// <p>The ID of the metadata form type that is deleted.</p>
     pub fn get_form_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.form_type_identifier
     }
     /// Consumes the builder and constructs a [`DeleteFormTypeInput`](crate::operation::delete_form_type::DeleteFormTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_form_type::DeleteFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_form_type::DeleteFormTypeInput {
-            domain_identifier: self.domain_identifier,
-            form_type_identifier: self.form_type_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_form_type::DeleteFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_form_type::DeleteFormTypeInput {
+                domain_identifier: self.domain_identifier
+                ,
+                form_type_identifier: self.form_type_identifier
+                ,
+            }
+        )
     }
 }
+

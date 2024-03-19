@@ -3,7 +3,7 @@
 /// <p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CaptionFormat {
+pub struct CaptionFormat  {
     /// <p>The format you specify determines whether Elastic Transcoder generates an embedded or sidecar caption for this output.</p>
     /// <ul>
     /// <li>
@@ -46,7 +46,7 @@ pub struct CaptionFormat {
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
     pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
-impl CaptionFormat {
+impl  CaptionFormat  {
     /// <p>The format you specify determines whether Elastic Transcoder generates an embedded or sidecar caption for this output.</p>
     /// <ul>
     /// <li>
@@ -75,7 +75,7 @@ impl CaptionFormat {
     /// </ul>
     /// <p><code>fmp4</code> captions have an extension of <code>.ismt</code></p></li>
     /// </ul>
-    pub fn format(&self) -> ::std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The prefix for caption filenames, in the form <i>description</i>-<code>{language}</code>, where:</p>
@@ -87,11 +87,11 @@ impl CaptionFormat {
     /// </ul>
     /// <p>If you don't include <code>{language}</code> in the file name pattern, Elastic Transcoder automatically appends "<code>{language}</code>" to the value that you specify for the description. In addition, Elastic Transcoder automatically appends the count to the end of the segment files.</p>
     /// <p>For example, suppose you're transcoding into srt format. When you enter "Sydney-{language}-sunrise", and the language of the captions is English (en), the name of the first caption file is be Sydney-en-sunrise00000.srt.</p>
-    pub fn pattern(&self) -> ::std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<& str> {
         self.pattern.as_deref()
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
-    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
 }
@@ -172,8 +172,7 @@ impl CaptionFormatBuilder {
     /// <p><code>fmp4</code> captions have an extension of <code>.ismt</code></p></li>
     /// </ul>
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format you specify determines whether Elastic Transcoder generates an embedded or sidecar caption for this output.</p>
     /// <ul>
@@ -229,8 +228,7 @@ impl CaptionFormatBuilder {
     /// <p>If you don't include <code>{language}</code> in the file name pattern, Elastic Transcoder automatically appends "<code>{language}</code>" to the value that you specify for the description. In addition, Elastic Transcoder automatically appends the count to the end of the segment files.</p>
     /// <p>For example, suppose you're transcoding into srt format. When you enter "Sydney-{language}-sunrise", and the language of the captions is English (en), the name of the first caption file is be Sydney-en-sunrise00000.srt.</p>
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pattern = input;
-        self
+        self.pattern = input; self
     }
     /// <p>The prefix for caption filenames, in the form <i>description</i>-<code>{language}</code>, where:</p>
     /// <ul>
@@ -251,8 +249,7 @@ impl CaptionFormatBuilder {
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
@@ -261,9 +258,13 @@ impl CaptionFormatBuilder {
     /// Consumes the builder and constructs a [`CaptionFormat`](crate::types::CaptionFormat).
     pub fn build(self) -> crate::types::CaptionFormat {
         crate::types::CaptionFormat {
-            format: self.format,
-            pattern: self.pattern,
-            encryption: self.encryption,
+            format: self.format
+            ,
+            pattern: self.pattern
+            ,
+            encryption: self.encryption
+            ,
         }
     }
 }
+

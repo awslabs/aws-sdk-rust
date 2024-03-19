@@ -3,20 +3,19 @@
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeNameAndValue {
+pub struct AttributeNameAndValue  {
     /// <p>The attribute name of the typed link.</p>
     pub attribute_name: ::std::string::String,
     /// <p>The value for the typed link.</p>
     pub value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
-impl AttributeNameAndValue {
+impl  AttributeNameAndValue  {
     /// <p>The attribute name of the typed link.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>The value for the typed link.</p>
-    pub fn value(&self) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<& crate::types::TypedAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl AttributeNameAndValueBuilder {
     }
     /// <p>The attribute name of the typed link.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The attribute name of the typed link.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AttributeNameAndValueBuilder {
     }
     /// <p>The value for the typed link.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::TypedAttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the typed link.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
@@ -69,14 +66,17 @@ impl AttributeNameAndValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_name`](crate::types::builders::AttributeNameAndValueBuilder::attribute_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeNameAndValue, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeNameAndValue {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building AttributeNameAndValue",
-                )
-            })?,
-            value: self.value,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeNameAndValue {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building AttributeNameAndValue")
+                    )?
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

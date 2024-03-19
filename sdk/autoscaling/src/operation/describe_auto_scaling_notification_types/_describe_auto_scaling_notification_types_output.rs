@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAutoScalingNotificationTypesOutput {
+pub struct DescribeAutoScalingNotificationTypesOutput  {
     /// <p>The notification types.</p>
-    pub auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DescribeAutoScalingNotificationTypesOutput {
+impl  DescribeAutoScalingNotificationTypesOutput  {
     /// <p>The notification types.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_scaling_notification_types.is_none()`.
-    pub fn auto_scaling_notification_types(&self) -> &[::std::string::String] {
-        self.auto_scaling_notification_types.as_deref().unwrap_or_default()
+    pub fn auto_scaling_notification_types(&self) -> & [::std::string::String] {
+        self.auto_scaling_notification_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAutoScalingNotificationTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAutoScalingNotificationTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingNotificationTypesOutput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput).
     pub fn builder() -> crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeAutoScalingNotificationTypesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAutoScalingNotificationTypesOutputBuilder {
-    pub(crate) auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_scaling_notification_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeAutoScalingNotificationTypesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeAutoScalingNotificationTypesOutputBuilder {
     /// <p>The notification types.</p>
     pub fn auto_scaling_notification_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.auto_scaling_notification_types.unwrap_or_default();
-        v.push(input.into());
-        self.auto_scaling_notification_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_scaling_notification_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The notification types.</p>
-    pub fn set_auto_scaling_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.auto_scaling_notification_types = input;
-        self
+    pub fn set_auto_scaling_notification_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.auto_scaling_notification_types = input; self
     }
     /// <p>The notification types.</p>
-    pub fn get_auto_scaling_notification_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_auto_scaling_notification_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.auto_scaling_notification_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAutoScalingNotificationTypesOutput`](crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput).
     pub fn build(self) -> crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput {
         crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput {
-            auto_scaling_notification_types: self.auto_scaling_notification_types,
+            auto_scaling_notification_types: self.auto_scaling_notification_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

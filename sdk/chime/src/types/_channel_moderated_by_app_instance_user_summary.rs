@@ -3,13 +3,13 @@
 /// <p>Summary of the details of a moderated channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ChannelModeratedByAppInstanceUserSummary {
+pub struct ChannelModeratedByAppInstanceUserSummary  {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
 }
-impl ChannelModeratedByAppInstanceUserSummary {
+impl  ChannelModeratedByAppInstanceUserSummary  {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
-    pub fn channel_summary(&self) -> ::std::option::Option<&crate::types::ChannelSummary> {
+    pub fn channel_summary(&self) -> ::std::option::Option<& crate::types::ChannelSummary> {
         self.channel_summary.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ChannelModeratedByAppInstanceUserSummaryBuilder {
     }
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub fn set_channel_summary(mut self, input: ::std::option::Option<crate::types::ChannelSummary>) -> Self {
-        self.channel_summary = input;
-        self
+        self.channel_summary = input; self
     }
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub fn get_channel_summary(&self) -> &::std::option::Option<crate::types::ChannelSummary> {
@@ -44,7 +43,9 @@ impl ChannelModeratedByAppInstanceUserSummaryBuilder {
     /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::types::ChannelModeratedByAppInstanceUserSummary).
     pub fn build(self) -> crate::types::ChannelModeratedByAppInstanceUserSummary {
         crate::types::ChannelModeratedByAppInstanceUserSummary {
-            channel_summary: self.channel_summary,
+            channel_summary: self.channel_summary
+            ,
         }
     }
 }
+

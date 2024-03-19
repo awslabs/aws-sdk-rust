@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDocumentClassifierInput {
+pub struct DescribeDocumentClassifierInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub document_classifier_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDocumentClassifierInput {
+impl  DescribeDocumentClassifierInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
-    pub fn document_classifier_arn(&self) -> ::std::option::Option<&str> {
+    pub fn document_classifier_arn(&self) -> ::std::option::Option<& str> {
         self.document_classifier_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeDocumentClassifierInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn set_document_classifier_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_classifier_arn = input;
-        self
+        self.document_classifier_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code> operation returns this identifier in its response.</p>
     pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_classifier_arn
     }
     /// Consumes the builder and constructs a [`DescribeDocumentClassifierInput`](crate::operation::describe_document_classifier::DescribeDocumentClassifierInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_document_classifier::DescribeDocumentClassifierInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_document_classifier::DescribeDocumentClassifierInput {
-            document_classifier_arn: self.document_classifier_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_document_classifier::DescribeDocumentClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_document_classifier::DescribeDocumentClassifierInput {
+                document_classifier_arn: self.document_classifier_arn
+                ,
+            }
+        )
     }
 }
+

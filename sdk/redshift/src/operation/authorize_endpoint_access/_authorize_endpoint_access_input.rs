@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthorizeEndpointAccessInput {
+pub struct AuthorizeEndpointAccessInput  {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub account: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl AuthorizeEndpointAccessInput {
+impl  AuthorizeEndpointAccessInput  {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
-    pub fn account(&self) -> ::std::option::Option<&str> {
+    pub fn account(&self) -> ::std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
-    pub fn vpc_ids(&self) -> &[::std::string::String] {
-        self.vpc_ids.as_deref().unwrap_or_default()
+    pub fn vpc_ids(&self) -> & [::std::string::String] {
+        self.vpc_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AuthorizeEndpointAccessInput {
@@ -39,7 +40,7 @@ impl AuthorizeEndpointAccessInput {
 pub struct AuthorizeEndpointAccessInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) account: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AuthorizeEndpointAccessInputBuilder {
     /// <p>The cluster identifier of the cluster to grant access to.</p>
@@ -49,8 +50,7 @@ impl AuthorizeEndpointAccessInputBuilder {
     }
     /// <p>The cluster identifier of the cluster to grant access to.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The cluster identifier of the cluster to grant access to.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl AuthorizeEndpointAccessInputBuilder {
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,30 +77,30 @@ impl AuthorizeEndpointAccessInputBuilder {
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_ids = input;
-        self
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_ids = input; self
     }
     /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
-    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_ids
     }
     /// Consumes the builder and constructs a [`AuthorizeEndpointAccessInput`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput {
-            cluster_identifier: self.cluster_identifier,
-            account: self.account,
-            vpc_ids: self.vpc_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                account: self.account
+                ,
+                vpc_ids: self.vpc_ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SipRuleTargetApplication {
+pub struct SipRuleTargetApplication  {
     /// <p>The SIP media application ID.</p>
     pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>Priority of the SIP media application in the target list.</p>
@@ -11,9 +11,9 @@ pub struct SipRuleTargetApplication {
     /// <p>The AWS Region of the target application.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
 }
-impl SipRuleTargetApplication {
+impl  SipRuleTargetApplication  {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>Priority of the SIP media application in the target list.</p>
@@ -21,7 +21,7 @@ impl SipRuleTargetApplication {
         self.priority
     }
     /// <p>The AWS Region of the target application.</p>
-    pub fn aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SipRuleTargetApplicationBuilder {
     }
     /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sip_media_application_id = input;
-        self
+        self.sip_media_application_id = input; self
     }
     /// <p>The SIP media application ID.</p>
     pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl SipRuleTargetApplicationBuilder {
     }
     /// <p>Priority of the SIP media application in the target list.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>Priority of the SIP media application in the target list.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl SipRuleTargetApplicationBuilder {
     }
     /// <p>The AWS Region of the target application.</p>
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The AWS Region of the target application.</p>
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl SipRuleTargetApplicationBuilder {
     /// Consumes the builder and constructs a [`SipRuleTargetApplication`](crate::types::SipRuleTargetApplication).
     pub fn build(self) -> crate::types::SipRuleTargetApplication {
         crate::types::SipRuleTargetApplication {
-            sip_media_application_id: self.sip_media_application_id,
-            priority: self.priority,
-            aws_region: self.aws_region,
+            sip_media_application_id: self.sip_media_application_id
+            ,
+            priority: self.priority
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

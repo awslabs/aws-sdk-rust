@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRealtimeEndpointInput {
+pub struct CreateRealtimeEndpointInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub ml_model_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateRealtimeEndpointInput {
+impl  CreateRealtimeEndpointInput  {
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<& str> {
         self.ml_model_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateRealtimeEndpointInputBuilder {
     }
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ml_model_id = input;
-        self
+        self.ml_model_id = input; self
     }
     /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ml_model_id
     }
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
-            ml_model_id: self.ml_model_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
+                ml_model_id: self.ml_model_id
+                ,
+            }
+        )
     }
 }
+

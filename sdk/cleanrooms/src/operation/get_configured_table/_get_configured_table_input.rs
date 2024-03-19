@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConfiguredTableInput {
+pub struct GetConfiguredTableInput  {
     /// <p>The unique ID for the configured table to retrieve.</p>
     pub configured_table_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetConfiguredTableInput {
+impl  GetConfiguredTableInput  {
     /// <p>The unique ID for the configured table to retrieve.</p>
-    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetConfiguredTableInputBuilder {
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
     pub fn set_configured_table_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_table_identifier = input;
-        self
+        self.configured_table_identifier = input; self
     }
     /// <p>The unique ID for the configured table to retrieve.</p>
     pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.configured_table_identifier
     }
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_configured_table::GetConfiguredTableInput {
-            configured_table_identifier: self.configured_table_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_configured_table::GetConfiguredTableInput {
+                configured_table_identifier: self.configured_table_identifier
+                ,
+            }
+        )
     }
 }
+

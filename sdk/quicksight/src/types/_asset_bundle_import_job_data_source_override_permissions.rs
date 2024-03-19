@@ -3,20 +3,19 @@
 /// <p>An object that contains a list of permissions to be applied to a list of data source IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetBundleImportJobDataSourceOverridePermissions {
+pub struct AssetBundleImportJobDataSourceOverridePermissions  {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub data_source_ids: ::std::vec::Vec<::std::string::String>,
+    pub data_source_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>A list of permissions for the data source that you want to apply overrides to.</p>
     pub permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
 }
-impl AssetBundleImportJobDataSourceOverridePermissions {
+impl  AssetBundleImportJobDataSourceOverridePermissions  {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn data_source_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.data_source_ids.deref()
+    pub fn data_source_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.data_source_ids.deref()
     }
     /// <p>A list of permissions for the data source that you want to apply overrides to.</p>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::AssetBundleResourcePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::AssetBundleResourcePermissions> {
         self.permissions.as_ref()
     }
 }
@@ -31,7 +30,7 @@ impl AssetBundleImportJobDataSourceOverridePermissions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssetBundleImportJobDataSourceOverridePermissionsBuilder {
-    pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) permissions: ::std::option::Option<crate::types::AssetBundleResourcePermissions>,
 }
 impl AssetBundleImportJobDataSourceOverridePermissionsBuilder {
@@ -42,17 +41,16 @@ impl AssetBundleImportJobDataSourceOverridePermissionsBuilder {
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
     pub fn data_source_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_source_ids.unwrap_or_default();
-        v.push(input.into());
-        self.data_source_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.data_source_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn set_data_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.data_source_ids = input;
-        self
+    pub fn set_data_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.data_source_ids = input; self
     }
     /// <p>A list of data source IDs that you want to apply overrides to. You can use <code>*</code> to override all data sources in this asset bundle.</p>
-    pub fn get_data_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_data_source_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.data_source_ids
     }
     /// <p>A list of permissions for the data source that you want to apply overrides to.</p>
@@ -63,8 +61,7 @@ impl AssetBundleImportJobDataSourceOverridePermissionsBuilder {
     }
     /// <p>A list of permissions for the data source that you want to apply overrides to.</p>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::AssetBundleResourcePermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>A list of permissions for the data source that you want to apply overrides to.</p>
     pub fn get_permissions(&self) -> &::std::option::Option<crate::types::AssetBundleResourcePermissions> {
@@ -73,18 +70,18 @@ impl AssetBundleImportJobDataSourceOverridePermissionsBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceOverridePermissions`](crate::types::AssetBundleImportJobDataSourceOverridePermissions).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_ids`](crate::types::builders::AssetBundleImportJobDataSourceOverridePermissionsBuilder::data_source_ids)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverridePermissions, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSourceOverridePermissions {
-            data_source_ids: self.data_source_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_source_ids",
-                    "data_source_ids was not specified but it is required when building AssetBundleImportJobDataSourceOverridePermissions",
-                )
-            })?,
-            permissions: self.permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverridePermissions, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::AssetBundleImportJobDataSourceOverridePermissions {
+                data_source_ids: self.data_source_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_source_ids", "data_source_ids was not specified but it is required when building AssetBundleImportJobDataSourceOverridePermissions")
+                    )?
+                ,
+                permissions: self.permissions
+                ,
+            }
+        )
     }
 }
+

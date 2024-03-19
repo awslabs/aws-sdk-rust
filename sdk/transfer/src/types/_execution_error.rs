@@ -3,7 +3,7 @@
 /// <p>Specifies the error message and type, for an error that occurs during the execution of the workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecutionError {
+pub struct ExecutionError  {
     /// <p>Specifies the error type.</p>
     /// <ul>
     /// <li>
@@ -29,7 +29,7 @@ pub struct ExecutionError {
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub message: ::std::string::String,
 }
-impl ExecutionError {
+impl  ExecutionError  {
     /// <p>Specifies the error type.</p>
     /// <ul>
     /// <li>
@@ -51,13 +51,12 @@ impl ExecutionError {
     /// <li>
     /// <p><code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &crate::types::ExecutionErrorType {
+    pub fn r#type(&self) -> & crate::types::ExecutionErrorType {
         &self.r#type
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ExecutionError {
@@ -123,8 +122,7 @@ impl ExecutionErrorBuilder {
     /// <p><code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutionErrorType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies the error type.</p>
     /// <ul>
@@ -158,8 +156,7 @@ impl ExecutionErrorBuilder {
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,19 +167,20 @@ impl ExecutionErrorBuilder {
     /// - [`r#type`](crate::types::builders::ExecutionErrorBuilder::r#type)
     /// - [`message`](crate::types::builders::ExecutionErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::ExecutionError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExecutionError {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ExecutionError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building ExecutionError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExecutionError {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ExecutionError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building ExecutionError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

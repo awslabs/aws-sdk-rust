@@ -3,19 +3,19 @@
 /// Audio Selector
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioSelector {
+pub struct AudioSelector  {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     pub name: ::std::option::Option<::std::string::String>,
     /// The audio selector settings.
     pub selector_settings: ::std::option::Option<crate::types::AudioSelectorSettings>,
 }
-impl AudioSelector {
+impl  AudioSelector  {
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The audio selector settings.
-    pub fn selector_settings(&self) -> ::std::option::Option<&crate::types::AudioSelectorSettings> {
+    pub fn selector_settings(&self) -> ::std::option::Option<& crate::types::AudioSelectorSettings> {
         self.selector_settings.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AudioSelectorBuilder {
     }
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl AudioSelectorBuilder {
     }
     /// The audio selector settings.
     pub fn set_selector_settings(mut self, input: ::std::option::Option<crate::types::AudioSelectorSettings>) -> Self {
-        self.selector_settings = input;
-        self
+        self.selector_settings = input; self
     }
     /// The audio selector settings.
     pub fn get_selector_settings(&self) -> &::std::option::Option<crate::types::AudioSelectorSettings> {
@@ -66,8 +64,11 @@ impl AudioSelectorBuilder {
     /// Consumes the builder and constructs a [`AudioSelector`](crate::types::AudioSelector).
     pub fn build(self) -> crate::types::AudioSelector {
         crate::types::AudioSelector {
-            name: self.name,
-            selector_settings: self.selector_settings,
+            name: self.name
+            ,
+            selector_settings: self.selector_settings
+            ,
         }
     }
 }
+

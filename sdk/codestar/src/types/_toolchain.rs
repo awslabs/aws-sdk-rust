@@ -3,25 +3,25 @@
 /// <p>The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Toolchain {
+pub struct Toolchain  {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     pub source: ::std::option::Option<crate::types::ToolchainSource>,
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub stack_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub stack_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl Toolchain {
+impl  Toolchain  {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::ToolchainSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::ToolchainSource> {
         self.source.as_ref()
     }
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn stack_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn stack_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.stack_parameters.as_ref()
     }
 }
@@ -38,7 +38,7 @@ impl Toolchain {
 pub struct ToolchainBuilder {
     pub(crate) source: ::std::option::Option<crate::types::ToolchainSource>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) stack_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) stack_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ToolchainBuilder {
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
@@ -49,8 +49,7 @@ impl ToolchainBuilder {
     }
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ToolchainSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::ToolchainSource> {
@@ -63,8 +62,7 @@ impl ToolchainBuilder {
     }
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack provisioning.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,34 +73,30 @@ impl ToolchainBuilder {
     /// To override the contents of this collection use [`set_stack_parameters`](Self::set_stack_parameters).
     ///
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn stack_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn stack_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.stack_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.stack_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.stack_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn set_stack_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.stack_parameters = input;
-        self
+    pub fn set_stack_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.stack_parameters = input; self
     }
     /// <p>The list of parameter overrides to be passed into the toolchain template during stack provisioning, if any.</p>
-    pub fn get_stack_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_stack_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.stack_parameters
     }
     /// Consumes the builder and constructs a [`Toolchain`](crate::types::Toolchain).
     pub fn build(self) -> crate::types::Toolchain {
         crate::types::Toolchain {
-            source: self.source,
-            role_arn: self.role_arn,
-            stack_parameters: self.stack_parameters,
+            source: self.source
+            ,
+            role_arn: self.role_arn
+            ,
+            stack_parameters: self.stack_parameters
+            ,
         }
     }
 }
+

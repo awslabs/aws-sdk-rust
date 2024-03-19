@@ -3,7 +3,7 @@
 /// <p>Input for the ListCACertificates operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCaCertificatesInput {
+pub struct ListCaCertificatesInput  {
     /// <p>The result page size.</p>
     pub page_size: ::std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
@@ -13,13 +13,13 @@ pub struct ListCaCertificatesInput {
     /// <p>The name of the provisioning template.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
 }
-impl ListCaCertificatesInput {
+impl  ListCaCertificatesInput  {
     /// <p>The result page size.</p>
     pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Determines the order of the results.</p>
@@ -27,7 +27,7 @@ impl ListCaCertificatesInput {
         self.ascending_order
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The result page size.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -69,8 +68,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>Determines the order of the results.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Determines the order of the results.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
@@ -97,23 +94,26 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
     /// Consumes the builder and constructs a [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_ca_certificates::ListCaCertificatesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_ca_certificates::ListCaCertificatesInput {
-            page_size: self.page_size,
-            marker: self.marker,
-            ascending_order: self.ascending_order,
-            template_name: self.template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ca_certificates::ListCaCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_ca_certificates::ListCaCertificatesInput {
+                page_size: self.page_size
+                ,
+                marker: self.marker
+                ,
+                ascending_order: self.ascending_order
+                ,
+                template_name: self.template_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,23 +3,22 @@
 /// <p>The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeElasticsearchDomainsOutput {
+pub struct DescribeElasticsearchDomainsOutput  {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub domain_status_list: ::std::vec::Vec<crate::types::ElasticsearchDomainStatus>,
+    pub domain_status_list: ::std::vec::Vec::<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
 }
-impl DescribeElasticsearchDomainsOutput {
+impl  DescribeElasticsearchDomainsOutput  {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn domain_status_list(&self) -> &[crate::types::ElasticsearchDomainStatus] {
-        use std::ops::Deref;
-        self.domain_status_list.deref()
+    pub fn domain_status_list(&self) -> & [crate::types::ElasticsearchDomainStatus] {
+        use std::ops::Deref; self.domain_status_list.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeElasticsearchDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeElasticsearchDomainsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
     pub fn builder() -> crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder {
@@ -31,7 +30,7 @@ impl DescribeElasticsearchDomainsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutputBuilder {
-    pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+    pub(crate) domain_status_list: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutputBuilder {
@@ -42,45 +41,41 @@ impl DescribeElasticsearchDomainsOutputBuilder {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     pub fn domain_status_list(mut self, input: crate::types::ElasticsearchDomainStatus) -> Self {
         let mut v = self.domain_status_list.unwrap_or_default();
-        v.push(input);
-        self.domain_status_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.domain_status_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn set_domain_status_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>) -> Self {
-        self.domain_status_list = input;
-        self
+    pub fn set_domain_status_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ElasticsearchDomainStatus>>) -> Self {
+        self.domain_status_list = input; self
     }
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
-    pub fn get_domain_status_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>> {
+    pub fn get_domain_status_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ElasticsearchDomainStatus>> {
         &self.domain_status_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_status_list`](crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsOutputBuilder::domain_status_list)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
-            domain_status_list: self.domain_status_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_status_list",
-                    "domain_status_list was not specified but it is required when building DescribeElasticsearchDomainsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput {
+                domain_status_list: self.domain_status_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_status_list", "domain_status_list was not specified but it is required when building DescribeElasticsearchDomainsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

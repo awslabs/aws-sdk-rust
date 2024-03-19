@@ -3,7 +3,8 @@
 /// Settings to specify the ending of rendering motion graphics into the video stream.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MotionGraphicsDeactivateScheduleActionSettings {}
+pub struct MotionGraphicsDeactivateScheduleActionSettings  {
+}
 impl MotionGraphicsDeactivateScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
     pub fn builder() -> crate::types::builders::MotionGraphicsDeactivateScheduleActionSettingsBuilder {
@@ -14,10 +15,13 @@ impl MotionGraphicsDeactivateScheduleActionSettings {
 /// A builder for [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct MotionGraphicsDeactivateScheduleActionSettingsBuilder {}
+pub struct MotionGraphicsDeactivateScheduleActionSettingsBuilder {
+}
 impl MotionGraphicsDeactivateScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsDeactivateScheduleActionSettings`](crate::types::MotionGraphicsDeactivateScheduleActionSettings).
     pub fn build(self) -> crate::types::MotionGraphicsDeactivateScheduleActionSettings {
-        crate::types::MotionGraphicsDeactivateScheduleActionSettings {}
+        crate::types::MotionGraphicsDeactivateScheduleActionSettings {
+        }
     }
 }
+

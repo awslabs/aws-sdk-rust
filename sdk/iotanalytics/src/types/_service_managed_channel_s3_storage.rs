@@ -3,7 +3,8 @@
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServiceManagedChannelS3Storage {}
+pub struct ServiceManagedChannelS3Storage  {
+}
 impl ServiceManagedChannelS3Storage {
     /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3Storage`](crate::types::ServiceManagedChannelS3Storage).
     pub fn builder() -> crate::types::builders::ServiceManagedChannelS3StorageBuilder {
@@ -14,10 +15,13 @@ impl ServiceManagedChannelS3Storage {
 /// A builder for [`ServiceManagedChannelS3Storage`](crate::types::ServiceManagedChannelS3Storage).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ServiceManagedChannelS3StorageBuilder {}
+pub struct ServiceManagedChannelS3StorageBuilder {
+}
 impl ServiceManagedChannelS3StorageBuilder {
     /// Consumes the builder and constructs a [`ServiceManagedChannelS3Storage`](crate::types::ServiceManagedChannelS3Storage).
     pub fn build(self) -> crate::types::ServiceManagedChannelS3Storage {
-        crate::types::ServiceManagedChannelS3Storage {}
+        crate::types::ServiceManagedChannelS3Storage {
+        }
     }
 }
+

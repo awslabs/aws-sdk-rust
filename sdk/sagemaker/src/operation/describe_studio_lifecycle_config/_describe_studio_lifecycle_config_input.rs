@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStudioLifecycleConfigInput {
+pub struct DescribeStudioLifecycleConfigInput  {
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeStudioLifecycleConfigInput {
+impl  DescribeStudioLifecycleConfigInput  {
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
-    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeStudioLifecycleConfigInputBuilder {
     }
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_lifecycle_config_name = input;
-        self
+        self.studio_lifecycle_config_name = input; self
     }
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_lifecycle_config_name
     }
     /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput {
-            studio_lifecycle_config_name: self.studio_lifecycle_config_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput {
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object containing the results for the intent metric you requested.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentMetricResult {
+pub struct AnalyticsIntentMetricResult  {
     /// <p>The metric that you requested. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct AnalyticsIntentMetricResult {
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl AnalyticsIntentMetricResult {
+impl  AnalyticsIntentMetricResult  {
     /// <p>The metric that you requested. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
     /// <li>
@@ -45,7 +45,7 @@ impl AnalyticsIntentMetricResult {
     /// <li>
     /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalyticsIntentMetricName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalyticsIntentMetricName> {
         self.name.as_ref()
     }
     /// <p>The statistic that you requested to calculate.</p>
@@ -57,7 +57,7 @@ impl AnalyticsIntentMetricResult {
     /// <li>
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::AnalyticsMetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::AnalyticsMetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
@@ -112,8 +112,7 @@ impl AnalyticsIntentMetricResultBuilder {
     /// <p><code>Dropped</code> – The number of times the user dropped the intent.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentMetricName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metric that you requested. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
@@ -154,8 +153,7 @@ impl AnalyticsIntentMetricResultBuilder {
     /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The statistic that you requested to calculate.</p>
     /// <ul>
@@ -176,8 +174,7 @@ impl AnalyticsIntentMetricResultBuilder {
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -186,9 +183,13 @@ impl AnalyticsIntentMetricResultBuilder {
     /// Consumes the builder and constructs a [`AnalyticsIntentMetricResult`](crate::types::AnalyticsIntentMetricResult).
     pub fn build(self) -> crate::types::AnalyticsIntentMetricResult {
         crate::types::AnalyticsIntentMetricResult {
-            name: self.name,
-            statistic: self.statistic,
-            value: self.value,
+            name: self.name
+            ,
+            statistic: self.statistic
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

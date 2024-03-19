@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelSubscriptionInput {
+pub struct CancelSubscriptionInput  {
     /// <p>The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the subscription that is being cancelled.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl CancelSubscriptionInput {
+impl  CancelSubscriptionInput  {
     /// <p>The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The unique identifier of the subscription that is being cancelled.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CancelSubscriptionInputBuilder {
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl CancelSubscriptionInputBuilder {
     }
     /// <p>The unique identifier of the subscription that is being cancelled.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique identifier of the subscription that is being cancelled.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`CancelSubscriptionInput`](crate::operation::cancel_subscription::CancelSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_subscription::CancelSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_subscription::CancelSubscriptionInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_subscription::CancelSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_subscription::CancelSubscriptionInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSlackUserIdentityInput {
+pub struct DeleteSlackUserIdentityInput  {
     /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the Slack workspace authorized with AWS Chatbot.
@@ -10,17 +10,17 @@ pub struct DeleteSlackUserIdentityInput {
     /// The ID of the user in Slack.
     pub slack_user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSlackUserIdentityInput {
+impl  DeleteSlackUserIdentityInput  {
     /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
-    pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn chat_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.chat_configuration_arn.as_deref()
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
-    pub fn slack_team_id(&self) -> ::std::option::Option<&str> {
+    pub fn slack_team_id(&self) -> ::std::option::Option<& str> {
         self.slack_team_id.as_deref()
     }
     /// The ID of the user in Slack.
-    pub fn slack_user_id(&self) -> ::std::option::Option<&str> {
+    pub fn slack_user_id(&self) -> ::std::option::Option<& str> {
         self.slack_user_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteSlackUserIdentityInputBuilder {
     }
     /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteSlackUserIdentityInputBuilder {
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_id = input;
-        self
+        self.slack_team_id = input; self
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteSlackUserIdentityInputBuilder {
     }
     /// The ID of the user in Slack.
     pub fn set_slack_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_user_id = input;
-        self
+        self.slack_user_id = input; self
     }
     /// The ID of the user in Slack.
     pub fn get_slack_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.slack_user_id
     }
     /// Consumes the builder and constructs a [`DeleteSlackUserIdentityInput`](crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput {
-            chat_configuration_arn: self.chat_configuration_arn,
-            slack_team_id: self.slack_team_id,
-            slack_user_id: self.slack_user_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_slack_user_identity::DeleteSlackUserIdentityInput {
+                chat_configuration_arn: self.chat_configuration_arn
+                ,
+                slack_team_id: self.slack_team_id
+                ,
+                slack_user_id: self.slack_user_id
+                ,
+            }
+        )
     }
 }
+

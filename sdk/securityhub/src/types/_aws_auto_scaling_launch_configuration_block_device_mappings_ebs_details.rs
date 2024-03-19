@@ -3,7 +3,7 @@
 /// <p>Parameters that are used to automatically set up EBS volumes when an instance is launched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails  {
     /// <p>Whether to delete the volume when the instance is terminated.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>Whether to encrypt the volume.</p>
@@ -44,7 +44,7 @@ pub struct AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// </ul>
     pub volume_type: ::std::option::Option<::std::string::String>,
 }
-impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
+impl  AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails  {
     /// <p>Whether to delete the volume when the instance is terminated.</p>
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
@@ -60,7 +60,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     }
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
@@ -93,7 +93,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
     /// <li>
     /// <p><code>standard</code></p></li>
     /// </ul>
-    pub fn volume_type(&self) -> ::std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<& str> {
         self.volume_type.as_deref()
     }
 }
@@ -123,8 +123,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>Whether to delete the volume when the instance is terminated.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>Whether to delete the volume when the instance is terminated.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
@@ -137,8 +136,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     }
     /// <p>Whether to encrypt the volume.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Whether to encrypt the volume.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
@@ -153,8 +151,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
     /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
     /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
@@ -170,8 +167,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
@@ -207,8 +203,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     /// </ul>
     /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
@@ -260,8 +255,7 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
@@ -284,12 +278,19 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
         crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
-            delete_on_termination: self.delete_on_termination,
-            encrypted: self.encrypted,
-            iops: self.iops,
-            snapshot_id: self.snapshot_id,
-            volume_size: self.volume_size,
-            volume_type: self.volume_type,
+            delete_on_termination: self.delete_on_termination
+            ,
+            encrypted: self.encrypted
+            ,
+            iops: self.iops
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            volume_size: self.volume_size
+            ,
+            volume_type: self.volume_type
+            ,
         }
     }
 }
+

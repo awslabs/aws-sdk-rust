@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetStreamKeyOutput {
+pub struct BatchGetStreamKeyOutput  {
     /// <p></p>
-    pub stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
+    pub stream_keys: ::std::option::Option<::std::vec::Vec::<crate::types::StreamKey>>,
     /// <p></p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchError>>,
     _request_id: Option<String>,
 }
-impl BatchGetStreamKeyOutput {
+impl  BatchGetStreamKeyOutput  {
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_keys.is_none()`.
-    pub fn stream_keys(&self) -> &[crate::types::StreamKey] {
-        self.stream_keys.as_deref().unwrap_or_default()
+    pub fn stream_keys(&self) -> & [crate::types::StreamKey] {
+        self.stream_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::BatchError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::BatchError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetStreamKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyOutput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput).
     pub fn builder() -> crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetStreamKeyOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyOutputBuilder {
-    pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>,
+    pub(crate) stream_keys: ::std::option::Option<::std::vec::Vec::<crate::types::StreamKey>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchError>>,
     _request_id: Option<String>,
 }
 impl BatchGetStreamKeyOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetStreamKeyOutputBuilder {
     /// <p></p>
     pub fn stream_keys(mut self, input: crate::types::StreamKey) -> Self {
         let mut v = self.stream_keys.unwrap_or_default();
-        v.push(input);
-        self.stream_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stream_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamKey>>) -> Self {
-        self.stream_keys = input;
-        self
+    pub fn set_stream_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamKey>>) -> Self {
+        self.stream_keys = input; self
     }
     /// <p></p>
-    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamKey>> {
+    pub fn get_stream_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamKey>> {
         &self.stream_keys
     }
     /// Appends an item to `errors`.
@@ -71,34 +72,36 @@ impl BatchGetStreamKeyOutputBuilder {
     /// <p></p>
     pub fn errors(mut self, input: crate::types::BatchError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchError>>) -> Self {
+        self.errors = input; self
     }
     /// <p></p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetStreamKeyOutput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput).
     pub fn build(self) -> crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput {
         crate::operation::batch_get_stream_key::BatchGetStreamKeyOutput {
-            stream_keys: self.stream_keys,
-            errors: self.errors,
+            stream_keys: self.stream_keys
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

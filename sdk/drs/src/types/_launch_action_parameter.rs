@@ -3,19 +3,19 @@
 /// <p>Launch action parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchActionParameter {
+pub struct LaunchActionParameter  {
     /// <p>Value.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>Type.</p>
     pub r#type: ::std::option::Option<crate::types::LaunchActionParameterType>,
 }
-impl LaunchActionParameter {
+impl  LaunchActionParameter  {
     /// <p>Value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Type.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LaunchActionParameterType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LaunchActionParameterType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LaunchActionParameterBuilder {
     }
     /// <p>Value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl LaunchActionParameterBuilder {
     }
     /// <p>Type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LaunchActionParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchActionParameterType> {
@@ -65,8 +63,11 @@ impl LaunchActionParameterBuilder {
     /// Consumes the builder and constructs a [`LaunchActionParameter`](crate::types::LaunchActionParameter).
     pub fn build(self) -> crate::types::LaunchActionParameter {
         crate::types::LaunchActionParameter {
-            value: self.value,
-            r#type: self.r#type,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSnapshotScheduleOutput {
+pub struct UpdateSnapshotScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateSnapshotScheduleOutput {
+impl  UpdateSnapshotScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSnapshotScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleOutput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput).
     pub fn builder() -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateSnapshotScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSnapshotScheduleOutput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput).
     pub fn build(self) -> crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput {
         crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput {
-            volume_arn: self.volume_arn,
+            volume_arn: self.volume_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

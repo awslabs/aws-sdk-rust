@@ -3,15 +3,15 @@
 /// <p>Defines when a new instance is auto-scaled into the compute fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TargetTrackingScalingConfiguration {
+pub struct TargetTrackingScalingConfiguration  {
     /// <p>The metric type to determine auto-scaling.</p>
     pub metric_type: ::std::option::Option<crate::types::FleetScalingMetricType>,
     /// <p>The value of <code>metricType</code> when to start scaling.</p>
     pub target_value: ::std::option::Option<f64>,
 }
-impl TargetTrackingScalingConfiguration {
+impl  TargetTrackingScalingConfiguration  {
     /// <p>The metric type to determine auto-scaling.</p>
-    pub fn metric_type(&self) -> ::std::option::Option<&crate::types::FleetScalingMetricType> {
+    pub fn metric_type(&self) -> ::std::option::Option<& crate::types::FleetScalingMetricType> {
         self.metric_type.as_ref()
     }
     /// <p>The value of <code>metricType</code> when to start scaling.</p>
@@ -41,8 +41,7 @@ impl TargetTrackingScalingConfigurationBuilder {
     }
     /// <p>The metric type to determine auto-scaling.</p>
     pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::FleetScalingMetricType>) -> Self {
-        self.metric_type = input;
-        self
+        self.metric_type = input; self
     }
     /// <p>The metric type to determine auto-scaling.</p>
     pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::FleetScalingMetricType> {
@@ -55,8 +54,7 @@ impl TargetTrackingScalingConfigurationBuilder {
     }
     /// <p>The value of <code>metricType</code> when to start scaling.</p>
     pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.target_value = input;
-        self
+        self.target_value = input; self
     }
     /// <p>The value of <code>metricType</code> when to start scaling.</p>
     pub fn get_target_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl TargetTrackingScalingConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingScalingConfiguration`](crate::types::TargetTrackingScalingConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingScalingConfiguration {
         crate::types::TargetTrackingScalingConfiguration {
-            metric_type: self.metric_type,
-            target_value: self.target_value,
+            metric_type: self.metric_type
+            ,
+            target_value: self.target_value
+            ,
         }
     }
 }
+

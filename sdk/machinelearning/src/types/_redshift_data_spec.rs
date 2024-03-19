@@ -3,7 +3,7 @@
 /// <p>Describes the data specification of an Amazon Redshift <code>DataSource</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RedshiftDataSpec {
+pub struct RedshiftDataSpec  {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub database_information: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
@@ -56,24 +56,22 @@ pub struct RedshiftDataSpec {
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     pub data_schema_uri: ::std::option::Option<::std::string::String>,
 }
-impl RedshiftDataSpec {
+impl  RedshiftDataSpec  {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn database_information(&self) -> ::std::option::Option<&crate::types::RedshiftDatabase> {
+    pub fn database_information(&self) -> ::std::option::Option<& crate::types::RedshiftDatabase> {
         self.database_information.as_ref()
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn select_sql_query(&self) -> &str {
-        use std::ops::Deref;
-        self.select_sql_query.deref()
+    pub fn select_sql_query(&self) -> & str {
+        use std::ops::Deref; self.select_sql_query.deref()
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
-    pub fn database_credentials(&self) -> ::std::option::Option<&crate::types::RedshiftDatabaseCredentials> {
+    pub fn database_credentials(&self) -> ::std::option::Option<& crate::types::RedshiftDatabaseCredentials> {
         self.database_credentials.as_ref()
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
-    pub fn s3_staging_location(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_staging_location.deref()
+    pub fn s3_staging_location(&self) -> & str {
+        use std::ops::Deref; self.s3_staging_location.deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -102,7 +100,7 @@ impl RedshiftDataSpec {
     /// <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p>
     /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></p></li>
     /// </ul>
-    pub fn data_rearrangement(&self) -> ::std::option::Option<&str> {
+    pub fn data_rearrangement(&self) -> ::std::option::Option<& str> {
         self.data_rearrangement.as_deref()
     }
     /// <p>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
@@ -117,11 +115,11 @@ impl RedshiftDataSpec {
     /// <p>"attributes": [</p>
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
-    pub fn data_schema(&self) -> ::std::option::Option<&str> {
+    pub fn data_schema(&self) -> ::std::option::Option<& str> {
         self.data_schema.as_deref()
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn data_schema_uri(&self) -> ::std::option::Option<&str> {
+    pub fn data_schema_uri(&self) -> ::std::option::Option<& str> {
         self.data_schema_uri.as_deref()
     }
 }
@@ -153,8 +151,7 @@ impl RedshiftDataSpecBuilder {
     }
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn set_database_information(mut self, input: ::std::option::Option<crate::types::RedshiftDatabase>) -> Self {
-        self.database_information = input;
-        self
+        self.database_information = input; self
     }
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn get_database_information(&self) -> &::std::option::Option<crate::types::RedshiftDatabase> {
@@ -168,8 +165,7 @@ impl RedshiftDataSpecBuilder {
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn set_select_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.select_sql_query = input;
-        self
+        self.select_sql_query = input; self
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn get_select_sql_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +179,7 @@ impl RedshiftDataSpecBuilder {
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub fn set_database_credentials(mut self, input: ::std::option::Option<crate::types::RedshiftDatabaseCredentials>) -> Self {
-        self.database_credentials = input;
-        self
+        self.database_credentials = input; self
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub fn get_database_credentials(&self) -> &::std::option::Option<crate::types::RedshiftDatabaseCredentials> {
@@ -198,8 +193,7 @@ impl RedshiftDataSpecBuilder {
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
     pub fn set_s3_staging_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_staging_location = input;
-        self
+        self.s3_staging_location = input; self
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
     pub fn get_s3_staging_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -264,8 +258,7 @@ impl RedshiftDataSpecBuilder {
     /// <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></p></li>
     /// </ul>
     pub fn set_data_rearrangement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_rearrangement = input;
-        self
+        self.data_rearrangement = input; self
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
@@ -326,8 +319,7 @@ impl RedshiftDataSpecBuilder {
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
     pub fn set_data_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_schema = input;
-        self
+        self.data_schema = input; self
     }
     /// <p>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
     /// <p>A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code>.</p>
@@ -351,8 +343,7 @@ impl RedshiftDataSpecBuilder {
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn set_data_schema_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_schema_uri = input;
-        self
+        self.data_schema_uri = input; self
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn get_data_schema_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -363,24 +354,30 @@ impl RedshiftDataSpecBuilder {
     /// - [`select_sql_query`](crate::types::builders::RedshiftDataSpecBuilder::select_sql_query)
     /// - [`s3_staging_location`](crate::types::builders::RedshiftDataSpecBuilder::s3_staging_location)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataSpec, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDataSpec {
-            database_information: self.database_information,
-            select_sql_query: self.select_sql_query.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "select_sql_query",
-                    "select_sql_query was not specified but it is required when building RedshiftDataSpec",
-                )
-            })?,
-            database_credentials: self.database_credentials,
-            s3_staging_location: self.s3_staging_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_staging_location",
-                    "s3_staging_location was not specified but it is required when building RedshiftDataSpec",
-                )
-            })?,
-            data_rearrangement: self.data_rearrangement,
-            data_schema: self.data_schema,
-            data_schema_uri: self.data_schema_uri,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDataSpec {
+                database_information: self.database_information
+                ,
+                select_sql_query: self.select_sql_query
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("select_sql_query", "select_sql_query was not specified but it is required when building RedshiftDataSpec")
+                    )?
+                ,
+                database_credentials: self.database_credentials
+                ,
+                s3_staging_location: self.s3_staging_location
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_staging_location", "s3_staging_location was not specified but it is required when building RedshiftDataSpec")
+                    )?
+                ,
+                data_rearrangement: self.data_rearrangement
+                ,
+                data_schema: self.data_schema
+                ,
+                data_schema_uri: self.data_schema_uri
+                ,
+            }
+        )
     }
 }
+

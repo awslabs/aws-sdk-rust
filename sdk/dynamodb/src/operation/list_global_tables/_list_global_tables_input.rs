@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGlobalTablesInput {
+pub struct ListGlobalTablesInput  {
     /// <p>The first global table name that this operation will evaluate.</p>
     pub exclusive_start_global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
@@ -11,9 +11,9 @@ pub struct ListGlobalTablesInput {
     /// <p>Lists the global tables in a specific Region.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
 }
-impl ListGlobalTablesInput {
+impl  ListGlobalTablesInput  {
     /// <p>The first global table name that this operation will evaluate.</p>
-    pub fn exclusive_start_global_table_name(&self) -> ::std::option::Option<&str> {
+    pub fn exclusive_start_global_table_name(&self) -> ::std::option::Option<& str> {
         self.exclusive_start_global_table_name.as_deref()
     }
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
@@ -22,7 +22,7 @@ impl ListGlobalTablesInput {
         self.limit
     }
     /// <p>Lists the global tables in a specific Region.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl ListGlobalTablesInputBuilder {
     }
     /// <p>The first global table name that this operation will evaluate.</p>
     pub fn set_exclusive_start_global_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.exclusive_start_global_table_name = input;
-        self
+        self.exclusive_start_global_table_name = input; self
     }
     /// <p>The first global table name that this operation will evaluate.</p>
     pub fn get_exclusive_start_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl ListGlobalTablesInputBuilder {
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
     /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
     /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
@@ -80,21 +78,24 @@ impl ListGlobalTablesInputBuilder {
     }
     /// <p>Lists the global tables in a specific Region.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>Lists the global tables in a specific Region.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_name
     }
     /// Consumes the builder and constructs a [`ListGlobalTablesInput`](crate::operation::list_global_tables::ListGlobalTablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_global_tables::ListGlobalTablesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_global_tables::ListGlobalTablesInput {
-            exclusive_start_global_table_name: self.exclusive_start_global_table_name,
-            limit: self.limit,
-            region_name: self.region_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_global_tables::ListGlobalTablesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_global_tables::ListGlobalTablesInput {
+                exclusive_start_global_table_name: self.exclusive_start_global_table_name
+                ,
+                limit: self.limit
+                ,
+                region_name: self.region_name
+                ,
+            }
+        )
     }
 }
+

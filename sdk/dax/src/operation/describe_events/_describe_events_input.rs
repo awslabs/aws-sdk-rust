@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventsInput {
+pub struct DescribeEventsInput  {
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
     pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
@@ -19,21 +19,21 @@ pub struct DescribeEventsInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventsInput {
+impl  DescribeEventsInput  {
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
-    pub fn source_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<& str> {
         self.source_name.as_deref()
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The number of minutes' worth of events to retrieve.</p>
@@ -46,7 +46,7 @@ impl DescribeEventsInput {
         self.max_results
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -77,8 +77,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_name = input;
-        self
+        self.source_name = input; self
     }
     /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
@@ -105,8 +103,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -119,8 +116,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -133,8 +129,7 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>The number of minutes' worth of events to retrieve.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The number of minutes' worth of events to retrieve.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -149,8 +144,7 @@ impl DescribeEventsInputBuilder {
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
@@ -164,25 +158,32 @@ impl DescribeEventsInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeEventsInput`](crate::operation::describe_events::DescribeEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_events::DescribeEventsInput {
-            source_name: self.source_name,
-            source_type: self.source_type,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            duration: self.duration,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_events::DescribeEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_events::DescribeEventsInput {
+                source_name: self.source_name
+                ,
+                source_type: self.source_type
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                duration: self.duration
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

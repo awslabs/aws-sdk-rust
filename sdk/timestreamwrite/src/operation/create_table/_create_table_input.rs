@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTableInput {
+pub struct CreateTableInput  {
     /// <p>The name of the Timestream database.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream table.</p>
@@ -10,37 +10,38 @@ pub struct CreateTableInput {
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
     pub retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
     /// <p>A list of key-value pairs to label the table.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     /// <p>The schema of the table.</p>
     pub schema: ::std::option::Option<crate::types::Schema>,
 }
-impl CreateTableInput {
+impl  CreateTableInput  {
     /// <p>The name of the Timestream database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the Timestream table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
-    pub fn retention_properties(&self) -> ::std::option::Option<&crate::types::RetentionProperties> {
+    pub fn retention_properties(&self) -> ::std::option::Option<& crate::types::RetentionProperties> {
         self.retention_properties.as_ref()
     }
     /// <p>A list of key-value pairs to label the table.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
-    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<&crate::types::MagneticStoreWriteProperties> {
+    pub fn magnetic_store_write_properties(&self) -> ::std::option::Option<& crate::types::MagneticStoreWriteProperties> {
         self.magnetic_store_write_properties.as_ref()
     }
     /// <p>The schema of the table.</p>
-    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<& crate::types::Schema> {
         self.schema.as_ref()
     }
 }
@@ -58,7 +59,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) retention_properties: ::std::option::Option<crate::types::RetentionProperties>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) magnetic_store_write_properties: ::std::option::Option<crate::types::MagneticStoreWriteProperties>,
     pub(crate) schema: ::std::option::Option<crate::types::Schema>,
 }
@@ -71,8 +72,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The name of the Timestream table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the Timestream table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
     pub fn set_retention_properties(mut self, input: ::std::option::Option<crate::types::RetentionProperties>) -> Self {
-        self.retention_properties = input;
-        self
+        self.retention_properties = input; self
     }
     /// <p>The duration for which your time-series data must be stored in the memory store and the magnetic store.</p>
     pub fn get_retention_properties(&self) -> &::std::option::Option<crate::types::RetentionProperties> {
@@ -114,17 +112,16 @@ impl CreateTableInputBuilder {
     /// <p>A list of key-value pairs to label the table.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key-value pairs to label the table.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to label the table.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
@@ -134,8 +131,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn set_magnetic_store_write_properties(mut self, input: ::std::option::Option<crate::types::MagneticStoreWriteProperties>) -> Self {
-        self.magnetic_store_write_properties = input;
-        self
+        self.magnetic_store_write_properties = input; self
     }
     /// <p>Contains properties to set on the table when enabling magnetic store writes.</p>
     pub fn get_magnetic_store_write_properties(&self) -> &::std::option::Option<crate::types::MagneticStoreWriteProperties> {
@@ -148,8 +144,7 @@ impl CreateTableInputBuilder {
     }
     /// <p>The schema of the table.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema of the table.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
@@ -157,13 +152,22 @@ impl CreateTableInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
-            database_name: self.database_name,
-            table_name: self.table_name,
-            retention_properties: self.retention_properties,
-            tags: self.tags,
-            magnetic_store_write_properties: self.magnetic_store_write_properties,
-            schema: self.schema,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_table::CreateTableInput {
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                retention_properties: self.retention_properties
+                ,
+                tags: self.tags
+                ,
+                magnetic_store_write_properties: self.magnetic_store_write_properties
+                ,
+                schema: self.schema
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The description of the server-side encryption status on the specified table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SseDescription {
+pub struct SseDescription  {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct SseDescription {
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
     pub inaccessible_encryption_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl SseDescription {
+impl  SseDescription  {
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ impl SseDescription {
     /// <li>
     /// <p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SseStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SseStatus> {
         self.status.as_ref()
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
@@ -39,15 +39,15 @@ impl SseDescription {
     /// <li>
     /// <p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
-    pub fn sse_type(&self) -> ::std::option::Option<&crate::types::SseType> {
+    pub fn sse_type(&self) -> ::std::option::Option<& crate::types::SseType> {
         self.sse_type.as_ref()
     }
     /// <p>The KMS key ARN used for the KMS encryption.</p>
-    pub fn kms_master_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_master_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_master_key_arn.as_deref()
     }
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
-    pub fn inaccessible_encryption_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn inaccessible_encryption_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.inaccessible_encryption_date_time.as_ref()
     }
 }
@@ -87,8 +87,7 @@ impl SseDescriptionBuilder {
     /// <p><code>UPDATING</code> - Server-side encryption is being updated.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
     /// <ul>
@@ -115,8 +114,7 @@ impl SseDescriptionBuilder {
     /// <p><code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p></li>
     /// </ul>
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
-        self.sse_type = input;
-        self
+        self.sse_type = input; self
     }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
@@ -133,8 +131,7 @@ impl SseDescriptionBuilder {
     }
     /// <p>The KMS key ARN used for the KMS encryption.</p>
     pub fn set_kms_master_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_master_key_arn = input;
-        self
+        self.kms_master_key_arn = input; self
     }
     /// <p>The KMS key ARN used for the KMS encryption.</p>
     pub fn get_kms_master_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,8 +144,7 @@ impl SseDescriptionBuilder {
     }
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
     pub fn set_inaccessible_encryption_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.inaccessible_encryption_date_time = input;
-        self
+        self.inaccessible_encryption_date_time = input; self
     }
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
     pub fn get_inaccessible_encryption_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -157,10 +153,15 @@ impl SseDescriptionBuilder {
     /// Consumes the builder and constructs a [`SseDescription`](crate::types::SseDescription).
     pub fn build(self) -> crate::types::SseDescription {
         crate::types::SseDescription {
-            status: self.status,
-            sse_type: self.sse_type,
-            kms_master_key_arn: self.kms_master_key_arn,
-            inaccessible_encryption_date_time: self.inaccessible_encryption_date_time,
+            status: self.status
+            ,
+            sse_type: self.sse_type
+            ,
+            kms_master_key_arn: self.kms_master_key_arn
+            ,
+            inaccessible_encryption_date_time: self.inaccessible_encryption_date_time
+            ,
         }
     }
 }
+

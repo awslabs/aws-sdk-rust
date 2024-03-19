@@ -3,23 +3,22 @@
 /// <p>A list of names of sending authorization policies that apply to an identity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIdentityPoliciesOutput {
+pub struct ListIdentityPoliciesOutput  {
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub policy_names: ::std::vec::Vec<::std::string::String>,
+    pub policy_names: ::std::vec::Vec::<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIdentityPoliciesOutput {
+impl  ListIdentityPoliciesOutput  {
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub fn policy_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.policy_names.deref()
+    pub fn policy_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.policy_names.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIdentityPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIdentityPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesOutput`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput).
     pub fn builder() -> crate::operation::list_identity_policies::builders::ListIdentityPoliciesOutputBuilder {
@@ -31,7 +30,7 @@ impl ListIdentityPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIdentityPoliciesOutputBuilder {
-    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListIdentityPoliciesOutputBuilder {
@@ -42,43 +41,41 @@ impl ListIdentityPoliciesOutputBuilder {
     /// <p>A list of names of policies that apply to the specified identity.</p>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.policy_names = input;
-        self
+    pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.policy_names = input; self
     }
     /// <p>A list of names of policies that apply to the specified identity.</p>
-    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.policy_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIdentityPoliciesOutput`](crate::operation::list_identity_policies::ListIdentityPoliciesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_names`](crate::operation::list_identity_policies::builders::ListIdentityPoliciesOutputBuilder::policy_names)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_identity_policies::ListIdentityPoliciesOutput {
-            policy_names: self.policy_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_names",
-                    "policy_names was not specified but it is required when building ListIdentityPoliciesOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_identity_policies::ListIdentityPoliciesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_identity_policies::ListIdentityPoliciesOutput {
+                policy_names: self.policy_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_names", "policy_names was not specified but it is required when building ListIdentityPoliciesOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteReplicationTaskInput {
+pub struct DeleteReplicationTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteReplicationTaskInput {
+impl  DeleteReplicationTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteReplicationTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     pub fn set_replication_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_task_arn = input;
-        self
+        self.replication_task_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_task_arn
     }
     /// Consumes the builder and constructs a [`DeleteReplicationTaskInput`](crate::operation::delete_replication_task::DeleteReplicationTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_task::DeleteReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_replication_task::DeleteReplicationTaskInput {
-            replication_task_arn: self.replication_task_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_replication_task::DeleteReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_replication_task::DeleteReplicationTaskInput {
+                replication_task_arn: self.replication_task_arn
+                ,
+            }
+        )
     }
 }
+

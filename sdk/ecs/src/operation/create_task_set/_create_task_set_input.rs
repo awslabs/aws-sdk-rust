@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTaskSetInput {
+pub struct CreateTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
     pub service: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
@@ -14,9 +14,9 @@ pub struct CreateTaskSetInput {
     /// <p>An object representing the network configuration for a task set.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
+    pub load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub service_registries: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>,
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
@@ -26,7 +26,7 @@ pub struct CreateTaskSetInput {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
@@ -51,44 +51,46 @@ pub struct CreateTaskSetInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateTaskSetInput {
+impl  CreateTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    pub fn task_definition(&self) -> ::std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<& str> {
         self.task_definition.as_deref()
     }
     /// <p>An object representing the network configuration for a task set.</p>
-    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> ::std::option::Option<& crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
-    pub fn load_balancers(&self) -> &[crate::types::LoadBalancer] {
-        self.load_balancers.as_deref().unwrap_or_default()
+    pub fn load_balancers(&self) -> & [crate::types::LoadBalancer] {
+        self.load_balancers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_registries.is_none()`.
-    pub fn service_registries(&self) -> &[crate::types::ServiceRegistry] {
-        self.service_registries.as_deref().unwrap_or_default()
+    pub fn service_registries(&self) -> & [crate::types::ServiceRegistry] {
+        self.service_registries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<& crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>The capacity provider strategy to use for the task set.</p>
@@ -97,21 +99,22 @@ impl CreateTaskSetInput {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_provider_strategy.is_none()`.
-    pub fn capacity_provider_strategy(&self) -> &[crate::types::CapacityProviderStrategyItem] {
-        self.capacity_provider_strategy.as_deref().unwrap_or_default()
+    pub fn capacity_provider_strategy(&self) -> & [crate::types::CapacityProviderStrategyItem] {
+        self.capacity_provider_strategy.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
-    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
-    pub fn scale(&self) -> ::std::option::Option<&crate::types::Scale> {
+    pub fn scale(&self) -> ::std::option::Option<& crate::types::Scale> {
         self.scale.as_ref()
     }
     /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
@@ -132,10 +135,11 @@ impl CreateTaskSetInput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateTaskSetInput {
@@ -154,14 +158,14 @@ pub struct CreateTaskSetInputBuilder {
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
-    pub(crate) service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>,
+    pub(crate) service_registries: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
-    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) capacity_provider_strategy: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>,
     pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) scale: ::std::option::Option<crate::types::Scale>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateTaskSetInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
@@ -172,8 +176,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +190,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -201,8 +203,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -216,8 +217,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn set_task_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_definition = input;
-        self
+        self.task_definition = input; self
     }
     /// <p>The task definition for the tasks in the task set to use. If a revision isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
@@ -230,8 +230,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>An object representing the network configuration for a task set.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input;
-        self
+        self.network_configuration = input; self
     }
     /// <p>An object representing the network configuration for a task set.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
@@ -244,17 +243,16 @@ impl CreateTaskSetInputBuilder {
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
     pub fn load_balancers(mut self, input: crate::types::LoadBalancer) -> Self {
         let mut v = self.load_balancers.unwrap_or_default();
-        v.push(input);
-        self.load_balancers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.load_balancers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>) -> Self {
-        self.load_balancers = input;
-        self
+    pub fn set_load_balancers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>>) -> Self {
+        self.load_balancers = input; self
     }
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
-    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>> {
+    pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LoadBalancer>> {
         &self.load_balancers
     }
     /// Appends an item to `service_registries`.
@@ -264,17 +262,16 @@ impl CreateTaskSetInputBuilder {
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
     pub fn service_registries(mut self, input: crate::types::ServiceRegistry) -> Self {
         let mut v = self.service_registries.unwrap_or_default();
-        v.push(input);
-        self.service_registries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.service_registries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>) -> Self {
-        self.service_registries = input;
-        self
+    pub fn set_service_registries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>>) -> Self {
+        self.service_registries = input; self
     }
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
-    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>> {
+    pub fn get_service_registries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ServiceRegistry>> {
         &self.service_registries
     }
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -286,8 +283,7 @@ impl CreateTaskSetInputBuilder {
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
-        self.launch_type = input;
-        self
+        self.launch_type = input; self
     }
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
@@ -306,9 +302,9 @@ impl CreateTaskSetInputBuilder {
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
     pub fn capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
-        v.push(input);
-        self.capacity_provider_strategy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capacity_provider_strategy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The capacity provider strategy to use for the task set.</p>
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
@@ -316,12 +312,8 @@ impl CreateTaskSetInputBuilder {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    pub fn set_capacity_provider_strategy(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
-        self.capacity_provider_strategy = input;
-        self
+    pub fn set_capacity_provider_strategy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>>) -> Self {
+        self.capacity_provider_strategy = input; self
     }
     /// <p>The capacity provider strategy to use for the task set.</p>
     /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
@@ -329,7 +321,7 @@ impl CreateTaskSetInputBuilder {
     /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
-    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+    pub fn get_capacity_provider_strategy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CapacityProviderStrategyItem>> {
         &self.capacity_provider_strategy
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
@@ -339,8 +331,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
     pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
     pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -353,8 +344,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn get_scale(&self) -> &::std::option::Option<crate::types::Scale> {
@@ -367,8 +357,7 @@ impl CreateTaskSetInputBuilder {
     }
     /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,9 +387,9 @@ impl CreateTaskSetInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -420,9 +409,8 @@ impl CreateTaskSetInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The metadata that you apply to the task set to help you categorize and organize them. Each tag consists of a key and an optional value. You define both. When a service is deleted, the tags are deleted.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -442,27 +430,41 @@ impl CreateTaskSetInputBuilder {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTaskSetInput`](crate::operation::create_task_set::CreateTaskSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_task_set::CreateTaskSetInput {
-            service: self.service,
-            cluster: self.cluster,
-            external_id: self.external_id,
-            task_definition: self.task_definition,
-            network_configuration: self.network_configuration,
-            load_balancers: self.load_balancers,
-            service_registries: self.service_registries,
-            launch_type: self.launch_type,
-            capacity_provider_strategy: self.capacity_provider_strategy,
-            platform_version: self.platform_version,
-            scale: self.scale,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_task_set::CreateTaskSetInput {
+                service: self.service
+                ,
+                cluster: self.cluster
+                ,
+                external_id: self.external_id
+                ,
+                task_definition: self.task_definition
+                ,
+                network_configuration: self.network_configuration
+                ,
+                load_balancers: self.load_balancers
+                ,
+                service_registries: self.service_registries
+                ,
+                launch_type: self.launch_type
+                ,
+                capacity_provider_strategy: self.capacity_provider_strategy
+                ,
+                platform_version: self.platform_version
+                ,
+                scale: self.scale
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PortOverride {
+pub struct PortOverride  {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     pub listener_port: ::std::option::Option<i32>,
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub endpoint_port: ::std::option::Option<i32>,
 }
-impl PortOverride {
+impl  PortOverride  {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     pub fn listener_port(&self) -> ::std::option::Option<i32> {
         self.listener_port
@@ -42,8 +42,7 @@ impl PortOverrideBuilder {
     }
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     pub fn set_listener_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.listener_port = input;
-        self
+        self.listener_port = input; self
     }
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     pub fn get_listener_port(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl PortOverrideBuilder {
     }
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub fn set_endpoint_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.endpoint_port = input;
-        self
+        self.endpoint_port = input; self
     }
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub fn get_endpoint_port(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl PortOverrideBuilder {
     /// Consumes the builder and constructs a [`PortOverride`](crate::types::PortOverride).
     pub fn build(self) -> crate::types::PortOverride {
         crate::types::PortOverride {
-            listener_port: self.listener_port,
-            endpoint_port: self.endpoint_port,
+            listener_port: self.listener_port
+            ,
+            endpoint_port: self.endpoint_port
+            ,
         }
     }
 }
+

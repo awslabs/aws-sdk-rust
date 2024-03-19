@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAccountOutput {
+pub struct RegisterAccountOutput  {
     /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub register_account_status: crate::types::RegistrationStatus,
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
@@ -15,33 +15,33 @@ pub struct RegisterAccountOutput {
     pub last_modification_time: ::aws_smithy_types::DateTime,
     _request_id: Option<String>,
 }
-impl RegisterAccountOutput {
+impl  RegisterAccountOutput  {
     /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
-    pub fn register_account_status(&self) -> &crate::types::RegistrationStatus {
+    pub fn register_account_status(&self) -> & crate::types::RegistrationStatus {
         &self.register_account_status
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
-    pub fn timestream_resources(&self) -> ::std::option::Option<&crate::types::TimestreamResources> {
+    pub fn timestream_resources(&self) -> ::std::option::Option<& crate::types::TimestreamResources> {
         self.timestream_resources.as_ref()
     }
     /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
-    pub fn iam_resources(&self) -> ::std::option::Option<&crate::types::IamResources> {
+    pub fn iam_resources(&self) -> ::std::option::Option<& crate::types::IamResources> {
         self.iam_resources.as_ref()
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modification_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterAccountOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
     pub fn builder() -> crate::operation::register_account::builders::RegisterAccountOutputBuilder {
@@ -69,8 +69,7 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub fn set_register_account_status(mut self, input: ::std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.register_account_status = input;
-        self
+        self.register_account_status = input; self
     }
     /// <p>The status of registering your Amazon Web Services account, IAM role, and Timestream resources.</p>
     pub fn get_register_account_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
@@ -83,8 +82,7 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     pub fn set_timestream_resources(mut self, input: ::std::option::Option<crate::types::TimestreamResources>) -> Self {
-        self.timestream_resources = input;
-        self
+        self.timestream_resources = input; self
     }
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     pub fn get_timestream_resources(&self) -> &::std::option::Option<crate::types::TimestreamResources> {
@@ -98,8 +96,7 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub fn set_iam_resources(mut self, input: ::std::option::Option<crate::types::IamResources>) -> Self {
-        self.iam_resources = input;
-        self
+        self.iam_resources = input; self
     }
     /// <p>The registered IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     pub fn get_iam_resources(&self) -> &::std::option::Option<crate::types::IamResources> {
@@ -113,8 +110,7 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -128,52 +124,51 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`register_account_status`](crate::operation::register_account::builders::RegisterAccountOutputBuilder::register_account_status)
     /// - [`creation_time`](crate::operation::register_account::builders::RegisterAccountOutputBuilder::creation_time)
     /// - [`last_modification_time`](crate::operation::register_account::builders::RegisterAccountOutputBuilder::last_modification_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountOutput {
-            register_account_status: self.register_account_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "register_account_status",
-                    "register_account_status was not specified but it is required when building RegisterAccountOutput",
-                )
-            })?,
-            timestream_resources: self.timestream_resources,
-            iam_resources: self.iam_resources,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building RegisterAccountOutput",
-                )
-            })?,
-            last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modification_time",
-                    "last_modification_time was not specified but it is required when building RegisterAccountOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_account::RegisterAccountOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_account::RegisterAccountOutput {
+                register_account_status: self.register_account_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("register_account_status", "register_account_status was not specified but it is required when building RegisterAccountOutput")
+                    )?
+                ,
+                timestream_resources: self.timestream_resources
+                ,
+                iam_resources: self.iam_resources
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building RegisterAccountOutput")
+                    )?
+                ,
+                last_modification_time: self.last_modification_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modification_time", "last_modification_time was not specified but it is required when building RegisterAccountOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

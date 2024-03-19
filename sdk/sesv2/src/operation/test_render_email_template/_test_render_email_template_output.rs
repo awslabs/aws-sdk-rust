@@ -3,23 +3,22 @@
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestRenderEmailTemplateOutput {
+pub struct TestRenderEmailTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     pub rendered_template: ::std::string::String,
     _request_id: Option<String>,
 }
-impl TestRenderEmailTemplateOutput {
+impl  TestRenderEmailTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
-    pub fn rendered_template(&self) -> &str {
-        use std::ops::Deref;
-        self.rendered_template.deref()
+    pub fn rendered_template(&self) -> & str {
+        use std::ops::Deref; self.rendered_template.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for TestRenderEmailTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TestRenderEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput).
     pub fn builder() -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder {
@@ -43,39 +42,35 @@ impl TestRenderEmailTemplateOutputBuilder {
     }
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     pub fn set_rendered_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rendered_template = input;
-        self
+        self.rendered_template = input; self
     }
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     pub fn get_rendered_template(&self) -> &::std::option::Option<::std::string::String> {
         &self.rendered_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rendered_template`](crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder::rendered_template)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::test_render_email_template::TestRenderEmailTemplateOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::test_render_email_template::TestRenderEmailTemplateOutput {
-            rendered_template: self.rendered_template.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rendered_template",
-                    "rendered_template was not specified but it is required when building TestRenderEmailTemplateOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_render_email_template::TestRenderEmailTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::test_render_email_template::TestRenderEmailTemplateOutput {
+                rendered_template: self.rendered_template
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rendered_template", "rendered_template was not specified but it is required when building TestRenderEmailTemplateOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

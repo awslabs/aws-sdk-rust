@@ -5,54 +5,50 @@ pub use crate::operation::update_license_configuration::_update_license_configur
 
 impl UpdateLicenseConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_license_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_license_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateLicenseConfiguration`.
-///
+/// 
 /// <p>Modifies the attributes of an existing license configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder,
+                    inner: crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-    > for UpdateLicenseConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
+                    crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
+                > for UpdateLicenseConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
+                        crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateLicenseConfigurationFluentBuilder {
     /// Creates a new `UpdateLicenseConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateLicenseConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_license_configuration::UpdateLicenseConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_license_configuration::UpdateLicenseConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_license_configuration::UpdateLicenseConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_license_configuration::UpdateLicenseConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_license_configuration::UpdateLicenseConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput, crate::operation::update_license_configuration::UpdateLicenseConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn license_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
@@ -146,12 +133,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_license_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_license_rules(input);
         self
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_license_rules(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_license_rules()
     }
     /// <p>New number of licenses managed by the license configuration.</p>
@@ -220,12 +207,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>New product information.</p>
-    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>) -> Self {
+    pub fn set_product_information_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>>) -> Self {
         self.inner = self.inner.set_product_information_list(input);
         self
     }
     /// <p>New product information.</p>
-    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+    pub fn get_product_information_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductInformation>> {
         self.inner.get_product_information_list()
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
@@ -243,3 +230,4 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner.get_disassociate_when_not_found()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisFirehoseOutputDescription {
+pub struct KinesisFirehoseOutputDescription  {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub resource_arn: ::std::string::String,
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p><note>
@@ -11,16 +11,15 @@ pub struct KinesisFirehoseOutputDescription {
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl KinesisFirehoseOutputDescription {
+impl  KinesisFirehoseOutputDescription  {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -47,8 +46,7 @@ impl KinesisFirehoseOutputDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl KinesisFirehoseOutputDescriptionBuilder {
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p><note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
@@ -78,14 +75,17 @@ impl KinesisFirehoseOutputDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::KinesisFirehoseOutputDescriptionBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseOutputDescription, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisFirehoseOutputDescription {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building KinesisFirehoseOutputDescription",
-                )
-            })?,
-            role_arn: self.role_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisFirehoseOutputDescription {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building KinesisFirehoseOutputDescription")
+                    )?
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

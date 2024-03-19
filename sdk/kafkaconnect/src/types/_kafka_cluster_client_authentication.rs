@@ -3,13 +3,13 @@
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaClusterClientAuthentication {
+pub struct KafkaClusterClientAuthentication  {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     pub authentication_type: crate::types::KafkaClusterClientAuthenticationType,
 }
-impl KafkaClusterClientAuthentication {
+impl  KafkaClusterClientAuthentication  {
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
-    pub fn authentication_type(&self) -> &crate::types::KafkaClusterClientAuthenticationType {
+    pub fn authentication_type(&self) -> & crate::types::KafkaClusterClientAuthenticationType {
         &self.authentication_type
     }
 }
@@ -35,8 +35,7 @@ impl KafkaClusterClientAuthenticationBuilder {
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::KafkaClusterClientAuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. Value NONE means that no client authentication is used.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::KafkaClusterClientAuthenticationType> {
@@ -46,13 +45,15 @@ impl KafkaClusterClientAuthenticationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`authentication_type`](crate::types::builders::KafkaClusterClientAuthenticationBuilder::authentication_type)
     pub fn build(self) -> ::std::result::Result<crate::types::KafkaClusterClientAuthentication, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KafkaClusterClientAuthentication {
-            authentication_type: self.authentication_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "authentication_type",
-                    "authentication_type was not specified but it is required when building KafkaClusterClientAuthentication",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KafkaClusterClientAuthentication {
+                authentication_type: self.authentication_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("authentication_type", "authentication_type was not specified but it is required when building KafkaClusterClientAuthentication")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A value that associates a component and an entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelationshipValue {
+pub struct RelationshipValue  {
     /// <p>The ID of the target entity associated with this relationship value.</p>
     pub target_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target component associated with the relationship value.</p>
     pub target_component_name: ::std::option::Option<::std::string::String>,
 }
-impl RelationshipValue {
+impl  RelationshipValue  {
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn target_entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_entity_id(&self) -> ::std::option::Option<& str> {
         self.target_entity_id.as_deref()
     }
     /// <p>The name of the target component associated with the relationship value.</p>
-    pub fn target_component_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_component_name(&self) -> ::std::option::Option<& str> {
         self.target_component_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RelationshipValueBuilder {
     }
     /// <p>The ID of the target entity associated with this relationship value.</p>
     pub fn set_target_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_entity_id = input;
-        self
+        self.target_entity_id = input; self
     }
     /// <p>The ID of the target entity associated with this relationship value.</p>
     pub fn get_target_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RelationshipValueBuilder {
     }
     /// <p>The name of the target component associated with the relationship value.</p>
     pub fn set_target_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_component_name = input;
-        self
+        self.target_component_name = input; self
     }
     /// <p>The name of the target component associated with the relationship value.</p>
     pub fn get_target_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RelationshipValueBuilder {
     /// Consumes the builder and constructs a [`RelationshipValue`](crate::types::RelationshipValue).
     pub fn build(self) -> crate::types::RelationshipValue {
         crate::types::RelationshipValue {
-            target_entity_id: self.target_entity_id,
-            target_component_name: self.target_component_name,
+            target_entity_id: self.target_entity_id
+            ,
+            target_component_name: self.target_component_name
+            ,
         }
     }
 }
+

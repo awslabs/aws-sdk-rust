@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkspaceOutput {
+pub struct DeleteWorkspaceOutput  {
     /// <p>The string that specifies the delete result for the workspace.</p>
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteWorkspaceOutput {
+impl  DeleteWorkspaceOutput  {
     /// <p>The string that specifies the delete result for the workspace.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteWorkspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput).
     pub fn builder() -> crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteWorkspaceOutputBuilder {
     }
     /// <p>The string that specifies the delete result for the workspace.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The string that specifies the delete result for the workspace.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput).
     pub fn build(self) -> crate::operation::delete_workspace::DeleteWorkspaceOutput {
         crate::operation::delete_workspace::DeleteWorkspaceOutput {
-            message: self.message,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

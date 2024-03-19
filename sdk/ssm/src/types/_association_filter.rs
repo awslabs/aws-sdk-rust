@@ -3,7 +3,7 @@
 /// <p>Describes a filter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociationFilter {
+pub struct AssociationFilter  {
     /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
@@ -11,17 +11,16 @@ pub struct AssociationFilter {
     /// <p>The filter value.</p>
     pub value: ::std::string::String,
 }
-impl AssociationFilter {
+impl  AssociationFilter  {
     /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
-    pub fn key(&self) -> &crate::types::AssociationFilterKey {
+    pub fn key(&self) -> & crate::types::AssociationFilterKey {
         &self.key
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl AssociationFilter {
@@ -51,8 +50,7 @@ impl AssociationFilterBuilder {
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::AssociationFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
@@ -68,8 +66,7 @@ impl AssociationFilterBuilder {
     }
     /// <p>The filter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The filter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +77,20 @@ impl AssociationFilterBuilder {
     /// - [`key`](crate::types::builders::AssociationFilterBuilder::key)
     /// - [`value`](crate::types::builders::AssociationFilterBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::AssociationFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssociationFilter {
-            key: self.key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key",
-                    "key was not specified but it is required when building AssociationFilter",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building AssociationFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssociationFilter {
+                key: self.key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building AssociationFilter")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building AssociationFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

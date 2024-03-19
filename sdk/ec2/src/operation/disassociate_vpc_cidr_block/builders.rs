@@ -5,55 +5,51 @@ pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_bl
 
 impl DisassociateVpcCidrBlockInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.disassociate_vpc_cidr_block();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.disassociate_vpc_cidr_block();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DisassociateVpcCidrBlock`.
-///
+/// 
 /// <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify its association ID. You can get the association ID by using <code>DescribeVpcs</code>. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it.</p>
 /// <p>You cannot disassociate the CIDR block with which you originally created the VPC (the primary CIDR block).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateVpcCidrBlockFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockInputBuilder,
+                    inner: crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-    > for DisassociateVpcCidrBlockFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
+                    crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
+                > for DisassociateVpcCidrBlockFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
+                        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DisassociateVpcCidrBlockFluentBuilder {
     /// Creates a new `DisassociateVpcCidrBlock`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl DisassociateVpcCidrBlockFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
-        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput, crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The association ID for the CIDR block.</p>
     pub fn association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());
@@ -124,3 +111,4 @@ impl DisassociateVpcCidrBlockFluentBuilder {
         self.inner.get_association_id()
     }
 }
+

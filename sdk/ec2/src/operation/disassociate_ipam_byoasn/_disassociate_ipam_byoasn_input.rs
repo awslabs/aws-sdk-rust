@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateIpamByoasnInput {
+pub struct DisassociateIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>A public 2-byte or 4-byte ASN.</p>
@@ -10,17 +10,17 @@ pub struct DisassociateIpamByoasnInput {
     /// <p>A BYOIP CIDR.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateIpamByoasnInput {
+impl  DisassociateIpamByoasnInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
-    pub fn asn(&self) -> ::std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<& str> {
         self.asn.as_deref()
     }
     /// <p>A BYOIP CIDR.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DisassociateIpamByoasnInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl DisassociateIpamByoasnInputBuilder {
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>A public 2-byte or 4-byte ASN.</p>
     pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl DisassociateIpamByoasnInputBuilder {
     }
     /// <p>A BYOIP CIDR.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>A BYOIP CIDR.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
     /// Consumes the builder and constructs a [`DisassociateIpamByoasnInput`](crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput {
-            dry_run: self.dry_run,
-            asn: self.asn,
-            cidr: self.cidr,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnInput {
+                dry_run: self.dry_run
+                ,
+                asn: self.asn
+                ,
+                cidr: self.cidr
+                ,
+            }
+        )
     }
 }
+

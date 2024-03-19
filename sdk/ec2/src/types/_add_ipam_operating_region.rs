@@ -4,13 +4,13 @@
 /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddIpamOperatingRegion {
+pub struct AddIpamOperatingRegion  {
     /// <p>The name of the operating Region.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
 }
-impl AddIpamOperatingRegion {
+impl  AddIpamOperatingRegion  {
     /// <p>The name of the operating Region.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl AddIpamOperatingRegionBuilder {
     }
     /// <p>The name of the operating Region.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the operating Region.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl AddIpamOperatingRegionBuilder {
     /// Consumes the builder and constructs a [`AddIpamOperatingRegion`](crate::types::AddIpamOperatingRegion).
     pub fn build(self) -> crate::types::AddIpamOperatingRegion {
         crate::types::AddIpamOperatingRegion {
-            region_name: self.region_name,
+            region_name: self.region_name
+            ,
         }
     }
 }
+

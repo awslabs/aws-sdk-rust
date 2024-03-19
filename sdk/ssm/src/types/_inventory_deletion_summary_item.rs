@@ -3,7 +3,7 @@
 /// <p>Either a count, remaining count, or a version number in a delete inventory summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryDeletionSummaryItem {
+pub struct InventoryDeletionSummaryItem  {
     /// <p>The inventory type version.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>A count of the number of deleted items.</p>
@@ -11,9 +11,9 @@ pub struct InventoryDeletionSummaryItem {
     /// <p>The remaining number of items to delete.</p>
     pub remaining_count: i32,
 }
-impl InventoryDeletionSummaryItem {
+impl  InventoryDeletionSummaryItem  {
     /// <p>The inventory type version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>A count of the number of deleted items.</p>
@@ -48,8 +48,7 @@ impl InventoryDeletionSummaryItemBuilder {
     }
     /// <p>The inventory type version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The inventory type version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl InventoryDeletionSummaryItemBuilder {
     }
     /// <p>A count of the number of deleted items.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>A count of the number of deleted items.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl InventoryDeletionSummaryItemBuilder {
     }
     /// <p>The remaining number of items to delete.</p>
     pub fn set_remaining_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.remaining_count = input;
-        self
+        self.remaining_count = input; self
     }
     /// <p>The remaining number of items to delete.</p>
     pub fn get_remaining_count(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,15 @@ impl InventoryDeletionSummaryItemBuilder {
     /// Consumes the builder and constructs a [`InventoryDeletionSummaryItem`](crate::types::InventoryDeletionSummaryItem).
     pub fn build(self) -> crate::types::InventoryDeletionSummaryItem {
         crate::types::InventoryDeletionSummaryItem {
-            version: self.version,
-            count: self.count.unwrap_or_default(),
-            remaining_count: self.remaining_count.unwrap_or_default(),
+            version: self.version
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            remaining_count: self.remaining_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

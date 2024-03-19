@@ -3,7 +3,7 @@
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Metric {
+pub struct Metric  {
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::string::String,
     /// <p>The function with which the metric is calculated.</p>
@@ -11,18 +11,17 @@ pub struct Metric {
     /// <p>The namespace for the metric.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl Metric {
+impl  Metric  {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_name.deref()
+    pub fn metric_name(&self) -> & str {
+        use std::ops::Deref; self.metric_name.deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(&self) -> &crate::types::AggregationFunction {
+    pub fn aggregation_function(&self) -> & crate::types::AggregationFunction {
         &self.aggregation_function
     }
     /// <p>The namespace for the metric.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl MetricBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the metric.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl MetricBuilder {
     }
     /// <p>The function with which the metric is calculated.</p>
     pub fn set_aggregation_function(mut self, input: ::std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.aggregation_function = input;
-        self
+        self.aggregation_function = input; self
     }
     /// <p>The function with which the metric is calculated.</p>
     pub fn get_aggregation_function(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
@@ -79,8 +76,7 @@ impl MetricBuilder {
     }
     /// <p>The namespace for the metric.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace for the metric.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl MetricBuilder {
     /// - [`metric_name`](crate::types::builders::MetricBuilder::metric_name)
     /// - [`aggregation_function`](crate::types::builders::MetricBuilder::aggregation_function)
     pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Metric {
-            metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_name",
-                    "metric_name was not specified but it is required when building Metric",
-                )
-            })?,
-            aggregation_function: self.aggregation_function.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_function",
-                    "aggregation_function was not specified but it is required when building Metric",
-                )
-            })?,
-            namespace: self.namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Metric {
+                metric_name: self.metric_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "metric_name was not specified but it is required when building Metric")
+                    )?
+                ,
+                aggregation_function: self.aggregation_function
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_function", "aggregation_function was not specified but it is required when building Metric")
+                    )?
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

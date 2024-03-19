@@ -3,7 +3,7 @@
 /// <p>TD-SCDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TdscdmaNmrObj {
+pub struct TdscdmaNmrObj  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub uarfcn: i32,
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
@@ -15,7 +15,7 @@ pub struct TdscdmaNmrObj {
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub path_loss: ::std::option::Option<i32>,
 }
-impl TdscdmaNmrObj {
+impl  TdscdmaNmrObj  {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub fn uarfcn(&self) -> i32 {
         self.uarfcn
@@ -63,8 +63,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub fn set_uarfcn(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.uarfcn = input;
-        self
+        self.uarfcn = input; self
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub fn get_uarfcn(&self) -> &::std::option::Option<i32> {
@@ -78,8 +77,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn set_cell_params(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.cell_params = input;
-        self
+        self.cell_params = input; self
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn get_cell_params(&self) -> &::std::option::Option<i32> {
@@ -92,8 +90,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn set_utran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.utran_cid = input;
-        self
+        self.utran_cid = input; self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
@@ -106,8 +103,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn set_rscp(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.rscp = input;
-        self
+        self.rscp = input; self
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn get_rscp(&self) -> &::std::option::Option<i32> {
@@ -120,8 +116,7 @@ impl TdscdmaNmrObjBuilder {
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.path_loss = input;
-        self
+        self.path_loss = input; self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
@@ -132,22 +127,26 @@ impl TdscdmaNmrObjBuilder {
     /// - [`uarfcn`](crate::types::builders::TdscdmaNmrObjBuilder::uarfcn)
     /// - [`cell_params`](crate::types::builders::TdscdmaNmrObjBuilder::cell_params)
     pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TdscdmaNmrObj {
-            uarfcn: self.uarfcn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "uarfcn",
-                    "uarfcn was not specified but it is required when building TdscdmaNmrObj",
-                )
-            })?,
-            cell_params: self.cell_params.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cell_params",
-                    "cell_params was not specified but it is required when building TdscdmaNmrObj",
-                )
-            })?,
-            utran_cid: self.utran_cid,
-            rscp: self.rscp,
-            path_loss: self.path_loss,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TdscdmaNmrObj {
+                uarfcn: self.uarfcn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("uarfcn", "uarfcn was not specified but it is required when building TdscdmaNmrObj")
+                    )?
+                ,
+                cell_params: self.cell_params
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("cell_params", "cell_params was not specified but it is required when building TdscdmaNmrObj")
+                    )?
+                ,
+                utran_cid: self.utran_cid
+                ,
+                rscp: self.rscp
+                ,
+                path_loss: self.path_loss
+                ,
+            }
+        )
     }
 }
+

@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetSchemaOutput {
+pub struct BatchGetSchemaOutput  {
     /// <p>The retrieved list of schemas.</p>
-    pub schemas: ::std::vec::Vec<crate::types::Schema>,
+    pub schemas: ::std::vec::Vec::<crate::types::Schema>,
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchGetSchemaError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchGetSchemaError>,
     _request_id: Option<String>,
 }
-impl BatchGetSchemaOutput {
+impl  BatchGetSchemaOutput  {
     /// <p>The retrieved list of schemas.</p>
-    pub fn schemas(&self) -> &[crate::types::Schema] {
-        use std::ops::Deref;
-        self.schemas.deref()
+    pub fn schemas(&self) -> & [crate::types::Schema] {
+        use std::ops::Deref; self.schemas.deref()
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn errors(&self) -> &[crate::types::BatchGetSchemaError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchGetSchemaError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetSchemaOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
     pub fn builder() -> crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder {
@@ -37,8 +35,8 @@ impl BatchGetSchemaOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSchemaOutputBuilder {
-    pub(crate) schemas: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>,
+    pub(crate) schemas: ::std::option::Option<::std::vec::Vec::<crate::types::Schema>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetSchemaError>>,
     _request_id: Option<String>,
 }
 impl BatchGetSchemaOutputBuilder {
@@ -49,17 +47,16 @@ impl BatchGetSchemaOutputBuilder {
     /// <p>The retrieved list of schemas.</p>
     pub fn schemas(mut self, input: crate::types::Schema) -> Self {
         let mut v = self.schemas.unwrap_or_default();
-        v.push(input);
-        self.schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Schema>>) -> Self {
-        self.schemas = input;
-        self
+    pub fn set_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Schema>>) -> Self {
+        self.schemas = input; self
     }
     /// <p>The retrieved list of schemas.</p>
-    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Schema>> {
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Schema>> {
         &self.schemas
     }
     /// Appends an item to `errors`.
@@ -69,49 +66,47 @@ impl BatchGetSchemaOutputBuilder {
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
     pub fn errors(mut self, input: crate::types::BatchGetSchemaError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchGetSchemaError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchGetSchemaError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`schemas`](crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder::schemas)
     /// - [`errors`](crate::operation::batch_get_schema::builders::BatchGetSchemaOutputBuilder::errors)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_schema::BatchGetSchemaOutput {
-            schemas: self.schemas.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schemas",
-                    "schemas was not specified but it is required when building BatchGetSchemaOutput",
-                )
-            })?,
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchGetSchemaOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_schema::BatchGetSchemaOutput {
+                schemas: self.schemas
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("schemas", "schemas was not specified but it is required when building BatchGetSchemaOutput")
+                    )?
+                ,
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchGetSchemaOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

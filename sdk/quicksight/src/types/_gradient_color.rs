@@ -3,16 +3,17 @@
 /// <p>Determines the gradient color settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GradientColor {
+pub struct GradientColor  {
     /// <p>The list of gradient color stops.</p>
-    pub stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
+    pub stops: ::std::option::Option<::std::vec::Vec::<crate::types::GradientStop>>,
 }
-impl GradientColor {
+impl  GradientColor  {
     /// <p>The list of gradient color stops.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stops.is_none()`.
-    pub fn stops(&self) -> &[crate::types::GradientStop] {
-        self.stops.as_deref().unwrap_or_default()
+    pub fn stops(&self) -> & [crate::types::GradientStop] {
+        self.stops.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GradientColor {
@@ -26,7 +27,7 @@ impl GradientColor {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GradientColorBuilder {
-    pub(crate) stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
+    pub(crate) stops: ::std::option::Option<::std::vec::Vec::<crate::types::GradientStop>>,
 }
 impl GradientColorBuilder {
     /// Appends an item to `stops`.
@@ -36,21 +37,24 @@ impl GradientColorBuilder {
     /// <p>The list of gradient color stops.</p>
     pub fn stops(mut self, input: crate::types::GradientStop) -> Self {
         let mut v = self.stops.unwrap_or_default();
-        v.push(input);
-        self.stops = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stops = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of gradient color stops.</p>
-    pub fn set_stops(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>) -> Self {
-        self.stops = input;
-        self
+    pub fn set_stops(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GradientStop>>) -> Self {
+        self.stops = input; self
     }
     /// <p>The list of gradient color stops.</p>
-    pub fn get_stops(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GradientStop>> {
+    pub fn get_stops(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GradientStop>> {
         &self.stops
     }
     /// Consumes the builder and constructs a [`GradientColor`](crate::types::GradientColor).
     pub fn build(self) -> crate::types::GradientColor {
-        crate::types::GradientColor { stops: self.stops }
+        crate::types::GradientColor {
+            stops: self.stops
+            ,
+        }
     }
 }
+

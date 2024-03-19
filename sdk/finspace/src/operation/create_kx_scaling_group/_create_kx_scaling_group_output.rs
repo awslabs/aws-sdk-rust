@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKxScalingGroupOutput {
+pub struct CreateKxScalingGroupOutput  {
     /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb scaling group.</p>
@@ -37,21 +37,21 @@ pub struct CreateKxScalingGroupOutput {
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl CreateKxScalingGroupOutput {
+impl  CreateKxScalingGroupOutput  {
     /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
-    pub fn scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.scaling_group_name.as_deref()
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
-    pub fn host_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_type(&self) -> ::std::option::Option<& str> {
         self.host_type.as_deref()
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The status of scaling group.</p>
@@ -73,23 +73,23 @@ impl CreateKxScalingGroupOutput {
     /// <li>
     /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KxScalingGroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KxScalingGroupStatus> {
         self.status.as_ref()
     }
     /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateKxScalingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateKxScalingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateKxScalingGroupOutput`](crate::operation::create_kx_scaling_group::CreateKxScalingGroupOutput).
     pub fn builder() -> crate::operation::create_kx_scaling_group::builders::CreateKxScalingGroupOutputBuilder {
@@ -118,8 +118,7 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, where you create the scaling group.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn set_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_group_name = input;
-        self
+        self.scaling_group_name = input; self
     }
     /// <p>A unique identifier for the kdb scaling group.</p>
     pub fn get_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +144,7 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub fn set_host_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_type = input;
-        self
+        self.host_type = input; self
     }
     /// <p>The memory and CPU capabilities of the scaling group host on which FinSpace Managed kdb clusters will be placed.</p>
     pub fn get_host_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +206,7 @@ impl CreateKxScalingGroupOutputBuilder {
     /// <p>DELETED – The scaling group is successfully deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxScalingGroupStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of scaling group.</p>
     /// <ul>
@@ -242,8 +237,7 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the scaling group was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -256,33 +250,40 @@ impl CreateKxScalingGroupOutputBuilder {
     }
     /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the scaling group was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateKxScalingGroupOutput`](crate::operation::create_kx_scaling_group::CreateKxScalingGroupOutput).
     pub fn build(self) -> crate::operation::create_kx_scaling_group::CreateKxScalingGroupOutput {
         crate::operation::create_kx_scaling_group::CreateKxScalingGroupOutput {
-            environment_id: self.environment_id,
-            scaling_group_name: self.scaling_group_name,
-            host_type: self.host_type,
-            availability_zone_id: self.availability_zone_id,
-            status: self.status,
-            last_modified_timestamp: self.last_modified_timestamp,
-            created_timestamp: self.created_timestamp,
+            environment_id: self.environment_id
+            ,
+            scaling_group_name: self.scaling_group_name
+            ,
+            host_type: self.host_type
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            status: self.status
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
+            created_timestamp: self.created_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

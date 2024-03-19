@@ -4,22 +4,20 @@
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FSxWindowsFileServerAuthorizationConfig {
+pub struct FSxWindowsFileServerAuthorizationConfig  {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     pub credentials_parameter: ::std::string::String,
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     pub domain: ::std::string::String,
 }
-impl FSxWindowsFileServerAuthorizationConfig {
+impl  FSxWindowsFileServerAuthorizationConfig  {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
-    pub fn credentials_parameter(&self) -> &str {
-        use std::ops::Deref;
-        self.credentials_parameter.deref()
+    pub fn credentials_parameter(&self) -> & str {
+        use std::ops::Deref; self.credentials_parameter.deref()
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> & str {
+        use std::ops::Deref; self.domain.deref()
     }
 }
 impl FSxWindowsFileServerAuthorizationConfig {
@@ -45,8 +43,7 @@ impl FSxWindowsFileServerAuthorizationConfigBuilder {
     }
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     pub fn set_credentials_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_parameter = input;
-        self
+        self.credentials_parameter = input; self
     }
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     pub fn get_credentials_parameter(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +57,7 @@ impl FSxWindowsFileServerAuthorizationConfigBuilder {
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,22 +67,21 @@ impl FSxWindowsFileServerAuthorizationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`credentials_parameter`](crate::types::builders::FSxWindowsFileServerAuthorizationConfigBuilder::credentials_parameter)
     /// - [`domain`](crate::types::builders::FSxWindowsFileServerAuthorizationConfigBuilder::domain)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::FSxWindowsFileServerAuthorizationConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FSxWindowsFileServerAuthorizationConfig {
-            credentials_parameter: self.credentials_parameter.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "credentials_parameter",
-                    "credentials_parameter was not specified but it is required when building FSxWindowsFileServerAuthorizationConfig",
-                )
-            })?,
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building FSxWindowsFileServerAuthorizationConfig",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::FSxWindowsFileServerAuthorizationConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::FSxWindowsFileServerAuthorizationConfig {
+                credentials_parameter: self.credentials_parameter
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("credentials_parameter", "credentials_parameter was not specified but it is required when building FSxWindowsFileServerAuthorizationConfig")
+                    )?
+                ,
+                domain: self.domain
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "domain was not specified but it is required when building FSxWindowsFileServerAuthorizationConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

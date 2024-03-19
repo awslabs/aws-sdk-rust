@@ -3,7 +3,7 @@
 /// <p>Describes the format and location for the export task.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportToS3Task {
+pub struct ExportToS3Task  {
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
     pub container_format: ::std::option::Option<crate::types::ContainerFormat>,
     /// <p>The format for the exported image.</p>
@@ -13,21 +13,21 @@ pub struct ExportToS3Task {
     /// <p>The encryption key for your S3 bucket.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
-impl ExportToS3Task {
+impl  ExportToS3Task  {
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
-    pub fn container_format(&self) -> ::std::option::Option<&crate::types::ContainerFormat> {
+    pub fn container_format(&self) -> ::std::option::Option<& crate::types::ContainerFormat> {
         self.container_format.as_ref()
     }
     /// <p>The format for the exported image.</p>
-    pub fn disk_image_format(&self) -> ::std::option::Option<&crate::types::DiskImageFormat> {
+    pub fn disk_image_format(&self) -> ::std::option::Option<& crate::types::DiskImageFormat> {
         self.disk_image_format.as_ref()
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The encryption key for your S3 bucket.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ExportToS3TaskBuilder {
     }
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
     pub fn set_container_format(mut self, input: ::std::option::Option<crate::types::ContainerFormat>) -> Self {
-        self.container_format = input;
-        self
+        self.container_format = input; self
     }
     /// <p>The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.</p>
     pub fn get_container_format(&self) -> &::std::option::Option<crate::types::ContainerFormat> {
@@ -69,8 +68,7 @@ impl ExportToS3TaskBuilder {
     }
     /// <p>The format for the exported image.</p>
     pub fn set_disk_image_format(mut self, input: ::std::option::Option<crate::types::DiskImageFormat>) -> Self {
-        self.disk_image_format = input;
-        self
+        self.disk_image_format = input; self
     }
     /// <p>The format for the exported image.</p>
     pub fn get_disk_image_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
@@ -83,8 +81,7 @@ impl ExportToS3TaskBuilder {
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket for the destination image. The destination bucket must exist and have an access control list (ACL) attached that specifies the Region-specific canonical account ID for the <code>Grantee</code>. For more information about the ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a> in the VM Import/Export User Guide.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ExportToS3TaskBuilder {
     }
     /// <p>The encryption key for your S3 bucket.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The encryption key for your S3 bucket.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl ExportToS3TaskBuilder {
     /// Consumes the builder and constructs a [`ExportToS3Task`](crate::types::ExportToS3Task).
     pub fn build(self) -> crate::types::ExportToS3Task {
         crate::types::ExportToS3Task {
-            container_format: self.container_format,
-            disk_image_format: self.disk_image_format,
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
+            container_format: self.container_format
+            ,
+            disk_image_format: self.disk_image_format
+            ,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

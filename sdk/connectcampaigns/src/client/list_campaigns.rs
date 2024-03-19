@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCampaigns`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_max_results):<br>required: **false**<br>The maximum number of results to return per page.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_next_token):<br>required: **false**<br>The token for the next set of results.<br>
     ///   - [`filters(CampaignFilters)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::filters) / [`set_filters(Option<CampaignFilters>)`](crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::set_filters):<br>required: **false**<br>Filter model by type<br>
-    /// - On success, responds with [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput) with field(s):
+                            /// - On success, responds with [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_campaigns::ListCampaignsOutput::next_token): The token for the next set of results.
     ///   - [`campaign_summary_list(Option<Vec::<CampaignSummary>>)`](crate::operation::list_campaigns::ListCampaignsOutput::campaign_summary_list): A list of Amazon Connect campaigns.
-    /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
+                            /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::operation::list_campaigns::ListCampaignsError)
     pub fn list_campaigns(&self) -> crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder {
-        crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_campaigns::builders::ListCampaignsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -14,19 +14,19 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FailWorkflowExecutionDecisionAttributes {
+pub struct FailWorkflowExecutionDecisionAttributes  {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
     pub reason: ::std::option::Option<::std::string::String>,
     /// <p>Details of the failure.</p>
     pub details: ::std::option::Option<::std::string::String>,
 }
-impl FailWorkflowExecutionDecisionAttributes {
+impl  FailWorkflowExecutionDecisionAttributes  {
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>Details of the failure.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl FailWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +65,7 @@ impl FailWorkflowExecutionDecisionAttributesBuilder {
     }
     /// <p>Details of the failure.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Details of the failure.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,11 @@ impl FailWorkflowExecutionDecisionAttributesBuilder {
     /// Consumes the builder and constructs a [`FailWorkflowExecutionDecisionAttributes`](crate::types::FailWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::FailWorkflowExecutionDecisionAttributes {
         crate::types::FailWorkflowExecutionDecisionAttributes {
-            reason: self.reason,
-            details: self.details,
+            reason: self.reason
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

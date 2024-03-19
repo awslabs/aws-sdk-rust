@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteExportInput {
+pub struct DeleteExportInput  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub export_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteExportInput {
+impl  DeleteExportInput  {
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
-    pub fn export_arn(&self) -> ::std::option::Option<&str> {
+    pub fn export_arn(&self) -> ::std::option::Option<& str> {
         self.export_arn.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteExportInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn set_export_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_arn = input;
-        self
+        self.export_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for this export.</p>
     pub fn get_export_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_arn
     }
     /// Consumes the builder and constructs a [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_export::DeleteExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_export::DeleteExportInput { export_arn: self.export_arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_export::DeleteExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_export::DeleteExportInput {
+                export_arn: self.export_arn
+                ,
+            }
+        )
     }
 }
+

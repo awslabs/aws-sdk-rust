@@ -3,7 +3,7 @@
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <code>BatchRead</code> operation. For more information, see <code>ListPolicyAttachments</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListPolicyAttachments {
+pub struct BatchListPolicyAttachments  {
     /// <p>The reference that identifies the policy object.</p>
     pub policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
@@ -11,13 +11,13 @@ pub struct BatchListPolicyAttachments {
     /// <p>The maximum number of results to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl BatchListPolicyAttachments {
+impl  BatchListPolicyAttachments  {
     /// <p>The reference that identifies the policy object.</p>
-    pub fn policy_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn policy_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -49,8 +49,7 @@ impl BatchListPolicyAttachmentsBuilder {
     }
     /// <p>The reference that identifies the policy object.</p>
     pub fn set_policy_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.policy_reference = input;
-        self
+        self.policy_reference = input; self
     }
     /// <p>The reference that identifies the policy object.</p>
     pub fn get_policy_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -63,8 +62,7 @@ impl BatchListPolicyAttachmentsBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl BatchListPolicyAttachmentsBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -87,9 +84,13 @@ impl BatchListPolicyAttachmentsBuilder {
     /// Consumes the builder and constructs a [`BatchListPolicyAttachments`](crate::types::BatchListPolicyAttachments).
     pub fn build(self) -> crate::types::BatchListPolicyAttachments {
         crate::types::BatchListPolicyAttachments {
-            policy_reference: self.policy_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
+            policy_reference: self.policy_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
         }
     }
 }
+

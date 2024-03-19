@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateEnvironmentMembershipInput {
+pub struct CreateEnvironmentMembershipInput  {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
@@ -16,13 +16,13 @@ pub struct CreateEnvironmentMembershipInput {
     /// </ul>
     pub permissions: ::std::option::Option<crate::types::MemberPermissions>,
 }
-impl CreateEnvironmentMembershipInput {
+impl  CreateEnvironmentMembershipInput  {
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
-    pub fn user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
@@ -32,7 +32,7 @@ impl CreateEnvironmentMembershipInput {
     /// <li>
     /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
-    pub fn permissions(&self) -> ::std::option::Option<&crate::types::MemberPermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<& crate::types::MemberPermissions> {
         self.permissions.as_ref()
     }
 }
@@ -60,8 +60,7 @@ impl CreateEnvironmentMembershipInputBuilder {
     }
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environment that contains the environment member you want to add.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl CreateEnvironmentMembershipInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +100,7 @@ impl CreateEnvironmentMembershipInputBuilder {
     /// <p><code>read-write</code>: Has read-write access to the environment.</p></li>
     /// </ul>
     pub fn set_permissions(mut self, input: ::std::option::Option<crate::types::MemberPermissions>) -> Self {
-        self.permissions = input;
-        self
+        self.permissions = input; self
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
@@ -116,16 +113,17 @@ impl CreateEnvironmentMembershipInputBuilder {
         &self.permissions
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentMembershipInput`](crate::operation::create_environment_membership::CreateEnvironmentMembershipInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment_membership::CreateEnvironmentMembershipInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_environment_membership::CreateEnvironmentMembershipInput {
-            environment_id: self.environment_id,
-            user_arn: self.user_arn,
-            permissions: self.permissions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_membership::CreateEnvironmentMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipInput {
+                environment_id: self.environment_id
+                ,
+                user_arn: self.user_arn
+                ,
+                permissions: self.permissions
+                ,
+            }
+        )
     }
 }
+

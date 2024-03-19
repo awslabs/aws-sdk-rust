@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
     pub resource_quotas: ::std::option::Option<crate::types::ResourceQuotas>,
     _request_id: Option<String>,
 }
-impl DescribeAccountAttributesOutput {
+impl  DescribeAccountAttributesOutput  {
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
-    pub fn resource_quotas(&self) -> ::std::option::Option<&crate::types::ResourceQuotas> {
+    pub fn resource_quotas(&self) -> ::std::option::Option<& crate::types::ResourceQuotas> {
         self.resource_quotas.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeAccountAttributesOutputBuilder {
     }
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
     pub fn set_resource_quotas(mut self, input: ::std::option::Option<crate::types::ResourceQuotas>) -> Self {
-        self.resource_quotas = input;
-        self
+        self.resource_quotas = input; self
     }
     /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
     pub fn get_resource_quotas(&self) -> &::std::option::Option<crate::types::ResourceQuotas> {
         &self.resource_quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
-            resource_quotas: self.resource_quotas,
+            resource_quotas: self.resource_quotas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

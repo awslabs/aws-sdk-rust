@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConformancePackComplianceSummaryInput {
+pub struct GetConformancePackComplianceSummaryInput  {
     /// <p>Names of conformance packs.</p>
-    pub conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub conformance_pack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetConformancePackComplianceSummaryInput {
+impl  GetConformancePackComplianceSummaryInput  {
     /// <p>Names of conformance packs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_names.is_none()`.
-    pub fn conformance_pack_names(&self) -> &[::std::string::String] {
-        self.conformance_pack_names.as_deref().unwrap_or_default()
+    pub fn conformance_pack_names(&self) -> & [::std::string::String] {
+        self.conformance_pack_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -37,7 +38,7 @@ impl GetConformancePackComplianceSummaryInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConformancePackComplianceSummaryInputBuilder {
-    pub(crate) conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) conformance_pack_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,17 +50,16 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     /// <p>Names of conformance packs.</p>
     pub fn conformance_pack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.conformance_pack_names.unwrap_or_default();
-        v.push(input.into());
-        self.conformance_pack_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.conformance_pack_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Names of conformance packs.</p>
-    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.conformance_pack_names = input;
-        self
+    pub fn set_conformance_pack_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.conformance_pack_names = input; self
     }
     /// <p>Names of conformance packs.</p>
-    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.conformance_pack_names
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -69,8 +69,7 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
@@ -83,26 +82,24 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetConformancePackComplianceSummaryInput`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput {
-                conformance_pack_names: self.conformance_pack_names,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                conformance_pack_names: self.conformance_pack_names
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

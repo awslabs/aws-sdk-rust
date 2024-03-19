@@ -11,24 +11,26 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexingFilter {
+pub struct IndexingFilter  {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub named_shadow_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub named_shadow_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub geo_locations: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>>,
+    pub geo_locations: ::std::option::Option<::std::vec::Vec::<crate::types::GeoLocationTarget>>,
 }
-impl IndexingFilter {
+impl  IndexingFilter  {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.named_shadow_names.is_none()`.
-    pub fn named_shadow_names(&self) -> &[::std::string::String] {
-        self.named_shadow_names.as_deref().unwrap_or_default()
+    pub fn named_shadow_names(&self) -> & [::std::string::String] {
+        self.named_shadow_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.geo_locations.is_none()`.
-    pub fn geo_locations(&self) -> &[crate::types::GeoLocationTarget] {
-        self.geo_locations.as_deref().unwrap_or_default()
+    pub fn geo_locations(&self) -> & [crate::types::GeoLocationTarget] {
+        self.geo_locations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IndexingFilter {
@@ -42,8 +44,8 @@ impl IndexingFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IndexingFilterBuilder {
-    pub(crate) named_shadow_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) geo_locations: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>>,
+    pub(crate) named_shadow_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) geo_locations: ::std::option::Option<::std::vec::Vec::<crate::types::GeoLocationTarget>>,
 }
 impl IndexingFilterBuilder {
     /// Appends an item to `named_shadow_names`.
@@ -53,17 +55,16 @@ impl IndexingFilterBuilder {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn named_shadow_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.named_shadow_names.unwrap_or_default();
-        v.push(input.into());
-        self.named_shadow_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.named_shadow_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_named_shadow_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.named_shadow_names = input;
-        self
+    pub fn set_named_shadow_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.named_shadow_names = input; self
     }
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_named_shadow_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_named_shadow_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.named_shadow_names
     }
     /// Appends an item to `geo_locations`.
@@ -73,24 +74,26 @@ impl IndexingFilterBuilder {
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn geo_locations(mut self, input: crate::types::GeoLocationTarget) -> Self {
         let mut v = self.geo_locations.unwrap_or_default();
-        v.push(input);
-        self.geo_locations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.geo_locations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_geo_locations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>>) -> Self {
-        self.geo_locations = input;
-        self
+    pub fn set_geo_locations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GeoLocationTarget>>) -> Self {
+        self.geo_locations = input; self
     }
     /// <p>The list of geolocation targets that you select to index. The default maximum number of geolocation targets for indexing is <code>1</code>. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn get_geo_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoLocationTarget>> {
+    pub fn get_geo_locations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GeoLocationTarget>> {
         &self.geo_locations
     }
     /// Consumes the builder and constructs a [`IndexingFilter`](crate::types::IndexingFilter).
     pub fn build(self) -> crate::types::IndexingFilter {
         crate::types::IndexingFilter {
-            named_shadow_names: self.named_shadow_names,
-            geo_locations: self.geo_locations,
+            named_shadow_names: self.named_shadow_names
+            ,
+            geo_locations: self.geo_locations
+            ,
         }
     }
 }
+

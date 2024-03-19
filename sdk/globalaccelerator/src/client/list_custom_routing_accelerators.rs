@@ -2,17 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomRoutingAccelerators`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomRoutingAcceleratorsOutput`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput) with field(s):
     ///   - [`accelerators(Option<Vec::<CustomRoutingAccelerator>>)`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput::accelerators): <p>The list of custom routing accelerators for a customer account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCustomRoutingAcceleratorsError>`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError)
-    pub fn list_custom_routing_accelerators(
-        &self,
-    ) -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder {
-        crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomRoutingAcceleratorsError>`](crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError)
+    pub fn list_custom_routing_accelerators(&self) -> crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder {
+                                crate::operation::list_custom_routing_accelerators::builders::ListCustomRoutingAcceleratorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

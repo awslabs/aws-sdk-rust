@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelImportTaskOutput {
+pub struct CancelImportTaskOutput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the import task.</p>
@@ -17,40 +17,37 @@ pub struct CancelImportTaskOutput {
     pub status: crate::types::ImportTaskStatus,
     _request_id: Option<String>,
 }
-impl CancelImportTaskOutput {
+impl  CancelImportTaskOutput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_id(&self) -> ::std::option::Option<&str> {
+    pub fn graph_id(&self) -> ::std::option::Option<& str> {
         self.graph_id.as_deref()
     }
     /// <p>The unique identifier of the import task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>Current status of the task. Status is CANCELLING when the import task is cancelled.</p>
-    pub fn status(&self) -> &crate::types::ImportTaskStatus {
+    pub fn status(&self) -> & crate::types::ImportTaskStatus {
         &self.status
     }
 }
 impl ::aws_types::request_id::RequestId for CancelImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelImportTaskOutput`](crate::operation::cancel_import_task::CancelImportTaskOutput).
     pub fn builder() -> crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder {
@@ -78,8 +75,7 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_id = input;
-        self
+        self.graph_id = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +89,7 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +116,7 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -137,8 +130,7 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,59 +144,57 @@ impl CancelImportTaskOutputBuilder {
     }
     /// <p>Current status of the task. Status is CANCELLING when the import task is cancelled.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportTaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Current status of the task. Status is CANCELLING when the import task is cancelled.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportTaskStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelImportTaskOutput`](crate::operation::cancel_import_task::CancelImportTaskOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::task_id)
     /// - [`source`](crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::source)
     /// - [`role_arn`](crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::role_arn)
     /// - [`status`](crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_import_task::CancelImportTaskOutput {
-            graph_id: self.graph_id,
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building CancelImportTaskOutput",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building CancelImportTaskOutput",
-                )
-            })?,
-            format: self.format,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building CancelImportTaskOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building CancelImportTaskOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_import_task::CancelImportTaskOutput {
+                graph_id: self.graph_id
+                ,
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building CancelImportTaskOutput")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building CancelImportTaskOutput")
+                    )?
+                ,
+                format: self.format
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building CancelImportTaskOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building CancelImportTaskOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGroupInput {
+pub struct CreateGroupInput  {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expression defining criteria by which to group traces.</p>
@@ -31,15 +31,15 @@ pub struct CreateGroupInput {
     /// <li>
     /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateGroupInput {
+impl  CreateGroupInput  {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
-    pub fn filter_expression(&self) -> ::std::option::Option<&str> {
+    pub fn filter_expression(&self) -> ::std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
     /// <p>The structure containing configurations related to insights.</p>
@@ -49,7 +49,7 @@ impl CreateGroupInput {
     /// <li>
     /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
-    pub fn insights_configuration(&self) -> ::std::option::Option<&crate::types::InsightsConfiguration> {
+    pub fn insights_configuration(&self) -> ::std::option::Option<& crate::types::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -68,10 +68,11 @@ impl CreateGroupInput {
     /// <li>
     /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateGroupInput {
@@ -88,7 +89,7 @@ pub struct CreateGroupInputBuilder {
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
     pub(crate) filter_expression: ::std::option::Option<::std::string::String>,
     pub(crate) insights_configuration: ::std::option::Option<crate::types::InsightsConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateGroupInputBuilder {
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
@@ -99,8 +100,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl CreateGroupInputBuilder {
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
     pub fn set_filter_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.filter_expression = input;
-        self
+        self.filter_expression = input; self
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
     pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl CreateGroupInputBuilder {
     /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
-        self.insights_configuration = input;
-        self
+        self.insights_configuration = input; self
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
@@ -174,9 +172,9 @@ impl CreateGroupInputBuilder {
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -194,9 +192,8 @@ impl CreateGroupInputBuilder {
     /// <li>
     /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>The following restrictions apply to tags:</p>
@@ -214,16 +211,23 @@ impl CreateGroupInputBuilder {
     /// <li>
     /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
-            group_name: self.group_name,
-            filter_expression: self.filter_expression,
-            insights_configuration: self.insights_configuration,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_group::CreateGroupInput {
+                group_name: self.group_name
+                ,
+                filter_expression: self.filter_expression
+                ,
+                insights_configuration: self.insights_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

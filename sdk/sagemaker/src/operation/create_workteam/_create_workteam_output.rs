@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateWorkteamOutput {
+pub struct CreateWorkteamOutput  {
     /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
     pub workteam_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateWorkteamOutput {
+impl  CreateWorkteamOutput  {
     /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
-    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<& str> {
         self.workteam_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkteamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkteamOutput`](crate::operation::create_workteam::CreateWorkteamOutput).
     pub fn builder() -> crate::operation::create_workteam::builders::CreateWorkteamOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateWorkteamOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workteam_arn = input;
-        self
+        self.workteam_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the work team. You can use this ARN to identify the work team.</p>
     pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workteam_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateWorkteamOutput`](crate::operation::create_workteam::CreateWorkteamOutput).
     pub fn build(self) -> crate::operation::create_workteam::CreateWorkteamOutput {
         crate::operation::create_workteam::CreateWorkteamOutput {
-            workteam_arn: self.workteam_arn,
+            workteam_arn: self.workteam_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

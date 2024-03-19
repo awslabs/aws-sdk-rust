@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeProvisionedProductPlanInput {
+pub struct DescribeProvisionedProductPlanInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct DescribeProvisionedProductPlanInput {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub page_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeProvisionedProductPlanInput {
+impl  DescribeProvisionedProductPlanInput  {
     /// <p>The language code.</p>
     /// <ul>
     /// <li>
@@ -26,11 +26,11 @@ impl DescribeProvisionedProductPlanInput {
     /// <li>
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
-    pub fn accept_language(&self) -> ::std::option::Option<&str> {
+    pub fn accept_language(&self) -> ::std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> ::std::option::Option<&str> {
+    pub fn plan_id(&self) -> ::std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -38,7 +38,7 @@ impl DescribeProvisionedProductPlanInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> ::std::option::Option<&str> {
+    pub fn page_token(&self) -> ::std::option::Option<& str> {
         self.page_token.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -99,8 +98,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
     }
     /// <p>The plan identifier.</p>
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.plan_id = input;
-        self
+        self.plan_id = input; self
     }
     /// <p>The plan identifier.</p>
     pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +111,7 @@ impl DescribeProvisionedProductPlanInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
@@ -127,25 +124,26 @@ impl DescribeProvisionedProductPlanInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.page_token = input;
-        self
+        self.page_token = input; self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`DescribeProvisionedProductPlanInput`](crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput {
-            accept_language: self.accept_language,
-            plan_id: self.plan_id,
-            page_size: self.page_size,
-            page_token: self.page_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_provisioned_product_plan::DescribeProvisionedProductPlanInput {
+                accept_language: self.accept_language
+                ,
+                plan_id: self.plan_id
+                ,
+                page_size: self.page_size
+                ,
+                page_token: self.page_token
+                ,
+            }
+        )
     }
 }
+

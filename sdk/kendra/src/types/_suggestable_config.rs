@@ -3,15 +3,15 @@
 /// <p>Provides the configuration information for a document field/attribute that you want to base query suggestions on.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuggestableConfig {
+pub struct SuggestableConfig  {
     /// <p>The name of the document field/attribute.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub suggestable: ::std::option::Option<bool>,
 }
-impl SuggestableConfig {
+impl  SuggestableConfig  {
     /// <p>The name of the document field/attribute.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
@@ -41,8 +41,7 @@ impl SuggestableConfigBuilder {
     }
     /// <p>The name of the document field/attribute.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The name of the document field/attribute.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuggestableConfigBuilder {
     }
     /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn set_suggestable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.suggestable = input;
-        self
+        self.suggestable = input; self
     }
     /// <p><code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn get_suggestable(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl SuggestableConfigBuilder {
     /// Consumes the builder and constructs a [`SuggestableConfig`](crate::types::SuggestableConfig).
     pub fn build(self) -> crate::types::SuggestableConfig {
         crate::types::SuggestableConfig {
-            attribute_name: self.attribute_name,
-            suggestable: self.suggestable,
+            attribute_name: self.attribute_name
+            ,
+            suggestable: self.suggestable
+            ,
         }
     }
 }
+

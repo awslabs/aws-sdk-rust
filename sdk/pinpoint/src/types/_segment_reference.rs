@@ -3,15 +3,15 @@
 /// <p>Specifies the segment identifier and version of a segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentReference {
+pub struct SegmentReference  {
     /// <p>The unique identifier for the segment.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the segment.</p>
     pub version: ::std::option::Option<i32>,
 }
-impl SegmentReference {
+impl  SegmentReference  {
     /// <p>The unique identifier for the segment.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version number of the segment.</p>
@@ -42,8 +42,7 @@ impl SegmentReferenceBuilder {
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the segment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl SegmentReferenceBuilder {
     }
     /// <p>The version number of the segment.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version number of the segment.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,11 @@ impl SegmentReferenceBuilder {
     /// Consumes the builder and constructs a [`SegmentReference`](crate::types::SegmentReference).
     pub fn build(self) -> crate::types::SegmentReference {
         crate::types::SegmentReference {
-            id: self.id,
-            version: self.version,
+            id: self.id
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

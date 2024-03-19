@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStreamingImageOutput {
+pub struct GetStreamingImageOutput  {
     /// <p>The streaming image.</p>
     pub streaming_image: ::std::option::Option<crate::types::StreamingImage>,
     _request_id: Option<String>,
 }
-impl GetStreamingImageOutput {
+impl  GetStreamingImageOutput  {
     /// <p>The streaming image.</p>
-    pub fn streaming_image(&self) -> ::std::option::Option<&crate::types::StreamingImage> {
+    pub fn streaming_image(&self) -> ::std::option::Option<& crate::types::StreamingImage> {
         self.streaming_image.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetStreamingImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetStreamingImageOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamingImageOutput`](crate::operation::get_streaming_image::GetStreamingImageOutput).
     pub fn builder() -> crate::operation::get_streaming_image::builders::GetStreamingImageOutputBuilder {
@@ -40,27 +40,28 @@ impl GetStreamingImageOutputBuilder {
     }
     /// <p>The streaming image.</p>
     pub fn set_streaming_image(mut self, input: ::std::option::Option<crate::types::StreamingImage>) -> Self {
-        self.streaming_image = input;
-        self
+        self.streaming_image = input; self
     }
     /// <p>The streaming image.</p>
     pub fn get_streaming_image(&self) -> &::std::option::Option<crate::types::StreamingImage> {
         &self.streaming_image
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetStreamingImageOutput`](crate::operation::get_streaming_image::GetStreamingImageOutput).
     pub fn build(self) -> crate::operation::get_streaming_image::GetStreamingImageOutput {
         crate::operation::get_streaming_image::GetStreamingImageOutput {
-            streaming_image: self.streaming_image,
+            streaming_image: self.streaming_image
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

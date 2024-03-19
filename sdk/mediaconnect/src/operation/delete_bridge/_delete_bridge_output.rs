@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteBridgeOutput {
+pub struct DeleteBridgeOutput  {
     /// The Amazon Resource Number (ARN) of the deleted bridge.
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteBridgeOutput {
+impl  DeleteBridgeOutput  {
     /// The Amazon Resource Number (ARN) of the deleted bridge.
-    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<& str> {
         self.bridge_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteBridgeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteBridgeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBridgeOutput`](crate::operation::delete_bridge::DeleteBridgeOutput).
     pub fn builder() -> crate::operation::delete_bridge::builders::DeleteBridgeOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteBridgeOutputBuilder {
     }
     /// The Amazon Resource Number (ARN) of the deleted bridge.
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bridge_arn = input;
-        self
+        self.bridge_arn = input; self
     }
     /// The Amazon Resource Number (ARN) of the deleted bridge.
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteBridgeOutput`](crate::operation::delete_bridge::DeleteBridgeOutput).
     pub fn build(self) -> crate::operation::delete_bridge::DeleteBridgeOutput {
         crate::operation::delete_bridge::DeleteBridgeOutput {
-            bridge_arn: self.bridge_arn,
+            bridge_arn: self.bridge_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

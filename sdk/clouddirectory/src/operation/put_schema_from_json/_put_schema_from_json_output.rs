@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSchemaFromJsonOutput {
+pub struct PutSchemaFromJsonOutput  {
     /// <p>The ARN of the schema to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PutSchemaFromJsonOutput {
+impl  PutSchemaFromJsonOutput  {
     /// <p>The ARN of the schema to update.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PutSchemaFromJsonOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutSchemaFromJsonOutput {
     /// Creates a new builder-style object to manufacture [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput).
     pub fn builder() -> crate::operation::put_schema_from_json::builders::PutSchemaFromJsonOutputBuilder {
@@ -40,27 +40,28 @@ impl PutSchemaFromJsonOutputBuilder {
     }
     /// <p>The ARN of the schema to update.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the schema to update.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutSchemaFromJsonOutput`](crate::operation::put_schema_from_json::PutSchemaFromJsonOutput).
     pub fn build(self) -> crate::operation::put_schema_from_json::PutSchemaFromJsonOutput {
         crate::operation::put_schema_from_json::PutSchemaFromJsonOutput {
-            arn: self.arn,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Returns properties of the host key that's specified.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListedHostKey {
+pub struct ListedHostKey  {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
     pub arn: ::std::string::String,
     /// <p>A unique identifier for the host key.</p>
@@ -29,22 +29,21 @@ pub struct ListedHostKey {
     /// <p>The date on which the host key was added to the server.</p>
     pub date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListedHostKey {
+impl  ListedHostKey  {
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A unique identifier for the host key.</p>
-    pub fn host_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn host_key_id(&self) -> ::std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn fingerprint(&self) -> ::std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
@@ -60,11 +59,11 @@ impl ListedHostKey {
     /// <li>
     /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date on which the host key was added to the server.</p>
-    pub fn date_imported(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn date_imported(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
     }
 }
@@ -95,8 +94,7 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +107,7 @@ impl ListedHostKeyBuilder {
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_key_id = input;
-        self
+        self.host_key_id = input; self
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +120,7 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fingerprint = input;
-        self
+        self.fingerprint = input; self
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -137,8 +133,7 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl ListedHostKeyBuilder {
     /// <p><code>ecdsa-sha2-nistp521</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
@@ -201,8 +195,7 @@ impl ListedHostKeyBuilder {
     }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn set_date_imported(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.date_imported = input;
-        self
+        self.date_imported = input; self
     }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn get_date_imported(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,18 +205,25 @@ impl ListedHostKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ListedHostKeyBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ListedHostKey, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListedHostKey {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ListedHostKey",
-                )
-            })?,
-            host_key_id: self.host_key_id,
-            fingerprint: self.fingerprint,
-            description: self.description,
-            r#type: self.r#type,
-            date_imported: self.date_imported,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListedHostKey {
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ListedHostKey")
+                    )?
+                ,
+                host_key_id: self.host_key_id
+                ,
+                fingerprint: self.fingerprint
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                date_imported: self.date_imported
+                ,
+            }
+        )
     }
 }
+

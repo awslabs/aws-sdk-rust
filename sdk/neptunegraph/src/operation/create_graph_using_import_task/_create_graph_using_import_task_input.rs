@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateGraphUsingImportTaskInput {
+pub struct CreateGraphUsingImportTaskInput  {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>Specifies a KMS key to use to encrypt data imported into the new graph.</p>
@@ -34,14 +34,14 @@ pub struct CreateGraphUsingImportTaskInput {
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateGraphUsingImportTaskInput {
+impl  CreateGraphUsingImportTaskInput  {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn graph_name(&self) -> ::std::option::Option<&str> {
+    pub fn graph_name(&self) -> ::std::option::Option<& str> {
         self.graph_name.as_deref()
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
@@ -49,11 +49,11 @@ impl CreateGraphUsingImportTaskInput {
         self.public_connectivity
     }
     /// <p>Specifies a KMS key to use to encrypt data imported into the new graph.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
-    pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchConfiguration> {
+    pub fn vector_search_configuration(&self) -> ::std::option::Option<& crate::types::VectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
     /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
@@ -65,7 +65,7 @@ impl CreateGraphUsingImportTaskInput {
         self.deletion_protection
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
-    pub fn import_options(&self) -> ::std::option::Option<&crate::types::ImportOptions> {
+    pub fn import_options(&self) -> ::std::option::Option<& crate::types::ImportOptions> {
         self.import_options.as_ref()
     }
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
@@ -82,15 +82,15 @@ impl CreateGraphUsingImportTaskInput {
         self.fail_on_error
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
-    pub fn source(&self) -> ::std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -106,7 +106,7 @@ impl CreateGraphUsingImportTaskInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateGraphUsingImportTaskInputBuilder {
     pub(crate) graph_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) public_connectivity: ::std::option::Option<bool>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
@@ -131,8 +131,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_graph_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_name = input;
-        self
+        self.graph_name = input; self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
     /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
@@ -146,17 +145,16 @@ impl CreateGraphUsingImportTaskInputBuilder {
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
@@ -166,8 +164,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.public_connectivity = input;
-        self
+        self.public_connectivity = input; self
     }
     /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
@@ -180,8 +177,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Specifies a KMS key to use to encrypt data imported into the new graph.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>Specifies a KMS key to use to encrypt data imported into the new graph.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +190,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub fn set_vector_search_configuration(mut self, input: ::std::option::Option<crate::types::VectorSearchConfiguration>) -> Self {
-        self.vector_search_configuration = input;
-        self
+        self.vector_search_configuration = input; self
     }
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
@@ -208,8 +203,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replica_count = input;
-        self
+        self.replica_count = input; self
     }
     /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
@@ -222,8 +216,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// <p>Indicates whether or not to enable deletion protection on the graph. The graph can’t be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
@@ -236,8 +229,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
-        self.import_options = input;
-        self
+        self.import_options = input; self
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn get_import_options(&self) -> &::std::option::Option<crate::types::ImportOptions> {
@@ -252,8 +244,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
     /// <p>If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code> and <code>max-provisioned memory</code> is used to create the graph. If neither value is specified 128 m-NCUs are used.</p>
     pub fn set_max_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_provisioned_memory = input;
-        self
+        self.max_provisioned_memory = input; self
     }
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
     /// <p>If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code> and <code>max-provisioned memory</code> is used to create the graph. If neither value is specified 128 m-NCUs are used.</p>
@@ -267,8 +258,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
     pub fn set_min_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_provisioned_memory = input;
-        self
+        self.min_provisioned_memory = input; self
     }
     /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
     pub fn get_min_provisioned_memory(&self) -> &::std::option::Option<i32> {
@@ -281,8 +271,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>If set to <code>true</code>, the task halts when an import error is encountered. If set to <code>false</code>, the task skips the data that caused the error and continues if possible.</p>
     pub fn set_fail_on_error(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.fail_on_error = input;
-        self
+        self.fail_on_error = input; self
     }
     /// <p>If set to <code>true</code>, the task halts when an import error is encountered. If set to <code>false</code>, the task skips the data that caused the error and continues if possible.</p>
     pub fn get_fail_on_error(&self) -> &::std::option::Option<bool> {
@@ -296,8 +285,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -310,8 +298,7 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -325,35 +312,46 @@ impl CreateGraphUsingImportTaskInputBuilder {
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`CreateGraphUsingImportTaskInput`](crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput {
-            graph_name: self.graph_name,
-            tags: self.tags,
-            public_connectivity: self.public_connectivity,
-            kms_key_identifier: self.kms_key_identifier,
-            vector_search_configuration: self.vector_search_configuration,
-            replica_count: self.replica_count,
-            deletion_protection: self.deletion_protection,
-            import_options: self.import_options,
-            max_provisioned_memory: self.max_provisioned_memory,
-            min_provisioned_memory: self.min_provisioned_memory,
-            fail_on_error: self.fail_on_error,
-            source: self.source,
-            format: self.format,
-            role_arn: self.role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_graph_using_import_task::CreateGraphUsingImportTaskInput {
+                graph_name: self.graph_name
+                ,
+                tags: self.tags
+                ,
+                public_connectivity: self.public_connectivity
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                vector_search_configuration: self.vector_search_configuration
+                ,
+                replica_count: self.replica_count
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+                import_options: self.import_options
+                ,
+                max_provisioned_memory: self.max_provisioned_memory
+                ,
+                min_provisioned_memory: self.min_provisioned_memory
+                ,
+                fail_on_error: self.fail_on_error
+                ,
+                source: self.source
+                ,
+                format: self.format
+                ,
+                role_arn: self.role_arn
+                ,
+            }
+        )
     }
 }
+

@@ -30,11 +30,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624NaturalPin`](crate::types::PinGenerationAttributes::Ibm3624NaturalPin), extracting the inner [`Ibm3624NaturalPin`](crate::types::Ibm3624NaturalPin).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ibm3624_natural_pin(&self) -> ::std::result::Result<&crate::types::Ibm3624NaturalPin, &Self> {
-        if let PinGenerationAttributes::Ibm3624NaturalPin(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::Ibm3624NaturalPin(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ibm3624NaturalPin`](crate::types::PinGenerationAttributes::Ibm3624NaturalPin).
     pub fn is_ibm3624_natural_pin(&self) -> bool {
@@ -43,11 +39,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624PinFromOffset`](crate::types::PinGenerationAttributes::Ibm3624PinFromOffset), extracting the inner [`Ibm3624PinFromOffset`](crate::types::Ibm3624PinFromOffset).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ibm3624_pin_from_offset(&self) -> ::std::result::Result<&crate::types::Ibm3624PinFromOffset, &Self> {
-        if let PinGenerationAttributes::Ibm3624PinFromOffset(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::Ibm3624PinFromOffset(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ibm3624PinFromOffset`](crate::types::PinGenerationAttributes::Ibm3624PinFromOffset).
     pub fn is_ibm3624_pin_from_offset(&self) -> bool {
@@ -56,11 +48,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624PinOffset`](crate::types::PinGenerationAttributes::Ibm3624PinOffset), extracting the inner [`Ibm3624PinOffset`](crate::types::Ibm3624PinOffset).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ibm3624_pin_offset(&self) -> ::std::result::Result<&crate::types::Ibm3624PinOffset, &Self> {
-        if let PinGenerationAttributes::Ibm3624PinOffset(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::Ibm3624PinOffset(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ibm3624PinOffset`](crate::types::PinGenerationAttributes::Ibm3624PinOffset).
     pub fn is_ibm3624_pin_offset(&self) -> bool {
@@ -69,11 +57,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`Ibm3624RandomPin`](crate::types::PinGenerationAttributes::Ibm3624RandomPin), extracting the inner [`Ibm3624RandomPin`](crate::types::Ibm3624RandomPin).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_ibm3624_random_pin(&self) -> ::std::result::Result<&crate::types::Ibm3624RandomPin, &Self> {
-        if let PinGenerationAttributes::Ibm3624RandomPin(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::Ibm3624RandomPin(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`Ibm3624RandomPin`](crate::types::PinGenerationAttributes::Ibm3624RandomPin).
     pub fn is_ibm3624_random_pin(&self) -> bool {
@@ -82,11 +66,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`VisaPin`](crate::types::PinGenerationAttributes::VisaPin), extracting the inner [`VisaPin`](crate::types::VisaPin).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_visa_pin(&self) -> ::std::result::Result<&crate::types::VisaPin, &Self> {
-        if let PinGenerationAttributes::VisaPin(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::VisaPin(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VisaPin`](crate::types::PinGenerationAttributes::VisaPin).
     pub fn is_visa_pin(&self) -> bool {
@@ -95,11 +75,7 @@ impl PinGenerationAttributes {
     /// Tries to convert the enum instance into [`VisaPinVerificationValue`](crate::types::PinGenerationAttributes::VisaPinVerificationValue), extracting the inner [`VisaPinVerificationValue`](crate::types::VisaPinVerificationValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_visa_pin_verification_value(&self) -> ::std::result::Result<&crate::types::VisaPinVerificationValue, &Self> {
-        if let PinGenerationAttributes::VisaPinVerificationValue(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PinGenerationAttributes::VisaPinVerificationValue(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`VisaPinVerificationValue`](crate::types::PinGenerationAttributes::VisaPinVerificationValue).
     pub fn is_visa_pin_verification_value(&self) -> bool {
@@ -110,3 +86,4 @@ impl PinGenerationAttributes {
         matches!(self, Self::Unknown)
     }
 }
+

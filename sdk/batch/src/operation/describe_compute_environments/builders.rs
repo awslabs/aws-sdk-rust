@@ -5,55 +5,51 @@ pub use crate::operation::describe_compute_environments::_describe_compute_envir
 
 impl DescribeComputeEnvironmentsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_compute_environments();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_compute_environments();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeComputeEnvironments`.
-///
+/// 
 /// <p>Describes one or more of your compute environments.</p>
 /// <p>If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code> operation to determine the <code>ecsClusterArn</code> that you launch your Amazon ECS container instances into.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComputeEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder,
+                    inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-    > for DescribeComputeEnvironmentsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
+                    crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
+                > for DescribeComputeEnvironmentsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
+                        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeComputeEnvironmentsFluentBuilder {
     /// Creates a new `DescribeComputeEnvironments`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_compute_environments::DescribeComputeEnvironments::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_compute_environments::DescribeComputeEnvironments::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput,
-        crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_compute_environments::DescribeComputeEnvironments::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_compute_environments::DescribeComputeEnvironments::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput, crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator {
-        crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator {
+                                crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `computeEnvironments`.
     ///
     /// To override the contents of this collection use [`set_compute_environments`](Self::set_compute_environments).
@@ -125,12 +112,12 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn set_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_compute_environments(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_compute_environments(input);
         self
     }
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    pub fn get_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_compute_environments(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_compute_environments()
     }
     /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -168,3 +155,4 @@ impl DescribeComputeEnvironmentsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>A revision of an asset published in a Amazon DataZone catalog.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListingRevision {
+pub struct ListingRevision  {
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub id: ::std::string::String,
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub revision: ::std::string::String,
 }
-impl ListingRevision {
+impl  ListingRevision  {
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
-    pub fn revision(&self) -> &str {
-        use std::ops::Deref;
-        self.revision.deref()
+    pub fn revision(&self) -> & str {
+        use std::ops::Deref; self.revision.deref()
     }
 }
 impl ListingRevision {
@@ -44,8 +42,7 @@ impl ListingRevisionBuilder {
     }
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>An identifier of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ListingRevisionBuilder {
     }
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>The details of a revision of an asset published in a Amazon DataZone catalog.</p>
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl ListingRevisionBuilder {
     /// - [`id`](crate::types::builders::ListingRevisionBuilder::id)
     /// - [`revision`](crate::types::builders::ListingRevisionBuilder::revision)
     pub fn build(self) -> ::std::result::Result<crate::types::ListingRevision, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ListingRevision {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ListingRevision",
-                )
-            })?,
-            revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision",
-                    "revision was not specified but it is required when building ListingRevision",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ListingRevision {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ListingRevision")
+                    )?
+                ,
+                revision: self.revision
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision", "revision was not specified but it is required when building ListingRevision")
+                    )?
+                ,
+            }
+        )
     }
 }
+

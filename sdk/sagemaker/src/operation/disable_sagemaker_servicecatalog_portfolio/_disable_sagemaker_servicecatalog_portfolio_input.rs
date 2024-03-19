@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableSagemakerServicecatalogPortfolioInput {}
+pub struct DisableSagemakerServicecatalogPortfolioInput  {
+}
 impl DisableSagemakerServicecatalogPortfolioInput {
     /// Creates a new builder-style object to manufacture [`DisableSagemakerServicecatalogPortfolioInput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput).
     pub fn builder() -> crate::operation::disable_sagemaker_servicecatalog_portfolio::builders::DisableSagemakerServicecatalogPortfolioInputBuilder {
@@ -13,15 +14,15 @@ impl DisableSagemakerServicecatalogPortfolioInput {
 /// A builder for [`DisableSagemakerServicecatalogPortfolioInput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisableSagemakerServicecatalogPortfolioInputBuilder {}
+pub struct DisableSagemakerServicecatalogPortfolioInputBuilder {
+}
 impl DisableSagemakerServicecatalogPortfolioInputBuilder {
     /// Consumes the builder and constructs a [`DisableSagemakerServicecatalogPortfolioInput`](crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioInput {
+            }
+        )
     }
 }
+

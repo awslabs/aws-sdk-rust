@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecoveryPointRestoreMetadataInput {
+pub struct GetRecoveryPointRestoreMetadataInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
@@ -10,17 +10,17 @@ pub struct GetRecoveryPointRestoreMetadataInput {
     /// <p>This is the account ID of the specified backup vault.</p>
     pub backup_vault_account_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRecoveryPointRestoreMetadataInput {
+impl  GetRecoveryPointRestoreMetadataInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> ::std::option::Option<&str> {
+    pub fn recovery_point_arn(&self) -> ::std::option::Option<& str> {
         self.recovery_point_arn.as_deref()
     }
     /// <p>This is the account ID of the specified backup vault.</p>
-    pub fn backup_vault_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_account_id(&self) -> ::std::option::Option<& str> {
         self.backup_vault_account_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetRecoveryPointRestoreMetadataInputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetRecoveryPointRestoreMetadataInputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn set_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recovery_point_arn = input;
-        self
+        self.recovery_point_arn = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl GetRecoveryPointRestoreMetadataInputBuilder {
     }
     /// <p>This is the account ID of the specified backup vault.</p>
     pub fn set_backup_vault_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_account_id = input;
-        self
+        self.backup_vault_account_id = input; self
     }
     /// <p>This is the account ID of the specified backup vault.</p>
     pub fn get_backup_vault_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_vault_account_id
     }
     /// Consumes the builder and constructs a [`GetRecoveryPointRestoreMetadataInput`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataInput {
-                backup_vault_name: self.backup_vault_name,
-                recovery_point_arn: self.recovery_point_arn,
-                backup_vault_account_id: self.backup_vault_account_id,
-            },
+                backup_vault_name: self.backup_vault_name
+                ,
+                recovery_point_arn: self.recovery_point_arn
+                ,
+                backup_vault_account_id: self.backup_vault_account_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImportTaskOutput {
+pub struct GetImportTaskOutput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the import task.</p>
@@ -47,29 +47,26 @@ pub struct GetImportTaskOutput {
     pub status_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetImportTaskOutput {
+impl  GetImportTaskOutput  {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
-    pub fn graph_id(&self) -> ::std::option::Option<&str> {
+    pub fn graph_id(&self) -> ::std::option::Option<& str> {
         self.graph_id.as_deref()
     }
     /// <p>The unique identifier of the import task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> & str {
+        use std::ops::Deref; self.task_id.deref()
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
-    pub fn source(&self) -> &str {
-        use std::ops::Deref;
-        self.source.deref()
+    pub fn source(&self) -> & str {
+        use std::ops::Deref; self.source.deref()
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The status of the import task:</p>
     /// <ul>
@@ -94,15 +91,15 @@ impl GetImportTaskOutput {
     /// <li>
     /// <p><b>CANCELLED</b> &nbsp; – &nbsp; You have successfully cancelled the import task.</p></li>
     /// </ul>
-    pub fn status(&self) -> &crate::types::ImportTaskStatus {
+    pub fn status(&self) -> & crate::types::ImportTaskStatus {
         &self.status
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
-    pub fn import_options(&self) -> ::std::option::Option<&crate::types::ImportOptions> {
+    pub fn import_options(&self) -> ::std::option::Option<& crate::types::ImportOptions> {
         self.import_options.as_ref()
     }
     /// <p>Contains details about the specified import task.</p>
-    pub fn import_task_details(&self) -> ::std::option::Option<&crate::types::ImportTaskDetails> {
+    pub fn import_task_details(&self) -> ::std::option::Option<& crate::types::ImportTaskDetails> {
         self.import_task_details.as_ref()
     }
     /// <p>The number of the current attempt to execute the import task.</p>
@@ -110,15 +107,15 @@ impl GetImportTaskOutput {
         self.attempt_number
     }
     /// <p>The reason that the import task has this status value.</p>
-    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetImportTaskOutput`](crate::operation::get_import_task::GetImportTaskOutput).
     pub fn builder() -> crate::operation::get_import_task::builders::GetImportTaskOutputBuilder {
@@ -150,8 +147,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn set_graph_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_id = input;
-        self
+        self.graph_id = input; self
     }
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub fn get_graph_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +161,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The unique identifier of the import task.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +175,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot</p>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +188,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher load format</a>.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -209,8 +202,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that will allow access to the data that is to be imported.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +260,7 @@ impl GetImportTaskOutputBuilder {
     /// <p><b>CANCELLED</b> &nbsp; – &nbsp; You have successfully cancelled the import task.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImportTaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the import task:</p>
     /// <ul>
@@ -304,8 +295,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn set_import_options(mut self, input: ::std::option::Option<crate::types::ImportOptions>) -> Self {
-        self.import_options = input;
-        self
+        self.import_options = input; self
     }
     /// <p>Contains options for controlling the import process. For example, if the <code>failOnError</code> key is set to <code>false</code>, the import skips problem data and attempts to continue (whereas if set to <code>true</code>, the default, or if omitted, the import operation halts immediately when an error is encountered.</p>
     pub fn get_import_options(&self) -> &::std::option::Option<crate::types::ImportOptions> {
@@ -318,8 +308,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>Contains details about the specified import task.</p>
     pub fn set_import_task_details(mut self, input: ::std::option::Option<crate::types::ImportTaskDetails>) -> Self {
-        self.import_task_details = input;
-        self
+        self.import_task_details = input; self
     }
     /// <p>Contains details about the specified import task.</p>
     pub fn get_import_task_details(&self) -> &::std::option::Option<crate::types::ImportTaskDetails> {
@@ -332,8 +321,7 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>The number of the current attempt to execute the import task.</p>
     pub fn set_attempt_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.attempt_number = input;
-        self
+        self.attempt_number = input; self
     }
     /// <p>The number of the current attempt to execute the import task.</p>
     pub fn get_attempt_number(&self) -> &::std::option::Option<i32> {
@@ -346,63 +334,65 @@ impl GetImportTaskOutputBuilder {
     }
     /// <p>The reason that the import task has this status value.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>The reason that the import task has this status value.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetImportTaskOutput`](crate::operation::get_import_task::GetImportTaskOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::operation::get_import_task::builders::GetImportTaskOutputBuilder::task_id)
     /// - [`source`](crate::operation::get_import_task::builders::GetImportTaskOutputBuilder::source)
     /// - [`role_arn`](crate::operation::get_import_task::builders::GetImportTaskOutputBuilder::role_arn)
     /// - [`status`](crate::operation::get_import_task::builders::GetImportTaskOutputBuilder::status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_import_task::GetImportTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_import_task::GetImportTaskOutput {
-            graph_id: self.graph_id,
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building GetImportTaskOutput",
-                )
-            })?,
-            source: self.source.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source",
-                    "source was not specified but it is required when building GetImportTaskOutput",
-                )
-            })?,
-            format: self.format,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building GetImportTaskOutput",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building GetImportTaskOutput",
-                )
-            })?,
-            import_options: self.import_options,
-            import_task_details: self.import_task_details,
-            attempt_number: self.attempt_number,
-            status_reason: self.status_reason,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_import_task::GetImportTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_import_task::GetImportTaskOutput {
+                graph_id: self.graph_id
+                ,
+                task_id: self.task_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("task_id", "task_id was not specified but it is required when building GetImportTaskOutput")
+                    )?
+                ,
+                source: self.source
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source", "source was not specified but it is required when building GetImportTaskOutput")
+                    )?
+                ,
+                format: self.format
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building GetImportTaskOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building GetImportTaskOutput")
+                    )?
+                ,
+                import_options: self.import_options
+                ,
+                import_task_details: self.import_task_details
+                ,
+                attempt_number: self.attempt_number
+                ,
+                status_reason: self.status_reason
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

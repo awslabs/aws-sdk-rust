@@ -3,7 +3,7 @@
 /// <p>A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroup {
+pub struct RuleGroup  {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub name: ::std::string::String,
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
@@ -17,7 +17,7 @@ pub struct RuleGroup {
     /// <p>A description of the rule group that helps with identification.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
@@ -38,22 +38,20 @@ pub struct RuleGroup {
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
-    pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
+    pub custom_response_bodies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CustomResponseBody>>,
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub available_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub consumed_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
 }
-impl RuleGroup {
+impl  RuleGroup  {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
@@ -62,22 +60,22 @@ impl RuleGroup {
         self.capacity
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>A description of the rule group that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
-    pub fn rules(&self) -> &[crate::types::Rule] {
-        self.rules.as_deref().unwrap_or_default()
+    pub fn rules(&self) -> & [crate::types::Rule] {
+        self.rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
-    pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
+    pub fn visibility_config(&self) -> ::std::option::Option<& crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
@@ -94,28 +92,28 @@ impl RuleGroup {
     /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
-    pub fn label_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn label_namespace(&self) -> ::std::option::Option<& str> {
         self.label_namespace.as_deref()
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn custom_response_bodies(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
+    pub fn custom_response_bodies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::CustomResponseBody>> {
         self.custom_response_bodies.as_ref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_labels.is_none()`.
-    pub fn available_labels(&self) -> &[crate::types::LabelSummary] {
-        self.available_labels.as_deref().unwrap_or_default()
+    pub fn available_labels(&self) -> & [crate::types::LabelSummary] {
+        self.available_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.consumed_labels.is_none()`.
-    pub fn consumed_labels(&self) -> &[crate::types::LabelSummary] {
-        self.consumed_labels.as_deref().unwrap_or_default()
+    pub fn consumed_labels(&self) -> & [crate::types::LabelSummary] {
+        self.consumed_labels.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleGroup {
@@ -134,12 +132,12 @@ pub struct RuleGroupBuilder {
     pub(crate) capacity: ::std::option::Option<i64>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>,
     pub(crate) visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
     pub(crate) label_namespace: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
-    pub(crate) available_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
-    pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
+    pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CustomResponseBody>>,
+    pub(crate) available_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
+    pub(crate) consumed_labels: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>,
 }
 impl RuleGroupBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -150,8 +148,7 @@ impl RuleGroupBuilder {
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +162,7 @@ impl RuleGroupBuilder {
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +180,7 @@ impl RuleGroupBuilder {
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_capacity(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.capacity = input;
-        self
+        self.capacity = input; self
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
@@ -201,8 +196,7 @@ impl RuleGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -215,8 +209,7 @@ impl RuleGroupBuilder {
     }
     /// <p>A description of the rule group that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the rule group that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,17 +222,16 @@ impl RuleGroupBuilder {
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to manage. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         &self.rules
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
@@ -250,8 +242,7 @@ impl RuleGroupBuilder {
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn set_visibility_config(mut self, input: ::std::option::Option<crate::types::VisibilityConfig>) -> Self {
-        self.visibility_config = input;
-        self
+        self.visibility_config = input; self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
@@ -290,8 +281,7 @@ impl RuleGroupBuilder {
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_namespace = input;
-        self
+        self.label_namespace = input; self
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.</p>
     /// <ul>
@@ -319,26 +309,20 @@ impl RuleGroupBuilder {
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn custom_response_bodies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CustomResponseBody) -> Self {
         let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.custom_response_bodies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.custom_response_bodies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_custom_response_bodies(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
-    ) -> Self {
-        self.custom_response_bodies = input;
-        self
+    pub fn set_custom_response_bodies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CustomResponseBody>>) -> Self {
+        self.custom_response_bodies = input; self
     }
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group.</p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn get_custom_response_bodies(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>> {
+    pub fn get_custom_response_bodies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::CustomResponseBody>> {
         &self.custom_response_bodies
     }
     /// Appends an item to `available_labels`.
@@ -348,17 +332,16 @@ impl RuleGroupBuilder {
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub fn available_labels(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.available_labels.unwrap_or_default();
-        v.push(input);
-        self.available_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.available_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
-        self.available_labels = input;
-        self
+    pub fn set_available_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>) -> Self {
+        self.available_labels = input; self
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_available_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>> {
         &self.available_labels
     }
     /// Appends an item to `consumed_labels`.
@@ -368,17 +351,16 @@ impl RuleGroupBuilder {
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
     pub fn consumed_labels(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.consumed_labels.unwrap_or_default();
-        v.push(input);
-        self.consumed_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.consumed_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
-        self.consumed_labels = input;
-        self
+    pub fn set_consumed_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>>) -> Self {
+        self.consumed_labels = input; self
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule.</p>
-    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+    pub fn get_consumed_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LabelSummary>> {
         &self.consumed_labels
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
@@ -388,38 +370,44 @@ impl RuleGroupBuilder {
     /// - [`capacity`](crate::types::builders::RuleGroupBuilder::capacity)
     /// - [`arn`](crate::types::builders::RuleGroupBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RuleGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building RuleGroup",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building RuleGroup",
-                )
-            })?,
-            capacity: self.capacity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "capacity",
-                    "capacity was not specified but it is required when building RuleGroup",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building RuleGroup",
-                )
-            })?,
-            description: self.description,
-            rules: self.rules,
-            visibility_config: self.visibility_config,
-            label_namespace: self.label_namespace,
-            custom_response_bodies: self.custom_response_bodies,
-            available_labels: self.available_labels,
-            consumed_labels: self.consumed_labels,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RuleGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building RuleGroup")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building RuleGroup")
+                    )?
+                ,
+                capacity: self.capacity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("capacity", "capacity was not specified but it is required when building RuleGroup")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building RuleGroup")
+                    )?
+                ,
+                description: self.description
+                ,
+                rules: self.rules
+                ,
+                visibility_config: self.visibility_config
+                ,
+                label_namespace: self.label_namespace
+                ,
+                custom_response_bodies: self.custom_response_bodies
+                ,
+                available_labels: self.available_labels
+                ,
+                consumed_labels: self.consumed_labels
+                ,
+            }
+        )
     }
 }
+

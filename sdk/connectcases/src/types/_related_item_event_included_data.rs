@@ -3,11 +3,11 @@
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelatedItemEventIncludedData {
+pub struct RelatedItemEventIncludedData  {
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub include_content: bool,
 }
-impl RelatedItemEventIncludedData {
+impl  RelatedItemEventIncludedData  {
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn include_content(&self) -> bool {
         self.include_content
@@ -35,8 +35,7 @@ impl RelatedItemEventIncludedDataBuilder {
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn set_include_content(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_content = input;
-        self
+        self.include_content = input; self
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn get_include_content(&self) -> &::std::option::Option<bool> {
@@ -46,13 +45,15 @@ impl RelatedItemEventIncludedDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`include_content`](crate::types::builders::RelatedItemEventIncludedDataBuilder::include_content)
     pub fn build(self) -> ::std::result::Result<crate::types::RelatedItemEventIncludedData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelatedItemEventIncludedData {
-            include_content: self.include_content.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "include_content",
-                    "include_content was not specified but it is required when building RelatedItemEventIncludedData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelatedItemEventIncludedData {
+                include_content: self.include_content
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("include_content", "include_content was not specified but it is required when building RelatedItemEventIncludedData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -22,11 +22,7 @@ impl SearchTypesResultItem {
     /// Tries to convert the enum instance into [`AssetTypeItem`](crate::types::SearchTypesResultItem::AssetTypeItem), extracting the inner [`AssetTypeItem`](crate::types::AssetTypeItem).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_asset_type_item(&self) -> ::std::result::Result<&crate::types::AssetTypeItem, &Self> {
-        if let SearchTypesResultItem::AssetTypeItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchTypesResultItem::AssetTypeItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AssetTypeItem`](crate::types::SearchTypesResultItem::AssetTypeItem).
     pub fn is_asset_type_item(&self) -> bool {
@@ -35,11 +31,7 @@ impl SearchTypesResultItem {
     /// Tries to convert the enum instance into [`FormTypeItem`](crate::types::SearchTypesResultItem::FormTypeItem), extracting the inner [`FormTypeData`](crate::types::FormTypeData).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_form_type_item(&self) -> ::std::result::Result<&crate::types::FormTypeData, &Self> {
-        if let SearchTypesResultItem::FormTypeItem(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SearchTypesResultItem::FormTypeItem(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`FormTypeItem`](crate::types::SearchTypesResultItem::FormTypeItem).
     pub fn is_form_type_item(&self) -> bool {
@@ -50,3 +42,4 @@ impl SearchTypesResultItem {
         matches!(self, Self::Unknown)
     }
 }
+

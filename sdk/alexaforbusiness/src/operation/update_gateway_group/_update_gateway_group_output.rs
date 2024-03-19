@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGatewayGroupOutput {
+pub struct UpdateGatewayGroupOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for UpdateGatewayGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateGatewayGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput).
     pub fn builder() -> crate::operation::update_gateway_group::builders::UpdateGatewayGroupOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateGatewayGroupOutputBuilder {
 }
 impl UpdateGatewayGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateGatewayGroupOutput`](crate::operation::update_gateway_group::UpdateGatewayGroupOutput).
     pub fn build(self) -> crate::operation::update_gateway_group::UpdateGatewayGroupOutput {
         crate::operation::update_gateway_group::UpdateGatewayGroupOutput {
@@ -40,3 +40,4 @@ impl UpdateGatewayGroupOutputBuilder {
         }
     }
 }
+

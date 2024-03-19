@@ -5,54 +5,50 @@ pub use crate::operation::describe_action_targets::_describe_action_targets_inpu
 
 impl DescribeActionTargetsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_action_targets();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_action_targets::DescribeActionTargetsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_action_targets();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeActionTargets`.
-///
+/// 
 /// <p>Returns a list of the custom action targets in Security Hub in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeActionTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder,
+                    inner: crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        crate::operation::describe_action_targets::DescribeActionTargetsError,
-    > for DescribeActionTargetsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_action_targets::DescribeActionTargetsOutput,
+                    crate::operation::describe_action_targets::DescribeActionTargetsError,
+                > for DescribeActionTargetsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
+                        crate::operation::describe_action_targets::DescribeActionTargetsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeActionTargetsFluentBuilder {
     /// Creates a new `DescribeActionTargets`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl DescribeActionTargetsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_action_targets::DescribeActionTargetsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_action_targets::DescribeActionTargets::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_action_targets::DescribeActionTargets::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_action_targets::DescribeActionTargetsOutput,
-        crate::operation::describe_action_targets::DescribeActionTargetsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_action_targets::DescribeActionTargetsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_action_targets::DescribeActionTargetsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_action_targets::DescribeActionTargets::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_action_targets::DescribeActionTargets::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_action_targets::DescribeActionTargetsOutput, crate::operation::describe_action_targets::DescribeActionTargetsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
-        crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
+                                crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ActionTargetArns`.
     ///
     /// To override the contents of this collection use [`set_action_target_arns`](Self::set_action_target_arns).
@@ -124,12 +111,12 @@ impl DescribeActionTargetsFluentBuilder {
         self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn set_action_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_action_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_action_target_arns(input);
         self
     }
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
-    pub fn get_action_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_action_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_action_target_arns()
     }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
@@ -164,3 +151,4 @@ impl DescribeActionTargetsFluentBuilder {
         self.inner.get_max_results()
     }
 }
+

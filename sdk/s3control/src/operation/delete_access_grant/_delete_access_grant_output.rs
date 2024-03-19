@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccessGrantOutput {
+pub struct DeleteAccessGrantOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteAccessGrantOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAccessGrantOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessGrantOutput`](crate::operation::delete_access_grant::DeleteAccessGrantOutput).
     pub fn builder() -> crate::operation::delete_access_grant::builders::DeleteAccessGrantOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteAccessGrantOutputBuilder {
 }
 impl DeleteAccessGrantOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAccessGrantOutput`](crate::operation::delete_access_grant::DeleteAccessGrantOutput).
     pub fn build(self) -> crate::operation::delete_access_grant::DeleteAccessGrantOutput {
         crate::operation::delete_access_grant::DeleteAccessGrantOutput {
@@ -40,3 +40,4 @@ impl DeleteAccessGrantOutputBuilder {
         }
     }
 }
+

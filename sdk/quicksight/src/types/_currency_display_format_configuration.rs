@@ -3,7 +3,7 @@
 /// <p>The options that determine the currency display format configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CurrencyDisplayFormatConfiguration {
+pub struct CurrencyDisplayFormatConfiguration  {
     /// <p>Determines the prefix value of the currency format.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Determines the suffix value of the currency format.</p>
@@ -21,41 +21,41 @@ pub struct CurrencyDisplayFormatConfiguration {
     /// <p>The options that determine the null value format configuration.</p>
     pub null_value_format_configuration: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
-impl CurrencyDisplayFormatConfiguration {
+impl  CurrencyDisplayFormatConfiguration  {
     /// <p>Determines the prefix value of the currency format.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Determines the suffix value of the currency format.</p>
-    pub fn suffix(&self) -> ::std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<& str> {
         self.suffix.as_deref()
     }
     /// <p>The options that determine the numeric separator configuration.</p>
-    pub fn separator_configuration(&self) -> ::std::option::Option<&crate::types::NumericSeparatorConfiguration> {
+    pub fn separator_configuration(&self) -> ::std::option::Option<& crate::types::NumericSeparatorConfiguration> {
         self.separator_configuration.as_ref()
     }
     /// <p>Determines the symbol for the currency format.</p>
-    pub fn symbol(&self) -> ::std::option::Option<&str> {
+    pub fn symbol(&self) -> ::std::option::Option<& str> {
         self.symbol.as_deref()
     }
     /// <p>The option that determines the decimal places configuration.</p>
-    pub fn decimal_places_configuration(&self) -> ::std::option::Option<&crate::types::DecimalPlacesConfiguration> {
+    pub fn decimal_places_configuration(&self) -> ::std::option::Option<& crate::types::DecimalPlacesConfiguration> {
         self.decimal_places_configuration.as_ref()
     }
     /// <p>Determines the number scale value for the currency format.</p>
-    pub fn number_scale(&self) -> ::std::option::Option<&crate::types::NumberScale> {
+    pub fn number_scale(&self) -> ::std::option::Option<& crate::types::NumberScale> {
         self.number_scale.as_ref()
     }
     /// <p>The options that determine the negative value configuration.</p>
-    pub fn negative_value_configuration(&self) -> ::std::option::Option<&crate::types::NegativeValueConfiguration> {
+    pub fn negative_value_configuration(&self) -> ::std::option::Option<& crate::types::NegativeValueConfiguration> {
         self.negative_value_configuration.as_ref()
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(&self) -> ::std::option::Option<&crate::types::NullValueFormatConfiguration> {
+    pub fn null_value_format_configuration(&self) -> ::std::option::Option<& crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
 }
-impl ::std::fmt::Debug for CurrencyDisplayFormatConfiguration {
+impl  ::std::fmt::Debug for CurrencyDisplayFormatConfiguration  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CurrencyDisplayFormatConfiguration");
         formatter.field("prefix", &"*** Sensitive Data Redacted ***");
@@ -97,8 +97,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the prefix value of the currency format.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Determines the prefix value of the currency format.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +110,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the suffix value of the currency format.</p>
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.suffix = input;
-        self
+        self.suffix = input; self
     }
     /// <p>Determines the suffix value of the currency format.</p>
     pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +123,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>The options that determine the numeric separator configuration.</p>
     pub fn set_separator_configuration(mut self, input: ::std::option::Option<crate::types::NumericSeparatorConfiguration>) -> Self {
-        self.separator_configuration = input;
-        self
+        self.separator_configuration = input; self
     }
     /// <p>The options that determine the numeric separator configuration.</p>
     pub fn get_separator_configuration(&self) -> &::std::option::Option<crate::types::NumericSeparatorConfiguration> {
@@ -139,8 +136,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the symbol for the currency format.</p>
     pub fn set_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.symbol = input;
-        self
+        self.symbol = input; self
     }
     /// <p>Determines the symbol for the currency format.</p>
     pub fn get_symbol(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +149,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>The option that determines the decimal places configuration.</p>
     pub fn set_decimal_places_configuration(mut self, input: ::std::option::Option<crate::types::DecimalPlacesConfiguration>) -> Self {
-        self.decimal_places_configuration = input;
-        self
+        self.decimal_places_configuration = input; self
     }
     /// <p>The option that determines the decimal places configuration.</p>
     pub fn get_decimal_places_configuration(&self) -> &::std::option::Option<crate::types::DecimalPlacesConfiguration> {
@@ -167,8 +162,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>Determines the number scale value for the currency format.</p>
     pub fn set_number_scale(mut self, input: ::std::option::Option<crate::types::NumberScale>) -> Self {
-        self.number_scale = input;
-        self
+        self.number_scale = input; self
     }
     /// <p>Determines the number scale value for the currency format.</p>
     pub fn get_number_scale(&self) -> &::std::option::Option<crate::types::NumberScale> {
@@ -181,8 +175,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>The options that determine the negative value configuration.</p>
     pub fn set_negative_value_configuration(mut self, input: ::std::option::Option<crate::types::NegativeValueConfiguration>) -> Self {
-        self.negative_value_configuration = input;
-        self
+        self.negative_value_configuration = input; self
     }
     /// <p>The options that determine the negative value configuration.</p>
     pub fn get_negative_value_configuration(&self) -> &::std::option::Option<crate::types::NegativeValueConfiguration> {
@@ -195,8 +188,7 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn set_null_value_format_configuration(mut self, input: ::std::option::Option<crate::types::NullValueFormatConfiguration>) -> Self {
-        self.null_value_format_configuration = input;
-        self
+        self.null_value_format_configuration = input; self
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn get_null_value_format_configuration(&self) -> &::std::option::Option<crate::types::NullValueFormatConfiguration> {
@@ -205,14 +197,22 @@ impl CurrencyDisplayFormatConfigurationBuilder {
     /// Consumes the builder and constructs a [`CurrencyDisplayFormatConfiguration`](crate::types::CurrencyDisplayFormatConfiguration).
     pub fn build(self) -> crate::types::CurrencyDisplayFormatConfiguration {
         crate::types::CurrencyDisplayFormatConfiguration {
-            prefix: self.prefix,
-            suffix: self.suffix,
-            separator_configuration: self.separator_configuration,
-            symbol: self.symbol,
-            decimal_places_configuration: self.decimal_places_configuration,
-            number_scale: self.number_scale,
-            negative_value_configuration: self.negative_value_configuration,
-            null_value_format_configuration: self.null_value_format_configuration,
+            prefix: self.prefix
+            ,
+            suffix: self.suffix
+            ,
+            separator_configuration: self.separator_configuration
+            ,
+            symbol: self.symbol
+            ,
+            decimal_places_configuration: self.decimal_places_configuration
+            ,
+            number_scale: self.number_scale
+            ,
+            negative_value_configuration: self.negative_value_configuration
+            ,
+            null_value_format_configuration: self.null_value_format_configuration
+            ,
         }
     }
 }
@@ -230,3 +230,4 @@ impl ::std::fmt::Debug for CurrencyDisplayFormatConfigurationBuilder {
         formatter.finish()
     }
 }
+

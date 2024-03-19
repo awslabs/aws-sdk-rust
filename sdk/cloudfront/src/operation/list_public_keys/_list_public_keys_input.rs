@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPublicKeysInput {
+pub struct ListPublicKeysInput  {
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of public keys you want in the response body.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ListPublicKeysInput {
+impl  ListPublicKeysInput  {
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of public keys you want in the response body.</p>
@@ -40,8 +40,7 @@ impl ListPublicKeysInputBuilder {
     }
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl ListPublicKeysInputBuilder {
     }
     /// <p>The maximum number of public keys you want in the response body.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of public keys you want in the response body.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
         &self.max_items
     }
     /// Consumes the builder and constructs a [`ListPublicKeysInput`](crate::operation::list_public_keys::ListPublicKeysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_public_keys::ListPublicKeysInput {
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_public_keys::ListPublicKeysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_public_keys::ListPublicKeysInput {
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

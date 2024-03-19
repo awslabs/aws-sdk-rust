@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutSessionInput {
+pub struct PutSessionInput  {
     /// <p>The identifier of the bot that receives the session data.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias identifier of the bot that receives the session data.</p>
@@ -12,12 +12,12 @@ pub struct PutSessionInput {
     /// <p>The identifier of the session that receives the session data.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
     /// <li>
@@ -25,36 +25,37 @@ pub struct PutSessionInput {
     /// </ul>
     pub response_content_type: ::std::option::Option<::std::string::String>,
 }
-impl PutSessionInput {
+impl  PutSessionInput  {
     /// <p>The identifier of the bot that receives the session data.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The alias identifier of the bot that receives the session data.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the session that receives the session data.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[crate::types::Message] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [crate::types::Message] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.session_state.as_ref()
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
@@ -62,7 +63,7 @@ impl PutSessionInput {
     /// <li>
     /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
-    pub fn response_content_type(&self) -> ::std::option::Option<&str> {
+    pub fn response_content_type(&self) -> ::std::option::Option<& str> {
         self.response_content_type.as_deref()
     }
 }
@@ -81,9 +82,9 @@ pub struct PutSessionInputBuilder {
     pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
 }
 impl PutSessionInputBuilder {
@@ -95,8 +96,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The identifier of the bot that receives the session data.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the bot that receives the session data.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +110,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The alias identifier of the bot that receives the session data.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The alias identifier of the bot that receives the session data.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +124,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The locale where the session is in use.</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The locale where the session is in use.</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>The identifier of the session that receives the session data.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session that receives the session data.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,17 +151,16 @@ impl PutSessionInputBuilder {
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input);
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>) -> Self {
+        self.messages = input; self
     }
     /// <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Message>> {
         &self.messages
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
@@ -175,8 +171,7 @@ impl PutSessionInputBuilder {
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<crate::types::SessionState> {
@@ -188,28 +183,20 @@ impl PutSessionInputBuilder {
     ///
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
@@ -227,8 +214,7 @@ impl PutSessionInputBuilder {
     /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.response_content_type = input;
-        self
+        self.response_content_type = input; self
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
@@ -240,15 +226,26 @@ impl PutSessionInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_session::PutSessionInput {
-            bot_id: self.bot_id,
-            bot_alias_id: self.bot_alias_id,
-            locale_id: self.locale_id,
-            session_id: self.session_id,
-            messages: self.messages,
-            session_state: self.session_state,
-            request_attributes: self.request_attributes,
-            response_content_type: self.response_content_type,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_session::PutSessionInput {
+                bot_id: self.bot_id
+                ,
+                bot_alias_id: self.bot_alias_id
+                ,
+                locale_id: self.locale_id
+                ,
+                session_id: self.session_id
+                ,
+                messages: self.messages
+                ,
+                session_state: self.session_state
+                ,
+                request_attributes: self.request_attributes
+                ,
+                response_content_type: self.response_content_type
+                ,
+            }
+        )
     }
 }
+

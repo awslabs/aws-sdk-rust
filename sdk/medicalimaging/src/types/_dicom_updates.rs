@@ -3,23 +3,23 @@
 /// <p>The object containing <code>removableAttributes</code> and <code>updatableAttributes</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DicomUpdates {
+pub struct DicomUpdates  {
     /// <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
     pub removable_attributes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
     pub updatable_attributes: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl DicomUpdates {
+impl  DicomUpdates  {
     /// <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-    pub fn removable_attributes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn removable_attributes(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.removable_attributes.as_ref()
     }
     /// <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-    pub fn updatable_attributes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn updatable_attributes(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.updatable_attributes.as_ref()
     }
 }
-impl ::std::fmt::Debug for DicomUpdates {
+impl  ::std::fmt::Debug for DicomUpdates  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DicomUpdates");
         formatter.field("removable_attributes", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl DicomUpdatesBuilder {
     }
     /// <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
     pub fn set_removable_attributes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.removable_attributes = input;
-        self
+        self.removable_attributes = input; self
     }
     /// <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
     pub fn get_removable_attributes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -63,8 +62,7 @@ impl DicomUpdatesBuilder {
     }
     /// <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
     pub fn set_updatable_attributes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.updatable_attributes = input;
-        self
+        self.updatable_attributes = input; self
     }
     /// <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
     pub fn get_updatable_attributes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -73,8 +71,10 @@ impl DicomUpdatesBuilder {
     /// Consumes the builder and constructs a [`DicomUpdates`](crate::types::DicomUpdates).
     pub fn build(self) -> crate::types::DicomUpdates {
         crate::types::DicomUpdates {
-            removable_attributes: self.removable_attributes,
-            updatable_attributes: self.updatable_attributes,
+            removable_attributes: self.removable_attributes
+            ,
+            updatable_attributes: self.updatable_attributes
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for DicomUpdatesBuilder {
         formatter.finish()
     }
 }
+

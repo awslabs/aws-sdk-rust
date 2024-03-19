@@ -3,16 +3,17 @@
 /// <p>The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPricingPlansFilter {
+pub struct ListPricingPlansFilter  {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListPricingPlansFilter {
+impl  ListPricingPlansFilter  {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
-    pub fn arns(&self) -> &[::std::string::String] {
-        self.arns.as_deref().unwrap_or_default()
+    pub fn arns(&self) -> & [::std::string::String] {
+        self.arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListPricingPlansFilter {
@@ -26,7 +27,7 @@ impl ListPricingPlansFilter {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPricingPlansFilterBuilder {
-    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListPricingPlansFilterBuilder {
     /// Appends an item to `arns`.
@@ -36,21 +37,24 @@ impl ListPricingPlansFilterBuilder {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
-    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.arns
     }
     /// Consumes the builder and constructs a [`ListPricingPlansFilter`](crate::types::ListPricingPlansFilter).
     pub fn build(self) -> crate::types::ListPricingPlansFilter {
-        crate::types::ListPricingPlansFilter { arns: self.arns }
+        crate::types::ListPricingPlansFilter {
+            arns: self.arns
+            ,
+        }
     }
 }
+

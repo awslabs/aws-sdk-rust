@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCertificates`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_id(impl Into<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_directory_id):<br>required: **true**<br><p>The identifier of the directory.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p><br>
     ///   - [`limit(i32)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::set_limit):<br>required: **false**<br><p>The number of items that should show up on one page</p><br>
-    /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
+                            /// - On success, responds with [`ListCertificatesOutput`](crate::operation::list_certificates::ListCertificatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_certificates::ListCertificatesOutput::next_token): <p>Indicates whether another page of certificates is available when the number of available certificates exceeds the page limit.</p>
     ///   - [`certificates_info(Option<Vec::<CertificateInfo>>)`](crate::operation::list_certificates::ListCertificatesOutput::certificates_info): <p>A list of certificates with basic details including certificate ID, certificate common name, certificate state.</p>
-    /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
+                            /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::operation::list_certificates::ListCertificatesError)
     pub fn list_certificates(&self) -> crate::operation::list_certificates::builders::ListCertificatesFluentBuilder {
-        crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_certificates::builders::ListCertificatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

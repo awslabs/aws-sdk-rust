@@ -3,19 +3,19 @@
 /// <p>Information about an Amazon Web Services resource that emitted and event that is related to a recommendation in an insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationRelatedEventResource {
+pub struct RecommendationRelatedEventResource  {
     /// <p>The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl RecommendationRelatedEventResource {
+impl  RecommendationRelatedEventResource  {
     /// <p>The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RecommendationRelatedEventResourceBuilder {
     }
     /// <p>The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an <code>EventResource</code> object.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RecommendationRelatedEventResourceBuilder {
     }
     /// <p>The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an <code>EventResource</code> object.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl RecommendationRelatedEventResourceBuilder {
     /// Consumes the builder and constructs a [`RecommendationRelatedEventResource`](crate::types::RecommendationRelatedEventResource).
     pub fn build(self) -> crate::types::RecommendationRelatedEventResource {
         crate::types::RecommendationRelatedEventResource {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

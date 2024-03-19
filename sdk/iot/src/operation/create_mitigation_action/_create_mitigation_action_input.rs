@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateMitigationActionInput {
+pub struct CreateMitigationActionInput  {
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
     pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
@@ -10,26 +10,27 @@ pub struct CreateMitigationActionInput {
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub action_params: ::std::option::Option<crate::types::MitigationActionParams>,
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateMitigationActionInput {
+impl  CreateMitigationActionInput  {
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
-    pub fn action_name(&self) -> ::std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
-    pub fn action_params(&self) -> ::std::option::Option<&crate::types::MitigationActionParams> {
+    pub fn action_params(&self) -> ::std::option::Option<& crate::types::MitigationActionParams> {
         self.action_params.as_ref()
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateMitigationActionInput {
@@ -46,7 +47,7 @@ pub struct CreateMitigationActionInputBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) action_params: ::std::option::Option<crate::types::MitigationActionParams>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateMitigationActionInputBuilder {
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
@@ -57,8 +58,7 @@ impl CreateMitigationActionInputBuilder {
     }
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateMitigationActionInputBuilder {
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl CreateMitigationActionInputBuilder {
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn set_action_params(mut self, input: ::std::option::Option<crate::types::MitigationActionParams>) -> Self {
-        self.action_params = input;
-        self
+        self.action_params = input; self
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn get_action_params(&self) -> &::std::option::Option<crate::types::MitigationActionParams> {
@@ -101,31 +99,32 @@ impl CreateMitigationActionInputBuilder {
     /// <p>Metadata that can be used to manage the mitigation action.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that can be used to manage the mitigation action.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_mitigation_action::CreateMitigationActionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_mitigation_action::CreateMitigationActionInput {
-            action_name: self.action_name,
-            role_arn: self.role_arn,
-            action_params: self.action_params,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_mitigation_action::CreateMitigationActionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_mitigation_action::CreateMitigationActionInput {
+                action_name: self.action_name
+                ,
+                role_arn: self.role_arn
+                ,
+                action_params: self.action_params
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

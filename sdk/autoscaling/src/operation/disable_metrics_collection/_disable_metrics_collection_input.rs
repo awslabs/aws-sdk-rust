@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableMetricsCollectionInput {
+pub struct DisableMetricsCollectionInput  {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the metrics to disable.</p>
@@ -51,11 +51,11 @@ pub struct DisableMetricsCollectionInput {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DisableMetricsCollectionInput {
+impl  DisableMetricsCollectionInput  {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Identifies the metrics to disable.</p>
@@ -104,10 +104,11 @@ impl DisableMetricsCollectionInput {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[::std::string::String] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [::std::string::String] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisableMetricsCollectionInput {
@@ -122,7 +123,7 @@ impl DisableMetricsCollectionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisableMetricsCollectionInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DisableMetricsCollectionInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -133,8 +134,7 @@ impl DisableMetricsCollectionInputBuilder {
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+        self.auto_scaling_group_name = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,9 +192,9 @@ impl DisableMetricsCollectionInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input.into());
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Identifies the metrics to disable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -242,9 +242,8 @@ impl DisableMetricsCollectionInputBuilder {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>Identifies the metrics to disable.</p>
     /// <p>You can specify one or more of the following metrics:</p>
@@ -292,19 +291,19 @@ impl DisableMetricsCollectionInputBuilder {
     /// </ul>
     /// <p>If you omit this property, all metrics are disabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.metrics
     }
     /// Consumes the builder and constructs a [`DisableMetricsCollectionInput`](crate::operation::disable_metrics_collection::DisableMetricsCollectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disable_metrics_collection::DisableMetricsCollectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disable_metrics_collection::DisableMetricsCollectionInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            metrics: self.metrics,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_metrics_collection::DisableMetricsCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_metrics_collection::DisableMetricsCollectionInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                metrics: self.metrics
+                ,
+            }
+        )
     }
 }
+

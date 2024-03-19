@@ -5,7 +5,7 @@
 /// <p>To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroup {
+pub struct RuleGroup  {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups.</p>
     pub rule_variables: ::std::option::Option<crate::types::RuleVariables>,
     /// <p>The list of a rule group's reference sets.</p>
@@ -15,21 +15,21 @@ pub struct RuleGroup {
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub stateful_rule_options: ::std::option::Option<crate::types::StatefulRuleOptions>,
 }
-impl RuleGroup {
+impl  RuleGroup  {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups.</p>
-    pub fn rule_variables(&self) -> ::std::option::Option<&crate::types::RuleVariables> {
+    pub fn rule_variables(&self) -> ::std::option::Option<& crate::types::RuleVariables> {
         self.rule_variables.as_ref()
     }
     /// <p>The list of a rule group's reference sets.</p>
-    pub fn reference_sets(&self) -> ::std::option::Option<&crate::types::ReferenceSets> {
+    pub fn reference_sets(&self) -> ::std::option::Option<& crate::types::ReferenceSets> {
         self.reference_sets.as_ref()
     }
     /// <p>The stateful rules or stateless rules for the rule group.</p>
-    pub fn rules_source(&self) -> ::std::option::Option<&crate::types::RulesSource> {
+    pub fn rules_source(&self) -> ::std::option::Option<& crate::types::RulesSource> {
         self.rules_source.as_ref()
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn stateful_rule_options(&self) -> ::std::option::Option<&crate::types::StatefulRuleOptions> {
+    pub fn stateful_rule_options(&self) -> ::std::option::Option<& crate::types::StatefulRuleOptions> {
         self.stateful_rule_options.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl RuleGroupBuilder {
     }
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups.</p>
     pub fn set_rule_variables(mut self, input: ::std::option::Option<crate::types::RuleVariables>) -> Self {
-        self.rule_variables = input;
-        self
+        self.rule_variables = input; self
     }
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups.</p>
     pub fn get_rule_variables(&self) -> &::std::option::Option<crate::types::RuleVariables> {
@@ -71,8 +70,7 @@ impl RuleGroupBuilder {
     }
     /// <p>The list of a rule group's reference sets.</p>
     pub fn set_reference_sets(mut self, input: ::std::option::Option<crate::types::ReferenceSets>) -> Self {
-        self.reference_sets = input;
-        self
+        self.reference_sets = input; self
     }
     /// <p>The list of a rule group's reference sets.</p>
     pub fn get_reference_sets(&self) -> &::std::option::Option<crate::types::ReferenceSets> {
@@ -86,8 +84,7 @@ impl RuleGroupBuilder {
     }
     /// <p>The stateful rules or stateless rules for the rule group.</p>
     pub fn set_rules_source(mut self, input: ::std::option::Option<crate::types::RulesSource>) -> Self {
-        self.rules_source = input;
-        self
+        self.rules_source = input; self
     }
     /// <p>The stateful rules or stateless rules for the rule group.</p>
     pub fn get_rules_source(&self) -> &::std::option::Option<crate::types::RulesSource> {
@@ -100,8 +97,7 @@ impl RuleGroupBuilder {
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn set_stateful_rule_options(mut self, input: ::std::option::Option<crate::types::StatefulRuleOptions>) -> Self {
-        self.stateful_rule_options = input;
-        self
+        self.stateful_rule_options = input; self
     }
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings. Some limitations apply; for more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn get_stateful_rule_options(&self) -> &::std::option::Option<crate::types::StatefulRuleOptions> {
@@ -110,10 +106,15 @@ impl RuleGroupBuilder {
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
     pub fn build(self) -> crate::types::RuleGroup {
         crate::types::RuleGroup {
-            rule_variables: self.rule_variables,
-            reference_sets: self.reference_sets,
-            rules_source: self.rules_source,
-            stateful_rule_options: self.stateful_rule_options,
+            rule_variables: self.rule_variables
+            ,
+            reference_sets: self.reference_sets
+            ,
+            rules_source: self.rules_source
+            ,
+            stateful_rule_options: self.stateful_rule_options
+            ,
         }
     }
 }
+

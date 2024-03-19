@@ -3,19 +3,19 @@
 /// <p>Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReputationOptions {
+pub struct ReputationOptions  {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub reputation_metrics_enabled: bool,
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
     pub last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ReputationOptions {
+impl  ReputationOptions  {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn reputation_metrics_enabled(&self) -> bool {
         self.reputation_metrics_enabled
     }
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
-    pub fn last_fresh_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_fresh_start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ReputationOptionsBuilder {
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn set_reputation_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reputation_metrics_enabled = input;
-        self
+        self.reputation_metrics_enabled = input; self
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn get_reputation_metrics_enabled(&self) -> &::std::option::Option<bool> {
@@ -55,8 +54,7 @@ impl ReputationOptionsBuilder {
     }
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
     pub fn set_last_fresh_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_fresh_start = input;
-        self
+        self.last_fresh_start = input; self
     }
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
     pub fn get_last_fresh_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,12 @@ impl ReputationOptionsBuilder {
     /// Consumes the builder and constructs a [`ReputationOptions`](crate::types::ReputationOptions).
     pub fn build(self) -> crate::types::ReputationOptions {
         crate::types::ReputationOptions {
-            reputation_metrics_enabled: self.reputation_metrics_enabled.unwrap_or_default(),
-            last_fresh_start: self.last_fresh_start,
+            reputation_metrics_enabled: self.reputation_metrics_enabled
+                .unwrap_or_default()
+            ,
+            last_fresh_start: self.last_fresh_start
+            ,
         }
     }
 }
+

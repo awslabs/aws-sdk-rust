@@ -5,23 +5,20 @@ pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_inpu
 
 impl PutPipelineDefinitionInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_pipeline_definition();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_pipeline_definition();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutPipelineDefinition`.
-///
+/// 
 /// <p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p>
 /// <p><code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline.</p>
 /// <ol>
@@ -50,7 +47,7 @@ impl PutPipelineDefinitionInputBuilder {
 /// Example 2
 /// </name>
 /// <description>
-/// This example sets an invalid pipeline configuration (the value for
+/// This example sets an invalid pipeline configuration (the value for 
 /// <code>workerGroup</code> is an empty string) and returns an error message.
 /// </description>
 /// <request>
@@ -64,33 +61,32 @@ impl PutPipelineDefinitionInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPipelineDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder,
+                    inner: crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-    > for PutPipelineDefinitionFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
+                    crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
+                > for PutPipelineDefinitionFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
+                        crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutPipelineDefinitionFluentBuilder {
     /// Creates a new `PutPipelineDefinition`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -99,53 +95,44 @@ impl PutPipelineDefinitionFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_pipeline_definition::PutPipelineDefinition::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_pipeline_definition::PutPipelineDefinition::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
-        crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_pipeline_definition::PutPipelineDefinitionError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_pipeline_definition::PutPipelineDefinition::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_pipeline_definition::PutPipelineDefinition::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput, crate::operation::put_pipeline_definition::PutPipelineDefinitionError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the pipeline.</p>
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_id(input.into());
@@ -170,12 +157,12 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>) -> Self {
+    pub fn set_pipeline_objects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>>) -> Self {
         self.inner = self.inner.set_pipeline_objects(input);
         self
     }
     /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+    pub fn get_pipeline_objects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PipelineObject>> {
         self.inner.get_pipeline_objects()
     }
     /// Appends an item to `parameterObjects`.
@@ -188,12 +175,12 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>) -> Self {
+    pub fn set_parameter_objects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>>) -> Self {
         self.inner = self.inner.set_parameter_objects(input);
         self
     }
     /// <p>The parameter objects used with the pipeline.</p>
-    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>> {
+    pub fn get_parameter_objects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterObject>> {
         self.inner.get_parameter_objects()
     }
     /// Appends an item to `parameterValues`.
@@ -206,12 +193,13 @@ impl PutPipelineDefinitionFluentBuilder {
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>) -> Self {
+    pub fn set_parameter_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>>) -> Self {
         self.inner = self.inner.set_parameter_values(input);
         self
     }
     /// <p>The parameter values used with the pipeline.</p>
-    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+    pub fn get_parameter_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterValue>> {
         self.inner.get_parameter_values()
     }
 }
+

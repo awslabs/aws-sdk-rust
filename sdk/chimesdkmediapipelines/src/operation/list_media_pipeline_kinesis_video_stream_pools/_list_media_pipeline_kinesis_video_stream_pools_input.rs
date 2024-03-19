@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMediaPipelineKinesisVideoStreamPoolsInput {
+pub struct ListMediaPipelineKinesisVideoStreamPoolsInput  {
     /// <p>The token used to return the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMediaPipelineKinesisVideoStreamPoolsInput {
+impl  ListMediaPipelineKinesisVideoStreamPoolsInput  {
     /// <p>The token used to return the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -20,8 +20,7 @@ impl ListMediaPipelineKinesisVideoStreamPoolsInput {
 }
 impl ListMediaPipelineKinesisVideoStreamPoolsInput {
     /// Creates a new builder-style object to manufacture [`ListMediaPipelineKinesisVideoStreamPoolsInput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput).
-    pub fn builder(
-    ) -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsInputBuilder {
+    pub fn builder() -> crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsInputBuilder {
         crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsInputBuilder::default()
     }
 }
@@ -41,8 +40,7 @@ impl ListMediaPipelineKinesisVideoStreamPoolsInputBuilder {
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +53,22 @@ impl ListMediaPipelineKinesisVideoStreamPoolsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMediaPipelineKinesisVideoStreamPoolsInput`](crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::list_media_pipeline_kinesis_video_stream_pools::ListMediaPipelineKinesisVideoStreamPoolsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

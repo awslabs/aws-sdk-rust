@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGameSessionLogUrlOutput {
+pub struct GetGameSessionLogUrlOutput  {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetGameSessionLogUrlOutput {
+impl  GetGameSessionLogUrlOutput  {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
-    pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
+    pub fn pre_signed_url(&self) -> ::std::option::Option<& str> {
         self.pre_signed_url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetGameSessionLogUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetGameSessionLogUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlOutput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput).
     pub fn builder() -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlOutputBuilder {
@@ -40,27 +40,28 @@ impl GetGameSessionLogUrlOutputBuilder {
     }
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
     pub fn set_pre_signed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_signed_url = input;
-        self
+        self.pre_signed_url = input; self
     }
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
     pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_signed_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetGameSessionLogUrlOutput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput).
     pub fn build(self) -> crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput {
         crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput {
-            pre_signed_url: self.pre_signed_url,
+            pre_signed_url: self.pre_signed_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

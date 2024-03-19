@@ -3,19 +3,19 @@
 /// <p>Describes a recurring charge.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecurringCharge {
+pub struct RecurringCharge  {
     /// <p>The amount of the recurring charge.</p>
     pub amount: ::std::option::Option<f64>,
     /// <p>The frequency of the recurring charge.</p>
     pub frequency: ::std::option::Option<crate::types::RecurringChargeFrequency>,
 }
-impl RecurringCharge {
+impl  RecurringCharge  {
     /// <p>The amount of the recurring charge.</p>
     pub fn amount(&self) -> ::std::option::Option<f64> {
         self.amount
     }
     /// <p>The frequency of the recurring charge.</p>
-    pub fn frequency(&self) -> ::std::option::Option<&crate::types::RecurringChargeFrequency> {
+    pub fn frequency(&self) -> ::std::option::Option<& crate::types::RecurringChargeFrequency> {
         self.frequency.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RecurringChargeBuilder {
     }
     /// <p>The amount of the recurring charge.</p>
     pub fn set_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The amount of the recurring charge.</p>
     pub fn get_amount(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl RecurringChargeBuilder {
     }
     /// <p>The frequency of the recurring charge.</p>
     pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::RecurringChargeFrequency>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>The frequency of the recurring charge.</p>
     pub fn get_frequency(&self) -> &::std::option::Option<crate::types::RecurringChargeFrequency> {
@@ -65,8 +63,11 @@ impl RecurringChargeBuilder {
     /// Consumes the builder and constructs a [`RecurringCharge`](crate::types::RecurringCharge).
     pub fn build(self) -> crate::types::RecurringCharge {
         crate::types::RecurringCharge {
-            amount: self.amount,
-            frequency: self.frequency,
+            amount: self.amount
+            ,
+            frequency: self.frequency
+            ,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The security group that the resource with the public IP address is in.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamPublicAddressSecurityGroup {
+pub struct IpamPublicAddressSecurityGroup  {
     /// <p>The security group's name.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group's ID.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl IpamPublicAddressSecurityGroup {
+impl  IpamPublicAddressSecurityGroup  {
     /// <p>The security group's name.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The security group's ID.</p>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IpamPublicAddressSecurityGroupBuilder {
     }
     /// <p>The security group's name.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The security group's name.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IpamPublicAddressSecurityGroupBuilder {
     }
     /// <p>The security group's ID.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The security group's ID.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IpamPublicAddressSecurityGroupBuilder {
     /// Consumes the builder and constructs a [`IpamPublicAddressSecurityGroup`](crate::types::IpamPublicAddressSecurityGroup).
     pub fn build(self) -> crate::types::IpamPublicAddressSecurityGroup {
         crate::types::IpamPublicAddressSecurityGroup {
-            group_name: self.group_name,
-            group_id: self.group_id,
+            group_name: self.group_name
+            ,
+            group_id: self.group_id
+            ,
         }
     }
 }
+

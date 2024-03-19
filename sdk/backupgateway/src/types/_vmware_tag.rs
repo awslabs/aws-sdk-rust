@@ -4,7 +4,7 @@
 /// <p>The content of VMware tags can be matched to Amazon Web Services tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VmwareTag {
+pub struct VmwareTag  {
     /// <p>The is the category of VMware.</p>
     pub vmware_category: ::std::option::Option<::std::string::String>,
     /// <p>This is the user-defined name of a VMware tag.</p>
@@ -12,17 +12,17 @@ pub struct VmwareTag {
     /// <p>This is a user-defined description of a VMware tag.</p>
     pub vmware_tag_description: ::std::option::Option<::std::string::String>,
 }
-impl VmwareTag {
+impl  VmwareTag  {
     /// <p>The is the category of VMware.</p>
-    pub fn vmware_category(&self) -> ::std::option::Option<&str> {
+    pub fn vmware_category(&self) -> ::std::option::Option<& str> {
         self.vmware_category.as_deref()
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
-    pub fn vmware_tag_name(&self) -> ::std::option::Option<&str> {
+    pub fn vmware_tag_name(&self) -> ::std::option::Option<& str> {
         self.vmware_tag_name.as_deref()
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
-    pub fn vmware_tag_description(&self) -> ::std::option::Option<&str> {
+    pub fn vmware_tag_description(&self) -> ::std::option::Option<& str> {
         self.vmware_tag_description.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl VmwareTagBuilder {
     }
     /// <p>The is the category of VMware.</p>
     pub fn set_vmware_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vmware_category = input;
-        self
+        self.vmware_category = input; self
     }
     /// <p>The is the category of VMware.</p>
     pub fn get_vmware_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl VmwareTagBuilder {
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn set_vmware_tag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vmware_tag_name = input;
-        self
+        self.vmware_tag_name = input; self
     }
     /// <p>This is the user-defined name of a VMware tag.</p>
     pub fn get_vmware_tag_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl VmwareTagBuilder {
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
     pub fn set_vmware_tag_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vmware_tag_description = input;
-        self
+        self.vmware_tag_description = input; self
     }
     /// <p>This is a user-defined description of a VMware tag.</p>
     pub fn get_vmware_tag_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,9 +84,13 @@ impl VmwareTagBuilder {
     /// Consumes the builder and constructs a [`VmwareTag`](crate::types::VmwareTag).
     pub fn build(self) -> crate::types::VmwareTag {
         crate::types::VmwareTag {
-            vmware_category: self.vmware_category,
-            vmware_tag_name: self.vmware_tag_name,
-            vmware_tag_description: self.vmware_tag_description,
+            vmware_category: self.vmware_category
+            ,
+            vmware_tag_name: self.vmware_tag_name
+            ,
+            vmware_tag_description: self.vmware_tag_description
+            ,
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>, or <code>ColumnsWildcard</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableWithColumnsResource {
+pub struct TableWithColumnsResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.</p>
@@ -12,33 +12,32 @@ pub struct TableWithColumnsResource {
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub name: ::std::string::String,
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub column_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub column_wildcard: ::std::option::Option<crate::types::ColumnWildcard>,
 }
-impl TableWithColumnsResource {
+impl  TableWithColumnsResource  {
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.column_names.is_none()`.
-    pub fn column_names(&self) -> &[::std::string::String] {
-        self.column_names.as_deref().unwrap_or_default()
+    pub fn column_names(&self) -> & [::std::string::String] {
+        self.column_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn column_wildcard(&self) -> ::std::option::Option<&crate::types::ColumnWildcard> {
+    pub fn column_wildcard(&self) -> ::std::option::Option<& crate::types::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
 }
@@ -56,7 +55,7 @@ pub struct TableWithColumnsResourceBuilder {
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) column_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) column_wildcard: ::std::option::Option<crate::types::ColumnWildcard>,
 }
 impl TableWithColumnsResourceBuilder {
@@ -67,8 +66,7 @@ impl TableWithColumnsResourceBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, it is the account ID of the caller.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl TableWithColumnsResourceBuilder {
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl TableWithColumnsResourceBuilder {
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,17 +107,16 @@ impl TableWithColumnsResourceBuilder {
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn column_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
-        v.push(input.into());
-        self.column_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.column_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.column_names = input;
-        self
+    pub fn set_column_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.column_names = input; self
     }
     /// <p>The list of column names for the table. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
-    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_column_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.column_names
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
@@ -131,8 +126,7 @@ impl TableWithColumnsResourceBuilder {
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn set_column_wildcard(mut self, input: ::std::option::Option<crate::types::ColumnWildcard>) -> Self {
-        self.column_wildcard = input;
-        self
+        self.column_wildcard = input; self
     }
     /// <p>A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code> or <code>ColumnWildcard</code> is required.</p>
     pub fn get_column_wildcard(&self) -> &::std::option::Option<crate::types::ColumnWildcard> {
@@ -143,22 +137,26 @@ impl TableWithColumnsResourceBuilder {
     /// - [`database_name`](crate::types::builders::TableWithColumnsResourceBuilder::database_name)
     /// - [`name`](crate::types::builders::TableWithColumnsResourceBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::TableWithColumnsResource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableWithColumnsResource {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building TableWithColumnsResource",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TableWithColumnsResource",
-                )
-            })?,
-            column_names: self.column_names,
-            column_wildcard: self.column_wildcard,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableWithColumnsResource {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building TableWithColumnsResource")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TableWithColumnsResource")
+                    )?
+                ,
+                column_names: self.column_names
+                ,
+                column_wildcard: self.column_wildcard
+                ,
+            }
+        )
     }
 }
+

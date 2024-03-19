@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPlatformVersionsInput {
+pub struct ListPlatformVersionsInput  {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFilter>>,
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPlatformVersionsInput {
+impl  ListPlatformVersionsInput  {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::PlatformFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::PlatformFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
@@ -24,7 +25,7 @@ impl ListPlatformVersionsInput {
     }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl ListPlatformVersionsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPlatformVersionsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFilter>>,
     pub(crate) max_records: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +52,16 @@ impl ListPlatformVersionsInputBuilder {
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
     pub fn filters(mut self, input: crate::types::PlatformFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlatformFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlatformFilter>> {
         &self.filters
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
@@ -71,8 +71,7 @@ impl ListPlatformVersionsInputBuilder {
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The maximum number of platform version values returned in one call.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
@@ -87,8 +86,7 @@ impl ListPlatformVersionsInputBuilder {
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
@@ -96,14 +94,17 @@ impl ListPlatformVersionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPlatformVersionsInput`](crate::operation::list_platform_versions::ListPlatformVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_platform_versions::ListPlatformVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_platform_versions::ListPlatformVersionsInput {
-            filters: self.filters,
-            max_records: self.max_records,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_platform_versions::ListPlatformVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_platform_versions::ListPlatformVersionsInput {
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

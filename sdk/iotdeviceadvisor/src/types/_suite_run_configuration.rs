@@ -3,24 +3,25 @@
 /// <p>Gets suite run configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuiteRunConfiguration {
+pub struct SuiteRunConfiguration  {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
     pub primary_device: ::std::option::Option<crate::types::DeviceUnderTest>,
     /// <p>Sets test case list.</p>
-    pub selected_test_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub selected_test_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub parallel_run: ::std::option::Option<bool>,
 }
-impl SuiteRunConfiguration {
+impl  SuiteRunConfiguration  {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    pub fn primary_device(&self) -> ::std::option::Option<&crate::types::DeviceUnderTest> {
+    pub fn primary_device(&self) -> ::std::option::Option<& crate::types::DeviceUnderTest> {
         self.primary_device.as_ref()
     }
     /// <p>Sets test case list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_test_list.is_none()`.
-    pub fn selected_test_list(&self) -> &[::std::string::String] {
-        self.selected_test_list.as_deref().unwrap_or_default()
+    pub fn selected_test_list(&self) -> & [::std::string::String] {
+        self.selected_test_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn parallel_run(&self) -> ::std::option::Option<bool> {
@@ -39,7 +40,7 @@ impl SuiteRunConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SuiteRunConfigurationBuilder {
     pub(crate) primary_device: ::std::option::Option<crate::types::DeviceUnderTest>,
-    pub(crate) selected_test_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) selected_test_list: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) parallel_run: ::std::option::Option<bool>,
 }
 impl SuiteRunConfigurationBuilder {
@@ -51,8 +52,7 @@ impl SuiteRunConfigurationBuilder {
     }
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
     pub fn set_primary_device(mut self, input: ::std::option::Option<crate::types::DeviceUnderTest>) -> Self {
-        self.primary_device = input;
-        self
+        self.primary_device = input; self
     }
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
     pub fn get_primary_device(&self) -> &::std::option::Option<crate::types::DeviceUnderTest> {
@@ -65,17 +65,16 @@ impl SuiteRunConfigurationBuilder {
     /// <p>Sets test case list.</p>
     pub fn selected_test_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.selected_test_list.unwrap_or_default();
-        v.push(input.into());
-        self.selected_test_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_test_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Sets test case list.</p>
-    pub fn set_selected_test_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.selected_test_list = input;
-        self
+    pub fn set_selected_test_list(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.selected_test_list = input; self
     }
     /// <p>Sets test case list.</p>
-    pub fn get_selected_test_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_selected_test_list(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.selected_test_list
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
@@ -85,8 +84,7 @@ impl SuiteRunConfigurationBuilder {
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn set_parallel_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.parallel_run = input;
-        self
+        self.parallel_run = input; self
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn get_parallel_run(&self) -> &::std::option::Option<bool> {
@@ -95,9 +93,13 @@ impl SuiteRunConfigurationBuilder {
     /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::types::SuiteRunConfiguration).
     pub fn build(self) -> crate::types::SuiteRunConfiguration {
         crate::types::SuiteRunConfiguration {
-            primary_device: self.primary_device,
-            selected_test_list: self.selected_test_list,
-            parallel_run: self.parallel_run,
+            primary_device: self.primary_device
+            ,
+            selected_test_list: self.selected_test_list
+            ,
+            parallel_run: self.parallel_run
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDataSourceOutput {
+pub struct DescribeDataSourceOutput  {
     /// <p>The information on the data source.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -11,13 +11,13 @@ pub struct DescribeDataSourceOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DescribeDataSourceOutput {
+impl  DescribeDataSourceOutput  {
     /// <p>The information on the data source.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -26,10 +26,10 @@ impl DescribeDataSourceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
     pub fn builder() -> crate::operation::describe_data_source::builders::DescribeDataSourceOutputBuilder {
@@ -54,8 +54,7 @@ impl DescribeDataSourceOutputBuilder {
     }
     /// <p>The information on the data source.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The information on the data source.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -68,8 +67,7 @@ impl DescribeDataSourceOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,33 @@ impl DescribeDataSourceOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDataSourceOutput`](crate::operation::describe_data_source::DescribeDataSourceOutput).
     pub fn build(self) -> crate::operation::describe_data_source::DescribeDataSourceOutput {
         crate::operation::describe_data_source::DescribeDataSourceOutput {
-            data_source: self.data_source,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            data_source: self.data_source
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

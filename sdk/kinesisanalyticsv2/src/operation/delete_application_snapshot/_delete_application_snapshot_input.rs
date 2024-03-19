@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationSnapshotInput {
+pub struct DeleteApplicationSnapshotInput  {
     /// <p>The name of an existing application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the snapshot delete.</p>
@@ -10,17 +10,17 @@ pub struct DeleteApplicationSnapshotInput {
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeleteApplicationSnapshotInput {
+impl  DeleteApplicationSnapshotInput  {
     /// <p>The name of an existing application.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The identifier for the snapshot delete.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
-    pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl DeleteApplicationSnapshotInputBuilder {
     }
     /// <p>The name of an existing application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an existing application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeleteApplicationSnapshotInputBuilder {
     }
     /// <p>The identifier for the snapshot delete.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The identifier for the snapshot delete.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl DeleteApplicationSnapshotInputBuilder {
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub fn set_snapshot_creation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_creation_timestamp = input;
-        self
+        self.snapshot_creation_timestamp = input; self
     }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub fn get_snapshot_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_creation_timestamp
     }
     /// Consumes the builder and constructs a [`DeleteApplicationSnapshotInput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput {
-            application_name: self.application_name,
-            snapshot_name: self.snapshot_name,
-            snapshot_creation_timestamp: self.snapshot_creation_timestamp,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput {
+                application_name: self.application_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_creation_timestamp: self.snapshot_creation_timestamp
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFunctionConcurrencyOutput {
+pub struct PutFunctionConcurrencyOutput  {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub reserved_concurrent_executions: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl PutFunctionConcurrencyOutput {
+impl  PutFunctionConcurrencyOutput  {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub fn reserved_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.reserved_concurrent_executions
     }
 }
 impl ::aws_types::request_id::RequestId for PutFunctionConcurrencyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutFunctionConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyOutput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput).
     pub fn builder() -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyOutputBuilder {
@@ -40,27 +40,28 @@ impl PutFunctionConcurrencyOutputBuilder {
     }
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub fn set_reserved_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.reserved_concurrent_executions = input;
-        self
+        self.reserved_concurrent_executions = input; self
     }
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     pub fn get_reserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
         &self.reserved_concurrent_executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutFunctionConcurrencyOutput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput).
     pub fn build(self) -> crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput {
         crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput {
-            reserved_concurrent_executions: self.reserved_concurrent_executions,
+            reserved_concurrent_executions: self.reserved_concurrent_executions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

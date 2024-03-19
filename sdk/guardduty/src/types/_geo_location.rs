@@ -3,13 +3,13 @@
 /// <p>Contains information about the location of the remote IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GeoLocation {
+pub struct GeoLocation  {
     /// <p>The latitude information of the remote IP address.</p>
     pub lat: ::std::option::Option<f64>,
     /// <p>The longitude information of the remote IP address.</p>
     pub lon: ::std::option::Option<f64>,
 }
-impl GeoLocation {
+impl  GeoLocation  {
     /// <p>The latitude information of the remote IP address.</p>
     pub fn lat(&self) -> ::std::option::Option<f64> {
         self.lat
@@ -41,8 +41,7 @@ impl GeoLocationBuilder {
     }
     /// <p>The latitude information of the remote IP address.</p>
     pub fn set_lat(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lat = input;
-        self
+        self.lat = input; self
     }
     /// <p>The latitude information of the remote IP address.</p>
     pub fn get_lat(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl GeoLocationBuilder {
     }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.lon = input;
-        self
+        self.lon = input; self
     }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn get_lon(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl GeoLocationBuilder {
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {
         crate::types::GeoLocation {
-            lat: self.lat,
-            lon: self.lon,
+            lat: self.lat
+            ,
+            lon: self.lon
+            ,
         }
     }
 }
+

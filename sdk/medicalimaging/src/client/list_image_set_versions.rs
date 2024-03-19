@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImageSetVersions`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`datastore_id(impl Into<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::set_datastore_id):<br>required: **true**<br><p>The data store identifier.</p><br>
     ///   - [`image_set_id(impl Into<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::image_set_id) / [`set_image_set_id(Option<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::set_image_set_id):<br>required: **true**<br><p>The image set identifier.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token used to request the list of image set versions on the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The max results count.</p><br>
-    /// - On success, responds with [`ListImageSetVersionsOutput`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput) with field(s):
+                            /// - On success, responds with [`ListImageSetVersionsOutput`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput) with field(s):
     ///   - [`image_set_properties_list(Vec::<ImageSetProperties>)`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput::image_set_properties_list): <p>Lists all properties associated with an image set.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_image_set_versions::ListImageSetVersionsOutput::next_token): <p>The pagination token used to retrieve the list of image set versions on the next page.</p>
-    /// - On failure, responds with [`SdkError<ListImageSetVersionsError>`](crate::operation::list_image_set_versions::ListImageSetVersionsError)
+                            /// - On failure, responds with [`SdkError<ListImageSetVersionsError>`](crate::operation::list_image_set_versions::ListImageSetVersionsError)
     pub fn list_image_set_versions(&self) -> crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder {
-        crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_image_set_versions::builders::ListImageSetVersionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

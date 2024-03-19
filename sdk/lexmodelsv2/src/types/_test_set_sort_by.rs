@@ -3,19 +3,19 @@
 /// <p>Contains information about the methods by which to sort the test set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TestSetSortBy {
+pub struct TestSetSortBy  {
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
     pub attribute: crate::types::TestSetSortAttribute,
     /// <p>Specifies whether to sort in ascending or descending order.</p>
     pub order: crate::types::SortOrder,
 }
-impl TestSetSortBy {
+impl  TestSetSortBy  {
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
-    pub fn attribute(&self) -> &crate::types::TestSetSortAttribute {
+    pub fn attribute(&self) -> & crate::types::TestSetSortAttribute {
         &self.attribute
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
-    pub fn order(&self) -> &crate::types::SortOrder {
+    pub fn order(&self) -> & crate::types::SortOrder {
         &self.order
     }
 }
@@ -42,8 +42,7 @@ impl TestSetSortByBuilder {
     }
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::TestSetSortAttribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>Specifies whether to sort the test sets by name or by the time they were last updated.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::TestSetSortAttribute> {
@@ -57,8 +56,7 @@ impl TestSetSortByBuilder {
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Specifies whether to sort in ascending or descending order.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -69,19 +67,20 @@ impl TestSetSortByBuilder {
     /// - [`attribute`](crate::types::builders::TestSetSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::TestSetSortByBuilder::order)
     pub fn build(self) -> ::std::result::Result<crate::types::TestSetSortBy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TestSetSortBy {
-            attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute",
-                    "attribute was not specified but it is required when building TestSetSortBy",
-                )
-            })?,
-            order: self.order.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "order",
-                    "order was not specified but it is required when building TestSetSortBy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TestSetSortBy {
+                attribute: self.attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute", "attribute was not specified but it is required when building TestSetSortBy")
+                    )?
+                ,
+                order: self.order
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("order", "order was not specified but it is required when building TestSetSortBy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAccountAssignmentOutput {
+pub struct CreateAccountAssignmentOutput  {
     /// <p>The status object for the account assignment creation operation.</p>
     pub account_assignment_creation_status: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>,
     _request_id: Option<String>,
 }
-impl CreateAccountAssignmentOutput {
+impl  CreateAccountAssignmentOutput  {
     /// <p>The status object for the account assignment creation operation.</p>
-    pub fn account_assignment_creation_status(&self) -> ::std::option::Option<&crate::types::AccountAssignmentOperationStatus> {
+    pub fn account_assignment_creation_status(&self) -> ::std::option::Option<& crate::types::AccountAssignmentOperationStatus> {
         self.account_assignment_creation_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccountAssignmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAccountAssignmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentOutput`](crate::operation::create_account_assignment::CreateAccountAssignmentOutput).
     pub fn builder() -> crate::operation::create_account_assignment::builders::CreateAccountAssignmentOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateAccountAssignmentOutputBuilder {
     }
     /// <p>The status object for the account assignment creation operation.</p>
     pub fn set_account_assignment_creation_status(mut self, input: ::std::option::Option<crate::types::AccountAssignmentOperationStatus>) -> Self {
-        self.account_assignment_creation_status = input;
-        self
+        self.account_assignment_creation_status = input; self
     }
     /// <p>The status object for the account assignment creation operation.</p>
     pub fn get_account_assignment_creation_status(&self) -> &::std::option::Option<crate::types::AccountAssignmentOperationStatus> {
         &self.account_assignment_creation_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAccountAssignmentOutput`](crate::operation::create_account_assignment::CreateAccountAssignmentOutput).
     pub fn build(self) -> crate::operation::create_account_assignment::CreateAccountAssignmentOutput {
         crate::operation::create_account_assignment::CreateAccountAssignmentOutput {
-            account_assignment_creation_status: self.account_assignment_creation_status,
+            account_assignment_creation_status: self.account_assignment_creation_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

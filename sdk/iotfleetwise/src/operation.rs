@@ -156,3 +156,4 @@ pub mod update_signal_catalog;
 
 /// Types for the `UpdateVehicle` operation.
 pub mod update_vehicle;
+

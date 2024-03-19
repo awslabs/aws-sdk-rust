@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateScriptOutput {
+pub struct UpdateScriptOutput  {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub script: ::std::option::Option<crate::types::Script>,
     _request_id: Option<String>,
 }
-impl UpdateScriptOutput {
+impl  UpdateScriptOutput  {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
-    pub fn script(&self) -> ::std::option::Option<&crate::types::Script> {
+    pub fn script(&self) -> ::std::option::Option<& crate::types::Script> {
         self.script.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateScriptOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateScriptOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScriptOutput`](crate::operation::update_script::UpdateScriptOutput).
     pub fn builder() -> crate::operation::update_script::builders::UpdateScriptOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateScriptOutputBuilder {
     }
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub fn set_script(mut self, input: ::std::option::Option<crate::types::Script>) -> Self {
-        self.script = input;
-        self
+        self.script = input; self
     }
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     pub fn get_script(&self) -> &::std::option::Option<crate::types::Script> {
         &self.script
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateScriptOutput`](crate::operation::update_script::UpdateScriptOutput).
     pub fn build(self) -> crate::operation::update_script::UpdateScriptOutput {
         crate::operation::update_script::UpdateScriptOutput {
-            script: self.script,
+            script: self.script
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

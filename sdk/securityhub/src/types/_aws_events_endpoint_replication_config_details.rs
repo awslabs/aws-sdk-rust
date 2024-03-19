@@ -3,13 +3,13 @@
 /// <p>Indicates whether replication is enabled or disabled for the endpoint. If enabled, the endpoint can replicate all events to a secondary Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEventsEndpointReplicationConfigDetails {
+pub struct AwsEventsEndpointReplicationConfigDetails  {
     /// <p>The state of event replication.</p>
     pub state: ::std::option::Option<::std::string::String>,
 }
-impl AwsEventsEndpointReplicationConfigDetails {
+impl  AwsEventsEndpointReplicationConfigDetails  {
     /// <p>The state of event replication.</p>
-    pub fn state(&self) -> ::std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<& str> {
         self.state.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEventsEndpointReplicationConfigDetailsBuilder {
     }
     /// <p>The state of event replication.</p>
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of event replication.</p>
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AwsEventsEndpointReplicationConfigDetailsBuilder {
     }
     /// Consumes the builder and constructs a [`AwsEventsEndpointReplicationConfigDetails`](crate::types::AwsEventsEndpointReplicationConfigDetails).
     pub fn build(self) -> crate::types::AwsEventsEndpointReplicationConfigDetails {
-        crate::types::AwsEventsEndpointReplicationConfigDetails { state: self.state }
+        crate::types::AwsEventsEndpointReplicationConfigDetails {
+            state: self.state
+            ,
+        }
     }
 }
+

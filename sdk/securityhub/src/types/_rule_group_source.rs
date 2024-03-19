@@ -3,33 +3,34 @@
 /// <p>The rules and actions for the rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupSource {
+pub struct RuleGroupSource  {
     /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
     pub rules_source_list: ::std::option::Option<crate::types::RuleGroupSourceListDetails>,
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
     pub rules_string: ::std::option::Option<::std::string::String>,
     /// <p>Suricata rule specifications.</p>
-    pub stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>>,
+    pub stateful_rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSourceStatefulRulesDetails>>,
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
     pub stateless_rules_and_custom_actions: ::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
 }
-impl RuleGroupSource {
+impl  RuleGroupSource  {
     /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
-    pub fn rules_source_list(&self) -> ::std::option::Option<&crate::types::RuleGroupSourceListDetails> {
+    pub fn rules_source_list(&self) -> ::std::option::Option<& crate::types::RuleGroupSourceListDetails> {
         self.rules_source_list.as_ref()
     }
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
-    pub fn rules_string(&self) -> ::std::option::Option<&str> {
+    pub fn rules_string(&self) -> ::std::option::Option<& str> {
         self.rules_string.as_deref()
     }
     /// <p>Suricata rule specifications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_rules.is_none()`.
-    pub fn stateful_rules(&self) -> &[crate::types::RuleGroupSourceStatefulRulesDetails] {
-        self.stateful_rules.as_deref().unwrap_or_default()
+    pub fn stateful_rules(&self) -> & [crate::types::RuleGroupSourceStatefulRulesDetails] {
+        self.stateful_rules.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
-    pub fn stateless_rules_and_custom_actions(&self) -> ::std::option::Option<&crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails> {
+    pub fn stateless_rules_and_custom_actions(&self) -> ::std::option::Option<& crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails> {
         self.stateless_rules_and_custom_actions.as_ref()
     }
 }
@@ -46,7 +47,7 @@ impl RuleGroupSource {
 pub struct RuleGroupSourceBuilder {
     pub(crate) rules_source_list: ::std::option::Option<crate::types::RuleGroupSourceListDetails>,
     pub(crate) rules_string: ::std::option::Option<::std::string::String>,
-    pub(crate) stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>>,
+    pub(crate) stateful_rules: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSourceStatefulRulesDetails>>,
     pub(crate) stateless_rules_and_custom_actions: ::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
 }
 impl RuleGroupSourceBuilder {
@@ -57,8 +58,7 @@ impl RuleGroupSourceBuilder {
     }
     /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
     pub fn set_rules_source_list(mut self, input: ::std::option::Option<crate::types::RuleGroupSourceListDetails>) -> Self {
-        self.rules_source_list = input;
-        self
+        self.rules_source_list = input; self
     }
     /// <p>Stateful inspection criteria for a domain list rule group. A domain list rule group determines access by specific protocols to specific domains.</p>
     pub fn get_rules_source_list(&self) -> &::std::option::Option<crate::types::RuleGroupSourceListDetails> {
@@ -71,8 +71,7 @@ impl RuleGroupSourceBuilder {
     }
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
     pub fn set_rules_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rules_string = input;
-        self
+        self.rules_string = input; self
     }
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.</p>
     pub fn get_rules_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,17 +84,16 @@ impl RuleGroupSourceBuilder {
     /// <p>Suricata rule specifications.</p>
     pub fn stateful_rules(mut self, input: crate::types::RuleGroupSourceStatefulRulesDetails) -> Self {
         let mut v = self.stateful_rules.unwrap_or_default();
-        v.push(input);
-        self.stateful_rules = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stateful_rules = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Suricata rule specifications.</p>
-    pub fn set_stateful_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>>) -> Self {
-        self.stateful_rules = input;
-        self
+    pub fn set_stateful_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSourceStatefulRulesDetails>>) -> Self {
+        self.stateful_rules = input; self
     }
     /// <p>Suricata rule specifications.</p>
-    pub fn get_stateful_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesDetails>> {
+    pub fn get_stateful_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RuleGroupSourceStatefulRulesDetails>> {
         &self.stateful_rules
     }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
@@ -104,26 +102,25 @@ impl RuleGroupSourceBuilder {
         self
     }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
-    pub fn set_stateless_rules_and_custom_actions(
-        mut self,
-        input: ::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>,
-    ) -> Self {
-        self.stateless_rules_and_custom_actions = input;
-        self
+    pub fn set_stateless_rules_and_custom_actions(mut self, input: ::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails>) -> Self {
+        self.stateless_rules_and_custom_actions = input; self
     }
     /// <p>The stateless rules and custom actions used by a stateless rule group.</p>
-    pub fn get_stateless_rules_and_custom_actions(
-        &self,
-    ) -> &::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails> {
+    pub fn get_stateless_rules_and_custom_actions(&self) -> &::std::option::Option<crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails> {
         &self.stateless_rules_and_custom_actions
     }
     /// Consumes the builder and constructs a [`RuleGroupSource`](crate::types::RuleGroupSource).
     pub fn build(self) -> crate::types::RuleGroupSource {
         crate::types::RuleGroupSource {
-            rules_source_list: self.rules_source_list,
-            rules_string: self.rules_string,
-            stateful_rules: self.stateful_rules,
-            stateless_rules_and_custom_actions: self.stateless_rules_and_custom_actions,
+            rules_source_list: self.rules_source_list
+            ,
+            rules_string: self.rules_string
+            ,
+            stateful_rules: self.stateful_rules
+            ,
+            stateless_rules_and_custom_actions: self.stateless_rules_and_custom_actions
+            ,
         }
     }
 }
+

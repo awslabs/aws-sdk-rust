@@ -3,15 +3,15 @@
 /// <p>Describes a resource count.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkResourceCount {
+pub struct NetworkResourceCount  {
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource count.</p>
     pub count: ::std::option::Option<i32>,
 }
-impl NetworkResourceCount {
+impl  NetworkResourceCount  {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The resource count.</p>
@@ -41,8 +41,7 @@ impl NetworkResourceCountBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl NetworkResourceCountBuilder {
     }
     /// <p>The resource count.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The resource count.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl NetworkResourceCountBuilder {
     /// Consumes the builder and constructs a [`NetworkResourceCount`](crate::types::NetworkResourceCount).
     pub fn build(self) -> crate::types::NetworkResourceCount {
         crate::types::NetworkResourceCount {
-            resource_type: self.resource_type,
-            count: self.count,
+            resource_type: self.resource_type
+            ,
+            count: self.count
+            ,
         }
     }
 }
+

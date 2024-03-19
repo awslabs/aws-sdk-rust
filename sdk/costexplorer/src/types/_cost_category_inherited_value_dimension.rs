@@ -3,21 +3,21 @@
 /// <p>When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CostCategoryInheritedValueDimension {
+pub struct CostCategoryInheritedValueDimension  {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     pub dimension_name: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>,
     /// <p>The key to extract cost category values.</p>
     pub dimension_key: ::std::option::Option<::std::string::String>,
 }
-impl CostCategoryInheritedValueDimension {
+impl  CostCategoryInheritedValueDimension  {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
-    pub fn dimension_name(&self) -> ::std::option::Option<&crate::types::CostCategoryInheritedValueDimensionName> {
+    pub fn dimension_name(&self) -> ::std::option::Option<& crate::types::CostCategoryInheritedValueDimensionName> {
         self.dimension_name.as_ref()
     }
     /// <p>The key to extract cost category values.</p>
-    pub fn dimension_key(&self) -> ::std::option::Option<&str> {
+    pub fn dimension_key(&self) -> ::std::option::Option<& str> {
         self.dimension_key.as_deref()
     }
 }
@@ -45,8 +45,7 @@ impl CostCategoryInheritedValueDimensionBuilder {
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<crate::types::CostCategoryInheritedValueDimensionName>) -> Self {
-        self.dimension_name = input;
-        self
+        self.dimension_name = input; self
     }
     /// <p>The name of the dimension that's used to group costs.</p>
     /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on account name. If you specify <code>TAG</code>, the cost category value is based on the value of the specified tag key.</p>
@@ -60,8 +59,7 @@ impl CostCategoryInheritedValueDimensionBuilder {
     }
     /// <p>The key to extract cost category values.</p>
     pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dimension_key = input;
-        self
+        self.dimension_key = input; self
     }
     /// <p>The key to extract cost category values.</p>
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +68,11 @@ impl CostCategoryInheritedValueDimensionBuilder {
     /// Consumes the builder and constructs a [`CostCategoryInheritedValueDimension`](crate::types::CostCategoryInheritedValueDimension).
     pub fn build(self) -> crate::types::CostCategoryInheritedValueDimension {
         crate::types::CostCategoryInheritedValueDimension {
-            dimension_name: self.dimension_name,
-            dimension_key: self.dimension_key,
+            dimension_name: self.dimension_name
+            ,
+            dimension_key: self.dimension_key
+            ,
         }
     }
 }
+

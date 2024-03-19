@@ -6,19 +6,18 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentAlarms {
+pub struct DeploymentAlarms  {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub alarm_names: ::std::vec::Vec<::std::string::String>,
+    pub alarm_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: bool,
 }
-impl DeploymentAlarms {
+impl  DeploymentAlarms  {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn alarm_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.alarm_names.deref()
+    pub fn alarm_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.alarm_names.deref()
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn enable(&self) -> bool {
@@ -40,7 +39,7 @@ impl DeploymentAlarms {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeploymentAlarmsBuilder {
-    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) enable: ::std::option::Option<bool>,
     pub(crate) rollback: ::std::option::Option<bool>,
 }
@@ -52,17 +51,16 @@ impl DeploymentAlarmsBuilder {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
     pub fn alarm_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.alarm_names = input;
-        self
+    pub fn set_alarm_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.alarm_names = input; self
     }
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_alarm_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.alarm_names
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
@@ -73,8 +71,7 @@ impl DeploymentAlarmsBuilder {
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
@@ -88,8 +85,7 @@ impl DeploymentAlarmsBuilder {
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rollback = input;
-        self
+        self.rollback = input; self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn get_rollback(&self) -> &::std::option::Option<bool> {
@@ -99,15 +95,21 @@ impl DeploymentAlarmsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_names`](crate::types::builders::DeploymentAlarmsBuilder::alarm_names)
     pub fn build(self) -> ::std::result::Result<crate::types::DeploymentAlarms, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeploymentAlarms {
-            alarm_names: self.alarm_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "alarm_names",
-                    "alarm_names was not specified but it is required when building DeploymentAlarms",
-                )
-            })?,
-            enable: self.enable.unwrap_or_default(),
-            rollback: self.rollback.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeploymentAlarms {
+                alarm_names: self.alarm_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("alarm_names", "alarm_names was not specified but it is required when building DeploymentAlarms")
+                    )?
+                ,
+                enable: self.enable
+                    .unwrap_or_default()
+                ,
+                rollback: self.rollback
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

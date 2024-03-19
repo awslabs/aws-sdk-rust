@@ -3,16 +3,17 @@
 /// <p>Within the pay-as-you-go model defined under <code>UsageBasedPricingTerm</code>, the <code>UsageBasedRateCardItem</code> defines an individual rate for a product dimension.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UsageBasedRateCardItem {
+pub struct UsageBasedRateCardItem  {
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub rate_card: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>,
+    pub rate_card: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>,
 }
-impl UsageBasedRateCardItem {
+impl  UsageBasedRateCardItem  {
     /// <p>Defines the per unit rates for product dimensions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rate_card.is_none()`.
-    pub fn rate_card(&self) -> &[crate::types::RateCardItem] {
-        self.rate_card.as_deref().unwrap_or_default()
+    pub fn rate_card(&self) -> & [crate::types::RateCardItem] {
+        self.rate_card.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UsageBasedRateCardItem {
@@ -26,7 +27,7 @@ impl UsageBasedRateCardItem {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageBasedRateCardItemBuilder {
-    pub(crate) rate_card: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>,
+    pub(crate) rate_card: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>,
 }
 impl UsageBasedRateCardItemBuilder {
     /// Appends an item to `rate_card`.
@@ -36,21 +37,24 @@ impl UsageBasedRateCardItemBuilder {
     /// <p>Defines the per unit rates for product dimensions.</p>
     pub fn rate_card(mut self, input: crate::types::RateCardItem) -> Self {
         let mut v = self.rate_card.unwrap_or_default();
-        v.push(input);
-        self.rate_card = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.rate_card = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub fn set_rate_card(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>>) -> Self {
-        self.rate_card = input;
-        self
+    pub fn set_rate_card(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>>) -> Self {
+        self.rate_card = input; self
     }
     /// <p>Defines the per unit rates for product dimensions.</p>
-    pub fn get_rate_card(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateCardItem>> {
+    pub fn get_rate_card(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RateCardItem>> {
         &self.rate_card
     }
     /// Consumes the builder and constructs a [`UsageBasedRateCardItem`](crate::types::UsageBasedRateCardItem).
     pub fn build(self) -> crate::types::UsageBasedRateCardItem {
-        crate::types::UsageBasedRateCardItem { rate_card: self.rate_card }
+        crate::types::UsageBasedRateCardItem {
+            rate_card: self.rate_card
+            ,
+        }
     }
 }
+

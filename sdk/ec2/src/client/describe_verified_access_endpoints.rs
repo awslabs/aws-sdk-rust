@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeVerifiedAccessEndpoints`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`verified_access_endpoint_ids(impl Into<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::verified_access_endpoint_ids) / [`set_verified_access_endpoint_ids(Option<Vec::<String>>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_verified_access_endpoint_ids):<br>required: **false**<br><p>The ID of the Verified Access endpoint.</p><br>
     ///   - [`verified_access_instance_id(impl Into<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::verified_access_instance_id) / [`set_verified_access_instance_id(Option<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_verified_access_instance_id):<br>required: **false**<br><p>The ID of the Verified Access instance.</p><br>
     ///   - [`verified_access_group_id(impl Into<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::verified_access_group_id) / [`set_verified_access_group_id(Option<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_verified_access_group_id):<br>required: **false**<br><p>The ID of the Verified Access group.</p><br>
@@ -11,13 +11,12 @@ impl super::Client {
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters. Filter names and values are case-sensitive.</p><br>
     ///   - [`dry_run(bool)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
-    /// - On success, responds with [`DescribeVerifiedAccessEndpointsOutput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput) with field(s):
+                            /// - On success, responds with [`DescribeVerifiedAccessEndpointsOutput`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput) with field(s):
     ///   - [`verified_access_endpoints(Option<Vec::<VerifiedAccessEndpoint>>)`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput::verified_access_endpoints): <p>Details about the Verified Access endpoints.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeVerifiedAccessEndpointsError>`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsError)
-    pub fn describe_verified_access_endpoints(
-        &self,
-    ) -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder {
-        crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeVerifiedAccessEndpointsError>`](crate::operation::describe_verified_access_endpoints::DescribeVerifiedAccessEndpointsError)
+    pub fn describe_verified_access_endpoints(&self) -> crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder {
+                                crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

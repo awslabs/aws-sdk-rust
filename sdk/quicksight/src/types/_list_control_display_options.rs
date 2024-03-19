@@ -3,7 +3,7 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListControlDisplayOptions {
+pub struct ListControlDisplayOptions  {
     /// <p>The configuration of the search options in a list control.</p>
     pub search_options: ::std::option::Option<crate::types::ListControlSearchOptions>,
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
@@ -13,21 +13,21 @@ pub struct ListControlDisplayOptions {
     /// <p>The configuration of info icon label options.</p>
     pub info_icon_label_options: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>,
 }
-impl ListControlDisplayOptions {
+impl  ListControlDisplayOptions  {
     /// <p>The configuration of the search options in a list control.</p>
-    pub fn search_options(&self) -> ::std::option::Option<&crate::types::ListControlSearchOptions> {
+    pub fn search_options(&self) -> ::std::option::Option<& crate::types::ListControlSearchOptions> {
         self.search_options.as_ref()
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
-    pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::ListControlSelectAllOptions> {
+    pub fn select_all_options(&self) -> ::std::option::Option<& crate::types::ListControlSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> ::std::option::Option<& crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
     /// <p>The configuration of info icon label options.</p>
-    pub fn info_icon_label_options(&self) -> ::std::option::Option<&crate::types::SheetControlInfoIconLabelOptions> {
+    pub fn info_icon_label_options(&self) -> ::std::option::Option<& crate::types::SheetControlInfoIconLabelOptions> {
         self.info_icon_label_options.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ListControlDisplayOptionsBuilder {
     }
     /// <p>The configuration of the search options in a list control.</p>
     pub fn set_search_options(mut self, input: ::std::option::Option<crate::types::ListControlSearchOptions>) -> Self {
-        self.search_options = input;
-        self
+        self.search_options = input; self
     }
     /// <p>The configuration of the search options in a list control.</p>
     pub fn get_search_options(&self) -> &::std::option::Option<crate::types::ListControlSearchOptions> {
@@ -69,8 +68,7 @@ impl ListControlDisplayOptionsBuilder {
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
     pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::ListControlSelectAllOptions>) -> Self {
-        self.select_all_options = input;
-        self
+        self.select_all_options = input; self
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
     pub fn get_select_all_options(&self) -> &::std::option::Option<crate::types::ListControlSelectAllOptions> {
@@ -83,8 +81,7 @@ impl ListControlDisplayOptionsBuilder {
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn set_title_options(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
-        self.title_options = input;
-        self
+        self.title_options = input; self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn get_title_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
@@ -97,8 +94,7 @@ impl ListControlDisplayOptionsBuilder {
     }
     /// <p>The configuration of info icon label options.</p>
     pub fn set_info_icon_label_options(mut self, input: ::std::option::Option<crate::types::SheetControlInfoIconLabelOptions>) -> Self {
-        self.info_icon_label_options = input;
-        self
+        self.info_icon_label_options = input; self
     }
     /// <p>The configuration of info icon label options.</p>
     pub fn get_info_icon_label_options(&self) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
@@ -107,10 +103,15 @@ impl ListControlDisplayOptionsBuilder {
     /// Consumes the builder and constructs a [`ListControlDisplayOptions`](crate::types::ListControlDisplayOptions).
     pub fn build(self) -> crate::types::ListControlDisplayOptions {
         crate::types::ListControlDisplayOptions {
-            search_options: self.search_options,
-            select_all_options: self.select_all_options,
-            title_options: self.title_options,
-            info_icon_label_options: self.info_icon_label_options,
+            search_options: self.search_options
+            ,
+            select_all_options: self.select_all_options
+            ,
+            title_options: self.title_options
+            ,
+            info_icon_label_options: self.info_icon_label_options
+            ,
         }
     }
 }
+

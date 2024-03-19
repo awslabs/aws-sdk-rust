@@ -3,13 +3,13 @@
 /// Get Agent Request
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentInput {
+pub struct GetAgentInput  {
     /// Id generated at the server side when an Agent is created
     pub agent_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAgentInput {
+impl  GetAgentInput  {
     /// Id generated at the server side when an Agent is created
-    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<& str> {
         self.agent_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl GetAgentInputBuilder {
     }
     /// Id generated at the server side when an Agent is created
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Id generated at the server side when an Agent is created
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl GetAgentInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetAgentInput`](crate::operation::get_agent::GetAgentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_agent::GetAgentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_agent::GetAgentInput { agent_id: self.agent_id })
+        ::std::result::Result::Ok(
+            crate::operation::get_agent::GetAgentInput {
+                agent_id: self.agent_id
+                ,
+            }
+        )
     }
 }
+

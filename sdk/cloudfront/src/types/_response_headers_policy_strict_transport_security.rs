@@ -4,7 +4,7 @@
 /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResponseHeadersPolicyStrictTransportSecurity {
+pub struct ResponseHeadersPolicyStrictTransportSecurity  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub r#override: bool,
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
@@ -14,7 +14,7 @@ pub struct ResponseHeadersPolicyStrictTransportSecurity {
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub access_control_max_age_sec: i32,
 }
-impl ResponseHeadersPolicyStrictTransportSecurity {
+impl  ResponseHeadersPolicyStrictTransportSecurity  {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(&self) -> bool {
         self.r#override
@@ -57,8 +57,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.r#override = input;
-        self
+        self.r#override = input; self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn get_override(&self) -> &::std::option::Option<bool> {
@@ -71,8 +70,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn set_include_subdomains(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_subdomains = input;
-        self
+        self.include_subdomains = input; self
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn get_include_subdomains(&self) -> &::std::option::Option<bool> {
@@ -85,8 +83,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn set_preload(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.preload = input;
-        self
+        self.preload = input; self
     }
     /// <p>A Boolean that determines whether CloudFront includes the <code>preload</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn get_preload(&self) -> &::std::option::Option<bool> {
@@ -100,8 +97,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     }
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn set_access_control_max_age_sec(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.access_control_max_age_sec = input;
-        self
+        self.access_control_max_age_sec = input; self
     }
     /// <p>A number that CloudFront uses as the value for the <code>max-age</code> directive in the <code>Strict-Transport-Security</code> HTTP response header.</p>
     pub fn get_access_control_max_age_sec(&self) -> &::std::option::Option<i32> {
@@ -111,24 +107,25 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::r#override)
     /// - [`access_control_max_age_sec`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::access_control_max_age_sec)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyStrictTransportSecurity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyStrictTransportSecurity {
-            r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#override",
-                    "r#override was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity",
-                )
-            })?,
-            include_subdomains: self.include_subdomains,
-            preload: self.preload,
-            access_control_max_age_sec: self.access_control_max_age_sec.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_control_max_age_sec",
-                    "access_control_max_age_sec was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyStrictTransportSecurity, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ResponseHeadersPolicyStrictTransportSecurity {
+                r#override: self.r#override
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#override", "r#override was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity")
+                    )?
+                ,
+                include_subdomains: self.include_subdomains
+                ,
+                preload: self.preload
+                ,
+                access_control_max_age_sec: self.access_control_max_age_sec
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_control_max_age_sec", "access_control_max_age_sec was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity")
+                    )?
+                ,
+            }
+        )
     }
 }
+

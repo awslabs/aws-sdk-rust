@@ -4,7 +4,7 @@
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Body {
+pub struct Body  {
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct Body {
     /// <p>Default: <code>CONTINUE</code></p>
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
-impl Body {
+impl  Body  {
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
     /// <ul>
@@ -46,7 +46,7 @@ impl Body {
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
-    pub fn oversize_handling(&self) -> ::std::option::Option<&crate::types::OversizeHandling> {
+    pub fn oversize_handling(&self) -> ::std::option::Option<& crate::types::OversizeHandling> {
         self.oversize_handling.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl BodyBuilder {
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
-        self.oversize_handling = input;
-        self
+        self.oversize_handling = input; self
     }
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
@@ -135,7 +134,9 @@ impl BodyBuilder {
     /// Consumes the builder and constructs a [`Body`](crate::types::Body).
     pub fn build(self) -> crate::types::Body {
         crate::types::Body {
-            oversize_handling: self.oversize_handling,
+            oversize_handling: self.oversize_handling
+            ,
         }
     }
 }
+

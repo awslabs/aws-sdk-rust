@@ -3,25 +3,23 @@
 /// <p>A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     pub attribute_path: ::std::string::String,
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
     pub attribute_value: ::std::string::String,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn attribute_path(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_path.deref()
+    pub fn attribute_path(&self) -> & str {
+        use std::ops::Deref; self.attribute_path.deref()
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
-    pub fn attribute_value(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_value.deref()
+    pub fn attribute_value(&self) -> & str {
+        use std::ops::Deref; self.attribute_value.deref()
     }
 }
-impl ::std::fmt::Debug for Filter {
+impl  ::std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("attribute_path", &self.attribute_path);
@@ -52,8 +50,7 @@ impl FilterBuilder {
     }
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     pub fn set_attribute_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_path = input;
-        self
+        self.attribute_path = input; self
     }
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     pub fn get_attribute_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl FilterBuilder {
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl FilterBuilder {
     /// - [`attribute_path`](crate::types::builders::FilterBuilder::attribute_path)
     /// - [`attribute_value`](crate::types::builders::FilterBuilder::attribute_value)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            attribute_path: self.attribute_path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_path",
-                    "attribute_path was not specified but it is required when building Filter",
-                )
-            })?,
-            attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_value",
-                    "attribute_value was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                attribute_path: self.attribute_path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_path", "attribute_path was not specified but it is required when building Filter")
+                    )?
+                ,
+                attribute_value: self.attribute_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_value", "attribute_value was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for FilterBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for FilterBuilder {
         formatter.finish()
     }
 }
+

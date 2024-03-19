@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeListenerInput {
+pub struct DescribeListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub listener_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeListenerInput {
+impl  DescribeListenerInput  {
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
-    pub fn listener_arn(&self) -> ::std::option::Option<&str> {
+    pub fn listener_arn(&self) -> ::std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DescribeListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.listener_arn
     }
     /// Consumes the builder and constructs a [`DescribeListenerInput`](crate::operation::describe_listener::DescribeListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_listener::DescribeListenerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_listener::DescribeListenerInput {
-            listener_arn: self.listener_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_listener::DescribeListenerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_listener::DescribeListenerInput {
+                listener_arn: self.listener_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BulkEmailEntry {
+pub struct BulkEmailEntry  {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub replacement_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
     pub replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
 }
-impl BulkEmailEntry {
+impl  BulkEmailEntry  {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
-    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replacement_tags.is_none()`.
-    pub fn replacement_tags(&self) -> &[crate::types::MessageTag] {
-        self.replacement_tags.as_deref().unwrap_or_default()
+    pub fn replacement_tags(&self) -> & [crate::types::MessageTag] {
+        self.replacement_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
-    pub fn replacement_email_content(&self) -> ::std::option::Option<&crate::types::ReplacementEmailContent> {
+    pub fn replacement_email_content(&self) -> ::std::option::Option<& crate::types::ReplacementEmailContent> {
         self.replacement_email_content.as_ref()
     }
 }
@@ -42,7 +43,7 @@ impl BulkEmailEntry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BulkEmailEntryBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
-    pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>,
     pub(crate) replacement_email_content: ::std::option::Option<crate::types::ReplacementEmailContent>,
 }
 impl BulkEmailEntryBuilder {
@@ -58,8 +59,7 @@ impl BulkEmailEntryBuilder {
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p><note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the local part of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the domain part of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
@@ -74,17 +74,16 @@ impl BulkEmailEntryBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn replacement_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.replacement_tags.unwrap_or_default();
-        v.push(input);
-        self.replacement_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.replacement_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_replacement_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
-        self.replacement_tags = input;
-        self
+    pub fn set_replacement_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>>) -> Self {
+        self.replacement_tags = input; self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn get_replacement_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
+    pub fn get_replacement_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageTag>> {
         &self.replacement_tags
     }
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
@@ -94,8 +93,7 @@ impl BulkEmailEntryBuilder {
     }
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
     pub fn set_replacement_email_content(mut self, input: ::std::option::Option<crate::types::ReplacementEmailContent>) -> Self {
-        self.replacement_email_content = input;
-        self
+        self.replacement_email_content = input; self
     }
     /// <p>The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.</p>
     pub fn get_replacement_email_content(&self) -> &::std::option::Option<crate::types::ReplacementEmailContent> {
@@ -104,9 +102,13 @@ impl BulkEmailEntryBuilder {
     /// Consumes the builder and constructs a [`BulkEmailEntry`](crate::types::BulkEmailEntry).
     pub fn build(self) -> crate::types::BulkEmailEntry {
         crate::types::BulkEmailEntry {
-            destination: self.destination,
-            replacement_tags: self.replacement_tags,
-            replacement_email_content: self.replacement_email_content,
+            destination: self.destination
+            ,
+            replacement_tags: self.replacement_tags
+            ,
+            replacement_email_content: self.replacement_email_content
+            ,
         }
     }
 }
+

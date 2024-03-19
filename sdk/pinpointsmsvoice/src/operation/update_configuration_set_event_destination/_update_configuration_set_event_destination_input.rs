@@ -3,7 +3,7 @@
 /// UpdateConfigurationSetEventDestinationRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateConfigurationSetEventDestinationInput {
+pub struct UpdateConfigurationSetEventDestinationInput  {
     /// ConfigurationSetName
     pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// An object that defines a single event destination.
@@ -11,17 +11,17 @@ pub struct UpdateConfigurationSetEventDestinationInput {
     /// EventDestinationName
     pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateConfigurationSetEventDestinationInput {
+impl  UpdateConfigurationSetEventDestinationInput  {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// An object that defines a single event destination.
-    pub fn event_destination(&self) -> ::std::option::Option<&crate::types::EventDestinationDefinition> {
+    pub fn event_destination(&self) -> ::std::option::Option<& crate::types::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
     /// EventDestinationName
-    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
     }
     /// ConfigurationSetName
     pub fn set_configuration_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_set_name = input;
-        self
+        self.configuration_set_name = input; self
     }
     /// ConfigurationSetName
     pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
     }
     /// An object that defines a single event destination.
     pub fn set_event_destination(mut self, input: ::std::option::Option<crate::types::EventDestinationDefinition>) -> Self {
-        self.event_destination = input;
-        self
+        self.event_destination = input; self
     }
     /// An object that defines a single event destination.
     pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
@@ -78,26 +76,24 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
     }
     /// EventDestinationName
     pub fn set_event_destination_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_destination_name = input;
-        self
+        self.event_destination_name = input; self
     }
     /// EventDestinationName
     pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination: self.event_destination,
-                event_destination_name: self.event_destination_name,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination: self.event_destination
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+            }
         )
     }
 }
+

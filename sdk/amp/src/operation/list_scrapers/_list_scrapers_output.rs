@@ -3,29 +3,28 @@
 /// <p>Represents the output of a <code>ListScrapers</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListScrapersOutput {
+pub struct ListScrapersOutput  {
     /// <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
-    pub scrapers: ::std::vec::Vec<crate::types::ScraperSummary>,
+    pub scrapers: ::std::vec::Vec::<crate::types::ScraperSummary>,
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListScrapersOutput {
+impl  ListScrapersOutput  {
     /// <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
-    pub fn scrapers(&self) -> &[crate::types::ScraperSummary] {
-        use std::ops::Deref;
-        self.scrapers.deref()
+    pub fn scrapers(&self) -> & [crate::types::ScraperSummary] {
+        use std::ops::Deref; self.scrapers.deref()
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListScrapersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListScrapersOutput {
     /// Creates a new builder-style object to manufacture [`ListScrapersOutput`](crate::operation::list_scrapers::ListScrapersOutput).
     pub fn builder() -> crate::operation::list_scrapers::builders::ListScrapersOutputBuilder {
@@ -37,7 +36,7 @@ impl ListScrapersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListScrapersOutputBuilder {
-    pub(crate) scrapers: ::std::option::Option<::std::vec::Vec<crate::types::ScraperSummary>>,
+    pub(crate) scrapers: ::std::option::Option<::std::vec::Vec::<crate::types::ScraperSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListScrapersOutputBuilder {
     /// <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
     pub fn scrapers(mut self, input: crate::types::ScraperSummary) -> Self {
         let mut v = self.scrapers.unwrap_or_default();
-        v.push(input);
-        self.scrapers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scrapers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
-    pub fn set_scrapers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScraperSummary>>) -> Self {
-        self.scrapers = input;
-        self
+    pub fn set_scrapers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScraperSummary>>) -> Self {
+        self.scrapers = input; self
     }
     /// <p>A list of <code>ScraperSummary</code> structures giving information about scrapers in the account that match the filters provided.</p>
-    pub fn get_scrapers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScraperSummary>> {
+    pub fn get_scrapers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScraperSummary>> {
         &self.scrapers
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
@@ -69,37 +67,37 @@ impl ListScrapersOutputBuilder {
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token indicating that there are more results to retrieve. You can use this token as part of your next <code>ListScrapers</code> operation to retrieve those results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListScrapersOutput`](crate::operation::list_scrapers::ListScrapersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`scrapers`](crate::operation::list_scrapers::builders::ListScrapersOutputBuilder::scrapers)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_scrapers::ListScrapersOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_scrapers::ListScrapersOutput {
-            scrapers: self.scrapers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scrapers",
-                    "scrapers was not specified but it is required when building ListScrapersOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_scrapers::ListScrapersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_scrapers::ListScrapersOutput {
+                scrapers: self.scrapers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scrapers", "scrapers was not specified but it is required when building ListScrapersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

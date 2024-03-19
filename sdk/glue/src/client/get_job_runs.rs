@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetJobRuns`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`job_name(impl Into<String>)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::set_job_name):<br>required: **true**<br><p>The name of the job definition for which to retrieve all job runs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the response.</p><br>
-    /// - On success, responds with [`GetJobRunsOutput`](crate::operation::get_job_runs::GetJobRunsOutput) with field(s):
+                            /// - On success, responds with [`GetJobRunsOutput`](crate::operation::get_job_runs::GetJobRunsOutput) with field(s):
     ///   - [`job_runs(Option<Vec::<JobRun>>)`](crate::operation::get_job_runs::GetJobRunsOutput::job_runs): <p>A list of job-run metadata objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_job_runs::GetJobRunsOutput::next_token): <p>A continuation token, if not all requested job runs have been returned.</p>
-    /// - On failure, responds with [`SdkError<GetJobRunsError>`](crate::operation::get_job_runs::GetJobRunsError)
+                            /// - On failure, responds with [`SdkError<GetJobRunsError>`](crate::operation::get_job_runs::GetJobRunsError)
     pub fn get_job_runs(&self) -> crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder {
-        crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_job_runs::builders::GetJobRunsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

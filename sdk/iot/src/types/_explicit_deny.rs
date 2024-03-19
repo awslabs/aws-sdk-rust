@@ -3,16 +3,17 @@
 /// <p>Information that explicitly denies authorization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExplicitDeny {
+pub struct ExplicitDeny  {
     /// <p>The policies that denied the authorization.</p>
-    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
+    pub policies: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>,
 }
-impl ExplicitDeny {
+impl  ExplicitDeny  {
     /// <p>The policies that denied the authorization.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policies.is_none()`.
-    pub fn policies(&self) -> &[crate::types::Policy] {
-        self.policies.as_deref().unwrap_or_default()
+    pub fn policies(&self) -> & [crate::types::Policy] {
+        self.policies.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExplicitDeny {
@@ -26,7 +27,7 @@ impl ExplicitDeny {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExplicitDenyBuilder {
-    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>,
 }
 impl ExplicitDenyBuilder {
     /// Appends an item to `policies`.
@@ -36,21 +37,24 @@ impl ExplicitDenyBuilder {
     /// <p>The policies that denied the authorization.</p>
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policies = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The policies that denied the authorization.</p>
-    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Policy>>) -> Self {
+        self.policies = input; self
     }
     /// <p>The policies that denied the authorization.</p>
-    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Policy>> {
         &self.policies
     }
     /// Consumes the builder and constructs a [`ExplicitDeny`](crate::types::ExplicitDeny).
     pub fn build(self) -> crate::types::ExplicitDeny {
-        crate::types::ExplicitDeny { policies: self.policies }
+        crate::types::ExplicitDeny {
+            policies: self.policies
+            ,
+        }
     }
 }
+

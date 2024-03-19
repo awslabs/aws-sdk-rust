@@ -5,23 +5,20 @@ pub use crate::operation::create_call_analytics_category::_create_call_analytics
 
 impl CreateCallAnalyticsCategoryInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_call_analytics_category();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_call_analytics_category();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateCallAnalyticsCategory`.
-///
+/// 
 /// <p>Creates a new Call Analytics category.</p>
 /// <p>All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply categories to your transcriptions, you must create them before submitting your transcription request, as categories cannot be applied retroactively.</p>
 /// <p>When creating a new category, you can use the <code>InputType</code> parameter to label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category. <code>POST_CALL</code> categories can only be applied to post-call transcriptions and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions. If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code> category by default.</p>
@@ -31,33 +28,32 @@ impl CreateCallAnalyticsCategoryInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
+                    inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-    > for CreateCallAnalyticsCategoryFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
+                    crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+                > for CreateCallAnalyticsCategoryFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
+                        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `CreateCallAnalyticsCategory`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -66,53 +62,44 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
-        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput, crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
     pub fn category_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,12 +127,12 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Rule>> {
         self.inner.get_rules()
     }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
@@ -172,3 +159,4 @@ impl CreateCallAnalyticsCategoryFluentBuilder {
         self.inner.get_input_type()
     }
 }
+

@@ -22,11 +22,7 @@ impl PluginAuthConfiguration {
     /// Tries to convert the enum instance into [`BasicAuthConfiguration`](crate::types::PluginAuthConfiguration::BasicAuthConfiguration), extracting the inner [`BasicAuthConfiguration`](crate::types::BasicAuthConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic_auth_configuration(&self) -> ::std::result::Result<&crate::types::BasicAuthConfiguration, &Self> {
-        if let PluginAuthConfiguration::BasicAuthConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PluginAuthConfiguration::BasicAuthConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BasicAuthConfiguration`](crate::types::PluginAuthConfiguration::BasicAuthConfiguration).
     pub fn is_basic_auth_configuration(&self) -> bool {
@@ -35,11 +31,7 @@ impl PluginAuthConfiguration {
     /// Tries to convert the enum instance into [`OAuth2ClientCredentialConfiguration`](crate::types::PluginAuthConfiguration::OAuth2ClientCredentialConfiguration), extracting the inner [`OAuth2ClientCredentialConfiguration`](crate::types::OAuth2ClientCredentialConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_o_auth2_client_credential_configuration(&self) -> ::std::result::Result<&crate::types::OAuth2ClientCredentialConfiguration, &Self> {
-        if let PluginAuthConfiguration::OAuth2ClientCredentialConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PluginAuthConfiguration::OAuth2ClientCredentialConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`OAuth2ClientCredentialConfiguration`](crate::types::PluginAuthConfiguration::OAuth2ClientCredentialConfiguration).
     pub fn is_o_auth2_client_credential_configuration(&self) -> bool {
@@ -50,3 +42,4 @@ impl PluginAuthConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

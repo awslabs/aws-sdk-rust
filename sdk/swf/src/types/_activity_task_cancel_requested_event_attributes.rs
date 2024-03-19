@@ -3,21 +3,20 @@
 /// <p>Provides the details of the <code>ActivityTaskCancelRequested</code> event.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityTaskCancelRequestedEventAttributes {
+pub struct ActivityTaskCancelRequestedEventAttributes  {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub decision_task_completed_event_id: i64,
     /// <p>The unique ID of the task.</p>
     pub activity_id: ::std::string::String,
 }
-impl ActivityTaskCancelRequestedEventAttributes {
+impl  ActivityTaskCancelRequestedEventAttributes  {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(&self) -> i64 {
         self.decision_task_completed_event_id
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.activity_id.deref()
+    pub fn activity_id(&self) -> & str {
+        use std::ops::Deref; self.activity_id.deref()
     }
 }
 impl ActivityTaskCancelRequestedEventAttributes {
@@ -43,8 +42,7 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input;
-        self
+        self.decision_task_completed_event_id = input; self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
@@ -58,8 +56,7 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     }
     /// <p>The unique ID of the task.</p>
     pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.activity_id = input;
-        self
+        self.activity_id = input; self
     }
     /// <p>The unique ID of the task.</p>
     pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,17 +65,19 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`activity_id`](crate::types::builders::ActivityTaskCancelRequestedEventAttributesBuilder::activity_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ActivityTaskCancelRequestedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActivityTaskCancelRequestedEventAttributes {
-            decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
-            activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "activity_id",
-                    "activity_id was not specified but it is required when building ActivityTaskCancelRequestedEventAttributes",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivityTaskCancelRequestedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ActivityTaskCancelRequestedEventAttributes {
+                decision_task_completed_event_id: self.decision_task_completed_event_id
+                    .unwrap_or_default()
+                ,
+                activity_id: self.activity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("activity_id", "activity_id was not specified but it is required when building ActivityTaskCancelRequestedEventAttributes")
+                    )?
+                ,
+            }
+        )
     }
 }
+

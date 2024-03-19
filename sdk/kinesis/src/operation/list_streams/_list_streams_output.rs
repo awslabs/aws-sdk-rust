@@ -3,43 +3,43 @@
 /// <p>Represents the output for <code>ListStreams</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStreamsOutput {
+pub struct ListStreamsOutput  {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub stream_names: ::std::vec::Vec<::std::string::String>,
+    pub stream_names: ::std::vec::Vec::<::std::string::String>,
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub has_more_streams: bool,
     /// <p></p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub stream_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
+    pub stream_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }
-impl ListStreamsOutput {
+impl  ListStreamsOutput  {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn stream_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.stream_names.deref()
+    pub fn stream_names(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.stream_names.deref()
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub fn has_more_streams(&self) -> bool {
         self.has_more_streams
     }
     /// <p></p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stream_summaries.is_none()`.
-    pub fn stream_summaries(&self) -> &[crate::types::StreamSummary] {
-        self.stream_summaries.as_deref().unwrap_or_default()
+    pub fn stream_summaries(&self) -> & [crate::types::StreamSummary] {
+        self.stream_summaries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStreamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     pub fn builder() -> crate::operation::list_streams::builders::ListStreamsOutputBuilder {
@@ -51,10 +51,10 @@ impl ListStreamsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStreamsOutputBuilder {
-    pub(crate) stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stream_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) has_more_streams: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) stream_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
+    pub(crate) stream_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }
 impl ListStreamsOutputBuilder {
@@ -65,17 +65,16 @@ impl ListStreamsOutputBuilder {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
     pub fn stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stream_names.unwrap_or_default();
-        v.push(input.into());
-        self.stream_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.stream_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn set_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.stream_names = input;
-        self
+    pub fn set_stream_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.stream_names = input; self
     }
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn get_stream_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_stream_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.stream_names
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
@@ -86,8 +85,7 @@ impl ListStreamsOutputBuilder {
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub fn set_has_more_streams(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.has_more_streams = input;
-        self
+        self.has_more_streams = input; self
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub fn get_has_more_streams(&self) -> &::std::option::Option<bool> {
@@ -100,8 +98,7 @@ impl ListStreamsOutputBuilder {
     }
     /// <p></p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p></p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,49 +111,51 @@ impl ListStreamsOutputBuilder {
     /// <p></p>
     pub fn stream_summaries(mut self, input: crate::types::StreamSummary) -> Self {
         let mut v = self.stream_summaries.unwrap_or_default();
-        v.push(input);
-        self.stream_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.stream_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_stream_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>) -> Self {
-        self.stream_summaries = input;
-        self
+    pub fn set_stream_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamSummary>>) -> Self {
+        self.stream_summaries = input; self
     }
     /// <p></p>
-    pub fn get_stream_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>> {
+    pub fn get_stream_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamSummary>> {
         &self.stream_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_names`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::stream_names)
     /// - [`has_more_streams`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::has_more_streams)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsOutput {
-            stream_names: self.stream_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_names",
-                    "stream_names was not specified but it is required when building ListStreamsOutput",
-                )
-            })?,
-            has_more_streams: self.has_more_streams.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "has_more_streams",
-                    "has_more_streams was not specified but it is required when building ListStreamsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            stream_summaries: self.stream_summaries,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_streams::ListStreamsOutput {
+                stream_names: self.stream_names
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_names", "stream_names was not specified but it is required when building ListStreamsOutput")
+                    )?
+                ,
+                has_more_streams: self.has_more_streams
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("has_more_streams", "has_more_streams was not specified but it is required when building ListStreamsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                stream_summaries: self.stream_summaries
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

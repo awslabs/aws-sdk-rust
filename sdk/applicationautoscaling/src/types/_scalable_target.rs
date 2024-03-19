@@ -3,7 +3,7 @@
 /// <p>Represents a scalable target.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalableTarget {
+pub struct ScalableTarget  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub service_namespace: crate::types::ServiceNamespace,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -107,9 +107,9 @@ pub struct ScalableTarget {
     /// <p>The ARN of the scalable target.</p>
     pub scalable_target_arn: ::std::option::Option<::std::string::String>,
 }
-impl ScalableTarget {
+impl  ScalableTarget  {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> &crate::types::ServiceNamespace {
+    pub fn service_namespace(&self) -> & crate::types::ServiceNamespace {
         &self.service_namespace
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -151,9 +151,8 @@ impl ScalableTarget {
     /// <li>
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
-    pub fn resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_id.deref()
+    pub fn resource_id(&self) -> & str {
+        use std::ops::Deref; self.resource_id.deref()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -202,7 +201,7 @@ impl ScalableTarget {
     /// <li>
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> &crate::types::ScalableDimension {
+    pub fn scalable_dimension(&self) -> & crate::types::ScalableDimension {
         &self.scalable_dimension
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
@@ -214,20 +213,19 @@ impl ScalableTarget {
         self.max_capacity
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn creation_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn creation_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.creation_time
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
-    pub fn suspended_state(&self) -> ::std::option::Option<&crate::types::SuspendedState> {
+    pub fn suspended_state(&self) -> ::std::option::Option<& crate::types::SuspendedState> {
         self.suspended_state.as_ref()
     }
     /// <p>The ARN of the scalable target.</p>
-    pub fn scalable_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scalable_target_arn(&self) -> ::std::option::Option<& str> {
         self.scalable_target_arn.as_deref()
     }
 }
@@ -261,8 +259,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(mut self, input: ::std::option::Option<crate::types::ServiceNamespace>) -> Self {
-        self.service_namespace = input;
-        self
+        self.service_namespace = input; self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
@@ -352,8 +349,7 @@ impl ScalableTargetBuilder {
     /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
@@ -497,8 +493,7 @@ impl ScalableTargetBuilder {
     /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
-        self.scalable_dimension = input;
-        self
+        self.scalable_dimension = input; self
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
@@ -558,8 +553,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
     pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_capacity = input;
-        self
+        self.min_capacity = input; self
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
     pub fn get_min_capacity(&self) -> &::std::option::Option<i32> {
@@ -573,8 +567,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
@@ -588,8 +581,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -603,8 +595,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -617,8 +608,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn set_suspended_state(mut self, input: ::std::option::Option<crate::types::SuspendedState>) -> Self {
-        self.suspended_state = input;
-        self
+        self.suspended_state = input; self
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn get_suspended_state(&self) -> &::std::option::Option<crate::types::SuspendedState> {
@@ -631,8 +621,7 @@ impl ScalableTargetBuilder {
     }
     /// <p>The ARN of the scalable target.</p>
     pub fn set_scalable_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scalable_target_arn = input;
-        self
+        self.scalable_target_arn = input; self
     }
     /// <p>The ARN of the scalable target.</p>
     pub fn get_scalable_target_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -648,51 +637,49 @@ impl ScalableTargetBuilder {
     /// - [`role_arn`](crate::types::builders::ScalableTargetBuilder::role_arn)
     /// - [`creation_time`](crate::types::builders::ScalableTargetBuilder::creation_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ScalableTarget, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScalableTarget {
-            service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "service_namespace",
-                    "service_namespace was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_id",
-                    "resource_id was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scalable_dimension",
-                    "scalable_dimension was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            min_capacity: self.min_capacity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_capacity",
-                    "min_capacity was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            max_capacity: self.max_capacity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_capacity",
-                    "max_capacity was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "creation_time",
-                    "creation_time was not specified but it is required when building ScalableTarget",
-                )
-            })?,
-            suspended_state: self.suspended_state,
-            scalable_target_arn: self.scalable_target_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScalableTarget {
+                service_namespace: self.service_namespace
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("service_namespace", "service_namespace was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                resource_id: self.resource_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_id", "resource_id was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                scalable_dimension: self.scalable_dimension
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scalable_dimension", "scalable_dimension was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                min_capacity: self.min_capacity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_capacity", "min_capacity was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                max_capacity: self.max_capacity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_capacity", "max_capacity was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                creation_time: self.creation_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("creation_time", "creation_time was not specified but it is required when building ScalableTarget")
+                    )?
+                ,
+                suspended_state: self.suspended_state
+                ,
+                scalable_target_arn: self.scalable_target_arn
+                ,
+            }
+        )
     }
 }
+

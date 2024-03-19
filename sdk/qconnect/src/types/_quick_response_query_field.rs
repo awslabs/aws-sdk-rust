@@ -14,11 +14,11 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickResponseQueryField {
+pub struct QuickResponseQueryField  {
     /// <p>The name of the attribute to query the quick responses by.</p>
     pub name: ::std::string::String,
     /// <p>The values of the attribute to query the quick responses by.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator to use for matching attribute field values in the query.</p>
     pub operator: crate::types::QuickResponseQueryOperator,
     /// <p>Whether the query expects only exact matches on the attribute field values. The results of the query will only include exact matches if this parameter is set to false.</p>
@@ -26,19 +26,17 @@ pub struct QuickResponseQueryField {
     /// <p>The importance of the attribute field when calculating query result relevancy scores. The value set for this parameter affects the ordering of search results.</p>
     pub priority: ::std::option::Option<crate::types::Priority>,
 }
-impl QuickResponseQueryField {
+impl  QuickResponseQueryField  {
     /// <p>The name of the attribute to query the quick responses by.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values of the attribute to query the quick responses by.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator to use for matching attribute field values in the query.</p>
-    pub fn operator(&self) -> &crate::types::QuickResponseQueryOperator {
+    pub fn operator(&self) -> & crate::types::QuickResponseQueryOperator {
         &self.operator
     }
     /// <p>Whether the query expects only exact matches on the attribute field values. The results of the query will only include exact matches if this parameter is set to false.</p>
@@ -46,7 +44,7 @@ impl QuickResponseQueryField {
         self.allow_fuzziness
     }
     /// <p>The importance of the attribute field when calculating query result relevancy scores. The value set for this parameter affects the ordering of search results.</p>
-    pub fn priority(&self) -> ::std::option::Option<&crate::types::Priority> {
+    pub fn priority(&self) -> ::std::option::Option<& crate::types::Priority> {
         self.priority.as_ref()
     }
 }
@@ -62,7 +60,7 @@ impl QuickResponseQueryField {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickResponseQueryFieldBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::QuickResponseQueryOperator>,
     pub(crate) allow_fuzziness: ::std::option::Option<bool>,
     pub(crate) priority: ::std::option::Option<crate::types::Priority>,
@@ -76,8 +74,7 @@ impl QuickResponseQueryFieldBuilder {
     }
     /// <p>The name of the attribute to query the quick responses by.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute to query the quick responses by.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,17 +87,16 @@ impl QuickResponseQueryFieldBuilder {
     /// <p>The values of the attribute to query the quick responses by.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values of the attribute to query the quick responses by.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values of the attribute to query the quick responses by.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for matching attribute field values in the query.</p>
@@ -111,8 +107,7 @@ impl QuickResponseQueryFieldBuilder {
     }
     /// <p>The operator to use for matching attribute field values in the query.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::QuickResponseQueryOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for matching attribute field values in the query.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::QuickResponseQueryOperator> {
@@ -125,8 +120,7 @@ impl QuickResponseQueryFieldBuilder {
     }
     /// <p>Whether the query expects only exact matches on the attribute field values. The results of the query will only include exact matches if this parameter is set to false.</p>
     pub fn set_allow_fuzziness(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_fuzziness = input;
-        self
+        self.allow_fuzziness = input; self
     }
     /// <p>Whether the query expects only exact matches on the attribute field values. The results of the query will only include exact matches if this parameter is set to false.</p>
     pub fn get_allow_fuzziness(&self) -> &::std::option::Option<bool> {
@@ -139,8 +133,7 @@ impl QuickResponseQueryFieldBuilder {
     }
     /// <p>The importance of the attribute field when calculating query result relevancy scores. The value set for this parameter affects the ordering of search results.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<crate::types::Priority>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The importance of the attribute field when calculating query result relevancy scores. The value set for this parameter affects the ordering of search results.</p>
     pub fn get_priority(&self) -> &::std::option::Option<crate::types::Priority> {
@@ -152,27 +145,29 @@ impl QuickResponseQueryFieldBuilder {
     /// - [`values`](crate::types::builders::QuickResponseQueryFieldBuilder::values)
     /// - [`operator`](crate::types::builders::QuickResponseQueryFieldBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::QuickResponseQueryField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QuickResponseQueryField {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building QuickResponseQueryField",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building QuickResponseQueryField",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building QuickResponseQueryField",
-                )
-            })?,
-            allow_fuzziness: self.allow_fuzziness,
-            priority: self.priority,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QuickResponseQueryField {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building QuickResponseQueryField")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building QuickResponseQueryField")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building QuickResponseQueryField")
+                    )?
+                ,
+                allow_fuzziness: self.allow_fuzziness
+                ,
+                priority: self.priority
+                ,
+            }
+        )
     }
 }
+

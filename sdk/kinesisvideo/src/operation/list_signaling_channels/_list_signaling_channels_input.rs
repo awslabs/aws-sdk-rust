@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSignalingChannelsInput {
+pub struct ListSignalingChannelsInput  {
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
@@ -10,17 +10,17 @@ pub struct ListSignalingChannelsInput {
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
     pub channel_name_condition: ::std::option::Option<crate::types::ChannelNameCondition>,
 }
-impl ListSignalingChannelsInput {
+impl  ListSignalingChannelsInput  {
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    pub fn channel_name_condition(&self) -> ::std::option::Option<&crate::types::ChannelNameCondition> {
+    pub fn channel_name_condition(&self) -> ::std::option::Option<& crate::types::ChannelNameCondition> {
         self.channel_name_condition.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ListSignalingChannelsInputBuilder {
     }
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -61,8 +60,7 @@ impl ListSignalingChannelsInputBuilder {
     }
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListSignalingChannelsInputBuilder {
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
     pub fn set_channel_name_condition(mut self, input: ::std::option::Option<crate::types::ChannelNameCondition>) -> Self {
-        self.channel_name_condition = input;
-        self
+        self.channel_name_condition = input; self
     }
     /// <p>Optional: Returns only the channels that satisfy a specific condition.</p>
     pub fn get_channel_name_condition(&self) -> &::std::option::Option<crate::types::ChannelNameCondition> {
         &self.channel_name_condition
     }
     /// Consumes the builder and constructs a [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_signaling_channels::ListSignalingChannelsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_signaling_channels::ListSignalingChannelsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            channel_name_condition: self.channel_name_condition,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_signaling_channels::ListSignalingChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_signaling_channels::ListSignalingChannelsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                channel_name_condition: self.channel_name_condition
+                ,
+            }
+        )
     }
 }
+

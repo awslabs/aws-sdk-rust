@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDistributionOutput {
+pub struct CreateDistributionOutput  {
     /// <p>The distribution's information.</p>
     pub distribution: ::std::option::Option<crate::types::Distribution>,
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
@@ -12,25 +12,25 @@ pub struct CreateDistributionOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDistributionOutput {
+impl  CreateDistributionOutput  {
     /// <p>The distribution's information.</p>
-    pub fn distribution(&self) -> ::std::option::Option<&crate::types::Distribution> {
+    pub fn distribution(&self) -> ::std::option::Option<& crate::types::Distribution> {
         self.distribution.as_ref()
     }
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The current version of the distribution created.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDistributionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDistributionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput).
     pub fn builder() -> crate::operation::create_distribution::builders::CreateDistributionOutputBuilder {
@@ -55,8 +55,7 @@ impl CreateDistributionOutputBuilder {
     }
     /// <p>The distribution's information.</p>
     pub fn set_distribution(mut self, input: ::std::option::Option<crate::types::Distribution>) -> Self {
-        self.distribution = input;
-        self
+        self.distribution = input; self
     }
     /// <p>The distribution's information.</p>
     pub fn get_distribution(&self) -> &::std::option::Option<crate::types::Distribution> {
@@ -69,8 +68,7 @@ impl CreateDistributionOutputBuilder {
     }
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fully qualified URI of the new distribution resource just created.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,29 +81,32 @@ impl CreateDistributionOutputBuilder {
     }
     /// <p>The current version of the distribution created.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the distribution created.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDistributionOutput`](crate::operation::create_distribution::CreateDistributionOutput).
     pub fn build(self) -> crate::operation::create_distribution::CreateDistributionOutput {
         crate::operation::create_distribution::CreateDistributionOutput {
-            distribution: self.distribution,
-            location: self.location,
-            e_tag: self.e_tag,
+            distribution: self.distribution
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

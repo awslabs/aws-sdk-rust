@@ -2,18 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListExtensibleSourceServers`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`staging_account_id(impl Into<String>)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::staging_account_id) / [`set_staging_account_id(Option<String>)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::set_staging_account_id):<br>required: **true**<br><p>The Id of the staging Account to retrieve extensible source servers from.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of extensible source servers to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next extensible source server to retrieve.</p><br>
-    /// - On success, responds with [`ListExtensibleSourceServersOutput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput) with field(s):
+                            /// - On success, responds with [`ListExtensibleSourceServersOutput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput) with field(s):
     ///   - [`items(Option<Vec::<StagingSourceServer>>)`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput::items): <p>A list of source servers on a staging Account that are extensible.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput::next_token): <p>The token of the next extensible source server to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListExtensibleSourceServersError>`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError)
-    pub fn list_extensible_source_servers(
-        &self,
-    ) -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder {
-        crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListExtensibleSourceServersError>`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError)
+    pub fn list_extensible_source_servers(&self) -> crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder {
+                                crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

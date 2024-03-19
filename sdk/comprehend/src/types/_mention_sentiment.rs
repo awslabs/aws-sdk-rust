@@ -4,19 +4,19 @@
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MentionSentiment {
+pub struct MentionSentiment  {
     /// <p>The sentiment of the mention.</p>
     pub sentiment: ::std::option::Option<crate::types::SentimentType>,
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
     pub sentiment_score: ::std::option::Option<crate::types::SentimentScore>,
 }
-impl MentionSentiment {
+impl  MentionSentiment  {
     /// <p>The sentiment of the mention.</p>
-    pub fn sentiment(&self) -> ::std::option::Option<&crate::types::SentimentType> {
+    pub fn sentiment(&self) -> ::std::option::Option<& crate::types::SentimentType> {
         self.sentiment.as_ref()
     }
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
-    pub fn sentiment_score(&self) -> ::std::option::Option<&crate::types::SentimentScore> {
+    pub fn sentiment_score(&self) -> ::std::option::Option<& crate::types::SentimentScore> {
         self.sentiment_score.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MentionSentimentBuilder {
     }
     /// <p>The sentiment of the mention.</p>
     pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::SentimentType>) -> Self {
-        self.sentiment = input;
-        self
+        self.sentiment = input; self
     }
     /// <p>The sentiment of the mention.</p>
     pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentType> {
@@ -56,8 +55,7 @@ impl MentionSentimentBuilder {
     }
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
     pub fn set_sentiment_score(mut self, input: ::std::option::Option<crate::types::SentimentScore>) -> Self {
-        self.sentiment_score = input;
-        self
+        self.sentiment_score = input; self
     }
     /// <p>Describes the level of confidence that Amazon Comprehend has in the accuracy of its detection of sentiments.</p>
     pub fn get_sentiment_score(&self) -> &::std::option::Option<crate::types::SentimentScore> {
@@ -66,8 +64,11 @@ impl MentionSentimentBuilder {
     /// Consumes the builder and constructs a [`MentionSentiment`](crate::types::MentionSentiment).
     pub fn build(self) -> crate::types::MentionSentiment {
         crate::types::MentionSentiment {
-            sentiment: self.sentiment,
-            sentiment_score: self.sentiment_score,
+            sentiment: self.sentiment
+            ,
+            sentiment_score: self.sentiment_score
+            ,
         }
     }
 }
+

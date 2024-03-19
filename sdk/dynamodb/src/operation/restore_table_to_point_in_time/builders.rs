@@ -5,23 +5,20 @@ pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_poin
 
 impl RestoreTableToPointInTimeInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.restore_table_to_point_in_time();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.restore_table_to_point_in_time();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RestoreTableToPointInTime`.
-///
+/// 
 /// <p>Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days. Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account.</p>
 /// <p>When you restore using point in time recovery, DynamoDB restores your table data to the state based on the selected date and time (day:hour:minute:second) to a new table.</p>
 /// <p>Along with data, the following are also included on the new restored table using point in time recovery:</p>
@@ -57,33 +54,32 @@ impl RestoreTableToPointInTimeInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableToPointInTimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeInputBuilder,
+                    inner: crate::operation::restore_table_to_point_in_time::builders::RestoreTableToPointInTimeInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
-    > for RestoreTableToPointInTimeFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
-            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
+                    crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
+                > for RestoreTableToPointInTimeFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
+                        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RestoreTableToPointInTimeFluentBuilder {
     /// Creates a new `RestoreTableToPointInTime`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -92,53 +88,44 @@ impl RestoreTableToPointInTimeFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTime::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTime::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
-        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTime::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTime::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput, crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
     pub fn source_table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_table_arn(input.into());
@@ -233,12 +220,12 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_global_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
+    pub fn set_global_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_global_secondary_index_override(input);
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn get_global_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
+    pub fn get_global_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlobalSecondaryIndex>> {
         self.inner.get_global_secondary_index_override()
     }
     /// Appends an item to `LocalSecondaryIndexOverride`.
@@ -251,12 +238,12 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn set_local_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>) -> Self {
+    pub fn set_local_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_local_secondary_index_override(input);
         self
     }
     /// <p>List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
-    pub fn get_local_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
+    pub fn get_local_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LocalSecondaryIndex>> {
         self.inner.get_local_secondary_index_override()
     }
     /// <p>Provisioned throughput settings for the restored table.</p>
@@ -288,3 +275,4 @@ impl RestoreTableToPointInTimeFluentBuilder {
         self.inner.get_sse_specification_override()
     }
 }
+

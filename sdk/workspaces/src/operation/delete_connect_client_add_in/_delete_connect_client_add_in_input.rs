@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConnectClientAddInInput {
+pub struct DeleteConnectClientAddInInput  {
     /// <p>The identifier of the client add-in to delete.</p>
     pub add_in_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConnectClientAddInInput {
+impl  DeleteConnectClientAddInInput  {
     /// <p>The identifier of the client add-in to delete.</p>
-    pub fn add_in_id(&self) -> ::std::option::Option<&str> {
+    pub fn add_in_id(&self) -> ::std::option::Option<& str> {
         self.add_in_id.as_deref()
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteConnectClientAddInInputBuilder {
     }
     /// <p>The identifier of the client add-in to delete.</p>
     pub fn set_add_in_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.add_in_id = input;
-        self
+        self.add_in_id = input; self
     }
     /// <p>The identifier of the client add-in to delete.</p>
     pub fn get_add_in_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteConnectClientAddInInputBuilder {
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteConnectClientAddInInput`](crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput {
-            add_in_id: self.add_in_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInInput {
+                add_in_id: self.add_in_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Optional object containing the parameters specific to an incremental export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncrementalExportSpecification {
+pub struct IncrementalExportSpecification  {
     /// <p>Time in the past which provides the inclusive start range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state including and after this point in time.</p>
     pub export_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>
@@ -11,17 +11,17 @@ pub struct IncrementalExportSpecification {
     /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub export_view_type: ::std::option::Option<crate::types::ExportViewType>,
 }
-impl IncrementalExportSpecification {
+impl  IncrementalExportSpecification  {
     /// <p>Time in the past which provides the inclusive start range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state including and after this point in time.</p>
-    pub fn export_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn export_from_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.export_from_time.as_ref()
     }
     /// <p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>
-    pub fn export_to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn export_to_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.export_to_time.as_ref()
     }
     /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
-    pub fn export_view_type(&self) -> ::std::option::Option<&crate::types::ExportViewType> {
+    pub fn export_view_type(&self) -> ::std::option::Option<& crate::types::ExportViewType> {
         self.export_view_type.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl IncrementalExportSpecificationBuilder {
     }
     /// <p>Time in the past which provides the inclusive start range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state including and after this point in time.</p>
     pub fn set_export_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.export_from_time = input;
-        self
+        self.export_from_time = input; self
     }
     /// <p>Time in the past which provides the inclusive start range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state including and after this point in time.</p>
     pub fn get_export_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -62,8 +61,7 @@ impl IncrementalExportSpecificationBuilder {
     }
     /// <p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>
     pub fn set_export_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.export_to_time = input;
-        self
+        self.export_to_time = input; self
     }
     /// <p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>
     pub fn get_export_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +74,7 @@ impl IncrementalExportSpecificationBuilder {
     }
     /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn set_export_view_type(mut self, input: ::std::option::Option<crate::types::ExportViewType>) -> Self {
-        self.export_view_type = input;
-        self
+        self.export_view_type = input; self
     }
     /// <p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>
     pub fn get_export_view_type(&self) -> &::std::option::Option<crate::types::ExportViewType> {
@@ -86,9 +83,13 @@ impl IncrementalExportSpecificationBuilder {
     /// Consumes the builder and constructs a [`IncrementalExportSpecification`](crate::types::IncrementalExportSpecification).
     pub fn build(self) -> crate::types::IncrementalExportSpecification {
         crate::types::IncrementalExportSpecification {
-            export_from_time: self.export_from_time,
-            export_to_time: self.export_to_time,
-            export_view_type: self.export_view_type,
+            export_from_time: self.export_from_time
+            ,
+            export_to_time: self.export_to_time
+            ,
+            export_view_type: self.export_view_type
+            ,
         }
     }
 }
+

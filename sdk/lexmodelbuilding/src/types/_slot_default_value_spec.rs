@@ -3,17 +3,16 @@
 /// <p>Contains the default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotDefaultValueSpec {
+pub struct SlotDefaultValueSpec  {
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub default_value_list: ::std::vec::Vec<crate::types::SlotDefaultValue>,
+    pub default_value_list: ::std::vec::Vec::<crate::types::SlotDefaultValue>,
 }
-impl SlotDefaultValueSpec {
+impl  SlotDefaultValueSpec  {
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub fn default_value_list(&self) -> &[crate::types::SlotDefaultValue] {
-        use std::ops::Deref;
-        self.default_value_list.deref()
+    pub fn default_value_list(&self) -> & [crate::types::SlotDefaultValue] {
+        use std::ops::Deref; self.default_value_list.deref()
     }
 }
 impl SlotDefaultValueSpec {
@@ -27,7 +26,7 @@ impl SlotDefaultValueSpec {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotDefaultValueSpecBuilder {
-    pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>,
+    pub(crate) default_value_list: ::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>>,
 }
 impl SlotDefaultValueSpecBuilder {
     /// Appends an item to `default_value_list`.
@@ -38,32 +37,33 @@ impl SlotDefaultValueSpecBuilder {
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
     pub fn default_value_list(mut self, input: crate::types::SlotDefaultValue) -> Self {
         let mut v = self.default_value_list.unwrap_or_default();
-        v.push(input);
-        self.default_value_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_value_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub fn set_default_value_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>>) -> Self {
-        self.default_value_list = input;
-        self
+    pub fn set_default_value_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>>) -> Self {
+        self.default_value_list = input; self
     }
     /// <p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p>
     /// <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>
-    pub fn get_default_value_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotDefaultValue>> {
+    pub fn get_default_value_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SlotDefaultValue>> {
         &self.default_value_list
     }
     /// Consumes the builder and constructs a [`SlotDefaultValueSpec`](crate::types::SlotDefaultValueSpec).
     /// This method will fail if any of the following fields are not set:
     /// - [`default_value_list`](crate::types::builders::SlotDefaultValueSpecBuilder::default_value_list)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValueSpec, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotDefaultValueSpec {
-            default_value_list: self.default_value_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "default_value_list",
-                    "default_value_list was not specified but it is required when building SlotDefaultValueSpec",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotDefaultValueSpec {
+                default_value_list: self.default_value_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("default_value_list", "default_value_list was not specified but it is required when building SlotDefaultValueSpec")
+                    )?
+                ,
+            }
+        )
     }
 }
+

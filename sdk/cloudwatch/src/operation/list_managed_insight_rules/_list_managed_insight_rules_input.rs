@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListManagedInsightRulesInput {
+pub struct ListManagedInsightRulesInput  {
     /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
@@ -10,13 +10,13 @@ pub struct ListManagedInsightRulesInput {
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListManagedInsightRulesInput {
+impl  ListManagedInsightRulesInput  {
     /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
@@ -48,8 +48,7 @@ impl ListManagedInsightRulesInputBuilder {
     }
     /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of an Amazon Web Services resource that has managed Contributor Insights rules.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ListManagedInsightRulesInputBuilder {
     }
     /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Include this value to get the next set of rules if the value was returned by the previous operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl ListManagedInsightRulesInputBuilder {
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListManagedInsightRulesInput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput {
-            resource_arn: self.resource_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput {
+                resource_arn: self.resource_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

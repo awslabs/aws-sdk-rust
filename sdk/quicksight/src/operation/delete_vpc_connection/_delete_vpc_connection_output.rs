@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteVpcConnectionOutput {
+pub struct DeleteVpcConnectionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -17,25 +17,25 @@ pub struct DeleteVpcConnectionOutput {
     pub status: i32,
     _request_id: Option<String>,
 }
-impl DeleteVpcConnectionOutput {
+impl  DeleteVpcConnectionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn vpc_connection_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_connection_id(&self) -> ::std::option::Option<& str> {
         self.vpc_connection_id.as_deref()
     }
     /// <p>The deletion status of the VPC connection.</p>
-    pub fn deletion_status(&self) -> ::std::option::Option<&crate::types::VpcConnectionResourceStatus> {
+    pub fn deletion_status(&self) -> ::std::option::Option<& crate::types::VpcConnectionResourceStatus> {
         self.deletion_status.as_ref()
     }
     /// <p>The availability status of the VPC connection.</p>
-    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::VpcConnectionAvailabilityStatus> {
+    pub fn availability_status(&self) -> ::std::option::Option<& crate::types::VpcConnectionAvailabilityStatus> {
         self.availability_status.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -44,10 +44,10 @@ impl DeleteVpcConnectionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteVpcConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteVpcConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcConnectionOutput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput).
     pub fn builder() -> crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder {
@@ -75,8 +75,7 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted VPC connection.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn set_vpc_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_connection_id = input;
-        self
+        self.vpc_connection_id = input; self
     }
     /// <p>The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The deletion status of the VPC connection.</p>
     pub fn set_deletion_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionResourceStatus>) -> Self {
-        self.deletion_status = input;
-        self
+        self.deletion_status = input; self
     }
     /// <p>The deletion status of the VPC connection.</p>
     pub fn get_deletion_status(&self) -> &::std::option::Option<crate::types::VpcConnectionResourceStatus> {
@@ -117,8 +114,7 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The availability status of the VPC connection.</p>
     pub fn set_availability_status(mut self, input: ::std::option::Option<crate::types::VpcConnectionAvailabilityStatus>) -> Self {
-        self.availability_status = input;
-        self
+        self.availability_status = input; self
     }
     /// <p>The availability status of the VPC connection.</p>
     pub fn get_availability_status(&self) -> &::std::option::Option<crate::types::VpcConnectionAvailabilityStatus> {
@@ -131,8 +127,7 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,32 +140,39 @@ impl DeleteVpcConnectionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn get_status(&self) -> &::std::option::Option<i32> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteVpcConnectionOutput`](crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput).
     pub fn build(self) -> crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput {
         crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput {
-            arn: self.arn,
-            vpc_connection_id: self.vpc_connection_id,
-            deletion_status: self.deletion_status,
-            availability_status: self.availability_status,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            vpc_connection_id: self.vpc_connection_id
+            ,
+            deletion_status: self.deletion_status
+            ,
+            availability_status: self.availability_status
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

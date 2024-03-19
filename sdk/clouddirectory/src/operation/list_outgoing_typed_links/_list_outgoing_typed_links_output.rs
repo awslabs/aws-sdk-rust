@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListOutgoingTypedLinksOutput {
+pub struct ListOutgoingTypedLinksOutput  {
     /// <p>Returns a typed link specifier as output.</p>
-    pub typed_link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub typed_link_specifiers: ::std::option::Option<::std::vec::Vec::<crate::types::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListOutgoingTypedLinksOutput {
+impl  ListOutgoingTypedLinksOutput  {
     /// <p>Returns a typed link specifier as output.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.typed_link_specifiers.is_none()`.
-    pub fn typed_link_specifiers(&self) -> &[crate::types::TypedLinkSpecifier] {
-        self.typed_link_specifiers.as_deref().unwrap_or_default()
+    pub fn typed_link_specifiers(&self) -> & [crate::types::TypedLinkSpecifier] {
+        self.typed_link_specifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListOutgoingTypedLinksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListOutgoingTypedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListOutgoingTypedLinksOutput`](crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput).
     pub fn builder() -> crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksOutputBuilder {
@@ -37,7 +38,7 @@ impl ListOutgoingTypedLinksOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListOutgoingTypedLinksOutputBuilder {
-    pub(crate) typed_link_specifiers: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub(crate) typed_link_specifiers: ::std::option::Option<::std::vec::Vec::<crate::types::TypedLinkSpecifier>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListOutgoingTypedLinksOutputBuilder {
     /// <p>Returns a typed link specifier as output.</p>
     pub fn typed_link_specifiers(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         let mut v = self.typed_link_specifiers.unwrap_or_default();
-        v.push(input);
-        self.typed_link_specifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.typed_link_specifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn set_typed_link_specifiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>) -> Self {
-        self.typed_link_specifiers = input;
-        self
+    pub fn set_typed_link_specifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TypedLinkSpecifier>>) -> Self {
+        self.typed_link_specifiers = input; self
     }
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn get_typed_link_specifiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>> {
+    pub fn get_typed_link_specifiers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TypedLinkSpecifier>> {
         &self.typed_link_specifiers
     }
     /// <p>The pagination token.</p>
@@ -69,28 +69,30 @@ impl ListOutgoingTypedLinksOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListOutgoingTypedLinksOutput`](crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput).
     pub fn build(self) -> crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput {
         crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput {
-            typed_link_specifiers: self.typed_link_specifiers,
-            next_token: self.next_token,
+            typed_link_specifiers: self.typed_link_specifiers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

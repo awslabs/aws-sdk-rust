@@ -3,19 +3,19 @@
 /// <p>Contains the details of the started session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSessionResult {
+pub struct StartSessionResult  {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
-impl StartSessionResult {
+impl  StartSessionResult  {
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn session_token(&self) -> ::std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> ::std::option::Option<&crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> ::std::option::Option<& crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl StartSessionResultBuilder {
     }
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>Session token of the started session. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl StartSessionResultBuilder {
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn set_timing_information(mut self, input: ::std::option::Option<crate::types::TimingInformation>) -> Self {
-        self.timing_information = input;
-        self
+        self.timing_information = input; self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn get_timing_information(&self) -> &::std::option::Option<crate::types::TimingInformation> {
@@ -65,8 +63,11 @@ impl StartSessionResultBuilder {
     /// Consumes the builder and constructs a [`StartSessionResult`](crate::types::StartSessionResult).
     pub fn build(self) -> crate::types::StartSessionResult {
         crate::types::StartSessionResult {
-            session_token: self.session_token,
-            timing_information: self.timing_information,
+            session_token: self.session_token
+            ,
+            timing_information: self.timing_information
+            ,
         }
     }
 }
+

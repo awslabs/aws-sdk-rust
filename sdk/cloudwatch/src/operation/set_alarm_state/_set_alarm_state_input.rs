@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetAlarmStateInput {
+pub struct SetAlarmStateInput  {
     /// <p>The name of the alarm.</p>
     pub alarm_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the state.</p>
@@ -13,22 +13,22 @@ pub struct SetAlarmStateInput {
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
     pub state_reason_data: ::std::option::Option<::std::string::String>,
 }
-impl SetAlarmStateInput {
+impl  SetAlarmStateInput  {
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> ::std::option::Option<&str> {
+    pub fn alarm_name(&self) -> ::std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The value of the state.</p>
-    pub fn state_value(&self) -> ::std::option::Option<&crate::types::StateValue> {
+    pub fn state_value(&self) -> ::std::option::Option<& crate::types::StateValue> {
         self.state_value.as_ref()
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-    pub fn state_reason(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn state_reason_data(&self) -> ::std::option::Option<&str> {
+    pub fn state_reason_data(&self) -> ::std::option::Option<& str> {
         self.state_reason_data.as_deref()
     }
 }
@@ -57,8 +57,7 @@ impl SetAlarmStateInputBuilder {
     }
     /// <p>The name of the alarm.</p>
     pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The name of the alarm.</p>
     pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +71,7 @@ impl SetAlarmStateInputBuilder {
     }
     /// <p>The value of the state.</p>
     pub fn set_state_value(mut self, input: ::std::option::Option<crate::types::StateValue>) -> Self {
-        self.state_value = input;
-        self
+        self.state_value = input; self
     }
     /// <p>The value of the state.</p>
     pub fn get_state_value(&self) -> &::std::option::Option<crate::types::StateValue> {
@@ -87,8 +85,7 @@ impl SetAlarmStateInputBuilder {
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason = input;
-        self
+        self.state_reason = input; self
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +100,7 @@ impl SetAlarmStateInputBuilder {
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
     pub fn set_state_reason_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.state_reason_data = input;
-        self
+        self.state_reason_data = input; self
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
@@ -112,14 +108,19 @@ impl SetAlarmStateInputBuilder {
         &self.state_reason_data
     }
     /// Consumes the builder and constructs a [`SetAlarmStateInput`](crate::operation::set_alarm_state::SetAlarmStateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::set_alarm_state::SetAlarmStateInput {
-            alarm_name: self.alarm_name,
-            state_value: self.state_value,
-            state_reason: self.state_reason,
-            state_reason_data: self.state_reason_data,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_alarm_state::SetAlarmStateInput {
+                alarm_name: self.alarm_name
+                ,
+                state_value: self.state_value
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_data: self.state_reason_data
+                ,
+            }
+        )
     }
 }
+

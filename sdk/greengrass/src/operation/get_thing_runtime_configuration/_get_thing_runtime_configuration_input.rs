@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetThingRuntimeConfigurationInput {
+pub struct GetThingRuntimeConfigurationInput  {
     /// The thing name.
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl GetThingRuntimeConfigurationInput {
+impl  GetThingRuntimeConfigurationInput  {
     /// The thing name.
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetThingRuntimeConfigurationInputBuilder {
     }
     /// The thing name.
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// The thing name.
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`GetThingRuntimeConfigurationInput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput {
-            thing_name: self.thing_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationInput {
+                thing_name: self.thing_name
+                ,
+            }
+        )
     }
 }
+

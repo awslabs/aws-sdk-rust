@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPendingJobExecutionsInput {
+pub struct GetPendingJobExecutionsInput  {
     /// <p>The name of the thing that is executing the job.</p>
     pub thing_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPendingJobExecutionsInput {
+impl  GetPendingJobExecutionsInput  {
     /// <p>The name of the thing that is executing the job.</p>
-    pub fn thing_name(&self) -> ::std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetPendingJobExecutionsInputBuilder {
     }
     /// <p>The name of the thing that is executing the job.</p>
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The name of the thing that is executing the job.</p>
     pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.thing_name
     }
     /// Consumes the builder and constructs a [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput { thing_name: self.thing_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput {
+                thing_name: self.thing_name
+                ,
+            }
+        )
     }
 }
+

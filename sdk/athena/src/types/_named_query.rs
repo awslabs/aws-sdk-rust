@@ -3,7 +3,7 @@
 /// <p>A query, where <code>QueryString</code> contains the SQL statements that make up the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NamedQuery {
+pub struct NamedQuery  {
     /// <p>The query name.</p>
     pub name: ::std::string::String,
     /// <p>The query description.</p>
@@ -17,32 +17,29 @@ pub struct NamedQuery {
     /// <p>The name of the workgroup that contains the named query.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
 }
-impl NamedQuery {
+impl  NamedQuery  {
     /// <p>The query name.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The query description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The database to which the query belongs.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The SQL statements that make up the query.</p>
-    pub fn query_string(&self) -> &str {
-        use std::ops::Deref;
-        self.query_string.deref()
+    pub fn query_string(&self) -> & str {
+        use std::ops::Deref; self.query_string.deref()
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn named_query_id(&self) -> ::std::option::Option<&str> {
+    pub fn named_query_id(&self) -> ::std::option::Option<& str> {
         self.named_query_id.as_deref()
     }
     /// <p>The name of the workgroup that contains the named query.</p>
-    pub fn work_group(&self) -> ::std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<& str> {
         self.work_group.as_deref()
     }
 }
@@ -73,8 +70,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The query name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The query name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +83,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The query description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The query description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +97,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The database to which the query belongs.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database to which the query belongs.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +111,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The SQL statements that make up the query.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The SQL statements that make up the query.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +124,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The unique identifier of the query.</p>
     pub fn set_named_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.named_query_id = input;
-        self
+        self.named_query_id = input; self
     }
     /// <p>The unique identifier of the query.</p>
     pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +137,7 @@ impl NamedQueryBuilder {
     }
     /// <p>The name of the workgroup that contains the named query.</p>
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The name of the workgroup that contains the named query.</p>
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,28 +149,31 @@ impl NamedQueryBuilder {
     /// - [`database`](crate::types::builders::NamedQueryBuilder::database)
     /// - [`query_string`](crate::types::builders::NamedQueryBuilder::query_string)
     pub fn build(self) -> ::std::result::Result<crate::types::NamedQuery, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NamedQuery {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building NamedQuery",
-                )
-            })?,
-            description: self.description,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building NamedQuery",
-                )
-            })?,
-            query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "query_string",
-                    "query_string was not specified but it is required when building NamedQuery",
-                )
-            })?,
-            named_query_id: self.named_query_id,
-            work_group: self.work_group,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NamedQuery {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building NamedQuery")
+                    )?
+                ,
+                description: self.description
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building NamedQuery")
+                    )?
+                ,
+                query_string: self.query_string
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("query_string", "query_string was not specified but it is required when building NamedQuery")
+                    )?
+                ,
+                named_query_id: self.named_query_id
+                ,
+                work_group: self.work_group
+                ,
+            }
+        )
     }
 }
+

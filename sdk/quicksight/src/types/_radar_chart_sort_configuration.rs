@@ -3,35 +3,37 @@
 /// <p>The sort configuration of a <code>RadarChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RadarChartSortConfiguration {
+pub struct RadarChartSortConfiguration  {
     /// <p>The category sort options of a radar chart.</p>
-    pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub category_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     /// <p>The category items limit for a radar chart.</p>
     pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The color sort configuration of a radar chart.</p>
-    pub color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub color_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     /// <p>The color items limit of a radar chart.</p>
     pub color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
-impl RadarChartSortConfiguration {
+impl  RadarChartSortConfiguration  {
     /// <p>The category sort options of a radar chart.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.category_sort.is_none()`.
-    pub fn category_sort(&self) -> &[crate::types::FieldSortOptions] {
-        self.category_sort.as_deref().unwrap_or_default()
+    pub fn category_sort(&self) -> & [crate::types::FieldSortOptions] {
+        self.category_sort.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The category items limit for a radar chart.</p>
-    pub fn category_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(&self) -> ::std::option::Option<& crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The color sort configuration of a radar chart.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_sort.is_none()`.
-    pub fn color_sort(&self) -> &[crate::types::FieldSortOptions] {
-        self.color_sort.as_deref().unwrap_or_default()
+    pub fn color_sort(&self) -> & [crate::types::FieldSortOptions] {
+        self.color_sort.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The color items limit of a radar chart.</p>
-    pub fn color_items_limit(&self) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn color_items_limit(&self) -> ::std::option::Option<& crate::types::ItemsLimitConfiguration> {
         self.color_items_limit.as_ref()
     }
 }
@@ -46,9 +48,9 @@ impl RadarChartSortConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RadarChartSortConfigurationBuilder {
-    pub(crate) category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) category_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     pub(crate) category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
-    pub(crate) color_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) color_sort: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>,
     pub(crate) color_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl RadarChartSortConfigurationBuilder {
@@ -59,17 +61,16 @@ impl RadarChartSortConfigurationBuilder {
     /// <p>The category sort options of a radar chart.</p>
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
-        v.push(input);
-        self.category_sort = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.category_sort = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The category sort options of a radar chart.</p>
-    pub fn set_category_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.category_sort = input;
-        self
+    pub fn set_category_sort(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>) -> Self {
+        self.category_sort = input; self
     }
     /// <p>The category sort options of a radar chart.</p>
-    pub fn get_category_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_category_sort(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>> {
         &self.category_sort
     }
     /// <p>The category items limit for a radar chart.</p>
@@ -79,8 +80,7 @@ impl RadarChartSortConfigurationBuilder {
     }
     /// <p>The category items limit for a radar chart.</p>
     pub fn set_category_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.category_items_limit = input;
-        self
+        self.category_items_limit = input; self
     }
     /// <p>The category items limit for a radar chart.</p>
     pub fn get_category_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
@@ -93,17 +93,16 @@ impl RadarChartSortConfigurationBuilder {
     /// <p>The color sort configuration of a radar chart.</p>
     pub fn color_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.color_sort.unwrap_or_default();
-        v.push(input);
-        self.color_sort = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.color_sort = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The color sort configuration of a radar chart.</p>
-    pub fn set_color_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.color_sort = input;
-        self
+    pub fn set_color_sort(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>>) -> Self {
+        self.color_sort = input; self
     }
     /// <p>The color sort configuration of a radar chart.</p>
-    pub fn get_color_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+    pub fn get_color_sort(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FieldSortOptions>> {
         &self.color_sort
     }
     /// <p>The color items limit of a radar chart.</p>
@@ -113,8 +112,7 @@ impl RadarChartSortConfigurationBuilder {
     }
     /// <p>The color items limit of a radar chart.</p>
     pub fn set_color_items_limit(mut self, input: ::std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.color_items_limit = input;
-        self
+        self.color_items_limit = input; self
     }
     /// <p>The color items limit of a radar chart.</p>
     pub fn get_color_items_limit(&self) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
@@ -123,10 +121,15 @@ impl RadarChartSortConfigurationBuilder {
     /// Consumes the builder and constructs a [`RadarChartSortConfiguration`](crate::types::RadarChartSortConfiguration).
     pub fn build(self) -> crate::types::RadarChartSortConfiguration {
         crate::types::RadarChartSortConfiguration {
-            category_sort: self.category_sort,
-            category_items_limit: self.category_items_limit,
-            color_sort: self.color_sort,
-            color_items_limit: self.color_items_limit,
+            category_sort: self.category_sort
+            ,
+            category_items_limit: self.category_items_limit
+            ,
+            color_sort: self.color_sort
+            ,
+            color_items_limit: self.color_items_limit
+            ,
         }
     }
 }
+

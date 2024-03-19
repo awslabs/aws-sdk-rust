@@ -3,7 +3,7 @@
 /// <p>A repository sync definition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RepositorySyncDefinition {
+pub struct RepositorySyncDefinition  {
     /// <p>The resource that is synced to.</p>
     pub target: ::std::string::String,
     /// <p>The resource that is synced from.</p>
@@ -13,26 +13,22 @@ pub struct RepositorySyncDefinition {
     /// <p>The directory in the repository.</p>
     pub directory: ::std::string::String,
 }
-impl RepositorySyncDefinition {
+impl  RepositorySyncDefinition  {
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> &str {
-        use std::ops::Deref;
-        self.target.deref()
+    pub fn target(&self) -> & str {
+        use std::ops::Deref; self.target.deref()
     }
     /// <p>The resource that is synced from.</p>
-    pub fn parent(&self) -> &str {
-        use std::ops::Deref;
-        self.parent.deref()
+    pub fn parent(&self) -> & str {
+        use std::ops::Deref; self.parent.deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
     /// <p>The directory in the repository.</p>
-    pub fn directory(&self) -> &str {
-        use std::ops::Deref;
-        self.directory.deref()
+    pub fn directory(&self) -> & str {
+        use std::ops::Deref; self.directory.deref()
     }
 }
 impl RepositorySyncDefinition {
@@ -60,8 +56,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The resource that is synced to.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The resource that is synced to.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The resource that is synced from.</p>
     pub fn set_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent = input;
-        self
+        self.parent = input; self
     }
     /// <p>The resource that is synced from.</p>
     pub fn get_parent(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The repository branch.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The repository branch.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl RepositorySyncDefinitionBuilder {
     }
     /// <p>The directory in the repository.</p>
     pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory = input;
-        self
+        self.directory = input; self
     }
     /// <p>The directory in the repository.</p>
     pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl RepositorySyncDefinitionBuilder {
     /// - [`branch`](crate::types::builders::RepositorySyncDefinitionBuilder::branch)
     /// - [`directory`](crate::types::builders::RepositorySyncDefinitionBuilder::directory)
     pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RepositorySyncDefinition {
-            target: self.target.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target",
-                    "target was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            parent: self.parent.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "parent",
-                    "parent was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-            directory: self.directory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory",
-                    "directory was not specified but it is required when building RepositorySyncDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RepositorySyncDefinition {
+                target: self.target
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("target", "target was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                parent: self.parent
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("parent", "parent was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+                directory: self.directory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory", "directory was not specified but it is required when building RepositorySyncDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

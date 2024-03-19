@@ -3,13 +3,13 @@
 /// <p>The standard layout of the KPI visual.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KpiVisualStandardLayout {
+pub struct KpiVisualStandardLayout  {
     /// <p>The standard layout type.</p>
     pub r#type: crate::types::KpiVisualStandardLayoutType,
 }
-impl KpiVisualStandardLayout {
+impl  KpiVisualStandardLayout  {
     /// <p>The standard layout type.</p>
-    pub fn r#type(&self) -> &crate::types::KpiVisualStandardLayoutType {
+    pub fn r#type(&self) -> & crate::types::KpiVisualStandardLayoutType {
         &self.r#type
     }
 }
@@ -35,8 +35,7 @@ impl KpiVisualStandardLayoutBuilder {
     }
     /// <p>The standard layout type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::KpiVisualStandardLayoutType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The standard layout type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::KpiVisualStandardLayoutType> {
@@ -46,13 +45,15 @@ impl KpiVisualStandardLayoutBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::KpiVisualStandardLayoutBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::KpiVisualStandardLayout, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KpiVisualStandardLayout {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building KpiVisualStandardLayout",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KpiVisualStandardLayout {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building KpiVisualStandardLayout")
+                    )?
+                ,
+            }
+        )
     }
 }
+

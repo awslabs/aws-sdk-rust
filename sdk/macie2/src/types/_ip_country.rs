@@ -3,19 +3,19 @@
 /// <p>Provides information about the country that an IP address originated from.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpCountry {
+pub struct IpCountry  {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the country that the IP address originated from.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl IpCountry {
+impl  IpCountry  {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The name of the country that the IP address originated from.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IpCountryBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IpCountryBuilder {
     }
     /// <p>The name of the country that the IP address originated from.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the country that the IP address originated from.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl IpCountryBuilder {
     /// Consumes the builder and constructs a [`IpCountry`](crate::types::IpCountry).
     pub fn build(self) -> crate::types::IpCountry {
         crate::types::IpCountry {
-            code: self.code,
-            name: self.name,
+            code: self.code
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

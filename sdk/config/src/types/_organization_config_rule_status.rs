@@ -3,7 +3,7 @@
 /// <p>Returns the status for an organization Config rule in an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OrganizationConfigRuleStatus {
+pub struct OrganizationConfigRuleStatus  {
     /// <p>The name that you assign to organization Config rule.</p>
     pub organization_config_rule_name: ::std::string::String,
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
@@ -36,11 +36,10 @@ pub struct OrganizationConfigRuleStatus {
     /// <p>The timestamp of the last update.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl OrganizationConfigRuleStatus {
+impl  OrganizationConfigRuleStatus  {
     /// <p>The name that you assign to organization Config rule.</p>
-    pub fn organization_config_rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.organization_config_rule_name.deref()
+    pub fn organization_config_rule_name(&self) -> & str {
+        use std::ops::Deref; self.organization_config_rule_name.deref()
     }
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
@@ -64,19 +63,19 @@ impl OrganizationConfigRuleStatus {
     /// <li>
     /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
-    pub fn organization_rule_status(&self) -> &crate::types::OrganizationRuleStatus {
+    pub fn organization_rule_status(&self) -> & crate::types::OrganizationRuleStatus {
         &self.organization_rule_status
     }
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The timestamp of the last update.</p>
-    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -106,8 +105,7 @@ impl OrganizationConfigRuleStatusBuilder {
     }
     /// <p>The name that you assign to organization Config rule.</p>
     pub fn set_organization_config_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_config_rule_name = input;
-        self
+        self.organization_config_rule_name = input; self
     }
     /// <p>The name that you assign to organization Config rule.</p>
     pub fn get_organization_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +161,7 @@ impl OrganizationConfigRuleStatusBuilder {
     /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     pub fn set_organization_rule_status(mut self, input: ::std::option::Option<crate::types::OrganizationRuleStatus>) -> Self {
-        self.organization_rule_status = input;
-        self
+        self.organization_rule_status = input; self
     }
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
@@ -198,8 +195,7 @@ impl OrganizationConfigRuleStatusBuilder {
     }
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +208,7 @@ impl OrganizationConfigRuleStatusBuilder {
     }
     /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>An error message indicating that organization Config rule creation or deletion failed due to an error.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -226,8 +221,7 @@ impl OrganizationConfigRuleStatusBuilder {
     }
     /// <p>The timestamp of the last update.</p>
     pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input;
-        self
+        self.last_update_time = input; self
     }
     /// <p>The timestamp of the last update.</p>
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -238,22 +232,26 @@ impl OrganizationConfigRuleStatusBuilder {
     /// - [`organization_config_rule_name`](crate::types::builders::OrganizationConfigRuleStatusBuilder::organization_config_rule_name)
     /// - [`organization_rule_status`](crate::types::builders::OrganizationConfigRuleStatusBuilder::organization_rule_status)
     pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConfigRuleStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OrganizationConfigRuleStatus {
-            organization_config_rule_name: self.organization_config_rule_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_config_rule_name",
-                    "organization_config_rule_name was not specified but it is required when building OrganizationConfigRuleStatus",
-                )
-            })?,
-            organization_rule_status: self.organization_rule_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "organization_rule_status",
-                    "organization_rule_status was not specified but it is required when building OrganizationConfigRuleStatus",
-                )
-            })?,
-            error_code: self.error_code,
-            error_message: self.error_message,
-            last_update_time: self.last_update_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OrganizationConfigRuleStatus {
+                organization_config_rule_name: self.organization_config_rule_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_config_rule_name", "organization_config_rule_name was not specified but it is required when building OrganizationConfigRuleStatus")
+                    )?
+                ,
+                organization_rule_status: self.organization_rule_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("organization_rule_status", "organization_rule_status was not specified but it is required when building OrganizationConfigRuleStatus")
+                    )?
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                last_update_time: self.last_update_time
+                ,
+            }
+        )
     }
 }
+

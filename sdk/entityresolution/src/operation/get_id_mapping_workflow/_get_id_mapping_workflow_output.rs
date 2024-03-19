@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIdMappingWorkflowOutput {
+pub struct GetIdMappingWorkflowOutput  {
     /// <p>The name of the workflow.</p>
     pub workflow_name: ::std::string::String,
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code> .</p>
@@ -10,9 +10,9 @@ pub struct GetIdMappingWorkflowOutput {
     /// <p>A description of the workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub input_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>,
+    pub input_source_config: ::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>,
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub output_source_config: ::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>,
+    pub output_source_config: ::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>,
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     /// <p>The timestamp of when the workflow was created.</p>
@@ -22,61 +22,56 @@ pub struct GetIdMappingWorkflowOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub role_arn: ::std::string::String,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetIdMappingWorkflowOutput {
+impl  GetIdMappingWorkflowOutput  {
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_name.deref()
+    pub fn workflow_name(&self) -> & str {
+        use std::ops::Deref; self.workflow_name.deref()
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code> .</p>
-    pub fn workflow_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_arn.deref()
+    pub fn workflow_arn(&self) -> & str {
+        use std::ops::Deref; self.workflow_arn.deref()
     }
     /// <p>A description of the workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn input_source_config(&self) -> &[crate::types::IdMappingWorkflowInputSource] {
-        use std::ops::Deref;
-        self.input_source_config.deref()
+    pub fn input_source_config(&self) -> & [crate::types::IdMappingWorkflowInputSource] {
+        use std::ops::Deref; self.input_source_config.deref()
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn output_source_config(&self) -> &[crate::types::IdMappingWorkflowOutputSource] {
-        use std::ops::Deref;
-        self.output_source_config.deref()
+    pub fn output_source_config(&self) -> & [crate::types::IdMappingWorkflowOutputSource] {
+        use std::ops::Deref; self.output_source_config.deref()
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
-    pub fn id_mapping_techniques(&self) -> ::std::option::Option<&crate::types::IdMappingTechniques> {
+    pub fn id_mapping_techniques(&self) -> ::std::option::Option<& crate::types::IdMappingTechniques> {
         self.id_mapping_techniques.as_ref()
     }
     /// <p>The timestamp of when the workflow was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
-    pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.updated_at
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetIdMappingWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetIdMappingWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetIdMappingWorkflowOutput`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput).
     pub fn builder() -> crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder {
@@ -91,13 +86,13 @@ pub struct GetIdMappingWorkflowOutputBuilder {
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>,
-    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>,
+    pub(crate) input_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>>,
+    pub(crate) output_source_config: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>>,
     pub(crate) id_mapping_techniques: ::std::option::Option<crate::types::IdMappingTechniques>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetIdMappingWorkflowOutputBuilder {
@@ -109,8 +104,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +118,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code> .</p>
     pub fn set_workflow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_arn = input;
-        self
+        self.workflow_arn = input; self
     }
     /// <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code> .</p>
     pub fn get_workflow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +131,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>A description of the workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -152,17 +144,16 @@ impl GetIdMappingWorkflowOutputBuilder {
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
     pub fn input_source_config(mut self, input: crate::types::IdMappingWorkflowInputSource) -> Self {
         let mut v = self.input_source_config.unwrap_or_default();
-        v.push(input);
-        self.input_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>>) -> Self {
-        self.input_source_config = input;
-        self
+    pub fn set_input_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>>) -> Self {
+        self.input_source_config = input; self
     }
     /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
-    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowInputSource>> {
+    pub fn get_input_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowInputSource>> {
         &self.input_source_config
     }
     /// Appends an item to `output_source_config`.
@@ -172,17 +163,16 @@ impl GetIdMappingWorkflowOutputBuilder {
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
     pub fn output_source_config(mut self, input: crate::types::IdMappingWorkflowOutputSource) -> Self {
         let mut v = self.output_source_config.unwrap_or_default();
-        v.push(input);
-        self.output_source_config = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_source_config = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
-        self.output_source_config = input;
-        self
+    pub fn set_output_source_config(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>>) -> Self {
+        self.output_source_config = input; self
     }
     /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code> and <code>KMSArn</code>.</p>
-    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdMappingWorkflowOutputSource>> {
+    pub fn get_output_source_config(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IdMappingWorkflowOutputSource>> {
         &self.output_source_config
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
@@ -193,8 +183,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn set_id_mapping_techniques(mut self, input: ::std::option::Option<crate::types::IdMappingTechniques>) -> Self {
-        self.id_mapping_techniques = input;
-        self
+        self.id_mapping_techniques = input; self
     }
     /// <p>An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.</p>
     pub fn get_id_mapping_techniques(&self) -> &::std::option::Option<crate::types::IdMappingTechniques> {
@@ -208,8 +197,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the workflow was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +211,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when the workflow was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -238,8 +225,7 @@ impl GetIdMappingWorkflowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access resources on your behalf.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -252,28 +238,27 @@ impl GetIdMappingWorkflowOutputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetIdMappingWorkflowOutput`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_name`](crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder::workflow_name)
@@ -283,57 +268,53 @@ impl GetIdMappingWorkflowOutputBuilder {
     /// - [`created_at`](crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder::created_at)
     /// - [`updated_at`](crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder::updated_at)
     /// - [`role_arn`](crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder::role_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput {
-            workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_name",
-                    "workflow_name was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_arn",
-                    "workflow_arn was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            description: self.description,
-            input_source_config: self.input_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_source_config",
-                    "input_source_config was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "output_source_config",
-                    "output_source_config was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            id_mapping_techniques: self.id_mapping_techniques,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "updated_at",
-                    "updated_at was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building GetIdMappingWorkflowOutput",
-                )
-            })?,
-            tags: self.tags,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowOutput {
+                workflow_name: self.workflow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_name", "workflow_name was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                workflow_arn: self.workflow_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_arn", "workflow_arn was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                input_source_config: self.input_source_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_source_config", "input_source_config was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                output_source_config: self.output_source_config
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("output_source_config", "output_source_config was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                id_mapping_techniques: self.id_mapping_techniques
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                updated_at: self.updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("updated_at", "updated_at was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building GetIdMappingWorkflowOutput")
+                    )?
+                ,
+                tags: self.tags
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

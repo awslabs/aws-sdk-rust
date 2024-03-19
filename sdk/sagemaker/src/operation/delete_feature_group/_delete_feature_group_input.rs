@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFeatureGroupInput {
+pub struct DeleteFeatureGroupInput  {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     pub feature_group_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteFeatureGroupInput {
+impl  DeleteFeatureGroupInput  {
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteFeatureGroupInputBuilder {
     }
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_name = input;
-        self
+        self.feature_group_name = input; self
     }
     /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_group_name
     }
     /// Consumes the builder and constructs a [`DeleteFeatureGroupInput`](crate::operation::delete_feature_group::DeleteFeatureGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_feature_group::DeleteFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_feature_group::DeleteFeatureGroupInput {
-            feature_group_name: self.feature_group_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_feature_group::DeleteFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_feature_group::DeleteFeatureGroupInput {
+                feature_group_name: self.feature_group_name
+                ,
+            }
+        )
     }
 }
+

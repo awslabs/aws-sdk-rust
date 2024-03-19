@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchQuickConnectsOutput {
+pub struct SearchQuickConnectsOutput  {
     /// <p>Information about the quick connects.</p>
-    pub quick_connects: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>,
+    pub quick_connects: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnect>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of quick connects which matched your search query.</p>
     pub approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl SearchQuickConnectsOutput {
+impl  SearchQuickConnectsOutput  {
     /// <p>Information about the quick connects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.quick_connects.is_none()`.
-    pub fn quick_connects(&self) -> &[crate::types::QuickConnect] {
-        self.quick_connects.as_deref().unwrap_or_default()
+    pub fn quick_connects(&self) -> & [crate::types::QuickConnect] {
+        self.quick_connects.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of quick connects which matched your search query.</p>
@@ -28,10 +29,10 @@ impl SearchQuickConnectsOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchQuickConnectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchQuickConnectsOutput {
     /// Creates a new builder-style object to manufacture [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput).
     pub fn builder() -> crate::operation::search_quick_connects::builders::SearchQuickConnectsOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchQuickConnectsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchQuickConnectsOutputBuilder {
-    pub(crate) quick_connects: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>,
+    pub(crate) quick_connects: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnect>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_total_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchQuickConnectsOutputBuilder {
     /// <p>Information about the quick connects.</p>
     pub fn quick_connects(mut self, input: crate::types::QuickConnect) -> Self {
         let mut v = self.quick_connects.unwrap_or_default();
-        v.push(input);
-        self.quick_connects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.quick_connects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn set_quick_connects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>>) -> Self {
-        self.quick_connects = input;
-        self
+    pub fn set_quick_connects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuickConnect>>) -> Self {
+        self.quick_connects = input; self
     }
     /// <p>Information about the quick connects.</p>
-    pub fn get_quick_connects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnect>> {
+    pub fn get_quick_connects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuickConnect>> {
         &self.quick_connects
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
@@ -76,8 +76,7 @@ impl SearchQuickConnectsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchQuickConnectsOutputBuilder {
     }
     /// <p>The total number of quick connects which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     /// <p>The total number of quick connects which matched your search query.</p>
     pub fn get_approximate_total_count(&self) -> &::std::option::Option<i64> {
         &self.approximate_total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchQuickConnectsOutput`](crate::operation::search_quick_connects::SearchQuickConnectsOutput).
     pub fn build(self) -> crate::operation::search_quick_connects::SearchQuickConnectsOutput {
         crate::operation::search_quick_connects::SearchQuickConnectsOutput {
-            quick_connects: self.quick_connects,
-            next_token: self.next_token,
-            approximate_total_count: self.approximate_total_count,
+            quick_connects: self.quick_connects
+            ,
+            next_token: self.next_token
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

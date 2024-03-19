@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let columndatatype = unimplemented!();
 /// match columndatatype {
@@ -40,16 +40,14 @@
 /// Specifically, when `columndatatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ColumnDataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Data type of a column.
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ColumnDataType {
     #[allow(missing_docs)] // documentation missing in model
     Bigint,
@@ -77,93 +75,92 @@ pub enum ColumnDataType {
     Tinyint,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ColumnDataType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BIGINT" => ColumnDataType::Bigint,
-            "BINARY" => ColumnDataType::Binary,
-            "BOOLEAN" => ColumnDataType::Boolean,
-            "CHAR" => ColumnDataType::Char,
-            "DATE" => ColumnDataType::Date,
-            "DATETIME" => ColumnDataType::Datetime,
-            "DOUBLE" => ColumnDataType::Double,
-            "FLOAT" => ColumnDataType::Float,
-            "INTEGER" => ColumnDataType::Integer,
-            "SMALLINT" => ColumnDataType::Smallint,
-            "STRING" => ColumnDataType::String,
-            "TINYINT" => ColumnDataType::Tinyint,
-            other => ColumnDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "BIGINT" => ColumnDataType::Bigint,
+"BINARY" => ColumnDataType::Binary,
+"BOOLEAN" => ColumnDataType::Boolean,
+"CHAR" => ColumnDataType::Char,
+"DATE" => ColumnDataType::Date,
+"DATETIME" => ColumnDataType::Datetime,
+"DOUBLE" => ColumnDataType::Double,
+"FLOAT" => ColumnDataType::Float,
+"INTEGER" => ColumnDataType::Integer,
+"SMALLINT" => ColumnDataType::Smallint,
+"STRING" => ColumnDataType::String,
+"TINYINT" => ColumnDataType::Tinyint,
+other => ColumnDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ColumnDataType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ColumnDataType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ColumnDataType::from(s))
+                    }
+                }
 impl ColumnDataType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ColumnDataType::Bigint => "BIGINT",
-            ColumnDataType::Binary => "BINARY",
-            ColumnDataType::Boolean => "BOOLEAN",
-            ColumnDataType::Char => "CHAR",
-            ColumnDataType::Date => "DATE",
-            ColumnDataType::Datetime => "DATETIME",
-            ColumnDataType::Double => "DOUBLE",
-            ColumnDataType::Float => "FLOAT",
-            ColumnDataType::Integer => "INTEGER",
-            ColumnDataType::Smallint => "SMALLINT",
-            ColumnDataType::String => "STRING",
-            ColumnDataType::Tinyint => "TINYINT",
-            ColumnDataType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BIGINT", "BINARY", "BOOLEAN", "CHAR", "DATE", "DATETIME", "DOUBLE", "FLOAT", "INTEGER", "SMALLINT", "STRING", "TINYINT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ColumnDataType::Bigint => "BIGINT",
+    ColumnDataType::Binary => "BINARY",
+    ColumnDataType::Boolean => "BOOLEAN",
+    ColumnDataType::Char => "CHAR",
+    ColumnDataType::Date => "DATE",
+    ColumnDataType::Datetime => "DATETIME",
+    ColumnDataType::Double => "DOUBLE",
+    ColumnDataType::Float => "FLOAT",
+    ColumnDataType::Integer => "INTEGER",
+    ColumnDataType::Smallint => "SMALLINT",
+    ColumnDataType::String => "STRING",
+    ColumnDataType::Tinyint => "TINYINT",
+    ColumnDataType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BIGINT", "BINARY", "BOOLEAN", "CHAR", "DATE", "DATETIME", "DOUBLE", "FLOAT", "INTEGER", "SMALLINT", "STRING", "TINYINT"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ColumnDataType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ColumnDataType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ColumnDataType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ColumnDataType::Bigint => write!(f, "BIGINT"),
-            ColumnDataType::Binary => write!(f, "BINARY"),
-            ColumnDataType::Boolean => write!(f, "BOOLEAN"),
-            ColumnDataType::Char => write!(f, "CHAR"),
-            ColumnDataType::Date => write!(f, "DATE"),
-            ColumnDataType::Datetime => write!(f, "DATETIME"),
-            ColumnDataType::Double => write!(f, "DOUBLE"),
-            ColumnDataType::Float => write!(f, "FLOAT"),
-            ColumnDataType::Integer => write!(f, "INTEGER"),
-            ColumnDataType::Smallint => write!(f, "SMALLINT"),
-            ColumnDataType::String => write!(f, "STRING"),
-            ColumnDataType::Tinyint => write!(f, "TINYINT"),
-            ColumnDataType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ColumnDataType::Bigint => write!(f, "BIGINT"),
+ColumnDataType::Binary => write!(f, "BINARY"),
+ColumnDataType::Boolean => write!(f, "BOOLEAN"),
+ColumnDataType::Char => write!(f, "CHAR"),
+ColumnDataType::Date => write!(f, "DATE"),
+ColumnDataType::Datetime => write!(f, "DATETIME"),
+ColumnDataType::Double => write!(f, "DOUBLE"),
+ColumnDataType::Float => write!(f, "FLOAT"),
+ColumnDataType::Integer => write!(f, "INTEGER"),
+ColumnDataType::Smallint => write!(f, "SMALLINT"),
+ColumnDataType::String => write!(f, "STRING"),
+ColumnDataType::Tinyint => write!(f, "TINYINT"),
+ColumnDataType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

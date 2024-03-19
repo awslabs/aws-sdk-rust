@@ -3,22 +3,23 @@
 /// <p>An object representing the health status of the container instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerInstanceHealthStatus {
+pub struct ContainerInstanceHealthStatus  {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     pub overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    pub details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
+    pub details: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthCheckResult>>,
 }
-impl ContainerInstanceHealthStatus {
+impl  ContainerInstanceHealthStatus  {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
-    pub fn overall_status(&self) -> ::std::option::Option<&crate::types::InstanceHealthCheckState> {
+    pub fn overall_status(&self) -> ::std::option::Option<& crate::types::InstanceHealthCheckState> {
         self.overall_status.as_ref()
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
-    pub fn details(&self) -> &[crate::types::InstanceHealthCheckResult] {
-        self.details.as_deref().unwrap_or_default()
+    pub fn details(&self) -> & [crate::types::InstanceHealthCheckResult] {
+        self.details.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ContainerInstanceHealthStatus {
@@ -33,7 +34,7 @@ impl ContainerInstanceHealthStatus {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ContainerInstanceHealthStatusBuilder {
     pub(crate) overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
-    pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthCheckResult>>,
 }
 impl ContainerInstanceHealthStatusBuilder {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
@@ -43,8 +44,7 @@ impl ContainerInstanceHealthStatusBuilder {
     }
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     pub fn set_overall_status(mut self, input: ::std::option::Option<crate::types::InstanceHealthCheckState>) -> Self {
-        self.overall_status = input;
-        self
+        self.overall_status = input; self
     }
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     pub fn get_overall_status(&self) -> &::std::option::Option<crate::types::InstanceHealthCheckState> {
@@ -57,24 +57,26 @@ impl ContainerInstanceHealthStatusBuilder {
     /// <p>An array of objects representing the details of the container instance health status.</p>
     pub fn details(mut self, input: crate::types::InstanceHealthCheckResult) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthCheckResult>>) -> Self {
+        self.details = input; self
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceHealthCheckResult>> {
         &self.details
     }
     /// Consumes the builder and constructs a [`ContainerInstanceHealthStatus`](crate::types::ContainerInstanceHealthStatus).
     pub fn build(self) -> crate::types::ContainerInstanceHealthStatus {
         crate::types::ContainerInstanceHealthStatus {
-            overall_status: self.overall_status,
-            details: self.details,
+            overall_status: self.overall_status
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

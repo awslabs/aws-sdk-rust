@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrustStoresOutput {
+pub struct DescribeTrustStoresOutput  {
     /// <p>Information about the trust stores.</p>
-    pub trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>,
+    pub trust_stores: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTrustStoresOutput {
+impl  DescribeTrustStoresOutput  {
     /// <p>Information about the trust stores.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trust_stores.is_none()`.
-    pub fn trust_stores(&self) -> &[crate::types::TrustStore] {
-        self.trust_stores.as_deref().unwrap_or_default()
+    pub fn trust_stores(&self) -> & [crate::types::TrustStore] {
+        self.trust_stores.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrustStoresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrustStoresOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustStoresOutput`](crate::operation::describe_trust_stores::DescribeTrustStoresOutput).
     pub fn builder() -> crate::operation::describe_trust_stores::builders::DescribeTrustStoresOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeTrustStoresOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTrustStoresOutputBuilder {
-    pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>,
+    pub(crate) trust_stores: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeTrustStoresOutputBuilder {
     /// <p>Information about the trust stores.</p>
     pub fn trust_stores(mut self, input: crate::types::TrustStore) -> Self {
         let mut v = self.trust_stores.unwrap_or_default();
-        v.push(input);
-        self.trust_stores = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.trust_stores = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the trust stores.</p>
-    pub fn set_trust_stores(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustStore>>) -> Self {
-        self.trust_stores = input;
-        self
+    pub fn set_trust_stores(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>>) -> Self {
+        self.trust_stores = input; self
     }
     /// <p>Information about the trust stores.</p>
-    pub fn get_trust_stores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustStore>> {
+    pub fn get_trust_stores(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TrustStore>> {
         &self.trust_stores
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeTrustStoresOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrustStoresOutput`](crate::operation::describe_trust_stores::DescribeTrustStoresOutput).
     pub fn build(self) -> crate::operation::describe_trust_stores::DescribeTrustStoresOutput {
         crate::operation::describe_trust_stores::DescribeTrustStoresOutput {
-            trust_stores: self.trust_stores,
-            next_marker: self.next_marker,
+            trust_stores: self.trust_stores
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,40 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricsOutput {
+pub struct ListMetricsOutput  {
     /// <p>The metrics that match your request.</p>
-    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>,
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub owning_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub owning_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl ListMetricsOutput {
+impl  ListMetricsOutput  {
     /// <p>The metrics that match your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
-    pub fn metrics(&self) -> &[crate::types::Metric] {
-        self.metrics.as_deref().unwrap_or_default()
+    pub fn metrics(&self) -> & [crate::types::Metric] {
+        self.metrics.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.owning_accounts.is_none()`.
-    pub fn owning_accounts(&self) -> &[::std::string::String] {
-        self.owning_accounts.as_deref().unwrap_or_default()
+    pub fn owning_accounts(&self) -> & [::std::string::String] {
+        self.owning_accounts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricsOutput`](crate::operation::list_metrics::ListMetricsOutput).
     pub fn builder() -> crate::operation::list_metrics::builders::ListMetricsOutputBuilder {
@@ -47,9 +49,9 @@ impl ListMetricsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMetricsOutputBuilder {
-    pub(crate) metrics: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>,
+    pub(crate) metrics: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) owning_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) owning_accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListMetricsOutputBuilder {
@@ -60,17 +62,16 @@ impl ListMetricsOutputBuilder {
     /// <p>The metrics that match your request.</p>
     pub fn metrics(mut self, input: crate::types::Metric) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The metrics that match your request.</p>
-    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Metric>>) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Metric>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The metrics that match your request.</p>
-    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Metric>> {
         &self.metrics
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
@@ -80,8 +81,7 @@ impl ListMetricsOutputBuilder {
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token that marks the start of the next batch of returned results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,37 +95,40 @@ impl ListMetricsOutputBuilder {
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
     pub fn owning_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.owning_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.owning_accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.owning_accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn set_owning_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.owning_accounts = input;
-        self
+    pub fn set_owning_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.owning_accounts = input; self
     }
     /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
     /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
-    pub fn get_owning_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_owning_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.owning_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMetricsOutput`](crate::operation::list_metrics::ListMetricsOutput).
     pub fn build(self) -> crate::operation::list_metrics::ListMetricsOutput {
         crate::operation::list_metrics::ListMetricsOutput {
-            metrics: self.metrics,
-            next_token: self.next_token,
-            owning_accounts: self.owning_accounts,
+            metrics: self.metrics
+            ,
+            next_token: self.next_token
+            ,
+            owning_accounts: self.owning_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

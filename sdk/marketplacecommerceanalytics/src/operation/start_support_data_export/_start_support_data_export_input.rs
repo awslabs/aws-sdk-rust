@@ -4,7 +4,7 @@
 #[deprecated(note = "This target has been deprecated. As of December 2022 Product Support Connection is no longer supported.")]
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSupportDataExportInput {
+pub struct StartSupportDataExportInput  {
     /// <p><i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time.</p>
     /// <p></p>
     /// <ul>
@@ -24,9 +24,9 @@ pub struct StartSupportDataExportInput {
     /// <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub customer_defined_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub customer_defined_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartSupportDataExportInput {
+impl  StartSupportDataExportInput  {
     /// <p><i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time.</p>
     /// <p></p>
     /// <ul>
@@ -34,31 +34,31 @@ impl StartSupportDataExportInput {
     /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
     /// </ul>
     /// <p></p>
-    pub fn data_set_type(&self) -> ::std::option::Option<&crate::types::SupportDataSetType> {
+    pub fn data_set_type(&self) -> ::std::option::Option<& crate::types::SupportDataSetType> {
         self.data_set_type.as_ref()
     }
     /// <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
-    pub fn from_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn from_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.from_date.as_ref()
     }
     /// <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
-    pub fn role_name_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_name_arn(&self) -> ::std::option::Option<& str> {
         self.role_name_arn.as_deref()
     }
     /// <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
-    pub fn destination_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn destination_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.destination_s3_bucket_name.as_deref()
     }
     /// <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
-    pub fn destination_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn destination_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.destination_s3_prefix.as_deref()
     }
     /// <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
-    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub fn customer_defined_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn customer_defined_values(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.customer_defined_values.as_ref()
     }
 }
@@ -79,7 +79,7 @@ pub struct StartSupportDataExportInputBuilder {
     pub(crate) destination_s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) destination_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_defined_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) customer_defined_values: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartSupportDataExportInputBuilder {
     /// <p><i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time.</p>
@@ -102,8 +102,7 @@ impl StartSupportDataExportInputBuilder {
     /// </ul>
     /// <p></p>
     pub fn set_data_set_type(mut self, input: ::std::option::Option<crate::types::SupportDataSetType>) -> Self {
-        self.data_set_type = input;
-        self
+        self.data_set_type = input; self
     }
     /// <p><i>This target has been deprecated.</i> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time.</p>
     /// <p></p>
@@ -123,8 +122,7 @@ impl StartSupportDataExportInputBuilder {
     }
     /// <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
     pub fn set_from_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.from_date = input;
-        self
+        self.from_date = input; self
     }
     /// <i>This target has been deprecated.</i> The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
     pub fn get_from_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -138,8 +136,7 @@ impl StartSupportDataExportInputBuilder {
     }
     /// <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
     pub fn set_role_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name_arn = input;
-        self
+        self.role_name_arn = input; self
     }
     /// <i>This target has been deprecated.</i> The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
     pub fn get_role_name_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +150,7 @@ impl StartSupportDataExportInputBuilder {
     }
     /// <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
     pub fn set_destination_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_s3_bucket_name = input;
-        self
+        self.destination_s3_bucket_name = input; self
     }
     /// <i>This target has been deprecated.</i> The name (friendly name, not ARN) of the destination S3 bucket.
     pub fn get_destination_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +163,7 @@ impl StartSupportDataExportInputBuilder {
     }
     /// <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
     pub fn set_destination_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_s3_prefix = input;
-        self
+        self.destination_s3_prefix = input; self
     }
     /// <i>This target has been deprecated.</i> (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
     pub fn get_destination_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +177,7 @@ impl StartSupportDataExportInputBuilder {
     }
     /// <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <i>This target has been deprecated.</i> Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,43 +188,40 @@ impl StartSupportDataExportInputBuilder {
     /// To override the contents of this collection use [`set_customer_defined_values`](Self::set_customer_defined_values).
     ///
     /// <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub fn customer_defined_values(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn customer_defined_values(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.customer_defined_values.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.customer_defined_values = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.customer_defined_values = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub fn set_customer_defined_values(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.customer_defined_values = input;
-        self
+    pub fn set_customer_defined_values(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.customer_defined_values = input; self
     }
     /// <i>This target has been deprecated.</i> (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
-    pub fn get_customer_defined_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_customer_defined_values(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.customer_defined_values
     }
     /// Consumes the builder and constructs a [`StartSupportDataExportInput`](crate::operation::start_support_data_export::StartSupportDataExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_support_data_export::StartSupportDataExportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_support_data_export::StartSupportDataExportInput {
-            data_set_type: self.data_set_type,
-            from_date: self.from_date,
-            role_name_arn: self.role_name_arn,
-            destination_s3_bucket_name: self.destination_s3_bucket_name,
-            destination_s3_prefix: self.destination_s3_prefix,
-            sns_topic_arn: self.sns_topic_arn,
-            customer_defined_values: self.customer_defined_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_support_data_export::StartSupportDataExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_support_data_export::StartSupportDataExportInput {
+                data_set_type: self.data_set_type
+                ,
+                from_date: self.from_date
+                ,
+                role_name_arn: self.role_name_arn
+                ,
+                destination_s3_bucket_name: self.destination_s3_bucket_name
+                ,
+                destination_s3_prefix: self.destination_s3_prefix
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                customer_defined_values: self.customer_defined_values
+                ,
+            }
+        )
     }
 }
+

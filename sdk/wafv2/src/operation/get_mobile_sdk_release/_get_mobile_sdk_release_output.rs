@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMobileSdkReleaseOutput {
+pub struct GetMobileSdkReleaseOutput  {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
     pub mobile_sdk_release: ::std::option::Option<crate::types::MobileSdkRelease>,
     _request_id: Option<String>,
 }
-impl GetMobileSdkReleaseOutput {
+impl  GetMobileSdkReleaseOutput  {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
-    pub fn mobile_sdk_release(&self) -> ::std::option::Option<&crate::types::MobileSdkRelease> {
+    pub fn mobile_sdk_release(&self) -> ::std::option::Option<& crate::types::MobileSdkRelease> {
         self.mobile_sdk_release.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetMobileSdkReleaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetMobileSdkReleaseOutput {
     /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseOutput`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput).
     pub fn builder() -> crate::operation::get_mobile_sdk_release::builders::GetMobileSdkReleaseOutputBuilder {
@@ -40,27 +40,28 @@ impl GetMobileSdkReleaseOutputBuilder {
     }
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
     pub fn set_mobile_sdk_release(mut self, input: ::std::option::Option<crate::types::MobileSdkRelease>) -> Self {
-        self.mobile_sdk_release = input;
-        self
+        self.mobile_sdk_release = input; self
     }
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
     pub fn get_mobile_sdk_release(&self) -> &::std::option::Option<crate::types::MobileSdkRelease> {
         &self.mobile_sdk_release
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetMobileSdkReleaseOutput`](crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput).
     pub fn build(self) -> crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput {
         crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseOutput {
-            mobile_sdk_release: self.mobile_sdk_release,
+            mobile_sdk_release: self.mobile_sdk_release
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A parameter for a studio component script, in the form of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScriptParameterKeyValue {
+pub struct ScriptParameterKeyValue  {
     /// <p>A script parameter key.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>A script parameter value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl ScriptParameterKeyValue {
+impl  ScriptParameterKeyValue  {
     /// <p>A script parameter key.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A script parameter value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ScriptParameterKeyValueBuilder {
     }
     /// <p>A script parameter key.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>A script parameter key.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ScriptParameterKeyValueBuilder {
     }
     /// <p>A script parameter value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A script parameter value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ScriptParameterKeyValueBuilder {
     /// Consumes the builder and constructs a [`ScriptParameterKeyValue`](crate::types::ScriptParameterKeyValue).
     pub fn build(self) -> crate::types::ScriptParameterKeyValue {
         crate::types::ScriptParameterKeyValue {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

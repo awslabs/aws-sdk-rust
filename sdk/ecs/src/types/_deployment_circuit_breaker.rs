@@ -7,13 +7,13 @@
 /// <p>For more information about API failure reasons, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeploymentCircuitBreaker {
+pub struct DeploymentCircuitBreaker  {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub enable: bool,
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub rollback: bool,
 }
-impl DeploymentCircuitBreaker {
+impl  DeploymentCircuitBreaker  {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub fn enable(&self) -> bool {
         self.enable
@@ -46,8 +46,7 @@ impl DeploymentCircuitBreakerBuilder {
     }
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
     }
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub fn get_enable(&self) -> &::std::option::Option<bool> {
@@ -61,8 +60,7 @@ impl DeploymentCircuitBreakerBuilder {
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.rollback = input;
-        self
+        self.rollback = input; self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn get_rollback(&self) -> &::std::option::Option<bool> {
@@ -71,8 +69,13 @@ impl DeploymentCircuitBreakerBuilder {
     /// Consumes the builder and constructs a [`DeploymentCircuitBreaker`](crate::types::DeploymentCircuitBreaker).
     pub fn build(self) -> crate::types::DeploymentCircuitBreaker {
         crate::types::DeploymentCircuitBreaker {
-            enable: self.enable.unwrap_or_default(),
-            rollback: self.rollback.unwrap_or_default(),
+            enable: self.enable
+                .unwrap_or_default()
+            ,
+            rollback: self.rollback
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

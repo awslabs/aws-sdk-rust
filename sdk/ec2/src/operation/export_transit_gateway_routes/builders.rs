@@ -5,55 +5,51 @@ pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway
 
 impl ExportTransitGatewayRoutesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.export_transit_gateway_routes();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.export_transit_gateway_routes();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ExportTransitGatewayRoutes`.
-///
+/// 
 /// <p>Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes are exported. Alternatively, you can filter by CIDR range.</p>
 /// <p>The routes are saved to the specified bucket in a JSON file. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesInputBuilder,
+                    inner: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
-    > for ExportTransitGatewayRoutesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
-            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+                    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
+                > for ExportTransitGatewayRoutesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+                        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ExportTransitGatewayRoutesFluentBuilder {
     /// Creates a new `ExportTransitGatewayRoutes`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl ExportTransitGatewayRoutesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutes::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutes::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
-        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutes::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutes::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput, crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the route table.</p>
     pub fn transit_gateway_route_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
@@ -173,7 +160,7 @@ impl ExportTransitGatewayRoutesFluentBuilder {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -198,7 +185,7 @@ impl ExportTransitGatewayRoutesFluentBuilder {
     /// <li>
     /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>The name of the S3 bucket.</p>
@@ -230,3 +217,4 @@ impl ExportTransitGatewayRoutesFluentBuilder {
         self.inner.get_dry_run()
     }
 }
+

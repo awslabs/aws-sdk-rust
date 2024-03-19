@@ -3,22 +3,22 @@
 /// <p>This output contains the description of the cluster step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStepOutput {
+pub struct DescribeStepOutput  {
     /// <p>The step details for the requested step identifier.</p>
     pub step: ::std::option::Option<crate::types::Step>,
     _request_id: Option<String>,
 }
-impl DescribeStepOutput {
+impl  DescribeStepOutput  {
     /// <p>The step details for the requested step identifier.</p>
-    pub fn step(&self) -> ::std::option::Option<&crate::types::Step> {
+    pub fn step(&self) -> ::std::option::Option<& crate::types::Step> {
         self.step.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStepOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStepOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStepOutput`](crate::operation::describe_step::DescribeStepOutput).
     pub fn builder() -> crate::operation::describe_step::builders::DescribeStepOutputBuilder {
@@ -41,27 +41,28 @@ impl DescribeStepOutputBuilder {
     }
     /// <p>The step details for the requested step identifier.</p>
     pub fn set_step(mut self, input: ::std::option::Option<crate::types::Step>) -> Self {
-        self.step = input;
-        self
+        self.step = input; self
     }
     /// <p>The step details for the requested step identifier.</p>
     pub fn get_step(&self) -> &::std::option::Option<crate::types::Step> {
         &self.step
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStepOutput`](crate::operation::describe_step::DescribeStepOutput).
     pub fn build(self) -> crate::operation::describe_step::DescribeStepOutput {
         crate::operation::describe_step::DescribeStepOutput {
-            step: self.step,
+            step: self.step
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

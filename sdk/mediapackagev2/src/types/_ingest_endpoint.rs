@@ -3,19 +3,19 @@
 /// <p>The ingest domain URL where the source stream should be sent.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IngestEndpoint {
+pub struct IngestEndpoint  {
     /// <p>The system-generated unique identifier for the IngestEndpoint.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ingest domain URL where the source stream should be sent.</p>
     pub url: ::std::option::Option<::std::string::String>,
 }
-impl IngestEndpoint {
+impl  IngestEndpoint  {
     /// <p>The system-generated unique identifier for the IngestEndpoint.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ingest domain URL where the source stream should be sent.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl IngestEndpointBuilder {
     }
     /// <p>The system-generated unique identifier for the IngestEndpoint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique identifier for the IngestEndpoint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl IngestEndpointBuilder {
     }
     /// <p>The ingest domain URL where the source stream should be sent.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The ingest domain URL where the source stream should be sent.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,6 +62,12 @@ impl IngestEndpointBuilder {
     }
     /// Consumes the builder and constructs a [`IngestEndpoint`](crate::types::IngestEndpoint).
     pub fn build(self) -> crate::types::IngestEndpoint {
-        crate::types::IngestEndpoint { id: self.id, url: self.url }
+        crate::types::IngestEndpoint {
+            id: self.id
+            ,
+            url: self.url
+            ,
+        }
     }
 }
+

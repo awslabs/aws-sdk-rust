@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRotationInput {
+pub struct UpdateRotationInput  {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub contact_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date and time the rotation goes into effect.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
@@ -17,30 +17,31 @@ pub struct UpdateRotationInput {
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
 }
-impl UpdateRotationInput {
+impl  UpdateRotationInput  {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
-    pub fn rotation_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_id(&self) -> ::std::option::Option<& str> {
         self.rotation_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_ids.is_none()`.
-    pub fn contact_ids(&self) -> &[::std::string::String] {
-        self.contact_ids.as_deref().unwrap_or_default()
+    pub fn contact_ids(&self) -> & [::std::string::String] {
+        self.contact_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time the rotation goes into effect.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
-    pub fn time_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> ::std::option::Option<& str> {
         self.time_zone_id.as_deref()
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> ::std::option::Option<& crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
 }
@@ -56,7 +57,7 @@ impl UpdateRotationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateRotationInputBuilder {
     pub(crate) rotation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
@@ -70,8 +71,7 @@ impl UpdateRotationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_id = input;
-        self
+        self.rotation_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,19 +85,18 @@ impl UpdateRotationInputBuilder {
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.contact_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.contact_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.contact_ids = input;
-        self
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.contact_ids = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation.</p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The date and time the rotation goes into effect.</p>
@@ -107,8 +106,7 @@ impl UpdateRotationInputBuilder {
     }
     /// <p>The date and time the rotation goes into effect.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time the rotation goes into effect.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -125,8 +123,7 @@ impl UpdateRotationInputBuilder {
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone_id = input;
-        self
+        self.time_zone_id = input; self
     }
     /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p><note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
@@ -142,23 +139,28 @@ impl UpdateRotationInputBuilder {
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
-        self.recurrence = input;
-        self
+        self.recurrence = input; self
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
         &self.recurrence
     }
     /// Consumes the builder and constructs a [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_rotation::UpdateRotationInput {
-            rotation_id: self.rotation_id,
-            contact_ids: self.contact_ids,
-            start_time: self.start_time,
-            time_zone_id: self.time_zone_id,
-            recurrence: self.recurrence,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_rotation::UpdateRotationInput {
+                rotation_id: self.rotation_id
+                ,
+                contact_ids: self.contact_ids
+                ,
+                start_time: self.start_time
+                ,
+                time_zone_id: self.time_zone_id
+                ,
+                recurrence: self.recurrence
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about the NETWORK_CONNECTION action described in the finding.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkConnectionAction {
+pub struct NetworkConnectionAction  {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
     pub blocked: ::std::option::Option<bool>,
     /// <p>The network connection direction.</p>
@@ -19,33 +19,33 @@ pub struct NetworkConnectionAction {
     /// <p>The remote port information of the connection.</p>
     pub remote_port_details: ::std::option::Option<crate::types::RemotePortDetails>,
 }
-impl NetworkConnectionAction {
+impl  NetworkConnectionAction  {
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
     pub fn blocked(&self) -> ::std::option::Option<bool> {
         self.blocked
     }
     /// <p>The network connection direction.</p>
-    pub fn connection_direction(&self) -> ::std::option::Option<&str> {
+    pub fn connection_direction(&self) -> ::std::option::Option<& str> {
         self.connection_direction.as_deref()
     }
     /// <p>The local port information of the connection.</p>
-    pub fn local_port_details(&self) -> ::std::option::Option<&crate::types::LocalPortDetails> {
+    pub fn local_port_details(&self) -> ::std::option::Option<& crate::types::LocalPortDetails> {
         self.local_port_details.as_ref()
     }
     /// <p>The network connection protocol.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The local IP information of the connection.</p>
-    pub fn local_ip_details(&self) -> ::std::option::Option<&crate::types::LocalIpDetails> {
+    pub fn local_ip_details(&self) -> ::std::option::Option<& crate::types::LocalIpDetails> {
         self.local_ip_details.as_ref()
     }
     /// <p>The remote IP information of the connection.</p>
-    pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::RemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> ::std::option::Option<& crate::types::RemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
     /// <p>The remote port information of the connection.</p>
-    pub fn remote_port_details(&self) -> ::std::option::Option<&crate::types::RemotePortDetails> {
+    pub fn remote_port_details(&self) -> ::std::option::Option<& crate::types::RemotePortDetails> {
         self.remote_port_details.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
     pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.blocked = input;
-        self
+        self.blocked = input; self
     }
     /// <p>Indicates whether EC2 blocked the network connection to your instance.</p>
     pub fn get_blocked(&self) -> &::std::option::Option<bool> {
@@ -90,8 +89,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The network connection direction.</p>
     pub fn set_connection_direction(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_direction = input;
-        self
+        self.connection_direction = input; self
     }
     /// <p>The network connection direction.</p>
     pub fn get_connection_direction(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The local port information of the connection.</p>
     pub fn set_local_port_details(mut self, input: ::std::option::Option<crate::types::LocalPortDetails>) -> Self {
-        self.local_port_details = input;
-        self
+        self.local_port_details = input; self
     }
     /// <p>The local port information of the connection.</p>
     pub fn get_local_port_details(&self) -> &::std::option::Option<crate::types::LocalPortDetails> {
@@ -118,8 +115,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The network connection protocol.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The network connection protocol.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The local IP information of the connection.</p>
     pub fn set_local_ip_details(mut self, input: ::std::option::Option<crate::types::LocalIpDetails>) -> Self {
-        self.local_ip_details = input;
-        self
+        self.local_ip_details = input; self
     }
     /// <p>The local IP information of the connection.</p>
     pub fn get_local_ip_details(&self) -> &::std::option::Option<crate::types::LocalIpDetails> {
@@ -146,8 +141,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The remote IP information of the connection.</p>
     pub fn set_remote_ip_details(mut self, input: ::std::option::Option<crate::types::RemoteIpDetails>) -> Self {
-        self.remote_ip_details = input;
-        self
+        self.remote_ip_details = input; self
     }
     /// <p>The remote IP information of the connection.</p>
     pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::RemoteIpDetails> {
@@ -160,8 +154,7 @@ impl NetworkConnectionActionBuilder {
     }
     /// <p>The remote port information of the connection.</p>
     pub fn set_remote_port_details(mut self, input: ::std::option::Option<crate::types::RemotePortDetails>) -> Self {
-        self.remote_port_details = input;
-        self
+        self.remote_port_details = input; self
     }
     /// <p>The remote port information of the connection.</p>
     pub fn get_remote_port_details(&self) -> &::std::option::Option<crate::types::RemotePortDetails> {
@@ -170,13 +163,21 @@ impl NetworkConnectionActionBuilder {
     /// Consumes the builder and constructs a [`NetworkConnectionAction`](crate::types::NetworkConnectionAction).
     pub fn build(self) -> crate::types::NetworkConnectionAction {
         crate::types::NetworkConnectionAction {
-            blocked: self.blocked,
-            connection_direction: self.connection_direction,
-            local_port_details: self.local_port_details,
-            protocol: self.protocol,
-            local_ip_details: self.local_ip_details,
-            remote_ip_details: self.remote_ip_details,
-            remote_port_details: self.remote_port_details,
+            blocked: self.blocked
+            ,
+            connection_direction: self.connection_direction
+            ,
+            local_port_details: self.local_port_details
+            ,
+            protocol: self.protocol
+            ,
+            local_ip_details: self.local_ip_details
+            ,
+            remote_ip_details: self.remote_ip_details
+            ,
+            remote_port_details: self.remote_port_details
+            ,
         }
     }
 }
+

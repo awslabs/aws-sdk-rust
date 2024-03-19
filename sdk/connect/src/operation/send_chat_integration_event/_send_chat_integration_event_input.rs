@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendChatIntegrationEventInput {
+pub struct SendChatIntegrationEventInput  {
     /// <p>External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
@@ -15,26 +15,26 @@ pub struct SendChatIntegrationEventInput {
     /// <p>Contact properties to apply when starting a new chat. If the integration event is handled with an existing chat, this is ignored.</p>
     pub new_session_details: ::std::option::Option<crate::types::NewSessionDetails>,
 }
-impl SendChatIntegrationEventInput {
+impl  SendChatIntegrationEventInput  {
     /// <p>External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant.</p>
-    pub fn source_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
-    pub fn destination_id(&self) -> ::std::option::Option<&str> {
+    pub fn destination_id(&self) -> ::std::option::Option<& str> {
         self.destination_id.as_deref()
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
     /// <p>Valid value: <code>["connect:sms"]</code></p>
-    pub fn subtype(&self) -> ::std::option::Option<&str> {
+    pub fn subtype(&self) -> ::std::option::Option<& str> {
         self.subtype.as_deref()
     }
     /// <p>Chat integration event payload</p>
-    pub fn event(&self) -> ::std::option::Option<&crate::types::ChatEvent> {
+    pub fn event(&self) -> ::std::option::Option<& crate::types::ChatEvent> {
         self.event.as_ref()
     }
     /// <p>Contact properties to apply when starting a new chat. If the integration event is handled with an existing chat, this is ignored.</p>
-    pub fn new_session_details(&self) -> ::std::option::Option<&crate::types::NewSessionDetails> {
+    pub fn new_session_details(&self) -> ::std::option::Option<& crate::types::NewSessionDetails> {
         self.new_session_details.as_ref()
     }
 }
@@ -64,8 +64,7 @@ impl SendChatIntegrationEventInputBuilder {
     }
     /// <p>External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant.</p>
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>External identifier of chat customer participant, used in part to uniquely identify a chat. For SMS, this is the E164 phone number of the chat customer participant.</p>
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl SendChatIntegrationEventInputBuilder {
     }
     /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
     pub fn set_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// <p>Chat system identifier, used in part to uniquely identify chat. This is associated with the Amazon Connect instance and flow to be used to start chats. For SMS, this is the phone number destination of inbound SMS messages represented by an Amazon Pinpoint phone number ARN.</p>
     pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl SendChatIntegrationEventInputBuilder {
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
     /// <p>Valid value: <code>["connect:sms"]</code></p>
     pub fn set_subtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subtype = input;
-        self
+        self.subtype = input; self
     }
     /// <p>Classification of a channel. This is used in part to uniquely identify chat.</p>
     /// <p>Valid value: <code>["connect:sms"]</code></p>
@@ -111,8 +108,7 @@ impl SendChatIntegrationEventInputBuilder {
     }
     /// <p>Chat integration event payload</p>
     pub fn set_event(mut self, input: ::std::option::Option<crate::types::ChatEvent>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// <p>Chat integration event payload</p>
     pub fn get_event(&self) -> &::std::option::Option<crate::types::ChatEvent> {
@@ -125,26 +121,28 @@ impl SendChatIntegrationEventInputBuilder {
     }
     /// <p>Contact properties to apply when starting a new chat. If the integration event is handled with an existing chat, this is ignored.</p>
     pub fn set_new_session_details(mut self, input: ::std::option::Option<crate::types::NewSessionDetails>) -> Self {
-        self.new_session_details = input;
-        self
+        self.new_session_details = input; self
     }
     /// <p>Contact properties to apply when starting a new chat. If the integration event is handled with an existing chat, this is ignored.</p>
     pub fn get_new_session_details(&self) -> &::std::option::Option<crate::types::NewSessionDetails> {
         &self.new_session_details
     }
     /// Consumes the builder and constructs a [`SendChatIntegrationEventInput`](crate::operation::send_chat_integration_event::SendChatIntegrationEventInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::send_chat_integration_event::SendChatIntegrationEventInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::send_chat_integration_event::SendChatIntegrationEventInput {
-            source_id: self.source_id,
-            destination_id: self.destination_id,
-            subtype: self.subtype,
-            event: self.event,
-            new_session_details: self.new_session_details,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_chat_integration_event::SendChatIntegrationEventInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::send_chat_integration_event::SendChatIntegrationEventInput {
+                source_id: self.source_id
+                ,
+                destination_id: self.destination_id
+                ,
+                subtype: self.subtype
+                ,
+                event: self.event
+                ,
+                new_session_details: self.new_session_details
+                ,
+            }
+        )
     }
 }
+

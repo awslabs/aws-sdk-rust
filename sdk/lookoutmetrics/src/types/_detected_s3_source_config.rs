@@ -3,13 +3,13 @@
 /// <p>An inferred source configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectedS3SourceConfig {
+pub struct DetectedS3SourceConfig  {
     /// <p>The source's file format descriptor.</p>
     pub file_format_descriptor: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
 }
-impl DetectedS3SourceConfig {
+impl  DetectedS3SourceConfig  {
     /// <p>The source's file format descriptor.</p>
-    pub fn file_format_descriptor(&self) -> ::std::option::Option<&crate::types::DetectedFileFormatDescriptor> {
+    pub fn file_format_descriptor(&self) -> ::std::option::Option<& crate::types::DetectedFileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DetectedS3SourceConfigBuilder {
     }
     /// <p>The source's file format descriptor.</p>
     pub fn set_file_format_descriptor(mut self, input: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>) -> Self {
-        self.file_format_descriptor = input;
-        self
+        self.file_format_descriptor = input; self
     }
     /// <p>The source's file format descriptor.</p>
     pub fn get_file_format_descriptor(&self) -> &::std::option::Option<crate::types::DetectedFileFormatDescriptor> {
@@ -44,7 +43,9 @@ impl DetectedS3SourceConfigBuilder {
     /// Consumes the builder and constructs a [`DetectedS3SourceConfig`](crate::types::DetectedS3SourceConfig).
     pub fn build(self) -> crate::types::DetectedS3SourceConfig {
         crate::types::DetectedS3SourceConfig {
-            file_format_descriptor: self.file_format_descriptor,
+            file_format_descriptor: self.file_format_descriptor
+            ,
         }
     }
 }
+

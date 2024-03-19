@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCapabilityInput {
+pub struct GetCapabilityInput  {
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub capability_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCapabilityInput {
+impl  GetCapabilityInput  {
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
-    pub fn capability_id(&self) -> ::std::option::Option<&str> {
+    pub fn capability_id(&self) -> ::std::option::Option<& str> {
         self.capability_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetCapabilityInputBuilder {
     }
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub fn set_capability_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.capability_id = input;
-        self
+        self.capability_id = input; self
     }
     /// <p>Specifies a system-assigned unique identifier for the capability.</p>
     pub fn get_capability_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.capability_id
     }
     /// Consumes the builder and constructs a [`GetCapabilityInput`](crate::operation::get_capability::GetCapabilityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_capability::GetCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_capability::GetCapabilityInput {
-            capability_id: self.capability_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_capability::GetCapabilityInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_capability::GetCapabilityInput {
+                capability_id: self.capability_id
+                ,
+            }
+        )
     }
 }
+

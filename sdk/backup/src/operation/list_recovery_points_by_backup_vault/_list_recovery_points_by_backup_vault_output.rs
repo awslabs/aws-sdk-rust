@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecoveryPointsByBackupVaultOutput {
+pub struct ListRecoveryPointsByBackupVaultOutput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
+    pub recovery_points: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryPointByBackupVault>>,
     _request_id: Option<String>,
 }
-impl ListRecoveryPointsByBackupVaultOutput {
+impl  ListRecoveryPointsByBackupVaultOutput  {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_points.is_none()`.
-    pub fn recovery_points(&self) -> &[crate::types::RecoveryPointByBackupVault] {
-        self.recovery_points.as_deref().unwrap_or_default()
+    pub fn recovery_points(&self) -> & [crate::types::RecoveryPointByBackupVault] {
+        self.recovery_points.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListRecoveryPointsByBackupVaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListRecoveryPointsByBackupVaultOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
     pub fn builder() -> crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder {
@@ -38,7 +39,7 @@ impl ListRecoveryPointsByBackupVaultOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>,
+    pub(crate) recovery_points: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryPointByBackupVault>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryPointsByBackupVaultOutputBuilder {
@@ -49,8 +50,7 @@ impl ListRecoveryPointsByBackupVaultOutputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListRecoveryPointsByBackupVaultOutputBuilder {
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
     pub fn recovery_points(mut self, input: crate::types::RecoveryPointByBackupVault) -> Self {
         let mut v = self.recovery_points.unwrap_or_default();
-        v.push(input);
-        self.recovery_points = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recovery_points = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>>) -> Self {
-        self.recovery_points = input;
-        self
+    pub fn set_recovery_points(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecoveryPointByBackupVault>>) -> Self {
+        self.recovery_points = input; self
     }
     /// <p>An array of objects that contain detailed information about recovery points saved in a backup vault.</p>
-    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointByBackupVault>> {
+    pub fn get_recovery_points(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecoveryPointByBackupVault>> {
         &self.recovery_points
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListRecoveryPointsByBackupVaultOutput`](crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput).
     pub fn build(self) -> crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput {
         crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVaultOutput {
-            next_token: self.next_token,
-            recovery_points: self.recovery_points,
+            next_token: self.next_token
+            ,
+            recovery_points: self.recovery_points
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

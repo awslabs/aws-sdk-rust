@@ -3,15 +3,14 @@
 /// <p>Copy source image set information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopySourceImageSetInformation {
+pub struct CopySourceImageSetInformation  {
     /// <p>The latest version identifier for the source image set.</p>
     pub latest_version_id: ::std::string::String,
 }
-impl CopySourceImageSetInformation {
+impl  CopySourceImageSetInformation  {
     /// <p>The latest version identifier for the source image set.</p>
-    pub fn latest_version_id(&self) -> &str {
-        use std::ops::Deref;
-        self.latest_version_id.deref()
+    pub fn latest_version_id(&self) -> & str {
+        use std::ops::Deref; self.latest_version_id.deref()
     }
 }
 impl CopySourceImageSetInformation {
@@ -36,8 +35,7 @@ impl CopySourceImageSetInformationBuilder {
     }
     /// <p>The latest version identifier for the source image set.</p>
     pub fn set_latest_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latest_version_id = input;
-        self
+        self.latest_version_id = input; self
     }
     /// <p>The latest version identifier for the source image set.</p>
     pub fn get_latest_version_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl CopySourceImageSetInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`latest_version_id`](crate::types::builders::CopySourceImageSetInformationBuilder::latest_version_id)
     pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CopySourceImageSetInformation {
-            latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "latest_version_id",
-                    "latest_version_id was not specified but it is required when building CopySourceImageSetInformation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CopySourceImageSetInformation {
+                latest_version_id: self.latest_version_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("latest_version_id", "latest_version_id was not specified but it is required when building CopySourceImageSetInformation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

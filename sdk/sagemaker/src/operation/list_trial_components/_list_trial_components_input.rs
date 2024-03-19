@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrialComponentsInput {
+pub struct ListTrialComponentsInput  {
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
     pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
@@ -22,33 +22,33 @@ pub struct ListTrialComponentsInput {
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListTrialComponentsInput {
+impl  ListTrialComponentsInput  {
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>A filter that returns only components created after the specified time.</p>
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>A filter that returns only components created before the specified time.</p>
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortTrialComponentsBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortTrialComponentsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
@@ -56,7 +56,7 @@ impl ListTrialComponentsInput {
         self.max_results
     }
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -89,8 +89,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
     }
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
     pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>A filter that returns only components created after the specified time.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// <p>A filter that returns only components created after the specified time.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +141,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>A filter that returns only components created before the specified time.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// <p>A filter that returns only components created before the specified time.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -159,8 +154,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortTrialComponentsBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortTrialComponentsBy> {
@@ -173,8 +167,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -187,8 +180,7 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -201,28 +193,36 @@ impl ListTrialComponentsInputBuilder {
     }
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrialComponentsInput`](crate::operation::list_trial_components::ListTrialComponentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_trial_components::ListTrialComponentsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_trial_components::ListTrialComponentsInput {
-            experiment_name: self.experiment_name,
-            trial_name: self.trial_name,
-            source_arn: self.source_arn,
-            created_after: self.created_after,
-            created_before: self.created_before,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trial_components::ListTrialComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_trial_components::ListTrialComponentsInput {
+                experiment_name: self.experiment_name
+                ,
+                trial_name: self.trial_name
+                ,
+                source_arn: self.source_arn
+                ,
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

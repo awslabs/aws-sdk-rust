@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSiteInput {
+pub struct UpdateSiteInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the site.</p>
@@ -12,21 +12,21 @@ pub struct UpdateSiteInput {
     /// <p>Notes about a site.</p>
     pub notes: ::std::option::Option<::std::string::String>,
 }
-impl UpdateSiteInput {
+impl  UpdateSiteInput  {
     /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The name of the site.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the site.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Notes about a site.</p>
-    pub fn notes(&self) -> ::std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<& str> {
         self.notes.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// <p>The ID or the Amazon Resource Name (ARN) of the site.</p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The name of the site.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the site.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The description of the site.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the site.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>Notes about a site.</p>
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.notes = input;
-        self
+        self.notes = input; self
     }
     /// <p>Notes about a site.</p>
     pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,11 +102,18 @@ impl UpdateSiteInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteInput {
-            site_id: self.site_id,
-            name: self.name,
-            description: self.description,
-            notes: self.notes,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_site::UpdateSiteInput {
+                site_id: self.site_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                notes: self.notes
+                ,
+            }
+        )
     }
 }
+

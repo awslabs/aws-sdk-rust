@@ -4,3 +4,4 @@ pub use crate::types::_tag::TagBuilder;
 pub use crate::types::_report_definition::ReportDefinitionBuilder;
 
 pub use crate::types::_report_status::ReportStatusBuilder;
+

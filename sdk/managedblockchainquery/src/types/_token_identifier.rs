@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TokenIdentifier {
+pub struct TokenIdentifier  {
     /// <p>The blockchain network of the token.</p>
     pub network: crate::types::QueryNetwork,
     /// <p>This is the token's contract address.</p>
@@ -15,19 +15,19 @@ pub struct TokenIdentifier {
     /// </note>
     pub token_id: ::std::option::Option<::std::string::String>,
 }
-impl TokenIdentifier {
+impl  TokenIdentifier  {
     /// <p>The blockchain network of the token.</p>
-    pub fn network(&self) -> &crate::types::QueryNetwork {
+    pub fn network(&self) -> & crate::types::QueryNetwork {
         &self.network
     }
     /// <p>This is the token's contract address.</p>
-    pub fn contract_address(&self) -> ::std::option::Option<&str> {
+    pub fn contract_address(&self) -> ::std::option::Option<& str> {
         self.contract_address.as_deref()
     }
     /// <p>The unique identifier of the token.</p><note>
     /// <p>For native tokens, use the 3 character abbreviation that best matches your token. For example, btc for Bitcoin, eth for Ether, etc. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
     /// </note>
-    pub fn token_id(&self) -> ::std::option::Option<&str> {
+    pub fn token_id(&self) -> ::std::option::Option<& str> {
         self.token_id.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl TokenIdentifierBuilder {
     }
     /// <p>The blockchain network of the token.</p>
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
-        self.network = input;
-        self
+        self.network = input; self
     }
     /// <p>The blockchain network of the token.</p>
     pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
@@ -69,8 +68,7 @@ impl TokenIdentifierBuilder {
     }
     /// <p>This is the token's contract address.</p>
     pub fn set_contract_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contract_address = input;
-        self
+        self.contract_address = input; self
     }
     /// <p>This is the token's contract address.</p>
     pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +85,7 @@ impl TokenIdentifierBuilder {
     /// <p>For native tokens, use the 3 character abbreviation that best matches your token. For example, btc for Bitcoin, eth for Ether, etc. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
     /// </note>
     pub fn set_token_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_id = input;
-        self
+        self.token_id = input; self
     }
     /// <p>The unique identifier of the token.</p><note>
     /// <p>For native tokens, use the 3 character abbreviation that best matches your token. For example, btc for Bitcoin, eth for Ether, etc. For all other token types you must specify the <code>tokenId</code> in the 64 character hexadecimal <code>tokenid</code> format.</p>
@@ -100,15 +97,19 @@ impl TokenIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`network`](crate::types::builders::TokenIdentifierBuilder::network)
     pub fn build(self) -> ::std::result::Result<crate::types::TokenIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TokenIdentifier {
-            network: self.network.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "network",
-                    "network was not specified but it is required when building TokenIdentifier",
-                )
-            })?,
-            contract_address: self.contract_address,
-            token_id: self.token_id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TokenIdentifier {
+                network: self.network
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("network", "network was not specified but it is required when building TokenIdentifier")
+                    )?
+                ,
+                contract_address: self.contract_address
+                ,
+                token_id: self.token_id
+                ,
+            }
+        )
     }
 }
+

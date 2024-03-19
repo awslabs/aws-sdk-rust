@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateSmbLocalGroupsInput {
+pub struct UpdateSmbLocalGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
     pub smb_local_groups: ::std::option::Option<crate::types::SmbLocalGroups>,
 }
-impl UpdateSmbLocalGroupsInput {
+impl  UpdateSmbLocalGroupsInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
-    pub fn smb_local_groups(&self) -> ::std::option::Option<&crate::types::SmbLocalGroups> {
+    pub fn smb_local_groups(&self) -> ::std::option::Option<& crate::types::SmbLocalGroups> {
         self.smb_local_groups.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateSmbLocalGroupsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateSmbLocalGroupsInputBuilder {
     }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
     pub fn set_smb_local_groups(mut self, input: ::std::option::Option<crate::types::SmbLocalGroups>) -> Self {
-        self.smb_local_groups = input;
-        self
+        self.smb_local_groups = input; self
     }
     /// <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
     pub fn get_smb_local_groups(&self) -> &::std::option::Option<crate::types::SmbLocalGroups> {
         &self.smb_local_groups
     }
     /// Consumes the builder and constructs a [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput {
-            gateway_arn: self.gateway_arn,
-            smb_local_groups: self.smb_local_groups,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput {
+                gateway_arn: self.gateway_arn
+                ,
+                smb_local_groups: self.smb_local_groups
+                ,
+            }
+        )
     }
 }
+

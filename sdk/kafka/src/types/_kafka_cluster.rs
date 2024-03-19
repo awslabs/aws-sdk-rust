@@ -3,19 +3,19 @@
 /// <p>Information about Kafka Cluster to be used as source / target for replication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KafkaCluster {
+pub struct KafkaCluster  {
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub amazon_msk_cluster: ::std::option::Option<crate::types::AmazonMskCluster>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub vpc_config: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>,
 }
-impl KafkaCluster {
+impl  KafkaCluster  {
     /// <p>Details of an Amazon MSK Cluster.</p>
-    pub fn amazon_msk_cluster(&self) -> ::std::option::Option<&crate::types::AmazonMskCluster> {
+    pub fn amazon_msk_cluster(&self) -> ::std::option::Option<& crate::types::AmazonMskCluster> {
         self.amazon_msk_cluster.as_ref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::KafkaClusterClientVpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::KafkaClusterClientVpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl KafkaClusterBuilder {
     }
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn set_amazon_msk_cluster(mut self, input: ::std::option::Option<crate::types::AmazonMskCluster>) -> Self {
-        self.amazon_msk_cluster = input;
-        self
+        self.amazon_msk_cluster = input; self
     }
     /// <p>Details of an Amazon MSK Cluster.</p>
     pub fn get_amazon_msk_cluster(&self) -> &::std::option::Option<crate::types::AmazonMskCluster> {
@@ -57,8 +56,7 @@ impl KafkaClusterBuilder {
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::KafkaClusterClientVpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::KafkaClusterClientVpcConfig> {
@@ -67,8 +65,11 @@ impl KafkaClusterBuilder {
     /// Consumes the builder and constructs a [`KafkaCluster`](crate::types::KafkaCluster).
     pub fn build(self) -> crate::types::KafkaCluster {
         crate::types::KafkaCluster {
-            amazon_msk_cluster: self.amazon_msk_cluster,
-            vpc_config: self.vpc_config,
+            amazon_msk_cluster: self.amazon_msk_cluster
+            ,
+            vpc_config: self.vpc_config
+            ,
         }
     }
 }
+

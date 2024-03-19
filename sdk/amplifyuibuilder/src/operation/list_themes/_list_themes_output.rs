@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListThemesOutput {
+pub struct ListThemesOutput  {
     /// <p>The list of themes for the Amplify app.</p>
-    pub entities: ::std::vec::Vec<crate::types::ThemeSummary>,
+    pub entities: ::std::vec::Vec::<crate::types::ThemeSummary>,
     /// <p>The pagination token that's returned if more results are available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListThemesOutput {
+impl  ListThemesOutput  {
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn entities(&self) -> &[crate::types::ThemeSummary] {
-        use std::ops::Deref;
-        self.entities.deref()
+    pub fn entities(&self) -> & [crate::types::ThemeSummary] {
+        use std::ops::Deref; self.entities.deref()
     }
     /// <p>The pagination token that's returned if more results are available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListThemesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListThemesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
     pub fn builder() -> crate::operation::list_themes::builders::ListThemesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListThemesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListThemesOutputBuilder {
-    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec::<crate::types::ThemeSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListThemesOutputBuilder {
     /// <p>The list of themes for the Amplify app.</p>
     pub fn entities(mut self, input: crate::types::ThemeSummary) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>>) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThemeSummary>>) -> Self {
+        self.entities = input; self
     }
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeSummary>> {
+    pub fn get_entities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThemeSummary>> {
         &self.entities
     }
     /// <p>The pagination token that's returned if more results are available.</p>
@@ -68,35 +66,37 @@ impl ListThemesOutputBuilder {
     }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::list_themes::builders::ListThemesOutputBuilder::entities)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_themes::ListThemesOutput {
-            entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entities",
-                    "entities was not specified but it is required when building ListThemesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_themes::ListThemesOutput {
+                entities: self.entities
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entities", "entities was not specified but it is required when building ListThemesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

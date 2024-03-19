@@ -3,7 +3,7 @@
 /// <p>Input to list lens review improvements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListLensReviewImprovementsInput {
+pub struct ListLensReviewImprovementsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
@@ -24,21 +24,21 @@ pub struct ListLensReviewImprovementsInput {
     /// <p>The priority of the question.</p>
     pub question_priority: ::std::option::Option<crate::types::QuestionPriority>,
 }
-impl ListLensReviewImprovementsInput {
+impl  ListLensReviewImprovementsInput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> ::std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<& str> {
         self.pillar_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -47,7 +47,7 @@ impl ListLensReviewImprovementsInput {
         self.milestone_number
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -55,7 +55,7 @@ impl ListLensReviewImprovementsInput {
         self.max_results
     }
     /// <p>The priority of the question.</p>
-    pub fn question_priority(&self) -> ::std::option::Option<&crate::types::QuestionPriority> {
+    pub fn question_priority(&self) -> ::std::option::Option<& crate::types::QuestionPriority> {
         self.question_priority.as_ref()
     }
 }
@@ -87,8 +87,7 @@ impl ListLensReviewImprovementsInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +107,7 @@ impl ListLensReviewImprovementsInputBuilder {
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>.</p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
@@ -127,8 +125,7 @@ impl ListLensReviewImprovementsInputBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pillar_id = input;
-        self
+        self.pillar_id = input; self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
@@ -144,8 +141,7 @@ impl ListLensReviewImprovementsInputBuilder {
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.milestone_number = input;
-        self
+        self.milestone_number = input; self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -159,8 +155,7 @@ impl ListLensReviewImprovementsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +168,7 @@ impl ListLensReviewImprovementsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -187,28 +181,32 @@ impl ListLensReviewImprovementsInputBuilder {
     }
     /// <p>The priority of the question.</p>
     pub fn set_question_priority(mut self, input: ::std::option::Option<crate::types::QuestionPriority>) -> Self {
-        self.question_priority = input;
-        self
+        self.question_priority = input; self
     }
     /// <p>The priority of the question.</p>
     pub fn get_question_priority(&self) -> &::std::option::Option<crate::types::QuestionPriority> {
         &self.question_priority
     }
     /// Consumes the builder and constructs a [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput {
-            workload_id: self.workload_id,
-            lens_alias: self.lens_alias,
-            pillar_id: self.pillar_id,
-            milestone_number: self.milestone_number,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            question_priority: self.question_priority,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput {
+                workload_id: self.workload_id
+                ,
+                lens_alias: self.lens_alias
+                ,
+                pillar_id: self.pillar_id
+                ,
+                milestone_number: self.milestone_number
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                question_priority: self.question_priority
+                ,
+            }
+        )
     }
 }
+

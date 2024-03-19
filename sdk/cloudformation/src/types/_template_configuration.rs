@@ -3,7 +3,7 @@
 /// <p>The configuration details of a generated template.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TemplateConfiguration {
+pub struct TemplateConfiguration  {
     /// <p>The <code>DeletionPolicy</code> assigned to resources in the generated template. Supported values are:</p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct TemplateConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub update_replace_policy: ::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy>,
 }
-impl TemplateConfiguration {
+impl  TemplateConfiguration  {
     /// <p>The <code>DeletionPolicy</code> assigned to resources in the generated template. Supported values are:</p>
     /// <ul>
     /// <li>
@@ -32,7 +32,7 @@ impl TemplateConfiguration {
     /// <p><code>RETAIN</code> - retain all resources when the stack is deleted.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn deletion_policy(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateDeletionPolicy> {
+    pub fn deletion_policy(&self) -> ::std::option::Option<& crate::types::GeneratedTemplateDeletionPolicy> {
         self.deletion_policy.as_ref()
     }
     /// <p>The <code>UpdateReplacePolicy</code> assigned to resources in the generated template. Supported values are:</p>
@@ -43,7 +43,7 @@ impl TemplateConfiguration {
     /// <p><code>RETAIN</code> - retain all resources when the resource is replaced during an update operation.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn update_replace_policy(&self) -> ::std::option::Option<&crate::types::GeneratedTemplateUpdateReplacePolicy> {
+    pub fn update_replace_policy(&self) -> ::std::option::Option<& crate::types::GeneratedTemplateUpdateReplacePolicy> {
         self.update_replace_policy.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl TemplateConfigurationBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_deletion_policy(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateDeletionPolicy>) -> Self {
-        self.deletion_policy = input;
-        self
+        self.deletion_policy = input; self
     }
     /// <p>The <code>DeletionPolicy</code> assigned to resources in the generated template. Supported values are:</p>
     /// <ul>
@@ -118,8 +117,7 @@ impl TemplateConfigurationBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_update_replace_policy(mut self, input: ::std::option::Option<crate::types::GeneratedTemplateUpdateReplacePolicy>) -> Self {
-        self.update_replace_policy = input;
-        self
+        self.update_replace_policy = input; self
     }
     /// <p>The <code>UpdateReplacePolicy</code> assigned to resources in the generated template. Supported values are:</p>
     /// <ul>
@@ -135,8 +133,11 @@ impl TemplateConfigurationBuilder {
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
         crate::types::TemplateConfiguration {
-            deletion_policy: self.deletion_policy,
-            update_replace_policy: self.update_replace_policy,
+            deletion_policy: self.deletion_policy
+            ,
+            update_replace_policy: self.update_replace_policy
+            ,
         }
     }
 }
+

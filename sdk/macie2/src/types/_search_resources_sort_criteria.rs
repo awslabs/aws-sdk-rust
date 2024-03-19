@@ -3,19 +3,19 @@
 /// <p>Specifies criteria for sorting the results of a query for information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchResourcesSortCriteria {
+pub struct SearchResourcesSortCriteria  {
     /// <p>The property to sort the results by.</p>
     pub attribute_name: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
-impl SearchResourcesSortCriteria {
+impl  SearchResourcesSortCriteria  {
     /// <p>The property to sort the results by.</p>
-    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::SearchResourcesSortAttributeName> {
+    pub fn attribute_name(&self) -> ::std::option::Option<& crate::types::SearchResourcesSortAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
-    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<& crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SearchResourcesSortCriteriaBuilder {
     }
     /// <p>The property to sort the results by.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The property to sort the results by.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<crate::types::SearchResourcesSortAttributeName> {
@@ -55,8 +54,7 @@ impl SearchResourcesSortCriteriaBuilder {
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn get_order_by(&self) -> &::std::option::Option<crate::types::OrderBy> {
@@ -65,8 +63,11 @@ impl SearchResourcesSortCriteriaBuilder {
     /// Consumes the builder and constructs a [`SearchResourcesSortCriteria`](crate::types::SearchResourcesSortCriteria).
     pub fn build(self) -> crate::types::SearchResourcesSortCriteria {
         crate::types::SearchResourcesSortCriteria {
-            attribute_name: self.attribute_name,
-            order_by: self.order_by,
+            attribute_name: self.attribute_name
+            ,
+            order_by: self.order_by
+            ,
         }
     }
 }
+

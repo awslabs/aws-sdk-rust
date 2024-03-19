@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProtectedQueriesInput {
+pub struct ListProtectedQueriesInput  {
     /// <p>The identifier for the membership in the collaboration.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter on the status of the protected query.</p>
@@ -12,17 +12,17 @@ pub struct ListProtectedQueriesInput {
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListProtectedQueriesInput {
+impl  ListProtectedQueriesInput  {
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A filter on the status of the protected query.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProtectedQueryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProtectedQueryStatus> {
         self.status.as_ref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met.</p>
@@ -55,8 +55,7 @@ impl ListProtectedQueriesInputBuilder {
     }
     /// <p>The identifier for the membership in the collaboration.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>The identifier for the membership in the collaboration.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ListProtectedQueriesInputBuilder {
     }
     /// <p>A filter on the status of the protected query.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProtectedQueryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A filter on the status of the protected query.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
@@ -83,8 +81,7 @@ impl ListProtectedQueriesInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl ListProtectedQueriesInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesInput {
-            membership_identifier: self.membership_identifier,
-            status: self.status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_protected_queries::ListProtectedQueriesInput {
+                membership_identifier: self.membership_identifier
+                ,
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

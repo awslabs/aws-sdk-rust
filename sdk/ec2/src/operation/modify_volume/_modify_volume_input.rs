@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyVolumeInput {
+pub struct ModifyVolumeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the volume.</p>
@@ -46,13 +46,13 @@ pub struct ModifyVolumeInput {
     /// <p>Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"> Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub multi_attach_enabled: ::std::option::Option<bool>,
 }
-impl ModifyVolumeInput {
+impl  ModifyVolumeInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
@@ -75,7 +75,7 @@ impl ModifyVolumeInput {
     }
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
@@ -131,8 +131,7 @@ impl ModifyVolumeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -146,8 +145,7 @@ impl ModifyVolumeInputBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// <p>The ID of the volume.</p>
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +186,7 @@ impl ModifyVolumeInputBuilder {
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
@@ -218,8 +215,7 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
     /// <p>Default: The existing type is retained.</p>
@@ -255,8 +251,7 @@ impl ModifyVolumeInputBuilder {
     /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
@@ -284,8 +279,7 @@ impl ModifyVolumeInputBuilder {
     /// <p>Default: The existing value is retained if the source and target volume type is <code>gp3</code>. Otherwise, the default value is 125.</p>
     /// <p>Valid Range: Minimum value of 125. Maximum value of 1000.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The maximum value is 1,000.</p>
     /// <p>Default: The existing value is retained if the source and target volume type is <code>gp3</code>. Otherwise, the default value is 125.</p>
@@ -300,25 +294,32 @@ impl ModifyVolumeInputBuilder {
     }
     /// <p>Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"> Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn set_multi_attach_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_attach_enabled = input;
-        self
+        self.multi_attach_enabled = input; self
     }
     /// <p>Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"> Nitro-based instances</a> in the same Availability Zone. This parameter is supported with <code>io1</code> and <code>io2</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html"> Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
     pub fn get_multi_attach_enabled(&self) -> &::std::option::Option<bool> {
         &self.multi_attach_enabled
     }
     /// Consumes the builder and constructs a [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::modify_volume::ModifyVolumeInput {
-            dry_run: self.dry_run,
-            volume_id: self.volume_id,
-            size: self.size,
-            volume_type: self.volume_type,
-            iops: self.iops,
-            throughput: self.throughput,
-            multi_attach_enabled: self.multi_attach_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_volume::ModifyVolumeInput {
+                dry_run: self.dry_run
+                ,
+                volume_id: self.volume_id
+                ,
+                size: self.size
+                ,
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                ,
+                throughput: self.throughput
+                ,
+                multi_attach_enabled: self.multi_attach_enabled
+                ,
+            }
+        )
     }
 }
+

@@ -3,29 +3,28 @@
 /// <p>Represents the output of a <code>DeleteScraper</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScraperOutput {
+pub struct DeleteScraperOutput  {
     /// <p>The ID of the scraper to delete.</p>
     pub scraper_id: ::std::string::String,
     /// <p>The current status of the scraper.</p>
     pub status: ::std::option::Option<crate::types::ScraperStatus>,
     _request_id: Option<String>,
 }
-impl DeleteScraperOutput {
+impl  DeleteScraperOutput  {
     /// <p>The ID of the scraper to delete.</p>
-    pub fn scraper_id(&self) -> &str {
-        use std::ops::Deref;
-        self.scraper_id.deref()
+    pub fn scraper_id(&self) -> & str {
+        use std::ops::Deref; self.scraper_id.deref()
     }
     /// <p>The current status of the scraper.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ScraperStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ScraperStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteScraperOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteScraperOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScraperOutput`](crate::operation::delete_scraper::DeleteScraperOutput).
     pub fn builder() -> crate::operation::delete_scraper::builders::DeleteScraperOutputBuilder {
@@ -50,8 +49,7 @@ impl DeleteScraperOutputBuilder {
     }
     /// <p>The ID of the scraper to delete.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scraper_id = input;
-        self
+        self.scraper_id = input; self
     }
     /// <p>The ID of the scraper to delete.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,37 +63,37 @@ impl DeleteScraperOutputBuilder {
     }
     /// <p>The current status of the scraper.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScraperStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the scraper.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ScraperStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteScraperOutput`](crate::operation::delete_scraper::DeleteScraperOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`scraper_id`](crate::operation::delete_scraper::builders::DeleteScraperOutputBuilder::scraper_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scraper::DeleteScraperOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_scraper::DeleteScraperOutput {
-            scraper_id: self.scraper_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scraper_id",
-                    "scraper_id was not specified but it is required when building DeleteScraperOutput",
-                )
-            })?,
-            status: self.status,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scraper::DeleteScraperOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scraper::DeleteScraperOutput {
+                scraper_id: self.scraper_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scraper_id", "scraper_id was not specified but it is required when building DeleteScraperOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

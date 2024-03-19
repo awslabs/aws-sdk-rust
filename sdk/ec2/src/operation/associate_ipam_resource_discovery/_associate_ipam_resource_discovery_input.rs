@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateIpamResourceDiscoveryInput {
+pub struct AssociateIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>An IPAM ID.</p>
@@ -10,31 +10,32 @@ pub struct AssociateIpamResourceDiscoveryInput {
     /// <p>A resource discovery ID.</p>
     pub ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
     /// <p>Tag specifications.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl AssociateIpamResourceDiscoveryInput {
+impl  AssociateIpamResourceDiscoveryInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>An IPAM ID.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_resource_discovery_id(&self) -> ::std::option::Option<& str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>Tag specifications.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -52,7 +53,7 @@ pub struct AssociateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_id: ::std::option::Option<::std::string::String>,
     pub(crate) ipam_resource_discovery_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateIpamResourceDiscoveryInputBuilder {
@@ -63,8 +64,7 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -78,8 +78,7 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>An IPAM ID.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>An IPAM ID.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A resource discovery ID.</p>
     pub fn set_ipam_resource_discovery_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input;
-        self
+        self.ipam_resource_discovery_id = input; self
     }
     /// <p>A resource discovery ID.</p>
     pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,17 +105,16 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     /// <p>Tag specifications.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tag specifications.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>Tag specifications.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>A client token.</p>
@@ -127,26 +124,28 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A client token.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput {
-            dry_run: self.dry_run,
-            ipam_id: self.ipam_id,
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
-            tag_specifications: self.tag_specifications,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput {
+                dry_run: self.dry_run
+                ,
+                ipam_id: self.ipam_id
+                ,
+                ipam_resource_discovery_id: self.ipam_resource_discovery_id
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

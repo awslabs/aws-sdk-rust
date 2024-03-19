@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReplicationJobsInput {
+pub struct GetReplicationJobsInput  {
     /// <p>The ID of the replication job.</p>
     pub replication_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results.</p>
@@ -10,13 +10,13 @@ pub struct GetReplicationJobsInput {
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetReplicationJobsInput {
+impl  GetReplicationJobsInput  {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> ::std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -47,8 +47,7 @@ impl GetReplicationJobsInputBuilder {
     }
     /// <p>The ID of the replication job.</p>
     pub fn set_replication_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_job_id = input;
-        self
+        self.replication_job_id = input; self
     }
     /// <p>The ID of the replication job.</p>
     pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetReplicationJobsInputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl GetReplicationJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetReplicationJobsInput`](crate::operation::get_replication_jobs::GetReplicationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_replication_jobs::GetReplicationJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_replication_jobs::GetReplicationJobsInput {
-            replication_job_id: self.replication_job_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_replication_jobs::GetReplicationJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_replication_jobs::GetReplicationJobsInput {
+                replication_job_id: self.replication_job_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

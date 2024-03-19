@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateLogicallyAirGappedBackupVaultOutput {
+pub struct CreateLogicallyAirGappedBackupVaultOutput  {
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: ::std::option::Option<::std::string::String>,
     /// <p>This is the ARN (Amazon Resource Name) of the vault being created.</p>
@@ -14,30 +14,30 @@ pub struct CreateLogicallyAirGappedBackupVaultOutput {
     pub vault_state: ::std::option::Option<crate::types::VaultState>,
     _request_id: Option<String>,
 }
-impl CreateLogicallyAirGappedBackupVaultOutput {
+impl  CreateLogicallyAirGappedBackupVaultOutput  {
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> ::std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>This is the ARN (Amazon Resource Name) of the vault being created.</p>
-    pub fn backup_vault_arn(&self) -> ::std::option::Option<&str> {
+    pub fn backup_vault_arn(&self) -> ::std::option::Option<& str> {
         self.backup_vault_arn.as_deref()
     }
     /// <p>The date and time when the vault was created.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>This is the current state of the vault.</p>
-    pub fn vault_state(&self) -> ::std::option::Option<&crate::types::VaultState> {
+    pub fn vault_state(&self) -> ::std::option::Option<& crate::types::VaultState> {
         self.vault_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateLogicallyAirGappedBackupVaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateLogicallyAirGappedBackupVaultOutput {
     /// Creates a new builder-style object to manufacture [`CreateLogicallyAirGappedBackupVaultOutput`](crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput).
     pub fn builder() -> crate::operation::create_logically_air_gapped_backup_vault::builders::CreateLogicallyAirGappedBackupVaultOutputBuilder {
@@ -63,8 +63,7 @@ impl CreateLogicallyAirGappedBackupVaultOutputBuilder {
     }
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_name = input;
-        self
+        self.backup_vault_name = input; self
     }
     /// <p>The name of a logical container where backups are stored. Logically air-gapped backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl CreateLogicallyAirGappedBackupVaultOutputBuilder {
     }
     /// <p>This is the ARN (Amazon Resource Name) of the vault being created.</p>
     pub fn set_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.backup_vault_arn = input;
-        self
+        self.backup_vault_arn = input; self
     }
     /// <p>This is the ARN (Amazon Resource Name) of the vault being created.</p>
     pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl CreateLogicallyAirGappedBackupVaultOutputBuilder {
     /// <p>The date and time when the vault was created.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time when the vault was created.</p>
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -108,30 +105,34 @@ impl CreateLogicallyAirGappedBackupVaultOutputBuilder {
     }
     /// <p>This is the current state of the vault.</p>
     pub fn set_vault_state(mut self, input: ::std::option::Option<crate::types::VaultState>) -> Self {
-        self.vault_state = input;
-        self
+        self.vault_state = input; self
     }
     /// <p>This is the current state of the vault.</p>
     pub fn get_vault_state(&self) -> &::std::option::Option<crate::types::VaultState> {
         &self.vault_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateLogicallyAirGappedBackupVaultOutput`](crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput).
     pub fn build(self) -> crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput {
         crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultOutput {
-            backup_vault_name: self.backup_vault_name,
-            backup_vault_arn: self.backup_vault_arn,
-            creation_date: self.creation_date,
-            vault_state: self.vault_state,
+            backup_vault_name: self.backup_vault_name
+            ,
+            backup_vault_arn: self.backup_vault_arn
+            ,
+            creation_date: self.creation_date
+            ,
+            vault_state: self.vault_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

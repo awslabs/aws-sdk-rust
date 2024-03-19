@@ -4,13 +4,13 @@
 /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveIpamOperatingRegion {
+pub struct RemoveIpamOperatingRegion  {
     /// <p>The name of the operating Region you want to remove.</p>
     pub region_name: ::std::option::Option<::std::string::String>,
 }
-impl RemoveIpamOperatingRegion {
+impl  RemoveIpamOperatingRegion  {
     /// <p>The name of the operating Region you want to remove.</p>
-    pub fn region_name(&self) -> ::std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl RemoveIpamOperatingRegionBuilder {
     }
     /// <p>The name of the operating Region you want to remove.</p>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>The name of the operating Region you want to remove.</p>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -45,7 +44,9 @@ impl RemoveIpamOperatingRegionBuilder {
     /// Consumes the builder and constructs a [`RemoveIpamOperatingRegion`](crate::types::RemoveIpamOperatingRegion).
     pub fn build(self) -> crate::types::RemoveIpamOperatingRegion {
         crate::types::RemoveIpamOperatingRegion {
-            region_name: self.region_name,
+            region_name: self.region_name
+            ,
         }
     }
 }
+

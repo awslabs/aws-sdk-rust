@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRecommendationFeedbackInput {
+pub struct DescribeRecommendationFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
@@ -11,18 +11,18 @@ pub struct DescribeRecommendationFeedbackInput {
     /// <p>The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeRecommendationFeedbackInput {
+impl  DescribeRecommendationFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
-    pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> ::std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
     /// <p>The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn set_code_review_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code_review_arn = input;
-        self
+        self.code_review_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object.</p>
     pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +64,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl DescribeRecommendationFeedbackInputBuilder {
     /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
     /// <p>The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p>
     /// <p>The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
@@ -90,16 +87,17 @@ impl DescribeRecommendationFeedbackInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationFeedbackInput`](crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
-            code_review_arn: self.code_review_arn,
-            recommendation_id: self.recommendation_id,
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_recommendation_feedback::DescribeRecommendationFeedbackInput {
+                code_review_arn: self.code_review_arn
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

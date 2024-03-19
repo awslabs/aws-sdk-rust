@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParticipantTokenOutput {
+pub struct CreateParticipantTokenOutput  {
     /// <p>The participant token that was created.</p>
     pub participant_token: ::std::option::Option<crate::types::ParticipantToken>,
     _request_id: Option<String>,
 }
-impl CreateParticipantTokenOutput {
+impl  CreateParticipantTokenOutput  {
     /// <p>The participant token that was created.</p>
-    pub fn participant_token(&self) -> ::std::option::Option<&crate::types::ParticipantToken> {
+    pub fn participant_token(&self) -> ::std::option::Option<& crate::types::ParticipantToken> {
         self.participant_token.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateParticipantTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateParticipantTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput).
     pub fn builder() -> crate::operation::create_participant_token::builders::CreateParticipantTokenOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateParticipantTokenOutputBuilder {
     }
     /// <p>The participant token that was created.</p>
     pub fn set_participant_token(mut self, input: ::std::option::Option<crate::types::ParticipantToken>) -> Self {
-        self.participant_token = input;
-        self
+        self.participant_token = input; self
     }
     /// <p>The participant token that was created.</p>
     pub fn get_participant_token(&self) -> &::std::option::Option<crate::types::ParticipantToken> {
         &self.participant_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateParticipantTokenOutput`](crate::operation::create_participant_token::CreateParticipantTokenOutput).
     pub fn build(self) -> crate::operation::create_participant_token::CreateParticipantTokenOutput {
         crate::operation::create_participant_token::CreateParticipantTokenOutput {
-            participant_token: self.participant_token,
+            participant_token: self.participant_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Basic information about the plugin.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PluginProperties {
+pub struct PluginProperties  {
     /// <p>The name of the plugin.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the plugin.</p>
@@ -15,21 +15,21 @@ pub struct PluginProperties {
     /// <p>The uncompressed size of the plugin.</p>
     pub uncompressed_size_in_bytes: ::std::option::Option<i64>,
 }
-impl PluginProperties {
+impl  PluginProperties  {
     /// <p>The name of the plugin.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the plugin.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the plugin.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The name of the class to load.</p>
-    pub fn class_name(&self) -> ::std::option::Option<&str> {
+    pub fn class_name(&self) -> ::std::option::Option<& str> {
         self.class_name.as_deref()
     }
     /// <p>The uncompressed size of the plugin.</p>
@@ -62,8 +62,7 @@ impl PluginPropertiesBuilder {
     }
     /// <p>The name of the plugin.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the plugin.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl PluginPropertiesBuilder {
     }
     /// <p>The description of the plugin.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the plugin.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl PluginPropertiesBuilder {
     }
     /// <p>The version of the plugin.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the plugin.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl PluginPropertiesBuilder {
     }
     /// <p>The name of the class to load.</p>
     pub fn set_class_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.class_name = input;
-        self
+        self.class_name = input; self
     }
     /// <p>The name of the class to load.</p>
     pub fn get_class_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl PluginPropertiesBuilder {
     }
     /// <p>The uncompressed size of the plugin.</p>
     pub fn set_uncompressed_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.uncompressed_size_in_bytes = input;
-        self
+        self.uncompressed_size_in_bytes = input; self
     }
     /// <p>The uncompressed size of the plugin.</p>
     pub fn get_uncompressed_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,17 @@ impl PluginPropertiesBuilder {
     /// Consumes the builder and constructs a [`PluginProperties`](crate::types::PluginProperties).
     pub fn build(self) -> crate::types::PluginProperties {
         crate::types::PluginProperties {
-            name: self.name,
-            description: self.description,
-            version: self.version,
-            class_name: self.class_name,
-            uncompressed_size_in_bytes: self.uncompressed_size_in_bytes,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            version: self.version
+            ,
+            class_name: self.class_name
+            ,
+            uncompressed_size_in_bytes: self.uncompressed_size_in_bytes
+            ,
         }
     }
 }
+

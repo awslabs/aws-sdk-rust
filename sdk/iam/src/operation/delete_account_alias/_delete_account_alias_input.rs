@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAccountAliasInput {
+pub struct DeleteAccountAliasInput  {
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
     pub account_alias: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAccountAliasInput {
+impl  DeleteAccountAliasInput  {
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
-    pub fn account_alias(&self) -> ::std::option::Option<&str> {
+    pub fn account_alias(&self) -> ::std::option::Option<& str> {
         self.account_alias.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DeleteAccountAliasInputBuilder {
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
     pub fn set_account_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_alias = input;
-        self
+        self.account_alias = input; self
     }
     /// <p>The name of the account alias to delete.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</p>
@@ -47,12 +46,13 @@ impl DeleteAccountAliasInputBuilder {
         &self.account_alias
     }
     /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::operation::delete_account_alias::DeleteAccountAliasInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_account_alias::DeleteAccountAliasInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_account_alias::DeleteAccountAliasInput {
-            account_alias: self.account_alias,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_account_alias::DeleteAccountAliasInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_account_alias::DeleteAccountAliasInput {
+                account_alias: self.account_alias
+                ,
+            }
+        )
     }
 }
+

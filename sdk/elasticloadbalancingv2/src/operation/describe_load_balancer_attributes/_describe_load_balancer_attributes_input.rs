@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoadBalancerAttributesInput {
+pub struct DescribeLoadBalancerAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLoadBalancerAttributesInput {
+impl  DescribeLoadBalancerAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeLoadBalancerAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn set_load_balancer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.load_balancer_arn = input;
-        self
+        self.load_balancer_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_arn
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesInput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput {
-            load_balancer_arn: self.load_balancer_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput {
+                load_balancer_arn: self.load_balancer_arn
+                ,
+            }
+        )
     }
 }
+

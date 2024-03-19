@@ -3,7 +3,7 @@
 /// <p>The request was rejected because it attempted to create resources beyond the current Entity Resolution account limits. The error message describes the limit exceeded. <code>HTTP Status Code: 402</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExceedsLimitException {
+pub struct ExceedsLimitException  {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the quota that has been breached.</p>
@@ -12,9 +12,9 @@ pub struct ExceedsLimitException {
     pub quota_value: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
-impl ExceedsLimitException {
+impl  ExceedsLimitException  {
     /// <p>The name of the quota that has been breached.</p>
-    pub fn quota_name(&self) -> ::std::option::Option<&str> {
+    pub fn quota_name(&self) -> ::std::option::Option<& str> {
         self.quota_name.as_deref()
     }
     /// <p>The current quota value for the customers.</p>
@@ -24,15 +24,13 @@ impl ExceedsLimitException {
 }
 impl ExceedsLimitException {
     /// Returns the error message.
-    pub fn message(&self) -> ::std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> ::std::option::Option<& str> { self.message.as_deref() }
 }
 impl ::std::fmt::Display for ExceedsLimitException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         ::std::write!(f, "ExceedsLimitException")?;
         if let ::std::option::Option::Some(inner_1) = &self.message {
-            {
+             {
                 ::std::write!(f, ": {}", inner_1)?;
             }
         }
@@ -47,9 +45,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::ExceedsLimitExc
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ExceedsLimitException {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ExceedsLimitException {
     /// Creates a new builder-style object to manufacture [`ExceedsLimitException`](crate::types::error::ExceedsLimitException).
@@ -75,8 +71,7 @@ impl ExceedsLimitExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl ExceedsLimitExceptionBuilder {
     }
     /// <p>The name of the quota that has been breached.</p>
     pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_name = input;
-        self
+        self.quota_name = input; self
     }
     /// <p>The name of the quota that has been breached.</p>
     pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,31 +97,34 @@ impl ExceedsLimitExceptionBuilder {
     }
     /// <p>The current quota value for the customers.</p>
     pub fn set_quota_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.quota_value = input;
-        self
+        self.quota_value = input; self
     }
     /// <p>The current quota value for the customers.</p>
     pub fn get_quota_value(&self) -> &::std::option::Option<i32> {
         &self.quota_value
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                                pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                    self.meta = Some(meta);
+                                                    self
+                                                }
+    
+                                                /// Sets error metadata
+                                                pub fn set_meta(&mut self, meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                    self.meta = meta;
+                                                    self
+                                                }
     /// Consumes the builder and constructs a [`ExceedsLimitException`](crate::types::error::ExceedsLimitException).
     pub fn build(self) -> crate::types::error::ExceedsLimitException {
         crate::types::error::ExceedsLimitException {
-            message: self.message,
-            quota_name: self.quota_name,
-            quota_value: self.quota_value,
+            message: self.message
+            ,
+            quota_name: self.quota_name
+            ,
+            quota_value: self.quota_value
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

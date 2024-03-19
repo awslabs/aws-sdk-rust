@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPatchBaselineInput {
+pub struct GetPatchBaselineInput  {
     /// <p>The ID of the patch baseline to retrieve.</p><note>
     /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
     /// </note>
     pub baseline_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPatchBaselineInput {
+impl  GetPatchBaselineInput  {
     /// <p>The ID of the patch baseline to retrieve.</p><note>
     /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
     /// </note>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetPatchBaselineInputBuilder {
     /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
     /// </note>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline to retrieve.</p><note>
     /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
@@ -52,11 +51,13 @@ impl GetPatchBaselineInputBuilder {
         &self.baseline_id
     }
     /// Consumes the builder and constructs a [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_patch_baseline::GetPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_patch_baseline::GetPatchBaselineInput {
-            baseline_id: self.baseline_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_patch_baseline::GetPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_patch_baseline::GetPatchBaselineInput {
+                baseline_id: self.baseline_id
+                ,
+            }
+        )
     }
 }
+

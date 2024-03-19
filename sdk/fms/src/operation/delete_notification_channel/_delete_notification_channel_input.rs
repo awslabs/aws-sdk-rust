@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteNotificationChannelInput {}
+pub struct DeleteNotificationChannelInput  {
+}
 impl DeleteNotificationChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
     pub fn builder() -> crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder {
@@ -13,15 +14,15 @@ impl DeleteNotificationChannelInput {
 /// A builder for [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteNotificationChannelInputBuilder {}
+pub struct DeleteNotificationChannelInputBuilder {
+}
 impl DeleteNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationChannelInput`](crate::operation::delete_notification_channel::DeleteNotificationChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_notification_channel::DeleteNotificationChannelInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_notification_channel::DeleteNotificationChannelInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_notification_channel::DeleteNotificationChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_notification_channel::DeleteNotificationChannelInput {
+            }
+        )
     }
 }
+

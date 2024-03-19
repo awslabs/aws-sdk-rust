@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRooms`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`account_id(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Chime account ID.</p><br>
     ///   - [`member_id(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_member_id):<br>required: **false**<br><p>The member ID (user ID or bot ID).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to use to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput) with field(s):
+                            /// - On success, responds with [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput) with field(s):
     ///   - [`rooms(Option<Vec::<Room>>)`](crate::operation::list_rooms::ListRoomsOutput::rooms): <p>The room details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rooms::ListRoomsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRoomsError>`](crate::operation::list_rooms::ListRoomsError)
+                            /// - On failure, responds with [`SdkError<ListRoomsError>`](crate::operation::list_rooms::ListRoomsError)
     pub fn list_rooms(&self) -> crate::operation::list_rooms::builders::ListRoomsFluentBuilder {
-        crate::operation::list_rooms::builders::ListRoomsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_rooms::builders::ListRoomsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

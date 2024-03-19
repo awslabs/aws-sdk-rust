@@ -3,7 +3,7 @@
 /// <p>The configuration settings for a stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StreamConfiguration {
+pub struct StreamConfiguration  {
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::string::String,
     /// <p>The unique identifier of the fragment to begin processing.</p>
@@ -11,18 +11,17 @@ pub struct StreamConfiguration {
     /// <p>The streaming channel definition in the stream configuration.</p>
     pub stream_channel_definition: ::std::option::Option<crate::types::StreamChannelDefinition>,
 }
-impl StreamConfiguration {
+impl  StreamConfiguration  {
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> & str {
+        use std::ops::Deref; self.stream_arn.deref()
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
-    pub fn fragment_number(&self) -> ::std::option::Option<&str> {
+    pub fn fragment_number(&self) -> ::std::option::Option<& str> {
         self.fragment_number.as_deref()
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
-    pub fn stream_channel_definition(&self) -> ::std::option::Option<&crate::types::StreamChannelDefinition> {
+    pub fn stream_channel_definition(&self) -> ::std::option::Option<& crate::types::StreamChannelDefinition> {
         self.stream_channel_definition.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl StreamConfigurationBuilder {
     }
     /// <p>The ARN of the stream.</p>
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The ARN of the stream.</p>
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl StreamConfigurationBuilder {
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
     pub fn set_fragment_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.fragment_number = input;
-        self
+        self.fragment_number = input; self
     }
     /// <p>The unique identifier of the fragment to begin processing.</p>
     pub fn get_fragment_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl StreamConfigurationBuilder {
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
     pub fn set_stream_channel_definition(mut self, input: ::std::option::Option<crate::types::StreamChannelDefinition>) -> Self {
-        self.stream_channel_definition = input;
-        self
+        self.stream_channel_definition = input; self
     }
     /// <p>The streaming channel definition in the stream configuration.</p>
     pub fn get_stream_channel_definition(&self) -> &::std::option::Option<crate::types::StreamChannelDefinition> {
@@ -90,15 +86,19 @@ impl StreamConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_arn`](crate::types::builders::StreamConfigurationBuilder::stream_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::StreamConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StreamConfiguration {
-            stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stream_arn",
-                    "stream_arn was not specified but it is required when building StreamConfiguration",
-                )
-            })?,
-            fragment_number: self.fragment_number,
-            stream_channel_definition: self.stream_channel_definition,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StreamConfiguration {
+                stream_arn: self.stream_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stream_arn", "stream_arn was not specified but it is required when building StreamConfiguration")
+                    )?
+                ,
+                fragment_number: self.fragment_number
+                ,
+                stream_channel_definition: self.stream_channel_definition
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>The status and configuration of the domain's availability options.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AvailabilityOptionsStatus {
+pub struct AvailabilityOptionsStatus  {
     /// <p>The availability options configured for the domain.</p>
     pub options: bool,
     /// <p>The status of domain configuration option.</p>
     pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
-impl AvailabilityOptionsStatus {
+impl  AvailabilityOptionsStatus  {
     /// <p>The availability options configured for the domain.</p>
     pub fn options(&self) -> bool {
         self.options
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl AvailabilityOptionsStatusBuilder {
     }
     /// <p>The availability options configured for the domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The availability options configured for the domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<bool> {
@@ -57,8 +56,7 @@ impl AvailabilityOptionsStatusBuilder {
     }
     /// <p>The status of domain configuration option.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
@@ -67,8 +65,12 @@ impl AvailabilityOptionsStatusBuilder {
     /// Consumes the builder and constructs a [`AvailabilityOptionsStatus`](crate::types::AvailabilityOptionsStatus).
     pub fn build(self) -> crate::types::AvailabilityOptionsStatus {
         crate::types::AvailabilityOptionsStatus {
-            options: self.options.unwrap_or_default(),
-            status: self.status,
+            options: self.options
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

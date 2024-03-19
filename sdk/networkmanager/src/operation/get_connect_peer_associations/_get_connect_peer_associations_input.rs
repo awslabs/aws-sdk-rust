@@ -2,33 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetConnectPeerAssociationsInput {
+pub struct GetConnectPeerAssociationsInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the Connect peers.</p>
-    pub connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connect_peer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl GetConnectPeerAssociationsInput {
+impl  GetConnectPeerAssociationsInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The IDs of the Connect peers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connect_peer_ids.is_none()`.
-    pub fn connect_peer_ids(&self) -> &[::std::string::String] {
-        self.connect_peer_ids.as_deref().unwrap_or_default()
+    pub fn connect_peer_ids(&self) -> & [::std::string::String] {
+        self.connect_peer_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -44,7 +45,7 @@ impl GetConnectPeerAssociationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetConnectPeerAssociationsInputBuilder {
     pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
-    pub(crate) connect_peer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connect_peer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -57,8 +58,7 @@ impl GetConnectPeerAssociationsInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +71,16 @@ impl GetConnectPeerAssociationsInputBuilder {
     /// <p>The IDs of the Connect peers.</p>
     pub fn connect_peer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connect_peer_ids.unwrap_or_default();
-        v.push(input.into());
-        self.connect_peer_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.connect_peer_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn set_connect_peer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connect_peer_ids = input;
-        self
+    pub fn set_connect_peer_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.connect_peer_ids = input; self
     }
     /// <p>The IDs of the Connect peers.</p>
-    pub fn get_connect_peer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_connect_peer_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.connect_peer_ids
     }
     /// <p>The maximum number of results to return.</p>
@@ -91,8 +90,7 @@ impl GetConnectPeerAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -105,25 +103,26 @@ impl GetConnectPeerAssociationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetConnectPeerAssociationsInput`](crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput {
-            global_network_id: self.global_network_id,
-            connect_peer_ids: self.connect_peer_ids,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsInput {
+                global_network_id: self.global_network_id
+                ,
+                connect_peer_ids: self.connect_peer_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

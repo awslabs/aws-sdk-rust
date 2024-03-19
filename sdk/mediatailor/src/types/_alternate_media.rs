@@ -3,7 +3,7 @@
 /// <p>A playlist of media (VOD and/or live) to be played instead of the default media on a particular program.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AlternateMedia {
+pub struct AlternateMedia  {
     /// <p>The name of the source location for alternateMedia.</p>
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the live source for alternateMedia.</p>
@@ -15,25 +15,25 @@ pub struct AlternateMedia {
     /// <p>The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.</p>
     pub scheduled_start_time_millis: ::std::option::Option<i64>,
     /// <p>Ad break configuration parameters defined in AlternateMedia.</p>
-    pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
+    pub ad_breaks: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreak>>,
     /// <p>The duration of the alternateMedia in milliseconds.</p>
     pub duration_millis: ::std::option::Option<i64>,
 }
-impl AlternateMedia {
+impl  AlternateMedia  {
     /// <p>The name of the source location for alternateMedia.</p>
-    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the live source for alternateMedia.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn live_source_name(&self) -> ::std::option::Option<& str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the VOD source for alternateMedia.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
     /// <p>Clip range configuration for the VOD source associated with the program.</p>
-    pub fn clip_range(&self) -> ::std::option::Option<&crate::types::ClipRange> {
+    pub fn clip_range(&self) -> ::std::option::Option<& crate::types::ClipRange> {
         self.clip_range.as_ref()
     }
     /// <p>The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.</p>
@@ -41,10 +41,11 @@ impl AlternateMedia {
         self.scheduled_start_time_millis
     }
     /// <p>Ad break configuration parameters defined in AlternateMedia.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ad_breaks.is_none()`.
-    pub fn ad_breaks(&self) -> &[crate::types::AdBreak] {
-        self.ad_breaks.as_deref().unwrap_or_default()
+    pub fn ad_breaks(&self) -> & [crate::types::AdBreak] {
+        self.ad_breaks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The duration of the alternateMedia in milliseconds.</p>
     pub fn duration_millis(&self) -> ::std::option::Option<i64> {
@@ -67,7 +68,7 @@ pub struct AlternateMediaBuilder {
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,
     pub(crate) scheduled_start_time_millis: ::std::option::Option<i64>,
-    pub(crate) ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
+    pub(crate) ad_breaks: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreak>>,
     pub(crate) duration_millis: ::std::option::Option<i64>,
 }
 impl AlternateMediaBuilder {
@@ -78,8 +79,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>The name of the source location for alternateMedia.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location for alternateMedia.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +92,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>The name of the live source for alternateMedia.</p>
     pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.live_source_name = input;
-        self
+        self.live_source_name = input; self
     }
     /// <p>The name of the live source for alternateMedia.</p>
     pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>The name of the VOD source for alternateMedia.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The name of the VOD source for alternateMedia.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>Clip range configuration for the VOD source associated with the program.</p>
     pub fn set_clip_range(mut self, input: ::std::option::Option<crate::types::ClipRange>) -> Self {
-        self.clip_range = input;
-        self
+        self.clip_range = input; self
     }
     /// <p>Clip range configuration for the VOD source associated with the program.</p>
     pub fn get_clip_range(&self) -> &::std::option::Option<crate::types::ClipRange> {
@@ -134,8 +131,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.</p>
     pub fn set_scheduled_start_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scheduled_start_time_millis = input;
-        self
+        self.scheduled_start_time_millis = input; self
     }
     /// <p>The date and time that the alternateMedia is scheduled to start, in epoch milliseconds.</p>
     pub fn get_scheduled_start_time_millis(&self) -> &::std::option::Option<i64> {
@@ -148,17 +144,16 @@ impl AlternateMediaBuilder {
     /// <p>Ad break configuration parameters defined in AlternateMedia.</p>
     pub fn ad_breaks(mut self, input: crate::types::AdBreak) -> Self {
         let mut v = self.ad_breaks.unwrap_or_default();
-        v.push(input);
-        self.ad_breaks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ad_breaks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Ad break configuration parameters defined in AlternateMedia.</p>
-    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>) -> Self {
-        self.ad_breaks = input;
-        self
+    pub fn set_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AdBreak>>) -> Self {
+        self.ad_breaks = input; self
     }
     /// <p>Ad break configuration parameters defined in AlternateMedia.</p>
-    pub fn get_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdBreak>> {
+    pub fn get_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AdBreak>> {
         &self.ad_breaks
     }
     /// <p>The duration of the alternateMedia in milliseconds.</p>
@@ -168,8 +163,7 @@ impl AlternateMediaBuilder {
     }
     /// <p>The duration of the alternateMedia in milliseconds.</p>
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
     }
     /// <p>The duration of the alternateMedia in milliseconds.</p>
     pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
@@ -178,13 +172,21 @@ impl AlternateMediaBuilder {
     /// Consumes the builder and constructs a [`AlternateMedia`](crate::types::AlternateMedia).
     pub fn build(self) -> crate::types::AlternateMedia {
         crate::types::AlternateMedia {
-            source_location_name: self.source_location_name,
-            live_source_name: self.live_source_name,
-            vod_source_name: self.vod_source_name,
-            clip_range: self.clip_range,
-            scheduled_start_time_millis: self.scheduled_start_time_millis,
-            ad_breaks: self.ad_breaks,
-            duration_millis: self.duration_millis,
+            source_location_name: self.source_location_name
+            ,
+            live_source_name: self.live_source_name
+            ,
+            vod_source_name: self.vod_source_name
+            ,
+            clip_range: self.clip_range
+            ,
+            scheduled_start_time_millis: self.scheduled_start_time_millis
+            ,
+            ad_breaks: self.ad_breaks
+            ,
+            duration_millis: self.duration_millis
+            ,
         }
     }
 }
+

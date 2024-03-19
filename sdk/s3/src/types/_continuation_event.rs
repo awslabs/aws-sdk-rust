@@ -3,7 +3,8 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuationEvent {}
+pub struct ContinuationEvent  {
+}
 impl ContinuationEvent {
     /// Creates a new builder-style object to manufacture [`ContinuationEvent`](crate::types::ContinuationEvent).
     pub fn builder() -> crate::types::builders::ContinuationEventBuilder {
@@ -14,10 +15,13 @@ impl ContinuationEvent {
 /// A builder for [`ContinuationEvent`](crate::types::ContinuationEvent).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ContinuationEventBuilder {}
+pub struct ContinuationEventBuilder {
+}
 impl ContinuationEventBuilder {
     /// Consumes the builder and constructs a [`ContinuationEvent`](crate::types::ContinuationEvent).
     pub fn build(self) -> crate::types::ContinuationEvent {
-        crate::types::ContinuationEvent {}
+        crate::types::ContinuationEvent {
+        }
     }
 }
+

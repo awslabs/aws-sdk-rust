@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContainerPolicyOutput {
+pub struct GetContainerPolicyOutput  {
     /// <p>The contents of the access policy.</p>
     pub policy: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetContainerPolicyOutput {
+impl  GetContainerPolicyOutput  {
     /// <p>The contents of the access policy.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> & str {
+        use std::ops::Deref; self.policy.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContainerPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
     pub fn builder() -> crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder {
@@ -42,37 +41,35 @@ impl GetContainerPolicyOutputBuilder {
     }
     /// <p>The contents of the access policy.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The contents of the access policy.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder::policy)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_container_policy::GetContainerPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_container_policy::GetContainerPolicyOutput {
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building GetContainerPolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_container_policy::GetContainerPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_container_policy::GetContainerPolicyOutput {
+                policy: self.policy
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy", "policy was not specified but it is required when building GetContainerPolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisableMacieInput {}
+pub struct DisableMacieInput  {
+}
 impl DisableMacieInput {
     /// Creates a new builder-style object to manufacture [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
     pub fn builder() -> crate::operation::disable_macie::builders::DisableMacieInputBuilder {
@@ -13,12 +14,15 @@ impl DisableMacieInput {
 /// A builder for [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisableMacieInputBuilder {}
+pub struct DisableMacieInputBuilder {
+}
 impl DisableMacieInputBuilder {
     /// Consumes the builder and constructs a [`DisableMacieInput`](crate::operation::disable_macie::DisableMacieInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disable_macie::DisableMacieInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disable_macie::DisableMacieInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_macie::DisableMacieInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disable_macie::DisableMacieInput {
+            }
+        )
     }
 }
+

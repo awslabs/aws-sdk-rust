@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetLogGroupFieldsInput {
+pub struct GetLogGroupFieldsInput  {
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
@@ -15,11 +15,11 @@ pub struct GetLogGroupFieldsInput {
     /// </note>
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetLogGroupFieldsInput {
+impl  GetLogGroupFieldsInput  {
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
@@ -30,7 +30,7 @@ impl GetLogGroupFieldsInput {
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
-    pub fn log_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_identifier(&self) -> ::std::option::Option<& str> {
         self.log_group_identifier.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl GetLogGroupFieldsInputBuilder {
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group to search.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
@@ -79,8 +78,7 @@ impl GetLogGroupFieldsInputBuilder {
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
     pub fn set_time(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes after this time are searched. If you omit <code>time</code>, the most recent 15 minutes up to the current time are searched.</p>
     /// <p>The <code>time</code> value is specified as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.</p>
@@ -98,8 +96,7 @@ impl GetLogGroupFieldsInputBuilder {
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
     /// </note>
     pub fn set_log_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_identifier = input;
-        self
+        self.log_group_identifier = input; self
     }
     /// <p>Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.</p><note>
     /// <p>You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both.</p>
@@ -108,13 +105,17 @@ impl GetLogGroupFieldsInputBuilder {
         &self.log_group_identifier
     }
     /// Consumes the builder and constructs a [`GetLogGroupFieldsInput`](crate::operation::get_log_group_fields::GetLogGroupFieldsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_log_group_fields::GetLogGroupFieldsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_log_group_fields::GetLogGroupFieldsInput {
-            log_group_name: self.log_group_name,
-            time: self.time,
-            log_group_identifier: self.log_group_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_log_group_fields::GetLogGroupFieldsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_log_group_fields::GetLogGroupFieldsInput {
+                log_group_name: self.log_group_name
+                ,
+                time: self.time
+                ,
+                log_group_identifier: self.log_group_identifier
+                ,
+            }
+        )
     }
 }
+

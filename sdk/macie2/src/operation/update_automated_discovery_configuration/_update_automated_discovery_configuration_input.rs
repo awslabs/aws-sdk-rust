@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAutomatedDiscoveryConfigurationInput {
+pub struct UpdateAutomatedDiscoveryConfigurationInput  {
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
     pub status: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>,
 }
-impl UpdateAutomatedDiscoveryConfigurationInput {
+impl  UpdateAutomatedDiscoveryConfigurationInput  {
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AutomatedDiscoveryStatus> {
         self.status.as_ref()
     }
 }
@@ -38,8 +38,7 @@ impl UpdateAutomatedDiscoveryConfigurationInputBuilder {
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutomatedDiscoveryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>
@@ -47,14 +46,13 @@ impl UpdateAutomatedDiscoveryConfigurationInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateAutomatedDiscoveryConfigurationInput`](crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput { status: self.status },
+            crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationInput {
+                status: self.status
+                ,
+            }
         )
     }
 }
+

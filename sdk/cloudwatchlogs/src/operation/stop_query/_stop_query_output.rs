@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopQueryOutput {
+pub struct StopQueryOutput  {
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     pub success: bool,
     _request_id: Option<String>,
 }
-impl StopQueryOutput {
+impl  StopQueryOutput  {
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     pub fn success(&self) -> bool {
         self.success
     }
 }
 impl ::aws_types::request_id::RequestId for StopQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StopQueryOutput {
     /// Creates a new builder-style object to manufacture [`StopQueryOutput`](crate::operation::stop_query::StopQueryOutput).
     pub fn builder() -> crate::operation::stop_query::builders::StopQueryOutputBuilder {
@@ -40,27 +40,29 @@ impl StopQueryOutputBuilder {
     }
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     pub fn set_success(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     /// <p>This is true if the query was stopped by the <code>StopQuery</code> operation.</p>
     pub fn get_success(&self) -> &::std::option::Option<bool> {
         &self.success
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StopQueryOutput`](crate::operation::stop_query::StopQueryOutput).
     pub fn build(self) -> crate::operation::stop_query::StopQueryOutput {
         crate::operation::stop_query::StopQueryOutput {
-            success: self.success.unwrap_or_default(),
+            success: self.success
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

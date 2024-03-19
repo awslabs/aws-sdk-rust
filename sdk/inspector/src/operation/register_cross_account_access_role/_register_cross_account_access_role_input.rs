@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterCrossAccountAccessRoleInput {
+pub struct RegisterCrossAccountAccessRoleInput  {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl RegisterCrossAccountAccessRoleInput {
+impl  RegisterCrossAccountAccessRoleInput  {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
     }
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput { role_arn: self.role_arn },
+            crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput {
+                role_arn: self.role_arn
+                ,
+            }
         )
     }
 }
+

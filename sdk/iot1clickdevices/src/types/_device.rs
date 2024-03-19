@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The user specified attributes associated with the device for an event.</p>
     pub attributes: ::std::option::Option<crate::types::Attributes>,
     /// <p>The unique identifier of the device.</p>
@@ -10,17 +10,17 @@ pub struct Device {
     /// <p>The device type, such as "button".</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl Device {
+impl  Device  {
     /// <p>The user specified attributes associated with the device for an event.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&crate::types::Attributes> {
+    pub fn attributes(&self) -> ::std::option::Option<& crate::types::Attributes> {
         self.attributes.as_ref()
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The device type, such as "button".</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeviceBuilder {
     }
     /// <p>The user specified attributes associated with the device for an event.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::Attributes>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
     }
     /// <p>The user specified attributes associated with the device for an event.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::Attributes> {
@@ -61,8 +60,7 @@ impl DeviceBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The unique identifier of the device.</p>
     pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +73,7 @@ impl DeviceBuilder {
     }
     /// <p>The device type, such as "button".</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The device type, such as "button".</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,9 +82,13 @@ impl DeviceBuilder {
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {
         crate::types::Device {
-            attributes: self.attributes,
-            device_id: self.device_id,
-            r#type: self.r#type,
+            attributes: self.attributes
+            ,
+            device_id: self.device_id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

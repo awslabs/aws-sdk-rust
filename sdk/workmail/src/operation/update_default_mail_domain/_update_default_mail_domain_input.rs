@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDefaultMailDomainInput {
+pub struct UpdateDefaultMailDomainInput  {
     /// <p>The WorkMail organization for which to list domains.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that will become the default domain.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDefaultMailDomainInput {
+impl  UpdateDefaultMailDomainInput  {
     /// <p>The WorkMail organization for which to list domains.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The domain name that will become the default domain.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateDefaultMailDomainInputBuilder {
     }
     /// <p>The WorkMail organization for which to list domains.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The WorkMail organization for which to list domains.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateDefaultMailDomainInputBuilder {
     }
     /// <p>The domain name that will become the default domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name that will become the default domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
     /// Consumes the builder and constructs a [`UpdateDefaultMailDomainInput`](crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput {
-            organization_id: self.organization_id,
-            domain_name: self.domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainInput {
+                organization_id: self.organization_id
+                ,
+                domain_name: self.domain_name
+                ,
+            }
+        )
     }
 }
+

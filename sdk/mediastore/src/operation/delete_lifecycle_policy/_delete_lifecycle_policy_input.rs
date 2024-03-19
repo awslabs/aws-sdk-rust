@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyInput {
+pub struct DeleteLifecyclePolicyInput  {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLifecyclePolicyInput {
+impl  DeleteLifecyclePolicyInput  {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
-            container_name: self.container_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
+                container_name: self.container_name
+                ,
+            }
+        )
     }
 }
+

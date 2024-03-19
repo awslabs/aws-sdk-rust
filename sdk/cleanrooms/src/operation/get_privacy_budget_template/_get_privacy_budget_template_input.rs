@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPrivacyBudgetTemplateInput {
+pub struct GetPrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for your privacy budget template.</p>
     pub privacy_budget_template_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetPrivacyBudgetTemplateInput {
+impl  GetPrivacyBudgetTemplateInput  {
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
     /// <p>A unique identifier for your privacy budget template.</p>
-    pub fn privacy_budget_template_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn privacy_budget_template_identifier(&self) -> ::std::option::Option<& str> {
         self.privacy_budget_template_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetPrivacyBudgetTemplateInputBuilder {
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier for one of your memberships for a collaboration. The privacy budget template is retrieved from the collaboration that this membership belongs to. Accepts a membership ID.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetPrivacyBudgetTemplateInputBuilder {
     }
     /// <p>A unique identifier for your privacy budget template.</p>
     pub fn set_privacy_budget_template_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.privacy_budget_template_identifier = input;
-        self
+        self.privacy_budget_template_identifier = input; self
     }
     /// <p>A unique identifier for your privacy budget template.</p>
     pub fn get_privacy_budget_template_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.privacy_budget_template_identifier
     }
     /// Consumes the builder and constructs a [`GetPrivacyBudgetTemplateInput`](crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateInput {
-            membership_identifier: self.membership_identifier,
-            privacy_budget_template_identifier: self.privacy_budget_template_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateInput {
+                membership_identifier: self.membership_identifier
+                ,
+                privacy_budget_template_identifier: self.privacy_budget_template_identifier
+                ,
+            }
+        )
     }
 }
+

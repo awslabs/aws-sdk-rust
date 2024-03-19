@@ -3,13 +3,13 @@
 /// <p>Describes the GPU accelerators for the instance type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Gpu {
+pub struct Gpu  {
     /// <p>The number of GPUs for the instance type.</p>
     pub gpu_count: i32,
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub gpu_memory_size_in_mib: i32,
 }
-impl Gpu {
+impl  Gpu  {
     /// <p>The number of GPUs for the instance type.</p>
     pub fn gpu_count(&self) -> i32 {
         self.gpu_count
@@ -41,8 +41,7 @@ impl GpuBuilder {
     }
     /// <p>The number of GPUs for the instance type.</p>
     pub fn set_gpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gpu_count = input;
-        self
+        self.gpu_count = input; self
     }
     /// <p>The number of GPUs for the instance type.</p>
     pub fn get_gpu_count(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl GpuBuilder {
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub fn set_gpu_memory_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.gpu_memory_size_in_mib = input;
-        self
+        self.gpu_memory_size_in_mib = input; self
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub fn get_gpu_memory_size_in_mib(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl GpuBuilder {
     /// Consumes the builder and constructs a [`Gpu`](crate::types::Gpu).
     pub fn build(self) -> crate::types::Gpu {
         crate::types::Gpu {
-            gpu_count: self.gpu_count.unwrap_or_default(),
-            gpu_memory_size_in_mib: self.gpu_memory_size_in_mib.unwrap_or_default(),
+            gpu_count: self.gpu_count
+                .unwrap_or_default()
+            ,
+            gpu_memory_size_in_mib: self.gpu_memory_size_in_mib
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

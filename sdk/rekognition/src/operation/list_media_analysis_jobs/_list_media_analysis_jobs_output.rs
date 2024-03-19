@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMediaAnalysisJobsOutput {
+pub struct ListMediaAnalysisJobsOutput  {
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub media_analysis_jobs: ::std::vec::Vec<crate::types::MediaAnalysisJobDescription>,
+    pub media_analysis_jobs: ::std::vec::Vec::<crate::types::MediaAnalysisJobDescription>,
     _request_id: Option<String>,
 }
-impl ListMediaAnalysisJobsOutput {
+impl  ListMediaAnalysisJobsOutput  {
     /// <p>Pagination token, if the previous response was incomplete.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub fn media_analysis_jobs(&self) -> &[crate::types::MediaAnalysisJobDescription] {
-        use std::ops::Deref;
-        self.media_analysis_jobs.deref()
+    pub fn media_analysis_jobs(&self) -> & [crate::types::MediaAnalysisJobDescription] {
+        use std::ops::Deref; self.media_analysis_jobs.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListMediaAnalysisJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListMediaAnalysisJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaAnalysisJobsOutput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput).
     pub fn builder() -> crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListMediaAnalysisJobsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListMediaAnalysisJobsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) media_analysis_jobs: ::std::option::Option<::std::vec::Vec<crate::types::MediaAnalysisJobDescription>>,
+    pub(crate) media_analysis_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::MediaAnalysisJobDescription>>,
     _request_id: Option<String>,
 }
 impl ListMediaAnalysisJobsOutputBuilder {
@@ -48,8 +47,7 @@ impl ListMediaAnalysisJobsOutputBuilder {
     }
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Pagination token, if the previous response was incomplete.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,46 +60,43 @@ impl ListMediaAnalysisJobsOutputBuilder {
     /// <p>Contains a list of all media analysis jobs.</p>
     pub fn media_analysis_jobs(mut self, input: crate::types::MediaAnalysisJobDescription) -> Self {
         let mut v = self.media_analysis_jobs.unwrap_or_default();
-        v.push(input);
-        self.media_analysis_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.media_analysis_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub fn set_media_analysis_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaAnalysisJobDescription>>) -> Self {
-        self.media_analysis_jobs = input;
-        self
+    pub fn set_media_analysis_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MediaAnalysisJobDescription>>) -> Self {
+        self.media_analysis_jobs = input; self
     }
     /// <p>Contains a list of all media analysis jobs.</p>
-    pub fn get_media_analysis_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaAnalysisJobDescription>> {
+    pub fn get_media_analysis_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MediaAnalysisJobDescription>> {
         &self.media_analysis_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListMediaAnalysisJobsOutput`](crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`media_analysis_jobs`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder::media_analysis_jobs)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
-            next_token: self.next_token,
-            media_analysis_jobs: self.media_analysis_jobs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "media_analysis_jobs",
-                    "media_analysis_jobs was not specified but it is required when building ListMediaAnalysisJobsOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
+                next_token: self.next_token
+                ,
+                media_analysis_jobs: self.media_analysis_jobs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("media_analysis_jobs", "media_analysis_jobs was not specified but it is required when building ListMediaAnalysisJobsOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

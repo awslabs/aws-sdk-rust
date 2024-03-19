@@ -3,19 +3,19 @@
 /// <p>Attaches the specified object to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>AttachToIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchAttachToIndex {
+pub struct BatchAttachToIndex  {
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
-impl BatchAttachToIndex {
+impl  BatchAttachToIndex  {
     /// <p>A reference to the index that you are attaching the object to.</p>
-    pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn index_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
-    pub fn target_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl BatchAttachToIndexBuilder {
     }
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub fn set_index_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.index_reference = input;
-        self
+        self.index_reference = input; self
     }
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -57,8 +56,7 @@ impl BatchAttachToIndexBuilder {
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub fn set_target_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.target_reference = input;
-        self
+        self.target_reference = input; self
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub fn get_target_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -67,8 +65,11 @@ impl BatchAttachToIndexBuilder {
     /// Consumes the builder and constructs a [`BatchAttachToIndex`](crate::types::BatchAttachToIndex).
     pub fn build(self) -> crate::types::BatchAttachToIndex {
         crate::types::BatchAttachToIndex {
-            index_reference: self.index_reference,
-            target_reference: self.target_reference,
+            index_reference: self.index_reference
+            ,
+            target_reference: self.target_reference
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePatchBaselineInput {
+pub struct DeletePatchBaselineInput  {
     /// <p>The ID of the patch baseline to delete.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePatchBaselineInput {
+impl  DeletePatchBaselineInput  {
     /// <p>The ID of the patch baseline to delete.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeletePatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline to delete.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the patch baseline to delete.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.baseline_id
     }
     /// Consumes the builder and constructs a [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
-            baseline_id: self.baseline_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
+                baseline_id: self.baseline_id
+                ,
+            }
+        )
     }
 }
+

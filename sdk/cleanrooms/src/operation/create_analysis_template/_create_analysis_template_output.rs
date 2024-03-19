@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateAnalysisTemplateOutput {
+pub struct CreateAnalysisTemplateOutput  {
     /// <p>The analysis template.</p>
     pub analysis_template: ::std::option::Option<crate::types::AnalysisTemplate>,
     _request_id: Option<String>,
 }
-impl CreateAnalysisTemplateOutput {
+impl  CreateAnalysisTemplateOutput  {
     /// <p>The analysis template.</p>
-    pub fn analysis_template(&self) -> ::std::option::Option<&crate::types::AnalysisTemplate> {
+    pub fn analysis_template(&self) -> ::std::option::Option<& crate::types::AnalysisTemplate> {
         self.analysis_template.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAnalysisTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateAnalysisTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnalysisTemplateOutput`](crate::operation::create_analysis_template::CreateAnalysisTemplateOutput).
     pub fn builder() -> crate::operation::create_analysis_template::builders::CreateAnalysisTemplateOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateAnalysisTemplateOutputBuilder {
     }
     /// <p>The analysis template.</p>
     pub fn set_analysis_template(mut self, input: ::std::option::Option<crate::types::AnalysisTemplate>) -> Self {
-        self.analysis_template = input;
-        self
+        self.analysis_template = input; self
     }
     /// <p>The analysis template.</p>
     pub fn get_analysis_template(&self) -> &::std::option::Option<crate::types::AnalysisTemplate> {
         &self.analysis_template
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateOutput`](crate::operation::create_analysis_template::CreateAnalysisTemplateOutput).
     pub fn build(self) -> crate::operation::create_analysis_template::CreateAnalysisTemplateOutput {
         crate::operation::create_analysis_template::CreateAnalysisTemplateOutput {
-            analysis_template: self.analysis_template,
+            analysis_template: self.analysis_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

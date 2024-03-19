@@ -3,19 +3,19 @@
 /// <p>The release label filters by application or version prefix.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReleaseLabelFilter {
+pub struct ReleaseLabelFilter  {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub application: ::std::option::Option<::std::string::String>,
 }
-impl ReleaseLabelFilter {
+impl  ReleaseLabelFilter  {
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
-    pub fn application(&self) -> ::std::option::Option<&str> {
+    pub fn application(&self) -> ::std::option::Option<& str> {
         self.application.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ReleaseLabelFilterBuilder {
     }
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Optional release label version prefix filter. For example, <code>emr-5</code>.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ReleaseLabelFilterBuilder {
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>Optional release label application filter. For example, <code>spark@2.1.0</code>.</p>
     pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ReleaseLabelFilterBuilder {
     /// Consumes the builder and constructs a [`ReleaseLabelFilter`](crate::types::ReleaseLabelFilter).
     pub fn build(self) -> crate::types::ReleaseLabelFilter {
         crate::types::ReleaseLabelFilter {
-            prefix: self.prefix,
-            application: self.application,
+            prefix: self.prefix
+            ,
+            application: self.application
+            ,
         }
     }
 }
+

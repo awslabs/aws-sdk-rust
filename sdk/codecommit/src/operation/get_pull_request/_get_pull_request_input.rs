@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPullRequestInput {
+pub struct GetPullRequestInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub pull_request_id: ::std::option::Option<::std::string::String>,
 }
-impl GetPullRequestInput {
+impl  GetPullRequestInput  {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl GetPullRequestInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_id
     }
     /// Consumes the builder and constructs a [`GetPullRequestInput`](crate::operation::get_pull_request::GetPullRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_pull_request::GetPullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_pull_request::GetPullRequestInput {
-            pull_request_id: self.pull_request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pull_request::GetPullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_pull_request::GetPullRequestInput {
+                pull_request_id: self.pull_request_id
+                ,
+            }
+        )
     }
 }
+

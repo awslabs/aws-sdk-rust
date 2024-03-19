@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetCredentialReport</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCredentialReportOutput {
+pub struct GetCredentialReportOutput  {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The format (MIME type) of the credential report.</p>
@@ -12,25 +12,25 @@ pub struct GetCredentialReportOutput {
     pub generated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetCredentialReportOutput {
+impl  GetCredentialReportOutput  {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn content(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The format (MIME type) of the credential report.</p>
-    pub fn report_format(&self) -> ::std::option::Option<&crate::types::ReportFormatType> {
+    pub fn report_format(&self) -> ::std::option::Option<& crate::types::ReportFormatType> {
         self.report_format.as_ref()
     }
     /// <p>The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub fn generated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn generated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.generated_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCredentialReportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCredentialReportOutput {
     /// Creates a new builder-style object to manufacture [`GetCredentialReportOutput`](crate::operation::get_credential_report::GetCredentialReportOutput).
     pub fn builder() -> crate::operation::get_credential_report::builders::GetCredentialReportOutputBuilder {
@@ -55,8 +55,7 @@ impl GetCredentialReportOutputBuilder {
     }
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -69,8 +68,7 @@ impl GetCredentialReportOutputBuilder {
     }
     /// <p>The format (MIME type) of the credential report.</p>
     pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::ReportFormatType>) -> Self {
-        self.report_format = input;
-        self
+        self.report_format = input; self
     }
     /// <p>The format (MIME type) of the credential report.</p>
     pub fn get_report_format(&self) -> &::std::option::Option<crate::types::ReportFormatType> {
@@ -83,29 +81,32 @@ impl GetCredentialReportOutputBuilder {
     }
     /// <p>The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     pub fn set_generated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.generated_time = input;
-        self
+        self.generated_time = input; self
     }
     /// <p>The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     pub fn get_generated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.generated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCredentialReportOutput`](crate::operation::get_credential_report::GetCredentialReportOutput).
     pub fn build(self) -> crate::operation::get_credential_report::GetCredentialReportOutput {
         crate::operation::get_credential_report::GetCredentialReportOutput {
-            content: self.content,
-            report_format: self.report_format,
-            generated_time: self.generated_time,
+            content: self.content
+            ,
+            report_format: self.report_format
+            ,
+            generated_time: self.generated_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

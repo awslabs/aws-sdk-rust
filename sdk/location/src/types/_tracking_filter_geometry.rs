@@ -3,16 +3,17 @@
 /// <p>The geomerty used to filter device positions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrackingFilterGeometry {
+pub struct TrackingFilterGeometry  {
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub polygon: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::vec::Vec::<f64>>>>,
 }
-impl TrackingFilterGeometry {
+impl  TrackingFilterGeometry  {
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polygon.is_none()`.
-    pub fn polygon(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
-        self.polygon.as_deref().unwrap_or_default()
+    pub fn polygon(&self) -> & [::std::vec::Vec::<::std::vec::Vec::<f64>>] {
+        self.polygon.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TrackingFilterGeometry {
@@ -26,7 +27,7 @@ impl TrackingFilterGeometry {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TrackingFilterGeometryBuilder {
-    pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
+    pub(crate) polygon: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::vec::Vec::<f64>>>>,
 }
 impl TrackingFilterGeometryBuilder {
     /// Appends an item to `polygon`.
@@ -34,23 +35,26 @@ impl TrackingFilterGeometryBuilder {
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
     ///
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    pub fn polygon(mut self, input: ::std::vec::Vec<::std::vec::Vec<f64>>) -> Self {
+    pub fn polygon(mut self, input: ::std::vec::Vec::<::std::vec::Vec::<f64>>) -> Self {
         let mut v = self.polygon.unwrap_or_default();
-        v.push(input);
-        self.polygon = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.polygon = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>) -> Self {
-        self.polygon = input;
-        self
+    pub fn set_polygon(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::vec::Vec::<f64>>>>) -> Self {
+        self.polygon = input; self
     }
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
-    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::vec::Vec::<f64>>>> {
         &self.polygon
     }
     /// Consumes the builder and constructs a [`TrackingFilterGeometry`](crate::types::TrackingFilterGeometry).
     pub fn build(self) -> crate::types::TrackingFilterGeometry {
-        crate::types::TrackingFilterGeometry { polygon: self.polygon }
+        crate::types::TrackingFilterGeometry {
+            polygon: self.polygon
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListMetricAttributionsInput {
+pub struct ListMetricAttributionsInput  {
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -10,13 +10,13 @@ pub struct ListMetricAttributionsInput {
     /// <p>The maximum number of metric attributions to return in one page of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListMetricAttributionsInput {
+impl  ListMetricAttributionsInput  {
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
-    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of metric attributions to return in one page of results.</p>
@@ -47,8 +47,7 @@ impl ListMetricAttributionsInputBuilder {
     }
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
     pub fn set_dataset_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_group_arn = input;
-        self
+        self.dataset_group_arn = input; self
     }
     /// <p>The metric attributions' dataset group Amazon Resource Name (ARN).</p>
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListMetricAttributionsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,24 +73,24 @@ impl ListMetricAttributionsInputBuilder {
     }
     /// <p>The maximum number of metric attributions to return in one page of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of metric attributions to return in one page of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMetricAttributionsInput`](crate::operation::list_metric_attributions::ListMetricAttributionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_metric_attributions::ListMetricAttributionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_metric_attributions::ListMetricAttributionsInput {
-            dataset_group_arn: self.dataset_group_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_metric_attributions::ListMetricAttributionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_metric_attributions::ListMetricAttributionsInput {
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartFlywheelIterationOutput {
+pub struct StartFlywheelIterationOutput  {
     /// <p></p>
     pub flywheel_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub flywheel_iteration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartFlywheelIterationOutput {
+impl  StartFlywheelIterationOutput  {
     /// <p></p>
-    pub fn flywheel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> ::std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(&self) -> ::std::option::Option<&str> {
+    pub fn flywheel_iteration_id(&self) -> ::std::option::Option<& str> {
         self.flywheel_iteration_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartFlywheelIterationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartFlywheelIterationOutput {
     /// Creates a new builder-style object to manufacture [`StartFlywheelIterationOutput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput).
     pub fn builder() -> crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationOutputBuilder {
@@ -47,8 +47,7 @@ impl StartFlywheelIterationOutputBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// <p></p>
     pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl StartFlywheelIterationOutputBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_iteration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flywheel_iteration_id = input;
-        self
+        self.flywheel_iteration_id = input; self
     }
     /// <p></p>
     pub fn get_flywheel_iteration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.flywheel_iteration_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartFlywheelIterationOutput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput).
     pub fn build(self) -> crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput {
         crate::operation::start_flywheel_iteration::StartFlywheelIterationOutput {
-            flywheel_arn: self.flywheel_arn,
-            flywheel_iteration_id: self.flywheel_iteration_id,
+            flywheel_arn: self.flywheel_arn
+            ,
+            flywheel_iteration_id: self.flywheel_iteration_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

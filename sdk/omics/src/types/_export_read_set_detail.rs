@@ -3,7 +3,7 @@
 /// <p>Details about a read set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportReadSetDetail {
+pub struct ExportReadSetDetail  {
     /// <p>The set's ID.</p>
     pub id: ::std::string::String,
     /// <p>The set's status.</p>
@@ -11,18 +11,17 @@ pub struct ExportReadSetDetail {
     /// <p>The set's status message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ExportReadSetDetail {
+impl  ExportReadSetDetail  {
     /// <p>The set's ID.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The set's status.</p>
-    pub fn status(&self) -> &crate::types::ReadSetExportJobItemStatus {
+    pub fn status(&self) -> & crate::types::ReadSetExportJobItemStatus {
         &self.status
     }
     /// <p>The set's status message.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -50,8 +49,7 @@ impl ExportReadSetDetailBuilder {
     }
     /// <p>The set's ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The set's ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,7 @@ impl ExportReadSetDetailBuilder {
     }
     /// <p>The set's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The set's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetExportJobItemStatus> {
@@ -79,8 +76,7 @@ impl ExportReadSetDetailBuilder {
     }
     /// <p>The set's status message.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The set's status message.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,20 +87,22 @@ impl ExportReadSetDetailBuilder {
     /// - [`id`](crate::types::builders::ExportReadSetDetailBuilder::id)
     /// - [`status`](crate::types::builders::ExportReadSetDetailBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSetDetail, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ExportReadSetDetail {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ExportReadSetDetail",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ExportReadSetDetail",
-                )
-            })?,
-            status_message: self.status_message,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ExportReadSetDetail {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ExportReadSetDetail")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ExportReadSetDetail")
+                    )?
+                ,
+                status_message: self.status_message
+                ,
+            }
+        )
     }
 }
+

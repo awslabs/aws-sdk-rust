@@ -3,7 +3,7 @@
 /// <p>Creates a broker using the specified properties.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBrokerInput {
+pub struct CreateBrokerInput  {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub authentication_strategy: ::std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
@@ -37,25 +37,25 @@ pub struct CreateBrokerInput {
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The broker's storage type.</p>
     pub storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p><important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Create tags when creating the broker.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    pub users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub users: ::std::option::Option<::std::vec::Vec::<crate::types::User>>,
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
     pub data_replication_primary_broker_arn: ::std::option::Option<::std::string::String>,
 }
-impl CreateBrokerInput {
+impl  CreateBrokerInput  {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn authentication_strategy(&self) -> ::std::option::Option<&crate::types::AuthenticationStrategy> {
+    pub fn authentication_strategy(&self) -> ::std::option::Option<& crate::types::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
@@ -65,49 +65,49 @@ impl CreateBrokerInput {
     /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p><important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
     /// </important>
-    pub fn broker_name(&self) -> ::std::option::Option<&str> {
+    pub fn broker_name(&self) -> ::std::option::Option<& str> {
         self.broker_name.as_deref()
     }
     /// <p>A list of information about the configuration.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationId> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ConfigurationId> {
         self.configuration.as_ref()
     }
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p><note>
     /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
     /// </note>
-    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>Required. The broker's deployment mode.</p>
-    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
+    pub fn deployment_mode(&self) -> ::std::option::Option<& crate::types::DeploymentMode> {
         self.deployment_mode.as_ref()
     }
     /// <p>Encryption options for the broker.</p>
-    pub fn encryption_options(&self) -> ::std::option::Option<&crate::types::EncryptionOptions> {
+    pub fn encryption_options(&self) -> ::std::option::Option<& crate::types::EncryptionOptions> {
         self.encryption_options.as_ref()
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> ::std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>Required. The broker's instance type.</p>
-    pub fn host_instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> ::std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn ldap_server_metadata(&self) -> ::std::option::Option<&crate::types::LdapServerMetadataInput> {
+    pub fn ldap_server_metadata(&self) -> ::std::option::Option<& crate::types::LdapServerMetadataInput> {
         self.ldap_server_metadata.as_ref()
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-    pub fn logs(&self) -> ::std::option::Option<&crate::types::Logs> {
+    pub fn logs(&self) -> ::std::option::Option<& crate::types::Logs> {
         self.logs.as_ref()
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn maintenance_window_start_time(&self) -> ::std::option::Option<&crate::types::WeeklyStartTime> {
+    pub fn maintenance_window_start_time(&self) -> ::std::option::Option<& crate::types::WeeklyStartTime> {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
@@ -115,39 +115,42 @@ impl CreateBrokerInput {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
-    pub fn security_groups(&self) -> &[::std::string::String] {
-        self.security_groups.as_deref().unwrap_or_default()
+    pub fn security_groups(&self) -> & [::std::string::String] {
+        self.security_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The broker's storage type.</p>
-    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::BrokerStorageType> {
+    pub fn storage_type(&self) -> ::std::option::Option<& crate::types::BrokerStorageType> {
         self.storage_type.as_ref()
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p><important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Create tags when creating the broker.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
-    pub fn users(&self) -> &[crate::types::User] {
-        self.users.as_deref().unwrap_or_default()
+    pub fn users(&self) -> & [crate::types::User] {
+        self.users.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
-    pub fn data_replication_mode(&self) -> ::std::option::Option<&crate::types::DataReplicationMode> {
+    pub fn data_replication_mode(&self) -> ::std::option::Option<& crate::types::DataReplicationMode> {
         self.data_replication_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
-    pub fn data_replication_primary_broker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_replication_primary_broker_arn(&self) -> ::std::option::Option<& str> {
         self.data_replication_primary_broker_arn.as_deref()
     }
 }
@@ -176,11 +179,11 @@ pub struct CreateBrokerInputBuilder {
     pub(crate) logs: ::std::option::Option<crate::types::Logs>,
     pub(crate) maintenance_window_start_time: ::std::option::Option<crate::types::WeeklyStartTime>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
-    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) storage_type: ::std::option::Option<crate::types::BrokerStorageType>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec::<crate::types::User>>,
     pub(crate) data_replication_mode: ::std::option::Option<crate::types::DataReplicationMode>,
     pub(crate) data_replication_primary_broker_arn: ::std::option::Option<::std::string::String>,
 }
@@ -192,8 +195,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn set_authentication_strategy(mut self, input: ::std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
-        self.authentication_strategy = input;
-        self
+        self.authentication_strategy = input; self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn get_authentication_strategy(&self) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
@@ -207,8 +209,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
     pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
@@ -226,8 +227,7 @@ impl CreateBrokerInputBuilder {
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
     /// </important>
     pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.broker_name = input;
-        self
+        self.broker_name = input; self
     }
     /// <p>Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p><important>
     /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names are not intended to be used for private or sensitive data.</p>
@@ -242,8 +242,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>A list of information about the configuration.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationId>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>A list of information about the configuration.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
@@ -260,8 +259,7 @@ impl CreateBrokerInputBuilder {
     /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
     /// </note>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creator_request_id = input;
-        self
+        self.creator_request_id = input; self
     }
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.</p><note>
     /// <p>We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
@@ -277,8 +275,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Required. The broker's deployment mode.</p>
     pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
-        self.deployment_mode = input;
-        self
+        self.deployment_mode = input; self
     }
     /// <p>Required. The broker's deployment mode.</p>
     pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
@@ -291,8 +288,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Encryption options for the broker.</p>
     pub fn set_encryption_options(mut self, input: ::std::option::Option<crate::types::EncryptionOptions>) -> Self {
-        self.encryption_options = input;
-        self
+        self.encryption_options = input; self
     }
     /// <p>Encryption options for the broker.</p>
     pub fn get_encryption_options(&self) -> &::std::option::Option<crate::types::EncryptionOptions> {
@@ -306,8 +302,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub fn set_engine_type(mut self, input: ::std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
@@ -321,8 +316,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -336,8 +330,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Required. The broker's instance type.</p>
     pub fn set_host_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_instance_type = input;
-        self
+        self.host_instance_type = input; self
     }
     /// <p>Required. The broker's instance type.</p>
     pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -350,8 +343,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn set_ldap_server_metadata(mut self, input: ::std::option::Option<crate::types::LdapServerMetadataInput>) -> Self {
-        self.ldap_server_metadata = input;
-        self
+        self.ldap_server_metadata = input; self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn get_ldap_server_metadata(&self) -> &::std::option::Option<crate::types::LdapServerMetadataInput> {
@@ -364,8 +356,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub fn set_logs(mut self, input: ::std::option::Option<crate::types::Logs>) -> Self {
-        self.logs = input;
-        self
+        self.logs = input; self
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub fn get_logs(&self) -> &::std::option::Option<crate::types::Logs> {
@@ -378,8 +369,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn set_maintenance_window_start_time(mut self, input: ::std::option::Option<crate::types::WeeklyStartTime>) -> Self {
-        self.maintenance_window_start_time = input;
-        self
+        self.maintenance_window_start_time = input; self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn get_maintenance_window_start_time(&self) -> &::std::option::Option<crate::types::WeeklyStartTime> {
@@ -393,8 +383,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -407,17 +396,16 @@ impl CreateBrokerInputBuilder {
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_groups
     }
     /// <p>The broker's storage type.</p>
@@ -427,8 +415,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>The broker's storage type.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::BrokerStorageType>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The broker's storage type.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::BrokerStorageType> {
@@ -443,21 +430,20 @@ impl CreateBrokerInputBuilder {
     /// </important>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p><important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p><important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web Services account.</p>
     /// </important>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Adds a key-value pair to `tags`.
@@ -467,17 +453,16 @@ impl CreateBrokerInputBuilder {
     /// <p>Create tags when creating the broker.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Create tags when creating the broker.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Create tags when creating the broker.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Appends an item to `users`.
@@ -487,17 +472,16 @@ impl CreateBrokerInputBuilder {
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::User>>) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::User>>) -> Self {
+        self.users = input; self
     }
     /// <p>The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.</p>
-    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::User>> {
         &self.users
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
@@ -507,8 +491,7 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub fn set_data_replication_mode(mut self, input: ::std::option::Option<crate::types::DataReplicationMode>) -> Self {
-        self.data_replication_mode = input;
-        self
+        self.data_replication_mode = input; self
     }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub fn get_data_replication_mode(&self) -> &::std::option::Option<crate::types::DataReplicationMode> {
@@ -521,39 +504,60 @@ impl CreateBrokerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
     pub fn set_data_replication_primary_broker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_replication_primary_broker_arn = input;
-        self
+        self.data_replication_primary_broker_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.</p>
     pub fn get_data_replication_primary_broker_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_replication_primary_broker_arn
     }
     /// Consumes the builder and constructs a [`CreateBrokerInput`](crate::operation::create_broker::CreateBrokerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_broker::CreateBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_broker::CreateBrokerInput {
-            authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
-            broker_name: self.broker_name,
-            configuration: self.configuration,
-            creator_request_id: self.creator_request_id,
-            deployment_mode: self.deployment_mode,
-            encryption_options: self.encryption_options,
-            engine_type: self.engine_type,
-            engine_version: self.engine_version,
-            host_instance_type: self.host_instance_type,
-            ldap_server_metadata: self.ldap_server_metadata,
-            logs: self.logs,
-            maintenance_window_start_time: self.maintenance_window_start_time,
-            publicly_accessible: self.publicly_accessible,
-            security_groups: self.security_groups,
-            storage_type: self.storage_type,
-            subnet_ids: self.subnet_ids,
-            tags: self.tags,
-            users: self.users,
-            data_replication_mode: self.data_replication_mode,
-            data_replication_primary_broker_arn: self.data_replication_primary_broker_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_broker::CreateBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_broker::CreateBrokerInput {
+                authentication_strategy: self.authentication_strategy
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                ,
+                broker_name: self.broker_name
+                ,
+                configuration: self.configuration
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                deployment_mode: self.deployment_mode
+                ,
+                encryption_options: self.encryption_options
+                ,
+                engine_type: self.engine_type
+                ,
+                engine_version: self.engine_version
+                ,
+                host_instance_type: self.host_instance_type
+                ,
+                ldap_server_metadata: self.ldap_server_metadata
+                ,
+                logs: self.logs
+                ,
+                maintenance_window_start_time: self.maintenance_window_start_time
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                security_groups: self.security_groups
+                ,
+                storage_type: self.storage_type
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                tags: self.tags
+                ,
+                users: self.users
+                ,
+                data_replication_mode: self.data_replication_mode
+                ,
+                data_replication_primary_broker_arn: self.data_replication_primary_broker_arn
+                ,
+            }
+        )
     }
 }
+

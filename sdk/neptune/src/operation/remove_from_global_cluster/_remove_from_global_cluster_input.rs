@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveFromGlobalClusterInput {
+pub struct RemoveFromGlobalClusterInput  {
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
 }
-impl RemoveFromGlobalClusterInput {
+impl  RemoveFromGlobalClusterInput  {
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
-    pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
-    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RemoveFromGlobalClusterInputBuilder {
     }
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
     pub fn set_global_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_cluster_identifier = input;
-        self
+        self.global_cluster_identifier = input; self
     }
     /// <p>The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl RemoveFromGlobalClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_cluster_identifier = input;
-        self
+        self.db_cluster_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
     }
     /// Consumes the builder and constructs a [`RemoveFromGlobalClusterInput`](crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput {
-            global_cluster_identifier: self.global_cluster_identifier,
-            db_cluster_identifier: self.db_cluster_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput {
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+            }
+        )
     }
 }
+

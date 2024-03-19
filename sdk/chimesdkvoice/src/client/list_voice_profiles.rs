@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListVoiceProfiles`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`voice_profile_domain_id(impl Into<String>)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::voice_profile_domain_id) / [`set_voice_profile_domain_id(Option<String>)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::set_voice_profile_domain_id):<br>required: **true**<br><p>The ID of the voice profile domain.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token used to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results in the request.</p><br>
-    /// - On success, responds with [`ListVoiceProfilesOutput`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput) with field(s):
+                            /// - On success, responds with [`ListVoiceProfilesOutput`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput) with field(s):
     ///   - [`voice_profiles(Option<Vec::<VoiceProfileSummary>>)`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput::voice_profiles): <p>The list of voice profiles.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_voice_profiles::ListVoiceProfilesOutput::next_token): <p>The token used to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceProfilesError>`](crate::operation::list_voice_profiles::ListVoiceProfilesError)
+                            /// - On failure, responds with [`SdkError<ListVoiceProfilesError>`](crate::operation::list_voice_profiles::ListVoiceProfilesError)
     pub fn list_voice_profiles(&self) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder {
-        crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_voice_profiles::builders::ListVoiceProfilesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

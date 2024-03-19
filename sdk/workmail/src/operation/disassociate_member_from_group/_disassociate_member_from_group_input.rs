@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateMemberFromGroupInput {
+pub struct DisassociateMemberFromGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group from which members are removed.</p>
@@ -28,9 +28,9 @@ pub struct DisassociateMemberFromGroupInput {
     /// </ul>
     pub member_id: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateMemberFromGroupInput {
+impl  DisassociateMemberFromGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the group from which members are removed.</p>
@@ -43,7 +43,7 @@ impl DisassociateMemberFromGroupInput {
     /// <li>
     /// <p>Group name: group</p></li>
     /// </ul>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The identifier for the member to be removed from the group.</p>
@@ -56,7 +56,7 @@ impl DisassociateMemberFromGroupInput {
     /// <li>
     /// <p>Member name: member</p></li>
     /// </ul>
-    pub fn member_id(&self) -> ::std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<& str> {
         self.member_id.as_deref()
     }
 }
@@ -84,8 +84,7 @@ impl DisassociateMemberFromGroupInputBuilder {
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>Group name: group</p></li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -159,8 +157,7 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>Member name: member</p></li>
     /// </ul>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
@@ -176,16 +173,17 @@ impl DisassociateMemberFromGroupInputBuilder {
         &self.member_id
     }
     /// Consumes the builder and constructs a [`DisassociateMemberFromGroupInput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput {
-            organization_id: self.organization_id,
-            group_id: self.group_id,
-            member_id: self.member_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupInput {
+                organization_id: self.organization_id
+                ,
+                group_id: self.group_id
+                ,
+                member_id: self.member_id
+                ,
+            }
+        )
     }
 }
+

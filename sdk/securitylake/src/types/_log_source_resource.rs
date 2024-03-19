@@ -22,11 +22,7 @@ impl LogSourceResource {
     /// Tries to convert the enum instance into [`AwsLogSource`](crate::types::LogSourceResource::AwsLogSource), extracting the inner [`AwsLogSourceResource`](crate::types::AwsLogSourceResource).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_log_source(&self) -> ::std::result::Result<&crate::types::AwsLogSourceResource, &Self> {
-        if let LogSourceResource::AwsLogSource(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LogSourceResource::AwsLogSource(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`AwsLogSource`](crate::types::LogSourceResource::AwsLogSource).
     pub fn is_aws_log_source(&self) -> bool {
@@ -35,11 +31,7 @@ impl LogSourceResource {
     /// Tries to convert the enum instance into [`CustomLogSource`](crate::types::LogSourceResource::CustomLogSource), extracting the inner [`CustomLogSourceResource`](crate::types::CustomLogSourceResource).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_custom_log_source(&self) -> ::std::result::Result<&crate::types::CustomLogSourceResource, &Self> {
-        if let LogSourceResource::CustomLogSource(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let LogSourceResource::CustomLogSource(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`CustomLogSource`](crate::types::LogSourceResource::CustomLogSource).
     pub fn is_custom_log_source(&self) -> bool {
@@ -50,3 +42,4 @@ impl LogSourceResource {
         matches!(self, Self::Unknown)
     }
 }
+

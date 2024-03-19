@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDirectoryRegistrationsOutput {
+pub struct ListDirectoryRegistrationsOutput  {
     /// <p>Summary information about each directory registration you have created.</p>
-    pub directory_registrations: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>>,
+    pub directory_registrations: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryRegistrationSummary>>,
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDirectoryRegistrationsOutput {
+impl  ListDirectoryRegistrationsOutput  {
     /// <p>Summary information about each directory registration you have created.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.directory_registrations.is_none()`.
-    pub fn directory_registrations(&self) -> &[crate::types::DirectoryRegistrationSummary] {
-        self.directory_registrations.as_deref().unwrap_or_default()
+    pub fn directory_registrations(&self) -> & [crate::types::DirectoryRegistrationSummary] {
+        self.directory_registrations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDirectoryRegistrationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDirectoryRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDirectoryRegistrationsOutput`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput).
     pub fn builder() -> crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListDirectoryRegistrationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDirectoryRegistrationsOutputBuilder {
-    pub(crate) directory_registrations: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>>,
+    pub(crate) directory_registrations: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryRegistrationSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListDirectoryRegistrationsOutputBuilder {
     /// <p>Summary information about each directory registration you have created.</p>
     pub fn directory_registrations(mut self, input: crate::types::DirectoryRegistrationSummary) -> Self {
         let mut v = self.directory_registrations.unwrap_or_default();
-        v.push(input);
-        self.directory_registrations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.directory_registrations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary information about each directory registration you have created.</p>
-    pub fn set_directory_registrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>>) -> Self {
-        self.directory_registrations = input;
-        self
+    pub fn set_directory_registrations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DirectoryRegistrationSummary>>) -> Self {
+        self.directory_registrations = input; self
     }
     /// <p>Summary information about each directory registration you have created.</p>
-    pub fn get_directory_registrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectoryRegistrationSummary>> {
+    pub fn get_directory_registrations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DirectoryRegistrationSummary>> {
         &self.directory_registrations
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
@@ -69,28 +69,30 @@ impl ListDirectoryRegistrationsOutputBuilder {
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDirectoryRegistrationsOutput`](crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput).
     pub fn build(self) -> crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput {
         crate::operation::list_directory_registrations::ListDirectoryRegistrationsOutput {
-            directory_registrations: self.directory_registrations,
-            next_token: self.next_token,
+            directory_registrations: self.directory_registrations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

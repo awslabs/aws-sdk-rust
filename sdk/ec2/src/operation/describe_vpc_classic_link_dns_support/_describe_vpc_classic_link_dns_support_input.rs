@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeVpcClassicLinkDnsSupportInput {
+pub struct DescribeVpcClassicLinkDnsSupportInput  {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPCs.</p>
-    pub vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeVpcClassicLinkDnsSupportInput {
+impl  DescribeVpcClassicLinkDnsSupportInput  {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The IDs of the VPCs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_ids.is_none()`.
-    pub fn vpc_ids(&self) -> &[::std::string::String] {
-        self.vpc_ids.as_deref().unwrap_or_default()
+    pub fn vpc_ids(&self) -> & [::std::string::String] {
+        self.vpc_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeVpcClassicLinkDnsSupportInput {
@@ -39,7 +40,7 @@ impl DescribeVpcClassicLinkDnsSupportInput {
 pub struct DescribeVpcClassicLinkDnsSupportInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -49,8 +50,7 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -63,8 +63,7 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,32 +76,30 @@ impl DescribeVpcClassicLinkDnsSupportInputBuilder {
     /// <p>The IDs of the VPCs.</p>
     pub fn vpc_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the VPCs.</p>
-    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_ids = input;
-        self
+    pub fn set_vpc_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_ids = input; self
     }
     /// <p>The IDs of the VPCs.</p>
-    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_ids
     }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportInput`](crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupportInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                vpc_ids: self.vpc_ids,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                vpc_ids: self.vpc_ids
+                ,
+            }
         )
     }
 }
+

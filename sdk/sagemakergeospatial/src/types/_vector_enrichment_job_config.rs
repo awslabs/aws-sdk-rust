@@ -22,11 +22,7 @@ impl VectorEnrichmentJobConfig {
     /// Tries to convert the enum instance into [`MapMatchingConfig`](crate::types::VectorEnrichmentJobConfig::MapMatchingConfig), extracting the inner [`MapMatchingConfig`](crate::types::MapMatchingConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_map_matching_config(&self) -> ::std::result::Result<&crate::types::MapMatchingConfig, &Self> {
-        if let VectorEnrichmentJobConfig::MapMatchingConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VectorEnrichmentJobConfig::MapMatchingConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`MapMatchingConfig`](crate::types::VectorEnrichmentJobConfig::MapMatchingConfig).
     pub fn is_map_matching_config(&self) -> bool {
@@ -35,11 +31,7 @@ impl VectorEnrichmentJobConfig {
     /// Tries to convert the enum instance into [`ReverseGeocodingConfig`](crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig), extracting the inner [`ReverseGeocodingConfig`](crate::types::ReverseGeocodingConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reverse_geocoding_config(&self) -> ::std::result::Result<&crate::types::ReverseGeocodingConfig, &Self> {
-        if let VectorEnrichmentJobConfig::ReverseGeocodingConfig(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let VectorEnrichmentJobConfig::ReverseGeocodingConfig(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ReverseGeocodingConfig`](crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig).
     pub fn is_reverse_geocoding_config(&self) -> bool {
@@ -50,3 +42,4 @@ impl VectorEnrichmentJobConfig {
         matches!(self, Self::Unknown)
     }
 }
+

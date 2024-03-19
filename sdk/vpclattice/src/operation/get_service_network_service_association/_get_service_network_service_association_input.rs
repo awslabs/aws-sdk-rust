@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceNetworkServiceAssociationInput {
+pub struct GetServiceNetworkServiceAssociationInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub service_network_service_association_identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceNetworkServiceAssociationInput {
+impl  GetServiceNetworkServiceAssociationInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_service_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_service_association_identifier(&self) -> ::std::option::Option<& str> {
         self.service_network_service_association_identifier.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl GetServiceNetworkServiceAssociationInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub fn set_service_network_service_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_service_association_identifier = input;
-        self
+        self.service_network_service_association_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     pub fn get_service_network_service_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_network_service_association_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkServiceAssociationInput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput {
-                service_network_service_association_identifier: self.service_network_service_association_identifier,
-            },
+                service_network_service_association_identifier: self.service_network_service_association_identifier
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDataSourceInput {
+pub struct UpdateDataSourceInput  {
     /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the index attached to the data source connector.</p>
@@ -25,46 +25,46 @@ pub struct UpdateDataSourceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub document_enrichment_configuration: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>,
 }
-impl UpdateDataSourceInput {
+impl  UpdateDataSourceInput  {
     /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the index attached to the data source connector.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source connector.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>A name of the data source connector.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>Provides the configuration information for an Amazon Q data source.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn configuration(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.configuration.as_ref()
     }
     /// <p>Provides configuration information needed to connect to an Amazon VPC (Virtual Private Cloud).</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The description of the data source connector.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The chosen update frequency for your data source.</p>
-    pub fn sync_schedule(&self) -> ::std::option::Option<&str> {
+    pub fn sync_schedule(&self) -> ::std::option::Option<& str> {
         self.sync_schedule.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
-    pub fn document_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::DocumentEnrichmentConfiguration> {
+    pub fn document_enrichment_configuration(&self) -> ::std::option::Option<& crate::types::DocumentEnrichmentConfiguration> {
         self.document_enrichment_configuration.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application the data source is attached to.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +113,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The identifier of the index attached to the data source connector.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index attached to the data source connector.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +127,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +140,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>A name of the data source connector.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A name of the data source connector.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +153,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>Provides the configuration information for an Amazon Q data source.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Provides the configuration information for an Amazon Q data source.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -171,8 +166,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>Provides configuration information needed to connect to an Amazon VPC (Virtual Private Cloud).</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>Provides configuration information needed to connect to an Amazon VPC (Virtual Private Cloud).</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
@@ -185,8 +179,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The description of the data source connector.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the data source connector.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +192,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The chosen update frequency for your data source.</p>
     pub fn set_sync_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_schedule = input;
-        self
+        self.sync_schedule = input; self
     }
     /// <p>The chosen update frequency for your data source.</p>
     pub fn get_sync_schedule(&self) -> &::std::option::Option<::std::string::String> {
@@ -213,8 +205,7 @@ impl UpdateDataSourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +220,7 @@ impl UpdateDataSourceInputBuilder {
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
     pub fn set_document_enrichment_configuration(mut self, input: ::std::option::Option<crate::types::DocumentEnrichmentConfiguration>) -> Self {
-        self.document_enrichment_configuration = input;
-        self
+        self.document_enrichment_configuration = input; self
     }
     /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/custom-document-enrichment.html">Custom document enrichment</a>.</p>
@@ -238,20 +228,31 @@ impl UpdateDataSourceInputBuilder {
         &self.document_enrichment_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_data_source::UpdateDataSourceInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-            data_source_id: self.data_source_id,
-            display_name: self.display_name,
-            configuration: self.configuration,
-            vpc_configuration: self.vpc_configuration,
-            description: self.description,
-            sync_schedule: self.sync_schedule,
-            role_arn: self.role_arn,
-            document_enrichment_configuration: self.document_enrichment_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_data_source::UpdateDataSourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_data_source::UpdateDataSourceInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                display_name: self.display_name
+                ,
+                configuration: self.configuration
+                ,
+                vpc_configuration: self.vpc_configuration
+                ,
+                description: self.description
+                ,
+                sync_schedule: self.sync_schedule
+                ,
+                role_arn: self.role_arn
+                ,
+                document_enrichment_configuration: self.document_enrichment_configuration
+                ,
+            }
+        )
     }
 }
+

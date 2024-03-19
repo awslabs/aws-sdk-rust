@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateLocationHdfsInput {
+pub struct UpdateLocationHdfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
+    pub name_nodes: ::std::option::Option<::std::vec::Vec::<crate::types::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
     pub block_size: ::std::option::Option<i32>,
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
@@ -28,22 +28,23 @@ pub struct UpdateLocationHdfsInput {
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
-    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateLocationHdfsInput {
+impl  UpdateLocationHdfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
-    pub fn location_arn(&self) -> ::std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
-    pub fn subdirectory(&self) -> ::std::option::Option<&str> {
+    pub fn subdirectory(&self) -> ::std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
-    pub fn name_nodes(&self) -> &[crate::types::HdfsNameNode] {
-        self.name_nodes.as_deref().unwrap_or_default()
+    pub fn name_nodes(&self) -> & [crate::types::HdfsNameNode] {
+        self.name_nodes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
     pub fn block_size(&self) -> ::std::option::Option<i32> {
@@ -54,38 +55,39 @@ impl UpdateLocationHdfsInput {
         self.replication_factor
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
-    pub fn kms_key_provider_uri(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_provider_uri(&self) -> ::std::option::Option<& str> {
         self.kms_key_provider_uri.as_deref()
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
-    pub fn qop_configuration(&self) -> ::std::option::Option<&crate::types::QopConfiguration> {
+    pub fn qop_configuration(&self) -> ::std::option::Option<& crate::types::QopConfiguration> {
         self.qop_configuration.as_ref()
     }
     /// <p>The type of authentication used to determine the identity of the user.</p>
-    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::HdfsAuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<& crate::types::HdfsAuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The user name used to identify the client on the host operating system.</p>
-    pub fn simple_user(&self) -> ::std::option::Option<&str> {
+    pub fn simple_user(&self) -> ::std::option::Option<& str> {
         self.simple_user.as_deref()
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
-    pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
+    pub fn kerberos_principal(&self) -> ::std::option::Option<& str> {
         self.kerberos_principal.as_deref()
     }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    pub fn kerberos_keytab(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn kerberos_keytab(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    pub fn kerberos_krb5_conf(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn kerberos_krb5_conf(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
-    pub fn agent_arns(&self) -> &[::std::string::String] {
-        self.agent_arns.as_deref().unwrap_or_default()
+    pub fn agent_arns(&self) -> & [::std::string::String] {
+        self.agent_arns.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateLocationHdfsInput {
@@ -101,7 +103,7 @@ impl UpdateLocationHdfsInput {
 pub struct UpdateLocationHdfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
-    pub(crate) name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
+    pub(crate) name_nodes: ::std::option::Option<::std::vec::Vec::<crate::types::HdfsNameNode>>,
     pub(crate) block_size: ::std::option::Option<i32>,
     pub(crate) replication_factor: ::std::option::Option<i32>,
     pub(crate) kms_key_provider_uri: ::std::option::Option<::std::string::String>,
@@ -111,7 +113,7 @@ pub struct UpdateLocationHdfsInputBuilder {
     pub(crate) kerberos_principal: ::std::option::Option<::std::string::String>,
     pub(crate) kerberos_keytab: ::std::option::Option<::aws_smithy_types::Blob>,
     pub(crate) kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
-    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateLocationHdfsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
@@ -122,8 +124,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +137,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,17 +150,16 @@ impl UpdateLocationHdfsInputBuilder {
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
     pub fn name_nodes(mut self, input: crate::types::HdfsNameNode) -> Self {
         let mut v = self.name_nodes.unwrap_or_default();
-        v.push(input);
-        self.name_nodes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.name_nodes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
-        self.name_nodes = input;
-        self
+    pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HdfsNameNode>>) -> Self {
+        self.name_nodes = input; self
     }
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
+    pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HdfsNameNode>> {
         &self.name_nodes
     }
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
@@ -170,8 +169,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
     pub fn set_block_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.block_size = input;
-        self
+        self.block_size = input; self
     }
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
     pub fn get_block_size(&self) -> &::std::option::Option<i32> {
@@ -184,8 +182,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
     pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replication_factor = input;
-        self
+        self.replication_factor = input; self
     }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster.</p>
     pub fn get_replication_factor(&self) -> &::std::option::Option<i32> {
@@ -198,8 +195,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
     pub fn set_kms_key_provider_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_provider_uri = input;
-        self
+        self.kms_key_provider_uri = input; self
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS).</p>
     pub fn get_kms_key_provider_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +208,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
     pub fn set_qop_configuration(mut self, input: ::std::option::Option<crate::types::QopConfiguration>) -> Self {
-        self.qop_configuration = input;
-        self
+        self.qop_configuration = input; self
     }
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.</p>
     pub fn get_qop_configuration(&self) -> &::std::option::Option<crate::types::QopConfiguration> {
@@ -226,8 +221,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The type of authentication used to determine the identity of the user.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::HdfsAuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The type of authentication used to determine the identity of the user.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::HdfsAuthenticationType> {
@@ -240,8 +234,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The user name used to identify the client on the host operating system.</p>
     pub fn set_simple_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.simple_user = input;
-        self
+        self.simple_user = input; self
     }
     /// <p>The user name used to identify the client on the host operating system.</p>
     pub fn get_simple_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -254,8 +247,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kerberos_principal = input;
-        self
+        self.kerberos_principal = input; self
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster.</p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,8 +260,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.kerberos_keytab = input;
-        self
+        self.kerberos_keytab = input; self
     }
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -282,8 +273,7 @@ impl UpdateLocationHdfsInputBuilder {
     }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn set_kerberos_krb5_conf(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.kerberos_krb5_conf = input;
-        self
+        self.kerberos_krb5_conf = input; self
     }
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
     pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -296,38 +286,50 @@ impl UpdateLocationHdfsInputBuilder {
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The ARNs of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.agent_arns
     }
     /// Consumes the builder and constructs a [`UpdateLocationHdfsInput`](crate::operation::update_location_hdfs::UpdateLocationHdfsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_location_hdfs::UpdateLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_location_hdfs::UpdateLocationHdfsInput {
-            location_arn: self.location_arn,
-            subdirectory: self.subdirectory,
-            name_nodes: self.name_nodes,
-            block_size: self.block_size,
-            replication_factor: self.replication_factor,
-            kms_key_provider_uri: self.kms_key_provider_uri,
-            qop_configuration: self.qop_configuration,
-            authentication_type: self.authentication_type,
-            simple_user: self.simple_user,
-            kerberos_principal: self.kerberos_principal,
-            kerberos_keytab: self.kerberos_keytab,
-            kerberos_krb5_conf: self.kerberos_krb5_conf,
-            agent_arns: self.agent_arns,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_location_hdfs::UpdateLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_location_hdfs::UpdateLocationHdfsInput {
+                location_arn: self.location_arn
+                ,
+                subdirectory: self.subdirectory
+                ,
+                name_nodes: self.name_nodes
+                ,
+                block_size: self.block_size
+                ,
+                replication_factor: self.replication_factor
+                ,
+                kms_key_provider_uri: self.kms_key_provider_uri
+                ,
+                qop_configuration: self.qop_configuration
+                ,
+                authentication_type: self.authentication_type
+                ,
+                simple_user: self.simple_user
+                ,
+                kerberos_principal: self.kerberos_principal
+                ,
+                kerberos_keytab: self.kerberos_keytab
+                ,
+                kerberos_krb5_conf: self.kerberos_krb5_conf
+                ,
+                agent_arns: self.agent_arns
+                ,
+            }
+        )
     }
 }
+

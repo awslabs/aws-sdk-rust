@@ -5,23 +5,20 @@ pub use crate::operation::resolve_component_candidates::_resolve_component_candi
 
 impl ResolveComponentCandidatesInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.resolve_component_candidates();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.resolve_component_candidates();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `ResolveComponentCandidates`.
-///
+/// 
 /// <p>Retrieves a list of components that meet the component, version, and platform requirements of a deployment. Greengrass core devices call this operation when they receive a deployment to identify the components to install.</p>
 /// <p>This operation identifies components that meet all dependency requirements for a deployment. If the requirements conflict, then this operation returns an error and the deployment fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code> and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component dependency.</p>
 /// <p>When you specify the component candidates to resolve, IoT Greengrass compares each component's digest from the core device with the component's digest in the Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass specifies to use the version from the Amazon Web Services Cloud.</p><important>
@@ -30,33 +27,32 @@ impl ResolveComponentCandidatesInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder,
+                    inner: crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-    > for ResolveComponentCandidatesFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
+                    crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
+                > for ResolveComponentCandidatesFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
+                        crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl ResolveComponentCandidatesFluentBuilder {
     /// Creates a new `ResolveComponentCandidates`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -65,53 +61,44 @@ impl ResolveComponentCandidatesFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::resolve_component_candidates::ResolveComponentCandidates::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::resolve_component_candidates::ResolveComponentCandidates::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resolve_component_candidates::ResolveComponentCandidatesError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::resolve_component_candidates::ResolveComponentCandidates::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::resolve_component_candidates::ResolveComponentCandidates::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput, crate::operation::resolve_component_candidates::ResolveComponentCandidatesError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The platform to use to resolve compatible components.</p>
     pub fn platform(mut self, input: crate::types::ComponentPlatform) -> Self {
         self.inner = self.inner.platform(input);
@@ -136,12 +123,13 @@ impl ResolveComponentCandidatesFluentBuilder {
         self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn set_component_candidates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>) -> Self {
+    pub fn set_component_candidates(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>>) -> Self {
         self.inner = self.inner.set_component_candidates(input);
         self
     }
     /// <p>The list of components to resolve.</p>
-    pub fn get_component_candidates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
+    pub fn get_component_candidates(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentCandidate>> {
         self.inner.get_component_candidates()
     }
 }
+

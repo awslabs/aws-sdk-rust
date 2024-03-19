@@ -29,11 +29,7 @@ impl DocumentAttributeBoostingConfiguration {
     /// Tries to convert the enum instance into [`DateConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::DateConfiguration), extracting the inner [`DateAttributeBoostingConfiguration`](crate::types::DateAttributeBoostingConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_date_configuration(&self) -> ::std::result::Result<&crate::types::DateAttributeBoostingConfiguration, &Self> {
-        if let DocumentAttributeBoostingConfiguration::DateConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeBoostingConfiguration::DateConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DateConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::DateConfiguration).
     pub fn is_date_configuration(&self) -> bool {
@@ -42,11 +38,7 @@ impl DocumentAttributeBoostingConfiguration {
     /// Tries to convert the enum instance into [`NumberConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::NumberConfiguration), extracting the inner [`NumberAttributeBoostingConfiguration`](crate::types::NumberAttributeBoostingConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_configuration(&self) -> ::std::result::Result<&crate::types::NumberAttributeBoostingConfiguration, &Self> {
-        if let DocumentAttributeBoostingConfiguration::NumberConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeBoostingConfiguration::NumberConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`NumberConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::NumberConfiguration).
     pub fn is_number_configuration(&self) -> bool {
@@ -55,11 +47,7 @@ impl DocumentAttributeBoostingConfiguration {
     /// Tries to convert the enum instance into [`StringConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::StringConfiguration), extracting the inner [`StringAttributeBoostingConfiguration`](crate::types::StringAttributeBoostingConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_configuration(&self) -> ::std::result::Result<&crate::types::StringAttributeBoostingConfiguration, &Self> {
-        if let DocumentAttributeBoostingConfiguration::StringConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeBoostingConfiguration::StringConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::StringConfiguration).
     pub fn is_string_configuration(&self) -> bool {
@@ -68,11 +56,7 @@ impl DocumentAttributeBoostingConfiguration {
     /// Tries to convert the enum instance into [`StringListConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::StringListConfiguration), extracting the inner [`StringListAttributeBoostingConfiguration`](crate::types::StringListAttributeBoostingConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_list_configuration(&self) -> ::std::result::Result<&crate::types::StringListAttributeBoostingConfiguration, &Self> {
-        if let DocumentAttributeBoostingConfiguration::StringListConfiguration(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let DocumentAttributeBoostingConfiguration::StringListConfiguration(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StringListConfiguration`](crate::types::DocumentAttributeBoostingConfiguration::StringListConfiguration).
     pub fn is_string_list_configuration(&self) -> bool {
@@ -83,3 +67,4 @@ impl DocumentAttributeBoostingConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

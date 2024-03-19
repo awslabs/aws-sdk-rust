@@ -3,13 +3,13 @@
 /// <p>Specifies the S3 Object Lock rule for the specified object. In Amazon S3, Object Lock can help prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsS3BucketObjectLockConfigurationRuleDetails {
+pub struct AwsS3BucketObjectLockConfigurationRuleDetails  {
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket.</p>
     pub default_retention: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
 }
-impl AwsS3BucketObjectLockConfigurationRuleDetails {
+impl  AwsS3BucketObjectLockConfigurationRuleDetails  {
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket.</p>
-    pub fn default_retention(&self) -> ::std::option::Option<&crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails> {
+    pub fn default_retention(&self) -> ::std::option::Option<& crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails> {
         self.default_retention.as_ref()
     }
 }
@@ -33,12 +33,8 @@ impl AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
         self
     }
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket.</p>
-    pub fn set_default_retention(
-        mut self,
-        input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>,
-    ) -> Self {
-        self.default_retention = input;
-        self
+    pub fn set_default_retention(mut self, input: ::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails>) -> Self {
+        self.default_retention = input; self
     }
     /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket.</p>
     pub fn get_default_retention(&self) -> &::std::option::Option<crate::types::AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails> {
@@ -47,7 +43,9 @@ impl AwsS3BucketObjectLockConfigurationRuleDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsS3BucketObjectLockConfigurationRuleDetails`](crate::types::AwsS3BucketObjectLockConfigurationRuleDetails).
     pub fn build(self) -> crate::types::AwsS3BucketObjectLockConfigurationRuleDetails {
         crate::types::AwsS3BucketObjectLockConfigurationRuleDetails {
-            default_retention: self.default_retention,
+            default_retention: self.default_retention
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The access level to use to filter results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessLevelFilter {
+pub struct AccessLevelFilter  {
     /// <p>The access level.</p>
     /// <ul>
     /// <li>
@@ -17,7 +17,7 @@ pub struct AccessLevelFilter {
     /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AccessLevelFilter {
+impl  AccessLevelFilter  {
     /// <p>The access level.</p>
     /// <ul>
     /// <li>
@@ -27,11 +27,11 @@ impl AccessLevelFilter {
     /// <li>
     /// <p><code>User</code> - Filter results based on the specified user.</p></li>
     /// </ul>
-    pub fn key(&self) -> ::std::option::Option<&crate::types::AccessLevelFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<& crate::types::AccessLevelFilterKey> {
         self.key.as_ref()
     }
     /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -73,8 +73,7 @@ impl AccessLevelFilterBuilder {
     /// <p><code>User</code> - Filter results based on the specified user.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::AccessLevelFilterKey>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The access level.</p>
     /// <ul>
@@ -95,8 +94,7 @@ impl AccessLevelFilterBuilder {
     }
     /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The user to which the access level applies. The only supported value is <code>self</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,11 @@ impl AccessLevelFilterBuilder {
     /// Consumes the builder and constructs a [`AccessLevelFilter`](crate::types::AccessLevelFilter).
     pub fn build(self) -> crate::types::AccessLevelFilter {
         crate::types::AccessLevelFilter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

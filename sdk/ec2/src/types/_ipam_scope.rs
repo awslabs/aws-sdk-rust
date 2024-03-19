@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/how-it-works-ipam.html">How IPAM works</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamScope {
+pub struct IpamScope  {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scope.</p>
@@ -26,31 +26,31 @@ pub struct IpamScope {
     /// <p>The state of the IPAM scope.</p>
     pub state: ::std::option::Option<crate::types::IpamScopeState>,
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl IpamScope {
+impl  IpamScope  {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the scope.</p>
-    pub fn ipam_scope_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_scope_id(&self) -> ::std::option::Option<& str> {
         self.ipam_scope_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
-    pub fn ipam_scope_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_scope_arn(&self) -> ::std::option::Option<& str> {
         self.ipam_scope_arn.as_deref()
     }
     /// <p>The ARN of the IPAM.</p>
-    pub fn ipam_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_arn(&self) -> ::std::option::Option<& str> {
         self.ipam_arn.as_deref()
     }
     /// <p>The Amazon Web Services Region of the IPAM scope.</p>
-    pub fn ipam_region(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_region(&self) -> ::std::option::Option<& str> {
         self.ipam_region.as_deref()
     }
     /// <p>The type of the scope.</p>
-    pub fn ipam_scope_type(&self) -> ::std::option::Option<&crate::types::IpamScopeType> {
+    pub fn ipam_scope_type(&self) -> ::std::option::Option<& crate::types::IpamScopeType> {
         self.ipam_scope_type.as_ref()
     }
     /// <p>Defines if the scope is the default scope or not.</p>
@@ -58,7 +58,7 @@ impl IpamScope {
         self.is_default
     }
     /// <p>The description of the scope.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of pools in the scope.</p>
@@ -66,14 +66,15 @@ impl IpamScope {
         self.pool_count
     }
     /// <p>The state of the IPAM scope.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::IpamScopeState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::IpamScopeState> {
         self.state.as_ref()
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IpamScope {
@@ -97,7 +98,7 @@ pub struct IpamScopeBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) pool_count: ::std::option::Option<i32>,
     pub(crate) state: ::std::option::Option<crate::types::IpamScopeState>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl IpamScopeBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
@@ -107,8 +108,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the scope.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +121,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The ID of the scope.</p>
     pub fn set_ipam_scope_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_scope_id = input;
-        self
+        self.ipam_scope_id = input; self
     }
     /// <p>The ID of the scope.</p>
     pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +134,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub fn set_ipam_scope_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_scope_arn = input;
-        self
+        self.ipam_scope_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the scope.</p>
     pub fn get_ipam_scope_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +147,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The ARN of the IPAM.</p>
     pub fn set_ipam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_arn = input;
-        self
+        self.ipam_arn = input; self
     }
     /// <p>The ARN of the IPAM.</p>
     pub fn get_ipam_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +160,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The Amazon Web Services Region of the IPAM scope.</p>
     pub fn set_ipam_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_region = input;
-        self
+        self.ipam_region = input; self
     }
     /// <p>The Amazon Web Services Region of the IPAM scope.</p>
     pub fn get_ipam_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -177,8 +173,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The type of the scope.</p>
     pub fn set_ipam_scope_type(mut self, input: ::std::option::Option<crate::types::IpamScopeType>) -> Self {
-        self.ipam_scope_type = input;
-        self
+        self.ipam_scope_type = input; self
     }
     /// <p>The type of the scope.</p>
     pub fn get_ipam_scope_type(&self) -> &::std::option::Option<crate::types::IpamScopeType> {
@@ -191,8 +186,7 @@ impl IpamScopeBuilder {
     }
     /// <p>Defines if the scope is the default scope or not.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Defines if the scope is the default scope or not.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -205,8 +199,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The description of the scope.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the scope.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -219,8 +212,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The number of pools in the scope.</p>
     pub fn set_pool_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.pool_count = input;
-        self
+        self.pool_count = input; self
     }
     /// <p>The number of pools in the scope.</p>
     pub fn get_pool_count(&self) -> &::std::option::Option<i32> {
@@ -233,8 +225,7 @@ impl IpamScopeBuilder {
     }
     /// <p>The state of the IPAM scope.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamScopeState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the IPAM scope.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamScopeState> {
@@ -247,33 +238,44 @@ impl IpamScopeBuilder {
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`IpamScope`](crate::types::IpamScope).
     pub fn build(self) -> crate::types::IpamScope {
         crate::types::IpamScope {
-            owner_id: self.owner_id,
-            ipam_scope_id: self.ipam_scope_id,
-            ipam_scope_arn: self.ipam_scope_arn,
-            ipam_arn: self.ipam_arn,
-            ipam_region: self.ipam_region,
-            ipam_scope_type: self.ipam_scope_type,
-            is_default: self.is_default,
-            description: self.description,
-            pool_count: self.pool_count,
-            state: self.state,
-            tags: self.tags,
+            owner_id: self.owner_id
+            ,
+            ipam_scope_id: self.ipam_scope_id
+            ,
+            ipam_scope_arn: self.ipam_scope_arn
+            ,
+            ipam_arn: self.ipam_arn
+            ,
+            ipam_region: self.ipam_region
+            ,
+            ipam_scope_type: self.ipam_scope_type
+            ,
+            is_default: self.is_default
+            ,
+            description: self.description
+            ,
+            pool_count: self.pool_count
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListGameServerGroups`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`limit(i32)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::set_limit):<br>required: **false**<br><p>The game server groups' limit.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
-    /// - On success, responds with [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput) with field(s):
     ///   - [`game_server_groups(Option<Vec::<GameServerGroup>>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::game_server_groups): <p>The game server groups' game server groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListGameServerGroupsError>`](crate::operation::list_game_server_groups::ListGameServerGroupsError)
+                            /// - On failure, responds with [`SdkError<ListGameServerGroupsError>`](crate::operation::list_game_server_groups::ListGameServerGroupsError)
     pub fn list_game_server_groups(&self) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder {
-        crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_game_server_groups::builders::ListGameServerGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

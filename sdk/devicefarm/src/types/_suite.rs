@@ -3,7 +3,7 @@
 /// <p>Represents a collection of one or more tests.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Suite {
+pub struct Suite  {
     /// <p>The suite's ARN.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The suite's name.</p>
@@ -106,13 +106,13 @@ pub struct Suite {
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
 }
-impl Suite {
+impl  Suite  {
     /// <p>The suite's ARN.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The suite's name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The suite's type.</p>
@@ -157,11 +157,11 @@ impl Suite {
     /// <li>
     /// <p>XCTEST_UI</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>When the suite was created.</p>
-    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The suite's status.</p>
@@ -186,7 +186,7 @@ impl Suite {
     /// <li>
     /// <p>STOPPING</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The suite's result.</p>
@@ -207,27 +207,27 @@ impl Suite {
     /// <li>
     /// <p>STOPPED</p></li>
     /// </ul>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>The suite's start time.</p>
-    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The suite's stop time.</p>
-    pub fn stopped(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stopped(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The suite's result counters.</p>
-    pub fn counters(&self) -> ::std::option::Option<&crate::types::Counters> {
+    pub fn counters(&self) -> ::std::option::Option<& crate::types::Counters> {
         self.counters.as_ref()
     }
     /// <p>A message about the suite's result.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
-    pub fn device_minutes(&self) -> ::std::option::Option<&crate::types::DeviceMinutes> {
+    pub fn device_minutes(&self) -> ::std::option::Option<& crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
 }
@@ -262,8 +262,7 @@ impl SuiteBuilder {
     }
     /// <p>The suite's ARN.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The suite's ARN.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -276,8 +275,7 @@ impl SuiteBuilder {
     }
     /// <p>The suite's name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The suite's name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -372,8 +370,7 @@ impl SuiteBuilder {
     /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The suite's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -427,8 +424,7 @@ impl SuiteBuilder {
     }
     /// <p>When the suite was created.</p>
     pub fn set_created(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>When the suite was created.</p>
     pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -483,8 +479,7 @@ impl SuiteBuilder {
     /// <p>STOPPING</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The suite's status.</p>
     /// <p>Allowed values include:</p>
@@ -552,8 +547,7 @@ impl SuiteBuilder {
     /// <p>STOPPED</p></li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The suite's result.</p>
     /// <p>Allowed values include:</p>
@@ -583,8 +577,7 @@ impl SuiteBuilder {
     }
     /// <p>The suite's start time.</p>
     pub fn set_started(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started = input;
-        self
+        self.started = input; self
     }
     /// <p>The suite's start time.</p>
     pub fn get_started(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -597,8 +590,7 @@ impl SuiteBuilder {
     }
     /// <p>The suite's stop time.</p>
     pub fn set_stopped(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stopped = input;
-        self
+        self.stopped = input; self
     }
     /// <p>The suite's stop time.</p>
     pub fn get_stopped(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -611,8 +603,7 @@ impl SuiteBuilder {
     }
     /// <p>The suite's result counters.</p>
     pub fn set_counters(mut self, input: ::std::option::Option<crate::types::Counters>) -> Self {
-        self.counters = input;
-        self
+        self.counters = input; self
     }
     /// <p>The suite's result counters.</p>
     pub fn get_counters(&self) -> &::std::option::Option<crate::types::Counters> {
@@ -625,8 +616,7 @@ impl SuiteBuilder {
     }
     /// <p>A message about the suite's result.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the suite's result.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -639,8 +629,7 @@ impl SuiteBuilder {
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub fn set_device_minutes(mut self, input: ::std::option::Option<crate::types::DeviceMinutes>) -> Self {
-        self.device_minutes = input;
-        self
+        self.device_minutes = input; self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test suite.</p>
     pub fn get_device_minutes(&self) -> &::std::option::Option<crate::types::DeviceMinutes> {
@@ -649,17 +638,29 @@ impl SuiteBuilder {
     /// Consumes the builder and constructs a [`Suite`](crate::types::Suite).
     pub fn build(self) -> crate::types::Suite {
         crate::types::Suite {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            created: self.created,
-            status: self.status,
-            result: self.result,
-            started: self.started,
-            stopped: self.stopped,
-            counters: self.counters,
-            message: self.message,
-            device_minutes: self.device_minutes,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            created: self.created
+            ,
+            status: self.status
+            ,
+            result: self.result
+            ,
+            started: self.started
+            ,
+            stopped: self.stopped
+            ,
+            counters: self.counters
+            ,
+            message: self.message
+            ,
+            device_minutes: self.device_minutes
+            ,
         }
     }
 }
+

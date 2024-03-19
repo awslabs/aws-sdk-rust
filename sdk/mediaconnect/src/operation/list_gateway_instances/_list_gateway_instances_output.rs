@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListGatewayInstancesOutput {
+pub struct ListGatewayInstancesOutput  {
     /// A list of instance summaries.
-    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec::<crate::types::ListedGatewayInstance>>,
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListGatewayInstancesOutput {
+impl  ListGatewayInstancesOutput  {
     /// A list of instance summaries.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
-    pub fn instances(&self) -> &[crate::types::ListedGatewayInstance] {
-        self.instances.as_deref().unwrap_or_default()
+    pub fn instances(&self) -> & [crate::types::ListedGatewayInstance] {
+        self.instances.as_deref()
+        .unwrap_or_default()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListGatewayInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListGatewayInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewayInstancesOutput`](crate::operation::list_gateway_instances::ListGatewayInstancesOutput).
     pub fn builder() -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListGatewayInstancesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListGatewayInstancesOutputBuilder {
-    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec::<crate::types::ListedGatewayInstance>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListGatewayInstancesOutputBuilder {
     /// A list of instance summaries.
     pub fn instances(mut self, input: crate::types::ListedGatewayInstance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instances = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of instance summaries.
-    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListedGatewayInstance>>) -> Self {
+        self.instances = input; self
     }
     /// A list of instance summaries.
-    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>> {
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListedGatewayInstance>> {
         &self.instances
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
@@ -69,28 +69,30 @@ impl ListGatewayInstancesOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListGatewayInstancesOutput`](crate::operation::list_gateway_instances::ListGatewayInstancesOutput).
     pub fn build(self) -> crate::operation::list_gateway_instances::ListGatewayInstancesOutput {
         crate::operation::list_gateway_instances::ListGatewayInstancesOutput {
-            instances: self.instances,
-            next_token: self.next_token,
+            instances: self.instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

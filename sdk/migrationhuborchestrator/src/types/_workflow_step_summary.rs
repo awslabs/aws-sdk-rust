@@ -3,7 +3,7 @@
 /// <p>The summary of the step in a migration workflow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowStepSummary {
+pub struct WorkflowStepSummary  {
     /// <p>The ID of the step.</p>
     pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
@@ -13,9 +13,9 @@ pub struct WorkflowStepSummary {
     /// <p>The owner of the step.</p>
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The previous step.</p>
-    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The next step.</p>
-    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The status of the step.</p>
     pub status: ::std::option::Option<crate::types::StepStatus>,
     /// <p>The status message of the migration workflow.</p>
@@ -31,41 +31,43 @@ pub struct WorkflowStepSummary {
     /// <p>The location of the script.</p>
     pub script_location: ::std::option::Option<::std::string::String>,
 }
-impl WorkflowStepSummary {
+impl  WorkflowStepSummary  {
     /// <p>The ID of the step.</p>
-    pub fn step_id(&self) -> ::std::option::Option<&str> {
+    pub fn step_id(&self) -> ::std::option::Option<& str> {
         self.step_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> ::std::option::Option<&crate::types::StepActionType> {
+    pub fn step_action_type(&self) -> ::std::option::Option<& crate::types::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The owner of the step.</p>
-    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
+    pub fn owner(&self) -> ::std::option::Option<& crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>The previous step.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.previous.is_none()`.
-    pub fn previous(&self) -> &[::std::string::String] {
-        self.previous.as_deref().unwrap_or_default()
+    pub fn previous(&self) -> & [::std::string::String] {
+        self.previous.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next step.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.next.is_none()`.
-    pub fn next(&self) -> &[::std::string::String] {
-        self.next.as_deref().unwrap_or_default()
+    pub fn next(&self) -> & [::std::string::String] {
+        self.next.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the step.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::StepStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::StepStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The number of servers that have been migrated.</p>
@@ -81,11 +83,11 @@ impl WorkflowStepSummary {
         self.total_no_of_srv
     }
     /// <p>The description of the step.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The location of the script.</p>
-    pub fn script_location(&self) -> ::std::option::Option<&str> {
+    pub fn script_location(&self) -> ::std::option::Option<& str> {
         self.script_location.as_deref()
     }
 }
@@ -104,8 +106,8 @@ pub struct WorkflowStepSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) step_action_type: ::std::option::Option<crate::types::StepActionType>,
     pub(crate) owner: ::std::option::Option<crate::types::Owner>,
-    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::StepStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) no_of_srv_completed: ::std::option::Option<i32>,
@@ -122,8 +124,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The ID of the step.</p>
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.step_id = input;
-        self
+        self.step_id = input; self
     }
     /// <p>The ID of the step.</p>
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +137,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +150,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn set_step_action_type(mut self, input: ::std::option::Option<crate::types::StepActionType>) -> Self {
-        self.step_action_type = input;
-        self
+        self.step_action_type = input; self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
@@ -164,8 +163,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The owner of the step.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The owner of the step.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
@@ -178,17 +176,16 @@ impl WorkflowStepSummaryBuilder {
     /// <p>The previous step.</p>
     pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-        v.push(input.into());
-        self.previous = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.previous = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.previous = input;
-        self
+    pub fn set_previous(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.previous = input; self
     }
     /// <p>The previous step.</p>
-    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.previous
     }
     /// Appends an item to `next`.
@@ -198,17 +195,16 @@ impl WorkflowStepSummaryBuilder {
     /// <p>The next step.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-        v.push(input.into());
-        self.next = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.next = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The next step.</p>
-    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.next = input;
-        self
+    pub fn set_next(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.next = input; self
     }
     /// <p>The next step.</p>
-    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.next
     }
     /// <p>The status of the step.</p>
@@ -218,8 +214,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The status of the step.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the step.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
@@ -232,8 +227,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +240,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The number of servers that have been migrated.</p>
     pub fn set_no_of_srv_completed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.no_of_srv_completed = input;
-        self
+        self.no_of_srv_completed = input; self
     }
     /// <p>The number of servers that have been migrated.</p>
     pub fn get_no_of_srv_completed(&self) -> &::std::option::Option<i32> {
@@ -260,8 +253,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The number of servers that have failed to migrate.</p>
     pub fn set_no_of_srv_failed(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.no_of_srv_failed = input;
-        self
+        self.no_of_srv_failed = input; self
     }
     /// <p>The number of servers that have failed to migrate.</p>
     pub fn get_no_of_srv_failed(&self) -> &::std::option::Option<i32> {
@@ -274,8 +266,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The total number of servers that have been migrated.</p>
     pub fn set_total_no_of_srv(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_no_of_srv = input;
-        self
+        self.total_no_of_srv = input; self
     }
     /// <p>The total number of servers that have been migrated.</p>
     pub fn get_total_no_of_srv(&self) -> &::std::option::Option<i32> {
@@ -288,8 +279,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The description of the step.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the step.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +292,7 @@ impl WorkflowStepSummaryBuilder {
     }
     /// <p>The location of the script.</p>
     pub fn set_script_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_location = input;
-        self
+        self.script_location = input; self
     }
     /// <p>The location of the script.</p>
     pub fn get_script_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -312,19 +301,33 @@ impl WorkflowStepSummaryBuilder {
     /// Consumes the builder and constructs a [`WorkflowStepSummary`](crate::types::WorkflowStepSummary).
     pub fn build(self) -> crate::types::WorkflowStepSummary {
         crate::types::WorkflowStepSummary {
-            step_id: self.step_id,
-            name: self.name,
-            step_action_type: self.step_action_type,
-            owner: self.owner,
-            previous: self.previous,
-            next: self.next,
-            status: self.status,
-            status_message: self.status_message,
-            no_of_srv_completed: self.no_of_srv_completed,
-            no_of_srv_failed: self.no_of_srv_failed,
-            total_no_of_srv: self.total_no_of_srv,
-            description: self.description,
-            script_location: self.script_location,
+            step_id: self.step_id
+            ,
+            name: self.name
+            ,
+            step_action_type: self.step_action_type
+            ,
+            owner: self.owner
+            ,
+            previous: self.previous
+            ,
+            next: self.next
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            no_of_srv_completed: self.no_of_srv_completed
+            ,
+            no_of_srv_failed: self.no_of_srv_failed
+            ,
+            total_no_of_srv: self.total_no_of_srv
+            ,
+            description: self.description
+            ,
+            script_location: self.script_location
+            ,
         }
     }
 }
+

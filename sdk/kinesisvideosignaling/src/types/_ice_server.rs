@@ -3,9 +3,9 @@
 /// <p>A structure for the ICE server connection data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IceServer {
+pub struct IceServer  {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A username to login to the ICE server.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>A password to login to the ICE server.</p>
@@ -13,19 +13,20 @@ pub struct IceServer {
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub ttl: ::std::option::Option<i32>,
 }
-impl IceServer {
+impl  IceServer  {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.uris.is_none()`.
-    pub fn uris(&self) -> &[::std::string::String] {
-        self.uris.as_deref().unwrap_or_default()
+    pub fn uris(&self) -> & [::std::string::String] {
+        self.uris.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A username to login to the ICE server.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>A password to login to the ICE server.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
@@ -44,7 +45,7 @@ impl IceServer {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IceServerBuilder {
-    pub(crate) uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) uris: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) ttl: ::std::option::Option<i32>,
@@ -57,17 +58,16 @@ impl IceServerBuilder {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
     pub fn uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.uris.unwrap_or_default();
-        v.push(input.into());
-        self.uris = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.uris = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn set_uris(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.uris = input;
-        self
+    pub fn set_uris(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.uris = input; self
     }
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn get_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_uris(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.uris
     }
     /// <p>A username to login to the ICE server.</p>
@@ -77,8 +77,7 @@ impl IceServerBuilder {
     }
     /// <p>A username to login to the ICE server.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>A username to login to the ICE server.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl IceServerBuilder {
     }
     /// <p>A password to login to the ICE server.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>A password to login to the ICE server.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +103,7 @@ impl IceServerBuilder {
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub fn get_ttl(&self) -> &::std::option::Option<i32> {
@@ -115,10 +112,15 @@ impl IceServerBuilder {
     /// Consumes the builder and constructs a [`IceServer`](crate::types::IceServer).
     pub fn build(self) -> crate::types::IceServer {
         crate::types::IceServer {
-            uris: self.uris,
-            username: self.username,
-            password: self.password,
-            ttl: self.ttl,
+            uris: self.uris
+            ,
+            username: self.username
+            ,
+            password: self.password
+            ,
+            ttl: self.ttl
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PutAlternateContactInput {
+pub struct PutAlternateContactInput  {
     /// <p>Specifies a name for the alternate contact.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a title for the alternate contact.</p>
@@ -21,25 +21,25 @@ pub struct PutAlternateContactInput {
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl PutAlternateContactInput {
+impl  PutAlternateContactInput  {
     /// <p>Specifies a name for the alternate contact.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies a title for the alternate contact.</p>
-    pub fn title(&self) -> ::std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>Specifies an email address for the alternate contact.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>Specifies a phone number for the alternate contact.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
-    pub fn alternate_contact_type(&self) -> ::std::option::Option<&crate::types::AlternateContactType> {
+    pub fn alternate_contact_type(&self) -> ::std::option::Option<& crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
@@ -48,11 +48,11 @@ impl PutAlternateContactInput {
     /// <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl ::std::fmt::Debug for PutAlternateContactInput {
+impl  ::std::fmt::Debug for PutAlternateContactInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutAlternateContactInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -91,8 +91,7 @@ impl PutAlternateContactInputBuilder {
     }
     /// <p>Specifies a name for the alternate contact.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies a name for the alternate contact.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +105,7 @@ impl PutAlternateContactInputBuilder {
     }
     /// <p>Specifies a title for the alternate contact.</p>
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>Specifies a title for the alternate contact.</p>
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl PutAlternateContactInputBuilder {
     }
     /// <p>Specifies an email address for the alternate contact.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>Specifies an email address for the alternate contact.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +133,7 @@ impl PutAlternateContactInputBuilder {
     }
     /// <p>Specifies a phone number for the alternate contact.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>Specifies a phone number for the alternate contact.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -151,8 +147,7 @@ impl PutAlternateContactInputBuilder {
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
     pub fn set_alternate_contact_type(mut self, input: ::std::option::Option<crate::types::AlternateContactType>) -> Self {
-        self.alternate_contact_type = input;
-        self
+        self.alternate_contact_type = input; self
     }
     /// <p>Specifies which alternate contact you want to create or update.</p>
     pub fn get_alternate_contact_type(&self) -> &::std::option::Option<crate::types::AlternateContactType> {
@@ -175,8 +170,7 @@ impl PutAlternateContactInputBuilder {
     /// </note>
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>
     /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>
@@ -188,18 +182,23 @@ impl PutAlternateContactInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`PutAlternateContactInput`](crate::operation::put_alternate_contact::PutAlternateContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_alternate_contact::PutAlternateContactInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::put_alternate_contact::PutAlternateContactInput {
-            name: self.name,
-            title: self.title,
-            email_address: self.email_address,
-            phone_number: self.phone_number,
-            alternate_contact_type: self.alternate_contact_type,
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_alternate_contact::PutAlternateContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_alternate_contact::PutAlternateContactInput {
+                name: self.name
+                ,
+                title: self.title
+                ,
+                email_address: self.email_address
+                ,
+                phone_number: self.phone_number
+                ,
+                alternate_contact_type: self.alternate_contact_type
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PutAlternateContactInputBuilder {
@@ -214,3 +213,4 @@ impl ::std::fmt::Debug for PutAlternateContactInputBuilder {
         formatter.finish()
     }
 }
+

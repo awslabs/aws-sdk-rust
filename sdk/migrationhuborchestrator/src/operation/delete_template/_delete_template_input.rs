@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTemplateInput {
+pub struct DeleteTemplateInput  {
     /// <p>The ID of the request to delete a migration workflow template.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTemplateInput {
+impl  DeleteTemplateInput  {
     /// <p>The ID of the request to delete a migration workflow template.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DeleteTemplateInputBuilder {
     }
     /// <p>The ID of the request to delete a migration workflow template.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the request to delete a migration workflow template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::operation::delete_template::DeleteTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_template::DeleteTemplateInput { id: self.id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_template::DeleteTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_template::DeleteTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

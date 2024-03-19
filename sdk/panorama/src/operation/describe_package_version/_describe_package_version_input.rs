@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePackageVersionInput {
+pub struct DescribePackageVersionInput  {
     /// <p>The version's owner account.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The version's ID.</p>
@@ -12,21 +12,21 @@ pub struct DescribePackageVersionInput {
     /// <p>The version's patch version.</p>
     pub patch_version: ::std::option::Option<::std::string::String>,
 }
-impl DescribePackageVersionInput {
+impl  DescribePackageVersionInput  {
     /// <p>The version's owner account.</p>
-    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The version's ID.</p>
-    pub fn package_id(&self) -> ::std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>The version's version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<& str> {
         self.patch_version.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The version's owner account.</p>
     pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The version's owner account.</p>
     pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The version's ID.</p>
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>The version's ID.</p>
     pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The version's version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The version's version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,25 +95,26 @@ impl DescribePackageVersionInputBuilder {
     }
     /// <p>The version's patch version.</p>
     pub fn set_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.patch_version = input;
-        self
+        self.patch_version = input; self
     }
     /// <p>The version's patch version.</p>
     pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.patch_version
     }
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_package_version::DescribePackageVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionInput {
-            owner_account: self.owner_account,
-            package_id: self.package_id,
-            package_version: self.package_version,
-            patch_version: self.patch_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_package_version::DescribePackageVersionInput {
+                owner_account: self.owner_account
+                ,
+                package_id: self.package_id
+                ,
+                package_version: self.package_version
+                ,
+                patch_version: self.patch_version
+                ,
+            }
+        )
     }
 }
+

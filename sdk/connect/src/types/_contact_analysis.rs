@@ -3,13 +3,13 @@
 /// <p>A structure that defines search criteria for contacts using analysis outputs from Amazon Connect Contact Lens.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContactAnalysis {
+pub struct ContactAnalysis  {
     /// <p>Search criteria based on transcript analyzed by Amazon Connect Contact Lens.</p>
     pub transcript: ::std::option::Option<crate::types::Transcript>,
 }
-impl ContactAnalysis {
+impl  ContactAnalysis  {
     /// <p>Search criteria based on transcript analyzed by Amazon Connect Contact Lens.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&crate::types::Transcript> {
+    pub fn transcript(&self) -> ::std::option::Option<& crate::types::Transcript> {
         self.transcript.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ContactAnalysisBuilder {
     }
     /// <p>Search criteria based on transcript analyzed by Amazon Connect Contact Lens.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::Transcript>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>Search criteria based on transcript analyzed by Amazon Connect Contact Lens.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
@@ -43,6 +42,10 @@ impl ContactAnalysisBuilder {
     }
     /// Consumes the builder and constructs a [`ContactAnalysis`](crate::types::ContactAnalysis).
     pub fn build(self) -> crate::types::ContactAnalysis {
-        crate::types::ContactAnalysis { transcript: self.transcript }
+        crate::types::ContactAnalysis {
+            transcript: self.transcript
+            ,
+        }
     }
 }
+

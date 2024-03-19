@@ -3,7 +3,7 @@
 /// <p>Represents records that were not successfully inserted into Timestream due to data validation issues that must be resolved before reinserting time-series data into the system.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RejectedRecord {
+pub struct RejectedRecord  {
     /// <p>The index of the record in the input request for WriteRecords. Indexes begin with 0.</p>
     pub record_index: i32,
     /// <p>The reason why a record was not successfully inserted into Timestream. Possible causes of failure include:</p>
@@ -29,7 +29,7 @@ pub struct RejectedRecord {
     /// <p>The existing version of the record. This value is populated in scenarios where an identical record exists with a higher version than the version in the write request.</p>
     pub existing_version: ::std::option::Option<i64>,
 }
-impl RejectedRecord {
+impl  RejectedRecord  {
     /// <p>The index of the record in the input request for WriteRecords. Indexes begin with 0.</p>
     pub fn record_index(&self) -> i32 {
         self.record_index
@@ -53,7 +53,7 @@ impl RejectedRecord {
     /// <p>Records with dimensions or measures that exceed the Timestream defined limits.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access Management</a> in the Timestream Developer Guide.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The existing version of the record. This value is populated in scenarios where an identical record exists with a higher version than the version in the write request.</p>
@@ -84,8 +84,7 @@ impl RejectedRecordBuilder {
     }
     /// <p>The index of the record in the input request for WriteRecords. Indexes begin with 0.</p>
     pub fn set_record_index(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.record_index = input;
-        self
+        self.record_index = input; self
     }
     /// <p>The index of the record in the input request for WriteRecords. Indexes begin with 0.</p>
     pub fn get_record_index(&self) -> &::std::option::Option<i32> {
@@ -134,8 +133,7 @@ impl RejectedRecordBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access Management</a> in the Timestream Developer Guide.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason why a record was not successfully inserted into Timestream. Possible causes of failure include:</p>
     /// <ul>
@@ -166,8 +164,7 @@ impl RejectedRecordBuilder {
     }
     /// <p>The existing version of the record. This value is populated in scenarios where an identical record exists with a higher version than the version in the write request.</p>
     pub fn set_existing_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.existing_version = input;
-        self
+        self.existing_version = input; self
     }
     /// <p>The existing version of the record. This value is populated in scenarios where an identical record exists with a higher version than the version in the write request.</p>
     pub fn get_existing_version(&self) -> &::std::option::Option<i64> {
@@ -176,9 +173,14 @@ impl RejectedRecordBuilder {
     /// Consumes the builder and constructs a [`RejectedRecord`](crate::types::RejectedRecord).
     pub fn build(self) -> crate::types::RejectedRecord {
         crate::types::RejectedRecord {
-            record_index: self.record_index.unwrap_or_default(),
-            reason: self.reason,
-            existing_version: self.existing_version,
+            record_index: self.record_index
+                .unwrap_or_default()
+            ,
+            reason: self.reason
+            ,
+            existing_version: self.existing_version
+            ,
         }
     }
 }
+

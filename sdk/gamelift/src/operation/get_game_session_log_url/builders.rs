@@ -5,23 +5,20 @@ pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_in
 
 impl GetGameSessionLogUrlInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.get_game_session_log_url();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.get_game_session_log_url();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `GetGameSessionLogUrl`.
-///
+/// 
 /// <p>Retrieves the location of stored game session logs for a specified game session on Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift automatically stores the logs in Amazon S3 and retains them for 14 days. Use this URL to download the logs.</p><note>
 /// <p>See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon Web Services Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.</p>
 /// </note>
@@ -29,33 +26,32 @@ impl GetGameSessionLogUrlInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGameSessionLogUrlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder,
+                    inner: crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-    > for GetGameSessionLogUrlFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
+                    crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+                > for GetGameSessionLogUrlFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
+                        crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl GetGameSessionLogUrlFluentBuilder {
     /// Creates a new `GetGameSessionLogUrl`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl GetGameSessionLogUrlFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::get_game_session_log_url::GetGameSessionLogUrl::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrl::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::get_game_session_log_url::GetGameSessionLogUrl::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::get_game_session_log_url::GetGameSessionLogUrl::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput, crate::operation::get_game_session_log_url::GetGameSessionLogUrlError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>A unique identifier for the game session to get logs for.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
@@ -126,3 +113,4 @@ impl GetGameSessionLogUrlFluentBuilder {
         self.inner.get_game_session_id()
     }
 }
+

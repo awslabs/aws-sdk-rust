@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourcesInput {
+pub struct ListResourcesInput  {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
     /// <li>
@@ -17,9 +17,9 @@ pub struct ListResourcesInput {
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub resource_share_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -36,7 +36,7 @@ pub struct ListResourcesInput {
     /// <p>The default value is <code>ALL</code>.</p>
     pub resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
 }
-impl ListResourcesInput {
+impl  ListResourcesInput  {
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
     /// <li>
@@ -44,32 +44,34 @@ impl ListResourcesInput {
     /// <li>
     /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
-    pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
+    pub fn resource_owner(&self) -> ::std::option::Option<& crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
-    pub fn principal(&self) -> ::std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_arns.is_none()`.
-    pub fn resource_arns(&self) -> &[::std::string::String] {
-        self.resource_arns.as_deref().unwrap_or_default()
+    pub fn resource_arns(&self) -> & [::std::string::String] {
+        self.resource_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_share_arns.is_none()`.
-    pub fn resource_share_arns(&self) -> &[::std::string::String] {
-        self.resource_share_arns.as_deref().unwrap_or_default()
+    pub fn resource_share_arns(&self) -> & [::std::string::String] {
+        self.resource_share_arns.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -86,7 +88,7 @@ impl ListResourcesInput {
     /// <p><code>REGIONAL</code> – the results include only regional resources or resource types.</p></li>
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn resource_region_scope(&self) -> ::std::option::Option<&crate::types::ResourceRegionScopeFilter> {
+    pub fn resource_region_scope(&self) -> ::std::option::Option<& crate::types::ResourceRegionScopeFilter> {
         self.resource_region_scope.as_ref()
     }
 }
@@ -104,8 +106,8 @@ pub struct ListResourcesInputBuilder {
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
     pub(crate) principal: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) resource_share_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) resource_region_scope: ::std::option::Option<crate::types::ResourceRegionScopeFilter>,
@@ -131,8 +133,7 @@ impl ListResourcesInputBuilder {
     /// <p><b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p></li>
     /// </ul>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<crate::types::ResourceOwner>) -> Self {
-        self.resource_owner = input;
-        self
+        self.resource_owner = input; self
     }
     /// <p>Specifies that you want to list only the resource shares that match the following:</p>
     /// <ul>
@@ -151,8 +152,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +167,7 @@ impl ListResourcesInputBuilder {
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
@@ -182,17 +181,16 @@ impl ListResourcesInputBuilder {
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_arns
     }
     /// Appends an item to `resource_share_arns`.
@@ -202,17 +200,16 @@ impl ListResourcesInputBuilder {
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn resource_share_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_share_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_share_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_share_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.resource_share_arns = input;
-        self
+    pub fn set_resource_share_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.resource_share_arns = input; self
     }
     /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_resource_share_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.resource_share_arns
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -222,8 +219,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +232,7 @@ impl ListResourcesInputBuilder {
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -268,8 +263,7 @@ impl ListResourcesInputBuilder {
     /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn set_resource_region_scope(mut self, input: ::std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
-        self.resource_region_scope = input;
-        self
+        self.resource_region_scope = input; self
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
@@ -285,18 +279,27 @@ impl ListResourcesInputBuilder {
         &self.resource_region_scope
     }
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
-            resource_owner: self.resource_owner,
-            principal: self.principal,
-            resource_type: self.resource_type,
-            resource_arns: self.resource_arns,
-            resource_share_arns: self.resource_share_arns,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            resource_region_scope: self.resource_region_scope,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resources::ListResourcesInput {
+                resource_owner: self.resource_owner
+                ,
+                principal: self.principal
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_arns: self.resource_arns
+                ,
+                resource_share_arns: self.resource_share_arns
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resource_region_scope: self.resource_region_scope
+                ,
+            }
+        )
     }
 }
+

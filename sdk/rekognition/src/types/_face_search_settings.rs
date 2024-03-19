@@ -3,15 +3,15 @@
 /// <p>Input face recognition parameters for an Amazon Rekognition stream processor. Includes the collection to use for face recognition and the face attributes to detect. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FaceSearchSettings {
+pub struct FaceSearchSettings  {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub face_match_threshold: ::std::option::Option<f32>,
 }
-impl FaceSearchSettings {
+impl  FaceSearchSettings  {
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
@@ -41,8 +41,7 @@ impl FaceSearchSettingsBuilder {
     }
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>The ID of a collection that contains faces that you want to search for.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl FaceSearchSettingsBuilder {
     }
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.face_match_threshold = input;
-        self
+        self.face_match_threshold = input; self
     }
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
@@ -65,8 +63,11 @@ impl FaceSearchSettingsBuilder {
     /// Consumes the builder and constructs a [`FaceSearchSettings`](crate::types::FaceSearchSettings).
     pub fn build(self) -> crate::types::FaceSearchSettings {
         crate::types::FaceSearchSettings {
-            collection_id: self.collection_id,
-            face_match_threshold: self.face_match_threshold,
+            collection_id: self.collection_id
+            ,
+            face_match_threshold: self.face_match_threshold
+            ,
         }
     }
 }
+

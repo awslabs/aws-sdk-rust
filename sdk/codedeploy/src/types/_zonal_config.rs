@@ -4,7 +4,7 @@
 /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZonalConfig {
+pub struct ZonalConfig  {
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to the <i>first</i> Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the second Availability Zone. You might set this option if you want to allow extra bake time for the first Availability Zone. If you don't specify a value for <code>firstZoneMonitorDurationInSeconds</code>, then CodeDeploy uses the <code>monitorDurationInSeconds</code> value for the first Availability Zone.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub first_zone_monitor_duration_in_seconds: ::std::option::Option<i64>,
@@ -16,7 +16,7 @@ pub struct ZonalConfig {
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub minimum_healthy_hosts_per_zone: ::std::option::Option<crate::types::MinimumHealthyHostsPerZone>,
 }
-impl ZonalConfig {
+impl  ZonalConfig  {
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to the <i>first</i> Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the second Availability Zone. You might set this option if you want to allow extra bake time for the first Availability Zone. If you don't specify a value for <code>firstZoneMonitorDurationInSeconds</code>, then CodeDeploy uses the <code>monitorDurationInSeconds</code> value for the first Availability Zone.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn first_zone_monitor_duration_in_seconds(&self) -> ::std::option::Option<i64> {
@@ -30,7 +30,7 @@ impl ZonalConfig {
     /// <p>The number or percentage of instances that must remain available per Availability Zone during a deployment. This option works in conjunction with the <code>MinimumHealthyHosts</code> option. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html#minimum-healthy-hosts-az">About the minimum number of healthy hosts per Availability Zone</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>If you don't specify the <code>minimumHealthyHostsPerZone</code> option, then CodeDeploy uses a default value of <code>0</code> percent.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn minimum_healthy_hosts_per_zone(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHostsPerZone> {
+    pub fn minimum_healthy_hosts_per_zone(&self) -> ::std::option::Option<& crate::types::MinimumHealthyHostsPerZone> {
         self.minimum_healthy_hosts_per_zone.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ZonalConfigBuilder {
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to the <i>first</i> Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the second Availability Zone. You might set this option if you want to allow extra bake time for the first Availability Zone. If you don't specify a value for <code>firstZoneMonitorDurationInSeconds</code>, then CodeDeploy uses the <code>monitorDurationInSeconds</code> value for the first Availability Zone.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_first_zone_monitor_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.first_zone_monitor_duration_in_seconds = input;
-        self
+        self.first_zone_monitor_duration_in_seconds = input; self
     }
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to the <i>first</i> Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the second Availability Zone. You might set this option if you want to allow extra bake time for the first Availability Zone. If you don't specify a value for <code>firstZoneMonitorDurationInSeconds</code>, then CodeDeploy uses the <code>monitorDurationInSeconds</code> value for the first Availability Zone.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -76,8 +75,7 @@ impl ZonalConfigBuilder {
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to an Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the next Availability Zone. Consider adding a monitor duration to give the deployment some time to prove itself (or 'bake') in one Availability Zone before it is released in the next zone. If you don't specify a <code>monitorDurationInSeconds</code>, CodeDeploy starts deploying to the next Availability Zone immediately.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_monitor_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.monitor_duration_in_seconds = input;
-        self
+        self.monitor_duration_in_seconds = input; self
     }
     /// <p>The period of time, in seconds, that CodeDeploy must wait after completing a deployment to an Availability Zone. CodeDeploy will wait this amount of time before starting a deployment to the next Availability Zone. Consider adding a monitor duration to give the deployment some time to prove itself (or 'bake') in one Availability Zone before it is released in the next zone. If you don't specify a <code>monitorDurationInSeconds</code>, CodeDeploy starts deploying to the next Availability Zone immediately.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -95,8 +93,7 @@ impl ZonalConfigBuilder {
     /// <p>If you don't specify the <code>minimumHealthyHostsPerZone</code> option, then CodeDeploy uses a default value of <code>0</code> percent.</p>
     /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_minimum_healthy_hosts_per_zone(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHostsPerZone>) -> Self {
-        self.minimum_healthy_hosts_per_zone = input;
-        self
+        self.minimum_healthy_hosts_per_zone = input; self
     }
     /// <p>The number or percentage of instances that must remain available per Availability Zone during a deployment. This option works in conjunction with the <code>MinimumHealthyHosts</code> option. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html#minimum-healthy-hosts-az">About the minimum number of healthy hosts per Availability Zone</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>If you don't specify the <code>minimumHealthyHostsPerZone</code> option, then CodeDeploy uses a default value of <code>0</code> percent.</p>
@@ -107,9 +104,13 @@ impl ZonalConfigBuilder {
     /// Consumes the builder and constructs a [`ZonalConfig`](crate::types::ZonalConfig).
     pub fn build(self) -> crate::types::ZonalConfig {
         crate::types::ZonalConfig {
-            first_zone_monitor_duration_in_seconds: self.first_zone_monitor_duration_in_seconds,
-            monitor_duration_in_seconds: self.monitor_duration_in_seconds,
-            minimum_healthy_hosts_per_zone: self.minimum_healthy_hosts_per_zone,
+            first_zone_monitor_duration_in_seconds: self.first_zone_monitor_duration_in_seconds
+            ,
+            monitor_duration_in_seconds: self.monitor_duration_in_seconds
+            ,
+            minimum_healthy_hosts_per_zone: self.minimum_healthy_hosts_per_zone
+            ,
         }
     }
 }
+

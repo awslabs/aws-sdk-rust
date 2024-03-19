@@ -3,21 +3,22 @@
 /// <p>Describes the status of a volume.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VolumeStatusInfo {
+pub struct VolumeStatusInfo  {
     /// <p>The details of the volume status.</p>
-    pub details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
+    pub details: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusDetails>>,
     /// <p>The status of the volume.</p>
     pub status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
 }
-impl VolumeStatusInfo {
+impl  VolumeStatusInfo  {
     /// <p>The details of the volume status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
-    pub fn details(&self) -> &[crate::types::VolumeStatusDetails] {
-        self.details.as_deref().unwrap_or_default()
+    pub fn details(&self) -> & [crate::types::VolumeStatusDetails] {
+        self.details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of the volume.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::VolumeStatusInfoStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::VolumeStatusInfoStatus> {
         self.status.as_ref()
     }
 }
@@ -32,7 +33,7 @@ impl VolumeStatusInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct VolumeStatusInfoBuilder {
-    pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusDetails>>,
     pub(crate) status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
 }
 impl VolumeStatusInfoBuilder {
@@ -43,17 +44,16 @@ impl VolumeStatusInfoBuilder {
     /// <p>The details of the volume status.</p>
     pub fn details(mut self, input: crate::types::VolumeStatusDetails) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The details of the volume status.</p>
-    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusDetails>>) -> Self {
+        self.details = input; self
     }
     /// <p>The details of the volume status.</p>
-    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>> {
+    pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeStatusDetails>> {
         &self.details
     }
     /// <p>The status of the volume.</p>
@@ -63,8 +63,7 @@ impl VolumeStatusInfoBuilder {
     }
     /// <p>The status of the volume.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VolumeStatusInfoStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the volume.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VolumeStatusInfoStatus> {
@@ -73,8 +72,11 @@ impl VolumeStatusInfoBuilder {
     /// Consumes the builder and constructs a [`VolumeStatusInfo`](crate::types::VolumeStatusInfo).
     pub fn build(self) -> crate::types::VolumeStatusInfo {
         crate::types::VolumeStatusInfo {
-            details: self.details,
-            status: self.status,
+            details: self.details
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

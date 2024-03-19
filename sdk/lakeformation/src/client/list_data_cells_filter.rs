@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataCellsFilter`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`table(TableResource)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::table) / [`set_table(Option<TableResource>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_table):<br>required: **false**<br><p>A table in the Glue Data Catalog.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation call.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of the response.</p><br>
-    /// - On success, responds with [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput) with field(s):
+                            /// - On success, responds with [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput) with field(s):
     ///   - [`data_cells_filters(Option<Vec::<DataCellsFilter>>)`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput::data_cells_filters): <p>A list of <code>DataCellFilter</code> structures.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput::next_token): <p>A continuation token, if not all requested data cell filters have been returned.</p>
-    /// - On failure, responds with [`SdkError<ListDataCellsFilterError>`](crate::operation::list_data_cells_filter::ListDataCellsFilterError)
+                            /// - On failure, responds with [`SdkError<ListDataCellsFilterError>`](crate::operation::list_data_cells_filter::ListDataCellsFilterError)
     pub fn list_data_cells_filter(&self) -> crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder {
-        crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::new(self.handle.clone())
+                            }
 }
+

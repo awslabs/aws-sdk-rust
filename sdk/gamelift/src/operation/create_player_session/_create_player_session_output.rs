@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreatePlayerSessionOutput {
+pub struct CreatePlayerSessionOutput  {
     /// <p>Object that describes the newly created player session record.</p>
     pub player_session: ::std::option::Option<crate::types::PlayerSession>,
     _request_id: Option<String>,
 }
-impl CreatePlayerSessionOutput {
+impl  CreatePlayerSessionOutput  {
     /// <p>Object that describes the newly created player session record.</p>
-    pub fn player_session(&self) -> ::std::option::Option<&crate::types::PlayerSession> {
+    pub fn player_session(&self) -> ::std::option::Option<& crate::types::PlayerSession> {
         self.player_session.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePlayerSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreatePlayerSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionOutput`](crate::operation::create_player_session::CreatePlayerSessionOutput).
     pub fn builder() -> crate::operation::create_player_session::builders::CreatePlayerSessionOutputBuilder {
@@ -40,27 +40,28 @@ impl CreatePlayerSessionOutputBuilder {
     }
     /// <p>Object that describes the newly created player session record.</p>
     pub fn set_player_session(mut self, input: ::std::option::Option<crate::types::PlayerSession>) -> Self {
-        self.player_session = input;
-        self
+        self.player_session = input; self
     }
     /// <p>Object that describes the newly created player session record.</p>
     pub fn get_player_session(&self) -> &::std::option::Option<crate::types::PlayerSession> {
         &self.player_session
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreatePlayerSessionOutput`](crate::operation::create_player_session::CreatePlayerSessionOutput).
     pub fn build(self) -> crate::operation::create_player_session::CreatePlayerSessionOutput {
         crate::operation::create_player_session::CreatePlayerSessionOutput {
-            player_session: self.player_session,
+            player_session: self.player_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

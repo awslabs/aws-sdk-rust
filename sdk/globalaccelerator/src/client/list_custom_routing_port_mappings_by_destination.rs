@@ -2,21 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomRoutingPortMappingsByDestination`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`endpoint_id(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::set_endpoint_id):<br>required: **true**<br><p>The ID for the virtual private cloud (VPC) subnet.</p><br>
     ///   - [`destination_address(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::destination_address) / [`set_destination_address(Option<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::set_destination_address):<br>required: **true**<br><p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::set_max_results):<br>required: **false**<br><p>The number of destination port mappings that you want to return with this call. The default value is 10.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. You receive this token from a previous call.</p><br>
-    /// - On success, responds with [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput) with field(s):
+                            /// - On success, responds with [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput) with field(s):
     ///   - [`destination_port_mappings(Option<Vec::<DestinationPortMapping>>)`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput::destination_port_mappings): <p>The port mappings for the endpoint IP address that you specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsByDestinationError>`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError)
-    pub fn list_custom_routing_port_mappings_by_destination(
-        &self,
-    ) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder {
-        crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsByDestinationError>`](crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError)
+    pub fn list_custom_routing_port_mappings_by_destination(&self) -> crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder {
+                                crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationFluentBuilder::new(self.handle.clone())
+                            }
 }
+

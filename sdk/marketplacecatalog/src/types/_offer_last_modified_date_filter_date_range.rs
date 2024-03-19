@@ -3,19 +3,19 @@
 /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date range as input.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfferLastModifiedDateFilterDateRange {
+pub struct OfferLastModifiedDateFilterDateRange  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer after a date.</p>
     pub after_value: ::std::option::Option<::std::string::String>,
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer before a date.</p>
     pub before_value: ::std::option::Option<::std::string::String>,
 }
-impl OfferLastModifiedDateFilterDateRange {
+impl  OfferLastModifiedDateFilterDateRange  {
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer after a date.</p>
-    pub fn after_value(&self) -> ::std::option::Option<&str> {
+    pub fn after_value(&self) -> ::std::option::Option<& str> {
         self.after_value.as_deref()
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer before a date.</p>
-    pub fn before_value(&self) -> ::std::option::Option<&str> {
+    pub fn before_value(&self) -> ::std::option::Option<& str> {
         self.before_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl OfferLastModifiedDateFilterDateRangeBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer after a date.</p>
     pub fn set_after_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_value = input;
-        self
+        self.after_value = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer after a date.</p>
     pub fn get_after_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl OfferLastModifiedDateFilterDateRangeBuilder {
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer before a date.</p>
     pub fn set_before_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.before_value = input;
-        self
+        self.before_value = input; self
     }
     /// <p>Allows filtering on the <code>LastModifiedDate</code> of an offer before a date.</p>
     pub fn get_before_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl OfferLastModifiedDateFilterDateRangeBuilder {
     /// Consumes the builder and constructs a [`OfferLastModifiedDateFilterDateRange`](crate::types::OfferLastModifiedDateFilterDateRange).
     pub fn build(self) -> crate::types::OfferLastModifiedDateFilterDateRange {
         crate::types::OfferLastModifiedDateFilterDateRange {
-            after_value: self.after_value,
-            before_value: self.before_value,
+            after_value: self.after_value
+            ,
+            before_value: self.before_value
+            ,
         }
     }
 }
+

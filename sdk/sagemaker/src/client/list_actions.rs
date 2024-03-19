@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListActions`](crate::operation::list_actions::builders::ListActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_actions::builders::ListActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`source_uri(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::source_uri) / [`set_source_uri(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_source_uri):<br>required: **false**<br><p>A filter that returns only actions with the specified source URI.</p><br>
     ///   - [`action_type(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::action_type) / [`set_action_type(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_action_type):<br>required: **false**<br><p>A filter that returns only actions of the specified type.</p><br>
     ///   - [`created_after(DateTime)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::created_after) / [`set_created_after(Option<DateTime>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_created_after):<br>required: **false**<br><p>A filter that returns only actions created on or after the specified time.</p><br>
@@ -12,11 +12,12 @@ impl super::Client {
     ///   - [`sort_order(SortOrder)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order. The default value is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_actions::builders::ListActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of actions to return in the response. The default value is 10.</p><br>
-    /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
+                            /// - On success, responds with [`ListActionsOutput`](crate::operation::list_actions::ListActionsOutput) with field(s):
     ///   - [`action_summaries(Option<Vec::<ActionSummary>>)`](crate::operation::list_actions::ListActionsOutput::action_summaries): <p>A list of actions and their properties.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_actions::ListActionsOutput::next_token): <p>A token for getting the next set of actions, if there are any.</p>
-    /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
+                            /// - On failure, responds with [`SdkError<ListActionsError>`](crate::operation::list_actions::ListActionsError)
     pub fn list_actions(&self) -> crate::operation::list_actions::builders::ListActionsFluentBuilder {
-        crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_actions::builders::ListActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

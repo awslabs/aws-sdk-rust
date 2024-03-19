@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWebExperienceInput {
+pub struct DeleteWebExperienceInput  {
     /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q web experience being deleted.</p>
     pub web_experience_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWebExperienceInput {
+impl  DeleteWebExperienceInput  {
     /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q web experience being deleted.</p>
-    pub fn web_experience_id(&self) -> ::std::option::Option<&str> {
+    pub fn web_experience_id(&self) -> ::std::option::Option<& str> {
         self.web_experience_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteWebExperienceInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application linked to the Amazon Q web experience.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteWebExperienceInputBuilder {
     }
     /// <p>The identifier of the Amazon Q web experience being deleted.</p>
     pub fn set_web_experience_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.web_experience_id = input;
-        self
+        self.web_experience_id = input; self
     }
     /// <p>The identifier of the Amazon Q web experience being deleted.</p>
     pub fn get_web_experience_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_experience_id
     }
     /// Consumes the builder and constructs a [`DeleteWebExperienceInput`](crate::operation::delete_web_experience::DeleteWebExperienceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_web_experience::DeleteWebExperienceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_web_experience::DeleteWebExperienceInput {
-            application_id: self.application_id,
-            web_experience_id: self.web_experience_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_web_experience::DeleteWebExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_web_experience::DeleteWebExperienceInput {
+                application_id: self.application_id
+                ,
+                web_experience_id: self.web_experience_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>The configuration for time-shifted viewing.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeShiftConfiguration {
+pub struct TimeShiftConfiguration  {
     /// <p>The maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours).</p>
     pub max_time_delay_seconds: i32,
 }
-impl TimeShiftConfiguration {
+impl  TimeShiftConfiguration  {
     /// <p>The maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours).</p>
     pub fn max_time_delay_seconds(&self) -> i32 {
         self.max_time_delay_seconds
@@ -35,8 +35,7 @@ impl TimeShiftConfigurationBuilder {
     }
     /// <p>The maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours).</p>
     pub fn set_max_time_delay_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_time_delay_seconds = input;
-        self
+        self.max_time_delay_seconds = input; self
     }
     /// <p>The maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours).</p>
     pub fn get_max_time_delay_seconds(&self) -> &::std::option::Option<i32> {
@@ -46,13 +45,15 @@ impl TimeShiftConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_time_delay_seconds`](crate::types::builders::TimeShiftConfigurationBuilder::max_time_delay_seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::TimeShiftConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimeShiftConfiguration {
-            max_time_delay_seconds: self.max_time_delay_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_time_delay_seconds",
-                    "max_time_delay_seconds was not specified but it is required when building TimeShiftConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimeShiftConfiguration {
+                max_time_delay_seconds: self.max_time_delay_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("max_time_delay_seconds", "max_time_delay_seconds was not specified but it is required when building TimeShiftConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

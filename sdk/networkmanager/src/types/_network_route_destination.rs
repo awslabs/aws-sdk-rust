@@ -3,7 +3,7 @@
 /// <p>Describes the destination of a network route.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkRouteDestination {
+pub struct NetworkRouteDestination  {
     /// <p>The ID of a core network attachment.</p>
     pub core_network_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
@@ -17,29 +17,29 @@ pub struct NetworkRouteDestination {
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkRouteDestination {
+impl  NetworkRouteDestination  {
     /// <p>The ID of a core network attachment.</p>
-    pub fn core_network_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn core_network_attachment_id(&self) -> ::std::option::Option<& str> {
         self.core_network_attachment_id.as_deref()
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The name of the segment.</p>
-    pub fn segment_name(&self) -> ::std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<& str> {
         self.segment_name.as_deref()
     }
     /// <p>The edge location for the network destination.</p>
-    pub fn edge_location(&self) -> ::std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<& str> {
         self.edge_location.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The ID of a core network attachment.</p>
     pub fn set_core_network_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.core_network_attachment_id = input;
-        self
+        self.core_network_attachment_id = input; self
     }
     /// <p>The ID of a core network attachment.</p>
     pub fn get_core_network_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The name of the segment.</p>
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.segment_name = input;
-        self
+        self.segment_name = input; self
     }
     /// <p>The name of the segment.</p>
     pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The edge location for the network destination.</p>
     pub fn set_edge_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.edge_location = input;
-        self
+        self.edge_location = input; self
     }
     /// <p>The edge location for the network destination.</p>
     pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +134,7 @@ impl NetworkRouteDestinationBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,12 +143,19 @@ impl NetworkRouteDestinationBuilder {
     /// Consumes the builder and constructs a [`NetworkRouteDestination`](crate::types::NetworkRouteDestination).
     pub fn build(self) -> crate::types::NetworkRouteDestination {
         crate::types::NetworkRouteDestination {
-            core_network_attachment_id: self.core_network_attachment_id,
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            segment_name: self.segment_name,
-            edge_location: self.edge_location,
-            resource_type: self.resource_type,
-            resource_id: self.resource_id,
+            core_network_attachment_id: self.core_network_attachment_id
+            ,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            segment_name: self.segment_name
+            ,
+            edge_location: self.edge_location
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_id: self.resource_id
+            ,
         }
     }
 }
+

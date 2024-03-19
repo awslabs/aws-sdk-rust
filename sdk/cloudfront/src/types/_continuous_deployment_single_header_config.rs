@@ -3,22 +3,20 @@
 /// <p>This configuration determines which HTTP requests are sent to the staging distribution. If the HTTP request contains a header and value that matches what you specify here, the request is sent to the staging distribution. Otherwise the request is sent to the primary distribution.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuousDeploymentSingleHeaderConfig {
+pub struct ContinuousDeploymentSingleHeaderConfig  {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     pub header: ::std::string::String,
     /// <p>The request header value.</p>
     pub value: ::std::string::String,
 }
-impl ContinuousDeploymentSingleHeaderConfig {
+impl  ContinuousDeploymentSingleHeaderConfig  {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn header(&self) -> &str {
-        use std::ops::Deref;
-        self.header.deref()
+    pub fn header(&self) -> & str {
+        use std::ops::Deref; self.header.deref()
     }
     /// <p>The request header value.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl ContinuousDeploymentSingleHeaderConfig {
@@ -44,8 +42,7 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     }
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     }
     /// <p>The request header value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The request header value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,22 +66,21 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header`](crate::types::builders::ContinuousDeploymentSingleHeaderConfigBuilder::header)
     /// - [`value`](crate::types::builders::ContinuousDeploymentSingleHeaderConfigBuilder::value)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::ContinuousDeploymentSingleHeaderConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContinuousDeploymentSingleHeaderConfig {
-            header: self.header.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "header",
-                    "header was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig",
-                )
-            })?,
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentSingleHeaderConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::ContinuousDeploymentSingleHeaderConfig {
+                header: self.header
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("header", "header was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig")
+                    )?
+                ,
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ContinuousDeploymentSingleHeaderConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

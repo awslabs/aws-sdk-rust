@@ -3,7 +3,7 @@
 /// <p>Information about the returned security profiles.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SecurityProfileSearchSummary {
+pub struct SecurityProfileSearchSummary  {
     /// <p>The identifier of the security profile.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The organization resource identifier.</p>
@@ -15,31 +15,31 @@ pub struct SecurityProfileSearchSummary {
     /// <p>The description of the security profile.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SecurityProfileSearchSummary {
+impl  SecurityProfileSearchSummary  {
     /// <p>The identifier of the security profile.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The organization resource identifier.</p>
-    pub fn organization_resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_resource_id(&self) -> ::std::option::Option<& str> {
         self.organization_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the security profile.</p>
-    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The description of the security profile.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -59,7 +59,7 @@ pub struct SecurityProfileSearchSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SecurityProfileSearchSummaryBuilder {
     /// <p>The identifier of the security profile.</p>
@@ -69,8 +69,7 @@ impl SecurityProfileSearchSummaryBuilder {
     }
     /// <p>The identifier of the security profile.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the security profile.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl SecurityProfileSearchSummaryBuilder {
     }
     /// <p>The organization resource identifier.</p>
     pub fn set_organization_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_resource_id = input;
-        self
+        self.organization_resource_id = input; self
     }
     /// <p>The organization resource identifier.</p>
     pub fn get_organization_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl SecurityProfileSearchSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the security profile.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl SecurityProfileSearchSummaryBuilder {
     }
     /// <p>The name of the security profile.</p>
     pub fn set_security_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_profile_name = input;
-        self
+        self.security_profile_name = input; self
     }
     /// <p>The name of the security profile.</p>
     pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +121,7 @@ impl SecurityProfileSearchSummaryBuilder {
     }
     /// <p>The description of the security profile.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the security profile.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,28 +134,34 @@ impl SecurityProfileSearchSummaryBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`SecurityProfileSearchSummary`](crate::types::SecurityProfileSearchSummary).
     pub fn build(self) -> crate::types::SecurityProfileSearchSummary {
         crate::types::SecurityProfileSearchSummary {
-            id: self.id,
-            organization_resource_id: self.organization_resource_id,
-            arn: self.arn,
-            security_profile_name: self.security_profile_name,
-            description: self.description,
-            tags: self.tags,
+            id: self.id
+            ,
+            organization_resource_id: self.organization_resource_id
+            ,
+            arn: self.arn
+            ,
+            security_profile_name: self.security_profile_name
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

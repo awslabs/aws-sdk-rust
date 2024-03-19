@@ -3,19 +3,19 @@
 /// <p>Describes a route table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RouteTableIdentifier {
+pub struct RouteTableIdentifier  {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub transit_gateway_route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The segment edge in a core network.</p>
     pub core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
 }
-impl RouteTableIdentifier {
+impl  RouteTableIdentifier  {
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
-    pub fn transit_gateway_route_table_arn(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_route_table_arn(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_route_table_arn.as_deref()
     }
     /// <p>The segment edge in a core network.</p>
-    pub fn core_network_segment_edge(&self) -> ::std::option::Option<&crate::types::CoreNetworkSegmentEdgeIdentifier> {
+    pub fn core_network_segment_edge(&self) -> ::std::option::Option<& crate::types::CoreNetworkSegmentEdgeIdentifier> {
         self.core_network_segment_edge.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl RouteTableIdentifierBuilder {
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn set_transit_gateway_route_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_route_table_arn = input;
-        self
+        self.transit_gateway_route_table_arn = input; self
     }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn get_transit_gateway_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl RouteTableIdentifierBuilder {
     }
     /// <p>The segment edge in a core network.</p>
     pub fn set_core_network_segment_edge(mut self, input: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>) -> Self {
-        self.core_network_segment_edge = input;
-        self
+        self.core_network_segment_edge = input; self
     }
     /// <p>The segment edge in a core network.</p>
     pub fn get_core_network_segment_edge(&self) -> &::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier> {
@@ -65,8 +63,11 @@ impl RouteTableIdentifierBuilder {
     /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::types::RouteTableIdentifier).
     pub fn build(self) -> crate::types::RouteTableIdentifier {
         crate::types::RouteTableIdentifier {
-            transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
-            core_network_segment_edge: self.core_network_segment_edge,
+            transit_gateway_route_table_arn: self.transit_gateway_route_table_arn
+            ,
+            core_network_segment_edge: self.core_network_segment_edge
+            ,
         }
     }
 }
+

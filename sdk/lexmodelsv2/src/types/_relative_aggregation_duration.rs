@@ -12,7 +12,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RelativeAggregationDuration {
+pub struct RelativeAggregationDuration  {
     /// <p>The type of time period that the <code>timeValue</code> field represents.</p>
     pub time_dimension: crate::types::TimeDimension,
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
@@ -26,9 +26,9 @@ pub struct RelativeAggregationDuration {
     /// </ul>
     pub time_value: i32,
 }
-impl RelativeAggregationDuration {
+impl  RelativeAggregationDuration  {
     /// <p>The type of time period that the <code>timeValue</code> field represents.</p>
-    pub fn time_dimension(&self) -> &crate::types::TimeDimension {
+    pub fn time_dimension(&self) -> & crate::types::TimeDimension {
         &self.time_dimension
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
@@ -67,8 +67,7 @@ impl RelativeAggregationDurationBuilder {
     }
     /// <p>The type of time period that the <code>timeValue</code> field represents.</p>
     pub fn set_time_dimension(mut self, input: ::std::option::Option<crate::types::TimeDimension>) -> Self {
-        self.time_dimension = input;
-        self
+        self.time_dimension = input; self
     }
     /// <p>The type of time period that the <code>timeValue</code> field represents.</p>
     pub fn get_time_dimension(&self) -> &::std::option::Option<crate::types::TimeDimension> {
@@ -98,8 +97,7 @@ impl RelativeAggregationDurationBuilder {
     /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     pub fn set_time_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.time_value = input;
-        self
+        self.time_value = input; self
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
@@ -118,19 +116,20 @@ impl RelativeAggregationDurationBuilder {
     /// - [`time_dimension`](crate::types::builders::RelativeAggregationDurationBuilder::time_dimension)
     /// - [`time_value`](crate::types::builders::RelativeAggregationDurationBuilder::time_value)
     pub fn build(self) -> ::std::result::Result<crate::types::RelativeAggregationDuration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RelativeAggregationDuration {
-            time_dimension: self.time_dimension.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_dimension",
-                    "time_dimension was not specified but it is required when building RelativeAggregationDuration",
-                )
-            })?,
-            time_value: self.time_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_value",
-                    "time_value was not specified but it is required when building RelativeAggregationDuration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RelativeAggregationDuration {
+                time_dimension: self.time_dimension
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_dimension", "time_dimension was not specified but it is required when building RelativeAggregationDuration")
+                    )?
+                ,
+                time_value: self.time_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_value", "time_value was not specified but it is required when building RelativeAggregationDuration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

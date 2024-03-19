@@ -3,13 +3,13 @@
 /// <p>A specification for a predefined metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PredefinedMetricSpecification {
+pub struct PredefinedMetricSpecification  {
     /// <p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>
     pub predefined_metric_type: ::std::option::Option<::std::string::String>,
 }
-impl PredefinedMetricSpecification {
+impl  PredefinedMetricSpecification  {
     /// <p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>
-    pub fn predefined_metric_type(&self) -> ::std::option::Option<&str> {
+    pub fn predefined_metric_type(&self) -> ::std::option::Option<& str> {
         self.predefined_metric_type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl PredefinedMetricSpecificationBuilder {
     }
     /// <p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.predefined_metric_type = input;
-        self
+        self.predefined_metric_type = input; self
     }
     /// <p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl PredefinedMetricSpecificationBuilder {
     /// Consumes the builder and constructs a [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
     pub fn build(self) -> crate::types::PredefinedMetricSpecification {
         crate::types::PredefinedMetricSpecification {
-            predefined_metric_type: self.predefined_metric_type,
+            predefined_metric_type: self.predefined_metric_type
+            ,
         }
     }
 }
+

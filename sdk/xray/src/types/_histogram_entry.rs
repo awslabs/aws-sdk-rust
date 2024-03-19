@@ -3,13 +3,13 @@
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistogramEntry {
+pub struct HistogramEntry  {
     /// <p>The value of the entry.</p>
     pub value: f64,
     /// <p>The prevalence of the entry.</p>
     pub count: i32,
 }
-impl HistogramEntry {
+impl  HistogramEntry  {
     /// <p>The value of the entry.</p>
     pub fn value(&self) -> f64 {
         self.value
@@ -41,8 +41,7 @@ impl HistogramEntryBuilder {
     }
     /// <p>The value of the entry.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the entry.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl HistogramEntryBuilder {
     }
     /// <p>The prevalence of the entry.</p>
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The prevalence of the entry.</p>
     pub fn get_count(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,13 @@ impl HistogramEntryBuilder {
     /// Consumes the builder and constructs a [`HistogramEntry`](crate::types::HistogramEntry).
     pub fn build(self) -> crate::types::HistogramEntry {
         crate::types::HistogramEntry {
-            value: self.value.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
+            value: self.value
+                .unwrap_or_default()
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

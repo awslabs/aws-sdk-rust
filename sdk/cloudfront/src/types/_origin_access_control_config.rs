@@ -3,7 +3,7 @@
 /// <p>A CloudFront origin access control configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OriginAccessControlConfig {
+pub struct OriginAccessControlConfig  {
     /// <p>A name to identify the origin access control.</p>
     pub name: ::std::string::String,
     /// <p>A description of the origin access control.</p>
@@ -24,18 +24,17 @@ pub struct OriginAccessControlConfig {
     /// <p>The type of origin that this origin access control is for.</p>
     pub origin_access_control_origin_type: crate::types::OriginAccessControlOriginTypes,
 }
-impl OriginAccessControlConfig {
+impl  OriginAccessControlConfig  {
     /// <p>A name to identify the origin access control.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>A description of the origin access control.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
-    pub fn signing_protocol(&self) -> &crate::types::OriginAccessControlSigningProtocols {
+    pub fn signing_protocol(&self) -> & crate::types::OriginAccessControlSigningProtocols {
         &self.signing_protocol
     }
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -48,11 +47,11 @@ impl OriginAccessControlConfig {
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to a <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache policy</a> for all cache behaviors that use origins associated with this origin access control.</b></p></li>
     /// </ul>
-    pub fn signing_behavior(&self) -> &crate::types::OriginAccessControlSigningBehaviors {
+    pub fn signing_behavior(&self) -> & crate::types::OriginAccessControlSigningBehaviors {
         &self.signing_behavior
     }
     /// <p>The type of origin that this origin access control is for.</p>
-    pub fn origin_access_control_origin_type(&self) -> &crate::types::OriginAccessControlOriginTypes {
+    pub fn origin_access_control_origin_type(&self) -> & crate::types::OriginAccessControlOriginTypes {
         &self.origin_access_control_origin_type
     }
 }
@@ -82,8 +81,7 @@ impl OriginAccessControlConfigBuilder {
     }
     /// <p>A name to identify the origin access control.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name to identify the origin access control.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +94,7 @@ impl OriginAccessControlConfigBuilder {
     }
     /// <p>A description of the origin access control.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the origin access control.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl OriginAccessControlConfigBuilder {
     }
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn set_signing_protocol(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>) -> Self {
-        self.signing_protocol = input;
-        self
+        self.signing_protocol = input; self
     }
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn get_signing_protocol(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningProtocols> {
@@ -144,8 +140,7 @@ impl OriginAccessControlConfigBuilder {
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to a <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache policy</a> for all cache behaviors that use origins associated with this origin access control.</b></p></li>
     /// </ul>
     pub fn set_signing_behavior(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>) -> Self {
-        self.signing_behavior = input;
-        self
+        self.signing_behavior = input; self
     }
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>This field can have one of the following values:</p>
@@ -168,8 +163,7 @@ impl OriginAccessControlConfigBuilder {
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn set_origin_access_control_origin_type(mut self, input: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>) -> Self {
-        self.origin_access_control_origin_type = input;
-        self
+        self.origin_access_control_origin_type = input; self
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn get_origin_access_control_origin_type(&self) -> &::std::option::Option<crate::types::OriginAccessControlOriginTypes> {
@@ -182,32 +176,32 @@ impl OriginAccessControlConfigBuilder {
     /// - [`signing_behavior`](crate::types::builders::OriginAccessControlConfigBuilder::signing_behavior)
     /// - [`origin_access_control_origin_type`](crate::types::builders::OriginAccessControlConfigBuilder::origin_access_control_origin_type)
     pub fn build(self) -> ::std::result::Result<crate::types::OriginAccessControlConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::OriginAccessControlConfig {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building OriginAccessControlConfig",
-                )
-            })?,
-            description: self.description,
-            signing_protocol: self.signing_protocol.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_protocol",
-                    "signing_protocol was not specified but it is required when building OriginAccessControlConfig",
-                )
-            })?,
-            signing_behavior: self.signing_behavior.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "signing_behavior",
-                    "signing_behavior was not specified but it is required when building OriginAccessControlConfig",
-                )
-            })?,
-            origin_access_control_origin_type: self.origin_access_control_origin_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "origin_access_control_origin_type",
-                    "origin_access_control_origin_type was not specified but it is required when building OriginAccessControlConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::OriginAccessControlConfig {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building OriginAccessControlConfig")
+                    )?
+                ,
+                description: self.description
+                ,
+                signing_protocol: self.signing_protocol
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_protocol", "signing_protocol was not specified but it is required when building OriginAccessControlConfig")
+                    )?
+                ,
+                signing_behavior: self.signing_behavior
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("signing_behavior", "signing_behavior was not specified but it is required when building OriginAccessControlConfig")
+                    )?
+                ,
+                origin_access_control_origin_type: self.origin_access_control_origin_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("origin_access_control_origin_type", "origin_access_control_origin_type was not specified but it is required when building OriginAccessControlConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

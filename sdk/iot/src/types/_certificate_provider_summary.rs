@@ -3,19 +3,19 @@
 /// <p>The certificate provider summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateProviderSummary {
+pub struct CertificateProviderSummary  {
     /// <p>The name of the certificate provider.</p>
     pub certificate_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the certificate provider.</p>
     pub certificate_provider_arn: ::std::option::Option<::std::string::String>,
 }
-impl CertificateProviderSummary {
+impl  CertificateProviderSummary  {
     /// <p>The name of the certificate provider.</p>
-    pub fn certificate_provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_name(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_name.as_deref()
     }
     /// <p>The ARN of the certificate provider.</p>
-    pub fn certificate_provider_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_provider_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_provider_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CertificateProviderSummaryBuilder {
     }
     /// <p>The name of the certificate provider.</p>
     pub fn set_certificate_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_name = input;
-        self
+        self.certificate_provider_name = input; self
     }
     /// <p>The name of the certificate provider.</p>
     pub fn get_certificate_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl CertificateProviderSummaryBuilder {
     }
     /// <p>The ARN of the certificate provider.</p>
     pub fn set_certificate_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_provider_arn = input;
-        self
+        self.certificate_provider_arn = input; self
     }
     /// <p>The ARN of the certificate provider.</p>
     pub fn get_certificate_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl CertificateProviderSummaryBuilder {
     /// Consumes the builder and constructs a [`CertificateProviderSummary`](crate::types::CertificateProviderSummary).
     pub fn build(self) -> crate::types::CertificateProviderSummary {
         crate::types::CertificateProviderSummary {
-            certificate_provider_name: self.certificate_provider_name,
-            certificate_provider_arn: self.certificate_provider_arn,
+            certificate_provider_name: self.certificate_provider_name
+            ,
+            certificate_provider_arn: self.certificate_provider_arn
+            ,
         }
     }
 }
+

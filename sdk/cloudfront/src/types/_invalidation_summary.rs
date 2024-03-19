@@ -3,7 +3,7 @@
 /// <p>A summary of an invalidation request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InvalidationSummary {
+pub struct InvalidationSummary  {
     /// <p>The unique ID for an invalidation request.</p>
     pub id: ::std::string::String,
     /// <p>The time that an invalidation request was created.</p>
@@ -11,20 +11,18 @@ pub struct InvalidationSummary {
     /// <p>The status of an invalidation request.</p>
     pub status: ::std::string::String,
 }
-impl InvalidationSummary {
+impl  InvalidationSummary  {
     /// <p>The unique ID for an invalidation request.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The time that an invalidation request was created.</p>
-    pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_time
     }
     /// <p>The status of an invalidation request.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
 }
 impl InvalidationSummary {
@@ -51,8 +49,7 @@ impl InvalidationSummaryBuilder {
     }
     /// <p>The unique ID for an invalidation request.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ID for an invalidation request.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl InvalidationSummaryBuilder {
     }
     /// <p>The time that an invalidation request was created.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The time that an invalidation request was created.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -81,8 +77,7 @@ impl InvalidationSummaryBuilder {
     }
     /// <p>The status of an invalidation request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of an invalidation request.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,25 +89,25 @@ impl InvalidationSummaryBuilder {
     /// - [`create_time`](crate::types::builders::InvalidationSummaryBuilder::create_time)
     /// - [`status`](crate::types::builders::InvalidationSummaryBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::InvalidationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InvalidationSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building InvalidationSummary",
-                )
-            })?,
-            create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_time",
-                    "create_time was not specified but it is required when building InvalidationSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building InvalidationSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InvalidationSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building InvalidationSummary")
+                    )?
+                ,
+                create_time: self.create_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_time", "create_time was not specified but it is required when building InvalidationSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building InvalidationSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

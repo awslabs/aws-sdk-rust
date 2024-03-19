@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateUserSettingsOutput {
+pub struct UpdateUserSettingsOutput  {
     /// <p>The user settings.</p>
     pub user_settings: ::std::option::Option<crate::types::UserSettings>,
     _request_id: Option<String>,
 }
-impl UpdateUserSettingsOutput {
+impl  UpdateUserSettingsOutput  {
     /// <p>The user settings.</p>
-    pub fn user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
+    pub fn user_settings(&self) -> ::std::option::Option<& crate::types::UserSettings> {
         self.user_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSettingsOutput`](crate::operation::update_user_settings::UpdateUserSettingsOutput).
     pub fn builder() -> crate::operation::update_user_settings::builders::UpdateUserSettingsOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateUserSettingsOutputBuilder {
     }
     /// <p>The user settings.</p>
     pub fn set_user_settings(mut self, input: ::std::option::Option<crate::types::UserSettings>) -> Self {
-        self.user_settings = input;
-        self
+        self.user_settings = input; self
     }
     /// <p>The user settings.</p>
     pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         &self.user_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserSettingsOutput`](crate::operation::update_user_settings::UpdateUserSettingsOutput).
     pub fn build(self) -> crate::operation::update_user_settings::UpdateUserSettingsOutput {
         crate::operation::update_user_settings::UpdateUserSettingsOutput {
-            user_settings: self.user_settings,
+            user_settings: self.user_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

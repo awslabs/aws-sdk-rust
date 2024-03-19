@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFlowLogsInput {
+pub struct DeleteFlowLogsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub flow_log_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DeleteFlowLogsInput {
+impl  DeleteFlowLogsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_log_ids.is_none()`.
-    pub fn flow_log_ids(&self) -> &[::std::string::String] {
-        self.flow_log_ids.as_deref().unwrap_or_default()
+    pub fn flow_log_ids(&self) -> & [::std::string::String] {
+        self.flow_log_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteFlowLogsInput {
@@ -34,7 +35,7 @@ impl DeleteFlowLogsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFlowLogsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) flow_log_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) flow_log_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DeleteFlowLogsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -44,8 +45,7 @@ impl DeleteFlowLogsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -59,28 +59,30 @@ impl DeleteFlowLogsInputBuilder {
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
     pub fn flow_log_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.flow_log_ids.unwrap_or_default();
-        v.push(input.into());
-        self.flow_log_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.flow_log_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.flow_log_ids = input;
-        self
+    pub fn set_flow_log_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.flow_log_ids = input; self
     }
     /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_flow_log_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.flow_log_ids
     }
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_flow_logs::DeleteFlowLogsInput {
-            dry_run: self.dry_run,
-            flow_log_ids: self.flow_log_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_flow_logs::DeleteFlowLogsInput {
+                dry_run: self.dry_run
+                ,
+                flow_log_ids: self.flow_log_ids
+                ,
+            }
+        )
     }
 }
+

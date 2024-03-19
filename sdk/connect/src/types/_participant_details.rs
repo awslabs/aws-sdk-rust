@@ -3,15 +3,14 @@
 /// <p>The customer's details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParticipantDetails {
+pub struct ParticipantDetails  {
     /// <p>Display name of the participant.</p>
     pub display_name: ::std::string::String,
 }
-impl ParticipantDetails {
+impl  ParticipantDetails  {
     /// <p>Display name of the participant.</p>
-    pub fn display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.display_name.deref()
+    pub fn display_name(&self) -> & str {
+        use std::ops::Deref; self.display_name.deref()
     }
 }
 impl ParticipantDetails {
@@ -36,8 +35,7 @@ impl ParticipantDetailsBuilder {
     }
     /// <p>Display name of the participant.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>Display name of the participant.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ParticipantDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`display_name`](crate::types::builders::ParticipantDetailsBuilder::display_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ParticipantDetails, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ParticipantDetails {
-            display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "display_name",
-                    "display_name was not specified but it is required when building ParticipantDetails",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ParticipantDetails {
+                display_name: self.display_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("display_name", "display_name was not specified but it is required when building ParticipantDetails")
+                    )?
+                ,
+            }
+        )
     }
 }
+

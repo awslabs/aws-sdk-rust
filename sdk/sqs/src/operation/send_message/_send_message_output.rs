@@ -3,7 +3,7 @@
 /// <p>The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendMessageOutput {
+pub struct SendMessageOutput  {
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_body: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
@@ -18,35 +18,35 @@ pub struct SendMessageOutput {
     pub sequence_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl SendMessageOutput {
+impl  SendMessageOutput  {
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub fn md5_of_message_body(&self) -> ::std::option::Option<&str> {
+    pub fn md5_of_message_body(&self) -> ::std::option::Option<& str> {
         self.md5_of_message_body.as_deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-    pub fn md5_of_message_attributes(&self) -> ::std::option::Option<&str> {
+    pub fn md5_of_message_attributes(&self) -> ::std::option::Option<& str> {
         self.md5_of_message_attributes.as_deref()
     }
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
-    pub fn md5_of_message_system_attributes(&self) -> ::std::option::Option<&str> {
+    pub fn md5_of_message_system_attributes(&self) -> ::std::option::Option<& str> {
         self.md5_of_message_system_attributes.as_deref()
     }
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn message_id(&self) -> ::std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SendMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SendMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::operation::send_message::SendMessageOutput).
     pub fn builder() -> crate::operation::send_message::builders::SendMessageOutputBuilder {
@@ -73,8 +73,7 @@ impl SendMessageOutputBuilder {
     }
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn set_md5_of_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5_of_message_body = input;
-        self
+        self.md5_of_message_body = input; self
     }
     /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn get_md5_of_message_body(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl SendMessageOutputBuilder {
     }
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn set_md5_of_message_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5_of_message_attributes = input;
-        self
+        self.md5_of_message_attributes = input; self
     }
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn get_md5_of_message_attributes(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +99,7 @@ impl SendMessageOutputBuilder {
     }
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
     pub fn set_md5_of_message_system_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.md5_of_message_system_attributes = input;
-        self
+        self.md5_of_message_system_attributes = input; self
     }
     /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
     pub fn get_md5_of_message_system_attributes(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl SendMessageOutputBuilder {
     }
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -133,8 +129,7 @@ impl SendMessageOutputBuilder {
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn set_sequence_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
@@ -143,23 +138,29 @@ impl SendMessageOutputBuilder {
         &self.sequence_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SendMessageOutput`](crate::operation::send_message::SendMessageOutput).
     pub fn build(self) -> crate::operation::send_message::SendMessageOutput {
         crate::operation::send_message::SendMessageOutput {
-            md5_of_message_body: self.md5_of_message_body,
-            md5_of_message_attributes: self.md5_of_message_attributes,
-            md5_of_message_system_attributes: self.md5_of_message_system_attributes,
-            message_id: self.message_id,
-            sequence_number: self.sequence_number,
+            md5_of_message_body: self.md5_of_message_body
+            ,
+            md5_of_message_attributes: self.md5_of_message_attributes
+            ,
+            md5_of_message_system_attributes: self.md5_of_message_system_attributes
+            ,
+            message_id: self.message_id
+            ,
+            sequence_number: self.sequence_number
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

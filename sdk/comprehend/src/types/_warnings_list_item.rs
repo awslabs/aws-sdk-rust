@@ -9,7 +9,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WarningsListItem {
+pub struct WarningsListItem  {
     /// <p>Page number in the input document.</p>
     pub page: ::std::option::Option<i32>,
     /// <p>The type of warning.</p>
@@ -17,17 +17,17 @@ pub struct WarningsListItem {
     /// <p>Text message associated with the warning.</p>
     pub warn_message: ::std::option::Option<::std::string::String>,
 }
-impl WarningsListItem {
+impl  WarningsListItem  {
     /// <p>Page number in the input document.</p>
     pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p>The type of warning.</p>
-    pub fn warn_code(&self) -> ::std::option::Option<&crate::types::PageBasedWarningCode> {
+    pub fn warn_code(&self) -> ::std::option::Option<& crate::types::PageBasedWarningCode> {
         self.warn_code.as_ref()
     }
     /// <p>Text message associated with the warning.</p>
-    pub fn warn_message(&self) -> ::std::option::Option<&str> {
+    pub fn warn_message(&self) -> ::std::option::Option<& str> {
         self.warn_message.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl WarningsListItemBuilder {
     }
     /// <p>Page number in the input document.</p>
     pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// <p>Page number in the input document.</p>
     pub fn get_page(&self) -> &::std::option::Option<i32> {
@@ -68,8 +67,7 @@ impl WarningsListItemBuilder {
     }
     /// <p>The type of warning.</p>
     pub fn set_warn_code(mut self, input: ::std::option::Option<crate::types::PageBasedWarningCode>) -> Self {
-        self.warn_code = input;
-        self
+        self.warn_code = input; self
     }
     /// <p>The type of warning.</p>
     pub fn get_warn_code(&self) -> &::std::option::Option<crate::types::PageBasedWarningCode> {
@@ -82,8 +80,7 @@ impl WarningsListItemBuilder {
     }
     /// <p>Text message associated with the warning.</p>
     pub fn set_warn_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warn_message = input;
-        self
+        self.warn_message = input; self
     }
     /// <p>Text message associated with the warning.</p>
     pub fn get_warn_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,9 +89,13 @@ impl WarningsListItemBuilder {
     /// Consumes the builder and constructs a [`WarningsListItem`](crate::types::WarningsListItem).
     pub fn build(self) -> crate::types::WarningsListItem {
         crate::types::WarningsListItem {
-            page: self.page,
-            warn_code: self.warn_code,
-            warn_message: self.warn_message,
+            page: self.page
+            ,
+            warn_code: self.warn_code
+            ,
+            warn_message: self.warn_message
+            ,
         }
     }
 }
+

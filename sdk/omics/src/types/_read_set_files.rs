@@ -3,7 +3,7 @@
 /// <p>Files in a read set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReadSetFiles {
+pub struct ReadSetFiles  {
     /// <p>The location of the first file in Amazon S3.</p>
     pub source1: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The location of the second file in Amazon S3.</p>
@@ -11,17 +11,17 @@ pub struct ReadSetFiles {
     /// <p>The files' index.</p>
     pub index: ::std::option::Option<crate::types::FileInformation>,
 }
-impl ReadSetFiles {
+impl  ReadSetFiles  {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(&self) -> ::std::option::Option<&crate::types::FileInformation> {
+    pub fn source1(&self) -> ::std::option::Option<& crate::types::FileInformation> {
         self.source1.as_ref()
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn source2(&self) -> ::std::option::Option<&crate::types::FileInformation> {
+    pub fn source2(&self) -> ::std::option::Option<& crate::types::FileInformation> {
         self.source2.as_ref()
     }
     /// <p>The files' index.</p>
-    pub fn index(&self) -> ::std::option::Option<&crate::types::FileInformation> {
+    pub fn index(&self) -> ::std::option::Option<& crate::types::FileInformation> {
         self.index.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ReadSetFilesBuilder {
     }
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn set_source1(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
-        self.source1 = input;
-        self
+        self.source1 = input; self
     }
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn get_source1(&self) -> &::std::option::Option<crate::types::FileInformation> {
@@ -62,8 +61,7 @@ impl ReadSetFilesBuilder {
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn set_source2(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
-        self.source2 = input;
-        self
+        self.source2 = input; self
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn get_source2(&self) -> &::std::option::Option<crate::types::FileInformation> {
@@ -76,8 +74,7 @@ impl ReadSetFilesBuilder {
     }
     /// <p>The files' index.</p>
     pub fn set_index(mut self, input: ::std::option::Option<crate::types::FileInformation>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>The files' index.</p>
     pub fn get_index(&self) -> &::std::option::Option<crate::types::FileInformation> {
@@ -86,9 +83,13 @@ impl ReadSetFilesBuilder {
     /// Consumes the builder and constructs a [`ReadSetFiles`](crate::types::ReadSetFiles).
     pub fn build(self) -> crate::types::ReadSetFiles {
         crate::types::ReadSetFiles {
-            source1: self.source1,
-            source2: self.source2,
-            index: self.index,
+            source1: self.source1
+            ,
+            source2: self.source2
+            ,
+            index: self.index
+            ,
         }
     }
 }
+

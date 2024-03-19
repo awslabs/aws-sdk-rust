@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePullThroughCacheRuleOutput {
+pub struct UpdatePullThroughCacheRuleOutput  {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The registry ID associated with the request.</p>
@@ -13,29 +13,29 @@ pub struct UpdatePullThroughCacheRuleOutput {
     pub credential_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdatePullThroughCacheRuleOutput {
+impl  UpdatePullThroughCacheRuleOutput  {
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
-    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn ecr_repository_prefix(&self) -> ::std::option::Option<& str> {
         self.ecr_repository_prefix.as_deref()
     }
     /// <p>The registry ID associated with the request.</p>
-    pub fn registry_id(&self) -> ::std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The date and time, in JavaScript date format, when the pull through cache rule was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
-    pub fn credential_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credential_arn(&self) -> ::std::option::Option<& str> {
         self.credential_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePullThroughCacheRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdatePullThroughCacheRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePullThroughCacheRuleOutput`](crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleOutput).
     pub fn builder() -> crate::operation::update_pull_through_cache_rule::builders::UpdatePullThroughCacheRuleOutputBuilder {
@@ -61,8 +61,7 @@ impl UpdatePullThroughCacheRuleOutputBuilder {
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
     pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecr_repository_prefix = input;
-        self
+        self.ecr_repository_prefix = input; self
     }
     /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
     pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl UpdatePullThroughCacheRuleOutputBuilder {
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdatePullThroughCacheRuleOutputBuilder {
     }
     /// <p>The date and time, in JavaScript date format, when the pull through cache rule was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The date and time, in JavaScript date format, when the pull through cache rule was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -103,30 +100,34 @@ impl UpdatePullThroughCacheRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credential_arn = input;
-        self
+        self.credential_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdatePullThroughCacheRuleOutput`](crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleOutput).
     pub fn build(self) -> crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleOutput {
         crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleOutput {
-            ecr_repository_prefix: self.ecr_repository_prefix,
-            registry_id: self.registry_id,
-            updated_at: self.updated_at,
-            credential_arn: self.credential_arn,
+            ecr_repository_prefix: self.ecr_repository_prefix
+            ,
+            registry_id: self.registry_id
+            ,
+            updated_at: self.updated_at
+            ,
+            credential_arn: self.credential_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

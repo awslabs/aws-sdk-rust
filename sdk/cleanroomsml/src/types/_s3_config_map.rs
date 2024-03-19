@@ -3,15 +3,14 @@
 /// <p>Provides information about an Amazon S3 bucket and path.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ConfigMap {
+pub struct S3ConfigMap  {
     /// <p>The Amazon S3 location URI.</p>
     pub s3_uri: ::std::string::String,
 }
-impl S3ConfigMap {
+impl  S3ConfigMap  {
     /// <p>The Amazon S3 location URI.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
 }
 impl S3ConfigMap {
@@ -36,8 +35,7 @@ impl S3ConfigMapBuilder {
     }
     /// <p>The Amazon S3 location URI.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 location URI.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl S3ConfigMapBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::S3ConfigMapBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ConfigMap, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ConfigMap {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building S3ConfigMap",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ConfigMap {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building S3ConfigMap")
+                    )?
+                ,
+            }
+        )
     }
 }
+

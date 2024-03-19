@@ -3,7 +3,7 @@
 /// <p>Represents the input of a RegisterApplicationRevision operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterApplicationRevisionInput {
+pub struct RegisterApplicationRevisionInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment about the revision.</p>
@@ -11,17 +11,17 @@ pub struct RegisterApplicationRevisionInput {
     /// <p>Information about the application revision to register, including type and location.</p>
     pub revision: ::std::option::Option<crate::types::RevisionLocation>,
 }
-impl RegisterApplicationRevisionInput {
+impl  RegisterApplicationRevisionInput  {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
-    pub fn application_name(&self) -> ::std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>A comment about the revision.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the application revision to register, including type and location.</p>
-    pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision(&self) -> ::std::option::Option<& crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl RegisterApplicationRevisionInputBuilder {
     }
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RegisterApplicationRevisionInputBuilder {
     }
     /// <p>A comment about the revision.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A comment about the revision.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl RegisterApplicationRevisionInputBuilder {
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn set_revision(mut self, input: ::std::option::Option<crate::types::RevisionLocation>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
         &self.revision
     }
     /// Consumes the builder and constructs a [`RegisterApplicationRevisionInput`](crate::operation::register_application_revision::RegisterApplicationRevisionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::register_application_revision::RegisterApplicationRevisionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::register_application_revision::RegisterApplicationRevisionInput {
-            application_name: self.application_name,
-            description: self.description,
-            revision: self.revision,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_application_revision::RegisterApplicationRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_application_revision::RegisterApplicationRevisionInput {
+                application_name: self.application_name
+                ,
+                description: self.description
+                ,
+                revision: self.revision
+                ,
+            }
+        )
     }
 }
+

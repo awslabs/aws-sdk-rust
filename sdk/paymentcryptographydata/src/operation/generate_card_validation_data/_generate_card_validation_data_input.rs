@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GenerateCardValidationDataInput {
+pub struct GenerateCardValidationDataInput  {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
@@ -12,17 +12,17 @@ pub struct GenerateCardValidationDataInput {
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
     pub validation_data_length: ::std::option::Option<i32>,
 }
-impl GenerateCardValidationDataInput {
+impl  GenerateCardValidationDataInput  {
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
-    pub fn key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn key_identifier(&self) -> ::std::option::Option<& str> {
         self.key_identifier.as_deref()
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
-    pub fn primary_account_number(&self) -> ::std::option::Option<&str> {
+    pub fn primary_account_number(&self) -> ::std::option::Option<& str> {
         self.primary_account_number.as_deref()
     }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
-    pub fn generation_attributes(&self) -> ::std::option::Option<&crate::types::CardGenerationAttributes> {
+    pub fn generation_attributes(&self) -> ::std::option::Option<& crate::types::CardGenerationAttributes> {
         self.generation_attributes.as_ref()
     }
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
@@ -30,7 +30,7 @@ impl GenerateCardValidationDataInput {
         self.validation_data_length
     }
 }
-impl ::std::fmt::Debug for GenerateCardValidationDataInput {
+impl  ::std::fmt::Debug for GenerateCardValidationDataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateCardValidationDataInput");
         formatter.field("key_identifier", &self.key_identifier);
@@ -65,8 +65,7 @@ impl GenerateCardValidationDataInputBuilder {
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
     pub fn set_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_identifier = input;
-        self
+        self.key_identifier = input; self
     }
     /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl GenerateCardValidationDataInputBuilder {
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
     pub fn set_primary_account_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.primary_account_number = input;
-        self
+        self.primary_account_number = input; self
     }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
     pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +93,7 @@ impl GenerateCardValidationDataInputBuilder {
     }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
     pub fn set_generation_attributes(mut self, input: ::std::option::Option<crate::types::CardGenerationAttributes>) -> Self {
-        self.generation_attributes = input;
-        self
+        self.generation_attributes = input; self
     }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
     pub fn get_generation_attributes(&self) -> &::std::option::Option<crate::types::CardGenerationAttributes> {
@@ -109,26 +106,26 @@ impl GenerateCardValidationDataInputBuilder {
     }
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
     pub fn set_validation_data_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.validation_data_length = input;
-        self
+        self.validation_data_length = input; self
     }
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
     pub fn get_validation_data_length(&self) -> &::std::option::Option<i32> {
         &self.validation_data_length
     }
     /// Consumes the builder and constructs a [`GenerateCardValidationDataInput`](crate::operation::generate_card_validation_data::GenerateCardValidationDataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::generate_card_validation_data::GenerateCardValidationDataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::generate_card_validation_data::GenerateCardValidationDataInput {
-            key_identifier: self.key_identifier,
-            primary_account_number: self.primary_account_number,
-            generation_attributes: self.generation_attributes,
-            validation_data_length: self.validation_data_length,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_card_validation_data::GenerateCardValidationDataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataInput {
+                key_identifier: self.key_identifier
+                ,
+                primary_account_number: self.primary_account_number
+                ,
+                generation_attributes: self.generation_attributes
+                ,
+                validation_data_length: self.validation_data_length
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GenerateCardValidationDataInputBuilder {
@@ -141,3 +138,4 @@ impl ::std::fmt::Debug for GenerateCardValidationDataInputBuilder {
         formatter.finish()
     }
 }
+

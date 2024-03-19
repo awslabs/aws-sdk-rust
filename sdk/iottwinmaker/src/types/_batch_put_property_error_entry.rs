@@ -3,15 +3,14 @@
 /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutPropertyErrorEntry {
+pub struct BatchPutPropertyErrorEntry  {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub errors: ::std::vec::Vec<crate::types::BatchPutPropertyError>,
+    pub errors: ::std::vec::Vec::<crate::types::BatchPutPropertyError>,
 }
-impl BatchPutPropertyErrorEntry {
+impl  BatchPutPropertyErrorEntry  {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn errors(&self) -> &[crate::types::BatchPutPropertyError] {
-        use std::ops::Deref;
-        self.errors.deref()
+    pub fn errors(&self) -> & [crate::types::BatchPutPropertyError] {
+        use std::ops::Deref; self.errors.deref()
     }
 }
 impl BatchPutPropertyErrorEntry {
@@ -25,7 +24,7 @@ impl BatchPutPropertyErrorEntry {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchPutPropertyErrorEntryBuilder {
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutPropertyError>>,
 }
 impl BatchPutPropertyErrorEntryBuilder {
     /// Appends an item to `errors`.
@@ -35,30 +34,31 @@ impl BatchPutPropertyErrorEntryBuilder {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn errors(mut self, input: crate::types::BatchPutPropertyError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchPutPropertyError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchPutPropertyError>> {
         &self.errors
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::types::builders::BatchPutPropertyErrorEntryBuilder::errors)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchPutPropertyErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchPutPropertyErrorEntry {
-            errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "errors",
-                    "errors was not specified but it is required when building BatchPutPropertyErrorEntry",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchPutPropertyErrorEntry {
+                errors: self.errors
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchPutPropertyErrorEntry")
+                    )?
+                ,
+            }
+        )
     }
 }
+

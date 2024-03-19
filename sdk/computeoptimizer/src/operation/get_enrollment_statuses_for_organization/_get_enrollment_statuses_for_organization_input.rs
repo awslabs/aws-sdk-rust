@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEnrollmentStatusesForOrganizationInput {
+pub struct GetEnrollmentStatusesForOrganizationInput  {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::EnrollmentFilter>>,
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetEnrollmentStatusesForOrganizationInput {
+impl  GetEnrollmentStatusesForOrganizationInput  {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::EnrollmentFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::EnrollmentFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
@@ -39,7 +40,7 @@ impl GetEnrollmentStatusesForOrganizationInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::EnrollmentFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -51,17 +52,16 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
     pub fn filters(mut self, input: crate::types::EnrollmentFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnrollmentFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnrollmentFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnrollmentFilter>> {
         &self.filters
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
@@ -71,8 +71,7 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to advance to the next page of account enrollment statuses.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -96,18 +94,17 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationInput`](crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

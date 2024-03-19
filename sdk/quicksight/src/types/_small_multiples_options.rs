@@ -3,7 +3,7 @@
 /// <p>Options that determine the layout and display options of a chart's small multiples.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SmallMultiplesOptions {
+pub struct SmallMultiplesOptions  {
     /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
     /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
     pub max_visible_rows: ::std::option::Option<i64>,
@@ -17,7 +17,7 @@ pub struct SmallMultiplesOptions {
     /// <p>The properties of a small multiples Y axis.</p>
     pub y_axis: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>,
 }
-impl SmallMultiplesOptions {
+impl  SmallMultiplesOptions  {
     /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
     /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
     pub fn max_visible_rows(&self) -> ::std::option::Option<i64> {
@@ -29,15 +29,15 @@ impl SmallMultiplesOptions {
         self.max_visible_columns
     }
     /// <p>Configures the display options for each small multiples panel.</p>
-    pub fn panel_configuration(&self) -> ::std::option::Option<&crate::types::PanelConfiguration> {
+    pub fn panel_configuration(&self) -> ::std::option::Option<& crate::types::PanelConfiguration> {
         self.panel_configuration.as_ref()
     }
     /// <p>The properties of a small multiples X axis.</p>
-    pub fn x_axis(&self) -> ::std::option::Option<&crate::types::SmallMultiplesAxisProperties> {
+    pub fn x_axis(&self) -> ::std::option::Option<& crate::types::SmallMultiplesAxisProperties> {
         self.x_axis.as_ref()
     }
     /// <p>The properties of a small multiples Y axis.</p>
-    pub fn y_axis(&self) -> ::std::option::Option<&crate::types::SmallMultiplesAxisProperties> {
+    pub fn y_axis(&self) -> ::std::option::Option<& crate::types::SmallMultiplesAxisProperties> {
         self.y_axis.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl SmallMultiplesOptionsBuilder {
     /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
     /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
     pub fn set_max_visible_rows(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_visible_rows = input;
-        self
+        self.max_visible_rows = input; self
     }
     /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
     /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
@@ -85,8 +84,7 @@ impl SmallMultiplesOptionsBuilder {
     /// <p>Sets the maximum number of visible columns to display in the grid of small multiples panels.</p>
     /// <p>The default is <code>Auto</code>, which automatically adjusts the columns in the grid to fit the overall layout and size of the given chart.</p>
     pub fn set_max_visible_columns(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.max_visible_columns = input;
-        self
+        self.max_visible_columns = input; self
     }
     /// <p>Sets the maximum number of visible columns to display in the grid of small multiples panels.</p>
     /// <p>The default is <code>Auto</code>, which automatically adjusts the columns in the grid to fit the overall layout and size of the given chart.</p>
@@ -100,8 +98,7 @@ impl SmallMultiplesOptionsBuilder {
     }
     /// <p>Configures the display options for each small multiples panel.</p>
     pub fn set_panel_configuration(mut self, input: ::std::option::Option<crate::types::PanelConfiguration>) -> Self {
-        self.panel_configuration = input;
-        self
+        self.panel_configuration = input; self
     }
     /// <p>Configures the display options for each small multiples panel.</p>
     pub fn get_panel_configuration(&self) -> &::std::option::Option<crate::types::PanelConfiguration> {
@@ -114,8 +111,7 @@ impl SmallMultiplesOptionsBuilder {
     }
     /// <p>The properties of a small multiples X axis.</p>
     pub fn set_x_axis(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>) -> Self {
-        self.x_axis = input;
-        self
+        self.x_axis = input; self
     }
     /// <p>The properties of a small multiples X axis.</p>
     pub fn get_x_axis(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisProperties> {
@@ -128,8 +124,7 @@ impl SmallMultiplesOptionsBuilder {
     }
     /// <p>The properties of a small multiples Y axis.</p>
     pub fn set_y_axis(mut self, input: ::std::option::Option<crate::types::SmallMultiplesAxisProperties>) -> Self {
-        self.y_axis = input;
-        self
+        self.y_axis = input; self
     }
     /// <p>The properties of a small multiples Y axis.</p>
     pub fn get_y_axis(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisProperties> {
@@ -138,11 +133,17 @@ impl SmallMultiplesOptionsBuilder {
     /// Consumes the builder and constructs a [`SmallMultiplesOptions`](crate::types::SmallMultiplesOptions).
     pub fn build(self) -> crate::types::SmallMultiplesOptions {
         crate::types::SmallMultiplesOptions {
-            max_visible_rows: self.max_visible_rows,
-            max_visible_columns: self.max_visible_columns,
-            panel_configuration: self.panel_configuration,
-            x_axis: self.x_axis,
-            y_axis: self.y_axis,
+            max_visible_rows: self.max_visible_rows
+            ,
+            max_visible_columns: self.max_visible_columns
+            ,
+            panel_configuration: self.panel_configuration
+            ,
+            x_axis: self.x_axis
+            ,
+            y_axis: self.y_axis
+            ,
         }
     }
 }
+

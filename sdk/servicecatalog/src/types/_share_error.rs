@@ -3,27 +3,28 @@
 /// <p>Errors that occurred during the portfolio share operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShareError {
+pub struct ShareError  {
     /// <p>List of accounts impacted by the error.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Information about the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Error type that happened when processing the operation.</p>
     pub error: ::std::option::Option<::std::string::String>,
 }
-impl ShareError {
+impl  ShareError  {
     /// <p>List of accounts impacted by the error.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[::std::string::String] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [::std::string::String] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Information about the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Error type that happened when processing the operation.</p>
-    pub fn error(&self) -> ::std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<& str> {
         self.error.as_deref()
     }
 }
@@ -38,7 +39,7 @@ impl ShareError {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ShareErrorBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
 }
@@ -50,17 +51,16 @@ impl ShareErrorBuilder {
     /// <p>List of accounts impacted by the error.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of accounts impacted by the error.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>List of accounts impacted by the error.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.accounts
     }
     /// <p>Information about the error.</p>
@@ -70,8 +70,7 @@ impl ShareErrorBuilder {
     }
     /// <p>Information about the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Information about the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ShareErrorBuilder {
     }
     /// <p>Error type that happened when processing the operation.</p>
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Error type that happened when processing the operation.</p>
     pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +92,13 @@ impl ShareErrorBuilder {
     /// Consumes the builder and constructs a [`ShareError`](crate::types::ShareError).
     pub fn build(self) -> crate::types::ShareError {
         crate::types::ShareError {
-            accounts: self.accounts,
-            message: self.message,
-            error: self.error,
+            accounts: self.accounts
+            ,
+            message: self.message
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

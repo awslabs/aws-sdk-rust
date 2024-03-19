@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateZonalAutoshiftConfigurationInput {
+pub struct UpdateZonalAutoshiftConfigurationInput  {
     /// <p>The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
     pub zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
 }
-impl UpdateZonalAutoshiftConfigurationInput {
+impl  UpdateZonalAutoshiftConfigurationInput  {
     /// <p>The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
-    pub fn zonal_autoshift_status(&self) -> ::std::option::Option<&crate::types::ZonalAutoshiftStatus> {
+    pub fn zonal_autoshift_status(&self) -> ::std::option::Option<& crate::types::ZonalAutoshiftStatus> {
         self.zonal_autoshift_status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateZonalAutoshiftConfigurationInputBuilder {
     }
     /// <p>The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_identifier = input;
-        self
+        self.resource_identifier = input; self
     }
     /// <p>The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl UpdateZonalAutoshiftConfigurationInputBuilder {
     }
     /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
     pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
-        self.zonal_autoshift_status = input;
-        self
+        self.zonal_autoshift_status = input; self
     }
     /// <p>The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for.</p>
     pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
         &self.zonal_autoshift_status
     }
     /// Consumes the builder and constructs a [`UpdateZonalAutoshiftConfigurationInput`](crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationInput {
-                resource_identifier: self.resource_identifier,
-                zonal_autoshift_status: self.zonal_autoshift_status,
-            },
+                resource_identifier: self.resource_identifier
+                ,
+                zonal_autoshift_status: self.zonal_autoshift_status
+                ,
+            }
         )
     }
 }
+

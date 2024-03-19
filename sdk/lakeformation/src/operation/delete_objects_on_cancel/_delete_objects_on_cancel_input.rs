@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteObjectsOnCancelInput {
+pub struct DeleteObjectsOnCancelInput  {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database that contains the governed table.</p>
@@ -12,30 +12,31 @@ pub struct DeleteObjectsOnCancelInput {
     /// <p>ID of the transaction that the writes occur in.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub objects: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>,
+    pub objects: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualObject>>,
 }
-impl DeleteObjectsOnCancelInput {
+impl  DeleteObjectsOnCancelInput  {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
-    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database that contains the governed table.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the governed table.</p>
-    pub fn table_name(&self) -> ::std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>ID of the transaction that the writes occur in.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.objects.is_none()`.
-    pub fn objects(&self) -> &[crate::types::VirtualObject] {
-        self.objects.as_deref().unwrap_or_default()
+    pub fn objects(&self) -> & [crate::types::VirtualObject] {
+        self.objects.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteObjectsOnCancelInput {
@@ -53,7 +54,7 @@ pub struct DeleteObjectsOnCancelInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
-    pub(crate) objects: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>,
+    pub(crate) objects: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualObject>>,
 }
 impl DeleteObjectsOnCancelInputBuilder {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
@@ -63,8 +64,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The database that contains the governed table.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The database that contains the governed table.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The name of the governed table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the governed table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +106,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,30 +119,34 @@ impl DeleteObjectsOnCancelInputBuilder {
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
     pub fn objects(mut self, input: crate::types::VirtualObject) -> Self {
         let mut v = self.objects.unwrap_or_default();
-        v.push(input);
-        self.objects = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.objects = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>>) -> Self {
-        self.objects = input;
-        self
+    pub fn set_objects(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualObject>>) -> Self {
+        self.objects = input; self
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>> {
+    pub fn get_objects(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VirtualObject>> {
         &self.objects
     }
     /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            transaction_id: self.transaction_id,
-            objects: self.objects,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                transaction_id: self.transaction_id
+                ,
+                objects: self.objects
+                ,
+            }
+        )
     }
 }
+

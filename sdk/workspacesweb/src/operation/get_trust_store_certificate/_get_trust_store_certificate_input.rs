@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTrustStoreCertificateInput {
+pub struct GetTrustStoreCertificateInput  {
     /// <p>The ARN of the trust store certificate.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thumbprint of the trust store certificate.</p>
     pub thumbprint: ::std::option::Option<::std::string::String>,
 }
-impl GetTrustStoreCertificateInput {
+impl  GetTrustStoreCertificateInput  {
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The thumbprint of the trust store certificate.</p>
-    pub fn thumbprint(&self) -> ::std::option::Option<&str> {
+    pub fn thumbprint(&self) -> ::std::option::Option<& str> {
         self.thumbprint.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTrustStoreCertificateInputBuilder {
     }
     /// <p>The ARN of the trust store certificate.</p>
     pub fn set_trust_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The ARN of the trust store certificate.</p>
     pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetTrustStoreCertificateInputBuilder {
     }
     /// <p>The thumbprint of the trust store certificate.</p>
     pub fn set_thumbprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thumbprint = input;
-        self
+        self.thumbprint = input; self
     }
     /// <p>The thumbprint of the trust store certificate.</p>
     pub fn get_thumbprint(&self) -> &::std::option::Option<::std::string::String> {
         &self.thumbprint
     }
     /// Consumes the builder and constructs a [`GetTrustStoreCertificateInput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput {
-            trust_store_arn: self.trust_store_arn,
-            thumbprint: self.thumbprint,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput {
+                trust_store_arn: self.trust_store_arn
+                ,
+                thumbprint: self.thumbprint
+                ,
+            }
+        )
     }
 }
+

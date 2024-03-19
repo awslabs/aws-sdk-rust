@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSecurityProfilesForTarget`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time.</p><br>
     ///   - [`recursive(bool)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::recursive) / [`set_recursive(Option<bool>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::set_recursive):<br>required: **false**<br><p>If true, return child groups too.</p><br>
     ///   - [`security_profile_target_arn(impl Into<String>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::security_profile_target_arn) / [`set_security_profile_target_arn(Option<String>)`](crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::set_security_profile_target_arn):<br>required: **true**<br><p>The ARN of the target (thing group) whose attached security profiles you want to get.</p><br>
-    /// - On success, responds with [`ListSecurityProfilesForTargetOutput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput) with field(s):
+                            /// - On success, responds with [`ListSecurityProfilesForTargetOutput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput) with field(s):
     ///   - [`security_profile_target_mappings(Option<Vec::<SecurityProfileTargetMapping>>)`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput::security_profile_target_mappings): <p>A list of security profiles and their associated targets.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityProfilesForTargetError>`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetError)
-    pub fn list_security_profiles_for_target(
-        &self,
-    ) -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder {
-        crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSecurityProfilesForTargetError>`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetError)
+    pub fn list_security_profiles_for_target(&self) -> crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder {
+                                crate::operation::list_security_profiles_for_target::builders::ListSecurityProfilesForTargetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

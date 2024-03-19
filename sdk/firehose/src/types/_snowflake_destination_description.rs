@@ -3,7 +3,7 @@
 /// <p>Optional Snowflake destination description</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SnowflakeDestinationDescription {
+pub struct SnowflakeDestinationDescription  {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub account_url: ::std::option::Option<::std::string::String>,
     /// <p>User login name for the Snowflake account.</p>
@@ -37,73 +37,73 @@ pub struct SnowflakeDestinationDescription {
     /// <p>Describes a destination in Amazon S3.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
 }
-impl SnowflakeDestinationDescription {
+impl  SnowflakeDestinationDescription  {
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
-    pub fn account_url(&self) -> ::std::option::Option<&str> {
+    pub fn account_url(&self) -> ::std::option::Option<& str> {
         self.account_url.as_deref()
     }
     /// <p>User login name for the Snowflake account.</p>
-    pub fn user(&self) -> ::std::option::Option<&str> {
+    pub fn user(&self) -> ::std::option::Option<& str> {
         self.user.as_deref()
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
-    pub fn database(&self) -> ::std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
-    pub fn table(&self) -> ::std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
-    pub fn snowflake_role_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeRoleConfiguration> {
+    pub fn snowflake_role_configuration(&self) -> ::std::option::Option<& crate::types::SnowflakeRoleConfiguration> {
         self.snowflake_role_configuration.as_ref()
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
-    pub fn data_loading_option(&self) -> ::std::option::Option<&crate::types::SnowflakeDataLoadingOption> {
+    pub fn data_loading_option(&self) -> ::std::option::Option<& crate::types::SnowflakeDataLoadingOption> {
         self.data_loading_option.as_ref()
     }
     /// <p>The name of the record metadata column</p>
-    pub fn meta_data_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn meta_data_column_name(&self) -> ::std::option::Option<& str> {
         self.meta_data_column_name.as_deref()
     }
     /// <p>The name of the record content column</p>
-    pub fn content_column_name(&self) -> ::std::option::Option<&str> {
+    pub fn content_column_name(&self) -> ::std::option::Option<& str> {
         self.content_column_name.as_deref()
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
-    pub fn snowflake_vpc_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeVpcConfiguration> {
+    pub fn snowflake_vpc_configuration(&self) -> ::std::option::Option<& crate::types::SnowflakeVpcConfiguration> {
         self.snowflake_vpc_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(&self) -> ::std::option::Option<& crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(&self) -> ::std::option::Option<& crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
-    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SnowflakeRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<& crate::types::SnowflakeRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Choose an S3 backup mode</p>
-    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::SnowflakeS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<& crate::types::SnowflakeS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(&self) -> ::std::option::Option<&crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(&self) -> ::std::option::Option<& crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
 }
-impl ::std::fmt::Debug for SnowflakeDestinationDescription {
+impl  ::std::fmt::Debug for SnowflakeDestinationDescription  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeDestinationDescription");
         formatter.field("account_url", &"*** Sensitive Data Redacted ***");
@@ -161,8 +161,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub fn set_account_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_url = input;
-        self
+        self.account_url = input; self
     }
     /// <p>URL for accessing your Snowflake account. This URL must include your <a href="https://docs.snowflake.com/en/user-guide/admin-account-identifier">account identifier</a>. Note that the protocol (https://) and port number are optional.</p>
     pub fn get_account_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +174,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>User login name for the Snowflake account.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>User login name for the Snowflake account.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +187,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>All data in Snowflake is maintained in databases.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +200,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>Each database consists of one or more schemas, which are logical groupings of database objects, such as tables and views</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -217,8 +213,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>All data in Snowflake is stored in database tables, logically structured as collections of columns and rows.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +226,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
     pub fn set_snowflake_role_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeRoleConfiguration>) -> Self {
-        self.snowflake_role_configuration = input;
-        self
+        self.snowflake_role_configuration = input; self
     }
     /// <p>Optionally configure a Snowflake role. Otherwise the default user role will be used.</p>
     pub fn get_snowflake_role_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeRoleConfiguration> {
@@ -245,8 +239,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
     pub fn set_data_loading_option(mut self, input: ::std::option::Option<crate::types::SnowflakeDataLoadingOption>) -> Self {
-        self.data_loading_option = input;
-        self
+        self.data_loading_option = input; self
     }
     /// <p>Choose to load JSON keys mapped to table column names or choose to split the JSON payload where content is mapped to a record content column and source metadata is mapped to a record metadata column.</p>
     pub fn get_data_loading_option(&self) -> &::std::option::Option<crate::types::SnowflakeDataLoadingOption> {
@@ -259,8 +252,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>The name of the record metadata column</p>
     pub fn set_meta_data_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.meta_data_column_name = input;
-        self
+        self.meta_data_column_name = input; self
     }
     /// <p>The name of the record metadata column</p>
     pub fn get_meta_data_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -273,8 +265,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>The name of the record content column</p>
     pub fn set_content_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_column_name = input;
-        self
+        self.content_column_name = input; self
     }
     /// <p>The name of the record content column</p>
     pub fn get_content_column_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +278,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn set_snowflake_vpc_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeVpcConfiguration>) -> Self {
-        self.snowflake_vpc_configuration = input;
-        self
+        self.snowflake_vpc_configuration = input; self
     }
     /// <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a></p>
     pub fn get_snowflake_vpc_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeVpcConfiguration> {
@@ -301,8 +291,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(mut self, input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input;
-        self
+        self.cloud_watch_logging_options = input; self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn get_cloud_watch_logging_options(&self) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
@@ -315,8 +304,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn set_processing_configuration(mut self, input: ::std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input;
-        self
+        self.processing_configuration = input; self
     }
     /// <p>Describes a data processing configuration.</p>
     pub fn get_processing_configuration(&self) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
@@ -329,8 +317,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -343,8 +330,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SnowflakeRetryOptions>) -> Self {
-        self.retry_options = input;
-        self
+        self.retry_options = input; self
     }
     /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SnowflakeRetryOptions> {
@@ -357,8 +343,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Choose an S3 backup mode</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SnowflakeS3BackupMode>) -> Self {
-        self.s3_backup_mode = input;
-        self
+        self.s3_backup_mode = input; self
     }
     /// <p>Choose an S3 backup mode</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::SnowflakeS3BackupMode> {
@@ -371,8 +356,7 @@ impl SnowflakeDestinationDescriptionBuilder {
     }
     /// <p>Describes a destination in Amazon S3.</p>
     pub fn set_s3_destination_description(mut self, input: ::std::option::Option<crate::types::S3DestinationDescription>) -> Self {
-        self.s3_destination_description = input;
-        self
+        self.s3_destination_description = input; self
     }
     /// <p>Describes a destination in Amazon S3.</p>
     pub fn get_s3_destination_description(&self) -> &::std::option::Option<crate::types::S3DestinationDescription> {
@@ -381,22 +365,38 @@ impl SnowflakeDestinationDescriptionBuilder {
     /// Consumes the builder and constructs a [`SnowflakeDestinationDescription`](crate::types::SnowflakeDestinationDescription).
     pub fn build(self) -> crate::types::SnowflakeDestinationDescription {
         crate::types::SnowflakeDestinationDescription {
-            account_url: self.account_url,
-            user: self.user,
-            database: self.database,
-            schema: self.schema,
-            table: self.table,
-            snowflake_role_configuration: self.snowflake_role_configuration,
-            data_loading_option: self.data_loading_option,
-            meta_data_column_name: self.meta_data_column_name,
-            content_column_name: self.content_column_name,
-            snowflake_vpc_configuration: self.snowflake_vpc_configuration,
-            cloud_watch_logging_options: self.cloud_watch_logging_options,
-            processing_configuration: self.processing_configuration,
-            role_arn: self.role_arn,
-            retry_options: self.retry_options,
-            s3_backup_mode: self.s3_backup_mode,
-            s3_destination_description: self.s3_destination_description,
+            account_url: self.account_url
+            ,
+            user: self.user
+            ,
+            database: self.database
+            ,
+            schema: self.schema
+            ,
+            table: self.table
+            ,
+            snowflake_role_configuration: self.snowflake_role_configuration
+            ,
+            data_loading_option: self.data_loading_option
+            ,
+            meta_data_column_name: self.meta_data_column_name
+            ,
+            content_column_name: self.content_column_name
+            ,
+            snowflake_vpc_configuration: self.snowflake_vpc_configuration
+            ,
+            cloud_watch_logging_options: self.cloud_watch_logging_options
+            ,
+            processing_configuration: self.processing_configuration
+            ,
+            role_arn: self.role_arn
+            ,
+            retry_options: self.retry_options
+            ,
+            s3_backup_mode: self.s3_backup_mode
+            ,
+            s3_destination_description: self.s3_destination_description
+            ,
         }
     }
 }
@@ -422,3 +422,4 @@ impl ::std::fmt::Debug for SnowflakeDestinationDescriptionBuilder {
         formatter.finish()
     }
 }
+

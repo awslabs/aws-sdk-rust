@@ -4,13 +4,13 @@
 /// <p>This data type is used as a member of the <code> <code>Statement</code> </code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Position {
+pub struct Position  {
     /// <p>The line containing the specified position in the document.</p>
     pub line: i32,
     /// <p>The column in the line containing the specified position in the document.</p>
     pub column: i32,
 }
-impl Position {
+impl  Position  {
     /// <p>The line containing the specified position in the document.</p>
     pub fn line(&self) -> i32 {
         self.line
@@ -42,8 +42,7 @@ impl PositionBuilder {
     }
     /// <p>The line containing the specified position in the document.</p>
     pub fn set_line(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.line = input;
-        self
+        self.line = input; self
     }
     /// <p>The line containing the specified position in the document.</p>
     pub fn get_line(&self) -> &::std::option::Option<i32> {
@@ -56,8 +55,7 @@ impl PositionBuilder {
     }
     /// <p>The column in the line containing the specified position in the document.</p>
     pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The column in the line containing the specified position in the document.</p>
     pub fn get_column(&self) -> &::std::option::Option<i32> {
@@ -66,8 +64,13 @@ impl PositionBuilder {
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
     pub fn build(self) -> crate::types::Position {
         crate::types::Position {
-            line: self.line.unwrap_or_default(),
-            column: self.column.unwrap_or_default(),
+            line: self.line
+                .unwrap_or_default()
+            ,
+            column: self.column
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttachTypedLinkOutput {
+pub struct AttachTypedLinkOutput  {
     /// <p>Returns a typed link specifier as output.</p>
     pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     _request_id: Option<String>,
 }
-impl AttachTypedLinkOutput {
+impl  AttachTypedLinkOutput  {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifier(&self) -> ::std::option::Option<&crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> ::std::option::Option<& crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for AttachTypedLinkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AttachTypedLinkOutput {
     /// Creates a new builder-style object to manufacture [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput).
     pub fn builder() -> crate::operation::attach_typed_link::builders::AttachTypedLinkOutputBuilder {
@@ -40,27 +40,28 @@ impl AttachTypedLinkOutputBuilder {
     }
     /// <p>Returns a typed link specifier as output.</p>
     pub fn set_typed_link_specifier(mut self, input: ::std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input;
-        self
+        self.typed_link_specifier = input; self
     }
     /// <p>Returns a typed link specifier as output.</p>
     pub fn get_typed_link_specifier(&self) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
         &self.typed_link_specifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AttachTypedLinkOutput`](crate::operation::attach_typed_link::AttachTypedLinkOutput).
     pub fn build(self) -> crate::operation::attach_typed_link::AttachTypedLinkOutput {
         crate::operation::attach_typed_link::AttachTypedLinkOutput {
-            typed_link_specifier: self.typed_link_specifier,
+            typed_link_specifier: self.typed_link_specifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>A named set of parameters that are applied to all of the nodes in a DAX cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterGroup {
+pub struct ParameterGroup  {
     /// <p>The name of the parameter group.</p>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter group.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl ParameterGroup {
+impl  ParameterGroup  {
     /// <p>The name of the parameter group.</p>
-    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ParameterGroupBuilder {
     }
     /// <p>The name of the parameter group.</p>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parameter_group_name = input;
-        self
+        self.parameter_group_name = input; self
     }
     /// <p>The name of the parameter group.</p>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ParameterGroupBuilder {
     }
     /// <p>A description of the parameter group.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the parameter group.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ParameterGroupBuilder {
     /// Consumes the builder and constructs a [`ParameterGroup`](crate::types::ParameterGroup).
     pub fn build(self) -> crate::types::ParameterGroup {
         crate::types::ParameterGroup {
-            parameter_group_name: self.parameter_group_name,
-            description: self.description,
+            parameter_group_name: self.parameter_group_name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

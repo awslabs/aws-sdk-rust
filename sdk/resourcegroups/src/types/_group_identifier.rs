@@ -3,19 +3,19 @@
 /// <p>The unique identifiers for a resource group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupIdentifier {
+pub struct GroupIdentifier  {
     /// <p>The name of the resource group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource group.</p>
     pub group_arn: ::std::option::Option<::std::string::String>,
 }
-impl GroupIdentifier {
+impl  GroupIdentifier  {
     /// <p>The name of the resource group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GroupIdentifierBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GroupIdentifierBuilder {
     }
     /// <p>The ARN of the resource group.</p>
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_arn = input;
-        self
+        self.group_arn = input; self
     }
     /// <p>The ARN of the resource group.</p>
     pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl GroupIdentifierBuilder {
     /// Consumes the builder and constructs a [`GroupIdentifier`](crate::types::GroupIdentifier).
     pub fn build(self) -> crate::types::GroupIdentifier {
         crate::types::GroupIdentifier {
-            group_name: self.group_name,
-            group_arn: self.group_arn,
+            group_name: self.group_name
+            ,
+            group_arn: self.group_arn
+            ,
         }
     }
 }
+

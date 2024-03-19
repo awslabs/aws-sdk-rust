@@ -3,7 +3,7 @@
 /// <p>Configuration fields for invokation logging.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoggingConfig {
+pub struct LoggingConfig  {
     /// <p>CloudWatch logging configuration.</p>
     pub cloud_watch_config: ::std::option::Option<crate::types::CloudWatchConfig>,
     /// <p>S3 configuration for storing log data.</p>
@@ -15,13 +15,13 @@ pub struct LoggingConfig {
     /// <p>Set to include embeddings data in the log delivery.</p>
     pub embedding_data_delivery_enabled: ::std::option::Option<bool>,
 }
-impl LoggingConfig {
+impl  LoggingConfig  {
     /// <p>CloudWatch logging configuration.</p>
-    pub fn cloud_watch_config(&self) -> ::std::option::Option<&crate::types::CloudWatchConfig> {
+    pub fn cloud_watch_config(&self) -> ::std::option::Option<& crate::types::CloudWatchConfig> {
         self.cloud_watch_config.as_ref()
     }
     /// <p>S3 configuration for storing log data.</p>
-    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<& crate::types::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>Set to include text data in the log delivery.</p>
@@ -62,8 +62,7 @@ impl LoggingConfigBuilder {
     }
     /// <p>CloudWatch logging configuration.</p>
     pub fn set_cloud_watch_config(mut self, input: ::std::option::Option<crate::types::CloudWatchConfig>) -> Self {
-        self.cloud_watch_config = input;
-        self
+        self.cloud_watch_config = input; self
     }
     /// <p>CloudWatch logging configuration.</p>
     pub fn get_cloud_watch_config(&self) -> &::std::option::Option<crate::types::CloudWatchConfig> {
@@ -76,8 +75,7 @@ impl LoggingConfigBuilder {
     }
     /// <p>S3 configuration for storing log data.</p>
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
-        self.s3_config = input;
-        self
+        self.s3_config = input; self
     }
     /// <p>S3 configuration for storing log data.</p>
     pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
@@ -90,8 +88,7 @@ impl LoggingConfigBuilder {
     }
     /// <p>Set to include text data in the log delivery.</p>
     pub fn set_text_data_delivery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.text_data_delivery_enabled = input;
-        self
+        self.text_data_delivery_enabled = input; self
     }
     /// <p>Set to include text data in the log delivery.</p>
     pub fn get_text_data_delivery_enabled(&self) -> &::std::option::Option<bool> {
@@ -104,8 +101,7 @@ impl LoggingConfigBuilder {
     }
     /// <p>Set to include image data in the log delivery.</p>
     pub fn set_image_data_delivery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.image_data_delivery_enabled = input;
-        self
+        self.image_data_delivery_enabled = input; self
     }
     /// <p>Set to include image data in the log delivery.</p>
     pub fn get_image_data_delivery_enabled(&self) -> &::std::option::Option<bool> {
@@ -118,8 +114,7 @@ impl LoggingConfigBuilder {
     }
     /// <p>Set to include embeddings data in the log delivery.</p>
     pub fn set_embedding_data_delivery_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.embedding_data_delivery_enabled = input;
-        self
+        self.embedding_data_delivery_enabled = input; self
     }
     /// <p>Set to include embeddings data in the log delivery.</p>
     pub fn get_embedding_data_delivery_enabled(&self) -> &::std::option::Option<bool> {
@@ -128,11 +123,17 @@ impl LoggingConfigBuilder {
     /// Consumes the builder and constructs a [`LoggingConfig`](crate::types::LoggingConfig).
     pub fn build(self) -> crate::types::LoggingConfig {
         crate::types::LoggingConfig {
-            cloud_watch_config: self.cloud_watch_config,
-            s3_config: self.s3_config,
-            text_data_delivery_enabled: self.text_data_delivery_enabled,
-            image_data_delivery_enabled: self.image_data_delivery_enabled,
-            embedding_data_delivery_enabled: self.embedding_data_delivery_enabled,
+            cloud_watch_config: self.cloud_watch_config
+            ,
+            s3_config: self.s3_config
+            ,
+            text_data_delivery_enabled: self.text_data_delivery_enabled
+            ,
+            image_data_delivery_enabled: self.image_data_delivery_enabled
+            ,
+            embedding_data_delivery_enabled: self.embedding_data_delivery_enabled
+            ,
         }
     }
 }
+

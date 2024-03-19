@@ -3,19 +3,19 @@
 /// <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Predecessor {
+pub struct Predecessor  {
     /// <p>The name of the job definition used by the predecessor job run.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job-run ID of the predecessor job run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl Predecessor {
+impl  Predecessor  {
     /// <p>The name of the job definition used by the predecessor job run.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The job-run ID of the predecessor job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PredecessorBuilder {
     }
     /// <p>The name of the job definition used by the predecessor job run.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The name of the job definition used by the predecessor job run.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl PredecessorBuilder {
     }
     /// <p>The job-run ID of the predecessor job run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The job-run ID of the predecessor job run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl PredecessorBuilder {
     /// Consumes the builder and constructs a [`Predecessor`](crate::types::Predecessor).
     pub fn build(self) -> crate::types::Predecessor {
         crate::types::Predecessor {
-            job_name: self.job_name,
-            run_id: self.run_id,
+            job_name: self.job_name
+            ,
+            run_id: self.run_id
+            ,
         }
     }
 }
+

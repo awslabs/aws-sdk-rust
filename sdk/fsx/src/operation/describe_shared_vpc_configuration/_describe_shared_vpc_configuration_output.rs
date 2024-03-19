@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSharedVpcConfigurationOutput {
+pub struct DescribeSharedVpcConfigurationOutput  {
     /// <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets.</p>
     pub enable_fsx_route_table_updates_from_participant_accounts: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeSharedVpcConfigurationOutput {
+impl  DescribeSharedVpcConfigurationOutput  {
     /// <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets.</p>
-    pub fn enable_fsx_route_table_updates_from_participant_accounts(&self) -> ::std::option::Option<&str> {
+    pub fn enable_fsx_route_table_updates_from_participant_accounts(&self) -> ::std::option::Option<& str> {
         self.enable_fsx_route_table_updates_from_participant_accounts.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSharedVpcConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeSharedVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedVpcConfigurationOutput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationOutput).
     pub fn builder() -> crate::operation::describe_shared_vpc_configuration::builders::DescribeSharedVpcConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeSharedVpcConfigurationOutputBuilder {
     }
     /// <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets.</p>
     pub fn set_enable_fsx_route_table_updates_from_participant_accounts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.enable_fsx_route_table_updates_from_participant_accounts = input;
-        self
+        self.enable_fsx_route_table_updates_from_participant_accounts = input; self
     }
     /// <p>Indicates whether participant accounts can create FSx for ONTAP Multi-AZ file systems in shared subnets.</p>
     pub fn get_enable_fsx_route_table_updates_from_participant_accounts(&self) -> &::std::option::Option<::std::string::String> {
         &self.enable_fsx_route_table_updates_from_participant_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeSharedVpcConfigurationOutput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationOutput {
         crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationOutput {
-            enable_fsx_route_table_updates_from_participant_accounts: self.enable_fsx_route_table_updates_from_participant_accounts,
+            enable_fsx_route_table_updates_from_participant_accounts: self.enable_fsx_route_table_updates_from_participant_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

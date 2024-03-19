@@ -3,19 +3,19 @@
 /// <p>An object that describes a security control parameter and the options for customizing it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ParameterDefinition {
+pub struct ParameterDefinition  {
     /// <p>Description of a control parameter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The options for customizing a control parameter. Customization options vary based on the data type of the parameter.</p>
     pub configuration_options: ::std::option::Option<crate::types::ConfigurationOptions>,
 }
-impl ParameterDefinition {
+impl  ParameterDefinition  {
     /// <p>Description of a control parameter.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The options for customizing a control parameter. Customization options vary based on the data type of the parameter.</p>
-    pub fn configuration_options(&self) -> ::std::option::Option<&crate::types::ConfigurationOptions> {
+    pub fn configuration_options(&self) -> ::std::option::Option<& crate::types::ConfigurationOptions> {
         self.configuration_options.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>Description of a control parameter.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description of a control parameter.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>The options for customizing a control parameter. Customization options vary based on the data type of the parameter.</p>
     pub fn set_configuration_options(mut self, input: ::std::option::Option<crate::types::ConfigurationOptions>) -> Self {
-        self.configuration_options = input;
-        self
+        self.configuration_options = input; self
     }
     /// <p>The options for customizing a control parameter. Customization options vary based on the data type of the parameter.</p>
     pub fn get_configuration_options(&self) -> &::std::option::Option<crate::types::ConfigurationOptions> {
@@ -67,8 +65,11 @@ impl ParameterDefinitionBuilder {
     /// Consumes the builder and constructs a [`ParameterDefinition`](crate::types::ParameterDefinition).
     pub fn build(self) -> crate::types::ParameterDefinition {
         crate::types::ParameterDefinition {
-            description: self.description,
-            configuration_options: self.configuration_options,
+            description: self.description
+            ,
+            configuration_options: self.configuration_options
+            ,
         }
     }
 }
+

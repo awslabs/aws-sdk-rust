@@ -3,7 +3,7 @@
 /// <p>The launch profile validation result.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationResult {
+pub struct ValidationResult  {
     /// <p>The type of the validation result.</p>
     pub r#type: crate::types::LaunchProfileValidationType,
     /// <p>The current state.</p>
@@ -13,23 +13,22 @@ pub struct ValidationResult {
     /// <p>The status message for the validation result.</p>
     pub status_message: ::std::string::String,
 }
-impl ValidationResult {
+impl  ValidationResult  {
     /// <p>The type of the validation result.</p>
-    pub fn r#type(&self) -> &crate::types::LaunchProfileValidationType {
+    pub fn r#type(&self) -> & crate::types::LaunchProfileValidationType {
         &self.r#type
     }
     /// <p>The current state.</p>
-    pub fn state(&self) -> &crate::types::LaunchProfileValidationState {
+    pub fn state(&self) -> & crate::types::LaunchProfileValidationState {
         &self.state
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
-    pub fn status_code(&self) -> &crate::types::LaunchProfileValidationStatusCode {
+    pub fn status_code(&self) -> & crate::types::LaunchProfileValidationStatusCode {
         &self.status_code
     }
     /// <p>The status message for the validation result.</p>
-    pub fn status_message(&self) -> &str {
-        use std::ops::Deref;
-        self.status_message.deref()
+    pub fn status_message(&self) -> & str {
+        use std::ops::Deref; self.status_message.deref()
     }
 }
 impl ValidationResult {
@@ -57,8 +56,7 @@ impl ValidationResultBuilder {
     }
     /// <p>The type of the validation result.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LaunchProfileValidationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the validation result.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchProfileValidationType> {
@@ -72,8 +70,7 @@ impl ValidationResultBuilder {
     }
     /// <p>The current state.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LaunchProfileValidationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LaunchProfileValidationState> {
@@ -87,8 +84,7 @@ impl ValidationResultBuilder {
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::LaunchProfileValidationStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::LaunchProfileValidationStatusCode> {
@@ -102,8 +98,7 @@ impl ValidationResultBuilder {
     }
     /// <p>The status message for the validation result.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status message for the validation result.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,31 +111,30 @@ impl ValidationResultBuilder {
     /// - [`status_code`](crate::types::builders::ValidationResultBuilder::status_code)
     /// - [`status_message`](crate::types::builders::ValidationResultBuilder::status_message)
     pub fn build(self) -> ::std::result::Result<crate::types::ValidationResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ValidationResult {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ValidationResult",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building ValidationResult",
-                )
-            })?,
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building ValidationResult",
-                )
-            })?,
-            status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_message",
-                    "status_message was not specified but it is required when building ValidationResult",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ValidationResult {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ValidationResult")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building ValidationResult")
+                    )?
+                ,
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building ValidationResult")
+                    )?
+                ,
+                status_message: self.status_message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_message", "status_message was not specified but it is required when building ValidationResult")
+                    )?
+                ,
+            }
+        )
     }
 }
+

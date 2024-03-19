@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteImagePipelineInput {
+pub struct DeleteImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteImagePipelineInput {
+impl  DeleteImagePipelineInput  {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
-    pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_pipeline_arn(&self) -> ::std::option::Option<& str> {
         self.image_pipeline_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteImagePipelineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_pipeline_arn = input;
-        self
+        self.image_pipeline_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_pipeline_arn
     }
     /// Consumes the builder and constructs a [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_image_pipeline::DeleteImagePipelineInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_image_pipeline::DeleteImagePipelineInput {
-            image_pipeline_arn: self.image_pipeline_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image_pipeline::DeleteImagePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_image_pipeline::DeleteImagePipelineInput {
+                image_pipeline_arn: self.image_pipeline_arn
+                ,
+            }
+        )
     }
 }
+

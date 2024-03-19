@@ -3,15 +3,14 @@
 /// <p>Specifies the attributes to add to your attribute-based access control (ABAC) configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceAccessControlAttributeConfiguration {
+pub struct InstanceAccessControlAttributeConfiguration  {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub access_control_attributes: ::std::vec::Vec<crate::types::AccessControlAttribute>,
+    pub access_control_attributes: ::std::vec::Vec::<crate::types::AccessControlAttribute>,
 }
-impl InstanceAccessControlAttributeConfiguration {
+impl  InstanceAccessControlAttributeConfiguration  {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn access_control_attributes(&self) -> &[crate::types::AccessControlAttribute] {
-        use std::ops::Deref;
-        self.access_control_attributes.deref()
+    pub fn access_control_attributes(&self) -> & [crate::types::AccessControlAttribute] {
+        use std::ops::Deref; self.access_control_attributes.deref()
     }
 }
 impl InstanceAccessControlAttributeConfiguration {
@@ -25,7 +24,7 @@ impl InstanceAccessControlAttributeConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceAccessControlAttributeConfigurationBuilder {
-    pub(crate) access_control_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>,
+    pub(crate) access_control_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControlAttribute>>,
 }
 impl InstanceAccessControlAttributeConfigurationBuilder {
     /// Appends an item to `access_control_attributes`.
@@ -35,32 +34,31 @@ impl InstanceAccessControlAttributeConfigurationBuilder {
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
     pub fn access_control_attributes(mut self, input: crate::types::AccessControlAttribute) -> Self {
         let mut v = self.access_control_attributes.unwrap_or_default();
-        v.push(input);
-        self.access_control_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.access_control_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn set_access_control_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>>) -> Self {
-        self.access_control_attributes = input;
-        self
+    pub fn set_access_control_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccessControlAttribute>>) -> Self {
+        self.access_control_attributes = input; self
     }
     /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
-    pub fn get_access_control_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>> {
+    pub fn get_access_control_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccessControlAttribute>> {
         &self.access_control_attributes
     }
     /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::types::InstanceAccessControlAttributeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_control_attributes`](crate::types::builders::InstanceAccessControlAttributeConfigurationBuilder::access_control_attributes)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::InstanceAccessControlAttributeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InstanceAccessControlAttributeConfiguration {
-            access_control_attributes: self.access_control_attributes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_control_attributes",
-                    "access_control_attributes was not specified but it is required when building InstanceAccessControlAttributeConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceAccessControlAttributeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::InstanceAccessControlAttributeConfiguration {
+                access_control_attributes: self.access_control_attributes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_control_attributes", "access_control_attributes was not specified but it is required when building InstanceAccessControlAttributeConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

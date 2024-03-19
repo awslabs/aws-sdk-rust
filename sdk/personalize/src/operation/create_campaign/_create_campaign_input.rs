@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCampaignInput {
+pub struct CreateCampaignInput  {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
@@ -12,15 +12,15 @@ pub struct CreateCampaignInput {
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateCampaignInput {
+impl  CreateCampaignInput  {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> ::std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
@@ -28,14 +28,15 @@ impl CreateCampaignInput {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> ::std::option::Option<&crate::types::CampaignConfig> {
+    pub fn campaign_config(&self) -> ::std::option::Option<& crate::types::CampaignConfig> {
         self.campaign_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateCampaignInput {
@@ -53,7 +54,7 @@ pub struct CreateCampaignInputBuilder {
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) min_provisioned_tps: ::std::option::Option<i32>,
     pub(crate) campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateCampaignInputBuilder {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
@@ -64,8 +65,7 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_version_arn = input;
-        self
+        self.solution_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_provisioned_tps = input;
-        self
+        self.min_provisioned_tps = input; self
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn get_min_provisioned_tps(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn set_campaign_config(mut self, input: ::std::option::Option<crate::types::CampaignConfig>) -> Self {
-        self.campaign_config = input;
-        self
+        self.campaign_config = input; self
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
@@ -121,29 +118,34 @@ impl CreateCampaignInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
-            name: self.name,
-            solution_version_arn: self.solution_version_arn,
-            min_provisioned_tps: self.min_provisioned_tps,
-            campaign_config: self.campaign_config,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_campaign::CreateCampaignInput {
+                name: self.name
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                min_provisioned_tps: self.min_provisioned_tps
+                ,
+                campaign_config: self.campaign_config
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

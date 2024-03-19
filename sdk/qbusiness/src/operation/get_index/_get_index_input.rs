@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetIndexInput {
+pub struct GetIndexInput  {
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Q index you want information on.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl GetIndexInput {
+impl  GetIndexInput  {
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The identifier of the Amazon Q index you want information on.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetIndexInputBuilder {
     }
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The identifier of the Amazon Q application connected to the index.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetIndexInputBuilder {
     }
     /// <p>The identifier of the Amazon Q index you want information on.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the Amazon Q index you want information on.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetIndexInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetIndexInput`](crate::operation::get_index::GetIndexInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_index::GetIndexInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_index::GetIndexInput {
-            application_id: self.application_id,
-            index_id: self.index_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_index::GetIndexInput {
+                application_id: self.application_id
+                ,
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

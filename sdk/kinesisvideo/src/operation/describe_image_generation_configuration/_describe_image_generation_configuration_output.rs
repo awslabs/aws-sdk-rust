@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeImageGenerationConfigurationOutput {
+pub struct DescribeImageGenerationConfigurationOutput  {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     pub image_generation_configuration: ::std::option::Option<crate::types::ImageGenerationConfiguration>,
     _request_id: Option<String>,
 }
-impl DescribeImageGenerationConfigurationOutput {
+impl  DescribeImageGenerationConfigurationOutput  {
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-    pub fn image_generation_configuration(&self) -> ::std::option::Option<&crate::types::ImageGenerationConfiguration> {
+    pub fn image_generation_configuration(&self) -> ::std::option::Option<& crate::types::ImageGenerationConfiguration> {
         self.image_generation_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeImageGenerationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeImageGenerationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationOutput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput).
     pub fn builder() -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeImageGenerationConfigurationOutputBuilder {
     }
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     pub fn set_image_generation_configuration(mut self, input: ::std::option::Option<crate::types::ImageGenerationConfiguration>) -> Self {
-        self.image_generation_configuration = input;
-        self
+        self.image_generation_configuration = input; self
     }
     /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
     pub fn get_image_generation_configuration(&self) -> &::std::option::Option<crate::types::ImageGenerationConfiguration> {
         &self.image_generation_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeImageGenerationConfigurationOutput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput).
     pub fn build(self) -> crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput {
         crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationOutput {
-            image_generation_configuration: self.image_generation_configuration,
+            image_generation_configuration: self.image_generation_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

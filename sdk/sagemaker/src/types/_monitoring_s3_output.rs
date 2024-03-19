@@ -3,7 +3,7 @@
 /// <p>Information about where and how you want to store the results of a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringS3Output {
+pub struct MonitoringS3Output  {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
@@ -11,17 +11,17 @@ pub struct MonitoringS3Output {
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     pub s3_upload_mode: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
 }
-impl MonitoringS3Output {
+impl  MonitoringS3Output  {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
-    pub fn local_path(&self) -> ::std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<& str> {
         self.local_path.as_deref()
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
-    pub fn s3_upload_mode(&self) -> ::std::option::Option<&crate::types::ProcessingS3UploadMode> {
+    pub fn s3_upload_mode(&self) -> ::std::option::Option<& crate::types::ProcessingS3UploadMode> {
         self.s3_upload_mode.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl MonitoringS3OutputBuilder {
     }
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl MonitoringS3OutputBuilder {
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_path = input;
-        self
+        self.local_path = input; self
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
     pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,7 @@ impl MonitoringS3OutputBuilder {
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     pub fn set_s3_upload_mode(mut self, input: ::std::option::Option<crate::types::ProcessingS3UploadMode>) -> Self {
-        self.s3_upload_mode = input;
-        self
+        self.s3_upload_mode = input; self
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     pub fn get_s3_upload_mode(&self) -> &::std::option::Option<crate::types::ProcessingS3UploadMode> {
@@ -88,9 +85,13 @@ impl MonitoringS3OutputBuilder {
     /// Consumes the builder and constructs a [`MonitoringS3Output`](crate::types::MonitoringS3Output).
     pub fn build(self) -> crate::types::MonitoringS3Output {
         crate::types::MonitoringS3Output {
-            s3_uri: self.s3_uri,
-            local_path: self.local_path,
-            s3_upload_mode: self.s3_upload_mode,
+            s3_uri: self.s3_uri
+            ,
+            local_path: self.local_path
+            ,
+            s3_upload_mode: self.s3_upload_mode
+            ,
         }
     }
 }
+

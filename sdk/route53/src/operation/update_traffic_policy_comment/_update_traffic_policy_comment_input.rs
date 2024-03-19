@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the traffic policy that you want to update the comment for.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTrafficPolicyCommentInput {
+pub struct UpdateTrafficPolicyCommentInput  {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
@@ -11,9 +11,9 @@ pub struct UpdateTrafficPolicyCommentInput {
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub comment: ::std::option::Option<::std::string::String>,
 }
-impl UpdateTrafficPolicyCommentInput {
+impl  UpdateTrafficPolicyCommentInput  {
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
@@ -21,7 +21,7 @@ impl UpdateTrafficPolicyCommentInput {
         self.version
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
-    pub fn comment(&self) -> ::std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn get_version(&self) -> &::std::option::Option<i32> {
@@ -79,24 +77,24 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
-            id: self.id,
-            version: self.version,
-            comment: self.comment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput {
+                id: self.id
+                ,
+                version: self.version
+                ,
+                comment: self.comment
+                ,
+            }
+        )
     }
 }
+

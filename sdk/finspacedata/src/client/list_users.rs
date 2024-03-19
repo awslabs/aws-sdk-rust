@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListUsers`](crate::operation::list_users::builders::ListUsersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_users::builders::ListUsersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates where a results page should begin.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_users::builders::ListUsersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_users::builders::ListUsersFluentBuilder::set_max_results):<br>required: **true**<br><p>The maximum number of results per page.</p><br>
-    /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
+                            /// - On success, responds with [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput) with field(s):
     ///   - [`users(Option<Vec::<User>>)`](crate::operation::list_users::ListUsersOutput::users): <p>A list of all the users.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_users::ListUsersOutput::next_token): <p>A token that indicates where a results page should begin.</p>
-    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
+                            /// - On failure, responds with [`SdkError<ListUsersError>`](crate::operation::list_users::ListUsersError)
     #[deprecated(note = "This method will be discontinued.")]
     pub fn list_users(&self) -> crate::operation::list_users::builders::ListUsersFluentBuilder {
-        crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_users::builders::ListUsersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

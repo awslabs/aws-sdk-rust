@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the monitor properties used in the <code>ListMonitors</code> operation. To get a complete set of properties, call the <code>DescribeMonitor</code> operation, and provide the listed <code>MonitorArn</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorSummary {
+pub struct MonitorSummary  {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub monitor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitor resource.</p>
@@ -39,17 +39,17 @@ pub struct MonitorSummary {
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl MonitorSummary {
+impl  MonitorSummary  {
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
-    pub fn monitor_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> ::std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The name of the monitor resource.</p>
-    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitor_name(&self) -> ::std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The status of the monitor. States include:</p>
@@ -65,11 +65,11 @@ impl MonitorSummary {
     /// <li>
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>When the monitor resource was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
@@ -83,7 +83,7 @@ impl MonitorSummary {
     /// <li>
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
-    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
     pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The name of the monitor resource.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor resource.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +176,7 @@ impl MonitorSummaryBuilder {
     /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
@@ -205,8 +201,7 @@ impl MonitorSummaryBuilder {
     }
     /// <p>When the monitor resource was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the monitor resource was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -239,8 +234,7 @@ impl MonitorSummaryBuilder {
     /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input;
-        self
+        self.last_modification_time = input; self
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -259,12 +253,19 @@ impl MonitorSummaryBuilder {
     /// Consumes the builder and constructs a [`MonitorSummary`](crate::types::MonitorSummary).
     pub fn build(self) -> crate::types::MonitorSummary {
         crate::types::MonitorSummary {
-            monitor_arn: self.monitor_arn,
-            monitor_name: self.monitor_name,
-            resource_arn: self.resource_arn,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modification_time: self.last_modification_time,
+            monitor_arn: self.monitor_arn
+            ,
+            monitor_name: self.monitor_name
+            ,
+            resource_arn: self.resource_arn
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modification_time: self.last_modification_time
+            ,
         }
     }
 }
+

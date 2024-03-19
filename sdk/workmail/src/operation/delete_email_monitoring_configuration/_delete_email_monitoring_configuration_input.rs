@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteEmailMonitoringConfigurationInput {
+pub struct DeleteEmailMonitoringConfigurationInput  {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteEmailMonitoringConfigurationInput {
+impl  DeleteEmailMonitoringConfigurationInput  {
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DeleteEmailMonitoringConfigurationInputBuilder {
     }
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organization_id
     }
     /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput {
-                organization_id: self.organization_id,
-            },
+                organization_id: self.organization_id
+                ,
+            }
         )
     }
 }
+

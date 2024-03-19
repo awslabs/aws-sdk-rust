@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateServerlessCacheSnapshotInput {
+pub struct CreateServerlessCacheSnapshotInput  {
     /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
@@ -10,26 +10,27 @@ pub struct CreateServerlessCacheSnapshotInput {
     /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateServerlessCacheSnapshotInput {
+impl  CreateServerlessCacheSnapshotInput  {
     /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
-    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
     /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateServerlessCacheSnapshotInput {
@@ -46,7 +47,7 @@ pub struct CreateServerlessCacheSnapshotInputBuilder {
     pub(crate) serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateServerlessCacheSnapshotInputBuilder {
     /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
@@ -57,8 +58,7 @@ impl CreateServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_snapshot_name = input;
-        self
+        self.serverless_cache_snapshot_name = input; self
     }
     /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Redis only. Must be between 1 and 255 characters.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Redis only.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +85,7 @@ impl CreateServerlessCacheSnapshotInputBuilder {
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis only. Default: NULL</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,31 +98,32 @@ impl CreateServerlessCacheSnapshotInputBuilder {
     /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Redis only.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServerlessCacheSnapshotInput`](crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotInput {
-            serverless_cache_snapshot_name: self.serverless_cache_snapshot_name,
-            serverless_cache_name: self.serverless_cache_name,
-            kms_key_id: self.kms_key_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotInput {
+                serverless_cache_snapshot_name: self.serverless_cache_snapshot_name
+                ,
+                serverless_cache_name: self.serverless_cache_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

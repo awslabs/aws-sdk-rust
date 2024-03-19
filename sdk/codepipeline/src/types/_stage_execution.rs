@@ -3,7 +3,7 @@
 /// <p>Represents information about the run of a stage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StageExecution {
+pub struct StageExecution  {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     pub pipeline_execution_id: ::std::string::String,
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p><note>
@@ -11,16 +11,15 @@ pub struct StageExecution {
     /// </note>
     pub status: crate::types::StageExecutionStatus,
 }
-impl StageExecution {
+impl  StageExecution  {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pipeline_execution_id.deref()
+    pub fn pipeline_execution_id(&self) -> & str {
+        use std::ops::Deref; self.pipeline_execution_id.deref()
     }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p><note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
-    pub fn status(&self) -> &crate::types::StageExecutionStatus {
+    pub fn status(&self) -> & crate::types::StageExecutionStatus {
         &self.status
     }
 }
@@ -47,8 +46,7 @@ impl StageExecutionBuilder {
     }
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl StageExecutionBuilder {
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StageExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p><note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
@@ -80,19 +77,20 @@ impl StageExecutionBuilder {
     /// - [`pipeline_execution_id`](crate::types::builders::StageExecutionBuilder::pipeline_execution_id)
     /// - [`status`](crate::types::builders::StageExecutionBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::StageExecution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StageExecution {
-            pipeline_execution_id: self.pipeline_execution_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pipeline_execution_id",
-                    "pipeline_execution_id was not specified but it is required when building StageExecution",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building StageExecution",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StageExecution {
+                pipeline_execution_id: self.pipeline_execution_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("pipeline_execution_id", "pipeline_execution_id was not specified but it is required when building StageExecution")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building StageExecution")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains a definition for an action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionDefinition {
+pub struct ActionDefinition  {
     /// <p>The ID of the action definition.</p>
     pub action_definition_id: ::std::string::String,
     /// <p>The name of the action definition.</p>
@@ -11,21 +11,18 @@ pub struct ActionDefinition {
     /// <p>The type of the action definition.</p>
     pub action_type: ::std::string::String,
 }
-impl ActionDefinition {
+impl  ActionDefinition  {
     /// <p>The ID of the action definition.</p>
-    pub fn action_definition_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_definition_id.deref()
+    pub fn action_definition_id(&self) -> & str {
+        use std::ops::Deref; self.action_definition_id.deref()
     }
     /// <p>The name of the action definition.</p>
-    pub fn action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.action_name.deref()
+    pub fn action_name(&self) -> & str {
+        use std::ops::Deref; self.action_name.deref()
     }
     /// <p>The type of the action definition.</p>
-    pub fn action_type(&self) -> &str {
-        use std::ops::Deref;
-        self.action_type.deref()
+    pub fn action_type(&self) -> & str {
+        use std::ops::Deref; self.action_type.deref()
     }
 }
 impl ActionDefinition {
@@ -52,8 +49,7 @@ impl ActionDefinitionBuilder {
     }
     /// <p>The ID of the action definition.</p>
     pub fn set_action_definition_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_definition_id = input;
-        self
+        self.action_definition_id = input; self
     }
     /// <p>The ID of the action definition.</p>
     pub fn get_action_definition_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl ActionDefinitionBuilder {
     }
     /// <p>The name of the action definition.</p>
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// <p>The name of the action definition.</p>
     pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ActionDefinitionBuilder {
     }
     /// <p>The type of the action definition.</p>
     pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>The type of the action definition.</p>
     pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl ActionDefinitionBuilder {
     /// - [`action_name`](crate::types::builders::ActionDefinitionBuilder::action_name)
     /// - [`action_type`](crate::types::builders::ActionDefinitionBuilder::action_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionDefinition {
-            action_definition_id: self.action_definition_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_definition_id",
-                    "action_definition_id was not specified but it is required when building ActionDefinition",
-                )
-            })?,
-            action_name: self.action_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_name",
-                    "action_name was not specified but it is required when building ActionDefinition",
-                )
-            })?,
-            action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_type",
-                    "action_type was not specified but it is required when building ActionDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionDefinition {
+                action_definition_id: self.action_definition_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_definition_id", "action_definition_id was not specified but it is required when building ActionDefinition")
+                    )?
+                ,
+                action_name: self.action_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_name", "action_name was not specified but it is required when building ActionDefinition")
+                    )?
+                ,
+                action_type: self.action_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_type", "action_type was not specified but it is required when building ActionDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

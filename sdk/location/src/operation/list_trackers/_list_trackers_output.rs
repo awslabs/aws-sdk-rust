@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListTrackersOutput {
+pub struct ListTrackersOutput  {
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub entries: ::std::vec::Vec<crate::types::ListTrackersResponseEntry>,
+    pub entries: ::std::vec::Vec::<crate::types::ListTrackersResponseEntry>,
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListTrackersOutput {
+impl  ListTrackersOutput  {
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub fn entries(&self) -> &[crate::types::ListTrackersResponseEntry] {
-        use std::ops::Deref;
-        self.entries.deref()
+    pub fn entries(&self) -> & [crate::types::ListTrackersResponseEntry] {
+        use std::ops::Deref; self.entries.deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTrackersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListTrackersOutput {
     /// Creates a new builder-style object to manufacture [`ListTrackersOutput`](crate::operation::list_trackers::ListTrackersOutput).
     pub fn builder() -> crate::operation::list_trackers::builders::ListTrackersOutputBuilder {
@@ -36,7 +35,7 @@ impl ListTrackersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListTrackersOutputBuilder {
-    pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::ListTrackersResponseEntry>>,
+    pub(crate) entries: ::std::option::Option<::std::vec::Vec::<crate::types::ListTrackersResponseEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListTrackersOutputBuilder {
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub fn entries(mut self, input: crate::types::ListTrackersResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListTrackersResponseEntry>>) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ListTrackersResponseEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListTrackersResponseEntry>> {
+    pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ListTrackersResponseEntry>> {
         &self.entries
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
@@ -68,37 +66,37 @@ impl ListTrackersOutputBuilder {
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListTrackersOutput`](crate::operation::list_trackers::ListTrackersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entries`](crate::operation::list_trackers::builders::ListTrackersOutputBuilder::entries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_trackers::ListTrackersOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_trackers::ListTrackersOutput {
-            entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entries",
-                    "entries was not specified but it is required when building ListTrackersOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trackers::ListTrackersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_trackers::ListTrackersOutput {
+                entries: self.entries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entries", "entries was not specified but it is required when building ListTrackersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

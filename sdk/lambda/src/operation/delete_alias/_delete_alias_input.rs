@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAliasInput {
+pub struct DeleteAliasInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct DeleteAliasInput {
     /// <p>The name of the alias.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteAliasInput {
+impl  DeleteAliasInput  {
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
@@ -30,11 +30,11 @@ impl DeleteAliasInput {
     /// <p><b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p></li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> ::std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl DeleteAliasInputBuilder {
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
@@ -106,8 +105,7 @@ impl DeleteAliasInputBuilder {
     }
     /// <p>The name of the alias.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the alias.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,9 +113,14 @@ impl DeleteAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_alias::DeleteAliasInput {
-            function_name: self.function_name,
-            name: self.name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_alias::DeleteAliasInput {
+                function_name: self.function_name
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

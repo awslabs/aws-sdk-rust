@@ -3,22 +3,22 @@
 /// <p>The output from the DeleteThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteThingShadowOutput {
+pub struct DeleteThingShadowOutput  {
     /// <p>The state information, in JSON format.</p>
     pub payload: ::aws_smithy_types::Blob,
     _request_id: Option<String>,
 }
-impl DeleteThingShadowOutput {
+impl  DeleteThingShadowOutput  {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> &::aws_smithy_types::Blob {
+    pub fn payload(&self) -> & ::aws_smithy_types::Blob {
         &self.payload
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteThingShadowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
     pub fn builder() -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder {
@@ -42,36 +42,35 @@ impl DeleteThingShadowOutputBuilder {
     }
     /// <p>The state information, in JSON format.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// <p>The state information, in JSON format.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`payload`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder::payload)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building DeleteThingShadowOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building DeleteThingShadowOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

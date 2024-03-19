@@ -3,29 +3,26 @@
 /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SplitFields {
+pub struct SplitFields  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub paths: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub paths: ::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>,
 }
-impl SplitFields {
+impl  SplitFields  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub fn paths(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.paths.deref()
+    pub fn paths(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        use std::ops::Deref; self.paths.deref()
     }
 }
 impl SplitFields {
@@ -40,8 +37,8 @@ impl SplitFields {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SplitFieldsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
 }
 impl SplitFieldsBuilder {
     /// <p>The name of the transform node.</p>
@@ -52,8 +49,7 @@ impl SplitFieldsBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,17 +62,16 @@ impl SplitFieldsBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// Appends an item to `paths`.
@@ -84,19 +79,18 @@ impl SplitFieldsBuilder {
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
     ///
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub fn paths(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn paths(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
-        v.push(input);
-        self.paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.paths = input;
-        self
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.paths = input; self
     }
     /// <p>A JSON path to a variable in the data structure.</p>
-    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.paths
     }
     /// Consumes the builder and constructs a [`SplitFields`](crate::types::SplitFields).
@@ -105,25 +99,25 @@ impl SplitFieldsBuilder {
     /// - [`inputs`](crate::types::builders::SplitFieldsBuilder::inputs)
     /// - [`paths`](crate::types::builders::SplitFieldsBuilder::paths)
     pub fn build(self) -> ::std::result::Result<crate::types::SplitFields, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SplitFields {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SplitFields",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building SplitFields",
-                )
-            })?,
-            paths: self.paths.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "paths",
-                    "paths was not specified but it is required when building SplitFields",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SplitFields {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SplitFields")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building SplitFields")
+                    )?
+                ,
+                paths: self.paths
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("paths", "paths was not specified but it is required when building SplitFields")
+                    )?
+                ,
+            }
+        )
     }
 }
+

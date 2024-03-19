@@ -5,54 +5,50 @@ pub use crate::operation::search_listings::_search_listings_input::SearchListing
 
 impl SearchListingsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::search_listings::SearchListingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_listings::SearchListingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.search_listings();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::search_listings::SearchListingsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::search_listings::SearchListingsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.search_listings();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `SearchListings`.
-///
+/// 
 /// <p>Searches listings in Amazon DataZone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchListingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_listings::builders::SearchListingsInputBuilder,
+                    inner: crate::operation::search_listings::builders::SearchListingsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::search_listings::SearchListingsOutput,
-        crate::operation::search_listings::SearchListingsError,
-    > for SearchListingsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::search_listings::SearchListingsOutput,
-            crate::operation::search_listings::SearchListingsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::search_listings::SearchListingsOutput,
+                    crate::operation::search_listings::SearchListingsError,
+                > for SearchListingsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::search_listings::SearchListingsOutput,
+                        crate::operation::search_listings::SearchListingsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl SearchListingsFluentBuilder {
     /// Creates a new `SearchListings`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,59 +57,50 @@ impl SearchListingsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::search_listings::SearchListingsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::search_listings::SearchListingsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::search_listings::SearchListings::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::search_listings::SearchListings::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::search_listings::SearchListingsOutput,
-        crate::operation::search_listings::SearchListingsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::search_listings::SearchListingsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_listings::SearchListingsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::search_listings::SearchListings::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::search_listings::SearchListings::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::search_listings::SearchListingsOutput, crate::operation::search_listings::SearchListingsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_listings::paginator::SearchListingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::search_listings::paginator::SearchListingsPaginator {
-        crate::operation::search_listings::paginator::SearchListingsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_listings::paginator::SearchListingsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::search_listings::paginator::SearchListingsPaginator {
+                                crate::operation::search_listings::paginator::SearchListingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the domain in which to search listings.</p>
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_identifier(input.into());
@@ -152,12 +139,12 @@ impl SearchListingsFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>>) -> Self {
+    pub fn set_search_in(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>>) -> Self {
         self.inner = self.inner.set_search_in(input);
         self
     }
     /// <p></p>
-    pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchInItem>> {
+    pub fn get_search_in(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchInItem>> {
         self.inner.get_search_in()
     }
     /// <p>The maximum number of results to return in a single call to <code>SearchListings</code>. When the number of results to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>SearchListings</code> to list the next set of results.</p>
@@ -226,12 +213,13 @@ impl SearchListingsFluentBuilder {
         self
     }
     /// <p>Specifies additional attributes for the search.</p>
-    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>>) -> Self {
+    pub fn set_additional_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>>) -> Self {
         self.inner = self.inner.set_additional_attributes(input);
         self
     }
     /// <p>Specifies additional attributes for the search.</p>
-    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchOutputAdditionalAttribute>> {
+    pub fn get_additional_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SearchOutputAdditionalAttribute>> {
         self.inner.get_additional_attributes()
     }
 }
+

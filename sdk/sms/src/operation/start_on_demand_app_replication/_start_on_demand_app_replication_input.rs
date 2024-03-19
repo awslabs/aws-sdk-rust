@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartOnDemandAppReplicationInput {
+pub struct StartOnDemandAppReplicationInput  {
     /// <p>The ID of the application.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the replication run.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl StartOnDemandAppReplicationInput {
+impl  StartOnDemandAppReplicationInput  {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The description of the replication run.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StartOnDemandAppReplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl StartOnDemandAppReplicationInputBuilder {
     }
     /// <p>The description of the replication run.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the replication run.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`StartOnDemandAppReplicationInput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput {
-            app_id: self.app_id,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationInput {
+                app_id: self.app_id
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

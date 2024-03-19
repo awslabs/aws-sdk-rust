@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SetDefaultAuthorizerInput {
+pub struct SetDefaultAuthorizerInput  {
     /// <p>The authorizer name.</p>
     pub authorizer_name: ::std::option::Option<::std::string::String>,
 }
-impl SetDefaultAuthorizerInput {
+impl  SetDefaultAuthorizerInput  {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> ::std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> ::std::option::Option<& str> {
         self.authorizer_name.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl SetDefaultAuthorizerInputBuilder {
     }
     /// <p>The authorizer name.</p>
     pub fn set_authorizer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorizer_name = input;
-        self
+        self.authorizer_name = input; self
     }
     /// <p>The authorizer name.</p>
     pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorizer_name
     }
     /// Consumes the builder and constructs a [`SetDefaultAuthorizerInput`](crate::operation::set_default_authorizer::SetDefaultAuthorizerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::set_default_authorizer::SetDefaultAuthorizerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::set_default_authorizer::SetDefaultAuthorizerInput {
-            authorizer_name: self.authorizer_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_default_authorizer::SetDefaultAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::set_default_authorizer::SetDefaultAuthorizerInput {
+                authorizer_name: self.authorizer_name
+                ,
+            }
+        )
     }
 }
+

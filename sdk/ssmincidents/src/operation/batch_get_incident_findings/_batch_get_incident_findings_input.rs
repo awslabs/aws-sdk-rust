@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetIncidentFindingsInput {
+pub struct BatchGetIncidentFindingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident for which you want to view finding details.</p>
     pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of IDs of findings for which you want to view details.</p>
-    pub finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetIncidentFindingsInput {
+impl  BatchGetIncidentFindingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the incident for which you want to view finding details.</p>
-    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> ::std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>A list of IDs of findings for which you want to view details.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_ids.is_none()`.
-    pub fn finding_ids(&self) -> &[::std::string::String] {
-        self.finding_ids.as_deref().unwrap_or_default()
+    pub fn finding_ids(&self) -> & [::std::string::String] {
+        self.finding_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetIncidentFindingsInput {
@@ -32,7 +33,7 @@ impl BatchGetIncidentFindingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetIncidentFindingsInputBuilder {
     pub(crate) incident_record_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) finding_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetIncidentFindingsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident for which you want to view finding details.</p>
@@ -43,8 +44,7 @@ impl BatchGetIncidentFindingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident for which you want to view finding details.</p>
     pub fn set_incident_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.incident_record_arn = input;
-        self
+        self.incident_record_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident for which you want to view finding details.</p>
     pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl BatchGetIncidentFindingsInputBuilder {
     /// <p>A list of IDs of findings for which you want to view details.</p>
     pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-        v.push(input.into());
-        self.finding_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.finding_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IDs of findings for which you want to view details.</p>
-    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.finding_ids = input;
-        self
+    pub fn set_finding_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.finding_ids = input; self
     }
     /// <p>A list of IDs of findings for which you want to view details.</p>
-    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_finding_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.finding_ids
     }
     /// Consumes the builder and constructs a [`BatchGetIncidentFindingsInput`](crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsInput {
-            incident_record_arn: self.incident_record_arn,
-            finding_ids: self.finding_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_incident_findings::BatchGetIncidentFindingsInput {
+                incident_record_arn: self.incident_record_arn
+                ,
+                finding_ids: self.finding_ids
+                ,
+            }
+        )
     }
 }
+

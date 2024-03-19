@@ -3,7 +3,8 @@
 /// <p>The properties that are applied when Amazon Lookout for Metrics is used as a destination.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LookoutMetricsDestinationProperties {}
+pub struct LookoutMetricsDestinationProperties  {
+}
 impl LookoutMetricsDestinationProperties {
     /// Creates a new builder-style object to manufacture [`LookoutMetricsDestinationProperties`](crate::types::LookoutMetricsDestinationProperties).
     pub fn builder() -> crate::types::builders::LookoutMetricsDestinationPropertiesBuilder {
@@ -14,10 +15,13 @@ impl LookoutMetricsDestinationProperties {
 /// A builder for [`LookoutMetricsDestinationProperties`](crate::types::LookoutMetricsDestinationProperties).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct LookoutMetricsDestinationPropertiesBuilder {}
+pub struct LookoutMetricsDestinationPropertiesBuilder {
+}
 impl LookoutMetricsDestinationPropertiesBuilder {
     /// Consumes the builder and constructs a [`LookoutMetricsDestinationProperties`](crate::types::LookoutMetricsDestinationProperties).
     pub fn build(self) -> crate::types::LookoutMetricsDestinationProperties {
-        crate::types::LookoutMetricsDestinationProperties {}
+        crate::types::LookoutMetricsDestinationProperties {
+        }
     }
 }
+

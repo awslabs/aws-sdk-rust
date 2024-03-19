@@ -33,3 +33,4 @@ pub fn de_signer(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resul
     }
     Ok(builder.build())
 }
+

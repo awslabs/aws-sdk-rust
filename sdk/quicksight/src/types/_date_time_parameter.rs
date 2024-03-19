@@ -3,22 +3,20 @@
 /// <p>A date-time parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DateTimeParameter {
+pub struct DateTimeParameter  {
     /// <p>A display name for the date-time parameter.</p>
     pub name: ::std::string::String,
     /// <p>The values for the date-time parameter.</p>
-    pub values: ::std::vec::Vec<::aws_smithy_types::DateTime>,
+    pub values: ::std::vec::Vec::<::aws_smithy_types::DateTime>,
 }
-impl DateTimeParameter {
+impl  DateTimeParameter  {
     /// <p>A display name for the date-time parameter.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn values(&self) -> &[::aws_smithy_types::DateTime] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::aws_smithy_types::DateTime] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl DateTimeParameter {
@@ -33,7 +31,7 @@ impl DateTimeParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DateTimeParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>,
 }
 impl DateTimeParameterBuilder {
     /// <p>A display name for the date-time parameter.</p>
@@ -44,8 +42,7 @@ impl DateTimeParameterBuilder {
     }
     /// <p>A display name for the date-time parameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the date-time parameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl DateTimeParameterBuilder {
     /// <p>The values for the date-time parameter.</p>
     pub fn values(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>>) -> Self {
+        self.values = input; self
     }
     /// <p>The values for the date-time parameter.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::aws_smithy_types::DateTime>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`DateTimeParameter`](crate::types::DateTimeParameter).
@@ -76,19 +72,20 @@ impl DateTimeParameterBuilder {
     /// - [`name`](crate::types::builders::DateTimeParameterBuilder::name)
     /// - [`values`](crate::types::builders::DateTimeParameterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DateTimeParameter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DateTimeParameter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building DateTimeParameter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DateTimeParameter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DateTimeParameter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building DateTimeParameter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

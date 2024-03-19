@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoggingConfigurationInput {
+pub struct DescribeLoggingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DescribeLoggingConfigurationInput {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeLoggingConfigurationInput {
+impl  DescribeLoggingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<& str> {
         self.firewall_name.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl DescribeLoggingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_arn = input;
-        self
+        self.firewall_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -63,8 +62,7 @@ impl DescribeLoggingConfigurationInputBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_name = input;
-        self
+        self.firewall_name = input; self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -72,15 +70,15 @@ impl DescribeLoggingConfigurationInputBuilder {
         &self.firewall_name
     }
     /// Consumes the builder and constructs a [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
-            firewall_arn: self.firewall_arn,
-            firewall_name: self.firewall_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
+                firewall_arn: self.firewall_arn
+                ,
+                firewall_name: self.firewall_name
+                ,
+            }
+        )
     }
 }
+

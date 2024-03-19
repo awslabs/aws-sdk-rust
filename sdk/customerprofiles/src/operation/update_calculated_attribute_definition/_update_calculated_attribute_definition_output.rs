@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateCalculatedAttributeDefinitionOutput {
+pub struct UpdateCalculatedAttributeDefinitionOutput  {
     /// <p>The unique name of the calculated attribute.</p>
     pub calculated_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the calculated attribute.</p>
@@ -20,48 +20,48 @@ pub struct UpdateCalculatedAttributeDefinitionOutput {
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
     pub attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateCalculatedAttributeDefinitionOutput {
+impl  UpdateCalculatedAttributeDefinitionOutput  {
     /// <p>The unique name of the calculated attribute.</p>
-    pub fn calculated_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn calculated_attribute_name(&self) -> ::std::option::Option<& str> {
         self.calculated_attribute_name.as_deref()
     }
     /// <p>The display name of the calculated attribute.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the calculated attribute.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the calculated attribute definition was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when the calculated attribute definition was most recently edited.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
-    pub fn statistic(&self) -> ::std::option::Option<&crate::types::Statistic> {
+    pub fn statistic(&self) -> ::std::option::Option<& crate::types::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
-    pub fn conditions(&self) -> ::std::option::Option<&crate::types::Conditions> {
+    pub fn conditions(&self) -> ::std::option::Option<& crate::types::Conditions> {
         self.conditions.as_ref()
     }
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
-    pub fn attribute_details(&self) -> ::std::option::Option<&crate::types::AttributeDetails> {
+    pub fn attribute_details(&self) -> ::std::option::Option<& crate::types::AttributeDetails> {
         self.attribute_details.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutput {
+impl  ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCalculatedAttributeDefinitionOutput");
         formatter.field("calculated_attribute_name", &self.calculated_attribute_name);
@@ -78,10 +78,10 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateCalculatedAttributeDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateCalculatedAttributeDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
     pub fn builder() -> crate::operation::update_calculated_attribute_definition::builders::UpdateCalculatedAttributeDefinitionOutputBuilder {
@@ -101,7 +101,7 @@ pub struct UpdateCalculatedAttributeDefinitionOutputBuilder {
     pub(crate) statistic: ::std::option::Option<crate::types::Statistic>,
     pub(crate) conditions: ::std::option::Option<crate::types::Conditions>,
     pub(crate) attribute_details: ::std::option::Option<crate::types::AttributeDetails>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateCalculatedAttributeDefinitionOutputBuilder {
@@ -112,8 +112,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn set_calculated_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calculated_attribute_name = input;
-        self
+        self.calculated_attribute_name = input; self
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The display name of the calculated attribute.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The description of the calculated attribute.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the calculated attribute.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The timestamp of when the calculated attribute definition was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when the calculated attribute definition was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +164,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The timestamp of when the calculated attribute definition was most recently edited.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The timestamp of when the calculated attribute definition was most recently edited.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +177,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
@@ -196,8 +190,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn set_conditions(mut self, input: ::std::option::Option<crate::types::Conditions>) -> Self {
-        self.conditions = input;
-        self
+        self.conditions = input; self
     }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
@@ -210,8 +203,7 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     }
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
     pub fn set_attribute_details(mut self, input: ::std::option::Option<crate::types::AttributeDetails>) -> Self {
-        self.attribute_details = input;
-        self
+        self.attribute_details = input; self
     }
     /// <p>The mathematical expression and a list of attribute items specified in that expression.</p>
     pub fn get_attribute_details(&self) -> &::std::option::Option<crate::types::AttributeDetails> {
@@ -224,40 +216,48 @@ impl UpdateCalculatedAttributeDefinitionOutputBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateCalculatedAttributeDefinitionOutput`](crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput).
     pub fn build(self) -> crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput {
         crate::operation::update_calculated_attribute_definition::UpdateCalculatedAttributeDefinitionOutput {
-            calculated_attribute_name: self.calculated_attribute_name,
-            display_name: self.display_name,
-            description: self.description,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            statistic: self.statistic,
-            conditions: self.conditions,
-            attribute_details: self.attribute_details,
-            tags: self.tags,
+            calculated_attribute_name: self.calculated_attribute_name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            statistic: self.statistic
+            ,
+            conditions: self.conditions
+            ,
+            attribute_details: self.attribute_details
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -278,3 +278,4 @@ impl ::std::fmt::Debug for UpdateCalculatedAttributeDefinitionOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopPipelineExecutionInput {
+pub struct StopPipelineExecutionInput  {
     /// <p>The name of the pipeline to stop.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
@@ -14,13 +14,13 @@ pub struct StopPipelineExecutionInput {
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl StopPipelineExecutionInput {
+impl  StopPipelineExecutionInput  {
     /// <p>The name of the pipeline to stop.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
-    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
@@ -30,7 +30,7 @@ impl StopPipelineExecutionInput {
         self.abandon
     }
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl StopPipelineExecutionInputBuilder {
     }
     /// <p>The name of the pipeline to stop.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline to stop.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl StopPipelineExecutionInputBuilder {
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub fn set_pipeline_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_execution_id = input;
-        self
+        self.pipeline_execution_id = input; self
     }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl StopPipelineExecutionInputBuilder {
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
     pub fn set_abandon(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.abandon = input;
-        self
+        self.abandon = input; self
     }
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p><note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
@@ -108,23 +105,26 @@ impl StopPipelineExecutionInputBuilder {
     }
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
-            pipeline_name: self.pipeline_name,
-            pipeline_execution_id: self.pipeline_execution_id,
-            abandon: self.abandon,
-            reason: self.reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
+                pipeline_name: self.pipeline_name
+                ,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                abandon: self.abandon
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

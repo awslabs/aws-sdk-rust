@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFieldLevelEncryptionConfigOutput {
+pub struct CreateFieldLevelEncryptionConfigOutput  {
     /// <p>Returned when you create a new field-level encryption configuration.</p>
     pub field_level_encryption: ::std::option::Option<crate::types::FieldLevelEncryption>,
     /// <p>The fully qualified URI of the new configuration resource just created.</p>
@@ -11,25 +11,25 @@ pub struct CreateFieldLevelEncryptionConfigOutput {
     pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateFieldLevelEncryptionConfigOutput {
+impl  CreateFieldLevelEncryptionConfigOutput  {
     /// <p>Returned when you create a new field-level encryption configuration.</p>
-    pub fn field_level_encryption(&self) -> ::std::option::Option<&crate::types::FieldLevelEncryption> {
+    pub fn field_level_encryption(&self) -> ::std::option::Option<& crate::types::FieldLevelEncryption> {
         self.field_level_encryption.as_ref()
     }
     /// <p>The fully qualified URI of the new configuration resource just created.</p>
-    pub fn location(&self) -> ::std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFieldLevelEncryptionConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFieldLevelEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateFieldLevelEncryptionConfigOutput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput).
     pub fn builder() -> crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigOutputBuilder {
@@ -54,8 +54,7 @@ impl CreateFieldLevelEncryptionConfigOutputBuilder {
     }
     /// <p>Returned when you create a new field-level encryption configuration.</p>
     pub fn set_field_level_encryption(mut self, input: ::std::option::Option<crate::types::FieldLevelEncryption>) -> Self {
-        self.field_level_encryption = input;
-        self
+        self.field_level_encryption = input; self
     }
     /// <p>Returned when you create a new field-level encryption configuration.</p>
     pub fn get_field_level_encryption(&self) -> &::std::option::Option<crate::types::FieldLevelEncryption> {
@@ -68,8 +67,7 @@ impl CreateFieldLevelEncryptionConfigOutputBuilder {
     }
     /// <p>The fully qualified URI of the new configuration resource just created.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The fully qualified URI of the new configuration resource just created.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl CreateFieldLevelEncryptionConfigOutputBuilder {
     }
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFieldLevelEncryptionConfigOutput`](crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput).
     pub fn build(self) -> crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput {
         crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput {
-            field_level_encryption: self.field_level_encryption,
-            location: self.location,
-            e_tag: self.e_tag,
+            field_level_encryption: self.field_level_encryption
+            ,
+            location: self.location
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

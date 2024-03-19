@@ -3,7 +3,7 @@
 /// <p>Inputs for the model bias job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelBiasJobInput {
+pub struct ModelBiasJobInput  {
     /// <p>Input object for the endpoint</p>
     pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
@@ -11,17 +11,17 @@ pub struct ModelBiasJobInput {
     /// <p>Location of ground truth labels to use in model bias job.</p>
     pub ground_truth_s3_input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
 }
-impl ModelBiasJobInput {
+impl  ModelBiasJobInput  {
     /// <p>Input object for the endpoint</p>
-    pub fn endpoint_input(&self) -> ::std::option::Option<&crate::types::EndpointInput> {
+    pub fn endpoint_input(&self) -> ::std::option::Option<& crate::types::EndpointInput> {
         self.endpoint_input.as_ref()
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn batch_transform_input(&self) -> ::std::option::Option<&crate::types::BatchTransformInput> {
+    pub fn batch_transform_input(&self) -> ::std::option::Option<& crate::types::BatchTransformInput> {
         self.batch_transform_input.as_ref()
     }
     /// <p>Location of ground truth labels to use in model bias job.</p>
-    pub fn ground_truth_s3_input(&self) -> ::std::option::Option<&crate::types::MonitoringGroundTruthS3Input> {
+    pub fn ground_truth_s3_input(&self) -> ::std::option::Option<& crate::types::MonitoringGroundTruthS3Input> {
         self.ground_truth_s3_input.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl ModelBiasJobInputBuilder {
     }
     /// <p>Input object for the endpoint</p>
     pub fn set_endpoint_input(mut self, input: ::std::option::Option<crate::types::EndpointInput>) -> Self {
-        self.endpoint_input = input;
-        self
+        self.endpoint_input = input; self
     }
     /// <p>Input object for the endpoint</p>
     pub fn get_endpoint_input(&self) -> &::std::option::Option<crate::types::EndpointInput> {
@@ -62,8 +61,7 @@ impl ModelBiasJobInputBuilder {
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn set_batch_transform_input(mut self, input: ::std::option::Option<crate::types::BatchTransformInput>) -> Self {
-        self.batch_transform_input = input;
-        self
+        self.batch_transform_input = input; self
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn get_batch_transform_input(&self) -> &::std::option::Option<crate::types::BatchTransformInput> {
@@ -77,8 +75,7 @@ impl ModelBiasJobInputBuilder {
     }
     /// <p>Location of ground truth labels to use in model bias job.</p>
     pub fn set_ground_truth_s3_input(mut self, input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>) -> Self {
-        self.ground_truth_s3_input = input;
-        self
+        self.ground_truth_s3_input = input; self
     }
     /// <p>Location of ground truth labels to use in model bias job.</p>
     pub fn get_ground_truth_s3_input(&self) -> &::std::option::Option<crate::types::MonitoringGroundTruthS3Input> {
@@ -87,9 +84,13 @@ impl ModelBiasJobInputBuilder {
     /// Consumes the builder and constructs a [`ModelBiasJobInput`](crate::types::ModelBiasJobInput).
     pub fn build(self) -> crate::types::ModelBiasJobInput {
         crate::types::ModelBiasJobInput {
-            endpoint_input: self.endpoint_input,
-            batch_transform_input: self.batch_transform_input,
-            ground_truth_s3_input: self.ground_truth_s3_input,
+            endpoint_input: self.endpoint_input
+            ,
+            batch_transform_input: self.batch_transform_input
+            ,
+            ground_truth_s3_input: self.ground_truth_s3_input
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteOpenCypherQueryOutput {
+pub struct ExecuteOpenCypherQueryOutput  {
     /// <p>The openCypherquery results.</p>
     pub results: ::aws_smithy_types::Document,
     _request_id: Option<String>,
 }
-impl ExecuteOpenCypherQueryOutput {
+impl  ExecuteOpenCypherQueryOutput  {
     /// <p>The openCypherquery results.</p>
-    pub fn results(&self) -> &::aws_smithy_types::Document {
+    pub fn results(&self) -> & ::aws_smithy_types::Document {
         &self.results
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteOpenCypherQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteOpenCypherQueryOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteOpenCypherQueryOutput`](crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput).
     pub fn builder() -> crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder {
@@ -41,39 +41,35 @@ impl ExecuteOpenCypherQueryOutputBuilder {
     }
     /// <p>The openCypherquery results.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.results = input;
-        self
+        self.results = input; self
     }
     /// <p>The openCypherquery results.</p>
     pub fn get_results(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteOpenCypherQueryOutput`](crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`results`](crate::operation::execute_open_cypher_query::builders::ExecuteOpenCypherQueryOutputBuilder::results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput {
-            results: self.results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "results",
-                    "results was not specified but it is required when building ExecuteOpenCypherQueryOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryOutput {
+                results: self.results
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("results", "results was not specified but it is required when building ExecuteOpenCypherQueryOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

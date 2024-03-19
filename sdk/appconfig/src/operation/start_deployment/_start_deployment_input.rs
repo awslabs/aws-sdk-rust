@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartDeploymentInput {
+pub struct StartDeploymentInput  {
     /// <p>The application ID.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID.</p>
@@ -16,47 +16,47 @@ pub struct StartDeploymentInput {
     /// <p>A description of the deployment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
-    pub dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl StartDeploymentInput {
+impl  StartDeploymentInput  {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The deployment strategy ID.</p>
-    pub fn deployment_strategy_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_strategy_id(&self) -> ::std::option::Option<& str> {
         self.deployment_strategy_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> ::std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
-    pub fn configuration_version(&self) -> ::std::option::Option<&str> {
+    pub fn configuration_version(&self) -> ::std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>A description of the deployment.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
-    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<& str> {
         self.kms_key_identifier.as_deref()
     }
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
-    pub fn dynamic_extension_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn dynamic_extension_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.dynamic_extension_parameters.as_ref()
     }
 }
@@ -77,9 +77,9 @@ pub struct StartDeploymentInputBuilder {
     pub(crate) configuration_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_version: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
-    pub(crate) dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -90,8 +90,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The application ID.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The environment ID.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The deployment strategy ID.</p>
     pub fn set_deployment_strategy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_strategy_id = input;
-        self
+        self.deployment_strategy_id = input; self
     }
     /// <p>The deployment strategy ID.</p>
     pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The configuration profile ID.</p>
     pub fn set_configuration_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_profile_id = input;
-        self
+        self.configuration_profile_id = input; self
     }
     /// <p>The configuration profile ID.</p>
     pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +146,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
     pub fn set_configuration_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configuration_version = input;
-        self
+        self.configuration_version = input; self
     }
     /// <p>The configuration version to deploy. If deploying an AppConfig hosted configuration version, you can specify either the version number or version label. For all other configurations, you must specify the version number.</p>
     pub fn get_configuration_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +159,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>A description of the deployment.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the deployment.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,17 +172,16 @@ impl StartDeploymentInputBuilder {
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
@@ -198,8 +191,7 @@ impl StartDeploymentInputBuilder {
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
     pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_identifier = input;
-        self
+        self.kms_key_identifier = input; self
     }
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,44 +202,44 @@ impl StartDeploymentInputBuilder {
     /// To override the contents of this collection use [`set_dynamic_extension_parameters`](Self::set_dynamic_extension_parameters).
     ///
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
-    pub fn dynamic_extension_parameters(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn dynamic_extension_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.dynamic_extension_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.dynamic_extension_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.dynamic_extension_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
-    pub fn set_dynamic_extension_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.dynamic_extension_parameters = input;
-        self
+    pub fn set_dynamic_extension_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.dynamic_extension_parameters = input; self
     }
     /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
-    pub fn get_dynamic_extension_parameters(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_dynamic_extension_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.dynamic_extension_parameters
     }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_deployment::StartDeploymentInput {
-            application_id: self.application_id,
-            environment_id: self.environment_id,
-            deployment_strategy_id: self.deployment_strategy_id,
-            configuration_profile_id: self.configuration_profile_id,
-            configuration_version: self.configuration_version,
-            description: self.description,
-            tags: self.tags,
-            kms_key_identifier: self.kms_key_identifier,
-            dynamic_extension_parameters: self.dynamic_extension_parameters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_deployment::StartDeploymentInput {
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_strategy_id: self.deployment_strategy_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                configuration_version: self.configuration_version
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+                kms_key_identifier: self.kms_key_identifier
+                ,
+                dynamic_extension_parameters: self.dynamic_extension_parameters
+                ,
+            }
+        )
     }
 }
+

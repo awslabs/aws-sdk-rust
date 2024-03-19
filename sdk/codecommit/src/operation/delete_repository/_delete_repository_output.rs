@@ -3,22 +3,22 @@
 /// <p>Represents the output of a delete repository operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRepositoryOutput {
+pub struct DeleteRepositoryOutput  {
     /// <p>The ID of the repository that was deleted.</p>
     pub repository_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteRepositoryOutput {
+impl  DeleteRepositoryOutput  {
     /// <p>The ID of the repository that was deleted.</p>
-    pub fn repository_id(&self) -> ::std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<& str> {
         self.repository_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
     pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteRepositoryOutputBuilder {
     }
     /// <p>The ID of the repository that was deleted.</p>
     pub fn set_repository_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_id = input;
-        self
+        self.repository_id = input; self
     }
     /// <p>The ID of the repository that was deleted.</p>
     pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
     pub fn build(self) -> crate::operation::delete_repository::DeleteRepositoryOutput {
         crate::operation::delete_repository::DeleteRepositoryOutput {
-            repository_id: self.repository_id,
+            repository_id: self.repository_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

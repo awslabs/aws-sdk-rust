@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListClassificationJobs`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filter_criteria(ListJobsFilterCriteria)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::filter_criteria) / [`set_filter_criteria(Option<ListJobsFilterCriteria>)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::set_filter_criteria):<br>required: **false**<br><p>The criteria to use to filter the results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`sort_criteria(ListJobsSortCriteria)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<ListJobsSortCriteria>)`](crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The criteria to use to sort the results.</p><br>
-    /// - On success, responds with [`ListClassificationJobsOutput`](crate::operation::list_classification_jobs::ListClassificationJobsOutput) with field(s):
+                            /// - On success, responds with [`ListClassificationJobsOutput`](crate::operation::list_classification_jobs::ListClassificationJobsOutput) with field(s):
     ///   - [`items(Option<Vec::<JobSummary>>)`](crate::operation::list_classification_jobs::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_classification_jobs::ListClassificationJobsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListClassificationJobsError>`](crate::operation::list_classification_jobs::ListClassificationJobsError)
+                            /// - On failure, responds with [`SdkError<ListClassificationJobsError>`](crate::operation::list_classification_jobs::ListClassificationJobsError)
     pub fn list_classification_jobs(&self) -> crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder {
-        crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_classification_jobs::builders::ListClassificationJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

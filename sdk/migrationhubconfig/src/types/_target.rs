@@ -3,19 +3,19 @@
 /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Target {
+pub struct Target  {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
     pub r#type: crate::types::TargetType,
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl Target {
+impl  Target  {
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
-    pub fn r#type(&self) -> &crate::types::TargetType {
+    pub fn r#type(&self) -> & crate::types::TargetType {
         &self.r#type
     }
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl TargetBuilder {
     }
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The target type is always an <code>ACCOUNT</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetType> {
@@ -56,8 +55,7 @@ impl TargetBuilder {
     }
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl TargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::TargetBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Target {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building Target",
-                )
-            })?,
-            id: self.id,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Target {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building Target")
+                    )?
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

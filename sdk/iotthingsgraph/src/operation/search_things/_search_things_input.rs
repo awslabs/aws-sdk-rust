@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchThingsInput {
+pub struct SearchThingsInput  {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
@@ -14,15 +14,15 @@ pub struct SearchThingsInput {
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: ::std::option::Option<i64>,
 }
-impl SearchThingsInput {
+impl  SearchThingsInput  {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -63,8 +63,7 @@ impl SearchThingsInputBuilder {
     /// <p>The IDs should be in the following format.</p>
     /// <p><code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code></p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
@@ -79,8 +78,7 @@ impl SearchThingsInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +91,7 @@ impl SearchThingsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -107,22 +104,26 @@ impl SearchThingsInputBuilder {
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.namespace_version = input;
-        self
+        self.namespace_version = input; self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`SearchThingsInput`](crate::operation::search_things::SearchThingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_things::SearchThingsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::search_things::SearchThingsInput {
-            entity_id: self.entity_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            namespace_version: self.namespace_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_things::SearchThingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_things::SearchThingsInput {
+                entity_id: self.entity_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                namespace_version: self.namespace_version
+                ,
+            }
+        )
     }
 }
+

@@ -3,32 +3,35 @@
 /// <p>Specifies the hyperparameters and their default ranges. Hyperparameters can be categorical, continuous, or integer-valued.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultHyperParameterRanges {
+pub struct DefaultHyperParameterRanges  {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    pub integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultIntegerHyperParameterRange>>,
+    pub integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultIntegerHyperParameterRange>>,
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    pub continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultContinuousHyperParameterRange>>,
+    pub continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultContinuousHyperParameterRange>>,
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    pub categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>>,
+    pub categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultCategoricalHyperParameterRange>>,
 }
-impl DefaultHyperParameterRanges {
+impl  DefaultHyperParameterRanges  {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integer_hyper_parameter_ranges.is_none()`.
-    pub fn integer_hyper_parameter_ranges(&self) -> &[crate::types::DefaultIntegerHyperParameterRange] {
-        self.integer_hyper_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn integer_hyper_parameter_ranges(&self) -> & [crate::types::DefaultIntegerHyperParameterRange] {
+        self.integer_hyper_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.continuous_hyper_parameter_ranges.is_none()`.
-    pub fn continuous_hyper_parameter_ranges(&self) -> &[crate::types::DefaultContinuousHyperParameterRange] {
-        self.continuous_hyper_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn continuous_hyper_parameter_ranges(&self) -> & [crate::types::DefaultContinuousHyperParameterRange] {
+        self.continuous_hyper_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.categorical_hyper_parameter_ranges.is_none()`.
-    pub fn categorical_hyper_parameter_ranges(&self) -> &[crate::types::DefaultCategoricalHyperParameterRange] {
-        self.categorical_hyper_parameter_ranges.as_deref().unwrap_or_default()
+    pub fn categorical_hyper_parameter_ranges(&self) -> & [crate::types::DefaultCategoricalHyperParameterRange] {
+        self.categorical_hyper_parameter_ranges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DefaultHyperParameterRanges {
@@ -42,9 +45,9 @@ impl DefaultHyperParameterRanges {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DefaultHyperParameterRangesBuilder {
-    pub(crate) integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultIntegerHyperParameterRange>>,
-    pub(crate) continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultContinuousHyperParameterRange>>,
-    pub(crate) categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>>,
+    pub(crate) integer_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultIntegerHyperParameterRange>>,
+    pub(crate) continuous_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultContinuousHyperParameterRange>>,
+    pub(crate) categorical_hyper_parameter_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultCategoricalHyperParameterRange>>,
 }
 impl DefaultHyperParameterRangesBuilder {
     /// Appends an item to `integer_hyper_parameter_ranges`.
@@ -54,20 +57,16 @@ impl DefaultHyperParameterRangesBuilder {
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
     pub fn integer_hyper_parameter_ranges(mut self, input: crate::types::DefaultIntegerHyperParameterRange) -> Self {
         let mut v = self.integer_hyper_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.integer_hyper_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.integer_hyper_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    pub fn set_integer_hyper_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultIntegerHyperParameterRange>>,
-    ) -> Self {
-        self.integer_hyper_parameter_ranges = input;
-        self
+    pub fn set_integer_hyper_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultIntegerHyperParameterRange>>) -> Self {
+        self.integer_hyper_parameter_ranges = input; self
     }
     /// <p>The integer-valued hyperparameters and their default ranges.</p>
-    pub fn get_integer_hyper_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultIntegerHyperParameterRange>> {
+    pub fn get_integer_hyper_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DefaultIntegerHyperParameterRange>> {
         &self.integer_hyper_parameter_ranges
     }
     /// Appends an item to `continuous_hyper_parameter_ranges`.
@@ -77,22 +76,16 @@ impl DefaultHyperParameterRangesBuilder {
     /// <p>The continuous hyperparameters and their default ranges.</p>
     pub fn continuous_hyper_parameter_ranges(mut self, input: crate::types::DefaultContinuousHyperParameterRange) -> Self {
         let mut v = self.continuous_hyper_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.continuous_hyper_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.continuous_hyper_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    pub fn set_continuous_hyper_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultContinuousHyperParameterRange>>,
-    ) -> Self {
-        self.continuous_hyper_parameter_ranges = input;
-        self
+    pub fn set_continuous_hyper_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultContinuousHyperParameterRange>>) -> Self {
+        self.continuous_hyper_parameter_ranges = input; self
     }
     /// <p>The continuous hyperparameters and their default ranges.</p>
-    pub fn get_continuous_hyper_parameter_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultContinuousHyperParameterRange>> {
+    pub fn get_continuous_hyper_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DefaultContinuousHyperParameterRange>> {
         &self.continuous_hyper_parameter_ranges
     }
     /// Appends an item to `categorical_hyper_parameter_ranges`.
@@ -102,30 +95,28 @@ impl DefaultHyperParameterRangesBuilder {
     /// <p>The categorical hyperparameters and their default ranges.</p>
     pub fn categorical_hyper_parameter_ranges(mut self, input: crate::types::DefaultCategoricalHyperParameterRange) -> Self {
         let mut v = self.categorical_hyper_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.categorical_hyper_parameter_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.categorical_hyper_parameter_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    pub fn set_categorical_hyper_parameter_ranges(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>>,
-    ) -> Self {
-        self.categorical_hyper_parameter_ranges = input;
-        self
+    pub fn set_categorical_hyper_parameter_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DefaultCategoricalHyperParameterRange>>) -> Self {
+        self.categorical_hyper_parameter_ranges = input; self
     }
     /// <p>The categorical hyperparameters and their default ranges.</p>
-    pub fn get_categorical_hyper_parameter_ranges(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>> {
+    pub fn get_categorical_hyper_parameter_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DefaultCategoricalHyperParameterRange>> {
         &self.categorical_hyper_parameter_ranges
     }
     /// Consumes the builder and constructs a [`DefaultHyperParameterRanges`](crate::types::DefaultHyperParameterRanges).
     pub fn build(self) -> crate::types::DefaultHyperParameterRanges {
         crate::types::DefaultHyperParameterRanges {
-            integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges,
-            continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges,
-            categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges,
+            integer_hyper_parameter_ranges: self.integer_hyper_parameter_ranges
+            ,
+            continuous_hyper_parameter_ranges: self.continuous_hyper_parameter_ranges
+            ,
+            categorical_hyper_parameter_ranges: self.categorical_hyper_parameter_ranges
+            ,
         }
     }
 }
+

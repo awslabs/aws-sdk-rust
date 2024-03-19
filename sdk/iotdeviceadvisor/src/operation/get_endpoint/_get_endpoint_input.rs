@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEndpointInput {
+pub struct GetEndpointInput  {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
@@ -12,21 +12,21 @@ pub struct GetEndpointInput {
     /// <p>The authentication method used during the device connection.</p>
     pub authentication_method: ::std::option::Option<crate::types::AuthenticationMethod>,
 }
-impl GetEndpointInput {
+impl  GetEndpointInput  {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
-    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
-    pub fn device_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_role_arn(&self) -> ::std::option::Option<& str> {
         self.device_role_arn.as_deref()
     }
     /// <p>The authentication method used during the device connection.</p>
-    pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::AuthenticationMethod> {
+    pub fn authentication_method(&self) -> ::std::option::Option<& crate::types::AuthenticationMethod> {
         self.authentication_method.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
     pub fn set_device_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_role_arn = input;
-        self
+        self.device_role_arn = input; self
     }
     /// <p>The device role ARN of the device. This is an optional parameter.</p>
     pub fn get_device_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,8 +93,7 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The authentication method used during the device connection.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::AuthenticationMethod>) -> Self {
-        self.authentication_method = input;
-        self
+        self.authentication_method = input; self
     }
     /// <p>The authentication method used during the device connection.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::AuthenticationMethod> {
@@ -105,11 +101,18 @@ impl GetEndpointInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_endpoint::GetEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_endpoint::GetEndpointInput {
-            thing_arn: self.thing_arn,
-            certificate_arn: self.certificate_arn,
-            device_role_arn: self.device_role_arn,
-            authentication_method: self.authentication_method,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_endpoint::GetEndpointInput {
+                thing_arn: self.thing_arn
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                device_role_arn: self.device_role_arn
+                ,
+                authentication_method: self.authentication_method
+                ,
+            }
+        )
     }
 }
+

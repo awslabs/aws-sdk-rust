@@ -39,7 +39,9 @@ pub fn parse_error_metadata(body: &[u8]) -> Result<ErrorMetadataBuilder, XmlDeco
 }
 
 #[allow(unused)]
-pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
+pub fn error_scope<'a, 'b>(
+    doc: &'a mut Document<'b>,
+) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
     let root = doc
         .next_start_element()
         .ok_or_else(|| XmlDecodeError::custom("no root found searching for an Error"))?;
@@ -53,7 +55,9 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
         }
         // otherwise, ignore it
     }
-    Err(XmlDecodeError::custom("no error found inside of ErrorResponse"))
+    Err(XmlDecodeError::custom(
+        "no error found inside of ErrorResponse",
+    ))
 }
 
 #[cfg(test)]
@@ -103,6 +107,10 @@ mod test {
             keys.push(tag.start_el().local().to_owned());
             // read this the full contents of this element
         }
-        assert_eq!(keys, vec!["Type", "Code", "Message", "AnotherSetting", "Ignore",])
+        assert_eq!(
+            keys,
+            vec!["Type", "Code", "Message", "AnotherSetting", "Ignore",]
+        )
     }
 }
+

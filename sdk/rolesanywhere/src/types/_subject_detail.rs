@@ -3,7 +3,7 @@
 /// <p>The state of the subject after a read or write operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubjectDetail {
+pub struct SubjectDetail  {
     /// <p>The ARN of the resource.</p>
     pub subject_arn: ::std::option::Option<::std::string::String>,
     /// <p>The id of the resource</p>
@@ -19,17 +19,17 @@ pub struct SubjectDetail {
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub credentials: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>,
+    pub credentials: ::std::option::Option<::std::vec::Vec::<crate::types::CredentialSummary>>,
     /// <p>The specified instance properties associated with the request.</p>
-    pub instance_properties: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
+    pub instance_properties: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProperty>>,
 }
-impl SubjectDetail {
+impl  SubjectDetail  {
     /// <p>The ARN of the resource.</p>
-    pub fn subject_arn(&self) -> ::std::option::Option<&str> {
+    pub fn subject_arn(&self) -> ::std::option::Option<& str> {
         self.subject_arn.as_deref()
     }
     /// <p>The id of the resource</p>
-    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<& str> {
         self.subject_id.as_deref()
     }
     /// <p>The enabled status of the subject.</p>
@@ -37,32 +37,34 @@ impl SubjectDetail {
         self.enabled
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
-    pub fn x509_subject(&self) -> ::std::option::Option<&str> {
+    pub fn x509_subject(&self) -> ::std::option::Option<& str> {
         self.x509_subject.as_deref()
     }
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
-    pub fn last_seen_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_seen_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credentials.is_none()`.
-    pub fn credentials(&self) -> &[crate::types::CredentialSummary] {
-        self.credentials.as_deref().unwrap_or_default()
+    pub fn credentials(&self) -> & [crate::types::CredentialSummary] {
+        self.credentials.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The specified instance properties associated with the request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_properties.is_none()`.
-    pub fn instance_properties(&self) -> &[crate::types::InstanceProperty] {
-        self.instance_properties.as_deref().unwrap_or_default()
+    pub fn instance_properties(&self) -> & [crate::types::InstanceProperty] {
+        self.instance_properties.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubjectDetail {
@@ -83,8 +85,8 @@ pub struct SubjectDetailBuilder {
     pub(crate) last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) credentials: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>,
-    pub(crate) instance_properties: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>,
+    pub(crate) credentials: ::std::option::Option<::std::vec::Vec::<crate::types::CredentialSummary>>,
+    pub(crate) instance_properties: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProperty>>,
 }
 impl SubjectDetailBuilder {
     /// <p>The ARN of the resource.</p>
@@ -94,8 +96,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_subject_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_arn = input;
-        self
+        self.subject_arn = input; self
     }
     /// <p>The ARN of the resource.</p>
     pub fn get_subject_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +109,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The id of the resource</p>
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subject_id = input;
-        self
+        self.subject_id = input; self
     }
     /// <p>The id of the resource</p>
     pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,8 +122,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The enabled status of the subject.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The enabled status of the subject.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -136,8 +135,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     pub fn set_x509_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.x509_subject = input;
-        self
+        self.x509_subject = input; self
     }
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     pub fn get_x509_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -150,8 +148,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub fn set_last_seen_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_seen_at = input;
-        self
+        self.last_seen_at = input; self
     }
     /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub fn get_last_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -164,8 +161,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The ISO-8601 timestamp when the subject was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The ISO-8601 timestamp when the subject was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -178,8 +174,7 @@ impl SubjectDetailBuilder {
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -192,17 +187,16 @@ impl SubjectDetailBuilder {
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
     pub fn credentials(mut self, input: crate::types::CredentialSummary) -> Self {
         let mut v = self.credentials.unwrap_or_default();
-        v.push(input);
-        self.credentials = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.credentials = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>>) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CredentialSummary>>) -> Self {
+        self.credentials = input; self
     }
     /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
-    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialSummary>> {
+    pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CredentialSummary>> {
         &self.credentials
     }
     /// Appends an item to `instance_properties`.
@@ -212,31 +206,40 @@ impl SubjectDetailBuilder {
     /// <p>The specified instance properties associated with the request.</p>
     pub fn instance_properties(mut self, input: crate::types::InstanceProperty) -> Self {
         let mut v = self.instance_properties.unwrap_or_default();
-        v.push(input);
-        self.instance_properties = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.instance_properties = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn set_instance_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>>) -> Self {
-        self.instance_properties = input;
-        self
+    pub fn set_instance_properties(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstanceProperty>>) -> Self {
+        self.instance_properties = input; self
     }
     /// <p>The specified instance properties associated with the request.</p>
-    pub fn get_instance_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceProperty>> {
+    pub fn get_instance_properties(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstanceProperty>> {
         &self.instance_properties
     }
     /// Consumes the builder and constructs a [`SubjectDetail`](crate::types::SubjectDetail).
     pub fn build(self) -> crate::types::SubjectDetail {
         crate::types::SubjectDetail {
-            subject_arn: self.subject_arn,
-            subject_id: self.subject_id,
-            enabled: self.enabled,
-            x509_subject: self.x509_subject,
-            last_seen_at: self.last_seen_at,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            credentials: self.credentials,
-            instance_properties: self.instance_properties,
+            subject_arn: self.subject_arn
+            ,
+            subject_id: self.subject_id
+            ,
+            enabled: self.enabled
+            ,
+            x509_subject: self.x509_subject
+            ,
+            last_seen_at: self.last_seen_at
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            credentials: self.credentials
+            ,
+            instance_properties: self.instance_properties
+            ,
         }
     }
 }
+

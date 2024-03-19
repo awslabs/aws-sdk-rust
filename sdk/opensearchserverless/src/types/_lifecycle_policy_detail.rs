@@ -3,7 +3,7 @@
 /// <p>Details about an OpenSearch Serverless lifecycle policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LifecyclePolicyDetail {
+pub struct LifecyclePolicyDetail  {
     /// <p>The type of lifecycle policy.</p>
     pub r#type: ::std::option::Option<crate::types::LifecyclePolicyType>,
     /// <p>The name of the lifecycle policy.</p>
@@ -19,25 +19,25 @@ pub struct LifecyclePolicyDetail {
     /// <p>The timestamp of when the lifecycle policy was last modified.</p>
     pub last_modified_date: ::std::option::Option<i64>,
 }
-impl LifecyclePolicyDetail {
+impl  LifecyclePolicyDetail  {
     /// <p>The type of lifecycle policy.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::LifecyclePolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the lifecycle policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the lifecycle policy.</p>
-    pub fn policy_version(&self) -> ::std::option::Option<&str> {
+    pub fn policy_version(&self) -> ::std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the lifecycle policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document without any whitespaces.</p>
-    pub fn policy(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn policy(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.policy.as_ref()
     }
     /// <p>The date the lifecycle policy was created.</p>
@@ -76,8 +76,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of lifecycle policy.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyType> {
@@ -90,8 +89,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the lifecycle policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The version of the lifecycle policy.</p>
     pub fn set_policy_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_version = input;
-        self
+        self.policy_version = input; self
     }
     /// <p>The version of the lifecycle policy.</p>
     pub fn get_policy_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the lifecycle policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The JSON policy document without any whitespaces.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The JSON policy document without any whitespaces.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -146,8 +141,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The date the lifecycle policy was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the lifecycle policy was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<i64> {
@@ -160,8 +154,7 @@ impl LifecyclePolicyDetailBuilder {
     }
     /// <p>The timestamp of when the lifecycle policy was last modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The timestamp of when the lifecycle policy was last modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<i64> {
@@ -170,13 +163,21 @@ impl LifecyclePolicyDetailBuilder {
     /// Consumes the builder and constructs a [`LifecyclePolicyDetail`](crate::types::LifecyclePolicyDetail).
     pub fn build(self) -> crate::types::LifecyclePolicyDetail {
         crate::types::LifecyclePolicyDetail {
-            r#type: self.r#type,
-            name: self.name,
-            policy_version: self.policy_version,
-            description: self.description,
-            policy: self.policy,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            policy_version: self.policy_version
+            ,
+            description: self.description
+            ,
+            policy: self.policy
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

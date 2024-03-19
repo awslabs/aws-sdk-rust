@@ -3,7 +3,7 @@
 /// <p>Describes a configuration for a custom domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DomainNameConfig {
+pub struct DomainNameConfig  {
     /// <p>The domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the <code>DomainName</code> configuration.</p>
@@ -15,25 +15,25 @@ pub struct DomainNameConfig {
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
-impl DomainNameConfig {
+impl  DomainNameConfig  {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A description of the <code>DomainName</code> configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The domain name that AppSync provides.</p>
-    pub fn appsync_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn appsync_domain_name(&self) -> ::std::option::Option<& str> {
         self.appsync_domain_name.as_deref()
     }
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl DomainNameConfigBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The domain name.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl DomainNameConfigBuilder {
     }
     /// <p>A description of the <code>DomainName</code> configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the <code>DomainName</code> configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl DomainNameConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
     pub fn set_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl DomainNameConfigBuilder {
     }
     /// <p>The domain name that AppSync provides.</p>
     pub fn set_appsync_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.appsync_domain_name = input;
-        self
+        self.appsync_domain_name = input; self
     }
     /// <p>The domain name that AppSync provides.</p>
     pub fn get_appsync_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl DomainNameConfigBuilder {
     }
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl DomainNameConfigBuilder {
     /// Consumes the builder and constructs a [`DomainNameConfig`](crate::types::DomainNameConfig).
     pub fn build(self) -> crate::types::DomainNameConfig {
         crate::types::DomainNameConfig {
-            domain_name: self.domain_name,
-            description: self.description,
-            certificate_arn: self.certificate_arn,
-            appsync_domain_name: self.appsync_domain_name,
-            hosted_zone_id: self.hosted_zone_id,
+            domain_name: self.domain_name
+            ,
+            description: self.description
+            ,
+            certificate_arn: self.certificate_arn
+            ,
+            appsync_domain_name: self.appsync_domain_name
+            ,
+            hosted_zone_id: self.hosted_zone_id
+            ,
         }
     }
 }
+

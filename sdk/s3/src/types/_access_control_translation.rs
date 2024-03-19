@@ -3,13 +3,13 @@
 /// <p>A container for information about access control for replicas.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessControlTranslation {
+pub struct AccessControlTranslation  {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub owner: crate::types::OwnerOverride,
 }
-impl AccessControlTranslation {
+impl  AccessControlTranslation  {
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
-    pub fn owner(&self) -> &crate::types::OwnerOverride {
+    pub fn owner(&self) -> & crate::types::OwnerOverride {
         &self.owner
     }
 }
@@ -35,8 +35,7 @@ impl AccessControlTranslationBuilder {
     }
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::OwnerOverride>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::OwnerOverride> {
@@ -46,13 +45,15 @@ impl AccessControlTranslationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`owner`](crate::types::builders::AccessControlTranslationBuilder::owner)
     pub fn build(self) -> ::std::result::Result<crate::types::AccessControlTranslation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AccessControlTranslation {
-            owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner",
-                    "owner was not specified but it is required when building AccessControlTranslation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AccessControlTranslation {
+                owner: self.owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner", "owner was not specified but it is required when building AccessControlTranslation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

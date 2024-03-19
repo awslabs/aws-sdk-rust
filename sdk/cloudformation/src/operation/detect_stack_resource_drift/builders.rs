@@ -5,56 +5,52 @@ pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_dr
 
 impl DetectStackResourceDriftInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.detect_stack_resource_drift();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.detect_stack_resource_drift();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DetectStackResourceDrift`.
-///
+/// 
 /// <p>Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. This information includes actual and expected property values for resources in which CloudFormation detects drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information about stack and resource drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>
 /// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all resources in a given stack that support drift detection.</p>
 /// <p>Resources that don't currently support drift detection can't be checked. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectStackResourceDriftFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder,
+                    inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-    > for DetectStackResourceDriftFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
+                    crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
+                > for DetectStackResourceDriftFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
+                        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DetectStackResourceDriftFluentBuilder {
     /// Creates a new `DetectStackResourceDrift`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl DetectStackResourceDriftFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::detect_stack_resource_drift::DetectStackResourceDrift::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDrift::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
-        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::detect_stack_resource_drift::DetectStackResourceDrift::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::detect_stack_resource_drift::DetectStackResourceDrift::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput, crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the stack to which the resource belongs.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -139,3 +126,4 @@ impl DetectStackResourceDriftFluentBuilder {
         self.inner.get_logical_resource_id()
     }
 }
+

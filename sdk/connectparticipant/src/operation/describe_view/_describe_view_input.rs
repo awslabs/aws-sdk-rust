@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeViewInput {
+pub struct DescribeViewInput  {
     /// <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
     pub view_token: ::std::option::Option<::std::string::String>,
     /// <p>The connection token.</p>
     pub connection_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeViewInput {
+impl  DescribeViewInput  {
     /// <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
-    pub fn view_token(&self) -> ::std::option::Option<&str> {
+    pub fn view_token(&self) -> ::std::option::Option<& str> {
         self.view_token.as_deref()
     }
     /// <p>The connection token.</p>
-    pub fn connection_token(&self) -> ::std::option::Option<&str> {
+    pub fn connection_token(&self) -> ::std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeViewInputBuilder {
     }
     /// <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
     pub fn set_view_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_token = input;
-        self
+        self.view_token = input; self
     }
     /// <p>An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.</p>
     pub fn get_view_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DescribeViewInputBuilder {
     }
     /// <p>The connection token.</p>
     pub fn set_connection_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// <p>The connection token.</p>
     pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`DescribeViewInput`](crate::operation::describe_view::DescribeViewInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_view::DescribeViewInput {
-            view_token: self.view_token,
-            connection_token: self.connection_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_view::DescribeViewInput {
+                view_token: self.view_token
+                ,
+                connection_token: self.connection_token
+                ,
+            }
+        )
     }
 }
+

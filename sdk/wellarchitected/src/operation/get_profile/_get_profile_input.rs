@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetProfileInput {
+pub struct GetProfileInput  {
     /// <p>The profile ARN.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile version.</p>
     pub profile_version: ::std::option::Option<::std::string::String>,
 }
-impl GetProfileInput {
+impl  GetProfileInput  {
     /// <p>The profile ARN.</p>
-    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile version.</p>
-    pub fn profile_version(&self) -> ::std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<& str> {
         self.profile_version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetProfileInputBuilder {
     }
     /// <p>The profile ARN.</p>
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// <p>The profile ARN.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetProfileInputBuilder {
     }
     /// <p>The profile version.</p>
     pub fn set_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_version = input;
-        self
+        self.profile_version = input; self
     }
     /// <p>The profile version.</p>
     pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl GetProfileInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput {
-            profile_arn: self.profile_arn,
-            profile_version: self.profile_version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_profile::GetProfileInput {
+                profile_arn: self.profile_arn
+                ,
+                profile_version: self.profile_version
+                ,
+            }
+        )
     }
 }
+

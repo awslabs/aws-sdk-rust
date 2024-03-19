@@ -3,19 +3,19 @@
 /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QnAIntentConfiguration {
+pub struct QnAIntentConfiguration  {
     /// <p>Contains details about the configuration of the data source used for the <code>AMAZON.QnAIntent</code>.</p>
     pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub bedrock_model_configuration: ::std::option::Option<crate::types::BedrockModelSpecification>,
 }
-impl QnAIntentConfiguration {
+impl  QnAIntentConfiguration  {
     /// <p>Contains details about the configuration of the data source used for the <code>AMAZON.QnAIntent</code>.</p>
-    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+    pub fn data_source_configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
-    pub fn bedrock_model_configuration(&self) -> ::std::option::Option<&crate::types::BedrockModelSpecification> {
+    pub fn bedrock_model_configuration(&self) -> ::std::option::Option<& crate::types::BedrockModelSpecification> {
         self.bedrock_model_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl QnAIntentConfigurationBuilder {
     }
     /// <p>Contains details about the configuration of the data source used for the <code>AMAZON.QnAIntent</code>.</p>
     pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
-        self.data_source_configuration = input;
-        self
+        self.data_source_configuration = input; self
     }
     /// <p>Contains details about the configuration of the data source used for the <code>AMAZON.QnAIntent</code>.</p>
     pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
@@ -55,8 +54,7 @@ impl QnAIntentConfigurationBuilder {
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub fn set_bedrock_model_configuration(mut self, input: ::std::option::Option<crate::types::BedrockModelSpecification>) -> Self {
-        self.bedrock_model_configuration = input;
-        self
+        self.bedrock_model_configuration = input; self
     }
     /// <p>Contains information about the Amazon Bedrock model used to interpret the prompt used in descriptive bot building.</p>
     pub fn get_bedrock_model_configuration(&self) -> &::std::option::Option<crate::types::BedrockModelSpecification> {
@@ -65,8 +63,11 @@ impl QnAIntentConfigurationBuilder {
     /// Consumes the builder and constructs a [`QnAIntentConfiguration`](crate::types::QnAIntentConfiguration).
     pub fn build(self) -> crate::types::QnAIntentConfiguration {
         crate::types::QnAIntentConfiguration {
-            data_source_configuration: self.data_source_configuration,
-            bedrock_model_configuration: self.bedrock_model_configuration,
+            data_source_configuration: self.data_source_configuration
+            ,
+            bedrock_model_configuration: self.bedrock_model_configuration
+            ,
         }
     }
 }
+

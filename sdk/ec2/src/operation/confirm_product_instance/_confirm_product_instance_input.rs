@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConfirmProductInstanceInput {
+pub struct ConfirmProductInstanceInput  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The product code. This must be a product code that you own.</p>
@@ -10,13 +10,13 @@ pub struct ConfirmProductInstanceInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl ConfirmProductInstanceInput {
+impl  ConfirmProductInstanceInput  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The product code. This must be a product code that you own.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -48,8 +48,7 @@ impl ConfirmProductInstanceInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl ConfirmProductInstanceInputBuilder {
     }
     /// <p>The product code. This must be a product code that you own.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>The product code. This must be a product code that you own.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,24 +75,24 @@ impl ConfirmProductInstanceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::confirm_product_instance::ConfirmProductInstanceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
-            instance_id: self.instance_id,
-            product_code: self.product_code,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::confirm_product_instance::ConfirmProductInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
+                instance_id: self.instance_id
+                ,
+                product_code: self.product_code
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

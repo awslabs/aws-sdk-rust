@@ -4,22 +4,22 @@
 /// <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDataSourceFromRdsOutput {
+pub struct CreateDataSourceFromRdsOutput  {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateDataSourceFromRdsOutput {
+impl  CreateDataSourceFromRdsOutput  {
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateDataSourceFromRdsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateDataSourceFromRdsOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsOutput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput).
     pub fn builder() -> crate::operation::create_data_source_from_rds::builders::CreateDataSourceFromRdsOutputBuilder {
@@ -42,27 +42,28 @@ impl CreateDataSourceFromRdsOutputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub fn set_data_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateDataSourceFromRdsOutput`](crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput).
     pub fn build(self) -> crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput {
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput {
-            data_source_id: self.data_source_id,
+            data_source_id: self.data_source_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

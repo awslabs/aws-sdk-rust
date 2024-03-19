@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCrawlers`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum size of a list to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_next_token):<br>required: **false**<br><p>A continuation token, if this is a continuation request.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::set_tags):<br>required: **false**<br><p>Specifies to return only these tagged resources.</p><br>
-    /// - On success, responds with [`ListCrawlersOutput`](crate::operation::list_crawlers::ListCrawlersOutput) with field(s):
+                            /// - On success, responds with [`ListCrawlersOutput`](crate::operation::list_crawlers::ListCrawlersOutput) with field(s):
     ///   - [`crawler_names(Option<Vec::<String>>)`](crate::operation::list_crawlers::ListCrawlersOutput::crawler_names): <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_crawlers::ListCrawlersOutput::next_token): <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    /// - On failure, responds with [`SdkError<ListCrawlersError>`](crate::operation::list_crawlers::ListCrawlersError)
+                            /// - On failure, responds with [`SdkError<ListCrawlersError>`](crate::operation::list_crawlers::ListCrawlersError)
     pub fn list_crawlers(&self) -> crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder {
-        crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_crawlers::builders::ListCrawlersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

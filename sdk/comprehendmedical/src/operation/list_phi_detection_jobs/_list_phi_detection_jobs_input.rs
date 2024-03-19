@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPhiDetectionJobsInput {
+pub struct ListPhiDetectionJobsInput  {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
@@ -10,13 +10,13 @@ pub struct ListPhiDetectionJobsInput {
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListPhiDetectionJobsInput {
+impl  ListPhiDetectionJobsInput  {
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::ComprehendMedicalAsyncJobFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -47,8 +47,7 @@ impl ListPhiDetectionJobsInputBuilder {
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ComprehendMedicalAsyncJobFilter> {
@@ -61,8 +60,7 @@ impl ListPhiDetectionJobsInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListPhiDetectionJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPhiDetectionJobsInput`](crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput {
-            filter: self.filter,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_phi_detection_jobs::ListPhiDetectionJobsInput {
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

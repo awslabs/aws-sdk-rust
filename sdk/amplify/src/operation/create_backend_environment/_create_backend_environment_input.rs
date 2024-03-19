@@ -3,7 +3,7 @@
 /// <p>The request structure for the backend environment create request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBackendEnvironmentInput {
+pub struct CreateBackendEnvironmentInput  {
     /// <p>The unique ID for an Amplify app.</p>
     pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the backend environment.</p>
@@ -13,21 +13,21 @@ pub struct CreateBackendEnvironmentInput {
     /// <p>The name of deployment artifacts.</p>
     pub deployment_artifacts: ::std::option::Option<::std::string::String>,
 }
-impl CreateBackendEnvironmentInput {
+impl  CreateBackendEnvironmentInput  {
     /// <p>The unique ID for an Amplify app.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name for the backend environment.</p>
-    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The AWS CloudFormation stack name of a backend environment.</p>
-    pub fn stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of deployment artifacts.</p>
-    pub fn deployment_artifacts(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_artifacts(&self) -> ::std::option::Option<& str> {
         self.deployment_artifacts.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl CreateBackendEnvironmentInputBuilder {
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The unique ID for an Amplify app.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl CreateBackendEnvironmentInputBuilder {
     }
     /// <p>The name for the backend environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The name for the backend environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl CreateBackendEnvironmentInputBuilder {
     }
     /// <p>The AWS CloudFormation stack name of a backend environment.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p>The AWS CloudFormation stack name of a backend environment.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl CreateBackendEnvironmentInputBuilder {
     }
     /// <p>The name of deployment artifacts.</p>
     pub fn set_deployment_artifacts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_artifacts = input;
-        self
+        self.deployment_artifacts = input; self
     }
     /// <p>The name of deployment artifacts.</p>
     pub fn get_deployment_artifacts(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_artifacts
     }
     /// Consumes the builder and constructs a [`CreateBackendEnvironmentInput`](crate::operation::create_backend_environment::CreateBackendEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_backend_environment::CreateBackendEnvironmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_backend_environment::CreateBackendEnvironmentInput {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            stack_name: self.stack_name,
-            deployment_artifacts: self.deployment_artifacts,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_backend_environment::CreateBackendEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_backend_environment::CreateBackendEnvironmentInput {
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                stack_name: self.stack_name
+                ,
+                deployment_artifacts: self.deployment_artifacts
+                ,
+            }
+        )
     }
 }
+

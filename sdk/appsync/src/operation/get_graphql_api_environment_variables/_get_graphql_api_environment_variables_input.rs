@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGraphqlApiEnvironmentVariablesInput {
+pub struct GetGraphqlApiEnvironmentVariablesInput  {
     /// <p>The ID of the API from which the environmental variable list will be retrieved.</p>
     pub api_id: ::std::option::Option<::std::string::String>,
 }
-impl GetGraphqlApiEnvironmentVariablesInput {
+impl  GetGraphqlApiEnvironmentVariablesInput  {
     /// <p>The ID of the API from which the environmental variable list will be retrieved.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetGraphqlApiEnvironmentVariablesInputBuilder {
     }
     /// <p>The ID of the API from which the environmental variable list will be retrieved.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The ID of the API from which the environmental variable list will be retrieved.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_id
     }
     /// Consumes the builder and constructs a [`GetGraphqlApiEnvironmentVariablesInput`](crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesInput { api_id: self.api_id },
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesInput {
+                api_id: self.api_id
+                ,
+            }
         )
     }
 }
+

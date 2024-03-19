@@ -3,7 +3,7 @@
 /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Encryption {
+pub struct Encryption  {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4.</p>
@@ -11,17 +11,17 @@ pub struct Encryption {
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
     pub kms_context: ::std::option::Option<::std::string::String>,
 }
-impl Encryption {
+impl  Encryption  {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
-    pub fn kms_context(&self) -> ::std::option::Option<&str> {
+    pub fn kms_context(&self) -> ::std::option::Option<& str> {
         self.kms_context.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl EncryptionBuilder {
     }
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
@@ -62,8 +61,7 @@ impl EncryptionBuilder {
     }
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl EncryptionBuilder {
     }
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
     pub fn set_kms_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_context = input;
-        self
+        self.kms_context = input; self
     }
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
     pub fn get_kms_context(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl EncryptionBuilder {
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     pub fn build(self) -> crate::types::Encryption {
         crate::types::Encryption {
-            encryption_type: self.encryption_type,
-            kms_key_id: self.kms_key_id,
-            kms_context: self.kms_context,
+            encryption_type: self.encryption_type
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            kms_context: self.kms_context
+            ,
         }
     }
 }
+

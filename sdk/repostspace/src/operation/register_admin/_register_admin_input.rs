@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterAdminInput {
+pub struct RegisterAdminInput  {
     /// <p>The ID of the private re:Post.</p>
     pub space_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the administrator.</p>
     pub admin_id: ::std::option::Option<::std::string::String>,
 }
-impl RegisterAdminInput {
+impl  RegisterAdminInput  {
     /// <p>The ID of the private re:Post.</p>
-    pub fn space_id(&self) -> ::std::option::Option<&str> {
+    pub fn space_id(&self) -> ::std::option::Option<& str> {
         self.space_id.as_deref()
     }
     /// <p>The ID of the administrator.</p>
-    pub fn admin_id(&self) -> ::std::option::Option<&str> {
+    pub fn admin_id(&self) -> ::std::option::Option<& str> {
         self.admin_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl RegisterAdminInputBuilder {
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn set_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_id = input;
-        self
+        self.space_id = input; self
     }
     /// <p>The ID of the private re:Post.</p>
     pub fn get_space_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl RegisterAdminInputBuilder {
     }
     /// <p>The ID of the administrator.</p>
     pub fn set_admin_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.admin_id = input;
-        self
+        self.admin_id = input; self
     }
     /// <p>The ID of the administrator.</p>
     pub fn get_admin_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_id
     }
     /// Consumes the builder and constructs a [`RegisterAdminInput`](crate::operation::register_admin::RegisterAdminInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_admin::RegisterAdminInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::register_admin::RegisterAdminInput {
-            space_id: self.space_id,
-            admin_id: self.admin_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_admin::RegisterAdminInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_admin::RegisterAdminInput {
+                space_id: self.space_id
+                ,
+                admin_id: self.admin_id
+                ,
+            }
+        )
     }
 }
+

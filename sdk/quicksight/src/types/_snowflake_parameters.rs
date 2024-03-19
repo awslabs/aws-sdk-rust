@@ -3,7 +3,7 @@
 /// <p>The parameters for Snowflake.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnowflakeParameters {
+pub struct SnowflakeParameters  {
     /// <p>Host.</p>
     pub host: ::std::string::String,
     /// <p>Database.</p>
@@ -11,21 +11,18 @@ pub struct SnowflakeParameters {
     /// <p>Warehouse.</p>
     pub warehouse: ::std::string::String,
 }
-impl SnowflakeParameters {
+impl  SnowflakeParameters  {
     /// <p>Host.</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> & str {
+        use std::ops::Deref; self.host.deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>Warehouse.</p>
-    pub fn warehouse(&self) -> &str {
-        use std::ops::Deref;
-        self.warehouse.deref()
+    pub fn warehouse(&self) -> & str {
+        use std::ops::Deref; self.warehouse.deref()
     }
 }
 impl SnowflakeParameters {
@@ -52,8 +49,7 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Host.</p>
     pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>Database.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl SnowflakeParametersBuilder {
     }
     /// <p>Warehouse.</p>
     pub fn set_warehouse(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.warehouse = input;
-        self
+        self.warehouse = input; self
     }
     /// <p>Warehouse.</p>
     pub fn get_warehouse(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl SnowflakeParametersBuilder {
     /// - [`database`](crate::types::builders::SnowflakeParametersBuilder::database)
     /// - [`warehouse`](crate::types::builders::SnowflakeParametersBuilder::warehouse)
     pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeParameters, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SnowflakeParameters {
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building SnowflakeParameters",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building SnowflakeParameters",
-                )
-            })?,
-            warehouse: self.warehouse.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "warehouse",
-                    "warehouse was not specified but it is required when building SnowflakeParameters",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SnowflakeParameters {
+                host: self.host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("host", "host was not specified but it is required when building SnowflakeParameters")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building SnowflakeParameters")
+                    )?
+                ,
+                warehouse: self.warehouse
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("warehouse", "warehouse was not specified but it is required when building SnowflakeParameters")
+                    )?
+                ,
+            }
+        )
     }
 }
+

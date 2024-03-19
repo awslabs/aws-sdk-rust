@@ -3,7 +3,7 @@
 /// <p>A DTMF character sent from the client application. DTMF characters are typically sent from a phone keypad to represent numbers. For example, you can have Amazon Lex V2 process a credit card number input from a phone.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DtmfInputEvent {
+pub struct DtmfInputEvent  {
     /// <p>The DTMF character that the user pressed. The allowed characters are A - D, 0 - 9, # and *.</p>
     pub input_character: ::std::string::String,
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
@@ -11,14 +11,13 @@ pub struct DtmfInputEvent {
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub client_timestamp_millis: i64,
 }
-impl DtmfInputEvent {
+impl  DtmfInputEvent  {
     /// <p>The DTMF character that the user pressed. The allowed characters are A - D, 0 - 9, # and *.</p>
-    pub fn input_character(&self) -> &str {
-        use std::ops::Deref;
-        self.input_character.deref()
+    pub fn input_character(&self) -> & str {
+        use std::ops::Deref; self.input_character.deref()
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
@@ -26,7 +25,7 @@ impl DtmfInputEvent {
         self.client_timestamp_millis
     }
 }
-impl ::std::fmt::Debug for DtmfInputEvent {
+impl  ::std::fmt::Debug for DtmfInputEvent  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DtmfInputEvent");
         formatter.field("input_character", &"*** Sensitive Data Redacted ***");
@@ -59,8 +58,7 @@ impl DtmfInputEventBuilder {
     }
     /// <p>The DTMF character that the user pressed. The allowed characters are A - D, 0 - 9, # and *.</p>
     pub fn set_input_character(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_character = input;
-        self
+        self.input_character = input; self
     }
     /// <p>The DTMF character that the user pressed. The allowed characters are A - D, 0 - 9, # and *.</p>
     pub fn get_input_character(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,7 @@ impl DtmfInputEventBuilder {
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier that your application assigns to the event. You can use this to identify events in logs.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +84,7 @@ impl DtmfInputEventBuilder {
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn set_client_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.client_timestamp_millis = input;
-        self
+        self.client_timestamp_millis = input; self
     }
     /// <p>A timestamp set by the client of the date and time that the event was sent to Amazon Lex V2.</p>
     pub fn get_client_timestamp_millis(&self) -> &::std::option::Option<i64> {
@@ -98,16 +94,20 @@ impl DtmfInputEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_character`](crate::types::builders::DtmfInputEventBuilder::input_character)
     pub fn build(self) -> ::std::result::Result<crate::types::DtmfInputEvent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DtmfInputEvent {
-            input_character: self.input_character.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_character",
-                    "input_character was not specified but it is required when building DtmfInputEvent",
-                )
-            })?,
-            event_id: self.event_id,
-            client_timestamp_millis: self.client_timestamp_millis.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::DtmfInputEvent {
+                input_character: self.input_character
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("input_character", "input_character was not specified but it is required when building DtmfInputEvent")
+                    )?
+                ,
+                event_id: self.event_id
+                ,
+                client_timestamp_millis: self.client_timestamp_millis
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DtmfInputEventBuilder {
@@ -119,3 +119,4 @@ impl ::std::fmt::Debug for DtmfInputEventBuilder {
         formatter.finish()
     }
 }
+

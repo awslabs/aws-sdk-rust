@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeprovisionIpamPoolCidrInput {
+pub struct DeprovisionIpamPoolCidrInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
@@ -10,17 +10,17 @@ pub struct DeprovisionIpamPoolCidrInput {
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
 }
-impl DeprovisionIpamPoolCidrInput {
+impl  DeprovisionIpamPoolCidrInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
-    pub fn cidr(&self) -> ::std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -62,8 +61,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,24 +74,24 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
     }
     /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
-            dry_run: self.dry_run,
-            ipam_pool_id: self.ipam_pool_id,
-            cidr: self.cidr,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
+                dry_run: self.dry_run
+                ,
+                ipam_pool_id: self.ipam_pool_id
+                ,
+                cidr: self.cidr
+                ,
+            }
+        )
     }
 }
+

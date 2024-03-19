@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RequiredActivatedType {
+pub struct RequiredActivatedType  {
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     pub type_name_alias: ::std::option::Option<::std::string::String>,
     /// <p>The type name of the public extension.</p>
@@ -13,27 +13,28 @@ pub struct RequiredActivatedType {
     /// <p>The publisher ID of the extension publisher.</p>
     pub publisher_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    pub supported_major_versions: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub supported_major_versions: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
-impl RequiredActivatedType {
+impl  RequiredActivatedType  {
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-    pub fn type_name_alias(&self) -> ::std::option::Option<&str> {
+    pub fn type_name_alias(&self) -> ::std::option::Option<& str> {
         self.type_name_alias.as_deref()
     }
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn original_type_name(&self) -> ::std::option::Option<&str> {
+    pub fn original_type_name(&self) -> ::std::option::Option<& str> {
         self.original_type_name.as_deref()
     }
     /// <p>The publisher ID of the extension publisher.</p>
-    pub fn publisher_id(&self) -> ::std::option::Option<&str> {
+    pub fn publisher_id(&self) -> ::std::option::Option<& str> {
         self.publisher_id.as_deref()
     }
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_major_versions.is_none()`.
-    pub fn supported_major_versions(&self) -> &[i32] {
-        self.supported_major_versions.as_deref().unwrap_or_default()
+    pub fn supported_major_versions(&self) -> & [i32] {
+        self.supported_major_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RequiredActivatedType {
@@ -50,7 +51,7 @@ pub struct RequiredActivatedTypeBuilder {
     pub(crate) type_name_alias: ::std::option::Option<::std::string::String>,
     pub(crate) original_type_name: ::std::option::Option<::std::string::String>,
     pub(crate) publisher_id: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_major_versions: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) supported_major_versions: ::std::option::Option<::std::vec::Vec::<i32>>,
 }
 impl RequiredActivatedTypeBuilder {
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
@@ -60,8 +61,7 @@ impl RequiredActivatedTypeBuilder {
     }
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     pub fn set_type_name_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.type_name_alias = input;
-        self
+        self.type_name_alias = input; self
     }
     /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
     pub fn get_type_name_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +76,7 @@ impl RequiredActivatedTypeBuilder {
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_original_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.original_type_name = input;
-        self
+        self.original_type_name = input; self
     }
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -91,8 +90,7 @@ impl RequiredActivatedTypeBuilder {
     }
     /// <p>The publisher ID of the extension publisher.</p>
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.publisher_id = input;
-        self
+        self.publisher_id = input; self
     }
     /// <p>The publisher ID of the extension publisher.</p>
     pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,26 +103,30 @@ impl RequiredActivatedTypeBuilder {
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
     pub fn supported_major_versions(mut self, input: i32) -> Self {
         let mut v = self.supported_major_versions.unwrap_or_default();
-        v.push(input);
-        self.supported_major_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.supported_major_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    pub fn set_supported_major_versions(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.supported_major_versions = input;
-        self
+    pub fn set_supported_major_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.supported_major_versions = input; self
     }
     /// <p>A list of the major versions of the extension type that the macro supports.</p>
-    pub fn get_supported_major_versions(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_supported_major_versions(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.supported_major_versions
     }
     /// Consumes the builder and constructs a [`RequiredActivatedType`](crate::types::RequiredActivatedType).
     pub fn build(self) -> crate::types::RequiredActivatedType {
         crate::types::RequiredActivatedType {
-            type_name_alias: self.type_name_alias,
-            original_type_name: self.original_type_name,
-            publisher_id: self.publisher_id,
-            supported_major_versions: self.supported_major_versions,
+            type_name_alias: self.type_name_alias
+            ,
+            original_type_name: self.original_type_name
+            ,
+            publisher_id: self.publisher_id
+            ,
+            supported_major_versions: self.supported_major_versions
+            ,
         }
     }
 }
+

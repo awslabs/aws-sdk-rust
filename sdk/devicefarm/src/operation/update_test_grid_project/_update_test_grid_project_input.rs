@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTestGridProjectInput {
+pub struct UpdateTestGridProjectInput  {
     /// <p>ARN of the project to update.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable name for the project.</p>
@@ -12,21 +12,21 @@ pub struct UpdateTestGridProjectInput {
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::TestGridVpcConfig>,
 }
-impl UpdateTestGridProjectInput {
+impl  UpdateTestGridProjectInput  {
     /// <p>ARN of the project to update.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>Human-readable name for the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Human-readable description for the project.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::TestGridVpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<& crate::types::TestGridVpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateTestGridProjectInputBuilder {
     }
     /// <p>ARN of the project to update.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>ARN of the project to update.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateTestGridProjectInputBuilder {
     }
     /// <p>Human-readable name for the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Human-readable name for the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateTestGridProjectInputBuilder {
     }
     /// <p>Human-readable description for the project.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Human-readable description for the project.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,23 +94,26 @@ impl UpdateTestGridProjectInputBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::TestGridVpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::TestGridVpcConfig> {
         &self.vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
-            project_arn: self.project_arn,
-            name: self.name,
-            description: self.description,
-            vpc_config: self.vpc_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
+                project_arn: self.project_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                vpc_config: self.vpc_config
+                ,
+            }
+        )
     }
 }
+

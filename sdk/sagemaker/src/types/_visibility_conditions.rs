@@ -3,19 +3,19 @@
 /// <p>The list of key-value pairs used to filter your search results. If a search result contains a key from your list, it is included in the final search response if the value associated with the key in the result matches the value you specified. If the value doesn't match, the result is excluded from the search response. Any resources that don't have a key from the list that you've provided will also be included in the search response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisibilityConditions {
+pub struct VisibilityConditions  {
     /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key></key></code>.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the tag that you're using to filter the search results.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl VisibilityConditions {
+impl  VisibilityConditions  {
     /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key></key></code>.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the tag that you're using to filter the search results.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VisibilityConditionsBuilder {
     }
     /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key></key></code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key></key></code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VisibilityConditionsBuilder {
     }
     /// <p>The value for the tag that you're using to filter the search results.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the tag that you're using to filter the search results.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl VisibilityConditionsBuilder {
     /// Consumes the builder and constructs a [`VisibilityConditions`](crate::types::VisibilityConditions).
     pub fn build(self) -> crate::types::VisibilityConditions {
         crate::types::VisibilityConditions {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

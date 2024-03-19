@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveProfilePermissionInput {
+pub struct RemoveProfilePermissionInput  {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     pub profile_name: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
@@ -10,17 +10,17 @@ pub struct RemoveProfilePermissionInput {
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub statement_id: ::std::option::Option<::std::string::String>,
 }
-impl RemoveProfilePermissionInput {
+impl  RemoveProfilePermissionInput  {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
-    pub fn profile_name(&self) -> ::std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<& str> {
         self.profile_name.as_deref()
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
-    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
-    pub fn statement_id(&self) -> ::std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<& str> {
         self.statement_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.statement_id = input;
-        self
+        self.statement_id = input; self
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement_id
     }
     /// Consumes the builder and constructs a [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::remove_profile_permission::RemoveProfilePermissionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::remove_profile_permission::RemoveProfilePermissionInput {
-            profile_name: self.profile_name,
-            revision_id: self.revision_id,
-            statement_id: self.statement_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_profile_permission::RemoveProfilePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::remove_profile_permission::RemoveProfilePermissionInput {
+                profile_name: self.profile_name
+                ,
+                revision_id: self.revision_id
+                ,
+                statement_id: self.statement_id
+                ,
+            }
+        )
     }
 }
+

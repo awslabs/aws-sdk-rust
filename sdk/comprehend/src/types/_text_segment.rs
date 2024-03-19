@@ -3,18 +3,17 @@
 /// <p>One of the of text strings. Each string has a size limit of 1KB.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct TextSegment {
+pub struct TextSegment  {
     /// <p>The text content.</p>
     pub text: ::std::string::String,
 }
-impl TextSegment {
+impl  TextSegment  {
     /// <p>The text content.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> & str {
+        use std::ops::Deref; self.text.deref()
     }
 }
-impl ::std::fmt::Debug for TextSegment {
+impl  ::std::fmt::Debug for TextSegment  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TextSegment");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -43,8 +42,7 @@ impl TextSegmentBuilder {
     }
     /// <p>The text content.</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The text content.</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,14 +52,15 @@ impl TextSegmentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::TextSegmentBuilder::text)
     pub fn build(self) -> ::std::result::Result<crate::types::TextSegment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TextSegment {
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building TextSegment",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TextSegment {
+                text: self.text
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("text", "text was not specified but it is required when building TextSegment")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for TextSegmentBuilder {
@@ -71,3 +70,4 @@ impl ::std::fmt::Debug for TextSegmentBuilder {
         formatter.finish()
     }
 }
+

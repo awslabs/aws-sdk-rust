@@ -3,7 +3,7 @@
 /// <p>Represents the fields that were retrieved from the introspected data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceIntrospectionModelField {
+pub struct DataSourceIntrospectionModelField  {
     /// <p>The name of the field that was retrieved from the introspected data.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data.</p>
@@ -11,13 +11,13 @@ pub struct DataSourceIntrospectionModelField {
     /// <p>The length value of the introspected field.</p>
     pub length: i64,
 }
-impl DataSourceIntrospectionModelField {
+impl  DataSourceIntrospectionModelField  {
     /// <p>The name of the field that was retrieved from the introspected data.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceIntrospectionModelFieldType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataSourceIntrospectionModelFieldType> {
         self.r#type.as_ref()
     }
     /// <p>The length value of the introspected field.</p>
@@ -48,8 +48,7 @@ impl DataSourceIntrospectionModelFieldBuilder {
     }
     /// <p>The name of the field that was retrieved from the introspected data.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the field that was retrieved from the introspected data.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl DataSourceIntrospectionModelFieldBuilder {
     }
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceIntrospectionModelFieldType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The <code>DataSourceIntrospectionModelFieldType</code> object data.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceIntrospectionModelFieldType> {
@@ -76,8 +74,7 @@ impl DataSourceIntrospectionModelFieldBuilder {
     }
     /// <p>The length value of the introspected field.</p>
     pub fn set_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// <p>The length value of the introspected field.</p>
     pub fn get_length(&self) -> &::std::option::Option<i64> {
@@ -86,9 +83,14 @@ impl DataSourceIntrospectionModelFieldBuilder {
     /// Consumes the builder and constructs a [`DataSourceIntrospectionModelField`](crate::types::DataSourceIntrospectionModelField).
     pub fn build(self) -> crate::types::DataSourceIntrospectionModelField {
         crate::types::DataSourceIntrospectionModelField {
-            name: self.name,
-            r#type: self.r#type,
-            length: self.length.unwrap_or_default(),
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            length: self.length
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

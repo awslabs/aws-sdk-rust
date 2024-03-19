@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListResourceScanResources`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_scan_id(impl Into<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::resource_scan_id) / [`set_resource_scan_id(Option<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_resource_scan_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the resource scan.</p><br>
     ///   - [`resource_identifier(impl Into<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_resource_identifier):<br>required: **false**<br><p>If specified, the returned resources will have the specified resource identifier (or one of them in the case where the resource has multiple identifiers).</p><br>
     ///   - [`resource_type_prefix(impl Into<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::resource_type_prefix) / [`set_resource_type_prefix(Option<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_resource_type_prefix):<br>required: **false**<br><p>If specified, the returned resources will be of any of the resource types with the specified prefix.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`tag_value(impl Into<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::tag_value) / [`set_tag_value(Option<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_tag_value):<br>required: **false**<br><p>If specified, the returned resources will have a matching tag value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>A string that identifies the next page of resource scan results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. By default the <code>ListResourceScanResources</code> API action will return at most 100 results in each response. The maximum value is 100.</p><br>
-    /// - On success, responds with [`ListResourceScanResourcesOutput`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput) with field(s):
+                            /// - On success, responds with [`ListResourceScanResourcesOutput`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput) with field(s):
     ///   - [`resources(Option<Vec::<ScannedResource>>)`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput::resources): <p>List of up to <code>MaxResults</code> resources in the specified resource scan that match all of the specified filters.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput::next_token): <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResourceScanResources</code> again and use that value for the <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.</p>
-    /// - On failure, responds with [`SdkError<ListResourceScanResourcesError>`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesError)
+                            /// - On failure, responds with [`SdkError<ListResourceScanResourcesError>`](crate::operation::list_resource_scan_resources::ListResourceScanResourcesError)
     pub fn list_resource_scan_resources(&self) -> crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder {
-        crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_resource_scan_resources::builders::ListResourceScanResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -26,11 +26,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`BasicAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`BasicAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth).
     pub fn is_basic_auth(&self) -> bool {
@@ -39,11 +35,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_client_certificate_tls_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
@@ -52,11 +44,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`SaslScram256Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram256_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SaslScram256Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth).
     pub fn is_sasl_scram256_auth(&self) -> bool {
@@ -65,11 +53,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram512_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth).
     pub fn is_sasl_scram512_auth(&self) -> bool {
@@ -80,3 +64,4 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,22 +3,23 @@
 /// <p>The response object for the Amazon FSx for OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteFileSystemOpenZfsResponse {
+pub struct DeleteFileSystemOpenZfsResponse  {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub final_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub final_backup_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl DeleteFileSystemOpenZfsResponse {
+impl  DeleteFileSystemOpenZfsResponse  {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    pub fn final_backup_id(&self) -> ::std::option::Option<&str> {
+    pub fn final_backup_id(&self) -> ::std::option::Option<& str> {
         self.final_backup_id.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.final_backup_tags.is_none()`.
-    pub fn final_backup_tags(&self) -> &[crate::types::Tag] {
-        self.final_backup_tags.as_deref().unwrap_or_default()
+    pub fn final_backup_tags(&self) -> & [crate::types::Tag] {
+        self.final_backup_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DeleteFileSystemOpenZfsResponse {
@@ -33,7 +34,7 @@ impl DeleteFileSystemOpenZfsResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteFileSystemOpenZfsResponseBuilder {
     pub(crate) final_backup_id: ::std::option::Option<::std::string::String>,
-    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl DeleteFileSystemOpenZfsResponseBuilder {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -43,8 +44,7 @@ impl DeleteFileSystemOpenZfsResponseBuilder {
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn set_final_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_backup_id = input;
-        self
+        self.final_backup_id = input; self
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn get_final_backup_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl DeleteFileSystemOpenZfsResponseBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn final_backup_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.final_backup_tags.unwrap_or_default();
-        v.push(input);
-        self.final_backup_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.final_backup_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.final_backup_tags = input;
-        self
+    pub fn set_final_backup_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.final_backup_tags = input; self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_final_backup_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsResponse`](crate::types::DeleteFileSystemOpenZfsResponse).
     pub fn build(self) -> crate::types::DeleteFileSystemOpenZfsResponse {
         crate::types::DeleteFileSystemOpenZfsResponse {
-            final_backup_id: self.final_backup_id,
-            final_backup_tags: self.final_backup_tags,
+            final_backup_id: self.final_backup_id
+            ,
+            final_backup_tags: self.final_backup_tags
+            ,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSecurityProfileApplications`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`security_profile_id(impl Into<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::security_profile_id) / [`set_security_profile_id(Option<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::set_security_profile_id):<br>required: **true**<br><p>The identifier for the security profle.</p><br>
     ///   - [`instance_id(impl Into<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::set_instance_id):<br>required: **true**<br><p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
-    /// - On success, responds with [`ListSecurityProfileApplicationsOutput`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListSecurityProfileApplicationsOutput`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec::<Application>>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::applications): <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>A list of the third-party application's metadata.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::last_modified_time): <p>The timestamp when this resource was last modified.</p>
     ///   - [`last_modified_region(Option<String>)`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput::last_modified_region): <p>The Amazon Web Services Region where this resource was last modified.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityProfileApplicationsError>`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError)
-    pub fn list_security_profile_applications(
-        &self,
-    ) -> crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder {
-        crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSecurityProfileApplicationsError>`](crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsError)
+    pub fn list_security_profile_applications(&self) -> crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder {
+                                crate::operation::list_security_profile_applications::builders::ListSecurityProfileApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

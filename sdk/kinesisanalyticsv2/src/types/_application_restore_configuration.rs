@@ -3,19 +3,19 @@
 /// <p>Specifies the method and snapshot to use when restarting an application using previously saved application state.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationRestoreConfiguration {
+pub struct ApplicationRestoreConfiguration  {
     /// <p>Specifies how the application should be restored.</p>
     pub application_restore_type: crate::types::ApplicationRestoreType,
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl ApplicationRestoreConfiguration {
+impl  ApplicationRestoreConfiguration  {
     /// <p>Specifies how the application should be restored.</p>
-    pub fn application_restore_type(&self) -> &crate::types::ApplicationRestoreType {
+    pub fn application_restore_type(&self) -> & crate::types::ApplicationRestoreType {
         &self.application_restore_type
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ApplicationRestoreConfigurationBuilder {
     }
     /// <p>Specifies how the application should be restored.</p>
     pub fn set_application_restore_type(mut self, input: ::std::option::Option<crate::types::ApplicationRestoreType>) -> Self {
-        self.application_restore_type = input;
-        self
+        self.application_restore_type = input; self
     }
     /// <p>Specifies how the application should be restored.</p>
     pub fn get_application_restore_type(&self) -> &::std::option::Option<crate::types::ApplicationRestoreType> {
@@ -56,8 +55,7 @@ impl ApplicationRestoreConfigurationBuilder {
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl ApplicationRestoreConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application_restore_type`](crate::types::builders::ApplicationRestoreConfigurationBuilder::application_restore_type)
     pub fn build(self) -> ::std::result::Result<crate::types::ApplicationRestoreConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApplicationRestoreConfiguration {
-            application_restore_type: self.application_restore_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "application_restore_type",
-                    "application_restore_type was not specified but it is required when building ApplicationRestoreConfiguration",
-                )
-            })?,
-            snapshot_name: self.snapshot_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApplicationRestoreConfiguration {
+                application_restore_type: self.application_restore_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_restore_type", "application_restore_type was not specified but it is required when building ApplicationRestoreConfiguration")
+                    )?
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+            }
+        )
     }
 }
+

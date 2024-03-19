@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateListenerInput {
+pub struct UpdateListenerInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
@@ -10,17 +10,17 @@ pub struct UpdateListenerInput {
     /// <p>The action for the default rule.</p>
     pub default_action: ::std::option::Option<crate::types::RuleAction>,
 }
-impl UpdateListenerInput {
+impl  UpdateListenerInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_identifier(&self) -> ::std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn listener_identifier(&self) -> ::std::option::Option<& str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The action for the default rule.</p>
-    pub fn default_action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn default_action(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.default_action.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateListenerInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_service_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_identifier = input;
-        self
+        self.service_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl UpdateListenerInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listener_identifier = input;
-        self
+        self.listener_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,21 +76,24 @@ impl UpdateListenerInputBuilder {
     }
     /// <p>The action for the default rule.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
-        self.default_action = input;
-        self
+        self.default_action = input; self
     }
     /// <p>The action for the default rule.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
         &self.default_action
     }
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_listener::UpdateListenerInput {
-            service_identifier: self.service_identifier,
-            listener_identifier: self.listener_identifier,
-            default_action: self.default_action,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_listener::UpdateListenerInput {
+                service_identifier: self.service_identifier
+                ,
+                listener_identifier: self.listener_identifier
+                ,
+                default_action: self.default_action
+                ,
+            }
+        )
     }
 }
+

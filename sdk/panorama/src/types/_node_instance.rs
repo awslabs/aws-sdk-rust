@@ -3,7 +3,7 @@
 /// <p>A node instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeInstance {
+pub struct NodeInstance  {
     /// <p>The instance's ID.</p>
     pub node_instance_id: ::std::string::String,
     /// <p>The node's ID.</p>
@@ -19,34 +19,33 @@ pub struct NodeInstance {
     /// <p>The instance's current status.</p>
     pub current_status: crate::types::NodeInstanceStatus,
 }
-impl NodeInstance {
+impl  NodeInstance  {
     /// <p>The instance's ID.</p>
-    pub fn node_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.node_instance_id.deref()
+    pub fn node_instance_id(&self) -> & str {
+        use std::ops::Deref; self.node_instance_id.deref()
     }
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> ::std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<& str> {
         self.node_id.as_deref()
     }
     /// <p>The instance's package name.</p>
-    pub fn package_name(&self) -> ::std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The instance's package version.</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The instance's package patch version.</p>
-    pub fn package_patch_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_patch_version(&self) -> ::std::option::Option<& str> {
         self.package_patch_version.as_deref()
     }
     /// <p>The instance's name.</p>
-    pub fn node_name(&self) -> ::std::option::Option<&str> {
+    pub fn node_name(&self) -> ::std::option::Option<& str> {
         self.node_name.as_deref()
     }
     /// <p>The instance's current status.</p>
-    pub fn current_status(&self) -> &crate::types::NodeInstanceStatus {
+    pub fn current_status(&self) -> & crate::types::NodeInstanceStatus {
         &self.current_status
     }
 }
@@ -78,8 +77,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's ID.</p>
     pub fn set_node_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_instance_id = input;
-        self
+        self.node_instance_id = input; self
     }
     /// <p>The instance's ID.</p>
     pub fn get_node_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The node's ID.</p>
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_id = input;
-        self
+        self.node_id = input; self
     }
     /// <p>The node's ID.</p>
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's package name.</p>
     pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The instance's package name.</p>
     pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +116,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's package version.</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>The instance's package version.</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +129,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's package patch version.</p>
     pub fn set_package_patch_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_patch_version = input;
-        self
+        self.package_patch_version = input; self
     }
     /// <p>The instance's package patch version.</p>
     pub fn get_package_patch_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +142,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's name.</p>
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_name = input;
-        self
+        self.node_name = input; self
     }
     /// <p>The instance's name.</p>
     pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +156,7 @@ impl NodeInstanceBuilder {
     }
     /// <p>The instance's current status.</p>
     pub fn set_current_status(mut self, input: ::std::option::Option<crate::types::NodeInstanceStatus>) -> Self {
-        self.current_status = input;
-        self
+        self.current_status = input; self
     }
     /// <p>The instance's current status.</p>
     pub fn get_current_status(&self) -> &::std::option::Option<crate::types::NodeInstanceStatus> {
@@ -175,24 +167,30 @@ impl NodeInstanceBuilder {
     /// - [`node_instance_id`](crate::types::builders::NodeInstanceBuilder::node_instance_id)
     /// - [`current_status`](crate::types::builders::NodeInstanceBuilder::current_status)
     pub fn build(self) -> ::std::result::Result<crate::types::NodeInstance, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NodeInstance {
-            node_instance_id: self.node_instance_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "node_instance_id",
-                    "node_instance_id was not specified but it is required when building NodeInstance",
-                )
-            })?,
-            node_id: self.node_id,
-            package_name: self.package_name,
-            package_version: self.package_version,
-            package_patch_version: self.package_patch_version,
-            node_name: self.node_name,
-            current_status: self.current_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "current_status",
-                    "current_status was not specified but it is required when building NodeInstance",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NodeInstance {
+                node_instance_id: self.node_instance_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("node_instance_id", "node_instance_id was not specified but it is required when building NodeInstance")
+                    )?
+                ,
+                node_id: self.node_id
+                ,
+                package_name: self.package_name
+                ,
+                package_version: self.package_version
+                ,
+                package_patch_version: self.package_patch_version
+                ,
+                node_name: self.node_name
+                ,
+                current_status: self.current_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("current_status", "current_status was not specified but it is required when building NodeInstance")
+                    )?
+                ,
+            }
+        )
     }
 }
+

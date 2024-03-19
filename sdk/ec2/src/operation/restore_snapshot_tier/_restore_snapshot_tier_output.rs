@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RestoreSnapshotTierOutput {
+pub struct RestoreSnapshotTierOutput  {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the snapshot restore process started.</p>
@@ -13,13 +13,13 @@ pub struct RestoreSnapshotTierOutput {
     pub is_permanent_restore: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl RestoreSnapshotTierOutput {
+impl  RestoreSnapshotTierOutput  {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The date and time when the snapshot restore process started.</p>
-    pub fn restore_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn restore_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.restore_start_time.as_ref()
     }
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
@@ -32,10 +32,10 @@ impl RestoreSnapshotTierOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for RestoreSnapshotTierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RestoreSnapshotTierOutput {
     /// Creates a new builder-style object to manufacture [`RestoreSnapshotTierOutput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput).
     pub fn builder() -> crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder {
@@ -61,8 +61,7 @@ impl RestoreSnapshotTierOutputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl RestoreSnapshotTierOutputBuilder {
     }
     /// <p>The date and time when the snapshot restore process started.</p>
     pub fn set_restore_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.restore_start_time = input;
-        self
+        self.restore_start_time = input; self
     }
     /// <p>The date and time when the snapshot restore process started.</p>
     pub fn get_restore_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +87,7 @@ impl RestoreSnapshotTierOutputBuilder {
     }
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub fn set_restore_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.restore_duration = input;
-        self
+        self.restore_duration = input; self
     }
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub fn get_restore_duration(&self) -> &::std::option::Option<i32> {
@@ -103,30 +100,34 @@ impl RestoreSnapshotTierOutputBuilder {
     }
     /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub fn set_is_permanent_restore(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_permanent_restore = input;
-        self
+        self.is_permanent_restore = input; self
     }
     /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub fn get_is_permanent_restore(&self) -> &::std::option::Option<bool> {
         &self.is_permanent_restore
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RestoreSnapshotTierOutput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput).
     pub fn build(self) -> crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput {
         crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput {
-            snapshot_id: self.snapshot_id,
-            restore_start_time: self.restore_start_time,
-            restore_duration: self.restore_duration,
-            is_permanent_restore: self.is_permanent_restore,
+            snapshot_id: self.snapshot_id
+            ,
+            restore_start_time: self.restore_start_time
+            ,
+            restore_duration: self.restore_duration
+            ,
+            is_permanent_restore: self.is_permanent_restore
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

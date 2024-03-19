@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PeerVpcInput {}
+pub struct PeerVpcInput  {
+}
 impl PeerVpcInput {
     /// Creates a new builder-style object to manufacture [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
     pub fn builder() -> crate::operation::peer_vpc::builders::PeerVpcInputBuilder {
@@ -13,10 +14,15 @@ impl PeerVpcInput {
 /// A builder for [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct PeerVpcInputBuilder {}
+pub struct PeerVpcInputBuilder {
+}
 impl PeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`PeerVpcInput`](crate::operation::peer_vpc::PeerVpcInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::peer_vpc::PeerVpcInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::peer_vpc::PeerVpcInput {})
+        ::std::result::Result::Ok(
+            crate::operation::peer_vpc::PeerVpcInput {
+            }
+        )
     }
 }
+

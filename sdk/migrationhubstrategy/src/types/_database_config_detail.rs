@@ -3,13 +3,13 @@
 /// <p>Configuration information used for assessing databases.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatabaseConfigDetail {
+pub struct DatabaseConfigDetail  {
     /// <p>AWS Secrets Manager key that holds the credentials that you use to connect to a database.</p>
     pub secret_name: ::std::option::Option<::std::string::String>,
 }
-impl DatabaseConfigDetail {
+impl  DatabaseConfigDetail  {
     /// <p>AWS Secrets Manager key that holds the credentials that you use to connect to a database.</p>
-    pub fn secret_name(&self) -> ::std::option::Option<&str> {
+    pub fn secret_name(&self) -> ::std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DatabaseConfigDetailBuilder {
     }
     /// <p>AWS Secrets Manager key that holds the credentials that you use to connect to a database.</p>
     pub fn set_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_name = input;
-        self
+        self.secret_name = input; self
     }
     /// <p>AWS Secrets Manager key that holds the credentials that you use to connect to a database.</p>
     pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl DatabaseConfigDetailBuilder {
     /// Consumes the builder and constructs a [`DatabaseConfigDetail`](crate::types::DatabaseConfigDetail).
     pub fn build(self) -> crate::types::DatabaseConfigDetail {
         crate::types::DatabaseConfigDetail {
-            secret_name: self.secret_name,
+            secret_name: self.secret_name
+            ,
         }
     }
 }
+

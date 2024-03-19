@@ -3,7 +3,7 @@
 /// <p>A dataset parameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DatasetParameter {
+pub struct DatasetParameter  {
     /// <p>A string parameter that is created in the dataset.</p>
     pub string_dataset_parameter: ::std::option::Option<crate::types::StringDatasetParameter>,
     /// <p>A decimal parameter that is created in the dataset.</p>
@@ -13,21 +13,21 @@ pub struct DatasetParameter {
     /// <p>A date time parameter that is created in the dataset.</p>
     pub date_time_dataset_parameter: ::std::option::Option<crate::types::DateTimeDatasetParameter>,
 }
-impl DatasetParameter {
+impl  DatasetParameter  {
     /// <p>A string parameter that is created in the dataset.</p>
-    pub fn string_dataset_parameter(&self) -> ::std::option::Option<&crate::types::StringDatasetParameter> {
+    pub fn string_dataset_parameter(&self) -> ::std::option::Option<& crate::types::StringDatasetParameter> {
         self.string_dataset_parameter.as_ref()
     }
     /// <p>A decimal parameter that is created in the dataset.</p>
-    pub fn decimal_dataset_parameter(&self) -> ::std::option::Option<&crate::types::DecimalDatasetParameter> {
+    pub fn decimal_dataset_parameter(&self) -> ::std::option::Option<& crate::types::DecimalDatasetParameter> {
         self.decimal_dataset_parameter.as_ref()
     }
     /// <p>An integer parameter that is created in the dataset.</p>
-    pub fn integer_dataset_parameter(&self) -> ::std::option::Option<&crate::types::IntegerDatasetParameter> {
+    pub fn integer_dataset_parameter(&self) -> ::std::option::Option<& crate::types::IntegerDatasetParameter> {
         self.integer_dataset_parameter.as_ref()
     }
     /// <p>A date time parameter that is created in the dataset.</p>
-    pub fn date_time_dataset_parameter(&self) -> ::std::option::Option<&crate::types::DateTimeDatasetParameter> {
+    pub fn date_time_dataset_parameter(&self) -> ::std::option::Option<& crate::types::DateTimeDatasetParameter> {
         self.date_time_dataset_parameter.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>A string parameter that is created in the dataset.</p>
     pub fn set_string_dataset_parameter(mut self, input: ::std::option::Option<crate::types::StringDatasetParameter>) -> Self {
-        self.string_dataset_parameter = input;
-        self
+        self.string_dataset_parameter = input; self
     }
     /// <p>A string parameter that is created in the dataset.</p>
     pub fn get_string_dataset_parameter(&self) -> &::std::option::Option<crate::types::StringDatasetParameter> {
@@ -69,8 +68,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>A decimal parameter that is created in the dataset.</p>
     pub fn set_decimal_dataset_parameter(mut self, input: ::std::option::Option<crate::types::DecimalDatasetParameter>) -> Self {
-        self.decimal_dataset_parameter = input;
-        self
+        self.decimal_dataset_parameter = input; self
     }
     /// <p>A decimal parameter that is created in the dataset.</p>
     pub fn get_decimal_dataset_parameter(&self) -> &::std::option::Option<crate::types::DecimalDatasetParameter> {
@@ -83,8 +81,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>An integer parameter that is created in the dataset.</p>
     pub fn set_integer_dataset_parameter(mut self, input: ::std::option::Option<crate::types::IntegerDatasetParameter>) -> Self {
-        self.integer_dataset_parameter = input;
-        self
+        self.integer_dataset_parameter = input; self
     }
     /// <p>An integer parameter that is created in the dataset.</p>
     pub fn get_integer_dataset_parameter(&self) -> &::std::option::Option<crate::types::IntegerDatasetParameter> {
@@ -97,8 +94,7 @@ impl DatasetParameterBuilder {
     }
     /// <p>A date time parameter that is created in the dataset.</p>
     pub fn set_date_time_dataset_parameter(mut self, input: ::std::option::Option<crate::types::DateTimeDatasetParameter>) -> Self {
-        self.date_time_dataset_parameter = input;
-        self
+        self.date_time_dataset_parameter = input; self
     }
     /// <p>A date time parameter that is created in the dataset.</p>
     pub fn get_date_time_dataset_parameter(&self) -> &::std::option::Option<crate::types::DateTimeDatasetParameter> {
@@ -107,10 +103,15 @@ impl DatasetParameterBuilder {
     /// Consumes the builder and constructs a [`DatasetParameter`](crate::types::DatasetParameter).
     pub fn build(self) -> crate::types::DatasetParameter {
         crate::types::DatasetParameter {
-            string_dataset_parameter: self.string_dataset_parameter,
-            decimal_dataset_parameter: self.decimal_dataset_parameter,
-            integer_dataset_parameter: self.integer_dataset_parameter,
-            date_time_dataset_parameter: self.date_time_dataset_parameter,
+            string_dataset_parameter: self.string_dataset_parameter
+            ,
+            decimal_dataset_parameter: self.decimal_dataset_parameter
+            ,
+            integer_dataset_parameter: self.integer_dataset_parameter
+            ,
+            date_time_dataset_parameter: self.date_time_dataset_parameter
+            ,
         }
     }
 }
+

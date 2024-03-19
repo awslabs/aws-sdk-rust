@@ -3,22 +3,23 @@
 /// <p>A structure containing the name of a column resource and the LF-tags attached to it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColumnLfTag {
+pub struct ColumnLfTag  {
     /// <p>The name of a column resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The LF-tags attached to a column resource.</p>
-    pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub lf_tags: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
 }
-impl ColumnLfTag {
+impl  ColumnLfTag  {
     /// <p>The name of a column resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The LF-tags attached to a column resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lf_tags.is_none()`.
-    pub fn lf_tags(&self) -> &[crate::types::LfTagPair] {
-        self.lf_tags.as_deref().unwrap_or_default()
+    pub fn lf_tags(&self) -> & [crate::types::LfTagPair] {
+        self.lf_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ColumnLfTag {
@@ -33,7 +34,7 @@ impl ColumnLfTag {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ColumnLfTagBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
+    pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>,
 }
 impl ColumnLfTagBuilder {
     /// <p>The name of a column resource.</p>
@@ -43,8 +44,7 @@ impl ColumnLfTagBuilder {
     }
     /// <p>The name of a column resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of a column resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,24 +57,26 @@ impl ColumnLfTagBuilder {
     /// <p>The LF-tags attached to a column resource.</p>
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
-        v.push(input);
-        self.lf_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The LF-tags attached to a column resource.</p>
-    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>) -> Self {
-        self.lf_tags = input;
-        self
+    pub fn set_lf_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>>) -> Self {
+        self.lf_tags = input; self
     }
     /// <p>The LF-tags attached to a column resource.</p>
-    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::LfTagPair>> {
         &self.lf_tags
     }
     /// Consumes the builder and constructs a [`ColumnLfTag`](crate::types::ColumnLfTag).
     pub fn build(self) -> crate::types::ColumnLfTag {
         crate::types::ColumnLfTag {
-            name: self.name,
-            lf_tags: self.lf_tags,
+            name: self.name
+            ,
+            lf_tags: self.lf_tags
+            ,
         }
     }
 }
+

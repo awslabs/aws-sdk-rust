@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -88,16 +88,14 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountsAlreadyAssociated,
@@ -221,296 +219,236 @@ pub enum ValidationExceptionReason {
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
-            "ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
-            "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP" => ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup,
-            "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
-            "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => ValidationExceptionReason::CustomLineItemAssociationExists,
-            "DUPLICATE_ACCOUNT" => ValidationExceptionReason::DuplicateAccount,
-            "DUPLICATE_PRICINGRULE_ARNS" => ValidationExceptionReason::DuplicatePricingruleArns,
-            "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
-            "ILLEGAL_ACCOUNT_ID" => ValidationExceptionReason::IllegalAccountId,
-            "ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
-            "ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
-            "ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
-            "ILLEGAL_CHARGE_DETAILS" => ValidationExceptionReason::IllegalChargeDetails,
-            "ILLEGAL_CHILD_ASSOCIATE_RESOURCE" => ValidationExceptionReason::IllegalChildAssociateResource,
-            "ILLEGAL_CUSTOMLINEITEM" => ValidationExceptionReason::IllegalCustomlineitem,
-            "ILLEGAL_CUSTOMLINEITEM_MODIFICATION" => ValidationExceptionReason::IllegalCustomlineitemModification,
-            "ILLEGAL_CUSTOMLINEITEM_UPDATE" => ValidationExceptionReason::IllegalCustomlineitemUpdate,
-            "ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
-            "ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
-            "ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
-            "ILLEGAL_OPERATION" => ValidationExceptionReason::IllegalOperation,
-            "ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
-            "ILLEGAL_RESOURCE_ARNS" => ValidationExceptionReason::IllegalResourceArns,
-            "ILLEGAL_SCOPE" => ValidationExceptionReason::IllegalScope,
-            "ILLEGAL_SERVICE" => ValidationExceptionReason::IllegalService,
-            "ILLEGAL_TIERING_INPUT" => ValidationExceptionReason::IllegalTieringInput,
-            "ILLEGAL_TYPE" => ValidationExceptionReason::IllegalType,
-            "ILLEGAL_UPDATE_CHARGE_DETAILS" => ValidationExceptionReason::IllegalUpdateChargeDetails,
-            "ILLEGAL_USAGE_TYPE" => ValidationExceptionReason::IllegalUsageType,
-            "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
-            "INVALID_BILLINGVIEW_ARN" => ValidationExceptionReason::InvalidBillingviewArn,
-            "INVALID_BILLING_GROUP" => ValidationExceptionReason::InvalidBillingGroup,
-            "INVALID_BILLING_GROUP_STATUS" => ValidationExceptionReason::InvalidBillingGroupStatus,
-            "INVALID_BILLING_PERIOD_FOR_OPERATION" => ValidationExceptionReason::InvalidBillingPeriodForOperation,
-            "INVALID_FILTER" => ValidationExceptionReason::InvalidFilter,
-            "INVALID_SKU_COMBO" => ValidationExceptionReason::InvalidSkuCombo,
-            "INVALID_TIME_RANGE" => ValidationExceptionReason::InvalidTimeRange,
-            "MISMATCHED_BILLINGGROUP_ARN" => ValidationExceptionReason::MismatchedBillinggroupArn,
-            "MISMATCHED_BILLINGVIEW_ARN" => ValidationExceptionReason::MismatchedBillingviewArn,
-            "MISMATCHED_CUSTOMLINEITEM_ARN" => ValidationExceptionReason::MismatchedCustomlineitemArn,
-            "MISMATCHED_PRICINGPLAN_ARN" => ValidationExceptionReason::MismatchedPricingplanArn,
-            "MISMATCHED_PRICINGRULE_ARN" => ValidationExceptionReason::MismatchedPricingruleArn,
-            "MISSING_BILLINGGROUP" => ValidationExceptionReason::MissingBillinggroup,
-            "MISSING_CUSTOMLINEITEM" => ValidationExceptionReason::MissingCustomlineitem,
-            "MISSING_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MissingLinkedAccountIds,
-            "MISSING_PRICINGPLAN" => ValidationExceptionReason::MissingPricingplan,
-            "MISSING_PRICING_PLAN_ARN" => ValidationExceptionReason::MissingPricingPlanArn,
-            "MULTIPLE_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MultipleLinkedAccountIds,
-            "MULTIPLE_PRICING_PLAN_ARN" => ValidationExceptionReason::MultiplePricingPlanArn,
-            "OTHER" => ValidationExceptionReason::Other,
-            "PRICINGRULES_ALREADY_ASSOCIATED" => ValidationExceptionReason::PricingrulesAlreadyAssociated,
-            "PRICINGRULES_NOT_ASSOCIATED" => ValidationExceptionReason::PricingrulesNotAssociated,
-            "PRICINGRULES_NOT_EXIST" => ValidationExceptionReason::PricingrulesNotExist,
-            "PRIMARY_CANNOT_DISASSOCIATE" => ValidationExceptionReason::PrimaryCannotDisassociate,
-            "PRIMARY_NOT_ASSOCIATED" => ValidationExceptionReason::PrimaryNotAssociated,
-            "TOO_MANY_ACCOUNTS_IN_REQUEST" => ValidationExceptionReason::TooManyAccountsInRequest,
-            "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS" => ValidationExceptionReason::TooManyAutoAssociateBillingGroups,
-            "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST" => ValidationExceptionReason::TooManyCustomlineitemsInRequest,
-            "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCOUNTS_ALREADY_ASSOCIATED" => ValidationExceptionReason::AccountsAlreadyAssociated,
+"ACCOUNTS_NOT_ASSOCIATED" => ValidationExceptionReason::AccountsNotAssociated,
+"CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP" => ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup,
+"CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+"CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS" => ValidationExceptionReason::CustomLineItemAssociationExists,
+"DUPLICATE_ACCOUNT" => ValidationExceptionReason::DuplicateAccount,
+"DUPLICATE_PRICINGRULE_ARNS" => ValidationExceptionReason::DuplicatePricingruleArns,
+"FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+"ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
+"ILLEGAL_ACCOUNT_ID" => ValidationExceptionReason::IllegalAccountId,
+"ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
+"ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
+"ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
+"ILLEGAL_CHARGE_DETAILS" => ValidationExceptionReason::IllegalChargeDetails,
+"ILLEGAL_CHILD_ASSOCIATE_RESOURCE" => ValidationExceptionReason::IllegalChildAssociateResource,
+"ILLEGAL_CUSTOMLINEITEM" => ValidationExceptionReason::IllegalCustomlineitem,
+"ILLEGAL_CUSTOMLINEITEM_MODIFICATION" => ValidationExceptionReason::IllegalCustomlineitemModification,
+"ILLEGAL_CUSTOMLINEITEM_UPDATE" => ValidationExceptionReason::IllegalCustomlineitemUpdate,
+"ILLEGAL_ENDED_BILLINGGROUP" => ValidationExceptionReason::IllegalEndedBillinggroup,
+"ILLEGAL_EXPRESSION" => ValidationExceptionReason::IllegalExpression,
+"ILLEGAL_MODIFIER_PERCENTAGE" => ValidationExceptionReason::IllegalModifierPercentage,
+"ILLEGAL_OPERATION" => ValidationExceptionReason::IllegalOperation,
+"ILLEGAL_PRIMARY_ACCOUNT" => ValidationExceptionReason::IllegalPrimaryAccount,
+"ILLEGAL_RESOURCE_ARNS" => ValidationExceptionReason::IllegalResourceArns,
+"ILLEGAL_SCOPE" => ValidationExceptionReason::IllegalScope,
+"ILLEGAL_SERVICE" => ValidationExceptionReason::IllegalService,
+"ILLEGAL_TIERING_INPUT" => ValidationExceptionReason::IllegalTieringInput,
+"ILLEGAL_TYPE" => ValidationExceptionReason::IllegalType,
+"ILLEGAL_UPDATE_CHARGE_DETAILS" => ValidationExceptionReason::IllegalUpdateChargeDetails,
+"ILLEGAL_USAGE_TYPE" => ValidationExceptionReason::IllegalUsageType,
+"INVALID_ARN" => ValidationExceptionReason::InvalidArn,
+"INVALID_BILLINGVIEW_ARN" => ValidationExceptionReason::InvalidBillingviewArn,
+"INVALID_BILLING_GROUP" => ValidationExceptionReason::InvalidBillingGroup,
+"INVALID_BILLING_GROUP_STATUS" => ValidationExceptionReason::InvalidBillingGroupStatus,
+"INVALID_BILLING_PERIOD_FOR_OPERATION" => ValidationExceptionReason::InvalidBillingPeriodForOperation,
+"INVALID_FILTER" => ValidationExceptionReason::InvalidFilter,
+"INVALID_SKU_COMBO" => ValidationExceptionReason::InvalidSkuCombo,
+"INVALID_TIME_RANGE" => ValidationExceptionReason::InvalidTimeRange,
+"MISMATCHED_BILLINGGROUP_ARN" => ValidationExceptionReason::MismatchedBillinggroupArn,
+"MISMATCHED_BILLINGVIEW_ARN" => ValidationExceptionReason::MismatchedBillingviewArn,
+"MISMATCHED_CUSTOMLINEITEM_ARN" => ValidationExceptionReason::MismatchedCustomlineitemArn,
+"MISMATCHED_PRICINGPLAN_ARN" => ValidationExceptionReason::MismatchedPricingplanArn,
+"MISMATCHED_PRICINGRULE_ARN" => ValidationExceptionReason::MismatchedPricingruleArn,
+"MISSING_BILLINGGROUP" => ValidationExceptionReason::MissingBillinggroup,
+"MISSING_CUSTOMLINEITEM" => ValidationExceptionReason::MissingCustomlineitem,
+"MISSING_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MissingLinkedAccountIds,
+"MISSING_PRICINGPLAN" => ValidationExceptionReason::MissingPricingplan,
+"MISSING_PRICING_PLAN_ARN" => ValidationExceptionReason::MissingPricingPlanArn,
+"MULTIPLE_LINKED_ACCOUNT_IDS" => ValidationExceptionReason::MultipleLinkedAccountIds,
+"MULTIPLE_PRICING_PLAN_ARN" => ValidationExceptionReason::MultiplePricingPlanArn,
+"OTHER" => ValidationExceptionReason::Other,
+"PRICINGRULES_ALREADY_ASSOCIATED" => ValidationExceptionReason::PricingrulesAlreadyAssociated,
+"PRICINGRULES_NOT_ASSOCIATED" => ValidationExceptionReason::PricingrulesNotAssociated,
+"PRICINGRULES_NOT_EXIST" => ValidationExceptionReason::PricingrulesNotExist,
+"PRIMARY_CANNOT_DISASSOCIATE" => ValidationExceptionReason::PrimaryCannotDisassociate,
+"PRIMARY_NOT_ASSOCIATED" => ValidationExceptionReason::PrimaryNotAssociated,
+"TOO_MANY_ACCOUNTS_IN_REQUEST" => ValidationExceptionReason::TooManyAccountsInRequest,
+"TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS" => ValidationExceptionReason::TooManyAutoAssociateBillingGroups,
+"TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST" => ValidationExceptionReason::TooManyCustomlineitemsInRequest,
+"UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ValidationExceptionReason {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ValidationExceptionReason::from(s))
+                    }
+                }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
-            ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
-            ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
-            ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
-            ValidationExceptionReason::CustomLineItemAssociationExists => "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
-            ValidationExceptionReason::DuplicateAccount => "DUPLICATE_ACCOUNT",
-            ValidationExceptionReason::DuplicatePricingruleArns => "DUPLICATE_PRICINGRULE_ARNS",
-            ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
-            ValidationExceptionReason::IllegalAccountId => "ILLEGAL_ACCOUNT_ID",
-            ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
-            ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
-            ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
-            ValidationExceptionReason::IllegalChargeDetails => "ILLEGAL_CHARGE_DETAILS",
-            ValidationExceptionReason::IllegalChildAssociateResource => "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
-            ValidationExceptionReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
-            ValidationExceptionReason::IllegalCustomlineitemModification => "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
-            ValidationExceptionReason::IllegalCustomlineitemUpdate => "ILLEGAL_CUSTOMLINEITEM_UPDATE",
-            ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
-            ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
-            ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
-            ValidationExceptionReason::IllegalOperation => "ILLEGAL_OPERATION",
-            ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
-            ValidationExceptionReason::IllegalResourceArns => "ILLEGAL_RESOURCE_ARNS",
-            ValidationExceptionReason::IllegalScope => "ILLEGAL_SCOPE",
-            ValidationExceptionReason::IllegalService => "ILLEGAL_SERVICE",
-            ValidationExceptionReason::IllegalTieringInput => "ILLEGAL_TIERING_INPUT",
-            ValidationExceptionReason::IllegalType => "ILLEGAL_TYPE",
-            ValidationExceptionReason::IllegalUpdateChargeDetails => "ILLEGAL_UPDATE_CHARGE_DETAILS",
-            ValidationExceptionReason::IllegalUsageType => "ILLEGAL_USAGE_TYPE",
-            ValidationExceptionReason::InvalidArn => "INVALID_ARN",
-            ValidationExceptionReason::InvalidBillingviewArn => "INVALID_BILLINGVIEW_ARN",
-            ValidationExceptionReason::InvalidBillingGroup => "INVALID_BILLING_GROUP",
-            ValidationExceptionReason::InvalidBillingGroupStatus => "INVALID_BILLING_GROUP_STATUS",
-            ValidationExceptionReason::InvalidBillingPeriodForOperation => "INVALID_BILLING_PERIOD_FOR_OPERATION",
-            ValidationExceptionReason::InvalidFilter => "INVALID_FILTER",
-            ValidationExceptionReason::InvalidSkuCombo => "INVALID_SKU_COMBO",
-            ValidationExceptionReason::InvalidTimeRange => "INVALID_TIME_RANGE",
-            ValidationExceptionReason::MismatchedBillinggroupArn => "MISMATCHED_BILLINGGROUP_ARN",
-            ValidationExceptionReason::MismatchedBillingviewArn => "MISMATCHED_BILLINGVIEW_ARN",
-            ValidationExceptionReason::MismatchedCustomlineitemArn => "MISMATCHED_CUSTOMLINEITEM_ARN",
-            ValidationExceptionReason::MismatchedPricingplanArn => "MISMATCHED_PRICINGPLAN_ARN",
-            ValidationExceptionReason::MismatchedPricingruleArn => "MISMATCHED_PRICINGRULE_ARN",
-            ValidationExceptionReason::MissingBillinggroup => "MISSING_BILLINGGROUP",
-            ValidationExceptionReason::MissingCustomlineitem => "MISSING_CUSTOMLINEITEM",
-            ValidationExceptionReason::MissingLinkedAccountIds => "MISSING_LINKED_ACCOUNT_IDS",
-            ValidationExceptionReason::MissingPricingplan => "MISSING_PRICINGPLAN",
-            ValidationExceptionReason::MissingPricingPlanArn => "MISSING_PRICING_PLAN_ARN",
-            ValidationExceptionReason::MultipleLinkedAccountIds => "MULTIPLE_LINKED_ACCOUNT_IDS",
-            ValidationExceptionReason::MultiplePricingPlanArn => "MULTIPLE_PRICING_PLAN_ARN",
-            ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::PricingrulesAlreadyAssociated => "PRICINGRULES_ALREADY_ASSOCIATED",
-            ValidationExceptionReason::PricingrulesNotAssociated => "PRICINGRULES_NOT_ASSOCIATED",
-            ValidationExceptionReason::PricingrulesNotExist => "PRICINGRULES_NOT_EXIST",
-            ValidationExceptionReason::PrimaryCannotDisassociate => "PRIMARY_CANNOT_DISASSOCIATE",
-            ValidationExceptionReason::PrimaryNotAssociated => "PRIMARY_NOT_ASSOCIATED",
-            ValidationExceptionReason::TooManyAccountsInRequest => "TOO_MANY_ACCOUNTS_IN_REQUEST",
-            ValidationExceptionReason::TooManyAutoAssociateBillingGroups => "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS",
-            ValidationExceptionReason::TooManyCustomlineitemsInRequest => "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
-            ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNTS_ALREADY_ASSOCIATED",
-            "ACCOUNTS_NOT_ASSOCIATED",
-            "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
-            "CANNOT_PARSE",
-            "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
-            "DUPLICATE_ACCOUNT",
-            "DUPLICATE_PRICINGRULE_ARNS",
-            "FIELD_VALIDATION_FAILED",
-            "ILLEGAL_ACCOUNTS",
-            "ILLEGAL_ACCOUNT_ID",
-            "ILLEGAL_BILLING_ENTITY",
-            "ILLEGAL_BILLING_PERIOD",
-            "ILLEGAL_BILLING_PERIOD_RANGE",
-            "ILLEGAL_CHARGE_DETAILS",
-            "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
-            "ILLEGAL_CUSTOMLINEITEM",
-            "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
-            "ILLEGAL_CUSTOMLINEITEM_UPDATE",
-            "ILLEGAL_ENDED_BILLINGGROUP",
-            "ILLEGAL_EXPRESSION",
-            "ILLEGAL_MODIFIER_PERCENTAGE",
-            "ILLEGAL_OPERATION",
-            "ILLEGAL_PRIMARY_ACCOUNT",
-            "ILLEGAL_RESOURCE_ARNS",
-            "ILLEGAL_SCOPE",
-            "ILLEGAL_SERVICE",
-            "ILLEGAL_TIERING_INPUT",
-            "ILLEGAL_TYPE",
-            "ILLEGAL_UPDATE_CHARGE_DETAILS",
-            "ILLEGAL_USAGE_TYPE",
-            "INVALID_ARN",
-            "INVALID_BILLINGVIEW_ARN",
-            "INVALID_BILLING_GROUP",
-            "INVALID_BILLING_GROUP_STATUS",
-            "INVALID_BILLING_PERIOD_FOR_OPERATION",
-            "INVALID_FILTER",
-            "INVALID_SKU_COMBO",
-            "INVALID_TIME_RANGE",
-            "MISMATCHED_BILLINGGROUP_ARN",
-            "MISMATCHED_BILLINGVIEW_ARN",
-            "MISMATCHED_CUSTOMLINEITEM_ARN",
-            "MISMATCHED_PRICINGPLAN_ARN",
-            "MISMATCHED_PRICINGRULE_ARN",
-            "MISSING_BILLINGGROUP",
-            "MISSING_CUSTOMLINEITEM",
-            "MISSING_LINKED_ACCOUNT_IDS",
-            "MISSING_PRICINGPLAN",
-            "MISSING_PRICING_PLAN_ARN",
-            "MULTIPLE_LINKED_ACCOUNT_IDS",
-            "MULTIPLE_PRICING_PLAN_ARN",
-            "OTHER",
-            "PRICINGRULES_ALREADY_ASSOCIATED",
-            "PRICINGRULES_NOT_ASSOCIATED",
-            "PRICINGRULES_NOT_EXIST",
-            "PRIMARY_CANNOT_DISASSOCIATE",
-            "PRIMARY_NOT_ASSOCIATED",
-            "TOO_MANY_ACCOUNTS_IN_REQUEST",
-            "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS",
-            "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
-            "UNKNOWN_OPERATION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::AccountsAlreadyAssociated => "ACCOUNTS_ALREADY_ASSOCIATED",
+    ValidationExceptionReason::AccountsNotAssociated => "ACCOUNTS_NOT_ASSOCIATED",
+    ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP",
+    ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+    ValidationExceptionReason::CustomLineItemAssociationExists => "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS",
+    ValidationExceptionReason::DuplicateAccount => "DUPLICATE_ACCOUNT",
+    ValidationExceptionReason::DuplicatePricingruleArns => "DUPLICATE_PRICINGRULE_ARNS",
+    ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+    ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
+    ValidationExceptionReason::IllegalAccountId => "ILLEGAL_ACCOUNT_ID",
+    ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
+    ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
+    ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
+    ValidationExceptionReason::IllegalChargeDetails => "ILLEGAL_CHARGE_DETAILS",
+    ValidationExceptionReason::IllegalChildAssociateResource => "ILLEGAL_CHILD_ASSOCIATE_RESOURCE",
+    ValidationExceptionReason::IllegalCustomlineitem => "ILLEGAL_CUSTOMLINEITEM",
+    ValidationExceptionReason::IllegalCustomlineitemModification => "ILLEGAL_CUSTOMLINEITEM_MODIFICATION",
+    ValidationExceptionReason::IllegalCustomlineitemUpdate => "ILLEGAL_CUSTOMLINEITEM_UPDATE",
+    ValidationExceptionReason::IllegalEndedBillinggroup => "ILLEGAL_ENDED_BILLINGGROUP",
+    ValidationExceptionReason::IllegalExpression => "ILLEGAL_EXPRESSION",
+    ValidationExceptionReason::IllegalModifierPercentage => "ILLEGAL_MODIFIER_PERCENTAGE",
+    ValidationExceptionReason::IllegalOperation => "ILLEGAL_OPERATION",
+    ValidationExceptionReason::IllegalPrimaryAccount => "ILLEGAL_PRIMARY_ACCOUNT",
+    ValidationExceptionReason::IllegalResourceArns => "ILLEGAL_RESOURCE_ARNS",
+    ValidationExceptionReason::IllegalScope => "ILLEGAL_SCOPE",
+    ValidationExceptionReason::IllegalService => "ILLEGAL_SERVICE",
+    ValidationExceptionReason::IllegalTieringInput => "ILLEGAL_TIERING_INPUT",
+    ValidationExceptionReason::IllegalType => "ILLEGAL_TYPE",
+    ValidationExceptionReason::IllegalUpdateChargeDetails => "ILLEGAL_UPDATE_CHARGE_DETAILS",
+    ValidationExceptionReason::IllegalUsageType => "ILLEGAL_USAGE_TYPE",
+    ValidationExceptionReason::InvalidArn => "INVALID_ARN",
+    ValidationExceptionReason::InvalidBillingviewArn => "INVALID_BILLINGVIEW_ARN",
+    ValidationExceptionReason::InvalidBillingGroup => "INVALID_BILLING_GROUP",
+    ValidationExceptionReason::InvalidBillingGroupStatus => "INVALID_BILLING_GROUP_STATUS",
+    ValidationExceptionReason::InvalidBillingPeriodForOperation => "INVALID_BILLING_PERIOD_FOR_OPERATION",
+    ValidationExceptionReason::InvalidFilter => "INVALID_FILTER",
+    ValidationExceptionReason::InvalidSkuCombo => "INVALID_SKU_COMBO",
+    ValidationExceptionReason::InvalidTimeRange => "INVALID_TIME_RANGE",
+    ValidationExceptionReason::MismatchedBillinggroupArn => "MISMATCHED_BILLINGGROUP_ARN",
+    ValidationExceptionReason::MismatchedBillingviewArn => "MISMATCHED_BILLINGVIEW_ARN",
+    ValidationExceptionReason::MismatchedCustomlineitemArn => "MISMATCHED_CUSTOMLINEITEM_ARN",
+    ValidationExceptionReason::MismatchedPricingplanArn => "MISMATCHED_PRICINGPLAN_ARN",
+    ValidationExceptionReason::MismatchedPricingruleArn => "MISMATCHED_PRICINGRULE_ARN",
+    ValidationExceptionReason::MissingBillinggroup => "MISSING_BILLINGGROUP",
+    ValidationExceptionReason::MissingCustomlineitem => "MISSING_CUSTOMLINEITEM",
+    ValidationExceptionReason::MissingLinkedAccountIds => "MISSING_LINKED_ACCOUNT_IDS",
+    ValidationExceptionReason::MissingPricingplan => "MISSING_PRICINGPLAN",
+    ValidationExceptionReason::MissingPricingPlanArn => "MISSING_PRICING_PLAN_ARN",
+    ValidationExceptionReason::MultipleLinkedAccountIds => "MULTIPLE_LINKED_ACCOUNT_IDS",
+    ValidationExceptionReason::MultiplePricingPlanArn => "MULTIPLE_PRICING_PLAN_ARN",
+    ValidationExceptionReason::Other => "OTHER",
+    ValidationExceptionReason::PricingrulesAlreadyAssociated => "PRICINGRULES_ALREADY_ASSOCIATED",
+    ValidationExceptionReason::PricingrulesNotAssociated => "PRICINGRULES_NOT_ASSOCIATED",
+    ValidationExceptionReason::PricingrulesNotExist => "PRICINGRULES_NOT_EXIST",
+    ValidationExceptionReason::PrimaryCannotDisassociate => "PRIMARY_CANNOT_DISASSOCIATE",
+    ValidationExceptionReason::PrimaryNotAssociated => "PRIMARY_NOT_ASSOCIATED",
+    ValidationExceptionReason::TooManyAccountsInRequest => "TOO_MANY_ACCOUNTS_IN_REQUEST",
+    ValidationExceptionReason::TooManyAutoAssociateBillingGroups => "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS",
+    ValidationExceptionReason::TooManyCustomlineitemsInRequest => "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST",
+    ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNTS_ALREADY_ASSOCIATED", "ACCOUNTS_NOT_ASSOCIATED", "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP", "CANNOT_PARSE", "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS", "DUPLICATE_ACCOUNT", "DUPLICATE_PRICINGRULE_ARNS", "FIELD_VALIDATION_FAILED", "ILLEGAL_ACCOUNTS", "ILLEGAL_ACCOUNT_ID", "ILLEGAL_BILLING_ENTITY", "ILLEGAL_BILLING_PERIOD", "ILLEGAL_BILLING_PERIOD_RANGE", "ILLEGAL_CHARGE_DETAILS", "ILLEGAL_CHILD_ASSOCIATE_RESOURCE", "ILLEGAL_CUSTOMLINEITEM", "ILLEGAL_CUSTOMLINEITEM_MODIFICATION", "ILLEGAL_CUSTOMLINEITEM_UPDATE", "ILLEGAL_ENDED_BILLINGGROUP", "ILLEGAL_EXPRESSION", "ILLEGAL_MODIFIER_PERCENTAGE", "ILLEGAL_OPERATION", "ILLEGAL_PRIMARY_ACCOUNT", "ILLEGAL_RESOURCE_ARNS", "ILLEGAL_SCOPE", "ILLEGAL_SERVICE", "ILLEGAL_TIERING_INPUT", "ILLEGAL_TYPE", "ILLEGAL_UPDATE_CHARGE_DETAILS", "ILLEGAL_USAGE_TYPE", "INVALID_ARN", "INVALID_BILLINGVIEW_ARN", "INVALID_BILLING_GROUP", "INVALID_BILLING_GROUP_STATUS", "INVALID_BILLING_PERIOD_FOR_OPERATION", "INVALID_FILTER", "INVALID_SKU_COMBO", "INVALID_TIME_RANGE", "MISMATCHED_BILLINGGROUP_ARN", "MISMATCHED_BILLINGVIEW_ARN", "MISMATCHED_CUSTOMLINEITEM_ARN", "MISMATCHED_PRICINGPLAN_ARN", "MISMATCHED_PRICINGRULE_ARN", "MISSING_BILLINGGROUP", "MISSING_CUSTOMLINEITEM", "MISSING_LINKED_ACCOUNT_IDS", "MISSING_PRICINGPLAN", "MISSING_PRICING_PLAN_ARN", "MULTIPLE_LINKED_ACCOUNT_IDS", "MULTIPLE_PRICING_PLAN_ARN", "OTHER", "PRICINGRULES_ALREADY_ASSOCIATED", "PRICINGRULES_NOT_ASSOCIATED", "PRICINGRULES_NOT_EXIST", "PRIMARY_CANNOT_DISASSOCIATE", "PRIMARY_NOT_ASSOCIATED", "TOO_MANY_ACCOUNTS_IN_REQUEST", "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS", "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST", "UNKNOWN_OPERATION"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ValidationExceptionReason {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ValidationExceptionReason {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ValidationExceptionReason::AccountsAlreadyAssociated => write!(f, "ACCOUNTS_ALREADY_ASSOCIATED"),
-            ValidationExceptionReason::AccountsNotAssociated => write!(f, "ACCOUNTS_NOT_ASSOCIATED"),
-            ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => write!(f, "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP"),
-            ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
-            ValidationExceptionReason::CustomLineItemAssociationExists => write!(f, "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS"),
-            ValidationExceptionReason::DuplicateAccount => write!(f, "DUPLICATE_ACCOUNT"),
-            ValidationExceptionReason::DuplicatePricingruleArns => write!(f, "DUPLICATE_PRICINGRULE_ARNS"),
-            ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
-            ValidationExceptionReason::IllegalAccounts => write!(f, "ILLEGAL_ACCOUNTS"),
-            ValidationExceptionReason::IllegalAccountId => write!(f, "ILLEGAL_ACCOUNT_ID"),
-            ValidationExceptionReason::IllegalBillingEntity => write!(f, "ILLEGAL_BILLING_ENTITY"),
-            ValidationExceptionReason::IllegalBillingPeriod => write!(f, "ILLEGAL_BILLING_PERIOD"),
-            ValidationExceptionReason::IllegalBillingPeriodRange => write!(f, "ILLEGAL_BILLING_PERIOD_RANGE"),
-            ValidationExceptionReason::IllegalChargeDetails => write!(f, "ILLEGAL_CHARGE_DETAILS"),
-            ValidationExceptionReason::IllegalChildAssociateResource => write!(f, "ILLEGAL_CHILD_ASSOCIATE_RESOURCE"),
-            ValidationExceptionReason::IllegalCustomlineitem => write!(f, "ILLEGAL_CUSTOMLINEITEM"),
-            ValidationExceptionReason::IllegalCustomlineitemModification => write!(f, "ILLEGAL_CUSTOMLINEITEM_MODIFICATION"),
-            ValidationExceptionReason::IllegalCustomlineitemUpdate => write!(f, "ILLEGAL_CUSTOMLINEITEM_UPDATE"),
-            ValidationExceptionReason::IllegalEndedBillinggroup => write!(f, "ILLEGAL_ENDED_BILLINGGROUP"),
-            ValidationExceptionReason::IllegalExpression => write!(f, "ILLEGAL_EXPRESSION"),
-            ValidationExceptionReason::IllegalModifierPercentage => write!(f, "ILLEGAL_MODIFIER_PERCENTAGE"),
-            ValidationExceptionReason::IllegalOperation => write!(f, "ILLEGAL_OPERATION"),
-            ValidationExceptionReason::IllegalPrimaryAccount => write!(f, "ILLEGAL_PRIMARY_ACCOUNT"),
-            ValidationExceptionReason::IllegalResourceArns => write!(f, "ILLEGAL_RESOURCE_ARNS"),
-            ValidationExceptionReason::IllegalScope => write!(f, "ILLEGAL_SCOPE"),
-            ValidationExceptionReason::IllegalService => write!(f, "ILLEGAL_SERVICE"),
-            ValidationExceptionReason::IllegalTieringInput => write!(f, "ILLEGAL_TIERING_INPUT"),
-            ValidationExceptionReason::IllegalType => write!(f, "ILLEGAL_TYPE"),
-            ValidationExceptionReason::IllegalUpdateChargeDetails => write!(f, "ILLEGAL_UPDATE_CHARGE_DETAILS"),
-            ValidationExceptionReason::IllegalUsageType => write!(f, "ILLEGAL_USAGE_TYPE"),
-            ValidationExceptionReason::InvalidArn => write!(f, "INVALID_ARN"),
-            ValidationExceptionReason::InvalidBillingviewArn => write!(f, "INVALID_BILLINGVIEW_ARN"),
-            ValidationExceptionReason::InvalidBillingGroup => write!(f, "INVALID_BILLING_GROUP"),
-            ValidationExceptionReason::InvalidBillingGroupStatus => write!(f, "INVALID_BILLING_GROUP_STATUS"),
-            ValidationExceptionReason::InvalidBillingPeriodForOperation => write!(f, "INVALID_BILLING_PERIOD_FOR_OPERATION"),
-            ValidationExceptionReason::InvalidFilter => write!(f, "INVALID_FILTER"),
-            ValidationExceptionReason::InvalidSkuCombo => write!(f, "INVALID_SKU_COMBO"),
-            ValidationExceptionReason::InvalidTimeRange => write!(f, "INVALID_TIME_RANGE"),
-            ValidationExceptionReason::MismatchedBillinggroupArn => write!(f, "MISMATCHED_BILLINGGROUP_ARN"),
-            ValidationExceptionReason::MismatchedBillingviewArn => write!(f, "MISMATCHED_BILLINGVIEW_ARN"),
-            ValidationExceptionReason::MismatchedCustomlineitemArn => write!(f, "MISMATCHED_CUSTOMLINEITEM_ARN"),
-            ValidationExceptionReason::MismatchedPricingplanArn => write!(f, "MISMATCHED_PRICINGPLAN_ARN"),
-            ValidationExceptionReason::MismatchedPricingruleArn => write!(f, "MISMATCHED_PRICINGRULE_ARN"),
-            ValidationExceptionReason::MissingBillinggroup => write!(f, "MISSING_BILLINGGROUP"),
-            ValidationExceptionReason::MissingCustomlineitem => write!(f, "MISSING_CUSTOMLINEITEM"),
-            ValidationExceptionReason::MissingLinkedAccountIds => write!(f, "MISSING_LINKED_ACCOUNT_IDS"),
-            ValidationExceptionReason::MissingPricingplan => write!(f, "MISSING_PRICINGPLAN"),
-            ValidationExceptionReason::MissingPricingPlanArn => write!(f, "MISSING_PRICING_PLAN_ARN"),
-            ValidationExceptionReason::MultipleLinkedAccountIds => write!(f, "MULTIPLE_LINKED_ACCOUNT_IDS"),
-            ValidationExceptionReason::MultiplePricingPlanArn => write!(f, "MULTIPLE_PRICING_PLAN_ARN"),
-            ValidationExceptionReason::Other => write!(f, "OTHER"),
-            ValidationExceptionReason::PricingrulesAlreadyAssociated => write!(f, "PRICINGRULES_ALREADY_ASSOCIATED"),
-            ValidationExceptionReason::PricingrulesNotAssociated => write!(f, "PRICINGRULES_NOT_ASSOCIATED"),
-            ValidationExceptionReason::PricingrulesNotExist => write!(f, "PRICINGRULES_NOT_EXIST"),
-            ValidationExceptionReason::PrimaryCannotDisassociate => write!(f, "PRIMARY_CANNOT_DISASSOCIATE"),
-            ValidationExceptionReason::PrimaryNotAssociated => write!(f, "PRIMARY_NOT_ASSOCIATED"),
-            ValidationExceptionReason::TooManyAccountsInRequest => write!(f, "TOO_MANY_ACCOUNTS_IN_REQUEST"),
-            ValidationExceptionReason::TooManyAutoAssociateBillingGroups => write!(f, "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS"),
-            ValidationExceptionReason::TooManyCustomlineitemsInRequest => write!(f, "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST"),
-            ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
-            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ValidationExceptionReason::AccountsAlreadyAssociated => write!(f, "ACCOUNTS_ALREADY_ASSOCIATED"),
+ValidationExceptionReason::AccountsNotAssociated => write!(f, "ACCOUNTS_NOT_ASSOCIATED"),
+ValidationExceptionReason::CannotDeleteAutoAssociateBillingGroup => write!(f, "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP"),
+ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
+ValidationExceptionReason::CustomLineItemAssociationExists => write!(f, "CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS"),
+ValidationExceptionReason::DuplicateAccount => write!(f, "DUPLICATE_ACCOUNT"),
+ValidationExceptionReason::DuplicatePricingruleArns => write!(f, "DUPLICATE_PRICINGRULE_ARNS"),
+ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+ValidationExceptionReason::IllegalAccounts => write!(f, "ILLEGAL_ACCOUNTS"),
+ValidationExceptionReason::IllegalAccountId => write!(f, "ILLEGAL_ACCOUNT_ID"),
+ValidationExceptionReason::IllegalBillingEntity => write!(f, "ILLEGAL_BILLING_ENTITY"),
+ValidationExceptionReason::IllegalBillingPeriod => write!(f, "ILLEGAL_BILLING_PERIOD"),
+ValidationExceptionReason::IllegalBillingPeriodRange => write!(f, "ILLEGAL_BILLING_PERIOD_RANGE"),
+ValidationExceptionReason::IllegalChargeDetails => write!(f, "ILLEGAL_CHARGE_DETAILS"),
+ValidationExceptionReason::IllegalChildAssociateResource => write!(f, "ILLEGAL_CHILD_ASSOCIATE_RESOURCE"),
+ValidationExceptionReason::IllegalCustomlineitem => write!(f, "ILLEGAL_CUSTOMLINEITEM"),
+ValidationExceptionReason::IllegalCustomlineitemModification => write!(f, "ILLEGAL_CUSTOMLINEITEM_MODIFICATION"),
+ValidationExceptionReason::IllegalCustomlineitemUpdate => write!(f, "ILLEGAL_CUSTOMLINEITEM_UPDATE"),
+ValidationExceptionReason::IllegalEndedBillinggroup => write!(f, "ILLEGAL_ENDED_BILLINGGROUP"),
+ValidationExceptionReason::IllegalExpression => write!(f, "ILLEGAL_EXPRESSION"),
+ValidationExceptionReason::IllegalModifierPercentage => write!(f, "ILLEGAL_MODIFIER_PERCENTAGE"),
+ValidationExceptionReason::IllegalOperation => write!(f, "ILLEGAL_OPERATION"),
+ValidationExceptionReason::IllegalPrimaryAccount => write!(f, "ILLEGAL_PRIMARY_ACCOUNT"),
+ValidationExceptionReason::IllegalResourceArns => write!(f, "ILLEGAL_RESOURCE_ARNS"),
+ValidationExceptionReason::IllegalScope => write!(f, "ILLEGAL_SCOPE"),
+ValidationExceptionReason::IllegalService => write!(f, "ILLEGAL_SERVICE"),
+ValidationExceptionReason::IllegalTieringInput => write!(f, "ILLEGAL_TIERING_INPUT"),
+ValidationExceptionReason::IllegalType => write!(f, "ILLEGAL_TYPE"),
+ValidationExceptionReason::IllegalUpdateChargeDetails => write!(f, "ILLEGAL_UPDATE_CHARGE_DETAILS"),
+ValidationExceptionReason::IllegalUsageType => write!(f, "ILLEGAL_USAGE_TYPE"),
+ValidationExceptionReason::InvalidArn => write!(f, "INVALID_ARN"),
+ValidationExceptionReason::InvalidBillingviewArn => write!(f, "INVALID_BILLINGVIEW_ARN"),
+ValidationExceptionReason::InvalidBillingGroup => write!(f, "INVALID_BILLING_GROUP"),
+ValidationExceptionReason::InvalidBillingGroupStatus => write!(f, "INVALID_BILLING_GROUP_STATUS"),
+ValidationExceptionReason::InvalidBillingPeriodForOperation => write!(f, "INVALID_BILLING_PERIOD_FOR_OPERATION"),
+ValidationExceptionReason::InvalidFilter => write!(f, "INVALID_FILTER"),
+ValidationExceptionReason::InvalidSkuCombo => write!(f, "INVALID_SKU_COMBO"),
+ValidationExceptionReason::InvalidTimeRange => write!(f, "INVALID_TIME_RANGE"),
+ValidationExceptionReason::MismatchedBillinggroupArn => write!(f, "MISMATCHED_BILLINGGROUP_ARN"),
+ValidationExceptionReason::MismatchedBillingviewArn => write!(f, "MISMATCHED_BILLINGVIEW_ARN"),
+ValidationExceptionReason::MismatchedCustomlineitemArn => write!(f, "MISMATCHED_CUSTOMLINEITEM_ARN"),
+ValidationExceptionReason::MismatchedPricingplanArn => write!(f, "MISMATCHED_PRICINGPLAN_ARN"),
+ValidationExceptionReason::MismatchedPricingruleArn => write!(f, "MISMATCHED_PRICINGRULE_ARN"),
+ValidationExceptionReason::MissingBillinggroup => write!(f, "MISSING_BILLINGGROUP"),
+ValidationExceptionReason::MissingCustomlineitem => write!(f, "MISSING_CUSTOMLINEITEM"),
+ValidationExceptionReason::MissingLinkedAccountIds => write!(f, "MISSING_LINKED_ACCOUNT_IDS"),
+ValidationExceptionReason::MissingPricingplan => write!(f, "MISSING_PRICINGPLAN"),
+ValidationExceptionReason::MissingPricingPlanArn => write!(f, "MISSING_PRICING_PLAN_ARN"),
+ValidationExceptionReason::MultipleLinkedAccountIds => write!(f, "MULTIPLE_LINKED_ACCOUNT_IDS"),
+ValidationExceptionReason::MultiplePricingPlanArn => write!(f, "MULTIPLE_PRICING_PLAN_ARN"),
+ValidationExceptionReason::Other => write!(f, "OTHER"),
+ValidationExceptionReason::PricingrulesAlreadyAssociated => write!(f, "PRICINGRULES_ALREADY_ASSOCIATED"),
+ValidationExceptionReason::PricingrulesNotAssociated => write!(f, "PRICINGRULES_NOT_ASSOCIATED"),
+ValidationExceptionReason::PricingrulesNotExist => write!(f, "PRICINGRULES_NOT_EXIST"),
+ValidationExceptionReason::PrimaryCannotDisassociate => write!(f, "PRIMARY_CANNOT_DISASSOCIATE"),
+ValidationExceptionReason::PrimaryNotAssociated => write!(f, "PRIMARY_NOT_ASSOCIATED"),
+ValidationExceptionReason::TooManyAccountsInRequest => write!(f, "TOO_MANY_ACCOUNTS_IN_REQUEST"),
+ValidationExceptionReason::TooManyAutoAssociateBillingGroups => write!(f, "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS"),
+ValidationExceptionReason::TooManyCustomlineitemsInRequest => write!(f, "TOO_MANY_CUSTOMLINEITEMS_IN_REQUEST"),
+ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
+ValidationExceptionReason::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

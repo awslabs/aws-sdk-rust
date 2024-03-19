@@ -3,20 +3,19 @@
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EntityConfiguration {
+pub struct EntityConfiguration  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub entity_id: ::std::string::String,
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub entity_type: crate::types::EntityType,
 }
-impl EntityConfiguration {
+impl  EntityConfiguration  {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
-    pub fn entity_type(&self) -> &crate::types::EntityType {
+    pub fn entity_type(&self) -> & crate::types::EntityType {
         &self.entity_type
     }
 }
@@ -43,8 +42,7 @@ impl EntityConfigurationBuilder {
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl EntityConfigurationBuilder {
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -70,19 +67,20 @@ impl EntityConfigurationBuilder {
     /// - [`entity_id`](crate::types::builders::EntityConfigurationBuilder::entity_id)
     /// - [`entity_type`](crate::types::builders::EntityConfigurationBuilder::entity_type)
     pub fn build(self) -> ::std::result::Result<crate::types::EntityConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EntityConfiguration {
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EntityConfiguration",
-                )
-            })?,
-            entity_type: self.entity_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_type",
-                    "entity_type was not specified but it is required when building EntityConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EntityConfiguration {
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building EntityConfiguration")
+                    )?
+                ,
+                entity_type: self.entity_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_type", "entity_type was not specified but it is required when building EntityConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationOutputOutput {
+pub struct DeleteApplicationOutputOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current application version ID.</p>
     pub application_version_id: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
-impl DeleteApplicationOutputOutput {
+impl  DeleteApplicationOutputOutput  {
     /// <p>The application Amazon Resource Name (ARN).</p>
-    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+    pub fn application_arn(&self) -> ::std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The current application version ID.</p>
@@ -20,10 +20,10 @@ impl DeleteApplicationOutputOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteApplicationOutputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::operation::delete_application_output::DeleteApplicationOutputOutput).
     pub fn builder() -> crate::operation::delete_application_output::builders::DeleteApplicationOutputOutputBuilder {
@@ -47,8 +47,7 @@ impl DeleteApplicationOutputOutputBuilder {
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The application Amazon Resource Name (ARN).</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl DeleteApplicationOutputOutputBuilder {
     }
     /// <p>The current application version ID.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The current application version ID.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteApplicationOutputOutput`](crate::operation::delete_application_output::DeleteApplicationOutputOutput).
     pub fn build(self) -> crate::operation::delete_application_output::DeleteApplicationOutputOutput {
         crate::operation::delete_application_output::DeleteApplicationOutputOutput {
-            application_arn: self.application_arn,
-            application_version_id: self.application_version_id,
+            application_arn: self.application_arn
+            ,
+            application_version_id: self.application_version_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

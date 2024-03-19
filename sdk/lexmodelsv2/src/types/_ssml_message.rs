@@ -3,15 +3,14 @@
 /// <p>Defines a Speech Synthesis Markup Language (SSML) prompt.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SsmlMessage {
+pub struct SsmlMessage  {
     /// <p>The SSML text that defines the prompt.</p>
     pub value: ::std::string::String,
 }
-impl SsmlMessage {
+impl  SsmlMessage  {
     /// <p>The SSML text that defines the prompt.</p>
-    pub fn value(&self) -> &str {
-        use std::ops::Deref;
-        self.value.deref()
+    pub fn value(&self) -> & str {
+        use std::ops::Deref; self.value.deref()
     }
 }
 impl SsmlMessage {
@@ -36,8 +35,7 @@ impl SsmlMessageBuilder {
     }
     /// <p>The SSML text that defines the prompt.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The SSML text that defines the prompt.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl SsmlMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::SsmlMessageBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::SsmlMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SsmlMessage {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building SsmlMessage",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SsmlMessage {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building SsmlMessage")
+                    )?
+                ,
+            }
+        )
     }
 }
+

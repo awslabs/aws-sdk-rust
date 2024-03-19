@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClearQuerySuggestionsInput {
+pub struct ClearQuerySuggestionsInput  {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
 }
-impl ClearQuerySuggestionsInput {
+impl  ClearQuerySuggestionsInput  {
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
@@ -34,18 +34,20 @@ impl ClearQuerySuggestionsInputBuilder {
     }
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index you want to clear query suggestions from.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput { index_id: self.index_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput {
+                index_id: self.index_id
+                ,
+            }
+        )
     }
 }
+

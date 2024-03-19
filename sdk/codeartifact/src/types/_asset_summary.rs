@@ -3,26 +3,25 @@
 /// <p>Contains details about a package version asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetSummary {
+pub struct AssetSummary  {
     /// <p>The name of the asset.</p>
     pub name: ::std::string::String,
     /// <p>The size of the asset.</p>
     pub size: ::std::option::Option<i64>,
     /// <p>The hashes of the asset.</p>
-    pub hashes: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
+    pub hashes: ::std::option::Option<::std::collections::HashMap::<crate::types::HashAlgorithm, ::std::string::String>>,
 }
-impl AssetSummary {
+impl  AssetSummary  {
     /// <p>The name of the asset.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The size of the asset.</p>
     pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>The hashes of the asset.</p>
-    pub fn hashes(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>> {
+    pub fn hashes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::HashAlgorithm, ::std::string::String>> {
         self.hashes.as_ref()
     }
 }
@@ -39,7 +38,7 @@ impl AssetSummary {
 pub struct AssetSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) size: ::std::option::Option<i64>,
-    pub(crate) hashes: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
+    pub(crate) hashes: ::std::option::Option<::std::collections::HashMap::<crate::types::HashAlgorithm, ::std::string::String>>,
 }
 impl AssetSummaryBuilder {
     /// <p>The name of the asset.</p>
@@ -50,8 +49,7 @@ impl AssetSummaryBuilder {
     }
     /// <p>The name of the asset.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the asset.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl AssetSummaryBuilder {
     }
     /// <p>The size of the asset.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The size of the asset.</p>
     pub fn get_size(&self) -> &::std::option::Option<i64> {
@@ -78,35 +75,35 @@ impl AssetSummaryBuilder {
     /// <p>The hashes of the asset.</p>
     pub fn hashes(mut self, k: crate::types::HashAlgorithm, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.hashes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.hashes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.hashes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The hashes of the asset.</p>
-    pub fn set_hashes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>>,
-    ) -> Self {
-        self.hashes = input;
-        self
+    pub fn set_hashes(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::HashAlgorithm, ::std::string::String>>) -> Self {
+        self.hashes = input; self
     }
     /// <p>The hashes of the asset.</p>
-    pub fn get_hashes(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>> {
+    pub fn get_hashes(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::HashAlgorithm, ::std::string::String>> {
         &self.hashes
     }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetSummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssetSummary",
-                )
-            })?,
-            size: self.size,
-            hashes: self.hashes,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetSummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssetSummary")
+                    )?
+                ,
+                size: self.size
+                ,
+                hashes: self.hashes
+                ,
+            }
+        )
     }
 }
+

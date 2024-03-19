@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListArtifactsOutput {
+pub struct ListArtifactsOutput  {
     /// <p>A list of artifacts and their properties.</p>
-    pub artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
+    pub artifact_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSummary>>,
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListArtifactsOutput {
+impl  ListArtifactsOutput  {
     /// <p>A list of artifacts and their properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.artifact_summaries.is_none()`.
-    pub fn artifact_summaries(&self) -> &[crate::types::ArtifactSummary] {
-        self.artifact_summaries.as_deref().unwrap_or_default()
+    pub fn artifact_summaries(&self) -> & [crate::types::ArtifactSummary] {
+        self.artifact_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListArtifactsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput).
     pub fn builder() -> crate::operation::list_artifacts::builders::ListArtifactsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListArtifactsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListArtifactsOutputBuilder {
-    pub(crate) artifact_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>,
+    pub(crate) artifact_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListArtifactsOutputBuilder {
     /// <p>A list of artifacts and their properties.</p>
     pub fn artifact_summaries(mut self, input: crate::types::ArtifactSummary) -> Self {
         let mut v = self.artifact_summaries.unwrap_or_default();
-        v.push(input);
-        self.artifact_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.artifact_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of artifacts and their properties.</p>
-    pub fn set_artifact_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>>) -> Self {
-        self.artifact_summaries = input;
-        self
+    pub fn set_artifact_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSummary>>) -> Self {
+        self.artifact_summaries = input; self
     }
     /// <p>A list of artifacts and their properties.</p>
-    pub fn get_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactSummary>> {
+    pub fn get_artifact_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ArtifactSummary>> {
         &self.artifact_summaries
     }
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
@@ -69,28 +69,30 @@ impl ListArtifactsOutputBuilder {
     }
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token for getting the next set of artifacts, if there are any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListArtifactsOutput`](crate::operation::list_artifacts::ListArtifactsOutput).
     pub fn build(self) -> crate::operation::list_artifacts::ListArtifactsOutput {
         crate::operation::list_artifacts::ListArtifactsOutput {
-            artifact_summaries: self.artifact_summaries,
-            next_token: self.next_token,
+            artifact_summaries: self.artifact_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A policy you want to associate with a resource.</p>
@@ -12,21 +12,21 @@ pub struct PutResourcePolicyInput {
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub policy_hash: ::std::option::Option<::std::string::String>,
 }
-impl PutResourcePolicyInput {
+impl  PutResourcePolicyInput  {
     /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A policy you want to associate with a resource.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The policy ID.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
-    pub fn policy_hash(&self) -> ::std::option::Option<&str> {
+    pub fn policy_hash(&self) -> ::std::option::Option<& str> {
         self.policy_hash.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resource to which you want to attach a policy.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>A policy you want to associate with a resource.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>A policy you want to associate with a resource.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The policy ID.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The policy ID.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_hash = input;
-        self
+        self.policy_hash = input; self
     }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_hash
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy: self.policy,
-            policy_id: self.policy_id,
-            policy_hash: self.policy_hash,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_resource_policy::PutResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy: self.policy
+                ,
+                policy_id: self.policy_id
+                ,
+                policy_hash: self.policy_hash
+                ,
+            }
+        )
     }
 }
+

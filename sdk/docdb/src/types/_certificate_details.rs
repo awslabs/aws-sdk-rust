@@ -4,19 +4,19 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateDetails {
+pub struct CertificateDetails  {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
     pub ca_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl CertificateDetails {
+impl  CertificateDetails  {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn ca_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn ca_identifier(&self) -> ::std::option::Option<& str> {
         self.ca_identifier.as_deref()
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
-    pub fn valid_till(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn valid_till(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.valid_till.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CertificateDetailsBuilder {
     }
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
     pub fn set_ca_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ca_identifier = input;
-        self
+        self.ca_identifier = input; self
     }
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
     pub fn get_ca_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl CertificateDetailsBuilder {
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     pub fn set_valid_till(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.valid_till = input;
-        self
+        self.valid_till = input; self
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     pub fn get_valid_till(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -66,8 +64,11 @@ impl CertificateDetailsBuilder {
     /// Consumes the builder and constructs a [`CertificateDetails`](crate::types::CertificateDetails).
     pub fn build(self) -> crate::types::CertificateDetails {
         crate::types::CertificateDetails {
-            ca_identifier: self.ca_identifier,
-            valid_till: self.valid_till,
+            ca_identifier: self.ca_identifier
+            ,
+            valid_till: self.valid_till
+            ,
         }
     }
 }
+

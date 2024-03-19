@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetSendQuotaInput {}
+pub struct GetSendQuotaInput  {
+}
 impl GetSendQuotaInput {
     /// Creates a new builder-style object to manufacture [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
     pub fn builder() -> crate::operation::get_send_quota::builders::GetSendQuotaInputBuilder {
@@ -13,12 +14,15 @@ impl GetSendQuotaInput {
 /// A builder for [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetSendQuotaInputBuilder {}
+pub struct GetSendQuotaInputBuilder {
+}
 impl GetSendQuotaInputBuilder {
     /// Consumes the builder and constructs a [`GetSendQuotaInput`](crate::operation::get_send_quota::GetSendQuotaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_send_quota::GetSendQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_send_quota::GetSendQuotaInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_send_quota::GetSendQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_send_quota::GetSendQuotaInput {
+            }
+        )
     }
 }
+

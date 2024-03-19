@@ -3,35 +3,32 @@
 /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of the transform node.</p>
     pub name: ::std::string::String,
     /// <p>The data inputs identified by their node names.</p>
-    pub inputs: ::std::vec::Vec<::std::string::String>,
+    pub inputs: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub logical_operator: crate::types::FilterLogicalOperator,
     /// <p>Specifies a filter expression.</p>
-    pub filters: ::std::vec::Vec<crate::types::FilterExpression>,
+    pub filters: ::std::vec::Vec::<crate::types::FilterExpression>,
 }
-impl Filter {
+impl  Filter  {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn logical_operator(&self) -> &crate::types::FilterLogicalOperator {
+    pub fn logical_operator(&self) -> & crate::types::FilterLogicalOperator {
         &self.logical_operator
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn filters(&self) -> &[crate::types::FilterExpression] {
-        use std::ops::Deref;
-        self.filters.deref()
+    pub fn filters(&self) -> & [crate::types::FilterExpression] {
+        use std::ops::Deref; self.filters.deref()
     }
 }
 impl Filter {
@@ -46,9 +43,9 @@ impl Filter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) logical_operator: ::std::option::Option<crate::types::FilterLogicalOperator>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>>,
 }
 impl FilterBuilder {
     /// <p>The name of the transform node.</p>
@@ -59,8 +56,7 @@ impl FilterBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the transform node.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +69,16 @@ impl FilterBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.inputs
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
@@ -94,8 +89,7 @@ impl FilterBuilder {
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn set_logical_operator(mut self, input: ::std::option::Option<crate::types::FilterLogicalOperator>) -> Self {
-        self.logical_operator = input;
-        self
+        self.logical_operator = input; self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn get_logical_operator(&self) -> &::std::option::Option<crate::types::FilterLogicalOperator> {
@@ -108,17 +102,16 @@ impl FilterBuilder {
     /// <p>Specifies a filter expression.</p>
     pub fn filters(mut self, input: crate::types::FilterExpression) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterExpression>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
@@ -128,31 +121,30 @@ impl FilterBuilder {
     /// - [`logical_operator`](crate::types::builders::FilterBuilder::logical_operator)
     /// - [`filters`](crate::types::builders::FilterBuilder::filters)
     pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Filter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Filter",
-                )
-            })?,
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building Filter",
-                )
-            })?,
-            logical_operator: self.logical_operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "logical_operator",
-                    "logical_operator was not specified but it is required when building Filter",
-                )
-            })?,
-            filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filters",
-                    "filters was not specified but it is required when building Filter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Filter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Filter")
+                    )?
+                ,
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building Filter")
+                    )?
+                ,
+                logical_operator: self.logical_operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("logical_operator", "logical_operator was not specified but it is required when building Filter")
+                    )?
+                ,
+                filters: self.filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filters", "filters was not specified but it is required when building Filter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

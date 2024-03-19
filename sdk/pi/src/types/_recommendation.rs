@@ -3,23 +3,23 @@
 /// <p>The list of recommendations for the insight.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Recommendation {
+pub struct Recommendation  {
     /// <p>The unique identifier for the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub recommendation_description: ::std::option::Option<::std::string::String>,
 }
-impl Recommendation {
+impl  Recommendation  {
     /// <p>The unique identifier for the recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
-    pub fn recommendation_description(&self) -> ::std::option::Option<&str> {
+    pub fn recommendation_description(&self) -> ::std::option::Option<& str> {
         self.recommendation_description.as_deref()
     }
 }
-impl ::std::fmt::Debug for Recommendation {
+impl  ::std::fmt::Debug for Recommendation  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Recommendation");
         formatter.field("recommendation_id", &self.recommendation_id);
@@ -49,8 +49,7 @@ impl RecommendationBuilder {
     }
     /// <p>The unique identifier for the recommendation.</p>
     pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
+        self.recommendation_id = input; self
     }
     /// <p>The unique identifier for the recommendation.</p>
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl RecommendationBuilder {
     }
     /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn set_recommendation_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_description = input;
-        self
+        self.recommendation_description = input; self
     }
     /// <p>The recommendation details to help resolve the performance issue. For example, <code>Investigate the following SQLs that contributed to 100% of the total DBLoad during that time period: sql-id</code></p>
     pub fn get_recommendation_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl RecommendationBuilder {
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {
-            recommendation_id: self.recommendation_id,
-            recommendation_description: self.recommendation_description,
+            recommendation_id: self.recommendation_id
+            ,
+            recommendation_description: self.recommendation_description
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for RecommendationBuilder {
         formatter.finish()
     }
 }
+

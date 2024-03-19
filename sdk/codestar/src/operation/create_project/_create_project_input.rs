@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateProjectInput {
+pub struct CreateProjectInput  {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
@@ -12,45 +12,46 @@ pub struct CreateProjectInput {
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    pub source_code: ::std::option::Option<::std::vec::Vec<crate::types::Code>>,
+    pub source_code: ::std::option::Option<::std::vec::Vec::<crate::types::Code>>,
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub toolchain: ::std::option::Option<crate::types::Toolchain>,
     /// <p>The tags created for the project.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateProjectInput {
+impl  CreateProjectInput  {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the project, if any.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_code.is_none()`.
-    pub fn source_code(&self) -> &[crate::types::Code] {
-        self.source_code.as_deref().unwrap_or_default()
+    pub fn source_code(&self) -> & [crate::types::Code] {
+        self.source_code.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
-    pub fn toolchain(&self) -> ::std::option::Option<&crate::types::Toolchain> {
+    pub fn toolchain(&self) -> ::std::option::Option<& crate::types::Toolchain> {
         self.toolchain.as_ref()
     }
     /// <p>The tags created for the project.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateProjectInput {
+impl  ::std::fmt::Debug for CreateProjectInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProjectInput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -78,9 +79,9 @@ pub struct CreateProjectInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) source_code: ::std::option::Option<::std::vec::Vec<crate::types::Code>>,
+    pub(crate) source_code: ::std::option::Option<::std::vec::Vec::<crate::types::Code>>,
     pub(crate) toolchain: ::std::option::Option<crate::types::Toolchain>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
@@ -91,8 +92,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name for the project to be created in AWS CodeStar.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project to be created in AWS CodeStar.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The description of the project, if any.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the project, if any.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,17 +145,16 @@ impl CreateProjectInputBuilder {
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
     pub fn source_code(mut self, input: crate::types::Code) -> Self {
         let mut v = self.source_code.unwrap_or_default();
-        v.push(input);
-        self.source_code = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_code = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    pub fn set_source_code(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Code>>) -> Self {
-        self.source_code = input;
-        self
+    pub fn set_source_code(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Code>>) -> Self {
+        self.source_code = input; self
     }
     /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
-    pub fn get_source_code(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Code>> {
+    pub fn get_source_code(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Code>> {
         &self.source_code
     }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
@@ -168,8 +164,7 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub fn set_toolchain(mut self, input: ::std::option::Option<crate::types::Toolchain>) -> Self {
-        self.toolchain = input;
-        self
+        self.toolchain = input; self
     }
     /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub fn get_toolchain(&self) -> &::std::option::Option<crate::types::Toolchain> {
@@ -182,32 +177,38 @@ impl CreateProjectInputBuilder {
     /// <p>The tags created for the project.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags created for the project.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags created for the project.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            name: self.name,
-            id: self.id,
-            description: self.description,
-            client_request_token: self.client_request_token,
-            source_code: self.source_code,
-            toolchain: self.toolchain,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_project::CreateProjectInput {
+                name: self.name
+                ,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+                source_code: self.source_code
+                ,
+                toolchain: self.toolchain
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateProjectInputBuilder {
@@ -223,3 +224,4 @@ impl ::std::fmt::Debug for CreateProjectInputBuilder {
         formatter.finish()
     }
 }
+

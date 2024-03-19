@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPredictorBacktestExportJobsOutput {
+pub struct ListPredictorBacktestExportJobsOutput  {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    pub predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>>,
+    pub predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorBacktestExportJobSummary>>,
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPredictorBacktestExportJobsOutput {
+impl  ListPredictorBacktestExportJobsOutput  {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predictor_backtest_export_jobs.is_none()`.
-    pub fn predictor_backtest_export_jobs(&self) -> &[crate::types::PredictorBacktestExportJobSummary] {
-        self.predictor_backtest_export_jobs.as_deref().unwrap_or_default()
+    pub fn predictor_backtest_export_jobs(&self) -> & [crate::types::PredictorBacktestExportJobSummary] {
+        self.predictor_backtest_export_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPredictorBacktestExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPredictorBacktestExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPredictorBacktestExportJobsOutput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput).
     pub fn builder() -> crate::operation::list_predictor_backtest_export_jobs::builders::ListPredictorBacktestExportJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPredictorBacktestExportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPredictorBacktestExportJobsOutputBuilder {
-    pub(crate) predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>>,
+    pub(crate) predictor_backtest_export_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorBacktestExportJobSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,20 +50,16 @@ impl ListPredictorBacktestExportJobsOutputBuilder {
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
     pub fn predictor_backtest_export_jobs(mut self, input: crate::types::PredictorBacktestExportJobSummary) -> Self {
         let mut v = self.predictor_backtest_export_jobs.unwrap_or_default();
-        v.push(input);
-        self.predictor_backtest_export_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predictor_backtest_export_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    pub fn set_predictor_backtest_export_jobs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>>,
-    ) -> Self {
-        self.predictor_backtest_export_jobs = input;
-        self
+    pub fn set_predictor_backtest_export_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredictorBacktestExportJobSummary>>) -> Self {
+        self.predictor_backtest_export_jobs = input; self
     }
     /// <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
-    pub fn get_predictor_backtest_export_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorBacktestExportJobSummary>> {
+    pub fn get_predictor_backtest_export_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredictorBacktestExportJobSummary>> {
         &self.predictor_backtest_export_jobs
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
@@ -72,28 +69,30 @@ impl ListPredictorBacktestExportJobsOutputBuilder {
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPredictorBacktestExportJobsOutput`](crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput).
     pub fn build(self) -> crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput {
         crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput {
-            predictor_backtest_export_jobs: self.predictor_backtest_export_jobs,
-            next_token: self.next_token,
+            predictor_backtest_export_jobs: self.predictor_backtest_export_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,22 +3,21 @@
 /// <p>A structure that specifies one user or group in the workspace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code></p>
     pub id: ::std::string::String,
     /// <p>Specifies whether this is a single user or a group.</p>
     pub r#type: crate::types::UserType,
 }
-impl User {
+impl  User  {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code></p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>Specifies whether this is a single user or a group.</p>
-    pub fn r#type(&self) -> &crate::types::UserType {
+    pub fn r#type(&self) -> & crate::types::UserType {
         &self.r#type
     }
 }
@@ -47,8 +46,7 @@ impl UserBuilder {
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the user or group.</p>
     /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code></p>
@@ -63,8 +61,7 @@ impl UserBuilder {
     }
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
@@ -75,16 +72,20 @@ impl UserBuilder {
     /// - [`id`](crate::types::builders::UserBuilder::id)
     /// - [`r#type`](crate::types::builders::UserBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::User, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::User {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building User")
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building User",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::User {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building User")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building User")
+                    )?
+                ,
+            }
+        )
     }
 }
+

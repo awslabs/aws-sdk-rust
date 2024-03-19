@@ -2,35 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationFieldDefinitionsInput {
+pub struct DescribeRegistrationFieldDefinitionsInput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub registration_type: ::std::option::Option<::std::string::String>,
     /// <p>The path to the section of the registration.</p>
     pub section_path: ::std::option::Option<::std::string::String>,
     /// <p>An array of paths to the registration form field.</p>
-    pub field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub field_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeRegistrationFieldDefinitionsInput {
+impl  DescribeRegistrationFieldDefinitionsInput  {
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
-    pub fn registration_type(&self) -> ::std::option::Option<&str> {
+    pub fn registration_type(&self) -> ::std::option::Option<& str> {
         self.registration_type.as_deref()
     }
     /// <p>The path to the section of the registration.</p>
-    pub fn section_path(&self) -> ::std::option::Option<&str> {
+    pub fn section_path(&self) -> ::std::option::Option<& str> {
         self.section_path.as_deref()
     }
     /// <p>An array of paths to the registration form field.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_paths.is_none()`.
-    pub fn field_paths(&self) -> &[::std::string::String] {
-        self.field_paths.as_deref().unwrap_or_default()
+    pub fn field_paths(&self) -> & [::std::string::String] {
+        self.field_paths.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -51,7 +52,7 @@ impl DescribeRegistrationFieldDefinitionsInput {
 pub struct DescribeRegistrationFieldDefinitionsInputBuilder {
     pub(crate) registration_type: ::std::option::Option<::std::string::String>,
     pub(crate) section_path: ::std::option::Option<::std::string::String>,
-    pub(crate) field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) field_paths: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -64,8 +65,7 @@ impl DescribeRegistrationFieldDefinitionsInputBuilder {
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_type = input;
-        self
+        self.registration_type = input; self
     }
     /// <p>The type of registration form. The list of <b>RegistrationTypes</b> can be found using the <code>DescribeRegistrationTypeDefinitions</code> action.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl DescribeRegistrationFieldDefinitionsInputBuilder {
     }
     /// <p>The path to the section of the registration.</p>
     pub fn set_section_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.section_path = input;
-        self
+        self.section_path = input; self
     }
     /// <p>The path to the section of the registration.</p>
     pub fn get_section_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,17 +91,16 @@ impl DescribeRegistrationFieldDefinitionsInputBuilder {
     /// <p>An array of paths to the registration form field.</p>
     pub fn field_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_paths.unwrap_or_default();
-        v.push(input.into());
-        self.field_paths = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.field_paths = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of paths to the registration form field.</p>
-    pub fn set_field_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.field_paths = input;
-        self
+    pub fn set_field_paths(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.field_paths = input; self
     }
     /// <p>An array of paths to the registration form field.</p>
-    pub fn get_field_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_field_paths(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.field_paths
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -112,8 +110,7 @@ impl DescribeRegistrationFieldDefinitionsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,28 +123,28 @@ impl DescribeRegistrationFieldDefinitionsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRegistrationFieldDefinitionsInput`](crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsInput {
-                registration_type: self.registration_type,
-                section_path: self.section_path,
-                field_paths: self.field_paths,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                registration_type: self.registration_type
+                ,
+                section_path: self.section_path
+                ,
+                field_paths: self.field_paths
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

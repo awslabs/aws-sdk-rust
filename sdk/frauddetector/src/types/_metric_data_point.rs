@@ -3,7 +3,7 @@
 /// <p>Model performance metrics data points.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MetricDataPoint {
+pub struct MetricDataPoint  {
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
     pub fpr: ::std::option::Option<f32>,
     /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
@@ -13,7 +13,7 @@ pub struct MetricDataPoint {
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
     pub threshold: ::std::option::Option<f32>,
 }
-impl MetricDataPoint {
+impl  MetricDataPoint  {
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
     pub fn fpr(&self) -> ::std::option::Option<f32> {
         self.fpr
@@ -55,8 +55,7 @@ impl MetricDataPointBuilder {
     }
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
     pub fn set_fpr(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.fpr = input;
-        self
+        self.fpr = input; self
     }
     /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
     pub fn get_fpr(&self) -> &::std::option::Option<f32> {
@@ -69,8 +68,7 @@ impl MetricDataPointBuilder {
     }
     /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
     pub fn get_precision(&self) -> &::std::option::Option<f32> {
@@ -83,8 +81,7 @@ impl MetricDataPointBuilder {
     }
     /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
     pub fn set_tpr(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.tpr = input;
-        self
+        self.tpr = input; self
     }
     /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
     pub fn get_tpr(&self) -> &::std::option::Option<f32> {
@@ -97,8 +94,7 @@ impl MetricDataPointBuilder {
     }
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<f32> {
@@ -107,10 +103,15 @@ impl MetricDataPointBuilder {
     /// Consumes the builder and constructs a [`MetricDataPoint`](crate::types::MetricDataPoint).
     pub fn build(self) -> crate::types::MetricDataPoint {
         crate::types::MetricDataPoint {
-            fpr: self.fpr,
-            precision: self.precision,
-            tpr: self.tpr,
-            threshold: self.threshold,
+            fpr: self.fpr
+            ,
+            precision: self.precision
+            ,
+            tpr: self.tpr
+            ,
+            threshold: self.threshold
+            ,
         }
     }
 }
+

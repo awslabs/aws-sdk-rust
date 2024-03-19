@@ -3,13 +3,13 @@
 /// <p>The content configuration object's data channel.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataChannelConcatenationConfiguration {
+pub struct DataChannelConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
     pub state: crate::types::ArtifactsConcatenationState,
 }
-impl DataChannelConcatenationConfiguration {
+impl  DataChannelConcatenationConfiguration  {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> &crate::types::ArtifactsConcatenationState {
+    pub fn state(&self) -> & crate::types::ArtifactsConcatenationState {
         &self.state
     }
 }
@@ -35,8 +35,7 @@ impl DataChannelConcatenationConfigurationBuilder {
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsConcatenationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
@@ -45,16 +44,16 @@ impl DataChannelConcatenationConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataChannelConcatenationConfiguration`](crate::types::DataChannelConcatenationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::DataChannelConcatenationConfigurationBuilder::state)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::DataChannelConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataChannelConcatenationConfiguration {
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building DataChannelConcatenationConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::DataChannelConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::DataChannelConcatenationConfiguration {
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building DataChannelConcatenationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

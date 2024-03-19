@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelFlowExecutionsOutput {
+pub struct CancelFlowExecutionsOutput  {
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub invalid_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub invalid_executions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl CancelFlowExecutionsOutput {
+impl  CancelFlowExecutionsOutput  {
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_executions.is_none()`.
-    pub fn invalid_executions(&self) -> &[::std::string::String] {
-        self.invalid_executions.as_deref().unwrap_or_default()
+    pub fn invalid_executions(&self) -> & [::std::string::String] {
+        self.invalid_executions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CancelFlowExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CancelFlowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput).
     pub fn builder() -> crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder {
@@ -31,7 +32,7 @@ impl CancelFlowExecutionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CancelFlowExecutionsOutputBuilder {
-    pub(crate) invalid_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) invalid_executions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CancelFlowExecutionsOutputBuilder {
@@ -42,33 +43,34 @@ impl CancelFlowExecutionsOutputBuilder {
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
     pub fn invalid_executions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_executions.unwrap_or_default();
-        v.push(input.into());
-        self.invalid_executions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.invalid_executions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn set_invalid_executions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.invalid_executions = input;
-        self
+    pub fn set_invalid_executions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.invalid_executions = input; self
     }
     /// <p>The IDs of runs that Amazon AppFlow couldn't cancel. These runs might be ineligible for canceling because they haven't started yet or have already completed.</p>
-    pub fn get_invalid_executions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_invalid_executions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.invalid_executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CancelFlowExecutionsOutput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput).
     pub fn build(self) -> crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput {
         crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput {
-            invalid_executions: self.invalid_executions,
+            invalid_executions: self.invalid_executions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

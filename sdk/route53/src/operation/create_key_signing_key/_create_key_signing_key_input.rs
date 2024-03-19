@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateKeySigningKeyInput {
+pub struct CreateKeySigningKeyInput  {
     /// <p>A unique string that identifies the request.</p>
     pub caller_reference: ::std::option::Option<::std::string::String>,
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
@@ -55,13 +55,13 @@ pub struct CreateKeySigningKeyInput {
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
 }
-impl CreateKeySigningKeyInput {
+impl  CreateKeySigningKeyInput  {
     /// <p>A unique string that identifies the request.</p>
-    pub fn caller_reference(&self) -> ::std::option::Option<&str> {
+    pub fn caller_reference(&self) -> ::std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>.</p>
@@ -106,15 +106,15 @@ impl CreateKeySigningKeyInput {
     /// </dd>
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn key_management_service_arn(&self) -> ::std::option::Option<&str> {
+    pub fn key_management_service_arn(&self) -> ::std::option::Option<& str> {
         self.key_management_service_arn.as_deref()
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -144,8 +144,7 @@ impl CreateKeySigningKeyInputBuilder {
     }
     /// <p>A unique string that identifies the request.</p>
     pub fn set_caller_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
     /// <p>A unique string that identifies the request.</p>
     pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +158,7 @@ impl CreateKeySigningKeyInputBuilder {
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -256,8 +254,7 @@ impl CreateKeySigningKeyInputBuilder {
     /// </dl>
     /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
     pub fn set_key_management_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_management_service_arn = input;
-        self
+        self.key_management_service_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>.</p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
@@ -312,8 +309,7 @@ impl CreateKeySigningKeyInputBuilder {
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -327,24 +323,28 @@ impl CreateKeySigningKeyInputBuilder {
     }
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
     /// Consumes the builder and constructs a [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_key_signing_key::CreateKeySigningKeyInput {
-            caller_reference: self.caller_reference,
-            hosted_zone_id: self.hosted_zone_id,
-            key_management_service_arn: self.key_management_service_arn,
-            name: self.name,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_key_signing_key::CreateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_key_signing_key::CreateKeySigningKeyInput {
+                caller_reference: self.caller_reference
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                key_management_service_arn: self.key_management_service_arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

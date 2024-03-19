@@ -3,7 +3,7 @@
 /// <p>Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PlayerLatency {
+pub struct PlayerLatency  {
     /// <p>A unique identifier for a player associated with the latency data.</p>
     pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region that is associated with the latency value.</p>
@@ -11,13 +11,13 @@ pub struct PlayerLatency {
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub latency_in_milliseconds: ::std::option::Option<f32>,
 }
-impl PlayerLatency {
+impl  PlayerLatency  {
     /// <p>A unique identifier for a player associated with the latency data.</p>
-    pub fn player_id(&self) -> ::std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
-    pub fn region_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn region_identifier(&self) -> ::std::option::Option<& str> {
         self.region_identifier.as_deref()
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
@@ -25,7 +25,7 @@ impl PlayerLatency {
         self.latency_in_milliseconds
     }
 }
-impl ::std::fmt::Debug for PlayerLatency {
+impl  ::std::fmt::Debug for PlayerLatency  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PlayerLatency");
         formatter.field("player_id", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl PlayerLatencyBuilder {
     }
     /// <p>A unique identifier for a player associated with the latency data.</p>
     pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.player_id = input;
-        self
+        self.player_id = input; self
     }
     /// <p>A unique identifier for a player associated with the latency data.</p>
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl PlayerLatencyBuilder {
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
     pub fn set_region_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_identifier = input;
-        self
+        self.region_identifier = input; self
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
     pub fn get_region_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PlayerLatencyBuilder {
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub fn set_latency_in_milliseconds(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.latency_in_milliseconds = input;
-        self
+        self.latency_in_milliseconds = input; self
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub fn get_latency_in_milliseconds(&self) -> &::std::option::Option<f32> {
@@ -95,9 +92,12 @@ impl PlayerLatencyBuilder {
     /// Consumes the builder and constructs a [`PlayerLatency`](crate::types::PlayerLatency).
     pub fn build(self) -> crate::types::PlayerLatency {
         crate::types::PlayerLatency {
-            player_id: self.player_id,
-            region_identifier: self.region_identifier,
-            latency_in_milliseconds: self.latency_in_milliseconds,
+            player_id: self.player_id
+            ,
+            region_identifier: self.region_identifier
+            ,
+            latency_in_milliseconds: self.latency_in_milliseconds
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for PlayerLatencyBuilder {
         formatter.finish()
     }
 }
+

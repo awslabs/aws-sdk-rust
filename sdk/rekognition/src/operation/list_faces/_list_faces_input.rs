@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListFacesInput {
+pub struct ListFacesInput  {
     /// <p>ID of the collection from which to list the faces.</p>
     pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
@@ -12,15 +12,15 @@ pub struct ListFacesInput {
     /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
-    pub face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ListFacesInput {
+impl  ListFacesInput  {
     /// <p>ID of the collection from which to list the faces.</p>
-    pub fn collection_id(&self) -> ::std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of faces to return.</p>
@@ -28,14 +28,15 @@ impl ListFacesInput {
         self.max_results
     }
     /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_ids.is_none()`.
-    pub fn face_ids(&self) -> &[::std::string::String] {
-        self.face_ids.as_deref().unwrap_or_default()
+    pub fn face_ids(&self) -> & [::std::string::String] {
+        self.face_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListFacesInput {
@@ -53,7 +54,7 @@ pub struct ListFacesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) face_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ListFacesInputBuilder {
     /// <p>ID of the collection from which to list the faces.</p>
@@ -64,8 +65,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>ID of the collection from which to list the faces.</p>
     pub fn set_collection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>ID of the collection from which to list the faces.</p>
     pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +78,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -106,8 +104,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>An array of user IDs to filter results with when listing faces in a collection.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,27 +117,34 @@ impl ListFacesInputBuilder {
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
     pub fn face_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.face_ids.unwrap_or_default();
-        v.push(input.into());
-        self.face_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.face_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
-    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.face_ids = input;
-        self
+    pub fn set_face_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.face_ids = input; self
     }
     /// <p>An array of face IDs to filter results with when listing faces in a collection.</p>
-    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_faces::ListFacesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_faces::ListFacesInput {
-            collection_id: self.collection_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            user_id: self.user_id,
-            face_ids: self.face_ids,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_faces::ListFacesInput {
+                collection_id: self.collection_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                user_id: self.user_id
+                ,
+                face_ids: self.face_ids
+                ,
+            }
+        )
     }
 }
+

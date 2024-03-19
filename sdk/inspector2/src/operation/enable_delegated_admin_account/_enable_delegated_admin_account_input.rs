@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EnableDelegatedAdminAccountInput {
+pub struct EnableDelegatedAdminAccountInput  {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The idempotency token for the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl EnableDelegatedAdminAccountInput {
+impl  EnableDelegatedAdminAccountInput  {
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
     /// <p>The idempotency token for the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl EnableDelegatedAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delegated_admin_account_id = input;
-        self
+        self.delegated_admin_account_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
     pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl EnableDelegatedAdminAccountInputBuilder {
     }
     /// <p>The idempotency token for the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The idempotency token for the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountInput`](crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput {
-            delegated_admin_account_id: self.delegated_admin_account_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput {
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

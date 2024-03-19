@@ -3,16 +3,17 @@
 /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CascadingControlConfiguration {
+pub struct CascadingControlConfiguration  {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
+    pub source_controls: ::std::option::Option<::std::vec::Vec::<crate::types::CascadingControlSource>>,
 }
-impl CascadingControlConfiguration {
+impl  CascadingControlConfiguration  {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_controls.is_none()`.
-    pub fn source_controls(&self) -> &[crate::types::CascadingControlSource] {
-        self.source_controls.as_deref().unwrap_or_default()
+    pub fn source_controls(&self) -> & [crate::types::CascadingControlSource] {
+        self.source_controls.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CascadingControlConfiguration {
@@ -26,7 +27,7 @@ impl CascadingControlConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CascadingControlConfigurationBuilder {
-    pub(crate) source_controls: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>,
+    pub(crate) source_controls: ::std::option::Option<::std::vec::Vec::<crate::types::CascadingControlSource>>,
 }
 impl CascadingControlConfigurationBuilder {
     /// Appends an item to `source_controls`.
@@ -36,23 +37,24 @@ impl CascadingControlConfigurationBuilder {
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
     pub fn source_controls(mut self, input: crate::types::CascadingControlSource) -> Self {
         let mut v = self.source_controls.unwrap_or_default();
-        v.push(input);
-        self.source_controls = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.source_controls = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn set_source_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>>) -> Self {
-        self.source_controls = input;
-        self
+    pub fn set_source_controls(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CascadingControlSource>>) -> Self {
+        self.source_controls = input; self
     }
     /// <p>A list of source controls that determine the values that are used in the current control.</p>
-    pub fn get_source_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CascadingControlSource>> {
+    pub fn get_source_controls(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CascadingControlSource>> {
         &self.source_controls
     }
     /// Consumes the builder and constructs a [`CascadingControlConfiguration`](crate::types::CascadingControlConfiguration).
     pub fn build(self) -> crate::types::CascadingControlConfiguration {
         crate::types::CascadingControlConfiguration {
-            source_controls: self.source_controls,
+            source_controls: self.source_controls
+            ,
         }
     }
 }
+

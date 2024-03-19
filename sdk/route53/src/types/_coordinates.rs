@@ -3,22 +3,20 @@
 /// <p>A complex type that lists the coordinates for a geoproximity resource record.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Coordinates {
+pub struct Coordinates  {
     /// <p>Specifies a coordinate of the north–south position of a geographic point on the surface of the Earth (-90 - 90).</p>
     pub latitude: ::std::string::String,
     /// <p>Specifies a coordinate of the east–west position of a geographic point on the surface of the Earth (-180 - 180).</p>
     pub longitude: ::std::string::String,
 }
-impl Coordinates {
+impl  Coordinates  {
     /// <p>Specifies a coordinate of the north–south position of a geographic point on the surface of the Earth (-90 - 90).</p>
-    pub fn latitude(&self) -> &str {
-        use std::ops::Deref;
-        self.latitude.deref()
+    pub fn latitude(&self) -> & str {
+        use std::ops::Deref; self.latitude.deref()
     }
     /// <p>Specifies a coordinate of the east–west position of a geographic point on the surface of the Earth (-180 - 180).</p>
-    pub fn longitude(&self) -> &str {
-        use std::ops::Deref;
-        self.longitude.deref()
+    pub fn longitude(&self) -> & str {
+        use std::ops::Deref; self.longitude.deref()
     }
 }
 impl Coordinates {
@@ -44,8 +42,7 @@ impl CoordinatesBuilder {
     }
     /// <p>Specifies a coordinate of the north–south position of a geographic point on the surface of the Earth (-90 - 90).</p>
     pub fn set_latitude(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.latitude = input;
-        self
+        self.latitude = input; self
     }
     /// <p>Specifies a coordinate of the north–south position of a geographic point on the surface of the Earth (-90 - 90).</p>
     pub fn get_latitude(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl CoordinatesBuilder {
     }
     /// <p>Specifies a coordinate of the east–west position of a geographic point on the surface of the Earth (-180 - 180).</p>
     pub fn set_longitude(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.longitude = input;
-        self
+        self.longitude = input; self
     }
     /// <p>Specifies a coordinate of the east–west position of a geographic point on the surface of the Earth (-180 - 180).</p>
     pub fn get_longitude(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl CoordinatesBuilder {
     /// - [`latitude`](crate::types::builders::CoordinatesBuilder::latitude)
     /// - [`longitude`](crate::types::builders::CoordinatesBuilder::longitude)
     pub fn build(self) -> ::std::result::Result<crate::types::Coordinates, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Coordinates {
-            latitude: self.latitude.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "latitude",
-                    "latitude was not specified but it is required when building Coordinates",
-                )
-            })?,
-            longitude: self.longitude.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "longitude",
-                    "longitude was not specified but it is required when building Coordinates",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Coordinates {
+                latitude: self.latitude
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("latitude", "latitude was not specified but it is required when building Coordinates")
+                    )?
+                ,
+                longitude: self.longitude
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("longitude", "longitude was not specified but it is required when building Coordinates")
+                    )?
+                ,
+            }
+        )
     }
 }
+

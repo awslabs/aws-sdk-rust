@@ -3,7 +3,7 @@
 /// <p>Describes a data source.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>The data source Amazon Resource Name (ARN).</p>
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data source.</p>
@@ -50,17 +50,17 @@ pub struct DataSource {
     /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub metrics_config: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>,
 }
-impl DataSource {
+impl  DataSource  {
     /// <p>The data source Amazon Resource Name (ARN).</p>
-    pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn data_source_arn(&self) -> ::std::option::Option<& str> {
         self.data_source_arn.as_deref()
     }
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the data source.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the data source.</p>
@@ -82,44 +82,44 @@ impl DataSource {
     /// <li>
     /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
-    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<& str> {
         self.service_role_arn.as_deref()
     }
     /// <p>DynamoDB settings.</p>
-    pub fn dynamodb_config(&self) -> ::std::option::Option<&crate::types::DynamodbDataSourceConfig> {
+    pub fn dynamodb_config(&self) -> ::std::option::Option<& crate::types::DynamodbDataSourceConfig> {
         self.dynamodb_config.as_ref()
     }
     /// <p>Lambda settings.</p>
-    pub fn lambda_config(&self) -> ::std::option::Option<&crate::types::LambdaDataSourceConfig> {
+    pub fn lambda_config(&self) -> ::std::option::Option<& crate::types::LambdaDataSourceConfig> {
         self.lambda_config.as_ref()
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn elasticsearch_config(&self) -> ::std::option::Option<&crate::types::ElasticsearchDataSourceConfig> {
+    pub fn elasticsearch_config(&self) -> ::std::option::Option<& crate::types::ElasticsearchDataSourceConfig> {
         self.elasticsearch_config.as_ref()
     }
     /// <p>Amazon OpenSearch Service settings.</p>
-    pub fn open_search_service_config(&self) -> ::std::option::Option<&crate::types::OpenSearchServiceDataSourceConfig> {
+    pub fn open_search_service_config(&self) -> ::std::option::Option<& crate::types::OpenSearchServiceDataSourceConfig> {
         self.open_search_service_config.as_ref()
     }
     /// <p>HTTP endpoint settings.</p>
-    pub fn http_config(&self) -> ::std::option::Option<&crate::types::HttpDataSourceConfig> {
+    pub fn http_config(&self) -> ::std::option::Option<& crate::types::HttpDataSourceConfig> {
         self.http_config.as_ref()
     }
     /// <p>Relational database settings.</p>
-    pub fn relational_database_config(&self) -> ::std::option::Option<&crate::types::RelationalDatabaseDataSourceConfig> {
+    pub fn relational_database_config(&self) -> ::std::option::Option<& crate::types::RelationalDatabaseDataSourceConfig> {
         self.relational_database_config.as_ref()
     }
     /// <p>Amazon EventBridge settings.</p>
-    pub fn event_bridge_config(&self) -> ::std::option::Option<&crate::types::EventBridgeDataSourceConfig> {
+    pub fn event_bridge_config(&self) -> ::std::option::Option<& crate::types::EventBridgeDataSourceConfig> {
         self.event_bridge_config.as_ref()
     }
     /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
     /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
-    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::DataSourceLevelMetricsConfig> {
+    pub fn metrics_config(&self) -> ::std::option::Option<& crate::types::DataSourceLevelMetricsConfig> {
         self.metrics_config.as_ref()
     }
 }
@@ -156,8 +156,7 @@ impl DataSourceBuilder {
     }
     /// <p>The data source Amazon Resource Name (ARN).</p>
     pub fn set_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_source_arn = input;
-        self
+        self.data_source_arn = input; self
     }
     /// <p>The data source Amazon Resource Name (ARN).</p>
     pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +169,7 @@ impl DataSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,8 +182,7 @@ impl DataSourceBuilder {
     }
     /// <p>The description of the data source.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the data source.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -234,8 +231,7 @@ impl DataSourceBuilder {
     /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the data source.</p>
     /// <ul>
@@ -266,8 +262,7 @@ impl DataSourceBuilder {
     }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
     pub fn set_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_role_arn = input;
-        self
+        self.service_role_arn = input; self
     }
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,8 +275,7 @@ impl DataSourceBuilder {
     }
     /// <p>DynamoDB settings.</p>
     pub fn set_dynamodb_config(mut self, input: ::std::option::Option<crate::types::DynamodbDataSourceConfig>) -> Self {
-        self.dynamodb_config = input;
-        self
+        self.dynamodb_config = input; self
     }
     /// <p>DynamoDB settings.</p>
     pub fn get_dynamodb_config(&self) -> &::std::option::Option<crate::types::DynamodbDataSourceConfig> {
@@ -294,8 +288,7 @@ impl DataSourceBuilder {
     }
     /// <p>Lambda settings.</p>
     pub fn set_lambda_config(mut self, input: ::std::option::Option<crate::types::LambdaDataSourceConfig>) -> Self {
-        self.lambda_config = input;
-        self
+        self.lambda_config = input; self
     }
     /// <p>Lambda settings.</p>
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaDataSourceConfig> {
@@ -308,8 +301,7 @@ impl DataSourceBuilder {
     }
     /// <p>Amazon OpenSearch Service settings.</p>
     pub fn set_elasticsearch_config(mut self, input: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>) -> Self {
-        self.elasticsearch_config = input;
-        self
+        self.elasticsearch_config = input; self
     }
     /// <p>Amazon OpenSearch Service settings.</p>
     pub fn get_elasticsearch_config(&self) -> &::std::option::Option<crate::types::ElasticsearchDataSourceConfig> {
@@ -322,8 +314,7 @@ impl DataSourceBuilder {
     }
     /// <p>Amazon OpenSearch Service settings.</p>
     pub fn set_open_search_service_config(mut self, input: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>) -> Self {
-        self.open_search_service_config = input;
-        self
+        self.open_search_service_config = input; self
     }
     /// <p>Amazon OpenSearch Service settings.</p>
     pub fn get_open_search_service_config(&self) -> &::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig> {
@@ -336,8 +327,7 @@ impl DataSourceBuilder {
     }
     /// <p>HTTP endpoint settings.</p>
     pub fn set_http_config(mut self, input: ::std::option::Option<crate::types::HttpDataSourceConfig>) -> Self {
-        self.http_config = input;
-        self
+        self.http_config = input; self
     }
     /// <p>HTTP endpoint settings.</p>
     pub fn get_http_config(&self) -> &::std::option::Option<crate::types::HttpDataSourceConfig> {
@@ -350,8 +340,7 @@ impl DataSourceBuilder {
     }
     /// <p>Relational database settings.</p>
     pub fn set_relational_database_config(mut self, input: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>) -> Self {
-        self.relational_database_config = input;
-        self
+        self.relational_database_config = input; self
     }
     /// <p>Relational database settings.</p>
     pub fn get_relational_database_config(&self) -> &::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig> {
@@ -364,8 +353,7 @@ impl DataSourceBuilder {
     }
     /// <p>Amazon EventBridge settings.</p>
     pub fn set_event_bridge_config(mut self, input: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>) -> Self {
-        self.event_bridge_config = input;
-        self
+        self.event_bridge_config = input; self
     }
     /// <p>Amazon EventBridge settings.</p>
     pub fn get_event_bridge_config(&self) -> &::std::option::Option<crate::types::EventBridgeDataSourceConfig> {
@@ -380,8 +368,7 @@ impl DataSourceBuilder {
     /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
     /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
     pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>) -> Self {
-        self.metrics_config = input;
-        self
+        self.metrics_config = input; self
     }
     /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
     /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
@@ -391,19 +378,33 @@ impl DataSourceBuilder {
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            data_source_arn: self.data_source_arn,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            service_role_arn: self.service_role_arn,
-            dynamodb_config: self.dynamodb_config,
-            lambda_config: self.lambda_config,
-            elasticsearch_config: self.elasticsearch_config,
-            open_search_service_config: self.open_search_service_config,
-            http_config: self.http_config,
-            relational_database_config: self.relational_database_config,
-            event_bridge_config: self.event_bridge_config,
-            metrics_config: self.metrics_config,
+            data_source_arn: self.data_source_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            service_role_arn: self.service_role_arn
+            ,
+            dynamodb_config: self.dynamodb_config
+            ,
+            lambda_config: self.lambda_config
+            ,
+            elasticsearch_config: self.elasticsearch_config
+            ,
+            open_search_service_config: self.open_search_service_config
+            ,
+            http_config: self.http_config
+            ,
+            relational_database_config: self.relational_database_config
+            ,
+            event_bridge_config: self.event_bridge_config
+            ,
+            metrics_config: self.metrics_config
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAgreementOutput {
+pub struct DescribeAgreementOutput  {
     /// <p>The unique identifier of the agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
@@ -48,43 +48,43 @@ pub struct DescribeAgreementOutput {
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
     _request_id: Option<String>,
 }
-impl DescribeAgreementOutput {
+impl  DescribeAgreementOutput  {
     /// <p>The unique identifier of the agreement.</p>
-    pub fn agreement_id(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_id(&self) -> ::std::option::Option<& str> {
         self.agreement_id.as_deref()
     }
     /// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
-    pub fn acceptor(&self) -> ::std::option::Option<&crate::types::Acceptor> {
+    pub fn acceptor(&self) -> ::std::option::Option<& crate::types::Acceptor> {
         self.acceptor.as_ref()
     }
     /// <p>The details of the party proposing the agreement terms. This is commonly the seller for <code>PurchaseAgreement</code>.</p>
-    pub fn proposer(&self) -> ::std::option::Option<&crate::types::Proposer> {
+    pub fn proposer(&self) -> ::std::option::Option<& crate::types::Proposer> {
         self.proposer.as_ref()
     }
     /// <p>The date and time when the agreement starts.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p><note>
     /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
-    pub fn acceptance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn acceptance_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.acceptance_time.as_ref()
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
-    pub fn agreement_type(&self) -> ::std::option::Option<&str> {
+    pub fn agreement_type(&self) -> ::std::option::Option<& str> {
         self.agreement_type.as_deref()
     }
     /// <p>The estimated cost of the agreement.</p>
-    pub fn estimated_charges(&self) -> ::std::option::Option<&crate::types::EstimatedCharges> {
+    pub fn estimated_charges(&self) -> ::std::option::Option<& crate::types::EstimatedCharges> {
         self.estimated_charges.as_ref()
     }
     /// <p>A summary of the proposal received from the proposer.</p>
-    pub fn proposal_summary(&self) -> ::std::option::Option<&crate::types::ProposalSummary> {
+    pub fn proposal_summary(&self) -> ::std::option::Option<& crate::types::ProposalSummary> {
         self.proposal_summary.as_ref()
     }
     /// <p>The current status of the agreement.</p>
@@ -109,15 +109,15 @@ impl DescribeAgreementOutput {
     /// <li>
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AgreementStatus> {
         self.status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAgreementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAgreementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
     pub fn builder() -> crate::operation::describe_agreement::builders::DescribeAgreementOutputBuilder {
@@ -149,8 +149,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn set_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_id = input;
-        self
+        self.agreement_id = input; self
     }
     /// <p>The unique identifier of the agreement.</p>
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -163,8 +162,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
     pub fn set_acceptor(mut self, input: ::std::option::Option<crate::types::Acceptor>) -> Self {
-        self.acceptor = input;
-        self
+        self.acceptor = input; self
     }
     /// <p>The details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement</code>.</p>
     pub fn get_acceptor(&self) -> &::std::option::Option<crate::types::Acceptor> {
@@ -177,8 +175,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The details of the party proposing the agreement terms. This is commonly the seller for <code>PurchaseAgreement</code>.</p>
     pub fn set_proposer(mut self, input: ::std::option::Option<crate::types::Proposer>) -> Self {
-        self.proposer = input;
-        self
+        self.proposer = input; self
     }
     /// <p>The details of the party proposing the agreement terms. This is commonly the seller for <code>PurchaseAgreement</code>.</p>
     pub fn get_proposer(&self) -> &::std::option::Option<crate::types::Proposer> {
@@ -191,8 +188,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The date and time when the agreement starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time when the agreement starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -205,8 +201,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -223,8 +218,7 @@ impl DescribeAgreementOutputBuilder {
     /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
     /// </note>
     pub fn set_acceptance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.acceptance_time = input;
-        self
+        self.acceptance_time = input; self
     }
     /// <p>The date and time the offer was accepted or the agreement was created.</p><note>
     /// <p><code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated agreements (FDAs).</p>
@@ -239,8 +233,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
     pub fn set_agreement_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_type = input;
-        self
+        self.agreement_type = input; self
     }
     /// <p>The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.</p>
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +246,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>The estimated cost of the agreement.</p>
     pub fn set_estimated_charges(mut self, input: ::std::option::Option<crate::types::EstimatedCharges>) -> Self {
-        self.estimated_charges = input;
-        self
+        self.estimated_charges = input; self
     }
     /// <p>The estimated cost of the agreement.</p>
     pub fn get_estimated_charges(&self) -> &::std::option::Option<crate::types::EstimatedCharges> {
@@ -267,8 +259,7 @@ impl DescribeAgreementOutputBuilder {
     }
     /// <p>A summary of the proposal received from the proposer.</p>
     pub fn set_proposal_summary(mut self, input: ::std::option::Option<crate::types::ProposalSummary>) -> Self {
-        self.proposal_summary = input;
-        self
+        self.proposal_summary = input; self
     }
     /// <p>A summary of the proposal received from the proposer.</p>
     pub fn get_proposal_summary(&self) -> &::std::option::Option<crate::types::ProposalSummary> {
@@ -323,8 +314,7 @@ impl DescribeAgreementOutputBuilder {
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the agreement.</p>
     /// <p>Statuses include:</p>
@@ -352,28 +342,39 @@ impl DescribeAgreementOutputBuilder {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAgreementOutput`](crate::operation::describe_agreement::DescribeAgreementOutput).
     pub fn build(self) -> crate::operation::describe_agreement::DescribeAgreementOutput {
         crate::operation::describe_agreement::DescribeAgreementOutput {
-            agreement_id: self.agreement_id,
-            acceptor: self.acceptor,
-            proposer: self.proposer,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            acceptance_time: self.acceptance_time,
-            agreement_type: self.agreement_type,
-            estimated_charges: self.estimated_charges,
-            proposal_summary: self.proposal_summary,
-            status: self.status,
+            agreement_id: self.agreement_id
+            ,
+            acceptor: self.acceptor
+            ,
+            proposer: self.proposer
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            acceptance_time: self.acceptance_time
+            ,
+            agreement_type: self.agreement_type
+            ,
+            estimated_charges: self.estimated_charges
+            ,
+            proposal_summary: self.proposal_summary
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

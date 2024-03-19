@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountInput {}
+pub struct DisassociateFromAdministratorAccountInput  {
+}
 impl DisassociateFromAdministratorAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
     pub fn builder() -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder {
@@ -13,15 +14,15 @@ impl DisassociateFromAdministratorAccountInput {
 /// A builder for [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountInputBuilder {}
+pub struct DisassociateFromAdministratorAccountInputBuilder {
+}
 impl DisassociateFromAdministratorAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput {
+            }
+        )
     }
 }
+

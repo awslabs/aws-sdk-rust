@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRevealConfigurationOutput {
+pub struct UpdateRevealConfigurationOutput  {
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::RetrievalConfiguration>,
     _request_id: Option<String>,
 }
-impl UpdateRevealConfigurationOutput {
+impl  UpdateRevealConfigurationOutput  {
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::RevealConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
-    pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::RetrievalConfiguration> {
+    pub fn retrieval_configuration(&self) -> ::std::option::Option<& crate::types::RetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRevealConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRevealConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
     pub fn builder() -> crate::operation::update_reveal_configuration::builders::UpdateRevealConfigurationOutputBuilder {
@@ -47,8 +47,7 @@ impl UpdateRevealConfigurationOutputBuilder {
     }
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::RevealConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
@@ -61,28 +60,30 @@ impl UpdateRevealConfigurationOutputBuilder {
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::RetrievalConfiguration>) -> Self {
-        self.retrieval_configuration = input;
-        self
+        self.retrieval_configuration = input; self
     }
     /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::RetrievalConfiguration> {
         &self.retrieval_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationOutput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput).
     pub fn build(self) -> crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
         crate::operation::update_reveal_configuration::UpdateRevealConfigurationOutput {
-            configuration: self.configuration,
-            retrieval_configuration: self.retrieval_configuration,
+            configuration: self.configuration
+            ,
+            retrieval_configuration: self.retrieval_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

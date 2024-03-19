@@ -3,16 +3,17 @@
 /// <p>Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code> objects that contain the name and namespace of an Amazon CloudWatch metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationRelatedAnomalySourceDetail {
+pub struct RecommendationRelatedAnomalySourceDetail  {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior.</p>
-    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
+    pub cloud_watch_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
-impl RecommendationRelatedAnomalySourceDetail {
+impl  RecommendationRelatedAnomalySourceDetail  {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_metrics.is_none()`.
-    pub fn cloud_watch_metrics(&self) -> &[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail] {
-        self.cloud_watch_metrics.as_deref().unwrap_or_default()
+    pub fn cloud_watch_metrics(&self) -> & [crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail] {
+        self.cloud_watch_metrics.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendationRelatedAnomalySourceDetail {
@@ -26,7 +27,7 @@ impl RecommendationRelatedAnomalySourceDetail {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetailBuilder {
-    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
+    pub(crate) cloud_watch_metrics: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -36,28 +37,24 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior.</p>
     pub fn cloud_watch_metrics(mut self, input: crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_metrics = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cloud_watch_metrics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior.</p>
-    pub fn set_cloud_watch_metrics(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
-    ) -> Self {
-        self.cloud_watch_metrics = input;
-        self
+    pub fn set_cloud_watch_metrics(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>) -> Self {
+        self.cloud_watch_metrics = input; self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior.</p>
-    pub fn get_cloud_watch_metrics(
-        &self,
-    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>> {
+    pub fn get_cloud_watch_metrics(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>> {
         &self.cloud_watch_metrics
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
     pub fn build(self) -> crate::types::RecommendationRelatedAnomalySourceDetail {
         crate::types::RecommendationRelatedAnomalySourceDetail {
-            cloud_watch_metrics: self.cloud_watch_metrics,
+            cloud_watch_metrics: self.cloud_watch_metrics
+            ,
         }
     }
 }
+

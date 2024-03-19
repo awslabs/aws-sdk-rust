@@ -2,60 +2,62 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecognizeTextOutput {
+pub struct RecognizeTextOutput  {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub session_state: ::std::option::Option<crate::types::SessionState>,
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
+    pub interpretations: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>,
     /// <p>The attributes sent in the request.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The identifier of the session in use.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot member that recognized the text.</p>
     pub recognized_bot_member: ::std::option::Option<crate::types::RecognizedBotMember>,
     _request_id: Option<String>,
 }
-impl RecognizeTextOutput {
+impl  RecognizeTextOutput  {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
-    pub fn messages(&self) -> &[crate::types::Message] {
-        self.messages.as_deref().unwrap_or_default()
+    pub fn messages(&self) -> & [crate::types::Message] {
+        self.messages.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    pub fn session_state(&self) -> ::std::option::Option<&crate::types::SessionState> {
+    pub fn session_state(&self) -> ::std::option::Option<& crate::types::SessionState> {
         self.session_state.as_ref()
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.interpretations.is_none()`.
-    pub fn interpretations(&self) -> &[crate::types::Interpretation] {
-        self.interpretations.as_deref().unwrap_or_default()
+    pub fn interpretations(&self) -> & [crate::types::Interpretation] {
+        self.interpretations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The identifier of the session in use.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The bot member that recognized the text.</p>
-    pub fn recognized_bot_member(&self) -> ::std::option::Option<&crate::types::RecognizedBotMember> {
+    pub fn recognized_bot_member(&self) -> ::std::option::Option<& crate::types::RecognizedBotMember> {
         self.recognized_bot_member.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for RecognizeTextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RecognizeTextOutput {
     /// Creates a new builder-style object to manufacture [`RecognizeTextOutput`](crate::operation::recognize_text::RecognizeTextOutput).
     pub fn builder() -> crate::operation::recognize_text::builders::RecognizeTextOutputBuilder {
@@ -67,10 +69,10 @@ impl RecognizeTextOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecognizeTextOutputBuilder {
-    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>,
     pub(crate) session_state: ::std::option::Option<crate::types::SessionState>,
-    pub(crate) interpretations: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>,
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) interpretations: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) recognized_bot_member: ::std::option::Option<crate::types::RecognizedBotMember>,
     _request_id: Option<String>,
@@ -83,17 +85,16 @@ impl RecognizeTextOutputBuilder {
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
-        v.push(input);
-        self.messages = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.messages = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>) -> Self {
-        self.messages = input;
-        self
+    pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Message>>) -> Self {
+        self.messages = input; self
     }
     /// <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
-    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Message>> {
         &self.messages
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
@@ -105,8 +106,7 @@ impl RecognizeTextOutputBuilder {
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input;
-        self
+        self.session_state = input; self
     }
     /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
@@ -121,19 +121,18 @@ impl RecognizeTextOutputBuilder {
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(mut self, input: crate::types::Interpretation) -> Self {
         let mut v = self.interpretations.unwrap_or_default();
-        v.push(input);
-        self.interpretations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.interpretations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Interpretation>>) -> Self {
-        self.interpretations = input;
-        self
+    pub fn set_interpretations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>>) -> Self {
+        self.interpretations = input; self
     }
     /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>
     /// <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Interpretation>> {
+    pub fn get_interpretations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Interpretation>> {
         &self.interpretations
     }
     /// Adds a key-value pair to `request_attributes`.
@@ -141,26 +140,18 @@ impl RecognizeTextOutputBuilder {
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
     ///
     /// <p>The attributes sent in the request.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>The attributes sent in the request.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The identifier of the session in use.</p>
@@ -170,8 +161,7 @@ impl RecognizeTextOutputBuilder {
     }
     /// <p>The identifier of the session in use.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The identifier of the session in use.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -184,32 +174,38 @@ impl RecognizeTextOutputBuilder {
     }
     /// <p>The bot member that recognized the text.</p>
     pub fn set_recognized_bot_member(mut self, input: ::std::option::Option<crate::types::RecognizedBotMember>) -> Self {
-        self.recognized_bot_member = input;
-        self
+        self.recognized_bot_member = input; self
     }
     /// <p>The bot member that recognized the text.</p>
     pub fn get_recognized_bot_member(&self) -> &::std::option::Option<crate::types::RecognizedBotMember> {
         &self.recognized_bot_member
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RecognizeTextOutput`](crate::operation::recognize_text::RecognizeTextOutput).
     pub fn build(self) -> crate::operation::recognize_text::RecognizeTextOutput {
         crate::operation::recognize_text::RecognizeTextOutput {
-            messages: self.messages,
-            session_state: self.session_state,
-            interpretations: self.interpretations,
-            request_attributes: self.request_attributes,
-            session_id: self.session_id,
-            recognized_bot_member: self.recognized_bot_member,
+            messages: self.messages
+            ,
+            session_state: self.session_state
+            ,
+            interpretations: self.interpretations
+            ,
+            request_attributes: self.request_attributes
+            ,
+            session_id: self.session_id
+            ,
+            recognized_bot_member: self.recognized_bot_member
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

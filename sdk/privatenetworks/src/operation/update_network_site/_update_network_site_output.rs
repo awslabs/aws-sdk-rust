@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateNetworkSiteOutput {
+pub struct UpdateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     pub network_site: ::std::option::Option<crate::types::NetworkSite>,
     /// <p>The network site tags.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateNetworkSiteOutput {
+impl  UpdateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> ::std::option::Option<&crate::types::NetworkSite> {
+    pub fn network_site(&self) -> ::std::option::Option<& crate::types::NetworkSite> {
         self.network_site.as_ref()
     }
     /// <p>The network site tags.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateNetworkSiteOutput {
+impl  ::std::fmt::Debug for UpdateNetworkSiteOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for UpdateNetworkSiteOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateNetworkSiteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::operation::update_network_site::UpdateNetworkSiteOutput).
     pub fn builder() -> crate::operation::update_network_site::builders::UpdateNetworkSiteOutputBuilder {
@@ -45,7 +45,7 @@ impl UpdateNetworkSiteOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateNetworkSiteOutputBuilder {
     pub(crate) network_site: ::std::option::Option<crate::types::NetworkSite>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateNetworkSiteOutputBuilder {
@@ -56,8 +56,7 @@ impl UpdateNetworkSiteOutputBuilder {
     }
     /// <p>Information about the network site.</p>
     pub fn set_network_site(mut self, input: ::std::option::Option<crate::types::NetworkSite>) -> Self {
-        self.network_site = input;
-        self
+        self.network_site = input; self
     }
     /// <p>Information about the network site.</p>
     pub fn get_network_site(&self) -> &::std::option::Option<crate::types::NetworkSite> {
@@ -70,33 +69,34 @@ impl UpdateNetworkSiteOutputBuilder {
     /// <p>The network site tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The network site tags.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The network site tags.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateNetworkSiteOutput`](crate::operation::update_network_site::UpdateNetworkSiteOutput).
     pub fn build(self) -> crate::operation::update_network_site::UpdateNetworkSiteOutput {
         crate::operation::update_network_site::UpdateNetworkSiteOutput {
-            network_site: self.network_site,
-            tags: self.tags,
+            network_site: self.network_site
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for UpdateNetworkSiteOutputBuilder {
         formatter.finish()
     }
 }
+

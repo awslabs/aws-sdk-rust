@@ -42,3 +42,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateMonitor` operation.
 pub mod update_monitor;
+

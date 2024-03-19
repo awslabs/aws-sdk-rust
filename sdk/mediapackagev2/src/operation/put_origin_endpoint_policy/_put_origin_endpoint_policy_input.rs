@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutOriginEndpointPolicyInput {
+pub struct PutOriginEndpointPolicyInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
@@ -12,21 +12,21 @@ pub struct PutOriginEndpointPolicyInput {
     /// <p>The policy to attach to the specified origin endpoint.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutOriginEndpointPolicyInput {
+impl  PutOriginEndpointPolicyInput  {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
-    pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_group_name(&self) -> ::std::option::Option<& str> {
         self.channel_group_name.as_deref()
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
-    pub fn origin_endpoint_name(&self) -> ::std::option::Option<&str> {
+    pub fn origin_endpoint_name(&self) -> ::std::option::Option<& str> {
         self.origin_endpoint_name.as_deref()
     }
     /// <p>The policy to attach to the specified origin endpoint.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl PutOriginEndpointPolicyInputBuilder {
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn set_channel_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_group_name = input;
-        self
+        self.channel_group_name = input; self
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutOriginEndpointPolicyInputBuilder {
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PutOriginEndpointPolicyInputBuilder {
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn set_origin_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.origin_endpoint_name = input;
-        self
+        self.origin_endpoint_name = input; self
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel.</p>
     pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl PutOriginEndpointPolicyInputBuilder {
     }
     /// <p>The policy to attach to the specified origin endpoint.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The policy to attach to the specified origin endpoint.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutOriginEndpointPolicyInput`](crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput {
-            channel_group_name: self.channel_group_name,
-            channel_name: self.channel_name,
-            origin_endpoint_name: self.origin_endpoint_name,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyInput {
+                channel_group_name: self.channel_group_name
+                ,
+                channel_name: self.channel_name
+                ,
+                origin_endpoint_name: self.origin_endpoint_name
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

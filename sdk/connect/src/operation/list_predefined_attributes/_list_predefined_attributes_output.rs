@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPredefinedAttributesOutput {
+pub struct ListPredefinedAttributesOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Summary of the predefined attributes.</p>
-    pub predefined_attribute_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>>,
+    pub predefined_attribute_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttributeSummary>>,
     _request_id: Option<String>,
 }
-impl ListPredefinedAttributesOutput {
+impl  ListPredefinedAttributesOutput  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Summary of the predefined attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.predefined_attribute_summary_list.is_none()`.
-    pub fn predefined_attribute_summary_list(&self) -> &[crate::types::PredefinedAttributeSummary] {
-        self.predefined_attribute_summary_list.as_deref().unwrap_or_default()
+    pub fn predefined_attribute_summary_list(&self) -> & [crate::types::PredefinedAttributeSummary] {
+        self.predefined_attribute_summary_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPredefinedAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPredefinedAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListPredefinedAttributesOutput`](crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput).
     pub fn builder() -> crate::operation::list_predefined_attributes::builders::ListPredefinedAttributesOutputBuilder {
@@ -38,7 +39,7 @@ impl ListPredefinedAttributesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPredefinedAttributesOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) predefined_attribute_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>>,
+    pub(crate) predefined_attribute_summary_list: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttributeSummary>>,
     _request_id: Option<String>,
 }
 impl ListPredefinedAttributesOutputBuilder {
@@ -49,8 +50,7 @@ impl ListPredefinedAttributesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,37 +63,36 @@ impl ListPredefinedAttributesOutputBuilder {
     /// <p>Summary of the predefined attributes.</p>
     pub fn predefined_attribute_summary_list(mut self, input: crate::types::PredefinedAttributeSummary) -> Self {
         let mut v = self.predefined_attribute_summary_list.unwrap_or_default();
-        v.push(input);
-        self.predefined_attribute_summary_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.predefined_attribute_summary_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Summary of the predefined attributes.</p>
-    pub fn set_predefined_attribute_summary_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>>,
-    ) -> Self {
-        self.predefined_attribute_summary_list = input;
-        self
+    pub fn set_predefined_attribute_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttributeSummary>>) -> Self {
+        self.predefined_attribute_summary_list = input; self
     }
     /// <p>Summary of the predefined attributes.</p>
-    pub fn get_predefined_attribute_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>> {
+    pub fn get_predefined_attribute_summary_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PredefinedAttributeSummary>> {
         &self.predefined_attribute_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPredefinedAttributesOutput`](crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput).
     pub fn build(self) -> crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput {
         crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput {
-            next_token: self.next_token,
-            predefined_attribute_summary_list: self.predefined_attribute_summary_list,
+            next_token: self.next_token
+            ,
+            predefined_attribute_summary_list: self.predefined_attribute_summary_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAliasInput {
+pub struct GetAliasInput  {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
 }
-impl GetAliasInput {
+impl  GetAliasInput  {
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
-    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetAliasInputBuilder {
     }
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl GetAliasInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetAliasInput`](crate::operation::get_alias::GetAliasInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_alias::GetAliasInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_alias::GetAliasInput { alias_name: self.alias_name })
+        ::std::result::Result::Ok(
+            crate::operation::get_alias::GetAliasInput {
+                alias_name: self.alias_name
+                ,
+            }
+        )
     }
 }
+

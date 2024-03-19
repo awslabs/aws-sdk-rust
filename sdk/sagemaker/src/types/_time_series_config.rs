@@ -3,7 +3,7 @@
 /// <p>The collection of components that defines the time-series.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimeSeriesConfig {
+pub struct TimeSeriesConfig  {
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
     pub target_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
@@ -11,26 +11,27 @@ pub struct TimeSeriesConfig {
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
     pub item_identifier_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    pub grouping_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub grouping_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl TimeSeriesConfig {
+impl  TimeSeriesConfig  {
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
-    pub fn target_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_attribute_name(&self) -> ::std::option::Option<& str> {
         self.target_attribute_name.as_deref()
     }
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
-    pub fn timestamp_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn timestamp_attribute_name(&self) -> ::std::option::Option<& str> {
         self.timestamp_attribute_name.as_deref()
     }
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
-    pub fn item_identifier_attribute_name(&self) -> ::std::option::Option<&str> {
+    pub fn item_identifier_attribute_name(&self) -> ::std::option::Option<& str> {
         self.item_identifier_attribute_name.as_deref()
     }
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grouping_attribute_names.is_none()`.
-    pub fn grouping_attribute_names(&self) -> &[::std::string::String] {
-        self.grouping_attribute_names.as_deref().unwrap_or_default()
+    pub fn grouping_attribute_names(&self) -> & [::std::string::String] {
+        self.grouping_attribute_names.as_deref()
+        .unwrap_or_default()
     }
 }
 impl TimeSeriesConfig {
@@ -47,7 +48,7 @@ pub struct TimeSeriesConfigBuilder {
     pub(crate) target_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp_attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) item_identifier_attribute_name: ::std::option::Option<::std::string::String>,
-    pub(crate) grouping_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) grouping_attribute_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl TimeSeriesConfigBuilder {
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
@@ -58,8 +59,7 @@ impl TimeSeriesConfigBuilder {
     }
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
     pub fn set_target_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_attribute_name = input;
-        self
+        self.target_attribute_name = input; self
     }
     /// <p>The name of the column representing the target variable that you want to predict for each item in your dataset. The data type of the target variable must be numerical.</p>
     pub fn get_target_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +73,7 @@ impl TimeSeriesConfigBuilder {
     }
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
     pub fn set_timestamp_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.timestamp_attribute_name = input;
-        self
+        self.timestamp_attribute_name = input; self
     }
     /// <p>The name of the column indicating a point in time at which the target value of a given item is recorded.</p>
     pub fn get_timestamp_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl TimeSeriesConfigBuilder {
     }
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
     pub fn set_item_identifier_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.item_identifier_attribute_name = input;
-        self
+        self.item_identifier_attribute_name = input; self
     }
     /// <p>The name of the column that represents the set of item identifiers for which you want to predict the target value.</p>
     pub fn get_item_identifier_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,26 +100,30 @@ impl TimeSeriesConfigBuilder {
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
     pub fn grouping_attribute_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.grouping_attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.grouping_attribute_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.grouping_attribute_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    pub fn set_grouping_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.grouping_attribute_names = input;
-        self
+    pub fn set_grouping_attribute_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.grouping_attribute_names = input; self
     }
     /// <p>A set of columns names that can be grouped with the item identifier column to create a composite key for which a target value is predicted.</p>
-    pub fn get_grouping_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_grouping_attribute_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.grouping_attribute_names
     }
     /// Consumes the builder and constructs a [`TimeSeriesConfig`](crate::types::TimeSeriesConfig).
     pub fn build(self) -> crate::types::TimeSeriesConfig {
         crate::types::TimeSeriesConfig {
-            target_attribute_name: self.target_attribute_name,
-            timestamp_attribute_name: self.timestamp_attribute_name,
-            item_identifier_attribute_name: self.item_identifier_attribute_name,
-            grouping_attribute_names: self.grouping_attribute_names,
+            target_attribute_name: self.target_attribute_name
+            ,
+            timestamp_attribute_name: self.timestamp_attribute_name
+            ,
+            item_identifier_attribute_name: self.item_identifier_attribute_name
+            ,
+            grouping_attribute_names: self.grouping_attribute_names
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let osfamily = unimplemented!();
 /// match osfamily {
@@ -36,16 +36,14 @@
 /// Specifically, when `osfamily` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OsFamily::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum OsFamily {
     #[allow(missing_docs)] // documentation missing in model
     Linux,
@@ -65,88 +63,80 @@ pub enum OsFamily {
     WindowsServer20H2Core,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for OsFamily {
-    fn from(s: &str) -> Self {
-        match s {
-            "LINUX" => OsFamily::Linux,
-            "WINDOWS_SERVER_2004_CORE" => OsFamily::WindowsServer2004Core,
-            "WINDOWS_SERVER_2016_FULL" => OsFamily::WindowsServer2016Full,
-            "WINDOWS_SERVER_2019_CORE" => OsFamily::WindowsServer2019Core,
-            "WINDOWS_SERVER_2019_FULL" => OsFamily::WindowsServer2019Full,
-            "WINDOWS_SERVER_2022_CORE" => OsFamily::WindowsServer2022Core,
-            "WINDOWS_SERVER_2022_FULL" => OsFamily::WindowsServer2022Full,
-            "WINDOWS_SERVER_20H2_CORE" => OsFamily::WindowsServer20H2Core,
-            other => OsFamily::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "LINUX" => OsFamily::Linux,
+"WINDOWS_SERVER_2004_CORE" => OsFamily::WindowsServer2004Core,
+"WINDOWS_SERVER_2016_FULL" => OsFamily::WindowsServer2016Full,
+"WINDOWS_SERVER_2019_CORE" => OsFamily::WindowsServer2019Core,
+"WINDOWS_SERVER_2019_FULL" => OsFamily::WindowsServer2019Full,
+"WINDOWS_SERVER_2022_CORE" => OsFamily::WindowsServer2022Core,
+"WINDOWS_SERVER_2022_FULL" => OsFamily::WindowsServer2022Full,
+"WINDOWS_SERVER_20H2_CORE" => OsFamily::WindowsServer20H2Core,
+other => OsFamily::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for OsFamily {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(OsFamily::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(OsFamily::from(s))
+                    }
+                }
 impl OsFamily {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OsFamily::Linux => "LINUX",
-            OsFamily::WindowsServer2004Core => "WINDOWS_SERVER_2004_CORE",
-            OsFamily::WindowsServer2016Full => "WINDOWS_SERVER_2016_FULL",
-            OsFamily::WindowsServer2019Core => "WINDOWS_SERVER_2019_CORE",
-            OsFamily::WindowsServer2019Full => "WINDOWS_SERVER_2019_FULL",
-            OsFamily::WindowsServer2022Core => "WINDOWS_SERVER_2022_CORE",
-            OsFamily::WindowsServer2022Full => "WINDOWS_SERVER_2022_FULL",
-            OsFamily::WindowsServer20H2Core => "WINDOWS_SERVER_20H2_CORE",
-            OsFamily::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "LINUX",
-            "WINDOWS_SERVER_2004_CORE",
-            "WINDOWS_SERVER_2016_FULL",
-            "WINDOWS_SERVER_2019_CORE",
-            "WINDOWS_SERVER_2019_FULL",
-            "WINDOWS_SERVER_2022_CORE",
-            "WINDOWS_SERVER_2022_FULL",
-            "WINDOWS_SERVER_20H2_CORE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OsFamily::Linux => "LINUX",
+    OsFamily::WindowsServer2004Core => "WINDOWS_SERVER_2004_CORE",
+    OsFamily::WindowsServer2016Full => "WINDOWS_SERVER_2016_FULL",
+    OsFamily::WindowsServer2019Core => "WINDOWS_SERVER_2019_CORE",
+    OsFamily::WindowsServer2019Full => "WINDOWS_SERVER_2019_FULL",
+    OsFamily::WindowsServer2022Core => "WINDOWS_SERVER_2022_CORE",
+    OsFamily::WindowsServer2022Full => "WINDOWS_SERVER_2022_FULL",
+    OsFamily::WindowsServer20H2Core => "WINDOWS_SERVER_20H2_CORE",
+    OsFamily::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LINUX", "WINDOWS_SERVER_2004_CORE", "WINDOWS_SERVER_2016_FULL", "WINDOWS_SERVER_2019_CORE", "WINDOWS_SERVER_2019_FULL", "WINDOWS_SERVER_2022_CORE", "WINDOWS_SERVER_2022_FULL", "WINDOWS_SERVER_20H2_CORE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for OsFamily {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl OsFamily {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for OsFamily {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            OsFamily::Linux => write!(f, "LINUX"),
-            OsFamily::WindowsServer2004Core => write!(f, "WINDOWS_SERVER_2004_CORE"),
-            OsFamily::WindowsServer2016Full => write!(f, "WINDOWS_SERVER_2016_FULL"),
-            OsFamily::WindowsServer2019Core => write!(f, "WINDOWS_SERVER_2019_CORE"),
-            OsFamily::WindowsServer2019Full => write!(f, "WINDOWS_SERVER_2019_FULL"),
-            OsFamily::WindowsServer2022Core => write!(f, "WINDOWS_SERVER_2022_CORE"),
-            OsFamily::WindowsServer2022Full => write!(f, "WINDOWS_SERVER_2022_FULL"),
-            OsFamily::WindowsServer20H2Core => write!(f, "WINDOWS_SERVER_20H2_CORE"),
-            OsFamily::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                OsFamily::Linux => write!(f, "LINUX"),
+OsFamily::WindowsServer2004Core => write!(f, "WINDOWS_SERVER_2004_CORE"),
+OsFamily::WindowsServer2016Full => write!(f, "WINDOWS_SERVER_2016_FULL"),
+OsFamily::WindowsServer2019Core => write!(f, "WINDOWS_SERVER_2019_CORE"),
+OsFamily::WindowsServer2019Full => write!(f, "WINDOWS_SERVER_2019_FULL"),
+OsFamily::WindowsServer2022Core => write!(f, "WINDOWS_SERVER_2022_CORE"),
+OsFamily::WindowsServer2022Full => write!(f, "WINDOWS_SERVER_2022_FULL"),
+OsFamily::WindowsServer20H2Core => write!(f, "WINDOWS_SERVER_20H2_CORE"),
+OsFamily::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

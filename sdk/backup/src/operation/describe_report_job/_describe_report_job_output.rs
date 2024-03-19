@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeReportJobOutput {
+pub struct DescribeReportJobOutput  {
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub report_job: ::std::option::Option<crate::types::ReportJob>,
     _request_id: Option<String>,
 }
-impl DescribeReportJobOutput {
+impl  DescribeReportJobOutput  {
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
-    pub fn report_job(&self) -> ::std::option::Option<&crate::types::ReportJob> {
+    pub fn report_job(&self) -> ::std::option::Option<& crate::types::ReportJob> {
         self.report_job.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeReportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeReportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportJobOutput`](crate::operation::describe_report_job::DescribeReportJobOutput).
     pub fn builder() -> crate::operation::describe_report_job::builders::DescribeReportJobOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeReportJobOutputBuilder {
     }
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn set_report_job(mut self, input: ::std::option::Option<crate::types::ReportJob>) -> Self {
-        self.report_job = input;
-        self
+        self.report_job = input; self
     }
     /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
     pub fn get_report_job(&self) -> &::std::option::Option<crate::types::ReportJob> {
         &self.report_job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeReportJobOutput`](crate::operation::describe_report_job::DescribeReportJobOutput).
     pub fn build(self) -> crate::operation::describe_report_job::DescribeReportJobOutput {
         crate::operation::describe_report_job::DescribeReportJobOutput {
-            report_job: self.report_job,
+            report_job: self.report_job
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

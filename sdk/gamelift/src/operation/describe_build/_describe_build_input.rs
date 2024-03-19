@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeBuildInput {
+pub struct DescribeBuildInput  {
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeBuildInput {
+impl  DescribeBuildInput  {
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
-    pub fn build_id(&self) -> ::std::option::Option<&str> {
+    pub fn build_id(&self) -> ::std::option::Option<& str> {
         self.build_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeBuildInputBuilder {
     }
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_id = input;
-        self
+        self.build_id = input; self
     }
     /// <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_id
     }
     /// Consumes the builder and constructs a [`DescribeBuildInput`](crate::operation::describe_build::DescribeBuildInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_build::DescribeBuildInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_build::DescribeBuildInput { build_id: self.build_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_build::DescribeBuildInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_build::DescribeBuildInput {
+                build_id: self.build_id
+                ,
+            }
+        )
     }
 }
+

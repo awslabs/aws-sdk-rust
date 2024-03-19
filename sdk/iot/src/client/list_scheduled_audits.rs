@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListScheduledAudits`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return at one time. The default is 25.</p><br>
-    /// - On success, responds with [`ListScheduledAuditsOutput`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput) with field(s):
+                            /// - On success, responds with [`ListScheduledAuditsOutput`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput) with field(s):
     ///   - [`scheduled_audits(Option<Vec::<ScheduledAuditMetadata>>)`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput::scheduled_audits): <p>The list of scheduled audits.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput::next_token): <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListScheduledAuditsError>`](crate::operation::list_scheduled_audits::ListScheduledAuditsError)
+                            /// - On failure, responds with [`SdkError<ListScheduledAuditsError>`](crate::operation::list_scheduled_audits::ListScheduledAuditsError)
     pub fn list_scheduled_audits(&self) -> crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder {
-        crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,35 +3,37 @@
 /// <p>Provides details about a specified Amazon Route&nbsp;53 hosted zone, including the four name servers assigned to the hosted zone. A hosted zone represents a collection of records that can be managed together, belonging to a single parent domain name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsRoute53HostedZoneDetails {
+pub struct AwsRoute53HostedZoneDetails  {
     /// <p>An object that contains information about the specified hosted zone.</p>
     pub hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneObjectDetails>,
     /// <p>An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
-    pub vpcs: ::std::option::Option<::std::vec::Vec<crate::types::AwsRoute53HostedZoneVpcDetails>>,
+    pub vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRoute53HostedZoneVpcDetails>>,
     /// <p>An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub name_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub name_servers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
     pub query_logging_config: ::std::option::Option<crate::types::AwsRoute53QueryLoggingConfigDetails>,
 }
-impl AwsRoute53HostedZoneDetails {
+impl  AwsRoute53HostedZoneDetails  {
     /// <p>An object that contains information about the specified hosted zone.</p>
-    pub fn hosted_zone(&self) -> ::std::option::Option<&crate::types::AwsRoute53HostedZoneObjectDetails> {
+    pub fn hosted_zone(&self) -> ::std::option::Option<& crate::types::AwsRoute53HostedZoneObjectDetails> {
         self.hosted_zone.as_ref()
     }
     /// <p>An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpcs.is_none()`.
-    pub fn vpcs(&self) -> &[crate::types::AwsRoute53HostedZoneVpcDetails] {
-        self.vpcs.as_deref().unwrap_or_default()
+    pub fn vpcs(&self) -> & [crate::types::AwsRoute53HostedZoneVpcDetails] {
+        self.vpcs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_servers.is_none()`.
-    pub fn name_servers(&self) -> &[::std::string::String] {
-        self.name_servers.as_deref().unwrap_or_default()
+    pub fn name_servers(&self) -> & [::std::string::String] {
+        self.name_servers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
-    pub fn query_logging_config(&self) -> ::std::option::Option<&crate::types::AwsRoute53QueryLoggingConfigDetails> {
+    pub fn query_logging_config(&self) -> ::std::option::Option<& crate::types::AwsRoute53QueryLoggingConfigDetails> {
         self.query_logging_config.as_ref()
     }
 }
@@ -47,8 +49,8 @@ impl AwsRoute53HostedZoneDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsRoute53HostedZoneDetailsBuilder {
     pub(crate) hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneObjectDetails>,
-    pub(crate) vpcs: ::std::option::Option<::std::vec::Vec<crate::types::AwsRoute53HostedZoneVpcDetails>>,
-    pub(crate) name_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpcs: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRoute53HostedZoneVpcDetails>>,
+    pub(crate) name_servers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) query_logging_config: ::std::option::Option<crate::types::AwsRoute53QueryLoggingConfigDetails>,
 }
 impl AwsRoute53HostedZoneDetailsBuilder {
@@ -59,8 +61,7 @@ impl AwsRoute53HostedZoneDetailsBuilder {
     }
     /// <p>An object that contains information about the specified hosted zone.</p>
     pub fn set_hosted_zone(mut self, input: ::std::option::Option<crate::types::AwsRoute53HostedZoneObjectDetails>) -> Self {
-        self.hosted_zone = input;
-        self
+        self.hosted_zone = input; self
     }
     /// <p>An object that contains information about the specified hosted zone.</p>
     pub fn get_hosted_zone(&self) -> &::std::option::Option<crate::types::AwsRoute53HostedZoneObjectDetails> {
@@ -73,17 +74,16 @@ impl AwsRoute53HostedZoneDetailsBuilder {
     /// <p>An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
     pub fn vpcs(mut self, input: crate::types::AwsRoute53HostedZoneVpcDetails) -> Self {
         let mut v = self.vpcs.unwrap_or_default();
-        v.push(input);
-        self.vpcs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.vpcs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
-    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsRoute53HostedZoneVpcDetails>>) -> Self {
-        self.vpcs = input;
-        self
+    pub fn set_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsRoute53HostedZoneVpcDetails>>) -> Self {
+        self.vpcs = input; self
     }
     /// <p>An object that contains information about the Amazon Virtual Private Clouds (Amazon VPCs) that are associated with the specified hosted zone.</p>
-    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRoute53HostedZoneVpcDetails>> {
+    pub fn get_vpcs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsRoute53HostedZoneVpcDetails>> {
         &self.vpcs
     }
     /// Appends an item to `name_servers`.
@@ -93,17 +93,16 @@ impl AwsRoute53HostedZoneDetailsBuilder {
     /// <p>An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
     pub fn name_servers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.name_servers.unwrap_or_default();
-        v.push(input.into());
-        self.name_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.name_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn set_name_servers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.name_servers = input;
-        self
+    pub fn set_name_servers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.name_servers = input; self
     }
     /// <p>An object that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn get_name_servers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_name_servers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.name_servers
     }
     /// <p>An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
@@ -113,8 +112,7 @@ impl AwsRoute53HostedZoneDetailsBuilder {
     }
     /// <p>An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
     pub fn set_query_logging_config(mut self, input: ::std::option::Option<crate::types::AwsRoute53QueryLoggingConfigDetails>) -> Self {
-        self.query_logging_config = input;
-        self
+        self.query_logging_config = input; self
     }
     /// <p>An array that contains one <code>QueryLoggingConfig</code> element for each DNS query logging configuration that is associated with the current Amazon Web Services account.</p>
     pub fn get_query_logging_config(&self) -> &::std::option::Option<crate::types::AwsRoute53QueryLoggingConfigDetails> {
@@ -123,10 +121,15 @@ impl AwsRoute53HostedZoneDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsRoute53HostedZoneDetails`](crate::types::AwsRoute53HostedZoneDetails).
     pub fn build(self) -> crate::types::AwsRoute53HostedZoneDetails {
         crate::types::AwsRoute53HostedZoneDetails {
-            hosted_zone: self.hosted_zone,
-            vpcs: self.vpcs,
-            name_servers: self.name_servers,
-            query_logging_config: self.query_logging_config,
+            hosted_zone: self.hosted_zone
+            ,
+            vpcs: self.vpcs
+            ,
+            name_servers: self.name_servers
+            ,
+            query_logging_config: self.query_logging_config
+            ,
         }
     }
 }
+

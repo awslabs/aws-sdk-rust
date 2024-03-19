@@ -3,7 +3,7 @@
 /// <p>Information about an application version deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// <p>The version label of the application version in the deployment.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
@@ -22,9 +22,9 @@ pub struct Deployment {
     /// <p>For completed deployments, the time that the deployment ended.</p>
     pub deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Deployment {
+impl  Deployment  {
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn version_label(&self) -> ::std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
@@ -40,12 +40,12 @@ impl Deployment {
     /// <li>
     /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    pub fn deployment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn deployment_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.deployment_time.as_ref()
     }
 }
@@ -73,8 +73,7 @@ impl DeploymentBuilder {
     }
     /// <p>The version label of the application version in the deployment.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// <p>The version label of the application version in the deployment.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl DeploymentBuilder {
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<i64> {
@@ -117,8 +115,7 @@ impl DeploymentBuilder {
     /// <p><code>Failed</code> : The deployment failed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
@@ -141,8 +138,7 @@ impl DeploymentBuilder {
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
     pub fn set_deployment_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.deployment_time = input;
-        self
+        self.deployment_time = input; self
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
@@ -152,10 +148,15 @@ impl DeploymentBuilder {
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
-            version_label: self.version_label,
-            deployment_id: self.deployment_id,
-            status: self.status,
-            deployment_time: self.deployment_time,
+            version_label: self.version_label
+            ,
+            deployment_id: self.deployment_id
+            ,
+            status: self.status
+            ,
+            deployment_time: self.deployment_time
+            ,
         }
     }
 }
+

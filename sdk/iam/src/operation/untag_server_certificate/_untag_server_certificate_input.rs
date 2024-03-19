@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UntagServerCertificateInput {
+pub struct UntagServerCertificateInput  {
     /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub server_certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
-    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UntagServerCertificateInput {
+impl  UntagServerCertificateInput  {
     /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn server_certificate_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_certificate_name(&self) -> ::std::option::Option<& str> {
         self.server_certificate_name.as_deref()
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
-    pub fn tag_keys(&self) -> &[::std::string::String] {
-        self.tag_keys.as_deref().unwrap_or_default()
+    pub fn tag_keys(&self) -> & [::std::string::String] {
+        self.tag_keys.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UntagServerCertificateInput {
@@ -34,7 +35,7 @@ impl UntagServerCertificateInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UntagServerCertificateInputBuilder {
     pub(crate) server_certificate_name: ::std::option::Option<::std::string::String>,
-    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UntagServerCertificateInputBuilder {
     /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
@@ -47,8 +48,7 @@ impl UntagServerCertificateInputBuilder {
     /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_server_certificate_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_certificate_name = input;
-        self
+        self.server_certificate_name = input; self
     }
     /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -62,29 +62,28 @@ impl UntagServerCertificateInputBuilder {
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified IAM server certificate.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagServerCertificateInput`](crate::operation::untag_server_certificate::UntagServerCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::untag_server_certificate::UntagServerCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::untag_server_certificate::UntagServerCertificateInput {
-            server_certificate_name: self.server_certificate_name,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_server_certificate::UntagServerCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::untag_server_certificate::UntagServerCertificateInput {
+                server_certificate_name: self.server_certificate_name
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

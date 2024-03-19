@@ -22,11 +22,7 @@ impl RedshiftStorage {
     /// Tries to convert the enum instance into [`RedshiftClusterSource`](crate::types::RedshiftStorage::RedshiftClusterSource), extracting the inner [`RedshiftClusterStorage`](crate::types::RedshiftClusterStorage).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_cluster_source(&self) -> ::std::result::Result<&crate::types::RedshiftClusterStorage, &Self> {
-        if let RedshiftStorage::RedshiftClusterSource(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RedshiftStorage::RedshiftClusterSource(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftClusterSource`](crate::types::RedshiftStorage::RedshiftClusterSource).
     pub fn is_redshift_cluster_source(&self) -> bool {
@@ -35,11 +31,7 @@ impl RedshiftStorage {
     /// Tries to convert the enum instance into [`RedshiftServerlessSource`](crate::types::RedshiftStorage::RedshiftServerlessSource), extracting the inner [`RedshiftServerlessStorage`](crate::types::RedshiftServerlessStorage).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_serverless_source(&self) -> ::std::result::Result<&crate::types::RedshiftServerlessStorage, &Self> {
-        if let RedshiftStorage::RedshiftServerlessSource(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let RedshiftStorage::RedshiftServerlessSource(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`RedshiftServerlessSource`](crate::types::RedshiftStorage::RedshiftServerlessSource).
     pub fn is_redshift_serverless_source(&self) -> bool {
@@ -50,3 +42,4 @@ impl RedshiftStorage {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateCampaignInput {
+pub struct UpdateCampaignInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a new solution version to deploy.</p>
@@ -12,13 +12,13 @@ pub struct UpdateCampaignInput {
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: ::std::option::Option<crate::types::CampaignConfig>,
 }
-impl UpdateCampaignInput {
+impl  UpdateCampaignInput  {
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
-    pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
+    pub fn campaign_arn(&self) -> ::std::option::Option<& str> {
         self.campaign_arn.as_deref()
     }
     /// <p>The ARN of a new solution version to deploy.</p>
-    pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_version_arn(&self) -> ::std::option::Option<& str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
@@ -26,7 +26,7 @@ impl UpdateCampaignInput {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> ::std::option::Option<&crate::types::CampaignConfig> {
+    pub fn campaign_config(&self) -> ::std::option::Option<& crate::types::CampaignConfig> {
         self.campaign_config.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.campaign_arn = input;
-        self
+        self.campaign_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The ARN of a new solution version to deploy.</p>
     pub fn set_solution_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_version_arn = input;
-        self
+        self.solution_version_arn = input; self
     }
     /// <p>The ARN of a new solution version to deploy.</p>
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_provisioned_tps = input;
-        self
+        self.min_provisioned_tps = input; self
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn get_min_provisioned_tps(&self) -> &::std::option::Option<i32> {
@@ -97,22 +94,26 @@ impl UpdateCampaignInputBuilder {
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn set_campaign_config(mut self, input: ::std::option::Option<crate::types::CampaignConfig>) -> Self {
-        self.campaign_config = input;
-        self
+        self.campaign_config = input; self
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
         &self.campaign_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_campaign::UpdateCampaignInput {
-            campaign_arn: self.campaign_arn,
-            solution_version_arn: self.solution_version_arn,
-            min_provisioned_tps: self.min_provisioned_tps,
-            campaign_config: self.campaign_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_campaign::UpdateCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_campaign::UpdateCampaignInput {
+                campaign_arn: self.campaign_arn
+                ,
+                solution_version_arn: self.solution_version_arn
+                ,
+                min_provisioned_tps: self.min_provisioned_tps
+                ,
+                campaign_config: self.campaign_config
+                ,
+            }
+        )
     }
 }
+

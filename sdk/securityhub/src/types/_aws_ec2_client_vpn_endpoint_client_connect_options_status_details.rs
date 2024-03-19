@@ -3,19 +3,19 @@
 /// <p>Describes the status of the Client VPN endpoint attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails {
+pub struct AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails  {
     /// <p>The status code.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>The status message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails {
+impl  AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails  {
     /// <p>The status code.</p>
-    pub fn code(&self) -> ::std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetailsBuilder {
     }
     /// <p>The status code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The status code.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetailsBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The status message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails`](crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails).
     pub fn build(self) -> crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails {
         crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

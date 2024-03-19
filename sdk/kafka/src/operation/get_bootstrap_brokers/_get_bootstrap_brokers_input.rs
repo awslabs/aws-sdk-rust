@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBootstrapBrokersInput {
+pub struct GetBootstrapBrokersInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetBootstrapBrokersInput {
+impl  GetBootstrapBrokersInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetBootstrapBrokersInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`GetBootstrapBrokersInput`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput {
-            cluster_arn: self.cluster_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_bootstrap_brokers::GetBootstrapBrokersInput {
+                cluster_arn: self.cluster_arn
+                ,
+            }
+        )
     }
 }
+

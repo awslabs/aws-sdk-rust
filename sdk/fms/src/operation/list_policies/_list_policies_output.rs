@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPoliciesOutput {
+pub struct ListPoliciesOutput  {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    pub policy_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>,
+    pub policy_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicySummary>>,
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListPoliciesOutput {
+impl  ListPoliciesOutput  {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_list.is_none()`.
-    pub fn policy_list(&self) -> &[crate::types::PolicySummary] {
-        self.policy_list.as_deref().unwrap_or_default()
+    pub fn policy_list(&self) -> & [crate::types::PolicySummary] {
+        self.policy_list.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput).
     pub fn builder() -> crate::operation::list_policies::builders::ListPoliciesOutputBuilder {
@@ -37,7 +38,7 @@ impl ListPoliciesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListPoliciesOutputBuilder {
-    pub(crate) policy_list: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>,
+    pub(crate) policy_list: ::std::option::Option<::std::vec::Vec::<crate::types::PolicySummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListPoliciesOutputBuilder {
     /// <p>An array of <code>PolicySummary</code> objects.</p>
     pub fn policy_list(mut self, input: crate::types::PolicySummary) -> Self {
         let mut v = self.policy_list.unwrap_or_default();
-        v.push(input);
-        self.policy_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.policy_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    pub fn set_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>>) -> Self {
-        self.policy_list = input;
-        self
+    pub fn set_policy_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PolicySummary>>) -> Self {
+        self.policy_list = input; self
     }
     /// <p>An array of <code>PolicySummary</code> objects.</p>
-    pub fn get_policy_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
+    pub fn get_policy_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PolicySummary>> {
         &self.policy_list
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
@@ -69,28 +69,30 @@ impl ListPoliciesOutputBuilder {
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::operation::list_policies::ListPoliciesOutput).
     pub fn build(self) -> crate::operation::list_policies::ListPoliciesOutput {
         crate::operation::list_policies::ListPoliciesOutput {
-            policy_list: self.policy_list,
-            next_token: self.next_token,
+            policy_list: self.policy_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

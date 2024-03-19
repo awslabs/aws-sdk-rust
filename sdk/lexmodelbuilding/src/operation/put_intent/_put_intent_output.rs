@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutIntentOutput {
+pub struct PutIntentOutput  {
     /// <p>The name of the intent.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intent.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of intent slots that are configured for the intent.</p>
-    pub slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
+    pub slots: ::std::option::Option<::std::vec::Vec::<crate::types::Slot>>,
     /// <p>An array of sample utterances that are configured for the intent.</p>
-    pub sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub sample_utterances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
     pub confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
@@ -38,74 +38,76 @@ pub struct PutIntentOutput {
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
+    pub input_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>,
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
+    pub output_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>,
     _request_id: Option<String>,
 }
-impl PutIntentOutput {
+impl  PutIntentOutput  {
     /// <p>The name of the intent.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the intent.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An array of intent slots that are configured for the intent.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slots.is_none()`.
-    pub fn slots(&self) -> &[crate::types::Slot] {
-        self.slots.as_deref().unwrap_or_default()
+    pub fn slots(&self) -> & [crate::types::Slot] {
+        self.slots.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of sample utterances that are configured for the intent.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sample_utterances.is_none()`.
-    pub fn sample_utterances(&self) -> &[::std::string::String] {
-        self.sample_utterances.as_deref().unwrap_or_default()
+    pub fn sample_utterances(&self) -> & [::std::string::String] {
+        self.sample_utterances.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
-    pub fn confirmation_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
+    pub fn confirmation_prompt(&self) -> ::std::option::Option<& crate::types::Prompt> {
         self.confirmation_prompt.as_ref()
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
-    pub fn rejection_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn rejection_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.rejection_statement.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
-    pub fn follow_up_prompt(&self) -> ::std::option::Option<&crate::types::FollowUpPrompt> {
+    pub fn follow_up_prompt(&self) -> ::std::option::Option<& crate::types::FollowUpPrompt> {
         self.follow_up_prompt.as_ref()
     }
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
-    pub fn conclusion_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
+    pub fn conclusion_statement(&self) -> ::std::option::Option<& crate::types::Statement> {
         self.conclusion_statement.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
-    pub fn dialog_code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
+    pub fn dialog_code_hook(&self) -> ::std::option::Option<& crate::types::CodeHook> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
-    pub fn fulfillment_activity(&self) -> ::std::option::Option<&crate::types::FulfillmentActivity> {
+    pub fn fulfillment_activity(&self) -> ::std::option::Option<& crate::types::FulfillmentActivity> {
         self.fulfillment_activity.as_ref()
     }
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
-    pub fn parent_intent_signature(&self) -> ::std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> ::std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
-    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>The date that the intent was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
-    pub fn checksum(&self) -> ::std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
@@ -113,27 +115,29 @@ impl PutIntentOutput {
         self.create_version
     }
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> ::std::option::Option<&crate::types::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> ::std::option::Option<& crate::types::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_contexts.is_none()`.
-    pub fn input_contexts(&self) -> &[crate::types::InputContext] {
-        self.input_contexts.as_deref().unwrap_or_default()
+    pub fn input_contexts(&self) -> & [crate::types::InputContext] {
+        self.input_contexts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_contexts.is_none()`.
-    pub fn output_contexts(&self) -> &[crate::types::OutputContext] {
-        self.output_contexts.as_deref().unwrap_or_default()
+    pub fn output_contexts(&self) -> & [crate::types::OutputContext] {
+        self.output_contexts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PutIntentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PutIntentOutput {
     /// Creates a new builder-style object to manufacture [`PutIntentOutput`](crate::operation::put_intent::PutIntentOutput).
     pub fn builder() -> crate::operation::put_intent::builders::PutIntentOutputBuilder {
@@ -147,8 +151,8 @@ impl PutIntentOutput {
 pub struct PutIntentOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) slots: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
-    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) slots: ::std::option::Option<::std::vec::Vec::<crate::types::Slot>>,
+    pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) confirmation_prompt: ::std::option::Option<crate::types::Prompt>,
     pub(crate) rejection_statement: ::std::option::Option<crate::types::Statement>,
     pub(crate) follow_up_prompt: ::std::option::Option<crate::types::FollowUpPrompt>,
@@ -162,8 +166,8 @@ pub struct PutIntentOutputBuilder {
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) create_version: ::std::option::Option<bool>,
     pub(crate) kendra_configuration: ::std::option::Option<crate::types::KendraConfiguration>,
-    pub(crate) input_contexts: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
-    pub(crate) output_contexts: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
+    pub(crate) input_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>,
+    pub(crate) output_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>,
     _request_id: Option<String>,
 }
 impl PutIntentOutputBuilder {
@@ -174,8 +178,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>The name of the intent.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the intent.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +191,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>A description of the intent.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the intent.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -202,17 +204,16 @@ impl PutIntentOutputBuilder {
     /// <p>An array of intent slots that are configured for the intent.</p>
     pub fn slots(mut self, input: crate::types::Slot) -> Self {
         let mut v = self.slots.unwrap_or_default();
-        v.push(input);
-        self.slots = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.slots = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of intent slots that are configured for the intent.</p>
-    pub fn set_slots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>) -> Self {
-        self.slots = input;
-        self
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Slot>>) -> Self {
+        self.slots = input; self
     }
     /// <p>An array of intent slots that are configured for the intent.</p>
-    pub fn get_slots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Slot>> {
+    pub fn get_slots(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Slot>> {
         &self.slots
     }
     /// Appends an item to `sample_utterances`.
@@ -222,17 +223,16 @@ impl PutIntentOutputBuilder {
     /// <p>An array of sample utterances that are configured for the intent.</p>
     pub fn sample_utterances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-        v.push(input.into());
-        self.sample_utterances = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.sample_utterances = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of sample utterances that are configured for the intent.</p>
-    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.sample_utterances = input;
-        self
+    pub fn set_sample_utterances(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.sample_utterances = input; self
     }
     /// <p>An array of sample utterances that are configured for the intent.</p>
-    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_sample_utterances(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.sample_utterances
     }
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
@@ -242,8 +242,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
     pub fn set_confirmation_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
-        self.confirmation_prompt = input;
-        self
+        self.confirmation_prompt = input; self
     }
     /// <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
     pub fn get_confirmation_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
@@ -256,8 +255,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn set_rejection_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.rejection_statement = input;
-        self
+        self.rejection_statement = input; self
     }
     /// <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled.</p>
     pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
@@ -270,8 +268,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
     pub fn set_follow_up_prompt(mut self, input: ::std::option::Option<crate::types::FollowUpPrompt>) -> Self {
-        self.follow_up_prompt = input;
-        self
+        self.follow_up_prompt = input; self
     }
     /// <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
     pub fn get_follow_up_prompt(&self) -> &::std::option::Option<crate::types::FollowUpPrompt> {
@@ -284,8 +281,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
     pub fn set_conclusion_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
-        self.conclusion_statement = input;
-        self
+        self.conclusion_statement = input; self
     }
     /// <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
     pub fn get_conclusion_statement(&self) -> &::std::option::Option<crate::types::Statement> {
@@ -298,8 +294,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
     pub fn set_dialog_code_hook(mut self, input: ::std::option::Option<crate::types::CodeHook>) -> Self {
-        self.dialog_code_hook = input;
-        self
+        self.dialog_code_hook = input; self
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
     pub fn get_dialog_code_hook(&self) -> &::std::option::Option<crate::types::CodeHook> {
@@ -312,8 +307,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
     pub fn set_fulfillment_activity(mut self, input: ::std::option::Option<crate::types::FulfillmentActivity>) -> Self {
-        self.fulfillment_activity = input;
-        self
+        self.fulfillment_activity = input; self
     }
     /// <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
     pub fn get_fulfillment_activity(&self) -> &::std::option::Option<crate::types::FulfillmentActivity> {
@@ -326,8 +320,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
     pub fn set_parent_intent_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.parent_intent_signature = input;
-        self
+        self.parent_intent_signature = input; self
     }
     /// <p>A unique identifier for the built-in intent that this intent is based on.</p>
     pub fn get_parent_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
@@ -340,8 +333,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input;
-        self
+        self.last_updated_date = input; self
     }
     /// <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -354,8 +346,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>The date that the intent was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date that the intent was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -368,8 +359,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -382,8 +372,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
     pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -396,8 +385,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_version = input;
-        self
+        self.create_version = input; self
     }
     /// <p><code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn get_create_version(&self) -> &::std::option::Option<bool> {
@@ -410,8 +398,7 @@ impl PutIntentOutputBuilder {
     }
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub fn set_kendra_configuration(mut self, input: ::std::option::Option<crate::types::KendraConfiguration>) -> Self {
-        self.kendra_configuration = input;
-        self
+        self.kendra_configuration = input; self
     }
     /// <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub fn get_kendra_configuration(&self) -> &::std::option::Option<crate::types::KendraConfiguration> {
@@ -424,17 +411,16 @@ impl PutIntentOutputBuilder {
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         let mut v = self.input_contexts.unwrap_or_default();
-        v.push(input);
-        self.input_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.input_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>) -> Self {
-        self.input_contexts = input;
-        self
+    pub fn set_input_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputContext>>) -> Self {
+        self.input_contexts = input; self
     }
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
-    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+    pub fn get_input_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputContext>> {
         &self.input_contexts
     }
     /// Appends an item to `output_contexts`.
@@ -444,51 +430,70 @@ impl PutIntentOutputBuilder {
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         let mut v = self.output_contexts.unwrap_or_default();
-        v.push(input);
-        self.output_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>) -> Self {
-        self.output_contexts = input;
-        self
+    pub fn set_output_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>>) -> Self {
+        self.output_contexts = input; self
     }
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
-    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+    pub fn get_output_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OutputContext>> {
         &self.output_contexts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PutIntentOutput`](crate::operation::put_intent::PutIntentOutput).
     pub fn build(self) -> crate::operation::put_intent::PutIntentOutput {
         crate::operation::put_intent::PutIntentOutput {
-            name: self.name,
-            description: self.description,
-            slots: self.slots,
-            sample_utterances: self.sample_utterances,
-            confirmation_prompt: self.confirmation_prompt,
-            rejection_statement: self.rejection_statement,
-            follow_up_prompt: self.follow_up_prompt,
-            conclusion_statement: self.conclusion_statement,
-            dialog_code_hook: self.dialog_code_hook,
-            fulfillment_activity: self.fulfillment_activity,
-            parent_intent_signature: self.parent_intent_signature,
-            last_updated_date: self.last_updated_date,
-            created_date: self.created_date,
-            version: self.version,
-            checksum: self.checksum,
-            create_version: self.create_version,
-            kendra_configuration: self.kendra_configuration,
-            input_contexts: self.input_contexts,
-            output_contexts: self.output_contexts,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            slots: self.slots
+            ,
+            sample_utterances: self.sample_utterances
+            ,
+            confirmation_prompt: self.confirmation_prompt
+            ,
+            rejection_statement: self.rejection_statement
+            ,
+            follow_up_prompt: self.follow_up_prompt
+            ,
+            conclusion_statement: self.conclusion_statement
+            ,
+            dialog_code_hook: self.dialog_code_hook
+            ,
+            fulfillment_activity: self.fulfillment_activity
+            ,
+            parent_intent_signature: self.parent_intent_signature
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            created_date: self.created_date
+            ,
+            version: self.version
+            ,
+            checksum: self.checksum
+            ,
+            create_version: self.create_version
+            ,
+            kendra_configuration: self.kendra_configuration
+            ,
+            input_contexts: self.input_contexts
+            ,
+            output_contexts: self.output_contexts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

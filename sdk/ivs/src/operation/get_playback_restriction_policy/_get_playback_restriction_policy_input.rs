@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPlaybackRestrictionPolicyInput {
+pub struct GetPlaybackRestrictionPolicyInput  {
     /// <p>ARN of the playback restriction policy to be returned.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl GetPlaybackRestrictionPolicyInput {
+impl  GetPlaybackRestrictionPolicyInput  {
     /// <p>ARN of the playback restriction policy to be returned.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl GetPlaybackRestrictionPolicyInputBuilder {
     }
     /// <p>ARN of the playback restriction policy to be returned.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN of the playback restriction policy to be returned.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetPlaybackRestrictionPolicyInput`](crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

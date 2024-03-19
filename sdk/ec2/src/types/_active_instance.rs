@@ -3,7 +3,7 @@
 /// <p>Describes a running instance in a Spot Fleet.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActiveInstance {
+pub struct ActiveInstance  {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
@@ -13,21 +13,21 @@ pub struct ActiveInstance {
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
     pub instance_health: ::std::option::Option<crate::types::InstanceHealthStatus>,
 }
-impl ActiveInstance {
+impl  ActiveInstance  {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn spot_instance_request_id(&self) -> ::std::option::Option<&str> {
+    pub fn spot_instance_request_id(&self) -> ::std::option::Option<& str> {
         self.spot_instance_request_id.as_deref()
     }
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
-    pub fn instance_health(&self) -> ::std::option::Option<&crate::types::InstanceHealthStatus> {
+    pub fn instance_health(&self) -> ::std::option::Option<& crate::types::InstanceHealthStatus> {
         self.instance_health.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ActiveInstanceBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ActiveInstanceBuilder {
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ActiveInstanceBuilder {
     }
     /// <p>The ID of the Spot Instance request.</p>
     pub fn set_spot_instance_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.spot_instance_request_id = input;
-        self
+        self.spot_instance_request_id = input; self
     }
     /// <p>The ID of the Spot Instance request.</p>
     pub fn get_spot_instance_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +94,7 @@ impl ActiveInstanceBuilder {
     }
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
     pub fn set_instance_health(mut self, input: ::std::option::Option<crate::types::InstanceHealthStatus>) -> Self {
-        self.instance_health = input;
-        self
+        self.instance_health = input; self
     }
     /// <p>The health status of the instance. If the status of either the instance status check or the system status check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.</p>
     pub fn get_instance_health(&self) -> &::std::option::Option<crate::types::InstanceHealthStatus> {
@@ -107,10 +103,15 @@ impl ActiveInstanceBuilder {
     /// Consumes the builder and constructs a [`ActiveInstance`](crate::types::ActiveInstance).
     pub fn build(self) -> crate::types::ActiveInstance {
         crate::types::ActiveInstance {
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            spot_instance_request_id: self.spot_instance_request_id,
-            instance_health: self.instance_health,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            spot_instance_request_id: self.spot_instance_request_id
+            ,
+            instance_health: self.instance_health
+            ,
         }
     }
 }
+

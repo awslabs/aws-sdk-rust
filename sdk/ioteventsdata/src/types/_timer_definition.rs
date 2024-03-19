@@ -3,17 +3,16 @@
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TimerDefinition {
+pub struct TimerDefinition  {
     /// <p>The name of the timer.</p>
     pub name: ::std::string::String,
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub seconds: i32,
 }
-impl TimerDefinition {
+impl  TimerDefinition  {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn seconds(&self) -> i32 {
@@ -43,8 +42,7 @@ impl TimerDefinitionBuilder {
     }
     /// <p>The name of the timer.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the timer.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl TimerDefinitionBuilder {
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn set_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.seconds = input;
-        self
+        self.seconds = input; self
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn get_seconds(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl TimerDefinitionBuilder {
     /// - [`name`](crate::types::builders::TimerDefinitionBuilder::name)
     /// - [`seconds`](crate::types::builders::TimerDefinitionBuilder::seconds)
     pub fn build(self) -> ::std::result::Result<crate::types::TimerDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TimerDefinition {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TimerDefinition",
-                )
-            })?,
-            seconds: self.seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "seconds",
-                    "seconds was not specified but it is required when building TimerDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TimerDefinition {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TimerDefinition")
+                    )?
+                ,
+                seconds: self.seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("seconds", "seconds was not specified but it is required when building TimerDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

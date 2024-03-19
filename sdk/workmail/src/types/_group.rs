@@ -3,7 +3,7 @@
 /// <p>The representation of an WorkMail group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The identifier of the group.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the group.</p>
@@ -17,29 +17,29 @@ pub struct Group {
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Group {
+impl  Group  {
     /// <p>The identifier of the group.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the group.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The date indicating when the group was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl GroupBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the group.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +82,7 @@ impl GroupBuilder {
     }
     /// <p>The email of the group.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email of the group.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +95,7 @@ impl GroupBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -111,8 +108,7 @@ impl GroupBuilder {
     }
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
@@ -125,8 +121,7 @@ impl GroupBuilder {
     }
     /// <p>The date indicating when the group was enabled for WorkMail use.</p>
     pub fn set_enabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.enabled_date = input;
-        self
+        self.enabled_date = input; self
     }
     /// <p>The date indicating when the group was enabled for WorkMail use.</p>
     pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -139,8 +134,7 @@ impl GroupBuilder {
     }
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     pub fn set_disabled_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.disabled_date = input;
-        self
+        self.disabled_date = input; self
     }
     /// <p>The date indicating when the group was disabled from WorkMail use.</p>
     pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -149,12 +143,19 @@ impl GroupBuilder {
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     pub fn build(self) -> crate::types::Group {
         crate::types::Group {
-            id: self.id,
-            email: self.email,
-            name: self.name,
-            state: self.state,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
+            id: self.id
+            ,
+            email: self.email
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
         }
     }
 }
+

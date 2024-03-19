@@ -4,11 +4,11 @@
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActivityMetrics {
+pub struct ActivityMetrics  {
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub is_enabled: bool,
 }
-impl ActivityMetrics {
+impl  ActivityMetrics  {
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
@@ -35,8 +35,7 @@ impl ActivityMetricsBuilder {
     }
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
@@ -45,7 +44,10 @@ impl ActivityMetricsBuilder {
     /// Consumes the builder and constructs a [`ActivityMetrics`](crate::types::ActivityMetrics).
     pub fn build(self) -> crate::types::ActivityMetrics {
         crate::types::ActivityMetrics {
-            is_enabled: self.is_enabled.unwrap_or_default(),
+            is_enabled: self.is_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

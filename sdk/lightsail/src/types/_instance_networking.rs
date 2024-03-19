@@ -3,22 +3,23 @@
 /// <p>Describes monthly data transfer rates and port information for an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceNetworking {
+pub struct InstanceNetworking  {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
     pub monthly_transfer: ::std::option::Option<crate::types::MonthlyTransfer>,
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub ports: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>>,
+    pub ports: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortInfo>>,
 }
-impl InstanceNetworking {
+impl  InstanceNetworking  {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
-    pub fn monthly_transfer(&self) -> ::std::option::Option<&crate::types::MonthlyTransfer> {
+    pub fn monthly_transfer(&self) -> ::std::option::Option<& crate::types::MonthlyTransfer> {
         self.monthly_transfer.as_ref()
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ports.is_none()`.
-    pub fn ports(&self) -> &[crate::types::InstancePortInfo] {
-        self.ports.as_deref().unwrap_or_default()
+    pub fn ports(&self) -> & [crate::types::InstancePortInfo] {
+        self.ports.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InstanceNetworking {
@@ -33,7 +34,7 @@ impl InstanceNetworking {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceNetworkingBuilder {
     pub(crate) monthly_transfer: ::std::option::Option<crate::types::MonthlyTransfer>,
-    pub(crate) ports: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>>,
+    pub(crate) ports: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortInfo>>,
 }
 impl InstanceNetworkingBuilder {
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
@@ -43,8 +44,7 @@ impl InstanceNetworkingBuilder {
     }
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
     pub fn set_monthly_transfer(mut self, input: ::std::option::Option<crate::types::MonthlyTransfer>) -> Self {
-        self.monthly_transfer = input;
-        self
+        self.monthly_transfer = input; self
     }
     /// <p>The amount of data in GB allocated for monthly data transfers.</p>
     pub fn get_monthly_transfer(&self) -> &::std::option::Option<crate::types::MonthlyTransfer> {
@@ -57,24 +57,26 @@ impl InstanceNetworkingBuilder {
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
     pub fn ports(mut self, input: crate::types::InstancePortInfo) -> Self {
         let mut v = self.ports.unwrap_or_default();
-        v.push(input);
-        self.ports = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ports = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub fn set_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>>) -> Self {
-        self.ports = input;
-        self
+    pub fn set_ports(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InstancePortInfo>>) -> Self {
+        self.ports = input; self
     }
     /// <p>An array of key-value pairs containing information about the ports on the instance.</p>
-    pub fn get_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePortInfo>> {
+    pub fn get_ports(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InstancePortInfo>> {
         &self.ports
     }
     /// Consumes the builder and constructs a [`InstanceNetworking`](crate::types::InstanceNetworking).
     pub fn build(self) -> crate::types::InstanceNetworking {
         crate::types::InstanceNetworking {
-            monthly_transfer: self.monthly_transfer,
-            ports: self.ports,
+            monthly_transfer: self.monthly_transfer
+            ,
+            ports: self.ports
+            ,
         }
     }
 }
+

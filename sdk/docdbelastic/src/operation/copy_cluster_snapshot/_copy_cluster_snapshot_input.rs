@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyClusterSnapshotInput {
+pub struct CopyClusterSnapshotInput  {
     /// <p>The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the new elastic cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
@@ -25,11 +25,11 @@ pub struct CopyClusterSnapshotInput {
     /// <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is <code>false</code>.</p>
     pub copy_tags: ::std::option::Option<bool>,
     /// <p>The tags to be assigned to the elastic cluster snapshot.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CopyClusterSnapshotInput {
+impl  CopyClusterSnapshotInput  {
     /// <p>The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.</p>
-    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The identifier of the new elastic cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
@@ -43,14 +43,14 @@ impl CopyClusterSnapshotInput {
     /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>elastic-cluster-snapshot-5</code></p>
-    pub fn target_snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn target_snapshot_name(&self) -> ::std::option::Option<& str> {
         self.target_snapshot_name.as_deref()
     }
     /// <p>The Amazon Web Services KMS key ID for an encrypted elastic cluster snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name (ARN), Amazon Web Services KMS key identifier, or the Amazon Web Services KMS key alias for the Amazon Web Services KMS encryption key.</p>
     /// <p>If you copy an encrypted elastic cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web ServicesS KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the elastic cluster snapshot is encrypted with the same <code>AWS</code> KMS key as the source elastic cluster snapshot.</p>
     /// <p>To copy an encrypted elastic cluster snapshot to another Amazon Web Services region, set <code>KmsKeyId</code> to the Amazon Web Services KMS key ID that you want to use to encrypt the copy of the elastic cluster snapshot in the destination region. Amazon Web Services KMS encryption keys are specific to the Amazon Web Services region that they are created in, and you can't use encryption keys from one Amazon Web Services region in another Amazon Web Services region.</p>
     /// <p>If you copy an unencrypted elastic cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is <code>false</code>.</p>
@@ -58,7 +58,7 @@ impl CopyClusterSnapshotInput {
         self.copy_tags
     }
     /// <p>The tags to be assigned to the elastic cluster snapshot.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -77,7 +77,7 @@ pub struct CopyClusterSnapshotInputBuilder {
     pub(crate) target_snapshot_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CopyClusterSnapshotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.</p>
@@ -88,8 +88,7 @@ impl CopyClusterSnapshotInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -123,8 +122,7 @@ impl CopyClusterSnapshotInputBuilder {
     /// </ul>
     /// <p>Example: <code>elastic-cluster-snapshot-5</code></p>
     pub fn set_target_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_snapshot_name = input;
-        self
+        self.target_snapshot_name = input; self
     }
     /// <p>The identifier of the new elastic cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
@@ -153,8 +151,7 @@ impl CopyClusterSnapshotInputBuilder {
     /// <p>To copy an encrypted elastic cluster snapshot to another Amazon Web Services region, set <code>KmsKeyId</code> to the Amazon Web Services KMS key ID that you want to use to encrypt the copy of the elastic cluster snapshot in the destination region. Amazon Web Services KMS encryption keys are specific to the Amazon Web Services region that they are created in, and you can't use encryption keys from one Amazon Web Services region in another Amazon Web Services region.</p>
     /// <p>If you copy an unencrypted elastic cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key ID for an encrypted elastic cluster snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name (ARN), Amazon Web Services KMS key identifier, or the Amazon Web Services KMS key alias for the Amazon Web Services KMS encryption key.</p>
     /// <p>If you copy an encrypted elastic cluster snapshot from your Amazon Web Services account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new Amazon Web ServicesS KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the elastic cluster snapshot is encrypted with the same <code>AWS</code> KMS key as the source elastic cluster snapshot.</p>
@@ -170,8 +167,7 @@ impl CopyClusterSnapshotInputBuilder {
     }
     /// <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is <code>false</code>.</p>
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.copy_tags = input;
-        self
+        self.copy_tags = input; self
     }
     /// <p>Set to <code>true</code> to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is <code>false</code>.</p>
     pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
@@ -184,30 +180,34 @@ impl CopyClusterSnapshotInputBuilder {
     /// <p>The tags to be assigned to the elastic cluster snapshot.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be assigned to the elastic cluster snapshot.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be assigned to the elastic cluster snapshot.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput {
-            snapshot_arn: self.snapshot_arn,
-            target_snapshot_name: self.target_snapshot_name,
-            kms_key_id: self.kms_key_id,
-            copy_tags: self.copy_tags,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput {
+                snapshot_arn: self.snapshot_arn
+                ,
+                target_snapshot_name: self.target_snapshot_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                copy_tags: self.copy_tags
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

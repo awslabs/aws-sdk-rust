@@ -3,22 +3,22 @@
 /// <p>Start import response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImportOutput {
+pub struct StartImportOutput  {
     /// <p>Start import response import task.</p>
     pub import_task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }
-impl StartImportOutput {
+impl  StartImportOutput  {
     /// <p>Start import response import task.</p>
-    pub fn import_task(&self) -> ::std::option::Option<&crate::types::ImportTask> {
+    pub fn import_task(&self) -> ::std::option::Option<& crate::types::ImportTask> {
         self.import_task.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartImportOutput {
     /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn builder() -> crate::operation::start_import::builders::StartImportOutputBuilder {
@@ -41,27 +41,28 @@ impl StartImportOutputBuilder {
     }
     /// <p>Start import response import task.</p>
     pub fn set_import_task(mut self, input: ::std::option::Option<crate::types::ImportTask>) -> Self {
-        self.import_task = input;
-        self
+        self.import_task = input; self
     }
     /// <p>Start import response import task.</p>
     pub fn get_import_task(&self) -> &::std::option::Option<crate::types::ImportTask> {
         &self.import_task
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn build(self) -> crate::operation::start_import::StartImportOutput {
         crate::operation::start_import::StartImportOutput {
-            import_task: self.import_task,
+            import_task: self.import_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

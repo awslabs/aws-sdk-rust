@@ -3,24 +3,25 @@
 /// <p>The result of a <code>ListDataSources</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDataSourcesOutput {
+pub struct ListDataSourcesOutput  {
     /// <p>A list of data sources associated with specified domain.</p>
-    pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>>,
+    pub data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceDetails>>,
     _request_id: Option<String>,
 }
-impl ListDataSourcesOutput {
+impl  ListDataSourcesOutput  {
     /// <p>A list of data sources associated with specified domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
-    pub fn data_sources(&self) -> &[crate::types::DataSourceDetails] {
-        self.data_sources.as_deref().unwrap_or_default()
+    pub fn data_sources(&self) -> & [crate::types::DataSourceDetails] {
+        self.data_sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDataSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
     pub fn builder() -> crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder {
@@ -32,7 +33,7 @@ impl ListDataSourcesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDataSourcesOutputBuilder {
-    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>>,
+    pub(crate) data_sources: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceDetails>>,
     _request_id: Option<String>,
 }
 impl ListDataSourcesOutputBuilder {
@@ -43,33 +44,34 @@ impl ListDataSourcesOutputBuilder {
     /// <p>A list of data sources associated with specified domain.</p>
     pub fn data_sources(mut self, input: crate::types::DataSourceDetails) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of data sources associated with specified domain.</p>
-    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>>) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataSourceDetails>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>A list of data sources associated with specified domain.</p>
-    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceDetails>> {
+    pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataSourceDetails>> {
         &self.data_sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput).
     pub fn build(self) -> crate::operation::list_data_sources::ListDataSourcesOutput {
         crate::operation::list_data_sources::ListDataSourcesOutput {
-            data_sources: self.data_sources,
+            data_sources: self.data_sources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>This data type is used as a response element in the <code>CreateLoginProfile</code> and <code>GetLoginProfile</code> operations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoginProfile {
+pub struct LoginProfile  {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub user_name: ::std::string::String,
     /// <p>The date when the password for the user was created.</p>
@@ -12,14 +12,13 @@ pub struct LoginProfile {
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
 }
-impl LoginProfile {
+impl  LoginProfile  {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
-    pub fn user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.user_name.deref()
+    pub fn user_name(&self) -> & str {
+        use std::ops::Deref; self.user_name.deref()
     }
     /// <p>The date when the password for the user was created.</p>
-    pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
+    pub fn create_date(&self) -> & ::aws_smithy_types::DateTime {
         &self.create_date
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
@@ -51,8 +50,7 @@ impl LoginProfileBuilder {
     }
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl LoginProfileBuilder {
     }
     /// <p>The date when the password for the user was created.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The date when the password for the user was created.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -80,8 +77,7 @@ impl LoginProfileBuilder {
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.password_reset_required = input;
-        self
+        self.password_reset_required = input; self
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
@@ -92,20 +88,23 @@ impl LoginProfileBuilder {
     /// - [`user_name`](crate::types::builders::LoginProfileBuilder::user_name)
     /// - [`create_date`](crate::types::builders::LoginProfileBuilder::create_date)
     pub fn build(self) -> ::std::result::Result<crate::types::LoginProfile, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LoginProfile {
-            user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_name",
-                    "user_name was not specified but it is required when building LoginProfile",
-                )
-            })?,
-            create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "create_date",
-                    "create_date was not specified but it is required when building LoginProfile",
-                )
-            })?,
-            password_reset_required: self.password_reset_required.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::LoginProfile {
+                user_name: self.user_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_name", "user_name was not specified but it is required when building LoginProfile")
+                    )?
+                ,
+                create_date: self.create_date
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("create_date", "create_date was not specified but it is required when building LoginProfile")
+                    )?
+                ,
+                password_reset_required: self.password_reset_required
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

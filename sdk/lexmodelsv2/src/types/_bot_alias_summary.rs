@@ -3,7 +3,7 @@
 /// <p>Summary information about bot aliases returned from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotAliases.html">ListBotAliases</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotAliasSummary {
+pub struct BotAliasSummary  {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the bot alias.</p>
@@ -19,33 +19,33 @@ pub struct BotAliasSummary {
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BotAliasSummary {
+impl  BotAliasSummary  {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
-    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<& str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The name of the bot alias.</p>
-    pub fn bot_alias_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias_name(&self) -> ::std::option::Option<& str> {
         self.bot_alias_name.as_deref()
     }
     /// <p>The description of the bot alias.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The version of the bot that the bot alias references.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
-    pub fn bot_alias_status(&self) -> ::std::option::Option<&crate::types::BotAliasStatus> {
+    pub fn bot_alias_status(&self) -> ::std::option::Option<& crate::types::BotAliasStatus> {
         self.bot_alias_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_id = input;
-        self
+        self.bot_alias_id = input; self
     }
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>The name of the bot alias.</p>
     pub fn set_bot_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias_name = input;
-        self
+        self.bot_alias_name = input; self
     }
     /// <p>The name of the bot alias.</p>
     pub fn get_bot_alias_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>The description of the bot alias.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the bot alias.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>The version of the bot that the bot alias references.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The version of the bot that the bot alias references.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
     pub fn set_bot_alias_status(mut self, input: ::std::option::Option<crate::types::BotAliasStatus>) -> Self {
-        self.bot_alias_status = input;
-        self
+        self.bot_alias_status = input; self
     }
     /// <p>The current state of the bot alias. If the status is <code>Available</code>, the alias is ready for use.</p>
     pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
@@ -146,8 +141,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the bot alias was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl BotAliasSummaryBuilder {
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -170,13 +163,21 @@ impl BotAliasSummaryBuilder {
     /// Consumes the builder and constructs a [`BotAliasSummary`](crate::types::BotAliasSummary).
     pub fn build(self) -> crate::types::BotAliasSummary {
         crate::types::BotAliasSummary {
-            bot_alias_id: self.bot_alias_id,
-            bot_alias_name: self.bot_alias_name,
-            description: self.description,
-            bot_version: self.bot_version,
-            bot_alias_status: self.bot_alias_status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            bot_alias_id: self.bot_alias_id
+            ,
+            bot_alias_name: self.bot_alias_name
+            ,
+            description: self.description
+            ,
+            bot_version: self.bot_version
+            ,
+            bot_alias_status: self.bot_alias_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

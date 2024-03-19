@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutFeedbackInput {
+pub struct PutFeedbackInput  {
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the feedback target.</p>
@@ -12,21 +12,21 @@ pub struct PutFeedbackInput {
     /// <p>Information about the feedback provided.</p>
     pub content_feedback: ::std::option::Option<crate::types::ContentFeedbackData>,
 }
-impl PutFeedbackInput {
+impl  PutFeedbackInput  {
     /// <p>The identifier of the Amazon Q assistant.</p>
-    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The identifier of the feedback target.</p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The type of the feedback target.</p>
-    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<& crate::types::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>Information about the feedback provided.</p>
-    pub fn content_feedback(&self) -> ::std::option::Option<&crate::types::ContentFeedbackData> {
+    pub fn content_feedback(&self) -> ::std::option::Option<& crate::types::ContentFeedbackData> {
         self.content_feedback.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the Amazon Q assistant.</p>
     pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The identifier of the feedback target.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>The identifier of the feedback target.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>The type of the feedback target.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The type of the feedback target.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
@@ -100,8 +97,7 @@ impl PutFeedbackInputBuilder {
     }
     /// <p>Information about the feedback provided.</p>
     pub fn set_content_feedback(mut self, input: ::std::option::Option<crate::types::ContentFeedbackData>) -> Self {
-        self.content_feedback = input;
-        self
+        self.content_feedback = input; self
     }
     /// <p>Information about the feedback provided.</p>
     pub fn get_content_feedback(&self) -> &::std::option::Option<crate::types::ContentFeedbackData> {
@@ -109,11 +105,18 @@ impl PutFeedbackInputBuilder {
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_feedback::PutFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_feedback::PutFeedbackInput {
-            assistant_id: self.assistant_id,
-            target_id: self.target_id,
-            target_type: self.target_type,
-            content_feedback: self.content_feedback,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::put_feedback::PutFeedbackInput {
+                assistant_id: self.assistant_id
+                ,
+                target_id: self.target_id
+                ,
+                target_type: self.target_type
+                ,
+                content_feedback: self.content_feedback
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateContinuousDeploymentPolicyInput {
+pub struct UpdateContinuousDeploymentPolicyInput  {
     /// <p>The continuous deployment policy configuration.</p>
     pub continuous_deployment_policy_config: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>,
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
@@ -10,17 +10,17 @@ pub struct UpdateContinuousDeploymentPolicyInput {
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
-impl UpdateContinuousDeploymentPolicyInput {
+impl  UpdateContinuousDeploymentPolicyInput  {
     /// <p>The continuous deployment policy configuration.</p>
-    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<&crate::types::ContinuousDeploymentPolicyConfig> {
+    pub fn continuous_deployment_policy_config(&self) -> ::std::option::Option<& crate::types::ContinuousDeploymentPolicyConfig> {
         self.continuous_deployment_policy_config.as_ref()
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
-    pub fn if_match(&self) -> ::std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The continuous deployment policy configuration.</p>
     pub fn set_continuous_deployment_policy_config(mut self, input: ::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig>) -> Self {
-        self.continuous_deployment_policy_config = input;
-        self
+        self.continuous_deployment_policy_config = input; self
     }
     /// <p>The continuous deployment policy configuration.</p>
     pub fn get_continuous_deployment_policy_config(&self) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
@@ -63,8 +62,7 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the continuous deployment policy that you are updating.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,26 +75,24 @@ impl UpdateContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateContinuousDeploymentPolicyInput`](crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyInput {
-                continuous_deployment_policy_config: self.continuous_deployment_policy_config,
-                id: self.id,
-                if_match: self.if_match,
-            },
+                continuous_deployment_policy_config: self.continuous_deployment_policy_config
+                ,
+                id: self.id
+                ,
+                if_match: self.if_match
+                ,
+            }
         )
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The monitoring configuration for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ZeppelinMonitoringConfigurationDescription {
+pub struct ZeppelinMonitoringConfigurationDescription  {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
-impl ZeppelinMonitoringConfigurationDescription {
+impl  ZeppelinMonitoringConfigurationDescription  {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ZeppelinMonitoringConfigurationDescriptionBuilder {
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
@@ -43,6 +42,10 @@ impl ZeppelinMonitoringConfigurationDescriptionBuilder {
     }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationDescription`](crate::types::ZeppelinMonitoringConfigurationDescription).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationDescription {
-        crate::types::ZeppelinMonitoringConfigurationDescription { log_level: self.log_level }
+        crate::types::ZeppelinMonitoringConfigurationDescription {
+            log_level: self.log_level
+            ,
+        }
     }
 }
+

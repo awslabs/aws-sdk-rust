@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePermissionVersionInput {
+pub struct DeletePermissionVersionInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
     pub permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the version number to delete.</p>
@@ -15,9 +15,9 @@ pub struct DeletePermissionVersionInput {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
-impl DeletePermissionVersionInput {
+impl  DeletePermissionVersionInput  {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
-    pub fn permission_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_arn(&self) -> ::std::option::Option<& str> {
         self.permission_arn.as_deref()
     }
     /// <p>Specifies the version number to delete.</p>
@@ -30,7 +30,7 @@ impl DeletePermissionVersionInput {
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl DeletePermissionVersionInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
     pub fn set_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_arn = input;
-        self
+        self.permission_arn = input; self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the permission with the version you want to delete.</p>
     pub fn get_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl DeletePermissionVersionInputBuilder {
     /// <p>You can't delete a version if it's the only version of the permission. You must either first create another version, or delete the permission completely.</p>
     /// <p>You can't delete a version if it is attached to any resource shares. If the version is the default, you must first use <code>SetDefaultPermissionVersion</code> to set a different version as the default for the customer managed permission, and then use <code>AssociateResourceSharePermission</code> to update your resource shares to use the new default version.</p>
     pub fn set_permission_version(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.permission_version = input;
-        self
+        self.permission_version = input; self
     }
     /// <p>Specifies the version number to delete.</p>
     /// <p>You can't delete the default version for a customer managed permission.</p>
@@ -100,8 +98,7 @@ impl DeletePermissionVersionInputBuilder {
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -110,16 +107,17 @@ impl DeletePermissionVersionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeletePermissionVersionInput`](crate::operation::delete_permission_version::DeletePermissionVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_permission_version::DeletePermissionVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_permission_version::DeletePermissionVersionInput {
-            permission_arn: self.permission_arn,
-            permission_version: self.permission_version,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_permission_version::DeletePermissionVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_permission_version::DeletePermissionVersionInput {
+                permission_arn: self.permission_arn
+                ,
+                permission_version: self.permission_version
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

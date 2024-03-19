@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAssessmentStatusInput {
+pub struct UpdateAssessmentStatusInput  {
     /// <p>The unique identifier for the assessment.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the assessment.</p>
     pub status: ::std::option::Option<crate::types::AssessmentStatus>,
 }
-impl UpdateAssessmentStatusInput {
+impl  UpdateAssessmentStatusInput  {
     /// <p>The unique identifier for the assessment.</p>
-    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p>The current status of the assessment.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateAssessmentStatusInputBuilder {
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn set_assessment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p>The unique identifier for the assessment.</p>
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateAssessmentStatusInputBuilder {
     }
     /// <p>The current status of the assessment.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AssessmentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the assessment.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentStatusInput`](crate::operation::update_assessment_status::UpdateAssessmentStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_assessment_status::UpdateAssessmentStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_assessment_status::UpdateAssessmentStatusInput {
-            assessment_id: self.assessment_id,
-            status: self.status,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_assessment_status::UpdateAssessmentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_assessment_status::UpdateAssessmentStatusInput {
+                assessment_id: self.assessment_id
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

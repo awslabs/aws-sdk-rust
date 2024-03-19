@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeNamespaceInput {
+pub struct DescribeNamespaceInput  {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     pub namespace_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeNamespaceInput {
+impl  DescribeNamespaceInput  {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
 }
@@ -33,19 +33,20 @@ impl DescribeNamespaceInputBuilder {
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     pub fn set_namespace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace_name
     }
     /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_namespace::DescribeNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_namespace::DescribeNamespaceInput {
-            namespace_name: self.namespace_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_namespace::DescribeNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_namespace::DescribeNamespaceInput {
+                namespace_name: self.namespace_name
+                ,
+            }
+        )
     }
 }
+

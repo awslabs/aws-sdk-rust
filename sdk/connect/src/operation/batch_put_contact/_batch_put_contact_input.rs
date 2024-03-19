@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchPutContactInput {
+pub struct BatchPutContactInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>List of individual contact requests.</p>
-    pub contact_data_request_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactDataRequest>>,
+    pub contact_data_request_list: ::std::option::Option<::std::vec::Vec::<crate::types::ContactDataRequest>>,
 }
-impl BatchPutContactInput {
+impl  BatchPutContactInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>List of individual contact requests.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contact_data_request_list.is_none()`.
-    pub fn contact_data_request_list(&self) -> &[crate::types::ContactDataRequest] {
-        self.contact_data_request_list.as_deref().unwrap_or_default()
+    pub fn contact_data_request_list(&self) -> & [crate::types::ContactDataRequest] {
+        self.contact_data_request_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchPutContactInput {
@@ -39,7 +40,7 @@ impl BatchPutContactInput {
 pub struct BatchPutContactInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_data_request_list: ::std::option::Option<::std::vec::Vec<crate::types::ContactDataRequest>>,
+    pub(crate) contact_data_request_list: ::std::option::Option<::std::vec::Vec::<crate::types::ContactDataRequest>>,
 }
 impl BatchPutContactInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -49,8 +50,7 @@ impl BatchPutContactInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +64,7 @@ impl BatchPutContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,27 +77,30 @@ impl BatchPutContactInputBuilder {
     /// <p>List of individual contact requests.</p>
     pub fn contact_data_request_list(mut self, input: crate::types::ContactDataRequest) -> Self {
         let mut v = self.contact_data_request_list.unwrap_or_default();
-        v.push(input);
-        self.contact_data_request_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contact_data_request_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of individual contact requests.</p>
-    pub fn set_contact_data_request_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactDataRequest>>) -> Self {
-        self.contact_data_request_list = input;
-        self
+    pub fn set_contact_data_request_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContactDataRequest>>) -> Self {
+        self.contact_data_request_list = input; self
     }
     /// <p>List of individual contact requests.</p>
-    pub fn get_contact_data_request_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactDataRequest>> {
+    pub fn get_contact_data_request_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContactDataRequest>> {
         &self.contact_data_request_list
     }
     /// Consumes the builder and constructs a [`BatchPutContactInput`](crate::operation::batch_put_contact::BatchPutContactInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_put_contact::BatchPutContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_put_contact::BatchPutContactInput {
-            client_token: self.client_token,
-            instance_id: self.instance_id,
-            contact_data_request_list: self.contact_data_request_list,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_put_contact::BatchPutContactInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_put_contact::BatchPutContactInput {
+                client_token: self.client_token
+                ,
+                instance_id: self.instance_id
+                ,
+                contact_data_request_list: self.contact_data_request_list
+                ,
+            }
+        )
     }
 }
+

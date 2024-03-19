@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateResponseHeadersPolicyInput {
+pub struct CreateResponseHeadersPolicyInput  {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     pub response_headers_policy_config: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>,
 }
-impl CreateResponseHeadersPolicyInput {
+impl  CreateResponseHeadersPolicyInput  {
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
-    pub fn response_headers_policy_config(&self) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyConfig> {
+    pub fn response_headers_policy_config(&self) -> ::std::option::Option<& crate::types::ResponseHeadersPolicyConfig> {
         self.response_headers_policy_config.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl CreateResponseHeadersPolicyInputBuilder {
     }
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     pub fn set_response_headers_policy_config(mut self, input: ::std::option::Option<crate::types::ResponseHeadersPolicyConfig>) -> Self {
-        self.response_headers_policy_config = input;
-        self
+        self.response_headers_policy_config = input; self
     }
     /// <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
     pub fn get_response_headers_policy_config(&self) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
         &self.response_headers_policy_config
     }
     /// Consumes the builder and constructs a [`CreateResponseHeadersPolicyInput`](crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput {
-            response_headers_policy_config: self.response_headers_policy_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput {
+                response_headers_policy_config: self.response_headers_policy_config
+                ,
+            }
+        )
     }
 }
+

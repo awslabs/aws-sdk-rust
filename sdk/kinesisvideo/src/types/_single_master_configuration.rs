@@ -3,11 +3,11 @@
 /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SingleMasterConfiguration {
+pub struct SingleMasterConfiguration  {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub message_ttl_seconds: ::std::option::Option<i32>,
 }
-impl SingleMasterConfiguration {
+impl  SingleMasterConfiguration  {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn message_ttl_seconds(&self) -> ::std::option::Option<i32> {
         self.message_ttl_seconds
@@ -34,8 +34,7 @@ impl SingleMasterConfigurationBuilder {
     }
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn set_message_ttl_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.message_ttl_seconds = input;
-        self
+        self.message_ttl_seconds = input; self
     }
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn get_message_ttl_seconds(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,9 @@ impl SingleMasterConfigurationBuilder {
     /// Consumes the builder and constructs a [`SingleMasterConfiguration`](crate::types::SingleMasterConfiguration).
     pub fn build(self) -> crate::types::SingleMasterConfiguration {
         crate::types::SingleMasterConfiguration {
-            message_ttl_seconds: self.message_ttl_seconds,
+            message_ttl_seconds: self.message_ttl_seconds
+            ,
         }
     }
 }
+

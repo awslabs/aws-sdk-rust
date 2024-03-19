@@ -2,34 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectFacesOutput {
+pub struct DetectFacesOutput  {
     /// <p>Details of each face found in the image.</p>
-    pub face_details: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>>,
+    pub face_details: ::std::option::Option<::std::vec::Vec::<crate::types::FaceDetail>>,
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
-impl DetectFacesOutput {
+impl  DetectFacesOutput  {
     /// <p>Details of each face found in the image.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.face_details.is_none()`.
-    pub fn face_details(&self) -> &[crate::types::FaceDetail] {
-        self.face_details.as_deref().unwrap_or_default()
+    pub fn face_details(&self) -> & [crate::types::FaceDetail] {
+        self.face_details.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
-    pub fn orientation_correction(&self) -> ::std::option::Option<&crate::types::OrientationCorrection> {
+    pub fn orientation_correction(&self) -> ::std::option::Option<& crate::types::OrientationCorrection> {
         self.orientation_correction.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectFacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectFacesOutput {
     /// Creates a new builder-style object to manufacture [`DetectFacesOutput`](crate::operation::detect_faces::DetectFacesOutput).
     pub fn builder() -> crate::operation::detect_faces::builders::DetectFacesOutputBuilder {
@@ -41,7 +42,7 @@ impl DetectFacesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectFacesOutputBuilder {
-    pub(crate) face_details: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>>,
+    pub(crate) face_details: ::std::option::Option<::std::vec::Vec::<crate::types::FaceDetail>>,
     pub(crate) orientation_correction: ::std::option::Option<crate::types::OrientationCorrection>,
     _request_id: Option<String>,
 }
@@ -53,17 +54,16 @@ impl DetectFacesOutputBuilder {
     /// <p>Details of each face found in the image.</p>
     pub fn face_details(mut self, input: crate::types::FaceDetail) -> Self {
         let mut v = self.face_details.unwrap_or_default();
-        v.push(input);
-        self.face_details = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.face_details = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of each face found in the image.</p>
-    pub fn set_face_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>>) -> Self {
-        self.face_details = input;
-        self
+    pub fn set_face_details(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FaceDetail>>) -> Self {
+        self.face_details = input; self
     }
     /// <p>Details of each face found in the image.</p>
-    pub fn get_face_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceDetail>> {
+    pub fn get_face_details(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FaceDetail>> {
         &self.face_details
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
@@ -77,8 +77,7 @@ impl DetectFacesOutputBuilder {
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
     /// <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p>
     pub fn set_orientation_correction(mut self, input: ::std::option::Option<crate::types::OrientationCorrection>) -> Self {
-        self.orientation_correction = input;
-        self
+        self.orientation_correction = input; self
     }
     /// <p>The value of <code>OrientationCorrection</code> is always null.</p>
     /// <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>
@@ -87,20 +86,23 @@ impl DetectFacesOutputBuilder {
         &self.orientation_correction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectFacesOutput`](crate::operation::detect_faces::DetectFacesOutput).
     pub fn build(self) -> crate::operation::detect_faces::DetectFacesOutput {
         crate::operation::detect_faces::DetectFacesOutput {
-            face_details: self.face_details,
-            orientation_correction: self.orientation_correction,
+            face_details: self.face_details
+            ,
+            orientation_correction: self.orientation_correction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

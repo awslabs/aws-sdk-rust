@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrialInput {
+pub struct DeleteTrialInput  {
     /// <p>The name of the trial to delete.</p>
     pub trial_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTrialInput {
+impl  DeleteTrialInput  {
     /// <p>The name of the trial to delete.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl DeleteTrialInputBuilder {
     }
     /// <p>The name of the trial to delete.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
     }
     /// <p>The name of the trial to delete.</p>
     pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl DeleteTrialInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_trial::DeleteTrialInput { trial_name: self.trial_name })
+        ::std::result::Result::Ok(
+            crate::operation::delete_trial::DeleteTrialInput {
+                trial_name: self.trial_name
+                ,
+            }
+        )
     }
 }
+

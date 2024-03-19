@@ -3,22 +3,23 @@
 /// <p><b>[Event-based policies only]</b> Specifies an action for an event-based policy.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Action {
+pub struct Action  {
     /// <p>A descriptive name for the action.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
+    pub cross_region_copy: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyAction>>,
 }
-impl Action {
+impl  Action  {
     /// <p>A descriptive name for the action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_region_copy.is_none()`.
-    pub fn cross_region_copy(&self) -> &[crate::types::CrossRegionCopyAction] {
-        self.cross_region_copy.as_deref().unwrap_or_default()
+    pub fn cross_region_copy(&self) -> & [crate::types::CrossRegionCopyAction] {
+        self.cross_region_copy.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Action {
@@ -33,7 +34,7 @@ impl Action {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) cross_region_copy: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>,
+    pub(crate) cross_region_copy: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyAction>>,
 }
 impl ActionBuilder {
     /// <p>A descriptive name for the action.</p>
@@ -44,8 +45,7 @@ impl ActionBuilder {
     }
     /// <p>A descriptive name for the action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive name for the action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,24 +58,26 @@ impl ActionBuilder {
     /// <p>The rule for copying shared snapshots across Regions.</p>
     pub fn cross_region_copy(mut self, input: crate::types::CrossRegionCopyAction) -> Self {
         let mut v = self.cross_region_copy.unwrap_or_default();
-        v.push(input);
-        self.cross_region_copy = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cross_region_copy = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn set_cross_region_copy(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>>) -> Self {
-        self.cross_region_copy = input;
-        self
+    pub fn set_cross_region_copy(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyAction>>) -> Self {
+        self.cross_region_copy = input; self
     }
     /// <p>The rule for copying shared snapshots across Regions.</p>
-    pub fn get_cross_region_copy(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyAction>> {
+    pub fn get_cross_region_copy(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CrossRegionCopyAction>> {
         &self.cross_region_copy
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
-            name: self.name,
-            cross_region_copy: self.cross_region_copy,
+            name: self.name
+            ,
+            cross_region_copy: self.cross_region_copy
+            ,
         }
     }
 }
+

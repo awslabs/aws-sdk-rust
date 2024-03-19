@@ -2,35 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReservationUtilizationOutput {
+pub struct GetReservationUtilizationOutput  {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub utilizations_by_time: ::std::vec::Vec<crate::types::UtilizationByTime>,
+    pub utilizations_by_time: ::std::vec::Vec::<crate::types::UtilizationByTime>,
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub total: ::std::option::Option<crate::types::ReservationAggregates>,
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetReservationUtilizationOutput {
+impl  GetReservationUtilizationOutput  {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn utilizations_by_time(&self) -> &[crate::types::UtilizationByTime] {
-        use std::ops::Deref;
-        self.utilizations_by_time.deref()
+    pub fn utilizations_by_time(&self) -> & [crate::types::UtilizationByTime] {
+        use std::ops::Deref; self.utilizations_by_time.deref()
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn total(&self) -> ::std::option::Option<&crate::types::ReservationAggregates> {
+    pub fn total(&self) -> ::std::option::Option<& crate::types::ReservationAggregates> {
         self.total.as_ref()
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetReservationUtilizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetReservationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
     pub fn builder() -> crate::operation::get_reservation_utilization::builders::GetReservationUtilizationOutputBuilder {
@@ -42,7 +41,7 @@ impl GetReservationUtilizationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationOutputBuilder {
-    pub(crate) utilizations_by_time: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>,
+    pub(crate) utilizations_by_time: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationByTime>>,
     pub(crate) total: ::std::option::Option<crate::types::ReservationAggregates>,
     pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -55,17 +54,16 @@ impl GetReservationUtilizationOutputBuilder {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
     pub fn utilizations_by_time(mut self, input: crate::types::UtilizationByTime) -> Self {
         let mut v = self.utilizations_by_time.unwrap_or_default();
-        v.push(input);
-        self.utilizations_by_time = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.utilizations_by_time = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn set_utilizations_by_time(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>>) -> Self {
-        self.utilizations_by_time = input;
-        self
+    pub fn set_utilizations_by_time(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UtilizationByTime>>) -> Self {
+        self.utilizations_by_time = input; self
     }
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
-    pub fn get_utilizations_by_time(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationByTime>> {
+    pub fn get_utilizations_by_time(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UtilizationByTime>> {
         &self.utilizations_by_time
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
@@ -75,8 +73,7 @@ impl GetReservationUtilizationOutputBuilder {
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::ReservationAggregates>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total amount of time that you used your Reserved Instances (RIs).</p>
     pub fn get_total(&self) -> &::std::option::Option<crate::types::ReservationAggregates> {
@@ -89,41 +86,39 @@ impl GetReservationUtilizationOutputBuilder {
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetReservationUtilizationOutput`](crate::operation::get_reservation_utilization::GetReservationUtilizationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`utilizations_by_time`](crate::operation::get_reservation_utilization::builders::GetReservationUtilizationOutputBuilder::utilizations_by_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reservation_utilization::GetReservationUtilizationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reservation_utilization::GetReservationUtilizationOutput {
-            utilizations_by_time: self.utilizations_by_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "utilizations_by_time",
-                    "utilizations_by_time was not specified but it is required when building GetReservationUtilizationOutput",
-                )
-            })?,
-            total: self.total,
-            next_page_token: self.next_page_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reservation_utilization::GetReservationUtilizationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reservation_utilization::GetReservationUtilizationOutput {
+                utilizations_by_time: self.utilizations_by_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("utilizations_by_time", "utilizations_by_time was not specified but it is required when building GetReservationUtilizationOutput")
+                    )?
+                ,
+                total: self.total
+                ,
+                next_page_token: self.next_page_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

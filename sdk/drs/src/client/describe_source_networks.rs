@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSourceNetworks`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`filters(DescribeSourceNetworksRequestFilters)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::filters) / [`set_filters(Option<DescribeSourceNetworksRequestFilters>)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::set_filters):<br>required: **false**<br><p>A set of filters by which to return Source Networks.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of Source Networks to retrieve.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token of the next Source Networks to retrieve.</p><br>
-    /// - On success, responds with [`DescribeSourceNetworksOutput`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput) with field(s):
+                            /// - On success, responds with [`DescribeSourceNetworksOutput`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput) with field(s):
     ///   - [`items(Option<Vec::<SourceNetwork>>)`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput::items): <p>An array of Source Networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_source_networks::DescribeSourceNetworksOutput::next_token): <p>The token of the next Source Networks to retrieve.</p>
-    /// - On failure, responds with [`SdkError<DescribeSourceNetworksError>`](crate::operation::describe_source_networks::DescribeSourceNetworksError)
+                            /// - On failure, responds with [`SdkError<DescribeSourceNetworksError>`](crate::operation::describe_source_networks::DescribeSourceNetworksError)
     pub fn describe_source_networks(&self) -> crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder {
-        crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_source_networks::builders::DescribeSourceNetworksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

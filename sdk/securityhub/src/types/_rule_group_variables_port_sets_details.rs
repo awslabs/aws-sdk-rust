@@ -3,16 +3,17 @@
 /// <p>A list of port ranges.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RuleGroupVariablesPortSetsDetails {
+pub struct RuleGroupVariablesPortSetsDetails  {
     /// <p>The list of port ranges.</p>
-    pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub definition: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RuleGroupVariablesPortSetsDetails {
+impl  RuleGroupVariablesPortSetsDetails  {
     /// <p>The list of port ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.definition.is_none()`.
-    pub fn definition(&self) -> &[::std::string::String] {
-        self.definition.as_deref().unwrap_or_default()
+    pub fn definition(&self) -> & [::std::string::String] {
+        self.definition.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RuleGroupVariablesPortSetsDetails {
@@ -26,7 +27,7 @@ impl RuleGroupVariablesPortSetsDetails {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RuleGroupVariablesPortSetsDetailsBuilder {
-    pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RuleGroupVariablesPortSetsDetailsBuilder {
     /// Appends an item to `definition`.
@@ -36,21 +37,24 @@ impl RuleGroupVariablesPortSetsDetailsBuilder {
     /// <p>The list of port ranges.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
-        v.push(input.into());
-        self.definition = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.definition = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of port ranges.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.definition = input; self
     }
     /// <p>The list of port ranges.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.definition
     }
     /// Consumes the builder and constructs a [`RuleGroupVariablesPortSetsDetails`](crate::types::RuleGroupVariablesPortSetsDetails).
     pub fn build(self) -> crate::types::RuleGroupVariablesPortSetsDetails {
-        crate::types::RuleGroupVariablesPortSetsDetails { definition: self.definition }
+        crate::types::RuleGroupVariablesPortSetsDetails {
+            definition: self.definition
+            ,
+        }
     }
 }
+

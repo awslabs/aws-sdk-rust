@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ListActionTypes</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListActionTypesInput {
+pub struct ListActionTypesInput  {
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     pub action_owner_filter: ::std::option::Option<crate::types::ActionOwner>,
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
@@ -11,17 +11,17 @@ pub struct ListActionTypesInput {
     /// <p>The Region to filter on for the list of action types.</p>
     pub region_filter: ::std::option::Option<::std::string::String>,
 }
-impl ListActionTypesInput {
+impl  ListActionTypesInput  {
     /// <p>Filters the list of action types to those created by a specified entity.</p>
-    pub fn action_owner_filter(&self) -> ::std::option::Option<&crate::types::ActionOwner> {
+    pub fn action_owner_filter(&self) -> ::std::option::Option<& crate::types::ActionOwner> {
         self.action_owner_filter.as_ref()
     }
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Region to filter on for the list of action types.</p>
-    pub fn region_filter(&self) -> ::std::option::Option<&str> {
+    pub fn region_filter(&self) -> ::std::option::Option<& str> {
         self.region_filter.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ListActionTypesInputBuilder {
     }
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     pub fn set_action_owner_filter(mut self, input: ::std::option::Option<crate::types::ActionOwner>) -> Self {
-        self.action_owner_filter = input;
-        self
+        self.action_owner_filter = input; self
     }
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     pub fn get_action_owner_filter(&self) -> &::std::option::Option<crate::types::ActionOwner> {
@@ -62,8 +61,7 @@ impl ListActionTypesInputBuilder {
     }
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,21 +74,24 @@ impl ListActionTypesInputBuilder {
     }
     /// <p>The Region to filter on for the list of action types.</p>
     pub fn set_region_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_filter = input;
-        self
+        self.region_filter = input; self
     }
     /// <p>The Region to filter on for the list of action types.</p>
     pub fn get_region_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.region_filter
     }
     /// Consumes the builder and constructs a [`ListActionTypesInput`](crate::operation::list_action_types::ListActionTypesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_action_types::ListActionTypesInput {
-            action_owner_filter: self.action_owner_filter,
-            next_token: self.next_token,
-            region_filter: self.region_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_action_types::ListActionTypesInput {
+                action_owner_filter: self.action_owner_filter
+                ,
+                next_token: self.next_token
+                ,
+                region_filter: self.region_filter
+                ,
+            }
+        )
     }
 }
+

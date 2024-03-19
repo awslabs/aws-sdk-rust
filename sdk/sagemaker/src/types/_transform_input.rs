@@ -3,7 +3,7 @@
 /// <p>Describes the input source of a transform job and the way the transform job consumes it.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransformInput {
+pub struct TransformInput  {
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
     pub data_source: ::std::option::Option<crate::types::TransformDataSource>,
     /// <p>The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.</p>
@@ -23,17 +23,17 @@ pub struct TransformInput {
     /// </note>
     pub split_type: ::std::option::Option<crate::types::SplitType>,
 }
-impl TransformInput {
+impl  TransformInput  {
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::TransformDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::TransformDataSource> {
         self.data_source.as_ref()
     }
     /// <p>The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.</p>
-    pub fn content_type(&self) -> ::std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>If your transform data is compressed, specify the compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is <code>None</code>.</p>
-    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<& crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>The method to use to split the transform job's data files into smaller batches. Splitting is necessary when the total size of each object is too large to fit in a single request. You can also use data splitting to improve performance by processing multiple concurrent mini-batches. The default value for <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats. Currently, the supported record formats are:</p>
@@ -47,7 +47,7 @@ impl TransformInput {
     /// <p>Some data formats represent a record as a binary payload wrapped with extra padding bytes. When splitting is applied to a binary data format, padding is removed if the value of <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is not removed if the value of <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p>
     /// <p>For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the TensorFlow documentation.</p>
     /// </note>
-    pub fn split_type(&self) -> ::std::option::Option<&crate::types::SplitType> {
+    pub fn split_type(&self) -> ::std::option::Option<& crate::types::SplitType> {
         self.split_type.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl TransformInputBuilder {
     }
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::TransformDataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>Describes the location of the channel data, which is, the S3 location of the input data that the model can consume.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::TransformDataSource> {
@@ -90,8 +89,7 @@ impl TransformInputBuilder {
     }
     /// <p>The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl TransformInputBuilder {
     }
     /// <p>If your transform data is compressed, specify the compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is <code>None</code>.</p>
     pub fn set_compression_type(mut self, input: ::std::option::Option<crate::types::CompressionType>) -> Self {
-        self.compression_type = input;
-        self
+        self.compression_type = input; self
     }
     /// <p>If your transform data is compressed, specify the compression type. Amazon SageMaker automatically decompresses the data for the transform job accordingly. The default value is <code>None</code>.</p>
     pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionType> {
@@ -138,8 +135,7 @@ impl TransformInputBuilder {
     /// <p>For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the TensorFlow documentation.</p>
     /// </note>
     pub fn set_split_type(mut self, input: ::std::option::Option<crate::types::SplitType>) -> Self {
-        self.split_type = input;
-        self
+        self.split_type = input; self
     }
     /// <p>The method to use to split the transform job's data files into smaller batches. Splitting is necessary when the total size of each object is too large to fit in a single request. You can also use data splitting to improve performance by processing multiple concurrent mini-batches. The default value for <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats. Currently, the supported record formats are:</p>
     /// <ul>
@@ -158,10 +154,15 @@ impl TransformInputBuilder {
     /// Consumes the builder and constructs a [`TransformInput`](crate::types::TransformInput).
     pub fn build(self) -> crate::types::TransformInput {
         crate::types::TransformInput {
-            data_source: self.data_source,
-            content_type: self.content_type,
-            compression_type: self.compression_type,
-            split_type: self.split_type,
+            data_source: self.data_source
+            ,
+            content_type: self.content_type
+            ,
+            compression_type: self.compression_type
+            ,
+            split_type: self.split_type
+            ,
         }
     }
 }
+

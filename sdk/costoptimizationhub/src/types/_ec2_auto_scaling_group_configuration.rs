@@ -3,13 +3,13 @@
 /// <p>The EC2 auto scaling group configuration used for recommendations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Ec2AutoScalingGroupConfiguration {
+pub struct Ec2AutoScalingGroupConfiguration  {
     /// <p>Details about the instance.</p>
     pub instance: ::std::option::Option<crate::types::InstanceConfiguration>,
 }
-impl Ec2AutoScalingGroupConfiguration {
+impl  Ec2AutoScalingGroupConfiguration  {
     /// <p>Details about the instance.</p>
-    pub fn instance(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
+    pub fn instance(&self) -> ::std::option::Option<& crate::types::InstanceConfiguration> {
         self.instance.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl Ec2AutoScalingGroupConfigurationBuilder {
     }
     /// <p>Details about the instance.</p>
     pub fn set_instance(mut self, input: ::std::option::Option<crate::types::InstanceConfiguration>) -> Self {
-        self.instance = input;
-        self
+        self.instance = input; self
     }
     /// <p>Details about the instance.</p>
     pub fn get_instance(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
@@ -43,6 +42,10 @@ impl Ec2AutoScalingGroupConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`Ec2AutoScalingGroupConfiguration`](crate::types::Ec2AutoScalingGroupConfiguration).
     pub fn build(self) -> crate::types::Ec2AutoScalingGroupConfiguration {
-        crate::types::Ec2AutoScalingGroupConfiguration { instance: self.instance }
+        crate::types::Ec2AutoScalingGroupConfiguration {
+            instance: self.instance
+            ,
+        }
     }
 }
+

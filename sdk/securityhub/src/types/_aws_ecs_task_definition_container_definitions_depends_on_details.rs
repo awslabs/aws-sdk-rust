@@ -3,7 +3,7 @@
 /// <p>A dependency that is defined for container startup and shutdown.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails  {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <p>The name of the dependent container.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
 }
-impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
+impl  AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails  {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
     /// <li>
@@ -31,11 +31,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <li>
     /// <p><code>START</code></p></li>
     /// </ul>
-    pub fn condition(&self) -> ::std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<& str> {
         self.condition.as_deref()
     }
     /// <p>The name of the dependent container.</p>
-    pub fn container_name(&self) -> ::std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
@@ -81,8 +81,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// <p><code>START</code></p></li>
     /// </ul>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
@@ -105,8 +104,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     }
     /// <p>The name of the dependent container.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The name of the dependent container.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +113,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-            condition: self.condition,
-            container_name: self.container_name,
+            condition: self.condition
+            ,
+            container_name: self.container_name
+            ,
         }
     }
 }
+

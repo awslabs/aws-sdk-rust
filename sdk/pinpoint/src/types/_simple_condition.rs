@@ -3,7 +3,7 @@
 /// <p>Specifies a condition to evaluate for an activity in a journey.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SimpleCondition {
+pub struct SimpleCondition  {
     /// <p>The dimension settings for the event that's associated with the activity.</p>
     pub event_condition: ::std::option::Option<crate::types::EventCondition>,
     /// <p>The segment that's associated with the activity.</p>
@@ -11,17 +11,17 @@ pub struct SimpleCondition {
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub segment_dimensions: ::std::option::Option<crate::types::SegmentDimensions>,
 }
-impl SimpleCondition {
+impl  SimpleCondition  {
     /// <p>The dimension settings for the event that's associated with the activity.</p>
-    pub fn event_condition(&self) -> ::std::option::Option<&crate::types::EventCondition> {
+    pub fn event_condition(&self) -> ::std::option::Option<& crate::types::EventCondition> {
         self.event_condition.as_ref()
     }
     /// <p>The segment that's associated with the activity.</p>
-    pub fn segment_condition(&self) -> ::std::option::Option<&crate::types::SegmentCondition> {
+    pub fn segment_condition(&self) -> ::std::option::Option<& crate::types::SegmentCondition> {
         self.segment_condition.as_ref()
     }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
-    pub fn segment_dimensions(&self) -> ::std::option::Option<&crate::types::SegmentDimensions> {
+    pub fn segment_dimensions(&self) -> ::std::option::Option<& crate::types::SegmentDimensions> {
         self.segment_dimensions.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl SimpleConditionBuilder {
     }
     /// <p>The dimension settings for the event that's associated with the activity.</p>
     pub fn set_event_condition(mut self, input: ::std::option::Option<crate::types::EventCondition>) -> Self {
-        self.event_condition = input;
-        self
+        self.event_condition = input; self
     }
     /// <p>The dimension settings for the event that's associated with the activity.</p>
     pub fn get_event_condition(&self) -> &::std::option::Option<crate::types::EventCondition> {
@@ -62,8 +61,7 @@ impl SimpleConditionBuilder {
     }
     /// <p>The segment that's associated with the activity.</p>
     pub fn set_segment_condition(mut self, input: ::std::option::Option<crate::types::SegmentCondition>) -> Self {
-        self.segment_condition = input;
-        self
+        self.segment_condition = input; self
     }
     /// <p>The segment that's associated with the activity.</p>
     pub fn get_segment_condition(&self) -> &::std::option::Option<crate::types::SegmentCondition> {
@@ -76,8 +74,7 @@ impl SimpleConditionBuilder {
     }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub fn set_segment_dimensions(mut self, input: ::std::option::Option<crate::types::SegmentDimensions>) -> Self {
-        self.segment_dimensions = input;
-        self
+        self.segment_dimensions = input; self
     }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub fn get_segment_dimensions(&self) -> &::std::option::Option<crate::types::SegmentDimensions> {
@@ -86,9 +83,13 @@ impl SimpleConditionBuilder {
     /// Consumes the builder and constructs a [`SimpleCondition`](crate::types::SimpleCondition).
     pub fn build(self) -> crate::types::SimpleCondition {
         crate::types::SimpleCondition {
-            event_condition: self.event_condition,
-            segment_condition: self.segment_condition,
-            segment_dimensions: self.segment_dimensions,
+            event_condition: self.event_condition
+            ,
+            segment_condition: self.segment_condition
+            ,
+            segment_dimensions: self.segment_dimensions
+            ,
         }
     }
 }
+

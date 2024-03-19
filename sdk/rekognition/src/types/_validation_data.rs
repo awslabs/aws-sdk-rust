@@ -6,16 +6,17 @@
 /// <p>The assets array contains a single <code>Asset</code> object. The <code>GroundTruthManifest</code> field of the Asset object contains the S3 bucket location of the validation data.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationData {
+pub struct ValidationData  {
     /// <p>The assets that comprise the validation data.</p>
-    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
 }
-impl ValidationData {
+impl  ValidationData  {
     /// <p>The assets that comprise the validation data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
-    pub fn assets(&self) -> &[crate::types::Asset] {
-        self.assets.as_deref().unwrap_or_default()
+    pub fn assets(&self) -> & [crate::types::Asset] {
+        self.assets.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ValidationData {
@@ -29,7 +30,7 @@ impl ValidationData {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ValidationDataBuilder {
-    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>,
 }
 impl ValidationDataBuilder {
     /// Appends an item to `assets`.
@@ -39,21 +40,24 @@ impl ValidationDataBuilder {
     /// <p>The assets that comprise the validation data.</p>
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
-        v.push(input);
-        self.assets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.assets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The assets that comprise the validation data.</p>
-    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Asset>>) -> Self {
+        self.assets = input; self
     }
     /// <p>The assets that comprise the validation data.</p>
-    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Asset>> {
         &self.assets
     }
     /// Consumes the builder and constructs a [`ValidationData`](crate::types::ValidationData).
     pub fn build(self) -> crate::types::ValidationData {
-        crate::types::ValidationData { assets: self.assets }
+        crate::types::ValidationData {
+            assets: self.assets
+            ,
+        }
     }
 }
+

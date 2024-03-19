@@ -4,7 +4,7 @@
 /// <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
     pub s3_uri: ::std::string::String,
@@ -16,24 +16,22 @@ pub struct InputDataConfig {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub data_access_role_arn: ::std::string::String,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
-    pub fn tuning_data_s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn tuning_data_s3_uri(&self) -> ::std::option::Option<& str> {
         self.tuning_data_s3_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_access_role_arn.deref()
+    pub fn data_access_role_arn(&self) -> & str {
+        use std::ops::Deref; self.data_access_role_arn.deref()
     }
 }
 impl InputDataConfig {
@@ -62,8 +60,7 @@ impl InputDataConfigBuilder {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to train your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code></p>
@@ -79,8 +76,7 @@ impl InputDataConfigBuilder {
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
     pub fn set_tuning_data_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tuning_data_s3_uri = input;
-        self
+        self.tuning_data_s3_uri = input; self
     }
     /// <p>The Amazon S3 location (URI) of the text files you want to use to tune your custom language model.</p>
     /// <p>Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code></p>
@@ -99,8 +95,7 @@ impl InputDataConfigBuilder {
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_access_role_arn = input;
-        self
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
@@ -113,20 +108,22 @@ impl InputDataConfigBuilder {
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     /// - [`data_access_role_arn`](crate::types::builders::InputDataConfigBuilder::data_access_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-            tuning_data_s3_uri: self.tuning_data_s3_uri,
-            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_access_role_arn",
-                    "data_access_role_arn was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+                tuning_data_s3_uri: self.tuning_data_s3_uri
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_access_role_arn", "data_access_role_arn was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

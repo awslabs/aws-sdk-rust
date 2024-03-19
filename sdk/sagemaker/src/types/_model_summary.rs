@@ -3,7 +3,7 @@
 /// <p>Provides summary information about a model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModelSummary {
+pub struct ModelSummary  {
     /// <p>The name of the model that you want a summary for.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
@@ -11,17 +11,17 @@ pub struct ModelSummary {
     /// <p>A timestamp that indicates when the model was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ModelSummary {
+impl  ModelSummary  {
     /// <p>The name of the model that you want a summary for.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>A timestamp that indicates when the model was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>The name of the model that you want a summary for.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model that you want a summary for.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>A timestamp that indicates when the model was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A timestamp that indicates when the model was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,9 +86,13 @@ impl ModelSummaryBuilder {
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     pub fn build(self) -> crate::types::ModelSummary {
         crate::types::ModelSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            creation_time: self.creation_time,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

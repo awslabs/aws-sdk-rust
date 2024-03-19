@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGatewayInstanceOutput {
+pub struct DescribeGatewayInstanceOutput  {
     /// The settings for an instance in a gateway.
     pub gateway_instance: ::std::option::Option<crate::types::GatewayInstance>,
     _request_id: Option<String>,
 }
-impl DescribeGatewayInstanceOutput {
+impl  DescribeGatewayInstanceOutput  {
     /// The settings for an instance in a gateway.
-    pub fn gateway_instance(&self) -> ::std::option::Option<&crate::types::GatewayInstance> {
+    pub fn gateway_instance(&self) -> ::std::option::Option<& crate::types::GatewayInstance> {
         self.gateway_instance.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeGatewayInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeGatewayInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput).
     pub fn builder() -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder {
@@ -40,27 +40,28 @@ impl DescribeGatewayInstanceOutputBuilder {
     }
     /// The settings for an instance in a gateway.
     pub fn set_gateway_instance(mut self, input: ::std::option::Option<crate::types::GatewayInstance>) -> Self {
-        self.gateway_instance = input;
-        self
+        self.gateway_instance = input; self
     }
     /// The settings for an instance in a gateway.
     pub fn get_gateway_instance(&self) -> &::std::option::Option<crate::types::GatewayInstance> {
         &self.gateway_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeGatewayInstanceOutput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput).
     pub fn build(self) -> crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput {
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceOutput {
-            gateway_instance: self.gateway_instance,
+            gateway_instance: self.gateway_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
+pub struct DescribeDraftAppVersionResourcesImportStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub app_arn: ::std::string::String,
     /// <p>The version of the application.</p>
@@ -15,40 +15,36 @@ pub struct DescribeDraftAppVersionResourcesImportStatusOutput {
     pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDraftAppVersionResourcesImportStatusOutput {
+impl  DescribeDraftAppVersionResourcesImportStatusOutput  {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> & str {
+        use std::ops::Deref; self.app_arn.deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> & str {
+        use std::ops::Deref; self.app_version.deref()
     }
     /// <p>Status of the action.</p>
-    pub fn status(&self) -> &crate::types::ResourceImportStatusType {
+    pub fn status(&self) -> & crate::types::ResourceImportStatusType {
         &self.status
     }
     /// <p>The time when the status last changed.</p>
-    pub fn status_change_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn status_change_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.status_change_time
     }
     /// <p>The returned error message for the request.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDraftAppVersionResourcesImportStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDraftAppVersionResourcesImportStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::default()
     }
 }
@@ -73,8 +69,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
     pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +83,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>The version of the application.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     }
     /// <p>Status of the action.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResourceImportStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the action.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceImportStatusType> {
@@ -118,8 +111,7 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     }
     /// <p>The time when the status last changed.</p>
     pub fn set_status_change_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.status_change_time = input;
-        self
+        self.status_change_time = input; self
     }
     /// <p>The time when the status last changed.</p>
     pub fn get_status_change_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -132,63 +124,55 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
     }
     /// <p>The returned error message for the request.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The returned error message for the request.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusOutput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::app_arn)
     /// - [`app_version`](crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::app_version)
     /// - [`status`](crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::status)
     /// - [`status_change_time`](crate::operation::describe_draft_app_version_resources_import_status::builders::DescribeDraftAppVersionResourcesImportStatusOutputBuilder::status_change_time)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput {
-                app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "app_arn",
-                        "app_arn was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
-                    )
-                })?,
-                app_version: self.app_version.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "app_version",
-                        "app_version was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
-                    )
-                })?,
-                status: self.status.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "status",
-                        "status was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
-                    )
-                })?,
-                status_change_time: self.status_change_time.ok_or_else(|| {
-                    ::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "status_change_time",
-                        "status_change_time was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
-                    )
-                })?,
-                error_message: self.error_message,
+                app_arn: self.app_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_arn", "app_arn was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput")
+                    )?
+                ,
+                app_version: self.app_version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("app_version", "app_version was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput")
+                    )?
+                ,
+                status_change_time: self.status_change_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_change_time", "status_change_time was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput")
+                    )?
+                ,
+                error_message: self.error_message
+                ,
                 _request_id: self._request_id,
-            },
+            }
         )
     }
 }
+

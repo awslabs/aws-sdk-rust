@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListHubContentsInput {
+pub struct ListHubContentsInput  {
     /// <p>The name of the hub to list the contents of.</p>
     pub hub_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of hub content to list.</p>
@@ -24,37 +24,37 @@ pub struct ListHubContentsInput {
     /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListHubContentsInput {
+impl  ListHubContentsInput  {
     /// <p>The name of the hub to list the contents of.</p>
-    pub fn hub_name(&self) -> ::std::option::Option<&str> {
+    pub fn hub_name(&self) -> ::std::option::Option<& str> {
         self.hub_name.as_deref()
     }
     /// <p>The type of hub content to list.</p>
-    pub fn hub_content_type(&self) -> ::std::option::Option<&crate::types::HubContentType> {
+    pub fn hub_content_type(&self) -> ::std::option::Option<& crate::types::HubContentType> {
         self.hub_content_type.as_ref()
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
-    pub fn name_contains(&self) -> ::std::option::Option<&str> {
+    pub fn name_contains(&self) -> ::std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>The upper bound of the hub content schema verion.</p>
-    pub fn max_schema_version(&self) -> ::std::option::Option<&str> {
+    pub fn max_schema_version(&self) -> ::std::option::Option<& str> {
         self.max_schema_version.as_deref()
     }
     /// <p>Only list hub content that was created before the time specified.</p>
-    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Only list hub content that was created after the time specified.</p>
-    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Sort hub content versions by either name or creation time.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::HubContentSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::HubContentSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Sort hubs by ascending or descending order.</p>
-    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The maximum amount of hub content to list.</p>
@@ -62,7 +62,7 @@ impl ListHubContentsInput {
         self.max_results
     }
     /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>The name of the hub to list the contents of.</p>
     pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hub_name = input;
-        self
+        self.hub_name = input; self
     }
     /// <p>The name of the hub to list the contents of.</p>
     pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>The type of hub content to list.</p>
     pub fn set_hub_content_type(mut self, input: ::std::option::Option<crate::types::HubContentType>) -> Self {
-        self.hub_content_type = input;
-        self
+        self.hub_content_type = input; self
     }
     /// <p>The type of hub content to list.</p>
     pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
@@ -126,8 +124,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Only list hub content if the name contains the specified string.</p>
     pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +137,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>The upper bound of the hub content schema verion.</p>
     pub fn set_max_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_schema_version = input;
-        self
+        self.max_schema_version = input; self
     }
     /// <p>The upper bound of the hub content schema verion.</p>
     pub fn get_max_schema_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +150,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>Only list hub content that was created before the time specified.</p>
     pub fn set_creation_time_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input;
-        self
+        self.creation_time_before = input; self
     }
     /// <p>Only list hub content that was created before the time specified.</p>
     pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -168,8 +163,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>Only list hub content that was created after the time specified.</p>
     pub fn set_creation_time_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input;
-        self
+        self.creation_time_after = input; self
     }
     /// <p>Only list hub content that was created after the time specified.</p>
     pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -182,8 +176,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>Sort hub content versions by either name or creation time.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HubContentSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>Sort hub content versions by either name or creation time.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::HubContentSortBy> {
@@ -196,8 +189,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>Sort hubs by ascending or descending order.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>Sort hubs by ascending or descending order.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
@@ -210,8 +202,7 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>The maximum amount of hub content to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum amount of hub content to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -224,28 +215,38 @@ impl ListHubContentsInputBuilder {
     }
     /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If the response to a previous <code>ListHubContents</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hub content, use the token in the next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHubContentsInput`](crate::operation::list_hub_contents::ListHubContentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_hub_contents::ListHubContentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_hub_contents::ListHubContentsInput {
-            hub_name: self.hub_name,
-            hub_content_type: self.hub_content_type,
-            name_contains: self.name_contains,
-            max_schema_version: self.max_schema_version,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hub_contents::ListHubContentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_hub_contents::ListHubContentsInput {
+                hub_name: self.hub_name
+                ,
+                hub_content_type: self.hub_content_type
+                ,
+                name_contains: self.name_contains
+                ,
+                max_schema_version: self.max_schema_version
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

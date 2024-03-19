@@ -3,7 +3,7 @@
 /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VisibilityConfig {
+pub struct VisibilityConfig  {
     /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
     pub sampled_requests_enabled: bool,
     /// <p>Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
@@ -12,7 +12,7 @@ pub struct VisibilityConfig {
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.</p>
     pub metric_name: ::std::string::String,
 }
-impl VisibilityConfig {
+impl  VisibilityConfig  {
     /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
     pub fn sampled_requests_enabled(&self) -> bool {
         self.sampled_requests_enabled
@@ -23,9 +23,8 @@ impl VisibilityConfig {
         self.cloud_watch_metrics_enabled
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.</p>
-    pub fn metric_name(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_name.deref()
+    pub fn metric_name(&self) -> & str {
+        use std::ops::Deref; self.metric_name.deref()
     }
 }
 impl VisibilityConfig {
@@ -52,8 +51,7 @@ impl VisibilityConfigBuilder {
     }
     /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
     pub fn set_sampled_requests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.sampled_requests_enabled = input;
-        self
+        self.sampled_requests_enabled = input; self
     }
     /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
     pub fn get_sampled_requests_enabled(&self) -> &::std::option::Option<bool> {
@@ -69,8 +67,7 @@ impl VisibilityConfigBuilder {
     /// <p>Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the default action to web requests that pass the inspection of all rules in the web ACL without being either allowed or blocked. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default action</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cloud_watch_metrics_enabled = input;
-        self
+        self.cloud_watch_metrics_enabled = input; self
     }
     /// <p>Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the default action to web requests that pass the inspection of all rules in the web ACL without being either allowed or blocked. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default action</a> in the <i>WAF Developer Guide</i>.</p>
@@ -85,8 +82,7 @@ impl VisibilityConfigBuilder {
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,15 +92,21 @@ impl VisibilityConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metric_name`](crate::types::builders::VisibilityConfigBuilder::metric_name)
     pub fn build(self) -> ::std::result::Result<crate::types::VisibilityConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VisibilityConfig {
-            sampled_requests_enabled: self.sampled_requests_enabled.unwrap_or_default(),
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
-            metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metric_name",
-                    "metric_name was not specified but it is required when building VisibilityConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VisibilityConfig {
+                sampled_requests_enabled: self.sampled_requests_enabled
+                    .unwrap_or_default()
+                ,
+                cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
+                    .unwrap_or_default()
+                ,
+                metric_name: self.metric_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "metric_name was not specified but it is required when building VisibilityConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

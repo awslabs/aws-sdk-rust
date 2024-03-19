@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEdgeDeploymentPlans`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_next_token):<br>required: **false**<br><p>The response from the last list when returning a list large enough to need tokening.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to select (50 by default).</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>Selects edge deployment plans created after this time.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`device_fleet_name_contains(impl Into<String>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::device_fleet_name_contains) / [`set_device_fleet_name_contains(Option<String>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_device_fleet_name_contains):<br>required: **false**<br><p>Selects edge deployment plans with a device fleet name containing this name.</p><br>
     ///   - [`sort_by(ListEdgeDeploymentPlansSortBy)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::sort_by) / [`set_sort_by(Option<ListEdgeDeploymentPlansSortBy>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_sort_by):<br>required: **false**<br><p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p><br>
     ///   - [`sort_order(SortOrder)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::set_sort_order):<br>required: **false**<br><p>The direction of the sorting (ascending or descending).</p><br>
-    /// - On success, responds with [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput) with field(s):
+                            /// - On success, responds with [`ListEdgeDeploymentPlansOutput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput) with field(s):
     ///   - [`edge_deployment_plan_summaries(Option<Vec::<EdgeDeploymentPlanSummary>>)`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput::edge_deployment_plan_summaries): <p>List of summaries of edge deployment plans.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansOutput::next_token): <p>The token to use when calling the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListEdgeDeploymentPlansError>`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError)
+                            /// - On failure, responds with [`SdkError<ListEdgeDeploymentPlansError>`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansError)
     pub fn list_edge_deployment_plans(&self) -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder {
-        crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplicationDependencies`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_id(impl Into<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::set_application_id):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the application.</p><br>
     ///   - [`max_items(i32)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::max_items) / [`set_max_items(Option<i32>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::set_max_items):<br>required: **false**<br><p>The total number of items to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to specify where to start paginating.</p><br>
     ///   - [`semantic_version(impl Into<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::semantic_version) / [`set_semantic_version(Option<String>)`](crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::set_semantic_version):<br>required: **false**<br><p>The semantic version of the application to get.</p><br>
-    /// - On success, responds with [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput) with field(s):
     ///   - [`dependencies(Option<Vec::<ApplicationDependencySummary>>)`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput::dependencies): <p>An array of application summaries nested in the application.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput::next_token): <p>The token to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationDependenciesError>`](crate::operation::list_application_dependencies::ListApplicationDependenciesError)
-    pub fn list_application_dependencies(
-        &self,
-    ) -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder {
-        crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListApplicationDependenciesError>`](crate::operation::list_application_dependencies::ListApplicationDependenciesError)
+    pub fn list_application_dependencies(&self) -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder {
+                                crate::operation::list_application_dependencies::builders::ListApplicationDependenciesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

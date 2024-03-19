@@ -3,13 +3,13 @@
 /// <p>A conditional statement for filtering a list of past predictions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterCondition {
+pub struct FilterCondition  {
     /// <p>A statement containing a resource property and a value to specify filter condition.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl FilterCondition {
+impl  FilterCondition  {
     /// <p>A statement containing a resource property and a value to specify filter condition.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl FilterConditionBuilder {
     }
     /// <p>A statement containing a resource property and a value to specify filter condition.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A statement containing a resource property and a value to specify filter condition.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl FilterConditionBuilder {
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {
-        crate::types::FilterCondition { value: self.value }
+        crate::types::FilterCondition {
+            value: self.value
+            ,
+        }
     }
 }
+

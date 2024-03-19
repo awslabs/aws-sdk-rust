@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutClassificationExportConfigurationInput {
+pub struct PutClassificationExportConfigurationInput  {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
     pub configuration: ::std::option::Option<crate::types::ClassificationExportConfiguration>,
 }
-impl PutClassificationExportConfigurationInput {
+impl  PutClassificationExportConfigurationInput  {
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ClassificationExportConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::ClassificationExportConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -34,24 +34,20 @@ impl PutClassificationExportConfigurationInputBuilder {
     }
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ClassificationExportConfiguration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
         &self.configuration
     }
     /// Consumes the builder and constructs a [`PutClassificationExportConfigurationInput`](crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput {
-                configuration: self.configuration,
-            },
+                configuration: self.configuration
+                ,
+            }
         )
     }
 }
+

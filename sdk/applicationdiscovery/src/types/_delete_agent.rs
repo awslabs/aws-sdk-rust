@@ -3,17 +3,16 @@
 /// <p>An object representing the agent or data collector to be deleted along with the optional configurations for error handling.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgent {
+pub struct DeleteAgent  {
     /// <p>The ID of the agent or data collector to delete.</p>
     pub agent_id: ::std::string::String,
     /// <p>Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services.</p>
     pub force: bool,
 }
-impl DeleteAgent {
+impl  DeleteAgent  {
     /// <p>The ID of the agent or data collector to delete.</p>
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// <p>Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services.</p>
     pub fn force(&self) -> bool {
@@ -43,8 +42,7 @@ impl DeleteAgentBuilder {
     }
     /// <p>The ID of the agent or data collector to delete.</p>
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>The ID of the agent or data collector to delete.</p>
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl DeleteAgentBuilder {
     }
     /// <p>Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Optional flag used to force delete an agent or data collector. It is needed to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an agent that is actively reporting health causes it to be re-registered with a different agent ID after data collector re-connects with Amazon Web Services.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
@@ -68,14 +65,18 @@ impl DeleteAgentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::DeleteAgentBuilder::agent_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DeleteAgent, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DeleteAgent {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building DeleteAgent",
-                )
-            })?,
-            force: self.force.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::DeleteAgent {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building DeleteAgent")
+                    )?
+                ,
+                force: self.force
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

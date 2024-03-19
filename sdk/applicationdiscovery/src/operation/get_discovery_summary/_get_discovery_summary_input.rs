@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDiscoverySummaryInput {}
+pub struct GetDiscoverySummaryInput  {
+}
 impl GetDiscoverySummaryInput {
     /// Creates a new builder-style object to manufacture [`GetDiscoverySummaryInput`](crate::operation::get_discovery_summary::GetDiscoverySummaryInput).
     pub fn builder() -> crate::operation::get_discovery_summary::builders::GetDiscoverySummaryInputBuilder {
@@ -13,13 +14,15 @@ impl GetDiscoverySummaryInput {
 /// A builder for [`GetDiscoverySummaryInput`](crate::operation::get_discovery_summary::GetDiscoverySummaryInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct GetDiscoverySummaryInputBuilder {}
+pub struct GetDiscoverySummaryInputBuilder {
+}
 impl GetDiscoverySummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetDiscoverySummaryInput`](crate::operation::get_discovery_summary::GetDiscoverySummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_discovery_summary::GetDiscoverySummaryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_discovery_summary::GetDiscoverySummaryInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_discovery_summary::GetDiscoverySummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_discovery_summary::GetDiscoverySummaryInput {
+            }
+        )
     }
 }
+

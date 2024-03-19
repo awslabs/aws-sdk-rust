@@ -3,7 +3,7 @@
 /// Required when you set Codec to the value VP9.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Vp9Settings {
+pub struct Vp9Settings  {
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub bitrate: ::std::option::Option<i32>,
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
@@ -31,17 +31,17 @@ pub struct Vp9Settings {
     /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
     pub rate_control_mode: ::std::option::Option<crate::types::Vp9RateControlMode>,
 }
-impl Vp9Settings {
+impl  Vp9Settings  {
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
-    pub fn framerate_control(&self) -> ::std::option::Option<&crate::types::Vp9FramerateControl> {
+    pub fn framerate_control(&self) -> ::std::option::Option<& crate::types::Vp9FramerateControl> {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
-    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<&crate::types::Vp9FramerateConversionAlgorithm> {
+    pub fn framerate_conversion_algorithm(&self) -> ::std::option::Option<& crate::types::Vp9FramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
@@ -65,7 +65,7 @@ impl Vp9Settings {
         self.max_bitrate
     }
     /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
-    pub fn par_control(&self) -> ::std::option::Option<&crate::types::Vp9ParControl> {
+    pub fn par_control(&self) -> ::std::option::Option<& crate::types::Vp9ParControl> {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
@@ -77,11 +77,11 @@ impl Vp9Settings {
         self.par_numerator
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
-    pub fn quality_tuning_level(&self) -> ::std::option::Option<&crate::types::Vp9QualityTuningLevel> {
+    pub fn quality_tuning_level(&self) -> ::std::option::Option<& crate::types::Vp9QualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
     /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
-    pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::Vp9RateControlMode> {
+    pub fn rate_control_mode(&self) -> ::std::option::Option<& crate::types::Vp9RateControlMode> {
         self.rate_control_mode.as_ref()
     }
 }
@@ -118,8 +118,7 @@ impl Vp9SettingsBuilder {
     }
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
@@ -132,8 +131,7 @@ impl Vp9SettingsBuilder {
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn set_framerate_control(mut self, input: ::std::option::Option<crate::types::Vp9FramerateControl>) -> Self {
-        self.framerate_control = input;
-        self
+        self.framerate_control = input; self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn get_framerate_control(&self) -> &::std::option::Option<crate::types::Vp9FramerateControl> {
@@ -146,8 +144,7 @@ impl Vp9SettingsBuilder {
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn set_framerate_conversion_algorithm(mut self, input: ::std::option::Option<crate::types::Vp9FramerateConversionAlgorithm>) -> Self {
-        self.framerate_conversion_algorithm = input;
-        self
+        self.framerate_conversion_algorithm = input; self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn get_framerate_conversion_algorithm(&self) -> &::std::option::Option<crate::types::Vp9FramerateConversionAlgorithm> {
@@ -160,8 +157,7 @@ impl Vp9SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input;
-        self
+        self.framerate_denominator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
@@ -174,8 +170,7 @@ impl Vp9SettingsBuilder {
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input;
-        self
+        self.framerate_numerator = input; self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
@@ -188,8 +183,7 @@ impl Vp9SettingsBuilder {
     }
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
     pub fn set_gop_size(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.gop_size = input;
-        self
+        self.gop_size = input; self
     }
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
     pub fn get_gop_size(&self) -> &::std::option::Option<f64> {
@@ -202,8 +196,7 @@ impl Vp9SettingsBuilder {
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     pub fn set_hrd_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.hrd_buffer_size = input;
-        self
+        self.hrd_buffer_size = input; self
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     pub fn get_hrd_buffer_size(&self) -> &::std::option::Option<i32> {
@@ -216,8 +209,7 @@ impl Vp9SettingsBuilder {
     }
     /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
@@ -230,8 +222,7 @@ impl Vp9SettingsBuilder {
     }
     /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
     pub fn set_par_control(mut self, input: ::std::option::Option<crate::types::Vp9ParControl>) -> Self {
-        self.par_control = input;
-        self
+        self.par_control = input; self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
     pub fn get_par_control(&self) -> &::std::option::Option<crate::types::Vp9ParControl> {
@@ -244,8 +235,7 @@ impl Vp9SettingsBuilder {
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn set_par_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_denominator = input;
-        self
+        self.par_denominator = input; self
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn get_par_denominator(&self) -> &::std::option::Option<i32> {
@@ -258,8 +248,7 @@ impl Vp9SettingsBuilder {
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn set_par_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.par_numerator = input;
-        self
+        self.par_numerator = input; self
     }
     /// Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn get_par_numerator(&self) -> &::std::option::Option<i32> {
@@ -272,8 +261,7 @@ impl Vp9SettingsBuilder {
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
     pub fn set_quality_tuning_level(mut self, input: ::std::option::Option<crate::types::Vp9QualityTuningLevel>) -> Self {
-        self.quality_tuning_level = input;
-        self
+        self.quality_tuning_level = input; self
     }
     /// Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
     pub fn get_quality_tuning_level(&self) -> &::std::option::Option<crate::types::Vp9QualityTuningLevel> {
@@ -286,8 +274,7 @@ impl Vp9SettingsBuilder {
     }
     /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::Vp9RateControlMode>) -> Self {
-        self.rate_control_mode = input;
-        self
+        self.rate_control_mode = input; self
     }
     /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Vp9RateControlMode> {
@@ -296,19 +283,33 @@ impl Vp9SettingsBuilder {
     /// Consumes the builder and constructs a [`Vp9Settings`](crate::types::Vp9Settings).
     pub fn build(self) -> crate::types::Vp9Settings {
         crate::types::Vp9Settings {
-            bitrate: self.bitrate,
-            framerate_control: self.framerate_control,
-            framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator,
-            framerate_numerator: self.framerate_numerator,
-            gop_size: self.gop_size,
-            hrd_buffer_size: self.hrd_buffer_size,
-            max_bitrate: self.max_bitrate,
-            par_control: self.par_control,
-            par_denominator: self.par_denominator,
-            par_numerator: self.par_numerator,
-            quality_tuning_level: self.quality_tuning_level,
-            rate_control_mode: self.rate_control_mode,
+            bitrate: self.bitrate
+            ,
+            framerate_control: self.framerate_control
+            ,
+            framerate_conversion_algorithm: self.framerate_conversion_algorithm
+            ,
+            framerate_denominator: self.framerate_denominator
+            ,
+            framerate_numerator: self.framerate_numerator
+            ,
+            gop_size: self.gop_size
+            ,
+            hrd_buffer_size: self.hrd_buffer_size
+            ,
+            max_bitrate: self.max_bitrate
+            ,
+            par_control: self.par_control
+            ,
+            par_denominator: self.par_denominator
+            ,
+            par_numerator: self.par_numerator
+            ,
+            quality_tuning_level: self.quality_tuning_level
+            ,
+            rate_control_mode: self.rate_control_mode
+            ,
         }
     }
 }
+

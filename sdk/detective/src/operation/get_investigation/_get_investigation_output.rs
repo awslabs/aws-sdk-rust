@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetInvestigationOutput {
+pub struct GetInvestigationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
@@ -25,53 +25,53 @@ pub struct GetInvestigationOutput {
     pub state: ::std::option::Option<crate::types::State>,
     _request_id: Option<String>,
 }
-impl GetInvestigationOutput {
+impl  GetInvestigationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The investigation ID of the investigation report.</p>
-    pub fn investigation_id(&self) -> ::std::option::Option<&str> {
+    pub fn investigation_id(&self) -> ::std::option::Option<& str> {
         self.investigation_id.as_deref()
     }
     /// <p>The unique Amazon Resource Name (ARN). Detective supports IAM user ARNs and IAM role ARNs.</p>
-    pub fn entity_arn(&self) -> ::std::option::Option<&str> {
+    pub fn entity_arn(&self) -> ::std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>Type of entity. For example, Amazon Web Services accounts, such as an IAM user and/or IAM role.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
+    pub fn entity_type(&self) -> ::std::option::Option<& crate::types::EntityType> {
         self.entity_type.as_ref()
     }
     /// <p>The creation time of the investigation report in UTC time stamp format.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The start date and time used to set the scope time within which you want to generate the investigation report. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn scope_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scope_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scope_start_time.as_ref()
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn scope_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scope_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scope_end_time.as_ref()
     }
     /// <p>The status based on the completion status of the investigation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The severity assigned is based on the likelihood and impact of the indicators of compromise discovered in the investigation.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::Severity> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::Severity> {
         self.severity.as_ref()
     }
     /// <p>The current state of the investigation. An archived investigation indicates that you have completed reviewing the investigation.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetInvestigationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetInvestigationOutput {
     /// Creates a new builder-style object to manufacture [`GetInvestigationOutput`](crate::operation::get_investigation::GetInvestigationOutput).
     pub fn builder() -> crate::operation::get_investigation::builders::GetInvestigationOutputBuilder {
@@ -103,8 +103,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn set_investigation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.investigation_id = input;
-        self
+        self.investigation_id = input; self
     }
     /// <p>The investigation ID of the investigation report.</p>
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN). Detective supports IAM user ARNs and IAM role ARNs.</p>
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_arn = input;
-        self
+        self.entity_arn = input; self
     }
     /// <p>The unique Amazon Resource Name (ARN). Detective supports IAM user ARNs and IAM role ARNs.</p>
     pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>Type of entity. For example, Amazon Web Services accounts, such as an IAM user and/or IAM role.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>Type of entity. For example, Amazon Web Services accounts, such as an IAM user and/or IAM role.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
@@ -159,8 +155,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The creation time of the investigation report in UTC time stamp format.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The creation time of the investigation report in UTC time stamp format.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -173,8 +168,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The start date and time used to set the scope time within which you want to generate the investigation report. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_scope_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scope_start_time = input;
-        self
+        self.scope_start_time = input; self
     }
     /// <p>The start date and time used to set the scope time within which you want to generate the investigation report. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_scope_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +181,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_scope_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scope_end_time = input;
-        self
+        self.scope_end_time = input; self
     }
     /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_scope_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -201,8 +194,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The status based on the completion status of the investigation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status based on the completion status of the investigation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -215,8 +207,7 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The severity assigned is based on the likelihood and impact of the indicators of compromise discovered in the investigation.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::Severity>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The severity assigned is based on the likelihood and impact of the indicators of compromise discovered in the investigation.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::Severity> {
@@ -229,36 +220,46 @@ impl GetInvestigationOutputBuilder {
     }
     /// <p>The current state of the investigation. An archived investigation indicates that you have completed reviewing the investigation.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the investigation. An archived investigation indicates that you have completed reviewing the investigation.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
         &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetInvestigationOutput`](crate::operation::get_investigation::GetInvestigationOutput).
     pub fn build(self) -> crate::operation::get_investigation::GetInvestigationOutput {
         crate::operation::get_investigation::GetInvestigationOutput {
-            graph_arn: self.graph_arn,
-            investigation_id: self.investigation_id,
-            entity_arn: self.entity_arn,
-            entity_type: self.entity_type,
-            created_time: self.created_time,
-            scope_start_time: self.scope_start_time,
-            scope_end_time: self.scope_end_time,
-            status: self.status,
-            severity: self.severity,
-            state: self.state,
+            graph_arn: self.graph_arn
+            ,
+            investigation_id: self.investigation_id
+            ,
+            entity_arn: self.entity_arn
+            ,
+            entity_type: self.entity_type
+            ,
+            created_time: self.created_time
+            ,
+            scope_start_time: self.scope_start_time
+            ,
+            scope_end_time: self.scope_end_time
+            ,
+            status: self.status
+            ,
+            severity: self.severity
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

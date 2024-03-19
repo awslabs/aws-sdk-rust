@@ -3,7 +3,7 @@
 /// <p>Configuration information of a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisVideoStreamConfig {
+pub struct KinesisVideoStreamConfig  {
     /// <p>The prefix of the video stream.</p>
     pub prefix: ::std::string::String,
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
@@ -12,11 +12,10 @@ pub struct KinesisVideoStreamConfig {
     /// <p>The encryption configuration.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
-impl KinesisVideoStreamConfig {
+impl  KinesisVideoStreamConfig  {
     /// <p>The prefix of the video stream.</p>
-    pub fn prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.prefix.deref()
+    pub fn prefix(&self) -> & str {
+        use std::ops::Deref; self.prefix.deref()
     }
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
@@ -24,7 +23,7 @@ impl KinesisVideoStreamConfig {
         self.retention_period_hours
     }
     /// <p>The encryption configuration.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -52,8 +51,7 @@ impl KinesisVideoStreamConfigBuilder {
     }
     /// <p>The prefix of the video stream.</p>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The prefix of the video stream.</p>
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,7 @@ impl KinesisVideoStreamConfigBuilder {
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retention_period_hours = input;
-        self
+        self.retention_period_hours = input; self
     }
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
@@ -85,8 +82,7 @@ impl KinesisVideoStreamConfigBuilder {
     }
     /// <p>The encryption configuration.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input;
-        self
+        self.encryption_config = input; self
     }
     /// <p>The encryption configuration.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
@@ -96,15 +92,20 @@ impl KinesisVideoStreamConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`prefix`](crate::types::builders::KinesisVideoStreamConfigBuilder::prefix)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisVideoStreamConfig {
-            prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "prefix",
-                    "prefix was not specified but it is required when building KinesisVideoStreamConfig",
-                )
-            })?,
-            retention_period_hours: self.retention_period_hours.unwrap_or_default(),
-            encryption_config: self.encryption_config,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisVideoStreamConfig {
+                prefix: self.prefix
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("prefix", "prefix was not specified but it is required when building KinesisVideoStreamConfig")
+                    )?
+                ,
+                retention_period_hours: self.retention_period_hours
+                    .unwrap_or_default()
+                ,
+                encryption_config: self.encryption_config
+                ,
+            }
+        )
     }
 }
+

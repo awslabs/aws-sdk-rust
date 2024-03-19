@@ -3,19 +3,19 @@
 /// One audio configuration that specifies the format for one audio pair that the device produces as output.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDeviceConfigurableAudioChannelPairConfig {
+pub struct InputDeviceConfigurableAudioChannelPairConfig  {
     /// The ID for one audio pair configuration, a value from 1 to 8.
     pub id: ::std::option::Option<i32>,
     /// The profile to set for one audio pair configuration. Choose an enumeration value. Each value describes one audio configuration using the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce audio for this pair.
     pub profile: ::std::option::Option<crate::types::InputDeviceConfigurableAudioChannelPairProfile>,
 }
-impl InputDeviceConfigurableAudioChannelPairConfig {
+impl  InputDeviceConfigurableAudioChannelPairConfig  {
     /// The ID for one audio pair configuration, a value from 1 to 8.
     pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
     }
     /// The profile to set for one audio pair configuration. Choose an enumeration value. Each value describes one audio configuration using the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce audio for this pair.
-    pub fn profile(&self) -> ::std::option::Option<&crate::types::InputDeviceConfigurableAudioChannelPairProfile> {
+    pub fn profile(&self) -> ::std::option::Option<& crate::types::InputDeviceConfigurableAudioChannelPairProfile> {
         self.profile.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl InputDeviceConfigurableAudioChannelPairConfigBuilder {
     }
     /// The ID for one audio pair configuration, a value from 1 to 8.
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The ID for one audio pair configuration, a value from 1 to 8.
     pub fn get_id(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl InputDeviceConfigurableAudioChannelPairConfigBuilder {
     }
     /// The profile to set for one audio pair configuration. Choose an enumeration value. Each value describes one audio configuration using the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce audio for this pair.
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::InputDeviceConfigurableAudioChannelPairProfile>) -> Self {
-        self.profile = input;
-        self
+        self.profile = input; self
     }
     /// The profile to set for one audio pair configuration. Choose an enumeration value. Each value describes one audio configuration using the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce audio for this pair.
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::InputDeviceConfigurableAudioChannelPairProfile> {
@@ -65,8 +63,11 @@ impl InputDeviceConfigurableAudioChannelPairConfigBuilder {
     /// Consumes the builder and constructs a [`InputDeviceConfigurableAudioChannelPairConfig`](crate::types::InputDeviceConfigurableAudioChannelPairConfig).
     pub fn build(self) -> crate::types::InputDeviceConfigurableAudioChannelPairConfig {
         crate::types::InputDeviceConfigurableAudioChannelPairConfig {
-            id: self.id,
-            profile: self.profile,
+            id: self.id
+            ,
+            profile: self.profile
+            ,
         }
     }
 }
+

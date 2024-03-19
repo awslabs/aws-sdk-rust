@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetImportJobInput {
+pub struct GetImportJobInput  {
     /// <p>The identifier of the import job to retrieve.</p>
     pub import_job_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base that the import job belongs to.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
-impl GetImportJobInput {
+impl  GetImportJobInput  {
     /// <p>The identifier of the import job to retrieve.</p>
-    pub fn import_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn import_job_id(&self) -> ::std::option::Option<& str> {
         self.import_job_id.as_deref()
     }
     /// <p>The identifier of the knowledge base that the import job belongs to.</p>
-    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetImportJobInputBuilder {
     }
     /// <p>The identifier of the import job to retrieve.</p>
     pub fn set_import_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.import_job_id = input;
-        self
+        self.import_job_id = input; self
     }
     /// <p>The identifier of the import job to retrieve.</p>
     pub fn get_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetImportJobInputBuilder {
     }
     /// <p>The identifier of the knowledge base that the import job belongs to.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.knowledge_base_id = input;
-        self
+        self.knowledge_base_id = input; self
     }
     /// <p>The identifier of the knowledge base that the import job belongs to.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`GetImportJobInput`](crate::operation::get_import_job::GetImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_import_job::GetImportJobInput {
-            import_job_id: self.import_job_id,
-            knowledge_base_id: self.knowledge_base_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_import_job::GetImportJobInput {
+                import_job_id: self.import_job_id
+                ,
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
+        )
     }
 }
+

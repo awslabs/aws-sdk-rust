@@ -3,13 +3,13 @@
 /// <p>Describes the Amazon Elastic Block Store performance configuration of the current and recommended resource configuration for a recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BlockStoragePerformanceConfiguration {
+pub struct BlockStoragePerformanceConfiguration  {
     /// <p>The number of I/O operations per second.</p>
     pub iops: ::std::option::Option<f64>,
     /// <p>The throughput that the volume supports.</p>
     pub throughput: ::std::option::Option<f64>,
 }
-impl BlockStoragePerformanceConfiguration {
+impl  BlockStoragePerformanceConfiguration  {
     /// <p>The number of I/O operations per second.</p>
     pub fn iops(&self) -> ::std::option::Option<f64> {
         self.iops
@@ -41,8 +41,7 @@ impl BlockStoragePerformanceConfigurationBuilder {
     }
     /// <p>The number of I/O operations per second.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The number of I/O operations per second.</p>
     pub fn get_iops(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl BlockStoragePerformanceConfigurationBuilder {
     }
     /// <p>The throughput that the volume supports.</p>
     pub fn set_throughput(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p>The throughput that the volume supports.</p>
     pub fn get_throughput(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl BlockStoragePerformanceConfigurationBuilder {
     /// Consumes the builder and constructs a [`BlockStoragePerformanceConfiguration`](crate::types::BlockStoragePerformanceConfiguration).
     pub fn build(self) -> crate::types::BlockStoragePerformanceConfiguration {
         crate::types::BlockStoragePerformanceConfiguration {
-            iops: self.iops,
-            throughput: self.throughput,
+            iops: self.iops
+            ,
+            throughput: self.throughput
+            ,
         }
     }
 }
+

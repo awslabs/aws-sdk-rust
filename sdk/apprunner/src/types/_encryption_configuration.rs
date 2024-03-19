@@ -3,15 +3,14 @@
 /// <p>Describes a custom encryption key that App Runner uses to encrypt copies of the source repository and service logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfiguration {
+pub struct EncryptionConfiguration  {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     pub kms_key: ::std::string::String,
 }
-impl EncryptionConfiguration {
+impl  EncryptionConfiguration  {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub fn kms_key(&self) -> &str {
-        use std::ops::Deref;
-        self.kms_key.deref()
+    pub fn kms_key(&self) -> & str {
+        use std::ops::Deref; self.kms_key.deref()
     }
 }
 impl EncryptionConfiguration {
@@ -36,8 +35,7 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl EncryptionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key`](crate::types::builders::EncryptionConfigurationBuilder::kms_key)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionConfiguration {
-            kms_key: self.kms_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "kms_key",
-                    "kms_key was not specified but it is required when building EncryptionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionConfiguration {
+                kms_key: self.kms_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("kms_key", "kms_key was not specified but it is required when building EncryptionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

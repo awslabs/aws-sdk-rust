@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateTransitGatewayConnectPeerOutput {
+pub struct DisassociateTransitGatewayConnectPeerOutput  {
     /// <p>The transit gateway Connect peer association.</p>
     pub transit_gateway_connect_peer_association: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
     _request_id: Option<String>,
 }
-impl DisassociateTransitGatewayConnectPeerOutput {
+impl  DisassociateTransitGatewayConnectPeerOutput  {
     /// <p>The transit gateway Connect peer association.</p>
-    pub fn transit_gateway_connect_peer_association(&self) -> ::std::option::Option<&crate::types::TransitGatewayConnectPeerAssociation> {
+    pub fn transit_gateway_connect_peer_association(&self) -> ::std::option::Option<& crate::types::TransitGatewayConnectPeerAssociation> {
         self.transit_gateway_connect_peer_association.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateTransitGatewayConnectPeerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateTransitGatewayConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput).
     pub fn builder() -> crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder {
@@ -39,31 +39,29 @@ impl DisassociateTransitGatewayConnectPeerOutputBuilder {
         self
     }
     /// <p>The transit gateway Connect peer association.</p>
-    pub fn set_transit_gateway_connect_peer_association(
-        mut self,
-        input: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>,
-    ) -> Self {
-        self.transit_gateway_connect_peer_association = input;
-        self
+    pub fn set_transit_gateway_connect_peer_association(mut self, input: ::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation>) -> Self {
+        self.transit_gateway_connect_peer_association = input; self
     }
     /// <p>The transit gateway Connect peer association.</p>
     pub fn get_transit_gateway_connect_peer_association(&self) -> &::std::option::Option<crate::types::TransitGatewayConnectPeerAssociation> {
         &self.transit_gateway_connect_peer_association
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateTransitGatewayConnectPeerOutput`](crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput).
     pub fn build(self) -> crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput {
         crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerOutput {
-            transit_gateway_connect_peer_association: self.transit_gateway_connect_peer_association,
+            transit_gateway_connect_peer_association: self.transit_gateway_connect_peer_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

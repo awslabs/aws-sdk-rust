@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTestGridSessionInput {
+pub struct GetTestGridSessionInput  {
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>An ID associated with this session.</p>
@@ -10,17 +10,17 @@ pub struct GetTestGridSessionInput {
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub session_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetTestGridSessionInput {
+impl  GetTestGridSessionInput  {
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
-    pub fn project_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<& str> {
         self.project_arn.as_deref()
     }
     /// <p>An ID associated with this session.</p>
-    pub fn session_id(&self) -> ::std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
-    pub fn session_arn(&self) -> ::std::option::Option<&str> {
+    pub fn session_arn(&self) -> ::std::option::Option<& str> {
         self.session_arn.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl GetTestGridSessionInputBuilder {
     }
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl GetTestGridSessionInputBuilder {
     }
     /// <p>An ID associated with this session.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>An ID associated with this session.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl GetTestGridSessionInputBuilder {
     }
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
     }
     /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_arn
     }
     /// Consumes the builder and constructs a [`GetTestGridSessionInput`](crate::operation::get_test_grid_session::GetTestGridSessionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_test_grid_session::GetTestGridSessionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_test_grid_session::GetTestGridSessionInput {
-            project_arn: self.project_arn,
-            session_id: self.session_id,
-            session_arn: self.session_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_test_grid_session::GetTestGridSessionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_test_grid_session::GetTestGridSessionInput {
+                project_arn: self.project_arn
+                ,
+                session_id: self.session_id
+                ,
+                session_arn: self.session_arn
+                ,
+            }
+        )
     }
 }
+

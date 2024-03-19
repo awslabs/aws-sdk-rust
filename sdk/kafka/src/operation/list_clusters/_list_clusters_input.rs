@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClustersInput {
+pub struct ListClustersInput  {
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     pub cluster_name_filter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -10,9 +10,9 @@ pub struct ListClustersInput {
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListClustersInput {
+impl  ListClustersInput  {
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn cluster_name_filter(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name_filter(&self) -> ::std::option::Option<& str> {
         self.cluster_name_filter.as_deref()
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -20,7 +20,7 @@ impl ListClustersInput {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -47,8 +47,7 @@ impl ListClustersInputBuilder {
     }
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     pub fn set_cluster_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name_filter = input;
-        self
+        self.cluster_name_filter = input; self
     }
     /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     pub fn get_cluster_name_filter(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListClustersInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -75,21 +73,24 @@ impl ListClustersInputBuilder {
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_clusters::ListClustersInput {
-            cluster_name_filter: self.cluster_name_filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_clusters::ListClustersInput {
+                cluster_name_filter: self.cluster_name_filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsJobAbortConfig {
+pub struct AwsJobAbortConfig  {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub abort_criteria_list: ::std::vec::Vec<crate::types::AwsJobAbortCriteria>,
+    pub abort_criteria_list: ::std::vec::Vec::<crate::types::AwsJobAbortCriteria>,
 }
-impl AwsJobAbortConfig {
+impl  AwsJobAbortConfig  {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn abort_criteria_list(&self) -> &[crate::types::AwsJobAbortCriteria] {
-        use std::ops::Deref;
-        self.abort_criteria_list.deref()
+    pub fn abort_criteria_list(&self) -> & [crate::types::AwsJobAbortCriteria] {
+        use std::ops::Deref; self.abort_criteria_list.deref()
     }
 }
 impl AwsJobAbortConfig {
@@ -25,7 +24,7 @@ impl AwsJobAbortConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AwsJobAbortConfigBuilder {
-    pub(crate) abort_criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>,
+    pub(crate) abort_criteria_list: ::std::option::Option<::std::vec::Vec::<crate::types::AwsJobAbortCriteria>>,
 }
 impl AwsJobAbortConfigBuilder {
     /// Appends an item to `abort_criteria_list`.
@@ -35,30 +34,31 @@ impl AwsJobAbortConfigBuilder {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub fn abort_criteria_list(mut self, input: crate::types::AwsJobAbortCriteria) -> Self {
         let mut v = self.abort_criteria_list.unwrap_or_default();
-        v.push(input);
-        self.abort_criteria_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.abort_criteria_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn set_abort_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>>) -> Self {
-        self.abort_criteria_list = input;
-        self
+    pub fn set_abort_criteria_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsJobAbortCriteria>>) -> Self {
+        self.abort_criteria_list = input; self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn get_abort_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsJobAbortCriteria>> {
+    pub fn get_abort_criteria_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsJobAbortCriteria>> {
         &self.abort_criteria_list
     }
     /// Consumes the builder and constructs a [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`abort_criteria_list`](crate::types::builders::AwsJobAbortConfigBuilder::abort_criteria_list)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsJobAbortConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsJobAbortConfig {
-            abort_criteria_list: self.abort_criteria_list.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "abort_criteria_list",
-                    "abort_criteria_list was not specified but it is required when building AwsJobAbortConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsJobAbortConfig {
+                abort_criteria_list: self.abort_criteria_list
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("abort_criteria_list", "abort_criteria_list was not specified but it is required when building AwsJobAbortConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

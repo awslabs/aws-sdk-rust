@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListNotificationsOutput {
+pub struct ListNotificationsOutput  {
     /// <p>The results of the <code>ListNotifications</code> action.</p>
-    pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::NotificationOutput>>,
+    pub notifications: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationOutput>>,
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListNotificationsOutput {
+impl  ListNotificationsOutput  {
     /// <p>The results of the <code>ListNotifications</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notifications.is_none()`.
-    pub fn notifications(&self) -> &[crate::types::NotificationOutput] {
-        self.notifications.as_deref().unwrap_or_default()
+    pub fn notifications(&self) -> & [crate::types::NotificationOutput] {
+        self.notifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListNotificationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
     pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListNotificationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListNotificationsOutputBuilder {
-    pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::NotificationOutput>>,
+    pub(crate) notifications: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationOutput>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListNotificationsOutputBuilder {
     /// <p>The results of the <code>ListNotifications</code> action.</p>
     pub fn notifications(mut self, input: crate::types::NotificationOutput) -> Self {
         let mut v = self.notifications.unwrap_or_default();
-        v.push(input);
-        self.notifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.notifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the <code>ListNotifications</code> action.</p>
-    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationOutput>>) -> Self {
-        self.notifications = input;
-        self
+    pub fn set_notifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NotificationOutput>>) -> Self {
+        self.notifications = input; self
     }
     /// <p>The results of the <code>ListNotifications</code> action.</p>
-    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationOutput>> {
+    pub fn get_notifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NotificationOutput>> {
         &self.notifications
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
@@ -69,28 +69,30 @@ impl ListNotificationsOutputBuilder {
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of notifications is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notifications, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotifications</code> to list the next set of notifications.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
     pub fn build(self) -> crate::operation::list_notifications::ListNotificationsOutput {
         crate::operation::list_notifications::ListNotificationsOutput {
-            notifications: self.notifications,
-            next_token: self.next_token,
+            notifications: self.notifications
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

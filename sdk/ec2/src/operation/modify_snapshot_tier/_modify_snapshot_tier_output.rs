@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifySnapshotTierOutput {
+pub struct ModifySnapshotTierOutput  {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the archive process was started.</p>
     pub tiering_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl ModifySnapshotTierOutput {
+impl  ModifySnapshotTierOutput  {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The date and time when the archive process was started.</p>
-    pub fn tiering_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn tiering_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.tiering_start_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifySnapshotTierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifySnapshotTierOutput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotTierOutput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput).
     pub fn builder() -> crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder {
@@ -47,8 +47,7 @@ impl ModifySnapshotTierOutputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl ModifySnapshotTierOutputBuilder {
     }
     /// <p>The date and time when the archive process was started.</p>
     pub fn set_tiering_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.tiering_start_time = input;
-        self
+        self.tiering_start_time = input; self
     }
     /// <p>The date and time when the archive process was started.</p>
     pub fn get_tiering_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.tiering_start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifySnapshotTierOutput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput).
     pub fn build(self) -> crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput {
         crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput {
-            snapshot_id: self.snapshot_id,
-            tiering_start_time: self.tiering_start_time,
+            snapshot_id: self.snapshot_id
+            ,
+            tiering_start_time: self.tiering_start_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

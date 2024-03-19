@@ -3,15 +3,14 @@
 /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AllowedStatistics {
+pub struct AllowedStatistics  {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub statistics: ::std::vec::Vec<::std::string::String>,
+    pub statistics: ::std::vec::Vec::<::std::string::String>,
 }
-impl AllowedStatistics {
+impl  AllowedStatistics  {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn statistics(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.statistics.deref()
+    pub fn statistics(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.statistics.deref()
     }
 }
 impl AllowedStatistics {
@@ -25,7 +24,7 @@ impl AllowedStatistics {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AllowedStatisticsBuilder {
-    pub(crate) statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) statistics: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AllowedStatisticsBuilder {
     /// Appends an item to `statistics`.
@@ -35,30 +34,31 @@ impl AllowedStatisticsBuilder {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
     pub fn statistics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.statistics.unwrap_or_default();
-        v.push(input.into());
-        self.statistics = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.statistics = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.statistics = input; self
     }
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_statistics(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.statistics
     }
     /// Consumes the builder and constructs a [`AllowedStatistics`](crate::types::AllowedStatistics).
     /// This method will fail if any of the following fields are not set:
     /// - [`statistics`](crate::types::builders::AllowedStatisticsBuilder::statistics)
     pub fn build(self) -> ::std::result::Result<crate::types::AllowedStatistics, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AllowedStatistics {
-            statistics: self.statistics.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "statistics",
-                    "statistics was not specified but it is required when building AllowedStatistics",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AllowedStatistics {
+                statistics: self.statistics
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("statistics", "statistics was not specified but it is required when building AllowedStatistics")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataQualityRuleRecommendationRunInput {
+pub struct GetDataQualityRuleRecommendationRunInput  {
     /// <p>The unique run identifier associated with this run.</p>
     pub run_id: ::std::option::Option<::std::string::String>,
 }
-impl GetDataQualityRuleRecommendationRunInput {
+impl  GetDataQualityRuleRecommendationRunInput  {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl GetDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetDataQualityRuleRecommendationRunInput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunInput { run_id: self.run_id },
+            crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunInput {
+                run_id: self.run_id
+                ,
+            }
         )
     }
 }
+

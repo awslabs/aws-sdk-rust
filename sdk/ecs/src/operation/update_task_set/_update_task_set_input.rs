@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateTaskSetInput {
+pub struct UpdateTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
@@ -12,21 +12,21 @@ pub struct UpdateTaskSetInput {
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub scale: ::std::option::Option<crate::types::Scale>,
 }
-impl UpdateTaskSetInput {
+impl  UpdateTaskSetInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
-    pub fn cluster(&self) -> ::std::option::Option<&str> {
+    pub fn cluster(&self) -> ::std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
-    pub fn service(&self) -> ::std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
-    pub fn task_set(&self) -> ::std::option::Option<&str> {
+    pub fn task_set(&self) -> ::std::option::Option<& str> {
         self.task_set.as_deref()
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
-    pub fn scale(&self) -> ::std::option::Option<&crate::types::Scale> {
+    pub fn scale(&self) -> ::std::option::Option<& crate::types::Scale> {
         self.scale.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task set is found in.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl UpdateTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service that the task set is found in.</p>
     pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl UpdateTaskSetInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
     pub fn set_task_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_set = input;
-        self
+        self.task_set = input; self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the task set to update.</p>
     pub fn get_task_set(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl UpdateTaskSetInputBuilder {
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
     pub fn get_scale(&self) -> &::std::option::Option<crate::types::Scale> {
         &self.scale
     }
     /// Consumes the builder and constructs a [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_task_set::UpdateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_task_set::UpdateTaskSetInput {
-            cluster: self.cluster,
-            service: self.service,
-            task_set: self.task_set,
-            scale: self.scale,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task_set::UpdateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_task_set::UpdateTaskSetInput {
+                cluster: self.cluster
+                ,
+                service: self.service
+                ,
+                task_set: self.task_set
+                ,
+                scale: self.scale
+                ,
+            }
+        )
     }
 }
+

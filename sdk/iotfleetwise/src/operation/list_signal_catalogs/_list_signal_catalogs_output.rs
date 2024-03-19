@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSignalCatalogsOutput {
+pub struct ListSignalCatalogsOutput  {
     /// <p>A list of information about each signal catalog.</p>
-    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SignalCatalogSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSignalCatalogsOutput {
+impl  ListSignalCatalogsOutput  {
     /// <p>A list of information about each signal catalog.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
-    pub fn summaries(&self) -> &[crate::types::SignalCatalogSummary] {
-        self.summaries.as_deref().unwrap_or_default()
+    pub fn summaries(&self) -> & [crate::types::SignalCatalogSummary] {
+        self.summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSignalCatalogsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSignalCatalogsOutput {
     /// Creates a new builder-style object to manufacture [`ListSignalCatalogsOutput`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput).
     pub fn builder() -> crate::operation::list_signal_catalogs::builders::ListSignalCatalogsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListSignalCatalogsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSignalCatalogsOutputBuilder {
-    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec::<crate::types::SignalCatalogSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListSignalCatalogsOutputBuilder {
     /// <p>A list of information about each signal catalog.</p>
     pub fn summaries(mut self, input: crate::types::SignalCatalogSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
-        v.push(input);
-        self.summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of information about each signal catalog.</p>
-    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>>) -> Self {
-        self.summaries = input;
-        self
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SignalCatalogSummary>>) -> Self {
+        self.summaries = input; self
     }
     /// <p>A list of information about each signal catalog.</p>
-    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SignalCatalogSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SignalCatalogSummary>> {
         &self.summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
@@ -69,28 +69,30 @@ impl ListSignalCatalogsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSignalCatalogsOutput`](crate::operation::list_signal_catalogs::ListSignalCatalogsOutput).
     pub fn build(self) -> crate::operation::list_signal_catalogs::ListSignalCatalogsOutput {
         crate::operation::list_signal_catalogs::ListSignalCatalogsOutput {
-            summaries: self.summaries,
-            next_token: self.next_token,
+            summaries: self.summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

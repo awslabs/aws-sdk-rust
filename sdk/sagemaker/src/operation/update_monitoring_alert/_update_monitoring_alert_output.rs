@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateMonitoringAlertOutput {
+pub struct UpdateMonitoringAlertOutput  {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring alert.</p>
     pub monitoring_alert_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateMonitoringAlertOutput {
+impl  UpdateMonitoringAlertOutput  {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<& str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(&self) -> ::std::option::Option<&str> {
+    pub fn monitoring_alert_name(&self) -> ::std::option::Option<& str> {
         self.monitoring_alert_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateMonitoringAlertOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateMonitoringAlertOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringAlertOutput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput).
     pub fn builder() -> crate::operation::update_monitoring_alert::builders::UpdateMonitoringAlertOutputBuilder {
@@ -48,8 +48,7 @@ impl UpdateMonitoringAlertOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub fn set_monitoring_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_schedule_arn = input;
-        self
+        self.monitoring_schedule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,28 +61,30 @@ impl UpdateMonitoringAlertOutputBuilder {
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn set_monitoring_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitoring_alert_name = input;
-        self
+        self.monitoring_alert_name = input; self
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn get_monitoring_alert_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitoring_alert_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateMonitoringAlertOutput`](crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput).
     pub fn build(self) -> crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput {
         crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput {
-            monitoring_schedule_arn: self.monitoring_schedule_arn,
-            monitoring_alert_name: self.monitoring_alert_name,
+            monitoring_schedule_arn: self.monitoring_schedule_arn
+            ,
+            monitoring_alert_name: self.monitoring_alert_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

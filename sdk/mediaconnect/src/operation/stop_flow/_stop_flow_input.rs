@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopFlowInput {
+pub struct StopFlowInput  {
     /// The ARN of the flow that you want to stop.
     pub flow_arn: ::std::option::Option<::std::string::String>,
 }
-impl StopFlowInput {
+impl  StopFlowInput  {
     /// The ARN of the flow that you want to stop.
-    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl StopFlowInputBuilder {
     }
     /// The ARN of the flow that you want to stop.
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the flow that you want to stop.
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,12 @@ impl StopFlowInputBuilder {
     }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_flow::StopFlowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_flow::StopFlowInput { flow_arn: self.flow_arn })
+        ::std::result::Result::Ok(
+            crate::operation::stop_flow::StopFlowInput {
+                flow_arn: self.flow_arn
+                ,
+            }
+        )
     }
 }
+

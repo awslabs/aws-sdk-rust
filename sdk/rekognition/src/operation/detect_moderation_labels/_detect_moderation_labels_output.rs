@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectModerationLabelsOutput {
+pub struct DetectModerationLabelsOutput  {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
+    pub moderation_labels: ::std::option::Option<::std::vec::Vec::<crate::types::ModerationLabel>>,
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub moderation_model_version: ::std::option::Option<::std::string::String>,
     /// <p>Shows the results of the human in the loop evaluation.</p>
@@ -12,40 +12,42 @@ pub struct DetectModerationLabelsOutput {
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
     pub project_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
-    pub content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
+    pub content_types: ::std::option::Option<::std::vec::Vec::<crate::types::ContentType>>,
     _request_id: Option<String>,
 }
-impl DetectModerationLabelsOutput {
+impl  DetectModerationLabelsOutput  {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.moderation_labels.is_none()`.
-    pub fn moderation_labels(&self) -> &[crate::types::ModerationLabel] {
-        self.moderation_labels.as_deref().unwrap_or_default()
+    pub fn moderation_labels(&self) -> & [crate::types::ModerationLabel] {
+        self.moderation_labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
-    pub fn moderation_model_version(&self) -> ::std::option::Option<&str> {
+    pub fn moderation_model_version(&self) -> ::std::option::Option<& str> {
         self.moderation_model_version.as_deref()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(&self) -> ::std::option::Option<&crate::types::HumanLoopActivationOutput> {
+    pub fn human_loop_activation_output(&self) -> ::std::option::Option<& crate::types::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
     }
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
-    pub fn project_version(&self) -> ::std::option::Option<&str> {
+    pub fn project_version(&self) -> ::std::option::Option<& str> {
         self.project_version.as_deref()
     }
     /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_types.is_none()`.
-    pub fn content_types(&self) -> &[crate::types::ContentType] {
-        self.content_types.as_deref().unwrap_or_default()
+    pub fn content_types(&self) -> & [crate::types::ContentType] {
+        self.content_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectModerationLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DetectModerationLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectModerationLabelsOutput`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput).
     pub fn builder() -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder {
@@ -57,11 +59,11 @@ impl DetectModerationLabelsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsOutputBuilder {
-    pub(crate) moderation_labels: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>,
+    pub(crate) moderation_labels: ::std::option::Option<::std::vec::Vec::<crate::types::ModerationLabel>>,
     pub(crate) moderation_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     pub(crate) project_version: ::std::option::Option<::std::string::String>,
-    pub(crate) content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
+    pub(crate) content_types: ::std::option::Option<::std::vec::Vec::<crate::types::ContentType>>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutputBuilder {
@@ -72,17 +74,16 @@ impl DetectModerationLabelsOutputBuilder {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn moderation_labels(mut self, input: crate::types::ModerationLabel) -> Self {
         let mut v = self.moderation_labels.unwrap_or_default();
-        v.push(input);
-        self.moderation_labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.moderation_labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub fn set_moderation_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>>) -> Self {
-        self.moderation_labels = input;
-        self
+    pub fn set_moderation_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ModerationLabel>>) -> Self {
+        self.moderation_labels = input; self
     }
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModerationLabel>> {
+    pub fn get_moderation_labels(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ModerationLabel>> {
         &self.moderation_labels
     }
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
@@ -92,8 +93,7 @@ impl DetectModerationLabelsOutputBuilder {
     }
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn set_moderation_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.moderation_model_version = input;
-        self
+        self.moderation_model_version = input; self
     }
     /// <p>Version number of the base moderation detection model that was used to detect unsafe content.</p>
     pub fn get_moderation_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl DetectModerationLabelsOutputBuilder {
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn set_human_loop_activation_output(mut self, input: ::std::option::Option<crate::types::HumanLoopActivationOutput>) -> Self {
-        self.human_loop_activation_output = input;
-        self
+        self.human_loop_activation_output = input; self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
     pub fn get_human_loop_activation_output(&self) -> &::std::option::Option<crate::types::HumanLoopActivationOutput> {
@@ -120,8 +119,7 @@ impl DetectModerationLabelsOutputBuilder {
     }
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
     pub fn set_project_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version = input;
-        self
+        self.project_version = input; self
     }
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
     pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,37 +132,42 @@ impl DetectModerationLabelsOutputBuilder {
     /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
     pub fn content_types(mut self, input: crate::types::ContentType) -> Self {
         let mut v = self.content_types.unwrap_or_default();
-        v.push(input);
-        self.content_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
-    pub fn set_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>) -> Self {
-        self.content_types = input;
-        self
+    pub fn set_content_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ContentType>>) -> Self {
+        self.content_types = input; self
     }
     /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
-    pub fn get_content_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentType>> {
+    pub fn get_content_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ContentType>> {
         &self.content_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DetectModerationLabelsOutput`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput).
     pub fn build(self) -> crate::operation::detect_moderation_labels::DetectModerationLabelsOutput {
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput {
-            moderation_labels: self.moderation_labels,
-            moderation_model_version: self.moderation_model_version,
-            human_loop_activation_output: self.human_loop_activation_output,
-            project_version: self.project_version,
-            content_types: self.content_types,
+            moderation_labels: self.moderation_labels
+            ,
+            moderation_model_version: self.moderation_model_version
+            ,
+            human_loop_activation_output: self.human_loop_activation_output
+            ,
+            project_version: self.project_version
+            ,
+            content_types: self.content_types
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

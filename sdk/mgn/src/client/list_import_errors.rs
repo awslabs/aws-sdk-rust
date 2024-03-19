@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImportErrors`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`import_id(impl Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_import_id):<br>required: **true**<br><p>List import errors request import id.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_max_results):<br>required: **false**<br><p>List import errors request max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_next_token):<br>required: **false**<br><p>List import errors request next token.</p><br>
-    /// - On success, responds with [`ListImportErrorsOutput`](crate::operation::list_import_errors::ListImportErrorsOutput) with field(s):
+                            /// - On success, responds with [`ListImportErrorsOutput`](crate::operation::list_import_errors::ListImportErrorsOutput) with field(s):
     ///   - [`items(Option<Vec::<ImportTaskError>>)`](crate::operation::list_import_errors::ListImportErrorsOutput::items): <p>List imports errors response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_errors::ListImportErrorsOutput::next_token): <p>List imports errors response next token.</p>
-    /// - On failure, responds with [`SdkError<ListImportErrorsError>`](crate::operation::list_import_errors::ListImportErrorsError)
+                            /// - On failure, responds with [`SdkError<ListImportErrorsError>`](crate::operation::list_import_errors::ListImportErrorsError)
     pub fn list_import_errors(&self) -> crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder {
-        crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeSharedVpcConfigurationInput {}
+pub struct DescribeSharedVpcConfigurationInput  {
+}
 impl DescribeSharedVpcConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSharedVpcConfigurationInput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput).
     pub fn builder() -> crate::operation::describe_shared_vpc_configuration::builders::DescribeSharedVpcConfigurationInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeSharedVpcConfigurationInput {
 /// A builder for [`DescribeSharedVpcConfigurationInput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DescribeSharedVpcConfigurationInputBuilder {}
+pub struct DescribeSharedVpcConfigurationInputBuilder {
+}
 impl DescribeSharedVpcConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSharedVpcConfigurationInput`](crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput {
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPolicyAttachments`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p><br>
     ///   - [`policy_reference(ObjectReference)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::policy_reference) / [`set_policy_reference(Option<ObjectReference>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::set_policy_reference):<br>required: **true**<br><p>The reference that identifies the policy object.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::set_consistency_level):<br>required: **false**<br><p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p><br>
-    /// - On success, responds with [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput) with field(s):
+                            /// - On success, responds with [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput) with field(s):
     ///   - [`object_identifiers(Option<Vec::<String>>)`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput::object_identifiers): <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListPolicyAttachmentsError>`](crate::operation::list_policy_attachments::ListPolicyAttachmentsError)
+                            /// - On failure, responds with [`SdkError<ListPolicyAttachmentsError>`](crate::operation::list_policy_attachments::ListPolicyAttachmentsError)
     pub fn list_policy_attachments(&self) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder {
-        crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

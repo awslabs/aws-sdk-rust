@@ -3,7 +3,7 @@
 /// <p>Object containing all the filter fields for container products. Client can add only one wildcard filter and a maximum of 8 filters in a single <code>ListEntities</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerProductFilters {
+pub struct ContainerProductFilters  {
     /// <p>Unique identifier for the container product.</p>
     pub entity_id: ::std::option::Option<crate::types::ContainerProductEntityIdFilter>,
     /// <p>The last date on which the container product was modified.</p>
@@ -13,21 +13,21 @@ pub struct ContainerProductFilters {
     /// <p>The visibility of the container product.</p>
     pub visibility: ::std::option::Option<crate::types::ContainerProductVisibilityFilter>,
 }
-impl ContainerProductFilters {
+impl  ContainerProductFilters  {
     /// <p>Unique identifier for the container product.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&crate::types::ContainerProductEntityIdFilter> {
+    pub fn entity_id(&self) -> ::std::option::Option<& crate::types::ContainerProductEntityIdFilter> {
         self.entity_id.as_ref()
     }
     /// <p>The last date on which the container product was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&crate::types::ContainerProductLastModifiedDateFilter> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& crate::types::ContainerProductLastModifiedDateFilter> {
         self.last_modified_date.as_ref()
     }
     /// <p>The title of the container product.</p>
-    pub fn product_title(&self) -> ::std::option::Option<&crate::types::ContainerProductTitleFilter> {
+    pub fn product_title(&self) -> ::std::option::Option<& crate::types::ContainerProductTitleFilter> {
         self.product_title.as_ref()
     }
     /// <p>The visibility of the container product.</p>
-    pub fn visibility(&self) -> ::std::option::Option<&crate::types::ContainerProductVisibilityFilter> {
+    pub fn visibility(&self) -> ::std::option::Option<& crate::types::ContainerProductVisibilityFilter> {
         self.visibility.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ContainerProductFiltersBuilder {
     }
     /// <p>Unique identifier for the container product.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<crate::types::ContainerProductEntityIdFilter>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>Unique identifier for the container product.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<crate::types::ContainerProductEntityIdFilter> {
@@ -69,8 +68,7 @@ impl ContainerProductFiltersBuilder {
     }
     /// <p>The last date on which the container product was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<crate::types::ContainerProductLastModifiedDateFilter>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last date on which the container product was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<crate::types::ContainerProductLastModifiedDateFilter> {
@@ -83,8 +81,7 @@ impl ContainerProductFiltersBuilder {
     }
     /// <p>The title of the container product.</p>
     pub fn set_product_title(mut self, input: ::std::option::Option<crate::types::ContainerProductTitleFilter>) -> Self {
-        self.product_title = input;
-        self
+        self.product_title = input; self
     }
     /// <p>The title of the container product.</p>
     pub fn get_product_title(&self) -> &::std::option::Option<crate::types::ContainerProductTitleFilter> {
@@ -97,8 +94,7 @@ impl ContainerProductFiltersBuilder {
     }
     /// <p>The visibility of the container product.</p>
     pub fn set_visibility(mut self, input: ::std::option::Option<crate::types::ContainerProductVisibilityFilter>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The visibility of the container product.</p>
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::ContainerProductVisibilityFilter> {
@@ -107,10 +103,15 @@ impl ContainerProductFiltersBuilder {
     /// Consumes the builder and constructs a [`ContainerProductFilters`](crate::types::ContainerProductFilters).
     pub fn build(self) -> crate::types::ContainerProductFilters {
         crate::types::ContainerProductFilters {
-            entity_id: self.entity_id,
-            last_modified_date: self.last_modified_date,
-            product_title: self.product_title,
-            visibility: self.visibility,
+            entity_id: self.entity_id
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            product_title: self.product_title
+            ,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

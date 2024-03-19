@@ -3,19 +3,19 @@
 /// <p>Specifies a custom data identifier or managed data identifier that detected a type of sensitive data to start excluding or including in an S3 bucket's sensitivity score.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SuppressDataIdentifier {
+pub struct SuppressDataIdentifier  {
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the type of sensitive data to exclude or include in the score.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub r#type: ::std::option::Option<crate::types::DataIdentifierType>,
 }
-impl SuppressDataIdentifier {
+impl  SuppressDataIdentifier  {
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the type of sensitive data to exclude or include in the score.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataIdentifierType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::DataIdentifierType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SuppressDataIdentifierBuilder {
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the type of sensitive data to exclude or include in the score.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the type of sensitive data to exclude or include in the score.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SuppressDataIdentifierBuilder {
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataIdentifierType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataIdentifierType> {
@@ -65,8 +63,11 @@ impl SuppressDataIdentifierBuilder {
     /// Consumes the builder and constructs a [`SuppressDataIdentifier`](crate::types::SuppressDataIdentifier).
     pub fn build(self) -> crate::types::SuppressDataIdentifier {
         crate::types::SuppressDataIdentifier {
-            id: self.id,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

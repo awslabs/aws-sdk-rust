@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetClusterCredentialsWithIamInput {
+pub struct GetClusterCredentialsWithIamInput  {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
@@ -13,13 +13,13 @@ pub struct GetClusterCredentialsWithIamInput {
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
     pub custom_domain_name: ::std::option::Option<::std::string::String>,
 }
-impl GetClusterCredentialsWithIamInput {
+impl  GetClusterCredentialsWithIamInput  {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
-    pub fn db_name(&self) -> ::std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
-    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The number of seconds until the returned temporary password expires.</p>
@@ -28,7 +28,7 @@ impl GetClusterCredentialsWithIamInput {
         self.duration_seconds
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
-    pub fn custom_domain_name(&self) -> ::std::option::Option<&str> {
+    pub fn custom_domain_name(&self) -> ::std::option::Option<& str> {
         self.custom_domain_name.as_deref()
     }
 }
@@ -56,8 +56,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
     }
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_identifier = input;
-        self
+        self.cluster_identifier = input; self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials.</p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl GetClusterCredentialsWithIamInputBuilder {
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
@@ -101,25 +98,26 @@ impl GetClusterCredentialsWithIamInputBuilder {
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
     pub fn set_custom_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_domain_name = input;
-        self
+        self.custom_domain_name = input; self
     }
     /// <p>The custom domain name for the IAM message cluster credentials.</p>
     pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_domain_name
     }
     /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamInput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput {
-            db_name: self.db_name,
-            cluster_identifier: self.cluster_identifier,
-            duration_seconds: self.duration_seconds,
-            custom_domain_name: self.custom_domain_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput {
+                db_name: self.db_name
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                duration_seconds: self.duration_seconds
+                ,
+                custom_domain_name: self.custom_domain_name
+                ,
+            }
+        )
     }
 }
+

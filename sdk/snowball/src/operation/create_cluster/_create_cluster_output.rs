@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateClusterOutput {
+pub struct CreateClusterOutput  {
     /// <p>The automatically generated ID for a cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
+    pub job_list_entries: ::std::option::Option<::std::vec::Vec::<crate::types::JobListEntry>>,
     _request_id: Option<String>,
 }
-impl CreateClusterOutput {
+impl  CreateClusterOutput  {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_list_entries.is_none()`.
-    pub fn job_list_entries(&self) -> &[crate::types::JobListEntry] {
-        self.job_list_entries.as_deref().unwrap_or_default()
+    pub fn job_list_entries(&self) -> & [crate::types::JobListEntry] {
+        self.job_list_entries.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput).
     pub fn builder() -> crate::operation::create_cluster::builders::CreateClusterOutputBuilder {
@@ -38,7 +39,7 @@ impl CreateClusterOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateClusterOutputBuilder {
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_list_entries: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>,
+    pub(crate) job_list_entries: ::std::option::Option<::std::vec::Vec::<crate::types::JobListEntry>>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutputBuilder {
@@ -49,8 +50,7 @@ impl CreateClusterOutputBuilder {
     }
     /// <p>The automatically generated ID for a cluster.</p>
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The automatically generated ID for a cluster.</p>
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl CreateClusterOutputBuilder {
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
     pub fn job_list_entries(mut self, input: crate::types::JobListEntry) -> Self {
         let mut v = self.job_list_entries.unwrap_or_default();
-        v.push(input);
-        self.job_list_entries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.job_list_entries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub fn set_job_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>>) -> Self {
-        self.job_list_entries = input;
-        self
+    pub fn set_job_list_entries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobListEntry>>) -> Self {
+        self.job_list_entries = input; self
     }
     /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
-    pub fn get_job_list_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
+    pub fn get_job_list_entries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobListEntry>> {
         &self.job_list_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::operation::create_cluster::CreateClusterOutput).
     pub fn build(self) -> crate::operation::create_cluster::CreateClusterOutput {
         crate::operation::create_cluster::CreateClusterOutput {
-            cluster_id: self.cluster_id,
-            job_list_entries: self.job_list_entries,
+            cluster_id: self.cluster_id
+            ,
+            job_list_entries: self.job_list_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

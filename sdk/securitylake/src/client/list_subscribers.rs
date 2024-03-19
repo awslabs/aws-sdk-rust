@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSubscribers`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::set_next_token):<br>required: **false**<br><p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of accounts for which the configuration is displayed.</p><br>
-    /// - On success, responds with [`ListSubscribersOutput`](crate::operation::list_subscribers::ListSubscribersOutput) with field(s):
+                            /// - On success, responds with [`ListSubscribersOutput`](crate::operation::list_subscribers::ListSubscribersOutput) with field(s):
     ///   - [`subscribers(Option<Vec::<SubscriberResource>>)`](crate::operation::list_subscribers::ListSubscribersOutput::subscribers): <p>The subscribers available for the specified Security Lake account ID.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_subscribers::ListSubscribersOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListSubscribersError>`](crate::operation::list_subscribers::ListSubscribersError)
+                            /// - On failure, responds with [`SdkError<ListSubscribersError>`](crate::operation::list_subscribers::ListSubscribersError)
     pub fn list_subscribers(&self) -> crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder {
-        crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_subscribers::builders::ListSubscribersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

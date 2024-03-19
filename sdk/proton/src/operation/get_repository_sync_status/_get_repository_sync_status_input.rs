@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRepositorySyncStatusInput {
+pub struct GetRepositorySyncStatusInput  {
     /// <p>The repository name.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
@@ -12,21 +12,21 @@ pub struct GetRepositorySyncStatusInput {
     /// <p>The repository sync type.</p>
     pub sync_type: ::std::option::Option<crate::types::SyncType>,
 }
-impl GetRepositorySyncStatusInput {
+impl  GetRepositorySyncStatusInput  {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<& crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> ::std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p>The repository sync type.</p>
-    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncType> {
+    pub fn sync_type(&self) -> ::std::option::Option<& crate::types::SyncType> {
         self.sync_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl GetRepositorySyncStatusInputBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl GetRepositorySyncStatusInputBuilder {
     }
     /// <p>The repository provider.</p>
     pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input;
-        self
+        self.repository_provider = input; self
     }
     /// <p>The repository provider.</p>
     pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
@@ -85,8 +83,7 @@ impl GetRepositorySyncStatusInputBuilder {
     }
     /// <p>The repository branch.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The repository branch.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,25 +97,26 @@ impl GetRepositorySyncStatusInputBuilder {
     }
     /// <p>The repository sync type.</p>
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncType>) -> Self {
-        self.sync_type = input;
-        self
+        self.sync_type = input; self
     }
     /// <p>The repository sync type.</p>
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncType> {
         &self.sync_type
     }
     /// Consumes the builder and constructs a [`GetRepositorySyncStatusInput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
-            repository_name: self.repository_name,
-            repository_provider: self.repository_provider,
-            branch: self.branch,
-            sync_type: self.sync_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
+                repository_name: self.repository_name
+                ,
+                repository_provider: self.repository_provider
+                ,
+                branch: self.branch
+                ,
+                sync_type: self.sync_type
+                ,
+            }
+        )
     }
 }
+

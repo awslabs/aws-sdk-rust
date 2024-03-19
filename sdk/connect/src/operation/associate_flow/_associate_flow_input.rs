@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssociateFlowInput {
+pub struct AssociateFlowInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource.</p>
@@ -12,21 +12,21 @@ pub struct AssociateFlowInput {
     /// <p>A valid resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::FlowAssociationResourceType>,
 }
-impl AssociateFlowInput {
+impl  AssociateFlowInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn flow_id(&self) -> ::std::option::Option<&str> {
+    pub fn flow_id(&self) -> ::std::option::Option<& str> {
         self.flow_id.as_deref()
     }
     /// <p>A valid resource type.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::FlowAssociationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::FlowAssociationResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl AssociateFlowInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl AssociateFlowInputBuilder {
     }
     /// <p>The identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The identifier of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl AssociateFlowInputBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_id = input;
-        self
+        self.flow_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn get_flow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,22 +97,26 @@ impl AssociateFlowInputBuilder {
     }
     /// <p>A valid resource type.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::FlowAssociationResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>A valid resource type.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::FlowAssociationResourceType> {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`AssociateFlowInput`](crate::operation::associate_flow::AssociateFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::associate_flow::AssociateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::associate_flow::AssociateFlowInput {
-            instance_id: self.instance_id,
-            resource_id: self.resource_id,
-            flow_id: self.flow_id,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_flow::AssociateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_flow::AssociateFlowInput {
+                instance_id: self.instance_id
+                ,
+                resource_id: self.resource_id
+                ,
+                flow_id: self.flow_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

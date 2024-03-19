@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIpams`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::set_filters):<br>required: **false**<br><p>One or more filters for the request. For more information about filtering, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering CLI output</a>.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in the request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`ipam_ids(impl Into<String>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::ipam_ids) / [`set_ipam_ids(Option<Vec::<String>>)`](crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::set_ipam_ids):<br>required: **false**<br><p>The IDs of the IPAMs you want information on.</p><br>
-    /// - On success, responds with [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput) with field(s):
+                            /// - On success, responds with [`DescribeIpamsOutput`](crate::operation::describe_ipams::DescribeIpamsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::describe_ipams::DescribeIpamsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     ///   - [`ipams(Option<Vec::<Ipam>>)`](crate::operation::describe_ipams::DescribeIpamsOutput::ipams): <p>Information about the IPAMs.</p>
-    /// - On failure, responds with [`SdkError<DescribeIpamsError>`](crate::operation::describe_ipams::DescribeIpamsError)
+                            /// - On failure, responds with [`SdkError<DescribeIpamsError>`](crate::operation::describe_ipams::DescribeIpamsError)
     pub fn describe_ipams(&self) -> crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder {
-        crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_ipams::builders::DescribeIpamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,15 +3,14 @@
 /// <p>The configuration containing input file information for a batch job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub s3_uri: ::std::string::String,
 }
-impl InputDataConfig {
+impl  InputDataConfig  {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
-    pub fn s3_uri(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_uri.deref()
+    pub fn s3_uri(&self) -> & str {
+        use std::ops::Deref; self.s3_uri.deref()
     }
 }
 impl InputDataConfig {
@@ -36,8 +35,7 @@ impl InputDataConfigBuilder {
     }
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl InputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InputDataConfig {
-            s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_uri",
-                    "s3_uri was not specified but it is required when building InputDataConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InputDataConfig {
+                s3_uri: self.s3_uri
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("s3_uri", "s3_uri was not specified but it is required when building InputDataConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Information about on-call rotations that recur monthly.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonthlySetting {
+pub struct MonthlySetting  {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub day_of_month: i32,
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
-impl MonthlySetting {
+impl  MonthlySetting  {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub fn day_of_month(&self) -> i32 {
         self.day_of_month
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    pub fn hand_off_time(&self) -> ::std::option::Option<&crate::types::HandOffTime> {
+    pub fn hand_off_time(&self) -> ::std::option::Option<& crate::types::HandOffTime> {
         self.hand_off_time.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl MonthlySettingBuilder {
     }
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.day_of_month = input;
-        self
+        self.day_of_month = input; self
     }
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
@@ -57,8 +56,7 @@ impl MonthlySettingBuilder {
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn set_hand_off_time(mut self, input: ::std::option::Option<crate::types::HandOffTime>) -> Self {
-        self.hand_off_time = input;
-        self
+        self.hand_off_time = input; self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn get_hand_off_time(&self) -> &::std::option::Option<crate::types::HandOffTime> {
@@ -68,14 +66,17 @@ impl MonthlySettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`day_of_month`](crate::types::builders::MonthlySettingBuilder::day_of_month)
     pub fn build(self) -> ::std::result::Result<crate::types::MonthlySetting, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonthlySetting {
-            day_of_month: self.day_of_month.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "day_of_month",
-                    "day_of_month was not specified but it is required when building MonthlySetting",
-                )
-            })?,
-            hand_off_time: self.hand_off_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonthlySetting {
+                day_of_month: self.day_of_month
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("day_of_month", "day_of_month was not specified but it is required when building MonthlySetting")
+                    )?
+                ,
+                hand_off_time: self.hand_off_time
+                ,
+            }
+        )
     }
 }
+

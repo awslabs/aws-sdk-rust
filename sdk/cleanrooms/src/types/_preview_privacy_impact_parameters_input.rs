@@ -21,11 +21,7 @@ impl PreviewPrivacyImpactParametersInput {
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PreviewPrivacyImpactParametersInput::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyPreviewParametersInput`](crate::types::DifferentialPrivacyPreviewParametersInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyPreviewParametersInput, &Self> {
-        if let PreviewPrivacyImpactParametersInput::DifferentialPrivacy(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PreviewPrivacyImpactParametersInput::DifferentialPrivacy(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DifferentialPrivacy`](crate::types::PreviewPrivacyImpactParametersInput::DifferentialPrivacy).
     pub fn is_differential_privacy(&self) -> bool {
@@ -36,3 +32,4 @@ impl PreviewPrivacyImpactParametersInput {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes Spot Instance placement.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SpotPlacement {
+pub struct SpotPlacement  {
     /// <p>The Availability Zone.</p>
     /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -12,18 +12,18 @@ pub struct SpotPlacement {
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub tenancy: ::std::option::Option<crate::types::Tenancy>,
 }
-impl SpotPlacement {
+impl  SpotPlacement  {
     /// <p>The Availability Zone.</p>
     /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The name of the placement group.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<& crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
 }
@@ -52,8 +52,7 @@ impl SpotPlacementBuilder {
     /// <p>The Availability Zone.</p>
     /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone.</p>
     /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
@@ -67,8 +66,7 @@ impl SpotPlacementBuilder {
     }
     /// <p>The name of the placement group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the placement group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +79,7 @@ impl SpotPlacementBuilder {
     }
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
@@ -91,9 +88,13 @@ impl SpotPlacementBuilder {
     /// Consumes the builder and constructs a [`SpotPlacement`](crate::types::SpotPlacement).
     pub fn build(self) -> crate::types::SpotPlacement {
         crate::types::SpotPlacement {
-            availability_zone: self.availability_zone,
-            group_name: self.group_name,
-            tenancy: self.tenancy,
+            availability_zone: self.availability_zone
+            ,
+            group_name: self.group_name
+            ,
+            tenancy: self.tenancy
+            ,
         }
     }
 }
+

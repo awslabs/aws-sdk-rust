@@ -3,19 +3,19 @@
 /// <p>The log delivery option to send data to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CloudWatchLogDeliveryOptions {
+pub struct CloudWatchLogDeliveryOptions  {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     pub log_type: crate::types::LogType,
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
 }
-impl CloudWatchLogDeliveryOptions {
+impl  CloudWatchLogDeliveryOptions  {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn log_type(&self) -> &crate::types::LogType {
+    pub fn log_type(&self) -> & crate::types::LogType {
         &self.log_type
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     }
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
@@ -56,8 +55,7 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_type`](crate::types::builders::CloudWatchLogDeliveryOptionsBuilder::log_type)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogDeliveryOptions, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchLogDeliveryOptions {
-            log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_type",
-                    "log_type was not specified but it is required when building CloudWatchLogDeliveryOptions",
-                )
-            })?,
-            log_group_name: self.log_group_name,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CloudWatchLogDeliveryOptions {
+                log_type: self.log_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("log_type", "log_type was not specified but it is required when building CloudWatchLogDeliveryOptions")
+                    )?
+                ,
+                log_group_name: self.log_group_name
+                ,
+            }
+        )
     }
 }
+

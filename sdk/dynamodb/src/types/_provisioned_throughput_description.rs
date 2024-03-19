@@ -3,7 +3,7 @@
 /// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProvisionedThroughputDescription {
+pub struct ProvisionedThroughputDescription  {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     pub last_increase_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
@@ -15,13 +15,13 @@ pub struct ProvisionedThroughputDescription {
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub write_capacity_units: ::std::option::Option<i64>,
 }
-impl ProvisionedThroughputDescription {
+impl  ProvisionedThroughputDescription  {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    pub fn last_increase_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_increase_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_increase_date_time.as_ref()
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    pub fn last_decrease_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_decrease_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_decrease_date_time.as_ref()
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -62,8 +62,7 @@ impl ProvisionedThroughputDescriptionBuilder {
     }
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     pub fn set_last_increase_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_increase_date_time = input;
-        self
+        self.last_increase_date_time = input; self
     }
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     pub fn get_last_increase_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -76,8 +75,7 @@ impl ProvisionedThroughputDescriptionBuilder {
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
     pub fn set_last_decrease_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_decrease_date_time = input;
-        self
+        self.last_decrease_date_time = input; self
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
     pub fn get_last_decrease_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -90,8 +88,7 @@ impl ProvisionedThroughputDescriptionBuilder {
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_number_of_decreases_today(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_decreases_today = input;
-        self
+        self.number_of_decreases_today = input; self
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn get_number_of_decreases_today(&self) -> &::std::option::Option<i64> {
@@ -104,8 +101,7 @@ impl ProvisionedThroughputDescriptionBuilder {
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
     pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
     pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -118,8 +114,7 @@ impl ProvisionedThroughputDescriptionBuilder {
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.write_capacity_units = input;
-        self
+        self.write_capacity_units = input; self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn get_write_capacity_units(&self) -> &::std::option::Option<i64> {
@@ -128,11 +123,17 @@ impl ProvisionedThroughputDescriptionBuilder {
     /// Consumes the builder and constructs a [`ProvisionedThroughputDescription`](crate::types::ProvisionedThroughputDescription).
     pub fn build(self) -> crate::types::ProvisionedThroughputDescription {
         crate::types::ProvisionedThroughputDescription {
-            last_increase_date_time: self.last_increase_date_time,
-            last_decrease_date_time: self.last_decrease_date_time,
-            number_of_decreases_today: self.number_of_decreases_today,
-            read_capacity_units: self.read_capacity_units,
-            write_capacity_units: self.write_capacity_units,
+            last_increase_date_time: self.last_increase_date_time
+            ,
+            last_decrease_date_time: self.last_decrease_date_time
+            ,
+            number_of_decreases_today: self.number_of_decreases_today
+            ,
+            read_capacity_units: self.read_capacity_units
+            ,
+            write_capacity_units: self.write_capacity_units
+            ,
         }
     }
 }
+

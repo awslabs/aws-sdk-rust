@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeOverrides {
+pub struct NodeOverrides  {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
     /// <li>
@@ -17,9 +17,9 @@ pub struct NodeOverrides {
     /// </ul>
     pub num_nodes: ::std::option::Option<i32>,
     /// <p>The node property overrides for the job.</p>
-    pub node_property_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
+    pub node_property_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::NodePropertyOverride>>,
 }
-impl NodeOverrides {
+impl  NodeOverrides  {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
     /// <li>
@@ -33,10 +33,11 @@ impl NodeOverrides {
         self.num_nodes
     }
     /// <p>The node property overrides for the job.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_property_overrides.is_none()`.
-    pub fn node_property_overrides(&self) -> &[crate::types::NodePropertyOverride] {
-        self.node_property_overrides.as_deref().unwrap_or_default()
+    pub fn node_property_overrides(&self) -> & [crate::types::NodePropertyOverride] {
+        self.node_property_overrides.as_deref()
+        .unwrap_or_default()
     }
 }
 impl NodeOverrides {
@@ -51,7 +52,7 @@ impl NodeOverrides {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeOverridesBuilder {
     pub(crate) num_nodes: ::std::option::Option<i32>,
-    pub(crate) node_property_overrides: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
+    pub(crate) node_property_overrides: ::std::option::Option<::std::vec::Vec::<crate::types::NodePropertyOverride>>,
 }
 impl NodeOverridesBuilder {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
@@ -77,8 +78,7 @@ impl NodeOverridesBuilder {
     /// <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p></li>
     /// </ul>
     pub fn set_num_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.num_nodes = input;
-        self
+        self.num_nodes = input; self
     }
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
@@ -99,24 +99,26 @@ impl NodeOverridesBuilder {
     /// <p>The node property overrides for the job.</p>
     pub fn node_property_overrides(mut self, input: crate::types::NodePropertyOverride) -> Self {
         let mut v = self.node_property_overrides.unwrap_or_default();
-        v.push(input);
-        self.node_property_overrides = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.node_property_overrides = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node property overrides for the job.</p>
-    pub fn set_node_property_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>) -> Self {
-        self.node_property_overrides = input;
-        self
+    pub fn set_node_property_overrides(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodePropertyOverride>>) -> Self {
+        self.node_property_overrides = input; self
     }
     /// <p>The node property overrides for the job.</p>
-    pub fn get_node_property_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>> {
+    pub fn get_node_property_overrides(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodePropertyOverride>> {
         &self.node_property_overrides
     }
     /// Consumes the builder and constructs a [`NodeOverrides`](crate::types::NodeOverrides).
     pub fn build(self) -> crate::types::NodeOverrides {
         crate::types::NodeOverrides {
-            num_nodes: self.num_nodes,
-            node_property_overrides: self.node_property_overrides,
+            num_nodes: self.num_nodes
+            ,
+            node_property_overrides: self.node_property_overrides
+            ,
         }
     }
 }
+

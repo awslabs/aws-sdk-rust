@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeGeneratedTemplateInput {
+pub struct DescribeGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub generated_template_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeGeneratedTemplateInput {
+impl  DescribeGeneratedTemplateInput  {
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
-    pub fn generated_template_name(&self) -> ::std::option::Option<&str> {
+    pub fn generated_template_name(&self) -> ::std::option::Option<& str> {
         self.generated_template_name.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DescribeGeneratedTemplateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn set_generated_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.generated_template_name = input;
-        self
+        self.generated_template_name = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
     pub fn get_generated_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.generated_template_name
     }
     /// Consumes the builder and constructs a [`DescribeGeneratedTemplateInput`](crate::operation::describe_generated_template::DescribeGeneratedTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_generated_template::DescribeGeneratedTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_generated_template::DescribeGeneratedTemplateInput {
-            generated_template_name: self.generated_template_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_generated_template::DescribeGeneratedTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_generated_template::DescribeGeneratedTemplateInput {
+                generated_template_name: self.generated_template_name
+                ,
+            }
+        )
     }
 }
+

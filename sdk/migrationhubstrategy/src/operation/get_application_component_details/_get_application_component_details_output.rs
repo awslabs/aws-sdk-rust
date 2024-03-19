@@ -2,44 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetApplicationComponentDetailsOutput {
+pub struct GetApplicationComponentDetailsOutput  {
     /// <p>Detailed information about an application component.</p>
     pub application_component_detail: ::std::option::Option<crate::types::ApplicationComponentDetail>,
     /// <p>The associated application group as defined in AWS Application Discovery Service.</p>
-    pub associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub associated_applications: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedApplication>>,
     /// <p>Set to true if the application component belongs to more than one application group.</p>
     pub more_application_resource: ::std::option::Option<bool>,
     /// <p>A list of the IDs of the servers on which the application component is running.</p>
-    pub associated_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub associated_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetApplicationComponentDetailsOutput {
+impl  GetApplicationComponentDetailsOutput  {
     /// <p>Detailed information about an application component.</p>
-    pub fn application_component_detail(&self) -> ::std::option::Option<&crate::types::ApplicationComponentDetail> {
+    pub fn application_component_detail(&self) -> ::std::option::Option<& crate::types::ApplicationComponentDetail> {
         self.application_component_detail.as_ref()
     }
     /// <p>The associated application group as defined in AWS Application Discovery Service.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_applications.is_none()`.
-    pub fn associated_applications(&self) -> &[crate::types::AssociatedApplication] {
-        self.associated_applications.as_deref().unwrap_or_default()
+    pub fn associated_applications(&self) -> & [crate::types::AssociatedApplication] {
+        self.associated_applications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Set to true if the application component belongs to more than one application group.</p>
     pub fn more_application_resource(&self) -> ::std::option::Option<bool> {
         self.more_application_resource
     }
     /// <p>A list of the IDs of the servers on which the application component is running.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_server_ids.is_none()`.
-    pub fn associated_server_ids(&self) -> &[::std::string::String] {
-        self.associated_server_ids.as_deref().unwrap_or_default()
+    pub fn associated_server_ids(&self) -> & [::std::string::String] {
+        self.associated_server_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationComponentDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetApplicationComponentDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationComponentDetailsOutput`](crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput).
     pub fn builder() -> crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsOutputBuilder {
@@ -52,9 +54,9 @@ impl GetApplicationComponentDetailsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetApplicationComponentDetailsOutputBuilder {
     pub(crate) application_component_detail: ::std::option::Option<crate::types::ApplicationComponentDetail>,
-    pub(crate) associated_applications: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub(crate) associated_applications: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedApplication>>,
     pub(crate) more_application_resource: ::std::option::Option<bool>,
-    pub(crate) associated_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) associated_server_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationComponentDetailsOutputBuilder {
@@ -65,8 +67,7 @@ impl GetApplicationComponentDetailsOutputBuilder {
     }
     /// <p>Detailed information about an application component.</p>
     pub fn set_application_component_detail(mut self, input: ::std::option::Option<crate::types::ApplicationComponentDetail>) -> Self {
-        self.application_component_detail = input;
-        self
+        self.application_component_detail = input; self
     }
     /// <p>Detailed information about an application component.</p>
     pub fn get_application_component_detail(&self) -> &::std::option::Option<crate::types::ApplicationComponentDetail> {
@@ -79,17 +80,16 @@ impl GetApplicationComponentDetailsOutputBuilder {
     /// <p>The associated application group as defined in AWS Application Discovery Service.</p>
     pub fn associated_applications(mut self, input: crate::types::AssociatedApplication) -> Self {
         let mut v = self.associated_applications.unwrap_or_default();
-        v.push(input);
-        self.associated_applications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_applications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The associated application group as defined in AWS Application Discovery Service.</p>
-    pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>>) -> Self {
-        self.associated_applications = input;
-        self
+    pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedApplication>>) -> Self {
+        self.associated_applications = input; self
     }
     /// <p>The associated application group as defined in AWS Application Discovery Service.</p>
-    pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedApplication>> {
+    pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociatedApplication>> {
         &self.associated_applications
     }
     /// <p>Set to true if the application component belongs to more than one application group.</p>
@@ -99,8 +99,7 @@ impl GetApplicationComponentDetailsOutputBuilder {
     }
     /// <p>Set to true if the application component belongs to more than one application group.</p>
     pub fn set_more_application_resource(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.more_application_resource = input;
-        self
+        self.more_application_resource = input; self
     }
     /// <p>Set to true if the application component belongs to more than one application group.</p>
     pub fn get_more_application_resource(&self) -> &::std::option::Option<bool> {
@@ -113,36 +112,40 @@ impl GetApplicationComponentDetailsOutputBuilder {
     /// <p>A list of the IDs of the servers on which the application component is running.</p>
     pub fn associated_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_server_ids.unwrap_or_default();
-        v.push(input.into());
-        self.associated_server_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_server_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the IDs of the servers on which the application component is running.</p>
-    pub fn set_associated_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.associated_server_ids = input;
-        self
+    pub fn set_associated_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.associated_server_ids = input; self
     }
     /// <p>A list of the IDs of the servers on which the application component is running.</p>
-    pub fn get_associated_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_associated_server_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.associated_server_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetApplicationComponentDetailsOutput`](crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput).
     pub fn build(self) -> crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput {
         crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput {
-            application_component_detail: self.application_component_detail,
-            associated_applications: self.associated_applications,
-            more_application_resource: self.more_application_resource,
-            associated_server_ids: self.associated_server_ids,
+            application_component_detail: self.application_component_detail
+            ,
+            associated_applications: self.associated_applications
+            ,
+            more_application_resource: self.more_application_resource
+            ,
+            associated_server_ids: self.associated_server_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

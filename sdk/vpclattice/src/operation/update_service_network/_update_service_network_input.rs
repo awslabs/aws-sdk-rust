@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceNetworkInput {
+pub struct UpdateServiceNetworkInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub service_network_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
@@ -14,9 +14,9 @@ pub struct UpdateServiceNetworkInput {
     /// </ul>
     pub auth_type: ::std::option::Option<crate::types::AuthType>,
 }
-impl UpdateServiceNetworkInput {
+impl  UpdateServiceNetworkInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> ::std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
     /// <p>The type of IAM policy.</p>
@@ -26,7 +26,7 @@ impl UpdateServiceNetworkInput {
     /// <li>
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
-    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> ::std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
@@ -53,8 +53,7 @@ impl UpdateServiceNetworkInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_service_network_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_network_identifier = input;
-        self
+        self.service_network_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateServiceNetworkInputBuilder {
     /// <p><code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p></li>
     /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -94,13 +92,15 @@ impl UpdateServiceNetworkInputBuilder {
         &self.auth_type
     }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_service_network::UpdateServiceNetworkInput {
-            service_network_identifier: self.service_network_identifier,
-            auth_type: self.auth_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_network::UpdateServiceNetworkInput {
+                service_network_identifier: self.service_network_identifier
+                ,
+                auth_type: self.auth_type
+                ,
+            }
+        )
     }
 }
+

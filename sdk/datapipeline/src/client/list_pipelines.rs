@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPipelines`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`marker(impl Into<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::set_marker):<br>required: **false**<br><p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p><br>
-    /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
+                            /// - On success, responds with [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput) with field(s):
     ///   - [`pipeline_id_list(Vec::<PipelineIdName>)`](crate::operation::list_pipelines::ListPipelinesOutput::pipeline_id_list): <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_pipelines::ListPipelinesOutput::marker): <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     ///   - [`has_more_results(bool)`](crate::operation::list_pipelines::ListPipelinesOutput::has_more_results): <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
-    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
+                            /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::operation::list_pipelines::ListPipelinesError)
     pub fn list_pipelines(&self) -> crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder {
-        crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_pipelines::builders::ListPipelinesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

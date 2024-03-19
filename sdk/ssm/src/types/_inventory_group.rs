@@ -3,22 +3,20 @@
 /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InventoryGroup {
+pub struct InventoryGroup  {
     /// <p>The name of the group.</p>
     pub name: ::std::string::String,
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
-    pub filters: ::std::vec::Vec<crate::types::InventoryFilter>,
+    pub filters: ::std::vec::Vec::<crate::types::InventoryFilter>,
 }
-impl InventoryGroup {
+impl  InventoryGroup  {
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
-    pub fn filters(&self) -> &[crate::types::InventoryFilter] {
-        use std::ops::Deref;
-        self.filters.deref()
+    pub fn filters(&self) -> & [crate::types::InventoryFilter] {
+        use std::ops::Deref; self.filters.deref()
     }
 }
 impl InventoryGroup {
@@ -33,7 +31,7 @@ impl InventoryGroup {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InventoryGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>>,
 }
 impl InventoryGroupBuilder {
     /// <p>The name of the group.</p>
@@ -44,8 +42,7 @@ impl InventoryGroupBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,17 +55,16 @@ impl InventoryGroupBuilder {
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
     pub fn filters(mut self, input: crate::types::InventoryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InventoryFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`InventoryGroup`](crate::types::InventoryGroup).
@@ -76,19 +72,20 @@ impl InventoryGroupBuilder {
     /// - [`name`](crate::types::builders::InventoryGroupBuilder::name)
     /// - [`filters`](crate::types::builders::InventoryGroupBuilder::filters)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryGroup, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::InventoryGroup {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building InventoryGroup",
-                )
-            })?,
-            filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "filters",
-                    "filters was not specified but it is required when building InventoryGroup",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::InventoryGroup {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building InventoryGroup")
+                    )?
+                ,
+                filters: self.filters
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("filters", "filters was not specified but it is required when building InventoryGroup")
+                    )?
+                ,
+            }
+        )
     }
 }
+

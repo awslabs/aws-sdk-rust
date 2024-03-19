@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBlueprintInput {
+pub struct GetBlueprintInput  {
     /// <p>The name of the blueprint.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -10,9 +10,9 @@ pub struct GetBlueprintInput {
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub include_parameter_spec: ::std::option::Option<bool>,
 }
-impl GetBlueprintInput {
+impl  GetBlueprintInput  {
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -48,8 +48,7 @@ impl GetBlueprintInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GetBlueprintInputBuilder {
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn set_include_blueprint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_blueprint = input;
-        self
+        self.include_blueprint = input; self
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn get_include_blueprint(&self) -> &::std::option::Option<bool> {
@@ -76,21 +74,24 @@ impl GetBlueprintInputBuilder {
     }
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub fn set_include_parameter_spec(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_parameter_spec = input;
-        self
+        self.include_parameter_spec = input; self
     }
     /// <p>Specifies whether or not to include the parameter specification.</p>
     pub fn get_include_parameter_spec(&self) -> &::std::option::Option<bool> {
         &self.include_parameter_spec
     }
     /// Consumes the builder and constructs a [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_blueprint::GetBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_blueprint::GetBlueprintInput {
-            name: self.name,
-            include_blueprint: self.include_blueprint,
-            include_parameter_spec: self.include_parameter_spec,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_blueprint::GetBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_blueprint::GetBlueprintInput {
+                name: self.name
+                ,
+                include_blueprint: self.include_blueprint
+                ,
+                include_parameter_spec: self.include_parameter_spec
+                ,
+            }
+        )
     }
 }
+

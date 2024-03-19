@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDatasetsOutput {
+pub struct ListDatasetsOutput  {
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    pub dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
+    pub dataset_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetSummary>>,
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDatasetsOutput {
+impl  ListDatasetsOutput  {
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataset_summaries.is_none()`.
-    pub fn dataset_summaries(&self) -> &[crate::types::DatasetSummary] {
-        self.dataset_summaries.as_deref().unwrap_or_default()
+    pub fn dataset_summaries(&self) -> & [crate::types::DatasetSummary] {
+        self.dataset_summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDatasetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDatasetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     pub fn builder() -> crate::operation::list_datasets::builders::ListDatasetsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListDatasetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
+    pub(crate) dataset_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListDatasetsOutputBuilder {
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
     pub fn dataset_summaries(mut self, input: crate::types::DatasetSummary) -> Self {
         let mut v = self.dataset_summaries.unwrap_or_default();
-        v.push(input);
-        self.dataset_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.dataset_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    pub fn set_dataset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>) -> Self {
-        self.dataset_summaries = input;
-        self
+    pub fn set_dataset_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DatasetSummary>>) -> Self {
+        self.dataset_summaries = input; self
     }
     /// <p>A list of <code>DatasetSummary</code> objects.</p>
-    pub fn get_dataset_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
+    pub fn get_dataset_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DatasetSummary>> {
         &self.dataset_summaries
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
@@ -69,28 +69,30 @@ impl ListDatasetsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     pub fn build(self) -> crate::operation::list_datasets::ListDatasetsOutput {
         crate::operation::list_datasets::ListDatasetsOutput {
-            dataset_summaries: self.dataset_summaries,
-            next_token: self.next_token,
+            dataset_summaries: self.dataset_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

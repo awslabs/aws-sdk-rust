@@ -3,13 +3,13 @@
 /// <p>Describes the effective recommendation preferences for Amazon EBS volumes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EbsEffectiveRecommendationPreferences {
+pub struct EbsEffectiveRecommendationPreferences  {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
     pub savings_estimation_mode: ::std::option::Option<crate::types::EbsSavingsEstimationMode>,
 }
-impl EbsEffectiveRecommendationPreferences {
+impl  EbsEffectiveRecommendationPreferences  {
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
-    pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::EbsSavingsEstimationMode> {
+    pub fn savings_estimation_mode(&self) -> ::std::option::Option<& crate::types::EbsSavingsEstimationMode> {
         self.savings_estimation_mode.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl EbsEffectiveRecommendationPreferencesBuilder {
     }
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
     pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::EbsSavingsEstimationMode>) -> Self {
-        self.savings_estimation_mode = input;
-        self
+        self.savings_estimation_mode = input; self
     }
     /// <p>Describes the savings estimation mode preference applied for calculating savings opportunity for Amazon EBS volumes.</p>
     pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::EbsSavingsEstimationMode> {
@@ -44,7 +43,9 @@ impl EbsEffectiveRecommendationPreferencesBuilder {
     /// Consumes the builder and constructs a [`EbsEffectiveRecommendationPreferences`](crate::types::EbsEffectiveRecommendationPreferences).
     pub fn build(self) -> crate::types::EbsEffectiveRecommendationPreferences {
         crate::types::EbsEffectiveRecommendationPreferences {
-            savings_estimation_mode: self.savings_estimation_mode,
+            savings_estimation_mode: self.savings_estimation_mode
+            ,
         }
     }
 }
+

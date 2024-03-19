@@ -3,7 +3,7 @@
 /// <p>Contains information about a stage for a batch build.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BuildBatchPhase {
+pub struct BuildBatchPhase  {
     /// <p>The name of the batch build phase. Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -97,9 +97,9 @@ pub struct BuildBatchPhase {
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
     pub duration_in_seconds: ::std::option::Option<i64>,
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
-    pub contexts: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>,
+    pub contexts: ::std::option::Option<::std::vec::Vec::<crate::types::PhaseContext>>,
 }
-impl BuildBatchPhase {
+impl  BuildBatchPhase  {
     /// <p>The name of the batch build phase. Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -145,7 +145,7 @@ impl BuildBatchPhase {
     /// <p>The batch build succeeded.</p>
     /// </dd>
     /// </dl>
-    pub fn phase_type(&self) -> ::std::option::Option<&crate::types::BuildBatchPhaseType> {
+    pub fn phase_type(&self) -> ::std::option::Option<& crate::types::BuildBatchPhaseType> {
         self.phase_type.as_ref()
     }
     /// <p>The current status of the batch build phase. Valid values include:</p>
@@ -187,15 +187,15 @@ impl BuildBatchPhase {
     /// <p>The build phase timed out.</p>
     /// </dd>
     /// </dl>
-    pub fn phase_status(&self) -> ::std::option::Option<&crate::types::StatusType> {
+    pub fn phase_status(&self) -> ::std::option::Option<& crate::types::StatusType> {
         self.phase_status.as_ref()
     }
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
@@ -203,10 +203,11 @@ impl BuildBatchPhase {
         self.duration_in_seconds
     }
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contexts.is_none()`.
-    pub fn contexts(&self) -> &[crate::types::PhaseContext] {
-        self.contexts.as_deref().unwrap_or_default()
+    pub fn contexts(&self) -> & [crate::types::PhaseContext] {
+        self.contexts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BuildBatchPhase {
@@ -225,7 +226,7 @@ pub struct BuildBatchPhaseBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_in_seconds: ::std::option::Option<i64>,
-    pub(crate) contexts: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>,
+    pub(crate) contexts: ::std::option::Option<::std::vec::Vec::<crate::types::PhaseContext>>,
 }
 impl BuildBatchPhaseBuilder {
     /// <p>The name of the batch build phase. Valid values include:</p>
@@ -323,8 +324,7 @@ impl BuildBatchPhaseBuilder {
     /// </dd>
     /// </dl>
     pub fn set_phase_type(mut self, input: ::std::option::Option<crate::types::BuildBatchPhaseType>) -> Self {
-        self.phase_type = input;
-        self
+        self.phase_type = input; self
     }
     /// <p>The name of the batch build phase. Valid values include:</p>
     /// <dl>
@@ -457,8 +457,7 @@ impl BuildBatchPhaseBuilder {
     /// </dd>
     /// </dl>
     pub fn set_phase_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
-        self.phase_status = input;
-        self
+        self.phase_status = input; self
     }
     /// <p>The current status of the batch build phase. Valid values include:</p>
     /// <dl>
@@ -509,8 +508,7 @@ impl BuildBatchPhaseBuilder {
     }
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -523,8 +521,7 @@ impl BuildBatchPhaseBuilder {
     }
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -537,8 +534,7 @@ impl BuildBatchPhaseBuilder {
     }
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.duration_in_seconds = input;
-        self
+        self.duration_in_seconds = input; self
     }
     /// <p>How long, in seconds, between the starting and ending times of the batch build's phase.</p>
     pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i64> {
@@ -551,28 +547,34 @@ impl BuildBatchPhaseBuilder {
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
     pub fn contexts(mut self, input: crate::types::PhaseContext) -> Self {
         let mut v = self.contexts.unwrap_or_default();
-        v.push(input);
-        self.contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
-    pub fn set_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>>) -> Self {
-        self.contexts = input;
-        self
+    pub fn set_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PhaseContext>>) -> Self {
+        self.contexts = input; self
     }
     /// <p>Additional information about the batch build phase. Especially to help troubleshoot a failed batch build.</p>
-    pub fn get_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>> {
+    pub fn get_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PhaseContext>> {
         &self.contexts
     }
     /// Consumes the builder and constructs a [`BuildBatchPhase`](crate::types::BuildBatchPhase).
     pub fn build(self) -> crate::types::BuildBatchPhase {
         crate::types::BuildBatchPhase {
-            phase_type: self.phase_type,
-            phase_status: self.phase_status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            duration_in_seconds: self.duration_in_seconds,
-            contexts: self.contexts,
+            phase_type: self.phase_type
+            ,
+            phase_status: self.phase_status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            duration_in_seconds: self.duration_in_seconds
+            ,
+            contexts: self.contexts
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTenantDatabaseInput {
+pub struct DeleteTenantDatabaseInput  {
     /// <p>The user-supplied identifier for the DB instance that contains the tenant database that you want to delete.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of the tenant database that you want to remove from your DB instance. Amazon RDS deletes the tenant database with this name. This parameter isn’t case-sensitive.</p>
@@ -14,13 +14,13 @@ pub struct DeleteTenantDatabaseInput {
     /// </note>
     pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTenantDatabaseInput {
+impl  DeleteTenantDatabaseInput  {
     /// <p>The user-supplied identifier for the DB instance that contains the tenant database that you want to delete.</p>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The user-supplied name of the tenant database that you want to remove from your DB instance. Amazon RDS deletes the tenant database with this name. This parameter isn’t case-sensitive.</p>
-    pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
+    pub fn tenant_db_name(&self) -> ::std::option::Option<& str> {
         self.tenant_db_name.as_deref()
     }
     /// <p>Specifies whether to skip the creation of a final DB snapshot before removing the tenant database from your DB instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before it deletes the tenant database. By default, RDS doesn't skip the final snapshot. If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
@@ -30,7 +30,7 @@ impl DeleteTenantDatabaseInput {
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
-    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<& str> {
         self.final_db_snapshot_identifier.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DeleteTenantDatabaseInputBuilder {
     }
     /// <p>The user-supplied identifier for the DB instance that contains the tenant database that you want to delete.</p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The user-supplied identifier for the DB instance that contains the tenant database that you want to delete.</p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +73,7 @@ impl DeleteTenantDatabaseInputBuilder {
     }
     /// <p>The user-supplied name of the tenant database that you want to remove from your DB instance. Amazon RDS deletes the tenant database with this name. This parameter isn’t case-sensitive.</p>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenant_db_name = input;
-        self
+        self.tenant_db_name = input; self
     }
     /// <p>The user-supplied name of the tenant database that you want to remove from your DB instance. Amazon RDS deletes the tenant database with this name. This parameter isn’t case-sensitive.</p>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +86,7 @@ impl DeleteTenantDatabaseInputBuilder {
     }
     /// <p>Specifies whether to skip the creation of a final DB snapshot before removing the tenant database from your DB instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before it deletes the tenant database. By default, RDS doesn't skip the final snapshot. If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.skip_final_snapshot = input;
-        self
+        self.skip_final_snapshot = input; self
     }
     /// <p>Specifies whether to skip the creation of a final DB snapshot before removing the tenant database from your DB instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before it deletes the tenant database. By default, RDS doesn't skip the final snapshot. If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
@@ -106,8 +103,7 @@ impl DeleteTenantDatabaseInputBuilder {
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
     /// </note>
     pub fn set_final_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.final_db_snapshot_identifier = input;
-        self
+        self.final_db_snapshot_identifier = input; self
     }
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p><note>
     /// <p>If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command results in an error.</p>
@@ -116,15 +112,19 @@ impl DeleteTenantDatabaseInputBuilder {
         &self.final_db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteTenantDatabaseInput`](crate::operation::delete_tenant_database::DeleteTenantDatabaseInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_tenant_database::DeleteTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_tenant_database::DeleteTenantDatabaseInput {
-            db_instance_identifier: self.db_instance_identifier,
-            tenant_db_name: self.tenant_db_name,
-            skip_final_snapshot: self.skip_final_snapshot,
-            final_db_snapshot_identifier: self.final_db_snapshot_identifier,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_tenant_database::DeleteTenantDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_tenant_database::DeleteTenantDatabaseInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                tenant_db_name: self.tenant_db_name
+                ,
+                skip_final_snapshot: self.skip_final_snapshot
+                ,
+                final_db_snapshot_identifier: self.final_db_snapshot_identifier
+                ,
+            }
+        )
     }
 }
+

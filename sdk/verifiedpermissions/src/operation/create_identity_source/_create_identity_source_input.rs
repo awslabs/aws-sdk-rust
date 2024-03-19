@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateIdentitySourceInput {
+pub struct CreateIdentitySourceInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
@@ -18,31 +18,31 @@ pub struct CreateIdentitySourceInput {
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
     pub principal_entity_type: ::std::option::Option<::std::string::String>,
 }
-impl CreateIdentitySourceInput {
+impl  CreateIdentitySourceInput  {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
-    pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_store_id(&self) -> ::std::option::Option<& str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
     /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::Configuration> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::Configuration> {
         self.configuration.as_ref()
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
-    pub fn principal_entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn principal_entity_type(&self) -> ::std::option::Option<& str> {
         self.principal_entity_type.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateIdentitySourceInput {
+impl  ::std::fmt::Debug for CreateIdentitySourceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateIdentitySourceInput");
         formatter.field("client_token", &self.client_token);
@@ -82,8 +82,7 @@ impl CreateIdentitySourceInputBuilder {
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>ConflictException</code> error.</p>
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -100,8 +99,7 @@ impl CreateIdentitySourceInputBuilder {
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_store_id = input;
-        self
+        self.policy_store_id = input; self
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,8 +119,7 @@ impl CreateIdentitySourceInputBuilder {
     /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
     /// </note>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::Configuration>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p><note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
@@ -138,24 +135,26 @@ impl CreateIdentitySourceInputBuilder {
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
     pub fn set_principal_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_entity_type = input;
-        self
+        self.principal_entity_type = input; self
     }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
     pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_entity_type
     }
     /// Consumes the builder and constructs a [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_identity_source::CreateIdentitySourceInput {
-            client_token: self.client_token,
-            policy_store_id: self.policy_store_id,
-            configuration: self.configuration,
-            principal_entity_type: self.principal_entity_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_identity_source::CreateIdentitySourceInput {
+                client_token: self.client_token
+                ,
+                policy_store_id: self.policy_store_id
+                ,
+                configuration: self.configuration
+                ,
+                principal_entity_type: self.principal_entity_type
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateIdentitySourceInputBuilder {
@@ -168,3 +167,4 @@ impl ::std::fmt::Debug for CreateIdentitySourceInputBuilder {
         formatter.finish()
     }
 }
+

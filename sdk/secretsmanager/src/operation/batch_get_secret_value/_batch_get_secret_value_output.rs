@@ -2,38 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetSecretValueOutput {
+pub struct BatchGetSecretValueOutput  {
     /// <p>A list of secret values.</p>
-    pub secret_values: ::std::option::Option<::std::vec::Vec<crate::types::SecretValueEntry>>,
+    pub secret_values: ::std::option::Option<::std::vec::Vec::<crate::types::SecretValueEntry>>,
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of errors Secrets Manager encountered while attempting to retrieve individual secrets.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ApiErrorType>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::ApiErrorType>>,
     _request_id: Option<String>,
 }
-impl BatchGetSecretValueOutput {
+impl  BatchGetSecretValueOutput  {
     /// <p>A list of secret values.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secret_values.is_none()`.
-    pub fn secret_values(&self) -> &[crate::types::SecretValueEntry] {
-        self.secret_values.as_deref().unwrap_or_default()
+    pub fn secret_values(&self) -> & [crate::types::SecretValueEntry] {
+        self.secret_values.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of errors Secrets Manager encountered while attempting to retrieve individual secrets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::ApiErrorType] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::ApiErrorType] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetSecretValueOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetSecretValueOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetSecretValueOutput`](crate::operation::batch_get_secret_value::BatchGetSecretValueOutput).
     pub fn builder() -> crate::operation::batch_get_secret_value::builders::BatchGetSecretValueOutputBuilder {
@@ -45,9 +47,9 @@ impl BatchGetSecretValueOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetSecretValueOutputBuilder {
-    pub(crate) secret_values: ::std::option::Option<::std::vec::Vec<crate::types::SecretValueEntry>>,
+    pub(crate) secret_values: ::std::option::Option<::std::vec::Vec::<crate::types::SecretValueEntry>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ApiErrorType>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::ApiErrorType>>,
     _request_id: Option<String>,
 }
 impl BatchGetSecretValueOutputBuilder {
@@ -58,17 +60,16 @@ impl BatchGetSecretValueOutputBuilder {
     /// <p>A list of secret values.</p>
     pub fn secret_values(mut self, input: crate::types::SecretValueEntry) -> Self {
         let mut v = self.secret_values.unwrap_or_default();
-        v.push(input);
-        self.secret_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.secret_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of secret values.</p>
-    pub fn set_secret_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecretValueEntry>>) -> Self {
-        self.secret_values = input;
-        self
+    pub fn set_secret_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SecretValueEntry>>) -> Self {
+        self.secret_values = input; self
     }
     /// <p>A list of secret values.</p>
-    pub fn get_secret_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecretValueEntry>> {
+    pub fn get_secret_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SecretValueEntry>> {
         &self.secret_values
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
@@ -78,8 +79,7 @@ impl BatchGetSecretValueOutputBuilder {
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Secrets Manager includes this value if there's more output available than what is included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a long list. To get the next results, call <code>BatchGetSecretValue</code> again with this value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,35 +92,38 @@ impl BatchGetSecretValueOutputBuilder {
     /// <p>A list of errors Secrets Manager encountered while attempting to retrieve individual secrets.</p>
     pub fn errors(mut self, input: crate::types::ApiErrorType) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of errors Secrets Manager encountered while attempting to retrieve individual secrets.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApiErrorType>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ApiErrorType>>) -> Self {
+        self.errors = input; self
     }
     /// <p>A list of errors Secrets Manager encountered while attempting to retrieve individual secrets.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiErrorType>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ApiErrorType>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetSecretValueOutput`](crate::operation::batch_get_secret_value::BatchGetSecretValueOutput).
     pub fn build(self) -> crate::operation::batch_get_secret_value::BatchGetSecretValueOutput {
         crate::operation::batch_get_secret_value::BatchGetSecretValueOutput {
-            secret_values: self.secret_values,
-            next_token: self.next_token,
-            errors: self.errors,
+            secret_values: self.secret_values
+            ,
+            next_token: self.next_token
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

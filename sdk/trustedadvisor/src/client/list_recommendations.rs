@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListRecommendations`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`r#type(RecommendationType)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::type) / [`set_type(Option<RecommendationType>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_type):<br>required: **false**<br><p>The type of the Recommendation</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`check_identifier(impl Into<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::check_identifier) / [`set_check_identifier(Option<String>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_check_identifier):<br>required: **false**<br><p>The check identifier of the Recommendation</p><br>
     ///   - [`after_last_updated_at(DateTime)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::after_last_updated_at) / [`set_after_last_updated_at(Option<DateTime>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_after_last_updated_at):<br>required: **false**<br><p>After the last update of the Recommendation</p><br>
     ///   - [`before_last_updated_at(DateTime)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::before_last_updated_at) / [`set_before_last_updated_at(Option<DateTime>)`](crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::set_before_last_updated_at):<br>required: **false**<br><p>Before the last update of the Recommendation</p><br>
-    /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
+                            /// - On success, responds with [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_recommendations::ListRecommendationsOutput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     ///   - [`recommendation_summaries(Vec::<RecommendationSummary>)`](crate::operation::list_recommendations::ListRecommendationsOutput::recommendation_summaries): <p>The list of Recommendations</p>
-    /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
+                            /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::operation::list_recommendations::ListRecommendationsError)
     pub fn list_recommendations(&self) -> crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder {
-        crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_recommendations::builders::ListRecommendationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,11 +3,11 @@
 /// <p>A request to configure the number of replicas in a shard</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicaConfigurationRequest {
+pub struct ReplicaConfigurationRequest  {
     /// <p>The number of replicas to scale up or down to</p>
     pub replica_count: i32,
 }
-impl ReplicaConfigurationRequest {
+impl  ReplicaConfigurationRequest  {
     /// <p>The number of replicas to scale up or down to</p>
     pub fn replica_count(&self) -> i32 {
         self.replica_count
@@ -34,8 +34,7 @@ impl ReplicaConfigurationRequestBuilder {
     }
     /// <p>The number of replicas to scale up or down to</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.replica_count = input;
-        self
+        self.replica_count = input; self
     }
     /// <p>The number of replicas to scale up or down to</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
@@ -44,7 +43,10 @@ impl ReplicaConfigurationRequestBuilder {
     /// Consumes the builder and constructs a [`ReplicaConfigurationRequest`](crate::types::ReplicaConfigurationRequest).
     pub fn build(self) -> crate::types::ReplicaConfigurationRequest {
         crate::types::ReplicaConfigurationRequest {
-            replica_count: self.replica_count.unwrap_or_default(),
+            replica_count: self.replica_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

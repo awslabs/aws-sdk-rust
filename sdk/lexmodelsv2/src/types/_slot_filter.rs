@@ -3,26 +3,25 @@
 /// <p>Filters the response from the <code>ListSlots</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlotFilter {
+pub struct SlotFilter  {
     /// <p>The name of the field to use for filtering.</p>
     pub name: crate::types::SlotFilterName,
     /// <p>The value to use to filter the response.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub operator: crate::types::SlotFilterOperator,
 }
-impl SlotFilter {
+impl  SlotFilter  {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> &crate::types::SlotFilterName {
+    pub fn name(&self) -> & crate::types::SlotFilterName {
         &self.name
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> &crate::types::SlotFilterOperator {
+    pub fn operator(&self) -> & crate::types::SlotFilterOperator {
         &self.operator
     }
 }
@@ -38,7 +37,7 @@ impl SlotFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SlotFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SlotFilterName>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) operator: ::std::option::Option<crate::types::SlotFilterOperator>,
 }
 impl SlotFilterBuilder {
@@ -50,8 +49,7 @@ impl SlotFilterBuilder {
     }
     /// <p>The name of the field to use for filtering.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::SlotFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the field to use for filtering.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::SlotFilterName> {
@@ -64,17 +62,16 @@ impl SlotFilterBuilder {
     /// <p>The value to use to filter the response.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
@@ -85,8 +82,7 @@ impl SlotFilterBuilder {
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SlotFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::SlotFilterOperator> {
@@ -98,25 +94,25 @@ impl SlotFilterBuilder {
     /// - [`values`](crate::types::builders::SlotFilterBuilder::values)
     /// - [`operator`](crate::types::builders::SlotFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::SlotFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlotFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building SlotFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building SlotFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building SlotFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlotFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building SlotFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building SlotFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building SlotFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

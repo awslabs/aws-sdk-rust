@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListStreamKeys`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::set_channel_arn):<br>required: **true**<br><p>Channel ARN used to filter the list.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::set_next_token):<br>required: **false**<br><p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum number of streamKeys to return. Default: 1.</p><br>
-    /// - On success, responds with [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput) with field(s):
+                            /// - On success, responds with [`ListStreamKeysOutput`](crate::operation::list_stream_keys::ListStreamKeysOutput) with field(s):
     ///   - [`stream_keys(Vec::<StreamKeySummary>)`](crate::operation::list_stream_keys::ListStreamKeysOutput::stream_keys): <p>List of stream keys.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_stream_keys::ListStreamKeysOutput::next_token): <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListStreamKeysError>`](crate::operation::list_stream_keys::ListStreamKeysError)
+                            /// - On failure, responds with [`SdkError<ListStreamKeysError>`](crate::operation::list_stream_keys::ListStreamKeysError)
     pub fn list_stream_keys(&self) -> crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder {
-        crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_stream_keys::builders::ListStreamKeysFluentBuilder::new(self.handle.clone())
+                            }
 }
+

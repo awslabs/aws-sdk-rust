@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListMemberAccounts`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p><br>
-    /// - On success, responds with [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput) with field(s):
+                            /// - On success, responds with [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput) with field(s):
     ///   - [`member_accounts(Option<Vec::<String>>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::member_accounts): <p>An array of account IDs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_member_accounts::ListMemberAccountsOutput::next_token): <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::operation::list_member_accounts::ListMemberAccountsError)
+                            /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::operation::list_member_accounts::ListMemberAccountsError)
     pub fn list_member_accounts(&self) -> crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder {
-        crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_member_accounts::builders::ListMemberAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,26 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteConfiguredAudienceModelAssociationInput {
+pub struct DeleteConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier of the configured audience model association that you want to delete.</p>
     pub configured_audience_model_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the membership that contains the audience model association that you want to delete.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
 }
-impl DeleteConfiguredAudienceModelAssociationInput {
+impl  DeleteConfiguredAudienceModelAssociationInput  {
     /// <p>A unique identifier of the configured audience model association that you want to delete.</p>
-    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn configured_audience_model_association_identifier(&self) -> ::std::option::Option<& str> {
         self.configured_audience_model_association_identifier.as_deref()
     }
     /// <p>A unique identifier of the membership that contains the audience model association that you want to delete.</p>
-    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn membership_identifier(&self) -> ::std::option::Option<& str> {
         self.membership_identifier.as_deref()
     }
 }
 impl DeleteConfiguredAudienceModelAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredAudienceModelAssociationInput`](crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationInput).
-    pub fn builder() -> crate::operation::delete_configured_audience_model_association::builders::DeleteConfiguredAudienceModelAssociationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_configured_audience_model_association::builders::DeleteConfiguredAudienceModelAssociationInputBuilder {
         crate::operation::delete_configured_audience_model_association::builders::DeleteConfiguredAudienceModelAssociationInputBuilder::default()
     }
 }
@@ -42,8 +41,7 @@ impl DeleteConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier of the configured audience model association that you want to delete.</p>
     pub fn set_configured_audience_model_association_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.configured_audience_model_association_identifier = input;
-        self
+        self.configured_audience_model_association_identifier = input; self
     }
     /// <p>A unique identifier of the configured audience model association that you want to delete.</p>
     pub fn get_configured_audience_model_association_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,25 +55,22 @@ impl DeleteConfiguredAudienceModelAssociationInputBuilder {
     }
     /// <p>A unique identifier of the membership that contains the audience model association that you want to delete.</p>
     pub fn set_membership_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_identifier = input;
-        self
+        self.membership_identifier = input; self
     }
     /// <p>A unique identifier of the membership that contains the audience model association that you want to delete.</p>
     pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredAudienceModelAssociationInput`](crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationInput {
-                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier,
-                membership_identifier: self.membership_identifier,
-            },
+                configured_audience_model_association_identifier: self.configured_audience_model_association_identifier
+                ,
+                membership_identifier: self.membership_identifier
+                ,
+            }
         )
     }
 }
+

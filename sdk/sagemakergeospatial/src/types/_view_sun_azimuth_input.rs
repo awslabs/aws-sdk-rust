@@ -3,13 +3,13 @@
 /// <p>The input structure for specifying ViewSunAzimuth property filter. ViewSunAzimuth refers to the Sun azimuth angle. From the scene center point on the ground, this is the angle between truth north and the sun. Measured clockwise in degrees (0-360).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewSunAzimuthInput {
+pub struct ViewSunAzimuthInput  {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub lower_bound: f32,
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub upper_bound: f32,
 }
-impl ViewSunAzimuthInput {
+impl  ViewSunAzimuthInput  {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub fn lower_bound(&self) -> f32 {
         self.lower_bound
@@ -42,8 +42,7 @@ impl ViewSunAzimuthInputBuilder {
     }
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
@@ -57,8 +56,7 @@ impl ViewSunAzimuthInputBuilder {
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
@@ -69,19 +67,20 @@ impl ViewSunAzimuthInputBuilder {
     /// - [`lower_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::upper_bound)
     pub fn build(self) -> ::std::result::Result<crate::types::ViewSunAzimuthInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ViewSunAzimuthInput {
-            lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lower_bound",
-                    "lower_bound was not specified but it is required when building ViewSunAzimuthInput",
-                )
-            })?,
-            upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "upper_bound",
-                    "upper_bound was not specified but it is required when building ViewSunAzimuthInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ViewSunAzimuthInput {
+                lower_bound: self.lower_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lower_bound", "lower_bound was not specified but it is required when building ViewSunAzimuthInput")
+                    )?
+                ,
+                upper_bound: self.upper_bound
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("upper_bound", "upper_bound was not specified but it is required when building ViewSunAzimuthInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

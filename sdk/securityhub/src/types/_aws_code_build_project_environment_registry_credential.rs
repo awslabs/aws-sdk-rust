@@ -3,7 +3,7 @@
 /// <p>The credentials for access to a private registry.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsCodeBuildProjectEnvironmentRegistryCredential {
+pub struct AwsCodeBuildProjectEnvironmentRegistryCredential  {
     /// <p>The ARN or name of credentials created using Secrets Manager.</p><note>
     /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
@@ -12,16 +12,16 @@ pub struct AwsCodeBuildProjectEnvironmentRegistryCredential {
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
     pub credential_provider: ::std::option::Option<::std::string::String>,
 }
-impl AwsCodeBuildProjectEnvironmentRegistryCredential {
+impl  AwsCodeBuildProjectEnvironmentRegistryCredential  {
     /// <p>The ARN or name of credentials created using Secrets Manager.</p><note>
     /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
-    pub fn credential(&self) -> ::std::option::Option<&str> {
+    pub fn credential(&self) -> ::std::option::Option<& str> {
         self.credential.as_deref()
     }
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
-    pub fn credential_provider(&self) -> ::std::option::Option<&str> {
+    pub fn credential_provider(&self) -> ::std::option::Option<& str> {
         self.credential_provider.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
     /// </note>
     pub fn set_credential(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credential = input;
-        self
+        self.credential = input; self
     }
     /// <p>The ARN or name of credentials created using Secrets Manager.</p><note>
     /// <p>The credential can use the name of the credentials only if they exist in your current Amazon Web Services Region.</p>
@@ -69,8 +68,7 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
     pub fn set_credential_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credential_provider = input;
-        self
+        self.credential_provider = input; self
     }
     /// <p>The service that created the credentials to access a private Docker registry.</p>
     /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
@@ -80,8 +78,11 @@ impl AwsCodeBuildProjectEnvironmentRegistryCredentialBuilder {
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential {
         crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential {
-            credential: self.credential,
-            credential_provider: self.credential_provider,
+            credential: self.credential
+            ,
+            credential_provider: self.credential_provider
+            ,
         }
     }
 }
+

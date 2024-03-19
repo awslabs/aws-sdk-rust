@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFeatureGroupInput {
+pub struct CreateFeatureGroupInput  {
     /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     /// <p>The name:</p>
     /// <ul>
@@ -36,7 +36,7 @@ pub struct CreateFeatureGroupInput {
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p><code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code></p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub feature_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>,
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
@@ -62,9 +62,9 @@ pub struct CreateFeatureGroupInput {
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateFeatureGroupInput {
+impl  CreateFeatureGroupInput  {
     /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     /// <p>The name:</p>
     /// <ul>
@@ -73,7 +73,7 @@ impl CreateFeatureGroupInput {
     /// <li>
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
-    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
@@ -85,7 +85,7 @@ impl CreateFeatureGroupInput {
     /// <li>
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
-    pub fn record_identifier_feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn record_identifier_feature_name(&self) -> ::std::option::Option<& str> {
         self.record_identifier_feature_name.as_deref()
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
@@ -97,22 +97,23 @@ impl CreateFeatureGroupInput {
     /// <li>
     /// <p><code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p></li>
     /// </ul>
-    pub fn event_time_feature_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_time_feature_name(&self) -> ::std::option::Option<& str> {
         self.event_time_feature_name.as_deref()
     }
     /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>.</p>
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p><code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code></p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_definitions.is_none()`.
-    pub fn feature_definitions(&self) -> &[crate::types::FeatureDefinition] {
-        self.feature_definitions.as_deref().unwrap_or_default()
+    pub fn feature_definitions(&self) -> & [crate::types::FeatureDefinition] {
+        self.feature_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
-    pub fn online_store_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreConfig> {
+    pub fn online_store_config(&self) -> ::std::option::Option<& crate::types::OnlineStoreConfig> {
         self.online_store_config.as_ref()
     }
     /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
@@ -127,27 +128,28 @@ impl CreateFeatureGroupInput {
     /// <p>Format for the offline store table. Supported formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p></li>
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
-    pub fn offline_store_config(&self) -> ::std::option::Option<&crate::types::OfflineStoreConfig> {
+    pub fn offline_store_config(&self) -> ::std::option::Option<& crate::types::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
     }
     /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
-    pub fn throughput_config(&self) -> ::std::option::Option<&crate::types::ThroughputConfig> {
+    pub fn throughput_config(&self) -> ::std::option::Option<& crate::types::ThroughputConfig> {
         self.throughput_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateFeatureGroupInput {
@@ -164,13 +166,13 @@ pub struct CreateFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) record_identifier_feature_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_time_feature_name: ::std::option::Option<::std::string::String>,
-    pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>,
     pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     pub(crate) offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     pub(crate) throughput_config: ::std::option::Option<crate::types::ThroughputConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateFeatureGroupInputBuilder {
     /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
@@ -195,8 +197,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.feature_group_name = input;
-        self
+        self.feature_group_name = input; self
     }
     /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
     /// <p>The name:</p>
@@ -233,8 +234,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn set_record_identifier_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.record_identifier_feature_name = input;
-        self
+        self.record_identifier_feature_name = input; self
     }
     /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
     /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>
@@ -272,8 +272,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p><code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p></li>
     /// </ul>
     pub fn set_event_time_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_time_feature_name = input;
-        self
+        self.event_time_feature_name = input; self
     }
     /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
     /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
@@ -297,23 +296,22 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
     pub fn feature_definitions(mut self, input: crate::types::FeatureDefinition) -> Self {
         let mut v = self.feature_definitions.unwrap_or_default();
-        v.push(input);
-        self.feature_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.feature_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>.</p>
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p><code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code></p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
-        self.feature_definitions = input;
-        self
+    pub fn set_feature_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>>) -> Self {
+        self.feature_definitions = input; self
     }
     /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>.</p>
     /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
     /// <p><code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code></p>
     /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
-    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+    pub fn get_feature_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureDefinition>> {
         &self.feature_definitions
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
@@ -327,8 +325,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn set_online_store_config(mut self, input: ::std::option::Option<crate::types::OnlineStoreConfig>) -> Self {
-        self.online_store_config = input;
-        self
+        self.online_store_config = input; self
     }
     /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.</p>
     /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
@@ -365,8 +362,7 @@ impl CreateFeatureGroupInputBuilder {
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
     pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
-        self.offline_store_config = input;
-        self
+        self.offline_store_config = input; self
     }
     /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
     /// <ul>
@@ -392,8 +388,7 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
     pub fn set_throughput_config(mut self, input: ::std::option::Option<crate::types::ThroughputConfig>) -> Self {
-        self.throughput_config = input;
-        self
+        self.throughput_config = input; self
     }
     /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
     /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
@@ -407,8 +402,7 @@ impl CreateFeatureGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -421,8 +415,7 @@ impl CreateFeatureGroupInputBuilder {
     }
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -435,35 +428,44 @@ impl CreateFeatureGroupInputBuilder {
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFeatureGroupInput`](crate::operation::create_feature_group::CreateFeatureGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_feature_group::CreateFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_feature_group::CreateFeatureGroupInput {
-            feature_group_name: self.feature_group_name,
-            record_identifier_feature_name: self.record_identifier_feature_name,
-            event_time_feature_name: self.event_time_feature_name,
-            feature_definitions: self.feature_definitions,
-            online_store_config: self.online_store_config,
-            offline_store_config: self.offline_store_config,
-            throughput_config: self.throughput_config,
-            role_arn: self.role_arn,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_feature_group::CreateFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_feature_group::CreateFeatureGroupInput {
+                feature_group_name: self.feature_group_name
+                ,
+                record_identifier_feature_name: self.record_identifier_feature_name
+                ,
+                event_time_feature_name: self.event_time_feature_name
+                ,
+                feature_definitions: self.feature_definitions
+                ,
+                online_store_config: self.online_store_config
+                ,
+                offline_store_config: self.offline_store_config
+                ,
+                throughput_config: self.throughput_config
+                ,
+                role_arn: self.role_arn
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

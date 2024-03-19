@@ -55,11 +55,11 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Expression {
+pub struct Expression  {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub or: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
+    pub or: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>,
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub and: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
+    pub and: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>,
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
     pub not: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>,
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
@@ -69,33 +69,35 @@ pub struct Expression {
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
 }
-impl Expression {
+impl  Expression  {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.or.is_none()`.
-    pub fn or(&self) -> &[crate::types::Expression] {
-        self.or.as_deref().unwrap_or_default()
+    pub fn or(&self) -> & [crate::types::Expression] {
+        self.or.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.and.is_none()`.
-    pub fn and(&self) -> &[crate::types::Expression] {
-        self.and.as_deref().unwrap_or_default()
+    pub fn and(&self) -> & [crate::types::Expression] {
+        self.and.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
-    pub fn not(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn not(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.not.as_deref()
     }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
-    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::DimensionValues> {
+    pub fn dimensions(&self) -> ::std::option::Option<& crate::types::DimensionValues> {
         self.dimensions.as_ref()
     }
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
-    pub fn tags(&self) -> ::std::option::Option<&crate::types::TagValues> {
+    pub fn tags(&self) -> ::std::option::Option<& crate::types::TagValues> {
         self.tags.as_ref()
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
-    pub fn cost_categories(&self) -> ::std::option::Option<&crate::types::CostCategoryValues> {
+    pub fn cost_categories(&self) -> ::std::option::Option<& crate::types::CostCategoryValues> {
         self.cost_categories.as_ref()
     }
 }
@@ -110,8 +112,8 @@ impl Expression {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExpressionBuilder {
-    pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
-    pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>,
+    pub(crate) or: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>,
+    pub(crate) and: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>,
     pub(crate) not: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>,
     pub(crate) dimensions: ::std::option::Option<crate::types::DimensionValues>,
     pub(crate) tags: ::std::option::Option<crate::types::TagValues>,
@@ -125,17 +127,16 @@ impl ExpressionBuilder {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
     pub fn or(mut self, input: crate::types::Expression) -> Self {
         let mut v = self.or.unwrap_or_default();
-        v.push(input);
-        self.or = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.or = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub fn set_or(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>) -> Self {
-        self.or = input;
-        self
+    pub fn set_or(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>) -> Self {
+        self.or = input; self
     }
     /// <p>Return results that match either <code>Dimension</code> object.</p>
-    pub fn get_or(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Expression>> {
+    pub fn get_or(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Expression>> {
         &self.or
     }
     /// Appends an item to `and`.
@@ -145,17 +146,16 @@ impl ExpressionBuilder {
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
     pub fn and(mut self, input: crate::types::Expression) -> Self {
         let mut v = self.and.unwrap_or_default();
-        v.push(input);
-        self.and = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.and = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Expression>>) -> Self {
-        self.and = input;
-        self
+    pub fn set_and(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Expression>>) -> Self {
+        self.and = input; self
     }
     /// <p>Return results that match both <code>Dimension</code> objects.</p>
-    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Expression>> {
+    pub fn get_and(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Expression>> {
         &self.and
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
@@ -165,8 +165,7 @@ impl ExpressionBuilder {
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
     pub fn set_not(mut self, input: ::std::option::Option<::std::boxed::Box<crate::types::Expression>>) -> Self {
-        self.not = input;
-        self
+        self.not = input; self
     }
     /// <p>Return results that don't match a <code>Dimension</code> object.</p>
     pub fn get_not(&self) -> &::std::option::Option<::std::boxed::Box<crate::types::Expression>> {
@@ -179,8 +178,7 @@ impl ExpressionBuilder {
     }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
     pub fn set_dimensions(mut self, input: ::std::option::Option<crate::types::DimensionValues>) -> Self {
-        self.dimensions = input;
-        self
+        self.dimensions = input; self
     }
     /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
     pub fn get_dimensions(&self) -> &::std::option::Option<crate::types::DimensionValues> {
@@ -193,8 +191,7 @@ impl ExpressionBuilder {
     }
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::TagValues>) -> Self {
-        self.tags = input;
-        self
+        self.tags = input; self
     }
     /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<crate::types::TagValues> {
@@ -207,8 +204,7 @@ impl ExpressionBuilder {
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub fn set_cost_categories(mut self, input: ::std::option::Option<crate::types::CostCategoryValues>) -> Self {
-        self.cost_categories = input;
-        self
+        self.cost_categories = input; self
     }
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub fn get_cost_categories(&self) -> &::std::option::Option<crate::types::CostCategoryValues> {
@@ -217,12 +213,19 @@ impl ExpressionBuilder {
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {
         crate::types::Expression {
-            or: self.or,
-            and: self.and,
-            not: self.not,
-            dimensions: self.dimensions,
-            tags: self.tags,
-            cost_categories: self.cost_categories,
+            or: self.or
+            ,
+            and: self.and
+            ,
+            not: self.not
+            ,
+            dimensions: self.dimensions
+            ,
+            tags: self.tags
+            ,
+            cost_categories: self.cost_categories
+            ,
         }
     }
 }
+

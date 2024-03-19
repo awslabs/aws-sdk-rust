@@ -5,23 +5,20 @@ pub use crate::operation::run_job_flow::_run_job_flow_input::RunJobFlowInputBuil
 
 impl RunJobFlowInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::run_job_flow::RunJobFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_job_flow::RunJobFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.run_job_flow();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::run_job_flow::RunJobFlowOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::run_job_flow::RunJobFlowError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.run_job_flow();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `RunJobFlow`.
-///
+/// 
 /// <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <code>JobFlowInstancesConfig</code> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state rather than shutting down after the steps have completed.</p>
 /// <p>For additional protection, you can set the <code>JobFlowInstancesConfig</code> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p>
 /// <p>A maximum of 256 steps are allowed in each job flow.</p>
@@ -32,33 +29,32 @@ impl RunJobFlowInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunJobFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::run_job_flow::builders::RunJobFlowInputBuilder,
+                    inner: crate::operation::run_job_flow::builders::RunJobFlowInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::run_job_flow::RunJobFlowOutput,
-        crate::operation::run_job_flow::RunJobFlowError,
-    > for RunJobFlowFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::run_job_flow::RunJobFlowOutput,
-            crate::operation::run_job_flow::RunJobFlowError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::run_job_flow::RunJobFlowOutput,
+                    crate::operation::run_job_flow::RunJobFlowError,
+                > for RunJobFlowFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::run_job_flow::RunJobFlowOutput,
+                        crate::operation::run_job_flow::RunJobFlowError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl RunJobFlowFluentBuilder {
     /// Creates a new `RunJobFlow`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -67,53 +63,44 @@ impl RunJobFlowFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::run_job_flow::RunJobFlowOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::run_job_flow::RunJobFlowError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::run_job_flow::RunJobFlow::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::run_job_flow::RunJobFlow::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::run_job_flow::RunJobFlowOutput,
-        crate::operation::run_job_flow::RunJobFlowError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::run_job_flow::RunJobFlowOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::run_job_flow::RunJobFlowError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::run_job_flow::RunJobFlow::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::run_job_flow::RunJobFlow::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::run_job_flow::RunJobFlowOutput, crate::operation::run_job_flow::RunJobFlowError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the job flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -222,12 +209,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>A list of steps to run.</p>
-    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>) -> Self {
+    pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StepConfig>>) -> Self {
         self.inner = self.inner.set_steps(input);
         self
     }
     /// <p>A list of steps to run.</p>
-    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StepConfig>> {
         self.inner.get_steps()
     }
     /// Appends an item to `BootstrapActions`.
@@ -240,12 +227,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>>) -> Self {
+    pub fn set_bootstrap_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BootstrapActionConfig>>) -> Self {
         self.inner = self.inner.set_bootstrap_actions(input);
         self
     }
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>> {
+    pub fn get_bootstrap_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BootstrapActionConfig>> {
         self.inner.get_bootstrap_actions()
     }
     /// Appends an item to `SupportedProducts`.
@@ -276,7 +263,7 @@ impl RunJobFlowFluentBuilder {
     /// <li>
     /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
     /// </ul>
-    pub fn set_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_products(input);
         self
     }
@@ -290,7 +277,7 @@ impl RunJobFlowFluentBuilder {
     /// <li>
     /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p></li>
     /// </ul>
-    pub fn get_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_products(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_supported_products()
     }
     /// Appends an item to `NewSupportedProducts`.
@@ -345,7 +332,7 @@ impl RunJobFlowFluentBuilder {
     /// <li>
     /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
     /// </ul>
-    pub fn set_new_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>>) -> Self {
+    pub fn set_new_supported_products(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SupportedProductConfig>>) -> Self {
         self.inner = self.inner.set_new_supported_products(input);
         self
     }
@@ -371,7 +358,7 @@ impl RunJobFlowFluentBuilder {
     /// <li>
     /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p></li>
     /// </ul>
-    pub fn get_new_supported_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>> {
+    pub fn get_new_supported_products(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SupportedProductConfig>> {
         self.inner.get_new_supported_products()
     }
     /// Appends an item to `Applications`.
@@ -384,12 +371,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
-    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>) -> Self {
+    pub fn set_applications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Application>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
     /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
-    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+    pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Application>> {
         self.inner.get_applications()
     }
     /// Appends an item to `Configurations`.
@@ -402,12 +389,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the Amazon EMR cluster that you are creating.</p>
-    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Configuration>>) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
     }
     /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the Amazon EMR cluster that you are creating.</p>
-    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Configuration>> {
         self.inner.get_configurations()
     }
     /// <important>
@@ -474,12 +461,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>The name of a security configuration to apply to the cluster.</p>
@@ -621,12 +608,12 @@ impl RunJobFlowFluentBuilder {
         self
     }
     /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
-    pub fn set_placement_group_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>>) -> Self {
+    pub fn set_placement_group_configs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupConfig>>) -> Self {
         self.inner = self.inner.set_placement_group_configs(input);
         self
     }
     /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
-    pub fn get_placement_group_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>> {
+    pub fn get_placement_group_configs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PlacementGroupConfig>> {
         self.inner.get_placement_group_configs()
     }
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
@@ -686,3 +673,4 @@ impl RunJobFlowFluentBuilder {
         self.inner.get_ebs_root_volume_throughput()
     }
 }
+

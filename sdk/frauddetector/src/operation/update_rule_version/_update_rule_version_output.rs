@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateRuleVersionOutput {
+pub struct UpdateRuleVersionOutput  {
     /// <p>The new rule version that was created.</p>
     pub rule: ::std::option::Option<crate::types::Rule>,
     _request_id: Option<String>,
 }
-impl UpdateRuleVersionOutput {
+impl  UpdateRuleVersionOutput  {
     /// <p>The new rule version that was created.</p>
-    pub fn rule(&self) -> ::std::option::Option<&crate::types::Rule> {
+    pub fn rule(&self) -> ::std::option::Option<& crate::types::Rule> {
         self.rule.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateRuleVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateRuleVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput).
     pub fn builder() -> crate::operation::update_rule_version::builders::UpdateRuleVersionOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateRuleVersionOutputBuilder {
     }
     /// <p>The new rule version that was created.</p>
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::Rule>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The new rule version that was created.</p>
     pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
         &self.rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateRuleVersionOutput`](crate::operation::update_rule_version::UpdateRuleVersionOutput).
     pub fn build(self) -> crate::operation::update_rule_version::UpdateRuleVersionOutput {
         crate::operation::update_rule_version::UpdateRuleVersionOutput {
-            rule: self.rule,
+            rule: self.rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

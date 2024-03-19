@@ -3,7 +3,7 @@
 /// <p>The container for the service that will create the S3 manifest.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3JobManifestGenerator {
+pub struct S3JobManifestGenerator  {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The source bucket used by the ManifestGenerator.</p><note>
@@ -17,24 +17,23 @@ pub struct S3JobManifestGenerator {
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
     pub enable_manifest_output: bool,
 }
-impl S3JobManifestGenerator {
+impl  S3JobManifestGenerator  {
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>The source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
-    pub fn source_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.source_bucket.deref()
+    pub fn source_bucket(&self) -> & str {
+        use std::ops::Deref; self.source_bucket.deref()
     }
     /// <p>Specifies the location the generated manifest will be written to. Manifests can't be written to directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
-    pub fn manifest_output_location(&self) -> ::std::option::Option<&crate::types::S3ManifestOutputLocation> {
+    pub fn manifest_output_location(&self) -> ::std::option::Option<& crate::types::S3ManifestOutputLocation> {
         self.manifest_output_location.as_ref()
     }
     /// <p>Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::JobManifestGeneratorFilter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::JobManifestGeneratorFilter> {
         self.filter.as_ref()
     }
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
@@ -67,8 +66,7 @@ impl S3JobManifestGeneratorBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the bucket the generated manifest is written to. If provided the generated manifest bucket's owner Amazon Web Services account ID must match this value, else the job fails.</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl S3JobManifestGeneratorBuilder {
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
     /// </note>
     pub fn set_source_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_bucket = input;
-        self
+        self.source_bucket = input; self
     }
     /// <p>The source bucket used by the ManifestGenerator.</p><note>
     /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the source buckets used by <code>S3JobManifestGenerator</code> to generate the job manifest.</p>
@@ -102,8 +99,7 @@ impl S3JobManifestGeneratorBuilder {
     }
     /// <p>Specifies the location the generated manifest will be written to. Manifests can't be written to directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
     pub fn set_manifest_output_location(mut self, input: ::std::option::Option<crate::types::S3ManifestOutputLocation>) -> Self {
-        self.manifest_output_location = input;
-        self
+        self.manifest_output_location = input; self
     }
     /// <p>Specifies the location the generated manifest will be written to. Manifests can't be written to directory buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory buckets</a>.</p>
     pub fn get_manifest_output_location(&self) -> &::std::option::Option<crate::types::S3ManifestOutputLocation> {
@@ -116,8 +112,7 @@ impl S3JobManifestGeneratorBuilder {
     }
     /// <p>Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::JobManifestGeneratorFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Specifies rules the S3JobManifestGenerator should use to decide whether an object in the source bucket should or should not be included in the generated job manifest.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::JobManifestGeneratorFilter> {
@@ -131,8 +126,7 @@ impl S3JobManifestGeneratorBuilder {
     }
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
     pub fn set_enable_manifest_output(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_manifest_output = input;
-        self
+        self.enable_manifest_output = input; self
     }
     /// <p>Determines whether or not to write the job's generated manifest to a bucket.</p>
     pub fn get_enable_manifest_output(&self) -> &::std::option::Option<bool> {
@@ -142,17 +136,24 @@ impl S3JobManifestGeneratorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_bucket`](crate::types::builders::S3JobManifestGeneratorBuilder::source_bucket)
     pub fn build(self) -> ::std::result::Result<crate::types::S3JobManifestGenerator, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3JobManifestGenerator {
-            expected_bucket_owner: self.expected_bucket_owner,
-            source_bucket: self.source_bucket.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_bucket",
-                    "source_bucket was not specified but it is required when building S3JobManifestGenerator",
-                )
-            })?,
-            manifest_output_location: self.manifest_output_location,
-            filter: self.filter,
-            enable_manifest_output: self.enable_manifest_output.unwrap_or_default(),
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3JobManifestGenerator {
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+                source_bucket: self.source_bucket
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_bucket", "source_bucket was not specified but it is required when building S3JobManifestGenerator")
+                    )?
+                ,
+                manifest_output_location: self.manifest_output_location
+                ,
+                filter: self.filter
+                ,
+                enable_manifest_output: self.enable_manifest_output
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

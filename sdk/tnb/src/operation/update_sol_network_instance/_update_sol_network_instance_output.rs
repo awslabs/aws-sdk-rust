@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateSolNetworkInstanceOutput {
+pub struct UpdateSolNetworkInstanceOutput  {
     /// <p>The identifier of the network operation.</p>
     pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl UpdateSolNetworkInstanceOutput {
+impl  UpdateSolNetworkInstanceOutput  {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<&str> {
+    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<& str> {
         self.ns_lcm_op_occ_id.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateSolNetworkInstanceOutput {
+impl  ::std::fmt::Debug for UpdateSolNetworkInstanceOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSolNetworkInstanceOutput");
         formatter.field("ns_lcm_op_occ_id", &self.ns_lcm_op_occ_id);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for UpdateSolNetworkInstanceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateSolNetworkInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateSolNetworkInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSolNetworkInstanceOutput`](crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput).
     pub fn builder() -> crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceOutputBuilder {
@@ -45,7 +45,7 @@ impl UpdateSolNetworkInstanceOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateSolNetworkInstanceOutputBuilder {
     pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateSolNetworkInstanceOutputBuilder {
@@ -56,8 +56,7 @@ impl UpdateSolNetworkInstanceOutputBuilder {
     }
     /// <p>The identifier of the network operation.</p>
     pub fn set_ns_lcm_op_occ_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ns_lcm_op_occ_id = input;
-        self
+        self.ns_lcm_op_occ_id = input; self
     }
     /// <p>The identifier of the network operation.</p>
     pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,33 +69,34 @@ impl UpdateSolNetworkInstanceOutputBuilder {
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateSolNetworkInstanceOutput`](crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput).
     pub fn build(self) -> crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput {
         crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput {
-            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id,
-            tags: self.tags,
+            ns_lcm_op_occ_id: self.ns_lcm_op_occ_id
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for UpdateSolNetworkInstanceOutputBuilder {
         formatter.finish()
     }
 }
+

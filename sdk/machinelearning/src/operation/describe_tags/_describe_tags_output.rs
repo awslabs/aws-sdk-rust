@@ -3,36 +3,37 @@
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>The ID of the tagged ML object.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the tagged ML object.</p>
     pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     /// <p>A list of tags associated with the ML object.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
-impl DescribeTagsOutput {
+impl  DescribeTagsOutput  {
     /// <p>The ID of the tagged ML object.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A list of tags associated with the ML object.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn builder() -> crate::operation::describe_tags::builders::DescribeTagsOutputBuilder {
@@ -46,7 +47,7 @@ impl DescribeTagsOutput {
 pub struct DescribeTagsOutputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutputBuilder {
@@ -57,8 +58,7 @@ impl DescribeTagsOutputBuilder {
     }
     /// <p>The ID of the tagged ML object.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the tagged ML object.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl DescribeTagsOutputBuilder {
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TaggableResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
@@ -85,35 +84,38 @@ impl DescribeTagsOutputBuilder {
     /// <p>A list of tags associated with the ML object.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags associated with the ML object.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags associated with the ML object.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn build(self) -> crate::operation::describe_tags::DescribeTagsOutput {
         crate::operation::describe_tags::DescribeTagsOutput {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            tags: self.tags,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

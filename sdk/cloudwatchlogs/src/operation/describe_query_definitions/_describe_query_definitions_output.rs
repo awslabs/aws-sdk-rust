@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeQueryDefinitionsOutput {
+pub struct DescribeQueryDefinitionsOutput  {
     /// <p>The list of query definitions that match your request.</p>
-    pub query_definitions: ::std::option::Option<::std::vec::Vec<crate::types::QueryDefinition>>,
+    pub query_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::QueryDefinition>>,
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeQueryDefinitionsOutput {
+impl  DescribeQueryDefinitionsOutput  {
     /// <p>The list of query definitions that match your request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_definitions.is_none()`.
-    pub fn query_definitions(&self) -> &[crate::types::QueryDefinition] {
-        self.query_definitions.as_deref().unwrap_or_default()
+    pub fn query_definitions(&self) -> & [crate::types::QueryDefinition] {
+        self.query_definitions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeQueryDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeQueryDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQueryDefinitionsOutput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput).
     pub fn builder() -> crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeQueryDefinitionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsOutputBuilder {
-    pub(crate) query_definitions: ::std::option::Option<::std::vec::Vec<crate::types::QueryDefinition>>,
+    pub(crate) query_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::QueryDefinition>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeQueryDefinitionsOutputBuilder {
     /// <p>The list of query definitions that match your request.</p>
     pub fn query_definitions(mut self, input: crate::types::QueryDefinition) -> Self {
         let mut v = self.query_definitions.unwrap_or_default();
-        v.push(input);
-        self.query_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.query_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of query definitions that match your request.</p>
-    pub fn set_query_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryDefinition>>) -> Self {
-        self.query_definitions = input;
-        self
+    pub fn set_query_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QueryDefinition>>) -> Self {
+        self.query_definitions = input; self
     }
     /// <p>The list of query definitions that match your request.</p>
-    pub fn get_query_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryDefinition>> {
+    pub fn get_query_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QueryDefinition>> {
         &self.query_definitions
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -69,28 +69,30 @@ impl DescribeQueryDefinitionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeQueryDefinitionsOutput`](crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput).
     pub fn build(self) -> crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput {
         crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput {
-            query_definitions: self.query_definitions,
-            next_token: self.next_token,
+            query_definitions: self.query_definitions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

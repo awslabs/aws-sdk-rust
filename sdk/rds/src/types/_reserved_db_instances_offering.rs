@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstancesOfferings</code> action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReservedDbInstancesOffering {
+pub struct ReservedDbInstancesOffering  {
     /// <p>The offering identifier.</p>
     pub reserved_db_instances_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance class for the reserved DB instance.</p>
@@ -23,15 +23,15 @@ pub struct ReservedDbInstancesOffering {
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
 }
-impl ReservedDbInstancesOffering {
+impl  ReservedDbInstancesOffering  {
     /// <p>The offering identifier.</p>
-    pub fn reserved_db_instances_offering_id(&self) -> ::std::option::Option<&str> {
+    pub fn reserved_db_instances_offering_id(&self) -> ::std::option::Option<& str> {
         self.reserved_db_instances_offering_id.as_deref()
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
-    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<& str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The duration of the offering in seconds.</p>
@@ -47,15 +47,15 @@ impl ReservedDbInstancesOffering {
         self.usage_price
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
-    pub fn currency_code(&self) -> ::std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The database engine used by the offering.</p>
-    pub fn product_description(&self) -> ::std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<& str> {
         self.product_description.as_deref()
     }
     /// <p>The offering type.</p>
-    pub fn offering_type(&self) -> ::std::option::Option<&str> {
+    pub fn offering_type(&self) -> ::std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
@@ -63,10 +63,11 @@ impl ReservedDbInstancesOffering {
         self.multi_az
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recurring_charges.is_none()`.
-    pub fn recurring_charges(&self) -> &[crate::types::RecurringCharge] {
-        self.recurring_charges.as_deref().unwrap_or_default()
+    pub fn recurring_charges(&self) -> & [crate::types::RecurringCharge] {
+        self.recurring_charges.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ReservedDbInstancesOffering {
@@ -89,7 +90,7 @@ pub struct ReservedDbInstancesOfferingBuilder {
     pub(crate) product_description: ::std::option::Option<::std::string::String>,
     pub(crate) offering_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
-    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>,
+    pub(crate) recurring_charges: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>,
 }
 impl ReservedDbInstancesOfferingBuilder {
     /// <p>The offering identifier.</p>
@@ -99,8 +100,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The offering identifier.</p>
     pub fn set_reserved_db_instances_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reserved_db_instances_offering_id = input;
-        self
+        self.reserved_db_instances_offering_id = input; self
     }
     /// <p>The offering identifier.</p>
     pub fn get_reserved_db_instances_offering_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_class = input;
-        self
+        self.db_instance_class = input; self
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The duration of the offering in seconds.</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The duration of the offering in seconds.</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -141,8 +139,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The fixed price charged for this offering.</p>
     pub fn set_fixed_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
     }
     /// <p>The fixed price charged for this offering.</p>
     pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
@@ -155,8 +152,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The hourly price charged for this offering.</p>
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.usage_price = input;
-        self
+        self.usage_price = input; self
     }
     /// <p>The hourly price charged for this offering.</p>
     pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
@@ -169,8 +165,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The currency code for the reserved DB instance offering.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +178,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The database engine used by the offering.</p>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_description = input;
-        self
+        self.product_description = input; self
     }
     /// <p>The database engine used by the offering.</p>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,8 +191,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>The offering type.</p>
     pub fn set_offering_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The offering type.</p>
     pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -211,8 +204,7 @@ impl ReservedDbInstancesOfferingBuilder {
     }
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.multi_az = input;
-        self
+        self.multi_az = input; self
     }
     /// <p>Indicates whether the offering applies to Multi-AZ deployments.</p>
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
@@ -225,32 +217,42 @@ impl ReservedDbInstancesOfferingBuilder {
     /// <p>The recurring price charged to run this reserved DB instance.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-        v.push(input);
-        self.recurring_charges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.recurring_charges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
-        self.recurring_charges = input;
-        self
+    pub fn set_recurring_charges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>>) -> Self {
+        self.recurring_charges = input; self
     }
     /// <p>The recurring price charged to run this reserved DB instance.</p>
-    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+    pub fn get_recurring_charges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RecurringCharge>> {
         &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedDbInstancesOffering`](crate::types::ReservedDbInstancesOffering).
     pub fn build(self) -> crate::types::ReservedDbInstancesOffering {
         crate::types::ReservedDbInstancesOffering {
-            reserved_db_instances_offering_id: self.reserved_db_instances_offering_id,
-            db_instance_class: self.db_instance_class,
-            duration: self.duration,
-            fixed_price: self.fixed_price,
-            usage_price: self.usage_price,
-            currency_code: self.currency_code,
-            product_description: self.product_description,
-            offering_type: self.offering_type,
-            multi_az: self.multi_az,
-            recurring_charges: self.recurring_charges,
+            reserved_db_instances_offering_id: self.reserved_db_instances_offering_id
+            ,
+            db_instance_class: self.db_instance_class
+            ,
+            duration: self.duration
+            ,
+            fixed_price: self.fixed_price
+            ,
+            usage_price: self.usage_price
+            ,
+            currency_code: self.currency_code
+            ,
+            product_description: self.product_description
+            ,
+            offering_type: self.offering_type
+            ,
+            multi_az: self.multi_az
+            ,
+            recurring_charges: self.recurring_charges
+            ,
         }
     }
 }
+

@@ -3,16 +3,17 @@
 /// <p>A structure that contains information about the users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SnapshotUserConfigurationRedacted {
+pub struct SnapshotUserConfigurationRedacted  {
     /// <p>An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
-    pub anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>>,
+    pub anonymous_users: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUserRedacted>>,
 }
-impl SnapshotUserConfigurationRedacted {
+impl  SnapshotUserConfigurationRedacted  {
     /// <p>An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.anonymous_users.is_none()`.
-    pub fn anonymous_users(&self) -> &[crate::types::SnapshotAnonymousUserRedacted] {
-        self.anonymous_users.as_deref().unwrap_or_default()
+    pub fn anonymous_users(&self) -> & [crate::types::SnapshotAnonymousUserRedacted] {
+        self.anonymous_users.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SnapshotUserConfigurationRedacted {
@@ -26,7 +27,7 @@ impl SnapshotUserConfigurationRedacted {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SnapshotUserConfigurationRedactedBuilder {
-    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>>,
+    pub(crate) anonymous_users: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUserRedacted>>,
 }
 impl SnapshotUserConfigurationRedactedBuilder {
     /// Appends an item to `anonymous_users`.
@@ -36,23 +37,24 @@ impl SnapshotUserConfigurationRedactedBuilder {
     /// <p>An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
     pub fn anonymous_users(mut self, input: crate::types::SnapshotAnonymousUserRedacted) -> Self {
         let mut v = self.anonymous_users.unwrap_or_default();
-        v.push(input);
-        self.anonymous_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anonymous_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
-    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>>) -> Self {
-        self.anonymous_users = input;
-        self
+    pub fn set_anonymous_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUserRedacted>>) -> Self {
+        self.anonymous_users = input; self
     }
     /// <p>An array of records that describe anonymous users that the dashboard snapshot is generated for. Sensitive user information is excluded.</p>
-    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotAnonymousUserRedacted>> {
+    pub fn get_anonymous_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SnapshotAnonymousUserRedacted>> {
         &self.anonymous_users
     }
     /// Consumes the builder and constructs a [`SnapshotUserConfigurationRedacted`](crate::types::SnapshotUserConfigurationRedacted).
     pub fn build(self) -> crate::types::SnapshotUserConfigurationRedacted {
         crate::types::SnapshotUserConfigurationRedacted {
-            anonymous_users: self.anonymous_users,
+            anonymous_users: self.anonymous_users
+            ,
         }
     }
 }
+

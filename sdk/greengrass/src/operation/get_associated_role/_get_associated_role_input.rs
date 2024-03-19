@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssociatedRoleInput {
+pub struct GetAssociatedRoleInput  {
     /// The ID of the Greengrass group.
     pub group_id: ::std::option::Option<::std::string::String>,
 }
-impl GetAssociatedRoleInput {
+impl  GetAssociatedRoleInput  {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl GetAssociatedRoleInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the Greengrass group.
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_associated_role::GetAssociatedRoleInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_associated_role::GetAssociatedRoleInput { group_id: self.group_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_associated_role::GetAssociatedRoleInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_associated_role::GetAssociatedRoleInput {
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

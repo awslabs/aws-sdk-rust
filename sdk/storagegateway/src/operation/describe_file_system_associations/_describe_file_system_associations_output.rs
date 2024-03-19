@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFileSystemAssociationsOutput {
+pub struct DescribeFileSystemAssociationsOutput  {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
-    pub file_system_association_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
+    pub file_system_association_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::FileSystemAssociationInfo>>,
     _request_id: Option<String>,
 }
-impl DescribeFileSystemAssociationsOutput {
+impl  DescribeFileSystemAssociationsOutput  {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_association_info_list.is_none()`.
-    pub fn file_system_association_info_list(&self) -> &[crate::types::FileSystemAssociationInfo] {
-        self.file_system_association_info_list.as_deref().unwrap_or_default()
+    pub fn file_system_association_info_list(&self) -> & [crate::types::FileSystemAssociationInfo] {
+        self.file_system_association_info_list.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeFileSystemAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeFileSystemAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFileSystemAssociationsOutput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput).
     pub fn builder() -> crate::operation::describe_file_system_associations::builders::DescribeFileSystemAssociationsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeFileSystemAssociationsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeFileSystemAssociationsOutputBuilder {
-    pub(crate) file_system_association_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
+    pub(crate) file_system_association_info_list: ::std::option::Option<::std::vec::Vec::<crate::types::FileSystemAssociationInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeFileSystemAssociationsOutputBuilder {
@@ -42,36 +43,34 @@ impl DescribeFileSystemAssociationsOutputBuilder {
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
     pub fn file_system_association_info_list(mut self, input: crate::types::FileSystemAssociationInfo) -> Self {
         let mut v = self.file_system_association_info_list.unwrap_or_default();
-        v.push(input);
-        self.file_system_association_info_list = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.file_system_association_info_list = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
-    pub fn set_file_system_association_info_list(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>>,
-    ) -> Self {
-        self.file_system_association_info_list = input;
-        self
+    pub fn set_file_system_association_info_list(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FileSystemAssociationInfo>>) -> Self {
+        self.file_system_association_info_list = input; self
     }
     /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described.</p>
-    pub fn get_file_system_association_info_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>> {
+    pub fn get_file_system_association_info_list(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FileSystemAssociationInfo>> {
         &self.file_system_association_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeFileSystemAssociationsOutput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput).
     pub fn build(self) -> crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput {
         crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput {
-            file_system_association_info_list: self.file_system_association_info_list,
+            file_system_association_info_list: self.file_system_association_info_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

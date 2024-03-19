@@ -3,7 +3,7 @@
 /// <p>A summary of the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BotRecommendationSummary {
+pub struct BotRecommendationSummary  {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub bot_recommendation_status: crate::types::BotRecommendationStatus,
@@ -14,23 +14,22 @@ pub struct BotRecommendationSummary {
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl BotRecommendationSummary {
+impl  BotRecommendationSummary  {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-    pub fn bot_recommendation_status(&self) -> &crate::types::BotRecommendationStatus {
+    pub fn bot_recommendation_status(&self) -> & crate::types::BotRecommendationStatus {
         &self.bot_recommendation_status
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
-    pub fn bot_recommendation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.bot_recommendation_id.deref()
+    pub fn bot_recommendation_id(&self) -> & str {
+        use std::ops::Deref; self.bot_recommendation_id.deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
-    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -61,8 +60,7 @@ impl BotRecommendationSummaryBuilder {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
     pub fn set_bot_recommendation_status(mut self, input: ::std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
-        self.bot_recommendation_status = input;
-        self
+        self.bot_recommendation_status = input; self
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
@@ -77,8 +75,7 @@ impl BotRecommendationSummaryBuilder {
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub fn set_bot_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_recommendation_id = input;
-        self
+        self.bot_recommendation_id = input; self
     }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +88,7 @@ impl BotRecommendationSummaryBuilder {
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input;
-        self
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -105,8 +101,7 @@ impl BotRecommendationSummaryBuilder {
     }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub fn set_last_updated_date_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input;
-        self
+        self.last_updated_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub fn get_last_updated_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -117,21 +112,24 @@ impl BotRecommendationSummaryBuilder {
     /// - [`bot_recommendation_status`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_status)
     /// - [`bot_recommendation_id`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_id)
     pub fn build(self) -> ::std::result::Result<crate::types::BotRecommendationSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BotRecommendationSummary {
-            bot_recommendation_status: self.bot_recommendation_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_recommendation_status",
-                    "bot_recommendation_status was not specified but it is required when building BotRecommendationSummary",
-                )
-            })?,
-            bot_recommendation_id: self.bot_recommendation_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bot_recommendation_id",
-                    "bot_recommendation_id was not specified but it is required when building BotRecommendationSummary",
-                )
-            })?,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BotRecommendationSummary {
+                bot_recommendation_status: self.bot_recommendation_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_recommendation_status", "bot_recommendation_status was not specified but it is required when building BotRecommendationSummary")
+                    )?
+                ,
+                bot_recommendation_id: self.bot_recommendation_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bot_recommendation_id", "bot_recommendation_id was not specified but it is required when building BotRecommendationSummary")
+                    )?
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+            }
+        )
     }
 }
+

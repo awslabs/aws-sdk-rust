@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRuleOutput {
+pub struct GetRuleOutput  {
     /// <p>The unique ID of the retention rule.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The retention rule description.</p>
@@ -12,7 +12,7 @@ pub struct GetRuleOutput {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub status: ::std::option::Option<crate::types::RuleStatus>,
     /// <p>Information about the retention rule lock configuration.</p>
@@ -35,35 +35,36 @@ pub struct GetRuleOutput {
     pub rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetRuleOutput {
+impl  GetRuleOutput  {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The retention rule description.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The resource type retained by the retention rule.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::ResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::RuleStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::RuleStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn lock_configuration(&self) -> ::std::option::Option<&crate::types::LockConfiguration> {
+    pub fn lock_configuration(&self) -> ::std::option::Option<& crate::types::LockConfiguration> {
         self.lock_configuration.as_ref()
     }
     /// <p>The lock state for the retention rule.</p>
@@ -77,23 +78,23 @@ impl GetRuleOutput {
     /// <li>
     /// <p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
-    pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
+    pub fn lock_state(&self) -> ::std::option::Option<& crate::types::LockState> {
         self.lock_state.as_ref()
     }
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
-    pub fn lock_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn lock_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.lock_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
-    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput).
     pub fn builder() -> crate::operation::get_rule::builders::GetRuleOutputBuilder {
@@ -109,7 +110,7 @@ pub struct GetRuleOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
     pub(crate) status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
     pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
@@ -125,8 +126,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +139,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The retention rule description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The retention rule description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +152,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The resource type retained by the retention rule.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type retained by the retention rule.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -167,8 +165,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -181,17 +178,16 @@ impl GetRuleOutputBuilder {
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
@@ -201,8 +197,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RuleStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The state of the retention rule. Only retention rules that are in the <code>available</code> state retain resources.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RuleStatus> {
@@ -215,8 +210,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn set_lock_configuration(mut self, input: ::std::option::Option<crate::types::LockConfiguration>) -> Self {
-        self.lock_configuration = input;
-        self
+        self.lock_configuration = input; self
     }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn get_lock_configuration(&self) -> &::std::option::Option<crate::types::LockConfiguration> {
@@ -249,8 +243,7 @@ impl GetRuleOutputBuilder {
     /// <p><code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p></li>
     /// </ul>
     pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
-        self.lock_state = input;
-        self
+        self.lock_state = input; self
     }
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
@@ -273,8 +266,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     pub fn set_lock_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.lock_end_time = input;
-        self
+        self.lock_end_time = input; self
     }
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     pub fn get_lock_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -287,36 +279,46 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
     pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput).
     pub fn build(self) -> crate::operation::get_rule::GetRuleOutput {
         crate::operation::get_rule::GetRuleOutput {
-            identifier: self.identifier,
-            description: self.description,
-            resource_type: self.resource_type,
-            retention_period: self.retention_period,
-            resource_tags: self.resource_tags,
-            status: self.status,
-            lock_configuration: self.lock_configuration,
-            lock_state: self.lock_state,
-            lock_end_time: self.lock_end_time,
-            rule_arn: self.rule_arn,
+            identifier: self.identifier
+            ,
+            description: self.description
+            ,
+            resource_type: self.resource_type
+            ,
+            retention_period: self.retention_period
+            ,
+            resource_tags: self.resource_tags
+            ,
+            status: self.status
+            ,
+            lock_configuration: self.lock_configuration
+            ,
+            lock_state: self.lock_state
+            ,
+            lock_end_time: self.lock_end_time
+            ,
+            rule_arn: self.rule_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

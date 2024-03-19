@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCertificateProvidersInput {
+pub struct ListCertificateProvidersInput  {
     /// <p>The token for the next set of results, or <code>null</code> if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the list of certificate providers in ascending alphabetical order.</p>
     pub ascending_order: ::std::option::Option<bool>,
 }
-impl ListCertificateProvidersInput {
+impl  ListCertificateProvidersInput  {
     /// <p>The token for the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns the list of certificate providers in ascending alphabetical order.</p>
@@ -40,8 +40,7 @@ impl ListCertificateProvidersInputBuilder {
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,23 +53,22 @@ impl ListCertificateProvidersInputBuilder {
     }
     /// <p>Returns the list of certificate providers in ascending alphabetical order.</p>
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>Returns the list of certificate providers in ascending alphabetical order.</p>
     pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
         &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListCertificateProvidersInput`](crate::operation::list_certificate_providers::ListCertificateProvidersInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_certificate_providers::ListCertificateProvidersInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_certificate_providers::ListCertificateProvidersInput {
-            next_token: self.next_token,
-            ascending_order: self.ascending_order,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_certificate_providers::ListCertificateProvidersInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_certificate_providers::ListCertificateProvidersInput {
+                next_token: self.next_token
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

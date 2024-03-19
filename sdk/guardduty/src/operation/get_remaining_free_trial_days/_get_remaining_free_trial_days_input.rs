@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRemainingFreeTrialDaysInput {
+pub struct GetRemainingFreeTrialDaysInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl GetRemainingFreeTrialDaysInput {
+impl  GetRemainingFreeTrialDaysInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GetRemainingFreeTrialDaysInput {
@@ -32,7 +33,7 @@ impl GetRemainingFreeTrialDaysInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl GetRemainingFreeTrialDaysInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
@@ -43,8 +44,7 @@ impl GetRemainingFreeTrialDaysInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl GetRemainingFreeTrialDaysInputBuilder {
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
-            detector_id: self.detector_id,
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
+                detector_id: self.detector_id
+                ,
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

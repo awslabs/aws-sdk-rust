@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SendEventInput {
+pub struct SendEventInput  {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
     pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined name of the event to send to clients.</p>
     pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl SendEventInput {
+impl  SendEventInput  {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn room_identifier(&self) -> ::std::option::Option<& str> {
         self.room_identifier.as_deref()
     }
     /// <p>Application-defined name of the event to send to clients.</p>
-    pub fn event_name(&self) -> ::std::option::Option<&str> {
+    pub fn event_name(&self) -> ::std::option::Option<& str> {
         self.event_name.as_deref()
     }
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -37,7 +37,7 @@ impl SendEventInput {
 pub struct SendEventInputBuilder {
     pub(crate) room_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) event_name: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl SendEventInputBuilder {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
@@ -48,8 +48,7 @@ impl SendEventInputBuilder {
     }
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
     pub fn set_room_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_identifier = input;
-        self
+        self.room_identifier = input; self
     }
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
     pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl SendEventInputBuilder {
     }
     /// <p>Application-defined name of the event to send to clients.</p>
     pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_name = input;
-        self
+        self.event_name = input; self
     }
     /// <p>Application-defined name of the event to send to clients.</p>
     pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,25 +75,30 @@ impl SendEventInputBuilder {
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::send_event::SendEventInput {
-            room_identifier: self.room_identifier,
-            event_name: self.event_name,
-            attributes: self.attributes,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::send_event::SendEventInput {
+                room_identifier: self.room_identifier
+                ,
+                event_name: self.event_name
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

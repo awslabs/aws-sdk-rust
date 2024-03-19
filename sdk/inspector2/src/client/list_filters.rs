@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListFilters`](crate::operation::list_filters::builders::ListFiltersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`arns(impl Into<String>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::arns) / [`set_arns(Option<Vec::<String>>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_arns):<br>required: **false**<br><p>The Amazon resource number (ARN) of the filter.</p><br>
     ///   - [`action(FilterAction)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::action) / [`set_action(Option<FilterAction>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_action):<br>required: **false**<br><p>The action the filter applies to matched findings.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_next_token):<br>required: **false**<br><p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_filters::builders::ListFiltersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p><br>
-    /// - On success, responds with [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput) with field(s):
+                            /// - On success, responds with [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput) with field(s):
     ///   - [`filters(Vec::<Filter>)`](crate::operation::list_filters::ListFiltersOutput::filters): <p>Contains details on the filters associated with your account.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_filters::ListFiltersOutput::next_token): <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
+                            /// - On failure, responds with [`SdkError<ListFiltersError>`](crate::operation::list_filters::ListFiltersError)
     pub fn list_filters(&self) -> crate::operation::list_filters::builders::ListFiltersFluentBuilder {
-        crate::operation::list_filters::builders::ListFiltersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_filters::builders::ListFiltersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

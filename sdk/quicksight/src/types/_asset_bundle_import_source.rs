@@ -3,25 +3,25 @@
 /// <p>The source of the asset bundle zip file that contains the data that you want to import. The file must be in <code>QUICKSIGHT_JSON</code> format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssetBundleImportSource {
+pub struct AssetBundleImportSource  {
     /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
     /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
     pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
-impl AssetBundleImportSource {
+impl  AssetBundleImportSource  {
     /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
     /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
-    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
-    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssetBundleImportSource {
+impl  ::std::fmt::Debug for AssetBundleImportSource  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssetBundleImportSource");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -53,8 +53,7 @@ impl AssetBundleImportSourceBuilder {
     /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
     /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
     /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
@@ -68,8 +67,7 @@ impl AssetBundleImportSourceBuilder {
     }
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +76,10 @@ impl AssetBundleImportSourceBuilder {
     /// Consumes the builder and constructs a [`AssetBundleImportSource`](crate::types::AssetBundleImportSource).
     pub fn build(self) -> crate::types::AssetBundleImportSource {
         crate::types::AssetBundleImportSource {
-            body: self.body,
-            s3_uri: self.s3_uri,
+            body: self.body
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
@@ -91,3 +91,4 @@ impl ::std::fmt::Debug for AssetBundleImportSourceBuilder {
         formatter.finish()
     }
 }
+

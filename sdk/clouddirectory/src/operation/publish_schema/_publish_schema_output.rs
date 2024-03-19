@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishSchemaOutput {
+pub struct PublishSchemaOutput  {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     pub published_schema_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PublishSchemaOutput {
+impl  PublishSchemaOutput  {
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
-    pub fn published_schema_arn(&self) -> ::std::option::Option<&str> {
+    pub fn published_schema_arn(&self) -> ::std::option::Option<& str> {
         self.published_schema_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishSchemaOutput {
     /// Creates a new builder-style object to manufacture [`PublishSchemaOutput`](crate::operation::publish_schema::PublishSchemaOutput).
     pub fn builder() -> crate::operation::publish_schema::builders::PublishSchemaOutputBuilder {
@@ -40,27 +40,28 @@ impl PublishSchemaOutputBuilder {
     }
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     pub fn set_published_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.published_schema_arn = input;
-        self
+        self.published_schema_arn = input; self
     }
     /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.published_schema_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishSchemaOutput`](crate::operation::publish_schema::PublishSchemaOutput).
     pub fn build(self) -> crate::operation::publish_schema::PublishSchemaOutput {
         crate::operation::publish_schema::PublishSchemaOutput {
-            published_schema_arn: self.published_schema_arn,
+            published_schema_arn: self.published_schema_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

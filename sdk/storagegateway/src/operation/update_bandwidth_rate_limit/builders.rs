@@ -5,56 +5,52 @@ pub use crate::operation::update_bandwidth_rate_limit::_update_bandwidth_rate_li
 
 impl UpdateBandwidthRateLimitInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_bandwidth_rate_limit();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_bandwidth_rate_limit();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateBandwidthRateLimit`.
-///
+/// 
 /// <p>Updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains. This operation is supported only for the stored volume, cached volume, and tape gateway types. To update bandwidth rate limits for S3 file gateways, use <code>UpdateBandwidthRateLimitSchedule</code>.</p>
 /// <p>By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have any limitations on its bandwidth usage and could potentially use the maximum available bandwidth.</p>
 /// <p>To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder,
+                    inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-    > for UpdateBandwidthRateLimitFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
+                    crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
+                > for UpdateBandwidthRateLimitFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
+                        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateBandwidthRateLimitFluentBuilder {
     /// Creates a new `UpdateBandwidthRateLimit`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
-        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput, crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -153,3 +140,4 @@ impl UpdateBandwidthRateLimitFluentBuilder {
         self.inner.get_average_download_rate_limit_in_bits_per_sec()
     }
 }
+

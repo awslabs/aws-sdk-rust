@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListWirelessGatewayTaskDefinitionsOutput {
+pub struct ListWirelessGatewayTaskDefinitionsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of task definitions.</p>
-    pub task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
+    pub task_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateWirelessGatewayTaskEntry>>,
     _request_id: Option<String>,
 }
-impl ListWirelessGatewayTaskDefinitionsOutput {
+impl  ListWirelessGatewayTaskDefinitionsOutput  {
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of task definitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_definitions.is_none()`.
-    pub fn task_definitions(&self) -> &[crate::types::UpdateWirelessGatewayTaskEntry] {
-        self.task_definitions.as_deref().unwrap_or_default()
+    pub fn task_definitions(&self) -> & [crate::types::UpdateWirelessGatewayTaskEntry] {
+        self.task_definitions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListWirelessGatewayTaskDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListWirelessGatewayTaskDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
     pub fn builder() -> crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListWirelessGatewayTaskDefinitionsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListWirelessGatewayTaskDefinitionsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>,
+    pub(crate) task_definitions: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateWirelessGatewayTaskEntry>>,
     _request_id: Option<String>,
 }
 impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
     /// <p>The list of task definitions.</p>
     pub fn task_definitions(mut self, input: crate::types::UpdateWirelessGatewayTaskEntry) -> Self {
         let mut v = self.task_definitions.unwrap_or_default();
-        v.push(input);
-        self.task_definitions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.task_definitions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of task definitions.</p>
-    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>>) -> Self {
-        self.task_definitions = input;
-        self
+    pub fn set_task_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::UpdateWirelessGatewayTaskEntry>>) -> Self {
+        self.task_definitions = input; self
     }
     /// <p>The list of task definitions.</p>
-    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>> {
+    pub fn get_task_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::UpdateWirelessGatewayTaskEntry>> {
         &self.task_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsOutput`](crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput).
     pub fn build(self) -> crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput {
         crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsOutput {
-            next_token: self.next_token,
-            task_definitions: self.task_definitions,
+            next_token: self.next_token
+            ,
+            task_definitions: self.task_definitions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateEnvironmentTemplateInput {
+pub struct CreateEnvironmentTemplateInput  {
     /// <p>The name of the environment template.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The environment template name as displayed in the developer interface.</p>
@@ -15,38 +15,39 @@ pub struct CreateEnvironmentTemplateInput {
     pub provisioning: ::std::option::Option<crate::types::Provisioning>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateEnvironmentTemplateInput {
+impl  CreateEnvironmentTemplateInput  {
     /// <p>The name of the environment template.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The environment template name as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the environment template.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
-    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-    pub fn provisioning(&self) -> ::std::option::Option<&crate::types::Provisioning> {
+    pub fn provisioning(&self) -> ::std::option::Option<& crate::types::Provisioning> {
         self.provisioning.as_ref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CreateEnvironmentTemplateInput {
+impl  ::std::fmt::Debug for CreateEnvironmentTemplateInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentTemplateInput");
         formatter.field("name", &self.name);
@@ -74,7 +75,7 @@ pub struct CreateEnvironmentTemplateInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning: ::std::option::Option<crate::types::Provisioning>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateEnvironmentTemplateInputBuilder {
     /// <p>The name of the environment template.</p>
@@ -85,8 +86,7 @@ impl CreateEnvironmentTemplateInputBuilder {
     }
     /// <p>The name of the environment template.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the environment template.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl CreateEnvironmentTemplateInputBuilder {
     }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl CreateEnvironmentTemplateInputBuilder {
     }
     /// <p>A description of the environment template.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the environment template.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl CreateEnvironmentTemplateInputBuilder {
     }
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl CreateEnvironmentTemplateInputBuilder {
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn set_provisioning(mut self, input: ::std::option::Option<crate::types::Provisioning>) -> Self {
-        self.provisioning = input;
-        self
+        self.provisioning = input; self
     }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
@@ -156,36 +152,38 @@ impl CreateEnvironmentTemplateInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateInput`](crate::operation::create_environment_template::CreateEnvironmentTemplateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_environment_template::CreateEnvironmentTemplateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_environment_template::CreateEnvironmentTemplateInput {
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
-            encryption_key: self.encryption_key,
-            provisioning: self.provisioning,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_environment_template::CreateEnvironmentTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_environment_template::CreateEnvironmentTemplateInput {
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+                encryption_key: self.encryption_key
+                ,
+                provisioning: self.provisioning
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateEnvironmentTemplateInputBuilder {
@@ -200,3 +198,4 @@ impl ::std::fmt::Debug for CreateEnvironmentTemplateInputBuilder {
         formatter.finish()
     }
 }
+

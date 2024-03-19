@@ -3,13 +3,13 @@
 /// <p>Sidewalk object for creating a wireless device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SidewalkCreateWirelessDevice {
+pub struct SidewalkCreateWirelessDevice  {
     /// <p>The ID of the Sidewalk device profile.</p>
     pub device_profile_id: ::std::option::Option<::std::string::String>,
 }
-impl SidewalkCreateWirelessDevice {
+impl  SidewalkCreateWirelessDevice  {
     /// <p>The ID of the Sidewalk device profile.</p>
-    pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> ::std::option::Option<& str> {
         self.device_profile_id.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl SidewalkCreateWirelessDeviceBuilder {
     }
     /// <p>The ID of the Sidewalk device profile.</p>
     pub fn set_device_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_profile_id = input;
-        self
+        self.device_profile_id = input; self
     }
     /// <p>The ID of the Sidewalk device profile.</p>
     pub fn get_device_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl SidewalkCreateWirelessDeviceBuilder {
     /// Consumes the builder and constructs a [`SidewalkCreateWirelessDevice`](crate::types::SidewalkCreateWirelessDevice).
     pub fn build(self) -> crate::types::SidewalkCreateWirelessDevice {
         crate::types::SidewalkCreateWirelessDevice {
-            device_profile_id: self.device_profile_id,
+            device_profile_id: self.device_profile_id
+            ,
         }
     }
 }
+

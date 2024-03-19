@@ -3,11 +3,11 @@
 /// <p>Violation detail for an unexpected route that's present in a route table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
+pub struct NetworkFirewallUnexpectedFirewallRoutesViolation  {
     /// <p>The subnet ID for the firewall.</p>
     pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes that are in violation.</p>
-    pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
+    pub violating_routes: ::std::option::Option<::std::vec::Vec::<crate::types::Route>>,
     /// <p>The ID of the route table.</p>
     pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the firewall.</p>
@@ -15,27 +15,28 @@ pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>Information about the VPC ID.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
 }
-impl NetworkFirewallUnexpectedFirewallRoutesViolation {
+impl  NetworkFirewallUnexpectedFirewallRoutesViolation  {
     /// <p>The subnet ID for the firewall.</p>
-    pub fn firewall_subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_subnet_id(&self) -> ::std::option::Option<& str> {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The routes that are in violation.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.violating_routes.is_none()`.
-    pub fn violating_routes(&self) -> &[crate::types::Route] {
-        self.violating_routes.as_deref().unwrap_or_default()
+    pub fn violating_routes(&self) -> & [crate::types::Route] {
+        self.violating_routes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>The endpoint of the firewall.</p>
-    pub fn firewall_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_endpoint(&self) -> ::std::option::Option<& str> {
         self.firewall_endpoint.as_deref()
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -51,7 +52,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     pub(crate) firewall_subnet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
+    pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec::<crate::types::Route>>,
     pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -64,8 +65,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>The subnet ID for the firewall.</p>
     pub fn set_firewall_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_subnet_id = input;
-        self
+        self.firewall_subnet_id = input; self
     }
     /// <p>The subnet ID for the firewall.</p>
     pub fn get_firewall_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,17 +78,16 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     /// <p>The routes that are in violation.</p>
     pub fn violating_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.violating_routes.unwrap_or_default();
-        v.push(input);
-        self.violating_routes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.violating_routes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn set_violating_routes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>) -> Self {
-        self.violating_routes = input;
-        self
+    pub fn set_violating_routes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Route>>) -> Self {
+        self.violating_routes = input; self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn get_violating_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+    pub fn get_violating_routes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Route>> {
         &self.violating_routes
     }
     /// <p>The ID of the route table.</p>
@@ -98,8 +97,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +110,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>The endpoint of the firewall.</p>
     pub fn set_firewall_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_endpoint = input;
-        self
+        self.firewall_endpoint = input; self
     }
     /// <p>The endpoint of the firewall.</p>
     pub fn get_firewall_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +123,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>Information about the VPC ID.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Information about the VPC ID.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,11 +132,17 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation {
         crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation {
-            firewall_subnet_id: self.firewall_subnet_id,
-            violating_routes: self.violating_routes,
-            route_table_id: self.route_table_id,
-            firewall_endpoint: self.firewall_endpoint,
-            vpc_id: self.vpc_id,
+            firewall_subnet_id: self.firewall_subnet_id
+            ,
+            violating_routes: self.violating_routes
+            ,
+            route_table_id: self.route_table_id
+            ,
+            firewall_endpoint: self.firewall_endpoint
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

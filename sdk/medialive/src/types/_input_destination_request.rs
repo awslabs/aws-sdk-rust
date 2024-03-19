@@ -3,13 +3,13 @@
 /// Endpoint settings for a PUSH type input.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InputDestinationRequest {
+pub struct InputDestinationRequest  {
     /// A unique name for the location the RTMP stream is being pushed to.
     pub stream_name: ::std::option::Option<::std::string::String>,
 }
-impl InputDestinationRequest {
+impl  InputDestinationRequest  {
     /// A unique name for the location the RTMP stream is being pushed to.
-    pub fn stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<& str> {
         self.stream_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InputDestinationRequestBuilder {
     }
     /// A unique name for the location the RTMP stream is being pushed to.
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// A unique name for the location the RTMP stream is being pushed to.
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InputDestinationRequestBuilder {
     /// Consumes the builder and constructs a [`InputDestinationRequest`](crate::types::InputDestinationRequest).
     pub fn build(self) -> crate::types::InputDestinationRequest {
         crate::types::InputDestinationRequest {
-            stream_name: self.stream_name,
+            stream_name: self.stream_name
+            ,
         }
     }
 }
+

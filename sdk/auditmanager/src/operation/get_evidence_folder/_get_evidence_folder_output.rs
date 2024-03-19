@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEvidenceFolderOutput {
+pub struct GetEvidenceFolderOutput  {
     /// <p>The folder that the evidence is stored in.</p>
     pub evidence_folder: ::std::option::Option<crate::types::AssessmentEvidenceFolder>,
     _request_id: Option<String>,
 }
-impl GetEvidenceFolderOutput {
+impl  GetEvidenceFolderOutput  {
     /// <p>The folder that the evidence is stored in.</p>
-    pub fn evidence_folder(&self) -> ::std::option::Option<&crate::types::AssessmentEvidenceFolder> {
+    pub fn evidence_folder(&self) -> ::std::option::Option<& crate::types::AssessmentEvidenceFolder> {
         self.evidence_folder.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEvidenceFolderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEvidenceFolderOutput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput).
     pub fn builder() -> crate::operation::get_evidence_folder::builders::GetEvidenceFolderOutputBuilder {
@@ -40,27 +40,28 @@ impl GetEvidenceFolderOutputBuilder {
     }
     /// <p>The folder that the evidence is stored in.</p>
     pub fn set_evidence_folder(mut self, input: ::std::option::Option<crate::types::AssessmentEvidenceFolder>) -> Self {
-        self.evidence_folder = input;
-        self
+        self.evidence_folder = input; self
     }
     /// <p>The folder that the evidence is stored in.</p>
     pub fn get_evidence_folder(&self) -> &::std::option::Option<crate::types::AssessmentEvidenceFolder> {
         &self.evidence_folder
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEvidenceFolderOutput`](crate::operation::get_evidence_folder::GetEvidenceFolderOutput).
     pub fn build(self) -> crate::operation::get_evidence_folder::GetEvidenceFolderOutput {
         crate::operation::get_evidence_folder::GetEvidenceFolderOutput {
-            evidence_folder: self.evidence_folder,
+            evidence_folder: self.evidence_folder
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

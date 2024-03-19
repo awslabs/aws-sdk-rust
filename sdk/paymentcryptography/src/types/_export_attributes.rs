@@ -3,21 +3,21 @@
 /// <p>The attributes for IPEK generation during export.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportAttributes {
+pub struct ExportAttributes  {
     /// <p>Parameter information for IPEK export.</p>
     pub export_dukpt_initial_key: ::std::option::Option<crate::types::ExportDukptInitialKey>,
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity. Specify KCV for IPEK export only.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
 }
-impl ExportAttributes {
+impl  ExportAttributes  {
     /// <p>Parameter information for IPEK export.</p>
-    pub fn export_dukpt_initial_key(&self) -> ::std::option::Option<&crate::types::ExportDukptInitialKey> {
+    pub fn export_dukpt_initial_key(&self) -> ::std::option::Option<& crate::types::ExportDukptInitialKey> {
         self.export_dukpt_initial_key.as_ref()
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity. Specify KCV for IPEK export only.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<& crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ExportAttributesBuilder {
     }
     /// <p>Parameter information for IPEK export.</p>
     pub fn set_export_dukpt_initial_key(mut self, input: ::std::option::Option<crate::types::ExportDukptInitialKey>) -> Self {
-        self.export_dukpt_initial_key = input;
-        self
+        self.export_dukpt_initial_key = input; self
     }
     /// <p>Parameter information for IPEK export.</p>
     pub fn get_export_dukpt_initial_key(&self) -> &::std::option::Option<crate::types::ExportDukptInitialKey> {
@@ -59,8 +58,7 @@ impl ExportAttributesBuilder {
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity. Specify KCV for IPEK export only.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
-        self.key_check_value_algorithm = input;
-        self
+        self.key_check_value_algorithm = input; self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity. Specify KCV for IPEK export only.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
@@ -70,8 +68,11 @@ impl ExportAttributesBuilder {
     /// Consumes the builder and constructs a [`ExportAttributes`](crate::types::ExportAttributes).
     pub fn build(self) -> crate::types::ExportAttributes {
         crate::types::ExportAttributes {
-            export_dukpt_initial_key: self.export_dukpt_initial_key,
-            key_check_value_algorithm: self.key_check_value_algorithm,
+            export_dukpt_initial_key: self.export_dukpt_initial_key
+            ,
+            key_check_value_algorithm: self.key_check_value_algorithm
+            ,
         }
     }
 }
+

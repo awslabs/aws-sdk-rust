@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDeviceInput {
+pub struct UpdateDeviceInput  {
     /// <p>The ARN of the device to update. Required.</p>
     pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated device name. Required.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateDeviceInput {
+impl  UpdateDeviceInput  {
     /// <p>The ARN of the device to update. Required.</p>
-    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The updated device name. Required.</p>
-    pub fn device_name(&self) -> ::std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<& str> {
         self.device_name.as_deref()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The ARN of the device to update. Required.</p>
     pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The ARN of the device to update. Required.</p>
     pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -54,20 +53,22 @@ impl UpdateDeviceInputBuilder {
     }
     /// <p>The updated device name. Required.</p>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The updated device name. Required.</p>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_device::UpdateDeviceInput {
-            device_arn: self.device_arn,
-            device_name: self.device_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_device::UpdateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_device::UpdateDeviceInput {
+                device_arn: self.device_arn
+                ,
+                device_name: self.device_name
+                ,
+            }
+        )
     }
 }
+

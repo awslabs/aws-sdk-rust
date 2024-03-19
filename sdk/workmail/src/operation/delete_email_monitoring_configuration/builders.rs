@@ -5,54 +5,50 @@ pub use crate::operation::delete_email_monitoring_configuration::_delete_email_m
 
 impl DeleteEmailMonitoringConfigurationInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.delete_email_monitoring_configuration();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.delete_email_monitoring_configuration();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DeleteEmailMonitoringConfiguration`.
-///
+/// 
 /// <p>Deletes the email monitoring configuration for a specified organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEmailMonitoringConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationInputBuilder,
+                    inner: crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-    > for DeleteEmailMonitoringConfigurationFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
+                    crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
+                > for DeleteEmailMonitoringConfigurationFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
+                        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DeleteEmailMonitoringConfigurationFluentBuilder {
     /// Creates a new `DeleteEmailMonitoringConfiguration`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl DeleteEmailMonitoringConfigurationFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfiguration::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfiguration::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput,
-        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfiguration::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfiguration::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput, crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
     pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -123,3 +110,4 @@ impl DeleteEmailMonitoringConfigurationFluentBuilder {
         self.inner.get_organization_id()
     }
 }
+

@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyTargetGroupAttributesInput {
+pub struct ModifyTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupAttribute>>,
 }
-impl ModifyTargetGroupAttributesInput {
+impl  ModifyTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The attributes.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::TargetGroupAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::TargetGroupAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyTargetGroupAttributesInput {
@@ -32,7 +33,7 @@ impl ModifyTargetGroupAttributesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupAttributesInputBuilder {
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupAttribute>>,
 }
 impl ModifyTargetGroupAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -43,8 +44,7 @@ impl ModifyTargetGroupAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,29 +57,28 @@ impl ModifyTargetGroupAttributesInputBuilder {
     /// <p>The attributes.</p>
     pub fn attributes(mut self, input: crate::types::TargetGroupAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetGroupAttribute>> {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`ModifyTargetGroupAttributesInput`](crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput {
-            target_group_arn: self.target_group_arn,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput {
+                target_group_arn: self.target_group_arn
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

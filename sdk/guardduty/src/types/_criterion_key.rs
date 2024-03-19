@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let criterionkey = unimplemented!();
 /// match criterionkey {
@@ -35,16 +35,14 @@
 /// Specifically, when `criterionkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CriterionKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum CriterionKey {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -62,84 +60,77 @@ pub enum CriterionKey {
     ScanType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for CriterionKey {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_ID" => CriterionKey::AccountId,
-            "EC2_INSTANCE_ARN" => CriterionKey::Ec2InstanceArn,
-            "GUARDDUTY_FINDING_ID" => CriterionKey::GuarddutyFindingId,
-            "SCAN_ID" => CriterionKey::ScanId,
-            "SCAN_START_TIME" => CriterionKey::ScanStartTime,
-            "SCAN_STATUS" => CriterionKey::ScanStatus,
-            "SCAN_TYPE" => CriterionKey::ScanType,
-            other => CriterionKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "ACCOUNT_ID" => CriterionKey::AccountId,
+"EC2_INSTANCE_ARN" => CriterionKey::Ec2InstanceArn,
+"GUARDDUTY_FINDING_ID" => CriterionKey::GuarddutyFindingId,
+"SCAN_ID" => CriterionKey::ScanId,
+"SCAN_START_TIME" => CriterionKey::ScanStartTime,
+"SCAN_STATUS" => CriterionKey::ScanStatus,
+"SCAN_TYPE" => CriterionKey::ScanType,
+other => CriterionKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for CriterionKey {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(CriterionKey::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(CriterionKey::from(s))
+                    }
+                }
 impl CriterionKey {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CriterionKey::AccountId => "ACCOUNT_ID",
-            CriterionKey::Ec2InstanceArn => "EC2_INSTANCE_ARN",
-            CriterionKey::GuarddutyFindingId => "GUARDDUTY_FINDING_ID",
-            CriterionKey::ScanId => "SCAN_ID",
-            CriterionKey::ScanStartTime => "SCAN_START_TIME",
-            CriterionKey::ScanStatus => "SCAN_STATUS",
-            CriterionKey::ScanType => "SCAN_TYPE",
-            CriterionKey::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_ID",
-            "EC2_INSTANCE_ARN",
-            "GUARDDUTY_FINDING_ID",
-            "SCAN_ID",
-            "SCAN_START_TIME",
-            "SCAN_STATUS",
-            "SCAN_TYPE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CriterionKey::AccountId => "ACCOUNT_ID",
+    CriterionKey::Ec2InstanceArn => "EC2_INSTANCE_ARN",
+    CriterionKey::GuarddutyFindingId => "GUARDDUTY_FINDING_ID",
+    CriterionKey::ScanId => "SCAN_ID",
+    CriterionKey::ScanStartTime => "SCAN_START_TIME",
+    CriterionKey::ScanStatus => "SCAN_STATUS",
+    CriterionKey::ScanType => "SCAN_TYPE",
+    CriterionKey::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_ID", "EC2_INSTANCE_ARN", "GUARDDUTY_FINDING_ID", "SCAN_ID", "SCAN_START_TIME", "SCAN_STATUS", "SCAN_TYPE"]
+                }
+            }
 impl ::std::convert::AsRef<str> for CriterionKey {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl CriterionKey {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for CriterionKey {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            CriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
-            CriterionKey::Ec2InstanceArn => write!(f, "EC2_INSTANCE_ARN"),
-            CriterionKey::GuarddutyFindingId => write!(f, "GUARDDUTY_FINDING_ID"),
-            CriterionKey::ScanId => write!(f, "SCAN_ID"),
-            CriterionKey::ScanStartTime => write!(f, "SCAN_START_TIME"),
-            CriterionKey::ScanStatus => write!(f, "SCAN_STATUS"),
-            CriterionKey::ScanType => write!(f, "SCAN_TYPE"),
-            CriterionKey::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                CriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
+CriterionKey::Ec2InstanceArn => write!(f, "EC2_INSTANCE_ARN"),
+CriterionKey::GuarddutyFindingId => write!(f, "GUARDDUTY_FINDING_ID"),
+CriterionKey::ScanId => write!(f, "SCAN_ID"),
+CriterionKey::ScanStartTime => write!(f, "SCAN_START_TIME"),
+CriterionKey::ScanStatus => write!(f, "SCAN_STATUS"),
+CriterionKey::ScanType => write!(f, "SCAN_TYPE"),
+CriterionKey::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

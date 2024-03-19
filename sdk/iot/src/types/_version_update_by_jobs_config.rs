@@ -4,19 +4,19 @@
 /// <p><b>Note:</b> For each job, the destinationPackageVersions attribute has to be set with the correct data for Jobs to report to the thing shadow.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VersionUpdateByJobsConfig {
+pub struct VersionUpdateByJobsConfig  {
     /// <p>Indicates whether the Job is enabled or not.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT jobs service to update the reserved named shadow when the job successfully completes.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
 }
-impl VersionUpdateByJobsConfig {
+impl  VersionUpdateByJobsConfig  {
     /// <p>Indicates whether the Job is enabled or not.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT jobs service to update the reserved named shadow when the job successfully completes.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl VersionUpdateByJobsConfigBuilder {
     }
     /// <p>Indicates whether the Job is enabled or not.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether the Job is enabled or not.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -56,8 +55,7 @@ impl VersionUpdateByJobsConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT jobs service to update the reserved named shadow when the job successfully completes.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that grants permission to the IoT jobs service to update the reserved named shadow when the job successfully completes.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl VersionUpdateByJobsConfigBuilder {
     /// Consumes the builder and constructs a [`VersionUpdateByJobsConfig`](crate::types::VersionUpdateByJobsConfig).
     pub fn build(self) -> crate::types::VersionUpdateByJobsConfig {
         crate::types::VersionUpdateByJobsConfig {
-            enabled: self.enabled,
-            role_arn: self.role_arn,
+            enabled: self.enabled
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

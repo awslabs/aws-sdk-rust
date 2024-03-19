@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetContactInput {
+pub struct GetContactInput  {
     /// <p>The ARN of the contact for which to request details.</p>
     pub contact_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetContactInput {
+impl  GetContactInput  {
     /// <p>The ARN of the contact for which to request details.</p>
-    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetContactInputBuilder {
     }
     /// <p>The ARN of the contact for which to request details.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The ARN of the contact for which to request details.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetContactInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput {
-            contact_arn: self.contact_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_contact::GetContactInput {
+                contact_arn: self.contact_arn
+                ,
+            }
+        )
     }
 }
+

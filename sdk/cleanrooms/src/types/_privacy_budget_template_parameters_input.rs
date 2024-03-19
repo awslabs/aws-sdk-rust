@@ -21,11 +21,7 @@ impl PrivacyBudgetTemplateParametersInput {
     /// Tries to convert the enum instance into [`DifferentialPrivacy`](crate::types::PrivacyBudgetTemplateParametersInput::DifferentialPrivacy), extracting the inner [`DifferentialPrivacyTemplateParametersInput`](crate::types::DifferentialPrivacyTemplateParametersInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_differential_privacy(&self) -> ::std::result::Result<&crate::types::DifferentialPrivacyTemplateParametersInput, &Self> {
-        if let PrivacyBudgetTemplateParametersInput::DifferentialPrivacy(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let PrivacyBudgetTemplateParametersInput::DifferentialPrivacy(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`DifferentialPrivacy`](crate::types::PrivacyBudgetTemplateParametersInput::DifferentialPrivacy).
     pub fn is_differential_privacy(&self) -> bool {
@@ -36,3 +32,4 @@ impl PrivacyBudgetTemplateParametersInput {
         matches!(self, Self::Unknown)
     }
 }
+

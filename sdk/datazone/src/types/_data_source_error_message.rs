@@ -3,19 +3,19 @@
 /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DataSourceErrorMessage {
+pub struct DataSourceErrorMessage  {
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_type: crate::types::DataSourceErrorType,
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub error_detail: ::std::option::Option<::std::string::String>,
 }
-impl DataSourceErrorMessage {
+impl  DataSourceErrorMessage  {
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_type(&self) -> &crate::types::DataSourceErrorType {
+    pub fn error_type(&self) -> & crate::types::DataSourceErrorType {
         &self.error_type
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_detail(&self) -> ::std::option::Option<&str> {
+    pub fn error_detail(&self) -> ::std::option::Option<& str> {
         self.error_detail.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DataSourceErrorMessageBuilder {
     }
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::DataSourceErrorType>) -> Self {
-        self.error_type = input;
-        self
+        self.error_type = input; self
     }
     /// <p>The type of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::DataSourceErrorType> {
@@ -56,8 +55,7 @@ impl DataSourceErrorMessageBuilder {
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_error_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_detail = input;
-        self
+        self.error_detail = input; self
     }
     /// <p>The details of the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_error_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,14 +65,17 @@ impl DataSourceErrorMessageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_type`](crate::types::builders::DataSourceErrorMessageBuilder::error_type)
     pub fn build(self) -> ::std::result::Result<crate::types::DataSourceErrorMessage, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataSourceErrorMessage {
-            error_type: self.error_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "error_type",
-                    "error_type was not specified but it is required when building DataSourceErrorMessage",
-                )
-            })?,
-            error_detail: self.error_detail,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataSourceErrorMessage {
+                error_type: self.error_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("error_type", "error_type was not specified but it is required when building DataSourceErrorMessage")
+                    )?
+                ,
+                error_detail: self.error_detail
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetEnvironmentBlueprintOutput {
+pub struct GetEnvironmentBlueprintOutput  {
     /// <p>The ID of this Amazon DataZone blueprint.</p>
     pub id: ::std::string::String,
     /// <p>The name of this Amazon DataZone blueprint.</p>
@@ -16,65 +16,64 @@ pub struct GetEnvironmentBlueprintOutput {
     /// <p>The deployment properties of this Amazon DataZone blueprint.</p>
     pub deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
     /// <p>The user parameters of this blueprint.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A timestamp of when this blueprint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when this blueprint was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetEnvironmentBlueprintOutput {
+impl  GetEnvironmentBlueprintOutput  {
     /// <p>The ID of this Amazon DataZone blueprint.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The name of this Amazon DataZone blueprint.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of this Amazon DataZone blueprint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The provider of this Amazon DataZone blueprint.</p>
-    pub fn provider(&self) -> &str {
-        use std::ops::Deref;
-        self.provider.deref()
+    pub fn provider(&self) -> & str {
+        use std::ops::Deref; self.provider.deref()
     }
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
-    pub fn provisioning_properties(&self) -> ::std::option::Option<&crate::types::ProvisioningProperties> {
+    pub fn provisioning_properties(&self) -> ::std::option::Option<& crate::types::ProvisioningProperties> {
         self.provisioning_properties.as_ref()
     }
     /// <p>The deployment properties of this Amazon DataZone blueprint.</p>
-    pub fn deployment_properties(&self) -> ::std::option::Option<&crate::types::DeploymentProperties> {
+    pub fn deployment_properties(&self) -> ::std::option::Option<& crate::types::DeploymentProperties> {
         self.deployment_properties.as_ref()
     }
     /// <p>The user parameters of this blueprint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::CustomParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A timestamp of when this blueprint was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when this blueprint was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetEnvironmentBlueprintOutput {
+impl  ::std::fmt::Debug for GetEnvironmentBlueprintOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetEnvironmentBlueprintOutput");
         formatter.field("id", &self.id);
@@ -92,10 +91,10 @@ impl ::std::fmt::Debug for GetEnvironmentBlueprintOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnvironmentBlueprintOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEnvironmentBlueprintOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentBlueprintOutput`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput).
     pub fn builder() -> crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder {
@@ -113,8 +112,8 @@ pub struct GetEnvironmentBlueprintOutputBuilder {
     pub(crate) provider: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -128,8 +127,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The ID of this Amazon DataZone blueprint.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of this Amazon DataZone blueprint.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -143,8 +141,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The name of this Amazon DataZone blueprint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of this Amazon DataZone blueprint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +154,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The description of this Amazon DataZone blueprint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of this Amazon DataZone blueprint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,8 +168,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The provider of this Amazon DataZone blueprint.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>The provider of this Amazon DataZone blueprint.</p>
     pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
@@ -187,8 +182,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
     pub fn set_provisioning_properties(mut self, input: ::std::option::Option<crate::types::ProvisioningProperties>) -> Self {
-        self.provisioning_properties = input;
-        self
+        self.provisioning_properties = input; self
     }
     /// <p>The provisioning properties of this Amazon DataZone blueprint.</p>
     pub fn get_provisioning_properties(&self) -> &::std::option::Option<crate::types::ProvisioningProperties> {
@@ -201,8 +195,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The deployment properties of this Amazon DataZone blueprint.</p>
     pub fn set_deployment_properties(mut self, input: ::std::option::Option<crate::types::DeploymentProperties>) -> Self {
-        self.deployment_properties = input;
-        self
+        self.deployment_properties = input; self
     }
     /// <p>The deployment properties of this Amazon DataZone blueprint.</p>
     pub fn get_deployment_properties(&self) -> &::std::option::Option<crate::types::DeploymentProperties> {
@@ -215,17 +208,16 @@ impl GetEnvironmentBlueprintOutputBuilder {
     /// <p>The user parameters of this blueprint.</p>
     pub fn user_parameters(mut self, input: crate::types::CustomParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters of this blueprint.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters of this blueprint.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CustomParameter>> {
         &self.user_parameters
     }
     /// Appends an item to `glossary_terms`.
@@ -235,17 +227,16 @@ impl GetEnvironmentBlueprintOutputBuilder {
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// <p>A timestamp of when this blueprint was created.</p>
@@ -255,8 +246,7 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>A timestamp of when this blueprint was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>A timestamp of when this blueprint was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -269,61 +259,61 @@ impl GetEnvironmentBlueprintOutputBuilder {
     }
     /// <p>The timestamp of when this blueprint was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when this blueprint was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEnvironmentBlueprintOutput`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::id)
     /// - [`name`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::name)
     /// - [`provider`](crate::operation::get_environment_blueprint::builders::GetEnvironmentBlueprintOutputBuilder::provider)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetEnvironmentBlueprintOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetEnvironmentBlueprintOutput",
-                )
-            })?,
-            description: self.description,
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building GetEnvironmentBlueprintOutput",
-                )
-            })?,
-            provisioning_properties: self.provisioning_properties,
-            deployment_properties: self.deployment_properties,
-            user_parameters: self.user_parameters,
-            glossary_terms: self.glossary_terms,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building GetEnvironmentBlueprintOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetEnvironmentBlueprintOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                provider: self.provider
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider", "provider was not specified but it is required when building GetEnvironmentBlueprintOutput")
+                    )?
+                ,
+                provisioning_properties: self.provisioning_properties
+                ,
+                deployment_properties: self.deployment_properties
+                ,
+                user_parameters: self.user_parameters
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetEnvironmentBlueprintOutputBuilder {
@@ -343,3 +333,4 @@ impl ::std::fmt::Debug for GetEnvironmentBlueprintOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,11 +3,11 @@
 /// <p>Provides information about index capacity configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IndexCapacityConfiguration {
+pub struct IndexCapacityConfiguration  {
     /// <p>The number of storage units configured for an Amazon Q index.</p>
     pub units: ::std::option::Option<i32>,
 }
-impl IndexCapacityConfiguration {
+impl  IndexCapacityConfiguration  {
     /// <p>The number of storage units configured for an Amazon Q index.</p>
     pub fn units(&self) -> ::std::option::Option<i32> {
         self.units
@@ -34,8 +34,7 @@ impl IndexCapacityConfigurationBuilder {
     }
     /// <p>The number of storage units configured for an Amazon Q index.</p>
     pub fn set_units(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
     }
     /// <p>The number of storage units configured for an Amazon Q index.</p>
     pub fn get_units(&self) -> &::std::option::Option<i32> {
@@ -43,6 +42,10 @@ impl IndexCapacityConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`IndexCapacityConfiguration`](crate::types::IndexCapacityConfiguration).
     pub fn build(self) -> crate::types::IndexCapacityConfiguration {
-        crate::types::IndexCapacityConfiguration { units: self.units }
+        crate::types::IndexCapacityConfiguration {
+            units: self.units
+            ,
+        }
     }
 }
+

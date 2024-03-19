@@ -3,13 +3,13 @@
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MeshStatus {
+pub struct MeshStatus  {
     /// <p>The current mesh status.</p>
     pub status: ::std::option::Option<crate::types::MeshStatusCode>,
 }
-impl MeshStatus {
+impl  MeshStatus  {
     /// <p>The current mesh status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::MeshStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::MeshStatusCode> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MeshStatusBuilder {
     }
     /// <p>The current mesh status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MeshStatusCode>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current mesh status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::MeshStatusCode> {
@@ -43,6 +42,10 @@ impl MeshStatusBuilder {
     }
     /// Consumes the builder and constructs a [`MeshStatus`](crate::types::MeshStatus).
     pub fn build(self) -> crate::types::MeshStatus {
-        crate::types::MeshStatus { status: self.status }
+        crate::types::MeshStatus {
+            status: self.status
+            ,
+        }
     }
 }
+

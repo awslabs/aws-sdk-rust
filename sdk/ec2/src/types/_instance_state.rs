@@ -3,7 +3,7 @@
 /// <p>Describes the current state of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceState {
+pub struct InstanceState  {
     /// <p>The state of the instance as a 16-bit unsigned integer.</p>
     /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored.</p>
     /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.</p>
@@ -27,7 +27,7 @@ pub struct InstanceState {
     /// <p>The current state of the instance.</p>
     pub name: ::std::option::Option<crate::types::InstanceStateName>,
 }
-impl InstanceState {
+impl  InstanceState  {
     /// <p>The state of the instance as a 16-bit unsigned integer.</p>
     /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored.</p>
     /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255.</p>
@@ -51,7 +51,7 @@ impl InstanceState {
         self.code
     }
     /// <p>The current state of the instance.</p>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::InstanceStateName> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::InstanceStateName> {
         self.name.as_ref()
     }
 }
@@ -113,8 +113,7 @@ impl InstanceStateBuilder {
     /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal.</p>
     pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state of the instance as a 16-bit unsigned integer.</p>
     /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored.</p>
@@ -145,8 +144,7 @@ impl InstanceStateBuilder {
     }
     /// <p>The current state of the instance.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::InstanceStateName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The current state of the instance.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::InstanceStateName> {
@@ -155,8 +153,11 @@ impl InstanceStateBuilder {
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {
         crate::types::InstanceState {
-            code: self.code,
-            name: self.name,
+            code: self.code
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateEndpointsBatchInput {
+pub struct UpdateEndpointsBatchInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     pub endpoint_batch_request: ::std::option::Option<crate::types::EndpointBatchRequest>,
 }
-impl UpdateEndpointsBatchInput {
+impl  UpdateEndpointsBatchInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-    pub fn endpoint_batch_request(&self) -> ::std::option::Option<&crate::types::EndpointBatchRequest> {
+    pub fn endpoint_batch_request(&self) -> ::std::option::Option<& crate::types::EndpointBatchRequest> {
         self.endpoint_batch_request.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateEndpointsBatchInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl UpdateEndpointsBatchInputBuilder {
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     pub fn set_endpoint_batch_request(mut self, input: ::std::option::Option<crate::types::EndpointBatchRequest>) -> Self {
-        self.endpoint_batch_request = input;
-        self
+        self.endpoint_batch_request = input; self
     }
     /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
     pub fn get_endpoint_batch_request(&self) -> &::std::option::Option<crate::types::EndpointBatchRequest> {
         &self.endpoint_batch_request
     }
     /// Consumes the builder and constructs a [`UpdateEndpointsBatchInput`](crate::operation::update_endpoints_batch::UpdateEndpointsBatchInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_endpoints_batch::UpdateEndpointsBatchInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_endpoints_batch::UpdateEndpointsBatchInput {
-            application_id: self.application_id,
-            endpoint_batch_request: self.endpoint_batch_request,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_endpoints_batch::UpdateEndpointsBatchInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchInput {
+                application_id: self.application_id
+                ,
+                endpoint_batch_request: self.endpoint_batch_request
+                ,
+            }
+        )
     }
 }
+

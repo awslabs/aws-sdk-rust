@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartMlEvaluationTaskRunInput {
+pub struct StartMlEvaluationTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: ::std::option::Option<::std::string::String>,
 }
-impl StartMlEvaluationTaskRunInput {
+impl  StartMlEvaluationTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl StartMlEvaluationTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transform_id
     }
     /// Consumes the builder and constructs a [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
-            transform_id: self.transform_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
+                transform_id: self.transform_id
+                ,
+            }
+        )
     }
 }
+

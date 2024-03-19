@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetWorkloadInput {
+pub struct GetWorkloadInput  {
     /// <p>The name of the workload.</p>
     pub workload_name: ::std::option::Option<::std::string::String>,
 }
-impl GetWorkloadInput {
+impl  GetWorkloadInput  {
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetWorkloadInputBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetWorkloadInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_workload::GetWorkloadInput {
-            workload_name: self.workload_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_workload::GetWorkloadInput {
+                workload_name: self.workload_name
+                ,
+            }
+        )
     }
 }
+

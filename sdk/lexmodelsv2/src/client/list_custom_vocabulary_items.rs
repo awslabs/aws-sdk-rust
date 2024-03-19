@@ -2,21 +2,22 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomVocabularyItems`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bot_id(impl Into<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::set_bot_id):<br>required: **true**<br><p>The identifier of the version of the bot associated with this custom vocabulary.</p><br>
     ///   - [`bot_version(impl Into<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::set_bot_version):<br>required: **true**<br><p>The bot version of the bot to the list custom vocabulary request.</p><br>
     ///   - [`locale_id(impl Into<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::locale_id) / [`set_locale_id(Option<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::set_locale_id):<br>required: **true**<br><p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items returned by the list operation.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken identifier to the list custom vocabulary request.</p><br>
-    /// - On success, responds with [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput) with field(s):
+                            /// - On success, responds with [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::bot_id): <p>The identifier of the bot associated with this custom vocabulary.</p>
     ///   - [`bot_version(Option<String>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::bot_version): <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     ///   - [`locale_id(Option<String>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::locale_id): <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     ///   - [`custom_vocabulary_items(Option<Vec::<CustomVocabularyItem>>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::custom_vocabulary_items): <p>The custom vocabulary items from the list custom vocabulary response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput::next_token): <p>The nextToken identifier to the list custom vocabulary response.</p>
-    /// - On failure, responds with [`SdkError<ListCustomVocabularyItemsError>`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError)
+                            /// - On failure, responds with [`SdkError<ListCustomVocabularyItemsError>`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError)
     pub fn list_custom_vocabulary_items(&self) -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder {
-        crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

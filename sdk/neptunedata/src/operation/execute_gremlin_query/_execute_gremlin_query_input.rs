@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteGremlinQueryInput {
+pub struct ExecuteGremlinQueryInput  {
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
     pub gremlin_query: ::std::option::Option<::std::string::String>,
     /// <p>If non-null, the query results are returned in a serialized response message in the format specified by this parameter. See the <a href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a> section in the TinkerPop documentation for a list of the formats that are currently supported.</p>
     pub serializer: ::std::option::Option<::std::string::String>,
 }
-impl ExecuteGremlinQueryInput {
+impl  ExecuteGremlinQueryInput  {
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
-    pub fn gremlin_query(&self) -> ::std::option::Option<&str> {
+    pub fn gremlin_query(&self) -> ::std::option::Option<& str> {
         self.gremlin_query.as_deref()
     }
     /// <p>If non-null, the query results are returned in a serialized response message in the format specified by this parameter. See the <a href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a> section in the TinkerPop documentation for a list of the formats that are currently supported.</p>
-    pub fn serializer(&self) -> ::std::option::Option<&str> {
+    pub fn serializer(&self) -> ::std::option::Option<& str> {
         self.serializer.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ExecuteGremlinQueryInputBuilder {
     }
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
     pub fn set_gremlin_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.gremlin_query = input;
-        self
+        self.gremlin_query = input; self
     }
     /// <p>Using this API, you can run Gremlin queries in string format much as you can using the HTTP endpoint. The interface is compatible with whatever Gremlin version your DB cluster is using (see the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin-client.html#best-practices-gremlin-java-latest">Tinkerpop client section</a> to determine which Gremlin releases your engine version supports).</p>
     pub fn get_gremlin_query(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,21 +54,22 @@ impl ExecuteGremlinQueryInputBuilder {
     }
     /// <p>If non-null, the query results are returned in a serialized response message in the format specified by this parameter. See the <a href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a> section in the TinkerPop documentation for a list of the formats that are currently supported.</p>
     pub fn set_serializer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serializer = input;
-        self
+        self.serializer = input; self
     }
     /// <p>If non-null, the query results are returned in a serialized response message in the format specified by this parameter. See the <a href="https://tinkerpop.apache.org/docs/current/reference/#_graphson">GraphSON</a> section in the TinkerPop documentation for a list of the formats that are currently supported.</p>
     pub fn get_serializer(&self) -> &::std::option::Option<::std::string::String> {
         &self.serializer
     }
     /// Consumes the builder and constructs a [`ExecuteGremlinQueryInput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput {
-            gremlin_query: self.gremlin_query,
-            serializer: self.serializer,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput {
+                gremlin_query: self.gremlin_query
+                ,
+                serializer: self.serializer
+                ,
+            }
+        )
     }
 }
+

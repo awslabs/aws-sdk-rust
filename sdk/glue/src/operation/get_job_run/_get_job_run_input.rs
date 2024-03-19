@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetJobRunInput {
+pub struct GetJobRunInput  {
     /// <p>Name of the job definition being run.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
@@ -10,13 +10,13 @@ pub struct GetJobRunInput {
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub predecessors_included: ::std::option::Option<bool>,
 }
-impl GetJobRunInput {
+impl  GetJobRunInput  {
     /// <p>Name of the job definition being run.</p>
-    pub fn job_name(&self) -> ::std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn run_id(&self) -> ::std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>True if a list of predecessor runs should be returned.</p>
@@ -48,8 +48,7 @@ impl GetJobRunInputBuilder {
     }
     /// <p>Name of the job definition being run.</p>
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>Name of the job definition being run.</p>
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetJobRunInputBuilder {
     }
     /// <p>The ID of the job run.</p>
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The ID of the job run.</p>
     pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl GetJobRunInputBuilder {
     }
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub fn set_predecessors_included(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.predecessors_included = input;
-        self
+        self.predecessors_included = input; self
     }
     /// <p>True if a list of predecessor runs should be returned.</p>
     pub fn get_predecessors_included(&self) -> &::std::option::Option<bool> {
@@ -86,10 +83,16 @@ impl GetJobRunInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_job_run::GetJobRunInput {
-            job_name: self.job_name,
-            run_id: self.run_id,
-            predecessors_included: self.predecessors_included,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_job_run::GetJobRunInput {
+                job_name: self.job_name
+                ,
+                run_id: self.run_id
+                ,
+                predecessors_included: self.predecessors_included
+                ,
+            }
+        )
     }
 }
+

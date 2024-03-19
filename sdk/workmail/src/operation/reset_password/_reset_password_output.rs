@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetPasswordOutput {
+pub struct ResetPasswordOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for ResetPasswordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ResetPasswordOutput {
     /// Creates a new builder-style object to manufacture [`ResetPasswordOutput`](crate::operation::reset_password::ResetPasswordOutput).
     pub fn builder() -> crate::operation::reset_password::builders::ResetPasswordOutputBuilder {
@@ -25,14 +25,14 @@ pub struct ResetPasswordOutputBuilder {
 }
 impl ResetPasswordOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ResetPasswordOutput`](crate::operation::reset_password::ResetPasswordOutput).
     pub fn build(self) -> crate::operation::reset_password::ResetPasswordOutput {
         crate::operation::reset_password::ResetPasswordOutput {
@@ -40,3 +40,4 @@ impl ResetPasswordOutputBuilder {
         }
     }
 }
+

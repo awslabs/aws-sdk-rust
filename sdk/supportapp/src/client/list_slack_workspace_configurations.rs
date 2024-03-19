@@ -2,16 +2,15 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListSlackWorkspaceConfigurations`](crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p><br>
-    /// - On success, responds with [`ListSlackWorkspaceConfigurationsOutput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput) with field(s):
+                            /// - On success, responds with [`ListSlackWorkspaceConfigurationsOutput`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput::next_token): <p>The point where pagination should resume when the response returns only partial results.</p>
     ///   - [`slack_workspace_configurations(Option<Vec::<SlackWorkspaceConfiguration>>)`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput::slack_workspace_configurations): <p>The configurations for a Slack workspace.</p>
-    /// - On failure, responds with [`SdkError<ListSlackWorkspaceConfigurationsError>`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError)
-    pub fn list_slack_workspace_configurations(
-        &self,
-    ) -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder {
-        crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListSlackWorkspaceConfigurationsError>`](crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError)
+    pub fn list_slack_workspace_configurations(&self) -> crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder {
+                                crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

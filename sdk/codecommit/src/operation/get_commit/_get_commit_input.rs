@@ -3,19 +3,19 @@
 /// <p>Represents the input of a get commit operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCommitInput {
+pub struct GetCommitInput  {
     /// <p>The name of the repository to which the commit was made.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     pub commit_id: ::std::option::Option<::std::string::String>,
 }
-impl GetCommitInput {
+impl  GetCommitInput  {
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-    pub fn commit_id(&self) -> ::std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<& str> {
         self.commit_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetCommitInputBuilder {
     }
     /// <p>The name of the repository to which the commit was made.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository to which the commit was made.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl GetCommitInputBuilder {
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,9 +64,14 @@ impl GetCommitInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_commit::GetCommitInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_commit::GetCommitInput {
-            repository_name: self.repository_name,
-            commit_id: self.commit_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_commit::GetCommitInput {
+                repository_name: self.repository_name
+                ,
+                commit_id: self.commit_id
+                ,
+            }
+        )
     }
 }
+

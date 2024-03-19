@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual router returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VirtualRouterRef {
+pub struct VirtualRouterRef  {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     pub mesh_name: ::std::string::String,
     /// <p>The name of the virtual router.</p>
@@ -21,42 +21,37 @@ pub struct VirtualRouterRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
 }
-impl VirtualRouterRef {
+impl  VirtualRouterRef  {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> & str {
+        use std::ops::Deref; self.mesh_name.deref()
     }
     /// <p>The name of the virtual router.</p>
-    pub fn virtual_router_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_router_name.deref()
+    pub fn virtual_router_name(&self) -> & str {
+        use std::ops::Deref; self.virtual_router_name.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_owner.deref()
+    pub fn mesh_owner(&self) -> & str {
+        use std::ops::Deref; self.mesh_owner.deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_owner.deref()
+    pub fn resource_owner(&self) -> & str {
+        use std::ops::Deref; self.resource_owner.deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn version(&self) -> i64 {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn created_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.created_at
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_at(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
 }
@@ -89,8 +84,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +98,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The name of the virtual router.</p>
     pub fn set_virtual_router_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.virtual_router_name = input;
-        self
+        self.virtual_router_name = input; self
     }
     /// <p>The name of the virtual router.</p>
     pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +112,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +126,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_resource_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_owner = input;
-        self
+        self.resource_owner = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +140,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -164,8 +154,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -179,8 +168,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +182,7 @@ impl VirtualRouterRefBuilder {
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -212,55 +199,50 @@ impl VirtualRouterRefBuilder {
     /// - [`created_at`](crate::types::builders::VirtualRouterRefBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::VirtualRouterRefBuilder::last_updated_at)
     pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterRef, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VirtualRouterRef {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            virtual_router_name: self.virtual_router_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_router_name",
-                    "virtual_router_name was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            mesh_owner: self.mesh_owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "mesh_owner",
-                    "mesh_owner was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            resource_owner: self.resource_owner.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_owner",
-                    "resource_owner was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-            last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_at",
-                    "last_updated_at was not specified but it is required when building VirtualRouterRef",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VirtualRouterRef {
+                mesh_name: self.mesh_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_name", "mesh_name was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                virtual_router_name: self.virtual_router_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_router_name", "virtual_router_name was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                mesh_owner: self.mesh_owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("mesh_owner", "mesh_owner was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                resource_owner: self.resource_owner
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_owner", "resource_owner was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                created_at: self.created_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("created_at", "created_at was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+                last_updated_at: self.last_updated_at
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_at", "last_updated_at was not specified but it is required when building VirtualRouterRef")
+                    )?
+                ,
+            }
+        )
     }
 }
+

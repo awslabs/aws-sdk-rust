@@ -3,7 +3,7 @@
 /// <p>Filter by asset model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FilterByAssetModel {
+pub struct FilterByAssetModel  {
     /// <p>The asset model Id.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The external-Id property of an asset model.</p>
@@ -13,13 +13,13 @@ pub struct FilterByAssetModel {
     /// <p>Bolean to include assets.</p>
     pub include_assets: ::std::option::Option<bool>,
 }
-impl FilterByAssetModel {
+impl  FilterByAssetModel  {
     /// <p>The asset model Id.</p>
-    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The external-Id property of an asset model.</p>
-    pub fn asset_model_external_id(&self) -> ::std::option::Option<&str> {
+    pub fn asset_model_external_id(&self) -> ::std::option::Option<& str> {
         self.asset_model_external_id.as_deref()
     }
     /// <p>Include asset offspring. [need desc.]</p>
@@ -55,8 +55,7 @@ impl FilterByAssetModelBuilder {
     }
     /// <p>The asset model Id.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The asset model Id.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl FilterByAssetModelBuilder {
     }
     /// <p>The external-Id property of an asset model.</p>
     pub fn set_asset_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_model_external_id = input;
-        self
+        self.asset_model_external_id = input; self
     }
     /// <p>The external-Id property of an asset model.</p>
     pub fn get_asset_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl FilterByAssetModelBuilder {
     }
     /// <p>Include asset offspring. [need desc.]</p>
     pub fn set_include_offspring(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_offspring = input;
-        self
+        self.include_offspring = input; self
     }
     /// <p>Include asset offspring. [need desc.]</p>
     pub fn get_include_offspring(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl FilterByAssetModelBuilder {
     }
     /// <p>Bolean to include assets.</p>
     pub fn set_include_assets(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.include_assets = input;
-        self
+        self.include_assets = input; self
     }
     /// <p>Bolean to include assets.</p>
     pub fn get_include_assets(&self) -> &::std::option::Option<bool> {
@@ -107,10 +103,15 @@ impl FilterByAssetModelBuilder {
     /// Consumes the builder and constructs a [`FilterByAssetModel`](crate::types::FilterByAssetModel).
     pub fn build(self) -> crate::types::FilterByAssetModel {
         crate::types::FilterByAssetModel {
-            asset_model_id: self.asset_model_id,
-            asset_model_external_id: self.asset_model_external_id,
-            include_offspring: self.include_offspring,
-            include_assets: self.include_assets,
+            asset_model_id: self.asset_model_id
+            ,
+            asset_model_external_id: self.asset_model_external_id
+            ,
+            include_offspring: self.include_offspring
+            ,
+            include_assets: self.include_assets
+            ,
         }
     }
 }
+

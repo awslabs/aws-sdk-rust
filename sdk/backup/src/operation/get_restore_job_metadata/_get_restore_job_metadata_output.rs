@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetRestoreJobMetadataOutput {
+pub struct GetRestoreJobMetadataOutput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub restore_job_id: ::std::option::Option<::std::string::String>,
     /// <p>This contains the metadata of the specified backup job.</p>
-    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl GetRestoreJobMetadataOutput {
+impl  GetRestoreJobMetadataOutput  {
     /// <p>This is a unique identifier of a restore job within Backup.</p>
-    pub fn restore_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn restore_job_id(&self) -> ::std::option::Option<& str> {
         self.restore_job_id.as_deref()
     }
     /// <p>This contains the metadata of the specified backup job.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn metadata(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetRestoreJobMetadataOutput {
+impl  ::std::fmt::Debug for GetRestoreJobMetadataOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetRestoreJobMetadataOutput");
         formatter.field("restore_job_id", &self.restore_job_id);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for GetRestoreJobMetadataOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetRestoreJobMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRestoreJobMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetRestoreJobMetadataOutput`](crate::operation::get_restore_job_metadata::GetRestoreJobMetadataOutput).
     pub fn builder() -> crate::operation::get_restore_job_metadata::builders::GetRestoreJobMetadataOutputBuilder {
@@ -45,7 +45,7 @@ impl GetRestoreJobMetadataOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetRestoreJobMetadataOutputBuilder {
     pub(crate) restore_job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRestoreJobMetadataOutputBuilder {
@@ -56,8 +56,7 @@ impl GetRestoreJobMetadataOutputBuilder {
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn set_restore_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.restore_job_id = input;
-        self
+        self.restore_job_id = input; self
     }
     /// <p>This is a unique identifier of a restore job within Backup.</p>
     pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,33 +69,34 @@ impl GetRestoreJobMetadataOutputBuilder {
     /// <p>This contains the metadata of the specified backup job.</p>
     pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.metadata = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.metadata = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This contains the metadata of the specified backup job.</p>
-    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input; self
     }
     /// <p>This contains the metadata of the specified backup job.</p>
-    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRestoreJobMetadataOutput`](crate::operation::get_restore_job_metadata::GetRestoreJobMetadataOutput).
     pub fn build(self) -> crate::operation::get_restore_job_metadata::GetRestoreJobMetadataOutput {
         crate::operation::get_restore_job_metadata::GetRestoreJobMetadataOutput {
-            restore_job_id: self.restore_job_id,
-            metadata: self.metadata,
+            restore_job_id: self.restore_job_id
+            ,
+            metadata: self.metadata
+            ,
             _request_id: self._request_id,
         }
     }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for GetRestoreJobMetadataOutputBuilder {
         formatter.finish()
     }
 }
+

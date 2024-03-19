@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFhirImportJobInput {
+pub struct DescribeFhirImportJobInput  {
     /// <p>The AWS-generated ID of the data store.</p>
     pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS-generated job ID.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFhirImportJobInput {
+impl  DescribeFhirImportJobInput  {
     /// <p>The AWS-generated ID of the data store.</p>
-    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
     /// <p>The AWS-generated job ID.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeFhirImportJobInputBuilder {
     }
     /// <p>The AWS-generated ID of the data store.</p>
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// <p>The AWS-generated ID of the data store.</p>
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DescribeFhirImportJobInputBuilder {
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeFhirImportJobInput`](crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput {
-            datastore_id: self.datastore_id,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_fhir_import_job::DescribeFhirImportJobInput {
+                datastore_id: self.datastore_id
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

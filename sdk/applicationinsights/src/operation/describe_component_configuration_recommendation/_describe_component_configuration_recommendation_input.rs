@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeComponentConfigurationRecommendationInput {
+pub struct DescribeComponentConfigurationRecommendationInput  {
     /// <p>The name of the resource group.</p>
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -14,34 +14,32 @@ pub struct DescribeComponentConfigurationRecommendationInput {
     /// <p>The recommended configuration type.</p>
     pub recommendation_type: ::std::option::Option<crate::types::RecommendationType>,
 }
-impl DescribeComponentConfigurationRecommendationInput {
+impl  DescribeComponentConfigurationRecommendationInput  {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The tier of the application component.</p>
-    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<& crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>The name of the workload.</p>
-    pub fn workload_name(&self) -> ::std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<& str> {
         self.workload_name.as_deref()
     }
     /// <p>The recommended configuration type.</p>
-    pub fn recommendation_type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
+    pub fn recommendation_type(&self) -> ::std::option::Option<& crate::types::RecommendationType> {
         self.recommendation_type.as_ref()
     }
 }
 impl DescribeComponentConfigurationRecommendationInput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder {
-        crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder {
+        crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationInputBuilder::default()
     }
 }
 
@@ -64,8 +62,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The name of the resource group.</p>
     pub fn set_resource_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_group_name = input;
-        self
+        self.resource_group_name = input; self
     }
     /// <p>The name of the resource group.</p>
     pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The tier of the application component.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// <p>The tier of the application component.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
@@ -108,8 +103,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The name of the workload.</p>
     pub fn set_workload_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workload_name = input;
-        self
+        self.workload_name = input; self
     }
     /// <p>The name of the workload.</p>
     pub fn get_workload_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -122,28 +116,28 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
     }
     /// <p>The recommended configuration type.</p>
     pub fn set_recommendation_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
-        self.recommendation_type = input;
-        self
+        self.recommendation_type = input; self
     }
     /// <p>The recommended configuration type.</p>
     pub fn get_recommendation_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
         &self.recommendation_type
     }
     /// Consumes the builder and constructs a [`DescribeComponentConfigurationRecommendationInput`](crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput {
-                resource_group_name: self.resource_group_name,
-                component_name: self.component_name,
-                tier: self.tier,
-                workload_name: self.workload_name,
-                recommendation_type: self.recommendation_type,
-            },
+                resource_group_name: self.resource_group_name
+                ,
+                component_name: self.component_name
+                ,
+                tier: self.tier
+                ,
+                workload_name: self.workload_name
+                ,
+                recommendation_type: self.recommendation_type
+                ,
+            }
         )
     }
 }
+

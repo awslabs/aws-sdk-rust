@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBehaviorModelTrainingSummariesOutput {
+pub struct GetBehaviorModelTrainingSummariesOutput  {
     /// <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
-    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::BehaviorModelTrainingSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BehaviorModelTrainingSummary>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetBehaviorModelTrainingSummariesOutput {
+impl  GetBehaviorModelTrainingSummariesOutput  {
     /// <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.summaries.is_none()`.
-    pub fn summaries(&self) -> &[crate::types::BehaviorModelTrainingSummary] {
-        self.summaries.as_deref().unwrap_or_default()
+    pub fn summaries(&self) -> & [crate::types::BehaviorModelTrainingSummary] {
+        self.summaries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBehaviorModelTrainingSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBehaviorModelTrainingSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetBehaviorModelTrainingSummariesOutput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput).
     pub fn builder() -> crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesOutputBuilder {
@@ -37,7 +38,7 @@ impl GetBehaviorModelTrainingSummariesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetBehaviorModelTrainingSummariesOutputBuilder {
-    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::BehaviorModelTrainingSummary>>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec::<crate::types::BehaviorModelTrainingSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetBehaviorModelTrainingSummariesOutputBuilder {
     /// <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
     pub fn summaries(mut self, input: crate::types::BehaviorModelTrainingSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
-        v.push(input);
-        self.summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
-    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BehaviorModelTrainingSummary>>) -> Self {
-        self.summaries = input;
-        self
+    pub fn set_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BehaviorModelTrainingSummary>>) -> Self {
+        self.summaries = input; self
     }
     /// <p>A list of all ML Detect behaviors and their model status for a given Security Profile.</p>
-    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BehaviorModelTrainingSummary>> {
+    pub fn get_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BehaviorModelTrainingSummary>> {
         &self.summaries
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
@@ -69,28 +69,30 @@ impl GetBehaviorModelTrainingSummariesOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBehaviorModelTrainingSummariesOutput`](crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput).
     pub fn build(self) -> crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput {
         crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummariesOutput {
-            summaries: self.summaries,
-            next_token: self.next_token,
+            summaries: self.summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

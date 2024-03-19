@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StopInstancesInput {
+pub struct StopInstancesInput  {
     /// <p>The IDs of the instances.</p>
-    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub hibernate: ::std::option::Option<bool>,
@@ -14,12 +14,13 @@ pub struct StopInstancesInput {
     /// <p>Default: <code>false</code></p>
     pub force: ::std::option::Option<bool>,
 }
-impl StopInstancesInput {
+impl  StopInstancesInput  {
     /// <p>The IDs of the instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
-    pub fn instance_ids(&self) -> &[::std::string::String] {
-        self.instance_ids.as_deref().unwrap_or_default()
+    pub fn instance_ids(&self) -> & [::std::string::String] {
+        self.instance_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
@@ -47,7 +48,7 @@ impl StopInstancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StopInstancesInputBuilder {
-    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) hibernate: ::std::option::Option<bool>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) force: ::std::option::Option<bool>,
@@ -60,17 +61,16 @@ impl StopInstancesInputBuilder {
     /// <p>The IDs of the instances.</p>
     pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.instance_ids
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -82,8 +82,7 @@ impl StopInstancesInputBuilder {
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_hibernate(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hibernate = input;
-        self
+        self.hibernate = input; self
     }
     /// <p>Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: <code>false</code></p>
@@ -97,8 +96,7 @@ impl StopInstancesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl StopInstancesInputBuilder {
     /// <p>Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</p>
     /// <p>Default: <code>false</code></p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.</p>
     /// <p>Default: <code>false</code></p>
@@ -122,14 +119,19 @@ impl StopInstancesInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopInstancesInput`](crate::operation::stop_instances::StopInstancesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::stop_instances::StopInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_instances::StopInstancesInput {
-            instance_ids: self.instance_ids,
-            hibernate: self.hibernate,
-            dry_run: self.dry_run,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_instances::StopInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::stop_instances::StopInstancesInput {
+                instance_ids: self.instance_ids
+                ,
+                hibernate: self.hibernate
+                ,
+                dry_run: self.dry_run
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

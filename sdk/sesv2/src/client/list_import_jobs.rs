@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListImportJobs`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`import_destination_type(ImportDestinationType)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::import_destination_type) / [`set_import_destination_type(Option<ImportDestinationType>)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::set_import_destination_type):<br>required: **false**<br><p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::set_next_token):<br>required: **false**<br><p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p><br>
     ///   - [`page_size(i32)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::page_size) / [`set_page_size(Option<i32>)`](crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::set_page_size):<br>required: **false**<br><p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p><br>
-    /// - On success, responds with [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput) with field(s):
+                            /// - On success, responds with [`ListImportJobsOutput`](crate::operation::list_import_jobs::ListImportJobsOutput) with field(s):
     ///   - [`import_jobs(Option<Vec::<ImportJobSummary>>)`](crate::operation::list_import_jobs::ListImportJobsOutput::import_jobs): <p>A list of the import job summaries.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_jobs::ListImportJobsOutput::next_token): <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    /// - On failure, responds with [`SdkError<ListImportJobsError>`](crate::operation::list_import_jobs::ListImportJobsError)
+                            /// - On failure, responds with [`SdkError<ListImportJobsError>`](crate::operation::list_import_jobs::ListImportJobsError)
     pub fn list_import_jobs(&self) -> crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder {
-        crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_import_jobs::builders::ListImportJobsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

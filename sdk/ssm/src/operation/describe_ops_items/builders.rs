@@ -5,55 +5,51 @@ pub use crate::operation::describe_ops_items::_describe_ops_items_input::Describ
 
 impl DescribeOpsItemsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_ops_items();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_ops_items::DescribeOpsItemsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_ops_items();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeOpsItems`.
-///
+/// 
 /// <p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOpsItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder,
+                    inner: crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        crate::operation::describe_ops_items::DescribeOpsItemsError,
-    > for DescribeOpsItemsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_ops_items::DescribeOpsItemsOutput,
+                    crate::operation::describe_ops_items::DescribeOpsItemsError,
+                > for DescribeOpsItemsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
+                        crate::operation::describe_ops_items::DescribeOpsItemsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeOpsItemsFluentBuilder {
     /// Creates a new `DescribeOpsItems`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeOpsItemsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_ops_items::DescribeOpsItemsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_ops_items::DescribeOpsItems::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_ops_items::DescribeOpsItems::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
-        crate::operation::describe_ops_items::DescribeOpsItemsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ops_items::DescribeOpsItemsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_ops_items::DescribeOpsItems::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_ops_items::DescribeOpsItems::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_ops_items::DescribeOpsItemsOutput, crate::operation::describe_ops_items::DescribeOpsItemsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
-        crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
+                                crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `OpsItemFilters`.
     ///
     /// To override the contents of this collection use [`set_ops_item_filters`](Self::set_ops_item_filters).
@@ -217,7 +204,7 @@ impl DescribeOpsItemsFluentBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>>) -> Self {
+    pub fn set_ops_item_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>>) -> Self {
         self.inner = self.inner.set_ops_item_filters(input);
         self
     }
@@ -268,7 +255,7 @@ impl DescribeOpsItemsFluentBuilder {
     /// </ul>
     /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
     /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
-    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemFilter>> {
+    pub fn get_ops_item_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsItemFilter>> {
         self.inner.get_ops_item_filters()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -300,3 +287,4 @@ impl DescribeOpsItemsFluentBuilder {
         self.inner.get_next_token()
     }
 }
+

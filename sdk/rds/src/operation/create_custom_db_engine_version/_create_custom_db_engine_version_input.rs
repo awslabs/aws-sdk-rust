@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomDbEngineVersionInput {
+pub struct CreateCustomDbEngineVersionInput  {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
@@ -56,41 +56,41 @@ pub struct CreateCustomDbEngineVersionInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"> Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub manifest: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub use_aws_provided_latest_image: ::std::option::Option<bool>,
 }
-impl CreateCustomDbEngineVersionInput {
+impl  CreateCustomDbEngineVersionInput  {
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-    pub fn engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_installation_files_s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.database_installation_files_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn database_installation_files_s3_prefix(&self) -> ::std::option::Option<& str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
     /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>An optional description of your CEV.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.</p>
@@ -128,17 +128,18 @@ impl CreateCustomDbEngineVersionInput {
     /// </dd>
     /// </dl>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"> Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn manifest(&self) -> ::std::option::Option<&str> {
+    pub fn manifest(&self) -> ::std::option::Option<& str> {
         self.manifest.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
-    pub fn source_custom_db_engine_version_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_custom_db_engine_version_identifier(&self) -> ::std::option::Option<& str> {
         self.source_custom_db_engine_version_identifier.as_deref()
     }
     /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
@@ -165,7 +166,7 @@ pub struct CreateCustomDbEngineVersionInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) manifest: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) source_custom_db_engine_version_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) use_aws_provided_latest_image: ::std::option::Option<bool>,
 }
@@ -178,8 +179,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +193,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +206,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
     pub fn set_database_installation_files_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_bucket_name = input;
-        self
+        self.database_installation_files_s3_bucket_name = input; self
     }
     /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.</p>
     pub fn get_database_installation_files_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +219,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub fn set_database_installation_files_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_installation_files_s3_prefix = input;
-        self
+        self.database_installation_files_s3_prefix = input; self
     }
     /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
     pub fn get_database_installation_files_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,8 +232,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,8 +249,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p>
     /// <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
@@ -269,8 +264,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>An optional description of your CEV.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>An optional description of your CEV.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -351,8 +345,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     /// </dl>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"> Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.manifest = input;
-        self
+        self.manifest = input; self
     }
     /// <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.</p>
     /// <p>The following JSON fields are valid:</p>
@@ -399,17 +392,16 @@ impl CreateCustomDbEngineVersionInputBuilder {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
@@ -419,8 +411,7 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn set_source_custom_db_engine_version_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_custom_db_engine_version_identifier = input;
-        self
+        self.source_custom_db_engine_version_identifier = input; self
     }
     /// <p>The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
     pub fn get_source_custom_db_engine_version_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -433,32 +424,40 @@ impl CreateCustomDbEngineVersionInputBuilder {
     }
     /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn set_use_aws_provided_latest_image(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.use_aws_provided_latest_image = input;
-        self
+        self.use_aws_provided_latest_image = input; self
     }
     /// <p>Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.</p>
     pub fn get_use_aws_provided_latest_image(&self) -> &::std::option::Option<bool> {
         &self.use_aws_provided_latest_image
     }
     /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionInput`](crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name,
-            database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-            image_id: self.image_id,
-            kms_key_id: self.kms_key_id,
-            description: self.description,
-            manifest: self.manifest,
-            tags: self.tags,
-            source_custom_db_engine_version_identifier: self.source_custom_db_engine_version_identifier,
-            use_aws_provided_latest_image: self.use_aws_provided_latest_image,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionInput {
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name
+                ,
+                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix
+                ,
+                image_id: self.image_id
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                description: self.description
+                ,
+                manifest: self.manifest
+                ,
+                tags: self.tags
+                ,
+                source_custom_db_engine_version_identifier: self.source_custom_db_engine_version_identifier
+                ,
+                use_aws_provided_latest_image: self.use_aws_provided_latest_image
+                ,
+            }
+        )
     }
 }
+

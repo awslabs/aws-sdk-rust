@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWaveInput {
+pub struct DeleteWaveInput  {
     /// <p>Wave ID.</p>
     pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteWaveInput {
+impl  DeleteWaveInput  {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Account ID.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteWaveInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.wave_id = input;
-        self
+        self.wave_id = input; self
     }
     /// <p>Wave ID.</p>
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DeleteWaveInputBuilder {
     }
     /// <p>Account ID.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>Account ID.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl DeleteWaveInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteWaveInput`](crate::operation::delete_wave::DeleteWaveInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_wave::DeleteWaveInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_wave::DeleteWaveInput {
-            wave_id: self.wave_id,
-            account_id: self.account_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_wave::DeleteWaveInput {
+                wave_id: self.wave_id
+                ,
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

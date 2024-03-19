@@ -3,13 +3,13 @@
 /// <p>The Shutdown event configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShutdownEventConfiguration {
+pub struct ShutdownEventConfiguration  {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub execution_timeout: ::std::option::Option<i32>,
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub delay_until_elb_connections_drained: ::std::option::Option<bool>,
 }
-impl ShutdownEventConfiguration {
+impl  ShutdownEventConfiguration  {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub fn execution_timeout(&self) -> ::std::option::Option<i32> {
         self.execution_timeout
@@ -41,8 +41,7 @@ impl ShutdownEventConfigurationBuilder {
     }
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub fn set_execution_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.execution_timeout = input;
-        self
+        self.execution_timeout = input; self
     }
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub fn get_execution_timeout(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl ShutdownEventConfigurationBuilder {
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn set_delay_until_elb_connections_drained(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.delay_until_elb_connections_drained = input;
-        self
+        self.delay_until_elb_connections_drained = input; self
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></p>
     pub fn get_delay_until_elb_connections_drained(&self) -> &::std::option::Option<bool> {
@@ -65,8 +63,11 @@ impl ShutdownEventConfigurationBuilder {
     /// Consumes the builder and constructs a [`ShutdownEventConfiguration`](crate::types::ShutdownEventConfiguration).
     pub fn build(self) -> crate::types::ShutdownEventConfiguration {
         crate::types::ShutdownEventConfiguration {
-            execution_timeout: self.execution_timeout,
-            delay_until_elb_connections_drained: self.delay_until_elb_connections_drained,
+            execution_timeout: self.execution_timeout
+            ,
+            delay_until_elb_connections_drained: self.delay_until_elb_connections_drained
+            ,
         }
     }
 }
+

@@ -3,21 +3,21 @@
 /// <p>In-App Template Response.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InAppTemplateResponse {
+pub struct InAppTemplateResponse  {
     /// <p>The resource arn of the template.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>,
     /// <p>The creation date of the template.</p>
     pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Custom config to be sent to client.</p>
-    pub custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub custom_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The last modified date of the template.</p>
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The layout of the message.</p>
     pub layout: ::std::option::Option<crate::types::Layout>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The description of the template.</p>
     pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
@@ -27,51 +27,52 @@ pub struct InAppTemplateResponse {
     /// <p>The version id of the template.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl InAppTemplateResponse {
+impl  InAppTemplateResponse  {
     /// <p>The resource arn of the template.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content.is_none()`.
-    pub fn content(&self) -> &[crate::types::InAppMessageContent] {
-        self.content.as_deref().unwrap_or_default()
+    pub fn content(&self) -> & [crate::types::InAppMessageContent] {
+        self.content.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The creation date of the template.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn custom_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.custom_config.as_ref()
     }
     /// <p>The last modified date of the template.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The layout of the message.</p>
-    pub fn layout(&self) -> ::std::option::Option<&crate::types::Layout> {
+    pub fn layout(&self) -> ::std::option::Option<& crate::types::Layout> {
         self.layout.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The description of the template.</p>
-    pub fn template_description(&self) -> ::std::option::Option<&str> {
+    pub fn template_description(&self) -> ::std::option::Option<& str> {
         self.template_description.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> ::std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The type of the template.</p>
-    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<& crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The version id of the template.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -87,12 +88,12 @@ impl InAppTemplateResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InAppTemplateResponseBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
-    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>,
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
-    pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) custom_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
     pub(crate) layout: ::std::option::Option<crate::types::Layout>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) template_description: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
     pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
@@ -106,8 +107,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The resource arn of the template.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The resource arn of the template.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,17 +120,16 @@ impl InAppTemplateResponseBuilder {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
-        v.push(input);
-        self.content = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.content = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>>) -> Self {
+        self.content = input; self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+    pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InAppMessageContent>> {
         &self.content
     }
     /// <p>The creation date of the template.</p>
@@ -141,8 +140,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The creation date of the template.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The creation date of the template.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,20 +153,16 @@ impl InAppTemplateResponseBuilder {
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.custom_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.custom_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn set_custom_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.custom_config = input;
-        self
+    pub fn set_custom_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.custom_config = input; self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn get_custom_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_custom_config(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.custom_config
     }
     /// <p>The last modified date of the template.</p>
@@ -179,8 +173,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The last modified date of the template.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The last modified date of the template.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +186,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The layout of the message.</p>
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
-        self.layout = input;
-        self
+        self.layout = input; self
     }
     /// <p>The layout of the message.</p>
     pub fn get_layout(&self) -> &::std::option::Option<crate::types::Layout> {
@@ -207,17 +199,16 @@ impl InAppTemplateResponseBuilder {
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>The description of the template.</p>
@@ -227,8 +218,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The description of the template.</p>
     pub fn set_template_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_description = input;
-        self
+        self.template_description = input; self
     }
     /// <p>The description of the template.</p>
     pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +232,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The name of the template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +246,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The type of the template.</p>
     pub fn set_template_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
-        self.template_type = input;
-        self
+        self.template_type = input; self
     }
     /// <p>The type of the template.</p>
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
@@ -271,8 +259,7 @@ impl InAppTemplateResponseBuilder {
     }
     /// <p>The version id of the template.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version id of the template.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -281,17 +268,29 @@ impl InAppTemplateResponseBuilder {
     /// Consumes the builder and constructs a [`InAppTemplateResponse`](crate::types::InAppTemplateResponse).
     pub fn build(self) -> crate::types::InAppTemplateResponse {
         crate::types::InAppTemplateResponse {
-            arn: self.arn,
-            content: self.content,
-            creation_date: self.creation_date,
-            custom_config: self.custom_config,
-            last_modified_date: self.last_modified_date,
-            layout: self.layout,
-            tags: self.tags,
-            template_description: self.template_description,
-            template_name: self.template_name,
-            template_type: self.template_type,
-            version: self.version,
+            arn: self.arn
+            ,
+            content: self.content
+            ,
+            creation_date: self.creation_date
+            ,
+            custom_config: self.custom_config
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            layout: self.layout
+            ,
+            tags: self.tags
+            ,
+            template_description: self.template_description
+            ,
+            template_name: self.template_name
+            ,
+            template_type: self.template_type
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ThumbnailConfiguration {
+pub struct ThumbnailConfiguration  {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     pub recording_mode: ::std::option::Option<crate::types::RecordingMode>,
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
@@ -12,11 +12,11 @@ pub struct ThumbnailConfiguration {
     /// <p>Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution. For more information about resolution values and their corresponding height and width dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default: Null (source resolution is returned).</p>
     pub resolution: ::std::option::Option<crate::types::ThumbnailConfigurationResolution>,
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
-    pub storage: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailConfigurationStorage>>,
+    pub storage: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailConfigurationStorage>>,
 }
-impl ThumbnailConfiguration {
+impl  ThumbnailConfiguration  {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
-    pub fn recording_mode(&self) -> ::std::option::Option<&crate::types::RecordingMode> {
+    pub fn recording_mode(&self) -> ::std::option::Option<& crate::types::RecordingMode> {
         self.recording_mode.as_ref()
     }
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
@@ -25,14 +25,15 @@ impl ThumbnailConfiguration {
         self.target_interval_seconds
     }
     /// <p>Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution. For more information about resolution values and their corresponding height and width dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default: Null (source resolution is returned).</p>
-    pub fn resolution(&self) -> ::std::option::Option<&crate::types::ThumbnailConfigurationResolution> {
+    pub fn resolution(&self) -> ::std::option::Option<& crate::types::ThumbnailConfigurationResolution> {
         self.resolution.as_ref()
     }
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.storage.is_none()`.
-    pub fn storage(&self) -> &[crate::types::ThumbnailConfigurationStorage] {
-        self.storage.as_deref().unwrap_or_default()
+    pub fn storage(&self) -> & [crate::types::ThumbnailConfigurationStorage] {
+        self.storage.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ThumbnailConfiguration {
@@ -49,7 +50,7 @@ pub struct ThumbnailConfigurationBuilder {
     pub(crate) recording_mode: ::std::option::Option<crate::types::RecordingMode>,
     pub(crate) target_interval_seconds: ::std::option::Option<i64>,
     pub(crate) resolution: ::std::option::Option<crate::types::ThumbnailConfigurationResolution>,
-    pub(crate) storage: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailConfigurationStorage>>,
+    pub(crate) storage: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailConfigurationStorage>>,
 }
 impl ThumbnailConfigurationBuilder {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
@@ -59,8 +60,7 @@ impl ThumbnailConfigurationBuilder {
     }
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     pub fn set_recording_mode(mut self, input: ::std::option::Option<crate::types::RecordingMode>) -> Self {
-        self.recording_mode = input;
-        self
+        self.recording_mode = input; self
     }
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     pub fn get_recording_mode(&self) -> &::std::option::Option<crate::types::RecordingMode> {
@@ -75,8 +75,7 @@ impl ThumbnailConfigurationBuilder {
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
     /// <p><b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     pub fn set_target_interval_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.target_interval_seconds = input;
-        self
+        self.target_interval_seconds = input; self
     }
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
     /// <p><b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
@@ -90,8 +89,7 @@ impl ThumbnailConfigurationBuilder {
     }
     /// <p>Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution. For more information about resolution values and their corresponding height and width dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default: Null (source resolution is returned).</p>
     pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::ThumbnailConfigurationResolution>) -> Self {
-        self.resolution = input;
-        self
+        self.resolution = input; self
     }
     /// <p>Indicates the desired resolution of recorded thumbnails. Thumbnails are recorded at the selected resolution if the corresponding rendition is available during the stream; otherwise, they are recorded at source resolution. For more information about resolution values and their corresponding height and width dimensions, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record to Amazon S3</a>. Default: Null (source resolution is returned).</p>
     pub fn get_resolution(&self) -> &::std::option::Option<crate::types::ThumbnailConfigurationResolution> {
@@ -104,26 +102,30 @@ impl ThumbnailConfigurationBuilder {
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
     pub fn storage(mut self, input: crate::types::ThumbnailConfigurationStorage) -> Self {
         let mut v = self.storage.unwrap_or_default();
-        v.push(input);
-        self.storage = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.storage = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
-    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThumbnailConfigurationStorage>>) -> Self {
-        self.storage = input;
-        self
+    pub fn set_storage(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailConfigurationStorage>>) -> Self {
+        self.storage = input; self
     }
     /// <p>Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code> saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at the interval specified by <code>targetIntervalSeconds</code>. You can enable both <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.</p>
-    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThumbnailConfigurationStorage>> {
+    pub fn get_storage(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ThumbnailConfigurationStorage>> {
         &self.storage
     }
     /// Consumes the builder and constructs a [`ThumbnailConfiguration`](crate::types::ThumbnailConfiguration).
     pub fn build(self) -> crate::types::ThumbnailConfiguration {
         crate::types::ThumbnailConfiguration {
-            recording_mode: self.recording_mode,
-            target_interval_seconds: self.target_interval_seconds,
-            resolution: self.resolution,
-            storage: self.storage,
+            recording_mode: self.recording_mode
+            ,
+            target_interval_seconds: self.target_interval_seconds
+            ,
+            resolution: self.resolution
+            ,
+            storage: self.storage
+            ,
         }
     }
 }
+

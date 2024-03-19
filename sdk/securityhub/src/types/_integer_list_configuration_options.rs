@@ -3,9 +3,9 @@
 /// <p>The options for customizing a security control parameter that is a list of integers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerListConfigurationOptions {
+pub struct IntegerListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
-    pub default_value: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub default_value: ::std::option::Option<::std::vec::Vec::<i32>>,
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
     pub min: ::std::option::Option<i32>,
     /// <p>The maximum valid value for a control parameter that is a list of integers.</p>
@@ -13,12 +13,13 @@ pub struct IntegerListConfigurationOptions {
     /// <p>The maximum number of list items that an interger list control parameter can accept.</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl IntegerListConfigurationOptions {
+impl  IntegerListConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
-    pub fn default_value(&self) -> &[i32] {
-        self.default_value.as_deref().unwrap_or_default()
+    pub fn default_value(&self) -> & [i32] {
+        self.default_value.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
     pub fn min(&self) -> ::std::option::Option<i32> {
@@ -44,7 +45,7 @@ impl IntegerListConfigurationOptions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IntegerListConfigurationOptionsBuilder {
-    pub(crate) default_value: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) default_value: ::std::option::Option<::std::vec::Vec::<i32>>,
     pub(crate) min: ::std::option::Option<i32>,
     pub(crate) max: ::std::option::Option<i32>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -57,17 +58,16 @@ impl IntegerListConfigurationOptionsBuilder {
     /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
     pub fn default_value(mut self, input: i32) -> Self {
         let mut v = self.default_value.unwrap_or_default();
-        v.push(input);
-        self.default_value = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.default_value = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
-    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
-        self.default_value = input;
-        self
+    pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec::<i32>>) -> Self {
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
-    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec::<i32>> {
         &self.default_value
     }
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
@@ -77,8 +77,7 @@ impl IntegerListConfigurationOptionsBuilder {
     }
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
     pub fn get_min(&self) -> &::std::option::Option<i32> {
@@ -91,8 +90,7 @@ impl IntegerListConfigurationOptionsBuilder {
     }
     /// <p>The maximum valid value for a control parameter that is a list of integers.</p>
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>The maximum valid value for a control parameter that is a list of integers.</p>
     pub fn get_max(&self) -> &::std::option::Option<i32> {
@@ -105,8 +103,7 @@ impl IntegerListConfigurationOptionsBuilder {
     }
     /// <p>The maximum number of list items that an interger list control parameter can accept.</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The maximum number of list items that an interger list control parameter can accept.</p>
     pub fn get_max_items(&self) -> &::std::option::Option<i32> {
@@ -115,10 +112,15 @@ impl IntegerListConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`IntegerListConfigurationOptions`](crate::types::IntegerListConfigurationOptions).
     pub fn build(self) -> crate::types::IntegerListConfigurationOptions {
         crate::types::IntegerListConfigurationOptions {
-            default_value: self.default_value,
-            min: self.min,
-            max: self.max,
-            max_items: self.max_items,
+            default_value: self.default_value
+            ,
+            min: self.min
+            ,
+            max: self.max
+            ,
+            max_items: self.max_items
+            ,
         }
     }
 }
+

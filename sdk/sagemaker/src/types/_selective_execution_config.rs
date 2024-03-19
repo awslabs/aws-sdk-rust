@@ -3,24 +3,25 @@
 /// <p>The selective execution configuration applied to the pipeline run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SelectiveExecutionConfig {
+pub struct SelectiveExecutionConfig  {
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
     /// <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
     pub source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    pub selected_steps: ::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>>,
+    pub selected_steps: ::std::option::Option<::std::vec::Vec::<crate::types::SelectedStep>>,
 }
-impl SelectiveExecutionConfig {
+impl  SelectiveExecutionConfig  {
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
     /// <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
-    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_pipeline_execution_arn(&self) -> ::std::option::Option<& str> {
         self.source_pipeline_execution_arn.as_deref()
     }
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_steps.is_none()`.
-    pub fn selected_steps(&self) -> &[crate::types::SelectedStep] {
-        self.selected_steps.as_deref().unwrap_or_default()
+    pub fn selected_steps(&self) -> & [crate::types::SelectedStep] {
+        self.selected_steps.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SelectiveExecutionConfig {
@@ -35,7 +36,7 @@ impl SelectiveExecutionConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SelectiveExecutionConfigBuilder {
     pub(crate) source_pipeline_execution_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) selected_steps: ::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>>,
+    pub(crate) selected_steps: ::std::option::Option<::std::vec::Vec::<crate::types::SelectedStep>>,
 }
 impl SelectiveExecutionConfigBuilder {
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
@@ -47,8 +48,7 @@ impl SelectiveExecutionConfigBuilder {
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
     /// <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
     pub fn set_source_pipeline_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_pipeline_execution_arn = input;
-        self
+        self.source_pipeline_execution_arn = input; self
     }
     /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
     /// <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
@@ -62,24 +62,26 @@ impl SelectiveExecutionConfigBuilder {
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
     pub fn selected_steps(mut self, input: crate::types::SelectedStep) -> Self {
         let mut v = self.selected_steps.unwrap_or_default();
-        v.push(input);
-        self.selected_steps = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.selected_steps = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    pub fn set_selected_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>>) -> Self {
-        self.selected_steps = input;
-        self
+    pub fn set_selected_steps(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SelectedStep>>) -> Self {
+        self.selected_steps = input; self
     }
     /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-    pub fn get_selected_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>> {
+    pub fn get_selected_steps(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SelectedStep>> {
         &self.selected_steps
     }
     /// Consumes the builder and constructs a [`SelectiveExecutionConfig`](crate::types::SelectiveExecutionConfig).
     pub fn build(self) -> crate::types::SelectiveExecutionConfig {
         crate::types::SelectiveExecutionConfig {
-            source_pipeline_execution_arn: self.source_pipeline_execution_arn,
-            selected_steps: self.selected_steps,
+            source_pipeline_execution_arn: self.source_pipeline_execution_arn
+            ,
+            selected_steps: self.selected_steps
+            ,
         }
     }
 }
+

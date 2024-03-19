@@ -3,7 +3,7 @@
 /// <p>A filter that you apply when searching for one or more analyses.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalysisSearchFilter {
+pub struct AnalysisSearchFilter  {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching for. For example, <code>"Name":"ANALYSIS_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>ANALYSIS_NAME</code>.</p>
@@ -28,11 +28,11 @@ pub struct AnalysisSearchFilter {
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl AnalysisSearchFilter {
+impl  AnalysisSearchFilter  {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching for. For example, <code>"Name":"ANALYSIS_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>ANALYSIS_NAME</code>.</p>
-    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<& crate::types::FilterOperator> {
         self.operator.as_ref()
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
@@ -51,11 +51,11 @@ impl AnalysisSearchFilter {
     /// <li>
     /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
     /// </ul>
-    pub fn name(&self) -> ::std::option::Option<&crate::types::AnalysisFilterAttribute> {
+    pub fn name(&self) -> ::std::option::Option<& crate::types::AnalysisFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -86,8 +86,7 @@ impl AnalysisSearchFilterBuilder {
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching for. For example, <code>"Name":"ANALYSIS_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>ANALYSIS_NAME</code>.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::FilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
@@ -132,8 +131,7 @@ impl AnalysisSearchFilterBuilder {
     /// <p><code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this value will be returned.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalysisFilterAttribute>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
@@ -161,8 +159,7 @@ impl AnalysisSearchFilterBuilder {
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example <code>"Value"</code>. An example is <code>"arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,9 +168,13 @@ impl AnalysisSearchFilterBuilder {
     /// Consumes the builder and constructs a [`AnalysisSearchFilter`](crate::types::AnalysisSearchFilter).
     pub fn build(self) -> crate::types::AnalysisSearchFilter {
         crate::types::AnalysisSearchFilter {
-            operator: self.operator,
-            name: self.name,
-            value: self.value,
+            operator: self.operator
+            ,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

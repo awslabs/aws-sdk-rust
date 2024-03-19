@@ -3,19 +3,19 @@
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchReadException {
+pub struct BatchReadException  {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     pub r#type: ::std::option::Option<crate::types::BatchReadExceptionType>,
     /// <p>An exception message that is associated with the failure.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl BatchReadException {
+impl  BatchReadException  {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchReadExceptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::BatchReadExceptionType> {
         self.r#type.as_ref()
     }
     /// <p>An exception message that is associated with the failure.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl BatchReadExceptionBuilder {
     }
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BatchReadExceptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BatchReadExceptionType> {
@@ -55,8 +54,7 @@ impl BatchReadExceptionBuilder {
     }
     /// <p>An exception message that is associated with the failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An exception message that is associated with the failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl BatchReadExceptionBuilder {
     /// Consumes the builder and constructs a [`BatchReadException`](crate::types::BatchReadException).
     pub fn build(self) -> crate::types::BatchReadException {
         crate::types::BatchReadException {
-            r#type: self.r#type,
-            message: self.message,
+            r#type: self.r#type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

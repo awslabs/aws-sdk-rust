@@ -2,25 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateParticipantConnectionInput {
+pub struct CreateParticipantConnectionInput  {
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-    pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>,
+    pub r#type: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectionType>>,
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub participant_token: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub connect_participant: ::std::option::Option<bool>,
 }
-impl CreateParticipantConnectionInput {
+impl  CreateParticipantConnectionInput  {
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
-    pub fn r#type(&self) -> &[crate::types::ConnectionType] {
-        self.r#type.as_deref().unwrap_or_default()
+    pub fn r#type(&self) -> & [crate::types::ConnectionType] {
+        self.r#type.as_deref()
+        .unwrap_or_default()
     }
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-    pub fn participant_token(&self) -> ::std::option::Option<&str> {
+    pub fn participant_token(&self) -> ::std::option::Option<& str> {
         self.participant_token.as_deref()
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
@@ -39,7 +40,7 @@ impl CreateParticipantConnectionInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateParticipantConnectionInputBuilder {
-    pub(crate) r#type: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>,
+    pub(crate) r#type: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectionType>>,
     pub(crate) participant_token: ::std::option::Option<::std::string::String>,
     pub(crate) connect_participant: ::std::option::Option<bool>,
 }
@@ -51,17 +52,16 @@ impl CreateParticipantConnectionInputBuilder {
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
     pub fn r#type(mut self, input: crate::types::ConnectionType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
-        v.push(input);
-        self.r#type = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.r#type = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ConnectionType>>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
-    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ConnectionType>> {
         &self.r#type
     }
     /// <p>This is a header parameter.</p>
@@ -74,8 +74,7 @@ impl CreateParticipantConnectionInputBuilder {
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_token = input;
-        self
+        self.participant_token = input; self
     }
     /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
@@ -89,24 +88,24 @@ impl CreateParticipantConnectionInputBuilder {
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn set_connect_participant(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.connect_participant = input;
-        self
+        self.connect_participant = input; self
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn get_connect_participant(&self) -> &::std::option::Option<bool> {
         &self.connect_participant
     }
     /// Consumes the builder and constructs a [`CreateParticipantConnectionInput`](crate::operation::create_participant_connection::CreateParticipantConnectionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_participant_connection::CreateParticipantConnectionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_participant_connection::CreateParticipantConnectionInput {
-            r#type: self.r#type,
-            participant_token: self.participant_token,
-            connect_participant: self.connect_participant,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_participant_connection::CreateParticipantConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_participant_connection::CreateParticipantConnectionInput {
+                r#type: self.r#type
+                ,
+                participant_token: self.participant_token
+                ,
+                connect_participant: self.connect_participant
+                ,
+            }
+        )
     }
 }
+

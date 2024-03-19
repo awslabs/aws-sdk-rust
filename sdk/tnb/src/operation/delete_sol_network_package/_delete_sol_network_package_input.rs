@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSolNetworkPackageInput {
+pub struct DeleteSolNetworkPackageInput  {
     /// <p>ID of the network service descriptor in the network package.</p>
     pub nsd_info_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSolNetworkPackageInput {
+impl  DeleteSolNetworkPackageInput  {
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
+    pub fn nsd_info_id(&self) -> ::std::option::Option<& str> {
         self.nsd_info_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl DeleteSolNetworkPackageInputBuilder {
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nsd_info_id = input;
-        self
+        self.nsd_info_id = input; self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.nsd_info_id
     }
     /// Consumes the builder and constructs a [`DeleteSolNetworkPackageInput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
-            nsd_info_id: self.nsd_info_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
+                nsd_info_id: self.nsd_info_id
+                ,
+            }
+        )
     }
 }
+

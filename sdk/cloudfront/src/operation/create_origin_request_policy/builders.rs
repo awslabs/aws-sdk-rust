@@ -5,23 +5,20 @@ pub use crate::operation::create_origin_request_policy::_create_origin_request_p
 
 impl CreateOriginRequestPolicyInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_origin_request_policy();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_origin_request_policy();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateOriginRequestPolicy`.
-///
+/// 
 /// <p>Creates an origin request policy.</p>
 /// <p>After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:</p>
 /// <ul>
@@ -37,33 +34,32 @@ impl CreateOriginRequestPolicyInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOriginRequestPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder,
+                    inner: crate::operation::create_origin_request_policy::builders::CreateOriginRequestPolicyInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-    > for CreateOriginRequestPolicyFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
+                    crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
+                > for CreateOriginRequestPolicyFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
+                        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateOriginRequestPolicyFluentBuilder {
     /// Creates a new `CreateOriginRequestPolicy`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -72,53 +68,44 @@ impl CreateOriginRequestPolicyFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_origin_request_policy::CreateOriginRequestPolicy::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicy::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput,
-        crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_origin_request_policy::CreateOriginRequestPolicy::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_origin_request_policy::CreateOriginRequestPolicy::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_origin_request_policy::CreateOriginRequestPolicyOutput, crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>An origin request policy configuration.</p>
     pub fn origin_request_policy_config(mut self, input: crate::types::OriginRequestPolicyConfig) -> Self {
         self.inner = self.inner.origin_request_policy_config(input);
@@ -134,3 +121,4 @@ impl CreateOriginRequestPolicyFluentBuilder {
         self.inner.get_origin_request_policy_config()
     }
 }
+

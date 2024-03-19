@@ -3,7 +3,7 @@
 /// <p>A complex type for an endpoint. Each endpoint group can include one or more endpoints, such as load balancers.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EndpointDescription {
+pub struct EndpointDescription  {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub endpoint_id: ::std::option::Option<::std::string::String>,
@@ -19,10 +19,10 @@ pub struct EndpointDescription {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub client_ip_preservation_enabled: ::std::option::Option<bool>,
 }
-impl EndpointDescription {
+impl  EndpointDescription  {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
-    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -30,11 +30,11 @@ impl EndpointDescription {
         self.weight
     }
     /// <p>The health status of the endpoint.</p>
-    pub fn health_state(&self) -> ::std::option::Option<&crate::types::HealthState> {
+    pub fn health_state(&self) -> ::std::option::Option<& crate::types::HealthState> {
         self.health_state.as_ref()
     }
     /// <p>Returns a null result.</p>
-    pub fn health_reason(&self) -> ::std::option::Option<&str> {
+    pub fn health_reason(&self) -> ::std::option::Option<& str> {
         self.health_reason.as_deref()
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for Application Load Balancers endpoints.</p>
@@ -72,8 +72,7 @@ impl EndpointDescriptionBuilder {
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// <p>An ID for the endpoint. If the endpoint is a Network Load Balancer or Application Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID.</p>
     /// <p>An Application Load Balancer can be either internal or internet-facing.</p>
@@ -87,8 +86,7 @@ impl EndpointDescriptionBuilder {
     }
     /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The weight associated with the endpoint. When you add weights to endpoints, you configure Global Accelerator to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
@@ -101,8 +99,7 @@ impl EndpointDescriptionBuilder {
     }
     /// <p>The health status of the endpoint.</p>
     pub fn set_health_state(mut self, input: ::std::option::Option<crate::types::HealthState>) -> Self {
-        self.health_state = input;
-        self
+        self.health_state = input; self
     }
     /// <p>The health status of the endpoint.</p>
     pub fn get_health_state(&self) -> &::std::option::Option<crate::types::HealthState> {
@@ -115,8 +112,7 @@ impl EndpointDescriptionBuilder {
     }
     /// <p>Returns a null result.</p>
     pub fn set_health_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.health_reason = input;
-        self
+        self.health_reason = input; self
     }
     /// <p>Returns a null result.</p>
     pub fn get_health_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +131,7 @@ impl EndpointDescriptionBuilder {
     /// <p>Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve client IP addresses in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_client_ip_preservation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.client_ip_preservation_enabled = input;
-        self
+        self.client_ip_preservation_enabled = input; self
     }
     /// <p>Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The default value is true for Application Load Balancers endpoints.</p>
     /// <p>If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request header as traffic travels to applications on the endpoint fronted by the accelerator.</p>
@@ -148,11 +143,17 @@ impl EndpointDescriptionBuilder {
     /// Consumes the builder and constructs a [`EndpointDescription`](crate::types::EndpointDescription).
     pub fn build(self) -> crate::types::EndpointDescription {
         crate::types::EndpointDescription {
-            endpoint_id: self.endpoint_id,
-            weight: self.weight,
-            health_state: self.health_state,
-            health_reason: self.health_reason,
-            client_ip_preservation_enabled: self.client_ip_preservation_enabled,
+            endpoint_id: self.endpoint_id
+            ,
+            weight: self.weight
+            ,
+            health_state: self.health_state
+            ,
+            health_reason: self.health_reason
+            ,
+            client_ip_preservation_enabled: self.client_ip_preservation_enabled
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>RebootDBInstance</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RebootDbInstanceInput {
+pub struct RebootDbInstanceInput  {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -15,14 +15,14 @@ pub struct RebootDbInstanceInput {
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub force_failover: ::std::option::Option<bool>,
 }
-impl RebootDbInstanceInput {
+impl  RebootDbInstanceInput  {
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
     /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
@@ -64,8 +64,7 @@ impl RebootDbInstanceInputBuilder {
     /// <p>Must match the identifier of an existing <code>DBInstance</code>.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_instance_identifier = input;
-        self
+        self.db_instance_identifier = input; self
     }
     /// <p>The instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -85,8 +84,7 @@ impl RebootDbInstanceInputBuilder {
     /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
     pub fn set_force_failover(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force_failover = input;
-        self
+        self.force_failover = input; self
     }
     /// <p>When <code>true</code>, the reboot is conducted through a Multi-AZ failover.</p>
     /// <p>Constraint: You can't specify <code>true</code> if the instance is not configured for Multi-AZ.</p>
@@ -94,12 +92,15 @@ impl RebootDbInstanceInputBuilder {
         &self.force_failover
     }
     /// Consumes the builder and constructs a [`RebootDbInstanceInput`](crate::operation::reboot_db_instance::RebootDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::reboot_db_instance::RebootDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::reboot_db_instance::RebootDbInstanceInput {
-            db_instance_identifier: self.db_instance_identifier,
-            force_failover: self.force_failover,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_db_instance::RebootDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reboot_db_instance::RebootDbInstanceInput {
+                db_instance_identifier: self.db_instance_identifier
+                ,
+                force_failover: self.force_failover
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Requests API Gateway to get information about one or more Stage resources.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetStagesInput {
+pub struct GetStagesInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The stages' deployment identifiers.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
 }
-impl GetStagesInput {
+impl  GetStagesInput  {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The stages' deployment identifiers.</p>
-    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetStagesInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetStagesInputBuilder {
     }
     /// <p>The stages' deployment identifiers.</p>
     pub fn set_deployment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The stages' deployment identifiers.</p>
     pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetStagesInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetStagesInput`](crate::operation::get_stages::GetStagesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_stages::GetStagesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stages::GetStagesInput {
-            rest_api_id: self.rest_api_id,
-            deployment_id: self.deployment_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_stages::GetStagesInput {
+                rest_api_id: self.rest_api_id
+                ,
+                deployment_id: self.deployment_id
+                ,
+            }
+        )
     }
 }
+

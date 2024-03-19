@@ -3,13 +3,13 @@
 /// Placeholder documentation for DescribeInputSecurityGroupRequest
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeInputSecurityGroupInput {
+pub struct DescribeInputSecurityGroupInput  {
     /// The id of the Input Security Group to describe
     pub input_security_group_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeInputSecurityGroupInput {
+impl  DescribeInputSecurityGroupInput  {
     /// The id of the Input Security Group to describe
-    pub fn input_security_group_id(&self) -> ::std::option::Option<&str> {
+    pub fn input_security_group_id(&self) -> ::std::option::Option<& str> {
         self.input_security_group_id.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DescribeInputSecurityGroupInputBuilder {
     }
     /// The id of the Input Security Group to describe
     pub fn set_input_security_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_security_group_id = input;
-        self
+        self.input_security_group_id = input; self
     }
     /// The id of the Input Security Group to describe
     pub fn get_input_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_security_group_id
     }
     /// Consumes the builder and constructs a [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
-            input_security_group_id: self.input_security_group_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
+                input_security_group_id: self.input_security_group_id
+                ,
+            }
+        )
     }
 }
+

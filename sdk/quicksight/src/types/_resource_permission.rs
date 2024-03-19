@@ -3,7 +3,7 @@
 /// <p>Permission for the resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourcePermission {
+pub struct ResourcePermission  {
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -15,9 +15,9 @@ pub struct ResourcePermission {
     /// </ul>
     pub principal: ::std::string::String,
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub actions: ::std::vec::Vec<::std::string::String>,
+    pub actions: ::std::vec::Vec::<::std::string::String>,
 }
-impl ResourcePermission {
+impl  ResourcePermission  {
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
     /// <li>
@@ -27,14 +27,12 @@ impl ResourcePermission {
     /// <li>
     /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.)</p></li>
     /// </ul>
-    pub fn principal(&self) -> &str {
-        use std::ops::Deref;
-        self.principal.deref()
+    pub fn principal(&self) -> & str {
+        use std::ops::Deref; self.principal.deref()
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn actions(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.actions.deref()
+    pub fn actions(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.actions.deref()
     }
 }
 impl ResourcePermission {
@@ -49,7 +47,7 @@ impl ResourcePermission {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ResourcePermissionBuilder {
     pub(crate) principal: ::std::option::Option<::std::string::String>,
-    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ResourcePermissionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
@@ -76,8 +74,7 @@ impl ResourcePermissionBuilder {
     /// <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.)</p></li>
     /// </ul>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
     /// <ul>
@@ -98,17 +95,16 @@ impl ResourcePermissionBuilder {
     /// <p>The IAM action to grant or revoke permissions on.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input.into());
-        self.actions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.actions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
@@ -116,19 +112,20 @@ impl ResourcePermissionBuilder {
     /// - [`principal`](crate::types::builders::ResourcePermissionBuilder::principal)
     /// - [`actions`](crate::types::builders::ResourcePermissionBuilder::actions)
     pub fn build(self) -> ::std::result::Result<crate::types::ResourcePermission, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ResourcePermission {
-            principal: self.principal.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "principal",
-                    "principal was not specified but it is required when building ResourcePermission",
-                )
-            })?,
-            actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "actions",
-                    "actions was not specified but it is required when building ResourcePermission",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ResourcePermission {
+                principal: self.principal
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("principal", "principal was not specified but it is required when building ResourcePermission")
+                    )?
+                ,
+                actions: self.actions
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("actions", "actions was not specified but it is required when building ResourcePermission")
+                    )?
+                ,
+            }
+        )
     }
 }
+

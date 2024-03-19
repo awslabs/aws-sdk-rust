@@ -3,22 +3,20 @@
 /// <p>A node interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NodeInterface {
+pub struct NodeInterface  {
     /// <p>The node interface's inputs.</p>
-    pub inputs: ::std::vec::Vec<crate::types::NodeInputPort>,
+    pub inputs: ::std::vec::Vec::<crate::types::NodeInputPort>,
     /// <p>The node interface's outputs.</p>
-    pub outputs: ::std::vec::Vec<crate::types::NodeOutputPort>,
+    pub outputs: ::std::vec::Vec::<crate::types::NodeOutputPort>,
 }
-impl NodeInterface {
+impl  NodeInterface  {
     /// <p>The node interface's inputs.</p>
-    pub fn inputs(&self) -> &[crate::types::NodeInputPort] {
-        use std::ops::Deref;
-        self.inputs.deref()
+    pub fn inputs(&self) -> & [crate::types::NodeInputPort] {
+        use std::ops::Deref; self.inputs.deref()
     }
     /// <p>The node interface's outputs.</p>
-    pub fn outputs(&self) -> &[crate::types::NodeOutputPort] {
-        use std::ops::Deref;
-        self.outputs.deref()
+    pub fn outputs(&self) -> & [crate::types::NodeOutputPort] {
+        use std::ops::Deref; self.outputs.deref()
     }
 }
 impl NodeInterface {
@@ -32,8 +30,8 @@ impl NodeInterface {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct NodeInterfaceBuilder {
-    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>,
-    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec::<crate::types::NodeInputPort>>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec::<crate::types::NodeOutputPort>>,
 }
 impl NodeInterfaceBuilder {
     /// Appends an item to `inputs`.
@@ -43,17 +41,16 @@ impl NodeInterfaceBuilder {
     /// <p>The node interface's inputs.</p>
     pub fn inputs(mut self, input: crate::types::NodeInputPort) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.inputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node interface's inputs.</p>
-    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>>) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeInputPort>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The node interface's inputs.</p>
-    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeInputPort>> {
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeInputPort>> {
         &self.inputs
     }
     /// Appends an item to `outputs`.
@@ -63,17 +60,16 @@ impl NodeInterfaceBuilder {
     /// <p>The node interface's outputs.</p>
     pub fn outputs(mut self, input: crate::types::NodeOutputPort) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.outputs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The node interface's outputs.</p>
-    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>>) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NodeOutputPort>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>The node interface's outputs.</p>
-    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeOutputPort>> {
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NodeOutputPort>> {
         &self.outputs
     }
     /// Consumes the builder and constructs a [`NodeInterface`](crate::types::NodeInterface).
@@ -81,19 +77,20 @@ impl NodeInterfaceBuilder {
     /// - [`inputs`](crate::types::builders::NodeInterfaceBuilder::inputs)
     /// - [`outputs`](crate::types::builders::NodeInterfaceBuilder::outputs)
     pub fn build(self) -> ::std::result::Result<crate::types::NodeInterface, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::NodeInterface {
-            inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "inputs",
-                    "inputs was not specified but it is required when building NodeInterface",
-                )
-            })?,
-            outputs: self.outputs.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "outputs",
-                    "outputs was not specified but it is required when building NodeInterface",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::NodeInterface {
+                inputs: self.inputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("inputs", "inputs was not specified but it is required when building NodeInterface")
+                    )?
+                ,
+                outputs: self.outputs
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("outputs", "outputs was not specified but it is required when building NodeInterface")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListVirtualRoutersOutput {
+pub struct ListVirtualRoutersOutput  {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub virtual_routers: ::std::vec::Vec<crate::types::VirtualRouterRef>,
+    pub virtual_routers: ::std::vec::Vec::<crate::types::VirtualRouterRef>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListVirtualRoutersOutput {
+impl  ListVirtualRoutersOutput  {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn virtual_routers(&self) -> &[crate::types::VirtualRouterRef] {
-        use std::ops::Deref;
-        self.virtual_routers.deref()
+    pub fn virtual_routers(&self) -> & [crate::types::VirtualRouterRef] {
+        use std::ops::Deref; self.virtual_routers.deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListVirtualRoutersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListVirtualRoutersOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
     pub fn builder() -> crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder {
@@ -36,7 +35,7 @@ impl ListVirtualRoutersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersOutputBuilder {
-    pub(crate) virtual_routers: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>,
+    pub(crate) virtual_routers: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualRouterRef>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListVirtualRoutersOutputBuilder {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
     pub fn virtual_routers(mut self, input: crate::types::VirtualRouterRef) -> Self {
         let mut v = self.virtual_routers.unwrap_or_default();
-        v.push(input);
-        self.virtual_routers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.virtual_routers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn set_virtual_routers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>>) -> Self {
-        self.virtual_routers = input;
-        self
+    pub fn set_virtual_routers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VirtualRouterRef>>) -> Self {
+        self.virtual_routers = input; self
     }
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
-    pub fn get_virtual_routers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterRef>> {
+    pub fn get_virtual_routers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VirtualRouterRef>> {
         &self.virtual_routers
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
@@ -68,38 +66,37 @@ impl ListVirtualRoutersOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::operation::list_virtual_routers::ListVirtualRoutersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_routers`](crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder::virtual_routers)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
-            virtual_routers: self.virtual_routers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "virtual_routers",
-                    "virtual_routers was not specified but it is required when building ListVirtualRoutersOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
+                virtual_routers: self.virtual_routers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("virtual_routers", "virtual_routers was not specified but it is required when building ListVirtualRoutersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

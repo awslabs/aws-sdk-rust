@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListJobsByPipeline`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`pipeline_id(impl Into<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::set_pipeline_id):<br>required: **true**<br><p>The ID of the pipeline for which you want to get job information.</p><br>
     ///   - [`ascending(impl Into<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::ascending) / [`set_ascending(Option<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::set_ascending):<br>required: **false**<br><p>To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.</p><br>
     ///   - [`page_token(impl Into<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::page_token) / [`set_page_token(Option<String>)`](crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::set_page_token):<br>required: **false**<br><p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results.</p><br>
-    /// - On success, responds with [`ListJobsByPipelineOutput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput) with field(s):
+                            /// - On success, responds with [`ListJobsByPipelineOutput`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput) with field(s):
     ///   - [`jobs(Option<Vec::<Job>>)`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput::jobs): <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
     ///   - [`next_page_token(Option<String>)`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput::next_page_token): <p>A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    /// - On failure, responds with [`SdkError<ListJobsByPipelineError>`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError)
+                            /// - On failure, responds with [`SdkError<ListJobsByPipelineError>`](crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError)
     pub fn list_jobs_by_pipeline(&self) -> crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder {
-        crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineFluentBuilder::new(self.handle.clone())
+                            }
 }
+

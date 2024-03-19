@@ -4,18 +4,19 @@
 /// <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryStringConditionConfig {
+pub struct QueryStringConditionConfig  {
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub values: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>,
+    pub values: ::std::option::Option<::std::vec::Vec::<crate::types::QueryStringKeyValuePair>>,
 }
-impl QueryStringConditionConfig {
+impl  QueryStringConditionConfig  {
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
-    pub fn values(&self) -> &[crate::types::QueryStringKeyValuePair] {
-        self.values.as_deref().unwrap_or_default()
+    pub fn values(&self) -> & [crate::types::QueryStringKeyValuePair] {
+        self.values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl QueryStringConditionConfig {
@@ -29,7 +30,7 @@ impl QueryStringConditionConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QueryStringConditionConfigBuilder {
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<crate::types::QueryStringKeyValuePair>>,
 }
 impl QueryStringConditionConfigBuilder {
     /// Appends an item to `values`.
@@ -40,23 +41,26 @@ impl QueryStringConditionConfigBuilder {
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     pub fn values(mut self, input: crate::types::QueryStringKeyValuePair) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QueryStringKeyValuePair>>) -> Self {
+        self.values = input; self
     }
     /// <p>The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
     /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryStringKeyValuePair>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QueryStringKeyValuePair>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`QueryStringConditionConfig`](crate::types::QueryStringConditionConfig).
     pub fn build(self) -> crate::types::QueryStringConditionConfig {
-        crate::types::QueryStringConditionConfig { values: self.values }
+        crate::types::QueryStringConditionConfig {
+            values: self.values
+            ,
+        }
     }
 }
+

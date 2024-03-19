@@ -3,22 +3,20 @@
 /// <p>The location of the S3 bucket that contains a revision.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3ArtifactLocation {
+pub struct S3ArtifactLocation  {
     /// <p>The name of the S3 bucket.</p>
     pub bucket_name: ::std::string::String,
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub object_key: ::std::string::String,
 }
-impl S3ArtifactLocation {
+impl  S3ArtifactLocation  {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
-    pub fn object_key(&self) -> &str {
-        use std::ops::Deref;
-        self.object_key.deref()
+    pub fn object_key(&self) -> & str {
+        use std::ops::Deref; self.object_key.deref()
     }
 }
 impl S3ArtifactLocation {
@@ -44,8 +42,7 @@ impl S3ArtifactLocationBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +56,7 @@ impl S3ArtifactLocationBuilder {
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,19 +67,20 @@ impl S3ArtifactLocationBuilder {
     /// - [`bucket_name`](crate::types::builders::S3ArtifactLocationBuilder::bucket_name)
     /// - [`object_key`](crate::types::builders::S3ArtifactLocationBuilder::object_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3ArtifactLocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3ArtifactLocation {
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3ArtifactLocation",
-                )
-            })?,
-            object_key: self.object_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_key",
-                    "object_key was not specified but it is required when building S3ArtifactLocation",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3ArtifactLocation {
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3ArtifactLocation")
+                    )?
+                ,
+                object_key: self.object_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_key", "object_key was not specified but it is required when building S3ArtifactLocation")
+                    )?
+                ,
+            }
+        )
     }
 }
+

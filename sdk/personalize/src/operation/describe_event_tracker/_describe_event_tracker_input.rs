@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeEventTrackerInput {
+pub struct DescribeEventTrackerInput  {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
     pub event_tracker_arn: ::std::option::Option<::std::string::String>,
 }
-impl DescribeEventTrackerInput {
+impl  DescribeEventTrackerInput  {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
-    pub fn event_tracker_arn(&self) -> ::std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> ::std::option::Option<& str> {
         self.event_tracker_arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DescribeEventTrackerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
     pub fn set_event_tracker_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_tracker_arn = input;
-        self
+        self.event_tracker_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
     pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_tracker_arn
     }
     /// Consumes the builder and constructs a [`DescribeEventTrackerInput`](crate::operation::describe_event_tracker::DescribeEventTrackerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_event_tracker::DescribeEventTrackerInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_event_tracker::DescribeEventTrackerInput {
-            event_tracker_arn: self.event_tracker_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_event_tracker::DescribeEventTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_event_tracker::DescribeEventTrackerInput {
+                event_tracker_arn: self.event_tracker_arn
+                ,
+            }
+        )
     }
 }
+

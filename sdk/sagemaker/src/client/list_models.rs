@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListModels`](crate::operation::list_models::builders::ListModelsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_models::builders::ListModelsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`sort_by(ModelSortKey)`](crate::operation::list_models::builders::ListModelsFluentBuilder::sort_by) / [`set_sort_by(Option<ModelSortKey>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_sort_by):<br>required: **false**<br><p>Sorts the list of results. The default is <code>CreationTime</code>.</p><br>
     ///   - [`sort_order(OrderKey)`](crate::operation::list_models::builders::ListModelsFluentBuilder::sort_order) / [`set_sort_order(Option<OrderKey>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_sort_order):<br>required: **false**<br><p>The sort order for results. The default is <code>Descending</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_next_token):<br>required: **false**<br><p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`name_contains(impl Into<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::name_contains) / [`set_name_contains(Option<String>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_name_contains):<br>required: **false**<br><p>A string in the model name. This filter returns only models whose name contains the specified string.</p><br>
     ///   - [`creation_time_before(DateTime)`](crate::operation::list_models::builders::ListModelsFluentBuilder::creation_time_before) / [`set_creation_time_before(Option<DateTime>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_creation_time_before):<br>required: **false**<br><p>A filter that returns only models created before the specified time (timestamp).</p><br>
     ///   - [`creation_time_after(DateTime)`](crate::operation::list_models::builders::ListModelsFluentBuilder::creation_time_after) / [`set_creation_time_after(Option<DateTime>)`](crate::operation::list_models::builders::ListModelsFluentBuilder::set_creation_time_after):<br>required: **false**<br><p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p><br>
-    /// - On success, responds with [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput) with field(s):
+                            /// - On success, responds with [`ListModelsOutput`](crate::operation::list_models::ListModelsOutput) with field(s):
     ///   - [`models(Option<Vec::<ModelSummary>>)`](crate::operation::list_models::ListModelsOutput::models): <p>An array of <code>ModelSummary</code> objects, each of which lists a model.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_models::ListModelsOutput::next_token): <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of models, use it in the subsequent request.</p>
-    /// - On failure, responds with [`SdkError<ListModelsError>`](crate::operation::list_models::ListModelsError)
+                            /// - On failure, responds with [`SdkError<ListModelsError>`](crate::operation::list_models::ListModelsError)
     pub fn list_models(&self) -> crate::operation::list_models::builders::ListModelsFluentBuilder {
-        crate::operation::list_models::builders::ListModelsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_models::builders::ListModelsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

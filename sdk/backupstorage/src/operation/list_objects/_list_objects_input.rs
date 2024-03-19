@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectsInput {
+pub struct ListObjectsInput  {
     /// Storage job id
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
@@ -18,17 +18,17 @@ pub struct ListObjectsInput {
     /// (Optional) Created after filter
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ListObjectsInput {
+impl  ListObjectsInput  {
     /// Storage job id
-    pub fn storage_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_job_id(&self) -> ::std::option::Option<& str> {
         self.storage_job_id.as_deref()
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_name(&self) -> ::std::option::Option<&str> {
+    pub fn starting_object_name(&self) -> ::std::option::Option<& str> {
         self.starting_object_name.as_deref()
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
-    pub fn starting_object_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn starting_object_prefix(&self) -> ::std::option::Option<& str> {
         self.starting_object_prefix.as_deref()
     }
     /// Maximum objects count
@@ -36,15 +36,15 @@ impl ListObjectsInput {
         self.max_results
     }
     /// Pagination token
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// (Optional) Created before filter
-    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// (Optional) Created after filter
-    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ListObjectsInputBuilder {
     }
     /// Storage job id
     pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_job_id = input;
-        self
+        self.storage_job_id = input; self
     }
     /// Storage job id
     pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ListObjectsInputBuilder {
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
     pub fn set_starting_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_object_name = input;
-        self
+        self.starting_object_name = input; self
     }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
     pub fn get_starting_object_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ListObjectsInputBuilder {
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
     pub fn set_starting_object_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.starting_object_prefix = input;
-        self
+        self.starting_object_prefix = input; self
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
     pub fn get_starting_object_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ListObjectsInputBuilder {
     }
     /// Maximum objects count
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Maximum objects count
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -132,8 +128,7 @@ impl ListObjectsInputBuilder {
     }
     /// Pagination token
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Pagination token
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl ListObjectsInputBuilder {
     }
     /// (Optional) Created before filter
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_before = input;
-        self
+        self.created_before = input; self
     }
     /// (Optional) Created before filter
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl ListObjectsInputBuilder {
     }
     /// (Optional) Created after filter
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_after = input;
-        self
+        self.created_after = input; self
     }
     /// (Optional) Created after filter
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,14 +162,24 @@ impl ListObjectsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsInput {
-            storage_job_id: self.storage_job_id,
-            starting_object_name: self.starting_object_name,
-            starting_object_prefix: self.starting_object_prefix,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            created_before: self.created_before,
-            created_after: self.created_after,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_objects::ListObjectsInput {
+                storage_job_id: self.storage_job_id
+                ,
+                starting_object_name: self.starting_object_name
+                ,
+                starting_object_prefix: self.starting_object_prefix
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                created_before: self.created_before
+                ,
+                created_after: self.created_after
+                ,
+            }
+        )
     }
 }
+

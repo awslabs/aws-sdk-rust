@@ -3,7 +3,7 @@
 /// <p>Describes an app's SSL configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SslConfiguration {
+pub struct SslConfiguration  {
     /// <p>The contents of the certificate's domain.crt file.</p>
     pub certificate: ::std::string::String,
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
@@ -11,19 +11,17 @@ pub struct SslConfiguration {
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub chain: ::std::option::Option<::std::string::String>,
 }
-impl SslConfiguration {
+impl  SslConfiguration  {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn certificate(&self) -> &str {
-        use std::ops::Deref;
-        self.certificate.deref()
+    pub fn certificate(&self) -> & str {
+        use std::ops::Deref; self.certificate.deref()
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn private_key(&self) -> &str {
-        use std::ops::Deref;
-        self.private_key.deref()
+    pub fn private_key(&self) -> & str {
+        use std::ops::Deref; self.private_key.deref()
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    pub fn chain(&self) -> ::std::option::Option<&str> {
+    pub fn chain(&self) -> ::std::option::Option<& str> {
         self.chain.as_deref()
     }
 }
@@ -51,8 +49,7 @@ impl SslConfigurationBuilder {
     }
     /// <p>The contents of the certificate's domain.crt file.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The contents of the certificate's domain.crt file.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +63,7 @@ impl SslConfigurationBuilder {
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
     pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl SslConfigurationBuilder {
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub fn set_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chain = input;
-        self
+        self.chain = input; self
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub fn get_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl SslConfigurationBuilder {
     /// - [`certificate`](crate::types::builders::SslConfigurationBuilder::certificate)
     /// - [`private_key`](crate::types::builders::SslConfigurationBuilder::private_key)
     pub fn build(self) -> ::std::result::Result<crate::types::SslConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SslConfiguration {
-            certificate: self.certificate.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "certificate",
-                    "certificate was not specified but it is required when building SslConfiguration",
-                )
-            })?,
-            private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "private_key",
-                    "private_key was not specified but it is required when building SslConfiguration",
-                )
-            })?,
-            chain: self.chain,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SslConfiguration {
+                certificate: self.certificate
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("certificate", "certificate was not specified but it is required when building SslConfiguration")
+                    )?
+                ,
+                private_key: self.private_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("private_key", "private_key was not specified but it is required when building SslConfiguration")
+                    )?
+                ,
+                chain: self.chain
+                ,
+            }
+        )
     }
 }
+

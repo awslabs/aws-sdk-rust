@@ -3,16 +3,17 @@
 /// Information about a subscription definition version.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SubscriptionDefinitionVersion {
+pub struct SubscriptionDefinitionVersion  {
     /// A list of subscriptions.
-    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
 }
-impl SubscriptionDefinitionVersion {
+impl  SubscriptionDefinitionVersion  {
     /// A list of subscriptions.
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
-    pub fn subscriptions(&self) -> &[crate::types::Subscription] {
-        self.subscriptions.as_deref().unwrap_or_default()
+    pub fn subscriptions(&self) -> & [crate::types::Subscription] {
+        self.subscriptions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SubscriptionDefinitionVersion {
@@ -26,7 +27,7 @@ impl SubscriptionDefinitionVersion {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SubscriptionDefinitionVersionBuilder {
-    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>,
 }
 impl SubscriptionDefinitionVersionBuilder {
     /// Appends an item to `subscriptions`.
@@ -36,23 +37,24 @@ impl SubscriptionDefinitionVersionBuilder {
     /// A list of subscriptions.
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = ::std::option::Option::Some(v);
+                        self
     }
     /// A list of subscriptions.
-    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// A list of subscriptions.
-    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Subscription>> {
         &self.subscriptions
     }
     /// Consumes the builder and constructs a [`SubscriptionDefinitionVersion`](crate::types::SubscriptionDefinitionVersion).
     pub fn build(self) -> crate::types::SubscriptionDefinitionVersion {
         crate::types::SubscriptionDefinitionVersion {
-            subscriptions: self.subscriptions,
+            subscriptions: self.subscriptions
+            ,
         }
     }
 }
+

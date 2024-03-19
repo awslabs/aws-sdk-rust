@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateVtlDeviceTypeInput {
+pub struct UpdateVtlDeviceTypeInput  {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
     pub vtl_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code></p>
     pub device_type: ::std::option::Option<::std::string::String>,
 }
-impl UpdateVtlDeviceTypeInput {
+impl  UpdateVtlDeviceTypeInput  {
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
-    pub fn vtl_device_arn(&self) -> ::std::option::Option<&str> {
+    pub fn vtl_device_arn(&self) -> ::std::option::Option<& str> {
         self.vtl_device_arn.as_deref()
     }
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code></p>
-    pub fn device_type(&self) -> ::std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<& str> {
         self.device_type.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateVtlDeviceTypeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
     pub fn set_vtl_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vtl_device_arn = input;
-        self
+        self.vtl_device_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
     pub fn get_vtl_device_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -60,8 +59,7 @@ impl UpdateVtlDeviceTypeInputBuilder {
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code></p>
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
     }
     /// <p>The type of medium changer you want to select.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code></p>
@@ -69,13 +67,15 @@ impl UpdateVtlDeviceTypeInputBuilder {
         &self.device_type
     }
     /// Consumes the builder and constructs a [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput {
-            vtl_device_arn: self.vtl_device_arn,
-            device_type: self.device_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput {
+                vtl_device_arn: self.vtl_device_arn
+                ,
+                device_type: self.device_type
+                ,
+            }
+        )
     }
 }
+

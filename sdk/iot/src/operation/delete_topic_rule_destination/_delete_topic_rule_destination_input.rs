@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTopicRuleDestinationInput {
+pub struct DeleteTopicRuleDestinationInput  {
     /// <p>The ARN of the topic rule destination to delete.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DeleteTopicRuleDestinationInput {
+impl  DeleteTopicRuleDestinationInput  {
     /// <p>The ARN of the topic rule destination to delete.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DeleteTopicRuleDestinationInputBuilder {
     }
     /// <p>The ARN of the topic rule destination to delete.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the topic rule destination to delete.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteTopicRuleDestinationInput`](crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

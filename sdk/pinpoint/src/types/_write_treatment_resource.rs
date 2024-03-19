@@ -3,7 +3,7 @@
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WriteTreatmentResource {
+pub struct WriteTreatmentResource  {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     pub custom_delivery_configuration: ::std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>The message configuration settings for the treatment.</p>
@@ -19,17 +19,17 @@ pub struct WriteTreatmentResource {
     /// <p>A custom name for the treatment.</p>
     pub treatment_name: ::std::option::Option<::std::string::String>,
 }
-impl WriteTreatmentResource {
+impl  WriteTreatmentResource  {
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
-    pub fn custom_delivery_configuration(&self) -> ::std::option::Option<&crate::types::CustomDeliveryConfiguration> {
+    pub fn custom_delivery_configuration(&self) -> ::std::option::Option<& crate::types::CustomDeliveryConfiguration> {
         self.custom_delivery_configuration.as_ref()
     }
     /// <p>The message configuration settings for the treatment.</p>
-    pub fn message_configuration(&self) -> ::std::option::Option<&crate::types::MessageConfiguration> {
+    pub fn message_configuration(&self) -> ::std::option::Option<& crate::types::MessageConfiguration> {
         self.message_configuration.as_ref()
     }
     /// <p>The schedule settings for the treatment.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
@@ -37,15 +37,15 @@ impl WriteTreatmentResource {
         self.size_percent
     }
     /// <p>The message template to use for the treatment.</p>
-    pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> ::std::option::Option<& crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>A custom description of the treatment.</p>
-    pub fn treatment_description(&self) -> ::std::option::Option<&str> {
+    pub fn treatment_description(&self) -> ::std::option::Option<& str> {
         self.treatment_description.as_deref()
     }
     /// <p>A custom name for the treatment.</p>
-    pub fn treatment_name(&self) -> ::std::option::Option<&str> {
+    pub fn treatment_name(&self) -> ::std::option::Option<& str> {
         self.treatment_name.as_deref()
     }
 }
@@ -76,8 +76,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     pub fn set_custom_delivery_configuration(mut self, input: ::std::option::Option<crate::types::CustomDeliveryConfiguration>) -> Self {
-        self.custom_delivery_configuration = input;
-        self
+        self.custom_delivery_configuration = input; self
     }
     /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
     pub fn get_custom_delivery_configuration(&self) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
@@ -90,8 +89,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>The message configuration settings for the treatment.</p>
     pub fn set_message_configuration(mut self, input: ::std::option::Option<crate::types::MessageConfiguration>) -> Self {
-        self.message_configuration = input;
-        self
+        self.message_configuration = input; self
     }
     /// <p>The message configuration settings for the treatment.</p>
     pub fn get_message_configuration(&self) -> &::std::option::Option<crate::types::MessageConfiguration> {
@@ -104,8 +102,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>The schedule settings for the treatment.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule settings for the treatment.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
@@ -119,8 +116,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
     pub fn set_size_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_percent = input;
-        self
+        self.size_percent = input; self
     }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
     pub fn get_size_percent(&self) -> &::std::option::Option<i32> {
@@ -133,8 +129,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>The message template to use for the treatment.</p>
     pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::TemplateConfiguration>) -> Self {
-        self.template_configuration = input;
-        self
+        self.template_configuration = input; self
     }
     /// <p>The message template to use for the treatment.</p>
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::TemplateConfiguration> {
@@ -147,8 +142,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>A custom description of the treatment.</p>
     pub fn set_treatment_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.treatment_description = input;
-        self
+        self.treatment_description = input; self
     }
     /// <p>A custom description of the treatment.</p>
     pub fn get_treatment_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +155,7 @@ impl WriteTreatmentResourceBuilder {
     }
     /// <p>A custom name for the treatment.</p>
     pub fn set_treatment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.treatment_name = input;
-        self
+        self.treatment_name = input; self
     }
     /// <p>A custom name for the treatment.</p>
     pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,13 +164,21 @@ impl WriteTreatmentResourceBuilder {
     /// Consumes the builder and constructs a [`WriteTreatmentResource`](crate::types::WriteTreatmentResource).
     pub fn build(self) -> crate::types::WriteTreatmentResource {
         crate::types::WriteTreatmentResource {
-            custom_delivery_configuration: self.custom_delivery_configuration,
-            message_configuration: self.message_configuration,
-            schedule: self.schedule,
-            size_percent: self.size_percent,
-            template_configuration: self.template_configuration,
-            treatment_description: self.treatment_description,
-            treatment_name: self.treatment_name,
+            custom_delivery_configuration: self.custom_delivery_configuration
+            ,
+            message_configuration: self.message_configuration
+            ,
+            schedule: self.schedule
+            ,
+            size_percent: self.size_percent
+            ,
+            template_configuration: self.template_configuration
+            ,
+            treatment_description: self.treatment_description
+            ,
+            treatment_name: self.treatment_name
+            ,
         }
     }
 }
+

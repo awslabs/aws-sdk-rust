@@ -3,7 +3,7 @@
 /// <p>Diagnostic information about executable scripts that are part of a deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Diagnostics {
+pub struct Diagnostics  {
     /// <p>The associated error code:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ pub struct Diagnostics {
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     pub log_tail: ::std::option::Option<::std::string::String>,
 }
-impl Diagnostics {
+impl  Diagnostics  {
     /// <p>The associated error code:</p>
     /// <ul>
     /// <li>
@@ -44,20 +44,20 @@ impl Diagnostics {
     /// <li>
     /// <p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
-    pub fn error_code(&self) -> ::std::option::Option<&crate::types::LifecycleErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<& crate::types::LifecycleErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The name of the script.</p>
-    pub fn script_name(&self) -> ::std::option::Option<&str> {
+    pub fn script_name(&self) -> ::std::option::Option<& str> {
         self.script_name.as_deref()
     }
     /// <p>The message associated with the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-    pub fn log_tail(&self) -> ::std::option::Option<&str> {
+    pub fn log_tail(&self) -> ::std::option::Option<& str> {
         self.log_tail.as_deref()
     }
 }
@@ -113,8 +113,7 @@ impl DiagnosticsBuilder {
     /// <p>UnknownError: The specified script did not run for an unknown reason.</p></li>
     /// </ul>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::LifecycleErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The associated error code:</p>
     /// <ul>
@@ -141,8 +140,7 @@ impl DiagnosticsBuilder {
     }
     /// <p>The name of the script.</p>
     pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_name = input;
-        self
+        self.script_name = input; self
     }
     /// <p>The name of the script.</p>
     pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +153,7 @@ impl DiagnosticsBuilder {
     }
     /// <p>The message associated with the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The message associated with the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +168,7 @@ impl DiagnosticsBuilder {
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     pub fn set_log_tail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_tail = input;
-        self
+        self.log_tail = input; self
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
@@ -182,10 +178,15 @@ impl DiagnosticsBuilder {
     /// Consumes the builder and constructs a [`Diagnostics`](crate::types::Diagnostics).
     pub fn build(self) -> crate::types::Diagnostics {
         crate::types::Diagnostics {
-            error_code: self.error_code,
-            script_name: self.script_name,
-            message: self.message,
-            log_tail: self.log_tail,
+            error_code: self.error_code
+            ,
+            script_name: self.script_name
+            ,
+            message: self.message
+            ,
+            log_tail: self.log_tail
+            ,
         }
     }
 }
+

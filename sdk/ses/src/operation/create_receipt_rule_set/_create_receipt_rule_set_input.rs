@@ -3,7 +3,7 @@
 /// <p>Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateReceiptRuleSetInput {
+pub struct CreateReceiptRuleSetInput  {
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct CreateReceiptRuleSetInput {
     /// </ul>
     pub rule_set_name: ::std::option::Option<::std::string::String>,
 }
-impl CreateReceiptRuleSetInput {
+impl  CreateReceiptRuleSetInput  {
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ impl CreateReceiptRuleSetInput {
     /// <li>
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
-    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <p>Contain 64 characters or fewer.</p></li>
     /// </ul>
     pub fn set_rule_set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the rule set to create. The name must meet the following requirements:</p>
     /// <ul>
@@ -83,12 +82,13 @@ impl CreateReceiptRuleSetInputBuilder {
         &self.rule_set_name
     }
     /// Consumes the builder and constructs a [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
-            rule_set_name: self.rule_set_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
+                rule_set_name: self.rule_set_name
+                ,
+            }
+        )
     }
 }
+

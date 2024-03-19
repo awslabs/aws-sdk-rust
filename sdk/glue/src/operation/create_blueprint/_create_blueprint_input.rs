@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateBlueprintInput {
+pub struct CreateBlueprintInput  {
     /// <p>The name of the blueprint.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the blueprint.</p>
@@ -10,23 +10,23 @@ pub struct CreateBlueprintInput {
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub blueprint_location: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be applied to this blueprint.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateBlueprintInput {
+impl  CreateBlueprintInput  {
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the blueprint.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn blueprint_location(&self) -> ::std::option::Option<&str> {
+    pub fn blueprint_location(&self) -> ::std::option::Option<& str> {
         self.blueprint_location.as_deref()
     }
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -44,7 +44,7 @@ pub struct CreateBlueprintInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) blueprint_location: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateBlueprintInputBuilder {
     /// <p>The name of the blueprint.</p>
@@ -55,8 +55,7 @@ impl CreateBlueprintInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the blueprint.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl CreateBlueprintInputBuilder {
     }
     /// <p>A description of the blueprint.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the blueprint.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateBlueprintInputBuilder {
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub fn set_blueprint_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blueprint_location = input;
-        self
+        self.blueprint_location = input; self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub fn get_blueprint_location(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,28 +95,32 @@ impl CreateBlueprintInputBuilder {
     /// <p>The tags to be applied to this blueprint.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateBlueprintInput`](crate::operation::create_blueprint::CreateBlueprintInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_blueprint::CreateBlueprintInput {
-            name: self.name,
-            description: self.description,
-            blueprint_location: self.blueprint_location,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_blueprint::CreateBlueprintInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                blueprint_location: self.blueprint_location
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateUserProfileOutput {
+pub struct UpdateUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub user_arn: ::std::string::String,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
@@ -17,34 +17,33 @@ pub struct UpdateUserProfileOutput {
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateUserProfileOutput {
+impl  UpdateUserProfileOutput  {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub fn user_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.user_arn.deref()
+    pub fn user_arn(&self) -> & str {
+        use std::ops::Deref; self.user_arn.deref()
     }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
-    pub fn email_address(&self) -> ::std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
-    pub fn ssh_public_key(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateUserProfileOutput {
+impl  ::std::fmt::Debug for UpdateUserProfileOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserProfileOutput");
         formatter.field("user_arn", &self.user_arn);
@@ -58,10 +57,10 @@ impl ::std::fmt::Debug for UpdateUserProfileOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateUserProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
     pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder {
@@ -90,8 +89,7 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn set_email_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub fn set_ssh_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The date the user profile was created, in timestamp format.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,42 +154,45 @@ impl UpdateUserProfileOutputBuilder {
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_arn`](crate::operation::update_user_profile::builders::UpdateUserProfileOutputBuilder::user_arn)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_user_profile::UpdateUserProfileOutput {
-            user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_arn",
-                    "user_arn was not specified but it is required when building UpdateUserProfileOutput",
-                )
-            })?,
-            display_name: self.display_name,
-            email_address: self.email_address,
-            ssh_public_key: self.ssh_public_key,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user_profile::UpdateUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_user_profile::UpdateUserProfileOutput {
+                user_arn: self.user_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_arn", "user_arn was not specified but it is required when building UpdateUserProfileOutput")
+                    )?
+                ,
+                display_name: self.display_name
+                ,
+                email_address: self.email_address
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_modified_timestamp: self.last_modified_timestamp
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateUserProfileOutputBuilder {
@@ -211,3 +208,4 @@ impl ::std::fmt::Debug for UpdateUserProfileOutputBuilder {
         formatter.finish()
     }
 }
+

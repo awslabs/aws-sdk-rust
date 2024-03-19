@@ -3,7 +3,7 @@
 /// <p>Details discovered information about a running instance using Linux subscriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The AMI ID used to launch the instance.</p>
     pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID of the resource.</p>
@@ -19,53 +19,54 @@ pub struct Instance {
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
     pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub product_code: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subscription being used by the instance.</p>
     pub subscription_name: ::std::option::Option<::std::string::String>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>The AMI ID used to launch the instance.</p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The instance ID of the resource.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type of the resource.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The account ID which owns the instance.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the instance.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The Region the instance is running in.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
+    pub fn usage_operation(&self) -> ::std::option::Option<& str> {
         self.usage_operation.as_deref()
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_code.is_none()`.
-    pub fn product_code(&self) -> &[::std::string::String] {
-        self.product_code.as_deref().unwrap_or_default()
+    pub fn product_code(&self) -> & [::std::string::String] {
+        self.product_code.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The name of the subscription being used by the instance.</p>
-    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
+    pub fn subscription_name(&self) -> ::std::option::Option<& str> {
         self.subscription_name.as_deref()
     }
 }
@@ -87,7 +88,7 @@ pub struct InstanceBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
-    pub(crate) product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) product_code: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
 }
@@ -99,8 +100,7 @@ impl InstanceBuilder {
     }
     /// <p>The AMI ID used to launch the instance.</p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
     }
     /// <p>The AMI ID used to launch the instance.</p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +113,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance ID of the resource.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID of the resource.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance type of the resource.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type of the resource.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +139,7 @@ impl InstanceBuilder {
     }
     /// <p>The account ID which owns the instance.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The account ID which owns the instance.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +152,7 @@ impl InstanceBuilder {
     }
     /// <p>The status of the instance.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the instance.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -169,8 +165,7 @@ impl InstanceBuilder {
     }
     /// <p>The Region the instance is running in.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Region the instance is running in.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,8 +178,7 @@ impl InstanceBuilder {
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
     pub fn set_usage_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_operation = input;
-        self
+        self.usage_operation = input; self
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -197,17 +191,16 @@ impl InstanceBuilder {
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_code.unwrap_or_default();
-        v.push(input.into());
-        self.product_code = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.product_code = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn set_product_code(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.product_code = input;
-        self
+    pub fn set_product_code(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.product_code = input; self
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn get_product_code(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.product_code
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
@@ -217,8 +210,7 @@ impl InstanceBuilder {
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +223,7 @@ impl InstanceBuilder {
     }
     /// <p>The name of the subscription being used by the instance.</p>
     pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subscription_name = input;
-        self
+        self.subscription_name = input; self
     }
     /// <p>The name of the subscription being used by the instance.</p>
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,16 +232,27 @@ impl InstanceBuilder {
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            ami_id: self.ami_id,
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            account_id: self.account_id,
-            status: self.status,
-            region: self.region,
-            usage_operation: self.usage_operation,
-            product_code: self.product_code,
-            last_updated_time: self.last_updated_time,
-            subscription_name: self.subscription_name,
+            ami_id: self.ami_id
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            account_id: self.account_id
+            ,
+            status: self.status
+            ,
+            region: self.region
+            ,
+            usage_operation: self.usage_operation
+            ,
+            product_code: self.product_code
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            subscription_name: self.subscription_name
+            ,
         }
     }
 }
+

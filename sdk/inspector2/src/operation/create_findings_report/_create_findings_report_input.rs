@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFindingsReportInput {
+pub struct CreateFindingsReportInput  {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The format to generate the report in.</p>
@@ -10,17 +10,17 @@ pub struct CreateFindingsReportInput {
     /// <p>The Amazon S3 export destination for the report.</p>
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
 }
-impl CreateFindingsReportInput {
+impl  CreateFindingsReportInput  {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The format to generate the report in.</p>
-    pub fn report_format(&self) -> ::std::option::Option<&crate::types::ReportFormat> {
+    pub fn report_format(&self) -> ::std::option::Option<& crate::types::ReportFormat> {
         self.report_format.as_ref()
     }
     /// <p>The Amazon S3 export destination for the report.</p>
-    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<& crate::types::Destination> {
         self.s3_destination.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl CreateFindingsReportInputBuilder {
     }
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
@@ -62,8 +61,7 @@ impl CreateFindingsReportInputBuilder {
     }
     /// <p>The format to generate the report in.</p>
     pub fn set_report_format(mut self, input: ::std::option::Option<crate::types::ReportFormat>) -> Self {
-        self.report_format = input;
-        self
+        self.report_format = input; self
     }
     /// <p>The format to generate the report in.</p>
     pub fn get_report_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
@@ -77,22 +75,24 @@ impl CreateFindingsReportInputBuilder {
     }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn set_s3_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
-        self.s3_destination = input;
-        self
+        self.s3_destination = input; self
     }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.s3_destination
     }
     /// Consumes the builder and constructs a [`CreateFindingsReportInput`](crate::operation::create_findings_report::CreateFindingsReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::create_findings_report::CreateFindingsReportInput {
-            filter_criteria: self.filter_criteria,
-            report_format: self.report_format,
-            s3_destination: self.s3_destination,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_findings_report::CreateFindingsReportInput {
+                filter_criteria: self.filter_criteria
+                ,
+                report_format: self.report_format
+                ,
+                s3_destination: self.s3_destination
+                ,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteRotationOverrideInput {
+pub struct DeleteRotationOverrideInput  {
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
     pub rotation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
     pub rotation_override_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteRotationOverrideInput {
+impl  DeleteRotationOverrideInput  {
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
-    pub fn rotation_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_id(&self) -> ::std::option::Option<& str> {
         self.rotation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
-    pub fn rotation_override_id(&self) -> ::std::option::Option<&str> {
+    pub fn rotation_override_id(&self) -> ::std::option::Option<& str> {
         self.rotation_override_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteRotationOverrideInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
     pub fn set_rotation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_id = input;
-        self
+        self.rotation_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation that was overridden.</p>
     pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeleteRotationOverrideInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
     pub fn set_rotation_override_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_override_id = input;
-        self
+        self.rotation_override_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to delete.</p>
     pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rotation_override_id
     }
     /// Consumes the builder and constructs a [`DeleteRotationOverrideInput`](crate::operation::delete_rotation_override::DeleteRotationOverrideInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_rotation_override::DeleteRotationOverrideInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_rotation_override::DeleteRotationOverrideInput {
-            rotation_id: self.rotation_id,
-            rotation_override_id: self.rotation_override_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rotation_override::DeleteRotationOverrideInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_rotation_override::DeleteRotationOverrideInput {
+                rotation_id: self.rotation_id
+                ,
+                rotation_override_id: self.rotation_override_id
+                ,
+            }
+        )
     }
 }
+

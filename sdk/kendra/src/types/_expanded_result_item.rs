@@ -4,7 +4,7 @@
 /// <p>An expanded result item contains information about an expanded result document within a collapsed group of search results. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpandedResultItem {
+pub struct ExpandedResultItem  {
     /// <p>The identifier for the expanded result.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The idenitifier of the document.</p>
@@ -16,34 +16,35 @@ pub struct ExpandedResultItem {
     /// <p>The URI of the original location of the document.</p>
     pub document_uri: ::std::option::Option<::std::string::String>,
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
-    pub document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub document_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
 }
-impl ExpandedResultItem {
+impl  ExpandedResultItem  {
     /// <p>The identifier for the expanded result.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The idenitifier of the document.</p>
-    pub fn document_id(&self) -> ::std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<& str> {
         self.document_id.as_deref()
     }
     /// <p>Provides text and information about where to highlight the text.</p>
-    pub fn document_title(&self) -> ::std::option::Option<&crate::types::TextWithHighlights> {
+    pub fn document_title(&self) -> ::std::option::Option<& crate::types::TextWithHighlights> {
         self.document_title.as_ref()
     }
     /// <p>Provides text and information about where to highlight the text.</p>
-    pub fn document_excerpt(&self) -> ::std::option::Option<&crate::types::TextWithHighlights> {
+    pub fn document_excerpt(&self) -> ::std::option::Option<& crate::types::TextWithHighlights> {
         self.document_excerpt.as_ref()
     }
     /// <p>The URI of the original location of the document.</p>
-    pub fn document_uri(&self) -> ::std::option::Option<&str> {
+    pub fn document_uri(&self) -> ::std::option::Option<& str> {
         self.document_uri.as_deref()
     }
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.document_attributes.is_none()`.
-    pub fn document_attributes(&self) -> &[crate::types::DocumentAttribute] {
-        self.document_attributes.as_deref().unwrap_or_default()
+    pub fn document_attributes(&self) -> & [crate::types::DocumentAttribute] {
+        self.document_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ExpandedResultItem {
@@ -62,7 +63,7 @@ pub struct ExpandedResultItemBuilder {
     pub(crate) document_title: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_excerpt: ::std::option::Option<crate::types::TextWithHighlights>,
     pub(crate) document_uri: ::std::option::Option<::std::string::String>,
-    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>,
 }
 impl ExpandedResultItemBuilder {
     /// <p>The identifier for the expanded result.</p>
@@ -72,8 +73,7 @@ impl ExpandedResultItemBuilder {
     }
     /// <p>The identifier for the expanded result.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier for the expanded result.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +86,7 @@ impl ExpandedResultItemBuilder {
     }
     /// <p>The idenitifier of the document.</p>
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
     /// <p>The idenitifier of the document.</p>
     pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +99,7 @@ impl ExpandedResultItemBuilder {
     }
     /// <p>Provides text and information about where to highlight the text.</p>
     pub fn set_document_title(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
-        self.document_title = input;
-        self
+        self.document_title = input; self
     }
     /// <p>Provides text and information about where to highlight the text.</p>
     pub fn get_document_title(&self) -> &::std::option::Option<crate::types::TextWithHighlights> {
@@ -114,8 +112,7 @@ impl ExpandedResultItemBuilder {
     }
     /// <p>Provides text and information about where to highlight the text.</p>
     pub fn set_document_excerpt(mut self, input: ::std::option::Option<crate::types::TextWithHighlights>) -> Self {
-        self.document_excerpt = input;
-        self
+        self.document_excerpt = input; self
     }
     /// <p>Provides text and information about where to highlight the text.</p>
     pub fn get_document_excerpt(&self) -> &::std::option::Option<crate::types::TextWithHighlights> {
@@ -128,8 +125,7 @@ impl ExpandedResultItemBuilder {
     }
     /// <p>The URI of the original location of the document.</p>
     pub fn set_document_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.document_uri = input;
-        self
+        self.document_uri = input; self
     }
     /// <p>The URI of the original location of the document.</p>
     pub fn get_document_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,28 +138,34 @@ impl ExpandedResultItemBuilder {
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
     pub fn document_attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.document_attributes.unwrap_or_default();
-        v.push(input);
-        self.document_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.document_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
-    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>) -> Self {
-        self.document_attributes = input;
-        self
+    pub fn set_document_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>>) -> Self {
+        self.document_attributes = input; self
     }
     /// <p>An array of document attributes assigned to a document in the search results. For example, the document author ("_author") or the source URI ("_source_uri") of the document.</p>
-    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+    pub fn get_document_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DocumentAttribute>> {
         &self.document_attributes
     }
     /// Consumes the builder and constructs a [`ExpandedResultItem`](crate::types::ExpandedResultItem).
     pub fn build(self) -> crate::types::ExpandedResultItem {
         crate::types::ExpandedResultItem {
-            id: self.id,
-            document_id: self.document_id,
-            document_title: self.document_title,
-            document_excerpt: self.document_excerpt,
-            document_uri: self.document_uri,
-            document_attributes: self.document_attributes,
+            id: self.id
+            ,
+            document_id: self.document_id
+            ,
+            document_title: self.document_title
+            ,
+            document_excerpt: self.document_excerpt
+            ,
+            document_uri: self.document_uri
+            ,
+            document_attributes: self.document_attributes
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketStatisticsOutput {
+pub struct GetBucketStatisticsOutput  {
     /// <p>The total number of buckets.</p>
     pub bucket_count: ::std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
@@ -36,31 +36,29 @@ pub struct GetBucketStatisticsOutput {
     pub unclassifiable_object_size_in_bytes: ::std::option::Option<crate::types::ObjectLevelStatistics>,
     _request_id: Option<String>,
 }
-impl GetBucketStatisticsOutput {
+impl  GetBucketStatisticsOutput  {
     /// <p>The total number of buckets.</p>
     pub fn bucket_count(&self) -> ::std::option::Option<i64> {
         self.bucket_count
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    pub fn bucket_count_by_effective_permission(&self) -> ::std::option::Option<&crate::types::BucketCountByEffectivePermission> {
+    pub fn bucket_count_by_effective_permission(&self) -> ::std::option::Option<& crate::types::BucketCountByEffectivePermission> {
         self.bucket_count_by_effective_permission.as_ref()
     }
     /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
-    pub fn bucket_count_by_encryption_type(&self) -> ::std::option::Option<&crate::types::BucketCountByEncryptionType> {
+    pub fn bucket_count_by_encryption_type(&self) -> ::std::option::Option<& crate::types::BucketCountByEncryptionType> {
         self.bucket_count_by_encryption_type.as_ref()
     }
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
-    pub fn bucket_count_by_object_encryption_requirement(
-        &self,
-    ) -> ::std::option::Option<&crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads> {
+    pub fn bucket_count_by_object_encryption_requirement(&self) -> ::std::option::Option<& crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads> {
         self.bucket_count_by_object_encryption_requirement.as_ref()
     }
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
-    pub fn bucket_count_by_shared_access_type(&self) -> ::std::option::Option<&crate::types::BucketCountBySharedAccessType> {
+    pub fn bucket_count_by_shared_access_type(&self) -> ::std::option::Option<& crate::types::BucketCountBySharedAccessType> {
         self.bucket_count_by_shared_access_type.as_ref()
     }
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
-    pub fn bucket_statistics_by_sensitivity(&self) -> ::std::option::Option<&crate::types::BucketStatisticsBySensitivity> {
+    pub fn bucket_statistics_by_sensitivity(&self) -> ::std::option::Option<& crate::types::BucketStatisticsBySensitivity> {
         self.bucket_statistics_by_sensitivity.as_ref()
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
@@ -73,7 +71,7 @@ impl GetBucketStatisticsOutput {
         self.classifiable_size_in_bytes
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
-    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the buckets.</p>
@@ -91,19 +89,19 @@ impl GetBucketStatisticsOutput {
         self.size_in_bytes_compressed
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn unclassifiable_object_count(&self) -> ::std::option::Option<&crate::types::ObjectLevelStatistics> {
+    pub fn unclassifiable_object_count(&self) -> ::std::option::Option<& crate::types::ObjectLevelStatistics> {
         self.unclassifiable_object_count.as_ref()
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn unclassifiable_object_size_in_bytes(&self) -> ::std::option::Option<&crate::types::ObjectLevelStatistics> {
+    pub fn unclassifiable_object_size_in_bytes(&self) -> ::std::option::Option<& crate::types::ObjectLevelStatistics> {
         self.unclassifiable_object_size_in_bytes.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetBucketStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetBucketStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketStatisticsOutput`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput).
     pub fn builder() -> crate::operation::get_bucket_statistics::builders::GetBucketStatisticsOutputBuilder {
@@ -139,8 +137,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of buckets.</p>
     pub fn set_bucket_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bucket_count = input;
-        self
+        self.bucket_count = input; self
     }
     /// <p>The total number of buckets.</p>
     pub fn get_bucket_count(&self) -> &::std::option::Option<i64> {
@@ -153,8 +150,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn set_bucket_count_by_effective_permission(mut self, input: ::std::option::Option<crate::types::BucketCountByEffectivePermission>) -> Self {
-        self.bucket_count_by_effective_permission = input;
-        self
+        self.bucket_count_by_effective_permission = input; self
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn get_bucket_count_by_effective_permission(&self) -> &::std::option::Option<crate::types::BucketCountByEffectivePermission> {
@@ -167,8 +163,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     pub fn set_bucket_count_by_encryption_type(mut self, input: ::std::option::Option<crate::types::BucketCountByEncryptionType>) -> Self {
-        self.bucket_count_by_encryption_type = input;
-        self
+        self.bucket_count_by_encryption_type = input; self
     }
     /// <p>The total number of buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets.</p>
     pub fn get_bucket_count_by_encryption_type(&self) -> &::std::option::Option<crate::types::BucketCountByEncryptionType> {
@@ -180,17 +175,11 @@ impl GetBucketStatisticsOutputBuilder {
         self
     }
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
-    pub fn set_bucket_count_by_object_encryption_requirement(
-        mut self,
-        input: ::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
-    ) -> Self {
-        self.bucket_count_by_object_encryption_requirement = input;
-        self
+    pub fn set_bucket_count_by_object_encryption_requirement(mut self, input: ::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>) -> Self {
+        self.bucket_count_by_object_encryption_requirement = input; self
     }
     /// <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are added to the buckets.</p>
-    pub fn get_bucket_count_by_object_encryption_requirement(
-        &self,
-    ) -> &::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads> {
+    pub fn get_bucket_count_by_object_encryption_requirement(&self) -> &::std::option::Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads> {
         &self.bucket_count_by_object_encryption_requirement
     }
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
@@ -200,8 +189,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub fn set_bucket_count_by_shared_access_type(mut self, input: ::std::option::Option<crate::types::BucketCountBySharedAccessType>) -> Self {
-        self.bucket_count_by_shared_access_type = input;
-        self
+        self.bucket_count_by_shared_access_type = input; self
     }
     /// <p>The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).</p>
     pub fn get_bucket_count_by_shared_access_type(&self) -> &::std::option::Option<crate::types::BucketCountBySharedAccessType> {
@@ -214,8 +202,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
     pub fn set_bucket_statistics_by_sensitivity(mut self, input: ::std::option::Option<crate::types::BucketStatisticsBySensitivity>) -> Self {
-        self.bucket_statistics_by_sensitivity = input;
-        self
+        self.bucket_statistics_by_sensitivity = input; self
     }
     /// <p>The aggregated sensitive data discovery statistics for the buckets. If automated sensitive data discovery is currently disabled for your account, the value for each statistic is 0.</p>
     pub fn get_bucket_statistics_by_sensitivity(&self) -> &::std::option::Option<crate::types::BucketStatisticsBySensitivity> {
@@ -228,8 +215,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn set_classifiable_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.classifiable_object_count = input;
-        self
+        self.classifiable_object_count = input; self
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn get_classifiable_object_count(&self) -> &::std::option::Option<i64> {
@@ -244,8 +230,7 @@ impl GetBucketStatisticsOutputBuilder {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub fn set_classifiable_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.classifiable_size_in_bytes = input;
-        self
+        self.classifiable_size_in_bytes = input; self
     }
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
@@ -259,8 +244,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input;
-        self
+        self.last_updated = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -273,8 +257,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of objects in the buckets.</p>
     pub fn set_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.object_count = input;
-        self
+        self.object_count = input; self
     }
     /// <p>The total number of objects in the buckets.</p>
     pub fn get_object_count(&self) -> &::std::option::Option<i64> {
@@ -289,8 +272,7 @@ impl GetBucketStatisticsOutputBuilder {
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_bytes = input;
-        self
+        self.size_in_bytes = input; self
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
@@ -306,8 +288,7 @@ impl GetBucketStatisticsOutputBuilder {
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     pub fn set_size_in_bytes_compressed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_in_bytes_compressed = input;
-        self
+        self.size_in_bytes_compressed = input; self
     }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
@@ -321,8 +302,7 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn set_unclassifiable_object_count(mut self, input: ::std::option::Option<crate::types::ObjectLevelStatistics>) -> Self {
-        self.unclassifiable_object_count = input;
-        self
+        self.unclassifiable_object_count = input; self
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn get_unclassifiable_object_count(&self) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
@@ -335,40 +315,54 @@ impl GetBucketStatisticsOutputBuilder {
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn set_unclassifiable_object_size_in_bytes(mut self, input: ::std::option::Option<crate::types::ObjectLevelStatistics>) -> Self {
-        self.unclassifiable_object_size_in_bytes = input;
-        self
+        self.unclassifiable_object_size_in_bytes = input; self
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn get_unclassifiable_object_size_in_bytes(&self) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
         &self.unclassifiable_object_size_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetBucketStatisticsOutput`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput).
     pub fn build(self) -> crate::operation::get_bucket_statistics::GetBucketStatisticsOutput {
         crate::operation::get_bucket_statistics::GetBucketStatisticsOutput {
-            bucket_count: self.bucket_count,
-            bucket_count_by_effective_permission: self.bucket_count_by_effective_permission,
-            bucket_count_by_encryption_type: self.bucket_count_by_encryption_type,
-            bucket_count_by_object_encryption_requirement: self.bucket_count_by_object_encryption_requirement,
-            bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type,
-            bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity,
-            classifiable_object_count: self.classifiable_object_count,
-            classifiable_size_in_bytes: self.classifiable_size_in_bytes,
-            last_updated: self.last_updated,
-            object_count: self.object_count,
-            size_in_bytes: self.size_in_bytes,
-            size_in_bytes_compressed: self.size_in_bytes_compressed,
-            unclassifiable_object_count: self.unclassifiable_object_count,
-            unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes,
+            bucket_count: self.bucket_count
+            ,
+            bucket_count_by_effective_permission: self.bucket_count_by_effective_permission
+            ,
+            bucket_count_by_encryption_type: self.bucket_count_by_encryption_type
+            ,
+            bucket_count_by_object_encryption_requirement: self.bucket_count_by_object_encryption_requirement
+            ,
+            bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type
+            ,
+            bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity
+            ,
+            classifiable_object_count: self.classifiable_object_count
+            ,
+            classifiable_size_in_bytes: self.classifiable_size_in_bytes
+            ,
+            last_updated: self.last_updated
+            ,
+            object_count: self.object_count
+            ,
+            size_in_bytes: self.size_in_bytes
+            ,
+            size_in_bytes_compressed: self.size_in_bytes_compressed
+            ,
+            unclassifiable_object_count: self.unclassifiable_object_count
+            ,
+            unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

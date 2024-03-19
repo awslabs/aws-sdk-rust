@@ -3,7 +3,7 @@
 /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReplicationRuleFilter {
+pub struct ReplicationRuleFilter  {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
@@ -19,15 +19,15 @@ pub struct ReplicationRuleFilter {
     /// </ul>
     pub and: ::std::option::Option<crate::types::ReplicationRuleAndOperator>,
 }
-impl ReplicationRuleFilter {
+impl  ReplicationRuleFilter  {
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
-    pub fn prefix(&self) -> ::std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>A container for a key-value name pair.</p>
-    pub fn tag(&self) -> ::std::option::Option<&crate::types::S3Tag> {
+    pub fn tag(&self) -> ::std::option::Option<& crate::types::S3Tag> {
         self.tag.as_ref()
     }
     /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
@@ -37,7 +37,7 @@ impl ReplicationRuleFilter {
     /// <li>
     /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
-    pub fn and(&self) -> ::std::option::Option<&crate::types::ReplicationRuleAndOperator> {
+    pub fn and(&self) -> ::std::option::Option<& crate::types::ReplicationRuleAndOperator> {
         self.and.as_ref()
     }
 }
@@ -68,8 +68,7 @@ impl ReplicationRuleFilterBuilder {
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// </important>
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>An object key name prefix that identifies the subset of objects that the rule applies to.</p><important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -84,8 +83,7 @@ impl ReplicationRuleFilterBuilder {
     }
     /// <p>A container for a key-value name pair.</p>
     pub fn set_tag(mut self, input: ::std::option::Option<crate::types::S3Tag>) -> Self {
-        self.tag = input;
-        self
+        self.tag = input; self
     }
     /// <p>A container for a key-value name pair.</p>
     pub fn get_tag(&self) -> &::std::option::Option<crate::types::S3Tag> {
@@ -110,8 +108,7 @@ impl ReplicationRuleFilterBuilder {
     /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> element.</p></li>
     /// </ul>
     pub fn set_and(mut self, input: ::std::option::Option<crate::types::ReplicationRuleAndOperator>) -> Self {
-        self.and = input;
-        self
+        self.and = input; self
     }
     /// <p>A container for specifying rule filters. The filters determine the subset of objects that the rule applies to. This element is required only if you specify more than one filter. For example:</p>
     /// <ul>
@@ -126,9 +123,13 @@ impl ReplicationRuleFilterBuilder {
     /// Consumes the builder and constructs a [`ReplicationRuleFilter`](crate::types::ReplicationRuleFilter).
     pub fn build(self) -> crate::types::ReplicationRuleFilter {
         crate::types::ReplicationRuleFilter {
-            prefix: self.prefix,
-            tag: self.tag,
-            and: self.and,
+            prefix: self.prefix
+            ,
+            tag: self.tag
+            ,
+            and: self.and
+            ,
         }
     }
 }
+

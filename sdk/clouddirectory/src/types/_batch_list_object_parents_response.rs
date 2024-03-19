@@ -3,21 +3,22 @@
 /// <p>Represents the output of a <code>ListObjectParents</code> response operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchListObjectParentsResponse {
+pub struct BatchListObjectParentsResponse  {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub parent_links: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl BatchListObjectParentsResponse {
+impl  BatchListObjectParentsResponse  {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parent_links.is_none()`.
-    pub fn parent_links(&self) -> &[crate::types::ObjectIdentifierAndLinkNameTuple] {
-        self.parent_links.as_deref().unwrap_or_default()
+    pub fn parent_links(&self) -> & [crate::types::ObjectIdentifierAndLinkNameTuple] {
+        self.parent_links.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -32,7 +33,7 @@ impl BatchListObjectParentsResponse {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchListObjectParentsResponseBuilder {
-    pub(crate) parent_links: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
+    pub(crate) parent_links: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectParentsResponseBuilder {
@@ -43,17 +44,16 @@ impl BatchListObjectParentsResponseBuilder {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     pub fn parent_links(mut self, input: crate::types::ObjectIdentifierAndLinkNameTuple) -> Self {
         let mut v = self.parent_links.unwrap_or_default();
-        v.push(input);
-        self.parent_links = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parent_links = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn set_parent_links(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>) -> Self {
-        self.parent_links = input;
-        self
+    pub fn set_parent_links(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ObjectIdentifierAndLinkNameTuple>>) -> Self {
+        self.parent_links = input; self
     }
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn get_parent_links(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>> {
+    pub fn get_parent_links(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ObjectIdentifierAndLinkNameTuple>> {
         &self.parent_links
     }
     /// <p>The pagination token.</p>
@@ -63,8 +63,7 @@ impl BatchListObjectParentsResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +72,11 @@ impl BatchListObjectParentsResponseBuilder {
     /// Consumes the builder and constructs a [`BatchListObjectParentsResponse`](crate::types::BatchListObjectParentsResponse).
     pub fn build(self) -> crate::types::BatchListObjectParentsResponse {
         crate::types::BatchListObjectParentsResponse {
-            parent_links: self.parent_links,
-            next_token: self.next_token,
+            parent_links: self.parent_links
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

@@ -3,22 +3,22 @@
 /// Get Agent Alias Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAgentAliasOutput {
+pub struct GetAgentAliasOutput  {
     /// Contains the information of an agent alias
     pub agent_alias: ::std::option::Option<crate::types::AgentAlias>,
     _request_id: Option<String>,
 }
-impl GetAgentAliasOutput {
+impl  GetAgentAliasOutput  {
     /// Contains the information of an agent alias
-    pub fn agent_alias(&self) -> ::std::option::Option<&crate::types::AgentAlias> {
+    pub fn agent_alias(&self) -> ::std::option::Option<& crate::types::AgentAlias> {
         self.agent_alias.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAgentAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAgentAliasOutput {
     /// Creates a new builder-style object to manufacture [`GetAgentAliasOutput`](crate::operation::get_agent_alias::GetAgentAliasOutput).
     pub fn builder() -> crate::operation::get_agent_alias::builders::GetAgentAliasOutputBuilder {
@@ -42,27 +42,28 @@ impl GetAgentAliasOutputBuilder {
     }
     /// Contains the information of an agent alias
     pub fn set_agent_alias(mut self, input: ::std::option::Option<crate::types::AgentAlias>) -> Self {
-        self.agent_alias = input;
-        self
+        self.agent_alias = input; self
     }
     /// Contains the information of an agent alias
     pub fn get_agent_alias(&self) -> &::std::option::Option<crate::types::AgentAlias> {
         &self.agent_alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAgentAliasOutput`](crate::operation::get_agent_alias::GetAgentAliasOutput).
     pub fn build(self) -> crate::operation::get_agent_alias::GetAgentAliasOutput {
         crate::operation::get_agent_alias::GetAgentAliasOutput {
-            agent_alias: self.agent_alias,
+            agent_alias: self.agent_alias
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

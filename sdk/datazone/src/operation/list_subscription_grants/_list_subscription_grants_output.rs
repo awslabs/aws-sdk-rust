@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSubscriptionGrantsOutput {
+pub struct ListSubscriptionGrantsOutput  {
     /// <p>The results of the <code>ListSubscriptionGrants</code> action.</p>
-    pub items: ::std::vec::Vec<crate::types::SubscriptionGrantSummary>,
+    pub items: ::std::vec::Vec::<crate::types::SubscriptionGrantSummary>,
     /// <p>When the number of subscription grants is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription grants, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionGrants</code> to list the next set of subscription grants.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListSubscriptionGrantsOutput {
+impl  ListSubscriptionGrantsOutput  {
     /// <p>The results of the <code>ListSubscriptionGrants</code> action.</p>
-    pub fn items(&self) -> &[crate::types::SubscriptionGrantSummary] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::SubscriptionGrantSummary] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>When the number of subscription grants is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription grants, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionGrants</code> to list the next set of subscription grants.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListSubscriptionGrantsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListSubscriptionGrantsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionGrantsOutput`](crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput).
     pub fn builder() -> crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListSubscriptionGrantsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListSubscriptionGrantsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionGrantSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionGrantSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListSubscriptionGrantsOutputBuilder {
     /// <p>The results of the <code>ListSubscriptionGrants</code> action.</p>
     pub fn items(mut self, input: crate::types::SubscriptionGrantSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The results of the <code>ListSubscriptionGrants</code> action.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionGrantSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionGrantSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>The results of the <code>ListSubscriptionGrants</code> action.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriptionGrantSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::SubscriptionGrantSummary>> {
         &self.items
     }
     /// <p>When the number of subscription grants is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription grants, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionGrants</code> to list the next set of subscription grants.</p>
@@ -68,40 +66,37 @@ impl ListSubscriptionGrantsOutputBuilder {
     }
     /// <p>When the number of subscription grants is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription grants, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionGrants</code> to list the next set of subscription grants.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When the number of subscription grants is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of subscription grants, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListSubscriptionGrants</code> to list the next set of subscription grants.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListSubscriptionGrantsOutput`](crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListSubscriptionGrantsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_subscription_grants::ListSubscriptionGrantsOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListSubscriptionGrantsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

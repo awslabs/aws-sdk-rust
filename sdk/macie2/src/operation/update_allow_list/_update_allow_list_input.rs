@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAllowListInput {
+pub struct UpdateAllowListInput  {
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
     pub criteria: ::std::option::Option<crate::types::AllowListCriteria>,
@@ -13,22 +13,22 @@ pub struct UpdateAllowListInput {
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl UpdateAllowListInput {
+impl  UpdateAllowListInput  {
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
-    pub fn criteria(&self) -> ::std::option::Option<&crate::types::AllowListCriteria> {
+    pub fn criteria(&self) -> ::std::option::Option<& crate::types::AllowListCriteria> {
         self.criteria.as_ref()
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateAllowListInputBuilder {
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
     pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::AllowListCriteria>) -> Self {
-        self.criteria = input;
-        self
+        self.criteria = input; self
     }
     /// <p>The criteria that specify the text or text pattern to ignore. The criteria can be the location and name of an S3 object that lists specific text to ignore (s3WordsList), or a regular expression that defines a text pattern to ignore (regex).</p>
     /// <p>You can change a list's underlying criteria, such as the name of the S3 object or the regular expression to use. However, you can't change the type from s3WordsList to regex or the other way around.</p>
@@ -74,8 +73,7 @@ impl UpdateAllowListInputBuilder {
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A custom description of the allow list. The description can contain as many as 512 characters.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl UpdateAllowListInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,22 +101,26 @@ impl UpdateAllowListInputBuilder {
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A custom name for the allow list. The name can contain as many as 128 characters.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
     /// Consumes the builder and constructs a [`UpdateAllowListInput`](crate::operation::update_allow_list::UpdateAllowListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_allow_list::UpdateAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_allow_list::UpdateAllowListInput {
-            criteria: self.criteria,
-            description: self.description,
-            id: self.id,
-            name: self.name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_allow_list::UpdateAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_allow_list::UpdateAllowListInput {
+                criteria: self.criteria
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Description of the requester that calls the API operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UserIdentity {
+pub struct UserIdentity  {
     /// <p>The identity type of the requester that calls the API operation.</p>
     pub r#type: ::std::option::Option<crate::types::UserIdentityType>,
     /// <p>A unique identifier for the requester that calls the API operation.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
 }
-impl UserIdentity {
+impl  UserIdentity  {
     /// <p>The identity type of the requester that calls the API operation.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserIdentityType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::UserIdentityType> {
         self.r#type.as_ref()
     }
     /// <p>A unique identifier for the requester that calls the API operation.</p>
-    pub fn principal_id(&self) -> ::std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<& str> {
         self.principal_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UserIdentityBuilder {
     }
     /// <p>The identity type of the requester that calls the API operation.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserIdentityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The identity type of the requester that calls the API operation.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
@@ -55,8 +54,7 @@ impl UserIdentityBuilder {
     }
     /// <p>A unique identifier for the requester that calls the API operation.</p>
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>A unique identifier for the requester that calls the API operation.</p>
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl UserIdentityBuilder {
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {
         crate::types::UserIdentity {
-            r#type: self.r#type,
-            principal_id: self.principal_id,
+            r#type: self.r#type
+            ,
+            principal_id: self.principal_id
+            ,
         }
     }
 }
+

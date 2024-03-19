@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRotationOutput {
+pub struct GetRotationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     pub rotation_arn: ::std::string::String,
     /// <p>The name of the on-call rotation.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub contact_ids: ::std::vec::Vec<::std::string::String>,
+    pub contact_ids: ::std::vec::Vec::<::std::string::String>,
     /// <p>The specified start time for the on-call rotation.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
@@ -17,41 +17,37 @@ pub struct GetRotationOutput {
     pub recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
     _request_id: Option<String>,
 }
-impl GetRotationOutput {
+impl  GetRotationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
-    pub fn rotation_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.rotation_arn.deref()
+    pub fn rotation_arn(&self) -> & str {
+        use std::ops::Deref; self.rotation_arn.deref()
     }
     /// <p>The name of the on-call rotation.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn contact_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.contact_ids.deref()
+    pub fn contact_ids(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.contact_ids.deref()
     }
     /// <p>The specified start time for the on-call rotation.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn time_zone_id(&self) -> &str {
-        use std::ops::Deref;
-        self.time_zone_id.deref()
+    pub fn time_zone_id(&self) -> & str {
+        use std::ops::Deref; self.time_zone_id.deref()
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn recurrence(&self) -> ::std::option::Option<&crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> ::std::option::Option<& crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRotationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRotationOutput {
     /// Creates a new builder-style object to manufacture [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput).
     pub fn builder() -> crate::operation::get_rotation::builders::GetRotationOutputBuilder {
@@ -65,7 +61,7 @@ impl GetRotationOutput {
 pub struct GetRotationOutputBuilder {
     pub(crate) rotation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) recurrence: ::std::option::Option<crate::types::RecurrenceSettings>,
@@ -80,8 +76,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     pub fn set_rotation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rotation_arn = input;
-        self
+        self.rotation_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     pub fn get_rotation_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +90,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The name of the on-call rotation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the on-call rotation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,17 +103,16 @@ impl GetRotationOutputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
     pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.contact_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.contact_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.contact_ids = input;
-        self
+    pub fn set_contact_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.contact_ids = input; self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_contact_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.contact_ids
     }
     /// <p>The specified start time for the on-call rotation.</p>
@@ -130,8 +123,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The specified start time for the on-call rotation.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The specified start time for the on-call rotation.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -145,8 +137,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.time_zone_id = input;
-        self
+        self.time_zone_id = input; self
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,22 +151,21 @@ impl GetRotationOutputBuilder {
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn set_recurrence(mut self, input: ::std::option::Option<crate::types::RecurrenceSettings>) -> Self {
-        self.recurrence = input;
-        self
+        self.recurrence = input; self
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
         &self.recurrence
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rotation_arn`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::rotation_arn)
@@ -184,39 +174,38 @@ impl GetRotationOutputBuilder {
     /// - [`start_time`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::start_time)
     /// - [`time_zone_id`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::time_zone_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationOutput {
-            rotation_arn: self.rotation_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "rotation_arn",
-                    "rotation_arn was not specified but it is required when building GetRotationOutput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetRotationOutput",
-                )
-            })?,
-            contact_ids: self.contact_ids.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "contact_ids",
-                    "contact_ids was not specified but it is required when building GetRotationOutput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building GetRotationOutput",
-                )
-            })?,
-            time_zone_id: self.time_zone_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "time_zone_id",
-                    "time_zone_id was not specified but it is required when building GetRotationOutput",
-                )
-            })?,
-            recurrence: self.recurrence,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_rotation::GetRotationOutput {
+                rotation_arn: self.rotation_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("rotation_arn", "rotation_arn was not specified but it is required when building GetRotationOutput")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building GetRotationOutput")
+                    )?
+                ,
+                contact_ids: self.contact_ids
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("contact_ids", "contact_ids was not specified but it is required when building GetRotationOutput")
+                    )?
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building GetRotationOutput")
+                    )?
+                ,
+                time_zone_id: self.time_zone_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("time_zone_id", "time_zone_id was not specified but it is required when building GetRotationOutput")
+                    )?
+                ,
+                recurrence: self.recurrence
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupInput {
+pub struct UpdateGroupInput  {
     /// <p>The name of the group that you want to update.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the group that you want to update.</p>
@@ -12,21 +12,21 @@ pub struct UpdateGroupInput {
     /// <p>The namespace of the group that you want to update.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
 }
-impl UpdateGroupInput {
+impl  UpdateGroupInput  {
     /// <p>The name of the group that you want to update.</p>
-    pub fn group_name(&self) -> ::std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The description for the group that you want to update.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The namespace of the group that you want to update.</p>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The name of the group that you want to update.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name of the group that you want to update.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The description for the group that you want to update.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description for the group that you want to update.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +96,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The namespace of the group that you want to update.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the group that you want to update.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,11 +104,18 @@ impl UpdateGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            group_name: self.group_name,
-            description: self.description,
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_group::UpdateGroupInput {
+                group_name: self.group_name
+                ,
+                description: self.description
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+            }
+        )
     }
 }
+

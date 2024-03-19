@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyActivityStreamOutput {
+pub struct ModifyActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
@@ -17,21 +17,21 @@ pub struct ModifyActivityStreamOutput {
     pub policy_status: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>,
     _request_id: Option<String>,
 }
-impl ModifyActivityStreamOutput {
+impl  ModifyActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    pub fn kinesis_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn kinesis_stream_name(&self) -> ::std::option::Option<& str> {
         self.kinesis_stream_name.as_deref()
     }
     /// <p>The status of the modification to the database activity stream.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ActivityStreamStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ActivityStreamStatus> {
         self.status.as_ref()
     }
     /// <p>The mode of the database activity stream.</p>
-    pub fn mode(&self) -> ::std::option::Option<&crate::types::ActivityStreamMode> {
+    pub fn mode(&self) -> ::std::option::Option<& crate::types::ActivityStreamMode> {
         self.mode.as_ref()
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
@@ -39,15 +39,15 @@ impl ModifyActivityStreamOutput {
         self.engine_native_audit_fields_included
     }
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
-    pub fn policy_status(&self) -> ::std::option::Option<&crate::types::ActivityStreamPolicyStatus> {
+    pub fn policy_status(&self) -> ::std::option::Option<& crate::types::ActivityStreamPolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyActivityStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`ModifyActivityStreamOutput`](crate::operation::modify_activity_stream::ModifyActivityStreamOutput).
     pub fn builder() -> crate::operation::modify_activity_stream::builders::ModifyActivityStreamOutputBuilder {
@@ -75,8 +75,7 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +88,7 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
     pub fn set_kinesis_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kinesis_stream_name = input;
-        self
+        self.kinesis_stream_name = input; self
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
     pub fn get_kinesis_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +101,7 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>The status of the modification to the database activity stream.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActivityStreamStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the modification to the database activity stream.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ActivityStreamStatus> {
@@ -117,8 +114,7 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>The mode of the database activity stream.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ActivityStreamMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The mode of the database activity stream.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::ActivityStreamMode> {
@@ -131,8 +127,7 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn set_engine_native_audit_fields_included(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.engine_native_audit_fields_included = input;
-        self
+        self.engine_native_audit_fields_included = input; self
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
     pub fn get_engine_native_audit_fields_included(&self) -> &::std::option::Option<bool> {
@@ -145,32 +140,38 @@ impl ModifyActivityStreamOutputBuilder {
     }
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
     pub fn set_policy_status(mut self, input: ::std::option::Option<crate::types::ActivityStreamPolicyStatus>) -> Self {
-        self.policy_status = input;
-        self
+        self.policy_status = input; self
     }
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
     pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::ActivityStreamPolicyStatus> {
         &self.policy_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyActivityStreamOutput`](crate::operation::modify_activity_stream::ModifyActivityStreamOutput).
     pub fn build(self) -> crate::operation::modify_activity_stream::ModifyActivityStreamOutput {
         crate::operation::modify_activity_stream::ModifyActivityStreamOutput {
-            kms_key_id: self.kms_key_id,
-            kinesis_stream_name: self.kinesis_stream_name,
-            status: self.status,
-            mode: self.mode,
-            engine_native_audit_fields_included: self.engine_native_audit_fields_included,
-            policy_status: self.policy_status,
+            kms_key_id: self.kms_key_id
+            ,
+            kinesis_stream_name: self.kinesis_stream_name
+            ,
+            status: self.status
+            ,
+            mode: self.mode
+            ,
+            engine_native_audit_fields_included: self.engine_native_audit_fields_included
+            ,
+            policy_status: self.policy_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

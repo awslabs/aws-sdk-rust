@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListServices`](crate::operation::list_services::builders::ListServicesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_services::builders::ListServicesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_services::builders::ListServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of services to list.</p><br>
-    /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
+                            /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>A token that indicates the location of the next service in the array of services, after the current requested list of services.</p>
     ///   - [`services(Vec::<ServiceSummary>)`](crate::operation::list_services::ListServicesOutput::services): <p>An array of services with summaries of detail data.</p>
-    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
+                            /// - On failure, responds with [`SdkError<ListServicesError>`](crate::operation::list_services::ListServicesError)
     pub fn list_services(&self) -> crate::operation::list_services::builders::ListServicesFluentBuilder {
-        crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_services::builders::ListServicesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

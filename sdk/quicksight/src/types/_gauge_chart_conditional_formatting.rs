@@ -3,16 +3,17 @@
 /// <p>The conditional formatting of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GaugeChartConditionalFormatting {
+pub struct GaugeChartConditionalFormatting  {
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
+    pub conditional_formatting_options: ::std::option::Option<::std::vec::Vec::<crate::types::GaugeChartConditionalFormattingOption>>,
 }
-impl GaugeChartConditionalFormatting {
+impl  GaugeChartConditionalFormatting  {
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conditional_formatting_options.is_none()`.
-    pub fn conditional_formatting_options(&self) -> &[crate::types::GaugeChartConditionalFormattingOption] {
-        self.conditional_formatting_options.as_deref().unwrap_or_default()
+    pub fn conditional_formatting_options(&self) -> & [crate::types::GaugeChartConditionalFormattingOption] {
+        self.conditional_formatting_options.as_deref()
+        .unwrap_or_default()
     }
 }
 impl GaugeChartConditionalFormatting {
@@ -26,7 +27,7 @@ impl GaugeChartConditionalFormatting {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GaugeChartConditionalFormattingBuilder {
-    pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
+    pub(crate) conditional_formatting_options: ::std::option::Option<::std::vec::Vec::<crate::types::GaugeChartConditionalFormattingOption>>,
 }
 impl GaugeChartConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -36,26 +37,24 @@ impl GaugeChartConditionalFormattingBuilder {
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
     pub fn conditional_formatting_options(mut self, input: crate::types::GaugeChartConditionalFormattingOption) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
-        v.push(input);
-        self.conditional_formatting_options = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.conditional_formatting_options = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_conditional_formatting_options(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
-    ) -> Self {
-        self.conditional_formatting_options = input;
-        self
+    pub fn set_conditional_formatting_options(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GaugeChartConditionalFormattingOption>>) -> Self {
+        self.conditional_formatting_options = input; self
     }
     /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
-    pub fn get_conditional_formatting_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>> {
+    pub fn get_conditional_formatting_options(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GaugeChartConditionalFormattingOption>> {
         &self.conditional_formatting_options
     }
     /// Consumes the builder and constructs a [`GaugeChartConditionalFormatting`](crate::types::GaugeChartConditionalFormatting).
     pub fn build(self) -> crate::types::GaugeChartConditionalFormatting {
         crate::types::GaugeChartConditionalFormatting {
-            conditional_formatting_options: self.conditional_formatting_options,
+            conditional_formatting_options: self.conditional_formatting_options
+            ,
         }
     }
 }
+

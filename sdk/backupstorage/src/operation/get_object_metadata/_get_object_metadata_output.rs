@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
-pub struct GetObjectMetadataOutput {
+pub struct GetObjectMetadataOutput  {
     /// Metadata string.
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Metadata blob.
@@ -15,13 +15,13 @@ pub struct GetObjectMetadataOutput {
     pub metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     _request_id: Option<String>,
 }
-impl GetObjectMetadataOutput {
+impl  GetObjectMetadataOutput  {
     /// Metadata string.
-    pub fn metadata_string(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_string(&self) -> ::std::option::Option<& str> {
         self.metadata_string.as_deref()
     }
     /// Metadata blob.
-    pub fn metadata_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> & ::aws_smithy_types::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -29,19 +29,19 @@ impl GetObjectMetadataOutput {
         self.metadata_blob_length
     }
     /// MetadataBlob checksum.
-    pub fn metadata_blob_checksum(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_blob_checksum(&self) -> ::std::option::Option<& str> {
         self.metadata_blob_checksum.as_deref()
     }
     /// Checksum algorithm.
-    pub fn metadata_blob_checksum_algorithm(&self) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn metadata_blob_checksum_algorithm(&self) -> ::std::option::Option<& crate::types::DataChecksumAlgorithm> {
         self.metadata_blob_checksum_algorithm.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetObjectMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetObjectMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput).
     pub fn builder() -> crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder {
@@ -68,8 +68,7 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// Metadata string.
     pub fn set_metadata_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_string = input;
-        self
+        self.metadata_string = input; self
     }
     /// Metadata string.
     pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +81,7 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// Metadata blob.
     pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
-        self.metadata_blob = input;
-        self
+        self.metadata_blob = input; self
     }
     /// Metadata blob.
     pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
@@ -96,8 +94,7 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// The size of MetadataBlob.
     pub fn set_metadata_blob_length(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.metadata_blob_length = input;
-        self
+        self.metadata_blob_length = input; self
     }
     /// The size of MetadataBlob.
     pub fn get_metadata_blob_length(&self) -> &::std::option::Option<i64> {
@@ -110,8 +107,7 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// MetadataBlob checksum.
     pub fn set_metadata_blob_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_blob_checksum = input;
-        self
+        self.metadata_blob_checksum = input; self
     }
     /// MetadataBlob checksum.
     pub fn get_metadata_blob_checksum(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,31 +120,38 @@ impl GetObjectMetadataOutputBuilder {
     }
     /// Checksum algorithm.
     pub fn set_metadata_blob_checksum_algorithm(mut self, input: ::std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.metadata_blob_checksum_algorithm = input;
-        self
+        self.metadata_blob_checksum_algorithm = input; self
     }
     /// Checksum algorithm.
     pub fn get_metadata_blob_checksum_algorithm(&self) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
         &self.metadata_blob_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetObjectMetadataOutput`](crate::operation::get_object_metadata::GetObjectMetadataOutput).
     pub fn build(self) -> crate::operation::get_object_metadata::GetObjectMetadataOutput {
         crate::operation::get_object_metadata::GetObjectMetadataOutput {
-            metadata_string: self.metadata_string,
-            metadata_blob: self.metadata_blob.unwrap_or_default(),
-            metadata_blob_length: self.metadata_blob_length.unwrap_or_default(),
-            metadata_blob_checksum: self.metadata_blob_checksum,
-            metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm,
+            metadata_string: self.metadata_string
+            ,
+            metadata_blob: self.metadata_blob
+                .unwrap_or_default()
+            ,
+            metadata_blob_length: self.metadata_blob_length
+                .unwrap_or_default()
+            ,
+            metadata_blob_checksum: self.metadata_blob_checksum
+            ,
+            metadata_blob_checksum_algorithm: self.metadata_blob_checksum_algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribePlacementGroupsInput {
+pub struct DescribePlacementGroupsInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -20,16 +20,16 @@ pub struct DescribePlacementGroupsInput {
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The IDs of the placement groups.</p>
-    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribePlacementGroupsInput {
+impl  DescribePlacementGroupsInput  {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
@@ -47,10 +47,11 @@ impl DescribePlacementGroupsInput {
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::Filter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::Filter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -58,16 +59,18 @@ impl DescribePlacementGroupsInput {
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_names.is_none()`.
-    pub fn group_names(&self) -> &[::std::string::String] {
-        self.group_names.as_deref().unwrap_or_default()
+    pub fn group_names(&self) -> & [::std::string::String] {
+        self.group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IDs of the placement groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
-    pub fn group_ids(&self) -> &[::std::string::String] {
-        self.group_ids.as_deref().unwrap_or_default()
+    pub fn group_ids(&self) -> & [::std::string::String] {
+        self.group_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribePlacementGroupsInput {
@@ -81,10 +84,10 @@ impl DescribePlacementGroupsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribePlacementGroupsInputBuilder {
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
-    pub(crate) group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribePlacementGroupsInputBuilder {
     /// Appends an item to `filters`.
@@ -110,9 +113,9 @@ impl DescribePlacementGroupsInputBuilder {
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -131,9 +134,8 @@ impl DescribePlacementGroupsInputBuilder {
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The filters.</p>
     /// <ul>
@@ -152,7 +154,7 @@ impl DescribePlacementGroupsInputBuilder {
     /// <li>
     /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         &self.filters
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -162,8 +164,7 @@ impl DescribePlacementGroupsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -177,19 +178,18 @@ impl DescribePlacementGroupsInputBuilder {
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
     pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>The names of the placement groups.</p>
     /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
-    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_names
     }
     /// Appends an item to `group_ids`.
@@ -199,31 +199,32 @@ impl DescribePlacementGroupsInputBuilder {
     /// <p>The IDs of the placement groups.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IDs of the placement groups.</p>
-    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.group_ids = input; self
     }
     /// <p>The IDs of the placement groups.</p>
-    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.group_ids
     }
     /// Consumes the builder and constructs a [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_placement_groups::DescribePlacementGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
-            filters: self.filters,
-            dry_run: self.dry_run,
-            group_names: self.group_names,
-            group_ids: self.group_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_placement_groups::DescribePlacementGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_placement_groups::DescribePlacementGroupsInput {
+                filters: self.filters
+                ,
+                dry_run: self.dry_run
+                ,
+                group_names: self.group_names
+                ,
+                group_ids: self.group_ids
+                ,
+            }
+        )
     }
 }
+

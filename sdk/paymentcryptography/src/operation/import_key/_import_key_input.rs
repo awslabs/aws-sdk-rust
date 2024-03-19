@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportKeyInput {
+pub struct ImportKeyInput  {
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
     pub key_material: ::std::option::Option<crate::types::ImportKeyMaterial>,
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
@@ -16,16 +16,16 @@ pub struct ImportKeyInput {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportKeyInput {
+impl  ImportKeyInput  {
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
-    pub fn key_material(&self) -> ::std::option::Option<&crate::types::ImportKeyMaterial> {
+    pub fn key_material(&self) -> ::std::option::Option<& crate::types::ImportKeyMaterial> {
         self.key_material.as_ref()
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
-    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<&crate::types::KeyCheckValueAlgorithm> {
+    pub fn key_check_value_algorithm(&self) -> ::std::option::Option<& crate::types::KeyCheckValueAlgorithm> {
         self.key_check_value_algorithm.as_ref()
     }
     /// <p>Specifies whether import key is enabled.</p>
@@ -38,10 +38,11 @@ impl ImportKeyInput {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImportKeyInput {
@@ -58,7 +59,7 @@ pub struct ImportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ImportKeyMaterial>,
     pub(crate) key_check_value_algorithm: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>,
     pub(crate) enabled: ::std::option::Option<bool>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportKeyInputBuilder {
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
@@ -69,8 +70,7 @@ impl ImportKeyInputBuilder {
     }
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
     pub fn set_key_material(mut self, input: ::std::option::Option<crate::types::ImportKeyMaterial>) -> Self {
-        self.key_material = input;
-        self
+        self.key_material = input; self
     }
     /// <p>The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.</p>
     pub fn get_key_material(&self) -> &::std::option::Option<crate::types::ImportKeyMaterial> {
@@ -85,8 +85,7 @@ impl ImportKeyInputBuilder {
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
     pub fn set_key_check_value_algorithm(mut self, input: ::std::option::Option<crate::types::KeyCheckValueAlgorithm>) -> Self {
-        self.key_check_value_algorithm = input;
-        self
+        self.key_check_value_algorithm = input; self
     }
     /// <p>The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.</p>
     /// <p>For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.</p>
@@ -100,8 +99,7 @@ impl ImportKeyInputBuilder {
     }
     /// <p>Specifies whether import key is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether import key is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -119,9 +117,9 @@ impl ImportKeyInputBuilder {
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is imported. To tag an existing Amazon Web Services Payment Cryptography key, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the specified one.</p><important>
@@ -129,9 +127,8 @@ impl ImportKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is imported. To tag an existing Amazon Web Services Payment Cryptography key, use the <code>TagResource</code> operation.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the specified one.</p><important>
@@ -139,16 +136,23 @@ impl ImportKeyInputBuilder {
     /// </important> <note>
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::import_key::ImportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::import_key::ImportKeyInput {
-            key_material: self.key_material,
-            key_check_value_algorithm: self.key_check_value_algorithm,
-            enabled: self.enabled,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::import_key::ImportKeyInput {
+                key_material: self.key_material
+                ,
+                key_check_value_algorithm: self.key_check_value_algorithm
+                ,
+                enabled: self.enabled
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

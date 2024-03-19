@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetTransformerJobInput {
+pub struct GetTransformerJobInput  {
     /// <p>Specifies the unique, system-generated identifier for a transformer run.</p>
     pub transformer_job_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub transformer_id: ::std::option::Option<::std::string::String>,
 }
-impl GetTransformerJobInput {
+impl  GetTransformerJobInput  {
     /// <p>Specifies the unique, system-generated identifier for a transformer run.</p>
-    pub fn transformer_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_job_id(&self) -> ::std::option::Option<& str> {
         self.transformer_job_id.as_deref()
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
-    pub fn transformer_id(&self) -> ::std::option::Option<&str> {
+    pub fn transformer_id(&self) -> ::std::option::Option<& str> {
         self.transformer_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetTransformerJobInputBuilder {
     }
     /// <p>Specifies the unique, system-generated identifier for a transformer run.</p>
     pub fn set_transformer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_job_id = input;
-        self
+        self.transformer_job_id = input; self
     }
     /// <p>Specifies the unique, system-generated identifier for a transformer run.</p>
     pub fn get_transformer_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetTransformerJobInputBuilder {
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn set_transformer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transformer_id = input;
-        self
+        self.transformer_id = input; self
     }
     /// <p>Specifies the system-assigned unique identifier for the transformer.</p>
     pub fn get_transformer_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transformer_id
     }
     /// Consumes the builder and constructs a [`GetTransformerJobInput`](crate::operation::get_transformer_job::GetTransformerJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_transformer_job::GetTransformerJobInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_transformer_job::GetTransformerJobInput {
-            transformer_job_id: self.transformer_job_id,
-            transformer_id: self.transformer_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_transformer_job::GetTransformerJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_transformer_job::GetTransformerJobInput {
+                transformer_job_id: self.transformer_job_id
+                ,
+                transformer_id: self.transformer_id
+                ,
+            }
+        )
     }
 }
+

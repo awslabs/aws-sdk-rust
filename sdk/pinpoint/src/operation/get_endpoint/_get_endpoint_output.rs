@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEndpointOutput {
+pub struct GetEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     pub endpoint_response: ::std::option::Option<crate::types::EndpointResponse>,
     _request_id: Option<String>,
 }
-impl GetEndpointOutput {
+impl  GetEndpointOutput  {
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
-    pub fn endpoint_response(&self) -> ::std::option::Option<&crate::types::EndpointResponse> {
+    pub fn endpoint_response(&self) -> ::std::option::Option<& crate::types::EndpointResponse> {
         self.endpoint_response.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetEndpointOutput`](crate::operation::get_endpoint::GetEndpointOutput).
     pub fn builder() -> crate::operation::get_endpoint::builders::GetEndpointOutputBuilder {
@@ -41,27 +41,28 @@ impl GetEndpointOutputBuilder {
     }
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     pub fn set_endpoint_response(mut self, input: ::std::option::Option<crate::types::EndpointResponse>) -> Self {
-        self.endpoint_response = input;
-        self
+        self.endpoint_response = input; self
     }
     /// <p>Provides information about the channel type and other settings for an endpoint.</p>
     pub fn get_endpoint_response(&self) -> &::std::option::Option<crate::types::EndpointResponse> {
         &self.endpoint_response
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEndpointOutput`](crate::operation::get_endpoint::GetEndpointOutput).
     pub fn build(self) -> crate::operation::get_endpoint::GetEndpointOutput {
         crate::operation::get_endpoint::GetEndpointOutput {
-            endpoint_response: self.endpoint_response,
+            endpoint_response: self.endpoint_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

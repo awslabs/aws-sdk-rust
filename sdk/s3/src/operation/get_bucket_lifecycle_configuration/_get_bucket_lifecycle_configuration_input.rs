@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetBucketLifecycleConfigurationInput {
+pub struct GetBucketLifecycleConfigurationInput  {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
-impl GetBucketLifecycleConfigurationInput {
+impl  GetBucketLifecycleConfigurationInput  {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,25 +54,22 @@ impl GetBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_bucket_owner = input;
-        self
+        self.expected_bucket_owner = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationInput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput {
-                bucket: self.bucket,
-                expected_bucket_owner: self.expected_bucket_owner,
-            },
+                bucket: self.bucket
+                ,
+                expected_bucket_owner: self.expected_bucket_owner
+                ,
+            }
         )
     }
 }
+

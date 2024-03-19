@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListModelsInput {
+pub struct ListModelsInput  {
     /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of machine learning models to list.</p>
@@ -14,9 +14,9 @@ pub struct ListModelsInput {
     /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub dataset_name_begins_with: ::std::option::Option<::std::string::String>,
 }
-impl ListModelsInput {
+impl  ListModelsInput  {
     /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of machine learning models to list.</p>
@@ -24,15 +24,15 @@ impl ListModelsInput {
         self.max_results
     }
     /// <p>The status of the machine learning model.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The beginning of the name of the machine learning models being listed.</p>
-    pub fn model_name_begins_with(&self) -> ::std::option::Option<&str> {
+    pub fn model_name_begins_with(&self) -> ::std::option::Option<& str> {
         self.model_name_begins_with.as_deref()
     }
     /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
-    pub fn dataset_name_begins_with(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name_begins_with(&self) -> ::std::option::Option<& str> {
         self.dataset_name_begins_with.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An opaque pagination token indicating where to continue the listing of machine learning models.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>Specifies the maximum number of machine learning models to list.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specifies the maximum number of machine learning models to list.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -89,8 +87,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>The status of the machine learning model.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the machine learning model.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
@@ -103,8 +100,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>The beginning of the name of the machine learning models being listed.</p>
     pub fn set_model_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name_begins_with = input;
-        self
+        self.model_name_begins_with = input; self
     }
     /// <p>The beginning of the name of the machine learning models being listed.</p>
     pub fn get_model_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +113,7 @@ impl ListModelsInputBuilder {
     }
     /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub fn set_dataset_name_begins_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name_begins_with = input;
-        self
+        self.dataset_name_begins_with = input; self
     }
     /// <p>The beginning of the name of the dataset of the machine learning models to be listed.</p>
     pub fn get_dataset_name_begins_with(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,12 +121,20 @@ impl ListModelsInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            status: self.status,
-            model_name_begins_with: self.model_name_begins_with,
-            dataset_name_begins_with: self.dataset_name_begins_with,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_models::ListModelsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+                model_name_begins_with: self.model_name_begins_with
+                ,
+                dataset_name_begins_with: self.dataset_name_begins_with
+                ,
+            }
+        )
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CurrentPerformanceRiskRatings {
+pub struct CurrentPerformanceRiskRatings  {
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
     pub high: i64,
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
@@ -14,7 +14,7 @@ pub struct CurrentPerformanceRiskRatings {
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
     pub very_low: i64,
 }
-impl CurrentPerformanceRiskRatings {
+impl  CurrentPerformanceRiskRatings  {
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
     pub fn high(&self) -> i64 {
         self.high
@@ -56,8 +56,7 @@ impl CurrentPerformanceRiskRatingsBuilder {
     }
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
     pub fn set_high(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.high = input;
-        self
+        self.high = input; self
     }
     /// <p>A count of the applicable resource types with a high performance risk rating.</p>
     pub fn get_high(&self) -> &::std::option::Option<i64> {
@@ -70,8 +69,7 @@ impl CurrentPerformanceRiskRatingsBuilder {
     }
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
     pub fn set_medium(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.medium = input;
-        self
+        self.medium = input; self
     }
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
     pub fn get_medium(&self) -> &::std::option::Option<i64> {
@@ -84,8 +82,7 @@ impl CurrentPerformanceRiskRatingsBuilder {
     }
     /// <p>A count of the applicable resource types with a low performance risk rating.</p>
     pub fn set_low(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.low = input;
-        self
+        self.low = input; self
     }
     /// <p>A count of the applicable resource types with a low performance risk rating.</p>
     pub fn get_low(&self) -> &::std::option::Option<i64> {
@@ -98,8 +95,7 @@ impl CurrentPerformanceRiskRatingsBuilder {
     }
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
     pub fn set_very_low(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.very_low = input;
-        self
+        self.very_low = input; self
     }
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
     pub fn get_very_low(&self) -> &::std::option::Option<i64> {
@@ -108,10 +104,19 @@ impl CurrentPerformanceRiskRatingsBuilder {
     /// Consumes the builder and constructs a [`CurrentPerformanceRiskRatings`](crate::types::CurrentPerformanceRiskRatings).
     pub fn build(self) -> crate::types::CurrentPerformanceRiskRatings {
         crate::types::CurrentPerformanceRiskRatings {
-            high: self.high.unwrap_or_default(),
-            medium: self.medium.unwrap_or_default(),
-            low: self.low.unwrap_or_default(),
-            very_low: self.very_low.unwrap_or_default(),
+            high: self.high
+                .unwrap_or_default()
+            ,
+            medium: self.medium
+                .unwrap_or_default()
+            ,
+            low: self.low
+                .unwrap_or_default()
+            ,
+            very_low: self.very_low
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

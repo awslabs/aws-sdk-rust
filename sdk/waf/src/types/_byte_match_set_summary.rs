@@ -7,24 +7,22 @@
 /// <p>Returned by <code>ListByteMatchSets</code>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <code>ByteMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByteMatchSetSummary {
+pub struct ByteMatchSetSummary  {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: ::std::string::String,
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub name: ::std::string::String,
 }
-impl ByteMatchSetSummary {
+impl  ByteMatchSetSummary  {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.byte_match_set_id.deref()
+    pub fn byte_match_set_id(&self) -> & str {
+        use std::ops::Deref; self.byte_match_set_id.deref()
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
 }
 impl ByteMatchSetSummary {
@@ -52,8 +50,7 @@ impl ByteMatchSetSummaryBuilder {
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn set_byte_match_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.byte_match_set_id = input;
-        self
+        self.byte_match_set_id = input; self
     }
     /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
     /// <p><code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
@@ -68,8 +65,7 @@ impl ByteMatchSetSummaryBuilder {
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,19 +76,20 @@ impl ByteMatchSetSummaryBuilder {
     /// - [`byte_match_set_id`](crate::types::builders::ByteMatchSetSummaryBuilder::byte_match_set_id)
     /// - [`name`](crate::types::builders::ByteMatchSetSummaryBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ByteMatchSetSummary {
-            byte_match_set_id: self.byte_match_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "byte_match_set_id",
-                    "byte_match_set_id was not specified but it is required when building ByteMatchSetSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ByteMatchSetSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ByteMatchSetSummary {
+                byte_match_set_id: self.byte_match_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("byte_match_set_id", "byte_match_set_id was not specified but it is required when building ByteMatchSetSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ByteMatchSetSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

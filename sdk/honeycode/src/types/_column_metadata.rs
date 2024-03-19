@@ -3,24 +3,23 @@
 /// <p>Metadata for column in the table.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ColumnMetadata {
+pub struct ColumnMetadata  {
     /// <p>The name of the column.</p>
     pub name: ::std::string::String,
     /// <p>The format of the column.</p>
     pub format: crate::types::Format,
 }
-impl ColumnMetadata {
+impl  ColumnMetadata  {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The format of the column.</p>
-    pub fn format(&self) -> &crate::types::Format {
+    pub fn format(&self) -> & crate::types::Format {
         &self.format
     }
 }
-impl ::std::fmt::Debug for ColumnMetadata {
+impl  ::std::fmt::Debug for ColumnMetadata  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnMetadata");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -51,8 +50,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,7 @@ impl ColumnMetadataBuilder {
     }
     /// <p>The format of the column.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the column.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
@@ -78,20 +75,20 @@ impl ColumnMetadataBuilder {
     /// - [`name`](crate::types::builders::ColumnMetadataBuilder::name)
     /// - [`format`](crate::types::builders::ColumnMetadataBuilder::format)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnMetadata, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ColumnMetadata {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ColumnMetadata",
-                )
-            })?,
-            format: self.format.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "format",
-                    "format was not specified but it is required when building ColumnMetadata",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ColumnMetadata {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building ColumnMetadata")
+                    )?
+                ,
+                format: self.format
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("format", "format was not specified but it is required when building ColumnMetadata")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for ColumnMetadataBuilder {
@@ -102,3 +99,4 @@ impl ::std::fmt::Debug for ColumnMetadataBuilder {
         formatter.finish()
     }
 }
+

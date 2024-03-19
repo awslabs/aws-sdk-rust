@@ -3,19 +3,19 @@
 /// <p>Describes the reason why the last app block builder state change occurred.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppBlockBuilderStateChangeReason {
+pub struct AppBlockBuilderStateChangeReason  {
     /// <p>The state change reason code.</p>
     pub code: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>,
     /// <p>The state change reason message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl AppBlockBuilderStateChangeReason {
+impl  AppBlockBuilderStateChangeReason  {
     /// <p>The state change reason code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::AppBlockBuilderStateChangeReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::AppBlockBuilderStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AppBlockBuilderStateChangeReasonBuilder {
     }
     /// <p>The state change reason code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state change reason code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::AppBlockBuilderStateChangeReasonCode> {
@@ -55,8 +54,7 @@ impl AppBlockBuilderStateChangeReasonBuilder {
     }
     /// <p>The state change reason message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The state change reason message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AppBlockBuilderStateChangeReasonBuilder {
     /// Consumes the builder and constructs a [`AppBlockBuilderStateChangeReason`](crate::types::AppBlockBuilderStateChangeReason).
     pub fn build(self) -> crate::types::AppBlockBuilderStateChangeReason {
         crate::types::AppBlockBuilderStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

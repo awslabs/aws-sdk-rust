@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAssociatedEnclaveCertificateIamRolesOutput {
+pub struct GetAssociatedEnclaveCertificateIamRolesOutput  {
     /// <p>Information about the associated IAM roles.</p>
-    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>>,
+    pub associated_roles: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedRole>>,
     _request_id: Option<String>,
 }
-impl GetAssociatedEnclaveCertificateIamRolesOutput {
+impl  GetAssociatedEnclaveCertificateIamRolesOutput  {
     /// <p>Information about the associated IAM roles.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
-    pub fn associated_roles(&self) -> &[crate::types::AssociatedRole] {
-        self.associated_roles.as_deref().unwrap_or_default()
+    pub fn associated_roles(&self) -> & [crate::types::AssociatedRole] {
+        self.associated_roles.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetAssociatedEnclaveCertificateIamRolesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetAssociatedEnclaveCertificateIamRolesOutput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedEnclaveCertificateIamRolesOutput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput).
-    pub fn builder() -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
         crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesOutputBuilder::default()
     }
 }
@@ -32,7 +32,7 @@ impl GetAssociatedEnclaveCertificateIamRolesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
-    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedRole>>,
     _request_id: Option<String>,
 }
 impl GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
@@ -43,33 +43,34 @@ impl GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
     /// <p>Information about the associated IAM roles.</p>
     pub fn associated_roles(mut self, input: crate::types::AssociatedRole) -> Self {
         let mut v = self.associated_roles.unwrap_or_default();
-        v.push(input);
-        self.associated_roles = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associated_roles = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the associated IAM roles.</p>
-    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>>) -> Self {
-        self.associated_roles = input;
-        self
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssociatedRole>>) -> Self {
+        self.associated_roles = input; self
     }
     /// <p>Information about the associated IAM roles.</p>
-    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>> {
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssociatedRole>> {
         &self.associated_roles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetAssociatedEnclaveCertificateIamRolesOutput`](crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput).
     pub fn build(self) -> crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput {
         crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput {
-            associated_roles: self.associated_roles,
+            associated_roles: self.associated_roles
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Describes the state of a client certificate revocation list.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ClientCertificateRevocationListStatus {
+pub struct ClientCertificateRevocationListStatus  {
     /// <p>The state of the client certificate revocation list.</p>
     pub code: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>,
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ClientCertificateRevocationListStatus {
+impl  ClientCertificateRevocationListStatus  {
     /// <p>The state of the client certificate revocation list.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::ClientCertificateRevocationListStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::ClientCertificateRevocationListStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ClientCertificateRevocationListStatusBuilder {
     }
     /// <p>The state of the client certificate revocation list.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The state of the client certificate revocation list.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientCertificateRevocationListStatusCode> {
@@ -55,8 +54,7 @@ impl ClientCertificateRevocationListStatusBuilder {
     }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message about the status of the client certificate revocation list, if applicable.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl ClientCertificateRevocationListStatusBuilder {
     /// Consumes the builder and constructs a [`ClientCertificateRevocationListStatus`](crate::types::ClientCertificateRevocationListStatus).
     pub fn build(self) -> crate::types::ClientCertificateRevocationListStatus {
         crate::types::ClientCertificateRevocationListStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

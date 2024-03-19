@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateExportInput {
+pub struct CreateExportInput  {
     /// <p>The details of the export, including data query, name, description, and destination configuration.</p>
     pub export: ::std::option::Option<crate::types::Export>,
     /// <p>An optional list of tags to associate with the specified export. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
-    pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
-impl CreateExportInput {
+impl  CreateExportInput  {
     /// <p>The details of the export, including data query, name, description, and destination configuration.</p>
-    pub fn export(&self) -> ::std::option::Option<&crate::types::Export> {
+    pub fn export(&self) -> ::std::option::Option<& crate::types::Export> {
         self.export.as_ref()
     }
     /// <p>An optional list of tags to associate with the specified export. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_tags.is_none()`.
-    pub fn resource_tags(&self) -> &[crate::types::ResourceTag] {
-        self.resource_tags.as_deref().unwrap_or_default()
+    pub fn resource_tags(&self) -> & [crate::types::ResourceTag] {
+        self.resource_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateExportInput {
@@ -32,7 +33,7 @@ impl CreateExportInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateExportInputBuilder {
     pub(crate) export: ::std::option::Option<crate::types::Export>,
-    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
+    pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>,
 }
 impl CreateExportInputBuilder {
     /// <p>The details of the export, including data query, name, description, and destination configuration.</p>
@@ -43,8 +44,7 @@ impl CreateExportInputBuilder {
     }
     /// <p>The details of the export, including data query, name, description, and destination configuration.</p>
     pub fn set_export(mut self, input: ::std::option::Option<crate::types::Export>) -> Self {
-        self.export = input;
-        self
+        self.export = input; self
     }
     /// <p>The details of the export, including data query, name, description, and destination configuration.</p>
     pub fn get_export(&self) -> &::std::option::Option<crate::types::Export> {
@@ -57,26 +57,28 @@ impl CreateExportInputBuilder {
     /// <p>An optional list of tags to associate with the specified export. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An optional list of tags to associate with the specified export. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
-    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     /// <p>An optional list of tags to associate with the specified export. Each tag consists of a key and a value, and each key must be unique for the resource.</p>
-    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceTag>> {
         &self.resource_tags
     }
     /// Consumes the builder and constructs a [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_export::CreateExportInput {
-            export: self.export,
-            resource_tags: self.resource_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_export::CreateExportInput {
+                export: self.export
+                ,
+                resource_tags: self.resource_tags
+                ,
+            }
+        )
     }
 }
+

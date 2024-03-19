@@ -3,23 +3,23 @@
 /// <p>Contains information about the failure of the interaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct FailureTrace {
+pub struct FailureTrace  {
     /// <p>The unique identifier of the trace.</p>
     pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the interaction failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl FailureTrace {
+impl  FailureTrace  {
     /// <p>The unique identifier of the trace.</p>
-    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<& str> {
         self.trace_id.as_deref()
     }
     /// <p>The reason the interaction failed.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
-impl ::std::fmt::Debug for FailureTrace {
+impl  ::std::fmt::Debug for FailureTrace  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FailureTrace");
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
@@ -49,8 +49,7 @@ impl FailureTraceBuilder {
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trace_id = input;
-        self
+        self.trace_id = input; self
     }
     /// <p>The unique identifier of the trace.</p>
     pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl FailureTraceBuilder {
     }
     /// <p>The reason the interaction failed.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason the interaction failed.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +71,10 @@ impl FailureTraceBuilder {
     /// Consumes the builder and constructs a [`FailureTrace`](crate::types::FailureTrace).
     pub fn build(self) -> crate::types::FailureTrace {
         crate::types::FailureTrace {
-            trace_id: self.trace_id,
-            failure_reason: self.failure_reason,
+            trace_id: self.trace_id
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
@@ -86,3 +86,4 @@ impl ::std::fmt::Debug for FailureTraceBuilder {
         formatter.finish()
     }
 }
+

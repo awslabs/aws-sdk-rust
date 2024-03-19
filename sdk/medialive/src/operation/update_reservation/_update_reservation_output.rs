@@ -3,22 +3,22 @@
 /// Placeholder documentation for UpdateReservationResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateReservationOutput {
+pub struct UpdateReservationOutput  {
     /// Reserved resources available to use
     pub reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
 }
-impl UpdateReservationOutput {
+impl  UpdateReservationOutput  {
     /// Reserved resources available to use
-    pub fn reservation(&self) -> ::std::option::Option<&crate::types::Reservation> {
+    pub fn reservation(&self) -> ::std::option::Option<& crate::types::Reservation> {
         self.reservation.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateReservationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateReservationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput).
     pub fn builder() -> crate::operation::update_reservation::builders::UpdateReservationOutputBuilder {
@@ -41,27 +41,28 @@ impl UpdateReservationOutputBuilder {
     }
     /// Reserved resources available to use
     pub fn set_reservation(mut self, input: ::std::option::Option<crate::types::Reservation>) -> Self {
-        self.reservation = input;
-        self
+        self.reservation = input; self
     }
     /// Reserved resources available to use
     pub fn get_reservation(&self) -> &::std::option::Option<crate::types::Reservation> {
         &self.reservation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput).
     pub fn build(self) -> crate::operation::update_reservation::UpdateReservationOutput {
         crate::operation::update_reservation::UpdateReservationOutput {
-            reservation: self.reservation,
+            reservation: self.reservation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

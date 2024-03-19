@@ -3,7 +3,7 @@
 /// <p>The properties for a schedule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScheduleEntry {
+pub struct ScheduleEntry  {
     /// <p>The approximate duration of this program, in seconds.</p>
     pub approximate_duration_seconds: ::std::option::Option<i64>,
     /// <p>The approximate time that the program will start playing.</p>
@@ -17,7 +17,7 @@ pub struct ScheduleEntry {
     /// <p>The name of the program.</p>
     pub program_name: ::std::string::String,
     /// <p>The schedule's ad break properties.</p>
-    pub schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
+    pub schedule_ad_breaks: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAdBreak>>,
     /// <p>The type of schedule entry.</p>
     pub schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
@@ -25,60 +25,58 @@ pub struct ScheduleEntry {
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of audiences defined in ScheduleEntry.</p>
-    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ScheduleEntry {
+impl  ScheduleEntry  {
     /// <p>The approximate duration of this program, in seconds.</p>
     pub fn approximate_duration_seconds(&self) -> ::std::option::Option<i64> {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn approximate_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn approximate_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.approximate_start_time.as_ref()
     }
     /// <p>The ARN of the program.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The name of the channel that uses this schedule.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> & str {
+        use std::ops::Deref; self.channel_name.deref()
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn live_source_name(&self) -> ::std::option::Option<& str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> &str {
-        use std::ops::Deref;
-        self.program_name.deref()
+    pub fn program_name(&self) -> & str {
+        use std::ops::Deref; self.program_name.deref()
     }
     /// <p>The schedule's ad break properties.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.schedule_ad_breaks.is_none()`.
-    pub fn schedule_ad_breaks(&self) -> &[crate::types::ScheduleAdBreak] {
-        self.schedule_ad_breaks.as_deref().unwrap_or_default()
+    pub fn schedule_ad_breaks(&self) -> & [crate::types::ScheduleAdBreak] {
+        self.schedule_ad_breaks.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The type of schedule entry.</p>
-    pub fn schedule_entry_type(&self) -> ::std::option::Option<&crate::types::ScheduleEntryType> {
+    pub fn schedule_entry_type(&self) -> ::std::option::Option<& crate::types::ScheduleEntryType> {
         self.schedule_entry_type.as_ref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> & str {
+        use std::ops::Deref; self.source_location_name.deref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
     /// <p>The list of audiences defined in ScheduleEntry.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
-    pub fn audiences(&self) -> &[::std::string::String] {
-        self.audiences.as_deref().unwrap_or_default()
+    pub fn audiences(&self) -> & [::std::string::String] {
+        self.audiences.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ScheduleEntry {
@@ -98,11 +96,11 @@ pub struct ScheduleEntryBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
-    pub(crate) schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
+    pub(crate) schedule_ad_breaks: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAdBreak>>,
     pub(crate) schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
-    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ScheduleEntryBuilder {
     /// <p>The approximate duration of this program, in seconds.</p>
@@ -112,8 +110,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The approximate duration of this program, in seconds.</p>
     pub fn set_approximate_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.approximate_duration_seconds = input;
-        self
+        self.approximate_duration_seconds = input; self
     }
     /// <p>The approximate duration of this program, in seconds.</p>
     pub fn get_approximate_duration_seconds(&self) -> &::std::option::Option<i64> {
@@ -126,8 +123,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The approximate time that the program will start playing.</p>
     pub fn set_approximate_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.approximate_start_time = input;
-        self
+        self.approximate_start_time = input; self
     }
     /// <p>The approximate time that the program will start playing.</p>
     pub fn get_approximate_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -141,8 +137,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The ARN of the program.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the program.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -156,8 +151,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The name of the channel that uses this schedule.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the channel that uses this schedule.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +164,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The name of the live source used for the program.</p>
     pub fn set_live_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.live_source_name = input;
-        self
+        self.live_source_name = input; self
     }
     /// <p>The name of the live source used for the program.</p>
     pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +178,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The name of the program.</p>
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// <p>The name of the program.</p>
     pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,17 +191,16 @@ impl ScheduleEntryBuilder {
     /// <p>The schedule's ad break properties.</p>
     pub fn schedule_ad_breaks(mut self, input: crate::types::ScheduleAdBreak) -> Self {
         let mut v = self.schedule_ad_breaks.unwrap_or_default();
-        v.push(input);
-        self.schedule_ad_breaks = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.schedule_ad_breaks = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn set_schedule_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>) -> Self {
-        self.schedule_ad_breaks = input;
-        self
+    pub fn set_schedule_ad_breaks(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAdBreak>>) -> Self {
+        self.schedule_ad_breaks = input; self
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn get_schedule_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>> {
+    pub fn get_schedule_ad_breaks(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduleAdBreak>> {
         &self.schedule_ad_breaks
     }
     /// <p>The type of schedule entry.</p>
@@ -219,8 +210,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The type of schedule entry.</p>
     pub fn set_schedule_entry_type(mut self, input: ::std::option::Option<crate::types::ScheduleEntryType>) -> Self {
-        self.schedule_entry_type = input;
-        self
+        self.schedule_entry_type = input; self
     }
     /// <p>The type of schedule entry.</p>
     pub fn get_schedule_entry_type(&self) -> &::std::option::Option<crate::types::ScheduleEntryType> {
@@ -234,8 +224,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The name of the source location.</p>
     pub fn set_source_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_location_name = input;
-        self
+        self.source_location_name = input; self
     }
     /// <p>The name of the source location.</p>
     pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -248,8 +237,7 @@ impl ScheduleEntryBuilder {
     }
     /// <p>The name of the VOD source.</p>
     pub fn set_vod_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The name of the VOD source.</p>
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -262,17 +250,16 @@ impl ScheduleEntryBuilder {
     /// <p>The list of audiences defined in ScheduleEntry.</p>
     pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.audiences.unwrap_or_default();
-        v.push(input.into());
-        self.audiences = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.audiences = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of audiences defined in ScheduleEntry.</p>
-    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.audiences = input;
-        self
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.audiences = input; self
     }
     /// <p>The list of audiences defined in ScheduleEntry.</p>
-    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.audiences
     }
     /// Consumes the builder and constructs a [`ScheduleEntry`](crate::types::ScheduleEntry).
@@ -282,38 +269,44 @@ impl ScheduleEntryBuilder {
     /// - [`program_name`](crate::types::builders::ScheduleEntryBuilder::program_name)
     /// - [`source_location_name`](crate::types::builders::ScheduleEntryBuilder::source_location_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ScheduleEntry, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScheduleEntry {
-            approximate_duration_seconds: self.approximate_duration_seconds,
-            approximate_start_time: self.approximate_start_time,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building ScheduleEntry",
-                )
-            })?,
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building ScheduleEntry",
-                )
-            })?,
-            live_source_name: self.live_source_name,
-            program_name: self.program_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "program_name",
-                    "program_name was not specified but it is required when building ScheduleEntry",
-                )
-            })?,
-            schedule_ad_breaks: self.schedule_ad_breaks,
-            schedule_entry_type: self.schedule_entry_type,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building ScheduleEntry",
-                )
-            })?,
-            vod_source_name: self.vod_source_name,
-            audiences: self.audiences,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScheduleEntry {
+                approximate_duration_seconds: self.approximate_duration_seconds
+                ,
+                approximate_start_time: self.approximate_start_time
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building ScheduleEntry")
+                    )?
+                ,
+                channel_name: self.channel_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("channel_name", "channel_name was not specified but it is required when building ScheduleEntry")
+                    )?
+                ,
+                live_source_name: self.live_source_name
+                ,
+                program_name: self.program_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("program_name", "program_name was not specified but it is required when building ScheduleEntry")
+                    )?
+                ,
+                schedule_ad_breaks: self.schedule_ad_breaks
+                ,
+                schedule_entry_type: self.schedule_entry_type
+                ,
+                source_location_name: self.source_location_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("source_location_name", "source_location_name was not specified but it is required when building ScheduleEntry")
+                    )?
+                ,
+                vod_source_name: self.vod_source_name
+                ,
+                audiences: self.audiences
+                ,
+            }
+        )
     }
 }
+

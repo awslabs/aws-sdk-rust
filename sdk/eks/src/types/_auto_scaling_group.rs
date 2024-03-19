@@ -3,13 +3,13 @@
 /// <p>An Auto Scaling group that is associated with an Amazon EKS managed node group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoScalingGroup {
+pub struct AutoScalingGroup  {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
-impl AutoScalingGroup {
+impl  AutoScalingGroup  {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AutoScalingGroupBuilder {
     }
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl AutoScalingGroupBuilder {
     }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
-        crate::types::AutoScalingGroup { name: self.name }
+        crate::types::AutoScalingGroup {
+            name: self.name
+            ,
+        }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteWorkteamOutput {
+pub struct DeleteWorkteamOutput  {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     pub success: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
-impl DeleteWorkteamOutput {
+impl  DeleteWorkteamOutput  {
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     pub fn success(&self) -> ::std::option::Option<bool> {
         self.success
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteWorkteamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteWorkteamOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput).
     pub fn builder() -> crate::operation::delete_workteam::builders::DeleteWorkteamOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteWorkteamOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     pub fn set_success(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     /// <p>Returns <code>true</code> if the work team was successfully deleted; otherwise, returns <code>false</code>.</p>
     pub fn get_success(&self) -> &::std::option::Option<bool> {
         &self.success
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteWorkteamOutput`](crate::operation::delete_workteam::DeleteWorkteamOutput).
     pub fn build(self) -> crate::operation::delete_workteam::DeleteWorkteamOutput {
         crate::operation::delete_workteam::DeleteWorkteamOutput {
-            success: self.success,
+            success: self.success
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

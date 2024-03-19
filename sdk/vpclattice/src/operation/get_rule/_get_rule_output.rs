@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRuleOutput {
+pub struct GetRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
@@ -23,17 +23,17 @@ pub struct GetRuleOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl GetRuleOutput {
+impl  GetRuleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the listener.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether this is the default rule.</p>
@@ -41,7 +41,7 @@ impl GetRuleOutput {
         self.is_default
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<& crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The priority level for the specified rule.</p>
@@ -49,23 +49,23 @@ impl GetRuleOutput {
         self.priority
     }
     /// <p>The action for the default rule.</p>
-    pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
+    pub fn action(&self) -> ::std::option::Option<& crate::types::RuleAction> {
         self.action.as_ref()
     }
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput).
     pub fn builder() -> crate::operation::get_rule::builders::GetRuleOutputBuilder {
@@ -96,8 +96,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +109,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The ID of the listener.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the listener.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +122,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The name of the listener.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the listener.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +135,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
@@ -152,8 +148,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The rule match.</p>
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>The rule match.</p>
     pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
@@ -166,8 +161,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The priority level for the specified rule.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The priority level for the specified rule.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -180,8 +174,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The action for the default rule.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action for the default rule.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
@@ -194,8 +187,7 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The date and time that the listener rule was created, specified in ISO-8601 format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,35 +200,44 @@ impl GetRuleOutputBuilder {
     }
     /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The date and time that the listener rule was last updated, specified in ISO-8601 format.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput).
     pub fn build(self) -> crate::operation::get_rule::GetRuleOutput {
         crate::operation::get_rule::GetRuleOutput {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            is_default: self.is_default,
-            r#match: self.r#match,
-            priority: self.priority,
-            action: self.action,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            is_default: self.is_default
+            ,
+            r#match: self.r#match
+            ,
+            priority: self.priority
+            ,
+            action: self.action
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

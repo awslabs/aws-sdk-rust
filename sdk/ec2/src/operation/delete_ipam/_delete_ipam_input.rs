@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIpamInput {
+pub struct DeleteIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM to delete.</p>
@@ -24,13 +24,13 @@ pub struct DeleteIpamInput {
     /// </ul>
     pub cascade: ::std::option::Option<bool>,
 }
-impl DeleteIpamInput {
+impl  DeleteIpamInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the IPAM to delete.</p>
-    pub fn ipam_id(&self) -> ::std::option::Option<&str> {
+    pub fn ipam_id(&self) -> ::std::option::Option<& str> {
         self.ipam_id.as_deref()
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
@@ -75,8 +75,7 @@ impl DeleteIpamInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -90,8 +89,7 @@ impl DeleteIpamInputBuilder {
     }
     /// <p>The ID of the IPAM to delete.</p>
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipam_id = input;
-        self
+        self.ipam_id = input; self
     }
     /// <p>The ID of the IPAM to delete.</p>
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +130,7 @@ impl DeleteIpamInputBuilder {
     /// <p>Deletes the default public and private scopes and the IPAM.</p></li>
     /// </ul>
     pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.cascade = input;
-        self
+        self.cascade = input; self
     }
     /// <p>Enables you to quickly delete an IPAM, private scopes, pools in private scopes, and any allocations in the pools in private scopes. You cannot delete the IPAM with this option if there is a pool in your public scope. If you use this option, IPAM does the following:</p>
     /// <ul>
@@ -155,10 +152,16 @@ impl DeleteIpamInputBuilder {
     }
     /// Consumes the builder and constructs a [`DeleteIpamInput`](crate::operation::delete_ipam::DeleteIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_ipam::DeleteIpamInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_ipam::DeleteIpamInput {
-            dry_run: self.dry_run,
-            ipam_id: self.ipam_id,
-            cascade: self.cascade,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::delete_ipam::DeleteIpamInput {
+                dry_run: self.dry_run
+                ,
+                ipam_id: self.ipam_id
+                ,
+                cascade: self.cascade
+                ,
+            }
+        )
     }
 }
+

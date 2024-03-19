@@ -3,7 +3,7 @@
 /// <p>Information about the Detective administrator account for an organization.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Administrator {
+pub struct Administrator  {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
@@ -11,17 +11,17 @@ pub struct Administrator {
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub delegation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Administrator {
+impl  Administrator  {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn delegation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn delegation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.delegation_time.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AdministratorBuilder {
     }
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl AdministratorBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl AdministratorBuilder {
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_delegation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.delegation_time = input;
-        self
+        self.delegation_time = input; self
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_delegation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,9 +83,13 @@ impl AdministratorBuilder {
     /// Consumes the builder and constructs a [`Administrator`](crate::types::Administrator).
     pub fn build(self) -> crate::types::Administrator {
         crate::types::Administrator {
-            account_id: self.account_id,
-            graph_arn: self.graph_arn,
-            delegation_time: self.delegation_time,
+            account_id: self.account_id
+            ,
+            graph_arn: self.graph_arn
+            ,
+            delegation_time: self.delegation_time
+            ,
         }
     }
 }
+

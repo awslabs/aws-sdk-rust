@@ -3,20 +3,19 @@
 /// <p>Configuration settings for the task volume that was <code>configuredAtLaunch</code> that weren't set during <code>RegisterTaskDef</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskVolumeConfiguration {
+pub struct TaskVolumeConfiguration  {
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub name: ::std::string::String,
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub managed_ebs_volume: ::std::option::Option<crate::types::TaskManagedEbsVolumeConfiguration>,
 }
-impl TaskVolumeConfiguration {
+impl  TaskVolumeConfiguration  {
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
-    pub fn managed_ebs_volume(&self) -> ::std::option::Option<&crate::types::TaskManagedEbsVolumeConfiguration> {
+    pub fn managed_ebs_volume(&self) -> ::std::option::Option<& crate::types::TaskManagedEbsVolumeConfiguration> {
         self.managed_ebs_volume.as_ref()
     }
 }
@@ -43,8 +42,7 @@ impl TaskVolumeConfigurationBuilder {
     }
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the volume. This value must match the volume name from the <code>Volume</code> object in the task definition.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +55,7 @@ impl TaskVolumeConfigurationBuilder {
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub fn set_managed_ebs_volume(mut self, input: ::std::option::Option<crate::types::TaskManagedEbsVolumeConfiguration>) -> Self {
-        self.managed_ebs_volume = input;
-        self
+        self.managed_ebs_volume = input; self
     }
     /// <p>The configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. These settings are used to create each Amazon EBS volume, with one volume created for each task. The Amazon EBS volumes are visible in your account in the Amazon EC2 console once they are created.</p>
     pub fn get_managed_ebs_volume(&self) -> &::std::option::Option<crate::types::TaskManagedEbsVolumeConfiguration> {
@@ -68,14 +65,17 @@ impl TaskVolumeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TaskVolumeConfigurationBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TaskVolumeConfiguration {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building TaskVolumeConfiguration",
-                )
-            })?,
-            managed_ebs_volume: self.managed_ebs_volume,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TaskVolumeConfiguration {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building TaskVolumeConfiguration")
+                    )?
+                ,
+                managed_ebs_volume: self.managed_ebs_volume
+                ,
+            }
+        )
     }
 }
+

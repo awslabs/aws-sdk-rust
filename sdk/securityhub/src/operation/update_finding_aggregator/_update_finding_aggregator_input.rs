@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFindingAggregatorInput {
+pub struct UpdateFindingAggregatorInput  {
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub finding_aggregator_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
@@ -19,11 +19,11 @@ pub struct UpdateFindingAggregatorInput {
     pub region_linking_mode: ::std::option::Option<::std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateFindingAggregatorInput {
+impl  UpdateFindingAggregatorInput  {
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
-    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<&str> {
+    pub fn finding_aggregator_arn(&self) -> ::std::option::Option<& str> {
         self.finding_aggregator_arn.as_deref()
     }
     /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
@@ -37,15 +37,16 @@ impl UpdateFindingAggregatorInput {
     /// <li>
     /// <p><code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.</p></li>
     /// </ul>
-    pub fn region_linking_mode(&self) -> ::std::option::Option<&str> {
+    pub fn region_linking_mode(&self) -> ::std::option::Option<& str> {
         self.region_linking_mode.as_deref()
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
-    pub fn regions(&self) -> &[::std::string::String] {
-        self.regions.as_deref().unwrap_or_default()
+    pub fn regions(&self) -> & [::std::string::String] {
+        self.regions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl UpdateFindingAggregatorInput {
@@ -61,7 +62,7 @@ impl UpdateFindingAggregatorInput {
 pub struct UpdateFindingAggregatorInputBuilder {
     pub(crate) finding_aggregator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_linking_mode: ::std::option::Option<::std::string::String>,
-    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateFindingAggregatorInputBuilder {
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
@@ -72,8 +73,7 @@ impl UpdateFindingAggregatorInputBuilder {
     }
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub fn set_finding_aggregator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.finding_aggregator_arn = input;
-        self
+        self.finding_aggregator_arn = input; self
     }
     /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
     pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,8 +107,7 @@ impl UpdateFindingAggregatorInputBuilder {
     /// <p><code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.</p></li>
     /// </ul>
     pub fn set_region_linking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region_linking_mode = input;
-        self
+        self.region_linking_mode = input; self
     }
     /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
@@ -132,32 +131,32 @@ impl UpdateFindingAggregatorInputBuilder {
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
     /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
-    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.regions
     }
     /// Consumes the builder and constructs a [`UpdateFindingAggregatorInput`](crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput {
-            finding_aggregator_arn: self.finding_aggregator_arn,
-            region_linking_mode: self.region_linking_mode,
-            regions: self.regions,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput {
+                finding_aggregator_arn: self.finding_aggregator_arn
+                ,
+                region_linking_mode: self.region_linking_mode
+                ,
+                regions: self.regions
+                ,
+            }
+        )
     }
 }
+

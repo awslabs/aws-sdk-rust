@@ -3,7 +3,7 @@
 /// <p>The properties for the pod.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EksPodProperties {
+pub struct EksPodProperties  {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
     pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
@@ -12,21 +12,21 @@ pub struct EksPodProperties {
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
     pub dns_policy: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
+    pub containers: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>,
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
     /// <p>This object is limited to 10 elements</p>
     /// </note>
-    pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
+    pub init_containers: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>,
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
-    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec::<crate::types::EksVolume>>,
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
     /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
     pub share_process_namespace: ::std::option::Option<bool>,
 }
-impl EksPodProperties {
+impl  EksPodProperties  {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn service_account_name(&self) -> ::std::option::Option<&str> {
+    pub fn service_account_name(&self) -> ::std::option::Option<& str> {
         self.service_account_name.as_deref()
     }
     /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
@@ -35,31 +35,34 @@ impl EksPodProperties {
     }
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
-    pub fn dns_policy(&self) -> ::std::option::Option<&str> {
+    pub fn dns_policy(&self) -> ::std::option::Option<& str> {
         self.dns_policy.as_deref()
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
-    pub fn containers(&self) -> &[crate::types::EksContainer] {
-        self.containers.as_deref().unwrap_or_default()
+    pub fn containers(&self) -> & [crate::types::EksContainer] {
+        self.containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
     /// <p>This object is limited to 10 elements</p>
     /// </note>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
-    pub fn init_containers(&self) -> &[crate::types::EksContainer] {
-        self.init_containers.as_deref().unwrap_or_default()
+    pub fn init_containers(&self) -> & [crate::types::EksContainer] {
+        self.init_containers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
-    pub fn volumes(&self) -> &[crate::types::EksVolume] {
-        self.volumes.as_deref().unwrap_or_default()
+    pub fn volumes(&self) -> & [crate::types::EksVolume] {
+        self.volumes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn metadata(&self) -> ::std::option::Option<&crate::types::EksMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<& crate::types::EksMetadata> {
         self.metadata.as_ref()
     }
     /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
@@ -81,9 +84,9 @@ pub struct EksPodPropertiesBuilder {
     pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_network: ::std::option::Option<bool>,
     pub(crate) dns_policy: ::std::option::Option<::std::string::String>,
-    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
-    pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
-    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>,
+    pub(crate) init_containers: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec::<crate::types::EksVolume>>,
     pub(crate) metadata: ::std::option::Option<crate::types::EksMetadata>,
     pub(crate) share_process_namespace: ::std::option::Option<bool>,
 }
@@ -95,8 +98,7 @@ impl EksPodPropertiesBuilder {
     }
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account_name = input;
-        self
+        self.service_account_name = input; self
     }
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_service_account_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -109,8 +111,7 @@ impl EksPodPropertiesBuilder {
     }
     /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_host_network(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.host_network = input;
-        self
+        self.host_network = input; self
     }
     /// <p>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>. Setting this to <code>false</code> enables the Kubernetes pod networking model. Most Batch workloads are egress-only and don't require the overhead of IP allocation for each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod networking</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_host_network(&self) -> &::std::option::Option<bool> {
@@ -125,8 +126,7 @@ impl EksPodPropertiesBuilder {
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
     pub fn set_dns_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dns_policy = input;
-        self
+        self.dns_policy = input; self
     }
     /// <p>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>. <code>ClusterFirst</code> indicates that any DNS query that does not match the configured cluster domain suffix is forwarded to the upstream nameserver inherited from the node. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's DNS policy</a> in the <i>Kubernetes documentation</i>.</p>
     /// <p>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code></p>
@@ -140,17 +140,16 @@ impl EksPodPropertiesBuilder {
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
     pub fn containers(mut self, input: crate::types::EksContainer) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>) -> Self {
+        self.containers = input; self
     }
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
-    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
+    pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>> {
         &self.containers
     }
     /// Appends an item to `init_containers`.
@@ -162,21 +161,20 @@ impl EksPodPropertiesBuilder {
     /// </note>
     pub fn init_containers(mut self, input: crate::types::EksContainer) -> Self {
         let mut v = self.init_containers.unwrap_or_default();
-        v.push(input);
-        self.init_containers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.init_containers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
     /// <p>This object is limited to 10 elements</p>
     /// </note>
-    pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>) -> Self {
-        self.init_containers = input;
-        self
+    pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>>) -> Self {
+        self.init_containers = input; self
     }
     /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
     /// <p>This object is limited to 10 elements</p>
     /// </note>
-    pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
+    pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksContainer>> {
         &self.init_containers
     }
     /// Appends an item to `volumes`.
@@ -186,17 +184,16 @@ impl EksPodPropertiesBuilder {
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
     pub fn volumes(mut self, input: crate::types::EksVolume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volumes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
-    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EksVolume>>) -> Self {
+        self.volumes = input; self
     }
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
-    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksVolume>> {
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EksVolume>> {
         &self.volumes
     }
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
@@ -206,8 +203,7 @@ impl EksPodPropertiesBuilder {
     }
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::EksMetadata>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::EksMetadata> {
@@ -220,8 +216,7 @@ impl EksPodPropertiesBuilder {
     }
     /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
     pub fn set_share_process_namespace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.share_process_namespace = input;
-        self
+        self.share_process_namespace = input; self
     }
     /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
     pub fn get_share_process_namespace(&self) -> &::std::option::Option<bool> {
@@ -230,14 +225,23 @@ impl EksPodPropertiesBuilder {
     /// Consumes the builder and constructs a [`EksPodProperties`](crate::types::EksPodProperties).
     pub fn build(self) -> crate::types::EksPodProperties {
         crate::types::EksPodProperties {
-            service_account_name: self.service_account_name,
-            host_network: self.host_network,
-            dns_policy: self.dns_policy,
-            containers: self.containers,
-            init_containers: self.init_containers,
-            volumes: self.volumes,
-            metadata: self.metadata,
-            share_process_namespace: self.share_process_namespace,
+            service_account_name: self.service_account_name
+            ,
+            host_network: self.host_network
+            ,
+            dns_policy: self.dns_policy
+            ,
+            containers: self.containers
+            ,
+            init_containers: self.init_containers
+            ,
+            volumes: self.volumes
+            ,
+            metadata: self.metadata
+            ,
+            share_process_namespace: self.share_process_namespace
+            ,
         }
     }
 }
+

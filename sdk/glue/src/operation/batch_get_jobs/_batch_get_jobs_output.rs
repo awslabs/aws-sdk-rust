@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetJobsOutput {
+pub struct BatchGetJobsOutput  {
     /// <p>A list of job definitions.</p>
-    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec::<crate::types::Job>>,
     /// <p>A list of names of jobs not found.</p>
-    pub jobs_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub jobs_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl BatchGetJobsOutput {
+impl  BatchGetJobsOutput  {
     /// <p>A list of job definitions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs.is_none()`.
-    pub fn jobs(&self) -> &[crate::types::Job] {
-        self.jobs.as_deref().unwrap_or_default()
+    pub fn jobs(&self) -> & [crate::types::Job] {
+        self.jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of names of jobs not found.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.jobs_not_found.is_none()`.
-    pub fn jobs_not_found(&self) -> &[::std::string::String] {
-        self.jobs_not_found.as_deref().unwrap_or_default()
+    pub fn jobs_not_found(&self) -> & [::std::string::String] {
+        self.jobs_not_found.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetJobsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetJobsOutput`](crate::operation::batch_get_jobs::BatchGetJobsOutput).
     pub fn builder() -> crate::operation::batch_get_jobs::builders::BatchGetJobsOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetJobsOutputBuilder {
-    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
-    pub(crate) jobs_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec::<crate::types::Job>>,
+    pub(crate) jobs_not_found: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetJobsOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetJobsOutputBuilder {
     /// <p>A list of job definitions.</p>
     pub fn jobs(mut self, input: crate::types::Job) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of job definitions.</p>
-    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Job>>) -> Self {
+        self.jobs = input; self
     }
     /// <p>A list of job definitions.</p>
-    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Job>> {
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Job>> {
         &self.jobs
     }
     /// Appends an item to `jobs_not_found`.
@@ -71,34 +72,36 @@ impl BatchGetJobsOutputBuilder {
     /// <p>A list of names of jobs not found.</p>
     pub fn jobs_not_found(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.jobs_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.jobs_not_found = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.jobs_not_found = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of names of jobs not found.</p>
-    pub fn set_jobs_not_found(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.jobs_not_found = input;
-        self
+    pub fn set_jobs_not_found(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.jobs_not_found = input; self
     }
     /// <p>A list of names of jobs not found.</p>
-    pub fn get_jobs_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_jobs_not_found(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.jobs_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetJobsOutput`](crate::operation::batch_get_jobs::BatchGetJobsOutput).
     pub fn build(self) -> crate::operation::batch_get_jobs::BatchGetJobsOutput {
         crate::operation::batch_get_jobs::BatchGetJobsOutput {
-            jobs: self.jobs,
-            jobs_not_found: self.jobs_not_found,
+            jobs: self.jobs
+            ,
+            jobs_not_found: self.jobs_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

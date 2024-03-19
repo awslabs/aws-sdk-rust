@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDetectorsOutput {
+pub struct GetDetectorsOutput  {
     /// <p>The detectors.</p>
-    pub detectors: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
+    pub detectors: ::std::option::Option<::std::vec::Vec::<crate::types::Detector>>,
     /// <p>The next page token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDetectorsOutput {
+impl  GetDetectorsOutput  {
     /// <p>The detectors.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.detectors.is_none()`.
-    pub fn detectors(&self) -> &[crate::types::Detector] {
-        self.detectors.as_deref().unwrap_or_default()
+    pub fn detectors(&self) -> & [crate::types::Detector] {
+        self.detectors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDetectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput).
     pub fn builder() -> crate::operation::get_detectors::builders::GetDetectorsOutputBuilder {
@@ -37,7 +38,7 @@ impl GetDetectorsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDetectorsOutputBuilder {
-    pub(crate) detectors: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>,
+    pub(crate) detectors: ::std::option::Option<::std::vec::Vec::<crate::types::Detector>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl GetDetectorsOutputBuilder {
     /// <p>The detectors.</p>
     pub fn detectors(mut self, input: crate::types::Detector) -> Self {
         let mut v = self.detectors.unwrap_or_default();
-        v.push(input);
-        self.detectors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.detectors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The detectors.</p>
-    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Detector>>) -> Self {
-        self.detectors = input;
-        self
+    pub fn set_detectors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Detector>>) -> Self {
+        self.detectors = input; self
     }
     /// <p>The detectors.</p>
-    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Detector>> {
+    pub fn get_detectors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Detector>> {
         &self.detectors
     }
     /// <p>The next page token.</p>
@@ -69,28 +69,30 @@ impl GetDetectorsOutputBuilder {
     }
     /// <p>The next page token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The next page token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput).
     pub fn build(self) -> crate::operation::get_detectors::GetDetectorsOutput {
         crate::operation::get_detectors::GetDetectorsOutput {
-            detectors: self.detectors,
-            next_token: self.next_token,
+            detectors: self.detectors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteMicrosoftTeamsUserIdentityInput {
+pub struct DeleteMicrosoftTeamsUserIdentityInput  {
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
     pub chat_configuration_arn: ::std::option::Option<::std::string::String>,
     /// Id from Microsoft Teams for user.
     pub user_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteMicrosoftTeamsUserIdentityInput {
+impl  DeleteMicrosoftTeamsUserIdentityInput  {
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
-    pub fn chat_configuration_arn(&self) -> ::std::option::Option<&str> {
+    pub fn chat_configuration_arn(&self) -> ::std::option::Option<& str> {
         self.chat_configuration_arn.as_deref()
     }
     /// Id from Microsoft Teams for user.
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteMicrosoftTeamsUserIdentityInputBuilder {
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteMicrosoftTeamsUserIdentityInputBuilder {
     }
     /// Id from Microsoft Teams for user.
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Id from Microsoft Teams for user.
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteMicrosoftTeamsUserIdentityInput`](crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_microsoft_teams_user_identity::DeleteMicrosoftTeamsUserIdentityInput {
-                chat_configuration_arn: self.chat_configuration_arn,
-                user_id: self.user_id,
-            },
+                chat_configuration_arn: self.chat_configuration_arn
+                ,
+                user_id: self.user_id
+                ,
+            }
         )
     }
 }
+

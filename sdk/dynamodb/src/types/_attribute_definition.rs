@@ -3,7 +3,7 @@
 /// <p>Represents an attribute for describing the schema for the table and indexes.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AttributeDefinition {
+pub struct AttributeDefinition  {
     /// <p>A name for the attribute.</p>
     pub attribute_name: ::std::string::String,
     /// <p>The data type for the attribute, where:</p>
@@ -17,11 +17,10 @@ pub struct AttributeDefinition {
     /// </ul>
     pub attribute_type: crate::types::ScalarAttributeType,
 }
-impl AttributeDefinition {
+impl  AttributeDefinition  {
     /// <p>A name for the attribute.</p>
-    pub fn attribute_name(&self) -> &str {
-        use std::ops::Deref;
-        self.attribute_name.deref()
+    pub fn attribute_name(&self) -> & str {
+        use std::ops::Deref; self.attribute_name.deref()
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
@@ -32,7 +31,7 @@ impl AttributeDefinition {
     /// <li>
     /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
-    pub fn attribute_type(&self) -> &crate::types::ScalarAttributeType {
+    pub fn attribute_type(&self) -> & crate::types::ScalarAttributeType {
         &self.attribute_type
     }
 }
@@ -59,8 +58,7 @@ impl AttributeDefinitionBuilder {
     }
     /// <p>A name for the attribute.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>A name for the attribute.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl AttributeDefinitionBuilder {
     /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::ScalarAttributeType>) -> Self {
-        self.attribute_type = input;
-        self
+        self.attribute_type = input; self
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
@@ -110,19 +107,20 @@ impl AttributeDefinitionBuilder {
     /// - [`attribute_name`](crate::types::builders::AttributeDefinitionBuilder::attribute_name)
     /// - [`attribute_type`](crate::types::builders::AttributeDefinitionBuilder::attribute_type)
     pub fn build(self) -> ::std::result::Result<crate::types::AttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AttributeDefinition {
-            attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_name",
-                    "attribute_name was not specified but it is required when building AttributeDefinition",
-                )
-            })?,
-            attribute_type: self.attribute_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "attribute_type",
-                    "attribute_type was not specified but it is required when building AttributeDefinition",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AttributeDefinition {
+                attribute_name: self.attribute_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_name", "attribute_name was not specified but it is required when building AttributeDefinition")
+                    )?
+                ,
+                attribute_type: self.attribute_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("attribute_type", "attribute_type was not specified but it is required when building AttributeDefinition")
+                    )?
+                ,
+            }
+        )
     }
 }
+

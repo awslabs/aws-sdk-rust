@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutChannelPolicyInput {
+pub struct PutChannelPolicyInput  {
     /// <p>The channel name associated with this Channel Policy.</p>
     pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
-impl PutChannelPolicyInput {
+impl  PutChannelPolicyInput  {
     /// <p>The channel name associated with this Channel Policy.</p>
-    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    pub fn policy(&self) -> ::std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl PutChannelPolicyInputBuilder {
     }
     /// <p>The channel name associated with this Channel Policy.</p>
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The channel name associated with this Channel Policy.</p>
     pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl PutChannelPolicyInputBuilder {
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_channel_policy::PutChannelPolicyInput {
-            channel_name: self.channel_name,
-            policy: self.policy,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_channel_policy::PutChannelPolicyInput {
+                channel_name: self.channel_name
+                ,
+                policy: self.policy
+                ,
+            }
+        )
     }
 }
+

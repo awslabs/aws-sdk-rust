@@ -3,22 +3,22 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCloudFrontOriginAccessIdentitiesOutput {
+pub struct ListCloudFrontOriginAccessIdentitiesOutput  {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     pub cloud_front_origin_access_identity_list: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
     _request_id: Option<String>,
 }
-impl ListCloudFrontOriginAccessIdentitiesOutput {
+impl  ListCloudFrontOriginAccessIdentitiesOutput  {
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    pub fn cloud_front_origin_access_identity_list(&self) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityList> {
+    pub fn cloud_front_origin_access_identity_list(&self) -> ::std::option::Option<& crate::types::CloudFrontOriginAccessIdentityList> {
         self.cloud_front_origin_access_identity_list.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListCloudFrontOriginAccessIdentitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListCloudFrontOriginAccessIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
     pub fn builder() -> crate::operation::list_cloud_front_origin_access_identities::builders::ListCloudFrontOriginAccessIdentitiesOutputBuilder {
@@ -40,31 +40,29 @@ impl ListCloudFrontOriginAccessIdentitiesOutputBuilder {
         self
     }
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    pub fn set_cloud_front_origin_access_identity_list(
-        mut self,
-        input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>,
-    ) -> Self {
-        self.cloud_front_origin_access_identity_list = input;
-        self
+    pub fn set_cloud_front_origin_access_identity_list(mut self, input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList>) -> Self {
+        self.cloud_front_origin_access_identity_list = input; self
     }
     /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
     pub fn get_cloud_front_origin_access_identity_list(&self) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityList> {
         &self.cloud_front_origin_access_identity_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput).
     pub fn build(self) -> crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput {
         crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput {
-            cloud_front_origin_access_identity_list: self.cloud_front_origin_access_identity_list,
+            cloud_front_origin_access_identity_list: self.cloud_front_origin_access_identity_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

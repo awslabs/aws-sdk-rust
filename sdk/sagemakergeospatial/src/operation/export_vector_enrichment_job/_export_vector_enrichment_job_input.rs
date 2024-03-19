@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportVectorEnrichmentJobInput {
+pub struct ExportVectorEnrichmentJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -12,21 +12,21 @@ pub struct ExportVectorEnrichmentJobInput {
     /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub output_config: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
 }
-impl ExportVectorEnrichmentJobInput {
+impl  ExportVectorEnrichmentJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> ::std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Output location information for exporting Vector Enrichment Job results.</p>
-    pub fn output_config(&self) -> ::std::option::Option<&crate::types::ExportVectorEnrichmentJobOutputConfig> {
+    pub fn output_config(&self) -> ::std::option::Option<& crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.output_config.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.execution_role_arn = input;
-        self
+        self.execution_role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,25 +96,26 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
-        self.output_config = input;
-        self
+        self.output_config = input; self
     }
     /// <p>Output location information for exporting Vector Enrichment Job results.</p>
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
         &self.output_config
     }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobInput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput {
-            arn: self.arn,
-            client_token: self.client_token,
-            execution_role_arn: self.execution_role_arn,
-            output_config: self.output_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput {
+                arn: self.arn
+                ,
+                client_token: self.client_token
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                output_config: self.output_config
+                ,
+            }
+        )
     }
 }
+

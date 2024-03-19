@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDataLakeExceptionSubscriptionInput {}
+pub struct DeleteDataLakeExceptionSubscriptionInput  {
+}
 impl DeleteDataLakeExceptionSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataLakeExceptionSubscriptionInput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput).
     pub fn builder() -> crate::operation::delete_data_lake_exception_subscription::builders::DeleteDataLakeExceptionSubscriptionInputBuilder {
@@ -13,15 +14,15 @@ impl DeleteDataLakeExceptionSubscriptionInput {
 /// A builder for [`DeleteDataLakeExceptionSubscriptionInput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteDataLakeExceptionSubscriptionInputBuilder {}
+pub struct DeleteDataLakeExceptionSubscriptionInputBuilder {
+}
 impl DeleteDataLakeExceptionSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataLakeExceptionSubscriptionInput`](crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionInput {
+            }
+        )
     }
 }
+

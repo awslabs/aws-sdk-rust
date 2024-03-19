@@ -2,19 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListManagedPoliciesInPermissionSet`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`instance_arn(impl Into<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::instance_arn) / [`set_instance_arn(Option<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::set_instance_arn):<br>required: **true**<br><p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p><br>
     ///   - [`permission_set_arn(impl Into<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::permission_set_arn) / [`set_permission_set_arn(Option<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::set_permission_set_arn):<br>required: **true**<br><p>The ARN of the <code>PermissionSet</code> whose managed policies will be listed.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to display for the <code>PermissionSet</code>.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p><br>
-    /// - On success, responds with [`ListManagedPoliciesInPermissionSetOutput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput) with field(s):
+                            /// - On success, responds with [`ListManagedPoliciesInPermissionSetOutput`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput) with field(s):
     ///   - [`attached_managed_policies(Option<Vec::<AttachedManagedPolicy>>)`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput::attached_managed_policies): <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput::next_token): <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    /// - On failure, responds with [`SdkError<ListManagedPoliciesInPermissionSetError>`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError)
-    pub fn list_managed_policies_in_permission_set(
-        &self,
-    ) -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder {
-        crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<ListManagedPoliciesInPermissionSetError>`](crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError)
+    pub fn list_managed_policies_in_permission_set(&self) -> crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder {
+                                crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetFluentBuilder::new(self.handle.clone())
+                            }
 }
+

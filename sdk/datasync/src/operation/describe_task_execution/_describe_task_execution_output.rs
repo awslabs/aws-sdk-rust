@@ -3,7 +3,7 @@
 /// <p>DescribeTaskExecutionResponse</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTaskExecutionOutput {
+pub struct DescribeTaskExecutionOutput  {
     /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
@@ -13,9 +13,9 @@ pub struct DescribeTaskExecutionOutput {
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub options: ::std::option::Option<crate::types::Options>,
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     /// <p>The time when the task execution started.</p>
@@ -51,39 +51,41 @@ pub struct DescribeTaskExecutionOutput {
     pub estimated_files_to_delete: i64,
     _request_id: Option<String>,
 }
-impl DescribeTaskExecutionOutput {
+impl  DescribeTaskExecutionOutput  {
     /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
-    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
     /// <p>The status of the task execution.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::Options> {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excludes.is_none()`.
-    pub fn excludes(&self) -> &[crate::types::FilterRule] {
-        self.excludes.as_deref().unwrap_or_default()
+    pub fn excludes(&self) -> & [crate::types::FilterRule] {
+        self.excludes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes.is_none()`.
-    pub fn includes(&self) -> &[crate::types::FilterRule] {
-        self.includes.as_deref().unwrap_or_default()
+    pub fn includes(&self) -> & [crate::types::FilterRule] {
+        self.includes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
-    pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
+    pub fn manifest_config(&self) -> ::std::option::Option<& crate::types::ManifestConfig> {
         self.manifest_config.as_ref()
     }
     /// <p>The time when the task execution started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
@@ -112,11 +114,11 @@ impl DescribeTaskExecutionOutput {
         self.bytes_compressed
     }
     /// <p>The result of the task execution.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::TaskExecutionResultDetail> {
+    pub fn result(&self) -> ::std::option::Option<& crate::types::TaskExecutionResultDetail> {
         self.result.as_ref()
     }
     /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
-    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+    pub fn task_report_config(&self) -> ::std::option::Option<& crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
     }
     /// <p>The number of files, objects, and directories that DataSync deleted in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
@@ -134,7 +136,7 @@ impl DescribeTaskExecutionOutput {
         self.files_verified
     }
     /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
-    pub fn report_result(&self) -> ::std::option::Option<&crate::types::ReportResult> {
+    pub fn report_result(&self) -> ::std::option::Option<& crate::types::ReportResult> {
         self.report_result.as_ref()
     }
     /// <p>The expected number of files, objects, and directories that DataSync will delete in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
@@ -143,10 +145,10 @@ impl DescribeTaskExecutionOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTaskExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTaskExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionOutput`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput).
     pub fn builder() -> crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder {
@@ -161,8 +163,8 @@ pub struct DescribeTaskExecutionOutputBuilder {
     pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     pub(crate) options: ::std::option::Option<crate::types::Options>,
-    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>,
     pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) estimated_files_to_transfer: ::std::option::Option<i64>,
@@ -190,8 +192,7 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_execution_arn = input;
-        self
+        self.task_execution_arn = input; self
     }
     /// <p>The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed.</p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.</p>
@@ -205,8 +206,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The status of the task execution.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the task execution.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
@@ -221,8 +221,7 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>Indicates how your transfer task is configured. These options include how DataSync handles files, objects, and their associated metadata during your transfer. You also can specify how to verify data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each option has a default value. Unless you need to, you don't have to configure any of these options before starting your task.</p>
@@ -236,17 +235,16 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
-        v.push(input);
-        self.excludes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.excludes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.excludes = input;
-        self
+    pub fn set_excludes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.excludes = input; self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.excludes
     }
     /// Appends an item to `includes`.
@@ -256,17 +254,16 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
-        v.push(input);
-        self.includes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.includes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>) -> Self {
-        self.includes = input;
-        self
+    pub fn set_includes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>>) -> Self {
+        self.includes = input; self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+    pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FilterRule>> {
         &self.includes
     }
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
@@ -276,8 +273,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
-        self.manifest_config = input;
-        self
+        self.manifest_config = input; self
     }
     /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
     pub fn get_manifest_config(&self) -> &::std::option::Option<crate::types::ManifestConfig> {
@@ -290,8 +286,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The time when the task execution started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The time when the task execution started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -304,8 +299,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn set_estimated_files_to_transfer(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_files_to_transfer = input;
-        self
+        self.estimated_files_to_transfer = input; self
     }
     /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
     pub fn get_estimated_files_to_transfer(&self) -> &::std::option::Option<i64> {
@@ -318,8 +312,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The estimated physical number of bytes that will transfer over the network.</p>
     pub fn set_estimated_bytes_to_transfer(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_bytes_to_transfer = input;
-        self
+        self.estimated_bytes_to_transfer = input; self
     }
     /// <p>The estimated physical number of bytes that will transfer over the network.</p>
     pub fn get_estimated_bytes_to_transfer(&self) -> &::std::option::Option<i64> {
@@ -334,8 +327,7 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>The actual number of files, objects, and directories that DataSync transferred over the network. This value is updated periodically during the task execution's <code>TRANSFERRING</code> phase when something is read from the source and sent over the network.</p>
     /// <p>If DataSync fails to transfer something, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an exact indication of what transferred or to monitor your task execution.</p>
     pub fn set_files_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.files_transferred = input;
-        self
+        self.files_transferred = input; self
     }
     /// <p>The actual number of files, objects, and directories that DataSync transferred over the network. This value is updated periodically during the task execution's <code>TRANSFERRING</code> phase when something is read from the source and sent over the network.</p>
     /// <p>If DataSync fails to transfer something, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an exact indication of what transferred or to monitor your task execution.</p>
@@ -349,8 +341,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The number of logical bytes written to the destination location.</p>
     pub fn set_bytes_written(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_written = input;
-        self
+        self.bytes_written = input; self
     }
     /// <p>The number of logical bytes written to the destination location.</p>
     pub fn get_bytes_written(&self) -> &::std::option::Option<i64> {
@@ -363,8 +354,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_transferred = input;
-        self
+        self.bytes_transferred = input; self
     }
     /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
@@ -377,8 +367,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub fn set_bytes_compressed(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.bytes_compressed = input;
-        self
+        self.bytes_compressed = input; self
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub fn get_bytes_compressed(&self) -> &::std::option::Option<i64> {
@@ -391,8 +380,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The result of the task execution.</p>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::TaskExecutionResultDetail>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The result of the task execution.</p>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::TaskExecutionResultDetail> {
@@ -405,8 +393,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
-        self.task_report_config = input;
-        self
+        self.task_report_config = input; self
     }
     /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
@@ -419,8 +406,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The number of files, objects, and directories that DataSync deleted in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub fn set_files_deleted(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.files_deleted = input;
-        self
+        self.files_deleted = input; self
     }
     /// <p>The number of files, objects, and directories that DataSync deleted in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub fn get_files_deleted(&self) -> &::std::option::Option<i64> {
@@ -433,8 +419,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The number of files, objects, and directories that DataSync skipped during your transfer.</p>
     pub fn set_files_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.files_skipped = input;
-        self
+        self.files_skipped = input; self
     }
     /// <p>The number of files, objects, and directories that DataSync skipped during your transfer.</p>
     pub fn get_files_skipped(&self) -> &::std::option::Option<i64> {
@@ -451,8 +436,7 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
     /// </note>
     pub fn set_files_verified(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.files_verified = input;
-        self
+        self.files_verified = input; self
     }
     /// <p>The number of files, objects, and directories that DataSync verified during your transfer.</p><note>
     /// <p>When you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify only the data that's transferred</a>, DataSync doesn't verify directories in some situations or files that fail to transfer.</p>
@@ -467,8 +451,7 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn set_report_result(mut self, input: ::std::option::Option<crate::types::ReportResult>) -> Self {
-        self.report_result = input;
-        self
+        self.report_result = input; self
     }
     /// <p>Indicates whether DataSync generated a complete <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a> for your transfer.</p>
     pub fn get_report_result(&self) -> &::std::option::Option<crate::types::ReportResult> {
@@ -481,46 +464,76 @@ impl DescribeTaskExecutionOutputBuilder {
     }
     /// <p>The expected number of files, objects, and directories that DataSync will delete in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub fn set_estimated_files_to_delete(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.estimated_files_to_delete = input;
-        self
+        self.estimated_files_to_delete = input; self
     }
     /// <p>The expected number of files, objects, and directories that DataSync will delete in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub fn get_estimated_files_to_delete(&self) -> &::std::option::Option<i64> {
         &self.estimated_files_to_delete
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTaskExecutionOutput`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput).
     pub fn build(self) -> crate::operation::describe_task_execution::DescribeTaskExecutionOutput {
         crate::operation::describe_task_execution::DescribeTaskExecutionOutput {
-            task_execution_arn: self.task_execution_arn,
-            status: self.status,
-            options: self.options,
-            excludes: self.excludes,
-            includes: self.includes,
-            manifest_config: self.manifest_config,
-            start_time: self.start_time,
-            estimated_files_to_transfer: self.estimated_files_to_transfer.unwrap_or_default(),
-            estimated_bytes_to_transfer: self.estimated_bytes_to_transfer.unwrap_or_default(),
-            files_transferred: self.files_transferred.unwrap_or_default(),
-            bytes_written: self.bytes_written.unwrap_or_default(),
-            bytes_transferred: self.bytes_transferred.unwrap_or_default(),
-            bytes_compressed: self.bytes_compressed.unwrap_or_default(),
-            result: self.result,
-            task_report_config: self.task_report_config,
-            files_deleted: self.files_deleted.unwrap_or_default(),
-            files_skipped: self.files_skipped.unwrap_or_default(),
-            files_verified: self.files_verified.unwrap_or_default(),
-            report_result: self.report_result,
-            estimated_files_to_delete: self.estimated_files_to_delete.unwrap_or_default(),
+            task_execution_arn: self.task_execution_arn
+            ,
+            status: self.status
+            ,
+            options: self.options
+            ,
+            excludes: self.excludes
+            ,
+            includes: self.includes
+            ,
+            manifest_config: self.manifest_config
+            ,
+            start_time: self.start_time
+            ,
+            estimated_files_to_transfer: self.estimated_files_to_transfer
+                .unwrap_or_default()
+            ,
+            estimated_bytes_to_transfer: self.estimated_bytes_to_transfer
+                .unwrap_or_default()
+            ,
+            files_transferred: self.files_transferred
+                .unwrap_or_default()
+            ,
+            bytes_written: self.bytes_written
+                .unwrap_or_default()
+            ,
+            bytes_transferred: self.bytes_transferred
+                .unwrap_or_default()
+            ,
+            bytes_compressed: self.bytes_compressed
+                .unwrap_or_default()
+            ,
+            result: self.result
+            ,
+            task_report_config: self.task_report_config
+            ,
+            files_deleted: self.files_deleted
+                .unwrap_or_default()
+            ,
+            files_skipped: self.files_skipped
+                .unwrap_or_default()
+            ,
+            files_verified: self.files_verified
+                .unwrap_or_default()
+            ,
+            report_result: self.report_result
+            ,
+            estimated_files_to_delete: self.estimated_files_to_delete
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

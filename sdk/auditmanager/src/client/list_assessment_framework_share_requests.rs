@@ -2,20 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAssessmentFrameworkShareRequests`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`request_type(ShareRequestType)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::request_type) / [`set_request_type(Option<ShareRequestType>)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::set_request_type):<br>required: **true**<br><p>Specifies whether the share request is a sent request or a received request.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token that's used to fetch the next set of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::set_max_results):<br>required: **false**<br><p>Represents the maximum number of results on a page or for an API request call.</p><br>
-    /// - On success, responds with [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput) with field(s):
+                            /// - On success, responds with [`ListAssessmentFrameworkShareRequestsOutput`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput) with field(s):
     ///   - [`assessment_framework_share_requests(Option<Vec::<AssessmentFrameworkShareRequest>>)`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput::assessment_framework_share_requests): <p>The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsOutput::next_token): <p>The pagination token that's used to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListAssessmentFrameworkShareRequestsError>`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError)
-    pub fn list_assessment_framework_share_requests(
-        &self,
-    ) -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder {
-        crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::new(
-            self.handle.clone(),
-        )
-    }
+                            /// - On failure, responds with [`SdkError<ListAssessmentFrameworkShareRequestsError>`](crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError)
+    pub fn list_assessment_framework_share_requests(&self) -> crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder {
+                                crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a target that failed to be removed from a rule.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RemoveTargetsResultEntry {
+pub struct RemoveTargetsResultEntry  {
     /// <p>The ID of the target.</p>
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
@@ -11,17 +11,17 @@ pub struct RemoveTargetsResultEntry {
     /// <p>The error message that explains why the target removal failed.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
-impl RemoveTargetsResultEntry {
+impl  RemoveTargetsResultEntry  {
     /// <p>The ID of the target.</p>
-    pub fn target_id(&self) -> ::std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
-    pub fn error_code(&self) -> ::std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that explains why the target removal failed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl RemoveTargetsResultEntryBuilder {
     }
     /// <p>The ID of the target.</p>
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>The ID of the target.</p>
     pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl RemoveTargetsResultEntryBuilder {
     }
     /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl RemoveTargetsResultEntryBuilder {
     }
     /// <p>The error message that explains why the target removal failed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error message that explains why the target removal failed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl RemoveTargetsResultEntryBuilder {
     /// Consumes the builder and constructs a [`RemoveTargetsResultEntry`](crate::types::RemoveTargetsResultEntry).
     pub fn build(self) -> crate::types::RemoveTargetsResultEntry {
         crate::types::RemoveTargetsResultEntry {
-            target_id: self.target_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            target_id: self.target_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

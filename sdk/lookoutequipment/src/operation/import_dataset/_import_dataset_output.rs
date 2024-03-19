@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportDatasetOutput {
+pub struct ImportDatasetOutput  {
     /// <p>The name of the created machine learning dataset.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that was imported.</p>
@@ -13,29 +13,29 @@ pub struct ImportDatasetOutput {
     pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ImportDatasetOutput {
+impl  ImportDatasetOutput  {
     /// <p>The name of the created machine learning dataset.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that was imported.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The status of the <code>ImportDataset</code> operation.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>A unique identifier for the job of importing the dataset.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ImportDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ImportDatasetOutput {
     /// Creates a new builder-style object to manufacture [`ImportDatasetOutput`](crate::operation::import_dataset::ImportDatasetOutput).
     pub fn builder() -> crate::operation::import_dataset::builders::ImportDatasetOutputBuilder {
@@ -61,8 +61,7 @@ impl ImportDatasetOutputBuilder {
     }
     /// <p>The name of the created machine learning dataset.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the created machine learning dataset.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +74,7 @@ impl ImportDatasetOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that was imported.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that was imported.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +87,7 @@ impl ImportDatasetOutputBuilder {
     }
     /// <p>The status of the <code>ImportDataset</code> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the <code>ImportDataset</code> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
@@ -103,30 +100,34 @@ impl ImportDatasetOutputBuilder {
     }
     /// <p>A unique identifier for the job of importing the dataset.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>A unique identifier for the job of importing the dataset.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ImportDatasetOutput`](crate::operation::import_dataset::ImportDatasetOutput).
     pub fn build(self) -> crate::operation::import_dataset::ImportDatasetOutput {
         crate::operation::import_dataset::ImportDatasetOutput {
-            dataset_name: self.dataset_name,
-            dataset_arn: self.dataset_arn,
-            status: self.status,
-            job_id: self.job_id,
+            dataset_name: self.dataset_name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            status: self.status
+            ,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

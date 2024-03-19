@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTargetGroupsOutput {
+pub struct DescribeTargetGroupsOutput  {
     /// <p>Information about the target groups.</p>
-    pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
+    pub target_groups: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroup>>,
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeTargetGroupsOutput {
+impl  DescribeTargetGroupsOutput  {
     /// <p>Information about the target groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_groups.is_none()`.
-    pub fn target_groups(&self) -> &[crate::types::TargetGroup] {
-        self.target_groups.as_deref().unwrap_or_default()
+    pub fn target_groups(&self) -> & [crate::types::TargetGroup] {
+        self.target_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
-    pub fn next_marker(&self) -> ::std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTargetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput).
     pub fn builder() -> crate::operation::describe_target_groups::builders::DescribeTargetGroupsOutputBuilder {
@@ -37,7 +38,7 @@ impl DescribeTargetGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeTargetGroupsOutputBuilder {
-    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
+    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroup>>,
     pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl DescribeTargetGroupsOutputBuilder {
     /// <p>Information about the target groups.</p>
     pub fn target_groups(mut self, input: crate::types::TargetGroup) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
-        v.push(input);
-        self.target_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.target_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the target groups.</p>
-    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>) -> Self {
-        self.target_groups = input;
-        self
+    pub fn set_target_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TargetGroup>>) -> Self {
+        self.target_groups = input; self
     }
     /// <p>Information about the target groups.</p>
-    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>> {
+    pub fn get_target_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TargetGroup>> {
         &self.target_groups
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
@@ -69,28 +69,30 @@ impl DescribeTargetGroupsOutputBuilder {
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTargetGroupsOutput`](crate::operation::describe_target_groups::DescribeTargetGroupsOutput).
     pub fn build(self) -> crate::operation::describe_target_groups::DescribeTargetGroupsOutput {
         crate::operation::describe_target_groups::DescribeTargetGroupsOutput {
-            target_groups: self.target_groups,
-            next_marker: self.next_marker,
+            target_groups: self.target_groups
+            ,
+            next_marker: self.next_marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

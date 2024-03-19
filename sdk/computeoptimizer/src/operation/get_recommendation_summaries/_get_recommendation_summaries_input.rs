@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRecommendationSummariesInput {
+pub struct GetRecommendationSummariesInput  {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetRecommendationSummariesInput {
+impl  GetRecommendationSummariesInput  {
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
-    pub fn account_ids(&self) -> &[::std::string::String] {
-        self.account_ids.as_deref().unwrap_or_default()
+    pub fn account_ids(&self) -> & [::std::string::String] {
+        self.account_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
@@ -43,7 +44,7 @@ impl GetRecommendationSummariesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetRecommendationSummariesInputBuilder {
-    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -57,21 +58,20 @@ impl GetRecommendationSummariesInputBuilder {
     /// <p>Only one account ID can be specified per request.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>The ID of the Amazon Web Services account for which to return recommendation summaries.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return recommendation summaries.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.account_ids
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
@@ -81,8 +81,7 @@ impl GetRecommendationSummariesInputBuilder {
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to advance to the next page of recommendation summaries.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +96,7 @@ impl GetRecommendationSummariesInputBuilder {
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of recommendation summaries to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -106,16 +104,17 @@ impl GetRecommendationSummariesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetRecommendationSummariesInput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput {
-            account_ids: self.account_ids,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesInput {
+                account_ids: self.account_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExportConfigurationsInput {}
+pub struct ExportConfigurationsInput  {
+}
 impl ExportConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).
     pub fn builder() -> crate::operation::export_configurations::builders::ExportConfigurationsInputBuilder {
@@ -13,13 +14,15 @@ impl ExportConfigurationsInput {
 /// A builder for [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct ExportConfigurationsInputBuilder {}
+pub struct ExportConfigurationsInputBuilder {
+}
 impl ExportConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::export_configurations::ExportConfigurationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::export_configurations::ExportConfigurationsInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_configurations::ExportConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::export_configurations::ExportConfigurationsInput {
+            }
+        )
     }
 }
+

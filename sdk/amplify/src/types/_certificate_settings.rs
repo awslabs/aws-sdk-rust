@@ -3,7 +3,7 @@
 /// <p>The type of SSL/TLS certificate to use for your custom domain. If a certificate type isn't specified, Amplify uses the default <code>AMPLIFY_MANAGED</code> certificate.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateSettings {
+pub struct CertificateSettings  {
     /// <p>The certificate type.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i>.</p>
@@ -12,16 +12,16 @@ pub struct CertificateSettings {
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
     pub custom_certificate_arn: ::std::option::Option<::std::string::String>,
 }
-impl CertificateSettings {
+impl  CertificateSettings  {
     /// <p>The certificate type.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::CertificateType {
+    pub fn r#type(&self) -> & crate::types::CertificateType {
         &self.r#type
     }
     /// <p>The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
-    pub fn custom_certificate_arn(&self) -> ::std::option::Option<&str> {
+    pub fn custom_certificate_arn(&self) -> ::std::option::Option<& str> {
         self.custom_certificate_arn.as_deref()
     }
 }
@@ -52,8 +52,7 @@ impl CertificateSettingsBuilder {
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
     /// <p>Specify <code>CUSTOM</code> to use your own certificate that you have already added to Certificate Manager in your Amazon Web Services account. Make sure you request (or import) the certificate in the US East (N. Virginia) Region (us-east-1). For more information about using ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into Certificate Manager</a> in the <i>ACM User guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CertificateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The certificate type.</p>
     /// <p>Specify <code>AMPLIFY_MANAGED</code> to use the default certificate that Amplify provisions for you.</p>
@@ -70,8 +69,7 @@ impl CertificateSettingsBuilder {
     /// <p>The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
     pub fn set_custom_certificate_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.custom_certificate_arn = input;
-        self
+        self.custom_certificate_arn = input; self
     }
     /// <p>The Amazon resource name (ARN) for the custom certificate that you have already added to Certificate Manager in your Amazon Web Services account.</p>
     /// <p>This field is required only when the certificate type is <code>CUSTOM</code>.</p>
@@ -82,14 +80,17 @@ impl CertificateSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::CertificateSettingsBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::types::CertificateSettings, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CertificateSettings {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CertificateSettings",
-                )
-            })?,
-            custom_certificate_arn: self.custom_certificate_arn,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CertificateSettings {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building CertificateSettings")
+                    )?
+                ,
+                custom_certificate_arn: self.custom_certificate_arn
+                ,
+            }
+        )
     }
 }
+

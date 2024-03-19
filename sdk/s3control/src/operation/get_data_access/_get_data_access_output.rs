@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetDataAccessOutput {
+pub struct GetDataAccessOutput  {
     /// <p>The temporary credential token that S3 Access Grants vends.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
     pub matched_grant_target: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetDataAccessOutput {
+impl  GetDataAccessOutput  {
     /// <p>The temporary credential token that S3 Access Grants vends.</p>
-    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<& crate::types::Credentials> {
         self.credentials.as_ref()
     }
     /// <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
-    pub fn matched_grant_target(&self) -> ::std::option::Option<&str> {
+    pub fn matched_grant_target(&self) -> ::std::option::Option<& str> {
         self.matched_grant_target.as_deref()
     }
 }
-impl ::std::fmt::Debug for GetDataAccessOutput {
+impl  ::std::fmt::Debug for GetDataAccessOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataAccessOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for GetDataAccessOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetDataAccessOutput`](crate::operation::get_data_access::GetDataAccessOutput).
     pub fn builder() -> crate::operation::get_data_access::builders::GetDataAccessOutputBuilder {
@@ -56,8 +56,7 @@ impl GetDataAccessOutputBuilder {
     }
     /// <p>The temporary credential token that S3 Access Grants vends.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
-        self.credentials = input;
-        self
+        self.credentials = input; self
     }
     /// <p>The temporary credential token that S3 Access Grants vends.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
@@ -70,27 +69,28 @@ impl GetDataAccessOutputBuilder {
     }
     /// <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
     pub fn set_matched_grant_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.matched_grant_target = input;
-        self
+        self.matched_grant_target = input; self
     }
     /// <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
     pub fn get_matched_grant_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.matched_grant_target
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataAccessOutput`](crate::operation::get_data_access::GetDataAccessOutput).
     pub fn build(self) -> crate::operation::get_data_access::GetDataAccessOutput {
         crate::operation::get_data_access::GetDataAccessOutput {
-            credentials: self.credentials,
-            matched_grant_target: self.matched_grant_target,
+            credentials: self.credentials
+            ,
+            matched_grant_target: self.matched_grant_target
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +104,4 @@ impl ::std::fmt::Debug for GetDataAccessOutputBuilder {
         formatter.finish()
     }
 }
+

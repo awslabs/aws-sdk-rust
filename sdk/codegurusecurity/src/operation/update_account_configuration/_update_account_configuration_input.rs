@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAccountConfigurationInput {
+pub struct UpdateAccountConfigurationInput  {
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
     pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
-impl UpdateAccountConfigurationInput {
+impl  UpdateAccountConfigurationInput  {
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
-    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -34,22 +34,20 @@ impl UpdateAccountConfigurationInputBuilder {
     }
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
     pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input;
-        self
+        self.encryption_config = input; self
     }
     /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
     pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
         &self.encryption_config
     }
     /// Consumes the builder and constructs a [`UpdateAccountConfigurationInput`](crate::operation::update_account_configuration::UpdateAccountConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_account_configuration::UpdateAccountConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
-            encryption_config: self.encryption_config,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_account_configuration::UpdateAccountConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_account_configuration::UpdateAccountConfigurationInput {
+                encryption_config: self.encryption_config
+                ,
+            }
+        )
     }
 }
+

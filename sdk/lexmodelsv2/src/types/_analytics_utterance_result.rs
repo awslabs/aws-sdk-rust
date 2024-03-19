@@ -3,40 +3,44 @@
 /// <p>An object containing the results for the utterance metrics you requested and the bin and/or group(s) they refer to, if applicable.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsUtteranceResult {
+pub struct AnalyticsUtteranceResult  {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
+    pub bin_keys: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinKey>>,
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupByKey>>,
+    pub group_by_keys: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupByKey>>,
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub metrics_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetricResult>>,
+    pub metrics_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetricResult>>,
     /// <p>A list of objects containing information about the last used intent at the time of an utterance.</p>
-    pub attribute_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttributeResult>>,
+    pub attribute_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttributeResult>>,
 }
-impl AnalyticsUtteranceResult {
+impl  AnalyticsUtteranceResult  {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bin_keys.is_none()`.
-    pub fn bin_keys(&self) -> &[crate::types::AnalyticsBinKey] {
-        self.bin_keys.as_deref().unwrap_or_default()
+    pub fn bin_keys(&self) -> & [crate::types::AnalyticsBinKey] {
+        self.bin_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by_keys.is_none()`.
-    pub fn group_by_keys(&self) -> &[crate::types::AnalyticsUtteranceGroupByKey] {
-        self.group_by_keys.as_deref().unwrap_or_default()
+    pub fn group_by_keys(&self) -> & [crate::types::AnalyticsUtteranceGroupByKey] {
+        self.group_by_keys.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics_results.is_none()`.
-    pub fn metrics_results(&self) -> &[crate::types::AnalyticsUtteranceMetricResult] {
-        self.metrics_results.as_deref().unwrap_or_default()
+    pub fn metrics_results(&self) -> & [crate::types::AnalyticsUtteranceMetricResult] {
+        self.metrics_results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of objects containing information about the last used intent at the time of an utterance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_results.is_none()`.
-    pub fn attribute_results(&self) -> &[crate::types::AnalyticsUtteranceAttributeResult] {
-        self.attribute_results.as_deref().unwrap_or_default()
+    pub fn attribute_results(&self) -> & [crate::types::AnalyticsUtteranceAttributeResult] {
+        self.attribute_results.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AnalyticsUtteranceResult {
@@ -50,10 +54,10 @@ impl AnalyticsUtteranceResult {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AnalyticsUtteranceResultBuilder {
-    pub(crate) bin_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>,
-    pub(crate) group_by_keys: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupByKey>>,
-    pub(crate) metrics_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetricResult>>,
-    pub(crate) attribute_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttributeResult>>,
+    pub(crate) bin_keys: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinKey>>,
+    pub(crate) group_by_keys: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupByKey>>,
+    pub(crate) metrics_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetricResult>>,
+    pub(crate) attribute_results: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttributeResult>>,
 }
 impl AnalyticsUtteranceResultBuilder {
     /// Appends an item to `bin_keys`.
@@ -63,17 +67,16 @@ impl AnalyticsUtteranceResultBuilder {
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
     pub fn bin_keys(mut self, input: crate::types::AnalyticsBinKey) -> Self {
         let mut v = self.bin_keys.unwrap_or_default();
-        v.push(input);
-        self.bin_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.bin_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub fn set_bin_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>>) -> Self {
-        self.bin_keys = input;
-        self
+    pub fn set_bin_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinKey>>) -> Self {
+        self.bin_keys = input; self
     }
     /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
-    pub fn get_bin_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>> {
+    pub fn get_bin_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsBinKey>> {
         &self.bin_keys
     }
     /// Appends an item to `group_by_keys`.
@@ -83,17 +86,16 @@ impl AnalyticsUtteranceResultBuilder {
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
     pub fn group_by_keys(mut self, input: crate::types::AnalyticsUtteranceGroupByKey) -> Self {
         let mut v = self.group_by_keys.unwrap_or_default();
-        v.push(input);
-        self.group_by_keys = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_by_keys = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub fn set_group_by_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupByKey>>) -> Self {
-        self.group_by_keys = input;
-        self
+    pub fn set_group_by_keys(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupByKey>>) -> Self {
+        self.group_by_keys = input; self
     }
     /// <p>A list of objects containing the criteria you requested for grouping results and the values of the bins.</p>
-    pub fn get_group_by_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceGroupByKey>> {
+    pub fn get_group_by_keys(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceGroupByKey>> {
         &self.group_by_keys
     }
     /// Appends an item to `metrics_results`.
@@ -103,17 +105,16 @@ impl AnalyticsUtteranceResultBuilder {
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
     pub fn metrics_results(mut self, input: crate::types::AnalyticsUtteranceMetricResult) -> Self {
         let mut v = self.metrics_results.unwrap_or_default();
-        v.push(input);
-        self.metrics_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.metrics_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn set_metrics_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetricResult>>) -> Self {
-        self.metrics_results = input;
-        self
+    pub fn set_metrics_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetricResult>>) -> Self {
+        self.metrics_results = input; self
     }
     /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
-    pub fn get_metrics_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceMetricResult>> {
+    pub fn get_metrics_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceMetricResult>> {
         &self.metrics_results
     }
     /// Appends an item to `attribute_results`.
@@ -123,26 +124,30 @@ impl AnalyticsUtteranceResultBuilder {
     /// <p>A list of objects containing information about the last used intent at the time of an utterance.</p>
     pub fn attribute_results(mut self, input: crate::types::AnalyticsUtteranceAttributeResult) -> Self {
         let mut v = self.attribute_results.unwrap_or_default();
-        v.push(input);
-        self.attribute_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attribute_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of objects containing information about the last used intent at the time of an utterance.</p>
-    pub fn set_attribute_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttributeResult>>) -> Self {
-        self.attribute_results = input;
-        self
+    pub fn set_attribute_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttributeResult>>) -> Self {
+        self.attribute_results = input; self
     }
     /// <p>A list of objects containing information about the last used intent at the time of an utterance.</p>
-    pub fn get_attribute_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsUtteranceAttributeResult>> {
+    pub fn get_attribute_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnalyticsUtteranceAttributeResult>> {
         &self.attribute_results
     }
     /// Consumes the builder and constructs a [`AnalyticsUtteranceResult`](crate::types::AnalyticsUtteranceResult).
     pub fn build(self) -> crate::types::AnalyticsUtteranceResult {
         crate::types::AnalyticsUtteranceResult {
-            bin_keys: self.bin_keys,
-            group_by_keys: self.group_by_keys,
-            metrics_results: self.metrics_results,
-            attribute_results: self.attribute_results,
+            bin_keys: self.bin_keys
+            ,
+            group_by_keys: self.group_by_keys
+            ,
+            metrics_results: self.metrics_results
+            ,
+            attribute_results: self.attribute_results
+            ,
         }
     }
 }
+

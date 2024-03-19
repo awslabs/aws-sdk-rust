@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExportOutput {
+pub struct GetExportOutput  {
     /// <p>The name of the bot being exported.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot being exported.</p>
@@ -27,21 +27,21 @@ pub struct GetExportOutput {
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl GetExportOutput {
+impl  GetExportOutput  {
     /// <p>The name of the bot being exported.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the bot being exported.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The type of the exported resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The format of the exported data.</p>
-    pub fn export_type(&self) -> ::std::option::Option<&crate::types::ExportType> {
+    pub fn export_type(&self) -> ::std::option::Option<& crate::types::ExportType> {
         self.export_type.as_ref()
     }
     /// <p>The status of the export.</p>
@@ -53,23 +53,23 @@ impl GetExportOutput {
     /// <li>
     /// <p><code>FAILED</code> - The export could not be completed.</p></li>
     /// </ul>
-    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<& crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetExportOutput {
     /// Creates a new builder-style object to manufacture [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
     pub fn builder() -> crate::operation::get_export::builders::GetExportOutputBuilder {
@@ -98,8 +98,7 @@ impl GetExportOutputBuilder {
     }
     /// <p>The name of the bot being exported.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the bot being exported.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +111,7 @@ impl GetExportOutputBuilder {
     }
     /// <p>The version of the bot being exported.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the bot being exported.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +124,7 @@ impl GetExportOutputBuilder {
     }
     /// <p>The type of the exported resource.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The type of the exported resource.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
@@ -140,8 +137,7 @@ impl GetExportOutputBuilder {
     }
     /// <p>The format of the exported data.</p>
     pub fn set_export_type(mut self, input: ::std::option::Option<crate::types::ExportType>) -> Self {
-        self.export_type = input;
-        self
+        self.export_type = input; self
     }
     /// <p>The format of the exported data.</p>
     pub fn get_export_type(&self) -> &::std::option::Option<crate::types::ExportType> {
@@ -170,8 +166,7 @@ impl GetExportOutputBuilder {
     /// <p><code>FAILED</code> - The export could not be completed.</p></li>
     /// </ul>
     pub fn set_export_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.export_status = input;
-        self
+        self.export_status = input; self
     }
     /// <p>The status of the export.</p>
     /// <ul>
@@ -192,8 +187,7 @@ impl GetExportOutputBuilder {
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -206,33 +200,40 @@ impl GetExportOutputBuilder {
     }
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
     pub fn build(self) -> crate::operation::get_export::GetExportOutput {
         crate::operation::get_export::GetExportOutput {
-            name: self.name,
-            version: self.version,
-            resource_type: self.resource_type,
-            export_type: self.export_type,
-            export_status: self.export_status,
-            failure_reason: self.failure_reason,
-            url: self.url,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            resource_type: self.resource_type
+            ,
+            export_type: self.export_type
+            ,
+            export_status: self.export_status
+            ,
+            failure_reason: self.failure_reason
+            ,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

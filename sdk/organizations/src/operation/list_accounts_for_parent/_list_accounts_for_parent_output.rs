@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAccountsForParentOutput {
+pub struct ListAccountsForParentOutput  {
     /// <p>A list of the accounts in the specified root or OU.</p>
-    pub accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAccountsForParentOutput {
+impl  ListAccountsForParentOutput  {
     /// <p>A list of the accounts in the specified root or OU.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
-    pub fn accounts(&self) -> &[crate::types::Account] {
-        self.accounts.as_deref().unwrap_or_default()
+    pub fn accounts(&self) -> & [crate::types::Account] {
+        self.accounts.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAccountsForParentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAccountsForParentOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForParentOutput`](crate::operation::list_accounts_for_parent::ListAccountsForParentOutput).
     pub fn builder() -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAccountsForParentOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAccountsForParentOutputBuilder {
-    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<crate::types::Account>>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAccountsForParentOutputBuilder {
     /// <p>A list of the accounts in the specified root or OU.</p>
     pub fn accounts(mut self, input: crate::types::Account) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.accounts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the accounts in the specified root or OU.</p>
-    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Account>>) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Account>>) -> Self {
+        self.accounts = input; self
     }
     /// <p>A list of the accounts in the specified root or OU.</p>
-    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Account>> {
         &self.accounts
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
@@ -69,28 +69,30 @@ impl ListAccountsForParentOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAccountsForParentOutput`](crate::operation::list_accounts_for_parent::ListAccountsForParentOutput).
     pub fn build(self) -> crate::operation::list_accounts_for_parent::ListAccountsForParentOutput {
         crate::operation::list_accounts_for_parent::ListAccountsForParentOutput {
-            accounts: self.accounts,
-            next_token: self.next_token,
+            accounts: self.accounts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

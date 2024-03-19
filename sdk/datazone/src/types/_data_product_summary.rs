@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DataProductSummary {
+pub struct DataProductSummary  {
     /// <p></p>
     pub domain_id: ::std::string::String,
     /// <p></p>
@@ -15,9 +15,9 @@ pub struct DataProductSummary {
     /// <p></p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p></p>
-    pub data_product_items: ::std::option::Option<::std::vec::Vec<crate::types::DataProductItem>>,
+    pub data_product_items: ::std::option::Option<::std::vec::Vec::<crate::types::DataProductItem>>,
     /// <p></p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p></p>
@@ -27,61 +27,59 @@ pub struct DataProductSummary {
     /// <p></p>
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
-impl DataProductSummary {
+impl  DataProductSummary  {
     /// <p></p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p></p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p></p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p></p>
-    pub fn owning_project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owning_project_id.deref()
+    pub fn owning_project_id(&self) -> & str {
+        use std::ops::Deref; self.owning_project_id.deref()
     }
     /// <p></p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glossary_terms.is_none()`.
-    pub fn glossary_terms(&self) -> &[::std::string::String] {
-        self.glossary_terms.as_deref().unwrap_or_default()
+    pub fn glossary_terms(&self) -> & [::std::string::String] {
+        self.glossary_terms.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_product_items.is_none()`.
-    pub fn data_product_items(&self) -> &[crate::types::DataProductItem] {
-        self.data_product_items.as_deref().unwrap_or_default()
+    pub fn data_product_items(&self) -> & [crate::types::DataProductItem] {
+        self.data_product_items.as_deref()
+        .unwrap_or_default()
     }
     /// <p></p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p></p>
-    pub fn created_by(&self) -> ::std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p></p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p></p>
-    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
-impl ::std::fmt::Debug for DataProductSummary {
+impl  ::std::fmt::Debug for DataProductSummary  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataProductSummary");
         formatter.field("domain_id", &self.domain_id);
@@ -114,8 +112,8 @@ pub struct DataProductSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) data_product_items: ::std::option::Option<::std::vec::Vec<crate::types::DataProductItem>>,
+    pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) data_product_items: ::std::option::Option<::std::vec::Vec::<crate::types::DataProductItem>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -130,8 +128,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p></p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p></p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +156,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -175,8 +170,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_owning_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owning_project_id = input;
-        self
+        self.owning_project_id = input; self
     }
     /// <p></p>
     pub fn get_owning_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +183,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p></p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,17 +196,16 @@ impl DataProductSummaryBuilder {
     /// <p></p>
     pub fn glossary_terms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.glossary_terms.unwrap_or_default();
-        v.push(input.into());
-        self.glossary_terms = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.glossary_terms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.glossary_terms = input;
-        self
+    pub fn set_glossary_terms(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.glossary_terms = input; self
     }
     /// <p></p>
-    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.glossary_terms
     }
     /// Appends an item to `data_product_items`.
@@ -223,17 +215,16 @@ impl DataProductSummaryBuilder {
     /// <p></p>
     pub fn data_product_items(mut self, input: crate::types::DataProductItem) -> Self {
         let mut v = self.data_product_items.unwrap_or_default();
-        v.push(input);
-        self.data_product_items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.data_product_items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_data_product_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataProductItem>>) -> Self {
-        self.data_product_items = input;
-        self
+    pub fn set_data_product_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataProductItem>>) -> Self {
+        self.data_product_items = input; self
     }
     /// <p></p>
-    pub fn get_data_product_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataProductItem>> {
+    pub fn get_data_product_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataProductItem>> {
         &self.data_product_items
     }
     /// <p></p>
@@ -243,8 +234,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p></p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -257,8 +247,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p></p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -271,8 +260,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p></p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -285,8 +273,7 @@ impl DataProductSummaryBuilder {
     }
     /// <p></p>
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// <p></p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,39 +286,44 @@ impl DataProductSummaryBuilder {
     /// - [`name`](crate::types::builders::DataProductSummaryBuilder::name)
     /// - [`owning_project_id`](crate::types::builders::DataProductSummaryBuilder::owning_project_id)
     pub fn build(self) -> ::std::result::Result<crate::types::DataProductSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DataProductSummary {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DataProductSummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DataProductSummary",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DataProductSummary",
-                )
-            })?,
-            owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owning_project_id",
-                    "owning_project_id was not specified but it is required when building DataProductSummary",
-                )
-            })?,
-            description: self.description,
-            glossary_terms: self.glossary_terms,
-            data_product_items: self.data_product_items,
-            created_at: self.created_at,
-            created_by: self.created_by,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DataProductSummary {
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building DataProductSummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DataProductSummary")
+                    )?
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DataProductSummary")
+                    )?
+                ,
+                owning_project_id: self.owning_project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owning_project_id", "owning_project_id was not specified but it is required when building DataProductSummary")
+                    )?
+                ,
+                description: self.description
+                ,
+                glossary_terms: self.glossary_terms
+                ,
+                data_product_items: self.data_product_items
+                ,
+                created_at: self.created_at
+                ,
+                created_by: self.created_by
+                ,
+                updated_at: self.updated_at
+                ,
+                updated_by: self.updated_by
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DataProductSummaryBuilder {
@@ -351,3 +343,4 @@ impl ::std::fmt::Debug for DataProductSummaryBuilder {
         formatter.finish()
     }
 }
+

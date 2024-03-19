@@ -2,27 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFindingsStatisticsInput {
+pub struct GetFindingsStatisticsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The types of finding statistics to retrieve.</p>
-    pub finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
+    pub finding_statistic_types: ::std::option::Option<::std::vec::Vec::<crate::types::FindingStatisticType>>,
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
 }
-impl GetFindingsStatisticsInput {
+impl  GetFindingsStatisticsInput  {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_statistic_types.is_none()`.
-    pub fn finding_statistic_types(&self) -> &[crate::types::FindingStatisticType] {
-        self.finding_statistic_types.as_deref().unwrap_or_default()
+    pub fn finding_statistic_types(&self) -> & [crate::types::FindingStatisticType] {
+        self.finding_statistic_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
-    pub fn finding_criteria(&self) -> ::std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> ::std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
 }
@@ -38,7 +39,7 @@ impl GetFindingsStatisticsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetFindingsStatisticsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
-    pub(crate) finding_statistic_types: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>,
+    pub(crate) finding_statistic_types: ::std::option::Option<::std::vec::Vec::<crate::types::FindingStatisticType>>,
     pub(crate) finding_criteria: ::std::option::Option<crate::types::FindingCriteria>,
 }
 impl GetFindingsStatisticsInputBuilder {
@@ -50,8 +51,7 @@ impl GetFindingsStatisticsInputBuilder {
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,17 +64,16 @@ impl GetFindingsStatisticsInputBuilder {
     /// <p>The types of finding statistics to retrieve.</p>
     pub fn finding_statistic_types(mut self, input: crate::types::FindingStatisticType) -> Self {
         let mut v = self.finding_statistic_types.unwrap_or_default();
-        v.push(input);
-        self.finding_statistic_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.finding_statistic_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn set_finding_statistic_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>>) -> Self {
-        self.finding_statistic_types = input;
-        self
+    pub fn set_finding_statistic_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FindingStatisticType>>) -> Self {
+        self.finding_statistic_types = input; self
     }
     /// <p>The types of finding statistics to retrieve.</p>
-    pub fn get_finding_statistic_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
+    pub fn get_finding_statistic_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FindingStatisticType>> {
         &self.finding_statistic_types
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
@@ -84,22 +83,24 @@ impl GetFindingsStatisticsInputBuilder {
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn set_finding_criteria(mut self, input: ::std::option::Option<crate::types::FindingCriteria>) -> Self {
-        self.finding_criteria = input;
-        self
+        self.finding_criteria = input; self
     }
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
         &self.finding_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
-            detector_id: self.detector_id,
-            finding_statistic_types: self.finding_statistic_types,
-            finding_criteria: self.finding_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
+                detector_id: self.detector_id
+                ,
+                finding_statistic_types: self.finding_statistic_types
+                ,
+                finding_criteria: self.finding_criteria
+                ,
+            }
+        )
     }
 }
+

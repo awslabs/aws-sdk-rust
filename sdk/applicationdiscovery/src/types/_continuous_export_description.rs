@@ -3,7 +3,7 @@
 /// <p>A list of continuous export descriptions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuousExportDescription {
+pub struct ContinuousExportDescription  {
     /// <p>The unique ID assigned to this export.</p>
     pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the export. Can be one of the following values:</p>
@@ -70,11 +70,11 @@ pub struct ContinuousExportDescription {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub schema_storage_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ContinuousExportDescription {
+impl  ContinuousExportDescription  {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(&self) -> ::std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>Describes the status of the export. Can be one of the following values:</p>
@@ -94,7 +94,7 @@ impl ContinuousExportDescription {
     /// <li>
     /// <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ContinuousExportStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ContinuousExportStatus> {
         self.status.as_ref()
     }
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
@@ -129,23 +129,23 @@ impl ContinuousExportDescription {
     /// <li>
     /// <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p></li>
     /// </ul>
-    pub fn status_detail(&self) -> ::std::option::Option<&str> {
+    pub fn status_detail(&self) -> ::std::option::Option<& str> {
         self.status_detail.as_deref()
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>An object which describes how the data is stored.</p>
@@ -153,7 +153,7 @@ impl ContinuousExportDescription {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn schema_storage_config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn schema_storage_config(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.schema_storage_config.as_ref()
     }
 }
@@ -175,7 +175,7 @@ pub struct ContinuousExportDescriptionBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
-    pub(crate) schema_storage_config: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) schema_storage_config: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ContinuousExportDescriptionBuilder {
     /// <p>The unique ID assigned to this export.</p>
@@ -185,8 +185,7 @@ impl ContinuousExportDescriptionBuilder {
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,8 +230,7 @@ impl ContinuousExportDescriptionBuilder {
     /// <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContinuousExportStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes the status of the export. Can be one of the following values:</p>
     /// <ul>
@@ -323,8 +321,7 @@ impl ContinuousExportDescriptionBuilder {
     /// <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p></li>
     /// </ul>
     pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_detail = input;
-        self
+        self.status_detail = input; self
     }
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
@@ -368,8 +365,7 @@ impl ContinuousExportDescriptionBuilder {
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -382,8 +378,7 @@ impl ContinuousExportDescriptionBuilder {
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -396,8 +391,7 @@ impl ContinuousExportDescriptionBuilder {
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
     pub fn set_stop_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input;
-        self
+        self.stop_time = input; self
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
     pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -410,8 +404,7 @@ impl ContinuousExportDescriptionBuilder {
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
@@ -426,47 +419,48 @@ impl ContinuousExportDescriptionBuilder {
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn schema_storage_config(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn schema_storage_config(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.schema_storage_config.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.schema_storage_config = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.schema_storage_config = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An object which describes how the data is stored.</p>
     /// <ul>
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn set_schema_storage_config(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.schema_storage_config = input;
-        self
+    pub fn set_schema_storage_config(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.schema_storage_config = input; self
     }
     /// <p>An object which describes how the data is stored.</p>
     /// <ul>
     /// <li>
     /// <p><code>databaseName</code> - the name of the Glue database used to store the schema.</p></li>
     /// </ul>
-    pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_schema_storage_config(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.schema_storage_config
     }
     /// Consumes the builder and constructs a [`ContinuousExportDescription`](crate::types::ContinuousExportDescription).
     pub fn build(self) -> crate::types::ContinuousExportDescription {
         crate::types::ContinuousExportDescription {
-            export_id: self.export_id,
-            status: self.status,
-            status_detail: self.status_detail,
-            s3_bucket: self.s3_bucket,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
-            data_source: self.data_source,
-            schema_storage_config: self.schema_storage_config,
+            export_id: self.export_id
+            ,
+            status: self.status
+            ,
+            status_detail: self.status_detail
+            ,
+            s3_bucket: self.s3_bucket
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
+            data_source: self.data_source
+            ,
+            schema_storage_config: self.schema_storage_config
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The CIS scan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CisScan {
+pub struct CisScan  {
     /// <p>The CIS scan's ARN.</p>
     pub scan_arn: ::std::string::String,
     /// <p>The CIS scan's configuration ARN.</p>
@@ -25,27 +25,25 @@ pub struct CisScan {
     /// <p>The security level for the CIS scan. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
     pub security_level: ::std::option::Option<crate::types::CisSecurityLevel>,
 }
-impl CisScan {
+impl  CisScan  {
     /// <p>The CIS scan's ARN.</p>
-    pub fn scan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_arn.deref()
+    pub fn scan_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_arn.deref()
     }
     /// <p>The CIS scan's configuration ARN.</p>
-    pub fn scan_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.scan_configuration_arn.deref()
+    pub fn scan_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.scan_configuration_arn.deref()
     }
     /// <p>The CIS scan's status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::CisScanStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::CisScanStatus> {
         self.status.as_ref()
     }
     /// <p>The the name of the scan configuration that's associated with this scan.</p>
-    pub fn scan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scan_name(&self) -> ::std::option::Option<& str> {
         self.scan_name.as_deref()
     }
     /// <p>The CIS scan's date.</p>
-    pub fn scan_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn scan_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.scan_date.as_ref()
     }
     /// <p>The CIS scan's failed checks.</p>
@@ -57,15 +55,15 @@ impl CisScan {
         self.total_checks
     }
     /// <p>The CIS scan's targets.</p>
-    pub fn targets(&self) -> ::std::option::Option<&crate::types::CisTargets> {
+    pub fn targets(&self) -> ::std::option::Option<& crate::types::CisTargets> {
         self.targets.as_ref()
     }
     /// <p>The account or organization that schedules the CIS scan.</p>
-    pub fn scheduled_by(&self) -> ::std::option::Option<&str> {
+    pub fn scheduled_by(&self) -> ::std::option::Option<& str> {
         self.scheduled_by.as_deref()
     }
     /// <p>The security level for the CIS scan. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
-    pub fn security_level(&self) -> ::std::option::Option<&crate::types::CisSecurityLevel> {
+    pub fn security_level(&self) -> ::std::option::Option<& crate::types::CisSecurityLevel> {
         self.security_level.as_ref()
     }
 }
@@ -100,8 +98,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's ARN.</p>
     pub fn set_scan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_arn = input;
-        self
+        self.scan_arn = input; self
     }
     /// <p>The CIS scan's ARN.</p>
     pub fn get_scan_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +112,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's configuration ARN.</p>
     pub fn set_scan_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_configuration_arn = input;
-        self
+        self.scan_configuration_arn = input; self
     }
     /// <p>The CIS scan's configuration ARN.</p>
     pub fn get_scan_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +125,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CisScanStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The CIS scan's status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CisScanStatus> {
@@ -143,8 +138,7 @@ impl CisScanBuilder {
     }
     /// <p>The the name of the scan configuration that's associated with this scan.</p>
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scan_name = input;
-        self
+        self.scan_name = input; self
     }
     /// <p>The the name of the scan configuration that's associated with this scan.</p>
     pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +151,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's date.</p>
     pub fn set_scan_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.scan_date = input;
-        self
+        self.scan_date = input; self
     }
     /// <p>The CIS scan's date.</p>
     pub fn get_scan_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -171,8 +164,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's failed checks.</p>
     pub fn set_failed_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.failed_checks = input;
-        self
+        self.failed_checks = input; self
     }
     /// <p>The CIS scan's failed checks.</p>
     pub fn get_failed_checks(&self) -> &::std::option::Option<i32> {
@@ -185,8 +177,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's total checks.</p>
     pub fn set_total_checks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_checks = input;
-        self
+        self.total_checks = input; self
     }
     /// <p>The CIS scan's total checks.</p>
     pub fn get_total_checks(&self) -> &::std::option::Option<i32> {
@@ -199,8 +190,7 @@ impl CisScanBuilder {
     }
     /// <p>The CIS scan's targets.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<crate::types::CisTargets>) -> Self {
-        self.targets = input;
-        self
+        self.targets = input; self
     }
     /// <p>The CIS scan's targets.</p>
     pub fn get_targets(&self) -> &::std::option::Option<crate::types::CisTargets> {
@@ -213,8 +203,7 @@ impl CisScanBuilder {
     }
     /// <p>The account or organization that schedules the CIS scan.</p>
     pub fn set_scheduled_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scheduled_by = input;
-        self
+        self.scheduled_by = input; self
     }
     /// <p>The account or organization that schedules the CIS scan.</p>
     pub fn get_scheduled_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -227,8 +216,7 @@ impl CisScanBuilder {
     }
     /// <p>The security level for the CIS scan. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
     pub fn set_security_level(mut self, input: ::std::option::Option<crate::types::CisSecurityLevel>) -> Self {
-        self.security_level = input;
-        self
+        self.security_level = input; self
     }
     /// <p>The security level for the CIS scan. Security level refers to the Benchmark levels that CIS assigns to a profile.</p>
     pub fn get_security_level(&self) -> &::std::option::Option<crate::types::CisSecurityLevel> {
@@ -239,27 +227,36 @@ impl CisScanBuilder {
     /// - [`scan_arn`](crate::types::builders::CisScanBuilder::scan_arn)
     /// - [`scan_configuration_arn`](crate::types::builders::CisScanBuilder::scan_configuration_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::CisScan, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CisScan {
-            scan_arn: self.scan_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_arn",
-                    "scan_arn was not specified but it is required when building CisScan",
-                )
-            })?,
-            scan_configuration_arn: self.scan_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "scan_configuration_arn",
-                    "scan_configuration_arn was not specified but it is required when building CisScan",
-                )
-            })?,
-            status: self.status,
-            scan_name: self.scan_name,
-            scan_date: self.scan_date,
-            failed_checks: self.failed_checks,
-            total_checks: self.total_checks,
-            targets: self.targets,
-            scheduled_by: self.scheduled_by,
-            security_level: self.security_level,
-        })
+        ::std::result::Result::Ok(
+            crate::types::CisScan {
+                scan_arn: self.scan_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_arn", "scan_arn was not specified but it is required when building CisScan")
+                    )?
+                ,
+                scan_configuration_arn: self.scan_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("scan_configuration_arn", "scan_configuration_arn was not specified but it is required when building CisScan")
+                    )?
+                ,
+                status: self.status
+                ,
+                scan_name: self.scan_name
+                ,
+                scan_date: self.scan_date
+                ,
+                failed_checks: self.failed_checks
+                ,
+                total_checks: self.total_checks
+                ,
+                targets: self.targets
+                ,
+                scheduled_by: self.scheduled_by
+                ,
+                security_level: self.security_level
+                ,
+            }
+        )
     }
 }
+

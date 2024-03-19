@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTestSetDiscrepancyReportInput {
+pub struct DescribeTestSetDiscrepancyReportInput  {
     /// <p>The unique identifier of the test set discrepancy report.</p>
     pub test_set_discrepancy_report_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeTestSetDiscrepancyReportInput {
+impl  DescribeTestSetDiscrepancyReportInput  {
     /// <p>The unique identifier of the test set discrepancy report.</p>
-    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<&str> {
+    pub fn test_set_discrepancy_report_id(&self) -> ::std::option::Option<& str> {
         self.test_set_discrepancy_report_id.as_deref()
     }
 }
@@ -34,24 +34,20 @@ impl DescribeTestSetDiscrepancyReportInputBuilder {
     }
     /// <p>The unique identifier of the test set discrepancy report.</p>
     pub fn set_test_set_discrepancy_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.test_set_discrepancy_report_id = input;
-        self
+        self.test_set_discrepancy_report_id = input; self
     }
     /// <p>The unique identifier of the test set discrepancy report.</p>
     pub fn get_test_set_discrepancy_report_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.test_set_discrepancy_report_id
     }
     /// Consumes the builder and constructs a [`DescribeTestSetDiscrepancyReportInput`](crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput {
-                test_set_discrepancy_report_id: self.test_set_discrepancy_report_id,
-            },
+                test_set_discrepancy_report_id: self.test_set_discrepancy_report_id
+                ,
+            }
         )
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Host {
+pub struct Host  {
     /// <p>The name of the host.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
@@ -21,33 +21,33 @@ pub struct Host {
     /// <p>The status description for the host.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl Host {
+impl  Host  {
     /// <p>The name of the host.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
-    pub fn host_arn(&self) -> ::std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<& str> {
         self.host_arn.as_deref()
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> ::std::option::Option<& str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration provisioned for the host.</p>
-    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<& crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status description for the host.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl HostBuilder {
     }
     /// <p>The name of the host.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the host.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +91,7 @@ impl HostBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +104,7 @@ impl HostBuilder {
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -120,8 +117,7 @@ impl HostBuilder {
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
     pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_endpoint = input;
-        self
+        self.provider_endpoint = input; self
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
     pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +130,7 @@ impl HostBuilder {
     }
     /// <p>The VPC configuration provisioned for the host.</p>
     pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input;
-        self
+        self.vpc_configuration = input; self
     }
     /// <p>The VPC configuration provisioned for the host.</p>
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
@@ -148,8 +143,7 @@ impl HostBuilder {
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,8 +156,7 @@ impl HostBuilder {
     }
     /// <p>The status description for the host.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The status description for the host.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -172,13 +165,21 @@ impl HostBuilder {
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {
-            name: self.name,
-            host_arn: self.host_arn,
-            provider_type: self.provider_type,
-            provider_endpoint: self.provider_endpoint,
-            vpc_configuration: self.vpc_configuration,
-            status: self.status,
-            status_message: self.status_message,
+            name: self.name
+            ,
+            host_arn: self.host_arn
+            ,
+            provider_type: self.provider_type
+            ,
+            provider_endpoint: self.provider_endpoint
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

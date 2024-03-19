@@ -3,7 +3,7 @@
 /// <p>The encryption configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EncryptionConfig {
+pub struct EncryptionConfig  {
     /// <p>The type of encryption.</p>
     pub encryption_type: crate::types::EncryptionType,
     /// <p>The full ARN of the encryption key.</p><note>
@@ -12,18 +12,17 @@ pub struct EncryptionConfig {
     /// </note>
     pub key_id: ::std::string::String,
 }
-impl EncryptionConfig {
+impl  EncryptionConfig  {
     /// <p>The type of encryption.</p>
-    pub fn encryption_type(&self) -> &crate::types::EncryptionType {
+    pub fn encryption_type(&self) -> & crate::types::EncryptionType {
         &self.encryption_type
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
-    pub fn key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.key_id.deref()
+    pub fn key_id(&self) -> & str {
+        use std::ops::Deref; self.key_id.deref()
     }
 }
 impl EncryptionConfig {
@@ -49,8 +48,7 @@ impl EncryptionConfigBuilder {
     }
     /// <p>The type of encryption.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The type of encryption.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
@@ -70,8 +68,7 @@ impl EncryptionConfigBuilder {
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
@@ -85,19 +82,20 @@ impl EncryptionConfigBuilder {
     /// - [`encryption_type`](crate::types::builders::EncryptionConfigBuilder::encryption_type)
     /// - [`key_id`](crate::types::builders::EncryptionConfigBuilder::key_id)
     pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EncryptionConfig {
-            encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encryption_type",
-                    "encryption_type was not specified but it is required when building EncryptionConfig",
-                )
-            })?,
-            key_id: self.key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_id",
-                    "key_id was not specified but it is required when building EncryptionConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::EncryptionConfig {
+                encryption_type: self.encryption_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encryption_type", "encryption_type was not specified but it is required when building EncryptionConfig")
+                    )?
+                ,
+                key_id: self.key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_id", "key_id was not specified but it is required when building EncryptionConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

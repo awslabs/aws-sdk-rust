@@ -30,7 +30,7 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnalyticsIntentFilter {
+pub struct AnalyticsIntentFilter  {
     /// <p>The category by which to filter the intents. The descriptions for each option are as follows:</p>
     /// <ul>
     /// <li>
@@ -87,9 +87,9 @@ pub struct AnalyticsIntentFilter {
     /// </ul>
     pub operator: crate::types::AnalyticsFilterOperator,
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub values: ::std::vec::Vec<::std::string::String>,
+    pub values: ::std::vec::Vec::<::std::string::String>,
 }
-impl AnalyticsIntentFilter {
+impl  AnalyticsIntentFilter  {
     /// <p>The category by which to filter the intents. The descriptions for each option are as follows:</p>
     /// <ul>
     /// <li>
@@ -111,7 +111,7 @@ impl AnalyticsIntentFilter {
     /// <li>
     /// <p><code>IntentEndState</code> – The final state of the intent.</p></li>
     /// </ul>
-    pub fn name(&self) -> &crate::types::AnalyticsIntentFilterName {
+    pub fn name(&self) -> & crate::types::AnalyticsIntentFilterName {
         &self.name
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
@@ -146,13 +146,12 @@ impl AnalyticsIntentFilter {
     /// <li>
     /// <p><code>IntentEndState</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
-    pub fn operator(&self) -> &crate::types::AnalyticsFilterOperator {
+    pub fn operator(&self) -> & crate::types::AnalyticsFilterOperator {
         &self.operator
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn values(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.values.deref()
+    pub fn values(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.values.deref()
     }
 }
 impl AnalyticsIntentFilter {
@@ -168,7 +167,7 @@ impl AnalyticsIntentFilter {
 pub struct AnalyticsIntentFilterBuilder {
     pub(crate) name: ::std::option::Option<crate::types::AnalyticsIntentFilterName>,
     pub(crate) operator: ::std::option::Option<crate::types::AnalyticsFilterOperator>,
-    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl AnalyticsIntentFilterBuilder {
     /// <p>The category by which to filter the intents. The descriptions for each option are as follows:</p>
@@ -219,8 +218,7 @@ impl AnalyticsIntentFilterBuilder {
     /// <p><code>IntentEndState</code> – The final state of the intent.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The category by which to filter the intents. The descriptions for each option are as follows:</p>
     /// <ul>
@@ -316,8 +314,7 @@ impl AnalyticsIntentFilterBuilder {
     /// <p><code>IntentEndState</code> – <code>EQ</code>, <code>CO</code>.</p></li>
     /// </ul>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::AnalyticsFilterOperator>) -> Self {
-        self.operator = input;
-        self
+        self.operator = input; self
     }
     /// <p>The operation by which to filter the category. The following operations are possible:</p>
     /// <ul>
@@ -361,17 +358,16 @@ impl AnalyticsIntentFilterBuilder {
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// <p>An array containing the values of the category by which to apply the operator to filter the results. You can provide multiple values if the operator is <code>EQ</code> or <code>CO</code>. If you provide multiple values, you filter for results that equal/contain any of the values. For example, if the <code>name</code>, <code>operator</code>, and <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech, Text]</code>, the operation filters for results where the modality was either <code>Speech</code> or <code>Text</code>.</p>
-    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.values
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentFilter`](crate::types::AnalyticsIntentFilter).
@@ -380,25 +376,25 @@ impl AnalyticsIntentFilterBuilder {
     /// - [`operator`](crate::types::builders::AnalyticsIntentFilterBuilder::operator)
     /// - [`values`](crate::types::builders::AnalyticsIntentFilterBuilder::values)
     pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentFilter, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AnalyticsIntentFilter {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AnalyticsIntentFilter",
-                )
-            })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building AnalyticsIntentFilter",
-                )
-            })?,
-            values: self.values.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "values",
-                    "values was not specified but it is required when building AnalyticsIntentFilter",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AnalyticsIntentFilter {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AnalyticsIntentFilter")
+                    )?
+                ,
+                operator: self.operator
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("operator", "operator was not specified but it is required when building AnalyticsIntentFilter")
+                    )?
+                ,
+                values: self.values
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("values", "values was not specified but it is required when building AnalyticsIntentFilter")
+                    )?
+                ,
+            }
+        )
     }
 }
+

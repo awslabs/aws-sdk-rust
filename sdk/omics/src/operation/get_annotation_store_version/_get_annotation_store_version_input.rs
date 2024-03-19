@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetAnnotationStoreVersionInput {
+pub struct GetAnnotationStoreVersionInput  {
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
 }
-impl GetAnnotationStoreVersionInput {
+impl  GetAnnotationStoreVersionInput  {
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
-    pub fn version_name(&self) -> ::std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<& str> {
         self.version_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetAnnotationStoreVersionInputBuilder {
     }
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl GetAnnotationStoreVersionInputBuilder {
     }
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The name given to an annotation store version to distinguish it from others.</p>
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
     /// Consumes the builder and constructs a [`GetAnnotationStoreVersionInput`](crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput {
-            name: self.name,
-            version_name: self.version_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_annotation_store_version::GetAnnotationStoreVersionInput {
+                name: self.name
+                ,
+                version_name: self.version_name
+                ,
+            }
+        )
     }
 }
+

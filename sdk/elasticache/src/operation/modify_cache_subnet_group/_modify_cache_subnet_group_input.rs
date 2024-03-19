@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ModifyCacheSubnetGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyCacheSubnetGroupInput {
+pub struct ModifyCacheSubnetGroupInput  {
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code></p>
@@ -11,24 +11,25 @@ pub struct ModifyCacheSubnetGroupInput {
     /// <p>A description of the cache subnet group.</p>
     pub cache_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyCacheSubnetGroupInput {
+impl  ModifyCacheSubnetGroupInput  {
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code></p>
-    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_name.as_deref()
     }
     /// <p>A description of the cache subnet group.</p>
-    pub fn cache_subnet_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn cache_subnet_group_description(&self) -> ::std::option::Option<& str> {
         self.cache_subnet_group_description.as_deref()
     }
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyCacheSubnetGroupInput {
@@ -44,7 +45,7 @@ impl ModifyCacheSubnetGroupInput {
 pub struct ModifyCacheSubnetGroupInputBuilder {
     pub(crate) cache_subnet_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyCacheSubnetGroupInputBuilder {
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
@@ -59,8 +60,7 @@ impl ModifyCacheSubnetGroupInputBuilder {
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// <p>Example: <code>mysubnetgroup</code></p>
     pub fn set_cache_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_name = input;
-        self
+        self.cache_subnet_group_name = input; self
     }
     /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
@@ -75,8 +75,7 @@ impl ModifyCacheSubnetGroupInputBuilder {
     }
     /// <p>A description of the cache subnet group.</p>
     pub fn set_cache_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_subnet_group_description = input;
-        self
+        self.cache_subnet_group_description = input; self
     }
     /// <p>A description of the cache subnet group.</p>
     pub fn get_cache_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,30 +88,30 @@ impl ModifyCacheSubnetGroupInputBuilder {
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The EC2 subnet IDs for the cache subnet group.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyCacheSubnetGroupInput`](crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput {
-            cache_subnet_group_name: self.cache_subnet_group_name,
-            cache_subnet_group_description: self.cache_subnet_group_description,
-            subnet_ids: self.subnet_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_cache_subnet_group::ModifyCacheSubnetGroupInput {
+                cache_subnet_group_name: self.cache_subnet_group_name
+                ,
+                cache_subnet_group_description: self.cache_subnet_group_description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+            }
+        )
     }
 }
+

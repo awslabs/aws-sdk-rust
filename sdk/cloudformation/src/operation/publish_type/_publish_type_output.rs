@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PublishTypeOutput {
+pub struct PublishTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
     pub public_type_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl PublishTypeOutput {
+impl  PublishTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
-    pub fn public_type_arn(&self) -> ::std::option::Option<&str> {
+    pub fn public_type_arn(&self) -> ::std::option::Option<& str> {
         self.public_type_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for PublishTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl PublishTypeOutput {
     /// Creates a new builder-style object to manufacture [`PublishTypeOutput`](crate::operation::publish_type::PublishTypeOutput).
     pub fn builder() -> crate::operation::publish_type::builders::PublishTypeOutputBuilder {
@@ -40,27 +40,28 @@ impl PublishTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
     pub fn set_public_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_type_arn = input;
-        self
+        self.public_type_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the public extension upon publication.</p>
     pub fn get_public_type_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_type_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`PublishTypeOutput`](crate::operation::publish_type::PublishTypeOutput).
     pub fn build(self) -> crate::operation::publish_type::PublishTypeOutput {
         crate::operation::publish_type::PublishTypeOutput {
-            public_type_arn: self.public_type_arn,
+            public_type_arn: self.public_type_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

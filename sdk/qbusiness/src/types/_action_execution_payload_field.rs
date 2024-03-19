@@ -3,13 +3,13 @@
 /// <p>A user input field in an plugin action execution payload.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ActionExecutionPayloadField {
+pub struct ActionExecutionPayloadField  {
     /// <p>The content of a user input field in an plugin action execution payload.</p>
     pub value: ::aws_smithy_types::Document,
 }
-impl ActionExecutionPayloadField {
+impl  ActionExecutionPayloadField  {
     /// <p>The content of a user input field in an plugin action execution payload.</p>
-    pub fn value(&self) -> &::aws_smithy_types::Document {
+    pub fn value(&self) -> & ::aws_smithy_types::Document {
         &self.value
     }
 }
@@ -35,8 +35,7 @@ impl ActionExecutionPayloadFieldBuilder {
     }
     /// <p>The content of a user input field in an plugin action execution payload.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The content of a user input field in an plugin action execution payload.</p>
     pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -46,13 +45,15 @@ impl ActionExecutionPayloadFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::ActionExecutionPayloadFieldBuilder::value)
     pub fn build(self) -> ::std::result::Result<crate::types::ActionExecutionPayloadField, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ActionExecutionPayloadField {
-            value: self.value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "value",
-                    "value was not specified but it is required when building ActionExecutionPayloadField",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ActionExecutionPayloadField {
+                value: self.value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("value", "value was not specified but it is required when building ActionExecutionPayloadField")
+                    )?
+                ,
+            }
+        )
     }
 }
+

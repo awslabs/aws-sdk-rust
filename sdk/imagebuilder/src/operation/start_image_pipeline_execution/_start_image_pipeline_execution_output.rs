@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartImagePipelineExecutionOutput {
+pub struct StartImagePipelineExecutionOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The client token that uniquely identifies the request.</p>
@@ -11,25 +11,25 @@ pub struct StartImagePipelineExecutionOutput {
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartImagePipelineExecutionOutput {
+impl  StartImagePipelineExecutionOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The client token that uniquely identifies the request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
-    pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> ::std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartImagePipelineExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartImagePipelineExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartImagePipelineExecutionOutput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput).
     pub fn builder() -> crate::operation::start_image_pipeline_execution::builders::StartImagePipelineExecutionOutputBuilder {
@@ -54,8 +54,7 @@ impl StartImagePipelineExecutionOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +67,7 @@ impl StartImagePipelineExecutionOutputBuilder {
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The client token that uniquely identifies the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,29 +80,32 @@ impl StartImagePipelineExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_build_version_arn = input;
-        self
+        self.image_build_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that the request created.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartImagePipelineExecutionOutput`](crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput).
     pub fn build(self) -> crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput {
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionOutput {
-            request_id: self.request_id,
-            client_token: self.client_token,
-            image_build_version_arn: self.image_build_version_arn,
+            request_id: self.request_id
+            ,
+            client_token: self.client_token
+            ,
+            image_build_version_arn: self.image_build_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

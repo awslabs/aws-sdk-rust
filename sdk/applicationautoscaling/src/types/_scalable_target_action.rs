@@ -3,7 +3,7 @@
 /// <p>Represents the minimum and maximum capacity for a scheduled action.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScalableTargetAction {
+pub struct ScalableTargetAction  {
     /// <p>The minimum capacity.</p>
     /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
     pub min_capacity: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ScalableTargetAction {
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub max_capacity: ::std::option::Option<i32>,
 }
-impl ScalableTargetAction {
+impl  ScalableTargetAction  {
     /// <p>The minimum capacity.</p>
     /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
     pub fn min_capacity(&self) -> ::std::option::Option<i32> {
@@ -47,8 +47,7 @@ impl ScalableTargetActionBuilder {
     /// <p>The minimum capacity.</p>
     /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
     pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_capacity = input;
-        self
+        self.min_capacity = input; self
     }
     /// <p>The minimum capacity.</p>
     /// <p>When the scheduled action runs, the resource will have at least this much capacity, but it might have more depending on other settings, such as the target utilization level of a target tracking scaling policy.</p>
@@ -64,8 +63,7 @@ impl ScalableTargetActionBuilder {
     /// <p>The maximum capacity.</p>
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
     /// <p>The maximum capacity.</p>
     /// <p>Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you can request an increase. For more information, consult the documentation for that service. For information about the default quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -75,8 +73,11 @@ impl ScalableTargetActionBuilder {
     /// Consumes the builder and constructs a [`ScalableTargetAction`](crate::types::ScalableTargetAction).
     pub fn build(self) -> crate::types::ScalableTargetAction {
         crate::types::ScalableTargetAction {
-            min_capacity: self.min_capacity,
-            max_capacity: self.max_capacity,
+            min_capacity: self.min_capacity
+            ,
+            max_capacity: self.max_capacity
+            ,
         }
     }
 }
+

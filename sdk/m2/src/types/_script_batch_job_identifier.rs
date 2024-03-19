@@ -3,15 +3,14 @@
 /// <p>A batch job identifier in which the batch job to run is identified by the script name.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScriptBatchJobIdentifier {
+pub struct ScriptBatchJobIdentifier  {
     /// <p>The name of the script containing the batch job definition.</p>
     pub script_name: ::std::string::String,
 }
-impl ScriptBatchJobIdentifier {
+impl  ScriptBatchJobIdentifier  {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> &str {
-        use std::ops::Deref;
-        self.script_name.deref()
+    pub fn script_name(&self) -> & str {
+        use std::ops::Deref; self.script_name.deref()
     }
 }
 impl ScriptBatchJobIdentifier {
@@ -36,8 +35,7 @@ impl ScriptBatchJobIdentifierBuilder {
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.script_name = input;
-        self
+        self.script_name = input; self
     }
     /// <p>The name of the script containing the batch job definition.</p>
     pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl ScriptBatchJobIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`script_name`](crate::types::builders::ScriptBatchJobIdentifierBuilder::script_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ScriptBatchJobIdentifier, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScriptBatchJobIdentifier {
-            script_name: self.script_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "script_name",
-                    "script_name was not specified but it is required when building ScriptBatchJobIdentifier",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScriptBatchJobIdentifier {
+                script_name: self.script_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("script_name", "script_name was not specified but it is required when building ScriptBatchJobIdentifier")
+                    )?
+                ,
+            }
+        )
     }
 }
+

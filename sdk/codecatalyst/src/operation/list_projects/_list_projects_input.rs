@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListProjectsInput {
+pub struct ListProjectsInput  {
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
@@ -10,15 +10,15 @@ pub struct ListProjectsInput {
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ProjectListFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectListFilter>>,
 }
-impl ListProjectsInput {
+impl  ListProjectsInput  {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
+    pub fn space_name(&self) -> ::std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -26,10 +26,11 @@ impl ListProjectsInput {
         self.max_results
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::ProjectListFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::ProjectListFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ListProjectsInput {
@@ -46,7 +47,7 @@ pub struct ListProjectsInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ProjectListFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectListFilter>>,
 }
 impl ListProjectsInputBuilder {
     /// <p>The name of the space.</p>
@@ -57,8 +58,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the space.</p>
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -99,28 +97,32 @@ impl ListProjectsInputBuilder {
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
     pub fn filters(mut self, input: crate::types::ProjectListFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectListFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProjectListFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Information about filters to apply to narrow the results returned in the list.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectListFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProjectListFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
-            space_name: self.space_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_projects::ListProjectsInput {
+                space_name: self.space_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

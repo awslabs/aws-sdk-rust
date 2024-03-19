@@ -3,13 +3,13 @@
 /// <p>Specifies the query result reuse behavior for the query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResultReuseConfiguration {
+pub struct ResultReuseConfiguration  {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     pub result_reuse_by_age_configuration: ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
 }
-impl ResultReuseConfiguration {
+impl  ResultReuseConfiguration  {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
-    pub fn result_reuse_by_age_configuration(&self) -> ::std::option::Option<&crate::types::ResultReuseByAgeConfiguration> {
+    pub fn result_reuse_by_age_configuration(&self) -> ::std::option::Option<& crate::types::ResultReuseByAgeConfiguration> {
         self.result_reuse_by_age_configuration.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ResultReuseConfigurationBuilder {
     }
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     pub fn set_result_reuse_by_age_configuration(mut self, input: ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>) -> Self {
-        self.result_reuse_by_age_configuration = input;
-        self
+        self.result_reuse_by_age_configuration = input; self
     }
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     pub fn get_result_reuse_by_age_configuration(&self) -> &::std::option::Option<crate::types::ResultReuseByAgeConfiguration> {
@@ -44,7 +43,9 @@ impl ResultReuseConfigurationBuilder {
     /// Consumes the builder and constructs a [`ResultReuseConfiguration`](crate::types::ResultReuseConfiguration).
     pub fn build(self) -> crate::types::ResultReuseConfiguration {
         crate::types::ResultReuseConfiguration {
-            result_reuse_by_age_configuration: self.result_reuse_by_age_configuration,
+            result_reuse_by_age_configuration: self.result_reuse_by_age_configuration
+            ,
         }
     }
 }
+

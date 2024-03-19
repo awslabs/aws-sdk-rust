@@ -3,13 +3,13 @@
 /// <p>The TensorBoard app settings.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TensorBoardAppSettings {
+pub struct TensorBoardAppSettings  {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
-impl TensorBoardAppSettings {
+impl  TensorBoardAppSettings  {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<& crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl TensorBoardAppSettingsBuilder {
     }
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
-        self.default_resource_spec = input;
-        self
+        self.default_resource_spec = input; self
     }
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
@@ -44,7 +43,9 @@ impl TensorBoardAppSettingsBuilder {
     /// Consumes the builder and constructs a [`TensorBoardAppSettings`](crate::types::TensorBoardAppSettings).
     pub fn build(self) -> crate::types::TensorBoardAppSettings {
         crate::types::TensorBoardAppSettings {
-            default_resource_spec: self.default_resource_spec,
+            default_resource_spec: self.default_resource_spec
+            ,
         }
     }
 }
+

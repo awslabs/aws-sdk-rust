@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGrantInput {
+pub struct GetGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub grant_arn: ::std::option::Option<::std::string::String>,
     /// <p>Grant version.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl GetGrantInput {
+impl  GetGrantInput  {
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(&self) -> ::std::option::Option<&str> {
+    pub fn grant_arn(&self) -> ::std::option::Option<& str> {
         self.grant_arn.as_deref()
     }
     /// <p>Grant version.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetGrantInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.grant_arn = input;
-        self
+        self.grant_arn = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetGrantInputBuilder {
     }
     /// <p>Grant version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Grant version.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,9 +62,14 @@ impl GetGrantInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGrantInput`](crate::operation::get_grant::GetGrantInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_grant::GetGrantInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_grant::GetGrantInput {
-            grant_arn: self.grant_arn,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_grant::GetGrantInput {
+                grant_arn: self.grant_arn
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

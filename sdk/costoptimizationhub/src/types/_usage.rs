@@ -3,7 +3,7 @@
 /// <p>Details about the usage.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Usage {
+pub struct Usage  {
     /// <p>The usage type.</p>
     pub usage_type: ::std::option::Option<::std::string::String>,
     /// <p>The usage amount.</p>
@@ -15,9 +15,9 @@ pub struct Usage {
     /// <p>The usage unit.</p>
     pub unit: ::std::option::Option<::std::string::String>,
 }
-impl Usage {
+impl  Usage  {
     /// <p>The usage type.</p>
-    pub fn usage_type(&self) -> ::std::option::Option<&str> {
+    pub fn usage_type(&self) -> ::std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The usage amount.</p>
@@ -25,15 +25,15 @@ impl Usage {
         self.usage_amount
     }
     /// <p>The operation value.</p>
-    pub fn operation(&self) -> ::std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The product code.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
+    pub fn product_code(&self) -> ::std::option::Option<& str> {
         self.product_code.as_deref()
     }
     /// <p>The usage unit.</p>
-    pub fn unit(&self) -> ::std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl UsageBuilder {
     }
     /// <p>The usage type.</p>
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
     }
     /// <p>The usage type.</p>
     pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl UsageBuilder {
     }
     /// <p>The usage amount.</p>
     pub fn set_usage_amount(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.usage_amount = input;
-        self
+        self.usage_amount = input; self
     }
     /// <p>The usage amount.</p>
     pub fn get_usage_amount(&self) -> &::std::option::Option<f64> {
@@ -90,8 +88,7 @@ impl UsageBuilder {
     }
     /// <p>The operation value.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The operation value.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl UsageBuilder {
     }
     /// <p>The product code.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// <p>The product code.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +114,7 @@ impl UsageBuilder {
     }
     /// <p>The usage unit.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The usage unit.</p>
     pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
@@ -128,11 +123,17 @@ impl UsageBuilder {
     /// Consumes the builder and constructs a [`Usage`](crate::types::Usage).
     pub fn build(self) -> crate::types::Usage {
         crate::types::Usage {
-            usage_type: self.usage_type,
-            usage_amount: self.usage_amount,
-            operation: self.operation,
-            product_code: self.product_code,
-            unit: self.unit,
+            usage_type: self.usage_type
+            ,
+            usage_amount: self.usage_amount
+            ,
+            operation: self.operation
+            ,
+            product_code: self.product_code
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

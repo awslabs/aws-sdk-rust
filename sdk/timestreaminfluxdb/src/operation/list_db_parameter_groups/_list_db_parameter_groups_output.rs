@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDbParameterGroupsOutput {
+pub struct ListDbParameterGroupsOutput  {
     /// <p>A list of Timestream for InfluxDB DB parameter group summaries.</p>
-    pub items: ::std::vec::Vec<crate::types::DbParameterGroupSummary>,
+    pub items: ::std::vec::Vec::<crate::types::DbParameterGroupSummary>,
     /// <p>Token from a previous call of the operation. When this value is provided, the service returns results from where the previous response left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDbParameterGroupsOutput {
+impl  ListDbParameterGroupsOutput  {
     /// <p>A list of Timestream for InfluxDB DB parameter group summaries.</p>
-    pub fn items(&self) -> &[crate::types::DbParameterGroupSummary] {
-        use std::ops::Deref;
-        self.items.deref()
+    pub fn items(&self) -> & [crate::types::DbParameterGroupSummary] {
+        use std::ops::Deref; self.items.deref()
     }
     /// <p>Token from a previous call of the operation. When this value is provided, the service returns results from where the previous response left off.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDbParameterGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDbParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDbParameterGroupsOutput`](crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput).
     pub fn builder() -> crate::operation::list_db_parameter_groups::builders::ListDbParameterGroupsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDbParameterGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDbParameterGroupsOutputBuilder {
-    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupSummary>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDbParameterGroupsOutputBuilder {
     /// <p>A list of Timestream for InfluxDB DB parameter group summaries.</p>
     pub fn items(mut self, input: crate::types::DbParameterGroupSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.items = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of Timestream for InfluxDB DB parameter group summaries.</p>
-    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupSummary>>) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>A list of Timestream for InfluxDB DB parameter group summaries.</p>
-    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupSummary>> {
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DbParameterGroupSummary>> {
         &self.items
     }
     /// <p>Token from a previous call of the operation. When this value is provided, the service returns results from where the previous response left off.</p>
@@ -68,40 +66,37 @@ impl ListDbParameterGroupsOutputBuilder {
     }
     /// <p>Token from a previous call of the operation. When this value is provided, the service returns results from where the previous response left off.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Token from a previous call of the operation. When this value is provided, the service returns results from where the previous response left off.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDbParameterGroupsOutput`](crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_db_parameter_groups::builders::ListDbParameterGroupsOutputBuilder::items)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput {
-            items: self.items.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "items",
-                    "items was not specified but it is required when building ListDbParameterGroupsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_db_parameter_groups::ListDbParameterGroupsOutput {
+                items: self.items
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("items", "items was not specified but it is required when building ListDbParameterGroupsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

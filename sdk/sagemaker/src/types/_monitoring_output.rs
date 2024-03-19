@@ -3,13 +3,13 @@
 /// <p>The output object for a monitoring job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitoringOutput {
+pub struct MonitoringOutput  {
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
     pub s3_output: ::std::option::Option<crate::types::MonitoringS3Output>,
 }
-impl MonitoringOutput {
+impl  MonitoringOutput  {
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
-    pub fn s3_output(&self) -> ::std::option::Option<&crate::types::MonitoringS3Output> {
+    pub fn s3_output(&self) -> ::std::option::Option<& crate::types::MonitoringS3Output> {
         self.s3_output.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl MonitoringOutputBuilder {
     }
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
     pub fn set_s3_output(mut self, input: ::std::option::Option<crate::types::MonitoringS3Output>) -> Self {
-        self.s3_output = input;
-        self
+        self.s3_output = input; self
     }
     /// <p>The Amazon S3 storage location where the results of a monitoring job are saved.</p>
     pub fn get_s3_output(&self) -> &::std::option::Option<crate::types::MonitoringS3Output> {
@@ -44,6 +43,10 @@ impl MonitoringOutputBuilder {
     }
     /// Consumes the builder and constructs a [`MonitoringOutput`](crate::types::MonitoringOutput).
     pub fn build(self) -> crate::types::MonitoringOutput {
-        crate::types::MonitoringOutput { s3_output: self.s3_output }
+        crate::types::MonitoringOutput {
+            s3_output: self.s3_output
+            ,
+        }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Provides information about an IPV6 address that is associated with the network interface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2NetworkInterfaceIpV6AddressDetail {
+pub struct AwsEc2NetworkInterfaceIpV6AddressDetail  {
     /// <p>The IPV6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
-impl AwsEc2NetworkInterfaceIpV6AddressDetail {
+impl  AwsEc2NetworkInterfaceIpV6AddressDetail  {
     /// <p>The IPV6 address.</p>
-    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     }
     /// <p>The IPV6 address.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// <p>The IPV6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail).
     pub fn build(self) -> crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail {
         crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail {
-            ipv6_address: self.ipv6_address,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

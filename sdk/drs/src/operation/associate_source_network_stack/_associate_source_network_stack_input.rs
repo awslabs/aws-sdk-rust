@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct AssociateSourceNetworkStackInput {
+pub struct AssociateSourceNetworkStackInput  {
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
     pub source_network_id: ::std::option::Option<::std::string::String>,
     /// <p>CloudFormation template to associate with a Source Network.</p>
     pub cfn_stack_name: ::std::option::Option<::std::string::String>,
 }
-impl AssociateSourceNetworkStackInput {
+impl  AssociateSourceNetworkStackInput  {
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
-    pub fn source_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn source_network_id(&self) -> ::std::option::Option<& str> {
         self.source_network_id.as_deref()
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
-    pub fn cfn_stack_name(&self) -> ::std::option::Option<&str> {
+    pub fn cfn_stack_name(&self) -> ::std::option::Option<& str> {
         self.cfn_stack_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for AssociateSourceNetworkStackInput {
+impl  ::std::fmt::Debug for AssociateSourceNetworkStackInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssociateSourceNetworkStackInput");
         formatter.field("source_network_id", &self.source_network_id);
@@ -49,8 +49,7 @@ impl AssociateSourceNetworkStackInputBuilder {
     }
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
     pub fn set_source_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_network_id = input;
-        self
+        self.source_network_id = input; self
     }
     /// <p>The Source Network ID to associate with CloudFormation template.</p>
     pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,24 +63,22 @@ impl AssociateSourceNetworkStackInputBuilder {
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
     pub fn set_cfn_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cfn_stack_name = input;
-        self
+        self.cfn_stack_name = input; self
     }
     /// <p>CloudFormation template to associate with a Source Network.</p>
     pub fn get_cfn_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cfn_stack_name
     }
     /// Consumes the builder and constructs a [`AssociateSourceNetworkStackInput`](crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput {
-            source_network_id: self.source_network_id,
-            cfn_stack_name: self.cfn_stack_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput {
+                source_network_id: self.source_network_id
+                ,
+                cfn_stack_name: self.cfn_stack_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for AssociateSourceNetworkStackInputBuilder {
@@ -92,3 +89,4 @@ impl ::std::fmt::Debug for AssociateSourceNetworkStackInputBuilder {
         formatter.finish()
     }
 }
+

@@ -5,55 +5,51 @@ pub use crate::operation::batch_create_table_rows::_batch_create_table_rows_inpu
 
 impl BatchCreateTableRowsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.batch_create_table_rows();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.batch_create_table_rows();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `BatchCreateTableRows`.
-///
+/// 
 /// <p>The BatchCreateTableRows API allows you to create one or more rows at the end of a table in a workbook. The API allows you to specify the values to set in some or all of the columns in the new rows.</p>
 /// <p>If a column is not explicitly set in a specific row, then the column level formula specified in the table will be applied to the new row. If there is no column level formula but the last row of the table has a formula, then that formula will be copied down to the new row. If there is no column level formula and no formula in the last row of the table, then that column will be left blank for the new rows.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateTableRowsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsInputBuilder,
+                    inner: crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
-    > for BatchCreateTableRowsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
-            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
+                    crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+                > for BatchCreateTableRowsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
+                        crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl BatchCreateTableRowsFluentBuilder {
     /// Creates a new `BatchCreateTableRows`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl BatchCreateTableRowsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::batch_create_table_rows::BatchCreateTableRows::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::batch_create_table_rows::BatchCreateTableRows::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
-        crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_create_table_rows::BatchCreateTableRowsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::batch_create_table_rows::BatchCreateTableRows::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::batch_create_table_rows::BatchCreateTableRows::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput, crate::operation::batch_create_table_rows::BatchCreateTableRowsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ID of the workbook where the new rows are being added.</p>
     /// <p>If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException.</p>
     pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,13 +142,13 @@ impl BatchCreateTableRowsFluentBuilder {
     }
     /// <p>The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list.</p>
     /// <p>Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn set_rows_to_create(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CreateRowData>>) -> Self {
+    pub fn set_rows_to_create(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CreateRowData>>) -> Self {
         self.inner = self.inner.set_rows_to_create(input);
         self
     }
     /// <p>The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list.</p>
     /// <p>Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table.</p>
-    pub fn get_rows_to_create(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateRowData>> {
+    pub fn get_rows_to_create(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CreateRowData>> {
         self.inner.get_rows_to_create()
     }
     /// <p>The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again.</p>
@@ -182,3 +169,4 @@ impl BatchCreateTableRowsFluentBuilder {
         self.inner.get_client_request_token()
     }
 }
+

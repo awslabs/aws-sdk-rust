@@ -5,56 +5,52 @@ pub use crate::operation::cancel_spot_fleet_requests::_cancel_spot_fleet_request
 
 impl CancelSpotFleetRequestsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.cancel_spot_fleet_requests();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.cancel_spot_fleet_requests();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CancelSpotFleetRequests`.
-///
+/// 
 /// <p>Cancels the specified Spot Fleet requests.</p>
 /// <p>After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.</p>
 /// <p>You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you terminate them manually.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder,
+                    inner: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-    > for CancelSpotFleetRequestsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
+                    crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
+                > for CancelSpotFleetRequestsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
+                        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CancelSpotFleetRequestsFluentBuilder {
     /// Creates a new `CancelSpotFleetRequests`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -63,53 +59,44 @@ impl CancelSpotFleetRequestsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput,
-        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput, crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -134,12 +121,12 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_spot_fleet_request_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_spot_fleet_request_ids(input);
         self
     }
     /// <p>The IDs of the Spot Fleet requests.</p>
-    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_spot_fleet_request_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_spot_fleet_request_ids()
     }
     /// <p>Indicates whether to terminate the associated instances when the Spot Fleet request is canceled. The default is to terminate the instances.</p>
@@ -160,3 +147,4 @@ impl CancelSpotFleetRequestsFluentBuilder {
         self.inner.get_terminate_instances()
     }
 }
+

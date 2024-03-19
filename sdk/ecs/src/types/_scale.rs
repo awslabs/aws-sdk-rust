@@ -3,19 +3,19 @@
 /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Scale {
+pub struct Scale  {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
     pub value: f64,
     /// <p>The unit of measure for the scale value.</p>
     pub unit: ::std::option::Option<crate::types::ScaleUnit>,
 }
-impl Scale {
+impl  Scale  {
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
     pub fn value(&self) -> f64 {
         self.value
     }
     /// <p>The unit of measure for the scale value.</p>
-    pub fn unit(&self) -> ::std::option::Option<&crate::types::ScaleUnit> {
+    pub fn unit(&self) -> ::std::option::Option<& crate::types::ScaleUnit> {
         self.unit.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ScaleBuilder {
     }
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value, specified as a percent total of a service's <code>desiredCount</code>, to scale the task set. Accepted values are numbers between 0 and 100.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -55,8 +54,7 @@ impl ScaleBuilder {
     }
     /// <p>The unit of measure for the scale value.</p>
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::ScaleUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The unit of measure for the scale value.</p>
     pub fn get_unit(&self) -> &::std::option::Option<crate::types::ScaleUnit> {
@@ -65,8 +63,12 @@ impl ScaleBuilder {
     /// Consumes the builder and constructs a [`Scale`](crate::types::Scale).
     pub fn build(self) -> crate::types::Scale {
         crate::types::Scale {
-            value: self.value.unwrap_or_default(),
-            unit: self.unit,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetectProtectiveEquipmentInput {
+pub struct DetectProtectiveEquipmentInput  {
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
     pub image: ::std::option::Option<crate::types::Image>,
     /// <p>An array of PPE types that you want to summarize.</p>
     pub summarization_attributes: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>,
 }
-impl DetectProtectiveEquipmentInput {
+impl  DetectProtectiveEquipmentInput  {
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
-    pub fn image(&self) -> ::std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> ::std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>An array of PPE types that you want to summarize.</p>
-    pub fn summarization_attributes(&self) -> ::std::option::Option<&crate::types::ProtectiveEquipmentSummarizationAttributes> {
+    pub fn summarization_attributes(&self) -> ::std::option::Option<& crate::types::ProtectiveEquipmentSummarizationAttributes> {
         self.summarization_attributes.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl DetectProtectiveEquipmentInputBuilder {
     }
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
     pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.</p>
     pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
@@ -55,23 +54,22 @@ impl DetectProtectiveEquipmentInputBuilder {
     }
     /// <p>An array of PPE types that you want to summarize.</p>
     pub fn set_summarization_attributes(mut self, input: ::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes>) -> Self {
-        self.summarization_attributes = input;
-        self
+        self.summarization_attributes = input; self
     }
     /// <p>An array of PPE types that you want to summarize.</p>
     pub fn get_summarization_attributes(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummarizationAttributes> {
         &self.summarization_attributes
     }
     /// Consumes the builder and constructs a [`DetectProtectiveEquipmentInput`](crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput {
-            image: self.image,
-            summarization_attributes: self.summarization_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput {
+                image: self.image
+                ,
+                summarization_attributes: self.summarization_attributes
+                ,
+            }
+        )
     }
 }
+

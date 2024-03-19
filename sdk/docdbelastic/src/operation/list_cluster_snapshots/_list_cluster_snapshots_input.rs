@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClusterSnapshotsInput {
+pub struct ListClusterSnapshotsInput  {
     /// <p>The ARN identifier of the elastic cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
@@ -19,14 +19,14 @@ pub struct ListClusterSnapshotsInput {
     /// </ul>
     pub snapshot_type: ::std::option::Option<::std::string::String>,
 }
-impl ListClusterSnapshotsInput {
+impl  ListClusterSnapshotsInput  {
     /// <p>The ARN identifier of the elastic cluster.</p>
-    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
@@ -40,7 +40,7 @@ impl ListClusterSnapshotsInput {
     /// <li>
     /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
     /// </ul>
-    pub fn snapshot_type(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> ::std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
 }
@@ -68,8 +68,7 @@ impl ListClusterSnapshotsInputBuilder {
     }
     /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ListClusterSnapshotsInputBuilder {
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
     /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
@@ -99,8 +97,7 @@ impl ListClusterSnapshotsInputBuilder {
     }
     /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -125,8 +122,7 @@ impl ListClusterSnapshotsInputBuilder {
     /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
     /// </ul>
     pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -139,15 +135,19 @@ impl ListClusterSnapshotsInputBuilder {
         &self.snapshot_type
     }
     /// Consumes the builder and constructs a [`ListClusterSnapshotsInput`](crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput {
-            cluster_arn: self.cluster_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            snapshot_type: self.snapshot_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_cluster_snapshots::ListClusterSnapshotsInput {
+                cluster_arn: self.cluster_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                snapshot_type: self.snapshot_type
+                ,
+            }
+        )
     }
 }
+

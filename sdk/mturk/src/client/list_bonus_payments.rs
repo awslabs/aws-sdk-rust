@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListBonusPayments`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`hit_id(impl Into<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::set_hit_id):<br>required: **false**<br><p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p><br>
     ///   - [`assignment_id(impl Into<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::assignment_id) / [`set_assignment_id(Option<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::set_assignment_id):<br>required: **false**<br><p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::set_next_token):<br>required: **false**<br><p>Pagination token</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::set_max_results):<br>required: **false**<br>(undocumented)<br>
-    /// - On success, responds with [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput) with field(s):
+                            /// - On success, responds with [`ListBonusPaymentsOutput`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput) with field(s):
     ///   - [`num_results(Option<i32>)`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput::num_results): <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.</p>
     ///   - [`bonus_payments(Option<Vec::<BonusPayment>>)`](crate::operation::list_bonus_payments::ListBonusPaymentsOutput::bonus_payments): <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects.</p>
-    /// - On failure, responds with [`SdkError<ListBonusPaymentsError>`](crate::operation::list_bonus_payments::ListBonusPaymentsError)
+                            /// - On failure, responds with [`SdkError<ListBonusPaymentsError>`](crate::operation::list_bonus_payments::ListBonusPaymentsError)
     pub fn list_bonus_payments(&self) -> crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder {
-        crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_bonus_payments::builders::ListBonusPaymentsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

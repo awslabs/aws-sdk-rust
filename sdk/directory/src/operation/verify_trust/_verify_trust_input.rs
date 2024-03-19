@@ -3,13 +3,13 @@
 /// <p>Initiates the verification of an existing trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VerifyTrustInput {
+pub struct VerifyTrustInput  {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
     pub trust_id: ::std::option::Option<::std::string::String>,
 }
-impl VerifyTrustInput {
+impl  VerifyTrustInput  {
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
-    pub fn trust_id(&self) -> ::std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<& str> {
         self.trust_id.as_deref()
     }
 }
@@ -35,8 +35,7 @@ impl VerifyTrustInputBuilder {
     }
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
     pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trust_id = input;
-        self
+        self.trust_id = input; self
     }
     /// <p>The unique Trust ID of the trust relationship to verify.</p>
     pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,6 +43,12 @@ impl VerifyTrustInputBuilder {
     }
     /// Consumes the builder and constructs a [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::verify_trust::VerifyTrustInput { trust_id: self.trust_id })
+        ::std::result::Result::Ok(
+            crate::operation::verify_trust::VerifyTrustInput {
+                trust_id: self.trust_id
+                ,
+            }
+        )
     }
 }
+

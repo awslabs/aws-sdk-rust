@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetFunctionInput {
+pub struct GetFunctionInput  {
     /// <p>The name of the function whose code you are getting.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub stage: ::std::option::Option<crate::types::FunctionStage>,
 }
-impl GetFunctionInput {
+impl  GetFunctionInput  {
     /// <p>The name of the function whose code you are getting.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    pub fn stage(&self) -> ::std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> ::std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The name of the function whose code you are getting.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the function whose code you are getting.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
@@ -64,9 +62,14 @@ impl GetFunctionInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_function::GetFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_function::GetFunctionInput {
-            name: self.name,
-            stage: self.stage,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_function::GetFunctionInput {
+                name: self.name
+                ,
+                stage: self.stage
+                ,
+            }
+        )
     }
 }
+

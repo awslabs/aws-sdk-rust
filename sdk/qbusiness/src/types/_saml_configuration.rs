@@ -3,7 +3,7 @@
 /// <p>Provides the SAML 2.0 compliant identity provider (IdP) configuration information Amazon Q needs to deploy a Amazon Q web experience.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SamlConfiguration {
+pub struct SamlConfiguration  {
     /// <p>The metadata XML that your IdP generated.</p>
     pub metadata_xml: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate into their Amazon Q web experience, containing the relevant Amazon Q permissions for conversing with Amazon Q.</p>
@@ -13,24 +13,21 @@ pub struct SamlConfiguration {
     /// <p>The group attribute name in your IdP that maps to user groups.</p>
     pub user_group_attribute: ::std::option::Option<::std::string::String>,
 }
-impl SamlConfiguration {
+impl  SamlConfiguration  {
     /// <p>The metadata XML that your IdP generated.</p>
-    pub fn metadata_xml(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata_xml.deref()
+    pub fn metadata_xml(&self) -> & str {
+        use std::ops::Deref; self.metadata_xml.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate into their Amazon Q web experience, containing the relevant Amazon Q permissions for conversing with Amazon Q.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The user attribute name in your IdP that maps to the user email.</p>
-    pub fn user_id_attribute(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id_attribute.deref()
+    pub fn user_id_attribute(&self) -> & str {
+        use std::ops::Deref; self.user_id_attribute.deref()
     }
     /// <p>The group attribute name in your IdP that maps to user groups.</p>
-    pub fn user_group_attribute(&self) -> ::std::option::Option<&str> {
+    pub fn user_group_attribute(&self) -> ::std::option::Option<& str> {
         self.user_group_attribute.as_deref()
     }
 }
@@ -59,8 +56,7 @@ impl SamlConfigurationBuilder {
     }
     /// <p>The metadata XML that your IdP generated.</p>
     pub fn set_metadata_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_xml = input;
-        self
+        self.metadata_xml = input; self
     }
     /// <p>The metadata XML that your IdP generated.</p>
     pub fn get_metadata_xml(&self) -> &::std::option::Option<::std::string::String> {
@@ -74,8 +70,7 @@ impl SamlConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate into their Amazon Q web experience, containing the relevant Amazon Q permissions for conversing with Amazon Q.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate into their Amazon Q web experience, containing the relevant Amazon Q permissions for conversing with Amazon Q.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +84,7 @@ impl SamlConfigurationBuilder {
     }
     /// <p>The user attribute name in your IdP that maps to the user email.</p>
     pub fn set_user_id_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id_attribute = input;
-        self
+        self.user_id_attribute = input; self
     }
     /// <p>The user attribute name in your IdP that maps to the user email.</p>
     pub fn get_user_id_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +97,7 @@ impl SamlConfigurationBuilder {
     }
     /// <p>The group attribute name in your IdP that maps to user groups.</p>
     pub fn set_user_group_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_group_attribute = input;
-        self
+        self.user_group_attribute = input; self
     }
     /// <p>The group attribute name in your IdP that maps to user groups.</p>
     pub fn get_user_group_attribute(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,26 +109,27 @@ impl SamlConfigurationBuilder {
     /// - [`role_arn`](crate::types::builders::SamlConfigurationBuilder::role_arn)
     /// - [`user_id_attribute`](crate::types::builders::SamlConfigurationBuilder::user_id_attribute)
     pub fn build(self) -> ::std::result::Result<crate::types::SamlConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SamlConfiguration {
-            metadata_xml: self.metadata_xml.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "metadata_xml",
-                    "metadata_xml was not specified but it is required when building SamlConfiguration",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building SamlConfiguration",
-                )
-            })?,
-            user_id_attribute: self.user_id_attribute.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "user_id_attribute",
-                    "user_id_attribute was not specified but it is required when building SamlConfiguration",
-                )
-            })?,
-            user_group_attribute: self.user_group_attribute,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SamlConfiguration {
+                metadata_xml: self.metadata_xml
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("metadata_xml", "metadata_xml was not specified but it is required when building SamlConfiguration")
+                    )?
+                ,
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building SamlConfiguration")
+                    )?
+                ,
+                user_id_attribute: self.user_id_attribute
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_id_attribute", "user_id_attribute was not specified but it is required when building SamlConfiguration")
+                    )?
+                ,
+                user_group_attribute: self.user_group_attribute
+                ,
+            }
+        )
     }
 }
+

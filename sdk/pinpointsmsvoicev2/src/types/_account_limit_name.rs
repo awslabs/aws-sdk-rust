@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountlimitname = unimplemented!();
 /// match accountlimitname {
@@ -36,16 +36,14 @@
 /// Specifically, when `accountlimitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountLimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum AccountLimitName {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationSets,
@@ -65,88 +63,80 @@ pub enum AccountLimitName {
     VerifiedDestinationNumbers,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for AccountLimitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURATION_SETS" => AccountLimitName::ConfigurationSets,
-            "OPT_OUT_LISTS" => AccountLimitName::OptOutLists,
-            "PHONE_NUMBERS" => AccountLimitName::PhoneNumbers,
-            "POOLS" => AccountLimitName::Pools,
-            "REGISTRATIONS" => AccountLimitName::Registrations,
-            "REGISTRATION_ATTACHMENTS" => AccountLimitName::RegistrationAttachments,
-            "SENDER_IDS" => AccountLimitName::SenderIds,
-            "VERIFIED_DESTINATION_NUMBERS" => AccountLimitName::VerifiedDestinationNumbers,
-            other => AccountLimitName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "CONFIGURATION_SETS" => AccountLimitName::ConfigurationSets,
+"OPT_OUT_LISTS" => AccountLimitName::OptOutLists,
+"PHONE_NUMBERS" => AccountLimitName::PhoneNumbers,
+"POOLS" => AccountLimitName::Pools,
+"REGISTRATIONS" => AccountLimitName::Registrations,
+"REGISTRATION_ATTACHMENTS" => AccountLimitName::RegistrationAttachments,
+"SENDER_IDS" => AccountLimitName::SenderIds,
+"VERIFIED_DESTINATION_NUMBERS" => AccountLimitName::VerifiedDestinationNumbers,
+other => AccountLimitName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for AccountLimitName {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(AccountLimitName::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(AccountLimitName::from(s))
+                    }
+                }
 impl AccountLimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AccountLimitName::ConfigurationSets => "CONFIGURATION_SETS",
-            AccountLimitName::OptOutLists => "OPT_OUT_LISTS",
-            AccountLimitName::PhoneNumbers => "PHONE_NUMBERS",
-            AccountLimitName::Pools => "POOLS",
-            AccountLimitName::Registrations => "REGISTRATIONS",
-            AccountLimitName::RegistrationAttachments => "REGISTRATION_ATTACHMENTS",
-            AccountLimitName::SenderIds => "SENDER_IDS",
-            AccountLimitName::VerifiedDestinationNumbers => "VERIFIED_DESTINATION_NUMBERS",
-            AccountLimitName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFIGURATION_SETS",
-            "OPT_OUT_LISTS",
-            "PHONE_NUMBERS",
-            "POOLS",
-            "REGISTRATIONS",
-            "REGISTRATION_ATTACHMENTS",
-            "SENDER_IDS",
-            "VERIFIED_DESTINATION_NUMBERS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AccountLimitName::ConfigurationSets => "CONFIGURATION_SETS",
+    AccountLimitName::OptOutLists => "OPT_OUT_LISTS",
+    AccountLimitName::PhoneNumbers => "PHONE_NUMBERS",
+    AccountLimitName::Pools => "POOLS",
+    AccountLimitName::Registrations => "REGISTRATIONS",
+    AccountLimitName::RegistrationAttachments => "REGISTRATION_ATTACHMENTS",
+    AccountLimitName::SenderIds => "SENDER_IDS",
+    AccountLimitName::VerifiedDestinationNumbers => "VERIFIED_DESTINATION_NUMBERS",
+    AccountLimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURATION_SETS", "OPT_OUT_LISTS", "PHONE_NUMBERS", "POOLS", "REGISTRATIONS", "REGISTRATION_ATTACHMENTS", "SENDER_IDS", "VERIFIED_DESTINATION_NUMBERS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for AccountLimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl AccountLimitName {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for AccountLimitName {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            AccountLimitName::ConfigurationSets => write!(f, "CONFIGURATION_SETS"),
-            AccountLimitName::OptOutLists => write!(f, "OPT_OUT_LISTS"),
-            AccountLimitName::PhoneNumbers => write!(f, "PHONE_NUMBERS"),
-            AccountLimitName::Pools => write!(f, "POOLS"),
-            AccountLimitName::Registrations => write!(f, "REGISTRATIONS"),
-            AccountLimitName::RegistrationAttachments => write!(f, "REGISTRATION_ATTACHMENTS"),
-            AccountLimitName::SenderIds => write!(f, "SENDER_IDS"),
-            AccountLimitName::VerifiedDestinationNumbers => write!(f, "VERIFIED_DESTINATION_NUMBERS"),
-            AccountLimitName::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                AccountLimitName::ConfigurationSets => write!(f, "CONFIGURATION_SETS"),
+AccountLimitName::OptOutLists => write!(f, "OPT_OUT_LISTS"),
+AccountLimitName::PhoneNumbers => write!(f, "PHONE_NUMBERS"),
+AccountLimitName::Pools => write!(f, "POOLS"),
+AccountLimitName::Registrations => write!(f, "REGISTRATIONS"),
+AccountLimitName::RegistrationAttachments => write!(f, "REGISTRATION_ATTACHMENTS"),
+AccountLimitName::SenderIds => write!(f, "SENDER_IDS"),
+AccountLimitName::VerifiedDestinationNumbers => write!(f, "VERIFIED_DESTINATION_NUMBERS"),
+AccountLimitName::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

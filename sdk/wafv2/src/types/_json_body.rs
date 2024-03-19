@@ -6,7 +6,7 @@
 /// <p>Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct JsonBody {
+pub struct JsonBody  {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria.</p>
     pub match_pattern: ::std::option::Option<crate::types::JsonMatchPattern>,
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values.</p>
@@ -54,14 +54,14 @@ pub struct JsonBody {
     /// <p>Default: <code>CONTINUE</code></p>
     pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
-impl JsonBody {
+impl  JsonBody  {
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria.</p>
-    pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::JsonMatchPattern> {
+    pub fn match_pattern(&self) -> ::std::option::Option<& crate::types::JsonMatchPattern> {
         self.match_pattern.as_ref()
     }
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
-    pub fn match_scope(&self) -> &crate::types::JsonMatchScope {
+    pub fn match_scope(&self) -> & crate::types::JsonMatchScope {
         &self.match_scope
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
@@ -84,7 +84,7 @@ impl JsonBody {
     /// <li>
     /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
-    pub fn invalid_fallback_behavior(&self) -> ::std::option::Option<&crate::types::BodyParsingFallbackBehavior> {
+    pub fn invalid_fallback_behavior(&self) -> ::std::option::Option<& crate::types::BodyParsingFallbackBehavior> {
         self.invalid_fallback_behavior.as_ref()
     }
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
@@ -106,7 +106,7 @@ impl JsonBody {
     /// </ul>
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
-    pub fn oversize_handling(&self) -> ::std::option::Option<&crate::types::OversizeHandling> {
+    pub fn oversize_handling(&self) -> ::std::option::Option<& crate::types::OversizeHandling> {
         self.oversize_handling.as_ref()
     }
 }
@@ -135,8 +135,7 @@ impl JsonBodyBuilder {
     }
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria.</p>
     pub fn set_match_pattern(mut self, input: ::std::option::Option<crate::types::JsonMatchPattern>) -> Self {
-        self.match_pattern = input;
-        self
+        self.match_pattern = input; self
     }
     /// <p>The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria.</p>
     pub fn get_match_pattern(&self) -> &::std::option::Option<crate::types::JsonMatchPattern> {
@@ -152,8 +151,7 @@ impl JsonBodyBuilder {
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
     pub fn set_match_scope(mut self, input: ::std::option::Option<crate::types::JsonMatchScope>) -> Self {
-        self.match_scope = input;
-        self
+        self.match_scope = input; self
     }
     /// <p>The parts of the JSON to match against using the <code>MatchPattern</code>. If you specify <code>ALL</code>, WAF matches against keys and values.</p>
     /// <p><code>All</code> does not require a match to be found in the keys and a match to be found in the values. It requires a match to be found in the keys or the values or both. To require a match in the keys and in the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that inspects the values.</p>
@@ -205,8 +203,7 @@ impl JsonBodyBuilder {
     /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub fn set_invalid_fallback_behavior(mut self, input: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>) -> Self {
-        self.invalid_fallback_behavior = input;
-        self
+        self.invalid_fallback_behavior = input; self
     }
     /// <p>What WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
     /// <ul>
@@ -274,8 +271,7 @@ impl JsonBodyBuilder {
     /// <p>You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and web ACL action settings, so that you block any request whose body is over the limit.</p>
     /// <p>Default: <code>CONTINUE</code></p>
     pub fn set_oversize_handling(mut self, input: ::std::option::Option<crate::types::OversizeHandling>) -> Self {
-        self.oversize_handling = input;
-        self
+        self.oversize_handling = input; self
     }
     /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
     /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
@@ -303,16 +299,21 @@ impl JsonBodyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`match_scope`](crate::types::builders::JsonBodyBuilder::match_scope)
     pub fn build(self) -> ::std::result::Result<crate::types::JsonBody, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::JsonBody {
-            match_pattern: self.match_pattern,
-            match_scope: self.match_scope.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "match_scope",
-                    "match_scope was not specified but it is required when building JsonBody",
-                )
-            })?,
-            invalid_fallback_behavior: self.invalid_fallback_behavior,
-            oversize_handling: self.oversize_handling,
-        })
+        ::std::result::Result::Ok(
+            crate::types::JsonBody {
+                match_pattern: self.match_pattern
+                ,
+                match_scope: self.match_scope
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("match_scope", "match_scope was not specified but it is required when building JsonBody")
+                    )?
+                ,
+                invalid_fallback_behavior: self.invalid_fallback_behavior
+                ,
+                oversize_handling: self.oversize_handling
+                ,
+            }
+        )
     }
 }
+

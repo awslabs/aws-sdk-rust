@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteSnapshotInput {
+pub struct DeleteSnapshotInput  {
     /// <p>The name of the snapshot to be deleted.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteSnapshotInput {
+impl  DeleteSnapshotInput  {
     /// <p>The name of the snapshot to be deleted.</p>
-    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot to be deleted.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>The name of the snapshot to be deleted.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_name
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_snapshot::DeleteSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_snapshot::DeleteSnapshotInput {
-            snapshot_name: self.snapshot_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_snapshot::DeleteSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_snapshot::DeleteSnapshotInput {
+                snapshot_name: self.snapshot_name
+                ,
+            }
+        )
     }
 }
+

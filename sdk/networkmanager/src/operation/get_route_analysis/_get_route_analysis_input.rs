@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRouteAnalysisInput {
+pub struct GetRouteAnalysisInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route analysis.</p>
     pub route_analysis_id: ::std::option::Option<::std::string::String>,
 }
-impl GetRouteAnalysisInput {
+impl  GetRouteAnalysisInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the route analysis.</p>
-    pub fn route_analysis_id(&self) -> ::std::option::Option<&str> {
+    pub fn route_analysis_id(&self) -> ::std::option::Option<& str> {
         self.route_analysis_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetRouteAnalysisInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetRouteAnalysisInputBuilder {
     }
     /// <p>The ID of the route analysis.</p>
     pub fn set_route_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_analysis_id = input;
-        self
+        self.route_analysis_id = input; self
     }
     /// <p>The ID of the route analysis.</p>
     pub fn get_route_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_analysis_id
     }
     /// Consumes the builder and constructs a [`GetRouteAnalysisInput`](crate::operation::get_route_analysis::GetRouteAnalysisInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_route_analysis::GetRouteAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_route_analysis::GetRouteAnalysisInput {
-            global_network_id: self.global_network_id,
-            route_analysis_id: self.route_analysis_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_route_analysis::GetRouteAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_route_analysis::GetRouteAnalysisInput {
+                global_network_id: self.global_network_id
+                ,
+                route_analysis_id: self.route_analysis_id
+                ,
+            }
+        )
     }
 }
+

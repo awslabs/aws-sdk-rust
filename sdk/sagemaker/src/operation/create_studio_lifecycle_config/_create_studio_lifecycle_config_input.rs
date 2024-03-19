@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateStudioLifecycleConfigInput {
+pub struct CreateStudioLifecycleConfigInput  {
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
@@ -10,26 +10,27 @@ pub struct CreateStudioLifecycleConfigInput {
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl CreateStudioLifecycleConfigInput {
+impl  CreateStudioLifecycleConfigInput  {
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
-    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_name.as_deref()
     }
     /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
-    pub fn studio_lifecycle_config_content(&self) -> ::std::option::Option<&str> {
+    pub fn studio_lifecycle_config_content(&self) -> ::std::option::Option<& str> {
         self.studio_lifecycle_config_content.as_deref()
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
-    pub fn studio_lifecycle_config_app_type(&self) -> ::std::option::Option<&crate::types::StudioLifecycleConfigAppType> {
+    pub fn studio_lifecycle_config_app_type(&self) -> ::std::option::Option<& crate::types::StudioLifecycleConfigAppType> {
         self.studio_lifecycle_config_app_type.as_ref()
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl CreateStudioLifecycleConfigInput {
@@ -46,7 +47,7 @@ pub struct CreateStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) studio_lifecycle_config_content: ::std::option::Option<::std::string::String>,
     pub(crate) studio_lifecycle_config_app_type: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl CreateStudioLifecycleConfigInputBuilder {
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
@@ -57,8 +58,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
     }
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_lifecycle_config_name = input;
-        self
+        self.studio_lifecycle_config_name = input; self
     }
     /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to create.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
     }
     /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn set_studio_lifecycle_config_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.studio_lifecycle_config_content = input;
-        self
+        self.studio_lifecycle_config_content = input; self
     }
     /// <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
     pub fn get_studio_lifecycle_config_content(&self) -> &::std::option::Option<::std::string::String> {
@@ -87,8 +86,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub fn set_studio_lifecycle_config_app_type(mut self, input: ::std::option::Option<crate::types::StudioLifecycleConfigAppType>) -> Self {
-        self.studio_lifecycle_config_app_type = input;
-        self
+        self.studio_lifecycle_config_app_type = input; self
     }
     /// <p>The App type that the Lifecycle Configuration is attached to.</p>
     pub fn get_studio_lifecycle_config_app_type(&self) -> &::std::option::Option<crate::types::StudioLifecycleConfigAppType> {
@@ -101,31 +99,32 @@ impl CreateStudioLifecycleConfigInputBuilder {
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStudioLifecycleConfigInput`](crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput {
-            studio_lifecycle_config_name: self.studio_lifecycle_config_name,
-            studio_lifecycle_config_content: self.studio_lifecycle_config_content,
-            studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput {
+                studio_lifecycle_config_name: self.studio_lifecycle_config_name
+                ,
+                studio_lifecycle_config_content: self.studio_lifecycle_config_content
+                ,
+                studio_lifecycle_config_app_type: self.studio_lifecycle_config_app_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

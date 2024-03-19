@@ -3,7 +3,7 @@
 /// <p>Contains the details for an AS2 connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct As2ConnectorConfig {
+pub struct As2ConnectorConfig  {
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub local_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the partner profile for the connector.</p>
@@ -51,21 +51,21 @@ pub struct As2ConnectorConfig {
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub basic_auth_secret_id: ::std::option::Option<::std::string::String>,
 }
-impl As2ConnectorConfig {
+impl  As2ConnectorConfig  {
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn local_profile_id(&self) -> ::std::option::Option<& str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
-    pub fn partner_profile_id(&self) -> ::std::option::Option<&str> {
+    pub fn partner_profile_id(&self) -> ::std::option::Option<& str> {
         self.partner_profile_id.as_deref()
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
-    pub fn message_subject(&self) -> ::std::option::Option<&str> {
+    pub fn message_subject(&self) -> ::std::option::Option<& str> {
         self.message_subject.as_deref()
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
-    pub fn compression(&self) -> ::std::option::Option<&crate::types::CompressionEnum> {
+    pub fn compression(&self) -> ::std::option::Option<& crate::types::CompressionEnum> {
         self.compression.as_ref()
     }
     /// <p>The algorithm that is used to encrypt the file.</p>
@@ -76,17 +76,17 @@ impl As2ConnectorConfig {
     /// <li>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
     /// </ul>
-    pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlg> {
+    pub fn encryption_algorithm(&self) -> ::std::option::Option<& crate::types::EncryptionAlg> {
         self.encryption_algorithm.as_ref()
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
-    pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlg> {
+    pub fn signing_algorithm(&self) -> ::std::option::Option<& crate::types::SigningAlg> {
         self.signing_algorithm.as_ref()
     }
     /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
-    pub fn mdn_signing_algorithm(&self) -> ::std::option::Option<&crate::types::MdnSigningAlg> {
+    pub fn mdn_signing_algorithm(&self) -> ::std::option::Option<& crate::types::MdnSigningAlg> {
         self.mdn_signing_algorithm.as_ref()
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
@@ -96,7 +96,7 @@ impl As2ConnectorConfig {
     /// <li>
     /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
-    pub fn mdn_response(&self) -> ::std::option::Option<&crate::types::MdnResponse> {
+    pub fn mdn_response(&self) -> ::std::option::Option<& crate::types::MdnResponse> {
         self.mdn_response.as_ref()
     }
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
@@ -113,7 +113,7 @@ impl As2ConnectorConfig {
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
-    pub fn basic_auth_secret_id(&self) -> ::std::option::Option<&str> {
+    pub fn basic_auth_secret_id(&self) -> ::std::option::Option<& str> {
         self.basic_auth_secret_id.as_deref()
     }
 }
@@ -146,8 +146,7 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn set_local_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.local_profile_id = input;
-        self
+        self.local_profile_id = input; self
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +159,7 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
     pub fn set_partner_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_profile_id = input;
-        self
+        self.partner_profile_id = input; self
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
     pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn set_message_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message_subject = input;
-        self
+        self.message_subject = input; self
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn get_message_subject(&self) -> &::std::option::Option<::std::string::String> {
@@ -188,8 +185,7 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub fn set_compression(mut self, input: ::std::option::Option<crate::types::CompressionEnum>) -> Self {
-        self.compression = input;
-        self
+        self.compression = input; self
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionEnum> {
@@ -216,8 +212,7 @@ impl As2ConnectorConfigBuilder {
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
     /// </ul>
     pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlg>) -> Self {
-        self.encryption_algorithm = input;
-        self
+        self.encryption_algorithm = input; self
     }
     /// <p>The algorithm that is used to encrypt the file.</p>
     /// <p>Note the following:</p>
@@ -237,8 +232,7 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlg>) -> Self {
-        self.signing_algorithm = input;
-        self
+        self.signing_algorithm = input; self
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlg> {
@@ -255,8 +249,7 @@ impl As2ConnectorConfigBuilder {
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn set_mdn_signing_algorithm(mut self, input: ::std::option::Option<crate::types::MdnSigningAlg>) -> Self {
-        self.mdn_signing_algorithm = input;
-        self
+        self.mdn_signing_algorithm = input; self
     }
     /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
@@ -283,8 +276,7 @@ impl As2ConnectorConfigBuilder {
     /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn set_mdn_response(mut self, input: ::std::option::Option<crate::types::MdnResponse>) -> Self {
-        self.mdn_response = input;
-        self
+        self.mdn_response = input; self
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
@@ -329,8 +321,7 @@ impl As2ConnectorConfigBuilder {
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
     pub fn set_basic_auth_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.basic_auth_secret_id = input;
-        self
+        self.basic_auth_secret_id = input; self
     }
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
     /// <p>The default value for this parameter is <code>null</code>, which indicates that Basic authentication is not enabled for the connector.</p>
@@ -352,15 +343,25 @@ impl As2ConnectorConfigBuilder {
     /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
     pub fn build(self) -> crate::types::As2ConnectorConfig {
         crate::types::As2ConnectorConfig {
-            local_profile_id: self.local_profile_id,
-            partner_profile_id: self.partner_profile_id,
-            message_subject: self.message_subject,
-            compression: self.compression,
-            encryption_algorithm: self.encryption_algorithm,
-            signing_algorithm: self.signing_algorithm,
-            mdn_signing_algorithm: self.mdn_signing_algorithm,
-            mdn_response: self.mdn_response,
-            basic_auth_secret_id: self.basic_auth_secret_id,
+            local_profile_id: self.local_profile_id
+            ,
+            partner_profile_id: self.partner_profile_id
+            ,
+            message_subject: self.message_subject
+            ,
+            compression: self.compression
+            ,
+            encryption_algorithm: self.encryption_algorithm
+            ,
+            signing_algorithm: self.signing_algorithm
+            ,
+            mdn_signing_algorithm: self.mdn_signing_algorithm
+            ,
+            mdn_response: self.mdn_response
+            ,
+            basic_auth_secret_id: self.basic_auth_secret_id
+            ,
         }
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteProfileKeyOutput {
+pub struct DeleteProfileKeyOutput  {
     /// <p>A message that indicates the delete request is done.</p>
     pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteProfileKeyOutput {
+impl  DeleteProfileKeyOutput  {
     /// <p>A message that indicates the delete request is done.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteProfileKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteProfileKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProfileKeyOutput`](crate::operation::delete_profile_key::DeleteProfileKeyOutput).
     pub fn builder() -> crate::operation::delete_profile_key::builders::DeleteProfileKeyOutputBuilder {
@@ -40,27 +40,28 @@ impl DeleteProfileKeyOutputBuilder {
     }
     /// <p>A message that indicates the delete request is done.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A message that indicates the delete request is done.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteProfileKeyOutput`](crate::operation::delete_profile_key::DeleteProfileKeyOutput).
     pub fn build(self) -> crate::operation::delete_profile_key::DeleteProfileKeyOutput {
         crate::operation::delete_profile_key::DeleteProfileKeyOutput {
-            message: self.message,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

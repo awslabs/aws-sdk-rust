@@ -3,7 +3,7 @@
 /// <p>Specifies a metric to minimize or maximize as the objective of an AutoML job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutoMlJobObjective {
+pub struct AutoMlJobObjective  {
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
     /// <p>The list of available metrics supported by Autopilot and the default metric applied when you do not specify a metric name explicitly depend on the problem type.</p>
     /// <ul>
@@ -55,7 +55,7 @@ pub struct AutoMlJobObjective {
     /// </ul>
     pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
-impl AutoMlJobObjective {
+impl  AutoMlJobObjective  {
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
     /// <p>The list of available metrics supported by Autopilot and the default metric applied when you do not specify a metric name explicitly depend on the problem type.</p>
     /// <ul>
@@ -105,7 +105,7 @@ impl AutoMlJobObjective {
     /// <li>
     /// <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics for fine-tuning LLMs in Autopilot</a>.</p></li>
     /// </ul>
-    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::AutoMlMetricEnum> {
+    pub fn metric_name(&self) -> ::std::option::Option<& crate::types::AutoMlMetricEnum> {
         self.metric_name.as_ref()
     }
 }
@@ -227,8 +227,7 @@ impl AutoMlJobObjectiveBuilder {
     /// <p>For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics for fine-tuning LLMs in Autopilot</a>.</p></li>
     /// </ul>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::AutoMlMetricEnum>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
     /// <p>The list of available metrics supported by Autopilot and the default metric applied when you do not specify a metric name explicitly depend on the problem type.</p>
@@ -285,7 +284,9 @@ impl AutoMlJobObjectiveBuilder {
     /// Consumes the builder and constructs a [`AutoMlJobObjective`](crate::types::AutoMlJobObjective).
     pub fn build(self) -> crate::types::AutoMlJobObjective {
         crate::types::AutoMlJobObjective {
-            metric_name: self.metric_name,
+            metric_name: self.metric_name
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>Removes CloudTrail delegated administrator permissions from a specified member account in an organization that is currently designated as a delegated administrator.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeregisterOrganizationDelegatedAdminInput {
+pub struct DeregisterOrganizationDelegatedAdminInput  {
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
     pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
 }
-impl DeregisterOrganizationDelegatedAdminInput {
+impl  DeregisterOrganizationDelegatedAdminInput  {
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
-    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<& str> {
         self.delegated_admin_account_id.as_deref()
     }
 }
@@ -35,24 +35,20 @@ impl DeregisterOrganizationDelegatedAdminInputBuilder {
     }
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
     pub fn set_delegated_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delegated_admin_account_id = input;
-        self
+        self.delegated_admin_account_id = input; self
     }
     /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
     pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegated_admin_account_id
     }
     /// Consumes the builder and constructs a [`DeregisterOrganizationDelegatedAdminInput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminInput {
-                delegated_admin_account_id: self.delegated_admin_account_id,
-            },
+                delegated_admin_account_id: self.delegated_admin_account_id
+                ,
+            }
         )
     }
 }
+

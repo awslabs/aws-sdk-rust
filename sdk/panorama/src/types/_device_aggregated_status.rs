@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceaggregatedstatus = unimplemented!();
 /// match deviceaggregatedstatus {
@@ -38,16 +38,14 @@
 /// Specifically, when `deviceaggregatedstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceAggregatedStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum DeviceAggregatedStatus {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingProvisioning,
@@ -71,96 +69,86 @@ pub enum DeviceAggregatedStatus {
     UpdateNeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for DeviceAggregatedStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWAITING_PROVISIONING" => DeviceAggregatedStatus::AwaitingProvisioning,
-            "DELETING" => DeviceAggregatedStatus::Deleting,
-            "ERROR" => DeviceAggregatedStatus::Error,
-            "FAILED" => DeviceAggregatedStatus::Failed,
-            "LEASE_EXPIRED" => DeviceAggregatedStatus::LeaseExpired,
-            "OFFLINE" => DeviceAggregatedStatus::Offline,
-            "ONLINE" => DeviceAggregatedStatus::Online,
-            "PENDING" => DeviceAggregatedStatus::Pending,
-            "REBOOTING" => DeviceAggregatedStatus::Rebooting,
-            "UPDATE_NEEDED" => DeviceAggregatedStatus::UpdateNeeded,
-            other => DeviceAggregatedStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AWAITING_PROVISIONING" => DeviceAggregatedStatus::AwaitingProvisioning,
+"DELETING" => DeviceAggregatedStatus::Deleting,
+"ERROR" => DeviceAggregatedStatus::Error,
+"FAILED" => DeviceAggregatedStatus::Failed,
+"LEASE_EXPIRED" => DeviceAggregatedStatus::LeaseExpired,
+"OFFLINE" => DeviceAggregatedStatus::Offline,
+"ONLINE" => DeviceAggregatedStatus::Online,
+"PENDING" => DeviceAggregatedStatus::Pending,
+"REBOOTING" => DeviceAggregatedStatus::Rebooting,
+"UPDATE_NEEDED" => DeviceAggregatedStatus::UpdateNeeded,
+other => DeviceAggregatedStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for DeviceAggregatedStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(DeviceAggregatedStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(DeviceAggregatedStatus::from(s))
+                    }
+                }
 impl DeviceAggregatedStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceAggregatedStatus::AwaitingProvisioning => "AWAITING_PROVISIONING",
-            DeviceAggregatedStatus::Deleting => "DELETING",
-            DeviceAggregatedStatus::Error => "ERROR",
-            DeviceAggregatedStatus::Failed => "FAILED",
-            DeviceAggregatedStatus::LeaseExpired => "LEASE_EXPIRED",
-            DeviceAggregatedStatus::Offline => "OFFLINE",
-            DeviceAggregatedStatus::Online => "ONLINE",
-            DeviceAggregatedStatus::Pending => "PENDING",
-            DeviceAggregatedStatus::Rebooting => "REBOOTING",
-            DeviceAggregatedStatus::UpdateNeeded => "UPDATE_NEEDED",
-            DeviceAggregatedStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWAITING_PROVISIONING",
-            "DELETING",
-            "ERROR",
-            "FAILED",
-            "LEASE_EXPIRED",
-            "OFFLINE",
-            "ONLINE",
-            "PENDING",
-            "REBOOTING",
-            "UPDATE_NEEDED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceAggregatedStatus::AwaitingProvisioning => "AWAITING_PROVISIONING",
+    DeviceAggregatedStatus::Deleting => "DELETING",
+    DeviceAggregatedStatus::Error => "ERROR",
+    DeviceAggregatedStatus::Failed => "FAILED",
+    DeviceAggregatedStatus::LeaseExpired => "LEASE_EXPIRED",
+    DeviceAggregatedStatus::Offline => "OFFLINE",
+    DeviceAggregatedStatus::Online => "ONLINE",
+    DeviceAggregatedStatus::Pending => "PENDING",
+    DeviceAggregatedStatus::Rebooting => "REBOOTING",
+    DeviceAggregatedStatus::UpdateNeeded => "UPDATE_NEEDED",
+    DeviceAggregatedStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWAITING_PROVISIONING", "DELETING", "ERROR", "FAILED", "LEASE_EXPIRED", "OFFLINE", "ONLINE", "PENDING", "REBOOTING", "UPDATE_NEEDED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for DeviceAggregatedStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl DeviceAggregatedStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for DeviceAggregatedStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            DeviceAggregatedStatus::AwaitingProvisioning => write!(f, "AWAITING_PROVISIONING"),
-            DeviceAggregatedStatus::Deleting => write!(f, "DELETING"),
-            DeviceAggregatedStatus::Error => write!(f, "ERROR"),
-            DeviceAggregatedStatus::Failed => write!(f, "FAILED"),
-            DeviceAggregatedStatus::LeaseExpired => write!(f, "LEASE_EXPIRED"),
-            DeviceAggregatedStatus::Offline => write!(f, "OFFLINE"),
-            DeviceAggregatedStatus::Online => write!(f, "ONLINE"),
-            DeviceAggregatedStatus::Pending => write!(f, "PENDING"),
-            DeviceAggregatedStatus::Rebooting => write!(f, "REBOOTING"),
-            DeviceAggregatedStatus::UpdateNeeded => write!(f, "UPDATE_NEEDED"),
-            DeviceAggregatedStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                DeviceAggregatedStatus::AwaitingProvisioning => write!(f, "AWAITING_PROVISIONING"),
+DeviceAggregatedStatus::Deleting => write!(f, "DELETING"),
+DeviceAggregatedStatus::Error => write!(f, "ERROR"),
+DeviceAggregatedStatus::Failed => write!(f, "FAILED"),
+DeviceAggregatedStatus::LeaseExpired => write!(f, "LEASE_EXPIRED"),
+DeviceAggregatedStatus::Offline => write!(f, "OFFLINE"),
+DeviceAggregatedStatus::Online => write!(f, "ONLINE"),
+DeviceAggregatedStatus::Pending => write!(f, "PENDING"),
+DeviceAggregatedStatus::Rebooting => write!(f, "REBOOTING"),
+DeviceAggregatedStatus::UpdateNeeded => write!(f, "UPDATE_NEEDED"),
+DeviceAggregatedStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

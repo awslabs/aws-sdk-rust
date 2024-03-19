@@ -5,55 +5,51 @@ pub use crate::operation::describe_db_cluster_automated_backups::_describe_db_cl
 
 impl DescribeDbClusterAutomatedBackupsInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.describe_db_cluster_automated_backups();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.describe_db_cluster_automated_backups();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `DescribeDBClusterAutomatedBackups`.
-///
+/// 
 /// <p>Displays backups for both current and deleted DB clusters. For example, use this operation to find details about automated backups for previously deleted clusters. Current clusters are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.</p>
 /// <p>All parameters are optional.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterAutomatedBackupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_db_cluster_automated_backups::builders::DescribeDbClusterAutomatedBackupsInputBuilder,
+                    inner: crate::operation::describe_db_cluster_automated_backups::builders::DescribeDbClusterAutomatedBackupsInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
-        crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
-    > for DescribeDBClusterAutomatedBackupsFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
-            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
+                    crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
+                > for DescribeDBClusterAutomatedBackupsFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
+                        crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl DescribeDBClusterAutomatedBackupsFluentBuilder {
     /// Creates a new `DescribeDBClusterAutomatedBackups`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,59 +58,50 @@ impl DescribeDBClusterAutomatedBackupsFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackups::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackups::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput,
-        crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackups::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackups::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_automated_backups::DescribeDbClusterAutomatedBackupsOutput, crate::operation::describe_db_cluster_automated_backups::DescribeDBClusterAutomatedBackupsError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
-    pub fn into_paginator(self) -> crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator {
-        crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator::new(self.handle, self.inner)
-    }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+                            pub fn into_paginator(self) -> crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator {
+                                crate::operation::describe_db_cluster_automated_backups::paginator::DescribeDbClusterAutomatedBackupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The resource ID of the DB cluster that is the source of the automated backup. This parameter isn't case-sensitive.</p>
     pub fn db_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_resource_id(input.into());
@@ -181,7 +168,7 @@ impl DescribeDBClusterAutomatedBackupsFluentBuilder {
     /// <p><code>db-cluster-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB cluster resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -200,7 +187,7 @@ impl DescribeDBClusterAutomatedBackupsFluentBuilder {
     /// <p><code>db-cluster-resource-id</code> - Accepts DB resource identifiers and Amazon Resource Names (ARNs). The results list includes only information about the DB cluster resources identified by these ARNs.</p></li>
     /// </ul>
     /// <p>Returns all resources by default. The status for each resource is specified in the response.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Filter>> {
         self.inner.get_filters()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
@@ -232,3 +219,4 @@ impl DescribeDBClusterAutomatedBackupsFluentBuilder {
         self.inner.get_marker()
     }
 }
+

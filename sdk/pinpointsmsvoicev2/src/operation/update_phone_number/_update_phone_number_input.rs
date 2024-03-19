@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdatePhoneNumberInput {
+pub struct UpdatePhoneNumberInput  {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
     pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -18,9 +18,9 @@ pub struct UpdatePhoneNumberInput {
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
-impl UpdatePhoneNumberInput {
+impl  UpdatePhoneNumberInput  {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -28,11 +28,11 @@ impl UpdatePhoneNumberInput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
-    pub fn two_way_channel_role(&self) -> ::std::option::Option<&str> {
+    pub fn two_way_channel_role(&self) -> ::std::option::Option<& str> {
         self.two_way_channel_role.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -40,7 +40,7 @@ impl UpdatePhoneNumberInput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
@@ -76,8 +76,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
     pub fn set_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
     pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input;
-        self
+        self.two_way_enabled = input; self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn get_two_way_enabled(&self) -> &::std::option::Option<bool> {
@@ -104,8 +102,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn set_two_way_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_arn = input;
-        self
+        self.two_way_channel_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn get_two_way_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn set_two_way_channel_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.two_way_channel_role = input;
-        self
+        self.two_way_channel_role = input; self
     }
     /// <p>An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.</p>
     pub fn get_two_way_channel_role(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input;
-        self
+        self.self_managed_opt_outs_enabled = input; self
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn get_self_managed_opt_outs_enabled(&self) -> &::std::option::Option<bool> {
@@ -146,8 +141,7 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
     pub fn set_opt_out_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.opt_out_list_name = input;
-        self
+        self.opt_out_list_name = input; self
     }
     /// <p>The OptOutList to add the phone number to. Valid values for this field can be either the OutOutListName or OutOutListArn.</p>
     pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,25 +154,32 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_phone_number::UpdatePhoneNumberInput {
-            phone_number_id: self.phone_number_id,
-            two_way_enabled: self.two_way_enabled,
-            two_way_channel_arn: self.two_way_channel_arn,
-            two_way_channel_role: self.two_way_channel_role,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
-            opt_out_list_name: self.opt_out_list_name,
-            deletion_protection_enabled: self.deletion_protection_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_phone_number::UpdatePhoneNumberInput {
+                phone_number_id: self.phone_number_id
+                ,
+                two_way_enabled: self.two_way_enabled
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                two_way_channel_role: self.two_way_channel_role
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                ,
+            }
+        )
     }
 }
+

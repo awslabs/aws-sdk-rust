@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ImportSignalCatalogInput {
+pub struct ImportSignalCatalogInput  {
     /// <p>The name of the signal catalog to import.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the signal catalog.</p>
@@ -10,26 +10,27 @@ pub struct ImportSignalCatalogInput {
     /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
     pub vss: ::std::option::Option<crate::types::FormattedVss>,
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl ImportSignalCatalogInput {
+impl  ImportSignalCatalogInput  {
     /// <p>The name of the signal catalog to import.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the signal catalog.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
-    pub fn vss(&self) -> ::std::option::Option<&crate::types::FormattedVss> {
+    pub fn vss(&self) -> ::std::option::Option<& crate::types::FormattedVss> {
         self.vss.as_ref()
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ImportSignalCatalogInput {
@@ -46,7 +47,7 @@ pub struct ImportSignalCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vss: ::std::option::Option<crate::types::FormattedVss>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl ImportSignalCatalogInputBuilder {
     /// <p>The name of the signal catalog to import.</p>
@@ -57,8 +58,7 @@ impl ImportSignalCatalogInputBuilder {
     }
     /// <p>The name of the signal catalog to import.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the signal catalog to import.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ImportSignalCatalogInputBuilder {
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl ImportSignalCatalogInputBuilder {
     }
     /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
     pub fn set_vss(mut self, input: ::std::option::Option<crate::types::FormattedVss>) -> Self {
-        self.vss = input;
-        self
+        self.vss = input; self
     }
     /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
     pub fn get_vss(&self) -> &::std::option::Option<crate::types::FormattedVss> {
@@ -99,29 +97,32 @@ impl ImportSignalCatalogInputBuilder {
     /// <p>Metadata that can be used to manage the signal catalog.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::import_signal_catalog::ImportSignalCatalogInput {
-            name: self.name,
-            description: self.description,
-            vss: self.vss,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::import_signal_catalog::ImportSignalCatalogInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                vss: self.vss
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The options that determine the presentation of the <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GaugeChartOptions {
+pub struct GaugeChartOptions  {
     /// <p>The options that determine the primary value display type.</p>
     pub primary_value_display_type: ::std::option::Option<crate::types::PrimaryValueDisplayType>,
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
@@ -15,25 +15,25 @@ pub struct GaugeChartOptions {
     /// <p>The options that determine the primary value font configuration.</p>
     pub primary_value_font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
 }
-impl GaugeChartOptions {
+impl  GaugeChartOptions  {
     /// <p>The options that determine the primary value display type.</p>
-    pub fn primary_value_display_type(&self) -> ::std::option::Option<&crate::types::PrimaryValueDisplayType> {
+    pub fn primary_value_display_type(&self) -> ::std::option::Option<& crate::types::PrimaryValueDisplayType> {
         self.primary_value_display_type.as_ref()
     }
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn comparison(&self) -> ::std::option::Option<&crate::types::ComparisonConfiguration> {
+    pub fn comparison(&self) -> ::std::option::Option<& crate::types::ComparisonConfiguration> {
         self.comparison.as_ref()
     }
     /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn arc_axis(&self) -> ::std::option::Option<&crate::types::ArcAxisConfiguration> {
+    pub fn arc_axis(&self) -> ::std::option::Option<& crate::types::ArcAxisConfiguration> {
         self.arc_axis.as_ref()
     }
     /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
-    pub fn arc(&self) -> ::std::option::Option<&crate::types::ArcConfiguration> {
+    pub fn arc(&self) -> ::std::option::Option<& crate::types::ArcConfiguration> {
         self.arc.as_ref()
     }
     /// <p>The options that determine the primary value font configuration.</p>
-    pub fn primary_value_font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
+    pub fn primary_value_font_configuration(&self) -> ::std::option::Option<& crate::types::FontConfiguration> {
         self.primary_value_font_configuration.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl GaugeChartOptionsBuilder {
     }
     /// <p>The options that determine the primary value display type.</p>
     pub fn set_primary_value_display_type(mut self, input: ::std::option::Option<crate::types::PrimaryValueDisplayType>) -> Self {
-        self.primary_value_display_type = input;
-        self
+        self.primary_value_display_type = input; self
     }
     /// <p>The options that determine the primary value display type.</p>
     pub fn get_primary_value_display_type(&self) -> &::std::option::Option<crate::types::PrimaryValueDisplayType> {
@@ -76,8 +75,7 @@ impl GaugeChartOptionsBuilder {
     }
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_comparison(mut self, input: ::std::option::Option<crate::types::ComparisonConfiguration>) -> Self {
-        self.comparison = input;
-        self
+        self.comparison = input; self
     }
     /// <p>The comparison configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ComparisonConfiguration> {
@@ -90,8 +88,7 @@ impl GaugeChartOptionsBuilder {
     }
     /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_arc_axis(mut self, input: ::std::option::Option<crate::types::ArcAxisConfiguration>) -> Self {
-        self.arc_axis = input;
-        self
+        self.arc_axis = input; self
     }
     /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_arc_axis(&self) -> &::std::option::Option<crate::types::ArcAxisConfiguration> {
@@ -104,8 +101,7 @@ impl GaugeChartOptionsBuilder {
     }
     /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn set_arc(mut self, input: ::std::option::Option<crate::types::ArcConfiguration>) -> Self {
-        self.arc = input;
-        self
+        self.arc = input; self
     }
     /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
     pub fn get_arc(&self) -> &::std::option::Option<crate::types::ArcConfiguration> {
@@ -118,8 +114,7 @@ impl GaugeChartOptionsBuilder {
     }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn set_primary_value_font_configuration(mut self, input: ::std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.primary_value_font_configuration = input;
-        self
+        self.primary_value_font_configuration = input; self
     }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn get_primary_value_font_configuration(&self) -> &::std::option::Option<crate::types::FontConfiguration> {
@@ -128,11 +123,17 @@ impl GaugeChartOptionsBuilder {
     /// Consumes the builder and constructs a [`GaugeChartOptions`](crate::types::GaugeChartOptions).
     pub fn build(self) -> crate::types::GaugeChartOptions {
         crate::types::GaugeChartOptions {
-            primary_value_display_type: self.primary_value_display_type,
-            comparison: self.comparison,
-            arc_axis: self.arc_axis,
-            arc: self.arc,
-            primary_value_font_configuration: self.primary_value_font_configuration,
+            primary_value_display_type: self.primary_value_display_type
+            ,
+            comparison: self.comparison
+            ,
+            arc_axis: self.arc_axis
+            ,
+            arc: self.arc
+            ,
+            primary_value_font_configuration: self.primary_value_font_configuration
+            ,
         }
     }
 }
+

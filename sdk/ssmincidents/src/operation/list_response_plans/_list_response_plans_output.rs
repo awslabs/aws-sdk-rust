@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResponsePlansOutput {
+pub struct ListResponsePlansOutput  {
     /// <p>Details of each response plan.</p>
-    pub response_plan_summaries: ::std::vec::Vec<crate::types::ResponsePlanSummary>,
+    pub response_plan_summaries: ::std::vec::Vec::<crate::types::ResponsePlanSummary>,
     /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListResponsePlansOutput {
+impl  ListResponsePlansOutput  {
     /// <p>Details of each response plan.</p>
-    pub fn response_plan_summaries(&self) -> &[crate::types::ResponsePlanSummary] {
-        use std::ops::Deref;
-        self.response_plan_summaries.deref()
+    pub fn response_plan_summaries(&self) -> & [crate::types::ResponsePlanSummary] {
+        use std::ops::Deref; self.response_plan_summaries.deref()
     }
     /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResponsePlansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResponsePlansOutput {
     /// Creates a new builder-style object to manufacture [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput).
     pub fn builder() -> crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder {
@@ -36,7 +35,7 @@ impl ListResponsePlansOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResponsePlansOutputBuilder {
-    pub(crate) response_plan_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>,
+    pub(crate) response_plan_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ResponsePlanSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListResponsePlansOutputBuilder {
     /// <p>Details of each response plan.</p>
     pub fn response_plan_summaries(mut self, input: crate::types::ResponsePlanSummary) -> Self {
         let mut v = self.response_plan_summaries.unwrap_or_default();
-        v.push(input);
-        self.response_plan_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.response_plan_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Details of each response plan.</p>
-    pub fn set_response_plan_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>>) -> Self {
-        self.response_plan_summaries = input;
-        self
+    pub fn set_response_plan_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResponsePlanSummary>>) -> Self {
+        self.response_plan_summaries = input; self
     }
     /// <p>Details of each response plan.</p>
-    pub fn get_response_plan_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponsePlanSummary>> {
+    pub fn get_response_plan_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResponsePlanSummary>> {
         &self.response_plan_summaries
     }
     /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
@@ -68,37 +66,37 @@ impl ListResponsePlansOutputBuilder {
     }
     /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use when requesting the next set of items. If there are no additional items to return, the string is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResponsePlansOutput`](crate::operation::list_response_plans::ListResponsePlansOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`response_plan_summaries`](crate::operation::list_response_plans::builders::ListResponsePlansOutputBuilder::response_plan_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_response_plans::ListResponsePlansOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_response_plans::ListResponsePlansOutput {
-            response_plan_summaries: self.response_plan_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "response_plan_summaries",
-                    "response_plan_summaries was not specified but it is required when building ListResponsePlansOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_response_plans::ListResponsePlansOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_response_plans::ListResponsePlansOutput {
+                response_plan_summaries: self.response_plan_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("response_plan_summaries", "response_plan_summaries was not specified but it is required when building ListResponsePlansOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

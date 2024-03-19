@@ -3,19 +3,19 @@
 /// <p>An access policy includes permissions that allow Amazon EKS to authorize an IAM principal to work with Kubernetes objects on your cluster. The policies are managed by Amazon EKS, but they're not IAM policies. You can't view the permissions in the policies using the API. The permissions for many of the policies are similar to the Kubernetes <code>cluster-admin</code>, <code>admin</code>, <code>edit</code>, and <code>view</code> cluster roles. For more information about these cluster roles, see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles">User-facing roles</a> in the Kubernetes documentation. To view the contents of the policies, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-policies.html#access-policy-permissions">Access policy permissions</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AccessPolicy {
+pub struct AccessPolicy  {
     /// <p>The name of the access policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the access policy.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl AccessPolicy {
+impl  AccessPolicy  {
     /// <p>The name of the access policy.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the access policy.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl AccessPolicyBuilder {
     }
     /// <p>The name of the access policy.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the access policy.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl AccessPolicyBuilder {
     }
     /// <p>The ARN of the access policy.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ARN of the access policy.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl AccessPolicyBuilder {
     /// Consumes the builder and constructs a [`AccessPolicy`](crate::types::AccessPolicy).
     pub fn build(self) -> crate::types::AccessPolicy {
         crate::types::AccessPolicy {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

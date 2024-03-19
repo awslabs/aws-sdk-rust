@@ -3,25 +3,23 @@
 /// <p>Describes the database credentials for connecting to a database on an Amazon Redshift cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct RedshiftDatabaseCredentials {
+pub struct RedshiftDatabaseCredentials  {
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub username: ::std::string::String,
     /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub password: ::std::string::String,
 }
-impl RedshiftDatabaseCredentials {
+impl  RedshiftDatabaseCredentials  {
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> & str {
+        use std::ops::Deref; self.username.deref()
     }
     /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn password(&self) -> &str {
-        use std::ops::Deref;
-        self.password.deref()
+    pub fn password(&self) -> & str {
+        use std::ops::Deref; self.password.deref()
     }
 }
-impl ::std::fmt::Debug for RedshiftDatabaseCredentials {
+impl  ::std::fmt::Debug for RedshiftDatabaseCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDatabaseCredentials");
         formatter.field("username", &self.username);
@@ -52,8 +50,7 @@ impl RedshiftDatabaseCredentialsBuilder {
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl RedshiftDatabaseCredentialsBuilder {
     }
     /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl RedshiftDatabaseCredentialsBuilder {
     /// - [`username`](crate::types::builders::RedshiftDatabaseCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::RedshiftDatabaseCredentialsBuilder::password)
     pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDatabaseCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RedshiftDatabaseCredentials {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building RedshiftDatabaseCredentials",
-                )
-            })?,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building RedshiftDatabaseCredentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RedshiftDatabaseCredentials {
+                username: self.username
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("username", "username was not specified but it is required when building RedshiftDatabaseCredentials")
+                    )?
+                ,
+                password: self.password
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("password", "password was not specified but it is required when building RedshiftDatabaseCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for RedshiftDatabaseCredentialsBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for RedshiftDatabaseCredentialsBuilder {
         formatter.finish()
     }
 }
+

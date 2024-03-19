@@ -3,7 +3,7 @@
 /// <p>Contains a summary of the composite model for a specific asset.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssetCompositeModelSummary {
+pub struct AssetCompositeModelSummary  {
     /// <p>The ID of the composite model that this summary describes.</p>
     pub id: ::std::string::String,
     /// <p>An external ID to assign to the asset model.</p>
@@ -22,23 +22,21 @@ pub struct AssetCompositeModelSummary {
     /// <p>A description of the composite model that this summary describes.</p>
     pub description: ::std::string::String,
     /// <p>The path that includes all the components of the asset model for the asset.</p>
-    pub path: ::std::vec::Vec<crate::types::AssetCompositeModelPathSegment>,
+    pub path: ::std::vec::Vec::<crate::types::AssetCompositeModelPathSegment>,
 }
-impl AssetCompositeModelSummary {
+impl  AssetCompositeModelSummary  {
     /// <p>The ID of the composite model that this summary describes.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>An external ID to assign to the asset model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
-    pub fn external_id(&self) -> ::std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The name of the composite model that this summary describes.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The type of asset model.</p>
     /// <ul>
@@ -47,19 +45,16 @@ impl AssetCompositeModelSummary {
     /// <li>
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
-    pub fn r#type(&self) -> &str {
-        use std::ops::Deref;
-        self.r#type.deref()
+    pub fn r#type(&self) -> & str {
+        use std::ops::Deref; self.r#type.deref()
     }
     /// <p>A description of the composite model that this summary describes.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> & str {
+        use std::ops::Deref; self.description.deref()
     }
     /// <p>The path that includes all the components of the asset model for the asset.</p>
-    pub fn path(&self) -> &[crate::types::AssetCompositeModelPathSegment] {
-        use std::ops::Deref;
-        self.path.deref()
+    pub fn path(&self) -> & [crate::types::AssetCompositeModelPathSegment] {
+        use std::ops::Deref; self.path.deref()
     }
 }
 impl AssetCompositeModelSummary {
@@ -78,7 +73,7 @@ pub struct AssetCompositeModelSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelPathSegment>>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec::<crate::types::AssetCompositeModelPathSegment>>,
 }
 impl AssetCompositeModelSummaryBuilder {
     /// <p>The ID of the composite model that this summary describes.</p>
@@ -89,8 +84,7 @@ impl AssetCompositeModelSummaryBuilder {
     }
     /// <p>The ID of the composite model that this summary describes.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the composite model that this summary describes.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +99,7 @@ impl AssetCompositeModelSummaryBuilder {
     /// <p>An external ID to assign to the asset model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>An external ID to assign to the asset model.</p>
     /// <p>If the composite model is a derived composite model, or one nested inside a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code> and specifying the derived ID of the model or property from the created model it's a part of.</p>
@@ -121,8 +114,7 @@ impl AssetCompositeModelSummaryBuilder {
     }
     /// <p>The name of the composite model that this summary describes.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the composite model that this summary describes.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,8 +140,7 @@ impl AssetCompositeModelSummaryBuilder {
     /// <p><b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of asset model.</p>
     /// <ul>
@@ -169,8 +160,7 @@ impl AssetCompositeModelSummaryBuilder {
     }
     /// <p>A description of the composite model that this summary describes.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the composite model that this summary describes.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,17 +173,16 @@ impl AssetCompositeModelSummaryBuilder {
     /// <p>The path that includes all the components of the asset model for the asset.</p>
     pub fn path(mut self, input: crate::types::AssetCompositeModelPathSegment) -> Self {
         let mut v = self.path.unwrap_or_default();
-        v.push(input);
-        self.path = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.path = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The path that includes all the components of the asset model for the asset.</p>
-    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelPathSegment>>) -> Self {
-        self.path = input;
-        self
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AssetCompositeModelPathSegment>>) -> Self {
+        self.path = input; self
     }
     /// <p>The path that includes all the components of the asset model for the asset.</p>
-    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelPathSegment>> {
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AssetCompositeModelPathSegment>> {
         &self.path
     }
     /// Consumes the builder and constructs a [`AssetCompositeModelSummary`](crate::types::AssetCompositeModelSummary).
@@ -204,38 +193,37 @@ impl AssetCompositeModelSummaryBuilder {
     /// - [`description`](crate::types::builders::AssetCompositeModelSummaryBuilder::description)
     /// - [`path`](crate::types::builders::AssetCompositeModelSummaryBuilder::path)
     pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModelSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AssetCompositeModelSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building AssetCompositeModelSummary",
-                )
-            })?,
-            external_id: self.external_id,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building AssetCompositeModelSummary",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building AssetCompositeModelSummary",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building AssetCompositeModelSummary",
-                )
-            })?,
-            path: self.path.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "path",
-                    "path was not specified but it is required when building AssetCompositeModelSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AssetCompositeModelSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building AssetCompositeModelSummary")
+                    )?
+                ,
+                external_id: self.external_id
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building AssetCompositeModelSummary")
+                    )?
+                ,
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building AssetCompositeModelSummary")
+                    )?
+                ,
+                description: self.description
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("description", "description was not specified but it is required when building AssetCompositeModelSummary")
+                    )?
+                ,
+                path: self.path
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("path", "path was not specified but it is required when building AssetCompositeModelSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

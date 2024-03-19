@@ -3,7 +3,7 @@
 /// <p>An error describing why a schema could not be fetched.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetSchemaError {
+pub struct BatchGetSchemaError  {
     /// <p>An error name for the error.</p>
     pub name: ::std::string::String,
     /// <p>An error code for the error.</p>
@@ -11,21 +11,18 @@ pub struct BatchGetSchemaError {
     /// <p>An error message for the error.</p>
     pub message: ::std::string::String,
 }
-impl BatchGetSchemaError {
+impl  BatchGetSchemaError  {
     /// <p>An error name for the error.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>An error code for the error.</p>
-    pub fn code(&self) -> &str {
-        use std::ops::Deref;
-        self.code.deref()
+    pub fn code(&self) -> & str {
+        use std::ops::Deref; self.code.deref()
     }
     /// <p>An error message for the error.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl BatchGetSchemaError {
@@ -52,8 +49,7 @@ impl BatchGetSchemaErrorBuilder {
     }
     /// <p>An error name for the error.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An error name for the error.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl BatchGetSchemaErrorBuilder {
     }
     /// <p>An error code for the error.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>An error code for the error.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl BatchGetSchemaErrorBuilder {
     }
     /// <p>An error message for the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>An error message for the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl BatchGetSchemaErrorBuilder {
     /// - [`code`](crate::types::builders::BatchGetSchemaErrorBuilder::code)
     /// - [`message`](crate::types::builders::BatchGetSchemaErrorBuilder::message)
     pub fn build(self) -> ::std::result::Result<crate::types::BatchGetSchemaError, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::BatchGetSchemaError {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building BatchGetSchemaError",
-                )
-            })?,
-            code: self.code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "code",
-                    "code was not specified but it is required when building BatchGetSchemaError",
-                )
-            })?,
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building BatchGetSchemaError",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::BatchGetSchemaError {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building BatchGetSchemaError")
+                    )?
+                ,
+                code: self.code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("code", "code was not specified but it is required when building BatchGetSchemaError")
+                    )?
+                ,
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building BatchGetSchemaError")
+                    )?
+                ,
+            }
+        )
     }
 }
+

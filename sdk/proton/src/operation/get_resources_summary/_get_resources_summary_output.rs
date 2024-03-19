@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetResourcesSummaryOutput {
+pub struct GetResourcesSummaryOutput  {
     /// <p>Summary counts of each Proton resource type.</p>
     pub counts: ::std::option::Option<crate::types::CountsSummary>,
     _request_id: Option<String>,
 }
-impl GetResourcesSummaryOutput {
+impl  GetResourcesSummaryOutput  {
     /// <p>Summary counts of each Proton resource type.</p>
-    pub fn counts(&self) -> ::std::option::Option<&crate::types::CountsSummary> {
+    pub fn counts(&self) -> ::std::option::Option<& crate::types::CountsSummary> {
         self.counts.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetResourcesSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetResourcesSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput).
     pub fn builder() -> crate::operation::get_resources_summary::builders::GetResourcesSummaryOutputBuilder {
@@ -41,27 +41,28 @@ impl GetResourcesSummaryOutputBuilder {
     }
     /// <p>Summary counts of each Proton resource type.</p>
     pub fn set_counts(mut self, input: ::std::option::Option<crate::types::CountsSummary>) -> Self {
-        self.counts = input;
-        self
+        self.counts = input; self
     }
     /// <p>Summary counts of each Proton resource type.</p>
     pub fn get_counts(&self) -> &::std::option::Option<crate::types::CountsSummary> {
         &self.counts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetResourcesSummaryOutput`](crate::operation::get_resources_summary::GetResourcesSummaryOutput).
     pub fn build(self) -> crate::operation::get_resources_summary::GetResourcesSummaryOutput {
         crate::operation::get_resources_summary::GetResourcesSummaryOutput {
-            counts: self.counts,
+            counts: self.counts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

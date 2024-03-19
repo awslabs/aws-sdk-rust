@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeTrialOutput {
+pub struct DescribeTrialOutput  {
     /// <p>The name of the trial.</p>
     pub trial_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
@@ -25,53 +25,53 @@ pub struct DescribeTrialOutput {
     pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     _request_id: Option<String>,
 }
-impl DescribeTrialOutput {
+impl  DescribeTrialOutput  {
     /// <p>The name of the trial.</p>
-    pub fn trial_name(&self) -> ::std::option::Option<&str> {
+    pub fn trial_name(&self) -> ::std::option::Option<& str> {
         self.trial_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> ::std::option::Option<&str> {
+    pub fn trial_arn(&self) -> ::std::option::Option<& str> {
         self.trial_arn.as_deref()
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    pub fn display_name(&self) -> ::std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The name of the experiment the trial is part of.</p>
-    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::TrialSource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::TrialSource> {
         self.source.as_ref()
     }
     /// <p>When the trial was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Who created the trial.</p>
-    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the trial was last modified.</p>
-    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who last modified the trial.</p>
-    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> ::std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> ::std::option::Option<& crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrialOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeTrialOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrialOutput`](crate::operation::describe_trial::DescribeTrialOutput).
     pub fn builder() -> crate::operation::describe_trial::builders::DescribeTrialOutputBuilder {
@@ -103,8 +103,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>The name of the trial.</p>
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
     }
     /// <p>The name of the trial.</p>
     pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +116,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.trial_arn = input;
-        self
+        self.trial_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn get_trial_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +129,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +142,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>The name of the experiment the trial is part of.</p>
     pub fn set_experiment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// <p>The name of the experiment the trial is part of.</p>
     pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +155,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::TrialSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source and, optionally, the job type.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::TrialSource> {
@@ -173,8 +168,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>When the trial was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>When the trial was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -187,8 +181,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>Who created the trial.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>Who created the trial.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -201,8 +194,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>When the trial was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>When the trial was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -215,8 +207,7 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>Who last modified the trial.</p>
     pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
-        self.last_modified_by = input;
-        self
+        self.last_modified_by = input; self
     }
     /// <p>Who last modified the trial.</p>
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
@@ -229,36 +220,46 @@ impl DescribeTrialOutputBuilder {
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(mut self, input: ::std::option::Option<crate::types::MetadataProperties>) -> Self {
-        self.metadata_properties = input;
-        self
+        self.metadata_properties = input; self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn get_metadata_properties(&self) -> &::std::option::Option<crate::types::MetadataProperties> {
         &self.metadata_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeTrialOutput`](crate::operation::describe_trial::DescribeTrialOutput).
     pub fn build(self) -> crate::operation::describe_trial::DescribeTrialOutput {
         crate::operation::describe_trial::DescribeTrialOutput {
-            trial_name: self.trial_name,
-            trial_arn: self.trial_arn,
-            display_name: self.display_name,
-            experiment_name: self.experiment_name,
-            source: self.source,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            metadata_properties: self.metadata_properties,
+            trial_name: self.trial_name
+            ,
+            trial_arn: self.trial_arn
+            ,
+            display_name: self.display_name
+            ,
+            experiment_name: self.experiment_name
+            ,
+            source: self.source
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            metadata_properties: self.metadata_properties
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

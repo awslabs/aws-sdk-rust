@@ -4,13 +4,13 @@
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TranscriptEvent {
+pub struct TranscriptEvent  {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub transcript: ::std::option::Option<crate::types::Transcript>,
 }
-impl TranscriptEvent {
+impl  TranscriptEvent  {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn transcript(&self) -> ::std::option::Option<&crate::types::Transcript> {
+    pub fn transcript(&self) -> ::std::option::Option<& crate::types::Transcript> {
         self.transcript.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl TranscriptEventBuilder {
     }
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn set_transcript(mut self, input: ::std::option::Option<crate::types::Transcript>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn get_transcript(&self) -> &::std::option::Option<crate::types::Transcript> {
@@ -44,6 +43,10 @@ impl TranscriptEventBuilder {
     }
     /// Consumes the builder and constructs a [`TranscriptEvent`](crate::types::TranscriptEvent).
     pub fn build(self) -> crate::types::TranscriptEvent {
-        crate::types::TranscriptEvent { transcript: self.transcript }
+        crate::types::TranscriptEvent {
+            transcript: self.transcript
+            ,
+        }
     }
 }
+

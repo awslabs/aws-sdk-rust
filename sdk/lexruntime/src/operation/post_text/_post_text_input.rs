@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct PostTextInput {
+pub struct PostTextInput  {
     /// <p>The name of the Amazon Lex bot.</p>
     pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the Amazon Lex bot.</p>
@@ -22,24 +22,24 @@ pub struct PostTextInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
     pub input_text: ::std::option::Option<::std::string::String>,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
 }
-impl PostTextInput {
+impl  PostTextInput  {
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> ::std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The alias of the Amazon Lex bot.</p>
-    pub fn bot_alias(&self) -> ::std::option::Option<&str> {
+    pub fn bot_alias(&self) -> ::std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
@@ -54,33 +54,34 @@ impl PostTextInput {
     /// <li>
     /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn session_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn request_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn request_attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.request_attributes.as_ref()
     }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
-    pub fn input_text(&self) -> ::std::option::Option<&str> {
+    pub fn input_text(&self) -> ::std::option::Option<& str> {
         self.input_text.as_deref()
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_contexts.is_none()`.
-    pub fn active_contexts(&self) -> &[crate::types::ActiveContext] {
-        self.active_contexts.as_deref().unwrap_or_default()
+    pub fn active_contexts(&self) -> & [crate::types::ActiveContext] {
+        self.active_contexts.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for PostTextInput {
+impl  ::std::fmt::Debug for PostTextInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostTextInput");
         formatter.field("bot_name", &self.bot_name);
@@ -107,10 +108,10 @@ pub struct PostTextInputBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) session_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) request_attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) input_text: ::std::option::Option<::std::string::String>,
-    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>,
 }
 impl PostTextInputBuilder {
     /// <p>The name of the Amazon Lex bot.</p>
@@ -121,8 +122,7 @@ impl PostTextInputBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -136,8 +136,7 @@ impl PostTextInputBuilder {
     }
     /// <p>The alias of the Amazon Lex bot.</p>
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>The alias of the Amazon Lex bot.</p>
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +172,7 @@ impl PostTextInputBuilder {
     /// <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p></li>
     /// </ul>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
@@ -197,28 +195,20 @@ impl PostTextInputBuilder {
     ///
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn session_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn session_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.session_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.session_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn set_session_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.session_attributes = input;
-        self
+    pub fn set_session_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.session_attributes = input; self
     }
     /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
     /// Adds a key-value pair to `request_attributes`.
@@ -228,30 +218,22 @@ impl PostTextInputBuilder {
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn request_attributes(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn request_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.request_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.request_attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.request_attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn set_request_attributes(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.request_attributes = input;
-        self
+    pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.request_attributes = input; self
     }
     /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_request_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.request_attributes
     }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
@@ -262,8 +244,7 @@ impl PostTextInputBuilder {
     }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
     pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.input_text = input;
-        self
+        self.input_text = input; self
     }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
     pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -277,32 +258,40 @@ impl PostTextInputBuilder {
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
-        v.push(input);
-        self.active_contexts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_contexts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>) -> Self {
-        self.active_contexts = input;
-        self
+    pub fn set_active_contexts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>>) -> Self {
+        self.active_contexts = input; self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+    pub fn get_active_contexts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActiveContext>> {
         &self.active_contexts
     }
     /// Consumes the builder and constructs a [`PostTextInput`](crate::operation::post_text::PostTextInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::post_text::PostTextInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::post_text::PostTextInput {
-            bot_name: self.bot_name,
-            bot_alias: self.bot_alias,
-            user_id: self.user_id,
-            session_attributes: self.session_attributes,
-            request_attributes: self.request_attributes,
-            input_text: self.input_text,
-            active_contexts: self.active_contexts,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::post_text::PostTextInput {
+                bot_name: self.bot_name
+                ,
+                bot_alias: self.bot_alias
+                ,
+                user_id: self.user_id
+                ,
+                session_attributes: self.session_attributes
+                ,
+                request_attributes: self.request_attributes
+                ,
+                input_text: self.input_text
+                ,
+                active_contexts: self.active_contexts
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for PostTextInputBuilder {
@@ -318,3 +307,4 @@ impl ::std::fmt::Debug for PostTextInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePendingAggregationRequestInput {
+pub struct DeletePendingAggregationRequestInput  {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub requester_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The region requesting to aggregate data.</p>
     pub requester_aws_region: ::std::option::Option<::std::string::String>,
 }
-impl DeletePendingAggregationRequestInput {
+impl  DeletePendingAggregationRequestInput  {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn requester_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn requester_account_id(&self) -> ::std::option::Option<& str> {
         self.requester_account_id.as_deref()
     }
     /// <p>The region requesting to aggregate data.</p>
-    pub fn requester_aws_region(&self) -> ::std::option::Option<&str> {
+    pub fn requester_aws_region(&self) -> ::std::option::Option<& str> {
         self.requester_aws_region.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePendingAggregationRequestInputBuilder {
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub fn set_requester_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester_account_id = input;
-        self
+        self.requester_account_id = input; self
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     pub fn get_requester_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeletePendingAggregationRequestInputBuilder {
     }
     /// <p>The region requesting to aggregate data.</p>
     pub fn set_requester_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.requester_aws_region = input;
-        self
+        self.requester_aws_region = input; self
     }
     /// <p>The region requesting to aggregate data.</p>
     pub fn get_requester_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.requester_aws_region
     }
     /// Consumes the builder and constructs a [`DeletePendingAggregationRequestInput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput {
-                requester_account_id: self.requester_account_id,
-                requester_aws_region: self.requester_aws_region,
-            },
+                requester_account_id: self.requester_account_id
+                ,
+                requester_aws_region: self.requester_aws_region
+                ,
+            }
         )
     }
 }
+

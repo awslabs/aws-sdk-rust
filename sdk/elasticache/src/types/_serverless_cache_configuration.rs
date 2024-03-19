@@ -3,7 +3,7 @@
 /// <p>The configuration settings for a specific serverless cache.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ServerlessCacheConfiguration {
+pub struct ServerlessCacheConfiguration  {
     /// <p>The identifier of a serverless cache.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>The engine that the serverless cache is configured with.</p>
@@ -11,17 +11,17 @@ pub struct ServerlessCacheConfiguration {
     /// <p>The engine version number that the serverless cache is configured with.</p>
     pub major_engine_version: ::std::option::Option<::std::string::String>,
 }
-impl ServerlessCacheConfiguration {
+impl  ServerlessCacheConfiguration  {
     /// <p>The identifier of a serverless cache.</p>
-    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<& str> {
         self.serverless_cache_name.as_deref()
     }
     /// <p>The engine that the serverless cache is configured with.</p>
-    pub fn engine(&self) -> ::std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The engine version number that the serverless cache is configured with.</p>
-    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl ServerlessCacheConfigurationBuilder {
     }
     /// <p>The identifier of a serverless cache.</p>
     pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serverless_cache_name = input;
-        self
+        self.serverless_cache_name = input; self
     }
     /// <p>The identifier of a serverless cache.</p>
     pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ServerlessCacheConfigurationBuilder {
     }
     /// <p>The engine that the serverless cache is configured with.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The engine that the serverless cache is configured with.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl ServerlessCacheConfigurationBuilder {
     }
     /// <p>The engine version number that the serverless cache is configured with.</p>
     pub fn set_major_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.major_engine_version = input;
-        self
+        self.major_engine_version = input; self
     }
     /// <p>The engine version number that the serverless cache is configured with.</p>
     pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl ServerlessCacheConfigurationBuilder {
     /// Consumes the builder and constructs a [`ServerlessCacheConfiguration`](crate::types::ServerlessCacheConfiguration).
     pub fn build(self) -> crate::types::ServerlessCacheConfiguration {
         crate::types::ServerlessCacheConfiguration {
-            serverless_cache_name: self.serverless_cache_name,
-            engine: self.engine,
-            major_engine_version: self.major_engine_version,
+            serverless_cache_name: self.serverless_cache_name
+            ,
+            engine: self.engine
+            ,
+            major_engine_version: self.major_engine_version
+            ,
         }
     }
 }
+

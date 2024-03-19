@@ -3,13 +3,13 @@
 /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IncrementalRunConfig {
+pub struct IncrementalRunConfig  {
     /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
     pub incremental_run_type: ::std::option::Option<crate::types::IncrementalRunType>,
 }
-impl IncrementalRunConfig {
+impl  IncrementalRunConfig  {
     /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
-    pub fn incremental_run_type(&self) -> ::std::option::Option<&crate::types::IncrementalRunType> {
+    pub fn incremental_run_type(&self) -> ::std::option::Option<& crate::types::IncrementalRunType> {
         self.incremental_run_type.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl IncrementalRunConfigBuilder {
     }
     /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
     pub fn set_incremental_run_type(mut self, input: ::std::option::Option<crate::types::IncrementalRunType>) -> Self {
-        self.incremental_run_type = input;
-        self
+        self.incremental_run_type = input; self
     }
     /// <p>The type of incremental run. It takes only one value: <code>IMMEDIATE</code>.</p>
     pub fn get_incremental_run_type(&self) -> &::std::option::Option<crate::types::IncrementalRunType> {
@@ -44,7 +43,9 @@ impl IncrementalRunConfigBuilder {
     /// Consumes the builder and constructs a [`IncrementalRunConfig`](crate::types::IncrementalRunConfig).
     pub fn build(self) -> crate::types::IncrementalRunConfig {
         crate::types::IncrementalRunConfig {
-            incremental_run_type: self.incremental_run_type,
+            incremental_run_type: self.incremental_run_type
+            ,
         }
     }
 }
+

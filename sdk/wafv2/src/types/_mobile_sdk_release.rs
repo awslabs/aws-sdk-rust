@@ -4,7 +4,7 @@
 /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MobileSdkRelease {
+pub struct MobileSdkRelease  {
     /// <p>The release version.</p>
     pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the release.</p>
@@ -12,26 +12,27 @@ pub struct MobileSdkRelease {
     /// <p>Notes describing the release.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the release.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl MobileSdkRelease {
+impl  MobileSdkRelease  {
     /// <p>The release version.</p>
-    pub fn release_version(&self) -> ::std::option::Option<&str> {
+    pub fn release_version(&self) -> ::std::option::Option<& str> {
         self.release_version.as_deref()
     }
     /// <p>The timestamp of the release.</p>
-    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Notes describing the release.</p>
-    pub fn release_notes(&self) -> ::std::option::Option<&str> {
+    pub fn release_notes(&self) -> ::std::option::Option<& str> {
         self.release_notes.as_deref()
     }
     /// <p>Tags that are associated with the release.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl MobileSdkRelease {
@@ -48,7 +49,7 @@ pub struct MobileSdkReleaseBuilder {
     pub(crate) release_version: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl MobileSdkReleaseBuilder {
     /// <p>The release version.</p>
@@ -58,8 +59,7 @@ impl MobileSdkReleaseBuilder {
     }
     /// <p>The release version.</p>
     pub fn set_release_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_version = input;
-        self
+        self.release_version = input; self
     }
     /// <p>The release version.</p>
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -72,8 +72,7 @@ impl MobileSdkReleaseBuilder {
     }
     /// <p>The timestamp of the release.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The timestamp of the release.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -86,8 +85,7 @@ impl MobileSdkReleaseBuilder {
     }
     /// <p>Notes describing the release.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.release_notes = input;
-        self
+        self.release_notes = input; self
     }
     /// <p>Notes describing the release.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,26 +98,30 @@ impl MobileSdkReleaseBuilder {
     /// <p>Tags that are associated with the release.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags that are associated with the release.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Tags that are associated with the release.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`MobileSdkRelease`](crate::types::MobileSdkRelease).
     pub fn build(self) -> crate::types::MobileSdkRelease {
         crate::types::MobileSdkRelease {
-            release_version: self.release_version,
-            timestamp: self.timestamp,
-            release_notes: self.release_notes,
-            tags: self.tags,
+            release_version: self.release_version
+            ,
+            timestamp: self.timestamp
+            ,
+            release_notes: self.release_notes
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

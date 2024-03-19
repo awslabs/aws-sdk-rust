@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateEnvironmentProfileInput {
+pub struct UpdateEnvironmentProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which an environment profile is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment profile that is to be updated.</p>
@@ -12,45 +12,46 @@ pub struct UpdateEnvironmentProfileInput {
     /// <p>The description to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which a specified environment profile is to be updated.</p>
     pub aws_account_region: ::std::option::Option<::std::string::String>,
 }
-impl UpdateEnvironmentProfileInput {
+impl  UpdateEnvironmentProfileInput  {
     /// <p>The identifier of the Amazon DataZone domain in which an environment profile is to be updated.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The identifier of the environment profile that is to be updated.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
-    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
-        self.user_parameters.as_deref().unwrap_or_default()
+    pub fn user_parameters(&self) -> & [crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
-    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which a specified environment profile is to be updated.</p>
-    pub fn aws_account_region(&self) -> ::std::option::Option<&str> {
+    pub fn aws_account_region(&self) -> ::std::option::Option<& str> {
         self.aws_account_region.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateEnvironmentProfileInput {
+impl  ::std::fmt::Debug for UpdateEnvironmentProfileInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentProfileInput");
         formatter.field("domain_identifier", &self.domain_identifier);
@@ -78,7 +79,7 @@ pub struct UpdateEnvironmentProfileInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_region: ::std::option::Option<::std::string::String>,
 }
@@ -91,8 +92,7 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon DataZone domain in which an environment profile is to be updated.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The identifier of the Amazon DataZone domain in which an environment profile is to be updated.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The identifier of the environment profile that is to be updated.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The identifier of the environment profile that is to be updated.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +132,7 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -148,17 +145,16 @@ impl UpdateEnvironmentProfileInputBuilder {
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
     pub fn user_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
         let mut v = self.user_parameters.unwrap_or_default();
-        v.push(input);
-        self.user_parameters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_parameters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>) -> Self {
-        self.user_parameters = input;
-        self
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>>) -> Self {
+        self.user_parameters = input; self
     }
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code> action.</p>
-    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EnvironmentParameter>> {
         &self.user_parameters
     }
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
@@ -168,8 +164,7 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Services account in which a specified environment profile is to be udpated.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,29 +177,32 @@ impl UpdateEnvironmentProfileInputBuilder {
     }
     /// <p>The Amazon Web Services Region in which a specified environment profile is to be updated.</p>
     pub fn set_aws_account_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_account_region = input;
-        self
+        self.aws_account_region = input; self
     }
     /// <p>The Amazon Web Services Region in which a specified environment profile is to be updated.</p>
     pub fn get_aws_account_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_region
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentProfileInput`](crate::operation::update_environment_profile::UpdateEnvironmentProfileInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_environment_profile::UpdateEnvironmentProfileInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_environment_profile::UpdateEnvironmentProfileInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-            name: self.name,
-            description: self.description,
-            user_parameters: self.user_parameters,
-            aws_account_id: self.aws_account_id,
-            aws_account_region: self.aws_account_region,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_environment_profile::UpdateEnvironmentProfileInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_environment_profile::UpdateEnvironmentProfileInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                user_parameters: self.user_parameters
+                ,
+                aws_account_id: self.aws_account_id
+                ,
+                aws_account_region: self.aws_account_region
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentProfileInputBuilder {
@@ -220,3 +218,4 @@ impl ::std::fmt::Debug for UpdateEnvironmentProfileInputBuilder {
         formatter.finish()
     }
 }
+

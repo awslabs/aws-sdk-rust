@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetCompatibleKafkaVersionsOutput {
+pub struct GetCompatibleKafkaVersionsOutput  {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    pub compatible_kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>>,
+    pub compatible_kafka_versions: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleKafkaVersion>>,
     _request_id: Option<String>,
 }
-impl GetCompatibleKafkaVersionsOutput {
+impl  GetCompatibleKafkaVersionsOutput  {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_kafka_versions.is_none()`.
-    pub fn compatible_kafka_versions(&self) -> &[crate::types::CompatibleKafkaVersion] {
-        self.compatible_kafka_versions.as_deref().unwrap_or_default()
+    pub fn compatible_kafka_versions(&self) -> & [crate::types::CompatibleKafkaVersion] {
+        self.compatible_kafka_versions.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetCompatibleKafkaVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetCompatibleKafkaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleKafkaVersionsOutput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput).
     pub fn builder() -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsOutputBuilder {
@@ -31,7 +32,7 @@ impl GetCompatibleKafkaVersionsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetCompatibleKafkaVersionsOutputBuilder {
-    pub(crate) compatible_kafka_versions: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>>,
+    pub(crate) compatible_kafka_versions: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleKafkaVersion>>,
     _request_id: Option<String>,
 }
 impl GetCompatibleKafkaVersionsOutputBuilder {
@@ -42,33 +43,34 @@ impl GetCompatibleKafkaVersionsOutputBuilder {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
     pub fn compatible_kafka_versions(mut self, input: crate::types::CompatibleKafkaVersion) -> Self {
         let mut v = self.compatible_kafka_versions.unwrap_or_default();
-        v.push(input);
-        self.compatible_kafka_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.compatible_kafka_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    pub fn set_compatible_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>>) -> Self {
-        self.compatible_kafka_versions = input;
-        self
+    pub fn set_compatible_kafka_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CompatibleKafkaVersion>>) -> Self {
+        self.compatible_kafka_versions = input; self
     }
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    pub fn get_compatible_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>> {
+    pub fn get_compatible_kafka_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CompatibleKafkaVersion>> {
         &self.compatible_kafka_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetCompatibleKafkaVersionsOutput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput).
     pub fn build(self) -> crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput {
         crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput {
-            compatible_kafka_versions: self.compatible_kafka_versions,
+            compatible_kafka_versions: self.compatible_kafka_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

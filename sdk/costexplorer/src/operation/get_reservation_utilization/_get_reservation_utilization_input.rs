@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetReservationUtilizationInput {
+pub struct GetReservationUtilizationInput  {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>,
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub granularity: ::std::option::Option<crate::types::Granularity>,
@@ -82,20 +82,21 @@ pub struct GetReservationUtilizationInput {
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetReservationUtilizationInput {
+impl  GetReservationUtilizationInput  {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
-    pub fn group_by(&self) -> &[crate::types::GroupDefinition] {
-        self.group_by.as_deref().unwrap_or_default()
+    pub fn group_by(&self) -> & [crate::types::GroupDefinition] {
+        self.group_by.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-    pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
+    pub fn granularity(&self) -> ::std::option::Option<& crate::types::Granularity> {
         self.granularity.as_ref()
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -124,7 +125,7 @@ impl GetReservationUtilizationInput {
     /// <p>TENANCY</p></li>
     /// </ul>
     /// <p><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Expression> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Expression> {
         self.filter.as_ref()
     }
     /// <p>The value that you want to sort the data by.</p>
@@ -166,11 +167,11 @@ impl GetReservationUtilizationInput {
     /// <p><code>UnrealizedSavings</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortDefinition> {
+    pub fn sort_by(&self) -> ::std::option::Option<& crate::types::SortDefinition> {
         self.sort_by.as_ref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -190,7 +191,7 @@ impl GetReservationUtilizationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationInputBuilder {
     pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
-    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>,
     pub(crate) granularity: ::std::option::Option<crate::types::Granularity>,
     pub(crate) filter: ::std::option::Option<crate::types::Expression>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortDefinition>,
@@ -206,8 +207,7 @@ impl GetReservationUtilizationInputBuilder {
     }
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn set_time_period(mut self, input: ::std::option::Option<crate::types::DateInterval>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
@@ -220,17 +220,16 @@ impl GetReservationUtilizationInputBuilder {
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
     pub fn group_by(mut self, input: crate::types::GroupDefinition) -> Self {
         let mut v = self.group_by.unwrap_or_default();
-        v.push(input);
-        self.group_by = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.group_by = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
-        self.group_by = input;
-        self
+    pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>>) -> Self {
+        self.group_by = input; self
     }
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
-    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+    pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GroupDefinition>> {
         &self.group_by
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
@@ -242,8 +241,7 @@ impl GetReservationUtilizationInputBuilder {
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
-        self.granularity = input;
-        self
+        self.granularity = input; self
     }
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -307,8 +305,7 @@ impl GetReservationUtilizationInputBuilder {
     /// </ul>
     /// <p><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
@@ -422,8 +419,7 @@ impl GetReservationUtilizationInputBuilder {
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -474,8 +470,7 @@ impl GetReservationUtilizationInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -488,28 +483,32 @@ impl GetReservationUtilizationInputBuilder {
     }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetReservationUtilizationInput`](crate::operation::get_reservation_utilization::GetReservationUtilizationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_reservation_utilization::GetReservationUtilizationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_reservation_utilization::GetReservationUtilizationInput {
-            time_period: self.time_period,
-            group_by: self.group_by,
-            granularity: self.granularity,
-            filter: self.filter,
-            sort_by: self.sort_by,
-            next_page_token: self.next_page_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_reservation_utilization::GetReservationUtilizationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_reservation_utilization::GetReservationUtilizationInput {
+                time_period: self.time_period
+                ,
+                group_by: self.group_by
+                ,
+                granularity: self.granularity
+                ,
+                filter: self.filter
+                ,
+                sort_by: self.sort_by
+                ,
+                next_page_token: self.next_page_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

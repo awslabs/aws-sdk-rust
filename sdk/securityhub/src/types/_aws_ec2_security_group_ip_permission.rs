@@ -3,7 +3,7 @@
 /// <p>An IP permission for an EC2 security group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsEc2SecurityGroupIpPermission {
+pub struct AwsEc2SecurityGroupIpPermission  {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
@@ -17,21 +17,21 @@ pub struct AwsEc2SecurityGroupIpPermission {
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
     pub to_port: ::std::option::Option<i32>,
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
+    pub user_id_group_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
     /// <p>The IPv4 ranges.</p>
-    pub ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpRange>>,
+    pub ip_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpRange>>,
     /// <p>The IPv6 ranges.</p>
-    pub ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>>,
+    pub ipv6_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpv6Range>>,
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>>,
+    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupPrefixListId>>,
 }
-impl AwsEc2SecurityGroupIpPermission {
+impl  AwsEc2SecurityGroupIpPermission  {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
     /// <p>When authorizing security group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless of any port range you specify.</p>
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
     /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
-    pub fn ip_protocol(&self) -> ::std::option::Option<&str> {
+    pub fn ip_protocol(&self) -> ::std::option::Option<& str> {
         self.ip_protocol.as_deref()
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
@@ -45,28 +45,32 @@ impl AwsEc2SecurityGroupIpPermission {
         self.to_port
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_id_group_pairs.is_none()`.
-    pub fn user_id_group_pairs(&self) -> &[crate::types::AwsEc2SecurityGroupUserIdGroupPair] {
-        self.user_id_group_pairs.as_deref().unwrap_or_default()
+    pub fn user_id_group_pairs(&self) -> & [crate::types::AwsEc2SecurityGroupUserIdGroupPair] {
+        self.user_id_group_pairs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IPv4 ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_ranges.is_none()`.
-    pub fn ip_ranges(&self) -> &[crate::types::AwsEc2SecurityGroupIpRange] {
-        self.ip_ranges.as_deref().unwrap_or_default()
+    pub fn ip_ranges(&self) -> & [crate::types::AwsEc2SecurityGroupIpRange] {
+        self.ip_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The IPv6 ranges.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_ranges.is_none()`.
-    pub fn ipv6_ranges(&self) -> &[crate::types::AwsEc2SecurityGroupIpv6Range] {
-        self.ipv6_ranges.as_deref().unwrap_or_default()
+    pub fn ipv6_ranges(&self) -> & [crate::types::AwsEc2SecurityGroupIpv6Range] {
+        self.ipv6_ranges.as_deref()
+        .unwrap_or_default()
     }
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefix_list_ids.is_none()`.
-    pub fn prefix_list_ids(&self) -> &[crate::types::AwsEc2SecurityGroupPrefixListId] {
-        self.prefix_list_ids.as_deref().unwrap_or_default()
+    pub fn prefix_list_ids(&self) -> & [crate::types::AwsEc2SecurityGroupPrefixListId] {
+        self.prefix_list_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AwsEc2SecurityGroupIpPermission {
@@ -83,10 +87,10 @@ pub struct AwsEc2SecurityGroupIpPermissionBuilder {
     pub(crate) ip_protocol: ::std::option::Option<::std::string::String>,
     pub(crate) from_port: ::std::option::Option<i32>,
     pub(crate) to_port: ::std::option::Option<i32>,
-    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
-    pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpRange>>,
-    pub(crate) ipv6_ranges: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>>,
-    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>>,
+    pub(crate) user_id_group_pairs: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
+    pub(crate) ip_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpRange>>,
+    pub(crate) ipv6_ranges: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpv6Range>>,
+    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupPrefixListId>>,
 }
 impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
@@ -104,8 +108,7 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
     /// <p>For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic for all types and codes is allowed.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_protocol = input;
-        self
+        self.ip_protocol = input; self
     }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>) or number.</p>
     /// <p>[VPC only] Use <code>-1</code> to specify all protocols.</p>
@@ -124,8 +127,7 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
     /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.</p>
     /// <p>A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
@@ -141,8 +143,7 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.</p>
     /// <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
@@ -156,20 +157,16 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
     pub fn user_id_group_pairs(mut self, input: crate::types::AwsEc2SecurityGroupUserIdGroupPair) -> Self {
         let mut v = self.user_id_group_pairs.unwrap_or_default();
-        v.push(input);
-        self.user_id_group_pairs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.user_id_group_pairs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn set_user_id_group_pairs(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>,
-    ) -> Self {
-        self.user_id_group_pairs = input;
-        self
+    pub fn set_user_id_group_pairs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupUserIdGroupPair>>) -> Self {
+        self.user_id_group_pairs = input; self
     }
     /// <p>The security group and Amazon Web Services account ID pairs.</p>
-    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupUserIdGroupPair>> {
+    pub fn get_user_id_group_pairs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupUserIdGroupPair>> {
         &self.user_id_group_pairs
     }
     /// Appends an item to `ip_ranges`.
@@ -179,17 +176,16 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The IPv4 ranges.</p>
     pub fn ip_ranges(mut self, input: crate::types::AwsEc2SecurityGroupIpRange) -> Self {
         let mut v = self.ip_ranges.unwrap_or_default();
-        v.push(input);
-        self.ip_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv4 ranges.</p>
-    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpRange>>) -> Self {
-        self.ip_ranges = input;
-        self
+    pub fn set_ip_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpRange>>) -> Self {
+        self.ip_ranges = input; self
     }
     /// <p>The IPv4 ranges.</p>
-    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpRange>> {
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpRange>> {
         &self.ip_ranges
     }
     /// Appends an item to `ipv6_ranges`.
@@ -199,17 +195,16 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>The IPv6 ranges.</p>
     pub fn ipv6_ranges(mut self, input: crate::types::AwsEc2SecurityGroupIpv6Range) -> Self {
         let mut v = self.ipv6_ranges.unwrap_or_default();
-        v.push(input);
-        self.ipv6_ranges = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_ranges = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn set_ipv6_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>>) -> Self {
-        self.ipv6_ranges = input;
-        self
+    pub fn set_ipv6_ranges(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpv6Range>>) -> Self {
+        self.ipv6_ranges = input; self
     }
     /// <p>The IPv6 ranges.</p>
-    pub fn get_ipv6_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>> {
+    pub fn get_ipv6_ranges(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupIpv6Range>> {
         &self.ipv6_ranges
     }
     /// Appends an item to `prefix_list_ids`.
@@ -219,29 +214,36 @@ impl AwsEc2SecurityGroupIpPermissionBuilder {
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
     pub fn prefix_list_ids(mut self, input: crate::types::AwsEc2SecurityGroupPrefixListId) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
-        v.push(input);
-        self.prefix_list_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.prefix_list_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>>) -> Self {
-        self.prefix_list_ids = input;
-        self
+    pub fn set_prefix_list_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupPrefixListId>>) -> Self {
+        self.prefix_list_ids = input; self
     }
     /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services service to access through a VPC endpoint from instances associated with the security group.</p>
-    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>> {
+    pub fn get_prefix_list_ids(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AwsEc2SecurityGroupPrefixListId>> {
         &self.prefix_list_ids
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpPermission`](crate::types::AwsEc2SecurityGroupIpPermission).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupIpPermission {
         crate::types::AwsEc2SecurityGroupIpPermission {
-            ip_protocol: self.ip_protocol,
-            from_port: self.from_port,
-            to_port: self.to_port,
-            user_id_group_pairs: self.user_id_group_pairs,
-            ip_ranges: self.ip_ranges,
-            ipv6_ranges: self.ipv6_ranges,
-            prefix_list_ids: self.prefix_list_ids,
+            ip_protocol: self.ip_protocol
+            ,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
+            user_id_group_pairs: self.user_id_group_pairs
+            ,
+            ip_ranges: self.ip_ranges
+            ,
+            ipv6_ranges: self.ipv6_ranges
+            ,
+            prefix_list_ids: self.prefix_list_ids
+            ,
         }
     }
 }
+

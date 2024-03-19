@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListContactsOutput {
+pub struct ListContactsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    pub contacts: ::std::option::Option<::std::vec::Vec::<crate::types::Contact>>,
     _request_id: Option<String>,
 }
-impl ListContactsOutput {
+impl  ListContactsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
-    pub fn contacts(&self) -> &[crate::types::Contact] {
-        self.contacts.as_deref().unwrap_or_default()
+    pub fn contacts(&self) -> & [crate::types::Contact] {
+        self.contacts.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ListContactsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListContactsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput).
     pub fn builder() -> crate::operation::list_contacts::builders::ListContactsOutputBuilder {
@@ -38,7 +39,7 @@ impl ListContactsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListContactsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
+    pub(crate) contacts: ::std::option::Option<::std::vec::Vec::<crate::types::Contact>>,
     _request_id: Option<String>,
 }
 impl ListContactsOutputBuilder {
@@ -49,8 +50,7 @@ impl ListContactsOutputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,34 +63,36 @@ impl ListContactsOutputBuilder {
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
     pub fn contacts(mut self, input: crate::types::Contact) -> Self {
         let mut v = self.contacts.unwrap_or_default();
-        v.push(input);
-        self.contacts = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.contacts = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>) -> Self {
-        self.contacts = input;
-        self
+    pub fn set_contacts(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Contact>>) -> Self {
+        self.contacts = input; self
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
+    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Contact>> {
         &self.contacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListContactsOutput`](crate::operation::list_contacts::ListContactsOutput).
     pub fn build(self) -> crate::operation::list_contacts::ListContactsOutput {
         crate::operation::list_contacts::ListContactsOutput {
-            next_token: self.next_token,
-            contacts: self.contacts,
+            next_token: self.next_token
+            ,
+            contacts: self.contacts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

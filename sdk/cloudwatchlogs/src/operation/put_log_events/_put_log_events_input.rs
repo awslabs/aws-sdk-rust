@@ -2,37 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutLogEventsInput {
+pub struct PutLogEventsInput  {
     /// <p>The name of the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log stream.</p>
     pub log_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The log events.</p>
-    pub log_events: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>,
+    pub log_events: ::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>>,
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub sequence_token: ::std::option::Option<::std::string::String>,
 }
-impl PutLogEventsInput {
+impl  PutLogEventsInput  {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> ::std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The log events.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_events.is_none()`.
-    pub fn log_events(&self) -> &[crate::types::InputLogEvent] {
-        self.log_events.as_deref().unwrap_or_default()
+    pub fn log_events(&self) -> & [crate::types::InputLogEvent] {
+        self.log_events.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
-    pub fn sequence_token(&self) -> ::std::option::Option<&str> {
+    pub fn sequence_token(&self) -> ::std::option::Option<& str> {
         self.sequence_token.as_deref()
     }
 }
@@ -49,7 +50,7 @@ impl PutLogEventsInput {
 pub struct PutLogEventsInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
-    pub(crate) log_events: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>,
+    pub(crate) log_events: ::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>>,
     pub(crate) sequence_token: ::std::option::Option<::std::string::String>,
 }
 impl PutLogEventsInputBuilder {
@@ -61,8 +62,7 @@ impl PutLogEventsInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The name of the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +76,7 @@ impl PutLogEventsInputBuilder {
     }
     /// <p>The name of the log stream.</p>
     pub fn set_log_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_stream_name = input;
-        self
+        self.log_stream_name = input; self
     }
     /// <p>The name of the log stream.</p>
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,17 +89,16 @@ impl PutLogEventsInputBuilder {
     /// <p>The log events.</p>
     pub fn log_events(mut self, input: crate::types::InputLogEvent) -> Self {
         let mut v = self.log_events.unwrap_or_default();
-        v.push(input);
-        self.log_events = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.log_events = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The log events.</p>
-    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>>) -> Self {
-        self.log_events = input;
-        self
+    pub fn set_log_events(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>>) -> Self {
+        self.log_events = input; self
     }
     /// <p>The log events.</p>
-    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
+    pub fn get_log_events(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InputLogEvent>> {
         &self.log_events
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
@@ -114,8 +112,7 @@ impl PutLogEventsInputBuilder {
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
     pub fn set_sequence_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sequence_token = input;
-        self
+        self.sequence_token = input; self
     }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p><important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
@@ -124,14 +121,19 @@ impl PutLogEventsInputBuilder {
         &self.sequence_token
     }
     /// Consumes the builder and constructs a [`PutLogEventsInput`](crate::operation::put_log_events::PutLogEventsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_log_events::PutLogEventsInput {
-            log_group_name: self.log_group_name,
-            log_stream_name: self.log_stream_name,
-            log_events: self.log_events,
-            sequence_token: self.sequence_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_log_events::PutLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_log_events::PutLogEventsInput {
+                log_group_name: self.log_group_name
+                ,
+                log_stream_name: self.log_stream_name
+                ,
+                log_events: self.log_events
+                ,
+                sequence_token: self.sequence_token
+                ,
+            }
+        )
     }
 }
+

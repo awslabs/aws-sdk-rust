@@ -3,7 +3,7 @@
 /// <p>The health check configuration of a target group. Health check configurations aren't used for <code>LAMBDA</code> and <code>ALB</code> target groups.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HealthCheckConfig {
+pub struct HealthCheckConfig  {
     /// <p>Indicates whether health checking is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
@@ -25,17 +25,17 @@ pub struct HealthCheckConfig {
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
     pub matcher: ::std::option::Option<crate::types::Matcher>,
 }
-impl HealthCheckConfig {
+impl  HealthCheckConfig  {
     /// <p>Indicates whether health checking is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
-    pub fn protocol(&self) -> ::std::option::Option<&crate::types::TargetGroupProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<& crate::types::TargetGroupProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
-    pub fn protocol_version(&self) -> ::std::option::Option<&crate::types::HealthCheckProtocolVersion> {
+    pub fn protocol_version(&self) -> ::std::option::Option<& crate::types::HealthCheckProtocolVersion> {
         self.protocol_version.as_ref()
     }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
@@ -43,7 +43,7 @@ impl HealthCheckConfig {
         self.port
     }
     /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
-    pub fn path(&self) -> ::std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
@@ -63,7 +63,7 @@ impl HealthCheckConfig {
         self.unhealthy_threshold_count
     }
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
-    pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
+    pub fn matcher(&self) -> ::std::option::Option<& crate::types::Matcher> {
         self.matcher.as_ref()
     }
 }
@@ -97,8 +97,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>Indicates whether health checking is enabled.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Indicates whether health checking is enabled.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -111,8 +110,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The protocol used when performing health checks on targets. The possible protocols are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TargetGroupProtocol> {
@@ -125,8 +123,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
     pub fn set_protocol_version(mut self, input: ::std::option::Option<crate::types::HealthCheckProtocolVersion>) -> Self {
-        self.protocol_version = input;
-        self
+        self.protocol_version = input; self
     }
     /// <p>The protocol version used when performing health checks on targets. The possible protocol versions are <code>HTTP1</code> and <code>HTTP2</code>.</p>
     pub fn get_protocol_version(&self) -> &::std::option::Option<crate::types::HealthCheckProtocolVersion> {
@@ -139,8 +136,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port used when performing health checks on targets. The default setting is the port that a target receives traffic on.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
@@ -153,8 +149,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code> or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>). The default path is <code>/</code>. Health checks are not supported if the protocol version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code> and specify a valid URI.</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -167,8 +162,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
     pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_interval_seconds = input;
-        self
+        self.health_check_interval_seconds = input; self
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target. The range is 5–300 seconds. The default is 30 seconds.</p>
     pub fn get_health_check_interval_seconds(&self) -> &::std::option::Option<i32> {
@@ -181,8 +175,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The amount of time, in seconds, to wait before reporting a target as unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
     pub fn set_health_check_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.health_check_timeout_seconds = input;
-        self
+        self.health_check_timeout_seconds = input; self
     }
     /// <p>The amount of time, in seconds, to wait before reporting a target as unhealthy. The range is 1–120 seconds. The default is 5 seconds.</p>
     pub fn get_health_check_timeout_seconds(&self) -> &::std::option::Option<i32> {
@@ -195,8 +188,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The number of consecutive successful health checks required before considering an unhealthy target healthy. The range is 2–10. The default is 5.</p>
     pub fn set_healthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.healthy_threshold_count = input;
-        self
+        self.healthy_threshold_count = input; self
     }
     /// <p>The number of consecutive successful health checks required before considering an unhealthy target healthy. The range is 2–10. The default is 5.</p>
     pub fn get_healthy_threshold_count(&self) -> &::std::option::Option<i32> {
@@ -209,8 +201,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The number of consecutive failed health checks required before considering a target unhealthy. The range is 2–10. The default is 2.</p>
     pub fn set_unhealthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.unhealthy_threshold_count = input;
-        self
+        self.unhealthy_threshold_count = input; self
     }
     /// <p>The number of consecutive failed health checks required before considering a target unhealthy. The range is 2–10. The default is 2.</p>
     pub fn get_unhealthy_threshold_count(&self) -> &::std::option::Option<i32> {
@@ -223,8 +214,7 @@ impl HealthCheckConfigBuilder {
     }
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
     pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
-        self.matcher = input;
-        self
+        self.matcher = input; self
     }
     /// <p>The codes to use when checking for a successful response from a target. These are called <i>Success codes</i> in the console.</p>
     pub fn get_matcher(&self) -> &::std::option::Option<crate::types::Matcher> {
@@ -233,16 +223,27 @@ impl HealthCheckConfigBuilder {
     /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::types::HealthCheckConfig).
     pub fn build(self) -> crate::types::HealthCheckConfig {
         crate::types::HealthCheckConfig {
-            enabled: self.enabled,
-            protocol: self.protocol,
-            protocol_version: self.protocol_version,
-            port: self.port,
-            path: self.path,
-            health_check_interval_seconds: self.health_check_interval_seconds,
-            health_check_timeout_seconds: self.health_check_timeout_seconds,
-            healthy_threshold_count: self.healthy_threshold_count,
-            unhealthy_threshold_count: self.unhealthy_threshold_count,
-            matcher: self.matcher,
+            enabled: self.enabled
+            ,
+            protocol: self.protocol
+            ,
+            protocol_version: self.protocol_version
+            ,
+            port: self.port
+            ,
+            path: self.path
+            ,
+            health_check_interval_seconds: self.health_check_interval_seconds
+            ,
+            health_check_timeout_seconds: self.health_check_timeout_seconds
+            ,
+            healthy_threshold_count: self.healthy_threshold_count
+            ,
+            unhealthy_threshold_count: self.unhealthy_threshold_count
+            ,
+            matcher: self.matcher
+            ,
         }
     }
 }
+

@@ -4,24 +4,26 @@
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProposalActions {
+pub struct ProposalActions  {
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network.</p>
-    pub invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
+    pub invitations: ::std::option::Option<::std::vec::Vec::<crate::types::InviteAction>>,
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.</p>
-    pub removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
+    pub removals: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveAction>>,
 }
-impl ProposalActions {
+impl  ProposalActions  {
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invitations.is_none()`.
-    pub fn invitations(&self) -> &[crate::types::InviteAction] {
-        self.invitations.as_deref().unwrap_or_default()
+    pub fn invitations(&self) -> & [crate::types::InviteAction] {
+        self.invitations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.removals.is_none()`.
-    pub fn removals(&self) -> &[crate::types::RemoveAction] {
-        self.removals.as_deref().unwrap_or_default()
+    pub fn removals(&self) -> & [crate::types::RemoveAction] {
+        self.removals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ProposalActions {
@@ -35,8 +37,8 @@ impl ProposalActions {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ProposalActionsBuilder {
-    pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
-    pub(crate) removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
+    pub(crate) invitations: ::std::option::Option<::std::vec::Vec::<crate::types::InviteAction>>,
+    pub(crate) removals: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveAction>>,
 }
 impl ProposalActionsBuilder {
     /// Appends an item to `invitations`.
@@ -46,17 +48,16 @@ impl ProposalActionsBuilder {
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network.</p>
     pub fn invitations(mut self, input: crate::types::InviteAction) -> Self {
         let mut v = self.invitations.unwrap_or_default();
-        v.push(input);
-        self.invitations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.invitations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network.</p>
-    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>) -> Self {
-        self.invitations = input;
-        self
+    pub fn set_invitations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::InviteAction>>) -> Self {
+        self.invitations = input; self
     }
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network.</p>
-    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InviteAction>> {
+    pub fn get_invitations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::InviteAction>> {
         &self.invitations
     }
     /// Appends an item to `removals`.
@@ -66,24 +67,26 @@ impl ProposalActionsBuilder {
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.</p>
     pub fn removals(mut self, input: crate::types::RemoveAction) -> Self {
         let mut v = self.removals.unwrap_or_default();
-        v.push(input);
-        self.removals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.removals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.</p>
-    pub fn set_removals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>) -> Self {
-        self.removals = input;
-        self
+    pub fn set_removals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RemoveAction>>) -> Self {
+        self.removals = input; self
     }
     /// <p>The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network.</p>
-    pub fn get_removals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>> {
+    pub fn get_removals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RemoveAction>> {
         &self.removals
     }
     /// Consumes the builder and constructs a [`ProposalActions`](crate::types::ProposalActions).
     pub fn build(self) -> crate::types::ProposalActions {
         crate::types::ProposalActions {
-            invitations: self.invitations,
-            removals: self.removals,
+            invitations: self.invitations
+            ,
+            removals: self.removals
+            ,
         }
     }
 }
+

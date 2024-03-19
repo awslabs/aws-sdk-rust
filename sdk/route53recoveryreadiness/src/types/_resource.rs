@@ -3,33 +3,34 @@
 /// <p>The resource element of a resource set.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
     pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS target resource.</p>
     pub dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub readiness_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
 }
-impl Resource {
+impl  Resource  {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
-    pub fn component_id(&self) -> ::std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The DNS target resource.</p>
-    pub fn dns_target_resource(&self) -> ::std::option::Option<&crate::types::DnsTargetResource> {
+    pub fn dns_target_resource(&self) -> ::std::option::Option<& crate::types::DnsTargetResource> {
         self.dns_target_resource.as_ref()
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.readiness_scopes.is_none()`.
-    pub fn readiness_scopes(&self) -> &[::std::string::String] {
-        self.readiness_scopes.as_deref().unwrap_or_default()
+    pub fn readiness_scopes(&self) -> & [::std::string::String] {
+        self.readiness_scopes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -46,7 +47,7 @@ impl Resource {
 pub struct ResourceBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
-    pub(crate) readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) readiness_scopes: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
@@ -57,8 +58,7 @@ impl ResourceBuilder {
     }
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
     pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl ResourceBuilder {
     }
     /// <p>The DNS target resource.</p>
     pub fn set_dns_target_resource(mut self, input: ::std::option::Option<crate::types::DnsTargetResource>) -> Self {
-        self.dns_target_resource = input;
-        self
+        self.dns_target_resource = input; self
     }
     /// <p>The DNS target resource.</p>
     pub fn get_dns_target_resource(&self) -> &::std::option::Option<crate::types::DnsTargetResource> {
@@ -85,17 +84,16 @@ impl ResourceBuilder {
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
     pub fn readiness_scopes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readiness_scopes.unwrap_or_default();
-        v.push(input.into());
-        self.readiness_scopes = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.readiness_scopes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn set_readiness_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.readiness_scopes = input;
-        self
+    pub fn set_readiness_scopes(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.readiness_scopes = input; self
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn get_readiness_scopes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_readiness_scopes(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.readiness_scopes
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
@@ -105,8 +103,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,10 +112,15 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            component_id: self.component_id,
-            dns_target_resource: self.dns_target_resource,
-            readiness_scopes: self.readiness_scopes,
-            resource_arn: self.resource_arn,
+            component_id: self.component_id
+            ,
+            dns_target_resource: self.dns_target_resource
+            ,
+            readiness_scopes: self.readiness_scopes
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

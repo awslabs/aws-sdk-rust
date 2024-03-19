@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetExperimentInput {
+pub struct GetExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment.</p>
     pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment that you want to see the details of.</p>
     pub experiment: ::std::option::Option<::std::string::String>,
 }
-impl GetExperimentInput {
+impl  GetExperimentInput  {
     /// <p>The name or ARN of the project that contains the experiment.</p>
-    pub fn project(&self) -> ::std::option::Option<&str> {
+    pub fn project(&self) -> ::std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
-    pub fn experiment(&self) -> ::std::option::Option<&str> {
+    pub fn experiment(&self) -> ::std::option::Option<& str> {
         self.experiment.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetExperimentInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the experiment.</p>
     pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name or ARN of the project that contains the experiment.</p>
     pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl GetExperimentInputBuilder {
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.experiment = input;
-        self
+        self.experiment = input; self
     }
     /// <p>The name of the experiment that you want to see the details of.</p>
     pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
         &self.experiment
     }
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_experiment::GetExperimentInput {
-            project: self.project,
-            experiment: self.experiment,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_experiment::GetExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_experiment::GetExperimentInput {
+                project: self.project
+                ,
+                experiment: self.experiment
+                ,
+            }
+        )
     }
 }
+

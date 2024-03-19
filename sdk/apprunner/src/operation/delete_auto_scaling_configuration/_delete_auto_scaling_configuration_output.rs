@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAutoScalingConfigurationOutput {
+pub struct DeleteAutoScalingConfigurationOutput  {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     _request_id: Option<String>,
 }
-impl DeleteAutoScalingConfigurationOutput {
+impl  DeleteAutoScalingConfigurationOutput  {
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
-    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
+    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<& crate::types::AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAutoScalingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationOutput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput).
     pub fn builder() -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteAutoScalingConfigurationOutputBuilder {
     }
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::AutoScalingConfiguration>) -> Self {
-        self.auto_scaling_configuration = input;
-        self
+        self.auto_scaling_configuration = input; self
     }
     /// <p>A description of the App Runner auto scaling configuration that this request just deleted.</p>
     pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::AutoScalingConfiguration> {
         &self.auto_scaling_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAutoScalingConfigurationOutput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput).
     pub fn build(self) -> crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput {
         crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput {
-            auto_scaling_configuration: self.auto_scaling_configuration,
+            auto_scaling_configuration: self.auto_scaling_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

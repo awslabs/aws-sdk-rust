@@ -3,16 +3,17 @@
 /// <p>Describes the WorkSpace application deployment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkSpaceApplicationDeployment {
+pub struct WorkSpaceApplicationDeployment  {
     /// <p>The associations between the applications and the associated resources.</p>
-    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>,
 }
-impl WorkSpaceApplicationDeployment {
+impl  WorkSpaceApplicationDeployment  {
     /// <p>The associations between the applications and the associated resources.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
-    pub fn associations(&self) -> &[crate::types::WorkspaceResourceAssociation] {
-        self.associations.as_deref().unwrap_or_default()
+    pub fn associations(&self) -> & [crate::types::WorkspaceResourceAssociation] {
+        self.associations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl WorkSpaceApplicationDeployment {
@@ -26,7 +27,7 @@ impl WorkSpaceApplicationDeployment {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WorkSpaceApplicationDeploymentBuilder {
-    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>,
 }
 impl WorkSpaceApplicationDeploymentBuilder {
     /// Appends an item to `associations`.
@@ -36,23 +37,24 @@ impl WorkSpaceApplicationDeploymentBuilder {
     /// <p>The associations between the applications and the associated resources.</p>
     pub fn associations(mut self, input: crate::types::WorkspaceResourceAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.associations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The associations between the applications and the associated resources.</p>
-    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>>) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>>) -> Self {
+        self.associations = input; self
     }
     /// <p>The associations between the applications and the associated resources.</p>
-    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkspaceResourceAssociation>> {
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkspaceResourceAssociation>> {
         &self.associations
     }
     /// Consumes the builder and constructs a [`WorkSpaceApplicationDeployment`](crate::types::WorkSpaceApplicationDeployment).
     pub fn build(self) -> crate::types::WorkSpaceApplicationDeployment {
         crate::types::WorkSpaceApplicationDeployment {
-            associations: self.associations,
+            associations: self.associations
+            ,
         }
     }
 }
+

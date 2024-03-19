@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeParameterGroupsInput {
+pub struct DescribeParameterGroupsInput  {
     /// <p>The names of the parameter groups.</p>
-    pub parameter_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub parameter_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeParameterGroupsInput {
+impl  DescribeParameterGroupsInput  {
     /// <p>The names of the parameter groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_group_names.is_none()`.
-    pub fn parameter_group_names(&self) -> &[::std::string::String] {
-        self.parameter_group_names.as_deref().unwrap_or_default()
+    pub fn parameter_group_names(&self) -> & [::std::string::String] {
+        self.parameter_group_names.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
@@ -24,7 +25,7 @@ impl DescribeParameterGroupsInput {
         self.max_results
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -39,7 +40,7 @@ impl DescribeParameterGroupsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeParameterGroupsInputBuilder {
-    pub(crate) parameter_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parameter_group_names: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -51,17 +52,16 @@ impl DescribeParameterGroupsInputBuilder {
     /// <p>The names of the parameter groups.</p>
     pub fn parameter_group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.parameter_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_group_names = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_group_names = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The names of the parameter groups.</p>
-    pub fn set_parameter_group_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.parameter_group_names = input;
-        self
+    pub fn set_parameter_group_names(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.parameter_group_names = input; self
     }
     /// <p>The names of the parameter groups.</p>
-    pub fn get_parameter_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_parameter_group_names(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.parameter_group_names
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -73,8 +73,7 @@ impl DescribeParameterGroupsInputBuilder {
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
@@ -88,24 +87,24 @@ impl DescribeParameterGroupsInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeParameterGroupsInput`](crate::operation::describe_parameter_groups::DescribeParameterGroupsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_parameter_groups::DescribeParameterGroupsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
-            parameter_group_names: self.parameter_group_names,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_parameter_groups::DescribeParameterGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
+                parameter_group_names: self.parameter_group_names
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

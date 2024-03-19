@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListChunksInput {
+pub struct ListChunksInput  {
     /// Storage job id
     pub storage_job_id: ::std::option::Option<::std::string::String>,
     /// Object token
@@ -12,13 +12,13 @@ pub struct ListChunksInput {
     /// Pagination token
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListChunksInput {
+impl  ListChunksInput  {
     /// Storage job id
-    pub fn storage_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn storage_job_id(&self) -> ::std::option::Option<& str> {
         self.storage_job_id.as_deref()
     }
     /// Object token
-    pub fn object_token(&self) -> ::std::option::Option<&str> {
+    pub fn object_token(&self) -> ::std::option::Option<& str> {
         self.object_token.as_deref()
     }
     /// Maximum number of chunks
@@ -26,7 +26,7 @@ impl ListChunksInput {
         self.max_results
     }
     /// Pagination token
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl ListChunksInputBuilder {
     }
     /// Storage job id
     pub fn set_storage_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_job_id = input;
-        self
+        self.storage_job_id = input; self
     }
     /// Storage job id
     pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl ListChunksInputBuilder {
     }
     /// Object token
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_token = input;
-        self
+        self.object_token = input; self
     }
     /// Object token
     pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl ListChunksInputBuilder {
     }
     /// Maximum number of chunks
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Maximum number of chunks
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -98,8 +95,7 @@ impl ListChunksInputBuilder {
     }
     /// Pagination token
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Pagination token
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,11 +103,18 @@ impl ListChunksInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListChunksInput`](crate::operation::list_chunks::ListChunksInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_chunks::ListChunksInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_chunks::ListChunksInput {
-            storage_job_id: self.storage_job_id,
-            object_token: self.object_token,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_chunks::ListChunksInput {
+                storage_job_id: self.storage_job_id
+                ,
+                object_token: self.object_token
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

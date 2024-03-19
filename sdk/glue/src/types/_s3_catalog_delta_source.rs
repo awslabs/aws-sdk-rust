@@ -3,7 +3,7 @@
 /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3CatalogDeltaSource {
+pub struct S3CatalogDeltaSource  {
     /// <p>The name of the Delta Lake data source.</p>
     pub name: ::std::string::String,
     /// <p>The name of the database to read from.</p>
@@ -11,35 +11,33 @@ pub struct S3CatalogDeltaSource {
     /// <p>The name of the table in the database to read from.</p>
     pub table: ::std::string::String,
     /// <p>Specifies additional connection options.</p>
-    pub additional_delta_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub additional_delta_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
-impl S3CatalogDeltaSource {
+impl  S3CatalogDeltaSource  {
     /// <p>The name of the Delta Lake data source.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> & str {
+        use std::ops::Deref; self.database.deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> &str {
-        use std::ops::Deref;
-        self.table.deref()
+    pub fn table(&self) -> & str {
+        use std::ops::Deref; self.table.deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_delta_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn additional_delta_options(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.additional_delta_options.as_ref()
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.output_schemas.is_none()`.
-    pub fn output_schemas(&self) -> &[crate::types::GlueSchema] {
-        self.output_schemas.as_deref().unwrap_or_default()
+    pub fn output_schemas(&self) -> & [crate::types::GlueSchema] {
+        self.output_schemas.as_deref()
+        .unwrap_or_default()
     }
 }
 impl S3CatalogDeltaSource {
@@ -56,8 +54,8 @@ pub struct S3CatalogDeltaSourceBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) table: ::std::option::Option<::std::string::String>,
-    pub(crate) additional_delta_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
+    pub(crate) additional_delta_options: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>,
 }
 impl S3CatalogDeltaSourceBuilder {
     /// <p>The name of the Delta Lake data source.</p>
@@ -68,8 +66,7 @@ impl S3CatalogDeltaSourceBuilder {
     }
     /// <p>The name of the Delta Lake data source.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Delta Lake data source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +80,7 @@ impl S3CatalogDeltaSourceBuilder {
     }
     /// <p>The name of the database to read from.</p>
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the database to read from.</p>
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +94,7 @@ impl S3CatalogDeltaSourceBuilder {
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The name of the table in the database to read from.</p>
     pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,26 +105,18 @@ impl S3CatalogDeltaSourceBuilder {
     /// To override the contents of this collection use [`set_additional_delta_options`](Self::set_additional_delta_options).
     ///
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_delta_options(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn additional_delta_options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.additional_delta_options.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_delta_options = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_delta_options = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_delta_options(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.additional_delta_options = input;
-        self
+    pub fn set_additional_delta_options(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.additional_delta_options = input; self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn get_additional_delta_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_additional_delta_options(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.additional_delta_options
     }
     /// Appends an item to `output_schemas`.
@@ -139,17 +126,16 @@ impl S3CatalogDeltaSourceBuilder {
     /// <p>Specifies the data schema for the Delta Lake source.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+    pub fn get_output_schemas(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GlueSchema>> {
         &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3CatalogDeltaSource`](crate::types::S3CatalogDeltaSource).
@@ -158,27 +144,29 @@ impl S3CatalogDeltaSourceBuilder {
     /// - [`database`](crate::types::builders::S3CatalogDeltaSourceBuilder::database)
     /// - [`table`](crate::types::builders::S3CatalogDeltaSourceBuilder::table)
     pub fn build(self) -> ::std::result::Result<crate::types::S3CatalogDeltaSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3CatalogDeltaSource {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building S3CatalogDeltaSource",
-                )
-            })?,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building S3CatalogDeltaSource",
-                )
-            })?,
-            table: self.table.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table",
-                    "table was not specified but it is required when building S3CatalogDeltaSource",
-                )
-            })?,
-            additional_delta_options: self.additional_delta_options,
-            output_schemas: self.output_schemas,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3CatalogDeltaSource {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building S3CatalogDeltaSource")
+                    )?
+                ,
+                database: self.database
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database", "database was not specified but it is required when building S3CatalogDeltaSource")
+                    )?
+                ,
+                table: self.table
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table", "table was not specified but it is required when building S3CatalogDeltaSource")
+                    )?
+                ,
+                additional_delta_options: self.additional_delta_options
+                ,
+                output_schemas: self.output_schemas
+                ,
+            }
+        )
     }
 }
+

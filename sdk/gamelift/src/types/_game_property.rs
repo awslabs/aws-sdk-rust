@@ -5,19 +5,19 @@
 /// <p>For examples of working with game properties, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties">Create a game session with properties</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GameProperty {
+pub struct GameProperty  {
     /// <p>The game property identifier.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The game property value.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
-impl GameProperty {
+impl  GameProperty  {
     /// <p>The game property identifier.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The game property value.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -44,8 +44,7 @@ impl GamePropertyBuilder {
     }
     /// <p>The game property identifier.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The game property identifier.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -59,8 +58,7 @@ impl GamePropertyBuilder {
     }
     /// <p>The game property value.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The game property value.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +67,11 @@ impl GamePropertyBuilder {
     /// Consumes the builder and constructs a [`GameProperty`](crate::types::GameProperty).
     pub fn build(self) -> crate::types::GameProperty {
         crate::types::GameProperty {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

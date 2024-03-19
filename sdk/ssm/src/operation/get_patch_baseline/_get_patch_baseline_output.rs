@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPatchBaselineOutput {
+pub struct GetPatchBaselineOutput  {
     /// <p>The ID of the retrieved patch baseline.</p>
     pub baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the patch baseline.</p>
@@ -14,17 +14,17 @@ pub struct GetPatchBaselineOutput {
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub approved_patches: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub approved_patches_enable_non_security: ::std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub rejected_patches: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     /// <p>Patch groups included in the patch baseline.</p>
-    pub patch_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub patch_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date the patch baseline was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the patch baseline was last modified.</p>
@@ -32,38 +32,39 @@ pub struct GetPatchBaselineOutput {
     /// <p>A description of the patch baseline.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>>,
     _request_id: Option<String>,
 }
-impl GetPatchBaselineOutput {
+impl  GetPatchBaselineOutput  {
     /// <p>The ID of the retrieved patch baseline.</p>
-    pub fn baseline_id(&self) -> ::std::option::Option<&str> {
+    pub fn baseline_id(&self) -> ::std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Returns the operating system specified for the patch baseline.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
-    pub fn global_filters(&self) -> ::std::option::Option<&crate::types::PatchFilterGroup> {
+    pub fn global_filters(&self) -> ::std::option::Option<& crate::types::PatchFilterGroup> {
         self.global_filters.as_ref()
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
-    pub fn approval_rules(&self) -> ::std::option::Option<&crate::types::PatchRuleGroup> {
+    pub fn approval_rules(&self) -> ::std::option::Option<& crate::types::PatchRuleGroup> {
         self.approval_rules.as_ref()
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.approved_patches.is_none()`.
-    pub fn approved_patches(&self) -> &[::std::string::String] {
-        self.approved_patches.as_deref().unwrap_or_default()
+    pub fn approved_patches(&self) -> & [::std::string::String] {
+        self.approved_patches.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
-    pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<&crate::types::PatchComplianceLevel> {
+    pub fn approved_patches_compliance_level(&self) -> ::std::option::Option<& crate::types::PatchComplianceLevel> {
         self.approved_patches_compliance_level.as_ref()
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
@@ -71,45 +72,48 @@ impl GetPatchBaselineOutput {
         self.approved_patches_enable_non_security
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rejected_patches.is_none()`.
-    pub fn rejected_patches(&self) -> &[::std::string::String] {
-        self.rejected_patches.as_deref().unwrap_or_default()
+    pub fn rejected_patches(&self) -> & [::std::string::String] {
+        self.rejected_patches.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
-    pub fn rejected_patches_action(&self) -> ::std::option::Option<&crate::types::PatchAction> {
+    pub fn rejected_patches_action(&self) -> ::std::option::Option<& crate::types::PatchAction> {
         self.rejected_patches_action.as_ref()
     }
     /// <p>Patch groups included in the patch baseline.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.patch_groups.is_none()`.
-    pub fn patch_groups(&self) -> &[::std::string::String] {
-        self.patch_groups.as_deref().unwrap_or_default()
+    pub fn patch_groups(&self) -> & [::std::string::String] {
+        self.patch_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date the patch baseline was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date the patch baseline was last modified.</p>
-    pub fn modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.modified_date.as_ref()
     }
     /// <p>A description of the patch baseline.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
-    pub fn sources(&self) -> &[crate::types::PatchSource] {
-        self.sources.as_deref().unwrap_or_default()
+    pub fn sources(&self) -> & [crate::types::PatchSource] {
+        self.sources.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetPatchBaselineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineOutput`](crate::operation::get_patch_baseline::GetPatchBaselineOutput).
     pub fn builder() -> crate::operation::get_patch_baseline::builders::GetPatchBaselineOutputBuilder {
@@ -126,16 +130,16 @@ pub struct GetPatchBaselineOutputBuilder {
     pub(crate) operating_system: ::std::option::Option<crate::types::OperatingSystem>,
     pub(crate) global_filters: ::std::option::Option<crate::types::PatchFilterGroup>,
     pub(crate) approval_rules: ::std::option::Option<crate::types::PatchRuleGroup>,
-    pub(crate) approved_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approved_patches: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) approved_patches_compliance_level: ::std::option::Option<crate::types::PatchComplianceLevel>,
     pub(crate) approved_patches_enable_non_security: ::std::option::Option<bool>,
-    pub(crate) rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) rejected_patches: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
-    pub(crate) patch_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) patch_groups: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>>,
     _request_id: Option<String>,
 }
 impl GetPatchBaselineOutputBuilder {
@@ -146,8 +150,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>The ID of the retrieved patch baseline.</p>
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The ID of the retrieved patch baseline.</p>
     pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +163,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>The name of the patch baseline.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the patch baseline.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +176,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>Returns the operating system specified for the patch baseline.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>Returns the operating system specified for the patch baseline.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -188,8 +189,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
     pub fn set_global_filters(mut self, input: ::std::option::Option<crate::types::PatchFilterGroup>) -> Self {
-        self.global_filters = input;
-        self
+        self.global_filters = input; self
     }
     /// <p>A set of global filters used to exclude patches from the baseline.</p>
     pub fn get_global_filters(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
@@ -202,8 +202,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub fn set_approval_rules(mut self, input: ::std::option::Option<crate::types::PatchRuleGroup>) -> Self {
-        self.approval_rules = input;
-        self
+        self.approval_rules = input; self
     }
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub fn get_approval_rules(&self) -> &::std::option::Option<crate::types::PatchRuleGroup> {
@@ -216,17 +215,16 @@ impl GetPatchBaselineOutputBuilder {
     /// <p>A list of explicitly approved patches for the baseline.</p>
     pub fn approved_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.approved_patches.unwrap_or_default();
-        v.push(input.into());
-        self.approved_patches = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.approved_patches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.approved_patches = input;
-        self
+    pub fn set_approved_patches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.approved_patches = input; self
     }
     /// <p>A list of explicitly approved patches for the baseline.</p>
-    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_approved_patches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.approved_patches
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
@@ -236,8 +234,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub fn set_approved_patches_compliance_level(mut self, input: ::std::option::Option<crate::types::PatchComplianceLevel>) -> Self {
-        self.approved_patches_compliance_level = input;
-        self
+        self.approved_patches_compliance_level = input; self
     }
     /// <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
     pub fn get_approved_patches_compliance_level(&self) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
@@ -250,8 +247,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn set_approved_patches_enable_non_security(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.approved_patches_enable_non_security = input;
-        self
+        self.approved_patches_enable_non_security = input; self
     }
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn get_approved_patches_enable_non_security(&self) -> &::std::option::Option<bool> {
@@ -264,17 +260,16 @@ impl GetPatchBaselineOutputBuilder {
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     pub fn rejected_patches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rejected_patches.unwrap_or_default();
-        v.push(input.into());
-        self.rejected_patches = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.rejected_patches = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.rejected_patches = input;
-        self
+    pub fn set_rejected_patches(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.rejected_patches = input; self
     }
     /// <p>A list of explicitly rejected patches for the baseline.</p>
-    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rejected_patches(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.rejected_patches
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
@@ -284,8 +279,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
-        self.rejected_patches_action = input;
-        self
+        self.rejected_patches_action = input; self
     }
     /// <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
     pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
@@ -298,17 +292,16 @@ impl GetPatchBaselineOutputBuilder {
     /// <p>Patch groups included in the patch baseline.</p>
     pub fn patch_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.patch_groups.unwrap_or_default();
-        v.push(input.into());
-        self.patch_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.patch_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Patch groups included in the patch baseline.</p>
-    pub fn set_patch_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.patch_groups = input;
-        self
+    pub fn set_patch_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.patch_groups = input; self
     }
     /// <p>Patch groups included in the patch baseline.</p>
-    pub fn get_patch_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_patch_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.patch_groups
     }
     /// <p>The date the patch baseline was created.</p>
@@ -318,8 +311,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>The date the patch baseline was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The date the patch baseline was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -332,8 +324,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>The date the patch baseline was last modified.</p>
     pub fn set_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.modified_date = input;
-        self
+        self.modified_date = input; self
     }
     /// <p>The date the patch baseline was last modified.</p>
     pub fn get_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -346,8 +337,7 @@ impl GetPatchBaselineOutputBuilder {
     }
     /// <p>A description of the patch baseline.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the patch baseline.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -360,47 +350,62 @@ impl GetPatchBaselineOutputBuilder {
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn sources(mut self, input: crate::types::PatchSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.sources = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>>) -> Self {
+        self.sources = input; self
     }
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
-    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::PatchSource>> {
         &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetPatchBaselineOutput`](crate::operation::get_patch_baseline::GetPatchBaselineOutput).
     pub fn build(self) -> crate::operation::get_patch_baseline::GetPatchBaselineOutput {
         crate::operation::get_patch_baseline::GetPatchBaselineOutput {
-            baseline_id: self.baseline_id,
-            name: self.name,
-            operating_system: self.operating_system,
-            global_filters: self.global_filters,
-            approval_rules: self.approval_rules,
-            approved_patches: self.approved_patches,
-            approved_patches_compliance_level: self.approved_patches_compliance_level,
-            approved_patches_enable_non_security: self.approved_patches_enable_non_security,
-            rejected_patches: self.rejected_patches,
-            rejected_patches_action: self.rejected_patches_action,
-            patch_groups: self.patch_groups,
-            created_date: self.created_date,
-            modified_date: self.modified_date,
-            description: self.description,
-            sources: self.sources,
+            baseline_id: self.baseline_id
+            ,
+            name: self.name
+            ,
+            operating_system: self.operating_system
+            ,
+            global_filters: self.global_filters
+            ,
+            approval_rules: self.approval_rules
+            ,
+            approved_patches: self.approved_patches
+            ,
+            approved_patches_compliance_level: self.approved_patches_compliance_level
+            ,
+            approved_patches_enable_non_security: self.approved_patches_enable_non_security
+            ,
+            rejected_patches: self.rejected_patches
+            ,
+            rejected_patches_action: self.rejected_patches_action
+            ,
+            patch_groups: self.patch_groups
+            ,
+            created_date: self.created_date
+            ,
+            modified_date: self.modified_date
+            ,
+            description: self.description
+            ,
+            sources: self.sources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

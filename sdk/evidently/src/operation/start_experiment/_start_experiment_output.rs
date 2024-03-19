@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExperimentOutput {
+pub struct StartExperimentOutput  {
     /// <p>A timestamp that indicates when the experiment started.</p>
     pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl StartExperimentOutput {
+impl  StartExperimentOutput  {
     /// <p>A timestamp that indicates when the experiment started.</p>
-    pub fn started_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartExperimentOutput {
     /// Creates a new builder-style object to manufacture [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput).
     pub fn builder() -> crate::operation::start_experiment::builders::StartExperimentOutputBuilder {
@@ -40,27 +40,28 @@ impl StartExperimentOutputBuilder {
     }
     /// <p>A timestamp that indicates when the experiment started.</p>
     pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_time = input;
-        self
+        self.started_time = input; self
     }
     /// <p>A timestamp that indicates when the experiment started.</p>
     pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartExperimentOutput`](crate::operation::start_experiment::StartExperimentOutput).
     pub fn build(self) -> crate::operation::start_experiment::StartExperimentOutput {
         crate::operation::start_experiment::StartExperimentOutput {
-            started_time: self.started_time,
+            started_time: self.started_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

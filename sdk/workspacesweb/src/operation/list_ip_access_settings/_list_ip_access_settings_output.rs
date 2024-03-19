@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListIpAccessSettingsOutput {
+pub struct ListIpAccessSettingsOutput  {
     /// <p>The IP access settings.</p>
-    pub ip_access_settings: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
+    pub ip_access_settings: ::std::option::Option<::std::vec::Vec::<crate::types::IpAccessSettingsSummary>>,
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListIpAccessSettingsOutput {
+impl  ListIpAccessSettingsOutput  {
     /// <p>The IP access settings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_access_settings.is_none()`.
-    pub fn ip_access_settings(&self) -> &[crate::types::IpAccessSettingsSummary] {
-        self.ip_access_settings.as_deref().unwrap_or_default()
+    pub fn ip_access_settings(&self) -> & [crate::types::IpAccessSettingsSummary] {
+        self.ip_access_settings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListIpAccessSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListIpAccessSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput).
     pub fn builder() -> crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListIpAccessSettingsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListIpAccessSettingsOutputBuilder {
-    pub(crate) ip_access_settings: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>,
+    pub(crate) ip_access_settings: ::std::option::Option<::std::vec::Vec::<crate::types::IpAccessSettingsSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListIpAccessSettingsOutputBuilder {
     /// <p>The IP access settings.</p>
     pub fn ip_access_settings(mut self, input: crate::types::IpAccessSettingsSummary) -> Self {
         let mut v = self.ip_access_settings.unwrap_or_default();
-        v.push(input);
-        self.ip_access_settings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.ip_access_settings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The IP access settings.</p>
-    pub fn set_ip_access_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>>) -> Self {
-        self.ip_access_settings = input;
-        self
+    pub fn set_ip_access_settings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpAccessSettingsSummary>>) -> Self {
+        self.ip_access_settings = input; self
     }
     /// <p>The IP access settings.</p>
-    pub fn get_ip_access_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAccessSettingsSummary>> {
+    pub fn get_ip_access_settings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpAccessSettingsSummary>> {
         &self.ip_access_settings
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -69,28 +69,30 @@ impl ListIpAccessSettingsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListIpAccessSettingsOutput`](crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput).
     pub fn build(self) -> crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput {
         crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput {
-            ip_access_settings: self.ip_access_settings,
-            next_token: self.next_token,
+            ip_access_settings: self.ip_access_settings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

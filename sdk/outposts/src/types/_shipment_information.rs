@@ -3,19 +3,19 @@
 /// <p>Information about a line item shipment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ShipmentInformation {
+pub struct ShipmentInformation  {
     /// <p>The tracking number of the shipment.</p>
     pub shipment_tracking_number: ::std::option::Option<::std::string::String>,
     /// <p>The carrier of the shipment.</p>
     pub shipment_carrier: ::std::option::Option<crate::types::ShipmentCarrier>,
 }
-impl ShipmentInformation {
+impl  ShipmentInformation  {
     /// <p>The tracking number of the shipment.</p>
-    pub fn shipment_tracking_number(&self) -> ::std::option::Option<&str> {
+    pub fn shipment_tracking_number(&self) -> ::std::option::Option<& str> {
         self.shipment_tracking_number.as_deref()
     }
     /// <p>The carrier of the shipment.</p>
-    pub fn shipment_carrier(&self) -> ::std::option::Option<&crate::types::ShipmentCarrier> {
+    pub fn shipment_carrier(&self) -> ::std::option::Option<& crate::types::ShipmentCarrier> {
         self.shipment_carrier.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl ShipmentInformationBuilder {
     }
     /// <p>The tracking number of the shipment.</p>
     pub fn set_shipment_tracking_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.shipment_tracking_number = input;
-        self
+        self.shipment_tracking_number = input; self
     }
     /// <p>The tracking number of the shipment.</p>
     pub fn get_shipment_tracking_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl ShipmentInformationBuilder {
     }
     /// <p>The carrier of the shipment.</p>
     pub fn set_shipment_carrier(mut self, input: ::std::option::Option<crate::types::ShipmentCarrier>) -> Self {
-        self.shipment_carrier = input;
-        self
+        self.shipment_carrier = input; self
     }
     /// <p>The carrier of the shipment.</p>
     pub fn get_shipment_carrier(&self) -> &::std::option::Option<crate::types::ShipmentCarrier> {
@@ -65,8 +63,11 @@ impl ShipmentInformationBuilder {
     /// Consumes the builder and constructs a [`ShipmentInformation`](crate::types::ShipmentInformation).
     pub fn build(self) -> crate::types::ShipmentInformation {
         crate::types::ShipmentInformation {
-            shipment_tracking_number: self.shipment_tracking_number,
-            shipment_carrier: self.shipment_carrier,
+            shipment_tracking_number: self.shipment_tracking_number
+            ,
+            shipment_carrier: self.shipment_carrier
+            ,
         }
     }
 }
+

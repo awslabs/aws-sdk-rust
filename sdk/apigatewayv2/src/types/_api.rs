@@ -3,7 +3,7 @@
 /// <p>Represents an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Api {
+pub struct Api  {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -23,7 +23,7 @@ pub struct Api {
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub import_info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub import_info: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The name of the API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol.</p>
@@ -31,15 +31,15 @@ pub struct Api {
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub route_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A collection of tags associated with the API.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A version identifier for the API.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Api {
+impl  Api  {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
-    pub fn api_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn api_endpoint(&self) -> ::std::option::Option<& str> {
         self.api_endpoint.as_deref()
     }
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
@@ -47,23 +47,23 @@ impl Api {
         self.api_gateway_managed
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> ::std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_selection_expression(&self) -> ::std::option::Option<& str> {
         self.api_key_selection_expression.as_deref()
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
-    pub fn cors_configuration(&self) -> ::std::option::Option<&crate::types::Cors> {
+    pub fn cors_configuration(&self) -> ::std::option::Option<& crate::types::Cors> {
         self.cors_configuration.as_ref()
     }
     /// <p>The timestamp when the API was created.</p>
-    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -75,36 +75,38 @@ impl Api {
         self.disable_execute_api_endpoint
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.import_info.is_none()`.
-    pub fn import_info(&self) -> &[::std::string::String] {
-        self.import_info.as_deref().unwrap_or_default()
+    pub fn import_info(&self) -> & [::std::string::String] {
+        self.import_info.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The name of the API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The API protocol.</p>
-    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::ProtocolType> {
+    pub fn protocol_type(&self) -> ::std::option::Option<& crate::types::ProtocolType> {
         self.protocol_type.as_ref()
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn route_selection_expression(&self) -> ::std::option::Option<& str> {
         self.route_selection_expression.as_deref()
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A version identifier for the API.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.warnings.is_none()`.
-    pub fn warnings(&self) -> &[::std::string::String] {
-        self.warnings.as_deref().unwrap_or_default()
+    pub fn warnings(&self) -> & [::std::string::String] {
+        self.warnings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Api {
@@ -127,13 +129,13 @@ pub struct ApiBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disable_schema_validation: ::std::option::Option<bool>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
-    pub(crate) import_info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) import_info: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) route_selection_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
-    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ApiBuilder {
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
@@ -143,8 +145,7 @@ impl ApiBuilder {
     }
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_endpoint = input;
-        self
+        self.api_endpoint = input; self
     }
     /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
     pub fn get_api_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +158,7 @@ impl ApiBuilder {
     }
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
     pub fn set_api_gateway_managed(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.api_gateway_managed = input;
-        self
+        self.api_gateway_managed = input; self
     }
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
     pub fn get_api_gateway_managed(&self) -> &::std::option::Option<bool> {
@@ -171,8 +171,7 @@ impl ApiBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API ID.</p>
     pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,8 +184,7 @@ impl ApiBuilder {
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_selection_expression = input;
-        self
+        self.api_key_selection_expression = input; self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -199,8 +197,7 @@ impl ApiBuilder {
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
-        self.cors_configuration = input;
-        self
+        self.cors_configuration = input; self
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::Cors> {
@@ -213,8 +210,7 @@ impl ApiBuilder {
     }
     /// <p>The timestamp when the API was created.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp when the API was created.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -227,8 +223,7 @@ impl ApiBuilder {
     }
     /// <p>The description of the API.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the API.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -241,8 +236,7 @@ impl ApiBuilder {
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn set_disable_schema_validation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_schema_validation = input;
-        self
+        self.disable_schema_validation = input; self
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn get_disable_schema_validation(&self) -> &::std::option::Option<bool> {
@@ -255,8 +249,7 @@ impl ApiBuilder {
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_execute_api_endpoint = input;
-        self
+        self.disable_execute_api_endpoint = input; self
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
@@ -269,17 +262,16 @@ impl ApiBuilder {
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
     pub fn import_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_info.unwrap_or_default();
-        v.push(input.into());
-        self.import_info = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.import_info = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub fn set_import_info(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.import_info = input;
-        self
+    pub fn set_import_info(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.import_info = input; self
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
-    pub fn get_import_info(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_import_info(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.import_info
     }
     /// <p>The name of the API.</p>
@@ -290,8 +282,7 @@ impl ApiBuilder {
     }
     /// <p>The name of the API.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the API.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -305,8 +296,7 @@ impl ApiBuilder {
     }
     /// <p>The API protocol.</p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
-        self.protocol_type = input;
-        self
+        self.protocol_type = input; self
     }
     /// <p>The API protocol.</p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
@@ -320,8 +310,7 @@ impl ApiBuilder {
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_selection_expression = input;
-        self
+        self.route_selection_expression = input; self
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn get_route_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -334,17 +323,16 @@ impl ApiBuilder {
     /// <p>A collection of tags associated with the API.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of tags associated with the API.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>A version identifier for the API.</p>
@@ -354,8 +342,7 @@ impl ApiBuilder {
     }
     /// <p>A version identifier for the API.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A version identifier for the API.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -368,38 +355,54 @@ impl ApiBuilder {
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
     pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input.into());
-        self.warnings = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.warnings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
-    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.warnings
     }
     /// Consumes the builder and constructs a [`Api`](crate::types::Api).
     pub fn build(self) -> crate::types::Api {
         crate::types::Api {
-            api_endpoint: self.api_endpoint,
-            api_gateway_managed: self.api_gateway_managed,
-            api_id: self.api_id,
-            api_key_selection_expression: self.api_key_selection_expression,
-            cors_configuration: self.cors_configuration,
-            created_date: self.created_date,
-            description: self.description,
-            disable_schema_validation: self.disable_schema_validation,
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
-            import_info: self.import_info,
-            name: self.name,
-            protocol_type: self.protocol_type,
-            route_selection_expression: self.route_selection_expression,
-            tags: self.tags,
-            version: self.version,
-            warnings: self.warnings,
+            api_endpoint: self.api_endpoint
+            ,
+            api_gateway_managed: self.api_gateway_managed
+            ,
+            api_id: self.api_id
+            ,
+            api_key_selection_expression: self.api_key_selection_expression
+            ,
+            cors_configuration: self.cors_configuration
+            ,
+            created_date: self.created_date
+            ,
+            description: self.description
+            ,
+            disable_schema_validation: self.disable_schema_validation
+            ,
+            disable_execute_api_endpoint: self.disable_execute_api_endpoint
+            ,
+            import_info: self.import_info
+            ,
+            name: self.name
+            ,
+            protocol_type: self.protocol_type
+            ,
+            route_selection_expression: self.route_selection_expression
+            ,
+            tags: self.tags
+            ,
+            version: self.version
+            ,
+            warnings: self.warnings
+            ,
         }
     }
 }
+

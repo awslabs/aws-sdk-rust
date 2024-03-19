@@ -3,20 +3,19 @@
 /// <p>Represents information about the result of an approval request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApprovalResult {
+pub struct ApprovalResult  {
     /// <p>The summary of the current status of the approval request.</p>
     pub summary: ::std::string::String,
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
     pub status: crate::types::ApprovalStatus,
 }
-impl ApprovalResult {
+impl  ApprovalResult  {
     /// <p>The summary of the current status of the approval request.</p>
-    pub fn summary(&self) -> &str {
-        use std::ops::Deref;
-        self.summary.deref()
+    pub fn summary(&self) -> & str {
+        use std::ops::Deref; self.summary.deref()
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn status(&self) -> &crate::types::ApprovalStatus {
+    pub fn status(&self) -> & crate::types::ApprovalStatus {
         &self.status
     }
 }
@@ -43,8 +42,7 @@ impl ApprovalResultBuilder {
     }
     /// <p>The summary of the current status of the approval request.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p>The summary of the current status of the approval request.</p>
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl ApprovalResultBuilder {
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApprovalStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApprovalStatus> {
@@ -70,19 +67,20 @@ impl ApprovalResultBuilder {
     /// - [`summary`](crate::types::builders::ApprovalResultBuilder::summary)
     /// - [`status`](crate::types::builders::ApprovalResultBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::ApprovalResult, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ApprovalResult {
-            summary: self.summary.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "summary",
-                    "summary was not specified but it is required when building ApprovalResult",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building ApprovalResult",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ApprovalResult {
+                summary: self.summary
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("summary", "summary was not specified but it is required when building ApprovalResult")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building ApprovalResult")
+                    )?
+                ,
+            }
+        )
     }
 }
+

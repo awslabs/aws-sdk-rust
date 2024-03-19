@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AwsDomainInformation {
+pub struct AwsDomainInformation  {
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain.</p>
@@ -11,18 +11,17 @@ pub struct AwsDomainInformation {
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub region: ::std::option::Option<::std::string::String>,
 }
-impl AwsDomainInformation {
+impl  AwsDomainInformation  {
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
-    pub fn owner_id(&self) -> ::std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>Name of the domain.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -49,8 +48,7 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +62,7 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>Name of the domain.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Name of the domain.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,8 +75,7 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,15 +85,19 @@ impl AwsDomainInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::AwsDomainInformationBuilder::domain_name)
     pub fn build(self) -> ::std::result::Result<crate::types::AwsDomainInformation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AwsDomainInformation {
-            owner_id: self.owner_id,
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building AwsDomainInformation",
-                )
-            })?,
-            region: self.region,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AwsDomainInformation {
+                owner_id: self.owner_id
+                ,
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building AwsDomainInformation")
+                    )?
+                ,
+                region: self.region
+                ,
+            }
+        )
     }
 }
+

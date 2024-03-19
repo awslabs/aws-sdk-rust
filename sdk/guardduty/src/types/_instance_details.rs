@@ -3,7 +3,7 @@
 /// <p>Contains information about the details of an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceDetails {
+pub struct InstanceDetails  {
     /// <p>The Availability Zone of the EC2 instance.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The profile information of the EC2 instance.</p>
@@ -23,72 +23,75 @@ pub struct InstanceDetails {
     /// <p>The launch time of the EC2 instance.</p>
     pub launch_time: ::std::option::Option<::std::string::String>,
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>,
     /// <p>The platform of the EC2 instance.</p>
     pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The product code of the EC2 instance.</p>
-    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
     /// <p>The tags of the EC2 instance.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
-impl InstanceDetails {
+impl  InstanceDetails  {
     /// <p>The Availability Zone of the EC2 instance.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The profile information of the EC2 instance.</p>
-    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfile> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<& crate::types::IamInstanceProfile> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The image description of the EC2 instance.</p>
-    pub fn image_description(&self) -> ::std::option::Option<&str> {
+    pub fn image_description(&self) -> ::std::option::Option<& str> {
         self.image_description.as_deref()
     }
     /// <p>The image ID of the EC2 instance.</p>
-    pub fn image_id(&self) -> ::std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The ID of the EC2 instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn instance_state(&self) -> ::std::option::Option<&str> {
+    pub fn instance_state(&self) -> ::std::option::Option<& str> {
         self.instance_state.as_deref()
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
-    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The launch time of the EC2 instance.</p>
-    pub fn launch_time(&self) -> ::std::option::Option<&str> {
+    pub fn launch_time(&self) -> ::std::option::Option<& str> {
         self.launch_time.as_deref()
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interfaces.is_none()`.
-    pub fn network_interfaces(&self) -> &[crate::types::NetworkInterface] {
-        self.network_interfaces.as_deref().unwrap_or_default()
+    pub fn network_interfaces(&self) -> & [crate::types::NetworkInterface] {
+        self.network_interfaces.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The platform of the EC2 instance.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The product code of the EC2 instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
-    pub fn product_codes(&self) -> &[crate::types::ProductCode] {
-        self.product_codes.as_deref().unwrap_or_default()
+    pub fn product_codes(&self) -> & [crate::types::ProductCode] {
+        self.product_codes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The tags of the EC2 instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl InstanceDetails {
@@ -111,10 +114,10 @@ pub struct InstanceDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) launch_time: ::std::option::Option<::std::string::String>,
-    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
-    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
 }
 impl InstanceDetailsBuilder {
     /// <p>The Availability Zone of the EC2 instance.</p>
@@ -124,8 +127,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Availability Zone of the EC2 instance.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The Availability Zone of the EC2 instance.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -138,8 +140,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The profile information of the EC2 instance.</p>
     pub fn set_iam_instance_profile(mut self, input: ::std::option::Option<crate::types::IamInstanceProfile>) -> Self {
-        self.iam_instance_profile = input;
-        self
+        self.iam_instance_profile = input; self
     }
     /// <p>The profile information of the EC2 instance.</p>
     pub fn get_iam_instance_profile(&self) -> &::std::option::Option<crate::types::IamInstanceProfile> {
@@ -152,8 +153,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The image description of the EC2 instance.</p>
     pub fn set_image_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_description = input;
-        self
+        self.image_description = input; self
     }
     /// <p>The image description of the EC2 instance.</p>
     pub fn get_image_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,8 +166,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The image ID of the EC2 instance.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The image ID of the EC2 instance.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -180,8 +179,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The ID of the EC2 instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The ID of the EC2 instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -194,8 +192,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The state of the EC2 instance.</p>
     pub fn set_instance_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_state = input;
-        self
+        self.instance_state = input; self
     }
     /// <p>The state of the EC2 instance.</p>
     pub fn get_instance_state(&self) -> &::std::option::Option<::std::string::String> {
@@ -208,8 +205,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The type of the EC2 instance.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The type of the EC2 instance.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -222,8 +218,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
     pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -236,8 +231,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The launch time of the EC2 instance.</p>
     pub fn set_launch_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.launch_time = input;
-        self
+        self.launch_time = input; self
     }
     /// <p>The launch time of the EC2 instance.</p>
     pub fn get_launch_time(&self) -> &::std::option::Option<::std::string::String> {
@@ -250,17 +244,16 @@ impl InstanceDetailsBuilder {
     /// <p>The elastic network interface information of the EC2 instance.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>>) -> Self {
+        self.network_interfaces = input; self
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+    pub fn get_network_interfaces(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::NetworkInterface>> {
         &self.network_interfaces
     }
     /// <p>The platform of the EC2 instance.</p>
@@ -270,8 +263,7 @@ impl InstanceDetailsBuilder {
     }
     /// <p>The platform of the EC2 instance.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The platform of the EC2 instance.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -284,17 +276,16 @@ impl InstanceDetailsBuilder {
     /// <p>The product code of the EC2 instance.</p>
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
-        v.push(input);
-        self.product_codes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.product_codes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>) -> Self {
-        self.product_codes = input;
-        self
+    pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>>) -> Self {
+        self.product_codes = input; self
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+    pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ProductCode>> {
         &self.product_codes
     }
     /// Appends an item to `tags`.
@@ -304,35 +295,48 @@ impl InstanceDetailsBuilder {
     /// <p>The tags of the EC2 instance.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags of the EC2 instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the EC2 instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`InstanceDetails`](crate::types::InstanceDetails).
     pub fn build(self) -> crate::types::InstanceDetails {
         crate::types::InstanceDetails {
-            availability_zone: self.availability_zone,
-            iam_instance_profile: self.iam_instance_profile,
-            image_description: self.image_description,
-            image_id: self.image_id,
-            instance_id: self.instance_id,
-            instance_state: self.instance_state,
-            instance_type: self.instance_type,
-            outpost_arn: self.outpost_arn,
-            launch_time: self.launch_time,
-            network_interfaces: self.network_interfaces,
-            platform: self.platform,
-            product_codes: self.product_codes,
-            tags: self.tags,
+            availability_zone: self.availability_zone
+            ,
+            iam_instance_profile: self.iam_instance_profile
+            ,
+            image_description: self.image_description
+            ,
+            image_id: self.image_id
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_state: self.instance_state
+            ,
+            instance_type: self.instance_type
+            ,
+            outpost_arn: self.outpost_arn
+            ,
+            launch_time: self.launch_time
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            platform: self.platform
+            ,
+            product_codes: self.product_codes
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

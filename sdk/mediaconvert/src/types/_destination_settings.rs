@@ -3,13 +3,13 @@
 /// Settings associated with the destination. Will vary based on the type of destination
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DestinationSettings {
+pub struct DestinationSettings  {
     /// Settings associated with S3 destination
     pub s3_settings: ::std::option::Option<crate::types::S3DestinationSettings>,
 }
-impl DestinationSettings {
+impl  DestinationSettings  {
     /// Settings associated with S3 destination
-    pub fn s3_settings(&self) -> ::std::option::Option<&crate::types::S3DestinationSettings> {
+    pub fn s3_settings(&self) -> ::std::option::Option<& crate::types::S3DestinationSettings> {
         self.s3_settings.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl DestinationSettingsBuilder {
     }
     /// Settings associated with S3 destination
     pub fn set_s3_settings(mut self, input: ::std::option::Option<crate::types::S3DestinationSettings>) -> Self {
-        self.s3_settings = input;
-        self
+        self.s3_settings = input; self
     }
     /// Settings associated with S3 destination
     pub fn get_s3_settings(&self) -> &::std::option::Option<crate::types::S3DestinationSettings> {
@@ -44,7 +43,9 @@ impl DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`DestinationSettings`](crate::types::DestinationSettings).
     pub fn build(self) -> crate::types::DestinationSettings {
         crate::types::DestinationSettings {
-            s3_settings: self.s3_settings,
+            s3_settings: self.s3_settings
+            ,
         }
     }
 }
+

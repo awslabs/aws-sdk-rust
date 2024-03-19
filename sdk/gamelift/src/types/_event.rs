@@ -3,7 +3,7 @@
 /// <p>Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Event {
+pub struct Event  {
     /// <p>A unique identifier for a fleet event.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
@@ -106,13 +106,13 @@ pub struct Event {
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     pub pre_signed_log_url: ::std::option::Option<::std::string::String>,
 }
-impl Event {
+impl  Event  {
     /// <p>A unique identifier for a fleet event.</p>
-    pub fn event_id(&self) -> ::std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of event being logged.</p>
@@ -205,19 +205,19 @@ impl Event {
     /// <li>
     /// <p>GENERIC_EVENT -- An unspecified event has occurred.</p></li>
     /// </ul>
-    pub fn event_code(&self) -> ::std::option::Option<&crate::types::EventCode> {
+    pub fn event_code(&self) -> ::std::option::Option<& crate::types::EventCode> {
         self.event_code.as_ref()
     }
     /// <p>Additional information related to the event.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
-    pub fn pre_signed_log_url(&self) -> ::std::option::Option<&str> {
+    pub fn pre_signed_log_url(&self) -> ::std::option::Option<& str> {
         self.pre_signed_log_url.as_deref()
     }
 }
@@ -247,8 +247,7 @@ impl EventBuilder {
     }
     /// <p>A unique identifier for a fleet event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>A unique identifier for a fleet event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -261,8 +260,7 @@ impl EventBuilder {
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,8 +451,7 @@ impl EventBuilder {
     /// <p>GENERIC_EVENT -- An unspecified event has occurred.</p></li>
     /// </ul>
     pub fn set_event_code(mut self, input: ::std::option::Option<crate::types::EventCode>) -> Self {
-        self.event_code = input;
-        self
+        self.event_code = input; self
     }
     /// <p>The type of event being logged.</p>
     /// <p><b>Fleet state transition events:</b></p>
@@ -556,8 +553,7 @@ impl EventBuilder {
     }
     /// <p>Additional information related to the event.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Additional information related to the event.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -570,8 +566,7 @@ impl EventBuilder {
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.event_time = input;
-        self
+        self.event_time = input; self
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -584,8 +579,7 @@ impl EventBuilder {
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     pub fn set_pre_signed_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pre_signed_log_url = input;
-        self
+        self.pre_signed_log_url = input; self
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     pub fn get_pre_signed_log_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -594,12 +588,19 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            event_id: self.event_id,
-            resource_id: self.resource_id,
-            event_code: self.event_code,
-            message: self.message,
-            event_time: self.event_time,
-            pre_signed_log_url: self.pre_signed_log_url,
+            event_id: self.event_id
+            ,
+            resource_id: self.resource_id
+            ,
+            event_code: self.event_code
+            ,
+            message: self.message
+            ,
+            event_time: self.event_time
+            ,
+            pre_signed_log_url: self.pre_signed_log_url
+            ,
         }
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput {
+pub struct DeleteResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource policy you're deleting.</p>
     pub policy_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteResourcePolicyInput {
+impl  DeleteResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The ID of the resource policy you're deleting.</p>
-    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<& str> {
         self.policy_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,21 +55,22 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The ID of the resource policy you're deleting.</p>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The ID of the resource policy you're deleting.</p>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-            resource_arn: self.resource_arn,
-            policy_id: self.policy_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
+                resource_arn: self.resource_arn
+                ,
+                policy_id: self.policy_id
+                ,
+            }
+        )
     }
 }
+

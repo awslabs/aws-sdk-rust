@@ -3,18 +3,18 @@
 /// <p>Represents the input of a <code>ResetCacheParameterGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResetCacheParameterGroupInput {
+pub struct ResetCacheParameterGroupInput  {
     /// <p>The name of the cache parameter group to reset.</p>
     pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub reset_all_parameters: ::std::option::Option<bool>,
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    pub parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub parameter_name_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>,
 }
-impl ResetCacheParameterGroupInput {
+impl  ResetCacheParameterGroupInput  {
     /// <p>The name of the cache parameter group to reset.</p>
-    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
@@ -23,10 +23,11 @@ impl ResetCacheParameterGroupInput {
         self.reset_all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameter_name_values.is_none()`.
-    pub fn parameter_name_values(&self) -> &[crate::types::ParameterNameValue] {
-        self.parameter_name_values.as_deref().unwrap_or_default()
+    pub fn parameter_name_values(&self) -> & [crate::types::ParameterNameValue] {
+        self.parameter_name_values.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ResetCacheParameterGroupInput {
@@ -42,7 +43,7 @@ impl ResetCacheParameterGroupInput {
 pub struct ResetCacheParameterGroupInputBuilder {
     pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) reset_all_parameters: ::std::option::Option<bool>,
-    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
+    pub(crate) parameter_name_values: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>,
 }
 impl ResetCacheParameterGroupInputBuilder {
     /// <p>The name of the cache parameter group to reset.</p>
@@ -53,8 +54,7 @@ impl ResetCacheParameterGroupInputBuilder {
     }
     /// <p>The name of the cache parameter group to reset.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+        self.cache_parameter_group_name = input; self
     }
     /// <p>The name of the cache parameter group to reset.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +69,7 @@ impl ResetCacheParameterGroupInputBuilder {
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.reset_all_parameters = input;
-        self
+        self.reset_all_parameters = input; self
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
@@ -84,30 +83,30 @@ impl ResetCacheParameterGroupInputBuilder {
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
     pub fn parameter_name_values(mut self, input: crate::types::ParameterNameValue) -> Self {
         let mut v = self.parameter_name_values.unwrap_or_default();
-        v.push(input);
-        self.parameter_name_values = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parameter_name_values = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>) -> Self {
-        self.parameter_name_values = input;
-        self
+    pub fn set_parameter_name_values(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>>) -> Self {
+        self.parameter_name_values = input; self
     }
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
-    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+    pub fn get_parameter_name_values(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParameterNameValue>> {
         &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`ResetCacheParameterGroupInput`](crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput {
-            cache_parameter_group_name: self.cache_parameter_group_name,
-            reset_all_parameters: self.reset_all_parameters,
-            parameter_name_values: self.parameter_name_values,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput {
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
+                reset_all_parameters: self.reset_all_parameters
+                ,
+                parameter_name_values: self.parameter_name_values
+                ,
+            }
+        )
     }
 }
+

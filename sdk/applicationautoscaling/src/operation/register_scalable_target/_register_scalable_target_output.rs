@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterScalableTargetOutput {
+pub struct RegisterScalableTargetOutput  {
     /// <p>The ARN of the scalable target.</p>
     pub scalable_target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl RegisterScalableTargetOutput {
+impl  RegisterScalableTargetOutput  {
     /// <p>The ARN of the scalable target.</p>
-    pub fn scalable_target_arn(&self) -> ::std::option::Option<&str> {
+    pub fn scalable_target_arn(&self) -> ::std::option::Option<& str> {
         self.scalable_target_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for RegisterScalableTargetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl RegisterScalableTargetOutput {
     /// Creates a new builder-style object to manufacture [`RegisterScalableTargetOutput`](crate::operation::register_scalable_target::RegisterScalableTargetOutput).
     pub fn builder() -> crate::operation::register_scalable_target::builders::RegisterScalableTargetOutputBuilder {
@@ -40,27 +40,28 @@ impl RegisterScalableTargetOutputBuilder {
     }
     /// <p>The ARN of the scalable target.</p>
     pub fn set_scalable_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scalable_target_arn = input;
-        self
+        self.scalable_target_arn = input; self
     }
     /// <p>The ARN of the scalable target.</p>
     pub fn get_scalable_target_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.scalable_target_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`RegisterScalableTargetOutput`](crate::operation::register_scalable_target::RegisterScalableTargetOutput).
     pub fn build(self) -> crate::operation::register_scalable_target::RegisterScalableTargetOutput {
         crate::operation::register_scalable_target::RegisterScalableTargetOutput {
-            scalable_target_arn: self.scalable_target_arn,
+            scalable_target_arn: self.scalable_target_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

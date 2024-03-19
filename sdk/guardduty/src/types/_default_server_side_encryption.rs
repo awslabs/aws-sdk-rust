@@ -3,19 +3,19 @@
 /// <p>Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DefaultServerSideEncryption {
+pub struct DefaultServerSideEncryption  {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
     pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub kms_master_key_arn: ::std::option::Option<::std::string::String>,
 }
-impl DefaultServerSideEncryption {
+impl  DefaultServerSideEncryption  {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
-    pub fn encryption_type(&self) -> ::std::option::Option<&str> {
+    pub fn encryption_type(&self) -> ::std::option::Option<& str> {
         self.encryption_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
-    pub fn kms_master_key_arn(&self) -> ::std::option::Option<&str> {
+    pub fn kms_master_key_arn(&self) -> ::std::option::Option<& str> {
         self.kms_master_key_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DefaultServerSideEncryptionBuilder {
     }
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.encryption_type = input;
-        self
+        self.encryption_type = input; self
     }
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
     pub fn get_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl DefaultServerSideEncryptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub fn set_kms_master_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_master_key_arn = input;
-        self
+        self.kms_master_key_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub fn get_kms_master_key_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DefaultServerSideEncryptionBuilder {
     /// Consumes the builder and constructs a [`DefaultServerSideEncryption`](crate::types::DefaultServerSideEncryption).
     pub fn build(self) -> crate::types::DefaultServerSideEncryption {
         crate::types::DefaultServerSideEncryption {
-            encryption_type: self.encryption_type,
-            kms_master_key_arn: self.kms_master_key_arn,
+            encryption_type: self.encryption_type
+            ,
+            kms_master_key_arn: self.kms_master_key_arn
+            ,
         }
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteTrafficMirrorFilterInput {
+pub struct DeleteTrafficMirrorFilterInput  {
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub traffic_mirror_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl DeleteTrafficMirrorFilterInput {
+impl  DeleteTrafficMirrorFilterInput  {
     /// <p>The ID of the Traffic Mirror filter.</p>
-    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<&str> {
+    pub fn traffic_mirror_filter_id(&self) -> ::std::option::Option<& str> {
         self.traffic_mirror_filter_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,8 +41,7 @@ impl DeleteTrafficMirrorFilterInputBuilder {
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn set_traffic_mirror_filter_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.traffic_mirror_filter_id = input;
-        self
+        self.traffic_mirror_filter_id = input; self
     }
     /// <p>The ID of the Traffic Mirror filter.</p>
     pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl DeleteTrafficMirrorFilterInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteTrafficMirrorFilterInput`](crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput {
-            traffic_mirror_filter_id: self.traffic_mirror_filter_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilterInput {
+                traffic_mirror_filter_id: self.traffic_mirror_filter_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

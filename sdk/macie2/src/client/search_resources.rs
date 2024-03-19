@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`SearchResources`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`bucket_criteria(SearchResourcesBucketCriteria)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::bucket_criteria) / [`set_bucket_criteria(Option<SearchResourcesBucketCriteria>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_bucket_criteria):<br>required: **false**<br><p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response. The default value is 50.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
     ///   - [`sort_criteria(SearchResourcesSortCriteria)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<SearchResourcesSortCriteria>)`](crate::operation::search_resources::builders::SearchResourcesFluentBuilder::set_sort_criteria):<br>required: **false**<br><p>The criteria to use to sort the results.</p><br>
-    /// - On success, responds with [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput) with field(s):
+                            /// - On success, responds with [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput) with field(s):
     ///   - [`matching_resources(Option<Vec::<MatchingResource>>)`](crate::operation::search_resources::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search_resources::SearchResourcesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
+                            /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::operation::search_resources::SearchResourcesError)
     pub fn search_resources(&self) -> crate::operation::search_resources::builders::SearchResourcesFluentBuilder {
-        crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::search_resources::builders::SearchResourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

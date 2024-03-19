@@ -6,7 +6,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ManagedRuleSetSummary {
+pub struct ManagedRuleSetSummary  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -32,26 +32,26 @@ pub struct ManagedRuleSetSummary {
     /// </ul>
     pub label_namespace: ::std::option::Option<::std::string::String>,
 }
-impl ManagedRuleSetSummary {
+impl  ManagedRuleSetSummary  {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the set that helps with identification.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
-    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+    pub fn lock_token(&self) -> ::std::option::Option<& str> {
         self.lock_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix.</p>
@@ -66,7 +66,7 @@ impl ManagedRuleSetSummary {
     /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon:</p>
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
-    pub fn label_namespace(&self) -> ::std::option::Option<&str> {
+    pub fn label_namespace(&self) -> ::std::option::Option<& str> {
         self.label_namespace.as_deref()
     }
 }
@@ -98,8 +98,7 @@ impl ManagedRuleSetSummaryBuilder {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
@@ -113,8 +112,7 @@ impl ManagedRuleSetSummaryBuilder {
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl ManagedRuleSetSummaryBuilder {
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the set that helps with identification.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -141,8 +138,7 @@ impl ManagedRuleSetSummaryBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lock_token = input;
-        self
+        self.lock_token = input; self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation.</p>
     pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -155,8 +151,7 @@ impl ManagedRuleSetSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -191,8 +186,7 @@ impl ManagedRuleSetSummaryBuilder {
     /// <p><code><label namespace>:<label from rule></label></label></code></p></li>
     /// </ul>
     pub fn set_label_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.label_namespace = input;
-        self
+        self.label_namespace = input; self
     }
     /// <p>The label namespace prefix for the managed rule groups that are offered to customers from this managed rule set. All labels that are added by rules in the managed rule group have this prefix.</p>
     /// <ul>
@@ -212,12 +206,19 @@ impl ManagedRuleSetSummaryBuilder {
     /// Consumes the builder and constructs a [`ManagedRuleSetSummary`](crate::types::ManagedRuleSetSummary).
     pub fn build(self) -> crate::types::ManagedRuleSetSummary {
         crate::types::ManagedRuleSetSummary {
-            name: self.name,
-            id: self.id,
-            description: self.description,
-            lock_token: self.lock_token,
-            arn: self.arn,
-            label_namespace: self.label_namespace,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            lock_token: self.lock_token
+            ,
+            arn: self.arn
+            ,
+            label_namespace: self.label_namespace
+            ,
         }
     }
 }
+

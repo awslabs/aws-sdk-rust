@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateFieldOutput {
+pub struct CreateFieldOutput  {
     /// <p>The unique identifier of a field.</p>
     pub field_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub field_arn: ::std::string::String,
     _request_id: Option<String>,
 }
-impl CreateFieldOutput {
+impl  CreateFieldOutput  {
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> &str {
-        use std::ops::Deref;
-        self.field_id.deref()
+    pub fn field_id(&self) -> & str {
+        use std::ops::Deref; self.field_id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.field_arn.deref()
+    pub fn field_arn(&self) -> & str {
+        use std::ops::Deref; self.field_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFieldOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateFieldOutput {
     /// Creates a new builder-style object to manufacture [`CreateFieldOutput`](crate::operation::create_field::CreateFieldOutput).
     pub fn builder() -> crate::operation::create_field::builders::CreateFieldOutputBuilder {
@@ -50,8 +48,7 @@ impl CreateFieldOutputBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,41 +62,41 @@ impl CreateFieldOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn set_field_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.field_arn = input;
-        self
+        self.field_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn get_field_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateFieldOutput`](crate::operation::create_field::CreateFieldOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::operation::create_field::builders::CreateFieldOutputBuilder::field_id)
     /// - [`field_arn`](crate::operation::create_field::builders::CreateFieldOutputBuilder::field_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_field::CreateFieldOutput {
-            field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_id",
-                    "field_id was not specified but it is required when building CreateFieldOutput",
-                )
-            })?,
-            field_arn: self.field_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "field_arn",
-                    "field_arn was not specified but it is required when building CreateFieldOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_field::CreateFieldOutput {
+                field_id: self.field_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_id", "field_id was not specified but it is required when building CreateFieldOutput")
+                    )?
+                ,
+                field_arn: self.field_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("field_arn", "field_arn was not specified but it is required when building CreateFieldOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

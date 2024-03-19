@@ -3,13 +3,13 @@
 /// Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MinBottomRenditionSize {
+pub struct MinBottomRenditionSize  {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub height: ::std::option::Option<i32>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub width: ::std::option::Option<i32>,
 }
-impl MinBottomRenditionSize {
+impl  MinBottomRenditionSize  {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
@@ -41,8 +41,7 @@ impl MinBottomRenditionSizeBuilder {
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn get_height(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl MinBottomRenditionSizeBuilder {
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn get_width(&self) -> &::std::option::Option<i32> {
@@ -65,8 +63,11 @@ impl MinBottomRenditionSizeBuilder {
     /// Consumes the builder and constructs a [`MinBottomRenditionSize`](crate::types::MinBottomRenditionSize).
     pub fn build(self) -> crate::types::MinBottomRenditionSize {
         crate::types::MinBottomRenditionSize {
-            height: self.height,
-            width: self.width,
+            height: self.height
+            ,
+            width: self.width
+            ,
         }
     }
 }
+

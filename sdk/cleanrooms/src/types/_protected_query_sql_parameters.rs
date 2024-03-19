@@ -3,29 +3,29 @@
 /// <p>The parameters for the SQL type Protected Query.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ProtectedQuerySqlParameters {
+pub struct ProtectedQuerySqlParameters  {
     /// <p>The query string to be submitted.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub analysis_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protected query SQL parameters.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl ProtectedQuerySqlParameters {
+impl  ProtectedQuerySqlParameters  {
     /// <p>The query string to be submitted.</p>
-    pub fn query_string(&self) -> ::std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn analysis_template_arn(&self) -> ::std::option::Option<&str> {
+    pub fn analysis_template_arn(&self) -> ::std::option::Option<& str> {
         self.analysis_template_arn.as_deref()
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
 }
-impl ::std::fmt::Debug for ProtectedQuerySqlParameters {
+impl  ::std::fmt::Debug for ProtectedQuerySqlParameters  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedQuerySqlParameters");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -47,7 +47,7 @@ impl ProtectedQuerySqlParameters {
 pub struct ProtectedQuerySqlParametersBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) analysis_template_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl ProtectedQuerySqlParametersBuilder {
     /// <p>The query string to be submitted.</p>
@@ -57,8 +57,7 @@ impl ProtectedQuerySqlParametersBuilder {
     }
     /// <p>The query string to be submitted.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The query string to be submitted.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ProtectedQuerySqlParametersBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub fn set_analysis_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.analysis_template_arn = input;
-        self
+        self.analysis_template_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
     pub fn get_analysis_template_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,25 +83,27 @@ impl ProtectedQuerySqlParametersBuilder {
     /// <p>The protected query SQL parameters.</p>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The protected query SQL parameters.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`ProtectedQuerySqlParameters`](crate::types::ProtectedQuerySqlParameters).
     pub fn build(self) -> crate::types::ProtectedQuerySqlParameters {
         crate::types::ProtectedQuerySqlParameters {
-            query_string: self.query_string,
-            analysis_template_arn: self.analysis_template_arn,
-            parameters: self.parameters,
+            query_string: self.query_string
+            ,
+            analysis_template_arn: self.analysis_template_arn
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
@@ -116,3 +116,4 @@ impl ::std::fmt::Debug for ProtectedQuerySqlParametersBuilder {
         formatter.finish()
     }
 }
+

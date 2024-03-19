@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMessagingStreamingConfigurationsInput {
+pub struct PutMessagingStreamingConfigurationsInput  {
     /// <p>The ARN of the streaming configuration.</p>
     pub app_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The streaming configurations.</p>
-    pub streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub streaming_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingConfiguration>>,
 }
-impl PutMessagingStreamingConfigurationsInput {
+impl  PutMessagingStreamingConfigurationsInput  {
     /// <p>The ARN of the streaming configuration.</p>
-    pub fn app_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> ::std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The streaming configurations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streaming_configurations.is_none()`.
-    pub fn streaming_configurations(&self) -> &[crate::types::StreamingConfiguration] {
-        self.streaming_configurations.as_deref().unwrap_or_default()
+    pub fn streaming_configurations(&self) -> & [crate::types::StreamingConfiguration] {
+        self.streaming_configurations.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PutMessagingStreamingConfigurationsInput {
@@ -32,7 +33,7 @@ impl PutMessagingStreamingConfigurationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct PutMessagingStreamingConfigurationsInputBuilder {
     pub(crate) app_instance_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>,
+    pub(crate) streaming_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingConfiguration>>,
 }
 impl PutMessagingStreamingConfigurationsInputBuilder {
     /// <p>The ARN of the streaming configuration.</p>
@@ -43,8 +44,7 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
     }
     /// <p>The ARN of the streaming configuration.</p>
     pub fn set_app_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The ARN of the streaming configuration.</p>
     pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,31 +57,28 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
     /// <p>The streaming configurations.</p>
     pub fn streaming_configurations(mut self, input: crate::types::StreamingConfiguration) -> Self {
         let mut v = self.streaming_configurations.unwrap_or_default();
-        v.push(input);
-        self.streaming_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.streaming_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The streaming configurations.</p>
-    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>>) -> Self {
-        self.streaming_configurations = input;
-        self
+    pub fn set_streaming_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StreamingConfiguration>>) -> Self {
+        self.streaming_configurations = input; self
     }
     /// <p>The streaming configurations.</p>
-    pub fn get_streaming_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+    pub fn get_streaming_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StreamingConfiguration>> {
         &self.streaming_configurations
     }
     /// Consumes the builder and constructs a [`PutMessagingStreamingConfigurationsInput`](crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput {
-                app_instance_arn: self.app_instance_arn,
-                streaming_configurations: self.streaming_configurations,
-            },
+                app_instance_arn: self.app_instance_arn
+                ,
+                streaming_configurations: self.streaming_configurations
+                ,
+            }
         )
     }
 }
+

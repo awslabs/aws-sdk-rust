@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutInlinePolicyToPermissionSetInput {
+pub struct PutInlinePolicyToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the permission set.</p>
@@ -10,17 +10,17 @@ pub struct PutInlinePolicyToPermissionSetInput {
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     pub inline_policy: ::std::option::Option<::std::string::String>,
 }
-impl PutInlinePolicyToPermissionSetInput {
+impl  PutInlinePolicyToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the permission set.</p>
-    pub fn permission_set_arn(&self) -> ::std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> ::std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
-    pub fn inline_policy(&self) -> ::std::option::Option<&str> {
+    pub fn inline_policy(&self) -> ::std::option::Option<& str> {
         self.inline_policy.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
     }
     /// <p>The ARN of the permission set.</p>
     pub fn set_permission_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.permission_set_arn = input;
-        self
+        self.permission_set_arn = input; self
     }
     /// <p>The ARN of the permission set.</p>
     pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,26 +76,24 @@ impl PutInlinePolicyToPermissionSetInputBuilder {
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     pub fn set_inline_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inline_policy = input;
-        self
+        self.inline_policy = input; self
     }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     pub fn get_inline_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.inline_policy
     }
     /// Consumes the builder and constructs a [`PutInlinePolicyToPermissionSetInput`](crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetInput {
-                instance_arn: self.instance_arn,
-                permission_set_arn: self.permission_set_arn,
-                inline_policy: self.inline_policy,
-            },
+                instance_arn: self.instance_arn
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                inline_policy: self.inline_policy
+                ,
+            }
         )
     }
 }
+

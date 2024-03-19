@@ -3,22 +3,22 @@
 /// <p>Contains the output of CreateNetworkInterfacePermission.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNetworkInterfacePermissionOutput {
+pub struct CreateNetworkInterfacePermissionOutput  {
     /// <p>Information about the permission for the network interface.</p>
     pub interface_permission: ::std::option::Option<crate::types::NetworkInterfacePermission>,
     _request_id: Option<String>,
 }
-impl CreateNetworkInterfacePermissionOutput {
+impl  CreateNetworkInterfacePermissionOutput  {
     /// <p>Information about the permission for the network interface.</p>
-    pub fn interface_permission(&self) -> ::std::option::Option<&crate::types::NetworkInterfacePermission> {
+    pub fn interface_permission(&self) -> ::std::option::Option<& crate::types::NetworkInterfacePermission> {
         self.interface_permission.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNetworkInterfacePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNetworkInterfacePermissionOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfacePermissionOutput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput).
     pub fn builder() -> crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateNetworkInterfacePermissionOutputBuilder {
     }
     /// <p>Information about the permission for the network interface.</p>
     pub fn set_interface_permission(mut self, input: ::std::option::Option<crate::types::NetworkInterfacePermission>) -> Self {
-        self.interface_permission = input;
-        self
+        self.interface_permission = input; self
     }
     /// <p>Information about the permission for the network interface.</p>
     pub fn get_interface_permission(&self) -> &::std::option::Option<crate::types::NetworkInterfacePermission> {
         &self.interface_permission
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNetworkInterfacePermissionOutput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput).
     pub fn build(self) -> crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput {
         crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput {
-            interface_permission: self.interface_permission,
+            interface_permission: self.interface_permission
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

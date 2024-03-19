@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTransactionInput {
+pub struct StartTransactionInput  {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub transaction_type: ::std::option::Option<crate::types::TransactionType>,
 }
-impl StartTransactionInput {
+impl  StartTransactionInput  {
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
-    pub fn transaction_type(&self) -> ::std::option::Option<&crate::types::TransactionType> {
+    pub fn transaction_type(&self) -> ::std::option::Option<& crate::types::TransactionType> {
         self.transaction_type.as_ref()
     }
 }
@@ -33,19 +33,20 @@ impl StartTransactionInputBuilder {
     }
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn set_transaction_type(mut self, input: ::std::option::Option<crate::types::TransactionType>) -> Self {
-        self.transaction_type = input;
-        self
+        self.transaction_type = input; self
     }
     /// <p>Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.</p>
     pub fn get_transaction_type(&self) -> &::std::option::Option<crate::types::TransactionType> {
         &self.transaction_type
     }
     /// Consumes the builder and constructs a [`StartTransactionInput`](crate::operation::start_transaction::StartTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_transaction::StartTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_transaction::StartTransactionInput {
-            transaction_type: self.transaction_type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_transaction::StartTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_transaction::StartTransactionInput {
+                transaction_type: self.transaction_type
+                ,
+            }
+        )
     }
 }
+

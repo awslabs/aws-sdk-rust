@@ -4,23 +4,23 @@
 /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SmsSandboxPhoneNumber {
+pub struct SmsSandboxPhoneNumber  {
     /// <p>The destination phone number.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The destination phone number's verification status.</p>
     pub status: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>,
 }
-impl SmsSandboxPhoneNumber {
+impl  SmsSandboxPhoneNumber  {
     /// <p>The destination phone number.</p>
-    pub fn phone_number(&self) -> ::std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The destination phone number's verification status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::SmsSandboxPhoneNumberVerificationStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::SmsSandboxPhoneNumberVerificationStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for SmsSandboxPhoneNumber {
+impl  ::std::fmt::Debug for SmsSandboxPhoneNumber  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SmsSandboxPhoneNumber");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
@@ -50,8 +50,7 @@ impl SmsSandboxPhoneNumberBuilder {
     }
     /// <p>The destination phone number.</p>
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The destination phone number.</p>
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl SmsSandboxPhoneNumberBuilder {
     }
     /// <p>The destination phone number's verification status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The destination phone number's verification status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus> {
@@ -74,8 +72,10 @@ impl SmsSandboxPhoneNumberBuilder {
     /// Consumes the builder and constructs a [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).
     pub fn build(self) -> crate::types::SmsSandboxPhoneNumber {
         crate::types::SmsSandboxPhoneNumber {
-            phone_number: self.phone_number,
-            status: self.status,
+            phone_number: self.phone_number
+            ,
+            status: self.status
+            ,
         }
     }
 }
@@ -87,3 +87,4 @@ impl ::std::fmt::Debug for SmsSandboxPhoneNumberBuilder {
         formatter.finish()
     }
 }
+

@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateLabelsInput {
+pub struct CreateLabelsInput  {
     /// <p>The ID of the resource.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>List of labels to add to the resource.</p>
-    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub authentication_token: ::std::option::Option<::std::string::String>,
 }
-impl CreateLabelsInput {
+impl  CreateLabelsInput  {
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>List of labels to add to the resource.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
-    pub fn labels(&self) -> &[::std::string::String] {
-        self.labels.as_deref().unwrap_or_default()
+    pub fn labels(&self) -> & [::std::string::String] {
+        self.labels.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> ::std::option::Option<&str> {
+    pub fn authentication_token(&self) -> ::std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateLabelsInput {
+impl  ::std::fmt::Debug for CreateLabelsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelsInput");
         formatter.field("resource_id", &self.resource_id);
@@ -47,7 +48,7 @@ impl CreateLabelsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateLabelsInputBuilder {
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
-    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) authentication_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateLabelsInputBuilder {
@@ -59,8 +60,7 @@ impl CreateLabelsInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,17 +73,16 @@ impl CreateLabelsInputBuilder {
     /// <p>List of labels to add to the resource.</p>
     pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>List of labels to add to the resource.</p>
-    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>List of labels to add to the resource.</p>
-    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.labels
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
@@ -93,22 +92,24 @@ impl CreateLabelsInputBuilder {
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authentication_token = input;
-        self
+        self.authentication_token = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_labels::CreateLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_labels::CreateLabelsInput {
-            resource_id: self.resource_id,
-            labels: self.labels,
-            authentication_token: self.authentication_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_labels::CreateLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_labels::CreateLabelsInput {
+                resource_id: self.resource_id
+                ,
+                labels: self.labels
+                ,
+                authentication_token: self.authentication_token
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateLabelsInputBuilder {
@@ -120,3 +121,4 @@ impl ::std::fmt::Debug for CreateLabelsInputBuilder {
         formatter.finish()
     }
 }
+

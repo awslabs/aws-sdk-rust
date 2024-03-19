@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListPackageVersionAssetsInput {
+pub struct ListPackageVersionAssetsInput  {
     /// <p>The name of the domain that contains the repository associated with the package version assets.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
@@ -32,21 +32,21 @@ pub struct ListPackageVersionAssetsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListPackageVersionAssetsInput {
+impl  ListPackageVersionAssetsInput  {
     /// <p>The name of the domain that contains the repository associated with the package version assets.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p>The name of the repository that contains the package that contains the requested package version assets.</p>
-    pub fn repository(&self) -> ::std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The format of the package that contains the requested package version assets.</p>
-    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
@@ -60,15 +60,15 @@ impl ListPackageVersionAssetsInput {
     /// <li>
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package that contains the requested package version assets.</p>
-    pub fn package(&self) -> ::std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(&self) -> ::std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -76,7 +76,7 @@ impl ListPackageVersionAssetsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -110,8 +110,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The name of the domain that contains the repository associated with the package version assets.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain that contains the repository associated with the package version assets.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -124,8 +123,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +137,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The name of the repository that contains the package that contains the requested package version assets.</p>
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The name of the repository that contains the package that contains the requested package version assets.</p>
     pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The format of the package that contains the requested package version assets.</p>
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The format of the package that contains the requested package version assets.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
@@ -188,8 +184,7 @@ impl ListPackageVersionAssetsInputBuilder {
     /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -213,8 +208,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The name of the package that contains the requested package version assets.</p>
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// <p>The name of the package that contains the requested package version assets.</p>
     pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
@@ -228,8 +222,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn set_package_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>A string that contains the package version (for example, <code>3.5.2</code>).</p>
     pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -242,8 +235,7 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -256,30 +248,36 @@ impl ListPackageVersionAssetsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPackageVersionAssetsInput`](crate::operation::list_package_version_assets::ListPackageVersionAssetsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_package_version_assets::ListPackageVersionAssetsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_package_version_assets::ListPackageVersionAssetsInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-            repository: self.repository,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            package_version: self.package_version,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_package_version_assets::ListPackageVersionAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_package_version_assets::ListPackageVersionAssetsInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+                repository: self.repository
+                ,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                package_version: self.package_version
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

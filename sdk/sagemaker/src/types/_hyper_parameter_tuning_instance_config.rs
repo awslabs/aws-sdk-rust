@@ -3,7 +3,7 @@
 /// <p>The configuration for hyperparameter tuning resources for use in training jobs launched by the tuning job. These resources include compute instances and storage volumes. Specify one or more compute instance configurations and allocation strategies to select resources (optional).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HyperParameterTuningInstanceConfig {
+pub struct HyperParameterTuningInstanceConfig  {
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
     pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
@@ -11,9 +11,9 @@ pub struct HyperParameterTuningInstanceConfig {
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
     pub volume_size_in_gb: ::std::option::Option<i32>,
 }
-impl HyperParameterTuningInstanceConfig {
+impl  HyperParameterTuningInstanceConfig  {
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TrainingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<& crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
@@ -49,8 +49,7 @@ impl HyperParameterTuningInstanceConfigBuilder {
     }
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::TrainingInstanceType>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::TrainingInstanceType> {
@@ -64,8 +63,7 @@ impl HyperParameterTuningInstanceConfigBuilder {
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
@@ -79,8 +77,7 @@ impl HyperParameterTuningInstanceConfigBuilder {
     }
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.volume_size_in_gb = input;
-        self
+        self.volume_size_in_gb = input; self
     }
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
     pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
@@ -89,9 +86,13 @@ impl HyperParameterTuningInstanceConfigBuilder {
     /// Consumes the builder and constructs a [`HyperParameterTuningInstanceConfig`](crate::types::HyperParameterTuningInstanceConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningInstanceConfig {
         crate::types::HyperParameterTuningInstanceConfig {
-            instance_type: self.instance_type,
-            instance_count: self.instance_count,
-            volume_size_in_gb: self.volume_size_in_gb,
+            instance_type: self.instance_type
+            ,
+            instance_count: self.instance_count
+            ,
+            volume_size_in_gb: self.volume_size_in_gb
+            ,
         }
     }
 }
+

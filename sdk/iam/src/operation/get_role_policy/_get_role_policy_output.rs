@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetRolePolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetRolePolicyOutput {
+pub struct GetRolePolicyOutput  {
     /// <p>The role the policy is associated with.</p>
     pub role_name: ::std::string::String,
     /// <p>The name of the policy.</p>
@@ -13,29 +13,26 @@ pub struct GetRolePolicyOutput {
     pub policy_document: ::std::string::String,
     _request_id: Option<String>,
 }
-impl GetRolePolicyOutput {
+impl  GetRolePolicyOutput  {
     /// <p>The role the policy is associated with.</p>
-    pub fn role_name(&self) -> &str {
-        use std::ops::Deref;
-        self.role_name.deref()
+    pub fn role_name(&self) -> & str {
+        use std::ops::Deref; self.role_name.deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_name.deref()
+    pub fn policy_name(&self) -> & str {
+        use std::ops::Deref; self.policy_name.deref()
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_document.deref()
+    pub fn policy_document(&self) -> & str {
+        use std::ops::Deref; self.policy_document.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetRolePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetRolePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetRolePolicyOutput`](crate::operation::get_role_policy::GetRolePolicyOutput).
     pub fn builder() -> crate::operation::get_role_policy::builders::GetRolePolicyOutputBuilder {
@@ -61,8 +58,7 @@ impl GetRolePolicyOutputBuilder {
     }
     /// <p>The role the policy is associated with.</p>
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The role the policy is associated with.</p>
     pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +72,7 @@ impl GetRolePolicyOutputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +88,7 @@ impl GetRolePolicyOutputBuilder {
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -102,42 +96,40 @@ impl GetRolePolicyOutputBuilder {
         &self.policy_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetRolePolicyOutput`](crate::operation::get_role_policy::GetRolePolicyOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_name`](crate::operation::get_role_policy::builders::GetRolePolicyOutputBuilder::role_name)
     /// - [`policy_name`](crate::operation::get_role_policy::builders::GetRolePolicyOutputBuilder::policy_name)
     /// - [`policy_document`](crate::operation::get_role_policy::builders::GetRolePolicyOutputBuilder::policy_document)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_role_policy::GetRolePolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_role_policy::GetRolePolicyOutput {
-            role_name: self.role_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_name",
-                    "role_name was not specified but it is required when building GetRolePolicyOutput",
-                )
-            })?,
-            policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_name",
-                    "policy_name was not specified but it is required when building GetRolePolicyOutput",
-                )
-            })?,
-            policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "policy_document",
-                    "policy_document was not specified but it is required when building GetRolePolicyOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_role_policy::GetRolePolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_role_policy::GetRolePolicyOutput {
+                role_name: self.role_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_name", "role_name was not specified but it is required when building GetRolePolicyOutput")
+                    )?
+                ,
+                policy_name: self.policy_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_name", "policy_name was not specified but it is required when building GetRolePolicyOutput")
+                    )?
+                ,
+                policy_document: self.policy_document
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("policy_document", "policy_document was not specified but it is required when building GetRolePolicyOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDomainInput {
+pub struct DescribeDomainInput  {
     /// <p>A string that specifies the name of the requested domain.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub domain_owner: ::std::option::Option<::std::string::String>,
 }
-impl DescribeDomainInput {
+impl  DescribeDomainInput  {
     /// <p>A string that specifies the name of the requested domain.</p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(&self) -> ::std::option::Option<&str> {
+    pub fn domain_owner(&self) -> ::std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DescribeDomainInputBuilder {
     }
     /// <p>A string that specifies the name of the requested domain.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>A string that specifies the name of the requested domain.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl DescribeDomainInputBuilder {
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p>The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.</p>
     pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_owner
     }
     /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_domain::DescribeDomainInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_domain::DescribeDomainInput {
-            domain: self.domain,
-            domain_owner: self.domain_owner,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_domain::DescribeDomainInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_domain::DescribeDomainInput {
+                domain: self.domain
+                ,
+                domain_owner: self.domain_owner
+                ,
+            }
+        )
     }
 }
+

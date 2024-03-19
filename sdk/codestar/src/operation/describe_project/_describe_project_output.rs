@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DescribeProjectOutput {
+pub struct DescribeProjectOutput  {
     /// <p>The display name for the project.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project.</p>
@@ -23,45 +23,45 @@ pub struct DescribeProjectOutput {
     pub status: ::std::option::Option<crate::types::ProjectStatus>,
     _request_id: Option<String>,
 }
-impl DescribeProjectOutput {
+impl  DescribeProjectOutput  {
     /// <p>The display name for the project.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the project, if any.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The date and time the project was created, in timestamp format.</p>
-    pub fn created_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
-    pub fn project_template_id(&self) -> ::std::option::Option<&str> {
+    pub fn project_template_id(&self) -> ::std::option::Option<& str> {
         self.project_template_id.as_deref()
     }
     /// <p>The project creation or deletion status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ProjectStatus> {
         self.status.as_ref()
     }
 }
-impl ::std::fmt::Debug for DescribeProjectOutput {
+impl  ::std::fmt::Debug for DescribeProjectOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeProjectOutput");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -78,10 +78,10 @@ impl ::std::fmt::Debug for DescribeProjectOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -112,8 +112,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The display name for the project.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name for the project.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +125,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the project.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,8 +138,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -154,8 +151,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The description of the project, if any.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the project, if any.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -168,8 +164,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -182,8 +177,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The date and time the project was created, in timestamp format.</p>
     pub fn set_created_time_stamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time_stamp = input;
-        self
+        self.created_time_stamp = input; self
     }
     /// <p>The date and time the project was created, in timestamp format.</p>
     pub fn get_created_time_stamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -196,8 +190,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +203,7 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
     pub fn set_project_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_template_id = input;
-        self
+        self.project_template_id = input; self
     }
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
     pub fn get_project_template_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,34 +216,42 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The project creation or deletion status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The project creation or deletion status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
         &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
         crate::operation::describe_project::DescribeProjectOutput {
-            name: self.name,
-            id: self.id,
-            arn: self.arn,
-            description: self.description,
-            client_request_token: self.client_request_token,
-            created_time_stamp: self.created_time_stamp,
-            stack_id: self.stack_id,
-            project_template_id: self.project_template_id,
-            status: self.status,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            client_request_token: self.client_request_token
+            ,
+            created_time_stamp: self.created_time_stamp
+            ,
+            stack_id: self.stack_id
+            ,
+            project_template_id: self.project_template_id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
@@ -272,3 +272,4 @@ impl ::std::fmt::Debug for DescribeProjectOutputBuilder {
         formatter.finish()
     }
 }
+

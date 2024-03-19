@@ -3,27 +3,25 @@
 /// <p>A complex type that describes an S3 location where recorded videos will be stored.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
     pub storage_configuration_arn: ::std::string::String,
     /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
-    pub encoder_configuration_arns: ::std::vec::Vec<::std::string::String>,
+    pub encoder_configuration_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
     pub recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
 }
-impl S3DestinationConfiguration {
+impl  S3DestinationConfiguration  {
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
-    pub fn storage_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.storage_configuration_arn.deref()
+    pub fn storage_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.storage_configuration_arn.deref()
     }
     /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
-    pub fn encoder_configuration_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.encoder_configuration_arns.deref()
+    pub fn encoder_configuration_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.encoder_configuration_arns.deref()
     }
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
-    pub fn recording_configuration(&self) -> ::std::option::Option<&crate::types::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> ::std::option::Option<& crate::types::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
 }
@@ -39,7 +37,7 @@ impl S3DestinationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3DestinationConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
-    pub(crate) encoder_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) encoder_configuration_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) recording_configuration: ::std::option::Option<crate::types::RecordingConfiguration>,
 }
 impl S3DestinationConfigurationBuilder {
@@ -51,8 +49,7 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
     pub fn set_storage_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.storage_configuration_arn = input;
-        self
+        self.storage_configuration_arn = input; self
     }
     /// <p>ARN of the <code>StorageConfiguration</code> where recorded videos will be stored.</p>
     pub fn get_storage_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,17 +62,16 @@ impl S3DestinationConfigurationBuilder {
     /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
     pub fn encoder_configuration_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.encoder_configuration_arns.unwrap_or_default();
-        v.push(input.into());
-        self.encoder_configuration_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.encoder_configuration_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
-    pub fn set_encoder_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.encoder_configuration_arns = input;
-        self
+    pub fn set_encoder_configuration_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.encoder_configuration_arns = input; self
     }
     /// <p>ARNs of the <code>EncoderConfiguration</code> resource. The encoder configuration and stage resources must be in the same AWS account and region.</p>
-    pub fn get_encoder_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_encoder_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.encoder_configuration_arns
     }
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
@@ -85,8 +81,7 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
     pub fn set_recording_configuration(mut self, input: ::std::option::Option<crate::types::RecordingConfiguration>) -> Self {
-        self.recording_configuration = input;
-        self
+        self.recording_configuration = input; self
     }
     /// <p>Array of maps, each of the form <code>string:string (key:value)</code>. This is an optional customer specification, currently used only to specify the recording format for storing a recording in Amazon S3.</p>
     pub fn get_recording_configuration(&self) -> &::std::option::Option<crate::types::RecordingConfiguration> {
@@ -97,20 +92,22 @@ impl S3DestinationConfigurationBuilder {
     /// - [`storage_configuration_arn`](crate::types::builders::S3DestinationConfigurationBuilder::storage_configuration_arn)
     /// - [`encoder_configuration_arns`](crate::types::builders::S3DestinationConfigurationBuilder::encoder_configuration_arns)
     pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
-            storage_configuration_arn: self.storage_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_configuration_arn",
-                    "storage_configuration_arn was not specified but it is required when building S3DestinationConfiguration",
-                )
-            })?,
-            encoder_configuration_arns: self.encoder_configuration_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "encoder_configuration_arns",
-                    "encoder_configuration_arns was not specified but it is required when building S3DestinationConfiguration",
-                )
-            })?,
-            recording_configuration: self.recording_configuration,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3DestinationConfiguration {
+                storage_configuration_arn: self.storage_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_configuration_arn", "storage_configuration_arn was not specified but it is required when building S3DestinationConfiguration")
+                    )?
+                ,
+                encoder_configuration_arns: self.encoder_configuration_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("encoder_configuration_arns", "encoder_configuration_arns was not specified but it is required when building S3DestinationConfiguration")
+                    )?
+                ,
+                recording_configuration: self.recording_configuration
+                ,
+            }
+        )
     }
 }
+

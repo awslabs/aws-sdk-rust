@@ -3,13 +3,13 @@
 /// <p>The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaConflictHandlerConfig {
+pub struct LambdaConflictHandlerConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     pub lambda_conflict_handler_arn: ::std::option::Option<::std::string::String>,
 }
-impl LambdaConflictHandlerConfig {
+impl  LambdaConflictHandlerConfig  {
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
-    pub fn lambda_conflict_handler_arn(&self) -> ::std::option::Option<&str> {
+    pub fn lambda_conflict_handler_arn(&self) -> ::std::option::Option<& str> {
         self.lambda_conflict_handler_arn.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl LambdaConflictHandlerConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     pub fn set_lambda_conflict_handler_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_conflict_handler_arn = input;
-        self
+        self.lambda_conflict_handler_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the Lambda function to use as the Conflict Handler.</p>
     pub fn get_lambda_conflict_handler_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl LambdaConflictHandlerConfigBuilder {
     /// Consumes the builder and constructs a [`LambdaConflictHandlerConfig`](crate::types::LambdaConflictHandlerConfig).
     pub fn build(self) -> crate::types::LambdaConflictHandlerConfig {
         crate::types::LambdaConflictHandlerConfig {
-            lambda_conflict_handler_arn: self.lambda_conflict_handler_arn,
+            lambda_conflict_handler_arn: self.lambda_conflict_handler_arn
+            ,
         }
     }
 }
+

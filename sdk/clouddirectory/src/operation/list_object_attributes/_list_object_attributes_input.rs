@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListObjectAttributesInput {
+pub struct ListObjectAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub directory_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
@@ -16,17 +16,17 @@ pub struct ListObjectAttributesInput {
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub facet_filter: ::std::option::Option<crate::types::SchemaFacet>,
 }
-impl ListObjectAttributesInput {
+impl  ListObjectAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> ::std::option::Option<&str> {
+    pub fn directory_arn(&self) -> ::std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -34,11 +34,11 @@ impl ListObjectAttributesInput {
         self.max_results
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
-    pub fn consistency_level(&self) -> ::std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> ::std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn facet_filter(&self) -> ::std::option::Option<&crate::types::SchemaFacet> {
+    pub fn facet_filter(&self) -> ::std::option::Option<& crate::types::SchemaFacet> {
         self.facet_filter.as_ref()
     }
 }
@@ -69,8 +69,7 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +83,7 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     pub fn set_object_reference(mut self, input: ::std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.object_reference = input;
-        self
+        self.object_reference = input; self
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
@@ -98,8 +96,7 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +109,7 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -126,8 +122,7 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn set_consistency_level(mut self, input: ::std::option::Option<crate::types::ConsistencyLevel>) -> Self {
-        self.consistency_level = input;
-        self
+        self.consistency_level = input; self
     }
     /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
     pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
@@ -140,25 +135,30 @@ impl ListObjectAttributesInputBuilder {
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn set_facet_filter(mut self, input: ::std::option::Option<crate::types::SchemaFacet>) -> Self {
-        self.facet_filter = input;
-        self
+        self.facet_filter = input; self
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn get_facet_filter(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
         &self.facet_filter
     }
     /// Consumes the builder and constructs a [`ListObjectAttributesInput`](crate::operation::list_object_attributes::ListObjectAttributesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_object_attributes::ListObjectAttributesInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_object_attributes::ListObjectAttributesInput {
-            directory_arn: self.directory_arn,
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            consistency_level: self.consistency_level,
-            facet_filter: self.facet_filter,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_object_attributes::ListObjectAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_object_attributes::ListObjectAttributesInput {
+                directory_arn: self.directory_arn
+                ,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                consistency_level: self.consistency_level
+                ,
+                facet_filter: self.facet_filter
+                ,
+            }
+        )
     }
 }
+

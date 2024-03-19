@@ -4,19 +4,19 @@
 /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InferenceExperimentSchedule {
+pub struct InferenceExperimentSchedule  {
     /// <p>The timestamp at which the inference experiment started or will start.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the inference experiment ended or will end.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl InferenceExperimentSchedule {
+impl  InferenceExperimentSchedule  {
     /// <p>The timestamp at which the inference experiment started or will start.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp at which the inference experiment ended or will end.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl InferenceExperimentScheduleBuilder {
     }
     /// <p>The timestamp at which the inference experiment started or will start.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The timestamp at which the inference experiment started or will start.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -56,8 +55,7 @@ impl InferenceExperimentScheduleBuilder {
     }
     /// <p>The timestamp at which the inference experiment ended or will end.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The timestamp at which the inference experiment ended or will end.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -66,8 +64,11 @@ impl InferenceExperimentScheduleBuilder {
     /// Consumes the builder and constructs a [`InferenceExperimentSchedule`](crate::types::InferenceExperimentSchedule).
     pub fn build(self) -> crate::types::InferenceExperimentSchedule {
         crate::types::InferenceExperimentSchedule {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
+

@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeActivities`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`authentication_token(impl Into<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_authentication_token):<br>required: **false**<br><p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p><br>
     ///   - [`start_time(DateTime)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::start_time) / [`set_start_time(Option<DateTime>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_start_time):<br>required: **false**<br><p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p><br>
     ///   - [`end_time(DateTime)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::end_time) / [`set_end_time(Option<DateTime>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_end_time):<br>required: **false**<br><p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p><br>
@@ -14,11 +14,12 @@ impl super::Client {
     ///   - [`include_indirect_activities(bool)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::include_indirect_activities) / [`set_include_indirect_activities(Option<bool>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_include_indirect_activities):<br>required: **false**<br><p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p><br>
     ///   - [`limit(i32)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_limit):<br>required: **false**<br><p>The maximum number of items to return.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::set_marker):<br>required: **false**<br><p>The marker for the next set of results.</p><br>
-    /// - On success, responds with [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput) with field(s):
+                            /// - On success, responds with [`DescribeActivitiesOutput`](crate::operation::describe_activities::DescribeActivitiesOutput) with field(s):
     ///   - [`user_activities(Option<Vec::<Activity>>)`](crate::operation::describe_activities::DescribeActivitiesOutput::user_activities): <p>The list of activities for the specified user and time period.</p>
     ///   - [`marker(Option<String>)`](crate::operation::describe_activities::DescribeActivitiesOutput::marker): <p>The marker for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeActivitiesError>`](crate::operation::describe_activities::DescribeActivitiesError)
+                            /// - On failure, responds with [`SdkError<DescribeActivitiesError>`](crate::operation::describe_activities::DescribeActivitiesError)
     pub fn describe_activities(&self) -> crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder {
-        crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_activities::builders::DescribeActivitiesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

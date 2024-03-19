@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAppsInput {
+pub struct DescribeAppsInput  {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    pub app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl DescribeAppsInput {
+impl  DescribeAppsInput  {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_ids.is_none()`.
-    pub fn app_ids(&self) -> &[::std::string::String] {
-        self.app_ids.as_deref().unwrap_or_default()
+    pub fn app_ids(&self) -> & [::std::string::String] {
+        self.app_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DescribeAppsInput {
@@ -32,7 +33,7 @@ impl DescribeAppsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAppsInputBuilder {
     pub(crate) stack_id: ::std::option::Option<::std::string::String>,
-    pub(crate) app_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) app_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DescribeAppsInputBuilder {
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
@@ -42,8 +43,7 @@ impl DescribeAppsInputBuilder {
     }
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,26 +56,28 @@ impl DescribeAppsInputBuilder {
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
     pub fn app_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.app_ids.unwrap_or_default();
-        v.push(input.into());
-        self.app_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.app_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    pub fn set_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.app_ids = input;
-        self
+    pub fn set_app_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.app_ids = input; self
     }
     /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
-    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.app_ids
     }
     /// Consumes the builder and constructs a [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_apps::DescribeAppsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_apps::DescribeAppsInput {
-            stack_id: self.stack_id,
-            app_ids: self.app_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_apps::DescribeAppsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_apps::DescribeAppsInput {
+                stack_id: self.stack_id
+                ,
+                app_ids: self.app_ids
+                ,
+            }
+        )
     }
 }
+

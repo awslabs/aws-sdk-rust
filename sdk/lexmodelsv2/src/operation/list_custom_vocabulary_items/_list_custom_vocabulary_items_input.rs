@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListCustomVocabularyItemsInput {
+pub struct ListCustomVocabularyItemsInput  {
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
@@ -14,17 +14,17 @@ pub struct ListCustomVocabularyItemsInput {
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListCustomVocabularyItemsInput {
+impl  ListCustomVocabularyItemsInput  {
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    pub fn bot_id(&self) -> ::std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
-    pub fn bot_version(&self) -> ::std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
-    pub fn locale_id(&self) -> ::std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The maximum number of items returned by the list operation.</p>
@@ -32,7 +32,7 @@ impl ListCustomVocabularyItemsInput {
         self.max_results
     }
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListCustomVocabularyItemsInputBuilder {
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListCustomVocabularyItemsInputBuilder {
     }
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
     pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,8 +90,7 @@ impl ListCustomVocabularyItemsInputBuilder {
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +103,7 @@ impl ListCustomVocabularyItemsInputBuilder {
     }
     /// <p>The maximum number of items returned by the list operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items returned by the list operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -120,26 +116,28 @@ impl ListCustomVocabularyItemsInputBuilder {
     }
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomVocabularyItemsInput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput {
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

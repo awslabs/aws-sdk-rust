@@ -3,19 +3,19 @@
 /// <p>The bucket and key of an item stored in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket where the data is located.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key where the data is located.</p>
     pub s3_key: ::std::option::Option<::std::string::String>,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The Amazon S3 bucket where the data is located.</p>
-    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key where the data is located.</p>
-    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<& str> {
         self.s3_key.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 bucket where the data is located.</p>
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 bucket where the data is located.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon S3 key where the data is located.</p>
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>The Amazon S3 key where the data is located.</p>
     pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl S3LocationBuilder {
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            s3_bucket: self.s3_bucket,
-            s3_key: self.s3_key,
+            s3_bucket: self.s3_bucket
+            ,
+            s3_key: self.s3_key
+            ,
         }
     }
 }
+

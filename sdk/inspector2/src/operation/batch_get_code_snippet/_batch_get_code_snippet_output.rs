@@ -2,32 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetCodeSnippetOutput {
+pub struct BatchGetCodeSnippetOutput  {
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    pub code_snippet_results: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>>,
+    pub code_snippet_results: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetResult>>,
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetError>>,
     _request_id: Option<String>,
 }
-impl BatchGetCodeSnippetOutput {
+impl  BatchGetCodeSnippetOutput  {
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_snippet_results.is_none()`.
-    pub fn code_snippet_results(&self) -> &[crate::types::CodeSnippetResult] {
-        self.code_snippet_results.as_deref().unwrap_or_default()
+    pub fn code_snippet_results(&self) -> & [crate::types::CodeSnippetResult] {
+        self.code_snippet_results.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::CodeSnippetError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::CodeSnippetError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetCodeSnippetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchGetCodeSnippetOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCodeSnippetOutput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput).
     pub fn builder() -> crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetOutputBuilder {
@@ -39,8 +41,8 @@ impl BatchGetCodeSnippetOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetCodeSnippetOutputBuilder {
-    pub(crate) code_snippet_results: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>>,
+    pub(crate) code_snippet_results: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetResult>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetError>>,
     _request_id: Option<String>,
 }
 impl BatchGetCodeSnippetOutputBuilder {
@@ -51,17 +53,16 @@ impl BatchGetCodeSnippetOutputBuilder {
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
     pub fn code_snippet_results(mut self, input: crate::types::CodeSnippetResult) -> Self {
         let mut v = self.code_snippet_results.unwrap_or_default();
-        v.push(input);
-        self.code_snippet_results = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.code_snippet_results = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    pub fn set_code_snippet_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>>) -> Self {
-        self.code_snippet_results = input;
-        self
+    pub fn set_code_snippet_results(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetResult>>) -> Self {
+        self.code_snippet_results = input; self
     }
     /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
-    pub fn get_code_snippet_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>> {
+    pub fn get_code_snippet_results(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetResult>> {
         &self.code_snippet_results
     }
     /// Appends an item to `errors`.
@@ -71,34 +72,36 @@ impl BatchGetCodeSnippetOutputBuilder {
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
     pub fn errors(mut self, input: crate::types::CodeSnippetError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CodeSnippetError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetOutput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput).
     pub fn build(self) -> crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput {
         crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput {
-            code_snippet_results: self.code_snippet_results,
-            errors: self.errors,
+            code_snippet_results: self.code_snippet_results
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

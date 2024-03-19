@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberSettingsInput {
+pub struct UpdatePhoneNumberSettingsInput  {
     /// <p>The default outbound calling name for the account.</p>
     pub calling_name: ::std::option::Option<::std::string::String>,
 }
-impl UpdatePhoneNumberSettingsInput {
+impl  UpdatePhoneNumberSettingsInput  {
     /// <p>The default outbound calling name for the account.</p>
-    pub fn calling_name(&self) -> ::std::option::Option<&str> {
+    pub fn calling_name(&self) -> ::std::option::Option<& str> {
         self.calling_name.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdatePhoneNumberSettingsInput {
+impl  ::std::fmt::Debug for UpdatePhoneNumberSettingsInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberSettingsInput");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
@@ -41,23 +41,20 @@ impl UpdatePhoneNumberSettingsInputBuilder {
     }
     /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.calling_name = input;
-        self
+        self.calling_name = input; self
     }
     /// <p>The default outbound calling name for the account.</p>
     pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.calling_name
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
-            calling_name: self.calling_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
+                calling_name: self.calling_name
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdatePhoneNumberSettingsInputBuilder {
@@ -67,3 +64,4 @@ impl ::std::fmt::Debug for UpdatePhoneNumberSettingsInputBuilder {
         formatter.finish()
     }
 }
+

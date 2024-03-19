@@ -3,19 +3,19 @@
 /// <p>Stores information about a field passed inside a request that resulted in an exception.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The field name for which validation failed.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the error.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl ValidationExceptionField {
+impl  ValidationExceptionField  {
     /// <p>The field name for which validation failed.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Description of the error.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The field name for which validation failed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The field name for which validation failed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>Description of the error.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Description of the error.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl ValidationExceptionFieldBuilder {
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
     pub fn build(self) -> crate::types::ValidationExceptionField {
         crate::types::ValidationExceptionField {
-            name: self.name,
-            message: self.message,
+            name: self.name
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

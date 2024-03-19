@@ -14,20 +14,19 @@
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecordMarkerDecisionAttributes {
+pub struct RecordMarkerDecisionAttributes  {
     /// <p>The name of the marker.</p>
     pub marker_name: ::std::string::String,
     /// <p>The details of the marker.</p>
     pub details: ::std::option::Option<::std::string::String>,
 }
-impl RecordMarkerDecisionAttributes {
+impl  RecordMarkerDecisionAttributes  {
     /// <p>The name of the marker.</p>
-    pub fn marker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.marker_name.deref()
+    pub fn marker_name(&self) -> & str {
+        use std::ops::Deref; self.marker_name.deref()
     }
     /// <p>The details of the marker.</p>
-    pub fn details(&self) -> ::std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -54,8 +53,7 @@ impl RecordMarkerDecisionAttributesBuilder {
     }
     /// <p>The name of the marker.</p>
     pub fn set_marker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker_name = input;
-        self
+        self.marker_name = input; self
     }
     /// <p>The name of the marker.</p>
     pub fn get_marker_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -68,8 +66,7 @@ impl RecordMarkerDecisionAttributesBuilder {
     }
     /// <p>The details of the marker.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>The details of the marker.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,14 +76,17 @@ impl RecordMarkerDecisionAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`marker_name`](crate::types::builders::RecordMarkerDecisionAttributesBuilder::marker_name)
     pub fn build(self) -> ::std::result::Result<crate::types::RecordMarkerDecisionAttributes, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::RecordMarkerDecisionAttributes {
-            marker_name: self.marker_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "marker_name",
-                    "marker_name was not specified but it is required when building RecordMarkerDecisionAttributes",
-                )
-            })?,
-            details: self.details,
-        })
+        ::std::result::Result::Ok(
+            crate::types::RecordMarkerDecisionAttributes {
+                marker_name: self.marker_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("marker_name", "marker_name was not specified but it is required when building RecordMarkerDecisionAttributes")
+                    )?
+                ,
+                details: self.details
+                ,
+            }
+        )
     }
 }
+

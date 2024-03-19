@@ -3,19 +3,19 @@
 /// <p>Describes the permissions.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PermissionInfo {
+pub struct PermissionInfo  {
     /// <p>The role of the user.</p>
     pub role: ::std::option::Option<crate::types::RoleType>,
     /// <p>The type of permissions.</p>
     pub r#type: ::std::option::Option<crate::types::RolePermissionType>,
 }
-impl PermissionInfo {
+impl  PermissionInfo  {
     /// <p>The role of the user.</p>
-    pub fn role(&self) -> ::std::option::Option<&crate::types::RoleType> {
+    pub fn role(&self) -> ::std::option::Option<& crate::types::RoleType> {
         self.role.as_ref()
     }
     /// <p>The type of permissions.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RolePermissionType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RolePermissionType> {
         self.r#type.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl PermissionInfoBuilder {
     }
     /// <p>The role of the user.</p>
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The role of the user.</p>
     pub fn get_role(&self) -> &::std::option::Option<crate::types::RoleType> {
@@ -55,8 +54,7 @@ impl PermissionInfoBuilder {
     }
     /// <p>The type of permissions.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RolePermissionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of permissions.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RolePermissionType> {
@@ -65,8 +63,11 @@ impl PermissionInfoBuilder {
     /// Consumes the builder and constructs a [`PermissionInfo`](crate::types::PermissionInfo).
     pub fn build(self) -> crate::types::PermissionInfo {
         crate::types::PermissionInfo {
-            role: self.role,
-            r#type: self.r#type,
+            role: self.role
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

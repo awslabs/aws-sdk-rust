@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DetachNetworkInterface.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DetachNetworkInterfaceInput {
+pub struct DetachNetworkInterfaceInput  {
     /// <p>The ID of the attachment.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20,9 +20,9 @@ pub struct DetachNetworkInterfaceInput {
     /// </note>
     pub force: ::std::option::Option<bool>,
 }
-impl DetachNetworkInterfaceInput {
+impl  DetachNetworkInterfaceInput  {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -67,8 +67,7 @@ impl DetachNetworkInterfaceInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The ID of the attachment.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -81,8 +80,7 @@ impl DetachNetworkInterfaceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
@@ -113,8 +111,7 @@ impl DetachNetworkInterfaceInputBuilder {
     /// </ul>
     /// </note>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>Specifies whether to force a detachment.</p><note>
     /// <ul>
@@ -130,16 +127,17 @@ impl DetachNetworkInterfaceInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::detach_network_interface::DetachNetworkInterfaceInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
-            attachment_id: self.attachment_id,
-            dry_run: self.dry_run,
-            force: self.force,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::detach_network_interface::DetachNetworkInterfaceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
+                attachment_id: self.attachment_id
+                ,
+                dry_run: self.dry_run
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

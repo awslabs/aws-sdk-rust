@@ -3,7 +3,7 @@
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DistributionConfiguration {
+pub struct DistributionConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the distribution configuration.</p>
@@ -11,7 +11,7 @@ pub struct DistributionConfiguration {
     /// <p>The description of the distribution configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub timeout_minutes: i32,
     /// <p>The date on which this distribution configuration was created.</p>
@@ -19,41 +19,42 @@ pub struct DistributionConfiguration {
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the distribution configuration.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl DistributionConfiguration {
+impl  DistributionConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.distributions.is_none()`.
-    pub fn distributions(&self) -> &[crate::types::Distribution] {
-        self.distributions.as_deref().unwrap_or_default()
+    pub fn distributions(&self) -> & [crate::types::Distribution] {
+        self.distributions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn timeout_minutes(&self) -> i32 {
         self.timeout_minutes
     }
     /// <p>The date on which this distribution configuration was created.</p>
-    pub fn date_created(&self) -> ::std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
-    pub fn date_updated(&self) -> ::std::option::Option<&str> {
+    pub fn date_updated(&self) -> ::std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -71,11 +72,11 @@ pub struct DistributionConfigurationBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>,
     pub(crate) timeout_minutes: ::std::option::Option<i32>,
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
     pub(crate) date_updated: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl DistributionConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
@@ -85,8 +86,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,17 +125,16 @@ impl DistributionConfigurationBuilder {
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
-        v.push(input);
-        self.distributions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.distributions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>) -> Self {
-        self.distributions = input;
-        self
+    pub fn set_distributions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Distribution>>) -> Self {
+        self.distributions = input; self
     }
     /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
-    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+    pub fn get_distributions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Distribution>> {
         &self.distributions
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
@@ -148,8 +145,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.timeout_minutes = input;
-        self
+        self.timeout_minutes = input; self
     }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn get_timeout_minutes(&self) -> &::std::option::Option<i32> {
@@ -162,8 +158,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The date on which this distribution configuration was created.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which this distribution configuration was created.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
@@ -176,8 +171,7 @@ impl DistributionConfigurationBuilder {
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub fn set_date_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub fn get_date_updated(&self) -> &::std::option::Option<::std::string::String> {
@@ -190,37 +184,45 @@ impl DistributionConfigurationBuilder {
     /// <p>The tags of the distribution configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::types::DistributionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_minutes`](crate::types::builders::DistributionConfigurationBuilder::timeout_minutes)
     pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::DistributionConfiguration {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            distributions: self.distributions,
-            timeout_minutes: self.timeout_minutes.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "timeout_minutes",
-                    "timeout_minutes was not specified but it is required when building DistributionConfiguration",
-                )
-            })?,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            tags: self.tags,
-        })
+        ::std::result::Result::Ok(
+            crate::types::DistributionConfiguration {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                distributions: self.distributions
+                ,
+                timeout_minutes: self.timeout_minutes
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("timeout_minutes", "timeout_minutes was not specified but it is required when building DistributionConfiguration")
+                    )?
+                ,
+                date_created: self.date_created
+                ,
+                date_updated: self.date_updated
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

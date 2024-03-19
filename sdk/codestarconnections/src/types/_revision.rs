@@ -3,7 +3,7 @@
 /// <p>Information about the revision for a specific sync event, such as the branch, owner ID, and name of the repository.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Revision {
+pub struct Revision  {
     /// <p>The branch name for a specific revision.</p>
     pub branch: ::std::string::String,
     /// <p>The directory, if any, for a specific revision.</p>
@@ -17,35 +17,30 @@ pub struct Revision {
     /// <p>The SHA, such as the commit ID, for a specific revision.</p>
     pub sha: ::std::string::String,
 }
-impl Revision {
+impl  Revision  {
     /// <p>The branch name for a specific revision.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> & str {
+        use std::ops::Deref; self.branch.deref()
     }
     /// <p>The directory, if any, for a specific revision.</p>
-    pub fn directory(&self) -> &str {
-        use std::ops::Deref;
-        self.directory.deref()
+    pub fn directory(&self) -> & str {
+        use std::ops::Deref; self.directory.deref()
     }
     /// <p>The owner ID for a specific revision, such as the GitHub owner ID for a GitHub repository.</p>
-    pub fn owner_id(&self) -> &str {
-        use std::ops::Deref;
-        self.owner_id.deref()
+    pub fn owner_id(&self) -> & str {
+        use std::ops::Deref; self.owner_id.deref()
     }
     /// <p>The repository name for a specific revision.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> & str {
+        use std::ops::Deref; self.repository_name.deref()
     }
     /// <p>The provider type for a revision, such as GitHub.</p>
-    pub fn provider_type(&self) -> &crate::types::ProviderType {
+    pub fn provider_type(&self) -> & crate::types::ProviderType {
         &self.provider_type
     }
     /// <p>The SHA, such as the commit ID, for a specific revision.</p>
-    pub fn sha(&self) -> &str {
-        use std::ops::Deref;
-        self.sha.deref()
+    pub fn sha(&self) -> & str {
+        use std::ops::Deref; self.sha.deref()
     }
 }
 impl Revision {
@@ -75,8 +70,7 @@ impl RevisionBuilder {
     }
     /// <p>The branch name for a specific revision.</p>
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p>The branch name for a specific revision.</p>
     pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl RevisionBuilder {
     }
     /// <p>The directory, if any, for a specific revision.</p>
     pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.directory = input;
-        self
+        self.directory = input; self
     }
     /// <p>The directory, if any, for a specific revision.</p>
     pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl RevisionBuilder {
     }
     /// <p>The owner ID for a specific revision, such as the GitHub owner ID for a GitHub repository.</p>
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The owner ID for a specific revision, such as the GitHub owner ID for a GitHub repository.</p>
     pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +112,7 @@ impl RevisionBuilder {
     }
     /// <p>The repository name for a specific revision.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The repository name for a specific revision.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +126,7 @@ impl RevisionBuilder {
     }
     /// <p>The provider type for a revision, such as GitHub.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The provider type for a revision, such as GitHub.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
@@ -150,8 +140,7 @@ impl RevisionBuilder {
     }
     /// <p>The SHA, such as the commit ID, for a specific revision.</p>
     pub fn set_sha(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sha = input;
-        self
+        self.sha = input; self
     }
     /// <p>The SHA, such as the commit ID, for a specific revision.</p>
     pub fn get_sha(&self) -> &::std::option::Option<::std::string::String> {
@@ -166,43 +155,40 @@ impl RevisionBuilder {
     /// - [`provider_type`](crate::types::builders::RevisionBuilder::provider_type)
     /// - [`sha`](crate::types::builders::RevisionBuilder::sha)
     pub fn build(self) -> ::std::result::Result<crate::types::Revision, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Revision {
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building Revision",
-                )
-            })?,
-            directory: self.directory.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "directory",
-                    "directory was not specified but it is required when building Revision",
-                )
-            })?,
-            owner_id: self.owner_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "owner_id",
-                    "owner_id was not specified but it is required when building Revision",
-                )
-            })?,
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building Revision",
-                )
-            })?,
-            provider_type: self.provider_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "provider_type",
-                    "provider_type was not specified but it is required when building Revision",
-                )
-            })?,
-            sha: self.sha.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sha",
-                    "sha was not specified but it is required when building Revision",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Revision {
+                branch: self.branch
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("branch", "branch was not specified but it is required when building Revision")
+                    )?
+                ,
+                directory: self.directory
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("directory", "directory was not specified but it is required when building Revision")
+                    )?
+                ,
+                owner_id: self.owner_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("owner_id", "owner_id was not specified but it is required when building Revision")
+                    )?
+                ,
+                repository_name: self.repository_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("repository_name", "repository_name was not specified but it is required when building Revision")
+                    )?
+                ,
+                provider_type: self.provider_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("provider_type", "provider_type was not specified but it is required when building Revision")
+                    )?
+                ,
+                sha: self.sha
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("sha", "sha was not specified but it is required when building Revision")
+                    )?
+                ,
+            }
+        )
     }
 }
+

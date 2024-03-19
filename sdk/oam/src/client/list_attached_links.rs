@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListAttachedLinks`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::set_max_results):<br>required: **false**<br><p>Limits the number of returned links to the specified number.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. You received this token from a previous call.</p><br>
     ///   - [`sink_identifier(impl Into<String>)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::set_sink_identifier):<br>required: **true**<br><p>The ARN of the sink that you want to retrieve links for.</p><br>
-    /// - On success, responds with [`ListAttachedLinksOutput`](crate::operation::list_attached_links::ListAttachedLinksOutput) with field(s):
+                            /// - On success, responds with [`ListAttachedLinksOutput`](crate::operation::list_attached_links::ListAttachedLinksOutput) with field(s):
     ///   - [`items(Vec::<ListAttachedLinksItem>)`](crate::operation::list_attached_links::ListAttachedLinksOutput::items): <p>An array of structures that contain the information about the attached links.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_attached_links::ListAttachedLinksOutput::next_token): <p>The token to use when requesting the next set of links.</p>
-    /// - On failure, responds with [`SdkError<ListAttachedLinksError>`](crate::operation::list_attached_links::ListAttachedLinksError)
+                            /// - On failure, responds with [`SdkError<ListAttachedLinksError>`](crate::operation::list_attached_links::ListAttachedLinksError)
     pub fn list_attached_links(&self) -> crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder {
-        crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_attached_links::builders::ListAttachedLinksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CancelMetadataTransferJobInput {
+pub struct CancelMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
     pub metadata_transfer_job_id: ::std::option::Option<::std::string::String>,
 }
-impl CancelMetadataTransferJobInput {
+impl  CancelMetadataTransferJobInput  {
     /// <p>The metadata transfer job Id.</p>
-    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<&str> {
+    pub fn metadata_transfer_job_id(&self) -> ::std::option::Option<& str> {
         self.metadata_transfer_job_id.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl CancelMetadataTransferJobInputBuilder {
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn set_metadata_transfer_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.metadata_transfer_job_id = input;
-        self
+        self.metadata_transfer_job_id = input; self
     }
     /// <p>The metadata transfer job Id.</p>
     pub fn get_metadata_transfer_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.metadata_transfer_job_id
     }
     /// Consumes the builder and constructs a [`CancelMetadataTransferJobInput`](crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput {
-            metadata_transfer_job_id: self.metadata_transfer_job_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobInput {
+                metadata_transfer_job_id: self.metadata_transfer_job_id
+                ,
+            }
+        )
     }
 }
+

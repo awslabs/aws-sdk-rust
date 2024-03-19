@@ -3,7 +3,7 @@
 /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryResultsS3AccessGrantsConfiguration {
+pub struct QueryResultsS3AccessGrantsConfiguration  {
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub enable_s3_access_grants: bool,
     /// <p>When enabled, appends the user ID as an Amazon S3 path prefix to the query result output location.</p>
@@ -11,7 +11,7 @@ pub struct QueryResultsS3AccessGrantsConfiguration {
     /// <p>The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code> is supported.</p>
     pub authentication_type: crate::types::AuthenticationType,
 }
-impl QueryResultsS3AccessGrantsConfiguration {
+impl  QueryResultsS3AccessGrantsConfiguration  {
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub fn enable_s3_access_grants(&self) -> bool {
         self.enable_s3_access_grants
@@ -21,7 +21,7 @@ impl QueryResultsS3AccessGrantsConfiguration {
         self.create_user_level_prefix
     }
     /// <p>The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code> is supported.</p>
-    pub fn authentication_type(&self) -> &crate::types::AuthenticationType {
+    pub fn authentication_type(&self) -> & crate::types::AuthenticationType {
         &self.authentication_type
     }
 }
@@ -49,8 +49,7 @@ impl QueryResultsS3AccessGrantsConfigurationBuilder {
     }
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub fn set_enable_s3_access_grants(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enable_s3_access_grants = input;
-        self
+        self.enable_s3_access_grants = input; self
     }
     /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
     pub fn get_enable_s3_access_grants(&self) -> &::std::option::Option<bool> {
@@ -63,8 +62,7 @@ impl QueryResultsS3AccessGrantsConfigurationBuilder {
     }
     /// <p>When enabled, appends the user ID as an Amazon S3 path prefix to the query result output location.</p>
     pub fn set_create_user_level_prefix(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.create_user_level_prefix = input;
-        self
+        self.create_user_level_prefix = input; self
     }
     /// <p>When enabled, appends the user ID as an Amazon S3 path prefix to the query result output location.</p>
     pub fn get_create_user_level_prefix(&self) -> &::std::option::Option<bool> {
@@ -78,8 +76,7 @@ impl QueryResultsS3AccessGrantsConfigurationBuilder {
     }
     /// <p>The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code> is supported.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input;
-        self
+        self.authentication_type = input; self
     }
     /// <p>The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code> is supported.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
@@ -89,23 +86,23 @@ impl QueryResultsS3AccessGrantsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_s3_access_grants`](crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder::enable_s3_access_grants)
     /// - [`authentication_type`](crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder::authentication_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::QueryResultsS3AccessGrantsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueryResultsS3AccessGrantsConfiguration {
-            enable_s3_access_grants: self.enable_s3_access_grants.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "enable_s3_access_grants",
-                    "enable_s3_access_grants was not specified but it is required when building QueryResultsS3AccessGrantsConfiguration",
-                )
-            })?,
-            create_user_level_prefix: self.create_user_level_prefix,
-            authentication_type: self.authentication_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "authentication_type",
-                    "authentication_type was not specified but it is required when building QueryResultsS3AccessGrantsConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryResultsS3AccessGrantsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::QueryResultsS3AccessGrantsConfiguration {
+                enable_s3_access_grants: self.enable_s3_access_grants
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("enable_s3_access_grants", "enable_s3_access_grants was not specified but it is required when building QueryResultsS3AccessGrantsConfiguration")
+                    )?
+                ,
+                create_user_level_prefix: self.create_user_level_prefix
+                ,
+                authentication_type: self.authentication_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("authentication_type", "authentication_type was not specified but it is required when building QueryResultsS3AccessGrantsConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

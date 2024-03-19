@@ -3,7 +3,7 @@
 /// <p>Contains summary information about the custom vocabulary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VocabularySummary {
+pub struct VocabularySummary  {
     /// <p>A unique name of the custom vocabulary.</p>
     pub name: ::std::string::String,
     /// <p>The identifier of the custom vocabulary.</p>
@@ -19,36 +19,33 @@ pub struct VocabularySummary {
     /// <p>The reason why the custom vocabulary was not created.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
-impl VocabularySummary {
+impl  VocabularySummary  {
     /// <p>A unique name of the custom vocabulary.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
-    pub fn language_code(&self) -> &crate::types::VocabularyLanguageCode {
+    pub fn language_code(&self) -> & crate::types::VocabularyLanguageCode {
         &self.language_code
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn state(&self) -> &crate::types::VocabularyState {
+    pub fn state(&self) -> & crate::types::VocabularyState {
         &self.state
     }
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The reason why the custom vocabulary was not created.</p>
-    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -80,8 +77,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>A unique name of the custom vocabulary.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique name of the custom vocabulary.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,8 +91,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -110,8 +105,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,8 +119,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a></p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::VocabularyLanguageCode> {
@@ -140,8 +133,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::VocabularyState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
@@ -155,8 +147,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The timestamp when the custom vocabulary was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +160,7 @@ impl VocabularySummaryBuilder {
     }
     /// <p>The reason why the custom vocabulary was not created.</p>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The reason why the custom vocabulary was not created.</p>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,44 +175,42 @@ impl VocabularySummaryBuilder {
     /// - [`state`](crate::types::builders::VocabularySummaryBuilder::state)
     /// - [`last_modified_time`](crate::types::builders::VocabularySummaryBuilder::last_modified_time)
     pub fn build(self) -> ::std::result::Result<crate::types::VocabularySummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::VocabularySummary {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "language_code",
-                    "language_code was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            state: self.state.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state",
-                    "state was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building VocabularySummary",
-                )
-            })?,
-            failure_reason: self.failure_reason,
-        })
+        ::std::result::Result::Ok(
+            crate::types::VocabularySummary {
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                language_code: self.language_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("language_code", "language_code was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                state: self.state
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state", "state was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building VocabularySummary")
+                    )?
+                ,
+                failure_reason: self.failure_reason
+                ,
+            }
+        )
     }
 }
+

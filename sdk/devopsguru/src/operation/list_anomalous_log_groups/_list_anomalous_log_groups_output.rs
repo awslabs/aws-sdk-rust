@@ -2,36 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnomalousLogGroupsOutput {
+pub struct ListAnomalousLogGroupsOutput  {
     /// <p>The ID of the insight containing the log groups.</p>
     pub insight_id: ::std::string::String,
     /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
-    pub anomalous_log_groups: ::std::vec::Vec<crate::types::AnomalousLogGroup>,
+    pub anomalous_log_groups: ::std::vec::Vec::<crate::types::AnomalousLogGroup>,
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAnomalousLogGroupsOutput {
+impl  ListAnomalousLogGroupsOutput  {
     /// <p>The ID of the insight containing the log groups.</p>
-    pub fn insight_id(&self) -> &str {
-        use std::ops::Deref;
-        self.insight_id.deref()
+    pub fn insight_id(&self) -> & str {
+        use std::ops::Deref; self.insight_id.deref()
     }
     /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
-    pub fn anomalous_log_groups(&self) -> &[crate::types::AnomalousLogGroup] {
-        use std::ops::Deref;
-        self.anomalous_log_groups.deref()
+    pub fn anomalous_log_groups(&self) -> & [crate::types::AnomalousLogGroup] {
+        use std::ops::Deref; self.anomalous_log_groups.deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAnomalousLogGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAnomalousLogGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
     pub fn builder() -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder {
@@ -44,7 +42,7 @@ impl ListAnomalousLogGroupsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsOutputBuilder {
     pub(crate) insight_id: ::std::option::Option<::std::string::String>,
-    pub(crate) anomalous_log_groups: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>,
+    pub(crate) anomalous_log_groups: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalousLogGroup>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,8 +55,7 @@ impl ListAnomalousLogGroupsOutputBuilder {
     }
     /// <p>The ID of the insight containing the log groups.</p>
     pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p>The ID of the insight containing the log groups.</p>
     pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,17 +68,16 @@ impl ListAnomalousLogGroupsOutputBuilder {
     /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
     pub fn anomalous_log_groups(mut self, input: crate::types::AnomalousLogGroup) -> Self {
         let mut v = self.anomalous_log_groups.unwrap_or_default();
-        v.push(input);
-        self.anomalous_log_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.anomalous_log_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
-    pub fn set_anomalous_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>>) -> Self {
-        self.anomalous_log_groups = input;
-        self
+    pub fn set_anomalous_log_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnomalousLogGroup>>) -> Self {
+        self.anomalous_log_groups = input; self
     }
     /// <p>The list of Amazon CloudWatch log groups that are related to an insight.</p>
-    pub fn get_anomalous_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>> {
+    pub fn get_anomalous_log_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnomalousLogGroup>> {
         &self.anomalous_log_groups
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
@@ -91,47 +87,43 @@ impl ListAnomalousLogGroupsOutputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAnomalousLogGroupsOutput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`insight_id`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder::insight_id)
     /// - [`anomalous_log_groups`](crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsOutputBuilder::anomalous_log_groups)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
-            insight_id: self.insight_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "insight_id",
-                    "insight_id was not specified but it is required when building ListAnomalousLogGroupsOutput",
-                )
-            })?,
-            anomalous_log_groups: self.anomalous_log_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "anomalous_log_groups",
-                    "anomalous_log_groups was not specified but it is required when building ListAnomalousLogGroupsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
+                insight_id: self.insight_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("insight_id", "insight_id was not specified but it is required when building ListAnomalousLogGroupsOutput")
+                    )?
+                ,
+                anomalous_log_groups: self.anomalous_log_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("anomalous_log_groups", "anomalous_log_groups was not specified but it is required when building ListAnomalousLogGroupsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

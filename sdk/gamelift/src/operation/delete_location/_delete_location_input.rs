@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLocationInput {
+pub struct DeleteLocationInput  {
     /// <p>The location name of the custom location to be deleted.</p>
     pub location_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteLocationInput {
+impl  DeleteLocationInput  {
     /// <p>The location name of the custom location to be deleted.</p>
-    pub fn location_name(&self) -> ::std::option::Option<&str> {
+    pub fn location_name(&self) -> ::std::option::Option<& str> {
         self.location_name.as_deref()
     }
 }
@@ -34,19 +34,20 @@ impl DeleteLocationInputBuilder {
     }
     /// <p>The location name of the custom location to be deleted.</p>
     pub fn set_location_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.location_name = input;
-        self
+        self.location_name = input; self
     }
     /// <p>The location name of the custom location to be deleted.</p>
     pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_name
     }
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_location::DeleteLocationInput {
-            location_name: self.location_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_location::DeleteLocationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_location::DeleteLocationInput {
+                location_name: self.location_name
+                ,
+            }
+        )
     }
 }
+

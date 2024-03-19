@@ -3,7 +3,7 @@
 /// <p>Creates a new Api resource to represent an API.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateApiInput {
+pub struct CreateApiInput  {
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub api_key_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
@@ -25,27 +25,27 @@ pub struct CreateApiInput {
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub route_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>A version identifier for the API.</p>
     pub version: ::std::option::Option<::std::string::String>,
 }
-impl CreateApiInput {
+impl  CreateApiInput  {
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
-    pub fn api_key_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn api_key_selection_expression(&self) -> ::std::option::Option<& str> {
         self.api_key_selection_expression.as_deref()
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
-    pub fn cors_configuration(&self) -> ::std::option::Option<&crate::types::Cors> {
+    pub fn cors_configuration(&self) -> ::std::option::Option<& crate::types::Cors> {
         self.cors_configuration.as_ref()
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
-    pub fn credentials_arn(&self) -> ::std::option::Option<&str> {
+    pub fn credentials_arn(&self) -> ::std::option::Option<& str> {
         self.credentials_arn.as_deref()
     }
     /// <p>The description of the API.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -57,31 +57,31 @@ impl CreateApiInput {
         self.disable_execute_api_endpoint
     }
     /// <p>The name of the API.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The API protocol.</p>
-    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::ProtocolType> {
+    pub fn protocol_type(&self) -> ::std::option::Option<& crate::types::ProtocolType> {
         self.protocol_type.as_ref()
     }
     /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
-    pub fn route_key(&self) -> ::std::option::Option<&str> {
+    pub fn route_key(&self) -> ::std::option::Option<& str> {
         self.route_key.as_deref()
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
-    pub fn route_selection_expression(&self) -> ::std::option::Option<&str> {
+    pub fn route_selection_expression(&self) -> ::std::option::Option<& str> {
         self.route_selection_expression.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
-    pub fn target(&self) -> ::std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>A version identifier for the API.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -106,7 +106,7 @@ pub struct CreateApiInputBuilder {
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) route_key: ::std::option::Option<::std::string::String>,
     pub(crate) route_selection_expression: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) target: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
 }
@@ -118,8 +118,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn set_api_key_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key_selection_expression = input;
-        self
+        self.api_key_selection_expression = input; self
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn get_api_key_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +131,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
     pub fn set_cors_configuration(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
-        self.cors_configuration = input;
-        self
+        self.cors_configuration = input; self
     }
     /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
     pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::Cors> {
@@ -146,8 +144,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
     pub fn set_credentials_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.credentials_arn = input;
-        self
+        self.credentials_arn = input; self
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
     pub fn get_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,8 +157,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>The description of the API.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the API.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +170,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn set_disable_schema_validation(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_schema_validation = input;
-        self
+        self.disable_schema_validation = input; self
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn get_disable_schema_validation(&self) -> &::std::option::Option<bool> {
@@ -188,8 +183,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.disable_execute_api_endpoint = input;
-        self
+        self.disable_execute_api_endpoint = input; self
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
@@ -203,8 +197,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>The name of the API.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the API.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +211,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>The API protocol.</p>
     pub fn set_protocol_type(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
-        self.protocol_type = input;
-        self
+        self.protocol_type = input; self
     }
     /// <p>The API protocol.</p>
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
@@ -232,8 +224,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
     pub fn set_route_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_key = input;
-        self
+        self.route_key = input; self
     }
     /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
     pub fn get_route_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -246,8 +237,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn set_route_selection_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.route_selection_expression = input;
-        self
+        self.route_selection_expression = input; self
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn get_route_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,17 +250,16 @@ impl CreateApiInputBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
@@ -280,8 +269,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
@@ -294,8 +282,7 @@ impl CreateApiInputBuilder {
     }
     /// <p>A version identifier for the API.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A version identifier for the API.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -303,20 +290,36 @@ impl CreateApiInputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateApiInput`](crate::operation::create_api::CreateApiInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_api::CreateApiInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_api::CreateApiInput {
-            api_key_selection_expression: self.api_key_selection_expression,
-            cors_configuration: self.cors_configuration,
-            credentials_arn: self.credentials_arn,
-            description: self.description,
-            disable_schema_validation: self.disable_schema_validation,
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
-            name: self.name,
-            protocol_type: self.protocol_type,
-            route_key: self.route_key,
-            route_selection_expression: self.route_selection_expression,
-            tags: self.tags,
-            target: self.target,
-            version: self.version,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::create_api::CreateApiInput {
+                api_key_selection_expression: self.api_key_selection_expression
+                ,
+                cors_configuration: self.cors_configuration
+                ,
+                credentials_arn: self.credentials_arn
+                ,
+                description: self.description
+                ,
+                disable_schema_validation: self.disable_schema_validation
+                ,
+                disable_execute_api_endpoint: self.disable_execute_api_endpoint
+                ,
+                name: self.name
+                ,
+                protocol_type: self.protocol_type
+                ,
+                route_key: self.route_key
+                ,
+                route_selection_expression: self.route_selection_expression
+                ,
+                tags: self.tags
+                ,
+                target: self.target
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

@@ -3,15 +3,15 @@
 /// <p>Contains the data for a historical metric.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct HistoricalMetricData {
+pub struct HistoricalMetricData  {
     /// <p>Information about the metric.</p>
     pub metric: ::std::option::Option<crate::types::HistoricalMetric>,
     /// <p>The value of the metric.</p>
     pub value: ::std::option::Option<f64>,
 }
-impl HistoricalMetricData {
+impl  HistoricalMetricData  {
     /// <p>Information about the metric.</p>
-    pub fn metric(&self) -> ::std::option::Option<&crate::types::HistoricalMetric> {
+    pub fn metric(&self) -> ::std::option::Option<& crate::types::HistoricalMetric> {
         self.metric.as_ref()
     }
     /// <p>The value of the metric.</p>
@@ -41,8 +41,7 @@ impl HistoricalMetricDataBuilder {
     }
     /// <p>Information about the metric.</p>
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::HistoricalMetric>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>Information about the metric.</p>
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::HistoricalMetric> {
@@ -55,8 +54,7 @@ impl HistoricalMetricDataBuilder {
     }
     /// <p>The value of the metric.</p>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value of the metric.</p>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
@@ -65,8 +63,11 @@ impl HistoricalMetricDataBuilder {
     /// Consumes the builder and constructs a [`HistoricalMetricData`](crate::types::HistoricalMetricData).
     pub fn build(self) -> crate::types::HistoricalMetricData {
         crate::types::HistoricalMetricData {
-            metric: self.metric,
-            value: self.value,
+            metric: self.metric
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

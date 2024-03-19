@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updatestatus = unimplemented!();
 /// match updatestatus {
@@ -35,16 +35,14 @@
 /// Specifically, when `updatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum UpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingAppCname,
@@ -62,84 +60,77 @@ pub enum UpdateStatus {
     UpdateFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for UpdateStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "AWAITING_APP_CNAME" => UpdateStatus::AwaitingAppCname,
-            "IMPORTING_CUSTOM_CERTIFICATE" => UpdateStatus::ImportingCustomCertificate,
-            "PENDING_DEPLOYMENT" => UpdateStatus::PendingDeployment,
-            "PENDING_VERIFICATION" => UpdateStatus::PendingVerification,
-            "REQUESTING_CERTIFICATE" => UpdateStatus::RequestingCertificate,
-            "UPDATE_COMPLETE" => UpdateStatus::UpdateComplete,
-            "UPDATE_FAILED" => UpdateStatus::UpdateFailed,
-            other => UpdateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AWAITING_APP_CNAME" => UpdateStatus::AwaitingAppCname,
+"IMPORTING_CUSTOM_CERTIFICATE" => UpdateStatus::ImportingCustomCertificate,
+"PENDING_DEPLOYMENT" => UpdateStatus::PendingDeployment,
+"PENDING_VERIFICATION" => UpdateStatus::PendingVerification,
+"REQUESTING_CERTIFICATE" => UpdateStatus::RequestingCertificate,
+"UPDATE_COMPLETE" => UpdateStatus::UpdateComplete,
+"UPDATE_FAILED" => UpdateStatus::UpdateFailed,
+other => UpdateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for UpdateStatus {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(UpdateStatus::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(UpdateStatus::from(s))
+                    }
+                }
 impl UpdateStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UpdateStatus::AwaitingAppCname => "AWAITING_APP_CNAME",
-            UpdateStatus::ImportingCustomCertificate => "IMPORTING_CUSTOM_CERTIFICATE",
-            UpdateStatus::PendingDeployment => "PENDING_DEPLOYMENT",
-            UpdateStatus::PendingVerification => "PENDING_VERIFICATION",
-            UpdateStatus::RequestingCertificate => "REQUESTING_CERTIFICATE",
-            UpdateStatus::UpdateComplete => "UPDATE_COMPLETE",
-            UpdateStatus::UpdateFailed => "UPDATE_FAILED",
-            UpdateStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWAITING_APP_CNAME",
-            "IMPORTING_CUSTOM_CERTIFICATE",
-            "PENDING_DEPLOYMENT",
-            "PENDING_VERIFICATION",
-            "REQUESTING_CERTIFICATE",
-            "UPDATE_COMPLETE",
-            "UPDATE_FAILED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UpdateStatus::AwaitingAppCname => "AWAITING_APP_CNAME",
+    UpdateStatus::ImportingCustomCertificate => "IMPORTING_CUSTOM_CERTIFICATE",
+    UpdateStatus::PendingDeployment => "PENDING_DEPLOYMENT",
+    UpdateStatus::PendingVerification => "PENDING_VERIFICATION",
+    UpdateStatus::RequestingCertificate => "REQUESTING_CERTIFICATE",
+    UpdateStatus::UpdateComplete => "UPDATE_COMPLETE",
+    UpdateStatus::UpdateFailed => "UPDATE_FAILED",
+    UpdateStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWAITING_APP_CNAME", "IMPORTING_CUSTOM_CERTIFICATE", "PENDING_DEPLOYMENT", "PENDING_VERIFICATION", "REQUESTING_CERTIFICATE", "UPDATE_COMPLETE", "UPDATE_FAILED"]
+                }
+            }
 impl ::std::convert::AsRef<str> for UpdateStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl UpdateStatus {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for UpdateStatus {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            UpdateStatus::AwaitingAppCname => write!(f, "AWAITING_APP_CNAME"),
-            UpdateStatus::ImportingCustomCertificate => write!(f, "IMPORTING_CUSTOM_CERTIFICATE"),
-            UpdateStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
-            UpdateStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
-            UpdateStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
-            UpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
-            UpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
-            UpdateStatus::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                UpdateStatus::AwaitingAppCname => write!(f, "AWAITING_APP_CNAME"),
+UpdateStatus::ImportingCustomCertificate => write!(f, "IMPORTING_CUSTOM_CERTIFICATE"),
+UpdateStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
+UpdateStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
+UpdateStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
+UpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+UpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+UpdateStatus::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

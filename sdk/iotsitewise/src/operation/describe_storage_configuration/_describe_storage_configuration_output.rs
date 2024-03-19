@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeStorageConfigurationOutput {
+pub struct DescribeStorageConfigurationOutput  {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -36,7 +36,7 @@ pub struct DescribeStorageConfigurationOutput {
     pub warm_tier_retention_period: ::std::option::Option<crate::types::WarmTierRetentionPeriod>,
     _request_id: Option<String>,
 }
-impl DescribeStorageConfigurationOutput {
+impl  DescribeStorageConfigurationOutput  {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -44,11 +44,11 @@ impl DescribeStorageConfigurationOutput {
     /// <li>
     /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
-    pub fn storage_type(&self) -> &crate::types::StorageType {
+    pub fn storage_type(&self) -> & crate::types::StorageType {
         &self.storage_type
     }
     /// <p>Contains information about the storage destination.</p>
-    pub fn multi_layer_storage(&self) -> ::std::option::Option<&crate::types::MultiLayerStorage> {
+    pub fn multi_layer_storage(&self) -> ::std::option::Option<& crate::types::MultiLayerStorage> {
         self.multi_layer_storage.as_ref()
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
@@ -61,35 +61,35 @@ impl DescribeStorageConfigurationOutput {
     /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn disassociated_data_storage(&self) -> ::std::option::Option<&crate::types::DisassociatedDataStorageState> {
+    pub fn disassociated_data_storage(&self) -> ::std::option::Option<& crate::types::DisassociatedDataStorageState> {
         self.disassociated_data_storage.as_ref()
     }
     /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Contains current status information for the configuration.</p>
-    pub fn configuration_status(&self) -> ::std::option::Option<&crate::types::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> ::std::option::Option<& crate::types::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
-    pub fn warm_tier(&self) -> ::std::option::Option<&crate::types::WarmTierState> {
+    pub fn warm_tier(&self) -> ::std::option::Option<& crate::types::WarmTierState> {
         self.warm_tier.as_ref()
     }
     /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
-    pub fn warm_tier_retention_period(&self) -> ::std::option::Option<&crate::types::WarmTierRetentionPeriod> {
+    pub fn warm_tier_retention_period(&self) -> ::std::option::Option<& crate::types::WarmTierRetentionPeriod> {
         self.warm_tier_retention_period.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeStorageConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
     pub fn builder() -> crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder {
@@ -132,8 +132,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
@@ -152,8 +151,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>Contains information about the storage destination.</p>
     pub fn set_multi_layer_storage(mut self, input: ::std::option::Option<crate::types::MultiLayerStorage>) -> Self {
-        self.multi_layer_storage = input;
-        self
+        self.multi_layer_storage = input; self
     }
     /// <p>Contains information about the storage destination.</p>
     pub fn get_multi_layer_storage(&self) -> &::std::option::Option<crate::types::MultiLayerStorage> {
@@ -184,8 +182,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_disassociated_data_storage(mut self, input: ::std::option::Option<crate::types::DisassociatedDataStorageState>) -> Self {
-        self.disassociated_data_storage = input;
-        self
+        self.disassociated_data_storage = input; self
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
@@ -207,8 +204,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
@@ -222,8 +218,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>Contains current status information for the configuration.</p>
     pub fn set_configuration_status(mut self, input: ::std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.configuration_status = input;
-        self
+        self.configuration_status = input; self
     }
     /// <p>Contains current status information for the configuration.</p>
     pub fn get_configuration_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
@@ -236,8 +231,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
     pub fn set_last_update_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input;
-        self
+        self.last_update_date = input; self
     }
     /// <p>The date the storage configuration was last updated, in Unix epoch time.</p>
     pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -250,8 +244,7 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
     pub fn set_warm_tier(mut self, input: ::std::option::Option<crate::types::WarmTierState>) -> Self {
-        self.warm_tier = input;
-        self
+        self.warm_tier = input; self
     }
     /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
     pub fn get_warm_tier(&self) -> &::std::option::Option<crate::types::WarmTierState> {
@@ -264,46 +257,49 @@ impl DescribeStorageConfigurationOutputBuilder {
     }
     /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
     pub fn set_warm_tier_retention_period(mut self, input: ::std::option::Option<crate::types::WarmTierRetentionPeriod>) -> Self {
-        self.warm_tier_retention_period = input;
-        self
+        self.warm_tier_retention_period = input; self
     }
     /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
     pub fn get_warm_tier_retention_period(&self) -> &::std::option::Option<crate::types::WarmTierRetentionPeriod> {
         &self.warm_tier_retention_period
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeStorageConfigurationOutput`](crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_type`](crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder::storage_type)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
-            storage_type: self.storage_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "storage_type",
-                    "storage_type was not specified but it is required when building DescribeStorageConfigurationOutput",
-                )
-            })?,
-            multi_layer_storage: self.multi_layer_storage,
-            disassociated_data_storage: self.disassociated_data_storage,
-            retention_period: self.retention_period,
-            configuration_status: self.configuration_status,
-            last_update_date: self.last_update_date,
-            warm_tier: self.warm_tier,
-            warm_tier_retention_period: self.warm_tier_retention_period,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput {
+                storage_type: self.storage_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("storage_type", "storage_type was not specified but it is required when building DescribeStorageConfigurationOutput")
+                    )?
+                ,
+                multi_layer_storage: self.multi_layer_storage
+                ,
+                disassociated_data_storage: self.disassociated_data_storage
+                ,
+                retention_period: self.retention_period
+                ,
+                configuration_status: self.configuration_status
+                ,
+                last_update_date: self.last_update_date
+                ,
+                warm_tier: self.warm_tier
+                ,
+                warm_tier_retention_period: self.warm_tier_retention_period
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

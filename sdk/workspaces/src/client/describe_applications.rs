@@ -2,8 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplications`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`application_ids(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::application_ids) / [`set_application_ids(Option<Vec::<String>>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_application_ids):<br>required: **false**<br><p>The identifiers of one or more applications.</p><br>
     ///   - [`compute_type_names(Compute)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::compute_type_names) / [`set_compute_type_names(Option<Vec::<Compute>>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_compute_type_names):<br>required: **false**<br><p>The compute types supported by the applications.</p><br>
     ///   - [`license_type(WorkSpaceApplicationLicenseType)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::license_type) / [`set_license_type(Option<WorkSpaceApplicationLicenseType>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_license_type):<br>required: **false**<br><p>The license availability for the applications.</p><br>
@@ -11,11 +11,12 @@ impl super::Client {
     ///   - [`owner(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::owner) / [`set_owner(Option<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_owner):<br>required: **false**<br><p>The owner of the applications.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of applications to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p><br>
-    /// - On success, responds with [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput) with field(s):
+                            /// - On success, responds with [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput) with field(s):
     ///   - [`applications(Option<Vec::<WorkSpaceApplication>>)`](crate::operation::describe_applications::DescribeApplicationsOutput::applications): <p>List of information about the specified applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_applications::DescribeApplicationsOutput::next_token): <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::operation::describe_applications::DescribeApplicationsError)
+                            /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::operation::describe_applications::DescribeApplicationsError)
     pub fn describe_applications(&self) -> crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder {
-        crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_applications::builders::DescribeApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

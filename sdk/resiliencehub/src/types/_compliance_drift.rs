@@ -3,7 +3,7 @@
 /// <p>Indicates the compliance drifts (recovery time objective (RTO) and recovery point objective (RPO)) that were detected for an assessed entity.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ComplianceDrift {
+pub struct ComplianceDrift  {
     /// <p>Identifier of an entity in which drift was detected. For compliance drift, the entity ID can be either application ID or the AppComponent ID.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of entity in which drift was detected. For compliance drifts, Resilience Hub supports <code>AWS::ResilienceHub::AppComponent</code> and <code>AWS::ResilienceHub::Application</code>.</p>
@@ -17,57 +17,53 @@ pub struct ComplianceDrift {
     /// <p>Assessment identifier of a previous assessment of the same application version. Resilience Hub uses the previous assessment (associated with the reference identifier) to compare the compliance with the current assessment to identify drifts.</p>
     pub expected_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The expected compliance value of an entity.</p>
-    pub expected_value: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub expected_value: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>Assessment identifier that is associated with this drift item.</p>
     pub actual_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>Actual compliance value of the entity.</p>
-    pub actual_value: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub actual_value: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
     pub diff_type: ::std::option::Option<crate::types::DifferenceType>,
 }
-impl ComplianceDrift {
+impl  ComplianceDrift  {
     /// <p>Identifier of an entity in which drift was detected. For compliance drift, the entity ID can be either application ID or the AppComponent ID.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The type of entity in which drift was detected. For compliance drifts, Resilience Hub supports <code>AWS::ResilienceHub::AppComponent</code> and <code>AWS::ResilienceHub::Application</code>.</p>
-    pub fn entity_type(&self) -> ::std::option::Option<&str> {
+    pub fn entity_type(&self) -> ::std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The type of drift detected. Currently, Resilience Hub supports only <b>ApplicationCompliance</b> drift type.</p>
-    pub fn drift_type(&self) -> ::std::option::Option<&crate::types::DriftType> {
+    pub fn drift_type(&self) -> ::std::option::Option<& crate::types::DriftType> {
         self.drift_type.as_ref()
     }
     /// <p>Identifier of your application.</p>
-    pub fn app_id(&self) -> ::std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>Published version of your application on which drift was detected.</p>
-    pub fn app_version(&self) -> ::std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>Assessment identifier of a previous assessment of the same application version. Resilience Hub uses the previous assessment (associated with the reference identifier) to compare the compliance with the current assessment to identify drifts.</p>
-    pub fn expected_reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn expected_reference_id(&self) -> ::std::option::Option<& str> {
         self.expected_reference_id.as_deref()
     }
     /// <p>The expected compliance value of an entity.</p>
-    pub fn expected_value(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn expected_value(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         self.expected_value.as_ref()
     }
     /// <p>Assessment identifier that is associated with this drift item.</p>
-    pub fn actual_reference_id(&self) -> ::std::option::Option<&str> {
+    pub fn actual_reference_id(&self) -> ::std::option::Option<& str> {
         self.actual_reference_id.as_deref()
     }
     /// <p>Actual compliance value of the entity.</p>
-    pub fn actual_value(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn actual_value(&self) -> ::std::option::Option<& ::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         self.actual_value.as_ref()
     }
     /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
-    pub fn diff_type(&self) -> ::std::option::Option<&crate::types::DifferenceType> {
+    pub fn diff_type(&self) -> ::std::option::Option<& crate::types::DifferenceType> {
         self.diff_type.as_ref()
     }
 }
@@ -88,9 +84,9 @@ pub struct ComplianceDriftBuilder {
     pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_version: ::std::option::Option<::std::string::String>,
     pub(crate) expected_reference_id: ::std::option::Option<::std::string::String>,
-    pub(crate) expected_value: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub(crate) expected_value: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     pub(crate) actual_reference_id: ::std::option::Option<::std::string::String>,
-    pub(crate) actual_value: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
+    pub(crate) actual_value: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
     pub(crate) diff_type: ::std::option::Option<crate::types::DifferenceType>,
 }
 impl ComplianceDriftBuilder {
@@ -101,8 +97,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Identifier of an entity in which drift was detected. For compliance drift, the entity ID can be either application ID or the AppComponent ID.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>Identifier of an entity in which drift was detected. For compliance drift, the entity ID can be either application ID or the AppComponent ID.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -115,8 +110,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>The type of entity in which drift was detected. For compliance drifts, Resilience Hub supports <code>AWS::ResilienceHub::AppComponent</code> and <code>AWS::ResilienceHub::Application</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The type of entity in which drift was detected. For compliance drifts, Resilience Hub supports <code>AWS::ResilienceHub::AppComponent</code> and <code>AWS::ResilienceHub::Application</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -129,8 +123,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>The type of drift detected. Currently, Resilience Hub supports only <b>ApplicationCompliance</b> drift type.</p>
     pub fn set_drift_type(mut self, input: ::std::option::Option<crate::types::DriftType>) -> Self {
-        self.drift_type = input;
-        self
+        self.drift_type = input; self
     }
     /// <p>The type of drift detected. Currently, Resilience Hub supports only <b>ApplicationCompliance</b> drift type.</p>
     pub fn get_drift_type(&self) -> &::std::option::Option<crate::types::DriftType> {
@@ -143,8 +136,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Identifier of your application.</p>
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>Identifier of your application.</p>
     pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +149,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Published version of your application on which drift was detected.</p>
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>Published version of your application on which drift was detected.</p>
     pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -171,8 +162,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Assessment identifier of a previous assessment of the same application version. Resilience Hub uses the previous assessment (associated with the reference identifier) to compare the compliance with the current assessment to identify drifts.</p>
     pub fn set_expected_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expected_reference_id = input;
-        self
+        self.expected_reference_id = input; self
     }
     /// <p>Assessment identifier of a previous assessment of the same application version. Resilience Hub uses the previous assessment (associated with the reference identifier) to compare the compliance with the current assessment to identify drifts.</p>
     pub fn get_expected_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -185,22 +175,16 @@ impl ComplianceDriftBuilder {
     /// <p>The expected compliance value of an entity.</p>
     pub fn expected_value(mut self, k: crate::types::DisruptionType, v: crate::types::DisruptionCompliance) -> Self {
         let mut hash_map = self.expected_value.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.expected_value = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.expected_value = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The expected compliance value of an entity.</p>
-    pub fn set_expected_value(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
-    ) -> Self {
-        self.expected_value = input;
-        self
+    pub fn set_expected_value(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>) -> Self {
+        self.expected_value = input; self
     }
     /// <p>The expected compliance value of an entity.</p>
-    pub fn get_expected_value(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn get_expected_value(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         &self.expected_value
     }
     /// <p>Assessment identifier that is associated with this drift item.</p>
@@ -210,8 +194,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Assessment identifier that is associated with this drift item.</p>
     pub fn set_actual_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.actual_reference_id = input;
-        self
+        self.actual_reference_id = input; self
     }
     /// <p>Assessment identifier that is associated with this drift item.</p>
     pub fn get_actual_reference_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -224,22 +207,16 @@ impl ComplianceDriftBuilder {
     /// <p>Actual compliance value of the entity.</p>
     pub fn actual_value(mut self, k: crate::types::DisruptionType, v: crate::types::DisruptionCompliance) -> Self {
         let mut hash_map = self.actual_value.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.actual_value = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.actual_value = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Actual compliance value of the entity.</p>
-    pub fn set_actual_value(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>>,
-    ) -> Self {
-        self.actual_value = input;
-        self
+    pub fn set_actual_value(mut self, input: ::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>>) -> Self {
+        self.actual_value = input; self
     }
     /// <p>Actual compliance value of the entity.</p>
-    pub fn get_actual_value(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
+    pub fn get_actual_value(&self) -> &::std::option::Option<::std::collections::HashMap::<crate::types::DisruptionType, crate::types::DisruptionCompliance>> {
         &self.actual_value
     }
     /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
@@ -249,8 +226,7 @@ impl ComplianceDriftBuilder {
     }
     /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
     pub fn set_diff_type(mut self, input: ::std::option::Option<crate::types::DifferenceType>) -> Self {
-        self.diff_type = input;
-        self
+        self.diff_type = input; self
     }
     /// <p>Difference type between actual and expected recovery point objective (RPO) and recovery time objective (RTO) values. Currently, Resilience Hub supports only <b>NotEqual</b> difference type.</p>
     pub fn get_diff_type(&self) -> &::std::option::Option<crate::types::DifferenceType> {
@@ -259,16 +235,27 @@ impl ComplianceDriftBuilder {
     /// Consumes the builder and constructs a [`ComplianceDrift`](crate::types::ComplianceDrift).
     pub fn build(self) -> crate::types::ComplianceDrift {
         crate::types::ComplianceDrift {
-            entity_id: self.entity_id,
-            entity_type: self.entity_type,
-            drift_type: self.drift_type,
-            app_id: self.app_id,
-            app_version: self.app_version,
-            expected_reference_id: self.expected_reference_id,
-            expected_value: self.expected_value,
-            actual_reference_id: self.actual_reference_id,
-            actual_value: self.actual_value,
-            diff_type: self.diff_type,
+            entity_id: self.entity_id
+            ,
+            entity_type: self.entity_type
+            ,
+            drift_type: self.drift_type
+            ,
+            app_id: self.app_id
+            ,
+            app_version: self.app_version
+            ,
+            expected_reference_id: self.expected_reference_id
+            ,
+            expected_value: self.expected_value
+            ,
+            actual_reference_id: self.actual_reference_id
+            ,
+            actual_value: self.actual_value
+            ,
+            diff_type: self.diff_type
+            ,
         }
     }
 }
+

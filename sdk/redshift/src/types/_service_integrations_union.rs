@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ServiceIntegrationsUnion {
     /// <p>A list of scopes set up for Lake Formation integration.</p>
-    LakeFormation(::std::vec::Vec<crate::types::LakeFormationScopeUnion>),
+    LakeFormation(::std::vec::Vec::<crate::types::LakeFormationScopeUnion>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -20,12 +20,8 @@ impl ServiceIntegrationsUnion {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`LakeFormation`](crate::types::ServiceIntegrationsUnion::LakeFormation), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_lake_formation(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::LakeFormationScopeUnion>, &Self> {
-        if let ServiceIntegrationsUnion::LakeFormation(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_lake_formation(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::LakeFormationScopeUnion>, &Self> {
+        if let ServiceIntegrationsUnion::LakeFormation(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`LakeFormation`](crate::types::ServiceIntegrationsUnion::LakeFormation).
     pub fn is_lake_formation(&self) -> bool {
@@ -36,3 +32,4 @@ impl ServiceIntegrationsUnion {
         matches!(self, Self::Unknown)
     }
 }
+

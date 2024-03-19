@@ -3,7 +3,7 @@
 /// <p>Information about the AWS IoT Greengrass component created by a model packaging job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GreengrassOutputDetails {
+pub struct GreengrassOutputDetails  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub component_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
@@ -11,17 +11,17 @@ pub struct GreengrassOutputDetails {
     /// <p>The version of the component.</p>
     pub component_version: ::std::option::Option<::std::string::String>,
 }
-impl GreengrassOutputDetails {
+impl  GreengrassOutputDetails  {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn component_version_arn(&self) -> ::std::option::Option<& str> {
         self.component_version_arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<& str> {
         self.component_version.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GreengrassOutputDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn set_component_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version_arn = input;
-        self
+        self.component_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl GreengrassOutputDetailsBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl GreengrassOutputDetailsBuilder {
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version = input;
-        self
+        self.component_version = input; self
     }
     /// <p>The version of the component.</p>
     pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl GreengrassOutputDetailsBuilder {
     /// Consumes the builder and constructs a [`GreengrassOutputDetails`](crate::types::GreengrassOutputDetails).
     pub fn build(self) -> crate::types::GreengrassOutputDetails {
         crate::types::GreengrassOutputDetails {
-            component_version_arn: self.component_version_arn,
-            component_name: self.component_name,
-            component_version: self.component_version,
+            component_version_arn: self.component_version_arn
+            ,
+            component_name: self.component_name
+            ,
+            component_version: self.component_version
+            ,
         }
     }
 }
+

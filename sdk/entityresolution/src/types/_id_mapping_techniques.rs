@@ -3,19 +3,19 @@
 /// <p>An object which defines the ID mapping techniques and provider configurations.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdMappingTechniques {
+pub struct IdMappingTechniques  {
     /// <p>The type of ID mapping.</p>
     pub id_mapping_type: crate::types::IdMappingType,
     /// <p>An object which defines any additional configurations required by the provider service.</p>
     pub provider_properties: ::std::option::Option<crate::types::ProviderProperties>,
 }
-impl IdMappingTechniques {
+impl  IdMappingTechniques  {
     /// <p>The type of ID mapping.</p>
-    pub fn id_mapping_type(&self) -> &crate::types::IdMappingType {
+    pub fn id_mapping_type(&self) -> & crate::types::IdMappingType {
         &self.id_mapping_type
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
-    pub fn provider_properties(&self) -> ::std::option::Option<&crate::types::ProviderProperties> {
+    pub fn provider_properties(&self) -> ::std::option::Option<& crate::types::ProviderProperties> {
         self.provider_properties.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl IdMappingTechniquesBuilder {
     }
     /// <p>The type of ID mapping.</p>
     pub fn set_id_mapping_type(mut self, input: ::std::option::Option<crate::types::IdMappingType>) -> Self {
-        self.id_mapping_type = input;
-        self
+        self.id_mapping_type = input; self
     }
     /// <p>The type of ID mapping.</p>
     pub fn get_id_mapping_type(&self) -> &::std::option::Option<crate::types::IdMappingType> {
@@ -57,8 +56,7 @@ impl IdMappingTechniquesBuilder {
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
     pub fn set_provider_properties(mut self, input: ::std::option::Option<crate::types::ProviderProperties>) -> Self {
-        self.provider_properties = input;
-        self
+        self.provider_properties = input; self
     }
     /// <p>An object which defines any additional configurations required by the provider service.</p>
     pub fn get_provider_properties(&self) -> &::std::option::Option<crate::types::ProviderProperties> {
@@ -68,14 +66,17 @@ impl IdMappingTechniquesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id_mapping_type`](crate::types::builders::IdMappingTechniquesBuilder::id_mapping_type)
     pub fn build(self) -> ::std::result::Result<crate::types::IdMappingTechniques, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IdMappingTechniques {
-            id_mapping_type: self.id_mapping_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id_mapping_type",
-                    "id_mapping_type was not specified but it is required when building IdMappingTechniques",
-                )
-            })?,
-            provider_properties: self.provider_properties,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IdMappingTechniques {
+                id_mapping_type: self.id_mapping_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id_mapping_type", "id_mapping_type was not specified but it is required when building IdMappingTechniques")
+                    )?
+                ,
+                provider_properties: self.provider_properties
+                ,
+            }
+        )
     }
 }
+

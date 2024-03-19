@@ -3,13 +3,13 @@
 /// <p>The request to create a new distribution with tags.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateDistributionWithTagsInput {
+pub struct CreateDistributionWithTagsInput  {
     /// <p>The distribution's configuration information.</p>
     pub distribution_config_with_tags: ::std::option::Option<crate::types::DistributionConfigWithTags>,
 }
-impl CreateDistributionWithTagsInput {
+impl  CreateDistributionWithTagsInput  {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config_with_tags(&self) -> ::std::option::Option<&crate::types::DistributionConfigWithTags> {
+    pub fn distribution_config_with_tags(&self) -> ::std::option::Option<& crate::types::DistributionConfigWithTags> {
         self.distribution_config_with_tags.as_ref()
     }
 }
@@ -35,22 +35,20 @@ impl CreateDistributionWithTagsInputBuilder {
     }
     /// <p>The distribution's configuration information.</p>
     pub fn set_distribution_config_with_tags(mut self, input: ::std::option::Option<crate::types::DistributionConfigWithTags>) -> Self {
-        self.distribution_config_with_tags = input;
-        self
+        self.distribution_config_with_tags = input; self
     }
     /// <p>The distribution's configuration information.</p>
     pub fn get_distribution_config_with_tags(&self) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
         &self.distribution_config_with_tags
     }
     /// Consumes the builder and constructs a [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput {
-            distribution_config_with_tags: self.distribution_config_with_tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput {
+                distribution_config_with_tags: self.distribution_config_with_tags
+                ,
+            }
+        )
     }
 }
+

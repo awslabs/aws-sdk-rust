@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AddPartnerOutput {
+pub struct AddPartnerOutput  {
     /// <p>The name of the database that receives data from the partner.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner that is authorized to send data.</p>
     pub partner_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl AddPartnerOutput {
+impl  AddPartnerOutput  {
     /// <p>The name of the database that receives data from the partner.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner that is authorized to send data.</p>
-    pub fn partner_name(&self) -> ::std::option::Option<&str> {
+    pub fn partner_name(&self) -> ::std::option::Option<& str> {
         self.partner_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for AddPartnerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl AddPartnerOutput {
     /// Creates a new builder-style object to manufacture [`AddPartnerOutput`](crate::operation::add_partner::AddPartnerOutput).
     pub fn builder() -> crate::operation::add_partner::builders::AddPartnerOutputBuilder {
@@ -47,8 +47,7 @@ impl AddPartnerOutputBuilder {
     }
     /// <p>The name of the database that receives data from the partner.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database that receives data from the partner.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,28 +60,30 @@ impl AddPartnerOutputBuilder {
     }
     /// <p>The name of the partner that is authorized to send data.</p>
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.partner_name = input;
-        self
+        self.partner_name = input; self
     }
     /// <p>The name of the partner that is authorized to send data.</p>
     pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.partner_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`AddPartnerOutput`](crate::operation::add_partner::AddPartnerOutput).
     pub fn build(self) -> crate::operation::add_partner::AddPartnerOutput {
         crate::operation::add_partner::AddPartnerOutput {
-            database_name: self.database_name,
-            partner_name: self.partner_name,
+            database_name: self.database_name
+            ,
+            partner_name: self.partner_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

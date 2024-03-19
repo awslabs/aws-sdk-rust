@@ -3,7 +3,7 @@
 /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AssertionRuleUpdate {
+pub struct AssertionRuleUpdate  {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
@@ -11,13 +11,13 @@ pub struct AssertionRuleUpdate {
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub wait_period_ms: ::std::option::Option<i32>,
 }
-impl AssertionRuleUpdate {
+impl  AssertionRuleUpdate  {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn safety_rule_arn(&self) -> ::std::option::Option<&str> {
+    pub fn safety_rule_arn(&self) -> ::std::option::Option<& str> {
         self.safety_rule_arn.as_deref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
@@ -49,8 +49,7 @@ impl AssertionRuleUpdateBuilder {
     }
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl AssertionRuleUpdateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
     pub fn set_safety_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.safety_rule_arn = input;
-        self
+        self.safety_rule_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
     pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +77,7 @@ impl AssertionRuleUpdateBuilder {
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.wait_period_ms = input;
-        self
+        self.wait_period_ms = input; self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn get_wait_period_ms(&self) -> &::std::option::Option<i32> {
@@ -89,9 +86,13 @@ impl AssertionRuleUpdateBuilder {
     /// Consumes the builder and constructs a [`AssertionRuleUpdate`](crate::types::AssertionRuleUpdate).
     pub fn build(self) -> crate::types::AssertionRuleUpdate {
         crate::types::AssertionRuleUpdate {
-            name: self.name,
-            safety_rule_arn: self.safety_rule_arn,
-            wait_period_ms: self.wait_period_ms,
+            name: self.name
+            ,
+            safety_rule_arn: self.safety_rule_arn
+            ,
+            wait_period_ms: self.wait_period_ms
+            ,
         }
     }
 }
+

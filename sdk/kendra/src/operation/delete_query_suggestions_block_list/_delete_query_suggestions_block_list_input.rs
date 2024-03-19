@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQuerySuggestionsBlockListInput {
+pub struct DeleteQuerySuggestionsBlockListInput  {
     /// <p>The identifier of the index for the block list.</p>
     pub index_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the block list you want to delete.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQuerySuggestionsBlockListInput {
+impl  DeleteQuerySuggestionsBlockListInput  {
     /// <p>The identifier of the index for the block list.</p>
-    pub fn index_id(&self) -> ::std::option::Option<&str> {
+    pub fn index_id(&self) -> ::std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the block list you want to delete.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The identifier of the index for the block list.</p>
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the index for the block list.</p>
     pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The identifier of the block list you want to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the block list you want to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteQuerySuggestionsBlockListInput`](crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListInput {
-                index_id: self.index_id,
-                id: self.id,
-            },
+                index_id: self.index_id
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateWorkflowInput {
+pub struct UpdateWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
@@ -10,35 +10,36 @@ pub struct UpdateWorkflowInput {
     /// <p>The description of the migration workflow.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
+    pub input_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>,
     /// <p>The servers on which a step will be run.</p>
-    pub step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub step_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl UpdateWorkflowInput {
+impl  UpdateWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn input_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
+    pub fn input_parameters(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::StepInput>> {
         self.input_parameters.as_ref()
     }
     /// <p>The servers on which a step will be run.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_targets.is_none()`.
-    pub fn step_targets(&self) -> &[::std::string::String] {
-        self.step_targets.as_deref().unwrap_or_default()
+    pub fn step_targets(&self) -> & [::std::string::String] {
+        self.step_targets.as_deref()
+        .unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for UpdateWorkflowInput {
+impl  ::std::fmt::Debug for UpdateWorkflowInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWorkflowInput");
         formatter.field("id", &self.id);
@@ -63,8 +64,8 @@ pub struct UpdateWorkflowInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) input_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
-    pub(crate) step_targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) input_parameters: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>,
+    pub(crate) step_targets: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl UpdateWorkflowInputBuilder {
     /// <p>The ID of the migration workflow.</p>
@@ -75,8 +76,7 @@ impl UpdateWorkflowInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -89,8 +89,7 @@ impl UpdateWorkflowInputBuilder {
     }
     /// <p>The name of the migration workflow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the migration workflow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl UpdateWorkflowInputBuilder {
     }
     /// <p>The description of the migration workflow.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the migration workflow.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,20 +115,16 @@ impl UpdateWorkflowInputBuilder {
     /// <p>The input parameters required to update a migration workflow.</p>
     pub fn input_parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::StepInput) -> Self {
         let mut hash_map = self.input_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.input_parameters = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.input_parameters = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn set_input_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>>,
-    ) -> Self {
-        self.input_parameters = input;
-        self
+    pub fn set_input_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>>) -> Self {
+        self.input_parameters = input; self
     }
     /// <p>The input parameters required to update a migration workflow.</p>
-    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::StepInput>> {
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::StepInput>> {
         &self.input_parameters
     }
     /// Appends an item to `step_targets`.
@@ -140,30 +134,34 @@ impl UpdateWorkflowInputBuilder {
     /// <p>The servers on which a step will be run.</p>
     pub fn step_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.step_targets.unwrap_or_default();
-        v.push(input.into());
-        self.step_targets = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.step_targets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.step_targets = input;
-        self
+    pub fn set_step_targets(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.step_targets = input; self
     }
     /// <p>The servers on which a step will be run.</p>
-    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_step_targets(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.step_targets
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            input_parameters: self.input_parameters,
-            step_targets: self.step_targets,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_workflow::UpdateWorkflowInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                input_parameters: self.input_parameters
+                ,
+                step_targets: self.step_targets
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateWorkflowInputBuilder {
@@ -177,3 +175,4 @@ impl ::std::fmt::Debug for UpdateWorkflowInputBuilder {
         formatter.finish()
     }
 }
+

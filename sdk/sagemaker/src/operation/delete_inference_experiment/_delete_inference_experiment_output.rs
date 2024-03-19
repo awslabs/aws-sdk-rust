@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteInferenceExperimentOutput {
+pub struct DeleteInferenceExperimentOutput  {
     /// <p>The ARN of the deleted inference experiment.</p>
     pub inference_experiment_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DeleteInferenceExperimentOutput {
+impl  DeleteInferenceExperimentOutput  {
     /// <p>The ARN of the deleted inference experiment.</p>
-    pub fn inference_experiment_arn(&self) -> ::std::option::Option<&str> {
+    pub fn inference_experiment_arn(&self) -> ::std::option::Option<& str> {
         self.inference_experiment_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteInferenceExperimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteInferenceExperimentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput).
     pub fn builder() -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder {
@@ -41,27 +41,28 @@ impl DeleteInferenceExperimentOutputBuilder {
     }
     /// <p>The ARN of the deleted inference experiment.</p>
     pub fn set_inference_experiment_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inference_experiment_arn = input;
-        self
+        self.inference_experiment_arn = input; self
     }
     /// <p>The ARN of the deleted inference experiment.</p>
     pub fn get_inference_experiment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_experiment_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteInferenceExperimentOutput`](crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput).
     pub fn build(self) -> crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput {
         crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput {
-            inference_experiment_arn: self.inference_experiment_arn,
+            inference_experiment_arn: self.inference_experiment_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateTransitGatewayMulticastDomainInput {
+pub struct CreateTransitGatewayMulticastDomainInput  {
     /// <p>The ID of the transit gateway.</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The options for the transit gateway multicast domain.</p>
     pub options: ::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>,
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateTransitGatewayMulticastDomainInput {
+impl  CreateTransitGatewayMulticastDomainInput  {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn options(&self) -> ::std::option::Option<&crate::types::CreateTransitGatewayMulticastDomainRequestOptions> {
+    pub fn options(&self) -> ::std::option::Option<& crate::types::CreateTransitGatewayMulticastDomainRequestOptions> {
         self.options.as_ref()
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
-    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
-        self.tag_specifications.as_deref().unwrap_or_default()
+    pub fn tag_specifications(&self) -> & [crate::types::TagSpecification] {
+        self.tag_specifications.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -45,7 +46,7 @@ impl CreateTransitGatewayMulticastDomainInput {
 pub struct CreateTransitGatewayMulticastDomainInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) options: ::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>,
-    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateTransitGatewayMulticastDomainInputBuilder {
@@ -57,8 +58,7 @@ impl CreateTransitGatewayMulticastDomainInputBuilder {
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_id = input;
-        self
+        self.transit_gateway_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +71,7 @@ impl CreateTransitGatewayMulticastDomainInputBuilder {
     }
     /// <p>The options for the transit gateway multicast domain.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions> {
@@ -85,17 +84,16 @@ impl CreateTransitGatewayMulticastDomainInputBuilder {
     /// <p>The tags for the transit gateway multicast domain.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -105,27 +103,26 @@ impl CreateTransitGatewayMulticastDomainInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayMulticastDomainInput`](crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainInput {
-                transit_gateway_id: self.transit_gateway_id,
-                options: self.options,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
+                transit_gateway_id: self.transit_gateway_id
+                ,
+                options: self.options
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchRelatedItemsInput {
+pub struct SearchRelatedItemsInput  {
     /// <p>The unique identifier of the Cases domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the case.</p>
@@ -12,15 +12,15 @@ pub struct SearchRelatedItemsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItemTypeFilter>>,
 }
-impl SearchRelatedItemsInput {
+impl  SearchRelatedItemsInput  {
     /// <p>The unique identifier of the Cases domain.</p>
-    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> ::std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -28,14 +28,15 @@ impl SearchRelatedItemsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::RelatedItemTypeFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::RelatedItemTypeFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl SearchRelatedItemsInput {
@@ -53,7 +54,7 @@ pub struct SearchRelatedItemsInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItemTypeFilter>>,
 }
 impl SearchRelatedItemsInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -64,8 +65,7 @@ impl SearchRelatedItemsInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of the Cases domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +79,7 @@ impl SearchRelatedItemsInputBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>A unique identifier of the case.</p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -93,8 +92,7 @@ impl SearchRelatedItemsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -107,8 +105,7 @@ impl SearchRelatedItemsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -121,30 +118,34 @@ impl SearchRelatedItemsInputBuilder {
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
     pub fn filters(mut self, input: crate::types::RelatedItemTypeFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedItemTypeFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The list of types of related items and their parameters to use for filtering.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItemTypeFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelatedItemTypeFilter>> {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsInput`](crate::operation::search_related_items::SearchRelatedItemsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsInput {
-            domain_id: self.domain_id,
-            case_id: self.case_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filters: self.filters,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::search_related_items::SearchRelatedItemsInput {
+                domain_id: self.domain_id
+                ,
+                case_id: self.case_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
+        )
     }
 }
+

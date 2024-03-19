@@ -3,7 +3,7 @@
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IntegerHyperParameterRange {
+pub struct IntegerHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -11,9 +11,9 @@ pub struct IntegerHyperParameterRange {
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub max_value: i32,
 }
-impl IntegerHyperParameterRange {
+impl  IntegerHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -48,8 +48,7 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The name of the hyperparameter.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the hyperparameter.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn get_min_value(&self) -> &::std::option::Option<i32> {
@@ -76,8 +74,7 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn get_max_value(&self) -> &::std::option::Option<i32> {
@@ -86,9 +83,15 @@ impl IntegerHyperParameterRangeBuilder {
     /// Consumes the builder and constructs a [`IntegerHyperParameterRange`](crate::types::IntegerHyperParameterRange).
     pub fn build(self) -> crate::types::IntegerHyperParameterRange {
         crate::types::IntegerHyperParameterRange {
-            name: self.name,
-            min_value: self.min_value.unwrap_or_default(),
-            max_value: self.max_value.unwrap_or_default(),
+            name: self.name
+            ,
+            min_value: self.min_value
+                .unwrap_or_default()
+            ,
+            max_value: self.max_value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

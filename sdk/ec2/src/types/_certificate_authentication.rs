@@ -3,13 +3,13 @@
 /// <p>Information about the client certificate used for authentication.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CertificateAuthentication {
+pub struct CertificateAuthentication  {
     /// <p>The ARN of the client certificate.</p>
     pub client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
-impl CertificateAuthentication {
+impl  CertificateAuthentication  {
     /// <p>The ARN of the client certificate.</p>
-    pub fn client_root_certificate_chain(&self) -> ::std::option::Option<&str> {
+    pub fn client_root_certificate_chain(&self) -> ::std::option::Option<& str> {
         self.client_root_certificate_chain.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl CertificateAuthenticationBuilder {
     }
     /// <p>The ARN of the client certificate.</p>
     pub fn set_client_root_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_root_certificate_chain = input;
-        self
+        self.client_root_certificate_chain = input; self
     }
     /// <p>The ARN of the client certificate.</p>
     pub fn get_client_root_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl CertificateAuthenticationBuilder {
     /// Consumes the builder and constructs a [`CertificateAuthentication`](crate::types::CertificateAuthentication).
     pub fn build(self) -> crate::types::CertificateAuthentication {
         crate::types::CertificateAuthentication {
-            client_root_certificate_chain: self.client_root_certificate_chain,
+            client_root_certificate_chain: self.client_root_certificate_chain
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateViewMetadataInput {
+pub struct UpdateViewMetadataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
@@ -12,25 +12,25 @@ pub struct UpdateViewMetadataInput {
     /// <p>The description of the view.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
-impl UpdateViewMetadataInput {
+impl  UpdateViewMetadataInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
-    pub fn view_id(&self) -> ::std::option::Option<&str> {
+    pub fn view_id(&self) -> ::std::option::Option<& str> {
         self.view_id.as_deref()
     }
     /// <p>The name of the view.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the view.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl ::std::fmt::Debug for UpdateViewMetadataInput {
+impl  ::std::fmt::Debug for UpdateViewMetadataInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateViewMetadataInput");
         formatter.field("instance_id", &self.instance_id);
@@ -65,8 +65,7 @@ impl UpdateViewMetadataInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +79,7 @@ impl UpdateViewMetadataInputBuilder {
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
     pub fn set_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_id = input;
-        self
+        self.view_id = input; self
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
     pub fn get_view_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +92,7 @@ impl UpdateViewMetadataInputBuilder {
     }
     /// <p>The name of the view.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the view.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,24 +105,26 @@ impl UpdateViewMetadataInputBuilder {
     }
     /// <p>The description of the view.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the view.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateViewMetadataInput`](crate::operation::update_view_metadata::UpdateViewMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_view_metadata::UpdateViewMetadataInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_view_metadata::UpdateViewMetadataInput {
-            instance_id: self.instance_id,
-            view_id: self.view_id,
-            name: self.name,
-            description: self.description,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_view_metadata::UpdateViewMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_view_metadata::UpdateViewMetadataInput {
+                instance_id: self.instance_id
+                ,
+                view_id: self.view_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateViewMetadataInputBuilder {
@@ -138,3 +137,4 @@ impl ::std::fmt::Debug for UpdateViewMetadataInputBuilder {
         formatter.finish()
     }
 }
+

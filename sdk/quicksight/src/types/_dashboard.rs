@@ -3,7 +3,7 @@
 /// <p>Dashboard.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Dashboard {
+pub struct Dashboard  {
     /// <p>Dashboard ID.</p>
     pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -19,42 +19,43 @@ pub struct Dashboard {
     /// <p>The last time that this dashboard was updated.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
-    pub link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub link_entities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl Dashboard {
+impl  Dashboard  {
     /// <p>Dashboard ID.</p>
-    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A display name for the dashboard.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Version.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::DashboardVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::DashboardVersion> {
         self.version.as_ref()
     }
     /// <p>The time that this dashboard was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The last time that this dashboard was published.</p>
-    pub fn last_published_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_published_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_published_time.as_ref()
     }
     /// <p>The last time that this dashboard was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.link_entities.is_none()`.
-    pub fn link_entities(&self) -> &[::std::string::String] {
-        self.link_entities.as_deref().unwrap_or_default()
+    pub fn link_entities(&self) -> & [::std::string::String] {
+        self.link_entities.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Dashboard {
@@ -75,7 +76,7 @@ pub struct DashboardBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) link_entities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) link_entities: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl DashboardBuilder {
     /// <p>Dashboard ID.</p>
@@ -85,8 +86,7 @@ impl DashboardBuilder {
     }
     /// <p>Dashboard ID.</p>
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>Dashboard ID.</p>
     pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +99,7 @@ impl DashboardBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -113,8 +112,7 @@ impl DashboardBuilder {
     }
     /// <p>A display name for the dashboard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A display name for the dashboard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +125,7 @@ impl DashboardBuilder {
     }
     /// <p>Version.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::DashboardVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::DashboardVersion> {
@@ -141,8 +138,7 @@ impl DashboardBuilder {
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -155,8 +151,7 @@ impl DashboardBuilder {
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn set_last_published_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_published_time = input;
-        self
+        self.last_published_time = input; self
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn get_last_published_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -169,8 +164,7 @@ impl DashboardBuilder {
     }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,30 +177,38 @@ impl DashboardBuilder {
     /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
     pub fn link_entities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.link_entities.unwrap_or_default();
-        v.push(input.into());
-        self.link_entities = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.link_entities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
-    pub fn set_link_entities(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.link_entities = input;
-        self
+    pub fn set_link_entities(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.link_entities = input; self
     }
     /// <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.</p>
-    pub fn get_link_entities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_link_entities(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.link_entities
     }
     /// Consumes the builder and constructs a [`Dashboard`](crate::types::Dashboard).
     pub fn build(self) -> crate::types::Dashboard {
         crate::types::Dashboard {
-            dashboard_id: self.dashboard_id,
-            arn: self.arn,
-            name: self.name,
-            version: self.version,
-            created_time: self.created_time,
-            last_published_time: self.last_published_time,
-            last_updated_time: self.last_updated_time,
-            link_entities: self.link_entities,
+            dashboard_id: self.dashboard_id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            created_time: self.created_time
+            ,
+            last_published_time: self.last_published_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            link_entities: self.link_entities
+            ,
         }
     }
 }
+

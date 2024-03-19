@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExecuteGremlinQueryOutput {
+pub struct ExecuteGremlinQueryOutput  {
     /// <p>The unique identifier of the Gremlin query.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Gremlin query.</p>
@@ -15,31 +15,31 @@ pub struct ExecuteGremlinQueryOutput {
     pub meta_value: ::std::option::Option<::aws_smithy_types::Document>,
     _request_id: Option<String>,
 }
-impl ExecuteGremlinQueryOutput {
+impl  ExecuteGremlinQueryOutput  {
     /// <p>The unique identifier of the Gremlin query.</p>
-    pub fn request_id(&self) -> ::std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The status of the Gremlin query.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::GremlinQueryStatusAttributes> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::GremlinQueryStatusAttributes> {
         self.status.as_ref()
     }
     /// <p>The Gremlin query output from the server.</p>
-    pub fn result(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn result(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.result.as_ref()
     }
     /// <p>Metadata about the Gremlin query.</p>
     ///
     /// _Note: This member has been renamed from `meta`._
-    pub fn meta_value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+    pub fn meta_value(&self) -> ::std::option::Option<& ::aws_smithy_types::Document> {
         self.meta_value.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ExecuteGremlinQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ExecuteGremlinQueryOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteGremlinQueryOutput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput).
     pub fn builder() -> crate::operation::execute_gremlin_query::builders::ExecuteGremlinQueryOutputBuilder {
@@ -65,8 +65,7 @@ impl ExecuteGremlinQueryOutputBuilder {
     }
     /// <p>The unique identifier of the Gremlin query.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The unique identifier of the Gremlin query.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +78,7 @@ impl ExecuteGremlinQueryOutputBuilder {
     }
     /// <p>The status of the Gremlin query.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GremlinQueryStatusAttributes>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the Gremlin query.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GremlinQueryStatusAttributes> {
@@ -93,8 +91,7 @@ impl ExecuteGremlinQueryOutputBuilder {
     }
     /// <p>The Gremlin query output from the server.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>The Gremlin query output from the server.</p>
     pub fn get_result(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
@@ -107,30 +104,34 @@ impl ExecuteGremlinQueryOutputBuilder {
     }
     /// <p>Metadata about the Gremlin query.</p>
     pub fn set_meta(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
-        self.meta_value = input;
-        self
+        self.meta_value = input; self
     }
     /// <p>Metadata about the Gremlin query.</p>
     pub fn get_meta(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.meta_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ExecuteGremlinQueryOutput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput).
     pub fn build(self) -> crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput {
         crate::operation::execute_gremlin_query::ExecuteGremlinQueryOutput {
-            request_id: self.request_id,
-            status: self.status,
-            result: self.result,
-            meta_value: self.meta_value,
+            request_id: self.request_id
+            ,
+            status: self.status
+            ,
+            result: self.result
+            ,
+            meta_value: self.meta_value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

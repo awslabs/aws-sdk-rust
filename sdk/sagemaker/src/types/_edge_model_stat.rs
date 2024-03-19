@@ -3,7 +3,7 @@
 /// <p>Status of edge devices with this model.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct EdgeModelStat {
+pub struct EdgeModelStat  {
     /// <p>The name of the model.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The model version.</p>
@@ -17,13 +17,13 @@ pub struct EdgeModelStat {
     /// <p>The number of devices with this model version and are producing sample data.</p>
     pub sampling_device_count: ::std::option::Option<i64>,
 }
-impl EdgeModelStat {
+impl  EdgeModelStat  {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The model version.</p>
-    pub fn model_version(&self) -> ::std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
@@ -70,8 +70,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the model.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +84,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The model version.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The model version.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -100,8 +98,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
     pub fn set_offline_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.offline_device_count = input;
-        self
+        self.offline_device_count = input; self
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
     pub fn get_offline_device_count(&self) -> &::std::option::Option<i64> {
@@ -115,8 +112,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The number of devices that have this model version and have a heart beat.</p>
     pub fn set_connected_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.connected_device_count = input;
-        self
+        self.connected_device_count = input; self
     }
     /// <p>The number of devices that have this model version and have a heart beat.</p>
     pub fn get_connected_device_count(&self) -> &::std::option::Option<i64> {
@@ -130,8 +126,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
     pub fn set_active_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.active_device_count = input;
-        self
+        self.active_device_count = input; self
     }
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
     pub fn get_active_device_count(&self) -> &::std::option::Option<i64> {
@@ -145,8 +140,7 @@ impl EdgeModelStatBuilder {
     }
     /// <p>The number of devices with this model version and are producing sample data.</p>
     pub fn set_sampling_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.sampling_device_count = input;
-        self
+        self.sampling_device_count = input; self
     }
     /// <p>The number of devices with this model version and are producing sample data.</p>
     pub fn get_sampling_device_count(&self) -> &::std::option::Option<i64> {
@@ -155,12 +149,19 @@ impl EdgeModelStatBuilder {
     /// Consumes the builder and constructs a [`EdgeModelStat`](crate::types::EdgeModelStat).
     pub fn build(self) -> crate::types::EdgeModelStat {
         crate::types::EdgeModelStat {
-            model_name: self.model_name,
-            model_version: self.model_version,
-            offline_device_count: self.offline_device_count,
-            connected_device_count: self.connected_device_count,
-            active_device_count: self.active_device_count,
-            sampling_device_count: self.sampling_device_count,
+            model_name: self.model_name
+            ,
+            model_version: self.model_version
+            ,
+            offline_device_count: self.offline_device_count
+            ,
+            connected_device_count: self.connected_device_count
+            ,
+            active_device_count: self.active_device_count
+            ,
+            sampling_device_count: self.sampling_device_count
+            ,
         }
     }
 }
+

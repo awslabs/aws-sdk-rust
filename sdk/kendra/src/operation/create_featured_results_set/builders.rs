@@ -5,55 +5,51 @@ pub use crate::operation::create_featured_results_set::_create_featured_results_
 
 impl CreateFeaturedResultsSetInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_featured_results_set();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_featured_results_set();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateFeaturedResultsSet`.
-///
+/// 
 /// <p>Creates a set of featured results to display at the top of the search results page. Featured results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the search results.</p>
 /// <p>You can create up to 50 sets of featured results per index. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFeaturedResultsSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetInputBuilder,
+                    inner: crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
-    > for CreateFeaturedResultsSetFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
-            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
+                    crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+                > for CreateFeaturedResultsSetFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
+                        crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateFeaturedResultsSetFluentBuilder {
     /// Creates a new `CreateFeaturedResultsSet`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -62,53 +58,44 @@ impl CreateFeaturedResultsSetFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_featured_results_set::CreateFeaturedResultsSet::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSet::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
-        crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_featured_results_set::CreateFeaturedResultsSetError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_featured_results_set::CreateFeaturedResultsSet::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_featured_results_set::CreateFeaturedResultsSet::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput, crate::operation::create_featured_results_set::CreateFeaturedResultsSetError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The identifier of the index that you want to use for featuring results.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -189,12 +176,12 @@ impl CreateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_query_texts(input);
         self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_query_texts()
     }
     /// Appends an item to `FeaturedDocuments`.
@@ -207,12 +194,12 @@ impl CreateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
+    pub fn set_featured_documents(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>>) -> Self {
         self.inner = self.inner.set_featured_documents(input);
         self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocument>> {
+    pub fn get_featured_documents(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeaturedDocument>> {
         self.inner.get_featured_documents()
     }
     /// Appends an item to `Tags`.
@@ -225,12 +212,13 @@ impl CreateFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
 }
+

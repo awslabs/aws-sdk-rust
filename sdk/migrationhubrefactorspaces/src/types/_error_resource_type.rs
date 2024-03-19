@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorresourcetype = unimplemented!();
 /// match errorresourcetype {
@@ -47,16 +47,14 @@
 /// Specifically, when `errorresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum ErrorResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
@@ -98,132 +96,113 @@ pub enum ErrorResourceType {
     VpcLink,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for ErrorResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "API_GATEWAY" => ErrorResourceType::ApiGateway,
-            "APPLICATION" => ErrorResourceType::Application,
-            "ENVIRONMENT" => ErrorResourceType::Environment,
-            "IAM_ROLE" => ErrorResourceType::IamRole,
-            "LAMBDA" => ErrorResourceType::Lambda,
-            "LOAD_BALANCER_LISTENER" => ErrorResourceType::LoadBalancerListener,
-            "NLB" => ErrorResourceType::Nlb,
-            "RESOURCE_SHARE" => ErrorResourceType::ResourceShare,
-            "ROUTE" => ErrorResourceType::Route,
-            "ROUTE_TABLE" => ErrorResourceType::RouteTable,
-            "SECURITY_GROUP" => ErrorResourceType::SecurityGroup,
-            "SERVICE" => ErrorResourceType::Service,
-            "SUBNET" => ErrorResourceType::Subnet,
-            "TARGET_GROUP" => ErrorResourceType::TargetGroup,
-            "TRANSIT_GATEWAY" => ErrorResourceType::TransitGateway,
-            "TRANSIT_GATEWAY_ATTACHMENT" => ErrorResourceType::TransitGatewayAttachment,
-            "VPC" => ErrorResourceType::Vpc,
-            "VPC_ENDPOINT_SERVICE_CONFIGURATION" => ErrorResourceType::VpcEndpointServiceConfiguration,
-            "VPC_LINK" => ErrorResourceType::VpcLink,
-            other => ErrorResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "API_GATEWAY" => ErrorResourceType::ApiGateway,
+"APPLICATION" => ErrorResourceType::Application,
+"ENVIRONMENT" => ErrorResourceType::Environment,
+"IAM_ROLE" => ErrorResourceType::IamRole,
+"LAMBDA" => ErrorResourceType::Lambda,
+"LOAD_BALANCER_LISTENER" => ErrorResourceType::LoadBalancerListener,
+"NLB" => ErrorResourceType::Nlb,
+"RESOURCE_SHARE" => ErrorResourceType::ResourceShare,
+"ROUTE" => ErrorResourceType::Route,
+"ROUTE_TABLE" => ErrorResourceType::RouteTable,
+"SECURITY_GROUP" => ErrorResourceType::SecurityGroup,
+"SERVICE" => ErrorResourceType::Service,
+"SUBNET" => ErrorResourceType::Subnet,
+"TARGET_GROUP" => ErrorResourceType::TargetGroup,
+"TRANSIT_GATEWAY" => ErrorResourceType::TransitGateway,
+"TRANSIT_GATEWAY_ATTACHMENT" => ErrorResourceType::TransitGatewayAttachment,
+"VPC" => ErrorResourceType::Vpc,
+"VPC_ENDPOINT_SERVICE_CONFIGURATION" => ErrorResourceType::VpcEndpointServiceConfiguration,
+"VPC_LINK" => ErrorResourceType::VpcLink,
+other => ErrorResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for ErrorResourceType {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(ErrorResourceType::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(ErrorResourceType::from(s))
+                    }
+                }
 impl ErrorResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorResourceType::ApiGateway => "API_GATEWAY",
-            ErrorResourceType::Application => "APPLICATION",
-            ErrorResourceType::Environment => "ENVIRONMENT",
-            ErrorResourceType::IamRole => "IAM_ROLE",
-            ErrorResourceType::Lambda => "LAMBDA",
-            ErrorResourceType::LoadBalancerListener => "LOAD_BALANCER_LISTENER",
-            ErrorResourceType::Nlb => "NLB",
-            ErrorResourceType::ResourceShare => "RESOURCE_SHARE",
-            ErrorResourceType::Route => "ROUTE",
-            ErrorResourceType::RouteTable => "ROUTE_TABLE",
-            ErrorResourceType::SecurityGroup => "SECURITY_GROUP",
-            ErrorResourceType::Service => "SERVICE",
-            ErrorResourceType::Subnet => "SUBNET",
-            ErrorResourceType::TargetGroup => "TARGET_GROUP",
-            ErrorResourceType::TransitGateway => "TRANSIT_GATEWAY",
-            ErrorResourceType::TransitGatewayAttachment => "TRANSIT_GATEWAY_ATTACHMENT",
-            ErrorResourceType::Vpc => "VPC",
-            ErrorResourceType::VpcEndpointServiceConfiguration => "VPC_ENDPOINT_SERVICE_CONFIGURATION",
-            ErrorResourceType::VpcLink => "VPC_LINK",
-            ErrorResourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "API_GATEWAY",
-            "APPLICATION",
-            "ENVIRONMENT",
-            "IAM_ROLE",
-            "LAMBDA",
-            "LOAD_BALANCER_LISTENER",
-            "NLB",
-            "RESOURCE_SHARE",
-            "ROUTE",
-            "ROUTE_TABLE",
-            "SECURITY_GROUP",
-            "SERVICE",
-            "SUBNET",
-            "TARGET_GROUP",
-            "TRANSIT_GATEWAY",
-            "TRANSIT_GATEWAY_ATTACHMENT",
-            "VPC",
-            "VPC_ENDPOINT_SERVICE_CONFIGURATION",
-            "VPC_LINK",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorResourceType::ApiGateway => "API_GATEWAY",
+    ErrorResourceType::Application => "APPLICATION",
+    ErrorResourceType::Environment => "ENVIRONMENT",
+    ErrorResourceType::IamRole => "IAM_ROLE",
+    ErrorResourceType::Lambda => "LAMBDA",
+    ErrorResourceType::LoadBalancerListener => "LOAD_BALANCER_LISTENER",
+    ErrorResourceType::Nlb => "NLB",
+    ErrorResourceType::ResourceShare => "RESOURCE_SHARE",
+    ErrorResourceType::Route => "ROUTE",
+    ErrorResourceType::RouteTable => "ROUTE_TABLE",
+    ErrorResourceType::SecurityGroup => "SECURITY_GROUP",
+    ErrorResourceType::Service => "SERVICE",
+    ErrorResourceType::Subnet => "SUBNET",
+    ErrorResourceType::TargetGroup => "TARGET_GROUP",
+    ErrorResourceType::TransitGateway => "TRANSIT_GATEWAY",
+    ErrorResourceType::TransitGatewayAttachment => "TRANSIT_GATEWAY_ATTACHMENT",
+    ErrorResourceType::Vpc => "VPC",
+    ErrorResourceType::VpcEndpointServiceConfiguration => "VPC_ENDPOINT_SERVICE_CONFIGURATION",
+    ErrorResourceType::VpcLink => "VPC_LINK",
+    ErrorResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["API_GATEWAY", "APPLICATION", "ENVIRONMENT", "IAM_ROLE", "LAMBDA", "LOAD_BALANCER_LISTENER", "NLB", "RESOURCE_SHARE", "ROUTE", "ROUTE_TABLE", "SECURITY_GROUP", "SERVICE", "SUBNET", "TARGET_GROUP", "TRANSIT_GATEWAY", "TRANSIT_GATEWAY_ATTACHMENT", "VPC", "VPC_ENDPOINT_SERVICE_CONFIGURATION", "VPC_LINK"]
+                }
+            }
 impl ::std::convert::AsRef<str> for ErrorResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl ErrorResourceType {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for ErrorResourceType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            ErrorResourceType::ApiGateway => write!(f, "API_GATEWAY"),
-            ErrorResourceType::Application => write!(f, "APPLICATION"),
-            ErrorResourceType::Environment => write!(f, "ENVIRONMENT"),
-            ErrorResourceType::IamRole => write!(f, "IAM_ROLE"),
-            ErrorResourceType::Lambda => write!(f, "LAMBDA"),
-            ErrorResourceType::LoadBalancerListener => write!(f, "LOAD_BALANCER_LISTENER"),
-            ErrorResourceType::Nlb => write!(f, "NLB"),
-            ErrorResourceType::ResourceShare => write!(f, "RESOURCE_SHARE"),
-            ErrorResourceType::Route => write!(f, "ROUTE"),
-            ErrorResourceType::RouteTable => write!(f, "ROUTE_TABLE"),
-            ErrorResourceType::SecurityGroup => write!(f, "SECURITY_GROUP"),
-            ErrorResourceType::Service => write!(f, "SERVICE"),
-            ErrorResourceType::Subnet => write!(f, "SUBNET"),
-            ErrorResourceType::TargetGroup => write!(f, "TARGET_GROUP"),
-            ErrorResourceType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
-            ErrorResourceType::TransitGatewayAttachment => write!(f, "TRANSIT_GATEWAY_ATTACHMENT"),
-            ErrorResourceType::Vpc => write!(f, "VPC"),
-            ErrorResourceType::VpcEndpointServiceConfiguration => write!(f, "VPC_ENDPOINT_SERVICE_CONFIGURATION"),
-            ErrorResourceType::VpcLink => write!(f, "VPC_LINK"),
-            ErrorResourceType::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                ErrorResourceType::ApiGateway => write!(f, "API_GATEWAY"),
+ErrorResourceType::Application => write!(f, "APPLICATION"),
+ErrorResourceType::Environment => write!(f, "ENVIRONMENT"),
+ErrorResourceType::IamRole => write!(f, "IAM_ROLE"),
+ErrorResourceType::Lambda => write!(f, "LAMBDA"),
+ErrorResourceType::LoadBalancerListener => write!(f, "LOAD_BALANCER_LISTENER"),
+ErrorResourceType::Nlb => write!(f, "NLB"),
+ErrorResourceType::ResourceShare => write!(f, "RESOURCE_SHARE"),
+ErrorResourceType::Route => write!(f, "ROUTE"),
+ErrorResourceType::RouteTable => write!(f, "ROUTE_TABLE"),
+ErrorResourceType::SecurityGroup => write!(f, "SECURITY_GROUP"),
+ErrorResourceType::Service => write!(f, "SERVICE"),
+ErrorResourceType::Subnet => write!(f, "SUBNET"),
+ErrorResourceType::TargetGroup => write!(f, "TARGET_GROUP"),
+ErrorResourceType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
+ErrorResourceType::TransitGatewayAttachment => write!(f, "TRANSIT_GATEWAY_ATTACHMENT"),
+ErrorResourceType::Vpc => write!(f, "VPC"),
+ErrorResourceType::VpcEndpointServiceConfiguration => write!(f, "VPC_ENDPOINT_SERVICE_CONFIGURATION"),
+ErrorResourceType::VpcLink => write!(f, "VPC_LINK"),
+ErrorResourceType::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RegisterToWorkMailInput {
+pub struct RegisterToWorkMailInput  {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the user, group, or resource to be updated.</p>
@@ -17,9 +17,9 @@ pub struct RegisterToWorkMailInput {
     /// <p>The email for the user, group, or resource to be updated.</p>
     pub email: ::std::option::Option<::std::string::String>,
 }
-impl RegisterToWorkMailInput {
+impl  RegisterToWorkMailInput  {
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the user, group, or resource to be updated.</p>
@@ -30,11 +30,11 @@ impl RegisterToWorkMailInput {
     /// <li>
     /// <p>Entity name: entity</p></li>
     /// </ul>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The email for the user, group, or resource to be updated.</p>
-    pub fn email(&self) -> ::std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<& str> {
         self.email.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl RegisterToWorkMailInputBuilder {
     }
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +90,7 @@ impl RegisterToWorkMailInputBuilder {
     /// <p>Entity name: entity</p></li>
     /// </ul>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The identifier for the user, group, or resource to be updated.</p>
     /// <p>The identifier can accept <i>UserId, ResourceId, or GroupId</i>, or <i>Username, Resourcename, or Groupname</i>. The following identity formats are available:</p>
@@ -113,22 +111,24 @@ impl RegisterToWorkMailInputBuilder {
     }
     /// <p>The email for the user, group, or resource to be updated.</p>
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The email for the user, group, or resource to be updated.</p>
     pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
         &self.email
     }
     /// Consumes the builder and constructs a [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::register_to_work_mail::RegisterToWorkMailInput {
-            organization_id: self.organization_id,
-            entity_id: self.entity_id,
-            email: self.email,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::register_to_work_mail::RegisterToWorkMailInput {
+                organization_id: self.organization_id
+                ,
+                entity_id: self.entity_id
+                ,
+                email: self.email
+                ,
+            }
+        )
     }
 }
+

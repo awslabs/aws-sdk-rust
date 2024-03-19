@@ -2,30 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAnnotationImportJobsOutput {
+pub struct ListAnnotationImportJobsOutput  {
     /// <p>A list of jobs.</p>
-    pub annotation_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
+    pub annotation_import_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationImportJobItem>>,
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAnnotationImportJobsOutput {
+impl  ListAnnotationImportJobsOutput  {
     /// <p>A list of jobs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.annotation_import_jobs.is_none()`.
-    pub fn annotation_import_jobs(&self) -> &[crate::types::AnnotationImportJobItem] {
-        self.annotation_import_jobs.as_deref().unwrap_or_default()
+    pub fn annotation_import_jobs(&self) -> & [crate::types::AnnotationImportJobItem] {
+        self.annotation_import_jobs.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAnnotationImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAnnotationImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput).
     pub fn builder() -> crate::operation::list_annotation_import_jobs::builders::ListAnnotationImportJobsOutputBuilder {
@@ -37,7 +38,7 @@ impl ListAnnotationImportJobsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsOutputBuilder {
-    pub(crate) annotation_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>,
+    pub(crate) annotation_import_jobs: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationImportJobItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +50,16 @@ impl ListAnnotationImportJobsOutputBuilder {
     /// <p>A list of jobs.</p>
     pub fn annotation_import_jobs(mut self, input: crate::types::AnnotationImportJobItem) -> Self {
         let mut v = self.annotation_import_jobs.unwrap_or_default();
-        v.push(input);
-        self.annotation_import_jobs = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.annotation_import_jobs = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_annotation_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>>) -> Self {
-        self.annotation_import_jobs = input;
-        self
+    pub fn set_annotation_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AnnotationImportJobItem>>) -> Self {
+        self.annotation_import_jobs = input; self
     }
     /// <p>A list of jobs.</p>
-    pub fn get_annotation_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportJobItem>> {
+    pub fn get_annotation_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AnnotationImportJobItem>> {
         &self.annotation_import_jobs
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
@@ -69,28 +69,30 @@ impl ListAnnotationImportJobsOutputBuilder {
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAnnotationImportJobsOutput`](crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput).
     pub fn build(self) -> crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput {
         crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput {
-            annotation_import_jobs: self.annotation_import_jobs,
-            next_token: self.next_token,
+            annotation_import_jobs: self.annotation_import_jobs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListClassificationJobsInput {
+pub struct ListClassificationJobsInput  {
     /// <p>The criteria to use to filter the results.</p>
     pub filter_criteria: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -12,9 +12,9 @@ pub struct ListClassificationJobsInput {
     /// <p>The criteria to use to sort the results.</p>
     pub sort_criteria: ::std::option::Option<crate::types::ListJobsSortCriteria>,
 }
-impl ListClassificationJobsInput {
+impl  ListClassificationJobsInput  {
     /// <p>The criteria to use to filter the results.</p>
-    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::ListJobsFilterCriteria> {
+    pub fn filter_criteria(&self) -> ::std::option::Option<& crate::types::ListJobsFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -22,11 +22,11 @@ impl ListClassificationJobsInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::ListJobsSortCriteria> {
+    pub fn sort_criteria(&self) -> ::std::option::Option<& crate::types::ListJobsSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListClassificationJobsInputBuilder {
     }
     /// <p>The criteria to use to filter the results.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsFilterCriteria>) -> Self {
-        self.filter_criteria = input;
-        self
+        self.filter_criteria = input; self
     }
     /// <p>The criteria to use to filter the results.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::ListJobsFilterCriteria> {
@@ -68,8 +67,7 @@ impl ListClassificationJobsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -82,8 +80,7 @@ impl ListClassificationJobsInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -96,25 +93,26 @@ impl ListClassificationJobsInputBuilder {
     }
     /// <p>The criteria to use to sort the results.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<crate::types::ListJobsSortCriteria>) -> Self {
-        self.sort_criteria = input;
-        self
+        self.sort_criteria = input; self
     }
     /// <p>The criteria to use to sort the results.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::ListJobsSortCriteria> {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_classification_jobs::ListClassificationJobsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_classification_jobs::ListClassificationJobsInput {
-            filter_criteria: self.filter_criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_classification_jobs::ListClassificationJobsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_classification_jobs::ListClassificationJobsInput {
+                filter_criteria: self.filter_criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

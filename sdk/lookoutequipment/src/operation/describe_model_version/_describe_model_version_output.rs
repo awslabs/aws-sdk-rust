@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeModelVersionOutput {
+pub struct DescribeModelVersionOutput  {
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parent machine learning model that this version belong to.</p>
@@ -79,13 +79,13 @@ pub struct DescribeModelVersionOutput {
     pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     _request_id: Option<String>,
 }
-impl DescribeModelVersionOutput {
+impl  DescribeModelVersionOutput  {
     /// <p>The name of the machine learning model that this version belongs to.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parent machine learning model that this version belong to.</p>
-    pub fn model_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_arn(&self) -> ::std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The version of the machine learning model.</p>
@@ -93,100 +93,100 @@ impl DescribeModelVersionOutput {
         self.model_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
-    pub fn model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn model_version_arn(&self) -> ::std::option::Option<& str> {
         self.model_version_arn.as_deref()
     }
     /// <p>The current status of the model version.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ModelVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates whether this model version was created by training or by importing.</p>
-    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ModelVersionSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<& crate::types::ModelVersionSourceType> {
         self.source_type.as_ref()
     }
     /// <p>The name of the dataset used to train the model version.</p>
-    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used to train the model version.</p>
-    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The schema of the data used to train the model version.</p>
-    pub fn schema(&self) -> ::std::option::Option<&str> {
+    pub fn schema(&self) -> ::std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
-    pub fn labels_input_configuration(&self) -> ::std::option::Option<&crate::types::LabelsInputConfiguration> {
+    pub fn labels_input_configuration(&self) -> ::std::option::Option<& crate::types::LabelsInputConfiguration> {
         self.labels_input_configuration.as_ref()
     }
     /// <p>The date on which the training data began being gathered. If you imported the version, this is the date that the training data in the source version began being gathered.</p>
-    pub fn training_data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_start_time.as_ref()
     }
     /// <p>The date on which the training data finished being gathered. If you imported the version, this is the date that the training data in the source version finished being gathered.</p>
-    pub fn training_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_data_end_time.as_ref()
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version began being gathered.</p>
-    pub fn evaluation_data_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_data_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_data_start_time.as_ref()
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version finished being gathered.</p>
-    pub fn evaluation_data_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn evaluation_data_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.evaluation_data_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that was used to train the model version.</p>
-    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
-    pub fn data_pre_processing_configuration(&self) -> ::std::option::Option<&crate::types::DataPreProcessingConfiguration> {
+    pub fn data_pre_processing_configuration(&self) -> ::std::option::Option<& crate::types::DataPreProcessingConfiguration> {
         self.data_pre_processing_configuration.as_ref()
     }
     /// <p>The time when the training of the version began.</p>
-    pub fn training_execution_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_execution_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_execution_start_time.as_ref()
     }
     /// <p>The time when the training of the version completed.</p>
-    pub fn training_execution_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn training_execution_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.training_execution_end_time.as_ref()
     }
     /// <p>The failure message if the training of the model version failed.</p>
-    pub fn failed_reason(&self) -> ::std::option::Option<&str> {
+    pub fn failed_reason(&self) -> ::std::option::Option<& str> {
         self.failed_reason.as_deref()
     }
     /// <p>Shows an aggregated summary, in JSON format, of the model's performance within the evaluation time range. These metrics are created when evaluating the model.</p>
-    pub fn model_metrics(&self) -> ::std::option::Option<&str> {
+    pub fn model_metrics(&self) -> ::std::option::Option<& str> {
         self.model_metrics.as_deref()
     }
     /// <p>Indicates the last time the machine learning model version was updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates the time and date at which the machine learning model version was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The identifier of the KMS key key used to encrypt model version data by Amazon Lookout for Equipment.</p>
-    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn server_side_kms_key_id(&self) -> ::std::option::Option<& str> {
         self.server_side_kms_key_id.as_deref()
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-    pub fn off_condition(&self) -> ::std::option::Option<&str> {
+    pub fn off_condition(&self) -> ::std::option::Option<& str> {
         self.off_condition.as_deref()
     }
     /// <p>If model version was imported, then this field is the arn of the source model version.</p>
-    pub fn source_model_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_model_version_arn(&self) -> ::std::option::Option<& str> {
         self.source_model_version_arn.as_deref()
     }
     /// <p>The date and time when the import job began. This field appears if the model version was imported.</p>
-    pub fn import_job_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn import_job_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.import_job_start_time.as_ref()
     }
     /// <p>The date and time when the import job completed. This field appears if the model version was imported.</p>
-    pub fn import_job_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn import_job_end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.import_job_end_time.as_ref()
     }
     /// <p>The size in bytes of the imported data. This field appears if the model version was imported.</p>
@@ -194,7 +194,7 @@ impl DescribeModelVersionOutput {
         self.imported_data_size_in_bytes
     }
     /// <p>If the model version was retrained, this field shows a summary of the performance of the prior model on the new training range. You can use the information in this JSON-formatted object to compare the new model version and the prior model version.</p>
-    pub fn prior_model_metrics(&self) -> ::std::option::Option<&str> {
+    pub fn prior_model_metrics(&self) -> ::std::option::Option<& str> {
         self.prior_model_metrics.as_deref()
     }
     /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
@@ -202,34 +202,34 @@ impl DescribeModelVersionOutput {
         self.retraining_available_data_in_days
     }
     /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
-    pub fn auto_promotion_result(&self) -> ::std::option::Option<&crate::types::AutoPromotionResult> {
+    pub fn auto_promotion_result(&self) -> ::std::option::Option<& crate::types::AutoPromotionResult> {
         self.auto_promotion_result.as_ref()
     }
     /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
-    pub fn auto_promotion_result_reason(&self) -> ::std::option::Option<&str> {
+    pub fn auto_promotion_result_reason(&self) -> ::std::option::Option<& str> {
         self.auto_promotion_result_reason.as_deref()
     }
     /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
-    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<& crate::types::ModelDiagnosticsOutputConfiguration> {
         self.model_diagnostics_output_configuration.as_ref()
     }
     /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
-    pub fn model_diagnostics_results_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+    pub fn model_diagnostics_results_object(&self) -> ::std::option::Option<& crate::types::S3Object> {
         self.model_diagnostics_results_object.as_ref()
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
     /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
-    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+    pub fn model_quality(&self) -> ::std::option::Option<& crate::types::ModelQuality> {
         self.model_quality.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelVersionOutput`](crate::operation::describe_model_version::DescribeModelVersionOutput).
     pub fn builder() -> crate::operation::describe_model_version::builders::DescribeModelVersionOutputBuilder {
@@ -286,8 +286,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The name of the machine learning model that this version belongs to.</p>
     pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -300,8 +299,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the parent machine learning model that this version belong to.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the parent machine learning model that this version belong to.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -314,8 +312,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The version of the machine learning model.</p>
     pub fn set_model_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The version of the machine learning model.</p>
     pub fn get_model_version(&self) -> &::std::option::Option<i64> {
@@ -328,8 +325,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
     pub fn set_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_version_arn = input;
-        self
+        self.model_version_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model version.</p>
     pub fn get_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -342,8 +338,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The current status of the model version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelVersionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The current status of the model version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVersionStatus> {
@@ -356,8 +351,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates whether this model version was created by training or by importing.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::ModelVersionSourceType>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>Indicates whether this model version was created by training or by importing.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ModelVersionSourceType> {
@@ -370,8 +364,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The name of the dataset used to train the model version.</p>
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The name of the dataset used to train the model version.</p>
     pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -384,8 +377,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used to train the model version.</p>
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used to train the model version.</p>
     pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -398,8 +390,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The schema of the data used to train the model version.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The schema of the data used to train the model version.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -412,8 +403,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn set_labels_input_configuration(mut self, input: ::std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
-        self.labels_input_configuration = input;
-        self
+        self.labels_input_configuration = input; self
     }
     /// <p>Contains the configuration information for the S3 location being used to hold label data.</p>
     pub fn get_labels_input_configuration(&self) -> &::std::option::Option<crate::types::LabelsInputConfiguration> {
@@ -426,8 +416,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date on which the training data began being gathered. If you imported the version, this is the date that the training data in the source version began being gathered.</p>
     pub fn set_training_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_start_time = input;
-        self
+        self.training_data_start_time = input; self
     }
     /// <p>The date on which the training data began being gathered. If you imported the version, this is the date that the training data in the source version began being gathered.</p>
     pub fn get_training_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -440,8 +429,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date on which the training data finished being gathered. If you imported the version, this is the date that the training data in the source version finished being gathered.</p>
     pub fn set_training_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_data_end_time = input;
-        self
+        self.training_data_end_time = input; self
     }
     /// <p>The date on which the training data finished being gathered. If you imported the version, this is the date that the training data in the source version finished being gathered.</p>
     pub fn get_training_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -454,8 +442,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version began being gathered.</p>
     pub fn set_evaluation_data_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.evaluation_data_start_time = input;
-        self
+        self.evaluation_data_start_time = input; self
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version began being gathered.</p>
     pub fn get_evaluation_data_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -468,8 +455,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version finished being gathered.</p>
     pub fn set_evaluation_data_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.evaluation_data_end_time = input;
-        self
+        self.evaluation_data_end_time = input; self
     }
     /// <p>The date on which the data in the evaluation set began being gathered. If you imported the version, this is the date that the evaluation set data in the source version finished being gathered.</p>
     pub fn get_evaluation_data_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -482,8 +468,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that was used to train the model version.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that was used to train the model version.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -498,8 +483,7 @@ impl DescribeModelVersionOutputBuilder {
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
     pub fn set_data_pre_processing_configuration(mut self, input: ::std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
-        self.data_pre_processing_configuration = input;
-        self
+        self.data_pre_processing_configuration = input; self
     }
     /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i></p>
@@ -513,8 +497,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The time when the training of the version began.</p>
     pub fn set_training_execution_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_execution_start_time = input;
-        self
+        self.training_execution_start_time = input; self
     }
     /// <p>The time when the training of the version began.</p>
     pub fn get_training_execution_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -527,8 +510,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The time when the training of the version completed.</p>
     pub fn set_training_execution_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.training_execution_end_time = input;
-        self
+        self.training_execution_end_time = input; self
     }
     /// <p>The time when the training of the version completed.</p>
     pub fn get_training_execution_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -541,8 +523,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The failure message if the training of the model version failed.</p>
     pub fn set_failed_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.failed_reason = input;
-        self
+        self.failed_reason = input; self
     }
     /// <p>The failure message if the training of the model version failed.</p>
     pub fn get_failed_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -555,8 +536,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Shows an aggregated summary, in JSON format, of the model's performance within the evaluation time range. These metrics are created when evaluating the model.</p>
     pub fn set_model_metrics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_metrics = input;
-        self
+        self.model_metrics = input; self
     }
     /// <p>Shows an aggregated summary, in JSON format, of the model's performance within the evaluation time range. These metrics are created when evaluating the model.</p>
     pub fn get_model_metrics(&self) -> &::std::option::Option<::std::string::String> {
@@ -569,8 +549,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates the last time the machine learning model version was updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>Indicates the last time the machine learning model version was updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -583,8 +562,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates the time and date at which the machine learning model version was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>Indicates the time and date at which the machine learning model version was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -597,8 +575,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The identifier of the KMS key key used to encrypt model version data by Amazon Lookout for Equipment.</p>
     pub fn set_server_side_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_side_kms_key_id = input;
-        self
+        self.server_side_kms_key_id = input; self
     }
     /// <p>The identifier of the KMS key key used to encrypt model version data by Amazon Lookout for Equipment.</p>
     pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -611,8 +588,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub fn set_off_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.off_condition = input;
-        self
+        self.off_condition = input; self
     }
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
@@ -625,8 +601,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>If model version was imported, then this field is the arn of the source model version.</p>
     pub fn set_source_model_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_model_version_arn = input;
-        self
+        self.source_model_version_arn = input; self
     }
     /// <p>If model version was imported, then this field is the arn of the source model version.</p>
     pub fn get_source_model_version_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -639,8 +614,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date and time when the import job began. This field appears if the model version was imported.</p>
     pub fn set_import_job_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.import_job_start_time = input;
-        self
+        self.import_job_start_time = input; self
     }
     /// <p>The date and time when the import job began. This field appears if the model version was imported.</p>
     pub fn get_import_job_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -653,8 +627,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The date and time when the import job completed. This field appears if the model version was imported.</p>
     pub fn set_import_job_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.import_job_end_time = input;
-        self
+        self.import_job_end_time = input; self
     }
     /// <p>The date and time when the import job completed. This field appears if the model version was imported.</p>
     pub fn get_import_job_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -667,8 +640,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The size in bytes of the imported data. This field appears if the model version was imported.</p>
     pub fn set_imported_data_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.imported_data_size_in_bytes = input;
-        self
+        self.imported_data_size_in_bytes = input; self
     }
     /// <p>The size in bytes of the imported data. This field appears if the model version was imported.</p>
     pub fn get_imported_data_size_in_bytes(&self) -> &::std::option::Option<i64> {
@@ -681,8 +653,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>If the model version was retrained, this field shows a summary of the performance of the prior model on the new training range. You can use the information in this JSON-formatted object to compare the new model version and the prior model version.</p>
     pub fn set_prior_model_metrics(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.prior_model_metrics = input;
-        self
+        self.prior_model_metrics = input; self
     }
     /// <p>If the model version was retrained, this field shows a summary of the performance of the prior model on the new training range. You can use the information in this JSON-formatted object to compare the new model version and the prior model version.</p>
     pub fn get_prior_model_metrics(&self) -> &::std::option::Option<::std::string::String> {
@@ -695,8 +666,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn set_retraining_available_data_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.retraining_available_data_in_days = input;
-        self
+        self.retraining_available_data_in_days = input; self
     }
     /// <p>Indicates the number of days of data used in the most recent scheduled retraining run.</p>
     pub fn get_retraining_available_data_in_days(&self) -> &::std::option::Option<i32> {
@@ -709,8 +679,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn set_auto_promotion_result(mut self, input: ::std::option::Option<crate::types::AutoPromotionResult>) -> Self {
-        self.auto_promotion_result = input;
-        self
+        self.auto_promotion_result = input; self
     }
     /// <p>Indicates whether the model version was promoted to be the active version after retraining or if there was an error with or cancellation of the retraining.</p>
     pub fn get_auto_promotion_result(&self) -> &::std::option::Option<crate::types::AutoPromotionResult> {
@@ -723,8 +692,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn set_auto_promotion_result_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.auto_promotion_result_reason = input;
-        self
+        self.auto_promotion_result_reason = input; self
     }
     /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub fn get_auto_promotion_result_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -736,12 +704,8 @@ impl DescribeModelVersionOutputBuilder {
         self
     }
     /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
-    pub fn set_model_diagnostics_output_configuration(
-        mut self,
-        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
-    ) -> Self {
-        self.model_diagnostics_output_configuration = input;
-        self
+    pub fn set_model_diagnostics_output_configuration(mut self, input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>) -> Self {
+        self.model_diagnostics_output_configuration = input; self
     }
     /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
     pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
@@ -754,8 +718,7 @@ impl DescribeModelVersionOutputBuilder {
     }
     /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
     pub fn set_model_diagnostics_results_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
-        self.model_diagnostics_results_object = input;
-        self
+        self.model_diagnostics_results_object = input; self
     }
     /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
     pub fn get_model_diagnostics_results_object(&self) -> &::std::option::Option<crate::types::S3Object> {
@@ -774,8 +737,7 @@ impl DescribeModelVersionOutputBuilder {
     /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
     /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
     pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
-        self.model_quality = input;
-        self
+        self.model_quality = input; self
     }
     /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
     /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
@@ -785,53 +747,89 @@ impl DescribeModelVersionOutputBuilder {
         &self.model_quality
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeModelVersionOutput`](crate::operation::describe_model_version::DescribeModelVersionOutput).
     pub fn build(self) -> crate::operation::describe_model_version::DescribeModelVersionOutput {
         crate::operation::describe_model_version::DescribeModelVersionOutput {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            model_version: self.model_version,
-            model_version_arn: self.model_version_arn,
-            status: self.status,
-            source_type: self.source_type,
-            dataset_name: self.dataset_name,
-            dataset_arn: self.dataset_arn,
-            schema: self.schema,
-            labels_input_configuration: self.labels_input_configuration,
-            training_data_start_time: self.training_data_start_time,
-            training_data_end_time: self.training_data_end_time,
-            evaluation_data_start_time: self.evaluation_data_start_time,
-            evaluation_data_end_time: self.evaluation_data_end_time,
-            role_arn: self.role_arn,
-            data_pre_processing_configuration: self.data_pre_processing_configuration,
-            training_execution_start_time: self.training_execution_start_time,
-            training_execution_end_time: self.training_execution_end_time,
-            failed_reason: self.failed_reason,
-            model_metrics: self.model_metrics,
-            last_updated_time: self.last_updated_time,
-            created_at: self.created_at,
-            server_side_kms_key_id: self.server_side_kms_key_id,
-            off_condition: self.off_condition,
-            source_model_version_arn: self.source_model_version_arn,
-            import_job_start_time: self.import_job_start_time,
-            import_job_end_time: self.import_job_end_time,
-            imported_data_size_in_bytes: self.imported_data_size_in_bytes,
-            prior_model_metrics: self.prior_model_metrics,
-            retraining_available_data_in_days: self.retraining_available_data_in_days,
-            auto_promotion_result: self.auto_promotion_result,
-            auto_promotion_result_reason: self.auto_promotion_result_reason,
-            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
-            model_diagnostics_results_object: self.model_diagnostics_results_object,
-            model_quality: self.model_quality,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            model_version: self.model_version
+            ,
+            model_version_arn: self.model_version_arn
+            ,
+            status: self.status
+            ,
+            source_type: self.source_type
+            ,
+            dataset_name: self.dataset_name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            schema: self.schema
+            ,
+            labels_input_configuration: self.labels_input_configuration
+            ,
+            training_data_start_time: self.training_data_start_time
+            ,
+            training_data_end_time: self.training_data_end_time
+            ,
+            evaluation_data_start_time: self.evaluation_data_start_time
+            ,
+            evaluation_data_end_time: self.evaluation_data_end_time
+            ,
+            role_arn: self.role_arn
+            ,
+            data_pre_processing_configuration: self.data_pre_processing_configuration
+            ,
+            training_execution_start_time: self.training_execution_start_time
+            ,
+            training_execution_end_time: self.training_execution_end_time
+            ,
+            failed_reason: self.failed_reason
+            ,
+            model_metrics: self.model_metrics
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            created_at: self.created_at
+            ,
+            server_side_kms_key_id: self.server_side_kms_key_id
+            ,
+            off_condition: self.off_condition
+            ,
+            source_model_version_arn: self.source_model_version_arn
+            ,
+            import_job_start_time: self.import_job_start_time
+            ,
+            import_job_end_time: self.import_job_end_time
+            ,
+            imported_data_size_in_bytes: self.imported_data_size_in_bytes
+            ,
+            prior_model_metrics: self.prior_model_metrics
+            ,
+            retraining_available_data_in_days: self.retraining_available_data_in_days
+            ,
+            auto_promotion_result: self.auto_promotion_result
+            ,
+            auto_promotion_result_reason: self.auto_promotion_result_reason
+            ,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration
+            ,
+            model_diagnostics_results_object: self.model_diagnostics_results_object
+            ,
+            model_quality: self.model_quality
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

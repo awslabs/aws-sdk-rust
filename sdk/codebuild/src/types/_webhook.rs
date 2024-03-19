@@ -3,7 +3,7 @@
 /// <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Webhook {
+pub struct Webhook  {
     /// <p>The URL to the webhook.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
@@ -18,46 +18,47 @@ pub struct Webhook {
     pub branch_filter: ::std::option::Option<::std::string::String>,
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
-    pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub filter_groups: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl Webhook {
+impl  Webhook  {
     /// <p>The URL to the webhook.</p>
-    pub fn url(&self) -> ::std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
-    pub fn payload_url(&self) -> ::std::option::Option<&str> {
+    pub fn payload_url(&self) -> ::std::option::Option<& str> {
         self.payload_url.as_deref()
     }
     /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
-    pub fn secret(&self) -> ::std::option::Option<&str> {
+    pub fn secret(&self) -> ::std::option::Option<& str> {
         self.secret.as_deref()
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
-    pub fn branch_filter(&self) -> ::std::option::Option<&str> {
+    pub fn branch_filter(&self) -> ::std::option::Option<& str> {
         self.branch_filter.as_deref()
     }
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_groups.is_none()`.
-    pub fn filter_groups(&self) -> &[::std::vec::Vec<crate::types::WebhookFilter>] {
-        self.filter_groups.as_deref().unwrap_or_default()
+    pub fn filter_groups(&self) -> & [::std::vec::Vec::<crate::types::WebhookFilter>] {
+        self.filter_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
+    pub fn build_type(&self) -> ::std::option::Option<& crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
-    pub fn last_modified_secret(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_secret(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_secret.as_ref()
     }
 }
@@ -76,7 +77,7 @@ pub struct WebhookBuilder {
     pub(crate) payload_url: ::std::option::Option<::std::string::String>,
     pub(crate) secret: ::std::option::Option<::std::string::String>,
     pub(crate) branch_filter: ::std::option::Option<::std::string::String>,
-    pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::WebhookFilter>>>,
     pub(crate) build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     pub(crate) last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -88,8 +89,7 @@ impl WebhookBuilder {
     }
     /// <p>The URL to the webhook.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The URL to the webhook.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -102,8 +102,7 @@ impl WebhookBuilder {
     }
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
     pub fn set_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.payload_url = input;
-        self
+        self.payload_url = input; self
     }
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
     pub fn get_payload_url(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl WebhookBuilder {
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub fn set_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret = input;
-        self
+        self.secret = input; self
     }
     /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
@@ -140,8 +138,7 @@ impl WebhookBuilder {
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.branch_filter = input;
-        self
+        self.branch_filter = input; self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
@@ -155,21 +152,20 @@ impl WebhookBuilder {
     ///
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
-    pub fn filter_groups(mut self, input: ::std::vec::Vec<crate::types::WebhookFilter>) -> Self {
+    pub fn filter_groups(mut self, input: ::std::vec::Vec::<crate::types::WebhookFilter>) -> Self {
         let mut v = self.filter_groups.unwrap_or_default();
-        v.push(input);
-        self.filter_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filter_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
-    pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>) -> Self {
-        self.filter_groups = input;
-        self
+    pub fn set_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::WebhookFilter>>>) -> Self {
+        self.filter_groups = input; self
     }
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
-    pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
+    pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<crate::types::WebhookFilter>>> {
         &self.filter_groups
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -179,8 +175,7 @@ impl WebhookBuilder {
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::WebhookBuildType>) -> Self {
-        self.build_type = input;
-        self
+        self.build_type = input; self
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
@@ -193,8 +188,7 @@ impl WebhookBuilder {
     }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub fn set_last_modified_secret(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_secret = input;
-        self
+        self.last_modified_secret = input; self
     }
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.</p>
     pub fn get_last_modified_secret(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -203,13 +197,21 @@ impl WebhookBuilder {
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
     pub fn build(self) -> crate::types::Webhook {
         crate::types::Webhook {
-            url: self.url,
-            payload_url: self.payload_url,
-            secret: self.secret,
-            branch_filter: self.branch_filter,
-            filter_groups: self.filter_groups,
-            build_type: self.build_type,
-            last_modified_secret: self.last_modified_secret,
+            url: self.url
+            ,
+            payload_url: self.payload_url
+            ,
+            secret: self.secret
+            ,
+            branch_filter: self.branch_filter
+            ,
+            filter_groups: self.filter_groups
+            ,
+            build_type: self.build_type
+            ,
+            last_modified_secret: self.last_modified_secret
+            ,
         }
     }
 }
+

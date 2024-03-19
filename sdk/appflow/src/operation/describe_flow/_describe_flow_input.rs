@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeFlowInput {
+pub struct DescribeFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub flow_name: ::std::option::Option<::std::string::String>,
 }
-impl DescribeFlowInput {
+impl  DescribeFlowInput  {
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
-    pub fn flow_name(&self) -> ::std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<& str> {
         self.flow_name.as_deref()
     }
 }
@@ -34,17 +34,20 @@ impl DescribeFlowInputBuilder {
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
     }
     /// <p>The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only.</p>
     pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_name
     }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput { flow_name: self.flow_name })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_flow::DescribeFlowInput {
+                flow_name: self.flow_name
+                ,
+            }
+        )
     }
 }
+

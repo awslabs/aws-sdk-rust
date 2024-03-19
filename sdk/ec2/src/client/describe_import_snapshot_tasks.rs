@@ -2,20 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeImportSnapshotTasks`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::set_dry_run):<br>required: **false**<br><p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::set_filters):<br>required: **false**<br><p>The filters.</p><br>
     ///   - [`import_task_ids(impl Into<String>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::import_task_ids) / [`set_import_task_ids(Option<Vec::<String>>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::set_import_task_ids):<br>required: **false**<br><p>A list of import snapshot task IDs.</p><br>
     ///   - [`max_results(i32)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::set_next_token):<br>required: **false**<br><p>A token that indicates the next page of results.</p><br>
-    /// - On success, responds with [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput) with field(s):
+                            /// - On success, responds with [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput) with field(s):
     ///   - [`import_snapshot_tasks(Option<Vec::<ImportSnapshotTask>>)`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput::import_snapshot_tasks): <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput::next_token): <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeImportSnapshotTasksError>`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError)
-    pub fn describe_import_snapshot_tasks(
-        &self,
-    ) -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder {
-        crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::new(self.handle.clone())
-    }
+                            /// - On failure, responds with [`SdkError<DescribeImportSnapshotTasksError>`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError)
+    pub fn describe_import_snapshot_tasks(&self) -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder {
+                                crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksFluentBuilder::new(self.handle.clone())
+                            }
 }
+

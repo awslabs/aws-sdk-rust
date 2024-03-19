@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartLoaderJobOutput {
+pub struct StartLoaderJobOutput  {
     /// <p>The HTTP return code indicating the status of the load job.</p>
     pub status: ::std::string::String,
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub payload: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub payload: ::std::collections::HashMap::<::std::string::String, ::std::string::String>,
     _request_id: Option<String>,
 }
-impl StartLoaderJobOutput {
+impl  StartLoaderJobOutput  {
     /// <p>The HTTP return code indicating the status of the load job.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub fn payload(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
+    pub fn payload(&self) -> & ::std::collections::HashMap::<::std::string::String, ::std::string::String> {
         &self.payload
     }
 }
 impl ::aws_types::request_id::RequestId for StartLoaderJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl StartLoaderJobOutput {
     /// Creates a new builder-style object to manufacture [`StartLoaderJobOutput`](crate::operation::start_loader_job::StartLoaderJobOutput).
     pub fn builder() -> crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder {
@@ -37,7 +36,7 @@ impl StartLoaderJobOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct StartLoaderJobOutputBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
-    pub(crate) payload: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) payload: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartLoaderJobOutputBuilder {
@@ -49,8 +48,7 @@ impl StartLoaderJobOutputBuilder {
     }
     /// <p>The HTTP return code indicating the status of the load job.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The HTTP return code indicating the status of the load job.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,49 +61,47 @@ impl StartLoaderJobOutputBuilder {
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
     pub fn payload(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.payload.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.payload = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.payload = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub fn set_payload(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.payload = input;
-        self
+    pub fn set_payload(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.payload = input; self
     }
     /// <p>Contains a <code>loadId</code> name-value pair that provides an identifier for the load operation.</p>
-    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_payload(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`StartLoaderJobOutput`](crate::operation::start_loader_job::StartLoaderJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder::status)
     /// - [`payload`](crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder::payload)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_loader_job::StartLoaderJobOutput {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building StartLoaderJobOutput",
-                )
-            })?,
-            payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "payload",
-                    "payload was not specified but it is required when building StartLoaderJobOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_loader_job::StartLoaderJobOutput {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building StartLoaderJobOutput")
+                    )?
+                ,
+                payload: self.payload
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("payload", "payload was not specified but it is required when building StartLoaderJobOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

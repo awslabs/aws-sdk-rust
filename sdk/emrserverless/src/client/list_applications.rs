@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListApplications`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of application results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of applications that can be listed.</p><br>
     ///   - [`states(ApplicationState)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::states) / [`set_states(Option<Vec::<ApplicationState>>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_states):<br>required: **false**<br><p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p><br>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
+                            /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
     ///   - [`applications(Vec::<ApplicationSummary>)`](crate::operation::list_applications::ListApplicationsOutput::applications): <p>The output lists the specified applications.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>The output displays the token for the next set of application results. This is required for pagination and is available as a response of the previous request.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
+                            /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::operation::list_applications::ListApplicationsError)
     pub fn list_applications(&self) -> crate::operation::list_applications::builders::ListApplicationsFluentBuilder {
-        crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_applications::builders::ListApplicationsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

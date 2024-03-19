@@ -3,19 +3,19 @@
 /// <p>This structure contains information about the start and end times of the launch.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LaunchExecution {
+pub struct LaunchExecution  {
     /// <p>The date and time that the launch started.</p>
     pub started_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the launch ended.</p>
     pub ended_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl LaunchExecution {
+impl  LaunchExecution  {
     /// <p>The date and time that the launch started.</p>
-    pub fn started_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn started_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.started_time.as_ref()
     }
     /// <p>The date and time that the launch ended.</p>
-    pub fn ended_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn ended_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.ended_time.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LaunchExecutionBuilder {
     }
     /// <p>The date and time that the launch started.</p>
     pub fn set_started_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.started_time = input;
-        self
+        self.started_time = input; self
     }
     /// <p>The date and time that the launch started.</p>
     pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -55,8 +54,7 @@ impl LaunchExecutionBuilder {
     }
     /// <p>The date and time that the launch ended.</p>
     pub fn set_ended_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.ended_time = input;
-        self
+        self.ended_time = input; self
     }
     /// <p>The date and time that the launch ended.</p>
     pub fn get_ended_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -65,8 +63,11 @@ impl LaunchExecutionBuilder {
     /// Consumes the builder and constructs a [`LaunchExecution`](crate::types::LaunchExecution).
     pub fn build(self) -> crate::types::LaunchExecution {
         crate::types::LaunchExecution {
-            started_time: self.started_time,
-            ended_time: self.ended_time,
+            started_time: self.started_time
+            ,
+            ended_time: self.ended_time
+            ,
         }
     }
 }
+

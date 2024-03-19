@@ -3,15 +3,14 @@
 /// <p>Structure for expressing the query language version.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QueryLanguageVersion {
+pub struct QueryLanguageVersion  {
     /// <p>The version of the query language.</p>
     pub version: ::std::string::String,
 }
-impl QueryLanguageVersion {
+impl  QueryLanguageVersion  {
     /// <p>The version of the query language.</p>
-    pub fn version(&self) -> &str {
-        use std::ops::Deref;
-        self.version.deref()
+    pub fn version(&self) -> & str {
+        use std::ops::Deref; self.version.deref()
     }
 }
 impl QueryLanguageVersion {
@@ -36,8 +35,7 @@ impl QueryLanguageVersionBuilder {
     }
     /// <p>The version of the query language.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The version of the query language.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl QueryLanguageVersionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`version`](crate::types::builders::QueryLanguageVersionBuilder::version)
     pub fn build(self) -> ::std::result::Result<crate::types::QueryLanguageVersion, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::QueryLanguageVersion {
-            version: self.version.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "version",
-                    "version was not specified but it is required when building QueryLanguageVersion",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::QueryLanguageVersion {
+                version: self.version
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("version", "version was not specified but it is required when building QueryLanguageVersion")
+                    )?
+                ,
+            }
+        )
     }
 }
+

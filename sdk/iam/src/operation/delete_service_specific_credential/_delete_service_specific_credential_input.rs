@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServiceSpecificCredentialInput {
+pub struct DeleteServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteServiceSpecificCredentialInput {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub service_specific_credential_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteServiceSpecificCredentialInput {
+impl  DeleteServiceSpecificCredentialInput  {
     /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn service_specific_credential_id(&self) -> ::std::option::Option<&str> {
+    pub fn service_specific_credential_id(&self) -> ::std::option::Option<& str> {
         self.service_specific_credential_id.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl DeleteServiceSpecificCredentialInputBuilder {
     /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
@@ -64,8 +63,7 @@ impl DeleteServiceSpecificCredentialInputBuilder {
     /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_service_specific_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_specific_credential_id = input;
-        self
+        self.service_specific_credential_id = input; self
     }
     /// <p>The unique identifier of the service-specific credential. You can get this value by calling <code>ListServiceSpecificCredentials</code>.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
@@ -73,17 +71,15 @@ impl DeleteServiceSpecificCredentialInputBuilder {
         &self.service_specific_credential_id
     }
     /// Consumes the builder and constructs a [`DeleteServiceSpecificCredentialInput`](crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialInput {
-                user_name: self.user_name,
-                service_specific_credential_id: self.service_specific_credential_id,
-            },
+                user_name: self.user_name
+                ,
+                service_specific_credential_id: self.service_specific_credential_id
+                ,
+            }
         )
     }
 }
+

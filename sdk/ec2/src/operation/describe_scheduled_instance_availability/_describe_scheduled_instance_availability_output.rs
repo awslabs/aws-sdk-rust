@@ -3,30 +3,31 @@
 /// <p>Contains the output of DescribeScheduledInstanceAvailability.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeScheduledInstanceAvailabilityOutput {
+pub struct DescribeScheduledInstanceAvailabilityOutput  {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the available Scheduled Instances.</p>
-    pub scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
+    pub scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledInstanceAvailability>>,
     _request_id: Option<String>,
 }
-impl DescribeScheduledInstanceAvailabilityOutput {
+impl  DescribeScheduledInstanceAvailabilityOutput  {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the available Scheduled Instances.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scheduled_instance_availability_set.is_none()`.
-    pub fn scheduled_instance_availability_set(&self) -> &[crate::types::ScheduledInstanceAvailability] {
-        self.scheduled_instance_availability_set.as_deref().unwrap_or_default()
+    pub fn scheduled_instance_availability_set(&self) -> & [crate::types::ScheduledInstanceAvailability] {
+        self.scheduled_instance_availability_set.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeScheduledInstanceAvailabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeScheduledInstanceAvailabilityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
     pub fn builder() -> crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeScheduledInstanceAvailabilityOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstanceAvailabilityOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
+    pub(crate) scheduled_instance_availability_set: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledInstanceAvailability>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstanceAvailabilityOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
     }
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,37 +64,36 @@ impl DescribeScheduledInstanceAvailabilityOutputBuilder {
     /// <p>Information about the available Scheduled Instances.</p>
     pub fn scheduled_instance_availability_set(mut self, input: crate::types::ScheduledInstanceAvailability) -> Self {
         let mut v = self.scheduled_instance_availability_set.unwrap_or_default();
-        v.push(input);
-        self.scheduled_instance_availability_set = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_instance_availability_set = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Information about the available Scheduled Instances.</p>
-    pub fn set_scheduled_instance_availability_set(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>>,
-    ) -> Self {
-        self.scheduled_instance_availability_set = input;
-        self
+    pub fn set_scheduled_instance_availability_set(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ScheduledInstanceAvailability>>) -> Self {
+        self.scheduled_instance_availability_set = input; self
     }
     /// <p>Information about the available Scheduled Instances.</p>
-    pub fn get_scheduled_instance_availability_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstanceAvailability>> {
+    pub fn get_scheduled_instance_availability_set(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ScheduledInstanceAvailability>> {
         &self.scheduled_instance_availability_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeScheduledInstanceAvailabilityOutput`](crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput).
     pub fn build(self) -> crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput {
         crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput {
-            next_token: self.next_token,
-            scheduled_instance_availability_set: self.scheduled_instance_availability_set,
+            next_token: self.next_token
+            ,
+            scheduled_instance_availability_set: self.scheduled_instance_availability_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

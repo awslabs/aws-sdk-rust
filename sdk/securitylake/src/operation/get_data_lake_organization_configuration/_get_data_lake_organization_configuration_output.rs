@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetDataLakeOrganizationConfigurationOutput {
+pub struct GetDataLakeOrganizationConfigurationOutput  {
     /// <p>The configuration for new accounts.</p>
-    pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
+    pub auto_enable_new_account: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     _request_id: Option<String>,
 }
-impl GetDataLakeOrganizationConfigurationOutput {
+impl  GetDataLakeOrganizationConfigurationOutput  {
     /// <p>The configuration for new accounts.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.auto_enable_new_account.is_none()`.
-    pub fn auto_enable_new_account(&self) -> &[crate::types::DataLakeAutoEnableNewAccountConfiguration] {
-        self.auto_enable_new_account.as_deref().unwrap_or_default()
+    pub fn auto_enable_new_account(&self) -> & [crate::types::DataLakeAutoEnableNewAccountConfiguration] {
+        self.auto_enable_new_account.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataLakeOrganizationConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDataLakeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetDataLakeOrganizationConfigurationOutput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput).
     pub fn builder() -> crate::operation::get_data_lake_organization_configuration::builders::GetDataLakeOrganizationConfigurationOutputBuilder {
@@ -31,7 +32,7 @@ impl GetDataLakeOrganizationConfigurationOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataLakeOrganizationConfigurationOutputBuilder {
-    pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
+    pub(crate) auto_enable_new_account: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetDataLakeOrganizationConfigurationOutputBuilder {
@@ -42,36 +43,34 @@ impl GetDataLakeOrganizationConfigurationOutputBuilder {
     /// <p>The configuration for new accounts.</p>
     pub fn auto_enable_new_account(mut self, input: crate::types::DataLakeAutoEnableNewAccountConfiguration) -> Self {
         let mut v = self.auto_enable_new_account.unwrap_or_default();
-        v.push(input);
-        self.auto_enable_new_account = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.auto_enable_new_account = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration for new accounts.</p>
-    pub fn set_auto_enable_new_account(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>>,
-    ) -> Self {
-        self.auto_enable_new_account = input;
-        self
+    pub fn set_auto_enable_new_account(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>>) -> Self {
+        self.auto_enable_new_account = input; self
     }
     /// <p>The configuration for new accounts.</p>
-    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
+    pub fn get_auto_enable_new_account(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DataLakeAutoEnableNewAccountConfiguration>> {
         &self.auto_enable_new_account
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDataLakeOrganizationConfigurationOutput`](crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput).
     pub fn build(self) -> crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput {
         crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput {
-            auto_enable_new_account: self.auto_enable_new_account,
+            auto_enable_new_account: self.auto_enable_new_account
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

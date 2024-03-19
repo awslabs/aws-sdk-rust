@@ -3,7 +3,7 @@
 /// <p>A resource catalog containing all of the resources of a specific resource type within a resource owner account. For an example on sharing the Amazon SageMaker Feature Store <code>DefaultFeatureGroupCatalog</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/feature-store-cross-account-discoverability-share-sagemaker-catalog.html">Share Amazon SageMaker Catalog resource type</a> in the Amazon SageMaker Developer Guide.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ResourceCatalog {
+pub struct ResourceCatalog  {
     /// <p>The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>.</p>
     pub resource_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>ResourceCatalog</code>.</p>
@@ -13,21 +13,21 @@ pub struct ResourceCatalog {
     /// <p>The time the <code>ResourceCatalog</code> was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ResourceCatalog {
+impl  ResourceCatalog  {
     /// <p>The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>.</p>
-    pub fn resource_catalog_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_catalog_arn(&self) -> ::std::option::Option<& str> {
         self.resource_catalog_arn.as_deref()
     }
     /// <p>The name of the <code>ResourceCatalog</code>.</p>
-    pub fn resource_catalog_name(&self) -> ::std::option::Option<&str> {
+    pub fn resource_catalog_name(&self) -> ::std::option::Option<& str> {
         self.resource_catalog_name.as_deref()
     }
     /// <p>A free form description of the <code>ResourceCatalog</code>.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time the <code>ResourceCatalog</code> was created.</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -56,8 +56,7 @@ impl ResourceCatalogBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>.</p>
     pub fn set_resource_catalog_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_catalog_arn = input;
-        self
+        self.resource_catalog_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>.</p>
     pub fn get_resource_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl ResourceCatalogBuilder {
     }
     /// <p>The name of the <code>ResourceCatalog</code>.</p>
     pub fn set_resource_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_catalog_name = input;
-        self
+        self.resource_catalog_name = input; self
     }
     /// <p>The name of the <code>ResourceCatalog</code>.</p>
     pub fn get_resource_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +84,7 @@ impl ResourceCatalogBuilder {
     }
     /// <p>A free form description of the <code>ResourceCatalog</code>.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A free form description of the <code>ResourceCatalog</code>.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +98,7 @@ impl ResourceCatalogBuilder {
     }
     /// <p>The time the <code>ResourceCatalog</code> was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>The time the <code>ResourceCatalog</code> was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -111,10 +107,15 @@ impl ResourceCatalogBuilder {
     /// Consumes the builder and constructs a [`ResourceCatalog`](crate::types::ResourceCatalog).
     pub fn build(self) -> crate::types::ResourceCatalog {
         crate::types::ResourceCatalog {
-            resource_catalog_arn: self.resource_catalog_arn,
-            resource_catalog_name: self.resource_catalog_name,
-            description: self.description,
-            creation_time: self.creation_time,
+            resource_catalog_arn: self.resource_catalog_arn
+            ,
+            resource_catalog_name: self.resource_catalog_name
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

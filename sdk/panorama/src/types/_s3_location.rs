@@ -3,7 +3,7 @@
 /// <p>A location in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The bucket's Region.</p>
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>A bucket name.</p>
@@ -11,20 +11,18 @@ pub struct S3Location {
     /// <p>An object key.</p>
     pub object_key: ::std::string::String,
 }
-impl S3Location {
+impl  S3Location  {
     /// <p>The bucket's Region.</p>
-    pub fn region(&self) -> ::std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>A bucket name.</p>
-    pub fn bucket_name(&self) -> &str {
-        use std::ops::Deref;
-        self.bucket_name.deref()
+    pub fn bucket_name(&self) -> & str {
+        use std::ops::Deref; self.bucket_name.deref()
     }
     /// <p>An object key.</p>
-    pub fn object_key(&self) -> &str {
-        use std::ops::Deref;
-        self.object_key.deref()
+    pub fn object_key(&self) -> & str {
+        use std::ops::Deref; self.object_key.deref()
     }
 }
 impl S3Location {
@@ -50,8 +48,7 @@ impl S3LocationBuilder {
     }
     /// <p>The bucket's Region.</p>
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The bucket's Region.</p>
     pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +62,7 @@ impl S3LocationBuilder {
     }
     /// <p>A bucket name.</p>
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>A bucket name.</p>
     pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -80,8 +76,7 @@ impl S3LocationBuilder {
     }
     /// <p>An object key.</p>
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// <p>An object key.</p>
     pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -92,20 +87,22 @@ impl S3LocationBuilder {
     /// - [`bucket_name`](crate::types::builders::S3LocationBuilder::bucket_name)
     /// - [`object_key`](crate::types::builders::S3LocationBuilder::object_key)
     pub fn build(self) -> ::std::result::Result<crate::types::S3Location, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::S3Location {
-            region: self.region,
-            bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "bucket_name",
-                    "bucket_name was not specified but it is required when building S3Location",
-                )
-            })?,
-            object_key: self.object_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "object_key",
-                    "object_key was not specified but it is required when building S3Location",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::S3Location {
+                region: self.region
+                ,
+                bucket_name: self.bucket_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("bucket_name", "bucket_name was not specified but it is required when building S3Location")
+                    )?
+                ,
+                object_key: self.object_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("object_key", "object_key was not specified but it is required when building S3Location")
+                    )?
+                ,
+            }
+        )
     }
 }
+

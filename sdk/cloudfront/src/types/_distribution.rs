@@ -3,7 +3,7 @@
 /// <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Distribution {
+pub struct Distribution  {
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
     pub id: ::std::string::String,
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
@@ -27,26 +27,23 @@ pub struct Distribution {
     pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
+    pub alias_icp_recordals: ::std::option::Option<::std::vec::Vec::<crate::types::AliasIcpRecordal>>,
 }
-impl Distribution {
+impl  Distribution  {
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> & str {
+        use std::ops::Deref; self.arn.deref()
     }
     /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
-    pub fn status(&self) -> &str {
-        use std::ops::Deref;
-        self.status.deref()
+    pub fn status(&self) -> & str {
+        use std::ops::Deref; self.status.deref()
     }
     /// <p>The date and time when the distribution was last modified.</p>
-    pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_modified_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
     /// <p>The number of invalidation batches currently in progress.</p>
@@ -54,31 +51,31 @@ impl Distribution {
         self.in_progress_invalidation_batches
     }
     /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
-    pub fn domain_name(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_name.deref()
+    pub fn domain_name(&self) -> & str {
+        use std::ops::Deref; self.domain_name.deref()
     }
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn active_trusted_signers(&self) -> ::std::option::Option<&crate::types::ActiveTrustedSigners> {
+    pub fn active_trusted_signers(&self) -> ::std::option::Option<& crate::types::ActiveTrustedSigners> {
         self.active_trusted_signers.as_ref()
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
-    pub fn active_trusted_key_groups(&self) -> ::std::option::Option<&crate::types::ActiveTrustedKeyGroups> {
+    pub fn active_trusted_key_groups(&self) -> ::std::option::Option<& crate::types::ActiveTrustedKeyGroups> {
         self.active_trusted_key_groups.as_ref()
     }
     /// <p>The distribution's configuration.</p>
-    pub fn distribution_config(&self) -> ::std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> ::std::option::Option<& crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.alias_icp_recordals.is_none()`.
-    pub fn alias_icp_recordals(&self) -> &[crate::types::AliasIcpRecordal] {
-        self.alias_icp_recordals.as_deref().unwrap_or_default()
+    pub fn alias_icp_recordals(&self) -> & [crate::types::AliasIcpRecordal] {
+        self.alias_icp_recordals.as_deref()
+        .unwrap_or_default()
     }
 }
 impl Distribution {
@@ -101,7 +98,7 @@ pub struct DistributionBuilder {
     pub(crate) active_trusted_signers: ::std::option::Option<crate::types::ActiveTrustedSigners>,
     pub(crate) active_trusted_key_groups: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>,
     pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
-    pub(crate) alias_icp_recordals: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>,
+    pub(crate) alias_icp_recordals: ::std::option::Option<::std::vec::Vec::<crate::types::AliasIcpRecordal>>,
 }
 impl DistributionBuilder {
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
@@ -112,8 +109,7 @@ impl DistributionBuilder {
     }
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +123,7 @@ impl DistributionBuilder {
     }
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The distribution's Amazon Resource Name (ARN).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +137,7 @@ impl DistributionBuilder {
     }
     /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The distribution's status. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -157,8 +151,7 @@ impl DistributionBuilder {
     }
     /// <p>The date and time when the distribution was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p>The date and time when the distribution was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -172,8 +165,7 @@ impl DistributionBuilder {
     }
     /// <p>The number of invalidation batches currently in progress.</p>
     pub fn set_in_progress_invalidation_batches(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.in_progress_invalidation_batches = input;
-        self
+        self.in_progress_invalidation_batches = input; self
     }
     /// <p>The number of invalidation batches currently in progress.</p>
     pub fn get_in_progress_invalidation_batches(&self) -> &::std::option::Option<i32> {
@@ -187,8 +179,7 @@ impl DistributionBuilder {
     }
     /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +198,7 @@ impl DistributionBuilder {
     /// </important>
     /// <p>This field contains a list of Amazon Web Services account IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
     pub fn set_active_trusted_signers(mut self, input: ::std::option::Option<crate::types::ActiveTrustedSigners>) -> Self {
-        self.active_trusted_signers = input;
-        self
+        self.active_trusted_signers = input; self
     }
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
@@ -224,8 +214,7 @@ impl DistributionBuilder {
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
     pub fn set_active_trusted_key_groups(mut self, input: ::std::option::Option<crate::types::ActiveTrustedKeyGroups>) -> Self {
-        self.active_trusted_key_groups = input;
-        self
+        self.active_trusted_key_groups = input; self
     }
     /// <p>This field contains a list of key groups and the public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.</p>
     pub fn get_active_trusted_key_groups(&self) -> &::std::option::Option<crate::types::ActiveTrustedKeyGroups> {
@@ -239,8 +228,7 @@ impl DistributionBuilder {
     }
     /// <p>The distribution's configuration.</p>
     pub fn set_distribution_config(mut self, input: ::std::option::Option<crate::types::DistributionConfig>) -> Self {
-        self.distribution_config = input;
-        self
+        self.distribution_config = input; self
     }
     /// <p>The distribution's configuration.</p>
     pub fn get_distribution_config(&self) -> &::std::option::Option<crate::types::DistributionConfig> {
@@ -254,19 +242,18 @@ impl DistributionBuilder {
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub fn alias_icp_recordals(mut self, input: crate::types::AliasIcpRecordal) -> Self {
         let mut v = self.alias_icp_recordals.unwrap_or_default();
-        v.push(input);
-        self.alias_icp_recordals = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.alias_icp_recordals = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub fn set_alias_icp_recordals(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>>) -> Self {
-        self.alias_icp_recordals = input;
-        self
+    pub fn set_alias_icp_recordals(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AliasIcpRecordal>>) -> Self {
+        self.alias_icp_recordals = input; self
     }
     /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html"> Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
-    pub fn get_alias_icp_recordals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasIcpRecordal>> {
+    pub fn get_alias_icp_recordals(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AliasIcpRecordal>> {
         &self.alias_icp_recordals
     }
     /// Consumes the builder and constructs a [`Distribution`](crate::types::Distribution).
@@ -278,47 +265,48 @@ impl DistributionBuilder {
     /// - [`in_progress_invalidation_batches`](crate::types::builders::DistributionBuilder::in_progress_invalidation_batches)
     /// - [`domain_name`](crate::types::builders::DistributionBuilder::domain_name)
     pub fn build(self) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Distribution {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building Distribution",
-                )
-            })?,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building Distribution",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Distribution",
-                )
-            })?,
-            last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_modified_time",
-                    "last_modified_time was not specified but it is required when building Distribution",
-                )
-            })?,
-            in_progress_invalidation_batches: self.in_progress_invalidation_batches.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "in_progress_invalidation_batches",
-                    "in_progress_invalidation_batches was not specified but it is required when building Distribution",
-                )
-            })?,
-            domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_name",
-                    "domain_name was not specified but it is required when building Distribution",
-                )
-            })?,
-            active_trusted_signers: self.active_trusted_signers,
-            active_trusted_key_groups: self.active_trusted_key_groups,
-            distribution_config: self.distribution_config,
-            alias_icp_recordals: self.alias_icp_recordals,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Distribution {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Distribution")
+                    )?
+                ,
+                arn: self.arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Distribution")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Distribution")
+                    )?
+                ,
+                last_modified_time: self.last_modified_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_modified_time", "last_modified_time was not specified but it is required when building Distribution")
+                    )?
+                ,
+                in_progress_invalidation_batches: self.in_progress_invalidation_batches
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("in_progress_invalidation_batches", "in_progress_invalidation_batches was not specified but it is required when building Distribution")
+                    )?
+                ,
+                domain_name: self.domain_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_name", "domain_name was not specified but it is required when building Distribution")
+                    )?
+                ,
+                active_trusted_signers: self.active_trusted_signers
+                ,
+                active_trusted_key_groups: self.active_trusted_key_groups
+                ,
+                distribution_config: self.distribution_config
+                ,
+                alias_icp_recordals: self.alias_icp_recordals
+                ,
+            }
+        )
     }
 }
+

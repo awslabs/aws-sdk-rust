@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListLaunchActions`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`resource_id(impl Into<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_resource_id):<br>required: **true**<br><p>Launch configuration template Id or Source Server Id</p><br>
     ///   - [`filters(LaunchActionsRequestFilters)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::filters) / [`set_filters(Option<LaunchActionsRequestFilters>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_filters):<br>required: **false**<br><p>Filters to apply when listing resource launch actions.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_max_results):<br>required: **false**<br><p>Maximum amount of items to return when listing resource launch actions.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::set_next_token):<br>required: **false**<br><p>Next token to use when listing resource launch actions.</p><br>
-    /// - On success, responds with [`ListLaunchActionsOutput`](crate::operation::list_launch_actions::ListLaunchActionsOutput) with field(s):
+                            /// - On success, responds with [`ListLaunchActionsOutput`](crate::operation::list_launch_actions::ListLaunchActionsOutput) with field(s):
     ///   - [`items(Option<Vec::<LaunchAction>>)`](crate::operation::list_launch_actions::ListLaunchActionsOutput::items): <p>List of resource launch actions.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_launch_actions::ListLaunchActionsOutput::next_token): <p>Next token returned when listing resource launch actions.</p>
-    /// - On failure, responds with [`SdkError<ListLaunchActionsError>`](crate::operation::list_launch_actions::ListLaunchActionsError)
+                            /// - On failure, responds with [`SdkError<ListLaunchActionsError>`](crate::operation::list_launch_actions::ListLaunchActionsError)
     pub fn list_launch_actions(&self) -> crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder {
-        crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_launch_actions::builders::ListLaunchActionsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

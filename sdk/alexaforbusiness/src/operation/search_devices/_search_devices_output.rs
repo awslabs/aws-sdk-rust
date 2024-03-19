@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SearchDevicesOutput {
+pub struct SearchDevicesOutput  {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>,
+    pub devices: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceData>>,
     /// <p>The token returned to indicate that there is more data available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The total number of devices returned.</p>
     pub total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
-impl SearchDevicesOutput {
+impl  SearchDevicesOutput  {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
-    pub fn devices(&self) -> &[crate::types::DeviceData] {
-        self.devices.as_deref().unwrap_or_default()
+    pub fn devices(&self) -> & [crate::types::DeviceData] {
+        self.devices.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of devices returned.</p>
@@ -28,10 +29,10 @@ impl SearchDevicesOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for SearchDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl SearchDevicesOutput {
     /// Creates a new builder-style object to manufacture [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
     pub fn builder() -> crate::operation::search_devices::builders::SearchDevicesOutputBuilder {
@@ -43,7 +44,7 @@ impl SearchDevicesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SearchDevicesOutputBuilder {
-    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceData>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) total_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
@@ -56,17 +57,16 @@ impl SearchDevicesOutputBuilder {
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
     pub fn devices(mut self, input: crate::types::DeviceData) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.devices = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceData>>) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DeviceData>>) -> Self {
+        self.devices = input; self
     }
     /// <p>The devices that meet the specified set of filter criteria, in sort order.</p>
-    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceData>> {
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DeviceData>> {
         &self.devices
     }
     /// <p>The token returned to indicate that there is more data available.</p>
@@ -76,8 +76,7 @@ impl SearchDevicesOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,29 +89,32 @@ impl SearchDevicesOutputBuilder {
     }
     /// <p>The total number of devices returned.</p>
     pub fn set_total_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The total number of devices returned.</p>
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
         &self.total_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`SearchDevicesOutput`](crate::operation::search_devices::SearchDevicesOutput).
     pub fn build(self) -> crate::operation::search_devices::SearchDevicesOutput {
         crate::operation::search_devices::SearchDevicesOutput {
-            devices: self.devices,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            devices: self.devices
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

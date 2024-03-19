@@ -3,13 +3,13 @@
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TelemetryConfigurationUpdate {
+pub struct TelemetryConfigurationUpdate  {
     /// Configure telemetry to be on or off.
     pub telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
-impl TelemetryConfigurationUpdate {
+impl  TelemetryConfigurationUpdate  {
     /// Configure telemetry to be on or off.
-    pub fn telemetry(&self) -> ::std::option::Option<&crate::types::Telemetry> {
+    pub fn telemetry(&self) -> ::std::option::Option<& crate::types::Telemetry> {
         self.telemetry.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl TelemetryConfigurationUpdateBuilder {
     }
     /// Configure telemetry to be on or off.
     pub fn set_telemetry(mut self, input: ::std::option::Option<crate::types::Telemetry>) -> Self {
-        self.telemetry = input;
-        self
+        self.telemetry = input; self
     }
     /// Configure telemetry to be on or off.
     pub fn get_telemetry(&self) -> &::std::option::Option<crate::types::Telemetry> {
@@ -44,6 +43,10 @@ impl TelemetryConfigurationUpdateBuilder {
     }
     /// Consumes the builder and constructs a [`TelemetryConfigurationUpdate`](crate::types::TelemetryConfigurationUpdate).
     pub fn build(self) -> crate::types::TelemetryConfigurationUpdate {
-        crate::types::TelemetryConfigurationUpdate { telemetry: self.telemetry }
+        crate::types::TelemetryConfigurationUpdate {
+            telemetry: self.telemetry
+            ,
+        }
     }
 }
+

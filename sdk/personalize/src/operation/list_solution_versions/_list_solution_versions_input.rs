@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListSolutionVersionsInput {
+pub struct ListSolutionVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub solution_arn: ::std::option::Option<::std::string::String>,
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
@@ -10,13 +10,13 @@ pub struct ListSolutionVersionsInput {
     /// <p>The maximum number of solution versions to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl ListSolutionVersionsInput {
+impl  ListSolutionVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
-    pub fn solution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn solution_arn(&self) -> ::std::option::Option<& str> {
         self.solution_arn.as_deref()
     }
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of solution versions to return.</p>
@@ -47,8 +47,7 @@ impl ListSolutionVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub fn set_solution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.solution_arn = input;
-        self
+        self.solution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -61,8 +60,7 @@ impl ListSolutionVersionsInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,22 +73,24 @@ impl ListSolutionVersionsInputBuilder {
     }
     /// <p>The maximum number of solution versions to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of solution versions to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSolutionVersionsInput`](crate::operation::list_solution_versions::ListSolutionVersionsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_solution_versions::ListSolutionVersionsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_solution_versions::ListSolutionVersionsInput {
-            solution_arn: self.solution_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_solution_versions::ListSolutionVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_solution_versions::ListSolutionVersionsInput {
+                solution_arn: self.solution_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

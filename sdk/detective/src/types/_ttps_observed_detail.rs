@@ -3,7 +3,7 @@
 /// <p>Details tactics, techniques, and procedures (TTPs) used in a potential security event. Tactics are based on <a href="https://attack.mitre.org/matrices/enterprise/">MITRE ATT&amp;CK Matrix for Enterprise</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TtPsObservedDetail {
+pub struct TtPsObservedDetail  {
     /// <p>The tactic used, identified by the investigation.</p>
     pub tactic: ::std::option::Option<::std::string::String>,
     /// <p>The technique used, identified by the investigation.</p>
@@ -19,25 +19,25 @@ pub struct TtPsObservedDetail {
     /// <p>The total number of failed API requests.</p>
     pub api_failure_count: i64,
 }
-impl TtPsObservedDetail {
+impl  TtPsObservedDetail  {
     /// <p>The tactic used, identified by the investigation.</p>
-    pub fn tactic(&self) -> ::std::option::Option<&str> {
+    pub fn tactic(&self) -> ::std::option::Option<& str> {
         self.tactic.as_deref()
     }
     /// <p>The technique used, identified by the investigation.</p>
-    pub fn technique(&self) -> ::std::option::Option<&str> {
+    pub fn technique(&self) -> ::std::option::Option<& str> {
         self.technique.as_deref()
     }
     /// <p>The procedure used, identified by the investigation.</p>
-    pub fn procedure(&self) -> ::std::option::Option<&str> {
+    pub fn procedure(&self) -> ::std::option::Option<& str> {
         self.procedure.as_deref()
     }
     /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
-    pub fn ip_address(&self) -> ::std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
-    pub fn api_name(&self) -> ::std::option::Option<&str> {
+    pub fn api_name(&self) -> ::std::option::Option<& str> {
         self.api_name.as_deref()
     }
     /// <p>The total number of successful API requests.</p>
@@ -76,8 +76,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The tactic used, identified by the investigation.</p>
     pub fn set_tactic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tactic = input;
-        self
+        self.tactic = input; self
     }
     /// <p>The tactic used, identified by the investigation.</p>
     pub fn get_tactic(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The technique used, identified by the investigation.</p>
     pub fn set_technique(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.technique = input;
-        self
+        self.technique = input; self
     }
     /// <p>The technique used, identified by the investigation.</p>
     pub fn get_technique(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The procedure used, identified by the investigation.</p>
     pub fn set_procedure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.procedure = input;
-        self
+        self.procedure = input; self
     }
     /// <p>The procedure used, identified by the investigation.</p>
     pub fn get_procedure(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +128,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_name = input;
-        self
+        self.api_name = input; self
     }
     /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +141,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The total number of successful API requests.</p>
     pub fn set_api_success_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.api_success_count = input;
-        self
+        self.api_success_count = input; self
     }
     /// <p>The total number of successful API requests.</p>
     pub fn get_api_success_count(&self) -> &::std::option::Option<i64> {
@@ -160,8 +154,7 @@ impl TtPsObservedDetailBuilder {
     }
     /// <p>The total number of failed API requests.</p>
     pub fn set_api_failure_count(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.api_failure_count = input;
-        self
+        self.api_failure_count = input; self
     }
     /// <p>The total number of failed API requests.</p>
     pub fn get_api_failure_count(&self) -> &::std::option::Option<i64> {
@@ -170,13 +163,23 @@ impl TtPsObservedDetailBuilder {
     /// Consumes the builder and constructs a [`TtPsObservedDetail`](crate::types::TtPsObservedDetail).
     pub fn build(self) -> crate::types::TtPsObservedDetail {
         crate::types::TtPsObservedDetail {
-            tactic: self.tactic,
-            technique: self.technique,
-            procedure: self.procedure,
-            ip_address: self.ip_address,
-            api_name: self.api_name,
-            api_success_count: self.api_success_count.unwrap_or_default(),
-            api_failure_count: self.api_failure_count.unwrap_or_default(),
+            tactic: self.tactic
+            ,
+            technique: self.technique
+            ,
+            procedure: self.procedure
+            ,
+            ip_address: self.ip_address
+            ,
+            api_name: self.api_name
+            ,
+            api_success_count: self.api_success_count
+                .unwrap_or_default()
+            ,
+            api_failure_count: self.api_failure_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway policy table association.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TransitGatewayPolicyTableAssociation {
+pub struct TransitGatewayPolicyTableAssociation  {
     /// <p>The ID of the transit gateway policy table.</p>
     pub transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
@@ -15,25 +15,25 @@ pub struct TransitGatewayPolicyTableAssociation {
     /// <p>The state of the transit gateway policy table association.</p>
     pub state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
-impl TransitGatewayPolicyTableAssociation {
+impl  TransitGatewayPolicyTableAssociation  {
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_policy_table_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_policy_table_id.as_deref()
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The resource ID of the transit gateway attachment.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type for the transit gateway policy table association.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<& crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The state of the transit gateway policy table association.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::TransitGatewayAssociationState> {
         self.state.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     }
     /// <p>The ID of the transit gateway policy table.</p>
     pub fn set_transit_gateway_policy_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_policy_table_id = input;
-        self
+        self.transit_gateway_policy_table_id = input; self
     }
     /// <p>The ID of the transit gateway policy table.</p>
     pub fn get_transit_gateway_policy_table_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +88,7 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     }
     /// <p>The resource ID of the transit gateway attachment.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource ID of the transit gateway attachment.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     }
     /// <p>The resource type for the transit gateway policy table association.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The resource type for the transit gateway policy table association.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
@@ -118,8 +114,7 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     }
     /// <p>The state of the transit gateway policy table association.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayAssociationState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The state of the transit gateway policy table association.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAssociationState> {
@@ -128,11 +123,17 @@ impl TransitGatewayPolicyTableAssociationBuilder {
     /// Consumes the builder and constructs a [`TransitGatewayPolicyTableAssociation`](crate::types::TransitGatewayPolicyTableAssociation).
     pub fn build(self) -> crate::types::TransitGatewayPolicyTableAssociation {
         crate::types::TransitGatewayPolicyTableAssociation {
-            transit_gateway_policy_table_id: self.transit_gateway_policy_table_id,
-            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            state: self.state,
+            transit_gateway_policy_table_id: self.transit_gateway_policy_table_id
+            ,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

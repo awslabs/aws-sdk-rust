@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct DeleteDataSourceOutput {
+pub struct DeleteDataSourceOutput  {
     /// <p>The ID of the data source that is deleted.</p>
     pub id: ::std::string::String,
     /// <p>The status of this data source.</p>
@@ -26,7 +26,7 @@ pub struct DeleteDataSourceOutput {
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub publish_on_import: ::std::option::Option<bool>,
     /// <p>The asset data forms associated with this data source.</p>
-    pub asset_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    pub asset_forms_output: ::std::option::Option<::std::vec::Vec::<crate::types::FormOutput>>,
     /// <p>The schedule of runs for this data source.</p>
     pub schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The status of the last run of this data source.</p>
@@ -43,50 +43,45 @@ pub struct DeleteDataSourceOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl DeleteDataSourceOutput {
+impl  DeleteDataSourceOutput  {
     /// <p>The ID of the data source that is deleted.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The status of this data source.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
     /// <p>The type of this data source.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The name of the data source that is deleted.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>The description of the data source that is deleted.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> & str {
+        use std::ops::Deref; self.domain_id.deref()
     }
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
-    pub fn project_id(&self) -> &str {
-        use std::ops::Deref;
-        self.project_id.deref()
+    pub fn project_id(&self) -> & str {
+        use std::ops::Deref; self.project_id.deref()
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> & str {
+        use std::ops::Deref; self.environment_id.deref()
     }
     /// <p>The configuration of the data source that is deleted.</p>
-    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfigurationOutput> {
+    pub fn configuration(&self) -> ::std::option::Option<& crate::types::DataSourceConfigurationOutput> {
         self.configuration.as_ref()
     }
     /// <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
-    pub fn enable_setting(&self) -> ::std::option::Option<&crate::types::EnableSetting> {
+    pub fn enable_setting(&self) -> ::std::option::Option<& crate::types::EnableSetting> {
         self.enable_setting.as_ref()
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
@@ -94,41 +89,42 @@ impl DeleteDataSourceOutput {
         self.publish_on_import
     }
     /// <p>The asset data forms associated with this data source.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_forms_output.is_none()`.
-    pub fn asset_forms_output(&self) -> &[crate::types::FormOutput] {
-        self.asset_forms_output.as_deref().unwrap_or_default()
+    pub fn asset_forms_output(&self) -> & [crate::types::FormOutput] {
+        self.asset_forms_output.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The schedule of runs for this data source.</p>
-    pub fn schedule(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
+    pub fn schedule(&self) -> ::std::option::Option<& crate::types::ScheduleConfiguration> {
         self.schedule.as_ref()
     }
     /// <p>The status of the last run of this data source.</p>
-    pub fn last_run_status(&self) -> ::std::option::Option<&crate::types::DataSourceRunStatus> {
+    pub fn last_run_status(&self) -> ::std::option::Option<& crate::types::DataSourceRunStatus> {
         self.last_run_status.as_ref()
     }
     /// <p>The timestamp of when the data source was last run.</p>
-    pub fn last_run_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_run_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_run_at.as_ref()
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn last_run_error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
+    pub fn last_run_error_message(&self) -> ::std::option::Option<& crate::types::DataSourceErrorMessage> {
         self.last_run_error_message.as_ref()
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
-    pub fn error_message(&self) -> ::std::option::Option<&crate::types::DataSourceErrorMessage> {
+    pub fn error_message(&self) -> ::std::option::Option<& crate::types::DataSourceErrorMessage> {
         self.error_message.as_ref()
     }
     /// <p>The timestamp of when this data source was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp of when this data source was updated.</p>
-    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
-impl ::std::fmt::Debug for DeleteDataSourceOutput {
+impl  ::std::fmt::Debug for DeleteDataSourceOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDataSourceOutput");
         formatter.field("id", &self.id);
@@ -155,10 +151,10 @@ impl ::std::fmt::Debug for DeleteDataSourceOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteDataSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
     pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder {
@@ -181,7 +177,7 @@ pub struct DeleteDataSourceOutputBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::DataSourceConfigurationOutput>,
     pub(crate) enable_setting: ::std::option::Option<crate::types::EnableSetting>,
     pub(crate) publish_on_import: ::std::option::Option<bool>,
-    pub(crate) asset_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
+    pub(crate) asset_forms_output: ::std::option::Option<::std::vec::Vec::<crate::types::FormOutput>>,
     pub(crate) schedule: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) last_run_status: ::std::option::Option<crate::types::DataSourceRunStatus>,
     pub(crate) last_run_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -200,8 +196,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The ID of the data source that is deleted.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the data source that is deleted.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -214,8 +209,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The status of this data source.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of this data source.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
@@ -228,8 +222,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The type of this data source.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of this data source.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,8 +236,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The name of the data source that is deleted.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the data source that is deleted.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -257,8 +249,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The description of the data source that is deleted.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the data source that is deleted.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -272,8 +263,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which the data source is deleted.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -287,8 +277,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The ID of the project in which this data source exists and from which it's deleted.</p>
     pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -302,8 +291,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The ID of the environemnt associated with this data source.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -316,8 +304,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The configuration of the data source that is deleted.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfigurationOutput>) -> Self {
-        self.configuration = input;
-        self
+        self.configuration = input; self
     }
     /// <p>The configuration of the data source that is deleted.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfigurationOutput> {
@@ -330,8 +317,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
     pub fn set_enable_setting(mut self, input: ::std::option::Option<crate::types::EnableSetting>) -> Self {
-        self.enable_setting = input;
-        self
+        self.enable_setting = input; self
     }
     /// <p>The enable setting of the data source that specifies whether the data source is enabled or disabled.</p>
     pub fn get_enable_setting(&self) -> &::std::option::Option<crate::types::EnableSetting> {
@@ -344,8 +330,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub fn set_publish_on_import(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publish_on_import = input;
-        self
+        self.publish_on_import = input; self
     }
     /// <p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>
     pub fn get_publish_on_import(&self) -> &::std::option::Option<bool> {
@@ -358,17 +343,16 @@ impl DeleteDataSourceOutputBuilder {
     /// <p>The asset data forms associated with this data source.</p>
     pub fn asset_forms_output(mut self, input: crate::types::FormOutput) -> Self {
         let mut v = self.asset_forms_output.unwrap_or_default();
-        v.push(input);
-        self.asset_forms_output = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.asset_forms_output = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The asset data forms associated with this data source.</p>
-    pub fn set_asset_forms_output(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>) -> Self {
-        self.asset_forms_output = input;
-        self
+    pub fn set_asset_forms_output(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FormOutput>>) -> Self {
+        self.asset_forms_output = input; self
     }
     /// <p>The asset data forms associated with this data source.</p>
-    pub fn get_asset_forms_output(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FormOutput>> {
+    pub fn get_asset_forms_output(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FormOutput>> {
         &self.asset_forms_output
     }
     /// <p>The schedule of runs for this data source.</p>
@@ -378,8 +362,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The schedule of runs for this data source.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The schedule of runs for this data source.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
@@ -392,8 +375,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The status of the last run of this data source.</p>
     pub fn set_last_run_status(mut self, input: ::std::option::Option<crate::types::DataSourceRunStatus>) -> Self {
-        self.last_run_status = input;
-        self
+        self.last_run_status = input; self
     }
     /// <p>The status of the last run of this data source.</p>
     pub fn get_last_run_status(&self) -> &::std::option::Option<crate::types::DataSourceRunStatus> {
@@ -406,8 +388,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The timestamp of when the data source was last run.</p>
     pub fn set_last_run_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_run_at = input;
-        self
+        self.last_run_at = input; self
     }
     /// <p>The timestamp of when the data source was last run.</p>
     pub fn get_last_run_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -420,8 +401,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_last_run_error_message(mut self, input: ::std::option::Option<crate::types::DataSourceErrorMessage>) -> Self {
-        self.last_run_error_message = input;
-        self
+        self.last_run_error_message = input; self
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_last_run_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
@@ -434,8 +414,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn set_error_message(mut self, input: ::std::option::Option<crate::types::DataSourceErrorMessage>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>Specifies the error message that is returned if the operation cannot be successfully completed.</p>
     pub fn get_error_message(&self) -> &::std::option::Option<crate::types::DataSourceErrorMessage> {
@@ -448,8 +427,7 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The timestamp of when this data source was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The timestamp of when this data source was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -462,22 +440,21 @@ impl DeleteDataSourceOutputBuilder {
     }
     /// <p>The timestamp of when this data source was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input;
-        self
+        self.updated_at = input; self
     }
     /// <p>The timestamp of when this data source was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteDataSourceOutput`](crate::operation::delete_data_source::DeleteDataSourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::id)
@@ -485,56 +462,65 @@ impl DeleteDataSourceOutputBuilder {
     /// - [`domain_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::domain_id)
     /// - [`project_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::project_id)
     /// - [`environment_id`](crate::operation::delete_data_source::builders::DeleteDataSourceOutputBuilder::environment_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_data_source::DeleteDataSourceOutput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
-            status: self.status,
-            r#type: self.r#type,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
-            description: self.description,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
-            project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "project_id",
-                    "project_id was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building DeleteDataSourceOutput",
-                )
-            })?,
-            configuration: self.configuration,
-            enable_setting: self.enable_setting,
-            publish_on_import: self.publish_on_import,
-            asset_forms_output: self.asset_forms_output,
-            schedule: self.schedule,
-            last_run_status: self.last_run_status,
-            last_run_at: self.last_run_at,
-            last_run_error_message: self.last_run_error_message,
-            error_message: self.error_message,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_data_source::DeleteDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_data_source::DeleteDataSourceOutput {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building DeleteDataSourceOutput")
+                    )?
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building DeleteDataSourceOutput")
+                    )?
+                ,
+                description: self.description
+                ,
+                domain_id: self.domain_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("domain_id", "domain_id was not specified but it is required when building DeleteDataSourceOutput")
+                    )?
+                ,
+                project_id: self.project_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("project_id", "project_id was not specified but it is required when building DeleteDataSourceOutput")
+                    )?
+                ,
+                environment_id: self.environment_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("environment_id", "environment_id was not specified but it is required when building DeleteDataSourceOutput")
+                    )?
+                ,
+                configuration: self.configuration
+                ,
+                enable_setting: self.enable_setting
+                ,
+                publish_on_import: self.publish_on_import
+                ,
+                asset_forms_output: self.asset_forms_output
+                ,
+                schedule: self.schedule
+                ,
+                last_run_status: self.last_run_status
+                ,
+                last_run_at: self.last_run_at
+                ,
+                last_run_error_message: self.last_run_error_message
+                ,
+                error_message: self.error_message
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for DeleteDataSourceOutputBuilder {
@@ -563,3 +549,4 @@ impl ::std::fmt::Debug for DeleteDataSourceOutputBuilder {
         formatter.finish()
     }
 }
+

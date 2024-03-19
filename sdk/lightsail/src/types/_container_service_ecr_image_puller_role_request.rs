@@ -4,11 +4,11 @@
 /// <p>When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerServiceEcrImagePullerRoleRequest {
+pub struct ContainerServiceEcrImagePullerRoleRequest  {
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     pub is_active: ::std::option::Option<bool>,
 }
-impl ContainerServiceEcrImagePullerRoleRequest {
+impl  ContainerServiceEcrImagePullerRoleRequest  {
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
@@ -35,8 +35,7 @@ impl ContainerServiceEcrImagePullerRoleRequestBuilder {
     }
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_active = input;
-        self
+        self.is_active = input; self
     }
     /// <p>A Boolean value that indicates whether to activate the role.</p>
     pub fn get_is_active(&self) -> &::std::option::Option<bool> {
@@ -44,6 +43,10 @@ impl ContainerServiceEcrImagePullerRoleRequestBuilder {
     }
     /// Consumes the builder and constructs a [`ContainerServiceEcrImagePullerRoleRequest`](crate::types::ContainerServiceEcrImagePullerRoleRequest).
     pub fn build(self) -> crate::types::ContainerServiceEcrImagePullerRoleRequest {
-        crate::types::ContainerServiceEcrImagePullerRoleRequest { is_active: self.is_active }
+        crate::types::ContainerServiceEcrImagePullerRoleRequest {
+            is_active: self.is_active
+            ,
+        }
     }
 }
+

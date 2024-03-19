@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateViewVersionInput {
+pub struct CreateViewVersionInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
@@ -12,21 +12,21 @@ pub struct CreateViewVersionInput {
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub view_content_sha256: ::std::option::Option<::std::string::String>,
 }
-impl CreateViewVersionInput {
+impl  CreateViewVersionInput  {
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
-    pub fn view_id(&self) -> ::std::option::Option<&str> {
+    pub fn view_id(&self) -> ::std::option::Option<& str> {
         self.view_id.as_deref()
     }
     /// <p>The description for the version being published.</p>
-    pub fn version_description(&self) -> ::std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<& str> {
         self.version_description.as_deref()
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
-    pub fn view_content_sha256(&self) -> ::std::option::Option<&str> {
+    pub fn view_content_sha256(&self) -> ::std::option::Option<& str> {
         self.view_content_sha256.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl CreateViewVersionInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -70,8 +69,7 @@ impl CreateViewVersionInputBuilder {
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
     pub fn set_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_id = input;
-        self
+        self.view_id = input; self
     }
     /// <p>The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can be used.</p>
     pub fn get_view_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -84,8 +82,7 @@ impl CreateViewVersionInputBuilder {
     }
     /// <p>The description for the version being published.</p>
     pub fn set_version_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version_description = input;
-        self
+        self.version_description = input; self
     }
     /// <p>The description for the version being published.</p>
     pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,22 +95,26 @@ impl CreateViewVersionInputBuilder {
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub fn set_view_content_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.view_content_sha256 = input;
-        self
+        self.view_content_sha256 = input; self
     }
     /// <p>Indicates the checksum value of the latest published view content.</p>
     pub fn get_view_content_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.view_content_sha256
     }
     /// Consumes the builder and constructs a [`CreateViewVersionInput`](crate::operation::create_view_version::CreateViewVersionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_view_version::CreateViewVersionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_view_version::CreateViewVersionInput {
-            instance_id: self.instance_id,
-            view_id: self.view_id,
-            version_description: self.version_description,
-            view_content_sha256: self.view_content_sha256,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_view_version::CreateViewVersionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_view_version::CreateViewVersionInput {
+                instance_id: self.instance_id
+                ,
+                view_id: self.view_id
+                ,
+                version_description: self.version_description
+                ,
+                view_content_sha256: self.view_content_sha256
+                ,
+            }
+        )
     }
 }
+

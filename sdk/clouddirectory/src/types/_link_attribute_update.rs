@@ -3,19 +3,19 @@
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LinkAttributeUpdate {
+pub struct LinkAttributeUpdate  {
     /// <p>The key of the attribute being updated.</p>
     pub attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     /// <p>The action to perform as part of the attribute update.</p>
     pub attribute_action: ::std::option::Option<crate::types::LinkAttributeAction>,
 }
-impl LinkAttributeUpdate {
+impl  LinkAttributeUpdate  {
     /// <p>The key of the attribute being updated.</p>
-    pub fn attribute_key(&self) -> ::std::option::Option<&crate::types::AttributeKey> {
+    pub fn attribute_key(&self) -> ::std::option::Option<& crate::types::AttributeKey> {
         self.attribute_key.as_ref()
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn attribute_action(&self) -> ::std::option::Option<&crate::types::LinkAttributeAction> {
+    pub fn attribute_action(&self) -> ::std::option::Option<& crate::types::LinkAttributeAction> {
         self.attribute_action.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl LinkAttributeUpdateBuilder {
     }
     /// <p>The key of the attribute being updated.</p>
     pub fn set_attribute_key(mut self, input: ::std::option::Option<crate::types::AttributeKey>) -> Self {
-        self.attribute_key = input;
-        self
+        self.attribute_key = input; self
     }
     /// <p>The key of the attribute being updated.</p>
     pub fn get_attribute_key(&self) -> &::std::option::Option<crate::types::AttributeKey> {
@@ -55,8 +54,7 @@ impl LinkAttributeUpdateBuilder {
     }
     /// <p>The action to perform as part of the attribute update.</p>
     pub fn set_attribute_action(mut self, input: ::std::option::Option<crate::types::LinkAttributeAction>) -> Self {
-        self.attribute_action = input;
-        self
+        self.attribute_action = input; self
     }
     /// <p>The action to perform as part of the attribute update.</p>
     pub fn get_attribute_action(&self) -> &::std::option::Option<crate::types::LinkAttributeAction> {
@@ -65,8 +63,11 @@ impl LinkAttributeUpdateBuilder {
     /// Consumes the builder and constructs a [`LinkAttributeUpdate`](crate::types::LinkAttributeUpdate).
     pub fn build(self) -> crate::types::LinkAttributeUpdate {
         crate::types::LinkAttributeUpdate {
-            attribute_key: self.attribute_key,
-            attribute_action: self.attribute_action,
+            attribute_key: self.attribute_key
+            ,
+            attribute_action: self.attribute_action
+            ,
         }
     }
 }
+

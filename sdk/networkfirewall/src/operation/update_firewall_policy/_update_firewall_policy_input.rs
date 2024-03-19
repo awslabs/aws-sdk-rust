@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateFirewallPolicyInput {
+pub struct UpdateFirewallPolicyInput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
@@ -23,28 +23,28 @@ pub struct UpdateFirewallPolicyInput {
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
-impl UpdateFirewallPolicyInput {
+impl  UpdateFirewallPolicyInput  {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
-    pub fn update_token(&self) -> ::std::option::Option<&str> {
+    pub fn update_token(&self) -> ::std::option::Option<& str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_arn(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn firewall_policy_name(&self) -> ::std::option::Option<& str> {
         self.firewall_policy_name.as_deref()
     }
     /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
-    pub fn firewall_policy(&self) -> ::std::option::Option<&crate::types::FirewallPolicy> {
+    pub fn firewall_policy(&self) -> ::std::option::Option<& crate::types::FirewallPolicy> {
         self.firewall_policy.as_ref()
     }
     /// <p>A description of the firewall policy.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
@@ -54,7 +54,7 @@ impl UpdateFirewallPolicyInput {
         self.dry_run
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -88,8 +88,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.update_token = input;
-        self
+        self.update_token = input; self
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request.</p>
     /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token.</p>
@@ -105,8 +104,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_arn = input;
-        self
+        self.firewall_policy_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -122,8 +120,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_firewall_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.firewall_policy_name = input;
-        self
+        self.firewall_policy_name = input; self
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -138,8 +135,7 @@ impl UpdateFirewallPolicyInputBuilder {
     }
     /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub fn set_firewall_policy(mut self, input: ::std::option::Option<crate::types::FirewallPolicy>) -> Self {
-        self.firewall_policy = input;
-        self
+        self.firewall_policy = input; self
     }
     /// <p>The updated firewall policy to use for the firewall. You can't add or remove a <code>TLSInspectionConfiguration</code> after you create a firewall policy. However, you can replace an existing TLS inspection configuration with another <code>TLSInspectionConfiguration</code>.</p>
     pub fn get_firewall_policy(&self) -> &::std::option::Option<crate::types::FirewallPolicy> {
@@ -152,8 +148,7 @@ impl UpdateFirewallPolicyInputBuilder {
     }
     /// <p>A description of the firewall policy.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the firewall policy.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -170,8 +165,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.</p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.</p>
@@ -186,26 +180,32 @@ impl UpdateFirewallPolicyInputBuilder {
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
-            update_token: self.update_token,
-            firewall_policy_arn: self.firewall_policy_arn,
-            firewall_policy_name: self.firewall_policy_name,
-            firewall_policy: self.firewall_policy,
-            description: self.description,
-            dry_run: self.dry_run,
-            encryption_configuration: self.encryption_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
+                update_token: self.update_token
+                ,
+                firewall_policy_arn: self.firewall_policy_arn
+                ,
+                firewall_policy_name: self.firewall_policy_name
+                ,
+                firewall_policy: self.firewall_policy
+                ,
+                description: self.description
+                ,
+                dry_run: self.dry_run
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AcceptAdministratorInvitationInput {
+pub struct AcceptAdministratorInvitationInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
@@ -10,17 +10,17 @@ pub struct AcceptAdministratorInvitationInput {
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
-impl AcceptAdministratorInvitationInput {
+impl  AcceptAdministratorInvitationInput  {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> ::std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
-    pub fn administrator_id(&self) -> ::std::option::Option<&str> {
+    pub fn administrator_id(&self) -> ::std::option::Option<& str> {
         self.administrator_id.as_deref()
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
-    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl AcceptAdministratorInvitationInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl AcceptAdministratorInvitationInputBuilder {
     }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
     pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.administrator_id = input;
-        self
+        self.administrator_id = input; self
     }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
     pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -78,24 +76,24 @@ impl AcceptAdministratorInvitationInputBuilder {
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.invitation_id = input;
-        self
+        self.invitation_id = input; self
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invitation_id
     }
     /// Consumes the builder and constructs a [`AcceptAdministratorInvitationInput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
-            detector_id: self.detector_id,
-            administrator_id: self.administrator_id,
-            invitation_id: self.invitation_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
+                detector_id: self.detector_id
+                ,
+                administrator_id: self.administrator_id
+                ,
+                invitation_id: self.invitation_id
+                ,
+            }
+        )
     }
 }
+

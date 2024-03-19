@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGlobalClusters`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`global_cluster_identifier(impl Into<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::global_cluster_identifier) / [`set_global_cluster_identifier(Option<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_global_cluster_identifier):<br>required: **false**<br><p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p><br>
     ///   - [`filters(Filter)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_filters):<br>required: **false**<br><p>A filter that specifies one or more global DB clusters to describe.</p> <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p><br>
     ///   - [`marker(impl Into<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::set_marker):<br>required: **false**<br><p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p><br>
-    /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput) with field(s):
+                            /// - On success, responds with [`DescribeGlobalClustersOutput`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput) with field(s):
     ///   - [`marker(Option<String>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::marker): <p></p>
     ///   - [`global_clusters(Option<Vec::<GlobalCluster>>)`](crate::operation::describe_global_clusters::DescribeGlobalClustersOutput::global_clusters): <p></p>
-    /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::operation::describe_global_clusters::DescribeGlobalClustersError)
+                            /// - On failure, responds with [`SdkError<DescribeGlobalClustersError>`](crate::operation::describe_global_clusters::DescribeGlobalClustersError)
     pub fn describe_global_clusters(&self) -> crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder {
-        crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_global_clusters::builders::DescribeGlobalClustersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

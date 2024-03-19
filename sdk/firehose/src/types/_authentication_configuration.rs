@@ -3,20 +3,19 @@
 /// <p>The authentication configuration of the Amazon MSK cluster.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AuthenticationConfiguration {
+pub struct AuthenticationConfiguration  {
     /// <p>The ARN of the role used to access the Amazon MSK cluster.</p>
     pub role_arn: ::std::string::String,
     /// <p>The type of connectivity used to access the Amazon MSK cluster.</p>
     pub connectivity: crate::types::Connectivity,
 }
-impl AuthenticationConfiguration {
+impl  AuthenticationConfiguration  {
     /// <p>The ARN of the role used to access the Amazon MSK cluster.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> & str {
+        use std::ops::Deref; self.role_arn.deref()
     }
     /// <p>The type of connectivity used to access the Amazon MSK cluster.</p>
-    pub fn connectivity(&self) -> &crate::types::Connectivity {
+    pub fn connectivity(&self) -> & crate::types::Connectivity {
         &self.connectivity
     }
 }
@@ -43,8 +42,7 @@ impl AuthenticationConfigurationBuilder {
     }
     /// <p>The ARN of the role used to access the Amazon MSK cluster.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The ARN of the role used to access the Amazon MSK cluster.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl AuthenticationConfigurationBuilder {
     }
     /// <p>The type of connectivity used to access the Amazon MSK cluster.</p>
     pub fn set_connectivity(mut self, input: ::std::option::Option<crate::types::Connectivity>) -> Self {
-        self.connectivity = input;
-        self
+        self.connectivity = input; self
     }
     /// <p>The type of connectivity used to access the Amazon MSK cluster.</p>
     pub fn get_connectivity(&self) -> &::std::option::Option<crate::types::Connectivity> {
@@ -70,19 +67,20 @@ impl AuthenticationConfigurationBuilder {
     /// - [`role_arn`](crate::types::builders::AuthenticationConfigurationBuilder::role_arn)
     /// - [`connectivity`](crate::types::builders::AuthenticationConfigurationBuilder::connectivity)
     pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::AuthenticationConfiguration {
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building AuthenticationConfiguration",
-                )
-            })?,
-            connectivity: self.connectivity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "connectivity",
-                    "connectivity was not specified but it is required when building AuthenticationConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::AuthenticationConfiguration {
+                role_arn: self.role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("role_arn", "role_arn was not specified but it is required when building AuthenticationConfiguration")
+                    )?
+                ,
+                connectivity: self.connectivity
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("connectivity", "connectivity was not specified but it is required when building AuthenticationConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -5,23 +5,20 @@ pub use crate::operation::create_hyper_parameter_tuning_job::_create_hyper_param
 
 impl CreateHyperParameterTuningJobInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_hyper_parameter_tuning_job();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_hyper_parameter_tuning_job();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateHyperParameterTuningJob`.
-///
+/// 
 /// <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured by an objective metric that you choose.</p>
 /// <p>A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View Experiments, Trials, and Trial Components</a>.</p><important>
 /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
@@ -29,33 +26,32 @@ impl CreateHyperParameterTuningJobInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHyperParameterTuningJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobInputBuilder,
+                    inner: crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
-    > for CreateHyperParameterTuningJobFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
-            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
+                    crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
+                > for CreateHyperParameterTuningJobFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
+                        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateHyperParameterTuningJobFluentBuilder {
     /// Creates a new `CreateHyperParameterTuningJob`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl CreateHyperParameterTuningJobFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJob::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJob::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
-        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJob::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJob::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput, crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
@@ -163,15 +150,12 @@ impl CreateHyperParameterTuningJobFluentBuilder {
         self
     }
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn set_training_job_definitions(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
-    ) -> Self {
+    pub fn set_training_job_definitions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::HyperParameterTrainingJobDefinition>>) -> Self {
         self.inner = self.inner.set_training_job_definitions(input);
         self
     }
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
-    pub fn get_training_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>> {
+    pub fn get_training_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::HyperParameterTrainingJobDefinition>> {
         self.inner.get_training_job_definitions()
     }
     /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
@@ -209,13 +193,13 @@ impl CreateHyperParameterTuningJobFluentBuilder {
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     /// <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         self.inner.get_tags()
     }
     /// <p>Configures SageMaker Automatic model tuning (AMT) to automatically find optimal parameters for the following fields:</p>
@@ -275,3 +259,4 @@ impl CreateHyperParameterTuningJobFluentBuilder {
         self.inner.get_autotune()
     }
 }
+

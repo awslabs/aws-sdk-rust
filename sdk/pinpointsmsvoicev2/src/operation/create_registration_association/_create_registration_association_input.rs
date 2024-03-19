@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateRegistrationAssociationInput {
+pub struct CreateRegistrationAssociationInput  {
     /// <p>The unique identifier for the registration.</p>
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
 }
-impl CreateRegistrationAssociationInput {
+impl  CreateRegistrationAssociationInput  {
     /// <p>The unique identifier for the registration.</p>
-    pub fn registration_id(&self) -> ::std::option::Option<&str> {
+    pub fn registration_id(&self) -> ::std::option::Option<& str> {
         self.registration_id.as_deref()
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
-    pub fn resource_id(&self) -> ::std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateRegistrationAssociationInputBuilder {
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn set_registration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registration_id = input;
-        self
+        self.registration_id = input; self
     }
     /// <p>The unique identifier for the registration.</p>
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreateRegistrationAssociationInputBuilder {
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The unique identifier for the origination identity. For example this could be a <b>PhoneNumberId</b> or <b>SenderId</b>.</p>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// Consumes the builder and constructs a [`CreateRegistrationAssociationInput`](crate::operation::create_registration_association::CreateRegistrationAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_registration_association::CreateRegistrationAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_registration_association::CreateRegistrationAssociationInput {
-            registration_id: self.registration_id,
-            resource_id: self.resource_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_registration_association::CreateRegistrationAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_registration_association::CreateRegistrationAssociationInput {
+                registration_id: self.registration_id
+                ,
+                resource_id: self.resource_id
+                ,
+            }
+        )
     }
 }
+

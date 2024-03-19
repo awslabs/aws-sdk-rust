@@ -5,23 +5,20 @@ pub use crate::operation::put_dedicated_ip_in_pool::_put_dedicated_ip_in_pool_in
 
 impl PutDedicatedIpInPoolInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.put_dedicated_ip_in_pool();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.put_dedicated_ip_in_pool();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `PutDedicatedIpInPool`.
-///
+/// 
 /// <p>Move a dedicated IP address to an existing dedicated IP pool.</p><note>
 /// <p>The dedicated IP address that you specify must already exist, and must be associated with your Amazon Pinpoint account.</p>
 /// <p>The dedicated IP pool you specify must already exist. You can create a new pool by using the <code>CreateDedicatedIpPool</code> operation.</p>
@@ -29,33 +26,32 @@ impl PutDedicatedIpInPoolInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolInputBuilder,
+                    inner: crate::operation::put_dedicated_ip_in_pool::builders::PutDedicatedIpInPoolInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-    > for PutDedicatedIpInPoolFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
+                    crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
+                > for PutDedicatedIpInPoolFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
+                        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl PutDedicatedIpInPoolFluentBuilder {
     /// Creates a new `PutDedicatedIpInPool`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -64,53 +60,44 @@ impl PutDedicatedIpInPoolFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput,
-        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPool::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolOutput, crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip(input.into());
@@ -140,3 +127,4 @@ impl PutDedicatedIpInPoolFluentBuilder {
         self.inner.get_destination_pool_name()
     }
 }
+

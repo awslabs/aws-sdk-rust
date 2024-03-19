@@ -3,32 +3,34 @@
 /// Placeholder documentation for BatchStopResponse
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchStopOutput {
+pub struct BatchStopOutput  {
     /// List of failed operations
-    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
+    pub failed: ::std::option::Option<::std::vec::Vec::<crate::types::BatchFailedResultModel>>,
     /// List of successful operations
-    pub successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+    pub successful: ::std::option::Option<::std::vec::Vec::<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
-impl BatchStopOutput {
+impl  BatchStopOutput  {
     /// List of failed operations
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failed.is_none()`.
-    pub fn failed(&self) -> &[crate::types::BatchFailedResultModel] {
-        self.failed.as_deref().unwrap_or_default()
+    pub fn failed(&self) -> & [crate::types::BatchFailedResultModel] {
+        self.failed.as_deref()
+        .unwrap_or_default()
     }
     /// List of successful operations
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.successful.is_none()`.
-    pub fn successful(&self) -> &[crate::types::BatchSuccessfulResultModel] {
-        self.successful.as_deref().unwrap_or_default()
+    pub fn successful(&self) -> & [crate::types::BatchSuccessfulResultModel] {
+        self.successful.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchStopOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl BatchStopOutput {
     /// Creates a new builder-style object to manufacture [`BatchStopOutput`](crate::operation::batch_stop::BatchStopOutput).
     pub fn builder() -> crate::operation::batch_stop::builders::BatchStopOutputBuilder {
@@ -40,8 +42,8 @@ impl BatchStopOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchStopOutputBuilder {
-    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
-    pub(crate) successful: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec::<crate::types::BatchFailedResultModel>>,
+    pub(crate) successful: ::std::option::Option<::std::vec::Vec::<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
 impl BatchStopOutputBuilder {
@@ -52,17 +54,16 @@ impl BatchStopOutputBuilder {
     /// List of failed operations
     pub fn failed(mut self, input: crate::types::BatchFailedResultModel) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input);
-        self.failed = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.failed = ::std::option::Option::Some(v);
+                        self
     }
     /// List of failed operations
-    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchFailedResultModel>>) -> Self {
+        self.failed = input; self
     }
     /// List of failed operations
-    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>> {
+    pub fn get_failed(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchFailedResultModel>> {
         &self.failed
     }
     /// Appends an item to `successful`.
@@ -72,34 +73,36 @@ impl BatchStopOutputBuilder {
     /// List of successful operations
     pub fn successful(mut self, input: crate::types::BatchSuccessfulResultModel) -> Self {
         let mut v = self.successful.unwrap_or_default();
-        v.push(input);
-        self.successful = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.successful = ::std::option::Option::Some(v);
+                        self
     }
     /// List of successful operations
-    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>) -> Self {
-        self.successful = input;
-        self
+    pub fn set_successful(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BatchSuccessfulResultModel>>) -> Self {
+        self.successful = input; self
     }
     /// List of successful operations
-    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>> {
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BatchSuccessfulResultModel>> {
         &self.successful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`BatchStopOutput`](crate::operation::batch_stop::BatchStopOutput).
     pub fn build(self) -> crate::operation::batch_stop::BatchStopOutput {
         crate::operation::batch_stop::BatchStopOutput {
-            failed: self.failed,
-            successful: self.successful,
+            failed: self.failed
+            ,
+            successful: self.successful
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

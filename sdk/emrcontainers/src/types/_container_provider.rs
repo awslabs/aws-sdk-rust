@@ -3,7 +3,7 @@
 /// <p>The information about the container provider.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContainerProvider {
+pub struct ContainerProvider  {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub r#type: crate::types::ContainerProviderType,
     /// <p>The ID of the container cluster.</p>
@@ -11,18 +11,17 @@ pub struct ContainerProvider {
     /// <p>The information about the container cluster.</p>
     pub info: ::std::option::Option<crate::types::ContainerInfo>,
 }
-impl ContainerProvider {
+impl  ContainerProvider  {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn r#type(&self) -> &crate::types::ContainerProviderType {
+    pub fn r#type(&self) -> & crate::types::ContainerProviderType {
         &self.r#type
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The information about the container cluster.</p>
-    pub fn info(&self) -> ::std::option::Option<&crate::types::ContainerInfo> {
+    pub fn info(&self) -> ::std::option::Option<& crate::types::ContainerInfo> {
         self.info.as_ref()
     }
 }
@@ -50,8 +49,7 @@ impl ContainerProviderBuilder {
     }
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerProviderType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerProviderType> {
@@ -65,8 +63,7 @@ impl ContainerProviderBuilder {
     }
     /// <p>The ID of the container cluster.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the container cluster.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,8 +76,7 @@ impl ContainerProviderBuilder {
     }
     /// <p>The information about the container cluster.</p>
     pub fn set_info(mut self, input: ::std::option::Option<crate::types::ContainerInfo>) -> Self {
-        self.info = input;
-        self
+        self.info = input; self
     }
     /// <p>The information about the container cluster.</p>
     pub fn get_info(&self) -> &::std::option::Option<crate::types::ContainerInfo> {
@@ -91,20 +87,22 @@ impl ContainerProviderBuilder {
     /// - [`r#type`](crate::types::builders::ContainerProviderBuilder::r#type)
     /// - [`id`](crate::types::builders::ContainerProviderBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::types::ContainerProvider, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ContainerProvider {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ContainerProvider",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building ContainerProvider",
-                )
-            })?,
-            info: self.info,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ContainerProvider {
+                r#type: self.r#type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "r#type was not specified but it is required when building ContainerProvider")
+                    )?
+                ,
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building ContainerProvider")
+                    )?
+                ,
+                info: self.info
+                ,
+            }
+        )
     }
 }
+

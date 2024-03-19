@@ -3,7 +3,7 @@
 /// <p>Summary information about a theme.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Theme {
+pub struct Theme  {
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that the user gives to the theme.</p>
@@ -19,33 +19,33 @@ pub struct Theme {
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub r#type: ::std::option::Option<crate::types::ThemeType>,
 }
-impl Theme {
+impl  Theme  {
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name that the user gives to the theme.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier that the user gives to the theme.</p>
-    pub fn theme_id(&self) -> ::std::option::Option<&str> {
+    pub fn theme_id(&self) -> ::std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>A version of a theme.</p>
-    pub fn version(&self) -> ::std::option::Option<&crate::types::ThemeVersion> {
+    pub fn version(&self) -> ::std::option::Option<& crate::types::ThemeVersion> {
         self.version.as_ref()
     }
     /// <p>The date and time that the theme was created.</p>
-    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the theme was last updated.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThemeType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::ThemeType> {
         self.r#type.as_ref()
     }
 }
@@ -76,8 +76,7 @@ impl ThemeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +89,7 @@ impl ThemeBuilder {
     }
     /// <p>The name that the user gives to the theme.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that the user gives to the theme.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +102,7 @@ impl ThemeBuilder {
     }
     /// <p>The identifier that the user gives to the theme.</p>
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The identifier that the user gives to the theme.</p>
     pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -118,8 +115,7 @@ impl ThemeBuilder {
     }
     /// <p>A version of a theme.</p>
     pub fn set_version(mut self, input: ::std::option::Option<crate::types::ThemeVersion>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>A version of a theme.</p>
     pub fn get_version(&self) -> &::std::option::Option<crate::types::ThemeVersion> {
@@ -132,8 +128,7 @@ impl ThemeBuilder {
     }
     /// <p>The date and time that the theme was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input;
-        self
+        self.created_time = input; self
     }
     /// <p>The date and time that the theme was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -146,8 +141,7 @@ impl ThemeBuilder {
     }
     /// <p>The date and time that the theme was last updated.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time that the theme was last updated.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -160,8 +154,7 @@ impl ThemeBuilder {
     }
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThemeType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code> and <code>CUSTOM</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ThemeType> {
@@ -170,13 +163,21 @@ impl ThemeBuilder {
     /// Consumes the builder and constructs a [`Theme`](crate::types::Theme).
     pub fn build(self) -> crate::types::Theme {
         crate::types::Theme {
-            arn: self.arn,
-            name: self.name,
-            theme_id: self.theme_id,
-            version: self.version,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            r#type: self.r#type,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            theme_id: self.theme_id
+            ,
+            version: self.version
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

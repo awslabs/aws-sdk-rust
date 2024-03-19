@@ -3,16 +3,17 @@
 /// <p>Contains an array of named query IDs.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct BatchGetNamedQueryInput {
+pub struct BatchGetNamedQueryInput  {
     /// <p>An array of query IDs.</p>
-    pub named_query_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub named_query_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl BatchGetNamedQueryInput {
+impl  BatchGetNamedQueryInput  {
     /// <p>An array of query IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.named_query_ids.is_none()`.
-    pub fn named_query_ids(&self) -> &[::std::string::String] {
-        self.named_query_ids.as_deref().unwrap_or_default()
+    pub fn named_query_ids(&self) -> & [::std::string::String] {
+        self.named_query_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl BatchGetNamedQueryInput {
@@ -26,7 +27,7 @@ impl BatchGetNamedQueryInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct BatchGetNamedQueryInputBuilder {
-    pub(crate) named_query_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) named_query_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl BatchGetNamedQueryInputBuilder {
     /// Appends an item to `named_query_ids`.
@@ -36,26 +37,26 @@ impl BatchGetNamedQueryInputBuilder {
     /// <p>An array of query IDs.</p>
     pub fn named_query_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.named_query_ids.unwrap_or_default();
-        v.push(input.into());
-        self.named_query_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.named_query_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of query IDs.</p>
-    pub fn set_named_query_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.named_query_ids = input;
-        self
+    pub fn set_named_query_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.named_query_ids = input; self
     }
     /// <p>An array of query IDs.</p>
-    pub fn get_named_query_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_named_query_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.named_query_ids
     }
     /// Consumes the builder and constructs a [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::batch_get_named_query::BatchGetNamedQueryInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::batch_get_named_query::BatchGetNamedQueryInput {
-            named_query_ids: self.named_query_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_named_query::BatchGetNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::batch_get_named_query::BatchGetNamedQueryInput {
+                named_query_ids: self.named_query_ids
+                ,
+            }
+        )
     }
 }
+

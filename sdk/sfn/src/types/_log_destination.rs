@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LogDestination {
+pub struct LogDestination  {
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the CloudFormation User Guide.</p>
     pub cloud_watch_logs_log_group: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>,
 }
-impl LogDestination {
+impl  LogDestination  {
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the CloudFormation User Guide.</p>
-    pub fn cloud_watch_logs_log_group(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsLogGroup> {
+    pub fn cloud_watch_logs_log_group(&self) -> ::std::option::Option<& crate::types::CloudWatchLogsLogGroup> {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl LogDestinationBuilder {
     }
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the CloudFormation User Guide.</p>
     pub fn set_cloud_watch_logs_log_group(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsLogGroup>) -> Self {
-        self.cloud_watch_logs_log_group = input;
-        self
+        self.cloud_watch_logs_log_group = input; self
     }
     /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the CloudFormation User Guide.</p>
     pub fn get_cloud_watch_logs_log_group(&self) -> &::std::option::Option<crate::types::CloudWatchLogsLogGroup> {
@@ -44,7 +43,9 @@ impl LogDestinationBuilder {
     /// Consumes the builder and constructs a [`LogDestination`](crate::types::LogDestination).
     pub fn build(self) -> crate::types::LogDestination {
         crate::types::LogDestination {
-            cloud_watch_logs_log_group: self.cloud_watch_logs_log_group,
+            cloud_watch_logs_log_group: self.cloud_watch_logs_log_group
+            ,
         }
     }
 }
+

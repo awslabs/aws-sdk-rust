@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeletePodIdentityAssociationInput {
+pub struct DeletePodIdentityAssociationInput  {
     /// <p>The cluster name that</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the association to be deleted.</p>
     pub association_id: ::std::option::Option<::std::string::String>,
 }
-impl DeletePodIdentityAssociationInput {
+impl  DeletePodIdentityAssociationInput  {
     /// <p>The cluster name that</p>
-    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The ID of the association to be deleted.</p>
-    pub fn association_id(&self) -> ::std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<& str> {
         self.association_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeletePodIdentityAssociationInputBuilder {
     }
     /// <p>The cluster name that</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The cluster name that</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl DeletePodIdentityAssociationInputBuilder {
     }
     /// <p>The ID of the association to be deleted.</p>
     pub fn set_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the association to be deleted.</p>
     pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.association_id
     }
     /// Consumes the builder and constructs a [`DeletePodIdentityAssociationInput`](crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput {
-            cluster_name: self.cluster_name,
-            association_id: self.association_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationInput {
+                cluster_name: self.cluster_name
+                ,
+                association_id: self.association_id
+                ,
+            }
+        )
     }
 }
+

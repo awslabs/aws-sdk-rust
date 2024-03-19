@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutDeliverySourceInput {
+pub struct PutDeliverySourceInput  {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
@@ -19,15 +19,15 @@ pub struct PutDeliverySourceInput {
     pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl PutDeliverySourceInput {
+impl  PutDeliverySourceInput  {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Defines the type of log that the source is sending.</p>
@@ -39,12 +39,12 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
     /// </ul>
-    pub fn log_type(&self) -> ::std::option::Option<&str> {
+    pub fn log_type(&self) -> ::std::option::Option<& str> {
         self.log_type.as_deref()
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -62,7 +62,7 @@ pub struct PutDeliverySourceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_type: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliverySourceInputBuilder {
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
@@ -73,8 +73,7 @@ impl PutDeliverySourceInputBuilder {
     }
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A name for this delivery source. This name must be unique for all delivery sources in your account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,8 +87,7 @@ impl PutDeliverySourceInputBuilder {
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +117,7 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p></li>
     /// </ul>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
@@ -142,30 +139,34 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutDeliverySourceInput`](crate::operation::put_delivery_source::PutDeliverySourceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_delivery_source::PutDeliverySourceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_delivery_source::PutDeliverySourceInput {
-            name: self.name,
-            resource_arn: self.resource_arn,
-            log_type: self.log_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_delivery_source::PutDeliverySourceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_delivery_source::PutDeliverySourceInput {
+                name: self.name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                log_type: self.log_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

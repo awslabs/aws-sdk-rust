@@ -3,29 +3,31 @@
 /// <p>Information about the import job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct QuickResponseSearchExpression {
+pub struct QuickResponseSearchExpression  {
     /// <p>The quick response query expressions.</p>
-    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseQueryField>>,
+    pub queries: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseQueryField>>,
     /// <p>The configuration of filtering rules applied to quick response query results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseFilterField>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseFilterField>>,
     /// <p>The quick response attribute fields on which the query results are ordered.</p>
     pub order_on_field: ::std::option::Option<crate::types::QuickResponseOrderField>,
 }
-impl QuickResponseSearchExpression {
+impl  QuickResponseSearchExpression  {
     /// <p>The quick response query expressions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.queries.is_none()`.
-    pub fn queries(&self) -> &[crate::types::QuickResponseQueryField] {
-        self.queries.as_deref().unwrap_or_default()
+    pub fn queries(&self) -> & [crate::types::QuickResponseQueryField] {
+        self.queries.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The configuration of filtering rules applied to quick response query results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::QuickResponseFilterField] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::QuickResponseFilterField] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The quick response attribute fields on which the query results are ordered.</p>
-    pub fn order_on_field(&self) -> ::std::option::Option<&crate::types::QuickResponseOrderField> {
+    pub fn order_on_field(&self) -> ::std::option::Option<& crate::types::QuickResponseOrderField> {
         self.order_on_field.as_ref()
     }
 }
@@ -40,8 +42,8 @@ impl QuickResponseSearchExpression {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct QuickResponseSearchExpressionBuilder {
-    pub(crate) queries: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseQueryField>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseFilterField>>,
+    pub(crate) queries: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseQueryField>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseFilterField>>,
     pub(crate) order_on_field: ::std::option::Option<crate::types::QuickResponseOrderField>,
 }
 impl QuickResponseSearchExpressionBuilder {
@@ -52,17 +54,16 @@ impl QuickResponseSearchExpressionBuilder {
     /// <p>The quick response query expressions.</p>
     pub fn queries(mut self, input: crate::types::QuickResponseQueryField) -> Self {
         let mut v = self.queries.unwrap_or_default();
-        v.push(input);
-        self.queries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.queries = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The quick response query expressions.</p>
-    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseQueryField>>) -> Self {
-        self.queries = input;
-        self
+    pub fn set_queries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseQueryField>>) -> Self {
+        self.queries = input; self
     }
     /// <p>The quick response query expressions.</p>
-    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickResponseQueryField>> {
+    pub fn get_queries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseQueryField>> {
         &self.queries
     }
     /// Appends an item to `filters`.
@@ -72,17 +73,16 @@ impl QuickResponseSearchExpressionBuilder {
     /// <p>The configuration of filtering rules applied to quick response query results.</p>
     pub fn filters(mut self, input: crate::types::QuickResponseFilterField) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration of filtering rules applied to quick response query results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseFilterField>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseFilterField>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The configuration of filtering rules applied to quick response query results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickResponseFilterField>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::QuickResponseFilterField>> {
         &self.filters
     }
     /// <p>The quick response attribute fields on which the query results are ordered.</p>
@@ -92,8 +92,7 @@ impl QuickResponseSearchExpressionBuilder {
     }
     /// <p>The quick response attribute fields on which the query results are ordered.</p>
     pub fn set_order_on_field(mut self, input: ::std::option::Option<crate::types::QuickResponseOrderField>) -> Self {
-        self.order_on_field = input;
-        self
+        self.order_on_field = input; self
     }
     /// <p>The quick response attribute fields on which the query results are ordered.</p>
     pub fn get_order_on_field(&self) -> &::std::option::Option<crate::types::QuickResponseOrderField> {
@@ -102,9 +101,13 @@ impl QuickResponseSearchExpressionBuilder {
     /// Consumes the builder and constructs a [`QuickResponseSearchExpression`](crate::types::QuickResponseSearchExpression).
     pub fn build(self) -> crate::types::QuickResponseSearchExpression {
         crate::types::QuickResponseSearchExpression {
-            queries: self.queries,
-            filters: self.filters,
-            order_on_field: self.order_on_field,
+            queries: self.queries
+            ,
+            filters: self.filters
+            ,
+            order_on_field: self.order_on_field
+            ,
         }
     }
 }
+

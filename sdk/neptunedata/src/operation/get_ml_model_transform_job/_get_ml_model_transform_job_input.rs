@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMlModelTransformJobInput {
+pub struct GetMlModelTransformJobInput  {
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub neptune_iam_role_arn: ::std::option::Option<::std::string::String>,
 }
-impl GetMlModelTransformJobInput {
+impl  GetMlModelTransformJobInput  {
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
-    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn neptune_iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.neptune_iam_role_arn.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetMlModelTransformJobInputBuilder {
     }
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the model-transform job to be reetrieved.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,23 +54,22 @@ impl GetMlModelTransformJobInputBuilder {
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn set_neptune_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.neptune_iam_role_arn = input;
-        self
+        self.neptune_iam_role_arn = input; self
     }
     /// <p>The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.</p>
     pub fn get_neptune_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.neptune_iam_role_arn
     }
     /// Consumes the builder and constructs a [`GetMlModelTransformJobInput`](crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput {
-            id: self.id,
-            neptune_iam_role_arn: self.neptune_iam_role_arn,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ml_model_transform_job::GetMlModelTransformJobInput {
+                id: self.id
+                ,
+                neptune_iam_role_arn: self.neptune_iam_role_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Identifies the finding fields that the automation rule action updates when a finding matches the defined criteria.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutomationRulesFindingFieldsUpdate {
+pub struct AutomationRulesFindingFieldsUpdate  {
     /// <p>The updated note.</p>
     pub note: ::std::option::Option<crate::types::NoteUpdate>,
     /// <p>Updates to the severity information for a finding.</p>
@@ -15,25 +15,25 @@ pub struct AutomationRulesFindingFieldsUpdate {
     /// <p>The rule action updates the <code>Criticality</code> field of a finding.</p>
     pub criticality: ::std::option::Option<i32>,
     /// <p>The rule action updates the <code>Types</code> field of a finding.</p>
-    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The rule action updates the <code>UserDefinedFields</code> field of a finding.</p>
-    pub user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub user_defined_fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Used to update information about the investigation into the finding.</p>
     pub workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
     /// <p>The rule action updates the <code>RelatedFindings</code> field of a finding.</p>
-    pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub related_findings: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedFinding>>,
 }
-impl AutomationRulesFindingFieldsUpdate {
+impl  AutomationRulesFindingFieldsUpdate  {
     /// <p>The updated note.</p>
-    pub fn note(&self) -> ::std::option::Option<&crate::types::NoteUpdate> {
+    pub fn note(&self) -> ::std::option::Option<& crate::types::NoteUpdate> {
         self.note.as_ref()
     }
     /// <p>Updates to the severity information for a finding.</p>
-    pub fn severity(&self) -> ::std::option::Option<&crate::types::SeverityUpdate> {
+    pub fn severity(&self) -> ::std::option::Option<& crate::types::SeverityUpdate> {
         self.severity.as_ref()
     }
     /// <p>The rule action updates the <code>VerificationState</code> field of a finding.</p>
-    pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
+    pub fn verification_state(&self) -> ::std::option::Option<& crate::types::VerificationState> {
         self.verification_state.as_ref()
     }
     /// <p>The rule action updates the <code>Confidence</code> field of a finding.</p>
@@ -45,24 +45,26 @@ impl AutomationRulesFindingFieldsUpdate {
         self.criticality
     }
     /// <p>The rule action updates the <code>Types</code> field of a finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.types.is_none()`.
-    pub fn types(&self) -> &[::std::string::String] {
-        self.types.as_deref().unwrap_or_default()
+    pub fn types(&self) -> & [::std::string::String] {
+        self.types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The rule action updates the <code>UserDefinedFields</code> field of a finding.</p>
-    pub fn user_defined_fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn user_defined_fields(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.user_defined_fields.as_ref()
     }
     /// <p>Used to update information about the investigation into the finding.</p>
-    pub fn workflow(&self) -> ::std::option::Option<&crate::types::WorkflowUpdate> {
+    pub fn workflow(&self) -> ::std::option::Option<& crate::types::WorkflowUpdate> {
         self.workflow.as_ref()
     }
     /// <p>The rule action updates the <code>RelatedFindings</code> field of a finding.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.related_findings.is_none()`.
-    pub fn related_findings(&self) -> &[crate::types::RelatedFinding] {
-        self.related_findings.as_deref().unwrap_or_default()
+    pub fn related_findings(&self) -> & [crate::types::RelatedFinding] {
+        self.related_findings.as_deref()
+        .unwrap_or_default()
     }
 }
 impl AutomationRulesFindingFieldsUpdate {
@@ -81,10 +83,10 @@ pub struct AutomationRulesFindingFieldsUpdateBuilder {
     pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
     pub(crate) confidence: ::std::option::Option<i32>,
     pub(crate) criticality: ::std::option::Option<i32>,
-    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) user_defined_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) user_defined_fields: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) workflow: ::std::option::Option<crate::types::WorkflowUpdate>,
-    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) related_findings: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedFinding>>,
 }
 impl AutomationRulesFindingFieldsUpdateBuilder {
     /// <p>The updated note.</p>
@@ -94,8 +96,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>The updated note.</p>
     pub fn set_note(mut self, input: ::std::option::Option<crate::types::NoteUpdate>) -> Self {
-        self.note = input;
-        self
+        self.note = input; self
     }
     /// <p>The updated note.</p>
     pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
@@ -108,8 +109,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>Updates to the severity information for a finding.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<crate::types::SeverityUpdate>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>Updates to the severity information for a finding.</p>
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::SeverityUpdate> {
@@ -122,8 +122,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>The rule action updates the <code>VerificationState</code> field of a finding.</p>
     pub fn set_verification_state(mut self, input: ::std::option::Option<crate::types::VerificationState>) -> Self {
-        self.verification_state = input;
-        self
+        self.verification_state = input; self
     }
     /// <p>The rule action updates the <code>VerificationState</code> field of a finding.</p>
     pub fn get_verification_state(&self) -> &::std::option::Option<crate::types::VerificationState> {
@@ -136,8 +135,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>The rule action updates the <code>Confidence</code> field of a finding.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The rule action updates the <code>Confidence</code> field of a finding.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<i32> {
@@ -150,8 +148,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>The rule action updates the <code>Criticality</code> field of a finding.</p>
     pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.criticality = input;
-        self
+        self.criticality = input; self
     }
     /// <p>The rule action updates the <code>Criticality</code> field of a finding.</p>
     pub fn get_criticality(&self) -> &::std::option::Option<i32> {
@@ -164,17 +161,16 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     /// <p>The rule action updates the <code>Types</code> field of a finding.</p>
     pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule action updates the <code>Types</code> field of a finding.</p>
-    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// <p>The rule action updates the <code>Types</code> field of a finding.</p>
-    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.types
     }
     /// Adds a key-value pair to `user_defined_fields`.
@@ -182,26 +178,18 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
     ///
     /// <p>The rule action updates the <code>UserDefinedFields</code> field of a finding.</p>
-    pub fn user_defined_fields(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn user_defined_fields(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_defined_fields.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.user_defined_fields = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.user_defined_fields = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The rule action updates the <code>UserDefinedFields</code> field of a finding.</p>
-    pub fn set_user_defined_fields(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.user_defined_fields = input;
-        self
+    pub fn set_user_defined_fields(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.user_defined_fields = input; self
     }
     /// <p>The rule action updates the <code>UserDefinedFields</code> field of a finding.</p>
-    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.user_defined_fields
     }
     /// <p>Used to update information about the investigation into the finding.</p>
@@ -211,8 +199,7 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     }
     /// <p>Used to update information about the investigation into the finding.</p>
     pub fn set_workflow(mut self, input: ::std::option::Option<crate::types::WorkflowUpdate>) -> Self {
-        self.workflow = input;
-        self
+        self.workflow = input; self
     }
     /// <p>Used to update information about the investigation into the finding.</p>
     pub fn get_workflow(&self) -> &::std::option::Option<crate::types::WorkflowUpdate> {
@@ -225,31 +212,40 @@ impl AutomationRulesFindingFieldsUpdateBuilder {
     /// <p>The rule action updates the <code>RelatedFindings</code> field of a finding.</p>
     pub fn related_findings(mut self, input: crate::types::RelatedFinding) -> Self {
         let mut v = self.related_findings.unwrap_or_default();
-        v.push(input);
-        self.related_findings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.related_findings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The rule action updates the <code>RelatedFindings</code> field of a finding.</p>
-    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>) -> Self {
-        self.related_findings = input;
-        self
+    pub fn set_related_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RelatedFinding>>) -> Self {
+        self.related_findings = input; self
     }
     /// <p>The rule action updates the <code>RelatedFindings</code> field of a finding.</p>
-    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+    pub fn get_related_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RelatedFinding>> {
         &self.related_findings
     }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFieldsUpdate`](crate::types::AutomationRulesFindingFieldsUpdate).
     pub fn build(self) -> crate::types::AutomationRulesFindingFieldsUpdate {
         crate::types::AutomationRulesFindingFieldsUpdate {
-            note: self.note,
-            severity: self.severity,
-            verification_state: self.verification_state,
-            confidence: self.confidence,
-            criticality: self.criticality,
-            types: self.types,
-            user_defined_fields: self.user_defined_fields,
-            workflow: self.workflow,
-            related_findings: self.related_findings,
+            note: self.note
+            ,
+            severity: self.severity
+            ,
+            verification_state: self.verification_state
+            ,
+            confidence: self.confidence
+            ,
+            criticality: self.criticality
+            ,
+            types: self.types
+            ,
+            user_defined_fields: self.user_defined_fields
+            ,
+            workflow: self.workflow
+            ,
+            related_findings: self.related_findings
+            ,
         }
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartSmartHomeApplianceDiscoveryInput {
+pub struct StartSmartHomeApplianceDiscoveryInput  {
     /// <p>The room where smart home appliance discovery was initiated.</p>
     pub room_arn: ::std::option::Option<::std::string::String>,
 }
-impl StartSmartHomeApplianceDiscoveryInput {
+impl  StartSmartHomeApplianceDiscoveryInput  {
     /// <p>The room where smart home appliance discovery was initiated.</p>
-    pub fn room_arn(&self) -> ::std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
@@ -34,22 +34,20 @@ impl StartSmartHomeApplianceDiscoveryInputBuilder {
     }
     /// <p>The room where smart home appliance discovery was initiated.</p>
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// <p>The room where smart home appliance discovery was initiated.</p>
     pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.room_arn
     }
     /// Consumes the builder and constructs a [`StartSmartHomeApplianceDiscoveryInput`](crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
-            crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput { room_arn: self.room_arn },
+            crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput {
+                room_arn: self.room_arn
+                ,
+            }
         )
     }
 }
+

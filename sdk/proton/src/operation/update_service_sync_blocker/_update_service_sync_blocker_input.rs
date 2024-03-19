@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateServiceSyncBlockerInput {
+pub struct UpdateServiceSyncBlockerInput  {
     /// <p>The ID of the service sync blocker.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reason the service sync blocker was resolved.</p>
     pub resolved_reason: ::std::option::Option<::std::string::String>,
 }
-impl UpdateServiceSyncBlockerInput {
+impl  UpdateServiceSyncBlockerInput  {
     /// <p>The ID of the service sync blocker.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The reason the service sync blocker was resolved.</p>
-    pub fn resolved_reason(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_reason(&self) -> ::std::option::Option<& str> {
         self.resolved_reason.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl UpdateServiceSyncBlockerInputBuilder {
     }
     /// <p>The ID of the service sync blocker.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the service sync blocker.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl UpdateServiceSyncBlockerInputBuilder {
     }
     /// <p>The reason the service sync blocker was resolved.</p>
     pub fn set_resolved_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_reason = input;
-        self
+        self.resolved_reason = input; self
     }
     /// <p>The reason the service sync blocker was resolved.</p>
     pub fn get_resolved_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_reason
     }
     /// Consumes the builder and constructs a [`UpdateServiceSyncBlockerInput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput {
-            id: self.id,
-            resolved_reason: self.resolved_reason,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput {
+                id: self.id
+                ,
+                resolved_reason: self.resolved_reason
+                ,
+            }
+        )
     }
 }
+

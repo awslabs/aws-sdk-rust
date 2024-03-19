@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateCustomLogSourceOutput {
+pub struct CreateCustomLogSourceOutput  {
     /// <p>The created third-party custom source.</p>
     pub source: ::std::option::Option<crate::types::CustomLogSourceResource>,
     _request_id: Option<String>,
 }
-impl CreateCustomLogSourceOutput {
+impl  CreateCustomLogSourceOutput  {
     /// <p>The created third-party custom source.</p>
-    pub fn source(&self) -> ::std::option::Option<&crate::types::CustomLogSourceResource> {
+    pub fn source(&self) -> ::std::option::Option<& crate::types::CustomLogSourceResource> {
         self.source.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateCustomLogSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateCustomLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
     pub fn builder() -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateCustomLogSourceOutputBuilder {
     }
     /// <p>The created third-party custom source.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::CustomLogSourceResource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The created third-party custom source.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CustomLogSourceResource> {
         &self.source
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateCustomLogSourceOutput`](crate::operation::create_custom_log_source::CreateCustomLogSourceOutput).
     pub fn build(self) -> crate::operation::create_custom_log_source::CreateCustomLogSourceOutput {
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput {
-            source: self.source,
+            source: self.source
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

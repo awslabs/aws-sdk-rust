@@ -3,15 +3,15 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PurgeQueueInput {
+pub struct PurgeQueueInput  {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: ::std::option::Option<::std::string::String>,
 }
-impl PurgeQueueInput {
+impl  PurgeQueueInput  {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> ::std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl PurgeQueueInputBuilder {
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
@@ -49,6 +48,12 @@ impl PurgeQueueInputBuilder {
     }
     /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::operation::purge_queue::PurgeQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::purge_queue::PurgeQueueInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::purge_queue::PurgeQueueInput { queue_url: self.queue_url })
+        ::std::result::Result::Ok(
+            crate::operation::purge_queue::PurgeQueueInput {
+                queue_url: self.queue_url
+                ,
+            }
+        )
     }
 }
+

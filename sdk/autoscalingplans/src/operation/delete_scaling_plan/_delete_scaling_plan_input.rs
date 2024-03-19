@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteScalingPlanInput {
+pub struct DeleteScalingPlanInput  {
     /// <p>The name of the scaling plan.</p>
     pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub scaling_plan_version: ::std::option::Option<i64>,
 }
-impl DeleteScalingPlanInput {
+impl  DeleteScalingPlanInput  {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(&self) -> ::std::option::Option<&str> {
+    pub fn scaling_plan_name(&self) -> ::std::option::Option<& str> {
         self.scaling_plan_name.as_deref()
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
@@ -41,8 +41,7 @@ impl DeleteScalingPlanInputBuilder {
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scaling_plan_name = input;
-        self
+        self.scaling_plan_name = input; self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,20 +55,22 @@ impl DeleteScalingPlanInputBuilder {
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.scaling_plan_version = input;
-        self
+        self.scaling_plan_version = input; self
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
         &self.scaling_plan_version
     }
     /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
-            scaling_plan_name: self.scaling_plan_name,
-            scaling_plan_version: self.scaling_plan_version,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
+                scaling_plan_name: self.scaling_plan_name
+                ,
+                scaling_plan_version: self.scaling_plan_version
+                ,
+            }
+        )
     }
 }
+

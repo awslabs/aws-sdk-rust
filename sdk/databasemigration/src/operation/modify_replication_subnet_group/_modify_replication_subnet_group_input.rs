@@ -3,28 +3,29 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyReplicationSubnetGroupInput {
+pub struct ModifyReplicationSubnetGroupInput  {
     /// <p>The name of the replication instance subnet group.</p>
     pub replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A description for the replication instance subnet group.</p>
     pub replication_subnet_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet IDs.</p>
-    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl ModifyReplicationSubnetGroupInput {
+impl  ModifyReplicationSubnetGroupInput  {
     /// <p>The name of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn replication_subnet_group_identifier(&self) -> ::std::option::Option<& str> {
         self.replication_subnet_group_identifier.as_deref()
     }
     /// <p>A description for the replication instance subnet group.</p>
-    pub fn replication_subnet_group_description(&self) -> ::std::option::Option<&str> {
+    pub fn replication_subnet_group_description(&self) -> ::std::option::Option<& str> {
         self.replication_subnet_group_description.as_deref()
     }
     /// <p>A list of subnet IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
-    pub fn subnet_ids(&self) -> &[::std::string::String] {
-        self.subnet_ids.as_deref().unwrap_or_default()
+    pub fn subnet_ids(&self) -> & [::std::string::String] {
+        self.subnet_ids.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ModifyReplicationSubnetGroupInput {
@@ -40,7 +41,7 @@ impl ModifyReplicationSubnetGroupInput {
 pub struct ModifyReplicationSubnetGroupInputBuilder {
     pub(crate) replication_subnet_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_group_description: ::std::option::Option<::std::string::String>,
-    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl ModifyReplicationSubnetGroupInputBuilder {
     /// <p>The name of the replication instance subnet group.</p>
@@ -51,8 +52,7 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     }
     /// <p>The name of the replication instance subnet group.</p>
     pub fn set_replication_subnet_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_subnet_group_identifier = input;
-        self
+        self.replication_subnet_group_identifier = input; self
     }
     /// <p>The name of the replication instance subnet group.</p>
     pub fn get_replication_subnet_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +65,7 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     }
     /// <p>A description for the replication instance subnet group.</p>
     pub fn set_replication_subnet_group_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.replication_subnet_group_description = input;
-        self
+        self.replication_subnet_group_description = input; self
     }
     /// <p>A description for the replication instance subnet group.</p>
     pub fn get_replication_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,30 +78,30 @@ impl ModifyReplicationSubnetGroupInputBuilder {
     /// <p>A list of subnet IDs.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>A list of subnet IDs.</p>
-    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`ModifyReplicationSubnetGroupInput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput {
-            replication_subnet_group_identifier: self.replication_subnet_group_identifier,
-            replication_subnet_group_description: self.replication_subnet_group_description,
-            subnet_ids: self.subnet_ids,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput {
+                replication_subnet_group_identifier: self.replication_subnet_group_identifier
+                ,
+                replication_subnet_group_description: self.replication_subnet_group_description
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+            }
+        )
     }
 }
+

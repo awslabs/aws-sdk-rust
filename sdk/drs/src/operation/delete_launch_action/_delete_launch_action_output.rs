@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteLaunchActionOutput {
+pub struct DeleteLaunchActionOutput  {
     _request_id: Option<String>,
 }
 impl ::aws_types::request_id::RequestId for DeleteLaunchActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteLaunchActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchActionOutput`](crate::operation::delete_launch_action::DeleteLaunchActionOutput).
     pub fn builder() -> crate::operation::delete_launch_action::builders::DeleteLaunchActionOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteLaunchActionOutputBuilder {
 }
 impl DeleteLaunchActionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteLaunchActionOutput`](crate::operation::delete_launch_action::DeleteLaunchActionOutput).
     pub fn build(self) -> crate::operation::delete_launch_action::DeleteLaunchActionOutput {
         crate::operation::delete_launch_action::DeleteLaunchActionOutput {
@@ -40,3 +40,4 @@ impl DeleteLaunchActionOutputBuilder {
         }
     }
 }
+

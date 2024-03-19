@@ -3,7 +3,7 @@
 /// Custom 3D lut settings
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ColorConversion3DlutSetting {
+pub struct ColorConversion3DlutSetting  {
     /// Specify the input file S3, HTTP, or HTTPS URL for your 3D LUT .cube file. Note that MediaConvert accepts 3D LUT files up to 8MB in size.
     pub file_input: ::std::option::Option<::std::string::String>,
     /// Specify which inputs use this 3D LUT, according to their color space.
@@ -15,13 +15,13 @@ pub struct ColorConversion3DlutSetting {
     /// Specify which outputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) outputs with a specific luminance: Enter an integer from 0 to 2147483647, corresponding to the output's luminance. To apply this 3D LUT to any output regardless of its luminance: Leave blank, or enter 0.
     pub output_mastering_luminance: ::std::option::Option<i32>,
 }
-impl ColorConversion3DlutSetting {
+impl  ColorConversion3DlutSetting  {
     /// Specify the input file S3, HTTP, or HTTPS URL for your 3D LUT .cube file. Note that MediaConvert accepts 3D LUT files up to 8MB in size.
-    pub fn file_input(&self) -> ::std::option::Option<&str> {
+    pub fn file_input(&self) -> ::std::option::Option<& str> {
         self.file_input.as_deref()
     }
     /// Specify which inputs use this 3D LUT, according to their color space.
-    pub fn input_color_space(&self) -> ::std::option::Option<&crate::types::ColorSpace> {
+    pub fn input_color_space(&self) -> ::std::option::Option<& crate::types::ColorSpace> {
         self.input_color_space.as_ref()
     }
     /// Specify which inputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) inputs with a specific mastering luminance: Enter an integer from 0 to 2147483647, corresponding to the input's Maximum luminance value. To apply this 3D LUT to any input regardless of its luminance: Leave blank, or enter 0.
@@ -29,7 +29,7 @@ impl ColorConversion3DlutSetting {
         self.input_mastering_luminance
     }
     /// Specify which outputs use this 3D LUT, according to their color space.
-    pub fn output_color_space(&self) -> ::std::option::Option<&crate::types::ColorSpace> {
+    pub fn output_color_space(&self) -> ::std::option::Option<& crate::types::ColorSpace> {
         self.output_color_space.as_ref()
     }
     /// Specify which outputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) outputs with a specific luminance: Enter an integer from 0 to 2147483647, corresponding to the output's luminance. To apply this 3D LUT to any output regardless of its luminance: Leave blank, or enter 0.
@@ -62,8 +62,7 @@ impl ColorConversion3DlutSettingBuilder {
     }
     /// Specify the input file S3, HTTP, or HTTPS URL for your 3D LUT .cube file. Note that MediaConvert accepts 3D LUT files up to 8MB in size.
     pub fn set_file_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_input = input;
-        self
+        self.file_input = input; self
     }
     /// Specify the input file S3, HTTP, or HTTPS URL for your 3D LUT .cube file. Note that MediaConvert accepts 3D LUT files up to 8MB in size.
     pub fn get_file_input(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +75,7 @@ impl ColorConversion3DlutSettingBuilder {
     }
     /// Specify which inputs use this 3D LUT, according to their color space.
     pub fn set_input_color_space(mut self, input: ::std::option::Option<crate::types::ColorSpace>) -> Self {
-        self.input_color_space = input;
-        self
+        self.input_color_space = input; self
     }
     /// Specify which inputs use this 3D LUT, according to their color space.
     pub fn get_input_color_space(&self) -> &::std::option::Option<crate::types::ColorSpace> {
@@ -90,8 +88,7 @@ impl ColorConversion3DlutSettingBuilder {
     }
     /// Specify which inputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) inputs with a specific mastering luminance: Enter an integer from 0 to 2147483647, corresponding to the input's Maximum luminance value. To apply this 3D LUT to any input regardless of its luminance: Leave blank, or enter 0.
     pub fn set_input_mastering_luminance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.input_mastering_luminance = input;
-        self
+        self.input_mastering_luminance = input; self
     }
     /// Specify which inputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) inputs with a specific mastering luminance: Enter an integer from 0 to 2147483647, corresponding to the input's Maximum luminance value. To apply this 3D LUT to any input regardless of its luminance: Leave blank, or enter 0.
     pub fn get_input_mastering_luminance(&self) -> &::std::option::Option<i32> {
@@ -104,8 +101,7 @@ impl ColorConversion3DlutSettingBuilder {
     }
     /// Specify which outputs use this 3D LUT, according to their color space.
     pub fn set_output_color_space(mut self, input: ::std::option::Option<crate::types::ColorSpace>) -> Self {
-        self.output_color_space = input;
-        self
+        self.output_color_space = input; self
     }
     /// Specify which outputs use this 3D LUT, according to their color space.
     pub fn get_output_color_space(&self) -> &::std::option::Option<crate::types::ColorSpace> {
@@ -118,8 +114,7 @@ impl ColorConversion3DlutSettingBuilder {
     }
     /// Specify which outputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) outputs with a specific luminance: Enter an integer from 0 to 2147483647, corresponding to the output's luminance. To apply this 3D LUT to any output regardless of its luminance: Leave blank, or enter 0.
     pub fn set_output_mastering_luminance(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.output_mastering_luminance = input;
-        self
+        self.output_mastering_luminance = input; self
     }
     /// Specify which outputs use this 3D LUT, according to their luminance. To apply this 3D LUT to HDR10 or P3D65 (HDR) outputs with a specific luminance: Enter an integer from 0 to 2147483647, corresponding to the output's luminance. To apply this 3D LUT to any output regardless of its luminance: Leave blank, or enter 0.
     pub fn get_output_mastering_luminance(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl ColorConversion3DlutSettingBuilder {
     /// Consumes the builder and constructs a [`ColorConversion3DlutSetting`](crate::types::ColorConversion3DlutSetting).
     pub fn build(self) -> crate::types::ColorConversion3DlutSetting {
         crate::types::ColorConversion3DlutSetting {
-            file_input: self.file_input,
-            input_color_space: self.input_color_space,
-            input_mastering_luminance: self.input_mastering_luminance,
-            output_color_space: self.output_color_space,
-            output_mastering_luminance: self.output_mastering_luminance,
+            file_input: self.file_input
+            ,
+            input_color_space: self.input_color_space
+            ,
+            input_mastering_luminance: self.input_mastering_luminance
+            ,
+            output_color_space: self.output_color_space
+            ,
+            output_mastering_luminance: self.output_mastering_luminance
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A container for information about an IdP.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IdentityProviderType {
+pub struct IdentityProviderType  {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP name.</p>
@@ -58,27 +58,27 @@ pub struct IdentityProviderType {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub provider_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attribute_mapping: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
-    pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub idp_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl IdentityProviderType {
+impl  IdentityProviderType  {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> ::std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<& str> {
         self.provider_name.as_deref()
     }
     /// <p>The IdP type.</p>
-    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderTypeType> {
+    pub fn provider_type(&self) -> ::std::option::Option<& crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
     /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
@@ -129,25 +129,26 @@ impl IdentityProviderType {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn provider_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn provider_details(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.provider_details.as_ref()
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attribute_mapping(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.idp_identifiers.is_none()`.
-    pub fn idp_identifiers(&self) -> &[::std::string::String] {
-        self.idp_identifiers.as_deref().unwrap_or_default()
+    pub fn idp_identifiers(&self) -> & [::std::string::String] {
+        self.idp_identifiers.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
-    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
-    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -165,9 +166,9 @@ pub struct IdentityProviderTypeBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
+    pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -179,8 +180,7 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool ID.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +193,7 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The IdP name.</p>
     pub fn set_provider_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// <p>The IdP name.</p>
     pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -207,8 +206,7 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The IdP type.</p>
     pub fn set_provider_type(mut self, input: ::std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
-        self.provider_type = input;
-        self
+        self.provider_type = input; self
     }
     /// <p>The IdP type.</p>
     pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
@@ -266,15 +264,11 @@ impl IdentityProviderTypeBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn provider_details(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn provider_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.provider_details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.provider_details = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.provider_details = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
     /// <dl>
@@ -324,12 +318,8 @@ impl IdentityProviderTypeBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn set_provider_details(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.provider_details = input;
-        self
+    pub fn set_provider_details(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.provider_details = input; self
     }
     /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
     /// <dl>
@@ -379,7 +369,7 @@ impl IdentityProviderTypeBuilder {
     /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
     /// </dd>
     /// </dl>
-    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.provider_details
     }
     /// Adds a key-value pair to `attribute_mapping`.
@@ -387,26 +377,18 @@ impl IdentityProviderTypeBuilder {
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
     ///
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
+    pub fn attribute_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attribute_mapping.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attribute_mapping = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attribute_mapping = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn set_attribute_mapping(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.attribute_mapping = input;
-        self
+    pub fn set_attribute_mapping(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attribute_mapping = input; self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attribute_mapping(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attribute_mapping
     }
     /// Appends an item to `idp_identifiers`.
@@ -416,17 +398,16 @@ impl IdentityProviderTypeBuilder {
     /// <p>A list of IdP identifiers.</p>
     pub fn idp_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.idp_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.idp_identifiers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.idp_identifiers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.idp_identifiers = input;
-        self
+    pub fn set_idp_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.idp_identifiers = input; self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.idp_identifiers
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
@@ -436,8 +417,7 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn set_last_modified_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -450,8 +430,7 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input;
-        self
+        self.creation_date = input; self
     }
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was created.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -460,14 +439,23 @@ impl IdentityProviderTypeBuilder {
     /// Consumes the builder and constructs a [`IdentityProviderType`](crate::types::IdentityProviderType).
     pub fn build(self) -> crate::types::IdentityProviderType {
         crate::types::IdentityProviderType {
-            user_pool_id: self.user_pool_id,
-            provider_name: self.provider_name,
-            provider_type: self.provider_type,
-            provider_details: self.provider_details,
-            attribute_mapping: self.attribute_mapping,
-            idp_identifiers: self.idp_identifiers,
-            last_modified_date: self.last_modified_date,
-            creation_date: self.creation_date,
+            user_pool_id: self.user_pool_id
+            ,
+            provider_name: self.provider_name
+            ,
+            provider_type: self.provider_type
+            ,
+            provider_details: self.provider_details
+            ,
+            attribute_mapping: self.attribute_mapping
+            ,
+            idp_identifiers: self.idp_identifiers
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            creation_date: self.creation_date
+            ,
         }
     }
 }
+

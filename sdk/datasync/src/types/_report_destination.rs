@@ -3,13 +3,13 @@
 /// <p>Specifies where DataSync uploads your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">task report</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportDestination {
+pub struct ReportDestination  {
     /// <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
     pub s3: ::std::option::Option<crate::types::ReportDestinationS3>,
 }
-impl ReportDestination {
+impl  ReportDestination  {
     /// <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
-    pub fn s3(&self) -> ::std::option::Option<&crate::types::ReportDestinationS3> {
+    pub fn s3(&self) -> ::std::option::Option<& crate::types::ReportDestinationS3> {
         self.s3.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ReportDestinationBuilder {
     }
     /// <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
     pub fn set_s3(mut self, input: ::std::option::Option<crate::types::ReportDestinationS3>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>Specifies the Amazon S3 bucket where DataSync uploads your task report.</p>
     pub fn get_s3(&self) -> &::std::option::Option<crate::types::ReportDestinationS3> {
@@ -43,6 +42,10 @@ impl ReportDestinationBuilder {
     }
     /// Consumes the builder and constructs a [`ReportDestination`](crate::types::ReportDestination).
     pub fn build(self) -> crate::types::ReportDestination {
-        crate::types::ReportDestination { s3: self.s3 }
+        crate::types::ReportDestination {
+            s3: self.s3
+            ,
+        }
     }
 }
+

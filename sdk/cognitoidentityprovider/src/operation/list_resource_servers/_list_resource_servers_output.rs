@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListResourceServersOutput {
+pub struct ListResourceServersOutput  {
     /// <p>The resource servers.</p>
-    pub resource_servers: ::std::vec::Vec<crate::types::ResourceServerType>,
+    pub resource_servers: ::std::vec::Vec::<crate::types::ResourceServerType>,
     /// <p>A pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListResourceServersOutput {
+impl  ListResourceServersOutput  {
     /// <p>The resource servers.</p>
-    pub fn resource_servers(&self) -> &[crate::types::ResourceServerType] {
-        use std::ops::Deref;
-        self.resource_servers.deref()
+    pub fn resource_servers(&self) -> & [crate::types::ResourceServerType] {
+        use std::ops::Deref; self.resource_servers.deref()
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListResourceServersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListResourceServersOutput {
     /// Creates a new builder-style object to manufacture [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput).
     pub fn builder() -> crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder {
@@ -36,7 +35,7 @@ impl ListResourceServersOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListResourceServersOutputBuilder {
-    pub(crate) resource_servers: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>>,
+    pub(crate) resource_servers: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerType>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListResourceServersOutputBuilder {
     /// <p>The resource servers.</p>
     pub fn resource_servers(mut self, input: crate::types::ResourceServerType) -> Self {
         let mut v = self.resource_servers.unwrap_or_default();
-        v.push(input);
-        self.resource_servers = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.resource_servers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The resource servers.</p>
-    pub fn set_resource_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>>) -> Self {
-        self.resource_servers = input;
-        self
+    pub fn set_resource_servers(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerType>>) -> Self {
+        self.resource_servers = input; self
     }
     /// <p>The resource servers.</p>
-    pub fn get_resource_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>> {
+    pub fn get_resource_servers(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ResourceServerType>> {
         &self.resource_servers
     }
     /// <p>A pagination token.</p>
@@ -68,38 +66,37 @@ impl ListResourceServersOutputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A pagination token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListResourceServersOutput`](crate::operation::list_resource_servers::ListResourceServersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_servers`](crate::operation::list_resource_servers::builders::ListResourceServersOutputBuilder::resource_servers)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_resource_servers::ListResourceServersOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_resource_servers::ListResourceServersOutput {
-            resource_servers: self.resource_servers.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_servers",
-                    "resource_servers was not specified but it is required when building ListResourceServersOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_resource_servers::ListResourceServersOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_resource_servers::ListResourceServersOutput {
+                resource_servers: self.resource_servers
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_servers", "resource_servers was not specified but it is required when building ListResourceServersOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GcmChannelRequest {
+pub struct GcmChannelRequest  {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
@@ -13,13 +13,13 @@ pub struct GcmChannelRequest {
     /// <p>The contents of the JSON file provided by Google during registration in order to generate an access token for authentication. For more information see <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.</p>
     pub service_json: ::std::option::Option<::std::string::String>,
 }
-impl GcmChannelRequest {
+impl  GcmChannelRequest  {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
-    pub fn api_key(&self) -> ::std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
-    pub fn default_authentication_method(&self) -> ::std::option::Option<&str> {
+    pub fn default_authentication_method(&self) -> ::std::option::Option<& str> {
         self.default_authentication_method.as_deref()
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
@@ -27,7 +27,7 @@ impl GcmChannelRequest {
         self.enabled
     }
     /// <p>The contents of the JSON file provided by Google during registration in order to generate an access token for authentication. For more information see <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.</p>
-    pub fn service_json(&self) -> ::std::option::Option<&str> {
+    pub fn service_json(&self) -> ::std::option::Option<& str> {
         self.service_json.as_deref()
     }
 }
@@ -55,8 +55,7 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
     pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -69,8 +68,7 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
     pub fn set_default_authentication_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_authentication_method = input;
-        self
+        self.default_authentication_method = input; self
     }
     /// <p>The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".</p>
     pub fn get_default_authentication_method(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
@@ -97,8 +94,7 @@ impl GcmChannelRequestBuilder {
     }
     /// <p>The contents of the JSON file provided by Google during registration in order to generate an access token for authentication. For more information see <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.</p>
     pub fn set_service_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_json = input;
-        self
+        self.service_json = input; self
     }
     /// <p>The contents of the JSON file provided by Google during registration in order to generate an access token for authentication. For more information see <a href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.</p>
     pub fn get_service_json(&self) -> &::std::option::Option<::std::string::String> {
@@ -107,10 +103,15 @@ impl GcmChannelRequestBuilder {
     /// Consumes the builder and constructs a [`GcmChannelRequest`](crate::types::GcmChannelRequest).
     pub fn build(self) -> crate::types::GcmChannelRequest {
         crate::types::GcmChannelRequest {
-            api_key: self.api_key,
-            default_authentication_method: self.default_authentication_method,
-            enabled: self.enabled,
-            service_json: self.service_json,
+            api_key: self.api_key
+            ,
+            default_authentication_method: self.default_authentication_method
+            ,
+            enabled: self.enabled
+            ,
+            service_json: self.service_json
+            ,
         }
     }
 }
+

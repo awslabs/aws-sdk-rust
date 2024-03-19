@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAllManagedProductsOutput {
+pub struct DescribeAllManagedProductsOutput  {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups.</p>
-    pub managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub managed_products: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
-impl DescribeAllManagedProductsOutput {
+impl  DescribeAllManagedProductsOutput  {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.managed_products.is_none()`.
-    pub fn managed_products(&self) -> &[crate::types::ManagedProductDescriptor] {
-        self.managed_products.as_deref().unwrap_or_default()
+    pub fn managed_products(&self) -> & [crate::types::ManagedProductDescriptor] {
+        self.managed_products.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAllManagedProductsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAllManagedProductsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
     pub fn builder() -> crate::operation::describe_all_managed_products::builders::DescribeAllManagedProductsOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeAllManagedProductsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAllManagedProductsOutputBuilder {
-    pub(crate) managed_products: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>,
+    pub(crate) managed_products: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedProductDescriptor>>,
     _request_id: Option<String>,
 }
 impl DescribeAllManagedProductsOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeAllManagedProductsOutputBuilder {
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups.</p>
     pub fn managed_products(mut self, input: crate::types::ManagedProductDescriptor) -> Self {
         let mut v = self.managed_products.unwrap_or_default();
-        v.push(input);
-        self.managed_products = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.managed_products = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups.</p>
-    pub fn set_managed_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>>) -> Self {
-        self.managed_products = input;
-        self
+    pub fn set_managed_products(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ManagedProductDescriptor>>) -> Self {
+        self.managed_products = input; self
     }
     /// <p>High-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups.</p>
-    pub fn get_managed_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
+    pub fn get_managed_products(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ManagedProductDescriptor>> {
         &self.managed_products
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAllManagedProductsOutput`](crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput).
     pub fn build(self) -> crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput {
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput {
-            managed_products: self.managed_products,
+            managed_products: self.managed_products
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

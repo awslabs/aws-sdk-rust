@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct GetDigestOutput {
+pub struct GetDigestOutput  {
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
     pub digest: ::aws_smithy_types::Blob,
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub digest_tip_address: ::std::option::Option<crate::types::ValueHolder>,
     _request_id: Option<String>,
 }
-impl GetDigestOutput {
+impl  GetDigestOutput  {
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
-    pub fn digest(&self) -> &::aws_smithy_types::Blob {
+    pub fn digest(&self) -> & ::aws_smithy_types::Blob {
         &self.digest
     }
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    pub fn digest_tip_address(&self) -> ::std::option::Option<&crate::types::ValueHolder> {
+    pub fn digest_tip_address(&self) -> ::std::option::Option<& crate::types::ValueHolder> {
         self.digest_tip_address.as_ref()
     }
 }
-impl ::std::fmt::Debug for GetDigestOutput {
+impl  ::std::fmt::Debug for GetDigestOutput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDigestOutput");
         formatter.field("digest", &self.digest);
@@ -29,10 +29,10 @@ impl ::std::fmt::Debug for GetDigestOutput {
     }
 }
 impl ::aws_types::request_id::RequestId for GetDigestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetDigestOutput {
     /// Creates a new builder-style object to manufacture [`GetDigestOutput`](crate::operation::get_digest::GetDigestOutput).
     pub fn builder() -> crate::operation::get_digest::builders::GetDigestOutputBuilder {
@@ -57,8 +57,7 @@ impl GetDigestOutputBuilder {
     }
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
     pub fn set_digest(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.digest = input;
-        self
+        self.digest = input; self
     }
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
     pub fn get_digest(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -72,36 +71,37 @@ impl GetDigestOutputBuilder {
     }
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub fn set_digest_tip_address(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
-        self.digest_tip_address = input;
-        self
+        self.digest_tip_address = input; self
     }
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub fn get_digest_tip_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
         &self.digest_tip_address
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetDigestOutput`](crate::operation::get_digest::GetDigestOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`digest`](crate::operation::get_digest::builders::GetDigestOutputBuilder::digest)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_digest::GetDigestOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_digest::GetDigestOutput {
-            digest: self.digest.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "digest",
-                    "digest was not specified but it is required when building GetDigestOutput",
-                )
-            })?,
-            digest_tip_address: self.digest_tip_address,
-            _request_id: self._request_id,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_digest::GetDigestOutput {
+                digest: self.digest
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("digest", "digest was not specified but it is required when building GetDigestOutput")
+                    )?
+                ,
+                digest_tip_address: self.digest_tip_address
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for GetDigestOutputBuilder {
@@ -113,3 +113,4 @@ impl ::std::fmt::Debug for GetDigestOutputBuilder {
         formatter.finish()
     }
 }
+

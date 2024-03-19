@@ -3,19 +3,19 @@
 /// <p>The status of <code>OfflineStore</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct OfflineStoreStatus {
+pub struct OfflineStoreStatus  {
     /// <p>An <code>OfflineStore</code> status.</p>
     pub status: ::std::option::Option<crate::types::OfflineStoreStatusValue>,
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
     pub blocked_reason: ::std::option::Option<::std::string::String>,
 }
-impl OfflineStoreStatus {
+impl  OfflineStoreStatus  {
     /// <p>An <code>OfflineStore</code> status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::OfflineStoreStatusValue> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::OfflineStoreStatusValue> {
         self.status.as_ref()
     }
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
-    pub fn blocked_reason(&self) -> ::std::option::Option<&str> {
+    pub fn blocked_reason(&self) -> ::std::option::Option<& str> {
         self.blocked_reason.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl OfflineStoreStatusBuilder {
     }
     /// <p>An <code>OfflineStore</code> status.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>An <code>OfflineStore</code> status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OfflineStoreStatusValue> {
@@ -56,8 +55,7 @@ impl OfflineStoreStatusBuilder {
     }
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
     pub fn set_blocked_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.blocked_reason = input;
-        self
+        self.blocked_reason = input; self
     }
     /// <p>The justification for why the OfflineStoreStatus is Blocked (if applicable).</p>
     pub fn get_blocked_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -66,8 +64,11 @@ impl OfflineStoreStatusBuilder {
     /// Consumes the builder and constructs a [`OfflineStoreStatus`](crate::types::OfflineStoreStatus).
     pub fn build(self) -> crate::types::OfflineStoreStatus {
         crate::types::OfflineStoreStatus {
-            status: self.status,
-            blocked_reason: self.blocked_reason,
+            status: self.status
+            ,
+            blocked_reason: self.blocked_reason
+            ,
         }
     }
 }
+

@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ModifyDbSnapshotOutput {
+pub struct ModifyDbSnapshotOutput  {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     pub db_snapshot: ::std::option::Option<crate::types::DbSnapshot>,
     _request_id: Option<String>,
 }
-impl ModifyDbSnapshotOutput {
+impl  ModifyDbSnapshotOutput  {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn db_snapshot(&self) -> ::std::option::Option<&crate::types::DbSnapshot> {
+    pub fn db_snapshot(&self) -> ::std::option::Option<& crate::types::DbSnapshot> {
         self.db_snapshot.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyDbSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ModifyDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotOutput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput).
     pub fn builder() -> crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotOutputBuilder {
@@ -44,8 +44,7 @@ impl ModifyDbSnapshotOutputBuilder {
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     pub fn set_db_snapshot(mut self, input: ::std::option::Option<crate::types::DbSnapshot>) -> Self {
-        self.db_snapshot = input;
-        self
+        self.db_snapshot = input; self
     }
     /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
@@ -53,19 +52,21 @@ impl ModifyDbSnapshotOutputBuilder {
         &self.db_snapshot
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ModifyDbSnapshotOutput`](crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput).
     pub fn build(self) -> crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput {
         crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput {
-            db_snapshot: self.db_snapshot,
+            db_snapshot: self.db_snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListConnectPeers`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`core_network_id(impl Into<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::set_core_network_id):<br>required: **false**<br><p>The ID of a core network.</p><br>
     ///   - [`connect_attachment_id(impl Into<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::connect_attachment_id) / [`set_connect_attachment_id(Option<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::set_connect_attachment_id):<br>required: **false**<br><p>The ID of the attachment.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
-    /// - On success, responds with [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput) with field(s):
+                            /// - On success, responds with [`ListConnectPeersOutput`](crate::operation::list_connect_peers::ListConnectPeersOutput) with field(s):
     ///   - [`connect_peers(Option<Vec::<ConnectPeerSummary>>)`](crate::operation::list_connect_peers::ListConnectPeersOutput::connect_peers): <p>Describes the Connect peers.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connect_peers::ListConnectPeersOutput::next_token): <p>The token for the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListConnectPeersError>`](crate::operation::list_connect_peers::ListConnectPeersError)
+                            /// - On failure, responds with [`SdkError<ListConnectPeersError>`](crate::operation::list_connect_peers::ListConnectPeersError)
     pub fn list_connect_peers(&self) -> crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder {
-        crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_connect_peers::builders::ListConnectPeersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

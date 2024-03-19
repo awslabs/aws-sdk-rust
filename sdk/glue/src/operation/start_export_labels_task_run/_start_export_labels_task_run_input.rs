@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExportLabelsTaskRunInput {
+pub struct StartExportLabelsTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     pub transform_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub output_s3_path: ::std::option::Option<::std::string::String>,
 }
-impl StartExportLabelsTaskRunInput {
+impl  StartExportLabelsTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> ::std::option::Option<&str> {
+    pub fn transform_id(&self) -> ::std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn output_s3_path(&self) -> ::std::option::Option<&str> {
+    pub fn output_s3_path(&self) -> ::std::option::Option<& str> {
         self.output_s3_path.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl StartExportLabelsTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl StartExportLabelsTaskRunInputBuilder {
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub fn set_output_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.output_s3_path = input;
-        self
+        self.output_s3_path = input; self
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
     pub fn get_output_s3_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_s3_path
     }
     /// Consumes the builder and constructs a [`StartExportLabelsTaskRunInput`](crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput {
-            transform_id: self.transform_id,
-            output_s3_path: self.output_s3_path,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput {
+                transform_id: self.transform_id
+                ,
+                output_s3_path: self.output_s3_path
+                ,
+            }
+        )
     }
 }
+

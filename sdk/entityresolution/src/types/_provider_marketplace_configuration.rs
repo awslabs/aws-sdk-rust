@@ -3,7 +3,7 @@
 /// <p>The identifiers of the provider service, from Data Exchange.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ProviderMarketplaceConfiguration {
+pub struct ProviderMarketplaceConfiguration  {
     /// <p>The dataset ID on Data Exchange.</p>
     pub data_set_id: ::std::string::String,
     /// <p>The revision ID on Data Exchange.</p>
@@ -13,26 +13,22 @@ pub struct ProviderMarketplaceConfiguration {
     /// <p>The listing ID on Data Exchange.</p>
     pub listing_id: ::std::string::String,
 }
-impl ProviderMarketplaceConfiguration {
+impl  ProviderMarketplaceConfiguration  {
     /// <p>The dataset ID on Data Exchange.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> & str {
+        use std::ops::Deref; self.data_set_id.deref()
     }
     /// <p>The revision ID on Data Exchange.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> & str {
+        use std::ops::Deref; self.revision_id.deref()
     }
     /// <p>The asset ID on Data Exchange.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> & str {
+        use std::ops::Deref; self.asset_id.deref()
     }
     /// <p>The listing ID on Data Exchange.</p>
-    pub fn listing_id(&self) -> &str {
-        use std::ops::Deref;
-        self.listing_id.deref()
+    pub fn listing_id(&self) -> & str {
+        use std::ops::Deref; self.listing_id.deref()
     }
 }
 impl ProviderMarketplaceConfiguration {
@@ -60,8 +56,7 @@ impl ProviderMarketplaceConfigurationBuilder {
     }
     /// <p>The dataset ID on Data Exchange.</p>
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The dataset ID on Data Exchange.</p>
     pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +70,7 @@ impl ProviderMarketplaceConfigurationBuilder {
     }
     /// <p>The revision ID on Data Exchange.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The revision ID on Data Exchange.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -90,8 +84,7 @@ impl ProviderMarketplaceConfigurationBuilder {
     }
     /// <p>The asset ID on Data Exchange.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The asset ID on Data Exchange.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +98,7 @@ impl ProviderMarketplaceConfigurationBuilder {
     }
     /// <p>The listing ID on Data Exchange.</p>
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.listing_id = input;
-        self
+        self.listing_id = input; self
     }
     /// <p>The listing ID on Data Exchange.</p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,31 +111,30 @@ impl ProviderMarketplaceConfigurationBuilder {
     /// - [`asset_id`](crate::types::builders::ProviderMarketplaceConfigurationBuilder::asset_id)
     /// - [`listing_id`](crate::types::builders::ProviderMarketplaceConfigurationBuilder::listing_id)
     pub fn build(self) -> ::std::result::Result<crate::types::ProviderMarketplaceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ProviderMarketplaceConfiguration {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building ProviderMarketplaceConfiguration",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building ProviderMarketplaceConfiguration",
-                )
-            })?,
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building ProviderMarketplaceConfiguration",
-                )
-            })?,
-            listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "listing_id",
-                    "listing_id was not specified but it is required when building ProviderMarketplaceConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ProviderMarketplaceConfiguration {
+                data_set_id: self.data_set_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ProviderMarketplaceConfiguration")
+                    )?
+                ,
+                revision_id: self.revision_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ProviderMarketplaceConfiguration")
+                    )?
+                ,
+                asset_id: self.asset_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("asset_id", "asset_id was not specified but it is required when building ProviderMarketplaceConfiguration")
+                    )?
+                ,
+                listing_id: self.listing_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("listing_id", "listing_id was not specified but it is required when building ProviderMarketplaceConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,19 +3,19 @@
 /// <p>Represents a single entry in a list of DataSync task executions that's returned with the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TaskExecutionListEntry {
+pub struct TaskExecutionListEntry  {
     /// <p>The Amazon Resource Name (ARN) of a task execution.</p>
     pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub status: ::std::option::Option<crate::types::TaskExecutionStatus>,
 }
-impl TaskExecutionListEntry {
+impl  TaskExecutionListEntry  {
     /// <p>The Amazon Resource Name (ARN) of a task execution.</p>
-    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
     /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl TaskExecutionListEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a task execution.</p>
     pub fn set_task_execution_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task_execution_arn = input;
-        self
+        self.task_execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of a task execution.</p>
     pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl TaskExecutionListEntryBuilder {
     }
     /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-execution-statuses">Task execution statuses</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
@@ -65,8 +63,11 @@ impl TaskExecutionListEntryBuilder {
     /// Consumes the builder and constructs a [`TaskExecutionListEntry`](crate::types::TaskExecutionListEntry).
     pub fn build(self) -> crate::types::TaskExecutionListEntry {
         crate::types::TaskExecutionListEntry {
-            task_execution_arn: self.task_execution_arn,
-            status: self.status,
+            task_execution_arn: self.task_execution_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

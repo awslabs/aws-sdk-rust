@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListInputSecurityGroups`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::set_max_results):<br>required: **false**<br>Placeholder documentation for MaxResults<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::set_next_token):<br>required: **false**<br>Placeholder documentation for __string<br>
-    /// - On success, responds with [`ListInputSecurityGroupsOutput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListInputSecurityGroupsOutput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput) with field(s):
     ///   - [`input_security_groups(Option<Vec::<InputSecurityGroup>>)`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput::input_security_groups): List of input security groups
     ///   - [`next_token(Option<String>)`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput::next_token): Placeholder documentation for __string
-    /// - On failure, responds with [`SdkError<ListInputSecurityGroupsError>`](crate::operation::list_input_security_groups::ListInputSecurityGroupsError)
+                            /// - On failure, responds with [`SdkError<ListInputSecurityGroupsError>`](crate::operation::list_input_security_groups::ListInputSecurityGroupsError)
     pub fn list_input_security_groups(&self) -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder {
-        crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

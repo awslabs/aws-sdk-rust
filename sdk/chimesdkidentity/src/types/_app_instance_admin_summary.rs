@@ -3,13 +3,13 @@
 /// <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AppInstanceAdminSummary {
+pub struct AppInstanceAdminSummary  {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub admin: ::std::option::Option<crate::types::Identity>,
 }
-impl AppInstanceAdminSummary {
+impl  AppInstanceAdminSummary  {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
-    pub fn admin(&self) -> ::std::option::Option<&crate::types::Identity> {
+    pub fn admin(&self) -> ::std::option::Option<& crate::types::Identity> {
         self.admin.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl AppInstanceAdminSummaryBuilder {
     }
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub fn set_admin(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
-        self.admin = input;
-        self
+        self.admin = input; self
     }
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub fn get_admin(&self) -> &::std::option::Option<crate::types::Identity> {
@@ -43,6 +42,10 @@ impl AppInstanceAdminSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`AppInstanceAdminSummary`](crate::types::AppInstanceAdminSummary).
     pub fn build(self) -> crate::types::AppInstanceAdminSummary {
-        crate::types::AppInstanceAdminSummary { admin: self.admin }
+        crate::types::AppInstanceAdminSummary {
+            admin: self.admin
+            ,
+        }
     }
 }
+

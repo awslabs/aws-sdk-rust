@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListEventStreams`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_name(impl Into<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::set_domain_name):<br>required: **true**<br><p>The unique name of the domain.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::set_next_token):<br>required: **false**<br><p>Identifies the next page of results to return.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of objects returned per page.</p><br>
-    /// - On success, responds with [`ListEventStreamsOutput`](crate::operation::list_event_streams::ListEventStreamsOutput) with field(s):
+                            /// - On success, responds with [`ListEventStreamsOutput`](crate::operation::list_event_streams::ListEventStreamsOutput) with field(s):
     ///   - [`items(Option<Vec::<EventStreamSummary>>)`](crate::operation::list_event_streams::ListEventStreamsOutput::items): <p>Contains summary information about an EventStream.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_event_streams::ListEventStreamsOutput::next_token): <p>Identifies the next page of results to return.</p>
-    /// - On failure, responds with [`SdkError<ListEventStreamsError>`](crate::operation::list_event_streams::ListEventStreamsError)
+                            /// - On failure, responds with [`SdkError<ListEventStreamsError>`](crate::operation::list_event_streams::ListEventStreamsError)
     pub fn list_event_streams(&self) -> crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder {
-        crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_event_streams::builders::ListEventStreamsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

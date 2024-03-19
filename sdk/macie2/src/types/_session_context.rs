@@ -3,19 +3,19 @@
 /// <p>Provides information about a session that was created for an entity that performed an action by using temporary security credentials.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SessionContext {
+pub struct SessionContext  {
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub attributes: ::std::option::Option<crate::types::SessionContextAttributes>,
     /// <p>The source and type of credentials that were issued to the entity.</p>
     pub session_issuer: ::std::option::Option<crate::types::SessionIssuer>,
 }
-impl SessionContext {
+impl  SessionContext  {
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    pub fn attributes(&self) -> ::std::option::Option<&crate::types::SessionContextAttributes> {
+    pub fn attributes(&self) -> ::std::option::Option<& crate::types::SessionContextAttributes> {
         self.attributes.as_ref()
     }
     /// <p>The source and type of credentials that were issued to the entity.</p>
-    pub fn session_issuer(&self) -> ::std::option::Option<&crate::types::SessionIssuer> {
+    pub fn session_issuer(&self) -> ::std::option::Option<& crate::types::SessionIssuer> {
         self.session_issuer.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SessionContextBuilder {
     }
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::SessionContextAttributes>) -> Self {
-        self.attributes = input;
-        self
+        self.attributes = input; self
     }
     /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::SessionContextAttributes> {
@@ -55,8 +54,7 @@ impl SessionContextBuilder {
     }
     /// <p>The source and type of credentials that were issued to the entity.</p>
     pub fn set_session_issuer(mut self, input: ::std::option::Option<crate::types::SessionIssuer>) -> Self {
-        self.session_issuer = input;
-        self
+        self.session_issuer = input; self
     }
     /// <p>The source and type of credentials that were issued to the entity.</p>
     pub fn get_session_issuer(&self) -> &::std::option::Option<crate::types::SessionIssuer> {
@@ -65,8 +63,11 @@ impl SessionContextBuilder {
     /// Consumes the builder and constructs a [`SessionContext`](crate::types::SessionContext).
     pub fn build(self) -> crate::types::SessionContext {
         crate::types::SessionContext {
-            attributes: self.attributes,
-            session_issuer: self.session_issuer,
+            attributes: self.attributes
+            ,
+            session_issuer: self.session_issuer
+            ,
         }
     }
 }
+

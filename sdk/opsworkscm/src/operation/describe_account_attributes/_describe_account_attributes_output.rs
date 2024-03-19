@@ -2,24 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>The attributes that are currently set for the account.</p>
-    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttribute>>,
     _request_id: Option<String>,
 }
-impl DescribeAccountAttributesOutput {
+impl  DescribeAccountAttributesOutput  {
     /// <p>The attributes that are currently set for the account.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes.is_none()`.
-    pub fn attributes(&self) -> &[crate::types::AccountAttribute] {
-        self.attributes.as_deref().unwrap_or_default()
+    pub fn attributes(&self) -> & [crate::types::AccountAttribute] {
+        self.attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAccountAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn builder() -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesOutputBuilder {
@@ -31,7 +32,7 @@ impl DescribeAccountAttributesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutputBuilder {
-    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttribute>>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutputBuilder {
@@ -42,33 +43,34 @@ impl DescribeAccountAttributesOutputBuilder {
     /// <p>The attributes that are currently set for the account.</p>
     pub fn attributes(mut self, input: crate::types::AccountAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attributes that are currently set for the account.</p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::AccountAttribute>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The attributes that are currently set for the account.</p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttribute>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::AccountAttribute>> {
         &self.attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
     pub fn build(self) -> crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
         crate::operation::describe_account_attributes::DescribeAccountAttributesOutput {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

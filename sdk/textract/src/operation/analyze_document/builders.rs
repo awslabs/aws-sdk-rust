@@ -5,23 +5,20 @@ pub use crate::operation::analyze_document::_analyze_document_input::AnalyzeDocu
 
 impl AnalyzeDocumentInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.analyze_document();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::analyze_document::AnalyzeDocumentOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::analyze_document::AnalyzeDocumentError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.analyze_document();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `AnalyzeDocument`.
-///
+/// 
 /// <p>Analyzes an input document for relationships between detected items.</p>
 /// <p>The types of information returned are as follows:</p>
 /// <ul>
@@ -46,33 +43,32 @@ impl AnalyzeDocumentInputBuilder {
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder,
+                    inner: crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::analyze_document::AnalyzeDocumentOutput,
-        crate::operation::analyze_document::AnalyzeDocumentError,
-    > for AnalyzeDocumentFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::analyze_document::AnalyzeDocumentOutput,
-            crate::operation::analyze_document::AnalyzeDocumentError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::analyze_document::AnalyzeDocumentOutput,
+                    crate::operation::analyze_document::AnalyzeDocumentError,
+                > for AnalyzeDocumentFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::analyze_document::AnalyzeDocumentOutput,
+                        crate::operation::analyze_document::AnalyzeDocumentError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl AnalyzeDocumentFluentBuilder {
     /// Creates a new `AnalyzeDocument`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -81,53 +77,44 @@ impl AnalyzeDocumentFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::analyze_document::AnalyzeDocumentOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::analyze_document::AnalyzeDocumentError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::analyze_document::AnalyzeDocument::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::analyze_document::AnalyzeDocument::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::analyze_document::AnalyzeDocumentOutput,
-        crate::operation::analyze_document::AnalyzeDocumentError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::analyze_document::AnalyzeDocument::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::analyze_document::AnalyzeDocument::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::analyze_document::AnalyzeDocumentOutput, crate::operation::analyze_document::AnalyzeDocumentError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field.</p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
@@ -155,12 +142,12 @@ impl AnalyzeDocumentFluentBuilder {
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>) -> Self {
+    pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>>) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
     }
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
-    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
+    pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::FeatureType>> {
         self.inner.get_feature_types()
     }
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
@@ -206,3 +193,4 @@ impl AnalyzeDocumentFluentBuilder {
         self.inner.get_adapters_config()
     }
 }
+

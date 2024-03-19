@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TerminateProvisionedProductOutput {
+pub struct TerminateProvisionedProductOutput  {
     /// <p>Information about the result of this request.</p>
     pub record_detail: ::std::option::Option<crate::types::RecordDetail>,
     _request_id: Option<String>,
 }
-impl TerminateProvisionedProductOutput {
+impl  TerminateProvisionedProductOutput  {
     /// <p>Information about the result of this request.</p>
-    pub fn record_detail(&self) -> ::std::option::Option<&crate::types::RecordDetail> {
+    pub fn record_detail(&self) -> ::std::option::Option<& crate::types::RecordDetail> {
         self.record_detail.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for TerminateProvisionedProductOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl TerminateProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`TerminateProvisionedProductOutput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput).
     pub fn builder() -> crate::operation::terminate_provisioned_product::builders::TerminateProvisionedProductOutputBuilder {
@@ -40,27 +40,28 @@ impl TerminateProvisionedProductOutputBuilder {
     }
     /// <p>Information about the result of this request.</p>
     pub fn set_record_detail(mut self, input: ::std::option::Option<crate::types::RecordDetail>) -> Self {
-        self.record_detail = input;
-        self
+        self.record_detail = input; self
     }
     /// <p>Information about the result of this request.</p>
     pub fn get_record_detail(&self) -> &::std::option::Option<crate::types::RecordDetail> {
         &self.record_detail
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`TerminateProvisionedProductOutput`](crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput).
     pub fn build(self) -> crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput {
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput {
-            record_detail: self.record_detail,
+            record_detail: self.record_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,7 +4,7 @@
 /// <p>If you used the <code>registry/repository[:tag]</code> form to specify the image path of the primary container when you created the model hosted in this <code>ProductionVariant</code>, the path resolves to a path of the form <code>registry/repository[@digest]</code>. A digest is a hash value that identifies a specific version of an image. For information about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an Image</a> in the <i>Amazon ECR User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeployedImage {
+pub struct DeployedImage  {
     /// <p>The image path you specified when you created the model.</p>
     pub specified_image: ::std::option::Option<::std::string::String>,
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
@@ -12,17 +12,17 @@ pub struct DeployedImage {
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code></p>
     pub resolution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl DeployedImage {
+impl  DeployedImage  {
     /// <p>The image path you specified when you created the model.</p>
-    pub fn specified_image(&self) -> ::std::option::Option<&str> {
+    pub fn specified_image(&self) -> ::std::option::Option<& str> {
         self.specified_image.as_deref()
     }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
-    pub fn resolved_image(&self) -> ::std::option::Option<&str> {
+    pub fn resolved_image(&self) -> ::std::option::Option<& str> {
         self.resolved_image.as_deref()
     }
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code></p>
-    pub fn resolution_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn resolution_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.resolution_time.as_ref()
     }
 }
@@ -49,8 +49,7 @@ impl DeployedImageBuilder {
     }
     /// <p>The image path you specified when you created the model.</p>
     pub fn set_specified_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.specified_image = input;
-        self
+        self.specified_image = input; self
     }
     /// <p>The image path you specified when you created the model.</p>
     pub fn get_specified_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl DeployedImageBuilder {
     }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
     pub fn set_resolved_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resolved_image = input;
-        self
+        self.resolved_image = input; self
     }
     /// <p>The specific digest path of the image hosted in this <code>ProductionVariant</code>.</p>
     pub fn get_resolved_image(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl DeployedImageBuilder {
     }
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code></p>
     pub fn set_resolution_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.resolution_time = input;
-        self
+        self.resolution_time = input; self
     }
     /// <p>The date and time when the image path for the model resolved to the <code>ResolvedImage</code></p>
     pub fn get_resolution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -87,9 +84,13 @@ impl DeployedImageBuilder {
     /// Consumes the builder and constructs a [`DeployedImage`](crate::types::DeployedImage).
     pub fn build(self) -> crate::types::DeployedImage {
         crate::types::DeployedImage {
-            specified_image: self.specified_image,
-            resolved_image: self.resolved_image,
-            resolution_time: self.resolution_time,
+            specified_image: self.specified_image
+            ,
+            resolved_image: self.resolved_image
+            ,
+            resolution_time: self.resolution_time
+            ,
         }
     }
 }
+

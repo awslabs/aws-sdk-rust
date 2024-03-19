@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information that's required to connect to a database.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ConnectionConfiguration {
+pub struct ConnectionConfiguration  {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
     pub database_host: ::std::string::String,
     /// <p>The port that the database uses for connections.</p>
@@ -15,30 +15,26 @@ pub struct ConnectionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub secret_arn: ::std::string::String,
 }
-impl ConnectionConfiguration {
+impl  ConnectionConfiguration  {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
-    pub fn database_host(&self) -> &str {
-        use std::ops::Deref;
-        self.database_host.deref()
+    pub fn database_host(&self) -> & str {
+        use std::ops::Deref; self.database_host.deref()
     }
     /// <p>The port that the database uses for connections.</p>
     pub fn database_port(&self) -> i32 {
         self.database_port
     }
     /// <p>The name of the database containing the document data.</p>
-    pub fn database_name(&self) -> &str {
-        use std::ops::Deref;
-        self.database_name.deref()
+    pub fn database_name(&self) -> & str {
+        use std::ops::Deref; self.database_name.deref()
     }
     /// <p>The name of the table that contains the document data.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> & str {
+        use std::ops::Deref; self.secret_arn.deref()
     }
 }
 impl ConnectionConfiguration {
@@ -67,8 +63,7 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
     pub fn set_database_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_host = input;
-        self
+        self.database_host = input; self
     }
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
     pub fn get_database_host(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The port that the database uses for connections.</p>
     pub fn set_database_port(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.database_port = input;
-        self
+        self.database_port = input; self
     }
     /// <p>The port that the database uses for connections.</p>
     pub fn get_database_port(&self) -> &::std::option::Option<i32> {
@@ -97,8 +91,7 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The name of the database containing the document data.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database containing the document data.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The name of the table that contains the document data.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table that contains the document data.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +119,7 @@ impl ConnectionConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,37 +133,35 @@ impl ConnectionConfigurationBuilder {
     /// - [`table_name`](crate::types::builders::ConnectionConfigurationBuilder::table_name)
     /// - [`secret_arn`](crate::types::builders::ConnectionConfigurationBuilder::secret_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ConnectionConfiguration {
-            database_host: self.database_host.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_host",
-                    "database_host was not specified but it is required when building ConnectionConfiguration",
-                )
-            })?,
-            database_port: self.database_port.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_port",
-                    "database_port was not specified but it is required when building ConnectionConfiguration",
-                )
-            })?,
-            database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "database_name",
-                    "database_name was not specified but it is required when building ConnectionConfiguration",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building ConnectionConfiguration",
-                )
-            })?,
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building ConnectionConfiguration",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ConnectionConfiguration {
+                database_host: self.database_host
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_host", "database_host was not specified but it is required when building ConnectionConfiguration")
+                    )?
+                ,
+                database_port: self.database_port
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_port", "database_port was not specified but it is required when building ConnectionConfiguration")
+                    )?
+                ,
+                database_name: self.database_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("database_name", "database_name was not specified but it is required when building ConnectionConfiguration")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building ConnectionConfiguration")
+                    )?
+                ,
+                secret_arn: self.secret_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_arn", "secret_arn was not specified but it is required when building ConnectionConfiguration")
+                    )?
+                ,
+            }
+        )
     }
 }
+

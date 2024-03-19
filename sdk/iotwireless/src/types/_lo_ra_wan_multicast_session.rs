@@ -3,7 +3,7 @@
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LoRaWanMulticastSession {
+pub struct LoRaWanMulticastSession  {
     /// <p>Downlink data rate.</p>
     pub dl_dr: ::std::option::Option<i32>,
     /// <p>Downlink frequency.</p>
@@ -15,7 +15,7 @@ pub struct LoRaWanMulticastSession {
     /// <p>The PingSlotPeriod value.</p>
     pub ping_slot_period: ::std::option::Option<i32>,
 }
-impl LoRaWanMulticastSession {
+impl  LoRaWanMulticastSession  {
     /// <p>Downlink data rate.</p>
     pub fn dl_dr(&self) -> ::std::option::Option<i32> {
         self.dl_dr
@@ -25,7 +25,7 @@ impl LoRaWanMulticastSession {
         self.dl_freq
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn session_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn session_start_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.session_start_time.as_ref()
     }
     /// <p>How long before a multicast group session is to timeout.</p>
@@ -62,8 +62,7 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>Downlink data rate.</p>
     pub fn set_dl_dr(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_dr = input;
-        self
+        self.dl_dr = input; self
     }
     /// <p>Downlink data rate.</p>
     pub fn get_dl_dr(&self) -> &::std::option::Option<i32> {
@@ -76,8 +75,7 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>Downlink frequency.</p>
     pub fn set_dl_freq(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.dl_freq = input;
-        self
+        self.dl_freq = input; self
     }
     /// <p>Downlink frequency.</p>
     pub fn get_dl_freq(&self) -> &::std::option::Option<i32> {
@@ -90,8 +88,7 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
     pub fn set_session_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.session_start_time = input;
-        self
+        self.session_start_time = input; self
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
     pub fn get_session_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -104,8 +101,7 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.session_timeout = input;
-        self
+        self.session_timeout = input; self
     }
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn get_session_timeout(&self) -> &::std::option::Option<i32> {
@@ -118,8 +114,7 @@ impl LoRaWanMulticastSessionBuilder {
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn set_ping_slot_period(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.ping_slot_period = input;
-        self
+        self.ping_slot_period = input; self
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn get_ping_slot_period(&self) -> &::std::option::Option<i32> {
@@ -128,11 +123,17 @@ impl LoRaWanMulticastSessionBuilder {
     /// Consumes the builder and constructs a [`LoRaWanMulticastSession`](crate::types::LoRaWanMulticastSession).
     pub fn build(self) -> crate::types::LoRaWanMulticastSession {
         crate::types::LoRaWanMulticastSession {
-            dl_dr: self.dl_dr,
-            dl_freq: self.dl_freq,
-            session_start_time: self.session_start_time,
-            session_timeout: self.session_timeout,
-            ping_slot_period: self.ping_slot_period,
+            dl_dr: self.dl_dr
+            ,
+            dl_freq: self.dl_freq
+            ,
+            session_start_time: self.session_start_time
+            ,
+            session_timeout: self.session_timeout
+            ,
+            ping_slot_period: self.ping_slot_period
+            ,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>The input for the <code>DeleteDeliveryChannel</code> action. The action accepts the following data, in JSON format.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteDeliveryChannelInput {
+pub struct DeleteDeliveryChannelInput  {
     /// <p>The name of the delivery channel to delete.</p>
     pub delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
-impl DeleteDeliveryChannelInput {
+impl  DeleteDeliveryChannelInput  {
     /// <p>The name of the delivery channel to delete.</p>
-    pub fn delivery_channel_name(&self) -> ::std::option::Option<&str> {
+    pub fn delivery_channel_name(&self) -> ::std::option::Option<& str> {
         self.delivery_channel_name.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl DeleteDeliveryChannelInputBuilder {
     }
     /// <p>The name of the delivery channel to delete.</p>
     pub fn set_delivery_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.delivery_channel_name = input;
-        self
+        self.delivery_channel_name = input; self
     }
     /// <p>The name of the delivery channel to delete.</p>
     pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_channel_name
     }
     /// Consumes the builder and constructs a [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput {
-            delivery_channel_name: self.delivery_channel_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput {
+                delivery_channel_name: self.delivery_channel_name
+                ,
+            }
+        )
     }
 }
+

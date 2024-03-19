@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRuleGroupMetadataInput {
+pub struct DescribeRuleGroupMetadataInput  {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub rule_group_name: ::std::option::Option<::std::string::String>,
@@ -14,21 +14,21 @@ pub struct DescribeRuleGroupMetadataInput {
     /// </note>
     pub r#type: ::std::option::Option<crate::types::RuleGroupType>,
 }
-impl DescribeRuleGroupMetadataInput {
+impl  DescribeRuleGroupMetadataInput  {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_name(&self) -> ::std::option::Option<& str> {
         self.rule_group_name.as_deref()
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
-    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<& str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RuleGroupType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
@@ -57,8 +57,7 @@ impl DescribeRuleGroupMetadataInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_name = input;
-        self
+        self.rule_group_name = input; self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -74,8 +73,7 @@ impl DescribeRuleGroupMetadataInputBuilder {
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.rule_group_arn = input;
-        self
+        self.rule_group_arn = input; self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
@@ -93,8 +91,7 @@ impl DescribeRuleGroupMetadataInputBuilder {
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
@@ -103,16 +100,17 @@ impl DescribeRuleGroupMetadataInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataInput`](crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput {
-            rule_group_name: self.rule_group_name,
-            rule_group_arn: self.rule_group_arn,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput {
+                rule_group_name: self.rule_group_name
+                ,
+                rule_group_arn: self.rule_group_arn
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

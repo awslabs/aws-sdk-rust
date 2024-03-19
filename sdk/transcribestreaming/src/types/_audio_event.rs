@@ -4,13 +4,13 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AudioEvent {
+pub struct AudioEvent  {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub audio_chunk: ::std::option::Option<::aws_smithy_types::Blob>,
 }
-impl AudioEvent {
+impl  AudioEvent  {
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
-    pub fn audio_chunk(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+    pub fn audio_chunk(&self) -> ::std::option::Option<& ::aws_smithy_types::Blob> {
         self.audio_chunk.as_ref()
     }
 }
@@ -35,8 +35,7 @@ impl AudioEventBuilder {
     }
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub fn set_audio_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
-        self.audio_chunk = input;
-        self
+        self.audio_chunk = input; self
     }
     /// <p>An audio blob that contains the next part of the audio that you want to transcribe. The maximum audio chunk size is 32 KB.</p>
     pub fn get_audio_chunk(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
@@ -45,7 +44,9 @@ impl AudioEventBuilder {
     /// Consumes the builder and constructs a [`AudioEvent`](crate::types::AudioEvent).
     pub fn build(self) -> crate::types::AudioEvent {
         crate::types::AudioEvent {
-            audio_chunk: self.audio_chunk,
+            audio_chunk: self.audio_chunk
+            ,
         }
     }
 }
+

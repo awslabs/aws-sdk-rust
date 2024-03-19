@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListTemplates`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`domain_id(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return per page.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p><br>
     ///   - [`status(TemplateStatus)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::status) / [`set_status(Option<Vec::<TemplateStatus>>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_status):<br>required: **false**<br><p>A list of status values to filter on.</p><br>
-    /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
+                            /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`templates(Vec::<TemplateSummary>)`](crate::operation::list_templates::ListTemplatesOutput::templates): <p>List of template summary objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
+                            /// - On failure, responds with [`SdkError<ListTemplatesError>`](crate::operation::list_templates::ListTemplatesError)
     pub fn list_templates(&self) -> crate::operation::list_templates::builders::ListTemplatesFluentBuilder {
-        crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_templates::builders::ListTemplatesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

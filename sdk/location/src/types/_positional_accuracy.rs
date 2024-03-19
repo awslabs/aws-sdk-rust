@@ -3,11 +3,11 @@
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PositionalAccuracy {
+pub struct PositionalAccuracy  {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub horizontal: f64,
 }
-impl PositionalAccuracy {
+impl  PositionalAccuracy  {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn horizontal(&self) -> f64 {
         self.horizontal
@@ -35,8 +35,7 @@ impl PositionalAccuracyBuilder {
     }
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn set_horizontal(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.horizontal = input;
-        self
+        self.horizontal = input; self
     }
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn get_horizontal(&self) -> &::std::option::Option<f64> {
@@ -46,13 +45,15 @@ impl PositionalAccuracyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`horizontal`](crate::types::builders::PositionalAccuracyBuilder::horizontal)
     pub fn build(self) -> ::std::result::Result<crate::types::PositionalAccuracy, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PositionalAccuracy {
-            horizontal: self.horizontal.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "horizontal",
-                    "horizontal was not specified but it is required when building PositionalAccuracy",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PositionalAccuracy {
+                horizontal: self.horizontal
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("horizontal", "horizontal was not specified but it is required when building PositionalAccuracy")
+                    )?
+                ,
+            }
+        )
     }
 }
+

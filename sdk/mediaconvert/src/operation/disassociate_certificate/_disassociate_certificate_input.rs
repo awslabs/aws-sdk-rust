@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateCertificateInput {
+pub struct DisassociateCertificateInput  {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     pub arn: ::std::option::Option<::std::string::String>,
 }
-impl DisassociateCertificateInput {
+impl  DisassociateCertificateInput  {
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -34,20 +34,20 @@ impl DisassociateCertificateInputBuilder {
     }
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DisassociateCertificateInput`](crate::operation::disassociate_certificate::DisassociateCertificateInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::disassociate_certificate::DisassociateCertificateInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::disassociate_certificate::DisassociateCertificateInput { arn: self.arn })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_certificate::DisassociateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_certificate::DisassociateCertificateInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

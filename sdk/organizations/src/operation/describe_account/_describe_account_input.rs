@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeAccountInput {
+pub struct DescribeAccountInput  {
     /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
-impl DescribeAccountInput {
+impl  DescribeAccountInput  {
     /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(&self) -> ::std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -38,8 +38,7 @@ impl DescribeAccountInputBuilder {
     /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The unique identifier (ID) of the Amazon Web Services account that you want information about. You can get the ID from the <code>ListAccounts</code> or <code>ListAccountsForParent</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
@@ -47,9 +46,13 @@ impl DescribeAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_account::DescribeAccountInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_account::DescribeAccountInput { account_id: self.account_id })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_account::DescribeAccountInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_account::DescribeAccountInput {
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

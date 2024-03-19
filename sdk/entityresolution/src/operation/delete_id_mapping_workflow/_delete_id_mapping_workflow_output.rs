@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteIdMappingWorkflowOutput {
+pub struct DeleteIdMappingWorkflowOutput  {
     /// <p>A successful operation message.</p>
     pub message: ::std::string::String,
     _request_id: Option<String>,
 }
-impl DeleteIdMappingWorkflowOutput {
+impl  DeleteIdMappingWorkflowOutput  {
     /// <p>A successful operation message.</p>
-    pub fn message(&self) -> &str {
-        use std::ops::Deref;
-        self.message.deref()
+    pub fn message(&self) -> & str {
+        use std::ops::Deref; self.message.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteIdMappingWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteIdMappingWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIdMappingWorkflowOutput`](crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput).
     pub fn builder() -> crate::operation::delete_id_mapping_workflow::builders::DeleteIdMappingWorkflowOutputBuilder {
@@ -42,39 +41,35 @@ impl DeleteIdMappingWorkflowOutputBuilder {
     }
     /// <p>A successful operation message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>A successful operation message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteIdMappingWorkflowOutput`](crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::operation::delete_id_mapping_workflow::builders::DeleteIdMappingWorkflowOutputBuilder::message)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput {
-            message: self.message.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message",
-                    "message was not specified but it is required when building DeleteIdMappingWorkflowOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowOutput {
+                message: self.message
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message", "message was not specified but it is required when building DeleteIdMappingWorkflowOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

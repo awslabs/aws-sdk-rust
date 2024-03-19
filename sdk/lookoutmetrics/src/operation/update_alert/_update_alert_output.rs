@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateAlertOutput {
+pub struct UpdateAlertOutput  {
     /// <p>The ARN of the updated alert.</p>
     pub alert_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl UpdateAlertOutput {
+impl  UpdateAlertOutput  {
     /// <p>The ARN of the updated alert.</p>
-    pub fn alert_arn(&self) -> ::std::option::Option<&str> {
+    pub fn alert_arn(&self) -> ::std::option::Option<& str> {
         self.alert_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateAlertOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateAlertOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::operation::update_alert::UpdateAlertOutput).
     pub fn builder() -> crate::operation::update_alert::builders::UpdateAlertOutputBuilder {
@@ -40,27 +40,28 @@ impl UpdateAlertOutputBuilder {
     }
     /// <p>The ARN of the updated alert.</p>
     pub fn set_alert_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.alert_arn = input;
-        self
+        self.alert_arn = input; self
     }
     /// <p>The ARN of the updated alert.</p>
     pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.alert_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateAlertOutput`](crate::operation::update_alert::UpdateAlertOutput).
     pub fn build(self) -> crate::operation::update_alert::UpdateAlertOutput {
         crate::operation::update_alert::UpdateAlertOutput {
-            alert_arn: self.alert_arn,
+            alert_arn: self.alert_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

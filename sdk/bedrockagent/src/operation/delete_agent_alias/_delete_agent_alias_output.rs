@@ -3,7 +3,7 @@
 /// Delete Agent Alias Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteAgentAliasOutput {
+pub struct DeleteAgentAliasOutput  {
     /// Identifier for a resource.
     pub agent_id: ::std::string::String,
     /// Id for an Agent Alias generated at the server side.
@@ -12,27 +12,25 @@ pub struct DeleteAgentAliasOutput {
     pub agent_alias_status: crate::types::AgentAliasStatus,
     _request_id: Option<String>,
 }
-impl DeleteAgentAliasOutput {
+impl  DeleteAgentAliasOutput  {
     /// Identifier for a resource.
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> & str {
+        use std::ops::Deref; self.agent_id.deref()
     }
     /// Id for an Agent Alias generated at the server side.
-    pub fn agent_alias_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_alias_id.deref()
+    pub fn agent_alias_id(&self) -> & str {
+        use std::ops::Deref; self.agent_alias_id.deref()
     }
     /// The statuses an Agent Alias can be in.
-    pub fn agent_alias_status(&self) -> &crate::types::AgentAliasStatus {
+    pub fn agent_alias_status(&self) -> & crate::types::AgentAliasStatus {
         &self.agent_alias_status
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAgentAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeleteAgentAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAgentAliasOutput`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput).
     pub fn builder() -> crate::operation::delete_agent_alias::builders::DeleteAgentAliasOutputBuilder {
@@ -58,8 +56,7 @@ impl DeleteAgentAliasOutputBuilder {
     }
     /// Identifier for a resource.
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// Identifier for a resource.
     pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -73,8 +70,7 @@ impl DeleteAgentAliasOutputBuilder {
     }
     /// Id for an Agent Alias generated at the server side.
     pub fn set_agent_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_alias_id = input;
-        self
+        self.agent_alias_id = input; self
     }
     /// Id for an Agent Alias generated at the server side.
     pub fn get_agent_alias_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,50 +84,47 @@ impl DeleteAgentAliasOutputBuilder {
     }
     /// The statuses an Agent Alias can be in.
     pub fn set_agent_alias_status(mut self, input: ::std::option::Option<crate::types::AgentAliasStatus>) -> Self {
-        self.agent_alias_status = input;
-        self
+        self.agent_alias_status = input; self
     }
     /// The statuses an Agent Alias can be in.
     pub fn get_agent_alias_status(&self) -> &::std::option::Option<crate::types::AgentAliasStatus> {
         &self.agent_alias_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeleteAgentAliasOutput`](crate::operation::delete_agent_alias::DeleteAgentAliasOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasOutputBuilder::agent_id)
     /// - [`agent_alias_id`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasOutputBuilder::agent_alias_id)
     /// - [`agent_alias_status`](crate::operation::delete_agent_alias::builders::DeleteAgentAliasOutputBuilder::agent_alias_status)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_agent_alias::DeleteAgentAliasOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_agent_alias::DeleteAgentAliasOutput {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building DeleteAgentAliasOutput",
-                )
-            })?,
-            agent_alias_id: self.agent_alias_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_id",
-                    "agent_alias_id was not specified but it is required when building DeleteAgentAliasOutput",
-                )
-            })?,
-            agent_alias_status: self.agent_alias_status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "agent_alias_status",
-                    "agent_alias_status was not specified but it is required when building DeleteAgentAliasOutput",
-                )
-            })?,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_agent_alias::DeleteAgentAliasOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_agent_alias::DeleteAgentAliasOutput {
+                agent_id: self.agent_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_id", "agent_id was not specified but it is required when building DeleteAgentAliasOutput")
+                    )?
+                ,
+                agent_alias_id: self.agent_alias_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_id", "agent_alias_id was not specified but it is required when building DeleteAgentAliasOutput")
+                    )?
+                ,
+                agent_alias_status: self.agent_alias_status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("agent_alias_status", "agent_alias_status was not specified but it is required when building DeleteAgentAliasOutput")
+                    )?
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

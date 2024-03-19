@@ -5,54 +5,50 @@ pub use crate::operation::create_assessment_template::_create_assessment_templat
 
 impl CreateAssessmentTemplateInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.create_assessment_template();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.create_assessment_template();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `CreateAssessmentTemplate`.
-///
+/// 
 /// <p>Creates an assessment template for the assessment target that is specified by the ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access to AWS Services needed to perform security assessments.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAssessmentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder,
+                    inner: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-    > for CreateAssessmentTemplateFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
+                    crate::operation::create_assessment_template::CreateAssessmentTemplateError,
+                > for CreateAssessmentTemplateFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
+                        crate::operation::create_assessment_template::CreateAssessmentTemplateError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl CreateAssessmentTemplateFluentBuilder {
     /// Creates a new `CreateAssessmentTemplate`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl CreateAssessmentTemplateFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::create_assessment_template::CreateAssessmentTemplate::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::create_assessment_template::CreateAssessmentTemplate::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::create_assessment_template::CreateAssessmentTemplateOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::create_assessment_template::CreateAssessmentTemplate::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::create_assessment_template::CreateAssessmentTemplate::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::create_assessment_template::CreateAssessmentTemplateOutput, crate::operation::create_assessment_template::CreateAssessmentTemplateError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
     pub fn assessment_target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arn(input.into());
@@ -160,12 +147,12 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+    pub fn set_rules_package_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
         self.inner = self.inner.set_rules_package_arns(input);
         self
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_rules_package_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         self.inner.get_rules_package_arns()
     }
     /// Appends an item to `userAttributesForFindings`.
@@ -178,12 +165,13 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>) -> Self {
+    pub fn set_user_attributes_for_findings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_user_attributes_for_findings(input);
         self
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+    pub fn get_user_attributes_for_findings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Attribute>> {
         self.inner.get_user_attributes_for_findings()
     }
 }
+

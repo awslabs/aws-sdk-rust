@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecommendationSummariesInput {
+pub struct ListRecommendationSummariesInput  {
     /// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>The grouping of recommendations by a dimension.</p>
@@ -12,13 +12,13 @@ pub struct ListRecommendationSummariesInput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListRecommendationSummariesInput {
+impl  ListRecommendationSummariesInput  {
     /// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
-    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
+    pub fn filter(&self) -> ::std::option::Option<& crate::types::Filter> {
         self.filter.as_ref()
     }
     /// <p>The grouping of recommendations by a dimension.</p>
-    pub fn group_by(&self) -> ::std::option::Option<&str> {
+    pub fn group_by(&self) -> ::std::option::Option<& str> {
         self.group_by.as_deref()
     }
     /// <p>The maximum number of recommendations that are returned for the request.</p>
@@ -26,7 +26,7 @@ impl ListRecommendationSummariesInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -54,8 +54,7 @@ impl ListRecommendationSummariesInputBuilder {
     }
     /// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>Describes a filter that returns a more specific list of recommendations. Filters recommendations by different dimensions.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
@@ -69,8 +68,7 @@ impl ListRecommendationSummariesInputBuilder {
     }
     /// <p>The grouping of recommendations by a dimension.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>The grouping of recommendations by a dimension.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -83,8 +81,7 @@ impl ListRecommendationSummariesInputBuilder {
     }
     /// <p>The maximum number of recommendations that are returned for the request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of recommendations that are returned for the request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -97,25 +94,26 @@ impl ListRecommendationSummariesInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRecommendationSummariesInput`](crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput {
-            filter: self.filter,
-            group_by: self.group_by,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_recommendation_summaries::ListRecommendationSummariesInput {
+                filter: self.filter
+                ,
+                group_by: self.group_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

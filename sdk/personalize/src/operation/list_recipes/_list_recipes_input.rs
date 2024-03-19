@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListRecipesInput {
+pub struct ListRecipesInput  {
     /// <p>The default is <code>SERVICE</code>.</p>
     pub recipe_provider: ::std::option::Option<crate::types::RecipeProvider>,
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
@@ -12,13 +12,13 @@ pub struct ListRecipesInput {
     /// <p>Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.</p>
     pub domain: ::std::option::Option<crate::types::Domain>,
 }
-impl ListRecipesInput {
+impl  ListRecipesInput  {
     /// <p>The default is <code>SERVICE</code>.</p>
-    pub fn recipe_provider(&self) -> ::std::option::Option<&crate::types::RecipeProvider> {
+    pub fn recipe_provider(&self) -> ::std::option::Option<& crate::types::RecipeProvider> {
         self.recipe_provider.as_ref()
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of recipes to return.</p>
@@ -26,7 +26,7 @@ impl ListRecipesInput {
         self.max_results
     }
     /// <p>Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.</p>
-    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -54,8 +54,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>The default is <code>SERVICE</code>.</p>
     pub fn set_recipe_provider(mut self, input: ::std::option::Option<crate::types::RecipeProvider>) -> Self {
-        self.recipe_provider = input;
-        self
+        self.recipe_provider = input; self
     }
     /// <p>The default is <code>SERVICE</code>.</p>
     pub fn get_recipe_provider(&self) -> &::std::option::Option<crate::types::RecipeProvider> {
@@ -68,8 +67,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +80,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>The maximum number of recipes to return.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of recipes to return.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -96,8 +93,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.</p>
     pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
@@ -105,11 +101,18 @@ impl ListRecipesInputBuilder {
     }
     /// Consumes the builder and constructs a [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_recipes::ListRecipesInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_recipes::ListRecipesInput {
-            recipe_provider: self.recipe_provider,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            domain: self.domain,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::list_recipes::ListRecipesInput {
+                recipe_provider: self.recipe_provider
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
+

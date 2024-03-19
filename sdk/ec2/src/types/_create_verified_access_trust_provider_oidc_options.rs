@@ -3,7 +3,7 @@
 /// <p>Describes the options when creating an Amazon Web Services Verified Access trust provider using the <code>user</code> type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateVerifiedAccessTrustProviderOidcOptions {
+pub struct CreateVerifiedAccessTrustProviderOidcOptions  {
     /// <p>The OIDC issuer.</p>
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The OIDC authorization endpoint.</p>
@@ -19,37 +19,37 @@ pub struct CreateVerifiedAccessTrustProviderOidcOptions {
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
     pub scope: ::std::option::Option<::std::string::String>,
 }
-impl CreateVerifiedAccessTrustProviderOidcOptions {
+impl  CreateVerifiedAccessTrustProviderOidcOptions  {
     /// <p>The OIDC issuer.</p>
-    pub fn issuer(&self) -> ::std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>The OIDC authorization endpoint.</p>
-    pub fn authorization_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn authorization_endpoint(&self) -> ::std::option::Option<& str> {
         self.authorization_endpoint.as_deref()
     }
     /// <p>The OIDC token endpoint.</p>
-    pub fn token_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn token_endpoint(&self) -> ::std::option::Option<& str> {
         self.token_endpoint.as_deref()
     }
     /// <p>The OIDC user info endpoint.</p>
-    pub fn user_info_endpoint(&self) -> ::std::option::Option<&str> {
+    pub fn user_info_endpoint(&self) -> ::std::option::Option<& str> {
         self.user_info_endpoint.as_deref()
     }
     /// <p>The client identifier.</p>
-    pub fn client_id(&self) -> ::std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The client secret.</p>
-    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<& str> {
         self.client_secret.as_deref()
     }
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
-    pub fn scope(&self) -> ::std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<& str> {
         self.scope.as_deref()
     }
 }
-impl ::std::fmt::Debug for CreateVerifiedAccessTrustProviderOidcOptions {
+impl  ::std::fmt::Debug for CreateVerifiedAccessTrustProviderOidcOptions  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateVerifiedAccessTrustProviderOidcOptions");
         formatter.field("issuer", &self.issuer);
@@ -89,8 +89,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The OIDC issuer.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// <p>The OIDC issuer.</p>
     pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
@@ -103,8 +102,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The OIDC authorization endpoint.</p>
     pub fn set_authorization_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.authorization_endpoint = input;
-        self
+        self.authorization_endpoint = input; self
     }
     /// <p>The OIDC authorization endpoint.</p>
     pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -117,8 +115,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The OIDC token endpoint.</p>
     pub fn set_token_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token_endpoint = input;
-        self
+        self.token_endpoint = input; self
     }
     /// <p>The OIDC token endpoint.</p>
     pub fn get_token_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +128,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The OIDC user info endpoint.</p>
     pub fn set_user_info_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_info_endpoint = input;
-        self
+        self.user_info_endpoint = input; self
     }
     /// <p>The OIDC user info endpoint.</p>
     pub fn get_user_info_endpoint(&self) -> &::std::option::Option<::std::string::String> {
@@ -145,8 +141,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The client identifier.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The client identifier.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -159,8 +154,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>The client secret.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>The client secret.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
@@ -173,8 +167,7 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     }
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's details. Each scope returns a specific set of user attributes.</p>
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
@@ -183,13 +176,20 @@ impl CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
     /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderOidcOptions`](crate::types::CreateVerifiedAccessTrustProviderOidcOptions).
     pub fn build(self) -> crate::types::CreateVerifiedAccessTrustProviderOidcOptions {
         crate::types::CreateVerifiedAccessTrustProviderOidcOptions {
-            issuer: self.issuer,
-            authorization_endpoint: self.authorization_endpoint,
-            token_endpoint: self.token_endpoint,
-            user_info_endpoint: self.user_info_endpoint,
-            client_id: self.client_id,
-            client_secret: self.client_secret,
-            scope: self.scope,
+            issuer: self.issuer
+            ,
+            authorization_endpoint: self.authorization_endpoint
+            ,
+            token_endpoint: self.token_endpoint
+            ,
+            user_info_endpoint: self.user_info_endpoint
+            ,
+            client_id: self.client_id
+            ,
+            client_secret: self.client_secret
+            ,
+            scope: self.scope
+            ,
         }
     }
 }
@@ -206,3 +206,4 @@ impl ::std::fmt::Debug for CreateVerifiedAccessTrustProviderOidcOptionsBuilder {
         formatter.finish()
     }
 }
+

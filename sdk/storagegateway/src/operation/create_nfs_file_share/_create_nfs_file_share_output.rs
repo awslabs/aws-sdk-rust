@@ -3,22 +3,22 @@
 /// <p>CreateNFSFileShareOutput</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateNfsFileShareOutput {
+pub struct CreateNfsFileShareOutput  {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateNfsFileShareOutput {
+impl  CreateNfsFileShareOutput  {
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
-    pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> ::std::option::Option<& str> {
         self.file_share_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNfsFileShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateNfsFileShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput).
     pub fn builder() -> crate::operation::create_nfs_file_share::builders::CreateNfsFileShareOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateNfsFileShareOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     pub fn set_file_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_share_arn = input;
-        self
+        self.file_share_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
     pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_share_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateNfsFileShareOutput`](crate::operation::create_nfs_file_share::CreateNfsFileShareOutput).
     pub fn build(self) -> crate::operation::create_nfs_file_share::CreateNfsFileShareOutput {
         crate::operation::create_nfs_file_share::CreateNfsFileShareOutput {
-            file_share_arn: self.file_share_arn,
+            file_share_arn: self.file_share_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

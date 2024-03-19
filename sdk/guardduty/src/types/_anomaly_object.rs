@@ -3,7 +3,7 @@
 /// <p>Contains information about the unusual anomalies.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AnomalyObject {
+pub struct AnomalyObject  {
     /// <p>The type of behavior of the profile.</p>
     pub profile_type: ::std::option::Option<crate::types::ProfileType>,
     /// <p>The frequency of the anomaly.</p>
@@ -11,17 +11,17 @@ pub struct AnomalyObject {
     /// <p>The recorded value.</p>
     pub observations: ::std::option::Option<crate::types::Observations>,
 }
-impl AnomalyObject {
+impl  AnomalyObject  {
     /// <p>The type of behavior of the profile.</p>
-    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+    pub fn profile_type(&self) -> ::std::option::Option<& crate::types::ProfileType> {
         self.profile_type.as_ref()
     }
     /// <p>The frequency of the anomaly.</p>
-    pub fn profile_subtype(&self) -> ::std::option::Option<&crate::types::ProfileSubtype> {
+    pub fn profile_subtype(&self) -> ::std::option::Option<& crate::types::ProfileSubtype> {
         self.profile_subtype.as_ref()
     }
     /// <p>The recorded value.</p>
-    pub fn observations(&self) -> ::std::option::Option<&crate::types::Observations> {
+    pub fn observations(&self) -> ::std::option::Option<& crate::types::Observations> {
         self.observations.as_ref()
     }
 }
@@ -48,8 +48,7 @@ impl AnomalyObjectBuilder {
     }
     /// <p>The type of behavior of the profile.</p>
     pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
-        self.profile_type = input;
-        self
+        self.profile_type = input; self
     }
     /// <p>The type of behavior of the profile.</p>
     pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
@@ -62,8 +61,7 @@ impl AnomalyObjectBuilder {
     }
     /// <p>The frequency of the anomaly.</p>
     pub fn set_profile_subtype(mut self, input: ::std::option::Option<crate::types::ProfileSubtype>) -> Self {
-        self.profile_subtype = input;
-        self
+        self.profile_subtype = input; self
     }
     /// <p>The frequency of the anomaly.</p>
     pub fn get_profile_subtype(&self) -> &::std::option::Option<crate::types::ProfileSubtype> {
@@ -76,8 +74,7 @@ impl AnomalyObjectBuilder {
     }
     /// <p>The recorded value.</p>
     pub fn set_observations(mut self, input: ::std::option::Option<crate::types::Observations>) -> Self {
-        self.observations = input;
-        self
+        self.observations = input; self
     }
     /// <p>The recorded value.</p>
     pub fn get_observations(&self) -> &::std::option::Option<crate::types::Observations> {
@@ -86,9 +83,13 @@ impl AnomalyObjectBuilder {
     /// Consumes the builder and constructs a [`AnomalyObject`](crate::types::AnomalyObject).
     pub fn build(self) -> crate::types::AnomalyObject {
         crate::types::AnomalyObject {
-            profile_type: self.profile_type,
-            profile_subtype: self.profile_subtype,
-            observations: self.observations,
+            profile_type: self.profile_type
+            ,
+            profile_subtype: self.profile_subtype
+            ,
+            observations: self.observations
+            ,
         }
     }
 }
+

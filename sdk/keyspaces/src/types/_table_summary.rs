@@ -3,7 +3,7 @@
 /// <p>Returns the name of the specified table, the keyspace it is stored in, and the unique identifier in the format of an Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TableSummary {
+pub struct TableSummary  {
     /// <p>The name of the keyspace that the table is stored in.</p>
     pub keyspace_name: ::std::string::String,
     /// <p>The name of the table.</p>
@@ -11,21 +11,18 @@ pub struct TableSummary {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub resource_arn: ::std::string::String,
 }
-impl TableSummary {
+impl  TableSummary  {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.keyspace_name.deref()
+    pub fn keyspace_name(&self) -> & str {
+        use std::ops::Deref; self.keyspace_name.deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> & str {
+        use std::ops::Deref; self.table_name.deref()
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl TableSummary {
@@ -52,8 +49,7 @@ impl TableSummaryBuilder {
     }
     /// <p>The name of the keyspace that the table is stored in.</p>
     pub fn set_keyspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// <p>The name of the keyspace that the table is stored in.</p>
     pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +63,7 @@ impl TableSummaryBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the table.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl TableSummaryBuilder {
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,25 +89,25 @@ impl TableSummaryBuilder {
     /// - [`table_name`](crate::types::builders::TableSummaryBuilder::table_name)
     /// - [`resource_arn`](crate::types::builders::TableSummaryBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::TableSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::TableSummary {
-            keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "keyspace_name",
-                    "keyspace_name was not specified but it is required when building TableSummary",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building TableSummary",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building TableSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::TableSummary {
+                keyspace_name: self.keyspace_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("keyspace_name", "keyspace_name was not specified but it is required when building TableSummary")
+                    )?
+                ,
+                table_name: self.table_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "table_name was not specified but it is required when building TableSummary")
+                    )?
+                ,
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building TableSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

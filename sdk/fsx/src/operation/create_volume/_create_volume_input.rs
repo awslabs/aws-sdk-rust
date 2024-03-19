@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateVolumeInput {
+pub struct CreateVolumeInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
@@ -12,35 +12,36 @@ pub struct CreateVolumeInput {
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
     pub ontap_configuration: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration>,
 }
-impl CreateVolumeInput {
+impl  CreateVolumeInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
-    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<& crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
-    pub fn ontap_configuration(&self) -> ::std::option::Option<&crate::types::CreateOntapVolumeConfiguration> {
+    pub fn ontap_configuration(&self) -> ::std::option::Option<& crate::types::CreateOntapVolumeConfiguration> {
         self.ontap_configuration.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> & [crate::types::Tag] {
+        self.tags.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
-    pub fn open_zfs_configuration(&self) -> ::std::option::Option<&crate::types::CreateOpenZfsVolumeConfiguration> {
+    pub fn open_zfs_configuration(&self) -> ::std::option::Option<& crate::types::CreateOpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -59,7 +60,7 @@ pub struct CreateVolumeInputBuilder {
     pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) ontap_configuration: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration>,
 }
 impl CreateVolumeInputBuilder {
@@ -70,8 +71,7 @@ impl CreateVolumeInputBuilder {
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_request_token = input;
-        self
+        self.client_request_token = input; self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +85,7 @@ impl CreateVolumeInputBuilder {
     }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
@@ -100,8 +99,7 @@ impl CreateVolumeInputBuilder {
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl CreateVolumeInputBuilder {
     }
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
     pub fn set_ontap_configuration(mut self, input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>) -> Self {
-        self.ontap_configuration = input;
-        self
+        self.ontap_configuration = input; self
     }
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
     pub fn get_ontap_configuration(&self) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
@@ -128,17 +125,16 @@ impl CreateVolumeInputBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Tag>> {
         &self.tags
     }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
@@ -148,24 +144,30 @@ impl CreateVolumeInputBuilder {
     }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub fn set_open_zfs_configuration(mut self, input: ::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration>) -> Self {
-        self.open_zfs_configuration = input;
-        self
+        self.open_zfs_configuration = input; self
     }
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub fn get_open_zfs_configuration(&self) -> &::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration> {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_volume::CreateVolumeInput {
-            client_request_token: self.client_request_token,
-            volume_type: self.volume_type,
-            name: self.name,
-            ontap_configuration: self.ontap_configuration,
-            tags: self.tags,
-            open_zfs_configuration: self.open_zfs_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_volume::CreateVolumeInput {
+                client_request_token: self.client_request_token
+                ,
+                volume_type: self.volume_type
+                ,
+                name: self.name
+                ,
+                ontap_configuration: self.ontap_configuration
+                ,
+                tags: self.tags
+                ,
+                open_zfs_configuration: self.open_zfs_configuration
+                ,
+            }
+        )
     }
 }
+

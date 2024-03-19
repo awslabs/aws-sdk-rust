@@ -3,7 +3,7 @@
 /// <p>The request parameters represent the input of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RollbackTransactionInput {
+pub struct RollbackTransactionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -11,17 +11,17 @@ pub struct RollbackTransactionInput {
     /// <p>The identifier of the transaction to roll back.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
 }
-impl RollbackTransactionInput {
+impl  RollbackTransactionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The identifier of the transaction to roll back.</p>
-    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -49,8 +49,7 @@ impl RollbackTransactionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,8 +63,7 @@ impl RollbackTransactionInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,22 +77,24 @@ impl RollbackTransactionInputBuilder {
     }
     /// <p>The identifier of the transaction to roll back.</p>
     pub fn set_transaction_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The identifier of the transaction to roll back.</p>
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::operation::rollback_transaction::RollbackTransactionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::rollback_transaction::RollbackTransactionInput {
-            resource_arn: self.resource_arn,
-            secret_arn: self.secret_arn,
-            transaction_id: self.transaction_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::rollback_transaction::RollbackTransactionInput {
+                resource_arn: self.resource_arn
+                ,
+                secret_arn: self.secret_arn
+                ,
+                transaction_id: self.transaction_id
+                ,
+            }
+        )
     }
 }
+

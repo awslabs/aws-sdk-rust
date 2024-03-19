@@ -4,7 +4,7 @@
 /// <p><b>Important</b>: Treat tokens as opaque; i.e., do not build functionality based on token contents. The format of tokens could change in the future.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct ParticipantToken {
+pub struct ParticipantToken  {
     /// <p>Unique identifier for this participant token, assigned by IVS.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The issued client token, encrypted.</p>
@@ -12,29 +12,29 @@ pub struct ParticipantToken {
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
     pub duration: ::std::option::Option<i32>,
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>,
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl ParticipantToken {
+impl  ParticipantToken  {
     /// <p>Unique identifier for this participant token, assigned by IVS.</p>
-    pub fn participant_id(&self) -> ::std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The issued client token, encrypted.</p>
-    pub fn token(&self) -> ::std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn user_id(&self) -> ::std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn attributes(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
@@ -42,17 +42,18 @@ impl ParticipantToken {
         self.duration
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capabilities.is_none()`.
-    pub fn capabilities(&self) -> &[crate::types::ParticipantTokenCapability] {
-        self.capabilities.as_deref().unwrap_or_default()
+    pub fn capabilities(&self) -> & [crate::types::ParticipantTokenCapability] {
+        self.capabilities.as_deref()
+        .unwrap_or_default()
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
-    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
-impl ::std::fmt::Debug for ParticipantToken {
+impl  ::std::fmt::Debug for ParticipantToken  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ParticipantToken");
         formatter.field("participant_id", &self.participant_id);
@@ -79,9 +80,9 @@ pub struct ParticipantTokenBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
-    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     pub(crate) duration: ::std::option::Option<i32>,
-    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>,
+    pub(crate) capabilities: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>,
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ParticipantTokenBuilder {
@@ -92,8 +93,7 @@ impl ParticipantTokenBuilder {
     }
     /// <p>Unique identifier for this participant token, assigned by IVS.</p>
     pub fn set_participant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.participant_id = input;
-        self
+        self.participant_id = input; self
     }
     /// <p>Unique identifier for this participant token, assigned by IVS.</p>
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -106,8 +106,7 @@ impl ParticipantTokenBuilder {
     }
     /// <p>The issued client token, encrypted.</p>
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The issued client token, encrypted.</p>
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +119,7 @@ impl ParticipantTokenBuilder {
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,17 +132,16 @@ impl ParticipantTokenBuilder {
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
-    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
@@ -154,8 +151,7 @@ impl ParticipantTokenBuilder {
     }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
     pub fn get_duration(&self) -> &::std::option::Option<i32> {
@@ -168,17 +164,16 @@ impl ParticipantTokenBuilder {
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
     pub fn capabilities(mut self, input: crate::types::ParticipantTokenCapability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>>) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
-    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+    pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ParticipantTokenCapability>> {
         &self.capabilities
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
@@ -188,8 +183,7 @@ impl ParticipantTokenBuilder {
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration_time = input;
-        self
+        self.expiration_time = input; self
     }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,13 +192,20 @@ impl ParticipantTokenBuilder {
     /// Consumes the builder and constructs a [`ParticipantToken`](crate::types::ParticipantToken).
     pub fn build(self) -> crate::types::ParticipantToken {
         crate::types::ParticipantToken {
-            participant_id: self.participant_id,
-            token: self.token,
-            user_id: self.user_id,
-            attributes: self.attributes,
-            duration: self.duration,
-            capabilities: self.capabilities,
-            expiration_time: self.expiration_time,
+            participant_id: self.participant_id
+            ,
+            token: self.token
+            ,
+            user_id: self.user_id
+            ,
+            attributes: self.attributes
+            ,
+            duration: self.duration
+            ,
+            capabilities: self.capabilities
+            ,
+            expiration_time: self.expiration_time
+            ,
         }
     }
 }
@@ -221,3 +222,4 @@ impl ::std::fmt::Debug for ParticipantTokenBuilder {
         formatter.finish()
     }
 }
+

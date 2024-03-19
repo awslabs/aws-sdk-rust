@@ -3,7 +3,7 @@
 /// <p>Specifies mandatory fields for running an Inference Recommender job directly in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJob</a> API. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package. Use <code>ContainerConfig</code> if you want to specify these fields for the recommendation job but don't want to edit them in your model package.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct RecommendationJobContainerConfig {
+pub struct RecommendationJobContainerConfig  {
     /// <p>The machine learning domain of the model and its components.</p>
     /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code></p>
     pub domain: ::std::option::Option<::std::string::String>,
@@ -21,62 +21,64 @@ pub struct RecommendationJobContainerConfig {
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code></p>
     pub nearest_model_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub supported_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
     pub supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
     pub data_input_config: ::std::option::Option<::std::string::String>,
     /// <p>The supported MIME types for the output data.</p>
-    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl RecommendationJobContainerConfig {
+impl  RecommendationJobContainerConfig  {
     /// <p>The machine learning domain of the model and its components.</p>
     /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code></p>
-    pub fn domain(&self) -> ::std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The machine learning task that the model accomplishes.</p>
     /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code></p>
-    pub fn task(&self) -> ::std::option::Option<&str> {
+    pub fn task(&self) -> ::std::option::Option<& str> {
         self.task.as_deref()
     }
     /// <p>The machine learning framework of the container image.</p>
     /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code></p>
-    pub fn framework(&self) -> ::std::option::Option<&str> {
+    pub fn framework(&self) -> ::std::option::Option<& str> {
         self.framework.as_deref()
     }
     /// <p>The framework version of the container image.</p>
-    pub fn framework_version(&self) -> ::std::option::Option<&str> {
+    pub fn framework_version(&self) -> ::std::option::Option<& str> {
         self.framework_version.as_deref()
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
-    pub fn payload_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobPayloadConfig> {
+    pub fn payload_config(&self) -> ::std::option::Option<& crate::types::RecommendationJobPayloadConfig> {
         self.payload_config.as_ref()
     }
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code></p>
-    pub fn nearest_model_name(&self) -> ::std::option::Option<&str> {
+    pub fn nearest_model_name(&self) -> ::std::option::Option<& str> {
         self.nearest_model_name.as_deref()
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_instance_types.is_none()`.
-    pub fn supported_instance_types(&self) -> &[::std::string::String] {
-        self.supported_instance_types.as_deref().unwrap_or_default()
+    pub fn supported_instance_types(&self) -> & [::std::string::String] {
+        self.supported_instance_types.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
-    pub fn supported_endpoint_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobSupportedEndpointType> {
+    pub fn supported_endpoint_type(&self) -> ::std::option::Option<& crate::types::RecommendationJobSupportedEndpointType> {
         self.supported_endpoint_type.as_ref()
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
-    pub fn data_input_config(&self) -> ::std::option::Option<&str> {
+    pub fn data_input_config(&self) -> ::std::option::Option<& str> {
         self.data_input_config.as_deref()
     }
     /// <p>The supported MIME types for the output data.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_response_mime_types.is_none()`.
-    pub fn supported_response_mime_types(&self) -> &[::std::string::String] {
-        self.supported_response_mime_types.as_deref().unwrap_or_default()
+    pub fn supported_response_mime_types(&self) -> & [::std::string::String] {
+        self.supported_response_mime_types.as_deref()
+        .unwrap_or_default()
     }
 }
 impl RecommendationJobContainerConfig {
@@ -96,10 +98,10 @@ pub struct RecommendationJobContainerConfigBuilder {
     pub(crate) framework_version: ::std::option::Option<::std::string::String>,
     pub(crate) payload_config: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>,
     pub(crate) nearest_model_name: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_instance_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) supported_endpoint_type: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>,
     pub(crate) data_input_config: ::std::option::Option<::std::string::String>,
-    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
@@ -111,8 +113,7 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning domain of the model and its components.</p>
     /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code></p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The machine learning domain of the model and its components.</p>
     /// <p>Valid Values: <code>COMPUTER_VISION | NATURAL_LANGUAGE_PROCESSING | MACHINE_LEARNING</code></p>
@@ -128,8 +129,7 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning task that the model accomplishes.</p>
     /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code></p>
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The machine learning task that the model accomplishes.</p>
     /// <p>Valid Values: <code>IMAGE_CLASSIFICATION | OBJECT_DETECTION | TEXT_GENERATION | IMAGE_SEGMENTATION | FILL_MASK | CLASSIFICATION | REGRESSION | OTHER</code></p>
@@ -145,8 +145,7 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>The machine learning framework of the container image.</p>
     /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code></p>
     pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework = input;
-        self
+        self.framework = input; self
     }
     /// <p>The machine learning framework of the container image.</p>
     /// <p>Valid Values: <code>TENSORFLOW | PYTORCH | XGBOOST | SAGEMAKER-SCIKIT-LEARN</code></p>
@@ -160,8 +159,7 @@ impl RecommendationJobContainerConfigBuilder {
     }
     /// <p>The framework version of the container image.</p>
     pub fn set_framework_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.framework_version = input;
-        self
+        self.framework_version = input; self
     }
     /// <p>The framework version of the container image.</p>
     pub fn get_framework_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,8 +172,7 @@ impl RecommendationJobContainerConfigBuilder {
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
     pub fn set_payload_config(mut self, input: ::std::option::Option<crate::types::RecommendationJobPayloadConfig>) -> Self {
-        self.payload_config = input;
-        self
+        self.payload_config = input; self
     }
     /// <p>Specifies the <code>SamplePayloadUrl</code> and all other sample payload-related fields.</p>
     pub fn get_payload_config(&self) -> &::std::option::Option<crate::types::RecommendationJobPayloadConfig> {
@@ -190,8 +187,7 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code></p>
     pub fn set_nearest_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.nearest_model_name = input;
-        self
+        self.nearest_model_name = input; self
     }
     /// <p>The name of a pre-trained machine learning model benchmarked by Amazon SageMaker Inference Recommender that matches your model.</p>
     /// <p>Valid Values: <code>efficientnetb7 | unet | xgboost | faster-rcnn-resnet101 | nasnetlarge | vgg16 | inception-v3 | mask-rcnn | sagemaker-scikit-learn | densenet201-gluon | resnet18v2-gluon | xception | densenet201 | yolov4 | resnet152 | bert-base-cased | xceptionV1-keras | resnet50 | retinanet</code></p>
@@ -205,17 +201,16 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     pub fn supported_instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_instance_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_instance_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_instance_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn set_supported_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_instance_types = input;
-        self
+    pub fn set_supported_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_instance_types = input; self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
-    pub fn get_supported_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_instance_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_instance_types
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
@@ -225,8 +220,7 @@ impl RecommendationJobContainerConfigBuilder {
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
     pub fn set_supported_endpoint_type(mut self, input: ::std::option::Option<crate::types::RecommendationJobSupportedEndpointType>) -> Self {
-        self.supported_endpoint_type = input;
-        self
+        self.supported_endpoint_type = input; self
     }
     /// <p>The endpoint type to receive recommendations for. By default this is null, and the results of the inference recommendation job return a combined list of both real-time and serverless benchmarks. By specifying a value for this field, you can receive a longer list of benchmarks for the desired endpoint type.</p>
     pub fn get_supported_endpoint_type(&self) -> &::std::option::Option<crate::types::RecommendationJobSupportedEndpointType> {
@@ -239,8 +233,7 @@ impl RecommendationJobContainerConfigBuilder {
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
     pub fn set_data_input_config(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_input_config = input;
-        self
+        self.data_input_config = input; self
     }
     /// <p>Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary form. This field is used for optimizing your model using SageMaker Neo. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_InputConfig.html#sagemaker-Type-InputConfig-DataInputConfig">DataInputConfig</a>.</p>
     pub fn get_data_input_config(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,32 +246,42 @@ impl RecommendationJobContainerConfigBuilder {
     /// <p>The supported MIME types for the output data.</p>
     pub fn supported_response_mime_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_response_mime_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_response_mime_types = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_response_mime_types = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.supported_response_mime_types = input;
-        self
+    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.supported_response_mime_types = input; self
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.supported_response_mime_types
     }
     /// Consumes the builder and constructs a [`RecommendationJobContainerConfig`](crate::types::RecommendationJobContainerConfig).
     pub fn build(self) -> crate::types::RecommendationJobContainerConfig {
         crate::types::RecommendationJobContainerConfig {
-            domain: self.domain,
-            task: self.task,
-            framework: self.framework,
-            framework_version: self.framework_version,
-            payload_config: self.payload_config,
-            nearest_model_name: self.nearest_model_name,
-            supported_instance_types: self.supported_instance_types,
-            supported_endpoint_type: self.supported_endpoint_type,
-            data_input_config: self.data_input_config,
-            supported_response_mime_types: self.supported_response_mime_types,
+            domain: self.domain
+            ,
+            task: self.task
+            ,
+            framework: self.framework
+            ,
+            framework_version: self.framework_version
+            ,
+            payload_config: self.payload_config
+            ,
+            nearest_model_name: self.nearest_model_name
+            ,
+            supported_instance_types: self.supported_instance_types
+            ,
+            supported_endpoint_type: self.supported_endpoint_type
+            ,
+            data_input_config: self.data_input_config
+            ,
+            supported_response_mime_types: self.supported_response_mime_types
+            ,
         }
     }
 }
+

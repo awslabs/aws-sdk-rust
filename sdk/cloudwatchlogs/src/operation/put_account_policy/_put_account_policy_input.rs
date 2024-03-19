@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutAccountPolicyInput {
+pub struct PutAccountPolicyInput  {
     /// <p>A name for the policy. This must be unique within the account.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the policy, in JSON.</p>
@@ -53,9 +53,9 @@ pub struct PutAccountPolicyInput {
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
 }
-impl PutAccountPolicyInput {
+impl  PutAccountPolicyInput  {
     /// <p>A name for the policy. This must be unique within the account.</p>
-    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>Specify the policy, in JSON.</p>
@@ -96,21 +96,21 @@ impl PutAccountPolicyInput {
     /// <li>
     /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
-    pub fn policy_document(&self) -> ::std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The type of policy that you're creating or updating.</p>
-    pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
+    pub fn policy_type(&self) -> ::std::option::Option<& crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
-    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
-    pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
+    pub fn selection_criteria(&self) -> ::std::option::Option<& str> {
         self.selection_criteria.as_deref()
     }
 }
@@ -140,8 +140,7 @@ impl PutAccountPolicyInputBuilder {
     }
     /// <p>A name for the policy. This must be unique within the account.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>A name for the policy. This must be unique within the account.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -229,8 +228,7 @@ impl PutAccountPolicyInputBuilder {
     /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
     /// </ul>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>Specify the policy, in JSON.</p>
     /// <p><b>Data protection policy</b></p>
@@ -281,8 +279,7 @@ impl PutAccountPolicyInputBuilder {
     }
     /// <p>The type of policy that you're creating or updating.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
-        self.policy_type = input;
-        self
+        self.policy_type = input; self
     }
     /// <p>The type of policy that you're creating or updating.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
@@ -295,8 +292,7 @@ impl PutAccountPolicyInputBuilder {
     }
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
@@ -313,8 +309,7 @@ impl PutAccountPolicyInputBuilder {
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
     /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
     pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.selection_criteria = input;
-        self
+        self.selection_criteria = input; self
     }
     /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
     /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
@@ -323,15 +318,21 @@ impl PutAccountPolicyInputBuilder {
         &self.selection_criteria
     }
     /// Consumes the builder and constructs a [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::put_account_policy::PutAccountPolicyInput {
-            policy_name: self.policy_name,
-            policy_document: self.policy_document,
-            policy_type: self.policy_type,
-            scope: self.scope,
-            selection_criteria: self.selection_criteria,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::put_account_policy::PutAccountPolicyInput {
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
+                policy_type: self.policy_type
+                ,
+                scope: self.scope
+                ,
+                selection_criteria: self.selection_criteria
+                ,
+            }
+        )
     }
 }
+

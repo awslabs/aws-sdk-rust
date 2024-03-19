@@ -3,7 +3,7 @@
 /// <p>Summary for report resource.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ReportSummary {
+pub struct ReportSummary  {
     /// <p>Unique resource ID for the report resource.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Name for the report resource.</p>
@@ -33,21 +33,21 @@ pub struct ReportSummary {
     /// <p>The message associated with the current upload state.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
 }
-impl ReportSummary {
+impl  ReportSummary  {
     /// <p>Unique resource ID for the report resource.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Name for the report resource.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Current state of the report resource.</p>
-    pub fn state(&self) -> ::std::option::Option<&crate::types::PublishedState> {
+    pub fn state(&self) -> ::std::option::Option<& crate::types::PublishedState> {
         self.state.as_ref()
     }
     /// <p>ARN for the report resource.</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Version for the report resource.</p>
@@ -55,39 +55,39 @@ impl ReportSummary {
         self.version
     }
     /// <p>The current state of the document upload.</p>
-    pub fn upload_state(&self) -> ::std::option::Option<&crate::types::UploadState> {
+    pub fn upload_state(&self) -> ::std::option::Option<& crate::types::UploadState> {
         self.upload_state.as_ref()
     }
     /// <p>Description for the report resource.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
-    pub fn period_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn period_start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.period_start.as_ref()
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
-    pub fn period_end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn period_end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.period_end.as_ref()
     }
     /// <p>Series for the report resource.</p>
-    pub fn series(&self) -> ::std::option::Option<&str> {
+    pub fn series(&self) -> ::std::option::Option<& str> {
         self.series.as_deref()
     }
     /// <p>Category for the report resource.</p>
-    pub fn category(&self) -> ::std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>Associated company name for the report resource.</p>
-    pub fn company_name(&self) -> ::std::option::Option<&str> {
+    pub fn company_name(&self) -> ::std::option::Option<& str> {
         self.company_name.as_deref()
     }
     /// <p>Associated product name for the report resource.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>The message associated with the current upload state.</p>
-    pub fn status_message(&self) -> ::std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -125,8 +125,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Unique resource ID for the report resource.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -139,8 +138,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Name for the report resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Name for the report resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -153,8 +151,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Current state of the report resource.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PublishedState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Current state of the report resource.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::PublishedState> {
@@ -167,8 +164,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>ARN for the report resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>ARN for the report resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -181,8 +177,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Version for the report resource.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version for the report resource.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
@@ -195,8 +190,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>The current state of the document upload.</p>
     pub fn set_upload_state(mut self, input: ::std::option::Option<crate::types::UploadState>) -> Self {
-        self.upload_state = input;
-        self
+        self.upload_state = input; self
     }
     /// <p>The current state of the document upload.</p>
     pub fn get_upload_state(&self) -> &::std::option::Option<crate::types::UploadState> {
@@ -209,8 +203,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Description for the report resource.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Description for the report resource.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -223,8 +216,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
     pub fn set_period_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.period_start = input;
-        self
+        self.period_start = input; self
     }
     /// <p>Timestamp indicating the report resource effective start.</p>
     pub fn get_period_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -237,8 +229,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
     pub fn set_period_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.period_end = input;
-        self
+        self.period_end = input; self
     }
     /// <p>Timestamp indicating the report resource effective end.</p>
     pub fn get_period_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -251,8 +242,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Series for the report resource.</p>
     pub fn set_series(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.series = input;
-        self
+        self.series = input; self
     }
     /// <p>Series for the report resource.</p>
     pub fn get_series(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +255,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Category for the report resource.</p>
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Category for the report resource.</p>
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -279,8 +268,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Associated company name for the report resource.</p>
     pub fn set_company_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.company_name = input;
-        self
+        self.company_name = input; self
     }
     /// <p>Associated company name for the report resource.</p>
     pub fn get_company_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -293,8 +281,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>Associated product name for the report resource.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>Associated product name for the report resource.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -307,8 +294,7 @@ impl ReportSummaryBuilder {
     }
     /// <p>The message associated with the current upload state.</p>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The message associated with the current upload state.</p>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -317,20 +303,35 @@ impl ReportSummaryBuilder {
     /// Consumes the builder and constructs a [`ReportSummary`](crate::types::ReportSummary).
     pub fn build(self) -> crate::types::ReportSummary {
         crate::types::ReportSummary {
-            id: self.id,
-            name: self.name,
-            state: self.state,
-            arn: self.arn,
-            version: self.version,
-            upload_state: self.upload_state,
-            description: self.description,
-            period_start: self.period_start,
-            period_end: self.period_end,
-            series: self.series,
-            category: self.category,
-            company_name: self.company_name,
-            product_name: self.product_name,
-            status_message: self.status_message,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
+            arn: self.arn
+            ,
+            version: self.version
+            ,
+            upload_state: self.upload_state
+            ,
+            description: self.description
+            ,
+            period_start: self.period_start
+            ,
+            period_end: self.period_end
+            ,
+            series: self.series
+            ,
+            category: self.category
+            ,
+            company_name: self.company_name
+            ,
+            product_name: self.product_name
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

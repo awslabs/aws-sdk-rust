@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateDistributionInput {
+pub struct UpdateDistributionInput  {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub distribution_name: ::std::option::Option<::std::string::String>,
@@ -16,36 +16,37 @@ pub struct UpdateDistributionInput {
     /// </note>
     pub cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     /// <p>Indicates whether to enable the distribution.</p>
     pub is_enabled: ::std::option::Option<bool>,
 }
-impl UpdateDistributionInput {
+impl  UpdateDistributionInput  {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
-    pub fn distribution_name(&self) -> ::std::option::Option<&str> {
+    pub fn distribution_name(&self) -> ::std::option::Option<& str> {
         self.distribution_name.as_deref()
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    pub fn origin(&self) -> ::std::option::Option<&crate::types::InputOrigin> {
+    pub fn origin(&self) -> ::std::option::Option<& crate::types::InputOrigin> {
         self.origin.as_ref()
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
-    pub fn default_cache_behavior(&self) -> ::std::option::Option<&crate::types::CacheBehavior> {
+    pub fn default_cache_behavior(&self) -> ::std::option::Option<& crate::types::CacheBehavior> {
         self.default_cache_behavior.as_ref()
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
-    pub fn cache_behavior_settings(&self) -> ::std::option::Option<&crate::types::CacheSettings> {
+    pub fn cache_behavior_settings(&self) -> ::std::option::Option<& crate::types::CacheSettings> {
         self.cache_behavior_settings.as_ref()
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_behaviors.is_none()`.
-    pub fn cache_behaviors(&self) -> &[crate::types::CacheBehaviorPerPath] {
-        self.cache_behaviors.as_deref().unwrap_or_default()
+    pub fn cache_behaviors(&self) -> & [crate::types::CacheBehaviorPerPath] {
+        self.cache_behaviors.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Indicates whether to enable the distribution.</p>
     pub fn is_enabled(&self) -> ::std::option::Option<bool> {
@@ -67,7 +68,7 @@ pub struct UpdateDistributionInputBuilder {
     pub(crate) origin: ::std::option::Option<crate::types::InputOrigin>,
     pub(crate) default_cache_behavior: ::std::option::Option<crate::types::CacheBehavior>,
     pub(crate) cache_behavior_settings: ::std::option::Option<crate::types::CacheSettings>,
-    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+    pub(crate) cache_behaviors: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>,
     pub(crate) is_enabled: ::std::option::Option<bool>,
 }
 impl UpdateDistributionInputBuilder {
@@ -81,8 +82,7 @@ impl UpdateDistributionInputBuilder {
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
     pub fn set_distribution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distribution_name = input;
-        self
+        self.distribution_name = input; self
     }
     /// <p>The name of the distribution to update.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
@@ -98,8 +98,7 @@ impl UpdateDistributionInputBuilder {
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::InputOrigin>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
@@ -113,8 +112,7 @@ impl UpdateDistributionInputBuilder {
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn set_default_cache_behavior(mut self, input: ::std::option::Option<crate::types::CacheBehavior>) -> Self {
-        self.default_cache_behavior = input;
-        self
+        self.default_cache_behavior = input; self
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn get_default_cache_behavior(&self) -> &::std::option::Option<crate::types::CacheBehavior> {
@@ -131,8 +129,7 @@ impl UpdateDistributionInputBuilder {
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
     /// </note>
     pub fn set_cache_behavior_settings(mut self, input: ::std::option::Option<crate::types::CacheSettings>) -> Self {
-        self.cache_behavior_settings = input;
-        self
+        self.cache_behavior_settings = input; self
     }
     /// <p>An object that describes the cache behavior settings for the distribution.</p><note>
     /// <p>The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code> will replace your distribution's existing settings.</p>
@@ -147,17 +144,16 @@ impl UpdateDistributionInputBuilder {
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
     pub fn cache_behaviors(mut self, input: crate::types::CacheBehaviorPerPath) -> Self {
         let mut v = self.cache_behaviors.unwrap_or_default();
-        v.push(input);
-        self.cache_behaviors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_behaviors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>) -> Self {
-        self.cache_behaviors = input;
-        self
+    pub fn set_cache_behaviors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>>) -> Self {
+        self.cache_behaviors = input; self
     }
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
-    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+    pub fn get_cache_behaviors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheBehaviorPerPath>> {
         &self.cache_behaviors
     }
     /// <p>Indicates whether to enable the distribution.</p>
@@ -167,24 +163,30 @@ impl UpdateDistributionInputBuilder {
     }
     /// <p>Indicates whether to enable the distribution.</p>
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>Indicates whether to enable the distribution.</p>
     pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
         &self.is_enabled
     }
     /// Consumes the builder and constructs a [`UpdateDistributionInput`](crate::operation::update_distribution::UpdateDistributionInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::update_distribution::UpdateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_distribution::UpdateDistributionInput {
-            distribution_name: self.distribution_name,
-            origin: self.origin,
-            default_cache_behavior: self.default_cache_behavior,
-            cache_behavior_settings: self.cache_behavior_settings,
-            cache_behaviors: self.cache_behaviors,
-            is_enabled: self.is_enabled,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_distribution::UpdateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::update_distribution::UpdateDistributionInput {
+                distribution_name: self.distribution_name
+                ,
+                origin: self.origin
+                ,
+                default_cache_behavior: self.default_cache_behavior
+                ,
+                cache_behavior_settings: self.cache_behavior_settings
+                ,
+                cache_behaviors: self.cache_behaviors
+                ,
+                is_enabled: self.is_enabled
+                ,
+            }
+        )
     }
 }
+

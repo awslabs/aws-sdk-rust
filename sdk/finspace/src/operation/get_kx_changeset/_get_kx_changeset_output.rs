@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetKxChangesetOutput {
+pub struct GetKxChangesetOutput  {
     /// <p>A unique identifier for the changeset.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the kdb database.</p>
@@ -10,7 +10,7 @@ pub struct GetKxChangesetOutput {
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of change request objects that are run in order.</p>
-    pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
+    pub change_requests: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>,
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -33,35 +33,36 @@ pub struct GetKxChangesetOutput {
     pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     _request_id: Option<String>,
 }
-impl GetKxChangesetOutput {
+impl  GetKxChangesetOutput  {
     /// <p>A unique identifier for the changeset.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The name of the kdb database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A unique identifier for the kdb environment.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>A list of change request objects that are run in order.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
-    pub fn change_requests(&self) -> &[crate::types::ChangeRequest] {
-        self.change_requests.as_deref().unwrap_or_default()
+    pub fn change_requests(&self) -> & [crate::types::ChangeRequest] {
+        self.change_requests.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn active_from_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn active_from_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.active_from_timestamp.as_ref()
     }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
     /// <p>Status of the changeset creation process.</p>
@@ -75,19 +76,19 @@ impl GetKxChangesetOutput {
     /// <li>
     /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangesetStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ChangesetStatus> {
         self.status.as_ref()
     }
     /// <p>Provides details in the event of a failed flow, including the error type and the related error message.</p>
-    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<& crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKxChangesetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetKxChangesetOutput {
     /// Creates a new builder-style object to manufacture [`GetKxChangesetOutput`](crate::operation::get_kx_changeset::GetKxChangesetOutput).
     pub fn builder() -> crate::operation::get_kx_changeset::builders::GetKxChangesetOutputBuilder {
@@ -102,7 +103,7 @@ pub struct GetKxChangesetOutputBuilder {
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
-    pub(crate) change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
+    pub(crate) change_requests: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) active_from_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,8 +119,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -132,8 +132,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>The name of the kdb database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the kdb database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -146,8 +145,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,17 +158,16 @@ impl GetKxChangesetOutputBuilder {
     /// <p>A list of change request objects that are run in order.</p>
     pub fn change_requests(mut self, input: crate::types::ChangeRequest) -> Self {
         let mut v = self.change_requests.unwrap_or_default();
-        v.push(input);
-        self.change_requests = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.change_requests = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of change request objects that are run in order.</p>
-    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
-        self.change_requests = input;
-        self
+    pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>>) -> Self {
+        self.change_requests = input; self
     }
     /// <p>A list of change request objects that are run in order.</p>
-    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+    pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ChangeRequest>> {
         &self.change_requests
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -180,8 +177,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -194,8 +190,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_active_from_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.active_from_timestamp = input;
-        self
+        self.active_from_timestamp = input; self
     }
     /// <p>Beginning time from which the changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_active_from_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -208,8 +203,7 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -242,8 +236,7 @@ impl GetKxChangesetOutputBuilder {
     /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangesetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the changeset creation process.</p>
     /// <ul>
@@ -266,35 +259,44 @@ impl GetKxChangesetOutputBuilder {
     }
     /// <p>Provides details in the event of a failed flow, including the error type and the related error message.</p>
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
     }
     /// <p>Provides details in the event of a failed flow, including the error type and the related error message.</p>
     pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
         &self.error_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetKxChangesetOutput`](crate::operation::get_kx_changeset::GetKxChangesetOutput).
     pub fn build(self) -> crate::operation::get_kx_changeset::GetKxChangesetOutput {
         crate::operation::get_kx_changeset::GetKxChangesetOutput {
-            changeset_id: self.changeset_id,
-            database_name: self.database_name,
-            environment_id: self.environment_id,
-            change_requests: self.change_requests,
-            created_timestamp: self.created_timestamp,
-            active_from_timestamp: self.active_from_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
-            status: self.status,
-            error_info: self.error_info,
+            changeset_id: self.changeset_id
+            ,
+            database_name: self.database_name
+            ,
+            environment_id: self.environment_id
+            ,
+            change_requests: self.change_requests
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            active_from_timestamp: self.active_from_timestamp
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
+            status: self.status
+            ,
+            error_info: self.error_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

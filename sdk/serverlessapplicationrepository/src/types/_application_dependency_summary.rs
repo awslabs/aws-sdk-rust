@@ -3,19 +3,19 @@
 /// <p>A nested application summary.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ApplicationDependencySummary {
+pub struct ApplicationDependencySummary  {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The semantic version of the nested application.</p>
     pub semantic_version: ::std::option::Option<::std::string::String>,
 }
-impl ApplicationDependencySummary {
+impl  ApplicationDependencySummary  {
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The semantic version of the nested application.</p>
-    pub fn semantic_version(&self) -> ::std::option::Option<&str> {
+    pub fn semantic_version(&self) -> ::std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ApplicationDependencySummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the nested application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -57,8 +56,7 @@ impl ApplicationDependencySummaryBuilder {
     }
     /// <p>The semantic version of the nested application.</p>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The semantic version of the nested application.</p>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +65,11 @@ impl ApplicationDependencySummaryBuilder {
     /// Consumes the builder and constructs a [`ApplicationDependencySummary`](crate::types::ApplicationDependencySummary).
     pub fn build(self) -> crate::types::ApplicationDependencySummary {
         crate::types::ApplicationDependencySummary {
-            application_id: self.application_id,
-            semantic_version: self.semantic_version,
+            application_id: self.application_id
+            ,
+            semantic_version: self.semantic_version
+            ,
         }
     }
 }
+

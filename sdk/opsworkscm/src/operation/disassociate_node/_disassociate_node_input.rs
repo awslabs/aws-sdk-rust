@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateNodeInput {
+pub struct DisassociateNodeInput  {
     /// <p>The name of the server from which to disassociate the node.</p>
     pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the client node.</p>
@@ -13,15 +13,15 @@ pub struct DisassociateNodeInput {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
-    pub engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
 }
-impl DisassociateNodeInput {
+impl  DisassociateNodeInput  {
     /// <p>The name of the server from which to disassociate the node.</p>
-    pub fn server_name(&self) -> ::std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The name of the client node.</p>
-    pub fn node_name(&self) -> ::std::option::Option<&str> {
+    pub fn node_name(&self) -> ::std::option::Option<& str> {
         self.node_name.as_deref()
     }
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
@@ -30,10 +30,11 @@ impl DisassociateNodeInput {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.engine_attributes.is_none()`.
-    pub fn engine_attributes(&self) -> &[crate::types::EngineAttribute] {
-        self.engine_attributes.as_deref().unwrap_or_default()
+    pub fn engine_attributes(&self) -> & [crate::types::EngineAttribute] {
+        self.engine_attributes.as_deref()
+        .unwrap_or_default()
     }
 }
 impl DisassociateNodeInput {
@@ -49,7 +50,7 @@ impl DisassociateNodeInput {
 pub struct DisassociateNodeInputBuilder {
     pub(crate) server_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
-    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
+    pub(crate) engine_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>,
 }
 impl DisassociateNodeInputBuilder {
     /// <p>The name of the server from which to disassociate the node.</p>
@@ -60,8 +61,7 @@ impl DisassociateNodeInputBuilder {
     }
     /// <p>The name of the server from which to disassociate the node.</p>
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The name of the server from which to disassociate the node.</p>
     pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -75,8 +75,7 @@ impl DisassociateNodeInputBuilder {
     }
     /// <p>The name of the client node.</p>
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.node_name = input;
-        self
+        self.node_name = input; self
     }
     /// <p>The name of the client node.</p>
     pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,9 +93,9 @@ impl DisassociateNodeInputBuilder {
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         let mut v = self.engine_attributes.unwrap_or_default();
-        v.push(input);
-        self.engine_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.engine_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
@@ -104,9 +103,8 @@ impl DisassociateNodeInputBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
-    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
-        self.engine_attributes = input;
-        self
+    pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>>) -> Self {
+        self.engine_attributes = input; self
     }
     /// <p>Engine attributes that are used for disassociating the node. No attributes are required for Puppet.</p>
     /// <p class="title"><b>Attributes required in a DisassociateNode request for Chef</b></p>
@@ -114,17 +112,21 @@ impl DisassociateNodeInputBuilder {
     /// <li>
     /// <p><code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one organization named <code>default</code> can exist.</p></li>
     /// </ul>
-    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+    pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::EngineAttribute>> {
         &self.engine_attributes
     }
     /// Consumes the builder and constructs a [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::disassociate_node::DisassociateNodeInput {
-            server_name: self.server_name,
-            node_name: self.node_name,
-            engine_attributes: self.engine_attributes,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::disassociate_node::DisassociateNodeInput {
+                server_name: self.server_name
+                ,
+                node_name: self.node_name
+                ,
+                engine_attributes: self.engine_attributes
+                ,
+            }
+        )
     }
 }
+

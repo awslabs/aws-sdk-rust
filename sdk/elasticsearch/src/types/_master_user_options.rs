@@ -3,7 +3,7 @@
 /// <p>Credentials for the master user: username and password, ARN, or both.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct MasterUserOptions {
+pub struct MasterUserOptions  {
     /// <p>ARN for the master user (if IAM is enabled).</p>
     pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
@@ -11,21 +11,21 @@ pub struct MasterUserOptions {
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub master_user_password: ::std::option::Option<::std::string::String>,
 }
-impl MasterUserOptions {
+impl  MasterUserOptions  {
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn master_user_arn(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_arn(&self) -> ::std::option::Option<& str> {
         self.master_user_arn.as_deref()
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_name(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_name(&self) -> ::std::option::Option<& str> {
         self.master_user_name.as_deref()
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<& str> {
         self.master_user_password.as_deref()
     }
 }
-impl ::std::fmt::Debug for MasterUserOptions {
+impl  ::std::fmt::Debug for MasterUserOptions  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MasterUserOptions");
         formatter.field("master_user_arn", &self.master_user_arn);
@@ -57,8 +57,7 @@ impl MasterUserOptionsBuilder {
     }
     /// <p>ARN for the master user (if IAM is enabled).</p>
     pub fn set_master_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_arn = input;
-        self
+        self.master_user_arn = input; self
     }
     /// <p>ARN for the master user (if IAM is enabled).</p>
     pub fn get_master_user_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -71,8 +70,7 @@ impl MasterUserOptionsBuilder {
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn set_master_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_name = input;
-        self
+        self.master_user_name = input; self
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -85,8 +83,7 @@ impl MasterUserOptionsBuilder {
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.master_user_password = input;
-        self
+        self.master_user_password = input; self
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -95,9 +92,12 @@ impl MasterUserOptionsBuilder {
     /// Consumes the builder and constructs a [`MasterUserOptions`](crate::types::MasterUserOptions).
     pub fn build(self) -> crate::types::MasterUserOptions {
         crate::types::MasterUserOptions {
-            master_user_arn: self.master_user_arn,
-            master_user_name: self.master_user_name,
-            master_user_password: self.master_user_password,
+            master_user_arn: self.master_user_arn
+            ,
+            master_user_name: self.master_user_name
+            ,
+            master_user_password: self.master_user_password
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for MasterUserOptionsBuilder {
         formatter.finish()
     }
 }
+

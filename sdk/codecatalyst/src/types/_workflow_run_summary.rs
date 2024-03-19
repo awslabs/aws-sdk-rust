@@ -3,7 +3,7 @@
 /// <p>Information about a workflow run.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct WorkflowRunSummary {
+pub struct WorkflowRunSummary  {
     /// <p>The system-generated unique ID of the workflow run.</p>
     pub id: ::std::string::String,
     /// <p>The system-generated unique ID of the workflow.</p>
@@ -13,7 +13,7 @@ pub struct WorkflowRunSummary {
     /// <p>The status of the workflow run.</p>
     pub status: crate::types::WorkflowRunStatus,
     /// <p>The reasons for the workflow run status.</p>
-    pub status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunStatusReason>>,
+    pub status_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowRunStatusReason>>,
     /// <p>The date and time the workflow run began, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time the workflow run ended, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
@@ -21,42 +21,40 @@ pub struct WorkflowRunSummary {
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub last_updated_time: ::aws_smithy_types::DateTime,
 }
-impl WorkflowRunSummary {
+impl  WorkflowRunSummary  {
     /// <p>The system-generated unique ID of the workflow run.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> & str {
+        use std::ops::Deref; self.id.deref()
     }
     /// <p>The system-generated unique ID of the workflow.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> & str {
+        use std::ops::Deref; self.workflow_id.deref()
     }
     /// <p>The name of the workflow.</p>
-    pub fn workflow_name(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_name.deref()
+    pub fn workflow_name(&self) -> & str {
+        use std::ops::Deref; self.workflow_name.deref()
     }
     /// <p>The status of the workflow run.</p>
-    pub fn status(&self) -> &crate::types::WorkflowRunStatus {
+    pub fn status(&self) -> & crate::types::WorkflowRunStatus {
         &self.status
     }
     /// <p>The reasons for the workflow run status.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_reasons.is_none()`.
-    pub fn status_reasons(&self) -> &[crate::types::WorkflowRunStatusReason] {
-        self.status_reasons.as_deref().unwrap_or_default()
+    pub fn status_reasons(&self) -> & [crate::types::WorkflowRunStatusReason] {
+        self.status_reasons.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The date and time the workflow run began, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>The date and time the workflow run ended, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
-    pub fn last_updated_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn last_updated_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.last_updated_time
     }
 }
@@ -75,7 +73,7 @@ pub struct WorkflowRunSummaryBuilder {
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkflowRunStatus>,
-    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunStatusReason>>,
+    pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowRunStatusReason>>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -89,8 +87,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The system-generated unique ID of the workflow run.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The system-generated unique ID of the workflow run.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -104,8 +101,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The system-generated unique ID of the workflow.</p>
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The system-generated unique ID of the workflow.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -119,8 +115,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The name of the workflow.</p>
     pub fn set_workflow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workflow_name = input;
-        self
+        self.workflow_name = input; self
     }
     /// <p>The name of the workflow.</p>
     pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -134,8 +129,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The status of the workflow run.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowRunStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the workflow run.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowRunStatus> {
@@ -148,17 +142,16 @@ impl WorkflowRunSummaryBuilder {
     /// <p>The reasons for the workflow run status.</p>
     pub fn status_reasons(mut self, input: crate::types::WorkflowRunStatusReason) -> Self {
         let mut v = self.status_reasons.unwrap_or_default();
-        v.push(input);
-        self.status_reasons = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.status_reasons = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The reasons for the workflow run status.</p>
-    pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunStatusReason>>) -> Self {
-        self.status_reasons = input;
-        self
+    pub fn set_status_reasons(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::WorkflowRunStatusReason>>) -> Self {
+        self.status_reasons = input; self
     }
     /// <p>The reasons for the workflow run status.</p>
-    pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowRunStatusReason>> {
+    pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::WorkflowRunStatusReason>> {
         &self.status_reasons
     }
     /// <p>The date and time the workflow run began, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
@@ -169,8 +162,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The date and time the workflow run began, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The date and time the workflow run began, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -183,8 +175,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The date and time the workflow run ended, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The date and time the workflow run ended, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -198,8 +189,7 @@ impl WorkflowRunSummaryBuilder {
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>The date and time the workflow was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a></p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -214,45 +204,44 @@ impl WorkflowRunSummaryBuilder {
     /// - [`start_time`](crate::types::builders::WorkflowRunSummaryBuilder::start_time)
     /// - [`last_updated_time`](crate::types::builders::WorkflowRunSummaryBuilder::last_updated_time)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkflowRunSummary, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::WorkflowRunSummary {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-            workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "workflow_name",
-                    "workflow_name was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-            status_reasons: self.status_reasons,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-            end_time: self.end_time,
-            last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "last_updated_time",
-                    "last_updated_time was not specified but it is required when building WorkflowRunSummary",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::WorkflowRunSummary {
+                id: self.id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+                workflow_id: self.workflow_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "workflow_id was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+                workflow_name: self.workflow_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_name", "workflow_name was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+                status_reasons: self.status_reasons
+                ,
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+                end_time: self.end_time
+                ,
+                last_updated_time: self.last_updated_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("last_updated_time", "last_updated_time was not specified but it is required when building WorkflowRunSummary")
+                    )?
+                ,
+            }
+        )
     }
 }
+

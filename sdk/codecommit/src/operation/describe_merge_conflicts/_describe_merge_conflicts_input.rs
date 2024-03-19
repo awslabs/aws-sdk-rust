@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeMergeConflictsInput {
+pub struct DescribeMergeConflictsInput  {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
@@ -22,21 +22,21 @@ pub struct DescribeMergeConflictsInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl DescribeMergeConflictsInput {
+impl  DescribeMergeConflictsInput  {
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
-    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn destination_commit_specifier(&self) -> ::std::option::Option<& str> {
         self.destination_commit_specifier.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(&self) -> ::std::option::Option<&str> {
+    pub fn source_commit_specifier(&self) -> ::std::option::Option<& str> {
         self.source_commit_specifier.as_deref()
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    pub fn merge_option(&self) -> ::std::option::Option<&crate::types::MergeOptionTypeEnum> {
+    pub fn merge_option(&self) -> ::std::option::Option<& crate::types::MergeOptionTypeEnum> {
         self.merge_option.as_ref()
     }
     /// <p>The maximum number of merge hunks to include in the output.</p>
@@ -44,19 +44,19 @@ impl DescribeMergeConflictsInput {
         self.max_merge_hunks
     }
     /// <p>The path of the target files used to describe the conflicts.</p>
-    pub fn file_path(&self) -> ::std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(&self) -> ::std::option::Option<&crate::types::ConflictDetailLevelTypeEnum> {
+    pub fn conflict_detail_level(&self) -> ::std::option::Option<& crate::types::ConflictDetailLevelTypeEnum> {
         self.conflict_detail_level.as_ref()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(&self) -> ::std::option::Option<&crate::types::ConflictResolutionStrategyTypeEnum> {
+    pub fn conflict_resolution_strategy(&self) -> ::std::option::Option<& crate::types::ConflictResolutionStrategyTypeEnum> {
         self.conflict_resolution_strategy.as_ref()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -90,8 +90,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +104,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn set_destination_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.destination_commit_specifier = input;
-        self
+        self.destination_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn get_destination_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -120,8 +118,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn set_source_commit_specifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_commit_specifier = input;
-        self
+        self.source_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -135,8 +132,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn set_merge_option(mut self, input: ::std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
-        self.merge_option = input;
-        self
+        self.merge_option = input; self
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
     pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
@@ -149,8 +145,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The maximum number of merge hunks to include in the output.</p>
     pub fn set_max_merge_hunks(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_merge_hunks = input;
-        self
+        self.max_merge_hunks = input; self
     }
     /// <p>The maximum number of merge hunks to include in the output.</p>
     pub fn get_max_merge_hunks(&self) -> &::std::option::Option<i32> {
@@ -164,8 +159,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The path of the target files used to describe the conflicts.</p>
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The path of the target files used to describe the conflicts.</p>
     pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -178,8 +172,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn set_conflict_detail_level(mut self, input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
-        self.conflict_detail_level = input;
-        self
+        self.conflict_detail_level = input; self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn get_conflict_detail_level(&self) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
@@ -192,8 +185,7 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn set_conflict_resolution_strategy(mut self, input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
-        self.conflict_resolution_strategy = input;
-        self
+        self.conflict_resolution_strategy = input; self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn get_conflict_resolution_strategy(&self) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
@@ -206,30 +198,36 @@ impl DescribeMergeConflictsInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMergeConflictsInput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput {
-            repository_name: self.repository_name,
-            destination_commit_specifier: self.destination_commit_specifier,
-            source_commit_specifier: self.source_commit_specifier,
-            merge_option: self.merge_option,
-            max_merge_hunks: self.max_merge_hunks,
-            file_path: self.file_path,
-            conflict_detail_level: self.conflict_detail_level,
-            conflict_resolution_strategy: self.conflict_resolution_strategy,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput {
+                repository_name: self.repository_name
+                ,
+                destination_commit_specifier: self.destination_commit_specifier
+                ,
+                source_commit_specifier: self.source_commit_specifier
+                ,
+                merge_option: self.merge_option
+                ,
+                max_merge_hunks: self.max_merge_hunks
+                ,
+                file_path: self.file_path
+                ,
+                conflict_detail_level: self.conflict_detail_level
+                ,
+                conflict_resolution_strategy: self.conflict_resolution_strategy
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

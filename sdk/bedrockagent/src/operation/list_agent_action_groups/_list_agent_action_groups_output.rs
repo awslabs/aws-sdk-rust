@@ -3,29 +3,28 @@
 /// List Action Groups Response
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAgentActionGroupsOutput {
+pub struct ListAgentActionGroupsOutput  {
     /// List of ActionGroup Summaries
-    pub action_group_summaries: ::std::vec::Vec<crate::types::ActionGroupSummary>,
+    pub action_group_summaries: ::std::vec::Vec::<crate::types::ActionGroupSummary>,
     /// Opaque continuation token of previous paginated response.
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAgentActionGroupsOutput {
+impl  ListAgentActionGroupsOutput  {
     /// List of ActionGroup Summaries
-    pub fn action_group_summaries(&self) -> &[crate::types::ActionGroupSummary] {
-        use std::ops::Deref;
-        self.action_group_summaries.deref()
+    pub fn action_group_summaries(&self) -> & [crate::types::ActionGroupSummary] {
+        use std::ops::Deref; self.action_group_summaries.deref()
     }
     /// Opaque continuation token of previous paginated response.
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAgentActionGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAgentActionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAgentActionGroupsOutput`](crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput).
     pub fn builder() -> crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder {
@@ -37,7 +36,7 @@ impl ListAgentActionGroupsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAgentActionGroupsOutputBuilder {
-    pub(crate) action_group_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ActionGroupSummary>>,
+    pub(crate) action_group_summaries: ::std::option::Option<::std::vec::Vec::<crate::types::ActionGroupSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,17 +48,16 @@ impl ListAgentActionGroupsOutputBuilder {
     /// List of ActionGroup Summaries
     pub fn action_group_summaries(mut self, input: crate::types::ActionGroupSummary) -> Self {
         let mut v = self.action_group_summaries.unwrap_or_default();
-        v.push(input);
-        self.action_group_summaries = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.action_group_summaries = ::std::option::Option::Some(v);
+                        self
     }
     /// List of ActionGroup Summaries
-    pub fn set_action_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionGroupSummary>>) -> Self {
-        self.action_group_summaries = input;
-        self
+    pub fn set_action_group_summaries(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ActionGroupSummary>>) -> Self {
+        self.action_group_summaries = input; self
     }
     /// List of ActionGroup Summaries
-    pub fn get_action_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionGroupSummary>> {
+    pub fn get_action_group_summaries(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ActionGroupSummary>> {
         &self.action_group_summaries
     }
     /// Opaque continuation token of previous paginated response.
@@ -69,40 +67,37 @@ impl ListAgentActionGroupsOutputBuilder {
     }
     /// Opaque continuation token of previous paginated response.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Opaque continuation token of previous paginated response.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAgentActionGroupsOutput`](crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_group_summaries`](crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder::action_group_summaries)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput {
-            action_group_summaries: self.action_group_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action_group_summaries",
-                    "action_group_summaries was not specified but it is required when building ListAgentActionGroupsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput {
+                action_group_summaries: self.action_group_summaries
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action_group_summaries", "action_group_summaries was not specified but it is required when building ListAgentActionGroupsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

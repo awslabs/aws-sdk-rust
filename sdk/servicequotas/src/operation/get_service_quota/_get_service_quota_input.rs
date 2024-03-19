@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetServiceQuotaInput {
+pub struct GetServiceQuotaInput  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
@@ -10,17 +10,17 @@ pub struct GetServiceQuotaInput {
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub context_id: ::std::option::Option<::std::string::String>,
 }
-impl GetServiceQuotaInput {
+impl  GetServiceQuotaInput  {
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
-    pub fn service_code(&self) -> ::std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
-    pub fn quota_code(&self) -> ::std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<& str> {
         self.quota_code.as_deref()
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
-    pub fn context_id(&self) -> ::std::option::Option<&str> {
+    pub fn context_id(&self) -> ::std::option::Option<& str> {
         self.context_id.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl GetServiceQuotaInputBuilder {
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the <code>ListServices</code> operation.</p>
     pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl GetServiceQuotaInputBuilder {
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.quota_code = input;
-        self
+        self.quota_code = input; self
     }
     /// <p>Specifies the quota identifier. To find the quota code for a specific quota, use the <code>ListServiceQuotas</code> operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.</p>
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,21 +75,24 @@ impl GetServiceQuotaInputBuilder {
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub fn set_context_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.context_id = input;
-        self
+        self.context_id = input; self
     }
     /// <p>Specifies the Amazon Web Services account or resource to which the quota applies. The value in this field depends on the context scope associated with the specified service quota.</p>
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_id
     }
     /// Consumes the builder and constructs a [`GetServiceQuotaInput`](crate::operation::get_service_quota::GetServiceQuotaInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_service_quota::GetServiceQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_service_quota::GetServiceQuotaInput {
-            service_code: self.service_code,
-            quota_code: self.quota_code,
-            context_id: self.context_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_service_quota::GetServiceQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_service_quota::GetServiceQuotaInput {
+                service_code: self.service_code
+                ,
+                quota_code: self.quota_code
+                ,
+                context_id: self.context_id
+                ,
+            }
+        )
     }
 }
+

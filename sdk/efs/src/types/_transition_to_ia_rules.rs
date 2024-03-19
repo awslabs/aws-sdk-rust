@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitiontoiarules = unimplemented!();
 /// match transitiontoiarules {
@@ -37,16 +37,14 @@
 /// Specifically, when `transitiontoiarules` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitionToIaRules::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
-)]
+#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash)]
 pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
     After14Days,
@@ -68,92 +66,83 @@ pub enum TransitionToIaRules {
     After90Days,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
-    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
+    Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue)
 }
 impl ::std::convert::From<&str> for TransitionToIaRules {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFTER_14_DAYS" => TransitionToIaRules::After14Days,
-            "AFTER_180_DAYS" => TransitionToIaRules::After180Days,
-            "AFTER_1_DAY" => TransitionToIaRules::After1Day,
-            "AFTER_270_DAYS" => TransitionToIaRules::After270Days,
-            "AFTER_30_DAYS" => TransitionToIaRules::After30Days,
-            "AFTER_365_DAYS" => TransitionToIaRules::After365Days,
-            "AFTER_60_DAYS" => TransitionToIaRules::After60Days,
-            "AFTER_7_DAYS" => TransitionToIaRules::After7Days,
-            "AFTER_90_DAYS" => TransitionToIaRules::After90Days,
-            other => TransitionToIaRules::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                    fn from(s: &str) -> Self {
+                        match s {
+                            "AFTER_14_DAYS" => TransitionToIaRules::After14Days,
+"AFTER_180_DAYS" => TransitionToIaRules::After180Days,
+"AFTER_1_DAY" => TransitionToIaRules::After1Day,
+"AFTER_270_DAYS" => TransitionToIaRules::After270Days,
+"AFTER_30_DAYS" => TransitionToIaRules::After30Days,
+"AFTER_365_DAYS" => TransitionToIaRules::After365Days,
+"AFTER_60_DAYS" => TransitionToIaRules::After60Days,
+"AFTER_7_DAYS" => TransitionToIaRules::After7Days,
+"AFTER_90_DAYS" => TransitionToIaRules::After90Days,
+other => TransitionToIaRules::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
+                        }
+                    }
+                }
 impl ::std::str::FromStr for TransitionToIaRules {
-    type Err = ::std::convert::Infallible;
+                    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
-        ::std::result::Result::Ok(TransitionToIaRules::from(s))
-    }
-}
+                    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+                        ::std::result::Result::Ok(TransitionToIaRules::from(s))
+                    }
+                }
 impl TransitionToIaRules {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TransitionToIaRules::After14Days => "AFTER_14_DAYS",
-            TransitionToIaRules::After180Days => "AFTER_180_DAYS",
-            TransitionToIaRules::After1Day => "AFTER_1_DAY",
-            TransitionToIaRules::After270Days => "AFTER_270_DAYS",
-            TransitionToIaRules::After30Days => "AFTER_30_DAYS",
-            TransitionToIaRules::After365Days => "AFTER_365_DAYS",
-            TransitionToIaRules::After60Days => "AFTER_60_DAYS",
-            TransitionToIaRules::After7Days => "AFTER_7_DAYS",
-            TransitionToIaRules::After90Days => "AFTER_90_DAYS",
-            TransitionToIaRules::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AFTER_14_DAYS",
-            "AFTER_180_DAYS",
-            "AFTER_1_DAY",
-            "AFTER_270_DAYS",
-            "AFTER_30_DAYS",
-            "AFTER_365_DAYS",
-            "AFTER_60_DAYS",
-            "AFTER_7_DAYS",
-            "AFTER_90_DAYS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TransitionToIaRules::After14Days => "AFTER_14_DAYS",
+    TransitionToIaRules::After180Days => "AFTER_180_DAYS",
+    TransitionToIaRules::After1Day => "AFTER_1_DAY",
+    TransitionToIaRules::After270Days => "AFTER_270_DAYS",
+    TransitionToIaRules::After30Days => "AFTER_30_DAYS",
+    TransitionToIaRules::After365Days => "AFTER_365_DAYS",
+    TransitionToIaRules::After60Days => "AFTER_60_DAYS",
+    TransitionToIaRules::After7Days => "AFTER_7_DAYS",
+    TransitionToIaRules::After90Days => "AFTER_90_DAYS",
+    TransitionToIaRules::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AFTER_14_DAYS", "AFTER_180_DAYS", "AFTER_1_DAY", "AFTER_270_DAYS", "AFTER_30_DAYS", "AFTER_365_DAYS", "AFTER_60_DAYS", "AFTER_7_DAYS", "AFTER_90_DAYS"]
+                }
+            }
 impl ::std::convert::AsRef<str> for TransitionToIaRules {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
 impl TransitionToIaRules {
-    /// Parses the enum value while disallowing unknown variants.
-    ///
-    /// Unknown variants will result in an error.
-    pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
-        match Self::from(value) {
-            #[allow(deprecated)]
-            Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
-            known => Ok(known),
-        }
-    }
-}
+                        /// Parses the enum value while disallowing unknown variants.
+                        ///
+                        /// Unknown variants will result in an error.
+                        pub fn try_parse(value: &str) -> ::std::result::Result<Self, crate::error::UnknownVariantError> {
+                            match Self::from(value) {
+                                #[allow(deprecated)]
+                                Self::Unknown(_) => ::std::result::Result::Err(crate::error::UnknownVariantError::new(value)),
+                                known => Ok(known),
+                            }
+                        }
+                    }
 impl ::std::fmt::Display for TransitionToIaRules {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
-        match self {
-            TransitionToIaRules::After14Days => write!(f, "AFTER_14_DAYS"),
-            TransitionToIaRules::After180Days => write!(f, "AFTER_180_DAYS"),
-            TransitionToIaRules::After1Day => write!(f, "AFTER_1_DAY"),
-            TransitionToIaRules::After270Days => write!(f, "AFTER_270_DAYS"),
-            TransitionToIaRules::After30Days => write!(f, "AFTER_30_DAYS"),
-            TransitionToIaRules::After365Days => write!(f, "AFTER_365_DAYS"),
-            TransitionToIaRules::After60Days => write!(f, "AFTER_60_DAYS"),
-            TransitionToIaRules::After7Days => write!(f, "AFTER_7_DAYS"),
-            TransitionToIaRules::After90Days => write!(f, "AFTER_90_DAYS"),
-            TransitionToIaRules::Unknown(value) => write!(f, "{}", value),
-        }
-    }
-}
+                        fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+                            match self {
+                                TransitionToIaRules::After14Days => write!(f, "AFTER_14_DAYS"),
+TransitionToIaRules::After180Days => write!(f, "AFTER_180_DAYS"),
+TransitionToIaRules::After1Day => write!(f, "AFTER_1_DAY"),
+TransitionToIaRules::After270Days => write!(f, "AFTER_270_DAYS"),
+TransitionToIaRules::After30Days => write!(f, "AFTER_30_DAYS"),
+TransitionToIaRules::After365Days => write!(f, "AFTER_365_DAYS"),
+TransitionToIaRules::After60Days => write!(f, "AFTER_60_DAYS"),
+TransitionToIaRules::After7Days => write!(f, "AFTER_7_DAYS"),
+TransitionToIaRules::After90Days => write!(f, "AFTER_90_DAYS"),
+TransitionToIaRules::Unknown(value) => write!(f, "{}", value)
+                            }
+                        }
+                    }
+

@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstanceRefreshes`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::set_auto_scaling_group_name):<br>required: **true**<br><p>The name of the Auto Scaling group.</p><br>
     ///   - [`instance_refresh_ids(impl Into<String>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::instance_refresh_ids) / [`set_instance_refresh_ids(Option<Vec::<String>>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::set_instance_refresh_ids):<br>required: **false**<br><p>One or more instance refresh IDs.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of items to return. (You received this token from a previous call.)</p><br>
     ///   - [`max_records(i32)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::max_records) / [`set_max_records(Option<i32>)`](crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::set_max_records):<br>required: **false**<br><p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p><br>
-    /// - On success, responds with [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput) with field(s):
+                            /// - On success, responds with [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput) with field(s):
     ///   - [`instance_refreshes(Option<Vec::<InstanceRefresh>>)`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput::instance_refreshes): <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstanceRefreshesError>`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError)
+                            /// - On failure, responds with [`SdkError<DescribeInstanceRefreshesError>`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError)
     pub fn describe_instance_refreshes(&self) -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder {
-        crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

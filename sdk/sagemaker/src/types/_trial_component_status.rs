@@ -3,19 +3,19 @@
 /// <p>The status of the trial component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct TrialComponentStatus {
+pub struct TrialComponentStatus  {
     /// <p>The status of the trial component.</p>
     pub primary_status: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>,
     /// <p>If the component failed, a message describing why.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl TrialComponentStatus {
+impl  TrialComponentStatus  {
     /// <p>The status of the trial component.</p>
-    pub fn primary_status(&self) -> ::std::option::Option<&crate::types::TrialComponentPrimaryStatus> {
+    pub fn primary_status(&self) -> ::std::option::Option<& crate::types::TrialComponentPrimaryStatus> {
         self.primary_status.as_ref()
     }
     /// <p>If the component failed, a message describing why.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl TrialComponentStatusBuilder {
     }
     /// <p>The status of the trial component.</p>
     pub fn set_primary_status(mut self, input: ::std::option::Option<crate::types::TrialComponentPrimaryStatus>) -> Self {
-        self.primary_status = input;
-        self
+        self.primary_status = input; self
     }
     /// <p>The status of the trial component.</p>
     pub fn get_primary_status(&self) -> &::std::option::Option<crate::types::TrialComponentPrimaryStatus> {
@@ -55,8 +54,7 @@ impl TrialComponentStatusBuilder {
     }
     /// <p>If the component failed, a message describing why.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>If the component failed, a message describing why.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl TrialComponentStatusBuilder {
     /// Consumes the builder and constructs a [`TrialComponentStatus`](crate::types::TrialComponentStatus).
     pub fn build(self) -> crate::types::TrialComponentStatus {
         crate::types::TrialComponentStatus {
-            primary_status: self.primary_status,
-            message: self.message,
+            primary_status: self.primary_status
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

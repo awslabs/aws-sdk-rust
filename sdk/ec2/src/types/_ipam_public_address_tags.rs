@@ -3,16 +3,17 @@
 /// <p>Tags for a public IP address discovered by IPAM.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IpamPublicAddressTags {
+pub struct IpamPublicAddressTags  {
     /// <p>Tags for an Elastic IP address.</p>
-    pub eip_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressTag>>,
+    pub eip_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressTag>>,
 }
-impl IpamPublicAddressTags {
+impl  IpamPublicAddressTags  {
     /// <p>Tags for an Elastic IP address.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eip_tags.is_none()`.
-    pub fn eip_tags(&self) -> &[crate::types::IpamPublicAddressTag] {
-        self.eip_tags.as_deref().unwrap_or_default()
+    pub fn eip_tags(&self) -> & [crate::types::IpamPublicAddressTag] {
+        self.eip_tags.as_deref()
+        .unwrap_or_default()
     }
 }
 impl IpamPublicAddressTags {
@@ -26,7 +27,7 @@ impl IpamPublicAddressTags {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct IpamPublicAddressTagsBuilder {
-    pub(crate) eip_tags: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressTag>>,
+    pub(crate) eip_tags: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressTag>>,
 }
 impl IpamPublicAddressTagsBuilder {
     /// Appends an item to `eip_tags`.
@@ -36,21 +37,24 @@ impl IpamPublicAddressTagsBuilder {
     /// <p>Tags for an Elastic IP address.</p>
     pub fn eip_tags(mut self, input: crate::types::IpamPublicAddressTag) -> Self {
         let mut v = self.eip_tags.unwrap_or_default();
-        v.push(input);
-        self.eip_tags = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.eip_tags = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Tags for an Elastic IP address.</p>
-    pub fn set_eip_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressTag>>) -> Self {
-        self.eip_tags = input;
-        self
+    pub fn set_eip_tags(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressTag>>) -> Self {
+        self.eip_tags = input; self
     }
     /// <p>Tags for an Elastic IP address.</p>
-    pub fn get_eip_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamPublicAddressTag>> {
+    pub fn get_eip_tags(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::IpamPublicAddressTag>> {
         &self.eip_tags
     }
     /// Consumes the builder and constructs a [`IpamPublicAddressTags`](crate::types::IpamPublicAddressTags).
     pub fn build(self) -> crate::types::IpamPublicAddressTags {
-        crate::types::IpamPublicAddressTags { eip_tags: self.eip_tags }
+        crate::types::IpamPublicAddressTags {
+            eip_tags: self.eip_tags
+            ,
+        }
     }
 }
+

@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListPackagingGroups`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::set_max_results):<br>required: **false**<br>Upper bound on number of records to return.<br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::set_next_token):<br>required: **false**<br>A token used to resume pagination from the end of a previous request.<br>
-    /// - On success, responds with [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput) with field(s):
+                            /// - On success, responds with [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
     ///   - [`packaging_groups(Option<Vec::<PackagingGroup>>)`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput::packaging_groups): A list of MediaPackage VOD PackagingGroup resources.
-    /// - On failure, responds with [`SdkError<ListPackagingGroupsError>`](crate::operation::list_packaging_groups::ListPackagingGroupsError)
+                            /// - On failure, responds with [`SdkError<ListPackagingGroupsError>`](crate::operation::list_packaging_groups::ListPackagingGroupsError)
     pub fn list_packaging_groups(&self) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_packaging_groups::builders::ListPackagingGroupsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

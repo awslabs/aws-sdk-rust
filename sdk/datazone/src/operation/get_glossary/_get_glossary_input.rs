@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetGlossaryInput {
+pub struct GetGlossaryInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the business glossary.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
-impl GetGlossaryInput {
+impl  GetGlossaryInput  {
     /// <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
-    pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn domain_identifier(&self) -> ::std::option::Option<& str> {
         self.domain_identifier.as_deref()
     }
     /// <p>The ID of the business glossary.</p>
-    pub fn identifier(&self) -> ::std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetGlossaryInputBuilder {
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
     pub fn set_domain_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain_identifier = input;
-        self
+        self.domain_identifier = input; self
     }
     /// <p>The ID of the Amazon DataZone domain in which this business glossary exists.</p>
     pub fn get_domain_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,8 +55,7 @@ impl GetGlossaryInputBuilder {
     }
     /// <p>The ID of the business glossary.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The ID of the business glossary.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,9 +63,14 @@ impl GetGlossaryInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetGlossaryInput`](crate::operation::get_glossary::GetGlossaryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_glossary::GetGlossaryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_glossary::GetGlossaryInput {
-            domain_identifier: self.domain_identifier,
-            identifier: self.identifier,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_glossary::GetGlossaryInput {
+                domain_identifier: self.domain_identifier
+                ,
+                identifier: self.identifier
+                ,
+            }
+        )
     }
 }
+

@@ -5,7 +5,7 @@
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct SessionCredentials {
+pub struct SessionCredentials  {
     /// <p>A unique identifier that's associated with a secret access key. The access key ID and the secret access key are used together to sign programmatic Amazon Web Services requests cryptographically.</p>
     pub access_key_id: ::std::string::String,
     /// <p>A key that's used with the access key ID to cryptographically sign programmatic Amazon Web Services requests. Signing a request identifies the sender and prevents the request from being altered.</p>
@@ -15,28 +15,25 @@ pub struct SessionCredentials {
     /// <p>Temporary security credentials expire after a specified interval. After temporary credentials expire, any calls that you make with those credentials will fail. So you must generate a new set of temporary credentials. Temporary credentials cannot be extended or refreshed beyond the original specified interval.</p>
     pub expiration: ::aws_smithy_types::DateTime,
 }
-impl SessionCredentials {
+impl  SessionCredentials  {
     /// <p>A unique identifier that's associated with a secret access key. The access key ID and the secret access key are used together to sign programmatic Amazon Web Services requests cryptographically.</p>
-    pub fn access_key_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_key_id.deref()
+    pub fn access_key_id(&self) -> & str {
+        use std::ops::Deref; self.access_key_id.deref()
     }
     /// <p>A key that's used with the access key ID to cryptographically sign programmatic Amazon Web Services requests. Signing a request identifies the sender and prevents the request from being altered.</p>
-    pub fn secret_access_key(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_access_key.deref()
+    pub fn secret_access_key(&self) -> & str {
+        use std::ops::Deref; self.secret_access_key.deref()
     }
     /// <p>A part of the temporary security credentials. The session token is used to validate the temporary security credentials.</p>
-    pub fn session_token(&self) -> &str {
-        use std::ops::Deref;
-        self.session_token.deref()
+    pub fn session_token(&self) -> & str {
+        use std::ops::Deref; self.session_token.deref()
     }
     /// <p>Temporary security credentials expire after a specified interval. After temporary credentials expire, any calls that you make with those credentials will fail. So you must generate a new set of temporary credentials. Temporary credentials cannot be extended or refreshed beyond the original specified interval.</p>
-    pub fn expiration(&self) -> &::aws_smithy_types::DateTime {
+    pub fn expiration(&self) -> & ::aws_smithy_types::DateTime {
         &self.expiration
     }
 }
-impl ::std::fmt::Debug for SessionCredentials {
+impl  ::std::fmt::Debug for SessionCredentials  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SessionCredentials");
         formatter.field("access_key_id", &self.access_key_id);
@@ -71,8 +68,7 @@ impl SessionCredentialsBuilder {
     }
     /// <p>A unique identifier that's associated with a secret access key. The access key ID and the secret access key are used together to sign programmatic Amazon Web Services requests cryptographically.</p>
     pub fn set_access_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>A unique identifier that's associated with a secret access key. The access key ID and the secret access key are used together to sign programmatic Amazon Web Services requests cryptographically.</p>
     pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,8 +82,7 @@ impl SessionCredentialsBuilder {
     }
     /// <p>A key that's used with the access key ID to cryptographically sign programmatic Amazon Web Services requests. Signing a request identifies the sender and prevents the request from being altered.</p>
     pub fn set_secret_access_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.secret_access_key = input;
-        self
+        self.secret_access_key = input; self
     }
     /// <p>A key that's used with the access key ID to cryptographically sign programmatic Amazon Web Services requests. Signing a request identifies the sender and prevents the request from being altered.</p>
     pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
@@ -101,8 +96,7 @@ impl SessionCredentialsBuilder {
     }
     /// <p>A part of the temporary security credentials. The session token is used to validate the temporary security credentials.</p>
     pub fn set_session_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>A part of the temporary security credentials. The session token is used to validate the temporary security credentials.</p>
     pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -116,8 +110,7 @@ impl SessionCredentialsBuilder {
     }
     /// <p>Temporary security credentials expire after a specified interval. After temporary credentials expire, any calls that you make with those credentials will fail. So you must generate a new set of temporary credentials. Temporary credentials cannot be extended or refreshed beyond the original specified interval.</p>
     pub fn set_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input;
-        self
+        self.expiration = input; self
     }
     /// <p>Temporary security credentials expire after a specified interval. After temporary credentials expire, any calls that you make with those credentials will fail. So you must generate a new set of temporary credentials. Temporary credentials cannot be extended or refreshed beyond the original specified interval.</p>
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -130,32 +123,30 @@ impl SessionCredentialsBuilder {
     /// - [`session_token`](crate::types::builders::SessionCredentialsBuilder::session_token)
     /// - [`expiration`](crate::types::builders::SessionCredentialsBuilder::expiration)
     pub fn build(self) -> ::std::result::Result<crate::types::SessionCredentials, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SessionCredentials {
-            access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "access_key_id",
-                    "access_key_id was not specified but it is required when building SessionCredentials",
-                )
-            })?,
-            secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "secret_access_key",
-                    "secret_access_key was not specified but it is required when building SessionCredentials",
-                )
-            })?,
-            session_token: self.session_token.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "session_token",
-                    "session_token was not specified but it is required when building SessionCredentials",
-                )
-            })?,
-            expiration: self.expiration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "expiration",
-                    "expiration was not specified but it is required when building SessionCredentials",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SessionCredentials {
+                access_key_id: self.access_key_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("access_key_id", "access_key_id was not specified but it is required when building SessionCredentials")
+                    )?
+                ,
+                secret_access_key: self.secret_access_key
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("secret_access_key", "secret_access_key was not specified but it is required when building SessionCredentials")
+                    )?
+                ,
+                session_token: self.session_token
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("session_token", "session_token was not specified but it is required when building SessionCredentials")
+                    )?
+                ,
+                expiration: self.expiration
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("expiration", "expiration was not specified but it is required when building SessionCredentials")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for SessionCredentialsBuilder {
@@ -168,3 +159,4 @@ impl ::std::fmt::Debug for SessionCredentialsBuilder {
         formatter.finish()
     }
 }
+

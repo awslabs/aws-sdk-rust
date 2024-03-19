@@ -3,7 +3,7 @@
 /// <p>Task object encapsulating task information.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Task {
+pub struct Task  {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     pub status: crate::types::Status,
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
@@ -11,13 +11,13 @@ pub struct Task {
     /// <p>Indication of the percentage completion of the task.</p>
     pub progress_percent: ::std::option::Option<i32>,
 }
-impl Task {
+impl  Task  {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
-    pub fn status(&self) -> &crate::types::Status {
+    pub fn status(&self) -> & crate::types::Status {
         &self.status
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
-    pub fn status_detail(&self) -> ::std::option::Option<&str> {
+    pub fn status_detail(&self) -> ::std::option::Option<& str> {
         self.status_detail.as_deref()
     }
     /// <p>Indication of the percentage completion of the task.</p>
@@ -49,8 +49,7 @@ impl TaskBuilder {
     }
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
@@ -63,8 +62,7 @@ impl TaskBuilder {
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn set_status_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status_detail = input;
-        self
+        self.status_detail = input; self
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn get_status_detail(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +75,7 @@ impl TaskBuilder {
     }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.progress_percent = input;
-        self
+        self.progress_percent = input; self
     }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
@@ -88,15 +85,19 @@ impl TaskBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::TaskBuilder::status)
     pub fn build(self) -> ::std::result::Result<crate::types::Task, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Task {
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Task",
-                )
-            })?,
-            status_detail: self.status_detail,
-            progress_percent: self.progress_percent,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Task {
+                status: self.status
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status", "status was not specified but it is required when building Task")
+                    )?
+                ,
+                status_detail: self.status_detail
+                ,
+                progress_percent: self.progress_percent
+                ,
+            }
+        )
     }
 }
+

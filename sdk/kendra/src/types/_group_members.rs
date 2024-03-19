@@ -3,31 +3,33 @@
 /// <p>A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GroupMembers {
+pub struct GroupMembers  {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
+    pub member_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>,
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    pub member_users: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>,
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
     pub s3_pathfor_group_members: ::std::option::Option<crate::types::S3Path>,
 }
-impl GroupMembers {
+impl  GroupMembers  {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_groups.is_none()`.
-    pub fn member_groups(&self) -> &[crate::types::MemberGroup] {
-        self.member_groups.as_deref().unwrap_or_default()
+    pub fn member_groups(&self) -> & [crate::types::MemberGroup] {
+        self.member_groups.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_users.is_none()`.
-    pub fn member_users(&self) -> &[crate::types::MemberUser] {
-        self.member_users.as_deref().unwrap_or_default()
+    pub fn member_users(&self) -> & [crate::types::MemberUser] {
+        self.member_users.as_deref()
+        .unwrap_or_default()
     }
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
-    pub fn s3_pathfor_group_members(&self) -> ::std::option::Option<&crate::types::S3Path> {
+    pub fn s3_pathfor_group_members(&self) -> ::std::option::Option<& crate::types::S3Path> {
         self.s3_pathfor_group_members.as_ref()
     }
 }
@@ -42,8 +44,8 @@ impl GroupMembers {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GroupMembersBuilder {
-    pub(crate) member_groups: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>,
-    pub(crate) member_users: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>,
+    pub(crate) member_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>,
+    pub(crate) member_users: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>,
     pub(crate) s3_pathfor_group_members: ::std::option::Option<crate::types::S3Path>,
 }
 impl GroupMembersBuilder {
@@ -54,17 +56,16 @@ impl GroupMembersBuilder {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
     pub fn member_groups(mut self, input: crate::types::MemberGroup) -> Self {
         let mut v = self.member_groups.unwrap_or_default();
-        v.push(input);
-        self.member_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub fn set_member_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>>) -> Self {
-        self.member_groups = input;
-        self
+    pub fn set_member_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>>) -> Self {
+        self.member_groups = input; self
     }
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
-    pub fn get_member_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberGroup>> {
+    pub fn get_member_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberGroup>> {
         &self.member_groups
     }
     /// Appends an item to `member_users`.
@@ -74,17 +75,16 @@ impl GroupMembersBuilder {
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
     pub fn member_users(mut self, input: crate::types::MemberUser) -> Self {
         let mut v = self.member_users.unwrap_or_default();
-        v.push(input);
-        self.member_users = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.member_users = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub fn set_member_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberUser>>) -> Self {
-        self.member_users = input;
-        self
+    pub fn set_member_users(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>>) -> Self {
+        self.member_users = input; self
     }
     /// <p>A list of users that belong to a group. For example, a list of interns all belong to the "Interns" group.</p>
-    pub fn get_member_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberUser>> {
+    pub fn get_member_users(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MemberUser>> {
         &self.member_users
     }
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
@@ -96,8 +96,7 @@ impl GroupMembersBuilder {
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
     pub fn set_s3_pathfor_group_members(mut self, input: ::std::option::Option<crate::types::S3Path>) -> Self {
-        self.s3_pathfor_group_members = input;
-        self
+        self.s3_pathfor_group_members = input; self
     }
     /// <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
@@ -107,9 +106,13 @@ impl GroupMembersBuilder {
     /// Consumes the builder and constructs a [`GroupMembers`](crate::types::GroupMembers).
     pub fn build(self) -> crate::types::GroupMembers {
         crate::types::GroupMembers {
-            member_groups: self.member_groups,
-            member_users: self.member_users,
-            s3_pathfor_group_members: self.s3_pathfor_group_members,
+            member_groups: self.member_groups
+            ,
+            member_users: self.member_users
+            ,
+            s3_pathfor_group_members: self.s3_pathfor_group_members
+            ,
         }
     }
 }
+

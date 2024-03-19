@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CopyProjectVersionOutput {
+pub struct CopyProjectVersionOutput  {
     /// <p>The ARN of the copied model version in the destination project.</p>
     pub project_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CopyProjectVersionOutput {
+impl  CopyProjectVersionOutput  {
     /// <p>The ARN of the copied model version in the destination project.</p>
-    pub fn project_version_arn(&self) -> ::std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> ::std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CopyProjectVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CopyProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput).
     pub fn builder() -> crate::operation::copy_project_version::builders::CopyProjectVersionOutputBuilder {
@@ -40,27 +40,28 @@ impl CopyProjectVersionOutputBuilder {
     }
     /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn set_project_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.project_version_arn = input;
-        self
+        self.project_version_arn = input; self
     }
     /// <p>The ARN of the copied model version in the destination project.</p>
     pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CopyProjectVersionOutput`](crate::operation::copy_project_version::CopyProjectVersionOutput).
     pub fn build(self) -> crate::operation::copy_project_version::CopyProjectVersionOutput {
         crate::operation::copy_project_version::CopyProjectVersionOutput {
-            project_version_arn: self.project_version_arn,
+            project_version_arn: self.project_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about an Lambda function to import to create a component.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct LambdaFunctionRecipeSource {
+pub struct LambdaFunctionRecipeSource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
     pub lambda_arn: ::std::string::String,
     /// <p>The name of the component.</p>
@@ -13,43 +13,40 @@ pub struct LambdaFunctionRecipeSource {
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
     pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The platforms that the component version supports.</p>
-    pub component_platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
+    pub component_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentPlatform>>,
     /// <p>The component versions on which this Lambda function component depends.</p>
-    pub component_dependencies:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>>,
+    pub component_dependencies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDependencyRequirement>>,
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub component_lambda_parameters: ::std::option::Option<crate::types::LambdaExecutionParameters>,
 }
-impl LambdaFunctionRecipeSource {
+impl  LambdaFunctionRecipeSource  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
-    pub fn lambda_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.lambda_arn.deref()
+    pub fn lambda_arn(&self) -> & str {
+        use std::ops::Deref; self.lambda_arn.deref()
     }
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
-    pub fn component_name(&self) -> ::std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
-    pub fn component_version(&self) -> ::std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<& str> {
         self.component_version.as_deref()
     }
     /// <p>The platforms that the component version supports.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_platforms.is_none()`.
-    pub fn component_platforms(&self) -> &[crate::types::ComponentPlatform] {
-        self.component_platforms.as_deref().unwrap_or_default()
+    pub fn component_platforms(&self) -> & [crate::types::ComponentPlatform] {
+        self.component_platforms.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The component versions on which this Lambda function component depends.</p>
-    pub fn component_dependencies(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>> {
+    pub fn component_dependencies(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentDependencyRequirement>> {
         self.component_dependencies.as_ref()
     }
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
-    pub fn component_lambda_parameters(&self) -> ::std::option::Option<&crate::types::LambdaExecutionParameters> {
+    pub fn component_lambda_parameters(&self) -> ::std::option::Option<& crate::types::LambdaExecutionParameters> {
         self.component_lambda_parameters.as_ref()
     }
 }
@@ -67,9 +64,8 @@ pub struct LambdaFunctionRecipeSourceBuilder {
     pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
     pub(crate) component_version: ::std::option::Option<::std::string::String>,
-    pub(crate) component_platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
-    pub(crate) component_dependencies:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>>,
+    pub(crate) component_platforms: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentPlatform>>,
+    pub(crate) component_dependencies: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDependencyRequirement>>,
     pub(crate) component_lambda_parameters: ::std::option::Option<crate::types::LambdaExecutionParameters>,
 }
 impl LambdaFunctionRecipeSourceBuilder {
@@ -81,8 +77,7 @@ impl LambdaFunctionRecipeSourceBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.lambda_arn = input;
-        self
+        self.lambda_arn = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
     pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +92,7 @@ impl LambdaFunctionRecipeSourceBuilder {
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
     pub fn set_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
@@ -114,8 +108,7 @@ impl LambdaFunctionRecipeSourceBuilder {
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
     pub fn set_component_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_version = input;
-        self
+        self.component_version = input; self
     }
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
@@ -129,17 +122,16 @@ impl LambdaFunctionRecipeSourceBuilder {
     /// <p>The platforms that the component version supports.</p>
     pub fn component_platforms(mut self, input: crate::types::ComponentPlatform) -> Self {
         let mut v = self.component_platforms.unwrap_or_default();
-        v.push(input);
-        self.component_platforms = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.component_platforms = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn set_component_platforms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>) -> Self {
-        self.component_platforms = input;
-        self
+    pub fn set_component_platforms(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComponentPlatform>>) -> Self {
+        self.component_platforms = input; self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn get_component_platforms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
+    pub fn get_component_platforms(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComponentPlatform>> {
         &self.component_platforms
     }
     /// Adds a key-value pair to `component_dependencies`.
@@ -147,28 +139,18 @@ impl LambdaFunctionRecipeSourceBuilder {
     /// To override the contents of this collection use [`set_component_dependencies`](Self::set_component_dependencies).
     ///
     /// <p>The component versions on which this Lambda function component depends.</p>
-    pub fn component_dependencies(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: crate::types::ComponentDependencyRequirement,
-    ) -> Self {
+    pub fn component_dependencies(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentDependencyRequirement) -> Self {
         let mut hash_map = self.component_dependencies.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.component_dependencies = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.component_dependencies = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The component versions on which this Lambda function component depends.</p>
-    pub fn set_component_dependencies(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>>,
-    ) -> Self {
-        self.component_dependencies = input;
-        self
+    pub fn set_component_dependencies(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDependencyRequirement>>) -> Self {
+        self.component_dependencies = input; self
     }
     /// <p>The component versions on which this Lambda function component depends.</p>
-    pub fn get_component_dependencies(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentDependencyRequirement>> {
+    pub fn get_component_dependencies(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentDependencyRequirement>> {
         &self.component_dependencies
     }
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
@@ -178,8 +160,7 @@ impl LambdaFunctionRecipeSourceBuilder {
     }
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub fn set_component_lambda_parameters(mut self, input: ::std::option::Option<crate::types::LambdaExecutionParameters>) -> Self {
-        self.component_lambda_parameters = input;
-        self
+        self.component_lambda_parameters = input; self
     }
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub fn get_component_lambda_parameters(&self) -> &::std::option::Option<crate::types::LambdaExecutionParameters> {
@@ -189,18 +170,25 @@ impl LambdaFunctionRecipeSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_arn`](crate::types::builders::LambdaFunctionRecipeSourceBuilder::lambda_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionRecipeSource, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LambdaFunctionRecipeSource {
-            lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "lambda_arn",
-                    "lambda_arn was not specified but it is required when building LambdaFunctionRecipeSource",
-                )
-            })?,
-            component_name: self.component_name,
-            component_version: self.component_version,
-            component_platforms: self.component_platforms,
-            component_dependencies: self.component_dependencies,
-            component_lambda_parameters: self.component_lambda_parameters,
-        })
+        ::std::result::Result::Ok(
+            crate::types::LambdaFunctionRecipeSource {
+                lambda_arn: self.lambda_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("lambda_arn", "lambda_arn was not specified but it is required when building LambdaFunctionRecipeSource")
+                    )?
+                ,
+                component_name: self.component_name
+                ,
+                component_version: self.component_version
+                ,
+                component_platforms: self.component_platforms
+                ,
+                component_dependencies: self.component_dependencies
+                ,
+                component_lambda_parameters: self.component_lambda_parameters
+                ,
+            }
+        )
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateOrderOutput {
+pub struct CreateOrderOutput  {
     /// <p>Information about this order.</p>
     pub order: ::std::option::Option<crate::types::Order>,
     _request_id: Option<String>,
 }
-impl CreateOrderOutput {
+impl  CreateOrderOutput  {
     /// <p>Information about this order.</p>
-    pub fn order(&self) -> ::std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> ::std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateOrderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateOrderOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrderOutput`](crate::operation::create_order::CreateOrderOutput).
     pub fn builder() -> crate::operation::create_order::builders::CreateOrderOutputBuilder {
@@ -40,27 +40,28 @@ impl CreateOrderOutputBuilder {
     }
     /// <p>Information about this order.</p>
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// <p>Information about this order.</p>
     pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
         &self.order
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateOrderOutput`](crate::operation::create_order::CreateOrderOutput).
     pub fn build(self) -> crate::operation::create_order::CreateOrderOutput {
         crate::operation::create_order::CreateOrderOutput {
-            order: self.order,
+            order: self.order
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct CreateDbInstanceInput {
+pub struct CreateDbInstanceInput  {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The username of the initial admin user created in InfluxDB. Must start with a letter and can't end with a hyphen or contain two consecutive hyphens. For example, my-user1. This username will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in Amazon Secrets Manager in your account.</p>
@@ -16,9 +16,9 @@ pub struct CreateDbInstanceInput {
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC subnet IDs in different availability zones when deploying with a Multi-AZ standby.</p>
-    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>A list of VPC security group IDs to associate with the DB instance.</p>
-    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>Configures the DB instance with a public IP to facilitate access.</p>
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The Timestream for InfluxDB DB storage type to read and write InfluxDB data.</p>
@@ -41,44 +41,46 @@ pub struct CreateDbInstanceInput {
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
-impl CreateDbInstanceInput {
+impl  CreateDbInstanceInput  {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The username of the initial admin user created in InfluxDB. Must start with a letter and can't end with a hyphen or contain two consecutive hyphens. For example, my-user1. This username will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in Amazon Secrets Manager in your account.</p>
-    pub fn username(&self) -> ::std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password of the initial admin user created in InfluxDB. This password will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in AWS SecretManager in your account.</p>
-    pub fn password(&self) -> ::std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The name of the initial organization for the initial admin user in InfluxDB. An InfluxDB organization is a workspace for a group of users.</p>
-    pub fn organization(&self) -> ::std::option::Option<&str> {
+    pub fn organization(&self) -> ::std::option::Option<& str> {
         self.organization.as_deref()
     }
     /// <p>The name of the initial InfluxDB bucket. All InfluxDB data is stored in a bucket. A bucket combines the concept of a database and a retention period (the duration of time that each data point persists). A bucket belongs to an organization.</p>
-    pub fn bucket(&self) -> ::std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
-    pub fn db_instance_type(&self) -> ::std::option::Option<&crate::types::DbInstanceType> {
+    pub fn db_instance_type(&self) -> ::std::option::Option<& crate::types::DbInstanceType> {
         self.db_instance_type.as_ref()
     }
     /// <p>A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC subnet IDs in different availability zones when deploying with a Multi-AZ standby.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_subnet_ids.is_none()`.
-    pub fn vpc_subnet_ids(&self) -> &[::std::string::String] {
-        self.vpc_subnet_ids.as_deref().unwrap_or_default()
+    pub fn vpc_subnet_ids(&self) -> & [::std::string::String] {
+        self.vpc_subnet_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A list of VPC security group IDs to associate with the DB instance.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
-    pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
-        self.vpc_security_group_ids.as_deref().unwrap_or_default()
+    pub fn vpc_security_group_ids(&self) -> & [::std::string::String] {
+        self.vpc_security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Configures the DB instance with a public IP to facilitate access.</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
@@ -94,7 +96,7 @@ impl CreateDbInstanceInput {
     /// <li>
     /// <p>Influx IO Included 16000 IOPS</p></li>
     /// </ul>
-    pub fn db_storage_type(&self) -> ::std::option::Option<&crate::types::DbStorageType> {
+    pub fn db_storage_type(&self) -> ::std::option::Option<& crate::types::DbStorageType> {
         self.db_storage_type.as_ref()
     }
     /// <p>The amount of storage to allocate for your DB storage type in GiB (gibibytes).</p>
@@ -102,23 +104,23 @@ impl CreateDbInstanceInput {
         self.allocated_storage
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
-    pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<& str> {
         self.db_parameter_group_identifier.as_deref()
     }
     /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
-    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
-    pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
+    pub fn log_delivery_configuration(&self) -> ::std::option::Option<& crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl ::std::fmt::Debug for CreateDbInstanceInput {
+impl  ::std::fmt::Debug for CreateDbInstanceInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateDbInstanceInput");
         formatter.field("name", &self.name);
@@ -156,15 +158,15 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) organization: ::std::option::Option<::std::string::String>,
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
-    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
@@ -175,8 +177,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -189,8 +190,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The username of the initial admin user created in InfluxDB. Must start with a letter and can't end with a hyphen or contain two consecutive hyphens. For example, my-user1. This username will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in Amazon Secrets Manager in your account.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The username of the initial admin user created in InfluxDB. Must start with a letter and can't end with a hyphen or contain two consecutive hyphens. For example, my-user1. This username will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in Amazon Secrets Manager in your account.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
@@ -204,8 +204,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The password of the initial admin user created in InfluxDB. This password will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in AWS SecretManager in your account.</p>
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The password of the initial admin user created in InfluxDB. This password will allow you to access the InfluxDB UI to perform various administrative tasks and also use the InfluxDB CLI to create an operator token. These attributes will be stored in a Secret created in AWS SecretManager in your account.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
@@ -218,8 +217,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The name of the initial organization for the initial admin user in InfluxDB. An InfluxDB organization is a workspace for a group of users.</p>
     pub fn set_organization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization = input;
-        self
+        self.organization = input; self
     }
     /// <p>The name of the initial organization for the initial admin user in InfluxDB. An InfluxDB organization is a workspace for a group of users.</p>
     pub fn get_organization(&self) -> &::std::option::Option<::std::string::String> {
@@ -232,8 +230,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The name of the initial InfluxDB bucket. All InfluxDB data is stored in a bucket. A bucket combines the concept of a database and a retention period (the duration of time that each data point persists). A bucket belongs to an organization.</p>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the initial InfluxDB bucket. All InfluxDB data is stored in a bucket. A bucket combines the concept of a database and a retention period (the duration of time that each data point persists). A bucket belongs to an organization.</p>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
@@ -247,8 +244,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub fn set_db_instance_type(mut self, input: ::std::option::Option<crate::types::DbInstanceType>) -> Self {
-        self.db_instance_type = input;
-        self
+        self.db_instance_type = input; self
     }
     /// <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
     pub fn get_db_instance_type(&self) -> &::std::option::Option<crate::types::DbInstanceType> {
@@ -261,17 +257,16 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC subnet IDs in different availability zones when deploying with a Multi-AZ standby.</p>
     pub fn vpc_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_subnet_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_subnet_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC subnet IDs in different availability zones when deploying with a Multi-AZ standby.</p>
-    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_subnet_ids = input;
-        self
+    pub fn set_vpc_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_subnet_ids = input; self
     }
     /// <p>A list of VPC subnet IDs to associate with the DB instance. Provide at least two VPC subnet IDs in different availability zones when deploying with a Multi-AZ standby.</p>
-    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_subnet_ids
     }
     /// Appends an item to `vpc_security_group_ids`.
@@ -281,17 +276,16 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A list of VPC security group IDs to associate with the DB instance.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of VPC security group IDs to associate with the DB instance.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// <p>A list of VPC security group IDs to associate with the DB instance.</p>
-    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.vpc_security_group_ids
     }
     /// <p>Configures the DB instance with a public IP to facilitate access.</p>
@@ -301,8 +295,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>Configures the DB instance with a public IP to facilitate access.</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.publicly_accessible = input;
-        self
+        self.publicly_accessible = input; self
     }
     /// <p>Configures the DB instance with a public IP to facilitate access.</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -333,8 +326,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Influx IO Included 16000 IOPS</p></li>
     /// </ul>
     pub fn set_db_storage_type(mut self, input: ::std::option::Option<crate::types::DbStorageType>) -> Self {
-        self.db_storage_type = input;
-        self
+        self.db_storage_type = input; self
     }
     /// <p>The Timestream for InfluxDB DB storage type to read and write InfluxDB data.</p>
     /// <p>You can choose between 3 different types of provisioned Influx IOPS included storage according to your workloads requirements:</p>
@@ -357,8 +349,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The amount of storage to allocate for your DB storage type in GiB (gibibytes).</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.allocated_storage = input;
-        self
+        self.allocated_storage = input; self
     }
     /// <p>The amount of storage to allocate for your DB storage type in GiB (gibibytes).</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
@@ -371,8 +362,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn set_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.db_parameter_group_identifier = input;
-        self
+        self.db_parameter_group_identifier = input; self
     }
     /// <p>The id of the DB parameter group to assign to your DB instance. DB parameter groups specify how the database is configured. For example, DB parameter groups can specify the limit for query concurrency.</p>
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -385,8 +375,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>Specifies whether the DB instance will be deployed as a standalone instance or with a Multi-AZ standby for high availability.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
@@ -399,8 +388,7 @@ impl CreateDbInstanceInputBuilder {
     }
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
     pub fn set_log_delivery_configuration(mut self, input: ::std::option::Option<crate::types::LogDeliveryConfiguration>) -> Self {
-        self.log_delivery_configuration = input;
-        self
+        self.log_delivery_configuration = input; self
     }
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
@@ -413,40 +401,54 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_db_instance::CreateDbInstanceInput {
-            name: self.name,
-            username: self.username,
-            password: self.password,
-            organization: self.organization,
-            bucket: self.bucket,
-            db_instance_type: self.db_instance_type,
-            vpc_subnet_ids: self.vpc_subnet_ids,
-            vpc_security_group_ids: self.vpc_security_group_ids,
-            publicly_accessible: self.publicly_accessible,
-            db_storage_type: self.db_storage_type,
-            allocated_storage: self.allocated_storage,
-            db_parameter_group_identifier: self.db_parameter_group_identifier,
-            deployment_type: self.deployment_type,
-            log_delivery_configuration: self.log_delivery_configuration,
-            tags: self.tags,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_db_instance::CreateDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_db_instance::CreateDbInstanceInput {
+                name: self.name
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                organization: self.organization
+                ,
+                bucket: self.bucket
+                ,
+                db_instance_type: self.db_instance_type
+                ,
+                vpc_subnet_ids: self.vpc_subnet_ids
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                publicly_accessible: self.publicly_accessible
+                ,
+                db_storage_type: self.db_storage_type
+                ,
+                allocated_storage: self.allocated_storage
+                ,
+                db_parameter_group_identifier: self.db_parameter_group_identifier
+                ,
+                deployment_type: self.deployment_type
+                ,
+                log_delivery_configuration: self.log_delivery_configuration
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
@@ -470,3 +472,4 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.finish()
     }
 }
+

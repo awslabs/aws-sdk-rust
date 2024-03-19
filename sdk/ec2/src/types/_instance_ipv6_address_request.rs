@@ -3,13 +3,13 @@
 /// <p>Describes an IPv6 address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct InstanceIpv6AddressRequest {
+pub struct InstanceIpv6AddressRequest  {
     /// <p>The IPv6 address.</p>
     pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
-impl InstanceIpv6AddressRequest {
+impl  InstanceIpv6AddressRequest  {
     /// <p>The IPv6 address.</p>
-    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl InstanceIpv6AddressRequestBuilder {
     }
     /// <p>The IPv6 address.</p>
     pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// <p>The IPv6 address.</p>
     pub fn get_ipv6_address(&self) -> &::std::option::Option<::std::string::String> {
@@ -44,7 +43,9 @@ impl InstanceIpv6AddressRequestBuilder {
     /// Consumes the builder and constructs a [`InstanceIpv6AddressRequest`](crate::types::InstanceIpv6AddressRequest).
     pub fn build(self) -> crate::types::InstanceIpv6AddressRequest {
         crate::types::InstanceIpv6AddressRequest {
-            ipv6_address: self.ipv6_address,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

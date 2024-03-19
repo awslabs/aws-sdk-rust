@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListStateMachineAliasesOutput {
+pub struct ListStateMachineAliasesOutput  {
     /// <p>Aliases for the state machine.</p>
-    pub state_machine_aliases: ::std::vec::Vec<crate::types::StateMachineAliasListItem>,
+    pub state_machine_aliases: ::std::vec::Vec::<crate::types::StateMachineAliasListItem>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListStateMachineAliasesOutput {
+impl  ListStateMachineAliasesOutput  {
     /// <p>Aliases for the state machine.</p>
-    pub fn state_machine_aliases(&self) -> &[crate::types::StateMachineAliasListItem] {
-        use std::ops::Deref;
-        self.state_machine_aliases.deref()
+    pub fn state_machine_aliases(&self) -> & [crate::types::StateMachineAliasListItem] {
+        use std::ops::Deref; self.state_machine_aliases.deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListStateMachineAliasesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListStateMachineAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
     pub fn builder() -> crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder {
@@ -36,7 +35,7 @@ impl ListStateMachineAliasesOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListStateMachineAliasesOutputBuilder {
-    pub(crate) state_machine_aliases: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>,
+    pub(crate) state_machine_aliases: ::std::option::Option<::std::vec::Vec::<crate::types::StateMachineAliasListItem>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListStateMachineAliasesOutputBuilder {
     /// <p>Aliases for the state machine.</p>
     pub fn state_machine_aliases(mut self, input: crate::types::StateMachineAliasListItem) -> Self {
         let mut v = self.state_machine_aliases.unwrap_or_default();
-        v.push(input);
-        self.state_machine_aliases = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.state_machine_aliases = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Aliases for the state machine.</p>
-    pub fn set_state_machine_aliases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>>) -> Self {
-        self.state_machine_aliases = input;
-        self
+    pub fn set_state_machine_aliases(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::StateMachineAliasListItem>>) -> Self {
+        self.state_machine_aliases = input; self
     }
     /// <p>Aliases for the state machine.</p>
-    pub fn get_state_machine_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateMachineAliasListItem>> {
+    pub fn get_state_machine_aliases(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::StateMachineAliasListItem>> {
         &self.state_machine_aliases
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
@@ -68,40 +66,37 @@ impl ListStateMachineAliasesOutputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListStateMachineAliasesOutput`](crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_aliases`](crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder::state_machine_aliases)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
-            state_machine_aliases: self.state_machine_aliases.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "state_machine_aliases",
-                    "state_machine_aliases was not specified but it is required when building ListStateMachineAliasesOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
+                state_machine_aliases: self.state_machine_aliases
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("state_machine_aliases", "state_machine_aliases was not specified but it is required when building ListStateMachineAliasesOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

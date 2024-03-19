@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetPipelineInput {
+pub struct GetPipelineInput  {
     /// <p>The name of the pipeline to get information about.</p>
     pub pipeline_name: ::std::option::Option<::std::string::String>,
 }
-impl GetPipelineInput {
+impl  GetPipelineInput  {
     /// <p>The name of the pipeline to get information about.</p>
-    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl GetPipelineInputBuilder {
     }
     /// <p>The name of the pipeline to get information about.</p>
     pub fn set_pipeline_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The name of the pipeline to get information about.</p>
     pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,8 +42,12 @@ impl GetPipelineInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline::GetPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_pipeline::GetPipelineInput {
-            pipeline_name: self.pipeline_name,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::get_pipeline::GetPipelineInput {
+                pipeline_name: self.pipeline_name
+                ,
+            }
+        )
     }
 }
+

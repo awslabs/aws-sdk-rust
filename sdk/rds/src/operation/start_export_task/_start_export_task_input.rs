@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartExportTaskInput {
+pub struct StartExportTaskInput  {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
     pub export_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
@@ -67,19 +67,19 @@ pub struct StartExportTaskInput {
     /// <li>
     /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
-    pub export_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub export_only: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl StartExportTaskInput {
+impl  StartExportTaskInput  {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
-    pub fn export_task_identifier(&self) -> ::std::option::Option<&str> {
+    pub fn export_task_identifier(&self) -> ::std::option::Option<& str> {
         self.export_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
-    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
-    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
@@ -103,7 +103,7 @@ impl StartExportTaskInput {
     /// <li>
     /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
     /// </ul>
-    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
@@ -127,11 +127,11 @@ impl StartExportTaskInput {
     /// <li>
     /// <p>kms:RetireGrant</p></li>
     /// </ul>
-    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported data.</p>
-    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
@@ -146,10 +146,11 @@ impl StartExportTaskInput {
     /// <li>
     /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.export_only.is_none()`.
-    pub fn export_only(&self) -> &[::std::string::String] {
-        self.export_only.as_deref().unwrap_or_default()
+    pub fn export_only(&self) -> & [::std::string::String] {
+        self.export_only.as_deref()
+        .unwrap_or_default()
     }
 }
 impl StartExportTaskInput {
@@ -169,7 +170,7 @@ pub struct StartExportTaskInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
-    pub(crate) export_only: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) export_only: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl StartExportTaskInputBuilder {
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
@@ -180,8 +181,7 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
     pub fn set_export_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.export_task_identifier = input;
-        self
+        self.export_task_identifier = input; self
     }
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
     pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -195,8 +195,7 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot or cluster to export to Amazon S3.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,8 +209,7 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The name of the Amazon S3 bucket to export the snapshot or cluster data to.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -265,8 +263,7 @@ impl StartExportTaskInputBuilder {
     /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
     /// </ul>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
     /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
@@ -340,8 +337,7 @@ impl StartExportTaskInputBuilder {
     /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
@@ -374,8 +370,7 @@ impl StartExportTaskInputBuilder {
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported data.</p>
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported data.</p>
     pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
@@ -399,9 +394,9 @@ impl StartExportTaskInputBuilder {
     /// </ul>
     pub fn export_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.export_only.unwrap_or_default();
-        v.push(input.into());
-        self.export_only = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.export_only = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
     /// <p>Valid Values:</p>
@@ -415,9 +410,8 @@ impl StartExportTaskInputBuilder {
     /// <li>
     /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
-    pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.export_only = input;
-        self
+    pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.export_only = input; self
     }
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
     /// <p>Valid Values:</p>
@@ -431,21 +425,29 @@ impl StartExportTaskInputBuilder {
     /// <li>
     /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
-    pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.export_only
     }
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_export_task::StartExportTaskInput {
-            export_task_identifier: self.export_task_identifier,
-            source_arn: self.source_arn,
-            s3_bucket_name: self.s3_bucket_name,
-            iam_role_arn: self.iam_role_arn,
-            kms_key_id: self.kms_key_id,
-            s3_prefix: self.s3_prefix,
-            export_only: self.export_only,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::start_export_task::StartExportTaskInput {
+                export_task_identifier: self.export_task_identifier
+                ,
+                source_arn: self.source_arn
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+                export_only: self.export_only
+                ,
+            }
+        )
     }
 }
+

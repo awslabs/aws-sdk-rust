@@ -2,16 +2,17 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListDataSources`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`index_id(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_index_id):<br>required: **true**<br><p>The identifier of the index used with one or more data source connectors.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_next_token):<br>required: **false**<br><p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of data source connectors to return.</p><br>
-    /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
+                            /// - On success, responds with [`ListDataSourcesOutput`](crate::operation::list_data_sources::ListDataSourcesOutput) with field(s):
     ///   - [`summary_items(Option<Vec::<DataSourceSummary>>)`](crate::operation::list_data_sources::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data source connector.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_data_sources::ListDataSourcesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
+                            /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::operation::list_data_sources::ListDataSourcesError)
     pub fn list_data_sources(&self) -> crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder {
-        crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_data_sources::builders::ListDataSourcesFluentBuilder::new(self.handle.clone())
+                            }
 }
+

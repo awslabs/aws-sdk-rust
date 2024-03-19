@@ -2,31 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeRegistrationsInput {
+pub struct DescribeRegistrationsInput  {
     /// <p>An array of unique identifiers for each registration.</p>
-    pub registration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub registration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per each request.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl DescribeRegistrationsInput {
+impl  DescribeRegistrationsInput  {
     /// <p>An array of unique identifiers for each registration.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.registration_ids.is_none()`.
-    pub fn registration_ids(&self) -> &[::std::string::String] {
-        self.registration_ids.as_deref().unwrap_or_default()
+    pub fn registration_ids(&self) -> & [::std::string::String] {
+        self.registration_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::RegistrationFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::RegistrationFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -45,8 +47,8 @@ impl DescribeRegistrationsInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeRegistrationsInputBuilder {
-    pub(crate) registration_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFilter>>,
+    pub(crate) registration_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFilter>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -58,17 +60,16 @@ impl DescribeRegistrationsInputBuilder {
     /// <p>An array of unique identifiers for each registration.</p>
     pub fn registration_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.registration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.registration_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.registration_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of unique identifiers for each registration.</p>
-    pub fn set_registration_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.registration_ids = input;
-        self
+    pub fn set_registration_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.registration_ids = input; self
     }
     /// <p>An array of unique identifiers for each registration.</p>
-    pub fn get_registration_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_registration_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.registration_ids
     }
     /// Appends an item to `filters`.
@@ -78,17 +79,16 @@ impl DescribeRegistrationsInputBuilder {
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::RegistrationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistrationFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>An array of RegistrationFilter objects to filter the results.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrationFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::RegistrationFilter>> {
         &self.filters
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -98,8 +98,7 @@ impl DescribeRegistrationsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,23 +111,26 @@ impl DescribeRegistrationsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRegistrationsInput`](crate::operation::describe_registrations::DescribeRegistrationsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::describe_registrations::DescribeRegistrationsInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::describe_registrations::DescribeRegistrationsInput {
-            registration_ids: self.registration_ids,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_registrations::DescribeRegistrationsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::describe_registrations::DescribeRegistrationsInput {
+                registration_ids: self.registration_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

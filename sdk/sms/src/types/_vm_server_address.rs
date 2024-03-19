@@ -3,19 +3,19 @@
 /// <p>Represents a VM server location.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct VmServerAddress {
+pub struct VmServerAddress  {
     /// <p>The ID of the VM manager.</p>
     pub vm_manager_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VM.</p>
     pub vm_id: ::std::option::Option<::std::string::String>,
 }
-impl VmServerAddress {
+impl  VmServerAddress  {
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(&self) -> ::std::option::Option<&str> {
+    pub fn vm_manager_id(&self) -> ::std::option::Option<& str> {
         self.vm_manager_id.as_deref()
     }
     /// <p>The ID of the VM.</p>
-    pub fn vm_id(&self) -> ::std::option::Option<&str> {
+    pub fn vm_id(&self) -> ::std::option::Option<& str> {
         self.vm_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl VmServerAddressBuilder {
     }
     /// <p>The ID of the VM manager.</p>
     pub fn set_vm_manager_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vm_manager_id = input;
-        self
+        self.vm_manager_id = input; self
     }
     /// <p>The ID of the VM manager.</p>
     pub fn get_vm_manager_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl VmServerAddressBuilder {
     }
     /// <p>The ID of the VM.</p>
     pub fn set_vm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.vm_id = input;
-        self
+        self.vm_id = input; self
     }
     /// <p>The ID of the VM.</p>
     pub fn get_vm_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl VmServerAddressBuilder {
     /// Consumes the builder and constructs a [`VmServerAddress`](crate::types::VmServerAddress).
     pub fn build(self) -> crate::types::VmServerAddress {
         crate::types::VmServerAddress {
-            vm_manager_id: self.vm_manager_id,
-            vm_id: self.vm_id,
+            vm_manager_id: self.vm_manager_id
+            ,
+            vm_id: self.vm_id
+            ,
         }
     }
 }
+

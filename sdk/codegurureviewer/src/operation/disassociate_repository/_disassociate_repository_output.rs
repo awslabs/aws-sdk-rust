@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DisassociateRepositoryOutput {
+pub struct DisassociateRepositoryOutput  {
     /// <p>Information about the disassociated repository.</p>
     pub repository_association: ::std::option::Option<crate::types::RepositoryAssociation>,
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
@@ -12,12 +12,12 @@ pub struct DisassociateRepositoryOutput {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DisassociateRepositoryOutput {
+impl  DisassociateRepositoryOutput  {
     /// <p>Information about the disassociated repository.</p>
-    pub fn repository_association(&self) -> ::std::option::Option<&crate::types::RepositoryAssociation> {
+    pub fn repository_association(&self) -> ::std::option::Option<& crate::types::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
@@ -27,15 +27,15 @@ impl DisassociateRepositoryOutput {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn tags(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisassociateRepositoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DisassociateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRepositoryOutput`](crate::operation::disassociate_repository::DisassociateRepositoryOutput).
     pub fn builder() -> crate::operation::disassociate_repository::builders::DisassociateRepositoryOutputBuilder {
@@ -48,7 +48,7 @@ impl DisassociateRepositoryOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DisassociateRepositoryOutputBuilder {
     pub(crate) repository_association: ::std::option::Option<crate::types::RepositoryAssociation>,
-    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DisassociateRepositoryOutputBuilder {
@@ -59,8 +59,7 @@ impl DisassociateRepositoryOutputBuilder {
     }
     /// <p>Information about the disassociated repository.</p>
     pub fn set_repository_association(mut self, input: ::std::option::Option<crate::types::RepositoryAssociation>) -> Self {
-        self.repository_association = input;
-        self
+        self.repository_association = input; self
     }
     /// <p>Information about the disassociated repository.</p>
     pub fn get_repository_association(&self) -> &::std::option::Option<crate::types::RepositoryAssociation> {
@@ -79,9 +78,9 @@ impl DisassociateRepositoryOutputBuilder {
     /// </ul>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -90,9 +89,8 @@ impl DisassociateRepositoryOutputBuilder {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
     /// <ul>
@@ -101,24 +99,27 @@ impl DisassociateRepositoryOutputBuilder {
     /// <li>
     /// <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p></li>
     /// </ul>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, ::std::string::String>> {
         &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DisassociateRepositoryOutput`](crate::operation::disassociate_repository::DisassociateRepositoryOutput).
     pub fn build(self) -> crate::operation::disassociate_repository::DisassociateRepositoryOutput {
         crate::operation::disassociate_repository::DisassociateRepositoryOutput {
-            repository_association: self.repository_association,
-            tags: self.tags,
+            repository_association: self.repository_association
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

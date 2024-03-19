@@ -184,3 +184,4 @@ pub mod builders;
 
 /// Error types that Amazon WorkMail can respond with.
 pub mod error;
+

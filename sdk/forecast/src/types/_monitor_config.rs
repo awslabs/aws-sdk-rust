@@ -3,15 +3,14 @@
 /// <p>The configuration details for the predictor monitor.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MonitorConfig {
+pub struct MonitorConfig  {
     /// <p>The name of the monitor resource.</p>
     pub monitor_name: ::std::string::String,
 }
-impl MonitorConfig {
+impl  MonitorConfig  {
     /// <p>The name of the monitor resource.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> & str {
+        use std::ops::Deref; self.monitor_name.deref()
     }
 }
 impl MonitorConfig {
@@ -36,8 +35,7 @@ impl MonitorConfigBuilder {
     }
     /// <p>The name of the monitor resource.</p>
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The name of the monitor resource.</p>
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl MonitorConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_name`](crate::types::builders::MonitorConfigBuilder::monitor_name)
     pub fn build(self) -> ::std::result::Result<crate::types::MonitorConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MonitorConfig {
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building MonitorConfig",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::MonitorConfig {
+                monitor_name: self.monitor_name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("monitor_name", "monitor_name was not specified but it is required when building MonitorConfig")
+                    )?
+                ,
+            }
+        )
     }
 }
+

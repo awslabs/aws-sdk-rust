@@ -2,42 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetEbsVolumeRecommendationsOutput {
+pub struct GetEbsVolumeRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe volume recommendations.</p>
-    pub volume_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>>,
+    pub volume_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeRecommendation>>,
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
-    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
-impl GetEbsVolumeRecommendationsOutput {
+impl  GetEbsVolumeRecommendationsOutput  {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that describe volume recommendations.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_recommendations.is_none()`.
-    pub fn volume_recommendations(&self) -> &[crate::types::VolumeRecommendation] {
-        self.volume_recommendations.as_deref().unwrap_or_default()
+    pub fn volume_recommendations(&self) -> & [crate::types::VolumeRecommendation] {
+        self.volume_recommendations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
-    pub fn errors(&self) -> &[crate::types::GetRecommendationError] {
-        self.errors.as_deref().unwrap_or_default()
+    pub fn errors(&self) -> & [crate::types::GetRecommendationError] {
+        self.errors.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEbsVolumeRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl GetEbsVolumeRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsOutput`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput).
     pub fn builder() -> crate::operation::get_ebs_volume_recommendations::builders::GetEbsVolumeRecommendationsOutputBuilder {
@@ -50,8 +52,8 @@ impl GetEbsVolumeRecommendationsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetEbsVolumeRecommendationsOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) volume_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>>,
-    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>,
+    pub(crate) volume_recommendations: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeRecommendation>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>,
     _request_id: Option<String>,
 }
 impl GetEbsVolumeRecommendationsOutputBuilder {
@@ -64,8 +66,7 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to use to advance to the next page of volume recommendations.</p>
     /// <p>This value is null when there are no more pages of volume recommendations to return.</p>
@@ -79,17 +80,16 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
     /// <p>An array of objects that describe volume recommendations.</p>
     pub fn volume_recommendations(mut self, input: crate::types::VolumeRecommendation) -> Self {
         let mut v = self.volume_recommendations.unwrap_or_default();
-        v.push(input);
-        self.volume_recommendations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.volume_recommendations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe volume recommendations.</p>
-    pub fn set_volume_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>>) -> Self {
-        self.volume_recommendations = input;
-        self
+    pub fn set_volume_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::VolumeRecommendation>>) -> Self {
+        self.volume_recommendations = input; self
     }
     /// <p>An array of objects that describe volume recommendations.</p>
-    pub fn get_volume_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeRecommendation>> {
+    pub fn get_volume_recommendations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::VolumeRecommendation>> {
         &self.volume_recommendations
     }
     /// Appends an item to `errors`.
@@ -100,37 +100,40 @@ impl GetEbsVolumeRecommendationsOutputBuilder {
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
     pub fn errors(mut self, input: crate::types::GetRecommendationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.errors = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
-    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>>) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>An array of objects that describe errors of the request.</p>
     /// <p>For example, an error is returned if you request recommendations for an unsupported volume.</p>
-    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::GetRecommendationError>> {
         &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`GetEbsVolumeRecommendationsOutput`](crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput {
         crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsOutput {
-            next_token: self.next_token,
-            volume_recommendations: self.volume_recommendations,
-            errors: self.errors,
+            next_token: self.next_token
+            ,
+            volume_recommendations: self.volume_recommendations
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

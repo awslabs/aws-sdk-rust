@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListComponentsInput {
+pub struct ListComponentsInput  {
     /// <p>The workspace ID.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the entity whose metadata (component/properties) is returned by the operation.</p>
@@ -14,17 +14,17 @@ pub struct ListComponentsInput {
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
-impl ListComponentsInput {
+impl  ListComponentsInput  {
     /// <p>The workspace ID.</p>
-    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID for the entity whose metadata (component/properties) is returned by the operation.</p>
-    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
-    pub fn component_path(&self) -> ::std::option::Option<&str> {
+    pub fn component_path(&self) -> ::std::option::Option<& str> {
         self.component_path.as_deref()
     }
     /// <p>The maximum number of results returned at one time. The default is 25.</p>
@@ -32,7 +32,7 @@ impl ListComponentsInput {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -62,8 +62,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The workspace ID.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The workspace ID.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -77,8 +76,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The ID for the entity whose metadata (component/properties) is returned by the operation.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The ID for the entity whose metadata (component/properties) is returned by the operation.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -91,8 +89,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
     pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.component_path = input;
-        self
+        self.component_path = input; self
     }
     /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
     pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
@@ -105,8 +102,7 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The maximum number of results returned at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of results returned at one time. The default is 25.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
@@ -119,23 +115,28 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_components::ListComponentsInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
-            component_path: self.component_path,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_components::ListComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_components::ListComponentsInput {
+                workspace_id: self.workspace_id
+                ,
+                entity_id: self.entity_id
+                ,
+                component_path: self.component_path
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

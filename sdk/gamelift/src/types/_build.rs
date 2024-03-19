@@ -4,7 +4,7 @@
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a></p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Build {
+pub struct Build  {
     /// <p>A unique identifier for the build.</p>
     pub build_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
@@ -35,23 +35,23 @@ pub struct Build {
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
 }
-impl Build {
+impl  Build  {
     /// <p>A unique identifier for the build.</p>
-    pub fn build_id(&self) -> ::std::option::Option<&str> {
+    pub fn build_id(&self) -> ::std::option::Option<& str> {
         self.build_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
-    pub fn build_arn(&self) -> ::std::option::Option<&str> {
+    pub fn build_arn(&self) -> ::std::option::Option<& str> {
         self.build_arn.as_deref()
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
-    pub fn version(&self) -> ::std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Current status of the build.</p>
@@ -64,7 +64,7 @@ impl Build {
     /// <li>
     /// <p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::BuildStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::BuildStatus> {
         self.status.as_ref()
     }
     /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
@@ -72,15 +72,15 @@ impl Build {
         self.size_on_disk
     }
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
-    pub fn operating_system(&self) -> ::std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> ::std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
-    pub fn server_sdk_version(&self) -> ::std::option::Option<&str> {
+    pub fn server_sdk_version(&self) -> ::std::option::Option<& str> {
         self.server_sdk_version.as_deref()
     }
 }
@@ -113,8 +113,7 @@ impl BuildBuilder {
     }
     /// <p>A unique identifier for the build.</p>
     pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_id = input;
-        self
+        self.build_id = input; self
     }
     /// <p>A unique identifier for the build.</p>
     pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -131,8 +130,7 @@ impl BuildBuilder {
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
     pub fn set_build_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.build_arn = input;
-        self
+        self.build_arn = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -147,8 +145,7 @@ impl BuildBuilder {
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -161,8 +158,7 @@ impl BuildBuilder {
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +189,7 @@ impl BuildBuilder {
     /// <p><b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BuildStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Current status of the build.</p>
     /// <p>Possible build statuses include the following:</p>
@@ -216,8 +211,7 @@ impl BuildBuilder {
     }
     /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
     pub fn set_size_on_disk(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.size_on_disk = input;
-        self
+        self.size_on_disk = input; self
     }
     /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
     pub fn get_size_on_disk(&self) -> &::std::option::Option<i64> {
@@ -230,8 +224,7 @@ impl BuildBuilder {
     }
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
     pub fn set_operating_system(mut self, input: ::std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
@@ -244,8 +237,7 @@ impl BuildBuilder {
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -258,8 +250,7 @@ impl BuildBuilder {
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
     pub fn set_server_sdk_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.server_sdk_version = input;
-        self
+        self.server_sdk_version = input; self
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
     pub fn get_server_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -268,15 +259,25 @@ impl BuildBuilder {
     /// Consumes the builder and constructs a [`Build`](crate::types::Build).
     pub fn build(self) -> crate::types::Build {
         crate::types::Build {
-            build_id: self.build_id,
-            build_arn: self.build_arn,
-            name: self.name,
-            version: self.version,
-            status: self.status,
-            size_on_disk: self.size_on_disk,
-            operating_system: self.operating_system,
-            creation_time: self.creation_time,
-            server_sdk_version: self.server_sdk_version,
+            build_id: self.build_id
+            ,
+            build_arn: self.build_arn
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            status: self.status
+            ,
+            size_on_disk: self.size_on_disk
+            ,
+            operating_system: self.operating_system
+            ,
+            creation_time: self.creation_time
+            ,
+            server_sdk_version: self.server_sdk_version
+            ,
         }
     }
 }
+

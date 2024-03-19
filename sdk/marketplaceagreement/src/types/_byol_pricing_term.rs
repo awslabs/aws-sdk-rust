@@ -3,13 +3,13 @@
 /// <p>Enables you and your customers to move your existing agreements to AWS Marketplace. The customer won't be charged for product usage in AWS Marketplace because they already paid for the product outside of AWS Marketplace.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ByolPricingTerm {
+pub struct ByolPricingTerm  {
     /// <p>Type of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
 }
-impl ByolPricingTerm {
+impl  ByolPricingTerm  {
     /// <p>Type of the term being updated.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -34,8 +34,7 @@ impl ByolPricingTermBuilder {
     }
     /// <p>Type of the term being updated.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Type of the term being updated.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -43,6 +42,10 @@ impl ByolPricingTermBuilder {
     }
     /// Consumes the builder and constructs a [`ByolPricingTerm`](crate::types::ByolPricingTerm).
     pub fn build(self) -> crate::types::ByolPricingTerm {
-        crate::types::ByolPricingTerm { r#type: self.r#type }
+        crate::types::ByolPricingTerm {
+            r#type: self.r#type
+            ,
+        }
     }
 }
+

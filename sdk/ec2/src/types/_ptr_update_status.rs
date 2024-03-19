@@ -3,7 +3,7 @@
 /// <p>The status of an updated pointer (PTR) record for an Elastic IP address.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PtrUpdateStatus {
+pub struct PtrUpdateStatus  {
     /// <p>The value for the PTR record update.</p>
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The status of the PTR record update.</p>
@@ -11,17 +11,17 @@ pub struct PtrUpdateStatus {
     /// <p>The reason for the PTR record update.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
-impl PtrUpdateStatus {
+impl  PtrUpdateStatus  {
     /// <p>The value for the PTR record update.</p>
-    pub fn value(&self) -> ::std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The status of the PTR record update.</p>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The reason for the PTR record update.</p>
-    pub fn reason(&self) -> ::std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl PtrUpdateStatusBuilder {
     }
     /// <p>The value for the PTR record update.</p>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The value for the PTR record update.</p>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl PtrUpdateStatusBuilder {
     }
     /// <p>The status of the PTR record update.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of the PTR record update.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl PtrUpdateStatusBuilder {
     }
     /// <p>The reason for the PTR record update.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason for the PTR record update.</p>
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl PtrUpdateStatusBuilder {
     /// Consumes the builder and constructs a [`PtrUpdateStatus`](crate::types::PtrUpdateStatus).
     pub fn build(self) -> crate::types::PtrUpdateStatus {
         crate::types::PtrUpdateStatus {
-            value: self.value,
-            status: self.status,
-            reason: self.reason,
+            value: self.value
+            ,
+            status: self.status
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

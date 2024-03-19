@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateSecurityConfigurationInput {
+pub struct CreateSecurityConfigurationInput  {
     /// <p>The name for the new security configuration.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The encryption configuration for the new security configuration.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
-impl CreateSecurityConfigurationInput {
+impl  CreateSecurityConfigurationInput  {
     /// <p>The name for the new security configuration.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The encryption configuration for the new security configuration.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> ::std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl CreateSecurityConfigurationInputBuilder {
     }
     /// <p>The name for the new security configuration.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name for the new security configuration.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,23 +55,22 @@ impl CreateSecurityConfigurationInputBuilder {
     }
     /// <p>The encryption configuration for the new security configuration.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
+        self.encryption_configuration = input; self
     }
     /// <p>The encryption configuration for the new security configuration.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_security_configuration::CreateSecurityConfigurationInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
-            name: self.name,
-            encryption_configuration: self.encryption_configuration,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_security_configuration::CreateSecurityConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_security_configuration::CreateSecurityConfigurationInput {
+                name: self.name
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+            }
+        )
     }
 }
+

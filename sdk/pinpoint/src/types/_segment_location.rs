@@ -3,19 +3,19 @@
 /// <p>Specifies geographical dimension settings for a segment.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SegmentLocation {
+pub struct SegmentLocation  {
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
     pub country: ::std::option::Option<crate::types::SetDimension>,
     /// <p>The GPS location and range for the segment.</p>
     pub gps_point: ::std::option::Option<crate::types::GpsPointDimension>,
 }
-impl SegmentLocation {
+impl  SegmentLocation  {
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
-    pub fn country(&self) -> ::std::option::Option<&crate::types::SetDimension> {
+    pub fn country(&self) -> ::std::option::Option<& crate::types::SetDimension> {
         self.country.as_ref()
     }
     /// <p>The GPS location and range for the segment.</p>
-    pub fn gps_point(&self) -> ::std::option::Option<&crate::types::GpsPointDimension> {
+    pub fn gps_point(&self) -> ::std::option::Option<& crate::types::GpsPointDimension> {
         self.gps_point.as_ref()
     }
 }
@@ -41,8 +41,7 @@ impl SegmentLocationBuilder {
     }
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
     pub fn set_country(mut self, input: ::std::option::Option<crate::types::SetDimension>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
     pub fn get_country(&self) -> &::std::option::Option<crate::types::SetDimension> {
@@ -55,8 +54,7 @@ impl SegmentLocationBuilder {
     }
     /// <p>The GPS location and range for the segment.</p>
     pub fn set_gps_point(mut self, input: ::std::option::Option<crate::types::GpsPointDimension>) -> Self {
-        self.gps_point = input;
-        self
+        self.gps_point = input; self
     }
     /// <p>The GPS location and range for the segment.</p>
     pub fn get_gps_point(&self) -> &::std::option::Option<crate::types::GpsPointDimension> {
@@ -65,8 +63,11 @@ impl SegmentLocationBuilder {
     /// Consumes the builder and constructs a [`SegmentLocation`](crate::types::SegmentLocation).
     pub fn build(self) -> crate::types::SegmentLocation {
         crate::types::SegmentLocation {
-            country: self.country,
-            gps_point: self.gps_point,
+            country: self.country
+            ,
+            gps_point: self.gps_point
+            ,
         }
     }
 }
+

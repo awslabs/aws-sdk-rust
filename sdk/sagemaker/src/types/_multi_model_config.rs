@@ -3,13 +3,13 @@
 /// <p>Specifies additional configuration for hosting multi-model endpoints.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct MultiModelConfig {
+pub struct MultiModelConfig  {
     /// <p>Whether to cache models for a multi-model endpoint. By default, multi-model endpoints cache models so that a model does not have to be loaded into memory each time it is invoked. Some use cases do not benefit from model caching. For example, if an endpoint hosts a large number of models that are each invoked infrequently, the endpoint might perform better if you disable model caching. To disable model caching, set the value of this parameter to <code>Disabled</code>.</p>
     pub model_cache_setting: ::std::option::Option<crate::types::ModelCacheSetting>,
 }
-impl MultiModelConfig {
+impl  MultiModelConfig  {
     /// <p>Whether to cache models for a multi-model endpoint. By default, multi-model endpoints cache models so that a model does not have to be loaded into memory each time it is invoked. Some use cases do not benefit from model caching. For example, if an endpoint hosts a large number of models that are each invoked infrequently, the endpoint might perform better if you disable model caching. To disable model caching, set the value of this parameter to <code>Disabled</code>.</p>
-    pub fn model_cache_setting(&self) -> ::std::option::Option<&crate::types::ModelCacheSetting> {
+    pub fn model_cache_setting(&self) -> ::std::option::Option<& crate::types::ModelCacheSetting> {
         self.model_cache_setting.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl MultiModelConfigBuilder {
     }
     /// <p>Whether to cache models for a multi-model endpoint. By default, multi-model endpoints cache models so that a model does not have to be loaded into memory each time it is invoked. Some use cases do not benefit from model caching. For example, if an endpoint hosts a large number of models that are each invoked infrequently, the endpoint might perform better if you disable model caching. To disable model caching, set the value of this parameter to <code>Disabled</code>.</p>
     pub fn set_model_cache_setting(mut self, input: ::std::option::Option<crate::types::ModelCacheSetting>) -> Self {
-        self.model_cache_setting = input;
-        self
+        self.model_cache_setting = input; self
     }
     /// <p>Whether to cache models for a multi-model endpoint. By default, multi-model endpoints cache models so that a model does not have to be loaded into memory each time it is invoked. Some use cases do not benefit from model caching. For example, if an endpoint hosts a large number of models that are each invoked infrequently, the endpoint might perform better if you disable model caching. To disable model caching, set the value of this parameter to <code>Disabled</code>.</p>
     pub fn get_model_cache_setting(&self) -> &::std::option::Option<crate::types::ModelCacheSetting> {
@@ -44,7 +43,9 @@ impl MultiModelConfigBuilder {
     /// Consumes the builder and constructs a [`MultiModelConfig`](crate::types::MultiModelConfig).
     pub fn build(self) -> crate::types::MultiModelConfig {
         crate::types::MultiModelConfig {
-            model_cache_setting: self.model_cache_setting,
+            model_cache_setting: self.model_cache_setting
+            ,
         }
     }
 }
+

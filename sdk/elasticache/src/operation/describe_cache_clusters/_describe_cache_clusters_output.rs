@@ -3,30 +3,31 @@
 /// <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeCacheClustersOutput {
+pub struct DescribeCacheClustersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub cache_clusters: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,
+    pub cache_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::CacheCluster>>,
     _request_id: Option<String>,
 }
-impl DescribeCacheClustersOutput {
+impl  DescribeCacheClustersOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cache_clusters.is_none()`.
-    pub fn cache_clusters(&self) -> &[crate::types::CacheCluster] {
-        self.cache_clusters.as_deref().unwrap_or_default()
+    pub fn cache_clusters(&self) -> & [crate::types::CacheCluster] {
+        self.cache_clusters.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeCacheClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeCacheClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheClustersOutput`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput).
     pub fn builder() -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersOutputBuilder {
@@ -39,7 +40,7 @@ impl DescribeCacheClustersOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeCacheClustersOutputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
-    pub(crate) cache_clusters: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>,
+    pub(crate) cache_clusters: ::std::option::Option<::std::vec::Vec::<crate::types::CacheCluster>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheClustersOutputBuilder {
@@ -50,8 +51,7 @@ impl DescribeCacheClustersOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
@@ -64,34 +64,36 @@ impl DescribeCacheClustersOutputBuilder {
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
     pub fn cache_clusters(mut self, input: crate::types::CacheCluster) -> Self {
         let mut v = self.cache_clusters.unwrap_or_default();
-        v.push(input);
-        self.cache_clusters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.cache_clusters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn set_cache_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>>) -> Self {
-        self.cache_clusters = input;
-        self
+    pub fn set_cache_clusters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::CacheCluster>>) -> Self {
+        self.cache_clusters = input; self
     }
     /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-    pub fn get_cache_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>> {
+    pub fn get_cache_clusters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::CacheCluster>> {
         &self.cache_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeCacheClustersOutput`](crate::operation::describe_cache_clusters::DescribeCacheClustersOutput).
     pub fn build(self) -> crate::operation::describe_cache_clusters::DescribeCacheClustersOutput {
         crate::operation::describe_cache_clusters::DescribeCacheClustersOutput {
-            marker: self.marker,
-            cache_clusters: self.cache_clusters,
+            marker: self.marker
+            ,
+            cache_clusters: self.cache_clusters
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

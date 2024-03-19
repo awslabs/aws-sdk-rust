@@ -3,7 +3,7 @@
 /// <p>Describes an instance.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
@@ -17,7 +17,7 @@ pub struct Instance {
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     /// <p>The time that the instance was created.</p>
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
@@ -47,7 +47,7 @@ pub struct Instance {
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
     pub last_service_error_id: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the instance layer IDs.</p>
-    pub layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The instance's operating system.</p>
     pub os: ::std::option::Option<::std::string::String>,
     /// <p>The instance's platform.</p>
@@ -71,7 +71,7 @@ pub struct Instance {
     /// <p>The root device volume ID.</p>
     pub root_device_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the instance security group IDs.</p>
-    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     pub ssh_host_dsa_key_fingerprint: ::std::option::Option<::std::string::String>,
     /// <p>The SSH key's RSA fingerprint.</p>
@@ -121,39 +121,40 @@ pub struct Instance {
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
 }
-impl Instance {
+impl  Instance  {
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
-    pub fn agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
-    pub fn ami_id(&self) -> ::std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The instance architecture: "i386" or "x86_64".</p>
-    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<& crate::types::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The instance's Amazon Resource Number (ARN).</p>
-    pub fn arn(&self) -> ::std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>For load-based or time-based instances, the type.</p>
-    pub fn auto_scaling_type(&self) -> ::std::option::Option<&crate::types::AutoScalingType> {
+    pub fn auto_scaling_type(&self) -> ::std::option::Option<& crate::types::AutoScalingType> {
         self.auto_scaling_type.as_ref()
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
-    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMapping] {
-        self.block_device_mappings.as_deref().unwrap_or_default()
+    pub fn block_device_mappings(&self) -> & [crate::types::BlockDeviceMapping] {
+        self.block_device_mappings.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The time that the instance was created.</p>
-    pub fn created_at(&self) -> ::std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
@@ -161,27 +162,27 @@ impl Instance {
         self.ebs_optimized
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
-    pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> ::std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<& str> {
         self.ecs_cluster_arn.as_deref()
     }
     /// <p>For container instances, the instance's ARN.</p>
-    pub fn ecs_container_instance_arn(&self) -> ::std::option::Option<&str> {
+    pub fn ecs_container_instance_arn(&self) -> ::std::option::Option<& str> {
         self.ecs_container_instance_arn.as_deref()
     }
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
-    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The instance host name.</p>
-    pub fn hostname(&self) -> ::std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
-    pub fn infrastructure_class(&self) -> ::std::option::Option<&str> {
+    pub fn infrastructure_class(&self) -> ::std::option::Option<& str> {
         self.infrastructure_class.as_deref()
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
@@ -191,91 +192,93 @@ impl Instance {
         self.install_updates_on_boot
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn instance_profile_arn(&self) -> ::std::option::Option<&str> {
+    pub fn instance_profile_arn(&self) -> ::std::option::Option<& str> {
         self.instance_profile_arn.as_deref()
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
-    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
-    pub fn last_service_error_id(&self) -> ::std::option::Option<&str> {
+    pub fn last_service_error_id(&self) -> ::std::option::Option<& str> {
         self.last_service_error_id.as_deref()
     }
     /// <p>An array containing the instance layer IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.layer_ids.is_none()`.
-    pub fn layer_ids(&self) -> &[::std::string::String] {
-        self.layer_ids.as_deref().unwrap_or_default()
+    pub fn layer_ids(&self) -> & [::std::string::String] {
+        self.layer_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The instance's operating system.</p>
-    pub fn os(&self) -> ::std::option::Option<&str> {
+    pub fn os(&self) -> ::std::option::Option<& str> {
         self.os.as_deref()
     }
     /// <p>The instance's platform.</p>
-    pub fn platform(&self) -> ::std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The instance's private DNS name.</p>
-    pub fn private_dns(&self) -> ::std::option::Option<&str> {
+    pub fn private_dns(&self) -> ::std::option::Option<& str> {
         self.private_dns.as_deref()
     }
     /// <p>The instance's private IP address.</p>
-    pub fn private_ip(&self) -> ::std::option::Option<&str> {
+    pub fn private_ip(&self) -> ::std::option::Option<& str> {
         self.private_ip.as_deref()
     }
     /// <p>The instance public DNS name.</p>
-    pub fn public_dns(&self) -> ::std::option::Option<&str> {
+    pub fn public_dns(&self) -> ::std::option::Option<& str> {
         self.public_dns.as_deref()
     }
     /// <p>The instance public IP address.</p>
-    pub fn public_ip(&self) -> ::std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>For registered instances, who performed the registration.</p>
-    pub fn registered_by(&self) -> ::std::option::Option<&str> {
+    pub fn registered_by(&self) -> ::std::option::Option<& str> {
         self.registered_by.as_deref()
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
-    pub fn reported_agent_version(&self) -> ::std::option::Option<&str> {
+    pub fn reported_agent_version(&self) -> ::std::option::Option<& str> {
         self.reported_agent_version.as_deref()
     }
     /// <p>For registered instances, the reported operating system.</p>
-    pub fn reported_os(&self) -> ::std::option::Option<&crate::types::ReportedOs> {
+    pub fn reported_os(&self) -> ::std::option::Option<& crate::types::ReportedOs> {
         self.reported_os.as_ref()
     }
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn root_device_type(&self) -> ::std::option::Option<&crate::types::RootDeviceType> {
+    pub fn root_device_type(&self) -> ::std::option::Option<& crate::types::RootDeviceType> {
         self.root_device_type.as_ref()
     }
     /// <p>The root device volume ID.</p>
-    pub fn root_device_volume_id(&self) -> ::std::option::Option<&str> {
+    pub fn root_device_volume_id(&self) -> ::std::option::Option<& str> {
         self.root_device_volume_id.as_deref()
     }
     /// <p>An array containing the instance security group IDs.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
-    pub fn security_group_ids(&self) -> &[::std::string::String] {
-        self.security_group_ids.as_deref().unwrap_or_default()
+    pub fn security_group_ids(&self) -> & [::std::string::String] {
+        self.security_group_ids.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
-    pub fn ssh_host_dsa_key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_host_dsa_key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.ssh_host_dsa_key_fingerprint.as_deref()
     }
     /// <p>The SSH key's RSA fingerprint.</p>
-    pub fn ssh_host_rsa_key_fingerprint(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_host_rsa_key_fingerprint(&self) -> ::std::option::Option<& str> {
         self.ssh_host_rsa_key_fingerprint.as_deref()
     }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
-    pub fn ssh_key_name(&self) -> ::std::option::Option<&str> {
+    pub fn ssh_key_name(&self) -> ::std::option::Option<& str> {
         self.ssh_key_name.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> ::std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The instance status:</p>
@@ -311,19 +314,19 @@ impl Instance {
     /// <li>
     /// <p><code>terminating</code></p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
-    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
-    pub fn tenancy(&self) -> ::std::option::Option<&str> {
+    pub fn tenancy(&self) -> ::std::option::Option<& str> {
         self.tenancy.as_deref()
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
-    pub fn virtualization_type(&self) -> ::std::option::Option<&crate::types::VirtualizationType> {
+    pub fn virtualization_type(&self) -> ::std::option::Option<& crate::types::VirtualizationType> {
         self.virtualization_type.as_ref()
     }
 }
@@ -344,7 +347,7 @@ pub struct InstanceBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_type: ::std::option::Option<crate::types::AutoScalingType>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
-    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>,
     pub(crate) created_at: ::std::option::Option<::std::string::String>,
     pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
@@ -358,7 +361,7 @@ pub struct InstanceBuilder {
     pub(crate) instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_service_error_id: ::std::option::Option<::std::string::String>,
-    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) layer_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) os: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns: ::std::option::Option<::std::string::String>,
@@ -370,7 +373,7 @@ pub struct InstanceBuilder {
     pub(crate) reported_os: ::std::option::Option<crate::types::ReportedOs>,
     pub(crate) root_device_type: ::std::option::Option<crate::types::RootDeviceType>,
     pub(crate) root_device_volume_id: ::std::option::Option<::std::string::String>,
-    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) ssh_host_dsa_key_fingerprint: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_host_rsa_key_fingerprint: ::std::option::Option<::std::string::String>,
     pub(crate) ssh_key_name: ::std::option::Option<::std::string::String>,
@@ -388,8 +391,7 @@ impl InstanceBuilder {
     }
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub fn set_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits the default stack setting or to a a version number for a fixed agent version.</p>
     pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -402,8 +404,7 @@ impl InstanceBuilder {
     }
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ami_id = input;
-        self
+        self.ami_id = input; self
     }
     /// <p>A custom AMI ID to be used to create the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
     pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -416,8 +417,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance architecture: "i386" or "x86_64".</p>
     pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input;
-        self
+        self.architecture = input; self
     }
     /// <p>The instance architecture: "i386" or "x86_64".</p>
     pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
@@ -430,8 +430,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's Amazon Resource Number (ARN).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The instance's Amazon Resource Number (ARN).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -444,8 +443,7 @@ impl InstanceBuilder {
     }
     /// <p>For load-based or time-based instances, the type.</p>
     pub fn set_auto_scaling_type(mut self, input: ::std::option::Option<crate::types::AutoScalingType>) -> Self {
-        self.auto_scaling_type = input;
-        self
+        self.auto_scaling_type = input; self
     }
     /// <p>For load-based or time-based instances, the type.</p>
     pub fn get_auto_scaling_type(&self) -> &::std::option::Option<crate::types::AutoScalingType> {
@@ -458,8 +456,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone = input;
-        self
+        self.availability_zone = input; self
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
@@ -472,17 +469,16 @@ impl InstanceBuilder {
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block device mappings.</p>
-    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::BlockDeviceMapping>> {
         &self.block_device_mappings
     }
     /// <p>The time that the instance was created.</p>
@@ -492,8 +488,7 @@ impl InstanceBuilder {
     }
     /// <p>The time that the instance was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The time that the instance was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
@@ -506,8 +501,7 @@ impl InstanceBuilder {
     }
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>Whether this is an Amazon EBS-optimized instance.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
@@ -520,8 +514,7 @@ impl InstanceBuilder {
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
     pub fn set_ec2_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The ID of the associated Amazon EC2 instance.</p>
     pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -534,8 +527,7 @@ impl InstanceBuilder {
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
     pub fn set_ecs_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecs_cluster_arn = input;
-        self
+        self.ecs_cluster_arn = input; self
     }
     /// <p>For container instances, the Amazon ECS cluster's ARN.</p>
     pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -548,8 +540,7 @@ impl InstanceBuilder {
     }
     /// <p>For container instances, the instance's ARN.</p>
     pub fn set_ecs_container_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ecs_container_instance_arn = input;
-        self
+        self.ecs_container_instance_arn = input; self
     }
     /// <p>For container instances, the instance's ARN.</p>
     pub fn get_ecs_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -562,8 +553,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// <p>The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address </a>.</p>
     pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -576,8 +566,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance host name.</p>
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The instance host name.</p>
     pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
@@ -590,8 +579,7 @@ impl InstanceBuilder {
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub fn set_infrastructure_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.infrastructure_class = input;
-        self
+        self.infrastructure_class = input; self
     }
     /// <p>For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.</p>
     pub fn get_infrastructure_class(&self) -> &::std::option::Option<::std::string::String> {
@@ -608,8 +596,7 @@ impl InstanceBuilder {
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.install_updates_on_boot = input;
-        self
+        self.install_updates_on_boot = input; self
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.</p><note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
@@ -624,8 +611,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The instance ID.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -638,8 +624,7 @@ impl InstanceBuilder {
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_instance_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_profile_arn = input;
-        self
+        self.instance_profile_arn = input; self
     }
     /// <p>The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn get_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -652,8 +637,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The instance type, such as <code>t2.micro</code>.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -666,8 +650,7 @@ impl InstanceBuilder {
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
     pub fn set_last_service_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.last_service_error_id = input;
-        self
+        self.last_service_error_id = input; self
     }
     /// <p>The ID of the last service error. For more information, call <code>DescribeServiceErrors</code>.</p>
     pub fn get_last_service_error_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -680,17 +663,16 @@ impl InstanceBuilder {
     /// <p>An array containing the instance layer IDs.</p>
     pub fn layer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layer_ids.unwrap_or_default();
-        v.push(input.into());
-        self.layer_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.layer_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the instance layer IDs.</p>
-    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.layer_ids = input;
-        self
+    pub fn set_layer_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.layer_ids = input; self
     }
     /// <p>An array containing the instance layer IDs.</p>
-    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.layer_ids
     }
     /// <p>The instance's operating system.</p>
@@ -700,8 +682,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's operating system.</p>
     pub fn set_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.os = input;
-        self
+        self.os = input; self
     }
     /// <p>The instance's operating system.</p>
     pub fn get_os(&self) -> &::std::option::Option<::std::string::String> {
@@ -714,8 +695,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's platform.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The instance's platform.</p>
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
@@ -728,8 +708,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's private DNS name.</p>
     pub fn set_private_dns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_dns = input;
-        self
+        self.private_dns = input; self
     }
     /// <p>The instance's private DNS name.</p>
     pub fn get_private_dns(&self) -> &::std::option::Option<::std::string::String> {
@@ -742,8 +721,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's private IP address.</p>
     pub fn set_private_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.private_ip = input;
-        self
+        self.private_ip = input; self
     }
     /// <p>The instance's private IP address.</p>
     pub fn get_private_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -756,8 +734,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance public DNS name.</p>
     pub fn set_public_dns(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_dns = input;
-        self
+        self.public_dns = input; self
     }
     /// <p>The instance public DNS name.</p>
     pub fn get_public_dns(&self) -> &::std::option::Option<::std::string::String> {
@@ -770,8 +747,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance public IP address.</p>
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>The instance public IP address.</p>
     pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
@@ -784,8 +760,7 @@ impl InstanceBuilder {
     }
     /// <p>For registered instances, who performed the registration.</p>
     pub fn set_registered_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.registered_by = input;
-        self
+        self.registered_by = input; self
     }
     /// <p>For registered instances, who performed the registration.</p>
     pub fn get_registered_by(&self) -> &::std::option::Option<::std::string::String> {
@@ -798,8 +773,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
     pub fn set_reported_agent_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.reported_agent_version = input;
-        self
+        self.reported_agent_version = input; self
     }
     /// <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
     pub fn get_reported_agent_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -812,8 +786,7 @@ impl InstanceBuilder {
     }
     /// <p>For registered instances, the reported operating system.</p>
     pub fn set_reported_os(mut self, input: ::std::option::Option<crate::types::ReportedOs>) -> Self {
-        self.reported_os = input;
-        self
+        self.reported_os = input; self
     }
     /// <p>For registered instances, the reported operating system.</p>
     pub fn get_reported_os(&self) -> &::std::option::Option<crate::types::ReportedOs> {
@@ -826,8 +799,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn set_root_device_type(mut self, input: ::std::option::Option<crate::types::RootDeviceType>) -> Self {
-        self.root_device_type = input;
-        self
+        self.root_device_type = input; self
     }
     /// <p>The instance's root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn get_root_device_type(&self) -> &::std::option::Option<crate::types::RootDeviceType> {
@@ -840,8 +812,7 @@ impl InstanceBuilder {
     }
     /// <p>The root device volume ID.</p>
     pub fn set_root_device_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.root_device_volume_id = input;
-        self
+        self.root_device_volume_id = input; self
     }
     /// <p>The root device volume ID.</p>
     pub fn get_root_device_volume_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -854,17 +825,16 @@ impl InstanceBuilder {
     /// <p>An array containing the instance security group IDs.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// <p>An array containing the instance security group IDs.</p>
-    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.security_group_ids
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
@@ -874,8 +844,7 @@ impl InstanceBuilder {
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     pub fn set_ssh_host_dsa_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_host_dsa_key_fingerprint = input;
-        self
+        self.ssh_host_dsa_key_fingerprint = input; self
     }
     /// <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
     pub fn get_ssh_host_dsa_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -888,8 +857,7 @@ impl InstanceBuilder {
     }
     /// <p>The SSH key's RSA fingerprint.</p>
     pub fn set_ssh_host_rsa_key_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_host_rsa_key_fingerprint = input;
-        self
+        self.ssh_host_rsa_key_fingerprint = input; self
     }
     /// <p>The SSH key's RSA fingerprint.</p>
     pub fn get_ssh_host_rsa_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
@@ -902,8 +870,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
     pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.ssh_key_name = input;
-        self
+        self.ssh_key_name = input; self
     }
     /// <p>The instance's Amazon EC2 key-pair name.</p>
     pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -916,8 +883,7 @@ impl InstanceBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -994,8 +960,7 @@ impl InstanceBuilder {
     /// <p><code>terminating</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The instance status:</p>
     /// <ul>
@@ -1040,8 +1005,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The instance's subnet ID; applicable only if the stack is running in a VPC.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -1054,8 +1018,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
     pub fn set_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.tenancy = input;
-        self
+        self.tenancy = input; self
     }
     /// <p>The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.</p>
     pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
@@ -1068,8 +1031,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     pub fn set_virtualization_type(mut self, input: ::std::option::Option<crate::types::VirtualizationType>) -> Self {
-        self.virtualization_type = input;
-        self
+        self.virtualization_type = input; self
     }
     /// <p>The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.</p>
     pub fn get_virtualization_type(&self) -> &::std::option::Option<crate::types::VirtualizationType> {
@@ -1078,47 +1040,89 @@ impl InstanceBuilder {
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            agent_version: self.agent_version,
-            ami_id: self.ami_id,
-            architecture: self.architecture,
-            arn: self.arn,
-            auto_scaling_type: self.auto_scaling_type,
-            availability_zone: self.availability_zone,
-            block_device_mappings: self.block_device_mappings,
-            created_at: self.created_at,
-            ebs_optimized: self.ebs_optimized,
-            ec2_instance_id: self.ec2_instance_id,
-            ecs_cluster_arn: self.ecs_cluster_arn,
-            ecs_container_instance_arn: self.ecs_container_instance_arn,
-            elastic_ip: self.elastic_ip,
-            hostname: self.hostname,
-            infrastructure_class: self.infrastructure_class,
-            install_updates_on_boot: self.install_updates_on_boot,
-            instance_id: self.instance_id,
-            instance_profile_arn: self.instance_profile_arn,
-            instance_type: self.instance_type,
-            last_service_error_id: self.last_service_error_id,
-            layer_ids: self.layer_ids,
-            os: self.os,
-            platform: self.platform,
-            private_dns: self.private_dns,
-            private_ip: self.private_ip,
-            public_dns: self.public_dns,
-            public_ip: self.public_ip,
-            registered_by: self.registered_by,
-            reported_agent_version: self.reported_agent_version,
-            reported_os: self.reported_os,
-            root_device_type: self.root_device_type,
-            root_device_volume_id: self.root_device_volume_id,
-            security_group_ids: self.security_group_ids,
-            ssh_host_dsa_key_fingerprint: self.ssh_host_dsa_key_fingerprint,
-            ssh_host_rsa_key_fingerprint: self.ssh_host_rsa_key_fingerprint,
-            ssh_key_name: self.ssh_key_name,
-            stack_id: self.stack_id,
-            status: self.status,
-            subnet_id: self.subnet_id,
-            tenancy: self.tenancy,
-            virtualization_type: self.virtualization_type,
+            agent_version: self.agent_version
+            ,
+            ami_id: self.ami_id
+            ,
+            architecture: self.architecture
+            ,
+            arn: self.arn
+            ,
+            auto_scaling_type: self.auto_scaling_type
+            ,
+            availability_zone: self.availability_zone
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            created_at: self.created_at
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            ecs_cluster_arn: self.ecs_cluster_arn
+            ,
+            ecs_container_instance_arn: self.ecs_container_instance_arn
+            ,
+            elastic_ip: self.elastic_ip
+            ,
+            hostname: self.hostname
+            ,
+            infrastructure_class: self.infrastructure_class
+            ,
+            install_updates_on_boot: self.install_updates_on_boot
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_profile_arn: self.instance_profile_arn
+            ,
+            instance_type: self.instance_type
+            ,
+            last_service_error_id: self.last_service_error_id
+            ,
+            layer_ids: self.layer_ids
+            ,
+            os: self.os
+            ,
+            platform: self.platform
+            ,
+            private_dns: self.private_dns
+            ,
+            private_ip: self.private_ip
+            ,
+            public_dns: self.public_dns
+            ,
+            public_ip: self.public_ip
+            ,
+            registered_by: self.registered_by
+            ,
+            reported_agent_version: self.reported_agent_version
+            ,
+            reported_os: self.reported_os
+            ,
+            root_device_type: self.root_device_type
+            ,
+            root_device_volume_id: self.root_device_volume_id
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            ssh_host_dsa_key_fingerprint: self.ssh_host_dsa_key_fingerprint
+            ,
+            ssh_host_rsa_key_fingerprint: self.ssh_host_rsa_key_fingerprint
+            ,
+            ssh_key_name: self.ssh_key_name
+            ,
+            stack_id: self.stack_id
+            ,
+            status: self.status
+            ,
+            subnet_id: self.subnet_id
+            ,
+            tenancy: self.tenancy
+            ,
+            virtualization_type: self.virtualization_type
+            ,
         }
     }
 }
+

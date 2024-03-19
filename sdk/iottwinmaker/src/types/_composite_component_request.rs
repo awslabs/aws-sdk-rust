@@ -3,27 +3,25 @@
 /// <p>An object that sets information about the composite component update request.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CompositeComponentRequest {
+pub struct CompositeComponentRequest  {
     /// <p>The description of the component type.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>This is an object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
+    pub properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>,
     /// <p>The property groups.</p>
-    pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
+    pub property_groups: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }
-impl CompositeComponentRequest {
+impl  CompositeComponentRequest  {
     /// <p>The description of the component type.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>This is an object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>> {
+    pub fn properties(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>> {
         self.properties.as_ref()
     }
     /// <p>The property groups.</p>
-    pub fn property_groups(
-        &self,
-    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
+    pub fn property_groups(&self) -> ::std::option::Option<& ::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
         self.property_groups.as_ref()
     }
 }
@@ -39,9 +37,8 @@ impl CompositeComponentRequest {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CompositeComponentRequestBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
-    pub(crate) property_groups:
-        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
+    pub(crate) properties: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>,
+    pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
 }
 impl CompositeComponentRequestBuilder {
     /// <p>The description of the component type.</p>
@@ -51,8 +48,7 @@ impl CompositeComponentRequestBuilder {
     }
     /// <p>The description of the component type.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The description of the component type.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,20 +61,16 @@ impl CompositeComponentRequestBuilder {
     /// <p>This is an object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::PropertyRequest) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.properties = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.properties = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>This is an object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>>) -> Self {
+        self.properties = input; self
     }
     /// <p>This is an object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyRequest>> {
+    pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::PropertyRequest>> {
         &self.properties
     }
     /// Adds a key-value pair to `property_groups`.
@@ -88,30 +80,28 @@ impl CompositeComponentRequestBuilder {
     /// <p>The property groups.</p>
     pub fn property_groups(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentPropertyGroupRequest) -> Self {
         let mut hash_map = self.property_groups.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.property_groups = ::std::option::Option::Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.property_groups = ::std::option::Option::Some(hash_map);
+                        self
     }
     /// <p>The property groups.</p>
-    pub fn set_property_groups(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>>,
-    ) -> Self {
-        self.property_groups = input;
-        self
+    pub fn set_property_groups(mut self, input: ::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>>) -> Self {
+        self.property_groups = input; self
     }
     /// <p>The property groups.</p>
-    pub fn get_property_groups(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
+    pub fn get_property_groups(&self) -> &::std::option::Option<::std::collections::HashMap::<::std::string::String, crate::types::ComponentPropertyGroupRequest>> {
         &self.property_groups
     }
     /// Consumes the builder and constructs a [`CompositeComponentRequest`](crate::types::CompositeComponentRequest).
     pub fn build(self) -> crate::types::CompositeComponentRequest {
         crate::types::CompositeComponentRequest {
-            description: self.description,
-            properties: self.properties,
-            property_groups: self.property_groups,
+            description: self.description
+            ,
+            properties: self.properties
+            ,
+            property_groups: self.property_groups
+            ,
         }
     }
 }
+

@@ -7,7 +7,7 @@ pub enum StructuredMessage {
     /// <p>Represents a primitive type node of the complex data structure.</p>
     PrimitiveMessageDefinition(crate::types::PrimitiveMessageDefinition),
     /// <p>Represents a struct type node of the complex data structure.</p>
-    StructuredMessageDefinition(::std::vec::Vec<crate::types::StructuredMessageFieldNameAndDataTypePair>),
+    StructuredMessageDefinition(::std::vec::Vec::<crate::types::StructuredMessageFieldNameAndDataTypePair>),
     /// <p>Represents a list type node of the complex data structure.</p>
     StructuredMessageListDefinition(::std::boxed::Box<crate::types::StructuredMessageListDefinition>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -24,11 +24,7 @@ impl StructuredMessage {
     /// Tries to convert the enum instance into [`PrimitiveMessageDefinition`](crate::types::StructuredMessage::PrimitiveMessageDefinition), extracting the inner [`PrimitiveMessageDefinition`](crate::types::PrimitiveMessageDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_primitive_message_definition(&self) -> ::std::result::Result<&crate::types::PrimitiveMessageDefinition, &Self> {
-        if let StructuredMessage::PrimitiveMessageDefinition(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+        if let StructuredMessage::PrimitiveMessageDefinition(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`PrimitiveMessageDefinition`](crate::types::StructuredMessage::PrimitiveMessageDefinition).
     pub fn is_primitive_message_definition(&self) -> bool {
@@ -36,14 +32,8 @@ impl StructuredMessage {
     }
     /// Tries to convert the enum instance into [`StructuredMessageDefinition`](crate::types::StructuredMessage::StructuredMessageDefinition), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_structured_message_definition(
-        &self,
-    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::StructuredMessageFieldNameAndDataTypePair>, &Self> {
-        if let StructuredMessage::StructuredMessageDefinition(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_structured_message_definition(&self) -> ::std::result::Result<&::std::vec::Vec::<crate::types::StructuredMessageFieldNameAndDataTypePair>, &Self> {
+        if let StructuredMessage::StructuredMessageDefinition(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StructuredMessageDefinition`](crate::types::StructuredMessage::StructuredMessageDefinition).
     pub fn is_structured_message_definition(&self) -> bool {
@@ -51,14 +41,8 @@ impl StructuredMessage {
     }
     /// Tries to convert the enum instance into [`StructuredMessageListDefinition`](crate::types::StructuredMessage::StructuredMessageListDefinition), extracting the inner [`StructuredMessageListDefinition`](crate::types::StructuredMessageListDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_structured_message_list_definition(
-        &self,
-    ) -> ::std::result::Result<&::std::boxed::Box<crate::types::StructuredMessageListDefinition>, &Self> {
-        if let StructuredMessage::StructuredMessageListDefinition(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
+    pub fn as_structured_message_list_definition(&self) -> ::std::result::Result<&::std::boxed::Box<crate::types::StructuredMessageListDefinition>, &Self> {
+        if let StructuredMessage::StructuredMessageListDefinition(val) = &self { ::std::result::Result::Ok(val) } else { ::std::result::Result::Err(self) }
     }
     /// Returns true if this is a [`StructuredMessageListDefinition`](crate::types::StructuredMessage::StructuredMessageListDefinition).
     pub fn is_structured_message_list_definition(&self) -> bool {
@@ -69,3 +53,4 @@ impl StructuredMessage {
         matches!(self, Self::Unknown)
     }
 }
+

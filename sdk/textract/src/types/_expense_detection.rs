@@ -3,7 +3,7 @@
 /// <p>An object used to store information about the Value or Label detected by Amazon Textract.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ExpenseDetection {
+pub struct ExpenseDetection  {
     /// <p>The word or line of text recognized by Amazon Textract</p>
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
@@ -11,13 +11,13 @@ pub struct ExpenseDetection {
     /// <p>The confidence in detection, as a percentage</p>
     pub confidence: ::std::option::Option<f32>,
 }
-impl ExpenseDetection {
+impl  ExpenseDetection  {
     /// <p>The word or line of text recognized by Amazon Textract</p>
-    pub fn text(&self) -> ::std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<& crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>The confidence in detection, as a percentage</p>
@@ -48,8 +48,7 @@ impl ExpenseDetectionBuilder {
     }
     /// <p>The word or line of text recognized by Amazon Textract</p>
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The word or line of text recognized by Amazon Textract</p>
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl ExpenseDetectionBuilder {
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input;
-        self
+        self.geometry = input; self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
@@ -76,8 +74,7 @@ impl ExpenseDetectionBuilder {
     }
     /// <p>The confidence in detection, as a percentage</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The confidence in detection, as a percentage</p>
     pub fn get_confidence(&self) -> &::std::option::Option<f32> {
@@ -86,9 +83,13 @@ impl ExpenseDetectionBuilder {
     /// Consumes the builder and constructs a [`ExpenseDetection`](crate::types::ExpenseDetection).
     pub fn build(self) -> crate::types::ExpenseDetection {
         crate::types::ExpenseDetection {
-            text: self.text,
-            geometry: self.geometry,
-            confidence: self.confidence,
+            text: self.text
+            ,
+            geometry: self.geometry
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

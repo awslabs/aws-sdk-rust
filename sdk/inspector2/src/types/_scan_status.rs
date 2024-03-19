@@ -3,7 +3,7 @@
 /// <p>The status of the scan.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ScanStatus {
+pub struct ScanStatus  {
     /// <p>The status code of the scan.</p>
     pub status_code: crate::types::ScanStatusCode,
     /// <p>The scan status. Possible return values and descriptions are:</p>
@@ -34,9 +34,9 @@ pub struct ScanStatus {
     /// <p></p>
     pub reason: crate::types::ScanStatusReason,
 }
-impl ScanStatus {
+impl  ScanStatus  {
     /// <p>The status code of the scan.</p>
-    pub fn status_code(&self) -> &crate::types::ScanStatusCode {
+    pub fn status_code(&self) -> & crate::types::ScanStatusCode {
         &self.status_code
     }
     /// <p>The scan status. Possible return values and descriptions are:</p>
@@ -65,7 +65,7 @@ impl ScanStatus {
     /// <p><code>DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED</code> - Amazon Inspector failed to extract the package inventory because the package collection time exceeding the maximum threshold of 15 minutes.</p>
     /// <p><code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p>
     /// <p></p>
-    pub fn reason(&self) -> &crate::types::ScanStatusReason {
+    pub fn reason(&self) -> & crate::types::ScanStatusReason {
         &self.reason
     }
 }
@@ -92,8 +92,7 @@ impl ScanStatusBuilder {
     }
     /// <p>The status code of the scan.</p>
     pub fn set_status_code(mut self, input: ::std::option::Option<crate::types::ScanStatusCode>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>The status code of the scan.</p>
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScanStatusCode> {
@@ -157,8 +156,7 @@ impl ScanStatusBuilder {
     /// <p><code>DEEP_INSPECTION_NO_INVENTORY</code> The Amazon Inspector plugin hasn't yet been able to collect an inventory of packages for this instance. This is usually the result of a pending scan, however, if this status persists after 6 hours, use SSM to ensure that the required Amazon Inspector associations exist and are running for the instance.</p>
     /// <p></p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ScanStatusReason>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The scan status. Possible return values and descriptions are:</p>
     /// <p><code>PENDING_INITIAL_SCAN</code> - This resource has been identified for scanning, results will be available soon.</p>
@@ -194,19 +192,20 @@ impl ScanStatusBuilder {
     /// - [`status_code`](crate::types::builders::ScanStatusBuilder::status_code)
     /// - [`reason`](crate::types::builders::ScanStatusBuilder::reason)
     pub fn build(self) -> ::std::result::Result<crate::types::ScanStatus, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ScanStatus {
-            status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status_code",
-                    "status_code was not specified but it is required when building ScanStatus",
-                )
-            })?,
-            reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "reason",
-                    "reason was not specified but it is required when building ScanStatus",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::ScanStatus {
+                status_code: self.status_code
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("status_code", "status_code was not specified but it is required when building ScanStatus")
+                    )?
+                ,
+                reason: self.reason
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("reason", "reason was not specified but it is required when building ScanStatus")
+                    )?
+                ,
+            }
+        )
     }
 }
+

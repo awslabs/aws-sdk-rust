@@ -3,7 +3,7 @@
 /// <p>The network status of a device.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NetworkStatus {
+pub struct NetworkStatus  {
     /// <p>The status of Ethernet port 0.</p>
     pub ethernet0_status: ::std::option::Option<crate::types::EthernetStatus>,
     /// <p>The status of Ethernet port 1.</p>
@@ -13,21 +13,21 @@ pub struct NetworkStatus {
     /// <p>When the network status changed.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
-impl NetworkStatus {
+impl  NetworkStatus  {
     /// <p>The status of Ethernet port 0.</p>
-    pub fn ethernet0_status(&self) -> ::std::option::Option<&crate::types::EthernetStatus> {
+    pub fn ethernet0_status(&self) -> ::std::option::Option<& crate::types::EthernetStatus> {
         self.ethernet0_status.as_ref()
     }
     /// <p>The status of Ethernet port 1.</p>
-    pub fn ethernet1_status(&self) -> ::std::option::Option<&crate::types::EthernetStatus> {
+    pub fn ethernet1_status(&self) -> ::std::option::Option<& crate::types::EthernetStatus> {
         self.ethernet1_status.as_ref()
     }
     /// <p>Details about a network time protocol (NTP) server connection.</p>
-    pub fn ntp_status(&self) -> ::std::option::Option<&crate::types::NtpStatus> {
+    pub fn ntp_status(&self) -> ::std::option::Option<& crate::types::NtpStatus> {
         self.ntp_status.as_ref()
     }
     /// <p>When the network status changed.</p>
-    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl NetworkStatusBuilder {
     }
     /// <p>The status of Ethernet port 0.</p>
     pub fn set_ethernet0_status(mut self, input: ::std::option::Option<crate::types::EthernetStatus>) -> Self {
-        self.ethernet0_status = input;
-        self
+        self.ethernet0_status = input; self
     }
     /// <p>The status of Ethernet port 0.</p>
     pub fn get_ethernet0_status(&self) -> &::std::option::Option<crate::types::EthernetStatus> {
@@ -69,8 +68,7 @@ impl NetworkStatusBuilder {
     }
     /// <p>The status of Ethernet port 1.</p>
     pub fn set_ethernet1_status(mut self, input: ::std::option::Option<crate::types::EthernetStatus>) -> Self {
-        self.ethernet1_status = input;
-        self
+        self.ethernet1_status = input; self
     }
     /// <p>The status of Ethernet port 1.</p>
     pub fn get_ethernet1_status(&self) -> &::std::option::Option<crate::types::EthernetStatus> {
@@ -83,8 +81,7 @@ impl NetworkStatusBuilder {
     }
     /// <p>Details about a network time protocol (NTP) server connection.</p>
     pub fn set_ntp_status(mut self, input: ::std::option::Option<crate::types::NtpStatus>) -> Self {
-        self.ntp_status = input;
-        self
+        self.ntp_status = input; self
     }
     /// <p>Details about a network time protocol (NTP) server connection.</p>
     pub fn get_ntp_status(&self) -> &::std::option::Option<crate::types::NtpStatus> {
@@ -97,8 +94,7 @@ impl NetworkStatusBuilder {
     }
     /// <p>When the network status changed.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input;
-        self
+        self.last_updated_time = input; self
     }
     /// <p>When the network status changed.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -107,10 +103,15 @@ impl NetworkStatusBuilder {
     /// Consumes the builder and constructs a [`NetworkStatus`](crate::types::NetworkStatus).
     pub fn build(self) -> crate::types::NetworkStatus {
         crate::types::NetworkStatus {
-            ethernet0_status: self.ethernet0_status,
-            ethernet1_status: self.ethernet1_status,
-            ntp_status: self.ntp_status,
-            last_updated_time: self.last_updated_time,
+            ethernet0_status: self.ethernet0_status
+            ,
+            ethernet1_status: self.ethernet1_status
+            ,
+            ntp_status: self.ntp_status
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateKxDataviewOutput {
+pub struct UpdateKxDataviewOutput  {
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
@@ -16,9 +16,9 @@ pub struct UpdateKxDataviewOutput {
     /// <p>A unique identifier for the changeset.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
+    pub segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
     /// <p>The current active changeset versions of the database on the given dataview.</p>
-    pub active_versions: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>,
+    pub active_versions: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewActiveVersion>>,
     /// <p>The status of dataview creation.</p>
     /// <ul>
     /// <li>
@@ -41,42 +41,44 @@ pub struct UpdateKxDataviewOutput {
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
-impl UpdateKxDataviewOutput {
+impl  UpdateKxDataviewOutput  {
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database_name(&self) -> ::std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the database under which the dataview was created.</p>
-    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+    pub fn dataview_name(&self) -> ::std::option::Option<& str> {
         self.dataview_name.as_deref()
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
-    pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
+    pub fn az_mode(&self) -> ::std::option::Option<& crate::types::KxAzMode> {
         self.az_mode.as_ref()
     }
     /// <p>The identifier of the availability zones.</p>
-    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> ::std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>A unique identifier for the changeset.</p>
-    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<& str> {
         self.changeset_id.as_deref()
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.segment_configurations.is_none()`.
-    pub fn segment_configurations(&self) -> &[crate::types::KxDataviewSegmentConfiguration] {
-        self.segment_configurations.as_deref().unwrap_or_default()
+    pub fn segment_configurations(&self) -> & [crate::types::KxDataviewSegmentConfiguration] {
+        self.segment_configurations.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The current active changeset versions of the database on the given dataview.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.active_versions.is_none()`.
-    pub fn active_versions(&self) -> &[crate::types::KxDataviewActiveVersion] {
-        self.active_versions.as_deref().unwrap_or_default()
+    pub fn active_versions(&self) -> & [crate::types::KxDataviewActiveVersion] {
+        self.active_versions.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
@@ -87,7 +89,7 @@ impl UpdateKxDataviewOutput {
     /// <li>
     /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::KxDataviewStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::KxDataviewStatus> {
         self.status.as_ref()
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
@@ -99,23 +101,23 @@ impl UpdateKxDataviewOutput {
         self.read_write
     }
     /// <p>A description of the dataview.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp at which the dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn last_modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn last_modified_timestamp(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateKxDataviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl UpdateKxDataviewOutput {
     /// Creates a new builder-style object to manufacture [`UpdateKxDataviewOutput`](crate::operation::update_kx_dataview::UpdateKxDataviewOutput).
     pub fn builder() -> crate::operation::update_kx_dataview::builders::UpdateKxDataviewOutputBuilder {
@@ -133,8 +135,8 @@ pub struct UpdateKxDataviewOutputBuilder {
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
-    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>,
-    pub(crate) active_versions: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>,
+    pub(crate) segment_configurations: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>,
+    pub(crate) active_versions: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewActiveVersion>>,
     pub(crate) status: ::std::option::Option<crate::types::KxDataviewStatus>,
     pub(crate) auto_update: ::std::option::Option<bool>,
     pub(crate) read_write: ::std::option::Option<bool>,
@@ -151,8 +153,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>A unique identifier for the kdb environment, where you want to update the dataview.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -165,8 +166,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the database.</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -179,8 +179,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The name of the database under which the dataview was created.</p>
     pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.dataview_name = input;
-        self
+        self.dataview_name = input; self
     }
     /// <p>The name of the database under which the dataview was created.</p>
     pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -193,8 +192,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
-        self.az_mode = input;
-        self
+        self.az_mode = input; self
     }
     /// <p>The number of availability zones you want to assign per volume. Currently, FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in a single AZ.</p>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
@@ -207,8 +205,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.availability_zone_id = input;
-        self
+        self.availability_zone_id = input; self
     }
     /// <p>The identifier of the availability zones.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -221,8 +218,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.changeset_id = input;
-        self
+        self.changeset_id = input; self
     }
     /// <p>A unique identifier for the changeset.</p>
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -235,17 +231,16 @@ impl UpdateKxDataviewOutputBuilder {
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
     pub fn segment_configurations(mut self, input: crate::types::KxDataviewSegmentConfiguration) -> Self {
         let mut v = self.segment_configurations.unwrap_or_default();
-        v.push(input);
-        self.segment_configurations = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.segment_configurations = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
-        self.segment_configurations = input;
-        self
+    pub fn set_segment_configurations(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>>) -> Self {
+        self.segment_configurations = input; self
     }
     /// <p>The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment.</p>
-    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewSegmentConfiguration>> {
+    pub fn get_segment_configurations(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewSegmentConfiguration>> {
         &self.segment_configurations
     }
     /// Appends an item to `active_versions`.
@@ -255,17 +250,16 @@ impl UpdateKxDataviewOutputBuilder {
     /// <p>The current active changeset versions of the database on the given dataview.</p>
     pub fn active_versions(mut self, input: crate::types::KxDataviewActiveVersion) -> Self {
         let mut v = self.active_versions.unwrap_or_default();
-        v.push(input);
-        self.active_versions = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.active_versions = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The current active changeset versions of the database on the given dataview.</p>
-    pub fn set_active_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>) -> Self {
-        self.active_versions = input;
-        self
+    pub fn set_active_versions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewActiveVersion>>) -> Self {
+        self.active_versions = input; self
     }
     /// <p>The current active changeset versions of the database on the given dataview.</p>
-    pub fn get_active_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>> {
+    pub fn get_active_versions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::KxDataviewActiveVersion>> {
         &self.active_versions
     }
     /// <p>The status of dataview creation.</p>
@@ -291,8 +285,7 @@ impl UpdateKxDataviewOutputBuilder {
     /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxDataviewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
@@ -313,8 +306,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
     pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
     pub fn get_auto_update(&self) -> &::std::option::Option<bool> {
@@ -327,8 +319,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
     pub fn set_read_write(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.read_write = input;
-        self
+        self.read_write = input; self
     }
     /// <p>Returns True if the dataview is created as writeable and False otherwise.</p>
     pub fn get_read_write(&self) -> &::std::option::Option<bool> {
@@ -341,8 +332,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>A description of the dataview.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of the dataview.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -355,8 +345,7 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The timestamp at which the dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_created_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input;
-        self
+        self.created_timestamp = input; self
     }
     /// <p>The timestamp at which the dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -369,40 +358,56 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_timestamp = input;
-        self
+        self.last_modified_timestamp = input; self
     }
     /// <p>The last time that the dataview was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`UpdateKxDataviewOutput`](crate::operation::update_kx_dataview::UpdateKxDataviewOutput).
     pub fn build(self) -> crate::operation::update_kx_dataview::UpdateKxDataviewOutput {
         crate::operation::update_kx_dataview::UpdateKxDataviewOutput {
-            environment_id: self.environment_id,
-            database_name: self.database_name,
-            dataview_name: self.dataview_name,
-            az_mode: self.az_mode,
-            availability_zone_id: self.availability_zone_id,
-            changeset_id: self.changeset_id,
-            segment_configurations: self.segment_configurations,
-            active_versions: self.active_versions,
-            status: self.status,
-            auto_update: self.auto_update.unwrap_or_default(),
-            read_write: self.read_write.unwrap_or_default(),
-            description: self.description,
-            created_timestamp: self.created_timestamp,
-            last_modified_timestamp: self.last_modified_timestamp,
+            environment_id: self.environment_id
+            ,
+            database_name: self.database_name
+            ,
+            dataview_name: self.dataview_name
+            ,
+            az_mode: self.az_mode
+            ,
+            availability_zone_id: self.availability_zone_id
+            ,
+            changeset_id: self.changeset_id
+            ,
+            segment_configurations: self.segment_configurations
+            ,
+            active_versions: self.active_versions
+            ,
+            status: self.status
+            ,
+            auto_update: self.auto_update
+                .unwrap_or_default()
+            ,
+            read_write: self.read_write
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_modified_timestamp: self.last_modified_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

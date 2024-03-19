@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct UpdateSiteInput {
+pub struct UpdateSiteInput  {
     /// <p>The ID of the global network.</p>
     pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of your site.</p>
@@ -21,18 +21,18 @@ pub struct UpdateSiteInput {
     /// </ul>
     pub location: ::std::option::Option<crate::types::Location>,
 }
-impl UpdateSiteInput {
+impl  UpdateSiteInput  {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of your site.</p>
-    pub fn site_id(&self) -> ::std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> ::std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The site location:</p>
@@ -44,11 +44,11 @@ impl UpdateSiteInput {
     /// <li>
     /// <p><code>Longitude</code>: The longitude of the site.</p></li>
     /// </ul>
-    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
 }
-impl ::std::fmt::Debug for UpdateSiteInput {
+impl  ::std::fmt::Debug for UpdateSiteInput  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateSiteInput");
         formatter.field("global_network_id", &self.global_network_id);
@@ -83,8 +83,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.global_network_id = input;
-        self
+        self.global_network_id = input; self
     }
     /// <p>The ID of the global network.</p>
     pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -98,8 +97,7 @@ impl UpdateSiteInputBuilder {
     }
     /// <p>The ID of your site.</p>
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// <p>The ID of your site.</p>
     pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -114,8 +112,7 @@ impl UpdateSiteInputBuilder {
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A description of your site.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
@@ -145,8 +142,7 @@ impl UpdateSiteInputBuilder {
     /// <p><code>Longitude</code>: The longitude of the site.</p></li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The site location:</p>
     /// <ul>
@@ -162,12 +158,18 @@ impl UpdateSiteInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteInput {
-            global_network_id: self.global_network_id,
-            site_id: self.site_id,
-            description: self.description,
-            location: self.location,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_site::UpdateSiteInput {
+                global_network_id: self.global_network_id
+                ,
+                site_id: self.site_id
+                ,
+                description: self.description
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for UpdateSiteInputBuilder {
@@ -180,3 +182,4 @@ impl ::std::fmt::Debug for UpdateSiteInputBuilder {
         formatter.finish()
     }
 }
+

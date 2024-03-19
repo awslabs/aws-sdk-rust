@@ -2,15 +2,16 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListCustomDataIdentifiers`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to include in each page of the response.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::set_next_token):<br>required: **false**<br><p>The nextToken string that specifies which page of results to return in a paginated response.</p><br>
-    /// - On success, responds with [`ListCustomDataIdentifiersOutput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput) with field(s):
+                            /// - On success, responds with [`ListCustomDataIdentifiersOutput`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput) with field(s):
     ///   - [`items(Option<Vec::<CustomDataIdentifierSummary>>)`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput::items): <p>An array of objects, one for each custom data identifier.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    /// - On failure, responds with [`SdkError<ListCustomDataIdentifiersError>`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError)
+                            /// - On failure, responds with [`SdkError<ListCustomDataIdentifiersError>`](crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError)
     pub fn list_custom_data_identifiers(&self) -> crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder {
-        crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersFluentBuilder::new(self.handle.clone())
+                            }
 }
+

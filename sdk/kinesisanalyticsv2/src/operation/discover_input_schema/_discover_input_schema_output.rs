@@ -2,46 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DiscoverInputSchemaOutput {
+pub struct DiscoverInputSchemaOutput  {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     pub input_schema: ::std::option::Option<crate::types::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub parsed_input_records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub parsed_input_records: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub processed_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    pub raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub raw_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
-impl DiscoverInputSchemaOutput {
+impl  DiscoverInputSchemaOutput  {
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-    pub fn input_schema(&self) -> ::std::option::Option<&crate::types::SourceSchema> {
+    pub fn input_schema(&self) -> ::std::option::Option<& crate::types::SourceSchema> {
         self.input_schema.as_ref()
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parsed_input_records.is_none()`.
-    pub fn parsed_input_records(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        self.parsed_input_records.as_deref().unwrap_or_default()
+    pub fn parsed_input_records(&self) -> & [::std::vec::Vec::<::std::string::String>] {
+        self.parsed_input_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.processed_input_records.is_none()`.
-    pub fn processed_input_records(&self) -> &[::std::string::String] {
-        self.processed_input_records.as_deref().unwrap_or_default()
+    pub fn processed_input_records(&self) -> & [::std::string::String] {
+        self.processed_input_records.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.raw_input_records.is_none()`.
-    pub fn raw_input_records(&self) -> &[::std::string::String] {
-        self.raw_input_records.as_deref().unwrap_or_default()
+    pub fn raw_input_records(&self) -> & [::std::string::String] {
+        self.raw_input_records.as_deref()
+        .unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DiscoverInputSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DiscoverInputSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::operation::discover_input_schema::DiscoverInputSchemaOutput).
     pub fn builder() -> crate::operation::discover_input_schema::builders::DiscoverInputSchemaOutputBuilder {
@@ -54,9 +57,9 @@ impl DiscoverInputSchemaOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DiscoverInputSchemaOutputBuilder {
     pub(crate) input_schema: ::std::option::Option<crate::types::SourceSchema>,
-    pub(crate) parsed_input_records: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
-    pub(crate) processed_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parsed_input_records: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>,
+    pub(crate) processed_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
+    pub(crate) raw_input_records: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DiscoverInputSchemaOutputBuilder {
@@ -67,8 +70,7 @@ impl DiscoverInputSchemaOutputBuilder {
     }
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     pub fn set_input_schema(mut self, input: ::std::option::Option<crate::types::SourceSchema>) -> Self {
-        self.input_schema = input;
-        self
+        self.input_schema = input; self
     }
     /// <p>The schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     pub fn get_input_schema(&self) -> &::std::option::Option<crate::types::SourceSchema> {
@@ -79,19 +81,18 @@ impl DiscoverInputSchemaOutputBuilder {
     /// To override the contents of this collection use [`set_parsed_input_records`](Self::set_parsed_input_records).
     ///
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn parsed_input_records(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
+    pub fn parsed_input_records(mut self, input: ::std::vec::Vec::<::std::string::String>) -> Self {
         let mut v = self.parsed_input_records.unwrap_or_default();
-        v.push(input);
-        self.parsed_input_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.parsed_input_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn set_parsed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>) -> Self {
-        self.parsed_input_records = input;
-        self
+    pub fn set_parsed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>>) -> Self {
+        self.parsed_input_records = input; self
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn get_parsed_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+    pub fn get_parsed_input_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::vec::Vec::<::std::string::String>>> {
         &self.parsed_input_records
     }
     /// Appends an item to `processed_input_records`.
@@ -101,17 +102,16 @@ impl DiscoverInputSchemaOutputBuilder {
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     pub fn processed_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.processed_input_records.unwrap_or_default();
-        v.push(input.into());
-        self.processed_input_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.processed_input_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.processed_input_records = input;
-        self
+    pub fn set_processed_input_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.processed_input_records = input; self
     }
     /// <p>The stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_processed_input_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.processed_input_records
     }
     /// Appends an item to `raw_input_records`.
@@ -121,36 +121,40 @@ impl DiscoverInputSchemaOutputBuilder {
     /// <p>The raw stream data that was sampled to infer the schema.</p>
     pub fn raw_input_records(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.raw_input_records.unwrap_or_default();
-        v.push(input.into());
-        self.raw_input_records = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.raw_input_records = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    pub fn set_raw_input_records(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.raw_input_records = input;
-        self
+    pub fn set_raw_input_records(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.raw_input_records = input; self
     }
     /// <p>The raw stream data that was sampled to infer the schema.</p>
-    pub fn get_raw_input_records(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_raw_input_records(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.raw_input_records
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DiscoverInputSchemaOutput`](crate::operation::discover_input_schema::DiscoverInputSchemaOutput).
     pub fn build(self) -> crate::operation::discover_input_schema::DiscoverInputSchemaOutput {
         crate::operation::discover_input_schema::DiscoverInputSchemaOutput {
-            input_schema: self.input_schema,
-            parsed_input_records: self.parsed_input_records,
-            processed_input_records: self.processed_input_records,
-            raw_input_records: self.raw_input_records,
+            input_schema: self.input_schema
+            ,
+            parsed_input_records: self.parsed_input_records
+            ,
+            processed_input_records: self.processed_input_records
+            ,
+            raw_input_records: self.raw_input_records
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

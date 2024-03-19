@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListDatasetsOutput {
+pub struct ListDatasetsOutput  {
     /// <p>A list of datasets that are defined.</p>
-    pub datasets: ::std::vec::Vec<crate::types::Dataset>,
+    pub datasets: ::std::vec::Vec::<crate::types::Dataset>,
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListDatasetsOutput {
+impl  ListDatasetsOutput  {
     /// <p>A list of datasets that are defined.</p>
-    pub fn datasets(&self) -> &[crate::types::Dataset] {
-        use std::ops::Deref;
-        self.datasets.deref()
+    pub fn datasets(&self) -> & [crate::types::Dataset] {
+        use std::ops::Deref; self.datasets.deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDatasetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListDatasetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     pub fn builder() -> crate::operation::list_datasets::builders::ListDatasetsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListDatasetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec::<crate::types::Dataset>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListDatasetsOutputBuilder {
     /// <p>A list of datasets that are defined.</p>
     pub fn datasets(mut self, input: crate::types::Dataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-        v.push(input);
-        self.datasets = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.datasets = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of datasets that are defined.</p>
-    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>) -> Self {
-        self.datasets = input;
-        self
+    pub fn set_datasets(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::Dataset>>) -> Self {
+        self.datasets = input; self
     }
     /// <p>A list of datasets that are defined.</p>
-    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::Dataset>> {
         &self.datasets
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
@@ -68,37 +66,37 @@ impl ListDatasetsOutputBuilder {
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`datasets`](crate::operation::list_datasets::builders::ListDatasetsOutputBuilder::datasets)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsOutput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsOutput {
-            datasets: self.datasets.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "datasets",
-                    "datasets was not specified but it is required when building ListDatasetsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_datasets::ListDatasetsOutput {
+                datasets: self.datasets
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("datasets", "datasets was not specified but it is required when building ListDatasetsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

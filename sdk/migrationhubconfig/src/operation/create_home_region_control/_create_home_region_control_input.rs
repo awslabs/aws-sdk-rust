@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHomeRegionControlInput {
+pub struct CreateHomeRegionControlInput  {
     /// <p>The name of the home region of the calling account.</p>
     pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
@@ -10,13 +10,13 @@ pub struct CreateHomeRegionControlInput {
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
-impl CreateHomeRegionControlInput {
+impl  CreateHomeRegionControlInput  {
     /// <p>The name of the home region of the calling account.</p>
-    pub fn home_region(&self) -> ::std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
-    pub fn target(&self) -> ::std::option::Option<&crate::types::Target> {
+    pub fn target(&self) -> ::std::option::Option<& crate::types::Target> {
         self.target.as_ref()
     }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
@@ -48,8 +48,7 @@ impl CreateHomeRegionControlInputBuilder {
     }
     /// <p>The name of the home region of the calling account.</p>
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>The name of the home region of the calling account.</p>
     pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
@@ -63,8 +62,7 @@ impl CreateHomeRegionControlInputBuilder {
     }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
-        self.target = input;
-        self
+        self.target = input; self
     }
     /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
     pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
@@ -77,24 +75,24 @@ impl CreateHomeRegionControlInputBuilder {
     }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateHomeRegionControlInput`](crate::operation::create_home_region_control::CreateHomeRegionControlInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::create_home_region_control::CreateHomeRegionControlInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
-        ::std::result::Result::Ok(crate::operation::create_home_region_control::CreateHomeRegionControlInput {
-            home_region: self.home_region,
-            target: self.target,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_home_region_control::CreateHomeRegionControlInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::create_home_region_control::CreateHomeRegionControlInput {
+                home_region: self.home_region
+                ,
+                target: self.target
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

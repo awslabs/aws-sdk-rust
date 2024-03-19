@@ -2,45 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetOpsSummaryInput {
+pub struct GetOpsSummaryInput  {
     /// <p>Specify the name of a resource data sync to get.</p>
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional filters used to scope down the returned OpsData.</p>
-    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsFilter>>,
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
+    pub aggregators: ::std::option::Option<::std::vec::Vec::<crate::types::OpsAggregator>>,
     /// <p>The OpsData data type to return.</p>
-    pub result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
+    pub result_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::OpsResultAttribute>>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: ::std::option::Option<i32>,
 }
-impl GetOpsSummaryInput {
+impl  GetOpsSummaryInput  {
     /// <p>Specify the name of a resource data sync to get.</p>
-    pub fn sync_name(&self) -> ::std::option::Option<&str> {
+    pub fn sync_name(&self) -> ::std::option::Option<& str> {
         self.sync_name.as_deref()
     }
     /// <p>Optional filters used to scope down the returned OpsData.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
-    pub fn filters(&self) -> &[crate::types::OpsFilter] {
-        self.filters.as_deref().unwrap_or_default()
+    pub fn filters(&self) -> & [crate::types::OpsFilter] {
+        self.filters.as_deref()
+        .unwrap_or_default()
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregators.is_none()`.
-    pub fn aggregators(&self) -> &[crate::types::OpsAggregator] {
-        self.aggregators.as_deref().unwrap_or_default()
+    pub fn aggregators(&self) -> & [crate::types::OpsAggregator] {
+        self.aggregators.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The OpsData data type to return.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.result_attributes.is_none()`.
-    pub fn result_attributes(&self) -> &[crate::types::OpsResultAttribute] {
-        self.result_attributes.as_deref().unwrap_or_default()
+    pub fn result_attributes(&self) -> & [crate::types::OpsResultAttribute] {
+        self.result_attributes.as_deref()
+        .unwrap_or_default()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -60,9 +63,9 @@ impl GetOpsSummaryInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetOpsSummaryInputBuilder {
     pub(crate) sync_name: ::std::option::Option<::std::string::String>,
-    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>,
-    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>,
-    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec::<crate::types::OpsFilter>>,
+    pub(crate) aggregators: ::std::option::Option<::std::vec::Vec::<crate::types::OpsAggregator>>,
+    pub(crate) result_attributes: ::std::option::Option<::std::vec::Vec::<crate::types::OpsResultAttribute>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -74,8 +77,7 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sync_name = input;
-        self
+        self.sync_name = input; self
     }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -88,17 +90,16 @@ impl GetOpsSummaryInputBuilder {
     /// <p>Optional filters used to scope down the returned OpsData.</p>
     pub fn filters(mut self, input: crate::types::OpsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.filters = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional filters used to scope down the returned OpsData.</p>
-    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>>) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Optional filters used to scope down the returned OpsData.</p>
-    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>> {
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsFilter>> {
         &self.filters
     }
     /// Appends an item to `aggregators`.
@@ -108,17 +109,16 @@ impl GetOpsSummaryInputBuilder {
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
     pub fn aggregators(mut self, input: crate::types::OpsAggregator) -> Self {
         let mut v = self.aggregators.unwrap_or_default();
-        v.push(input);
-        self.aggregators = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.aggregators = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
-        self.aggregators = input;
-        self
+    pub fn set_aggregators(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsAggregator>>) -> Self {
+        self.aggregators = input; self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
+    pub fn get_aggregators(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsAggregator>> {
         &self.aggregators
     }
     /// Appends an item to `result_attributes`.
@@ -128,17 +128,16 @@ impl GetOpsSummaryInputBuilder {
     /// <p>The OpsData data type to return.</p>
     pub fn result_attributes(mut self, input: crate::types::OpsResultAttribute) -> Self {
         let mut v = self.result_attributes.unwrap_or_default();
-        v.push(input);
-        self.result_attributes = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.result_attributes = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>>) -> Self {
-        self.result_attributes = input;
-        self
+    pub fn set_result_attributes(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::OpsResultAttribute>>) -> Self {
+        self.result_attributes = input; self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsResultAttribute>> {
+    pub fn get_result_attributes(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::OpsResultAttribute>> {
         &self.result_attributes
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -148,8 +147,7 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -162,24 +160,30 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_ops_summary::GetOpsSummaryInput {
-            sync_name: self.sync_name,
-            filters: self.filters,
-            aggregators: self.aggregators,
-            result_attributes: self.result_attributes,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_ops_summary::GetOpsSummaryInput {
+                sync_name: self.sync_name
+                ,
+                filters: self.filters
+                ,
+                aggregators: self.aggregators
+                ,
+                result_attributes: self.result_attributes
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,18 +2,19 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`ListObjectChildren`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`directory_arn(impl Into<String>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::set_directory_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p><br>
     ///   - [`object_reference(ObjectReference)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::object_reference) / [`set_object_reference(Option<ObjectReference>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::set_object_reference):<br>required: **true**<br><p>The reference that identifies the object for which child objects are being listed.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p><br>
     ///   - [`consistency_level(ConsistencyLevel)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::consistency_level) / [`set_consistency_level(Option<ConsistencyLevel>)`](crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::set_consistency_level):<br>required: **false**<br><p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p><br>
-    /// - On success, responds with [`ListObjectChildrenOutput`](crate::operation::list_object_children::ListObjectChildrenOutput) with field(s):
+                            /// - On success, responds with [`ListObjectChildrenOutput`](crate::operation::list_object_children::ListObjectChildrenOutput) with field(s):
     ///   - [`children(Option<HashMap::<String, String>>)`](crate::operation::list_object_children::ListObjectChildrenOutput::children): <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_object_children::ListObjectChildrenOutput::next_token): <p>The pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListObjectChildrenError>`](crate::operation::list_object_children::ListObjectChildrenError)
+                            /// - On failure, responds with [`SdkError<ListObjectChildrenError>`](crate::operation::list_object_children::ListObjectChildrenError)
     pub fn list_object_children(&self) -> crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder {
-        crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::list_object_children::builders::ListObjectChildrenFluentBuilder::new(self.handle.clone())
+                            }
 }
+

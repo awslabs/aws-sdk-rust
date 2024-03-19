@@ -5,54 +5,50 @@ pub use crate::operation::update_job_queue::_update_job_queue_input::UpdateJobQu
 
 impl UpdateJobQueueInputBuilder {
     /// Sends a request with this input using the given client.
-    pub async fn send_with(
-        self,
-        client: &crate::Client,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_queue::UpdateJobQueueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let mut fluent_builder = client.update_job_queue();
-        fluent_builder.inner = self;
-        fluent_builder.send().await
-    }
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
+                        crate::operation::update_job_queue::UpdateJobQueueOutput,
+                        ::aws_smithy_runtime_api::client::result::SdkError<
+                            crate::operation::update_job_queue::UpdateJobQueueError,
+                            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
+                        >
+                    > {
+                        let mut fluent_builder = client.update_job_queue();
+                        fluent_builder.inner = self;
+                        fluent_builder.send().await
+                    }
 }
 /// Fluent builder constructing a request to `UpdateJobQueue`.
-///
+/// 
 /// <p>Updates a job queue.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateJobQueueFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder,
+                    inner: crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder,
     config_override: ::std::option::Option<crate::config::Builder>,
 }
 impl
-    crate::client::customize::internal::CustomizableSend<
-        crate::operation::update_job_queue::UpdateJobQueueOutput,
-        crate::operation::update_job_queue::UpdateJobQueueError,
-    > for UpdateJobQueueFluentBuilder
-{
-    fn send(
-        self,
-        config_override: crate::config::Builder,
-    ) -> crate::client::customize::internal::BoxFuture<
-        crate::client::customize::internal::SendResult<
-            crate::operation::update_job_queue::UpdateJobQueueOutput,
-            crate::operation::update_job_queue::UpdateJobQueueError,
-        >,
-    > {
-        ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
-    }
-}
+                crate::client::customize::internal::CustomizableSend<
+                    crate::operation::update_job_queue::UpdateJobQueueOutput,
+                    crate::operation::update_job_queue::UpdateJobQueueError,
+                > for UpdateJobQueueFluentBuilder
+            {
+                fn send(
+                    self,
+                    config_override: crate::config::Builder,
+                ) -> crate::client::customize::internal::BoxFuture<
+                    crate::client::customize::internal::SendResult<
+                        crate::operation::update_job_queue::UpdateJobQueueOutput,
+                        crate::operation::update_job_queue::UpdateJobQueueError,
+                    >,
+                > {
+                    ::std::boxed::Box::pin(async move { self.config_override(config_override).send().await })
+                }
+            }
 impl UpdateJobQueueFluentBuilder {
     /// Creates a new `UpdateJobQueue`.
     pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle,
-            inner: ::std::default::Default::default(),
+            handle, inner: ::std::default::Default::default(),
             config_override: ::std::option::Option::None,
         }
     }
@@ -61,53 +57,44 @@ impl UpdateJobQueueFluentBuilder {
         &self.inner
     }
     /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::update_job_queue::UpdateJobQueueOutput,
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::update_job_queue::UpdateJobQueueError,
-            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
-        >,
-    > {
-        let input = self
-            .inner
-            .build()
-            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
-        let runtime_plugins = crate::operation::update_job_queue::UpdateJobQueue::operation_runtime_plugins(
-            self.handle.runtime_plugins.clone(),
-            &self.handle.conf,
-            self.config_override,
-        );
-        crate::operation::update_job_queue::UpdateJobQueue::orchestrate(&runtime_plugins, input).await
-    }
-
-    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
-    pub fn customize(
-        self,
-    ) -> crate::client::customize::CustomizableOperation<
-        crate::operation::update_job_queue::UpdateJobQueueOutput,
-        crate::operation::update_job_queue::UpdateJobQueueError,
-        Self,
-    > {
-        crate::client::customize::CustomizableOperation::new(self)
-    }
-    pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
-        self.set_config_override(Some(config_override.into()));
-        self
-    }
-
-    pub(crate) fn set_config_override(&mut self, config_override: Option<crate::config::Builder>) -> &mut Self {
-        self.config_override = config_override;
-        self
-    }
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> ::std::result::Result<crate::operation::update_job_queue::UpdateJobQueueOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_job_queue::UpdateJobQueueError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>> {
+                        let input = self.inner.build().map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+                        let runtime_plugins = crate::operation::update_job_queue::UpdateJobQueue::operation_runtime_plugins(
+                            self.handle.runtime_plugins.clone(),
+                            &self.handle.conf,
+                            self.config_override,
+                        );
+                        crate::operation::update_job_queue::UpdateJobQueue::orchestrate(&runtime_plugins, input).await
+                    }
+    
+                    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+                    pub fn customize(
+                        self,
+                    ) -> crate::client::customize::CustomizableOperation<crate::operation::update_job_queue::UpdateJobQueueOutput, crate::operation::update_job_queue::UpdateJobQueueError, Self> {
+                        crate::client::customize::CustomizableOperation::new(self)
+                    }
+    pub(crate) fn config_override(
+                        mut self,
+                        config_override: impl Into<crate::config::Builder>,
+                    ) -> Self {
+                        self.set_config_override(Some(config_override.into()));
+                        self
+                    }
+    
+                    pub(crate) fn set_config_override(
+                        &mut self,
+                        config_override: Option<crate::config::Builder>,
+                    ) -> &mut Self {
+                        self.config_override = config_override;
+                        self
+                    }
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_queue(input.into());
@@ -178,14 +165,14 @@ impl UpdateJobQueueFluentBuilder {
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>) -> Self {
+    pub fn set_compute_environment_order(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>>) -> Self {
         self.inner = self.inner.set_compute_environment_order(input);
         self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p><note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
-    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>> {
+    pub fn get_compute_environment_order(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::ComputeEnvironmentOrder>> {
         self.inner.get_compute_environment_order()
     }
     /// Appends an item to `jobStateTimeLimitActions`.
@@ -198,12 +185,13 @@ impl UpdateJobQueueFluentBuilder {
         self
     }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>>) -> Self {
+    pub fn set_job_state_time_limit_actions(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>>) -> Self {
         self.inner = self.inner.set_job_state_time_limit_actions(input);
         self
     }
     /// <p>The set of actions that Batch perform on jobs that remain at the head of the job queue in the specified state longer than specified times. Batch will perform each action after <code>maxTimeSeconds</code> has passed.</p>
-    pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStateTimeLimitAction>> {
+    pub fn get_job_state_time_limit_actions(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::JobStateTimeLimitAction>> {
         self.inner.get_job_state_time_limit_actions()
     }
 }
+

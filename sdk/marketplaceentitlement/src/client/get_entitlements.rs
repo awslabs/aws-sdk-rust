@@ -2,17 +2,18 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetEntitlements`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`product_code(impl Into<String>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::product_code) / [`set_product_code(Option<String>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::set_product_code):<br>required: **true**<br><p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p><br>
     ///   - [`filter(GetEntitlementFilterName, Vec::<String>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::filter) / [`set_filter(Option<HashMap::<GetEntitlementFilterName, Vec::<String>>>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::set_filter):<br>required: **false**<br><p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::set_next_token):<br>required: **false**<br><p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p><br>
-    /// - On success, responds with [`GetEntitlementsOutput`](crate::operation::get_entitlements::GetEntitlementsOutput) with field(s):
+                            /// - On success, responds with [`GetEntitlementsOutput`](crate::operation::get_entitlements::GetEntitlementsOutput) with field(s):
     ///   - [`entitlements(Option<Vec::<Entitlement>>)`](crate::operation::get_entitlements::GetEntitlementsOutput::entitlements): <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_entitlements::GetEntitlementsOutput::next_token): <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    /// - On failure, responds with [`SdkError<GetEntitlementsError>`](crate::operation::get_entitlements::GetEntitlementsError)
+                            /// - On failure, responds with [`SdkError<GetEntitlementsError>`](crate::operation::get_entitlements::GetEntitlementsError)
     pub fn get_entitlements(&self) -> crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder {
-        crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_entitlements::builders::GetEntitlementsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

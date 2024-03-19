@@ -3,25 +3,23 @@
 /// <p>The entity details.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The entity type.</p>
     pub entity_type: ::std::string::String,
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub entity_id: ::std::string::String,
 }
-impl Entity {
+impl  Entity  {
     /// <p>The entity type.</p>
-    pub fn entity_type(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_type.deref()
+    pub fn entity_type(&self) -> & str {
+        use std::ops::Deref; self.entity_type.deref()
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> & str {
+        use std::ops::Deref; self.entity_id.deref()
     }
 }
-impl ::std::fmt::Debug for Entity {
+impl  ::std::fmt::Debug for Entity  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Entity");
         formatter.field("entity_type", &"*** Sensitive Data Redacted ***");
@@ -52,8 +50,7 @@ impl EntityBuilder {
     }
     /// <p>The entity type.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The entity type.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -67,8 +64,7 @@ impl EntityBuilder {
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -79,20 +75,20 @@ impl EntityBuilder {
     /// - [`entity_type`](crate::types::builders::EntityBuilder::entity_type)
     /// - [`entity_id`](crate::types::builders::EntityBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::types::Entity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Entity {
-            entity_type: self.entity_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_type",
-                    "entity_type was not specified but it is required when building Entity",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building Entity",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Entity {
+                entity_type: self.entity_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_type", "entity_type was not specified but it is required when building Entity")
+                    )?
+                ,
+                entity_id: self.entity_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("entity_id", "entity_id was not specified but it is required when building Entity")
+                    )?
+                ,
+            }
+        )
     }
 }
 impl ::std::fmt::Debug for EntityBuilder {
@@ -103,3 +99,4 @@ impl ::std::fmt::Debug for EntityBuilder {
         formatter.finish()
     }
 }
+

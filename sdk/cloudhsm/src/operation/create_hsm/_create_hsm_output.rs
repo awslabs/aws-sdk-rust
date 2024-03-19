@@ -3,22 +3,22 @@
 /// <p>Contains the output of the <code>CreateHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CreateHsmOutput {
+pub struct CreateHsmOutput  {
     /// <p>The ARN of the HSM.</p>
     pub hsm_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl CreateHsmOutput {
+impl  CreateHsmOutput  {
     /// <p>The ARN of the HSM.</p>
-    pub fn hsm_arn(&self) -> ::std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> ::std::option::Option<& str> {
         self.hsm_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateHsmOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl CreateHsmOutput {
     /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::operation::create_hsm::CreateHsmOutput).
     pub fn builder() -> crate::operation::create_hsm::builders::CreateHsmOutputBuilder {
@@ -41,27 +41,28 @@ impl CreateHsmOutputBuilder {
     }
     /// <p>The ARN of the HSM.</p>
     pub fn set_hsm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.hsm_arn = input;
-        self
+        self.hsm_arn = input; self
     }
     /// <p>The ARN of the HSM.</p>
     pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.hsm_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::operation::create_hsm::CreateHsmOutput).
     pub fn build(self) -> crate::operation::create_hsm::CreateHsmOutput {
         crate::operation::create_hsm::CreateHsmOutput {
-            hsm_arn: self.hsm_arn,
+            hsm_arn: self.hsm_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

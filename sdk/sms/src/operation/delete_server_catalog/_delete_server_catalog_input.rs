@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteServerCatalogInput {}
+pub struct DeleteServerCatalogInput  {
+}
 impl DeleteServerCatalogInput {
     /// Creates a new builder-style object to manufacture [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).
     pub fn builder() -> crate::operation::delete_server_catalog::builders::DeleteServerCatalogInputBuilder {
@@ -13,13 +14,15 @@ impl DeleteServerCatalogInput {
 /// A builder for [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
-pub struct DeleteServerCatalogInputBuilder {}
+pub struct DeleteServerCatalogInputBuilder {
+}
 impl DeleteServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServerCatalogInput`](crate::operation::delete_server_catalog::DeleteServerCatalogInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::delete_server_catalog::DeleteServerCatalogInput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::delete_server_catalog::DeleteServerCatalogInput {})
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_server_catalog::DeleteServerCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::delete_server_catalog::DeleteServerCatalogInput {
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Identifes a User level permission for a channel configuration.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SlackUserIdentity {
+pub struct SlackUserIdentity  {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub iam_role_arn: ::std::string::String,
     /// The ARN of the SlackChannelConfiguration associated with the user identity.
@@ -15,29 +15,25 @@ pub struct SlackUserIdentity {
     /// The AWS user identity ARN used to associate a Slack User Identity with an IAM Role.
     pub aws_user_identity: ::std::option::Option<::std::string::String>,
 }
-impl SlackUserIdentity {
+impl  SlackUserIdentity  {
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> & str {
+        use std::ops::Deref; self.iam_role_arn.deref()
     }
     /// The ARN of the SlackChannelConfiguration associated with the user identity.
-    pub fn chat_configuration_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.chat_configuration_arn.deref()
+    pub fn chat_configuration_arn(&self) -> & str {
+        use std::ops::Deref; self.chat_configuration_arn.deref()
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
-    pub fn slack_team_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_team_id.deref()
+    pub fn slack_team_id(&self) -> & str {
+        use std::ops::Deref; self.slack_team_id.deref()
     }
     /// The ID of the user in Slack.
-    pub fn slack_user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.slack_user_id.deref()
+    pub fn slack_user_id(&self) -> & str {
+        use std::ops::Deref; self.slack_user_id.deref()
     }
     /// The AWS user identity ARN used to associate a Slack User Identity with an IAM Role.
-    pub fn aws_user_identity(&self) -> ::std::option::Option<&str> {
+    pub fn aws_user_identity(&self) -> ::std::option::Option<& str> {
         self.aws_user_identity.as_deref()
     }
 }
@@ -67,8 +63,7 @@ impl SlackUserIdentityBuilder {
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// The ARN of the IAM role that defines the permissions for AWS Chatbot. This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot.
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -82,8 +77,7 @@ impl SlackUserIdentityBuilder {
     }
     /// The ARN of the SlackChannelConfiguration associated with the user identity.
     pub fn set_chat_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.chat_configuration_arn = input;
-        self
+        self.chat_configuration_arn = input; self
     }
     /// The ARN of the SlackChannelConfiguration associated with the user identity.
     pub fn get_chat_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,8 +91,7 @@ impl SlackUserIdentityBuilder {
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn set_slack_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_team_id = input;
-        self
+        self.slack_team_id = input; self
     }
     /// The ID of the Slack workspace authorized with AWS Chatbot.
     pub fn get_slack_team_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -112,8 +105,7 @@ impl SlackUserIdentityBuilder {
     }
     /// The ID of the user in Slack.
     pub fn set_slack_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.slack_user_id = input;
-        self
+        self.slack_user_id = input; self
     }
     /// The ID of the user in Slack.
     pub fn get_slack_user_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -126,8 +118,7 @@ impl SlackUserIdentityBuilder {
     }
     /// The AWS user identity ARN used to associate a Slack User Identity with an IAM Role.
     pub fn set_aws_user_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.aws_user_identity = input;
-        self
+        self.aws_user_identity = input; self
     }
     /// The AWS user identity ARN used to associate a Slack User Identity with an IAM Role.
     pub fn get_aws_user_identity(&self) -> &::std::option::Option<::std::string::String> {
@@ -140,32 +131,32 @@ impl SlackUserIdentityBuilder {
     /// - [`slack_team_id`](crate::types::builders::SlackUserIdentityBuilder::slack_team_id)
     /// - [`slack_user_id`](crate::types::builders::SlackUserIdentityBuilder::slack_user_id)
     pub fn build(self) -> ::std::result::Result<crate::types::SlackUserIdentity, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SlackUserIdentity {
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building SlackUserIdentity",
-                )
-            })?,
-            chat_configuration_arn: self.chat_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "chat_configuration_arn",
-                    "chat_configuration_arn was not specified but it is required when building SlackUserIdentity",
-                )
-            })?,
-            slack_team_id: self.slack_team_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_team_id",
-                    "slack_team_id was not specified but it is required when building SlackUserIdentity",
-                )
-            })?,
-            slack_user_id: self.slack_user_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "slack_user_id",
-                    "slack_user_id was not specified but it is required when building SlackUserIdentity",
-                )
-            })?,
-            aws_user_identity: self.aws_user_identity,
-        })
+        ::std::result::Result::Ok(
+            crate::types::SlackUserIdentity {
+                iam_role_arn: self.iam_role_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("iam_role_arn", "iam_role_arn was not specified but it is required when building SlackUserIdentity")
+                    )?
+                ,
+                chat_configuration_arn: self.chat_configuration_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("chat_configuration_arn", "chat_configuration_arn was not specified but it is required when building SlackUserIdentity")
+                    )?
+                ,
+                slack_team_id: self.slack_team_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_team_id", "slack_team_id was not specified but it is required when building SlackUserIdentity")
+                    )?
+                ,
+                slack_user_id: self.slack_user_id
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("slack_user_id", "slack_user_id was not specified but it is required when building SlackUserIdentity")
+                    )?
+                ,
+                aws_user_identity: self.aws_user_identity
+                ,
+            }
+        )
     }
 }
+

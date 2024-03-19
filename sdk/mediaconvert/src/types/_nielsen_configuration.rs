@@ -3,19 +3,19 @@
 /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct NielsenConfiguration {
+pub struct NielsenConfiguration  {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub breakout_code: ::std::option::Option<i32>,
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
     pub distributor_id: ::std::option::Option<::std::string::String>,
 }
-impl NielsenConfiguration {
+impl  NielsenConfiguration  {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub fn breakout_code(&self) -> ::std::option::Option<i32> {
         self.breakout_code
     }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
-    pub fn distributor_id(&self) -> ::std::option::Option<&str> {
+    pub fn distributor_id(&self) -> ::std::option::Option<& str> {
         self.distributor_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl NielsenConfigurationBuilder {
     }
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub fn set_breakout_code(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.breakout_code = input;
-        self
+        self.breakout_code = input; self
     }
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub fn get_breakout_code(&self) -> &::std::option::Option<i32> {
@@ -55,8 +54,7 @@ impl NielsenConfigurationBuilder {
     }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
     pub fn set_distributor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.distributor_id = input;
-        self
+        self.distributor_id = input; self
     }
     /// Use Distributor ID to specify the distributor ID that is assigned to your organization by Nielsen.
     pub fn get_distributor_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl NielsenConfigurationBuilder {
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {
         crate::types::NielsenConfiguration {
-            breakout_code: self.breakout_code,
-            distributor_id: self.distributor_id,
+            breakout_code: self.breakout_code
+            ,
+            distributor_id: self.distributor_id
+            ,
         }
     }
 }
+

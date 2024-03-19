@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAttachmentsOutput {
+pub struct DescribeDirectConnectGatewayAttachmentsOutput  {
     /// <p>The attachments.</p>
-    pub direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
+    pub direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::DirectConnectGatewayAttachment>>,
     /// <p>The token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl DescribeDirectConnectGatewayAttachmentsOutput {
+impl  DescribeDirectConnectGatewayAttachmentsOutput  {
     /// <p>The attachments.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.direct_connect_gateway_attachments.is_none()`.
-    pub fn direct_connect_gateway_attachments(&self) -> &[crate::types::DirectConnectGatewayAttachment] {
-        self.direct_connect_gateway_attachments.as_deref().unwrap_or_default()
+    pub fn direct_connect_gateway_attachments(&self) -> & [crate::types::DirectConnectGatewayAttachment] {
+        self.direct_connect_gateway_attachments.as_deref()
+        .unwrap_or_default()
     }
     /// <p>The token to retrieve the next page.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeDirectConnectGatewayAttachmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder {
         crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder::default()
     }
 }
@@ -38,7 +38,7 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsOutputBuilder {
-    pub(crate) direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
+    pub(crate) direct_connect_gateway_attachments: ::std::option::Option<::std::vec::Vec::<crate::types::DirectConnectGatewayAttachment>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,20 +50,16 @@ impl DescribeDirectConnectGatewayAttachmentsOutputBuilder {
     /// <p>The attachments.</p>
     pub fn direct_connect_gateway_attachments(mut self, input: crate::types::DirectConnectGatewayAttachment) -> Self {
         let mut v = self.direct_connect_gateway_attachments.unwrap_or_default();
-        v.push(input);
-        self.direct_connect_gateway_attachments = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.direct_connect_gateway_attachments = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>The attachments.</p>
-    pub fn set_direct_connect_gateway_attachments(
-        mut self,
-        input: ::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
-    ) -> Self {
-        self.direct_connect_gateway_attachments = input;
-        self
+    pub fn set_direct_connect_gateway_attachments(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::DirectConnectGatewayAttachment>>) -> Self {
+        self.direct_connect_gateway_attachments = input; self
     }
     /// <p>The attachments.</p>
-    pub fn get_direct_connect_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DirectConnectGatewayAttachment>> {
+    pub fn get_direct_connect_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::DirectConnectGatewayAttachment>> {
         &self.direct_connect_gateway_attachments
     }
     /// <p>The token to retrieve the next page.</p>
@@ -73,28 +69,30 @@ impl DescribeDirectConnectGatewayAttachmentsOutputBuilder {
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput).
     pub fn build(self) -> crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput {
         crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput {
-            direct_connect_gateway_attachments: self.direct_connect_gateway_attachments,
-            next_token: self.next_token,
+            direct_connect_gateway_attachments: self.direct_connect_gateway_attachments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,13 +3,13 @@
 /// <p>A legal hold configuration for an object.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ObjectLockLegalHold {
+pub struct ObjectLockLegalHold  {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }
-impl ObjectLockLegalHold {
+impl  ObjectLockLegalHold  {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
+    pub fn status(&self) -> ::std::option::Option<& crate::types::ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
 }
@@ -34,8 +34,7 @@ impl ObjectLockLegalHoldBuilder {
     }
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
@@ -43,6 +42,10 @@ impl ObjectLockLegalHoldBuilder {
     }
     /// Consumes the builder and constructs a [`ObjectLockLegalHold`](crate::types::ObjectLockLegalHold).
     pub fn build(self) -> crate::types::ObjectLockLegalHold {
-        crate::types::ObjectLockLegalHold { status: self.status }
+        crate::types::ObjectLockLegalHold {
+            status: self.status
+            ,
+        }
     }
 }
+

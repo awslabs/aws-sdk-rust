@@ -3,7 +3,7 @@
 /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
-pub struct Conditions {
+pub struct Conditions  {
     /// <p>The relative time period over which data is included in the aggregation.</p>
     pub range: ::std::option::Option<crate::types::Range>,
     /// <p>The number of profile objects used for the calculated attribute.</p>
@@ -11,9 +11,9 @@ pub struct Conditions {
     /// <p>The threshold for the calculated attribute.</p>
     pub threshold: ::std::option::Option<crate::types::Threshold>,
 }
-impl Conditions {
+impl  Conditions  {
     /// <p>The relative time period over which data is included in the aggregation.</p>
-    pub fn range(&self) -> ::std::option::Option<&crate::types::Range> {
+    pub fn range(&self) -> ::std::option::Option<& crate::types::Range> {
         self.range.as_ref()
     }
     /// <p>The number of profile objects used for the calculated attribute.</p>
@@ -21,11 +21,11 @@ impl Conditions {
         self.object_count
     }
     /// <p>The threshold for the calculated attribute.</p>
-    pub fn threshold(&self) -> ::std::option::Option<&crate::types::Threshold> {
+    pub fn threshold(&self) -> ::std::option::Option<& crate::types::Threshold> {
         self.threshold.as_ref()
     }
 }
-impl ::std::fmt::Debug for Conditions {
+impl  ::std::fmt::Debug for Conditions  {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Conditions");
         formatter.field("range", &"*** Sensitive Data Redacted ***");
@@ -57,8 +57,7 @@ impl ConditionsBuilder {
     }
     /// <p>The relative time period over which data is included in the aggregation.</p>
     pub fn set_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
-        self.range = input;
-        self
+        self.range = input; self
     }
     /// <p>The relative time period over which data is included in the aggregation.</p>
     pub fn get_range(&self) -> &::std::option::Option<crate::types::Range> {
@@ -71,8 +70,7 @@ impl ConditionsBuilder {
     }
     /// <p>The number of profile objects used for the calculated attribute.</p>
     pub fn set_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.object_count = input;
-        self
+        self.object_count = input; self
     }
     /// <p>The number of profile objects used for the calculated attribute.</p>
     pub fn get_object_count(&self) -> &::std::option::Option<i32> {
@@ -85,8 +83,7 @@ impl ConditionsBuilder {
     }
     /// <p>The threshold for the calculated attribute.</p>
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::Threshold>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>The threshold for the calculated attribute.</p>
     pub fn get_threshold(&self) -> &::std::option::Option<crate::types::Threshold> {
@@ -95,9 +92,12 @@ impl ConditionsBuilder {
     /// Consumes the builder and constructs a [`Conditions`](crate::types::Conditions).
     pub fn build(self) -> crate::types::Conditions {
         crate::types::Conditions {
-            range: self.range,
-            object_count: self.object_count,
-            threshold: self.threshold,
+            range: self.range
+            ,
+            object_count: self.object_count
+            ,
+            threshold: self.threshold
+            ,
         }
     }
 }
@@ -110,3 +110,4 @@ impl ::std::fmt::Debug for ConditionsBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The ViewBilling request includes the following elements.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ViewBillingInput {
+pub struct ViewBillingInput  {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
@@ -15,18 +15,18 @@ pub struct ViewBillingInput {
     /// <p>Default: 20</p>
     pub max_items: ::std::option::Option<i32>,
 }
-impl ViewBillingInput {
+impl  ViewBillingInput  {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn start(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+    pub fn end(&self) -> ::std::option::Option<& ::aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
-    pub fn marker(&self) -> ::std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The number of billing records to be returned.</p>
@@ -59,8 +59,7 @@ impl ViewBillingInputBuilder {
     }
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn set_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -73,8 +72,7 @@ impl ViewBillingInputBuilder {
     }
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn set_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn get_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -89,8 +87,7 @@ impl ViewBillingInputBuilder {
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
@@ -106,8 +103,7 @@ impl ViewBillingInputBuilder {
     /// <p>The number of billing records to be returned.</p>
     /// <p>Default: 20</p>
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The number of billing records to be returned.</p>
     /// <p>Default: 20</p>
@@ -116,11 +112,18 @@ impl ViewBillingInputBuilder {
     }
     /// Consumes the builder and constructs a [`ViewBillingInput`](crate::operation::view_billing::ViewBillingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::view_billing::ViewBillingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::view_billing::ViewBillingInput {
-            start: self.start,
-            end: self.end,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::view_billing::ViewBillingInput {
+                start: self.start
+                ,
+                end: self.end
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

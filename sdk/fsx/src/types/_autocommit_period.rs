@@ -4,7 +4,7 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/worm-state.html#worm-state-autocommit">Autocommit</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct AutocommitPeriod {
+pub struct AutocommitPeriod  {
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>.</p>
     pub r#type: ::std::option::Option<crate::types::AutocommitPeriodType>,
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
@@ -22,9 +22,9 @@ pub struct AutocommitPeriod {
     /// </ul>
     pub value: ::std::option::Option<i32>,
 }
-impl AutocommitPeriod {
+impl  AutocommitPeriod  {
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>.</p>
-    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AutocommitPeriodType> {
+    pub fn r#type(&self) -> ::std::option::Option<& crate::types::AutocommitPeriodType> {
         self.r#type.as_ref()
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
@@ -67,8 +67,7 @@ impl AutocommitPeriodBuilder {
     }
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AutocommitPeriodType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. Setting this value to <code>NONE</code> disables autocommit. The default value is <code>NONE</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AutocommitPeriodType> {
@@ -105,8 +104,7 @@ impl AutocommitPeriodBuilder {
     /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
@@ -127,8 +125,11 @@ impl AutocommitPeriodBuilder {
     /// Consumes the builder and constructs a [`AutocommitPeriod`](crate::types::AutocommitPeriod).
     pub fn build(self) -> crate::types::AutocommitPeriod {
         crate::types::AutocommitPeriod {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

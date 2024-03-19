@@ -51,3 +51,4 @@ pub mod update_pipeline_notifications;
 
 /// Types for the `UpdatePipelineStatus` operation.
 pub mod update_pipeline_status;
+

@@ -2,29 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ListAssessmentTargetsOutput {
+pub struct ListAssessmentTargetsOutput  {
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub assessment_target_arns: ::std::vec::Vec<::std::string::String>,
+    pub assessment_target_arns: ::std::vec::Vec::<::std::string::String>,
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
-impl ListAssessmentTargetsOutput {
+impl  ListAssessmentTargetsOutput  {
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn assessment_target_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.assessment_target_arns.deref()
+    pub fn assessment_target_arns(&self) -> & [::std::string::String] {
+        use std::ops::Deref; self.assessment_target_arns.deref()
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> ::std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListAssessmentTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl ListAssessmentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentTargetsOutput`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput).
     pub fn builder() -> crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder {
@@ -36,7 +35,7 @@ impl ListAssessmentTargetsOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListAssessmentTargetsOutputBuilder {
-    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_target_arns: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -48,17 +47,16 @@ impl ListAssessmentTargetsOutputBuilder {
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
     pub fn assessment_target_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.assessment_target_arns.unwrap_or_default();
-        v.push(input.into());
-        self.assessment_target_arns = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.assessment_target_arns = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.assessment_target_arns = input;
-        self
+    pub fn set_assessment_target_arns(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.assessment_target_arns = input; self
     }
     /// <p>A list of ARNs that specifies the assessment targets that are returned by the action.</p>
-    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_assessment_target_arns(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.assessment_target_arns
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
@@ -68,38 +66,37 @@ impl ListAssessmentTargetsOutputBuilder {
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`ListAssessmentTargetsOutput`](crate::operation::list_assessment_targets::ListAssessmentTargetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`assessment_target_arns`](crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder::assessment_target_arns)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsOutput, ::aws_smithy_types::error::operation::BuildError>
-    {
-        ::std::result::Result::Ok(crate::operation::list_assessment_targets::ListAssessmentTargetsOutput {
-            assessment_target_arns: self.assessment_target_arns.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "assessment_target_arns",
-                    "assessment_target_arns was not specified but it is required when building ListAssessmentTargetsOutput",
-                )
-            })?,
-            next_token: self.next_token,
-            _request_id: self._request_id,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::list_assessment_targets::ListAssessmentTargetsOutput {
+                assessment_target_arns: self.assessment_target_arns
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_target_arns", "assessment_target_arns was not specified but it is required when building ListAssessmentTargetsOutput")
+                    )?
+                ,
+                next_token: self.next_token
+                ,
+                _request_id: self._request_id,
+            }
+        )
     }
 }
+

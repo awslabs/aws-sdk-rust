@@ -3,7 +3,7 @@
 /// <p>A list of continuous hyperparameters to tune.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct ContinuousParameterRange {
+pub struct ContinuousParameterRange  {
     /// <p>The name of the continuous hyperparameter to tune.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
@@ -41,17 +41,17 @@ pub struct ContinuousParameterRange {
     /// </dl>
     pub scaling_type: ::std::option::Option<crate::types::HyperParameterScalingType>,
 }
-impl ContinuousParameterRange {
+impl  ContinuousParameterRange  {
     /// <p>The name of the continuous hyperparameter to tune.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
-    pub fn min_value(&self) -> ::std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<& str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
-    pub fn max_value(&self) -> ::std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<& str> {
         self.max_value.as_deref()
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
@@ -83,7 +83,7 @@ impl ContinuousParameterRange {
     /// <p>Reverse logarithmic scaling works only for ranges that are entirely within the range 0&lt;=x&lt;1.0.</p>
     /// </dd>
     /// </dl>
-    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::HyperParameterScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<& crate::types::HyperParameterScalingType> {
         self.scaling_type.as_ref()
     }
 }
@@ -112,8 +112,7 @@ impl ContinuousParameterRangeBuilder {
     }
     /// <p>The name of the continuous hyperparameter to tune.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the continuous hyperparameter to tune.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -127,8 +126,7 @@ impl ContinuousParameterRangeBuilder {
     }
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
     pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
     }
     /// <p>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <code>MaxValue</code>for tuning.</p>
     pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -142,8 +140,7 @@ impl ContinuousParameterRangeBuilder {
     }
     /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
     }
     /// <p>The maximum value for the hyperparameter. The tuning job uses floating-point values between <code>MinValue</code> value and this value for tuning.</p>
     pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,8 +209,7 @@ impl ContinuousParameterRangeBuilder {
     /// </dd>
     /// </dl>
     pub fn set_scaling_type(mut self, input: ::std::option::Option<crate::types::HyperParameterScalingType>) -> Self {
-        self.scaling_type = input;
-        self
+        self.scaling_type = input; self
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     /// <dl>
@@ -250,10 +246,15 @@ impl ContinuousParameterRangeBuilder {
     /// Consumes the builder and constructs a [`ContinuousParameterRange`](crate::types::ContinuousParameterRange).
     pub fn build(self) -> crate::types::ContinuousParameterRange {
         crate::types::ContinuousParameterRange {
-            name: self.name,
-            min_value: self.min_value,
-            max_value: self.max_value,
-            scaling_type: self.scaling_type,
+            name: self.name
+            ,
+            min_value: self.min_value
+            ,
+            max_value: self.max_value
+            ,
+            scaling_type: self.scaling_type
+            ,
         }
     }
 }
+

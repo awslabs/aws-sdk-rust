@@ -225,3 +225,4 @@ pub mod update_image_permissions;
 
 /// Types for the `UpdateStack` operation.
 pub mod update_stack;
+

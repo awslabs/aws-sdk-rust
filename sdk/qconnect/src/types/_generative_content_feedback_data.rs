@@ -3,13 +3,13 @@
 /// <p>The feedback information for a generative target type.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GenerativeContentFeedbackData {
+pub struct GenerativeContentFeedbackData  {
     /// <p>The relevance of the feedback.</p>
     pub relevance: crate::types::Relevance,
 }
-impl GenerativeContentFeedbackData {
+impl  GenerativeContentFeedbackData  {
     /// <p>The relevance of the feedback.</p>
-    pub fn relevance(&self) -> &crate::types::Relevance {
+    pub fn relevance(&self) -> & crate::types::Relevance {
         &self.relevance
     }
 }
@@ -35,8 +35,7 @@ impl GenerativeContentFeedbackDataBuilder {
     }
     /// <p>The relevance of the feedback.</p>
     pub fn set_relevance(mut self, input: ::std::option::Option<crate::types::Relevance>) -> Self {
-        self.relevance = input;
-        self
+        self.relevance = input; self
     }
     /// <p>The relevance of the feedback.</p>
     pub fn get_relevance(&self) -> &::std::option::Option<crate::types::Relevance> {
@@ -46,13 +45,15 @@ impl GenerativeContentFeedbackDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`relevance`](crate::types::builders::GenerativeContentFeedbackDataBuilder::relevance)
     pub fn build(self) -> ::std::result::Result<crate::types::GenerativeContentFeedbackData, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::GenerativeContentFeedbackData {
-            relevance: self.relevance.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "relevance",
-                    "relevance was not specified but it is required when building GenerativeContentFeedbackData",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::GenerativeContentFeedbackData {
+                relevance: self.relevance
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("relevance", "relevance was not specified but it is required when building GenerativeContentFeedbackData")
+                    )?
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The output of the step.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StepOutput {
+pub struct StepOutput  {
     /// <p>The name of the step.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the step output.</p>
@@ -11,13 +11,13 @@ pub struct StepOutput {
     /// <p>Determine if an output is required from a step.</p>
     pub required: ::std::option::Option<bool>,
 }
-impl StepOutput {
+impl  StepOutput  {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> ::std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the step output.</p>
-    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an output is required from a step.</p>
@@ -48,8 +48,7 @@ impl StepOutputBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the step.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StepOutputBuilder {
     }
     /// <p>The data type of the step output.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>The data type of the step output.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
@@ -76,8 +74,7 @@ impl StepOutputBuilder {
     }
     /// <p>Determine if an output is required from a step.</p>
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// <p>Determine if an output is required from a step.</p>
     pub fn get_required(&self) -> &::std::option::Option<bool> {
@@ -86,9 +83,13 @@ impl StepOutputBuilder {
     /// Consumes the builder and constructs a [`StepOutput`](crate::types::StepOutput).
     pub fn build(self) -> crate::types::StepOutput {
         crate::types::StepOutput {
-            name: self.name,
-            data_type: self.data_type,
-            required: self.required,
+            name: self.name
+            ,
+            data_type: self.data_type
+            ,
+            required: self.required
+            ,
         }
     }
 }
+

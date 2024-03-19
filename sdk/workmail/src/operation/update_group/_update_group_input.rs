@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct UpdateGroupInput {
+pub struct UpdateGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the group to be updated.</p>
@@ -19,9 +19,9 @@ pub struct UpdateGroupInput {
     /// <p>If enabled, the group is hidden from the global address list.</p>
     pub hidden_from_global_address_list: ::std::option::Option<bool>,
 }
-impl UpdateGroupInput {
+impl  UpdateGroupInput  {
     /// <p>The identifier for the organization under which the group exists.</p>
-    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the group to be updated.</p>
@@ -34,7 +34,7 @@ impl UpdateGroupInput {
     /// <li>
     /// <p>Group name: group</p></li>
     /// </ul>
-    pub fn group_id(&self) -> ::std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>If enabled, the group is hidden from the global address list.</p>
@@ -66,8 +66,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the organization under which the group exists.</p>
     pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -99,8 +98,7 @@ impl UpdateGroupInputBuilder {
     /// <p>Group name: group</p></li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The identifier for the group to be updated.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
@@ -122,8 +120,7 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>If enabled, the group is hidden from the global address list.</p>
     pub fn set_hidden_from_global_address_list(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.hidden_from_global_address_list = input;
-        self
+        self.hidden_from_global_address_list = input; self
     }
     /// <p>If enabled, the group is hidden from the global address list.</p>
     pub fn get_hidden_from_global_address_list(&self) -> &::std::option::Option<bool> {
@@ -131,10 +128,16 @@ impl UpdateGroupInputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
-            organization_id: self.organization_id,
-            group_id: self.group_id,
-            hidden_from_global_address_list: self.hidden_from_global_address_list,
-        })
+        ::std::result::Result::Ok(
+            crate::operation::update_group::UpdateGroupInput {
+                organization_id: self.organization_id
+                ,
+                group_id: self.group_id
+                ,
+                hidden_from_global_address_list: self.hidden_from_global_address_list
+                ,
+            }
+        )
     }
 }
+

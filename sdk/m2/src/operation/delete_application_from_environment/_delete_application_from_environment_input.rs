@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteApplicationFromEnvironmentInput {
+pub struct DeleteApplicationFromEnvironmentInput  {
     /// <p>The unique identifier of the application you want to delete.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
 }
-impl DeleteApplicationFromEnvironmentInput {
+impl  DeleteApplicationFromEnvironmentInput  {
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn application_id(&self) -> ::std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
     }
     /// <p>The unique identifier of the application you want to delete.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier of the application you want to delete.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -56,25 +55,22 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<
-        crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput,
-        ::aws_smithy_types::error::operation::BuildError,
-    > {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-            },
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+            }
         )
     }
 }
+

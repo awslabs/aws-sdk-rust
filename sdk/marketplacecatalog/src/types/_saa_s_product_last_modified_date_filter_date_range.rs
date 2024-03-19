@@ -3,19 +3,19 @@
 /// <p>Object that contains date range of the last modified date to be filtered on. You can optionally provide a <code>BeforeValue</code> and/or <code>AfterValue</code>. Both are inclusive.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct SaaSProductLastModifiedDateFilterDateRange {
+pub struct SaaSProductLastModifiedDateFilterDateRange  {
     /// <p>Date after which the SaaS product was last modified.</p>
     pub after_value: ::std::option::Option<::std::string::String>,
     /// <p>Date before which the SaaS product was last modified.</p>
     pub before_value: ::std::option::Option<::std::string::String>,
 }
-impl SaaSProductLastModifiedDateFilterDateRange {
+impl  SaaSProductLastModifiedDateFilterDateRange  {
     /// <p>Date after which the SaaS product was last modified.</p>
-    pub fn after_value(&self) -> ::std::option::Option<&str> {
+    pub fn after_value(&self) -> ::std::option::Option<& str> {
         self.after_value.as_deref()
     }
     /// <p>Date before which the SaaS product was last modified.</p>
-    pub fn before_value(&self) -> ::std::option::Option<&str> {
+    pub fn before_value(&self) -> ::std::option::Option<& str> {
         self.before_value.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl SaaSProductLastModifiedDateFilterDateRangeBuilder {
     }
     /// <p>Date after which the SaaS product was last modified.</p>
     pub fn set_after_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.after_value = input;
-        self
+        self.after_value = input; self
     }
     /// <p>Date after which the SaaS product was last modified.</p>
     pub fn get_after_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,8 +54,7 @@ impl SaaSProductLastModifiedDateFilterDateRangeBuilder {
     }
     /// <p>Date before which the SaaS product was last modified.</p>
     pub fn set_before_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.before_value = input;
-        self
+        self.before_value = input; self
     }
     /// <p>Date before which the SaaS product was last modified.</p>
     pub fn get_before_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl SaaSProductLastModifiedDateFilterDateRangeBuilder {
     /// Consumes the builder and constructs a [`SaaSProductLastModifiedDateFilterDateRange`](crate::types::SaaSProductLastModifiedDateFilterDateRange).
     pub fn build(self) -> crate::types::SaaSProductLastModifiedDateFilterDateRange {
         crate::types::SaaSProductLastModifiedDateFilterDateRange {
-            after_value: self.after_value,
-            before_value: self.before_value,
+            after_value: self.after_value
+            ,
+            before_value: self.before_value
+            ,
         }
     }
 }
+

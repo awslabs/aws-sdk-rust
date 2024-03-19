@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct GetMfaDeviceInput {
+pub struct GetMfaDeviceInput  {
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name identifying the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
 }
-impl GetMfaDeviceInput {
+impl  GetMfaDeviceInput  {
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
-    pub fn serial_number(&self) -> ::std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The friendly name identifying the user.</p>
-    pub fn user_name(&self) -> ::std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl GetMfaDeviceInputBuilder {
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub fn set_serial_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
@@ -55,20 +54,22 @@ impl GetMfaDeviceInputBuilder {
     }
     /// <p>The friendly name identifying the user.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The friendly name identifying the user.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
     /// Consumes the builder and constructs a [`GetMfaDeviceInput`](crate::operation::get_mfa_device::GetMfaDeviceInput).
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_mfa_device::GetMfaDeviceInput {
-            serial_number: self.serial_number,
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::operation::get_mfa_device::GetMfaDeviceInput {
+                serial_number: self.serial_number
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

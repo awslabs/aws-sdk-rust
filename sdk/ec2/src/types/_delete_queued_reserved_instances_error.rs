@@ -3,19 +3,19 @@
 /// <p>Describes the error for a Reserved Instance whose queued purchase could not be deleted.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeleteQueuedReservedInstancesError {
+pub struct DeleteQueuedReservedInstancesError  {
     /// <p>The error code.</p>
     pub code: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesErrorCode>,
     /// <p>The error message.</p>
     pub message: ::std::option::Option<::std::string::String>,
 }
-impl DeleteQueuedReservedInstancesError {
+impl  DeleteQueuedReservedInstancesError  {
     /// <p>The error code.</p>
-    pub fn code(&self) -> ::std::option::Option<&crate::types::DeleteQueuedReservedInstancesErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<& crate::types::DeleteQueuedReservedInstancesErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> ::std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl DeleteQueuedReservedInstancesErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesErrorCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The error code.</p>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::DeleteQueuedReservedInstancesErrorCode> {
@@ -55,8 +54,7 @@ impl DeleteQueuedReservedInstancesErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The error message.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
@@ -65,8 +63,11 @@ impl DeleteQueuedReservedInstancesErrorBuilder {
     /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesError`](crate::types::DeleteQueuedReservedInstancesError).
     pub fn build(self) -> crate::types::DeleteQueuedReservedInstancesError {
         crate::types::DeleteQueuedReservedInstancesError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

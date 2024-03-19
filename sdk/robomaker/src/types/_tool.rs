@@ -3,7 +3,7 @@
 /// <p>Information about a tool. Tools are used in a simulation job.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Tool {
+pub struct Tool  {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
     pub stream_ui: ::std::option::Option<bool>,
     /// <p>The name of the tool.</p>
@@ -15,27 +15,25 @@ pub struct Tool {
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
     pub exit_behavior: ::std::option::Option<crate::types::ExitBehavior>,
 }
-impl Tool {
+impl  Tool  {
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
     pub fn stream_ui(&self) -> ::std::option::Option<bool> {
         self.stream_ui
     }
     /// <p>The name of the tool.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> & str {
+        use std::ops::Deref; self.name.deref()
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
-    pub fn command(&self) -> &str {
-        use std::ops::Deref;
-        self.command.deref()
+    pub fn command(&self) -> & str {
+        use std::ops::Deref; self.command.deref()
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
     pub fn stream_output_to_cloud_watch(&self) -> ::std::option::Option<bool> {
         self.stream_output_to_cloud_watch
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
-    pub fn exit_behavior(&self) -> ::std::option::Option<&crate::types::ExitBehavior> {
+    pub fn exit_behavior(&self) -> ::std::option::Option<& crate::types::ExitBehavior> {
         self.exit_behavior.as_ref()
     }
 }
@@ -64,8 +62,7 @@ impl ToolBuilder {
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
     pub fn set_stream_ui(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.stream_ui = input;
-        self
+        self.stream_ui = input; self
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the tool. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with the tool as it is running in the simulation. It must have a graphical user interface. The default is <code>False</code>.</p>
     pub fn get_stream_ui(&self) -> &::std::option::Option<bool> {
@@ -79,8 +76,7 @@ impl ToolBuilder {
     }
     /// <p>The name of the tool.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the tool.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -94,8 +90,7 @@ impl ToolBuilder {
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.command = input;
-        self
+        self.command = input; self
     }
     /// <p>Command-line arguments for the tool. It must include the tool executable name.</p>
     pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
@@ -108,8 +103,7 @@ impl ToolBuilder {
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
     pub fn set_stream_output_to_cloud_watch(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.stream_output_to_cloud_watch = input;
-        self
+        self.stream_output_to_cloud_watch = input; self
     }
     /// <p>Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default is <code>False</code>.</p>
     pub fn get_stream_output_to_cloud_watch(&self) -> &::std::option::Option<bool> {
@@ -122,8 +116,7 @@ impl ToolBuilder {
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
     pub fn set_exit_behavior(mut self, input: ::std::option::Option<crate::types::ExitBehavior>) -> Self {
-        self.exit_behavior = input;
-        self
+        self.exit_behavior = input; self
     }
     /// <p>Exit behavior determines what happens when your tool quits running. <code>RESTART</code> will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit. The default is <code>RESTART</code>.</p>
     pub fn get_exit_behavior(&self) -> &::std::option::Option<crate::types::ExitBehavior> {
@@ -134,22 +127,26 @@ impl ToolBuilder {
     /// - [`name`](crate::types::builders::ToolBuilder::name)
     /// - [`command`](crate::types::builders::ToolBuilder::command)
     pub fn build(self) -> ::std::result::Result<crate::types::Tool, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Tool {
-            stream_ui: self.stream_ui,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building Tool",
-                )
-            })?,
-            command: self.command.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "command",
-                    "command was not specified but it is required when building Tool",
-                )
-            })?,
-            stream_output_to_cloud_watch: self.stream_output_to_cloud_watch,
-            exit_behavior: self.exit_behavior,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Tool {
+                stream_ui: self.stream_ui
+                ,
+                name: self.name
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Tool")
+                    )?
+                ,
+                command: self.command
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("command", "command was not specified but it is required when building Tool")
+                    )?
+                ,
+                stream_output_to_cloud_watch: self.stream_output_to_cloud_watch
+                ,
+                exit_behavior: self.exit_behavior
+                ,
+            }
+        )
     }
 }
+

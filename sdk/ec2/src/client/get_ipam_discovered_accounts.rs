@@ -2,19 +2,20 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`GetIpamDiscoveredAccounts`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
+                            ///
+                            /// - The fluent builder is configurable:
     ///   - [`dry_run(bool)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_dry_run):<br>required: **false**<br><p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p><br>
     ///   - [`ipam_resource_discovery_id(impl Into<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::ipam_resource_discovery_id) / [`set_ipam_resource_discovery_id(Option<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_ipam_resource_discovery_id):<br>required: **true**<br><p>A resource discovery ID.</p><br>
     ///   - [`discovery_region(impl Into<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::discovery_region) / [`set_discovery_region(Option<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_discovery_region):<br>required: **true**<br><p>The Amazon Web Services Region that the account information is returned from.</p><br>
     ///   - [`filters(Filter)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::filters) / [`set_filters(Option<Vec::<Filter>>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_filters):<br>required: **false**<br><p>Discovered account filters.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_next_token):<br>required: **false**<br><p>Specify the pagination token from a previous request to retrieve the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of discovered accounts to return in one page of results.</p><br>
-    /// - On success, responds with [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput) with field(s):
+                            /// - On success, responds with [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput) with field(s):
     ///   - [`ipam_discovered_accounts(Option<Vec::<IpamDiscoveredAccount>>)`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput::ipam_discovered_accounts): <p>Discovered accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<GetIpamDiscoveredAccountsError>`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError)
+                            /// - On failure, responds with [`SdkError<GetIpamDiscoveredAccountsError>`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError)
     pub fn get_ipam_discovered_accounts(&self) -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder {
-        crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::new(self.handle.clone())
-    }
+                                crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsFluentBuilder::new(self.handle.clone())
+                            }
 }
+

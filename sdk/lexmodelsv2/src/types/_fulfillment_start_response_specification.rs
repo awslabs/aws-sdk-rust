@@ -3,23 +3,22 @@
 /// <p>Provides settings for a message that is sent to the user when a fulfillment Lambda function starts running.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct FulfillmentStartResponseSpecification {
+pub struct FulfillmentStartResponseSpecification  {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     pub delay_in_seconds: i32,
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub message_groups: ::std::vec::Vec<crate::types::MessageGroup>,
+    pub message_groups: ::std::vec::Vec::<crate::types::MessageGroup>,
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub allow_interrupt: ::std::option::Option<bool>,
 }
-impl FulfillmentStartResponseSpecification {
+impl  FulfillmentStartResponseSpecification  {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     pub fn delay_in_seconds(&self) -> i32 {
         self.delay_in_seconds
     }
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn message_groups(&self) -> &[crate::types::MessageGroup] {
-        use std::ops::Deref;
-        self.message_groups.deref()
+    pub fn message_groups(&self) -> & [crate::types::MessageGroup] {
+        use std::ops::Deref; self.message_groups.deref()
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn allow_interrupt(&self) -> ::std::option::Option<bool> {
@@ -38,7 +37,7 @@ impl FulfillmentStartResponseSpecification {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct FulfillmentStartResponseSpecificationBuilder {
     pub(crate) delay_in_seconds: ::std::option::Option<i32>,
-    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>,
     pub(crate) allow_interrupt: ::std::option::Option<bool>,
 }
 impl FulfillmentStartResponseSpecificationBuilder {
@@ -50,8 +49,7 @@ impl FulfillmentStartResponseSpecificationBuilder {
     }
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     pub fn set_delay_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.delay_in_seconds = input;
-        self
+        self.delay_in_seconds = input; self
     }
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     pub fn get_delay_in_seconds(&self) -> &::std::option::Option<i32> {
@@ -64,17 +62,16 @@ impl FulfillmentStartResponseSpecificationBuilder {
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
-        v.push(input);
-        self.message_groups = ::std::option::Option::Some(v);
-        self
+                        v.push(input);
+                        self.message_groups = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>) -> Self {
-        self.message_groups = input;
-        self
+    pub fn set_message_groups(mut self, input: ::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>>) -> Self {
+        self.message_groups = input; self
     }
     /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
-    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+    pub fn get_message_groups(&self) -> &::std::option::Option<::std::vec::Vec::<crate::types::MessageGroup>> {
         &self.message_groups
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
@@ -84,8 +81,7 @@ impl FulfillmentStartResponseSpecificationBuilder {
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input;
-        self
+        self.allow_interrupt = input; self
     }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
@@ -95,23 +91,23 @@ impl FulfillmentStartResponseSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`delay_in_seconds`](crate::types::builders::FulfillmentStartResponseSpecificationBuilder::delay_in_seconds)
     /// - [`message_groups`](crate::types::builders::FulfillmentStartResponseSpecificationBuilder::message_groups)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::FulfillmentStartResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::FulfillmentStartResponseSpecification {
-            delay_in_seconds: self.delay_in_seconds.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "delay_in_seconds",
-                    "delay_in_seconds was not specified but it is required when building FulfillmentStartResponseSpecification",
-                )
-            })?,
-            message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "message_groups",
-                    "message_groups was not specified but it is required when building FulfillmentStartResponseSpecification",
-                )
-            })?,
-            allow_interrupt: self.allow_interrupt,
-        })
+    pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentStartResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(
+            crate::types::FulfillmentStartResponseSpecification {
+                delay_in_seconds: self.delay_in_seconds
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("delay_in_seconds", "delay_in_seconds was not specified but it is required when building FulfillmentStartResponseSpecification")
+                    )?
+                ,
+                message_groups: self.message_groups
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("message_groups", "message_groups was not specified but it is required when building FulfillmentStartResponseSpecification")
+                    )?
+                ,
+                allow_interrupt: self.allow_interrupt
+                ,
+            }
+        )
     }
 }
+

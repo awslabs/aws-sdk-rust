@@ -3,15 +3,14 @@
 /// <p>Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct KinesisStreamsInput {
+pub struct KinesisStreamsInput  {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub resource_arn: ::std::string::String,
 }
-impl KinesisStreamsInput {
+impl  KinesisStreamsInput  {
     /// <p>The ARN of the input Kinesis data stream to read.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
 }
 impl KinesisStreamsInput {
@@ -36,8 +35,7 @@ impl KinesisStreamsInputBuilder {
     }
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The ARN of the input Kinesis data stream to read.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl KinesisStreamsInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::KinesisStreamsInputBuilder::resource_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KinesisStreamsInput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building KinesisStreamsInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::KinesisStreamsInput {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building KinesisStreamsInput")
+                    )?
+                ,
+            }
+        )
     }
 }
+

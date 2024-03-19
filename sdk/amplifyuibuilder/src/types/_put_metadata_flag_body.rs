@@ -3,15 +3,14 @@
 /// <p>Stores the metadata information about a feature on a form.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PutMetadataFlagBody {
+pub struct PutMetadataFlagBody  {
     /// <p>The new information to store.</p>
     pub new_value: ::std::string::String,
 }
-impl PutMetadataFlagBody {
+impl  PutMetadataFlagBody  {
     /// <p>The new information to store.</p>
-    pub fn new_value(&self) -> &str {
-        use std::ops::Deref;
-        self.new_value.deref()
+    pub fn new_value(&self) -> & str {
+        use std::ops::Deref; self.new_value.deref()
     }
 }
 impl PutMetadataFlagBody {
@@ -36,8 +35,7 @@ impl PutMetadataFlagBodyBuilder {
     }
     /// <p>The new information to store.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.new_value = input;
-        self
+        self.new_value = input; self
     }
     /// <p>The new information to store.</p>
     pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -47,13 +45,15 @@ impl PutMetadataFlagBodyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`new_value`](crate::types::builders::PutMetadataFlagBodyBuilder::new_value)
     pub fn build(self) -> ::std::result::Result<crate::types::PutMetadataFlagBody, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PutMetadataFlagBody {
-            new_value: self.new_value.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "new_value",
-                    "new_value was not specified but it is required when building PutMetadataFlagBody",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PutMetadataFlagBody {
+                new_value: self.new_value
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("new_value", "new_value was not specified but it is required when building PutMetadataFlagBody")
+                    )?
+                ,
+            }
+        )
     }
 }
+

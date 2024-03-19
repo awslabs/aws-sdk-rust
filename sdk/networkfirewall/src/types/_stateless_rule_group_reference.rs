@@ -3,17 +3,16 @@
 /// <p>Identifier for a single stateless rule group, used in a firewall policy to refer to the rule group.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StatelessRuleGroupReference {
+pub struct StatelessRuleGroupReference  {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     pub resource_arn: ::std::string::String,
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub priority: i32,
 }
-impl StatelessRuleGroupReference {
+impl  StatelessRuleGroupReference  {
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> & str {
+        use std::ops::Deref; self.resource_arn.deref()
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn priority(&self) -> i32 {
@@ -43,8 +42,7 @@ impl StatelessRuleGroupReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -58,8 +56,7 @@ impl StatelessRuleGroupReferenceBuilder {
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>An integer setting that indicates the order in which to run the stateless rule groups in a single <code>FirewallPolicy</code>. Network Firewall applies each stateless rule group to a packet starting with the group that has the lowest priority setting. You must ensure that the priority settings are unique within each policy.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
@@ -70,19 +67,20 @@ impl StatelessRuleGroupReferenceBuilder {
     /// - [`resource_arn`](crate::types::builders::StatelessRuleGroupReferenceBuilder::resource_arn)
     /// - [`priority`](crate::types::builders::StatelessRuleGroupReferenceBuilder::priority)
     pub fn build(self) -> ::std::result::Result<crate::types::StatelessRuleGroupReference, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StatelessRuleGroupReference {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building StatelessRuleGroupReference",
-                )
-            })?,
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building StatelessRuleGroupReference",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::StatelessRuleGroupReference {
+                resource_arn: self.resource_arn
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("resource_arn", "resource_arn was not specified but it is required when building StatelessRuleGroupReference")
+                    )?
+                ,
+                priority: self.priority
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("priority", "priority was not specified but it is required when building StatelessRuleGroupReference")
+                    )?
+                ,
+            }
+        )
     }
 }
+

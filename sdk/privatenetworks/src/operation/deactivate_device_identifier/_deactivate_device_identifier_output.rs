@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DeactivateDeviceIdentifierOutput {
+pub struct DeactivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     pub device_identifier: ::std::option::Option<crate::types::DeviceIdentifier>,
     _request_id: Option<String>,
 }
-impl DeactivateDeviceIdentifierOutput {
+impl  DeactivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
-    pub fn device_identifier(&self) -> ::std::option::Option<&crate::types::DeviceIdentifier> {
+    pub fn device_identifier(&self) -> ::std::option::Option<& crate::types::DeviceIdentifier> {
         self.device_identifier.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeactivateDeviceIdentifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                    fn request_id(&self) -> Option<&str> {
+                                        self._request_id.as_deref()
+                                    }
+                                }
 impl DeactivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
     pub fn builder() -> crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder {
@@ -41,27 +41,28 @@ impl DeactivateDeviceIdentifierOutputBuilder {
     }
     /// <p>Information about the device identifier.</p>
     pub fn set_device_identifier(mut self, input: ::std::option::Option<crate::types::DeviceIdentifier>) -> Self {
-        self.device_identifier = input;
-        self
+        self.device_identifier = input; self
     }
     /// <p>Information about the device identifier.</p>
     pub fn get_device_identifier(&self) -> &::std::option::Option<crate::types::DeviceIdentifier> {
         &self.device_identifier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                        self._request_id = Some(request_id.into());
+                                        self
+                                    }
+    
+                                    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                        self._request_id = request_id;
+                                        self
+                                    }
     /// Consumes the builder and constructs a [`DeactivateDeviceIdentifierOutput`](crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput).
     pub fn build(self) -> crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput {
         crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierOutput {
-            device_identifier: self.device_identifier,
+            device_identifier: self.device_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

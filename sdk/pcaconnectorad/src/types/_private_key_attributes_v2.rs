@@ -3,28 +3,29 @@
 /// <p>Defines the attributes of the private key.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct PrivateKeyAttributesV2 {
+pub struct PrivateKeyAttributesV2  {
     /// <p>Set the minimum key length of the private key.</p>
     pub minimal_key_length: i32,
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub key_spec: crate::types::KeySpec,
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub crypto_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub crypto_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
-impl PrivateKeyAttributesV2 {
+impl  PrivateKeyAttributesV2  {
     /// <p>Set the minimum key length of the private key.</p>
     pub fn minimal_key_length(&self) -> i32 {
         self.minimal_key_length
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
-    pub fn key_spec(&self) -> &crate::types::KeySpec {
+    pub fn key_spec(&self) -> & crate::types::KeySpec {
         &self.key_spec
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    ///
+    /// 
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.crypto_providers.is_none()`.
-    pub fn crypto_providers(&self) -> &[::std::string::String] {
-        self.crypto_providers.as_deref().unwrap_or_default()
+    pub fn crypto_providers(&self) -> & [::std::string::String] {
+        self.crypto_providers.as_deref()
+        .unwrap_or_default()
     }
 }
 impl PrivateKeyAttributesV2 {
@@ -40,7 +41,7 @@ impl PrivateKeyAttributesV2 {
 pub struct PrivateKeyAttributesV2Builder {
     pub(crate) minimal_key_length: ::std::option::Option<i32>,
     pub(crate) key_spec: ::std::option::Option<crate::types::KeySpec>,
-    pub(crate) crypto_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) crypto_providers: ::std::option::Option<::std::vec::Vec::<::std::string::String>>,
 }
 impl PrivateKeyAttributesV2Builder {
     /// <p>Set the minimum key length of the private key.</p>
@@ -51,8 +52,7 @@ impl PrivateKeyAttributesV2Builder {
     }
     /// <p>Set the minimum key length of the private key.</p>
     pub fn set_minimal_key_length(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.minimal_key_length = input;
-        self
+        self.minimal_key_length = input; self
     }
     /// <p>Set the minimum key length of the private key.</p>
     pub fn get_minimal_key_length(&self) -> &::std::option::Option<i32> {
@@ -66,8 +66,7 @@ impl PrivateKeyAttributesV2Builder {
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub fn set_key_spec(mut self, input: ::std::option::Option<crate::types::KeySpec>) -> Self {
-        self.key_spec = input;
-        self
+        self.key_spec = input; self
     }
     /// <p>Defines the purpose of the private key. Set it to "KEY_EXCHANGE" or "SIGNATURE" value.</p>
     pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::KeySpec> {
@@ -80,17 +79,16 @@ impl PrivateKeyAttributesV2Builder {
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
     pub fn crypto_providers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.crypto_providers.unwrap_or_default();
-        v.push(input.into());
-        self.crypto_providers = ::std::option::Option::Some(v);
-        self
+                        v.push(input.into());
+                        self.crypto_providers = ::std::option::Option::Some(v);
+                        self
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub fn set_crypto_providers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.crypto_providers = input;
-        self
+    pub fn set_crypto_providers(mut self, input: ::std::option::Option<::std::vec::Vec::<::std::string::String>>) -> Self {
+        self.crypto_providers = input; self
     }
     /// <p>Defines the cryptographic providers used to generate the private key.</p>
-    pub fn get_crypto_providers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    pub fn get_crypto_providers(&self) -> &::std::option::Option<::std::vec::Vec::<::std::string::String>> {
         &self.crypto_providers
     }
     /// Consumes the builder and constructs a [`PrivateKeyAttributesV2`](crate::types::PrivateKeyAttributesV2).
@@ -98,20 +96,22 @@ impl PrivateKeyAttributesV2Builder {
     /// - [`minimal_key_length`](crate::types::builders::PrivateKeyAttributesV2Builder::minimal_key_length)
     /// - [`key_spec`](crate::types::builders::PrivateKeyAttributesV2Builder::key_spec)
     pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV2, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::PrivateKeyAttributesV2 {
-            minimal_key_length: self.minimal_key_length.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "minimal_key_length",
-                    "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV2",
-                )
-            })?,
-            key_spec: self.key_spec.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "key_spec",
-                    "key_spec was not specified but it is required when building PrivateKeyAttributesV2",
-                )
-            })?,
-            crypto_providers: self.crypto_providers,
-        })
+        ::std::result::Result::Ok(
+            crate::types::PrivateKeyAttributesV2 {
+                minimal_key_length: self.minimal_key_length
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("minimal_key_length", "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV2")
+                    )?
+                ,
+                key_spec: self.key_spec
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("key_spec", "key_spec was not specified but it is required when building PrivateKeyAttributesV2")
+                    )?
+                ,
+                crypto_providers: self.crypto_providers
+                ,
+            }
+        )
     }
 }
+

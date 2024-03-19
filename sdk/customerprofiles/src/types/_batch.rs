@@ -3,19 +3,19 @@
 /// <p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct Batch {
+pub struct Batch  {
     /// <p>Start time of batch to split ingestion.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>End time of batch to split ingestion.</p>
     pub end_time: ::aws_smithy_types::DateTime,
 }
-impl Batch {
+impl  Batch  {
     /// <p>Start time of batch to split ingestion.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn start_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>End time of batch to split ingestion.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
+    pub fn end_time(&self) -> & ::aws_smithy_types::DateTime {
         &self.end_time
     }
 }
@@ -42,8 +42,7 @@ impl BatchBuilder {
     }
     /// <p>Start time of batch to split ingestion.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>Start time of batch to split ingestion.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -57,8 +56,7 @@ impl BatchBuilder {
     }
     /// <p>End time of batch to split ingestion.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>End time of batch to split ingestion.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -69,19 +67,20 @@ impl BatchBuilder {
     /// - [`start_time`](crate::types::builders::BatchBuilder::start_time)
     /// - [`end_time`](crate::types::builders::BatchBuilder::end_time)
     pub fn build(self) -> ::std::result::Result<crate::types::Batch, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::Batch {
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building Batch",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building Batch",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::Batch {
+                start_time: self.start_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "start_time was not specified but it is required when building Batch")
+                    )?
+                ,
+                end_time: self.end_time
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "end_time was not specified but it is required when building Batch")
+                    )?
+                ,
+            }
+        )
     }
 }
+

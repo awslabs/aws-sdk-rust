@@ -3,7 +3,7 @@
 /// <p>The options for customizing a security control parameter that is a string.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StringConfigurationOptions {
+pub struct StringConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a string.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
@@ -11,17 +11,17 @@ pub struct StringConfigurationOptions {
     /// <p>The description of the RE2 regular expression.</p>
     pub expression_description: ::std::option::Option<::std::string::String>,
 }
-impl StringConfigurationOptions {
+impl  StringConfigurationOptions  {
     /// <p>The Security Hub default value for a control parameter that is a string.</p>
-    pub fn default_value(&self) -> ::std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
-    pub fn re2_expression(&self) -> ::std::option::Option<&str> {
+    pub fn re2_expression(&self) -> ::std::option::Option<& str> {
         self.re2_expression.as_deref()
     }
     /// <p>The description of the RE2 regular expression.</p>
-    pub fn expression_description(&self) -> ::std::option::Option<&str> {
+    pub fn expression_description(&self) -> ::std::option::Option<& str> {
         self.expression_description.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl StringConfigurationOptionsBuilder {
     }
     /// <p>The Security Hub default value for a control parameter that is a string.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The Security Hub default value for a control parameter that is a string.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
@@ -62,8 +61,7 @@ impl StringConfigurationOptionsBuilder {
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
     pub fn set_re2_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.re2_expression = input;
-        self
+        self.re2_expression = input; self
     }
     /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
     pub fn get_re2_expression(&self) -> &::std::option::Option<::std::string::String> {
@@ -76,8 +74,7 @@ impl StringConfigurationOptionsBuilder {
     }
     /// <p>The description of the RE2 regular expression.</p>
     pub fn set_expression_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.expression_description = input;
-        self
+        self.expression_description = input; self
     }
     /// <p>The description of the RE2 regular expression.</p>
     pub fn get_expression_description(&self) -> &::std::option::Option<::std::string::String> {
@@ -86,9 +83,13 @@ impl StringConfigurationOptionsBuilder {
     /// Consumes the builder and constructs a [`StringConfigurationOptions`](crate::types::StringConfigurationOptions).
     pub fn build(self) -> crate::types::StringConfigurationOptions {
         crate::types::StringConfigurationOptions {
-            default_value: self.default_value,
-            re2_expression: self.re2_expression,
-            expression_description: self.expression_description,
+            default_value: self.default_value
+            ,
+            re2_expression: self.re2_expression
+            ,
+            expression_description: self.expression_description
+            ,
         }
     }
 }
+

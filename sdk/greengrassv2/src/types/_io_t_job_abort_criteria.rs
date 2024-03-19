@@ -10,7 +10,7 @@
 /// </ol>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct IoTJobAbortCriteria {
+pub struct IoTJobAbortCriteria  {
     /// <p>The type of job deployment failure that can cancel a job.</p>
     pub failure_type: crate::types::IoTJobExecutionFailureType,
     /// <p>The action to perform when the criteria are met.</p>
@@ -21,13 +21,13 @@ pub struct IoTJobAbortCriteria {
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub min_number_of_executed_things: i32,
 }
-impl IoTJobAbortCriteria {
+impl  IoTJobAbortCriteria  {
     /// <p>The type of job deployment failure that can cancel a job.</p>
-    pub fn failure_type(&self) -> &crate::types::IoTJobExecutionFailureType {
+    pub fn failure_type(&self) -> & crate::types::IoTJobExecutionFailureType {
         &self.failure_type
     }
     /// <p>The action to perform when the criteria are met.</p>
-    pub fn action(&self) -> &crate::types::IoTJobAbortAction {
+    pub fn action(&self) -> & crate::types::IoTJobAbortAction {
         &self.action
     }
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
@@ -65,8 +65,7 @@ impl IoTJobAbortCriteriaBuilder {
     }
     /// <p>The type of job deployment failure that can cancel a job.</p>
     pub fn set_failure_type(mut self, input: ::std::option::Option<crate::types::IoTJobExecutionFailureType>) -> Self {
-        self.failure_type = input;
-        self
+        self.failure_type = input; self
     }
     /// <p>The type of job deployment failure that can cancel a job.</p>
     pub fn get_failure_type(&self) -> &::std::option::Option<crate::types::IoTJobExecutionFailureType> {
@@ -80,8 +79,7 @@ impl IoTJobAbortCriteriaBuilder {
     }
     /// <p>The action to perform when the criteria are met.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::IoTJobAbortAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The action to perform when the criteria are met.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::IoTJobAbortAction> {
@@ -97,8 +95,7 @@ impl IoTJobAbortCriteriaBuilder {
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub fn set_threshold_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
-        self.threshold_percentage = input;
-        self
+        self.threshold_percentage = input; self
     }
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
@@ -113,8 +110,7 @@ impl IoTJobAbortCriteriaBuilder {
     }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub fn set_min_number_of_executed_things(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.min_number_of_executed_things = input;
-        self
+        self.min_number_of_executed_things = input; self
     }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub fn get_min_number_of_executed_things(&self) -> &::std::option::Option<i32> {
@@ -126,26 +122,28 @@ impl IoTJobAbortCriteriaBuilder {
     /// - [`action`](crate::types::builders::IoTJobAbortCriteriaBuilder::action)
     /// - [`min_number_of_executed_things`](crate::types::builders::IoTJobAbortCriteriaBuilder::min_number_of_executed_things)
     pub fn build(self) -> ::std::result::Result<crate::types::IoTJobAbortCriteria, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::IoTJobAbortCriteria {
-            failure_type: self.failure_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "failure_type",
-                    "failure_type was not specified but it is required when building IoTJobAbortCriteria",
-                )
-            })?,
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building IoTJobAbortCriteria",
-                )
-            })?,
-            threshold_percentage: self.threshold_percentage.unwrap_or_default(),
-            min_number_of_executed_things: self.min_number_of_executed_things.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "min_number_of_executed_things",
-                    "min_number_of_executed_things was not specified but it is required when building IoTJobAbortCriteria",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(
+            crate::types::IoTJobAbortCriteria {
+                failure_type: self.failure_type
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("failure_type", "failure_type was not specified but it is required when building IoTJobAbortCriteria")
+                    )?
+                ,
+                action: self.action
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("action", "action was not specified but it is required when building IoTJobAbortCriteria")
+                    )?
+                ,
+                threshold_percentage: self.threshold_percentage
+                    .unwrap_or_default()
+                ,
+                min_number_of_executed_things: self.min_number_of_executed_things
+                    .ok_or_else(||
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("min_number_of_executed_things", "min_number_of_executed_things was not specified but it is required when building IoTJobAbortCriteria")
+                    )?
+                ,
+            }
+        )
     }
 }
+
